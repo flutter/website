@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Rendering
 permalink: /rendering/
 ---
 The Sky render tree is a low-level layout and painting system based on a

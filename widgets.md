@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Widgets
+title: Core Widgets
+nav_title: Widgets
 permalink: /widgets/
 ---
 This page describes the widgets available in Sky. These widgets are

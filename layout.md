@@ -1,10 +1,8 @@
 ---
 layout: page
+title: Layout
 permalink: /layout/
 ---
-Layout
-------
-
 In Sky, widgets are rendered by render boxes. Render boxes are given
 constraints by their parent, and size themselves within those
 constraints. Constraints consist of minimum and maximum widths and

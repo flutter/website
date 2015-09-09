@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Getting Started
+title: Getting Started with Flutter
+nav_title: Getting Started
 permalink: /getting-started/
 ---
 Sky apps are written in Dart. To get started, we need to set up Dart SDK:

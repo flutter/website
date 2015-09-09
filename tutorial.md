@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Tutorial
+title: Flutter Tutorial
+nav_title: Tutorial
 permalink: /tutorial/
 ---
 Sky widgets are built using a functional-reactive framework, which takes
