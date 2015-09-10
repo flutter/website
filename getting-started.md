@@ -4,7 +4,7 @@ title: Getting Started with Flutter
 nav_title: Getting Started
 permalink: /getting-started/
 ---
-Sky apps are written in Dart. To get started, we need to set up Dart SDK:
+To get started, we need to set up Dart SDK:
 
  - Install the [Dart SDK](https://www.dartlang.org/downloads/):
    - Mac: `brew tap dart-lang/dart && brew install dart --devel`
