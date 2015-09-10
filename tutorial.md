@@ -448,8 +448,7 @@ nonetheless useful for building applications.
 * `Navigator`: Takes a single argument, which must be a long-lived instance of `NavigatorState`. This object choreographs how the application goes from screen to screen (e.g. from the main screen to a settings screen), as well as modal dialogs, drawer state, and anything else that responds to the system "back" button. By convention the `NavigatorState` object is a private member variable of the class that inherits from `App`, initialized in the `initState()` function. The `NavigatorState` constructor takes a list of `Route` objects, each of which takes a `name` argument giving a path to identify the window (e.g. "/" for the home screen, "/settings" for the settings screen, etc), and a `builder` argument that takes a method which itself takes a `navigator` argument and a `route` argument and returns a `Widget` representing that screen.
 
 Putting this together, a basic application becomes:
-```
-dart
+```dart
 import 'package:sky/widgets.dart';
 
 class DemoApp extends App {
