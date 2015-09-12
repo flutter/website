@@ -4,7 +4,7 @@ title: Widget Gallery
 nav_title: Widgets
 permalink: /widgets/
 ---
-This page describes the widgets available in Sky. These widgets are
+This page describes the widgets available in Flutter. These widgets are
 general-purpose and don't offer an opinion about the visual style of your app.
 
 Container
