@@ -4,7 +4,7 @@ title: Flutter Tutorial
 nav_title: Tutorial
 permalink: /tutorial/
 ---
-Sky widgets are built using a functional-reactive framework, which takes
+Flutter widgets are built using a functional-reactive framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of components. Components describe what their view
 should look like given their current configuration and state. When a component's
@@ -43,7 +43,7 @@ a basic widget representing a string of text.
 Basic Widgets
 -------------
 
-Sky comes with a suite of powerful basic widgets, of which the following are
+Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
 
  * `Text`: The `Text` widget lets you create a run of styled text within your
@@ -443,9 +443,23 @@ Widgets for Applications
 There are some widgets that do not correspond to on-screen pixels but that are
 nonetheless useful for building applications.
 
-* `Theme`: Takes a [ThemeData](../theme/README.md) object in its `data` argument, to configure the Material Design theme of the rest of the application (as given in the `child` argument).
-* `TaskDescription`: Takes a `label` that names the application for the purpose of the Android task switcher. The colour of the application as used in the system UI is taken from the current `Theme`.
-* `Navigator`: Takes a single argument, which must be a long-lived instance of `NavigatorState`. This object choreographs how the application goes from screen to screen (e.g. from the main screen to a settings screen), as well as modal dialogs, drawer state, and anything else that responds to the system "back" button. By convention the `NavigatorState` object is a private member variable of the class that inherits from `App`, initialized in the `initState()` function. The `NavigatorState` constructor takes a list of `Route` objects, each of which takes a `name` argument giving a path to identify the window (e.g. "/" for the home screen, "/settings" for the settings screen, etc), and a `builder` argument that takes a method which itself takes a `navigator` argument and a `route` argument and returns a `Widget` representing that screen.
+* `Theme`: Takes a [ThemeData](http://domokit.github.io/docs/sky/theme_data/ThemeData/ThemeData.html)
+  object in its `data` argument, to configure the Material Design theme of the
+  rest of the application (as given in the `child` argument).
+* `Title`: Takes a `title` that names the application for the purpose of the
+   Android task switcher. The color of the application as used in the system UI
+   is taken from the current `Theme`.
+* `Navigator`: Takes a single argument, which must be a long-lived instance of
+  `NavigatorState`. This object choreographs how the application goes from
+  screen to screen (e.g. from the main screen to a settings screen), as well as
+  modal dialogs, drawer state, and anything else that responds to the system "back"
+  button. By convention the `NavigatorState` object is a private member variable
+  of the class that inherits from `App`, initialized in the `initState()` function.
+  The `NavigatorState` constructor takes a list of `Route` objects, each of which
+  takes a `name` argument giving a path to identify the window (e.g. "/" for the
+  home screen, "/settings" for the settings screen, etc), and a `builder` argument
+  that takes a method which itself takes a `navigator` argument and a `route`
+  argument and returns a `Widget` representing that screen.
 
 Putting this together, a basic application becomes:
 ```dart
@@ -471,8 +485,8 @@ class DemoApp extends App {
       data: new ThemeData(
         brightness: ThemeBrightness.light
       ),
-      child: new TaskDescription(
-        label: 'Sky Demo',
+      child: new Title(
+        title: 'Tutorial',
         child: new Navigator(_state)
       )
     );
