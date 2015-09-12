@@ -28,7 +28,7 @@ the `pub` tool to fetch the Sky package and its dependencies:
  - `mkdir lib`
  - `pub upgrade`
 
-Sky assumes the entry point for your application is a `main` function in
+Flutter assumes the entry point for your application is a `main` function in
 `lib/main.dart`:
 
 ```dart
@@ -48,12 +48,12 @@ void main() {
 Execution starts in `main`, which in this example runs a new instance of the
 `HelloWorldApp`. The `HelloWorldApp` builds a `Text` widget containing the
 traditional `Hello, world!` string and centers it on the screen using a `Center`
-widget. To learn more about the widget system, please see the [widgets tutorial](https://github.com/domokit/sky_engine/blob/master/sky/packages/sky/lib/src/widgets/README.md).
+widget. To learn more about the widget system, please see the [widgets tutorial](/tutorial).
 
 Setting up your Android device
 -------------------------
 
-Currently Sky requires an Android device running the Lollipop (or newer) version
+Currently Flutter requires an Android device running the Lollipop (or newer) version
 of the Android operating system.
 
  - Install the `adb` tool from the [Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools):
@@ -70,10 +70,10 @@ of the Android operating system.
  - Using a USB cable, plug your phone into your computer. If prompted on your
    device, authorize your computer to access your device.
 
-Running a Sky application
+Running a Flutter application
 -------------------------
 
-The `sky` pub package includes a `sky_tool` script to assist in running Sky
+The `sky` pub package includes a `sky_tool` script to assist in running Flutter
 applications inside the `SkyShell.apk` harness.  The `sky_tool` script expects
 to be run from the root directory of your application's package (i.e., the same
 directory that contains the `pubspec.yaml` file).
@@ -84,10 +84,9 @@ To run your app with logging, run this command:
 
 The `sky_tool start` command starts the dev server and uploads your app to the
 device, installing `SkyShell.apk` if needed. The `--checked` flag triggers
-checked mode, in which types are checked, asserts are run, and various
-[debugging features](https://github.com/domokit/sky_engine/blob/master/sky/packages/sky/lib/base/debug.dart)
-are enabled. The `sky_tool logs` command logs errors and Dart `print()` output
-from the app, automatically limiting the output to just output from Sky Dart
+checked mode, in which types are checked abd asserts are run. The
+`sky_tool logs` command logs errors and Dart `print()` output
+from the app, automatically limiting the output to just output from the Dart
 code and the Sky Engine C++ code (which for historical reasons currently uses
 the tag `chromium`.)
 
@@ -99,7 +98,7 @@ Rapid Iteration
 ---------------
 
 As an alternative to running `./packages/sky/sky_tool start` every time you make
-a change, you might prefer to have the SkyShell reload your app automatically
+a change, you might prefer to have the `SkyShell` reload your app automatically
 for you as you edit.  To do this, run the following command:
 
  - `./packages/sky/sky_tool listen`
@@ -113,8 +112,8 @@ simulator support are coming soon.
 Debugging
 ---------
 
-Sky uses [Observatory](https://www.dartlang.org/tools/observatory/) for
-debugging and profiling. While running your Sky app using `sky_tool`, you can
+Flutter uses [Observatory](https://www.dartlang.org/tools/observatory/) for
+debugging and profiling. While running your Flutter app using `sky_tool`, you can
 access Observatory by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
 
 Building a standalone APK
