@@ -462,6 +462,7 @@ nonetheless useful for building applications.
   argument and returns a `Widget` representing that screen.
 
 Putting this together, a basic application becomes:
+
 ```dart
 import 'package:sky/widgets.dart';
 
