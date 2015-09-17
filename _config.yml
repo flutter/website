@@ -1,9 +1,9 @@
 # Site settings
 title: Flutter
-email: sky-dev@googlegroups.com
+email: flutter-dev@googlegroups.com
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://flutter.github.io"
-github_username:  flutter
+url: "http://flutter.io"
+github_username: flutter
 
 # Build settings
 markdown: kramdown

@@ -5,6 +5,7 @@
     min-height: 56px;
     background-color: $primary-color;
     color: $nav-text-color;
+    border-bottom: 1px solid $grey-color-light;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -104,7 +105,7 @@
 .contact-list,
 .social-media-list {
     list-style: none;
-    margin-left: 0;
+    margin: 0;
 }
 
 .footer-col-wrapper {
