@@ -94,7 +94,7 @@ To avoid confusion from old log messages, you may wish to call
 `sky_tool logs --clear` before calling `sky_tool start`, to clear the log
 between runs.
 
-Rapid Iteration
+Rapid iteration
 ---------------
 
 As an alternative to running `./packages/sky/sky_tool start` every time you make
