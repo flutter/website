@@ -121,20 +121,21 @@ vertically and horizontally. If we didn't center the toolbar, it would fill the
 view, both vertically and horizontally, because the root widget is sized to fill
 the view.
 
-Listening to Events
--------------------
+Detecting user input
+--------------------
 
 In addition to being stunningly beautiful, most applications react to user
-input. The first step in building an interactive application is to listen for
-input events. Let's see how that works by creating a simple button:
+input. The first step in building an interactive application is to detect
+input gestures. Let's see how that works by creating a simple button:
 
 ```dart
+import 'package:sky/painting.dart';
 import 'package:sky/widgets.dart';
 
 final BoxDecoration _decoration = new BoxDecoration(
   borderRadius: 5.0,
   gradient: new LinearGradient(
-    start: Point.origin,
+    begin: Point.origin,
     end: const Point(0.0, 36.0),
     colors: [ const Color(0xFFEEEEEE), const Color(0xFFCCCCCC) ]
   )
@@ -142,8 +143,8 @@ final BoxDecoration _decoration = new BoxDecoration(
 
 class MyButton extends Component {
   Widget build() {
-    return new Listener(
-      onGestureTap: (event) {
+    return new GestureDetector(
+      onTap: () {
         print('MyButton was tapped!');
       },
       child: new Container(
@@ -160,14 +161,13 @@ class MyButton extends Component {
 }
 ```
 
-The `Listener` widget doesn't have an visual representation but instead listens
-for events bubbling through the application. When a tap gesture bubbles out from
-the `Container`, the `Listener` will call its `onGestureTap` callback, in this
-case printing a message to the console.
+The `GestureDetector` widget doesn't have an visual representation but instead
+detects gestures made by the user. When the user taps the `Container`, the
+`GestureDetector` will call its `onTap` callback, in this case printing a
+message to the console.
 
-You can use `Listener` to listen for a variety of input events, including
-low-level pointer events and higher-level gesture events, such as taps, scrolls,
-and flings.
+You can use `GestureDetector` to detect a variety of input gestures, including
+taps, drags, and scales.
 
 Generic Components
 ------------------
@@ -185,11 +185,8 @@ class MyButton extends Component {
   final Function onPressed;
 
   Widget build() {
-    return new Listener(
-      onGestureTap: (_) {
-        if (onPressed != null)
-          onPressed();
-      },
+    return new GestureDetector(
+      onTap: onPressed,
       child: new Container(
         height: 36.0,
         padding: const EdgeDims.all(8.0),
@@ -248,8 +245,8 @@ class MyCheckbox extends Component {
 
   Widget build() {
     Color color = value ? const Color(0xFF00FF00) : const Color(0xFF0000FF);
-    return new Listener(
-      onGestureTap: (_) => onChanged(!value),
+    return new GestureDetector(
+      onTap: () { onChanged(!value) },
       child: new Container(
         height: 25.0,
         width: 25.0,
