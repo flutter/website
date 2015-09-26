@@ -40,6 +40,10 @@
         &:not(:first-child) {
             margin-left: 20px;
         }
+
+        @include media-query($on-palm) {
+            color: $brand-color;
+        }
     }
 
     @include media-query($on-palm) {
@@ -94,7 +98,7 @@
  */
 .site-footer {
     border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+    padding-top: $spacing-unit;
 }
 
 .footer-heading {
@@ -109,7 +113,6 @@
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
@@ -136,8 +139,24 @@
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
+.footer-col-all {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+}
+
 .logo {
   text-align: right;
+  float: right;
+  position: relative;
+  top: -10px;
+
+  @include media-query($on-palm) {
+      top: -15px;
+
+      svg {
+          width: 100px;
+      }
+  }
 }
 
 @include media-query($on-laptop) {
