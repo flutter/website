@@ -329,7 +329,7 @@ Let's walk through the differences in `MyDialog` caused by its being stateful:
    `build`, the framework walks this description and creates a "physical" tree
    of `RenderObjects` that matches the description. When the framework calls
    `build` again, the component still returns a fresh description of its
-   appearence, but this time the framework compares the new description with the
+   appearance, but this time the framework compares the new description with the
    previous description and makes the minimal modifications to the underlying
    `RenderObjects` to make them match the new description.
 
@@ -358,7 +358,7 @@ Let's walk through the differences in `MyDialog` caused by its being stateful:
    the object and `this` is the authoritative source of that state.
 
    When implementing a `StatefulComponent`, make sure to call
-   `super.syncConstructorArguments(source)` from within your
+   `super.syncConstructorArguments(`<wbr>`source)` from within your
    `syncConstructorArguments()` method, unless you are extending
    `StatefulComponent` directly.
 
