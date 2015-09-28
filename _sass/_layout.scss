@@ -5,7 +5,7 @@
     min-height: 56px;
     background-color: $primary-color;
     color: $nav-text-color;
-    border-bottom: 1px solid $grey-color-light;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -120,7 +120,6 @@
 
 .footer-col {
     float: left;
-    margin-bottom: $spacing-unit / 2;
     padding-left: $spacing-unit / 2;
 }
 
@@ -155,6 +154,7 @@
 
       svg {
           width: 100px;
+          height: 64px;
       }
   }
 }
