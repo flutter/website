@@ -83,7 +83,7 @@ To run your app with logging, run this command:
 
 The `sky_tool start` command starts the dev server and uploads your app to the
 device, installing `SkyShell.apk` if needed. The `--checked` flag triggers
-checked mode, in which types are checked abd asserts are run. The
+checked mode, in which types are checked and asserts are run. The
 `sky_tool logs` command logs errors and Dart `print()` output
 from the app, automatically limiting the output to just output from the Dart
 code and the Sky Engine C++ code (which for historical reasons currently uses
