@@ -15,30 +15,22 @@ needed in the underlying render tree to transition from one state to the next.
 Hello World
 -----------
 
-To build an application, create a subclass of `App` and instantiate it:
+To build an application, simply call the `runApp` function with a widget:
 
 ```dart
 import 'package:sky/widgets.dart';
-
-class HelloWorldApp extends App {
-  Widget build() {
-    return new Center(child: new Text('Hello, world!'));
-  }
-}
-
-void main() {
-  runApp(new HelloWorldApp());
-}
+void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
-An app is comprised of (and is, itself, a) widgets. The most commonly authored
-widgets are, like `App`, subclasses of `Component`.  A component's main job is
-to implement `Widget build()` by returning newly-created instances of other
-widgets. If a component builds other components, the framework will build those
-components in turn until the process bottoms out in a collection of basic
-widgets, such as those in `sky/widgets/basic.dart`. In the case of
-`HelloWorldApp`, the `build` function simply returns a new `Text` node, which is
-a basic widget representing a string of text.
+An app is comprised of a tree of widgets. The most commonly authored
+widgets are subclasses of either `StatelessComponent` or `StatefulComponent`,
+depending on whether the component manages any state. A component's main job is
+to implement `Widget build(BuildContext context)` by returning instances of
+other widgets. If a component builds other components, the framework will build
+those components in turn until the process bottoms out in widgets that
+represent the underlying render object. In the example above, we use the
+`Center` and `Text` widgets to display a string of text in the center of the
+screen.
 
 Basic Widgets
 -------------
@@ -69,8 +61,8 @@ Below is a simple toolbar example that shows how to combine these widgets:
 ```dart
 import 'package:sky/widgets.dart';
 
-class MyToolBar extends Component {
-  Widget build() {
+class MyToolBar extends StatelessComponent {
+  Widget build(BuildContext context) {
     return new Container(
       decoration: const BoxDecoration(
         backgroundColor: const Color(0xFF00FFFF)
@@ -105,16 +97,28 @@ import 'package:sky/widgets.dart';
 
 import 'my_tool_bar.dart';
 
-class DemoApp extends App {
+class DemoHome extends StatelessComponent {
   Widget build() {
     return new Center(child: new MyToolBar());
   }
 }
 
 void main() {
-  runApp(new DemoApp());
+  runApp(new App(
+    title: 'Demo app',
+    routes: {
+      '/', (NavigatorState navigator, Route route) => new DemoHome();
+    }
+  ));
 }
 ```
+
+Notice that we've passed an instance of the `App` widget to `runApp`. The `App`
+widget builds a number of useful components at the root of your application,
+including a `Navigator`, which manages a stack of widgets identified by strings,
+also know as "routes". The `Navigator` lets you transition smoothly between
+screens of your application. Using the `App` widget is entirely optional but a
+good practice.
 
 Here, we've used the `Center` widget to center the toolbar within the view, both
 vertically and horizontally. If we didn't center the toolbar, it would fill the
@@ -141,8 +145,8 @@ final BoxDecoration _decoration = new BoxDecoration(
   )
 );
 
-class MyButton extends Component {
-  Widget build() {
+class MyButton extends StatelessComponent {
+  Widget build(BuildContext context) {
     return new GestureDetector(
       onTap: () {
         print('MyButton was tapped!');
@@ -164,10 +168,8 @@ class MyButton extends Component {
 The `GestureDetector` widget doesn't have an visual representation but instead
 detects gestures made by the user. When the user taps the `Container`, the
 `GestureDetector` will call its `onTap` callback, in this case printing a
-message to the console.
-
-You can use `GestureDetector` to detect a variety of input gestures, including
-taps, drags, and scales.
+message to the console. You can use `GestureDetector` to detect a variety of
+input gestures, including taps, drags, and scales.
 
 Generic Components
 ------------------
@@ -178,13 +180,13 @@ example, we wouldn't want to define a new button component every time we wanted
 a button with a novel label:
 
 ```dart
-class MyButton extends Component {
+class MyButton extends StatelessComponent {
   MyButton({ this.child, this.onPressed });
 
   final Widget child;
   final Function onPressed;
 
-  Widget build() {
+  Widget build(BuildContext context) {
     return new GestureDetector(
       onTap: onPressed,
       child: new Container(
@@ -205,7 +207,7 @@ example, we can put an elaborate layout involving text and an image inside the
 button:
 
 ```dart
-  Widget build() {
+  Widget build(BuildContext context) {
     return new MyButton(
       child: new ShrinkWrapWidth(
         child: new Row([
@@ -223,12 +225,12 @@ button:
 State
 -----
 
-By default, components are stateless. Components usually receive
-arguments from their parent component in their constructor, which they typically
-store in `final` member variables. When a component is asked to `build`, it uses
-these stored values to derive new arguments for the subcomponents it creates.
-For example, the generic version of `MyButton` above follows this pattern. In
-this way, state naturally flows "down" the component hierachy.
+Thus far, we've used mostly stateless components. Stateless components receive
+arguments from their parent component, which they store in `final` member
+variables. When a component is asked to `build`, it uses these stored values to
+derive new arguments for the widgets it creates. For example, the generic
+version of `MyButton` above follows this pattern. In this way, state naturally
+flows "down" the component hierarchy.
 
 Some components, however, have mutable state that represents the transient state
 of that part of the user interface. For example, consider a dialog widget with
@@ -237,13 +239,13 @@ checkbox several times before closing the dialog and committing the final value
 of the checkbox to the underlying application data model.
 
 ```dart
-class MyCheckbox extends Component {
+class MyCheckbox extends StatelessComponent {
   MyCheckbox({ this.value, this.onChanged });
 
   final bool value;
   final Function onChanged;
 
-  Widget build() {
+  Widget build(BuildContext context) {
     Color color = value ? const Color(0xFF00FF00) : const Color(0xFF0000FF);
     return new GestureDetector(
       onTap: () { onChanged(!value) },
@@ -259,7 +261,12 @@ class MyCheckbox extends Component {
 class MyDialog extends StatefulComponent {
   MyDialog({ this.onDismissed });
 
-  Function onDismissed;
+  final Function onDismissed;
+
+  MyDialogState createState() => new MyDialogState();
+}
+
+class MyDialogState extends State<MyDialog> {
   bool _checkboxValue = false;
 
   void _handleCheckboxValueChanged(bool value) {
@@ -268,18 +275,14 @@ class MyDialog extends StatefulComponent {
     });
   }
 
-  void syncConstructorArguments(MyDialog source) {
-    onDismissed = source.onDismissed;
-  }
-
-  Widget build() {
+  Widget build(BuildContext context) {
     return new Row([
       new MyCheckbox(
         value: _checkboxValue,
         onChanged: _handleCheckboxValueChanged
       ),
       new MyButton(
-        onPressed: () => onDismissed(_checkboxValue),
+        onPressed: () => config.onDismissed(_checkboxValue),
         child: new Text("Save")
       ),
     ],
@@ -291,133 +294,69 @@ class MyDialog extends StatefulComponent {
 The `MyCheckbox` component follows the pattern for stateless components. It
 stores the values it receives in its constructor in `final` member variables,
 which it then uses during its `build` function. Notice that when the user taps
-on the checkbox, the checkbox itself doesn't use `value`. Instead, the checkbox
-calls a function it received from its parent component. This pattern lets you
-store state higher in the component hierarchy, which causes the state to persist
-for longer periods of time. In the extreme, the state stored on the `App`
-component persists for the lifetime of the application.
+on the checkbox, the checkbox itself doesn't modify its `value` field. Instead,
+the checkbox calls a function it received from its parent component. This
+pattern lets you store state higher in the component hierarchy, which causes the
+state to persist for longer periods of time. In the extreme, the state stored on
+the component passed to `runApp` persists for the lifetime of the application.
 
 The `MyDialog` component is more complicated because it is a stateful component.
 Let's walk through the differences in `MyDialog` caused by its being stateful:
 
- * `MyDialog` extends StatefulComponent instead of Component.
+ * `MyDialog` extends `StatefulComponent` instead of `StatelessComponent`.
 
- * `MyDialog` has non-`final` member variables. Over the lifetime of the dialog,
-   we'll need to modify the values of these member variables, which means we
-   cannot mark them `final`.
+ * `MyDialog` implements the `createState` function to create an instance of the
+   `MyDialogState` class that will hold its state.
 
- * `MyDialog` has private member variables. By convention, components store
-   values they receive from their parent in public member variables and store
-   their own internal, transient state in private member variables. There's no
-   requirement to follow this convention, but we've found that it helps keep us
-   organized.
+ * `MyDialogState` has private, mutable member variables. Whenever `MyDialog`
+   modifies its transient state, the dialog does so inside a `setState`
+   callback. Using `setState` is important because it marks the component as
+   dirty and schedules it to be rebuilt. If a component modifies its transient
+   state outside of a `setState` callback, the framework won't know that the
+   component has changed state and might not call the component's `build`
+   function, which means the user interface might not update to reflect the
+   changed state.
 
- * Whenever `MyDialog` modifies its transient state, the dialog does so inside
-   a `setState` callback. Using `setState` is important because it marks the
-   component as dirty and schedules it to be rebuilt. If a component modifies
-   its transient state outside of a `setState` callback, the framework won't
-   know that the component has changed state and might not call the component's
-   `build` function, which means the user interface might not update to reflect
-   the changed state.
+ * To access member variables from `MyDialog`, the `MyDialogState` object uses
+   its `config` property. If the parent component rebuilds and creates a new
+   instance of `MyDialog` in its build function, the framework will reuse the
+   existing `MyDialogState` rather than calling `createState` again. In this way
+   the state for the dialog persists. When that happens, the framework will
+   update the `config` property to point to the new `MyDialog` instance, call
+   the `didUpdateConfig` function (which you can override), and then call the
+   `build` function.
 
- * `MyDialog` implements the `syncConstructorArguments` member function. To
-   understand `syncConstructorArguments`, we'll need to dive a bit deeper into
-   how the `build` function is used by the framework.
-
-   A component's `build` function returns a tree of widgets that represent a
-   "virtual" description of its appearance. The first time the framework calls
-   `build`, the framework walks this description and creates a "physical" tree
-   of `RenderObjects` that matches the description. When the framework calls
-   `build` again, the component still returns a fresh description of its
-   appearance, but this time the framework compares the new description with the
-   previous description and makes the minimal modifications to the underlying
-   `RenderObjects` to make them match the new description.
-
-   In this process, old stateless components are discarded and the new stateless
-   components created by the parent component are retained in the widget
-   hierchy. Old _stateful_ components, however, cannot simply be discarded
-   because they contain state that needs to be preserved. Instead, the old
-   stateful components are retained in the widget hierarchy and asked to
-   `syncConstructorArguments` with the new instance of the component created by
-   the parent in its `build` function.
-
-   Without `syncConstructorArguments`, the new values the parent component
-   passed to the `MyDialog` constructor in the parent's `build` function would
-   be lost because they would be stored only as member variables on the new
-   instance of the component, which is not retained in the component hiearchy.
-   Therefore, the `syncConstructorArguments` function in a component should
-   update `this` to account for the new values the parent passed to `source`
-   because `source` is the authorative source of those values.
-
-   By convention, components typically store the values they receive from their
-   parents in public member variables and their own internal state in private
-   member variables. Therefore, a typical `syncConstructorArguments`
-   implementation will copy the public, but not the private, member variables
-   from `source`. When following this convention, there is no need to copy over
-   the private member variables because those represent the internal state of
-   the object and `this` is the authoritative source of that state.
-
-   When implementing a `StatefulComponent`, make sure to call
-   `super.syncConstructorArguments(`<wbr>`source)` from within your
-   `syncConstructorArguments()` method, unless you are extending
-   `StatefulComponent` directly.
+By managing state in this way, you don't need to write separate code for
+creating and updating subcomponents. Instead, you simply implement the build
+function, which handles both situations.
 
 Finally, when the user taps on the "Save" button, `MyDialog` follows the same
 pattern as `MyCheckbox` and calls a function passed in by its parent component
 to return the final value of the checkbox up the hierarchy.
 
-didMount and didUnmount
------------------------
+initState and dispose
+---------------------
 
-When a component is inserted into the widget tree, the framework calls the
-`didMount` function on the component. When a component is removed from the
-widget tree, the framework calls the `didUnmount` function on the component.
-In some situations, a component that has been unmounted might again be mounted.
-For example, a stateful component might receive a pre-built component from its
-parent (similar to `child` from the `MyButton` example above) that the stateful
-component might incorporate, then not incorporate, and then later incorporate
-again in the widget tree it builds, according to its changing state.
+When creating state for a `StatefulComponent`, the framework calls `initState`
+on the state object. You can override the `initState` function to do work needs
+to happen just once. For example, you can override `initState` to configure
+animations or to subscribe to platform services. Implementations of `initState`
+typically start by calling `super.initState`.
 
-Typically, a stateful component will override `didMount` to initialize any
-non-trivial internal state. Initializing internal state in `didMount` is more
-efficient (and less error-prone) than initializing that state during the
-component's constructor because parent executes the component's constructor each
-time the parent rebuilds even though the framework mounts only the first
-instance into the widget hierarchy. (Instead of mounting later instances, the
-framework passes them to the original instance in `syncConstructorArguments` so
-that the first instance of the component can incorporate the values passed by
-the parent to the component's constructor.)
-
-Components often override `didUnmount` to release resources or to cancel
-subscriptions to event streams from outside the widget hierachy. When overriding
-either `didMount` or `didUnmount`, a component should call its superclass's
-`didMount` or `didUnmount` function.
-
-initState
----------
-
-The framework calls the `initState` function on stateful components before
-building them. The default implementation of initState does nothing. If your
-component requires non-trivial work to initialize its state, you should
-override initState and do it there rather than doing it in the stateful
-component's constructor. If the component doesn't need to be built (for
-example, if it was constructed just to have its fields synchronized with
-an existing stateful component) you'll avoid unnecessary work. Also, some
-operations that involve interacting with the widget hierarchy cannot be
-done in a component's constructor.
-
-When overriding `initState`, a component should call its superclass's
-`initState` function.
+When a state object is no longer needed, the framework calls `dispose` on the
+state object. You can override the `dispose` function to do cleanup work. For
+example, you can override `dispose` to cancel timers or to unsubscribe from
+platform services. Implementations of `dispose` typically end by calling
+`super.dispose`.
 
 Keys
 ----
 
-If a component requires fine-grained control over which widgets sync with each
-other, the component can assign keys to the widgets it builds. Without keys, the
-framework matches widgets in the current and previous build according to their
-`runtimeType` and the order in which they appear. With keys, the framework
-requires that the two widgets have the same `key` as well as the same
-`runtimeType`.
+You can use keys to control which widgets the framework with match up with which
+other widgets when a component rebuilds. By default, the framework matches
+widgets in the current and previous build according to their `runtimeType` and
+the order in which they appear. With keys, the framework requires that the two
+widgets have the same `key` as well as the same `runtimeType`.
 
 Keys are most useful in components that build many instances of the same type of
 widget. For example, consider an infinite list component that builds just enough
@@ -429,73 +368,49 @@ copies of a particular widget to fill its visible region:
 
  * By assigning each entry in the list a "semantic" key, the infinite list can
    be more efficient because the framework will sync entries with matching
-   semantic keys and therefore similiar (or identical) visual appearances.
+   semantic keys and therefore similar (or identical) visual appearances.
    Moreover, syncing the entries semantically means that state retained in
    stateful subcomponents will remain attached to the same semantic entry rather
    than the entry in the same numerical position in the viewport.
 
-Widgets for Applications
-------------------------
+Global Keys
+-----------
 
-There are some widgets that do not correspond to on-screen pixels but that are
-nonetheless useful for building applications.
-
-* `Theme`: Takes a [ThemeData](http://domokit.github.io/docs/sky/theme_data/ThemeData/ThemeData.html)
-  object in its `data` argument, to configure the Material Design theme of the
-  rest of the application (as given in the `child` argument).
-* `Title`: Takes a `title` that names the application for the purpose of the
-   Android task switcher. The color of the application as used in the system UI
-   is taken from the current `Theme`.
-* `Navigator`: Takes a single argument, which must be a long-lived instance of
-  `NavigatorState`. This object choreographs how the application goes from
-  screen to screen (e.g. from the main screen to a settings screen), as well as
-  modal dialogs, drawer state, and anything else that responds to the system "back"
-  button. By convention the `NavigatorState` object is a private member variable
-  of the class that inherits from `App`, initialized in the `initState()` function.
-  The `NavigatorState` constructor takes a list of `Route` objects, each of which
-  takes a `name` argument giving a path to identify the window (e.g. "/" for the
-  home screen, "/settings" for the settings screen, etc), and a `builder` argument
-  that takes a method which itself takes a `navigator` argument and a `route`
-  argument and returns a `Widget` representing that screen.
-
-Putting this together, a basic application becomes:
+You can use global keys to uniquely identify child widgets. Global keys must be
+globally unique across the entire widget hierarchy, unlike local keys which need
+only be unique among siblings. Because they are globally unique, a global key
+can be used to retrieve the state associated with a widget. Consider the
+following example:
 
 ```dart
-import 'package:sky/widgets.dart';
+class MyComponentState extends State<MyDialog> {
+  GlobalKey _scrollable = new GlobalKey();
 
-class DemoApp extends App {
-
-  NavigationState _state;
-  void initState() {
-    _state = new NavigationState([
-      new Route(
-        name: '/',
-        builder: (navigator, route) {
-          return new Center(child: new Text('Hello Slightly More Elaborate World'));
-        }
-      )
-    ]);
-    super.initState();
-  }
-
-  Widget build() {
-    return new Theme(
-      data: new ThemeData(
-        brightness: ThemeBrightness.light
+  Widget build(BuildContext context) {
+    return Column([
+      new MyButton(
+        onPressed: () {
+          (_scrollable.currentState as ScrollableState).scrollBy(10.0);
+        },
+        child: new Text('Scroll down')
       ),
-      child: new Title(
-        title: 'Tutorial',
-        child: new Navigator(_state)
-      )
-    );
+      new ScrollableList<int>(
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        itemExtent: 100.0,
+        itemBuilder: (BuildContext context, int i) {
+          return new Container(
+            height: 100.0,
+            child: new Center(child: new Text('$i'))
+          );
+        }
+      );
+    ]);
   }
-
-}
-
-void main() {
-  runApp(new DemoApp());
 }
 ```
+
+When `MyButton` is pressed, the `onPressed` callback finds the `ScrollableState`
+object that corresponds to the `_scrollable` global key and mutates its state.
 
 Useful debugging tools
 ----------------------
