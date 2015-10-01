@@ -32,22 +32,12 @@ Flutter assumes the entry point for your application is a `main` function in
 
 ```dart
 import 'package:sky/widgets.dart';
-
-class HelloWorldApp extends App {
-  Widget build() {
-    return new Center(child: new Text('Hello, world!'));
-  }
-}
-
-void main() {
-  runApp(new HelloWorldApp());
-}
+void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
-Execution starts in `main`, which in this example runs a new instance of the
-`HelloWorldApp`. The `HelloWorldApp` builds a `Text` widget containing the
-traditional `Hello, world!` string and centers it on the screen using a `Center`
-widget. To learn more about the widget system, please see the [widgets tutorial](/tutorial).
+Execution starts in `main`, which in this example shows the text "Hello, world!"
+centered on the screen. To learn more about the widget system, please see the
+[widgets tutorial](/tutorial).
 
 Setting up your Android device
 -------------------------
