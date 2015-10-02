@@ -412,6 +412,12 @@ class MyComponentState extends State<MyDialog> {
 When `MyButton` is pressed, the `onPressed` callback finds the `ScrollableState`
 object that corresponds to the `_scrollable` global key and mutates its state.
 
+Some widgets, such as `Input` require global keys because they can hold focus,
+which means they receive any text the user enters into the app. The `Focus`
+widget keeps track of which `InputState` object is focused by remembering its
+`GlobalKey`. That way the same `Input` widget remains focused even if it moves
+around in the widget tree.
+
 Useful debugging tools
 ----------------------
 
