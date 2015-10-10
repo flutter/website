@@ -1,0 +1,4 @@
+analyzer:
+  exclude:
+    - '_includes/**'
+    - '_layouts/**'
