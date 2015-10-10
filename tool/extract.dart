@@ -5,26 +5,26 @@ import 'package:path/path.dart' as p;
 /// Extract Dart snippets from the markdown documentation.
 void main(List<String> args) {
   // Validate our cwd.
-  File pubspec = new File('pubspec.yaml');
-  if (!pubspec.existsSync()) {
-    fail('This tool must the run from the project root.');
+  if (!new File('pubspec.yaml').existsSync()) {
+    print('This tool must be run from the project root.');
+    exit(1);
   }
 
   // Remove any previously generated files.
   clean();
 
   // Traverse markdown files in the root.
-  List<File> markdownFiles = Directory.current.listSync().where((entity) {
-    return entity is File && entity.path.endsWith('.md');
-  }).toList();
-
-  markdownFiles.forEach(_processFile);
+  int extractCount = 0;
+  Iterable<File> files = Directory.current
+      .listSync()
+      .where((entity) => entity is File && entity.path.endsWith('.md'));
+  files.forEach((file) => extractCount += _processFile(file));
+  print('\n${extractCount} code snippets extracted.');
 }
 
-void _processFile(File file) {
-  print(file.path);
-
+int _processFile(File file) {
   String name = p.basename(file.path);
+  print(name);
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
@@ -36,16 +36,17 @@ void _processFile(File file) {
   String lastComment;
 
   while (index < lines.length) {
-    // Look for ```
+    // Look for ```dart sections.
     if (lines[index].startsWith('```dart') && lastComment != 'skip') {
       int startIndex = index + 1;
       index++;
       while (index < lines.length && !lines[index].startsWith('```')) {
         index++;
       }
-      _extract(name, ++count, startIndex, lines.sublist(startIndex, index),
+      _extractSnippet(name, ++count, startIndex, lines.sublist(startIndex, index),
           includeSource: lastComment);
     } else if (lines[index].startsWith('<!--')) {
+      // Look for <!-- comment sections.
       int startIndex = index;
       while (!lines[index].endsWith('-->')) {
         index++;
@@ -60,23 +61,18 @@ void _processFile(File file) {
 
     index++;
   }
+
+  return count;
 }
 
-void _extract(String filename, int snippet, int startLine, List<String> lines,
+void _extractSnippet(String filename, int snippet, int startLine, List<String> lines,
     {String includeSource}) {
-  String first = lines.first.trim();
-  bool hasImport = first.startsWith('import ');
-  // // TODO: Many of these should be analyzed as well.
-  // print('  skipping ${filename} line ${startLine}, no import statement');
-  // return;
-
-  String path =
-      'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_${snippet}.dart';
-
-  String source =
-    '// Extracted from ${filename} line ${startLine}.\n';
+  bool hasImport = lines.first.trim().startsWith('import ');
+  String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
+      '${snippet}.dart';
 
   int adjust = 1;
+  String source = '// Extracted from ${filename}, line ${startLine}.\n';
 
   if (!hasImport) {
     source += "import 'package:sky/material.dart';\n";
@@ -92,18 +88,13 @@ void _extract(String filename, int snippet, int startLine, List<String> lines,
     '${''.padRight(startLine - adjust, '\n')}'
     '${lines.join('\n')}\n';
 
-  print('  extracting ${path} from line ${startLine}');
   new File(path).writeAsStringSync(source);
+  print('  ${lines.length} line snippet ==> ${path}');
 }
 
 void clean() {
-  Iterable<File> files = new Directory('example').listSync().where((entity) {
-    return entity is File && entity.path.endsWith('.dart');
-  });
+  Iterable<File> files = new Directory('example')
+      .listSync()
+      .where((entity) => entity is File && entity.path.endsWith('.dart'));
   files.forEach((file) => file.deleteSync());
-}
-
-void fail(String message) {
-  print(message);
-  exit(1);
 }
