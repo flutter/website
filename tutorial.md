@@ -19,7 +19,7 @@ Hello World
 To build an application, simply call the `runApp` function with a widget:
 
 ```dart
-import 'package:sky/widgets.dart';
+import 'package:flutter/material.dart';
 void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
@@ -60,34 +60,33 @@ very commonly used:
 Below is a simple toolbar example that shows how to combine these widgets:
 
 ```dart
-import 'package:sky/widgets.dart';
+import 'package:flutter/material.dart';
 
 class MyToolBar extends StatelessComponent {
   Widget build(BuildContext context) {
     return new Container(
-      decoration: const BoxDecoration(
-        backgroundColor: const Color(0xFF00FFFF)
-      ),
       height: 56.0,
       padding: const EdgeDims.symmetric(horizontal: 8.0),
-      child: new Row([
-        new NetworkImage(src: 'menu.png', width: 25.0, height: 25.0),
-        new Flexible(child: new Text('My awesome toolbar')),
-        new NetworkImage(src: 'search.png', width: 25.0, height: 25.0),
-      ])
+      child: new Material(
+        child: new Row([
+          new NetworkImage(src: 'menu.png', width: 25.0, height: 25.0),
+          new Flexible(child: new Text('My awesome toolbar')),
+          new NetworkImage(src: 'search.png', width: 25.0, height: 25.0),
+        ])
+      )
     );
   }
 }
 ```
 
-The `MyToolBar` component creates a cyan `Container` with a height of
-56 device-independent pixels with an internal padding of 8 pixels,
-both on the left and the right. Inside the container, `MyToolBar` uses
-a `Row` layout. The middle child, the `Text` widget, is marked as
-`Flexible`, which means it expands to fill any remaining available
-space that hasn't been consumed by the inflexible children. You can
-have multiple `Flexible` children and determine the ratio in which
-they consume the available space using the `flex` argument to
+The `MyToolBar` component creates a `Container` with a height of 56
+device-independent pixels with an internal padding of 8 pixels, both on the left
+and the right. Inside the container, `MyToolBar` uses `Material` to paint a
+Material Design themed background and a `Row` layout to organize its children.
+The middle child, the `Text` widget, is marked as `Flexible`, which means it
+expands to fill any remaining available space that hasn't been consumed by the
+inflexible children. You can have multiple `Flexible` children and determine the
+ratio in which they consume the available space using the `flex` argument to
 `Flexible`.
 
 To use this component, we simply create an instance of `MyToolBar` in a `build`
@@ -95,7 +94,7 @@ function:
 
 <!-- skip -->
 ```dart
-import 'package:sky/widgets.dart';
+import 'package:flutter/material.dart';
 
 import 'my_tool_bar.dart';
 
@@ -106,8 +105,8 @@ class DemoHome extends StatelessComponent {
 }
 
 void main() {
-  runApp(new App(
-    title: 'Demo app',
+  runApp(new MaterialApp(
+    title: 'Tutorial app',
     routes: {
       '/', (NavigatorState navigator, Route route) => new DemoHome();
     }
@@ -115,12 +114,12 @@ void main() {
 }
 ```
 
-Notice that we've passed an instance of the `App` widget to `runApp`. The `App`
-widget builds a number of useful components at the root of your application,
-including a `Navigator`, which manages a stack of widgets identified by strings,
-also know as "routes". The `Navigator` lets you transition smoothly between
-screens of your application. Using the `App` widget is entirely optional but a
-good practice.
+Notice that we've passed an instance of the `MaterialApp` widget to `runApp`.
+The `MaterialApp` widget builds a number of useful components at the root of
+your application, including a `Navigator`, which manages a stack of widgets
+identified by strings, also know as "routes". The `Navigator` lets you
+transition smoothly between screens of your application. Using the `MaterialApp`
+widget is entirely optional but a good practice.
 
 Here, we've used the `Center` widget to center the toolbar within the view, both
 vertically and horizontally. If we didn't center the toolbar, it would fill the
@@ -135,8 +134,8 @@ input. The first step in building an interactive application is to detect
 input gestures. Let's see how that works by creating a simple button:
 
 ```dart
-import 'package:sky/painting.dart';
-import 'package:sky/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 final BoxDecoration _decoration = new BoxDecoration(
   borderRadius: 5.0,

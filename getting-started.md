@@ -22,13 +22,13 @@ Once you have installed Dart SDK, create a new directory and add a
 ```yaml
 name: your_app_name
 dependencies:
-  sky: any
+  flutter: any
 dev_dependencies:
   sky_tools: any
 ```
 
 Next, create a `lib` directory (which is where your Dart code will go) and use
-the `pub` tool to fetch the Sky package and its dependencies:
+the `pub` tool to fetch the Flutter package and its dependencies:
 
  - `mkdir lib`
  - `pub upgrade`
@@ -37,13 +37,13 @@ Flutter assumes the entry point for your application is a `main` function in
 `lib/main.dart`:
 
 ```dart
-import 'package:sky/widgets.dart';
+import 'package:flutter/material.dart';
 void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
 Execution starts in `main`, which in this example shows the text "Hello, world!"
 centered on the screen. To learn more about the widget system, please see the
-[widgets tutorial](/tutorial).
+[widgets tutorial](/tutorial/).
 
 Setting up your Android device
 -------------------------
@@ -68,22 +68,22 @@ of the Android operating system.
 Running a Flutter application
 -----------------------------
 
-The `sky` pub package includes a `sky_tool` script to assist in running Flutter
-applications inside the `SkyShell.apk` harness.  The `sky_tool` script expects
+Flutter includes a `sky_tool` script to assist in running Flutter applications
+inside the development environment.  The `sky_tool` script expects
 to be run from the root directory of your application's package (i.e., the same
 directory that contains the `pubspec.yaml` file).
 
 To run your app with logging, run this command:
 
- - `./packages/sky/sky_tool start --checked && ./packages/sky/sky_tool logs`
+ - `./packages/flutter/sky_tool start --checked && ./packages/flutter/sky_tool logs`
 
 The `sky_tool start` command starts the dev server and uploads your app to the
-device, installing `SkyShell.apk` if needed. The `--checked` flag triggers
+device, installing the development APK if needed. The `--checked` flag triggers
 checked mode, in which types are checked and asserts are run. The
 `sky_tool logs` command logs errors and Dart `print()` output
 from the app, automatically limiting the output to just output from the Dart
-code and the Sky Engine C++ code (which for historical reasons currently uses
-the tag `chromium`.)
+code and the C++ code (which for historical reasons currently uses the tag
+`chromium`.)
 
 To avoid confusion from old log messages, you may wish to call
 `sky_tool logs --clear` before calling `sky_tool start`, to clear the log
@@ -92,13 +92,13 @@ between runs.
 Rapid iteration
 ---------------
 
-As an alternative to running `./packages/sky/sky_tool start` every time you make
-a change, you might prefer to have the `SkyShell` reload your app automatically
-for you as you edit.  To do this, run the following command:
+As an alternative to running `./packages/flutter/sky_tool start` every time you make
+a change, you might prefer to have the the development environment reload your
+app automatically for you as you edit.  To do this, run the following command:
 
- - `./packages/sky/sky_tool listen`
+ - `./packages/flutter/sky_tool listen`
 
-This is a long-running command -- just press `ctrl-c` when you want to stop
+This is a long-running command -- just press `Ctrl-C` when you want to stop
 listening for changes to the file system and automatically reloading your app.
 
 Currently `sky_tool listen` only works for Android, but iOS device and iOS

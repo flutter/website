@@ -4,11 +4,11 @@ title: Rendering
 permalink: /rendering/
 ---
 
-The Sky render tree is a low-level layout and painting system based on a
-retained tree of objects that inherit from [`RenderObject`](object.dart). Most
-developers using Sky will not need to interact directly with the rendering tree.
-Instead, most developers should use [Sky widgets](../widgets/README.md), which
-are built using the render tree.
+The Flutter render tree is a low-level layout and painting system based on a
+retained tree of objects that inherit from `RenderObject`. Most
+developers using Flutter will not need to interact directly with the rendering tree.
+Instead, most developers should use [widgets](/tutorial/), which are built using
+the render tree.
 
 Overview
 --------
@@ -16,8 +16,8 @@ Overview
 ### Base Model
 
 The base class for every node in the render tree is
-[`RenderObject`](object.dart), which defines the base layout model. The base
-layout mode is extremely general and can accomodate a large number of more
+`RenderObject`, which defines the base layout model. The base
+layout mode is extremely general and can accommodate a large number of more
 concrete layout models that can co-exist in the same tree. For example, the base
 model does not commit to a fixed number of dimensions or even a cartesian
 coordinate system. In this way, a single render tree can contain render objects
@@ -85,7 +85,7 @@ TODO(ianh): Describe the parent data concept.
 
 The `setupParentData()` method is automatically called for each child
 when the child's parent is changed. However, if you need to
-preinitialise the `parentData` member to set its values before you add
+preinitialize the `parentData` member to set its values before you add
 a node to its parent, you can preemptively call that future parent's
 `setupParentData()` method with the future child as the argument.
 
@@ -103,7 +103,7 @@ not take effect until something else triggers a layout.
 All dimensions are expressed as logical pixel units. Font sizes are
 also in logical pixel units. Logical pixel units are approximately
 96dpi, but the precise value varies based on the hardware, in such a
-way as to optimise for performance and rendering quality while keeping
+way as to optimize for performance and rendering quality while keeping
 interfaces roughly the same size across devices regardless of the
 hardware pixel density.
 
@@ -166,7 +166,7 @@ Writing new subclasses
 
 If you want to define a `RenderObject` that uses a new coordinate
 system, then you should inherit straight from `RenderObject`. Examples
-of doing this can be found in [`RenderBox`](box.dart), which deals in
+of doing this can be found in `RenderBox`, which deals in
 rectangles in cartesian space, and in the [sector_layout.dart
 example](../../example/rendering/sector_layout.dart), which
 implements a toy model based on polar coordinates. The `RenderView`
@@ -175,7 +175,7 @@ rendering framework, is another example.
 
 A subclass of `RenderObject` must fulfill the following contract:
 
-* It must fulfill the [AbstractNode contract](../base/README.md) when
+* It must fulfill the `AbstractNode` contract when
   dealing with children. Using `RenderObjectWithChildMixin` or
   `ContainerRenderObjectMixin` can make this easier.
 
@@ -183,7 +183,7 @@ A subclass of `RenderObject` must fulfill the following contract:
   position information and configuration for the parent's layout,
   should be stored on the `parentData` member; to this effect, a
   ParentData subclass should be defined and the `setupParentData()`
-  method should be overriden to initialise the child's parent data
+  method should be overridden to initialize the child's parent data
   appropriately.
 
 * Layout constraints must be expressed in a Constraints subclass. This
@@ -230,13 +230,13 @@ TODO(ianh): Document how to walk the children.
 
 A `RenderBox` subclass is required to implement the following contract:
 
-* It must fulfill the [AbstractNode contract](../base/README.md) when
+* It must fulfill the `AbstractNode` contract when
   dealing with children. Note that using `RenderObjectWithChildMixin`
   or `ContainerRenderObjectMixin` takes care of this for you, assuming
   you fulfill their contract instead.
 
 * If it has any data to store on its children, it must define a
-  BoxParentData subclass and override setupParentData() to initialise
+  BoxParentData subclass and override setupParentData() to initialize
   the child's parent data appropriately, as in the following example.
   (If the subclass has an opinion about what type its children must
   be, e.g. the way that `RenderBlock` wants its children to be
@@ -279,7 +279,7 @@ A `RenderBox` subclass is required to implement the following contract:
    `performLayout()` function described below.
 
    The `sizedByParent` distinction is purely a performance
-   optimisation. It allows nodes that only set their size based on the
+   optimization. It allows nodes that only set their size based on the
    incoming constraints to skip that logic when they need to be
    re-laid-out, and, more importantly, it allows the layout system to
    treat the node as a _layout boundary_, which reduces the amount of
@@ -334,7 +334,7 @@ A `RenderBox` subclass is required to implement the following contract:
      same number given the same constraints.
 
      In the case of English text, the maximum intrinsic height is the
-     same as the minimum instrinsic height.
+     same as the minimum intrinsic height.
 
 * The box must have a `performLayout()` method that encapsulates the
   layout algorithm that this class represents. It is responsible for
@@ -393,8 +393,8 @@ This can be quite useful in figuring out exactly what is going on when
 working with the render tree.
 
 ```dart
-import 'package:sky/animation.dart';
-import 'package:sky/rendering.dart';
+import 'package:flutter/animation.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   scheduler.addPersistentFrameCallback((_) {

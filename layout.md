@@ -4,7 +4,7 @@ title: Layout
 permalink: /layout/
 ---
 
-In Sky, widgets are rendered by render boxes. Render boxes are given
+In Flutter, widgets are rendered by render boxes. Render boxes are given
 constraints by their parent, and size themselves within those
 constraints. Constraints consist of minimum and maximum widths and
 heights; sizes consist of a specific width and height.
@@ -34,7 +34,7 @@ main example of this is the `App` widget, which is contained by the
 `RenderView` class: the box used by the child returned by the
 application's `build` function is given a constraint that forces it to
 exactly fill the application's content area (typically, the entire
-screen). Many of the boxes in Sky, especially those that just take a
+screen). Many of the boxes in Flutter, especially those that just take a
 single child, will pass their constraint on to their children. This
 means that if you nest a bunch of boxes inside each other at the root
 of your application's render tree, they'll all exactly fit in each

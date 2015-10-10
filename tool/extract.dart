@@ -75,7 +75,7 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
   String source = '// Extracted from ${filename}, line ${startLine}.\n';
 
   if (!hasImport) {
-    source += "import 'package:sky/material.dart';\n";
+    source += "import 'package:flutter/material.dart';\n";
     adjust++;
   }
 
