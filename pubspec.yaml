@@ -1,2 +1,5 @@
 name: flutter_github_io
 version: 0.0.1
+dev_dependencies:
+  path: any
+  sky: any

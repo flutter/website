@@ -1,5 +1,9 @@
 _site
 .sass-cache
+
+# Dart ignores.
 .packages
+.pub/
 pubspec.lock
 packages
+example/*.dart
