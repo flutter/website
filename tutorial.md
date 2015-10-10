@@ -4,6 +4,7 @@ title: Flutter Tutorial
 nav_title: Tutorial
 permalink: /tutorial/
 ---
+
 Flutter widgets are built using a functional-reactive framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of components. Components describe what their view

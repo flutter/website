@@ -4,6 +4,7 @@ title: Widget Gallery
 nav_title: Widgets
 permalink: /widgets/
 ---
+
 This page describes the widgets available in Flutter. These widgets are
 general-purpose and don't offer an opinion about the visual style of your app.
 
@@ -39,7 +40,7 @@ The direction along which the widgets are laid out is called the
 *main* direction and the other axis is called the *cross* direction.
 These flex widgets size themselves to the maximum size permitted by
 its parent, unless that would be infinite size, in which case they
-shrink-wrap their children. For details, see [flex.md](flex.md).
+shrink-wrap their children. For details, see [layout](layout/#flex).
 
 Each child of a flex widget is either *flexible* or *inflexible*.
 The flex first lays out its inflexible children and subtracts their

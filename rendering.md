@@ -3,6 +3,7 @@ layout: page
 title: Rendering
 permalink: /rendering/
 ---
+
 The Sky render tree is a low-level layout and painting system based on a
 retained tree of objects that inherit from [`RenderObject`](object.dart). Most
 developers using Sky will not need to interact directly with the rendering tree.

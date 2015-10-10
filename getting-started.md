@@ -23,6 +23,7 @@ Once you have installed Dart SDK, create a new directory and add a
 name: your_app_name
 dependencies:
   sky: any
+dev_dependencies:
   sky_tools: any
 ```
 
@@ -65,7 +66,7 @@ of the Android operating system.
    device, authorize your computer to access your device.
 
 Running a Flutter application
--------------------------
+-----------------------------
 
 The `sky` pub package includes a `sky_tool` script to assist in running Flutter
 applications inside the `SkyShell.apk` harness.  The `sky_tool` script expects
