@@ -243,6 +243,7 @@ A `RenderBox` subclass is required to implement the following contract:
   `RenderBox` nodes, then change the `setupParentData()` signature
   accordingly, to catch misuse of the method.)
 
+<!-- skip -->
 ```dart
   class FooParentData extends BoxParentData { ... }
 
@@ -395,7 +396,9 @@ working with the render tree.
 import 'package:sky/animation.dart';
 import 'package:sky/rendering.dart';
 
-scheduler.addPersistentFrameCallback((_) {
-  SkyBinding.instance.debugDumpRenderTree();
-});
+void main() {
+  scheduler.addPersistentFrameCallback((_) {
+    FlutterBinding.instance.debugDumpRenderTree();
+  });
+}
 ```

@@ -40,7 +40,7 @@ The direction along which the widgets are laid out is called the
 *main* direction and the other axis is called the *cross* direction.
 These flex widgets size themselves to the maximum size permitted by
 its parent, unless that would be infinite size, in which case they
-shrink-wrap their children. For details, see [layout](layout/#flex).
+shrink-wrap their children. For details, see [layout](../layout/#flex).
 
 Each child of a flex widget is either *flexible* or *inflexible*.
 The flex first lays out its inflexible children and subtracts their
