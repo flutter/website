@@ -16,34 +16,31 @@ To get started, we need to set up Dart SDK:
    - Windows: Stay tuned, Windows support is in the works.
  - Ensure that the `dart` and `pub` executables are on your `PATH`.
 
-Once you have installed Dart SDK, create a new directory and add a
-[pubspec.yaml](https://www.dartlang.org/tools/pub/pubspec.html):
+Once you have installed Dart SDK, activate the `flutter` command line
+tool and add it to your path:
 
-```yaml
-name: your_app_name
-dependencies:
-  flutter: any
-dev_dependencies:
-  sky_tools: any
+```
+$ pub global activate flutter
+$ export PATH=$HOME/.pub-cache/bin:$PATH
 ```
 
-Next, create a `lib` directory (which is where your Dart code will go) and use
-the `pub` tool to fetch the Flutter package and its dependencies:
+Now we can use the `flutter` command to create a project named `my_app`:
 
- - `mkdir lib`
- - `pub upgrade`
-
-Flutter assumes the entry point for your application is a `main` function in
-`lib/main.dart`:
-
-```dart
-import 'package:flutter/material.dart';
-void main() => runApp(new Center(child: new Text('Hello, world!')));
+```
+$ flutter init -o my_app
 ```
 
-Execution starts in `main`, which in this example shows the text "Hello, world!"
-centered on the screen. To learn more about the widget system, please see the
-[widgets tutorial](/tutorial/).
+This command creates a `my_app` directory that contains a simple demo
+app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+
+The code for your app is in `my_app/lib/main.dart`. Execution starts in
+the `main` function, which uses `runApp` to run a `MaterialApp` widget.
+The `MaterialApp` widget is configured with a route map, with one entry
+for every screen of your app. In this case, there's only one screen, the
+home screen named `/`, which builds a `FlutterDemo` component.
+
+To learn more about how to build apps with Flutter, please see the
+[tutorial](/tutorial/).
 
 Setting up your Android device
 -------------------------
