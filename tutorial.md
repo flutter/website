@@ -4,6 +4,7 @@ title: Flutter Tutorial
 nav_title: Tutorial
 permalink: /tutorial/
 ---
+
 Flutter widgets are built using a functional-reactive framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of components. Components describe what their view
@@ -91,6 +92,7 @@ ratio in which they consume the available space using the `flex` argument to
 To use this component, we simply create an instance of `MyToolBar` in a `build`
 function:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -132,8 +134,8 @@ input. The first step in building an interactive application is to detect
 input gestures. Let's see how that works by creating a simple button:
 
 ```dart
-import 'package:flutter/painting.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 final BoxDecoration _decoration = new BoxDecoration(
   borderRadius: 5.0,
@@ -185,6 +187,8 @@ class MyButton extends StatelessComponent {
   final Widget child;
   final Function onPressed;
 
+  BoxDecoration _decoration;
+
   Widget build(BuildContext context) {
     return new GestureDetector(
       onTap: onPressed,
@@ -205,6 +209,11 @@ uses `MyButton` provide an arbitrary `Widget` to put inside the button. For
 example, we can put an elaborate layout involving text and an image inside the
 button:
 
+<!--
+class MyButton extends IconButton {
+
+}
+-->
 ```dart
   Widget build(BuildContext context) {
     return new MyButton(
@@ -237,6 +246,11 @@ a checkbox. While the dialog is open, the user might check and uncheck the
 checkbox several times before closing the dialog and committing the final value
 of the checkbox to the underlying application data model.
 
+<!--
+class MyButton extends IconButton {
+  MyButton({onPressed}) : super(onPressed: onPressed);
+}
+-->
 ```dart
 class MyCheckbox extends StatelessComponent {
   MyCheckbox({ this.value, this.onChanged });
@@ -247,7 +261,7 @@ class MyCheckbox extends StatelessComponent {
   Widget build(BuildContext context) {
     Color color = value ? const Color(0xFF00FF00) : const Color(0xFF0000FF);
     return new GestureDetector(
-      onTap: () { onChanged(!value) },
+      onTap: () { onChanged(!value); },
       child: new Container(
         height: 25.0,
         width: 25.0,
@@ -381,12 +395,21 @@ only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget. Consider the
 following example:
 
+<!--
+class MyDialog extends StatefulComponent {
+  State createState() => null;
+}
+
+class MyButton extends IconButton {
+  MyButton({onPressed}) : super(onPressed: onPressed);
+}
+-->
 ```dart
 class MyComponentState extends State<MyDialog> {
   GlobalKey _scrollable = new GlobalKey();
 
   Widget build(BuildContext context) {
-    return Column([
+    return new Column([
       new MyButton(
         onPressed: () {
           (_scrollable.currentState as ScrollableState).scrollBy(10.0);
@@ -402,7 +425,7 @@ class MyComponentState extends State<MyDialog> {
             child: new Center(child: new Text('$i'))
           );
         }
-      );
+      )
     ]);
   }
 }
@@ -425,6 +448,7 @@ This can be quite useful in figuring out exactly what is going on when
 working with the widgets system. For this to work, you have to have
 launched your app with `runApp()`.
 
+<!-- skip -->
 ```dart
 debugDumpApp();
 ```

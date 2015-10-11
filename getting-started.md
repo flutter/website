@@ -23,6 +23,7 @@ Once you have installed Dart SDK, create a new directory and add a
 name: your_app_name
 dependencies:
   flutter: any
+dev_dependencies:
   sky_tools: any
 ```
 
@@ -36,7 +37,7 @@ Flutter assumes the entry point for your application is a `main` function in
 `lib/main.dart`:
 
 ```dart
-import 'package:flutter/materal.dart';
+import 'package:flutter/material.dart';
 void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
@@ -65,7 +66,7 @@ of the Android operating system.
    device, authorize your computer to access your device.
 
 Running a Flutter application
--------------------------
+-----------------------------
 
 Flutter includes a `sky_tool` script to assist in running Flutter applications
 inside the development environment.  The `sky_tool` script expects

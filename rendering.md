@@ -3,11 +3,12 @@ layout: page
 title: Rendering
 permalink: /rendering/
 ---
+
 The Flutter render tree is a low-level layout and painting system based on a
 retained tree of objects that inherit from `RenderObject`. Most
 developers using Flutter will not need to interact directly with the rendering tree.
 Instead, most developers should use [widgets](/tutorial/), which are built using
- the render tree.
+the render tree.
 
 Overview
 --------
@@ -242,6 +243,7 @@ A `RenderBox` subclass is required to implement the following contract:
   `RenderBox` nodes, then change the `setupParentData()` signature
   accordingly, to catch misuse of the method.)
 
+<!-- skip -->
 ```dart
   class FooParentData extends BoxParentData { ... }
 
@@ -394,7 +396,9 @@ working with the render tree.
 import 'package:flutter/animation.dart';
 import 'package:flutter/rendering.dart';
 
-scheduler.addPersistentFrameCallback((_) {
-  FlutterBinding.instance.debugDumpRenderTree();
-});
+void main() {
+  scheduler.addPersistentFrameCallback((_) {
+    FlutterBinding.instance.debugDumpRenderTree();
+  });
+}
 ```
