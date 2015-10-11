@@ -2,6 +2,8 @@
 
 Designed to run in GitHub pages.
 
+[![Build Status](https://travis-ci.org/flutter/flutter.github.io.svg?branch=master)](https://travis-ci.org/flutter/flutter.github.io)
+
 ## Developing
 
 Install Jekyll and related tools by following the
@@ -15,3 +17,16 @@ A tldr version follows:
 * Create a branch.
 * Make your changes.
 * To test your changes, run `bundle exec jekyll serve`
+
+## Code Snippet Validation
+
+The code snippets in the markdown documentation are validated as part of the
+build process. Anything within a '\`\`\`dart' code fence will be extracted into
+its own file and checked for analysis issues. Some ways to tweak that:
+
+- if a code snippet should not be analyzed, immediately proceed it with a
+  comment (`<!-- skip -->`)
+- to include code to be analyzed, but not displayed, add that in a comment
+  immediately proceeding the snippet (`<!-- someCodeHere(); -->`)
+- a snippet without any import statements will have an
+  `import 'package:flutter/material.dart';` automatically added to it
