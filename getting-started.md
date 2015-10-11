@@ -14,7 +14,7 @@ To get started, we need to set up Dart SDK:
    - Mac: `brew tap dart-lang/dart && brew install dart --devel`
    - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
    - Windows: Stay tuned, Windows support is in the works.
- - Ensure that the `dart` and `pub` executables are on your `PATH`.
+ - Ensure that the `pub` executable is in your `PATH`.
 
 Once you have installed Dart SDK, activate the `flutter` command line
 tool and add it to your path:
