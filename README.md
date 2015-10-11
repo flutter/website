@@ -24,9 +24,8 @@ The code snippets in the markdown documentation are validated as part of the
 build process. Anything within a '\`\`\`dart' code fence will be extracted into
 its own file and checked for analysis issues. Some ways to tweak that:
 
-- if a code snippet should not be analyzed, immediately proceed it with a
-  comment (`<!-- skip -->`)
+- if a code snippet should not be analyzed, immediately proceed it with a `<!-- skip -->` comment
 - to include code to be analyzed, but not displayed, add that in a comment
-  immediately proceeding the snippet (`<!-- someCodeHere(); -->`)
-- a snippet without any import statements will have an
-  `import 'package:flutter/material.dart';` automatically added to it
+  immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
+- a snippet without any import statements will have an `import 'package:flutter/material.dart';`
+  automatically added to it
