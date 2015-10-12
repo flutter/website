@@ -65,48 +65,33 @@ of the Android operating system.
 Running a Flutter application
 -----------------------------
 
-Flutter includes a `sky_tool` script to assist in running Flutter applications
-inside the development environment.  The `sky_tool` script expects
-to be run from the root directory of your application's package (i.e., the same
-directory that contains the `pubspec.yaml` file).
+You can use the `flutter` command to run Flutter apps on your devices. First,
+change directories to the root of your apps (i.e., the same directory that
+contains the `pubspec.yaml` file).
 
-To run your app with logging, run this command:
+To start your app, use the `start` command:
 
- - `./packages/flutter/sky_tool start --checked && ./packages/flutter/sky_tool logs`
+```
+$ flutter start --checked
+$ flutter logs
+```
 
-The `sky_tool start` command starts the dev server and uploads your app to the
-device, installing the development APK if needed. The `--checked` flag triggers
-checked mode, in which types are checked and asserts are run. The
-`sky_tool logs` command logs errors and Dart `print()` output
-from the app, automatically limiting the output to just output from the Dart
-code and the C++ code (which for historical reasons currently uses the tag
-`chromium`.)
+The `--checked` flag turns on type checking and asserts, both of which are quite
+useful during development. The `logs` command lets you see textual output from
+your app, including `print` statements and unhandled exceptions. To avoid confusion
+from old log messages, you might want to use `flutter logs --clear` to clear the
+logs between runs.
 
-To avoid confusion from old log messages, you may wish to call
-`sky_tool logs --clear` before calling `sky_tool start`, to clear the log
-between runs.
-
-Rapid iteration
----------------
-
-As an alternative to running `./packages/flutter/sky_tool start` every time you make
-a change, you might prefer to have the the development environment reload your
-app automatically for you as you edit.  To do this, run the following command:
-
- - `./packages/flutter/sky_tool listen`
-
-This is a long-running command -- just press `Ctrl-C` when you want to stop
-listening for changes to the file system and automatically reloading your app.
-
-Currently `sky_tool listen` only works for Android, but iOS device and iOS
-simulator support are coming soon.
+To improve your iteration speed, you can use `flutter listen --checked` instead
+of `flutter start`. The `listen` command watches the file system and automatically
+reloads your app whenever you make a change to its code.
 
 Debugging
 ---------
 
 Flutter uses [Observatory](https://www.dartlang.org/tools/observatory/) for
-debugging and profiling. While running your Flutter app using `sky_tool`, you can
-access Observatory by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
+debugging and profiling. While running your app, you can access Observatory
+by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
 
 Building a standalone APK
 -------------------------
