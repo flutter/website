@@ -398,7 +398,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   scheduler.addPersistentFrameCallback((_) {
-    FlutterBinding.instance.debugDumpRenderTree();
+    debugDumpRenderTree();
   });
 }
 ```
