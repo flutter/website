@@ -217,7 +217,7 @@ class MyButton extends IconButton {
 ```dart
   Widget build(BuildContext context) {
     return new MyButton(
-      child: new ShrinkWrapWidth(
+      child: new IntrinsicWidth(
         child: new Row([
           new NetworkImage(src: 'thumbs-up.png', width: 25.0, height: 25.0),
           new Container(
