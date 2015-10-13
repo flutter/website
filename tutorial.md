@@ -210,8 +210,8 @@ example, we can put an elaborate layout involving text and an image inside the
 button:
 
 <!--
-class MyButton extends IconButton {
-
+class MyButton extends FloatingActionButton {
+  MyButton({Widget child}) : super(child: child);
 }
 -->
 ```dart
@@ -247,8 +247,13 @@ checkbox several times before closing the dialog and committing the final value
 of the checkbox to the underlying application data model.
 
 <!--
-class MyButton extends IconButton {
-  MyButton({onPressed}) : super(onPressed: onPressed);
+import 'package:flutter/gestures.dart';
+
+class MyButton extends FloatingActionButton {
+  MyButton({
+    Widget child,
+    GestureTapCallback onPressed
+  }) : super(child: child, onPressed: onPressed);
 }
 -->
 ```dart
@@ -396,12 +401,17 @@ can be used to retrieve the state associated with a widget. Consider the
 following example:
 
 <!--
+import 'package:flutter/gestures.dart';
+
 class MyDialog extends StatefulComponent {
   State createState() => null;
 }
 
-class MyButton extends IconButton {
-  MyButton({onPressed}) : super(onPressed: onPressed);
+class MyButton extends FloatingActionButton {
+  MyButton({
+    Widget child,
+    GestureTapCallback onPressed
+  }) : super(child: child, onPressed: onPressed);
 }
 -->
 ```dart
@@ -443,12 +453,10 @@ around in the widget tree.
 Useful debugging tools
 ----------------------
 
-This is a quick way to dump the entire widget tree to the console.
-This can be quite useful in figuring out exactly what is going on when
-working with the widgets system. For this to work, you have to have
-launched your app with `runApp()`.
+This is a quick way to dump the entire widget tree to the console. This can be
+quite useful in figuring out exactly what is going on when working with the
+widgets system.
 
-<!-- skip -->
 ```dart
-debugDumpApp();
+void dumpWidgetTree() => debugDumpApp();
 ```
