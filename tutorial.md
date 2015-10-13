@@ -457,6 +457,6 @@ This is a quick way to dump the entire widget tree to the console. This can be
 quite useful in figuring out exactly what is going on when working with the
 widgets system.
 
-```dart
-void dumpWidgetTree() => debugDumpApp();
+```
+debugDumpApp();
 ```
