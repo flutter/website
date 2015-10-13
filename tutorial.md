@@ -211,7 +211,7 @@ button:
 
 <!--
 class MyButton extends IconButton {
-
+  MyButton({ Key key, Widget child }) : super(key: key, child: child);
 }
 -->
 ```dart
@@ -248,7 +248,11 @@ of the checkbox to the underlying application data model.
 
 <!--
 class MyButton extends IconButton {
-  MyButton({onPressed}) : super(onPressed: onPressed);
+  MyButton({
+    Key key,
+    Widget child,
+    GestureTapCallback onPressed
+  }) : super(key: key, child: child, onPressed: onPressed);
 }
 -->
 ```dart
@@ -401,7 +405,11 @@ class MyDialog extends StatefulComponent {
 }
 
 class MyButton extends IconButton {
-  MyButton({onPressed}) : super(onPressed: onPressed);
+  MyButton({
+    Key key,
+    Widget child,
+    GestureTapCallback onPressed
+  }) : super(key: key, child: child, onPressed: onPressed);
 }
 -->
 ```dart
@@ -445,10 +453,8 @@ Useful debugging tools
 
 This is a quick way to dump the entire widget tree to the console.
 This can be quite useful in figuring out exactly what is going on when
-working with the widgets system. For this to work, you have to have
-launched your app with `runApp()`.
+working with the widgets system.
 
-<!-- skip -->
 ```dart
 debugDumpApp();
 ```
