@@ -14,3 +14,4 @@ Next steps:
  - [Tutorial introduction](tutorial)
  - [Widget gallery](widgets)
  - [API documentation](https://domokit.github.io/docs/sky/)
+ - [Architecture diagrams](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
