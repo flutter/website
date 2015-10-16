@@ -16,7 +16,8 @@ A tldr version follows:
   installed, and then run `bundle install`
 * Create a branch.
 * Make your changes.
-* To test your changes, run `bundle exec jekyll serve`
+* To test your changes, run `bundle exec jekyll serve` (or
+  `jekyll serve -w --force_polling`)
 
 ## Code Snippet Validation
 
@@ -27,5 +28,5 @@ its own file and checked for analysis issues. Some ways to tweak that:
 - if a code snippet should not be analyzed, immediately proceed it with a `<!-- skip -->` comment
 - to include code to be analyzed, but not displayed, add that in a comment
   immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- a snippet without any import statements will have an `import 'package:flutter/material.dart';`
+- a snippet without any import statements will have an import (`'package:flutter/material.dart'`)
   automatically added to it
