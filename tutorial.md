@@ -92,14 +92,13 @@ ratio in which they consume the available space using the `flex` argument to
 To use this component, we simply create an instance of `MyToolBar` in a `build`
 function:
 
-<!-- skip -->
+<!--
+class MyToolBar extends ToolBar {
+}
+-->
 ```dart
-import 'package:flutter/material.dart';
-
-import 'my_tool_bar.dart';
-
-class DemoHome extends StatelessComponent {
-  Widget build() {
+class TutorialHome extends StatelessComponent {
+  Widget build(BuildContext context) {
     return new Center(child: new MyToolBar());
   }
 }
@@ -108,7 +107,7 @@ void main() {
   runApp(new MaterialApp(
     title: 'Tutorial app',
     routes: {
-      '/', (NavigatorState navigator, Route route) => new DemoHome();
+      '/': (RouteArguments args) => new TutorialHome()
     }
   ));
 }
