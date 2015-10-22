@@ -145,9 +145,9 @@ class TutorialHome extends StatelessComponent {
   Widget build(BuildContext context)  {
     return new Scaffold(
       toolBar: new ToolBar(
-        left: new IconButton(icon: "navigation/menu"),
+        left: new IconButton(icon: 'navigation/menu'),
         center: new Text('Example title'),
-        right: [ new IconButton(icon: "action/search") ]
+        right: [ new IconButton(icon: 'action/search') ]
       ),
       body: new Center(
         child: new Text('Hello, world!')
@@ -223,8 +223,208 @@ variables. When a component is asked to `build`, it uses these stored values to
 derive new arguments for the widgets it creates. In this way, state naturally
 flows "down" the component hierarchy.
 
-Some components, however, have mutable state that represents the transient state
-of that part of the user interface. For example, consider a dialog widget with
-a checkbox. While the dialog is open, the user might check and uncheck the
-checkbox several times before closing the dialog and committing the final value
-of the checkbox to the underlying application data model.
+Change notifications, in contrast, flow "up" the component hierarchy by way of
+callbacks. For example, consider the `ShoppingListItem` widget below:
+
+```dart
+class Product {
+  const Product({ this.name });
+  final String name;
+}
+
+typedef void CartChangedCallback(Product product, bool inCart);
+
+class ShoppingListItem extends StatelessComponent {
+  ShoppingListItem({ Product product, this.inCart, this.onCartChanged })
+    : product = product, super(key: new ObjectKey(product));
+
+  final Product product;
+  final bool inCart;
+  final CartChangedCallback onCartChanged;
+
+  Color _getColor(BuildContext context) {
+    return inCart ? Colors.black54 : Theme.of(context).primaryColor;
+  }
+
+  TextStyle _getTextStyle(BuildContext context) {
+    if (inCart) {
+      return DefaultTextStyle.of(context).copyWith(
+          color: Colors.black54, decoration: lineThrough);
+    }
+    return null;
+  }
+
+  Widget build(BuildContext context) {
+    return new ListItem(
+      onTap: () => onCartChanged(product, !inCart),
+      left: new CircleAvatar(
+        backgroundColor: _getColor(context),
+        label: product.name[0]
+      ),
+      center: new Text(product.name, style: _getTextStyle(context))
+    );
+  }
+}
+```
+
+The `ShoppingListItem` component follows a common pattern for stateless
+components. It stores the values it receives in its constructor in `final`
+member variables, which it then uses during its `build` function. For example,
+the `inCart` boolean to toggle between two visual appearances: one that uses the
+primary color from the current theme and another that uses gray.
+
+When the user taps the list item, the component doesn't modify its `inCart`
+value directly. Instead, the component calls the `onCartChanged` function it
+received from its parent component. This pattern lets you store state higher in
+the component hierarchy, which causes the state to persist for longer periods of
+time. In the extreme, the state stored on the component passed to `runApp`
+persists for the lifetime of the application.
+
+When the parent receives the `onCartChanged` callback, the parent will update
+its internal state, which will trigger the parent to rebuild and create a new
+instance of `ShoppingListItem` with the new `inCart` value. Although the parent
+creates a new instance of `ShoppingListItem` when it rebuilds, that operation is
+cheap because the framework compares the newly built widgets with the previously
+built widgets and applies only the differences to the underlying render objects.
+
+Let's look at an example parent widget that stores mutable state:
+
+<!--
+class Product {
+  const Product({ this.name });
+  final String name;
+}
+
+class ShoppingListItem extends StatelessComponent {
+  ShoppingListItem({ Product product, bool inCart, Function onCartChanged });
+  Widget build(BuildContext context) => null;
+}
+-->
+```dart
+class ShoppingList extends StatefulComponent {
+  ShoppingList({ Key key, this.products }) : super(key: key);
+
+  final List<Product> products;
+
+  _ShoppingListState createState() => new _ShoppingListState();
+}
+
+class _ShoppingListState extends State<ShoppingList> {
+  Set<Product> _shoppingCart = new Set<Product>();
+
+  void _handleCartChanged(Product product, bool inCart) {
+    setState(() {
+      if (inCart)
+        _shoppingCart.add(product);
+      else
+        _shoppingCart.remove(product);
+    });
+  }
+
+  Widget build(BuildContext context)  {
+    return new Scaffold(
+      toolBar: new ToolBar(
+        center: new Text('Shopping List')
+      ),
+      body: new Material(
+        child: new MaterialList<Product>(
+          type: MaterialListType.oneLineWithAvatar,
+          items: config.products,
+          itemBuilder: (BuildContext context, Product product) {
+            return new ShoppingListItem(
+              product: product,
+              inCart: _shoppingCart.contains(product),
+              onCartChanged: _handleCartChanged
+            );
+          }
+        )
+      )
+    );
+  }
+}
+```
+
+The `ShoppingList` class extends `StatefulComponent`, which means this component
+stores mutable state. When the `ShoppingList` component is first inserted into
+the tree, the framework calls the `createState` function to create a fresh
+instance of `_ShoppingListState` to associate with that location in the tree.
+(Notice that we typically name subclasses of `State` with leading underscores to
+indicate that they are private implementation details.) When this component's
+parent rebuilds, the parent will create a new instance of `ShoppingList`, but
+the framework will reuse the `_ShoppingListState` instance that is already in
+the tree rather than calling `createState` again.
+
+To access properties of the current `ShoppingList`, the `_ShoppingListState` can
+use its `config` property. If the parent rebuilds and creates a new
+`ShoppingList`, the `_ShoppingListState` will also rebuild with the new `config`
+value. If you wish to be notified when the `config` property changes, you can
+override the `didUpdateConfig` function, which is passed the `oldConfig` to let
+you compare the old configuration with the current `config`.
+
+When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
+internal state by either adding or removing a product from `_shoppingCart`. To
+signal to the framework that it changes its internal state, it wraps those calls
+in a `setState` call. Calling `setState` marks this component as dirty and
+schedules it to be rebuilt the next time your app needs to update the screen. If
+you forget to call `setState` when modifying the internal state of a component,
+the framework won't know your component is dirty and might not call the
+component's `build` function, which means the user interface might not update to
+reflect the changed state.
+
+By managing state in this way, you don't need to write separate code for
+creating and updating subcomponents. Instead, you simply implement the build
+function, which handles both situations.
+
+initState and dispose
+---------------------
+
+After calling `createState` on the StatefulComponent, the framework inserts the
+new state object into the tree and then calls `initState` on the state object.
+A subclass of `State` can override `initState` to do work that needs to happen
+just once. For example, you can override `initState` to configure animations or
+to subscribe to platform services. Implementations of `initState` are required
+to start by calling `super.initState`.
+
+When a state object is no longer needed, the framework calls `dispose` on the
+state object. You can override the `dispose` function to do cleanup work. For
+example, you can override `dispose` to cancel timers or to unsubscribe from
+platform services. Implementations of `dispose` typically end by calling
+`super.dispose`.
+
+Keys
+----
+
+You can use keys to control which widgets the framework with match up with which
+other widgets when a component rebuilds. By default, the framework matches
+widgets in the current and previous build according to their `runtimeType` and
+the order in which they appear. With keys, the framework requires that the two
+widgets have the same `key` as well as the same `runtimeType`.
+
+Keys are most useful in components that build many instances of the same type of
+widget. For example, the `ShoppingList` component, which builds just enough
+`ShoppingListItem` instances to fill its visible region:
+
+ * Without keys, the first entry in the current build would always sync with the
+   first entry in the previous build, even if, semantically, the first entry in
+   the list just scrolled off screen and is no longer visible in the viewport.
+
+ * By assigning each entry in the list a "semantic" key, the infinite list can
+   be more efficient because the framework will sync entries with matching
+   semantic keys and therefore similar (or identical) visual appearances.
+   Moreover, syncing the entries semantically means that state retained in
+   stateful subcomponents will remain attached to the same semantic entry rather
+   than the entry in the same numerical position in the viewport.
+
+Global Keys
+-----------
+
+You can use global keys to uniquely identify child widgets. Global keys must be
+globally unique across the entire widget hierarchy, unlike local keys which need
+only be unique among siblings. Because they are globally unique, a global key
+can be used to retrieve the state associated with a widget.
+
+Some widgets, such as `Input` require global keys because they can hold focus,
+which means they receive any text the user enters into the app. The `Focus`
+widget keeps track of which `InputState` object is focused by remembering its
+`GlobalKey`. That way the same `Input` widget remains focused even if it moves
+around in the widget tree.
