@@ -326,21 +326,34 @@ class _ShoppingListState extends State<ShoppingList> {
       toolBar: new ToolBar(
         center: new Text('Shopping List')
       ),
-      body: new Material(
-        child: new MaterialList<Product>(
-          type: MaterialListType.oneLineWithAvatar,
-          items: config.products,
-          itemBuilder: (BuildContext context, Product product) {
-            return new ShoppingListItem(
-              product: product,
-              inCart: _shoppingCart.contains(product),
-              onCartChanged: _handleCartChanged
-            );
-          }
-        )
+      body: new MaterialList<Product>(
+        type: MaterialListType.oneLineWithAvatar,
+        items: config.products,
+        itemBuilder: (BuildContext context, Product product) {
+          return new ShoppingListItem(
+            product: product,
+            inCart: _shoppingCart.contains(product),
+            onCartChanged: _handleCartChanged
+          );
+        }
       )
     );
   }
+}
+
+void main() {
+  runApp(new MaterialApp(
+    title: 'Shopping List',
+    routes: {
+      '/': (RouteArguments args) => new ShoppingList(
+        products: [
+          new Product(name: 'Eggs'),
+          new Product(name: 'Flour'),
+          new Product(name: 'Chocolate chips'),
+        ]
+      )
+    }
+  ));
 }
 ```
 
