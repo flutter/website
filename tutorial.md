@@ -160,7 +160,7 @@ class TutorialHome extends StatelessComponent {
         child: new Text('Hello, world!')
       ),
       floatingActionButton: new FloatingActionButton(
-        child: new Icon(type: 'content/add', size: 24)
+        child: new Icon(type: 'content/add')
       )
     );
   }
