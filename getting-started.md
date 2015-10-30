@@ -55,7 +55,7 @@ of the Android operating system.
       you might need to [install the Android SDK manually](https://developer.android.com/sdk/installing/index.html?pkg=tools]).
 
  - Enable developer mode on your device by visiting `Settings > About phone` and
-   tapping the `Build number` field five times.
+   tapping the `Build number` field seven times.
 
  - Enable `Android debugging` in `Settings > Developer options`.
 
