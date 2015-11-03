@@ -61,7 +61,7 @@ very commonly used:
    padding, and constraints applied to its size. In addition, a `Container` can
    be transformed in three dimensional space using a matrix.
 
-Below are some simple component that combines these and other widgets:
+Below are some simple components that combine these and other widgets:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -160,7 +160,7 @@ class TutorialHome extends StatelessComponent {
         child: new Text('Hello, world!')
       ),
       floatingActionButton: new FloatingActionButton(
-        child: new Icon(type: 'content/add')
+        child: new Icon(icon: 'content/add')
       )
     );
   }
@@ -218,20 +218,126 @@ message to the console. You can use `GestureDetector` to detect a variety of
 input gestures, including taps, drags, and scales.
 
 Many components use a `GestureDetector` to provide optional callbacks for other
-components. For example, the `IconButton` and `FloatingActionButton` components
-have `onPressed` callbacks that are triggered when the user taps the widget.
+components. For example, the `IconButton`, `RaisedButton`, and
+`FloatingActionButton` components have `onPressed` callbacks that are triggered
+when the user taps the widget.
 
-State
------
+Managing State
+--------------
 
-Thus far, we've used mostly stateless components. Stateless components receive
+Thus far, we've used only stateless components. Stateless components receive
 arguments from their parent component, which they store in `final` member
 variables. When a component is asked to `build`, it uses these stored values to
-derive new arguments for the widgets it creates. In this way, state naturally
-flows "down" the component hierarchy.
+derive new arguments for the widgets it creates.
 
-Change notifications, in contrast, flow "up" the component hierarchy by way of
-callbacks. For example, consider the `ShoppingListItem` widget below:
+In order to build more complex experiences, however - for example, to react
+in more interesting ways to user input - applications will typically carry some
+state. Flutter uses StatefulComponents to capture this idea. StatefulComponents
+are special widgets that know how to generate State objects, which are then
+used to hold state. Consider this basic example, using the `RaisedButton`
+mentioned earlier:
+
+```dart
+class Counter extends StatefulComponent {
+  Counter({ Key key }) : super(key: key);
+  _CounterState createState() => new _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _count = 0;
+
+  void _increment() {
+    setState(() { ++_count; });
+  }
+
+  Widget build(BuildContext context) {
+    return new Row([
+      new RaisedButton(
+        onPressed: _increment,
+        child: new Text('Increment')
+      ),
+      new Text('Count: $_count')
+    ]);
+  }
+}
+```
+
+You might wonder why StatefulComponent and State are separate objects. In
+Flutter, these two types of objects have different life cycles. Widgets are
+temporary objects, used to construct a presentation of the application in its
+current state. State objects on the other hand are persistent between calls to
+`build()`, allowing them to remember information.
+
+The example above accepts user input and directly uses the result in its
+build method.  In more complex applications, different parts of the widget
+hierarchy might be responsible for different concerns; for example, one
+component might present a complex user interface with the goal of gathering
+specific information, such as a date or location, while another component might
+use that information to change the overall presentation.
+
+In Flutter, change notifications flow "up" the component heirarchy by way of
+callbacks, while current state flows "down" to the stateless components that do
+presentation. The common parent that redirects this flow is the State. Let's
+see how that works in practice, with this slightly more complex example:
+
+
+```dart
+class CounterDisplay extends StatelessComponent {
+  CounterDisplay({ Key key, this.count }) : super(key: key);
+  final int count;
+  Widget build(BuildContext context) {
+    return new Text('Count: $count');
+  }
+}
+
+class CounterIncrementor extends StatelessComponent {
+  CounterIncrementor({ Key key, this.onPressed }) : super(key: key);
+  final VoidCallback onPressed;
+  Widget build(BuildContext context) {
+    return new RaisedButton(
+      onPressed: onPressed,
+      child: new Text('Increment')
+    );
+  }
+}
+
+class Counter extends StatefulComponent {
+  Counter({ Key key }) : super(key: key);
+  _CounterState createState() => new _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _count = 0;
+
+  void _increment() {
+    setState(() { ++_count; });
+  }
+
+  Widget build(BuildContext context) {
+    return new Row([
+      new CounterIncrementor(
+        onPressed: _increment
+      ),
+      new CounterDisplay(count: _count)
+    ]);
+  }
+}
+```
+
+Notice how Counter now delegates responsibility for incrementing and displaying
+the counter value down to CounterIncrementor and CounterDisplay, respectively.
+Although the net result is the same as the previous example, the delegation of
+responsibility allows greater complexity to be encapsulated in the delegated
+components, while maintaining simplicity in the parent.
+
+Bringing it All Together
+------------------------
+
+Let's consider a more complete example that brings together the concepts
+introduced above. We'll work with a hypothetical shopping application, which
+displays various products offered for sale and maintains a shopping cart for
+intended purchases. Let's start by defining our presentation class,
+`ShoppingListItem`:
 
 ```dart
 class Product {
