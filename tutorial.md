@@ -160,7 +160,7 @@ class TutorialHome extends StatelessComponent {
         child: new Text('Hello, world!')
       ),
       floatingActionButton: new FloatingActionButton(
-        child: new Icon(type: 'content/add')
+        child: new Icon(icon: 'content/add')
       )
     );
   }
@@ -237,7 +237,7 @@ are special widgets that know how to generate State objects, which are then
 used to hold state. Consider this basic example, using the `RaisedButton`
 mentioned earlier:
 
-```
+```dart
 class Counter extends StatefulComponent {
   Counter({ Key key }) : super(key: key);
   _CounterState createState() => new _CounterState();
@@ -281,7 +281,7 @@ presentation. The common parent that redirects this flow is the State. Let's
 see how that works in practice, with this slightly more complex example:
 
 
-```
+```dart
 class CounterDisplay extends StatelessComponent {
   CounterDisplay({ Key key, this.count }) : super(key: key);
   final int count;
