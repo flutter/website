@@ -239,7 +239,6 @@ mentioned earlier:
 
 ```dart
 class Counter extends StatefulComponent {
-  Counter({ Key key }) : super(key: key);
   _CounterState createState() => new _CounterState();
 }
 
@@ -283,7 +282,7 @@ see how that works in practice, with this slightly more complex example:
 
 ```dart
 class CounterDisplay extends StatelessComponent {
-  CounterDisplay({ Key key, this.count }) : super(key: key);
+  CounterDisplay({ this.count });
   final int count;
   Widget build(BuildContext context) {
     return new Text('Count: $count');
@@ -291,7 +290,7 @@ class CounterDisplay extends StatelessComponent {
 }
 
 class CounterIncrementor extends StatelessComponent {
-  CounterIncrementor({ Key key, this.onPressed }) : super(key: key);
+  CounterIncrementor({ this.onPressed });
   final VoidCallback onPressed;
   Widget build(BuildContext context) {
     return new RaisedButton(
@@ -302,7 +301,6 @@ class CounterIncrementor extends StatelessComponent {
 }
 
 class Counter extends StatefulComponent {
-  Counter({ Key key }) : super(key: key);
   _CounterState createState() => new _CounterState();
 }
 
