@@ -94,7 +94,7 @@ not yet public. Stay tuned!
 
 ## What devices and OS versions does Flutter run on?
 
-Flutter is designed to run on Android Jelly Bean and newer, and iOS 5 and newer.
+Flutter is designed to run on Android KitKat (or newer), and iOS 5 (or newer).
 We test on a variety of low-end to high-end phones and tablets, but we don't yet
 have an official device compatibility guarantee.
 
