@@ -121,9 +121,7 @@ is involved).
 
 ## Does Flutter run on the web?
 
-No. Flutter is designed, from the ground up, to power high-performance,
-full-featured apps on mobile devices. We do not plan to provide a web version of
-Flutter.
+No. We do not plan to provide a web version of Flutter.
 
 ## What operating systems can I use to build a Flutter app?
 
