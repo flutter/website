@@ -70,11 +70,12 @@ delightful mobile app experiences.
 
 ## Why is Google building Flutter?
 
-As Eric Schmidt has said: "Mobile won." We saw that too many engineering teams
-inside of Google were slowed down by building apps twice: once for Android and
+As Eric Schmidt has said: "Mobile won." We noticed that too many
+teams were slowed down by building the same app twice: once for Android and
 once for iOS. Hiring two separate teams is costly: knowledge isn't shared, code
 is duplicated, keeping two apps in sync is challenging. We are building Flutter
-to make it easier for teams to deliver better mobile apps for less cost.
+to make it easier and faster for teams to deliver great mobile apps for both
+iOS and Android.
 
 ## What are the origins of Flutter?
 
