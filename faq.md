@@ -294,7 +294,7 @@ interested in contributing code, you can start by reading our
 ## Should I build my next production app with Flutter?
 
 As of November 2015, Flutter is still being developed heavily and is not yet at
-1.0. While lower levels of the system are changing less, we envisioning changing
+1.0. While lower levels of the system are changing less, we envision changing
 parts of the system based on early adopter feedback.
 
 ## I heard Apple rejects apps built with third-party frameworks, is that true? Will Apple reject my Flutter app?
