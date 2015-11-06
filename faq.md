@@ -25,8 +25,8 @@ widgets) libraries, tools, and a plugin for Atom
 
 ## What makes Flutter unique?
 
-Flutter is unique because, _for both iOS and Android_, it offers the combination
-of highly productive and fast development experience, fast runtime and engine
+Flutter offers a cross-platform SDK with the combination
+of a highly productive and fast development experience, fast runtime and engine
 performance, and beautifully designed widgets and apps.
 
 Flutter is different than most options in this space
@@ -36,12 +36,10 @@ rendering engine to draw widgets.
 
 ## Why would I want to invest in learning Flutter?
 
-Learning Flutter will allow you to quickly create high-performance mobile
-applications for both iOS and Android; leveraging a single codebase investment
-to ship on multiple platforms. It uses a modern, typed programming language that
-is instantly familiar to anyone who has done Java or JavaScript programming.
-Flutter gives developers quick edit cycles for an enjoyable low-friction
-workflow.
+Flutter is an easy way to use a single codebase
+to deliver beautiful mobile apps that run on multiple
+mobile platforms. Flutter gives developers quick edit cycles for
+an enjoyable low-friction workflow.
 
 ## What are Flutter's guiding principles?
 
@@ -69,34 +67,26 @@ jank-free apps. Which leads to:
 * _Fidelity_ - Everyone deserves precise, beautiful,
 delightful mobile app experiences.
 
-## Why is Google building Flutter?
-
-As Eric Schmidt has said: "Mobile won." We noticed that too many
-teams were slowed down by building the same app twice: once for Android and
-once for iOS. Hiring two separate teams is costly: knowledge isn't shared, code
-is duplicated, keeping two apps in sync is challenging. We are building Flutter
-to make it easier and faster for teams to deliver great mobile apps for both
-iOS and Android.
-
 ## What are the origins of Flutter?
 
 Back in 2014, some engineers in Google took a step back to ask, "What would a
 modern mobile-first rendering engine look like?" Without worrying about
 backwards compatibility, or desktop concerns, or legacy constraints, they
 started coding a new engine named Sky. Encouraged by some of their initial
-performance measurements, they decided to make the experiment a real project and
-renamed it Flutter. In 2015, internal teams inside of Google started to take
-notice and began building apps on Flutter, and the
-[flutter.io](http://flutter.io) site was born.
+performance measurements, they decided to make the experiment a project and
+renamed it Flutter.
 
-## Does Google use Flutter?
+## Does Google ship any apps built with Flutter?
 
-Yes. Even though Flutter itself is open source, the apps built on Flutter are
-not yet public. Stay tuned!
+No. Flutter is in a very early state.
+
+## Is Flutter meant to replace Java on Android, or be a replacement for Android's UI framework?
+
+No.
 
 ## What devices and OS versions does Flutter run on?
 
-Flutter is designed to run on Android KitKat (or newer), and iOS 5 (or newer).
+Flutter apps run on Android KitKat (or newer), and iOS 5 (or newer).
 We test on a variety of low-end to high-end phones and tablets, but we don't yet
 have an official device compatibility guarantee.
 
@@ -130,12 +120,13 @@ Flutter supports development on Linux and Mac. Windows support is planned.
 
 ## What kinds of apps can I build with Flutter?
 
-Flutter is optimized for 2D mobile apps that want to run in both Android and
-iOS. Apps that use Material Design are particularly well suited for Flutter.
+Flutter is optimized for 2D mobile apps that want to run across
+more than one mobile platform.
+Apps that use Material Design are particularly well suited for Flutter.
 
 ## What kind of app performance can I expect?
 
-You can expect excellent performance on both Android and iOS. Flutter is
+You can expect excellent performance. Flutter is
 designed to help developers easily achieve a constant 60fps. Flutter apps run
 via natively compiled code, no interpreters are involved.
 
@@ -146,7 +137,7 @@ encourage the community to use Flutter in a variety of interesting ways.
 
 ## Can I use Flutter inside of my existing native app?
 
-Yes, you can embed a Flutter view in your existing native Android or iOS app.
+Yes, you can embed a Flutter view in your existing native mobile app.
 You can learn more about this at [[docs coming soon]]. If you want to do this, we
 encourage you to email our mailing list:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
