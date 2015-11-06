@@ -322,10 +322,11 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-Notice how Counter now delegates responsibility for incrementing and displaying
-the counter value down to CounterIncrementor and CounterDisplay, respectively.
-Although the net result is the same as the previous example, the delegation of
-responsibility allows greater complexity to be encapsulated in the delegated
+Notice how we created two new stateless components, cleaning separating
+the concerns of _displaying_ the counter (CounterDisplay) and _changing_
+the counter (CounterIncrementor).
+Although the net result is the same as the previous example, the separation of
+responsibility allows greater complexity to be encapsulated in the individual
 components, while maintaining simplicity in the parent.
 
 Bringing it All Together
