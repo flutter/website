@@ -5,16 +5,20 @@ nav_title: Getting Started
 permalink: /getting-started/
 ---
 
-Flutter currently supports developers on Mac and Linux, with Windows support in
-the works.
+Flutter currently supports developers on Mac and Linux.
+Windows support in the works.
 
-To get started, we need to set up Dart SDK:
+To get started, we need to set up the Dart SDK.
+Flutter requires Dart SDK 1.12.2 or greater.
 
- - Install the [Dart SDK](https://www.dartlang.org/downloads/):
-   - Mac: `brew tap dart-lang/dart && brew install dart --devel`
-   - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
-   - Windows: Stay tuned, Windows support is in the works.
- - Ensure that the `pub` executable is in your `PATH`.
+To install the [Dart SDK](https://www.dartlang.org/downloads/):
+
+- Mac: `brew tap dart-lang/dart && brew install dart`, or, if you don't
+  use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
+- Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
+- Windows: Stay tuned, Windows support is in the works.
+
+Ensure that the `pub` executable is in your `PATH`.
 
 Once you have installed Dart SDK, activate the `flutter` command line
 tool and add it to your path:
