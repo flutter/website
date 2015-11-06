@@ -6,6 +6,10 @@ Flutter is a new way to build high-performance, cross-platform mobile apps.
 Flutter is optimized for today's, and tomorrow's, mobile devices. We are focused
 on low-latency input and high frame rates on Android and iOS.
 
+_Flutter is in technology preview._ You can build examples and demos,
+but we are still working on the APIs and capabilities. We hope you
+try it out and send us [feedback](mailto:flutter-dev@googlegroups.com).
+
 ## Next steps
 
  - [Getting started guide](getting-started)
