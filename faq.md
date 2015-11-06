@@ -29,7 +29,8 @@ Flutter is unique because, _for both iOS and Android_, it offers the combination
 of highly productive and fast development experience, fast runtime and engine
 performance, and beautifully designed widgets and apps.
 
-Flutter is unique _technically_ because its rendering implementation uses neither
+Flutter is different than most options in this space
+because its rendering implementation uses neither
 WebView nor OEM widgets. Instead, Flutter uses its own high-performance
 rendering engine to draw widgets.
 
