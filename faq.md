@@ -242,7 +242,7 @@ makes it easier to run A/B experiments, and more.
 
 Unfortunately, due to iOS restrictions, updating your Flutter app over the
 network is not possible. We are curious how much you use this feature, please
-let us know at flutter-dev@googlegroups.com.
+let us know at [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
 ## What if I don't want to build my app with Material Design?
 
