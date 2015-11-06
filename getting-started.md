@@ -6,7 +6,7 @@ permalink: /getting-started/
 ---
 
 Flutter currently supports developers on Mac and Linux.
-Windows support in the works.
+Windows support is in the works.
 
 To get started, we need to set up the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
