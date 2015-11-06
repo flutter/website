@@ -5,8 +5,8 @@ nav_title: Getting Started
 permalink: /getting-started/
 ---
 
-Flutter currently supports developers on Mac and Linux,
-with Windows support in the works.
+Flutter currently supports developers on Mac and Linux, with Windows support in
+the works.
 
 To get started, we need to set up Dart SDK:
 
@@ -43,7 +43,7 @@ To learn more about how to build apps with Flutter, please see the
 [tutorial](/tutorial/).
 
 Setting up your Android device
--------------------------
+------------------------------
 
 Currently Flutter requires an Android device running the KitKat (or newer)
 version of the Android operating system.
@@ -72,19 +72,24 @@ contains the `pubspec.yaml` file).
 To start your app, use the `start` command:
 
 ```
-$ flutter start --checked
+$ flutter start
 $ flutter logs
 ```
 
-The `--checked` flag turns on type checking and asserts, both of which are quite
-useful during development. The `logs` command lets you see textual output from
-your app, including `print` statements and unhandled exceptions. To avoid confusion
-from old log messages, you might want to use `flutter logs --clear` to clear the
-logs between runs.
+The `logs` command lets you see textual output from your app, including `print`
+statements and unhandled exceptions. To avoid confusion from old log messages,
+you might want to use `flutter logs --clear` to clear the logs between runs.
 
-To improve your iteration speed, you can use `flutter listen --checked` instead
-of `flutter start`. The `listen` command watches the file system and automatically
-reloads your app whenever you make a change to its code.
+Getting Started with Atom
+-------------------------
+
+Flutter uses [Atom](https://atom.io/) as its IDE. You can use any editor with
+our command-line tools to develop Flutter applications. However, we're also
+developing Flutter specific plugins for Atom in order to deliver a top-of-the
+line development experience.
+
+For instructions on installing Atom and our Flutter plugin, see
+[dart-atom.github.io/dartlang](http://dart-atom.github.io/dartlang/).
 
 Debugging
 ---------
