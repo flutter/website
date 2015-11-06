@@ -202,6 +202,12 @@ is always a concern with mobile apps, we disabled dart:mirrors. We are curious
 what you might need reflection/mirrors for, please email us at
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
+## How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
+
+These capabilities are very much on our radar, but we have not yet
+started on the APIs. We are currently building the core
+framework with these capabilities in mind.
+
 ## How do I write parallel and/or concurrent apps for Flutter?
 
 Flutter supports isolates. Isolates are separate heaps in Flutter's VM, and they
