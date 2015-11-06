@@ -104,8 +104,19 @@ class MyScaffold extends StatelessComponent {
   }
 }
 
-void main() => runApp(new MyScaffold());
+void main() {
+  runApp(new MaterialApp(
+    title: 'My app',
+    routes: <String, RouteBuilder>{
+      '/': (RouteArguments args) => new MyScaffold()
+    }
+  ));
+}
 ```
+
+Many widgets need to be inside of a `MaterialApp` to display properly,
+in order to inherit theme data. Therefore, we run the application
+with a `MaterialApp` and a single route (more on routes later) to our scaffold.
 
 The `MyToolBar` component creates a `Container` with a height of 56
 device-independent pixels with an internal padding of 8 pixels, both on the left
