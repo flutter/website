@@ -104,7 +104,7 @@ have an official device compatibility guarantee.
 
 Flutter is built with C, C++, Dart, Skia (a 2D rendering engine),
 [Mojo IPC](https://github.com/domokit/mojo), and
-Blink's text rendering system. See this <architecture diagram> for a better
+Blink's text rendering system. See this [architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162) for a better
 picture of the main components.
 
 ## How does Flutter run my code on Android?
