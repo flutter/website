@@ -8,38 +8,37 @@ permalink: /faq/
 ## What does Flutter do?
 
 Flutter gives developers an easy and productive way to build and deploy
-cross-platform, high-performance mobile apps.
+cross-platform, high-performance mobile apps on both Android and iOS.
 
 Flutter gives users beautiful, fast, and jitter-free app experiences.
 
 ## What does Flutter provide?
 
-Flutter has four main components:
+Flutter has three main components:
 
 * a heavily optimized, mobile-first 2D rendering engine (with excellent support
 for text)
 * a functional-reactive framework (optional, you can bring-your-own
 framework)
 * a set of Material Design widgets (optional, you can bring-your-own
-widgets) libraries, tools, and a plugin for Atom
+widgets), libraries, tools, and a plugin for Atom
 
 ## What makes Flutter unique?
 
-Flutter offers a cross-platform SDK with the combination
-of a highly productive and fast development experience, fast runtime and engine
-performance, and beautifully designed widgets and apps.
-
-Flutter is different than most options in this space
-because its rendering implementation uses neither
-WebView nor OEM widgets. Instead, Flutter uses its own high-performance
+Flutter is different than most other options for building cross-platform
+mobile apps because Flutter uses neither WebView nor the OEM widgets
+that shipped with the device. Instead, Flutter uses its own high-performance
 rendering engine to draw widgets.
+
+Flutter also offers developers a highly productive and fast development
+experience, fast runtime and engine performance, and beautifully designed
+widgets that make for beautiful apps.
 
 ## Why would I want to invest in learning Flutter?
 
-Flutter is an easy way to use a single codebase
-to deliver beautiful mobile apps that run on multiple
-mobile platforms. Flutter gives developers quick edit cycles for
-an enjoyable low-friction workflow.
+Flutter is an easy way to use a single codebase to deliver beautiful mobile
+apps that run on both Android and iOS. Flutter gives developers quick
+edit/debug cycles for an enjoyable low-friction workflow.
 
 ## What are Flutter's guiding principles?
 
@@ -73,16 +72,12 @@ Back in 2014, some engineers in Google took a step back to ask, "What would a
 modern mobile-first rendering engine look like?" Without worrying about
 backwards compatibility, or desktop concerns, or legacy constraints, they
 started coding a new engine named Sky. Encouraged by some of their initial
-performance measurements, they decided to make the experiment a project and
-renamed it Flutter.
+performance measurements, they decided to make the experiment into a real
+project and renamed it Flutter.
 
 ## Does Google ship any apps built with Flutter?
 
-No. Flutter is in a very early state.
-
-## Is Flutter meant to replace Java on Android, or be a replacement for Android's UI framework?
-
-No.
+Google has not publicly released any apps built with Flutter.
 
 ## What devices and OS versions does Flutter run on?
 
@@ -120,8 +115,7 @@ Flutter supports development on Linux and Mac. Windows support is planned.
 
 ## What kinds of apps can I build with Flutter?
 
-Flutter is optimized for 2D mobile apps that want to run across
-more than one mobile platform.
+Flutter is optimized for 2D mobile apps that want to run on both Android and iOS.
 Apps that use Material Design are particularly well suited for Flutter.
 
 ## What kind of app performance can I expect?
@@ -137,7 +131,7 @@ encourage the community to use Flutter in a variety of interesting ways.
 
 ## Can I use Flutter inside of my existing native app?
 
-Yes, you can embed a Flutter view in your existing native mobile app.
+Yes, you can embed a Flutter view in your existing Android or iOS app.
 You can learn more about this at [[docs coming soon]]. If you want to do this, we
 encourage you to email our mailing list:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
@@ -334,4 +328,6 @@ or directly) dart:mirrors or dart:html.
 
 ## Who works on Flutter?
 
-Flutter is an open source project, staffed primarily by engineers at Google.
+Flutter is an open source project. Currently, the bulk of the development is done
+by engineers at Google. If you're excited about Flutter, we encourage you to join
+the community and contribute to Flutter!
