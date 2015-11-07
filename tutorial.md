@@ -333,7 +333,7 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-Notice how we created two new stateless components, cleaning separating
+Notice how we created two new stateless components, cleanly separating
 the concerns of _displaying_ the counter (CounterDisplay) and _changing_
 the counter (CounterIncrementor).
 Although the net result is the same as the previous example, the separation of
@@ -530,7 +530,7 @@ platform services. Implementations of `dispose` typically end by calling
 Keys
 ----
 
-You can use keys to control which widgets the framework with match up with which
+You can use keys to control which widgets the framework will match up with which
 other widgets when a component rebuilds. By default, the framework matches
 widgets in the current and previous build according to their `runtimeType` and
 the order in which they appear. With keys, the framework requires that the two

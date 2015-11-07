@@ -58,7 +58,7 @@ There is also a stacking layout model:
 
  - `Stack`: Layout a list of child widgets on top of each other from back to
    front. Each child of a `Stack` widget is either *positioned* or
-   *non-positioned*. The stack sizes itself to the contain all the
+   *non-positioned*. The stack sizes itself to contain all the
    non-positioned children, which are located at the top-left corner of the
    stack. The *positioned* children are then located relative to the stack
    according to their `top`, `right`, `bottom`, and `left` properties.
