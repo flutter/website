@@ -5,8 +5,13 @@ nav_title: Getting Started
 permalink: /getting-started/
 ---
 
-Flutter currently supports developers on Mac and Linux.
-Windows support is in the works.
+## Prereqs
+
+- An Android phone.
+- Mac or Linux host computer. (Windows support is in the works.)
+- A USB cable to connect the two.
+
+---
 
 To get started, we need to set up the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
