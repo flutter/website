@@ -66,18 +66,9 @@ jank-free apps. Which leads to:
 * _Fidelity_ - Everyone deserves precise, beautiful,
 delightful mobile app experiences.
 
-## What are the origins of Flutter?
+## How is Flutter related to Sky?
 
-Back in 2014, some engineers in Google took a step back to ask, "What would a
-modern mobile-first rendering engine look like?" Without worrying about
-backwards compatibility, or desktop concerns, or legacy constraints, they
-started coding a new engine named Sky. Encouraged by some of their initial
-performance measurements, they decided to make the experiment into a real
-project and renamed it Flutter.
-
-## Does Google ship any apps built with Flutter?
-
-Google has not publicly released any apps built with Flutter.
+Sky was the codename of an earlier version of Flutter.
 
 ## What devices and OS versions does Flutter run on?
 
