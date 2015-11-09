@@ -20,15 +20,20 @@ To install the [Dart SDK](https://www.dartlang.org/downloads/):
 
 Ensure that the `pub` executable is in your `PATH`.
 
-Once you have installed Dart SDK, activate the `flutter` command line
-tool and add it to your path:
+Once you have installed Dart SDK, clone the `alpha` branch from the Flutter
+repository:
 
 ```
-$ pub global activate flutter
-$ export PATH=$HOME/.pub-cache/bin:$PATH
+$ git clone https://github.com/flutter/flutter.git -b alpha
+$ export PATH=`pwd`/flutter/bin:$PATH
 ```
 
-Now we can use the `flutter` command to create a project named `my_app`:
+We update the `alpha` branch periodically as we improve Flutter. You can update
+your copy of Flutter by running `git pull` in the `flutter` directory created
+above.
+
+Now that we've added the `bin` directory to our path, we can use the `flutter`
+command to create a project named `my_app`:
 
 ```
 $ flutter init -o my_app
