@@ -8,7 +8,9 @@ permalink: /getting-started/
 Flutter currently supports developers on Mac and Linux.
 Windows support is in the works.
 
-To get started, we need to set up the Dart SDK.
+## Setting up your environment
+
+To get started, you need to set up the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
 
 To install the [Dart SDK](https://www.dartlang.org/downloads/):
@@ -20,39 +22,47 @@ To install the [Dart SDK](https://www.dartlang.org/downloads/):
 
 Ensure that the `pub` executable is in your `PATH`.
 
-Once you have installed Dart SDK, clone the `alpha` branch from the Flutter
-repository:
+## Getting the code
+
+Clone the `alpha` branch from the Flutter repository:
 
 ```
 $ git clone https://github.com/flutter/flutter.git -b alpha
-$ export PATH=`pwd`/flutter/bin:$PATH
 ```
 
 We update the `alpha` branch periodically as we improve Flutter. You can update
 your copy of Flutter by running `git pull` in the `flutter` directory created
 above.
 
-Now that we've added the `bin` directory to our path, we can use the `flutter`
-command to create a project named `my_app`:
+## Configuring your PATH
+
+After you clone the Flutter repo, set the PATH so you can
+use our scripts and tools.
+
+```
+$ export PATH=`pwd`/flutter/bin:$PATH
+```
+
+## Creating your first sample app
+
+Now that you've added the `bin` directory to your path, you can use the `flutter`
+command to create a starter project.
+
+Here is an example of creating a new Flutter app called `my_app`
+in the current directory:
 
 ```
 $ flutter init -o my_app
 ```
 
-This command creates a `my_app` directory that contains a simple demo
+The above command creates a `my_app` directory that contains a simple demo
 app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
-The code for your app is in `my_app/lib/main.dart`. Execution starts in
-the `main` function, which uses `runApp` to run a `MaterialApp` widget.
-The `MaterialApp` widget is configured with a route map, with one entry
-for every screen of your app. In this case, there's only one screen, the
-home screen named `/`, which builds a `FlutterDemo` component.
-
+The code for your app is in `my_app/lib/main.dart`.
 To learn more about how to build apps with Flutter, please see the
 [tutorial](/tutorial/).
 
-Setting up your Android device
-------------------------------
+## Setting up your Android device
 
 Currently Flutter requires an Android device running the KitKat (or newer)
 version of the Android operating system.
@@ -71,11 +81,10 @@ version of the Android operating system.
  - Using a USB cable, plug your phone into your computer. If prompted on your
    device, authorize your computer to access your device.
 
-Running a Flutter application
------------------------------
+## Running a Flutter application
 
 You can use the `flutter` command to run Flutter apps on your devices. First,
-change directories to the root of your apps (i.e., the same directory that
+change directories to the root of your app (i.e., the same directory that
 contains the `pubspec.yaml` file).
 
 To start your app, use the `start` command:
@@ -89,8 +98,7 @@ The `logs` command lets you see textual output from your app, including `print`
 statements and unhandled exceptions. To avoid confusion from old log messages,
 you might want to use `flutter logs --clear` to clear the logs between runs.
 
-Getting Started with Atom
--------------------------
+## Getting Started with Atom
 
 Flutter uses [Atom](https://atom.io/) as its IDE. You can use any editor with
 our command-line tools to develop Flutter applications. However, we're also
@@ -100,15 +108,13 @@ line development experience.
 For instructions on installing Atom and our Flutter plugin, see
 [dart-atom.github.io/dartlang](http://dart-atom.github.io/dartlang/).
 
-Debugging
----------
+## Debugging and profiling your app
 
 Flutter uses [Observatory](https://www.dartlang.org/tools/observatory/) for
 debugging and profiling. While running your app, you can access Observatory
 by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
 
-Building a standalone APK
--------------------------
+## Building a standalone APK
 
 Although it is possible to build a standalone APK containing your application,
 doing so right now is difficult. If you're feeling brave, you can see how we
