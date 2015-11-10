@@ -7,11 +7,10 @@ Flutter is a new project to help developers
 build high-performance, high-fidelity,
 cross-platform mobile apps.
 
-_Flutter is an early-stage open-source project._
+*Flutter is in alpha mode, and is in heavy development.*
 We are still missing core features like accessibility, text input,
-localization, and more. However, you can build demos and examples
-today. We hope you try it out and send us
-[feedback](mailto:flutter-dev@googlegroups.com).
+localization, and more. Please check out the
+[FAQ](faq.html) to learn more.
 
 ## Next steps
 
