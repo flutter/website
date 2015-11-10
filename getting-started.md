@@ -64,8 +64,8 @@ To learn more about how to build apps with Flutter, please see the
 
 ## Setting up your Android device
 
-Currently Flutter requires an Android device running the KitKat (or newer)
-version of the Android operating system.
+Currently Flutter requires an Android device running
+Jelly Bean, v16, 4.1.x or later.
 
  - Install the `adb` tool from the [Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools):
   - Mac: `brew install android-platform-tools`
