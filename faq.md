@@ -5,6 +5,10 @@ nav_title: FAQ
 permalink: /faq/
 ---
 
+Thanks for checking us out!
+Flutter is in alpha mode, and is in heavy development.
+Please refer to this page for more information on the project.
+
 ## What does Flutter do?
 
 Flutter gives developers an easy and productive way to build and deploy
