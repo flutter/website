@@ -213,8 +213,8 @@ Flutter's framework and engine.
 
 Flutter apps are most commonly deployed via the mobile platform's store (such as
 Apple's App Store and Google's Play Store). We plan to deliver tools to easily
-to [generate an .ipa](https://github.com/flutter/tools/issues/168)
-and easily [generate an .apk](https://github.com/flutter/tools/issues/167).
+to [generate an .ipa](https://github.com/flutter/flutter/issues/46)
+and easily [generate an .apk](https://github.com/flutter/flutter/issues/45).
 
 ## Can I update my app over the network, outside of the Play Store?
 
@@ -256,7 +256,7 @@ approximately 400kb, necessary Java code is 330k, and there is approximately
 ## Where can I get support?
 
 If you think you've encountered a bug, please file it in our
-[issue tracker](https://github.com/flutter/engine/issues). We
+[issue tracker](https://github.com/flutter/flutter/issues). We
 encourage you to use [Stack Overflow](https://stackoverflow.com/) for "HOWTO"
 type questions. For discussions,
 please join our mailing list at
@@ -266,12 +266,12 @@ please join our mailing list at
 
 Flutter is open source, and we encourage you to contribute. You can start by
 simply filing issues for feature requests and bugs in our
-[issue tracker](https://github.com/flutter/engine/issues). You
+[issue tracker](https://github.com/flutter/flutter/issues). You
 should also join our mailing list at
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com) and let us
 know how you're using Flutter and what you'd like to do with it. If you're
 interested in contributing code, you can start by reading our
-[Contributing guide](https://github.com/flutter/engine/blob/master/CONTRIBUTING.md).
+[Contributing guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md).
 
 ## Should I build my next production app with Flutter?
 
