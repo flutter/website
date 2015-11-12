@@ -23,5 +23,5 @@ today. We hope you try it out and send us
 ## See also
 
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
- - [github.com/flutter](https://github.com/flutter/engine/)
+ - [github.com/flutter](https://github.com/flutter)
  - [FAQ](faq)
