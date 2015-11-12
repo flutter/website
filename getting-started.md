@@ -114,6 +114,20 @@ Flutter uses [Observatory](https://www.dartlang.org/tools/observatory/) for
 debugging and profiling. While running your app, you can access Observatory
 by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
 
+## Upgrading to a new version of Flutter
+
+If you want to update your copy of Flutter, you use the `flutter upgrade`
+command from the root of your app (i.e., the same directory that contains the
+`pubspec.yaml` file):
+
+```
+$ flutter upgrade
+```
+
+(If you have an older version of `flutter` that doesn't have the `upgrade`
+command, you might need to first run `git pull` in your clone of the Flutter
+repository.)
+
 ## Building a standalone APK
 
 Although it is possible to build a standalone APK containing your application,
