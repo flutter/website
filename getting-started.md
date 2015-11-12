@@ -135,4 +135,4 @@ doing so right now is difficult. If you're feeling brave, you can see how we
 build the `Stocks.apk` in
 [examples/stocks](https://github.com/flutter/flutter/tree/master/examples/stocks).
 Eventually we plan to make this much easier and support platforms other than
-Android, but that work still in progress.
+Android, but that work is still in progress.
