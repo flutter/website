@@ -68,10 +68,10 @@ Currently Flutter requires an Android device running
 Jelly Bean, v16, 4.1.x or later.
 
  - Install the `adb` tool from the [Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools):
-  - Mac: `brew install android-platform-tools`
-  - Linux: `sudo apt-get install android-tools-adb`
-    - If the version of `adb` provided by your Linux distribution is too old,
-      you might need to [install the Android SDK manually](https://developer.android.com/sdk/installing/index.html?pkg=tools).
+   - Mac: `brew install android-platform-tools`
+   - Linux: `sudo apt-get install android-tools-adb`
+     - If the version of `adb` provided by your Linux distribution is too old,
+       you might need to [install the Android SDK manually](https://developer.android.com/sdk/installing/index.html?pkg=tools).
 
  - Enable developer mode on your device by visiting `Settings > About phone` and
    tapping the `Build number` field seven times.
