@@ -114,6 +114,15 @@ void main() {
 }
 ```
 
+Be sure to add the new resources to your `flutter.yaml` file.
+
+```yaml
+name: my_app
+material-design-icons:
+  - name: action/search
+  - name: navigation/menu
+```
+
 Many widgets need to be inside of a `MaterialApp` to display properly,
 in order to inherit theme data. Therefore, we run the application
 with a `MaterialApp` and a single route (more on routes later) to our scaffold.
@@ -176,6 +185,14 @@ class TutorialHome extends StatelessComponent {
     );
   }
 }
+```
+
+```yaml
+name: my_app
+material-design-icons:
+  - name: action/search
+  - name: content/add
+  - name: navigation/menu
 ```
 
 Now that we've switched from `MyToolBar` and `MyScaffold` to the `ToolBar` and
