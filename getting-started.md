@@ -10,7 +10,9 @@ Windows support is in the works.
 
 ## Setting up your environment
 
-To get started, you need to set up the Dart SDK.
+### Downloading and installing the Dart SDK
+
+To get started, you need to install the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
 
 To install the [Dart SDK](https://www.dartlang.org/downloads/):
@@ -20,9 +22,21 @@ To install the [Dart SDK](https://www.dartlang.org/downloads/):
 - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
 - Windows: Stay tuned, Windows support is in the works.
 
+### Checking your PATH
+
 Ensure that the `pub` executable is in your `PATH`.
 
-## Getting the code
+Run `pub --version` on the command line. If that command
+is not found, you will need to add `DIRECTORY_WHERE_DART_SDK_IS_LOCATED/bin`
+to your PATH.
+
+For example:
+
+```
+$ export PATH=<DART_SDK_DOWNLOAD_LOCATION>/bin:$PATH
+```
+
+## Getting the Flutter code
 
 Clone the `alpha` branch from the Flutter repository:
 
@@ -30,9 +44,10 @@ Clone the `alpha` branch from the Flutter repository:
 $ git clone https://github.com/flutter/flutter.git -b alpha
 ```
 
-We update the `alpha` branch periodically as we improve Flutter. You can update
-your copy of Flutter by running `git pull` in the `flutter` directory created
-above.
+We update the `alpha` branch periodically as we improve Flutter.
+
+(See below for how to upgrade your flutter clone. We do not
+recommend upgrading with `git pull`.)
 
 ## Configuring your PATH
 
@@ -40,12 +55,13 @@ After you clone the Flutter repo, set the PATH so you can
 use our scripts and tools.
 
 ```
+$ cd <directory where you cloned the flutter repo>
 $ export PATH=`pwd`/flutter/bin:$PATH
 ```
 
 ## Creating your first sample app
 
-Now that you've added the `bin` directory to your path, you can use the `flutter`
+You can use the `flutter`
 command to create a starter project.
 
 Here is an example of creating a new Flutter app called `my_app`
@@ -83,14 +99,27 @@ Jelly Bean, v16, 4.1.x or later.
 
 ## Running a Flutter application
 
-You can use the `flutter` command to run Flutter apps on your devices. First,
-change directories to the root of your app (i.e., the same directory that
-contains the `pubspec.yaml` file).
+You can use the `flutter start` command to run Flutter apps on your devices.
 
-To start your app, use the `start` command:
+First, change directories to the root of your app (the same directory that
+contains the `pubspec.yaml` file for your project).
+
+To start your app, run:
 
 ```
 $ flutter start
+```
+
+If everything works, you should see your starter app
+on your Android device.
+
+<!-- add screenshot in next commit -->
+
+## Viewing the logs
+
+Start streaming the logs from the device:
+
+```
 $ flutter logs
 ```
 
@@ -98,12 +127,11 @@ The `logs` command lets you see textual output from your app, including `print`
 statements and unhandled exceptions. To avoid confusion from old log messages,
 you might want to use `flutter logs --clear` to clear the logs between runs.
 
-## Getting Started with Atom
+## Getting Started with the Atom editor
 
-Flutter uses [Atom](https://atom.io/) as its IDE. You can use any editor with
-our command-line tools to develop Flutter applications. However, we're also
-developing Flutter specific plugins for Atom in order to deliver a top-of-the
-line development experience.
+Flutter uses [Atom](https://atom.io/) as its IDE. However,
+using our command-line tools, you can use
+any editor to develop Flutter applications.
 
 For instructions on installing Atom and our Flutter plugin, see
 [dart-atom.github.io/dartlang](http://dart-atom.github.io/dartlang/).
@@ -117,7 +145,7 @@ by navigating your web browser to [http://localhost:8181/](http://localhost:8181
 ## Upgrading to a new version of Flutter
 
 If you want to update your copy of Flutter, you use the `flutter upgrade`
-command from the root of your app (i.e., the same directory that contains the
+command from the root of your app (the same directory that contains the
 `pubspec.yaml` file):
 
 ```
