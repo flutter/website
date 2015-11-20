@@ -2,4 +2,5 @@ language: dart
 dart:
   - dev
 sudo: false
+before_install: ./tool/before_install.sh
 script: ./tool/travis.sh

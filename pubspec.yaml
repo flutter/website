@@ -1,5 +1,6 @@
 name: flutter_github_io
 version: 0.0.1
 dev_dependencies:
-  flutter: any
+  flutter:
+    path: ../flutter/packages/flutter
   path: any
