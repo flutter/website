@@ -44,8 +44,10 @@ Clone the `alpha` branch from the Flutter repository:
 $ git clone https://github.com/flutter/flutter.git -b alpha
 ```
 
-We update the `alpha` branch periodically as we improve Flutter. You can update
-your copy of Flutter by running `flutter upgrade`.
+We update the `alpha` branch periodically as we improve Flutter.
+
+(See below for how to upgrade your flutter clone. We do not
+recommend upgrading with `git pull`.)
 
 ## Configuring your PATH
 
