@@ -469,7 +469,7 @@ class _ShoppingListState extends State<ShoppingList> {
       body: new MaterialList<Product>(
         type: MaterialListType.oneLineWithAvatar,
         items: config.products,
-        itemBuilder: (BuildContext context, Product product) {
+        itemBuilder: (BuildContext context, Product product, int index) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
