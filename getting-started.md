@@ -113,7 +113,7 @@ $ flutter start
 If everything works, you should see your starter app
 on your Android device.
 
-<!-- add screenshot in next commit -->
+![First Flutter app running on an Android phone](/images/flutter_starter_app_screenshot.png)
 
 ## Viewing the logs
 
