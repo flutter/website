@@ -72,7 +72,7 @@ Sky was the codename of an earlier version of Flutter.
 
 ## What devices and OS versions does Flutter run on?
 
-Flutter apps run on Android Jelly Bean, v16, 4.1.x or newer, and iOS 5 or newer.
+Flutter apps run on Android Jelly Bean, v16, 4.1.x or newer, and iOS 8 or newer.
 We test on a variety of low-end to high-end phones and tablets, but we don't yet
 have an official device compatibility guarantee.
 
