@@ -481,17 +481,17 @@ class _ShoppingListState extends State<ShoppingList> {
   }
 }
 
+final List<Product> _kProducts = [
+  new Product(name: 'Eggs'),
+  new Product(name: 'Flour'),
+  new Product(name: 'Chocolate chips'),
+];
+
 void main() {
   runApp(new MaterialApp(
     title: 'Shopping List',
     routes: {
-      '/': (RouteArguments args) => new ShoppingList(
-        products: [
-          new Product(name: 'Eggs'),
-          new Product(name: 'Flour'),
-          new Product(name: 'Chocolate chips'),
-        ]
-      )
+      '/': (RouteArguments args) => new ShoppingList(products: _kProducts)
     }
   ));
 }
