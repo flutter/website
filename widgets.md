@@ -5,8 +5,15 @@ nav_title: Widgets
 permalink: /widgets/
 ---
 
-This page describes the widgets available in Flutter. These widgets are
+This page describes a small subset of widgets available in Flutter.
+The widgets described on this page are
 general-purpose and don't offer an opinion about the visual style of your app.
+
+You may also be interested in Flutter's Material Design widgets.
+We don't yet have docs for those widgets
+(follow [this issue](https://github.com/flutter/flutter.github.io/issues/36)),
+but you can see some of the Material Design widgets in action in our
+[examples](https://github.com/flutter/flutter/tree/master/examples).
 
 Container
 ---------
