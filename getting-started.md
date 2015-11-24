@@ -6,7 +6,7 @@ permalink: /getting-started/
 ---
 
 Flutter currently supports developers on Mac and Linux.
-Windows support is in the works.
+Windows support is planned.
 
 ## Setting up your environment
 
@@ -20,7 +20,7 @@ To install the [Dart SDK](https://www.dartlang.org/downloads/):
 - Mac: `brew tap dart-lang/dart && brew install dart`, or, if you don't
   use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
 - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
-- Windows: Stay tuned, Windows support is in the works.
+- Windows: Stay tuned, Windows support is planned.
 
 ### Checking your PATH
 
@@ -56,8 +56,11 @@ use our scripts and tools.
 
 ```
 $ cd <directory where you cloned the flutter repo>
-$ export PATH=`pwd`/flutter/bin:$PATH
+$ export PATH=`pwd`/bin:$PATH
 ```
+
+Run `flutter --version` to ensure the `flutter`
+command is on your PATH.
 
 ## Creating your first sample app
 
