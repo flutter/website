@@ -91,8 +91,8 @@ Jelly Bean, v16, 4.1.x or later.
    - Linux: `sudo apt-get install android-tools-adb`
      - If the version of `adb` provided by your Linux distribution is too old,
        you might need to [install the Android SDK manually](https://developer.android.com/sdk/installing/index.html?pkg=tools).
-       Note that `adb` needs 32-bit libs (on ubuntu 64-bit, make sure to install
-       those libs listed in _Troubleshooting Ubuntu_ section).
+       Note that `adb` needs 32-bit libs (on Ubuntu 64-bit, make sure to install
+       those libraries listed in _Troubleshooting Ubuntu_ section).
          - Launch `Android SDK Manager` with `tools/android sdk`.
          - Install `Android SDK Platform-tools` package that is the only required
            package to use `adb`.
