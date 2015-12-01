@@ -169,9 +169,43 @@ repository.)
 
 ## Building a standalone APK
 
-Although it is possible to build a standalone APK containing your application,
-doing so right now is difficult. If you're feeling brave, you can see how we
-build the `Stocks.apk` in
-[examples/stocks](https://github.com/flutter/flutter/tree/master/examples/stocks).
-Eventually we plan to make this much easier and support platforms other than
-Android, but that work is still in progress.
+First, ensure you installed the Android SDK tools
+(see "Setting up your Android device" above).
+
+Run `android update sdk` from the command line,
+and install SDK version 22 and build tools version 22.0.1.
+For now, Flutter currently expects only _these_ versions.
+
+Create a `apk/AndroidManifest.xml` file inside of
+your Flutter app. Here is a basic example:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 The Chromium Authors. All rights reserved.
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file.
+ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.MyFirstFlutterApp" android:versionCode="1" android:versionName="0.0.1">
+
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application android:name="org.domokit.sky.shell.SkyApplication" android:label="MyFirstFlutterApp">
+        <activity android:name="org.domokit.sky.shell.SkyActivity"
+                  android:launchMode="singleTask"
+                  android:theme="@android:style/Theme.Black.NoTitleBar"
+                  android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
+                  android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+ </manifest>
+```
+
+Then, inside your Flutter app, run `flutter apk`.
+
+The APK can be found in `$MY_FLUTTER_APP/build/app.apk`.
