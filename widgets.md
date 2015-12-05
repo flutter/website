@@ -85,7 +85,8 @@ Positioning and sizing
  - `Padding` Surround the child with empty space on the top, right, bottom, and
    left according to the given `EdgeDims`.
 
- - `Center` Center the child widget within the space occupied by this widget.
+ - `Center` Center the child widget both horizontally and vertically within the
+   space occupied by this widget.
 
  - `SizedBox` Force the child widget to have a particular `width` or `height`
    (or both).
