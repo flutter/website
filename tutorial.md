@@ -187,6 +187,8 @@ class TutorialHome extends StatelessComponent {
 }
 ```
 
+In your `flutter.yaml` file:
+
 ```yaml
 name: my_app
 material-design-icons:
