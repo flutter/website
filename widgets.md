@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Widget Gallery
-nav_title: Widgets
 permalink: /widgets/
 ---
 
