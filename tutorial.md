@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter Tutorial
-nav_title: Tutorial
 permalink: /tutorial/
 ---
 

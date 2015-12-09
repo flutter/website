@@ -215,3 +215,24 @@ pre {
   font-size: 10px;
   width: 66%;
 }
+
+.nav-searchbox {
+  margin-bottom: 0;
+  margin-left: 20px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1;
+  height: 30px;
+
+  input[type=search] {
+    -webkit-appearance: none;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 4px 6px;
+    font-size: 15px;
+  }
+}
