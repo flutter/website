@@ -14,13 +14,14 @@ which describe semantic actions that consist of one or more pointer movements.
 Pointers represent raw data about the user's interaction with the device's
 screen.  There are four types of pointer events:
 
-- `PointerDownEvent` The pointer has contacted the screen at a particular
-   location.
-- `PointerMoveEvent` The pointer has moved from one location on the screen to
-   another.
-- `PointerUpEvent` The pointer has stopped contacting the screen.
-- `PointerCancelEvent` Input from this pointer is no longer directed towards
-  this app.
+- [`PointerDownEvent`](http://docs.domokit.org/flutter/gestures/PointerDownEvent-class.html)
+  The pointer has contacted the screen at a particular location.
+- [`PointerMoveEvent`](http://docs.domokit.org/flutter/gestures/PointerMoveEvent-class.html)
+  The pointer has moved from one location on the screen to another.
+- [`PointerUpEvent`](http://docs.domokit.org/flutter/gestures/PointerUpEvent-class.html)
+  The pointer has stopped contacting the screen.
+- [`PointerCancelEvent`](http://docs.domokit.org/flutter/gestures/PointerCancelEvent-class.html)
+  Input from this pointer is no longer directed towards this app.
 
 On pointer down, the framework does a _hit test_ on your app to determine what
 widgets exists at the location where the pointer contacted the screen. The
@@ -38,43 +39,44 @@ individual pointers. Gestures can dispatch multiple events, corresponding to the
 lifecycle of the gesture (e.g., drag start, drag update, and drag end):
 
 - Tap
- - `onTapDown` A pointer that might cause a tap has contacted the screen at a
-   particular location.
- - `onTapUp` A pointer that will trigger a tap has stopped contacting the screen
-   at a particular location.
- - `onTap` A tap has occurred.
- - `onTapCancel` The pointer that previously triggered the `onTapDown` will not
-   end up causing a tap.
+  - `onTapDown` A pointer that might cause a tap has contacted the screen at a
+    particular location.
+  - `onTapUp` A pointer that will trigger a tap has stopped contacting the screen
+    at a particular location.
+  - `onTap` A tap has occurred.
+  - `onTapCancel` The pointer that previously triggered the `onTapDown` will not
+    end up causing a tap.
 - Double tap
- - `onDoubleTap` The user has tapped the screen at the same location twice in
-   quick succession.
+  - `onDoubleTap` The user has tapped the screen at the same location twice in
+    quick succession.
 - Long press
- - `onLongPress` A pointer has remained in contact with the screen at the same
-   location for a long period of time.
+  - `onLongPress` A pointer has remained in contact with the screen at the same
+    location for a long period of time.
 - Vertical drag
- - `onVerticalDragStart` A pointer has contacted the screen and might begin to
-   move vertically.
- - `onVerticalDragUpdate` A pointer that is in contact with the screen and
-   moving vertically has moved in the vertical direction.
- - `onVerticalDragEnd` A pointer that was previously in contact with the screen
-   and moving vertically is no longer in contact with the screen and was moving
-   at a specific velocity when it stopped contacting the screen.
+  - `onVerticalDragStart` A pointer has contacted the screen and might begin to
+    move vertically.
+  - `onVerticalDragUpdate` A pointer that is in contact with the screen and
+    moving vertically has moved in the vertical direction.
+  - `onVerticalDragEnd` A pointer that was previously in contact with the screen
+    and moving vertically is no longer in contact with the screen and was moving
+    at a specific velocity when it stopped contacting the screen.
 - Horizontal drag
- - `onHorizontalDragStart` A pointer has contacted the screen and might begin to
-   move horizontally.
- - `onHorizontalDragUpdate` A pointer that is in contact with the screen and
-   moving horizontally has moved in the horizontal direction.
- - `onHorizontalDragEnd` A pointer that was previously in contact with the
-   screen and moving horizontally is no longer in contact with the screen and
-   was moving at a specific velocity when it stopped contacting the screen.
+  - `onHorizontalDragStart` A pointer has contacted the screen and might begin to
+    move horizontally.
+  - `onHorizontalDragUpdate` A pointer that is in contact with the screen and
+    moving horizontally has moved in the horizontal direction.
+  - `onHorizontalDragEnd` A pointer that was previously in contact with the
+    screen and moving horizontally is no longer in contact with the screen and
+    was moving at a specific velocity when it stopped contacting the screen.
 
 ## Gesture disambiguation
 
 At a given location on screen, there might be multiple gesture detectors. All
 of these gesture detectors listen to the stream of pointer events as they flow
-past and attempt to recognize specific gestures. The `GestureDetector` widget
-decides which gestures to attempt to recognize based on which of its callbacks
-are non-null.
+past and attempt to recognize specific gestures. The
+[`GestureDetector`](http://docs.domokit.org/flutter/widgets/GestureDetector-class.html)
+widget decides which gestures to attempt to recognize based on which of its
+callbacks are non-null.
 
 When there is more than one gesture recognizer for a given pointer on the
 screen, the framework disambiguates which gesture the user intends by having
