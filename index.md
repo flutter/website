@@ -19,7 +19,7 @@ today. We hope you try it out and send us
  - [Getting started guide](getting-started)
  - [Tutorial introduction](tutorial)
  - [Widget gallery](widgets)
- - [API documentation](https://domokit.github.io/docs/sky/)
+ - [API documentation](http://docs.domokit.org/flutter/)
 
 ## See also
 

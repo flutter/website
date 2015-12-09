@@ -16,22 +16,34 @@ needed in the underlying render tree to transition from one state to the next.
 Hello World
 -----------
 
-The minimal Flutter app simply calls `runApp` function with a widget:
+The minimal Flutter app simply calls the
+[`runApp`](http://docs.domokit.org/flutter/material/runApp.html) function
+with a widget:
 
 ```dart
 import 'package:flutter/material.dart';
 void main() => runApp(new Center(child: new Text('Hello, world!')));
 ```
 
-The `runApp` function takes the given `Widget` and makes it the root of the
-widget tree. In this example, the widget tree consists of two widgets, the
-`Center` widget and its child, the `Text` widget. The framework forces the root
-widget to cover the screen, which means the text "Hello, world" ends up centered
-on screen.
+The [`runApp`](http://docs.domokit.org/flutter/material/runApp.html) function
+takes the given
+[`Widget`](http://docs.domokit.org/flutter/material/Widget-class.html) and
+makes it the root of the widget tree. In this example, the widget tree consists
+of two widgets, the
+[`Center`](http://docs.domokit.org/flutter/material/Center-class.html) widget
+and its child, the
+[`Text`](http://docs.domokit.org/flutter/material/Text-class.html) widget.
+The framework forces the root widget to cover the screen, which means the text
+"Hello, world" ends up centered on screen.
 
 When writing an app, you'll commonly author new widgets that are subclasses of
-either `StatelessComponent` or `StatefulComponent`, depending on whether your
-component manages any state. A component's main job is to implement a `build`
+either
+[`StatelessComponent`](http://docs.domokit.org/flutter/material/StatelessComponent-class.html)
+or
+[`StatefulComponent`](http://docs.domokit.org/flutter/material/StatefulComponent-class.html),
+depending on whether your component manages any state. A component's main job is
+to implement a
+[`build`](http://docs.domokit.org/flutter/material/StatelessComponent/build.html)
 function, which describes the component in terms of other, lower-level widgets.
 The framework will build those components in turn until the process bottoms out
 in widgets that represent the underlying render object.
@@ -42,24 +54,39 @@ Basic Widgets
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
 
- * `Text`: The `Text` widget lets you create a run of styled text within your
-   application.
+ * [`Text`](http://docs.domokit.org/flutter/material/Text-class.html): The
+   [`Text`](http://docs.domokit.org/flutter/material/Text-class.html) widget
+   lets you create a run of styled text within your application.
 
- * `Row`, `Column`: These flex widgets let you create flexible layouts in both
-   the horizontal (`Row`) and vertical (`Column`) directions. Its design is
-   based on the web's flexbox layout model.
+ * [`Row`](http://docs.domokit.org/flutter/material/Row-class.html),
+   [`Column`](http://docs.domokit.org/flutter/material/Column-class.html):
+   These flex widgets let you create flexible layouts in both the horizontal
+   ([`Row`](http://docs.domokit.org/flutter/material/Row-class.html)) and
+   vertical
+   ([`Column`](http://docs.domokit.org/flutter/material/Column-class.html))
+   directions. Its design is based on the web's flexbox layout model.
 
- * `Stack`: Instead of being linearly oriented (either horizontally or
-   vertically), a `Stack` widget lets you stack widgets on top of each other in
-   paint order. You can then use the `Positioned` widget on children of a
-   `Stack` to position them relative to the top, right, bottom, or left edge of
-   the stack. Stacks are based on the web's absolute positioning layout model.
+ * [`Stack`](http://docs.domokit.org/flutter/material/Stack-class.html):
+   Instead of being linearly oriented (either horizontally or vertically), a [`Stack`](http://docs.domokit.org/flutter/material/Stack-class.html)
+   widget lets you stack widgets on top of each other in paint order. You can
+   then use the
+   [`Positioned`](http://docs.domokit.org/flutter/material/Positioned-class.html)
+   widget on children of a
+   [`Stack`](http://docs.domokit.org/flutter/material/Stack-class.html) to
+   position them relative to the top, right, bottom, or left edge of the stack.
+   Stacks are based on the web's absolute positioning layout model.
 
- * `Container`: The `Container` widget lets you create rectangular visual
-   element. A container can be decorated with a `BoxDecoration`, such as a
-   background, a border, or a shadow. A `Container` can also have margins,
-   padding, and constraints applied to its size. In addition, a `Container` can
-   be transformed in three dimensional space using a matrix.
+ * [`Container`](http://docs.domokit.org/flutter/material/Container-class.html):
+   The [`Container`](http://docs.domokit.org/flutter/material/Container-class.html)
+   widget lets you create rectangular visual element. A container can be
+   decorated with a
+   [`BoxDecoration`](http://docs.domokit.org/flutter/material/BoxDecoration-class.html),
+   such as a background, a border, or a shadow. A
+   [`Container`](http://docs.domokit.org/flutter/material/Container-class.html)
+   can also have margins, padding, and constraints applied to its size. In
+   addition, a
+   [`Container`](http://docs.domokit.org/flutter/material/Container-class.html)
+   can be transformed in three dimensional space using a matrix.
 
 Below are some simple components that combine these and other widgets:
 
@@ -123,36 +150,53 @@ material-design-icons:
   - name: navigation/menu
 ```
 
-Many widgets need to be inside of a `MaterialApp` to display properly,
-in order to inherit theme data. Therefore, we run the application
-with a `MaterialApp` and a single route (more on routes later) to our scaffold.
+Many widgets need to be inside of a
+[`MaterialApp`](http://docs.domokit.org/flutter/material/MaterialApp-class.html)
+to display properly, in order to inherit theme data. Therefore, we run the
+application with a
+[`MaterialApp`](http://docs.domokit.org/flutter/material/MaterialApp-class.html)
+and a single route (more on routes later) to our scaffold.
 
-The `MyToolBar` component creates a `Container` with a height of 56
-device-independent pixels with an internal padding of 8 pixels, both on the left
-and the right. Inside the container, `MyToolBar` uses a `Row` layout to organize
-its children. The middle child, the `title` widget, is marked as `Flexible`,
+The `MyToolBar` component creates a
+[`Container`](http://docs.domokit.org/flutter/material/Container-class.html)
+with a height of 56 device-independent pixels with an internal padding of 8
+pixels, both on the left and the right. Inside the container, `MyToolBar` uses a
+[`Row`](http://docs.domokit.org/flutter/material/Row-class.html) layout to
+organize its children. The middle child, the `title` widget, is marked as
+[`Flexible`](http://docs.domokit.org/flutter/material/Flexible-class.html),
 which means it expands to fill any remaining available space that hasn't been
-consumed by the inflexible children. You can have multiple `Flexible` children
-and determine the ratio in which they consume the available space using the
-`flex` argument to `Flexible`.
+consumed by the inflexible children. You can have multiple
+[`Flexible`](http://docs.domokit.org/flutter/material/Flexible-class.html)
+children and determine the ratio in which they consume the available space using
+the
+[`flex`](http://docs.domokit.org/flutter/material/Flexible-class.html#flex)
+argument to
+[`Flexible`](http://docs.domokit.org/flutter/material/Flexible-class.html).
 
 The `MyScaffold` component organizes its children in a vertical column. At the
 top of the column it places an instance of `MyToolBar`, passing the tool bar a
-`Text` widget to use as its title. Passing widgets as arguments to other widgets
-is a powerful technique that lets you create generic widgets that can be reused
-in a wide variety of ways. Finally, `MyScaffold` uses a `Flexible` to fill the
-remaining space with its body, which consists a centered message.
+[`Text`](http://docs.domokit.org/flutter/material/Text-class.html) widget to
+use as its title. Passing widgets as arguments to other widgets is a powerful
+technique that lets you create generic widgets that can be reused in a wide
+variety of ways. Finally, `MyScaffold` uses a
+[`Flexible`](http://docs.domokit.org/flutter/material/Flexible-class.html) to
+fill the remaining space with its body, which consists a centered message.
 
 Material Apps
 -------------
 
 Flutter provides a number of widgets that help you build apps that follow
-Material Design. A Material Design app start with the `MaterialApp` widget,
-which builds a number of useful widgets at the root of your app, including a
-`Navigator`, which manages a stack of widgets identified by strings, also know
-as "routes". The `Navigator` lets you transition smoothly between screens of
-your application. Using the `MaterialApp` widget is entirely optional but a good
-practice.
+Material Design. A Material Design app start with the
+[`MaterialApp`](http://docs.domokit.org/flutter/material/MaterialApp-class.html)
+widget, which builds a number of useful widgets at the root of your app,
+including a
+[`Navigator`](http://docs.domokit.org/flutter/material/Navigator-class.html),
+which manages a stack of widgets identified by strings, also know as "routes".
+The
+[`Navigator`](http://docs.domokit.org/flutter/material/Navigator-class.html)
+lets you transition smoothly between screens of your application. Using the
+[`MaterialApp`](http://docs.domokit.org/flutter/material/MaterialApp-class.html)
+widget is entirely optional but a good practice.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -197,16 +241,25 @@ material-design-icons:
   - name: navigation/menu
 ```
 
-Now that we've switched from `MyToolBar` and `MyScaffold` to the `ToolBar` and
-`Scaffold` widgets from `material.dart`, our app is starting to look at bit more
-like Material Design. For example, the tool bar has a shadow and the title text
+Now that we've switched from `MyToolBar` and `MyScaffold` to the
+[`ToolBar`](http://docs.domokit.org/flutter/material/ToolBar-class.html) and
+[`Scaffold`](http://docs.domokit.org/flutter/material/Scaffold-class.html)
+widgets from `material.dart`, our app is starting to look at bit more like
+Material Design. For example, the tool bar has a shadow and the title text
 inherits the correct styling automatically. We've also added a floating action
 button for good measure.
 
 Notice that we're again passing widgets as arguments to other widgets. The
-`Scaffold` widget takes a number of different named widget arguments, each of
-which is places in its layout in the appropriate place. Similarly, the `ToolBar`
-widget lets us pass in widgets for the `left` and the `right` of the `center`
+[`Scaffold`](http://docs.domokit.org/flutter/material/Scaffold-class.html)
+widget takes a number of different named widget arguments, each of which is
+places in its layout in the appropriate place. Similarly, the
+[`ToolBar`](http://docs.domokit.org/flutter/material/ToolBar-class.html)
+widget lets us pass in widgets for the
+[`left`](http://docs.domokit.org/flutter/material/ToolBar-class.html#left)
+and the
+[`right`](http://docs.domokit.org/flutter/material/ToolBar-class.html#right)
+of the
+[`center`](http://docs.domokit.org/flutter/material/ToolBar-class.html#left)
 widget. This pattern recurs throughout the framework and is something you might
 consider when designing your own components.
 
@@ -241,30 +294,46 @@ class MyButton extends StatelessComponent {
 }
 ```
 
-The `GestureDetector` widget doesn't have an visual representation but instead
-detects gestures made by the user. When the user taps the `Container`, the
-`GestureDetector` will call its `onTap` callback, in this case printing a
-message to the console. You can use `GestureDetector` to detect a variety of
-input gestures, including taps, drags, and scales.
+The
+[`GestureDetector`](http://docs.domokit.org/flutter/material/GestureDetector-class.html)
+widget doesn't have an visual representation but instead detects gestures made
+by the user. When the user taps the
+[`Container`](http://docs.domokit.org/flutter/material/Container-class.html),
+the
+[`GestureDetector`](http://docs.domokit.org/flutter/material/GestureDetector-class.html)
+will call its
+[`onTap`](http://docs.domokit.org/flutter/material/GestureDetector-class.html#onTap)
+callback, in this case printing a message to the console. You can use
+[`GestureDetector`](http://docs.domokit.org/flutter/material/GestureDetector-class.html)
+to detect a variety of input gestures, including taps, drags, and scales.
 
-Many components use a `GestureDetector` to provide optional callbacks for other
-components. For example, the `IconButton`, `RaisedButton`, and
-`FloatingActionButton` components have `onPressed` callbacks that are triggered
-when the user taps the widget.
+Many components use a
+[`GestureDetector`](http://docs.domokit.org/flutter/material/GestureDetector-class.html)
+to provide optional callbacks for other components. For example, the
+[`IconButton`](http://docs.domokit.org/flutter/material/IconButton-class.html),
+[`RaisedButton`](http://docs.domokit.org/flutter/material/RaisedButton-class.html),
+and
+[`FloatingActionButton`](http://docs.domokit.org/flutter/material/FloatingActionButton-class.html)
+components have
+[`onPressed`](http://docs.domokit.org/flutter/material/RaisedButton-class.html#onPressed)
+callbacks that are triggered when the user taps the widget.
 
 Managing State
 --------------
 
 Thus far, we've used only stateless components. Stateless components receive
-arguments from their parent component, which they store in `final` member
-variables. When a component is asked to `build`, it uses these stored values to
-derive new arguments for the widgets it creates.
+arguments from their parent component, which they store in
+[`final`](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const)
+member variables. When a component is asked to
+[`build`](http://docs.domokit.org/flutter/material/StatelessComponent/build.html),
+it uses these stored values to derive new arguments for the widgets it creates.
 
-In order to build more complex experiences, however - for example, to react
-in more interesting ways to user input - applications will typically carry some
-state. Flutter uses StatefulComponents to capture this idea. StatefulComponents
-are special widgets that know how to generate State objects, which are then
-used to hold state. Consider this basic example, using the `RaisedButton`
+In order to build more complex experiences - for example, to react in more
+interesting ways to user input - applications will typically carry some state.
+Flutter uses StatefulComponents to capture this idea. StatefulComponents are
+special widgets that know how to generate State objects, which are then used to
+hold state. Consider this basic example, using the
+[`RaisedButton`](http://docs.domokit.org/flutter/material/RaisedButton-class.html)
 mentioned earlier:
 
 ```dart
@@ -295,7 +364,8 @@ You might wonder why StatefulComponent and State are separate objects. In
 Flutter, these two types of objects have different life cycles. Widgets are
 temporary objects, used to construct a presentation of the application in its
 current state. State objects on the other hand are persistent between calls to
-`build()`, allowing them to remember information.
+[`build()`](http://docs.domokit.org/flutter/material/State/build.html),
+allowing them to remember information.
 
 The example above accepts user input and directly uses the result in its
 build method.  In more complex applications, different parts of the widget
@@ -304,7 +374,7 @@ component might present a complex user interface with the goal of gathering
 specific information, such as a date or location, while another component might
 use that information to change the overall presentation.
 
-In Flutter, change notifications flow "up" the component heirarchy by way of
+In Flutter, change notifications flow "up" the component hierarchy by way of
 callbacks, while current state flows "down" to the stateless components that do
 presentation. The common parent that redirects this flow is the State. Let's
 see how that works in practice, with this slightly more complex example:
@@ -410,17 +480,21 @@ class ShoppingListItem extends StatelessComponent {
 ```
 
 The `ShoppingListItem` component follows a common pattern for stateless
-components. It stores the values it receives in its constructor in `final`
-member variables, which it then uses during its `build` function. For example,
-the `inCart` boolean to toggle between two visual appearances: one that uses the
-primary color from the current theme and another that uses gray.
+components. It stores the values it receives in its constructor in
+[`final`](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const)
+member variables, which it then uses during its
+[`build`](http://docs.domokit.org/flutter/material/StatelessComponent/build.html)
+function. For example, the `inCart` boolean to toggle between two visual
+appearances: one that uses the primary color from the current theme and another
+that uses gray.
 
 When the user taps the list item, the component doesn't modify its `inCart`
 value directly. Instead, the component calls the `onCartChanged` function it
 received from its parent component. This pattern lets you store state higher in
 the component hierarchy, which causes the state to persist for longer periods of
-time. In the extreme, the state stored on the component passed to `runApp`
-persists for the lifetime of the application.
+time. In the extreme, the state stored on the component passed to
+[`runApp`](http://docs.domokit.org/flutter/material/runApp.html) persists for
+the lifetime of the application.
 
 When the parent receives the `onCartChanged` callback, the parent will update
 its internal state, which will trigger the parent to rebuild and create a new
@@ -499,32 +573,50 @@ void main() {
 }
 ```
 
-The `ShoppingList` class extends `StatefulComponent`, which means this component
-stores mutable state. When the `ShoppingList` component is first inserted into
-the tree, the framework calls the `createState` function to create a fresh
-instance of `_ShoppingListState` to associate with that location in the tree.
-(Notice that we typically name subclasses of `State` with leading underscores to
-indicate that they are private implementation details.) When this component's
-parent rebuilds, the parent will create a new instance of `ShoppingList`, but
-the framework will reuse the `_ShoppingListState` instance that is already in
-the tree rather than calling `createState` again.
+The `ShoppingList` class extends
+[`StatefulComponent`](http://docs.domokit.org/flutter/material/StatefulComponent-class.html),
+which means this component stores mutable state. When the `ShoppingList`
+component is first inserted into the tree, the framework calls the
+[`createState`](http://docs.domokit.org/flutter/material/StatefulComponent-class.html#createState)
+function to create a fresh instance of `_ShoppingListState` to associate with
+that location in the tree. (Notice that we typically name subclasses of
+[`State`](http://docs.domokit.org/flutter/material/State-class.html) with
+leading underscores to indicate that they are private implementation details.)
+When this component's parent rebuilds, the parent will create a new instance of
+`ShoppingList`, but the framework will reuse the `_ShoppingListState` instance
+that is already in the tree rather than calling
+[`createState`](http://docs.domokit.org/flutter/material/StatefulComponent-class.html#createState)
+again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
-use its `config` property. If the parent rebuilds and creates a new
-`ShoppingList`, the `_ShoppingListState` will also rebuild with the new `config`
-value. If you wish to be notified when the `config` property changes, you can
-override the `didUpdateConfig` function, which is passed the `oldConfig` to let
-you compare the old configuration with the current `config`.
+use its
+[`config`](http://docs.domokit.org/flutter/material/State-class.html#config)
+property. If the parent rebuilds and creates a new `ShoppingList`, the
+`_ShoppingListState` will also rebuild with the new
+[`config`](http://docs.domokit.org/flutter/material/State-class.html#config)
+value. If you wish to be notified when the
+[`config`](http://docs.domokit.org/flutter/material/State-class.html#config)
+property changes, you can override the
+[`didUpdateConfig`](http://docs.domokit.org/flutter/material/State-class.html#didUpdateConfig)
+function, which is passed the `oldConfig` to let you compare the old
+configuration with the current
+[`config`](http://docs.domokit.org/flutter/material/State-class.html#config).
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
 signal to the framework that it changes its internal state, it wraps those calls
-in a `setState` call. Calling `setState` marks this component as dirty and
-schedules it to be rebuilt the next time your app needs to update the screen. If
-you forget to call `setState` when modifying the internal state of a component,
-the framework won't know your component is dirty and might not call the
-component's `build` function, which means the user interface might not update to
-reflect the changed state.
+in a
+[`setState`](http://docs.domokit.org/flutter/material/State-class.html#setState)
+call. Calling
+[`setState`](http://docs.domokit.org/flutter/material/State-class.html#setState)
+marks this component as dirty and schedules it to be rebuilt the next time your
+app needs to update the screen. If you forget to call
+[`setState`](http://docs.domokit.org/flutter/material/State-class.html#setState)
+when modifying the internal state of a component, the framework won't know your
+component is dirty and might not call the component's
+[`build`](http://docs.domokit.org/flutter/material/StatelessComponent/build.html)
+function, which means the user interface might not update to reflect the changed
+state.
 
 By managing state in this way, you don't need to write separate code for
 creating and updating subcomponents. Instead, you simply implement the build
@@ -533,27 +625,45 @@ function, which handles both situations.
 initState and dispose
 ---------------------
 
-After calling `createState` on the StatefulComponent, the framework inserts the
-new state object into the tree and then calls `initState` on the state object.
-A subclass of `State` can override `initState` to do work that needs to happen
-just once. For example, you can override `initState` to configure animations or
-to subscribe to platform services. Implementations of `initState` are required
-to start by calling `super.initState`.
+After calling
+[`createState`](http://docs.domokit.org/flutter/material/StatefulComponent-class.html#createState)
+on the StatefulComponent, the framework inserts the new state object into the
+tree and then calls
+[`initState`](http://docs.domokit.org/flutter/material/State-class.html#initState)
+on the state object. A subclass of
+[`State`](http://docs.domokit.org/flutter/material/State-class.html) can
+override
+[`initState`](http://docs.domokit.org/flutter/material/State-class.html#initState)
+to do work that needs to happen just once. For example, you can override
+[`initState`](http://docs.domokit.org/flutter/material/State-class.html#initState)
+to configure animations or to subscribe to platform services. Implementations of
+[`initState`](http://docs.domokit.org/flutter/material/State-class.html#initState)
+are required to start by calling
+[`super.initState`](http://docs.domokit.org/flutter/material/State-class.html#initState).
 
-When a state object is no longer needed, the framework calls `dispose` on the
-state object. You can override the `dispose` function to do cleanup work. For
-example, you can override `dispose` to cancel timers or to unsubscribe from
-platform services. Implementations of `dispose` typically end by calling
-`super.dispose`.
+When a state object is no longer needed, the framework calls
+[`dispose`](http://docs.domokit.org/flutter/material/State-class.html#dispose)
+on the state object. You can override the
+[`dispose`](http://docs.domokit.org/flutter/material/State-class.html#dispose)
+function to do cleanup work. For example, you can override
+[`dispose`](http://docs.domokit.org/flutter/material/State-class.html#dispose)
+to cancel timers or to unsubscribe from platform services. Implementations of
+[`dispose`](http://docs.domokit.org/flutter/material/State-class.html#dispose)
+typically end by calling
+[`super.dispose`](http://docs.domokit.org/flutter/material/State-class.html#dispose).
 
 Keys
 ----
 
 You can use keys to control which widgets the framework will match up with which
 other widgets when a component rebuilds. By default, the framework matches
-widgets in the current and previous build according to their `runtimeType` and
-the order in which they appear. With keys, the framework requires that the two
-widgets have the same `key` as well as the same `runtimeType`.
+widgets in the current and previous build according to their
+[`runtimeType`](http://docs.domokit.org/flutter/material/Widget-class.html#runtimeType)
+and the order in which they appear. With keys, the framework requires that the
+two widgets have the same
+[`key`](http://docs.domokit.org/flutter/material/Widget-class.html#key) as
+well as the same
+[`runtimeType`](http://docs.domokit.org/flutter/material/Widget-class.html#runtimeType).
 
 Keys are most useful in components that build many instances of the same type of
 widget. For example, the `ShoppingList` component, which builds just enough
@@ -578,8 +688,15 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
-Some widgets, such as `Input` require global keys because they can hold focus,
-which means they receive any text the user enters into the app. The `Focus`
-widget keeps track of which `InputState` object is focused by remembering its
-`GlobalKey`. That way the same `Input` widget remains focused even if it moves
-around in the widget tree.
+Some widgets, such as
+[`Input`](http://docs.domokit.org/flutter/material/Input-class.html) require
+global keys because they can hold focus, which means they receive any text the
+user enters into the app. The
+[`Focus`](http://docs.domokit.org/flutter/material/Focus-class.html) widget
+keeps track of which
+[`InputState`](http://docs.domokit.org/flutter/material/InputState-class.html)
+object is focused by remembering its
+[`GlobalKey`](http://docs.domokit.org/flutter/material/GlobalKey-class.html).
+That way the same
+[`Input`](http://docs.domokit.org/flutter/material/Input-class.html) widget
+remains focused even if it moves around in the widget tree.
