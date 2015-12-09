@@ -393,8 +393,8 @@ This can be quite useful in figuring out exactly what is going on when
 working with the render tree.
 
 ```dart
-import 'package:flutter/animation.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 
 void main() {
   scheduler.addPersistentFrameCallback((_) {
