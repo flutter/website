@@ -328,11 +328,12 @@ member variables. When a component is asked to
 [`build`](http://docs.domokit.org/flutter/material/StatelessComponent/build.html),
 it uses these stored values to derive new arguments for the widgets it creates.
 
-In order to build more complex experiences, however - for example, to react
-in more interesting ways to user input - applications will typically carry some
-state. Flutter uses StatefulComponents to capture this idea. StatefulComponents
-are special widgets that know how to generate State objects, which are then
-used to hold state. Consider this basic example, using the [`RaisedButton`](http://docs.domokit.org/flutter/material/RaisedButton-class.html)
+In order to build more complex experiences - for example, to react in more
+interesting ways to user input - applications will typically carry some state.
+Flutter uses StatefulComponents to capture this idea. StatefulComponents are
+special widgets that know how to generate State objects, which are then used to
+hold state. Consider this basic example, using the
+[`RaisedButton`](http://docs.domokit.org/flutter/material/RaisedButton-class.html)
 mentioned earlier:
 
 ```dart
