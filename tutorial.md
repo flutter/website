@@ -190,7 +190,7 @@ Material Design. A Material Design app start with the
 widget, which builds a number of useful widgets at the root of your app,
 including a
 [`Navigator`](http://docs.domokit.org/flutter/material/Navigator-class.html),
-which manages a stack of widgets identified by strings, also know as "routes".
+which manages a stack of widgets identified by strings, also known as "routes".
 The
 [`Navigator`](http://docs.domokit.org/flutter/material/Navigator-class.html)
 lets you transition smoothly between screens of your application. Using the
@@ -250,7 +250,7 @@ button for good measure.
 
 Notice that we're again passing widgets as arguments to other widgets. The
 [`Scaffold`](http://docs.domokit.org/flutter/material/Scaffold-class.html)
-widget takes a number of different named widget arguments, each of which is
+widget takes a number of different named widget arguments, each of which it
 places in its layout in the appropriate place. Similarly, the
 [`ToolBar`](http://docs.domokit.org/flutter/material/ToolBar-class.html)
 widget lets us pass in widgets for the
