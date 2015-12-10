@@ -5,7 +5,7 @@ nav_title: Getting Started
 permalink: /getting-started/
 ---
 
-Flutter currently supports developers on Mac and Linux.
+Flutter currently supports developers on Mac and Linux (64-bit).
 Windows support is planned.
 
 ## Setting up your environment
