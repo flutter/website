@@ -250,8 +250,8 @@ button for good measure.
 
 Notice that we're again passing widgets as arguments to other widgets. The
 [`Scaffold`](http://docs.domokit.org/flutter/material/Scaffold-class.html)
-widget takes a number of different named widget arguments, each of which it
-places in its layout in the appropriate place. Similarly, the
+widget takes a number of different widgets as named arguments, each of which are
+placed in the Scaffold layout in the appropriate place. Similarly, the
 [`ToolBar`](http://docs.domokit.org/flutter/material/ToolBar-class.html)
 widget lets us pass in widgets for the
 [`left`](http://docs.domokit.org/flutter/material/ToolBar-class.html#left)
