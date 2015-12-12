@@ -460,7 +460,7 @@ class ShoppingListItem extends StatelessComponent {
   TextStyle _getTextStyle(BuildContext context) {
     if (inCart) {
       return DefaultTextStyle.of(context).copyWith(
-          color: Colors.black54, decoration: lineThrough);
+          color: Colors.black54, decoration: TextDecoration.lineThrough);
     }
     return null;
   }
