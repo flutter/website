@@ -20,7 +20,7 @@ today. We hope you try it out and send us
  - [Tutorial introduction](tutorial)
  - [Widget gallery](widgets)
  - [Gestures](gestures)
- - [API documentation](http://docs.domokit.org/flutter/)
+ - [API documentation](http://docs.flutter.io/flutter/)
 
 ## See also
 
