@@ -155,6 +155,18 @@ and themes. You can see a collection of those widgets at [[docs coming soon]]. O
 course, these widgets are optional. Flutter is designed to make it easy to
 create your own widgets, or customize the existing widgets.
 
+## Why does Flutter not use the host platform's native widgets?
+
+We are hoping the end-result will be higher quality apps. If we reused
+the OEM widgets, the quality and performance of Flutter apps would be
+limited by the quality of those widgets.
+
+In Android, for example, there's a hard-coded set of gestures and fixed
+rules for disambiguating them. In Flutter, you can write your
+own gesture recognizer that is a first-class participant in the
+[gesture system](http://flutter.io/gestures/). Moreover, two widgets
+authored by different people can coordinate to disambiguate gestures.
+
 ## Can I extend and customize the bundled widgets?
 
 Absolutely. Flutter's widget system was designed to be easily customizable. You
