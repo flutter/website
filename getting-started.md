@@ -140,12 +140,16 @@ you might want to use `flutter logs --clear` to clear the logs between runs.
 
 ## Getting Started with the Atom editor
 
-Flutter uses [Atom](https://atom.io/) as its IDE. However,
+Flutter recommends [Atom](https://atom.io/) for editing, running,
+and debugging Flutter apps. However,
 using our command-line tools, you can use
 any editor to develop Flutter applications.
 
-For instructions on installing Atom and our Flutter plugin, see
-[dart-atom.github.io/dartlang](http://dart-atom.github.io/dartlang/).
+Download Atom from [atom.io](https://atom.io)
+and then install the [Flutter package](https://atom.io/packages/flutter).
+If you need help installing packages, consult the
+[Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages)
+or [email us][mailinglist].
 
 ## Debugging and profiling your app
 
@@ -209,3 +213,5 @@ your Flutter app. Here is a basic example:
 Then, inside your Flutter app, run `flutter apk`.
 
 The APK can be found in `$MY_FLUTTER_APP/build/app.apk`.
+
+[mailinglist]: mailto:flutter-dev@googlegroups.com
