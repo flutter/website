@@ -1,4 +1,4 @@
-# Flutter's website
+# [Flutter][]'s website
 
 Designed to run in GitHub pages.
 
@@ -30,3 +30,5 @@ its own file and checked for analysis issues. Some ways to tweak that:
   immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
 - a snippet without any import statements will have an import (`'package:flutter/material.dart'`)
   automatically added to it
+
+[Flutter]: http://flutter.io
