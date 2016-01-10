@@ -113,7 +113,7 @@ Apps that use Material Design are particularly well suited for Flutter.
 
 You can expect excellent performance. Flutter is
 designed to help developers easily achieve a constant 60fps. Flutter apps run
-via natively compiled code, no interpreters are involved.
+via natively compiled code – no interpreters are involved.
 
 ## Can I use Flutter to build desktop apps?
 
@@ -187,7 +187,7 @@ Not at this time. Please share your ideas at
 
 Not at this time. Because Flutter apps are pre-compiled for iOS, and binary size
 is always a concern with mobile apps, we disabled dart:mirrors. We are curious
-what you might need reflection/mirrors for, please email us at
+what you might need reflection/mirrors for – please let us know at
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
 ## How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
@@ -294,7 +294,7 @@ parts of the system based on early adopter feedback.
 ## I heard Apple rejects apps built with third-party frameworks, is that true? Will Apple reject my Flutter app?
 
 We can't speak for Apple, but Apple's policies have changed, and they have
-allowed apps built with systems like Flutter. Of course, Apple is in ultimately
+allowed apps built with systems like Flutter. Of course, Apple is ultimately
 in charge of their ecosystem, but our goal is to continue to do everything we
 can to ensure Flutter apps can be deployed into Apple's App Store.
 
