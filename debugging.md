@@ -13,7 +13,7 @@ Before running your applications, test your code with `flutter
 analyze`. This tool (which is a wrapper around the `dartanalyzer`
 tool) will analyze your code and help you find possible mistakes.
 If you're using the
-[https://atom.io/packages/flutter](Flutter plugin for Atom), this
+[Flutter plugin for Atom](https://atom.io/packages/flutter), this
 is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
