@@ -1,6 +1,6 @@
 # [Flutter][]'s website
 
-Designed to run in GitHub pages.
+Flutter's static website, built with Jekyll.
 
 [![Build Status](https://travis-ci.org/flutter/flutter.github.io.svg?branch=master)](https://travis-ci.org/flutter/flutter.github.io)
 
@@ -25,10 +25,12 @@ The code snippets in the markdown documentation are validated as part of the
 build process. Anything within a '\`\`\`dart' code fence will be extracted into
 its own file and checked for analysis issues. Some ways to tweak that:
 
-- if a code snippet should not be analyzed, immediately proceed it with a `<!-- skip -->` comment
+- if a code snippet should not be analyzed, immediately proceed it with
+  a `<!-- skip -->` comment
 - to include code to be analyzed, but not displayed, add that in a comment
   immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- a snippet without any import statements will have an import (`'package:flutter/material.dart'`)
+- a snippet without any import statements will have an import
+  (`'package:flutter/material.dart'`)
   automatically added to it
 
-[Flutter]: http://flutter.io
+[Flutter]: https://flutter.io

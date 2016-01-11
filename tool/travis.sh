@@ -18,8 +18,11 @@ bundle install
 echo "Building site."
 bundle exec jekyll build -d build
 
-echo "Deploying to Firebase."
+if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  if [ "$TRAVIS_BRANCH" = "master" ]; then
+    echo "Deploying to Firebase."
 
-npm install -g firebase-tools
-firebase deploy --token "$FIREBASE_TOKEN"
-
+    npm install -g firebase-tools
+    firebase deploy --token "$FIREBASE_TOKEN"
+  fi
+fi
