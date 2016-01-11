@@ -394,10 +394,9 @@ working with the render tree.
 
 ```dart
 import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
 
 void main() {
-  scheduler.addPersistentFrameCallback((_) {
+  Renderer.instance.addPersistentFrameCallback((_) {
     debugDumpRenderTree();
   });
 }
