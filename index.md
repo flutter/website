@@ -19,12 +19,16 @@ today. We hope you try it out and send us
  - [Getting started guide](getting-started)
  - [Tutorial introduction](tutorial)
  - [Widget gallery](widgets)
- - [Gestures](gestures)
+ - [Debugging Flutter applications](debugging)
+
+## Documentation
+
  - [API documentation](http://docs.flutter.io/flutter/)
+ - [Gestures in Flutter](gestures)
+ - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
 
 ## See also
 
- - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
  - [Source on GitHub](https://github.com/flutter/flutter)
  - [Issue tracker](https://github.com/flutter/flutter/issues)
  - [FAQ](faq)
