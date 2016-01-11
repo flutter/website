@@ -541,16 +541,15 @@ class _ShoppingListState extends State<ShoppingList> {
       toolBar: new ToolBar(
         center: new Text('Shopping List')
       ),
-      body: new MaterialList<Product>(
+      body: new MaterialList(
         type: MaterialListType.oneLineWithAvatar,
-        items: config.products,
-        itemBuilder: (BuildContext context, Product product, int index) {
+        children: config.products.map((Product product) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
             onCartChanged: _handleCartChanged
           );
-        }
+        })
       )
     );
   }
