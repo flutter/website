@@ -125,13 +125,13 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
-code {
+pre {
     font-size: 15px;
 }
 
 code {
   font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
 }
 
 pre {
