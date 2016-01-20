@@ -25,6 +25,7 @@ today. We hope you try it out and send us
 
  - [API documentation](http://docs.flutter.io/flutter/)
  - [Gestures in Flutter](gestures)
+ - [Animations in Flutter](animations)
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
 
 ## See also
