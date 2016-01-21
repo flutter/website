@@ -45,8 +45,9 @@ that wish to include an animation as part of a larger build function. To use
 
 ### `addStatusListener`
 
-Animations also a [`AnimationStatus`](http://docs.flutter.io/flutter/animation/AnimationStatus-class.html),
-which indicate how the animation will evolve over time. Whenever the animation's
+Animations also provide a
+[`AnimationStatus`](http://docs.flutter.io/flutter/animation/AnimationStatus-class.html),
+which indicates how the animation will evolve over time. Whenever the animation's
 status changes, the animation notifies all the listeners added with
 [`addStatusListener`](http://docs.flutter.io/flutter/animation/Animation/addStatusListener.html).
 Typically, animations start out in the `dismissed` status, which means they're
@@ -71,7 +72,7 @@ animations, which uses a physical simulation, such as a spring, to drive the
 animation.
 
 Once you've created an animation controller, you can start building other
-animations on based on it. For example, you can create a
+animations based on it. For example, you can create a
 [`ReverseAnimation`](http://docs.flutter.io/flutter/animation/ReverseAnimation-class.html)
 that mirrors the original animation but runs in the opposite direction (e.g.,
 from 1.0 to 0.0). Similarly, you can create a
