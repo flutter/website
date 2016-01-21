@@ -104,11 +104,13 @@ class MyToolBar extends StatelessComponent {
       decoration: new BoxDecoration(
         backgroundColor: Colors.blue[500]
       ),
-      child: new Row([
-        new IconButton(icon: 'navigation/menu'),
-        new Flexible(child: title),
-        new IconButton(icon: 'action/search'),
-      ])
+      child: new Row(
+        children: [
+          new IconButton(icon: 'navigation/menu'),
+          new Flexible(child: title),
+          new IconButton(icon: 'action/search'),
+        ]
+      )
     );
   }
 }
@@ -116,16 +118,18 @@ class MyToolBar extends StatelessComponent {
 class MyScaffold extends StatelessComponent {
   Widget build(BuildContext context) {
     return new Material(
-      child: new Column([
-        new MyToolBar(
-          title: new Text('Example title', style: Typography.white.title)
-        ),
-        new Flexible(
-          child: new Center(
-            child: new Text('Hello, world!')
+      child: new Column(
+        children: [
+          new MyToolBar(
+            title: new Text('Example title', style: Typography.white.title)
+          ),
+          new Flexible(
+            child: new Center(
+              child: new Text('Hello, world!')
+            )
           )
-        )
-      ])
+        ]
+      )
     );
   }
 }
@@ -348,13 +352,15 @@ class _CounterState extends State<Counter> {
   }
 
   Widget build(BuildContext context) {
-    return new Row([
-      new RaisedButton(
-        onPressed: _increment,
-        child: new Text('Increment')
-      ),
-      new Text('Count: $_count')
-    ]);
+    return new Row(
+      children: [
+        new RaisedButton(
+          onPressed: _increment,
+          child: new Text('Increment')
+        ),
+        new Text('Count: $_count')
+      ]
+    );
   }
 }
 ```
@@ -411,12 +417,14 @@ class _CounterState extends State<Counter> {
   }
 
   Widget build(BuildContext context) {
-    return new Row([
-      new CounterIncrementor(
-        onPressed: _increment
-      ),
-      new CounterDisplay(count: _count)
-    ]);
+    return new Row(
+      children: [
+        new CounterIncrementor(
+          onPressed: _increment
+        ),
+        new CounterDisplay(count: _count)
+      ]
+    );
   }
 }
 ```
