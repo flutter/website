@@ -20,7 +20,7 @@ over the lifetime of the animation. Most widgets that perform an animation
 receive an `Animation` object as a parameter, from which they read the current
 value of the animation and to which they listen for changes to that value.
 
-## `addListener`
+### `addListener`
 
 Whenever the animation's value changes, the animation notifies all the
 listeners added with
@@ -46,17 +46,15 @@ that wish to include an animation as part of a larger build function. To use
 ### `addStatusListener`
 
 Animations also a [`AnimationStatus`](http://docs.flutter.io/flutter/animation/AnimationStatus-class.html),
-which indicate how the animation will evolve over time. Typically, animations
-start out in the `dismissed` status, which means they're at the beginning of
-their range. For example, animations that progress from 0.0 to 1.0 will be
-`dismissed` when their value is 0.0. An animation might then run `forward`
-(e.g., from 0.0 to 1.0) or perhaps in `reverse` (e.g., from 0.0 to 1.0).
-Eventually, if the animation reaches the end of its range (e.g., 1.0), the
-animation reaches the `completed` status.
-
-Whenever the animation's status changes, the animation notifies all the
-listeners added with
+which indicate how the animation will evolve over time. Whenever the animation's
+status changes, the animation notifies all the listeners added with
 [`addStatusListener`](http://docs.flutter.io/flutter/animation/Animation/addStatusListener.html).
+Typically, animations start out in the `dismissed` status, which means they're
+at the beginning of their range. For example, animations that progress from 0.0
+to 1.0 will be `dismissed` when their value is 0.0. An animation might then run
+`forward` (e.g., from 0.0 to 1.0) or perhaps in `reverse` (e.g., from 0.0 to
+1.0). Eventually, if the animation reaches the end of its range (e.g., 1.0), the
+animation reaches the `completed` status.
 
 ## AnimationController
 
