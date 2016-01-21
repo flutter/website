@@ -2,7 +2,7 @@
 
 Flutter's static website, built with Jekyll.
 
-[![Build Status](https://travis-ci.org/flutter/flutter.github.io.svg?branch=master)](https://travis-ci.org/flutter/flutter.github.io)
+[![Build Status](https://travis-ci.org/flutter/website.svg?branch=master)](https://travis-ci.org/flutter/website)
 
 ## Developing
 
