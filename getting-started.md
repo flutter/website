@@ -10,7 +10,7 @@ Windows support is planned.
 
 ## Setting up your environment
 
-### Downloading and installing the Dart SDK and Dependencies
+### Downloading and installing the Dart SDK
 
 To get started, you need to install the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
@@ -19,7 +19,6 @@ To install the [Dart SDK](https://www.dartlang.org/downloads/):
 
 - Mac:
   - `brew tap dart-lang/dart && brew install dart`, or, if you don't use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
-  - Install [Xcode 7](https://developer.apple.com/xcode/)
 - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
 - Windows: Stay tuned, Windows support is planned.
 
@@ -116,16 +115,32 @@ Jelly Bean, v16, 4.1.x or later.
  - Check that `adb` lists your device with `adb devices -l`.
 
 ## Setting up your iOS device or simulator
-- Simulator:
-  - Open the `Simulator.app` via `Spotlight`
-  - Select the device type you want to you test your application on `Hardware -> Device` (make sure to select a simulator that is at least iPhone 5 or above)
-- Device:
-  - Connect your iOS device via USB
-- Make sure you can see your connected device via `flutter list`
+
+You must use a Mac, with Xcode installed, to develop iOS apps with Flutter.
+
+### Installing dependencies
+
+- Install [Xcode 7](https://developer.apple.com/xcode/)
+- Install ideviceinstaller. If you use homebrew, you can run `brew install ideviceinstaller`
+
+### Running the simulator
+
+We currently recommend developing with the iOS simulator, due to
+faster edit/refresh cycles.
+
+- Run the `Simulator.app`, which you can find in _Applications/Xcode/Contents/Developer/Applications_ or via _Spotlight_
+- Select the device type you want to you test your application on with `Hardware -> Device`
+  - Make sure to select a device type of iPhone 5 or above.
+
+### Troubleshooting
+
+Ensure you can see your connected device or simulator via `flutter list`.
 
 ## Running a Flutter application
 
-You can use the `flutter start` command to run Flutter apps on your devices.
+You can use the `flutter start` command to run your Flutter app on your
+device or simulator. For best results, ensure you have only one device
+or simulator connected.
 
 First, change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
