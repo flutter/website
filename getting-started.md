@@ -122,6 +122,9 @@ You must use a Mac, with Xcode installed, to develop iOS apps with Flutter.
 
 - Install [Xcode 7](https://developer.apple.com/xcode/)
 - Install ideviceinstaller. If you use homebrew, you can run `brew install ideviceinstaller`
+- Install Flutter's `ios-deploy` tool.
+  - `$ brew tap flutter/flutter`
+  - `$ brew install ios-deploy`
 
 ### Running the simulator
 
