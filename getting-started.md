@@ -10,15 +10,16 @@ Windows support is planned.
 
 ## Setting up your environment
 
-### Downloading and installing the Dart SDK
+### Downloading and installing the Dart SDK and Dependencies
 
 To get started, you need to install the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
 
 To install the [Dart SDK](https://www.dartlang.org/downloads/):
 
-- Mac: `brew tap dart-lang/dart && brew install dart`, or, if you don't
-  use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
+- Mac:
+  - `brew tap dart-lang/dart && brew install dart`, or, if you don't use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
+  - Install [Xcode 7](https://developer.apple.com/xcode/)
 - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
 - Windows: Stay tuned, Windows support is planned.
 
@@ -74,6 +75,12 @@ in the current directory:
 $ flutter init -o my_app
 ```
 
+To generate the iOS project:
+```
+$ cd my_app
+$ flutter ios --init
+```
+
 The above command creates a `my_app` directory that contains a simple demo
 app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
@@ -107,6 +114,14 @@ Jelly Bean, v16, 4.1.x or later.
    device, authorize your computer to access your device.
 
  - Check that `adb` lists your device with `adb devices -l`.
+
+## Setting up your iOS device or simulator
+- Simulator:
+  - Open the `Simulator.app` via `Spotlight`
+  - Select the device type you want to you test your application on `Hardware -> Device` (make sure to select a simulator that is at least iPhone 5 or above)
+- Device:
+  - Connect your iOS device via USB
+- Make sure you can see your connected device via `flutter --list`
 
 ## Running a Flutter application
 
