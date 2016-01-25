@@ -121,7 +121,7 @@ Jelly Bean, v16, 4.1.x or later.
   - Select the device type you want to you test your application on `Hardware -> Device` (make sure to select a simulator that is at least iPhone 5 or above)
 - Device:
   - Connect your iOS device via USB
-- Make sure you can see your connected device via `flutter --list`
+- Make sure you can see your connected device via `flutter list`
 
 ## Running a Flutter application
 
