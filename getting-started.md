@@ -10,7 +10,7 @@ Windows support is planned.
 
 ## Setting up your environment
 
-### Downloading and installing the Dart SDK and Dependencies
+### Downloading and installing the Dart SDK
 
 To get started, you need to install the Dart SDK.
 Flutter requires Dart SDK 1.12.2 or greater.
@@ -18,8 +18,8 @@ Flutter requires Dart SDK 1.12.2 or greater.
 To install the [Dart SDK](https://www.dartlang.org/downloads/):
 
 - Mac:
-  - `brew tap dart-lang/dart && brew install dart`, or, if you don't use homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
-  - Install [Xcode 7](https://developer.apple.com/xcode/)
+  - `brew tap dart-lang/dart && brew install dart`, or, if you don't use
+    homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
 - Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
 - Windows: Stay tuned, Windows support is planned.
 
@@ -68,17 +68,10 @@ command is on your PATH.
 You can use the `flutter`
 command to create a starter project.
 
-Here is an example of creating a new Flutter app called `my_app`
-in the current directory:
+Here is an example:
 
 ```
 $ flutter init -o my_app
-```
-
-To generate the iOS project:
-```
-$ cd my_app
-$ flutter ios --init
 ```
 
 The above command creates a `my_app` directory that contains a simple demo
@@ -89,6 +82,9 @@ To learn more about how to build apps with Flutter, please see the
 [tutorial](/tutorial/).
 
 ## Setting up your Android device
+
+(Don't have an Android device? You can skip down to
+[Setting up iOS](#setting-up-your-ios-device-or-simulator).)
 
 Currently Flutter requires an Android device running
 Jelly Bean, v16, 4.1.x or later.
@@ -115,17 +111,11 @@ Jelly Bean, v16, 4.1.x or later.
 
  - Check that `adb` lists your device with `adb devices -l`.
 
-## Setting up your iOS device or simulator
-- Simulator:
-  - Open the `Simulator.app` via `Spotlight`
-  - Select the device type you want to you test your application on `Hardware -> Device` (make sure to select a simulator that is at least iPhone 5 or above)
-- Device:
-  - Connect your iOS device via USB
-- Make sure you can see your connected device via `flutter list`
+## Running a Flutter application on Android
 
-## Running a Flutter application
-
-You can use the `flutter start` command to run Flutter apps on your devices.
+You can use the `flutter start` command to run your Flutter app on your
+device or simulator. For best results, ensure you have only one device
+or simulator connected.
 
 First, change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
@@ -153,6 +143,38 @@ The `logs` command lets you see textual output from your app, including `print`
 statements and unhandled exceptions. To avoid confusion from old log messages,
 you might want to use `flutter logs --clear` to clear the logs between runs.
 
+## Setting up your iOS device or simulator
+
+You must use a Mac, with Xcode 7+ installed, to develop iOS apps with Flutter.
+
+Install the following dependencies:
+
+- Install [Xcode 7](https://developer.apple.com/xcode/)
+- Install `ideviceinstaller`.
+  - `$ brew install ideviceinstaller`
+- Install the `ios-deploy` tool.
+  - `$ brew tap flutter/flutter`
+  - `$ brew install ios-deploy`
+
+
+## Adding iOS support to your project
+
+Inside of your Flutter app, run `flutter ios --init`
+to add iOS configuration files.
+
+You can shut down XCode, if it is started automatically.
+
+## Running your app in the iOS simulator
+
+- Run `Simulator.app`
+  - You can find Simulator.app in
+_Applications/Xcode/Contents/Developer/Applications_ or via _Spotlight_
+  - To ensure your simulator uses a device type of iPhone 5 or above,
+check the Simulator.app's `Hardware -> Device` menu.
+
+- Run `flutter start` from your app's directory.
+
+
 ## Getting Started with the Atom editor
 
 Flutter recommends [Atom](https://atom.io/) for editing, running,
@@ -166,42 +188,15 @@ If you need help installing packages, consult the
 [Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages)
 or [email us][mailinglist].
 
-## Debugging and profiling your app
+## Next steps
 
-Flutter uses [Observatory](https://www.dartlang.org/tools/observatory/) for
-debugging and profiling. While running your app, you can access Observatory
-by navigating your web browser to [http://localhost:8181/](http://localhost:8181/).
+Please reach out to us at our [mailing list][mailinglist]. We'd love
+to hear from you!
 
-## Upgrading to a new version of Flutter
+You might also want to check out our [Tutorial](tutorial) and our
+[Debugging guide](debugging).
 
-If you want to update your copy of Flutter, you use the `flutter upgrade`
-command from the root of your app (the same directory that contains the
-`pubspec.yaml` file):
+Happy Fluttering!
 
-```
-$ flutter upgrade
-```
-
-(If you have an older version of `flutter` that doesn't have the `upgrade`
-command, you might need to first run `git pull` in your clone of the Flutter
-repository.)
-
-## Building a standalone APK
-
-_Note: An `apk/AndroidManifest.xml` file was already created for
-your app by `flutter init`. You can check it out if you like,
-but you don't need to modify it
-when getting started._
-
-First, ensure you installed the Android SDK tools
-(see "Setting up your Android device" above).
-
-Run `android update sdk` from the command line,
-and install SDK version 22 and build tools version 22.0.1.
-For now, Flutter currently expects only _these_ versions.
-
-Then, inside your Flutter app, run `flutter apk`.
-
-The APK can be found in `$MY_FLUTTER_APP/build/app.apk`.
 
 [mailinglist]: mailto:flutter-dev@googlegroups.com
