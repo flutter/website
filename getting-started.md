@@ -162,8 +162,6 @@ Install the following dependencies:
 Inside of your Flutter app, run `flutter ios --init`
 to add iOS configuration files.
 
-You can shut down XCode, if it is started automatically.
-
 ## Running your app in the iOS simulator
 
 - Run `Simulator.app`
