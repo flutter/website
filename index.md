@@ -14,12 +14,17 @@ localization, and more. However, you can build demos and examples
 today. We hope you try it out and send us
 [feedback](mailto:flutter-dev@googlegroups.com).
 
+## Getting started
+
+Check out our [Getting started guide](getting-started)
+to install Flutter and run your first app on Android and iOS.
+
 ## Next steps
 
- - [Getting started guide](getting-started)
- - [Tutorial introduction](tutorial)
+ - [Tutorial](tutorial)
  - [Widget gallery](widgets)
  - [Debugging Flutter applications](debugging)
+ - [Building an APK](building-apk)
 
 ## Documentation
 
@@ -27,6 +32,7 @@ today. We hope you try it out and send us
  - [Gestures in Flutter](gestures)
  - [Animations in Flutter](animations)
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
+ - [Upgrading Flutter](upgrading)
 
 ## See also
 
