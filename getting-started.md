@@ -84,7 +84,7 @@ To learn more about how to build apps with Flutter, please see the
 ## Setting up your Android device
 
 (Don't have an Android device? You can skip down to
-[Setting up iOS](#setting-up-your-ios-device-or-simulator).)
+[Setting up your Mac for iOS development](#setting-up-your-mac-for-ios-development).)
 
 Currently Flutter requires an Android device running
 Jelly Bean, v16, 4.1.x or later.
@@ -143,7 +143,7 @@ The `logs` command lets you see textual output from your app, including `print`
 statements and unhandled exceptions. To avoid confusion from old log messages,
 you might want to use `flutter logs --clear` to clear the logs between runs.
 
-## Setting up your iOS device or simulator
+## Setting up your Mac for iOS development
 
 You must use a Mac, with Xcode 7+ installed, to develop iOS apps with Flutter.
 
@@ -156,7 +156,6 @@ Install the following dependencies:
   - `$ brew tap flutter/flutter`
   - `$ brew install ios-deploy`
 
-
 ## Adding iOS support to your project
 
 Inside of your Flutter app, run `flutter ios --init`
@@ -164,14 +163,16 @@ to add iOS configuration files.
 
 ## Running your app in the iOS simulator
 
+We currently only support iOS development with the iOS simulator,
+but you can deploy Flutter apps to iOS devices.
+
 - Run `Simulator.app`
   - You can find Simulator.app in
 _Applications/Xcode/Contents/Developer/Applications_ or via _Spotlight_
   - To ensure your simulator uses a device type of iPhone 5 or above,
 check the Simulator.app's `Hardware -> Device` menu.
-
 - Run `flutter start` from your app's directory.
-
+  - This command detects the iOS simulator and starts the app.
 
 ## Getting Started with the Atom editor
 
