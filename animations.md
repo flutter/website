@@ -36,8 +36,8 @@ when animations change value:
 [`AnimatedComponent`](http://docs.flutter.io/flutter/widgets/AnimatedComponent-class.html)
 and
 [`AnimatedBuilder`](http://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html).
-The first, `AnimatedComponent`, is most useful for otherwise stateless
-components. To use `AnimatedComponent`, simply subclass it and implement the
+The first, `AnimatedComponent`, is most useful for stateless animated widgets.
+To use `AnimatedComponent`, simply subclass it and implement the
 [`build`](http://docs.flutter.io/flutter/widgets/AnimatedComponent/build.html)
 function. The second, `AnimatedBuilder`, is useful for more complex components
 that wish to include an animation as part of a larger build function. To use
