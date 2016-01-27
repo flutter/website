@@ -10,7 +10,7 @@ but you don't need to modify it
 when getting started._
 
 First, ensure you installed the Android SDK tools
-(see "Setting up your Android device" from [Getting started](getting-started)).
+(see "Setting up your Android device" from [Getting started](/getting-started)).
 
 Run `android update sdk` from the command line,
 and install SDK version 22 and build tools version 22.0.1.
