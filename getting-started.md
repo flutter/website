@@ -192,8 +192,8 @@ or [email us][mailinglist].
 Please reach out to us at our [mailing list][mailinglist]. We'd love
 to hear from you!
 
-You might also want to check out our [Tutorial](tutorial) and our
-[Debugging guide](debugging).
+You might also want to check out our [Tutorial](/tutorial) and our
+[Debugging guide](/debugging).
 
 Happy Fluttering!
 
