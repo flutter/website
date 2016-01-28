@@ -4,6 +4,13 @@ Flutter's static website, built with Jekyll.
 
 [![Build Status](https://travis-ci.org/flutter/website.svg?branch=master)](https://travis-ci.org/flutter/website)
 
+## Issues, bugs, and requests
+
+We welcome contributions and feedback on our website!
+Please file a request in our
+[issue tracker](https://github.com/flutter/flutter/issues/new)
+and we'll take a look.
+
 ## Developing
 
 Install Jekyll and related tools by following the
