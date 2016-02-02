@@ -60,18 +60,16 @@ $ cd <directory where you cloned the flutter repo>
 $ export PATH=`pwd`/bin:$PATH
 ```
 
-Run `flutter --version` to ensure the `flutter`
-command is on your PATH.
+Run `flutter --version` to ensure the `flutter` command is on your PATH.
 
 ## Creating your first sample app
 
-You can use the `flutter`
-command to create a starter project.
+You can use the `flutter` command to create a starter project.
 
 Here is an example:
 
 ```
-$ flutter init -o my_app
+$ flutter create -o my_app
 ```
 
 The above command creates a `my_app` directory that contains a simple demo
