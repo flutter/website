@@ -5,9 +5,8 @@ permalink: /building-apk/
 ---
 
 _Note: An `apk/AndroidManifest.xml` file was already created for
-your app by `flutter init`. You can check it out if you like,
-but you don't need to modify it
-when getting started._
+your app by `flutter create`. You can check it out if you like,
+but you don't need to modify it when getting started._
 
 First, ensure you installed the Android SDK tools
 (see "Setting up your Android device" from [Getting started](/getting-started)).
