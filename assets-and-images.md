@@ -15,12 +15,12 @@ Flutter uses the `flutter.yaml` file to identify assets required by an
 application, as shown in the [Tutorial](/tutorial/). A typical `flutter.yaml`
 file might include something like the following:
 
-   assets:
-     - assets/my_icon.png
-     - assets/background.png
-   material-design-icons:
-     - name: action/home
-     - name: content/add
+    assets:
+      - assets/my_icon.png
+      - assets/background.png
+    material-design-icons:
+      - name: action/home
+      - name: content/add
 
 Both of these sections - the `assets` section and the `material-design-icons`
 section - specify files that should be included with the application. Flutter
@@ -42,13 +42,13 @@ included in the asset bundle along with the specified asset.
 
 For example, if you have the following assets:
 
-   assets/background.png
-   assets/dark/background.png
+    assets/background.png
+    assets/dark/background.png
 
 and your `flutter.yaml` file contains:
 
-   assets:
-     - assets/background.png
+    assets:
+      - assets/background.png
 
 then both `assets/background.png` and `assets/dark/background.png` will be
 included in your asset bundle. The former is considered the _main asset_, while
@@ -72,12 +72,12 @@ widget's `of` method.
 For example, the dark background from the example above could be loaded in a
 widget's `build` method like so:
 
-   Widget build(BuildContext context) {
-     ...
-     String name = 'assets/dark/background.png';
-     ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
-     ...
-   }
+    Widget build(BuildContext context) {
+      ...
+      String name = 'assets/dark/background.png';
+      ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
+      ...
+    }
 
 As a convenience, the
 [AssetImage](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
