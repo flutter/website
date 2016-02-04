@@ -33,7 +33,7 @@ to install Flutter and run your first app on Android and iOS.
  - [Animations in Flutter](animations)
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
  - [Upgrading Flutter](upgrading)
- - [Resolution-aware images](/resolution-aware-images)
+ - [Assets and images](assets-and-images)
 
 ## See also
 
