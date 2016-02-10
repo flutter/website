@@ -109,7 +109,7 @@ Jelly Bean, v16, 4.1.x or later.
 
  - Check that `adb` lists your device with `adb devices -l`.
 
-Note: By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
+By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that specific installation directory.
 
