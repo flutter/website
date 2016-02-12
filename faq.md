@@ -265,6 +265,14 @@ widgets, the core engine is approximately 5MB, the framework + app code is
 approximately 400kb, necessary Java code is 330k, and there is approximately
 2.5MB of ICU data. We are working to get this smaller.
 
+## My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
+
+In development, Flutter apps run with a type checking and asserts enabled by
+default. These checks help you catch errors early during development but impose
+a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
+You can run your app without these checks by passing the `--no-checked` flag to
+`flutter start`.
+
 ## Where can I get support?
 
 If you think you've encountered a bug, please file it in our
