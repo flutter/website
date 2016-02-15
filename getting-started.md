@@ -6,22 +6,42 @@ permalink: /getting-started/
 ---
 
 Flutter currently supports developers on Mac and Linux (64-bit).
-Windows support is planned but currently incomplete.
+Windows support is planned.
 
-## Dependencies
+## Setting up your environment
 
-Flutter depends on the following tools being available in your environment. These are commonly already available on Mac and Linux.
+### Downloading and installing the Dart SDK
 
-* bash, mkdir, rm
-* git
-* curl
-* unzip
+To get started, you need to install the Dart SDK.
+Flutter requires Dart SDK 1.12.2 or greater.
+
+To install the [Dart SDK](https://www.dartlang.org/downloads/):
+
+- Mac:
+  - `brew tap dart-lang/dart && brew install dart`, or, if you don't use
+    homebrew, grab the [latest stable channel build](https://www.dartlang.org/downloads/archive/)
+- Linux: See [www.dartlang.org/downloads/linux.html](https://www.dartlang.org/downloads/linux.html)
+- Windows: Stay tuned, Windows support is planned.
+
+### Checking your PATH
+
+Ensure that the `pub` executable is in your `PATH`.
+
+Run `pub --version` on the command line. If that command
+is not found, you will need to add `DIRECTORY_WHERE_DART_SDK_IS_LOCATED/bin`
+to your PATH.
+
+For example:
+
+```
+$ export PATH=<DART_SDK_DOWNLOAD_LOCATION>/bin:$PATH
+```
 
 ## Getting the Flutter code
 
 Clone the `alpha` branch from the Flutter repository:
 
-```bash
+```
 $ git clone https://github.com/flutter/flutter.git -b alpha
 ```
 
@@ -33,13 +53,14 @@ the `flutter` command.)
 ## Configuring your PATH
 
 After you clone the Flutter repo, set the PATH so you can
-use our scripts and tools. 
+use our scripts and tools.
 
-`export PATH=` _directory where you cloned the flutter repo_ `/bin:$PATH`
+```
+$ cd <directory where you cloned the flutter repo>
+$ export PATH=`pwd`/bin:$PATH
+```
 
-Open a new shell and run `flutter --version` to ensure the `flutter` command is on your PATH.
-The first time you do this will take a few seconds as Flutter will first download the Dart SDK then precompile itself.
-Subsequent runs should be much faster.
+Run `flutter --version` to ensure the `flutter` command is on your PATH.
 
 ## Creating your first sample app
 
