@@ -149,4 +149,4 @@ Some caveats:
 You can see an example
 ([examples/widgets.dart](https://github.com/flutter/flutter/tree/master/examples/widgets))
 from the flutter repo.
-Run `flutter start -t resolution_awareness.dart` to see it in action.
+Run `flutter run -t resolution_awareness.dart` to see it in action.
