@@ -111,9 +111,9 @@ Jelly Bean, v16, 4.1.x or later.
 
 ## Running a Flutter application on Android
 
-You can use the `flutter start` command to run your Flutter app on your
-device or simulator. For best results, ensure you have only one device
-or simulator connected.
+You can use the `flutter start` command to run your Flutter app on all connected
+devices and simulators.  `flutter list` will list connected devices and
+simulators.
 
 First, change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
