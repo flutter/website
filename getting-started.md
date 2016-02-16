@@ -94,8 +94,8 @@ you want Flutter to use a different installation of the Android SDK, you must se
 
 ## Running a Flutter application on Android
 
-You can use the `flutter start` command to run your Flutter app on all connected
-devices and simulators.  `flutter list` will list connected devices and
+You can use the `flutter run` command to run your Flutter app on all connected
+devices and simulators.  `flutter devices` will list connected devices and
 simulators.
 
 First, change directories to the root of your app (the same directory that
@@ -104,7 +104,7 @@ contains the `pubspec.yaml` file for your project).
 To start your app, run:
 
 ```
-$ flutter start
+$ flutter run
 ```
 
 If everything works, you should see your starter app
@@ -149,12 +149,10 @@ We currently only support iOS development with the iOS simulator,
 but you can deploy Flutter apps to iOS devices.
 
 - Run `Simulator.app`
-  - You can find Simulator.app in
-_Applications/Xcode/Contents/Developer/Applications_ or via _Spotlight_
-  - To ensure your simulator uses a device type of iPhone 5 or above,
-check the Simulator.app's `Hardware -> Device` menu.
-- Run `flutter start` from your app's directory.
-  - This command detects the iOS simulator and starts the app.
+  - You can find Simulator.app in _Applications/Xcode/Contents/Developer/Applications_ or via _Spotlight_
+  - Ensure your simulator is using a 64-bit device (iPhone 5s or later) by checking the Simulator.app's `Hardware -> Device` menu
+- Run `flutter run` from your app's directory
+  - This command detects the iOS simulator and starts the app
 
 ## Getting Started with the Atom editor
 

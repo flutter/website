@@ -73,7 +73,7 @@ the output to a level that avoids being dropped by Android's kernel.
 
 During development, you are highly encouraged to use Dart's "checked"
 mode, sometimes referred to as "debug" mode. This is the default if
-you use `flutter start`. In this mode, the Dart `assert` statement is
+you use `flutter run`. In this mode, the Dart `assert` statement is
 enabled, and the Flutter framework uses this to perform many runtime
 checks verifying that invariants aren't being violated.
 
@@ -82,7 +82,7 @@ some context information to help with tracking down the source of the
 problem.
 
 To turn off checked mode, and use release mode, run your application
-using `flutter start --no-checked`.
+using `flutter run --no-checked`.
 
 ## Dumping the application state
 
@@ -129,7 +129,7 @@ class AppHome extends StatelessComponent {
 
 ...will output something like this (the precise details will vary on
 the version of the framework, the size of the device, and so forth):
- 
+
 
 ```
 android: I/flutter : WidgetFlutterBinding - CHECKED MODE
@@ -221,7 +221,7 @@ callback](http://docs.flutter.io/flutter/scheduler/Scheduler/addPersistentFrameC
 or an event handler is the best solution.
 
 To call `debugDumpRenderTree()`, you need to add `import
-'package:flutter/rendering.dart';` to your source file. 
+'package:flutter/rendering.dart';` to your source file.
 
 The output for the tiny example above would look something like this:
 

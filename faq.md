@@ -271,7 +271,7 @@ In development, Flutter apps run with a type checking and asserts enabled by
 default. These checks help you catch errors early during development but impose
 a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by passing the `--no-checked` flag to
-`flutter start`.
+`flutter run`.
 
 ## Where can I get support?
 
