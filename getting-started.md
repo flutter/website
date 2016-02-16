@@ -131,6 +131,7 @@ You must use a Mac, with Xcode 7+ installed, to develop iOS apps with Flutter.
 Install the following dependencies:
 
 - Install Xcode 7 (via [web download](https://developer.apple.com/xcode/) or [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835))
+  - Make sure the Xcode EULA is signed by either opening Xcode once and confirming or running `sudo xcodebuild -license` from the command line.
 - Install `ideviceinstaller` via [homebrew](http://brew.sh/)
   - `$ brew install ideviceinstaller`
 - Install the `ios-deploy` tool.
