@@ -32,14 +32,14 @@ the `flutter` command.)
 
 ## Configuring your PATH
 
-After you clone the Flutter repo, set the PATH so you can
+After you clone the Flutter repository, set your PATH so you can
 use our scripts and tools.
 
 `export PATH=` _directory where you cloned the flutter repo_ `/bin:$PATH`
 
 Open a new shell and run `flutter --version` to ensure the `flutter` command is on your PATH.
-The first time you do this will take a few seconds as Flutter will first download the Dart SDK then precompile itself.
-Subsequent runs should be much faster.
+The first time you do this will take a few seconds as Flutter will first
+download the Dart SDK then compile itself. Subsequent runs should be much faster.
 
 ## Creating your first sample app
 
@@ -66,17 +66,9 @@ To learn more about how to build apps with Flutter, please see the
 Currently Flutter requires an Android device running
 Jelly Bean, v16, 4.1.x or later.
 
- - Install the `adb` tool from the [Android SDK](https://developer.android.com/sdk/installing/index.html?pkg=tools):
-   - Mac: `brew install android-platform-tools`
-   - Linux: `sudo apt-get install android-tools-adb`
-     - If the version of `adb` provided by your Linux distribution is too old,
-       you might need to [install the Android SDK manually](https://developer.android.com/sdk/installing/index.html?pkg=tools).
-       Note that `adb` needs 32-bit libs (on Ubuntu 64-bit, make sure to install
-       those libraries listed in _Troubleshooting Ubuntu_ section).
-         - Launch `Android SDK Manager` with `tools/android sdk`.
-         - Install `Android SDK Platform-tools` package that is the only required
-           package to use `adb`.
-         - Add `platform-tools/` to your `PATH`.
+ - Install [Android Studio](https://developer.android.com/sdk/) and run through
+   enough of the first-run experience to install the Android SDK. (You shouldn't
+   need to install a JDK.)
 
  - Enable developer mode on your device by visiting `Settings > About phone` and
    tapping the `Build number` field seven times.
@@ -101,7 +93,7 @@ simulators.
 First, change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
 
-To start your app, run:
+To run your app, use:
 
 ```
 $ flutter run
