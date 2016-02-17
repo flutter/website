@@ -7,7 +7,7 @@ permalink: /bug_reports/
 The instructions in this document detail the current steps required to provide the most actionable bug reports for crashes and other bad behavior. Each step is optional but will greatly improve how quickly issues are diagnosed and addressed. We appreciate your effort in sending us as much feedback as possible.
 
 ## Create an Issue on Github
-* A new Github issue may be created at https://github.com/flutter/flutter/issues/new
+* A new Github issue may be created at [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
 
 ## Provide the Flutter Version
 * Run `flutter --version` in your project and paste the results into the Github Issue
@@ -15,6 +15,7 @@ The instructions in this document detail the current steps required to provide t
 
 ## Run the Command in Verbose Mode
 Follow these steps only if your issue is related to the `flutter` tool.
+
 * All Flutter commands accept the `--verbose` flag. If attached to the issue, the output from this command may aid in diagnosing the issue.
 * Attach the results of the command to the Github issue.
 ![flutter verbose](/images/verbose_flag.png)
