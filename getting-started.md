@@ -138,11 +138,6 @@ Install the following dependencies:
   - `$ brew tap flutter/flutter`
   - `$ brew install ios-deploy`
 
-## Adding iOS support to your project
-
-Inside of your Flutter app, run `flutter ios --init`
-to add iOS configuration files.
-
 ## Running your app in the iOS simulator
 
 We currently only support iOS development with the iOS simulator,
