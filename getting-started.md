@@ -139,6 +139,7 @@ but you can deploy Flutter apps to iOS devices.
   - You can find Simulator.app via Spotlight or by running
     `open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app`
   - Ensure your simulator is using a 64-bit device (iPhone 5s or later) by checking the Simulator.app's `Hardware -> Device` menu
+- Depending on your screen size, simulated high-screen-density iOS devices often overflow your screen. Set the device scale under the `Window` > `Scale` menu in the Simulator. 
 - Run `flutter run` from your app's directory
   - This command detects the iOS simulator and starts the app
 
