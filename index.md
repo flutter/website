@@ -39,5 +39,5 @@ to install Flutter and run your first app on Android and iOS.
 
  - [Source on GitHub](https://github.com/flutter/flutter)
  - [Issue tracker](https://github.com/flutter/flutter/issues)
- - [Writing Useful Bug Reports](bug_reports)
+ - [Writing Useful Bug Reports](bug-reports)
  - [FAQ](faq)

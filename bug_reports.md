@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Creating Useful Bug Reports
-permalink: /bug_reports/
+permalink: /bug-reports/
 ---
 
 The instructions in this document detail the current steps required to provide the most actionable bug reports for crashes and other bad behavior. Each step is optional but will greatly improve how quickly issues are diagnosed and addressed. We appreciate your effort in sending us as much feedback as possible.
