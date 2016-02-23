@@ -8,11 +8,11 @@ permalink: /getting-started/
 
 This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
 
-* [Before you begin](#before_you_begin)
-* [1. Create your first Flutter app](#1_create_your_first_flutter_app)
-* [2. Run your Flutter app](#2_run_your_flutter_app)
-* [3. View the logs](#3_view_the_logs)
-* [Next steps](#next_steps)
+* [Before you begin](#before-you-begin)
+* [1. Create your first Flutter app](#create-your-first-flutter-app)
+* [2. Run your Flutter app](#run-your-flutter-app)
+* [3. View the logs](#view-the-logs)
+* [Next steps](#next-steps)
 
 ## Before you begin
 

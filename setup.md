@@ -8,11 +8,11 @@ permalink: /setup/
 This guide describes how to set up your development environment to run Flutter apps on
 iOS or Android.
 
-* [System requirements](#system_requirements)
-* [iOS setup](#ios_setup)
-* [Android setup](#android_setup)
-* [Get the Flutter SDK](#get_the_flutter_sdk)
-* [Atom editor](#atom_editor)
+* [System requirements](#system-requirements)
+* [iOS setup](#ios-setup)
+* [Android setup](#android-setup)
+* [Get the Flutter SDK](#get-the-flutter-sdk)
+* [Atom editor](#atom-editor)
 
 ## System requirements
 
