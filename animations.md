@@ -4,6 +4,8 @@ title: Animations
 permalink: /animations/
 ---
 
+# Introduction
+
 The animation system in Flutter is based on typed
 [`Animation`](http://docs.flutter.io/flutter/animation/Animation-class.html)
 objects. Widgets can either incorporate these animations in their build
@@ -112,3 +114,198 @@ with an animation to get a concrete value:
    approach is most useful when you want to give the newly created animation to
    another component, which can then read the current value that incorporates
    the tween as well as listen for changes to the value.
+
+# Architecture
+
+Animations are actually built from a number of core building blocks.
+
+## Scheduler
+
+The
+[`Scheduler`](http://docs.flutter.io/flutter/scheduler/Scheduler-class.html)
+is a singleton class that exposes the Flutter scheduling primitives.
+
+For this discussion, the key primitive is the frame callbacks. Each
+time a frame needs to be shown on the screen, Flutter's engine
+triggers a "begin frame" callback which the scheduler multiplexes to
+all the listeners registered using
+[`addFrameCallback()`](http://docs.flutter.io/flutter/scheduler/Scheduler/addFrameCallback.html).
+All these callbacks are given the official time stamp of the frame, in
+the form of a `Duration` from some arbitrary epoch. Since all the
+callbacks have the same time, any animations triggered from these
+callbacks will appear to be exactly synchronised even if they take a
+few milliseconds to be executed.
+
+## Tickers
+
+The
+[`Ticker`](http://docs.flutter.io/flutter/scheduler/Ticker-class.html)
+class hooks into the scheduler's
+[`addFrameCallback()`](http://docs.flutter.io/flutter/scheduler/Scheduler/addFrameCallback.html)
+mechanism to invoke a callback every tick.
+
+A `Ticker` can be started and stopped. When started, it returns a
+`Future` that will resolve when it is stopped.
+
+Each tick, the `Ticker` provides the callback with the duration since
+the first tick after it was started.
+
+Because tickers always give their elapsed time relative to the first
+tick after they were started, tickers are all synchronised. If you
+start three ticks at different times between two frames, they will all
+nonetheless be synchronised with the same starting time, and will
+subsequently tick in lockstep.
+
+## Simulations
+
+The
+[`Simulation`](http://docs.flutter.io/newton/newton/Simulation-class.html)
+abstract class maps a relative time value (an elapsed time) to a
+double value, and has a notion of completion.
+
+In principle simulations are stateless but in practice some
+simulations (e.g.
+[`ScrollSimulation`](http://docs.flutter.io/newton/newton/ScrollSimulation-class.html))
+change state irreversibly when queried.
+
+There are [various concrete
+implementations](http://docs.flutter.io/newton/newton/newton-library.html)
+of the `Simulation` class for different effects.
+
+## Forces
+
+The
+[`Force`](http://docs.flutter.io/flutter/animation/Force-class.html)
+abstract class provides a factory for `Simulation` instances.
+
+## Animatables
+
+The
+[`Animatable`](http://docs.flutter.io/flutter/animation/Animatable-class.html)
+abstract class maps a double to a value of a particular type.
+
+`Animatable` classes are stateless and immutable.
+
+### Tweens
+
+The
+[`Tween`](http://docs.flutter.io/flutter/animation/Tween-class.html)
+abstract class maps a double value nominally in the range 0.0-1.0 to a
+typed value (e.g. a `Color`, or another double). It is an
+`Animatable`.
+
+It has a notion of an output type (`T`), a `begin` value and an `end`
+value of that type, and a way to interpolate (`lerp`) between the
+begin and end values for a given input value (the double nominally in
+the range 0.0-1.0).
+
+`Tween` classes are stateless and immutable.
+
+### Chaining animatables
+
+Passing an `Animatable<double>` (the parent) to an `Animatable`'s
+`chain()` method creates a new `Animatable` subclass that applies the
+parent's mapping then the child's mapping.
+
+## Curves
+
+The
+[`Curve`](http://docs.flutter.io/flutter/animation/Curve-class.html)
+abstract class maps doubles nominally in the range 0.0-1.0 to doubles
+nominally in the range 0.0-1.0.
+
+`Curve` classes are stateless and immutable.
+
+## Animations
+
+The
+[`Animation`](http://docs.flutter.io/flutter/animation/Animation-class.html)
+abstract class provides a value of a given type, a concept of
+animation direction and animation status, and a listener interface to
+register callbacks that get invoked when the value or status change.
+
+Some subclasses of `Animation` have values that never change
+([`kAlwaysCompleteAnimation`](http://docs.flutter.io/flutter/animation/kAlwaysCompleteAnimation-constant.html),
+[`kAlwaysDismissedAnimation`](http://docs.flutter.io/flutter/animation/kAlwaysDismissedAnimation-constant.html),
+[`AlwaysStoppedAnimation`](http://docs.flutter.io/flutter/animation/AlwaysStoppedAnimation-class.html));
+registering callbacks on these has no effect as the callbacks are
+never called.
+
+The `Animation<double>` variant is special because it can be used to
+represent a double nominally in the range 0.0-1.0, which is the input
+expected by `Curve` and `Tween` classes, as well as some further
+subclasses of `Animation`.
+
+Some `Animation` subclasses are stateless, merely forwarding listeners
+to their parents. Some are very stateful.
+
+### Chainable animations
+
+Most `Animation` subclasses take an explicit "parent"
+`Animation<double>`. They are driven by that parent.
+
+The `CurvedAnimation` subclass takes an `Animation<double>` class (the
+parent) and a couple of `Curve` classes (the forward and reverse
+curves) as input, and uses the value of the parent as input to the
+curves to determine its output. `CurvedAnimation` is immutable and
+stateless.
+
+The `ReverseAnimation` subclass takes an `Animation<double>` class as
+its parent and reverses all the values of the animation. It assumes
+the parent is using a value nominally in the range 0.0-1.0 and returns
+a value in the range 1.0-0.0. The status and direction of the parent
+animation are also reversed. `CurvedAnimation` is immutable and
+stateless.
+
+The `ProxyAnimation` subclass takes an `Animation<double>` class as
+its parent and merely forwards the current state of that parent.
+However, the parent is mutable.
+
+The `TrainHoppingAnimation` subclass takes two parents, and switches
+between them when their values cross.
+
+### Animation Controllers
+
+The
+[`AnimationController`](http://docs.flutter.io/flutter/animation/AnimationController-class.html)
+is stateful `Animation<double>` that uses a `Ticker` to give itself
+life. It can be started and stopped. Each tick, it takes the time
+elapsed since it was started and passes it to a `Simulation` to obtain
+a value. That is then the value it reports. If the `Simulation`
+reports that at that time it has ended, then the controller stops
+itself.
+
+The animation controller can be given a lower and upper bound to
+animate between, and a duration.
+
+In the simple case (using `forward()`, `reverse()`, `play()`, or
+`resume()`), the animation controller simply does a linear
+interpolation from the lower bound to the upper bound (or vice versa,
+for the reverse direction) over the given duration.
+
+When using `repeat()`, the animation controller uses a linear
+interpolation between the given bounds over the given duration, but
+does not stop.
+
+When using `animateTo()`, the animation controller does a linear
+interpolation over the given duration from the current value to the
+given target. If no duration is given to the method, the default
+duration of the controller and the range described by the controller's
+lower bound and upper bound is used to determine the velocity of the
+animation.
+
+When using `fling()`, a `Force` is used to create a specific
+simulation which is then used to drive the controller.
+
+When using `animateWith()`, the given simulation is used to drive the
+controller.
+
+These methods all return the future that the `Ticker` provides and
+which will resolve when the controller next stops or changes
+simulation.
+
+### Attaching animatables to animations
+
+Passing an `Animation<double>` (the new parent) to an `Animatable`'s
+`animate()` method creates a new `Animation` subclass that acts like
+the `Animatable` but is driven from the given parent.
