@@ -34,6 +34,7 @@ to install Flutter and run your first app on Android and iOS.
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
  - [Upgrading Flutter](upgrading)
  - [Assets and images](assets-and-images)
+ - [Style guide](style-guide)
 
 ## See also
 
@@ -41,3 +42,4 @@ to install Flutter and run your first app on Android and iOS.
  - [Issue tracker](https://github.com/flutter/flutter/issues)
  - [Writing Useful Bug Reports](bug-reports)
  - [FAQ](faq)
+ - [Design principles](design-principles)
