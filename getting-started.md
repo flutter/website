@@ -4,157 +4,94 @@ title: Getting Started with Flutter
 nav_title: Getting Started
 permalink: /getting-started/
 ---
+<link rel="stylesheet" href="/css/styles.css" />
 
-Flutter currently supports developers on Mac and Linux (64-bit).
-Windows support is planned but currently incomplete.
+This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
 
-## Dependencies
+* [Before you begin](#before_you_begin)
+* [1. Create your first Flutter app](#1_create_your_first_flutter_app)
+* [2. Run your Flutter app](#2_run_your_flutter_app)
+* [3. View the logs](#3_view_the_logs)
+* [Next steps](#next_steps)
 
-Flutter depends on the following tools being available in your environment. These are commonly already available on Mac and Linux.
+## Before you begin
 
-* bash, mkdir, rm
-* git
-* curl
-* unzip
+To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a Linux or
+Mac development machine to run and test your apps on Android or iOS. See
+[Flutter Setup](../setup) for instructions on how to set up your development environment.
 
-## Getting the Flutter code
+## 1. Create your first Flutter app
 
-Clone the `alpha` branch from the Flutter repository:
-
-```bash
-$ git clone https://github.com/flutter/flutter.git -b alpha
-```
-
-We update the `alpha` branch periodically as we improve Flutter. To upgrade
-your Flutter clone, we recommend using the `flutter upgrade` command rather
-than using `git pull` directly.  (See the next section for how to set up
-the `flutter` command.)
-
-## Configuring your PATH
-
-After you clone the Flutter repository, set your PATH so you can
-use our scripts and tools.
-
-`export PATH=` _directory where you cloned the flutter repo_ `/bin:$PATH`
-
-Open a new shell and run `flutter --version` to ensure the `flutter` command is on your PATH.
-The first time you do this will take a few seconds as Flutter will first
-download the Dart SDK then compile itself. Subsequent runs should be much faster.
-
-## Creating your first sample app
-
-You can use the `flutter` command to create a starter project.
+To create a starter project, open a terminal and run the `flutter` command .
 
 Here is an example:
 
 ```
-$ flutter create -o my_app
+$ flutter create -o myapp
 ```
 
-The above command creates a `my_app` directory that contains a simple demo
+The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
-The code for your app is in `my_app/lib/main.dart`.
-To learn more about how to build apps with Flutter, please see the
-[tutorial](/tutorial/).
+In the project directory, the code for your app is in `my_app/lib/main.dart`.
 
-## Setting up your Android device
+## 2. Run your Flutter app
 
-(Don't have an Android device? You can skip down to
-[Setting up your Mac for iOS development](#setting-up-your-mac-for-ios-development).)
+Use the `flutter run` command to run your Flutter app on all connected
+devices and simulators. (The `flutter devices` command will list connected devices and
+simulators.)
 
-Currently Flutter requires an Android device running
-Jelly Bean, v16, 4.1.x or later.
+To run your app from the command-line:
 
- - Install [Android Studio](https://developer.android.com/sdk/) and run through
-   enough of the first-run experience to install the Android SDK. (You shouldn't
-   need to install a JDK.)
-
- - Enable developer mode on your device by visiting `Settings > About phone` and
-   tapping the `Build number` field seven times.
-
- - Enable `Android debugging` in `Settings > Developer options`.
-
- - Using a USB cable, plug your phone into your computer. If prompted on your
-   device, authorize your computer to access your device.
-
- - Check that `adb` lists your device with `adb devices -l`.
-
-By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
-you want Flutter to use a different installation of the Android SDK, you must set the
-`ANDROID_HOME` environment variable to that specific installation directory.
-
-## Running a Flutter application on Android
-
-You can use the `flutter run` command to run your Flutter app on all connected
-devices and simulators.  `flutter devices` will list connected devices and
-simulators.
-
-First, change directories to the root of your app (the same directory that
+1. Open a terminal and change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
+2. Run the following command.
 
-To run your app, use:
+  ```
+  $ flutter run
+  ```
 
-```
-$ flutter run
-```
+Alternatively, if you are using the [Atom editor](https://atom.io/) with the
+[Flutter package](https://atom.io/packages/flutter), you can start your Flutter app by selecting
+the `/lib/main.dart` file in the project and pressing the Run App shortcut in the main editor
+screen. The shortcut depends on the operating system of the development machine you are using:
 
-If everything works, you should see your starter app
-on your Android device.
+* **Linux**: `Ctrl+R`
+* **Mac**: `Command+R`
 
-![First Flutter app running on an Android phone](/images/flutter_starter_app_screenshot.png)
 
-## Viewing the logs
+If everything works, you should see your starter app on your Android device or iOS Simulator.
 
-Start streaming the logs from the device:
+<div id="starter-app-screenshots">
+  <div class="box2">
+    <figure>
+      <img src="/images/flutter-starter-app-ios.png">
+      <figcaption>Figure 1. iOS Simulator (iPhone 6s Plus)</figcaption>
+    </figure>
+  </div>
+  <div class="box2">
+    <figure>
+      <img src="/images/flutter-starter-app-android.png">
+      <figcaption>Figure 2. Android (Nexus 6)</figcaption>
+    </figure>
+  </div>
+</div>
+
+
+## 3. View the logs
+
+The `flutter logs` command lets you see textual output from your app, including `print`
+statements and unhandled exceptions.
+
+To start streaming the logs when your Flutter app is running on an Android device or on the iOS
+Simulator, run this command:
 
 ```
 $ flutter logs
 ```
 
-The `logs` command lets you see textual output from your app, including `print`
-statements and unhandled exceptions. To avoid confusion from old log messages,
-you might want to use `flutter logs --clear` to clear the logs between runs.
-
-## Setting up your Mac for iOS development
-
-You must use a Mac, with Xcode 7+ installed, to develop iOS apps with Flutter.
-
-Install the following dependencies:
-
-- Install Xcode 7 (via [web download](https://developer.apple.com/xcode/) or [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835))
-  - Make sure the Xcode EULA is signed by either opening Xcode once and confirming or running `sudo xcodebuild -license` from the command line.
-- Install `ideviceinstaller` via [homebrew](http://brew.sh/)
-  - `$ brew install ideviceinstaller`
-- Install the `ios-deploy` tool.
-  - `$ brew tap flutter/flutter`
-  - `$ brew install ios-deploy`
-
-## Running your app in the iOS simulator
-
-We currently only support iOS development with the iOS simulator,
-but you can deploy Flutter apps to iOS devices.
-
-- Run `Simulator.app`
-  - You can find Simulator.app via Spotlight or by running
-    `open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app`
-  - Ensure your simulator is using a 64-bit device (iPhone 5s or later) by checking the Simulator.app's `Hardware -> Device` menu
-- Depending on your screen size, simulated high-screen-density iOS devices often overflow your screen. Set the device scale under the `Window` > `Scale` menu in the Simulator. 
-- Run `flutter run` from your app's directory
-  - This command detects the iOS simulator and starts the app
-
-## Getting Started with the Atom editor
-
-Flutter recommends [Atom](https://atom.io/) for editing, running,
-and debugging Flutter apps. However,
-using our command-line tools, you can use
-any editor to develop Flutter applications.
-
-Download Atom from [atom.io](https://atom.io)
-and then install the [Flutter package](https://atom.io/packages/flutter).
-If you need help installing packages, consult the
-[Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages)
-or [email us][mailinglist].
+To avoid confusion from old log messages, you can use the `flutter logs --clear` option to clear
+the logs between runs.
 
 ## Next steps
 
