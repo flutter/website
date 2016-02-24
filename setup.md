@@ -5,6 +5,11 @@ nav_title: Flutter Setup
 permalink: /setup/
 ---
 
+(Please remember, Flutter is in _technology preview_. Thanks
+for trying it out, and please don't hesitate to
+[file issues or bugs](https://github.com/flutter/flutter/issues/new)
+for us.)
+
 This guide describes how to set up your development environment to run Flutter apps on
 iOS or Android.
 
@@ -23,6 +28,9 @@ To install and run Flutter, your development environment must meet these minimum
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
 ## iOS setup
+
+_This step is optional, and can be performed at any time before
+using Flutter to develop apps for iOS._
 
 To develop Flutter apps for iOS, you need a Mac with Xcode 7.2 or newer:
 
@@ -63,6 +71,9 @@ iOS devices.
     </pre>
 
 ## Android setup
+
+_This step is optional, and can be performed at any time before
+using Flutter to develop apps for Android._
 
 To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit) machine:
 
