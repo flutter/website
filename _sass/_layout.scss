@@ -9,6 +9,12 @@
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    .project-status {
+      font-size: 14px;
+      line-height: 56px;
+      color: $grey-color-light;
+    }
 }
 
 .site-title {
@@ -17,6 +23,7 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    margin-right: 9px;
 
     &,
     &:visited {
