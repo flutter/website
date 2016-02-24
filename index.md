@@ -16,8 +16,11 @@ today. We hope you try it out and send us
 
 ## Getting started
 
-Check out our [Getting started guide](getting-started)
-to install Flutter and run your first app on Android and iOS.
+First, [set up your machine](/setup/)
+with Flutter and iOS/Android tools.
+Then, check out our
+[Getting Started guide](getting-started)
+to run your first app on Android and iOS.
 
 ## Next steps
 

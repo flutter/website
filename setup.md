@@ -1,14 +1,8 @@
 ---
 layout: page
 title: Flutter Setup
-nav_title: Flutter Setup
 permalink: /setup/
 ---
-
-(Please remember, Flutter is in _technology preview_. Thanks
-for trying it out, and please don't hesitate to
-[file issues or bugs](https://github.com/flutter/flutter/issues/new)
-for us.)
 
 This guide describes how to set up your development environment to run Flutter apps on
 iOS or Android.
@@ -117,6 +111,14 @@ $ flutter doctor
 The first time your run the `flutter` command, it will download its dependencies and compile
 itself. Subsequent runs should be much faster.
 
+If `flutter doctor` prints all checkmarks (`[✓]`), then you are cleared
+for takeoff!
+
+If `flutter doctor` displays one or more errors (`[x]`), then one or more
+of your dependencies is misconfigured or missing. If you can't resolve it,
+please [file an issue](https://github.com/flutter/flutter/issues/new)
+and we'll be happy to help.
+
 ## Atom editor
 
 We recommend using [Atom](https://atom.io/) for editing, running, and debugging Flutter apps.
@@ -139,3 +141,8 @@ Before creating your Flutter project in Atom, you’ll need to perform these pre
 root directory where you installed the Flutter SDK.
 3. Open **Packages > Dart > Package Settings**, and set the **Dart SDK Location** field to the
 `bin/cache/dart-sdk` directory in your Flutter SDK’s root folder.
+
+## Next steps
+
+Now, follow our [Getting Started guide](/getting-started/)
+to run your first Flutter app on iOS and Android.
