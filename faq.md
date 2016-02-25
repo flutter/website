@@ -273,6 +273,10 @@ a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by passing the `--no-checked` flag to
 `flutter run`.
 
+If you are using the Flutter plugin for Atom, you can disable
+Slow Mode by editing your run configuration file. Open
+`.atom/launches/main.yaml` and change `checked: true` to `checked: false`.
+
 ## Where can I get support?
 
 If you think you've encountered a bug, please file it in our
