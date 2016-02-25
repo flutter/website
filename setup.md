@@ -114,7 +114,7 @@ itself. Subsequent runs should be much faster.
 If `flutter doctor` prints all checkmarks (`[✓]`), then you are cleared
 for takeoff!
 
-If `flutter doctor` displays one or more errors (`[x]`), then one or more
+If `flutter doctor` displays one or more errors (`[-]` or `[ ]`), then one or more
 of your dependencies is misconfigured or missing. If you can't resolve it,
 please [file an issue](https://github.com/flutter/flutter/issues/new)
 and we'll be happy to help.
