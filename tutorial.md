@@ -478,9 +478,9 @@ class ShoppingListItem extends StatelessComponent {
       onTap: () => onCartChanged(product, !inCart),
       left: new CircleAvatar(
         backgroundColor: _getColor(context),
-        label: product.name[0]
+        child: new Text(product.name[0])
       ),
-      center: new Text(product.name, style: _getTextStyle(context))
+      primary: new Text(product.name, style: _getTextStyle(context))
     );
   }
 }
