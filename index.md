@@ -38,6 +38,7 @@ to run your first app on Android and iOS.
  - [Upgrading Flutter](upgrading)
  - [Assets and images](assets-and-images)
  - [Style guide](style-guide)
+ - [Services](services)
 
 ## See also
 
