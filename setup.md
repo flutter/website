@@ -30,8 +30,8 @@ $ git clone https://github.com/flutter/flutter.git -b alpha
 $ export PATH=`pwd`/flutter/bin:$PATH
 </pre>
 
-To complete the setup and to validate that you’ve set everything up correctly, run the following
-command:
+Run the following command to see if there are any dependencies you need to install to complete
+the setup:
 
 ```
 $ flutter doctor
@@ -39,6 +39,9 @@ $ flutter doctor
 
 The first time your run the `flutter` command, it will download its dependencies and compile
 itself. Subsequent runs should be much faster.
+
+Once you have installed any missing dependencies, run the `flutter doctor` command again to
+verify that you’ve set everything up correctly.
 
 ## iOS setup
 
