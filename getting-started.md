@@ -27,7 +27,7 @@ To create a starter project, open a terminal and run the `flutter` command .
 Here is an example:
 
 ```
-$ flutter create -o myapp
+$ flutter create myapp
 ```
 
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
