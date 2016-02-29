@@ -33,7 +33,7 @@ $ flutter create myapp
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
-In the project directory, the code for your app is in `my_app/lib/main.dart`.
+In the project directory, the code for your app is in `myapp/lib/main.dart`.
 
 ## 2. Run your Flutter app
 

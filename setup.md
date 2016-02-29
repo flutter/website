@@ -8,9 +8,9 @@ This guide describes how to set up your development environment to run Flutter a
 iOS or Android.
 
 * [System requirements](#system-requirements)
+* [Get the Flutter SDK](#get-the-flutter-sdk)
 * [iOS setup](#ios-setup)
 * [Android setup](#android-setup)
-* [Get the Flutter SDK](#get-the-flutter-sdk)
 * [Atom editor](#atom-editor)
 
 ## System requirements
@@ -20,6 +20,28 @@ To install and run Flutter, your development environment must meet these minimum
 * **Operating Systems**: Mac or Linux (64-bit). Windows support is planned.
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
+
+## Get the Flutter SDK
+
+To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
+
+<pre>
+$ git clone https://github.com/flutter/flutter.git -b alpha
+$ export PATH=`pwd`/flutter/bin:$PATH
+</pre>
+
+Run the following command to see if there are any dependencies you need to install to complete
+the setup:
+
+```
+$ flutter doctor
+```
+
+The first time your run the `flutter` command, it will download its dependencies and compile
+itself. Subsequent runs should be much faster.
+
+Once you have installed any missing dependencies, run the `flutter doctor` command again to
+verify that you’ve set everything up correctly.
 
 ## iOS setup
 
@@ -91,33 +113,6 @@ connected Android device.
 By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that specific installation directory.
-
-## Get the Flutter SDK
-
-To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
-
-<pre>
-$ git clone https://github.com/flutter/flutter.git -b alpha
-$ export PATH=`pwd`/flutter/bin:$PATH
-</pre>
-
-To complete the setup and to validate that you’ve set everything up correctly, run the following
-command:
-
-```
-$ flutter doctor
-```
-
-The first time your run the `flutter` command, it will download its dependencies and compile
-itself. Subsequent runs should be much faster.
-
-If `flutter doctor` prints all checkmarks (`[✓]`), then you are cleared
-for takeoff!
-
-If `flutter doctor` displays one or more errors (`[-]` or `[ ]`), then one or more
-of your dependencies is misconfigured or missing. If you can't resolve it,
-please [file an issue](https://github.com/flutter/flutter/issues/new)
-and we'll be happy to help.
 
 ## Atom editor
 
