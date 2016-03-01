@@ -136,6 +136,8 @@ Before creating your Flutter project in Atom, you’ll need to perform these pre
 root directory where you installed the Flutter SDK.
 3. Open **Packages > Dart > Package Settings**, and set the **Dart SDK Location** field to the
 `bin/cache/dart-sdk` directory in your Flutter SDK’s root folder.
+4. If you are using Atom on Mac, you should install the `atom` and `apm` shell commands. To do
+this from the menu bar, click on **`Atom` > `Install Shell Commands`**.
 
 ## Next steps
 
