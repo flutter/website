@@ -119,25 +119,31 @@ you want Flutter to use a different installation of the Android SDK, you must se
 We recommend using [Atom](https://atom.io/) for editing, running, and debugging Flutter apps.
 However, using our command-line tools, you can use any editor to develop Flutter applications.
 
-Download Atom from [atom.io](https://atom.io/) and then install the
-[Flutter package](https://atom.io/packages/flutter). If you need help installing
-packages, consult the [Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages)
-or [email us](flutter-dev@googlegroups.com).
+To install Atom:
+
+1. Download Atom from the [atom.io](https://atom.io/) site.
+2. Extract the Atom executable from the downloaded file.
 
 ### Configure Atom for Flutter development
 
 Before creating your Flutter project in Atom, you’ll need to perform these pre-flight tasks:
 
-1. In the terminal window, run the `atom` command to launch the editor.
-  ```
-  $ atom
-  ```
-2. Open **Packages > Flutter > Package Settings**, and set the **FLUTTER_ROOT** field to the
+1. Launch the Atom editor.
+2. Install the [Flutter package](https://atom.io/packages/flutter) by following these steps:
+    * From the menu, open **Packages > Settings View > Install Packages/Themes**.
+    * In the **Install Packages** field, type **flutter** and click the **Packages** button.
+    * You should see the Flutter package displayed. Click on the button to install the package.
+
+3. Open **Packages > Flutter > Package Settings**, and set the **FLUTTER_ROOT** field to the
 root directory where you installed the Flutter SDK.
-3. Open **Packages > Dart > Package Settings**, and set the **Dart SDK Location** field to the
+4. Open **Packages > Dart > Package Settings**, and set the **Dart SDK Location** field to the
 `bin/cache/dart-sdk` directory in your Flutter SDK’s root folder.
 4. If you are using Atom on Mac, you should install the `atom` and `apm` shell commands. To do
 this from the menu bar, click on **`Atom` > `Install Shell Commands`**.
+
+If you need help installing packages, consult the
+[Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages) or
+[email us](flutter-dev@googlegroups.com).
 
 ## Next steps
 
