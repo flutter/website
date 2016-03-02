@@ -75,7 +75,7 @@ Run `flutter analyzer --flutter-repo` prior to submitting your code for review.
 
 Avoid checking in code that increases the output of the analyzer. If a warning
 must be allowed due to a bug in the analyzer file a bug with the Dart team at
-http://dartbug.com/new.
+<http://dartbug.com/new>.
 
 
 ### Do use asserts liberally to enforce contracts and invariants
