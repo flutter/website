@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Animations
+title: Animations Overview
 permalink: /animations/
 ---
+
+Welcome to Flutter's Animations Overview. You may also be interested
+in our [Animations Tutorial](/animations-tutorial/).
 
 # Introduction
 
