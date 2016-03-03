@@ -106,9 +106,9 @@ class MyToolBar extends StatelessComponent {
       ),
       child: new Row(
         children: [
-          new IconButton(icon: 'navigation/menu'),
+          new IconButton(icon: Icons.menu),
           new Flexible(child: title),
-          new IconButton(icon: 'action/search'),
+          new IconButton(icon: Icons.search),
         ]
       )
     );
@@ -148,9 +148,7 @@ Be sure to add the new resources to your `flutter.yaml` file.
 
 ```yaml
 name: my_app
-material-design-icons:
-  - name: action/search
-  - name: navigation/menu
+uses-material-design: true
 ```
 
 Many widgets need to be inside of a
@@ -219,15 +217,15 @@ class TutorialHome extends StatelessComponent {
   Widget build(BuildContext context)  {
     return new Scaffold(
       toolBar: new ToolBar(
-        left: new IconButton(icon: 'navigation/menu'),
+        left: new IconButton(icon: Icons.menu),
         center: new Text('Example title'),
-        right: [ new IconButton(icon: 'action/search') ]
+        right: [ new IconButton(icon: Icons.search) ]
       ),
       body: new Center(
         child: new Text('Hello, world!')
       ),
       floatingActionButton: new FloatingActionButton(
-        child: new Icon(icon: 'content/add')
+        child: new Icon(icon: Icons.add)
       )
     );
   }
@@ -238,10 +236,7 @@ In your `flutter.yaml` file:
 
 ```yaml
 name: my_app
-material-design-icons:
-  - name: action/search
-  - name: content/add
-  - name: navigation/menu
+uses-material-design: true
 ```
 
 Now that we've switched from `MyToolBar` and `MyScaffold` to the
