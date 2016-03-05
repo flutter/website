@@ -105,10 +105,10 @@ class MyToolBar extends StatelessComponent {
         backgroundColor: Colors.blue[500]
       ),
       child: new Row(
-        children: [
-          new IconButton(icon: 'navigation/menu'),
+        children: <Widget>[
+          new IconButton(icon: Icons.menu, tooltip: 'Navigation menu'),
           new Flexible(child: title),
-          new IconButton(icon: 'action/search'),
+          new IconButton(icon: Icons.search, tooltip: 'Search'),
         ]
       )
     );
@@ -119,7 +119,7 @@ class MyScaffold extends StatelessComponent {
   Widget build(BuildContext context) {
     return new Material(
       child: new Column(
-        children: [
+        children: <Widget>[
           new MyToolBar(
             title: new Text('Example title', style: Typography.white.title)
           ),
@@ -219,15 +219,16 @@ class TutorialHome extends StatelessComponent {
   Widget build(BuildContext context)  {
     return new Scaffold(
       toolBar: new ToolBar(
-        left: new IconButton(icon: 'navigation/menu'),
+        left: new IconButton(icon: Icons.menu, tooltip: 'Navigation menu'),
         center: new Text('Example title'),
-        right: [ new IconButton(icon: 'action/search') ]
+        right: <Widget>[ new IconButton(icon: Icons.search, tooltip: 'Search') ]
       ),
       body: new Center(
         child: new Text('Hello, world!')
       ),
       floatingActionButton: new FloatingActionButton(
-        child: new Icon(icon: 'content/add')
+        tooltip: 'Add',
+        child: new Icon(icon: Icons.add)
       )
     );
   }
@@ -348,12 +349,12 @@ class _CounterState extends State<Counter> {
   int _count = 0;
 
   void _increment() {
-    setState(() { ++_count; });
+    setState(() { _count += 1; });
   }
 
   Widget build(BuildContext context) {
     return new Row(
-      children: [
+      children: <Widget>[
         new RaisedButton(
           onPressed: _increment,
           child: new Text('Increment')
@@ -418,7 +419,7 @@ class _CounterState extends State<Counter> {
 
   Widget build(BuildContext context) {
     return new Row(
-      children: [
+      children: <Widget>[
         new CounterIncrementor(
           onPressed: _increment
         ),
@@ -563,7 +564,7 @@ class _ShoppingListState extends State<ShoppingList> {
   }
 }
 
-final List<Product> _kProducts = [
+final List<Product> _kProducts = <Product>[
   new Product(name: 'Eggs'),
   new Product(name: 'Flour'),
   new Product(name: 'Chocolate chips'),
