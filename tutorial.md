@@ -144,13 +144,13 @@ void main() {
 }
 ```
 
-Be sure to add the new resources to your `flutter.yaml` file.
+Be sure to have a `uses-material-design: true` entry in your `flutter.yaml`
+file. It allows to use the predefined set of
+[material icons](https://design.google.com/icons/).
 
 ```yaml
 name: my_app
-material-design-icons:
-  - name: action/search
-  - name: navigation/menu
+uses-material-design: true
 ```
 
 Many widgets need to be inside of a
@@ -233,16 +233,6 @@ class TutorialHome extends StatelessComponent {
     );
   }
 }
-```
-
-In your `flutter.yaml` file:
-
-```yaml
-name: my_app
-material-design-icons:
-  - name: action/search
-  - name: content/add
-  - name: navigation/menu
 ```
 
 Now that we've switched from `MyToolBar` and `MyScaffold` to the
