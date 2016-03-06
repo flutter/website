@@ -18,12 +18,8 @@ file might include something like the following:
     assets:
       - assets/my_icon.png
       - assets/background.png
-    material-design-icons:
-      - name: action/home
-      - name: content/add
 
-Both of these sections - the `assets` section and the `material-design-icons`
-section - specify files that should be included with the application. Flutter
+The `assets` section specify files that should be included with the application. Flutter
 places them in a special archive called the _asset bundle_, which applications
 can read from at runtime.
 
