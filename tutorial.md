@@ -148,9 +148,7 @@ Be sure to add the new resources to your `flutter.yaml` file.
 
 ```yaml
 name: my_app
-material-design-icons:
-  - name: action/search
-  - name: navigation/menu
+uses-material-design: true
 ```
 
 Many widgets need to be inside of a
@@ -239,10 +237,7 @@ In your `flutter.yaml` file:
 
 ```yaml
 name: my_app
-material-design-icons:
-  - name: action/search
-  - name: content/add
-  - name: navigation/menu
+uses-material-design: true
 ```
 
 Now that we've switched from `MyToolBar` and `MyScaffold` to the
