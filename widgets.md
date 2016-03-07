@@ -107,10 +107,6 @@ Positioning and sizing
    control which part of the child is visible through the viewport.
    TODO(abarth): Add support for horizontal viewporting.
 
- - `SizeObserver` Whenever the child widget changes size, this widget calls the
-   `callback`. Warning: If the callback changes state that affects the size of
-   the child widget, it is possible to create an infinite loop.
-
  - `ShrinkWrapWidth` Force the child widget to have a width equal to its max
    intrinsic width. TODO(abarth): Add a link to the definition of max intrinsic
    width. Optionally, round up the child widget's width or height (or both) to
