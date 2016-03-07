@@ -28,10 +28,12 @@ If you started your application on an Android device using `flutter
 start`, then, while it is running, you can open the Web page at
 [http://localhost:8181/](http://localhost:8181/) to connect to your
 application directly with a statement-level single-stepping debugger.
-Observatory also supports profiling, examining the heap, etc.
+If you're using Atom, you can also debug your application using the
+built-in debugger provided by the aforementioned Flutter plugin.
 
-For more information on Observatory, see [Observatory's
-documentation](https://dart-lang.github.io/observatory/).
+Observatory also supports profiling, examining the heap, etc. For more
+information on Observatory, see
+[Observatory's documentation](https://dart-lang.github.io/observatory/).
 
 If you use Observatory for profiling, make sure to run your
 application in release mode, by passing `--no-checked` to the `flutter
@@ -68,6 +70,17 @@ If you output too much at once, then Android sometimes discards some
 log lines. To avoid this, you can use `debugPrint()`, from Flutter's
 `services` library. This is a wrapper around `print` which throttles
 the output to a level that avoids being dropped by Android's kernel.
+
+Many classes in the Flutter framework have useful `toString`
+implementations. By convention, these output a single line usually
+including the `runtimeType` of the object, typically in the form
+`ClassName(more information about this instance...)`. Some classes
+that are used in trees also have `toStringDeep`, which returns a
+multiline description of the entire subtree from that point. Some
+classes that have particularly ~~verbose~~ helpful `toString`
+implementations have a corresponding `toStringShort` which returns
+only the type or some other very brief (one or two word) description
+of the object.
 
 ## Checked mode assertions
 
@@ -132,62 +145,78 @@ the version of the framework, the size of the device, and so forth):
 
 
 ```
-android: I/flutter : WidgetFlutterBinding - CHECKED MODE
-android: I/flutter : RenderObjectToWidgetAdapter<RenderBox>([GlobalObjectKey RenderView(551740147)]; renderObject: RenderView)
-android: I/flutter :  └MaterialApp(state: _MaterialAppState(373548050))
-android: I/flutter :    └MediaQuery(MediaQueryData(Size(411.4, 683.4), Orientation.portrait))
-android: I/flutter :      └LocaleQuery(null)
-android: I/flutter :        └Theme(Color(0xff2196f3) ThemeBrightness.light etc...)
-android: I/flutter :          └DefaultTextStyle(inherit: true; color: Color(0xd0ff0000); family: "monospace"; size: 48.0; weight: 900; align: right; decoration: double Color(0x00ffff00) TextDecoration.underline)
-android: I/flutter :            └DefaultAssetBundle()
-android: I/flutter :              └Title("null"; color: Color(0xff2196f3))
-android: I/flutter :                └Navigator([GlobalObjectKey _MaterialAppState(373548050)]; state: NavigatorState(726056041))
-android: I/flutter :                  └Overlay([GlobalKey 1019314360]; state: OverlayState(808110653; entries: [OverlayEntry@293093314(opaque: false), OverlayEntry@893649780(opaque: false)]))
-android: I/flutter :                    └Stack(renderObject: RenderStack)
-android: I/flutter :                      ├_OverlayEntry([GlobalKey 578438069]; state: _OverlayEntryState(666522661))
-android: I/flutter :                      │ └IgnorePointer(renderObject: RenderIgnorePointer)
-android: I/flutter :                      │   └ModalBarrier()
-android: I/flutter :                      │     └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener)
-android: I/flutter :                      │       └ConstrainedBox(BoxConstraints(biggest); renderObject: RenderConstrainedBox)
-android: I/flutter :                      └_OverlayEntry([GlobalKey 654847632]; state: _OverlayEntryState(442518741))
-android: I/flutter :                        └_ModalScope([GlobalKey 900364748]; state: _ModalScopeState(449821236))
-android: I/flutter :                          └RepaintBoundary(renderObject: RenderRepaintBoundary)
-android: I/flutter :                            └Focus([GlobalObjectKey MaterialPageRoute(780921576)]; state: FocusState(762448857))
-android: I/flutter :                              └_FocusScope(this scope has focus)
-android: I/flutter :                                └IgnorePointer(renderObject: RenderIgnorePointer)
-android: I/flutter :                                  └_MaterialPageTransition(performance: Performance(⏭ 1.000; paused; for MaterialPageRoute(/)); state: _TransitionState(625205573))
-android: I/flutter :                                    └Transform(renderObject: RenderTransform)
-android: I/flutter :                                      └Opacity(opacity: 1.0; renderObject: RenderOpacity)
-android: I/flutter :                                        └PageStorage([GlobalKey 311418987])
-android: I/flutter :                                          └_ModalScopeStatus(active)
-android: I/flutter :                                            └AppHome()
-android: I/flutter :                                              └Material(state: _MaterialState(951717761))
-android: I/flutter :                                                └AnimatedContainer(state: _AnimatedContainerState(91652829; has background))
-android: I/flutter :                                                  └Container(has background)
-android: I/flutter :                                                    └DecoratedBox(renderObject: RenderDecoratedBox)
-android: I/flutter :                                                      └NotificationListener<LayoutChangedNotification>()
-android: I/flutter :                                                        └InkFeatures([GlobalKey ink renderer]; renderObject: RenderInkFeatures)
-android: I/flutter :                                                          └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 400; baseline: alphabetic; height: 1.4285714285714286x)
-android: I/flutter :                                                            └Center(renderObject: RenderPositionedBox)
-android: I/flutter :                                                              └FlatButton(dirty; state: _FlatButtonState(859098856))
-android: I/flutter :                                                                └Container(BoxConstraints(88.0<=w<=Infinity, h=36.0); margin: EdgeDims(8.0, 8.0, 8.0, 8.0))
-android: I/flutter :                                                                  └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up1)
-android: I/flutter :                                                                    └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutSubtreeRoot=up2)
-android: I/flutter :                                                                      └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 500; baseline: alphabetic)
-android: I/flutter :                                                                        └InkWell(state: _InkResponseState<InkResponse>(365061416))
-android: I/flutter :                                                                          └GestureDetector(state: _GestureDetectorState(383331210; gestures: tap; behavior: opaque))
-android: I/flutter :                                                                            └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutSubtreeRoot=up3)
-android: I/flutter :                                                                              └Container(padding: EdgeDims(0.0, 8.0, 0.0, 8.0))
-android: I/flutter :                                                                                └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up4)
-android: I/flutter :                                                                                  └Center(renderObject: RenderPositionedBox relayoutSubtreeRoot=up5)
-android: I/flutter :                                                                                    └Text("Dump App")
-android: I/flutter :                                                                                      └RawText(renderObject: RenderParagraph relayoutSubtreeRoot=up6)
+I/flutter : WidgetFlutterBinding - CHECKED MODE
+I/flutter : RenderObjectToWidgetAdapter<RenderBox>([GlobalObjectKey RenderView(707742879)]; renderObject: RenderView)
+I/flutter :  └MaterialApp(state: _MaterialAppState(859106034))
+I/flutter :    └AnimatedTheme(duration: 200ms; state: _AnimatedThemeState(863664596; ThemeDataTween(ThemeData(ThemeBrightness.light Color(0xff2196f3) etc...) → null)))
+I/flutter :      └Theme(ThemeData(ThemeBrightness.light Color(0xff2196f3) etc...))
+I/flutter :        └CheckedModeBanner()
+I/flutter :          └CustomPaint(renderObject: RenderCustomPaint)
+I/flutter :            └MediaQuery(MediaQueryData(Size(411.4, 683.4), Orientation.portrait))
+I/flutter :              └LocaleQuery(null)
+I/flutter :                └DefaultTextStyle(inherit: true; color: Color(0xd0ff0000); family: "monospace"; size: 48.0; weight: 900; align: right; decoration: double Color(0xffffff00) TextDecoration.underline)
+I/flutter :                  └AssetVendor(bundle: MojoAssetBundle@485678190(); devicePixelRatio: 3.5; state: _AssetVendorState(516395298; bundle: _ResolutionAwareAssetBundle@654688423()))
+I/flutter :                    └DefaultAssetBundle()
+I/flutter :                      └Title(color: Color(0xff2196f3))
+I/flutter :                        └Navigator([GlobalObjectKey _MaterialAppState(859106034)]; state: NavigatorState(224175532))
+I/flutter :                          └Overlay([GlobalKey 625702218]; state: OverlayState(914946327; entries: [OverlayEntry@575242037(opaque: false), OverlayEntry@192955945(opaque: false)]))
+I/flutter :                            └Stack(renderObject: RenderStack)
+I/flutter :                              ├_OverlayEntry([GlobalKey 238044853]; state: _OverlayEntryState(863631796))
+I/flutter :                              │ └IgnorePointer(renderObject: RenderIgnorePointer)
+I/flutter :                              │   └ModalBarrier()
+I/flutter :                              │     └Semantics(container: true; checked: null; label: "null"; renderObject: RenderSemanticAnnotations)
+I/flutter :                              │       └GestureDetector()
+I/flutter :                              │         └RawGestureDetector(state: RawGestureDetectorState(833036356; gestures: tap; behavior: opaque))
+I/flutter :                              │           └_GestureSemantics(renderObject: RenderSemanticsGestureHandler)
+I/flutter :                              │             └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener)
+I/flutter :                              │               └ConstrainedBox(BoxConstraints(biggest); renderObject: RenderConstrainedBox)
+I/flutter :                              └_OverlayEntry([GlobalKey 388965355]; state: _OverlayEntryState(889389336))
+I/flutter :                                └_ModalScope([GlobalKey 328026813]; state: _ModalScopeState(362869520))
+I/flutter :                                  └Focus([GlobalObjectKey MaterialPageRoute(560156430)]; state: _FocusState(48930702))
+I/flutter :                                    └Semantics(container: true; checked: null; label: "null"; renderObject: RenderSemanticAnnotations)
+I/flutter :                                      └_FocusScope(this scope has focus)
+I/flutter :                                        └RepaintBoundary(renderObject: RenderRepaintBoundary)
+I/flutter :                                          └IgnorePointer(renderObject: RenderIgnorePointer)
+I/flutter :                                            └_MaterialPageTransition(animation: CurvedAnimation(⏭); state: _AnimatedComponentState(483936073))
+I/flutter :                                              └Transform(renderObject: RenderTransform)
+I/flutter :                                                └Opacity(opacity: 1.0; renderObject: RenderOpacity)
+I/flutter :                                                  └PageStorage([GlobalKey 265300])
+I/flutter :                                                    └_ModalScopeStatus(active)
+I/flutter :                                                      └AppHome()
+I/flutter :                                                        └Material(MaterialType.canvas; elevation: 0; state: _MaterialState(373867105))
+I/flutter :                                                          └AnimatedContainer(duration: 200ms; has background; state: _AnimatedContainerState(26175381; has background))
+I/flutter :                                                            └Container(bg: BoxDecoration())
+I/flutter :                                                              └DecoratedBox(renderObject: RenderDecoratedBox)
+I/flutter :                                                                └Container(bg: BoxDecoration(backgroundColor: Color(0xfffafafa)))
+I/flutter :                                                                  └DecoratedBox(renderObject: RenderDecoratedBox)
+I/flutter :                                                                    └NotificationListener<LayoutChangedNotification>()
+I/flutter :                                                                      └InkFeatures([GlobalKey ink renderer]; renderObject: RenderInkFeatures)
+I/flutter :                                                                        └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 400; baseline: alphabetic; height: 1.4285714285714286x)
+I/flutter :                                                                          └Center(renderObject: RenderPositionedBox)
+I/flutter :                                                                            └FlatButton(dirty; state: _FlatButtonState(608093273))
+I/flutter :                                                                              └Container(BoxConstraints(88.0<=w<=Infinity, h=36.0); margin: EdgeDims(8.0, 8.0, 8.0, 8.0); padding: EdgeDims(0.0, 8.0, 0.0, 8.0))
+I/flutter :                                                                                └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up1)
+I/flutter :                                                                                  └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutSubtreeRoot=up2)
+I/flutter :                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up3)
+I/flutter :                                                                                      └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 500; baseline: alphabetic)
+I/flutter :                                                                                        └InkWell(state: _InkResponseState<InkResponse>(741510572))
+I/flutter :                                                                                          └GestureDetector()
+I/flutter :                                                                                            └RawGestureDetector(state: RawGestureDetectorState(576641993; gestures: tap; behavior: opaque))
+I/flutter :                                                                                              └_GestureSemantics(renderObject: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4)
+I/flutter :                                                                                                └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutSubtreeRoot=up5)
+I/flutter :                                                                                                  └Container(padding: EdgeDims(0.0, 8.0, 0.0, 8.0))
+I/flutter :                                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up6)
+I/flutter :                                                                                                      └Center(renderObject: RenderPositionedBox relayoutSubtreeRoot=up7)
+I/flutter :                                                                                                        └Text("Dump App")
+I/flutter :                                                                                                          └RichText(renderObject: RenderParagraph relayoutSubtreeRoot=up8)
 ```
 
 This is the "flattened" tree, showing all the widgets projected
-through their various build functions. You'll see a lot of widgets in
-there that don't appear in your application's source, because they are
-inserted by the framework's widgets' build functions. For example,
+through their various build functions. (This is the tree you obtain if
+you call `toStringDeep` on the root of the widget tree.) You'll see a
+lot of widgets in there that don't appear in your application's
+source, because they are inserted by the framework's widgets' build
+functions. For example,
 [`InkFeatures`](http://docs.flutter.io/flutter/material/InkFeatures-class.html)
 is an implementation detail of the
 [`Material`](http://docs.flutter.io/flutter/material/Material-class.html)
@@ -201,12 +230,15 @@ object calling
 and thus marking itself dirty. That is why if you look at the dump you
 will see that specific object marked "dirty". You can also see what
 gesture listeners have been registered; in this case, a single
-GestureDetector is listed, and it is listening only to a "tap"
-gesture.
+GestureDetector is listed, and it is listening only to a "tap" gesture
+("tap" is the output of a `TapGestureDetector`'s `toStringShort`
+function).
 
 If you write your own widgets, you can add information by overriding
 [`debugFillDescription()`](http://docs.flutter.io/flutter/material/Widget/debugFillDescription.html).
 Add strings to the method's argument, and call the superclass method.
+This function is what the `toString` method uses to fill in the
+widget's description.
 
 ### Rendering layer
 
@@ -226,146 +258,195 @@ To call `debugDumpRenderTree()`, you need to add `import
 The output for the tiny example above would look something like this:
 
 ```
-android: I/flutter : RenderView
-android: I/flutter :  │ window size: Size(411.4, 683.4) (in device pixels)
-android: I/flutter :  │ device pixel ratio: 3.5 (device pixels per logical pixel)
-android: I/flutter :  │ root constraints: Size(411.4, 683.4) (in logical pixels)
-android: I/flutter :  │
-android: I/flutter :  └─child: RenderStack
-android: I/flutter :    │ owner: Stack ← Overlay-[GlobalKey 584760605] ← Navigator-[GlobalObjectKey _MaterialAppState(13739219)] ← Title ← ⋯
-android: I/flutter :    │ parentData: <none>
-android: I/flutter :    │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :    │ size: Size(411.4, 683.4)
-android: I/flutter :    │
-android: I/flutter :    ├─child 1: RenderIgnorePointer
-android: I/flutter :    │ │ owner: IgnorePointer ← _OverlayEntry-[GlobalKey 1033953914] ← Stack ← Overlay-[GlobalKey 584760605] ← ⋯
-android: I/flutter :    │ │ parentData: offset=Offset(0.0, 0.0); top=null; right=null; bottom=null; left=null; width=null; height=null
-android: I/flutter :    │ │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :    │ │ size: Size(411.4, 683.4)
-android: I/flutter :    │ │ ignoring: false
-android: I/flutter :    │ │
-android: I/flutter :    │ └─child: RenderPointerListener
-android: I/flutter :    │   │ owner: Listener ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 1033953914] ← ⋯
-android: I/flutter :    │   │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :    │   │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :    │   │ size: Size(411.4, 683.4)
-android: I/flutter :    │   │ listeners: down
-android: I/flutter :    │   │ behavior: opaque
-android: I/flutter :    │   │
-android: I/flutter :    │   └─child: RenderConstrainedBox
-android: I/flutter :    │       owner: ConstrainedBox ← Listener ← ModalBarrier ← IgnorePointer ← ⋯
-android: I/flutter :    │       parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :    │       constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :    │       size: Size(411.4, 683.4)
-android: I/flutter :    │       additionalConstraints: BoxConstraints(biggest)
-android: I/flutter :    │    
-android: I/flutter :    └─child 2: RenderRepaintBoundary
-android: I/flutter :      │ owner: RepaintBoundary ← _ModalScope-[GlobalKey 332465101] ← _OverlayEntry-[GlobalKey 456282113] ← Stack ← ⋯
-android: I/flutter :      │ parentData: offset=Offset(0.0, 0.0); top=null; right=null; bottom=null; left=null; width=null; height=null
-android: I/flutter :      │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :      │ size: Size(411.4, 683.4)
-android: I/flutter :      │
-android: I/flutter :      └─child: RenderIgnorePointer
-android: I/flutter :        │ owner: IgnorePointer ← _FocusScope ← Focus-[GlobalObjectKey MaterialPageRoute(383010119)] ← RepaintBoundary ← ⋯
-android: I/flutter :        │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :        │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :        │ size: Size(411.4, 683.4)
-android: I/flutter :        │ ignoring: false
-android: I/flutter :        │
-android: I/flutter :        └─child: RenderTransform
-android: I/flutter :          │ owner: Transform ← _MaterialPageTransition ← IgnorePointer ← _FocusScope ← ⋯
-android: I/flutter :          │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :          │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :          │ size: Size(411.4, 683.4)
-android: I/flutter :          │ transform matrix:
-android: I/flutter :          │   [0] 1.0,0.0,0.0,0.0
-android: I/flutter :          │   [1] 0.0,1.0,0.0,0.0
-android: I/flutter :          │   [2] 0.0,0.0,1.0,0.0
-android: I/flutter :          │   [3] 0.0,0.0,0.0,1.0
-android: I/flutter :          │ origin: null
-android: I/flutter :          │ alignment: null
-android: I/flutter :          │ transformHitTests: true
-android: I/flutter :          │
-android: I/flutter :          └─child: RenderOpacity
-android: I/flutter :            │ owner: Opacity ← Transform ← _MaterialPageTransition ← IgnorePointer ← ⋯
-android: I/flutter :            │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :            │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :            │ size: Size(411.4, 683.4)
-android: I/flutter :            │ opacity: 1.0
-android: I/flutter :            │
-android: I/flutter :            └─child: RenderDecoratedBox
-android: I/flutter :              │ owner: DecoratedBox ← Container ← AnimatedContainer ← Material ← ⋯
-android: I/flutter :              │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :              │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :              │ size: Size(411.4, 683.4)
-android: I/flutter :              │ decoration:
-android: I/flutter :              │   backgroundColor: Color(0xfffafafa)
-android: I/flutter :              │
-android: I/flutter :              └─child: RenderInkFeatures
-android: I/flutter :                │ owner: InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← ⋯
-android: I/flutter :                │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :                │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :                │ size: Size(411.4, 683.4)
-android: I/flutter :                │
-android: I/flutter :                └─child: RenderPositionedBox
-android: I/flutter :                  │ owner: Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← ⋯
-android: I/flutter :                  │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :                  │ constraints: BoxConstraints(w=411.4, h=683.4)
-android: I/flutter :                  │ size: Size(411.4, 683.4)
-android: I/flutter :                  │ alignment: FractionalOffset(0.5, 0.5)
-android: I/flutter :                  │
-android: I/flutter :                  └─child: RenderPadding relayoutSubtreeRoot=up1
-android: I/flutter :                    │ owner: Padding ← Container ← FlatButton ← Center ← ⋯
-android: I/flutter :                    │ parentData: offset=Offset(153.7, 315.7)
-android: I/flutter :                    │ constraints: BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)
-android: I/flutter :                    │ size: Size(104.0, 52.0)
-android: I/flutter :                    │ padding: EdgeDims(8.0, 8.0, 8.0, 8.0)
-android: I/flutter :                    │
-android: I/flutter :                    └─child: RenderConstrainedBox relayoutSubtreeRoot=up2
-android: I/flutter :                      │ owner: ConstrainedBox ← Padding ← Container ← FlatButton ← ⋯
-android: I/flutter :                      │ parentData: offset=Offset(8.0, 8.0)
-android: I/flutter :                      │ constraints: BoxConstraints(0.0<=w<=395.4, 0.0<=h<=667.4)
-android: I/flutter :                      │ size: Size(88.0, 36.0)
-android: I/flutter :                      │ additionalConstraints: BoxConstraints(88.0<=w<=Infinity, h=36.0)
-android: I/flutter :                      │
-android: I/flutter :                      └─child: RenderPointerListener relayoutSubtreeRoot=up3
-android: I/flutter :                        │ owner: Listener ← GestureDetector ← InkWell ← DefaultTextStyle ← ⋯
-android: I/flutter :                        │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :                        │ constraints: BoxConstraints(88.0<=w<=395.4, h=36.0)
-android: I/flutter :                        │ size: Size(88.0, 36.0)
-android: I/flutter :                        │ listeners: down
-android: I/flutter :                        │ behavior: opaque
-android: I/flutter :                        │
-android: I/flutter :                        └─child: RenderPadding relayoutSubtreeRoot=up4
-android: I/flutter :                          │ owner: Padding ← Container ← Listener ← GestureDetector ← ⋯
-android: I/flutter :                          │ parentData: offset=Offset(0.0, 0.0)
-android: I/flutter :                          │ constraints: BoxConstraints(88.0<=w<=395.4, h=36.0)
-android: I/flutter :                          │ size: Size(88.0, 36.0)
-android: I/flutter :                          │ padding: EdgeDims(0.0, 8.0, 0.0, 8.0)
-android: I/flutter :                          │
-android: I/flutter :                          └─child: RenderPositionedBox relayoutSubtreeRoot=up5
-android: I/flutter :                            │ owner: Center ← Padding ← Container ← Listener ← ⋯
-android: I/flutter :                            │ parentData: offset=Offset(8.0, 0.0)
-android: I/flutter :                            │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
-android: I/flutter :                            │ size: Size(72.0, 36.0)
-android: I/flutter :                            │ alignment: FractionalOffset(0.5, 0.5)
-android: I/flutter :                            │
-android: I/flutter :                            └─child: RenderParagraph relayoutSubtreeRoot=up6
-android: I/flutter :                              │ owner: RawText ← Text ← Center ← Padding ← ⋯
-android: I/flutter :                              │ parentData: offset=Offset(3.0, 10.0)
-android: I/flutter :                              │ constraints: BoxConstraints(0.0<=w<=379.4, 0.0<=h<=36.0)
-android: I/flutter :                              │ size: Size(66.0, 16.0)
-android: I/flutter :                              ╘═╦══ text ═══
-android: I/flutter :                                ║ StyledTextSpan:
-android: I/flutter :                                ║   inherit: false
-android: I/flutter :                                ║   color: Color(0xdd000000)
-android: I/flutter :                                ║   size: 14.0
-android: I/flutter :                                ║   weight: 500
-android: I/flutter :                                ║   baseline: alphabetic
-android: I/flutter :                                ║   PlainTextSpan: "Dump App"
-android: I/flutter :                                ╚═══════════
-android: I/flutter :
+I/flutter : RenderView
+I/flutter :  │ window size: Size(411.4, 683.4) (in device pixels)
+I/flutter :  │ device pixel ratio: 3.5 (device pixels per logical pixel)
+I/flutter :  │ configuration: Size(411.4, 683.4) (in logical pixels)
+I/flutter :  │
+I/flutter :  └─child: RenderCustomPaint
+I/flutter :    │ owner: CustomPaint ← CheckedModeBanner ← Theme ← AnimatedTheme ← MaterialApp ← [root]
+I/flutter :    │ parentData: <none>
+I/flutter :    │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :    │ size: Size(411.4, 683.4)
+I/flutter :    │
+I/flutter :    └─child: RenderStack
+I/flutter :      │ owner: Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← DefaultTextStyle ← LocaleQuery ← MediaQuery ← CustomPaint ← ⋯
+I/flutter :      │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :      │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │ size: Size(411.4, 683.4)
+I/flutter :      │
+I/flutter :      ├─child 1: RenderIgnorePointer
+I/flutter :      │ │ owner: IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← DefaultTextStyle ← LocaleQuery ← ⋯
+I/flutter :      │ │ parentData: not positioned; offset=Offset(0.0, 0.0)
+I/flutter :      │ │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │ │ size: Size(411.4, 683.4)
+I/flutter :      │ │ ignoring: false
+I/flutter :      │ │ ignoringSemantics: implicitly false
+I/flutter :      │ │
+I/flutter :      │ └─child: RenderSemanticAnnotations
+I/flutter :      │   │ owner: Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← ⋯
+I/flutter :      │   │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :      │   │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │   │ size: Size(411.4, 683.4)
+I/flutter :      │   │
+I/flutter :      │   └─child: RenderSemanticsGestureHandler
+I/flutter :      │     │ owner: _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← ⋯
+I/flutter :      │     │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :      │     │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │     │ size: Size(411.4, 683.4)
+I/flutter :      │     │
+I/flutter :      │     └─child: RenderPointerListener
+I/flutter :      │       │ owner: Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← ⋯
+I/flutter :      │       │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :      │       │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │       │ size: Size(411.4, 683.4)
+I/flutter :      │       │ behavior: opaque
+I/flutter :      │       │ listeners: down
+I/flutter :      │       │
+I/flutter :      │       └─child: RenderConstrainedBox
+I/flutter :      │           owner: ConstrainedBox ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← ⋯
+I/flutter :      │           parentData: offset=Offset(0.0, 0.0)
+I/flutter :      │           constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :      │           size: Size(411.4, 683.4)
+I/flutter :      │           additionalConstraints: BoxConstraints(biggest)
+I/flutter :      │        
+I/flutter :      └─child 2: RenderSemanticAnnotations
+I/flutter :        │ owner: Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← ⋯
+I/flutter :        │ parentData: not positioned; offset=Offset(0.0, 0.0)
+I/flutter :        │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :        │ size: Size(411.4, 683.4)
+I/flutter :        │
+I/flutter :        └─child: RenderRepaintBoundary
+I/flutter :          │ owner: RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← ⋯
+I/flutter :          │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :          │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :          │ size: Size(411.4, 683.4)
+I/flutter :          │
+I/flutter :          └─child: RenderIgnorePointer
+I/flutter :            │ owner: IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← ⋯
+I/flutter :            │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :            │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :            │ size: Size(411.4, 683.4)
+I/flutter :            │ ignoring: false
+I/flutter :            │ ignoringSemantics: implicitly false
+I/flutter :            │
+I/flutter :            └─child: RenderTransform
+I/flutter :              │ owner: Transform ← _MaterialPageTransition ← IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← ⋯
+I/flutter :              │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :              │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :              │ size: Size(411.4, 683.4)
+I/flutter :              │ transform matrix:
+I/flutter :              │   [0] 1.0,0.0,0.0,0.0
+I/flutter :              │   [1] 0.0,1.0,0.0,0.0
+I/flutter :              │   [2] 0.0,0.0,1.0,0.0
+I/flutter :              │   [3] 0.0,0.0,0.0,1.0
+I/flutter :              │ origin: null
+I/flutter :              │ alignment: null
+I/flutter :              │ transformHitTests: true
+I/flutter :              │
+I/flutter :              └─child: RenderOpacity
+I/flutter :                │ owner: Opacity ← Transform ← _MaterialPageTransition ← IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← ⋯
+I/flutter :                │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :                │ size: Size(411.4, 683.4)
+I/flutter :                │ opacity: 1.0
+I/flutter :                │
+I/flutter :                └─child: RenderDecoratedBox
+I/flutter :                  │ owner: DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey 265300] ← Opacity ← Transform ← _MaterialPageTransition ← ⋯
+I/flutter :                  │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                  │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :                  │ size: Size(411.4, 683.4)
+I/flutter :                  │ decoration:
+I/flutter :                  │   <no decorations specified>
+I/flutter :                  │
+I/flutter :                  └─child: RenderDecoratedBox
+I/flutter :                    │ owner: DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey 265300] ← Opacity ← ⋯
+I/flutter :                    │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                    │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :                    │ size: Size(411.4, 683.4)
+I/flutter :                    │ decoration:
+I/flutter :                    │   backgroundColor: Color(0xfffafafa)
+I/flutter :                    │
+I/flutter :                    └─child: RenderInkFeatures
+I/flutter :                      │ owner: InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← ⋯
+I/flutter :                      │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                      │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :                      │ size: Size(411.4, 683.4)
+I/flutter :                      │
+I/flutter :                      └─child: RenderPositionedBox
+I/flutter :                        │ owner: Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← ⋯
+I/flutter :                        │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                        │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter :                        │ size: Size(411.4, 683.4)
+I/flutter :                        │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter :                        │
+I/flutter :                        └─child: RenderPadding relayoutSubtreeRoot=up1
+I/flutter :                          │ owner: Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← ⋯
+I/flutter :                          │ parentData: offset=Offset(148.7, 315.7)
+I/flutter :                          │ constraints: BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)
+I/flutter :                          │ size: Size(114.0, 52.0)
+I/flutter :                          │ padding: EdgeDims(8.0, 8.0, 8.0, 8.0)
+I/flutter :                          │
+I/flutter :                          └─child: RenderConstrainedBox relayoutSubtreeRoot=up2
+I/flutter :                            │ owner: ConstrainedBox ← Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← ⋯
+I/flutter :                            │ parentData: offset=Offset(8.0, 8.0)
+I/flutter :                            │ constraints: BoxConstraints(0.0<=w<=395.4, 0.0<=h<=667.4)
+I/flutter :                            │ size: Size(98.0, 36.0)
+I/flutter :                            │ additionalConstraints: BoxConstraints(88.0<=w<=Infinity, h=36.0)
+I/flutter :                            │
+I/flutter :                            └─child: RenderPadding relayoutSubtreeRoot=up3
+I/flutter :                              │ owner: Padding ← ConstrainedBox ← Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← ⋯
+I/flutter :                              │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                              │ constraints: BoxConstraints(88.0<=w<=395.4, h=36.0)
+I/flutter :                              │ size: Size(98.0, 36.0)
+I/flutter :                              │ padding: EdgeDims(0.0, 8.0, 0.0, 8.0)
+I/flutter :                              │
+I/flutter :                              └─child: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4
+I/flutter :                                │ owner: _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← Padding ← Container ← FlatButton ← ⋯
+I/flutter :                                │ parentData: offset=Offset(8.0, 0.0)
+I/flutter :                                │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
+I/flutter :                                │ size: Size(82.0, 36.0)
+I/flutter :                                │
+I/flutter :                                └─child: RenderPointerListener relayoutSubtreeRoot=up5
+I/flutter :                                  │ owner: Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← Padding ← Container ← ⋯
+I/flutter :                                  │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                                  │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
+I/flutter :                                  │ size: Size(82.0, 36.0)
+I/flutter :                                  │ behavior: opaque
+I/flutter :                                  │ listeners: down
+I/flutter :                                  │
+I/flutter :                                  └─child: RenderPadding relayoutSubtreeRoot=up6
+I/flutter :                                    │ owner: Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← ⋯
+I/flutter :                                    │ parentData: offset=Offset(0.0, 0.0)
+I/flutter :                                    │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
+I/flutter :                                    │ size: Size(82.0, 36.0)
+I/flutter :                                    │ padding: EdgeDims(0.0, 8.0, 0.0, 8.0)
+I/flutter :                                    │
+I/flutter :                                    └─child: RenderPositionedBox relayoutSubtreeRoot=up7
+I/flutter :                                      │ owner: Center ← Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ⋯
+I/flutter :                                      │ parentData: offset=Offset(8.0, 0.0)
+I/flutter :                                      │ constraints: BoxConstraints(56.0<=w<=363.4, h=36.0)
+I/flutter :                                      │ size: Size(66.0, 36.0)
+I/flutter :                                      │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter :                                      │
+I/flutter :                                      └─child: RenderParagraph relayoutSubtreeRoot=up8
+I/flutter :                                        │ owner: RichText ← Text ← Center ← Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← ⋯
+I/flutter :                                        │ parentData: offset=Offset(0.0, 10.0)
+I/flutter :                                        │ constraints: BoxConstraints(0.0<=w<=363.4, 0.0<=h<=36.0)
+I/flutter :                                        │ size: Size(66.0, 16.0)
+I/flutter :                                        ╘═╦══ text ═══
+I/flutter :                                          ║ TextSpan:
+I/flutter :                                          ║   inherit: false
+I/flutter :                                          ║   color: Color(0xdd000000)
+I/flutter :                                          ║   size: 14.0
+I/flutter :                                          ║   weight: 500
+I/flutter :                                          ║   baseline: alphabetic
+I/flutter :                                          ║   "Dump App"
+I/flutter :                                          ╚═══════════
 ```
+
+This is the output of the root `RenderObject` object's `toStringDeep`
+function.
 
 When debugging layout issues, the key fields to look at are the `size`
 and `constraints` fields. The constraints flow down the tree, and the
@@ -378,7 +459,7 @@ to be the size of the screen, with constraints of
 `BoxConstraints(w=411.4, h=683.4)`. The `RenderPositionedBox`, which
 the dump says was created by a
 [`Center`](http://docs.flutter.io/flutter/widgets/Center-class.html)
-widget (as described by the `owner` field), sets its childs
+widget (as described by the `owner` field), sets its child's
 constraints to a loose version of this: `BoxConstraints(0.0<=w<=411.4,
 0.0<=h<=683.4)`. The child, a
 [`RenderPadding`](http://docs.flutter.io/flutter/rendering/RenderPadding-class.html),
@@ -404,8 +485,8 @@ child's dimensions to size themselves.
 Another way to notice this is by looking at the "relayoutSubtreeRoot"
 part of the descriptions of each box, which essentially tells you how
 many ancestors depend on this element's size in some way. Thus the
-`RenderParagraph` has a `relayoutSubtreeRoot=up6`, meaning that when
-the `RenderParagraph` is dirtied, six ancestors also have to be
+`RenderParagraph` has a `relayoutSubtreeRoot=up8`, meaning that when
+the `RenderParagraph` is dirtied, eight ancestors also have to be
 dirtied because they might be affected by the new dimensions.
 
 If you write your own render objects, you can add information to the
@@ -420,23 +501,54 @@ If you are trying to debug a compositing issue, you can use
 For the example above, it would output:
 
 ```
-android: I/flutter : TransformLayer
-android: I/flutter :  │ owner: [root]
-android: I/flutter :  │ offset: Offset(0.0, 0.0)
-android: I/flutter :  │ transform:
-android: I/flutter :  │   [0] 3.5,0.0,0.0,0.0
-android: I/flutter :  │   [1] 0.0,3.5,0.0,0.0
-android: I/flutter :  │   [2] 0.0,0.0,1.0,0.0
-android: I/flutter :  │   [3] 0.0,0.0,0.0,1.0
-android: I/flutter :  │
-android: I/flutter :  └─child 1: ContainerLayer
-android: I/flutter :    │ owner: RepaintBoundary ← _ModalScope-[GlobalKey 943445263] ← _OverlayEntry-[GlobalKey 792667939] ← Stack ← ⋯
-android: I/flutter :    │ offset: Offset(0.0, 0.0)
-android: I/flutter :    │
-android: I/flutter :    └─child 1: PictureLayer
-android: I/flutter :        offset: Offset(0.0, 0.0)
-android: I/flutter :        paintBounds: Rect.fromLTRB(0.0, 0.0, 411.4, 683.4)
+I/flutter : TransformLayer
+I/flutter :  │ owner: [root]
+I/flutter :  │ offset: Offset(0.0, 0.0)
+I/flutter :  │ transform:
+I/flutter :  │   [0] 3.5,0.0,0.0,0.0
+I/flutter :  │   [1] 0.0,3.5,0.0,0.0
+I/flutter :  │   [2] 0.0,0.0,1.0,0.0
+I/flutter :  │   [3] 0.0,0.0,0.0,1.0
+I/flutter :  │
+I/flutter :  ├─child 1: OffsetLayer
+I/flutter :  │ │ owner: RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← ⋯
+I/flutter :  │ │ offset: Offset(0.0, 0.0)
+I/flutter :  │ │
+I/flutter :  │ └─child 1: PictureLayer
+I/flutter :  │  
+I/flutter :  └─child 2: PictureLayer
 ```
+
+This is the output of calling `toStringDeep` on the root `Layer` object.
+
+The transform at the root is the transform that applies the device
+pixel ratio; in this case, a ratio of 3.5 device pixels for every
+logical pixel.
+
+The `RepaintBoundary` widget, which creates a `RenderRepaintBoundary`
+in the render tree, creates a new layer in the layer tree. This is
+used to reduce how much needs to be repainted.
+
+### Semantics
+
+You can also obtain a dump of the Semantics tree (the tree presented
+to the system accessibility APIs) using
+[`debugDumpSemanticsTree()`](http://docs.flutter.io/flutter/rendering/debugDumpSemanticsTree.html).
+To use this, you have to have first enable accessibility, e.g. by
+enabling a system accessibility tool or the `SemanticsDebugger`
+(discussed below).
+
+For the example above, it would output:
+
+```
+I/flutter : SemanticsNode(0; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
+I/flutter :  ├SemanticsNode(1; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
+I/flutter :  │ └SemanticsNode(2; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4); canBeTapped)
+I/flutter :  └SemanticsNode(3; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
+I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTapped; "Dump App")
+```
+
+<!-- this tree is bad, see https://github.com/flutter/flutter/issues/2476 -->
 
 ## Visual debugging
 
@@ -505,12 +617,15 @@ own stack traces on demand, if this kind of approach is useful to you.
 ## PerformanceOverlay
 
 To get a graphical view of the performance of your application, set
-the `showPerformanceOverlay` argument of the [`MaterialApp`
-constructor](http://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
-to true. (If you're not using `MaterialApp`, you can get the same
-effect by wrapping your application in a stack and putting a widget on
-your stack that was created by calling [`new
-PerformanceOverlay.allEnabled()`](http://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
+the `showPerformanceOverlay` argument of the
+[`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
+constructor to true. The
+[`WidgetsApp`](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+constructor has a similar argument. (If you're not using `MaterialApp`
+or `WidgetsApp`, you can get the same effect by wrapping your
+application in a stack and putting a widget on your stack that was
+created by calling
+[`new PerformanceOverlay.allEnabled()`](http://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
 
 This will show two graphs. The top one is the time spent by the GPU
 thread, the bottom one is the time spent by the CPU thread. The white

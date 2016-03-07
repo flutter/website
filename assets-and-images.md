@@ -127,9 +127,10 @@ Some caveats:
 
 * If you're not using
   [MaterialApp](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
+  or 
+  [WidgetsApp](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
   in your application, and you want to use resolution awareness, you'll need to
-  establish your own AssetVendor in your build logic. (This may change, please see
-  [this issue](https://github.com/flutter/flutter/issues/1346).)
+  establish your own AssetVendor in your build logic.
 * If you want establish a your own
   [MediaQuery](http://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
   [DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
