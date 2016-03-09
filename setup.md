@@ -104,7 +104,7 @@ Android 4.1 (API level 16) or higher.
 
 1. Enable developer mode on your device by visiting **`Settings > About phone`** and
 tapping the **`Build number`** line seven times.
-2. Enable **`Android debugging`** in **`Settings > Developer options`**.
+2. In **`Settings > Developer options`**, enable **`USB debugging`**. 
 3. Using a USB cable, plug your phone into your computer. If prompted on your
 device, authorize your computer to access your device.
 4. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
