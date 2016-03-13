@@ -109,7 +109,7 @@ abstract class RenderBox extends RenderObject {
     // ...
     return 0.0;
   }
-  
+
   // ...
 }
 ```
@@ -132,10 +132,10 @@ Example:
 <!-- skip -->
 ```dart
 // BAD:
-new EdgeDims.TRBL(0.0, 8.0, 0.0, 8.0);
+new EdgeInsets.TRBL(0.0, 8.0, 0.0, 8.0);
 
 // GOOD:
-new EdgeDims.symmetric(horizontal: 8.0);
+new EdgeInsets.symmetric(horizontal: 8.0);
 ```
 
 
@@ -254,14 +254,14 @@ to the superclass.
 
 ```dart
 // one-line constructor example
-abstract class Foo extends StatelessComponent {
+abstract class Foo extends StatelessWidget {
   Foo({ Key key, this.child }) : super(key: key);
   final Widget child;
   // ...
 }
 
 // fully expanded constructor example
-abstract class Bar extends StatelessComponent {
+abstract class Bar extends StatelessWidget {
   Bar({
     Key key,
     Widget child

@@ -23,10 +23,10 @@ order to make them easier to use.
  - `BoxDecoration decoration` Draw the given decoration around this container.
  - `double width` Forces the container to have the given width.
  - `double height` Force the container to have the given height.
- - `EdgeDims margin` Surrounds the container (i.e., outside the container's
+ - `EdgeInsets margin` Surrounds the container (i.e., outside the container's
     decoration) on the top, right, bottom, and left with the given amount of
     space.
- - `EdgeDims padding` Surrounds the container's child (i.e., inside the
+ - `EdgeInsets padding` Surrounds the container's child (i.e., inside the
     container's decoration) on the top, right, bottom, and left with the given
     amount of space.
  - `Matrix4 transform` Apply the given matrix before painting the container.
@@ -54,8 +54,8 @@ total length along the main direction to determine how much free space
 is available. The flex then divides this free space among the flexible
 children in a ratio determined by their `flex` properties.
 
-The `alignItems` property determines how children are positioned in
-the cross direction. The `justifyContent` property determines how the
+The `crossAxisAlignment` property determines how children are positioned in
+the cross direction. The `mainAxisAlignment` property determines how the
 remaining free space (if any) in the main direction is allocated.
 
  - `Flexible`: Mark this child as being flexible with the given `flex` ratio.
@@ -82,7 +82,7 @@ Positioning and sizing
 ----------------------
 
  - `Padding` Surround the child with empty space on the top, right, bottom, and
-   left according to the given `EdgeDims`.
+   left according to the given `EdgeInsets`.
 
  - `Center` Center the child widget both horizontally and vertically within the
    space occupied by this widget.
