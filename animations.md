@@ -35,13 +35,13 @@ rebuild with the new value of the animation.
 
 This pattern is so common that there are two widgets that help widgets rebuild
 when animations change value:
-[`AnimatedComponent`](http://docs.flutter.io/flutter/widgets/AnimatedComponent-class.html)
+[`AnimatedWidget`](http://docs.flutter.io/flutter/widgets/AnimatedWidget-class.html)
 and
 [`AnimatedBuilder`](http://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html).
-The first, `AnimatedComponent`, is most useful for stateless animated widgets.
-To use `AnimatedComponent`, simply subclass it and implement the
-[`build`](http://docs.flutter.io/flutter/widgets/AnimatedComponent/build.html)
-function. The second, `AnimatedBuilder`, is useful for more complex components
+The first, `AnimatedWidget`, is most useful for stateless animated widgets.
+To use `AnimatedWidget`, simply subclass it and implement the
+[`build`](http://docs.flutter.io/flutter/widgets/AnimatedWidget/build.html)
+function. The second, `AnimatedBuilder`, is useful for more complex widgets
 that wish to include an animation as part of a larger build function. To use
 `AnimatedBuilder`, simply construct the widget and pass it a `builder` function.
 
@@ -105,14 +105,14 @@ with an animation to get a concrete value:
 
 1. You can [`evaluate`](http://docs.flutter.io/flutter/animation/Tween/evaluate.html)
    the tween at the current value of an animation. This approach is most useful
-   for components that are already listening to the animation and hence
+   for widgets that are already listening to the animation and hence
    rebuilding whenever the animation changes value.
 
 2. You can [`animate`](http://docs.flutter.io/flutter/animation/Animatable/animate.html)
    the tween based on the animation. Rather than returning a single value, the
    animate function returns a new `Animation` that incorporates the tween. This
    approach is most useful when you want to give the newly created animation to
-   another component, which can then read the current value that incorporates
+   another widget, which can then read the current value that incorporates
    the tween as well as listen for changes to the value.
 
 # Architecture

@@ -119,14 +119,14 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     new MaterialApp(
-      routes: {
-        '/': (RouteArguments args) => new AppHome()
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => new AppHome()
       }
     )
   );
 }
 
-class AppHome extends StatelessComponent {
+class AppHome extends StatelessWidget {
   Widget build(BuildContext context)  {
     return new Material(
       child: new Center(
@@ -177,7 +177,7 @@ I/flutter :                                    └Semantics(container: true; che
 I/flutter :                                      └_FocusScope(this scope has focus)
 I/flutter :                                        └RepaintBoundary(renderObject: RenderRepaintBoundary)
 I/flutter :                                          └IgnorePointer(renderObject: RenderIgnorePointer)
-I/flutter :                                            └_MaterialPageTransition(animation: CurvedAnimation(⏭); state: _AnimatedComponentState(483936073))
+I/flutter :                                            └_MaterialPageTransition(animation: CurvedAnimation(⏭); state: _AnimatedState(483936073))
 I/flutter :                                              └Transform(renderObject: RenderTransform)
 I/flutter :                                                └Opacity(opacity: 1.0; renderObject: RenderOpacity)
 I/flutter :                                                  └PageStorage([GlobalKey 265300])
@@ -194,7 +194,7 @@ I/flutter :                                                                     
 I/flutter :                                                                        └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 400; baseline: alphabetic; height: 1.4285714285714286x)
 I/flutter :                                                                          └Center(renderObject: RenderPositionedBox)
 I/flutter :                                                                            └FlatButton(dirty; state: _FlatButtonState(608093273))
-I/flutter :                                                                              └Container(BoxConstraints(88.0<=w<=Infinity, h=36.0); margin: EdgeDims(8.0, 8.0, 8.0, 8.0); padding: EdgeDims(0.0, 8.0, 0.0, 8.0))
+I/flutter :                                                                              └Container(BoxConstraints(88.0<=w<=Infinity, h=36.0); margin: EdgeInsets(8.0, 8.0, 8.0, 8.0); padding: EdgeInsets(0.0, 8.0, 0.0, 8.0))
 I/flutter :                                                                                └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up1)
 I/flutter :                                                                                  └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutSubtreeRoot=up2)
 I/flutter :                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up3)
@@ -204,7 +204,7 @@ I/flutter :                                                                     
 I/flutter :                                                                                            └RawGestureDetector(state: RawGestureDetectorState(576641993; gestures: tap; behavior: opaque))
 I/flutter :                                                                                              └_GestureSemantics(renderObject: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4)
 I/flutter :                                                                                                └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutSubtreeRoot=up5)
-I/flutter :                                                                                                  └Container(padding: EdgeDims(0.0, 8.0, 0.0, 8.0))
+I/flutter :                                                                                                  └Container(padding: EdgeInsets(0.0, 8.0, 0.0, 8.0))
 I/flutter :                                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up6)
 I/flutter :                                                                                                      └Center(renderObject: RenderPositionedBox relayoutSubtreeRoot=up7)
 I/flutter :                                                                                                        └Text("Dump App")
@@ -385,7 +385,7 @@ I/flutter :                          │ owner: Padding ← Container ← FlatBu
 I/flutter :                          │ parentData: offset=Offset(148.7, 315.7)
 I/flutter :                          │ constraints: BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)
 I/flutter :                          │ size: Size(114.0, 52.0)
-I/flutter :                          │ padding: EdgeDims(8.0, 8.0, 8.0, 8.0)
+I/flutter :                          │ padding: EdgeInsets(8.0, 8.0, 8.0, 8.0)
 I/flutter :                          │
 I/flutter :                          └─child: RenderConstrainedBox relayoutSubtreeRoot=up2
 I/flutter :                            │ owner: ConstrainedBox ← Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← ⋯
@@ -399,7 +399,7 @@ I/flutter :                              │ owner: Padding ← ConstrainedBox �
 I/flutter :                              │ parentData: offset=Offset(0.0, 0.0)
 I/flutter :                              │ constraints: BoxConstraints(88.0<=w<=395.4, h=36.0)
 I/flutter :                              │ size: Size(98.0, 36.0)
-I/flutter :                              │ padding: EdgeDims(0.0, 8.0, 0.0, 8.0)
+I/flutter :                              │ padding: EdgeInsets(0.0, 8.0, 0.0, 8.0)
 I/flutter :                              │
 I/flutter :                              └─child: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4
 I/flutter :                                │ owner: _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← Padding ← Container ← FlatButton ← ⋯
@@ -420,7 +420,7 @@ I/flutter :                                    │ owner: Padding ← Container 
 I/flutter :                                    │ parentData: offset=Offset(0.0, 0.0)
 I/flutter :                                    │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
 I/flutter :                                    │ size: Size(82.0, 36.0)
-I/flutter :                                    │ padding: EdgeDims(0.0, 8.0, 0.0, 8.0)
+I/flutter :                                    │ padding: EdgeInsets(0.0, 8.0, 0.0, 8.0)
 I/flutter :                                    │
 I/flutter :                                    └─child: RenderPositionedBox relayoutSubtreeRoot=up7
 I/flutter :                                      │ owner: Center ← Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ⋯

@@ -6,9 +6,9 @@ permalink: /tutorial/
 
 Flutter widgets are built using a functional-reactive framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
-that you build your UI out of components. Components describe what their view
-should look like given their current configuration and state. When a component's
-state changes, the component rebuilds its description, which the framework diffs
+that you build your UI out of widgets. Widgets describe what their view
+should look like given their current configuration and state. When a widget's
+state changes, the widget rebuilds its description, which the framework diffs
 against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
 
@@ -37,14 +37,14 @@ The framework forces the root widget to cover the screen, which means the text
 
 When writing an app, you'll commonly author new widgets that are subclasses of
 either
-[`StatelessComponent`](http://docs.flutter.io/flutter/material/StatelessComponent-class.html)
+[`StatelessWidget`](http://docs.flutter.io/flutter/material/StatelessWidget-class.html)
 or
-[`StatefulComponent`](http://docs.flutter.io/flutter/material/StatefulComponent-class.html),
-depending on whether your component manages any state. A component's main job is
+[`StatefulWidget`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html),
+depending on whether your widget manages any state. A widget's main job is
 to implement a
-[`build`](http://docs.flutter.io/flutter/material/StatelessComponent/build.html)
-function, which describes the component in terms of other, lower-level widgets.
-The framework will build those components in turn until the process bottoms out
+[`build`](http://docs.flutter.io/flutter/material/StatelessWidget/build.html)
+function, which describes the widget in terms of other, lower-level widgets.
+The framework will build those widgets in turn until the process bottoms out
 in widgets that represent the underlying render object.
 
 Basic Widgets
@@ -87,20 +87,20 @@ very commonly used:
    [`Container`](http://docs.flutter.io/flutter/material/Container-class.html)
    can be transformed in three dimensional space using a matrix.
 
-Below are some simple components that combine these and other widgets:
+Below are some simple widgets that combine these and other widgets:
 
 ```dart
 import 'package:flutter/material.dart';
 
-class MyToolBar extends StatelessComponent {
-  MyToolBar({ this.title });
+class MyAppBar extends StatelessWidget {
+  MyAppBar({ this.title });
 
   final Widget title;
 
   Widget build(BuildContext context) {
     return new Container(
       height: 56.0,
-      padding: const EdgeDims.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       decoration: new BoxDecoration(
         backgroundColor: Colors.blue[500]
       ),
@@ -115,12 +115,12 @@ class MyToolBar extends StatelessComponent {
   }
 }
 
-class MyScaffold extends StatelessComponent {
+class MyScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Material(
       child: new Column(
         children: <Widget>[
-          new MyToolBar(
+          new MyAppBar(
             title: new Text('Example title', style: Typography.white.title)
           ),
           new Flexible(
@@ -137,8 +137,8 @@ class MyScaffold extends StatelessComponent {
 void main() {
   runApp(new MaterialApp(
     title: 'My app',
-    routes: <String, RouteBuilder>{
-      '/': (RouteArguments args) => new MyScaffold()
+    routes: <String, WidgetBuilder>{
+      '/': (BuildContext context) => new MyScaffold()
     }
   ));
 }
@@ -160,10 +160,10 @@ application with a
 [`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
 and a single route (more on routes later) to our scaffold.
 
-The `MyToolBar` component creates a
+The `MyAppBar` widget creates a
 [`Container`](http://docs.flutter.io/flutter/material/Container-class.html)
 with a height of 56 device-independent pixels with an internal padding of 8
-pixels, both on the left and the right. Inside the container, `MyToolBar` uses a
+pixels, both on the left and the right. Inside the container, `MyAppBar` uses a
 [`Row`](http://docs.flutter.io/flutter/material/Row-class.html) layout to
 organize its children. The middle child, the `title` widget, is marked as
 [`Flexible`](http://docs.flutter.io/flutter/material/Flexible-class.html),
@@ -176,8 +176,8 @@ the
 argument to
 [`Flexible`](http://docs.flutter.io/flutter/material/Flexible-class.html).
 
-The `MyScaffold` component organizes its children in a vertical column. At the
-top of the column it places an instance of `MyToolBar`, passing the tool bar a
+The `MyScaffold` widget organizes its children in a vertical column. At the
+top of the column it places an instance of `MyAppBar`, passing the app bar a
 [`Text`](http://docs.flutter.io/flutter/material/Text-class.html) widget to
 use as its title. Passing widgets as arguments to other widgets is a powerful
 technique that lets you create generic widgets that can be reused in a wide
@@ -208,20 +208,20 @@ void main() {
   runApp(
     new MaterialApp(
       title: 'Flutter Tutorial',
-      routes: {
-        '/': (RouteArguments args) => new TutorialHome()
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => new TutorialHome()
       }
     )
   );
 }
 
-class TutorialHome extends StatelessComponent {
+class TutorialHome extends StatelessWidget {
   Widget build(BuildContext context)  {
     return new Scaffold(
-      toolBar: new ToolBar(
-        left: new IconButton(icon: Icons.menu, tooltip: 'Navigation menu'),
-        center: new Text('Example title'),
-        right: <Widget>[ new IconButton(icon: Icons.search, tooltip: 'Search') ]
+      appBar: new AppBar(
+        leading: new IconButton(icon: Icons.menu, tooltip: 'Navigation menu'),
+        title: new Text('Example title'),
+        actions: <Widget>[ new IconButton(icon: Icons.search, tooltip: 'Search') ]
       ),
       body: new Center(
         child: new Text('Hello, world!')
@@ -235,11 +235,11 @@ class TutorialHome extends StatelessComponent {
 }
 ```
 
-Now that we've switched from `MyToolBar` and `MyScaffold` to the
-[`ToolBar`](http://docs.flutter.io/flutter/material/ToolBar-class.html) and
+Now that we've switched from `MyAppBar` and `MyScaffold` to the
+[`AppBar`](http://docs.flutter.io/flutter/material/AppBar-class.html) and
 [`Scaffold`](http://docs.flutter.io/flutter/material/Scaffold-class.html)
 widgets from `material.dart`, our app is starting to look at bit more like
-Material Design. For example, the tool bar has a shadow and the title text
+Material Design. For example, the app bar has a shadow and the title text
 inherits the correct styling automatically. We've also added a floating action
 button for good measure.
 
@@ -247,15 +247,15 @@ Notice that we're again passing widgets as arguments to other widgets. The
 [`Scaffold`](http://docs.flutter.io/flutter/material/Scaffold-class.html)
 widget takes a number of different widgets as named arguments, each of which are
 placed in the Scaffold layout in the appropriate place. Similarly, the
-[`ToolBar`](http://docs.flutter.io/flutter/material/ToolBar-class.html)
+[`AppBar`](http://docs.flutter.io/flutter/material/AppBar-class.html)
 widget lets us pass in widgets for the
-[`left`](http://docs.flutter.io/flutter/material/ToolBar-class.html#left)
+[`leading`](http://docs.flutter.io/flutter/material/AppBar-class.html#leading)
 and the
-[`right`](http://docs.flutter.io/flutter/material/ToolBar-class.html#right)
+[`actions`](http://docs.flutter.io/flutter/material/AppBar-class.html#actions)
 of the
-[`center`](http://docs.flutter.io/flutter/material/ToolBar-class.html#left)
+[`title`](http://docs.flutter.io/flutter/material/AppBar-class.html#title)
 widget. This pattern recurs throughout the framework and is something you might
-consider when designing your own components.
+consider when designing your own widgets.
 
 User input
 ----------
@@ -265,7 +265,7 @@ input. The first step in building an interactive application is to detect
 input gestures. Let's see how that works by creating a simple button:
 
 ```dart
-class MyButton extends StatelessComponent {
+class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return new GestureDetector(
       onTap: () {
@@ -273,8 +273,8 @@ class MyButton extends StatelessComponent {
       },
       child: new Container(
         height: 36.0,
-        padding: const EdgeDims.all(8.0),
-        margin: const EdgeDims.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
           borderRadius: 5.0,
           backgroundColor: Colors.lightGreen[500]
@@ -301,37 +301,37 @@ callback, in this case printing a message to the console. You can use
 [`GestureDetector`](http://docs.flutter.io/flutter/material/GestureDetector-class.html)
 to detect a variety of input gestures, including taps, drags, and scales.
 
-Many components use a
+Many widgets use a
 [`GestureDetector`](http://docs.flutter.io/flutter/material/GestureDetector-class.html)
-to provide optional callbacks for other components. For example, the
+to provide optional callbacks for other widgets. For example, the
 [`IconButton`](http://docs.flutter.io/flutter/material/IconButton-class.html),
 [`RaisedButton`](http://docs.flutter.io/flutter/material/RaisedButton-class.html),
 and
 [`FloatingActionButton`](http://docs.flutter.io/flutter/material/FloatingActionButton-class.html)
-components have
+widgets have
 [`onPressed`](http://docs.flutter.io/flutter/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
 Managing State
 --------------
 
-Thus far, we've used only stateless components. Stateless components receive
-arguments from their parent component, which they store in
+Thus far, we've used only stateless widgets. Stateless widgets receive
+arguments from their parent widget, which they store in
 [`final`](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const)
-member variables. When a component is asked to
-[`build`](http://docs.flutter.io/flutter/material/StatelessComponent/build.html),
+member variables. When a widget is asked to
+[`build`](http://docs.flutter.io/flutter/material/StatelessWidget/build.html),
 it uses these stored values to derive new arguments for the widgets it creates.
 
 In order to build more complex experiences - for example, to react in more
 interesting ways to user input - applications will typically carry some state.
-Flutter uses StatefulComponents to capture this idea. StatefulComponents are
+Flutter uses StatefulWidgets to capture this idea. StatefulWidgets are
 special widgets that know how to generate State objects, which are then used to
 hold state. Consider this basic example, using the
 [`RaisedButton`](http://docs.flutter.io/flutter/material/RaisedButton-class.html)
 mentioned earlier:
 
 ```dart
-class Counter extends StatefulComponent {
+class Counter extends StatefulWidget {
   _CounterState createState() => new _CounterState();
 }
 
@@ -356,7 +356,7 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-You might wonder why StatefulComponent and State are separate objects. In
+You might wonder why StatefulWidget and State are separate objects. In
 Flutter, these two types of objects have different life cycles. Widgets are
 temporary objects, used to construct a presentation of the application in its
 current state. State objects on the other hand are persistent between calls to
@@ -366,18 +366,18 @@ allowing them to remember information.
 The example above accepts user input and directly uses the result in its
 build method.  In more complex applications, different parts of the widget
 hierarchy might be responsible for different concerns; for example, one
-component might present a complex user interface with the goal of gathering
-specific information, such as a date or location, while another component might
+widget might present a complex user interface with the goal of gathering
+specific information, such as a date or location, while another widget might
 use that information to change the overall presentation.
 
-In Flutter, change notifications flow "up" the component hierarchy by way of
-callbacks, while current state flows "down" to the stateless components that do
+In Flutter, change notifications flow "up" the widget hierarchy by way of
+callbacks, while current state flows "down" to the stateless widgets that do
 presentation. The common parent that redirects this flow is the State. Let's
 see how that works in practice, with this slightly more complex example:
 
 
 ```dart
-class CounterDisplay extends StatelessComponent {
+class CounterDisplay extends StatelessWidget {
   CounterDisplay({ this.count });
   final int count;
   Widget build(BuildContext context) {
@@ -385,7 +385,7 @@ class CounterDisplay extends StatelessComponent {
   }
 }
 
-class CounterIncrementor extends StatelessComponent {
+class CounterIncrementor extends StatelessWidget {
   CounterIncrementor({ this.onPressed });
   final VoidCallback onPressed;
   Widget build(BuildContext context) {
@@ -396,7 +396,7 @@ class CounterIncrementor extends StatelessComponent {
   }
 }
 
-class Counter extends StatefulComponent {
+class Counter extends StatefulWidget {
   _CounterState createState() => new _CounterState();
 }
 
@@ -420,12 +420,12 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-Notice how we created two new stateless components, cleanly separating
+Notice how we created two new stateless widgets, cleanly separating
 the concerns of _displaying_ the counter (CounterDisplay) and _changing_
 the counter (CounterIncrementor).
 Although the net result is the same as the previous example, the separation of
 responsibility allows greater complexity to be encapsulated in the individual
-components, while maintaining simplicity in the parent.
+widgets, while maintaining simplicity in the parent.
 
 Bringing it All Together
 ------------------------
@@ -444,7 +444,7 @@ class Product {
 
 typedef void CartChangedCallback(Product product, bool inCart);
 
-class ShoppingListItem extends StatelessComponent {
+class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({ Product product, this.inCart, this.onCartChanged })
     : product = product, super(key: new ObjectKey(product));
 
@@ -467,30 +467,30 @@ class ShoppingListItem extends StatelessComponent {
   Widget build(BuildContext context) {
     return new ListItem(
       onTap: () => onCartChanged(product, !inCart),
-      left: new CircleAvatar(
+      leading: new CircleAvatar(
         backgroundColor: _getColor(context),
         child: new Text(product.name[0])
       ),
-      primary: new Text(product.name, style: _getTextStyle(context))
+      title: new Text(product.name, style: _getTextStyle(context))
     );
   }
 }
 ```
 
-The `ShoppingListItem` component follows a common pattern for stateless
-components. It stores the values it receives in its constructor in
+The `ShoppingListItem` widget follows a common pattern for stateless
+widgets. It stores the values it receives in its constructor in
 [`final`](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const)
 member variables, which it then uses during its
-[`build`](http://docs.flutter.io/flutter/material/StatelessComponent/build.html)
+[`build`](http://docs.flutter.io/flutter/material/StatelessWidget/build.html)
 function. For example, the `inCart` boolean to toggle between two visual
 appearances: one that uses the primary color from the current theme and another
 that uses gray.
 
-When the user taps the list item, the component doesn't modify its `inCart`
-value directly. Instead, the component calls the `onCartChanged` function it
-received from its parent component. This pattern lets you store state higher in
-the component hierarchy, which causes the state to persist for longer periods of
-time. In the extreme, the state stored on the component passed to
+When the user taps the list item, the widget doesn't modify its `inCart`
+value directly. Instead, the widget calls the `onCartChanged` function it
+received from its parent widget. This pattern lets you store state higher in
+the widget hierarchy, which causes the state to persist for longer periods of
+time. In the extreme, the state stored on the widget passed to
 [`runApp`](http://docs.flutter.io/flutter/material/runApp.html) persists for
 the lifetime of the application.
 
@@ -509,13 +509,13 @@ class Product {
   final String name;
 }
 
-class ShoppingListItem extends StatelessComponent {
+class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({ Product product, bool inCart, Function onCartChanged });
   Widget build(BuildContext context) => null;
 }
 -->
 ```dart
-class ShoppingList extends StatefulComponent {
+class ShoppingList extends StatefulWidget {
   ShoppingList({ Key key, this.products }) : super(key: key);
 
   final List<Product> products;
@@ -537,8 +537,8 @@ class _ShoppingListState extends State<ShoppingList> {
 
   Widget build(BuildContext context)  {
     return new Scaffold(
-      toolBar: new ToolBar(
-        center: new Text('Shopping List')
+      appBar: new AppBar(
+        title: new Text('Shopping List')
       ),
       body: new MaterialList(
         type: MaterialListType.oneLineWithAvatar,
@@ -563,26 +563,26 @@ final List<Product> _kProducts = <Product>[
 void main() {
   runApp(new MaterialApp(
     title: 'Shopping List',
-    routes: {
-      '/': (RouteArguments args) => new ShoppingList(products: _kProducts)
+    routes: <String, WidgetBuilder>{
+      '/': (BuildContext context) => new ShoppingList(products: _kProducts)
     }
   ));
 }
 ```
 
 The `ShoppingList` class extends
-[`StatefulComponent`](http://docs.flutter.io/flutter/material/StatefulComponent-class.html),
-which means this component stores mutable state. When the `ShoppingList`
-component is first inserted into the tree, the framework calls the
-[`createState`](http://docs.flutter.io/flutter/material/StatefulComponent-class.html#createState)
+[`StatefulWidget`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html),
+which means this widget stores mutable state. When the `ShoppingList`
+widget is first inserted into the tree, the framework calls the
+[`createState`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html#createState)
 function to create a fresh instance of `_ShoppingListState` to associate with
 that location in the tree. (Notice that we typically name subclasses of
 [`State`](http://docs.flutter.io/flutter/material/State-class.html) with
 leading underscores to indicate that they are private implementation details.)
-When this component's parent rebuilds, the parent will create a new instance of
+When this widget's parent rebuilds, the parent will create a new instance of
 `ShoppingList`, but the framework will reuse the `_ShoppingListState` instance
 that is already in the tree rather than calling
-[`createState`](http://docs.flutter.io/flutter/material/StatefulComponent-class.html#createState)
+[`createState`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html#createState)
 again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
@@ -606,25 +606,25 @@ in a
 [`setState`](http://docs.flutter.io/flutter/material/State-class.html#setState)
 call. Calling
 [`setState`](http://docs.flutter.io/flutter/material/State-class.html#setState)
-marks this component as dirty and schedules it to be rebuilt the next time your
+marks this widget as dirty and schedules it to be rebuilt the next time your
 app needs to update the screen. If you forget to call
 [`setState`](http://docs.flutter.io/flutter/material/State-class.html#setState)
-when modifying the internal state of a component, the framework won't know your
-component is dirty and might not call the component's
-[`build`](http://docs.flutter.io/flutter/material/StatelessComponent/build.html)
+when modifying the internal state of a widget, the framework won't know your
+widget is dirty and might not call the widget's
+[`build`](http://docs.flutter.io/flutter/material/StatelessWidget/build.html)
 function, which means the user interface might not update to reflect the changed
 state.
 
 By managing state in this way, you don't need to write separate code for
-creating and updating subcomponents. Instead, you simply implement the build
+creating and updating child widgets. Instead, you simply implement the build
 function, which handles both situations.
 
 initState and dispose
 ---------------------
 
 After calling
-[`createState`](http://docs.flutter.io/flutter/material/StatefulComponent-class.html#createState)
-on the StatefulComponent, the framework inserts the new state object into the
+[`createState`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html#createState)
+on the StatefulWidget, the framework inserts the new state object into the
 tree and then calls
 [`initState`](http://docs.flutter.io/flutter/material/State-class.html#initState)
 on the state object. A subclass of
@@ -653,7 +653,7 @@ Keys
 ----
 
 You can use keys to control which widgets the framework will match up with which
-other widgets when a component rebuilds. By default, the framework matches
+other widgets when a widget rebuilds. By default, the framework matches
 widgets in the current and previous build according to their
 [`runtimeType`](http://docs.flutter.io/flutter/material/Widget-class.html#runtimeType)
 and the order in which they appear. With keys, the framework requires that the
@@ -662,8 +662,8 @@ two widgets have the same
 well as the same
 [`runtimeType`](http://docs.flutter.io/flutter/material/Widget-class.html#runtimeType).
 
-Keys are most useful in components that build many instances of the same type of
-widget. For example, the `ShoppingList` component, which builds just enough
+Keys are most useful in widgets that build many instances of the same type of
+widget. For example, the `ShoppingList` widget, which builds just enough
 `ShoppingListItem` instances to fill its visible region:
 
  * Without keys, the first entry in the current build would always sync with the
@@ -674,7 +674,7 @@ widget. For example, the `ShoppingList` component, which builds just enough
    be more efficient because the framework will sync entries with matching
    semantic keys and therefore similar (or identical) visual appearances.
    Moreover, syncing the entries semantically means that state retained in
-   stateful subcomponents will remain attached to the same semantic entry rather
+   stateful child widgets will remain attached to the same semantic entry rather
    than the entry in the same numerical position in the viewport.
 
 Global Keys

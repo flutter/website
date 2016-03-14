@@ -113,7 +113,7 @@ pixels when painting by applying an appropriate scale factor.
 TODO(ianh): Define how you actually get the device pixel ratio if you
 need it, and document best practices around that.
 
-#### EdgeDims
+#### EdgeInsets
 
 #### BoxConstraints
 
