@@ -582,7 +582,7 @@ If you're trying to debug compositor layers, for example to determine
 whether and where to add `RepaintBoundary` widgets, you can use the
 [`debugPaintLayerBordersEnabled`](http://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
 flag, which outlines each layer's bounds in orange, or the
-[`debugEnableRepaintRainbox`](http://docs.flutter.io/flutter/rendering/debugEnableRepaintRainbox.html)
+[`debugRepaintRainbowEnabled`](http://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)
 flag, which causes layers to be overlayed with a rotating set of
 colors whenever they are repainted.
 
