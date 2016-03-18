@@ -63,10 +63,67 @@ Example:
 ```
 
 
+Documentation comments (dartdocs)
+---------------------------------
+
+We use "dartdoc" for our documentation. All public members in Flutter
+libraries should have a dartdoc comment, consisting of three slashes
+(rather than two slashes as used for regular comments).
+
+### Avoid useless documentation
+
+If someone could have written the same documentation without knowing
+anything about the class other than its name, then it's useless.
+
+Avoid checking in such documentation, because it is no better than no
+documentation but will prevent us from noticing that the identifier is
+not actually documented.
+
+### Leave breadcrumbs in the comments
+
+This is especially important for documentation at the level of classes.
+
+If a class is constructed using a builder of some sort, or can be
+obtained via some mechanism other than merely calling the constructor,
+then include this information in the documentation for the class.
+
+If a class is typically used by passing it to a particular API, then
+include that information in the class documentation also.
+
+If a method is the main mechanism used to obtain a particular object,
+or is the main way to consume a particular object, then mention that
+in the method's description.
+
+These rules result in a chain of breadcrumbs that a reader can follow
+to get from any class or method that they might think is relevant to
+their task all the way up to the class or method they actually need.
+
+Example:
+
+<!-- skip -->
+```dart
+// GOOD:
+
+/// An object representing a sequence of recorded graphical operations.
+///
+/// To create a [Picture], use a [PictureRecorder].
+///
+/// A [Picture] can be placed in a [Scene] using a [SceneBuilder], via
+/// the [SceneBuilder.addPicture] method. A [Picture] can also be
+/// drawn into a [Canvas], using the [Canvas.drawPicture] method.
+abstract class Picture ...
+```
+
+### Refactor the code when the documentation would be incomprehensible
+
+If writing the documentation proves to be difficult because the API is
+convoluted, then rewrite the API rather than trying to document it.
+
+
 Coding patterns and catching bugs early
 ---------------------------------------
 
-### Do run the Dart Analyzer before submitting code
+### Run the Dart Analyzer before submitting code
 
 While editing code Atom's `dartlang` plugin runs the analyzer automatically,
 preventing surprises later when you need to submit the code.
@@ -78,7 +135,7 @@ must be allowed due to a bug in the analyzer file a bug with the Dart team at
 <http://dartbug.com/new>.
 
 
-### Do use asserts liberally to enforce contracts and invariants
+### Use asserts liberally to enforce contracts and invariants
 
 `assert()` allows us to be diligent about correctness without paying a
 performance penalty in release mode, because Dart only evaluates asserts in
@@ -139,7 +196,7 @@ new EdgeInsets.symmetric(horizontal: 8.0);
 ```
 
 
-### Do perform dirty checks in setters
+### Perform dirty checks in setters
 
 When defining mutable properties that mark a class dirty when set, use
 the following pattern:
@@ -165,7 +222,7 @@ this pattern. If for some reason you don't want to use 'value', use
 Start the method with any asserts you need to validate the value.
 
 
-### Do minimize the visibility scope of constants
+### Minimize the visibility scope of constants
 
 Prefer using a local const or a static const in a relevant class than using a
 global constant.
@@ -192,7 +249,7 @@ the exception that "as" raises).
 Naming
 ------
 
-### Do begin constant names with prefix "k"
+### Begin constant names with prefix "k"
 
 Examples:
 
@@ -216,7 +273,7 @@ callbacks unless you are ignoring them (and have named them with
 underscores).
 
 
-### Do qualify variables used only for debugging
+### Qualify variables used only for debugging
 
 If you have variables or methods that are only used in checked mode,
 prefix their names with `debug` or `_debug`.
@@ -236,7 +293,7 @@ Formatting
 These guidelines have not technical effect, but they are still important purely
 for consistency and readability reasons.
 
-### Do order class members by typical lifecycle
+### Order class members by typical lifecycle
 
 Class constructors and methods should be ordered in the order that
 their members will be used in an instance's typical lifecycle. In
@@ -300,7 +357,7 @@ around assignment operators. Indent the next line by two characters
 or align the expressions, whichever makes the code more readable.
 
 
-### Do indent multi-line argument and parameter lists by 2 characters
+### Indent multi-line argument and parameter lists by 2 characters
 
 When breaking an argument list into multiple lines, indent the
 arguments two characters from the previous line.
@@ -351,7 +408,7 @@ String capitalize(String s) {
 }
 ```
 
-### Do use braces for long functions and methods
+### Use braces for long functions and methods
 
 When using `{ }` braces, put a space or a newline after the open
 brace and before the closing brace. (If the block is empty, the same
@@ -362,7 +419,7 @@ Note, we do not put space in the empty map literal `{}`, but we do type it, so
 it looks like `<Foo, Bar>{}`).
 
 
-### Do separate the "if" expression from its statement
+### Separate the "if" expression from its statement
 
 Don't put the statement part of an "if" statement on the same line as
 the expression, even if it is short. (Doing so makes it unobvious that
@@ -382,7 +439,7 @@ if (notReady)
 ```
 
 
-### Don't use braces for one-line long control structure statements
+### Avoid using braces for one-line long control structure statements
 
 If a flow control structure's statement is one line long, then don't
 use braces around it, unless it's part of an "if" chain and any of the
