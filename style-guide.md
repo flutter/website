@@ -70,6 +70,10 @@ We use "dartdoc" for our documentation. All public members in Flutter
 libraries should have a dartdoc comment, consisting of three slashes
 (rather than two slashes as used for regular comments).
 
+In general, follow the
+[Dart documentation guide](https://www.dartlang.org/effective-dart/documentation/#doc-comments)
+except where that would contradict this page.
+
 ### Avoid useless documentation
 
 If someone could have written the same documentation without knowing
