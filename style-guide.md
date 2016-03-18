@@ -83,6 +83,30 @@ Avoid checking in such documentation, because it is no better than no
 documentation but will prevent us from noticing that the identifier is
 not actually documented.
 
+Example (from [`CircleAvatar`](http://docs.flutter.io/flutter/material/CircleAvatar-class.html)):
+
+<!-- skip -->
+```dart
+// BAD:
+
+/// The background color.
+final Color backgroundColor;
+
+/// Half the diameter of the circle.
+final double radius;
+
+
+// GOOD:
+
+/// The color with which to fill the circle. Changing the background
+/// color will cause the avatar to animate to the new color.
+final Color backgroundColor;
+
+/// The size of the avatar. Changing the radius will cause the
+/// avatar to animate to the new size.
+final double radius;
+```
+
 ### Leave breadcrumbs in the comments
 
 This is especially important for documentation at the level of classes.
