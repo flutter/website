@@ -15,6 +15,6 @@ Run `android update sdk` from the command line,
 and install SDK version 22 and build tools version 22.0.1.
 For now, Flutter currently expects only _these_ versions.
 
-Then, inside your Flutter app, run `flutter apk`.
+Then, inside your Flutter app, run `flutter build apk`.
 
 The APK can be found in `$MY_FLUTTER_APP/build/app.apk`.
