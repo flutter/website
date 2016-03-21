@@ -12,7 +12,7 @@ that everyone, whether reading the code for the first time or
 maintaining it for years, can quickly determine what the code does. A
 secondary goal is avoiding arguments when there are disagreements.
 
-In general, follow our [Design Principles](design.md) for all code and
+In general, follow our [Design Principles](/design-principles/) for all code and
 the [Dart style guide](https://www.dartlang.org/articles/style-guide/)
 for Dart code, except where that would contradict this page.
 
