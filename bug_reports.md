@@ -9,9 +9,26 @@ The instructions in this document detail the current steps required to provide t
 ## Create an Issue on Github
 * A new Github issue may be created at [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
 
-## Provide the Flutter Version
-* Run `flutter --version` in your project and paste the results into the Github Issue
-![flutter version](/images/flutter_version.png)
+## Provide some Flutter Diagnostics
+* Run `flutter doctor` in your project directory and paste the results into the Github Issue:
+
+```
+[✓] Flutter (on Mac OS, channel alpha)
+    • Flutter at /Users/me/projects/flutter
+    • Framework revision 8cbeb2e (4 hours ago), engine revision 5c28578
+
+[✓] Android toolchain - develop for Android devices (Android SDK 23.0.2)
+    • Android SDK at /usr/local/Cellar/android-sdk/24.4.1_1
+    • Platform android-23, build-tools 23.0.2
+    • Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
+
+[✓] iOS toolchain - develop for iOS devices (Xcode 7.3)
+    • XCode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 7.3, Build version 7D175
+
+[✓] Atom - a lightweight development environment for Flutter
+    • Atom installed; Flutter plugin version 0.2.1
+```
 
 ## Run the Command in Verbose Mode
 Follow these steps only if your issue is related to the `flutter` tool.
