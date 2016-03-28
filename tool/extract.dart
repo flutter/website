@@ -19,7 +19,7 @@ void main(List<String> args) {
       .listSync()
       .where((entity) => entity is File && entity.path.endsWith('.md'));
   files.forEach((file) => extractCount += _processFile(file));
-  print('\n${extractCount} code snippets extracted.');
+  print('\n$extractCount code snippets extracted.');
 }
 
 int _processFile(File file) {
@@ -69,10 +69,10 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
     {String includeSource}) {
   bool hasImport = lines.first.trim().startsWith('import ');
   String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
-      '${snippet}.dart';
+      '$snippet.dart';
 
   int adjust = 1;
-  String source = '// Extracted from ${filename}, line ${startLine}.\n';
+  String source = '// Extracted from $filename, line $startLine.\n';
 
   if (!hasImport) {
     source += "import 'package:flutter/material.dart';\n";
@@ -80,7 +80,7 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
   }
 
   if (includeSource != null) {
-    source += "${includeSource}\n";
+    source += "$includeSource\n";
     adjust += includeSource.split('\n').length;
   }
 
@@ -89,7 +89,7 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
     '${lines.join('\n')}\n';
 
   new File(path).writeAsStringSync(source);
-  print('  ${lines.length} line snippet ==> ${path}');
+  print('  ${lines.length} line snippet ==> $path');
 }
 
 void clean() {
