@@ -97,6 +97,7 @@ class MyAppBar extends StatelessWidget {
 
   final Widget title;
 
+  @override
   Widget build(BuildContext context) {
     return new Container(
       height: 56.0,
@@ -116,6 +117,7 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return new Material(
       child: new Column(
@@ -216,6 +218,7 @@ void main() {
 }
 
 class TutorialHome extends StatelessWidget {
+  @override
   Widget build(BuildContext context)  {
     return new Scaffold(
       appBar: new AppBar(
@@ -266,6 +269,7 @@ input gestures. Let's see how that works by creating a simple button:
 
 ```dart
 class MyButton extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return new GestureDetector(
       onTap: () {
@@ -332,6 +336,7 @@ mentioned earlier:
 
 ```dart
 class Counter extends StatefulWidget {
+  @override
   _CounterState createState() => new _CounterState();
 }
 
@@ -342,6 +347,7 @@ class _CounterState extends State<Counter> {
     setState(() { _count += 1; });
   }
 
+  @override
   Widget build(BuildContext context) {
     return new Row(
       children: <Widget>[
@@ -380,6 +386,7 @@ see how that works in practice, with this slightly more complex example:
 class CounterDisplay extends StatelessWidget {
   CounterDisplay({ this.count });
   final int count;
+  @override
   Widget build(BuildContext context) {
     return new Text('Count: $count');
   }
@@ -388,6 +395,7 @@ class CounterDisplay extends StatelessWidget {
 class CounterIncrementor extends StatelessWidget {
   CounterIncrementor({ this.onPressed });
   final VoidCallback onPressed;
+  @override
   Widget build(BuildContext context) {
     return new RaisedButton(
       onPressed: onPressed,
@@ -397,6 +405,7 @@ class CounterIncrementor extends StatelessWidget {
 }
 
 class Counter extends StatefulWidget {
+  @override
   _CounterState createState() => new _CounterState();
 }
 
@@ -407,6 +416,7 @@ class _CounterState extends State<Counter> {
     setState(() { ++_count; });
   }
 
+  @override
   Widget build(BuildContext context) {
     return new Row(
       children: <Widget>[
@@ -464,6 +474,7 @@ class ShoppingListItem extends StatelessWidget {
     return null;
   }
 
+  @override
   Widget build(BuildContext context) {
     return new ListItem(
       onTap: () => onCartChanged(product, !inCart),
@@ -511,6 +522,7 @@ class Product {
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({ Product product, bool inCart, Function onCartChanged });
+  @override
   Widget build(BuildContext context) => null;
 }
 -->
@@ -520,6 +532,7 @@ class ShoppingList extends StatefulWidget {
 
   final List<Product> products;
 
+  @override
   _ShoppingListState createState() => new _ShoppingListState();
 }
 
@@ -535,6 +548,7 @@ class _ShoppingListState extends State<ShoppingList> {
     });
   }
 
+  @override
   Widget build(BuildContext context)  {
     return new Scaffold(
       appBar: new AppBar(
