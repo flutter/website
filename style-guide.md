@@ -183,9 +183,9 @@ abstract class RenderBox extends RenderObject {
     // more complicated asserts:
     assert(() {
       final RenderObject parent = this.parent;
-      if (RenderObject.debugDoingLayout)
+      if (owner.debugDoingLayout)
         return (RenderObject.debugActiveLayout == parent) && parent.debugDoingThisLayout;
-      if (RenderObject.debugDoingPaint)
+      if (owner.debugDoingPaint)
         return ((RenderObject.debugActivePaint == parent) && parent.debugDoingThisPaint) ||
                ((RenderObject.debugActivePaint == this) && debugDoingThisPaint);
       assert(parent == this.parent);
