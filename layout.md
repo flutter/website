@@ -51,9 +51,8 @@ _unbounded_, or infinite. This means that either the maximum width or
 the maximum height is set to `double.INFINITY`.
 
 A box that tries to be as big as possible won't function usefully when
-given an unbounded constraint, and in checked mode, will assert with a
-message saying `!_size.isInfinite` and a string that points to this
-file.
+given an unbounded constraint, and in checked mode, such a combination
+will throw an exception that points to this file.
 
 The most common cases where a render box finds itself with unbounded
 constraints are within flex boxes (`Row` and `Column`), and **within
@@ -79,10 +78,10 @@ direction.
 
 In unbounded constraints, they try to fit their children in that
 direction. In this case, you cannot set `flex` on the children to
-anything other than 0 (the default). In the widget hierarchy, this
+anything other than 0 (the default). In the widget library, this
 means that you cannot use `Flexible` when the flex box is inside
 another flex box or inside a scrollable. If you do, you'll get an
-assert that `canFlex` is not true, pointing you at this section.
+exception message pointing you at this document.
 
 In the _cross_ direction, i.e. in their width for `Column` (vertical
 flex) and in their height for `Row` (horizontal flex), they must never
