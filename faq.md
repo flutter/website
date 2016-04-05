@@ -5,6 +5,8 @@ nav_title: FAQ
 permalink: /faq/
 ---
 
+{:toc}
+
 ## What does Flutter do?
 
 Flutter gives developers an easy and productive way to build and deploy
