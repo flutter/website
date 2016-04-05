@@ -31,7 +31,7 @@ to run your first app on Android and iOS.
 
 ## Documentation
 
- - [API documentation](http://docs.flutter.io/flutter/)
+ - [API documentation](http://docs.flutter.io/)
  - [Gestures in Flutter](gestures)
  - [Animations in Flutter](animations)
  - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)

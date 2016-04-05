@@ -83,7 +83,7 @@ Avoid checking in such documentation, because it is no better than no
 documentation but will prevent us from noticing that the identifier is
 not actually documented.
 
-Example (from [`CircleAvatar`](http://docs.flutter.io/flutter/material/CircleAvatar-class.html)):
+Example (from [`CircleAvatar`](http://docs.flutter.io/material/CircleAvatar-class.html)):
 
 <!-- skip -->
 ```dart
