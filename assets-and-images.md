@@ -53,12 +53,12 @@ different locales or regions, reading directions, etc.
 ## Working with assets
 
 Your application can access its assets through the
-[AssetBundle](http://docs.flutter.io/flutter/services/AssetBundle-class.html)
+[AssetBundle](http://docs.flutter.io/services/AssetBundle-class.html)
 interface. The two main methods on an asset bundle allow you to load a string
 (`loadString`) or an image (`loadImage`) out of the bundle, given a logical key.
 The logical key maps to the path to the asset specified in the `flutter.yaml`
 file at build time. The application's asset bundle is accessible through the
-[DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html)
+[DefaultAssetBundle](http://docs.flutter.io/widgets/DefaultAssetBundle/of.html)
 widget's `of` method.
 
 For example, the dark background from the example above could be loaded in a
@@ -72,17 +72,17 @@ widget's `build` method like so:
     }
 
 As a convenience, the
-[AssetImage](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+[AssetImage](http://docs.flutter.io/widgets/AssetImage-class.html)
 widget provides a simple way to display an image in the UI.  Images may also
 be specified as the background in a
-[DecoratedBox](http://docs.flutter.io/flutter/widgets/DecoratedBox-class.html).
+[DecoratedBox](http://docs.flutter.io/widgets/DecoratedBox-class.html).
 
 ## Resolution awareness
 
 Flutter can load resolution-appropriate images for the current device
 pixel ratio.
 
-[AssetImage](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+[AssetImage](http://docs.flutter.io/widgets/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
@@ -113,27 +113,27 @@ should be 216px by 216px; but they both will render into 72px by 72px
 (in logical pixels) if width and height are not specified.
 
 The way this works is through an object called
-[AssetVendor](http://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
+[AssetVendor](http://docs.flutter.io/widgets/AssetVendor-class.html)
 established at the top of the build tree. AssetVendor replaces the default asset
 bundle, so anything using the default asset bundle will inherit resolution
 awareness when loading images.  (If you work with some of the lower level
 classes, like
-[ImageResource](http://docs.flutter.io/flutter/services/ImageResource-class.html)
+[ImageResource](http://docs.flutter.io/services/ImageResource-class.html)
 or
-[ImageCache](http://docs.flutter.io/flutter/services/ImageCache-class.html),
+[ImageCache](http://docs.flutter.io/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
 Some caveats:
 
 * If you're not using
-  [MaterialApp](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
-  or 
-  [WidgetsApp](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+  [MaterialApp](http://docs.flutter.io/material/MaterialApp-class.html)
+  or
+  [WidgetsApp](http://docs.flutter.io/widgets/WidgetsApp-class.html)
   in your application, and you want to use resolution awareness, you'll need to
   establish your own AssetVendor in your build logic.
 * If you want establish a your own
-  [MediaQuery](http://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
-  [DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
+  [MediaQuery](http://docs.flutter.io/widgets/MediaQuery-class.html) or
+  [DefaultAssetBundle](http://docs.flutter.io/widgets/DefaultAssetBundle-class.html)
   below the root of the widget hierarchy, the root-level AssetVendor won't be
   aware of the change.  If you want resolution awareness with the new MediaQuery
   or DefaultAssetBundle you specify, you'll need to create an AssetVendor at
