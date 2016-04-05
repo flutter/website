@@ -12,7 +12,8 @@ state changes, the widget rebuilds its description, which the framework diffs
 against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
 
-* TOC Placeholder {:toc}
+* TOC Placeholder
+{:toc}
 
 Hello World
 -----------
