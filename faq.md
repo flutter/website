@@ -5,6 +5,7 @@ nav_title: FAQ
 permalink: /faq/
 ---
 
+* Placeholder for TOC
 {:toc}
 
 ## What does Flutter do?
