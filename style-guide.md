@@ -446,6 +446,62 @@ one line, and newlines if you need to break it over multiple lines.
 Note, we do not put space in the empty map literal `{}`, but we do type it, so
 it looks like `<Foo, Bar>{}`).
 
+### Use `=>` for inline callbacks that just return list or map literals
+
+If your code is passing an inline closure that merely returns a list or
+map literal, or is merely calling another function, then if the argument
+is on its own line, then rather than using braces and a `return` statement,
+you can instead use the `=>` form. When doing this, the closing `]`, `}`, or
+`)` bracket will line up with the argument name, for named arguments, or the
+`(` of the argument list, for positional arguments.
+
+For example:
+
+<!-- skip -->
+```dart
+    // GOOD, but slightly more verbose than necessary since it doesn't use =>
+    @override
+    Widget build(BuildContext context) {
+      return new PopupMenuButton<String>(
+        onSelected: (String value) { print("Selected: $value"); },
+        itemBuilder: (BuildContext context) {
+          return <PopupMenuItem<String>>[
+            new PopupMenuItem<String>(
+              value: "Friends",
+              child: new MenuItemWithIcon(Icons.people, "Friends", "5 new")
+            ),
+            new PopupMenuItem<String>(
+              value: "Events",
+              child: new MenuItemWithIcon(Icons.event, "Events", "12 upcoming")
+            ),
+          ];
+        }
+      );
+    }
+
+    // GOOD, does use =>, slightly briefer
+    @override
+    Widget build(BuildContext context) {
+      return new PopupMenuButton<String>(
+        onSelected: (String value) { print("Selected: $value"); },
+        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+          new PopupMenuItem<String>(
+            value: "Friends",
+            child: new MenuItemWithIcon(Icons.people, "Friends", "5 new")
+          ),
+          new PopupMenuItem<String>(
+            value: "Events",
+            child: new MenuItemWithIcon(Icons.event, "Events", "12 upcoming")
+          ),
+        ]
+      );
+    }
+```
+
+The important part is that the closing punctuation lines up with the start
+of the line that has the opening punctuation, so that you can easily determine
+what's going on by just scanning the indentation on the left edge.
+
 
 ### Separate the "if" expression from its statement
 
