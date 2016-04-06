@@ -457,6 +457,7 @@ you can instead use the `=>` form. When doing this, the closing `]`, `}`, or
 
 For example:
 
+<!-- skip -->
 ```dart
     // GOOD, but slightly more verbose than necessary since it doesn't use =>
     @override
