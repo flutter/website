@@ -67,7 +67,7 @@ int _processFile(File file) {
 
 void _extractSnippet(String filename, int snippet, int startLine, List<String> lines,
     {String includeSource}) {
-  bool hasImport = lines.first.trim().startsWith('import ');
+  bool hasImport = lines.any((String line) => line.startsWith('import '));
   String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
       '$snippet.dart';
 
