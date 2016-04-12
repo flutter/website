@@ -10,7 +10,8 @@ from a single codebase.
 
 _Flutter is an early-stage open-source project._
 We are still missing core features like accessibility, text input,
-localization, and more. However, you can build demos and examples
+localization, and more. However, you can build
+[demos and examples](https://github.com/flutter/flutter/tree/master/examples)
 today. We hope you try it out and send us
 [feedback](mailto:flutter-dev@googlegroups.com).
 
@@ -42,6 +43,8 @@ to run your first app on Android and iOS.
 
 ## See also
 
+ - [Bootstrap into Dart](/bootstrap-into-dart/) for developers new to
+   Flutter's language
  - [Source on GitHub](https://github.com/flutter/flutter)
  - [Issue tracker](https://github.com/flutter/flutter/issues)
  - [Writing Useful Bug Reports](bug-reports)
