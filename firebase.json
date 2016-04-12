@@ -5,5 +5,12 @@
     "firebase.json",
     "**/.*",
     "**/node_modules/**"
+  ],
+  "redirects": [
+  	{
+  	  "source" : "/widgets/",
+  	  "destination" : "/basic-widgets/",
+  	  "type" : 301
+  	}
   ]
 }
