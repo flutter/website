@@ -7,8 +7,9 @@ permalink: /bootstrap-into-dart/
 New to the [Dart](https://www.dartlang.org) language?
 We compiled our favorite resources to
 help you quickly learn Dart.
-We [looked at a lot of languages](/faq/#why-did-flutter-choose-to-use-dart),
-and we found Dart easy and fun to learn, and we hope these resources make it
+We looked at a lot of languages, and
+[we found Dart easy and fun to learn](/faq/#why-did-flutter-choose-to-use-dart).
+We hope these resources make Dart
 easy for you to learn, too.
 
 [Language tour](https://www.dartlang.org/docs/dart-up-and-running/ch02.html)
