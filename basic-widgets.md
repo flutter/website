@@ -1,23 +1,27 @@
 ---
 layout: page
-title: Widget Gallery
-permalink: /widgets/
+title: Basic Widgets Overview
+permalink: /basic-widgets/
 ---
 
-This page describes a small subset of widgets available in Flutter.
+This page describes a small subset of basic widgets available in Flutter.
 The widgets described on this page are
 general-purpose and don't offer an opinion about the visual style of your app.
+To see all the basic widgets and related classes, check out the
+[API docs for the widgets library](http://docs.flutter.io/flutter/widgets/widgets-library.html).
 
-You may also be interested in Flutter's Material Design widgets.
-We don't yet have docs for those widgets
-(follow [this issue](https://github.com/flutter/flutter.github.io/issues/36)),
+You may also be interested in Flutter's material design widgets.
+We don't yet have a gallery for those widgets,
 but you can see some of the Material Design widgets in action in our
-[examples](https://github.com/flutter/flutter/tree/master/examples).
+[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/material_gallery)
+demo app, and you can check out the
+[API docs for the material widgets library](http://docs.flutter.io/flutter/material/material-library.html).
 
 Container
 ---------
 
-`Container` is a general-purpose widget that combines several basic widgets in
+[`Container`](http://docs.flutter.io/flutter/widgets/Container-class.html)
+is a general-purpose widget that combines several basic widgets in
 order to make them easier to use.
 
  - `BoxDecoration decoration` Draw the given decoration around this container.
