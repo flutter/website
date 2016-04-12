@@ -5,26 +5,36 @@ permalink: /bootstrap-into-dart/
 ---
 
 New to the [Dart](https://www.dartlang.org) language?
-We've cherry-picked our favorite resources to
+We compiled our favorite resources to
 help you quickly learn Dart.
 We [looked at a lot of languages](/faq/#why-did-flutter-choose-to-use-dart),
 and we found Dart easy and fun to learn, and we hope these resources make it
 easy for you to learn, too.
 
 [Language tour](https://www.dartlang.org/docs/dart-up-and-running/ch02.html)
-: Your best introduction to the Dart language.
+: Your best introduction to the Dart language. Learn about Dart's
+  features such as _optional types_, _closures_, _libraries_, _lexical scoping_,
+  _top-level functions_, _named parameters_, _async / await_, and lots more.
 
 [Library tour](https://www.dartlang.org/docs/dart-up-and-running/ch03.html)
-: A good overview of Dart's powerful core libraries.
+: A good overview of Dart's powerful core libraries. Learn about
+  Dart's support for collections, async, math, numbers, strings, JSON, and more.
 
 [Effective Dart](https://www.dartlang.org/effective-dart/)
 : Guides for style, authoring documentation, usage, and more.
 
 [Futures Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
-: Learn how to use Futures, a core class for one-time async events.
+: Learn how to use Futures, which used extensively in the Dart core libraries.
+  Futures can be used instead of one-time callbacks. For example,
+  the [http library](http://docs.flutter.io/flutter/http/http-library.html)
+  uses Futures when responses are ready.
 
 [Streams Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
-: Learn how to use Streams, a core class for repeating async events.
+: Learn how to use Streams, which are used extensively in the Dart core
+  libraries. Streams can be used instead repeating callbacks.
+  For example, the
+  [File class](http://docs.flutter.io/flutter/dart-io/File-class.html)
+  uses Streams to read bytes from a file.
 
 Want to learn more? Check out one of the
 [many books about Dart](https://www.dartlang.org/books/),
