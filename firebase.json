@@ -11,6 +11,11 @@
   	  "source" : "/widgets/",
   	  "destination" : "/basic-widgets/",
   	  "type" : 301
-  	}
+  	},
+    {
+      "source" : "/tutorial/",
+      "destination" : "/introducing-flutters-widget-framework/",
+      "type" : 301
+    }
   ]
 }

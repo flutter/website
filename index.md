@@ -25,7 +25,7 @@ to run your first app on Android and iOS.
 
 ## Next steps
 
- - [Tutorial](tutorial)
+ - [Introducing Flutter's Widget Framework](introducing-flutters-widget-framework)
  - [Basic Widgets Overview](basic-widgets)
  - [Debugging Flutter applications](debugging)
  - [Building an APK](building-apk)

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Flutter Tutorial
-permalink: /tutorial/
+title: Introducing Flutter's Widget Framework
+permalink: /introducing-flutters-widget-framework/
 ---
 
 Flutter widgets are built using a functional-reactive framework, which takes
@@ -50,7 +50,7 @@ function, which describes the widget in terms of other, lower-level widgets.
 The framework will build those widgets in turn until the process bottoms out
 in widgets that represent the underlying render object.
 
-Basic Widgets
+Basic widgets
 -------------
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
@@ -69,7 +69,8 @@ very commonly used:
    directions. Its design is based on the web's flexbox layout model.
 
  * [`Stack`](http://docs.flutter.io/flutter/material/Stack-class.html):
-   Instead of being linearly oriented (either horizontally or vertically), a [`Stack`](http://docs.flutter.io/flutter/material/Stack-class.html)
+   Instead of being linearly oriented (either horizontally or vertically), a
+   [`Stack`](http://docs.flutter.io/flutter/material/Stack-class.html)
    widget lets you stack widgets on top of each other in paint order. You can
    then use the
    [`Positioned`](http://docs.flutter.io/flutter/material/Positioned-class.html)
@@ -190,8 +191,8 @@ variety of ways. Finally, `MyScaffold` uses a
 [`Flexible`](http://docs.flutter.io/flutter/material/Flexible-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
-Material Apps
--------------
+Using material design
+---------------------
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material Design app start with the
@@ -263,8 +264,8 @@ of the
 widget. This pattern recurs throughout the framework and is something you might
 consider when designing your own widgets.
 
-User input
-----------
+Handling gestures
+-----------------
 
 In addition to being stunningly beautiful, most applications react to user
 input. The first step in building an interactive application is to detect
@@ -319,7 +320,7 @@ widgets have
 [`onPressed`](http://docs.flutter.io/flutter/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
-Managing State
+Managing state
 --------------
 
 Thus far, we've used only stateless widgets. Stateless widgets receive
@@ -440,7 +441,7 @@ Although the net result is the same as the previous example, the separation of
 responsibility allows greater complexity to be encapsulated in the individual
 widgets, while maintaining simplicity in the parent.
 
-Bringing it All Together
+Bringing it all together
 ------------------------
 
 Let's consider a more complete example that brings together the concepts
@@ -636,8 +637,8 @@ By managing state in this way, you don't need to write separate code for
 creating and updating child widgets. Instead, you simply implement the build
 function, which handles both situations.
 
-initState and dispose
----------------------
+Responding to widget lifecycle events
+-------------------------------------
 
 After calling
 [`createState`](http://docs.flutter.io/flutter/material/StatefulWidget-class.html#createState)
