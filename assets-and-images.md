@@ -13,7 +13,7 @@ images displayed in the UI.
 
 Flutter uses the `flutter.yaml` file to identify assets required by an
 application, as shown in the
-[Introduction to Flutter's Widget Framework](/introducing-flutters-widget-framework/).
+[Introduction to Flutter's Widget Framework](/widgets-intro/).
 A typical `flutter.yaml` file might include something like the following:
 
     assets:

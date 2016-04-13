@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Introducing Flutter's Widget Framework
-permalink: /introducing-flutters-widget-framework/
+title: Introduction to Flutter's Widget Framework
+permalink: /widget-intro/
 ---
 
 Flutter widgets are built using a functional-reactive framework, which takes

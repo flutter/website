@@ -14,7 +14,7 @@
   	},
     {
       "source" : "/tutorial/",
-      "destination" : "/introducing-flutters-widget-framework/",
+      "destination" : "/widget-intro/",
       "type" : 301
     }
   ]

@@ -99,7 +99,7 @@ Please reach out to us at our [mailing list][mailinglist]. We'd love
 to hear from you!
 
 You might also want to check out our
-[Introduction to Flutter's Widget Framework](/introducing-flutters-widget-framework/)
+[Introduction to Flutter's Widget Framework](/widgets-intro/)
 and our [Debugging guide](/debugging).
 
 Happy Fluttering!
