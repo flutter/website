@@ -14,7 +14,7 @@
   	},
     {
       "source" : "/tutorial/",
-      "destination" : "/widget-intro/",
+      "destination" : "/widgets-intro/",
       "type" : 301
     }
   ]
