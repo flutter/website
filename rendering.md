@@ -7,7 +7,8 @@ permalink: /rendering/
 The Flutter render tree is a low-level layout and painting system based on a
 retained tree of objects that inherit from `RenderObject`. Most
 developers using Flutter will not need to interact directly with the rendering tree.
-Instead, most developers should use [widgets](/tutorial/), which are built using
+Instead, most developers should use
+[widgets](/widgets-intro/), which are built using
 the render tree.
 
 Overview

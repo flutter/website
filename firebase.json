@@ -11,6 +11,11 @@
   	  "source" : "/widgets/",
   	  "destination" : "/basic-widgets/",
   	  "type" : 301
-  	}
+  	},
+    {
+      "source" : "/tutorial/",
+      "destination" : "/widgets-intro/",
+      "type" : 301
+    }
   ]
 }
