@@ -40,6 +40,7 @@ to run your first app on Android and iOS.
  - [Assets and images](assets-and-images)
  - [Testing Flutter applications](testing)
  - [Style guide](style-guide)
+ - [Services](services)
 
 ## See also
 
