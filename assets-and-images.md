@@ -4,10 +4,12 @@ title: Assets and Images
 permalink: /assets-and-images/
 ---
 
-Flutter applications include both code and assets (sometimes called resources).
-Assets can include static data, configuration files, or anything else an
-application needs to function; in particular, assets include icons and other
-images displayed in the UI.
+Flutter applications can include both code and _assets_
+(sometimes called resources). An asset is a file that is bundled
+and deployed with your application, and is accessible at runtime.
+Common types of assets include static data
+(for example, JSON files), configuration files, icons,
+and images.
 
 ## Specifying assets
 
@@ -21,9 +23,11 @@ A typical `flutter.yaml` file might include something like the following:
       - assets/background.png
 
 The `assets` section specifies files that should be included with the
-application. Flutter places them in a special archive called the _asset bundle_,
-which applications can read from at runtime. It lists explicit paths (relative
-to the `flutter.yaml` file) where the asset files are located.
+application. Each asset is identified by an explicit path (relative
+to the `flutter.yaml` file) where the asset file is located.
+
+During a build, Flutter places assets into a special archive called
+the _asset bundle_, which applications can read from at runtime.
 
 ### Asset variants
 
@@ -53,17 +57,30 @@ different locales or regions, reading directions, etc.
 
 ## Working with assets
 
-Your application can access its assets through the
-[AssetBundle](http://docs.flutter.io/flutter/services/AssetBundle-class.html)
-interface. The two main methods on an asset bundle allow you to load a string
+Your application can access its assets through as
+[AssetBundle](http://docs.flutter.io/flutter/services/AssetBundle-class.html).
+The two main methods on an asset bundle allow you to load a string
 (`loadString`) or an image (`loadImage`) out of the bundle, given a logical key.
 The logical key maps to the path to the asset specified in the `flutter.yaml`
-file at build time. The application's asset bundle is accessible through the
-[DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html)
-widget's `of` method.
+file at build time.
 
-For example, the dark background from the example above could be loaded in a
-widget's `build` method like so:
+Each Flutter application has a
+[rootBundle](http://docs.flutter.io/flutter/services/rootBundle.html)
+for easy access to the main asset bundle. You can use the `rootBundle`
+from `package:flutter/services.dart`
+to easily access configuration file assets or assets that don't need to be
+aware of a `BuildContext`.
+
+For example, use the `rootBundle` to easily
+load a JSON file asset.
+
+    String assetContents = await rootBundle.loadString('assets/config.json');
+
+You can also access a context-aware `AssetBundle` with
+[DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html).
+
+For example, the dark background from the asset declarations above
+can be loaded in a widget's `build` method like so:
 
     Widget build(BuildContext context) {
       ...
