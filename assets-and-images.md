@@ -4,9 +4,9 @@ title: Assets and Images
 permalink: /assets-and-images/
 ---
 
-Flutter applications can include both code and _assets_
+Flutter apps can include both code and _assets_
 (sometimes called resources). An asset is a file that is bundled
-and deployed with your application, and is accessible at runtime.
+and deployed with your app, and is accessible at runtime.
 Common types of assets include static data
 (for example, JSON files), configuration files, icons,
 and images.
@@ -14,7 +14,7 @@ and images.
 ## Specifying assets
 
 Flutter uses the `flutter.yaml` file to identify assets required by an
-application, as shown in the
+app, as shown in the
 [Introduction to Flutter's Widget Framework](/widgets-intro/).
 A typical `flutter.yaml` file might include something like the following:
 
@@ -23,11 +23,11 @@ A typical `flutter.yaml` file might include something like the following:
       - assets/background.png
 
 The `assets` section specifies files that should be included with the
-application. Each asset is identified by an explicit path (relative
+app. Each asset is identified by an explicit path (relative
 to the `flutter.yaml` file) where the asset file is located.
 
 During a build, Flutter places assets into a special archive called
-the _asset bundle_, which applications can read from at runtime.
+the _asset bundle_, which apps can read from at runtime.
 
 ### Asset variants
 
@@ -55,52 +55,40 @@ Flutter uses asset variants when choosing resolution appropriate images; see
 below. In the future, this mechanism may be extended to include variants for
 different locales or regions, reading directions, etc.
 
-## Working with assets
+## Loading assets
 
-Your application can access its assets through an
-[AssetBundle](http://docs.flutter.io/flutter/services/AssetBundle-class.html).
-The two main methods on an asset bundle allow you to load a string
-(`loadString`) or an image (`loadImage`) out of the bundle, given a logical key.
+Your app can access its assets through an
+[`AssetBundle`](http://docs.flutter.io/flutter/services/AssetBundle-class.html)
+object.
+
+The two main methods on an asset bundle allow you to load a string/text asset
+(`loadString`) or an image asset (`loadImage`) out of the bundle,
+given a logical key.
 The logical key maps to the path to the asset specified in the `flutter.yaml`
 file at build time.
 
-Each Flutter application has a
-[rootBundle](http://docs.flutter.io/flutter/services/rootBundle.html)
+### Loading text assets
+
+Each Flutter app has a
+[`rootBundle`](http://docs.flutter.io/flutter/services/rootBundle.html)
+object
 for easy access to the main asset bundle. You can use the `rootBundle`
 from `package:flutter/services.dart`
-to easily access configuration file assets or assets that don't need to be
-aware of a `BuildContext`.
+to easily load assets.
 
 For example, use the `rootBundle` to easily
 load a JSON file asset.
 
     String assetContents = await rootBundle.loadString('assets/config.json');
 
-You can also access a context-aware `AssetBundle` with
-[DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html).
-
-For example, the dark background from the asset declarations above
-can be loaded in a widget's `build` method like so:
-
-    Widget build(BuildContext context) {
-      ...
-      String name = 'assets/dark/background.png';
-      ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
-      ...
-    }
-
-As a convenience, the
-[AssetImage](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
-widget provides a simple way to display an image in the UI.  Images may also
-be specified as the background in a
-[DecoratedBox](http://docs.flutter.io/flutter/widgets/DecoratedBox-class.html).
-
-## Resolution awareness
+### Loading image images
 
 Flutter can load resolution-appropriate images for the current device
 pixel ratio.
 
-[AssetImage](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+#### Declaring resolution-aware image assets
+
+[`AssetImage`](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
@@ -130,28 +118,52 @@ That is, if `.../my_icon.png` is 72px by 72px, then `.../3.0x/my_icon.png`
 should be 216px by 216px; but they both will render into 72px by 72px
 (in logical pixels) if width and height are not specified.
 
+#### Loading images
+
+To load an image, use the
+[`DefaultAssetBundle`](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html)
+class from inside of a widget's `build` method.
+
+For example, the dark background from the asset declarations above
+can be loaded from inside a widget's `build` method like so:
+
+    Widget build(BuildContext context) {
+      ...
+      String name = 'assets/dark/background.png';
+      ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
+      ...
+    }
+
+#### Learning more about image assets
+
+As a convenience, the
+[`AssetImage`](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+widget provides a simple way to display an image in the UI.  Images may also
+be specified as the background in a
+[`DecoratedBox`](http://docs.flutter.io/flutter/widgets/DecoratedBox-class.html).
+
 The way this works is through an object called
-[AssetVendor](http://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
+[`AssetVendor`](http://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
 established at the top of the build tree. AssetVendor replaces the default asset
 bundle, so anything using the default asset bundle will inherit resolution
 awareness when loading images.  (If you work with some of the lower level
 classes, like
-[ImageResource](http://docs.flutter.io/flutter/services/ImageResource-class.html)
+[`ImageResource`](http://docs.flutter.io/flutter/services/ImageResource-class.html)
 or
-[ImageCache](http://docs.flutter.io/flutter/services/ImageCache-class.html),
+[`ImageCache`](http://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
-Some caveats:
+#### Caveats
 
 * If you're not using
-  [MaterialApp](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
+  [`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
   or 
-  [WidgetsApp](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
-  in your application, and you want to use resolution awareness, you'll need to
+  [`WidgetsApp`](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+  in your app, and you want to use resolution awareness, you'll need to
   establish your own AssetVendor in your build logic.
 * If you want establish a your own
-  [MediaQuery](http://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
-  [DefaultAssetBundle](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
+  [`MediaQuery`](http://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
+  [`DefaultAssetBundle`](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
   below the root of the widget hierarchy, the root-level AssetVendor won't be
   aware of the change.  If you want resolution awareness with the new MediaQuery
   or DefaultAssetBundle you specify, you'll need to create an AssetVendor at
