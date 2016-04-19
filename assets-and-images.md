@@ -124,8 +124,8 @@ To load an image, use the
 [`DefaultAssetBundle`](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html)
 class from inside of a widget's `build` method.
 
-For example, the dark background from the asset declarations above
-can be loaded from inside a widget's `build` method like so:
+For example, your app can load the dark background image from the asset
+declarations above:
 
     Widget build(BuildContext context) {
       ...
