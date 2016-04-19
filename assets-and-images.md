@@ -57,7 +57,7 @@ different locales or regions, reading directions, etc.
 
 ## Working with assets
 
-Your application can access its assets through as
+Your application can access its assets through an
 [AssetBundle](http://docs.flutter.io/flutter/services/AssetBundle-class.html).
 The two main methods on an asset bundle allow you to load a string
 (`loadString`) or an image (`loadImage`) out of the bundle, given a logical key.
