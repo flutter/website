@@ -143,9 +143,7 @@ class MyScaffold extends StatelessWidget {
 void main() {
   runApp(new MaterialApp(
     title: 'My app',
-    routes: <String, WidgetBuilder>{
-      '/': (BuildContext context) => new MyScaffold()
-    }
+    home: new MyScaffold()
   ));
 }
 ```
@@ -163,8 +161,7 @@ Many widgets need to be inside of a
 [`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
 to display properly, in order to inherit theme data. Therefore, we run the
 application with a
-[`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
-and a single route (more on routes later) to our scaffold.
+[`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html).
 
 The `MyAppBar` widget creates a
 [`Container`](http://docs.flutter.io/flutter/material/Container-class.html)
@@ -214,9 +211,7 @@ void main() {
   runApp(
     new MaterialApp(
       title: 'Flutter Tutorial',
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => new TutorialHome()
-      }
+      home: new TutorialHome()
     )
   );
 }
@@ -581,9 +576,7 @@ final List<Product> _kProducts = <Product>[
 void main() {
   runApp(new MaterialApp(
     title: 'Shopping List',
-    routes: <String, WidgetBuilder>{
-      '/': (BuildContext context) => new ShoppingList(products: _kProducts)
-    }
+    home: new ShoppingList(products: _kProducts)
   ));
 }
 ```
