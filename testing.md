@@ -142,7 +142,7 @@ void main() {
       expect(value, equals(0.0));
 
       // Taps on the widget found by key
-      tester.tap(tester.findElementByKey(sliderKey));
+      tester.tap(find.byKey(sliderKey));
 
       // Verifies that the widget updated the value correctly
       expect(value, equals(0.5));
@@ -254,8 +254,7 @@ void main() {
       // Record the performance timeline of things that happen inside the closure
       Timeline timeline = await driver.traceAction(() async {
         // Find the scrollable user list
-        ObjectRef userList = await driver.findByValueKey('user-list');
-        expect(userList, isNotNull);
+        SerializableFinder userList = find.byValueKey('user-list');
 
         // Scroll down 5 times
         for (int i = 0; i < 5; i++) {
