@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flutter FAQ
-nav_title: FAQ
+sidebar: home_sidebar
 permalink: /faq/
 ---
 

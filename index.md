@@ -1,52 +1,50 @@
 ---
+title: Welcome to Flutter!
+sidebar: home_sidebar
 layout: page
-title: Flutter
 ---
 
-Flutter is a new project to help developers
-build high-performance, high-fidelity,
-mobile apps for iOS and Android
-from a single codebase.
+Flutter is a new project to help developers build high-performance, high-fidelity, mobile apps for
+iOS and Android from a single codebase.
 
-_Flutter is an early-stage open-source project._
-We are still adding core features like accessibility, text input,
-localization, and more. However, you can build
-[demos and examples](https://github.com/flutter/flutter/tree/master/examples)
-today. We hope you try it out and send us
-[feedback](mailto:flutter-dev@googlegroups.com).
+{% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](mailto:flutter-dev@googlegroups.com)." %}
 
-## Getting started
+## New to Flutter
 
-First, [set up your machine](/setup/)
-with Flutter and iOS/Android tools.
-Then, check out our
-[Getting Started guide](getting-started)
-to run your first app on Android and iOS.
+See these topics to quickly start building cross-platform mobile apps with Flutter.
 
-## Next steps
+ - [Get started](getting-started) to run your first app on Android and iOS.
+ - [Set up your machine](/setup/) with Flutter and iOS/Android tools.
+ - [A tour of the Flutter framework](widgets-intro)
+ - [Bootstrap into Dart](/bootstrap-into-dart/) if you are new to the language
+ for developing Flutter apps.
 
- - [Introduction to Flutter's Widget Framework](widgets-intro)
- - [Basic Widgets Overview](basic-widgets)
- - [Debugging Flutter applications](debugging)
- - [Building an APK](building-apk)
+## Developer Guides
 
-## Documentation
+See these topics to understand how the Flutter framework works.
 
- - [API documentation](http://docs.flutter.io/flutter/)
+ - [Widgets in Flutter](basic-widgets)
  - [Gestures in Flutter](gestures)
+ - [Layouts in Flutter](layout)
  - [Animations in Flutter](animations)
- - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
+
+## How-Tos
+
+Learn how to accomplish specific development tasks with Flutter.
+
+ - [Adding assets and images](assets-and-images)
+ - [Testing Flutter apps](testing)
+ - [Debugging Flutter apps](debugging)
  - [Upgrading Flutter](upgrading)
- - [Assets and images](assets-and-images)
- - [Testing Flutter applications](testing)
- - [Style guide](style-guide)
 
-## See also
+## Helpful Resources
 
- - [Bootstrap into Dart](/bootstrap-into-dart/) for developers
-   new to the language for developing Flutter apps.
+More resources for Flutter developers.
+
  - [Source on GitHub](https://github.com/flutter/flutter)
+ - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
  - [Issue tracker](https://github.com/flutter/flutter/issues)
- - [Writing Useful Bug Reports](bug-reports)
+ - [Writing useful bug reports](bug-reports)
  - [FAQ](faq)
  - [Design principles](design-principles)
+ - [Style guide](style-guide)

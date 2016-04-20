@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
+  <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
   <body>
     {% include header.html %}
+
+    <!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          {% include sidebar.html %}
+    <!-- Content Column -->
+    <div class="col-md-9">
+        {{content}}
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+<!--
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
+-->
     {% include footer.html %}
   </body>
 </html>

@@ -1,18 +1,16 @@
 ---
 layout: page
 title: Getting Started with Flutter
-nav_title: Getting Started
+sidebar: home_sidebar
 permalink: /getting-started/
 ---
+
 <link rel="stylesheet" href="/css/styles.css" />
 
 This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
 
-* [Before you begin](#before-you-begin)
-* [1. Create your first Flutter app](#create-your-first-flutter-app)
-* [2. Run your Flutter app](#run-your-flutter-app)
-* [3. View the logs](#view-the-logs)
-* [Next steps](#next-steps)
+* Placeholder for TOC
+{:toc}
 
 ## Before you begin
 
@@ -20,7 +18,7 @@ To write Flutter apps, you will need to install the Flutter SDK. You also need t
 Mac development machine to run and test your apps on Android or iOS. See
 [Flutter Setup](../setup) for instructions on how to set up your development environment.
 
-## 1. Create your first Flutter app
+## Create your first Flutter app
 
 To create a starter project, open a terminal and run the `flutter` command .
 
@@ -35,7 +33,7 @@ app that uses [Material Design](https://www.google.com/design/spec/material-desi
 
 In the project directory, the code for your app is in `myapp/lib/main.dart`.
 
-## 2. Run your Flutter app
+## Run your Flutter app
 
 Use the `flutter run` command to run your Flutter app on all connected
 devices and simulators. (The `flutter devices` command will list connected devices and
@@ -78,7 +76,7 @@ If everything works, you should see your starter app on your Android device or i
 </div>
 
 
-## 3. View the logs
+## View the logs
 
 The `flutter logs` command lets you see textual output from your app, including `print`
 statements and unhandled exceptions.

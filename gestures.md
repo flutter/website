@@ -1,8 +1,14 @@
 ---
 layout: page
-title: Gestures
+title: Gestures in Flutter
+sidebar: home_sidebar
 permalink: /gestures/
 ---
+
+* TOC Placeholder
+{:toc}
+
+# Introduction
 
 The gesture system in Flutter has two separate layers.  The first layer has raw
 pointer events, which describe the location and movement of pointers (e.g.,
