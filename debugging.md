@@ -119,9 +119,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     new MaterialApp(
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => new AppHome()
-      }
+      home: new AppHome()
     )
   );
 }
@@ -310,7 +308,7 @@ I/flutter :      │           parentData: offset=Offset(0.0, 0.0)
 I/flutter :      │           constraints: BoxConstraints(w=411.4, h=683.4)
 I/flutter :      │           size: Size(411.4, 683.4)
 I/flutter :      │           additionalConstraints: BoxConstraints(biggest)
-I/flutter :      │        
+I/flutter :      │
 I/flutter :      └─child 2: RenderSemanticAnnotations
 I/flutter :        │ creator: Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← ⋯
 I/flutter :        │ parentData: not positioned; offset=Offset(0.0, 0.0)
@@ -516,7 +514,7 @@ I/flutter :  │ │ creator: RepaintBoundary ← _FocusScope ← Semantics ← 
 I/flutter :  │ │ offset: Offset(0.0, 0.0)
 I/flutter :  │ │
 I/flutter :  │ └─child 1: PictureLayer
-I/flutter :  │  
+I/flutter :  │
 I/flutter :  └─child 2: PictureLayer
 ```
 
