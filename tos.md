@@ -1,10 +1,9 @@
 ---
 layout: page
 title: Terms of Service
+sidebar: home_sidebar
 permalink: /tos/
 ---
-
-# Terms of Service
 
 The Flutter website (the "Website") is hosted by Google. By using and / or
 visiting the Website, you consent to be bound by Google's general

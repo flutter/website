@@ -1,0 +1,45 @@
+{% include custom/sidebarconfigs.html %}
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
+    {% for entry in sidebar %}
+    {% for folder in entry.folders %}
+    {% if folder.output contains "web" %}
+      {% if folder.url %}
+      <li>
+        <a href="{{folder.url}}">{{ folder.title }}</a>
+
+        {% if folder.folderitems %}
+        <ul>
+            {% for folderitem in folder.folderitems %}
+            {% if folderitem.output contains "web" %}
+            {% if folderitem.external_url %}
+            <li><a href="{{folderitem.external_url}}" target="_blank">{{folderitem.title}}</a></li>
+            {% elsif page.url == folderitem.url %}
+            <li class="active"><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a></li>
+            {% else %}
+            <li><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a></li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+       {% endif %}
+
+      </li>
+      {% elsif folder.external_url %}
+      <li>
+        <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="#">{{ folder.title }}</a>
+      </li>
+      {% endif %}
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>

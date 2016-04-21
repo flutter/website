@@ -1,0 +1,116 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product:
+  folders:
+
+  - title: Home
+    url: /
+    output: web
+
+  - title: API Reference
+    external_url: http://docs.flutter.io/flutter/
+    output: web
+
+  - title: New to Flutter
+    url: /getting-started/
+    output: web
+    folderitems:
+
+    - title: Get started
+      url: /getting-started/
+      output: web
+
+    - title: Set up
+      url: /setup/
+      output: web
+
+    - title: Framework tour
+      url: /widgets-intro/
+      output: web
+
+    - title: Dart bootstrap
+      url: /bootstrap-into-dart/
+      output: web
+
+  - title: Developer Guides
+    url: /basic-widgets/
+    output: web
+    folderitems:
+
+    - title: Widgets
+      url: /basic-widgets/
+      output: web
+
+    - title: Gestures
+      url: /gestures/
+      output: web
+
+    - title: Layouts
+      url: /layout/
+      output: web
+
+    - title: Animations
+      url: /animations/
+      output: web
+
+  - title: How-Tos
+    url: /assets-and-images/
+    output: web
+    folderitems:
+
+    - title: Add assets and images
+      url: /assets-and-images/
+      output: web
+
+    - title: Test apps
+      url: /testing/
+      output: web
+
+    - title: Debug apps
+      url: /debugging/
+      output: web
+
+    - title: Upgrade Flutter
+      url: /upgrading/
+      output: web
+
+
+  - title: Helpful Resources
+    url: https://github.com/flutter/flutter
+    output: web
+    folderitems:
+
+    - title: GitHub source
+      external_url: https://github.com/flutter/flutter
+      output: web
+
+    - title: Architecture diagram
+      external_url: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing
+      output: web
+
+    - title: Issue tracker
+      external_url: https://github.com/flutter/flutter/issues
+      output: web
+
+    - title: Write useful bug reports
+      url: /bug-reports/
+      output: web
+
+    - title: FAQ
+      url: /faq/
+      output: web
+
+    - title: Design principles
+      url: /design-principles/
+      output: web
+
+    - title: Style guide
+      url: /style-guide/
+      output: web
+
+  - title: Terms of Service
+    url: /tos/
+    output: web
+

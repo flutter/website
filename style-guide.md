@@ -1,11 +1,14 @@
 ---
 layout: page
-title: Style guide
+title: Flutter Style Guide
+sidebar: home_sidebar
 permalink: /style-guide/
 ---
 
-Flutter Style Guide
-===================
+* TOC Placeholder
+{:toc}
+
+## Introduction
 
 The primary goal of this style guide is to improve code readability so
 that everyone, whether reading the code for the first time or

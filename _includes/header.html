@@ -11,12 +11,9 @@
         </svg>
       </a>
       <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.nav_title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.nav_title }}</a>
-          {% endif %}
-        {% endfor %}
-        <a class="page-link" href="http://docs.flutter.io/flutter/">API</a>
+        <a class="page-link" href="/getting-started/">Get Started</a>
+        <a class="page-link" href="/faq/">FAQ</a>
+        <a class="page-link" href="http://docs.flutter.io/flutter/">Reference</a>
         <form action="/search/" class="nav-searchbox" id="cse-search-box" style="display: inline">
           <input type="hidden" name="cx" value="007067728241810524621:gm6vraqlc8c">
           <input type="hidden" name="ie" value="UTF-8">

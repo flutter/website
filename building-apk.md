@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Building an APK for Android
+sidebar: home_sidebar
 permalink: /building-apk/
 ---
 

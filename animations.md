@@ -1,8 +1,12 @@
 ---
 layout: page
-title: Animations
+title: Animations in Flutter
+sidebar: home_sidebar
 permalink: /animations/
 ---
+
+* TOC Placeholder
+{:toc}
 
 # Introduction
 

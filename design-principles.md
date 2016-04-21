@@ -1,11 +1,14 @@
 ---
 layout: page
-title: Design principles
+title: Design Principles
+sidebar: home_sidebar
 permalink: /design-principles/
 ---
 
-Design principles
-=================
+* TOC Placeholder
+{:toc}
+
+## Introduction
 
 Flutter is written based on some core principles that were mostly
 intuited from past experiences with other platforms such as the Web
