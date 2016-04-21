@@ -1,8 +1,14 @@
 ---
 layout: page
-title: Basic Widgets Overview
+title: Widgets in Flutter
+sidebar: home_sidebar
 permalink: /basic-widgets/
 ---
+
+* TOC Placeholder
+{:toc}
+
+## Introduction
 
 This page describes a small subset of basic widgets available in Flutter.
 The widgets described on this page are

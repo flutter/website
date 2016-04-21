@@ -1,8 +1,14 @@
 ---
 layout: page
-title: Assets and Images
+title: Adding Assets and Images in Flutter
+sidebar: home_sidebar
 permalink: /assets-and-images/
 ---
+
+* TOC Placeholder
+{:toc}
+
+## Introduction
 
 Flutter applications include both code and assets (sometimes called resources).
 Assets can include static data, configuration files, or anything else an
@@ -128,7 +134,7 @@ Some caveats:
 
 * If you're not using
   [MaterialApp](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
-  or 
+  or
   [WidgetsApp](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
   in your application, and you want to use resolution awareness, you'll need to
   establish your own AssetVendor in your build logic.
