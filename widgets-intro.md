@@ -1,8 +1,14 @@
 ---
 layout: page
-title: Introduction to Flutter's Widget Framework
+title: A Tour of the Flutter Widget Framework
+sidebar: home_sidebar
 permalink: /widgets-intro/
 ---
+
+* TOC Placeholder
+{:toc}
+
+## Introduction
 
 Flutter widgets are built using a functional-reactive framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
@@ -11,9 +17,6 @@ should look like given their current configuration and state. When a widget's
 state changes, the widget rebuilds its description, which the framework diffs
 against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
-
-* TOC Placeholder
-{:toc}
 
 Hello World
 -----------

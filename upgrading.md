@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Upgrading Flutter
+sidebar: home_sidebar
 permalink: /upgrading/
 ---
 

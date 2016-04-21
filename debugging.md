@@ -1,11 +1,15 @@
 ---
 layout: page
-title: Debugging Flutter Applications
+title: Debugging Flutter Apps
+sidebar: home_sidebar
 permalink: /debugging/
 ---
 
 There are a wide variety of tools and features to help debug Flutter
 applications.
+
+* TOC Placeholder
+{:toc}
 
 ## The Dart Analyzer
 
