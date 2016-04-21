@@ -14,7 +14,6 @@ entries:
     output: web
 
   - title: New to Flutter
-    url: /getting-started/
     output: web
     folderitems:
 
@@ -35,11 +34,10 @@ entries:
       output: web
 
   - title: Developer Guides
-    url: /basic-widgets/
     output: web
     folderitems:
 
-    - title: Widgets
+    - title: Basic widgets
       url: /basic-widgets/
       output: web
 
@@ -56,7 +54,6 @@ entries:
       output: web
 
   - title: How-Tos
-    url: /assets-and-images/
     output: web
     folderitems:
 
@@ -78,7 +75,6 @@ entries:
 
 
   - title: Helpful Resources
-    url: https://github.com/flutter/flutter
     output: web
     folderitems:
 
@@ -109,8 +105,4 @@ entries:
     - title: Style guide
       url: /style-guide/
       output: web
-
-  - title: Terms of Service
-    url: /tos/
-    output: web
 

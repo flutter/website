@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Widgets in Flutter
+title: Basic Widgets Overview
 sidebar: home_sidebar
 permalink: /basic-widgets/
 ---
