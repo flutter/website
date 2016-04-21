@@ -925,8 +925,10 @@ span.soft {
 a[href^="http://"]:after, a[href^="https://"]:after {
     content: "\f08e";
     font-family: FontAwesome;
+    vertical-align: super;
     font-weight: normal;
     font-style: normal;
+    font-size: 45%;
     display: inline-block;
     text-decoration: none;
     padding-left: 3px;
