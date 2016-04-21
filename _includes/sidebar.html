@@ -5,7 +5,11 @@
     {% for entry in sidebar %}
     {% for folder in entry.folders %}
     {% if folder.output contains "web" %}
-      {% if folder.url %}
+      {% if folder.external_url %}
+      <li>
+        <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
+      </li>
+      {% else %}
       <li>
         <a href="{{folder.url}}">{{ folder.title }}</a>
 
@@ -23,16 +27,7 @@
             {% endif %}
             {% endfor %}
         </ul>
-       {% endif %}
-
-      </li>
-      {% elsif folder.external_url %}
-      <li>
-        <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
-      </li>
-      {% else %}
-      <li>
-        <a href="#">{{ folder.title }}</a>
+        {% endif %}
       </li>
       {% endif %}
 
