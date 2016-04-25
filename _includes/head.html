@@ -2,34 +2,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.homepage == true %} {{site.homepage_title}} {% elsif page.title %}{{ page.title }}{% endif %}  - {{ site.title }}</title>
 
-<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
-<meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
-<title>{% if page.homepage == true %} {{site.homepage_title}} {% elsif page.title %}{{ page.title }}{% endif %}  | {{ site.site_title }}</title>
-<link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+  <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+  <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 
+  <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ "/css/modern-business.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/customstyles.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/theme-blue.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/lavish-bootstrap.css" | prepend: site.baseurl }}">
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{{ "/css/modern-business.css" | prepend: site.baseurl }}">
+  <link rel="shortcut icon" href="{{ "/images/favicon.ico" | prepend: site.baseurl  }}">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-<link rel="stylesheet" href="{{ "/css/customstyles.css" | prepend: site.baseurl }}">
-
-<link rel="stylesheet" href="{{ "/css/theme-blue.css" | prepend: site.baseurl }}">
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-<script src="{{ "/js/toc.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/customscripts.js" | prepend: site.baseurl }}"></script>
-
-<link rel="shortcut icon" href="{{ "/images/favicon.ico" | prepend: site.baseurl  }}">
-
-
-
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto:500,400italic,300,400" rel="stylesheet" type="text/css">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
+  
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -45,10 +33,6 @@
     ga('send', 'pageview');
 
   </script>
-
-  <script src="{{ "/js/jquery.navgoco.min.js" | prepend: site.baseurl }}"></script>
-
-  <link rel="stylesheet" href="{{ "/css/lavish-bootstrap.css" | prepend: site.baseurl }}">
 
   <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />
 </head>
