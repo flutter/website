@@ -242,7 +242,7 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
+        font-size: 24px;
 
         @include media-query($on-laptop) {
             font-size: 28px;
