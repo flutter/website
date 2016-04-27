@@ -41,6 +41,25 @@ itself. Subsequent runs should be much faster.
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
 
+## Google Analytics
+
+The Flutter tool uses Google Analytics to anonymously report feature usage statistics
+and basic crash reports. This data is used to help improve Flutter tools over time.
+In order to disable reporting, type:
+
+```
+flutter config --no-analytics
+```
+
+And to display the current state of analytics reporting:
+
+```
+flutter config
+```
+
+See Google's privacy policy:
+[www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
+
 ## iOS setup
 
 _This step is optional, and can be performed at any time before

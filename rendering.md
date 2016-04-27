@@ -400,7 +400,7 @@ working with the render tree.
 import 'package:flutter/rendering.dart';
 
 void main() {
-  Renderer.instance.addPersistentFrameCallback((_) {
+  RendererBinding.instance.addPersistentFrameCallback((_) {
     debugDumpRenderTree();
   });
 }
