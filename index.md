@@ -13,8 +13,8 @@ iOS and Android from a single codebase.
 
 See these topics to quickly start building cross-platform mobile apps with Flutter.
 
- - [Get started](getting-started) to run your first app on Android and iOS.
  - [Set up your machine](/setup/) with Flutter and iOS/Android tools.
+ - [Get started](getting-started) to run your first app on Android and iOS.
  - [A tour of the Flutter framework](widgets-intro)
  - [Bootstrap into Dart](/bootstrap-into-dart/) if you are new to the language
  for developing Flutter apps.
