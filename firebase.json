@@ -1,21 +1,22 @@
 {
-  "firebase": "sweltering-fire-2088",
-  "public": "build",
+  "firebase": "flutter-io-staging",
+  "public": "_site",
   "ignore": [
     "firebase.json",
     "**/.*",
     "**/node_modules/**"
   ],
   "redirects": [
-  	{
-  	  "source" : "/widgets/",
-  	  "destination" : "/basic-widgets/",
-  	  "type" : 301
-  	},
+    {
+      "source" : "/widgets/",
+      "destination" : "/basic-widgets/",
+      "type" : 301
+    },
     {
       "source" : "/tutorial/",
       "destination" : "/widgets-intro/",
       "type" : 301
     }
-  ]
+  ],
+  "rules": "firebase_config/firebase_rules.json"
 }
