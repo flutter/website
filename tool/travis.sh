@@ -10,6 +10,8 @@ export PATH="`pwd`/../flutter/bin/cache/dart-sdk/bin:$PATH"
 echo "Using Dart version:"
 dart --version
 
+pub get
+
 echo "Extract Dart snippets from the markdown documentation."
 dart tool/extract.dart
 
