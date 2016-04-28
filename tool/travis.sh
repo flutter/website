@@ -5,7 +5,10 @@ set -e
 
 # Use the version of Dart SDK from the Flutter repository instead of whatever
 # version is in the PATH.
-export PATH="`pwd`/../flutter/bin/cache/dart-sdk/bin:$PATH"
+export PATH="../flutter/bin/cache/dart-sdk/bin:$PATH"
+
+echo "Path to dart is:"
+which dart
 
 echo "Using Dart version:"
 dart --version
