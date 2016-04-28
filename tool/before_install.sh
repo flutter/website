@@ -5,4 +5,6 @@ set -e
 
 echo "Downloading Flutter"
 
-(cd ..; git clone https://github.com/flutter/flutter.git -b alpha)
+# Run doctor to download the Dart SDK that is vendored with Flutter
+
+(cd ..; git clone https://github.com/flutter/flutter.git -b alpha ; cd flutter ; flutter doctor)
