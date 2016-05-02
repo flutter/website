@@ -8,14 +8,25 @@ permalink: /style-guide/
 * TOC Placeholder
 {:toc}
 
-## Introduction
+Introduction
+------------
 
-The primary goal of this style guide is to improve code readability so
+This style guide describes the preferred style for code written as part of the Flutter
+project (the framework itself and all our sample code). Flutter application developers
+are welcome to follow this style as well, but this is by no means required. Flutter
+will work regardless of what style is used to author applications that use it.
+
+Overview
+--------
+
+The primary goal of these style guidelines is to improve code readability so
 that everyone, whether reading the code for the first time or
-maintaining it for years, can quickly determine what the code does. A
-secondary goal is avoiding arguments when there are disagreements.
+maintaining it for years, can quickly determine what the code does.
+Secondary goals are to increase the likelihood of catching bugs quickly, and 
+avoiding arguments when there are disagreements.
 
-In general, follow our [Design Principles](/design-principles/) for all code and
+In general, when writing code for the Flutter repository, follow our
+[Design Principles](/design-principles/) for all code and
 the [Dart style guide](https://www.dartlang.org/articles/style-guide/)
 for Dart code, except where that would contradict this page.
 
@@ -23,10 +34,6 @@ We do not yet use `dartfmt`. Flutter code tends to use patterns that
 the standard Dart formatter does not handle well. We are
 [working with the Dart team](https://github.com/dart-lang/dart_style/issues/442)
 to make `dartfmt` aware of these patterns.
-
-The style described in this document is the style we suggest Flutter
-application developers use to get the most out of Flutter. We use this
-style for all Flutter framework and sample code.
 
 Comments
 --------
