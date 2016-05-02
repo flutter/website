@@ -112,42 +112,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('this is a widget test', () {
-    // Creates a test environment for a widget
-    testWidgets((WidgetTester tester) {
-      // You can use keys to locate the widget you need to test
-      Key sliderKey = new UniqueKey();
-      double value = 0.0;
+  testWidgets('this is a widget test', (WidgetTester tester) {
+    // You can use keys to locate the widget you need to test
+    Key sliderKey = new UniqueKey();
+    double value = 0.0;
 
-      // Tells the tester to build a UI based on the widget tree passed to it
-      tester.pumpWidget(
-        new StatefulBuilder(
-          builder: (BuildContext context, StateSetter setState) {
-            return new Material(
-              child: new Center(
-                child: new Slider(
-                  key: sliderKey,
-                  value: value,
-                  onChanged: (double newValue) {
-                    setState(() {
-                      value = newValue;
-                    });
-                  }
-                )
+    // Tells the tester to build a UI based on the widget tree passed to it
+    tester.pumpWidget(
+      new StatefulBuilder(
+        builder: (BuildContext context, StateSetter setState) {
+          return new Material(
+            child: new Center(
+              child: new Slider(
+                key: sliderKey,
+                value: value,
+                onChanged: (double newValue) {
+                  setState(() {
+                    value = newValue;
+                  });
+                }
               )
-            );
-          }
-        )
-      );
+            )
+          );
+        }
+      )
+    );
+    expect(value, equals(0.0));
 
-      expect(value, equals(0.0));
+    // Taps on the widget found by key
+    tester.tap(find.byKey(sliderKey));
 
-      // Taps on the widget found by key
-      tester.tap(find.byKey(sliderKey));
-
-      // Verifies that the widget updated the value correctly
-      expect(value, equals(0.5));
-    });
+    // Verifies that the widget updated the value correctly
+    expect(value, equals(0.5));
   });
 }
 ```
