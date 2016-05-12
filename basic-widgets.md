@@ -17,9 +17,8 @@ To see all the basic widgets and related classes, check out the
 [API docs for the widgets library](http://docs.flutter.io/flutter/widgets/widgets-library.html).
 
 You may also be interested in Flutter's material design widgets.
-We don't yet have a gallery for those widgets,
-but you can see some of the Material Design widgets in action in our
-[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/material_gallery)
+You can see many of the Material Design widgets in action in our
+[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 demo app, and you can check out the
 [API docs for the material widgets library](http://docs.flutter.io/flutter/material/material-library.html).
 
