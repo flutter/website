@@ -27,7 +27,7 @@ with a widget:
 
 ```dart
 import 'package:flutter/material.dart';
-void main() => runApp(new Center(child: new Text('Hello, world!')));
+void main() { runApp(new Center(child: new Text('Hello, world!'))); }
 ```
 
 The [`runApp`](http://docs.flutter.io/flutter/material/runApp.html) function
@@ -469,17 +469,19 @@ class ShoppingListItem extends StatelessWidget {
   }
 
   TextStyle _getTextStyle(BuildContext context) {
-    if (inCart) {
-      return DefaultTextStyle.of(context).copyWith(
-          color: Colors.black54, decoration: TextDecoration.lineThrough);
-    }
-    return null;
+    if (!inCart)
+      return null;
+
+    return new TextStyle(
+      color: Colors.black54,
+      decoration: TextDecoration.lineThrough
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return new ListItem(
-      onTap: () => onCartChanged(product, !inCart),
+      onTap: () { onCartChanged(product, !inCart); },
       leading: new CircleAvatar(
         backgroundColor: _getColor(context),
         child: new Text(product.name[0])
