@@ -17,8 +17,8 @@ void main(List<String> args) {
   int extractCount = 0;
   Iterable<File> files = Directory.current
       .listSync()
-      .where((entity) => entity is File && entity.path.endsWith('.md'));
-  files.forEach((file) => extractCount += _processFile(file));
+      .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.md'));
+  files.forEach((File file) => extractCount += _processFile(file));
   print('\n$extractCount code snippets extracted.');
 }
 
@@ -95,6 +95,6 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
 void clean() {
   Iterable<File> files = new Directory('example')
       .listSync()
-      .where((entity) => entity is File && entity.path.endsWith('.dart'));
-  files.forEach((file) => file.deleteSync());
+      .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
+  files.forEach((File file) => file.deleteSync());
 }
