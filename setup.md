@@ -45,19 +45,12 @@ verify that you’ve set everything up correctly.
 
 The Flutter tool uses Google Analytics to anonymously report feature usage statistics
 and basic crash reports. This data is used to help improve Flutter tools over time.
-In order to disable reporting, type:
+In order to disable reporting, type `flutter config --no-analytics`, and to display the
+current state of analytics reporting, type `flutter config`.
 
-```
-flutter config --no-analytics
-```
-
-And to display the current state of analytics reporting:
-
-```
-flutter config
-```
-
-See Google's privacy policy:
+Analytics is not sent on the very first run or for any runs involving `flutter config`.
+This lets users choose to opt-out of analytics without any data being sent. See Google's
+privacy policy:
 [www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
 
 ## iOS setup
