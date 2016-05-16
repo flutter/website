@@ -57,6 +57,10 @@ entries:
     - title: Layered Design
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
+      
+    - title: Rendering pipeline
+      external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
+      output: web
 
   - title: How-Tos
     output: web
