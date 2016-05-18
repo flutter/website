@@ -139,9 +139,28 @@ mailing list: [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com
 
 ## Can I interop with my mobile platform's default programming language?
 
-Yes. Flutter uses Mojo's IPC system to interop between Flutter's app code and
-the host operating system. You can learn more about this at [[docs coming soon]].
-If you want to do this, we encourage you to email our mailing list:
+Yes, though this feature is a work in progress.
+
+We are building a _message pipe_ between Flutter and the host
+operating system. You can use this message pipe to send and receive
+string data (typically JSON data) between your Flutter code 
+and Java (on Android) and ObjectiveC (on iOS).
+
+Here is an
+[example project](https://github.com/flutter/flutter/tree/master/examples/hello_android)
+that shows how to use the message pipe to access geolocation functionality
+on Android. (An equivalent example project for iOS is in development.)
+
+Under the covers, Flutter uses Mojo's IPC system to interop between
+Flutter's app code and the host operating system. We generally
+don't recommend using Mojo IPC for interop in Flutter, because we have not
+provided a smooth developer experience around that workflow.
+
+This is an evolving part of the system, and we're very interested
+to learn how teams want to interop between
+Flutter and the OS and third-party SDKs. We encourage you to email our
+mailing list to let us know what you're building, and if you have
+questions:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
 ## Does Flutter come with a framework?
