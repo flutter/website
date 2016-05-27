@@ -61,8 +61,6 @@ scenarios.
 
 ## Unit testing
 
-**NOTE: `flutter test` currently only works on Linux ([bug](https://github.com/flutter/flutter/issues/3179))**
-
 Some Flutter libraries, such as `dart:ui`, are not available in the standalone
 Dart VM that ships with the default Dart SDK. The `flutter test` command lets
 you run your tests in a local Dart VM with a headless version of the Flutter
@@ -91,8 +89,6 @@ Run `flutter test test/unit_test.dart`.
 
 ## Widget testing
 
-**NOTE: `flutter test` currently only works on Linux ([bug](https://github.com/flutter/flutter/issues/3179))**
-
 You implement a widget test in a similar way as a unit test. To perform an
 interaction with a widget in your test, use the
 [`WidgetTester`](http://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
@@ -107,18 +103,17 @@ Example:
 Add this file to `test/widget_test.dart`:
 
 ```dart
-import 'package:test/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('this is a widget test', (WidgetTester tester) {
+  testWidgets('this is a widget test', (WidgetTester tester) async {
     // You can use keys to locate the widget you need to test
     Key sliderKey = new UniqueKey();
     double value = 0.0;
 
     // Tells the tester to build a UI based on the widget tree passed to it
-    tester.pumpWidget(
+    await tester.pumpWidget(
       new StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
           return new Material(
@@ -140,7 +135,7 @@ void main() {
     expect(value, equals(0.0));
 
     // Taps on the widget found by key
-    tester.tap(find.byKey(sliderKey));
+    await tester.tap(find.byKey(sliderKey));
 
     // Verifies that the widget updated the value correctly
     expect(value, equals(0.5));
