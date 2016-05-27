@@ -37,6 +37,6 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
     echo "Deploying to Firebase."
 
     npm install -g firebase-tools
-    firebase deploy --token "$FIREBASE_TOKEN" -f sweltering-fire-2088
+    firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" deploy
   fi
 fi
