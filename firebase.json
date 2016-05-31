@@ -1,22 +1,23 @@
 {
-  "firebase": "flutter-io-staging",
-  "public": "_site",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ],
-  "redirects": [
-    {
-      "source" : "/widgets/",
-      "destination" : "/basic-widgets/",
-      "type" : 301
-    },
-    {
-      "source" : "/tutorial/",
-      "destination" : "/widgets-intro/",
-      "type" : 301
-    }
-  ],
-  "rules": "firebase_config/firebase_rules.json"
+  "hosting": {
+    "public": "_site",
+    "rules": "firebase_config/firebase_rules.json",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source" : "/widgets/",
+        "destination" : "/basic-widgets/",
+        "type" : 301
+      },
+      {
+        "source" : "/tutorial/",
+        "destination" : "/widgets-intro/",
+        "type" : 301
+      }
+    ]
+  }
 }
