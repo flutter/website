@@ -36,7 +36,7 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   if [ "$TRAVIS_BRANCH" = "master" ]; then
     echo "Deploying to Firebase."
 
-    npm install -g firebase-tools
+    npm install --global firebase-tools@3.0.0
     firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" deploy
   fi
 fi
