@@ -18,12 +18,12 @@ entries:
     output: web
     folderitems:
 
-    - title: Get started
-      url: /getting-started/
-      output: web
-
     - title: Set up
       url: /setup/
+      output: web
+
+    - title: Get started
+      url: /getting-started/
       output: web
 
     - title: Framework tour
@@ -57,7 +57,7 @@ entries:
     - title: Layered Design
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
-      
+
     - title: Rendering pipeline
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
       output: web
