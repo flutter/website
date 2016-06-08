@@ -38,6 +38,7 @@ Learn how to accomplish specific development tasks with Flutter.
  - [Testing Flutter apps](testing)
  - [Debugging Flutter apps](debugging)
  - [Upgrading Flutter](upgrading)
+ - [Building cross-platform Firebase apps (codelab)](https://codelabs.developers.google.com/codelabs/flutter/index.html)
 
 ## Helpful Resources
 
