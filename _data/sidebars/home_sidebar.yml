@@ -17,7 +17,7 @@ entries:
   - title: New to Flutter
     output: web
     folderitems:
-    
+
     - title: Set up
       url: /setup/
       output: web
@@ -57,7 +57,7 @@ entries:
     - title: Layered Design
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
-      
+
     - title: Rendering pipeline
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
       output: web
@@ -82,6 +82,9 @@ entries:
       url: /upgrading/
       output: web
 
+    - title: Build cross-platform Firebase apps
+      url: https://codelabs.developers.google.com/codelabs/flutter/index.html
+      output: web
 
   - title: Helpful Resources
     output: web
