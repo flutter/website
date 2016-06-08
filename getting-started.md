@@ -75,22 +75,6 @@ If everything works, you should see your starter app on your Android device or i
   </div>
 </div>
 
-
-## View the logs
-
-The `flutter logs` command lets you see textual output from your app, including `print`
-statements and unhandled exceptions.
-
-To start streaming the logs when your Flutter app is running on an Android device or on the iOS
-Simulator, run this command:
-
-```
-$ flutter logs
-```
-
-To avoid confusion from old log messages, you can use the `flutter logs --clear` option to clear
-the logs between runs.
-
 ## Next steps
 
 Please reach out to us at our [mailing list][mailinglist]. We'd love
