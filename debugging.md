@@ -617,6 +617,34 @@ time a render box is asked to relayout and repaint. You can use the
 `debugPrintStack()` method from the `services` library to print your
 own stack traces on demand, if this kind of approach is useful to you.
 
+### Measuring app startup time
+
+To gather detailed information about the time it takes for your Flutter app to start, you can run
+the `flutter run` command with the `trace-startup` and `profile` options.
+
+```
+$ flutter run --trace-startup --profile
+```
+The trace output is saved as a JSON file called `start_up_info.json` under the `build` directory
+of your Flutter project. The output lists the elapsed time from app startup to these trace
+events (captured in microseconds):
+
++ Time to enter the Flutter engine code.
++ Time to render the first frame of the app.
++ Time to initialize the Flutter framework.
++ Time to complete the Flutter framework initialization.
+
+For example:
+
+```
+{
+  "engineEnterTimestampMicros": 96025565262,
+  "timeToFirstFrameMicros": 2171978,
+  "timeToFrameworkInitMicros": 514585,
+  "timeAfterFrameworkInitMicros": 1657393
+}
+```
+
 ## PerformanceOverlay
 
 To get a graphical view of the performance of your application, set
