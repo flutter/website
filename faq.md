@@ -90,8 +90,8 @@ picture of the main components.
 ## How does Flutter run my code on Android?
 
 The engine's C/C++ code is compiled with Android's NDK, and the majority of the
-framework and application code is running as native code,
-compiled by the Dart VM.
+framework and application code is running as native code
+compiled by the Dart compiler.
 
 ## How does Flutter run my code on iOS?
 
