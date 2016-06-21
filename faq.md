@@ -17,14 +17,15 @@ Flutter gives users beautiful, fast, and jitter-free app experiences.
 
 ## What does Flutter provide?
 
-Flutter has three main components:
+Flutter has four main components:
 
 * a heavily optimized, mobile-first 2D rendering engine (with excellent support
 for text)
 * a functional-reactive framework (optional, you can bring-your-own
 framework)
 * a set of Material Design widgets (optional, you can bring-your-own
-widgets), libraries, tools, and a plugin for Atom
+widgets)
+* command-line tools and a plugin for Atom
 
 ## What makes Flutter unique?
 
@@ -89,9 +90,8 @@ picture of the main components.
 ## How does Flutter run my code on Android?
 
 The engine's C/C++ code is compiled with Android's NDK, and the majority of the
-framework and application code is running on the Dart VM. The Dart VM generates
-JIT-compiled optimized native code on the device. (In other words, the Dart VM
-is not an interpreter.)
+framework and application code is running as native code,
+compiled by the Dart VM.
 
 ## How does Flutter run my code on iOS?
 
@@ -109,8 +109,8 @@ Flutter supports development on Linux and Mac. Windows support is planned.
 
 ## What kinds of apps can I build with Flutter?
 
-Flutter is optimized for 2D mobile apps that want to run on both Android and iOS.
-Apps that use Material Design are particularly well suited for Flutter.
+Flutter is optimized for 2D mobile apps that want to run on both Android and
+iOS. Apps that use Material Design are particularly well suited for Flutter.
 
 ## What kind of app performance can I expect?
 
@@ -126,16 +126,17 @@ encourage the community to use Flutter in a variety of interesting ways.
 ## Can I use Flutter inside of my existing native app?
 
 Yes, you can embed a Flutter view in your existing Android or iOS app.
-You can learn more about this at [[docs coming soon]]. If you want to do this, we
-encourage you to email our mailing list:
+You can learn more about this at [[docs coming soon]]. If you want to do this,
+we encourage you to email our mailing list:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
 ## Can I access native services and APIs like sensors and local storage?
 
-Yes. Flutter gives developers access to any service or API that the host
-operating system provides, via Mojo's IPC system. You can learn more about this
+Yes. Flutter gives developers out-of-the-box access to some services
+and APIs from the mobile operating system. You can learn more about this
 at [[docs coming soon]]. If you want to do this, we encourage you to email our
-mailing list: [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+mailing list:
+[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
 ## Can I interop with my mobile platform's default programming language?
 
@@ -198,7 +199,7 @@ can see an example of that at [[docs coming soon]].
 
 Flutter apps are tested with the
 [test package](https://pub.dartlang.org/packages/test). Learn more about
-testing with Flutter here [[docs coming soon]].
+[testing with Flutter](/testing/).
 
 ## Does Flutter come with a dependency injection framework or solution?
 
@@ -214,9 +215,16 @@ what you might need reflection/mirrors for – please let us know at
 
 ## How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
-These capabilities are very much on our radar, but we have not yet
-started on the APIs. We are currently building the core
-framework with these capabilities in mind.
+Flutter has basic support for accessibility on iOS and Android, though this
+feature is a work in progress.
+
+Flutter developers are encouraged to use the
+[intl package](https://pub.dartlang.org/packages/intl) for
+internationalization and localization.
+
+We encourage you to email
+[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
+with your questions regarding these features.
 
 ## How do I write parallel and/or concurrent apps for Flutter?
 
@@ -226,6 +234,9 @@ communicate by sending and receiving asynchronous messages. Flutter does not
 currently have a shared-memory parallelism solution, although we are evaluating
 solutions for this.
 
+Check out an
+[example of using isolates with Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
+
 ## Can I use JSON/XML/protobuffers/etc with Flutter?
 
 Absolutely. There are libraries in
@@ -234,9 +245,11 @@ protobufs, and many other utilities and formats.
 
 ## How do I write well-styled code for Flutter?
 
-Flutter has an
-[opinionated style guide](https://github.com/flutter/engine/blob/master/sky/specs/style-guide.md),
-which we encourage you to check out.
+The code in the flutter repos follow our
+[opinionated style guide](https://github.com/flutter/engine/blob/master/sky/specs/style-guide.md).
+
+Developers are not required to use this style guide for their own app
+code, though.
 
 ## Does Flutter use my system's OEM widgets?
 
@@ -246,20 +259,10 @@ Flutter's framework and engine.
 ## How do I deploy a Flutter app?
 
 Flutter apps are most commonly deployed via the mobile platform's store (such as
-Apple's App Store and Google's Play Store). We plan to deliver tools to easily
-to [generate an .ipa](https://github.com/flutter/flutter/issues/46)
-and easily [generate an .apk](https://github.com/flutter/flutter/issues/45).
+Apple's App Store and Google's Play Store).
 
-## Can I update my app over the network, outside of the Play Store?
-
-Yes. On Android, you can update your app over the network (via HTTP), without
-first publishing to the Play Store. This can be useful because it doesn't bother
-the user with a notification, ensures your users are on the latest version,
-makes it easier to run A/B experiments, and more.
-
-Unfortunately, due to iOS restrictions, updating your Flutter app over the
-network is not possible. We are curious how much you use this feature, please
-let us know at [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+Our command-line tools can build an `.ipa` and `.apk` file for you.
+To learn more, run `flutter build --help`.
 
 ## What if I don't want to build my app with Material Design?
 
@@ -273,6 +276,11 @@ We are building a
 can syntax highlight, code
 complete, refactor, launch apps, create new apps from a template, show type
 hierarchies, jump to definition, and more.
+
+There is also a supported
+[Dart plugin for JetBrains editors](https://plugins.jetbrains.com/plugin/6351)
+like IntelliJ and WebStorm, though this plugin does not have any specific
+Flutter features.
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 
