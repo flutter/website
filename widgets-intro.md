@@ -233,7 +233,7 @@ class TutorialHome extends StatelessWidget {
       ),
       floatingActionButton: new FloatingActionButton(
         tooltip: 'Add',
-        child: new Icon(icon: new Icon(Icons.add)),
+        child: new Icon(Icons.add),
         onPressed: null
       )
     );

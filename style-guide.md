@@ -359,12 +359,12 @@ abstract class Foo extends StatelessWidget {
 abstract class Bar extends StatelessWidget {
   Bar({
     Key key,
-    Widget child
-  }) : _child = child,
+    Widget childWidget
+  }) : child = childWidget,
        super(
     key: key
   );
-  final Widget _child;
+  final Widget child;
   // ...
 }
 ```
