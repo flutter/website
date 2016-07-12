@@ -51,3 +51,12 @@ More resources for Flutter developers.
  - [FAQ](faq)
  - [Design principles](design-principles)
  - [Style guide](style-guide)
+
+## Support
+
+Track the Flutter project and join the conversation in a variety of ways.
+
+- [Gitter for Flutter](https://gitter.im/flutter/flutter) (get live support via chat)
+- [flutter-dev@googlegroups.com](https://groups.google.com/d/forum/flutter-dev) (mailing list)
+- [Report bugs and request features](https://github.com/flutter/flutter/issues)
+- [@flutterio](https://twitter.com/flutterio) (get the latest announcements via Twitter)
