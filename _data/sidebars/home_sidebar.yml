@@ -62,6 +62,10 @@ entries:
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
       output: web
 
+    - title: Rendering pipeline
+      external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
+      output: web
+
   - title: How-Tos
     output: web
     folderitems:
@@ -80,6 +84,10 @@ entries:
 
     - title: Upgrade Flutter
       url: /upgrading/
+      output: web
+
+    - title: Access Platform and Third-Party Services
+      url: /platform-services/
       output: web
 
     - title: Build cross-platform Firebase apps
@@ -117,4 +125,8 @@ entries:
     - title: Style guide
       url: /style-guide/
       output: web
+
+  - title: Support
+    url: /#support
+    output: web
 
