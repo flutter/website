@@ -86,6 +86,10 @@ entries:
       url: /upgrading/
       output: web
 
+    - title: Access Platform and Third-Party Services
+      url: /platform-services/
+      output: web
+
     - title: Build cross-platform Firebase apps
       url: https://codelabs.developers.google.com/codelabs/flutter/index.html
       output: web
