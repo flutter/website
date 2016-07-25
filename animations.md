@@ -51,7 +51,7 @@ that wish to include an animation as part of a larger build function. To use
 
 ### `addStatusListener`
 
-Animations also provide a
+Animations also provide an
 [`AnimationStatus`](http://docs.flutter.io/flutter/animation/AnimationStatus-class.html),
 which indicates how the animation will evolve over time. Whenever the animation's
 status changes, the animation notifies all the listeners added with
@@ -65,7 +65,7 @@ animation reaches the `completed` status.
 
 ## AnimationController
 
-To create an animation, first create a
+To create an animation, first create an
 [`AnimationController`](http://docs.flutter.io/flutter/animation/AnimationController-class.html).
 As well as being an animation itself, an `AnimationController` lets you control
 the animation. For example, you can tell the controller to play the animation
