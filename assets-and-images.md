@@ -24,9 +24,11 @@ app, as shown in the
 [Introduction to Flutter's Widget Framework](/widgets-intro/).
 A typical `flutter.yaml` file might include something like the following:
 
-    assets:
-      - assets/my_icon.png
-      - assets/background.png
+```yaml
+assets:
+  - assets/my_icon.png
+  - assets/background.png
+```
 
 The `assets` section specifies files that should be included with the
 app. Each asset is identified by an explicit path (relative
@@ -45,13 +47,17 @@ included in the asset bundle along with the specified asset.
 
 For example, if you have the following assets:
 
-    assets/background.png
-    assets/dark/background.png
+```yaml
+  - assets/my_icon.png
+  - assets/background.png
+```
 
 and your `flutter.yaml` file contains:
 
-    assets:
-      - assets/background.png
+```yaml
+assets:
+  - assets/background.png
+```
 
 then both `assets/background.png` and `assets/dark/background.png` will be
 included in your asset bundle. The former is considered the _main asset_, while
@@ -85,7 +91,9 @@ to easily load assets.
 For example, use the `rootBundle` to easily
 load a JSON file asset.
 
-    String assetContents = await rootBundle.loadString('assets/config.json');
+```dart
+String assetContents = await rootBundle.loadString('assets/config.json');
+```
 
 ### Loading image images
 
@@ -99,19 +107,20 @@ understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
 
-    .../image.png
-    .../Mx/image.png
-    .../Nx/image.png
-    ...etc.
+
+* .../image.png
+* .../Mx/image.png
+* .../Nx/image.png
+* ...etc.
 
 Where M and N are numeric identifiers that correspond to the nominal resolution
 of the images contained within. The main asset is assumed to correspond to a
 resolution of 1.0. For example, consider the following asset layout for an
 image named `my_icon.png`:
 
-    .../my_icon.png
-    .../2.0x/my_icon.png
-    .../3.0x/my_icon.png
+* .../my_icon.png
+* .../2.0x/my_icon.png
+* .../3.0x/my_icon.png
 
 On devices with a device pixel ratio of 1.8, the asset `.../2.0x/my_icon.png`
 would be chosen. For a device pixel ratio of 2.7, the asset
@@ -133,12 +142,14 @@ class from inside of a widget's `build` method.
 For example, your app can load the dark background image from the asset
 declarations above:
 
-    Widget build(BuildContext context) {
-      ...
-      String name = 'assets/dark/background.png';
-      ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
-      ...
-    }
+```dart
+Widget build(BuildContext context) {
+  ...
+  String name = 'assets/dark/background.png';
+  ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
+  ...
+}
+```
 
 #### Learning more about image assets
 

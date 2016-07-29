@@ -117,22 +117,24 @@ this string as a parameter.
    For example, the following method shows how you might asynchronously invoke the geolocation 
    service.
     
-       Future<Null> _getLocation() async {
-         final Map<String, String> message 
-             = <String, String>{'provider': 'network'};
-         final Map<String, dynamic> reply 
-             = await HostMessages.sendJSON('getLocation', message);
+```dart
+ Future<Null> _getLocation() async {
+   final Map<String, String> message 
+       = <String, String>{'provider': 'network'};
+   final Map<String, dynamic> reply 
+       = await HostMessages.sendJSON('getLocation', message);
 
-         // If the widget was removed from the tree while the message was in flight,
-         // we want to discard the reply rather than calling setState to update our
-         // non-existant appearance.
-         if (!mounted)
-           return;
-         setState(() {
-           _latitude = reply['latitude'].toDouble();
-           _longitude = reply['longitude'].toDouble();
-         });
-       }
+   // If the widget was removed from the tree while the message was in flight,
+   // we want to discard the reply rather than calling setState to update our
+   // non-existant appearance.
+   if (!mounted)
+     return;
+   setState(() {
+     _latitude = reply['latitude'].toDouble();
+     _longitude = reply['longitude'].toDouble();
+   });
+ }
+```
 
 3. **Add a service provider in the host (iOS).** Follow these steps if your app needs to invoke a 
 platform-specific or third-party API on iOS:

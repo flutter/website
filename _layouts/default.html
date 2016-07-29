@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   {% include head.html %}
 
   <body>
@@ -23,53 +23,16 @@
 
     {% include footer.html %}
 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
-    <script src="{{ "/js/toc.js"}}"></script>
-    <script src="{{ "/js/customscripts.js" }}"></script>
-
+    <script src="{{ "/js/prism.js" }}"></script>
+    <script src="{{ "/js/toc.js" }}"></script>
     <script src="{{ "/js/jquery.navgoco.min.js" }}"></script>
-
-    <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
-
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
-
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
-            $("#mysidebar li.active").parents('li').toggleClass("active");
-            $("#mysidebar li.active").parents('ul').show();
-
-            /**
-             * AnchorJS
-             */
-            anchors.add('h2,h3,h4,h5');
-        });
-    </script>
+    <script src="{{ "/js/customscripts.js" }}"></script>
 
     <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
   </body>

@@ -65,7 +65,9 @@ body {
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
 
-
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: #eeeeee;
+}
 
 
 
@@ -161,9 +163,6 @@ table > colgroup + thead > tr:first-child > td,
 table > thead:first-child > tr:first-child > td {
     border-top: 0;
 }
-table > tbody + tbody {
-    b
-}
 table > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
@@ -228,7 +227,7 @@ ul#results-container a {
     background-color: transparent;
 }
 
-ul#results-container a: hover {
+ul#results-container a:hover {
     color: black;
 }
 
@@ -373,12 +372,12 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav a:hover, .nav li.active > a {
-    background-color: #8D8D8D;
-    color: #f5f5f5;
+    background-color: #eeeeee;
+
 }
 
 .nav > li.active > a  {
-background-color: #347DBE;
+background-color: #eeeeee;
 }
 
 .nav li a {
@@ -391,7 +390,7 @@ background-color: #347DBE;
 .nav > li > a {
     font-size: 14px;
     line-height: 20px;
-    padding: 4px 10px;
+    padding: 5px 10px;
 }
 
 ul#mysidebar {
@@ -419,7 +418,7 @@ ul#mysidebar {
 }
 
 .nav li a:hover {
-    background-color: #8D8D8D;
+    background-color: #eeeeee;
 }
 
 .nav ul li a {
@@ -606,7 +605,7 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
+h3 { font-weight:normal; font-size:130%;}
 h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
 
 .alert, .callout {
@@ -614,7 +613,7 @@ h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background-color: #248ec2;
+    background-color: #eeeeee;
     color: white;
 }
 
@@ -643,6 +642,11 @@ li.activeSeries {
     font-weight: bold;
     margin-left: 43px;
     font-size:18px;
+}
+
+.alert-info {
+    background-color: rgba( 41, 182, 246, 0.2 );
+    color: #01579b;
 }
 
 .alert-warning {
@@ -740,7 +744,7 @@ ol.series li {
 }
 
 .nav ul.series li a:hover {
-    background-color: gray;
+    background-color: #eeeeee;
 }
 .nav ul.series {
     padding-left: 30px;
@@ -903,7 +907,7 @@ span.soft {
 }
 
 
-@media only screen and (min-width: 900px), @media only screen and (min-device-width: 900px) {
+@media (min-width: 900px) {
     .col-md-9 img {
         max-width: 700px;
         max-height: 700px;
@@ -1018,11 +1022,7 @@ li.sidebarTitle {
     }
 
 a code {
-    color: #248EC2;
-}
-
-code + a > code {
-    margin-left: -7px;
+    color: $brand-color;
 }
 
 table th code {
