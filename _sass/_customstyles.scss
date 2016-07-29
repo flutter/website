@@ -644,6 +644,11 @@ li.activeSeries {
     font-size:18px;
 }
 
+.alert {
+    border: 0;
+    border-radius: 0;
+}
+
 .alert-info {
     background-color: rgba( 41, 182, 246, 0.2 );
     color: #01579b;
