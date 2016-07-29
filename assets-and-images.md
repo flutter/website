@@ -155,7 +155,7 @@ Widget build(BuildContext context) {
       backgroundImage: new BackgroundImage(
         image: new AssetImage('my_asset.png'),
         // ...
-      ),
+      )
       // ...
     )
   );
