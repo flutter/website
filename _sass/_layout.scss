@@ -3,8 +3,8 @@
  */
 .site-header {
     min-height: 56px;
-    background-color: $primary-color;
-    color: $nav-text-color;
+    background-color: white;
+    color: #424242;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 
     // Positioning context for the mobile navigation icon
@@ -13,21 +13,19 @@
     .project-status {
       font-size: 14px;
       line-height: 56px;
-      color: $grey-color-light;
     }
 }
 
 .site-title {
     font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;
     margin-right: 9px;
+    vertical-align: middle;
+    line-height: 56px;
 
     &,
     &:visited {
-        color: $grey-color-light;
+        color: #424242;
     }
 }
 
@@ -40,7 +38,7 @@
     }
 
     .page-link {
-        color: $nav-text-color;
+        color: #424242;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
@@ -151,10 +149,9 @@
 }
 
 .logo {
-  text-align: right;
-  float: right;
+  float: left;
   position: relative;
-  top: -10px;
+  margin-right: 20px;
 
   @include media-query($on-palm) {
       top: -15px;
