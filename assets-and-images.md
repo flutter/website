@@ -92,7 +92,12 @@ For example, use the `rootBundle` to easily
 load a JSON file asset.
 
 ```dart
-String assetContents = await rootBundle.loadString('assets/config.json');
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+
+Future<String> loadAsset() async {
+  return await rootBundle.loadString('assets/config.json');
+}
 ```
 
 ### Loading image images
@@ -136,7 +141,7 @@ should be 216px by 216px; but they both will render into 72px by 72px
 #### Loading images
 
 To load an image, use the
-[`DefaultAssetBundle`](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle/of.html)
+[`AssetImage`](https://docs.flutter.io/flutter/material/AssetImage-class.html)
 class from inside of a widget's `build` method.
 
 For example, your app can load the dark background image from the asset
@@ -144,20 +149,19 @@ declarations above:
 
 ```dart
 Widget build(BuildContext context) {
-  ...
-  String name = 'assets/dark/background.png';
-  ImageResource image = DefaultAssetBundle.of(context).loadImage(name);
-  ...
+  // ...
+  return new DecoratedBox(
+    decoration: new BoxDecoration(
+      backgroundImage: new BackgroundImage(
+        image: new AssetImage('my_asset.png'),
+        // ...
+      ),
+      // ...
+    )
+  );
+  // ...
 }
 ```
-
-#### Learning more about image assets
-
-As a convenience, the
-[`AssetImage`](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
-widget provides a simple way to display an image in the UI.  Images may also
-be specified as the background in a
-[`DecoratedBox`](http://docs.flutter.io/flutter/widgets/DecoratedBox-class.html).
 
 The way this works is through an object called
 [`AssetVendor`](http://docs.flutter.io/flutter/widgets/AssetVendor-class.html)

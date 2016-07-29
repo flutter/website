@@ -118,7 +118,17 @@ this string as a parameter.
    service.
     
 ```dart
- Future<Null> _getLocation() async {
+import 'package:flutter/material.dart' show State, BuildContext, Widget, Text;
+import 'package:flutter/services.dart' show HostMessages;
+import 'dart:async' show Future;
+
+// ...
+
+class ExampleState extends State {
+ double latitude;
+ double longitude;
+
+ Future<Null> getLocation() async {
    final Map<String, String> message 
        = <String, String>{'provider': 'network'};
    final Map<String, dynamic> reply 
@@ -130,10 +140,17 @@ this string as a parameter.
    if (!mounted)
      return;
    setState(() {
-     _latitude = reply['latitude'].toDouble();
-     _longitude = reply['longitude'].toDouble();
+     latitude = reply['latitude'].toDouble();
+     longitude = reply['longitude'].toDouble();
    });
  }
+
+ @override
+ Widget build(BuildContext context) {
+   // ...
+   return new Text('Latitude: $latitude, Longitude: $longitude');
+ }
+}
 ```
 
 3. **Add a service provider in the host (iOS).** Follow these steps if your app needs to invoke a 
