@@ -15,13 +15,13 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #0091ea;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color:    #917FFF;
+$primary-color:    #01579b;
 $nav-text-color:   white;
 
 // Width of the content area
@@ -51,5 +51,6 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "customstyles",
+        "prism"
 ;

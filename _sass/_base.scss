@@ -92,10 +92,6 @@ a {
     color: $brand-color;
     text-decoration: none;
 
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
     &:hover {
         color: $text-color;
         text-decoration: underline;
@@ -129,9 +125,10 @@ pre {
     font-size: 15px;
 }
 
-code {
-  font-family: 'Source Code Pro', monospace;
+code, code[class*="language-"], pre[class*="language-"]{
+  font-family: 'Source Code Pro', monospace !important;
   font-size: 1em;
+  padding: 0;
 }
 
 pre {
