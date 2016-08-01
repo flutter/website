@@ -82,7 +82,8 @@ iOS 8 or newer.
 Mobile hardware: 64-bit iOS devices (for example, iPhone 5S and newer),
 and ARM Android devices.
 
-We support developing Flutter apps with Android emulators and iOS simulator.
+We support developing Flutter apps with Android and iOS devices, as 
+well as with Android emulators and the iOS simulator.
 
 We test on a variety of low-end to high-end phones and tablets, but we don't yet
 have an official device compatibility guarantee.
@@ -155,7 +156,7 @@ string data (typically JSON data) between your Flutter code
 and Java (on Android) and ObjectiveC (on iOS).
 
 Here is an
-[example project](https://github.com/flutter/flutter/tree/master/examples/hello_android)
+[example project](https://github.com/flutter/flutter/tree/master/examples/hello_services)
 that shows how to use the message pipe to access geolocation functionality
 on Android. (An equivalent example project for iOS is in development.)
 
