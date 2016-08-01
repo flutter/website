@@ -58,13 +58,13 @@ screen. The shortcut depends on the operating system of the development machine 
 * **Mac**: `Command+R`
 
 
-If everything works, you should see your starter app on your Android device or iOS Simulator.
+If everything works, you should see your starter app on your device or simulator.
 
 <div id="starter-app-screenshots">
   <div class="box2">
     <figure>
       <img src="/images/flutter-starter-app-ios.png">
-      <figcaption>Figure 1. iOS Simulator (iPhone 6s Plus)</figcaption>
+      <figcaption>Figure 1. iOS (iPhone 6s Plus)</figcaption>
     </figure>
   </div>
   <div class="box2">

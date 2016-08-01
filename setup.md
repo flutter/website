@@ -65,7 +65,7 @@ the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
 2.  Make sure the Xcode EULA is signed by either opening Xcode once and confirming or
 running `sudo xcodebuild -license` from the command-line.
 
-With Xcode, you’ll be able to run Flutter apps on the iOS simulator.
+With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
 
 ### Set up the iOS simulator ###
 
@@ -95,6 +95,9 @@ iOS devices.
     $ brew tap flutter/flutter
     $ brew install ideviceinstaller ios-deploy
     </pre>
+
+You'll also need to set up a provisioning profile for your developer account. To learn how to 
+set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 
 ## Android setup
 
