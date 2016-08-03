@@ -145,8 +145,9 @@ and APIs from the operating system. However, we want to avoid the
 "lowest common denominator" problem with most cross-platform APIs, so we
 do not intend to build cross-platform APIs for all native services and APIs.
 
-We encourage developers and the ecosystem to
-[access platform APIs with our service plugins](/platform-services/). Developers
+We encourage developers to use Flutter's asynchronous message passing system to
+create your own integrations with
+[platform and third-party APIs](/platform-services/). Developers
 can expose as much or as little of the platform APIs as they need, and build
 layers of abstractions that are a best fit for their project.
 
