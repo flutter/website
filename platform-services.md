@@ -117,41 +117,41 @@ this string as a parameter.
    For example, the following method shows how you might asynchronously invoke the geolocation 
    service.
     
-```dart
-import 'package:flutter/material.dart' show State, BuildContext, Widget, Text;
-import 'package:flutter/services.dart' show HostMessages;
-import 'dart:async' show Future;
+   ```dart
+   import 'package:flutter/material.dart' show State, BuildContext, Widget, Text;
+   import 'package:flutter/services.dart' show HostMessages;
+       import 'dart:async' show Future;
 
-// ...
+    // ...
 
-class ExampleState extends State {
- double latitude;
- double longitude;
+    class ExampleState extends State {
+     double latitude;
+     double longitude;
 
- Future<Null> getLocation() async {
-   final Map<String, String> message 
-       = <String, String>{'provider': 'network'};
-   final Map<String, dynamic> reply 
-       = await HostMessages.sendJSON('getLocation', message);
+     Future<Null> getLocation() async {
+       final Map<String, String> message 
+           = <String, String>{'provider': 'network'};
+       final Map<String, dynamic> reply 
+           = await HostMessages.sendJSON('getLocation', message);
 
-   // If the widget was removed from the tree while the message was in flight,
-   // we want to discard the reply rather than calling setState to update our
-   // non-existant appearance.
-   if (!mounted)
-     return;
-   setState(() {
-     latitude = reply['latitude'].toDouble();
-     longitude = reply['longitude'].toDouble();
-   });
- }
+       // If the widget was removed from the tree while the message was in flight,
+       // we want to discard the reply rather than calling setState to update our
+       // non-existant appearance.
+       if (!mounted)
+         return;
+       setState(() {
+         latitude = reply['latitude'].toDouble();
+         longitude = reply['longitude'].toDouble();
+       });
+     }
 
- @override
- Widget build(BuildContext context) {
-   // ...
-   return new Text('Latitude: $latitude, Longitude: $longitude');
- }
-}
-```
+     @override
+     Widget build(BuildContext context) {
+       // ...
+       return new Text('Latitude: $latitude, Longitude: $longitude');
+     }
+    }
+   ```
 
 3. **Add a service provider in the host (iOS).** Follow these steps if your app needs to invoke a 
 platform-specific or third-party API on iOS:
@@ -194,7 +194,6 @@ Studio, open the `app` folder as an Android project.
     4. Create or modify a `local.properties` file to specify the configuration settings for 
     building your Android app. See the project [README](https://github.com/flutter/flutter/blob/master/examples/hello_services/README.md) to learn more about the 
     Android-specific properties you can configure.
-
 
 5. **Build your app.** You should build your app directly from the platform-specific tools. 
   
