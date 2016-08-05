@@ -62,10 +62,6 @@ entries:
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
       output: web
 
-    - title: Rendering pipeline
-      external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
-      output: web
-
   - title: How-Tos
     output: web
     folderitems:
