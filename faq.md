@@ -140,9 +140,18 @@ we encourage you to email our mailing list:
 
 ## Can I access native services and APIs like sensors and local storage?
 
-Yes. Flutter gives developers out-of-the-box access to some services
-and APIs from the mobile operating system. You can learn more about this
-at [[docs coming soon]]. If you want to do this, we encourage you to email our
+Yes. Flutter gives developers out-of-the-box access to _some_ services
+and APIs from the operating system. However, we want to avoid the
+"lowest common denominator" problem with most cross-platform APIs, so we
+do not intend to build cross-platform APIs for all native services and APIs.
+
+We encourage developers to use Flutter's asynchronous message passing system to
+create your own integrations with
+[platform and third-party APIs](/platform-services/). Developers
+can expose as much or as little of the platform APIs as they need, and build
+layers of abstractions that are a best fit for their project.
+
+If you want to do this, we encourage you to email our
 mailing list:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
@@ -155,15 +164,13 @@ operating system. You can use this message pipe to send and receive
 string data (typically JSON data) between your Flutter code 
 and Java (on Android) and ObjectiveC (on iOS).
 
+Learn more about
+[accessing platform and third-party services in Flutter](/platform-services/).
+
 Here is an
 [example project](https://github.com/flutter/flutter/tree/master/examples/hello_services)
 that shows how to use the message pipe to access geolocation functionality
 on Android. (An equivalent example project for iOS is in development.)
-
-Under the covers, Flutter uses Mojo's IPC system to interop between
-Flutter's app code and the host operating system. We generally
-don't recommend using Mojo IPC for interop in Flutter, because we have not
-provided a smooth developer experience around that workflow.
 
 This is an evolving part of the system, and we're very interested
 to learn how teams want to interop between
@@ -195,7 +202,7 @@ limited by the quality of those widgets.
 In Android, for example, there's a hard-coded set of gestures and fixed
 rules for disambiguating them. In Flutter, you can write your
 own gesture recognizer that is a first-class participant in the
-[gesture system](http://flutter.io/gestures/). Moreover, two widgets
+[gesture system](/gestures/). Moreover, two widgets
 authored by different people can coordinate to disambiguate gestures.
 
 ## Can I extend and customize the bundled widgets?
