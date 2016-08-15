@@ -266,8 +266,8 @@ consider when designing your own widgets.
 Handling gestures
 -----------------
 
-In addition to being stunningly beautiful, most applications react to user
-input. The first step in building an interactive application is to detect
+Most applications include some form of user interaction with the system. The
+first step in building an interactive application is to detect
 input gestures. Let's see how that works by creating a simple button:
 
 ```dart
@@ -283,7 +283,7 @@ class MyButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
-          borderRadius: 5.0,
+          borderRadius: new BorderRadius.circular(5.0),
           backgroundColor: Colors.lightGreen[500]
         ),
         child: new Center(

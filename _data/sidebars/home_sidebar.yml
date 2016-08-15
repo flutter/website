@@ -86,10 +86,6 @@ entries:
       url: /platform-services/
       output: web
 
-    - title: Build cross-platform Firebase apps
-      url: https://codelabs.developers.google.com/codelabs/flutter/index.html
-      output: web
-
   - title: Helpful Resources
     output: web
     folderitems:
