@@ -53,7 +53,7 @@ Future<Null> main() async {
   File file = new File(filename);
   String contents = await file.readAsString();
   runApp(
-    new Center(child: new Text('Contents: $contents'))
+    new Center(child: new Text('Contents: $contents')),
   );
 }
 ```

@@ -30,7 +30,7 @@ if [ "${FMT_RESULT}" = "" ]; then
 else
   echo "There are formatting errors in the following files:"
   echo "$FMT_RESULT"
-	exit 1
+  exit 1
 fi
 
 echo "Install jekyll."
