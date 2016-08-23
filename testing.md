@@ -125,12 +125,12 @@ void main() {
                   setState(() {
                     value = newValue;
                   });
-                }
-              )
-            )
+                },
+              ),
+            ),
           );
-        }
-      )
+        },
+      ),
     );
     expect(value, equals(0.0));
 
@@ -251,7 +251,8 @@ void main() {
         // Scroll down 5 times
         for (int i = 0; i < 5; i++) {
           // Scroll 300 pixels down, for 300 millis
-          await driver.scroll(userList, 0.0, -300.0, new Duration(milliseconds: 300));
+          await driver.scroll(
+              userList, 0.0, -300.0, new Duration(milliseconds: 300));
 
           // Emulate a user's finger taking its time to go back to the original
           // position before the next scroll
@@ -260,7 +261,8 @@ void main() {
 
         // Scroll up 5 times
         for (int i = 0; i < 5; i++) {
-          await driver.scroll(userList, 0.0, 300.0, new Duration(milliseconds: 300));
+          await driver.scroll(
+              userList, 0.0, 300.0, new Duration(milliseconds: 300));
           await new Future<Null>.delayed(new Duration(milliseconds: 500));
         }
       });
