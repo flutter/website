@@ -19,41 +19,94 @@ access commonly used locations on the device's filesystem. The class currently s
 
 Once your Flutter app has a reference to a file location, you can use the [dart:io](https://api.dartlang.org/stable/1.18.1/dart-io/dart-io-library.html) APIs to perform read/write operations to the filesystem. For more information about working on files and directories using Dart, see this [overview](https://www.dartlang.org/articles/dart-vm/io) and [these examples](https://www.dartlang.org/dart-vm/dart-by-example#files-directories-and-symlinks).
 
-## Writing a string to a file
-Use the File object’s [writeAsString()](https://api.dartlang.org/stable/1.18.1/dart-io/File/writeAsString.html) method to write a string to a file. After writing the string, the method closes the file.
+## Example of reading and writing to a file
+
+The following example shows how to modify the default app created by `flutter create`, so that
+the app persists the number of button presses across relaunches.
 
 ```dart
 import 'dart:io';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
-Future<Null> main() async {
-  runApp(null); // this line is required to initialize the shell
-  String dir = (await PathProvider.getApplicationDocumentsDirectory()).path;
-  String filename = "$dir/foo.txt";
-  File file = new File(filename);
-  await file.writeAsString('some content');
-}
-```
-
-## Reading a file as a string
-Use the File object's [`readAsString()`](https://api.dartlang.org/stable/1.18.1/dart-core/Resource/readAsString.html) method to read a file as a string, then display it on the screen.
-
-```dart
-import 'dart:io';
-import 'dart:async';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-
-Future<Null> main() async {
-  runApp(null); // this line is required to initialize the shell
-  String dir = (await PathProvider.getApplicationDocumentsDirectory()).path;
-  String filename = "$dir/foo.txt";
-  File file = new File(filename);
-  String contents = await file.readAsString();
+void main() {
   runApp(
-    new Center(child: new Text('Contents: $contents')),
+    new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new FlutterDemo(),
+    ),
   );
+}
+
+class FlutterDemo extends StatefulWidget {
+  FlutterDemo({Key key}) : super(key: key);
+
+  @override
+  _FlutterDemoState createState() => new _FlutterDemoState();
+}
+
+class _FlutterDemoState extends State<FlutterDemo> {
+  int _counter;
+
+  @override
+  void initState() {
+    super.initState();
+    _readCounter().then((int value) {
+      setState(() {
+        _counter = value;
+      });
+    });
+  }
+
+  Future<File> _getLocalFile() async {
+    String dir = (
+      await PathProvider.getApplicationDocumentsDirectory()
+    ).path;                // get the path to the document directory
+    String filename = "$dir/counter.txt";
+    return new File(filename);
+  }
+
+  Future<int> _readCounter() async {
+    try {
+      File file = await _getLocalFile();
+      String contents = await file.readAsString();
+                            // read the variable as a string from the file
+      return int.parse(contents);
+    } on FileSystemException {
+      return 0;
+    }
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+      _getLocalFile().then((File file) {
+        file.writeAsString("$_counter");
+                            // write the variable as a string to the file
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Flutter Demo'),
+      ),
+      body: new Center(
+        child: new Text('Button tapped $_counter time${
+          _counter == 1 ? '' : 's' }.'),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ),
+    );
+  }
 }
 ```
