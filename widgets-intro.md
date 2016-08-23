@@ -27,7 +27,10 @@ with a widget:
 
 ```dart
 import 'package:flutter/material.dart';
-void main() { runApp(new Center(child: new Text('Hello, world!'))); }
+
+void main() {
+  runApp(new Center(child: new Text('Hello, world!')));
+}
 ```
 
 The [`runApp`](http://docs.flutter.io/flutter/material/runApp.html) function
@@ -100,7 +103,7 @@ Below are some simple widgets that combine these and other widgets:
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-  MyAppBar({ this.title });
+  MyAppBar({this.title});
 
   final Widget title;
 
@@ -109,16 +112,24 @@ class MyAppBar extends StatelessWidget {
     return new Container(
       height: 56.0,
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(
-        backgroundColor: Colors.blue[500]
-      ),
+      decoration: new BoxDecoration(backgroundColor: Colors.blue[500]),
       child: new Row(
         children: <Widget>[
-          new IconButton(icon: new Icon(Icons.menu), tooltip: 'Navigation menu', onPressed: null),
-          new Flexible(child: title),
-          new IconButton(icon: new Icon(Icons.search), tooltip: 'Search', onPressed: null),
-        ]
-      )
+          new IconButton(
+            icon: new Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: null,
+          ),
+          new Flexible(
+            child: title,
+          ),
+          new IconButton(
+            icon: new Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -130,15 +141,15 @@ class MyScaffold extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           new MyAppBar(
-            title: new Text('Example title', style: Typography.white.title)
+            title: new Text('Example title', style: Typography.white.title),
           ),
           new Flexible(
             child: new Center(
-              child: new Text('Hello, world!')
-            )
+              child: new Text('Hello, world!'),
+            ),
           )
-        ]
-      )
+        ],
+      ),
     );
   }
 }
@@ -146,7 +157,7 @@ class MyScaffold extends StatelessWidget {
 void main() {
   runApp(new MaterialApp(
     title: 'My app',
-    home: new MyScaffold()
+    home: new MyScaffold(),
   ));
 }
 ```
@@ -211,31 +222,39 @@ widget is entirely optional but a good practice.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    new MaterialApp(
-      title: 'Flutter Tutorial',
-      home: new TutorialHome()
-    )
-  );
+  runApp(new MaterialApp(
+    title: 'Flutter Tutorial',
+    home: new TutorialHome(),
+  ));
 }
 
 class TutorialHome extends StatelessWidget {
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        leading: new IconButton(icon: new Icon(Icons.menu), tooltip: 'Navigation menu', onPressed: null),
+        leading: new IconButton(
+          icon: new Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
         title: new Text('Example title'),
-        actions: <Widget>[ new IconButton(icon: new Icon(Icons.search), tooltip: 'Search', onPressed: null) ]
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+        ],
       ),
       body: new Center(
-        child: new Text('Hello, world!')
+        child: new Text('Hello, world!'),
       ),
       floatingActionButton: new FloatingActionButton(
         tooltip: 'Add',
         child: new Icon(Icons.add),
-        onPressed: null
-      )
+        onPressed: null,
+      ),
     );
   }
 }
@@ -284,12 +303,12 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
           borderRadius: new BorderRadius.circular(5.0),
-          backgroundColor: Colors.lightGreen[500]
+          backgroundColor: Colors.lightGreen[500],
         ),
         child: new Center(
-          child: new Text('Engage')
-        )
-      )
+          child: new Text('Engage'),
+        ),
+      ),
     );
   }
 }
@@ -347,7 +366,9 @@ class _CounterState extends State<Counter> {
   int _count = 0;
 
   void _increment() {
-    setState(() { _count += 1; });
+    setState(() {
+      _count += 1;
+    });
   }
 
   @override
@@ -356,10 +377,10 @@ class _CounterState extends State<Counter> {
       children: <Widget>[
         new RaisedButton(
           onPressed: _increment,
-          child: new Text('Increment')
+          child: new Text('Increment'),
         ),
-        new Text('Count: $_count')
-      ]
+        new Text('Count: $_count'),
+      ],
     );
   }
 }
@@ -387,7 +408,7 @@ see how that works in practice, with this slightly more complex example:
 
 ```dart
 class CounterDisplay extends StatelessWidget {
-  CounterDisplay({ this.count });
+  CounterDisplay({this.count});
   final int count;
   @override
   Widget build(BuildContext context) {
@@ -396,13 +417,13 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({ this.onPressed });
+  CounterIncrementor({this.onPressed});
   final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return new RaisedButton(
       onPressed: onPressed,
-      child: new Text('Increment')
+      child: new Text('Increment'),
     );
   }
 }
@@ -416,19 +437,17 @@ class _CounterState extends State<Counter> {
   int _count = 0;
 
   void _increment() {
-    setState(() { ++_count; });
+    setState(() {
+      ++_count;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
-      children: <Widget>[
-        new CounterIncrementor(
-          onPressed: _increment
-        ),
-        new CounterDisplay(count: _count)
-      ]
-    );
+    return new Row(children: <Widget>[
+      new CounterIncrementor(onPressed: _increment),
+      new CounterDisplay(count: _count),
+    ]);
   }
 }
 ```
@@ -451,15 +470,16 @@ intended purchases. Let's start by defining our presentation class,
 
 ```dart
 class Product {
-  const Product({ this.name });
+  const Product({this.name});
   final String name;
 }
 
 typedef void CartChangedCallback(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({ Product product, this.inCart, this.onCartChanged })
-    : product = product, super(key: new ObjectKey(product));
+  ShoppingListItem({Product product, this.inCart, this.onCartChanged})
+      : product = product,
+        super(key: new ObjectKey(product));
 
   final Product product;
   final bool inCart;
@@ -470,24 +490,25 @@ class ShoppingListItem extends StatelessWidget {
   }
 
   TextStyle _getTextStyle(BuildContext context) {
-    if (!inCart)
-      return null;
+    if (!inCart) return null;
 
     return new TextStyle(
       color: Colors.black54,
-      decoration: TextDecoration.lineThrough
+      decoration: TextDecoration.lineThrough,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return new ListItem(
-      onTap: () { onCartChanged(product, !inCart); },
+      onTap: () {
+        onCartChanged(product, !inCart);
+      },
       leading: new CircleAvatar(
         backgroundColor: _getColor(context),
-        child: new Text(product.name[0])
+        child: new Text(product.name[0]),
       ),
-      title: new Text(product.name, style: _getTextStyle(context))
+      title: new Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -521,19 +542,19 @@ Let's look at an example parent widget that stores mutable state:
 
 <!--
 class Product {
-  const Product({ this.name });
+  const Product({this.name});
   final String name;
 }
 
 class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({ Product product, bool inCart, Function onCartChanged });
+  ShoppingListItem({Product product, bool inCart, Function onCartChanged});
   @override
   Widget build(BuildContext context) => null;
 }
 -->
 ```dart
 class ShoppingList extends StatefulWidget {
-  ShoppingList({ Key key, this.products }) : super(key: key);
+  ShoppingList({Key key, this.products}) : super(key: key);
 
   final List<Product> products;
 
@@ -554,10 +575,10 @@ class _ShoppingListState extends State<ShoppingList> {
   }
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Shopping List')
+        title: new Text('Shopping List'),
       ),
       body: new MaterialList(
         type: MaterialListType.oneLineWithAvatar,
@@ -565,10 +586,10 @@ class _ShoppingListState extends State<ShoppingList> {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
-            onCartChanged: _handleCartChanged
+            onCartChanged: _handleCartChanged,
           );
-        })
-      )
+        }),
+      ),
     );
   }
 }
@@ -582,7 +603,7 @@ final List<Product> _kProducts = <Product>[
 void main() {
   runApp(new MaterialApp(
     title: 'Shopping List',
-    home: new ShoppingList(products: _kProducts)
+    home: new ShoppingList(products: _kProducts),
   ));
 }
 ```

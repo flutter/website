@@ -153,11 +153,11 @@ Widget build(BuildContext context) {
   return new DecoratedBox(
     decoration: new BoxDecoration(
       backgroundImage: new BackgroundImage(
-        image: new AssetImage('my_asset.png')
+        image: new AssetImage('my_asset.png'),
         // ...
-      )
+      ),
       // ...
-    )
+    ),
   );
   // ...
 }
@@ -178,7 +178,7 @@ you'll also notice parameters related to scale.)
 
 * If you're not using
   [`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
-  or 
+  or
   [`WidgetsApp`](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
   in your app, and you want to use resolution awareness, you'll need to
   establish your own `AssetVendor` in your build logic.

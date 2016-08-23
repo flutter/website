@@ -22,7 +22,7 @@ Overview
 The primary goal of these style guidelines is to improve code readability so
 that everyone, whether reading the code for the first time or
 maintaining it for years, can quickly determine what the code does.
-Secondary goals are to increase the likelihood of catching bugs quickly, and 
+Secondary goals are to increase the likelihood of catching bugs quickly, and
 avoiding arguments when there are disagreements.
 
 In general, when writing code for the Flutter repository, follow our
@@ -181,12 +181,14 @@ checked mode.
 
 The following example is from `box.dart`:
 
-<!-- dynamic _debugDoingBaseline; -->
+<!--
+dynamic _debugDoingBaseline;
+-->
 ```dart
 abstract class RenderBox extends RenderObject {
   // ...
 
-  double getDistanceToBaseline(TextBaseline baseline, { bool onlyReal: false }) {
+  double getDistanceToBaseline(TextBaseline baseline, {bool onlyReal: false}) {
     // simple asserts:
     assert(!needsLayout);
     assert(!_debugDoingBaseline);
@@ -194,10 +196,12 @@ abstract class RenderBox extends RenderObject {
     assert(() {
       final RenderObject parent = this.parent;
       if (owner.debugDoingLayout)
-        return (RenderObject.debugActiveLayout == parent) && parent.debugDoingThisLayout;
+        return (RenderObject.debugActiveLayout == parent) &&
+            parent.debugDoingThisLayout;
       if (owner.debugDoingPaint)
-        return ((RenderObject.debugActivePaint == parent) && parent.debugDoingThisPaint) ||
-               ((RenderObject.debugActivePaint == this) && debugDoingThisPaint);
+        return ((RenderObject.debugActivePaint == parent) &&
+                parent.debugDoingThisPaint) ||
+            ((RenderObject.debugActivePaint == this) && debugDoingThisPaint);
       assert(parent == this.parent);
       return false;
     });
@@ -350,7 +354,7 @@ to the superclass.
 ```dart
 // one-line constructor example
 abstract class Foo extends StatelessWidget {
-  Foo({ Key key, this.child }) : super(key: key);
+  Foo({Key key, this.child}) : super(key: key);
   final Widget child;
   // ...
 }
@@ -359,11 +363,12 @@ abstract class Foo extends StatelessWidget {
 abstract class Bar extends StatelessWidget {
   Bar({
     Key key,
-    Widget childWidget
-  }) : child = childWidget,
-       super(
-    key: key
-  );
+    Widget childWidget,
+  })
+      : child = childWidget,
+        super(
+          key: key,
+        );
   final Widget child;
   // ...
 }
