@@ -22,6 +22,17 @@ echo "Analyzing the extracted Dart libraries."
 
 ../flutter/bin/flutter analyze example/*.dart
 
+echo "Check formatting of the extracted Dart libraries."
+
+FMT_RESULT=`dartfmt -n example/*.dart`
+if [ "${FMT_RESULT}" = "" ]; then
+  echo "No formatting errors!"
+else
+  echo "There are formatting errors in the following files:"
+  echo "$FMT_RESULT"
+	exit 1
+fi
+
 echo "Install jekyll."
 gem install bundler
 bundle install
