@@ -34,9 +34,7 @@ void main() {
   runApp(
     new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: new ThemeData(primarySwatch: Colors.blue),
       home: new FlutterDemo(),
     ),
   );
@@ -63,43 +61,38 @@ class _FlutterDemoState extends State<FlutterDemo> {
   }
 
   Future<File> _getLocalFile() async {
-    String dir = (
-      await PathProvider.getApplicationDocumentsDirectory()
-    ).path;                // get the path to the document directory
-    String filename = "$dir/counter.txt";
-    return new File(filename);
+    // get the path to the document directory.
+    String dir = (await PathProvider.getApplicationDocumentsDirectory()).path;
+    return new File('$dir/counter.txt');
   }
 
   Future<int> _readCounter() async {
     try {
       File file = await _getLocalFile();
+      // read the variable as a string from the file.
       String contents = await file.readAsString();
-                            // read the variable as a string from the file
       return int.parse(contents);
     } on FileSystemException {
       return 0;
     }
   }
 
-  void _incrementCounter() {
+  Future<Null> _incrementCounter() async {
     setState(() {
       _counter++;
-      _getLocalFile().then((File file) {
-        file.writeAsString("$_counter");
-                            // write the variable as a string to the file
-      });
     });
+    // write the variable as a string to the file
+    await (await _getLocalFile()).writeAsString('$_counter');
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Flutter Demo'),
-      ),
+      appBar: new AppBar(title: new Text('Flutter Demo')),
       body: new Center(
         child: new Text('Button tapped $_counter time${
-          _counter == 1 ? '' : 's' }.'),
+          _counter == 1 ? '' : 's'
+        }.'),
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
