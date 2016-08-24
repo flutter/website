@@ -346,7 +346,7 @@ interested in contributing code, you can start by reading our
 ## Should I build my next production app with Flutter?
 
 Flutter is still being developed and is not yet at
-1.0. While lower levels of the system are stabilizing, we envision changing
+1.0. While lower levels of the system are stabilizing, we continue to improve
 parts of the system based on user feedback.
 
 Flutter is used inside of Google, but those apps are not yet deployed to external
