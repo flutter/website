@@ -313,15 +313,15 @@ approximately 400kb, necessary Java code is 330k, and there is approximately
 
 ## My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
 
-In development, Flutter apps run with a type checking and asserts enabled by
-default. These checks help you catch errors early during development but impose
+By default `flutter run` command uses the debug build configuration.
+The debug configuration enables type checking and asserts. 
+These checks help you catch errors early during development but impose
 a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
-You can run your app without these checks by passing the `--no-checked` flag to
-`flutter run`.
+You can run your app without these checks by using either `--profile` or `--release`
+flag to `flutter run`.
 
-If you are using the Flutter plugin for Atom, you can disable
-Slow Mode by editing your run configuration file. Open
-`.atom/launches/main.yaml` and change `checked: true` to `checked: false`.
+If you are using the Flutter plugin for Atom, you can disable Slow Mode by selecting 
+either profile or release build configuration.  
 
 ## Where can I get support?
 
