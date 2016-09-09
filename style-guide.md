@@ -478,16 +478,16 @@ For example:
     @override
     Widget build(BuildContext context) {
       return new PopupMenuButton<String>(
-        onSelected: (String value) { print("Selected: $value"); },
+        onSelected: (String value) { print('Selected: $value'); },
         itemBuilder: (BuildContext context) {
           return <PopupMenuItem<String>>[
             new PopupMenuItem<String>(
-              value: "Friends",
-              child: new MenuItemWithIcon(Icons.people, "Friends", "5 new")
+              value: 'Friends',
+              child: new MenuItemWithIcon(Icons.people, 'Friends', '5 new')
             ),
             new PopupMenuItem<String>(
-              value: "Events",
-              child: new MenuItemWithIcon(Icons.event, "Events", "12 upcoming")
+              value: 'Events',
+              child: new MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
             ),
           ];
         }
@@ -498,15 +498,15 @@ For example:
     @override
     Widget build(BuildContext context) {
       return new PopupMenuButton<String>(
-        onSelected: (String value) { print("Selected: $value"); },
+        onSelected: (String value) { print('Selected: $value'); },
         itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
           new PopupMenuItem<String>(
-            value: "Friends",
-            child: new MenuItemWithIcon(Icons.people, "Friends", "5 new")
+            value: 'Friends',
+            child: new MenuItemWithIcon(Icons.people, 'Friends', '5 new')
           ),
           new PopupMenuItem<String>(
-            value: "Events",
-            child: new MenuItemWithIcon(Icons.event, "Events", "12 upcoming")
+            value: 'Events',
+            child: new MenuItemWithIcon(Icons.event, 'Events', '12 upcoming')
           ),
         ]
       );
