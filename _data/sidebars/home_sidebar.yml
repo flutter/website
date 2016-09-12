@@ -118,11 +118,6 @@ entries:
       url: /design-principles/
       output: web
 
-    - title: Style guide
-      url: /style-guide/
-      output: web
-
   - title: Support
     url: /#support
     output: web
-
