@@ -157,6 +157,12 @@ abstract class Picture ...
 If writing the documentation proves to be difficult because the API is
 convoluted, then rewrite the API rather than trying to document it.
 
+### Canonical terminology
+
+The documentation should use consistent terminology:
+
+ * method - a member of a class that is a non-anonymous closure
+ * function - a callable non-anonymous closure that isn't a member of a class
 
 Coding patterns and catching bugs early
 ---------------------------------------
