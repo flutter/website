@@ -24,7 +24,7 @@ To install and run Flutter, your development environment must meet these minimum
 To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
 
 <pre>
-$ git clone https://github.com/flutter/flutter.git -b alpha
+$ git clone https://github.com/flutter/flutter.git
 $ export PATH=`pwd`/flutter/bin:$PATH
 </pre>
 
