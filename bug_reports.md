@@ -19,7 +19,7 @@ The instructions in this document detail the current steps required to provide t
 * Run `flutter doctor` in your project directory and paste the results into the Github Issue:
 
 ```
-[✓] Flutter (on Mac OS, channel alpha)
+[✓] Flutter (on Mac OS, channel master)
     • Flutter at /Users/me/projects/flutter
     • Framework revision 8cbeb2e (4 hours ago), engine revision 5c28578
 
