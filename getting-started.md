@@ -70,7 +70,7 @@ If everything works, you should see your starter app on your device or simulator
   <div class="box2">
     <figure>
       <img src="/images/flutter-starter-app-android.png">
-      <figcaption>Figure 2. Android (Nexus 6)</figcaption>
+      <figcaption>Figure 2. Android (Nexus 6P)</figcaption>
     </figure>
   </div>
 </div>
