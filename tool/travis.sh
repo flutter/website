@@ -13,7 +13,7 @@ which dart
 echo "Using Dart version:"
 dart --version
 
-pub get
+../flutter/bin/flutter packages get
 
 echo "Extract Dart snippets from the markdown documentation."
 dart tool/extract.dart
