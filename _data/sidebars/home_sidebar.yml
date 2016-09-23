@@ -54,6 +54,10 @@ entries:
       url: /animations/
       output: web
 
+    - title: Text Input
+      url: /text-input/
+      output: web
+
     - title: Layered Design
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
@@ -125,4 +129,3 @@ entries:
   - title: Support
     url: /#support
     output: web
-
