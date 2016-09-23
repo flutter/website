@@ -47,17 +47,14 @@ This example is a `StatefulWidget` that mirrors the text inside an `Input`.
 ```dart
 /// [StatefulWidget] that displays what is being entered in the input
 class MyInput extends StatefulWidget {
-
   MyInput({Key key}) : super(key: key);
 
   @override
-  _MyInputState createState() =>
-          new _MyInputState();
+  _MyInputState createState() => new _MyInputState();
 }
 
 /// State that corresponds to [MyInput]
 class _MyInputState extends State<MyInput> {
-
   /// Track the current input state
   InputValue _currentInput;
 
@@ -82,12 +79,11 @@ class _MyInputState extends State<MyInput> {
       children: <Widget>[
         new Text(_currentInput.text), // Display the text of the current input
         new Input(
-           onChanged: _handleInputChange,
-           value: _currentInput,
+          onChanged: _handleInputChange,
+          value: _currentInput,
         ),
       ],
     );
   }
 }
-
 ```
