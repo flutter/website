@@ -10,15 +10,14 @@ permalink: /text-input/
 
 ## Introduction
 
-This page describe how to set up basic text input for Flutter applications.
+This page describes how to set up basic text input for Flutter applications.
 
 The
 [`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
 widget under
 [Material](https://docs.flutter.io/flutter/material/material-library.html )
-satisfies most text input use cases. The `Input` widget implements material
-design's style. If you want an input widget that does not use material design,
-see
+satisfies most text input use cases, and implements material design's style. If
+you want an input widget that does not use material design, see
 [`RawInputLine`](https://docs.flutter.io/flutter/widgets/RawInputLine-class.html)
 
 
@@ -31,14 +30,14 @@ user input is:
 1. User taps a character in the keyboard.
 2. The
 [`OnChanged`](https://docs.flutter.io/flutter/material/Input/onChanged.html)
-callback is called with the current `value` of the widget
-3. Perform any necessary logic/validation on the current input value
+callback is called with the current `value` of the widget.
+3. Perform any necessary logic/validation on the current input value.
 4. Update the state of the `Input` widget accordingly through
 [`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html).
 
 For most cases, we recommend a `Input` within a [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-so you can save and operate on the current state of the input.
-If you are unfamiliar with the `StatefulWidget` and managing state in Flutter,
+so you can save and operate on the current value of the input.
+If you are unfamiliar with `StatefulWidget` and managing state in Flutter,
 please read our guide on
 [managing widget state](https://flutter.io/widgets-intro/#managing-state).
 
