@@ -349,8 +349,11 @@ Flutter is still being developed and is not yet at
 1.0. While lower levels of the system are stabilizing, we continue to improve
 parts of the system based on user feedback.
 
-Flutter is used inside of Google, but those apps are not yet deployed to external
-users.
+Flutter is used inside of Google, but those apps are not yet deployed to
+external users.
+
+So really, it is up to you. Please let us know if you released an app
+built with Flutter to users. We'd love to what you're building!
 
 ## I heard Apple rejects apps built with third-party frameworks, is that true? Will Apple reject my Flutter app?
 
