@@ -37,8 +37,8 @@ callback is called with the current `value` of the widget.
 
 For most cases, we recommend a `Input` within a [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
 so you can save and operate on the current value of the input.
-If you are unfamiliar with `StatefulWidget` and managing state in Flutter,
-please read our guide on
+To learn more about `StatefulWidget` and managing state in Flutter, please read
+our guide on
 [managing widget state](https://flutter.io/widgets-intro/#managing-state).
 
 ## Example
