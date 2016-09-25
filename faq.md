@@ -305,7 +305,7 @@ to expose an optimized 3D API, but right now we're focused on 2D.
 
 ## How big is the Flutter engine?
 
-As of November, 2015, we measured the size of a minimal Flutter app, bundled as
+In November 2015, we measured the size of a minimal Flutter app, bundled as
 an APK, to be approximately 8MB. For this simple app that used Material Design
 widgets, the core engine is approximately 5MB, the framework + app code is
 approximately 400kb, necessary Java code is 330k, and there is approximately
@@ -345,9 +345,15 @@ interested in contributing code, you can start by reading our
 
 ## Should I build my next production app with Flutter?
 
-As of November 2015, Flutter is still being developed heavily and is not yet at
-1.0. While lower levels of the system are changing less, we envision changing
-parts of the system based on early adopter feedback.
+Flutter is still being developed and is not yet at
+1.0. While lower levels of the system are stabilizing, we continue to improve
+parts of the system based on user feedback.
+
+Flutter is used inside of Google, but those apps are not yet deployed to
+external users.
+
+So really, it is up to you. Please let us know if you released an app
+built with Flutter to users. We'd love to what you're building!
 
 ## I heard Apple rejects apps built with third-party frameworks, is that true? Will Apple reject my Flutter app?
 
