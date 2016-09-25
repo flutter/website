@@ -9,13 +9,18 @@
     ],
     "redirects": [
       {
-        "source" : "/widgets/",
-        "destination" : "/basic-widgets/",
+        "source" : "/style-guide/",
+        "destination" : "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo",
         "type" : 301
       },
       {
         "source" : "/tutorial/",
         "destination" : "/widgets-intro/",
+        "type" : 301
+      },
+      {
+        "source" : "/widgets/",
+        "destination" : "/basic-widgets/",
         "type" : 301
       }
     ]

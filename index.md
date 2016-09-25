@@ -51,7 +51,6 @@ More resources for Flutter developers.
  - [Writing useful bug reports](bug-reports)
  - [FAQ](faq)
  - [Design principles](design-principles)
- - [Style guide](style-guide)
 
 ## Support
 
