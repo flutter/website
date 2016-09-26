@@ -8,6 +8,29 @@ permalink: /upgrading/
 We recommend tracking the `master` branch in the flutter repository, which
 updates continuously as we improve Flutter.
 
+## Specifying the Flutter SDK for your project
+
+You specify dependencies from the Flutter SDK in the `pubspec.yaml` file. For
+example, the following snippet specifies that the
+`flutter` and `flutter_test` packages use the Flutter SDK.
+
+```
+name: hello_world
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+```
+
+The `sdk: flutter` line tells the `flutter` command-line tool find the
+correct package for you.
+
+Do not use the `pub get` or `pub upgrade` commands to manage your dependencies.
+Instead, use `flutter packages get` or `flutter packages upgrade`. If you want to use
+pub manually, you can run it directly by setting the `FLUTTER_ROOT` environment variable.
+
 ## Upgrading Flutter channel and your packages
 
 To update both the Flutter SDK and your packages, use the `flutter upgrade`
