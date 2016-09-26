@@ -27,6 +27,7 @@ See these topics to understand how the Flutter framework works.
  - [Gestures in Flutter](gestures)
  - [Layouts in Flutter](layout)
  - [Animations in Flutter](animations)
+ - [Text Input](text-input)
  - [Layered design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)
  - [Rendering pipeline (video)](https://www.youtube.com/watch?v=UUfXWzp0-DU)
 
