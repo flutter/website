@@ -30,20 +30,31 @@ user input is:
 1. User taps a character in the keyboard.
 2. The
 [`OnChanged`](https://docs.flutter.io/flutter/material/Input/onChanged.html)
-callback is called with the current `value` of the widget.
+callback is called with the current
+[`value`](https://docs.flutter.io/flutter/material/Input/value.html)
+of the widget.
 3. Perform any necessary logic/validation on the current input value.
-4. Update the state of the `Input` widget accordingly through
+4. Update the state of the
+[`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
+widget accordingly through
 [`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html).
 
-For most cases, we recommend a `Input` within a [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+For most cases, we recommend that you use the
+[`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
+class within a
+[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
 so you can save and operate on the current value of the input.
-To learn more about `StatefulWidget` and managing state in Flutter, please read
-our guide on
+To learn more about
+[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+and managing state in Flutter, please read our guide on
 [managing widget state](https://flutter.io/widgets-intro/#managing-state).
 
 ## Example
 
-This example is a `StatefulWidget` that mirrors the text inside an `Input`.
+This example is a
+[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+that mirrors the text inside an
+[`Input`](https://docs.flutter.io/flutter/material/Input-class.html).
 
 ```dart
 /// [StatefulWidget] that displays what is being entered in the input
