@@ -19,10 +19,10 @@ and images.
 
 ## Specifying assets
 
-Flutter uses the `flutter.yaml` file to identify assets required by an
-app, as shown in the
-[Introduction to Flutter's Widget Framework](/widgets-intro/).
-A typical `flutter.yaml` file might include something like the following:
+Flutter uses the `flutter.yaml` file, located at the root of your
+project, to identify assets required by an app.
+
+Here is an example of declaring two assets inside `flutter.yaml`:
 
 ```yaml
 assets:
