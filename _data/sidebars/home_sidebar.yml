@@ -14,6 +14,10 @@ entries:
     external_url: http://docs.flutter.io/flutter/
     output: web
 
+  - title: Flutter Examples
+    external_url: https://github.com/flutter/flutter/tree/master/examples
+    output: web
+    
   - title: New to Flutter
     output: web
     folderitems:
