@@ -17,7 +17,7 @@ entries:
   - title: Flutter Examples
     external_url: https://github.com/flutter/flutter/tree/master/examples
     output: web
-    
+
   - title: New to Flutter
     output: web
     folderitems:
@@ -96,6 +96,10 @@ entries:
 
     - title: Handle Text Input
       url: /text-input/
+      output: web
+
+    - title: Animate Widgets
+      url: /animating-widgets/
       output: web
 
   - title: Helpful Resources

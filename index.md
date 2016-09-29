@@ -41,6 +41,7 @@ Learn how to accomplish specific development tasks with Flutter.
  - [Accessing Platform and Third-Party Services](platform-services)
  - [Reading and Writing Files](reading-writing-files)
  - [Handling Text Input](text-input)
+ - [Animating Widgets](animating-widgets)
 
 ## Helpful Resources
 
