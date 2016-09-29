@@ -22,7 +22,7 @@ and images.
 Flutter uses the `flutter.yaml` file, located at the root of your
 project, to identify assets required by an app.
 
-Here is an example of declaring two assets inside `flutter.yaml`:
+Here is an example:
 
 ```yaml
 assets:
@@ -33,6 +33,7 @@ assets:
 The `assets` section specifies files that should be included with the
 app. Each asset is identified by an explicit path (relative
 to the `flutter.yaml` file) where the asset file is located.
+The order in which the assets are declared does not matter.
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
