@@ -1,0 +1,13 @@
+.post-content img.comp-img {
+  height:150px;
+  float: left;
+  margin: 0px 15px 0px 0px;
+}
+
+div.comp-entry, div.catalog-end {
+  clear:both;
+}
+
+div.catalog-end {
+  padding-top: 20px
+}
