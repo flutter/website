@@ -1,0 +1,25 @@
+---
+layout: page
+title: Material Design widgets
+extra_css:
+  - /css/catalog.css
+sidebar: home_sidebar
+permalink: /md-catalog/
+---
+
+This page catalogs Flutter’s reference implementation of UI components from Google’s [Material Design Specification](https://material.google.com/). You can see many of the Material Design widgets in action in our [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery) demo app. For an overview of different kinds of widgets in Flutter, please take a look at the [Basic Widgets Overview](/basic-widgets/).
+
+<!-- Data for the catalog comes from catalog.csv in the _data folder -->
+{% for comp in site.data.catalog %}
+<div class="comp-entry">
+  <h2>{{comp.comp_name}}</h2>
+  <img class="comp-img" src="{{comp.img_link}}"/>
+  <p>{{comp.comp_desc}} The <a href="{{comp.widget_link}}">{{comp.widget_name}}</a> widget implements this component. {{comp.extra_html}} </p>
+  <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+%22new+{{comp.widget_name}}%22&type=Code">Sample usage</a>
+  | <a href="{{comp.comp_link}}">Design spec</a></p>
+</div>
+{% endfor %}
+
+<div class="catalog-end"></div>
+
+Again, you can see the above widgets in action in our [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery) demo app.
