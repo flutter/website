@@ -46,8 +46,8 @@ entries:
       url: /basic-widgets/
       output: web
 
-    - title: Material Design widgets
-      url: /md-catalog/
+    - title: Material design catalog
+      url: /material-design-catalog/
       output: web
 
     - title: Gestures

@@ -24,7 +24,7 @@ See these topics to quickly start building cross-platform mobile apps with Flutt
 See these topics to understand how the Flutter framework works.
 
  - [Basic widgets overview](basic-widgets)
- - [Material Design widgets](md-catalog)
+ - [Material design catalog](material-design-catalog)
  - [Gestures in Flutter](gestures)
  - [Layouts in Flutter](layout)
  - [Animations in Flutter](animations)

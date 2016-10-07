@@ -16,10 +16,10 @@ general-purpose and don't offer an opinion about the visual style of your app.
 To see all the basic widgets and related classes, check out the
 [API docs for the widgets library](http://docs.flutter.io/flutter/widgets/widgets-library.html).
 
-You may also be interested in Flutter's material design widgets.
-You can see many of the Material Design widgets in action in our
+You may also be interested in Flutter's Material Design widgets.
+You can see many of them in action in our
 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-demo app, and you can check out the [Catalog of Material Design widgets](/md-catalog) and
+demo app. To learn about Flutter's implementation of Material Design components, take a look at the [Material design catalog](/material-design-catalog) and the
 [API docs for the material widgets library](http://docs.flutter.io/flutter/material/material-library.html).
 
 Container
