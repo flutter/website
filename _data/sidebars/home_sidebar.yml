@@ -17,7 +17,7 @@ entries:
   - title: Flutter Examples
     external_url: https://github.com/flutter/flutter/tree/master/examples
     output: web
-    
+
   - title: New to Flutter
     output: web
     folderitems:
@@ -44,6 +44,10 @@ entries:
 
     - title: Basic widgets
       url: /basic-widgets/
+      output: web
+
+    - title: Material design catalog
+      url: /material-design-catalog/
       output: web
 
     - title: Gestures
