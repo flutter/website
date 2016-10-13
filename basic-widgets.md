@@ -14,18 +14,18 @@ This page describes a small subset of basic widgets available in Flutter.
 The widgets described on this page are
 general-purpose and don't offer an opinion about the visual style of your app.
 To see all the basic widgets and related classes, check out the
-[API docs for the widgets library](http://docs.flutter.io/flutter/widgets/widgets-library.html).
+[API docs for the widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html).
 
 You may also be interested in Flutter's Material Design widgets.
 You can see many of them in action in our
 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 demo app. To learn about Flutter's implementation of Material Design components, take a look at the [Material design catalog](/material-design-catalog) and the
-[API docs for the material widgets library](http://docs.flutter.io/flutter/material/material-library.html).
+[API docs for the material widgets library](https://docs.flutter.io/flutter/material/material-library.html).
 
 Container
 ---------
 
-[`Container`](http://docs.flutter.io/flutter/widgets/Container-class.html)
+[`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
 is a general-purpose widget that combines several basic widgets in
 order to make them easier to use.
 
@@ -47,10 +47,10 @@ Layout models
 
 There are two _flex_ layout models:
 
- - [`Row`](http://docs.flutter.io/flutter/widgets/Row-class.html): Layout a
+ - [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html): Layout a
    list of child widgets in the horizontal direction.
 
- - [`Column`](http://docs.flutter.io/flutter/widgets/Column-class.html): Layout
+ - [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html): Layout
    a list of child widgets in the vertical direction.
 
 The direction along which the widgets are laid out is called the
@@ -69,12 +69,12 @@ The `crossAxisAlignment` property determines how children are positioned in
 the cross direction. The `mainAxisAlignment` property determines how the
 remaining free space (if any) in the main direction is allocated.
 
- - [`Flexible`](http://docs.flutter.io/flutter/widgets/Flexible-class.html):
+ - [`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html):
    Mark this child as being flexible with the given `flex` ratio.
 
 There is also a stacking layout model:
 
- - [`Stack`](http://docs.flutter.io/flutter/widgets/Stack-class.html): Layout a
+ - [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html): Layout a
    list of child widgets on top of each other from back to
    front. Each child of a `Stack` widget is either *positioned* or
    *non-positioned*. The stack sizes itself to contain all the
@@ -82,7 +82,7 @@ There is also a stacking layout model:
    stack. The *positioned* children are then located relative to the stack
    according to their `top`, `right`, `bottom`, and `left` properties.
 
-    - [`Positioned`](http://docs.flutter.io/flutter/widgets/Positioned-class.html):
+    - [`Positioned`](https://docs.flutter.io/flutter/widgets/Positioned-class.html):
       Mark this child as *positioned*. If the `top` property is
       non-null, the top edge of this child will be positioned `top` layout units
       from the top of the stack widget. The `right`, `bottom`, and `right`
@@ -95,43 +95,43 @@ There is also a stacking layout model:
 Positioning and sizing
 ----------------------
 
-[`Padding`](http://docs.flutter.io/flutter/widgets/Padding-class.html)
+[`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html)
 : Surround the child with empty space on the top, right, bottom, and
   left according to the given `EdgeInsets`.
 
-[`Center`](http://docs.flutter.io/flutter/widgets/Center-class.html)
+[`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html)
 : Center the child widget both horizontally and vertically within the
  space occupied by this widget.
 
-[`SizedBox`](http://docs.flutter.io/flutter/widgets/SizedBox-class.html)
+[`SizedBox`](https://docs.flutter.io/flutter/widgets/SizedBox-class.html)
 : Force the child widget to have a particular `width` or `height`
  (or both).
 
-[`ConstrainedBox`](http://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html)
+[`ConstrainedBox`](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html)
 : Apply the given `BoxConstraints` to the child widget as
   additional constraints during layout. This widget is a generalization of
   `SizedBox`.
 
-[`AspectRatio`](http://docs.flutter.io/flutter/widgets/AspectRatio-class.html)
+[`AspectRatio`](https://docs.flutter.io/flutter/widgets/AspectRatio-class.html)
 : Force the child widget's width and height to have the given
   `aspectRatio`, expressed as a ratio of width to height.
 
-[`Transform`](http://docs.flutter.io/flutter/widgets/Transform-class.html)
+[`Transform`](https://docs.flutter.io/flutter/widgets/Transform-class.html)
 : Apply the given matrix to the child before painting the child.
   This widget is useful for adjusting the visual size and position of a widget
   without affecting layout.
 
-[`Viewport`](http://docs.flutter.io/flutter/widgets/Viewport-class.html)
+[`Viewport`](https://docs.flutter.io/flutter/widgets/Viewport-class.html)
 : Layout the child widget at a larger size than fits in this widget
   and render only the portion of the child that is visually contained by this
   widget. When rendering, add `offset` to the child's vertical position to
   control which part of the child is visible through the viewport.
   TODO(abarth): Add support for horizontal viewporting.
 
-[`Align`](http://docs.flutter.io/flutter/widgets/Align-class.html)
+[`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html)
 : Aligns its child box within itself.
 
-[`Baseline`](http://docs.flutter.io/flutter/widgets/Baseline-class.html)
+[`Baseline`](https://docs.flutter.io/flutter/widgets/Baseline-class.html)
 : If the child widget has a `TextBaseline` of the given
   `baselineType`, position the child such that its baseline is at `baseline`
   layout units from the top of this widget.
@@ -139,36 +139,36 @@ Positioning and sizing
 Painting effects
 ----------------
 
-[`Opacity`](http://docs.flutter.io/flutter/widgets/Opacity-class.html)
+[`Opacity`](https://docs.flutter.io/flutter/widgets/Opacity-class.html)
 : Adjusts the opacity of the child widget, making the child partially
   transparent. The amount of transparency is controlled by `opacity`, with 0.0
   0.0 is fully transparent and 1.0 is fully opaque.
 
-[`ClipRect`](http://docs.flutter.io/flutter/widgets/ClipRect-class.html)
+[`ClipRect`](https://docs.flutter.io/flutter/widgets/ClipRect-class.html)
 : Apply a rectangular clip to the child widget. The dimensions of
   the clip match the dimensions of the child.
 
-[`ClipRRect`](http://docs.flutter.io/flutter/widgets/ClipRRect-class.html)
+[`ClipRRect`](https://docs.flutter.io/flutter/widgets/ClipRRect-class.html)
 : Apply a rounded-rect clip the child widget. The bounds of the
   clip match the bounds of the child widget with `xRadius` and `yRadius`
   controlling the x and y radius of the rounded corner, respectively.
 
-[`ClipOval`](http://docs.flutter.io/flutter/widgets/ClipOval-class.html)
+[`ClipOval`](https://docs.flutter.io/flutter/widgets/ClipOval-class.html)
 : Apply an oval clip to the child widget. The oval will be
   axis-aligned, with its horizontal and vertical bounds matching the bounds of
   the child widget.
 
-[`DecoratedBox`](http://docs.flutter.io/flutter/widgets/DecoratedBox-class.html)
+[`DecoratedBox`](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html)
 : Draw the given `BoxDecoration` surrounding the child widget.
 
-[`ColorFilter`](http://docs.flutter.io/flutter/dart-ui/ColorFilter-class.html)
+[`ColorFilter`](https://docs.flutter.io/flutter/dart-ui/ColorFilter-class.html)
 : Applies a color filter to the child widget, for example to
   tint the child a given color.
 
-[`CustomPaint`](http://docs.flutter.io/flutter/widgets/CustomPaint-class.html)
+[`CustomPaint`](https://docs.flutter.io/flutter/widgets/CustomPaint-class.html)
 : Calls `callback` during the paint phase with the current
-  [`Canvas`](http://docs.flutter.io/flutter/dart-ui/Canvas-class.html) and
-  [`Size`](http://docs.flutter.io/flutter/dart-ui/Size-class.html). The widget occupies the region of the canvas starting at
+  [`Canvas`](https://docs.flutter.io/flutter/dart-ui/Canvas-class.html) and
+  [`Size`](https://docs.flutter.io/flutter/dart-ui/Size-class.html). The widget occupies the region of the canvas starting at
   the origin (i.e., `x = 0.0` and `y = 0.0`) and of the given size (i.e.,
   `x = size.width` and `y = size.height`).
 

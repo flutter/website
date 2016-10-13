@@ -28,14 +28,14 @@ easy for you to learn, too.
 [Futures Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
 : Learn how to use Futures, which used extensively in the Dart core libraries.
   Futures can be used instead of one-time callbacks. For example,
-  the [http library](http://docs.flutter.io/flutter/http/http-library.html)
+  the [http library](https://docs.flutter.io/flutter/http/http-library.html)
   uses Futures when responses are ready.
 
 [Streams Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
 : Learn how to use Streams, which are used extensively in the Dart core
   libraries. Streams can be used instead repeating callbacks.
   For example, the
-  [File class](http://docs.flutter.io/flutter/dart-io/File-class.html)
+  [File class](https://docs.flutter.io/flutter/dart-io/File-class.html)
   uses Streams to read bytes from a file.
 
 Want to learn more? Check out one of the
