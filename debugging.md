@@ -109,7 +109,7 @@ current state to the console (using `debugPrint`).
 ### Widget layer
 
 To dump the state of the Widgets library, call
-[`debugDumpApp()`](http://docs.flutter.io/flutter/widgets/debugDumpApp.html).
+[`debugDumpApp()`](https://docs.flutter.io/flutter/widgets/debugDumpApp.html).
 You can call this more or less any time that the application is not in
 the middle of running a build phase (i.e. anywhere not inside a
 `build()` method), so long as the application has built at least once
@@ -222,16 +222,16 @@ you call `toStringDeep` on the root of the widget tree.) You'll see a
 lot of widgets in there that don't appear in your application's
 source, because they are inserted by the framework's widgets' build
 functions. For example,
-[`InkFeatures`](http://docs.flutter.io/flutter/material/InkFeatures-class.html)
+[`InkFeatures`](https://docs.flutter.io/flutter/material/InkFeatures-class.html)
 is an implementation detail of the
-[`Material`](http://docs.flutter.io/flutter/material/Material-class.html)
+[`Material`](https://docs.flutter.io/flutter/material/Material-class.html)
 widget.
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
-[`FlatButton`](http://docs.flutter.io/flutter/material/FlatButton-class.html)
+[`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)
 object calling
-[`setState()`](http://docs.flutter.io/flutter/widgets/State/setState.html)
+[`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html)
 and thus marking itself dirty. That is why if you look at the dump you
 will see that specific object marked "dirty". You can also see what
 gesture listeners have been registered; in this case, a single
@@ -240,7 +240,7 @@ GestureDetector is listed, and it is listening only to a "tap" gesture
 function).
 
 If you write your own widgets, you can add information by overriding
-[`debugFillDescription()`](http://docs.flutter.io/flutter/material/Widget/debugFillDescription.html).
+[`debugFillDescription()`](https://docs.flutter.io/flutter/material/Widget/debugFillDescription.html).
 Add strings to the method's argument, and call the superclass method.
 This function is what the `toString` method uses to fill in the
 widget's description.
@@ -250,11 +250,11 @@ widget's description.
 If you are trying to debug a layout issue, then the Widgets layer's
 tree may be insufficiently detailed. In that case, you can dump the
 rendering tree by calling
-[`debugDumpRenderTree()`](http://docs.flutter.io/flutter/rendering/debugDumpRenderTree.html).
+[`debugDumpRenderTree()`](https://docs.flutter.io/flutter/rendering/debugDumpRenderTree.html).
 As with `debugDumpApp()`, you can call this more or less any time
 except during a layout or paint phase. As a general rule, calling it
 from a [frame
-callback](http://docs.flutter.io/flutter/scheduler/Scheduler/addPersistentFrameCallback.html)
+callback](https://docs.flutter.io/flutter/scheduler/Scheduler/addPersistentFrameCallback.html)
 or an event handler is the best solution.
 
 To call `debugDumpRenderTree()`, you need to add `import
@@ -459,29 +459,29 @@ sizes flow back up.
 
 For example, in the dump above you can see that the window size,
 `Size(411.4, 683.4)`, is used to force all the boxes down to the
-[`RenderPositionedBox`](http://docs.flutter.io/flutter/rendering/RenderPositionedBox-class.html)
+[`RenderPositionedBox`](https://docs.flutter.io/flutter/rendering/RenderPositionedBox-class.html)
 to be the size of the screen, with constraints of
 `BoxConstraints(w=411.4, h=683.4)`. The `RenderPositionedBox`, which
 the dump says was created by a
-[`Center`](http://docs.flutter.io/flutter/widgets/Center-class.html)
+[`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html)
 widget (as described by the `creator` field), sets its child's
 constraints to a loose version of this: `BoxConstraints(0.0<=w<=411.4,
 0.0<=h<=683.4)`. The child, a
-[`RenderPadding`](http://docs.flutter.io/flutter/rendering/RenderPadding-class.html),
+[`RenderPadding`](https://docs.flutter.io/flutter/rendering/RenderPadding-class.html),
 further inserts these constraints to ensure there is room for the
 padding, and thus the
-[`RenderConstrainedBox`](http://docs.flutter.io/flutter/rendering/RenderConstrainedBox-class.html)
+[`RenderConstrainedBox`](https://docs.flutter.io/flutter/rendering/RenderConstrainedBox-class.html)
 has a loose constraint of `BoxConstraints(0.0<=w<=395.4,
 0.0<=h<=667.4)`. This object, which the `creator` field tells us is
 probably part of the
-[`FlatButton`](http://docs.flutter.io/flutter/material/FlatButton-class.html)'s
+[`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)'s
 definition, sets a minimum width of 88 pixels on its contents and a
 specific height of 36.0. (This is the `FlatButton` class implementing
 the Material Design rules regarding button dimensions.)
 
 The inner-most `RenderPositionedBox` loosens the constraints again,
 this time to center the text within the button. The
-[`RenderParagraph`](http://docs.flutter.io/flutter/rendering/RenderParagraph-class.html)
+[`RenderParagraph`](https://docs.flutter.io/flutter/rendering/RenderParagraph-class.html)
 picks its size based on its contents. If you now follow the sizes back
 up the chain, you'll see how the text's size is what influences the
 width of all the boxes that form the button, as they all take their
@@ -496,13 +496,13 @@ dirtied because they might be affected by the new dimensions.
 
 If you write your own render objects, you can add information to the
 dump by overriding
-[`debugDescribeSettings()`](http://docs.flutter.io/flutter/rendering/RenderObject/debugDescribeSettings.html).
+[`debugDescribeSettings()`](https://docs.flutter.io/flutter/rendering/RenderObject/debugDescribeSettings.html).
 Add strings to the method's argument, and call the superclass method.
 
 ### Layers
 
 If you are trying to debug a compositing issue, you can use
-[`debugDumpLayerTree()`](http://docs.flutter.io/flutter/rendering/debugDumpLayerTree.html).
+[`debugDumpLayerTree()`](https://docs.flutter.io/flutter/rendering/debugDumpLayerTree.html).
 For the example above, it would output:
 
 ```
@@ -538,7 +538,7 @@ used to reduce how much needs to be repainted.
 
 You can also obtain a dump of the Semantics tree (the tree presented
 to the system accessibility APIs) using
-[`debugDumpSemanticsTree()`](http://docs.flutter.io/flutter/rendering/debugDumpSemanticsTree.html).
+[`debugDumpSemanticsTree()`](https://docs.flutter.io/flutter/rendering/debugDumpSemanticsTree.html).
 To use this, you have to have first enable accessibility, e.g. by
 enabling a system accessibility tool or the `SemanticsDebugger`
 (discussed below).
@@ -558,7 +558,7 @@ I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTap
 ## Visual debugging
 
 You can also debug a layout problem visually, by setting
-[`debugPaintSizeEnabled`](http://docs.flutter.io/flutter/rendering/debugPaintSizeEnabled.html)
+[`debugPaintSizeEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintSizeEnabled.html)
 to `true`. This is a boolean from the `rendering` library. It can be
 enabled at any time and affects all painting while it is true. The
 easiest way to set it is at the top of your `void main()` entry point.
@@ -570,13 +570,13 @@ is shown with yellow arrows, and spacers (from widgets like
 `Container` when they have no child) are shown in gray.
 
 The
-[`debugPaintBaselinesEnabled`](http://docs.flutter.io/flutter/rendering/debugPaintBaselinesEnabled.html)
+[`debugPaintBaselinesEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintBaselinesEnabled.html)
 does something similar but for objects with baselines. The alphabetic
 baseline is shown in bright green and the ideographic baseline in
 orange.
 
 The
-[`debugPaintPointersEnabled`](http://docs.flutter.io/flutter/rendering/debugPaintPointersEnabled.html)
+[`debugPaintPointersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintPointersEnabled.html)
 flag turns on a special mode whereby any objects that are being tapped
 get highlighted in teal. This can help you determine whether an object
 is somehow failing to correctly hit test (which might happen if, for
@@ -585,9 +585,9 @@ being considered for hit testing in the first place).
 
 If you're trying to debug compositor layers, for example to determine
 whether and where to add `RepaintBoundary` widgets, you can use the
-[`debugPaintLayerBordersEnabled`](http://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
+[`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
 flag, which outlines each layer's bounds in orange, or the
-[`debugRepaintRainbowEnabled`](http://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)
+[`debugRepaintRainbowEnabled`](https://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)
 flag, which causes layers to be overlayed with a rotating set of
 colors whenever they are repainted.
 
@@ -599,7 +599,7 @@ checked mode.
 
 The easiest way to debug animations is to slow them way down. To do
 that, set the
-[`timeDilation`](http://docs.flutter.io/flutter/scheduler/timeDilation.html)
+[`timeDilation`](https://docs.flutter.io/flutter/scheduler/timeDilation.html)
 variable (from the `scheduler` library) to a number greater than 1.0,
 for instance, 50.0. It's best to only set this once on app startup. If
 you change it on the fly, especially if you reduce it while animations
@@ -611,9 +611,9 @@ interfere with your efforts.
 
 To see why your application is causing relayouts or repaints, you can
 set the
-[`debugPrintMarkNeedsLayoutStacks`](http://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)
+[`debugPrintMarkNeedsLayoutStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)
 and
-[`debugPrintMarkNeedsPaintStacks`](http://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)
+[`debugPrintMarkNeedsPaintStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)
 flags respectively. These will log a stack trace to the console any
 time a render box is asked to relayout and repaint. You can use the
 `debugPrintStack()` method from the `services` library to print your
@@ -651,14 +651,14 @@ For example:
 
 To get a graphical view of the performance of your application, set
 the `showPerformanceOverlay` argument of the
-[`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
+[`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
 constructor to true. The
-[`WidgetsApp`](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+[`WidgetsApp`](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
 constructor has a similar argument. (If you're not using `MaterialApp`
 or `WidgetsApp`, you can get the same effect by wrapping your
 application in a stack and putting a widget on your stack that was
 created by calling
-[`new PerformanceOverlay.allEnabled()`](http://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
+[`new PerformanceOverlay.allEnabled()`](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
 
 This will show two graphs. The top one is the time spent by the GPU
 thread, the bottom one is the time spent by the CPU thread. The white
@@ -681,11 +681,11 @@ it can be helpful to overlay a [Material design baseline
 grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
-constructor](http://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
+constructor](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
 has a `debugShowGrid` argument which, when set to `true` in checked
 mode, will overlay such a grid.
 
 You can also overlay such a grid on non-Material applications by using
 the
-[`GridPaper`](http://docs.flutter.io/flutter/widgets/GridPaper-class.html)
+[`GridPaper`](https://docs.flutter.io/flutter/widgets/GridPaper-class.html)
 widget directly.

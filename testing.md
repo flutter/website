@@ -91,10 +91,10 @@ Run `flutter test test/unit_test.dart`.
 
 You implement a widget test in a similar way as a unit test. To perform an
 interaction with a widget in your test, use the
-[`WidgetTester`](http://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
+[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
 utility that Flutter provides. For example, you can send tap and scroll
 gestures. You can also use
-[`WidgetTester`](http://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
+[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
 to find child widgets in the widget tree, read text, and verify that the values
 of widget properties are correct.
 
@@ -145,7 +145,7 @@ void main() {
 
 Run `flutter test test/widget_test.dart`.
 
-Check out [`package:flutter_test` API](http://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
+Check out [`package:flutter_test` API](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
 for all the utilities available for widget testing.
 
 
@@ -173,7 +173,7 @@ and APIs, collectively referred to as _Flutter Driver_, to do just that.
 Flutter Driver is:
 
 * a command-line tool `flutter drive`
-* a package `package:flutter_driver` ([API](http://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html))
+* a package `package:flutter_driver` ([API](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html))
 
 Together, the two allow you to:
 

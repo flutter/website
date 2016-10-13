@@ -11,7 +11,7 @@ entries:
     output: web
 
   - title: API Reference
-    external_url: http://docs.flutter.io/flutter/
+    external_url: https://docs.flutter.io/flutter/
     output: web
 
   - title: Flutter Examples

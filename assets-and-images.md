@@ -71,7 +71,7 @@ different locales or regions, reading directions, etc.
 ## Loading assets
 
 Your app can access its assets through an
-[`AssetBundle`](http://docs.flutter.io/flutter/services/AssetBundle-class.html)
+[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html)
 object.
 
 The two main methods on an asset bundle allow you to load a string/text asset
@@ -83,7 +83,7 @@ file at build time.
 ### Loading text assets
 
 Each Flutter app has a
-[`rootBundle`](http://docs.flutter.io/flutter/services/rootBundle.html)
+[`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html)
 object
 for easy access to the main asset bundle. You can use the `rootBundle`
 from `package:flutter/services.dart`
@@ -108,7 +108,7 @@ pixel ratio.
 
 #### Declaring resolution-aware image assets
 
-[`AssetImage`](http://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/widgets/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
@@ -165,27 +165,27 @@ Widget build(BuildContext context) {
 ```
 
 The way this works is through an object called
-[`AssetVendor`](http://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
+[`AssetVendor`](https://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
 established at the top of the build tree. AssetVendor replaces the default asset
 bundle, so anything using the default asset bundle will inherit resolution
 awareness when loading images.  (If you work with some of the lower level
 classes, like
-[`ImageResource`](http://docs.flutter.io/flutter/services/ImageResource-class.html)
+[`ImageResource`](https://docs.flutter.io/flutter/services/ImageResource-class.html)
 or
-[`ImageCache`](http://docs.flutter.io/flutter/services/ImageCache-class.html),
+[`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
 #### Caveats
 
 * If you're not using
-  [`MaterialApp`](http://docs.flutter.io/flutter/material/MaterialApp-class.html)
+  [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
   or
-  [`WidgetsApp`](http://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+  [`WidgetsApp`](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
   in your app, and you want to use resolution awareness, you'll need to
   establish your own `AssetVendor` in your build logic.
 * If you want establish a your own
-  [`MediaQuery`](http://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
-  [`DefaultAssetBundle`](http://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
+  [`MediaQuery`](https://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
+  [`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
   below the root of the widget hierarchy, the root-level AssetVendor won't be
   aware of the change.  If you want resolution awareness with the new MediaQuery
   or DefaultAssetBundle you specify, you'll need to create an AssetVendor at

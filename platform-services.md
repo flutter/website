@@ -20,9 +20,9 @@ when building your app using the Flutter framework.
 + **First-party services for Flutter:** For frequently used services, the Flutter SDK provides
 first-party APIs to access system services across platforms. You can call these APIs
 directly in your Flutter app by importing the
-['flutter/services'](http://docs.flutter.io/flutter/services/services-library.html) package.
+['flutter/services'](https://docs.flutter.io/flutter/services/services-library.html) package.
 + **Platform and Third-party Services for Flutter:** Flutter provides the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class which
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class which
 allows your Flutter user interface (UI) code to asynchronously exchange application-specific
 messages with the portions of your app that run on iOS or Android devices. This flexible approach
 lets you invoke platform-specific and third-party APIs on iOS and Android devices, while
@@ -30,19 +30,19 @@ keeping a common UI codebase.
 
 ## Understand how host message passing works {#understand-how-host-message-passing-works}
 
-You can use the [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+You can use the [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
 class in the Flutter UI portion of your app to send messages to a *host* (that is, the iOS or
-Android portion of your app that uses a shared UI codebase built with Flutter). The [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class lets you implement your own integrations with
+Android portion of your app that uses a shared UI codebase built with Flutter). The [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class lets you implement your own integrations with
 platform-specific services; you can send a request message to the host to call a
 platform API then asynchronously retrieve the service data via a response message
 from that host.
 
 Your message must consist of string value. Message passing with the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class is
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class is
 asynchronous, bi-directional, and supports optional reply routing.
 
 The services that you invoke using the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class must return
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class must return
 non-graphical, data-only information. Examples include:
 
 *   Geolocation
@@ -51,11 +51,11 @@ non-graphical, data-only information. Examples include:
 *   Network information
 *   Sensors
 
-You can also use the [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+You can also use the [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
 class to invoke APIs from third-party SDKs that run on iOS and Android devices.
 
 To communicate between the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class and
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class and
 platform-specific APIs in the host, you must add the following Flutter components into
 the host's view hierarchy.
 
@@ -73,7 +73,7 @@ follow these steps:
 APIs on iOS or Android, you can download the [`hello_services`](https://github.com/flutter/flutter/tree/master/examples/hello_services) example and use it as the
 starter code to build your own service integration. This reference example demonstrates how to
 connect to the geolocation service within an iOS or Android application by using the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
 class.
 
     The following diagram shows how the `hello_services` app accesses platform-specific
@@ -86,11 +86,11 @@ services on iOS and Android.
     The Flutter UI and host-specific components are related as follows:
 
     * In the Flutter UI portion of the app, the [main app](https://github.com/flutter/flutter/blob/master/examples/hello_services/lib/main.dart) imports the
-[`flutter/services.dart`](http://docs.flutter.io/flutter/services/services-library.html)
+[`flutter/services.dart`](https://docs.flutter.io/flutter/services/services-library.html)
 package, which defines the
-[`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class. In the
-[`State`](http://docs.flutter.io/flutter/material/State-class.html) class, the app makes
-a service request by calling the static methods of the [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html) class. If the service request is successful, the app
+[`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class. In the
+[`State`](https://docs.flutter.io/flutter/material/State-class.html) class, the app makes
+a service request by calling the static methods of the [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html) class. If the service request is successful, the app
 updates the UI accordingly with the data that the service returns.
     * On the iOS portion of the app, the [`AppDelagate`](https://github.com/flutter/flutter/blob/master/examples/hello_services/ios/Runner/AppDelegate.m) class sets an
 instance of [`FlutterViewController`](https://github.com/flutter/engine/blob/master/sky/shell/platform/ios/framework/Headers/FlutterViewController.h)
@@ -107,7 +107,7 @@ class, the Android portion of the app must specify the flutter gradle plugin
 dependency in its
 [`build.gradle`](https://github.com/flutter/flutter/blob/master/examples/hello_services/android/app/build.gradle) file.
 
-2. **Establish the service bindings.** The [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+2. **Establish the service bindings.** The [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
 class uses the [`MojoShell`](https://docs.flutter.io/flutter/services/MojoShell-class.html)
 class to establish connections with services. In order to set up the
 [`MojoShell`](https://docs.flutter.io/flutter/services/MojoShell-class.html)
@@ -117,7 +117,7 @@ object, you must first invoke the
 method in your `main()` function.
 
    After initializing the service bindings, you can register a callback for receiving
-   messages through the [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+   messages through the [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
    class by calling the
    [`addJSONMessageHandler()`](https://docs.flutter.io/flutter/services/HostMessages/addJSONMessageHandler.html)
    or [`addMessageHandler()`](https://docs.flutter.io/flutter/services/HostMessages/addMessageHandler.html)
@@ -151,8 +151,8 @@ method in your `main()` function.
    ```
 
 3. **Add a service invocation call in the Flutter UI.** In your
-[`State`](http://docs.flutter.io/flutter/material/State-class.html) class, use
-the [`HostMessages`](http://docs.flutter.io/flutter/services/HostMessages-class.html)
+[`State`](https://docs.flutter.io/flutter/material/State-class.html) class, use
+the [`HostMessages`](https://docs.flutter.io/flutter/services/HostMessages-class.html)
 class to call a target service on the host. You'll typically peform this
 operation when the user performs a UI interaction.
 

@@ -20,13 +20,13 @@ which describe semantic actions that consist of one or more pointer movements.
 Pointers represent raw data about the user's interaction with the device's
 screen.  There are four types of pointer events:
 
-- [`PointerDownEvent`](http://docs.flutter.io/flutter/gestures/PointerDownEvent-class.html)
+- [`PointerDownEvent`](https://docs.flutter.io/flutter/gestures/PointerDownEvent-class.html)
   The pointer has contacted the screen at a particular location.
-- [`PointerMoveEvent`](http://docs.flutter.io/flutter/gestures/PointerMoveEvent-class.html)
+- [`PointerMoveEvent`](https://docs.flutter.io/flutter/gestures/PointerMoveEvent-class.html)
   The pointer has moved from one location on the screen to another.
-- [`PointerUpEvent`](http://docs.flutter.io/flutter/gestures/PointerUpEvent-class.html)
+- [`PointerUpEvent`](https://docs.flutter.io/flutter/gestures/PointerUpEvent-class.html)
   The pointer has stopped contacting the screen.
-- [`PointerCancelEvent`](http://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
+- [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
   Input from this pointer is no longer directed towards this app.
 
 On pointer down, the framework does a _hit test_ on your app to determine what
@@ -80,7 +80,7 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
 At a given location on screen, there might be multiple gesture detectors. All
 of these gesture detectors listen to the stream of pointer events as they flow
 past and attempt to recognize specific gestures. The
-[`GestureDetector`](http://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
 widget decides which gestures to attempt to recognize based on which of its
 callbacks are non-null.
 
