@@ -68,19 +68,70 @@ The Dart plugin has performs code analysis that enables:
 
 ### Selecting a target
 
+When a Flutter project is open in IntelliJ, you should see a set of Flutter
+specific buttons on the right-hand side of the toolbar.
+
+* Locate the **Flutter Device Selection** drop-down button. This will show a
+ list of available targets. The current selection determines which target your
+ app will be started on.
+
+* When you connect devices, or start simulators, additional entries will appear.
+
 ### Run app in release mode
+
+* Click the **Play icon** in the toolbar, or invoke **Run>Run**
+* The bottom **Run** pane will show logs output
 
 ### Run app in debug mode
 
-### Viewing logs
+* If desired, set breakpoints in your source code
+* Click the **(De)bug) icon** in the toolbar, or invoke **Run>Debug**
+* The bottom **Debugger** pane will show Stack Frames and Variables
+* The bottom **Console** pane will show detailed logs output
+* Debugging is based on a default launch configuration. To customize this, click
+ the drop-down button to the right of the device selector, and select **Edit configuration**
 
 ### Advanced debugging with Observatory
 
+Observatory is an additional debugging and profiling tool presented with an
+html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
+
+To open Observatory:
+
+* Run your app in debug mode
+
+* In the Debug panel at the bottom, click the **Arrow icon** ('Open Observatory')
+
 ## Fast edit and refresh development cycle
 
-### Performing a 'hot reload'
+Flutter offers a best-in-class developer cycle enabling you to see the effect of
+your changes near instantly!
 
-### Performing a 'full application restart'
+* Run your app in debug mode
+
+* Make desired changes in your source code (without stopping the debugger!)
+
+* In the Debug panel at the bottom, click the **Hot Reload button** (shown with
+ an icon containing a lightning bolt, and a play symbol)
+
+### 'Hot Reloads' vs 'Full Application Restarts'
+
+Hot Reload works by injecting updated source code files into the running Dart VM
+(Virtual Machine). This includes not only adding new classes, but also adding
+methods and fields to existing classes, and changing existing functions. A few
+types of code changes cannot be hot reloaded though:
+
+* Global variable initializers
+
+* Static field initializers
+
+* The `main()` method of the app
+
+For these changes you can fully restart your application, without having to end
+your debugging session:
+
+* In the Debug panel at the bottom, click the **Full Application Restart button**
+(shown with an icon containing a circular arrow)
 
 ## Troubleshooting
 
