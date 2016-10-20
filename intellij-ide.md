@@ -53,9 +53,16 @@ files:
 
 ## Editing code, and viewing code problems
 
-### Core editing experience
+The Dart plugin has performs code analysis that enables:
 
-### Dart Analysis and source code problems
+* Syntax highlighting
+
+* Code completions based on rich type analysis
+
+* Navigating to type declarations (**Navigate>Declaration**), and finding type
+ usages (**Edit>Find>Find Usages**)
+
+* Viewing all current source code problems (**View>Tool Windows>Dart Analysis**)
 
 ## Running and Debugging
 
