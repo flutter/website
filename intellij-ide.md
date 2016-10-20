@@ -15,7 +15,7 @@ in the IntelliJ IDE.
 
 ### Initial installation and setup
 
-### Upgrading the plug-in
+### Updating the plug-in<a name="updating"/>
 
 ## Creating projects
 
@@ -49,8 +49,28 @@ in the IntelliJ IDE.
 
 ## Troubleshooting
 
-### Known issues
+### Known issues and feedback
 
-### View PC flutter configuration
+Important known issues that may impact your experience are documented in the
+[Flutter plug-in
+README](https://github.com/flutter/flutter-intellij/blob/master/README.md) file.
 
-### File issues and request
+All known bugs are tracked in the issue trackers:
+
+  * Flutter plug-in: [GitHub issue
+   tracker](https://github.com/flutter/flutter-intellij/issues)
+
+  * Dart plug-in: [JetBrains
+   YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved)
+
+We very much welcome feedback, both on bugs/issues and feature requests. Prior
+to filing new issues, please:
+
+  * do a quick search in the issue trackers to see if the issue is already
+   tracked.
+
+  * make sure you have [updated](#updating) to the most recent version of the
+   plug-in.
+
+When filing new issues, please include the output of [`flutter
+doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
