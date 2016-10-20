@@ -25,7 +25,7 @@ for text)
 framework)
 * a set of Material Design widgets (optional, you can bring-your-own
 widgets)
-* command-line tools and a plugin for Atom
+* command-line tools and a plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ## What makes Flutter unique?
 
@@ -287,16 +287,8 @@ possible to create your own set of widgets using our base classes.
 
 ## Does Flutter work with any editors or IDEs?
 
-We are building a
-[Flutter plugin for Atom](https://atom.io/packages/dartlang). Today, it
-can syntax highlight, code
-complete, refactor, launch apps, create new apps from a template, show type
-hierarchies, jump to definition, and more.
-
-There is also a supported
-[Dart plugin for JetBrains editors](https://plugins.jetbrains.com/plugin/6351)
-like IntelliJ and WebStorm, though this plugin does not have any specific
-Flutter features.
+We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
+enabling [fully integrated development experience for Flutter](/intellij-ide/).
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 
@@ -320,8 +312,9 @@ a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by using either `--profile` or `--release`
 flag to `flutter run`.
 
-If you are using the Flutter plugin for Atom, you can disable Slow Mode by selecting
-either profile or release build configuration.  
+If you are using the Flutter plugin for IntelliJ, you can disable Slow Mode by
+using the `Run>Run` action rather than `Run>Debug`.
+
 
 ## Where can I get support?
 

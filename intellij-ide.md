@@ -5,8 +5,8 @@ sidebar: home_sidebar
 permalink: /intellij-ide/
 ---
 
-Our custom IntelliJ plugins provides a fully integrated development experience
-in the IntelliJ IDE.
+Our custom [IntelliJ IDEA](https://www.jetbrains.com/idea/) plugins provides a
+fully integrated development experience in the IntelliJ IDE.
 
 * TOC Placeholder
 {:toc}
