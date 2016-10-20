@@ -23,16 +23,6 @@ in the IntelliJ IDE.
 
 ### Creating a new projects from existing source code
 
-
-<!-- import 'dart:developer'; -->
-<!-- skip -->
-```dart
-void someFunction(double offset) {
-  debugger(when: offset > 30.0);
-  // ...
-}
-```
-
 ## Editing code, and viewing code problems
 
 ### Core editing experience
