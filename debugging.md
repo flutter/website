@@ -29,7 +29,7 @@ problems.
 ## Dart Observatory (statement-level single-stepping debugger and profiler)
 
 If you started your application on an Android device using `flutter
-start`, then, while it is running, you can open the Web page at
+run`, then, while it is running, you can open the Web page at
 [http://localhost:8181/](http://localhost:8181/) to connect to your
 application directly with a statement-level single-stepping debugger.
 If you're using Atom, you can also debug your application using the
@@ -41,7 +41,7 @@ information on Observatory, see
 
 If you use Observatory for profiling, make sure to run your
 application in release mode, by passing `--no-checked` to the `flutter
-start` command. Otherwise, the main thing that will appear on your
+run` command. Otherwise, the main thing that will appear on your
 profile will be the checked-mode asserts verifying the framework's
 various invariants (see "Checked mode assertions" below).
 
