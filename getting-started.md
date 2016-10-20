@@ -49,14 +49,16 @@ contains the `pubspec.yaml` file for your project).
   $ flutter run
   ```
 
-Alternatively, if you are using the [Atom editor](https://atom.io/) with the
-[Flutter package](https://atom.io/packages/flutter), you can start your Flutter app by selecting
-the `/lib/main.dart` file in the project and pressing the Run App shortcut in the main editor
-screen. The shortcut depends on the operating system of the development machine you are using:
+Alternatively, if you are using the [IntelliJ
+IDEA](https://www.jetbrains.com/idea/) IDE with the [Flutter
+plugins](/setup/#plugins), you can start your Flutter app from there:
 
-* **Linux**: `Ctrl+R`
-* **Mac**: `Command+R`
-
+1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
+**File>New>Project...** from the main IDE window
+1. Select **Flutter** in the menu, and click **Next**
+1. Under **Project location** enter, or browse to, the directory holding your new Flutter app
+1. Click **Finish**
+1. Click the **(De)bug icon** in the toolbar, or invoke the menu item Run>Debug
 
 If everything works, you should see your starter app on your device or simulator.
 

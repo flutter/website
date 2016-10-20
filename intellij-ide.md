@@ -13,9 +13,18 @@ in the IntelliJ IDE.
 
 ## Installation and setup
 
-### Initial installation and setup
+Please follow the [Flutter setup](/setup/) instructions to install IntelliJ and
+the Dart and Flutter plugins.
 
-### Updating the plug-in<a name="updating"/>
+### Updating the plugins<a name="updating"/>
+
+Updates to the plugins will be shipped on a regular basis. You should get
+prompted in IntelliJ when an update is available.
+
+To check for updates manually:
+
+1. Open preferences (**IntelliJ IDEA>Check for Updates...** on macOS, **Help>Check for Updates...** on Linux)
+1. If `dart` or `flutter-intellij` are listed, update them
 
 ## Creating projects
 
@@ -52,15 +61,15 @@ in the IntelliJ IDE.
 ### Known issues and feedback
 
 Important known issues that may impact your experience are documented in the
-[Flutter plug-in
+[Flutter plugin
 README](https://github.com/flutter/flutter-intellij/blob/master/README.md) file.
 
 All known bugs are tracked in the issue trackers:
 
-  * Flutter plug-in: [GitHub issue
+  * Flutter plugin: [GitHub issue
    tracker](https://github.com/flutter/flutter-intellij/issues)
 
-  * Dart plug-in: [JetBrains
+  * Dart plugin: [JetBrains
    YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved)
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
@@ -70,7 +79,7 @@ to filing new issues, please:
    tracked.
 
   * make sure you have [updated](#updating) to the most recent version of the
-   plug-in.
+   plugin.
 
 When filing new issues, please include the output of [`flutter
 doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
