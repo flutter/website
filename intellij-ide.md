@@ -30,7 +30,26 @@ To check for updates manually:
 
 ### Creating a new project from templates
 
+To create a new Flutter IntelliJ project with a fresh set of Flutter template
+files:
+
+1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
+**File>New>Project...** from the main IDE window
+1. Select **Flutter** in the menu, and click **Next**
+1. Enter your desired **Project name** and **Project location**
+1. Click **Finish**
+
 ### Creating a new projects from existing source code
+
+To create a new Flutter IntelliJ project containing existing Flutter source code
+files:
+
+1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
+**File>New>Project...** from the main IDE window
+  - **Note**: Do *not* use the **New>Project from existing sources...** option for Flutter projects
+1. Select **Flutter** in the menu, and click **Next**
+1. Under **Project location** enter, or browse to, the directory holding your existing Flutter source code files
+1. Click **Finish**
 
 ## Editing code, and viewing code problems
 
