@@ -86,6 +86,10 @@ entries:
       url: /debugging/
       output: web
 
+    - title: Develop apps in the IntelliJ IDE
+      url: /intellij-ide/
+      output: web
+
     - title: Upgrade Flutter
       url: /upgrading/
       output: web
