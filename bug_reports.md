@@ -32,8 +32,9 @@ The instructions in this document detail the current steps required to provide t
     • XCode at /Applications/Xcode.app/Contents/Developer
     • Xcode 7.3, Build version 7D175
 
-[✓] Atom - a lightweight development environment for Flutter
-    • Atom installed; Flutter plugin version 0.2.1
+[✓] IntelliJ IDEA Ultimate Edition (version 2016.2.5)
+    • Dart plugin installed
+    • Flutter plugin installed
 ```
 
 ## Run the Command in Verbose Mode
