@@ -26,10 +26,10 @@ See these topics to understand how the Flutter framework works.
  - [Basic widgets overview](basic-widgets)
  - [Material design catalog](material-design-catalog)
  - [Gestures in Flutter](gestures)
- - [Layouts in Flutter](layout)
  - [Animations in Flutter](animations)
  - [Layered design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)
  - [Rendering pipeline (video)](https://www.youtube.com/watch?v=UUfXWzp0-DU)
+ - [Dealing with box constraints in Flutter](layout)
 
 ## How-Tos
 
