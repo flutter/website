@@ -58,7 +58,7 @@ plugins](/setup/#plugins), you can start your Flutter app from there:
 1. Select **Flutter** in the menu, and click **Next**
 1. Under **Project location** enter, or browse to, the directory holding your new Flutter app
 1. Click **Finish**
-1. Click the **(De)bug icon** in the toolbar, or invoke the menu item Run>Debug
+1. Click the **Debug icon** in the toolbar, or invoke the menu item Run>Debug
 
 If everything works, you should see your starter app on your device or simulator.
 

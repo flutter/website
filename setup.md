@@ -148,7 +148,7 @@ Version 2016.2 or later is supported.
 
 We provide two plugins:
 
-  * The `Dart` plugins offers code analysis (code validation as you type, code completions, etc.)
+  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.)
   * The `Flutter` plugin powers flutter developer workflows (running, debugging, hot reload, etc.)
 
 To install the plugins:

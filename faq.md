@@ -25,7 +25,8 @@ for text)
 framework)
 * a set of Material Design widgets (optional, you can bring-your-own
 widgets)
-* command-line tools and a plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+* command-line tools and plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
+including the free Community edition.
 
 ## What makes Flutter unique?
 
@@ -288,7 +289,9 @@ possible to create your own set of widgets using our base classes.
 ## Does Flutter work with any editors or IDEs?
 
 We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
-enabling [fully integrated development experience for Flutter](/intellij-ide/).
+enabling [fully integrated development experience](/intellij-ide/) for Flutter.
+
+The plugins work in both the Ultimate and the free Community editions.
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 

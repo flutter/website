@@ -15,8 +15,8 @@ applications.
 
 Before running your applications, test your code with `flutter analyze`. This
 tool (which is a wrapper around the `dartanalyzer` tool) will analyze your code
-and help you find possible mistakes. If you're using the [Flutter plugin for
-IntelliJ](/intellij-ide/), this is already happening for you.
+and help you find possible mistakes. If you're using the 
+[Flutter plugin for IntelliJ](/intellij-ide/), this is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
 your code to help track problems down. You are encouraged to use them
