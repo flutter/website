@@ -22,30 +22,11 @@ You can see many of them in action in our
 demo app. To learn about Flutter's implementation of Material Design components, take a look at the [Material design catalog](/material-design-catalog) and the
 [API docs for the material widgets library](https://docs.flutter.io/flutter/material/material-library.html).
 
-Container
----------
-
-[`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
-is a general-purpose widget that combines several basic widgets in
-order to make them easier to use.
-
- - `BoxDecoration decoration` Draw the given decoration around this container.
- - `double width` Forces the container to have the given width.
- - `double height` Force the container to have the given height.
- - `EdgeInsets margin` Surrounds the container (i.e., outside the container's
-    decoration) on the top, right, bottom, and left with the given amount of
-    space.
- - `EdgeInsets padding` Surrounds the container's child (i.e., inside the
-    container's decoration) on the top, right, bottom, and left with the given
-    amount of space.
- - `Matrix4 transform` Apply the given matrix before painting the container.
- - `BoxConstraints constraints` Force the width and height of the container to
-    respect the given constraints.
-
 Layout models
 -------------
 
-There are two _flex_ layout models:
+The following widgets allow you to arrange a series of children next
+to each other:
 
  - [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html): Layout a
    list of child widgets in the horizontal direction.
@@ -54,10 +35,11 @@ There are two _flex_ layout models:
    a list of child widgets in the vertical direction.
 
 The direction along which the widgets are laid out is called the
-*main* direction and the other axis is called the *cross* direction.
-These flex widgets size themselves to the maximum size permitted by
-its parent, unless that would be infinite size, in which case they
-shrink-wrap their children. For details, see [layout](../layout/#flex).
+*main* axis and the other axis is called the *cross* axis. These
+widgets size themselves to the maximum size permitted by its parent,
+unless that would be infinite size, in which case they shrink-wrap
+their children. This is discussed in more detail on our page about
+[box constraints](../layout/#flex).
 
 Each child of a flex widget is either *flexible* or *inflexible*.
 The flex first lays out its inflexible children and subtracts their
@@ -91,6 +73,46 @@ There is also a stacking layout model:
       height required to satisfy both constraints. Similarly, setting the
       `right` and `left` properties to non-null values will force the child to
       have a particular width.
+
+Scrolling
+---------
+
+If you have a group of widgets that you wish to make scrollable, then
+the following widgets may be of use. (The "Lazy" variants are more
+performant, at the cost of slightly more complexity.)
+
+ - [`Block`](https://docs.flutter.io/flutter/widgets/Block-class.html) and
+   [`LazyBlock`](https://docs.flutter.io/flutter/widgets/LazyBlock-class.html):
+   Arranges children one after the other, and scrolls if necessary.
+
+ - [`ScrollableList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html) and
+   [`ScrollableLazyList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html):
+   A scrollable list of children that have equal size.
+
+Container
+---------
+
+[`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
+is a general-purpose widget that combines several of the basic widgets
+from the following sections in order to make them easier to use.
+
+It takes a single child, and embellishes it according to its
+arguments:
+
+ - `BoxDecoration decoration` Draw the given decoration below this container.
+ - `BoxDecoration foregroundDecoration` Draw the given decoration above this container.
+ - `double width` Forces the container to have the given width.
+ - `double height` Force the container to have the given height.
+ - `BoxConstraints constraints` Force the width and height of the container to
+    respect the given constraints.
+ - `EdgeInsets margin` Surrounds the container (i.e., outside the container's
+    decoration) on the top, right, bottom, and left with the given amount of
+    space.
+ - `EdgeInsets padding` Surrounds the container's child (i.e., inside the
+    container's decoration) on the top, right, bottom, and left with the given
+    amount of space.
+ - `FractionalOffset alignment` Align the child within the container.
+ - `Matrix4 transform` Apply the given matrix before painting the container.
 
 Positioning and sizing
 ----------------------
@@ -126,7 +148,6 @@ Positioning and sizing
   and render only the portion of the child that is visually contained by this
   widget. When rendering, add `offset` to the child's vertical position to
   control which part of the child is visible through the viewport.
-  TODO(abarth): Add support for horizontal viewporting.
 
 [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html)
 : Aligns its child box within itself.
@@ -161,18 +182,11 @@ Painting effects
 [`DecoratedBox`](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html)
 : Draw the given `BoxDecoration` surrounding the child widget.
 
-[`ColorFilter`](https://docs.flutter.io/flutter/dart-ui/ColorFilter-class.html)
-: Applies a color filter to the child widget, for example to
-  tint the child a given color.
-
 [`CustomPaint`](https://docs.flutter.io/flutter/widgets/CustomPaint-class.html)
-: Calls `callback` during the paint phase with the current
+: Uses the given [`CustomPainter`](https://docs.flutter.io/flutter/material/CustomPainter-class.html)
+  (which you implement and provide) during the paint phase, providing it with the current
   [`Canvas`](https://docs.flutter.io/flutter/dart-ui/Canvas-class.html) and
-  [`Size`](https://docs.flutter.io/flutter/dart-ui/Size-class.html). The widget occupies the region of the canvas starting at
+  [`Size`](https://docs.flutter.io/flutter/dart-ui/Size-class.html).
+  The widget occupies the region of the canvas starting at
   the origin (i.e., `x = 0.0` and `y = 0.0`) and of the given size (i.e.,
   `x = size.width` and `y = size.height`).
-
-  Use the `token` to invalidate the painting. As long as the any new `token`
-  is `operator==` the current `token`, the `CustomPaint` widget is permitted
-  to retain a recording of the painting produced by the previous `callback`
-  call.

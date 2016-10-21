@@ -37,6 +37,11 @@ the tree and are dispatched to all the widgets on the path from the innermost
 widget to the root of the tree. There is no mechanism for canceling or stopping
 pointer events from being dispatched further.
 
+To listen to pointer events directly from the widgets layer, use a
+[`Listener`](https://docs.flutter.io/flutter/widgets/Listener-class.html)
+widget. However, generally, consider using gestures (as discussed
+below) instead.
+
 # Gestures
 
 Gestures represent semantic actions (e.g., tap, drag, and scale) that are
@@ -74,6 +79,17 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
   - `onHorizontalDragEnd` A pointer that was previously in contact with the
     screen and moving horizontally is no longer in contact with the screen and
     was moving at a specific velocity when it stopped contacting the screen.
+
+To listen to gestures from the widgets layer, use a
+[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
+
+If you're using Material widgets, instead of using a gesture detector
+directly, consider using an
+[`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html)
+to listen to taps, and a
+[`Block`](https://docs.flutter.io/flutter/widgets/Block-class.html) or
+[`MaterialList`](https://docs.flutter.io/flutter/material/MaterialList-class.html)
+to listen to swipes to trigger scrolling.
 
 ## Gesture disambiguation
 
