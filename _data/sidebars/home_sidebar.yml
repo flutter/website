@@ -54,7 +54,7 @@ entries:
       url: /gestures/
       output: web
 
-    - title: Layouts
+    - title: Box Constraints
       url: /layout/
       output: web
 

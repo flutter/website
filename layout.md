@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Layouts in Flutter
+title: Dealing with box constraints in Flutter
 sidebar: home_sidebar
 permalink: /layout/
 ---
+
+You may be directed to this page if the framework detects a problem
+involving box constraints.
 
 * Placeholder for TOC
 {:toc}
