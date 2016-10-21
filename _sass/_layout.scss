@@ -248,23 +248,23 @@
         font-size: 24px;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
             font-size: 22px;
         }
     }
 
-    h4 {
-        font-size: 20px;
+    h3 {
+        font-size: 18px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 16px;
+        }
+    }
+
+    h4 {
+        font-size: 14px;
+
+        @include media-query($on-laptop) {
+            font-size: 12px;
         }
     }
 }
