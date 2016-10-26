@@ -31,7 +31,7 @@ To lay widgets out within your application, use
   </p>
   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
   | <a href="{{comp.dartdocs_link}}">Documentation</a>
-  | <a href="{{comp.material_spec_link}}">Interface design guidelines</a>
+  | <a href="{{comp.material_spec_link}}">Interface design guidelines</a></p>
 </div>
 {% endfor %}
 
