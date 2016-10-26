@@ -13,12 +13,10 @@ applications.
 
 ## The Dart Analyzer
 
-Before running your applications, test your code with `flutter
-analyze`. This tool (which is a wrapper around the `dartanalyzer`
-tool) will analyze your code and help you find possible mistakes.
-If you're using the
-[Flutter plugin for Atom](https://atom.io/packages/flutter), this
-is already happening for you.
+Before running your applications, test your code with `flutter analyze`. This
+tool (which is a wrapper around the `dartanalyzer` tool) will analyze your code
+and help you find possible mistakes. If you're using the 
+[Flutter plugin for IntelliJ](/intellij-ide/), this is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
 your code to help track problems down. You are encouraged to use them
@@ -32,8 +30,8 @@ If you started your application on an Android device using `flutter
 run`, then, while it is running, you can open the Web page at
 [http://localhost:8181/](http://localhost:8181/) to connect to your
 application directly with a statement-level single-stepping debugger.
-If you're using Atom, you can also debug your application using the
-built-in debugger provided by the aforementioned Flutter plugin.
+If you're using IntelliJ, you can also debug your application using its
+built-in debugger.
 
 Observatory also supports profiling, examining the heap, etc. For more
 information on Observatory, see
@@ -48,7 +46,7 @@ various invariants (see "Checked mode assertions" below).
 ### `debugger()` statement
 
 When using the Dart Observatory (or another Dart debugger, such as the
-debugger in the Atom IDE), you can insert programmatic breakpoints
+debugger in the IntelliJ IDE), you can insert programmatic breakpoints
 using the `debugger()` statement. To use this, you have to put `import
 'dart:developer';` at the top of the relevant file.
 

@@ -96,7 +96,7 @@ iOS devices.
     $ brew install ideviceinstaller ios-deploy
     </pre>
 
-You'll also need to set up a provisioning profile for your developer account. To learn how to 
+You'll also need to set up a provisioning profile for your developer account. To learn how to
 set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 
 ## Android setup
@@ -127,36 +127,43 @@ By default, Flutter uses the version of the Android SDK where your `adb` tool is
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that specific installation directory.
 
-## Atom editor
 
-We recommend using [Atom](https://atom.io/) for editing, running, and debugging Flutter apps.
-However, using our command-line tools, you can use any editor to develop Flutter applications.
+<a name="plugins"/>
 
-To install Atom:
+## Flutter IntelliJ IDE plugins
 
-1. Download Atom from the [atom.io](https://atom.io/) site.
-2. Extract the Atom executable from the downloaded file.
+We recommend using our IntelliJ plug-ins for a [rich IDE
+experience](/intellij-ide/) supporting editing, running, and debugging Flutter
+apps. However, using our command-line tools, you can use any editor to develop
+Flutter applications.
 
-### Configure Atom for Flutter development
+### Installing IntelliJ
 
-Before creating your Flutter project in Atom, you’ll need to perform these pre-flight tasks:
+The IntelliJ plug-ins require JetBrains [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+in the Community or Ultimate edition.
 
-1. Launch the Atom editor.
-2. Install the [Flutter package](https://atom.io/packages/flutter) by following these steps:
-    * From the menu, open **Packages > Settings View > Install Packages/Themes**.
-    * In the **Install Packages** field, type **flutter** and click the **Packages** button.
-    * You should see the Flutter package displayed. Click on the button to install the package.
+Version 2016.2 or later is supported.
 
-3. Open **Packages > Flutter > Package Settings**, and set the **FLUTTER_ROOT** field to the
-root directory where you installed the Flutter SDK.
-4. Open **Packages > Dart > Package Settings**, and set the **Dart SDK Location** field to the
-`bin/cache/dart-sdk` directory in your Flutter SDK’s root folder.
-4. If you are using Atom on Mac, you should install the `atom` and `apm` shell commands. To do
-this from the menu bar, click on **`Atom` > `Install Shell Commands`**.
+### Install the plugins
 
-If you need help installing packages, consult the
-[Atom documentation](https://atom.io/docs/v1.3.2/using-atom-atom-packages) or
-[email us](flutter-dev@googlegroups.com).
+We provide two plugins:
+
+  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.)
+  * The `Flutter` plugin powers flutter developer workflows (running, debugging, hot reload, etc.)
+
+To install the plugins:
+
+1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux)
+1. Select **"Browse repositories…"**
+1. search for `'dart'`; click `install` (do not click restart yet)
+1. search for `'flutter'`; click `install`, and then click `Restart IntelliJ IDEA`
+
+### Configure the plugins
+
+1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux)
+1. Select **Languages & Frameworks>Flutter**
+1. Enter, or browse to, your Flutter SDK directory path in **Flutter SDK path**
+1. Click **OK**
 
 ## Next steps
 
