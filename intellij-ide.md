@@ -71,22 +71,23 @@ The Dart plugin performs code analysis that enables:
  usages (**Edit>Find>Find Usages**).
 
 * Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
+Any analysis issues will be shows in the Dart Analysis pane:
 
-[//]: TODO(mit-mit): add screenshot
+![Dart Analysis pane](/images/intellij/dart-analysis.png)
 
 ## Running and Debugging
+
+Running and Debugging is controlled from the main toolbar:
+
+![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
 ### Selecting a target
 
 When a Flutter project is open in IntelliJ, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
 
-[//]: TODO(mit-mit): add screenshot
-
-1. Locate the **Flutter Device Selection** drop-down button. This will show a
+1. Locate the **Flutter Device Selector** drop-down button. This will show a
  list of available targets. Select the target you want your app to started on.
-
-[//]: TODO(mit-mit): add screenshot
 
 * When you connect devices, or start simulators, additional entries will appear.
 
@@ -94,9 +95,9 @@ specific buttons on the right-hand side of the toolbar.
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
 
-* The bottom **Run** pane will show logs output.
+* The bottom **Run** pane will show logs output:
 
-[//]: TODO(mit-mit): add screenshot
+![Log pane](/images/intellij/log.png)
 
 ### Run app in debug mode
 
@@ -110,8 +111,6 @@ specific buttons on the right-hand side of the toolbar.
 
 * Debugging is based on a default launch configuration. To customize this, click.
  the drop-down button to the right of the device selector, and select **Edit configuration**.
-
-[//]: TODO(mit-mit): add screenshot
 
 ### Advanced debugging with Observatory
 
