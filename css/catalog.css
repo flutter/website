@@ -1,11 +1,11 @@
 .post-content img.comp-img {
-  width: 150px;
+  height:150px;
   float: left;
   margin: 0px 15px 0px 0px;
 }
 
 div.comp-entry, div.catalog-end {
-  clear: both;
+  clear:both;
 }
 
 div.catalog-end {
