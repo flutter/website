@@ -59,7 +59,7 @@ in widgets that represent the underlying render object.
 Basic widgets
 -------------
 
-_Main article: [Basic Widgets Overview - Layout Models](https://flutter.io/widgets/#layout-models)_
+_Main article: [Basic Widgets Overview](https://flutter.io/basic-widgets/)_
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
@@ -207,7 +207,7 @@ fill the remaining space with its body, which consists a centered message.
 Using material design
 ---------------------
 
-_Main article: [Basic Widgets Overview - Material Design Widgets](https://flutter.io/widgets/#material-design-widgets)_
+_Main article: [Material Design Catalog](https://flutter.io/material-design-catalog/)_
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material Design app start with the
