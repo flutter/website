@@ -2,7 +2,7 @@
 layout: page
 title: Basic Widgets Overview
 sidebar: home_sidebar
-permalink: /basic-widgets/
+permalink: /widgets/
 ---
 
 * TOC Placeholder
@@ -10,17 +10,13 @@ permalink: /basic-widgets/
 
 ## Introduction
 
-This page describes a small subset of basic widgets available in Flutter.
-The widgets described on this page are
-general-purpose and don't offer an opinion about the visual style of your app.
-To see all the basic widgets and related classes, check out the
-[API docs for the widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html).
+This page describes some of the widgets available in Flutter.
 
-You may also be interested in Flutter's Material Design widgets.
-You can see many of them in action in our
-[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-demo app. To learn about Flutter's implementation of Material Design components, take a look at the [Material design catalog](/material-design-catalog) and the
-[API docs for the material widgets library](https://docs.flutter.io/flutter/material/material-library.html).
+See also:
+
+* [The API reference for the `widgets` library](https://docs.flutter.io/flutter/widgets/widgets-library.html).
+* [The API reference for the `material` library](https://docs.flutter.io/flutter/material/material-library.html).
+
 
 Layout models
 -------------
@@ -190,3 +186,37 @@ Painting effects
   The widget occupies the region of the canvas starting at
   the origin (i.e., `x = 0.0` and `y = 0.0`) and of the given size (i.e.,
   `x = size.width` and `y = size.height`).
+
+
+Material design widgets
+-----------------------
+
+Flutter implementats many of the UI components from Google’s [Material Design Specification](https://material.google.com/).
+You can see many of the material design widgets in action in our [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery) demo app.
+
+To lay widgets out within your application, use the layout widgets
+described above, such as
+[Row](https://docs.flutter.io/flutter/widgets/Row-class.html),
+[Column](https://docs.flutter.io/flutter/widgets/Column-class.html),
+[Stack](https://docs.flutter.io/flutter/widgets/Stack-class.html), or
+[Block](https://docs.flutter.io/flutter/widgets/Block-class.html).
+
+<!-- Data for the catalog comes from catalog.csv in the _data folder -->
+{% for comp in site.data.catalog %}
+<div class="comp-entry">
+  <h3>{{comp.comp_name}}</h3>
+  <img class="comp-img" src="{{comp.img_link}}"/>
+  <p>
+   {{comp.comp_desc}}
+   {% if comp.widget_name != '' %}
+     The <a href="{{comp.dartdocs_link}}">{{comp.widget_name}}</a> widget implements this component.
+   {% endif %}
+   {{comp.extra_html}}
+  </p>
+  <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
+  | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  | <a href="{{comp.material_spec_link}}">Interface design guidelines</a></p>
+</div>
+{% endfor %}
+
+<div class="catalog-end"></div>
