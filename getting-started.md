@@ -43,7 +43,9 @@ To run your app from the command-line:
 
 1. Open a terminal and change directories to the root of your app (the same directory that
 contains the `pubspec.yaml` file for your project).
-2. Run the following command.
+2. Run the following command. Once the `flutter` tool is running, if you change the app's
+source code, you can hit `r` to hot-reload your application (updating the source on the fly
+without actually restarting the entire app).
 
   ```
   $ flutter run

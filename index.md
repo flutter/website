@@ -38,9 +38,9 @@ Learn how to accomplish specific development tasks with Flutter.
  - [Testing Flutter apps](testing)
  - [Debugging Flutter apps](debugging)
  - [Upgrading Flutter](upgrading)
- - [Accessing Platform and Third-Party Services](platform-services)
- - [Reading and Writing Files](reading-writing-files)
- - [Handling Text Input](text-input)
+ - [Accessing platform and third-party services](platform-services)
+ - [Reading and writing files](reading-writing-files)
+ - [Handling text input](text-input)
 
 ## Helpful Resources
 
