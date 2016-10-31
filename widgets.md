@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Basic Widgets Overview
+title: Widgets Overview
 sidebar: home_sidebar
 permalink: /widgets/
+extra_css:
+  - /css/catalog.css
 ---
 
 * TOC Placeholder
@@ -21,94 +23,29 @@ See also:
 Layout models
 -------------
 
-The following widgets allow you to arrange a series of children next
-to each other:
+The following widgets allow you to arrange a series of children:
 
- - [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html): Layout a
-   list of child widgets in the horizontal direction.
+[`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
+: Layout a list of child widgets in the horizontal direction.
 
- - [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html): Layout
-   a list of child widgets in the vertical direction.
+[`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)
+: Layout a list of child widgets in the vertical direction.
 
-The direction along which the widgets are laid out is called the
-*main* axis and the other axis is called the *cross* axis. These
-widgets size themselves to the maximum size permitted by its parent,
-unless that would be infinite size, in which case they shrink-wrap
-their children. This is discussed in more detail on our page about
-[box constraints](../layout/#flex).
+[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html)
+: Layout a list of child widgets on top of each other from back to front.
 
-Each child of a flex widget is either *flexible* or *inflexible*.
-The flex first lays out its inflexible children and subtracts their
-total length along the main direction to determine how much free space
-is available. The flex then divides this free space among the flexible
-children in a ratio determined by their `flex` properties.
+[`Block`](https://docs.flutter.io/flutter/widgets/Block-class.html) and [`LazyBlock`](https://docs.flutter.io/flutter/widgets/LazyBlock-class.html)
+: Arranges children one after the other, and scrolls if necessary.
 
-The `crossAxisAlignment` property determines how children are positioned in
-the cross direction. The `mainAxisAlignment` property determines how the
-remaining free space (if any) in the main direction is allocated.
-
- - [`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html):
-   Mark this child as being flexible with the given `flex` ratio.
-
-There is also a stacking layout model:
-
- - [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html): Layout a
-   list of child widgets on top of each other from back to
-   front. Each child of a `Stack` widget is either *positioned* or
-   *non-positioned*. The stack sizes itself to contain all the
-   non-positioned children, which are located at the top-left corner of the
-   stack. The *positioned* children are then located relative to the stack
-   according to their `top`, `right`, `bottom`, and `left` properties.
-
-    - [`Positioned`](https://docs.flutter.io/flutter/widgets/Positioned-class.html):
-      Mark this child as *positioned*. If the `top` property is
-      non-null, the top edge of this child will be positioned `top` layout units
-      from the top of the stack widget. The `right`, `bottom`, and `right`
-      properties work analogously. Note that if the both the `top` and `bottom`
-      properties are non-null, then the child will be forced to have exactly the
-      height required to satisfy both constraints. Similarly, setting the
-      `right` and `left` properties to non-null values will force the child to
-      have a particular width.
-
-Scrolling
----------
-
-If you have a group of widgets that you wish to make scrollable, then
-the following widgets may be of use. (The "Lazy" variants are more
-performant, at the cost of slightly more complexity.)
-
- - [`Block`](https://docs.flutter.io/flutter/widgets/Block-class.html) and
-   [`LazyBlock`](https://docs.flutter.io/flutter/widgets/LazyBlock-class.html):
-   Arranges children one after the other, and scrolls if necessary.
-
- - [`ScrollableList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html) and
-   [`ScrollableLazyList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html):
-   A scrollable list of children that have equal size.
+[`ScrollableList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html) and [`ScrollableLazyList`](https://docs.flutter.io/flutter/widgets/ScrollableList-class.html)
+: A scrollable list of children that have equal size.
 
 Container
 ---------
 
 [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
-is a general-purpose widget that combines several of the basic widgets
-from the following sections in order to make them easier to use.
-
-It takes a single child, and embellishes it according to its
-arguments:
-
- - `BoxDecoration decoration` Draw the given decoration below this container.
- - `BoxDecoration foregroundDecoration` Draw the given decoration above this container.
- - `double width` Forces the container to have the given width.
- - `double height` Force the container to have the given height.
- - `BoxConstraints constraints` Force the width and height of the container to
-    respect the given constraints.
- - `EdgeInsets margin` Surrounds the container (i.e., outside the container's
-    decoration) on the top, right, bottom, and left with the given amount of
-    space.
- - `EdgeInsets padding` Surrounds the container's child (i.e., inside the
-    container's decoration) on the top, right, bottom, and left with the given
-    amount of space.
- - `FractionalOffset alignment` Align the child within the container.
- - `Matrix4 transform` Apply the given matrix before painting the container.
+: A general-purpose widget that combines several of the basic widgets
+  from the following sections in order to make them easier to use.
 
 Positioning and sizing
 ----------------------
@@ -119,11 +56,11 @@ Positioning and sizing
 
 [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html)
 : Center the child widget both horizontally and vertically within the
- space occupied by this widget.
+  space occupied by this widget.
 
 [`SizedBox`](https://docs.flutter.io/flutter/widgets/SizedBox-class.html)
 : Force the child widget to have a particular `width` or `height`
- (or both).
+  (or both).
 
 [`ConstrainedBox`](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html)
 : Apply the given `BoxConstraints` to the child widget as
@@ -183,10 +120,6 @@ Painting effects
   (which you implement and provide) during the paint phase, providing it with the current
   [`Canvas`](https://docs.flutter.io/flutter/dart-ui/Canvas-class.html) and
   [`Size`](https://docs.flutter.io/flutter/dart-ui/Size-class.html).
-  The widget occupies the region of the canvas starting at
-  the origin (i.e., `x = 0.0` and `y = 0.0`) and of the given size (i.e.,
-  `x = size.width` and `y = size.height`).
-
 
 Material design widgets
 -----------------------
