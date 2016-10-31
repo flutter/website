@@ -31,7 +31,7 @@ easy for you to learn, too.
   the [http library](https://docs.flutter.io/flutter/http/http-library.html)
   uses Futures when responses are ready.
 
-[Streams Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
+[Streams Tutorial](https://www.dartlang.org/docs/tutorials/streams/)
 : Learn how to use Streams, which are used extensively in the Dart core
   libraries. Streams can be used instead repeating callbacks.
   For example, the
