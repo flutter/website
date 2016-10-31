@@ -19,8 +19,13 @@
         "type" : 301
       },
       {
-        "source" : "/widgets/",
-        "destination" : "/basic-widgets/",
+        "source" : "/basic-widgets/",
+        "destination" : "/widgets/",
+        "type" : 301
+      },
+      {
+        "source" : "/material-design-catalog/",
+        "destination" : "/widgets/",
         "type" : 301
       }
     ]
