@@ -10,11 +10,11 @@ entries:
     url: /
     output: web
 
-  - title: API Reference
+  - title: API reference
     external_url: https://docs.flutter.io/flutter/
     output: web
 
-  - title: Flutter Examples
+  - title: Flutter examples
     external_url: https://github.com/flutter/flutter/tree/master/examples
     output: web
 
@@ -42,19 +42,15 @@ entries:
     output: web
     folderitems:
 
-    - title: Basic widgets
-      url: /basic-widgets/
-      output: web
-
-    - title: Material design catalog
-      url: /material-design-catalog/
+    - title: Widget overview
+      url: /widgets/
       output: web
 
     - title: Gestures
       url: /gestures/
       output: web
 
-    - title: Box Constraints
+    - title: Box constraints
       url: /layout/
       output: web
 
@@ -62,7 +58,7 @@ entries:
       url: /animations/
       output: web
 
-    - title: Layered Design
+    - title: Layered design
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
 
@@ -90,19 +86,19 @@ entries:
       url: /intellij-ide/
       output: web
 
-    - title: Upgrade Flutter
+    - title: Upgrade flutter
       url: /upgrading/
       output: web
 
-    - title: Access Platform and Third-Party Services
+    - title: Access platform and third-party services
       url: /platform-services/
       output: web
 
-    - title: Read and Write Files
+    - title: Read and write files
       url: /reading-writing-files/
       output: web
 
-    - title: Handle Text Input
+    - title: Handle text input
       url: /text-input/
       output: web
 
