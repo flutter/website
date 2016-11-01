@@ -26,6 +26,7 @@ See these topics to understand how the Flutter framework works.
  - [Widgets overview](widgets)
  - [Gestures in Flutter](gestures)
  - [Animations in Flutter](animations)
+ - [Using custom fonts](custom-fonts)
  - [Layered design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)
  - [Rendering pipeline (video)](https://www.youtube.com/watch?v=UUfXWzp0-DU)
  - [Dealing with box constraints in Flutter](layout)

@@ -50,12 +50,12 @@ entries:
       url: /gestures/
       output: web
 
-    - title: Box constraints
-      url: /layout/
-      output: web
-
     - title: Animations
       url: /animations/
+      output: web
+
+    - title: Custom fonts
+      url: /custom-fonts/
       output: web
 
     - title: Layered design
@@ -64,6 +64,10 @@ entries:
 
     - title: Rendering pipeline
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
+      output: web
+
+    - title: Box constraints
+      url: /layout/
       output: web
 
   - title: How-Tos
