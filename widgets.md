@@ -40,11 +40,9 @@ and
  <div class="comp-entry">
   <h3>{{comp.comp_name}}</h3>
   {{comp.image}}
-  <p>
-   {{comp.comp_desc}}
-  </p>
+  <p> {{comp.comp_desc}} </p>
   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-  | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
  </div>
  {% endif %}
 {% endfor %}
@@ -62,7 +60,7 @@ The following widgets allow you to arrange a series of children.
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
    <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
@@ -80,7 +78,7 @@ The following widgets allow you to position and size other widgets.
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
    <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
@@ -98,7 +96,7 @@ These widgets apply visual effects to the children without changing their layout
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
    <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
