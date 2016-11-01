@@ -36,17 +36,17 @@ and
 
 <!-- Data for the catalog comes from widgets.csv in the _data folder -->
 {% for comp in site.data.widgets %}
-  {% if comp.section == 'basic' %}
-    <div class="comp-entry">
-      <h3>{{comp.comp_name}}</h3>
-      {{comp.image}}
-      <p>
-       {{comp.comp_desc}}
-      </p>
-      <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-      | <a href="{{comp.dartdocs_link}}">Documentation</a>
-    </div>
-  {% endif %}
+ {% if comp.section == 'basic' %}
+ <div class="comp-entry">
+  <h3>{{comp.comp_name}}</h3>
+  {{comp.image}}
+  <p>
+   {{comp.comp_desc}}
+  </p>
+  <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
+  | <a href="{{comp.dartdocs_link}}">Documentation</a>
+ </div>
+ {% endif %}
 {% endfor %}
 
 Layout models
@@ -56,17 +56,15 @@ The following widgets allow you to arrange a series of children.
 
 <!-- Data for the catalog comes from widgets.csv in the _data folder -->
 {% for comp in site.data.widgets %}
-  {% if comp.section == 'layout' %}
-    <div class="comp-entry">
-      <h3>{{comp.comp_name}}</h3>
-      {{comp.image}}
-      <p>
-       {{comp.comp_desc}}
-      </p>
-      <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-      | <a href="{{comp.dartdocs_link}}">Documentation</a>
-    </div>
-  {% endif %}
+ {% if comp.section == 'layout' %}
+  <div class="comp-entry">
+   <h3>{{comp.comp_name}}</h3>
+   {{comp.image}}
+   <p> {{comp.comp_desc}} </p>
+   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  </div>
+ {% endif %}
 {% endfor %}
 
 Positioning and sizing
@@ -76,17 +74,15 @@ The following widgets allow you to position and size other widgets.
 
 <!-- Data for the catalog comes from widgets.csv in the _data folder -->
 {% for comp in site.data.widgets %}
-  {% if comp.section == 'pos' %}
-    <div class="comp-entry">
-      <h3>{{comp.comp_name}}</h3>
-      {{comp.image}}
-      <p>
-       {{comp.comp_desc}}
-      </p>
-      <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-      | <a href="{{comp.dartdocs_link}}">Documentation</a>
-    </div>
-  {% endif %}
+ {% if comp.section == 'pos' %}
+  <div class="comp-entry">
+   <h3>{{comp.comp_name}}</h3>
+   {{comp.image}}
+   <p> {{comp.comp_desc}} </p>
+   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  </div>
+ {% endif %}
 {% endfor %}
 
 Painting effects
@@ -96,17 +92,15 @@ These widgets apply visual effects to the children without changing their layout
 
 <!-- Data for the catalog comes from widgets.csv in the _data folder -->
 {% for comp in site.data.widgets %}
-  {% if comp.section == 'paint' %}
-    <div class="comp-entry">
-      <h3>{{comp.comp_name}}</h3>
-      {{comp.image}}
-      <p>
-       {{comp.comp_desc}}
-      </p>
-      <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-      | <a href="{{comp.dartdocs_link}}">Documentation</a>
-    </div>
-  {% endif %}
+ {% if comp.section == 'paint' %}
+  <div class="comp-entry">
+   <h3>{{comp.comp_name}}</h3>
+   {{comp.image}}
+   <p> {{comp.comp_desc}} </p>
+   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
+   | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  </div>
+ {% endif %}
 {% endfor %}
 
 Material design widgets
@@ -117,20 +111,18 @@ You can see many of the material design widgets in action in our [Flutter Galler
 
 <!-- Data for the catalog comes from catalog.csv in the _data folder -->
 {% for comp in site.data.catalog %}
-<div class="comp-entry">
+ <div class="comp-entry">
   <h3>{{comp.comp_name}}</h3>
   <img class="comp-img" src="{{comp.img_link}}"/>
   <p>
    {{comp.comp_desc}}
-   {% if comp.widget_name != '' %}
-     The <a href="{{comp.dartdocs_link}}">{{comp.widget_name}}</a> widget implements this component.
-   {% endif %}
+   {% if comp.widget_name != '' %} The <a href="{{comp.dartdocs_link}}">{{comp.widget_name}}</a> widget implements this component. {% endif %}
    {{comp.extra_html}}
   </p>
   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
   | <a href="{{comp.dartdocs_link}}">Documentation</a>
   | <a href="{{comp.material_spec_link}}">Interface design guidelines</a></p>
-</div>
+ </div>
 {% endfor %}
 
 <div class="catalog-end"></div>
