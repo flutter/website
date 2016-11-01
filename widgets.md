@@ -111,7 +111,7 @@ You can see many of the material design widgets in action in our [Flutter Galler
 {% for comp in site.data.catalog %}
  <div class="comp-entry">
   <h3>{{comp.comp_name}}</h3>
-  <img class="comp-img" src="{{comp.img_link}}"/>
+  <img alt="" class="comp-img" src="{{comp.img_link}}"/>
   <p>
    {{comp.comp_desc}}
    {% if comp.widget_name != '' %} The <a href="{{comp.dartdocs_link}}">{{comp.widget_name}}</a> widget implements this component. {% endif %}
@@ -126,7 +126,7 @@ You can see many of the material design widgets in action in our [Flutter Galler
 <div class="catalog-end"></div>
 
 <small>
-The [owl](images/owl.jpeg) image is licensed under the
+The [owl](../images/owl.jpeg) image is licensed under the
 [Creative Commons Attribution-Share Alike 3.0 Unported license](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 It was [originally](https://commons.wikimedia.org/wiki/File:Athene_noctua_(portrait).jpg)
 created by [Trebol-a](https://commons.wikimedia.org/wiki/User:Trebol-a) and

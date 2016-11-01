@@ -4,10 +4,10 @@
   margin: 0px 15px 0px 0px;
 }
 
-div.comp-entry, div.catalog-end {
+div.comp-entry, div.catalog-end, h2 {
   clear: both;
 }
 
 div.catalog-end {
-  padding-top: 20px
+  padding-top: 50px
 }
