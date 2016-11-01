@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<!-- Viewport -->
+<svg viewBox='0 0 100 100'>
+ <filter id='inset-shadow' x='-50%' y='-50%' width='200%' height='200%'>
+  <feComponentTransfer in='SourceAlpha'>
+   <feFuncA type='table' tableValues='1 0' />
+  </feComponentTransfer>
+  <feGaussianBlur stdDeviation='2' result='Blur'/>
+  <feFlood flood-color='#666666' result='color'/>
+  <feComposite in2='Blur' operator='in'/>
+  <feComposite in2='SourceAlpha' operator='in' />
+  <feMerge>
+   <feMergeNode />
+  </feMerge>
+ </filter>
+ <rect x='0' y='0' width='100' height='100' fill='#3949ab'/>
+ <rect x='20' y='20' width='60' height='60' fill='#ffffff'/>
+ <rect x='25' y='20' width='50' height='60' fill='#4dd0e1'/>
+ <rect x='20' y='20' width='60' height='60' fill='#000000' filter='url(#inset-shadow)'/>
+</svg>
