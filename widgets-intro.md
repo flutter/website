@@ -344,7 +344,7 @@ widgets have
 [`onPressed`](https://docs.flutter.io/flutter/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
-Managing state and handling input
+Changing widgets in response to input
 ---------------------------------
 
 _Main articles: [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), [`State.setState`](https://docs.flutter.io/flutter/material/State/setState.html)_
