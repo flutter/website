@@ -345,7 +345,7 @@ widgets have
 callbacks that are triggered when the user taps the widget.
 
 Changing widgets in response to input
----------------------------------
+-------------------------------------
 
 _Main articles: [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), [`State.setState`](https://docs.flutter.io/flutter/material/State/setState.html)_
 
