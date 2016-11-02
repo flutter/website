@@ -58,11 +58,11 @@ entries:
       url: /custom-fonts/
       output: web
 
-    - title: Layered design
+    - title: Layered design (video)
       external_url: https://www.youtube.com/watch?v=dkyY9WCGMi0
       output: web
 
-    - title: Rendering pipeline
+    - title: Rendering pipeline (video)
       external_url: https://www.youtube.com/watch?v=UUfXWzp0-DU
       output: web
 
