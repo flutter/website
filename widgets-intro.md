@@ -143,7 +143,10 @@ class MyScaffold extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           new MyAppBar(
-            title: new Text('Example title', style: Typography.white.title),
+            title: new Text(
+              'Example title',
+              style: Theme.of(context).primaryTextTheme.title,
+            ),
           ),
           new Flexible(
             child: new Center(
