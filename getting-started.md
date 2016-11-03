@@ -62,6 +62,8 @@ plugins](/setup/#plugins), you can start your Flutter app from there:
 1. Click **Finish**
 1. Click the **Debug icon** in the toolbar, or invoke the menu item Run>Debug
 
+![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+
 If everything works, you should see your starter app on your device or simulator.
 
 <div id="starter-app-screenshots">
