@@ -15,7 +15,7 @@ applications.
 
 Before running your applications, test your code with `flutter analyze`. This
 tool (which is a wrapper around the `dartanalyzer` tool) will analyze your code
-and help you find possible mistakes. If you're using the 
+and help you find possible mistakes. If you're using the
 [Flutter plugin for IntelliJ](/intellij-ide/), this is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
@@ -38,10 +38,10 @@ information on Observatory, see
 [Observatory's documentation](https://dart-lang.github.io/observatory/).
 
 If you use Observatory for profiling, make sure to run your
-application in release mode, by passing `--no-checked` to the `flutter
+application in profile mode, by passing `--profile` to the `flutter
 run` command. Otherwise, the main thing that will appear on your
-profile will be the checked-mode asserts verifying the framework's
-various invariants (see "Checked mode assertions" below).
+profile will be the debug asserts verifying the framework's various
+invariants (see "Debug mode assertions" below).
 
 ### `debugger()` statement
 
@@ -84,10 +84,10 @@ implementations have a corresponding `toStringShort` which returns
 only the type or some other very brief (one or two word) description
 of the object.
 
-## Checked mode assertions
+## Debug mode assertions
 
-During development, you are highly encouraged to use Dart's "checked"
-mode, sometimes referred to as "debug" mode. This is the default if
+During development, you are highly encouraged to use Flutter's "debug"
+mode, sometimes referred to as "checked" mode. This is the default if
 you use `flutter run`. In this mode, the Dart `assert` statement is
 enabled, and the Flutter framework uses this to perform many runtime
 checks verifying that invariants aren't being violated.
@@ -96,8 +96,11 @@ When an invariant is violated, it is reported to the console, with
 some context information to help with tracking down the source of the
 problem.
 
-To turn off checked mode, and use release mode, run your application
-using `flutter run --no-checked`.
+To turn off debug mode, and use release mode, run your application
+using `flutter run --release`. This also turns off the Observatory
+debugger. An in-between mode that turns off all the debugging aids
+_except_ the Observatory, known as "profile mode", is available also,
+using `--profile` instead of `--release`.
 
 ## Dumping the application state
 
@@ -589,9 +592,9 @@ flag, which outlines each layer's bounds in orange, or the
 flag, which causes layers to be overlayed with a rotating set of
 colors whenever they are repainted.
 
-All of these flags only work in checked mode. In general, anything in
+All of these flags only work in debug mode. In general, anything in
 the Flutter framework that starts with "`debug...`" will only work in
-checked mode.
+debug mode.
 
 ## Debugging animations
 
@@ -666,7 +669,7 @@ less than 60Hz. The horizontal axis represents frames. The graph is
 only updated when your application paints, so if it is idle the graph
 will stop moving.
 
-This should always be done in release mode, since in checked mode
+This should always be done in release mode, since in debug mode
 performance is intentionally sacrificed in exchange for expensive
 asserts that are intended to aid development, and thus the results
 will be misleading.
@@ -680,7 +683,7 @@ grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
-has a `debugShowGrid` argument which, when set to `true` in checked
+has a `debugShowGrid` argument which, when set to `true` in debug
 mode, will overlay such a grid.
 
 You can also overlay such a grid on non-Material applications by using
