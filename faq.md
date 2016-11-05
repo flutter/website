@@ -80,8 +80,7 @@ Sky was the codename of an earlier version of Flutter.
 Mobile operating systems: Android Jelly Bean, v16, 4.1.x or newer, and
 iOS 8 or newer.
 
-Mobile hardware: 64-bit iOS devices (for example, iPhone 5S and newer),
-and ARM Android devices.
+Mobile hardware: 64-bit iOS devices (starting with iPhone 5S and newer iPhone models), and ARM Android devices.
 
 We support developing Flutter apps with Android and iOS devices, as
 well as with Android emulators and the iOS simulator.
