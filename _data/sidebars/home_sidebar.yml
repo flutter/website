@@ -90,6 +90,10 @@ entries:
       url: /intellij-ide/
       output: web
 
+    - title: Format Flutter code
+      url: /formatting/
+      output: web
+
     - title: Upgrade flutter
       url: /upgrading/
       output: web
