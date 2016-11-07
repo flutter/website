@@ -38,6 +38,7 @@ Learn how to accomplish specific development tasks with Flutter.
  - [Adding assets and images](assets-and-images)
  - [Testing Flutter apps](testing)
  - [Debugging Flutter apps](debugging)
+ - [Developing apps in the IntelliJ IDE](intellij-ide)
  - [Upgrading Flutter](upgrading)
  - [Accessing platform and third-party services](platform-services)
  - [Reading and writing files](reading-writing-files)
