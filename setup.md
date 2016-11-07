@@ -142,7 +142,8 @@ Flutter applications.
 The IntelliJ plug-ins require JetBrains [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 in the Community or Ultimate edition, version 2016.2 or later is supported.
 
-The current version of the Flutter plugin for IntelliJ is not compatible with Android Studio and Webstorm (and various other IntelliJ branded products). Support for Android Studios and other IntelliJ products will be added in the near future.
+The current version of the Flutter plugin for IntelliJ is not compatible with Android Studio and 
+Webstorm (and various other JetBrains editors).
 
 ### Install the plugins
 
