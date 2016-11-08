@@ -39,6 +39,7 @@ Learn how to accomplish specific development tasks with Flutter.
  - [Testing Flutter apps](testing)
  - [Debugging Flutter apps](debugging)
  - [Developing apps in the IntelliJ IDE](intellij-ide)
+ - [Formatting Flutter code](formatting)
  - [Upgrading Flutter](upgrading)
  - [Accessing platform and third-party services](platform-services)
  - [Reading and writing files](reading-writing-files)
