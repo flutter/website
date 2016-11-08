@@ -18,9 +18,7 @@ developers may find it more productive to:
 1. to enforce this style through automatic formatting.
 
 The alternative is often tiring formatting debates during code reviews, where
-time may be better spent on code behavior rather than code style. (*Note*:
-Automatically formatting code may in some hard cases lead to different results
-that what you would personally expect.
+time may be better spent on code behavior rather than code style.
 
 ### Automatically formatting code in IntelliJ
 
