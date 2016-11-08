@@ -35,9 +35,8 @@ In the project directory, the code for your app is in `myapp/lib/main.dart`.
 
 ## Run your Flutter app
 
-Use the `flutter run` command to run your Flutter app on all connected
-devices and simulators. (The `flutter devices` command will list connected devices and
-simulators.)
+Use the `flutter run` command to run your Flutter app on a connected
+device or simulator.
 
 To run your app from the command-line:
 
@@ -51,16 +50,19 @@ without actually restarting the entire app).
   $ flutter run
   ```
 
+If more than one device is connected, use the `flutter devices` command
+to get their IDs, and then `flutter run -d deviceID` to run your app.
+
 Alternatively, if you are using the [IntelliJ
 IDEA](https://www.jetbrains.com/idea/) IDE with the [Flutter
 plugins](/setup/#plugins), you can start your Flutter app from there:
 
-1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
-**File>New>Project...** from the main IDE window
-1. Select **Flutter** in the menu, and click **Next**
-1. Under **Project location** enter, or browse to, the directory holding your new Flutter app
-1. Click **Finish**
-1. Click the **Debug icon** in the toolbar, or invoke the menu item Run>Debug
+1. In IntelliJ, click **Create New Project** from the Welcome window or
+**File > New > Project...** from the main IDE window.
+1. Select **Flutter** in the menu, and click **Next**.
+1. Under **Project location** enter, or browse to, the directory holding your new Flutter app.
+1. Click **Finish**.
+1. Click the **Debug icon** in the toolbar, or invoke the menu item **Run > Debug**.
 
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
