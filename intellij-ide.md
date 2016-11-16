@@ -128,6 +128,10 @@ To open Observatory:
 Flutter offers a best-in-class developer cycle enabling you to see the effect of
 your changes near instantly.
 
+![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
+
+To edit your code and hot reload changes:
+
 1. Run your app in debug mode.
 
 1. Make desired changes in your source code (without stopping the debugger).
