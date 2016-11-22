@@ -83,6 +83,18 @@ If everything works, you should see your starter app on your device or simulator
   </div>
 </div>
 
+## Use _Hot Reloading_ and _Full Application Restart_ inside IntelliJ
+To edit your code and hot reload changes:
+
+1. Run your app in debug mode.
+1. Make desired changes in your source code (without stopping the debugger).
+1. In the Debug panel at the bottom, click the Hot Reload button.
+
+For a more detailed description of how to use the Flutter IntelliJ plugin, check
+the page [Developing apps in the IntelliJ IDE](/intellij-ide/)
+
+![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
+
 ## Next steps
 
 Please reach out to us at our [mailing list][mailinglist]. We'd love
