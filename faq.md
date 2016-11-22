@@ -421,7 +421,8 @@ In addition, any Dart packages you use may have their own license requirements.
 
 There's an API to find the list of licenses you need to show:
 
-* If your application has a Drawer, simply add an [AboutDrawerItem](https://docs.flutter.io/flutter/material/AboutDrawerItem-class.html).
+* If your application has a [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
+  simply add an [AboutDrawerItem](https://docs.flutter.io/flutter/material/AboutDrawerItem-class.html).
 
 * If your application doesn't have a Drawer but does use the material
   library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
