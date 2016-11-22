@@ -126,7 +126,7 @@ enter _flutter_ into the search box in the upper right corner:
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot-reload feature can be found on the page
-[Developing apps in the IntelliJ IDE](/intellij-ide/).
+[Developing apps in the IntelliJ IDE](../intellij-ide/).
 
 ## Next steps
 
