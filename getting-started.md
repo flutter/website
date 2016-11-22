@@ -100,21 +100,23 @@ your Flutter app you can use the _Full Application Restart_ button.
 
 ![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
 
-The _Rerun `main.dart`_ button on the left side of the Debug Toolbar will
+The _Rerun ``main.dart``_ button on the left side of the Debug Toolbar will
 redeploy the app to the device. For both _Full Application Restart_ and _Rerun_
 you will lose the state of your application.
 
 ### IntelliJ Key Mappings _Hot Reloading_ and _Full Application Restart_
 
-1. *Hot Reloading*
+1. **Hot Reloading**
+
   On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is CTRL+F5.
-  On macOS (using IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+  On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
   is ⌘F5, which unfortunately is already mapped to _macOS VoiceOver_. See below
   for a description of how you can change that mapping.
-1. *Full Application Restart*
+1. **Full Application Restart**
+
   On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
   CTRL+Shift+F5.
-  On macOS (using IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+  On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
   is ⇧⌘F5.
 
 Keyboard mappings can be changed in IntelliJ's settings: Select *Keymap*, then
