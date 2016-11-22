@@ -83,17 +83,48 @@ If everything works, you should see your starter app on your device or simulator
   </div>
 </div>
 
-## Use _Hot Reloading_ and _Full Application Restart_ inside IntelliJ
+## _Hot Reloading_ and _Full Application Restart_ from within IntelliJ
+
 To edit your code and hot reload changes:
 
 1. Run your app in debug mode.
 1. Make desired changes in your source code (without stopping the debugger).
 1. In the Debug panel at the bottom, click the Hot Reload button.
 
-For a more detailed description of how to use the Flutter IntelliJ plugin, check
-the page [Developing apps in the IntelliJ IDE](/intellij-ide/)
+![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
+
+Hot-reload works near instantly, offering a best-in-class development cycle.
+
+Not all source code changes can be hot-reloaded. To fully restart the Dart VM of
+your Flutter app you can use the _Full Application Restart_ button.
 
 ![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
+
+The _Rerun `main.dart`_ button on the left side of the Debug Toolbar will
+redeploy the app to the device. For both _Full Application Restart_ and _Rerun_
+you will lose the state of your application.
+
+### IntelliJ Key Mappings _Hot Reloading_ and _Full Application Restart_
+
+1. *Hot Reloading*
+  On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is CTRL+F5.
+  On macOS (using IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+  is ⌘F5, which unfortunately is already mapped to _macOS VoiceOver_. See below
+  for a description of how you can change that mapping.
+1. *Full Application Restart*
+  On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
+  CTRL+Shift+F5.
+  On macOS (using IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+  is ⇧⌘F5.
+
+Keyboard mappings can be changed in IntelliJ's settings: Select *Keymap*, then
+enter _flutter_ into the search box in the upper right corner:
+
+![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
+
+A more detailed detailed description on how to use the IntelliJ plugin and which
+changes are supported by the hot-reload feature can be found on the page
+[Developing apps in the IntelliJ IDE](/intellij-ide/).
 
 ## Next steps
 
