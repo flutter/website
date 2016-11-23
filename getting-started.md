@@ -85,15 +85,15 @@ If everything works, you should see your starter app on your device or simulator
 
 ## Viewing source code changes near instantly with 'hot reload'
 
+Hot-reload works near instantly, offering a best-in-class development cycle.
+
+![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
+
 To edit your code and hot reload changes:
 
 1. Run your app in debug mode.
 1. Make desired changes in your source code (without stopping the debugger).
 1. In the Debug panel at the bottom, click the Hot Reload button.
-
-![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
-
-Hot-reload works near instantly, offering a best-in-class development cycle.
 
 Not all source code changes can be hot-reloaded. To fully restart the Dart VM of
 your Flutter app you can use the _Full Application Restart_ button.
