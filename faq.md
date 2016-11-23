@@ -406,6 +406,30 @@ Flutter's workload.
 Flutter should be able to run most Dart code that does not import (transitively,
 or directly) dart:mirrors or dart:html.
 
+## Which software license(s) apply to Flutter and its dependencies?
+
+Flutter includes two components: an engine that ships as a dynamically linked 
+binary, and the Dart framework as a separate binary that the engine loads. 
+The engine uses multiple software components with many dependencies; view the 
+complete list [here](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
+
+The framework is entirely self-contained and requires [only one license](https://github.com/flutter/flutter/blob/master/LICENSE).
+
+In addition, any Dart packages you use may have their own license requirements.
+
+## How can I determine the licenses my Flutter application needs to show?
+
+There's an API to find the list of licenses you need to show:
+
+* If your application has a [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
+  simply add an [AboutDrawerItem](https://docs.flutter.io/flutter/material/AboutDrawerItem-class.html).
+
+* If your application doesn't have a Drawer but does use the material
+  library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
+  or [showLicensePage](https://docs.flutter.io/flutter/material/showLicensePage.html).
+
+* For a more custom approach, you can get the raw licenses from the [LicenseRegistry] (https://docs.flutter.io/flutter/foundation/LicenseRegistry-class.html).
+
 ## Who works on Flutter?
 
 Flutter is an open source project. Currently, the bulk of the development is done
