@@ -138,30 +138,30 @@ To edit your code and hot reload changes:
 
 1. In the Debug panel at the bottom, click the **Hot Reload button**.
 
- ![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
+![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
 
- ### IntelliJ Key Mappings for _Hot Reload_ and _Full Application Restart_
+### IntelliJ Key Mappings for _Hot Reload_ and _Full Application Restart_
 
- 1. **Hot Reload**
+1. **Hot Reload**
 
-   On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is CTRL+F5.
-   On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
-   is ⌘F5, which unfortunately is already mapped to _macOS VoiceOver_. The
-   Flutter team is [working on better default keybindings](https://github.com/flutter/flutter-intellij/issues/335).
-   For now you can remap the keybinding through the IntelliJ settings as shown
-   below.
- 1. **Full Application Restart**
+ On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is CTRL+F5.
+ On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+ is ⌘F5, which unfortunately is already mapped to _macOS VoiceOver_. The
+ Flutter team is [working on better default keybindings](https://github.com/flutter/flutter-intellij/issues/335).
+ For now you can remap the keybinding through the IntelliJ settings as shown
+ below.
+1. **Full Application Restart**
 
-   On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
-   CTRL+Shift+F5.
-   On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
-   is ⇧⌘F5.
+ On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
+ CTRL+Shift+F5.
+ On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
+ is ⇧⌘F5.
 
- Keyboard mappings can be changed in IntelliJ's settings: Select *Keymap*, then
- enter _flutter_ into the search box in the upper right corner. Right click the
- binding you want to change and _Add Keyboard Shortcut_.
+Keyboard mappings can be changed in IntelliJ's settings: Select *Keymap*, then
+enter _flutter_ into the search box in the upper right corner. Right click the
+binding you want to change and _Add Keyboard Shortcut_.
 
- ![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
+![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
 
 
 ### 'Hot Reloads' vs 'Full Application Restarts'
