@@ -83,7 +83,7 @@ If everything works, you should see your starter app on your device or simulator
   </div>
 </div>
 
-## _Hot Reloading_ and _Full Application Restart_ from within IntelliJ
+## Viewing source code changes near instantly with 'hot reload'
 
 To edit your code and hot reload changes:
 
@@ -103,29 +103,6 @@ your Flutter app you can use the _Full Application Restart_ button.
 The _Rerun ``main.dart``_ button on the left side of the Debug Toolbar will
 redeploy the app to the device. For both _Full Application Restart_ and _Rerun_
 you will lose the state of your application.
-
-### IntelliJ Key Mappings _Hot Reloading_ and _Full Application Restart_
-
-1. **Hot Reloading**
-
-  On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is CTRL+F5.
-  On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
-  is ⌘F5, which unfortunately is already mapped to _macOS VoiceOver_. The
-  Flutter team is [working on better default keybindings](https://github.com/flutter/flutter-intellij/issues/335).
-  For now you can remap the keybinding through the IntelliJ settings as shown
-  below.
-1. **Full Application Restart**
-
-  On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
-  CTRL+Shift+F5.
-  On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut
-  is ⇧⌘F5.
-
-Keyboard mappings can be changed in IntelliJ's settings: Select *Keymap*, then
-enter _flutter_ into the search box in the upper right corner. Right click the
-binding you want to change and _Add Keyboard Shortcut_.
-
-![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot-reload feature can be found on the page
