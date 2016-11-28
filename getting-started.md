@@ -46,10 +46,10 @@ contains the `pubspec.yaml` file for your project).
 source code, you can hit `r` to hot-reload your application (updating the source on the fly
 without actually restarting the entire app).
 
-  ```
-  $ cd myapp
-  $ flutter run
-  ```
+```
+$ cd myapp
+$ flutter run
+```
 
 If more than one device is connected, use the `flutter devices` command
 to get their IDs, and then `flutter run -d deviceID` to run your app.
