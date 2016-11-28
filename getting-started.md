@@ -18,9 +18,9 @@ To write Flutter apps, you will need to install the Flutter SDK. You also need t
 Mac development machine to run and test your apps on Android or iOS. See
 [Flutter Setup](../setup) for instructions on how to set up your development environment.
 
-## Create your first Flutter app
+## Creating your first Flutter app
 
-To create a starter project, open a terminal and run the `flutter` command .
+To create a starter project, open a terminal and run the `flutter create <project name>` command .
 
 Here is an example:
 
@@ -33,7 +33,7 @@ app that uses [Material Design](https://www.google.com/design/spec/material-desi
 
 In the project directory, the code for your app is in `myapp/lib/main.dart`.
 
-## Run your Flutter app
+## Running your Flutter app
 
 Use the `flutter run` command to run your Flutter app on a connected
 device or simulator.
@@ -47,6 +47,7 @@ source code, you can hit `r` to hot-reload your application (updating the source
 without actually restarting the entire app).
 
   ```
+  $ cd myapp
   $ flutter run
   ```
 
@@ -83,9 +84,11 @@ If everything works, you should see your starter app on your device or simulator
   </div>
 </div>
 
-## Viewing source code changes near instantly with 'hot reload'
+## Viewing source code changes with 'hot reload'
 
-Hot-reload works near instantly, offering a best-in-class development cycle.
+_Hot reload_ reloads your app very quickly
+after a change to your source code,
+offering a best-in-class development cycle.
 
 ![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
 
@@ -95,7 +98,7 @@ To edit your code and hot reload changes:
 1. Make desired changes in your source code (without stopping the debugger).
 1. In the Debug panel at the bottom, click the Hot Reload button.
 
-Not all source code changes can be hot-reloaded. To fully restart the Dart VM of
+Not all source code changes can be hot reloaded. To fully restart the Dart VM of
 your Flutter app you can use the _Full Application Restart_ button.
 
 ![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
