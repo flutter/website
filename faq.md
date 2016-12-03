@@ -367,13 +367,6 @@ virtual machine are implemented in C/C++.
 
 The primary criteria we used to pick a programming language were the following:
 
-* _Predictable, high performance_. With Flutter, we want to empower developers
-  to create fast, fluid user experiences. In order to achieve that, we need to
-  be able to run a significant amount of end-developer code during every
-  animation frame. That means we need a language that both delivers high
-  performance and delivers predictable performance, without periodic
-  pauses that would cause dropped frames.
-
 * _Developer productivity_. One of Flutter's main value propositions is that it
   saves engineering resources by letting developers create apps for both iOS and
   Android with the same codebase. Using a highly productive language
@@ -384,6 +377,13 @@ The primary criteria we used to pick a programming language were the following:
   multiple decades of experience building user interface frameworks in
   object-oriented languages. While we could use a non-object-oriented language,
   this would mean reinventing the wheel to solve several hard problems.
+
+* _Predictable, high performance_. With Flutter, we want to empower developers
+  to create fast, fluid user experiences. In order to achieve that, we need to
+  be able to run a significant amount of end-developer code during every
+  animation frame. That means we need a language that both delivers high
+  performance and delivers predictable performance, without periodic
+  pauses that would cause dropped frames.
 
 * _Fast allocation_. The Flutter framework uses a functional-reactive style
   programming model, whose performance depends heavily on the underlying memory
