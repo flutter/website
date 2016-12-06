@@ -78,13 +78,29 @@ Add this file to `test/unit_test.dart`:
 import 'package:test/test.dart';
 
 void main() {
-  test('this is a unit test', () {
-    expect(42, 42);
+  test('my first unit test', () {
+    int answer = 42;
+    expect(answer, 42);
   });
 }
 ```
 
-Run `flutter test test/unit_test.dart`.
+In addition, you must add the following block to your `pubspec.yaml`:
+
+```yaml
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+```
+
+(This is needed even if your test does not itself explicitly import
+`flutter_test`, because the test framework itself uses it behind the
+scenes.)
+
+To run the test, run `flutter test test/unit_test.dart` from your
+project directory (not from the `test` subdirectory).
+
+To run all your tests, run `flutter test` from your project directory.
 
 
 ## Widget testing
@@ -107,7 +123,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('this is a widget test', (WidgetTester tester) async {
+  testWidgets('my first widget test', (WidgetTester tester) async {
     // You can use keys to locate the widget you need to test
     Key sliderKey = new UniqueKey();
     double value = 0.0;
@@ -151,9 +167,6 @@ for all the utilities available for widget testing.
 
 ## Integration testing
 
-**NOTE: Flutter Driver currently only supports Android devices and iOS
-Simulator. Support for the Android Emulator and iOS devices are coming soon.**
-
 A Flutter integration test is also written using `package:test`. A full test is a
 pair - a test script and a Flutter app instrumented to receive commands
 from the test. Unlike unit and widget tests, integration test code does not run
@@ -180,6 +193,16 @@ Together, the two allow you to:
 * create instrumented app for integration testing
 * write a test
 * run the test
+
+### Adding the flutter_driver dependency
+
+To use `flutter_driver`, you must add the following block to your `pubspec.yaml`:
+
+```yaml
+dev_dependencies:
+  flutter_driver:
+    sdk: flutter
+```
 
 ### Creating instrumented Flutter apps
 
