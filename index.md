@@ -59,8 +59,17 @@ More resources for Flutter developers.
 ## Support
 
 Track the Flutter project and join the conversation in a variety of ways.
+We're open source and would love to hear from you.
 
-- [Gitter for Flutter](https://gitter.im/flutter/flutter) (get live support via chat)
-- [flutter-dev@googlegroups.com](https://groups.google.com/d/forum/flutter-dev) (mailing list)
-- [Report bugs and request features](https://github.com/flutter/flutter/issues)
-- [@flutterio](https://twitter.com/flutterio) (get the latest announcements via Twitter)
+- [Ask HOWTO questions that can be answered with specific solutions][so]
+- [Live chat with Flutter engineers and users][gitter]
+- [Discuss Flutter, best practices, app design, and more on our mailing list][mailinglist]
+- [Report bugs, request features and docs][issues]
+- [Follow us on Twitter: @flutterio](https://twitter.com/flutterio)
+
+
+[issues]: https://github.com/flutter/flutter/issues
+[apidocs]: https://docs.flutter.io
+[so]: https://stackoverflow.com/tags/flutter
+[mailinglist]: https://groups.google.com/d/forum/flutter-dev
+[gitter]: https://gitter.im/flutter/flutter
