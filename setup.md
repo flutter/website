@@ -35,7 +35,7 @@ the setup:
 $ flutter doctor
 ```
 
-The first time your run the `flutter` command, it will download its dependencies and compile
+The first time you run the `flutter` command, it will download its dependencies and compile
 itself. Subsequent runs should be much faster.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
