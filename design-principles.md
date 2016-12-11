@@ -136,7 +136,7 @@ proper fix for a problem rather than just applying a band-aid.
 Tests
 -----
 
-** Write Tests, Find Bugs **
+**Write Tests, Find Bugs**
 
 When you fix a bug, first write a test that fails, then fix the bug
 and verify the test passes.
@@ -205,6 +205,7 @@ API design
   point, but beyond that have to learn all about the underlying
   service).
 
+
 Bugs
 ----
 
@@ -228,6 +229,7 @@ File bugs for anything that you come across that needs doing. When you
 implement something but know it's not complete, file bugs for what you
 haven't done. That way, we can keep track of what still needs doing.
 
+
 Regressions
 -----------
 
@@ -247,8 +249,52 @@ the future. Postmortems are emphatically _not_ about assigning blame.
 
 There is no shame in making mistakes.
 
+
 Questions
 ---------
 
 It's always ok to ask questions. Our systems are large, nobody will be
 an expert in all the systems.
+
+
+Conflict resolution
+-------------------
+
+When multiple contributors disagree on the direction for a particular
+patch or the general direction of the project, the conflict should be
+resolved by communication. The people who disagree should get together,
+try to understand each other's points of view, and work to find a design
+that addresses everyone's concerns.
+
+This is usually sufficient to resolve issues. If you cannot come to an
+agreement, ask for the advice of a more senior member of the team.
+
+Be wary of agreement by attrition, where one person argues a point repeatedly
+until other participants give up in the interests of moving on. This is
+not conflict resolution, as it does not address everyone's concerns. Be wary
+of agreement by compromise, where two good competing solutions are merged
+into one mediocre solution. A conflict is addressed when the participants
+agree that the final solution is _better_ than all the conflicting proposals.
+Sometimes the solution is more work than either of the proposals. Please
+see the comments above where we introduce the phrase "embrace the yak shave".
+
+Code of conduct
+---------------
+
+This section is the last section in this document because it should be
+the most obvious. However, it is also the most important.
+
+We expect Flutter's contributors to act professionally and respectfully, and
+we expect our social spaces to be safe and dignified environments.
+
+Specifically:
+
+* Respect people, their identities, their culture, and their work.
+* Be kind. Be courteous. Be welcoming.
+* Listen. Consider and acknowledge people's points before responding.
+
+Should you experience anything that makes you feel unwelcome in Flutter's
+community, please contact someone on the team, for instance
+[Ian](mailto:ian@hixie.ch) or [Adam](mailto:abarth@google.com). We will
+not tolerate harrasment from anyone in Flutter's community, even outside
+of Flutter's public communication channels.
