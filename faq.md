@@ -428,7 +428,7 @@ There's an API to find the list of licenses you need to show:
   library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
   or [showLicensePage](https://docs.flutter.io/flutter/material/showLicensePage.html).
 
-* For a more custom approach, you can get the raw licenses from the [LicenseRegistry] (https://docs.flutter.io/flutter/foundation/LicenseRegistry-class.html).
+* For a more custom approach, you can get the raw licenses from the [LicenseRegistry](https://docs.flutter.io/flutter/foundation/LicenseRegistry-class.html).
 
 ## Who works on Flutter?
 
