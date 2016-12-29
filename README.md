@@ -25,6 +25,12 @@ A tldr version follows:
 * Make your changes.
 * To test your changes, run `bundle exec jekyll serve` (or
   `jekyll serve -w --force_polling`)
+* Prior to submitting, run automatic link validation:
+
+  ```
+  bundle exec jekyll build
+  bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#"
+  ```
 
 ## Code Snippet Validation
 
