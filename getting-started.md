@@ -5,8 +5,6 @@ sidebar: home_sidebar
 permalink: /getting-started/
 ---
 
-<link rel="stylesheet" href="/css/styles.css" />
-
 This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
 
 * Placeholder for TOC
@@ -72,13 +70,13 @@ If everything works, you should see your starter app on your device or simulator
 <div id="starter-app-screenshots">
   <div class="box2">
     <figure>
-      <img src="/images/flutter-starter-app-ios.png">
+      <img src="/images/flutter-starter-app-ios.png" alt="iOS screenshot">
       <figcaption>Figure 1. iOS (iPhone 6s Plus)</figcaption>
     </figure>
   </div>
   <div class="box2">
     <figure>
-      <img src="/images/flutter-starter-app-android.png">
+      <img src="/images/flutter-starter-app-android.png" alt="Android screenshot">
       <figcaption>Figure 2. Android (Nexus 6P)</figcaption>
     </figure>
   </div>
