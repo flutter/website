@@ -26,12 +26,11 @@ problems.
 
 ## Dart Observatory (statement-level single-stepping debugger and profiler)
 
-If you started your application on an Android device using `flutter
-run`, then, while it is running, you can open the Web page at
-[http://localhost:8181/](http://localhost:8181/) to connect to your
-application directly with a statement-level single-stepping debugger.
-If you're using IntelliJ, you can also debug your application using its
-built-in debugger.
+If you started your application on an Android device using `flutter run`, then,
+while it is running, you can open the Web page at `http://localhost:8181/` to
+connect to your application directly with a statement-level single-stepping
+debugger. If you're using IntelliJ, you can also debug your application using
+its built-in debugger.
 
 Observatory also supports profiling, examining the heap, etc. For more
 information on Observatory, see
