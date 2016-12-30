@@ -70,13 +70,13 @@ If everything works, you should see your starter app on your device or simulator
 <div id="starter-app-screenshots">
   <div class="box2">
     <figure>
-      <img src="/images/flutter-starter-app-ios.png" alt="iOS screenshot">
+      <img src="/images/flutter-starter-app-ios.png" alt="">
       <figcaption>Figure 1. iOS (iPhone 6s Plus)</figcaption>
     </figure>
   </div>
   <div class="box2">
     <figure>
-      <img src="/images/flutter-starter-app-android.png" alt="Android screenshot">
+      <img src="/images/flutter-starter-app-android.png" alt="">
       <figcaption>Figure 2. Android (Nexus 6P)</figcaption>
     </figure>
   </div>
