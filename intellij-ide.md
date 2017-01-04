@@ -185,6 +185,21 @@ your debugging session:
 1. In the Debug panel at the bottom, click the **Full Application Restart button**
 (shown with an icon containing a circular arrow).
 
+## Tips and tricks
+
+Keyboard shortcuts:
+  * JetBrains has a good [Keyboard Shortcuts You Cannot Miss](https://www.jetbrains.com/help/idea/keyboard-shortcuts-you-cannot-miss.html) overview
+  * Customize the shortcuts to your preferences in **Preferences > Keymap**
+
+To navigate quickly in your code:
+  * Switch between recently edited files with `cmd-e`
+  * Navigate between all files with `cmd-arrow_up`
+
+Code completion:
+  * Code completions will be shown as you type, or can be invoked at any time with `shift-spacebar`
+  * IntelliJ code completion matches are per-default case sensitive, even on the first letter. 
+    You can change this in **Preferences > Editor > General > Code Completion**
+
 ## Troubleshooting
 
 ### Known issues and feedback
