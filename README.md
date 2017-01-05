@@ -19,18 +19,25 @@ provided by GitHub.
 
 A tldr version follows:
 
-* First time contributor to this site? Ensure you have Ruby and bundler
-  installed, and then run `bundle install`
-* Create a branch.
-* Make your changes.
-* To test your changes, run `bundle exec jekyll serve` (or
-  `jekyll serve -w --force_polling`)
-* Prior to submitting, run automatic link validation:
+1. Ensure you have [Ruby](https://www.ruby-lang.org/en/downloads/) installed; you need version 2.3.1 or later:<br>
+`ruby --version`
 
-  ```
-  bundle exec jekyll build
-  bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#"
-  ```
+1. Ensure you have [Bundler](http://bundler.io/) installed; if not install with:<br>
+`sudo gem install bundler`
+
+1. Install all dependencies:<br>
+`bundle install`
+
+1. Create a branch.
+
+1. Make your changes.
+
+1. Test your changes by serving the site locally:<br>
+`bundle exec jekyll serve` (or `jekyll serve -w --force_polling`)
+
+1. Prior to submitting, run link validation:<br>
+`bundle exec jekyll build`<br>
+`bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#"`
 
 ## Code Snippet Validation
 
