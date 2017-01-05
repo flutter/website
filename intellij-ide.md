@@ -192,12 +192,12 @@ Keyboard shortcuts:
   * Customize the shortcuts to your preferences in **Preferences > Keymap**
 
 To navigate quickly in your code:
-  * Switch between recently edited files with `cmd-e`
-  * Navigate between all files with `cmd-arrow_up`
+  * Switch between recent files: `cmd-e` (Mac), `ctrl-e` (Windows & Linux)
+  * Navigate between all files: `cmd-arrow_up` (Mac), `alt-Home` (Windows & Linux)
 
 Code completion:
   * Code completions will be shown as you type, or can be invoked at any time with `shift-spacebar`
-  * IntelliJ code completion matches are per-default case sensitive, even on the first letter. 
+  * IntelliJ code completion matches are per-default case sensitive on the first letter. 
     You can change this in **Preferences > Editor > General > Code Completion**
 
 ## Troubleshooting
