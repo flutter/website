@@ -59,6 +59,11 @@ bundle install
 echo "Building site."
 bundle exec jekyll build
 
+echo "Validating all links."
+# Note: We are excluding all links starting with developer.apple.com, as the
+#       Apple server seems to reject these from Travis with 'SSL connect error'
+bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#","/developer.apple.com/"
+
 # TODO: deploy to a personal staging site, based on github ID, when not
 #       merging into master
 
