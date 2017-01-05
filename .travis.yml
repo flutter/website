@@ -2,5 +2,7 @@ language: node_js
 node_js:
   - "5.1"
 sudo: false
-before_install: ./tool/before_install.sh
+before_install:
+  - rvm install 2.2.2
+  - ./tool/before_install.sh
 script: ./tool/travis.sh
