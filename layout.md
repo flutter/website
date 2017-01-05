@@ -88,7 +88,7 @@ direction.
 In unbounded constraints, they try to fit their children in that
 direction. In this case, you cannot set `flex` on the children to
 anything other than 0 (the default). In the widget library, this
-means that you cannot use `Flexible` when the flex box is inside
+means that you cannot use `Expanded` when the flex box is inside
 another flex box or inside a scrollable. If you do, you'll get an
 exception message pointing you at this document.
 
