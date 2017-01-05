@@ -59,14 +59,11 @@ bundle install
 echo "Building site."
 bundle exec jekyll build
 
-# TODO: deploy to a personal staging site, based on github ID, when not
-#       merging into master
-
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-  if [ "$TRAVIS_BRANCH" = "master" ]; then
-    echo "Deploying to Firebase."
-
-    npm install --global firebase-tools@3.0.0
-    firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" deploy
-  fi
+if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+  # Deploy pushes to master to Firebase hosting.
+  # TODO: deploy to a personal staging site, based on github ID, when not
+  #       merging into master
+  echo "Deploying to Firebase."
+  npm install --global firebase-tools@3.0.0
+  firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" deploy
 fi
