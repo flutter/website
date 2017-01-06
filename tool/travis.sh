@@ -60,9 +60,7 @@ echo "Building site."
 bundle exec jekyll build
 
 echo "Validating all links."
-# Note: We are excluding all links starting with developer.apple.com, as the
-#       Apple server seems to reject these from Travis with 'SSL connect error'
-bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#","/developer.apple.com/"
+bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#" --only-4xx
 
 if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
   # Deploy pushes to master to Firebase hosting.
