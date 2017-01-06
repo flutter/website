@@ -37,7 +37,7 @@ A tldr version follows:
 
 1. Prior to submitting, run link validation:<br>
 `bundle exec jekyll build`<br>
-`bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#"`
+`bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx`
 
 ## Code Snippet Validation
 

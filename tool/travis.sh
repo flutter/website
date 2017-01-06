@@ -60,7 +60,7 @@ echo "Building site."
 bundle exec jekyll build
 
 echo "Validating all links."
-bundle exec htmlproofer --empty-alt-ignore _site --url-ignore "#" --only-4xx
+bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx
 
 if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
   # Deploy pushes to master to Firebase hosting.
