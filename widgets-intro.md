@@ -122,7 +122,7 @@ class MyAppBar extends StatelessWidget {
             tooltip: 'Navigation menu',
             onPressed: null,
           ),
-          new Flexible(
+          new Expanded(
             child: title,
           ),
           new IconButton(
@@ -148,7 +148,7 @@ class MyScaffold extends StatelessWidget {
               style: Theme.of(context).primaryTextTheme.title,
             ),
           ),
-          new Flexible(
+          new Expanded(
             child: new Center(
               child: new Text('Hello, world!'),
             ),
@@ -188,15 +188,15 @@ with a height of 56 device-independent pixels with an internal padding of 8
 pixels, both on the left and the right. Inside the container, `MyAppBar` uses a
 [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) layout to
 organize its children. The middle child, the `title` widget, is marked as
-[`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html),
+[`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html),
 which means it expands to fill any remaining available space that hasn't been
-consumed by the inflexible children. You can have multiple
-[`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html)
+consumed by the other children. You can have multiple
+[`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html)
 children and determine the ratio in which they consume the available space using
 the
-[`flex`](https://docs.flutter.io/flutter/widgets/Flexible-class.html#flex)
+[`flex`](https://docs.flutter.io/flutter/widgets/Expanded-class.html#flex)
 argument to
-[`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html).
+[`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html).
 
 The `MyScaffold` widget organizes its children in a vertical column. At the
 top of the column it places an instance of `MyAppBar`, passing the app bar a
@@ -204,7 +204,7 @@ top of the column it places an instance of `MyAppBar`, passing the app bar a
 use as its title. Passing widgets as arguments to other widgets is a powerful
 technique that lets you create generic widgets that can be reused in a wide
 variety of ways. Finally, `MyScaffold` uses a
-[`Flexible`](https://docs.flutter.io/flutter/widgets/Flexible-class.html) to
+[`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
 Using material design
