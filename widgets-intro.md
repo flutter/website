@@ -107,21 +107,26 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatelessWidget {
   MyAppBar({this.title});
 
+  // Fields in a Widget subclass are always marked "final".
+
   final Widget title;
 
   @override
   Widget build(BuildContext context) {
     return new Container(
-      height: 56.0,
+      height: 56.0, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       decoration: new BoxDecoration(backgroundColor: Colors.blue[500]),
+      // Row is a horizontal, linear layout.
       child: new Row(
+        // <Widget> is the type of items in the list.
         children: <Widget>[
           new IconButton(
             icon: new Icon(Icons.menu),
             tooltip: 'Navigation menu',
-            onPressed: null,
+            onPressed: null, // null disables the button
           ),
+          // Expanded expands its child to fill the available space.
           new Expanded(
             child: title,
           ),
@@ -139,7 +144,9 @@ class MyAppBar extends StatelessWidget {
 class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Material is a conceptual piece of paper on which the UI appears.
     return new Material(
+      // Column is a vertical, linear layout.
       child: new Column(
         children: <Widget>[
           new MyAppBar(
@@ -161,7 +168,7 @@ class MyScaffold extends StatelessWidget {
 
 void main() {
   runApp(new MaterialApp(
-    title: 'My app',
+    title: 'My app', // used by the OS task switcher
     home: new MyScaffold(),
   ));
 }
@@ -238,6 +245,7 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Scafold is a layout for the major material design widgets.
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(
@@ -254,11 +262,12 @@ class TutorialHome extends StatelessWidget {
           ),
         ],
       ),
+      // body is the majority of the screen.
       body: new Center(
         child: new Text('Hello, world!'),
       ),
       floatingActionButton: new FloatingActionButton(
-        tooltip: 'Add',
+        tooltip: 'Add', // used by assistive technologies
         child: new Icon(Icons.add),
         onPressed: null,
       ),
@@ -369,28 +378,44 @@ mentioned earlier:
 
 ```dart
 class Counter extends StatefulWidget {
+  // This class is the configuration for the state. It holds the
+  // values (in this nothing) provided by the parent and used by the build
+  // method of the State. Fields in a Widget subclass are always marked "final".
+
   @override
   _CounterState createState() => new _CounterState();
 }
 
 class _CounterState extends State<Counter> {
-  int _count = 0;
+  int _counter = 0;
 
   void _increment() {
     setState(() {
-      _count += 1;
+      // This call to setState tells the Flutter framework that
+      // something has changed in this State, which causes it to rerun
+      // the build method below so that the display can reflect the
+      // updated values. If we changed _counter without calling
+      // setState(), then the build method would not be called again,
+      // and so nothing would appear to happen.
+      _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance
+    // as done by the _incrementCounter method above.
+    // The Flutter framework has been optimized to make rerunning
+    // build methods fast, so that you can just rebuild anything that
+    // needs updating rather than having to individually change
+    // instances of widgets.
     return new Row(
       children: <Widget>[
         new RaisedButton(
           onPressed: _increment,
           child: new Text('Increment'),
         ),
-        new Text('Count: $_count'),
+        new Text('Count: $_counter'),
       ],
     );
   }
@@ -420,7 +445,9 @@ see how that works in practice, with this slightly more complex example:
 ```dart
 class CounterDisplay extends StatelessWidget {
   CounterDisplay({this.count});
+
   final int count;
+
   @override
   Widget build(BuildContext context) {
     return new Text('Count: $count');
@@ -429,7 +456,9 @@ class CounterDisplay extends StatelessWidget {
 
 class CounterIncrementor extends StatelessWidget {
   CounterIncrementor({this.onPressed});
+
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return new RaisedButton(
@@ -445,11 +474,11 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  int _count = 0;
+  int _counter = 0;
 
   void _increment() {
     setState(() {
-      ++_count;
+      ++_counter;
     });
   }
 
@@ -457,7 +486,7 @@ class _CounterState extends State<Counter> {
   Widget build(BuildContext context) {
     return new Row(children: <Widget>[
       new CounterIncrementor(onPressed: _increment),
-      new CounterDisplay(count: _count),
+      new CounterDisplay(count: _counter),
     ]);
   }
 }
@@ -497,6 +526,10 @@ class ShoppingListItem extends StatelessWidget {
   final CartChangedCallback onCartChanged;
 
   Color _getColor(BuildContext context) {
+    // The theme depends on the BuildContext because different parts of the tree
+    // can have different themes.  The BuildContext indicates where the build is
+    // taking place and therefore which theme to use.
+
     return inCart ? Colors.black54 : Theme.of(context).primaryColor;
   }
 
@@ -569,6 +602,11 @@ class ShoppingList extends StatefulWidget {
 
   final List<Product> products;
 
+  // The framework calls createState the first time a widget appears at a given
+  // location in the tree. If the parent rebuilds and uses the same type of
+  // widget (with the same key), the framework will re-use the State object
+  // instead of creating a new State object.
+
   @override
   _ShoppingListState createState() => new _ShoppingListState();
 }
@@ -578,6 +616,10 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
+      // When user changes what is in the cart, we need to change _shoppingCart
+      // inside a setState call to trigger a rebuild. The framework then calls
+      // build, below, which updates the visual appearance of the app.
+
       if (inCart)
         _shoppingCart.add(product);
       else
