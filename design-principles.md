@@ -184,26 +184,20 @@ API design
   for clipping and one class for opacity rather than one class that
   does both at the same time).
 
- - Convenience APIs belong at the layer above the one they are
-   simplifying.
+  - Convenience APIs belong at the layer above the one they are
+    simplifying.
 
- - Having dedicated APIs for performance reasons is fine. If one
-   specific operation, say clipping a rounded rectangle, is expensive
-   using the generic API but could be implemented more efficiently
-   using a dedicated API, then a dedicated API is fine.
+  - Having dedicated APIs for performance reasons is fine. If one
+    specific operation, say clipping a rounded rectangle, is expensive
+    using the generic API but could be implemented more efficiently
+    using a dedicated API, then a dedicated API is fine.
 
 * APIs that encourage bad practices should not exist. e.g., no
   `document.write()`, `innerHTML`, `insertAdjacentHTML()`, etc.
 
- - String manipulation to generate data or code that will subsequently
-   be interpreted or parsed is a bad practice as it leads to code
-   injection vulnerabilities.
-
-* If we expose some aspect of a mojo service, we should expose/wrap
-  all of it, so that there's no cognitive cliff when interacting with
-  that service (where you are fine using the exposed API up to a
-  point, but beyond that have to learn all about the underlying
-  service).
+  - String manipulation to generate data or code that will subsequently
+    be interpreted or parsed is a bad practice as it leads to code
+    injection vulnerabilities.
 
 
 Bugs
