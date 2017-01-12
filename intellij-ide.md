@@ -199,6 +199,15 @@ Code completion:
   * Code completions will be shown as you type, or can be invoked at any time with `shift-spacebar`
   * IntelliJ code completion matches are per-default case sensitive on the first letter. 
     You can change this in **Preferences > Editor > General > Code Completion**
+    
+Opening a Flutter project in IntelliJ from the terminal:
+  * Create a terminal config for IntelliJ: In IntelliJ, select **Tools > Create Command-line Launcher**
+  * You can now open a project with `idea .`, e.g.:
+  
+  ```
+  cd <flutter sdk dir>\examples\flutter_gallery`
+  idea .
+  ```
 
 ## Troubleshooting
 
