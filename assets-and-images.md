@@ -154,7 +154,7 @@ Widget build(BuildContext context) {
   return new DecoratedBox(
     decoration: new BoxDecoration(
       backgroundImage: new BackgroundImage(
-        image: new AssetImage('my_asset.png'),
+        image: new AssetImage('assets/my_asset.png'),
         // ...
       ),
       // ...
@@ -165,12 +165,12 @@ Widget build(BuildContext context) {
 ```
 
 The way this works is through an object called
-[`AssetVendor`](https://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/widgets/AssetImage-class.html)
 established at the top of the build tree. AssetVendor replaces the default asset
 bundle, so anything using the default asset bundle will inherit resolution
 awareness when loading images.  (If you work with some of the lower level
 classes, like
-[`ImageResource`](https://docs.flutter.io/flutter/services/ImageResource-class.html)
+[`ImageStream`](https://docs.flutter.io/flutter/services/ImageStream-class.html)
 or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
@@ -190,8 +190,3 @@ you'll also notice parameters related to scale.)
   aware of the change.  If you want resolution awareness with the new MediaQuery
   or DefaultAssetBundle you specify, you'll need to create an AssetVendor at
   that point in the tree as well.
-
-You can see an example
-([examples/widgets.dart](https://github.com/flutter/flutter/tree/master/examples/widgets))
-from the flutter repo.
-Run `flutter run -t resolution_awareness.dart` to see it in action.
