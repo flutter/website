@@ -788,7 +788,7 @@ global keys because they can hold focus, which means they receive any text the
 user enters into the app. The
 [`Focus`](https://docs.flutter.io/flutter/widgets/Focus-class.html) widget
 keeps track of which
-[`InputState`](https://docs.flutter.io/flutter/material/InputState-class.html)
+[`State`](https://docs.flutter.io/flutter/material/State-class.html)
 object is focused by remembering its
 [`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html).
 That way the same
