@@ -196,25 +196,84 @@ I/flutter :                                                              └Deco
 I/flutter :                                                                └Container(bg: BoxDecoration(backgroundColor: Color(0xfffafafa)))
 I/flutter :                                                                  └DecoratedBox(renderObject: RenderDecoratedBox)
 I/flutter :                                                                    └NotificationListener<LayoutChangedNotification>()
-I/flutter :                                                                      └InkFeatures([GlobalKey ink renderer]; renderObject: RenderInkFeatures)
+I/flutter :                                                                      └InkFeature([GlobalKey ink renderer]; renderObject: RenderInkFeatures)
 I/flutter :                                                                        └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 400; baseline: alphabetic; height: 1.4285714285714286x)
 I/flutter :                                                                          └Center(renderObject: RenderPositionedBox)
 I/flutter :                                                                            └FlatButton(dirty; state: _FlatButtonState(608093273))
-I/flutter :                                                                              └Container(BoxConstraints(88.0<=w<=Infinity, h=36.0); margin: EdgeInsets(8.0, 8.0, 8.0, 8.0); padding: EdgeInsets(0.0, 8.0, 0.0, 8.0))
-I/flutter :                                                                                └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up1)
-I/flutter :                                                                                  └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutSubtreeRoot=up2)
-I/flutter :                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up3)
-I/flutter :                                                                                      └DefaultTextStyle(inherit: false; color: Color(0xdd000000); size: 14.0; weight: 500; baseline: alphabetic)
-I/flutter :                                                                                        └InkWell(state: _InkResponseState<InkResponse>(741510572))
-I/flutter :                                                                                          └GestureDetector()
-I/flutter :                                                                                            └RawGestureDetector(state: RawGestureDetectorState(576641993; gestures: tap; behavior: opaque))
-I/flutter :                                                                                              └_GestureSemantics(renderObject: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4)
-I/flutter :                                                                                                └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutSubtreeRoot=up5)
-I/flutter :                                                                                                  └Container(padding: EdgeInsets(0.0, 8.0, 0.0, 8.0))
-I/flutter :                                                                                                    └Padding(renderObject: RenderPadding relayoutSubtreeRoot=up6)
-I/flutter :                                                                                                      └Center(renderObject: RenderPositionedBox relayoutSubtreeRoot=up7)
-I/flutter :                                                                                                        └Text("Dump App")
-I/flutter :                                                                                                          └RichText(renderObject: RenderParagraph relayoutSubtreeRoot=up8)
+
+I/flutter ( 6559): WidgetsFlutterBinding - CHECKED MODE
+I/flutter ( 6559): RenderObjectToWidgetAdapter<RenderBox>([GlobalObjectKey RenderView(497039273)]; renderObject: RenderView)
+I/flutter ( 6559): └MaterialApp(state: _MaterialAppState(1009803148))
+I/flutter ( 6559):  └ScrollConfiguration()
+I/flutter ( 6559):   └AnimatedTheme(duration: 200ms; state: _AnimatedThemeState(543295893; ticker inactive; ThemeDataTween(ThemeData(Brightness.light Color(0xff2196f3) etc...) → null)))
+I/flutter ( 6559):    └Theme(ThemeData(Brightness.light Color(0xff2196f3) etc...))
+I/flutter ( 6559):     └WidgetsApp([GlobalObjectKey _MaterialAppState(1009803148)]; state: _WidgetsAppState(552902158))
+I/flutter ( 6559):      └CheckedModeBanner()
+I/flutter ( 6559):       └Banner()
+I/flutter ( 6559):        └CustomPaint(renderObject: RenderCustomPaint)
+I/flutter ( 6559):         └DefaultTextStyle(inherit: true; color: Color(0xd0ff0000); family: "monospace"; size: 48.0; weight: 900; decoration: double Color(0xffffff00) TextDecoration.underline)
+I/flutter ( 6559):          └MediaQuery(MediaQueryData(size: Size(411.4, 683.4), devicePixelRatio: 2.625, textScaleFactor: 1.0, padding: EdgeInsets(0.0, 24.0, 0.0, 0.0)))
+I/flutter ( 6559):           └LocaleQuery(null)
+I/flutter ( 6559):            └Title(color: Color(0xff2196f3))
+I/flutter ( 6559):             └Navigator([GlobalObjectKey<NavigatorState> _WidgetsAppState(552902158)]; state: NavigatorState(240327618; tracking 1 ticker))
+I/flutter ( 6559):              └Listener(listeners: down, up, cancel; behavior: defer-to-child; renderObject: RenderPointerListener)
+I/flutter ( 6559):               └AbsorbPointer(renderObject: RenderAbsorbPointer)
+I/flutter ( 6559):                └Focus([GlobalKey 489139594]; state: _FocusState(739584448))
+I/flutter ( 6559):                 └Semantics(container: true; renderObject: RenderSemanticsAnnotations)
+I/flutter ( 6559):                  └_FocusScope(this scope has focus; focused subscope: [GlobalObjectKey MaterialPageRoute<Null>(875520219)])
+I/flutter ( 6559):                   └Overlay([GlobalKey 199833992]; state: OverlayState(619367313; entries: [OverlayEntry@248818791(opaque: false; maintainState: false), OverlayEntry@837336156(opaque: false; maintainState: true)]))
+I/flutter ( 6559):                    └_Theatre(renderObject: _RenderTheatre)
+I/flutter ( 6559):                     └Stack(renderObject: RenderStack)
+I/flutter ( 6559):                      ├_OverlayEntry([GlobalKey 612888877]; state: _OverlayEntryState(739137453))
+I/flutter ( 6559):                      │└IgnorePointer(ignoring: false; renderObject: RenderIgnorePointer)
+I/flutter ( 6559):                      │ └ModalBarrier()
+I/flutter ( 6559):                      │  └Semantics(container: true; renderObject: RenderSemanticsAnnotations)
+I/flutter ( 6559):                      │   └GestureDetector()
+I/flutter ( 6559):                      │    └RawGestureDetector(state: RawGestureDetectorState(39068508; gestures: tap; behavior: opaque))
+I/flutter ( 6559):                      │     └_GestureSemantics(renderObject: RenderSemanticsGestureHandler)
+I/flutter ( 6559):                      │      └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener)
+I/flutter ( 6559):                      │       └ConstrainedBox(BoxConstraints(biggest); renderObject: RenderConstrainedBox)
+I/flutter ( 6559):                      └_OverlayEntry([GlobalKey 727622716]; state: _OverlayEntryState(279971240))
+I/flutter ( 6559):                       └_ModalScope([GlobalKey 816151164]; state: _ModalScopeState(875510645))
+I/flutter ( 6559):                        └Focus([GlobalObjectKey MaterialPageRoute<Null>(875520219)]; state: _FocusState(331487674))
+I/flutter ( 6559):                         └Semantics(container: true; renderObject: RenderSemanticsAnnotations)
+I/flutter ( 6559):                          └_FocusScope(this scope has focus)
+I/flutter ( 6559):                           └Offstage(offstage: false; renderObject: RenderOffstage)
+I/flutter ( 6559):                            └IgnorePointer(ignoring: false; renderObject: RenderIgnorePointer)
+I/flutter ( 6559):                             └_MountainViewPageTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩FractionalOffsetTween(FractionalOffset(0.0, 1.0) → FractionalOffset(0.0, 0.0))➩FractionalOffset(0.0, 0.0); state: _AnimatedState(552160732))
+I/flutter ( 6559):                              └SlideTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩FractionalOffsetTween(FractionalOffset(0.0, 1.0) → FractionalOffset(0.0, 0.0))➩FractionalOffset(0.0, 0.0); state: _AnimatedState(714726495))
+I/flutter ( 6559):                               └FractionalTranslation(renderObject: RenderFractionalTranslation)
+I/flutter ( 6559):                                └RepaintBoundary(renderObject: RenderRepaintBoundary)
+I/flutter ( 6559):                                 └PageStorage([GlobalKey 619728754])
+I/flutter ( 6559):                                  └_ModalScopeStatus(active)
+I/flutter ( 6559):                                   └AppHome()
+I/flutter ( 6559):                                    └Material(MaterialType.canvas; elevation: 0; state: _MaterialState(780114997))
+I/flutter ( 6559):                                     └AnimatedContainer(duration: 200ms; has background; state: _AnimatedContainerState(616063822; ticker inactive; has background))
+I/flutter ( 6559):                                      └Container(bg: BoxDecoration())
+I/flutter ( 6559):                                       └DecoratedBox(renderObject: RenderDecoratedBox)
+I/flutter ( 6559):                                        └Container(bg: BoxDecoration(backgroundColor: Color(0xfffafafa)))
+I/flutter ( 6559):                                         └DecoratedBox(renderObject: RenderDecoratedBox)
+I/flutter ( 6559):                                          └NotificationListener<LayoutChangedNotification>()
+I/flutter ( 6559):                                           └_InkFeature([GlobalKey ink renderer]; renderObject: _RenderInkFeatures)
+I/flutter ( 6559):                                            └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(427742350; ticker inactive))
+I/flutter ( 6559):                                             └DefaultTextStyle(inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic)
+I/flutter ( 6559):                                              └Center(alignment: FractionalOffset(0.5, 0.5); renderObject: RenderPositionedBox)
+I/flutter ( 6559):                                               └FlatButton()
+I/flutter ( 6559):                                                └MaterialButton(state: _MaterialButtonState(398724090))
+I/flutter ( 6559):                                                 └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutBoundary=up1)
+I/flutter ( 6559):                                                  └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 500; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(315134664; ticker inactive))
+I/flutter ( 6559):                                                   └DefaultTextStyle(inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 500; baseline: alphabetic)
+I/flutter ( 6559):                                                    └IconTheme(color: Color(0xdd000000))
+I/flutter ( 6559):                                                     └InkWell(state: _InkResponseState<InkResponse>(369160267))
+I/flutter ( 6559):                                                      └GestureDetector()
+I/flutter ( 6559):                                                       └RawGestureDetector(state: RawGestureDetectorState(175370983; gestures: tap; behavior: opaque))
+I/flutter ( 6559):                                                        └_GestureSemantics(renderObject: RenderSemanticsGestureHandler relayoutBoundary=up2)
+I/flutter ( 6559):                                                         └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutBoundary=up3)
+I/flutter ( 6559):                                                          └Container(padding: EdgeInsets(16.0, 0.0, 16.0, 0.0))
+I/flutter ( 6559):                                                           └Padding(renderObject: RenderPadding relayoutBoundary=up4)
+I/flutter ( 6559):                                                            └Center(alignment: FractionalOffset(0.5, 0.5); widthFactor: 1.0; renderObject: RenderPositionedBox relayoutBoundary=up5)
+I/flutter ( 6559):                                                             └Text("Dump App")
+I/flutter ( 6559):                                                              └RichText(renderObject: RenderParagraph relayoutBoundary=up6)
 ```
 
 This is the "flattened" tree, showing all the widgets projected
@@ -223,7 +282,7 @@ you call `toStringDeep` on the root of the widget tree.) You'll see a
 lot of widgets in there that don't appear in your application's
 source, because they are inserted by the framework's widgets' build
 functions. For example,
-[`InkFeatures`](https://docs.flutter.io/flutter/material/InkFeatures-class.html)
+[`InkFeature`](https://docs.flutter.io/flutter/material/InkFeature-class.html)
 is an implementation detail of the
 [`Material`](https://docs.flutter.io/flutter/material/Material-class.html)
 widget.
@@ -264,191 +323,311 @@ To call `debugDumpRenderTree()`, you need to add `import
 The output for the tiny example above would look something like this:
 
 ```
-I/flutter : RenderView
-I/flutter :  │ window size: Size(411.4, 683.4) (in device pixels)
-I/flutter :  │ device pixel ratio: 3.5 (device pixels per logical pixel)
-I/flutter :  │ configuration: Size(411.4, 683.4) (in logical pixels)
-I/flutter :  │
-I/flutter :  └─child: RenderCustomPaint
-I/flutter :    │ creator: CustomPaint ← CheckedModeBanner ← Theme ← AnimatedTheme ← MaterialApp ← [root]
-I/flutter :    │ parentData: <none>
-I/flutter :    │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :    │ size: Size(411.4, 683.4)
-I/flutter :    │
-I/flutter :    └─child: RenderStack
-I/flutter :      │ creator: Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← DefaultTextStyle ← LocaleQuery ← MediaQuery ← CustomPaint ← ⋯
-I/flutter :      │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :      │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │ size: Size(411.4, 683.4)
-I/flutter :      │
-I/flutter :      ├─child 1: RenderIgnorePointer
-I/flutter :      │ │ creator: IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← DefaultTextStyle ← LocaleQuery ← ⋯
-I/flutter :      │ │ parentData: not positioned; offset=Offset(0.0, 0.0)
-I/flutter :      │ │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │ │ size: Size(411.4, 683.4)
-I/flutter :      │ │ ignoring: false
-I/flutter :      │ │ ignoringSemantics: implicitly false
-I/flutter :      │ │
-I/flutter :      │ └─child: RenderSemanticAnnotations
-I/flutter :      │   │ creator: Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← ⋯
-I/flutter :      │   │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :      │   │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │   │ size: Size(411.4, 683.4)
-I/flutter :      │   │
-I/flutter :      │   └─child: RenderSemanticsGestureHandler
-I/flutter :      │     │ creator: _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← ⋯
-I/flutter :      │     │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :      │     │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │     │ size: Size(411.4, 683.4)
-I/flutter :      │     │
-I/flutter :      │     └─child: RenderPointerListener
-I/flutter :      │       │ creator: Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← Overlay-[GlobalKey 625702218] ← ⋯
-I/flutter :      │       │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :      │       │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │       │ size: Size(411.4, 683.4)
-I/flutter :      │       │ behavior: opaque
-I/flutter :      │       │ listeners: down
-I/flutter :      │       │
-I/flutter :      │       └─child: RenderConstrainedBox
-I/flutter :      │           creator: ConstrainedBox ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ← _OverlayEntry-[GlobalKey 238044853] ← Stack ← ⋯
-I/flutter :      │           parentData: offset=Offset(0.0, 0.0)
-I/flutter :      │           constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :      │           size: Size(411.4, 683.4)
-I/flutter :      │           additionalConstraints: BoxConstraints(biggest)
-I/flutter :      │
-I/flutter :      └─child 2: RenderSemanticAnnotations
-I/flutter :        │ creator: Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← DefaultAssetBundle ← AssetVendor ← ⋯
-I/flutter :        │ parentData: not positioned; offset=Offset(0.0, 0.0)
-I/flutter :        │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :        │ size: Size(411.4, 683.4)
-I/flutter :        │
-I/flutter :        └─child: RenderRepaintBoundary
-I/flutter :          │ creator: RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← Title ← ⋯
-I/flutter :          │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :          │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :          │ size: Size(411.4, 683.4)
-I/flutter :          │
-I/flutter :          └─child: RenderIgnorePointer
-I/flutter :            │ creator: IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← Overlay-[GlobalKey 625702218] ← Navigator-[GlobalObjectKey _MaterialAppState(859106034)] ← ⋯
-I/flutter :            │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :            │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :            │ size: Size(411.4, 683.4)
-I/flutter :            │ ignoring: false
-I/flutter :            │ ignoringSemantics: implicitly false
-I/flutter :            │
-I/flutter :            └─child: RenderTransform
-I/flutter :              │ creator: Transform ← _MaterialPageTransition ← IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← Stack ← ⋯
-I/flutter :              │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :              │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :              │ size: Size(411.4, 683.4)
-I/flutter :              │ transform matrix:
-I/flutter :              │   [0] 1.0,0.0,0.0,0.0
-I/flutter :              │   [1] 0.0,1.0,0.0,0.0
-I/flutter :              │   [2] 0.0,0.0,1.0,0.0
-I/flutter :              │   [3] 0.0,0.0,0.0,1.0
-I/flutter :              │ origin: null
-I/flutter :              │ alignment: null
-I/flutter :              │ transformHitTests: true
-I/flutter :              │
-I/flutter :              └─child: RenderOpacity
-I/flutter :                │ creator: Opacity ← Transform ← _MaterialPageTransition ← IgnorePointer ← RepaintBoundary ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey MaterialPageRoute(560156430)] ← _ModalScope-[GlobalKey 328026813] ← _OverlayEntry-[GlobalKey 388965355] ← ⋯
-I/flutter :                │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :                │ size: Size(411.4, 683.4)
-I/flutter :                │ opacity: 1.0
-I/flutter :                │
-I/flutter :                └─child: RenderDecoratedBox
-I/flutter :                  │ creator: DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey 265300] ← Opacity ← Transform ← _MaterialPageTransition ← ⋯
-I/flutter :                  │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                  │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :                  │ size: Size(411.4, 683.4)
-I/flutter :                  │ decoration:
-I/flutter :                  │   <no decorations specified>
-I/flutter :                  │
-I/flutter :                  └─child: RenderDecoratedBox
-I/flutter :                    │ creator: DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey 265300] ← Opacity ← ⋯
-I/flutter :                    │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                    │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :                    │ size: Size(411.4, 683.4)
-I/flutter :                    │ decoration:
-I/flutter :                    │   backgroundColor: Color(0xfffafafa)
-I/flutter :                    │
-I/flutter :                    └─child: RenderInkFeatures
-I/flutter :                      │ creator: InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ← ⋯
-I/flutter :                      │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                      │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :                      │ size: Size(411.4, 683.4)
-I/flutter :                      │
-I/flutter :                      └─child: RenderPositionedBox
-I/flutter :                        │ creator: Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← Container ← AnimatedContainer ← Material ← ⋯
-I/flutter :                        │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                        │ constraints: BoxConstraints(w=411.4, h=683.4)
-I/flutter :                        │ size: Size(411.4, 683.4)
-I/flutter :                        │ alignment: FractionalOffset(0.5, 0.5)
-I/flutter :                        │
-I/flutter :                        └─child: RenderPadding relayoutSubtreeRoot=up1
-I/flutter :                          │ creator: Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← DecoratedBox ← ⋯
-I/flutter :                          │ parentData: offset=Offset(148.7, 315.7)
-I/flutter :                          │ constraints: BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)
-I/flutter :                          │ size: Size(114.0, 52.0)
-I/flutter :                          │ padding: EdgeInsets(8.0, 8.0, 8.0, 8.0)
-I/flutter :                          │
-I/flutter :                          └─child: RenderConstrainedBox relayoutSubtreeRoot=up2
-I/flutter :                            │ creator: ConstrainedBox ← Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← Container ← ⋯
-I/flutter :                            │ parentData: offset=Offset(8.0, 8.0)
-I/flutter :                            │ constraints: BoxConstraints(0.0<=w<=395.4, 0.0<=h<=667.4)
-I/flutter :                            │ size: Size(98.0, 36.0)
-I/flutter :                            │ additionalConstraints: BoxConstraints(88.0<=w<=Infinity, h=36.0)
-I/flutter :                            │
-I/flutter :                            └─child: RenderPadding relayoutSubtreeRoot=up3
-I/flutter :                              │ creator: Padding ← ConstrainedBox ← Padding ← Container ← FlatButton ← Center ← DefaultTextStyle ← InkFeatures-[GlobalKey ink renderer] ← NotificationListener<LayoutChangedNotification> ← DecoratedBox ← ⋯
-I/flutter :                              │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                              │ constraints: BoxConstraints(88.0<=w<=395.4, h=36.0)
-I/flutter :                              │ size: Size(98.0, 36.0)
-I/flutter :                              │ padding: EdgeInsets(0.0, 8.0, 0.0, 8.0)
-I/flutter :                              │
-I/flutter :                              └─child: RenderSemanticsGestureHandler relayoutSubtreeRoot=up4
-I/flutter :                                │ creator: _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← Padding ← Container ← FlatButton ← ⋯
-I/flutter :                                │ parentData: offset=Offset(8.0, 0.0)
-I/flutter :                                │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
-I/flutter :                                │ size: Size(82.0, 36.0)
-I/flutter :                                │
-I/flutter :                                └─child: RenderPointerListener relayoutSubtreeRoot=up5
-I/flutter :                                  │ creator: Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← Padding ← Container ← ⋯
-I/flutter :                                  │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                                  │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
-I/flutter :                                  │ size: Size(82.0, 36.0)
-I/flutter :                                  │ behavior: opaque
-I/flutter :                                  │ listeners: down
-I/flutter :                                  │
-I/flutter :                                  └─child: RenderPadding relayoutSubtreeRoot=up6
-I/flutter :                                    │ creator: Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ConstrainedBox ← ⋯
-I/flutter :                                    │ parentData: offset=Offset(0.0, 0.0)
-I/flutter :                                    │ constraints: BoxConstraints(72.0<=w<=379.4, h=36.0)
-I/flutter :                                    │ size: Size(82.0, 36.0)
-I/flutter :                                    │ padding: EdgeInsets(0.0, 8.0, 0.0, 8.0)
-I/flutter :                                    │
-I/flutter :                                    └─child: RenderPositionedBox relayoutSubtreeRoot=up7
-I/flutter :                                      │ creator: Center ← Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← DefaultTextStyle ← Padding ← ⋯
-I/flutter :                                      │ parentData: offset=Offset(8.0, 0.0)
-I/flutter :                                      │ constraints: BoxConstraints(56.0<=w<=363.4, h=36.0)
-I/flutter :                                      │ size: Size(66.0, 36.0)
-I/flutter :                                      │ alignment: FractionalOffset(0.5, 0.5)
-I/flutter :                                      │
-I/flutter :                                      └─child: RenderParagraph relayoutSubtreeRoot=up8
-I/flutter :                                        │ creator: RichText ← Text ← Center ← Padding ← Container ← Listener ← _GestureSemantics ← RawGestureDetector ← GestureDetector ← InkWell ← ⋯
-I/flutter :                                        │ parentData: offset=Offset(0.0, 10.0)
-I/flutter :                                        │ constraints: BoxConstraints(0.0<=w<=363.4, 0.0<=h<=36.0)
-I/flutter :                                        │ size: Size(66.0, 16.0)
-I/flutter :                                        ╘═╦══ text ═══
-I/flutter :                                          ║ TextSpan:
-I/flutter :                                          ║   inherit: false
-I/flutter :                                          ║   color: Color(0xdd000000)
-I/flutter :                                          ║   size: 14.0
-I/flutter :                                          ║   weight: 500
-I/flutter :                                          ║   baseline: alphabetic
-I/flutter :                                          ║   "Dump App"
-I/flutter :                                          ╚═══════════
+I/flutter ( 6559): RenderView
+I/flutter ( 6559):  │ debug mode enabled - android
+I/flutter ( 6559):  │ window size: Size(1080.0, 1794.0) (in physical pixels)
+I/flutter ( 6559):  │ device pixel ratio: 2.625 (physical pixels per logical pixel)
+I/flutter ( 6559):  │ configuration: Size(411.4, 683.4) at 2.625x (in logical pixels)
+I/flutter ( 6559):  │
+I/flutter ( 6559):  └─child: RenderCustomPaint
+I/flutter ( 6559):    │ creator: CustomPaint ← Banner ← CheckedModeBanner ←
+I/flutter ( 6559):    │   WidgetsApp-[GlobalObjectKey _MaterialAppState(1009803148)] ←
+I/flutter ( 6559):    │   Theme ← AnimatedTheme ← ScrollConfiguration ← MaterialApp ←
+I/flutter ( 6559):    │   [root]
+I/flutter ( 6559):    │ parentData: <none>
+I/flutter ( 6559):    │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):    │ size: Size(411.4, 683.4)
+I/flutter ( 6559):    │
+I/flutter ( 6559):    └─child: RenderPointerListener
+I/flutter ( 6559):      │ creator: Listener ← Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):      │   _WidgetsAppState(552902158)] ← Title ← LocaleQuery ← MediaQuery
+I/flutter ( 6559):      │   ← DefaultTextStyle ← CustomPaint ← Banner ← CheckedModeBanner ←
+I/flutter ( 6559):      │   WidgetsApp-[GlobalObjectKey _MaterialAppState(1009803148)] ←
+I/flutter ( 6559):      │   Theme ← AnimatedTheme ← ⋯
+I/flutter ( 6559):      │ parentData: <none>
+I/flutter ( 6559):      │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):      │ size: Size(411.4, 683.4)
+I/flutter ( 6559):      │ behavior: defer-to-child
+I/flutter ( 6559):      │ listeners: down, up, cancel
+I/flutter ( 6559):      │
+I/flutter ( 6559):      └─child: RenderAbsorbPointer
+I/flutter ( 6559):        │ creator: AbsorbPointer ← Listener ←
+I/flutter ( 6559):        │   Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):        │   _WidgetsAppState(552902158)] ← Title ← LocaleQuery ← MediaQuery
+I/flutter ( 6559):        │   ← DefaultTextStyle ← CustomPaint ← Banner ← CheckedModeBanner ←
+I/flutter ( 6559):        │   WidgetsApp-[GlobalObjectKey _MaterialAppState(1009803148)] ←
+I/flutter ( 6559):        │   Theme ← ⋯
+I/flutter ( 6559):        │ parentData: <none>
+I/flutter ( 6559):        │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):        │ size: Size(411.4, 683.4)
+I/flutter ( 6559):        │ absorbing: false
+I/flutter ( 6559):        │
+I/flutter ( 6559):        └─child: RenderSemanticsAnnotations
+I/flutter ( 6559):          │ creator: Semantics ← Focus-[GlobalKey 489139594] ← AbsorbPointer
+I/flutter ( 6559):          │   ← Listener ← Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):          │   _WidgetsAppState(552902158)] ← Title ← LocaleQuery ← MediaQuery
+I/flutter ( 6559):          │   ← DefaultTextStyle ← CustomPaint ← Banner ← CheckedModeBanner ←
+I/flutter ( 6559):          │   ⋯
+I/flutter ( 6559):          │ parentData: <none>
+I/flutter ( 6559):          │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):          │ size: Size(411.4, 683.4)
+I/flutter ( 6559):          │
+I/flutter ( 6559):          └─child: _RenderTheatre
+I/flutter ( 6559):            │ creator: _Theatre ← Overlay-[GlobalKey 199833992] ← _FocusScope ←
+I/flutter ( 6559):            │   Semantics ← Focus-[GlobalKey 489139594] ← AbsorbPointer ←
+I/flutter ( 6559):            │   Listener ← Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):            │   _WidgetsAppState(552902158)] ← Title ← LocaleQuery ← MediaQuery
+I/flutter ( 6559):            │   ← DefaultTextStyle ← ⋯
+I/flutter ( 6559):            │ parentData: <none>
+I/flutter ( 6559):            │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            │
+I/flutter ( 6559):            ├─onstage: RenderStack
+I/flutter ( 6559):            ╎ │ creator: Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ←
+I/flutter ( 6559):            ╎ │   _FocusScope ← Semantics ← Focus-[GlobalKey 489139594] ←
+I/flutter ( 6559):            ╎ │   AbsorbPointer ← Listener ←
+I/flutter ( 6559):            ╎ │   Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):            ╎ │   _WidgetsAppState(552902158)] ← Title ← LocaleQuery ← MediaQuery
+I/flutter ( 6559):            ╎ │   ← ⋯
+I/flutter ( 6559):            ╎ │ parentData: not positioned; offset=Offset(0.0, 0.0)
+I/flutter ( 6559):            ╎ │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │
+I/flutter ( 6559):            ╎ ├─child 1: RenderIgnorePointer
+I/flutter ( 6559):            ╎ │ │ creator: IgnorePointer ← _OverlayEntry-[GlobalKey 612888877] ←
+I/flutter ( 6559):            ╎ │ │   Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ← _FocusScope
+I/flutter ( 6559):            ╎ │ │   ← Semantics ← Focus-[GlobalKey 489139594] ← AbsorbPointer ←
+I/flutter ( 6559):            ╎ │ │   Listener ← Navigator-[GlobalObjectKey<NavigatorState>
+I/flutter ( 6559):            ╎ │ │   _WidgetsAppState(552902158)] ← Title ← ⋯
+I/flutter ( 6559):            ╎ │ │ parentData: not positioned; offset=Offset(0.0, 0.0)
+I/flutter ( 6559):            ╎ │ │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │ │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │ │ ignoring: false
+I/flutter ( 6559):            ╎ │ │ ignoringSemantics: implicitly false
+I/flutter ( 6559):            ╎ │ │
+I/flutter ( 6559):            ╎ │ └─child: RenderSemanticsAnnotations
+I/flutter ( 6559):            ╎ │   │ creator: Semantics ← ModalBarrier ← IgnorePointer ←
+I/flutter ( 6559):            ╎ │   │   _OverlayEntry-[GlobalKey 612888877] ← Stack ← _Theatre ←
+I/flutter ( 6559):            ╎ │   │   Overlay-[GlobalKey 199833992] ← _FocusScope ← Semantics ←
+I/flutter ( 6559):            ╎ │   │   Focus-[GlobalKey 489139594] ← AbsorbPointer ← Listener ← ⋯
+I/flutter ( 6559):            ╎ │   │ parentData: <none>
+I/flutter ( 6559):            ╎ │   │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │   │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │   │
+I/flutter ( 6559):            ╎ │   └─child: RenderSemanticsGestureHandler
+I/flutter ( 6559):            ╎ │     │ creator: _GestureSemantics ← RawGestureDetector ← GestureDetector
+I/flutter ( 6559):            ╎ │     │   ← Semantics ← ModalBarrier ← IgnorePointer ←
+I/flutter ( 6559):            ╎ │     │   _OverlayEntry-[GlobalKey 612888877] ← Stack ← _Theatre ←
+I/flutter ( 6559):            ╎ │     │   Overlay-[GlobalKey 199833992] ← _FocusScope ← Semantics ← ⋯
+I/flutter ( 6559):            ╎ │     │ parentData: <none>
+I/flutter ( 6559):            ╎ │     │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │     │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │     │
+I/flutter ( 6559):            ╎ │     └─child: RenderPointerListener
+I/flutter ( 6559):            ╎ │       │ creator: Listener ← _GestureSemantics ← RawGestureDetector ←
+I/flutter ( 6559):            ╎ │       │   GestureDetector ← Semantics ← ModalBarrier ← IgnorePointer ←
+I/flutter ( 6559):            ╎ │       │   _OverlayEntry-[GlobalKey 612888877] ← Stack ← _Theatre ←
+I/flutter ( 6559):            ╎ │       │   Overlay-[GlobalKey 199833992] ← _FocusScope ← ⋯
+I/flutter ( 6559):            ╎ │       │ parentData: <none>
+I/flutter ( 6559):            ╎ │       │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │       │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │       │ behavior: opaque
+I/flutter ( 6559):            ╎ │       │ listeners: down
+I/flutter ( 6559):            ╎ │       │
+I/flutter ( 6559):            ╎ │       └─child: RenderConstrainedBox
+I/flutter ( 6559):            ╎ │           creator: ConstrainedBox ← Listener ← _GestureSemantics ←
+I/flutter ( 6559):            ╎ │             RawGestureDetector ← GestureDetector ← Semantics ← ModalBarrier
+I/flutter ( 6559):            ╎ │             ← IgnorePointer ← _OverlayEntry-[GlobalKey 612888877] ← Stack ←
+I/flutter ( 6559):            ╎ │             _Theatre ← Overlay-[GlobalKey 199833992] ← ⋯
+I/flutter ( 6559):            ╎ │           parentData: <none>
+I/flutter ( 6559):            ╎ │           constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎ │           size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎ │           additionalConstraints: BoxConstraints(biggest)
+I/flutter ( 6559):            ╎ │        
+I/flutter ( 6559):            ╎ └─child 2: RenderSemanticsAnnotations
+I/flutter ( 6559):            ╎   │ creator: Semantics ← Focus-[GlobalObjectKey
+I/flutter ( 6559):            ╎   │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎   │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ←
+I/flutter ( 6559):            ╎   │   _Theatre ← Overlay-[GlobalKey 199833992] ← _FocusScope ←
+I/flutter ( 6559):            ╎   │   Semantics ← Focus-[GlobalKey 489139594] ← AbsorbPointer ←
+I/flutter ( 6559):            ╎   │   Listener ← ⋯
+I/flutter ( 6559):            ╎   │ parentData: not positioned; offset=Offset(0.0, 0.0)
+I/flutter ( 6559):            ╎   │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎   │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎   │
+I/flutter ( 6559):            ╎   └─child: RenderOffstage
+I/flutter ( 6559):            ╎     │ creator: Offstage ← _FocusScope ← Semantics ←
+I/flutter ( 6559):            ╎     │   Focus-[GlobalObjectKey MaterialPageRoute<Null>(875520219)] ←
+I/flutter ( 6559):            ╎     │   _ModalScope-[GlobalKey 816151164] ← _OverlayEntry-[GlobalKey
+I/flutter ( 6559):            ╎     │   727622716] ← Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ←
+I/flutter ( 6559):            ╎     │   _FocusScope ← Semantics ← Focus-[GlobalKey 489139594] ← ⋯
+I/flutter ( 6559):            ╎     │ parentData: <none>
+I/flutter ( 6559):            ╎     │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎     │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎     │ offstage: false
+I/flutter ( 6559):            ╎     │
+I/flutter ( 6559):            ╎     └─child: RenderIgnorePointer
+I/flutter ( 6559):            ╎       │ creator: IgnorePointer ← Offstage ← _FocusScope ← Semantics ←
+I/flutter ( 6559):            ╎       │   Focus-[GlobalObjectKey MaterialPageRoute<Null>(875520219)] ←
+I/flutter ( 6559):            ╎       │   _ModalScope-[GlobalKey 816151164] ← _OverlayEntry-[GlobalKey
+I/flutter ( 6559):            ╎       │   727622716] ← Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ←
+I/flutter ( 6559):            ╎       │   _FocusScope ← Semantics ← ⋯
+I/flutter ( 6559):            ╎       │ parentData: <none>
+I/flutter ( 6559):            ╎       │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎       │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎       │ ignoring: false
+I/flutter ( 6559):            ╎       │ ignoringSemantics: implicitly false
+I/flutter ( 6559):            ╎       │
+I/flutter ( 6559):            ╎       └─child: RenderFractionalTranslation
+I/flutter ( 6559):            ╎         │ creator: FractionalTranslation ← SlideTransition ←
+I/flutter ( 6559):            ╎         │   _MountainViewPageTransition ← IgnorePointer ← Offstage ←
+I/flutter ( 6559):            ╎         │   _FocusScope ← Semantics ← Focus-[GlobalObjectKey
+I/flutter ( 6559):            ╎         │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎         │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ←
+I/flutter ( 6559):            ╎         │   _Theatre ← ⋯
+I/flutter ( 6559):            ╎         │ parentData: <none>
+I/flutter ( 6559):            ╎         │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎         │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎         │ translation: FractionalOffset(0.0, 0.0)
+I/flutter ( 6559):            ╎         │ transformHitTests: true
+I/flutter ( 6559):            ╎         │
+I/flutter ( 6559):            ╎         └─child: RenderRepaintBoundary
+I/flutter ( 6559):            ╎           │ creator: RepaintBoundary ← FractionalTranslation ←
+I/flutter ( 6559):            ╎           │   SlideTransition ← _MountainViewPageTransition ← IgnorePointer ←
+I/flutter ( 6559):            ╎           │   Offstage ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey
+I/flutter ( 6559):            ╎           │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎           │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ← ⋯
+I/flutter ( 6559):            ╎           │ parentData: <none>
+I/flutter ( 6559):            ╎           │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎           │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎           │ metrics: 83.3% useful (1 bad vs 5 good)
+I/flutter ( 6559):            ╎           │ diagnosis: this is a useful repaint boundary and should be kept
+I/flutter ( 6559):            ╎           │
+I/flutter ( 6559):            ╎           └─child: RenderDecoratedBox
+I/flutter ( 6559):            ╎             │ creator: DecoratedBox ← Container ← AnimatedContainer ← Material
+I/flutter ( 6559):            ╎             │   ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey
+I/flutter ( 6559):            ╎             │   619728754] ← RepaintBoundary ← FractionalTranslation ←
+I/flutter ( 6559):            ╎             │   SlideTransition ← _MountainViewPageTransition ← IgnorePointer ←
+I/flutter ( 6559):            ╎             │   ⋯
+I/flutter ( 6559):            ╎             │ parentData: <none>
+I/flutter ( 6559):            ╎             │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎             │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎             │ decoration:
+I/flutter ( 6559):            ╎             │   <no decorations specified>
+I/flutter ( 6559):            ╎             │ configuration: ImageConfiguration(bundle:
+I/flutter ( 6559):            ╎             │   PlatformAssetBundle@367106502(), devicePixelRatio: 2.625,
+I/flutter ( 6559):            ╎             │   platform: android)
+I/flutter ( 6559):            ╎             │
+I/flutter ( 6559):            ╎             └─child: RenderDecoratedBox
+I/flutter ( 6559):            ╎               │ creator: DecoratedBox ← Container ← DecoratedBox ← Container ←
+I/flutter ( 6559):            ╎               │   AnimatedContainer ← Material ← AppHome ← _ModalScopeStatus ←
+I/flutter ( 6559):            ╎               │   PageStorage-[GlobalKey 619728754] ← RepaintBoundary ←
+I/flutter ( 6559):            ╎               │   FractionalTranslation ← SlideTransition ← ⋯
+I/flutter ( 6559):            ╎               │ parentData: <none>
+I/flutter ( 6559):            ╎               │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎               │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎               │ decoration:
+I/flutter ( 6559):            ╎               │   backgroundColor: Color(0xfffafafa)
+I/flutter ( 6559):            ╎               │ configuration: ImageConfiguration(bundle:
+I/flutter ( 6559):            ╎               │   PlatformAssetBundle@367106502(), devicePixelRatio: 2.625,
+I/flutter ( 6559):            ╎               │   platform: android)
+I/flutter ( 6559):            ╎               │
+I/flutter ( 6559):            ╎               └─child: _RenderInkFeatures
+I/flutter ( 6559):            ╎                 │ creator: _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                 │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
+I/flutter ( 6559):            ╎                 │   ← Container ← DecoratedBox ← Container ← AnimatedContainer ←
+I/flutter ( 6559):            ╎                 │   Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey
+I/flutter ( 6559):            ╎                 │   619728754] ← RepaintBoundary ← ⋯
+I/flutter ( 6559):            ╎                 │ parentData: <none>
+I/flutter ( 6559):            ╎                 │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎                 │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎                 │
+I/flutter ( 6559):            ╎                 └─child: RenderPositionedBox
+I/flutter ( 6559):            ╎                   │ creator: Center ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
+I/flutter ( 6559):            ╎                   │   _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                   │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
+I/flutter ( 6559):            ╎                   │   ← Container ← DecoratedBox ← Container ← AnimatedContainer ←
+I/flutter ( 6559):            ╎                   │   Material ← AppHome ← ⋯
+I/flutter ( 6559):            ╎                   │ parentData: <none>
+I/flutter ( 6559):            ╎                   │ constraints: BoxConstraints(w=411.4, h=683.4)
+I/flutter ( 6559):            ╎                   │ size: Size(411.4, 683.4)
+I/flutter ( 6559):            ╎                   │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter ( 6559):            ╎                   │ widthFactor: expand
+I/flutter ( 6559):            ╎                   │ heightFactor: expand
+I/flutter ( 6559):            ╎                   │
+I/flutter ( 6559):            ╎                   └─child: RenderConstrainedBox relayoutBoundary=up1
+I/flutter ( 6559):            ╎                     │ creator: ConstrainedBox ← MaterialButton ← FlatButton ← Center ←
+I/flutter ( 6559):            ╎                     │   DefaultTextStyle ← AnimatedDefaultTextStyle ←
+I/flutter ( 6559):            ╎                     │   _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                     │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
+I/flutter ( 6559):            ╎                     │   ← Container ← DecoratedBox ← Container ← ⋯
+I/flutter ( 6559):            ╎                     │ parentData: offset=Offset(156.7, 323.7)
+I/flutter ( 6559):            ╎                     │ constraints: BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)
+I/flutter ( 6559):            ╎                     │ size: Size(98.0, 36.0)
+I/flutter ( 6559):            ╎                     │ additionalConstraints: BoxConstraints(88.0<=w<=Infinity, h=36.0)
+I/flutter ( 6559):            ╎                     │
+I/flutter ( 6559):            ╎                     └─child: RenderSemanticsGestureHandler relayoutBoundary=up2
+I/flutter ( 6559):            ╎                       │ creator: _GestureSemantics ← RawGestureDetector ← GestureDetector
+I/flutter ( 6559):            ╎                       │   ← InkWell ← IconTheme ← DefaultTextStyle ←
+I/flutter ( 6559):            ╎                       │   AnimatedDefaultTextStyle ← ConstrainedBox ← MaterialButton ←
+I/flutter ( 6559):            ╎                       │   FlatButton ← Center ← DefaultTextStyle ← ⋯
+I/flutter ( 6559):            ╎                       │ parentData: <none>
+I/flutter ( 6559):            ╎                       │ constraints: BoxConstraints(88.0<=w<=411.4, h=36.0)
+I/flutter ( 6559):            ╎                       │ size: Size(98.0, 36.0)
+I/flutter ( 6559):            ╎                       │
+I/flutter ( 6559):            ╎                       └─child: RenderPointerListener relayoutBoundary=up3
+I/flutter ( 6559):            ╎                         │ creator: Listener ← _GestureSemantics ← RawGestureDetector ←
+I/flutter ( 6559):            ╎                         │   GestureDetector ← InkWell ← IconTheme ← DefaultTextStyle ←
+I/flutter ( 6559):            ╎                         │   AnimatedDefaultTextStyle ← ConstrainedBox ← MaterialButton ←
+I/flutter ( 6559):            ╎                         │   FlatButton ← Center ← ⋯
+I/flutter ( 6559):            ╎                         │ parentData: <none>
+I/flutter ( 6559):            ╎                         │ constraints: BoxConstraints(88.0<=w<=411.4, h=36.0)
+I/flutter ( 6559):            ╎                         │ size: Size(98.0, 36.0)
+I/flutter ( 6559):            ╎                         │ behavior: opaque
+I/flutter ( 6559):            ╎                         │ listeners: down
+I/flutter ( 6559):            ╎                         │
+I/flutter ( 6559):            ╎                         └─child: RenderPadding relayoutBoundary=up4
+I/flutter ( 6559):            ╎                           │ creator: Padding ← Container ← Listener ← _GestureSemantics ←
+I/flutter ( 6559):            ╎                           │   RawGestureDetector ← GestureDetector ← InkWell ← IconTheme ←
+I/flutter ( 6559):            ╎                           │   DefaultTextStyle ← AnimatedDefaultTextStyle ← ConstrainedBox ←
+I/flutter ( 6559):            ╎                           │   MaterialButton ← ⋯
+I/flutter ( 6559):            ╎                           │ parentData: <none>
+I/flutter ( 6559):            ╎                           │ constraints: BoxConstraints(88.0<=w<=411.4, h=36.0)
+I/flutter ( 6559):            ╎                           │ size: Size(98.0, 36.0)
+I/flutter ( 6559):            ╎                           │ padding: EdgeInsets(16.0, 0.0, 16.0, 0.0)
+I/flutter ( 6559):            ╎                           │
+I/flutter ( 6559):            ╎                           └─child: RenderPositionedBox relayoutBoundary=up5
+I/flutter ( 6559):            ╎                             │ creator: Center ← Padding ← Container ← Listener ←
+I/flutter ( 6559):            ╎                             │   _GestureSemantics ← RawGestureDetector ← GestureDetector ←
+I/flutter ( 6559):            ╎                             │   InkWell ← IconTheme ← DefaultTextStyle ←
+I/flutter ( 6559):            ╎                             │   AnimatedDefaultTextStyle ← ConstrainedBox ← ⋯
+I/flutter ( 6559):            ╎                             │ parentData: offset=Offset(16.0, 0.0)
+I/flutter ( 6559):            ╎                             │ constraints: BoxConstraints(56.0<=w<=379.4, h=36.0)
+I/flutter ( 6559):            ╎                             │ size: Size(66.0, 36.0)
+I/flutter ( 6559):            ╎                             │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter ( 6559):            ╎                             │ widthFactor: 1.0
+I/flutter ( 6559):            ╎                             │ heightFactor: expand
+I/flutter ( 6559):            ╎                             │
+I/flutter ( 6559):            ╎                             └─child: RenderParagraph relayoutBoundary=up6
+I/flutter ( 6559):            ╎                               │ creator: RichText ← Text ← Center ← Padding ← Container ←
+I/flutter ( 6559):            ╎                               │   Listener ← _GestureSemantics ← RawGestureDetector ←
+I/flutter ( 6559):            ╎                               │   GestureDetector ← InkWell ← IconTheme ← DefaultTextStyle ← ⋯
+I/flutter ( 6559):            ╎                               │ parentData: offset=Offset(0.0, 10.0)
+I/flutter ( 6559):            ╎                               │ constraints: BoxConstraints(0.0<=w<=379.4, 0.0<=h<=36.0)
+I/flutter ( 6559):            ╎                               │ size: Size(66.0, 16.0)
+I/flutter ( 6559):            ╎                               ╘═╦══ text ═══
+I/flutter ( 6559):            ╎                                 ║ TextSpan:
+I/flutter ( 6559):            ╎                                 ║   inherit: false
+I/flutter ( 6559):            ╎                                 ║   color: Color(0xdd000000)
+I/flutter ( 6559):            ╎                                 ║   family: "Roboto"
+I/flutter ( 6559):            ╎                                 ║   size: 14.0
+I/flutter ( 6559):            ╎                                 ║   weight: 500
+I/flutter ( 6559):            ╎                                 ║   baseline: alphabetic
+I/flutter ( 6559):            ╎                                 ║   "Dump App"
+I/flutter ( 6559):            ╎                                 ╚═══════════
+I/flutter ( 6559):            ╎                              
+I/flutter ( 6559):            └╌no offstage children
+
 ```
 
 This is the output of the root `RenderObject` object's `toStringDeep`
