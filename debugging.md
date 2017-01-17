@@ -255,7 +255,7 @@ rendering tree by calling
 As with `debugDumpApp()`, you can call this more or less any time
 except during a layout or paint phase. As a general rule, calling it
 from a [frame
-callback](https://docs.flutter.io/flutter/scheduler/FrameCallback.html)
+callback](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html)
 or an event handler is the best solution.
 
 To call `debugDumpRenderTree()`, you need to add `import
@@ -497,7 +497,7 @@ dirtied because they might be affected by the new dimensions.
 
 If you write your own render objects, you can add information to the
 dump by overriding
-[`debugDescribeChildren()`](https://docs.flutter.io/flutter/rendering/RenderParagraph/debugDescribeChildren.html).
+[`debugFillDescription()`](https://docs.flutter.io/flutter/material/RenderObject/debugFillDescription.html).
 Add strings to the method's argument, and call the superclass method.
 
 ### Layers
