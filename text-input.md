@@ -18,7 +18,7 @@ widget under
 [Material](https://docs.flutter.io/flutter/material/material-library.html )
 satisfies most text input use cases, and implements material design's style. If
 you want an input widget that does not use material design, see
-[`RawInputLine`](https://docs.flutter.io/flutter/widgets/RawInputLine-class.html)
+[`RawInput`](https://docs.flutter.io/flutter/widgets/RawInput-class.html)
 
 
 
@@ -29,7 +29,7 @@ user input is:
 
 1. User taps a character in the keyboard.
 2. The
-[`OnChanged`](https://docs.flutter.io/flutter/material/Input/onChanged.html)
+[`onChanged`](https://docs.flutter.io/flutter/material/Input/onChanged.html)
 callback is called with the current
 [`value`](https://docs.flutter.io/flutter/material/Input/value.html)
 of the widget.
