@@ -782,6 +782,9 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
+{% comment %} 
+    Need to revisit the following para, as the framework takes care of this now.
+
 Some widgets, such as
 [`Input`](https://docs.flutter.io/flutter/material/Input-class.html) require
 global keys because they can hold focus, which means they receive any text the
@@ -794,3 +797,5 @@ object is focused by remembering its
 That way the same
 [`Input`](https://docs.flutter.io/flutter/material/Input-class.html) widget
 remains focused even if it moves around in the widget tree.
+
+{% endcomment %}
