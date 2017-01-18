@@ -497,7 +497,7 @@ dirtied because they might be affected by the new dimensions.
 
 If you write your own render objects, you can add information to the
 dump by overriding
-[`debugFillDescription()`](https://docs.flutter.io/flutter/material/RenderObject/debugFillDescription.html).
+[`debugFillDescription()`](https://docs.flutter.io/flutter/rendering/Layer/debugFillDescription.html).
 Add strings to the method's argument, and call the superclass method.
 
 ### Layers
