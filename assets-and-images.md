@@ -96,8 +96,10 @@ Rather than the default asset bundle that was built with the app,
 this approach enables a parent widget to substitute a different AssetBundle
 at run time, which can be useful for localization or testing scenarios. 
 
-For example, use DefaultAssetBundle.of() to indirectly
-load a JSON file asset from the app's runtime `rootBundle`:
+Typically, you'll use DefaultAssetBundle.of() to indirectly
+load a JSON file asset from the app's runtime `rootBundle`.
+
+{% comment %}
 
 ```dart
 import 'dart:async' show Future;
@@ -106,9 +108,13 @@ Future<String> loadAsset() async {
   return await DefaultAssetBundle.of(context).loadString('assets/config.json');
 }
 ```
+  Above example needs to show obtaining the AssetBundle for the current 
+  BuildContext using DefaultAssetBundle.of
+
+{% endcomment %}
 
 Or, use `rootBundle` to directly load a JSON file asset that was specified at 
-build time.
+build time, for example:
 
 ```dart
 import 'dart:async' show Future;
@@ -118,10 +124,6 @@ Future<String> loadAsset() async {
   return await rootBundle.loadString('assets/config.json');
 }
 ```
-{% comment %}
-  Above example needs to show obtaining the AssetBundle for the current 
-  BuildContext using DefaultAssetBundle.of
-{% endcomment %}
 
 ### Loading image images
 
