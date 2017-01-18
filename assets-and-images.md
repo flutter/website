@@ -72,10 +72,10 @@ different locales or regions, reading directions, etc.
 
 Your app can access its assets through an
 [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html)
-object.
+object. 
 
 The two main methods on an asset bundle allow you to load a string/text asset
-(`loadString`) or an image asset (`loadImage`) out of the bundle,
+(`loadString`) or an image/binary asset (`load`) out of the bundle,
 given a logical key.
 The logical key maps to the path to the asset specified in the `flutter.yaml`
 file at build time.
@@ -85,12 +85,29 @@ file at build time.
 Each Flutter app has a
 [`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html)
 object
-for easy access to the main asset bundle. You can use the `rootBundle`
-from `package:flutter/services.dart`
-to easily load assets.
+for easy access to the main asset bundle. It is possible to load assets 
+directly using the `rootBundle` global static
+from `package:flutter/services.dart`. 
 
-For example, use the `rootBundle` to easily
-load a JSON file asset.
+However, it's recommended to obtain the AssetBundle for the current 
+BuildContext using 
+[`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html). 
+Rather than the default asset bundle that was built with the app, 
+this approach enables a parent widget to substitute a different AssetBundle
+at run time, which can be useful for localization or testing scenarios. 
+
+Typically, you'll use DefaultAssetBundle.of() to indirectly
+load a JSON file asset from the app's runtime `rootBundle`.
+
+{% comment %}
+
+  Need example here to show obtaining the AssetBundle for the current 
+  BuildContext using DefaultAssetBundle.of
+
+{% endcomment %}
+
+Or, use `rootBundle` to directly load a JSON file asset that was specified at 
+build time, for example:
 
 ```dart
 import 'dart:async' show Future;
@@ -143,7 +160,7 @@ should be 216px by 216px; but they both will render into 72px by 72px
 
 To load an image, use the
 [`AssetImage`](https://docs.flutter.io/flutter/material/AssetImage-class.html)
-class from inside of a widget's `build` method.
+class in a widget's `build` method.
 
 For example, your app can load the dark background image from the asset
 declarations above:
@@ -154,7 +171,7 @@ Widget build(BuildContext context) {
   return new DecoratedBox(
     decoration: new BoxDecoration(
       backgroundImage: new BackgroundImage(
-        image: new AssetImage('my_asset.png'),
+        image: new AssetImage('assets/my_asset.png'),
         // ...
       ),
       // ...
@@ -165,16 +182,20 @@ Widget build(BuildContext context) {
 ```
 
 The way this works is through an object called
-[`AssetVendor`](https://docs.flutter.io/flutter/widgets/AssetVendor-class.html)
-established at the top of the build tree. AssetVendor replaces the default asset
-bundle, so anything using the default asset bundle will inherit resolution
-awareness when loading images.  (If you work with some of the lower level
-classes, like
-[`ImageResource`](https://docs.flutter.io/flutter/services/ImageResource-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+established at the top of the build tree. AssetImage fetches an image from an 
+AssetBundle, based on the context.
+
+Anything using the default asset bundle will 
+inherit resolution awareness when loading images.  (If you work with some of the 
+lower level classes, like
+[`ImageStream`](https://docs.flutter.io/flutter/services/ImageStream-class.html)
 or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
+{% comment %}
+    This section, and the above paragraph on resolution awareness need updating.
 #### Caveats
 
 * If you're not using
@@ -183,7 +204,7 @@ you'll also notice parameters related to scale.)
   [`WidgetsApp`](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
   in your app, and you want to use resolution awareness, you'll need to
   establish your own `AssetVendor` in your build logic.
-* If you want establish a your own
+* If you want establish your own
   [`MediaQuery`](https://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
   [`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
   below the root of the widget hierarchy, the root-level AssetVendor won't be
@@ -191,7 +212,4 @@ you'll also notice parameters related to scale.)
   or DefaultAssetBundle you specify, you'll need to create an AssetVendor at
   that point in the tree as well.
 
-You can see an example
-([examples/widgets.dart](https://github.com/flutter/flutter/tree/master/examples/widgets))
-from the flutter repo.
-Run `flutter run -t resolution_awareness.dart` to see it in action.
+{% endcomment %}
