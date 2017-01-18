@@ -101,14 +101,7 @@ load a JSON file asset from the app's runtime `rootBundle`.
 
 {% comment %}
 
-```dart
-import 'dart:async' show Future;
-
-Future<String> loadAsset() async {
-  return await DefaultAssetBundle.of(context).loadString('assets/config.json');
-}
-```
-  Above example needs to show obtaining the AssetBundle for the current 
+  Need example here to show obtaining the AssetBundle for the current 
   BuildContext using DefaultAssetBundle.of
 
 {% endcomment %}
