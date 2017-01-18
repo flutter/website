@@ -90,17 +90,17 @@ directly using the `rootBundle` global static
 from `package:flutter/services.dart`. 
 
 However, it's recommended to obtain the AssetBundle for the current 
-BuildContext using DefaultAssetBundle.of. Rather than the default asset bundle
-that was built with the app, this approach enables a parent widget to substitute
-a different AssetBundle at run time, which can be useful for localization
-or testing scenarios. 
+BuildContext using 
+[`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html). 
+Rather than the default asset bundle that was built with the app, 
+this approach enables a parent widget to substitute a different AssetBundle
+at run time, which can be useful for localization or testing scenarios. 
 
-For example, use DefaultAssetBundle to indirectly
+For example, use DefaultAssetBundle.of() to indirectly
 load a JSON file asset from the app's runtime `rootBundle`:
 
 ```dart
 import 'dart:async' show Future;
-import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
   return await DefaultAssetBundle.of(context).loadString('assets/config.json');
