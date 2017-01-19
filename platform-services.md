@@ -226,7 +226,7 @@ Studio, open the `app` folder as an Android project.
     For each service you want to invoke, attach a message listener to the [`FlutterView`](https://github.com/flutter/engine/blob/master/shell/platform/android/io/flutter/view/FlutterView.java)
     object and specify the service provider it calls when the `onReply()` event is triggered.
     For an example of how to implement a service provider, see the
-[`ExampleInstrumentedTest.java`](https://github.com/flutter/flutter/tree/master/examples/hello_services/android/app/src/androidTest/java/com/example/flutter/ExampleInstrumentedTest.java) class from the example project.
+[`ExampleActivity.java`](https://github.com/flutter/flutter/blob/master/examples/hello_services/android/app/src/main/java/com/example/flutter/ExampleActivity.java) class from the example project.
     3. Modify the [`AndroidManifest.xml`](https://github.com/flutter/flutter/blob/master/examples/hello_services/android/app/src/main/AndroidManifest.xml)
     file to add any permissions necessary to invoke your target service
 (for example, the geolocation service needs the [`ACCESS_FINE_LOCATION`](https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_FINE_LOCATION) permission).
