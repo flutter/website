@@ -167,16 +167,12 @@ double value, and has a notion of completion.
 
 In principle simulations are stateless but in practice some
 simulations (e.g. [`ScrollSimulation`](https://docs.flutter.io/flutter/widgets/ScrollSimulation-class.html))
-change state irreversibly when queried.
+change state irreversibly when queried. For composite simulations in a 
+[`SimulationGroup`](https://docs.flutter.io/flutter/physics/SimulationGroup-class.html), 
+the final state of one simulation is needed to configure the next.
 
 There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
-of the `Simulation` class for different effects.
-
-## Forces
-
-The
-[`Force`](https://docs.flutter.io/flutter/animation/Force-class.html)
-abstract class provides a factory for `Simulation` instances.
+of the `Simulation` class for different effects. 
 
 ## Animatables
 
