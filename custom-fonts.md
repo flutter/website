@@ -46,7 +46,7 @@ and styles:
   * The `style` property specfies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
     [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html)
-    and can be used in the [fontStyle](https://docs.flutter.io/flutter/material/TextStyle/fontStyle.html)
+    and can be used in the [fontStyle](https://docs.flutter.io/flutter/painting/TextStyle/fontStyle.html)
     property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
     object.
 

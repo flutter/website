@@ -172,12 +172,6 @@ change state irreversibly when queried.
 There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
 of the `Simulation` class for different effects.
 
-## Forces
-
-The
-[`Force`](https://docs.flutter.io/flutter/animation/Force-class.html)
-abstract class provides a factory for `Simulation` instances.
-
 ## Animatables
 
 The

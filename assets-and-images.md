@@ -72,7 +72,7 @@ different locales or regions, reading directions, etc.
 
 Your app can access its assets through an
 [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html)
-object. 
+object.
 
 The two main methods on an asset bundle allow you to load a string/text asset
 (`loadString`) or an image/binary asset (`load`) out of the bundle,
@@ -85,28 +85,28 @@ file at build time.
 Each Flutter app has a
 [`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html)
 object
-for easy access to the main asset bundle. It is possible to load assets 
+for easy access to the main asset bundle. It is possible to load assets
 directly using the `rootBundle` global static
-from `package:flutter/services.dart`. 
+from `package:flutter/services.dart`.
 
-However, it's recommended to obtain the AssetBundle for the current 
-BuildContext using 
-[`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html). 
-Rather than the default asset bundle that was built with the app, 
+However, it's recommended to obtain the AssetBundle for the current
+BuildContext using
+[`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html).
+Rather than the default asset bundle that was built with the app,
 this approach enables a parent widget to substitute a different AssetBundle
-at run time, which can be useful for localization or testing scenarios. 
+at run time, which can be useful for localization or testing scenarios.
 
 Typically, you'll use DefaultAssetBundle.of() to indirectly
 load a JSON file asset from the app's runtime `rootBundle`.
 
 {% comment %}
 
-  Need example here to show obtaining the AssetBundle for the current 
+  Need example here to show obtaining the AssetBundle for the current
   BuildContext using DefaultAssetBundle.of
 
 {% endcomment %}
 
-Or, use `rootBundle` to directly load a JSON file asset that was specified at 
+Or, use `rootBundle` to directly load a JSON file asset that was specified at
 build time, for example:
 
 ```dart
@@ -125,7 +125,7 @@ pixel ratio.
 
 #### Declaring resolution-aware image assets
 
-[`AssetImage`](https://docs.flutter.io/flutter/widgets/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
@@ -159,7 +159,7 @@ should be 216px by 216px; but they both will render into 72px by 72px
 #### Loading images
 
 To load an image, use the
-[`AssetImage`](https://docs.flutter.io/flutter/material/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
 class in a widget's `build` method.
 
 For example, your app can load the dark background image from the asset
@@ -182,12 +182,12 @@ Widget build(BuildContext context) {
 ```
 
 The way this works is through an object called
-[`AssetImage`](https://docs.flutter.io/flutter/widgets/AssetImage-class.html)
-established at the top of the build tree. AssetImage fetches an image from an 
+[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
+established at the top of the build tree. AssetImage fetches an image from an
 AssetBundle, based on the context.
 
-Anything using the default asset bundle will 
-inherit resolution awareness when loading images.  (If you work with some of the 
+Anything using the default asset bundle will
+inherit resolution awareness when loading images.  (If you work with some of the
 lower level classes, like
 [`ImageStream`](https://docs.flutter.io/flutter/services/ImageStream-class.html)
 or

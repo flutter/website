@@ -249,7 +249,7 @@ GestureDetector is listed, and it is listening only to a "tap" gesture
 function).
 
 If you write your own widgets, you can add information by overriding
-[`debugFillDescription()`](https://docs.flutter.io/flutter/material/Widget/debugFillDescription.html).
+[`debugFillDescription()`](https://docs.flutter.io/flutter/widgets/Widget/debugFillDescription.html).
 Add strings to the method's argument, and call the superclass method.
 This function is what the `toString` method uses to fill in the
 widget's description.
