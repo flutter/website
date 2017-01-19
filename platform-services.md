@@ -113,8 +113,8 @@ class establishes connections with services.
    You can register a callback for receiving
    messages through the [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html)
    class by calling the
-   [`setJSONMessageHandler()`](https://docs.flutter.io/flutter/services/HostMessages/setJSONMessageHandler.html)
-   or [`setStringMessageHandler()`](https://docs.flutter.io/flutter/services/HostMessages/setStringMessageHandler.html)
+   [`setJSONMessageHandler()`](https://docs.flutter.io/flutter/services/PlatformMessages/setJSONMessageHandler.html)
+   or [`setStringMessageHandler()`](https://docs.flutter.io/flutter/services/PlatformMessages/setStringMessageHandler.html)
    static methods.
 
    For example, this snippet shows how you might initialize a service binding
