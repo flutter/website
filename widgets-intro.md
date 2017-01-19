@@ -91,7 +91,7 @@ very commonly used:
    The [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
    widget lets you create rectangular visual element. A container can be
    decorated with a
-   [`BoxDecoration`](https://docs.flutter.io/flutter/widgets/BoxDecoration-class.html),
+   [`BoxDecoration`](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html),
    such as a background, a border, or a shadow. A
    [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
    can also have margins, padding, and constraints applied to its size. In
@@ -359,7 +359,7 @@ callbacks that are triggered when the user taps the widget.
 Changing widgets in response to input
 -------------------------------------
 
-_Main articles: [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), [`State.setState`](https://docs.flutter.io/flutter/material/State/setState.html)_
+_Main articles: [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), [`State.setState`](https://docs.flutter.io/flutter/widgets/State/setState.html)_
 
 Thus far, we've used only stateless widgets. Stateless widgets receive
 arguments from their parent widget, which they store in
@@ -782,7 +782,7 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
-{% comment %} 
+{% comment %}
     Need to revisit the following para, as the framework takes care of this now.
 
 Some widgets, such as

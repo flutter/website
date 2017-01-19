@@ -172,7 +172,7 @@ change state irreversibly when queried. For composite simulations in a
 the final state of one simulation is needed to configure the next.
 
 There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
-of the `Simulation` class for different effects. 
+of the `Simulation` class for different effects.
 
 ## Animatables
 
