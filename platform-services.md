@@ -89,7 +89,7 @@ services on iOS and Android.
 [`flutter/services.dart`](https://docs.flutter.io/flutter/services/services-library.html)
 package, which defines the
 [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html) class. In the
-[`State`](https://docs.flutter.io/flutter/material/State-class.html) class, the app makes
+[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) class, the app makes
 a service request by calling the static methods of the [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html) class. If the service request is successful, the app
 updates the UI accordingly with the data that the service returns.
     * On the iOS portion of the app, the [`AppDelegate`](https://github.com/flutter/flutter/blob/master/examples/hello_services/ios/Runner/AppDelegate.m) class sets an
@@ -107,7 +107,7 @@ class, the Android portion of the app must specify the flutter gradle plugin
 dependency in its
 [`build.gradle`](https://github.com/flutter/flutter/blob/master/examples/hello_services/android/app/build.gradle) file.
 
-2. **Establish the service bindings.** The [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html) 
+2. **Establish the service bindings.** The [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html)
 class establishes connections with services.
 
    You can register a callback for receiving
@@ -145,7 +145,7 @@ class establishes connections with services.
    ```
 
 3. **Add a service invocation call in the Flutter UI.** In your
-[`State`](https://docs.flutter.io/flutter/material/State-class.html) class, use
+[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) class, use
 the [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html)
 class to call a target service on the host. You'll typically peform this
 operation when the user performs a UI interaction.
