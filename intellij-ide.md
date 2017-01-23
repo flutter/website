@@ -137,7 +137,7 @@ To open Observatory:
 
 1. Run your app in debug mode.
 
-1. In the Debug panel at the bottom, click the **Arrow icon** ('Open Observatory').
+1. In the Debug panel at the bottom, click the **Stopwatch icon** ('Open Observatory').
 
 ### IntelliJ keyboard shortcuts
 
