@@ -18,7 +18,7 @@ widget under
 [Material](https://docs.flutter.io/flutter/material/material-library.html )
 satisfies most text input use cases, and implements material design's style. If
 you want an input widget that does not use material design, see
-[`RawInput`](https://docs.flutter.io/flutter/widgets/RawInput-class.html)
+[`EditableText`](https://docs.flutter.io/flutter/widgets/EditableText-class.html)
 
 
 
