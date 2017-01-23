@@ -86,7 +86,7 @@ Running and Debugging is controlled from the main toolbar:
 When a Flutter project is open in IntelliJ, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
 
-1. Locate the **Flutter Device Selector** drop-down button. This will show a
+1. Locate the **Flutter Target Selector** drop-down button. This will show a
  list of available targets. Select the target you want your app to started on.
 
 * When you connect devices, or start simulators, additional entries will appear.
@@ -112,17 +112,6 @@ specific buttons on the right-hand side of the toolbar.
 * Debugging is based on a default launch configuration. To customize this, click.
  the drop-down button to the right of the device selector, and select **Edit configuration**.
 
-### Advanced debugging with Observatory
-
-Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
-
-To open Observatory:
-
-1. Run your app in debug mode.
-
-1. In the Debug panel at the bottom, click the **Arrow icon** ('Open Observatory').
-
 ## Fast edit and refresh development cycle
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect of
@@ -132,13 +121,23 @@ your changes near instantly.
 
 To edit your code and hot reload changes:
 
+1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
+
+1. Make desired changes in your source code
+
+1. Do not press the 'Stop' button; rather, to see your changes just click the
+**Hot Reload button**.
+
+### Advanced debugging with Observatory
+
+Observatory is an additional debugging and profiling tool presented with an
+html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
+
+To open Observatory:
+
 1. Run your app in debug mode.
 
-1. Make desired changes in your source code (without stopping the debugger).
-
-1. In the Debug panel at the bottom, click the **Hot Reload button**.
-
-![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
+1. In the Debug panel at the bottom, click the **Stopwatch icon** ('Open Observatory').
 
 ### IntelliJ keyboard shortcuts
 
@@ -197,13 +196,13 @@ To navigate quickly in your code:
 
 Code completion:
   * Code completions will be shown as you type, or can be invoked at any time with `shift-spacebar`
-  * IntelliJ code completion matches are per-default case sensitive on the first letter. 
+  * IntelliJ code completion matches are per-default case sensitive on the first letter.
     You can change this in **Preferences > Editor > General > Code Completion**
-    
+
 Opening a Flutter project in IntelliJ from the terminal:
   * Create a terminal config for IntelliJ: In IntelliJ, select **Tools > Create Command-line Launcher**
   * You can now open a project with `idea .`, e.g.:
-  
+
   ```
   cd <flutter sdk dir>\examples\flutter_gallery`
   idea .

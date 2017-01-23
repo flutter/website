@@ -61,7 +61,7 @@ plugins](/setup/#plugins), you can start your Flutter app from there:
 1. Select **Flutter** in the menu, and click **Next**.
 1. Under **Project location** enter, or browse to, the directory holding your new Flutter app.
 1. Click **Finish**.
-1. Click the **Debug icon** in the toolbar, or invoke the menu item **Run > Debug**.
+1. Click the **Run icon** in the toolbar, or invoke the menu item **Run > Run**.
 
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
@@ -92,21 +92,12 @@ offering a best-in-class development cycle.
 
 To edit your code and hot reload changes:
 
-1. Run your app in debug mode.
-1. Make desired changes in your source code (without stopping the debugger).
-1. In the Debug panel at the bottom, click the Hot Reload button.
-
-Not all source code changes can be hot reloaded. To fully restart the Dart VM of
-your Flutter app you can use the _Full Application Restart_ button.
-
-![Main IntelliJ toolbar](/images/intellij/debug-toolbar.png)
-
-The _Rerun ``main.dart``_ button on the left side of the Debug Toolbar will
-redeploy the app to the device. For both _Full Application Restart_ and _Rerun_
-you will lose the state of your application.
+1. Run your app with 'Run' or 'Debug'.
+1. Make desired changes in your source code (without stopping the app).
+1. Click the Hot Reload button.
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
-changes are supported by the hot-reload feature can be found on the page
+changes are supported by the hot reload feature can be found on the page
 [Developing apps in the IntelliJ IDE](../intellij-ide/).
 
 ## Next steps
