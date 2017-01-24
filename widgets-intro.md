@@ -174,13 +174,14 @@ void main() {
 }
 ```
 
-Be sure to have a `uses-material-design: true` entry in your `flutter.yaml`
-file. It allows to use the predefined set of
-[material icons](https://design.google.com/icons/).
+Be sure to have a `uses-material-design: true` entry in the `flutter`
+section of your `pubspec.yaml` file. It allows to use the predefined
+set of [material icons](https://design.google.com/icons/).
 
 ```yaml
 name: my_app
-uses-material-design: true
+flutter:
+  uses-material-design: true
 ```
 
 Many widgets need to be inside of a

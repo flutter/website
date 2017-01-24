@@ -6,20 +6,21 @@ permalink: /custom-fonts/
 ---
 
 You can use custom fonts in your Flutter application by including them in your
-`flutter.yaml` file under the `fonts` heading:
+`pubspec.yaml` file under the `fonts` heading in your `flutter` section:
 
 ```yaml
-fonts:
-  - family: Raleway
-    fonts:
-      - asset: assets/fonts/Raleway-Regular.ttf
-      - asset: assets/fonts/Raleway-Medium.ttf
-        weight: 500
-      - asset: assets/fonts/Raleway-SemiBold.ttf
-        weight: 600
-  - family: AbrilFatface
-    fonts:
-      - asset: assets/fonts/abrilfatface/AbrilFatface-Regular.ttf
+flutter:
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+          weight: 600
+    - family: AbrilFatface
+      fonts:
+        - asset: assets/fonts/abrilfatface/AbrilFatface-Regular.ttf
 ```
 
 The `family` determines the name of the font, which you can use in the
@@ -29,7 +30,7 @@ object to use the font with a [`Text`](https://docs.flutter.io/flutter/widgets/T
 or a [`RichText`](https://docs.flutter.io/flutter/widgets/RichText-class.html)
 widget.
 
-The `asset` is a path to the font file, relative to the `flutter.yaml` file.
+The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font. When building your
 app, these files are included in your app's asset bundle.
 

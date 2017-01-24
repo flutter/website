@@ -10,63 +10,71 @@ permalink: /assets-and-images/
 
 ## Introduction
 
-Flutter apps can include both code and _assets_
-(sometimes called resources). An asset is a file that is bundled
-and deployed with your app, and is accessible at runtime.
-Common types of assets include static data
-(for example, JSON files), configuration files, icons,
-and images.
+Flutter apps can include both code and _assets_ (sometimes called
+resources). An asset is a file that is bundled and deployed with your
+app, and is accessible at runtime. Common types of assets include
+static data (for example, JSON files), configuration files, icons, and
+images.
 
 ## Specifying assets
 
-Flutter uses the `flutter.yaml` file, located at the root of your
-project, to identify assets required by an app.
+Flutter uses
+the [`pubspec.yaml`](https://www.dartlang.org/tools/pub/pubspec) file,
+located at the root of your project, to identify assets required by an
+app.
 
 Here is an example:
 
 ```yaml
-assets:
-  - assets/my_icon.png
-  - assets/background.png
+flutter:
+  assets:
+    - assets/my_icon.png
+    - assets/background.png
 ```
 
-The `assets` section specifies files that should be included with the
-app. Each asset is identified by an explicit path (relative
-to the `flutter.yaml` file) where the asset file is located.
-The order in which the assets are declared does not matter.
+The `assets` subsection of the `flutter` section specifies files that
+should be included with the app. Each asset is identified by an
+explicit path (relative to the `pubspec.yaml` file) where the asset
+file is located. The order in which the assets are declared does not
+matter.
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
 
 ### Asset variants
 
-The build process supports the notion of asset variants: different versions of
-an asset that might be displayed in different contexts. When an asset's path is
-specified in the `assets` section of `flutter.yaml`, the build process looks for
-any files with the same name in adjacent subdirectories. Such files are then
-included in the asset bundle along with the specified asset.
+The build process supports the notion of asset variants: different
+versions of an asset that might be displayed in different contexts.
+When an asset's path is specified in the `assets` section of
+`pubspec.yaml`, the build process looks for any files with the same
+name in adjacent subdirectories. Such files are then included in the
+asset bundle along with the specified asset.
 
-For example, if you have the following assets:
+For example, if you have the following files in your application
+directory:
+
+* .../pubspec.yaml
+* .../assets/my_icon.png
+* .../assets/background.png
+* .../assets/dark/background.png
+* ...etc.
+
+...and your `pubspec.yaml` file contains:
 
 ```yaml
-  - assets/my_icon.png
-  - assets/background.png
+flutter:
+  assets:
+    - assets/background.png
 ```
 
-and your `flutter.yaml` file contains:
+...then both `assets/background.png` and `assets/dark/background.png`
+will be included in your asset bundle. The former is considered the
+_main asset_, while the latter is considered a _variant_.
 
-```yaml
-assets:
-  - assets/background.png
-```
-
-then both `assets/background.png` and `assets/dark/background.png` will be
-included in your asset bundle. The former is considered the _main asset_, while
-the latter is considered a _variant_.
-
-Flutter uses asset variants when choosing resolution appropriate images; see
-below. In the future, this mechanism may be extended to include variants for
-different locales or regions, reading directions, etc.
+Flutter uses asset variants when choosing resolution appropriate
+images; see below. In the future, this mechanism may be extended to
+include variants for different locales or regions, reading directions,
+etc.
 
 ## Loading assets
 
@@ -74,30 +82,29 @@ Your app can access its assets through an
 [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html)
 object.
 
-The two main methods on an asset bundle allow you to load a string/text asset
-(`loadString`) or an image/binary asset (`load`) out of the bundle,
-given a logical key.
-The logical key maps to the path to the asset specified in the `flutter.yaml`
-file at build time.
+The two main methods on an asset bundle allow you to load a
+string/text asset (`loadString`) or an image/binary asset (`load`) out
+of the bundle, given a logical key. The logical key maps to the path
+to the asset specified in the `pubspec.yaml` file at build time.
 
 ### Loading text assets
 
 Each Flutter app has a
 [`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html)
-object
-for easy access to the main asset bundle. It is possible to load assets
-directly using the `rootBundle` global static
-from `package:flutter/services.dart`.
+object for easy access to the main asset bundle. It is possible to
+load assets directly using the `rootBundle` global static from
+`package:flutter/services.dart`.
 
 However, it's recommended to obtain the AssetBundle for the current
 BuildContext using
 [`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html).
-Rather than the default asset bundle that was built with the app,
-this approach enables a parent widget to substitute a different AssetBundle
-at run time, which can be useful for localization or testing scenarios.
+Rather than the default asset bundle that was built with the app, this
+approach enables a parent widget to substitute a different AssetBundle
+at run time, which can be useful for localization or testing
+scenarios.
 
-Typically, you'll use DefaultAssetBundle.of() to indirectly
-load a JSON file asset from the app's runtime `rootBundle`.
+Typically, you'll use `DefaultAssetBundle.of()` to indirectly load a
+JSON file asset from the app's runtime `rootBundle`.
 
 {% comment %}
 
@@ -106,8 +113,8 @@ load a JSON file asset from the app's runtime `rootBundle`.
 
 {% endcomment %}
 
-Or, use `rootBundle` to directly load a JSON file asset that was specified at
-build time, for example:
+Or, use `rootBundle` to directly load a JSON file asset that was
+specified at build time, for example:
 
 ```dart
 import 'dart:async' show Future;
@@ -129,7 +136,6 @@ pixel ratio.
 understands how to map a logical requested asset onto one that most
 closely matches the current device pixel ratio. In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
-
 
 * .../image.png
 * .../Mx/image.png
@@ -162,7 +168,7 @@ To load an image, use the
 [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
 class in a widget's `build` method.
 
-For example, your app can load the dark background image from the asset
+For example, your app can load the background image from the asset
 declarations above:
 
 ```dart
@@ -171,7 +177,7 @@ Widget build(BuildContext context) {
   return new DecoratedBox(
     decoration: new BoxDecoration(
       backgroundImage: new BackgroundImage(
-        image: new AssetImage('assets/my_asset.png'),
+        image: new AssetImage('assets/background.png'),
         // ...
       ),
       // ...
@@ -186,30 +192,10 @@ The way this works is through an object called
 established at the top of the build tree. AssetImage fetches an image from an
 AssetBundle, based on the context.
 
-Anything using the default asset bundle will
-inherit resolution awareness when loading images.  (If you work with some of the
-lower level classes, like
+Anything using the default asset bundle will inherit resolution
+awareness when loading images. (If you work with some of the lower
+level classes, like
 [`ImageStream`](https://docs.flutter.io/flutter/services/ImageStream-class.html)
 or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
-
-{% comment %}
-    This section, and the above paragraph on resolution awareness need updating.
-#### Caveats
-
-* If you're not using
-  [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
-  or
-  [`WidgetsApp`](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
-  in your app, and you want to use resolution awareness, you'll need to
-  establish your own `AssetVendor` in your build logic.
-* If you want establish your own
-  [`MediaQuery`](https://docs.flutter.io/flutter/widgets/MediaQuery-class.html) or
-  [`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html)
-  below the root of the widget hierarchy, the root-level AssetVendor won't be
-  aware of the change.  If you want resolution awareness with the new MediaQuery
-  or DefaultAssetBundle you specify, you'll need to create an AssetVendor at
-  that point in the tree as well.
-
-{% endcomment %}
