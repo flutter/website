@@ -130,7 +130,7 @@ class establishes connections with services.
    final Random random = new Random();
 
    void main() {
-     runApp(Null);
+     runApp(new Center(child: new Text('Random Number Generator')));
      PlatformMessages.setJSONMessageHandler('getRandom', handleGetRandom);
    }
 
