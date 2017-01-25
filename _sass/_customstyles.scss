@@ -789,6 +789,12 @@ pre, table code {
 
 pre {
     margin: 25px 0px;
+    /* Added from dartlang to enable highlighting in code blocks. */
+    /* site-www/src/_assets/stylesheets/main.css */
+    .highlight {
+      background: #fffde7 !important;
+      padding: 2px;
+    }
 }
 
 #json-box-container pre {
