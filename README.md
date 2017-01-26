@@ -39,18 +39,118 @@ A tldr version follows:
 `bundle exec jekyll build`<br>
 `bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx`
 
-## Code Snippet Validation
+## Staging the site for external review
+
+1. If you haven't done so, create a new project on
+   [firebase.corp.google.com](https://firebase.corp.google.com/?pli=1).
+   It's best to use a name that identifies who you are. I use "sz-flutter".
+
+2. At the root of the website repo, add a .firebaserc file with the name
+   of your firebase project. The .firebaserc file is listed in the .gitignore file,
+   so it won't create a file in master. Here's what my rc file looks like:
+
+```
+$ cat .firebaserc
+{
+  "projects": {
+    "sz" : "sz-flutter"
+  }
+}
+```
+
+2. From the root of the website repo, build the site:
+
+```
+$ jekyll build
+```
+
+3. Deploy the site to your personal instance:
+
+```
+$ firebase deploy --project sz
+```
+
+4. Navigate the browser to the hosted URL. In my case, that's
+   [https://sz-flutter.firebaseapp.com](https://sz-flutter.firebaseapp.com).
+
+5. When submitting a PR for review, include a link to the relevant pages in your
+   firebase instance to make it easier for reviewers.
+
+## Writing for flutter.io
+
+(Eventually, this section should be expanded to its own page.)
+
+### Highlighting code in a code block
+
+Do you want to highlight code inside a code block? We got that!
+Don't confuse this with automatic syntax highlighting. You can accomplish that by
+adding "dart" (or the relevant language identifier) after the tick-tick-tick:
+
+<pre>
+&#96;&#96;&#96;dart
+void main() {
+  print('Hello World');
+}
+&#96;&#96;&#96;
+</pre>
+
+If you want to highlight a specific bit of code, use the
+`[[highlight]]highlight this text[[/highlight]]` syntax. For example:
+
+<!-- skip -->
+```dart
+void main() {
+  print([[highlight]]'Hello World'[[/highlight]]);
+}
+```
+
+If you want to see how this functionality was added to this site, refer to
+[this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
+
+### Adding next/previous page links
+
+If you have a document that spans multiple pages, you can add next and previous
+page links to make navigating these pages easier. It involves adding some information
+to the front matter of each page, and including some HTML.
+
+
+```
+---
+layout: tutorial
+title: "Constraints"
+sidebar: home_sidebar
+permalink: /tutorials/layout/constraints.html
+prev-page: /tutorials/layout/properties.html
+prev-page-title: "Container Properties"
+next-page: /tutorials/layout/create.html
+next-page-title: "Create a Layout"
+---
+
+{% include prev-next-nav.html %}
+
+{:toc}
+
+<!-- PAGE CONTENT -->
+
+{% include prev-next-nav.html %}
+```
+
+Omit the "prev-page" info for the first page, and the "next-page" info for the
+last page.
+
+## Code snippet validation
 
 The code snippets in the markdown documentation are validated as part of the
 build process. Anything within a '\`\`\`dart' code fence will be extracted into
 its own file and checked for analysis issues. Some ways to tweak that:
 
-- if a code snippet should not be analyzed, immediately proceed it with
+- If a code snippet should not be analyzed, immediately proceed it with
   a `<!-- skip -->` comment
-- to include code to be analyzed, but not displayed, add that in a comment
+- To include code to be analyzed, but not displayed, add that in a comment
   immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- a snippet without any import statements will have an import
+- A snippet without any import statements will have an import
   (`'package:flutter/material.dart'`)
   automatically added to it
+- We ignore special formatting tags like `[[highlight]]`.
 
 [Flutter]: https://flutter.io

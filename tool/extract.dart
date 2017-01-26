@@ -87,9 +87,22 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
 
   source += '${lines.join('\n')}\n';
 
+  source = _removeMarkup(source);
+
   new File(path).writeAsStringSync(source);
   print('  ${lines.length} line snippet ==> $path');
 }
+
+String _removeMarkup(String source) {
+  List<String> tags = ['strike', 'highlight', 'note', 'red'];
+
+  tags.forEach((String tag) {
+    source = source.replaceAll('\[\[$tag\]\]', '');
+    source = source.replaceAll('\[\[/$tag\]\]', '');
+  });
+  return source;
+}
+
 
 void clean() {
   Iterable<FileSystemEntity> files = new Directory('example')
