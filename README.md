@@ -89,7 +89,7 @@ adding "dart" (or the relevant language identifier) after the tick-tick-tick:
 <pre>
 &#96;&#96;&#96;dart
 void main() {
-  runApp(new MyApp());
+  print('Hello World');
 }
 &#96;&#96;&#96;
 </pre>
@@ -99,7 +99,7 @@ If you want to highlight a specific bit of code, use the
 
 ```dart
 void main() {
-  runApp([[highlight]]new MyApp()[[/highlight]]);
+  print([[highlight]]'Hello World'[[/highlight]]);
 }
 ```
 
@@ -150,5 +150,6 @@ its own file and checked for analysis issues. Some ways to tweak that:
 - a snippet without any import statements will have an import
   (`'package:flutter/material.dart'`)
   automatically added to it
+- and we ignore special formatting tags like `[[highlight]]`.
 
 [Flutter]: https://flutter.io
