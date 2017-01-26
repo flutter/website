@@ -97,6 +97,7 @@ void main() {
 If you want to highlight a specific bit of code, use the
 `[[highlight]]highlight this text[[/highlight]]` syntax. For example:
 
+<!-- skip -->
 ```dart
 void main() {
   print([[highlight]]'Hello World'[[/highlight]]);
@@ -137,19 +138,19 @@ next-page-title: "Create a Layout"
 Omit the "prev-page" info for the first page, and the "next-page" info for the
 last page.
 
-## Code Snippet Validation
+## Code snippet validation
 
 The code snippets in the markdown documentation are validated as part of the
 build process. Anything within a '\`\`\`dart' code fence will be extracted into
 its own file and checked for analysis issues. Some ways to tweak that:
 
-- if a code snippet should not be analyzed, immediately proceed it with
+- If a code snippet should not be analyzed, immediately proceed it with
   a `<!-- skip -->` comment
-- to include code to be analyzed, but not displayed, add that in a comment
+- To include code to be analyzed, but not displayed, add that in a comment
   immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- a snippet without any import statements will have an import
+- A snippet without any import statements will have an import
   (`'package:flutter/material.dart'`)
   automatically added to it
-- and we ignore special formatting tags like `[[highlight]]`.
+- We ignore special formatting tags like `[[highlight]]`.
 
 [Flutter]: https://flutter.io
