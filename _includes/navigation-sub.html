@@ -1,0 +1,21 @@
+{% if page.next-page or page.prev-page %}
+
+<div class="prev-next">
+
+<!-- PREV -->
+<div class="prev-next-left">
+{% if page.prev-page %}
+<a href="{{ page.prev-page }}"><i class="fa fa-arrow-left"> </i> {{ page.prev-page-title }}</a>
+{% endif %}
+</div>
+
+<!-- NEXT -->
+<div class="prev-next-right">
+{% if page.next-page %}
+<a href="{{ page.next-page }}" class="pull-right">{{ page.next-page-title }} <i class="fa fa-arrow-right"></i></a>
+{% endif %}
+</div>
+
+</div>
+
+{% endif %}
