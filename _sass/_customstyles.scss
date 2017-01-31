@@ -1039,3 +1039,30 @@ a code {
 table th code {
     color: white;
 }
+
+li {
+    line-height: 1.0;
+}
+
+.alert code {
+    background-color: inherit;
+}
+
+.post-content h4 {
+    font-size: 16px;
+    font-style: inherit;
+}
+
+div.prev-next {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+div.prev-next-right {
+    display: inline-block;
+    float: right;
+}
+
+div.prev-next-left {
+    display: inline-block;
+}
