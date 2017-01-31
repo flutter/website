@@ -208,6 +208,8 @@ Opening a Flutter project in IntelliJ from the terminal:
   idea .
   ```
 
+Tuning the IntelliJ UI setup: Please see [this wiki page](https://github.com/flutter/flutter/wiki/IntelliJ---Flutter-Setup-Tips-and-Tricks) for tips.
+
 ## Troubleshooting
 
 ### Known issues and feedback
