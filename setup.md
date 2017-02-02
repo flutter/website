@@ -88,11 +88,10 @@ may overflow your screen. Set the device scale under the **Window > Scale** menu
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools:
 
 1. Install [homebrew](http://brew.sh/).
-2. Open the terminal and run these command to install the tools for deploying Flutter apps to
+2. Open the terminal and run this command to install the tools for deploying Flutter apps to
 iOS devices.
 
     <pre>
-    $ brew tap flutter/flutter
     $ brew install ideviceinstaller ios-deploy
     </pre>
 
