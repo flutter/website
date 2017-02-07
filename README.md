@@ -98,11 +98,11 @@ If you want to highlight a specific bit of code, use the
 `[[highlight]]highlight this text[[/highlight]]` syntax. For example:
 
 <!-- skip -->
-```dart
+{% prettify dart %}
 void main() {
   print([[highlight]]'Hello World'[[/highlight]]);
 }
-```
+{% endprettify %}
 
 If you want to see how this functionality was added to this site, refer to
 [this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
