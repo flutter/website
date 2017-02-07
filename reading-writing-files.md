@@ -15,7 +15,7 @@ The [`PathProvider`](https://docs.flutter.io/flutter/services/PathProvider-class
 access commonly used locations on the device's filesystem. The class currently supports access to two filesystem locations:
 
 + **Temporary directory:** A temporary directory (cache) that the system can clear at any time. On iOS, this corresponds to the value that [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context.html#getCacheDir()) returns.
-+ **Documents directory:** A directory for the app to store files that only it can access. The system clears the directory only when the app is deleted. On iOS, this corresponds to `NSDocumentsDirectory`. On Android, this is the `AppData` directory.
++ **Documents directory:** A directory for the app to store files that only it can access. The system clears the directory only when the app is deleted. On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the `AppData` directory.
 
 Once your Flutter app has a reference to a file location, you can use the [dart:io](https://api.dartlang.org/stable/1.18.1/dart-io/dart-io-library.html) APIs to perform read/write operations to the filesystem. For more information about working on files and directories using Dart, see this [overview](https://www.dartlang.org/articles/dart-vm/io) and [these examples](https://www.dartlang.org/dart-vm/dart-by-example#files-directories-and-symlinks).
 
