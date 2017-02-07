@@ -83,8 +83,8 @@ $ firebase deploy --project sz
 ### Highlighting code in a code block
 
 Do you want to highlight code inside a code block? We got that!
-Don't confuse this with automatic syntax highlighting. You can accomplish that by
-adding "dart" (or the relevant language identifier) after the tick-tick-tick:
+Don't confuse this with automatic syntax highlighting. You can accomplish that
+by adding "dart" (or the relevant language identifier) after the tick-tick-tick:
 
 <pre>
 &#96;&#96;&#96;dart

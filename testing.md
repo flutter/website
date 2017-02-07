@@ -74,16 +74,16 @@ Example:
 
 Add this file to `test/unit_test.dart`:
 
-```dart
+{% prettify dart %}
 import 'package:test/test.dart';
 
 void main() {
   test('my first unit test', () {
-    int answer = 42;
+    /**highlight*/var answer = 42;/*-highlight*/
     expect(answer, 42);
   });
 }
-```
+{% endprettify %}
 
 In addition, you must add the following block to your `pubspec.yaml`:
 
@@ -125,8 +125,8 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('my first widget test', (WidgetTester tester) async {
     // You can use keys to locate the widget you need to test
-    Key sliderKey = new UniqueKey();
-    double value = 0.0;
+    var sliderKey = new UniqueKey();
+    var value = 0.0;
 
     // Tells the tester to build a UI based on the widget tree passed to it
     await tester.pumpWidget(

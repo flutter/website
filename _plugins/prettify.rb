@@ -28,28 +28,37 @@ module Prettify
 
     def render(context)
       # out = '<pre class="prettyprint linenums'
-      out = '<pre class="prettyprint'
+      out = '<pre class="prettyprint highlighter-rouge highlight'
       unless @lang.nil?
         out += ' lang-' + @lang
+        out += ' language-' + @lang
       end
-      out += '">'
+      out += '"><code>'
 
-      contents = super #.strip
+      contents = super.strip
       contents = CGI::escapeHTML(contents)
 
-      contents.gsub!('[[strike]]', '<code class="nocode strike">')
-      contents.gsub!('[[/strike]]', '</code>')
+      contents.gsub!('[[strike]]', '<span class="nocode strike">')
+      contents.gsub!('[[/strike]]', '</span>')
+      contents.gsub!('/**strike*/', '<span class="nocode strike">')
+      contents.gsub!('/*-strike*/', '</span>')
 
-      contents.gsub!('[[highlight]]', '<code class="nocode highlight">')
-      contents.gsub!('[[/highlight]]', '</code>')
+      contents.gsub!('[[highlight]]', '<span class="nocode highlight">')
+      contents.gsub!('[[/highlight]]', '</span>')
+      contents.gsub!('/**highlight*/', '<span class="nocode highlight">')
+      contents.gsub!('/*-highlight*/', '</span>')
 
-      contents.gsub!('[[note]]', '<code class="nocode note">')
-      contents.gsub!('[[/note]]', '</code>')
+      contents.gsub!('[[note]]', '<span class="nocode note">')
+      contents.gsub!('[[/note]]', '</span>')
+      contents.gsub!('/**note*/', '<span class="nocode note">')
+      contents.gsub!('/*-note*/', '</span>')
 
-      contents.gsub!('[[red]]', '<code class="nocode red">')
-      contents.gsub!('[[/red]]', '</code>')
+      contents.gsub!('[[red]]', '<span class="nocode red">')
+      contents.gsub!('[[/red]]', '</span>')
+      contents.gsub!('/**red*/', '<span class="nocode red">')
+      contents.gsub!('/*-red*/', '</span>')
 
-      out += contents + "</pre>"
+      out += contents + "</code></pre>"
     end
 
   end
