@@ -26,6 +26,15 @@ module Prettify
       end
     end
 
+    def unindent(original)
+      indent = original.split("\n").select do |line|
+        !line.strip.empty?
+      end.map do |line|
+        line.index(/[^\s]/)
+      end.compact.min || 0
+      original.gsub(/^[[:blank:]]{#{indent}}/, '')
+    end
+
     def render(context)
       # out = '<pre class="prettyprint linenums'
       out = '<pre class="prettyprint highlighter-rouge highlight'
@@ -35,7 +44,9 @@ module Prettify
       end
       out += '"><code>'
 
-      contents = super.strip
+      contents = unindent(super)
+
+      contents = contents.strip
       contents = CGI::escapeHTML(contents)
 
       contents.gsub!('[[strike]]', '<span class="nocode strike">')

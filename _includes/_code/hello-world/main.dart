@@ -33,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(config.title),
       ),
-      body: /**highlight*/new Center/**highlight*/(
-        child: /**highlight*/new Text('Hello World')/**-highlight*/,
+      body: /**highlight*/new Center/*-highlight*/(
+        child: /**highlight*/new Text('Hello World')/*-highlight*/,
       ),
     );
   }

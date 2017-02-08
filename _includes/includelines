@@ -1,0 +1,27 @@
+{% comment %}{% raw %}<!--
+Includes the specified lines from an include file.
+
+Usage:
+  {% include includelines filename=PATH start=INT count=INT %}
+
+  filename: path to file under _includes
+  start: first line to include, starting at 1
+  count: number of lines to include
+
+Example:
+
+  {% include includelines filename='src/HelloWorld.java' start=10 count=5 %}
+  
+-->{% endraw %}{% endcomment %}
+
+{% capture filecontent %}
+    {% include {{include.filename}} %}
+{% endcapture %}
+
+{% assign lines = filecontent | newline_to_br | split: '<br />' %}
+
+{% prettify dart %}
+
+{% for line in lines offset:{{include.start}} limit:{{include.count}} %}{{ line }}{% endfor %}
+
+{% endprettify %}
