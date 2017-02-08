@@ -83,8 +83,8 @@ $ firebase deploy --project sz
 ### Highlighting code in a code block
 
 Do you want to highlight code inside a code block? We got that!
-Don't confuse this with automatic syntax highlighting. You can accomplish that by
-adding "dart" (or the relevant language identifier) after the tick-tick-tick:
+Don't confuse this with automatic syntax highlighting. You can accomplish that
+by adding "dart" (or the relevant language identifier) after the tick-tick-tick:
 
 <pre>
 &#96;&#96;&#96;dart
@@ -98,11 +98,11 @@ If you want to highlight a specific bit of code, use the
 `[[highlight]]highlight this text[[/highlight]]` syntax. For example:
 
 <!-- skip -->
-```dart
+{% prettify dart %}
 void main() {
   print([[highlight]]'Hello World'[[/highlight]]);
 }
-```
+{% endprettify %}
 
 If you want to see how this functionality was added to this site, refer to
 [this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
