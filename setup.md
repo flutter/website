@@ -15,7 +15,7 @@ iOS or Android.
 
 To install and run Flutter, your development environment must meet these minimum requirements:
 
-* **Operating Systems**: Mac or Linux (64-bit). Windows support is planned.
+* **Operating Systems**: Mac or Linux (64-bit). Windows support is [in progress](https://github.com/flutter/flutter/issues/138).
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
