@@ -85,7 +85,7 @@ as possible.
 
 Wait for Travis to give the green light before merging a PR. Travis
 runs a bunch of precommit checks (see the tests for the
-[framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.sh),
+[framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
 the [engine](https://github.com/flutter/engine/blob/master/travis/build.sh),
 and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
 You can run these locally as well. For the engine repository, Travis
