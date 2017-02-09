@@ -87,8 +87,7 @@ If you're using Material widgets, instead of using a gesture detector
 directly, consider using an
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html)
 to listen to taps, and a
-[`Block`](https://docs.flutter.io/flutter/widgets/Block-class.html) or
-[`MaterialList`](https://docs.flutter.io/flutter/material/MaterialList-class.html)
+[`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 to listen to swipes to trigger scrolling.
 
 ## Gesture disambiguation
