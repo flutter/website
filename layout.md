@@ -22,7 +22,7 @@ Generally, there are three kinds of boxes, in terms of how they handle
 their constraints:
 
 - Those that try to be as big as possible.
-  For example, the boxes used by `Center` and `Block`.
+  For example, the boxes used by `Center` and `ListView`.
 - Those that try to be the same size as their children.
   For example, the boxes used by `Transform` and `Opacity`.
 - Those that try to be a particular size.
@@ -65,15 +65,14 @@ will throw an exception that points to this file.
 
 The most common cases where a render box finds itself with unbounded
 constraints are within flex boxes (`Row` and `Column`), and **within
-scrollable regions** (mainly `Block`, `ScollableList<T>`, and
-`ScrollableMixedWidgetList`).
+scrollable regions** (`ListView` and other `ScrollView` subclasses).
 
-In particular, `Block` tries to expand to fit the space available in
-its cross-direction (i.e. if it's a vertically-scrolling block, it
+In particular, `ListView` tries to expand to fit the space available
+in its cross-direction (i.e. if it's a vertically-scrolling block, it
 will try to be as wide as its parent). If you nest a vertically
-scrolling `Block` inside a horizontally scrolling `Block`, the inner
-one will try to be as wide as possible, which is infinitely wide,
-since the outer one is scrollable in that direction.
+scrolling `ListView` inside a horizontally scrolling `ListView`, the
+inner one will try to be as wide as possible, which is infinitely
+wide, since the outer one is scrollable in that direction.
 
 Flex
 ----
