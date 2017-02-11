@@ -37,7 +37,7 @@ A tldr version follows:
 
 1. Prior to submitting, run link validation:<br>
 `bundle exec jekyll build`<br>
-`bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx`
+`bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx  --url-swap "https?\:\/\/(localhost\:4000|flutter\.io):"`
 
 ## Staging the site for external review
 
