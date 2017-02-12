@@ -46,8 +46,8 @@ class within a
 so you can save and operate on the current value of the input.
 To learn more about
 [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-and managing state in Flutter, please read our guide on
-[managing widget state](https://flutter.io/widgets-intro/#managing-state).
+and managing state in Flutter, you can look at this helpful example of 
+[managing widget state](https://flutter.io/widgets-intro/#changing-widgets-in-response-to-input).
 
 ## Example
 
