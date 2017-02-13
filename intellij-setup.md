@@ -2,7 +2,7 @@
 layout: page
 title: IDE Setup
 sidebar: home_sidebar
-permalink: /ide-setup/
+permalink: /intellij-setup/
 ---
 
 This page describes how to set up IntelliJ IDE to develop Flutter apps.
@@ -39,7 +39,7 @@ To install the plugins:
 1. Search for `'flutter'`,  select the Flutter plug-in and click `install`. 
 1. Click `Restart IntelliJ IDEA`.
 
-### Configure the plugins
+### Configuring the plugins
 
 1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux)
 1. Select **Languages & Frameworks>Flutter**
