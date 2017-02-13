@@ -26,8 +26,8 @@ entries:
       url: /setup/
       output: web
       
-    - title: IDE set up
-      url: /ide-setup/
+    - title: IntelliJ set up
+      url: /intellij-setup/
       output: web
 
     - title: Get started
