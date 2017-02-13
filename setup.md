@@ -129,7 +129,7 @@ you want Flutter to use a different installation of the Android SDK, you must se
 Using our command-line tools, you can use any editor to develop Flutter applications.
 If you prefer working in an IDE, we recommend using our IntelliJ plug-ins for a 
 [rich IDE experience](/intellij-ide/) supporting editing, running, and debugging 
-Flutter apps. See [IDE Setup](/ide-setup/) for detailed steps.
+Flutter apps. See [IntelliJ Setup](/intellij-setup/) for detailed steps.
 
 ## Next steps
 
