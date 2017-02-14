@@ -41,6 +41,14 @@ entries:
     - title: Dart bootstrap
       url: /bootstrap-into-dart/
       output: web
+      
+  - title: Analogs
+    output: web
+    folderitems:
+
+    - title: Web Analogs
+      url: /web-analogs/
+      output: web
 
   - title: Developer Guides
     output: web
