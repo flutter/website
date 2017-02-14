@@ -126,44 +126,10 @@ By default, Flutter uses the version of the Android SDK where your `adb` tool is
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that specific installation directory.
 
-
-<a name="plugins"/>
-
-## Flutter IntelliJ IDE plugins
-
-We recommend using our IntelliJ plug-ins for a [rich IDE
-experience](/intellij-ide/) supporting editing, running, and debugging Flutter
-apps. However, using our command-line tools, you can use any editor to develop
-Flutter applications.
-
-### Installing IntelliJ
-
-The IntelliJ plug-ins require JetBrains [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
-in the Community or Ultimate edition, version 2016.2 or later is supported.
-
-The current version of the Flutter plugin for IntelliJ is not compatible with Android Studio and 
-Webstorm (and various other JetBrains editors).
-
-### Install the plugins
-
-We provide two plugins:
-
-  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.)
-  * The `Flutter` plugin powers flutter developer workflows (running, debugging, hot reload, etc.)
-
-To install the plugins:
-
-1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux)
-1. Select **"Browse repositories…"**
-1. search for `'dart'`; click `install` (do not click restart yet)
-1. search for `'flutter'`; click `install`, and then click `Restart IntelliJ IDEA`
-
-### Configure the plugins
-
-1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux)
-1. Select **Languages & Frameworks>Flutter**
-1. Enter, or browse to, your Flutter SDK directory path in **Flutter SDK path**
-1. Click **OK**
+Using our command-line tools, you can use any editor to develop Flutter applications.
+If you prefer working in an IDE, we recommend using our IntelliJ plug-ins for a 
+[rich IDE experience](/intellij-ide/) supporting editing, running, and debugging 
+Flutter apps. See [IntelliJ Setup](/intellij-setup/) for detailed steps.
 
 ## Next steps
 

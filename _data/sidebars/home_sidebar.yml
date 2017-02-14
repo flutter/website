@@ -25,6 +25,10 @@ entries:
     - title: Set up
       url: /setup/
       output: web
+      
+    - title: IntelliJ set up
+      url: /intellij-setup/
+      output: web
 
     - title: Get started
       url: /getting-started/

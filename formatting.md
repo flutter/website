@@ -23,7 +23,7 @@ time may be better spent on code behavior rather than code style.
 ### Automatically formatting code in IntelliJ
 
 Automatic formatting of code is supported in IntelliJ if you have the
-`Dart` plugin (see [IntelliJ setup](/setup/#flutter-intellij-ide-plugins)).
+`Dart` plugin (see [IntelliJ setup](/intellij-setup/)).
 
 To automatically format the code in the current source code window, right-click
 in the code window and select `Reformat with Dart style`. You can add a keyboard

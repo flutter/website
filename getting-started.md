@@ -54,7 +54,7 @@ to get their IDs, and then `flutter run -d deviceID` to run your app.
 
 Alternatively, if you are using the [IntelliJ
 IDEA](https://www.jetbrains.com/idea/) IDE with the [Flutter
-plugins](/setup/#plugins), you can start your Flutter app from there:
+plugins](/intellij-setup/), you can start your Flutter app from there:
 
 1. In IntelliJ, click **Create New Project** from the Welcome window or
 **File > New > Project...** from the main IDE window.
