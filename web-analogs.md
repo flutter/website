@@ -9,9 +9,7 @@ permalink: /web-analogs/
 {:toc}
 
 <div class="begin-examples"></div>
-This page is for users who are familiar with the HTML and CSS syntax for 
-arranging components of an application's UI. It maps HTML/CSS code snippets (on 
-the left) to their Flutter/Dart code equivalents (on the right).
+This page is for users who are familiar with the HTML and CSS syntax for arranging components of an application's UI. It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 
 ## Performing Basic Layout Operations
 
@@ -53,9 +51,9 @@ the top left.
 
 ### Setting Background Color
 In Flutter, you set background color in a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
-“decoration” property.
+```decoration``` property.
 
-The CSS examples use the hexcolor equivalents to the Material color palette.
+The CSS examples use the hex color equivalents to the Material color palette.
 <div class="lefthighlight">
 {% prettify css %}
 <div class="greybox">
@@ -134,7 +132,7 @@ var container = new Container( // grey box
 ### Setting Container Width
 
 To specify the width of a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget you set its width property. This is equivalent to specifying the CSS 
+widget you set its ```width``` property. This is equivalent to specifying the CSS 
 max-width property.
 
 For nested Containers, if the parent’s width is less than the child’s width, 
@@ -261,7 +259,7 @@ var container = new Container( // grey box
 ### Rotating Components
 
 To rotate a widget, nest it in a [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
-widget. Use the Transform widget’s “alignment” and “origin” properties to 
+widget. Use the Transform widget’s ```alignment``` and ```origin``` properties to 
 specify the transform origin (fulcrum) in relative and absolute terms, respectively.
 
 For a simple 2D rotation, the widget is rotated on the Z axis using radians. 
@@ -325,7 +323,7 @@ var container = new Container( // gray box
 ### Scaling Components
 
 To scale a widget up or down, nest it in a [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) 
-widget. Use the Transform widget’s “alignment” and “origin” properties to specify 
+widget. Use the Transform widget’s ```alignment``` and ```origin``` properties to specify 
 the transform origin (fulcrum) in relative and absolute terms, respectively.
 
 For a simple scaling operation along the x-axis, create a new [Matrix4](https://docs.flutter.io/flutter/rendering/Matrix4-class.html)
@@ -391,8 +389,8 @@ var container = new Container( // gray box
 
 To apply a linear gradient to a widget's background, nest it in a 
 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) widget. 
-Then use the Container widget’s “decoration” property to create a [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html)
-object, and use BoxDecoration's “gradient” property to transform the background 
+Then use the Container widget’s ```decoration``` property to create a [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html)
+object, and use BoxDecoration's ```gradient``` property to transform the background 
 fill.
 
 The gradient “angle” is based on the FractionalOffset (x, y) values:
@@ -518,7 +516,7 @@ var container = new Container( // grey box
 The following examples show how to make and customize shapes.
 
 ### Rounding Corners
-To round the corners of a rectangular shape, use the borderRadius property of a
+To round the corners of a rectangular shape, use the borderRadius ```property``` of a
 [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html) 
 widget. Create a new [BorderRadius](https://docs.flutter.io/flutter/painting/BorderRadius-class.html) 
 widget that specifies the radii for rounding each corner.
@@ -575,11 +573,11 @@ var container = new Container( // grey box
 </div>
 
 ### Adding Box Shadows
-In CSS you can specify shadow offset and blur in shorthand, using the "box-shadow"
-property. In this example, the shadow properties are xOffset: 0px, yOffset: 3px,
-blur: 12px, color: black @40% alpha.
+In CSS you can specify shadow offset and blur in shorthand, using the ```box-shadow```
+property. In this example, the shadow properties are ```xOffset: 0px, yOffset: 3px,
+blur: 12px, color: black @40% alpha```.
 
-In Flutter, each property and value is specified separately. Use the boxShadow
+In Flutter, each property and value is specified separately. Use the ```boxShadow```
 property of BoxDecoration to create a new [BoxShadow](https://docs.flutter.io/flutter/painting/BoxShadow-class.html) 
 widget. Multiple BoxShadow widgets can be stacked to customize the shadow depth, 
 color, etc.
@@ -646,9 +644,9 @@ var container = new Container( // grey box
 Making a circle in CSS requires a workaround of applying a border-radius of 
 50% to all four sides of a rectangle. 
 
-While this approach is supported with the borderRadius property of 
+While this approach is supported with the ```borderRadius``` property of 
 [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html),
-Flutter provides a shape property with [BoxShape enum](https://docs.flutter.io/flutter/painting/BoxShape-class.html)
+Flutter provides a ```shape``` property with [BoxShape enum](https://docs.flutter.io/flutter/painting/BoxShape-class.html)
 for this purpose.
 
 <div class="lefthighlight">
@@ -835,7 +833,7 @@ var container = new Container( // grey box
 </div>
 
 ### Transforming Text
-In HTML/CSS, you perform simple case transformations using the "text-transform"
+In HTML/CSS, you perform simple case transformations using the ```text-transform```
 property. 
 
 In Flutter, you transform the contents of a Text widget using the methods and
@@ -897,7 +895,7 @@ A [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget lets
 you display text with the same formatting characteristics. To
 display text that uses multiple styles (in this example, a single word with 
 emphasis), use a [RichText](https://docs.flutter.io/flutter/widgets/RichText-class.html)
-widget instead. Its "text" property can specify one or more
+widget instead. Its ```text``` property can specify one or more
 [TextSpan](https://docs.flutter.io/flutter/painting/TextSpan-class.html) widgets 
 that can be individually styled. 
 
@@ -976,9 +974,9 @@ An excerpt displays the initial line(s) of text in a paragraph, and handles the
 overflow text in some way. In HTML/CSS an excerpt can be no longer than one line. 
 Truncating after multiple lines requires some JavaScript code.
 
-In Flutter, use the "maxLines" property of a [Text](https://docs.flutter.io/flutter/widgets/Text-class.html)
+In Flutter, use the ```maxLines``` property of a [Text](https://docs.flutter.io/flutter/widgets/Text-class.html)
 widget to specify the number of lines to include in the excerpt, and the 
-"overflow" property for handling overflow text.
+```overflow``` property for handling overflow text.
 
 <div class="lefthighlight">
 {% prettify css %}
