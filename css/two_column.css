@@ -2,9 +2,9 @@ html {
     font-size: 15px; 
 } 
 
-@media (min-width: 1500px) { 
+@media (min-width: 1170px) { 
   .container {
-    max-width: 1470px;
+   max-width: 1470px; 
   }
 
 /*----------------------------
@@ -64,7 +64,7 @@ article .end-examples ~ .righthighlight {
     clear: both;
 }
 
-@media print, screen and (max-width: 1580px) {
+@media print, screen and (max-width: 1170px) {
 
 /*----------------------------
     Two column layout media
@@ -88,7 +88,7 @@ article .begin-examples ~ .righthighlight {
 /*----------------------------
     Other media
   ---------------------------*/
-@media print, screen and (max-width: 580px) {
+@media print, screen and (max-width: 750px) {
 article > h3,
 article > p {
     padding: 0;
