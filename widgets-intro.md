@@ -634,30 +634,30 @@ class _ShoppingListState extends State<ShoppingList> {
       appBar: new AppBar(
         title: new Text('Shopping List'),
       ),
-      body: new MaterialList(
-        type: MaterialListType.oneLineWithAvatar,
+      body: new ListView(
+        padding: new EdgeInsets.symmetric(vertical: 8.0),
         children: config.products.map((Product product) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
             onCartChanged: _handleCartChanged,
           );
-        }),
+        }).toList(),
       ),
     );
   }
 }
 
-final List<Product> _kProducts = <Product>[
-  new Product(name: 'Eggs'),
-  new Product(name: 'Flour'),
-  new Product(name: 'Chocolate chips'),
-];
-
 void main() {
   runApp(new MaterialApp(
-    title: 'Shopping List',
-    home: new ShoppingList(products: _kProducts),
+    title: 'Shopping App',
+    home: new ShoppingList(
+      products: <Product>[
+        new Product(name: 'Eggs'),
+        new Product(name: 'Flour'),
+        new Product(name: 'Chocolate chips'),
+      ],
+    ),
   ));
 }
 ```
