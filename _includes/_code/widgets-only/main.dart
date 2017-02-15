@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-  //debugPaintSizeEnabled = true;
   runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+    return new Center(
+      child: new Text('Hello World', style: new TextStyle(fontSize: 30.0)),
+    );
+  }
+}
+
+/**
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
   final String title;
 
   @override
@@ -31,13 +34,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(config.title),
-      ),
-      body: new Center(
-        child: new Text('Hello World'),
-      ),
+    return new Center(
+      child: new Text('Hello', style: new TextStyle(fontSize: 30.0)),
     );
   }
 }
+*/

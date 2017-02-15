@@ -54,3 +54,21 @@ $on-laptop:        800px;
         "customstyles",
         "prism"
 ;
+
+// Columns
+.col2 {
+  list-style: none;
+  column-count: 2;
+  column-gap: 0;
+  li {
+    page-break-inside: avoid;
+  }
+}
+.col3 {
+  list-style: none;
+  column-count: 3;
+  column-gap: 0;
+  li {
+   page-break-inside: avoid;
+  }
+}
