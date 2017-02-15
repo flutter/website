@@ -65,6 +65,9 @@ the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
 2. Configure the Xcode command-line tools to use the newly installed version of Xcode by
 running `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer` from
 the command line.
+
+  This is the correct path for most cases, when you want to use the latest version of Xcode.
+  If you need to use an older version for some reason, specify that path instead.
 2. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
 running `sudo xcodebuild -license` from the command line.
 
