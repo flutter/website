@@ -13,7 +13,7 @@ fully integrated development experience in the IntelliJ IDE.
 
 ## Installation and setup
 
-Please follow the [Flutter setup](/setup/) instructions to install IntelliJ and
+Please follow the [IntelliJ setup](/intellij-setup/) instructions to install IntelliJ and
 the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
