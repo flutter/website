@@ -67,7 +67,7 @@ running `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer` 
 the command line.
 
   This is the correct path for most cases, when you want to use the latest version of Xcode.
-  If you need to use an older version for some reason, specify that path instead.
+  If you need to use a different version, specify that path instead.
 2. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
 running `sudo xcodebuild -license` from the command line.
 
