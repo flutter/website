@@ -967,7 +967,7 @@ For more information, see
 
 {% include includelines filename="_code/lakes/main.dart" start=109 count=6 %}
 
-<a name="step-5"></a>
+<a name="step-6"></a>
 ### Step 6: Put it together
 
 The final step assembles the pieces together. At this point, you can tweak
@@ -997,7 +997,7 @@ The following resources will help when writing layout code.
   Demo app showcasing many material design widgets and other Flutter features.
 * [Flutter API documentation](https://docs.flutter.io/)<br>
   Reference documentation for all of the Flutter libraries.
-* [Dealing with Box Constraints in Flutter](/layout.html)<br>
+* [Dealing with Box Constraints in Flutter](/layout)<br>
   Discusses how widgets are constrained by their render boxes.
 * [Adding Assets and Images in Flutter](/assets-and-images)<br>
   Explains how to add images and other assets to your app's package.
