@@ -80,8 +80,7 @@ Most of this should look as you might expect, but you might be wondering
 about the Containers (shown in pink). Container is a widget that allows
 you to customize its child widget. Use a Container when you want to
 add padding, margins, borders, or background color, to name some of its
-capabilities. If you are familiar with web programming, Container is
-similar to an HTML `<div>`.
+capabilities.
 
 In this example, each Text widget is placed in a Container to add margins.
 The entire Row is also placed in a Container to add padding around the row.
@@ -571,7 +570,6 @@ or image.
 
 * Add padding, margins, borders
 * Change background color or image
-* Similar to an HTML <div>
 * Contains a single child widget, but that child can be a Row, Column,
   or even the root of a widget tree
 

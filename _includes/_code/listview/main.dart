@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-List<ListItem> list = [
+List<Widget> list = <Widget>[
   new ListItem(
     title: new Text('CineArts at the Empire',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
