@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
       padding: const EdgeInsets.all(32.0),
       child: new Text(
         '''
-Lake Oeschinen lies at the foot of the Blüemlisalp. Situated 1,578 meter
+Lake Oeschinen lies at the foot of the Blüemlisalp. Situated 1,578 meters
 above sea level, it is one of the larger Alpine Lakes. A gondola train leads
 from Kandersteg to a location near the lake. A half-hour walk across pastures
 and through pine forest takes you to the lake. The water in the lake warms up

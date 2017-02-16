@@ -41,7 +41,7 @@ List<Container> _buildGridTileList(int count) {
   return containers;
 }
 
-Widget buildGrid(Orientation orientation) {
+Widget buildGrid() {
   return new GridView.extent(
       maxCrossAxisExtent: 200.0,
       padding: const EdgeInsets.all(4.0),
@@ -53,13 +53,12 @@ Widget buildGrid(Orientation orientation) {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final Orientation orientation = MediaQuery.of(context).orientation;
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(config.title),
       ),
       body: new Center(
-        child: buildGrid(orientation),
+        child: buildGrid(),
       ),
     );
   }

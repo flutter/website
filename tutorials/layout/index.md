@@ -590,9 +590,10 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-This layout consists of a column of two rows, each with 2 images.
+This layout consists of a column of two rows, each containing 2 images.
 Each image uses a Container to add a rounded grey border and margins.
-The Column uses a Container to change the background to a more
+The Column, which contains the rows of images,
+uses a Container to change the background color to a more
 translucent grey.
 
 </div> <div class="col-md-6" markdown="1">
@@ -713,8 +714,8 @@ The widgets can completely or partially overlap the base widget.
 #### Stack summary:
 
 * Use for widgets that overlap another widget
-* The first widget in the list of children is the base widget
-  Subsequent children are overlaid on top of that base widget
+* The first widget in the list of children is the base widget;
+  subsequent children are overlaid on top of that base widget
 * A Stack's content can't scroll
 * You can choose to clip children that exceed the render box
 
@@ -943,7 +944,7 @@ and after each column.
 {% include includelines filename="_code/lakes/main.dart" start=74 count=8 %}
 
 <a name="step-4"></a>
-### Step 4: Implement the button row
+### Step 4: Implement the text section
 
 The text section is fairly wordy, so it's also defined as a variable.
 The text is placed in a Container in order to add 32 pixels of padding on
@@ -969,7 +970,7 @@ For more information, see
 {% include includelines filename="_code/lakes/main.dart" start=109 count=6 %}
 
 <a name="step-5"></a>
-### Step 6: Putting it together
+### Step 6: Put it together
 
 The final step assembles the pieces together. At this point, you can tweak
 the layout as needed.  Here is the final Column:
