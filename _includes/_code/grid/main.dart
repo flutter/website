@@ -36,12 +36,12 @@ List<Container> _buildGridTileList(int count) {
 
   containers = new List<Container>.generate(
       count,
-      (container) =>
-          new Container(child: new Image.asset('images/pic${count--}.jpg')));
+      (int index) =>
+          new Container(child: new Image.asset('images/pic${index+1}.jpg')));
   return containers;
 }
 
-Widget buildGrid() {
+Widget buildGrid(Orientation orientation) {
   return new GridView.extent(
       maxCrossAxisExtent: 200.0,
       padding: const EdgeInsets.all(4.0),
@@ -53,52 +53,15 @@ Widget buildGrid() {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final Orientation orientation = MediaQuery.of(context).orientation;
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(config.title),
       ),
       body: new Center(
-        child: buildGrid(),
+        child: buildGrid(orientation),
       ),
     );
   }
 }
 
-// GridView.count({Key key,
-//   Axis scrollDirection: Axis.vertical,
-//   bool reverse: false,
-//   ScrollController controller,
-//   bool primary: false,
-//   ScrollPhysics physics,
-//   bool shrinkWrap: false,
-//   EdgeInsets padding,
-//   @required int crossAxisCount,
-//   double mainAxisSpacing: 0.0,
-//   double crossAxisSpacing: 0.0,
-//   double childAspectRatio: 1.0,
-//   List<Widget> children: const [] })
-
-// GridView.extent({Key key,
-//   Axis scrollDirection: Axis.vertical,
-//   bool reverse: false,
-//   ScrollController controller,
-//   bool primary: false,
-//   ScrollPhysics physics,
-//   bool shrinkWrap: false,
-//   EdgeInsets padding,
-//   @required double maxCrossAxisExtent,
-//   double mainAxisSpacing: 0.0,
-//   double crossAxisSpacing: 0.0,
-//   double childAspectRatio: 1.0,
-//   List<Widget> children: const [] })
-
-/**
-    Widget buildGrid(Orientation orientation) {
-    return new GridView.count(
-    crossAxisCount: (orientation == Orientation.portrait) ? 2 : 3,
-    padding: const EdgeInsets.all(4.0),
-    mainAxisSpacing: 4.0,
-    crossAxisSpacing: 4.0,
-    children: _buildGridTileList(29));
-    }
- */

@@ -18,7 +18,7 @@ Finally, we'll walk through the process of creating a layout for this app:
 
 ### Contents
 
-* [Flutter's Approach to layout](#approach)
+* [Flutter's approach to layout](#approach)
 * [Lay out a widget](#lay-out-a-widget)
 * [Lay out multiple widgets vertically and horizontally](#rows-and-columns)
 * [Common layout widgets](#common-layout-widgets)
@@ -77,16 +77,14 @@ Flutter's widget tree for this UI is as follows:
 <img src="images/sample-flutter-layout.png" alt="node tree representing sample layout">
 
 Most of this should look as you might expect, but you might be wondering
-about the Containers (shown in pink). Container is a special widget that allows
+about the Containers (shown in pink). Container is a widget that allows
 you to customize its child widget. Use a Container when you want to
 add padding, margins, borders, or background color, to name some of its
 capabilities. If you are familiar with web programming, Container is
 similar to an HTML `<div>`.
 
 In this example, each Text widget is placed in a Container to add margins.
-The entire Row is also placed in a Container to align the
-row's children so that the free space in the row is divided evenly between,
-before, and after the children.
+The entire Row is also placed in a Container to add padding around the row.
 
 The rest of the UI in this example is controlled by properties.
 Set an Icon's color using its `color` property.
@@ -104,8 +102,14 @@ the children should occupy.
 
 #### <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?
 
-* Create an Image, Icon, or Text widget.
-* Add it to a layout widget, such as Center, Align, SizedBox, or ListView,
+* Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
+  [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+  or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
+* Add it to a layout widget, such as
+  [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
+  [Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
+  [SizedBox](https://docs.flutter.io/flutter/widgets/SizedBox-class.html),
+  or [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
   to name a few.
 * Add the layout widget to the root of the widget tree.
 
@@ -586,8 +590,10 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-Each tile in this grid uses a Container to add a rounded grey border.
-The grid also uses a Container to change the screen's background color.
+This layout consists of a column of two rows, each with 2 images.
+Each image uses a Container to add a rounded grey border and margins.
+The Column uses a Container to change the background to a more
+translucent grey.
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -595,7 +601,7 @@ The grid also uses a Container to change the screen's background color.
 
 </div> </div>
 
-{% include includelines filename="_code/container/main.dart" start=31 count=45 %}
+{% include includelines filename="_code/container/main.dart" start=40 count=66 %}
 
 <hr>
 
@@ -615,8 +621,10 @@ it automatically scrolls.
 * Build your own custom grid, or use one of the provided grids:
   * `GridView.count` allows you to specify the number of columns
   * `GridView.extent` allows you to specify the maximum pixel width of a tile
+{% comment %}
 * Use `MediaQuery.of(context).orientation` to create a grid that changes
   its layout depending on whether the device is in landscape or portrait mode.
+{% endcomment %}
 
 <aside class="alert alert-info" markdown="1">
 **Note:** When displaying a two-dimensional list where it's important which
@@ -655,7 +663,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 ### ListView
 
 [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
-a special purpose Column, automatically provides scrolling when
+a column-like widget, automatically provides scrolling when
 its content is too long for its render box.
 
 #### ListView summary:
@@ -690,9 +698,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 </div> </div>
 
-[PENDING: Seth, I'd really like that ellipsis function!]
-
-{% include includelines filename="_code/listview/main.dart" start=31 count=105 %}
+{% include includelines filename="_code/listview/main.dart" start=31 count=94 %}
 
 {% include includelines filename="_code/listview/main.dart" start=134 count=3 %}
 
@@ -703,8 +709,6 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 Use [Stack](https://docs.flutter.io/flutter/widgets/Stack-class.html)
 to arrange widgets on top of a base widget&mdash;often an image.
 The widgets can completely or partially overlap the base widget.
-
-A Stack can't scroll its content.
 
 #### Stack summary:
 
@@ -747,12 +751,10 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 A Card, from the material library, contains related nuggets of information
 and can be composed from most any widget, but is often used with ListItem.
 Card has a single child, but its child can be a column, row, list, grid,
-or other widget that supports multiple children. By default, Card expands
-to fill available space. You can use
+or other widget that supports multiple children. By default, Card shrinks
+to 0 by 0 pixels. You can use
 [SizedBox](https://docs.flutter.io/flutter/widgets/SizedBox-class.html) to
 constrain the size of a card.
-
-A Card can't scroll its content.
 
 In Flutter, a Card features slightly rounded corners
 and a drop shadow, giving it a 3D effect.
@@ -964,7 +966,7 @@ configured, you can access images in your package using `Image.asset`.
 For more information, see
 [Adding Assets and Images in Flutter](/assets-and-images).
 
-{% include includelines filename="_code/lakes/main.dart" start=110 count=6 %}
+{% include includelines filename="_code/lakes/main.dart" start=109 count=6 %}
 
 <a name="step-5"></a>
 ### Step 6: Putting it together

@@ -28,53 +28,6 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-Widget buildGrid() {
-  return new GridView.count(
-    crossAxisCount: 2,
-    padding: const EdgeInsets.all(8.0),
-    mainAxisSpacing: 8.0,
-    crossAxisSpacing: 8.0,
-    children: [
-      new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 10.0, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
-        ),
-        child: new GridTile(
-          child: new Image.asset('images/pic1.jpg'),
-        ),
-      ),
-      new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 10.0, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
-        ),
-        child: new GridTile(
-          child: new Image.asset('images/pic2.jpg'),
-        ),
-      ),
-      new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 10.0, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
-        ),
-        child: new GridTile(
-          child: new Image.asset('images/pic3.jpg'),
-        ),
-      ),
-      new Container(
-        decoration: new BoxDecoration(
-          border: new Border.all(width: 10.0, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
-        ),
-        child: new GridTile(
-          child: new Image.asset('images/pic4.jpg'),
-        ),
-      ),
-    ],
-  );
-}
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -85,49 +38,78 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: new Center(
         child: new Container(
-          decoration: new BoxDecoration(backgroundColor: Colors.black26),
-          child: buildGrid(),
+          decoration: new BoxDecoration(
+            backgroundColor: Colors.black26,
+          ),
+          child: new Column(
+            children: [
+              new Row(
+                children: [
+                  new Expanded(
+                    child: new Container(
+                      decoration: new BoxDecoration(
+                        border:
+                            new Border.all(width: 10.0, color: Colors.black38),
+                        borderRadius:
+                            const BorderRadius.all(const Radius.circular(8.0)),
+                      ),
+                      margin: const EdgeInsets.all(4.0),
+                      child: new Image.asset('images/pic1.jpg'),
+                    ),
+                  ),
+                  new Expanded(
+                    child: new Container(
+                      decoration: new BoxDecoration(
+                        border:
+                            new Border.all(width: 10.0, color: Colors.black38),
+                        borderRadius:
+                            const BorderRadius.all(const Radius.circular(8.0)),
+                      ),
+                      margin: const EdgeInsets.all(4.0),
+                      child: new Image.asset('images/pic2.jpg'),
+                    ),
+                  ),
+                ],
+              ),
+              new Row(
+                children: [
+                  new Expanded(
+                    child: new Container(
+                      decoration: new BoxDecoration(
+                        border:
+                            new Border.all(width: 10.0, color: Colors.black38),
+                        borderRadius:
+                            const BorderRadius.all(const Radius.circular(8.0)),
+                      ),
+                      margin: const EdgeInsets.all(4.0),
+                      child: new Image.asset('images/pic3.jpg'),
+                    ),
+                  ),
+                  new Expanded(
+                    child: new Container(
+                      decoration: new BoxDecoration(
+                        border:
+                            new Border.all(width: 10.0, color: Colors.black38),
+                        borderRadius:
+                            const BorderRadius.all(const Radius.circular(8.0)),
+                      ),
+                      margin: const EdgeInsets.all(4.0),
+                      child: new Image.asset('images/pic4.jpg'),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-// GridView.count({Key key,
-//   Axis scrollDirection: Axis.vertical,
-//   bool reverse: false,
-//   ScrollController controller,
-//   bool primary: false,
-//   ScrollPhysics physics,
-//   bool shrinkWrap: false,
-//   EdgeInsets padding,
-//   @required int crossAxisCount,
-//   double mainAxisSpacing: 0.0,
-//   double crossAxisSpacing: 0.0,
-//   double childAspectRatio: 1.0,
+// Row({Key key,
+//   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,
+//   MainAxisSize mainAxisSize: MainAxisSize.max,
+//   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,
+//   TextBaseline textBaseline,
 //   List<Widget> children: const [] })
-
-// GridView.extent({Key key,
-//   Axis scrollDirection: Axis.vertical,
-//   bool reverse: false,
-//   ScrollController controller,
-//   bool primary: false,
-//   ScrollPhysics physics,
-//   bool shrinkWrap: false,
-//   EdgeInsets padding,
-//   @required double maxCrossAxisExtent,
-//   double mainAxisSpacing: 0.0,
-//   double crossAxisSpacing: 0.0,
-//   double childAspectRatio: 1.0,
-//   List<Widget> children: const [] })
-
-/**
-    Widget buildGrid(Orientation orientation) {
-    return new GridView.count(
-    crossAxisCount: (orientation == Orientation.portrait) ? 2 : 3,
-    padding: const EdgeInsets.all(4.0),
-    mainAxisSpacing: 4.0,
-    crossAxisSpacing: 4.0,
-    children: _buildGridTileList(29));
-    }
- */

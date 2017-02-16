@@ -64,7 +64,6 @@ class MyApp extends StatelessWidget {
       buttonColumn = new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: widgets,
       );
       return buttonColumn;

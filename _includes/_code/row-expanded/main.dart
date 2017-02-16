@@ -57,9 +57,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Row({Key key,
-//   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,
-//   MainAxisSize mainAxisSize: MainAxisSize.max,
-//   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,
-//   TextBaseline textBaseline,
-//   List<Widget> children: const [] })
