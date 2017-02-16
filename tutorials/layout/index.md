@@ -30,7 +30,7 @@ Finally, we'll walk through the process of creating a layout for this app:
 
 <div class="panel" markdown="1">
 
-#### <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * Widgets are classes used to build UIs.
 * Widgets are used for both layout and UI elements.
@@ -99,7 +99,7 @@ the children should occupy.
 
 <div class="panel" markdown="1">
 
-#### <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
   [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
@@ -306,7 +306,7 @@ and a Column widget to arrange widgets horizontally.
 
 <div class="panel" markdown="1">
 
-#### <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * Row and Column are two of the most commonly used layout patterns.
 * Row and Column each take a list of child widgets.
