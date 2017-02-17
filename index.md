@@ -1,5 +1,5 @@
 ---
-title: Welcome to Flutter!
+title: Mobile app SDK for iOS and Android
 sidebar: home_sidebar
 layout: page
 ---
