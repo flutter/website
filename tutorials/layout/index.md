@@ -225,65 +225,23 @@ or you can build your own set of custom widgets.
 For a non-material app, you can add the Center widget to the app's `build`
 method:
 
-{% include includelines filename="_code/widgets-only/main.dart" start=1 count=15 %}
+{% include includelines filename="_code/widgets-only/main.dart" start=1 count=18 %}
 
-Note that the non-material app doesn't include an AppBar, title,
+Note that, by default, the non-material app doesn't include an AppBar, title,
 or background color. If you want these features in a non-material app,
-you have to build them yourself.
+you have to build them yourself. This app changes the background color to
+white and the text to black to mimic a Material app.
 
 </li>
 
 </ol>
 
-That's it! When you run the Material version of the app, you should see:
+That's it! When you run the app, you should see:
 
 <img src="images/hello-world.png" style="border:1px solid black" alt="xx">
 
-Here's the Dart code for the entire material app:
-
-{% prettify dart %}
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(new MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(config.title),
-      ),
-      body: new Center(
-        child: new Text('Hello World'),
-      ),
-    );
-  }
-}
-{% endprettify %}
+**Dart code** (material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/hello-world/main.dart)<br>
+**Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/widgets-only/main.dart)
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -388,6 +346,10 @@ horizontal space evenly between, before, and after each image.
 
 <center><img src="images/row-spaceevenly-visual.png" style="border:1px solid black" alt="a row showing 3 images spaced evenly in the row"></center>
 
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row/pubspec.yaml)
+
 </div> </div>
 
 Columns work the same way as rows. The following example shows a column
@@ -399,6 +361,10 @@ space evenly between, above, and below each image.
 <div class="row"> <div class="col-md-8" markdown="1">
 
 {% include includelines filename="_code/column/main.dart" start=40 count=8 %}
+
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/column/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/column/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/column/pubspec.yaml)
 
 </div> <div class="col-md-3" markdown="1">
 
@@ -440,6 +406,10 @@ as wide as the other two widgets, set the flex factor on the middle widget to 2:
 
 <img src="images/row-expanded-visual.png" style="border:1px solid black" alt="xx">
 
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row-expanded/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded/pubspec.yaml)
+
 </div> </div>
 
 To fix the example in the previous section where the row of 3 images was
@@ -455,6 +425,10 @@ the row to each widget.
 </div> <div class="col-md-3" markdown="1">
 
 <img src="images/row-expanded-2-visual.png" style="border:1px solid black" alt="xx">
+
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded-2/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row-expanded-2/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded-2/pubspec.yaml)
 
 </div> </div>
 
@@ -514,6 +488,10 @@ main image. The left column is placed in a Container to constrain its
 width to 440 pixels.
 
 {% include includelines filename="_code/pavlova/main.dart" start=161 count=10 %}
+
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/pavlova/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/pavlova/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/pavlova/pubspec.yaml)
 
 <hr>
 
@@ -591,8 +569,11 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 This layout consists of a column of two rows, each containing 2 images.
 Each image uses a Container to add a rounded grey border and margins.
 The Column, which contains the rows of images,
-uses a Container to change the background color to a more
-translucent grey.
+uses a Container to change the background color to a semi-translucent grey.
+
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/container/main.dart), snippet below<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/container/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/container/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -640,7 +621,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
 <img src="images/gridview-extent.png" style="border:1px solid black" alt="xx">
 
 Uses `GridView.extent` to create a grid with tiles a maximum 200 pixels wide.<br>
-**Code:** See below.
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/main.dart), snippet below<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/grid/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -649,7 +632,7 @@ Uses `GridView.extent` to create a grid with tiles a maximum 200 pixels wide.<br
 Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
 and 3 tiles wide in landscape mode. The titles are created by setting the
 `footer` property for each GridTile.<br>
-**Code:** [grid_list_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/grid_list_demo.dart)
+**Dart code:** [grid_list_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/grid_list_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -680,7 +663,9 @@ its content is too long for its render box.
 
 Uses ListView to display a list of businesses using ListItems.
 A Divider separates the theaters from the restaurants.<br>
-**Code:** See below.
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/main.dart), snippet below<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/listview/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -691,7 +676,7 @@ Uses ListView to display the
 from the
 [material design palette](https://material.io/guidelines/style/color.html)
 for a particular color family.<br>
-**Code:** [colors_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/colors_demo.dart)
+**Dart code:** [colors_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/colors_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -727,7 +712,10 @@ Uses Stack to overlay a Container (that displays its Text on a translucent
 black background) on top of a Circle Avatar.
 The Stack offsets the text using the `alignment` property and
 FractionalOffsets.<br>
-**Code:** See below.
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/stack/main.dart), snippet below<br>
+**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/stack/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/stack/pubspec.yaml)
+
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -735,7 +723,7 @@ FractionalOffsets.<br>
 
 Uses Stack to overlay a gradient to the top of the image. The gradient
 ensures that the toolbar's icons are distinct against the image.<br>
-**Code:** [contacts_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/contacts_demo.dart)
+**Dart code:** [contacts_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/contacts_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -785,17 +773,17 @@ Specifying an unsupported value disables the drop shadow entirely.
 <img src="images/card.png" style="border:1px solid black" alt="xx">
 
 Card containing 3 ListItems. A Divider separates the first and second ListItem.
-The icons are from the list of supported
-[Icons](https://docs.flutter.io/flutter/material/Icons-class.html).
 
-**Code:** below
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/card/main.dart), snippet below<br>
+**Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/card/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
 <img src="images/card-flutter-gallery.png" style="border:1px solid black" alt="xx">
 
 A Card containing an image and text.<br>
-**Code:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/cards_demo.dart)
+**Dart code:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/cards_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -826,14 +814,14 @@ but can be used elsewhere.
 <img src="images/card.png" style="border:1px solid black" alt="xx">
 
 A Card containing 3 ListItems.<br>
-**Code:** See [Card examples](#card-examples).
+**Dart code:** See [Card examples](#card-examples).
 
 </div> <div class="col-md-6" markdown="1">
 
 <img src="images/listitem-flutter-gallery.png" style="border:1px solid black" alt="xx">
 
 Uses ListItem to list 3 drop down button types.<br>
-**Code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/buttons_demo.dart)
+**Dart code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/buttons_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -975,10 +963,9 @@ the layout as needed.  Here is the final Column:
 
 {% include includelines filename="_code/lakes/main.dart" start=108 count=13 %}
 
-You can view the Dart code for this example in
-[lib/main.dart](/tutorials/layout/main.dart).
-
-[PENDING: Once the code is in the repo, link to this file on GitHub.]
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)<br>
+**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/lakes/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
 
 <hr>
 
