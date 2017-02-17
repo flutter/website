@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Uncomment lines 3 and 6 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
@@ -31,46 +32,47 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var card = new SizedBox(
+      height: 210.0,
+      child: new Card(
+        child: new Column(
+          children: [
+            new ListItem(
+              title: new Text('1625 Main Street',
+                  style: new TextStyle(fontWeight: FontWeight.w500)),
+              subtitle: new Text('My City, CA 99984'),
+              leading: new Icon(
+                Icons.restaurant_menu,
+                color: Colors.blue[500],
+              ),
+            ),
+            new Divider(),
+            new ListItem(
+              title: new Text('(408) 555-1212',
+                  style: new TextStyle(fontWeight: FontWeight.w500)),
+              leading: new Icon(
+                Icons.contact_phone,
+                color: Colors.blue[500],
+              ),
+            ),
+            new ListItem(
+              title: new Text('costa@example.com'),
+              leading: new Icon(
+                Icons.contact_mail,
+                color: Colors.blue[500],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
     return new Scaffold(
       appBar: new AppBar(
-        elevation: 5, // Removing drop shadow cast by the AppBar.
         title: new Text(config.title),
       ),
       body: new Center(
-        child: new SizedBox(
-          height: 210.0,
-          child: new Card(
-            child: new Column(
-              children: [
-                new ListItem(
-                  title: new Text('1625 Main Street',
-                      style: new TextStyle(fontWeight: FontWeight.w500)),
-                  subtitle: new Text('My City, CA 99984'),
-                  leading: new Icon(
-                    Icons.restaurant_menu,
-                    color: Colors.blue[500],
-                  ),
-                ),
-                new Divider(),
-                new ListItem(
-                  title: new Text('(408) 555-1212',
-                      style: new TextStyle(fontWeight: FontWeight.w500)),
-                  leading: new Icon(
-                    Icons.contact_phone,
-                    color: Colors.blue[500],
-                  ),
-                ),
-                new ListItem(
-                  title: new Text('costa@example.com'),
-                  leading: new Icon(
-                    Icons.contact_mail,
-                    color: Colors.blue[500],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        child: card,
       ),
     );
   }

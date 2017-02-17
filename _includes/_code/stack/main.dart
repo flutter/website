@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Uncomment lines 3 and 6 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
@@ -31,32 +32,35 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var stack = new Stack(
+      alignment: const FractionalOffset(0.8, 0.8),
+      children: [
+        new CircleAvatar(
+          backgroundImage: new AssetImage('images/pic.jpg'),
+          radius: 100.0,
+        ),
+        new Container(
+          decoration: new BoxDecoration(
+            backgroundColor: Colors.black45,
+          ),
+          child: new Text(
+            'Mia B',
+            style: new TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    );
+
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(config.title),
       ),
       body: new Center(
-        child: new Stack(
-          alignment: const FractionalOffset(0.8, 0.8),
-          children: [
-            new CircleAvatar(
-              backgroundImage: new AssetImage('images/pic.jpg'),
-              radius: 100.0,
-            ),
-            new Container(
-              decoration: new BoxDecoration(
-                backgroundColor: Colors.black45,
-              ),
-              child: new Text(
-                'Mia B',
-                style: new TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-            ),
-          ],
-        ),
+        child: stack,
       ),
     );
   }

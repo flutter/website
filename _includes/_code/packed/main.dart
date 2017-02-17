@@ -32,26 +32,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var packedRow = new Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        new Icon(Icons.star, color: Colors.green[500]),
+        new Icon(Icons.star, color: Colors.green[500]),
+        new Icon(Icons.star, color: Colors.green[500]),
+        new Icon(Icons.star, color: Colors.black),
+        new Icon(Icons.star, color: Colors.black),
+      ],
+    );
+
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(config.title),
       ),
       body: new Center(
-        child: new Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            new Expanded(
-              child: new Image.asset('images/pic1.jpg'),
-            ),
-            new Expanded(
-              flex: 2,
-              child: new Image.asset('images/pic2.jpg'),
-            ),
-            new Expanded(
-              child: new Image.asset('images/pic3.jpg'),
-            ),
-          ],
-        ),
+        child: packedRow,
       ),
     );
   }

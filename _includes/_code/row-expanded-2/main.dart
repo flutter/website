@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Comment out lines 3 and 6 to suppress the visual layout at runtime.
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {

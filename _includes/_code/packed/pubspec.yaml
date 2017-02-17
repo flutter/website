@@ -1,0 +1,9 @@
+name: packed
+description: A new flutter project.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
