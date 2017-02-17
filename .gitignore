@@ -4,6 +4,7 @@ _site
 .sass-cache
 build
 .firebaserc
+.*swp
 
 # Dart ignores.
 .packages
