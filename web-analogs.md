@@ -14,9 +14,15 @@ arranging components of an application's UI. It maps HTML/CSS code snippets to
 their Flutter/Dart code equivalents.
 
 The examples assume:
+<<<<<<< HEAD
 * The HTML document starts with a modern HTML DOCTYPE, and the CSS box model 
 for all HTML elements is set to [border-box](https://css-tricks.com/box-sizing/), 
 for consistency with the Flutter model.
+=======
+* The HTML doctype is set to HTML5, and the CSS box model for all HTML elements 
+is set to [quirks mode](https://css-tricks.com/box-sizing/), for consistency 
+with the Flutter model.
+>>>>>>> d4df889... small tweaks for bkobash: merge specifying fonts and aligning text, clarify
    {% prettify css %}<!DOCTYPE html>
    
    {
