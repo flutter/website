@@ -145,7 +145,7 @@ light inside, topped with fruit and whipped cream.
 
     // PAVLOVA HEADER IMAGE
     var mainImage = new Image.asset(
-      'assets/pavlova.jpg',
+      'images/pavlova.jpg',
       fit: ImageFit.cover,
     );
 
