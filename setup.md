@@ -87,6 +87,7 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
 in the simulator's **Hardware > Device** menu.
 3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
 may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
+4. `flutter run` your project.
 
 
 ### Deploy to iOS devices
@@ -101,8 +102,13 @@ iOS devices.
     $ brew install ideviceinstaller ios-deploy
     </pre>
 
-You'll also need to set up a provisioning profile for your developer account. To learn how to
+3. Make sure your Apple Developer account is ready and your Xcode is setup for deploying with provisioning profiles. To learn how to
 set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
+4. Select your Development Team for the Flutter project.
+  1. Open the supplied Xcode workspace in your project under `ios/Runner.xcworkspace`. 
+  2. Make sure the 'Runner' project is selected in the project navigator.
+  3. In the target settings page, make sure your Development Team is selected under General->Signing->Team.
+5. `flutter run` your project.
 
 ## Android setup
 
@@ -127,6 +133,7 @@ tapping the **`Build number`** line seven times.
 device, authorize your computer to access your device.
 4. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
 connected Android device.
+5. `flutter run` your project.
 
 By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
