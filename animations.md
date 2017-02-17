@@ -165,8 +165,10 @@ The
 abstract class maps a relative time value (an elapsed time) to a
 double value, and has a notion of completion.
 
-In principle simulations are stateless but in practice some
-simulations (e.g. [`ScrollSimulation`](https://docs.flutter.io/flutter/widgets/ScrollSimulation-class.html))
+In principle simulations are stateless but in practice some simulations
+(for example,
+[`BouncingScrollSimulation`](https://docs.flutter.io/flutter/widgets/BouncingScrollSimulation-class.html) and
+[`ClampingScrollSimulation`](https://docs.flutter.io/flutter/widgets/ClampingScrollSimulation-class.html))
 change state irreversibly when queried.
 
 There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
