@@ -1,6 +1,7 @@
 // Use the iOS device iPad Pro in the Simulator and turn it horizontally.
 
 import 'package:flutter/material.dart';
+// Uncomment lines 5 and 8 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
@@ -33,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // RECIPE HEADER COMPONENTS
     var titleText = new Container(
       padding: new EdgeInsets.all(20.0),
       child: new Text(
@@ -57,9 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     var subTitle = new Text(
       '''
-Pavlova is a meringue-based dessert named after the Russian
-ballerina Anna Pavlova. Pavlova features a crisp crust and soft,
-light inside, topped with fruit and whipped cream.
+Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova. Pavlova features a crisp crust and soft, light inside, topped with fruit and whipped cream.
 ''',
       textAlign: TextAlign.center,
       style: new TextStyle(

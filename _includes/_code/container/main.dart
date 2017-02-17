@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Uncomment lines 3 and 6 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
@@ -31,85 +32,75 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        elevation: 5, // Removing drop shadow cast by the AppBar.
-        title: new Text(config.title),
+    var container = new Container(
+      decoration: new BoxDecoration(
+        backgroundColor: Colors.black26,
       ),
-      body: new Center(
-        child: new Container(
-          decoration: new BoxDecoration(
-            backgroundColor: Colors.black26,
-          ),
-          child: new Column(
+      child: new Column(
+        children: [
+          new Row(
             children: [
-              new Row(
-                children: [
-                  new Expanded(
-                    child: new Container(
-                      decoration: new BoxDecoration(
-                        border:
-                            new Border.all(width: 10.0, color: Colors.black38),
-                        borderRadius:
-                            const BorderRadius.all(const Radius.circular(8.0)),
-                      ),
-                      margin: const EdgeInsets.all(4.0),
-                      child: new Image.asset('images/pic1.jpg'),
-                    ),
+              new Expanded(
+                child: new Container(
+                  decoration: new BoxDecoration(
+                    border: new Border.all(width: 10.0, color: Colors.black38),
+                    borderRadius:
+                        const BorderRadius.all(const Radius.circular(8.0)),
                   ),
-                  new Expanded(
-                    child: new Container(
-                      decoration: new BoxDecoration(
-                        border:
-                            new Border.all(width: 10.0, color: Colors.black38),
-                        borderRadius:
-                            const BorderRadius.all(const Radius.circular(8.0)),
-                      ),
-                      margin: const EdgeInsets.all(4.0),
-                      child: new Image.asset('images/pic2.jpg'),
-                    ),
-                  ),
-                ],
+                  margin: const EdgeInsets.all(4.0),
+                  child: new Image.asset('images/pic1.jpg'),
+                ),
               ),
-              new Row(
-                children: [
-                  new Expanded(
-                    child: new Container(
-                      decoration: new BoxDecoration(
-                        border:
-                            new Border.all(width: 10.0, color: Colors.black38),
-                        borderRadius:
-                            const BorderRadius.all(const Radius.circular(8.0)),
-                      ),
-                      margin: const EdgeInsets.all(4.0),
-                      child: new Image.asset('images/pic3.jpg'),
-                    ),
+              new Expanded(
+                child: new Container(
+                  decoration: new BoxDecoration(
+                    border: new Border.all(width: 10.0, color: Colors.black38),
+                    borderRadius:
+                        const BorderRadius.all(const Radius.circular(8.0)),
                   ),
-                  new Expanded(
-                    child: new Container(
-                      decoration: new BoxDecoration(
-                        border:
-                            new Border.all(width: 10.0, color: Colors.black38),
-                        borderRadius:
-                            const BorderRadius.all(const Radius.circular(8.0)),
-                      ),
-                      margin: const EdgeInsets.all(4.0),
-                      child: new Image.asset('images/pic4.jpg'),
-                    ),
-                  ),
-                ],
+                  margin: const EdgeInsets.all(4.0),
+                  child: new Image.asset('images/pic2.jpg'),
+                ),
               ),
             ],
           ),
-        ),
+          new Row(
+            children: [
+              new Expanded(
+                child: new Container(
+                  decoration: new BoxDecoration(
+                    border: new Border.all(width: 10.0, color: Colors.black38),
+                    borderRadius:
+                        const BorderRadius.all(const Radius.circular(8.0)),
+                  ),
+                  margin: const EdgeInsets.all(4.0),
+                  child: new Image.asset('images/pic3.jpg'),
+                ),
+              ),
+              new Expanded(
+                child: new Container(
+                  decoration: new BoxDecoration(
+                    border: new Border.all(width: 10.0, color: Colors.black38),
+                    borderRadius:
+                        const BorderRadius.all(const Radius.circular(8.0)),
+                  ),
+                  margin: const EdgeInsets.all(4.0),
+                  child: new Image.asset('images/pic4.jpg'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(config.title),
+      ),
+      body: new Center(
+        child: container,
       ),
     );
   }
 }
-
-// Row({Key key,
-//   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,
-//   MainAxisSize mainAxisSize: MainAxisSize.max,
-//   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,
-//   TextBaseline textBaseline,
-//   List<Widget> children: const [] })
