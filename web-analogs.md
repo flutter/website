@@ -9,16 +9,42 @@ permalink: /web-analogs/
 {:toc}
 
 <div class="begin-examples"></div>
-This page is for users who are familiar with the HTML and CSS syntax for arranging components of an application's UI. It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
+This page is for users who are familiar with the HTML and CSS syntax for 
+arranging components of an application's UI. It maps HTML/CSS code snippets to 
+their Flutter/Dart code equivalents.
+
+The examples assume:
+* The HTML doctype is set to HTML5, and the CSS box model for all HTML elements 
+is set to [quirks mode](https://css-tricks.com/box-sizing/), for consistency 
+with the Flutter model.
+   {% prettify css %}<!DOCTYPE html>
+   
+   {
+     box-sizing: border-box;
+   } 
+{% endprettify %}
+* In Flutter, the default styling of the "Lorem ipsum" text is defined by the
+`bold24Roboto` variable as follows, to keep the syntax simple:
+  {% prettify dart %}
+  TextStyle bold24Roboto = new TextStyle(
+      color: Colors.white,
+      fontSize: 24.0,
+      fontWeight: FontWeight.w900,
+  );
+{% endprettify %}
 
 ## Performing Basic Layout Operations
 
 The following examples show how to perform the most common UI layout tasks.
 
-### Aligning Text
+### Styling and Aligning Text
+Font style, size, and other text attributes that CSS handles with the font and 
+color properties are individual properties of a [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+child of a [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 
 In both HTML and Flutter, by default child elements or widgets are anchored at 
 the top left.
+
 <div class="lefthighlight">
 {% prettify css %}
 <div class="greybox">
@@ -29,7 +55,7 @@ the top left.
       background-color: #e0e0e0; /* grey 300 */
       width: 320px;
       height: 240px;
-      font: 900 24px Roboto;
+[[highlight]]      font: 900 24px Georgia;[[/highlight]]
     }
 {% endprettify %}
 </div>
@@ -38,7 +64,11 @@ the top left.
   var container = new Container( // grey box
     child: new Text(
       "Lorem ipsum",
-      style: bold24Roboto,
+      style: [[highlight]]new TextStyle(
+        fontSize: 24.0
+        fontWeight: FontWeight.w900,
+        fontFamily: "Georgia",
+      ),[[/highlight]]
     ),
     width: 320.0,
     height: 240.0,
@@ -89,8 +119,8 @@ The CSS examples use the hex color equivalents to the Material color palette.
 A [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) widget 
 centers its child both horizontally and vertically.
 
-To accomplish a similar effect in CSS, the parent element uses either a “flex” 
-or “table-cell” display behavior. The examples on this page show the flex 
+To accomplish a similar effect in CSS, the parent element uses either a flex
+or table-cell display behavior. The examples on this page show the flex 
 behavior.
 
 <div class="lefthighlight">
@@ -143,6 +173,7 @@ the child Container sizes itself to match the parent.
   <div class="redbox">
     Lorem ipsum
   </div>
+</div>
 
 .greybox {
   background-color: #e0e0e0; /* grey 300 */
@@ -516,7 +547,7 @@ var container = new Container( // grey box
 The following examples show how to make and customize shapes.
 
 ### Rounding Corners
-To round the corners of a rectangular shape, use the borderRadius ```property``` of a
+To round the corners of a rectangular shape, use the ```borderRadius``` property of a
 [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html) 
 widget. Create a new [BorderRadius](https://docs.flutter.io/flutter/painting/BorderRadius-class.html) 
 widget that specifies the radii for rounding each corner.
@@ -573,14 +604,15 @@ var container = new Container( // grey box
 </div>
 
 ### Adding Box Shadows
-In CSS you can specify shadow offset and blur in shorthand, using the ```box-shadow```
-property. In this example, the shadow properties are ```xOffset: 0px, yOffset: 3px,
-blur: 12px, color: black @40% alpha```.
+In CSS you can specify shadow offset and blur in shorthand, using the box-shadow
+property. This example shows two box shadows, with properties:
+*  ```xOffset: 0px, yOffset: 2px, blur: 4px, color: black @80% alpha```
+*  ```xOffset: 0px, yOffset: 06x, blur: 20px, color: black @50% alpha```.
 
 In Flutter, each property and value is specified separately. Use the ```boxShadow```
-property of BoxDecoration to create a new [BoxShadow](https://docs.flutter.io/flutter/painting/BoxShadow-class.html) 
-widget. Multiple BoxShadow widgets can be stacked to customize the shadow depth, 
-color, etc.
+property of BoxDecoration to create a list of [BoxShadow](https://docs.flutter.io/flutter/painting/BoxShadow-class.html) 
+widgets. You can define one or multiple BoxShadow widgets, which can be stacked 
+to customize the shadow depth, color, etc.
 
 
 <div class="lefthighlight">
@@ -604,7 +636,8 @@ color, etc.
   background-color: #ef5350; /* red 400 */
   padding: 16px;
   color: #ffffff;
-[[highlight]]  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4); [[/highlight]]
+[[highlight]]  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 
+              0 6px 20px rgba(0, 0, 0, 0.5);[[/highlight]]
 }
 {% endprettify %}
 </div>
@@ -621,9 +654,14 @@ var container = new Container( // grey box
         backgroundColor: Colors.red[400],
 [[highlight]]        boxShadow: <BoxShadow>[
           new BoxShadow (
-            color: const Color(0x66000000), 
-            offset: new Offset(0.0, 3.0),
-            blurRadius: 12.0,
+            color: const Color(0xcc000000),
+            offset: new Offset(0.0, 2.0),
+            blurRadius: 4.0,
+          ),
+          new BoxShadow (
+            color: const Color(0x80000000),
+            offset: new Offset(0.0, 6.0),
+            blurRadius: 20.0,
           ),
         ], [[/highlight]]
       ),
@@ -709,63 +747,6 @@ var container = new Container( // grey box
 The following examples show how to specify fonts and other text attributes. They 
 also show how to transform text strings, customize spacing, and create excerpts. 
 
-### Specifying Fonts
-Font style, size, and other text attributes that CSS handles with the "font" and 
-"color" properties are individual properties of a [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-child of a [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
-<div class="lefthighlight">
-{% prettify css %}
-<div class="greybox">
-  <div class="redbox">
-    Lorem ipsum
-  </div>
-</div>
-
-.greybox {
-  background-color: #e0e0e0; /* grey 300 */
-  width: 320px;
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.redbox {
-  background-color: #ef5350; /* red 400 */
-  padding: 16px;
-[[highlight]]  color: #ffffff;
-  font: normal 24px Georgia; [[/highlight]]
-}
-{% endprettify %}
-</div>
-
-<div class="righthighlight">
-{% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
-        "Lorem ipsum",
-[[highlight]]        style: new TextStyle(
-          fontFamily: "Georgia",
-          fontSize: 24.0,
-          fontWeight: FontWeight.normal,
-          color: Colors.white,
-        ), [[/highlight]]
-      ),
-      decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
-      ),
-      padding: new EdgeInsets.all(16.0),
-    ),
-  ),
-  width: 320.0,
-  height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
-);
-{% endprettify %}
-</div>
 
 ### Adjusting Text Spacing
 
@@ -774,7 +755,8 @@ giving a length value for the letter-spacing and word-spacing properties,
 respectively. The amount of space can be in px, pt, cm, em, etc.
 
 In Flutter, you specify white space as logical pixels (negative values are allowed)
-for the letterSpacing and wordSpacing properties of a [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+for the ```letterSpacing``` and wordSpacing ```properties``` of a 
+[TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
 child of a Text widget.
 
 
@@ -833,7 +815,7 @@ var container = new Container( // grey box
 </div>
 
 ### Transforming Text
-In HTML/CSS, you perform simple case transformations using the ```text-transform```
+In HTML/CSS, you perform simple case transformations using the text-transform
 property. 
 
 In Flutter, you transform the contents of a Text widget using the methods and
@@ -971,8 +953,8 @@ var container = new Container( // grey box
 ### Creating Text Excerpts
 
 An excerpt displays the initial line(s) of text in a paragraph, and handles the
-overflow text in some way. In HTML/CSS an excerpt can be no longer than one line. 
-Truncating after multiple lines requires some JavaScript code.
+overflow text, often using an ellipsis. In HTML/CSS an excerpt can be no longer 
+than one line. Truncating after multiple lines requires some JavaScript code.
 
 In Flutter, use the ```maxLines``` property of a [Text](https://docs.flutter.io/flutter/widgets/Text-class.html)
 widget to specify the number of lines to include in the excerpt, and the 
