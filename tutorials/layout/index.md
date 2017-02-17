@@ -975,9 +975,6 @@ the layout as needed.  Here is the final Column:
 
 {% include includelines filename="_code/lakes/main.dart" start=108 count=13 %}
 
-You can view the Dart code for this example in
-[lib/main.dart](/tutorials/layout/main.dart).
-
 [PENDING: Once the code is in the repo, link to this file on GitHub.]
 
 <hr>

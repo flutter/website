@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-// The images are saved with names pic1.jpg, pic2.jpg...pic28.jpg.
+// The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
 // The List.generate constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
 List<Container> _buildGridTileList(int count) {
@@ -43,11 +43,11 @@ List<Container> _buildGridTileList(int count) {
 
 Widget buildGrid() {
   return new GridView.extent(
-      maxCrossAxisExtent: 200.0,
+      maxCrossAxisExtent: 150.0,
       padding: const EdgeInsets.all(4.0),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
-      children: _buildGridTileList(29));
+      children: _buildGridTileList(30));
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -63,4 +63,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

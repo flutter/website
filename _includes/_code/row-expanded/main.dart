@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        elevation: 5, // Removing drop shadow cast by the AppBar.
         title: new Text(config.title),
       ),
       body: new Center(
@@ -41,14 +40,14 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             new Expanded(
-              child: new Image.asset('assets/images/pic1.jpg'),
+              child: new Image.asset('images/pic1.jpg'),
             ),
             new Expanded(
               flex: 2,
-              child: new Image.asset('assets/images/pic2.jpg'),
+              child: new Image.asset('images/pic2.jpg'),
             ),
             new Expanded(
-              child: new Image.asset('assets/images/pic3.jpg'),
+              child: new Image.asset('images/pic3.jpg'),
             ),
           ],
         ),
@@ -56,4 +55,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

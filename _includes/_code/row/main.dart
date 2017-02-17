@@ -33,20 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        elevation: 5, // Removing drop shadow cast by the AppBar.
         title: new Text(config.title),
       ),
       body: new Center(
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            new Image.asset('assets/images/pic1.jpg'),
-            new Image.asset('assets/images/pic2.jpg'),
-            new Image.asset('assets/images/pic3.jpg'),
+            new Image.asset('images/pic1.jpg'),
+            new Image.asset('images/pic2.jpg'),
+            new Image.asset('images/pic3.jpg'),
           ],
         ),
       ),
     );
   }
 }
-

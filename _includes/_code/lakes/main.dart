@@ -84,12 +84,7 @@ class MyApp extends StatelessWidget {
       padding: const EdgeInsets.all(32.0),
       child: new Text(
         '''
-Lake Oeschinen lies at the foot of the Blüemlisalp. Situated 1,578 meters
-above sea level, it is one of the larger Alpine Lakes. A gondola train leads
-from Kandersteg to a location near the lake. A half-hour walk across pastures
-and through pine forest takes you to the lake. The water in the lake warms up
-to 20 degree Celsius in the summer. Activities enjoyed here include rowing
-or riding on the summer toboggan run.
+Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola from Kandersteg takes you to a location near the lake. A half-hour walk across pastures and through pine forest leads you to the lake. The water in the lake warms up to 20 degree Celsius in the summer. Activities enjoyed here include rowing, or riding on the summer toboggan run.
         ''',
         softWrap: true,
       ),
@@ -107,7 +102,7 @@ or riding on the summer toboggan run.
         body: new Column(
           children: [
             new Image.asset(
-              'images/oeschinen-lake-campground.jpg',
+              'images/lake.jpg',
               width: 600.0,
               height: 240.0,
               fit: ImageFit.cover,
