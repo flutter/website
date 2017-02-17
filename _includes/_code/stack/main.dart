@@ -46,9 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: new Text(
             'Mia B',
             style: new TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ),
       ],
