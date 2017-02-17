@@ -113,8 +113,8 @@ asset, for example a JSON file, from the app's runtime `rootBundle`.
 
 {% endcomment %}
 
-When you are not in a Widget, or don't have a handle to an
-AssetBundle, you can use `rootBundle` to directly load such assets,
+Outside of a Widget context, or when a handle to an AssetBundle is not
+available, you can use `rootBundle` to directly load such assets, 
 for example:
 
 ```dart
