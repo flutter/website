@@ -31,7 +31,7 @@ Android Studio (and various other JetBrains editors) is currently not supported.
 We provide two plugins:
 
   * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.).
-  * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.)
+  * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.).
 
 To install the plugins:
 
