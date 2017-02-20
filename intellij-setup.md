@@ -18,24 +18,27 @@ editing, running, and debugging Flutter apps.
 
 ### Installing IntelliJ
 
-The IntelliJ plug-ins require JetBrains [IntelliJ IDEA](https://www.jetbrains.com/idea/download/),
-either Community (free) or Ultimate edition. Version 2016.2 or later is supported.
+You can use the IntelliJ plug-ins with one of the following JetBrains IDEs:
 
-Note that the current version of the Flutter plugin for IntelliJ is not compatible with Android 
-Studio and Webstorm (and various other JetBrains editors).
+  * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Community (free) edition, version 2016.3 or later.
+  * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Ultimate edition, version 2016.3 or later.
+  * [IntelliJ WebStorm](https://www.jetbrains.com/webstorm/download/), version 2016.3 or later.
+
+Android Studio (and various other JetBrains editors) is currently not supported.
 
 ### Installing the plugins
 
 We provide two plugins:
 
-  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.)
-  * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.)
+  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.).
+  * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.).
 
 To install the plugins:
 
 1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux)
 1. Select **"Browse repositories…"**
 1. Search for `'dart'`, select the Dart plug-in and click `install` (do not restart yet).
+  *  Note: this is pre-installed in WebStorm.
 1. Search for `'flutter'`,  select the Flutter plug-in and click `install`. 
 1. Click `Restart IntelliJ IDEA`.
 
