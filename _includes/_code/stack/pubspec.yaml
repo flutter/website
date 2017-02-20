@@ -1,5 +1,5 @@
 name: stack
-description: A new flutter project.
+description: Demonstrates the Stack widget.
 
 dependencies:
   flutter:

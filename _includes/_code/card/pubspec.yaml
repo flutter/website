@@ -1,5 +1,5 @@
 name: card
-description: A new flutter project.
+description: Demonstrates the Card widget.
 
 dependencies:
   flutter:

@@ -46,15 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    var descTextStyle = new TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 18.0,
-      height: 2.0,
-    );
-
     var subTitle = new Text(
       '''
 Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova. Pavlova features a crisp crust and soft, light inside, topped with fruit and whipped cream.
@@ -66,7 +57,7 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
       ),
     );
 
-    var rating = new Container(
+    var ratings = new Container(
       padding: new EdgeInsets.all(20.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -95,6 +86,17 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
       ),
     );
 
+    var descTextStyle = new TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Roboto',
+      letterSpacing: 0.5,
+      fontSize: 18.0,
+      height: 2.0,
+    );
+
+    // DefaultTextStyle.merge allows you to create a default text
+    // style that is inherited by its child and all subsequent children.
     var iconList = new DefaultTextStyle.merge(
       context: context,
       style: descTextStyle,
@@ -135,13 +137,12 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
         children: [
           titleText,
           subTitle,
-          rating,
+          ratings,
           iconList,
         ],
       ),
     );
 
-    // PAVLOVA HEADER IMAGE
     var mainImage = new Image.asset(
       'images/pavlova.jpg',
       fit: ImageFit.cover,

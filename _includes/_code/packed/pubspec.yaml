@@ -1,5 +1,5 @@
 name: packed
-description: A new flutter project.
+description: Demonstrates the mainAxisSize property in Container.
 
 dependencies:
   flutter:

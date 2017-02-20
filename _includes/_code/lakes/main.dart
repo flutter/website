@@ -46,10 +46,10 @@ class MyApp extends StatelessWidget {
     );
 
     Column _buildButtonColumn(IconData icon, String label) {
-      Column buttonColumn;
       List<Widget> widgets = new List(2);
+      Color color = Theme.of(context).primaryColor;
 
-      widgets[0] = new Icon(icon, color: Colors.yellow[600]);
+      widgets[0] = new Icon(icon, color: color);
       widgets[1] = new Container(
         margin: const EdgeInsets.only(top: 8.0),
         child: new Text(
@@ -57,17 +57,16 @@ class MyApp extends StatelessWidget {
           style: new TextStyle(
             fontSize: 12.0,
             fontWeight: FontWeight.w400,
-            color: Colors.yellow[600],
+            color: color,
           ),
         ),
       );
 
-      buttonColumn = new Column(
+      return new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: widgets,
       );
-      return buttonColumn;
     }
 
     Widget buttonSection = new Container(
@@ -85,7 +84,7 @@ class MyApp extends StatelessWidget {
       padding: const EdgeInsets.all(32.0),
       child: new Text(
         '''
-Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola from Kandersteg takes you to a location near the lake. A half-hour walk across pastures and through pine forest leads you to the lake. The water in the lake warms up to 20 degree Celsius in the summer. Activities enjoyed here include rowing, or riding on the summer toboggan run.
+Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
         ''',
         softWrap: true,
       ),

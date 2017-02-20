@@ -1,5 +1,5 @@
 name: widgets_only
-description: A new flutter project.
+description: Demonstrates a "Hello World" example that uses no material widgets.
 
 dependencies:
   flutter:

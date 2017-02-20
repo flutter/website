@@ -1,5 +1,5 @@
 name: pavlova
-description: A new flutter project.
+description: Demonstrates building a layout for the Strawberry Pavlova app.
 
 dependencies:
   flutter:

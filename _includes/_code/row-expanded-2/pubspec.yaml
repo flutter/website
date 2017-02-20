@@ -1,5 +1,5 @@
 name: row_expanded_2
-description: Tests the row widget
+description: Demonstrates a Row widget containing an Expanded widget.
 
 dependencies:
   flutter:

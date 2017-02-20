@@ -1,5 +1,5 @@
 name: column
-description: Tests the column widget
+description: Demonstrates the column widget.
 
 dependencies:
   flutter:
