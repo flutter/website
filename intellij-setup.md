@@ -30,7 +30,7 @@ Android Studio (and various other JetBrains editors) is currently not supported.
 
 We provide two plugins:
 
-  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.). Note: this is pre-installed in WebStorm.
+  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.).
   * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.)
 
 To install the plugins:
@@ -38,6 +38,7 @@ To install the plugins:
 1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux)
 1. Select **"Browse repositories…"**
 1. Search for `'dart'`, select the Dart plug-in and click `install` (do not restart yet).
+  *  Note: this is pre-installed in WebStorm.
 1. Search for `'flutter'`,  select the Flutter plug-in and click `install`. 
 1. Click `Restart IntelliJ IDEA`.
 
