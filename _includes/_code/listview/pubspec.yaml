@@ -1,5 +1,5 @@
 name: listview
-description: A new flutter project.
+description: Demonstrates the ListView and ListItem widgets.
 
 dependencies:
   flutter:

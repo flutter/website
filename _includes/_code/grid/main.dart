@@ -33,9 +33,7 @@ class MyHomePage extends StatefulWidget {
 // The List.generate constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
 List<Container> _buildGridTileList(int count) {
-  List<Container> containers;
-
-  containers = new List<Container>.generate(
+  List<Container> containers = new List<Container>.generate(
       count,
       (int index) =>
           new Container(child: new Image.asset('images/pic${index+1}.jpg')));

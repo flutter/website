@@ -1,5 +1,5 @@
 name: container
-description: A new flutter project.
+description: Demonstrates the Container widget.
 
 dependencies:
   flutter:

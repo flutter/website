@@ -1,5 +1,5 @@
 name: grid
-description: A new flutter project.
+description: Demonstrates GridView.extent.
 
 dependencies:
   flutter:

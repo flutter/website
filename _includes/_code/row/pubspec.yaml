@@ -1,5 +1,5 @@
 name: row
-description: Tests the row widget
+description: Demonstrates the Row widget.
 
 dependencies:
   flutter:

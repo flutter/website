@@ -1,5 +1,5 @@
 name: hello_world
-description: A new flutter project.
+description: Demonstrates a basic "Hello World" material app.
 
 dependencies:
   flutter:
