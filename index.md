@@ -1,5 +1,5 @@
 ---
-title: Mobile app SDK for iOS and Android
+title: Flutter is a mobile app SDK for iOS and Android
 sidebar: home_sidebar
 layout: page
 ---
