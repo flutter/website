@@ -21,11 +21,23 @@ Finally, we'll walk through the process of creating a layout for this app:
 * [Flutter's approach to layout](#approach)
 * [Lay out a widget](#lay-out-a-widget)
 * [Lay out multiple widgets vertically and horizontally](#rows-and-columns)
+  * [Aligning widgets](#alignment)
+  * [Sizing widgets](#sizing)
+  * [Packing widgets](#packing)
+  * [Nesting rows and columns](#nesting)
 * [Common layout widgets](#common-layout-widgets)
+  * [Standard widgets](#standard-widgets)
+  * [Material widgets](#material-widgets)
 * [Building a layout](#building)
+  * [Step 1: Diagram the layout](#step-1)
+  * [Step 2: Implement the title row](#step-2)
+  * [Step 3: Implement the button row](#step-3)
+  * [Step 4: Implement the text section](#step-4)
+  * [Step 5: Implement the image section](#step-5)
+  * [Step 6: Put it together](#step-6)
 * [Resources](#resources)
-<a name="approach"></a>
 
+<a name="approach"></a>
 ## Flutter's approach to layout
 
 <div class="panel" markdown="1">
@@ -61,7 +73,7 @@ For more information, see
 [Debugging Flutter Apps](https://flutter.io/debugging/#visual-debugging).
 </aside>
 
-Flutter's widget tree for this UI is as follows:
+Here's a diagram of the widget tree for this UI:
 
 <img src="images/sample-flutter-layout.png" alt="node tree representing the sample layout">
 
@@ -90,6 +102,7 @@ the children should occupy.
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
+{% comment %}
 * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
   [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
   or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
@@ -100,6 +113,17 @@ the children should occupy.
   or [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
   to name a few.
 * Add the layout widget to the root of the widget tree.
+{% endcomment %}
+* Even the app itself is a widget.
+* It's easy to create a widget and add it to a layout widget.
+* To display the widget on the device, add the layout widget to the app widget.
+* It's easiest to use
+  [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html),
+  a widget from the material library, which provides a default banner,
+  background color, and has API for adding drawers, snack bars,
+  and bottom sheets.
+* If you prefer, you can build an app that only uses standard widgets
+  from the widgets library.
 
 </div>
 
@@ -748,24 +772,23 @@ material library.
 ### Standard widgets
 
 * [Container](#container)
-: Add padding, margins, borders, background color,
+: Adds padding, margins, borders, background color,
   or other decorations to a widget.
 * [GridView](#gridview)
-: Lay widgets out as a scrollable grid.
+: Lays widgets out as a scrollable grid.
 * [ListView](#listview)
-: Lay widgets out as a scrollable list.
+: Lays widgets out as a scrollable list.
 * [Stack](#stack)
-: Overlap a widget on top of another.
+: Overlaps a widget on top of another.
 
 ### Material widgets
 
 * [Card](#card)
-: Organize related info into a box with rounded corners
-  and a drop shadow.
+: Organizes related info into a box with rounded corners and a drop shadow.
 
 * [ListItem](#listitem)
-: A specialized row that supports leading and trailing icons, and up to
-  three lines of text.
+: Organizes up to 3 lines of text, and optional leading and training icons,
+  into a row.
 
 ### Container
 
@@ -900,7 +923,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 <img src="images/gridview-extent.png" style="border:1px solid black" alt="a 3-column grid of photos">
 
-Uses `GridView.extent` to create a grid with tiles a maximum 200 pixels wide.<br>
+Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br>
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/main.dart), snippet below<br>
 **Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/grid/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/pubspec.yaml)
@@ -1398,7 +1421,7 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 
 Since the code for building each row would be almost identical,
-it's most efficient to create a function, such as `_buildButtonColumn`,
+it's most efficient to create a nested function, such as `buildButtonColumn`,
 that takes an Icon and Text, and returns a column with its widgets
 painted in the primary color.
 
@@ -1410,7 +1433,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //...
 
-    [[highlight]]Column _buildButtonColumn(IconData icon, String label)[[/highlight]] {
+    [[highlight]]Column buildButtonColumn(IconData icon, String label)[[/highlight]] {
       List<Widget> widgets = new List(2);
       [[highlight]]Color color = Theme.of(context).primaryColor;[[/highlight]]
 
@@ -1459,9 +1482,9 @@ class MyApp extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          [[highlight]]_buildButtonColumn(Icons.call, 'CALL'),[[/highlight]]
-          [[highlight]]_buildButtonColumn(Icons.near_me, 'ROUTE'),[[/highlight]]
-          [[highlight]]_buildButtonColumn(Icons.share, 'SHARE'),[[/highlight]]
+          [[highlight]]buildButtonColumn(Icons.call, 'CALL'),[[/highlight]]
+          [[highlight]]buildButtonColumn(Icons.near_me, 'ROUTE'),[[/highlight]]
+          [[highlight]]buildButtonColumn(Icons.share, 'SHARE'),[[/highlight]]
         ],
       ),
     );

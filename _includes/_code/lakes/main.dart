@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Column _buildButtonColumn(IconData icon, String label) {
+    Column buildButtonColumn(IconData icon, String label) {
       List<Widget> widgets = new List(2);
       Color color = Theme.of(context).primaryColor;
 
@@ -73,9 +73,9 @@ class MyApp extends StatelessWidget {
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildButtonColumn(Icons.call, 'CALL'),
-          _buildButtonColumn(Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(Icons.share, 'SHARE'),
+          buildButtonColumn(Icons.call, 'CALL'),
+          buildButtonColumn(Icons.near_me, 'ROUTE'),
+          buildButtonColumn(Icons.share, 'SHARE'),
         ],
       ),
     );
