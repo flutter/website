@@ -86,6 +86,10 @@ entries:
     output: web
     folderitems:
 
+    - title: Building Layouts in Flutter
+      url: /tutorials/layout/
+      output: web
+
     - title: Add assets and images
       url: /assets-and-images/
       output: web
