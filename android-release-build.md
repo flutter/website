@@ -1,68 +1,68 @@
 ---
 layout: page
-title: Preparing an Android app for Release
+title: Preparing an Android App for Release
 sidebar: home_sidebar
 permalink: /android-release/
 ---
 
-When running an app during development with `flutter run` from the command line,
-or with the Run and Debug actions in IntelliJ, Flutter builds a *Debug* version
-of your app. To prepare a *Release* version of the app for Android, for example
-in preparation for [publishing on Google Play][play], take these steps.
+During the typical development cycle, you'll test an app using `flutter run` at the 
+command line, the Run and Debug toolbar buttons in IntelliJ, or both. By default, 
+Flutter builds a *debug* version of your app. 
+
+When you're ready to prepare a *release* version for Android, for example to 
+[publish to the Google Play Store][play], follow the steps on this page.
 
 * TOC Placeholder
 {:toc}
 
-## Update the App Manifest
+## Reviewing the App Manifest
 
 When you create a new app, a default [App Manifest][manifest] file is created
-for your app. It and can be found at `<app
-dir>/android/src/main/AndroidManifest.xml`. Prior to releasing, make sure the
-values are correct. Pay special attention to the following values:
+at `<app dir>/android/src/main/AndroidManifest.xml`. Before releasing, 
+review the contents of this file and verify the values are correct, especially:
 
-* `application`: Edit the [`application`][applicationtag] tag to contain the final name of the app.
+* `application`: Edit the [`application`][applicationtag] tag to reflect the final name of the app.
 
 * `manifest`: Specify the [version][versions] code and name in the [`manifest`][manifesttag] tag.
 
 * `uses-sdk`: Specify the [API versions][apiversionstag] the app is compatible with.
 
-*  `uses-permission`: The standard template contains an
-  `android.permission.INTERNET` [permission][permissiontag], as this is required
-  to enable the Flutter tools to communicate with the running app. For your
-  release app, remove this permission if your application code does not need
-  Internet access.
+* `uses-permission`: Remove the `android.permission.INTERNET` [permission][permissiontag] if 
+  your application code does not need Internet access. The standard template includes this tag 
+  to enable communication between Flutter tools and a running app.  
 
 ## Adding a Launcher icon
 
-When a new Flutter app is created, a default Launcher icon is added. To
+When a new Flutter app is created, it has a default Launcher icon. To
 customize this icon:
 
-1. Review the [Android Launcher Icons][launchericons] guidance on good icon
-design for the Launcher.
+1. Review the [Android Launcher Icons][launchericons] guidelines for icon
+design.
 
-1. Inside the `<app dir>/android/src/main/res/` directory, place your icon files
-in folders named using [Configuration Qualifiers][configurationqualifiers].].
-The default `mipmap-` folders demonstrate this.
+1. In the `<app dir>/android/src/main/res/` directory, place your icon files
+in folders named using [Configuration Qualifiers][configurationqualifiers].
+The default `mipmap-` folders demonstrate the correct naming convention.
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
 `android:icon` attribute to reference icons from the previous step (e.g.
 `<application android:icon="@mipmap/ic_launcher" ...`).
 
-1. To test, `flutter run` the app and inspect the app icon in the Launcher.
+1. To verify the icon has been replaced, run your app using `flutter run` 
+and inspect the app icon in the Launcher.
 
-## Sign the app
+## Signing the app
 
-### Create a Key Store
-If you have an existing "Key Store" skip to the next step. If not, create one
-by running the following command in a terminal:
+### Create a keystore
+If you have an existing keystore, skip to the next step. If not, create one
+by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
 
 *Note*: Keep this file private; do not check it into public source control.
 
-### Reference the Key Store from the app
+### Reference the keystore from the app
 
-Create a file named `<app dir>/android/key.properties`. It should
-contain a reference to your Key Store:
+Create a file named `<app dir>/android/key.properties` that contains a
+reference to your keystore:
 
 ```
 storePassword=<password from previous step>
@@ -75,77 +75,78 @@ storeFile=<location of the key store file, e.g. '/Users/<user name>/key.jks'>
 
 ### Configure signing in gradle
 
-Configure signing in the `<app dir>/android/app/build.gradle` file:
+Configure signing for your app by editing the `<app dir>/android/app/build.gradle` 
+file.
 
-Replace:
+1. Replace:
 ```
-android {
+   android {
 ```
-with:
+   with the keystore information from your properties file:
 ```
-// Load keystore information from a properties file.
-def keystorePropertiesFile = rootProject.file("key.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   def keystorePropertiesFile = rootProject.file("key.properties")
+   def keystoreProperties = new Properties()
+   keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
-android {
-```
-
-Next, replace:
-```
-buildTypes {
-    release {
-        // TODO: Add your own signing config for the release build.
-        // Signing with the debug keys for now, so `flutter run --release` works.
-        signingConfig signingConfigs.debug
-    }
-}
-```
-with:
-```
-signingConfigs {
-    release {
-        keyAlias keystoreProperties['keyAlias']
-        keyPassword keystoreProperties['keyPassword']
-        storeFile file(keystoreProperties['storeFile'])
-        storePassword keystoreProperties['storePassword']
-    }
-}
-buildTypes {
-    release {
-        signingConfig signingConfigs.release
-    }
-}
+   android {
 ```
 
-Your app will now automatically be signed when doing release builds.
+1. Replace:
+```
+   buildTypes {
+       release {
+           // TODO: Add your own signing config for the release build.
+           // Signing with the debug keys for now, so `flutter run --release` works.
+           signingConfig signingConfigs.debug
+       }
+   }
+```
+   with:
+```
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile file(keystoreProperties['storeFile'])
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
+```
 
-## Build a release APK
+Release builds of your app will now automatically be signed.
 
-Follow these steps to build a release APK. If you completed the signing steps in
-the previous section, the release APK will be signed.
+## Building a release APK
+
+This section describes how to build a release APK. If you completed the 
+signing steps in the previous section, the release APK will be signed.
 
 Using the command line:
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
 1. Run `flutter build apk`.
 
-The APK is placed in `<app dir>/android/app/build/outputs/app.apk`.
+The release APK for your app is created in `<app dir>/android/app/build/outputs/app.apk`.
 
-## Installing a release APK onto a device
+## Installing a release APK on a device
 
-Follow these steps to install the APK built in the previous step onto a
+Follow these steps to install the APK built in the previous step on a
 connected Android device.
 
 Using the command line:
 
-1. Connect your Android device to your PC with a USB cable
-1. `cd <app dir>` (replace `<app dir>` with your application's directory)
-1. Run `flutter install`
+1. Connect your Android device to your computer with a USB cable.
+1. `cd <app dir>` where `<app dir>` is your application directory.
+1. Run `flutter install` .
 
-## Publish APK to Google Play
+## Publishing an APK to the Google Play Store
 
-Please see the [Google Play Publishing documentation][play].
+For detailed instructions on publishing the release version of an app to the
+Google Play Store, see the [Google Play publishing documentation][play].
 
 [manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
 [manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element.html
