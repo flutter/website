@@ -326,7 +326,7 @@ To scale a widget up or down, nest it in a [Transform](https://docs.flutter.io/f
 widget. Use the Transform widget’s ```alignment``` and ```origin``` properties to specify 
 the transform origin (fulcrum) in relative and absolute terms, respectively.
 
-For a simple scaling operation along the x-axis, create a new [Matrix4](https://docs.flutter.io/flutter/rendering/Matrix4-class.html)
+For a simple scaling operation along the x-axis, create a new [Matrix4](https://docs.flutter.io/flutter/widgets/Matrix4-class.html)
 identity object and use its scale() method to specify the scaling factor.
 
 When you scale a parent widget, all its child widgets are scaled accordingly.
