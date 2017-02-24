@@ -25,15 +25,14 @@ overscroll behaviors, and more.
 This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo), 
 a showcase of Flutter apps to download and run on a phone. Shrine has 
 high-quality scrolling images, interactive cards, buttons and dropdown lists, 
-and a shopping cart page. Run Shrine on an iPhone or Android phone; the UI 
-appearance and behavior are equivalent. Feel free to browse through the source 
-code and other sample apps [here](https://github.com/flutter/flutter/tree/master/examples) 
+and a shopping cart page. Run Shrine on an iPhone or Android phone, then check
+out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples) 
 in our github repository.
 
 No mobile development experience is required to get started. Apps are written 
 in [Dart](https://dartlang.org), which will look familiar if you've used a 
-language like Java or JavaScript. While experience with object-oriented languages 
-is definitely helpful, even non-programmers have made Flutter apps!
+language like Java or JavaScript. Experience with object-oriented languages 
+is definitely helpful, but even non-programmers have made Flutter apps!
 
 ## Why use Flutter?
 
