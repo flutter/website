@@ -62,7 +62,7 @@ each one:
 
 <img src="images/lakes-icons.png" style="border:1px solid black" alt="sample layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lakes-icons-visual.png" style="border:1px solid black" alt="sample sample layout with visual debugging turned on">
 
-The screenshot on the right displays the visual layout, showing a row of
+The second screenshot displays the visual layout, showing a row of
 3 columns where each column contains an icon and a label.
 
 <aside class="alert alert-info" markdown="1">
