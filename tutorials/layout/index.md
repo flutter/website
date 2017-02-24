@@ -10,7 +10,7 @@ permalink: /tutorials/layout/
 This is a guide to building layouts in Flutter.
 We start by explaining Flutter's approach to layout, and
 show you how to place single widgets on the screen.
-We'll discuss how to to lay widgets out horizontally and vertically,
+We'll discuss how to lay widgets out horizontally and vertically,
 and then cover some of the most common layout widgets.
 Finally, we'll walk through the process of creating a layout for this app:
 
@@ -345,7 +345,7 @@ You'll implement some of Pavlova's layout code in
 
 <aside class="alert alert-info" markdown="1">
 **Note:** Row and Column are basic primitive widgets for horizontal
-and vertical lay outs&mdash;these low-level widgets allow for maximum
+and vertical layouts&mdash;these low-level widgets allow for maximum
 customization. Flutter also offers specialized, higher level widgets
 that might be sufficient for your needs. For example, instead of Row
 you might prefer
@@ -1147,8 +1147,8 @@ class _MyHomePageState extends State<MyHomePage> {
 A Card, from the material library, contains related nuggets of information
 and can be composed from most any widget, but is often used with ListItem.
 Card has a single child, but its child can be a column, row, list, grid,
-or other widget that supports multiple children. By default, Card shrinks
-to 0 by 0 pixels. You can use
+or other widget that supports multiple children. By default, a Card shrinks
+its size to 0 by 0 pixels. You can use
 [SizedBox](https://docs.flutter.io/flutter/widgets/SizedBox-class.html) to
 constrain the size of a card.
 
