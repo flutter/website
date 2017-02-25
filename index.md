@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-title: Flutter is a mobile app SDK for iOS and Android
-=======
 title: Welcome to Flutter
->>>>>>> First take at Thinking in Flutter, with styles and images.
 sidebar: home_sidebar
 layout: page
 ---
@@ -38,35 +34,6 @@ is definitely helpful, but even non-programmers have made Flutter apps!
 
 What are some advantages of Flutter? It helps you:
 
-<<<<<<< HEAD
-## How-Tos
-
-Learn how to accomplish specific development tasks with Flutter.
-
- - [Building Layouts in Flutter](/tutorials/layout/)
- - [Adding Assets and Images](assets-and-images)
- - [Testing Flutter Apps](testing)
- - [Debugging Flutter Apps](debugging)
- - [Developing apps in the IntelliJ IDE](intellij-ide)
- - [Formatting Flutter code](formatting)
- - [Upgrading Flutter](upgrading)
- - [Accessing Platform and Third-Party Services](platform-services)
- - [Reading and Writing Files](reading-writing-files)
- - [Handling Text Input](text-input)
-
-## Helpful Resources
-
-More resources for Flutter developers.
-
- - [Source on GitHub](https://github.com/flutter/flutter)
- - [Architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing)
- - [Issue tracker](https://github.com/flutter/flutter/issues)
- - [Writing useful bug reports](bug-reports)
- - [FAQ](faq)
- - [Design principles](design-principles)
-
-## Support
-=======
 *   Be highly productive
     *   Develop for iOS and Android from a single codebase
     *   Do more with less code, even on a single OS, with a modern, expressive 
@@ -79,7 +46,7 @@ language and a declarative approach
     *   Realize whatever visual design you have in mind, without the limitations 
 of OEM widget sets
 
-## Core Principles
+## Core principles
 
 Flutter includes a functional-reactive framework, a 2D rendering engine, ready-
 made widgets, and development tools. The components work together to help you 
@@ -163,7 +130,7 @@ Nothing is hidden from you.  You reap the productivity benefits of a high-level,
 unified widget concept, without sacrificing the ability to dive as deeply as you 
 wish into the lower layers.
 
-### Building Widgets
+### Building widgets
 
 You define the unique characteristics of a widget by implementing a 
 [build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html) 
@@ -188,7 +155,7 @@ interactive apps. And the design of the build function simplifies your code by
 focusing on declaring what a widget is made of, rather than the complexities of
 updating the user interface from one state to another.
 
-### Handling User Interaction
+### Handling user interaction
 
 If the unique characteristics of a widget need to change based on user 
 interaction or other factors, that widget is *stateful*. For example, if a 
@@ -214,7 +181,7 @@ free to create a new instances of the child without losing the child's persisten
 state. The framework does all the work of finding and reusing existing state 
 objects when appropriate.
 
-## Try It!
+## Try it!
 
 Now that you're familiar with the basic structure and principles of the Flutter
 framework, along with how to build apps and make them interactive, you're ready
@@ -226,8 +193,7 @@ Next steps:
 1.  [Get started](https://flutter.io/getting-started/) with the development cycle in a few simple steps.
 1.  Follow a detailed example in [Tour of the Widget Framework](https://flutter.io/widgets-intro/).
 
-## Get Support
->>>>>>> First take at Thinking in Flutter, with styles and images.
+## Get support
 
 Track the Flutter project and join the conversation in a variety of ways.
 We're open source and would love to hear from you.
