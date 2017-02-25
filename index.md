@@ -38,12 +38,12 @@ What are some advantages of Flutter? It helps you:
     *   Develop for iOS and Android from a single codebase
     *   Do more with less code, even on a single OS, with a modern, expressive 
 language and a declarative approach
-*   Prototype and iterate quickly
-    *   Experiment by changing code and reloading as your app runs
-    *   Fix crashes and continue debugging from where the app left off
+    *   Prototype and iterate easily
+        *   Experiment by changing code and reloading as your app runs (with hot reload)
+        *   Fix crashes and continue debugging from where the app left off
 *   Create beautiful, highly-customized user experiences
-    *   Leverage a complete set of self-referential Material Design widgets
-    *   Realize whatever visual design you have in mind, without the limitations 
+    *   Leverage a complete set of self-describing Material Design widgets
+    *   Realize custom, beautiful, brand-driven designs, without the limitations 
 of OEM widget sets
 
 ## Core principles
