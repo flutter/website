@@ -14,9 +14,9 @@ arranging components of an application's UI. It maps HTML/CSS code snippets to
 their Flutter/Dart code equivalents.
 
 The examples assume:
-* The HTML doctype is set to HTML5, and the CSS box model for all HTML elements 
-is set to [quirks mode](https://css-tricks.com/box-sizing/), for consistency 
-with the Flutter model.
+* The HTML document starts with a modern HTML DOCTYPE, and the CSS box model 
+for all HTML elements is set to [border-box](https://css-tricks.com/box-sizing/), 
+for consistency with the Flutter model.
    {% prettify css %}<!DOCTYPE html>
    
    {
@@ -162,7 +162,7 @@ var container = new Container( // grey box
 ### Setting Container Width
 
 To specify the width of a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget you set its ```width``` property. This is a static width, unlike the 
+widget you set its ```width``` property. This is a fixed width, unlike the 
 CSS max-width property which adjusts container width up to a maximum value. To
 mimic that effect in Flutter, use the ```constraints``` property of the Container.
 Create a new [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
@@ -552,8 +552,8 @@ The following examples show how to make and customize shapes.
 ### Rounding Corners
 To round the corners of a rectangular shape, use the ```borderRadius``` property of a
 [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html) 
-widget. Create a new [BorderRadius](https://docs.flutter.io/flutter/painting/BorderRadius-class.html) 
-widget that specifies the radii for rounding each corner.
+object. Create a new [BorderRadius](https://docs.flutter.io/flutter/painting/BorderRadius-class.html) 
+object that specifies the radii for rounding each corner.
 <div class="lefthighlight">
 {% prettify css %}
 <div class="greybox">
