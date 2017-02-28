@@ -4,8 +4,8 @@ sidebar: home_sidebar
 layout: page
 ---
 
-Flutter is a new project to help developers build high-performance, high-fidelity, mobile apps for
-iOS and Android from a single codebase.
+Flutter is a new project to help developers build high-performance, high-fidelity, 
+mobile apps for iOS and Android from a single codebase.
 
 {% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](mailto:flutter-dev@googlegroups.com)." %}
 
@@ -42,7 +42,8 @@ language and a declarative approach
         *   Experiment by changing code and reloading as your app runs (with hot reload)
         *   Fix crashes and continue debugging from where the app left off
 *   Create beautiful, highly-customized user experiences
-    *   Leverage a complete set of self-describing Material Design widgets
+    *   Benefit from a rich set of Material design widgets built using
+        Flutter's own framework
     *   Realize custom, beautiful, brand-driven designs, without the limitations 
 of OEM widget sets
 
