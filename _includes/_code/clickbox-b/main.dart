@@ -26,8 +26,11 @@ class ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-        child:
-            new ClickboxB(active: active, onChanged: handleClickboxChanged));
+      child: new ClickboxB(
+        active: active,
+        onChanged: handleClickboxChanged,
+      ),
+    );
   }
 }
 
@@ -40,24 +43,23 @@ class ClickboxB extends StatelessWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  void _handleTap() {
+  void handleTap() {
     onChanged(!active);
   }
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: _handleTap,
+      onTap: handleTap,
       child: new Container(
-        child: new Center(
-          child: new Text(active ? 'Active' : 'Inactive',
-              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: new BoxDecoration(
-          backgroundColor: active ? Colors.lightGreen[700] : Colors.grey[600],
-        )
-      ),
+          child: new Center(
+            child: new Text(active ? 'Active' : 'Inactive',
+                style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+          ),
+          width: 200.0,
+          height: 200.0,
+          decoration: new BoxDecoration(
+            backgroundColor: active ? Colors.lightGreen[700] : Colors.grey[600],
+          )),
     );
   }
 }

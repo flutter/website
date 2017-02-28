@@ -8,16 +8,17 @@ void main() {
 }
 
 // ClickboxA manages its own state.
+
 class ClickboxA extends StatefulWidget {
   ClickboxA({Key key}) : super(key: key);
 
-  _ClickboxAState createState() => new _ClickboxAState();
+  ClickboxAState createState() => new ClickboxAState();
 }
 
-class _ClickboxAState extends State<ClickboxA> {
+class ClickboxAState extends State<ClickboxA> {
   bool active = false;
 
-  void _handleTap() {
+  void handleTap() {
     setState(() {
       active = !active;
     });
@@ -25,7 +26,7 @@ class _ClickboxAState extends State<ClickboxA> {
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: _handleTap,
+      onTap: handleTap,
       child: new Container(
         child: new Center(
           child: new Text(active ? 'Active' : 'Inactive',

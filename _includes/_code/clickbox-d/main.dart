@@ -8,8 +8,8 @@ void main() {
 
 // State is managed by ClickboxModel, a subclass of ChangeNotifier.
 // The StatefulWidgets register as listeners.
-  // TBD: Adam is going to add ListeningWidget to the framework,
-  //      so it won't be needed here.
+// TBD: Adam is going to add ListeningWidget to the framework,
+//      so it won't be needed here.
 // If something changes, ClickboxModel notifies its listeners.
 
 //---------------------------- ParentWidget ----------------------------
@@ -25,47 +25,46 @@ class ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return new Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        new ClickboxD(model: model),
-        new ClickboxD(model: model),
-      ]
-    );
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          new ClickboxD(model: model),
+          new ClickboxD(model: model),
+        ]);
   }
 }
 
 //-------------------------- ListeningWidget ---------------------------
 
 abstract class ListeningWidget extends StatefulWidget {
-  ListeningWidget({ Key key, this.listenable }) : super(key: key);
+  ListeningWidget({Key key, this.listenable}) : super(key: key);
 
   Listenable listenable;
 
   Widget build(BuildContext context);
 
-  _ListeningWidgetState createState() => new _ListeningWidgetState();
+  ListeningWidgetState createState() => new ListeningWidgetState();
 }
 
-class _ListeningWidgetState extends State<ListeningWidget> {
+class ListeningWidgetState extends State<ListeningWidget> {
   void initState() {
     super.initState();
-    config.listenable.addListener(_handleChanged);
+    config.listenable.addListener(handleChanged);
   }
 
   void didUpdateConfig(ListeningWidget oldConfig) {
     if (config.listenable != oldConfig.listenable) {
-      oldConfig.listenable.removeListener(_handleChanged);
-      config.listenable.addListener(_handleChanged);
+      oldConfig.listenable.removeListener(handleChanged);
+      config.listenable.addListener(handleChanged);
     }
   }
 
   void dispose() {
-    config.listenable.removeListener(_handleChanged);
+    config.listenable.removeListener(handleChanged);
     super.dispose();
   }
 
-  void _handleChanged() {
-    setState(() { });
+  void handleChanged() {
+    setState(() {});
   }
 
   Widget build(BuildContext context) => config.build(context);
@@ -78,8 +77,7 @@ class ClickboxModel extends ChangeNotifier {
   bool _active = false;
   set active(bool newValue) {
     assert(newValue != null);
-    if (_active == newValue)
-      return;
+    if (_active == newValue) return;
     _active = newValue;
     notifyListeners();
   }
@@ -89,17 +87,18 @@ class ClickboxModel extends ChangeNotifier {
 
 class ClickboxD extends ListeningWidget {
   ClickboxD({Key key, @required ClickboxModel model})
-      : model = model, super(key: key, listenable: model);
+      : model = model,
+        super(key: key, listenable: model);
 
   final ClickboxModel model;
 
-  void _handleTap() {
+  void handleTap() {
     model.active = !model.active;
   }
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: _handleTap,
+      onTap: handleTap,
       child: new Container(
           child: new Center(
             child: new Text(model.active ? 'Active' : 'Inactive',
@@ -108,9 +107,9 @@ class ClickboxD extends ListeningWidget {
           width: 200.0,
           height: 200.0,
           decoration: new BoxDecoration(
-            backgroundColor: model.active ? Colors.lightGreen[700] : Colors.grey[600],
-          )
-      ),
+            backgroundColor:
+                model.active ? Colors.lightGreen[700] : Colors.grey[600],
+          )),
     );
   }
 }
