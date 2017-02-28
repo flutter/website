@@ -7,6 +7,45 @@ void main() {
   runApp(new MyApp());
 }
 
+class FavoriteWidget extends StatefulWidget {
+  @override
+  FavoriteWidgetState createState() => new FavoriteWidgetState();
+}
+
+class FavoriteWidgetState extends State<FavoriteWidget> {
+  IconData currentIcon = Icons.star_border;
+  int favoriteCount = 40;
+
+  void toggleFavorite() {
+    setState(() {
+      // If the campground is currently favorited, unfavorite it.
+      if (currentIcon == Icons.star) {
+        favoriteCount = 40;
+        currentIcon = Icons.star_border;
+      // Otherwise, favorite it.
+      } else {
+        favoriteCount = 41;
+        currentIcon = Icons.star;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        new IconButton(
+          icon: new Icon(currentIcon),
+          color: Colors.red[500],
+          onPressed: toggleFavorite,
+        ),
+        new Text(favoriteCount.toString()),
+      ],
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,11 +75,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          new Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          new Text('41'),
+          new FavoriteWidget(),
         ],
       ),
     );
@@ -99,7 +134,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
         appBar: new AppBar(
           title: new Text('Top Lakes'),
         ),
-        body: new ListView(
+        body: new Column(
           children: [
             new Image.asset(
               'images/lake.jpg',

@@ -1556,7 +1556,7 @@ the layout as needed.  Here is the final Column:
 <!-- _code/lakes/main.dart -->
 {% prettify dart %}
 //...
-body: new Column(
+body: new ListView(
   children: [
     new Image.asset(
       'images/lake.jpg',

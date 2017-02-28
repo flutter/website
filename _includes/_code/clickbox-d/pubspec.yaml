@@ -1,0 +1,9 @@
+name: clickbox_d
+description: Demonstrates exporting state to a model controller.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

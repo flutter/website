@@ -1,10 +1,57 @@
 import 'package:flutter/material.dart';
 // Uncomment lines 3 and 6 to view the visual layout at runtime.
-//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:flutter/rendering.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
   runApp(new MyApp());
+}
+
+class FavoriteWidget extends StatefulWidget {
+  @override
+  FavoriteWidgetState createState() => new FavoriteWidgetState();
+}
+
+class FavoriteWidgetState extends State<FavoriteWidget> {
+  bool isFavorited = true;
+  int favoriteCount = 41;
+
+  void toggleFavorite() {
+    setState(() {
+      // If the lake is currently favorited, unfavorite it.
+      if (isFavorited) {
+        favoriteCount--;
+        isFavorited = false;
+        // Otherwise, favorite it.
+      } else {
+        favoriteCount++;
+        isFavorited = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        new Container(
+        padding: new EdgeInsets.all(0.0),
+        child: new IconButton(
+            icon: (isFavorited
+                ? new Icon(Icons.star)
+                : new Icon(Icons.star_border)),
+            color: Colors.red[500],
+            onPressed: toggleFavorite,
+          ),
+        ),
+        new Container(
+          width: 18.0,
+          child: new Text('$favoriteCount'),
+        ),
+      ],
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -36,11 +83,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          new Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          new Text('41'),
+          new FavoriteWidget(),
         ],
       ),
     );
@@ -89,7 +132,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
         softWrap: true,
       ),
     );
-
+//    debugRepaintRainbowEnabled = true;
     return new MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
@@ -103,7 +146,6 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
           children: [
             new Image.asset(
               'images/lake.jpg',
-              width: 600.0,
               height: 240.0,
               fit: ImageFit.cover,
             ),
