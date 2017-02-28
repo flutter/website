@@ -1,0 +1,140 @@
+<style>
+
+table {
+  margin: 10px;
+  border-collapse: separate;
+  border-spacing: 10px;
+  font-size: 14pt;
+  font-weight: normal;
+  vertical-align: super; 
+  font-style: normal;
+  padding-left: 3px;
+  width: 300px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+td {
+    margin: 12px 12px 12px 12px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 14px;
+}
+.the-abyss {  /* dark blue */
+    background-color: #1976D2;
+    border: 2px solid #1976D2;
+}
+.low-level {  /* dark blue */
+    background-color: #1E88E5;
+    border: 2px solid #1E88E5;
+}
+
+.med-level {  /* med blue */
+    background-color: #42A5F5;
+    border: 2px solid #42A5F5;
+}
+
+.high-level {  /* light blue */
+    background-color: #90CAF9;
+    border: 2px solid #90CAF9;
+}
+
+.optional {  /* dashed border */
+    background-color: #E3F2FD;
+    border: 4px dashed #BBDEFB;
+}
+.simplelink {
+    color: #757575;
+    text-decoration: none}
+}
+
+a.simplelink:link {color: #757575;}
+
+a.simplelink:hover {text-decoration: none}
+
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    visibility: visible;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 12pt;    
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+</style>
+
+<table cellpadding="0">
+<tr>
+  <td class="high-level optional" align="center" width="50%">
+    <a class="simplelink no_icon" href="https://docs.flutter.io/flutter/material/material-library.html">
+      <div>Custom
+<!--        <span class="tooltiptext">Optional custom widgets extending Material Design</span> -->
+      </div>
+    </a>
+  </td>
+</tr>
+<tr>
+  <td class="high-level" align="center" width="50%">
+    <a class="simplelink no_icon" href="https://docs.flutter.io/flutter/material/material-library.html">
+      <div >Material
+ <!--       <span class="tooltiptext">Widgets implementing Material Design</span> -->
+      </div>
+    </a>
+  </td>
+  <td class="high-level" align="center" width="50%">
+    <a class="simplelink no_icon" href="https://docs.flutter.io/flutter/cupertino/cupertino-library.html">
+      <div>Cupertino
+<!--        <span class="tooltiptext">iOS widgets set</span> -->
+      </div>
+    </a>
+  </td>
+</tr>
+<tr>
+  <td class="med-level" align="center" colspan="8">
+    <a class="simplelink no_icon" href="https://docs.flutter.io/flutter/widgets/widgets-library.html">
+      <div>Widgets
+<!--        <span class="tooltiptext">Standard widgets set</span> -->
+      </div>
+    </a>
+  </td>
+</tr>
+
+<tr>
+  <td class="low-level" align="center" colspan="8">
+    <a class="simplelink no_icon" href="https://docs.flutter.io/flutter/rendering/rendering-library.html">
+      <div>Rendering
+<!--        <span class="tooltiptext">Rendering and layout back end</span> -->
+      </div>
+    </a>
+  </td>
+</tr>
+
+<tr>
+  <td class="the-abyss" align="center" colspan="8" background-color="#1976D2">
+      <div>&hellip;
+<!--        <span class="tooltiptext">Deeper layers</span> -->
+      </div>
+  </td>
+</tr>
+</table>
