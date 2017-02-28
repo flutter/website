@@ -1,4 +1,4 @@
-name: clickbox_c
+name: tapbox_c
 description: Demonstrates some state handled by the parent and some state handled by the stateful widget.
 
 dependencies:

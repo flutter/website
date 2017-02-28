@@ -6,11 +6,11 @@ void main() {
   runApp(new MyApp());
 }
 
-// State is managed by ClickboxModel, a subclass of ChangeNotifier.
+// State is managed by TapboxModel, a subclass of ChangeNotifier.
 // The StatefulWidgets register as listeners.
 // TBD: Adam is going to add ListeningWidget to the framework,
 //      so it won't be needed here.
-// If something changes, ClickboxModel notifies its listeners.
+// If something changes, TapboxModel notifies its listeners.
 
 //---------------------------- ParentWidget ----------------------------
 
@@ -20,16 +20,17 @@ class ParentWidget extends StatefulWidget {
 }
 
 class ParentWidgetState extends State<ParentWidget> {
-  ClickboxModel model = new ClickboxModel();
+  TapboxModel model = new TapboxModel();
 
   @override
   Widget build(BuildContext context) {
     return new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          new ClickboxD(model: model),
-          new ClickboxD(model: model),
-        ]);
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        new TapboxD(model: model),
+        new TapboxD(model: model),
+      ],
+    );
   }
 }
 
@@ -70,9 +71,9 @@ class ListeningWidgetState extends State<ListeningWidget> {
   Widget build(BuildContext context) => config.build(context);
 }
 
-//--------------------------- ClickboxModel ----------------------------
+//--------------------------- TapboxModel ----------------------------
 
-class ClickboxModel extends ChangeNotifier {
+class TapboxModel extends ChangeNotifier {
   bool get active => _active;
   bool _active = false;
   set active(bool newValue) {
@@ -83,14 +84,14 @@ class ClickboxModel extends ChangeNotifier {
   }
 }
 
-//----------------------------- ClickboxD ------------------------------
+//----------------------------- TapboxD ------------------------------
 
-class ClickboxD extends ListeningWidget {
-  ClickboxD({Key key, @required ClickboxModel model})
+class TapboxD extends ListeningWidget {
+  TapboxD({Key key, @required TapboxModel model})
       : model = model,
         super(key: key, listenable: model);
 
-  final ClickboxModel model;
+  final TapboxModel model;
 
   void handleTap() {
     model.active = !model.active;
@@ -100,16 +101,17 @@ class ClickboxD extends ListeningWidget {
     return new GestureDetector(
       onTap: handleTap,
       child: new Container(
-          child: new Center(
-            child: new Text(model.active ? 'Active' : 'Inactive',
-                style: new TextStyle(fontSize: 32.0, color: Colors.white)),
-          ),
-          width: 200.0,
-          height: 200.0,
-          decoration: new BoxDecoration(
-            backgroundColor:
-                model.active ? Colors.lightGreen[700] : Colors.grey[600],
-          )),
+        child: new Center(
+          child: new Text(model.active ? 'Active' : 'Inactive',
+              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+        ),
+        width: 200.0,
+        height: 200.0,
+        decoration: new BoxDecoration(
+          backgroundColor:
+              model.active ? Colors.lightGreen[700] : Colors.grey[600],
+        ),
+      ),
     );
   }
 }

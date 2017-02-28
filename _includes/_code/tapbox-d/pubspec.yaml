@@ -1,4 +1,4 @@
-name: clickbox_d
+name: tapbox_d
 description: Demonstrates exporting state to a model controller.
 
 dependencies:

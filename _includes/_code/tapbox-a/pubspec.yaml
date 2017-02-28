@@ -1,4 +1,4 @@
-name: clickbox_a
+name: tapbox_a
 description: Demonstrates a stateful widget that manages its own state.
 
 dependencies:

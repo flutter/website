@@ -15,7 +15,7 @@ class ParentWidget extends StatefulWidget {
 class ParentWidgetState extends State<ParentWidget> {
   bool active = false;
 
-  void handleClickboxChanged(bool newValue) {
+  void handleTapboxChanged(bool newValue) {
     setState(() {
       active = newValue;
     });
@@ -24,27 +24,27 @@ class ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      child: new ClickboxC(
+      child: new TapboxC(
         active: active,
-        onChanged: handleClickboxChanged,
+        onChanged: handleTapboxChanged,
       ),
     );
   }
 }
 
-//----------------------------- ClickboxC ------------------------------
+//----------------------------- TapboxC ------------------------------
 
-class ClickboxC extends StatefulWidget {
-  ClickboxC({Key key, this.active: false, @required this.onChanged})
+class TapboxC extends StatefulWidget {
+  TapboxC({Key key, this.active: false, @required this.onChanged})
       : super(key: key);
 
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  ClickboxCState createState() => new ClickboxCState();
+  TapboxCState createState() => new TapboxCState();
 }
 
-class ClickboxCState extends State<ClickboxC> {
+class TapboxCState extends State<TapboxC> {
   bool highlight = false;
 
   void handleTapDown(TapDownDetails details) {
@@ -78,22 +78,23 @@ class ClickboxCState extends State<ClickboxC> {
       onTap: handleTap,
       onTapCancel: handleTapCancel,
       child: new Container(
-          child: new Center(
-            child: new Text(config.active ? 'Active' : 'Inactive',
-                style: new TextStyle(fontSize: 32.0, color: Colors.white)),
-          ),
-          width: 200.0,
-          height: 200.0,
-          decoration: new BoxDecoration(
-            backgroundColor:
-                config.active ? Colors.lightGreen[700] : Colors.grey[600],
-            border: highlight
-                ? new Border.all(
-                    color: Colors.teal[700],
-                    width: 10.0,
-                  )
-                : null,
-          )),
+        child: new Center(
+          child: new Text(config.active ? 'Active' : 'Inactive',
+              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+        ),
+        width: 200.0,
+        height: 200.0,
+        decoration: new BoxDecoration(
+          backgroundColor:
+              config.active ? Colors.lightGreen[700] : Colors.grey[600],
+          border: highlight
+              ? new Border.all(
+                  color: Colors.teal[700],
+                  width: 10.0,
+                )
+              : null,
+        ),
+      ),
     );
   }
 }

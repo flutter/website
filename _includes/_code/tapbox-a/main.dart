@@ -7,15 +7,15 @@ void main() {
   runApp(new MyApp());
 }
 
-// ClickboxA manages its own state.
+// TapboxA manages its own state.
 
-class ClickboxA extends StatefulWidget {
-  ClickboxA({Key key}) : super(key: key);
+class TapboxA extends StatefulWidget {
+  TapboxA({Key key}) : super(key: key);
 
-  ClickboxAState createState() => new ClickboxAState();
+  TapboxAState createState() => new TapboxAState();
 }
 
-class ClickboxAState extends State<ClickboxA> {
+class TapboxAState extends State<TapboxA> {
   bool active = false;
 
   void handleTap() {
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
           title: new Text('Flutter Demo'),
         ),
         body: new Center(
-          child: new ClickboxA(),
+          child: new TapboxA(),
         ),
       ),
     );
