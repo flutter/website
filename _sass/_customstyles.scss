@@ -1036,8 +1036,15 @@ table th code {
     color: white;
 }
 
-.alert code {
+.alert code, .alert pre, .panel code {
     background-color: inherit;
+    color: inherit;
+    border: inherit;
+}
+
+.alert pre {
+    padding: 0px;
+    margin: 15px 0px;
 }
 
 .post-content h4 {
@@ -1058,3 +1065,4 @@ div.prev-next-right {
 div.prev-next-left {
     display: inline-block;
 }
+
