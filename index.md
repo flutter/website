@@ -19,7 +19,7 @@ typography, icons, and more.
 ![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.png)
 
 This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo), 
-a showcase of Flutter apps to download and run on a phone. Shrine has 
+a showcase of Flutter apps to download and run locally. Shrine has 
 high-quality scrolling images, interactive cards, buttons, dropdown lists, 
 and a shopping cart page. You can run Shrine on an emulator or a phone, then check
 out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples) 
