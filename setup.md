@@ -16,6 +16,9 @@ iOS or Android.
 To install and run Flutter, your development environment must meet these minimum requirements:
 
 * **Operating Systems**: Mac or Linux (64-bit). Windows support is [in progress](https://github.com/flutter/flutter/issues/138).
+* **Disk Space**: 710 MB on Mac, 558 MB on Linux
+   This is the requirement for the Flutter SDK and does not include disk space 
+   for Xcode or Android Studio.
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
@@ -35,11 +38,27 @@ the setup:
 $ flutter doctor
 ```
 
-The first time you run the `flutter` command, it will download its dependencies and compile
-itself. Subsequent runs should be much faster.
+This command checks your environment and displays a report to the terminal window
+Other software you may need to install or further tasks to perform are shown in
+**bold** text.
+
+For example:
+```
+    ✗ Xcode end user license agreement not signed; open Xcode or run the command 'sudo xcodebuild -license'.
+
+    ✗ Brew not installed; use this to install tools for iOS device development.
+
+
+      Download brew at http://brew.sh/.
+```
+The following sections describe how to perform these tasks and finish the setup process.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
+
+Note: the first time you run the `flutter` command, it downloads its dependencies and compiles
+itself. Subsequent runs should be much faster.
+
 
 ## Google Analytics
 
@@ -62,18 +81,18 @@ To develop Flutter apps for iOS, you need a Mac with Xcode 7.2 or newer:
 
 1. Install Xcode 7.2 or newer (via [web download](https://developer.apple.com/xcode/) or
 the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
-2. Configure the Xcode command-line tools to use the newly-installed version of Xcode by
+1. Configure the Xcode command-line tools to use the newly-installed version of Xcode by
 running `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer` from
 the command line.
 
-  This is the correct path for most cases, when you want to use the latest version of Xcode.
-  If you need to use a different version, specify that path instead.
-2. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
+   This is the correct path for most cases, when you want to use the latest version of Xcode.
+   If you need to use a different version, specify that path instead.
+1. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
 running `sudo xcodebuild -license` from the command line.
 
 With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
 
-### Set up the iOS simulator ###
+### Set up the iOS simulator
 
 To prepare to run and test your Flutter app on the iOS simulator, follow these steps:
 
