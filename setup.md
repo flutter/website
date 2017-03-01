@@ -16,41 +16,52 @@ iOS or Android.
 To install and run Flutter, your development environment must meet these minimum requirements:
 
 * **Operating Systems**: Mac or Linux (64-bit). Windows support is [in progress](https://github.com/flutter/flutter/issues/138).
-* **Disk Space**: 710 MB on Mac, 558 MB on Linux
-   This is the requirement for the Flutter SDK and does not include disk space 
-   for Xcode or Android Studio.
+* **Disk Space**: 710 MB on Mac, 558 MB on Linux.
+ This is the requirement for the Flutter SDK and does not include disk space for Xcode or Android Studio.
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
 ## Get the Flutter SDK
 
-To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
+1. To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path:
 
-<pre>
-$ git clone https://github.com/flutter/flutter.git
-$ export PATH=`pwd`/flutter/bin:$PATH
-</pre>
+   <pre>
+   $ git clone https://github.com/flutter/flutter.git
+   $ export PATH=`pwd`/flutter/bin:$PATH
+   </pre>
 
-Run the following command to see if there are any dependencies you need to install to complete
+   The above command sets your PATH variable temporarily, for the current terminal window.
+   The steps for modifying your PATH permanently for all terminal sessions are machine-
+   specific. Typically you add the `flutter/bin` directory to a file that is executed 
+   whenever you start a new window:
+
+   ```
+   export PATH=~/flutter/bin
+   ```
+and then run the `source` command to refresh the window. For example on Linux, 
+the file might be `.bashrc` and on MacOS, it might be `/etc/bashrc`.
+
+1. Run the following command to see if there are any dependencies you need to install to complete
 the setup:
 
-```
-$ flutter doctor
-```
+   ```
+   $ flutter doctor
+   ```
 
-This command checks your environment and displays a report to the terminal window
-Other software you may need to install or further tasks to perform are shown in
-**bold** text.
+   This command checks your environment and displays a report to the terminal window
+   Other software you may need to install or further tasks to perform are shown in
+   **bold** text.
 
-For example:
-```
+   For example:
+   ```
     ✗ Xcode end user license agreement not signed; open Xcode or run the command 'sudo xcodebuild -license'.
 
     ✗ Brew not installed; use this to install tools for iOS device development.
 
 
       Download brew at http://brew.sh/.
-```
+   ```
+
 The following sections describe how to perform these tasks and finish the setup process.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
@@ -77,6 +88,8 @@ privacy policy:
 _This step is optional, and can be performed at any time before
 using Flutter to develop apps for iOS._
 
+### Install Xcode
+
 To develop Flutter apps for iOS, you need a Mac with Xcode 7.2 or newer:
 
 1. Install Xcode 7.2 or newer (via [web download](https://developer.apple.com/xcode/) or
@@ -91,6 +104,10 @@ the command line.
 running `sudo xcodebuild -license` from the command line.
 
 With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
+
+### Install a JDK
+
+To create Flutter apps on a Mac, you need Java Developer Kit (JDK) software.
 
 ### Set up the iOS simulator
 
@@ -130,9 +147,10 @@ using Flutter to develop apps for Android._
 
 To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit) machine:
 
-1. Install [Android Studio](https://developer.android.com/sdk/index.html).
-2. From Android Studio, install the latest Android SDK and Android SDK Platform-Tools, as described
-in [Adding SDK Packages](https://developer.android.com/sdk/installing/adding-packages.html).
+* Install [Android Studio](https://developer.android.com/studio/index.html).
+
+Flutter requires the latest Android SDK and Android SDK Platform-Tools packages.
+In Android Studio, you can verify these are up-to-date, as described in [Adding SDK Packages](https://developer.android.com/studio/intro/update.html).
 
 ### Set up your Android device
 
@@ -152,7 +170,6 @@ you want Flutter to use a different installation of the Android SDK, you must se
 `ANDROID_HOME` environment variable to that specific installation directory.
 
 ## Editor setup
-
 
 Using our command-line tools, you can use any editor to develop Flutter applications.
 
