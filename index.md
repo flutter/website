@@ -13,20 +13,20 @@ mobile apps for iOS and Android from a single codebase.
 
 Flutter provides an easy and productive way to build and deploy high-performance 
 mobile apps for Android and iOS. The goal is to deliver apps that feel natural 
-on different platforms, and we embrace differences like scrolling behavior, 
-overscroll behaviors, and more. 
+on different platforms, and we embrace differences in scrolling behaviors, 
+typography, icons, and more. 
 
 ![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.png)
 
 This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo), 
 a showcase of Flutter apps to download and run on a phone. Shrine has 
-high-quality scrolling images, interactive cards, buttons and dropdown lists, 
-and a shopping cart page. Run Shrine on an iPhone or Android phone, then check
+high-quality scrolling images, interactive cards, buttons, dropdown lists, 
+and a shopping cart page. You can run Shrine on an emulator or a phone, then check
 out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples) 
-in our github repository.
+in our GitHub repository.
 
 No mobile development experience is required to get started. Apps are written 
-in [Dart](https://dartlang.org), which will look familiar if you've used a 
+in [Dart](https://dartlang.org/), which will look familiar if you've used a 
 language like Java or JavaScript. Experience with object-oriented languages 
 is definitely helpful, but even non-programmers have made Flutter apps!
 
@@ -42,22 +42,22 @@ language and a declarative approach
         *   Experiment by changing code and reloading as your app runs (with hot reload)
         *   Fix crashes and continue debugging from where the app left off
 *   Create beautiful, highly-customized user experiences
-    *   Benefit from a rich set of Material design widgets built using
+    *   Benefit from a rich set of Material Design widgets built using
         Flutter's own framework
     *   Realize custom, beautiful, brand-driven designs, without the limitations 
 of OEM widget sets
 
 ## Core principles
 
-Flutter includes a functional-reactive framework, a 2D rendering engine, ready-
-made widgets, and development tools. The components work together to help you 
+Flutter includes a functional-reactive framework, a 2D rendering engine, ready-made
+widgets, and development tools. These components work together to help you 
 design, build, test, and debug apps. Everything is organized around a few core 
 principles. 
 
 ### Everything's a Widget
 
 Widgets are the basic building blocks of every Flutter app. Each widget is an 
-immutable declaration of part of a user interface.  Unlike other frameworks that 
+immutable declaration of part of the user interface.  Unlike other frameworks that 
 separate views, controllers, layouts, and other properties, Flutter has a 
 consistent, unified object model: the widget.
 
@@ -72,7 +72,6 @@ A widget can define:
 Widgets form a hierarchy based on composition.  Each widget nests inside, and 
 inherits properties from, its parent.  There is no separate "application" object.
 Instead, the root widget serves this role.
-
 
 You can respond to events, like user interaction, by telling the framework to 
 replace a widget in the hierarchy with another widget.  The framework then 
@@ -105,7 +104,7 @@ do not show themselves in an app's UI.  Instead, their sole purpose is to
 control some aspect of another widget's layout. To understand why a widget
 renders in a certain way, it's often helpful to inspect the neighboring widgets.
 
-#### Layer cakes are fun and functional
+#### Layer cakes are delicious
 
 The Flutter framework is organized into a series of layers, with each layer
 building upon the previous layer.
@@ -136,7 +135,7 @@ wish into the lower layers.
 You define the unique characteristics of a widget by implementing a 
 [build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html) 
 function that returns a tree of widgets. This tree represents the widget's part 
-of the user interface in concrete terms.  For example, a toolbar widget might 
+of the user interface in more concrete terms.  For example, a toolbar widget might 
 have a build function that returns a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
 of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
 [various](https://docs.flutter.io/flutter/material/IconButton-class.html)
@@ -172,12 +171,12 @@ and store their mutable state in a subclass of [State](https://docs.flutter.io/f
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to 
-signal the framework to update the user interface by calling the State build 
-method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/fa2caa737bdde4d72525d9d4260abb0ba5548c01/packages/flutter_tools/templates/create/lib/main.dart.tmpl) that's created with each new Flutter project.
+signal the framework to update the user interface by calling the State's build 
+method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl) that's created with each new Flutter project.
 
 Having separate state and widget objects lets other widgets treat stateless and 
 stateful widgets in the same way, without being concerned about losing state. 
-Rather than needing to hold on to the child to preserve its state, the parent is
+Rather than needing to hold on to a child to preserve its state, the parent is
 free to create a new instances of the child without losing the child's persistent
 state. The framework does all the work of finding and reusing existing state 
 objects when appropriate.
@@ -203,7 +202,7 @@ We're open source and would love to hear from you.
 - [Live chat with Flutter engineers and users][gitter]
 - [Discuss Flutter, best practices, app design, and more on our mailing list][mailinglist]
 - [Report bugs, request features and docs][issues]
-- [Follow us on Twitter: @flutterio](https://twitter.com/flutterio)
+- [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
 
 
 [issues]: https://github.com/flutter/flutter/issues
