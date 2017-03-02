@@ -168,7 +168,11 @@ var container = new Container( // grey box
 ### Setting Container Width
 
 To specify the width of a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
+<<<<<<< HEAD
 widget you set its ```width``` property. This is a fixed width, unlike the 
+=======
+widget you set its ```width``` property. This is a static width, unlike the 
+>>>>>>> 694cbac... Clarifying max-width vs. width, and constraints.
 CSS max-width property which adjusts container width up to a maximum value. To
 mimic that effect in Flutter, use the ```constraints``` property of the Container.
 Create a new [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
