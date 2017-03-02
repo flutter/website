@@ -30,16 +30,26 @@ To install and run Flutter, your development environment must meet these minimum
    $ export PATH=`pwd`/flutter/bin:$PATH
    </pre>
 
+   where `pwd` is the current working directory, for example:
+   <pre>
+   $ export PATH=/Users/obiwan/flutter/bin:$PATH
+   </pre>
+
    The above command sets your PATH variable temporarily, for the current terminal window.
-   The steps for modifying your PATH permanently for all terminal sessions are machine-
-   specific. Typically you add the `flutter/bin` directory to a file that is executed 
-   whenever you start a new window:
+   The steps for modifying this variable permanently for all terminal sessions are machine-
+   specific. Typically you add a line to a file that is executed whenever you open 
+   a new window:
 
    ```
    export PATH=~/flutter/bin
    ```
-and then run the `source` command to refresh the window. For example on Linux, 
-the file might be `.bashrc` and on MacOS, it might be `/etc/bashrc`.
+and then run the `source <filename>` command to refresh the window. For example on Linux, 
+you might edit and source `~/.bash_profile`. On macOS, it might be `/etc/bashrc`.
+
+1. Verify that the `flutter/bin` directory is now in your PATH by running:
+   ```
+   $ echo $PATH
+   ```
 
 1. Run the following command to see if there are any dependencies you need to install to complete
 the setup:
@@ -48,9 +58,9 @@ the setup:
    $ flutter doctor
    ```
 
-   This command checks your environment and displays a report to the terminal window
-   Other software you may need to install or further tasks to perform are shown in
-   **bold** text.
+   This command checks your environment and displays a report to the terminal window.
+   Check the output carefully for other software you may need to install or further 
+   tasks to perform (shown in **bold** text).
 
    For example:
    ```
@@ -62,13 +72,17 @@ the setup:
       Download brew at http://brew.sh/.
    ```
 
+   The first time you run the `flutter` command, it downloads its dependencies and compiles
+itself. Subsequent runs should be much faster.
+
 The following sections describe how to perform these tasks and finish the setup process.
+You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
+are availabile for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
+for the steps to install the Flutter and Dart plugins.
+
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
-
-Note: the first time you run the `flutter` command, it downloads its dependencies and compiles
-itself. Subsequent runs should be much faster.
 
 
 ## Google Analytics
@@ -105,10 +119,6 @@ running `sudo xcodebuild -license` from the command line.
 
 With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
 
-### Install a JDK
-
-To create Flutter apps on a Mac, you need Java Developer Kit (JDK) software.
-
 ### Set up the iOS simulator
 
 To prepare to run and test your Flutter app on the iOS simulator, follow these steps:
@@ -130,14 +140,24 @@ may overflow your screen. Set the device scale under the **Window > Scale** menu
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools:
 
 1. Install [homebrew](http://brew.sh/).
-2. Open the terminal and run this command to install the tools for deploying Flutter apps to
+1. Open the terminal and run this command to install the tools for deploying Flutter apps to
 iOS devices.
 
     <pre>
     $ brew install ideviceinstaller ios-deploy
     </pre>
 
-You'll also need to set up a provisioning profile for your developer account. To learn how to
+1. If you see the following error:
+    ```
+   You must brew link libtasn1 libplist libusb before ideviceinstaller can be installed
+    ```
+   run `brew link libtasn1 libplist libusb` to link the required libraries. 
+
+   If the command fails with an error related to directories that are not writeable, 
+   run `brew doctor` and follow the instructions for changing permissions on those directories.
+   Then run the `brew link ...` and `brew install...` commands again.
+   
+1. Set up a provisioning profile for your developer account. To learn how to
 set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 
 ## Android setup
@@ -147,10 +167,15 @@ using Flutter to develop apps for Android._
 
 To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit) machine:
 
-* Install [Android Studio](https://developer.android.com/studio/index.html).
+1. Install [Android Studio](https://developer.android.com/studio/index.html).
 
-Flutter requires the latest Android SDK and Android SDK Platform-Tools packages.
-In Android Studio, you can verify these are up-to-date, as described in [Adding SDK Packages](https://developer.android.com/studio/intro/update.html).
+   Flutter requires the latest Android SDK and Android SDK Platform-Tools packages.
+In Android Studio, you can verify these are up-to-date, as described in [Update the IDE and SDK Tools](https://developer.android.com/studio/intro/update.html).
+
+1. Add the JDK directory to your PATH variable. For example, on macOS:
+   ```
+   export PATH 
+   ```
 
 ### Set up your Android device
 
