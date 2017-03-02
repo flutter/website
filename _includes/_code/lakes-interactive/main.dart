@@ -1,27 +1,61 @@
 import 'package:flutter/material.dart';
 // Uncomment lines 3 and 6 to view the visual layout at runtime.
-//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:flutter/rendering.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
   runApp(new MyApp());
 }
 
-IconData icon = Icons.star;
-
 class FavoriteWidget extends StatefulWidget {
-  /**
-  new Icon(
-  icon,
-  color: Colors.red[500],
-  ),
-  new Text('41'),
-      */
-  
+  @override
+  FavoriteWidgetState createState() => new FavoriteWidgetState();
 }
 
+class FavoriteWidgetState extends State<FavoriteWidget> {
+  bool isFavorited = true;
+  int favoriteCount = 41;
 
-//class MyApp extends StatefulWidget {
+  void toggleFavorite() {
+    setState(() {
+      // If the lake is currently favorited, unfavorite it.
+      if (isFavorited) {
+        favoriteCount--;
+        isFavorited = false;
+        // Otherwise, favorite it.
+      } else {
+        favoriteCount++;
+        isFavorited = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        new Container(
+          padding: new EdgeInsets.all(0.0),
+          child: new IconButton(
+            icon: (isFavorited
+                ? new Icon(Icons.star)
+                : new Icon(Icons.star_border)),
+            color: Colors.red[500],
+            onPressed: toggleFavorite,
+          ),
+        ),
+        new SizedBox(
+          width: 18.0,
+          child: new Container(
+            child: new Text('$favoriteCount'),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -54,31 +88,30 @@ class MyApp extends StatelessWidget {
           new FavoriteWidget(),
         ],
       ),
-    ); // end of "Widget titleSection"
+    );
 
     Column buildButtonColumn(IconData icon, String label) {
-      List<Widget> widgets = new List(2);
       Color color = Theme.of(context).primaryColor;
-
-      widgets[0] = new Icon(icon, color: color);
-      widgets[1] = new Container(
-        margin: const EdgeInsets.only(top: 8.0),
-        child: new Text(
-          label,
-          style: new TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.w400,
-            color: color,
-          ),
-        ),
-      );
 
       return new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: widgets,
+        children: [
+          new Icon(icon, color: color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style: new TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
       );
-    } // end of "Column buildButtonColumn"
+    }
 
     Widget buttonSection = new Container(
       child: new Row(
@@ -100,39 +133,28 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
         softWrap: true,
       ),
     );
-
-    IconData swapIcon(IconData currentIcon) {
-      return currentIcon == Icons.star ? Icons.star_border : Icons.star;
-    }
-
-    return new GestureDetector(
-        onTap: () {
-          icon = swapIcon(icon);
-        },
-        child: new MaterialApp(
-          title: 'Flutter Demo',
-          theme: new ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: new Scaffold(
-            appBar: new AppBar(
-              title: new Text('Top Lakes'),
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Top Lakes'),
+        ),
+        body: new ListView(
+          children: [
+            new Image.asset(
+              'images/lake.jpg',
+              height: 240.0,
+              fit: ImageFit.cover,
             ),
-            body: new Column(
-              children: [
-                new Image.asset(
-                  'images/lake.jpg',
-                  width: 600.0,
-                  height: 240.0,
-                  fit: ImageFit.cover,
-                ),
-                titleSection,
-                buttonSection,
-                textSection,
-              ],
-            ),
-          ),
-        ) // end of "new MaterialApp()"
-        ); // end of "return new GestureDetector()"
-  } // end of "Widget build()"
-} // end "class MyApp extends StatelessWidget"
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
+      ),
+    );
+  }
+}
