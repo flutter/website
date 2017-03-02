@@ -935,7 +935,7 @@ Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br
 Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
 and 3 tiles wide in landscape mode. The titles are created by setting the
 `footer` property for each GridTile.<br>
-**Dart code:** [grid_list_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/grid_list_demo.dart)
+**Dart code:** [grid_list_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -1193,7 +1193,7 @@ SizedBox. A Divider separates the first and second ListItems.
 <img src="images/card-flutter-gallery.png" style="border:1px solid black" alt="a Card containing an image and text and buttons under the image">
 
 A Card containing an image and text.<br>
-**Dart code:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/cards_demo.dart)
+**Dart code:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/cards_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
@@ -1273,7 +1273,7 @@ A Card containing 3 ListItems.<br>
 <img src="images/listitem-flutter-gallery.png" style="border:1px solid black" alt="3 ListItems, each containing a pull-down button">
 
 Uses ListItem to list 3 drop down button types.<br>
-**Dart code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/buttons_demo.dart)
+**Dart code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/buttons_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
