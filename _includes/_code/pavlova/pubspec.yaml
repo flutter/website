@@ -1,0 +1,11 @@
+name: pavlova
+description: Demonstrates building a layout for the Strawberry Pavlova app.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pavlova.jpg

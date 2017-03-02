@@ -1,0 +1,13 @@
+name: row
+description: Demonstrates the Row widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pic1.jpg
+    - images/pic2.jpg
+    - images/pic3.jpg

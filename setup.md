@@ -138,10 +138,14 @@ By default, Flutter uses the version of the Android SDK where your `adb` tool is
 you want Flutter to use a different installation of the Android SDK, you must set the
 `ANDROID_HOME` environment variable to that installation directory.
 
+## Editor setup
+
+
 Using our command-line tools, you can use any editor to develop Flutter applications.
-If you prefer working in an IDE, we recommend using our IntelliJ plug-ins for a 
-[rich IDE experience](/intellij-ide/) supporting editing, running, and debugging 
-Flutter apps. See [IntelliJ Setup](/intellij-setup/) for detailed steps.
+
+We recommend using our IntelliJ plug-ins for a  [rich IDE experience](/intellij-ide/) 
+supporting editing, running, and debugging Flutter apps. See [IntelliJ Setup](/intellij-setup/)
+for detailed steps.
 
 ## Next steps
 

@@ -1,0 +1,13 @@
+name: row_expanded
+description: Demonstrates a Row widget containing an Expanded widget with a flex factor of 2.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pic1.jpg
+    - images/pic2.jpg
+    - images/pic3.jpg

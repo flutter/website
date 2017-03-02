@@ -1,5 +1,5 @@
 ---
-title: Welcome to Flutter!
+title: Flutter is a mobile app SDK for iOS and Android
 sidebar: home_sidebar
 layout: page
 ---
@@ -35,15 +35,16 @@ See these topics to understand how the Flutter framework works.
 
 Learn how to accomplish specific development tasks with Flutter.
 
- - [Adding assets and images](assets-and-images)
- - [Testing Flutter apps](testing)
- - [Debugging Flutter apps](debugging)
+ - [Building Layouts in Flutter](/tutorials/layout/)
+ - [Adding Assets and Images](assets-and-images)
+ - [Testing Flutter Apps](testing)
+ - [Debugging Flutter Apps](debugging)
  - [Developing apps in the IntelliJ IDE](intellij-ide)
  - [Formatting Flutter code](formatting)
  - [Upgrading Flutter](upgrading)
- - [Accessing platform and third-party services](platform-services)
- - [Reading and writing files](reading-writing-files)
- - [Handling text input](text-input)
+ - [Accessing Platform and Third-Party Services](platform-services)
+ - [Reading and Writing Files](reading-writing-files)
+ - [Handling Text Input](text-input)
 
 ## Helpful Resources
 

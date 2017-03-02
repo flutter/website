@@ -54,3 +54,37 @@ $on-laptop:        800px;
         "customstyles",
         "prism"
 ;
+
+// Columns
+.col2 {
+  list-style: none;
+  column-count: 2;
+  column-gap: 0;
+  li {
+    page-break-inside: avoid;
+  }
+}
+.col3 {
+  list-style: none;
+  column-count: 3;
+  column-gap: 0;
+  li {
+   page-break-inside: avoid;
+  }
+}
+
+// Styling for "What's the Point" blocks
+.panel {
+  background-color: $grey-color-light;
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  margin-top: 0px; 
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  ul {
+    padding-left: 15px;
+  }
+}
