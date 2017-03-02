@@ -95,10 +95,6 @@ body h1 {margin-top:40px;}
     max-height: 100%;
 }
 
-.post-content ol li, .post-content ul li {
-    margin: 10px 0px;
-}
-
 .pageSummary {
     font-size:13px;
     display:block;
@@ -1044,12 +1040,15 @@ table th code {
     color: white;
 }
 
-li {
-    line-height: 1.0;
+.alert code, .alert pre, .panel code {
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
 }
 
-.alert code {
-    background-color: inherit;
+.alert pre {
+    padding: 0px;
+    margin: 15px 0px;
 }
 
 .post-content h4 {
@@ -1070,3 +1069,4 @@ div.prev-next-right {
 div.prev-next-left {
     display: inline-block;
 }
+
