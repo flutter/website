@@ -8,10 +8,6 @@ permalink: /setup/
 This guide describes how to set up your development environment to run Flutter apps on
 iOS or Android.
 
-New to GitHub? First [install the software](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){: alert-link}
-and read [this introduction](https://guides.github.com/activities/hello-world/){: alert-link}.
-{: .alert-info}
-
 ## Checklist
 To start coding Flutter apps, you'll need to perform all the tasks marked Required in this checklist.
 The remaining tasks can be deferred until later in the development cycle, when you're ready
@@ -51,7 +47,7 @@ inline error checking, and visual debugging features.
 To install and run Flutter, your development environment must meet these minimum requirements:
 
 * **Operating Systems**: Mac or Linux (64-bit). Windows support is [in progress](https://github.com/flutter/flutter/issues/138).
-* **Disk Space**: 710 MB on Mac, 558 MB on Linux (does not include disk space for Xcode or Android Studio).
+* **Disk Space**: 700 MB on Mac, 600 MB on Linux (does not include disk space for Xcode or Android Studio).
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
@@ -64,11 +60,6 @@ To install and run Flutter, your development environment must meet these minimum
    $ export PATH=`pwd`/flutter/bin:$PATH
    ```
 
-   where `pwd` is the current working directory, for example:
-   ```
-   $ export PATH=/Users/obiwan/flutter/bin:$PATH
-   ```
-
    The above command sets your PATH variable temporarily, for the current terminal window.
    The steps for modifying this variable permanently for all terminal sessions are machine-
    specific. Typically you add a line to a file that is executed whenever you open 
@@ -77,8 +68,8 @@ To install and run Flutter, your development environment must meet these minimum
    ```
    export PATH=~/flutter/bin
    ```
-and then run the `source <filename>` command to refresh the window. For example on Linux, 
-you might edit and source `~/.bash_profile`. On macOS, it might be `/etc/bashrc`.
+   and then run the `source <filename>` command to refresh the window. For example, 
+   edit and source `~/.bash_profile`.
 
 1. Verify that the `flutter/bin` directory is now in your PATH by running:
    ```
@@ -107,14 +98,13 @@ the setup:
       Download brew at http://brew.sh/.
    ```
 
-   The first time you run the `flutter` command, it downloads its dependencies and compiles
+   The first time you run the `flutter` command, it downloads its own dependencies and compiles
 itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
 You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
 are availabile for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
 for the steps to install the Flutter and Dart plugins.
-
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
@@ -214,16 +204,21 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
 1. Install [Android Studio](https://developer.android.com/studio/index.html).
 
    Flutter requires the latest Android SDK and Android SDK Platform-Tools packages.
-In Android Studio, you can verify these are up-to-date, as described in [Update the IDE and SDK Tools](https://developer.android.com/studio/intro/update.html).
+   You can verify these are up-to-date in **Android Studio>Configure>SDK Manager**,
+   as described in [Update the IDE and SDK Tools](https://developer.android.com/studio/intro/update.html).
 
 1. Add the bundled JDK directory to your PATH variable. For example, on macOS:
    ```
    $ export PATH=/Users/obiwan/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH
    ```
-   or on Linux:
+   On Linux:
    ```
    $ export PATH=~/Android-Studio/jre/bin:$PATH
    ```
+   The above command sets your PATH variable temporarily, for the current terminal window.
+   The steps for modifying this variable permanently for all terminal sessions are machine-specific. 
+   For details, see [Get the Flutter SDK](#get-the-flutter-sdk).
+
 1. Start Android Studio.
 
 ### Set up your Android device
