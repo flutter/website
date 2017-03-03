@@ -5,7 +5,7 @@ sidebar: home_sidebar
 permalink: /intellij-setup/
 ---
 
-This page describes how to set up IntelliJ IDE to develop Flutter apps.
+This page describes how to set up an IntelliJ IDE to develop Flutter apps.
 
 * TOC Placeholder
 {:toc}
