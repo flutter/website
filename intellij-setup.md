@@ -5,7 +5,7 @@ sidebar: home_sidebar
 permalink: /intellij-setup/
 ---
 
-This page describes how to set up IntelliJ IDE to develop Flutter apps.
+This page describes how to set up an IntelliJ IDE to develop Flutter apps.
 
 * TOC Placeholder
 {:toc}
@@ -28,23 +28,29 @@ Android Studio (and various other JetBrains editors) is currently not supported.
 
 ### Installing the plugins
 
-We provide two plugins:
+To use IntelliJ with Flutter, you need two plugins:
 
-  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.).
   * The `Flutter` plugin powers Flutter developer workflows (running, debugging, hot reload, etc.).
+  * The `Dart` plugin offers code analysis (code validation as you type, code completions, etc.).
+
+When you install the Flutter plugin, if the Dart plugin is not already present IntelliJ
+installs it for you.
 
 To install the plugins:
 
-1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux)
-1. Select **"Browse repositories…"**
-1. Search for `'dart'`, select the Dart plug-in and click `install` (do not restart yet).
-  *  Note: this is pre-installed in WebStorm.
-1. Search for `'flutter'`,  select the Flutter plug-in and click `install`. 
+1. Start IntelliJ.
+1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux).
+1. Select **Browse repositories…**,  select the Flutter plug-in and click `install`.
+1. Click `Yes` when prompted to install the Dart plugin.
 1. Click `Restart IntelliJ IDEA`.
 
-### Configuring the plugins
+After restarting, the Dart and Flutter plugins should both display in the left
+navigation panel when you create a new project.
 
-1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux)
-1. Select **Languages & Frameworks>Flutter**
-1. Enter, or browse to, your Flutter SDK directory path in **Flutter SDK path**
+### Configuring the Flutter plugin
+
+1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux).
+1. Select **Languages & Frameworks>Flutter**.
+1. Enter or browse to your Flutter SDK directory in **Flutter SDK path**. This is the top-level `flutter`
+   directory, without the `bin` subdirectory. For example, `/Users/obiwan/flutter`.
 1. Click **OK**
