@@ -138,7 +138,7 @@ or it changes over time (perhaps a data feed causes the UI to update).
 examples of stateful widgets, which subclass
 [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
 
-<a name="stateful-widget-pattern-1"></a>
+<a name="creating-stateful-widget"></a>
 ## Creating a stateful widget
 
 <div class="panel" markdown="1">
