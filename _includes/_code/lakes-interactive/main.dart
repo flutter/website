@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // Uncomment lines 3 and 6 to view the visual layout at runtime.
-import 'package:flutter/rendering.dart';
+//import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
   //debugPaintSizeEnabled = true;
@@ -20,11 +20,11 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     setState(() {
       // If the lake is currently favorited, unfavorite it.
       if (_isFavorited) {
-        _favoriteCount--;
+        _favoriteCount -= 1;
         _isFavorited = false;
         // Otherwise, favorite it.
       } else {
-        _favoriteCount++;
+        _favoriteCount += 1;
         _isFavorited = true;
       }
     });

@@ -79,8 +79,10 @@ class _TapboxCState extends State<TapboxC> {
       onTapCancel: handleTapCancel,
       child: new Container(
         child: new Center(
-          child: new Text(config.active ? 'Active' : 'Inactive',
-              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+          child: new Text(
+            config.active ? 'Active' : 'Inactive',
+            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+          ),
         ),
         width: 200.0,
         height: 200.0,
