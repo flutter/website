@@ -11,15 +11,15 @@ void main() {
 
 class ParentWidget extends StatefulWidget {
   @override
-  ParentWidgetState createState() => new ParentWidgetState();
+  _ParentWidgetState createState() => new _ParentWidgetState();
 }
 
-class ParentWidgetState extends State<ParentWidget> {
-  bool active = false;
+class _ParentWidgetState extends State<ParentWidget> {
+  bool _active = false;
 
   void handleTapboxChanged(bool newValue) {
     setState(() {
-      active = newValue;
+      _active = newValue;
     });
   }
 
@@ -27,7 +27,7 @@ class ParentWidgetState extends State<ParentWidget> {
   Widget build(BuildContext context) {
     return new Container(
       child: new TapboxB(
-        active: active,
+        active: _active,
         onChanged: handleTapboxChanged,
       ),
     );
@@ -52,8 +52,10 @@ class TapboxB extends StatelessWidget {
       onTap: handleTap,
       child: new Container(
         child: new Center(
-          child: new Text(active ? 'Active' : 'Inactive',
-              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+          child: new Text(
+            active ? 'Active' : 'Inactive',
+            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+          ),
         ),
         width: 200.0,
         height: 200.0,

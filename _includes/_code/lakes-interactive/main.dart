@@ -9,23 +9,23 @@ void main() {
 
 class FavoriteWidget extends StatefulWidget {
   @override
-  FavoriteWidgetState createState() => new FavoriteWidgetState();
+  _FavoriteWidgetState createState() => new _FavoriteWidgetState();
 }
 
-class FavoriteWidgetState extends State<FavoriteWidget> {
-  bool isFavorited = true;
-  int favoriteCount = 41;
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
 
   void toggleFavorite() {
     setState(() {
       // If the lake is currently favorited, unfavorite it.
-      if (isFavorited) {
-        favoriteCount--;
-        isFavorited = false;
+      if (_isFavorited) {
+        _favoriteCount--;
+        _isFavorited = false;
         // Otherwise, favorite it.
       } else {
-        favoriteCount++;
-        isFavorited = true;
+        _favoriteCount++;
+        _isFavorited = true;
       }
     });
   }
@@ -38,7 +38,7 @@ class FavoriteWidgetState extends State<FavoriteWidget> {
         new Container(
           padding: new EdgeInsets.all(0.0),
           child: new IconButton(
-            icon: (isFavorited
+            icon: (_isFavorited
                 ? new Icon(Icons.star)
                 : new Icon(Icons.star_border)),
             color: Colors.red[500],
@@ -48,7 +48,7 @@ class FavoriteWidgetState extends State<FavoriteWidget> {
         new SizedBox(
           width: 18.0,
           child: new Container(
-            child: new Text('$favoriteCount'),
+            child: new Text('$_favoriteCount'),
           ),
         ),
       ],
@@ -135,9 +135,6 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
     );
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Top Lakes'),

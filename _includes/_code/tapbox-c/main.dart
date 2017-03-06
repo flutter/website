@@ -9,15 +9,15 @@ void main() {
 
 class ParentWidget extends StatefulWidget {
   @override
-  ParentWidgetState createState() => new ParentWidgetState();
+  _ParentWidgetState createState() => new _ParentWidgetState();
 }
 
-class ParentWidgetState extends State<ParentWidget> {
-  bool active = false;
+class _ParentWidgetState extends State<ParentWidget> {
+  bool _active = false;
 
   void handleTapboxChanged(bool newValue) {
     setState(() {
-      active = newValue;
+      _active = newValue;
     });
   }
 
@@ -25,7 +25,7 @@ class ParentWidgetState extends State<ParentWidget> {
   Widget build(BuildContext context) {
     return new Container(
       child: new TapboxC(
-        active: active,
+        active: _active,
         onChanged: handleTapboxChanged,
       ),
     );
@@ -41,27 +41,27 @@ class TapboxC extends StatefulWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  TapboxCState createState() => new TapboxCState();
+  _TapboxCState createState() => new _TapboxCState();
 }
 
-class TapboxCState extends State<TapboxC> {
-  bool highlight = false;
+class _TapboxCState extends State<TapboxC> {
+  bool _highlight = false;
 
   void handleTapDown(TapDownDetails details) {
     setState(() {
-      highlight = true;
+      _highlight = true;
     });
   }
 
   void handleTapUp(TapUpDetails details) {
     setState(() {
-      highlight = false;
+      _highlight = false;
     });
   }
 
   void handleTapCancel() {
     setState(() {
-      highlight = false;
+      _highlight = false;
     });
   }
 
@@ -87,7 +87,7 @@ class TapboxCState extends State<TapboxC> {
         decoration: new BoxDecoration(
           backgroundColor:
               config.active ? Colors.lightGreen[700] : Colors.grey[600],
-          border: highlight
+          border: _highlight
               ? new Border.all(
                   color: Colors.teal[700],
                   width: 10.0,
@@ -106,9 +106,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Flutter Demo'),

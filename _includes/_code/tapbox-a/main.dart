@@ -9,18 +9,21 @@ void main() {
 
 // TapboxA manages its own state.
 
+//------------------------- TapboxA ----------------------------------
+
 class TapboxA extends StatefulWidget {
   TapboxA({Key key}) : super(key: key);
 
-  TapboxAState createState() => new TapboxAState();
+  @override
+  _TapboxAState createState() => new _TapboxAState();
 }
 
-class TapboxAState extends State<TapboxA> {
-  bool active = false;
+class _TapboxAState extends State<TapboxA> {
+  bool _active = false;
 
   void handleTap() {
     setState(() {
-      active = !active;
+      _active = !_active;
     });
   }
 
@@ -29,27 +32,28 @@ class TapboxAState extends State<TapboxA> {
       onTap: handleTap,
       child: new Container(
         child: new Center(
-          child: new Text(active ? 'Active' : 'Inactive',
-              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+          child: new Text(
+            _active ? 'Active' : 'Inactive',
+            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+          ),
         ),
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor: active ? Colors.lightGreen[700] : Colors.grey[600],
+          backgroundColor: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
   }
 }
 
+//------------------------- MyApp ----------------------------------
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Flutter Demo'),
