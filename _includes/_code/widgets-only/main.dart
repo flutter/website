@@ -1,3 +1,7 @@
+// Copyright 2017 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 // This app doesn't use any material widgets, such as Scaffold.
 // Normally, an app that doesn't use Scaffold has a black background
 // and the default text color is black. This app changes its background
