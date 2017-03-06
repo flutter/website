@@ -1,5 +1,5 @@
-name: lakes
-description: Demonstrates building a layout for the "Lakes" app.
+name: lakes_interactive
+description: Demonstrates adding interactivity to the "Lakes" app.
 
 dependencies:
   flutter:
