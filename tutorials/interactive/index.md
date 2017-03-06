@@ -5,18 +5,6 @@ sidebar: home_sidebar
 permalink: /tutorials/interactive/
 ---
 
-{% comment %}
-TODO:
-
-* Restore _private variables in tapbox examples.
-* Add the following examples to the GitHub repo, and update all links
-  * lakes-interactive
-  * tapbox-a
-  * tapbox-b
-  * tapbox-c
-{% endcomment %}
-
-
 <div class="panel" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
@@ -35,21 +23,25 @@ non-interactive widgets.  Specifically, you'll modify an icon to make
 it tappable.  To accomplish this, you'll create a custom stateful widget
 that manages two stateless widgets.
 
+<a name="note"></a>
 <aside class="alert alert-info" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Note:**
 If you haven't already built a layout in
 [Building Layouts in Flutter](/tutorials/layout/),
 prepare for this tutorial as folllows:
 
-* Make sure you have [set up](https://flutter.io/setup/) your environment.
+* Make sure you've [set up](https://flutter.io/setup/) your environment.
 * [Create a basic Flutter
   app.](https://flutter.io/getting-started/#creating-your-first-flutter-app)
-* Replace the `lib/main.dart` file with [`lib/main.dart` from
-  GitHub](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart).
-* Replace the `pubspec.yaml` file with the [pubspec from
-  GitHub.](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
-* Create an `images` directory in your project, and add [`lakes.jpg` from
-  GitHub.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
+* Replace the `lib/main.dart` file with
+  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
+  from GitHub.
+* Replace the `pubspec.yaml` file with the
+  [pubspec](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+  from GitHub.
+* Create an `images` directory in your project, and add
+  [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
+  from GitHub.
 
 Once you have a connected and enabled device, or you've launched the
 [iOS simulator](/setup/#set-up-the-ios-simulator) (part of the Flutter install),
@@ -75,13 +67,10 @@ The following shows both states.
 
 To accomplish this, you'll create a single custom widget that includes both the
 star and and the count. Tapping the star changes state for both widgets,
-so it works best for the same widget to manage both.
+so the same widget should manage both.
 
-You can find the starting code for the Lakes example here:
-
-* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
-* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
-* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
+If you don't already have the starting code for the Lakes example,
+get it from the links in the blue [**Note**](#note) box.
 
 ### Contents
 
@@ -109,37 +98,40 @@ You can find the starting code for the Lakes example here:
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * All widgets are either stateful or stateless.
-* A stateless widget's appearance never changes.
-* A _stateful_ widget's appearance may change because the user interacted
-  with it, or perhaps the UI updates based on a data feed.
-* All widgets are _immutable_, meaning once created they cannot change.
-* A State object manages a stateful widget's state.
-* When a widget's appearance changes, a new widget is created to reflect the
-  change, but the State object allows the widget's state to persist.
-* You don't need to worry about abandoned widgets&mdash;the garbage
-  collector (GC) takes care of those.
-* Typically, the State object is managed by the widget itself, the parent
+* _State_ means information about a widget that might change.
+  A checkbox's state, for example, would probably
+  include a boolean indicating whether it's currently checked.
+* If a widget changes based on user interaction, or as the result of a
+  data feed (for example), it's _stateful_.
+* All widgets should be _immutable_, meaning once created they cannot change.
+* Being immutable is fine for a stateless widget, because its appearance
+  never changes.
+* When a stateful widget changes (its slider moved, for example),
+  the widget needs to rebuild in order to update the UI.
+* A _State_ object holds the changeable information for a stateful widget,
+  separating the widget's state from its appearance.
+* The class managing the state object tells the widget to update the UI by
+  calling `setState`.
+* Typically, the state object is managed by the widget itself, the parent
   widget, or some combination.
-* The widget's implementation determines who manages the state.
+* How the widget is implemented determines who manages its state.
 
 </div>
 
 There are two kinds of widgets, stateful and stateless.
 
 A _stateless_ widget informs the user, or makes the UI look more attractive.
-The user doesn't interact with a stateless widget, though a custom stateful
-widget might own stateless widgets.
+A stateless widget has no internal state to manage.
 [Icon,](https://docs.flutter.io/flutter/material/Icon-class.html)
-[IconButton,](https://docs.flutter.io/flutter/material/IconButton-class.html)
 [Image,](https://docs.flutter.io/flutter/widgets/Image-class.html) and
 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
 [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
-A _stateful_ widget is dynamic. The user can interact with it
+A _stateful_ widget is dynamic and can have state that lives beyond the
+life of the widget itself. The user can interact with a stateful widget
 (by moving a slider, or checking a box, for example),
-or it changes over time (the UI updates as a result of a data feed,
-for example).
+or it changes over time (perhaps a data feed causes the UI to update).
 [Checkbox,](https://docs.flutter.io/flutter/material/Checkbox-class.html)
 [Radio,](https://docs.flutter.io/flutter/material/Radio-class.html) and
 [Slider](https://docs.flutter.io/flutter/material/Slider-class.html) are
@@ -154,8 +146,10 @@ examples of stateful widgets, which subclass
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * To create a custom stateful widget, subclass StatefulWidget and State.
-* The State object manages the widget's state.
-* Calling `setState()` updates the widget's UI.
+* The State object contains the widget's state, and the widget's `build()`
+  method.
+* The object managing the widget's state calls `setState()`,
+  telling the framework to redraw the widget.
 
 </div>
 
@@ -167,21 +161,21 @@ and Text.
 
 A custom stateful widget requires creating two classes:
 
-1. A subclass of StatefulWidget that defines the widgets and describes how to
-   draw them in its `build()` method.
-2. A subclass of State that manages state for that widget.
+1. A subclass of StatefulWidget that defines the widget.
+2. A subclass of State contains the state for that widget and defines
+   the widget's `build()` method.
 
-This section shows you how to build a stateful widget, called FavoriteWidget,
-for the Lakes app. The first step is choosing who manages the State object.
+This section shows you how to build a StatefulWidget, called FavoriteWidget,
+for the Lakes app. The first step is choosing how the State is managed.
 
 <a name="step-1"></a>
 ### Step 1: Decide who manages the widget's state
 
 There are different approaches to managing a widget's state, but in our example
 the widget itself, FavoriteWidget, will manage its own state.
-Toggling the star is an isolated action that doesn't affect the parent widget
-or the rest of the UI, so it makes sense for the widget to handle its state
-internally.
+In this example, toggling the star is an isolated action that doesn't
+affect the parent widget or the rest of the UI,
+so the widget can handle its state internally.
 
 Learn more about the separation of widget and state,
 and how state might be managed, in [Managing state](#managing-state).
@@ -189,40 +183,53 @@ and how state might be managed, in [Managing state](#managing-state).
 <a name="step-2"></a>
 ### Step 2: Subclass StatefulWidget
 
-The FavoriteWidget subclass only needs to override the `createState` method,
-which is called when the framework wants to build the widget.
-The `createState` function creates an instance of
-FavoriteWidgetState, which you'll implement in the next step.
+The FavoriteWidget class manages its own state, so it overrides
+`createState` to create the State object.
+The framework calls `createState` when it wants to build the widget.
+In this example, `createState` creates an instance of _FavoriteWidgetState,
+which you'll implement in the next step.
 
 <!-- _code/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class FavoriteWidget extends StatefulWidget {
   @override
-  FavoriteWidgetState createState() => new FavoriteWidgetState();
+  _FavoriteWidgetState createState() => new _FavoriteWidgetState();
 }
 {% endprettify %}
+
+<aside class="alert alert-info" markdown="1">
+**Note:**
+Variables or classes that start with an underscore (_) are private.
+For more information, see [Libraries and
+visibility,](https://www.dartlang.org/guides/language/language-tour#libraries-and-visibility)
+a section the
+[Dart language tour.](https://www.dartlang.org/guides/language/language-tour)
+</aside>
 
 <a name="step-3"></a>
 ### Step 3: Subclass the State object
 
-The custom State class stores the mutable information&mdash;the logic and internal
-state that can change over the lifetime of the widget. When the app first launches,
-the UI displays a solid red star, indicating that the lake has "favorite" status,
-and has a total of 41 “likes”. The State object stores this information in the
+The custom State class stores the mutable information&mdash;the logic and
+internal state that can change over the lifetime of the widget.
+When the app first launches, the UI displays a solid red star,
+indicating that the lake has "favorite" status, and has a total of 41 “likes”.
+The State object stores this information in the
 `_isFavorited` and `_favoriteCount` variables.
 
-The widget’s `build` method creates a packed row containing a red IconButton,
-and Text.  The widget uses
+The state object also defines the `build` method. This `build` method
+creates a row containing a red IconButton, and Text.  The widget uses
 [IconButton,](https://docs.flutter.io/flutter/material/IconButton-class.html)
-instead of Icon, because its `onPressed` property defines the callback method
-for handling a tap. The `icon` property holds the Icon.
+(instead of Icon), because it has an `onPressed` property that
+defines the callback method for handling a tap.
+IconButton also has an `icon` property that holds the Icon.
 
 The `toggleFavorite()` method, which is called when the IconButton is pressed,
 calls `setState`. Calling `setState` is critical, because this tells
 the framework that the widget’s state has changed and the widget
 should redraw. The `toggleFavorite` function swaps the UI between
-1) a star icon and the number ‘41’, and 2) a star_border icon and the number ‘40’.
+1) a star icon and the number ‘41’, and
+2) a star_border icon and the number ‘40’.
 
 <!-- _code/lakes-interactive/main.dart -->
 <!-- skip -->
@@ -320,9 +327,6 @@ class MyApp extends StatelessWidget {
 
 <br>That's it! When you hot reload the app, the star icon should now respond to taps.
 
-The rest of this page covers several ways a widget's state can be managed,
-and lists other available interactive widgets.
-
 ### Problems?
 
 If you can't get your code to run, look in your IDE for possible errors.
@@ -330,12 +334,16 @@ If you can't get your code to run, look in your IDE for possible errors.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
-* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
-* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)&mdash;no changes to this file
-* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)&mdash;no changes to this file
+* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/main.dart)
+* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
+* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
-[PENDING: once the lakes-interactive example has been added to the GitHub repo,
-updated these links.]
+Refer to [Get support](/#get-support) if you still have questions.
+
+---
+
+The rest of this page covers several ways a widget's state can be managed,
+and lists other available interactive widgets.
 
 <a name="managing-state"></a>
 ## Managing state
@@ -361,6 +369,8 @@ widget to be used. Here are the most common ways to manage state:
 * [A mix-and-match approach](#mix-and-match)
 
 {% comment %}
+NOTE: Commenting this out for now. The example needs some updates.
+
 First, fix TapboxD, add it back to the repo, and then restore this note.
 <aside class="alert alert-info" markdown="1">
 **Note:** You can also manage state by exporting the state to a model class
@@ -370,7 +380,8 @@ same state information.
 
 Explaining this approach is beyond the scope of this tutorial,
 but you can try it out using the TapboxD example on GitHub.
-The only file you need is [lib/main.dart]().
+The only file you need is
+[lib/main.dart]().
 [PENDING: Add a link once it's up on the site.]
 </aside>
 {% endcomment %}
@@ -379,22 +390,18 @@ How do you decide which approach to use?
 
 The general rule of thumb is that the parent widget should manage the
 state until it becomes too much of a burden. If there is any state
-that isn't particularly relevant to the parent, perhaps offload that to the child widget.
-For example, maybw you have a widget that randomly changes colors and the
-colors have no semantic meaning&mdash;that state can be offloaded to the stateful
-widget itself.
-But, usually, if a user interacts with a widget, that state should be exported up
-to the parent so the parent can take appropriate action.
-{% comment %}
-It's not unlike designing API: some state is private and useful only
-to the implementation, and some state is public.
-{% endcomment %}
+that isn't particularly relevant to the parent, perhaps offload that to the
+child widget.  For example, maybe you have a widget that randomly changes
+colors and the colors have no semantic meaning&mdash;that state can be
+offloaded to the stateful widget itself.
+But, usually, if a user interacts with a widget, that state should be
+exported up to the parent so the parent can take appropriate action.
 
-We'll give examples of the different ways of managing state by creating three simple
-examples: TapboxA, TapboxB, and TapboxC.
+We'll give examples of the different ways of managing state by creating three
+simple examples: TapboxA, TapboxB, and TapboxC.
 The examples all work similarly&mdash;each creates a container that,
 when tapped, toggles between a green or grey box.
-The `active` boolean determines the color: green for active or
+The `_active` boolean determines the color: green for active or
 grey for inactive.
 
 <img src="images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
@@ -419,7 +426,7 @@ The _TapboxAState class:
 * Defines the `_active` boolean which determines the box's current color.
 * Defines the `handleTap()` function, which updates `_active` when the box is
   tapped and calls the `setState()` function to update the UI.
-* Implements all of the interactive behavior for the widget.
+* Implements all interactive behavior for the widget.
 
 <!-- _code/lakes-interactive/main.dart -->
 <!-- skip -->
@@ -484,17 +491,15 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-**Dart code:**  [`lib/main.dart`]()
-
-[PENDING: once the tapbox-a example has been added to the GitHub repo,
-updated this link.]
+**Dart code:**
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-a/main.dart)
 
 <hr>
 
 <a name="parent-managed"></a>
 ### The parent widget manages the widget's state
 
-Sometimes, it makes the most sense for the parent widget to manage the state
+Often it makes the most sense for the parent widget to manage the state
 and tell its child widget when to update. For example,
 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)
 allows you to treat an icon as a tappable button.
@@ -515,7 +520,7 @@ The ParentWidgetState class:
 The TapboxB class:
 
 * Extends StatelessWidget because all state is handled by its parent.
-* When a tap is detected, that information is passed up to the parent.
+* When a tap is detected, it notifies the parent.
 
 <!-- _code/tapbox-b/main.dart -->
 <!-- skip -->
@@ -583,10 +588,8 @@ class TapboxB extends StatelessWidget {
 }
 {% endprettify %}
 
-**Dart code:**  [`lib/main.dart`]()
-
-[PENDING: once the tapbox-b example has been added to the GitHub repo,
-updated this link.]
+**Dart code:**
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-b/main.dart)
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -611,28 +614,29 @@ and the parent widget manages other aspects of the state.
 In the TapboxC example, on tap down, a dark green border appears around the box.
 On tap up, the border disappears and the box's color changes.
 TapboxC exports its `_active` state to its parent but
-manages its color state internally.
+manages its `_highlight` state internally.
+This example has two State objects, _ParentWidgetState and _TapboxCState.
 
-The _ParentWidgetState class
+The _ParentWidgetState object:
 
 * Manages the `_active` state.
 * Implements `handleTapboxChanged()`, the method called when the box is tapped.
 * Calls `setState` to update the UI when a tap occurs and the `_active`
   state changes.
 
-The _TapboxCState class
+The _TapboxCState object:
 
 * Manages the `_highlight` state.
 * The GestureDetector listens to all tap events.
   As the user taps down, it adds the highlight
   (implemented as a dark green border).
-  As the user releases the tap, removes the highlight.
+  As the user releases the tap, it removes the highlight.
 * Calls `setState` to update the UI on tap down, tap up, or tap cancel, and
   the `_highlight` state changes.
 * On a tap event, passes that state change to the parent widget to take
-  appropriate action.
-* Uses the [config](https://docs.flutter.io/flutter/widgets/State/config.html)
-  property to access state from the stateful widget.
+  appropriate action using the
+  [config](https://docs.flutter.io/flutter/widgets/State/config.html)
+  property.
 
 <!-- _code/tapbox-c/main.dart -->
 <!-- skip -->
@@ -732,18 +736,15 @@ class _TapboxCState extends State<TapboxC> {
 }
 {% endprettify %}
 
-Another implementation might have flipped the two around and exported the
-highlight state to the parent while keeping the value state internal,
-but if you asked someone to use that tap box, they'd probably complain
-that it doesn't make much sense. The developer cares about changing a
-boolean value used to update the UI.
-The developer doesn't care about how the highlighting is managed,
+An alternate implementation might have exported the highlight state to the
+parent while keeping the active state internal,
+but if you asked someone to use that tap box, they'd probably complain that
+it doesn't make much sense. The developer cares whether the box is active.
+The developer probably doesn't care how the highlighting is managed,
 and prefers that the tap box handles those details.
 
-**Dart code:**  [`lib/main.dart`]()
-
-[PENDING: once the tapbox-c example has been added to the GitHub repo,
-updated this link.]
+**Dart code:**
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-c/main.dart)
 
 <hr>
 
