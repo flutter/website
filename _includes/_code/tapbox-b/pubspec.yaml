@@ -1,0 +1,9 @@
+name: tapbox_b
+description: Demonstrates a stateful widget whose parent manages its state.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
