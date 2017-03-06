@@ -1,7 +1,11 @@
+// Copyright 2017 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 // Use the iOS device iPad Pro in the Simulator and turn it horizontally.
 
 import 'package:flutter/material.dart';
-// Uncomment lines 5 and 8 to view the visual layout at runtime.
+// Uncomment lines 9 and 12 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {

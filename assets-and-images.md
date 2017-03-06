@@ -103,8 +103,8 @@ approach enables a parent widget to substitute a different AssetBundle
 at run time, which can be useful for localization or testing
 scenarios.
 
-Typically, you'll use `DefaultAssetBundle.of()` to indirectly load a
-JSON file asset from the app's runtime `rootBundle`.
+Typically, you'll use `DefaultAssetBundle.of()` to indirectly load an
+asset, for example a JSON file, from the app's runtime `rootBundle`.
 
 {% comment %}
 
@@ -113,8 +113,9 @@ JSON file asset from the app's runtime `rootBundle`.
 
 {% endcomment %}
 
-Or, use `rootBundle` to directly load a JSON file asset that was
-specified at build time, for example:
+Outside of a Widget context, or when a handle to an AssetBundle is not
+available, you can use `rootBundle` to directly load such assets, 
+for example:
 
 ```dart
 import 'dart:async' show Future;
@@ -125,7 +126,7 @@ Future<String> loadAsset() async {
 }
 ```
 
-### Loading image images
+### Loading images
 
 Flutter can load resolution-appropriate images for the current device
 pixel ratio.
@@ -186,11 +187,6 @@ Widget build(BuildContext context) {
   // ...
 }
 ```
-
-The way this works is through an object called
-[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
-established at the top of the build tree. AssetImage fetches an image from an
-AssetBundle, based on the context.
 
 Anything using the default asset bundle will inherit resolution
 awareness when loading images. (If you work with some of the lower
