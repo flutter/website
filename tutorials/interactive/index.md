@@ -136,13 +136,13 @@ examples of stateful widgets, which subclass
   StatefulWidget and State.
 * The State object contains the widget's state, and the widget's `build()`
   method.
-* The object managing the widget's state calls `setState()`,
+* The state object calls `setState()`,
   telling the framework to redraw the widget.
 
 </div>
 
 In this section, you'll create a custom stateful widget.
-You'll be replacing two stateless widgets,
+You'll replace two stateless widgets,
 the solid red star and the numeric count next to it, with a single custom
 stateful widget that manages a row with two children widgets: an IconButton
 and Text.
