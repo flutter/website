@@ -111,8 +111,8 @@ Some layout widgets are stateful and some are stateless.
 
 A _stateless_ widget has no internal state to manage.
 [Icon,](https://docs.flutter.io/flutter/material/Icon-class.html)
-[IconButton,](https://docs.flutter.io/flutter/widgets/IconButton-class.html) and
-[Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
+[IconButton,](https://docs.flutter.io/flutter/material/IconButton-class.html)
+and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
 [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
