@@ -27,7 +27,7 @@ that manages two stateless widgets.
 <i class="fa fa-lightbulb-o"> </i> **Note:**
 If you haven't already built a layout in
 [Building Layouts in Flutter](/tutorials/layout/),
-prepare for this tutorial as folllows:
+prepare for this tutorial as follows:
 
 * Make sure you've [set up](https://flutter.io/setup/) your environment.
 * [Create a basic Flutter
@@ -134,7 +134,7 @@ examples of stateful widgets, which subclass
 
 * To create a custom stateful widget, subclass two classes:
   StatefulWidget and State.
-* The State object contains the widget's state, and the widget's `build()`
+* The state object contains the widget's state, and the widget's `build()`
   method.
 * The state object calls `setState()`,
   telling the framework to redraw the widget.
@@ -202,7 +202,7 @@ The custom State class stores the mutable information&mdash;the logic and
 internal state that can change over the lifetime of the widget.
 When the app first launches, the UI displays a solid red star,
 indicating that the lake has "favorite" status, and has a total of 41 “likes”.
-The State object stores this information in the
+The state object stores this information in the
 `_isFavorited` and `_favoriteCount` variables.
 
 The state object also defines the `build` method. This `build` method
