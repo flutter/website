@@ -25,7 +25,7 @@ class TapboxA extends StatefulWidget {
 class _TapboxAState extends State<TapboxA> {
   bool _active = false;
 
-  void handleTap() {
+  void _handleTap() {
     setState(() {
       _active = !_active;
     });
@@ -33,7 +33,7 @@ class _TapboxAState extends State<TapboxA> {
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: handleTap,
+      onTap: _handleTap,
       child: new Container(
         child: new Center(
           child: new Text(

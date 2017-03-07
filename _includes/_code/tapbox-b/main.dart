@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 void main() {
   runApp(new MyApp());
@@ -21,7 +21,7 @@ class ParentWidget extends StatefulWidget {
 class _ParentWidgetState extends State<ParentWidget> {
   bool _active = false;
 
-  void handleTapboxChanged(bool newValue) {
+  void _handleTapboxChanged(bool newValue) {
     setState(() {
       _active = newValue;
     });
@@ -32,7 +32,7 @@ class _ParentWidgetState extends State<ParentWidget> {
     return new Container(
       child: new TapboxB(
         active: _active,
-        onChanged: handleTapboxChanged,
+        onChanged: _handleTapboxChanged,
       ),
     );
   }
@@ -47,13 +47,13 @@ class TapboxB extends StatelessWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  void handleTap() {
+  void _handleTap() {
     onChanged(!active);
   }
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: handleTap,
+      onTap: _handleTap,
       child: new Container(
         child: new Center(
           child: new Text(

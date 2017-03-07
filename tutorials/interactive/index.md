@@ -23,8 +23,7 @@ non-interactive widgets.  Specifically, you'll modify an icon to make
 it tappable.  To accomplish this, you'll create a custom stateful widget
 that manages two stateless widgets.
 
-<a name="note"></a>
-<aside class="alert alert-info" markdown="1">
+<aside id="note" class="alert alert-info" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Note:**
 If you haven't already built a layout in
 [Building Layouts in Flutter](/tutorials/layout/),
@@ -40,8 +39,7 @@ prepare for this tutorial as folllows:
   [pubspec](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
-  [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
-  from GitHub.
+  [`lakes.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the
 [iOS simulator](/setup/#set-up-the-ios-simulator) (part of the Flutter install),
@@ -50,7 +48,7 @@ you are good to go!
 
 
 In [Building Layouts for Flutter](https://flutter.io/tutorials/layout/),
-we showed how to create the layout for the followng screenshot.
+we showed how to create the layout for the following screenshot.
 
 <img src="images/lakes.png" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
@@ -97,39 +95,28 @@ get it from the links in the blue [**Note**](#note) box.
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* All widgets are either stateful or stateless.
-* _State_ means information about a widget that might change.
-  A checkbox's state, for example, would probably
-  include a boolean indicating whether it's currently checked.
-* If a widget changes based on user interaction, or as the result of a
-  data feed (for example), it's _stateful_.
-* All widgets should be _immutable_, meaning once created they cannot change.
-* Being immutable is fine for a stateless widget, because its appearance
-  never changes.
-* When a stateful widget changes (its slider moved, for example),
-  the widget needs to rebuild in order to update the UI.
-* A _State_ object holds the changeable information for a stateful widget,
-  separating the widget's state from its appearance.
-* The class managing the state object tells the widget to update the UI by
-  calling `setState`.
-* Typically, the state object is managed by the widget itself, the parent
-  widget, or some combination.
-* How the widget is implemented determines who manages its state.
+* Some layout widgets are stateful and some are stateless.
+* If a widget changes&mdash;the user interacts with it,
+  for example&mdash;it's _stateful_.
+* A widget's state consists of values that may change, like a slider's
+  current value, or whether a checkbox is checked.
+* A widget's state is stored in a State object, separating the widget's
+  state from its appearance.
+* When the widget's state changes, the state object calls
+  `setState`, telling the framework to redraw the widget.
 
 </div>
 
-There are two kinds of widgets, stateful and stateless.
+Some layout widgets are stateful and some are stateless.
 
-A _stateless_ widget informs the user, or makes the UI look more attractive.
-A stateless widget has no internal state to manage.
+A _stateless_ widget has no internal state to manage.
 [Icon,](https://docs.flutter.io/flutter/material/Icon-class.html)
-[Image,](https://docs.flutter.io/flutter/widgets/Image-class.html) and
+[IconButton,](https://docs.flutter.io/flutter/widgets/IconButton-class.html) and
 [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
 [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
-A _stateful_ widget is dynamic and can have state that lives beyond the
-life of the widget itself. The user can interact with a stateful widget
+A _stateful_ widget is dynamic. The user can interact with a stateful widget
 (by moving a slider, or checking a box, for example),
 or it changes over time (perhaps a data feed causes the UI to update).
 [Checkbox,](https://docs.flutter.io/flutter/material/Checkbox-class.html)
@@ -145,7 +132,8 @@ examples of stateful widgets, which subclass
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* To create a custom stateful widget, subclass StatefulWidget and State.
+* To create a custom stateful widget, subclass two classes:
+  StatefulWidget and State.
 * The State object contains the widget's state, and the widget's `build()`
   method.
 * The object managing the widget's state calls `setState()`,
@@ -224,10 +212,10 @@ creates a row containing a red IconButton, and Text.  The widget uses
 defines the callback method for handling a tap.
 IconButton also has an `icon` property that holds the Icon.
 
-The `toggleFavorite()` method, which is called when the IconButton is pressed,
+The `_toggleFavorite()` method, which is called when the IconButton is pressed,
 calls `setState`. Calling `setState` is critical, because this tells
 the framework that the widget’s state has changed and the widget
-should redraw. The `toggleFavorite` function swaps the UI between
+should redraw. The `_toggleFavorite` function swaps the UI between
 1) a star icon and the number ‘41’, and
 2) a star_border icon and the number ‘40’.
 
@@ -236,17 +224,17 @@ should redraw. The `toggleFavorite` function swaps the UI between
 {% prettify dart %}
 class FavoriteWidgetState extends State<FavoriteWidget> {
   [[highlight]]bool _isFavorited = true;[[/highlight]]
-  [[highlight]]int favoriteCount = 41;[[/highlight]]
+  [[highlight]]int _favoriteCount = 41;[[/highlight]]
 
-  [[highlight]]void toggleFavorite()[[/highlight]] {
+  [[highlight]]void _toggleFavorite()[[/highlight]] {
     [[highlight]]setState(()[[/highlight]] {
       // If the lake is currently favorited, unfavorite it.
       if (_isFavorited) {
-        _favoriteCount--;
+        _favoriteCount -= 1;
         _isFavorited = false;
         // Otherwise, favorite it.
       } else {
-        _favoriteCount++;
+        _favoriteCount += 1;
         _isFavorited = true;
       }
     });
@@ -264,7 +252,7 @@ class FavoriteWidgetState extends State<FavoriteWidget> {
                 [[highlight]]? new Icon(Icons.star)[[/highlight]]
                 [[highlight]]: new Icon(Icons.star_border)),[[/highlight]]
             color: Colors.red[500],
-            [[highlight]]onPressed: toggleFavorite,[[/highlight]]
+            [[highlight]]onPressed: _toggleFavorite,[[/highlight]]
           ),
         ),
         new SizedBox(
@@ -338,7 +326,7 @@ check your code against the interactive Lakes example on GitHub.
 * [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
 * [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
-Refer to [Get support](/#get-support) if you still have questions.
+If you still have questions, refer to [Get support.](/#get-support)
 
 ---
 
@@ -386,16 +374,18 @@ The only file you need is
 </aside>
 {% endcomment %}
 
-How do you decide which approach to use?
+How do you decide which approach to use? The following principles should help
+you decide:
 
-The general rule of thumb is that the parent widget should manage the
-state until it becomes too much of a burden. If there is any state
-that isn't particularly relevant to the parent, perhaps offload that to the
-child widget.  For example, maybe you have a widget that randomly changes
-colors and the colors have no semantic meaning&mdash;that state can be
-offloaded to the stateful widget itself.
-But, usually, if a user interacts with a widget, that state should be
-exported up to the parent so the parent can take appropriate action.
+* If the state in question is user data,
+  for example the checked or unchecked mode of a checkbox,
+  or the position of a slider,
+  then the state is best managed by the parent widget.
+
+* If the state in question is aesthetic, for example an animation,
+  then the state is best managed by the widget itself.
+
+If in doubt, start by managing state in the parent widget.
 
 We'll give examples of the different ways of managing state by creating three
 simple examples: TapboxA, TapboxB, and TapboxC.
@@ -424,7 +414,7 @@ The _TapboxAState class:
 
 * Manages state for TapboxA.
 * Defines the `_active` boolean which determines the box's current color.
-* Defines the `handleTap()` function, which updates `_active` when the box is
+* Defines the `_handleTap()` function, which updates `_active` when the box is
   tapped and calls the `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
@@ -445,7 +435,7 @@ class TapboxA extends StatefulWidget {
 class _TapboxAState extends State<TapboxA> {
   bool _active = false;
 
-  void handleTap() {
+  void _handleTap() {
     setState(() {
       _active = !_active;
     });
@@ -453,7 +443,7 @@ class _TapboxAState extends State<TapboxA> {
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: handleTap,
+      onTap: _handleTap,
       child: new Container(
         child: new Center(
           child: new Text(
@@ -514,7 +504,7 @@ subclasses StatelessWidget.
 The ParentWidgetState class:
 
 * Manages the `_active` state for TapboxB.
-* Implements `handleTapboxChanged()`, the method called when the box is tapped.
+* Implements `_handleTapboxChanged()`, the method called when the box is tapped.
 * Calls `setState` to update the UI.
 
 The TapboxB class:
@@ -537,7 +527,7 @@ class ParentWidget extends StatefulWidget {
 class _ParentWidgetState extends State<ParentWidget> {
   bool _active = false;
 
-  void handleTapboxChanged(bool newValue) {
+  void _handleTapboxChanged(bool newValue) {
     setState(() {
       _active = newValue;
     });
@@ -548,7 +538,7 @@ class _ParentWidgetState extends State<ParentWidget> {
     return new Container(
       child: new TapboxB(
         active: _active,
-        onChanged: handleTapboxChanged,
+        onChanged: _handleTapboxChanged,
       ),
     );
   }
@@ -563,13 +553,13 @@ class TapboxB extends StatelessWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  void handleTap() {
+  void _handleTap() {
     onChanged(!active);
   }
 
   Widget build(BuildContext context) {
     return new GestureDetector(
-      onTap: handleTap,
+      onTap: _handleTap,
       child: new Container(
         child: new Center(
           child: new Text(
@@ -595,10 +585,10 @@ class TapboxB extends StatelessWidget {
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 When creating API, consider using the `@required` annotation for
 any parameters that your code relies on.
-To use `@required`, import the meta library:
+To use `@required`, import the foundation library:
 
 <pre>
-import package: meta/meta.dart;
+import 'package: flutter/foundation.dart';
 </pre>
 </aside>
 
@@ -620,7 +610,7 @@ This example has two State objects, _ParentWidgetState and _TapboxCState.
 The _ParentWidgetState object:
 
 * Manages the `_active` state.
-* Implements `handleTapboxChanged()`, the method called when the box is tapped.
+* Implements `_handleTapboxChanged()`, the method called when the box is tapped.
 * Calls `setState` to update the UI when a tap occurs and the `_active`
   state changes.
 
@@ -651,7 +641,7 @@ class ParentWidget extends StatefulWidget {
 class _ParentWidgetState extends State<ParentWidget> {
   bool _active = false;
 
-  void handleTapboxChanged(bool newValue) {
+  void _handleTapboxChanged(bool newValue) {
     setState(() {
       _active = newValue;
     });
@@ -662,7 +652,7 @@ class _ParentWidgetState extends State<ParentWidget> {
     return new Container(
       child: new TapboxC(
         active: _active,
-        onChanged: handleTapboxChanged,
+        onChanged: _handleTapboxChanged,
       ),
     );
   }
@@ -683,25 +673,25 @@ class TapboxC extends StatefulWidget {
 class _TapboxCState extends State<TapboxC> {
   bool _highlight = false;
 
-  void handleTapDown(TapDownDetails details) {
+  void _handleTapDown(TapDownDetails details) {
     setState(() {
       _highlight = true;
     });
   }
 
-  void handleTapUp(TapUpDetails details) {
+  void _handleTapUp(TapUpDetails details) {
     setState(() {
       _highlight = false;
     });
   }
 
-  void handleTapCancel() {
+  void _handleTapCancel() {
     setState(() {
       _highlight = false;
     });
   }
 
-  void handleTap() {
+  void _handleTap() {
     config.onChanged(!config.active);
   }
 
@@ -709,10 +699,10 @@ class _TapboxCState extends State<TapboxC> {
     // This example adds a green border on tap down.
     // On tap up, the square changes to the opposite state.
     return new GestureDetector(
-      onTapDown: handleTapDown, // Handle the tap events in the order that
-      onTapUp: handleTapUp, // they occur: down, up, tap, cancel
-      onTap: handleTap,
-      onTapCancel: handleTapCancel,
+      onTapDown: _handleTapDown, // Handle the tap events in the order that
+      onTapUp: _handleTapUp, // they occur: down, up, tap, cancel
+      onTap: _handleTap,
+      onTapCancel: _handleTapCancel,
       child: new Container(
         child: new Center(
           child: new Text(config.active ? 'Active' : 'Inactive',

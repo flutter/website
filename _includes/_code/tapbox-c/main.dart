@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 void main() {
   runApp(new MyApp());
@@ -19,7 +19,7 @@ class ParentWidget extends StatefulWidget {
 class _ParentWidgetState extends State<ParentWidget> {
   bool _active = false;
 
-  void handleTapboxChanged(bool newValue) {
+  void _handleTapboxChanged(bool newValue) {
     setState(() {
       _active = newValue;
     });
@@ -30,7 +30,7 @@ class _ParentWidgetState extends State<ParentWidget> {
     return new Container(
       child: new TapboxC(
         active: _active,
-        onChanged: handleTapboxChanged,
+        onChanged: _handleTapboxChanged,
       ),
     );
   }
@@ -51,25 +51,25 @@ class TapboxC extends StatefulWidget {
 class _TapboxCState extends State<TapboxC> {
   bool _highlight = false;
 
-  void handleTapDown(TapDownDetails details) {
+  void _handleTapDown(TapDownDetails details) {
     setState(() {
       _highlight = true;
     });
   }
 
-  void handleTapUp(TapUpDetails details) {
+  void _handleTapUp(TapUpDetails details) {
     setState(() {
       _highlight = false;
     });
   }
 
-  void handleTapCancel() {
+  void _handleTapCancel() {
     setState(() {
       _highlight = false;
     });
   }
 
-  void handleTap() {
+  void _handleTap() {
     config.onChanged(!config.active);
   }
 
@@ -77,10 +77,10 @@ class _TapboxCState extends State<TapboxC> {
     // This example adds a green border on tap down.
     // On tap up, the square changes to the opposite state.
     return new GestureDetector(
-      onTapDown: handleTapDown, // Handle the tap events in the order that
-      onTapUp: handleTapUp, // they occur: down, up, tap, cancel
-      onTap: handleTap,
-      onTapCancel: handleTapCancel,
+      onTapDown: _handleTapDown, // Handle the tap events in the order that
+      onTapUp: _handleTapUp,     // they occur: down, up, tap, cancel
+      onTap: _handleTap,
+      onTapCancel: _handleTapCancel,
       child: new Container(
         child: new Center(
           child: new Text(
