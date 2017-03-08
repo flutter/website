@@ -17,6 +17,6 @@ Choose from the following:
 * [Adding Interactivity to your Flutter App](/tutorials/interactive/)
 : You'll extend the simple layout app created in "Building Layouts in Flutter"
   to make an icon tappable.  Different ways of managing a widget's
-  state is also discussed.
+  state are also discussed.
 
 
