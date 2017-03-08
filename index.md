@@ -15,7 +15,7 @@ The goal is to enable developers to deliver high-performance apps that feel natu
 on different platforms. We embrace differences in scrolling behaviors, 
 typography, icons, and more. 
 
-![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.png)
+![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.jpg)
 
 This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter and setting
