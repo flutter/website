@@ -90,6 +90,10 @@ entries:
       url: /tutorials/layout/
       output: web
 
+    - title: Adding Interactivity to your Flutter App
+      url: /tutorials/interactive/
+      output: web
+
     - title: Add assets and images
       url: /assets-and-images/
       output: web

@@ -16,7 +16,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   bool _isFavorited = true;
   int _favoriteCount = 41;
 
-  void toggleFavorite() {
+  void _toggleFavorite() {
     setState(() {
       // If the lake is currently favorited, unfavorite it.
       if (_isFavorited) {
@@ -42,7 +42,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                 ? new Icon(Icons.star)
                 : new Icon(Icons.star_border)),
             color: Colors.red[500],
-            onPressed: toggleFavorite,
+            onPressed: _toggleFavorite,
           ),
         ),
         new SizedBox(
