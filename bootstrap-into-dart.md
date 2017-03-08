@@ -26,10 +26,8 @@ easy for you to learn, too.
 : Guides for style, authoring documentation, usage, and more.
 
 [Futures Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
-: Learn how to use Futures, which used extensively in the Dart core libraries.
-  Futures can be used instead of one-time callbacks. For example,
-  the [http library](https://docs.flutter.io/flutter/http/http-library.html)
-  uses Futures when responses are ready.
+: Learn how to use Futures, which are used extensively in the Dart core
+  libraries.  Futures can be used instead of one-time callbacks.
 
 [Streams Tutorial](https://www.dartlang.org/docs/tutorials/streams/)
 : Learn how to use Streams, which are used extensively in the Dart core
