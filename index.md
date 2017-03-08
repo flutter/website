@@ -4,30 +4,30 @@ sidebar: home_sidebar
 layout: page
 ---
 
-Flutter is a new project to help developers build high-performance, high-fidelity, 
+Flutter is a new project to help developers build high-performance, high-fidelity,
 mobile apps for iOS and Android from a single codebase.
 
 {% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](mailto:flutter-dev@googlegroups.com)." %}
 
 ## What is Flutter?
 
-Flutter provides an easy and productive way to build and deploy high-performance 
-mobile apps for Android and iOS. The goal is to deliver apps that feel natural 
-on different platforms, and we embrace differences in scrolling behaviors, 
-typography, icons, and more. 
+Flutter provides an easy and productive way to build and deploy high-performance
+mobile apps for Android and iOS. The goal is to deliver apps that feel natural
+on different platforms, and we embrace differences in scrolling behaviors,
+typography, icons, and more.
 
 ![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.png)
 
-This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo), 
-a showcase of Flutter apps to download and run locally. Shrine has 
-high-quality scrolling images, interactive cards, buttons, dropdown lists, 
+This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+a showcase of Flutter apps to download and run locally. Shrine has
+high-quality scrolling images, interactive cards, buttons, dropdown lists,
 and a shopping cart page. You can run Shrine on an emulator or a phone, then check
-out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples) 
+out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples)
 in our GitHub repository.
 
-No mobile development experience is required to get started. Apps are written 
-in [Dart](https://dartlang.org/), which will look familiar if you've used a 
-language like Java or JavaScript. Experience with object-oriented languages 
+No mobile development experience is required to get started. Apps are written
+in [Dart](https://dartlang.org/), which will look familiar if you've used a
+language like Java or JavaScript. Experience with object-oriented languages
 is definitely helpful, but even non-programmers have made Flutter apps!
 
 ## Why use Flutter?
@@ -36,7 +36,7 @@ What are some advantages of Flutter? It helps you:
 
 *   Be highly productive
     *   Develop for iOS and Android from a single codebase
-    *   Do more with less code, even on a single OS, with a modern, expressive 
+    *   Do more with less code, even on a single OS, with a modern, expressive
 language and a declarative approach
     *   Prototype and iterate easily
         *   Experiment by changing code and reloading as your app runs (with hot reload)
@@ -44,21 +44,21 @@ language and a declarative approach
 *   Create beautiful, highly-customized user experiences
     *   Benefit from a rich set of Material Design widgets built using
         Flutter's own framework
-    *   Realize custom, beautiful, brand-driven designs, without the limitations 
+    *   Realize custom, beautiful, brand-driven designs, without the limitations
 of OEM widget sets
 
 ## Core principles
 
 Flutter includes a functional-reactive framework, a 2D rendering engine, ready-made
-widgets, and development tools. These components work together to help you 
-design, build, test, and debug apps. Everything is organized around a few core 
-principles. 
+widgets, and development tools. These components work together to help you
+design, build, test, and debug apps. Everything is organized around a few core
+principles.
 
 ### Everything's a Widget
 
-Widgets are the basic building blocks of every Flutter app. Each widget is an 
-immutable declaration of part of the user interface.  Unlike other frameworks that 
-separate views, controllers, layouts, and other properties, Flutter has a 
+Widgets are the basic building blocks of every Flutter app. Each widget is an
+immutable declaration of part of the user interface.  Unlike other frameworks that
+separate views, controllers, layouts, and other properties, Flutter has a
 consistent, unified object model: the widget.
 
 A widget can define:
@@ -66,15 +66,15 @@ A widget can define:
 *   a structural element (like a button or menu)
 *   a stylistic element (like a font or color scheme)
 *   an aspect of layout (like padding)
-*   some business logic 
+*   some business logic
 *   and so on...
 
-Widgets form a hierarchy based on composition.  Each widget nests inside, and 
+Widgets form a hierarchy based on composition.  Each widget nests inside, and
 inherits properties from, its parent.  There is no separate "application" object.
 Instead, the root widget serves this role.
 
-You can respond to events, like user interaction, by telling the framework to 
-replace a widget in the hierarchy with another widget.  The framework then 
+You can respond to events, like user interaction, by telling the framework to
+replace a widget in the hierarchy with another widget.  The framework then
 compares the new and old widgets and efficiently updates the user interface.
 
 #### Composition > inheritance
@@ -92,7 +92,7 @@ and [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
 widgets.  Rather than subclassing Container to produce a customized effect, you
 can compose these, and other, simple widgets in novel ways.
 
-The class hierarchy is shallow and broad to maximize the possible number of 
+The class hierarchy is shallow and broad to maximize the possible number of
 combinations.
 
 ![Widget class hierarchy](/images/whatisflutter/Widget_class_hierarchy.png){:style="max-width: 900px"}
@@ -111,8 +111,8 @@ building upon the previous layer.
 
 {% include layer-cake.html %}
 
-The diagram shows the upper layers of the framework, which are used more 
-frequently than the lower layers. For the complete set of libraries, see 
+The diagram shows the upper layers of the framework, which are used more
+frequently than the lower layers. For the complete set of libraries, see
 Flutter's [API documentation](https://docs.flutter.io).
 
 The goal of this design is to help you do more with less code.  For example,
@@ -121,34 +121,34 @@ and the widgets layer itself is built by orchestrating lower-level objects from
 the rendering layer.
 
 The layers offer many options for building apps. Choose a customized approach to
-unlock the full expressive power of the framework, or use building blocks from 
-the widgets layer, or mix and match. You can compose the ready-made widgets 
-Flutter provides, or create your own custom widgets using the same tools and 
+unlock the full expressive power of the framework, or use building blocks from
+the widgets layer, or mix and match. You can compose the ready-made widgets
+Flutter provides, or create your own custom widgets using the same tools and
 techniques that the Flutter team used to build the framework.
 
-Nothing is hidden from you.  You reap the productivity benefits of a high-level, 
-unified widget concept, without sacrificing the ability to dive as deeply as you 
+Nothing is hidden from you.  You reap the productivity benefits of a high-level,
+unified widget concept, without sacrificing the ability to dive as deeply as you
 wish into the lower layers.
 
 ### Building widgets
 
-You define the unique characteristics of a widget by implementing a 
-[build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html) 
-function that returns a tree of widgets. This tree represents the widget's part 
-of the user interface in more concrete terms.  For example, a toolbar widget might 
+You define the unique characteristics of a widget by implementing a
+[build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
+function that returns a tree of widgets. This tree represents the widget's part
+of the user interface in more concrete terms.  For example, a toolbar widget might
 have a build function that returns a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
 of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
 [various](https://docs.flutter.io/flutter/material/IconButton-class.html)
-[buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html). 
+[buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
 process bottoms out in [fully concrete widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
 which framework then stitches together into a tree.
 
-A widget's build function should be free of side effects.  Whenever it is asked 
-to build, the widget should return a new tree of widgets regardless of what the 
-widget previously returned. The framework does the heavily lifting of comparing 
-the previous build with the current build and determining what modifications 
-need to be made to the user interface. 
+A widget's build function should be free of side effects.  Whenever it is asked
+to build, the widget should return a new tree of widgets regardless of what the
+widget previously returned. The framework does the heavily lifting of comparing
+the previous build with the current build and determining what modifications
+need to be made to the user interface.
 
 This automated comparison is surprisingly effective, enabling high-performance,
 interactive apps. And the design of the build function simplifies your code by
@@ -157,10 +157,10 @@ updating the user interface from one state to another.
 
 ### Handling user interaction
 
-If the unique characteristics of a widget need to change based on user 
-interaction or other factors, that widget is *stateful*. For example, if a 
-widget has a counter that increments whenever the user taps a button, the value 
-of the counter is the state for that widget. When that value changes, the widget 
+If the unique characteristics of a widget need to change based on user
+interaction or other factors, that widget is *stateful*. For example, if a
+widget has a counter that increments whenever the user taps a button, the value
+of the counter is the state for that widget. When that value changes, the widget
 needs to be rebuilt to update the UI.
 
 These widgets subclass [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
@@ -170,27 +170,29 @@ and store their mutable state in a subclass of [State](https://docs.flutter.io/f
 ![Separate state and widget objects](/images/whatisflutter/state.png)
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
-[setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to 
-signal the framework to update the user interface by calling the State's build 
+[setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
+signal the framework to update the user interface by calling the State's build
 method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl) that's created with each new Flutter project.
 
-Having separate state and widget objects lets other widgets treat stateless and 
-stateful widgets in the same way, without being concerned about losing state. 
+Having separate state and widget objects lets other widgets treat stateless and
+stateful widgets in the same way, without being concerned about losing state.
 Rather than needing to hold on to a child to preserve its state, the parent is
 free to create a new instances of the child without losing the child's persistent
-state. The framework does all the work of finding and reusing existing state 
+state. The framework does all the work of finding and reusing existing state
 objects when appropriate.
 
 ## Try it!
 
 Now that you're familiar with the basic structure and principles of the Flutter
 framework, along with how to build apps and make them interactive, you're ready
-to start developing and iterating. 
+to start developing and iterating.
 
 Next steps:
 
 1.  [Install the Flutter SDK](https://flutter.io/setup/) and [set up IntelliJ](https://flutter.io/intellij-setup/) (optional).
 1.  [Get started](https://flutter.io/getting-started/) with the development cycle in a few simple steps.
+1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
+    [Adding Interactivity to your Flutter App](/tutorials/interactive/).
 1.  Follow a detailed example in [Tour of the Widget Framework](https://flutter.io/widgets-intro/).
 
 ## Get support
