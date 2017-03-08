@@ -952,7 +952,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 /* Strip the outbound icon when this class is present */
 a[href^="http://own-domain.com"]:after,
 a.no_icon:after {
-    content:"" !important;
+    content: none !important;
     padding-left: 0;
 }
 
