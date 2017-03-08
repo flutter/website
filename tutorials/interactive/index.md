@@ -25,7 +25,7 @@ that manages two stateless widgets.
 
 <aside id="note" class="alert alert-info" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Note:**
-If you haven't already built a layout in
+If you haven't already built the layout in
 [Building Layouts in Flutter](/tutorials/layout/),
 prepare for this tutorial as follows:
 
@@ -35,8 +35,8 @@ prepare for this tutorial as follows:
 * Replace the `lib/main.dart` file with
   [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
   from GitHub.
-* Replace the `pubspec.yaml` file with the
-  [pubspec](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+* Replace the `pubspec.yaml` file with
+  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
   [`lakes.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
@@ -69,6 +69,11 @@ so the same widget should manage both.
 
 If you don't already have the starting code for the Lakes example,
 get it from the links in the blue [**Note**](#note) box.
+
+You can get right to touching the code in
+[Step 2: Subclass StatefulWidget](#step-2).
+If you want to try different ways of managing state, skip to
+[Managing state](#managing-state).
 
 ### Contents
 
@@ -110,19 +115,22 @@ get it from the links in the blue [**Note**](#note) box.
 Some layout widgets are stateful and some are stateless.
 
 A _stateless_ widget has no internal state to manage.
-[Icon,](https://docs.flutter.io/flutter/material/Icon-class.html)
-[IconButton,](https://docs.flutter.io/flutter/material/IconButton-class.html)
+[Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
 and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
 [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
 A _stateful_ widget is dynamic. The user can interact with a stateful widget
-(by moving a slider, or checking a box, for example),
+(by typing into a form, or moving a slider, for example),
 or it changes over time (perhaps a data feed causes the UI to update).
-[Checkbox,](https://docs.flutter.io/flutter/material/Checkbox-class.html)
-[Radio,](https://docs.flutter.io/flutter/material/Radio-class.html) and
-[Slider](https://docs.flutter.io/flutter/material/Slider-class.html) are
-examples of stateful widgets, which subclass
+[Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html),
+[Radio](https://docs.flutter.io/flutter/material/Radio-class.html),
+[Slider](https://docs.flutter.io/flutter/material/Slider-class.html),
+[InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html),
+[Form](https://docs.flutter.io/flutter/material/Form-class.html), and
+[InputField](https://docs.flutter.io/flutter/material/Radio-class.html)
+are examples of stateful widgets, which subclass
 [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
 
 <a name="creating-stateful-widget"></a>
@@ -136,8 +144,8 @@ examples of stateful widgets, which subclass
   StatefulWidget and State.
 * The state object contains the widget's state, and the widget's `build()`
   method.
-* The state object calls `setState()`,
-  telling the framework to redraw the widget.
+* When the widget's state changes, the state object calls
+  `setState`, telling the framework to redraw the widget.
 
 </div>
 
@@ -207,7 +215,7 @@ The state object stores this information in the
 
 The state object also defines the `build` method. This `build` method
 creates a row containing a red IconButton, and Text.  The widget uses
-[IconButton,](https://docs.flutter.io/flutter/material/IconButton-class.html)
+[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
 (instead of Icon), because it has an `onPressed` property that
 defines the callback method for handling a tap.
 IconButton also has an `icon` property that holds the Icon.
@@ -266,6 +274,13 @@ class FavoriteWidgetState extends State<FavoriteWidget> {
   }
 }
 {% endprettify %}
+
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+Placing the Text in a SizedBox and setting its width prevents a discernible
+"jump" when the text changes between the values of 40 and 41&mdash;this
+would otherwise occur because those values have different widths.
+</aside>
 
 <a name="step-4"></a>
 ### Step 4: Plug the stateful widget into the widget tree
@@ -493,7 +508,7 @@ Often it makes the most sense for the parent widget to manage the state
 and tell its child widget when to update. For example,
 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)
 allows you to treat an icon as a tappable button.
-IconButton is a stateless widget because the designers decided that
+IconButton is a stateless widget because we decided that
 the parent widget needs to know whether the button has been tapped,
 so it can take appropriate action.
 
@@ -505,7 +520,7 @@ The ParentWidgetState class:
 
 * Manages the `_active` state for TapboxB.
 * Implements `_handleTapboxChanged()`, the method called when the box is tapped.
-* Calls `setState` to update the UI.
+* When the state changes, calls `setState` to update the UI.
 
 The TapboxB class:
 
@@ -585,7 +600,10 @@ class TapboxB extends StatelessWidget {
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 When creating API, consider using the `@required` annotation for
 any parameters that your code relies on.
-To use `@required`, import the foundation library:
+To use `@required`, import the [foundation
+library](https://docs.flutter.io/flutter/foundation/foundation-library.html)
+(which re-exports Dart's
+[meta.dart](https://pub.dartlang.org/packages/meta) library):
 
 <pre>
 import 'package: flutter/foundation.dart';
@@ -756,7 +774,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 <aside class="alert alert-info" markdown="1">
 **Note:**
 Flutter also provides a set of iOS-style widgets called
-[Cupertino,](https://docs.flutter.io/flutter/cupertino/cupertino-library.html).
+[Cupertino](https://docs.flutter.io/flutter/cupertino/cupertino-library.html).
 </aside>
 
 When you need interactivity,
