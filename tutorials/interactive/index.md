@@ -50,7 +50,7 @@ you are good to go!
 In [Building Layouts for Flutter](https://flutter.io/tutorials/layout/),
 we showed how to create the layout for the following screenshot.
 
-<img src="images/lakes.png" style="border:1px solid black" alt="The starting Lakes app that we will modify">
+<img src="images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
 When the app first launches, the star is solid red, indicating that this lake
 has previously been favorited. The number next to the star indicates that a
