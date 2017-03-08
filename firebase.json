@@ -27,6 +27,16 @@
         "source" : "/material-design-catalog/",
         "destination" : "/widgets/",
         "type" : 301
+      },
+      {
+        "source" : "/chat",
+        "destination" : "https://gitter.im/flutter/flutter",
+        "type" : 302
+      },
+      {
+        "source" : "/issues",
+        "destination" : "https://github.com/flutter/flutter/issues",
+        "type" : 302
       }
     ]
   }
