@@ -14,7 +14,7 @@ We'll discuss how to lay widgets out horizontally and vertically,
 and then cover some of the most common layout widgets.
 Finally, we'll walk through the process of creating a layout for this app:
 
-<img src="images/lakes.png" style="border:1px solid black" alt="finished lakes app that we'll build in 'Building a Layout'">
+<img src="images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that we'll build in 'Building a Layout'">
 
 ### Contents
 
@@ -1288,7 +1288,7 @@ The previous sections describe Flutter's approach to creating a layout.
 How do you use this knowledge to build an entire layout?
 Let's walk through the layout for the following screenshot:
 
-<img src="images/lakes.png" style="border:1px solid black" alt="A screenshot of the lakes app that we will build in this section">
+<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that we will build in this section">
 
 ### Contents
 
