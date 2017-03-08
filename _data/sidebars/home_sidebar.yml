@@ -42,6 +42,22 @@ entries:
       url: /bootstrap-into-dart/
       output: web
       
+  - title: Tutorials
+    output: web
+    folderitems:
+
+    - title: Overview
+      url: /tutorials/
+      output: web
+
+    - title: Building Layouts in Flutter
+      url: /tutorials/layout/
+      output: web
+
+    - title: Adding Interactivity to your Flutter App
+      url: /tutorials/interactive/
+      output: web
+
   - title: Analogs
     output: web
     folderitems:
@@ -85,14 +101,6 @@ entries:
   - title: How-Tos
     output: web
     folderitems:
-
-    - title: Building Layouts in Flutter
-      url: /tutorials/layout/
-      output: web
-
-    - title: Adding Interactivity to your Flutter App
-      url: /tutorials/interactive/
-      output: web
 
     - title: Add assets and images
       url: /assets-and-images/
