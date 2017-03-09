@@ -186,29 +186,10 @@ your debugging session:
 
 ## Tips and tricks
 
-Keyboard shortcuts:
-  * JetBrains has a good [Keyboard Shortcuts You Cannot Miss](https://www.jetbrains.com/help/idea/keyboard-shortcuts-you-cannot-miss.html) overview
-  * Customize the shortcuts to your preferences in **Preferences > Keymap**
+Please checkout these 'cheat sheets':
 
-To navigate quickly in your code:
-  * Switch between recent files: `cmd-e` (Mac), `ctrl-e` (Windows & Linux)
-  * Navigate between all files: `cmd-arrow_up` (Mac), `alt-Home` (Windows & Linux)
-
-Code completion:
-  * Code completions will be shown as you type, or can be invoked at any time with `shift-spacebar`
-  * IntelliJ code completion matches are per-default case sensitive on the first letter.
-    You can change this in **Preferences > Editor > General > Code Completion**
-
-Opening a Flutter project in IntelliJ from the terminal:
-  * Create a terminal config for IntelliJ: In IntelliJ, select **Tools > Create Command-line Launcher**
-  * You can now open a project with `idea .`, e.g.:
-
-  ```
-  cd <flutter sdk dir>\examples\flutter_gallery`
-  idea .
-  ```
-
-Tuning the IntelliJ UI setup: Please see [this wiki page](https://github.com/flutter/flutter/wiki/IntelliJ---Flutter-Setup-Tips-and-Tricks) for tips.
+  * [Flutter IntelliJ cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+  * [Flutter IntelliJ cheat sheet, Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-Linux.pdf)
 
 ## Troubleshooting
 
