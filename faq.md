@@ -114,7 +114,7 @@ No. We do not plan to provide a web version of Flutter.
 
 ## What operating systems can I use to build a Flutter app?
 
-Flutter supports development on Linux and Mac. Windows support is planned.
+Flutter supports development on Linux, Mac, and Windows.
 
 ## What kinds of apps can I build with Flutter?
 
