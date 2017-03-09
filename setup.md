@@ -46,8 +46,8 @@ inline error checking, and visual debugging features.
 
 To install and run Flutter, your development environment must meet these minimum requirements:
 
-* **Operating Systems**: Mac or Linux (64-bit). For Windows support see [Flutter on Windows](https://github.com/flutter/flutter/wiki/Flutter-on-Windows).
-* **Disk Space**: 700 MB on Mac, 600 MB on Linux (does not include disk space for Xcode or Android Studio).
+* **Operating Systems**: Mac or Linux (64-bit). For Windows instructions (beta), see [Flutter on Windows](https://github.com/flutter/flutter/wiki/Flutter-on-Windows).
+* **Disk Space**: 700 MB on Mac, 600 MB on Linux, 400 MB on Windows (does not include disk space for Xcode or Android Studio).
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
   * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
 
