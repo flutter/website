@@ -225,10 +225,15 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
 
 To prepare to run and test your Flutter app on the Android emulator, follow these steps:
 
-1. In **Android Studio>Configure>SDK Manager**, install the system image(s) for the Android
-version you want to emulate.
-1. Launch **Android Studio>Tools>Android>AVD Manager** to define an Android Virtual Device (AVD).
-For detailed steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
+1. Launch **Android Studio>Tools>Android>AVD Manager** and select **Create Virtual Device**.
+1. Choose a device definition and select **Next**.
+1. Select one or more system images for the Android versions you want to emulate, 
+   and select **Next**. An _x86_ or _x86\_64_ image is recommended.
+1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable 
+[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html). 
+1. Verify the AVD configuration is correct, and select **Finish**.
+
+   For details on the above steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
 1. In Android Virtual Device Manager, click **Run** in the toolbar.
    The emulator starts up and displays the default canvas for your selected OS version
    and device.
