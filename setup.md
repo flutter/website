@@ -221,6 +221,25 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
 
 1. Start Android Studio.
 
+### Set up the Android emulator
+
+To prepare to run and test your Flutter app on the Android emulator, follow these steps:
+
+1. Launch **Android Studio>Tools>Android>AVD Manager** and select **Create Virtual Device**.
+1. Choose a device definition and select **Next**.
+1. Select one or more system images for the Android versions you want to emulate, 
+   and select **Next**. An _x86_ or _x86\_64_ image is recommended.
+1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable 
+[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html). 
+1. Verify the AVD configuration is correct, and select **Finish**.
+
+   For details on the above steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
+1. In Android Virtual Device Manager, click **Run** in the toolbar.
+   The emulator starts up and displays the default canvas for your selected OS version
+   and device.
+1. Start your app by running `flutter run`. The connected device name is
+   `Android SDK built for <platform>`, where _platform_ is the chip family, such as x86.
+
 ### Set up your Android device
 
 To prepare to run and test your Flutter app on Android, you'll need an Android device running
