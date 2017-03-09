@@ -4,26 +4,24 @@ sidebar: home_sidebar
 layout: page
 ---
 
-Flutter is a new project to help developers build high-performance, high-fidelity,
-mobile apps for iOS and Android from a single codebase.
-
 {% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](mailto:flutter-dev@googlegroups.com)." %}
 
 ## What is Flutter?
 
-Flutter provides an easy and productive way to build and deploy high-performance
-mobile apps for Android and iOS. The goal is to deliver apps that feel natural
-on different platforms, and we embrace differences in scrolling behaviors,
-typography, icons, and more.
+Flutter is a mobile app SDK for building high-performance, high-fidelity, 
+apps for iOS and Android, from a single codebase.
 
-![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.png)
+The goal is to enable developers to deliver high-performance apps that feel natural 
+on different platforms. We embrace differences in scrolling behaviors, 
+typography, icons, and more. 
 
-This is an online marketplace app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
-a showcase of Flutter apps to download and run locally. Shrine has
-high-quality scrolling images, interactive cards, buttons, dropdown lists,
-and a shopping cart page. You can run Shrine on an emulator or a phone, then check
-out the single codebase for this and more examples [here](https://github.com/flutter/flutter/tree/master/examples)
-in our GitHub repository.
+![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.jpg)
+
+This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+a collection of Flutter sample apps you can run after installing Flutter and setting
+up your environment. Shrine has high-quality scrolling images, interactive cards, 
+buttons, dropdown lists, and a shopping cart page. To look at the single codebase 
+for this and more examples, [visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
 in [Dart](https://dartlang.org/), which will look familiar if you've used a
@@ -134,7 +132,7 @@ wish into the lower layers.
 
 You define the unique characteristics of a widget by implementing a
 [build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
-function that returns a tree of widgets. This tree represents the widget's part
+function that returns a tree (or hierarchy) of widgets. This tree represents the widget's part
 of the user interface in more concrete terms.  For example, a toolbar widget might
 have a build function that returns a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
 of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
@@ -150,7 +148,7 @@ widget previously returned. The framework does the heavily lifting of comparing
 the previous build with the current build and determining what modifications
 need to be made to the user interface.
 
-This automated comparison is surprisingly effective, enabling high-performance,
+This automated comparison is quite effective, enabling high-performance,
 interactive apps. And the design of the build function simplifies your code by
 focusing on declaring what a widget is made of, rather than the complexities of
 updating the user interface from one state to another.
@@ -177,7 +175,7 @@ method again. For an example of managing state, see the [MyApp template](https:/
 Having separate state and widget objects lets other widgets treat stateless and
 stateful widgets in the same way, without being concerned about losing state.
 Rather than needing to hold on to a child to preserve its state, the parent is
-free to create a new instances of the child without losing the child's persistent
+free to create a new instance of the child without losing the child's persistent
 state. The framework does all the work of finding and reusing existing state
 objects when appropriate.
 
