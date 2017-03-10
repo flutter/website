@@ -950,7 +950,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 }
 
 /* Strip the outbound icon when this class is present */
-a[href^="http://own-domain.com"]:after,
+a[href^="http://own-domain.com"]:after, a[href^="https://docs.flutter.io"]:after, 
 a.no_icon:after {
     content:none !important;
     padding-left: 0;

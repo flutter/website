@@ -98,7 +98,7 @@ combinations.
 You can also control the *layout* of a widget by composing it with other widgets.
 For example, to center a widget, you wrap it in a Center widget. There are
 widgets for padding, alignment, row, columns, and grids. These layout widgets
-do not show themselves in an app's UI.  Instead, their sole purpose is to
+do not have a visual representation of their own. Instead, their sole purpose is to
 control some aspect of another widget's layout. To understand why a widget
 renders in a certain way, it's often helpful to inspect the neighboring widgets.
 
@@ -110,8 +110,8 @@ building upon the previous layer.
 {% include layer-cake.html %}
 
 The diagram shows the upper layers of the framework, which are used more
-frequently than the lower layers. For the complete set of libraries, see
-Flutter's [API documentation](https://docs.flutter.io).
+frequently than the lower layers. For the complete set of libraries that make up
+the Flutter's layered framework, see our [API documentation](https://docs.flutter.io).
 
 The goal of this design is to help you do more with less code.  For example,
 the material layer is built by composing basic widgets from the widgets layer,
@@ -187,11 +187,12 @@ to start developing and iterating.
 
 Next steps:
 
-1.  [Install the Flutter SDK](https://flutter.io/setup/) and [set up IntelliJ](https://flutter.io/intellij-setup/) (optional).
-1.  [Get started](https://flutter.io/getting-started/) with the development cycle in a few simple steps.
+1.  [Install the Flutter SDK](/setup/).
+1.  [Set up IntelliJ](/intellij-setup/) (optional).
+1.  [Get started](/getting-started/) with the development cycle in a few simple steps.
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
     [Adding Interactivity to your Flutter App](/tutorials/interactive/).
-1.  Follow a detailed example in [Tour of the Widget Framework](https://flutter.io/widgets-intro/).
+1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).
 
 ## Get support
 
