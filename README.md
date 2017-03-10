@@ -39,43 +39,6 @@ A tldr version follows:
 `bundle exec jekyll build`<br>
 `bundle exec htmlproofer _site --empty-alt-ignore --url-ignore "#" --only-4xx  --url-swap "https?\:\/\/(localhost\:4000|flutter\.io):"`
 
-## Staging the site for external review
-
-1. If you haven't done so, create a new project on
-   [firebase.corp.google.com](https://firebase.corp.google.com/?pli=1).
-   It's best to use a name that identifies who you are. I use "sz-flutter".
-
-2. At the root of the website repo, add a .firebaserc file with the name
-   of your firebase project. The .firebaserc file is listed in the .gitignore file,
-   so it won't create a file in master. Here's what my rc file looks like:
-
-```
-$ cat .firebaserc
-{
-  "projects": {
-    "sz" : "sz-flutter"
-  }
-}
-```
-
-2. From the root of the website repo, build the site:
-
-```
-$ jekyll build
-```
-
-3. Deploy the site to your personal instance:
-
-```
-$ firebase deploy --project sz
-```
-
-4. Navigate the browser to the hosted URL. In my case, that's
-   [https://sz-flutter.firebaseapp.com](https://sz-flutter.firebaseapp.com).
-
-5. When submitting a PR for review, include a link to the relevant pages in your
-   firebase instance to make it easier for reviewers.
-
 ## Writing for flutter.io
 
 (Eventually, this section should be expanded to its own page.)
