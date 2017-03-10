@@ -173,6 +173,7 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 iOS devices.
 
    ```
+   $ brew update
    $ brew install --HEAD libimobiledevice
    $ brew install ideviceinstaller ios-deploy
    ```
