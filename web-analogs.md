@@ -72,9 +72,7 @@ the top left.
     ),
     width: 320.0,
     height: 240.0,
-    decoration: new BoxDecoration(
-      backgroundColor: Colors.grey[300],
-    ),
+    color: Colors.grey[300],
   );
 {% endprettify %}
 </div>
