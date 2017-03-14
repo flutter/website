@@ -1,5 +1,5 @@
 name: listview
-description: Demonstrates the ListView and ListItem widgets.
+description: Demonstrates the ListView and ListTile widgets.
 
 dependencies:
   flutter:
