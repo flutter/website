@@ -82,7 +82,9 @@ Add the image to the example:
 
 * Create an `images` directory at the top of the project.
 * Add
- [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg).
+ [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lakes.jpg).
+  Note that `wget` doesn't work when saving binary files from GitHub,
+  so use another approach for saving the image.
 * Update the
   [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   file to include an `assets` tag. This makes the image available to your code.
