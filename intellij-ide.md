@@ -189,7 +189,7 @@ your debugging session:
 Please checkout these 'cheat sheets':
 
   * [Flutter IntelliJ cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-  * [Flutter IntelliJ cheat sheet, Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-Linux.pdf)
+  * [Flutter IntelliJ cheat sheet, Windows & Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
