@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Making Networking Requests in Flutter
+title: Making HTTP Networking Requests in Flutter
 permalink: /networking/
 ---
+
+This page discusses how to make HTTP networking requests in Flutter. For
+HTTP servers and sockets, see [dart:io][dartio].
 
 * TOC Placeholder
 {:toc}
@@ -76,10 +79,11 @@ Map, List, or List of Maps containing simple values to the `encode` method:
 String encodedString = JSON.encode([1, 2, { "a": null }]);
 ```
 
-## Example Flutter app decoding JSON returned by a HTTP GET call
+## Example Flutter app decoding JSON returned by a HTTPS GET call
 
-The following example calls the jsontest.com web service API. This responds with
-your local IP address.
+The following example calls the [httpbin.com](http://httpbin.com) web service
+testing API. This responds with your local IP address. Note that it uses secure
+'https' networking.
 
 1. Create a new flutter app with `flutter create`
 
@@ -116,11 +120,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String _ipAddress = 'Unknown';
 
   _getIPAddress() async {
-    String url = "http://ip.jsontest.com/";
+    String url = "https://httpbin.org/ip";
     var httpClient = new http.Client();
     var response = await httpClient.read(url);
     Map data = JSON.decode(response);
-    String ip = data["ip"];
+    String ip = data["origin"];
 
     setState(() {
       _ipAddress = ip;
@@ -153,13 +157,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
 For full API docs, see:
 
+  * [package `http`][http]
   * [`Client` in package `http`][client]
-  * [`dart:convert` library][convert]
+  * [library `dart:convert`][convert]
+  * [library `dart:io`][dartio]
 
 [http]:       https://pub.dartlang.org/packages/http
-[client]:     https://www.dartdocs.org/documentation/http/0.11.3%2B10/http/Client-class.html
+[client]:     https://www.dartdocs.org/documentation/http/stable/http/Client-class.html
 [get]:        https://www.dartdocs.org/documentation/http/stable/http/get.html
 [read]:       https://www.dartdocs.org/documentation/http/stable/http/read.html
 [readbytes]:  https://www.dartdocs.org/documentation/http/stable/http/readbytes.html
 [post]:       https://www.dartdocs.org/documentation/http/stable/http/post.html
 [convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
+[dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
