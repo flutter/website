@@ -20,7 +20,7 @@ dependencies:
   http: '>=0.11.3+12'
 ```
 
-## Making requests
+## Making HTTP requests
 
 You can create an HTTP [Client][client] with the `Client` constructor:
 
@@ -28,10 +28,10 @@ You can create an HTTP [Client][client] with the `Client` constructor:
 ```dart
 import 'package:http/http.dart' as http;
 
-http.Client _httpClient = new http.Client();
+var httpClient = new http.Client();
 ```
 
-The client supports common HTTP operations:
+The client supports common HTTP operations, such as:
 
 * **HTTP GET:** Use [`get`][get] for a general request, [`read`][read] for a
  request returning a string, or [`readbytes`][readbytes] for a request
@@ -39,17 +39,21 @@ The client supports common HTTP operations:
 
 * **HTTP POST:** Use [`post`][post] for a general post.
 
-Note that the API uses [Dart
-Futures](https://www.dartlang.org/tutorials/language/futures) in the return
-values. These are most easily used with the `then()` methods like this:
+Code sample:
 
 <!-- skip -->
 ```dart
-_httpClient.post(url, body: {"name": "doodle", "color": "blue"})
-    .then((response) {
+postData() async {
+  ...
+  var response = await httpClient.post(url, body: {"name": "doodle", "color": "blue"});
   print("Response status: ${response.statusCode}");
-});
+}
 ```
+
+Note that the HTTP APIs use [Dart
+Futures](https://www.dartlang.org/tutorials/language/futures) in the return
+values. We recommend you use the API calls with the `async`/`await` syntax as in
+the code above.
 
 ## Decoding and encoding JSON
 
@@ -64,14 +68,15 @@ Map data = JSON.decode(response.body);
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
 
-To encode JSON simply pass in a `Map` with the values:
+To encode JSON pass a simple value (string, boolean, or number literal), or a
+Map, List, or List of Maps containing simple values to the `encode` method:
 
 <!-- skip -->
 ```dart
 String encodedString = JSON.encode([1, 2, { "a": null }]);
 ```
 
-## Example
+## Example Flutter app decoding JSON returned by a HTTP GET call
 
 The following example calls the jsontest.com web service API. This responds with
 your local IP address.
@@ -80,7 +85,7 @@ your local IP address.
 
 1. Add the http dependency as discussed at the top of this page.
 
-1. Replace the contents of `main.dart` with the following:
+1. Replace the contents of `lib/main.dart` with the following:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -110,22 +115,21 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _ipAddress = 'Unknown';
 
-  void _getIPAddress() {
+  _getIPAddress() async {
     String url = "http://ip.jsontest.com/";
-    http.Client _httpClient = new http.Client();
-    _httpClient.read(url).then((String response) {
-      Map data = JSON.decode(response);
-      String ip = data["ip"];
+    var httpClient = new http.Client();
+    var response = await httpClient.read(url);
+    Map data = JSON.decode(response);
+    String ip = data["ip"];
 
-      setState(() {
-        _ipAddress = ip;
-      });
+    setState(() {
+      _ipAddress = ip;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget spacer = new SizedBox(height: 32.0);
+    var spacer = new SizedBox(height: 32.0);
 
     return new Scaffold(
       body: new Center(
@@ -143,7 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 ```
 
 ## API docs
