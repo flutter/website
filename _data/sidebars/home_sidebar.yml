@@ -25,7 +25,7 @@ entries:
     - title: Set up
       url: /setup/
       output: web
-      
+
     - title: IntelliJ set up
       url: /intellij-setup/
       output: web
@@ -41,7 +41,7 @@ entries:
     - title: Dart bootstrap
       url: /bootstrap-into-dart/
       output: web
-      
+
   - title: Tutorials
     output: web
     folderitems:
@@ -132,6 +132,10 @@ entries:
 
     - title: Read and write files
       url: /reading-writing-files/
+      output: web
+
+    - title: Make networking requests
+      url: /networking/
       output: web
 
     - title: Handle text input
