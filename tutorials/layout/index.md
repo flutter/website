@@ -72,19 +72,20 @@ start with [Flutter's approach to layout](#approach).
 <a name="step-0"></a>
 ### Step 0: Set up
 
-Prepare for this tutorial as follows:
+Prepare for this section as follows:
 
 * Make sure you've [set up](/setup/) your environment.
-* [Create a basic flutter app](/getting-started/#creating-your-first-flutter-app).
+* [Create a basic flutter
+  app](/getting-started/#creating-your-first-flutter-app).
   You'll update the Dart code in `lib/main.dart`.
 
 Add the image to the example:
 
 * Create an `images` directory at the top of the project.
 * Add
- [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lakes.jpg).
-  Note that `wget` doesn't work when saving binary files from GitHub,
-  so use another approach for saving the image.
+ [`lake.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg).
+  Note that `wget` won't work for saving this binary file,
+  so use another approach.
 * Update the
   [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   file to include an `assets` tag. This makes the image available to your code.
@@ -346,7 +347,8 @@ online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;a
 under the Creative Commons license, however it's quite large and slow to fetch.
 In [Step 0](#step-0) you included the image in the project and updated the
 [pubspec
-file.](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+so you can now reference it from your code:
 
 <!-- _code/lakes/main.dart -->
 <!-- skip -->
@@ -369,7 +371,7 @@ possible but cover its entire render box.
 <a name="step-6"></a>
 ### Step 6: Put it together
 
-The final step assembles the pieces together. The widgets are arranged
+In the final step, you assemble the pieces together. The widgets are arranged
 in a ListView, rather than a Column, because it automatically scrolls
 when running the app on a small device.
 
