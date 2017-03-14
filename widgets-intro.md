@@ -552,7 +552,7 @@ class ShoppingListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListItem(
+    return new ListTile(
       onTap: () {
         onCartChanged(product, !inCart);
       },

@@ -349,7 +349,7 @@ and vertical layouts&mdash;these low-level widgets allow for maximum
 customization. Flutter also offers specialized, higher level widgets
 that might be sufficient for your needs. For example, instead of Row
 you might prefer
-[ListItem](https://docs.flutter.io/flutter/material/ListItem-class.html),
+[ListTile](https://docs.flutter.io/flutter/material/ListTile-class.html),
 an easy-to-use widget with properties for leading and trailing icons,
 and up to 3 lines of text.  Instead of Column, you might prefer
 [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
@@ -786,7 +786,7 @@ material library.
 * [Card](#card)
 : Organizes related info into a box with rounded corners and a drop shadow.
 
-* [ListItem](#listitem)
+* [ListTile](#listtile)
 : Organizes up to 3 lines of text, and optional leading and training icons,
   into a row.
 
@@ -1001,7 +1001,7 @@ its content is too long for its render box.
 
 <img src="images/listview.png" style="border:1px solid black" alt="a ListView containing movie theaters and restaurants">
 
-Uses ListView to display a list of businesses using ListItems.
+Uses ListView to display a list of businesses using ListTiles.
 A Divider separates the theaters from the restaurants.<br>
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/main.dart), snippet below<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
@@ -1026,7 +1026,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 <!-- skip -->
 {% prettify dart %}
 [[highlight]]List<Widget> list = <Widget>[[/highlight]][
-  [[highlight]]new ListItem[[/highlight]](
+  [[highlight]]new ListTile[[/highlight]](
     title: new Text('CineArts at the Empire',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('85 W Portal Ave'),
@@ -1035,7 +1035,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
       color: Colors.blue[500],
     ),
   ),
-  [[highlight]]new ListItem[[/highlight]](
+  [[highlight]]new ListTile[[/highlight]](
     title: new Text('The Castro Theater',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('429 Castro St'),
@@ -1145,7 +1145,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ### Card
 
 A Card, from the material library, contains related nuggets of information
-and can be composed from most any widget, but is often used with ListItem.
+and can be composed from most any widget, but is often used with ListTile.
 Card has a single child, but its child can be a column, row, list, grid,
 or other widget that supports multiple children. By default, a Card shrinks
 its size to 0 by 0 pixels. You can use
@@ -1179,10 +1179,10 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListItems">
+<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
-A Card containing 3 ListItems and sized by wrapping it with a
-SizedBox. A Divider separates the first and second ListItems.
+A Card containing 3 ListTiles and sized by wrapping it with a
+SizedBox. A Divider separates the first and second ListTiles.
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/card/main.dart), snippet below<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
@@ -1210,7 +1210,7 @@ class _MyHomePageState extends State<MyHomePage> {
       [[highlight]]child: new Card[[/highlight]](
         child: new Column(
           children: [
-            [[highlight]]new ListItem[[/highlight]](
+            [[highlight]]new ListTile[[/highlight]](
               title: new Text('1625 Main Street',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               subtitle: new Text('My City, CA 99984'),
@@ -1220,7 +1220,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             [[highlight]]new Divider()[[/highlight]],
-            [[highlight]]new ListItem[[/highlight]](
+            [[highlight]]new ListTile[[/highlight]](
               title: new Text('(408) 555-1212',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               leading: new Icon(
@@ -1228,7 +1228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue[500],
               ),
             ),
-            [[highlight]]new ListItem[[/highlight]](
+            [[highlight]]new ListTile[[/highlight]](
               title: new Text('costa@example.com'),
               leading: new Icon(
                 Icons.contact_mail,
@@ -1245,34 +1245,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
 <hr>
 
-### ListItem
+### ListTile
 
 Use
-ListItem, a specialized row widget from the material library, for an easy
+ListTile, a specialized row widget from the material library, for an easy
 way to create a row containing up to 3 lines of text and optional leading
-and trailing icons. ListItem is most commonly used in Card or ListView,
+and trailing icons. ListTile is most commonly used in Card or ListView,
 but can be used elsewhere.
 
-#### ListItem summary:
+#### ListTile summary:
 
 * A specialized row that contains up to 3 lines of text and optional icons
 * Less configurable than Row, but easier to use
 * From the material library
 
-#### ListItem examples:
+#### ListTile examples:
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListItems">
+<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
-A Card containing 3 ListItems.<br>
+A Card containing 3 ListTiles.<br>
 **Dart code:** See [Card examples](#card-examples).
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/listitem-flutter-gallery.png" style="border:1px solid black" alt="3 ListItems, each containing a pull-down button">
+<img src="images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, each containing a pull-down button">
 
-Uses ListItem to list 3 drop down button types.<br>
+Uses ListTile to list 3 drop down button types.<br>
 **Dart code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/buttons_demo.dart)
 from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
