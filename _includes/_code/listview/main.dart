@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 List<Widget> list = <Widget>[
-  new ListItem(
+  new ListTile(
     title: new Text('CineArts at the Empire',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('85 W Portal Ave'),
@@ -43,7 +43,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('The Castro Theater',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('429 Castro St'),
@@ -52,7 +52,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('Alamo Drafthouse Cinema',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('2550 Mission St'),
@@ -61,7 +61,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('Roxie Theater',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('3117 16th St'),
@@ -70,7 +70,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('United Artists Stonestown Twin',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('501 Buckingham Way'),
@@ -79,7 +79,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('AMC Metreon 16',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('135 4th St #3000'),
@@ -89,7 +89,7 @@ List<Widget> list = <Widget>[
     ),
   ),
   new Divider(),
-  new ListItem(
+  new ListTile(
     title: new Text('K\'s Kitchen',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('757 Monterey Blvd'),
@@ -98,7 +98,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('Emmy\'s Restaurant',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('1923 Ocean Ave'),
@@ -107,7 +107,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('Chaiya Thai Restaurant',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('272 Claremont Blvd'),
@@ -116,7 +116,7 @@ List<Widget> list = <Widget>[
       color: Colors.blue[500],
     ),
   ),
-  new ListItem(
+  new ListTile(
     title: new Text('La Ciccia',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('291 30th St'),

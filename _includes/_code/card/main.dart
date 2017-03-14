@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: new Card(
         child: new Column(
           children: [
-            new ListItem(
+            new ListTile(
               title: new Text('1625 Main Street',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               subtitle: new Text('My City, CA 99984'),
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             new Divider(),
-            new ListItem(
+            new ListTile(
               title: new Text('(408) 555-1212',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               leading: new Icon(
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue[500],
               ),
             ),
-            new ListItem(
+            new ListTile(
               title: new Text('costa@example.com'),
               leading: new Icon(
                 Icons.contact_mail,
