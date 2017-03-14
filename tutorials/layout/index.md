@@ -341,10 +341,10 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
 <a name="step-5"></a>
 ### Step 5: Implement the image section
 
-Three of the four Column elements are now complete, leaving only the image.
+Three of the four column elements are now complete, leaving only the image.
 This image is [available
 online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=)
-under the Creative Commons license, however it's quite large and slow to fetch.
+under the Creative Commons license, however it's large and slow to fetch.
 In [Step 0](#step-0) you included the image in the project and updated the
 [pubspec
 file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
