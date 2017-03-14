@@ -39,7 +39,7 @@ prepare for this tutorial as follows:
   [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
-  [`lakes.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
+  [`lake.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the
 [iOS simulator](/setup/#set-up-the-ios-simulator) (part of the Flutter install),
