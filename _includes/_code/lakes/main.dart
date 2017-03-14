@@ -50,26 +50,25 @@ class MyApp extends StatelessWidget {
     );
 
     Column buildButtonColumn(IconData icon, String label) {
-      List<Widget> widgets = new List(2);
       Color color = Theme.of(context).primaryColor;
-
-      widgets[0] = new Icon(icon, color: color);
-      widgets[1] = new Container(
-        margin: const EdgeInsets.only(top: 8.0),
-        child: new Text(
-          label,
-          style: new TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.w400,
-            color: color,
-          ),
-        ),
-      );
 
       return new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: widgets,
+        children: [
+          new Icon(icon, color: color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style: new TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
       );
     }
 

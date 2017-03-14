@@ -5,19 +5,38 @@ sidebar: home_sidebar
 permalink: /tutorials/layout/
 ---
 
+<div class="panel" markdown="1">
+
+<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
+
+* How Flutter's layout mechanism works.
+* How to lay out widgets vertically and horizontally.
+* How to build a Flutter layout.
+
+</div>
+
 ## Introduction
 
 This is a guide to building layouts in Flutter.
-We start by explaining Flutter's approach to layout, and
-show you how to place single widgets on the screen.
-We'll discuss how to lay widgets out horizontally and vertically,
-and then cover some of the most common layout widgets.
-Finally, we'll walk through the process of creating a layout for this app:
+You'll dive in and build the layout for the following screenshot:
 
 <img src="images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that we'll build in 'Building a Layout'">
 
+We'll then take a step back to explain Flutter's approach to layout,
+and show you how to place a single widget on the screen.
+Finally, we'll discuss how to lay widgets out horizontally and vertically,
+and then cover some of the most common layout widgets.
+
 ### Contents
 
+* [Building a layout](#building)
+  * [Step 0: Set up](#step-0)
+  * [Step 1: Diagram the layout](#step-1)
+  * [Step 2: Implement the title row](#step-2)
+  * [Step 3: Implement the button row](#step-3)
+  * [Step 4: Implement the text section](#step-4)
+  * [Step 5: Implement the image section](#step-5)
+  * [Step 6: Put it together](#step-6)
 * [Flutter's approach to layout](#approach)
 * [Lay out a widget](#lay-out-a-widget)
 * [Lay out multiple widgets vertically and horizontally](#rows-and-columns)
@@ -28,15 +47,363 @@ Finally, we'll walk through the process of creating a layout for this app:
 * [Common layout widgets](#common-layout-widgets)
   * [Standard widgets](#standard-widgets)
   * [Material widgets](#material-widgets)
-* [Building a layout](#building)
-  * [Step 1: Diagram the layout](#step-1)
-  * [Step 2: Implement the title row](#step-2)
-  * [Step 3: Implement the button row](#step-3)
-  * [Step 4: Implement the text section](#step-4)
-  * [Step 5: Implement the image section](#step-5)
-  * [Step 6: Put it together](#step-6)
 * [Resources](#resources)
 
+<a name="building"></a>
+## Building a layout
+
+This section walks you through the layout for the following screenshot:
+
+<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that we will build in this section">
+
+If you want a "big picture" understanding of the layout mechanism,
+start with [Flutter's approach to layout](#approach).
+
+### Contents
+
+* [Step 0: Set up](#step-0)
+* [Step 1: Diagram the layout](#step-1)
+* [Step 2: Implement the title row](#step-2)
+* [Step 3: Implement the button row](#step-3)
+* [Step 4: Implement the text section](#step-4)
+* [Step 5: Implement the image section](#step-5)
+* [Step 6: Put it together](#step-6)
+
+<a name="step-0"></a>
+### Step 0: Set up
+
+Prepare for this section as follows:
+
+* Make sure you've [set up](/setup/) your environment.
+* [Create a basic flutter
+  app](/getting-started/#creating-your-first-flutter-app).
+  You'll update the Dart code in `lib/main.dart`.
+
+Add the image to the example:
+
+* Create an `images` directory at the top of the project.
+* Add
+ [`lake.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg).
+  Note that `wget` won't work for saving this binary file,
+  so use another approach.
+* Update the
+  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+  file to include an `assets` tag. This makes the image available to your code.
+
+<hr>
+
+<a name="step-1"></a>
+### Step 1: Diagram the layout
+
+The first step is to break the layout down to its basic elements:
+
+* Identify the rows and columns.
+* Does the layout include a grid?
+* Overlapping elements?
+* Tabs?
+* Notice areas that require alignment, padding, or borders.
+
+First, identify the larger elements. In this example, four elements are
+arranged into a column: an image, two rows, and a block of text.
+
+<img src="images/lakes-diagram.png" alt="diagramming the rows in the lakes screenshot">
+
+Next, diagram each row. The first row, which we call the "Title
+Section", has 3 children: 1) a column of text, 2) a star icon,
+and 3) a number. Its first child, the column, contains 2 lines of text.
+That first column takes a lot of space, so it must be wrapped in an
+Expanded widget.
+
+<img src="images/title-section-diagram.png" alt="diagramming the widgets in the title section">
+
+The second row, which we call the "Button Section", also has
+3 children&mdash;each child is a column that contains an icon and text.
+
+<img src="images/button-section-diagram.png" alt="diagramming the widgets in the button section">
+
+Once the layout has been diagrammed, it's easiest to take a bottom up
+approach to implementing it. In order to minimize the visual
+confusion of deeply nested layout code, place some of the implementation
+in variables and functions.
+
+<a name="step-2"></a>
+### Step 2: Implement the title row
+
+First, let's build the left column in the title section. The Column is
+placed inside an Expanded widget to stretch it to use all remaining free
+space in the row. Setting the `crossAxisAlignment` property to
+`CrossAxisAlignment.start` positions the column to the beginning of the row.
+
+The first row of text is placed inside a Container to add padding and the
+text is styled to use a bold font weight. The second child in the Column,
+also text, is painted in grey.
+
+The last two items in the title row are a star icon, painted red,
+and the text, '41'. The entire row is placed in a Container and padded
+along each edge with 32 pixels.
+
+<aside class="alert alert-info" markdown="1">
+**Note:**
+If you have problems, you can check your code against
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
+on GitHub.
+</aside>
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Widget titleSection = new Container(
+      padding: const EdgeInsets.all(32.0),
+      child: new Row(
+        children: [
+          new Expanded(
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                new Container(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: new Text(
+                    'Oeschinen Lake Campground',
+                    style: new TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                new Text(
+                  'Kandersteg, Switzerland',
+                  style: new TextStyle(
+                    color: Colors.grey[500],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          new Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          new Text('41'),
+        ],
+      ),
+    );
+  //...
+}
+{% endprettify %}
+
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+When pasting code into your app, indentation can
+become skewed. You can fix this in IntelliJ by right-clicking the
+Dart code and selecting **Reformat with Dart Style**.
+Reformat the code at the command line using
+[dartfmt](https://github.com/dart-lang/dart_style).
+</aside>
+
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+For a faster development experience, try Flutter's hot reload feature.
+Hot reload allows you to modify your code and see the changes without
+fully restarting the app. The Flutter plugins for IntelliJ and Atom support hot
+reload, or you can trigger it when running apps from the command line.
+For more information, see [Hot Reloads vs. Full Application
+Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-restarts).
+</aside>
+
+<a name="step-3"></a>
+### Step 3: Implement the button row
+
+The button section contains 3 columns that use the same layout&mdash;an
+icon over a row of text. The columns in this row are evenly spaced,
+and the text and icons are painted with the primary color,
+which was set to blue in the app's `build` method:
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //...
+
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+
+    //...
+}
+{% endprettify %}
+
+Since the code for building each row would be almost identical,
+it's most efficient to create a nested function, such as `buildButtonColumn`,
+that takes an Icon and Text, and returns a column with its widgets
+painted in the primary color.
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //...
+
+    Column buildButtonColumn(IconData icon, String label) {
+      Color color = Theme.of(context).primaryColor;
+
+      return new Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          new Icon(icon, color: color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style: new TextStyle(
+                fontSize: 12.0,
+                fontWeight: FontWeight.w400,
+                color: color,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+  //...
+}
+{% endprettify %}
+
+In the build function, the icon is added directly to the column. The
+text is placed into a Container to add padding to the top of the text,
+separating it from the icon.
+
+The row containing these columns is built by calling the function and
+passing the [icon](https://docs.flutter.io/flutter/material/Icons-class.html)
+and text specific to that column. The columns are aligned along the
+main axis using `MainAxisAlignment.spaceEvenly` to arrange the free
+space evenly before, between, and after each column.
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //...
+
+    Widget buttonSection = new Container(
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          buildButtonColumn(Icons.call, 'CALL'),
+          buildButtonColumn(Icons.near_me, 'ROUTE'),
+          buildButtonColumn(Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+  //...
+}
+{% endprettify %}
+
+<a name="step-4"></a>
+### Step 4: Implement the text section
+
+The text section is fairly wordy, so it's also defined as a variable.
+The text is placed in a Container in order to add 32 pixels of padding on
+each edge. The `softwrap` property indicates whether the text should break
+on soft line breaks, such as periods or commas.
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //...
+
+    Widget textSection = new Container(
+      padding: const EdgeInsets.all(32.0),
+      child: new Text(
+        '''
+Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
+        ''',
+        softWrap: true,
+      ),
+    );
+  //...
+}
+{% endprettify %}
+
+<a name="step-5"></a>
+### Step 5: Implement the image section
+
+Three of the four column elements are now complete, leaving only the image.
+This image is [available
+online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=)
+under the Creative Commons license, however it's large and slow to fetch.
+In [Step 0](#step-0) you included the image in the project and updated the
+[pubspec
+file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+so you can now reference it from your code:
+
+<!-- _code/lakes/main.dart -->
+<!-- skip -->
+{% prettify dart %}
+body: new ListView(
+  children: [
+    new Image.asset(
+      'images/lake.jpg',
+      height: 240.0,
+      fit: ImageFit.cover,
+    ),
+    // ...
+  ],
+)
+{% endprettify %}
+
+`ImageFit.cover` tells the framework that the image should be as small as
+possible but cover its entire render box.
+
+<a name="step-6"></a>
+### Step 6: Put it together
+
+In the final step, you assemble the pieces together. The widgets are arranged
+in a ListView, rather than a Column, because it automatically scrolls
+when running the app on a small device.
+
+<!-- skip -->
+<!-- _code/lakes/main.dart -->
+{% prettify dart %}
+//...
+body: new ListView(
+  children: [
+    new Image.asset(
+      'images/lake.jpg',
+      width: 600.0,
+      height: 240.0,
+      fit: ImageFit.cover,
+    ),
+    titleSection,
+    buttonSection,
+    textSection,
+  ],
+),
+//...
+{% endprettify %}
+
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)<br>
+**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/lakes/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+
+That's it! When you hot reload the app, you should see the same layout
+shown in the screenshots. You can add interactivity to this layout in
+[Adding Interactivity to your Flutter App](/tutorials/interactive/).
+
+<hr>
 <a name="approach"></a>
 ## Flutter's approach to layout
 
@@ -216,8 +583,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(config.title),
       ),
-      [[highlight]]body: new Center([[/highlight]]
-        [[highlight]]child: new Text('Hello World', style: new TextStyle(fontSize: 32.0)),[[/highlight]]
+      body: new Center(
+        child: new Text('Hello World', style: new TextStyle(fontSize: 32.0)),
       ),
     );
   }
@@ -255,11 +622,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
-  [[highlight]]Widget build(BuildContext context)[[/highlight]] {
+  Widget build(BuildContext context) {
     return new Container(
       decoration: new BoxDecoration(backgroundColor: Colors.white),
       child: new Center(
-        child: [[highlight]]new Text('Hello World',[[/highlight]]
+        child: new Text('Hello World',
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
       ),
     );
@@ -282,16 +649,6 @@ That's it! When you run the app, you should see:
 
 **Dart code** (material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/hello-world/main.dart)<br>
 **Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/widgets-only/main.dart)
-
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-For a faster development experience, try Flutter's hot reload feature.
-Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The Flutter plugins for IntelliJ and Atom support hot
-reload, or you can trigger it when running apps from the command line.
-For more information, see [Hot Reloads vs. Full Application
-Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-restarts).
-</aside>
 
 <hr>
 
@@ -508,8 +865,8 @@ uses this property to pack the star icons together.
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    [[highlight]]var packedRow = new Row[[/highlight]](
-      [[highlight]]mainAxisSize: MainAxisSize.min,[[/highlight]]
+    var packedRow = new Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         new Icon(Icons.star, color: Colors.green[500]),
         new Icon(Icons.star, color: Colors.green[500]),
@@ -561,22 +918,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    [[highlight]]var ratings = new Container[[/highlight]](
+    var ratings = new Container(
       padding: new EdgeInsets.all(20.0),
-      child: [[highlight]]new Row[[/highlight]](
+      child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          [[highlight]]new Row[[/highlight]](
+          new Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              [[highlight]]new Icon[[/highlight]](Icons.star, color: Colors.black),
-              [[highlight]]new Icon[[/highlight]](Icons.star, color: Colors.black),
-              [[highlight]]new Icon[[/highlight]](Icons.star, color: Colors.black),
-              [[highlight]]new Icon[[/highlight]](Icons.star, color: Colors.black),
-              [[highlight]]new Icon[[/highlight]](Icons.star, color: Colors.black),
+              new Icon(Icons.star, color: Colors.black),
+              new Icon(Icons.star, color: Colors.black),
+              new Icon(Icons.star, color: Colors.black),
+              new Icon(Icons.star, color: Colors.black),
+              new Icon(Icons.star, color: Colors.black),
             ],
           ),
-          [[highlight]]new Text[[/highlight]](
+          new Text(
             '170 Reviews',
             style: new TextStyle(
               color: Colors.black,
@@ -626,29 +983,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // DefaultTextStyle.merge allows you to create a default text
     // style that is inherited by its child and all subsequent children.
-    [[highlight]]var iconList = new DefaultTextStyle.merge[[/highlight]](
+    var iconList = new DefaultTextStyle.merge(
       context: context,
       style: descTextStyle,
       child: new Container(
         padding: new EdgeInsets.all(20.0),
-        child: [[highlight]]new Row[[/highlight]](
+        child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            [[highlight]]new Column[[/highlight]](
+            new Column(
               children: [
                 new Icon(Icons.kitchen, color: Colors.green[500]),
                 new Text('PREP:'),
                 new Text('25 min'),
               ],
             ),
-            [[highlight]]new Column[[/highlight]](
+            new Column(
               children: [
                 new Icon(Icons.timer, color: Colors.green[500]),
                 new Text('COOK:'),
                 new Text('1 hr'),
               ],
             ),
-            [[highlight]]new Column[[/highlight]](
+            new Column(
               children: [
                 new Icon(Icons.restaurant, color: Colors.green[500]),
                 new Text('FEEDS:'),
@@ -675,14 +1032,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    [[highlight]]var leftColumn = new Container[[/highlight]](
+    var leftColumn = new Container(
       padding: new EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
       child: new Column(
-        [[highlight]]children:[[/highlight]] [
-          [[highlight]]titleText[[/highlight]],
-          [[highlight]]subTitle[[/highlight]],
-          [[highlight]]ratings[[/highlight]],
-          [[highlight]]iconList[[/highlight]],
+        children: [
+          titleText,
+          subTitle,
+          ratings,
+          iconList,
         ],
       ),
     );
@@ -710,18 +1067,18 @@ and accessed using `Images.asset`. For more information, see
 <!-- skip -->
 {% prettify dart %}
 body: new Center(
-  child: [[highlight]]new Container[[/highlight]](
+  child: new Container(
     margin: new EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
     height: 600.0,
-    child: [[highlight]]new Card[[/highlight]](
-      child: [[highlight]]new Row[[/highlight]](
+    child: new Card(
+      child: new Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          [[highlight]]new Container[[/highlight]](
+          new Container(
             width: 440.0,
-            child: [[highlight]]leftColumn[[/highlight]],
+            child: leftColumn,
           ),
-          [[highlight]]mainImage[[/highlight]],
+          mainImage,
         ],
       ),
     ),
@@ -843,16 +1200,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    [[highlight]]var container = new Container[[/highlight]](
+    var container = new Container(
       decoration: new BoxDecoration(
         backgroundColor: Colors.black26,
       ),
-      child: [[highlight]]new Column[[/highlight]](
+      child: new Column(
         children: [
           new Row(
             children: [
               new Expanded(
-                child: [[highlight]]new Container[[/highlight]](
+                child: new Container(
                   decoration: new BoxDecoration(
                     border: new Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
@@ -863,7 +1220,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               new Expanded(
-                child: [[highlight]]new Container[[/highlight]](
+                child: new Container(
                   decoration: new BoxDecoration(
                     border: new Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
@@ -947,21 +1304,21 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 // The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
 // The List.generate constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-[[highlight]]List<Container> _buildGridTileList(int count)[[/highlight]] {
+List<Container> _buildGridTileList(int count) {
 
-  [[highlight]]return new List<Container>.generate[[/highlight]](
+  return new List<Container>.generate(
       count,
       (int index) =>
           new Container(child: new Image.asset('images/pic${index+1}.jpg')));
 }
 
-[[highlight]]Widget buildGrid()[[/highlight]] {
+Widget buildGrid() {
   return new GridView.extent(
       maxCrossAxisExtent: 150.0,
       padding: const EdgeInsets.all(4.0),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
-      children: [[highlight]]_buildGridTileList(30));[[/highlight]]
+      children: _buildGridTileList(30));
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -972,7 +1329,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text(config.title),
       ),
       body: new Center(
-        child: [[highlight]]buildGrid()[[/highlight]],
+        child: buildGrid(),
       ),
     );
   }
@@ -1025,8 +1382,8 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 <!-- _code/listview/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-[[highlight]]List<Widget> list = <Widget>[[/highlight]][
-  [[highlight]]new ListTile[[/highlight]](
+List<Widget> list = <Widget>[
+  new ListTile(
     title: new Text('CineArts at the Empire',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('85 W Portal Ave'),
@@ -1035,7 +1392,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
       color: Colors.blue[500],
     ),
   ),
-  [[highlight]]new ListTile[[/highlight]](
+  new ListTile(
     title: new Text('The Castro Theater',
         style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
     subtitle: new Text('429 Castro St'),
@@ -1055,8 +1412,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       // ...
       body: new Center(
-        child: [[highlight]]new ListView[[/highlight]](
-          children: [[highlight]]list,[[/highlight]]
+        child: new ListView(
+          children: list,
         ),
       ),
     );
@@ -1113,18 +1470,18 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    [[highlight]]var stack = new Stack([[/highlight]]
-      [[highlight]]alignment: const FractionalOffset(0.8, 0.8),[[/highlight]]
+    var stack = new Stack(
+      alignment: const FractionalOffset(0.8, 0.8),
       children: [
-        [[highlight]]new CircleAvatar[[/highlight]](
+        new CircleAvatar(
           backgroundImage: new AssetImage('images/pic.jpg'),
           radius: 100.0,
         ),
-        [[highlight]]new Container[[/highlight]](
+        new Container(
           decoration: new BoxDecoration(
             backgroundColor: Colors.black45,
           ),
-          child: [[highlight]]new Text[[/highlight]](
+          child: new Text(
             'Mia B',
             style: new TextStyle(
               fontSize: 20.0,
@@ -1205,12 +1562,12 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    [[highlight]]var card = new SizedBox[[/highlight]](
+    var card = new SizedBox(
       height: 210.0,
-      [[highlight]]child: new Card[[/highlight]](
+      child: new Card(
         child: new Column(
           children: [
-            [[highlight]]new ListTile[[/highlight]](
+            new ListTile(
               title: new Text('1625 Main Street',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               subtitle: new Text('My City, CA 99984'),
@@ -1219,8 +1576,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue[500],
               ),
             ),
-            [[highlight]]new Divider()[[/highlight]],
-            [[highlight]]new ListTile[[/highlight]](
+            new Divider(),
+            new ListTile(
               title: new Text('(408) 555-1212',
                   style: new TextStyle(fontWeight: FontWeight.w500)),
               leading: new Icon(
@@ -1228,7 +1585,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue[500],
               ),
             ),
-            [[highlight]]new ListTile[[/highlight]](
+            new ListTile(
               title: new Text('costa@example.com'),
               leading: new Icon(
                 Icons.contact_mail,
@@ -1278,303 +1635,6 @@ from the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 
 </div> </div>
-
-<hr>
-
-<a name="building"></a>
-## Building a layout
-
-The previous sections describe Flutter's approach to creating a layout.
-How do you use this knowledge to build an entire layout?
-Let's walk through the layout for the following screenshot:
-
-<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that we will build in this section">
-
-### Contents
-
-* [Step 1: Diagram the layout](#step-1)
-* [Step 2: Implement the title row](#step-2)
-* [Step 3: Implement the button row](#step-3)
-* [Step 4: Implement the text section](#step-4)
-* [Step 5: Implement the image section](#step-5)
-* [Step 6: Put it together](#step-6)
-
-<a name="step-1"></a>
-### Step 1: Diagram the layout
-
-The first step is to break the layout down to its basic elements:
-
-* Identify the rows and columns.
-* Does the layout include a grid?
-* Overlapping elements?
-* Tabs?
-* Notice areas that require alignment, padding, or borders.
-
-First, identify the larger elements. In this example, four elements are
-arranged as a Column: an image, two rows, and a block of text.
-
-<img src="images/lakes-diagram.png" alt="diagramming the rows in the lakes screenshot">
-
-Next, diagram each row. The first row, which we call the "Title
-Section", has 3 children: 1) a column of text, 2) a star icon,
-and 3) a number. Its first child, the column, contains 2 lines of text.
-That first column takes a lot of space, so it must be wrapped in an
-Expanded widget.
-
-<img src="images/title-section-diagram.png" alt="diagramming the widgets in the title section">
-
-The second row, which we call the "Button Section", also has
-3 children&mdash;each child is a column that contains an icon and text.
-
-<img src="images/button-section-diagram.png" alt="diagramming the widgets in the button section">
-
-Once the layout has been diagrammed, it's easiest to take a bottom up
-approach to implementing it. In order to minimize the visual
-confusion of deeply nested layout code, place some of the implementation
-in variables and functions.
-
-<a name="step-2"></a>
-### Step 2: Implement the title row
-
-First, let's build the left column in the title section. The Column is
-placed inside an Expanded widget to stretch it to use all remaining free
-space in the row. Setting the `crossAxisAlignment` property to
-`CrossAxisAlignment.start` positions the column to the beginning of the row.
-
-The first row of text is placed inside a Container to add padding and the
-text is styled to use a bold font weight. The second child in the Column,
-also text, is painted in grey.
-
-The last two items in the title row are a star icon, painted red,
-and the text, '41'. The entire row is placed in a Container and padded
-along each edge with 32 pixels.
-
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    [[highlight]]Widget titleSection = new Container[[/highlight]](
-      padding: const EdgeInsets.all(32.0),
-      child: [[highlight]]new Row[[/highlight]](
-        children: [
-          [[highlight]]new Expanded[[/highlight]](
-            child: [[highlight]]new Column[[/highlight]](
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                [[highlight]]new Container[[/highlight]](
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: [[highlight]]new Text[[/highlight]](
-                    'Oeschinen Lake Campground',
-                    style: new TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                [[highlight]]new Text[[/highlight]](
-                  'Kandersteg, Switzerland',
-                  style: new TextStyle(
-                    color: Colors.grey[500],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          [[highlight]]new Icon[[/highlight]](
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          [[highlight]]new Text[[/highlight]]('41'),
-        ],
-      ),
-    );
-  //...
-}
-{% endprettify %}
-
-<a name="step-3"></a>
-### Step 3: Implement the button row
-
-The button section contains 3 columns that use the same layout&mdash;an
-icon over a row of text. The columns in this row are evenly spaced,
-and the text and icons are painted with the primary color,
-which was set to blue in the app's `build` method:
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  [[highlight]]Widget build(BuildContext context)[[/highlight]] {
-    //...
-
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      [[highlight]]theme: new ThemeData[[/highlight]](
-        [[highlight]]primarySwatch: Colors.blue,[[/highlight]]
-      ),
-
-    //...
-}
-{% endprettify %}
-
-Since the code for building each row would be almost identical,
-it's most efficient to create a nested function, such as `buildButtonColumn`,
-that takes an Icon and Text, and returns a column with its widgets
-painted in the primary color.
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    //...
-
-    [[highlight]]Column buildButtonColumn(IconData icon, String label)[[/highlight]] {
-      List<Widget> widgets = new List(2);
-      [[highlight]]Color color = Theme.of(context).primaryColor;[[/highlight]]
-
-      widgets[0] = new Icon(icon, color: color);
-      widgets[1] = new Container(
-        margin: const EdgeInsets.only(top: 8.0),
-        child: new Text(
-          label,
-          style: new TextStyle(
-            fontSize: 12.0,
-            fontWeight: FontWeight.w400,
-            color: color,
-          ),
-        ),
-      );
-
-      [[highlight]]return new Column[[/highlight]](
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: widgets,
-      );
-    }
-  //...
-}
-{% endprettify %}
-
-In the build function, the icon is added directly to the column. The
-text is placed into a Container to add padding to the top of the text,
-separating it from the icon.
-
-The row containing these columns is built by calling the function and
-passing the [icon](https://docs.flutter.io/flutter/material/Icons-class.html)
-and text specific to that column. The columns are aligned along the
-main axis using `MainAxisAlignment.spaceEvenly` to arrange the free
-space evenly before, between, and after each column.
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    //...
-
-    [[highlight]]Widget buttonSection = new Container([[/highlight]]
-      child: new Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          [[highlight]]buildButtonColumn(Icons.call, 'CALL'),[[/highlight]]
-          [[highlight]]buildButtonColumn(Icons.near_me, 'ROUTE'),[[/highlight]]
-          [[highlight]]buildButtonColumn(Icons.share, 'SHARE'),[[/highlight]]
-        ],
-      ),
-    );
-  //...
-}
-{% endprettify %}
-
-<a name="step-4"></a>
-### Step 4: Implement the text section
-
-The text section is fairly wordy, so it's also defined as a variable.
-The text is placed in a Container in order to add 32 pixels of padding on
-each edge. The `softwrap` property indicates whether the text should break
-on soft line breaks, such as periods or commas.
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    //...
-
-    [[highlight]]Widget textSection = new Container[[/highlight]](
-      padding: const EdgeInsets.all(32.0),
-      child: new Text(
-        '''
-Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
-        ''',
-        softWrap: true,
-      ),
-    );
-  //...
-}
-{% endprettify %}
-
-<a name="step-5"></a>
-### Step 5: Implement the image section
-
-Three of the four Column elements are now complete, leaving only the image.
-This image is [available
-online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=)
-under the Creative Commons license, however it's quite large and slow to fetch.
-As with the [Pavlova example](#adding-images), we've included the image
-in the project, which you can see in the [pubspec
-file.](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
-
-<!-- _code/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-[[highlight]]new Image.asset[[/highlight]](
-  'images/lake.jpg',
-  width: 600.0,
-  height: 240.0,
-  [[highlight]]fit: ImageFit.cover,[[/highlight]]
-),
-{% endprettify %}
-
-`ImageFit.cover` tells the framework that the image should be as small as
-possible but cover its entire render box.
-
-<a name="step-6"></a>
-### Step 6: Put it together
-
-The final step assembles the pieces together. At this point, you can tweak
-the layout as needed.  Here is the final Column:
-
-<!-- skip -->
-<!-- _code/lakes/main.dart -->
-{% prettify dart %}
-//...
-body: new ListView(
-  children: [
-    new Image.asset(
-      'images/lake.jpg',
-      width: 600.0,
-      height: 240.0,
-      fit: ImageFit.cover,
-    ),
-    titleSection,
-    buttonSection,
-    textSection,
-  ],
-),
-//...
-{% endprettify %}
-
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)<br>
-**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/lakes/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
 
 <hr>
 
