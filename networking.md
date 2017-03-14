@@ -24,6 +24,7 @@ dependencies:
 
 You can create an HTTP [Client][client] with the `Client` constructor:
 
+<!-- skip -->
 ```dart
 import 'package:http/http.dart' as http;
 
@@ -42,6 +43,7 @@ Note that the API uses [Dart
 Futures](https://www.dartlang.org/tutorials/language/futures) in the return
 values. These are most easily used with the `then()` methods like this:
 
+<!-- skip -->
 ```dart
 _httpClient.post(url, body: {"name": "doodle", "color": "blue"})
     .then((response) {
@@ -55,6 +57,7 @@ This is supported via the [`dart:convert`](https://docs.flutter.io/flutter/dart-
 
 To decode/parse the JSON string response into a Map:
 
+<!-- skip -->
 ```dart
 Map data = JSON.decode(response.body);
 // Assume the response body is something like: ["foo", { "bar": 499 }]
@@ -62,6 +65,8 @@ int barValue = data[1]['bar']; // barValue is set to 499
 ```
 
 To encode JSON simply pass in a `Map` with the values:
+
+<!-- skip -->
 ```dart
 String encodedString = JSON.encode([1, 2, { "a": null }]);
 ```
