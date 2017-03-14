@@ -106,9 +106,7 @@ The CSS examples use the hex color equivalents to the Material color palette.
     ),
     width: 320.0,
     height: 240.0,
-[[highlight]]    decoration: new BoxDecoration(
-      backgroundColor: Colors.grey[300],
-    ),[[/highlight]]
+[[highlight]]    color: Colors.grey[300],[[/highlight]]
   );
 {% endprettify %}
 </div>
@@ -150,9 +148,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -213,9 +209,7 @@ var container = new Container( // grey box
   ),
 [[highlight]]  width: 320.0, [[/highlight]]
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -281,9 +275,7 @@ var container = new Container( // grey box
   ), [[/highlight]]
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ), 
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -345,9 +337,7 @@ var container = new Container( // gray box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -410,9 +400,7 @@ var container = new Container( // gray box
      ), [[/highlight]]
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -481,9 +469,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -537,9 +523,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -597,9 +581,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -737,9 +719,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -808,9 +788,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -865,9 +843,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -944,9 +920,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
@@ -1007,9 +981,7 @@ var container = new Container( // grey box
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
-  ),
+  color: Colors.grey[300],
 );
 {% endprettify %}
 </div>
