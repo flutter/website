@@ -122,7 +122,7 @@ entries:
       url: /formatting/
       output: web
 
-    - title: Upgrade flutter
+    - title: Upgrade Flutter
       url: /upgrading/
       output: web
 
