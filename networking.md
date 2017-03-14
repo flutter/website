@@ -4,7 +4,7 @@ title: Making HTTP Networking Requests in Flutter
 permalink: /networking/
 ---
 
-This page discusses how to make HTTP networking requests in Flutter. For
+This page describes how to make HTTP networking requests in Flutter. For
 HTTP servers and sockets, see [dart:io][dartio].
 
 * TOC Placeholder
@@ -12,9 +12,9 @@ HTTP servers and sockets, see [dart:io][dartio].
 
 ## Using the `http` package
 
-Flutter supports the the [http package][http], version `0.11.3+12` or later.
+Flutter supports the [http package][http], version `0.11.3+12` or later.
 
-Start by declaring a dependency by adding an http line under `dependencies` in
+The first step is to declare a dependency by adding an `http...` line under `dependencies` in
 `pubspec.yaml`:
 
 ```
@@ -25,7 +25,7 @@ dependencies:
 
 ## Making HTTP requests
 
-You can create an HTTP [Client][client] with the `Client` constructor:
+Next, create an HTTP [Client][client] with the `Client` constructor:
 
 <!-- skip -->
 ```dart
@@ -55,14 +55,14 @@ postData() async {
 
 Note that the HTTP APIs use [Dart
 Futures](https://www.dartlang.org/tutorials/language/futures) in the return
-values. We recommend you use the API calls with the `async`/`await` syntax as in
-the code above.
+values. We recommend using the API calls with the `async`/`await` syntax as shown in
+the preceding code sample.
 
 ## Decoding and encoding JSON
 
-This is supported via the [`dart:convert`](https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html) library.
+Support for decoding and encoding JSON is provided by the [`dart:convert`](https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html) library.
 
-To decode/parse the JSON string response into a Map:
+To decode the JSON string and parse the response into a Map:
 
 <!-- skip -->
 ```dart
@@ -71,23 +71,25 @@ Map data = JSON.decode(response.body);
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
 
-To encode JSON pass a simple value (string, boolean, or number literal), or a
-Map, List, or List of Maps containing simple values to the `encode` method:
+To encode JSON, pass a simple value (string, boolean, or number literal), or a
+Map, List, or List of Maps containing simple values, to the `encode` method:
 
 <!-- skip -->
 ```dart
 String encodedString = JSON.encode([1, 2, { "a": null }]);
 ```
 
-## Example Flutter app decoding JSON returned by a HTTPS GET call
+## Example: decoding JSON from HTTPS GET
 
-The following example calls the [httpbin.com](http://httpbin.com) web service
-testing API. This responds with your local IP address. Note that it uses secure
-'https' networking.
+The following example shows how to decode JSON from an HTTPS GET call in a Flutter app.
 
-1. Create a new flutter app with `flutter create`
+It calls the [httpbin.com](http://httpbin.com) web service testing API, 
+which then responds with your local IP address. Note that secure
+networking (HTTPS) is used.
 
-1. Add the http dependency as discussed at the top of this page.
+1. Create a new flutter app with `flutter create`.
+
+1. Add the [http dependency](#using-http-package).
 
 1. Replace the contents of `lib/main.dart` with the following:
 
