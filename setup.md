@@ -66,10 +66,10 @@ To install and run Flutter, your development environment must meet these minimum
    a new window:
 
    ```
-   export PATH=~/flutter/bin
+   export PATH=$HOME/flutter/bin:$PATH
    ```
    and then run the `source <filename>` command to refresh the window. For example, 
-   edit and source `~/.bash_profile`.
+   edit and source `$HOME/.bash_profile`.
 
 1. Verify that the `flutter/bin` directory is now in your PATH by running:
    ```
@@ -215,7 +215,7 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
    ```
    On Linux:
    ```
-   $ export PATH=~/Android-Studio/jre/bin:$PATH
+   $ export PATH=$HOME/Android-Studio/jre/bin:$PATH
    ```
    The above command sets your PATH variable temporarily, for the current terminal window.
    The steps for modifying this variable permanently for all terminal sessions are machine-specific. 
