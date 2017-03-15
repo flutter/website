@@ -142,10 +142,6 @@ entries:
     output: web
     folderitems:
 
-    - title: GitHub source
-      external_url: https://github.com/flutter/flutter
-      output: web
-
     - title: Architecture diagram
       external_url: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing
       output: web
