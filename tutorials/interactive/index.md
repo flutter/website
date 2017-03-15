@@ -64,7 +64,7 @@ The following shows both states.
 <img src="images/favorited-not-favorited.png" alt="the custom widget you'll create">
 
 To accomplish this, you'll create a single custom widget that includes both the
-star and and the count. Tapping the star changes state for both widgets,
+star and the count. Tapping the star changes state for both widgets,
 so the same widget should manage both.
 
 If you don't already have the starting code for the Lakes example,
@@ -819,4 +819,3 @@ The following resources may help when adding interactivity to your app.
    Design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
    This video includes information about state and stateless widgets.
    Presented by Google engineer, Ian Hickson.
-
