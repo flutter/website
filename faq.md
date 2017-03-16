@@ -314,9 +314,9 @@ a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by using either `--profile` or `--release`
 flag to `flutter run`.
 
-If you are using the Flutter plugin for IntelliJ, you can disable Slow Mode by
-using the `Run>Run` action rather than `Run>Debug`.
-
+If you are using the Flutter plugin for IntelliJ, please note that it currently
+does not support running in `--profile` or `--release` modes (see
+[issue #410](https://github.com/flutter/flutter-intellij/issues/410)).
 
 ## Where can I get support?
 
@@ -408,9 +408,9 @@ or directly) dart:mirrors or dart:html.
 
 ## Which software license(s) apply to Flutter and its dependencies?
 
-Flutter includes two components: an engine that ships as a dynamically linked 
-binary, and the Dart framework as a separate binary that the engine loads. 
-The engine uses multiple software components with many dependencies; view the 
+Flutter includes two components: an engine that ships as a dynamically linked
+binary, and the Dart framework as a separate binary that the engine loads.
+The engine uses multiple software components with many dependencies; view the
 complete list [here](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
 
 The framework is entirely self-contained and requires [only one license](https://github.com/flutter/flutter/blob/master/LICENSE).
