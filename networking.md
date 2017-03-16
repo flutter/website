@@ -25,13 +25,15 @@ dependencies:
 
 ## Making HTTP requests
 
-Next, create an HTTP [Client][client] with the `Client` constructor:
+Next, create an HTTP [Client][client]. We recommend using
+[`createHttpClient`](https://docs.flutter.io/flutter/services/createHttpClient.html)
+to enable tests to provide an `http.MockClient`:
 
 <!-- skip -->
 ```dart
-import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart';
 
-var httpClient = new http.Client();
+var httpClient = createHttpClient();
 ```
 
 The client supports common HTTP operations, such as:
@@ -94,9 +96,10 @@ networking (HTTPS) is used.
 1. Replace the contents of `lib/main.dart` with the following:
 
 ```dart
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(new MyApp());
@@ -123,10 +126,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _getIPAddress() async {
     String url = "https://httpbin.org/ip";
-    var httpClient = new http.Client();
+    var httpClient = createHttpClient();
     var response = await httpClient.read(url);
     Map data = JSON.decode(response);
     String ip = data["origin"];
+
+    // If the widget was removed from the tree while the message was in flight,
+    // we want to discard the reply rather than calling setState to update our
+    // non-existent appearance.
+    if (!mounted) return;
 
     setState(() {
       _ipAddress = ip;
@@ -139,16 +147,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return new Scaffold(
       body: new Center(
-        child: new Column(children: <Widget>[
-          spacer,
-          new Text('Your current IP address is:'),
-          new Text('$_ipAddress.'),
-          spacer,
-          new RaisedButton(
-            onPressed: _getIPAddress,
-            child: new Text('Get IP address'),
-          )
-        ]),
+        child: new Column(
+          children: <Widget>[
+            spacer,
+            new Text('Your current IP address is:'),
+            new Text('$_ipAddress.'),
+            spacer,
+            new RaisedButton(
+              onPressed: _getIPAddress,
+              child: new Text('Get IP address'),
+            ),
+          ],
+        ),
       ),
     );
   }
