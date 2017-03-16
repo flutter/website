@@ -5,7 +5,7 @@ permalink: /networking/
 ---
 
 This page describes how to make HTTP networking requests in Flutter. For
-HTTP servers and sockets, see [dart:io][dartio].
+sockets, see [dart:io][dartio].
 
 * TOC Placeholder
 {:toc}
@@ -83,7 +83,7 @@ String encodedString = JSON.encode([1, 2, { "a": null }]);
 
 The following example shows how to decode JSON from an HTTPS GET call in a Flutter app.
 
-It calls the [httpbin.com](http://httpbin.com) web service testing API, 
+It calls the [httpbin.com](http://httpbin.com) web service testing API,
 which then responds with your local IP address. Note that secure
 networking (HTTPS) is used.
 
