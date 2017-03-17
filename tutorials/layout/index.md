@@ -358,14 +358,14 @@ body: new ListView(
     new Image.asset(
       'images/lake.jpg',
       height: 240.0,
-      fit: ImageFit.cover,
+      fit: BoxFit.cover,
     ),
     // ...
   ],
 )
 {% endprettify %}
 
-`ImageFit.cover` tells the framework that the image should be as small as
+`BoxFit.cover` tells the framework that the image should be as small as
 possible but cover its entire render box.
 
 <a name="step-6"></a>
@@ -385,7 +385,7 @@ body: new ListView(
       'images/lake.jpg',
       width: 600.0,
       height: 240.0,
-      fit: ImageFit.cover,
+      fit: BoxFit.cover,
     ),
     titleSection,
     buttonSection,
@@ -536,7 +536,7 @@ Create an Image widget:
 
 <!-- skip -->
 {% prettify dart %}
-new Image.asset('images/myPic.jpg', fit: ImageFit.cover)
+new Image.asset('images/myPic.jpg', fit: BoxFit.cover)
 {% endprettify %}
 
 Create an Icon widget:
