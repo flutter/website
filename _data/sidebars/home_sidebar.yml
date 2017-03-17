@@ -102,6 +102,10 @@ entries:
     output: web
     folderitems:
 
+    - title: Platform-specific APIs & Plugins
+      url: /platform-plugins/
+      output: web
+
     - title: Add assets and images
       url: /assets-and-images/
       output: web
