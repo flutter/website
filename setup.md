@@ -176,16 +176,10 @@ iOS devices.
    $ brew update
    $ brew install --HEAD libimobiledevice
    $ brew install ideviceinstaller ios-deploy
+   $ brew install cocoapods
    ```
-1. If you see the following error:
-    ```
-   You must brew link libtasn1 libplist libusb before ideviceinstaller can be installed
-    ```
-   run `brew link libtasn1 libplist libusb` to link the required libraries. 
-
-   If the command fails with an error related to directories that are not writeable, 
-   run `brew doctor` and follow the instructions for changing permissions on those directories.
-   Then run the `brew link ...` and `brew install...` commands again.
+   If any of these commands fails with an error, run `brew doctor` and follow the instructions 
+   for resolving the issue.
    
 1. Follow the steps defined by Apple to configure Xcode with your Apple Developer account and enable deploying with provisioning profiles. To learn how to set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 1. Select your Development Team for the Flutter project.
