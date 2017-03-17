@@ -149,7 +149,7 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
 
     var mainImage = new Image.asset(
       'images/pavlova.jpg',
-      fit: ImageFit.cover,
+      fit: BoxFit.cover,
     );
 
     return new Scaffold(
