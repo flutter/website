@@ -177,7 +177,6 @@ iOS devices.
    $ brew install --HEAD libimobiledevice
    $ brew install ideviceinstaller ios-deploy
    $ brew install cocoapods
-   $ brew link cocoapods
    ```
    If any of these commands fails with an error, run `brew doctor` and follow the instructions 
    for resolving the issue.
