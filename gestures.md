@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Gestures in Flutter
+title: Taps, Touches, and Gestures in Flutter
 sidebar: home_sidebar
 permalink: /gestures/
 ---
@@ -10,9 +10,13 @@ permalink: /gestures/
 
 # Introduction
 
+This document explains how to listen for, and respond to,
+touch, taps, and gestures in Flutter. Collectively, touch, taps,
+and gestures are considered part of the _gesture system_.
+
 The gesture system in Flutter has two separate layers.  The first layer has raw
 pointer events, which describe the location and movement of pointers (e.g.,
-touches, mice, and styli) across the screen. The second layer has gestures,
+touches, mice, and styli) across the screen. The second layer has _gestures_,
 which describe semantic actions that consist of one or more pointer movements.
 
 # Pointers
