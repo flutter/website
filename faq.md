@@ -141,44 +141,30 @@ we encourage you to email our mailing list:
 
 ## Can I access native services and APIs like sensors and local storage?
 
-Yes. Flutter gives developers out-of-the-box access to _some_ services
-and APIs from the operating system. However, we want to avoid the
-"lowest common denominator" problem with most cross-platform APIs, so we
-do not intend to build cross-platform APIs for all native services and APIs.
+Yes. Flutter gives developers out-of-the-box access to _some_ platform-specific
+services and APIs from the operating system. However, we want to avoid the
+"lowest common denominator" problem with most cross-platform APIs, so we do not
+intend to build cross-platform APIs for all native services and APIs.
 
 We encourage developers to use Flutter's asynchronous message passing system to
 create your own integrations with
-[platform and third-party APIs](/platform-services/). Developers
+[platform and third-party APIs](/platform-plugins/). Developers
 can expose as much or as little of the platform APIs as they need, and build
 layers of abstractions that are a best fit for their project.
 
-If you want to do this, we encourage you to email our
-mailing list:
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
-
 ## Can I interop with my mobile platform's default programming language?
 
-Yes, though this feature is a work in progress.
+Yes, Flutter supports calling into the platform, incl. integrating with
+java-code on Android, and ObjectiveC and Swift code on iOS. This is enabled via
+a flexible message passing style where a Flutter app may send and receive messages to the
+mobile platform using a
+[`PlatformMessageChannel`](https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html).
 
-We are building a _message pipe_ between Flutter and the host
-operating system. You can use this message pipe to send and receive
-string data (typically JSON data) between your Flutter code
-and Java (on Android) and ObjectiveC (on iOS).
+Learn more about [accessing platform and third-party services in Flutter](/platform-plugins/).
 
-Learn more about
-[accessing platform and third-party services in Flutter](/platform-services/).
-
-Here is an
-[example project](https://github.com/flutter/flutter/tree/master/examples/hello_services)
-that shows how to use the message pipe to access geolocation functionality
-on Android. (An equivalent example project for iOS is in development.)
-
-This is an evolving part of the system, and we're very interested
-to learn how teams want to interop between
-Flutter and the OS and third-party SDKs. We encourage you to email our
-mailing list to let us know what you're building, and if you have
-questions:
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_services)
+that shows how to use the PlatformChannel to access battery state information on
+iOS and Android.
 
 ## Does Flutter come with a framework?
 

@@ -130,10 +130,6 @@ entries:
       url: /upgrading/
       output: web
 
-    - title: Access platform and third-party services
-      url: /platform-services/
-      output: web
-
     - title: Read and write files
       url: /reading-writing-files/
       output: web
