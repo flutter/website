@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Taps, Touches, and Gestures in Flutter
+title: Taps, drags, and other gestures in Flutter
 sidebar: home_sidebar
 permalink: /gestures/
 ---
@@ -11,8 +11,8 @@ permalink: /gestures/
 # Introduction
 
 This document explains how to listen for, and respond to,
-touch, taps, and gestures in Flutter. Collectively, touch, taps,
-and gestures are considered part of the _gesture system_.
+_gestures_ in Flutter. Examples of gestures include
+taps, drags, and scaling.
 
 The gesture system in Flutter has two separate layers.  The first layer has raw
 pointer events, which describe the location and movement of pointers (e.g.,
