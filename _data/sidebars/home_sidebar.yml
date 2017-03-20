@@ -102,7 +102,7 @@ entries:
     output: web
     folderitems:
 
-    - title: Platform-specific APIs & Plugins
+    - title: Use plugins & platform-specific APIs
       url: /platform-plugins/
       output: web
 
