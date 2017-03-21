@@ -14,8 +14,7 @@ sockets, see [dart:io][dartio].
 
 Flutter supports the [http package][http], version `0.11.3+12` or later.
 
-The first step is to declare a dependency by adding an `http...` line under `dependencies` in
-`pubspec.yaml`:
+Start by declaring a dependency on `http` in `pubspec.yaml`:
 
 ```
 dependencies:
