@@ -114,7 +114,7 @@ No. We do not plan to provide a web version of Flutter.
 
 ## What operating systems can I use to build a Flutter app?
 
-Flutter supports development on Linux, Mac, and Windows.
+Flutter supports development on Linux, Mac, and, Windows.
 
 ## What kinds of apps can I build with Flutter?
 
@@ -189,8 +189,9 @@ framework.
 
 ## Does Flutter come with widgets?
 
-Yes! Flutter ships with a set of high quality Material Design widgets, layouts,
-and themes. You can see a collection of those widgets at [[docs coming soon]]. Of
+Yes! Flutter ships with a set of
+[high quality Material and Cupertino (iOS-styled) widgets][widgets], layouts,
+and themes. You can see a collection of those widgets. Of
 course, these widgets are optional. Flutter is designed to make it easy to
 create your own widgets, or customize the existing widgets.
 
@@ -406,6 +407,14 @@ Flutter's workload.
 Flutter should be able to run most Dart code that does not import (transitively,
 or directly) dart:mirrors or dart:html.
 
+## Why is the build() method on State, not StatefulWidget?
+
+Putting a `Widget build(BuildContext context)` method on State
+rather putting a `Widget build(BuildContext context, State state)`
+method on StatefulWidget gives developers more flexibility when
+subclassing StatefulWidget. You can read a more
+[detailed discussion on the API docs for State.build](https://docs.flutter.io/flutter/widgets/State/build.html).
+
 ## Which software license(s) apply to Flutter and its dependencies?
 
 Flutter includes two components: an engine that ships as a dynamically linked
@@ -435,3 +444,5 @@ There's an API to find the list of licenses you need to show:
 Flutter is an open source project. Currently, the bulk of the development is done
 by engineers at Google. If you're excited about Flutter, we encourage you to join
 the community and contribute to Flutter!
+
+[widgets]: https://flutter.io/widgets/
