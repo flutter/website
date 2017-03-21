@@ -74,7 +74,7 @@ echo "Building site."
 bundle exec jekyll build
 
 echo "Validating all links."
-bundle exec htmlproofer _site --log-level :debug --empty-alt-ignore --url-ignore "#" --only-4xx --url-swap "https?\:\/\/(localhost\:4000|flutter\.io):"
+rake checklinks
 
 if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
   # Deploy pushes to master to Firebase hosting.

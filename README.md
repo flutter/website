@@ -36,8 +36,7 @@ A tldr version follows:
 `bundle exec jekyll serve` (or `jekyll serve -w --force_polling`)
 
 1. Prior to submitting, run link validation:<br>
-`bundle exec jekyll build`<br>
-`bundle exec htmlproofer _site --log-level :debug --empty-alt-ignore --url-ignore "#" --only-4xx  --url-swap "https?\:\/\/(localhost\:4000|flutter\.io):"`
+`rake checklinks`
 
 ## Writing for flutter.io
 
