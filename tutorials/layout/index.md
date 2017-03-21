@@ -206,8 +206,8 @@ Reformat the code at the command line using
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 For a faster development experience, try Flutter's hot reload feature.
 Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The Flutter plugins for IntelliJ and Atom support hot
-reload, or you can trigger it when running apps from the command line.
+fully restarting the app. The [Flutter plugin for IntelliJ](/intellij-ide/) supports
+hot reload, or you can trigger it when running apps from the command line.
 For more information, see [Hot Reloads vs. Full Application
 Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-restarts).
 </aside>
