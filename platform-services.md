@@ -8,6 +8,8 @@ permalink: /platform-services/
 This guide describes how to connect your Flutter app to platform-specific or
 third-party services that are available on iOS and Android devices.
 
+![UnderConstruction](https://lh3.googleusercontent.com/-6z0qaNU4DNo/WNFZE5AmgXI/AAAAAAAAHKI/TkfM8S7WepsrbnZOQ7lqTcRmRPjl1xIkQCL0B/h428/2017-03-21.gif)
+
 * TOC
 {:toc}
 
@@ -113,8 +115,8 @@ class establishes connections with services.
    You can register a callback for receiving
    messages through the [`PlatformMessages`](https://docs.flutter.io/flutter/services/PlatformMessages-class.html)
    class by calling the
-   [`setJSONMessageHandler()`](https://docs.flutter.io/flutter/services/PlatformMessages/setJSONMessageHandler.html)
-   or [`setStringMessageHandler()`](https://docs.flutter.io/flutter/services/PlatformMessages/setStringMessageHandler.html)
+   setJSONMessageHandler()
+   or setStringMessageHandler()
    static methods.
 
    For example, this snippet shows how you might initialize a service binding
@@ -151,7 +153,7 @@ class to call a target service on the host. You'll typically peform this
 operation when the user performs a UI interaction.
 
    You can construct your service invocation call as a JSON-encoded string,
-   then call the [`sendJSON`](https://docs.flutter.io/flutter/services/PlatformMessages/sendJSON.html)
+   then call the sendJSON
    method and pass this string as a parameter.
 
    For example, the following snippet shows how you might asynchronously invoke
@@ -202,13 +204,13 @@ app needs to invoke a platform-specific or third-party API on iOS:
     locally invoke the service, and return a response message to the Flutter UI portion of the app.
     Your service provider should conform to one of these protocols:
 
-       + [`FlutterMessageListener`](https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterMessageListener.h):
+       + FlutterMessageListener:
        Implement this protocol if the request message does not require a reply, or if the Flutter UI
        portion of your app can reply to the message synchronously.
-       + [`FlutterAsyncMessageListener`](https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterAsyncMessageListener.h): Implement this protocol if the request message requires a reply and the code that creates
+       + FlutterAsyncMessageListener: Implement this protocol if the request message requires a reply and the code that creates
        the reply is asynchronous.
 
-       For an example of how to implement a service provider, see the [`LocationProvider.m`](https://github.com/flutter/flutter/blob/master/examples/hello_services/ios/Runner/LocationProvider.m) and
+       For an example of how to implement a service provider, see the LocationProvider.m and
        [`AppDelegate.m`](https://github.com/flutter/flutter/blob/master/examples/hello_services/ios/Runner/AppDelegate.m) classes from the example project.
     3. Create or modify a `Flutter/Generated.xcconfig` file to specify the configuration settings
     for building your iOS app. See the project [README](https://github.com/flutter/flutter/blob/master/examples/hello_services/README.md) to learn more about the
