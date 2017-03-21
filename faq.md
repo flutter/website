@@ -289,8 +289,10 @@ possible to create your own set of widgets using our base classes.
 
 We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 enabling [fully integrated development experience](/intellij-ide/) for Flutter.
-
 The plugins work in both the Ultimate and the free Community editions.
+
+Alternatively, you can use a combination of the `flutter` command in a terminal
+and one of the many editors that support [editing Dart](https://www.dartlang.org/tools).
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 
