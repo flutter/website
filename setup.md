@@ -69,7 +69,7 @@ To install and run Flutter, your development environment must meet these minimum
    export PATH=$HOME/flutter/bin:$PATH
    ```
    and then run the `source <filename>` command to refresh the window. For example, 
-   edit and source `$HOME/.bash_profile`.
+   edit (or create) and source `$HOME/.bash_profile`.
 
 1. Verify that the `flutter/bin` directory is now in your PATH by running:
    ```
