@@ -101,8 +101,7 @@ doing the same job as Travis would have on your PR).
 Make sure all the trees and dashboards are green before checking in:
 the [infra waterfall](https://build.chromium.org/p/client.flutter/waterfall),
 our [travis dashboard](https://travis-ci.org/flutter/flutter/builds),
-our [test dashboard](https://flutter-dashboard.appspot.com/build.html) (Google-only, sorry),
-our [status dashboard](https://flutter-dashboard.appspot.com/status.html) (Google-only, sorry), and
+our [test dashboard](https://flutter-dashboard.appspot.com/build.html) (Google-only, sorry), and
 our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html) (Google-only, sorry).
 
 **If the trees or dashboards are showing any regressions, only fixes
