@@ -42,13 +42,13 @@ main(List<String> arguments) async {
   if (projectToDeploy == null) {
     await projectsData.forEach((String key, Map<String, String> value) async {
       if (projectToDeploy != null) {
-        // project already set
-        // todo: remove this foreach with a better iterator pattern
         return;
       }
-      projectToDeploy = value["name"];
-      await fbClient.patch("${firebaseRoot}/$key.json", {"branch": branchName});
-      await postLinkToGithub(projectToDeploy, currentPullRequest);
+      if (value["branch"] == null) {
+        projectToDeploy = value["name"];
+        await fbClient.patch("${firebaseRoot}/$key.json", {"branch": branchName});
+        await postLinkToGithub(projectToDeploy, currentPullRequest);
+      }
     });
   }
 
