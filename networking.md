@@ -174,10 +174,10 @@ For full API docs, see:
   * [library `dart:io`][dartio]
 
 [http]:       https://pub.dartlang.org/packages/http
-[client]:     https://www.dartdocs.org/documentation/http/stable/http/Client-class.html
-[get]:        https://www.dartdocs.org/documentation/http/stable/http/get.html
-[read]:       https://www.dartdocs.org/documentation/http/stable/http/read.html
-[readbytes]:  https://www.dartdocs.org/documentation/http/stable/http/readbytes.html
-[post]:       https://www.dartdocs.org/documentation/http/stable/http/post.html
+[client]:     https://www.dartdocs.org/documentation/http/latest/http/Client-class.html
+[get]:        https://www.dartdocs.org/documentation/http/latest/http/get.html
+[read]:       https://www.dartdocs.org/documentation/http/latest/http/read.html
+[readbytes]:  https://www.dartdocs.org/documentation/http/latest/http/readbytes.html
+[post]:       https://www.dartdocs.org/documentation/http/latest/http/post.html
 [convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
 [dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
