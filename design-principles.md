@@ -198,6 +198,13 @@ API design
     be interpreted or parsed is a bad practice as it leads to code
     injection vulnerabilities.
 
+* If we wrap some aspect of a service from one environment for exposure
+  in another environment (for example, exposing an Android API in Dart),
+  we should expose/wrap all of it, so that there's no cognitive cliff
+  when interacting with that service (where you are fine using the exposed
+  API up to a point, but beyond that have to learn all about the underlying
+  service).
+
 
 Bugs
 ----
