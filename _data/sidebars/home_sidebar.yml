@@ -25,7 +25,7 @@ entries:
     - title: Set up
       url: /setup/
       output: web
-      
+
     - title: IntelliJ set up
       url: /intellij-setup/
       output: web
@@ -41,7 +41,7 @@ entries:
     - title: Dart bootstrap
       url: /bootstrap-into-dart/
       output: web
-      
+
   - title: Tutorials
     output: web
     folderitems:
@@ -134,6 +134,10 @@ entries:
       url: /reading-writing-files/
       output: web
 
+    - title: Make networking requests
+      url: /networking/
+      output: web
+
     - title: Handle text input
       url: /text-input/
       output: web
@@ -141,10 +145,6 @@ entries:
   - title: Helpful Resources
     output: web
     folderitems:
-
-    - title: GitHub source
-      external_url: https://github.com/flutter/flutter
-      output: web
 
     - title: Architecture diagram
       external_url: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing

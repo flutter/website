@@ -114,7 +114,7 @@ No. We do not plan to provide a web version of Flutter.
 
 ## What operating systems can I use to build a Flutter app?
 
-Flutter supports development on Linux, Mac, and Windows.
+Flutter supports development on Linux, Mac, and, Windows.
 
 ## What kinds of apps can I build with Flutter?
 
@@ -189,8 +189,9 @@ framework.
 
 ## Does Flutter come with widgets?
 
-Yes! Flutter ships with a set of high quality Material Design widgets, layouts,
-and themes. You can see a collection of those widgets at [[docs coming soon]]. Of
+Yes! Flutter ships with a set of
+[high quality Material and Cupertino (iOS-styled) widgets][widgets], layouts,
+and themes. You can see a collection of those widgets. Of
 course, these widgets are optional. Flutter is designed to make it easy to
 create your own widgets, or customize the existing widgets.
 
@@ -289,8 +290,10 @@ possible to create your own set of widgets using our base classes.
 
 We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 enabling [fully integrated development experience](/intellij-ide/) for Flutter.
-
 The plugins work in both the Ultimate and the free Community editions.
+
+Alternatively, you can use a combination of the `flutter` command in a terminal
+and one of the many editors that support [editing Dart](https://www.dartlang.org/tools).
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 
@@ -314,9 +317,9 @@ a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by using either `--profile` or `--release`
 flag to `flutter run`.
 
-If you are using the Flutter plugin for IntelliJ, you can disable Slow Mode by
-using the `Run>Run` action rather than `Run>Debug`.
-
+If you are using the Flutter plugin for IntelliJ, please note that it currently
+does not support running in `--profile` or `--release` modes (see
+[issue #410](https://github.com/flutter/flutter-intellij/issues/410)).
 
 ## Where can I get support?
 
@@ -406,11 +409,19 @@ Flutter's workload.
 Flutter should be able to run most Dart code that does not import (transitively,
 or directly) dart:mirrors or dart:html.
 
+## Why is the build() method on State, not StatefulWidget?
+
+Putting a `Widget build(BuildContext context)` method on State
+rather putting a `Widget build(BuildContext context, State state)`
+method on StatefulWidget gives developers more flexibility when
+subclassing StatefulWidget. You can read a more
+[detailed discussion on the API docs for State.build](https://docs.flutter.io/flutter/widgets/State/build.html).
+
 ## Which software license(s) apply to Flutter and its dependencies?
 
-Flutter includes two components: an engine that ships as a dynamically linked 
-binary, and the Dart framework as a separate binary that the engine loads. 
-The engine uses multiple software components with many dependencies; view the 
+Flutter includes two components: an engine that ships as a dynamically linked
+binary, and the Dart framework as a separate binary that the engine loads.
+The engine uses multiple software components with many dependencies; view the
 complete list [here](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
 
 The framework is entirely self-contained and requires [only one license](https://github.com/flutter/flutter/blob/master/LICENSE).
@@ -435,3 +446,5 @@ There's an API to find the list of licenses you need to show:
 Flutter is an open source project. Currently, the bulk of the development is done
 by engineers at Google. If you're excited about Flutter, we encourage you to join
 the community and contribute to Flutter!
+
+[widgets]: https://flutter.io/widgets/
