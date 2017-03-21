@@ -10,7 +10,7 @@ sockets, see [dart:io][dartio].
 * TOC Placeholder
 {:toc}
 
-## Using the `http` package
+## Using the `http` package {#httpdependency}
 
 Flutter supports the [http package][http], version `0.11.3+12` or later.
 
@@ -90,7 +90,7 @@ networking (HTTPS) is used.
 
 1. Create a new flutter app with `flutter create`.
 
-1. Add the [http dependency](#using-http-package).
+1. Add the [http dependency](#httpdependency).
 
 1. Replace the contents of `lib/main.dart` with the following:
 
@@ -177,7 +177,7 @@ For full API docs, see:
 [client]:     https://www.dartdocs.org/documentation/http/latest/http/Client-class.html
 [get]:        https://www.dartdocs.org/documentation/http/latest/http/get.html
 [read]:       https://www.dartdocs.org/documentation/http/latest/http/read.html
-[readbytes]:  https://www.dartdocs.org/documentation/http/latest/http/readbytes.html
+[readbytes]:  https://www.dartdocs.org/documentation/http/latest/http/readBytes.html
 [post]:       https://www.dartdocs.org/documentation/http/latest/http/post.html
 [convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
 [dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
