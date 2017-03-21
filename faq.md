@@ -289,8 +289,10 @@ possible to create your own set of widgets using our base classes.
 
 We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 enabling [fully integrated development experience](/intellij-ide/) for Flutter.
-
 The plugins work in both the Ultimate and the free Community editions.
+
+Alternatively, you can use a combination of the `flutter` command in a terminal
+and one of the many editors that support [editing Dart](https://www.dartlang.org/tools).
 
 ## Can I build 3D (OpenGL) apps with Flutter?
 
@@ -408,9 +410,9 @@ or directly) dart:mirrors or dart:html.
 
 ## Which software license(s) apply to Flutter and its dependencies?
 
-Flutter includes two components: an engine that ships as a dynamically linked 
-binary, and the Dart framework as a separate binary that the engine loads. 
-The engine uses multiple software components with many dependencies; view the 
+Flutter includes two components: an engine that ships as a dynamically linked
+binary, and the Dart framework as a separate binary that the engine loads.
+The engine uses multiple software components with many dependencies; view the
 complete list [here](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
 
 The framework is entirely self-contained and requires [only one license](https://github.com/flutter/flutter/blob/master/LICENSE).
