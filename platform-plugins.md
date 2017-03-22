@@ -34,7 +34,7 @@ There are two ways you can use platform-specific code:
 And, if desired, you can create and share plugins:
 
 * **Create a platform plugin** If you wish to use your platform-specific code in
- multiple Flutter apps, or share it with others, than you can wrap it in a
+ multiple Flutter apps, or share it with others, then you can wrap it in a
  plugin. [See details below](#create)
 
 * **Publish a platform plugin:** Publish custom platform-specific code as a
