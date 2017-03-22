@@ -39,7 +39,7 @@
         "type" : 302
       },
       {
-        "source" : "/platform-services/",
+        "source" : "/platform-services*",
         "destination" : "/platform-plugins/",
         "type" : 301
       }
