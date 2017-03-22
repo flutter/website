@@ -139,7 +139,7 @@ You can learn more about this at [[docs coming soon]]. If you want to do this,
 we encourage you to email our mailing list:
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
 
-## Can I access native services and APIs like sensors and local storage?
+## Can I access platform services and APIs like sensors and local storage?
 
 Yes. Flutter gives developers out-of-the-box access to _some_ platform-specific
 services and APIs from the operating system. However, we want to avoid the
@@ -154,16 +154,16 @@ layers of abstractions that are a best fit for their project.
 
 ## Can I interop with my mobile platform's default programming language?
 
-Yes, Flutter supports calling into the platform, incl. integrating with
-java-code on Android, and ObjectiveC and Swift code on iOS. This is enabled via
-a flexible message passing style where a Flutter app may send and receive messages to the
-mobile platform using a
+Yes, Flutter supports calling into the platform, including integrating with Java
+code on Android, and ObjectiveC or Swift code on iOS. This is enabled via a
+flexible message passing style where a Flutter app may send and receive messages
+to the mobile platform using a
 [`PlatformMessageChannel`](https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html).
 
 Learn more about [accessing platform and third-party services in Flutter](/platform-plugins/).
 
 Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_services)
-that shows how to use the PlatformChannel to access battery state information on
+that shows how to use a platform channel to access battery state information on
 iOS and Android.
 
 ## Does Flutter come with a framework?
