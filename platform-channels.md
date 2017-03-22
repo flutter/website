@@ -26,7 +26,7 @@ rather on a flexible message passing style:
  programming language -- and sends back a response to the *client*, the Flutter
  portion of your app.
 
-### Architectural overview: platform channels
+## Architectural overview: platform channels
 
 Messages are passed between the client (UI) and host (platform) using platform
 channels as illustrated in this diagram:
@@ -58,7 +58,7 @@ the platform acting as client to methods implemented in Dart.
 [FlutterMethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/FlutterMethodChannel.html
 [FlutterChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
 
-### Platform channel data types support and codecs
+## Platform channel data types support and codecs
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
@@ -73,7 +73,7 @@ For more specialized use cases, you may also use the
 or
 [`JSONMessageCodec`](https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html).
 
-### Example: Calling platform-specific iOS and Android code using platform channels
+## Example: Calling platform-specific iOS and Android code using platform channels
 
 The following demonstrates how to call a platform-specific API to retrieve and
 display the current battery level. It uses the Android `BatteryManager` API, and
@@ -83,7 +83,7 @@ the iOS `device.batteryLevel` API, via a single platform message,
 *Note*: The full source-code for this example is available in
 [`/samples/platform-services/`](https://github.com/flutter/flutter/tree/master/examples/platform_services).
 
-**Step 1: Create a new app project**
+### Step 1: Create a new app project
 
 Start by creating a new app using:
 
@@ -92,7 +92,7 @@ Start by creating a new app using:
 * In IntelliJ: *File > New > Project...*, select Flutter, and use the project
  name 'battery level'
 
-**Step 2: Create the Flutter platform client**
+### Step 2: Create the Flutter platform client
 
 The app's `State` class holds the current app state. We need to extend that to
 hold the current battery state.
@@ -148,7 +148,7 @@ statement:
   }
 ```
 
-**Step 3a: Add an Android platform-specific implementation**
+### Step 3a: Add an Android platform-specific implementation
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -229,7 +229,7 @@ the success and error cases using the `response` argument.
        }
 ```
 
-**Step 3a: Add an iOS platform-specific implementation**
+### Step 3a: Add an iOS platform-specific implementation
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -312,7 +312,7 @@ the success and error cases using the `result` argument.
   }];
 ```
 
-### Separate platform plugin code from UI code
+## Separate platform plugin code from UI code
 
 If you expect to use your platform-specific code in multiple Flutter apps, it
 can be useful to separate the code into a platform plugin located in a directory
