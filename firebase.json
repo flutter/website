@@ -42,7 +42,7 @@
         "source" : "/platform-services/",
         "destination" : "/platform-plugins/",
         "type" : 301
-      },
+      }
     ]
   }
 }
