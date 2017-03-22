@@ -102,8 +102,12 @@ entries:
     output: web
     folderitems:
 
-    - title: Use plugins & platform-specific APIs
+    - title: Plugins & platform-specific code
       url: /platform-plugins/
+      output: web
+
+    - title: Writing custom platform-specific code with platform channels
+      url: /platform-channels/
       output: web
 
     - title: Add assets and images
