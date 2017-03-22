@@ -32,9 +32,11 @@ main(List<String> arguments) async {
       // deploy again
       projectToDeploy = value["name"];
     } else {
-      bool oldBranch = await isBranchOld(value["branch"]);
-      if (oldBranch) {
-        await fbClient.patch("${firebaseRoot}/$key.json", {"branch": null});
+      if (value["branch"] != null) {
+        bool oldBranch = await isBranchOld(value["branch"]);
+        if (oldBranch) {
+          await fbClient.patch("${firebaseRoot}/$key.json", {"branch": null});
+        }
       }
     }
   });
