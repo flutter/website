@@ -61,6 +61,7 @@ The core Flutter platform plugin is available through the [services
 library](https://docs.flutter.io/flutter/services/services-library.html), as
 illustrated in this example:
 
+<!-- skip -->
 ```dart
 import 'package:flutter/services.dart';
 
@@ -75,7 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
      });
    }
  }
- ...
+
+ // clipboardContents can now be accessed the build() method.
 }
 ```
 
@@ -173,11 +175,12 @@ passed in the channel constructor. In this example we are using `battery`. Note
 that all channel names used in a single app must be unique; we recommend using a
 naming pattern *TODO*.
 
+<!-- skip -->
 ```dart
 class _PlatformServicesState extends State<PlatformServices> {
   // Construct platform channel inside State class.
-  static const PlatformMethodChannel platform = const PlatformMethodChannel('battery');
-  ...
+  static const platform = const PlatformMethodChannel('battery');
+
   // TODO: Get battery level.
 }
 ```
@@ -186,6 +189,7 @@ Next, we invoke a method on the method channel, specifying the concrete method
 to call via a String `method` argument. We then use the returned result to update
 our user interface:
 
+<!-- skip -->
 ```dart
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
@@ -205,6 +209,7 @@ API (such as when running in a simulator), so next we add exception handling by
 wrapping our `invokeMethod` call from the previous step in a try-catch
 statement:
 
+<!-- skip -->
 ```dart
   try {
     final int result = await platform.invokeMethod('getBatteryLevel');
