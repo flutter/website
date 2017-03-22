@@ -148,11 +148,7 @@ statement:
   }
 ```
 
-**Step 3a: Add an iOS platform-specific implementation**
-
-*TODO*
-
-**Step 3b: Add an Android platform-specific implementation**
+**Step 3a: Add an Android platform-specific implementation**
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -231,6 +227,89 @@ the success and error cases using the `response` argument.
            }
          }
        }
+```
+
+**Step 3a: Add an iOS platform-specific implementation**
+
+Start by opening the iOS host portion of your Flutter app in Xcode:
+
+1. Start Xcode
+
+1. Select the menu item 'File > Open...'
+
+1. Navigate to the directory holding your Flutter app, and select the `ios`
+folder inside it. Click OK.
+
+1. Open the file `AppDelegate.m` located under Runner > Runner in the Project
+navigator.
+
+Next, create a `FlutterMethodChannel` and add a handler inside the `application
+didFinishLaunchingWithOptions:` method. Make sure to use the same channel name
+as was used on the Flutter client side.
+
+```
+
+@implementation AppDelegate
+- (BOOL)application:(UIApplication*)application
+    didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+  FlutterViewController* controller =
+      (FlutterViewController*)self.window.rootViewController;
+
+  FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
+      methodChannelNamed:@"battery"
+         binaryMessenger:controller
+                   codec:[FlutterStandardMethodCodec sharedInstance]];
+
+  [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
+    // TODO
+  }];
+  return YES;
+}
+```
+
+Next, we add the actual iOS ObjectiveC code that uses the iOS battery APIs to
+retrieve the battery level. This code is exactly the same as you would have
+written in a native iOS app.
+
+Add the following as a new method in the `AppDelegate` class, just before `@end`:
+
+```
+- (int)getBatteryLevel {
+  UIDevice* device = UIDevice.currentDevice;
+  device.batteryMonitoringEnabled = YES;
+  if (device.batteryState == UIDeviceBatteryStateUnknown) {
+    return -1;
+  } else {
+    return (int)(device.batteryLevel * 100);
+  }
+}
+
+```
+
+Finally, we complete the `setMethodCallHandler` method we added earlier. We need
+to handle a single platform method, `getBatteryLevel`, so we test for that in
+the `call` argument. The implementation of this platform method simply calls the
+iOS code we wrote in the previous step, and passes back a response for both
+the success and error cases using the `result` argument.
+
+```
+  [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
+    if ([@"getBatteryLevel" isEqualToString:call.method]) {
+      int batteryLevel = [self getBatteryLevel];
+
+      if (batteryLevel == -1) {
+        result(nil, [FlutterError errorWithCode:@"UNAVAILABLE"
+                                        message:@"Battery info unavailable"
+                                        details:nil]);
+      } else {
+        result(@(batteryLevel), nil);
+      }
+    } else {
+      result(nil, [FlutterError errorWithCode:@"UNKNOWN_METHOD"
+                                      message:@"Unknown battery method called"
+                                      details:nil]);
+    }
+  }];
 ```
 
 ### Separate platform plugin code from UI code
