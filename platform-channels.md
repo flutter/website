@@ -22,9 +22,9 @@ rather on a flexible message passing style:
  Android portion of your app, over a platform channel.
 
 * The *host* listens on the platform channel, and receives the message. It then
- calls into any number of platform-specific APIs -- using their native
+ calls into any number of platform-specific APIs -- using the native
  programming language -- and sends back a response to the *client*, the Flutter
- portion.
+ portion of your app.
 
 ### Architectural overview: platform channels
 
@@ -49,13 +49,14 @@ API][FlutterChanneliOS]) enables receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin with very little
 'boilerplate' code.
 
-*Note*: If desired, method calls can also be sent from the host to the client.
+*Note*: If desired, method calls can also be sent in the reverse direction, with
+the platform acting as client to methods implemented in Dart.
 
 [PlatformMessageChannel]: https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html
 [PlatformMethodChannel]: https://docs.flutter.io/flutter/services/PlatformMethodChannel-class.html
 [FlutterMessageChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/FlutterMessageChannel.html
 [FlutterMethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/FlutterMethodChannel.html
-[FlutterChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Source/FlutterChannels.mm
+[FlutterChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
 
 ### Platform channel data types support and codecs
 
@@ -109,8 +110,8 @@ class _PlatformServicesState extends State<PlatformServices> {
 ```
 
 Next, we invoke a method on the method channel, specifying the concrete method
-to call via a String `method` argument. We then use the returned result to update
-our user interface:
+to call via a String identifier. We then use the returned result to update our
+user interface:
 
 <!-- skip -->
 ```dart

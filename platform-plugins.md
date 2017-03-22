@@ -34,8 +34,8 @@ There are two ways you can use platform-specific code:
 And, if desired, you can create and share plugins:
 
 * **Create a platform plugin** If you wish to use your platform-specific code in
- multiple Flutter apps, or share it with others (see 'publish'), than you can
- wrap it in a plugin. [See details below](#create)
+ multiple Flutter apps, or share it with others, than you can wrap it in a
+ plugin. [See details below](#create)
 
 * **Publish a platform plugin:** Publish custom platform-specific code as a
  plugin. This enables other developers to use it by simply declaring a
@@ -54,7 +54,7 @@ Utility methods for interacting with the system's clipboard.
 * [SystemSound](https://docs.flutter.io/flutter/services/SystemSound-class.html):
 Provides access to the library of short system specific sounds for common tasks.
 
-* [pathProvider](https://docs.flutter.io/flutter/services/PathProvider-class.html):
+* [PathProvider](https://docs.flutter.io/flutter/services/PathProvider-class.html):
 Returns commonly used locations on the filesystem.
 
 See the [services library](https://docs.flutter.io/flutter/services/services-library.html)
