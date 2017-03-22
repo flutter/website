@@ -41,9 +41,9 @@ enables sending general purpose messages, and `PlatformMethodChannel`
 ([API][PlatformMethodChannel]) enables sending messages that correspond to
 method calls.
 
-On the platform side, the class `FlutterMessageChannel` ([Android
+On the platform side, `FlutterMessageChannel` ([Android
 API][FlutterMessageChannelAndroid], [iOS API][FlutterChanneliOS]) enables
-receiving messages from the client, and responding with a result, and the class
+receiving messages from the client, and optionally sending back a result, and
 `FlutterMethodChannel` ([Android API][FlutterMethodChannelAndroid], [iOS
 API][FlutterChanneliOS]) enables receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin with very little
@@ -75,43 +75,48 @@ or
 
 ### Example: Calling platform-specific iOS and Android code using platform channels
 
-The following example demonstrates how to call a new platform-specific API,
-through a concrete example that retrieves and displays the current battery level
-by calling into the Android `BatteryManager` API, and the iOS
-`device.batteryLevel` API, via a single platform message, `getBatteryLevel`.
-
-The standard app template created when you create a new Flutter app can be used.
+The following demonstrates how to call a platform-specific API to retrieve and
+display the current battery level. It uses the Android `BatteryManager` API, and
+the iOS `device.batteryLevel` API, via a single platform message,
+`getBatteryLevel`.
 
 *Note*: The full source-code for this example is available in
 [`/samples/platform-services/`](https://github.com/flutter/flutter/tree/master/examples/platform_services).
 
-**Step 1: Create the Flutter platform client**
+**Step 1: Create a new app project**
 
-We start by adding support for updating our app's `State` class with the current
-battery state.
+Start by creating a new app using:
 
-First, we construct the channel. Since we need just a single platform message,
-`getBatteryLevel`, representing a platform method call, we will use a
-`PlatformMethodChannel`.
+* In a terminal: `flutter create batterylevel`, or
+
+* In IntelliJ: *File > New > Project...*, select Flutter, and use the project
+ name 'battery level'
+
+**Step 2: Create the Flutter platform client**
+
+The app's `State` class holds the current app state. We need to extend that to
+hold the current battery state.
+
+First, we construct the channel. We use a `PlatformMethodChannel` with a single
+platform method that returns the battery level.
 
 The client and host sides of a channel are connected through a channel name
-passed in the channel constructor. In this example we are using `battery`. Note
-that all channel names used in a single app must be unique; we recommend using a
-naming pattern *TODO*.
+passed in the channel constructor. All channel names used in a single app must
+be unique; we recommend prefixing the channel name with a unique 'domain
+prefix', e.g. `samples.flutter.io/battery`.
 
 <!-- skip -->
 ```dart
 class _PlatformServicesState extends State<PlatformServices> {
-  // Construct platform channel inside State class.
-  static const platform = const PlatformMethodChannel('battery');
+  static const platform = const PlatformMethodChannel('samples.flutter.io/battery');
 
   // TODO: Get battery level.
 }
 ```
 
 Next, we invoke a method on the method channel, specifying the concrete method
-to call via a String identifier. We then use the returned result to update our
-user interface:
+to call via the String identifier `getBatteryLevel`. We then use the returned
+result to update our user interface inside `setState`:
 
 <!-- skip -->
 ```dart
@@ -143,17 +148,17 @@ statement:
   }
 ```
 
-**Step 2a: Add an iOS platform-specific implementation**
+**Step 3a: Add an iOS platform-specific implementation**
 
 *TODO*
 
-**Step 2b: Add an Android platform-specific implementation**
+**Step 3b: Add an Android platform-specific implementation**
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
 1. Start Android Studio
 
-1. Invoke File > Open...
+1. Select the menu item 'File > Open...'
 
 1. Navigate to the directory holding your Flutter app, and select the `android`
 folder inside it. Click OK.
@@ -166,7 +171,7 @@ Next, create a `FlutterMethodChannel` and set a `MethodCallHandler` inside the
 Flutter client side.
 
 ```java
-private static final String CHANNEL = "battery";
+private static final String CHANNEL = "samples.flutter.io/battery";
 
 @Override
 public void onCreate(Bundle savedInstanceState) {
@@ -184,8 +189,8 @@ public void onCreate(Bundle savedInstanceState) {
 ```
 
 Next, we add the actual Android Java code that uses the Android battery APIs to
-retrieve the battery level. This code is exactly the same you would have written
-in a native Android app.
+retrieve the battery level. This code is exactly the same as you would have
+written in a native Android app.
 
 Add the following as a new method in the activity class, below the `onCreate`
 method:
@@ -210,8 +215,8 @@ private int getBatteryLevel() {
 Finally, we complete the `onMethodCall` method we added earlier. We need to
 handle a single platform method, `getBatteryLevel`, so we test for that in the
 `call` argument. The implementation of this platform method simply calls the
-Android code we wrote in the previous step, passes back a response for both the
-success and error cases using the `response` argument.
+Android code we wrote in the previous step, and passes back a response for both
+the success and error cases using the `response` argument.
 
 ```java
        @Override
@@ -224,9 +229,6 @@ success and error cases using the `response` argument.
            } else {
              response.error("UNAVAILABLE", "Battery level not available.", null);
            }
-
-         } else {
-           response.error("UNKNOWN_METHOD", call.method);
          }
        }
 ```

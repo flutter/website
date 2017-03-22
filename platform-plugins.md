@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
    }
  }
 
- // clipboardContents can now be accessed the build() method.
+ // clipboardContents can now be accessed in the build() method.
 }
 ```
 
