@@ -247,8 +247,7 @@ Next, create a `FlutterMethodChannel` and add a handler inside the `application
 didFinishLaunchingWithOptions:` method. Make sure to use the same channel name
 as was used on the Flutter client side.
 
-```
-
+```objective-c
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -256,7 +255,7 @@ as was used on the Flutter client side.
       (FlutterViewController*)self.window.rootViewController;
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
-      methodChannelNamed:@"battery"
+      methodChannelNamed:@"samples.flutter.io/battery"
          binaryMessenger:controller
                    codec:[FlutterStandardMethodCodec sharedInstance]];
 
@@ -273,7 +272,7 @@ written in a native iOS app.
 
 Add the following as a new method in the `AppDelegate` class, just before `@end`:
 
-```
+```objective-c
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
   device.batteryMonitoringEnabled = YES;
@@ -283,7 +282,6 @@ Add the following as a new method in the `AppDelegate` class, just before `@end`
     return (int)(device.batteryLevel * 100);
   }
 }
-
 ```
 
 Finally, we complete the `setMethodCallHandler` method we added earlier. We need
@@ -292,7 +290,7 @@ the `call` argument. The implementation of this platform method simply calls the
 iOS code we wrote in the previous step, and passes back a response for both
 the success and error cases using the `result` argument.
 
-```
+```objective-c
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
     if ([@"getBatteryLevel" isEqualToString:call.method]) {
       int batteryLevel = [self getBatteryLevel];
