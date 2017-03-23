@@ -90,6 +90,14 @@ entries:
     output: web
     folderitems:
 
+    - title: Plugins & platform-specific code
+      url: /platform-plugins/
+      output: web
+
+    - title: Writing custom platform-specific code with platform channels
+      url: /platform-channels/
+      output: web
+
     - title: Add assets and images
       url: /assets-and-images/
       output: web
@@ -114,12 +122,12 @@ entries:
       url: /upgrading/
       output: web
 
-    - title: Access platform and third-party services
-      url: /platform-services/
-      output: web
-
     - title: Read and write files
       url: /reading-writing-files/
+      output: web
+
+    - title: Make networking requests
+      url: /networking/
       output: web
 
     - title: Handle text input
@@ -140,10 +148,6 @@ entries:
   - title: Helpful Resources
     output: web
     folderitems:
-
-    - title: GitHub source
-      external_url: https://github.com/flutter/flutter
-      output: web
 
     - title: Architecture diagram
       external_url: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing

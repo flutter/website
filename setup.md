@@ -49,7 +49,7 @@ To install and run Flutter, your development environment must meet these minimum
 * **Operating Systems**: Mac or Linux (64-bit). For Windows instructions (beta), see [Flutter on Windows](https://github.com/flutter/flutter/wiki/Flutter-on-Windows).
 * **Disk Space**: 700 MB on Mac, 600 MB on Linux, 400 MB on Windows (does not include disk space for Xcode or Android Studio).
 * **Tools**: Flutter depends on these command-line tools being available on your environment.
-  * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`
+  * `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`, `which`
 
 ## Get the Flutter SDK
 
@@ -69,7 +69,7 @@ To install and run Flutter, your development environment must meet these minimum
    export PATH=$HOME/flutter/bin:$PATH
    ```
    and then run the `source <filename>` command to refresh the window. For example, 
-   edit and source `$HOME/.bash_profile`.
+   edit (or create) and source `$HOME/.bash_profile`.
 
 1. Verify that the `flutter/bin` directory is now in your PATH by running:
    ```
@@ -176,16 +176,10 @@ iOS devices.
    $ brew update
    $ brew install --HEAD libimobiledevice
    $ brew install ideviceinstaller ios-deploy
+   $ brew install cocoapods
    ```
-1. If you see the following error:
-    ```
-   You must brew link libtasn1 libplist libusb before ideviceinstaller can be installed
-    ```
-   run `brew link libtasn1 libplist libusb` to link the required libraries. 
-
-   If the command fails with an error related to directories that are not writeable, 
-   run `brew doctor` and follow the instructions for changing permissions on those directories.
-   Then run the `brew link ...` and `brew install...` commands again.
+   If any of these commands fails with an error, run `brew doctor` and follow the instructions 
+   for resolving the issue.
    
 1. Follow the steps defined by Apple to configure Xcode with your Apple Developer account and enable deploying with provisioning profiles. To learn how to set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 1. Select your Development Team for the Flutter project.

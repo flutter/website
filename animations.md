@@ -131,7 +131,7 @@ For this discussion, the key primitive is the frame callbacks. Each
 time a frame needs to be shown on the screen, Flutter's engine
 triggers a "begin frame" callback which the scheduler multiplexes to
 all the listeners registered using
-[`addFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/addFrameCallback.html).
+[`scheduleFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html).
 All these callbacks are given the official time stamp of the frame, in
 the form of a `Duration` from some arbitrary epoch. Since all the
 callbacks have the same time, any animations triggered from these
@@ -143,7 +143,7 @@ few milliseconds to be executed.
 The
 [`Ticker`](https://docs.flutter.io/flutter/scheduler/Ticker-class.html)
 class hooks into the scheduler's
-[`addFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/addFrameCallback.html)
+[`scheduleFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html)
 mechanism to invoke a callback every tick.
 
 A `Ticker` can be started and stopped. When started, it returns a
