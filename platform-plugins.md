@@ -16,7 +16,7 @@ Analytics).
 
 Mobile devices offer many options to extend your app through platform-specific
 APIs. These are critical to the completeness of most mobile apps. Flutter offers
-the following ways to integrate with these via 'plugins', packages that contain
+the following ways to integrate with these via _plugins_, packages that contain
 an API definition written in Dart, coupled with a platform-specific
 implementation for Android, for iOS, or for both.
 
