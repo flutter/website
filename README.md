@@ -113,6 +113,66 @@ next-page-title: "Create a Layout"
 Omit the "prev-page" info for the first page, and the "next-page" info for the
 last page.
 
+## Syntax highlighting
+
+The flutter.io website uses [prism.js](http://prismjs.com/) for syntax
+highlighting. This section covers how to use syntax highlighting, and
+how to update our syntax highlighter for new languages.
+
+### Using syntax highlighting
+
+The easiest way to syntax highlight a block of code is to wrap
+it with `{% prettify _language_ %}`:
+
+```
+{% prettify dart %}
+class SomeCode {
+  String name;
+}
+{% endprettify %}
+```
+
+The _prettify_ tag converts the block into `<code>` and `<pre>`, and
+applies the necessary CSS classes for Prism to turn on syntax highlighting.
+You must specify a language for syntax highlighting to work properly.
+
+We don't currently have a good way to syntax highlight inline code. It may be
+possible, if you know Prism's CSS classes. "It's an exercise left up
+to the reader."
+
+### Supported languages
+
+This website can syntax highlight the following languages:
+
+* Bash/shell
+* Dart
+* HTML
+* CSS
+* JavaScript
+* Java
+* ObjC
+* Swift
+
+### Adding more languages for syntax highlighting
+
+The flutter.io website uses a custom build of prism, which
+includes only the languages the website requires. To improve
+load times and user experience, we do not support every
+language that prism supports.
+
+To add a new language for syntax highlighting, you will need
+to generate a new copy of the `prism.js` file.
+
+Follow these steps to generate a new copy of `prism.js`:
+
+* Open `js/prism.js`
+* Copy the URL in the comment of the first line of the file
+* Paste it into a browser window/tab
+* Add the new language that you wish to syntax highlight
+* DO NOT change the other plugins, languages, or settings
+* Download the generated JavaScript, and use it to replace `js/prism.js`
+* Download the generated CSS, and use it to replace `_sass/_prism.scss`
+
 ## Code snippet validation
 
 The code snippets in the markdown documentation are validated as part of the
