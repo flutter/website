@@ -107,6 +107,8 @@ prefix', e.g. `samples.flutter.io/battery`.
 
 <!-- skip -->
 ```dart
+import 'package:flutter/services.dart';
+
 class _PlatformServicesState extends State<PlatformServices> {
   static const platform = const PlatformMethodChannel('samples.flutter.io/battery');
 
