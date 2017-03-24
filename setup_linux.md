@@ -4,6 +4,9 @@ title: Flutter Setup for Linux
 permalink: /setup-linux/
 ---
 
+* TOC Placeholder
+{:toc}
+
 {% include setup/system-linux.md %}
 
 {% include setup/get-sdk.md %} 
@@ -14,4 +17,4 @@ permalink: /setup-linux/
 
 {% include setup/android-setup-linux.md %}
 
-{% include setup/next-steps-win-linux.md %}
+{% include setup/next-steps.md %}

@@ -1,8 +1,11 @@
 ---
 layout: page
 title: Flutter Setup for Windows
-permalink: /setup-win/
+permalink: /setup-windows/
 ---
+
+* TOC Placeholder
+{:toc}
 
 {% include setup/system-win.md %}
 
@@ -14,4 +17,4 @@ permalink: /setup-win/
 
 {% include setup/android-setup.md %}
 
-{% include setup/next-steps-win-linux.md %}
+{% include setup/next-steps.md %}

@@ -10,8 +10,9 @@ repository and then add the `flutter` tool to your path:
 
 ```
 > git clone https://github.com/flutter/flutter.git
-> setx path "%path%;%cd%\flutter\bin"
+> setx PATH "%PATH%;<cd>\flutter\bin"
 ```
+replacing `<cd>` with your current directory path. For example, `setx PATH "%PATH%;C:\Users\obiwan\flutter\bin"`. 
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
 
@@ -28,15 +29,11 @@ the setup:
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
 Check the output carefully for other software you may need to install or further 
-tasks to perform (shown in **bold** text).
+tasks to perform .
 
 For example:
 ```
-✗ Xcode end user license agreement not signed; open Xcode or run the command 'sudo xcodebuild -license'.
-
-✗ Brew not installed; use this to install tools for iOS device development.
-
-   Download brew at http://brew.sh/.
+✗ Minimum supported Android SDK version is 25 but this system has 23. Please upgrade.
 ```
 
 The first time you run the `flutter` command, it downloads its own dependencies and compiles

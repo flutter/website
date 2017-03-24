@@ -1,8 +1,11 @@
 ---
 layout: page
-title: Flutter Setup for Mac
-permalink: /setup-mac/
+title: Flutter Setup for macOS
+permalink: /setup-macos/
 ---
+
+* TOC Placeholder
+{:toc}
 
 {% include setup/system-mac.md %}
 
@@ -16,4 +19,4 @@ permalink: /setup-mac/
 
 {% include setup/android-setup.md %}
 
-{% include setup/next-steps-mac.md %}
+{% include setup/next-steps.md %}
