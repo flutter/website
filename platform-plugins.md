@@ -15,18 +15,17 @@ Analytics).
 ## Options for integrating with platform-specific code
 
 Mobile devices offer many options to extend your app through platform-specific
-APIs. These are critical to the completeness of most mobile apps. Flutter offers
-the following ways to integrate with these via 'plugins'.
+APIs. These are critical to the completeness of most mobile apps.
 
-There are two ways you can use platform-specific code:
+Flutter supports two mechanisms for using platform-specific code:
 
 * **Use existing platform plugins:** For frequently used APIs and SDKs, use
- existing platform plugins, with no need to write any platform-specific code.
- [See details below](#use).
+ existing platform plugins, with no need to write any platform-specific code
+ yourself. [See details below](#use).
 
-* **Write custom platform code:** Write your own platform-specific code using
+* **Write custom platform code:** Write custom platform-specific code using
  Flutter's platform channels. This can be used for private APIs, or for cases
- where a suitable platform plugin is not yet available. See the [platform channels](/platform-channels/)
+ where a suitable plugin is not yet available. See the [platform channels](/platform-channels/)
  page for details.
 
 And, if desired, you can create and share plugins:
@@ -44,24 +43,30 @@ And, if desired, you can create and share plugins:
 {% include note.html content="The following content presents a potential future
 for Flutter." %}
 
-A Flutter plugin is a special kind of
-[package](https://www.dartlang.org/tutorials/libraries/shared-pkgs). Similar to
-a regular package it contains an API definition written in Dart, but then in
-addition contains a platform-specific implementation for Android, for iOS, or
-for both.
+A Flutter _plugin_ is a special kind of
+[package](https://www.dartlang.org/tutorials/libraries/shared-pkgs). A plugin
+consists of an API definition written in Dart, combined with a platform-specific
+implementation for Android, for iOS, or for both.
 
 ### Searching for plugins
 
 Flutter plugins are shared on the [pub repository](https://pub.dartlang.org/)
-along with regular packages. To search explicitly for plugins, use the following
-[search link](https://pub.dartlang.org/search?type=plugin).
+along with regular (pure-Dart) packages. To search explicitly for plugins, use
+the following [search link](https://pub.dartlang.org/search?type=plugin).
 
-### Declaring a plugin dependency
+### Adding a plugin to an app
 
-To use a plugin, use these simple steps:
+To add a plugin 'plugin1' to an app:
 
-1. Open the `pubspec.yaml` file located inside your app folder
-1. Add a dependency line
+1. Open the `pubspec.yaml` file located inside your app folder, and add
+`plugin1:` under `dependencies`
+
+1. Get the plugin:
+   * From the terminal: Run `flutter packages get`
+   * From IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
+
+1. Build or run your app. As part of this, Flutter will 'inject' the
+platform-specific code from the plugin into your app.
 
 ### Example: Using the Flutter URLLauncher plugin to launch the browser
 
@@ -88,10 +93,9 @@ To use this plugin:
       urllauncher:
     ```
 
-1. Open `lib/main.dart` and replace it full contents with:
+1. Open `lib/main.dart` and replace it's full contents with:
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:flutter/services.dart';
 
     void main() {
       runApp(new MyApp());
@@ -126,16 +130,8 @@ To use this plugin:
     }
     ```
 
-1. Add Android registration
-
-    {% include note.html content="This manual step is expected to no longer be
-    necessary in a future version of Flutter" %}
-
-    * 
-
-1. Add iOS registration
-
-1. Build your app
+1. Run the app. When you click the 'Show Flutter homepage' you should see the
+phones default browser open, and the Flutter homepage appear.
 
 ## Create a platform plugin {#create}
 
