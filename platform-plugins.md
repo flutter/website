@@ -16,9 +16,7 @@ Analytics).
 
 Mobile devices offer many options to extend your app through platform-specific
 APIs. These are critical to the completeness of most mobile apps. Flutter offers
-the following ways to integrate with these via 'plugins', packages that contain
-an API definition written in Dart, coupled with a platform-specific
-implementation for Android, for iOS, or for both.
+the following ways to integrate with these via 'plugins'.
 
 There are two ways you can use platform-specific code:
 
@@ -43,54 +41,101 @@ And, if desired, you can create and share plugins:
 
 ## Use existing platform plugins {#use}
 
-### Core Flutter platform plugin
+{% include note.html content="The following content presents a potential future
+for Flutter." %}
 
-The Flutter framework includes a core platform plugin for foundational
-platform-specific services, such as:
+A Flutter plugin is a special kind of
+[package](https://www.dartlang.org/tutorials/libraries/shared-pkgs). Similar to
+a regular package it contains an API definition written in Dart, but then in
+addition contains a platform-specific implementation for Android, for iOS, or
+for both.
 
-* [Clipboard](https://docs.flutter.io/flutter/services/Clipboard-class.html):
-Utility methods for interacting with the system's clipboard.
+### Searching for plugins
 
-* [SystemSound](https://docs.flutter.io/flutter/services/SystemSound-class.html):
-Provides access to the library of short system specific sounds for common tasks.
+Flutter plugins are shared on the [pub repository](https://pub.dartlang.org/)
+along with regular packages. To search explicitly for plugins, use the following
+[search link](https://pub.dartlang.org/search?type=plugin).
 
-* [PathProvider](https://docs.flutter.io/flutter/services/PathProvider-class.html):
-Returns commonly used locations on the filesystem.
+### Declaring a plugin dependency
 
-See the [services library](https://docs.flutter.io/flutter/services/services-library.html)
-for full details.
+To use a plugin, use these simple steps:
 
-**Example: Using the Flutter platform plugin to read the contents of the Clipboard**
+1. Open the `pubspec.yaml` file located inside your app folder
+1. Add a dependency line
 
-The core Flutter platform plugin is available through the [services
-library](https://docs.flutter.io/flutter/services/services-library.html), as
-illustrated in this example:
+### Example: Using the Flutter URLLauncher plugin to launch the browser
 
-<!-- skip -->
-```dart
-import 'package:flutter/services.dart';
+The [URLLauncher](https://pub.dartlang.org/plugins/urllauncher) plugin enables
+you to open the mobile platforms default browser to display a given URL. It is
+supported on both Android and iOS.
 
-class _MyHomePageState extends State<MyHomePage> {
- String clipboardContents = 'Unknown';
+To use this plugin:
 
- getClipboardContents() async {
-   var clipboardData = await Clipboard.getData(Clipboard.kTextPlain);
-   if (clipboardData != null) {
-     setState(() {
-       clipboardContents = clipboardData.text;
-     });
-   }
- }
+1. Create a new project called 'launchdemo'
 
- // clipboardContents can now be accessed in the build() method.
-}
-```
+1. Open `pubspec.yaml`, and replace:
+    ```dart
+    dependencies:
+      flutter:
+        sdk: flutter
+    ```
+    with:
 
-### Platform plugins from the Flutter ecosystem
+    ```dart
+    dependencies:
+      flutter:
+        sdk: flutter
+      urllauncher:
+    ```
 
-{% include note.html content="Sharing of platform plugins is currently not
-supported, but Flutter is expected to support this in the future." %}
+1. Open `lib/main.dart` and replace it full contents with:
+    ```dart
+    import 'package:flutter/material.dart';
+    import 'package:flutter/services.dart';
 
+    void main() {
+      runApp(new MyApp());
+    }
+
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return new MaterialApp(
+          title: 'Flutter Demo',
+          home: new DemoPage(),
+        );
+      }
+    }
+
+    class DemoPage extends StatelessWidget {
+      launchURL() {
+        UrlLauncher.launch('https://flutter.io');
+      }
+
+      @override
+      Widget build(BuildContext context) {
+        return new Scaffold(
+          body: new Center(
+            child: new RaisedButton(
+              onPressed: launchURL,
+              child: new Text('Show Flutter homepage'),
+            ),
+          ),
+        );
+      }
+    }
+    ```
+
+1. Add Android registration
+
+    {% include note.html content="This manual step is expected to no longer be
+    necessary in a future version of Flutter" %}
+
+    * 
+
+1. Add iOS registration
+
+1. Build your app
 
 ## Create a platform plugin {#create}
 
