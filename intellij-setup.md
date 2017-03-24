@@ -24,8 +24,8 @@ You can use the IntelliJ plug-ins with one of the following JetBrains IDEs:
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/previous.html), Ultimate edition, version 2016.3.
 * [IntelliJ WebStorm](https://confluence.jetbrains.com/display/WI/Previous+WebStorm+Releases), version 2016.3.
 
-{% include note.html content="IntelliJ / Webstorm version 2017.1 is currently
-*not* supported. We hope to supports in the next plugin release." %}
+{% include note.html content="IntelliJ IDEA / WebStorm version 2017.1 is
+currently *not* supported. We hope to support it the next plugin release." %}
 
 Android Studio (and various other JetBrains editors) is currently not supported.
 
