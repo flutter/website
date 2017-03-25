@@ -45,7 +45,7 @@ requires the use of hardware virtualization. The steps to enable hardware virtua
 are:
 
 1. Reboot into the system BIOS (usually by repeatedly tapping F1 or F10 at the first page during startup).
-1. In **Security > System Security**:
+1. Enable hardware virtualization in your system's BIOS. For example, the setting might be located in **Security > System Security**:
    1. Enable **Virtualization Technology (VTx)**
    1. Enable **Intel(R) VT-d**
 
