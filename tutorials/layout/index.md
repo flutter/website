@@ -15,19 +15,15 @@ permalink: /tutorials/layout/
 
 </div>
 
-## Introduction
-
 This is a guide to building layouts in Flutter.
-You'll dive in and build the layout for the following screenshot:
+You'll build the layout for the following screenshot:
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that we'll build in 'Building a Layout'">
+<img src="images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that you'll build in 'Building a Layout'">
 
-We'll then take a step back to explain Flutter's approach to layout,
-and show you how to place a single widget on the screen.
-Finally, we'll discuss how to lay widgets out horizontally and vertically,
-and then cover some of the most common layout widgets.
-
-### Contents
+This guide then takes a step back to explain Flutter's approach to layout,
+and shows how to place a single widget on the screen.
+After a discussion of how to lay widgets out horizontally and vertically,
+some of the most common layout widgets are covered.
 
 * [Building a layout](#building)
   * [Step 0: Set up](#step-0)
@@ -54,38 +50,26 @@ and then cover some of the most common layout widgets.
 
 This section walks you through the layout for the following screenshot:
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that we will build in this section">
+<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that you will build in this section">
 
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout](#approach).
 
-### Contents
-
-* [Step 0: Set up](#step-0)
-* [Step 1: Diagram the layout](#step-1)
-* [Step 2: Implement the title row](#step-2)
-* [Step 3: Implement the button row](#step-3)
-* [Step 4: Implement the text section](#step-4)
-* [Step 5: Implement the image section](#step-5)
-* [Step 6: Put it together](#step-6)
-
 <a name="step-0"></a>
 ### Step 0: Set up
 
-Prepare for this section as follows:
+First, get the code:
 
 * Make sure you've [set up](/setup/) your environment.
-* [Create a basic flutter
+* [Create a basic Flutter
   app](/getting-started/#creating-your-first-flutter-app).
-  You'll update the Dart code in `lib/main.dart`.
 
-Add the image to the example:
+Next, add the image to the example:
 
 * Create an `images` directory at the top of the project.
 * Add
  [`lake.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg).
-  Note that `wget` won't work for saving this binary file,
-  so use another approach.
+  (Note that `wget` doesn't work for saving this binary file.)
 * Update the
   [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
   file to include an `assets` tag. This makes the image available to your code.
@@ -99,8 +83,8 @@ The first step is to break the layout down to its basic elements:
 
 * Identify the rows and columns.
 * Does the layout include a grid?
-* Overlapping elements?
-* Tabs?
+* Are there overlapping elements?
+* Does the UI need tabs?
 * Notice areas that require alignment, padding, or borders.
 
 First, identify the larger elements. In this example, four elements are
@@ -108,39 +92,40 @@ arranged into a column: an image, two rows, and a block of text.
 
 <img src="images/lakes-diagram.png" alt="diagramming the rows in the lakes screenshot">
 
-Next, diagram each row. The first row, which we call the "Title
-Section", has 3 children: 1) a column of text, 2) a star icon,
-and 3) a number. Its first child, the column, contains 2 lines of text.
+Next, diagram each row. The first row, called the Title
+section, has 3 children: a column of text, a star icon,
+and a number. Its first child, the column, contains 2 lines of text.
 That first column takes a lot of space, so it must be wrapped in an
 Expanded widget.
 
-<img src="images/title-section-diagram.png" alt="diagramming the widgets in the title section">
+<img src="images/title-section-diagram.png" alt="diagramming the widgets in the Title section">
 
-The second row, which we call the "Button Section", also has
-3 children&mdash;each child is a column that contains an icon and text.
+The second row, called the Button section, also has
+3 children: each child is a column that contains an icon and text.
 
 <img src="images/button-section-diagram.png" alt="diagramming the widgets in the button section">
 
-Once the layout has been diagrammed, it's easiest to take a bottom up
-approach to implementing it. In order to minimize the visual
+Once the layout has been diagrammed, it's easiest to take a bottom-up
+approach to implementing it. To minimize the visual
 confusion of deeply nested layout code, place some of the implementation
 in variables and functions.
 
 <a name="step-2"></a>
 ### Step 2: Implement the title row
 
-First, let's build the left column in the title section. The Column is
-placed inside an Expanded widget to stretch it to use all remaining free
+First, you'll build the left column in the title section. Putting Column
+inside an Expanded widget stretches the column to use all remaining free
 space in the row. Setting the `crossAxisAlignment` property to
 `CrossAxisAlignment.start` positions the column to the beginning of the row.
 
-The first row of text is placed inside a Container to add padding and the
-text is styled to use a bold font weight. The second child in the Column,
-also text, is painted in grey.
+Putting the first row of text inside a Container enables adding padding.
+The second child in the Column, also text, displays as grey.
 
 The last two items in the title row are a star icon, painted red,
-and the text, '41'. The entire row is placed in a Container and padded
+and the text "41". Place the entire row in a Container and pad
 along each edge with 32 pixels.
+
+Here's the code that implements the title row.
 
 <aside class="alert alert-info" markdown="1">
 **Note:**
@@ -198,7 +183,7 @@ class MyApp extends StatelessWidget {
 When pasting code into your app, indentation can
 become skewed. You can fix this in IntelliJ by right-clicking the
 Dart code and selecting **Reformat with Dart Style**.
-Reformat the code at the command line using
+Or, at the command line, you can use
 [dartfmt](https://github.com/dart-lang/dart_style).
 </aside>
 
@@ -206,8 +191,9 @@ Reformat the code at the command line using
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 For a faster development experience, try Flutter's hot reload feature.
 Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The [Flutter plugin for IntelliJ](/intellij-ide/) supports
-hot reload, or you can trigger it when running apps from the command line.
+fully restarting the app. The
+[Flutter plugin for IntelliJ](/intellij-ide/) supports
+hot reload, or you can trigger from the command line.
 For more information, see [Hot Reloads vs. Full Application
 Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-restarts).
 </aside>
@@ -218,7 +204,7 @@ Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-resta
 The button section contains 3 columns that use the same layout&mdash;an
 icon over a row of text. The columns in this row are evenly spaced,
 and the text and icons are painted with the primary color,
-which was set to blue in the app's `build` method:
+which is set to blue in the app's `build()` method:
 
 <!-- _code/lakes/main.dart -->
 <!-- skip -->
@@ -239,8 +225,8 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 
 Since the code for building each row would be almost identical,
-it's most efficient to create a nested function, such as `buildButtonColumn`,
-that takes an Icon and Text, and returns a column with its widgets
+it's most efficient to create a nested function, such as `buildButtonColumn()`,
+which takes an Icon and Text, and returns a column with its widgets
 painted in the primary color.
 
 <!-- _code/lakes/main.dart -->
@@ -277,13 +263,13 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-In the build function, the icon is added directly to the column. The
-text is placed into a Container to add padding to the top of the text,
+The build function adds the icon directly to the column. Put
+text into a Container to add padding above the text,
 separating it from the icon.
 
-The row containing these columns is built by calling the function and
+Build the row containing these columns by calling the function and
 passing the [icon](https://docs.flutter.io/flutter/material/Icons-class.html)
-and text specific to that column. The columns are aligned along the
+and text specific to that column. Align the columns along the
 main axis using `MainAxisAlignment.spaceEvenly` to arrange the free
 space evenly before, between, and after each column.
 
@@ -312,8 +298,8 @@ class MyApp extends StatelessWidget {
 <a name="step-4"></a>
 ### Step 4: Implement the text section
 
-The text section is fairly wordy, so it's also defined as a variable.
-The text is placed in a Container in order to add 32 pixels of padding on
+Define the text section, which is fairly long, as a variable.
+Put the text in a Container to enable adding 32 pixels of padding along
 each edge. The `softwrap` property indicates whether the text should break
 on soft line breaks, such as periods or commas.
 
@@ -344,7 +330,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
 Three of the four column elements are now complete, leaving only the image.
 This image is [available
 online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=)
-under the Creative Commons license, however it's large and slow to fetch.
+under the Creative Commons license, but it's large and slow to fetch.
 In [Step 0](#step-0) you included the image in the project and updated the
 [pubspec
 file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
@@ -372,7 +358,7 @@ possible but cover its entire render box.
 ### Step 6: Put it together
 
 In the final step, you assemble the pieces together. The widgets are arranged
-in a ListView, rather than a Column, because it automatically scrolls
+in a ListView, rather than a Column, because the ListView automatically scrolls
 when running the app on a small device.
 
 <!-- skip -->
@@ -400,8 +386,8 @@ body: new ListView(
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
 
 That's it! When you hot reload the app, you should see the same layout
-shown in the screenshots. You can add interactivity to this layout in
-[Adding Interactivity to your Flutter App](/tutorials/interactive/).
+shown in the screenshots. You can add interactivity to this layout by following
+[Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 
 <hr>
 <a name="approach"></a>
@@ -417,7 +403,7 @@ shown in the screenshots. You can add interactivity to this layout in
 
 </div>
 
-The core of Flutter's layout mechanism is widgets. In Flutter, most
+The core of Flutter's layout mechanism is widgets. In Flutter, almost
 everything is a widget&mdash;even layout models are widgets.
 The images, icons, and text that you see in a Flutter app  are all widgets.
 But things you don't see are also widgets, such as the rows, columns,
@@ -604,7 +590,7 @@ you can customize existing widgets,
 or you can build your own set of custom widgets.
 </aside>
 
-For a non-material app, you can add the Center widget to the app's `build`
+For a non-material app, you can add the Center widget to the app's `build()`
 method:
 
 <!-- _code/widgets-only/main.dart -->

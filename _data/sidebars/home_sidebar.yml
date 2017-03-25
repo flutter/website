@@ -54,7 +54,7 @@ entries:
       url: /tutorials/layout/
       output: web
 
-    - title: Adding Interactivity to your Flutter App
+    - title: Adding Interactivity to Your Flutter App
       url: /tutorials/interactive/
       output: web
 

@@ -22,7 +22,7 @@ needed in the underlying render tree to transition from one state to the next.
 **Note:** If you would like to become better acquainted with Flutter by diving
 into some code, check out
 [Building Layouts in Flutter](/tutorials/layout/) and
-[Adding Interactivity to your Flutter App](/tutorials/interactive/).
+[Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 </aside>
 
 Hello World
