@@ -4,7 +4,7 @@ sidebar: home_sidebar
 layout: page
 ---
 
-{% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](mailto:flutter-dev@googlegroups.com)." %}
+{% include note.html content="_Flutter is an early-stage open-source project_. We hope you try Flutter out and send us [feedback](#get-support)." %}
 
 ## What is Flutter?
 

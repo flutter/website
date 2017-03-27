@@ -102,6 +102,14 @@ entries:
     output: web
     folderitems:
 
+    - title: Plugins & platform-specific code
+      url: /platform-plugins/
+      output: web
+
+    - title: Writing custom platform-specific code with platform channels
+      url: /platform-channels/
+      output: web
+
     - title: Add assets and images
       url: /assets-and-images/
       output: web
@@ -124,10 +132,6 @@ entries:
 
     - title: Upgrade Flutter
       url: /upgrading/
-      output: web
-
-    - title: Access platform and third-party services
-      url: /platform-services/
       output: web
 
     - title: Read and write files
