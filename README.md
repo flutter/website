@@ -98,6 +98,7 @@ it with triple backticks followed by the language.
 
 Here's an example:
 
+<!-- skip -->
 ````
 ```dart
 class SomeCode {
