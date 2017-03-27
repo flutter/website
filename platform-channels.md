@@ -81,7 +81,7 @@ the iOS `device.batteryLevel` API, via a single platform message,
 `getBatteryLevel`.
 
 *Note*: The full source-code for this example is available in
-[`/samples/platform-services/`](https://github.com/flutter/flutter/tree/master/examples/platform_services).
+[`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel).
 
 ### Step 1: Create a new app project
 

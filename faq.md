@@ -162,7 +162,7 @@ to the mobile platform using a
 
 Learn more about [accessing platform and third-party services in Flutter](/platform-plugins/).
 
-Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_services)
+Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 that shows how to use a platform channel to access battery state information on
 iOS and Android.
 
@@ -419,7 +419,7 @@ In addition, any Dart packages you use may have their own license requirements.
 There's an API to find the list of licenses you need to show:
 
 * If your application has a [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
-  simply add an [AboutDrawerItem](https://docs.flutter.io/flutter/material/AboutDrawerItem-class.html).
+  simply add an [AboutListTile](https://docs.flutter.io/flutter/material/AboutListTile-class.html).
 
 * If your application doesn't have a Drawer but does use the material
   library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
