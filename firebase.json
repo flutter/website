@@ -37,6 +37,11 @@
         "source" : "/issues",
         "destination" : "https://github.com/flutter/flutter/issues",
         "type" : 302
+      },
+      {
+        "source" : "/platform-services/",
+        "destination" : "/platform-plugins/",
+        "type" : 301
       }
     ]
   }

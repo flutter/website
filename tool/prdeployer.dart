@@ -32,9 +32,11 @@ main(List<String> arguments) async {
       // deploy again
       projectToDeploy = value["name"];
     } else {
-      bool oldBranch = await isBranchOld(value["branch"]);
-      if (oldBranch) {
-        await fbClient.patch("${firebaseRoot}/$key.json", {"branch": null});
+      if (value["branch"] != null) {
+        bool oldBranch = await isBranchOld(value["branch"]);
+        if (oldBranch) {
+          await fbClient.patch("${firebaseRoot}/$key.json", {"branch": null});
+        }
       }
     }
   });
@@ -42,13 +44,13 @@ main(List<String> arguments) async {
   if (projectToDeploy == null) {
     await projectsData.forEach((String key, Map<String, String> value) async {
       if (projectToDeploy != null) {
-        // project already set
-        // todo: remove this foreach with a better iterator pattern
         return;
       }
-      projectToDeploy = value["name"];
-      await fbClient.patch("${firebaseRoot}/$key.json", {"branch": branchName});
-      await postLinkToGithub(projectToDeploy, currentPullRequest);
+      if (value["branch"] == null) {
+        projectToDeploy = value["name"];
+        await fbClient.patch("${firebaseRoot}/$key.json", {"branch": branchName});
+        await postLinkToGithub(projectToDeploy, currentPullRequest);
+      }
     });
   }
 
