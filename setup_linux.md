@@ -15,6 +15,6 @@ permalink: /setup-linux/
 
 {% include setup/editor-setup.md %}
 
-{% include setup/android-setup-linux.md %}
+{% include setup/android-setup.md %}
 
 {% include setup/next-steps.md %}
