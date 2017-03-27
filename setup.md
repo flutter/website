@@ -38,7 +38,7 @@ to test and iterate using a simulator or physical device.
  </tr>
 </table>
 
-Using an IDE is optional. However, we recommend using an IntelliJ IDE with Flutter for code completion, 
+Using an IDE is optional. However, we recommend using an IntelliJ IDE with Flutter for code completion,
 inline error checking, and visual debugging features.
 {: .alert-warning}
 
@@ -62,13 +62,13 @@ To install and run Flutter, your development environment must meet these minimum
 
    The above command sets your PATH variable temporarily, for the current terminal window.
    The steps for modifying this variable permanently for all terminal sessions are machine-
-   specific. Typically you add a line to a file that is executed whenever you open 
+   specific. Typically you add a line to a file that is executed whenever you open
    a new window:
 
    ```
    export PATH=$HOME/flutter/bin:$PATH
    ```
-   and then run the `source <filename>` command to refresh the window. For example, 
+   and then run the `source <filename>` command to refresh the window. For example,
    edit (or create) and source `$HOME/.bash_profile`.
 
 1. Verify that the `flutter/bin` directory is now in your PATH by running:
@@ -85,7 +85,7 @@ the setup:
 
    This command checks your environment and displays a report to the terminal window.
    The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
-   Check the output carefully for other software you may need to install or further 
+   Check the output carefully for other software you may need to install or further
    tasks to perform (shown in **bold** text).
 
    For example:
@@ -103,7 +103,7 @@ itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
 You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are availabile for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
+are available for IntelliJ IDEA. See [IntelliJ Setup](/intellij-setup/)
 for the steps to install the Flutter and Dart plugins.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
@@ -112,8 +112,8 @@ verify that you’ve set everything up correctly.
 The `flutter` tool uses Google Analytics to anonymously report feature usage statistics
 and basic crash reports. This data is used to help improve Flutter tools over time.
 Analytics is not sent on the very first run or for any runs involving `flutter config`,
-so you can opt-out of analytics before any data is sent. To disable reporting, 
-type `flutter config --no-analytics` and to display the current setting, type 
+so you can opt-out of analytics before any data is sent. To disable reporting,
+type `flutter config --no-analytics` and to display the current setting, type
 `flutter config`. See Google's privacy policy:[www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
 {: .alert-warning}
 
@@ -121,7 +121,7 @@ type `flutter config --no-analytics` and to display the current setting, type
 
 Using our command-line tools, you can use any editor to develop Flutter applications.
 
-We recommend using our IntelliJ plug-ins for a  [rich IDE experience](/intellij-ide/) 
+We recommend using our IntelliJ plug-ins for a  [rich IDE experience](/intellij-ide/)
 supporting editing, running, and debugging Flutter apps. See [IntelliJ Setup](/intellij-setup/)
 for detailed steps.
 
@@ -147,6 +147,24 @@ running `sudo xcodebuild -license` from the command line.
 
 With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
 
+
+### Install CocoaPods
+
+Flutter uses CocoaPods to manage dependencies in iOS native code. We recommend installing CocoaPods
+using Homebrew by following these steps:
+
+1. Install [homebrew](http://brew.sh/).
+1. Open the terminal and run these commands to install CocoaPods.
+
+   ```
+   $ brew update
+   $ brew install cocoapods
+   $ pod setup
+   ```
+   If any of these commands fails with an error, run `brew doctor` and follow the instructions
+   for resolving the issue.
+
+
 ### Set up the iOS simulator
 
 To prepare to run and test your Flutter app on the iOS simulator, follow these steps:
@@ -168,7 +186,6 @@ may overflow your screen. Set the device scale under the **Window > Scale** menu
 
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools, an account, and a profile:
 
-1. Install [homebrew](http://brew.sh/).
 1. Open the terminal and run these commands to install the tools for deploying Flutter apps to
 iOS devices.
 
@@ -176,14 +193,13 @@ iOS devices.
    $ brew update
    $ brew install --HEAD libimobiledevice
    $ brew install ideviceinstaller ios-deploy
-   $ brew install cocoapods
    ```
-   If any of these commands fails with an error, run `brew doctor` and follow the instructions 
+   If any of these commands fails with an error, run `brew doctor` and follow the instructions
    for resolving the issue.
-   
+
 1. Follow the steps defined by Apple to configure Xcode with your Apple Developer account and enable deploying with provisioning profiles. To learn how to set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
 1. Select your Development Team for the Flutter project.
-   1. Open the default Xcode workspace in your project under `ios/Runner.xcworkspace`. 
+   1. Open the default Xcode workspace in your project under `ios/Runner.xcworkspace`.
    1. Select the `Runner` project in the left navigation panel.
    1. In the Target Settings page, make sure your Development Team is selected under **General > Signing > Team**.
 1. Start your app by running `flutter run`.
@@ -212,7 +228,7 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
    $ export PATH=$HOME/Android-Studio/jre/bin:$PATH
    ```
    The above command sets your PATH variable temporarily, for the current terminal window.
-   The steps for modifying this variable permanently for all terminal sessions are machine-specific. 
+   The steps for modifying this variable permanently for all terminal sessions are machine-specific.
    For details, see [Get the Flutter SDK](#get-the-flutter-sdk).
 
 1. Start Android Studio.
@@ -223,10 +239,10 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
 
 1. Launch **Android Studio>Tools>Android>AVD Manager** and select **Create Virtual Device**.
 1. Choose a device definition and select **Next**.
-1. Select one or more system images for the Android versions you want to emulate, 
+1. Select one or more system images for the Android versions you want to emulate,
    and select **Next**. An _x86_ or _x86\_64_ image is recommended.
-1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable 
-[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html). 
+1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
+[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html).
 1. Verify the AVD configuration is correct, and select **Finish**.
 
    For details on the above steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
