@@ -99,13 +99,13 @@ it with triple backticks followed by the language.
 Here's an example:
 
 <!-- skip -->
-````
-```dart
-class SomeCode {
-  String name;
-}
-```
-````
+
+	```dart
+	class SomeCode {
+	  String name;
+	}
+	```
+
 
 See the list of supported languages above for what to use
 following the first triple backticks.
