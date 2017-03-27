@@ -16,7 +16,7 @@ Analytics).
 
 Mobile devices offer many options to extend your app through platform-specific
 APIs. These are critical to the completeness of most mobile apps. Flutter offers
-the following ways to integrate with these via 'plugins', packages that contain
+the following ways to integrate with these via _plugins_, packages that contain
 an API definition written in Dart, coupled with a platform-specific
 implementation for Android, for iOS, or for both.
 
@@ -34,7 +34,7 @@ There are two ways you can use platform-specific code:
 And, if desired, you can create and share plugins:
 
 * **Create a platform plugin** If you wish to use your platform-specific code in
- multiple Flutter apps, or share it with others, than you can wrap it in a
+ multiple Flutter apps, or share it with others, then you can wrap it in a
  plugin. [See details below](#create)
 
 * **Publish a platform plugin:** Publish custom platform-specific code as a
