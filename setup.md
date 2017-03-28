@@ -219,18 +219,6 @@ To develop Flutter apps for Android, you can use either a Mac or a Linux (64-bit
    You can verify these are up-to-date in **Android Studio>Configure>SDK Manager**,
    as described in [Update the IDE and SDK Tools](https://developer.android.com/studio/intro/update.html).
 
-1. Add the bundled JDK directory to your PATH variable. For example, on macOS:
-   ```
-   $ export PATH=/Users/obiwan/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home/bin:$PATH
-   ```
-   On Linux:
-   ```
-   $ export PATH=$HOME/Android-Studio/jre/bin:$PATH
-   ```
-   The above command sets your PATH variable temporarily, for the current terminal window.
-   The steps for modifying this variable permanently for all terminal sessions are machine-specific.
-   For details, see [Get the Flutter SDK](#get-the-flutter-sdk).
-
 1. Start Android Studio.
 
 ### Set up the Android emulator
