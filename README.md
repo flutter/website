@@ -88,7 +88,7 @@ This website can syntax highlight the following languages:
 * css
 * javascript
 * java
-* objc
+* objectivec
 * swift
 
 ### Using syntax highlighting
