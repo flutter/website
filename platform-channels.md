@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Writing platform-specific code with platform channels
+title: Writing custom platform-specific code with platform channels
 permalink: /platform-channels/
 ---
 
