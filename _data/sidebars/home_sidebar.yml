@@ -6,18 +6,6 @@ entries:
   product:
   folders:
 
-  - title: Home
-    url: /
-    output: web
-
-  - title: API reference
-    external_url: https://docs.flutter.io/flutter/
-    output: web
-
-  - title: Flutter examples
-    external_url: https://github.com/flutter/flutter/tree/master/examples
-    output: web
-
   - title: New to Flutter
     output: web
     folderitems:
@@ -145,6 +133,17 @@ entries:
     - title: Handle text input
       url: /text-input/
       output: web
+
+  - spacer: yes
+    output: web
+
+  - title: API reference
+    external_url: https://docs.flutter.io/flutter/
+    output: web
+
+  - title: Flutter examples
+    external_url: https://github.com/flutter/flutter/tree/master/examples
+    output: web
 
   - title: Helpful Resources
     output: web
