@@ -32,7 +32,7 @@ to test and iterate using a simulator or physical device.
   <td>Clone the Flutter repo (<a href="/setup-macos/#clone-the-repo">Mac</a>) (<a href="/setup-windows/#clone-the-repo">Windows</a>) (<a href="/setup-linux/#clone-the-repo">Linux</a>)</td><td align="center">Y</td>
  </tr>
  <tr>
-  <td>Update your path (<a href="/setup-macos/#update-your-path">Mac</a>) (<a href="/setup-windows/#update-your-path">Windows</a>) (<a href="/setup-linux/#update-your-path">Linux)</a></td><td align="center">Y</td>
+  <td>Update your path (<a href="/setup-macos/#update-your-path">Mac</a>) (<a href="/setup-linux/#update-your-path">Linux)</a></td><td align="center">Y</td>
  </tr>
  <tr>
    <td>Run <code>flutter doctor</code> and resolve any issues found (<a href="/setup-macos/#run-flutter-doctor">Mac</a>) (<a href="/setup-windows/#run-flutter-doctor">Windows</a>) (<a href="/setup-linux/#run-flutter-doctor">Linux</a>)</td><td align="center">Y</td>
