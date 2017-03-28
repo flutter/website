@@ -94,6 +94,14 @@ entries:
       url: /layout/
       output: web
 
+    - title: Android release builds
+      url: /android-release/
+      output: web
+
+    - title: iOS release builds
+      url: /ios-release/
+      output: web
+
   - title: How-Tos
     output: web
     folderitems:
