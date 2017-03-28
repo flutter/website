@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: "Adding Interactivity to your Flutter App"
+title: "Adding Interactivity to Your Flutter App"
 sidebar: home_sidebar
 permalink: /tutorials/interactive/
 ---
@@ -11,14 +11,12 @@ permalink: /tutorials/interactive/
 
 * How to respond to taps.
 * How to create a custom widget.
-* The difference between a stateless and stateful widget.
+* The difference between stateless and stateful widgets.
 
 </div>
 
-## Introduction
-
 How do you modify your app to make it react to user input?
-In this tutorial, you'll add interactivity to an app contains only
+In this tutorial, you'll add interactivity to an app that contains only
 non-interactive widgets.  Specifically, you'll modify an icon to make
 it tappable.  To accomplish this, you'll create a custom stateful widget
 that manages two stateless widgets.
@@ -53,13 +51,11 @@ we showed how to create the layout for the following screenshot.
 <img src="images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
 When the app first launches, the star is solid red, indicating that this lake
-has previously been favorited. The number next to the star indicates that a
-total of 41 people have favorited this lake.  After completing this tutorial,
+has previously been favorited. The number next to the star indicates that
+41 people have favorited this lake.  After completing this tutorial,
 tapping the star removes its favorited status, replacing
-the solid star with an outline, and decreasing the count. Tapping
+the solid star with an outline and decreasing the count. Tapping
 again favorites the lake, drawing a solid star and increasing the count.
-
-The following shows both states.
 
 <img src="images/favorited-not-favorited.png" alt="the custom widget you'll create">
 

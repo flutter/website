@@ -8,19 +8,19 @@ layout: page
 
 ## What is Flutter?
 
-Flutter is a mobile app SDK for building high-performance, high-fidelity, 
+Flutter is a mobile app SDK for building high-performance, high-fidelity,
 apps for iOS and Android, from a single codebase.
 
-The goal is to enable developers to deliver high-performance apps that feel natural 
-on different platforms. We embrace differences in scrolling behaviors, 
-typography, icons, and more. 
+The goal is to enable developers to deliver high-performance apps that feel natural
+on different platforms. We embrace differences in scrolling behaviors,
+typography, icons, and more.
 
 ![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.jpg)
 
 This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter and setting
-up your environment. Shrine has high-quality scrolling images, interactive cards, 
-buttons, dropdown lists, and a shopping cart page. To look at the single codebase 
+up your environment. Shrine has high-quality scrolling images, interactive cards,
+buttons, dropdown lists, and a shopping cart page. To look at the single codebase
 for this and more examples, [visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
@@ -191,7 +191,7 @@ Next steps:
 1.  [Set up IntelliJ](/intellij-setup/) (optional).
 1.  [Get started](/getting-started/) with the development cycle in a few simple steps.
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
-    [Adding Interactivity to your Flutter App](/tutorials/interactive/).
+    [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).
 
 ## Get support
