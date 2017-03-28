@@ -74,6 +74,14 @@ entries:
       url: /widgets/
       output: web
 
+    - title: Plugins & platform-specific code
+      url: /platform-plugins/
+      output: web
+
+    - title: Custom platform-specific code with platform channels
+      url: /platform-channels/
+      output: web
+
     - title: Gestures
       url: /gestures/
       output: web
@@ -101,14 +109,6 @@ entries:
   - title: How-Tos
     output: web
     folderitems:
-
-    - title: Plugins & platform-specific code
-      url: /platform-plugins/
-      output: web
-
-    - title: Writing custom platform-specific code with platform channels
-      url: /platform-channels/
-      output: web
 
     - title: Add assets and images
       url: /assets-and-images/
