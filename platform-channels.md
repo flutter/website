@@ -217,18 +217,18 @@ Android code we wrote in the previous step, and passes back a response for both
 the success and error cases using the `response` argument.
 
 ```java
-       @Override
-       public void onMethodCall(MethodCall call, Response response) {
-         if (call.method.equals("getBatteryLevel")) {
-           int batteryLevel = getBatteryLevel();
+ @Override
+ public void onMethodCall(MethodCall call, Response response) {
+   if (call.method.equals("getBatteryLevel")) {
+     int batteryLevel = getBatteryLevel();
 
-           if (batteryLevel != -1) {
-             response.success(batteryLevel);
-           } else {
-             response.error("UNAVAILABLE", "Battery level not available.", null);
-           }
-         }
-       }
+     if (batteryLevel != -1) {
+       response.success(batteryLevel);
+     } else {
+       response.error("UNAVAILABLE", "Battery level not available.", null);
+     }
+   }
+ }
 ```
 
 ### Step 3a: Add an iOS platform-specific implementation
@@ -249,7 +249,7 @@ Next, create a `FlutterMethodChannel` and add a handler inside the `application
 didFinishLaunchingWithOptions:` method. Make sure to use the same channel name
 as was used on the Flutter client side.
 
-```objective-c
+```objectivec
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -274,7 +274,7 @@ written in a native iOS app.
 
 Add the following as a new method in the `AppDelegate` class, just before `@end`:
 
-```objective-c
+```objectivec
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
   device.batteryMonitoringEnabled = YES;
@@ -292,24 +292,24 @@ the `call` argument. The implementation of this platform method simply calls the
 iOS code we wrote in the previous step, and passes back a response for both
 the success and error cases using the `result` argument.
 
-```objective-c
-  [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
-    if ([@"getBatteryLevel" isEqualToString:call.method]) {
-      int batteryLevel = [self getBatteryLevel];
+```objectivec
+[batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
+  if ([@"getBatteryLevel" isEqualToString:call.method]) {
+    int batteryLevel = [self getBatteryLevel];
 
-      if (batteryLevel == -1) {
-        result(nil, [FlutterError errorWithCode:@"UNAVAILABLE"
-                                        message:@"Battery info unavailable"
-                                        details:nil]);
-      } else {
-        result(@(batteryLevel), nil);
-      }
-    } else {
-      result(nil, [FlutterError errorWithCode:@"UNKNOWN_METHOD"
-                                      message:@"Unknown battery method called"
+    if (batteryLevel == -1) {
+      result(nil, [FlutterError errorWithCode:@"UNAVAILABLE"
+                                      message:@"Battery info unavailable"
                                       details:nil]);
+    } else {
+      result(@(batteryLevel), nil);
     }
-  }];
+  } else {
+    result(nil, [FlutterError errorWithCode:@"UNKNOWN_METHOD"
+                                    message:@"Unknown battery method called"
+                                    details:nil]);
+  }
+}];
 ```
 
 ## Separate platform plugin code from UI code
@@ -324,8 +324,6 @@ details.
 If you wish to share your platform-specific with other developers in the
 Flutter ecosystem, please see [platform plugins](/platform-plugins/) for
 details.
-
-
 
 {% include note.html content="Sharing of platform plugins is currently not
 supported, but Flutter is expected to support this in the future." %}
