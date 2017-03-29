@@ -62,7 +62,7 @@ the platform acting as client to methods implemented in Dart.
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
-numbers, Strings, and List and Maps of these (see
+numbers, Strings, byte buffers, and List and Maps of these (see
 [`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html))
 for details). The serialization and deserialization of these values to and from
 messages happens automatically when you send and receive values.
@@ -214,7 +214,8 @@ Finally, we complete the `onMethodCall` method we added earlier. We need to
 handle a single platform method, `getBatteryLevel`, so we test for that in the
 `call` argument. The implementation of this platform method simply calls the
 Android code we wrote in the previous step, and passes back a response for both
-the success and error cases using the `response` argument.
+the success and error cases using the `response` argument. If an unknown method
+is called, we report that instead.
 
 ```java
  @Override
@@ -227,6 +228,8 @@ the success and error cases using the `response` argument.
      } else {
        response.error("UNAVAILABLE", "Battery level not available.", null);
      }
+   } else {
+     response.notImplemented();
    }
  }
 ```
@@ -257,9 +260,9 @@ as was used on the Flutter client side.
       (FlutterViewController*)self.window.rootViewController;
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
-      methodChannelNamed:@"samples.flutter.io/battery"
-         binaryMessenger:controller
-                   codec:[FlutterStandardMethodCodec sharedInstance]];
+      methodChannelWithName:@"samples.flutter.io/battery"
+            binaryMessenger:controller
+                      codec:[FlutterStandardMethodCodec sharedInstance]];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
     // TODO
@@ -290,7 +293,8 @@ Finally, we complete the `setMethodCallHandler` method we added earlier. We need
 to handle a single platform method, `getBatteryLevel`, so we test for that in
 the `call` argument. The implementation of this platform method simply calls the
 iOS code we wrote in the previous step, and passes back a response for both
-the success and error cases using the `result` argument.
+the success and error cases using the `result` argument. If an unknown method
+is called, we report that instead.
 
 ```objectivec
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
@@ -298,16 +302,14 @@ the success and error cases using the `result` argument.
     int batteryLevel = [self getBatteryLevel];
 
     if (batteryLevel == -1) {
-      result(nil, [FlutterError errorWithCode:@"UNAVAILABLE"
-                                      message:@"Battery info unavailable"
-                                      details:nil]);
+      result([FlutterError errorWithCode:@"UNAVAILABLE"
+                                 message:@"Battery info unavailable"
+                                 details:nil]);
     } else {
-      result(@(batteryLevel), nil);
+      result(@(batteryLevel));
     }
   } else {
-    result(nil, [FlutterError errorWithCode:@"UNKNOWN_METHOD"
-                                    message:@"Unknown battery method called"
-                                    details:nil]);
+    result(FlutterMethodNotImplemented);
   }
 }];
 ```
