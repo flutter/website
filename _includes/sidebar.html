@@ -9,6 +9,8 @@
       <li>
         <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
       </li>
+      {% elsif folder.spacer %}
+      <br>
       {% else %}
       <li>
         <a href="{{folder.url}}">{{ folder.title }}</a>
