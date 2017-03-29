@@ -10,11 +10,23 @@ entries:
     output: web
     folderitems:
 
-    - title: Set up
+    - title: Flutter setup
       url: /setup/
       output: web
 
-    - title: IntelliJ set up
+    - title: " - Flutter setup for Windows"
+      url: /setup-windows/
+      output: web
+
+    - title: " - Flutter setup for MacOS"
+      url: /setup-macos/
+      output: web
+
+    - title: " - Flutter setup for Linux"
+      url: /setup-linux/
+      output: web
+
+    - title: IntelliJ setup
       url: /intellij-setup/
       output: web
 
