@@ -261,8 +261,7 @@ as was used on the Flutter client side.
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
       methodChannelWithName:@"samples.flutter.io/battery"
-            binaryMessenger:controller
-                      codec:[FlutterStandardMethodCodec sharedInstance]];
+            binaryMessenger:controller];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
     // TODO
