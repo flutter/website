@@ -93,7 +93,7 @@ can compose these, and other, simple widgets in novel ways.
 The class hierarchy is shallow and broad to maximize the possible number of
 combinations.
 
-![Widget class hierarchy](/images/whatisflutter/diagram-widgetclass.svg){:style="max-width: 900px"}
+![Widget class hierarchy](/images/whatisflutter/diagram-widgetclass.svg)
 
 You can also control the *layout* of a widget by composing it with other widgets.
 For example, to center a widget, you wrap it in a Center widget. There are
