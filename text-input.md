@@ -12,87 +12,107 @@ permalink: /text-input/
 
 This page describes how to set up basic text input for Flutter applications.
 
-The
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
-widget under
-[Material](https://docs.flutter.io/flutter/material/material-library.html )
-satisfies most text input use cases, and implements material design's style. If
-you want an input widget that does not use material design, see
-[`EditableText`](https://docs.flutter.io/flutter/widgets/EditableText-class.html)
+## Choosing a widget
 
+[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html)
+is the most commonly used text input widget.
 
+By default, a `TextField` is decorated with an underline. You can add a label,
+an icon, inline hint text, and error text by supplying an
+[`InputDecoration`(https://docs.flutter.io/flutter/material/InputDecoration-class.html)
+as the [`decoration`](https://docs.flutter.io/flutter/material/TextField/decoration.html)
+property of the `TextField`. To remove the decoration entirely (including the
+underline and the space reserved for the label), set the `decoration` to null
+explicitly.
 
-## Retrieving User Input
+[`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html)
+wraps a `TextField` and integrates it with the enclosing
+[`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html). Use a
+`TextFormField` when you want to supply a validator function to check whether
+the user's input satisfies some constraint (e.g., is a phone number) or when you
+wish to integrate a `TextField` with other
+[`FormField`](https://docs.flutter.io/flutter/widgets/FormField-class.html)
+widgets.
 
-Assuming that the input is already in focus, the basic data flow for retrieving
-user input is:
+## Retrieving user input
 
-1. User taps a character in the keyboard.
-2. The
-[`onChanged`](https://docs.flutter.io/flutter/material/Input/onChanged.html)
-callback is called with the current
-[`value`](https://docs.flutter.io/flutter/material/Input/value.html)
-of the widget.
-3. Perform any necessary logic/validation on the current input value.
-4. Update the state of the
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
-widget accordingly through
-[`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html).
+There are two main approaches for retrieving the user's input: (a) handling
+the [`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html)
+callback and (b) supplying a
+[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html).
 
-For most cases, we recommend that you use the
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html)
-class within a
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-so you can save and operate on the current value of the input.
-To learn more about
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-and managing state in Flutter, you can look at this helpful example of 
-[managing widget state](https://flutter.io/widgets-intro/#changing-widgets-in-response-to-input).
+### onChanged
 
-## Example
+Whenever the user types into the `TextField`, the `TextField` will call its
+[`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html)
+callback. You can handle this callback to watch what the user types. For
+example, if you're implementing a search field, you might want to update the
+search results as the user types their query.
 
-This example is a
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-that mirrors the text inside an
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html).
+### TextEditingController
+
+A more powerful (but more elaborate) approach is supply a
+[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+as the [`controller`](https://docs.flutter.io/flutter/material/TextField/controller.html)
+property of the `TextField`. The controller's
+[`text`](https://docs.flutter.io/flutter/widgets/TextEditingController/text.html)
+and [`selection`](https://docs.flutter.io/flutter/widgets/TextEditingController/selection.html)
+properties are updated continuously as the user types in the `TextField`. To be
+notified when these properties change, you listen to the controller using its
+[`addListener`](https://docs.flutter.io/flutter/foundation/ChangeNotifier/addListener.html)
+method. (If you add a listener, remember to remove the listener during your
+[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) object's
+[`dispose`](https://docs.flutter.io/flutter/widgets/State/dispose.html) method).
+
+The `TextEditingController` also lets you control the contents of the
+`TextField`. If you modify the `text` or `selection` properties of the
+controller, the `TextField` will update to display the modified text or
+selection. For example, you can use this feature to implement inline
+autocomplete by adding the suggested text as a selected suffix to the text the
+user has typed.
+
+## Examples
+
+Below is an example of using a
+[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+to read the value the user has typed into a
+[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html):
 
 ```dart
-/// [StatefulWidget] that displays what is being entered in the input
-class MyInput extends StatefulWidget {
-  MyInput({Key key}) : super(key: key);
+/// Opens an [AlertDialog] showing what the user typed.
+class ExampleWidget extends StatefulWidget {
+  ExampleWidget({Key key}) : super(key: key);
 
   @override
-  _MyInputState createState() => new _MyInputState();
+  _ExampleWidgetState createState() => new _ExampleWidgetState();
 }
 
-/// State that corresponds to [MyInput]
-class _MyInputState extends State<MyInput> {
-  /// Track the current input state
-  InputValue _currentInput;
-
-  @override
-  void initState() {
-    super.initState();
-    // The empty constructor for InputValue
-    // will initial an InputValue with an empty string
-    _currentInput = const InputValue();
-  }
-
-  /// Handle callbacks from Input, when the text is changed
-  void _handleInputChange(InputValue input) {
-    setState(() {
-      _currentInput = input;
-    });
-  }
+/// State for [ExampleWidget] widgets.
+class _ExampleWidgetState extends State<ExampleWidget> {
+  final TextEditingController _controller = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        new Text(_currentInput.text), // Display the text of the current input
-        new Input(
-          onChanged: _handleInputChange,
-          value: _currentInput,
+        new TextField(
+          controller: _controller,
+          decoration: new InputDecoration(
+            hintText: 'Type something',
+          ),
+        ),
+        new RaisedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              child: new AlertDialog(
+                title: new Text('What you typed'),
+                content: new Text(_controller.text),
+              ),
+            );
+          },
+          child: new Text('DONE'),
         ),
       ],
     );
