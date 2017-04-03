@@ -119,7 +119,7 @@ or it changes over time (perhaps a data feed causes the UI to update).
 [Slider](https://docs.flutter.io/flutter/material/Slider-class.html),
 [InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html),
 [Form](https://docs.flutter.io/flutter/widgets/Form-class.html), and
-[InputField](https://docs.flutter.io/flutter/material/Radio-class.html)
+[TextField](https://docs.flutter.io/flutter/material/TextField-class.html)
 are examples of stateful widgets, which subclass
 [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
 
@@ -783,7 +783,6 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 * [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
 * [FloatingActionButton](https://docs.flutter.io/flutter/material/FloatingActionButton-class.html)
 * [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html)
-* [InputField](https://docs.flutter.io/flutter/material/InputField-class.html)
 * [Radio](https://docs.flutter.io/flutter/material/Radio-class.html)
 * [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html)
 * [Slider](https://docs.flutter.io/flutter/material/Slider-class.html)
