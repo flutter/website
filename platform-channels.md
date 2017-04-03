@@ -80,10 +80,10 @@ display the current battery level. It uses the Android `BatteryManager` API, and
 the iOS `device.batteryLevel` API, via a single platform message,
 `getBatteryLevel`.
 
-*Note*: The full, run-able source-code for this example is available in
+*Note*: The full, runnable source-code for this example is available in
 [`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
-[`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channl_swift).
+[`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
 
 ### Step 1: Create a new app project
 
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
 Next, we invoke a method on the method channel, specifying the concrete method
 to call via the String identifier `getBatteryLevel`. The call may fail -- for
 example if the platform does not support the platform API (such as when running
-in a simulator), so we wrap the `invokeMethod` call in a try-catch statement:
+in a simulator), so we wrap the `invokeMethod` call in a try-catch statement.
 
 We use the returned result to update our user interface state in `_batteryLevel`
 inside `setState`.
@@ -156,23 +156,23 @@ refreshing the valuer.
 
 <!-- skip -->
 ```dart
-  @override
-  Widget build(BuildContext context) {
-    return new Material(
-      child: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            new RaisedButton(
-              child: new Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            new Text(_batteryLevel, key: new Key('Battery level label')),
-          ],
-        ),
+@override
+Widget build(BuildContext context) {
+  return new Material(
+    child: new Center(
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          new RaisedButton(
+            child: new Text('Get Battery Level'),
+            onPressed: _getBatteryLevel,
+          ),
+          new Text(_batteryLevel),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
 
@@ -374,7 +374,7 @@ is called, we report that instead.
 }];
 ```
 
-You should now be able to run the app on IOS. If you are using the iOS
+You should now be able to run the app on iOS. If you are using the iOS
 Simulator, note that it does not support battery APIs, and the app will thus
 display 'battery info unavailable'.
 
@@ -392,6 +392,9 @@ Start by opening the iOS host portion of your Flutter app in Xcode:
 1. Navigate to the directory holding your Flutter app, and select the `ios`
 folder inside it. Click OK.
 
+Next, we add support for Swift in the standard template setup that uses
+Objective-C:
+
 1. Expand Runner > Runner in the Project navigator.
 
 1. If present, delete the files `AppDelegate.h`, `AppDelegate.m`, and
@@ -402,31 +405,27 @@ folder inside it. Click OK.
   * Select `Swift File`, and click **Next**
   * Name the file `AppDelegate.swift`
   * Select **Create Bridging Header** when asked.
-
-1. Open `Runner-Bridging-Header.h`, and a Flutter import:
-   ```
-   #import "../Flutter/Flutter.framework/Headers/Flutter.h"
-   ```
-
+1. Open `Runner-Bridging-Header.h`, and add a Flutter import:
+    ```
+    #import "../Flutter/Flutter.framework/Headers/Flutter.h"
+    ```
 1. Open the file `AppDelegate.swift` located under Runner > Runner in the Project
 navigator, and replace `import Foundation` with:
+    ```swift
+    import UIKit
+    import Flutter
 
-```swift
-import UIKit
-import Flutter
-
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-}
-```
-
+    @UIApplicationMain
+    @objc class AppDelegate: FlutterAppDelegate {
+    }
+    ```
 1. Validate that the project builds (shortcut `cmd-b`).
 
 With the project converted to use Swift for the main application class we can
 now begin.
 
 First we override `didFinishLaunchingWithOptions` to contain a
-FlutterMethodChannel tied to the channel name `samples.flutter.io/battery`:
+`FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
 
 ```swift
 @UIApplicationMain
@@ -485,9 +484,9 @@ batteryChannel.setMethodCallHandler({
 });
 ```
 
-You should now be able to run the app on IOS. If you are using the iOS
+You should now be able to run the app on iOS. If you are using the iOS
 Simulator, note that it does not support battery APIs, and the app will thus
-display 'battery info unavailable'.
+display 'Battery info unavailable.'.
 
 ## Separate platform plugin code from UI code
 
