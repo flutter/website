@@ -107,7 +107,7 @@ renders in a certain way, it's often helpful to inspect the neighboring widgets.
 The Flutter framework is organized into a series of layers, with each layer
 building upon the previous layer.
 
-{% include layer-cake.html %}
+<object type="image/svg+xml" data="images/whatisflutter/diagram-layercake.svg" style="width: 85%; height: 85%"></object>
 
 The diagram shows the upper layers of the framework, which are used more
 frequently than the lower layers. For the complete set of libraries that make up
