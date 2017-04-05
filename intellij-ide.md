@@ -143,20 +143,11 @@ To open Observatory:
 
 **Hot Reload**
 
-On Linux (IntelliJ keymap _Default for XWin_) the keyboard shortcut is CTRL+F5.
+On Linux (IntelliJ keymaps _Default for XWin_) and Windows the keyboard shortcuts
+are `ctrl-alt-;` and `ctrl-\`.
 
-On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut is ⌘F5,
-which unfortunately is already mapped to _macOS VoiceOver_. The Flutter team is
-[working on better default
-keybindings](https://github.com/flutter/flutter-intellij/issues/335). For now
-you can remap the keybinding through the IntelliJ settings as shown below.
-
-**Full Application Restart**
-
-On Linux (IntelliJ keymaps _Default for XWin_) the keyboard shortcut is
-CTRL+Shift+F5.
-
-On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcut is ⇧⌘F5.
+On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `⌘-⌥-;`
+and `⌘-\`.
 
 Keyboard mappings can be changed in IntelliJ Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
