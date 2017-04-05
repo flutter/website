@@ -40,10 +40,8 @@
   <text class="cls-2" transform="translate(42 180)">Framework<tspan x="0" y="24">(Dart)</tspan></text>
   <rect class="cls-3" x="225" y="32" width="546" height="42" rx="4" ry="4"/>
   <text class="cls-4" transform="translate(468.49 59.26)">Material</text>
-  <rect class="cls-3" x="225" y="86" width="267" height="42" rx="4" ry="4"/>
-  <rect class="cls-3" x="504" y="86" width="267" height="42" rx="4" ry="4"/>
-  <text class="cls-4" transform="translate(305.12 113.26)">Mountain View</text>
-  <text class="cls-4" transform="translate(602.32 113.26)">Cupertino</text>
+  <rect class="cls-3" x="225" y="86" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(461.62 113.26)">Cupertino</text>
   <rect class="cls-3" x="225" y="140" width="546" height="42" rx="4" ry="4"/>
   <text class="cls-4" transform="translate(468.79 167.26)">Widgets</text>
   <rect class="cls-3" x="225" y="194" width="546" height="42" rx="4" ry="4"/>
