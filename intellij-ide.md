@@ -75,6 +75,55 @@ Any analysis issues will be shows in the Dart Analysis pane:
 
 ![Dart Analysis pane](/images/intellij/dart-analysis.png)
 
+## Editing support for Flutter code
+
+### Assists & Quick Fixes
+
+Assists are code changes related to a certain code identifier. A number of these
+are available when the cursor is placed on a Flutter widget identifier, as
+indicated by the yellow lightbulb icon. The assist can be invoked by clicking
+the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
+here:
+
+![IntelliJ editing assists](/images/intellij/assists.png)
+
+Quick Fixes are similar, only they are shown with a piece of code has an error and they can assist in correcting it. They are indicated with a red lightbulb.
+
+We currently support the following assists & quick fixes:
+
+* 'Wrap new-expression with new widget': This can be used when you have a widget
+ that you want to wrap in a surrounding widget, for example if you want to wrap
+ a widget in a `Row` or `Column`.  
+
+* 'Wrap widget list with new widget': Similar to the assist above, but for
+ wrapping an existing list of widgets rather than an individual widget.
+
+* 'Move widget up' / 'Move widget down': Moves a widget up/down in the when **TODO**
+
+* 'Convert child to children': Changes a child argument to a children argument,
+ and wraps the argument value in a list.
+
+### Live Templates
+
+Live templates can be used to speed up entering typical code structures. They
+are invoked by typing their 'prefix', and then selecting it in the code
+completion window:
+
+![IntelliJ live templates](/images/intellij/livetemplates.png)
+
+The Flutter plugin includes the following templates:
+
+* Prefix `stless`: Create a new subclass of `StatelessWidget`.
+
+* Prefix `stful`: Create a new subclass of `StatefulWidget` and it's associated
+ State subclass.
+
+* Prefix `stanim`: Create a new subclass of `StatefulWidget`, and it's
+ associated State subclass including a field initialized with an
+ `AnimationController`.
+
+You can also define custom templates in **Settings > Editor > Live Templates**.
+
 ## Running and Debugging
 
 Running and Debugging is controlled from the main toolbar:
