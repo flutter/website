@@ -136,7 +136,6 @@ We currently support the following assists & quick fixes:
  a widget in a `Row` or `Column`.  
 * 'Wrap widget list with new widget': Similar to the assist above, but for
  wrapping an existing list of widgets rather than an individual widget.
-* 'Move widget up' / 'Move widget down': Moves a widget up/down in the when **TODO**
 * 'Convert child to children': Changes a child argument to a children argument,
  and wraps the argument value in a list.
 
