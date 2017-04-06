@@ -1,0 +1,35 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+      .cls-1 {
+        fill: none;
+        stroke: #bdbdbd;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+      .cls-2 {
+        fill: #039be5;
+      }
+      .cls-3 {
+        fill: #90a4ae;
+      }
+      .cls-4 {
+        font-size: 14px;
+      }
+      .cls-4,
+      .cls-5 {
+        fill: #fff;
+        font-family: Roboto;
+      }
+      .cls-5 {
+        font-size: 16px;
+      }
+    </style>
+  </defs>
+  <line class="cls-1" x1="196" y1="184" x2="254" y2="184"/><rect class="cls-2" x="50" y="159" width="148" height="48" rx="4" ry="4"/><rect class="cls-3" x="254" y="159" width="108" height="48" rx="4" ry="4"/>
+  <line class="cls-1" x1="125" y1="159" x2="125" y2="101"/><rect class="cls-2" x="39" y="40" width="168" height="64" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(66.35 188.26)">PopupMenuButton</text>
+  <text class="cls-4" transform="translate(291.58 188.26)">State</text>
+  <text class="cls-5" transform="translate(69.82 78.26)">StatefulWidget</text>
+</svg>

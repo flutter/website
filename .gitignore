@@ -5,6 +5,7 @@ _site
 build
 .firebaserc
 .*swp
+node_modules
 
 # Dart ignores.
 .packages

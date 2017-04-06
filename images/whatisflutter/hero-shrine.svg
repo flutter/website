@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+      .cls-1 {
+        fill: #bdbdbd;
+      }
+      .cls-2 {
+        fill: #e0e0e0;
+        opacity: 0.5;
+      }
+      .cls-3 {
+        fill: #fdfdfd;
+      }
+      .cls-4 {
+        font-size: 20px;
+        fill: #333;
+        font-family: Roboto;
+      }
+    </style>
+  </defs>
+  <title>hero-shrine</title><path
+    class="cls-1"
+    d="M326.1,187.87h-2.16V110.59A39.56,39.56,0,0,0,284.37,71H98.29a39.56,39.56,0,0,0-39.56,39.56v30.29H56.88v21.64h1.85v25.66H56.88v39.56h1.85v10.08H56.88v39.56h1.85v303A39.56,39.56,0,0,0,98.29,620H284.37a39.56,39.56,0,0,0,39.56-39.56v-353h2.16V187.87Zm-18.24,366H76V141.5H307.86V553.84Z"/><rect class="cls-2" x="165.99" y="105.03" width="50.69" height="3.71" rx="1.85" ry="1.85"/><circle class="cls-2" cx="191.64" cy="585.99" r="20.14"/><path class="cls-1" d="M744.94,238.4V202.16h-3.79v-91a40.27,40.27,0,0,0-40.27-40.27H513a40.27,40.27,0,0,0-40.27,40.27V579.57A40.27,40.27,0,0,0,513,619.84H700.89a40.27,40.27,0,0,0,40.27-40.27V348.46h3.79V280h-3.79V238.4h3.79Z"/><rect class="cls-3" x="485.69" y="127.24" width="241.57" height="429.46"/><rect class="cls-2" x="581.99" y="90.09" width="53.69" height="4.03" rx="2.01" ry="2.01"/><rect class="cls-2" x="599.43" y="110.89" width="18.79" height="6.71" rx="3.36" ry="3.36"/><circle class="cls-2" cx="518.78" cy="92.77" r="5.37"/>
+  <text class="cls-4" transform="translate(174.51 43)">iOS</text>
+  <text class="cls-4" transform="translate(576 43)">Android</text>
+  <image x="485" y="127" width="242" height="430" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="hero-shrine-android.jpg"></image>
+  <image x="76" y="137" width="232" height="417" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="hero-shrine-ios.jpg"></image>
+</svg>

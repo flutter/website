@@ -1,0 +1,65 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+      .cls-1 {
+        fill: #dcedc8;
+      }
+      .cls-2,
+      .cls-7 {
+        font-size: 20px;
+      }
+      .cls-2 {
+        fill: #689f38;
+      }
+      .cls-2,
+      .cls-4,
+      .cls-7 {
+        font-family: Roboto;
+      }
+      .cls-3 {
+        fill: #8bc34a;
+      }
+      .cls-4 {
+        font-size: 16px;
+        fill: #fff;
+      }
+      .cls-5 {
+        fill: #bbdefb;
+      }
+      .cls-6 {
+        fill: #2196f3;
+      }
+      .cls-7 {
+        fill: #1976d2;
+      }
+    </style>
+  </defs>
+  <title>layer-cake</title>
+  <rect class="cls-1" x="16" y="16" width="768" height="342" rx="4" ry="4"/>
+  <text class="cls-2" transform="translate(42 180)">Framework<tspan x="0" y="24">(Dart)</tspan></text>
+  <rect class="cls-3" x="225" y="32" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(468.49 59.26)">Material</text>
+  <rect class="cls-3" x="225" y="86" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(461.62 113.26)">Cupertino</text>
+  <rect class="cls-3" x="225" y="140" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(468.79 167.26)">Widgets</text>
+  <rect class="cls-3" x="225" y="194" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(461.62 221.26)">Rendering</text>
+  <rect class="cls-3" x="225" y="248" width="174" height="42" rx="4" ry="4"/>
+  <rect class="cls-3" x="411" y="248" width="174" height="42" rx="4" ry="4"/>
+  <rect class="cls-3" x="597" y="248" width="174" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(468.43 275.26)">Painting</text>
+  <text class="cls-4" transform="translate(275.31 275.26)">Animation</text>
+  <text class="cls-4" transform="translate(651.84 275.26)">Gestures</text>
+  <rect class="cls-5" x="16" y="390" width="768" height="72" rx="4" ry="4"/>
+  <rect class="cls-6" x="225" y="405" width="174" height="42" rx="4" ry="4"/>
+  <rect class="cls-6" x="411" y="405" width="174" height="42" rx="4" ry="4"/>
+  <rect class="cls-6" x="597" y="405" width="174" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(482.78 432.26)">Dart</text>
+  <text class="cls-4" transform="translate(296.63 432.26)">Skia</text>
+  <text class="cls-4" transform="translate(668.55 432.26)">Text</text>
+  <rect class="cls-3" x="225" y="302" width="546" height="42" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(457.75 329.26)">Foundation</text>
+  <text class="cls-7" transform="translate(42 433)">Engine (C++)</text>
+</svg>
