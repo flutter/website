@@ -49,8 +49,8 @@ Code sample:
 ```dart
 postData() async {
   ...
-  var response = await httpClient.post(url, body: {"name": "doodle", "color": "blue"});
-  print("Response status: ${response.statusCode}");
+  var response = await httpClient.post(url, body: {'name': 'doodle', 'color': 'blue'});
+  print('Response status: ${response.statusCode}');
 }
 ```
 
@@ -68,7 +68,7 @@ To decode the JSON string and parse the response into a Map:
 <!-- skip -->
 ```dart
 Map data = JSON.decode(response.body);
-// Assume the response body is something like: ["foo", { "bar": 499 }]
+// Assume the response body is something like: ['foo', { 'bar': 499 }]
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
 
@@ -77,7 +77,7 @@ Map, List, or List of Maps containing simple values, to the `encode` method:
 
 <!-- skip -->
 ```dart
-String encodedString = JSON.encode([1, 2, { "a": null }]);
+String encodedString = JSON.encode([1, 2, { 'a': null }]);
 ```
 
 ## Example: decoding JSON from HTTPS GET
@@ -124,11 +124,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String _ipAddress = 'Unknown';
 
   _getIPAddress() async {
-    String url = "https://httpbin.org/ip";
+    String url = 'https://httpbin.org/ip';
     var httpClient = createHttpClient();
     var response = await httpClient.read(url);
     Map data = JSON.decode(response);
-    String ip = data["origin"];
+    String ip = data['origin'];
 
     // If the widget was removed from the tree while the message was in flight,
     // we want to discard the reply rather than calling setState to update our
