@@ -24,8 +24,13 @@ for D in _includes/_code/*; do
     echo "Run flutter packages get on ${D}"
     ../flutter/bin/flutter packages get ${D}
 
-    echo "Run flutter analyze on ${D}"
-    ../flutter/bin/flutter analyze ${D}/*.dart
+    # Temporary workaround to issue https://github.com/flutter/flutter/issues/9248
+    if [ "${D}" != "_includes/_code/stack" ]; then
+      echo "Run flutter analyze on ${D}"
+      ../flutter/bin/flutter analyze ${D}/*.dart
+    else
+      echo " *** Skipping analysis of ${D} due to bug 9248 ***"
+    fi
   fi
 done
 
