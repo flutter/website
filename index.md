@@ -140,7 +140,7 @@ of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
 [buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
 process bottoms out in [fully concrete widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
-which framework then stitches together into a tree.
+which the framework then stitches together into a tree.
 
 A widget's build function should be free of side effects.  Whenever it is asked
 to build, the widget should return a new tree of widgets regardless of what the
