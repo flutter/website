@@ -28,7 +28,7 @@ for D in _includes/_code/*; do
     if [ "${D}" != "_includes/_code/stack" ]; then
       echo "Run flutter analyze on ${D}"
       ../flutter/bin/flutter analyze ${D}/*.dart
-    elif
+    else
       echo " *** Skipping analysis of ${D} due to bug 9248 ***"
     fi
   fi
