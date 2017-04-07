@@ -2,3 +2,5 @@ analyzer:
   exclude:
     - '_includes/**'
     - '_layouts/**'
+  language:
+    enableAssertInitializer: true
