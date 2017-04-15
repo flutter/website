@@ -61,7 +61,7 @@ the preceding code sample.
 
 ## Decoding and encoding JSON
 
-Support for decoding and encoding JSON is provided by the [`dart:convert`](https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html) library.
+Support for decoding and encoding JSON is provided by the [`dart:convert`](https://docs.flutter.io/flutter/dart.convert/dart.convert-library.html) library.
 
 To decode the JSON string and parse the response into a Map:
 
@@ -179,5 +179,5 @@ For full API docs, see:
 [read]:       https://www.dartdocs.org/documentation/http/latest/http/read.html
 [readbytes]:  https://www.dartdocs.org/documentation/http/latest/http/readBytes.html
 [post]:       https://www.dartdocs.org/documentation/http/latest/http/post.html
-[convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
+[convert]:    https://docs.flutter.io/flutter/dart.convert/dart.convert-library.html
 [dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
