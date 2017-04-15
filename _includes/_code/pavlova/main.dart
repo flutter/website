@@ -101,8 +101,7 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
 
     // DefaultTextStyle.merge allows you to create a default text
     // style that is inherited by its child and all subsequent children.
-    var iconList = new DefaultTextStyle.merge(
-      context: context,
+    var iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: new Container(
         padding: new EdgeInsets.all(20.0),
