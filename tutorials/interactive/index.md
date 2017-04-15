@@ -634,7 +634,7 @@ The _TapboxCState object:
   the `_highlight` state changes.
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the
-  [config](https://docs.flutter.io/flutter/widgets/State/config.html)
+  [widget](https://docs.flutter.io/flutter/widgets/State/widget.html)
   property.
 
 <!-- _code/tapbox-c/main.dart -->
@@ -701,7 +701,7 @@ class _TapboxCState extends State<TapboxC> {
   }
 
   void _handleTap() {
-    config.onChanged(!config.active);
+    widget.onChanged(!widget.active);
   }
 
   Widget build(BuildContext context) {
@@ -714,14 +714,14 @@ class _TapboxCState extends State<TapboxC> {
       onTapCancel: _handleTapCancel,
       child: new Container(
         child: new Center(
-          child: new Text(config.active ? 'Active' : 'Inactive',
+          child: new Text(widget.active ? 'Active' : 'Inactive',
               style: new TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
           backgroundColor:
-              config.active ? Colors.lightGreen[700] : Colors.grey[600],
+              widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? new Border.all(
                   color: Colors.teal[700],
