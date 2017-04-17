@@ -2,17 +2,18 @@ import 'package:firebase/firebase_io.dart';
 import 'dart:async';
 import 'package:github/server.dart';
 import 'dart:io';
+import 'package:http/http.dart';
 
 GitHub github;
 String firebaseAuth;
 PullRequest currentPullRequest;
 
 String firebaseRoot = "https://flutter-web-controller.firebaseio.com/flutter/pulls";
-
 main(List<String> arguments) async {
-  Map<String, String> env = Platform.environment;
-  github = createGitHubClient(auth: new Authentication.withToken(env["GITHUB_TOKEN"]));
-  
+  // anon because we only use it to read public data.
+  // posting happens via cloud function due to travisci limitations
+  github = createGitHubClient(auth: new Authentication.anonymous());
+
   firebaseAuth = arguments[1];
   String branchName = arguments[0];
 
@@ -67,14 +68,15 @@ Future<List<PullRequest>> getPullRequests() async {
   return await pullRequests.toList();
 }
 
-Future<IssueComment> postLinkToGithub(String projectToDeploy, PullRequest request) async {
+postLinkToGithub(String projectToDeploy, PullRequest request) async {
   if (request == null) {
     return null;
   }
-
-  IssueComment issueComment = await github.issues.createComment(
-      new RepositorySlug.full("flutter/website"),
-      request.number,
-      "Staging URL Generated At https://${projectToDeploy}.firebaseapp.com . Please allow Travis Build to finish to view the URL.");
-  return issueComment;
+  Map<String, String> env = Platform.environment;
+  await post("https://us-central1-flutter-web-controller.cloudfunctions.net/github", body: {
+    "pr": request.number.toString(),
+    "message":
+        "Staging URL Generated At https://${projectToDeploy}.firebaseapp.com . Please allow Travis Build to finish to view the URL.",
+    "pass": env["FUNCTION_PASSWORD"]
+  });
 }
