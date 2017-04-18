@@ -36,15 +36,15 @@ channels as illustrated in this diagram:
 Messages and responses are passed asynchronously, to ensure the user interface
 remains responsive.
 
-On the client side, `PlatformMessageChannel` ([API][PlatformMessageChannel])
-enables sending general purpose messages, and `PlatformMethodChannel`
-([API][PlatformMethodChannel]) enables sending messages that correspond to
+On the client side, `BasicMessageChannel` ([API][BasicMessageChannel])
+enables sending basic, general purpose messages, and `MethodChannel`
+([API][MethodChannel]) enables sending messages that correspond to
 method calls.
 
-On the platform side, `FlutterMessageChannel` ([Android
-API][FlutterMessageChannelAndroid], [iOS API][FlutterChanneliOS]) enables
+Similarly on the platform side, `BasicMessageChannel` ([Android
+API][BasicMessageChannelAndroid], [iOS API][FlutterChanneliOS]) enables
 receiving messages from the client, and optionally sending back a result, and
-`FlutterMethodChannel` ([Android API][FlutterMethodChannelAndroid], [iOS
+`MethodChannel` ([Android API][MethodChannelAndroid], [iOS
 API][FlutterChanneliOS]) enables receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin with very little
 'boilerplate' code.
@@ -52,10 +52,10 @@ result. These classes allow you to develop a platform plugin with very little
 *Note*: If desired, method calls can also be sent in the reverse direction, with
 the platform acting as client to methods implemented in Dart.
 
-[PlatformMessageChannel]: https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html
-[PlatformMethodChannel]: https://docs.flutter.io/flutter/services/PlatformMethodChannel-class.html
-[FlutterMessageChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/FlutterMessageChannel.html
-[FlutterMethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/FlutterMethodChannel.html
+[BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
+[MethodChannel]: https://docs.flutter.io/flutter/services/MethodChannel-class.html
+[BasicMessageChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/BasicMessageChannel.html
+[MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
 [FlutterChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
 
 ## Platform channel data types support and codecs
@@ -99,7 +99,7 @@ Start by creating a new app using:
 The app's `State` class holds the current app state. We need to extend that to
 hold the current battery state.
 
-First, we construct the channel. We use a `PlatformMethodChannel` with a single
+First, we construct the channel. We use a `MethodChannel` with a single
 platform method that returns the battery level.
 
 The client and host sides of a channel are connected through a channel name
@@ -116,7 +116,7 @@ import 'package:flutter/services.dart';
 ...
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  static const platform = const PlatformMethodChannel('samples.flutter.io/battery');
+  static const platform = const MethodChannel('samples.flutter.io/battery');
 
   // Get battery level.
 }
@@ -190,16 +190,16 @@ folder inside it. Click OK.
 1. Open the file `MainActivity.java` located in the `java` folder in the Project
 view.
 
-Next, create a `FlutterMethodChannel` and set a `MethodCallHandler` inside the
+Next, create a `MethodChannel` and set a `MethodCallHandler` inside the
 `onCreate` method. Make sure to use the same channel name as was used on the
 Flutter client side.
 
 ```java
 import io.flutter.app.FlutterActivity;
-import io.flutter.plugin.common.FlutterMethodChannel;
-import io.flutter.plugin.common.FlutterMethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.FlutterMethodChannel.Response;
 import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
 
 public class MainActivity extends FlutterActivity {
     private static final String CHANNEL = "samples.flutter.io/battery";
@@ -209,10 +209,10 @@ public class MainActivity extends FlutterActivity {
 
         super.onCreate(savedInstanceState);
 
-        new FlutterMethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
+        new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
                 new MethodCallHandler() {
                     @Override
-                    public void onMethodCall(MethodCall call, Response response) {
+                    public void onMethodCall(MethodCall call, Result result) {
                         // TODO
                     }
                 });
@@ -262,7 +262,7 @@ the success and error cases using the `response` argument. If an unknown method
 is called, we report that instead. Replace:
 
 ```java
-public void onMethodCall(MethodCall call, Response response) {
+public void onMethodCall(MethodCall call, Result result) {
     // TODO
 }
 ```
@@ -271,17 +271,17 @@ with:
 
 ```java
 @Override
-public void onMethodCall(MethodCall call, Response response) {
+public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("getBatteryLevel")) {
         int batteryLevel = getBatteryLevel();
 
         if (batteryLevel != -1) {
-            response.success(batteryLevel);
+            result.success(batteryLevel);
         } else {
-            response.error("UNAVAILABLE", "Battery level not available.", null);
+            result.error("UNAVAILABLE", "Battery level not available.", null);
         }
     } else {
-        response.notImplemented();
+        result.notImplemented();
     }
 }               
 ```
@@ -324,7 +324,7 @@ as was used on the Flutter client side.
                                           methodChannelWithName:@"samples.flutter.io/battery"
                                           binaryMessenger:controller];
 
-  [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
+  [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // TODO
   }];
   return YES;
@@ -357,7 +357,7 @@ the success and error cases using the `result` argument. If an unknown method
 is called, we report that instead.
 
 ```objectivec
-[batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResultReceiver result) {
+[batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
     int batteryLevel = [self getBatteryLevel];
 
@@ -438,7 +438,7 @@ First we override `didFinishLaunchingWithOptions` to contain a
                                                    binaryMessenger: controller);
   
     batteryChannel.setMethodCallHandler({
-      (call: FlutterMethodCall, result: FlutterResultReceiver) -> Void in
+      (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Handle battery messages.
     });
    
@@ -454,7 +454,7 @@ written in a native iOS app.
 Add the following as a new method at the bottom of `AppDelegate.swift`:
 
 ```swift
-private func receiveBatteryLevel(result: FlutterResultReceiver) {
+private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current;
   device.isBatteryMonitoringEnabled = true;
   if (device.batteryState == UIDeviceBatteryState.unknown) {
@@ -475,7 +475,7 @@ is called, we report that instead.
 
 ```swift
 batteryChannel.setMethodCallHandler({
-  (call: FlutterMethodCall, result: FlutterResultReceiver) -> Void in
+  (call: FlutterMethodCall, result: FlutterResult) -> Void in
   if ("getBatteryLevel" == call.method) {
     receiveBatteryLevel(result: result);
   } else {
