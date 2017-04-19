@@ -191,6 +191,20 @@ your debugging session:
 1. In the Debug panel at the bottom, click the **Full Application Restart button**
 (shown with an icon containing a circular arrow).
 
+## Editing Android code in IntelliJ IDEA
+
+To enable editing of Android code in IntelliJ IDEA, you need to configure the
+location of the Android SDK:
+
+1. Right-click the **android** folder in the Project view, and select **Open
+Module Settings**.
+1. In **Sources** tab, locate the **Language level** field, and select level '8'
+or later.
+1. In **Dependencies** tab, locate the **Module SDK** field, and select an
+Android SDK. If no SDK is listed, click **New...** and specify the location of
+the Android SDK.
+1. Click **OK**.
+
 ## Tips and tricks
 
 Please checkout these 'cheat sheets':
