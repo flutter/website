@@ -191,7 +191,7 @@ your debugging session:
 1. Don't click the Stop button; simply re-click the Run button (if in a run
 session) or Debug button (if in a debug session).
 
-## Editing Android code in IntelliJ IDEA
+## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:
