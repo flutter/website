@@ -36,29 +36,21 @@ channels as illustrated in this diagram:
 Messages and responses are passed asynchronously, to ensure the user interface
 remains responsive.
 
-On the client side, `BasicMessageChannel` ([API][BasicMessageChannel])
-enables sending basic, general purpose messages, and `MethodChannel`
-([API][MethodChannel]) enables sending messages that correspond to
-method calls.
-
-Similarly on the platform side, `BasicMessageChannel` ([Android
-API][BasicMessageChannelAndroid], [iOS API][FlutterChanneliOS]) enables
-receiving messages from the client, and optionally sending back a result, and
-`MethodChannel` ([Android API][MethodChannelAndroid], [iOS
-API][FlutterChanneliOS]) enables receiving method calls and sending back a
+On the client side, `MethodChannel` ([API][MethodChannel]) enables sending
+messages that correspond to method calls. On the platform side, `MethodChannel`
+on Android ([API][MethodChannelAndroid]) and `FlutterMethodChannel` on iOS
+([API][MethodChanneliOS]) enable receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin with very little
 'boilerplate' code.
 
 *Note*: If desired, method calls can also be sent in the reverse direction, with
 the platform acting as client to methods implemented in Dart.
 
-[BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
 [MethodChannel]: https://docs.flutter.io/flutter/services/MethodChannel-class.html
-[BasicMessageChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/BasicMessageChannel.html
 [MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
-[FlutterChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
+[MethodChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
 
-## Platform channel data types support and codecs
+### Platform channel data types support and codecs
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
@@ -66,12 +58,6 @@ numbers, Strings, byte buffers, and List and Maps of these (see
 [`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html))
 for details). The serialization and deserialization of these values to and from
 messages happens automatically when you send and receive values.
-
-For more specialized use cases, you may also use the
-[`BinaryCodec`](https://docs.flutter.io/flutter/services/BinaryCodec-class.html),
-[`StringCodec`](https://docs.flutter.io/flutter/services/StringCodec-class.html),
-or
-[`JSONMessageCodec`](https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html).
 
 ## Example: Calling platform-specific iOS and Android code using platform channels
 
@@ -501,5 +487,15 @@ If you wish to share your platform-specific with other developers in the
 Flutter ecosystem, please see [platform plugins](/platform-plugins/) for
 details.
 
-{% include note.html content="Sharing of platform plugins is currently not
-supported, but Flutter is expected to support this in the future." %}
+## Custom channels and codecs
+
+Besides the above mentioned `MethodChannel`, you can also use the more plain
+[`BasicMessageChannel`][BasicMessageChannel], which supports specifying a custom
+codec. Further, you can use the more specialized [`BinaryCodec`][BinaryCodec],
+[`StringCodec`][StringCodec], and [`JSONMessageCodec`][JSONMessageCodec] classes
+for more specialized message encodings, or create your own custom codec.
+
+[BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
+[BinaryCodec]: https://docs.flutter.io/flutter/services/BinaryCodec-class.html
+[StringCodec]: https://docs.flutter.io/flutter/services/StringCodec-class.html
+[JSONMessageCodec]: https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html
