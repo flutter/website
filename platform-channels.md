@@ -490,10 +490,10 @@ details.
 ## Custom channels and codecs
 
 Besides the above mentioned `MethodChannel`, you can also use the more plain
-[`BasicMessageChannel`][BasicMessageChannel], which supports specifying a custom
-codec. Further, you can use the more specialized [`BinaryCodec`][BinaryCodec],
-[`StringCodec`][StringCodec], and [`JSONMessageCodec`][JSONMessageCodec] classes
-for more specialized message encodings, or create your own custom codec.
+[`BasicMessageChannel`][BasicMessageChannel], which supports basic, asynchronous
+message passing using a custom message codec. Further, you can use the
+specialized [`BinaryCodec`][BinaryCodec], [`StringCodec`][StringCodec], and
+[`JSONMessageCodec`][JSONMessageCodec] classes, or create your own codec.
 
 [BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
 [BinaryCodec]: https://docs.flutter.io/flutter/services/BinaryCodec-class.html
