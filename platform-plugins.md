@@ -6,7 +6,7 @@ permalink: /platform-plugins/
 
 This guide describes how Flutter apps can integrate with platform-specific code
 available on iOS and Android devices. This includes both device APIs (like
-`Clipboard` and `BatteryState`) and third-party platform SDKs (like Google
+`URLLauncher` and `BatteryState`) and third-party platform SDKs (like Google
 Analytics).
 
 * TOC
@@ -40,9 +40,6 @@ And, if desired, you can create and share plugins:
 
 ## Use existing platform plugins {#use}
 
-{% include note.html content="The following content presents a potential future
-for Flutter." %}
-
 A Flutter _plugin_ is a special kind of
 [package](https://www.dartlang.org/tutorials/libraries/shared-pkgs). A plugin
 consists of an API definition written in Dart, combined with a platform-specific
@@ -51,8 +48,7 @@ implementation for Android, for iOS, or for both.
 ### Searching for plugins
 
 Flutter plugins are shared on the [pub repository](https://pub.dartlang.org/)
-along with regular (pure-Dart) packages. To search explicitly for plugins, use
-the following [search link](https://pub.dartlang.org/search?type=plugin).
+along with regular (pure-Dart) packages.
 
 ### Adding a plugin to an app
 
@@ -70,9 +66,9 @@ platform-specific code from the plugin into your app.
 
 ### Example: Using the Flutter URLLauncher plugin to launch the browser
 
-The [URLLauncher](https://pub.dartlang.org/plugins/urllauncher) plugin enables
-you to open the mobile platforms default browser to display a given URL. It is
-supported on both Android and iOS.
+The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
+enables you to open the default browser on the mobile platform to display a
+given URL. It is supported on both Android and iOS.
 
 To use this plugin:
 
@@ -90,12 +86,13 @@ To use this plugin:
     dependencies:
       flutter:
         sdk: flutter
-      urllauncher:
+      url_launcher: ^0.1.0
     ```
 
 1. Open `lib/main.dart` and replace it's full contents with:
     ```dart
     import 'package:flutter/material.dart';
+    import 'package:url_launcher/url_launcher.dart';
 
     void main() {
       runApp(new MyApp());
@@ -131,7 +128,7 @@ To use this plugin:
     ```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
-phones default browser open, and the Flutter homepage appear.
+phone's default browser open, and the Flutter homepage appear.
 
 ## Create a platform plugin {#create}
 
@@ -140,10 +137,26 @@ can be useful to separate the code into a platform plugin located in a directory
 outside your main application. Optionally, this also enables you to
 [publish](#publish) the plugin.
 
-{% include note.html content="Creating platform plugins is currently not
-supported, but Flutter is expected to support this in the future." %}
+You can create a 'plugin' using the `--plugin` flag with `flutter create`:
+```
+flutter create --plugin myplugin
+```
 
+This creates a plugin project with the following content:
+
+* `lib/myplugin.dart`:
+   - The Dart API for the plugin.
+* `android/src/main/java/com/mycompany/testplugin/TestpluginPlugin.java`:
+   - The Android platform specific implementation of the plugin API.
+* `ios/Classes/TestpluginPlugin.m`: 
+   - The iOS platform specific implementation of the plugin API.
+* `example/`:
+   - A Flutter app that depends on the plugin, and illustrates how to use it. 
+   
 ## Publish a platform plugin {#publish}
 
-{% include note.html content="Sharing of platform plugins is currently not
-supported, but Flutter is expected to support this in the future." %}
+Once you have implemented the plugin, you can publish it on
+[Pub](https://pub.dartlang.org/). This enables other developers to easily use it
+as illustrated in the above UrlLauncher example.
+
+For details on how to publish, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing). 
