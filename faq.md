@@ -301,9 +301,9 @@ a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
 You can run your app without these checks by using either `--profile` or `--release`
 flag to `flutter run`.
 
-If you are using the Flutter plugin for IntelliJ, you can launch the app in
-profile or release mode using the menu entries **Run > Flutter Run (Profile)**
-or **(Release)**.
+If you are using the Flutter plugin for IntelliJ, please note that it currently
+does not support running in `--profile` or `--release` modes (see
+[issue #410](https://github.com/flutter/flutter-intellij/issues/410)).
 
 ## Where can I get support?
 
