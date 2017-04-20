@@ -160,3 +160,6 @@ Once you have implemented the plugin, you can publish it on
 as illustrated in the above UrlLauncher example.
 
 For details on how to publish, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing). 
+
+Note: The `pub` tool is available in the Dart SDK located inside the Flutter
+SDK: `<flutter sdk dir>/bin/cache/dart-sdk/bin/pub`.
