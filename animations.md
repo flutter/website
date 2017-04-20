@@ -305,3 +305,8 @@ simulation.
 Passing an `Animation<double>` (the new parent) to an `Animatable`'s
 `animate()` method creates a new `Animation` subclass that acts like
 the `Animatable` but is driven from the given parent.
+
+# Resources
+
+* [Zero to One with Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354):
+  On using Tweens to animate bar charts.

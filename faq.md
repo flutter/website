@@ -91,10 +91,8 @@ We do not offer support for tablets or have tablet-aware layouts.
 
 ## What technology is Flutter built with?
 
-Flutter is built with C, C++, Dart, Skia (a 2D rendering engine),
-[Mojo IPC](https://github.com/domokit/mojo), and
-Blink's text rendering system. See this [architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162) for a better
-picture of the main components.
+Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
+[architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162) for a better picture of the main components.
 
 ## How does Flutter run my code on Android?
 
@@ -158,11 +156,11 @@ Yes, Flutter supports calling into the platform, including integrating with Java
 code on Android, and ObjectiveC or Swift code on iOS. This is enabled via a
 flexible message passing style where a Flutter app may send and receive messages
 to the mobile platform using a
-[`PlatformMessageChannel`](https://docs.flutter.io/flutter/services/PlatformMessageChannel-class.html).
+[`BasicMessageChannel`](https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html).
 
 Learn more about [accessing platform and third-party services in Flutter](/platform-plugins/).
 
-Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_services)
+Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 that shows how to use a platform channel to access battery state information on
 iOS and Android.
 
@@ -419,7 +417,7 @@ In addition, any Dart packages you use may have their own license requirements.
 There's an API to find the list of licenses you need to show:
 
 * If your application has a [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
-  simply add an [AboutDrawerItem](https://docs.flutter.io/flutter/material/AboutDrawerItem-class.html).
+  add an [AboutListTile](https://docs.flutter.io/flutter/material/AboutListTile-class.html).
 
 * If your application doesn't have a Drawer but does use the material
   library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)

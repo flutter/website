@@ -1,6 +1,6 @@
 {% include custom/sidebarconfigs.html %}
 
-<ul id="mysidebar" class="nav">
+<ul id="mysidebar" class="nav affix">
     <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
     {% for entry in sidebar %}
     {% for folder in entry.folders %}
@@ -9,6 +9,8 @@
       <li>
         <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
       </li>
+      {% elsif folder.spacer %}
+      <br>
       {% else %}
       <li>
         <a href="{{folder.url}}">{{ folder.title }}</a>

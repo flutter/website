@@ -78,11 +78,14 @@ If everything works, you should see your starter app on your device or simulator
   </figure>
 </div>
 
-## Viewing source code changes with 'hot reload'
+## Quickly viewing source code changes with 'hot reload'
 
-_Hot reload_ reloads your app very quickly
-after a change to your source code,
-offering a best-in-class development cycle.
+Flutter offers a fast development cycle with _hot reload_,
+the ability to reload the code of a live running app
+without restarting or losing app state. Simply make a
+change to your source code, tell your IDE or command-line
+tool that you want to hot reload, and see the change
+in your simulator, emulator, or device.
 
 ![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
 
@@ -90,7 +93,7 @@ To edit your code and hot reload changes:
 
 1. Run your app with 'Run' or 'Debug'.
 1. Make desired changes in your source code (without stopping the app).
-1. Click the Hot Reload button.
+1. Click the Hot Reload button (the button with the lightning bolt and the green run triangle).
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page

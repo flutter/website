@@ -6,27 +6,27 @@ entries:
   product:
   folders:
 
-  - title: Home
-    url: /
-    output: web
-
-  - title: API reference
-    external_url: https://docs.flutter.io/flutter/
-    output: web
-
-  - title: Flutter examples
-    external_url: https://github.com/flutter/flutter/tree/master/examples
-    output: web
-
   - title: New to Flutter
     output: web
     folderitems:
 
-    - title: Set up
+    - title: Flutter setup
       url: /setup/
       output: web
 
-    - title: IntelliJ set up
+    - title: " - Flutter setup for Windows"
+      url: /setup-windows/
+      output: web
+
+    - title: " - Flutter setup for MacOS"
+      url: /setup-macos/
+      output: web
+
+    - title: " - Flutter setup for Linux"
+      url: /setup-linux/
+      output: web
+
+    - title: IntelliJ setup
       url: /intellij-setup/
       output: web
 
@@ -54,7 +54,7 @@ entries:
       url: /tutorials/layout/
       output: web
 
-    - title: Adding Interactivity to your Flutter App
+    - title: Adding Interactivity to Your Flutter App
       url: /tutorials/interactive/
       output: web
 
@@ -72,6 +72,14 @@ entries:
 
     - title: Widget overview
       url: /widgets/
+      output: web
+
+    - title: Plugins & platform-specific code
+      url: /platform-plugins/
+      output: web
+
+    - title: Custom platform-specific code with platform channels
+      url: /platform-channels/
       output: web
 
     - title: Gestures
@@ -98,17 +106,17 @@ entries:
       url: /layout/
       output: web
 
+    - title: Android release builds
+      url: /android-release/
+      output: web
+
+    - title: iOS release builds
+      url: /ios-release/
+      output: web
+
   - title: How-Tos
     output: web
     folderitems:
-
-    - title: Plugins & platform-specific code
-      url: /platform-plugins/
-      output: web
-
-    - title: Writing custom platform-specific code with platform channels
-      url: /platform-channels/
-      output: web
 
     - title: Add assets and images
       url: /assets-and-images/
@@ -145,6 +153,17 @@ entries:
     - title: Handle text input
       url: /text-input/
       output: web
+
+  - spacer: yes
+    output: web
+
+  - title: API reference
+    external_url: https://docs.flutter.io/flutter/
+    output: web
+
+  - title: Flutter examples
+    external_url: https://github.com/flutter/flutter/tree/master/examples
+    output: web
 
   - title: Helpful Resources
     output: web

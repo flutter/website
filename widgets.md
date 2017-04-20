@@ -104,7 +104,7 @@ These widgets apply visual effects to the children without changing their layout
 Material design widgets
 -----------------------
 
-Flutter implementats many of the UI components from Google’s [Material Design Specification](https://material.google.com/).
+Flutter implements many of the UI components from Google’s [Material Design Specification](https://material.google.com/).
 You can see many of the material design widgets in action in our [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery) demo app.
 
 <!-- Data for the catalog comes from catalog.csv in the _data folder -->

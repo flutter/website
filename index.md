@@ -8,19 +8,19 @@ layout: page
 
 ## What is Flutter?
 
-Flutter is a mobile app SDK for building high-performance, high-fidelity, 
+Flutter is a mobile app SDK for building high-performance, high-fidelity,
 apps for iOS and Android, from a single codebase.
 
-The goal is to enable developers to deliver high-performance apps that feel natural 
-on different platforms. We embrace differences in scrolling behaviors, 
-typography, icons, and more. 
+The goal is to enable developers to deliver high-performance apps that feel natural
+on different platforms. We embrace differences in scrolling behaviors,
+typography, icons, and more.
 
-![Shrine, iOS left and Android right](/images/whatisflutter/shrine_both.jpg)
+<object type="image/svg+xml" data="images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter and setting
-up your environment. Shrine has high-quality scrolling images, interactive cards, 
-buttons, dropdown lists, and a shopping cart page. To look at the single codebase 
+up your environment. Shrine has high-quality scrolling images, interactive cards,
+buttons, dropdown lists, and a shopping cart page. To look at the single codebase
 for this and more examples, [visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
@@ -93,7 +93,7 @@ can compose these, and other, simple widgets in novel ways.
 The class hierarchy is shallow and broad to maximize the possible number of
 combinations.
 
-![Widget class hierarchy](/images/whatisflutter/Widget_class_hierarchy.png){:style="max-width: 900px"}
+<object type="image/svg+xml" data="images/whatisflutter/diagram-widgetclass.svg" style="width: 100%; height: 100%;"></object>
 
 You can also control the *layout* of a widget by composing it with other widgets.
 For example, to center a widget, you wrap it in a Center widget. There are
@@ -107,7 +107,7 @@ renders in a certain way, it's often helpful to inspect the neighboring widgets.
 The Flutter framework is organized into a series of layers, with each layer
 building upon the previous layer.
 
-{% include layer-cake.html %}
+<object type="image/svg+xml" data="images/whatisflutter/diagram-layercake.svg" style="width: 85%; height: 85%"></object>
 
 The diagram shows the upper layers of the framework, which are used more
 frequently than the lower layers. For the complete set of libraries that make up
@@ -140,7 +140,7 @@ of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
 [buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
 process bottoms out in [fully concrete widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
-which framework then stitches together into a tree.
+which the framework then stitches together into a tree.
 
 A widget's build function should be free of side effects.  Whenever it is asked
 to build, the widget should return a new tree of widgets regardless of what the
@@ -165,7 +165,7 @@ These widgets subclass [StatefulWidget](https://docs.flutter.io/flutter/widgets/
 (rather than [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
 and store their mutable state in a subclass of [State](https://docs.flutter.io/flutter/widgets/State-class.html).
 
-![Separate state and widget objects](/images/whatisflutter/state.png)
+<object type="image/svg+xml" data="images/whatisflutter/diagram-state.svg"></object>
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
@@ -191,7 +191,7 @@ Next steps:
 1.  [Set up IntelliJ](/intellij-setup/) (optional).
 1.  [Get started](/getting-started/) with the development cycle in a few simple steps.
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
-    [Adding Interactivity to your Flutter App](/tutorials/interactive/).
+    [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).
 
 ## Get support

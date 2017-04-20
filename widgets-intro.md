@@ -22,7 +22,7 @@ needed in the underlying render tree to transition from one state to the next.
 **Note:** If you would like to become better acquainted with Flutter by diving
 into some code, check out
 [Building Layouts in Flutter](/tutorials/layout/) and
-[Adding Interactivity to your Flutter App](/tutorials/interactive/).
+[Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 </aside>
 
 Hello World
@@ -643,7 +643,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: new ListView(
         padding: new EdgeInsets.symmetric(vertical: 8.0),
-        children: config.products.map((Product product) {
+        children: widget.products.map((Product product) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
@@ -686,17 +686,17 @@ again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
 use its
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property. If the parent rebuilds and creates a new `ShoppingList`, the
 `_ShoppingListState` will also rebuild with the new
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 value. If you wish to be notified when the
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property changes, you can override the
-[`didUpdateConfig`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateConfig)
-function, which is passed the `oldConfig` to let you compare the old
-configuration with the current
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config).
+[`didUpdateWidget`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateWidget)
+function, which is passed `oldWidget` to let you compare the old widget with
+the current
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget).
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To

@@ -12,7 +12,7 @@ String firebaseRoot = "https://flutter-web-controller.firebaseio.com/flutter/pul
 main(List<String> arguments) async {
   Map<String, String> env = Platform.environment;
   github = createGitHubClient(auth: new Authentication.withToken(env["GITHUB_TOKEN"]));
-  
+
   firebaseAuth = arguments[1];
   String branchName = arguments[0];
 
