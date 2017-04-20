@@ -202,7 +202,8 @@ Module Settings**.
 or later.
 1. In **Dependencies** tab, locate the **Module SDK** field, and select an
 Android SDK. If no SDK is listed, click **New...** and specify the location of
-the Android SDK.
+the Android SDK. Make sure to select an Android SDK matching the one used by
+Flutter (as reported by `flutter doctor`).
 1. Click **OK**.
 
 ## Tips and tricks
