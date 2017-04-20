@@ -189,7 +189,8 @@ For these changes you can fully restart your application, without having to end
 your debugging session:
 
 1. Don't click the Stop button; simply re-click the Run button (if in a run
-session) or Debug button (if in a debug session).
+session) or Debug button (if in a debug session), or shift-click the 'hot
+reload' button.
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
