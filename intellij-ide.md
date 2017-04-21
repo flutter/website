@@ -104,7 +104,7 @@ To edit your code and hot reload changes:
 1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
 1. Make desired changes in your source code
 1. Do not press the 'Stop' button; rather, to see your changes just click the
-**Hot Reload button**.
+**Hot Reload button** (the button with the lightning bolt icon).
 
 ### Advanced debugging with Observatory
 
@@ -188,8 +188,24 @@ types of code changes cannot be hot reloaded though:
 For these changes you can fully restart your application, without having to end
 your debugging session:
 
-1. In the Debug panel at the bottom, click the **Full Application Restart button**
-(shown with an icon containing a circular arrow).
+1. Don't click the Stop button; simply re-click the Run button (if in a run
+session) or Debug button (if in a debug session), or shift-click the 'hot
+reload' button.
+
+## Editing Android code in IntelliJ IDEA {#edit-android-code}
+
+To enable editing of Android code in IntelliJ IDEA, you need to configure the
+location of the Android SDK:
+
+1. Right-click the **android** folder in the Project view, and select **Open
+Module Settings**.
+1. In **Sources** tab, locate the **Language level** field, and select level '8'
+or later.
+1. In **Dependencies** tab, locate the **Module SDK** field, and select an
+Android SDK. If no SDK is listed, click **New...** and specify the location of
+the Android SDK. Make sure to select an Android SDK matching the one used by
+Flutter (as reported by `flutter doctor`).
+1. Click **OK**.
 
 ## Tips and tricks
 
