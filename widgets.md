@@ -41,8 +41,7 @@ and
   <h3>{{comp.comp_name}}</h3>
   {{comp.image}}
   <p> {{comp.comp_desc}} </p>
-  <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-  | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
+  <p><a href="{{comp.dartdocs_link}}">Documentation</a></p>
  </div>
  {% endif %}
 {% endfor %}
@@ -59,8 +58,7 @@ The following widgets allow you to arrange a series of children.
    <h3>{{comp.comp_name}}</h3>
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
-   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
+   <p><a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
@@ -77,8 +75,7 @@ The following widgets allow you to position and size other widgets.
    <h3>{{comp.comp_name}}</h3>
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
-   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
+   <p><a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
@@ -95,8 +92,7 @@ These widgets apply visual effects to the children without changing their layout
    <h3>{{comp.comp_name}}</h3>
    {{comp.image}}
    <p> {{comp.comp_desc}} </p>
-   <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-   | <a href="{{comp.dartdocs_link}}">Documentation</a></p>
+   <p><a href="{{comp.dartdocs_link}}">Documentation</a></p>
   </div>
  {% endif %}
 {% endfor %}
@@ -117,8 +113,7 @@ You can see many of the material design widgets in action in our [Flutter Galler
    {% if comp.widget_name != '' %} The <a href="{{comp.dartdocs_link}}">{{comp.widget_name}}</a> widget implements this component. {% endif %}
    {{comp.extra_html}}
   </p>
-  <p><a href="https://github.com/flutter/flutter/search?utf8=%E2%9C%93&q=path%3Aexamples+{{comp.sample_keywords}}&type=Code">Sample usage</a>
-  | <a href="{{comp.dartdocs_link}}">Documentation</a>
+  <p><a href="{{comp.dartdocs_link}}">Documentation</a>
   | <a href="{{comp.material_spec_link}}">Interface design guidelines</a></p>
  </div>
 {% endfor %}
