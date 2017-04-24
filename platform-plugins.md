@@ -110,7 +110,7 @@ To use this plugin:
 
     class DemoPage extends StatelessWidget {
       launchURL() {
-        UrlLauncher.launch('https://flutter.io');
+        launch('https://flutter.io');
       }
 
       @override
