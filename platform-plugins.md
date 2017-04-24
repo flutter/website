@@ -89,7 +89,7 @@ To use this plugin:
       url_launcher: ^0.1.0
     ```
 
-1. Open `lib/main.dart` and replace it's full contents with:
+1. Open `lib/main.dart` and replace its full contents with:
     ```dart
     import 'package:flutter/material.dart';
     import 'package:url_launcher/url_launcher.dart';
