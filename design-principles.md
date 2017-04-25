@@ -108,6 +108,34 @@ our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html
 that improve the situation are allowed to go in.**
 
 
+Handling breaking changes
+-------------------------
+
+Any time you make a breaking change that you expect will impact anyone
+developing Flutter applications, you should e-mail
+<mailto:flutter-dev@googlegroups.com>. The e-mail should include the following:
+
+1. A subject line that clearly summarises the change and sounds like it matters
+   (so that people can spot these e-mails among the noise).
+
+2. A summary of each change.
+
+3. Clear mechanical steps for porting the code from the old form to the new
+   form, if possible. If not possible, clear steps for figuring out how to port
+   the code.
+
+4. A brief justification for the change.
+
+5. A sincere offer to help port code, which includes the preferred venue for
+   contacting the person who made the change.
+
+#### Google-only responsibilities
+
+If you work for Google, you have the added responsibility of updating Google's
+internal copy of Flutter and fixing any broken call-sites reasonably quickly
+after merging the upstream change. For instructions on how to do this, see
+[go/roll-flutter](http://goto.google.com/roll-flutter) (Google-only, sorry).
+
 Lazy programming
 ----------------
 

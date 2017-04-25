@@ -9,7 +9,7 @@
     ],
     "redirects": [
       {
-        "source" : "/style-guide/",
+        "source" : "/style-guide*",
         "destination" : "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo",
         "type" : 301
       },

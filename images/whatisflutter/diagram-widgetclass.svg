@@ -1,0 +1,63 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto:500');
+      .cls-1 {
+        fill: none;
+        stroke: #bdbdbd;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+      .cls-2 {
+        fill: #8bc34a;
+      }
+      .cls-3 {
+        font-size: 16px;
+      }
+      .cls-3,
+      .cls-4 {
+        fill: #fff;
+      }
+      .cls-3,
+      .cls-4,
+      .cls-8,
+      .cls-9 {
+        font-family: Roboto;
+      }
+      .cls-4 {
+        font-size: 14px;
+      }
+      .cls-5 {
+        fill: #aed581;
+      }
+      .cls-6 {
+        fill: #f5f5f5;
+      }
+      .cls-7 {
+        fill: #bdbdbd;
+      }
+      .cls-8 {
+        font-size: 18px;
+        fill: #607d8b;
+      }
+      .cls-9 {
+        font-size: 20px;
+        fill: #9e9e9e;
+      }
+      .cls-10 {
+        fill: #039be5;
+      }
+      .cls-11 {
+        fill: #81d4fa;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M584,91v57a12,12,0,0,1-12,12H196a12,12,0,0,0-12,12v16"/><path class="cls-1" d="M183,246v49a12,12,0,0,1-12,12H90a12,12,0,0,0-12,12v14"/><path class="cls-1" d="M183,246v49a12,12,0,0,0,12,12h64a12,12,0,0,1,12,12v14"/><path class="cls-1" d="M584,91v57a12,12,0,0,0,12,12h86a12,12,0,0,1,12,12v16"/><rect class="cls-2" x="99" y="188" width="168" height="64" rx="4" ry="4"/>
+  <text class="cls-3" transform="translate(124.55 226.26)">StatelessWidget</text><rect class="cls-2" x="27" y="333" width="98" height="48" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(39.45 362.26)">AssetImage</text><rect class="cls-5" x="243" y="333" width="54" height="48" rx="4" ry="4"/><rect class="cls-5" x="42" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-5" x="105" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-5" x="168" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-5" x="231" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-6" x="607.5" y="188.5" width="167" height="63" rx="3.5" ry="3.5"/><path class="cls-7" d="M771,189a3,3,0,0,1,3,3v56a3,3,0,0,1-3,3H611a3,3,0,0,1-3-3V192a3,3,0,0,1,3-3H771m0-1H611a4,4,0,0,0-4,4v56a4,4,0,0,0,4,4H771a4,4,0,0,0,4-4V192a4,4,0,0,0-4-4h0Z"/>
+  <text class="cls-8" transform="translate(683.89 220.26)">...</text><rect class="cls-6" x="500.5" y="35.5" width="167" height="63" rx="3.5" ry="3.5"/><path class="cls-7" d="M664,36a3,3,0,0,1,3,3V95a3,3,0,0,1-3,3H504a3,3,0,0,1-3-3V39a3,3,0,0,1,3-3H664m0-1H504a4,4,0,0,0-4,4V95a4,4,0,0,0,4,4H664a4,4,0,0,0,4-4V39a4,4,0,0,0-4-4h0Z"/>
+  <text class="cls-9" transform="translate(552.64 75.26)">Widget</text><path class="cls-1" d="M183,344V264"/><rect class="cls-2" x="135" y="333" width="98" height="48" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(170.48 362.26)">Text</text><path class="cls-1" d="M471,246v49a12,12,0,0,1-12,12H378a12,12,0,0,0-12,12v14"/><path class="cls-1" d="M471,246v49a12,12,0,0,0,12,12h64a12,12,0,0,1,12,12v14"/><rect class="cls-10" x="315" y="333" width="98" height="48" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(333.9 362.26)">Scrollable</text><rect class="cls-11" x="531" y="333" width="54" height="48" rx="4" ry="4"/><rect class="cls-11" x="330" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-11" x="393" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-11" x="456" y="390" width="54" height="48" rx="4" ry="4"/><rect class="cls-11" x="519" y="390" width="54" height="48" rx="4" ry="4"/><path class="cls-1" d="M471,344V264"/><rect class="cls-10" x="423" y="333" width="98" height="48" rx="4" ry="4"/>
+  <text class="cls-4" transform="translate(436.29 362.26)">Animatable</text><rect class="cls-10" x="385" y="188" width="168" height="64" rx="4" ry="4"/>
+  <text class="cls-3" transform="translate(415.82 226.26)">StatefulWidget</text><path class="cls-1" d="M499,160H483a12,12,0,0,0-12,12v16"/></svg>

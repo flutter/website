@@ -18,7 +18,7 @@ When you're ready to prepare a *release* version for Android, for example to
 ## Reviewing the App Manifest
 
 When you create a new app, a default [App Manifest][manifest] file is created
-at `<app dir>/android/src/main/AndroidManifest.xml`. Before releasing,
+at `<app dir>/android/app/src/main/AndroidManifest.xml`. Before releasing,
 review the contents of this file and verify the values are correct, especially:
 
 * `application`: Edit the [`application`][applicationtag] tag to reflect the final name of the app.
@@ -39,7 +39,7 @@ customize this icon:
 1. Review the [Android Launcher Icons][launchericons] guidelines for icon
 design.
 
-1. In the `<app dir>/android/src/main/res/` directory, place your icon files
+1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
 in folders named using [Configuration Qualifiers][configurationqualifiers].
 The default `mipmap-` folders demonstrate the correct naming convention.
 
@@ -130,7 +130,7 @@ Using the command line:
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
 1. Run `flutter build apk`.
 
-The release APK for your app is created in `<app dir>/android/app/build/outputs/app-release.apk`.
+The release APK for your app is created at `<app dir>/build/app/outputs/apk/app-release.apk`.
 
 ## Installing a release APK on a device
 

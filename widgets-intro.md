@@ -643,7 +643,7 @@ class _ShoppingListState extends State<ShoppingList> {
       ),
       body: new ListView(
         padding: new EdgeInsets.symmetric(vertical: 8.0),
-        children: config.products.map((Product product) {
+        children: widget.products.map((Product product) {
           return new ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
@@ -686,17 +686,17 @@ again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
 use its
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property. If the parent rebuilds and creates a new `ShoppingList`, the
 `_ShoppingListState` will also rebuild with the new
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 value. If you wish to be notified when the
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config)
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property changes, you can override the
-[`didUpdateConfig`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateConfig)
-function, which is passed the `oldConfig` to let you compare the old
-configuration with the current
-[`config`](https://docs.flutter.io/flutter/widgets/State-class.html#config).
+[`didUpdateWidget`](https://docs.flutter.io/flutter/widgets/State-class.html#didUpdateWidget)
+function, which is passed `oldWidget` to let you compare the old widget with
+the current
+[`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget).
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
@@ -789,21 +789,3 @@ You can use global keys to uniquely identify child widgets. Global keys must be
 globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
-
-{% comment %}
-    Need to revisit the following para, as the framework takes care of this now.
-
-Some widgets, such as
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html) require
-global keys because they can hold focus, which means they receive any text the
-user enters into the app. The
-[`Focus`](https://docs.flutter.io/flutter/widgets/Focus-class.html) widget
-keeps track of which
-[`State`](https://docs.flutter.io/flutter/material/State-class.html)
-object is focused by remembering its
-[`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html).
-That way the same
-[`Input`](https://docs.flutter.io/flutter/material/Input-class.html) widget
-remains focused even if it moves around in the widget tree.
-
-{% endcomment %}

@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
         elevation: 5, // Removing the drop shadow cast by the app bar.
       ),
       body: new Center(

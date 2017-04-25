@@ -567,7 +567,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: new Text('Hello World', style: new TextStyle(fontSize: 32.0)),
@@ -969,8 +969,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // DefaultTextStyle.merge allows you to create a default text
     // style that is inherited by its child and all subsequent children.
-    var iconList = new DefaultTextStyle.merge(
-      context: context,
+    var iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: new Container(
         padding: new EdgeInsets.all(20.0),
@@ -1312,7 +1311,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(config.title),
+        title: new Text(widget.title),
       ),
       body: new Center(
         child: buildGrid(),
