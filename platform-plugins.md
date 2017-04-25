@@ -64,7 +64,7 @@ To add a plugin 'plugin1' to an app:
 1. Build or run your app. As part of this, Flutter will 'inject' the
 platform-specific code from the plugin into your app.
 
-### Example: Using the Flutter URLLauncher plugin to launch the browser
+### Example: Using the Flutter URLLauncher plugin to launch the browser {#example}
 
 The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
 enables you to open the default browser on the mobile platform to display a
@@ -152,6 +152,42 @@ This creates a plugin project with the following content:
    - The iOS platform specific implementation of the plugin API.
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it. 
+
+### Managing dependencies from a Flutter app to a Flutter plugin
+
+Once a plugin has been [published](#publish), you can depend on it by simply
+listing it's name in `pubspec.yaml` as illustrated by the [example (#example)
+above.
+
+During development of a plugin that has not yet been published, or for private
+plugins not intended for public publishing, the following additional way of
+depending on a plugin can be useful:
+
+* **Path** dependency: A Flutter app can depend on a plugin via a file system
+ `path:` dependency. The can be either relative, or absolute. For example, to
+ depend on a plugin 'plugin1' located in a directory next to the app, use this
+ syntax:
+```
+dependencies:
+    flutter:
+      sdk: flutter
+    plugin1:
+      path: ../plugin1/
+```
+
+* **Git** dependency: You can also depend on a package stored in a Git
+ repository. The package must be located in the root of the repo. Use this
+ syntax:
+ ```
+ dependencies:
+     flutter:
+       sdk: flutter
+     plugin1:
+       git:
+         url: git://github.com/flutter/plugin1.git
+ ```
+
+For more details, see the [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
    
 ## Publish a platform plugin {#publish}
 
