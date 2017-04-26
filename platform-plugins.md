@@ -164,7 +164,7 @@ plugins not intended for public publishing, the following additional way of
 depending on a plugin can be useful:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
- `path:` dependency. The can be either relative, or absolute. For example, to
+ `path:` dependency. The path can be either relative, or absolute. For example, to
  depend on a plugin 'plugin1' located in a directory next to the app, use this
  syntax:
 ```
