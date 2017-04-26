@@ -88,3 +88,23 @@ $on-laptop:        800px;
     padding-left: 15px;
   }
 }
+
+/* Needed for bootstrap and GSC to play nice */
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
+{
+  box-sizing: content-box;
+  line-height: normal;
+}
+
+.gsc-tabsArea div
+{
+  overflow: visible;
+}
+
+.gsc-selected-option {
+  width: 100px !important;
+}
+
+.gscb_a{
+  font: inherit !important;
+}
