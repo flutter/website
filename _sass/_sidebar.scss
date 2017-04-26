@@ -1,7 +1,20 @@
+#side-nav-container {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 250px;
+    overflow-y: auto;
+    height: 100%;
+    background: $background-color;
+}
+
+.main-contents {
+    margin-left: 250px;
+}
+
 #mysidebar {
 
-	margin-top: 40px;
-    margin-left: 0;
+    margin: 40px 0 40px 0;
 
     ul {
     	margin-left: 0;
@@ -32,6 +45,14 @@
 }
 
 @media screen and (max-width:768px) {
+
+    #side-nav-container {
+        position: relative;
+    }
+
+    .main-contents {
+        margin-left: inherit;
+    }
 
     #sidebar-toggle-button {
         display: inline !important;
