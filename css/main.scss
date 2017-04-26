@@ -50,6 +50,7 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "fix_custom_search_results",
         "layout",
         "header",
         "customstyles",
