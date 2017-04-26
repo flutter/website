@@ -29,30 +29,20 @@
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-out;
     transition: opacity 0.5s ease-out;
-}
-
-#overlay-under-drawer.active {
-    opacity: 0.6;
-    height: 100%;
-    width: 100%;
-    z-index: 1999;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    background-color: black;
-    display: block;
-
+    display:none;
 }
 
 @media screen and (max-width:768px) {
 
+    #sidebar-toggle-button {
+        display: inline !important;
+    }
+
     #mysidebar {
         left:-100%;
         position:fixed;
-        -webkit-transition: all .5s ease-out;
-        transition: all .5s ease-out;
+        -webkit-transition: left .5s ease-out;
+        transition: left .5s ease-out;
         z-index: 2000;
         top:0;
         width: 280px; /* works all the way down to an iphone 4 */
@@ -63,6 +53,22 @@
 
     #mysidebar.active {
         left:0; /* this animates our drawer into the page */
+        padding: 24px;
+        margin-top: 0;
+    }
+
+    #overlay-under-drawer.active {
+        opacity: 0.6;
+        height: 100%;
+        width: 100%;
+        z-index: 1999;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        background-color: black;
+        display: block;
     }
 
 }
