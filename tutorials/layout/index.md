@@ -5,7 +5,7 @@ sidebar: home_sidebar
 permalink: /tutorials/layout/
 ---
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
@@ -393,7 +393,7 @@ shown in the screenshots. You can add interactivity to this layout by following
 <a name="approach"></a>
 ## Flutter's approach to layout
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -451,7 +451,7 @@ the children should occupy.
 <a name="lay-out-a-widget"></a>
 ## Lay out a widget
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -645,7 +645,7 @@ One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
 and a Column widget to arrange widgets vertically.
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 

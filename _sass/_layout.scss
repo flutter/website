@@ -15,10 +15,15 @@
       font-size: 14px;
       line-height: 56px;
     }
+
+    .header-contents {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .contents {
-    padding-top: 56px;
+    padding: 56px 24px 24px 24px;
 }
 
 .site-title {
@@ -267,11 +272,4 @@
             font-size: 12px;
         }
     }
-}
-
-/**
- * Currently used in Bootstrap into Dart
- */
-dd {
-    margin-bottom: 9px;
 }

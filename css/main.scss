@@ -51,9 +51,14 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
+        "header",
         "customstyles",
+        "sidebar",
+        "tutorial",
         "prism"
 ;
+
+// TBD: which page(s) use these?
 
 // Columns
 .col2 {
@@ -70,21 +75,5 @@ $on-laptop:        800px;
   column-gap: 0;
   li {
    page-break-inside: avoid;
-  }
-}
-
-// Styling for "What's the Point" blocks
-.panel {
-  background-color: $grey-color-light;
-  padding: 20px;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  margin-top: 0px; 
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin-bottom: 5px;
-  }
-  ul {
-    padding-left: 15px;
   }
 }

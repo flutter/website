@@ -5,7 +5,7 @@ sidebar: home_sidebar
 permalink: /tutorials/interactive/
 ---
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
@@ -88,7 +88,7 @@ If you want to try different ways of managing state, skip to
 <a name="stateful-stateless"></a>
 ## Stateful and stateless widgets
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -126,7 +126,7 @@ are examples of stateful widgets, which subclass
 <a name="creating-stateful-widget"></a>
 ## Creating a stateful widget
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -342,7 +342,7 @@ and lists other available interactive widgets.
 <a name="managing-state"></a>
 ## Managing state
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 

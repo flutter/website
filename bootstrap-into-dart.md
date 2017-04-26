@@ -5,6 +5,12 @@ sidebar: home_sidebar
 permalink: /bootstrap-into-dart/
 ---
 
+<style>
+dd {
+    margin-bottom: 8px;
+}
+</style>
+
 New to the [Dart](https://www.dartlang.org) language?
 We compiled our favorite resources to
 help you quickly learn Dart.

@@ -3,19 +3,23 @@
   {% include head.html %}
 
   <body>
+
+    <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
+
     {% include header.html %}
 
     <!-- Page Content -->
-    <div class="container contents">
+    <div class="container-fluid contents">
       <!-- Content Row -->
       <div class="row">
+        
         <!-- Sidebar Column -->
-        <div class="col-md-3">
+        <div class="col-sm-3">
           {% include sidebar.html %}
         </div>
 
         <!-- Content Column -->
-        <div class="col-md-9">
+        <div class="col-sm-9 main-contents">
           {{content}}
         </div>
       </div> <!-- /.row -->
@@ -29,10 +33,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+    <script src="{{ "/js/sidebar_toggle.js" }}"></script>
+    <script src="{{ "/js/customscripts.js" }}"></script>
     <script src="{{ "/js/prism.js" }}"></script>
     <script src="{{ "/js/toc.js" }}"></script>
-    <script src="{{ "/js/jquery.navgoco.min.js" }}"></script>
-    <script src="{{ "/js/customscripts.js" }}"></script>
 
     <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
   </body>
