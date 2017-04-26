@@ -105,7 +105,11 @@ String _removeMarkup(String source) {
 
 
 void clean() {
-  Iterable<FileSystemEntity> files = new Directory('example')
+  var exampleDir = new Directory('example');
+  if (!exampleDir.existsSync()) {
+    exampleDir.createSync();
+  }
+  Iterable<FileSystemEntity> files = exampleDir
       .listSync()
       .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
   files.forEach((File file) => file.deleteSync());
