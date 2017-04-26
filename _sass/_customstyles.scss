@@ -114,79 +114,91 @@ body h1 {margin-top:40px;}
     color: gray;
 }
 
-table {
-    background-color: transparent;
-}
+
+
 caption {
     padding-top: 8px;
     padding-bottom: 8px;
     color: #777;
     text-align: left;
 }
-th {
+
+.flutter-table {
+
+  table {
+    background-color: transparent;
+  }
+
+  th {
     text-align: left;
-}
-table {
+  }
+
+  table {
     max-width: 90%;
     margin-bottom: 20px;
     border: 1px solid #dedede;
-}
+  }
 
-table > thead > tr > th,
-table > tbody > tr > th,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > tbody > tr > td,
-table > tfoot > tr > td {
+  table > thead > tr > th,
+  table > tbody > tr > th,
+  table > tfoot > tr > th,
+  table > thead > tr > td,
+  table > tbody > tr > td,
+  table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
-}
-table > thead > tr > th {
+  }
+
+  table > thead > tr > th {
     vertical-align: bottom;
     border-bottom: 2px solid #ddd;
     text-transform: none;
     background-color: #777;
     color: white;
     text-align: left;
-}
-table > caption + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > th,
-table > thead:first-child > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > td {
-    border-top: 0;
-}
-table > tbody > tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
-}
+  }
 
-table col[class*="col-"] {
+  table > caption + thead > tr:first-child > th,
+  table > colgroup + thead > tr:first-child > th,
+  table > thead:first-child > tr:first-child > th,
+  table > caption + thead > tr:first-child > td,
+  table > colgroup + thead > tr:first-child > td,
+  table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+  }
+
+  table > tbody > tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+
+  table col[class*="col-"] {
     position: static;
     display: table-column;
     float: none;
-}
-table td[class*="col-"],
-table th[class*="col-"] {
+  }
+
+  table td[class*="col-"],
+  table th[class*="col-"] {
     position: static;
     display: table-cell;
     float: none;
-}
+  }
 
-
-table td:first-child {
+  table td:first-child {
     width: 150px;
-    /*font-weight:bold;*/
-}
+    /*font-weight: bold;*/
+  }
 
-table.boldFirstColumn td:first-child {
+  table.boldFirstColumn td:first-child {
     font-weight: bold;
-}
+  }
 
-table tr td {
+  table tr td {
     hyphens: auto;
+  }
+
 }
 
 
