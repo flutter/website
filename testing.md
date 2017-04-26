@@ -45,6 +45,8 @@ There are many kinds of automated testing. These are summarized below:
 Here is a table summarizing the tradeoffs concerning the choice between
 different kinds of tests:
 
+{: .flutter-table}
+
 |                      | Unit   | Widget | Integration |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |

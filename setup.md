@@ -23,8 +23,7 @@ To start coding Flutter apps, complete all the tasks marked Required Now in this
 The remaining tasks can be deferred until later in the development cycle, when you're ready
 to test and iterate using a simulator or physical device.
 
-<div class="flutter-table">
-<table>
+<table class="flutter-table">
  <tr><th>Task</th><th>Required Now?</th></tr>
  <tr>
   <td style="width:1600px;">Verify your system meets the requirements for Flutter and dependencies (<a href="/setup-macos/#system-requirements">Mac</a>) (<a href="/setup-windows/#system-requirements">Windows</a>) (<a href="/setup-linux/#system-requirements">Linux</a>)</td><td align="center">Y</td>
@@ -51,5 +50,4 @@ inline error checking, and visual debugging features.</td>
    <td>Perform Android setup tasks to develop apps for Android (<a href="/setup-macos/#android-setup">Mac</a>) (<a href="/setup-windows/#android-setup">Windows</a>) (<a href="/setup-linux/#android-setup">Linux</a>)</td><td align="center"></td>
  </tr>
 </table>
-</div>
 

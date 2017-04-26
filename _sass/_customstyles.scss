@@ -123,83 +123,81 @@ caption {
     text-align: left;
 }
 
-.flutter-table {
-
-  table {
-    background-color: transparent;
-  }
-
-  th {
-    text-align: left;
-  }
-
-  table {
-    max-width: 90%;
-    margin-bottom: 20px;
-    border: 1px solid #dedede;
-  }
-
-  table > thead > tr > th,
-  table > tbody > tr > th,
-  table > tfoot > tr > th,
-  table > thead > tr > td,
-  table > tbody > tr > td,
-  table > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-  }
-
-  table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
-    text-transform: none;
-    background-color: #777;
-    color: white;
-    text-align: left;
-  }
-
-  table > caption + thead > tr:first-child > th,
-  table > colgroup + thead > tr:first-child > th,
-  table > thead:first-child > tr:first-child > th,
-  table > caption + thead > tr:first-child > td,
-  table > colgroup + thead > tr:first-child > td,
-  table > thead:first-child > tr:first-child > td {
-    border-top: 0;
-  }
-
-  table > tbody > tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
-  }
-
-  table col[class*="col-"] {
-    position: static;
-    display: table-column;
-    float: none;
-  }
-
-  table td[class*="col-"],
-  table th[class*="col-"] {
-    position: static;
-    display: table-cell;
-    float: none;
-  }
-
-  table td:first-child {
-    width: 150px;
-    /*font-weight: bold;*/
-  }
-
-  table.boldFirstColumn td:first-child {
-    font-weight: bold;
-  }
-
-  table tr td {
-    hyphens: auto;
-  }
-
+table.flutter-table {
+  background-color: transparent;
 }
+
+table.flutter-table th {
+  text-align: left;
+}
+
+table.flutter-table  {
+  max-width: 90%;
+  margin-bottom: 20px;
+  border: 1px solid #dedede;
+}
+
+table.flutter-table  > thead > tr > th,
+table.flutter-table  > tbody > tr > th,
+table.flutter-table  > tfoot > tr > th,
+table.flutter-table  > thead > tr > td,
+table.flutter-table  > tbody > tr > td,
+table.flutter-table  > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+table.flutter-table  > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+  text-transform: none;
+  background-color: #777;
+  color: white;
+  text-align: left;
+}
+
+table.flutter-table  > caption + thead > tr:first-child > th,
+table.flutter-table  > colgroup + thead > tr:first-child > th,
+table.flutter-table  > thead:first-child > tr:first-child > th,
+table.flutter-table  > caption + thead > tr:first-child > td,
+table.flutter-table  > colgroup + thead > tr:first-child > td,
+table.flutter-table  > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+
+table.flutter-table  > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+table.flutter-table  col[class*="col-"] {
+  position: static;
+  display: table-column;
+  float: none;
+}
+
+table.flutter-table  td[class*="col-"],
+table.flutter-table  th[class*="col-"] {
+  position: static;
+  display: table-cell;
+  float: none;
+}
+
+table.flutter-table  td:first-child {
+  width: 150px;
+  /*font-weight: bold;*/
+}
+
+table.flutter-table .boldFirstColumn td:first-child {
+  font-weight: bold;
+}
+
+table.flutter-table  tr td {
+  hyphens: auto;
+}
+
+
 
 
 p.external a {
