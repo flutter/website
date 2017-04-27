@@ -50,10 +50,16 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "fix_custom_search_results",
         "layout",
+        "header",
         "customstyles",
+        "sidebar",
+        "tutorial",
         "prism"
 ;
+
+// TBD: which page(s) use these?
 
 // Columns
 .col2 {
@@ -71,44 +77,4 @@ $on-laptop:        800px;
   li {
    page-break-inside: avoid;
   }
-}
-
-// Styling for "What's the Point" blocks
-.panel {
-  background-color: $grey-color-light;
-  padding: 20px;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  margin-top: 0px; 
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin-bottom: 5px;
-  }
-  ul {
-    padding-left: 15px;
-  }
-}
-
-/* Needed for bootstrap and GSC to play nice */
-input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
-{
-  box-sizing: content-box;
-  line-height: normal;
-}
-
-.gsc-tabsArea div
-{
-  overflow: visible;
-}
-
-.gsc-selected-option {
-  width: 100px !important;
-}
-
-.gscb_a{
-  font: inherit !important;
-}
-
-.gs-snippet{
-  margin-left: 9px !important;
 }

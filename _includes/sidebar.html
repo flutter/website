@@ -1,39 +1,59 @@
-{% include custom/sidebarconfigs.html %}
+<ul id="mysidebar" class="nav">
 
-<ul id="mysidebar" class="nav affix">
-    <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
-    {% for entry in sidebar %}
-    {% for folder in entry.folders %}
-    {% if folder.output contains "web" %}
-      {% if folder.external_url %}
-      <li>
-        <a href="{{folder.external_url}}" target="_blank">{{ folder.title }}</a>
-      </li>
-      {% elsif folder.spacer %}
-      <br>
-      {% else %}
-      <li>
-        <a href="{{folder.url}}">{{ folder.title }}</a>
+  <li class="sidebar-title">Get started</li>
 
-        {% if folder.folderitems %}
-        <ul style="display:none">
-            {% for folderitem in folder.folderitems %}
-            {% if folderitem.output contains "web" %}
-            {% if folderitem.external_url %}
-            <li><a href="{{folderitem.external_url}}" target="_blank">{{folderitem.title}}</a></li>
-            {% elsif page.url == folderitem.url %}
-            <li class="active"><a href="{{folderitem.url}}">{{folderitem.title}}</a></li>
-            {% else %}
-            <li><a href="{{folderitem.url}}">{{folderitem.title}}</a></li>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
-      </li>
-      {% endif %}
+    <ul class="sidebar-items">
+      <li><a href="/setup/">Install</a></li>
+      <li><a href="/getting-started/">Create and run your first app</a></li>
+      <li><a href="/bootstrap-into-dart/">Bootstrap into Dart</a></li>
 
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
+    </ul>
+
+  <li class="sidebar-title">Build UIs</li>
+
+    <ul class="sidebar-items">
+      <li><a href="/widgets-intro/">Tour the framework</a></li>
+      <li><a href="/widgets/">Widget catalog</a></li>
+      <li><a href="/tutorials/layout/">Build Layouts - Tutorial</a></li>
+      <li><a href="/tutorials/interactive/">Add Interactivity - Tutorial</a></li>
+      <li><a href="/web-analogs/">HTML/CSS patterns</a></li>
+      <li><a href="/gestures/">Gestures</a></li>
+      <li><a href="/animations/">Animations</a></li>
+      <li><a href="/custom-fonts/">Custom fonts</a></li>
+      <li><a href="/layout/">Box constraints</a></li>
+      <li><a href="/assets-and-images/">Assets and images</a></li>
+      <li><a href="/text-input/">Text input</a></li>
+    </ul>
+
+
+  <li class="sidebar-title">Use device and SDK APIs</li>
+
+    <ul class="sidebar-items">
+      <li><a href="/platform-plugins/">Plugins &amp; platform-specific code</a></li>
+      <li><a href="/platform-channels/">Custom platform-specific code</a></li>
+      <li><a href="/reading-writing-files/">Read and write files</a></li>
+      <li><a href="/networking/">Network and HTTP</a></li>
+    </ul>
+
+
+  <li class="sidebar-title">Test, deploy, workflows</li>
+
+    <ul class="sidebar-items">
+      <li><a href="/testing/">Test your app</a></li>
+      <li><a href="/debugging/">Debug your app</a></li>
+      <li><a href="/formatting/">Format your source code</a></li>
+      <li><a href="/intellij-ide/">Use IntelliJ IDE</a></li>
+      <li><a href="/android-release/">Build and release for Android</a></li>
+      <li><a href="/ios-release/">Build and release for iOS</a></li>
+      <li><a href="/upgrading/">Upgrade your Flutter install</a></li>
+    </ul>
+
+  <li class="sidebar-title">Advanced topics</li>
+
+    <ul class="sidebar-items">
+      <li><a href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing">Architecture diagrams</a></li>
+      <li><a href="https://www.youtube.com/watch?v=dkyY9WCGMi0">Framework's layered design <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+      <li><a href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter's rendering pipeline <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+    </ul>
+
 </ul>
