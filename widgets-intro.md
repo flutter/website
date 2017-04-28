@@ -123,7 +123,7 @@ class MyAppBar extends StatelessWidget {
     return new Container(
       height: 56.0, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(backgroundColor: Colors.blue[500]),
+      decoration: new BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: new Row(
         // <Widget> is the type of items in the list.
@@ -329,7 +329,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
           borderRadius: new BorderRadius.circular(5.0),
-          backgroundColor: Colors.lightGreen[500],
+          color: Colors.lightGreen[500],
         ),
         child: new Center(
           child: new Text('Engage'),
