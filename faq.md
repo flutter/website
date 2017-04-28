@@ -79,7 +79,7 @@ rendering engine to draw widgets.
 
 In addition, Flutter is different because it only has a thin layer of
 C/C++ code. Flutter implements most of its system (compositing, gestures,
-animation, framework, widgets, etc) in _Dart_ (a modern, terse, OOP
+animation, framework, widgets, etc) in _Dart_ (a modern, terse, object-oriented
 language) that developers can
 easily approach read, change, replace, or remove.
 This gives developers tremendous
@@ -138,7 +138,7 @@ framework.
 ### Does Flutter come with widgets?
 
 Yes! Flutter ships with a set of
-[high quality Material and Cupertino (iOS-styled) widgets][widgets], layouts,
+[high quality Material and Cupertino (iOS-style) widgets][widgets], layouts,
 and themes. Of
 course, these widgets are only a starting point.
 Flutter is designed to make it easy to
@@ -149,6 +149,11 @@ create your own widgets, or customize the existing widgets.
 Yes, Flutter provides APIs for writing unit and integration
 tests. Learn more about
 [testing with Flutter](/testing/).
+
+We use our own testing capabilities to test our SDK.
+We measure our
+[test coverage](https://coveralls.io/github/flutter/flutter?branch=master)
+on every commit.
 
 ### Does Flutter come with a dependency injection framework or solution?
 
@@ -255,7 +260,7 @@ In November 2015, we measured the size of a minimal Flutter app, bundled as
 an APK, to be approximately 8MB. For this simple app that used Material Design
 widgets, the core engine is approximately 5MB, the framework + app code is
 approximately 400kb, necessary Java code is 330k, and there is approximately
-2.5MB of ICU data. We are working to get this smaller.
+2.5MB of ICU data.
 
 ## Capabilities
 
