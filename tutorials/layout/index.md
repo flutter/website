@@ -610,7 +610,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      decoration: new BoxDecoration(backgroundColor: Colors.white),
+      decoration: new BoxDecoration(color: Colors.white),
       child: new Center(
         child: new Text('Hello World',
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
@@ -1187,7 +1187,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     var container = new Container(
       decoration: new BoxDecoration(
-        backgroundColor: Colors.black26,
+        color: Colors.black26,
       ),
       child: new Column(
         children: [
@@ -1464,7 +1464,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         new Container(
           decoration: new BoxDecoration(
-            backgroundColor: Colors.black45,
+            color: Colors.black45,
           ),
           child: new Text(
             'Mia B',
