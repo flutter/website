@@ -177,7 +177,7 @@ Widget build(BuildContext context) {
   // ...
   return new DecoratedBox(
     decoration: new BoxDecoration(
-      backgroundImage: new BackgroundImage(
+      image: new DecorationImage(
         image: new AssetImage('assets/background.png'),
         // ...
       ),
