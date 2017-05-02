@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var container = new Container(
       decoration: new BoxDecoration(
-        backgroundColor: Colors.black26,
+        color: Colors.black26,
       ),
       child: new Column(
         children: [

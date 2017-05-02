@@ -201,7 +201,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
 [[highlight]]      width: 240.0, [[/highlight]]//max-width is 240.0
@@ -264,7 +264,7 @@ var container = new Container( // grey box
             style: bold24Roboto,
           ),
           decoration: new BoxDecoration(
-            backgroundColor: Colors.red[400],
+            color: Colors.red[400],
           ),
           padding: new EdgeInsets.all(16.0),
         ),
@@ -326,7 +326,7 @@ var container = new Container( // gray box
           textAlign: TextAlign.center,
         ),
         decoration: new BoxDecoration(
-          backgroundColor: Colors.red[400],
+          color: Colors.red[400],
         ),
         padding: new EdgeInsets.all(16.0),
       ),
@@ -390,7 +390,7 @@ var container = new Container( // gray box
           textAlign: TextAlign.center,
         ),
         decoration: new BoxDecoration(
-          backgroundColor: Colors.red[400],
+          color: Colors.red[400],
         ),
         padding: new EdgeInsets.all(16.0),
       ),
@@ -571,7 +571,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        borderRadius: new BorderRadius.all(
           const Radius.circular(8.0),
         ), [[/highlight]]
@@ -634,7 +634,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        boxShadow: <BoxShadow>[
           new BoxShadow (
             color: const Color(0xcc000000),
@@ -654,7 +654,7 @@ var container = new Container( // grey box
   width: 320.0,
   height: 240.0,
   decoration: new BoxDecoration(
-    backgroundColor: Colors.grey[300],
+    color: Colors.grey[300],
   ),
   margin: new EdgeInsets.only(bottom: 16.0),
 );
@@ -709,7 +709,7 @@ var container = new Container( // grey box
 [[highlight]]        textAlign: TextAlign.center, [[/highlight]]
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
 [[highlight]]        shape: BoxShape.circle, [[/highlight]]
       ),
       padding: new EdgeInsets.all(16.0),
@@ -781,7 +781,7 @@ var container = new Container( // grey box
         ),
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
     ),
@@ -836,7 +836,7 @@ var container = new Container( // grey box
         style: bold24Roboto,
       ),
       decoration: new BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: new EdgeInsets.all(16.0),
     ),
