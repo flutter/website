@@ -36,6 +36,7 @@ The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
 file is located. The order in which the assets are declared does not
+matter. The actual directory used (`assets` in this case) does not
 matter.
 
 During a build, Flutter places assets into a special archive called
@@ -54,9 +55,9 @@ For example, if you have the following files in your application
 directory:
 
 * .../pubspec.yaml
-* .../assets/my_icon.png
-* .../assets/background.png
-* .../assets/dark/background.png
+* .../graphics/my_icon.png
+* .../graphics/background.png
+* .../graphics/dark/background.png
 * ...etc.
 
 ...and your `pubspec.yaml` file contains:
@@ -64,10 +65,10 @@ directory:
 ```yaml
 flutter:
   assets:
-    - assets/background.png
+    - graphics/background.png
 ```
 
-...then both `assets/background.png` and `assets/dark/background.png`
+...then both `graphics/background.png` and `graphics/dark/background.png`
 will be included in your asset bundle. The former is considered the
 _main asset_, while the latter is considered a _variant_.
 
@@ -178,7 +179,7 @@ Widget build(BuildContext context) {
   return new DecoratedBox(
     decoration: new BoxDecoration(
       image: new DecorationImage(
-        image: new AssetImage('assets/background.png'),
+        image: new AssetImage('graphics/background.png'),
         // ...
       ),
       // ...
