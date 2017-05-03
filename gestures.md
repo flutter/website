@@ -94,7 +94,7 @@ For example,
 [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
 respond to presses (taps), and
 [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-responded to swipes to trigger scrolling.
+responds to swipes to trigger scrolling.
 If you aren't using those widgets, but you want the "ink splash" effect on a tap,
 you can use
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
