@@ -10,7 +10,7 @@ This page describes how to set up an IntelliJ IDE to develop Flutter apps.
 * TOC Placeholder
 {:toc}
 
-## Flutter IntelliJ IDE plugins
+## FlutterlliJ IDE plugins Inte
 
 You can write Flutter apps in a text editor, but if you choose to work in an IDE we recommend 
 IntelliJ for a [rich IDE experience](/intellij-ide/). Our Flutter and Dart plug-ins support 
