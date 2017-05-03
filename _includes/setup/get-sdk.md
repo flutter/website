@@ -6,10 +6,10 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 ### Clone the repo
 
 If this is the first time you're installing Flutter on this machine, clone the
-repository and then add the `flutter` tool to your path:
+alpha branch of the repository and then add the `flutter` tool to your path:
 
 ```
-$ git clone https://github.com/flutter/flutter.git
+$ git clone -b alpha https://github.com/flutter/flutter.git
 $ export PATH=`pwd`/flutter/bin:$PATH
 ```
 The above command sets your PATH variable temporarily, for the current terminal window. To
