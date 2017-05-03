@@ -19,4 +19,7 @@ permalink: /setup-macos/
 
 {% include setup/android-setup.md %}
 
-{% include setup/next-steps.md %}
+## Next steps
+
+Now, follow our [Getting Started guide](/getting-started/)
+to run your first Flutter app on iOS or Android.
