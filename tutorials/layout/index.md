@@ -1498,7 +1498,7 @@ In Flutter, a Card features slightly rounded corners
 and a drop shadow, giving it a 3D effect.
 Changing a Card's `elevation`
 property allows you to control the drop shadow effect.
-Setting the elevation to 24, for example, visually lifts the Card further
+Setting the elevation to 24.0, for example, visually lifts the Card further
 from the surface and causes the shadow to become more dispersed.
 For a list of supported elevation values, see
 [Elevation and
