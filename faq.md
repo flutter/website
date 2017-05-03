@@ -167,13 +167,13 @@ Not at this time. Please share your ideas at
 Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
 [architecture diagram](https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162) for a better picture of the main components.
 
-### How does Flutter run my code on Android?
+### How does Flutter run my code on Android? {#run-android}
 
 The engine's C/C++ code is compiled with Android's NDK, and the majority of the
 framework and application code is running as native code
 compiled by the Dart compiler.
 
-### How does Flutter run my code on iOS?
+### How does Flutter run my code on iOS? {#run-ios}
 
 The engine's C/C++ code is compiled with LLVM, and any Dart code is AOT-compiled
 into native code. The app runs using the native instruction set (no interpreter
@@ -271,7 +271,7 @@ designed to help developers easily achieve a constant 60fps. Flutter apps run
 via natively compiled code – no interpreters are involved.
 This means Flutter apps start quickly.
 
-### What kind of developer cycles can I expect? How long between edit and refresh?
+### What kind of developer cycles can I expect? How long between edit and refresh? {#hot-reload}
 
 Flutter implements a _hot reload_ developer cycle. You can expect
 sub-second reload times, on a device or an emulator/simulator.
@@ -441,12 +441,16 @@ can do anything, including interpreting markup and turning it into widgets.
 
 ### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
 
-By default `flutter run` command uses the debug build configuration.
-The debug configuration enables type checking and asserts.
-These checks help you catch errors early during development but impose
-a runtime cost.  The "slow mode" banner indicates that these checks are enabled.
-You can run your app without these checks by using either `--profile` or `--release`
-flag to `flutter run`.
+By default `flutter run` command uses the debug build configuration. 
+
+The debug configuration runs your Dart code in a VM (Virtual Machine) enabling a
+fast development cycle with [hot reload](#hot-reload) (release builds are
+compiled on [Android](#run-android) and [iOS](#run-ios)).
+
+The debug configuration also checks all asserts, which helps you catch errors
+early during development but impose a runtime cost. The "slow mode" banner
+indicates that these checks are enabled. You can run your app without these
+checks by using either the `--profile` or `--release` flag to `flutter run`.
 
 ## Project
 
