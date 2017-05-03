@@ -1,8 +1,5 @@
 ## Android setup
 
-_This step is optional, and can be performed at any time before
-using Flutter to develop apps for Android._
-
 ### Install Android Studio
 
 To develop Flutter apps for Android, you can use a Mac, Windows, or Linux (64-bit) machine:

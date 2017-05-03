@@ -1,8 +1,5 @@
 ## iOS setup
 
-_This step is optional, and can be performed at any time before
-using Flutter to develop apps for iOS._
-
 ### Install Xcode
 
 To develop Flutter apps for iOS, you need a Mac with Xcode 7.2 or newer:
