@@ -6,19 +6,24 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 ### Clone the repo
 
 If this is the first time you're installing Flutter on this machine, clone the
-repository and then add the `flutter` tool to your path:
+repository:
 
 ```
 > git clone https://github.com/flutter/flutter.git
-> setx PATH "%PATH%;<cd>\flutter\bin"
 ```
-replacing `<cd>` with your current directory path. For example, `setx PATH "%PATH%;C:\Users\obiwan\flutter\bin"`. 
-
-Run these commands in either a Command Prompt or PowerShell window. Flutter does
-not support third-party shells like Git Bash. {: .alert-warning}
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
 
+### Update your path
+
+To run the `flutter` command in any terminal session, you need to add it to your PATH environment variable:
+
+* Go to "Control Panel > User Accounts > User Accounts > Change my environment variables"
+* Under "User variables" check if there is an entry called "Path":
+    * If the entry does exist, append the full path to `flutter\bin` to it seperated by `;` from any existing value.
+    * If the entry does not exist, create a new user variable called "Path" with the full path to `flutter\bin` as value.
+
+Close and re-open any terminal window (e.g. Command Prompt or PowerShell) for this change to take effect.
 
 ### Run flutter doctor
 
@@ -28,6 +33,10 @@ see if there  are any dependencies you need to install to complete the setup:
 ```
 > flutter doctor
 ```
+
+Run this command in either a Command Prompt or PowerShell window. Currently, Flutter does
+not support third-party shells like Git Bash.
+{: .alert-warning}
 
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
