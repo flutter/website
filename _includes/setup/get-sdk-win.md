@@ -14,17 +14,16 @@ repository and then add the `flutter` tool to your path:
 ```
 replacing `<cd>` with your current directory path. For example, `setx PATH "%PATH%;C:\Users\obiwan\flutter\bin"`. 
 
-Run these commands in either a Cmd or PowerShell window. Flutter does not support third-party shells
-like Git Bash.
-{: .alert-warning}
+Run these commands in either a Command Prompt or PowerShell window. Flutter does
+not support third-party shells like Git Bash. {: .alert-warning}
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
 
 
 ### Run flutter doctor
 
-Open a new Cmd or PowerShell window and run the following command to see if there 
-are any dependencies you need to install to complete the setup:
+Open a new Command Prompt or PowerShell window and run the following command to
+see if there  are any dependencies you need to install to complete the setup:
 
 ```
 > flutter doctor
