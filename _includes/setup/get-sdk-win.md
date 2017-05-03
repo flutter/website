@@ -20,10 +20,10 @@ To run the `flutter` command in any terminal session, you need to add it to your
 
 * Go to "Control Panel > User Accounts > User Accounts > Change my environment variables"
 * Under "User variables" check if there is an entry called "Path":
-    * If the entry does exist, append the full path to `flutter\bin` to it seperated by `;` from any existing value.
-    * If the entry does not exist, create a new user variable called "Path" with the full path to `flutter\bin` as value.
+    * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
+    * If the entry does not exist, create a new user variable named `Path` with the full path to `flutter\bin` as its value.
 
-Close and re-open any terminal window (e.g. Command Prompt or PowerShell) for this change to take effect.
+Close and re-open any terminal window (e.g. command prompt or PowerShell) to apply this change.
 
 ### Run flutter doctor
 
