@@ -445,10 +445,11 @@ By default `flutter run` command uses the debug build configuration.
 
 The debug configuration runs your Dart code in a VM (Virtual Machine) enabling a
 fast development cycle with [hot reload](#hot-reload) (release builds are
-compiled on [Android](#run-android) and [iOS](#run-ios)).
+compiled using the standard [Android](#run-android) and [iOS](#run-ios)
+toolchains).
 
 The debug configuration also checks all asserts, which helps you catch errors
-early during development but impose a runtime cost. The "slow mode" banner
+early during development, but imposes a runtime cost. The "slow mode" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
