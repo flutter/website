@@ -111,23 +111,37 @@ that improve the situation are allowed to go in.**
 Handling breaking changes
 -------------------------
 
-Any time you make a breaking change that you expect will impact anyone
-developing Flutter applications, you should e-mail
-<mailto:flutter-dev@googlegroups.com>. The e-mail should include the following:
+We're attempting to stablize the APIs for the
+[packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
+To a make change that will require developers to change their code:
 
-1. A subject line that clearly summarises the change and sounds like it matters
-   (so that people can spot these e-mails among the noise).
+ 1. File an issue or create a pull request with the `prod: API break`
+    label.
 
-2. A summary of each change.
+ 2. Socialize the idea of making that API break with the project, perhaps by
+    discussing the change in the issue tracker on on the pull request.
 
-3. Clear mechanical steps for porting the code from the old form to the new
-   form, if possible. If not possible, clear steps for figuring out how to port
-   the code.
+ 3. If folks agree that the benefits of changing the API outweigh the stablity
+    costs, you can proceed with the normal code review process for making
+    changes.
 
-4. A brief justification for the change.
+ 5. Once your change lands, you should e-mail
+    <mailto:flutter-dev@googlegroups.com>. The e-mail should include the
+    following:
 
-5. A sincere offer to help port code, which includes the preferred venue for
-   contacting the person who made the change.
+    - A subject line that clearly summarises the change and sounds like it
+      matters (so that people can spot these e-mails among the noise).
+
+    - A summary of each change.
+
+    - Clear mechanical steps for porting the code from the old form to the new
+      form, if possible. If not possible, clear steps for figuring out how to
+      port the code.
+
+    - A brief justification for the change.
+
+    - A sincere offer to help port code, which includes the preferred venue for
+      contacting the person who made the change.
 
 #### Google-only responsibilities
 
