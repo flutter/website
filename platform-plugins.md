@@ -47,8 +47,13 @@ implementation for Android, for iOS, or for both.
 
 ### Searching for plugins
 
-Flutter plugins are shared on the [pub repository](https://pub.dartlang.org/)
-along with regular (pure-Dart) packages.
+Flutter plugins are shared on the [pub](https://pub.dartlang.org/) repository
+along with regular (pure-Dart) packages. To see a list of all Flutter plugins,
+use the ['Flutter Plugins'](https://pub.dartlang.org/flutter/plugins) page.
+
+{% include note.html content="Flutter is still a young platform, and only a
+fairly small set of plugins are currently available on pub. We encourage all
+Flutter developers to develop and [publish](#publish) new plugins!" %}
 
 ### Adding a plugin to an app
 
@@ -86,7 +91,7 @@ To use this plugin:
     dependencies:
       flutter:
         sdk: flutter
-      url_launcher: ^0.1.0
+      url_launcher:
     ```
 
 1. Open `lib/main.dart` and replace its full contents with:
