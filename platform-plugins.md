@@ -86,7 +86,7 @@ To use this plugin:
     dependencies:
       flutter:
         sdk: flutter
-      url_launcher: ^0.1.0
+      url_launcher:
     ```
 
 1. Open `lib/main.dart` and replace its full contents with:
