@@ -39,7 +39,7 @@ easy for you to learn, too.
 : Learn how to use Streams, which are used extensively in the Dart core
   libraries. Streams can be used instead repeating callbacks.
   For example, the
-  [File class](https://docs.flutter.io/flutter/dart.io/File-class.html)
+  [File class](https://docs.flutter.io/flutter/dart-io/File-class.html)
   uses Streams to read bytes from a file.
 
 Want to learn more? Check out one of the

@@ -798,7 +798,7 @@ In HTML/CSS, you perform simple case transformations using the text-transform
 property. 
 
 In Flutter, you transform the contents of a Text widget using the methods and
-operators of the [String class](https://docs.flutter.io/flutter/dart.core/String-class.html)
+operators of the [String class](https://docs.flutter.io/flutter/dart-core/String-class.html)
 in the dart:core library.
 <div class="lefthighlight">
 {% prettify css%}
