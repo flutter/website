@@ -89,16 +89,27 @@
 
 .catalog {
   .catalog-entry svg {
-    float: left;
-    height:80px;
-    margin-right: 10px;
+    width: 100%;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
     padding-bottom: 10px;
+    text-align: center;
+  }
+
+  h3{
+    margin-top: 10px;
+  }
+
+  a{
+    color: $brand-color;
   }
 
   .catalog-entry img {
-    float: left;
-    height:120px;
-    margin-right: 10px;
+    width: 100%;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 0;
   }
 

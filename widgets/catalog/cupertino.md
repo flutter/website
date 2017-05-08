@@ -41,18 +41,21 @@ extra_css:
    {% if category.name == 'Cupertino (iOS-style widgets)' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
+        <ul class="cards">
         {% for comp in site.data.catalog.widgets %}
          {% if comp.subcategories contains sub.name %}
-         <div class="catalog-entry">
-          <h3>{{comp.name}}</h3>
-          {% if comp.image contains '<svg' %}{{comp.image}}{% else %}{% if comp.image contains 'https://' %}<img alt="" src="{{comp.image}}" />{% endif %}{% endif %}
-          <p> {{comp.description}} </p>
-          <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
-         </div>
+         <li class="cards__item">
+             <div class="catalog-entry" >
+                  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}{% if comp.image contains 'https://' %}<img alt="" src="{{comp.image}}" />{% endif %}{% endif %}
+                  <h3>{{comp.name}}</h3>
+                  <p> {{comp.description}} </p>
+                  <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
+                 </div>
+             </li>
          {% endif %}
         {% endfor %}
+        </ul>
     {% endfor %}
    {% endif %}
 {% endfor %}
 </div>
-   
