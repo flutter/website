@@ -2,7 +2,7 @@
 layout: page
 title: Input
 sidebar: home_sidebar
-permalink: widgets/catalog/input
+permalink: widgets/catalog/input/
 extra_css:
   - /css/catalog.css
 ---

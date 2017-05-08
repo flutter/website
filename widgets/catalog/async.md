@@ -2,7 +2,7 @@
 layout: page
 title: Async
 sidebar: home_sidebar
-permalink: widgets/catalog/async
+permalink: widgets/catalog/async/
 extra_css:
   - /css/catalog.css
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Scrolling
 sidebar: home_sidebar
-permalink: widgets/catalog/scrolling
+permalink: widgets/catalog/scrolling/
 extra_css:
   - /css/catalog.css
 ---

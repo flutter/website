@@ -2,7 +2,7 @@
 layout: page
 title: Material Design
 sidebar: home_sidebar
-permalink: widgets/catalog/material
+permalink: widgets/catalog/material/
 extra_css:
   - /css/catalog.css
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Styling
 sidebar: home_sidebar
-permalink: widgets/catalog/styling
+permalink: widgets/catalog/styling/
 extra_css:
   - /css/catalog.css
 ---

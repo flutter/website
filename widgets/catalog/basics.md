@@ -2,7 +2,7 @@
 layout: page
 title: Basics
 sidebar: home_sidebar
-permalink: widgets/catalog/basics
+permalink: widgets/catalog/basics/
 extra_css:
   - /css/catalog.css
 ---
