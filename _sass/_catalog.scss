@@ -12,6 +12,31 @@
 
 }
 
+// used for homepage for widget catalog
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px -0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 230px;
+  min-height: 180px;
+  padding: 20px;
+  border: solid transparent;
+  border-bottom-color: $brand-color;
+  transition-duration: 0.3s;
+  transition-property: border-color;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+
+.card:hover{
+  border: solid $primary-color;
+}
+
 .cards__item {
   display: flex;
   padding: 1rem 2rem 1rem 0;
