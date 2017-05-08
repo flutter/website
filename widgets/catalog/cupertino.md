@@ -14,7 +14,7 @@ extra_css:
  {% endif %}
 {% endfor %}
 
-<!-- Data for the catalog comes from widgets.csv in the _data folder -->
+
 {% for comp in site.data.catalog.widgets %}
  {% if comp.categories contains 'Cupertino (iOS-style widgets)' %}
  <div class="catalog-entry">
