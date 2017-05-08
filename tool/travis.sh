@@ -19,22 +19,22 @@ dart --version
 
 # Analyze the stand-alone sample code files
 
-for D in _includes/_code/*; do
-  if [ -d "${D}" ]; then
-    echo "Run flutter packages get on ${D}"
-    ../flutter/bin/flutter packages get ${D}
-
-    echo "Run flutter analyze on ${D}"
-    ../flutter/bin/flutter analyze ${D}/*.dart
-  fi
-done
+#for D in _includes/_code/*; do
+#  if [ -d "${D}" ]; then
+#    echo "Run flutter packages get on ${D}"
+#    ../flutter/bin/flutter packages get ${D}
+#
+#    echo "Run flutter analyze on ${D}"
+#    ../flutter/bin/flutter analyze ${D}/*.dart
+#  fi
+#done
 
 echo "Extract Dart snippets from the markdown documentation."
 dart tool/extract.dart
 
 echo "Analyzing the extracted Dart libraries."
 
-../flutter/bin/flutter analyze example/*.dart
+#../flutter/bin/flutter analyze example/*.dart
 
 echo "Check formatting of the extracted Dart libraries."
 
