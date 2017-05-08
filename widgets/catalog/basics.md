@@ -52,7 +52,7 @@ extra_css:
          {% if comp.subcategories contains sub.name %}
          <li class="cards__item">
              <div class="catalog-entry" >
-                  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}{% if comp.image contains 'https://' %}<img alt="" src="{{comp.image}}" />{% endif %}{% endif %}
+                  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
                   <h3>{{comp.name}}</h3>
                   <p> {{comp.description}} </p>
                   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
