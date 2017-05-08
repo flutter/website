@@ -25,7 +25,8 @@
         "name": "Information displays"
       },
       {
-        "name": "Layout"
+        "name": "Layout",
+        "description": "See also Flutter's <a href=\"/widgets/catalog/layout/\">general layout widgets</a> (such as row, column, and more)."
       }
     ],
     "id":"material"
