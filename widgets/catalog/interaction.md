@@ -15,16 +15,20 @@ extra_css:
 {% endfor %}
 
 
+<ul class="cards">
 {% for comp in site.data.catalog.widgets %}
  {% if comp.categories contains 'Interaction Models' %}
+ <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
   {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
+ </li>
  {% endif %}
 {% endfor %}
+</ul>
 
 <ul>
 {% for category in site.data.catalog.index %}
