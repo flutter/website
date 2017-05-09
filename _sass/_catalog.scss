@@ -20,21 +20,19 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
   min-width: 320px;
   min-height: 180px;
   padding: 20px;
   border: solid transparent;
   border-bottom-color: $brand-color;
-  transition-duration: 0.3s;
-  transition-property: border-color;
-  cursor: pointer;
   margin-left: auto;
   margin-right: auto;
   width: 320px;
-}
 
-.card:hover{
-  border: solid $primary-color;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .cards__item {
@@ -129,5 +127,17 @@
     margin-bottom: 20px;
     width: 300px;
     min-width: 300px;
+  }
+}
+
+.card-action {
+  position:absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: $brand-color;
+
+  a {
+    text-decoration: none;
   }
 }
