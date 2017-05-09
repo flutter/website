@@ -4,7 +4,6 @@ title: Scrolling Widgets
 sidebar: home_sidebar
 permalink: widgets/scrolling/
 ---
-
 <div class="catalog">
 {% for section in site.data.catalog.index %}
  {% if section.name contains 'Scrolling' %}
@@ -30,10 +29,10 @@ permalink: widgets/scrolling/
  {% if comp.categories contains 'Scrolling' %}
  <li class="cards__item">
  <div class="catalog-entry">
-  <h3>{{comp.name}}</h3>
   <div class="catalog-image-holder">
     {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
   </div>
+  <h3>{{comp.name}}</h3>
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
@@ -41,7 +40,6 @@ permalink: widgets/scrolling/
  {% endif %}
 {% endfor %}
 </ul>
-
 
 {% for category in site.data.catalog.index %}
    {% if category.name == 'Scrolling' %}
@@ -67,3 +65,4 @@ permalink: widgets/scrolling/
    {% endif %}
 {% endfor %}
 </div>
+   
