@@ -94,7 +94,7 @@
       "App structure and navigation"
     ],
     "link": "https://docs.flutter.io/flutter/material/Scaffold-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7T0hfM01sSmRyTG8/layout_structure_regions_mobile.png"
   },
   {
     "name": "Appbar",
@@ -168,7 +168,7 @@
       "App structure and navigation"
     ],
     "link": "https://docs.flutter.io/flutter/material/TabBarView-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaWdBdnhMT3ViXzQ/components_tabs.png"
   },
   {
     "name": "MaterialApp",
@@ -178,7 +178,7 @@
       "App structure and navigation"
     ],
     "link": "https://docs.flutter.io/flutter/material/MaterialApp-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png"
   },
   {
     "name": "WidgetsApp",
@@ -198,7 +198,7 @@
       "App structure and navigation"
     ],
     "link": "https://docs.flutter.io/flutter/material/Drawer-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaDhWUXJTTng4ZGs/patterns_navigation_drawer.png"
   },
   {
     "name": "FloatingActionButton",
@@ -228,7 +228,7 @@
       "Buttons"
     ],
     "link": "https://docs.flutter.io/flutter/material/IconButton-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png"
   },
   {
     "name": "PopupMenuButton",
@@ -238,7 +238,7 @@
       "Buttons"
     ],
     "link": "https://docs.flutter.io/flutter/material/PopupMenuButton-class.html",
-    "image": "/images/catalog-widget-placeholder.png"
+    "image": "https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png"
   },
   {
     "name": "ButtonBar",
