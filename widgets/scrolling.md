@@ -16,7 +16,7 @@ permalink: widgets/scrolling/
 {% for category in site.data.catalog.index %}
    {% if category.name == 'Scrolling' %}
     {% for sub in category.subcategories %}
-        <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
+        <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
     {% endfor %}
    {% endif %}
 {% endfor %}
