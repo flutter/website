@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Async
+title: Assets, Images, and Icons
 sidebar: home_sidebar
-permalink: widgets/catalog/async/
+permalink: widgets/assets/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Async' %}
+ {% if section.name contains 'Assets, Images, and Icons' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Async' %}
+   {% if category.name == 'Assets, Images, and Icons' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -25,8 +25,10 @@ permalink: widgets/catalog/async/
 <p>Back to the <a href="..">Flutter widget catalog</a>.</p>
 
 
+<ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Async' %}
+ {% if comp.categories contains 'Assets, Images, and Icons' %}
+ <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
   <div class="catalog-image-holder">
@@ -35,12 +37,14 @@ permalink: widgets/catalog/async/
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
+ </li>
  {% endif %}
 {% endfor %}
+</ul>
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Async' %}
+   {% if category.name == 'Assets, Images, and Icons' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">
@@ -48,9 +52,9 @@ permalink: widgets/catalog/async/
          {% if comp.subcategories contains sub.name %}
          <li class="cards__item">
              <div class="catalog-entry" >
-                <div class="catalog-image-holder">
-                  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
-                </div>
+              <div class="catalog-image-holder">
+                {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
+              </div>
                   <h3>{{comp.name}}</h3>
                   <p> {{comp.description}} </p>
                   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>

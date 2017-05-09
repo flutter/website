@@ -2,14 +2,14 @@
 layout: page
 title: Widgets
 sidebar: home_sidebar
-permalink: widgets/catalog/index
+permalink: widgets/index
 ---
 ## Introduction
 
 This page describes some of the widgets available in Flutter.
 
 Flutter uses a layered approach. At the highest level we provide
-[Material components](/widgets/catalog/material). These are implemented
+[Material components](/widgets/material). These are implemented
 in the [`material`
 library](https://docs.flutter.io/flutter/material/material-library.html).
 The `material` library is implemented in terms of the [`widgets`
@@ -30,7 +30,7 @@ and
 <ul class="cards">
 {% for section in site.data.catalog.index %}
          <li class="cards__item">
-            <a href="/widgets/catalog/{{section.id}}">
+            <a href="/widgets/{{section.id}}">
              <div class="card">
              <h3>{{section.name}}</h3>
              <p>{{section.description}}</p>

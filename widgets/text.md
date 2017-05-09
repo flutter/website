@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Layout
+title: Text
 sidebar: home_sidebar
-permalink: widgets/catalog/layout/
+permalink: widgets/text/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Layout' %}
+ {% if section.name contains 'Text' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Layout' %}
+   {% if category.name == 'Text' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -27,7 +27,7 @@ permalink: widgets/catalog/layout/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Layout' %}
+ {% if comp.categories contains 'Text' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -44,7 +44,7 @@ permalink: widgets/catalog/layout/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Layout' %}
+   {% if category.name == 'Text' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">

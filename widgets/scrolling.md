@@ -1,19 +1,20 @@
 ---
 layout: page
-title: Material Design
+title: Scrolling
 sidebar: home_sidebar
-permalink: widgets/catalog/material/
+permalink: widgets/scrolling/
 ---
+
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Material Design' %}
+ {% if section.name contains 'Scrolling' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Material Design' %}
+   {% if category.name == 'Scrolling' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -26,7 +27,7 @@ permalink: widgets/catalog/material/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Material Design' %}
+ {% if comp.categories contains 'Scrolling' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -41,8 +42,9 @@ permalink: widgets/catalog/material/
 {% endfor %}
 </ul>
 
+
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Material Design' %}
+   {% if category.name == 'Scrolling' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">
@@ -65,4 +67,3 @@ permalink: widgets/catalog/material/
    {% endif %}
 {% endfor %}
 </div>
-   

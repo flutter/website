@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Assets, Images, and Icons
+title: Accessibility
 sidebar: home_sidebar
-permalink: widgets/catalog/assets/
+permalink: widgets/accessibility/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Assets, Images, and Icons' %}
+ {% if section.name contains 'Accessibility' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Assets, Images, and Icons' %}
+   {% if category.name == 'Accessibility' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -27,7 +27,7 @@ permalink: widgets/catalog/assets/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Assets, Images, and Icons' %}
+ {% if comp.categories contains 'Accessibility' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -44,7 +44,7 @@ permalink: widgets/catalog/assets/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Assets, Images, and Icons' %}
+   {% if category.name == 'Accessibility' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">
@@ -52,9 +52,9 @@ permalink: widgets/catalog/assets/
          {% if comp.subcategories contains sub.name %}
          <li class="cards__item">
              <div class="catalog-entry" >
-              <div class="catalog-image-holder">
-                {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
-              </div>
+                <div class="catalog-image-holder">
+                  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
+                </div>
                   <h3>{{comp.name}}</h3>
                   <p> {{comp.description}} </p>
                   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>

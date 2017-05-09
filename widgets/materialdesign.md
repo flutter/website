@@ -1,20 +1,19 @@
 ---
 layout: page
-title: Accessibility
+title: Material Design
 sidebar: home_sidebar
-permalink: widgets/catalog/accessibility/
+permalink: widgets/material/
 ---
-
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Accessibility' %}
+ {% if section.name contains 'Material Design' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Accessibility' %}
+   {% if category.name == 'Material Design' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -27,7 +26,7 @@ permalink: widgets/catalog/accessibility/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Accessibility' %}
+ {% if comp.categories contains 'Material Design' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -42,9 +41,8 @@ permalink: widgets/catalog/accessibility/
 {% endfor %}
 </ul>
 
-
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Accessibility' %}
+   {% if category.name == 'Material Design' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">
@@ -67,3 +65,4 @@ permalink: widgets/catalog/accessibility/
    {% endif %}
 {% endfor %}
 </div>
+   

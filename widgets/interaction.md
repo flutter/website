@@ -2,7 +2,7 @@
 layout: page
 title: Interaction Models
 sidebar: home_sidebar
-permalink: widgets/catalog/interaction/
+permalink: widgets/interaction/
 ---
 
 <div class="catalog">

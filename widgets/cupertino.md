@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Styling
+title: Cupertino (iOS-style widgets)
 sidebar: home_sidebar
-permalink: widgets/catalog/styling/
+permalink: widgets/cupertino/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Styling' %}
+ {% if section.name contains 'Cupertino (iOS-style widgets)' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Styling' %}
+   {% if category.name == 'Cupertino (iOS-style widgets)' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -27,7 +27,7 @@ permalink: widgets/catalog/styling/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Styling' %}
+ {% if comp.categories contains 'Cupertino (iOS-style widgets)' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -44,7 +44,7 @@ permalink: widgets/catalog/styling/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Styling' %}
+   {% if category.name == 'Cupertino (iOS-style widgets)' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">

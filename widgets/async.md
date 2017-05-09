@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Cupertino (iOS-style widgets)
+title: Async
 sidebar: home_sidebar
-permalink: widgets/catalog/cupertino/
+permalink: widgets/async/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Cupertino (iOS-style widgets)' %}
+ {% if section.name contains 'Async' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Cupertino (iOS-style widgets)' %}
+   {% if category.name == 'Async' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -25,10 +25,8 @@ permalink: widgets/catalog/cupertino/
 <p>Back to the <a href="..">Flutter widget catalog</a>.</p>
 
 
-<ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Cupertino (iOS-style widgets)' %}
- <li class="cards__item">
+ {% if comp.categories contains 'Async' %}
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
   <div class="catalog-image-holder">
@@ -37,14 +35,12 @@ permalink: widgets/catalog/cupertino/
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
- </li>
  {% endif %}
 {% endfor %}
-</ul>
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Cupertino (iOS-style widgets)' %}
+   {% if category.name == 'Async' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">

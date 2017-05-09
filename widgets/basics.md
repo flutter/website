@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Animation and Motion
+title: Basics
 sidebar: home_sidebar
-permalink: widgets/catalog/animation/
+permalink: widgets/basics/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Animation and Motion' %}
+ {% if section.name contains 'Basics' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Animation and Motion' %}
+   {% if category.name == 'Basics' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -24,10 +24,9 @@ permalink: widgets/catalog/animation/
 
 <p>Back to the <a href="..">Flutter widget catalog</a>.</p>
 
-
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Animation and Motion' %}
+ {% if comp.categories contains 'Basics' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -44,7 +43,7 @@ permalink: widgets/catalog/animation/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Animation and Motion' %}
+   {% if category.name == 'Basics' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">

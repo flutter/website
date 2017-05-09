@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Painting and effects
+title: Animation and Motion
 sidebar: home_sidebar
-permalink: widgets/catalog/painting/
+permalink: widgets/animation/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Painting and effects' %}
+ {% if section.name contains 'Animation and Motion' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Painting and effects' %}
+   {% if category.name == 'Animation and Motion' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -27,7 +27,7 @@ permalink: widgets/catalog/painting/
 
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Painting and effects' %}
+ {% if comp.categories contains 'Animation and Motion' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -44,7 +44,7 @@ permalink: widgets/catalog/painting/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Painting and effects' %}
+   {% if category.name == 'Animation and Motion' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">

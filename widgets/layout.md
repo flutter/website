@@ -1,20 +1,20 @@
 ---
 layout: page
-title: Basics
+title: Layout
 sidebar: home_sidebar
-permalink: widgets/catalog/basics/
+permalink: widgets/layout/
 ---
 
 <div class="catalog">
 {% for section in site.data.catalog.index %}
- {% if section.name contains 'Basics' %}
+ {% if section.name contains 'Layout' %}
  <div class="category-description"><p>{{section.description}}</p></div>
  {% endif %}
 {% endfor %}
 
 <ul>
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Basics' %}
+   {% if category.name == 'Layout' %}
     {% for sub in category.subcategories %}
         <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
     {% endfor %}
@@ -24,9 +24,10 @@ permalink: widgets/catalog/basics/
 
 <p>Back to the <a href="..">Flutter widget catalog</a>.</p>
 
+
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
- {% if comp.categories contains 'Basics' %}
+ {% if comp.categories contains 'Layout' %}
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
@@ -43,7 +44,7 @@ permalink: widgets/catalog/basics/
 
 
 {% for category in site.data.catalog.index %}
-   {% if category.name == 'Basics' %}
+   {% if category.name == 'Layout' %}
     {% for sub in category.subcategories %}
         <h1 id="{{sub.name}}">{{sub.name}}</h1>
         <ul class="cards">
