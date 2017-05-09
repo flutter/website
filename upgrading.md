@@ -38,12 +38,7 @@ command from the root of your app (the same directory that contains the
 `pubspec.yaml` file):
 
 ```
-$ flutter upgrade
-```
-
-## Upgrading your packages
-
-If you've modified your `pubspec.yaml` file, or you want to only update
+$pubspec.yaml` file, or you want to only update
 the packages your app depends upon instead of both the packages and
 Flutter itself, then use the following commands:
 * `flutter packages get` to get all the dependencies listed
