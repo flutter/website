@@ -20,7 +20,9 @@ extra_css:
  <li class="cards__item">
  <div class="catalog-entry">
   <h3>{{comp.name}}</h3>
-  {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
+  <div class="catalog-image-holder">
+    {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
+  </div>
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
