@@ -21,7 +21,7 @@ permalink: widgets/material/
 {% endfor %}
 </ul>
 
-<p>Back to the <a href="..">Flutter widget catalog</a>.</p>
+<p>See more widgets in the <a href="..">Flutter widget catalog</a>.</p>
 
 
 <ul class="cards">

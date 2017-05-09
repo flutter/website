@@ -22,7 +22,7 @@ permalink: widgets/async/
 {% endfor %}
 </ul>
 
-<p>Back to the <a href="..">Flutter widget catalog</a>.</p>
+<p>See more widgets in the <a href="..">Flutter widget catalog</a>.</p>
 
 
 {% for comp in site.data.catalog.widgets %}

@@ -1,7 +1,6 @@
 
 .cards {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
@@ -37,7 +36,9 @@
 }
 
 .cards__item {
+  display: flex;
   padding: 0 0 16px 0;
+  margin-right: 24px;
   width: 320px;
 }
 
