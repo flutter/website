@@ -2,15 +2,16 @@
 
 ### Install Android Studio
 
-To develop Flutter apps for Android, you can use a Mac, Windows, or Linux (64-bit) machine:
+To develop Flutter apps for Android, you can use a Mac, Windows, or Linux
+(64-bit) machine.
 
-1. Install [Android Studio](https://developer.android.com/studio/index.html).
+Flutter requires Android Studio to be installed and configured:
 
-   Flutter requires the latest Android SDK and Android SDK Platform-Tools packages.
-   You can verify these are up-to-date in **Android Studio>Configure>SDK Manager**,
-   as described in [Update the IDE and SDK Tools](https://developer.android.com/studio/intro/update.html).
+1. Download and install [Android Studio](https://developer.android.com/studio/index.html).
 
-1. Start Android Studio.
+1. Start Android Studio, and go through the 'Android Studio Setup Wizard'. This
+will install the latest Android SDK and Android SDK Platform-Tools packages,
+which are required by Flutter.
 
 ### Set up your Android device
 
