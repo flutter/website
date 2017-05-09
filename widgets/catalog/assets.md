@@ -3,8 +3,6 @@ layout: page
 title: Assets, Images, and Icons
 sidebar: home_sidebar
 permalink: widgets/catalog/assets/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

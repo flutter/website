@@ -3,8 +3,6 @@ layout: page
 title: Cupertino (iOS-style widgets)
 sidebar: home_sidebar
 permalink: widgets/catalog/cupertino/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

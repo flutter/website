@@ -3,8 +3,6 @@ layout: page
 title: Animation and Motion
 sidebar: home_sidebar
 permalink: widgets/catalog/animation/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

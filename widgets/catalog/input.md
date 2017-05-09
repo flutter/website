@@ -3,8 +3,6 @@ layout: page
 title: Input
 sidebar: home_sidebar
 permalink: widgets/catalog/input/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

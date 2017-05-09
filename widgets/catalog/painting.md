@@ -3,8 +3,6 @@ layout: page
 title: Painting and effects
 sidebar: home_sidebar
 permalink: widgets/catalog/painting/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

@@ -3,8 +3,6 @@ layout: page
 title: Widgets
 sidebar: home_sidebar
 permalink: widgets/catalog/index
-extra_css:
-  - /css/catalog.css
 ---
 ## Introduction
 

@@ -3,8 +3,6 @@ layout: page
 title: Interaction Models
 sidebar: home_sidebar
 permalink: widgets/catalog/interaction/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

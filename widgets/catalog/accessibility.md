@@ -3,8 +3,6 @@ layout: page
 title: Accessibility
 sidebar: home_sidebar
 permalink: widgets/catalog/accessibility/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

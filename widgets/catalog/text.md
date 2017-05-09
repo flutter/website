@@ -3,8 +3,6 @@ layout: page
 title: Text
 sidebar: home_sidebar
 permalink: widgets/catalog/text/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">

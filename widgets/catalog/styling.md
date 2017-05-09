@@ -3,8 +3,6 @@ layout: page
 title: Styling
 sidebar: home_sidebar
 permalink: widgets/catalog/styling/
-extra_css:
-  - /css/catalog.css
 ---
 
 <div class="catalog">
