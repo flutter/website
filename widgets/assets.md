@@ -30,10 +30,10 @@ permalink: widgets/assets/
  {% if comp.categories contains 'Assets, Images, and Icons' %}
  <li class="cards__item">
  <div class="catalog-entry">
-  <h3>{{comp.name}}</h3>
   <div class="catalog-image-holder">
     {% if comp.image contains '<svg' %}{{comp.image}}{% else %}<img alt="" src="{{comp.image}}" />{% endif %}
   </div>
+  <h3>{{comp.name}}</h3>
   <p> {{comp.description}} </p>
   <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
  </div>
