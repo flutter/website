@@ -7,7 +7,7 @@
 
     <ul>
         {% for category in site.data.catalog.index %}
-        {% if category.name == 'Async' %}
+        {% if category.name == include.category %}
         {% for sub in category.subcategories %}
         <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
         {% endfor %}
