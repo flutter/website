@@ -101,12 +101,20 @@
     color: $brand-color;
   }
 
-  .catalog-entry img {
-    width: 100%;
+  .catalog-entry .catalog-image-holder {
     height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: #FCFCFC;
+  }
+
+  .catalog-entry img {
+    display: block;
+    max-height: 200px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   div.clear {
