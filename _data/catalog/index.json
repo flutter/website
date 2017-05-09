@@ -98,11 +98,6 @@
     "id":"painting"
   },
   {
-    "name": "Accessibility",
-    "description": "Make your app accessible. (This is a work-in-progress.)",
-    "id":"accessibility"
-  },
-  {
     "name": "Async",
     "description": "Async patterns to your Flutter application.",
     "id":"async"
@@ -111,5 +106,10 @@
     "name": "Scrolling",
     "description": "Scroll multiple widgets as children of the parent.",
     "id":"scrolling"
-  }
+  },
+  {
+    "name": "Accessibility",
+    "description": "Make your app accessible. (This is a work-in-progress.)",
+    "id":"accessibility"
+  },
 ]
