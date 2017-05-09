@@ -74,7 +74,7 @@ echo "Building site."
 bundle exec jekyll build
 
 echo "Validating all links."
-#rake checklinks
+rake checklinks
 
 if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
   # Deploy pushes to master to Firebase hosting.
