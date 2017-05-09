@@ -73,7 +73,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Raised Button",
+    "name": "RaisedButton",
     "description": "A material design raised button. A raised button consists of a rectangular piece of material that hovers over the interface.",
     "categories": [
       "Basics"
@@ -141,7 +141,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Bottom navigation",
+    "name": "BottomNavigationBar",
     "description": "Bottom navigation bars make it easy to explore and switch between top-level views in a single tap. The BottomNavigationBar widget implements this component.",
     "categories": [],
     "subcategories": [
@@ -191,7 +191,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Navigation drawer",
+    "name": "Drawer",
     "description": "A material design panel that slides in horizontally from the edge of a Scaffold to show navigation links in an application.",
     "categories": [],
     "subcategories": [
@@ -201,7 +201,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Floating action button",
+    "name": "FloatingActionButton",
     "description": "A floating action button is a circular icon button that hovers over content to promote a primary action in the application. Floating action buttons are most commonly used in the Scaffold.floatingActionButton field.",
     "categories": [],
     "subcategories": [
@@ -211,7 +211,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VN20tOXJoUjVxQjg/components_buttons_fab.png"
   },
   {
-    "name": "Flat button",
+    "name": "FlatButton",
     "description": "A flat button is a section printed on a Material widget that reacts to touches by filling with color.",
     "categories": [],
     "subcategories": [
@@ -221,7 +221,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png"
   },
   {
-    "name": "Icon Button",
+    "name": "IconButton",
     "description": "An icon button is a picture printed on a Material widget that reacts to touches by filling with color (ink).",
     "categories": [],
     "subcategories": [
@@ -231,7 +231,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Popup menu button",
+    "name": "PopupMenuButton",
     "description": "Displays a menu when pressed and calls onSelected when the menu is dismissed because an item was selected.",
     "categories": [],
     "subcategories": [
@@ -271,7 +271,7 @@
     "image": "https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7T2xGbGo0cUlPVG8/components_switches_check1.png"
   },
   {
-    "name": "Radio button",
+    "name": "Radio",
     "description": "Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side. ",
     "categories": [],
     "subcategories": [
@@ -291,7 +291,7 @@
     "image": "https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7NDg4aGIzVXYxVEE/components_switches_switch1.png"
   },
   {
-    "name": "Sliders",
+    "name": "Slider",
     "description": "Sliders let users select from a range of values by moving the slider thumb. ",
     "categories": [],
     "subcategories": [
@@ -301,7 +301,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTmJrQUYzajFIclE/components_sliders.png"
   },
   {
-    "name": "Date and time pickers",
+    "name": "Date & Time Pickers",
     "description": "Date pickers use a dialog window to select a single date on mobile. Time pickers use a dialog to select a single time (in the hours:minutes format) on mobile.",
     "categories": [],
     "subcategories": [
@@ -311,7 +311,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VY2h4WElGdEhPb2c/components_pickers.png"
   },
   {
-    "name": "Simple Dialog",
+    "name": "SimpleDialog",
     "description": "Simple dialogs can provide additional details or actions about a list item. For example they can display avatars icons clarifying subtext or orthogonal actions (such as adding an account). ",
     "categories": [],
     "subcategories": [
@@ -321,7 +321,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVGNnN3NvMGdoQTg/components_dialogs.png"
   },
   {
-    "name": "Alerts",
+    "name": "AlertDialog",
     "description": "Alerts are urgent interruptions requiring acknowledgement that inform the user about a situation. The AlertDialog widget implements this component.",
     "categories": [],
     "subcategories": [
@@ -331,7 +331,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0Bzhp5Z4wHba3TzFHYVlrbWF2bnM/components_alerts_1.png"
   },
   {
-    "name": "Bottom sheets",
+    "name": "BottomSheet",
     "description": "Bottom sheets slide up from the bottom of the screen to reveal more content. You can call showBottomSheet() to implement a persistent bottom sheet or showModalBottomSheet() to implement a modal bottom sheet.",
     "categories": [],
     "subcategories": [
@@ -341,7 +341,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVWZzZ1FIN09XWGc/components_bottom_sheets.png"
   },
   {
-    "name": "Expansion panels",
+    "name": "ExpansionPanel",
     "description": "Expansion panels contain creation flows and allow lightweight editing of an element. The ExpansionPanel widget implements this component.",
     "categories": [],
     "subcategories": [
@@ -351,7 +351,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png"
   },
   {
-    "name": "Snackbars",
+    "name": "SnackBar",
     "description": "A lightweight message with an optional action which briefly displays at the bottom of the screen.",
     "categories": [],
     "subcategories": [
@@ -361,7 +361,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VSjZkendtc19iZ2M/components_snackbars.png"
   },
   {
-    "name": "Chips",
+    "name": "Chip",
     "description": "A material design chip. Chips represent complex entities in small blocks, such as a contact.",
     "categories": [],
     "subcategories": [
@@ -371,7 +371,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VM1VORGxxWUx5U0E/components_chips.png"
   },
   {
-    "name": "Tooltips",
+    "name": "Tooltip",
     "description": "Tooltips provide text labels that help explain the function of a button or other user interface action. Wrap the button in a Tooltip widget to show a label when the widget long pressed (or when the user takes some other appropriate action).",
     "categories": [],
     "subcategories": [
@@ -381,7 +381,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VZ1JKMzJFcmhOWkk/components_tooltips.png"
   },
   {
-    "name": "Data tables",
+    "name": "DataTable",
     "description": "Data tables display sets of raw data. They usually appear in desktop enterprise products. The DataTable widget implements this component.",
     "categories": [],
     "subcategories": [
@@ -391,7 +391,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWTJHMmJZdWZ5LU0/components_data_tables.png"
   },
   {
-    "name": "Cards",
+    "name": "Card",
     "description": "A material design card. A card has slightly rounded corners and a shadow.",
     "categories": [],
     "subcategories": [
@@ -401,7 +401,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VR0ptbC1RV1NLNlk/components_cards.png"
   },
   {
-    "name": "Progress & activity indicators",
+    "name": "LinearProgressIndicator",
     "description": "Progress and activity indicators are visual indications of an app loading content. The LinearProgressIndicator widget implements this component. In addition you may also use the CircularProgressIndicator widget.",
     "categories": [],
     "subcategories": [
@@ -411,7 +411,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png"
   },
   {
-    "name": "Grid Lists",
+    "name": "GridView",
     "description": "A grid list consists of a repeated pattern of cells arrayed in a vertical and horizontal layout. The GridView widget implements this component.",
     "categories": [],
     "subcategories": [
@@ -421,7 +421,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VandQYXpNMG9aQUk/components_grid_lists.png"
   },
   {
-    "name": "List tiles",
+    "name": "ListTile",
     "description": "A single fixed-height row that typically contains some text as well as a leading or trailing icon.",
     "categories": [],
     "subcategories": [
@@ -431,7 +431,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7UUw0bzVwU2lMUHc/components_lists_keylines_single10.png"
   },
   {
-    "name": "Steppers",
+    "name": "Stepper",
     "description": "A material stepper widget that displays progress through a sequence of steps.",
     "categories": [],
     "subcategories": [
@@ -441,7 +441,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTndyUnNCR2tQREE/components_steppers.png"
   },
   {
-    "name": "Dividers",
+    "name": "Divider",
     "description": "A one logical pixel thick horizontal line, with padding on either side.",
     "categories": [],
     "subcategories": [
@@ -451,7 +451,7 @@
     "image": "https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VUVlmbHM1Q013RU0/components_dividers.png"
   },
   {
-    "name": "Activity Indicator",
+    "name": "CupertinoActivityIndicator",
     "description": "An iOS-style activity indicator.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -461,7 +461,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Alert Dialog",
+    "name": "CupertinoAlertDialog",
     "description": "An iOS-style alert dialog.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -471,7 +471,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Button",
+    "name": "CupertinoButton",
     "description": "An iOS-style button.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -481,7 +481,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Dialog",
+    "name": "CupertinoDialog",
     "description": "An iOS-style dialog.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -491,7 +491,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "DialogAction",
+    "name": "CupertinoDialogAction",
     "description": "A button typically used in a CupertinoAlertDialog.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -501,7 +501,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Slider",
+    "name": "CupertinoSlider",
     "description": "Used to select from a range of values.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -511,7 +511,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Switch",
+    "name": "CupertinoSwitch",
     "description": "An iOS-style switch. Used to toggle the on/off state of a single setting.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -521,7 +521,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "PageTransition",
+    "name": "CupertinoPageTransition",
     "description": "Provides an iOS-style page transition animation.",
     "categories": [
       "Cupertino (iOS-style widgets)"
@@ -531,7 +531,7 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "FullscreenDialogTransition",
+    "name": "CupertinoFullscreenDialogTransition",
     "description": "An iOS-style transition used for summoning fullscreen dialogs.",
     "categories": [
       "Cupertino (iOS-style widgets)"
