@@ -14,6 +14,18 @@ extra_css:
  {% endif %}
 {% endfor %}
 
+<ul>
+{% for category in site.data.catalog.index %}
+   {% if category.name == 'Basics' %}
+    {% for sub in category.subcategories %}
+        <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
+    {% endfor %}
+   {% endif %}
+{% endfor %}
+</ul>
+
+<p>Back to the <a href="..">Flutter widget catalog</a>.</p>
+
 <ul class="cards">
 {% for comp in site.data.catalog.widgets %}
  {% if comp.categories contains 'Basics' %}
@@ -28,16 +40,6 @@ extra_css:
  </div>
  </li>
  {% endif %}
-{% endfor %}
-</ul>
-
-<ul>
-{% for category in site.data.catalog.index %}
-   {% if category.name == 'Basics' %}
-    {% for sub in category.subcategories %}
-        <a href="#{{sub.name}}"><li>{{sub.name}}</li></a>
-    {% endfor %}
-   {% endif %}
 {% endfor %}
 </ul>
 
