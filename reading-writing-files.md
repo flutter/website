@@ -5,13 +5,15 @@ sidebar: home_sidebar
 permalink: /reading-writing-files/
 ---
 
-This guide describes how to read and write files in Flutter by using the [`PathProvider`](https://docs.flutter.io/flutter/services/PathProvider-class.html) class.
+This guide describes how to read and write files in Flutter by using the
+[`PathProvider`](https://pub.dartlang.org/packages/path_provider) plugin and
+Dart's [`IO`](https://api.dartlang.org/stable/dart-io/dart-io-library.html) library.
 
 * TOC
 {:toc}
 
 ## Introduction
-The [`PathProvider`](https://docs.flutter.io/flutter/services/PathProvider-class.html) class provides a platform-agnostic way to
+The [`PathProvider`](https://pub.dartlang.org/packages/path_provider) plugin provides a platform-agnostic way to
 access commonly used locations on the device's filesystem. The class currently supports access to two filesystem locations:
 
 + **Temporary directory:** A temporary directory (cache) that the system can clear at any time. On iOS, this corresponds to the value that [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context.html#getCacheDir()) returns.
@@ -22,13 +24,19 @@ Once your Flutter app has a reference to a file location, you can use the [dart:
 ## Example of reading and writing to a file
 
 The following example shows how to modify the default app created by `flutter create`, so that
-the app persists the number of button presses across relaunches.
+the app persists the number of button presses across relaunches:
+
+1. Create a new Flutter project with `flutter create` or using File > New Project in IntelliJ.
+
+1. [Declare a dependency](https://pub.dartlang.org/packages/path_provider#-pkg-tab-installing) on the PathProvider plugin in `pubspec.yaml`
+
+1. Replace the contents of `lib/main.dart` with the following:
 
 ```dart
 import 'dart:io';
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(
@@ -62,7 +70,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
 
   Future<File> _getLocalFile() async {
     // get the path to the document directory.
-    String dir = (await PathProvider.getApplicationDocumentsDirectory()).path;
+    String dir = (await getApplicationDocumentsDirectory()).path;
     return new File('$dir/counter.txt');
   }
 
