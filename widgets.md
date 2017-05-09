@@ -31,7 +31,7 @@ and
 <ul class="cards">
 {% for section in site.data.catalog.index %}
          <li class="cards__item">
-            <a href="/widgets/catalog/{{section.id}}">
+            <a href="/widgets/{{section.id}}">
              <div class="card">
              <h3>{{section.name}}</h3>
              <p>{{section.description}}</p>
