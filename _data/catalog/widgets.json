@@ -961,28 +961,6 @@
     "image": "/images/catalog-widget-placeholder.png"
   },
   {
-    "name": "Animated*",
-    "description": "",
-    "categories": [
-      "Animation and Motion"
-    ],
-    "subcategories": [
-    ],
-    "link": "",
-    "image": "/images/catalog-widget-placeholder.png"
-  },
-  {
-    "name": "*Transition",
-    "description": "",
-    "categories": [
-      "Animation and Motion"
-    ],
-    "subcategories": [
-    ],
-    "link": "",
-    "image": "/images/catalog-widget-placeholder.png"
-  },
-  {
     "name": "AnimatedBuilder",
     "description": "A general-purpose widget for building animations. AnimatedBuilder is useful for more complex widgets that wish to include an animation as part of a larger build function. To use AnimatedBuilder, simply construct the widget and pass it a builder function.",
     "categories": [
@@ -1377,6 +1355,83 @@
     "subcategories": [
     ],
     "link": "https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "DecoratedBoxTransition",
+    "description": "Animated version of a DecoratedBox that animates the different properties of its Decoration.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/DecoratedBoxTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "FadeTransition",
+    "description": "Animates the opacity of a widget.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FadeTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "PositionedTransition",
+    "description": "Animates the opacity of a widget.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/PositionedTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "RotationTransition",
+    "description": "",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RotationTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "ScaleTransition",
+    "description": "",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ScaleTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "SizeTransition",
+    "description": "",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SizeTransition-class.html",
+    "image": "/images/catalog-widget-placeholder.png"
+  },
+  {
+    "name": "SlideTransition",
+    "description": "",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SlideTransition-class.html",
     "image": "/images/catalog-widget-placeholder.png"
   }
 ]
