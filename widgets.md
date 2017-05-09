@@ -5,9 +5,9 @@ sidebar: home_sidebar
 permalink: /widgets/
 ---
 
-Flutter includes many different widgets, including
-low-level widgets such as painting, and high-level widgets
-such as Material Design and Cupertino (iOS-style).
+Create beautiful apps faster with Flutter's
+collection of visual, structural, platform,
+and interactive widgets.
 
 <ul class="cards">
 {% for section in site.data.catalog.index %}

@@ -7,7 +7,7 @@
   },
   {
     "name": "Material Design",
-    "description": "Flutter implements many of the UI components from Google’s <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
+    "description": "Visual, behavioral, and motion-rich widgets implementing Google’s <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
     "subcategories": [
       {
         "name": "App structure and navigation"
@@ -33,12 +33,12 @@
   },
   {
     "name": "Cupertino (iOS-style widgets)",
-    "description": "Flutter widgets implementing the current iOS design language.",
+    "description": "Beautiful and high-fidelity widgets for current iOS design language.",
     "id":"cupertino"
   },
   {
     "name": "Layout",
-    "description": "The following widgets allow you to arrange their child or children into columns, rows, grids, and many other layouts.",
+    "description": "Arrange other widgets columns, rows, grids, and many other layouts.",
     "subcategories": [
       {
         "name": "Single-child layout widgets",
@@ -56,27 +56,27 @@
   },
   {
     "name": "Text",
-    "description": "The following widgets are used to display and style text.",
+    "description": "Display and style text.",
     "id":"text"
   },
   {
     "name": "Assets, Images, and Icons",
-    "description": "The following widgets manage assets, display images, and show icons.",
+    "description": "Manage assets, display images, and show icons.",
     "id":"assets"
   },
   {
     "name": "Input",
-    "description": "The following widgets are used to take user input in addition to input widgets in in Material Design and Cupertino.",
+    "description": "Take user input in addition to input widgets in in Material Design and Cupertino.",
     "id":"input"
   },
   {
     "name": "Animation and Motion",
-    "description": "The following widgets bring animations to your app. Check out Animations in Flutter for an overview.",
+    "description": "Bring animations to your app. Check out <a href=\"/animations/\">Animations</a> in Flutter for an overview.",
     "id":"animation"
   },
   {
     "name": "Interaction Models",
-    "description": "The following widgets allows your app to respond to touch events and route users to different views.",
+    "description": "Respond to touch events and route users to different views.",
     "subcategories": [
       {
         "name": "Touch interactions"
@@ -89,7 +89,7 @@
   },
   {
     "name": "Styling",
-    "description": "The following widgets allow you to manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
+    "description": "Manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
     "id":"styling"
   },
   {
@@ -99,17 +99,17 @@
   },
   {
     "name": "Accessibility",
-    "description": "The following widgets help make your app accessible.",
+    "description": "Make your app accessible. (This is a work-in-progress.)",
     "id":"accessibility"
   },
   {
     "name": "Async",
-    "description": "These widgets allow you to add async patterns to your flutter application.",
+    "description": "Async patterns to your Flutter application.",
     "id":"async"
   },
   {
     "name": "Scrolling",
-    "description": "The following widgets allow you to scroll multiple widgets as children of the parent.",
+    "description": "Scroll multiple widgets as children of the parent.",
     "id":"scrolling"
   }
 ]
