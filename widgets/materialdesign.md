@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Material Design
+title: Material Design Widgets
 sidebar: home_sidebar
 permalink: widgets/material/
 ---

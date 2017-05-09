@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Layout
+title: Layout Widgets
 sidebar: home_sidebar
 permalink: widgets/layout/
 ---

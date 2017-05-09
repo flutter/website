@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Painting and effects
+title: Painting and Effect Widgets
 sidebar: home_sidebar
 permalink: widgets/painting/
 ---

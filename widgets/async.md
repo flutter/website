@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Async
+title: Async Widgets
 sidebar: home_sidebar
 permalink: widgets/async/
 ---

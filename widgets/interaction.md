@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Interaction Models
+title: Interaction Model Widgets
 sidebar: home_sidebar
 permalink: widgets/interaction/
 ---

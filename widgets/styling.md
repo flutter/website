@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Styling
+title: Styling Widgets
 sidebar: home_sidebar
 permalink: widgets/styling/
 ---

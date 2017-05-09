@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Accessibility
+title: Accessibility Widgets
 sidebar: home_sidebar
 permalink: widgets/accessibility/
 ---

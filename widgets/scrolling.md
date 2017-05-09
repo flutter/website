@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Scrolling
+title: Scrolling Widgets
 sidebar: home_sidebar
 permalink: widgets/scrolling/
 ---

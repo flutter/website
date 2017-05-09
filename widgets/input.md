@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Input
+title: Input Widgets
 sidebar: home_sidebar
 permalink: widgets/input/
 ---

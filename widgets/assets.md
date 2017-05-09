@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Assets, Images, and Icons
+title: Assets, Images, and Icon Widgets
 sidebar: home_sidebar
 permalink: widgets/assets/
 ---

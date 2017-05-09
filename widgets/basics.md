@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Basics
+title: Basic Widgets
 sidebar: home_sidebar
 permalink: widgets/basics/
 ---
