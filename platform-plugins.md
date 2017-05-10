@@ -161,11 +161,11 @@ This creates a plugin project with the following content:
 ### Managing dependencies from a Flutter app to a Flutter plugin
 
 Once a plugin has been [published](#publish), you can depend on it by simply
-listing it's name in `pubspec.yaml` as illustrated by the [example (#example)
+listing it's name in `pubspec.yaml` as illustrated by the [example](#example)
 above.
 
 During development of a plugin that has not yet been published, or for private
-plugins not intended for public publishing, the following additional way of
+plugins not intended for public publishing, an additional way of
 depending on a plugin can be useful:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
