@@ -10,13 +10,13 @@ Flutter requires Android Studio to be installed and configured:
 1. Download and install [Android Studio](https://developer.android.com/studio/index.html).
 
 1. Start Android Studio, and go through the 'Android Studio Setup Wizard'. This
-will install the latest Android SDK and Android SDK Platform-Tools packages,
-which are required by Flutter.
+will install the latest Android SDK, Android SDK Platform-Tools, and Android SDK
+Build-Tools, which are required by Flutter when developing for Android.
 
 ### Set up your Android device
 
-To prepare to run and test your Flutter app on Android, you'll need an Android device running
-Android 4.1 (API level 16) or higher.
+To prepare to run and test your Flutter app on an Android device, you'll need an
+Android device running Android 4.1 (API level 16) or higher.
 
 1. Enable developer mode on your device by visiting **`Settings>About phone`** and
 tapping the **Build number** line seven times.
