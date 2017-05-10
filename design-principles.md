@@ -142,6 +142,18 @@ To a make change that will require developers to change their code:
 
     - A sincere offer to help port code, which includes the preferred venue for
       contacting the person who made the change.
+      
+Where possible, even "breaking" changes should be made in a backwards-compatible way,
+for example by introducing a new class and marking the old class `@deprecated`. When
+doing this, include a description of how to transition in the deprecation notice, for
+example:
+
+```dart
+@Deprecated('FooInterface has been deprecated; it is recommended that you transition to the new FooDelegate.')
+class FooInterface {
+  /// ...
+}
+```
 
 #### Google-only responsibilities
 
