@@ -148,6 +148,7 @@ for example by introducing a new class and marking the old class `@deprecated`. 
 doing this, include a description of how to transition in the deprecation notice, for
 example:
 
+<!-- skip -->
 ```dart
 @Deprecated('FooInterface has been deprecated; it is recommended that you transition to the new FooDelegate.')
 class FooInterface {
