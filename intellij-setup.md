@@ -39,7 +39,7 @@ installs it for you.
 To install the plugins:
 
 1. Start IntelliJ.
-1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Linux).
+1. Open plugin preferences (**Preferences>Plugins** on macOS, **File>Settings>Plugins** on Windows & Linux).
 1. Select **Browse repositories…**,  select the Flutter plug-in and click `install`.
 1. Click `Yes` when prompted to install the Dart plugin.
 1. Click `Restart IntelliJ IDEA`.
@@ -49,8 +49,8 @@ navigation panel when you create a new project.
 
 ### Configuring the Flutter plugin
 
-1. Open preferences (**Preferences** on macOS, **File>Settings** on Linux).
+1. Open preferences (**Preferences** on macOS, **File>Settings** on Windows & Linux).
 1. Select **Languages & Frameworks>Flutter**.
 1. Enter or browse to your Flutter SDK directory in **Flutter SDK path**. This is the top-level `flutter`
-   directory, without the `bin` subdirectory. For example, `/Users/obiwan/flutter`.
+   directory, without the `bin` subdirectory. For example, `c:\Users\obiwan\flutter` / `/Users/obiwan/flutter`.
 1. Click **OK**
