@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Routing and navigation
-sidebar: home_sidebar
+
 permalink: /routing-and-navigation/
 ---
 

@@ -1,0 +1,156 @@
+.get-started-button {
+    background-color: #0091EA;
+    color: #fff;
+    padding: 16px;
+    border-radius: 2px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: 16px;
+}
+
+.get-started-button:hover {
+    color: #fff;
+}
+
+.homepage__tagline {
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.homepage__title {
+    margin-bottom: 40px;
+    width: 75%;
+    line-height: 1.5;
+}
+
+.homepage__button_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    .alert {
+        margin-top: 0;
+        padding: 0;
+        background-color: transparent;
+        color: #424242;
+    }
+
+    > * {
+        margin-bottom: 16px;
+    }
+}
+
+.homepage__features {
+    h3 {
+        margin-bottom: 24px;
+    }
+
+    ul {
+        margin: 0 0 24px 8px;
+        list-style: none;
+
+        li {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.homepage {
+
+    pre[class*="language-"] {
+        margin-bottom: 36px;
+    }
+
+    h1 {
+        color: #0091ea;
+    }
+
+    h1, h2, p {
+        margin-bottom: 36px;
+    }
+
+    .screenshot-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+
+    img.screenshot {
+        width: 270px;
+        height: 100%;
+        margin-bottom: 16px;
+        margin-right: 16px;
+    }
+
+    section {
+        margin-bottom: 64px;
+        padding: 48px;
+        border-radius: 4px;
+        box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+    
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .feature-lists {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 36px;
+    }
+
+    .hot-reload-gif-container {
+        text-align: center;
+    }
+
+    .key-points {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .key-points {
+            display: block;
+
+            p {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .homepage__key_point_title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        color: #424242;
+    }
+
+    .homepage__key_point {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
+        margin-right: 16px;
+    }
+
+    .homepage__try_flutter {
+        .homepage__try_today {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .homepage__button_row {
+            margin-bottom: 0;
+        }
+    }
+}

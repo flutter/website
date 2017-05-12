@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Widgets Catalog
-sidebar: home_sidebar
 permalink: /widgets/
 ---
 

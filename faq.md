@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FAQ
-sidebar: home_sidebar
+
 permalink: /faq/
 ---
 

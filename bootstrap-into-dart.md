@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Bootstrap into Dart
-sidebar: home_sidebar
+
 permalink: /bootstrap-into-dart/
 ---
 

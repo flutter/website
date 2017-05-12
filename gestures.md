@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Taps, drags, and other gestures in Flutter
-sidebar: home_sidebar
+
 permalink: /gestures/
 ---
 

@@ -2,9 +2,13 @@
 layout: default
 ---
 
-<header class="post-header">
-  <h1 class="post-title">{{ page.title }}</h1>
-</header>
 <article class="post-content">
+  
+  {% unless page.hide_title %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+  {% endunless %}
+
   {{ content }}
 </article>

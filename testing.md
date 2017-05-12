@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Testing Flutter Apps
-sidebar: home_sidebar
 permalink: /testing/
 ---
 

@@ -1,11 +1,13 @@
 ---
 layout: page
 title: Getting Started with Flutter
-sidebar: home_sidebar
+
 permalink: /getting-started/
 ---
 
 This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
+
+{% include note.html content="_Flutter is an alpha, open-source project_." %}
 
 * Placeholder for TOC
 {:toc}

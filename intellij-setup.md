@@ -1,7 +1,7 @@
 ---
 layout: page
 title: IDE Setup
-sidebar: home_sidebar
+
 permalink: /intellij-setup/
 ---
 

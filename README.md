@@ -52,7 +52,7 @@ to the front matter of each page, and including some HTML.
 ---
 layout: tutorial
 title: "Constraints"
-sidebar: home_sidebar
+
 permalink: /tutorials/layout/constraints.html
 prev-page: /tutorials/layout/properties.html
 prev-page-title: "Container Properties"

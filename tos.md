@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Terms of Service
-sidebar: home_sidebar
 permalink: /tos/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Rendering in Flutter
-sidebar: home_sidebar
+
 permalink: /rendering/
 ---
 

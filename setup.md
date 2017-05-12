@@ -1,14 +1,15 @@
 ---
 layout: page
 title: Flutter Setup
-sidebar: home_sidebar
 permalink: /setup/
 ---
 
 This page describes how to set up your development environment to run Flutter apps on
 iOS or Android.
 
-<div class="dropdown">
+{% include note.html content="_Flutter is an alpha, open-source project_." %}
+
+<div class="dropdown" style="margin-bottom: 24px">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Operating System
   <span class="caret"></span></button>
   <ul class="dropdown-menu">

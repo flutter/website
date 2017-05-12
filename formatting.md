@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Formatting Flutter code
-sidebar: home_sidebar
+
 permalink: /formatting/
 ---
 

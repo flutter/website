@@ -21,7 +21,6 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  min-width: 320px;
   min-height: 180px;
   padding: 24px;
   border: solid transparent;
@@ -42,8 +41,7 @@
 .cards__item {
   display: flex;
   padding: 0 0 16px 0;
-  margin-right: 24px;
-  width: 300px;
+  margin-right: 16px;
 }
 
 .card__image {

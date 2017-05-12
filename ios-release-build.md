@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Preparing an iOS App for Release
-sidebar: home_sidebar
+
 permalink: /ios-release/
 ---
 

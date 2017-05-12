@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: "Adding Interactivity to Your Flutter App"
-sidebar: home_sidebar
+
 permalink: /tutorials/interactive/
 ---
 

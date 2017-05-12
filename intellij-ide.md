@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Developing apps in the IntelliJ IDE
-sidebar: home_sidebar
+
 permalink: /intellij-ide/
 ---
 
