@@ -89,7 +89,7 @@ the iOS `device.batteryLevel` API, via a single platform message,
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
 [`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
 
-### Step 1: Create a new app project
+### Step 1: Create a new app project {#example-project}
 
 Start by creating a new app using:
 
@@ -98,7 +98,7 @@ Start by creating a new app using:
 * In IntelliJ: *File > New > Project...*, select Flutter, and use the project
  name 'battery level'
 
-### Step 2: Create the Flutter platform client
+### Step 2: Create the Flutter platform client {#example-client}
 
 The app's `State` class holds the current app state. We need to extend that to
 hold the current battery state.
