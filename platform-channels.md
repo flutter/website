@@ -26,7 +26,7 @@ rather on a flexible message passing style:
  programming language -- and sends back a response to the *client*, the Flutter
  portion of your app.
 
-## Architectural overview: platform channels
+## Architectural overview: platform channels {#architecture}
 
 Messages are passed between the client (UI) and host (platform) using platform
 channels as illustrated in this diagram:
@@ -50,7 +50,7 @@ the platform acting as client to methods implemented in Dart.
 [MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
 [MethodChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
 
-### Platform channel data types support and codecs
+### Platform channel data types support and codecs {#codec}
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
@@ -77,7 +77,7 @@ The following table shows how Dart values are received on the platform side and 
 | List        | java.util.ArrayList | NSArray
 | Map         | java.util.HashMap   | NSDictionary    
  
-## Example: Calling platform-specific iOS and Android code using platform channels
+## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
 The following demonstrates how to call a platform-specific API to retrieve and
 display the current battery level. It uses the Android `BatteryManager` API, and
@@ -180,7 +180,7 @@ Widget build(BuildContext context) {
 ```
 
 
-### Step 3a: Add an Android platform-specific implementation
+### Step 3a: Add an Android platform-specific implementation {#example-android}
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -294,7 +294,7 @@ You should now be able to run the app on Android. If you are using the Android
 Emulator, you can set the battery level in the Extended Controls panel
 accessible from the `...` button in the toolbar.
 
-### Step 3b: Add an iOS platform-specific implementation using Objective-C
+### Step 3b: Add an iOS platform-specific implementation using Objective-C {#example-objc}
 
 *Note*: The following steps use Objective-C. If you prefer Swift, skip to step
 3c.
@@ -382,7 +382,7 @@ You should now be able to run the app on iOS. If you are using the iOS
 Simulator, note that it does not support battery APIs, and the app will thus
 display 'battery info unavailable'.
 
-### Step 3c: Add an iOS platform-specific implementation using Swift
+### Step 3c: Add an iOS platform-specific implementation using Swift {#example-swift}
 
 *Note*: The following steps are similar to step 3b, only using Swift rather than
 Objective-C.
