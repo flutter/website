@@ -332,7 +332,7 @@ check your code against the interactive Lakes example on GitHub.
 * [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
 * [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
-If you still have questions, refer to [Get support.](/#get-support)
+If you still have questions, refer to [Get support.](/support/)
 
 ---
 
