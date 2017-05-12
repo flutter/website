@@ -12,8 +12,8 @@ This quickstart guide describes how to create and run your first Flutter app on 
 
 ## Before you begin
 
-To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a Linux or
-Mac development machine to run and test your apps on Android or iOS. See
+To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a 
+Windows, macOS, or Linux development machine to run and test your apps on Android or iOS. See
 [Flutter Setup](../setup) for instructions on how to set up your development environment.
 
 ## Creating your first Flutter app
