@@ -42,8 +42,7 @@ hide_title: true
                 <p>
                 Delight your users and make your brand stand out with
                 rich motion, smooth scrolling, and
-                beautiful customizable components built with the
-                functional-reactive framework.
+                beautiful customizable components.
                 </p>
             </div>
 
@@ -61,7 +60,7 @@ hide_title: true
     </section>
 
     <section class="homepage__hot_reload">
-        <h1>Real fast development</h1>
+        <h1>Fast development</h1>
 
         <p>
             Flutter's <em>hot reload</em> helps you quickly
@@ -92,7 +91,6 @@ hide_title: true
             <img class="screenshot" src="/images/homepage/screenshot-2.png" width="270" height="480" alt="Fitness app design">
             <img class="screenshot" src="/images/homepage/screenshot-3.png" width="270" height="480" alt="Contact app design">
             <img class="screenshot" src="/images/homepage/ios-friendlychat.png" width="270" height="480" alt="iOS chat app design">
-            <img class="screenshot" src="/images/homepage/android-friendlychat.png" width="270" height="480" alt="Android chat app design">
         </div>
     </section>
 
@@ -122,6 +120,38 @@ class MyMessage extends StatelessWidget {
         Browse the <a href="/widgets/">widget catalog</a>
         and learn more about the
         <a href="/widgets-intro/">functional-reactive framework</a>.
+        </p>
+
+    </section>
+
+    <section class="homepage__interop">
+        <h1>Platform interop and native code</h1>
+
+        <p>
+        Make your app come to life
+        with platform APIs, 3rd party SDKs,
+        and native code.
+        Reuse your existing Java, Swift, and ObjC code.
+        </p>
+
+{% prettify dart %}
+  Future<Null> getBatteryLevel() async {
+    String batteryLevel;
+    try {
+      final int result = await methodChannel.invokeMethod('getBatteryLevel');
+      batteryLevel = 'Battery level: $result%.';
+    } on PlatformException {
+      batteryLevel = "Failed to get battery level.";
+    }
+    setState(() {
+      _batteryLevel = batteryLevel;
+    });
+  }
+{% endprettify %}
+
+        <p>
+        Learn how to write a <a href="/platform-plugins/">platform plugin</a>
+        to access native code and APIs.
         </p>
 
     </section>
