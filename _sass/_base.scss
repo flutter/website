@@ -122,35 +122,6 @@ blockquote {
 }
 
 
-
-/**
- * Code formatting
- */
-pre {
-    font-size: 15px;
-}
-
-code, code[class*="language-"], pre[class*="language-"]{
-  font-family: 'Source Code Pro', monospace !important;
-  font-size: 1em;
-  padding: 0;
-  color: inherit;
-  background-color: inherit;
-}
-
-pre {
-    overflow-x: auto;
-    padding: 8px 12px;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-
-
 /**
  * Wrapper
  */

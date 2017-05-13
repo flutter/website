@@ -135,18 +135,18 @@ class MyMessage extends StatelessWidget {
         </p>
 
 {% prettify dart %}
-  Future<Null> getBatteryLevel() async {
-    String batteryLevel;
-    try {
-      final int result = await methodChannel.invokeMethod('getBatteryLevel');
-      batteryLevel = 'Battery level: $result%.';
-    } on PlatformException {
-      batteryLevel = "Failed to get battery level.";
-    }
+// From https://github.com/flutter/flutter/tree/master/examples/platform_channel
+
+Future<Null> getBatteryLevel() async {
+  try {
+    int result = await methodChannel.invokeMethod('getBatteryLevel');
     setState(() {
-      _batteryLevel = batteryLevel;
+      _batteryLevel = 'Battery level: $result%.';
     });
+  } on PlatformException {
+    batteryLevel = "Failed to get battery level.";
   }
+}
 {% endprettify %}
 
         <p>

@@ -25,6 +25,12 @@
     line-height: 1.5;
 }
 
+@media (max-width: 920px) {
+    .homepage__title {
+        width: 100%;
+    }
+}
+
 .homepage__button_row {
     display: flex;
     flex-direction: row;
