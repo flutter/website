@@ -50,8 +50,8 @@ hide_title: true
                 <div class="homepage__key_point_title">Used by Google</div>
 
                 <p>
-                Flutter is used by Google, works with Firebase
-                and other mobile app SDKs,
+                Flutter is used by Google and others in production,
+                works with Firebase and other mobile app SDKs,
                 and is open source.
                 </p>
             </div>
@@ -60,7 +60,7 @@ hide_title: true
     </section>
 
     <section class="homepage__hot_reload">
-        <h1>Fast development</h1>
+        <h1><img src="/images/homepage/hot-reload-bolt.png" alt="Very">Fast development</h1>
 
         <p>
             Flutter's <em>hot reload</em> helps you quickly
@@ -92,6 +92,10 @@ hide_title: true
             <img class="screenshot" src="/images/homepage/screenshot-3.png" width="270" height="480" alt="Contact app design">
             <img class="screenshot" src="/images/homepage/ios-friendlychat.png" width="270" height="480" alt="iOS chat app design">
         </div>
+
+        <p>
+        Browse the <a href="/widgets/">widget catalog</a>.
+        </p>
     </section>
 
     <section class="homepage__hot_reload">
@@ -107,10 +111,31 @@ hide_title: true
         </p>
 
 {% prettify dart %}
-class MyMessage extends StatelessWidget {
+class CounterState extends State<Counter> {
+  int counter = 0;
+
+  void increment() {
+    // Tells the Flutter framework that state has changed,
+    // so the framework can run build() and update the display.
+    setState(() {
+      counter++;
+    });
+  }
+
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Text('Hello, world!'),
+    // This method is rerun every time setState is called.
+    // The Flutter framework has been optimized to make rerunning
+    // build methods fast, so that you can just rebuild anything that
+    // needs updating rather than having to individually change
+    // instances of widgets.
+    return new Row(
+      children: <Widget>[
+        new RaisedButton(
+          onPressed: increment,
+          child: new Text('Increment'),
+        ),
+        new Text('Count: $counter'),
+      ],
     );
   }
 }

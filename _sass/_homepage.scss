@@ -73,6 +73,9 @@
 
     h1 {
         color: #0091ea;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     h1, h2, p {
