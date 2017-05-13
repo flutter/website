@@ -163,14 +163,16 @@ class CounterState extends State<Counter> {
 // From https://github.com/flutter/flutter/tree/master/examples/platform_channel
 
 Future<Null> getBatteryLevel() async {
+  var batteryLevel = 'unknown';
   try {
     int result = await methodChannel.invokeMethod('getBatteryLevel');
-    setState(() {
-      _batteryLevel = 'Battery level: $result%.';
-    });
+    batteryLevel = 'Battery level: $result%';
   } on PlatformException {
-    batteryLevel = "Failed to get battery level.";
+    batteryLevel = 'Failed to get battery level.';
   }
+  setState(() {
+    _batteryLevel = batteryLevel;
+  });
 }
 {% endprettify %}
 
