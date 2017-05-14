@@ -221,7 +221,7 @@ should redraw. The `_toggleFavorite` function swaps the UI between
 <!-- _code/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-class FavoriteWidgetState extends State<FavoriteWidget> {
+class _FavoriteWidgetState extends State<FavoriteWidget> {
   [[highlight]]bool _isFavorited = true;[[/highlight]]
   [[highlight]]int _favoriteCount = 41;[[/highlight]]
 
