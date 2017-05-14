@@ -6,7 +6,7 @@ hide_title: true
 
 <div class="homepage">
 
-    <section class="homepage__key_points">
+    <section class="homepage__key_points card">
         <h1 class="homepage__title">
         Flutter makes it easy
         and fast to build
@@ -59,7 +59,7 @@ hide_title: true
         </div>
     </section>
 
-    <section class="homepage__hot_reload">
+    <section class="homepage__hot_reload card">
         <h1><img src="/images/homepage/hot-reload-bolt.png" alt="Very">Fast development</h1>
 
         <p>
@@ -76,7 +76,7 @@ hide_title: true
         </div>
     </section>
 
-    <section class="homepage__beautiful_uis">
+    <section class="homepage__beautiful_uis card ">
         <h1>Expressive, beautiful UIs</h1>
 
         <p>
@@ -98,7 +98,7 @@ hide_title: true
         </p>
     </section>
 
-    <section class="homepage__hot_reload">
+    <section class="homepage__reactive_framework card">
         <h1>Modern, reactive framework</h1>
 
         <p>
@@ -149,7 +149,7 @@ class CounterState extends State<Counter> {
 
     </section>
 
-    <section class="homepage__interop">
+    <section class="homepage__interop card">
         <h1>Platform interop and native code</h1>
 
         <p>
@@ -183,7 +183,7 @@ Future<Null> getBatteryLevel() async {
 
     </section>
 
-    <section class="homepage__features">
+    <section class="homepage__features card">
         <h1>Unified app development</h1>
 
         <p>
@@ -283,7 +283,7 @@ Future<Null> getBatteryLevel() async {
         </p>
     </section>
 
-    <section class="homepage__try_flutter">
+    <section class="homepage__try_flutter card">
 
         <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
 
