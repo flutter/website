@@ -2,7 +2,7 @@
 layout: page
 title: Flutter Widget Index
 sidebar: home_sidebar
-permalink: widgets/index/
+permalink: widgets/widgetindex/
 ---
 {% assign sorted = site.data.catalog.widgets | sort:'name' %}
 <div class="catalog">
