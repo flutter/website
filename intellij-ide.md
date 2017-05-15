@@ -197,6 +197,7 @@ reload' button.
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:
 
+1. In Preferences->Plugins, enable **Android Support** if you haven't already.
 1. Right-click the **android** folder in the Project view, and select **Open
 Module Settings**.
 1. In **Sources** tab, locate the **Language level** field, and select level '8'
