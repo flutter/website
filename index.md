@@ -159,9 +159,11 @@ class CounterState extends State<Counter> {
         Reuse your existing Java, Swift, and ObjC code.
         </p>
 
-{% prettify dart %}
-// From https://github.com/flutter/flutter/tree/master/examples/platform_channel
+        <p>
+        Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>.
+        </p>
 
+{% prettify dart %}
 Future<Null> getBatteryLevel() async {
   var batteryLevel = 'unknown';
   try {
