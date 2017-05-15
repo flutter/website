@@ -1,7 +1,6 @@
 ---
 layout: page
 title: A Tour of the Flutter Widget Framework
-sidebar: home_sidebar
 permalink: /widgets-intro/
 ---
 
@@ -166,7 +165,7 @@ class MyScaffold extends StatelessWidget {
             child: new Center(
               child: new Text('Hello, world!'),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -222,7 +221,7 @@ variety of ways. Finally, `MyScaffold` uses a
 [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
-Using material design
+Using Material Design
 ---------------------
 
 _Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_

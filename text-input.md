@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Handling Text Input
-sidebar: home_sidebar
 permalink: /text-input/
 ---
 

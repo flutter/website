@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Adding Assets and Images in Flutter
-sidebar: home_sidebar
+
 permalink: /assets-and-images/
 ---
 

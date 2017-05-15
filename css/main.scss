@@ -27,7 +27,7 @@ $nav-text-color:   white;
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
+$on-palm:          640px;
 $on-laptop:        800px;
 
 
@@ -57,25 +57,7 @@ $on-laptop:        800px;
         "sidebar",
         "tutorial",
         "prism",
-        "catalog"
+        "code_pre",
+        "catalog",
+        "homepage"
 ;
-
-// TBD: which page(s) use these?
-
-// Columns
-.col2 {
-  list-style: none;
-  column-count: 2;
-  column-gap: 0;
-  li {
-    page-break-inside: avoid;
-  }
-}
-.col3 {
-  list-style: none;
-  column-count: 3;
-  column-gap: 0;
-  li {
-   page-break-inside: avoid;
-  }
-}

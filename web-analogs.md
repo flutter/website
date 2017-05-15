@@ -1,9 +1,10 @@
 ---
-layout: code_comp_page
+layout: page
 title: HTML/CSS Analogs in Flutter
-sidebar: home_sidebar
 permalink: /web-analogs/
 ---
+
+<link rel="stylesheet" href="/css/two_column.css">
 
 * TOC Placeholder
 {:toc}

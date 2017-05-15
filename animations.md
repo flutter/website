@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Animations in Flutter
-sidebar: home_sidebar
+
 permalink: /animations/
 ---
 

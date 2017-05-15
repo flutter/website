@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Reading and Writing Files
-sidebar: home_sidebar
+
 permalink: /reading-writing-files/
 ---
 

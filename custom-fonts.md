@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Using Custom Fonts
-sidebar: home_sidebar
+
 permalink: /custom-fonts/
 ---
 

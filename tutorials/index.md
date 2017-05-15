@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flutter Tutorials
-sidebar: home_sidebar
+
 permalink: /tutorials/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: "Building Layouts in Flutter"
-sidebar: home_sidebar
+
 permalink: /tutorials/layout/
 ---
 
@@ -47,10 +47,6 @@ some of the most common layout widgets are covered.
 
 <a name="building"></a>
 ## Building a layout
-
-This section walks you through the layout for the following screenshot:
-
-<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that you will build in this section">
 
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout](#approach).

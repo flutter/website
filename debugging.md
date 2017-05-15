@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Debugging Flutter Apps
-sidebar: home_sidebar
+
 permalink: /debugging/
 ---
 

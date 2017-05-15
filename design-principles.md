@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Design Principles
-sidebar: home_sidebar
+
 permalink: /design-principles/
 ---
 

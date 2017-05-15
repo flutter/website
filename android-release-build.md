@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Preparing an Android App for Release
-sidebar: home_sidebar
+
 permalink: /android-release/
 ---
 
