@@ -142,21 +142,52 @@ can be useful to separate the code into a platform plugin located in a directory
 outside your main application. Optionally, this also enables you to
 [publish](#publish) the plugin.
 
-You can create a 'plugin' using the `--plugin` flag with `flutter create`:
+You can create a plugin project using the `--plugin` flag with `flutter create`:
 ```
-flutter create --plugin myplugin
+flutter create --plugin hello
 ```
 
-This creates a plugin project with the following content:
+This creates a plugin project in the `hello/` folder with the following content:
 
-* `lib/myplugin.dart`:
+* `lib/hello.dart`:
    - The Dart API for the plugin.
-* `android/src/main/java/com/mycompany/testplugin/TestpluginPlugin.java`:
+* `android/src/main/java/com/yourcompany/hello/HelloPlugin.java`:
    - The Android platform specific implementation of the plugin API.
-* `ios/Classes/TestpluginPlugin.m`: 
+* `ios/Classes/HelloPlugin.m`: 
    - The iOS platform specific implementation of the plugin API.
 * `example/`:
-   - A Flutter app that depends on the plugin, and illustrates how to use it. 
+   - A Flutter app that depends on the plugin, and illustrates how to use it.
+
+The plugin files can be edited in their "natural" IDEs, once the plugin
+project has been built once by Flutter tooling.
+
+For Android, execute
+```
+cd hello/example
+flutter build apk
+```
+Now you can import the Android project in Android Studio from the welcome screen,
+or File->New->Import Project... in the menu. Point Android Studio to the
+`hello/example/android/build.gradle` file. Accept the Gradle Sync dialog, but decline to update
+the Gradle plugin, if asked. Android Studio now imports and builds the project using Gradle.
+When done, the Project view has the plugin code in `hello/java/` and the example app code in
+`app/java/`. You can now ask Android Studio to run the example app in the usual way, by pressing
+the &#9654; button.
+
+For iOS, execute
+```
+cd hello/example
+flutter build ios
+```
+Ignore the error about provisioning profiles. Using Xcode, open `hello/example/ios/Runner.xcworkspace`.
+The Project navigator shows the plugin code in `Pods/Development Pods/hello/Classes/` and the
+example app code in `Runner/Runner/`. You can now ask Xcode to run the example app in the usual way, by
+pressing the &#9654; button.
+
+For the Dart code, you can directly open `hello/` in IntelliJ IDEA to edit the plugin code, or
+`hello/example/` to edit the example app code. In both cases, the relevant Dart code is in the `lib`
+folder in the Project view. Once again, the example app can be run from within IDEA in the
+usual way.
 
 ### Managing dependencies from a Flutter app to a Flutter plugin
 
