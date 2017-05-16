@@ -47,9 +47,8 @@ implementation for Android, for iOS, or for both.
 
 ### Searching for plugins
 
-All [available Flutter plugins](https://pub.dartlang.org/flutter/plugins) are 
-shared on the [pub](https://pub.dartlang.org/) repository
-along with regular (pure-Dart) packages.
+The list [Flutter plugins](https://pub.dartlang.org/flutter/plugins) displays plugins
+which are shared on the [pub](https://pub.dartlang.org/) repository.
 
 {% include note.html content="Flutter is still a young platform, and only a
 fairly small set of plugins are currently available on pub. We encourage all
