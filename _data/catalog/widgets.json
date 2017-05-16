@@ -458,7 +458,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoActivityIndicator-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-activity-indicator.png'>"
   },
   {
     "name": "CupertinoAlertDialog",
@@ -478,7 +478,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
   },
   {
     "name": "CupertinoDialog",
@@ -488,7 +488,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialog-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog.png'>"
   },
   {
     "name": "CupertinoDialogAction",
@@ -508,7 +508,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoSlider-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-slider.png'>"
   },
   {
     "name": "CupertinoSwitch",
@@ -518,7 +518,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoSwitch-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-switch.png'>"
   },
   {
     "name": "CupertinoPageTransition",
