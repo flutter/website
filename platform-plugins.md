@@ -20,8 +20,8 @@ APIs. These are critical to the completeness of most mobile apps.
 Flutter supports two mechanisms for using platform-specific code:
 
 * **Use existing platform plugins:** For frequently used APIs and SDKs, use
- existing platform plugins, with no need to write any platform-specific code
- yourself. [See details below](#use).
+ [existing platform plugins](https://pub.dartlang.org/flutter/plugins), with no
+ need to write any platform-specific code yourself. [See details below](#use).
 
 * **Write custom platform code:** Write custom platform-specific code using
  Flutter's platform channels. This can be used for private APIs, or for cases
@@ -47,9 +47,8 @@ implementation for Android, for iOS, or for both.
 
 ### Searching for plugins
 
-Flutter plugins are shared on the [pub](https://pub.dartlang.org/) repository
-along with regular (pure-Dart) packages. To see a list of all Flutter plugins,
-use the ['Flutter Plugins'](https://pub.dartlang.org/flutter/plugins) page.
+The list [Flutter plugins](https://pub.dartlang.org/flutter/plugins) displays plugins
+which are shared on the [pub](https://pub.dartlang.org/) repository.
 
 {% include note.html content="Flutter is still a young platform, and only a
 fairly small set of plugins are currently available on pub. We encourage all
