@@ -163,7 +163,7 @@ This creates a plugin project in the `hello/` folder with the following content:
 #### Plugin API code (.dart)
 
 To edit the Dart plugin API code, open `hello/` in IntelliJ IDEA (or your
-favorite Dart editor), The plugin API is located in `lib/main.dart` shown in the 
+favorite Dart editor). The plugin API is located in `lib/main.dart` shown in the 
 Project view.
 
 To run the plugin, you need to launch the plugin example app, which requires
@@ -174,6 +174,8 @@ defining a launch configuration:
 1. In 'Dart entrypoint', enter `<plugin folder>/example/lib/main.dart`.
 1. Select 'OK'.
 1. Launch the example app with 'Run' or 'Debug'.
+
+*Note*: [Hot reload](https://flutter.io/faq/#hot-reload) is only supported for changes to Dart code, not for Android and iOS code. 
 
 #### Android platform code (.java)
 
