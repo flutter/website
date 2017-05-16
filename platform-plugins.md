@@ -142,7 +142,7 @@ can be useful to separate the code into a platform plugin located in a directory
 outside your main application. Optionally, this also enables you to
 [publish](#publish) the plugin.
 
-You can create a 'plugin' using the `--plugin` flag with `flutter create`:
+You can create a plugin project using the `--plugin` flag with `flutter create`:
 ```
 flutter create --plugin hello
 ```
