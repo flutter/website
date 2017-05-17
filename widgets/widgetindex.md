@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Flutter Widget Index
-sidebar: home_sidebar
 permalink: widgets/widgetindex/
 ---
 {% assign sorted = site.data.catalog.widgets | sort:'name' %}
 <div class="catalog">
+    <div class="category-description"><p>This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/widgets">browse widgets by category.</a></p></div>
     <ul class="cards">
         {% for comp in sorted %}
         <li class="cards__item">
