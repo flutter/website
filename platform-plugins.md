@@ -246,7 +246,7 @@ Next,
     }
     ```
 1. Replace the implementation in `HelloPlugin.m` with a forwarding call:
-    ```objective-c
+    ```objectivec
     #import "HelloPlugin.h"
     #import <hello/hello-Swift.h>
     
