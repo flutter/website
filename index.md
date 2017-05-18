@@ -51,8 +51,8 @@ hide_title: true
 
                 <p>
                 Flutter is used by Google and others in production,
-                works with Firebase and other mobile app SDKs,
-                and is open source.
+                works with [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)
+                and other mobile app SDKs, and is open source.
                 </p>
             </div>
 
