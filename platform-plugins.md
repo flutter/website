@@ -6,8 +6,9 @@ permalink: /platform-plugins/
 
 This guide describes how Flutter apps can integrate with platform-specific code
 available on iOS and Android devices. This includes both device APIs (like
-`URLLauncher` and `BatteryState`) and third-party platform SDKs (like Google
-Analytics).
+[`url_launcher`](https://pub.dartlang.org/packages/url_launcher) and
+[`battery`](https://pub.dartlang.org/packages/battery)) and third-party platform SDKs 
+(like [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 * TOC
 {:toc}
