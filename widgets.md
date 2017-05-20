@@ -9,6 +9,8 @@ Create beautiful apps faster with Flutter's
 collection of visual, structural, platform,
 and interactive widgets.
 
+<p>See all the widgets in the <a href="/widgets/widgetindex/">Flutter widget catalog</a>.</p>
+
 <ul class="cards">
 {% for section in site.data.catalog.index %}
 	<li class="cards__item">
