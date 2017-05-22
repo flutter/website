@@ -817,17 +817,6 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "MediaQuery",
-    "description": "Establishes a subtree in which media queries resolve to the given data.",
-    "categories": [
-    ],
-    "subcategories": [
-      "Layout helpers"
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/MediaQuery-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
     "name": "LayoutBuilder",
     "description": "Builds a widget tree that can depend on the parent widget's size.",
     "categories": [
@@ -880,17 +869,6 @@
     "subcategories": [
     ],
     "link": "https://docs.flutter.io/flutter/services/AssetBundle-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "Icon",
-    "description": "A material design icon.",
-    "categories": [
-      "Assets, Images, and Icons"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/material/Icon-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
@@ -1179,17 +1157,6 @@
     "subcategories": [
     ],
     "link": "https://docs.flutter.io/flutter/widgets/ScrollConfiguration-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "CustomScrollView",
-    "description": "A ScrollView that creates custom scroll effects using slivers.",
-    "categories": [
-      "Scrolling"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {

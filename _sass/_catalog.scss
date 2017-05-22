@@ -70,6 +70,13 @@
   margin-bottom: 1.25rem;
 }
 
+.scrollable-description {
+  overflow: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
 .catalog {
   .catalog-entry svg {
     width: 100%;
