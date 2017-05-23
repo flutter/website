@@ -453,7 +453,7 @@ the children should occupy.
 
 {% comment %}
 * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
-  [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+  [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
   or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 * Add it to a layout widget, such as
   [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
