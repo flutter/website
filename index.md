@@ -150,17 +150,18 @@ class CounterState extends State<Counter> {
     </section>
 
     <section class="homepage__interop card">
-        <h1>Platform interop and native code</h1>
+        <h1>Access native features and SDKs</h1>
 
         <p>
         Make your app come to life
         with platform APIs, 3rd party SDKs,
         and native code.
-        Reuse your existing Java, Swift, and ObjC code.
+        Flutter lets you reuse your existing Java, Swift, and ObjC code,
+        and access native features and SDKs on iOS and Android.
         </p>
 
         <p>
-        Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>.
+        Accessing platform features is easy. Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>:
         </p>
 
 {% prettify dart %}
@@ -180,7 +181,7 @@ Future<Null> getBatteryLevel() async {
 
         <p>
         Learn how to write a <a href="/platform-plugins/">platform plugin</a>
-        to access native code and APIs.
+        to access native code, APIs, and SDKs.
         </p>
 
     </section>
