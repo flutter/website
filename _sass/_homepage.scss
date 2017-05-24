@@ -132,16 +132,6 @@
         }
     }
 
-    @media (max-width: 600px) {
-        .key-points {
-            display: block;
-
-            p {
-                margin-bottom: 16px;
-            }
-        }
-    }
-
     .homepage__key_point_title {
         font-size: 20px;
         margin-bottom: 8px;
@@ -163,6 +153,25 @@
 
         .homepage__button_row {
             margin-bottom: 0;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .key-points {
+            display: block;
+
+            p {
+                margin-bottom: 16px;
+            }
+        }
+ 
+        section {
+            padding: 8px;
+        }
+ 
+        .homepage__key_point_title {
+            margin-top: 8px;
+            margin-bottom: 0px;
         }
     }
 }
