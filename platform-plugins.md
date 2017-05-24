@@ -158,10 +158,9 @@ This creates a plugin project in the `hello/` folder with the following content:
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it.
 
-By default, the plugin project will be set up to use Objective-C for iOS code and
-Java for Android code. If you prefer to use Swift or Kotlin, you can specify your
-preferred iOS language using `-i` and/or your preferred Android language using
-`-a`. For example:
+By default, the plugin project uses Objective-C for iOS code and
+Java for Android code. If you prefer Swift or Kotlin, you can specify the
+iOS language using `-i` and/or the Android language using `-a`. For example:
 ```
 flutter create --plugin -i swift -a kotlin hello
 ```
