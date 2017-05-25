@@ -784,9 +784,11 @@ with [systrace](https://developer.android.com/studio/profile/systrace.html), use
 `dart:developer`'s [Timeline](https://api.dartlang.org/stable/dart-developer/Timeline-class.html)
 utilities to wrap the code you want to measure such as:
 
+<!-- import 'dart:developer'; -->
+<!-- skip -->
 ```dart
 Timeline.startSync('interesting function');
-iWonderHowLongThisTakes();
+// iWonderHowLongThisTakes();
 Timeline.finishSync();
 ```
 
