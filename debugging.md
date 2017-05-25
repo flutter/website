@@ -392,7 +392,7 @@ I/flutter ( 6559):            ╎ │           parentData: <none>
 I/flutter ( 6559):            ╎ │           constraints: BoxConstraints(w=411.4, h=683.4)
 I/flutter ( 6559):            ╎ │           size: Size(411.4, 683.4)
 I/flutter ( 6559):            ╎ │           additionalConstraints: BoxConstraints(biggest)
-I/flutter ( 6559):            ╎ │        
+I/flutter ( 6559):            ╎ │
 I/flutter ( 6559):            ╎ └─child 2: RenderSemanticsAnnotations
 I/flutter ( 6559):            ╎   │ creator: Semantics ← Focus-[GlobalObjectKey
 I/flutter ( 6559):            ╎   │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
@@ -574,7 +574,7 @@ I/flutter ( 6559):            ╎                                 ║   weight: 
 I/flutter ( 6559):            ╎                                 ║   baseline: alphabetic
 I/flutter ( 6559):            ╎                                 ║   "Dump App"
 I/flutter ( 6559):            ╎                                 ╚═══════════
-I/flutter ( 6559):            ╎                              
+I/flutter ( 6559):            ╎
 I/flutter ( 6559):            └╌no offstage children
 
 ```
@@ -775,6 +775,32 @@ For example:
   "timeAfterFrameworkInitMicros": 1657393
 }
 ```
+
+### Tracing any Dart code performance
+
+To perform custom performance traces and measure wall/CPU time of
+arbitrary segments of Dart code similar to what would be done on Android
+with [systrace](https://developer.android.com/studio/profile/systrace.html), use
+`dart:developer`'s [Timeline](https://api.dartlang.org/stable/dart-developer/Timeline-class.html)
+utilities to wrap the code you want to measure such as:
+
+<!-- import 'dart:developer'; -->
+<!-- skip -->
+```dart
+Timeline.startSync('interesting function');
+// iWonderHowLongThisTakes();
+Timeline.finishSync();
+```
+
+Then open your app's Observatory's timeline page, check the 'Dart'
+recording option and perform the function you want to measure.
+
+Refreshing the page will display the chronological timeline records
+of your app in Chrome's [tracing tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
+
+Be sure to `flutter run` your app with the `--profile` flag to ensure
+that the runtime performance characteristics closely matches that of your
+final product.
 
 ## PerformanceOverlay
 
