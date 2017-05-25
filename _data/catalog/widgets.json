@@ -452,7 +452,7 @@
   },
   {
     "name": "CupertinoActivityIndicator",
-    "description": "An iOS-style activity indicator.",
+    "description": "An iOS-style activity indicator. Displays a circular 'spinner'.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
