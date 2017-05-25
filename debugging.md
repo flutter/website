@@ -392,7 +392,7 @@ I/flutter ( 6559):            ╎ │           parentData: <none>
 I/flutter ( 6559):            ╎ │           constraints: BoxConstraints(w=411.4, h=683.4)
 I/flutter ( 6559):            ╎ │           size: Size(411.4, 683.4)
 I/flutter ( 6559):            ╎ │           additionalConstraints: BoxConstraints(biggest)
-I/flutter ( 6559):            ╎ │        
+I/flutter ( 6559):            ╎ │
 I/flutter ( 6559):            ╎ └─child 2: RenderSemanticsAnnotations
 I/flutter ( 6559):            ╎   │ creator: Semantics ← Focus-[GlobalObjectKey
 I/flutter ( 6559):            ╎   │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
@@ -574,7 +574,7 @@ I/flutter ( 6559):            ╎                                 ║   weight: 
 I/flutter ( 6559):            ╎                                 ║   baseline: alphabetic
 I/flutter ( 6559):            ╎                                 ║   "Dump App"
 I/flutter ( 6559):            ╎                                 ╚═══════════
-I/flutter ( 6559):            ╎                              
+I/flutter ( 6559):            ╎
 I/flutter ( 6559):            └╌no offstage children
 
 ```
@@ -795,6 +795,10 @@ recording option and perform the function you want to measure.
 
 Refreshing the page will display the chronological timeline records
 of your app in Chrome's [tracing tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
+
+Be sure to `flutter run` your app with the `--profile` flag to ensure
+that the runtime performance characteristics closely matches that of your
+final product.
 
 ## PerformanceOverlay
 
