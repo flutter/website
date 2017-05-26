@@ -106,9 +106,10 @@ changes are supported by the hot reload feature can be found on the page
 Please reach out to us at our [mailing list][mailinglist]. We'd love
 to hear from you!
 
-You might also want to check out our
-[Introduction to Flutter's Widget Framework](/widgets-intro/)
-and our [Debugging guide](/debugging).
+You might also want to check out:
+* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)
+* [Introduction to Flutter's Widget Framework](/widgets-intro/)
+* [Debugging guide](/debugging).
 
 Happy Fluttering!
 
