@@ -108,7 +108,7 @@ to hear from you!
 
 You might also want to check out:
 * [Introduction to Flutter's Widget Framework](/widgets-intro/)
-* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter	/index.html#0")
+* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)
 * [Debugging guide](/debugging).
 
 Happy Fluttering!
