@@ -34,11 +34,11 @@ tasks to perform (shown in **bold** text).
 
 For example:
 ```
-✗ Xcode end user license agreement not signed; open Xcode or run the command 'sudo xcodebuild -license'.
-
-✗ Brew not installed; use this to install tools for iOS device development.
-
-  Download brew at http://brew.sh/.
+[-] Android toolchain - develop for Android devices
+    • Android SDK at /Users/obiwan/Library/Android/sdk
+    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
+    • Try re-installing or updating your Android SDK,
+      visit https://flutter.io/setup/#android-setup for detailed instructions.
 ```
 
 The first time you run the `flutter` command, it downloads its own dependencies and compiles
