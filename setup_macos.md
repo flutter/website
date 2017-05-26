@@ -17,9 +17,9 @@ permalink: /setup-macos/
 
 ## Platform setup
 
-_macOS supports developing Flutter apps for both iOS and Android. Complete at
+macOS supports developing Flutter apps for both iOS and Android. Complete at
 least one of the two platform setup steps now, to be able to build and run your
-first Flutter app._
+first Flutter app.
 
 {% include setup/ios-setup.md %}
 
