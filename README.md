@@ -23,7 +23,7 @@ A tldr version follows:
 `ruby --version`
 
 1. Ensure you have [Bundler](http://bundler.io/) installed; if not install with:<br>
-`sudo gem install bundler`
+`gem install bundler`
 
 1. Install all dependencies:<br>
 `bundle install`
