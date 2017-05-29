@@ -142,9 +142,13 @@ can be useful to separate the code into a platform plugin located in a directory
 outside your main application. Optionally, this also enables you to
 [publish](#publish) the plugin.
 
-You can create a plugin project using the `--plugin` flag with `flutter create`:
+You can create a plugin project using the `--plugin` flag with `flutter create`. 
+Use the `--org` option to specify your organization, using reverse domain name
+notation. This value is used in various package and bundle identifiers in the
+generated Android and iOS code.
+
 ```
-flutter create --plugin hello
+flutter create --org com.example --plugin hello
 ```
 
 This creates a plugin project in the `hello/` folder with the following content:
