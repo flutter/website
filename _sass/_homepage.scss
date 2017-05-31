@@ -1,4 +1,5 @@
 .get-started-button {
+    text-decoration: none;
     background-color: #0091EA;
     color: #fff;
     padding: 16px;
@@ -11,6 +12,7 @@
 }
 
 .get-started-button:hover {
+    text-decoration: none;
     color: #fff;
 }
 
@@ -69,6 +71,10 @@
 
     pre[class*="language-"] {
         margin-bottom: 36px;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     h1 {
