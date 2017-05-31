@@ -4,8 +4,9 @@ title: Upgrading Flutter
 permalink: /upgrading/
 ---
 
-We recommend tracking the `master` branch in the flutter repository, which
-updates continuously as we improve Flutter.
+We recommend tracking the `alpha` branch in the flutter repository, which
+is where we push 'known good builds' of Flutter. If you want to 
+view the very latest changes, you can track the `master` branch.
 
 ## Specifying the Flutter SDK for your project
 
