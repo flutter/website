@@ -281,6 +281,17 @@ is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
+### How is 'hot reload' different from 'full restart'?
+
+Hot Reload works by injecting updated source code files into the running Dart VM
+(Virtual Machine). This includes not only adding new classes, but also adding
+methods and fields to existing classes, and changing existing functions. A few
+types of code changes cannot be hot reloaded though:
+
+* Global variable initializers.
+* Static field initializers.
+* The `main()` method of the app.
+
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS and Android.
