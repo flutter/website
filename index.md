@@ -218,7 +218,7 @@ Future<Null> getBatteryLevel() async {
                 <ul>
                     <li>Sub-second, stateful hot reload</li>
                     <li>IntelliJ: refactor, code completion, etc</li>
-                    <li>Dart language and code libs</li>
+                    <li>Dart language and core libs</li>
                     <li>Package manager</li>
                 </ul>
 
