@@ -422,6 +422,17 @@ protobufs, and many other utilities and formats.
 Today we don't support for 3D via OpenGL ES or similar. We have long-term plans
 to expose an optimized 3D API, but right now we're focused on 2D.
 
+### Why is my APK so big?
+
+Usually, assets including images, sound files, fonts, etc, are the bulk of an APK.
+Various tools in the Android ecosystem can help you understand what's
+inside of your APK, and what is taking up the most space.
+
+Also, be sure to create a
+[release build](https://flutter.io/android-release/)
+of your APK with the Flutter tools. A release build is usually _much_ smaller
+than a _debug build_.
+
 ## Framework
 
 ### Why is the build() method on State, not StatefulWidget?
@@ -463,17 +474,6 @@ The debug configuration also checks all asserts, which helps you catch errors
 early during development, but imposes a runtime cost. The "slow mode" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
-
-### Why is my APK so big?
-
-Usually, assets including images, sound files, fonts, etc, are the bulk of an APK.
-Various tools exist that can help you understand what's inside of your APK
-and what is taking up the most space.
-
-Also, be sure to create a
-[release build](https://flutter.io/android-release/)
-of your APK with the Flutter tools. A release build is usually _much_ smaller
-than a _debug build_.
 
 ## Project
 
