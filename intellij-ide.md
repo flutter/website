@@ -74,6 +74,10 @@ Running and Debugging is controlled from the main toolbar:
 When a Flutter project is open in IntelliJ, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
 
+*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
+has not been able to discover any connected iOS or Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
+
 1. Locate the **Flutter Target Selector** drop-down button. This will show a
  list of available targets. Select the target you want your app to started on.
 * When you connect devices, or start simulators, additional entries will appear.
