@@ -17,13 +17,18 @@ at the command line.
    version of Xcode. If you need to use a different version, specify that path 
    instead.
 1. Make sure the Xcode license agreement is signed by either opening Xcode once
-and confirming or running `sudo xcodebuild -license` from the command line.
+and confirming or running:
+```
+sudo xcodebuild -license
+```
+at the command line.
 
-With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
+With Xcode, you’ll be able to run Flutter apps on an iOS device or on the 
+Simulator.
 
 ### Set up the iOS simulator
 
-To prepare to run and test your Flutter app on the iOS simulator, follow these 
+To prepare to run and test your Flutter app on the iOS Simulator, follow these 
 steps:
 
 1. On your Mac, find the Simulator via Spotlight or by using the following 
@@ -33,11 +38,11 @@ command:
     $ open -a Simulator
     ```
 
-2. Make sure your simulator is using a 64-bit device (iPhone 5s or later) by 
-checking the settings in the Simulator's **Hardware > Device** menu.
+2. Make sure the Simulator is using a 64-bit device (iPhone 5s or later) by 
+checking the settings in the **Hardware > Device** menu.
 3. Depending on your development machine's screen size, simulated 
 high-screen-density iOS devices may overflow your screen. Set the device scale
-under the **Window > Scale** menu in the Simulator.
+under the **Window > Scale** menu.
 4. Start your app by running `flutter run`.
 
 
