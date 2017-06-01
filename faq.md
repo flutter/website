@@ -464,6 +464,17 @@ early during development, but imposes a runtime cost. The "slow mode" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
+### Why is my APK so big?
+
+Usually, assets including images, sound files, fonts, etc, are the bulk of an APK.
+Various tools exist that can help you understand what's inside of your APK
+and what is taking up the most space.
+
+Also, be sure to create a
+[release build](https://flutter.io/android-release/)
+of your APK with the Flutter tools. A release build is usually _much_ smaller
+than a _debug build_.
+
 ## Project
 
 ### Where can I get support?
