@@ -7,8 +7,8 @@ permalink: /platform-plugins/
 This guide describes how Flutter apps can integrate with platform-specific code
 available on iOS and Android devices. This includes both device APIs (like
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) and
-[`battery`](https://pub.dartlang.org/packages/battery)) and third-party platform SDKs 
-(like [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
+[`battery`](https://pub.dartlang.org/packages/battery)) and third-party platform
+SDKs (like [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 * TOC
 {:toc}
@@ -48,8 +48,8 @@ implementation for Android, for iOS, or for both.
 
 ### Searching for plugins
 
-The list [Flutter plugins](https://pub.dartlang.org/flutter/plugins) displays plugins
-which are shared on the [pub](https://pub.dartlang.org/) repository.
+The list [Flutter plugins](https://pub.dartlang.org/flutter/plugins) displays 
+plugins which are shared on the [pub](https://pub.dartlang.org/) repository.
 
 {% include note.html content="Flutter is still a young platform, and only a
 fairly small set of plugins are currently available on pub. We encourage all
@@ -132,7 +132,7 @@ To use this plugin:
     }
     ```
 
-1. Run the app. When you click the 'Show Flutter homepage' you should see the
+1. Run the app. When you click **Show Flutter homepage** you should see the
 phone's default browser open, and the Flutter homepage appear.
 
 ## Create a platform plugin {#create}
@@ -142,8 +142,8 @@ can be useful to separate the code into a platform plugin located in a directory
 outside your main application. Optionally, this also enables you to
 [publish](#publish) the plugin.
 
-You can create a plugin project using the `--plugin` flag with `flutter create`. 
-Use the `--org` option to specify your organization, using reverse domain name
+You can create a plugin project using the `plugin` flag with `flutter create`. 
+Use the `org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
 generated Android and iOS code.
 
@@ -154,17 +154,18 @@ flutter create --org com.example --plugin hello
 This creates a plugin project in the `hello/` folder with the following content:
 
 * `lib/hello.dart`:
-   - The Dart API for the plugin.
+   * The Dart API for the plugin.
 * `android/src/main/java/com/yourcompany/hello/HelloPlugin.java`:
-   - The Android platform specific implementation of the plugin API.
+   * The Android platform specific implementation of the plugin API.
 * `ios/Classes/HelloPlugin.m`: 
-   - The iOS platform specific implementation of the plugin API.
+   * The iOS platform specific implementation of the plugin API.
 * `example/`:
-   - A Flutter app that depends on the plugin, and illustrates how to use it.
+   * A Flutter app that depends on the plugin, and illustrates how to use it.
 
 By default, the plugin project uses Objective-C for iOS code and
 Java for Android code. If you prefer Swift or Kotlin, you can specify the
-iOS language using `-i` and/or the Android language using `-a`. For example:
+iOS language using `-I` and the Android language using `-a`. For example:
+
 ```
 flutter create --plugin -i swift -a kotlin hello
 ```
@@ -180,28 +181,34 @@ Project view.
 To run the plugin, you need to launch the plugin example app, which requires
 defining a launch configuration:
 
-1. Select 'Run > Edit Configurations...'.
-1. Select '+' and then 'Flutter'.
-1. In 'Dart entrypoint', enter `<plugin folder>/example/lib/main.dart`.
-1. Select 'OK'.
-1. Launch the example app with 'Run' or 'Debug'.
+1. Select **Run > Edit Configurations…**.
+1. Select **+** and then **Flutter**.
+1. In the Dart entrypoint field, enter `<plugin folder>/example/lib/main.dart`.
+1. Select **OK**.
+1. Launch the example app with **Run** or **Debug**.
 
-*Note*: [Hot reload](https://flutter.io/faq/#hot-reload) is only supported for changes to Dart code, not for Android and iOS code. 
+*Note*: [Hot reload](https://flutter.io/faq/#hot-reload) is only supported for
+changes to Dart code, not for Android and iOS code. 
 
 #### Android platform code (.java/.kt)
 
 Before editing the Android platform code in Android Studio, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ, 
-or in a terminal execute `cd hello/example; flutter build apk`). 
+the code has been built at least once by running the example app from IntelliJ, 
+or running the following at the command line:
+
+```
+cd hello/example
+flutter build apk
+```
 
 Next,
 
-1. Launch Android Studio
-1. Select 'Import project' in 'Welcome to Android Studio' dialog, or select 
-'File > New > Import Project...'' in the menu, and select the
+1. Launch Android Studio.
+1. Select **Import project** in the Welcome screen, or select 
+**File > New > Import Project…** in the menu, and navigate to the
 `hello/example/android/build.gradle` file.
-1. In the 'Gradle Sync' dialog, select 'OK'.
-1. In the 'Android Gradle Plugin Update' dialog, select 'Don't remind me again for this project'. 
+1. In the Gradle Sync dialog, select **OK**.
+1. In the Android Gradle Plugin Update dialog, select **Don't remind me again for this project**. 
 
 The Android platform code of your plugin is located in `hello/java/com.yourcompany.hello/HelloPlugin`.
 
@@ -210,22 +217,26 @@ You can run the example app from Android Studio by pressing the &#9654; button.
 #### iOS platform code (.h+.m/.swift)
 
 Before editing the iOS platform code in Xcode, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ, 
-or in a terminal execute `cd hello/example; flutter build ios`).
+the code has been built at least once by running the example app from IntelliJ, 
+or running the following at the command line:
+```
+cd hello/example; flutter build ios
+```
 
 Next,
 
-1. Launch Xcode
-1. Select 'File > Open', and select the `hello/example/ios/Runner.xcworkspace` file.
+1. Launch Xcode.
+1. Select **File > Open**, and select the `hello/example/ios/Runner.xcworkspace` file.
 
-The iOS platform code of your plugin is located in `Pods/Development Pods/hello/Classes/` in the Project Navigator.
+The iOS platform code of your plugin is located in `Pods/Development Pods/hello/Classes/`
+in the Project Navigator.
 
 You can run the example app by pressing the &#9654; button.
 
 ### Managing dependencies from a Flutter app to a Flutter plugin
 
 Once a plugin has been [published](#publish), you can depend on it by simply
-listing it's name in `pubspec.yaml` as illustrated by the [example](#example)
+listing its name in `pubspec.yaml` as illustrated by the [example](#example)
 above.
 
 During development of a plugin that has not yet been published, or for private
@@ -233,16 +244,16 @@ plugins not intended for public publishing, an additional way of
 depending on a plugin can be useful:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
- `path:` dependency. The path can be either relative, or absolute. For example, to
- depend on a plugin 'plugin1' located in a directory next to the app, use this
- syntax:
-```
-dependencies:
-    flutter:
-      sdk: flutter
-    plugin1:
-      path: ../plugin1/
-```
+ path dependency. The path can be either relative or absolute. For example, to
+ depend on the plugin named `plugin1` located in a directory next to the app,
+ use this syntax:
+ ```
+ dependencies:
+     flutter:
+       sdk: flutter
+     plugin1:
+       path: ../plugin1/
+ ```
 
 * **Git** dependency: You can also depend on a package stored in a Git
  repository. The package must be located in the root of the repo. Use this
