@@ -131,7 +131,7 @@ TestFlight, you'll need to prepare a *release* build.
 
 On the command line, follow these steps in your application directory:
 
-1. Run `flutter build ios --release` to create a release build.
+1. Run `flutter build ios` to create a release build (`flutter build` defaults to ` --release`).
 1. To ensure that Xcode refreshes the release mode configuration, close and
    re-open your Xcode workspace. For Xcode 8.3 and later, this step is not
    required.
