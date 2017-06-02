@@ -422,6 +422,23 @@ protobufs, and many other utilities and formats.
 Today we don't support for 3D via OpenGL ES or similar. We have long-term plans
 to expose an optimized 3D API, but right now we're focused on 2D.
 
+### Why is my APK or IPA so big?
+
+Usually, assets including images, sound files, fonts, etc, are the bulk
+of an APK or IPA.
+Various tools in the Android and iOS ecosystems can help you understand
+what's inside of your APK or IPA.
+
+Also, be sure to create a
+_release build_
+of your APK or IPA with the Flutter tools.
+A release build is usually _much_ smaller
+than a _debug build_.
+
+Learn more about creating a
+[release build of your Android app](https://flutter.io/android-release/),
+and creating a [release build of your iOS app](https://flutter.io/ios-release/).
+
 ## Framework
 
 ### Why is the build() method on State, not StatefulWidget?
