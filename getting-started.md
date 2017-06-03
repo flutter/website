@@ -67,6 +67,10 @@ plugins](/intellij-setup/), you can start your Flutter app from there:
 
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
+*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
+has not been able to discover any connected iOS or Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
+
 If everything works, you should see your starter app on your device or simulator.
 
 <div id="starter-app-screenshots">
