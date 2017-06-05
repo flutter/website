@@ -6,15 +6,17 @@ layout: default
   
   {% unless page.hide_title %}
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }} </h1>
-      <div class="btn-group" role="group">
-         <a href="https://github.com/flutter/website/blob/master/{{page.path}}" class="btn btn-default">
+      <div class="btn-group contribute" role="group">
+         <a href="https://github.com/flutter/website/blob/master/{{page.path}}" class="btn btn-sm">
             <i class="glyphicon glyphicon-pencil"></i> Edit Source
          </a>
-         <a href="https://github.com/flutter/flutter/issues/new?title=Issue from website page {{page.title}}&body=From URL: {{site.url}}/{{page.path}}" class="btn btn-default">
+         <a href="https://github.com/flutter/flutter/issues/new?title=Issue from website page {{page.title}}&body=From URL: {{site.url}}/{{page.path}}" class="btn btn-sm">
             <i class="glyphicon glyphicon-paperclip"></i> File Issue
         </a>
      </div>
+   <div>
+    <h1 class="post-title">{{ page.title }} </h1>
+   </div>
 
   </header>
   {% endunless %}
