@@ -89,6 +89,7 @@ hide_title: true
         <div class="screenshot-list">
             <img class="screenshot" src="/images/homepage/screenshot-1.png" width="270" height="480" alt="Brand-first shopping design">
             <img class="screenshot" src="/images/homepage/screenshot-2.png" width="270" height="480" alt="Fitness app design">
+            <img class="screenshot" src="/images/homepage/screenshot-4.png" width="270" height="480" alt="Git app design">
             <img class="screenshot" src="/images/homepage/screenshot-3.png" width="270" height="480" alt="Contact app design">
             <img class="screenshot" src="/images/homepage/ios-friendlychat.png" width="270" height="480" alt="iOS chat app design">
         </div>
