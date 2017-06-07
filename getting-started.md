@@ -1,22 +1,14 @@
 ---
 layout: page
-title: Getting Started with Flutter
+title: Getting started with your first Flutter app
 
 permalink: /getting-started/
 ---
 
-This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
-
-{% include note.html content="_Flutter is an alpha, open-source project_." %}
+This quickstart guide describes how to create and run your first Flutter app. It assumes you have already [installed the Flutter SDK](/setup/).
 
 * Placeholder for TOC
 {:toc}
-
-## Before you begin
-
-To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a 
-Windows, macOS, or Linux development machine to run and test your apps on Android or iOS. See
-[Flutter Setup](../setup) for instructions on how to set up your development environment.
 
 ## Creating your first Flutter app
 
