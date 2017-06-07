@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Flutter Setup
+title: Flutter installation & setup
 permalink: /setup/
 ---
 
-This page describes how to set up your development environment to run Flutter apps on
+This page describes how to prepare your development environment to run Flutter apps on
 iOS or Android.
 
 {% include note.html content="_Flutter is an alpha, open-source project_." %}
