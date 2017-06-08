@@ -36,7 +36,7 @@ may overflow your screen. Set the device scale under the **Window > Scale** menu
 
 ### Deploy to iOS devices
 
-To deploy your Flutter app to a physical iOS device, you’ll need some additional tools, an account, and a profile:
+To deploy your Flutter app to a physical iOS device, you’ll need some additional tools, an Apple account, and follow a few steps for physical device deployment from Apple:
 
 1. Install [homebrew](http://brew.sh/).
 1. Open the terminal and run these commands to install the tools for deploying Flutter apps to
@@ -48,12 +48,17 @@ iOS devices.
    $ brew install ideviceinstaller ios-deploy
    $ brew install cocoapods
    ```
-   If any of these commands fails with an error, run `brew doctor` and follow the instructions 
+   If any of these commands fails with an error, run `brew doctor` and follow the instructions
    for resolving the issue.
-   
-1. Follow the steps defined by Apple to configure Xcode with your Apple Developer account and enable deploying with provisioning profiles. To learn how to set up your profile, see [Apple's official documentation](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
-1. Select your Development Team for the Flutter project.
-   1. Open the default Xcode workspace in your project under `ios/Runner.xcworkspace`. 
-   1. Select the `Runner` project in the left navigation panel.
-   1. In the Target Settings page, make sure your Development Team is selected under **General > Signing > Team**.
+
+1. Follow Xcode's automatic signing flow to provision your project.
+    1. Open the default Xcode workspace in your project with `open ios/Runner.xcworkspace` inside your Flutter project directory.
+    1. Select the `Runner` project in the left navigation panel.
+    1. In the `Runner` target settings page, make sure your Development Team is selected under **General > Signing > Team**. This will create and download a Development Certificate, register your device with your account, create and download a provisioning profile if needed.
+        * If you have never done iOS development on iOS, you may need to sign in with your Apple ID in Xcode first.
+        ![Xcode account add](/images/setup/xcode-account.png)  
+        Development and testing is possible on a vanilla Apple ID but enrolling in the Apple Developer Program will be required to distribute your app to the App Store. See more about their Apple's [membership comparison](https://developer.apple.com/support/compare-memberships).
+        * If you never used the current physical device for iOS development, you may need to trust the Development Certificate on the device in the Settings app via **General > Device Management** and trust your Certificate.
+        * Xcode's automatic signing may fail if the project's Bundle Identifier isn't unique under **General > Identity > Bundle Identifier**.
+        ![Check the app's Bundle ID](/images/setup/xcode-unique-bundle-id.png)
 1. Start your app by running `flutter run`.
