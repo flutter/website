@@ -45,20 +45,22 @@ iOS devices.
    ```
    $ brew update
    $ brew install --HEAD libimobiledevice
-   $ brew install ideviceinstaller ios-deploy
-   $ brew install cocoapods
+   $ brew install ideviceinstaller ios-deploy cocoapods
+   $ pod setup
    ```
    If any of these commands fails with an error, run `brew doctor` and follow the instructions
    for resolving the issue.
 
 1. Follow the Xcode signing flow to provision your project:
-    1. Open the default Xcode workspace in your project by running `open ios/Runner.xcworkspace` in a terminal window from  your Flutter project directory.
+    1. Open the default Xcode workspace in your project by running `open ios/Runner.xcworkspace` in a terminal window from your Flutter project directory.
     1. In Xcode, select the `Runner` project in the left navigation panel.
     1. In the `Runner` target settings page, make sure your Development Team is selected under **General > Signing > Team**. When you select a team, Xcode creates and downloads a Development Certificate, registers your device with your account, and creates and downloads a provisioning profile (if needed).
-        * To start your first iOS development project, you may need to sign into Xcode with your Apple ID.
-        ![Xcode account add](/images/setup/xcode-account.png)  
+        * To start your first iOS development project, you may need to sign into Xcode with your Apple ID.<br>
+        ![Xcode account add](/images/setup/xcode-account.png)<br>
         Development and testing is supported for any Apple ID. Enrolling in the Apple Developer Program is required to distribute your app to the App Store. View the [differences between Apple membership types](https://developer.apple.com/support/compare-memberships).
-        * The first time you use an attached physical device for iOS development, you may need to trust the Development Certificate on the device in the Settings app. Select **General > Device Management** and trust your Certificate.
-        * If automatic signing fails in Xcode, verify that the project's **General > Identity > Bundle Identifier** value is unique.
+        * The first time you use an attached physical device for iOS development, you will need to trust both your Mac and the Development Certificate on that device. Select `Trust` in the dialog prompt when first connecting the iOS device to your Mac.<br>
+        ![Trust Mac](/images/setup/trust-computer.png)<br>
+        Then, go to the Settings app on the iOS device, select **General > Device Management** and trust your Certificate.
+        * If automatic signing fails in Xcode, verify that the project's **General > Identity > Bundle Identifier** value is unique.<br>
         ![Check the app's Bundle ID](/images/setup/xcode-unique-bundle-id.png)
 1. Start your app by running `flutter run`.
