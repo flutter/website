@@ -5,7 +5,7 @@ title: Getting started with your first Flutter app
 permalink: /getting-started/
 ---
 
-This quickstart guide describes how to create and run your first Flutter app. It assumes you have already [installed the Flutter SDK](/setup/).
+This quickstart guide describes how to create and run your first Flutter app. **It assumes you have already [installed the Flutter SDK](/setup/)**.
 
 * Placeholder for TOC
 {:toc}
