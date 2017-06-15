@@ -59,6 +59,10 @@ by running the following at the command line:
 
 *Note*: Keep this file private; do not check it into public source control.
 
+*Note*: `keytool` may not be in your path. It iss part of the Java JDK, which is installed as 
+part of Android Studio. For the concrete path, run `flutter doctor` and see the part printed 
+after 'Java binary at:', and then use that fully qualified path replacing `java` with `keytool`.
+
 ### Reference the keystore from the app
 
 Create a file named `<app dir>/android/key.properties` that contains a
