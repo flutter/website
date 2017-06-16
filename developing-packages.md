@@ -1,0 +1,174 @@
+---
+layout: page
+title: Developing Packages & Plugins
+permalink: /developing-packages/
+---
+
+* TOC
+{:toc}
+
+## Package introduction
+
+Dart packages enable the creation of modular code that can easily be shared. A
+minimal package with a single library consists of:
+
+* A `pubspec.yaml` file: A metadata file that declared the package name,
+  version, author, etc.
+
+* A `lib` directory containing the public code in the package, minimally a
+  single `<package-name>.dart` file.
+
+For additional details, see the [Dart library package](https://www.dartlang.org/guides/libraries/create-library-packages) documentation.
+
+### Package types {#types}
+
+Flutter supports several kinds of packages:
+
+* *Dart packages*: General packages written in Dart without any dependencies on
+  any specific frameworks. They can be used across many frameworks such as
+  [AngularDart](https://webdev.dartlang.org/angular) and Flutter. A concrete
+  example is the [`path`](https://pub.dartlang.org/packages/path) package.
+
+* *Flutter packages*: General packages which contain Flutter specific
+  functionality and thus have a dependency on the Flutter framework, restricting
+  their use to Flutter only. A concrete example is the
+  [`fluro`](https://pub.dartlang.org/packages/fluro) package.
+
+* *Flutter plugins*: Flutter packages which in additional to the Dart code also
+  contain a platform-specific implementation for Android, for iOS, or for both.
+  A concrete example is the
+  [`battery`](https://pub.dartlang.org/packages/battery) plugin.
+
+## Developing packages
+
+### Create a package project
+
+Flutter currently lacks a dedicated command for creating a package project
+(issue [#10377](https://github.com/flutter/flutter/issues/10377)). As a
+workaround use these steps to create a package called `example`:
+
+1. Create a standard Flutter application:
+    * `flutter create example`
+
+1. Delete the iOS and Android application containers:
+  * `rm -rf ios`
+  * `rm -rf android`
+
+
+1. Remove the main application:
+  * `rm lib/main.dart`
+
+1. Add a main package file `lib/example.dart` with the following contents:
+    ``` dart
+    library example;
+
+    /// Add public package code (Classes, etc.) here:
+    ```  
+
+## Developing plugins: platform-specific packages {#plugin}
+
+Packages enable sharing Dart code. If you want to develop packages that call
+into platform-specific APIs available on Android, on iOS, or on both, you need
+to develop a platform-specific package, a so-call plugin.
+
+### Create a plugin project
+
+You can create a plugin project using the `--plugin` flag with `flutter create`. 
+Use the `--org` option to specify your organization, using reverse domain name
+notation. This value is used in various package and bundle identifiers in the
+generated Android and iOS code.
+
+```
+flutter create --org com.example --plugin hello
+```
+
+This creates a plugin project in the `hello/` folder with the following content:
+
+* `lib/hello.dart`:
+   - The Dart API for the plugin.
+* `android/src/main/java/com/yourcompany/hello/HelloPlugin.java`:
+   - The Android platform specific implementation of the plugin API.
+* `ios/Classes/HelloPlugin.m`: 
+   - The iOS platform specific implementation of the plugin API.
+* `example/`:
+   - A Flutter app that depends on the plugin, and illustrates how to use it.
+
+By default, the plugin project uses Objective-C for iOS code and
+Java for Android code. If you prefer Swift or Kotlin, you can specify the
+iOS language using `-i` and/or the Android language using `-a`. For example:
+```
+flutter create --plugin -i swift -a kotlin hello
+```
+
+### Editing plugin source code {#edit-code}
+
+As plugin code involves several platforms and programming languages, some
+specific steps are needed to ensure a smooth experience.
+
+#### Plugin API code (.dart)
+
+To edit the Dart plugin API code, open `hello/` in IntelliJ IDEA (or your
+favorite Dart editor). The plugin API is located in `lib/hello.dart` shown in
+the Project view.
+
+To run the plugin, you need to launch the plugin **example app**, which requires
+defining a launch configuration:
+
+1. Select 'Run > Edit Configurations...'.
+1. Select '+' and then 'Flutter'.
+1. In 'Dart entrypoint', enter `<plugin folder>/example/lib/main.dart`.
+1. Select 'OK'.
+1. Launch the example app with 'Run' or 'Debug'.
+
+*Note*: [Hot reload](https://flutter.io/faq/#hot-reload) is only supported for
+changes to Dart code, not for Android and iOS code.
+
+#### Android platform code (.java/.kt)
+
+Before editing the Android platform code in Android Studio, first make sure that
+the code has been built at least once (i.e., run the example app from IntelliJ, 
+or in a terminal execute `cd hello/example; flutter build apk`). 
+
+Next,
+
+1. Launch Android Studio
+1. Select 'Import project' in 'Welcome to Android Studio' dialog, or select 
+'File > New > Import Project...'' in the menu, and select the
+`hello/example/android/build.gradle` file.
+1. In the 'Gradle Sync' dialog, select 'OK'.
+1. In the 'Android Gradle Plugin Update' dialog, select 'Don't remind me again for this project'. 
+
+The Android platform code of your plugin is located in `hello/java/com.yourcompany.hello/HelloPlugin`.
+
+You can run the example app from Android Studio by pressing the &#9654; button.
+
+#### iOS platform code (.h+.m/.swift)
+
+Before editing the iOS platform code in Xcode, first make sure that
+the code has been built at least once (i.e., run the example app from IntelliJ, 
+or in a terminal execute `cd hello/example; flutter build ios`).
+
+Next,
+
+1. Launch Xcode
+1. Select 'File > Open', and select the `hello/example/ios/Runner.xcworkspace` file.
+
+The iOS platform code of your plugin is located in `Pods/Development Pods/hello/Classes/` in the Project Navigator.
+
+You can run the example app by pressing the &#9654; button.
+
+   
+## Publishing packages {#publish}
+
+Once you have implemented a package, you can publish it on
+[Pub](https://pub.dartlang.org/), so that other developers can easily use it.
+
+Prior to publishing, make sure to complete the `pubspec.yaml`, `README.md`, and
+`CHANGELOG.md` files.
+
+Next, run the dry-run command to see if everything passes analysis: `flutter
+packages pub publish --dry-run`. Finally, run the actual publish command:
+`flutter packages pub publish`.
+
+For details on publishing, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing).
+

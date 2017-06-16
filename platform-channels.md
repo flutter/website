@@ -5,15 +5,15 @@ permalink: /platform-channels/
 ---
 
 This guide describes how to write custom platform-specific code. If you just
-want to use existing platform-specific plugins, please see [platform
-plugins](/platform-plugins/).
+want to use call platform-specific code in existing packages, please see [using
+packages](/using-packages/).
 
 * TOC
 {:toc}
 
 Flutter uses a flexible system that allows you to call platform-specific APIs
-whether available in Java code on Android, or in ObjectiveC or Swift code on
-iOS.
+whether available in Java or Kotlin code on Android, or in ObjectiveC or Swift
+code on iOS.
 
 Flutter's platform-specific API support does not rely on code generation, but
 rather on a flexible message passing style:
@@ -496,14 +496,14 @@ display 'Battery info unavailable.'.
 
 If you expect to use your platform-specific code in multiple Flutter apps, it
 can be useful to separate the code into a platform plugin located in a directory
-outside your main application. See [platform plugins](/platform-plugins/) for
-details.
+outside your main application. See [developing packages](/developing-packages/)
+for details.
 
 ## Publish a platform plugin {#publish}
 
-If you wish to share your platform-specific with other developers in the
-Flutter ecosystem, please see [platform plugins](/platform-plugins/) for
-details.
+If you wish to share your platform-specific with other developers in the Flutter
+ecosystem, please see [publishing packages](/developing-packages/#publish)
+for details.
 
 ## Custom channels and codecs
 
