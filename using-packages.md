@@ -8,13 +8,12 @@ Flutter supports using shared packages contributed by other developers to the
 Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch.
 
-Existing packages enable many use cases, for example, file path manipulation
-([`path`](https://pub.dartlang.org/packages/path)), custom navigation/route
-handling ([`fluro`](https://pub.dartlang.org/packages/fluro)), integration
-with device APIs (like
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
-[`battery`](https://pub.dartlang.org/packages/battery)), and using third-party platform
-SDKs (like
+Existing packages enable many use cases, for example, making network requests
+([`http`](/networking/)), custom navigation/route handling
+([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
+APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
+[`battery`](https://pub.dartlang.org/packages/battery)), and using third-party
+platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 * TOC
@@ -26,7 +25,7 @@ SDKs (like
 
 Packages are published to the *[Pub](https://pub.dartlang.org)* package repository. 
 
-The list [Flutter packages](https://pub.dartlang.org/flutter/packages) displays
+The list of [Flutter packages](https://pub.dartlang.org/flutter/packages) displays
 packages that have been developed specifically for Flutter (i.e., that declare a
 dependency on the Flutter framework). Flutter-specific packages are presented
 with a Flutter logo adornment.
@@ -34,28 +33,31 @@ with a Flutter logo adornment.
 The standard Pub search field supports searching among all published packages.
 Note however that many packages depend on other frameworks, such as the
 [AngularDart](https://webdev.dartlang.org/angular/) web framework, and those
-will not work with Flutter. We hope to offer a better search experience with
-support for filtering to only packages that are compatible with Flutter in the
-future.
-
-{% include note.html content="Flutter is still a young platform, and only a
-fairly small set of Flutter packages are currently available on pub. We
-encourage all Flutter developers to [develop](/developing-packages/) new
-packages." %}
+will not work with Flutter. We [hope to
+offer](https://github.com/dart-lang/pub-dartlang-dart/issues/39) a better search
+experience with support for filtering to only packages that are compatible with
+Flutter in the future.
 
 ### Adding a package dependency to an app
 
-To add a plugin 'plugin1' to an app:
+To add a package 'css_colors' to an app:
 
-1. Open the `pubspec.yaml` file located inside your app folder, and add
-`plugin1:` under `dependencies`.
+1. Depend on it
+   * Open the `pubspec.yaml` file located inside your app folder, and add
+     `css_colors:` under `dependencies`.
 
-1. Get the plugin:
+1. Install it
    * From the terminal: Run `flutter packages get`
    * From IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
 
-1. Build or run your app. As part of this, Flutter will add the package code to
-   your app.
+1. Import it
+   * Add a corresponding `import` statement in your Dart code.
+   
+The
+['Installing'](https://pub.dartlang.org/packages/css_colors#pub-pkg-tab-installing)
+tab available on any package page on Pub is a handy reference for these steps.
+
+For a complete example, see [CSS Colors example](#css-example) below.
 
 ## Managing package dependencies & versions
 
@@ -133,12 +135,11 @@ For more details, see the [Pub Dependencies article](https://www.dartlang.org/to
 
 ### Example: Using the CSS Colors package {#css-example}
 
-The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
-enables you to open the default browser on the mobile platform to display a
-given URL. It demonstrates how packages may also contain platform-specific code
-(we call these packages 'plugins'). It is supported on both Android and iOS.
+The [`css_colors`](https://pub.dartlang.org/packages/css_colors) package defines
+color constants for the CSS colors, allowing you to use them wherever the
+Flutter framework expects the `Color` type.
 
-To use this plugin:
+To use this package:
 
 1. Create a new project called 'cssdemo'
 
@@ -191,10 +192,9 @@ To use this plugin:
 phone's default browser open, and the Flutter homepage appear.
 
 
+### Example: Using the URL Launcher package to launch the browser {#url-example}
 
-### Example: Using the URL Launcher plugin to launch the browser {#url-example}
-
-The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
+The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin package
 enables you to open the default browser on the mobile platform to display a
 given URL. It demonstrates how packages may also contain platform-specific code
 (we call these packages 'plugins'). It is supported on both Android and iOS.
