@@ -56,7 +56,7 @@ for dealing with code reviews.
 If you're working on a big patch, don't hesitate to get reviews early,
 before you're ready to check code in. Also, don't hesitate to ask for
 multiple people to review your code, and don't hesitate to provide unsolicited
-comments on other people's PRs. The more review the better.
+comments on other people's PRs. The more reviews the better.
 
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
