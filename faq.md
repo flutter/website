@@ -263,7 +263,7 @@ compressed as a release APK, to be approximately 6.7MB.
 
 For this simple app,
 the core engine is approximately 3.3MB (compressed),
-the framework + app code is approximately 1.25MB bytes (compressed),
+the framework + app code is approximately 1.25MB (compressed),
 the LICENSE file (contained in app.flx) is 55k (compressed),
 necessary Java code (classes.dex) is 40k (compressed),
 and there is approximately 2.1MB of (compressed) ICU data.
