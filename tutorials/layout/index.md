@@ -576,7 +576,7 @@ class _MyHomePageState extends State<MyHomePage> {
 <aside class="alert alert-info" markdown="1">
 **Note:**
 The material library implements widgets that follow
-[material design principles](https://material.io/guidelines/).
+[Material Design principles](https://material.io/guidelines/).
 When designing your UI, you can exclusively use widgets from the standard
 [widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
 or you can use widgets from the [material
@@ -1347,12 +1347,12 @@ A Divider separates the theaters from the restaurants.<br>
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the material design color palette">
+<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the Material Design color palette">
 
 Uses ListView to display the
 [Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
 from the
-[material design palette](https://material.io/guidelines/style/color.html)
+[Material Design palette](https://material.io/guidelines/style/color.html)
 for a particular color family.<br>
 **Dart code:** [colors_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/colors_demo.dart)
 from the [Flutter
@@ -1504,7 +1504,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 #### Card summary:
 
-* Implements a [material design
+* Implements a [Material Design
   card](https://material.io/guidelines/components/cards.html)
 * Used for presenting related nuggets of information
 * Accepts a single child, but that child can be a Row, Column, or other
@@ -1631,7 +1631,7 @@ The following resources may help when writing layout code.
   to Flutter features.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many material design widgets and other Flutter features.
+  Demo app showcasing many Material Design widgets and other Flutter features.
 * [Flutter API documentation](https://docs.flutter.io/)<br>
   Reference documentation for all of the Flutter libraries.
 * [Dealing with Box Constraints in Flutter](/layout)<br>

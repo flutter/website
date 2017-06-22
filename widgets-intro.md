@@ -252,7 +252,7 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Scaffold is a layout for the major material design widgets.
+    // Scaffold is a layout for the major Material Design widgets.
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(

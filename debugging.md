@@ -832,7 +832,7 @@ will be misleading.
 
 When developing applications that implement [Material
 design](https://www.google.com/design/spec/material-design/introduction.html),
-it can be helpful to overlay a [Material design baseline
+it can be helpful to overlay a [Material Design baseline
 grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
