@@ -751,7 +751,7 @@ and prefers that the tap box handles those details.
 ## Other interactive widgets
 
 Flutter offers a variety of buttons and similar interactive widgets.
-Most of these widgets implement the [material design
+Most of these widgets implement the [Material Design
 guidelines,](https://material.io/guidelines/) which define a set of
 components with an opinionated UI.
 
@@ -804,7 +804,7 @@ The following resources may help when adding interactivity to your app.
   Reference documentation for all of the Flutter libraries.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many material design widgets and other Flutter features.
+  Demo app showcasing many Material Design widgets and other Flutter features.
 * [Flutter's Layered
    Design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
    This video includes information about state and stateless widgets.
