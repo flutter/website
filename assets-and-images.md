@@ -136,7 +136,8 @@ pixel ratio.
 
 [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
-closely matches the current device pixel ratio. In order for this mapping to
+closely matches the current [device pixel ratio](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html).
+In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
 
 * .../image.png
@@ -144,8 +145,11 @@ work, assets should be arranged according to a particular directory structure:
 * .../Nx/image.png
 * ...etc.
 
-Where M and N are numeric identifiers that correspond to the nominal resolution
-of the images contained within. The main asset is assumed to correspond to a
+...where _M_ and _N_ are numeric identifiers that correspond to the nominal resolution
+of the images contained within, in other words, they specify the device pixel ratio that
+the images are intended for.
+
+The main asset is assumed to correspond to a
 resolution of 1.0. For example, consider the following asset layout for an
 image named `my_icon.png`:
 
@@ -157,12 +161,18 @@ On devices with a device pixel ratio of 1.8, the asset `.../2.0x/my_icon.png`
 would be chosen. For a device pixel ratio of 2.7, the asset
 `.../3.0x/my_icon.png` would be chosen.
 
-If the width and height of the rendered image are not specified, the nominal
+If the width and height of the rendered image are not specified on the `Image` widget, the nominal
 resolution is used to scale the asset so that it will occupy the same amount
 of screen space as the main asset would have, just with a higher resolution.
 That is, if `.../my_icon.png` is 72px by 72px, then `.../3.0x/my_icon.png`
 should be 216px by 216px; but they both will render into 72px by 72px
 (in logical pixels) if width and height are not specified.
+
+Each entry in the asset section of the `pubspec.yaml` should correspond to a real file, with the 
+exception of the main asset entry. If the main asset entry does not correspond
+to a real file, then the asset with the lowest resolution will be used as the fallback
+for devices with device pixel ratios below that resolution. The entry should still
+be included in the `pubspec.yaml` manifest, however.
 
 #### Loading images
 
