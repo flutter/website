@@ -49,9 +49,14 @@ also many other benefits of code reviews:
    have, and so may have a fresh perspective and may find you a better
    way to solve the problem.
 
+We recommend you consider
+[these suggestions](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)
+for dealing with code reviews.
+ 
 If you're working on a big patch, don't hesitate to get reviews early,
 before you're ready to check code in. Also, don't hesitate to ask for
-multiple people to review your code.
+multiple people to review your code, and don't hesitate to provide unsolicited
+comments on other people's PRs. The more review the better.
 
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
@@ -88,20 +93,17 @@ runs a bunch of precommit checks (see the tests for the
 [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
 the [engine](https://github.com/flutter/engine/blob/master/travis/build.sh),
 and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
-You can run these locally as well. For the engine repository, Travis
+These checks include checks on comments, so make sure you wait for the
+green light even if your patch is _obviously_ fine!
+
+For the engine repository, Travis
 does not actually _build_ the engine, so you should make sure to do
 that locally first too before checking anything in.
-
-The only time it is ok to check code in without Travis having given
-the go-ahead is if the tests are already failing, and your fix is
-intended to improve matters, and you're going to watch the results
-once you've checked it in (in which case the bots are essentially
-doing the same job as Travis would have on your PR).
 
 Make sure all the trees and dashboards are green before checking in:
 the [infra waterfall](https://build.chromium.org/p/client.flutter/waterfall),
 our [travis dashboard](https://travis-ci.org/flutter/flutter/builds),
-our [test dashboard](https://flutter-dashboard.appspot.com/build.html) (Google-only, sorry), and
+our [test dashboard](https://flutter-dashboard.appspot.com/build.html), and
 our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html) (Google-only, sorry).
 
 **If the trees or dashboards are showing any regressions, only fixes
@@ -160,8 +162,7 @@ class FooInterface {
 
 If you work for Google, you have the added responsibility of updating Google's
 internal copy of Flutter and fixing any broken call-sites reasonably quickly
-after merging the upstream change. For instructions on how to do this, see
-[go/roll-flutter](http://goto.google.com/roll-flutter) (Google-only, sorry).
+after merging the upstream change.
 
 Lazy programming
 ----------------
