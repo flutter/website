@@ -62,9 +62,11 @@ workaround use these steps to create a package called `example`:
 
 ### Step 2: Implement the package
 
-For pure Dart packages, simply add the functionality inside the main `lib/<package name>.dart` file, or in several files in the `lib` directory.
+For pure Dart packages, simply add the functionality inside the main
+`lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-To test the package, add [unit tests](https://flutter.io/testing/#unit-testing) in a `test` directory.
+To test the package, add [unit tests](https://flutter.io/testing/#unit-testing)
+in a `test` directory.
 
 ## Developing plugin packages {#plugin}
 
@@ -111,23 +113,13 @@ experience.
 
 #### Step 2a: Define the package API (.dart)
 
-The API of the plugin package is defined in Dart plugin. To start, open `hello/`
-in IntelliJ IDEA (or your favorite Dart editor). The plugin API is located in
-`lib/hello.dart` shown in the Project view.
-
-To run the plugin, you need to launch the plugin **example app**, which requires
-defining a launch configuration:
-
-1. Select 'Run > Edit Configurations...'.
-1. Select '+' and then 'Flutter'.
-1. In 'Dart entrypoint', enter `<plugin folder>/example/lib/main.dart`.
-1. Select 'OK'.
-1. Launch the example app with 'Run' or 'Debug'.
-
-*Note*: [Hot reload](https://flutter.io/faq/#hot-reload) is only supported for
-changes to Dart code, not for Android and iOS code.
+The API of the plugin package is defined in Dart code. Open the main `hello/`
+folder in IntelliJ IDEA (or your favorite Dart editor). Locate the file
+`lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
+
+We recommend you edit the Android code using Android Studio.
 
 Before editing the Android platform code in Android Studio, first make sure that
 the code has been built at least once (i.e., run the example app from IntelliJ, 
@@ -140,13 +132,17 @@ Next,
 'File > New > Import Project...'' in the menu, and select the
 `hello/example/android/build.gradle` file.
 1. In the 'Gradle Sync' dialog, select 'OK'.
-1. In the 'Android Gradle Plugin Update' dialog, select 'Don't remind me again for this project'. 
+1. In the 'Android Gradle Plugin Update' dialog, select 'Don't remind me again
+   for this project'.
 
-The Android platform code of your plugin is located in `hello/java/com.yourcompany.hello/HelloPlugin`.
+The Android platform code of your plugin is located in
+`hello/java/com.yourcompany.hello/HelloPlugin`.
 
 You can run the example app from Android Studio by pressing the &#9654; button.
 
 #### Step 2c: Add iOS platform code (.h+.m/.swift)
+
+We recommend you edit the iOS code usign Xcode.
 
 Before editing the iOS platform code in Xcode, first make sure that
 the code has been built at least once (i.e., run the example app from IntelliJ, 
@@ -157,7 +153,8 @@ Next,
 1. Launch Xcode
 1. Select 'File > Open', and select the `hello/example/ios/Runner.xcworkspace` file.
 
-The iOS platform code of your plugin is located in `Pods/Development Pods/hello/Classes/` in the Project Navigator.
+The iOS platform code of your plugin is located in `Pods/Development
+Pods/hello/Classes/` in the Project Navigator.
 
 You can run the example app by pressing the &#9654; button.
 
