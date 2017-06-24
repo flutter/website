@@ -227,7 +227,7 @@ Using Material Design
 _Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
-Material Design. A Material Design app start with the
+Material Design. A Material Design app starts with the
 [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
 widget, which builds a number of useful widgets at the root of your app,
 including a
