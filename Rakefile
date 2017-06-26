@@ -11,7 +11,7 @@ task :checklinks do
       # Skip httpbin links as they are not allowed from TravisCI
       'http://httpbin.com',
       # Skip links that have been auto-inserted for the 'Edit Source' action
-      'https://github.com/flutter/website/blob/master/'
+      'https://github.com/flutter/website/blob/master/*'
     ],
     :only_4xx => true,
     # Replace canonical link with local links.
