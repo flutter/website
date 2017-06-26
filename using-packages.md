@@ -75,14 +75,14 @@ used. To ensure your app does not break when a package is updated, we recommend
 specifying a version range using one of the following formats:
 
 * Range constraints: Specify a minimum and maximim version, e.g.:
-```dart
+```
 dependencies:
     url_launcher: '>=0.1.2 <0.2.0'
 ```
 
 * Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax): 
 Similar to a regular range constraints
-```dart
+```
 dependencies:
     collection: '^0.1.2'
 ```
@@ -113,7 +113,7 @@ additional dependency options are avaialble:
  `path:` dependency. The path can be either relative, or absolute. For example, to
  depend on a plugin 'plugin1' located in a directory next to the app, use this
  syntax:
-```dart
+```
 dependencies:
     plugin1:
       path: ../plugin1/
@@ -122,7 +122,7 @@ dependencies:
 * **Git** dependency: You can also depend on a package stored in a Git
  repository. The package must be located in the root of the repo. Use this
  syntax:
-```dart
+```
 dependencies:
     plugin1:
       git:
@@ -144,14 +144,14 @@ To use this package:
 1. Create a new project called 'cssdemo'
 
 1. Open `pubspec.yaml`, and replace:
-    ```dart
+    ```
     dependencies:
       flutter:
         sdk: flutter
     ```
     with:
 
-    ```dart
+    ```
     dependencies:
       flutter:
         sdk: flutter
@@ -204,14 +204,14 @@ To use this plugin:
 1. Create a new project called 'launchdemo'
 
 1. Open `pubspec.yaml`, and replace:
-    ```dart
+    ```
     dependencies:
       flutter:
         sdk: flutter
     ```
     with:
 
-    ```dart
+    ```
     dependencies:
       flutter:
         sdk: flutter
