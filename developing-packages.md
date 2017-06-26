@@ -9,20 +9,18 @@ permalink: /developing-packages/
 
 ## Package introduction
 
-Dart packages enable the creation of modular code that can easily be shared. A
-minimal package with a single library consists of:
+Packages enable the creation of modular code that can be shared easily. A
+minimal package consists of:
 
-* A `pubspec.yaml` file: A metadata file that declared the package name,
+* A `pubspec.yaml` file: A metadata file that declares the package name,
   version, author, etc.
 
 * A `lib` directory containing the public code in the package, minimally a
   single `<package-name>.dart` file.
 
-For additional details, see the [Dart library package](https://www.dartlang.org/guides/libraries/create-library-packages) documentation.
-
 ### Package types {#types}
 
-Flutter supports several kinds of packages:
+Packages can contain several kinds of content:
 
 * *Dart packages*: General packages written in Dart, for example the
   [`path`](https://pub.dartlang.org/packages/path) package. Some of these may
@@ -30,10 +28,10 @@ Flutter supports several kinds of packages:
   Flutter framework, restricting their use to Flutter only, for example the
   [`fluro`](https://pub.dartlang.org/packages/fluro) package.
 
-* *Plugin* packages*: Packages which contain an API written in Dart code
-  combined with a platform-specific implementation for Android (using ObjC or
-  Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is the
-  [`battery`](https://pub.dartlang.org/packages/battery) plugin.
+* *Plugin packages*: A specialized Dart package which contain an API written in
+  Dart code combined with a platform-specific implementation for Android (using
+  ObjC or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
+  the [`battery`](https://pub.dartlang.org/packages/battery) plugin package.
 
 ## Developing Dart packages {#dart}
 
@@ -54,10 +52,11 @@ workaround use these steps to create a package called `example`:
   * `rm lib/main.dart`
 
 1. Add a main package file `lib/example.dart` with the following contents:
-    ``` dart
+    <!-- skip -->
+    ```dart
     library example;
 
-    /// Add public package code (Classes, etc.) here:
+    // Add public package code (Classes, etc.) here:
     ```  
 
 ### Step 2: Implement the package
@@ -68,11 +67,18 @@ For pure Dart packages, simply add the functionality inside the main
 To test the package, add [unit tests](https://flutter.io/testing/#unit-testing)
 in a `test` directory.
 
+For additional details on how to organize the package contents, see the [Dart
+library
+package](https://www.dartlang.org/guides/libraries/create-library-packages)
+documentation.
+
 ## Developing plugin packages {#plugin}
 
-If you want to develop a package that calls into platform-specific APIs
-available on Android, on iOS, or on both, you need to develop a plugin package.
-This requires a few additional steps compared to a Dart package.
+If you want to develop a package that calls into platform-specific APIs, you
+need to develop a plugin package. A plugin package is a specialized version of a
+Dart package, that in addition to the content described above also contains
+platform-specific implementations written for Android (Java or Kotlin code), for
+iOS (Objective-C or Swift code), or for both.
 
 ### Step 1: Create the package
 
@@ -87,7 +93,8 @@ generated Android and iOS code.
 flutter create --org com.example --plugin hello
 ```
 
-This creates a plugin project in the `hello/` folder with the following content:
+This creates a plugin project in the `hello/` folder with the following
+specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
