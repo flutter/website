@@ -6,8 +6,12 @@ task :checklinks do
     :log_level => :info,
     :empty_alt_ignore => true,
     :url_ignore => [
+      # Skip fragment identifiers, as these aren't real links
       '#',
-      'http://httpbin.com'
+      # Skip httpbin links as they are not allowed from TravisCI
+      'http://httpbin.com',
+      # Skip links that have been auto-inserted for the 'Edit Source' action
+      'https://github.com/flutter/website/blob/master/'
     ],
     :only_4xx => true,
     # Replace canonical link with local links.
