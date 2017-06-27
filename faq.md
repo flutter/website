@@ -346,11 +346,15 @@ services and APIs from the operating system. However, we want to avoid the
 "lowest common denominator" problem with most cross-platform APIs, so we do not
 intend to build cross-platform APIs for all native services and APIs.
 
-We encourage developers to use Flutter's asynchronous message passing system to
-create your own integrations with
-[platform and third-party APIs](/platform-plugins/). Developers
-can expose as much or as little of the platform APIs as they need, and build
-layers of abstractions that are a best fit for their project.
+A number of platform services and APIs have [ready-made
+packages](https://pub.dartlang.org/flutter/packages) available in the Pub
+repository. Using an existing package [is easy](/using-packages/).
+
+Finally, we encourage developers to use Flutter's asynchronous message passing
+system to create your own integrations with [platform and third-party
+APIs](/platform-channels/). Developers can expose as much or as little of the
+platform APIs as they need, and build layers of abstractions that are a best fit
+for their project.
 
 ### Can I extend and customize the bundled widgets?
 
@@ -383,7 +387,8 @@ flexible message passing style where a Flutter app may send and receive messages
 to the mobile platform using a
 [`BasicMessageChannel`](https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html).
 
-Learn more about [accessing platform and third-party services in Flutter](/platform-plugins/).
+Learn more about accessing platform and third-party services in Flutter with
+[platform channels](/platform-channels/).
 
 Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 that shows how to use a platform channel to access battery state information on

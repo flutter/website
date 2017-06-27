@@ -40,7 +40,12 @@
       },
       {
         "source" : "/platform-services*",
-        "destination" : "/platform-plugins/",
+        "destination" : "/using-packages/",
+        "type" : 301
+      },
+      {
+        "source" : "/platform-plugins*",
+        "destination" : "/using-packages/",
         "type" : 301
       }
     ]

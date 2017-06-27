@@ -180,7 +180,8 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
         <p>
-        Learn how to write a <a href="/platform-plugins/">platform plugin</a>
+        Learn how to use <a href="/using-packages/">packages</a>, or 
+        write <a href="/platform-channels/">platform channels</a>,
         to access native code, APIs, and SDKs.
         </p>
 
