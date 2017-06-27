@@ -115,26 +115,21 @@ Handling breaking changes
 
 We're attempting to stablize the APIs for the
 [packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
-To a make change that will require developers to change their code:
+To make a change that will require developers to change their code:
 
  1. File an issue or create a pull request with the `prod: API break`
     label.
 
- 2. Socialize the idea of making that API break with the project, perhaps by
-    discussing the change in the issue tracker on on the pull request.
-
- 3. If folks agree that the benefits of changing the API outweigh the stablity
-    costs, you can proceed with the normal code review process for making
-    changes.
-
- 5. Once your change lands, you should e-mail
-    <mailto:flutter-dev@googlegroups.com>. The e-mail should include the
-    following:
+ 2. Send an e-mail to <mailto:flutter-dev@googlegroups.com> to socialize
+    your proposed change. The e-mail should include the following:
 
     - A subject line that clearly summarises the change and sounds like it
       matters (so that people can spot these e-mails among the noise).
 
-    - A summary of each change.
+    - A summary of each change you propose.
+    
+    - A link to the issue you filed in step 1, and any PRs you may have already
+      posted relating to this change.
 
     - Clear mechanical steps for porting the code from the old form to the new
       form, if possible. If not possible, clear steps for figuring out how to
@@ -145,6 +140,15 @@ To a make change that will require developers to change their code:
     - A sincere offer to help port code, which includes the preferred venue for
       contacting the person who made the change.
       
+    - A request that people notify you if this change will be a problem,
+      perhaps by discussing the change in the issue tracker on on the pull request.
+
+ 3. If folks agree that the benefits of changing the API outweigh the stablity
+    costs, you can proceed with the normal code review process for making
+    changes. You should leave some time between steps 2 and 3 (at a bare minimum
+    24 hours during the work week so that people in all time zones have had a
+    chance to see it, but ideally a week or so).
+
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
 for example by introducing a new class and marking the old class `@deprecated`. When
 doing this, include a description of how to transition in the deprecation notice, for
@@ -157,6 +161,10 @@ class FooInterface {
   /// ...
 }
 ```
+
+If you use `@deprecated`, make sure to remember to actually remove the feature a few
+weeks later, do not just leave it forever!
+
 
 #### Google-only responsibilities
 
