@@ -19,7 +19,7 @@ To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
 To run the `flutter` command in any terminal session, you need to add it to your PATH environment variable:
 
 * Go to "Control Panel > User Accounts > User Accounts > Change my environment variables"
-* Under "User variables" check if there is an entry called "Path":
+* Under "User variables" check if there is an entry named `Path`:
     * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
     * If the entry does not exist, create a new user variable named `Path` with the full path to `flutter\bin` as its value.
 
@@ -28,7 +28,7 @@ Close and re-open any terminal window (e.g. command prompt or PowerShell) to app
 ### Run flutter doctor
 
 Open a new Command Prompt or PowerShell window and run the following command to
-see if there  are any dependencies you need to install to complete the setup:
+see if there are any dependencies you need to install to complete the setup:
 
 ```
 > flutter doctor
@@ -64,5 +64,5 @@ and basic crash reports. This data is used to help improve Flutter tools over ti
 Analytics is not sent on the very first run or for any runs involving `flutter config`,
 so you can opt out of analytics before any data is sent. To disable reporting, 
 type `flutter config --no-analytics` and to display the current setting, type 
-`flutter config`. See Google's privacy policy:[www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
+`flutter config`. See [Google's privacy policy](https://www.google.com/intl/en/policies/privacy/).
 {: .alert-warning}
