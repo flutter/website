@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "PopupMenuButton Sample Apps"
-permalink: /catalog/samples/PopupMenuButton_index/
+permalink: /catalog/samples/PopupMenuButton_index
 ---
 
 All of the sample apps listed here use the <a href="https://docs.flutter.io/flutter/material/PopupMenuButton-class.html">PopupMenuButton</a> class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.

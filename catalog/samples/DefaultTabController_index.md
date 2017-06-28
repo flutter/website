@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "DefaultTabController Sample Apps"
-permalink: /catalog/samples/DefaultTabController_index/
+permalink: /catalog/samples/DefaultTabController_index
 ---
 
 All of the sample apps listed here use the <a href="https://docs.flutter.io/flutter/material/DefaultTabController-class.html">DefaultTabController</a> class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.

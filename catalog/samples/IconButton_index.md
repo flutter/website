@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "IconButton Sample Apps"
-permalink: /catalog/samples/IconButton_index/
+permalink: /catalog/samples/IconButton_index
 ---
 
 All of the sample apps listed here use the <a href="https://docs.flutter.io/flutter/material/IconButton-class.html">IconButton</a> class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.
