@@ -78,8 +78,7 @@ If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package. A plugin package is a specialized version of a
 Dart package, that in addition to the content described above also contains
 platform-specific implementations written for Android (Java or Kotlin code), for
-iOS (Objective-C or Swift code), or for both. The API is connected to the
-platform-specific implementation(s) using [platform channels](/platform-channels/).
+iOS (Objective-C or Swift code), or for both.
 
 ### Step 1: Create the package
 
@@ -166,10 +165,6 @@ Pods/hello/Classes/` in the Project Navigator.
 
 You can run the example app by pressing the &#9654; button.
 
-#### Step 3: Connect the API and the platform code
-
-Finally, you need to connect the API written in Dart code with the platform-specific
-implementations. This is done using [platform channels](/platform-channels/).
    
 ## Publishing packages {#publish}
 
