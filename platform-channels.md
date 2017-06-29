@@ -412,6 +412,7 @@ Objective-C:
 1. Open `Runner-Bridging-Header.h`, and add a Flutter import:
     ```
     #import "../Flutter/Flutter.framework/Headers/Flutter.h"
+    #import "GeneratedPluginRegistrant.h" //for other plugins
     ```
 1. Open the file `AppDelegate.swift` located under Runner > Runner in the Project
 navigator, and replace `import Foundation` with:
@@ -437,6 +438,7 @@ First we override `didFinishLaunchingWithOptions` to contain a
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    GeneratedPluginRegistrant.register(with: self)
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
     let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
                                                    binaryMessenger: controller);
