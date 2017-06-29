@@ -208,7 +208,7 @@ dart bin/sample_page.dart '<commit hashcode here>'
 cp examples/catalog/.generated/*.md <your website repo>/catalog/samples
 ```
 
-The generated markdown files will contain cloud storage links for sample app screenshots.  Screenshots for each sample app are automatically generated for each Flutter repo commit. Choose a recent commit hashcode and confirm that the screenshots look OK.
+The generated markdown files will contain cloud storage links for sample app screenshots. Screenshots for each sample app are automatically generated for each Flutter repo commit. Choose a recent commit hashcode and confirm that the screenshots look OK.
 
 If new sample apps have been added, update `_data/catalog/widget.json`. The entry for each widget class that's featured in a sample app should contain `"sample"` line like:
 ```
