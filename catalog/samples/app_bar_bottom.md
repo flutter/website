@@ -29,6 +29,8 @@ TabPageSelector that displays the relative position of the selected page
 in the app's TabBarView. The arrow buttons in the toolbar part of the app
 bar and they select the previous or the next page.
 
+Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be

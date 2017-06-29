@@ -32,6 +32,8 @@ that keeps the AnimatedList in sync. The list model has a GlobalKey for
 its animated list. It uses the key to call the insertItem and removeItem
 methods defined by AnimatedListState.
 
+Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
