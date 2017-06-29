@@ -4,7 +4,7 @@ title: "TabBarView Sample Apps"
 permalink: /catalog/samples/TabBarView_index
 ---
 
-All of the sample apps listed here use the <a href="https://docs.flutter.io/flutter/material/TabBarView-class.html">TabBarView</a> class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.
+All of the sample apps listed here use the Flutter TabBarView class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.
 
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 32px">
