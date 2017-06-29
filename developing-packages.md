@@ -166,7 +166,7 @@ Pods/hello/Classes/` in the Project Navigator.
 
 You can run the example app by pressing the &#9654; button.
 
-#### Step 3: Connect the API and the platform code
+#### Step 2d: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with the platform-specific
 implementations. This is done using [platform channels](/platform-channels/).
