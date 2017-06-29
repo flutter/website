@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Scaffold Sample Apps"
-permalink: /catalog/samples/Scaffold_index
+permalink: /catalog/samples/Scaffold_index/
 ---
 
 All of the sample apps listed here use the Flutter Scaffold class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.

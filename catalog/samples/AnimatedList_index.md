@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "AnimatedList Sample Apps"
-permalink: /catalog/samples/AnimatedList_index
+permalink: /catalog/samples/AnimatedList_index/
 ---
 
 All of the sample apps listed here use the Flutter AnimatedList class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.
