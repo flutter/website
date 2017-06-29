@@ -99,7 +99,7 @@
   },
   {
     "name": "Appbar",
-    "sample": "Appbar_index",
+    "sample": "AppBar_index",
     "description": "A material design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
     "categories": [
       "Basics"
