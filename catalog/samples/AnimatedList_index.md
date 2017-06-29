@@ -19,6 +19,12 @@ All of the sample apps listed here use the Flutter AnimatedList class in an inte
 in sync with an app-specific ListModel. When an item is added to or removed
 from the model, the corresponding card animates in or out of view.
       </p>
+      <p>
+        This app features the following classes: AnimatedList, AnimatedListState.
+      </p>
+      <p>
+        <a href="/catalog/samples/animated-list/">Learn more</a>.
+      </p>
     </div>
   </div>
 

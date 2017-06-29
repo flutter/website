@@ -17,6 +17,12 @@ All of the sample apps listed here use the Flutter IconButton class in an intere
       <p>
         A typcial AppBar with a title, actions, and an overflow dropdown menu.
       </p>
+      <p>
+        This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
+      </p>
+      <p>
+        <a href="/catalog/samples/basic-app-bar/">Learn more</a>.
+      </p>
     </div>
   </div>
 

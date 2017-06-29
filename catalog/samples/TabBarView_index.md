@@ -17,6 +17,12 @@ All of the sample apps listed here use the Flutter TabBarView class in an intere
       <p>
         Any widget with a PreferredSize can appear at the bottom of an AppBar.
       </p>
+      <p>
+        This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
+      </p>
+      <p>
+        <a href="/catalog/samples/app-bar-bottom/">Learn more</a>.
+      </p>
     </div>
   </div>
 
@@ -29,6 +35,12 @@ All of the sample apps listed here use the Flutter TabBarView class in an intere
     <div class="col-md-9">
       <p>
         An AppBar with a TabBar as its bottom widget.
+      </p>
+      <p>
+        This app features the following classes: AppBar, DefaultTabController, TabBar, Scaffold, TabBarView.
+      </p>
+      <p>
+        <a href="/catalog/samples/tabbed-app-bar/">Learn more</a>.
       </p>
     </div>
   </div>

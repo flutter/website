@@ -4,7 +4,9 @@ title: "Sample App Catalog"
 permalink: /catalog/samples/
 ---
 
-Complete applications that demonstrate how to get things done with Flutter. Each sample app features a few classes or an animation, a layout, or other feature of Flutter. The samples are short, just one file and usually only one or two pages of code. They should easy to try out with your favorite IDE.
+Applications that demonstrate how to implement common mobile design patterns with Flutter. Each sample demonstrates how a few Flutter widgets can be put together to implement a meaningful user interface. The samples are short - just one Dart file - complete applications. They should be easy to try out and tweak with your favorite IDE/code editor.
+
+If there sample apps you'd like to see here we'd love to hear from you on our [Gitter channel](https://gitter.im/flutter/flutter) or [mailing list](https://groups.google.com/d/forum/flutter-dev).
 
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 32px">
@@ -19,6 +21,12 @@ Complete applications that demonstrate how to get things done with Flutter. Each
 in sync with an app-specific ListModel. When an item is added to or removed
 from the model, the corresponding card animates in or out of view.
       </p>
+      <p>
+        This app features the following classes: AnimatedList, AnimatedListState.
+      </p>
+      <p>
+        <a href="/catalog/samples/animated-list/">Learn more</a>.
+      </p>
     </div>
   </div>
 
@@ -31,6 +39,12 @@ from the model, the corresponding card animates in or out of view.
     <div class="col-md-9">
       <p>
         Any widget with a PreferredSize can appear at the bottom of an AppBar.
+      </p>
+      <p>
+        This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
+      </p>
+      <p>
+        <a href="/catalog/samples/app-bar-bottom/">Learn more</a>.
       </p>
     </div>
   </div>
@@ -45,6 +59,12 @@ from the model, the corresponding card animates in or out of view.
       <p>
         A typcial AppBar with a title, actions, and an overflow dropdown menu.
       </p>
+      <p>
+        This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
+      </p>
+      <p>
+        <a href="/catalog/samples/basic-app-bar/">Learn more</a>.
+      </p>
     </div>
   </div>
 
@@ -58,6 +78,12 @@ from the model, the corresponding card animates in or out of view.
       <p>
         ExpansionTiles can used to produce two-level or multi-level lists.
       </p>
+      <p>
+        This app features the following classes: ExpansionTile, ListView.
+      </p>
+      <p>
+        <a href="/catalog/samples/expansion-tile-sample/">Learn more</a>.
+      </p>
     </div>
   </div>
 
@@ -70,6 +96,12 @@ from the model, the corresponding card animates in or out of view.
     <div class="col-md-9">
       <p>
         An AppBar with a TabBar as its bottom widget.
+      </p>
+      <p>
+        This app features the following classes: AppBar, DefaultTabController, TabBar, Scaffold, TabBarView.
+      </p>
+      <p>
+        <a href="/catalog/samples/tabbed-app-bar/">Learn more</a>.
       </p>
     </div>
   </div>

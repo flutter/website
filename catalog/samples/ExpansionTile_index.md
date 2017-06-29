@@ -17,6 +17,12 @@ All of the sample apps listed here use the Flutter ExpansionTile class in an int
       <p>
         ExpansionTiles can used to produce two-level or multi-level lists.
       </p>
+      <p>
+        This app features the following classes: ExpansionTile, ListView.
+      </p>
+      <p>
+        <a href="/catalog/samples/expansion-tile-sample/">Learn more</a>.
+      </p>
     </div>
   </div>
 

@@ -17,6 +17,12 @@ All of the sample apps listed here use the Flutter PreferredSize class in an int
       <p>
         Any widget with a PreferredSize can appear at the bottom of an AppBar.
       </p>
+      <p>
+        This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
+      </p>
+      <p>
+        <a href="/catalog/samples/app-bar-bottom/">Learn more</a>.
+      </p>
     </div>
   </div>
 
