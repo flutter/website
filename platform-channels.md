@@ -89,6 +89,10 @@ the iOS `device.batteryLevel` API, via a single platform message,
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
 [`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
 
+*Note 2*: The example demonstrates how to write platform-specific code inside an app.
+Platform channels can also be used to develop [plugin packages](https://flutter.io/developing-packages/#plugin).
+Please see that page for details on which files to edit for a plugin package.
+
 ### Step 1: Create a new app project {#example-project}
 
 Start by creating a new app using:
