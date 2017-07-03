@@ -96,17 +96,13 @@ written in the same way.
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
 [`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
 
-*Note 2*: The example demonstrates how to write platform-specific code inside an app.
-Platform channels can also be used to develop [plugin packages](https://flutter.io/developing-packages/#plugin).
-Please see that page for details on which files to edit for a plugin package.
-
 ### Step 1: Create a new app project {#example-project}
 
 Start by creating a new app:
 
 * In a terminal run: `flutter create batterylevel`
 
-By default our template support writing Android code using Java, or iOS code
+By default our template supports writing Android code using Java, or iOS code
 using Objective-C. To use Kotlin or Swift, use the `-i` and/or `-a` flags:
 
 * In a terminal run: `flutter create -i swift -a kotlin batterylevel`
@@ -193,7 +189,7 @@ Widget build(BuildContext context) {
 ```
 
 
-### Step 3a: Add an Android platform-specific implementation using Java {#example-android}
+### Step 3a: Add an Android platform-specific implementation using Java {#example-java}
 
 *Note*: The following steps use Java. If you prefer Kotlin, skip to step
 3b.
@@ -312,7 +308,7 @@ You should now be able to run the app on Android. If you are using the Android
 Emulator, you can set the battery level in the Extended Controls panel
 accessible from the `...` button in the toolbar.
 
-### Step 3b: Add an Android platform-specific implementation using Kotlin {#example-android-kotlin}
+### Step 3b: Add an Android platform-specific implementation using Kotlin {#example-kotlin}
 
 *Note*: The following steps are similar to step 3a, only using Kotlin rather than
 Java.
@@ -327,10 +323,11 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
 1. Select the menu item 'File > Open...'
 
 1. Navigate to the directory holding your Flutter app, and select the `android`
-folder inside it. Click OK.
+   folder inside it. Click OK.
 
-1. Open the file `MainActivity.kt` located in the `java` folder in the Project
-view.
+1. Open the file `MainActivity.kt` located in the `kotlin` folder in the Project
+   view. (Note: If you are editing using Android Studio 2.3, note that the
+   'kotlin' folder will be shown as-if named 'java'.)
 
 Next, inside the `onCreate` method, create a `MethodChannel` and call
 `setMethodCallHandler`. Make sure to use the same channel name as was used on
@@ -365,7 +362,7 @@ method:
 
 ```kotlin
   private fun getBatteryLevel(): Int {
-    var batteryLevel = -1
+    val batteryLevel: Int
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
       val batteryManager = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
       batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
@@ -462,7 +459,8 @@ as was used on the Flutter client side.
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // TODO
   }];
-  return YES;
+
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 ```
 
@@ -538,7 +536,7 @@ Objective-C:
 1. Open the file `AppDelegate.swift` located under Runner > Runner in the Project
 navigator.
 
-Next, override extend the `application` function create a `FlutterMethodChannel`
+Next, override the `application` function and create a `FlutterMethodChannel`
 tied to the channel name `samples.flutter.io/battery`:
 
 ```swift
@@ -549,7 +547,7 @@ tied to the channel name `samples.flutter.io/battery`:
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     GeneratedPluginRegistrant.register(with: self);
 
-    let controller : FlutterViewController = window?.rootViewController as!FlutterViewController;
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
     let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
                                                    binaryMessenger: controller);
     batteryChannel.setMethodCallHandler({
