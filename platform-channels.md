@@ -75,8 +75,9 @@ The following table shows how Dart values are received on the platform side and 
 | Int64List   | long[]   | FlutterStandardTypedData typedDataWithInt64:
 | Float64List | double[] | FlutterStandardTypedData typedDataWithFloat64:
 | List        | java.util.ArrayList | NSArray
-| Map         | java.util.HashMap   | NSDictionary    
- 
+| Map         | java.util.HashMap   | NSDictionary
+
+<br>
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
 The following demonstrates how to call a platform-specific API to retrieve and
@@ -84,23 +85,27 @@ display the current battery level. It uses the Android `BatteryManager` API, and
 the iOS `device.batteryLevel` API, via a single platform message,
 `getBatteryLevel`.
 
+The example adds the platform-specific code inside the main app itself. If you
+want to reuse the platform-specific code for multiple apps, the project creation
+step is slightly different (see [developing
+packages](/developing-packages/#plugin)), but the platform channel code is still
+written in the same way.
+
 *Note*: The full, runnable source-code for this example is available in
 [`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
 [`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
 
-*Note 2*: The example demonstrates how to write platform-specific code inside an app.
-Platform channels can also be used to develop [plugin packages](https://flutter.io/developing-packages/#plugin).
-Please see that page for details on which files to edit for a plugin package.
-
 ### Step 1: Create a new app project {#example-project}
 
-Start by creating a new app using:
+Start by creating a new app:
 
-* In a terminal: `flutter create batterylevel`, or
+* In a terminal run: `flutter create batterylevel`
 
-* In IntelliJ: *File > New > Project...*, select Flutter, and use the project
- name 'battery level'
+By default our template supports writing Android code using Java, or iOS code
+using Objective-C. To use Kotlin or Swift, use the `-i` and/or `-a` flags:
+
+* In a terminal run: `flutter create -i swift -a kotlin batterylevel`
 
 ### Step 2: Create the Flutter platform client {#example-client}
 
@@ -184,7 +189,10 @@ Widget build(BuildContext context) {
 ```
 
 
-### Step 3a: Add an Android platform-specific implementation {#example-android}
+### Step 3a: Add an Android platform-specific implementation using Java {#example-java}
+
+*Note*: The following steps use Java. If you prefer Kotlin, skip to step
+3b.
 
 Start by opening the Android host portion of your Flutter app in Android Studio:
 
@@ -233,7 +241,7 @@ retrieve the battery level. This code is exactly the same as you would have
 written in a native Android app.
 
 Add the following as a new method in the activity class, below the `onCreate`
-method, and also add the corresponding imports:
+method:
 
 ```java
 private int getBatteryLevel() {
@@ -251,6 +259,8 @@ private int getBatteryLevel() {
   return batteryLevel;
 }
 ```
+
+Add the corresponding imports
 
 ```java
 import android.content.ContextWrapper;
@@ -298,10 +308,124 @@ You should now be able to run the app on Android. If you are using the Android
 Emulator, you can set the battery level in the Extended Controls panel
 accessible from the `...` button in the toolbar.
 
-### Step 3b: Add an iOS platform-specific implementation using Objective-C {#example-objc}
+### Step 3b: Add an Android platform-specific implementation using Kotlin {#example-kotlin}
+
+*Note*: The following steps are similar to step 3a, only using Kotlin rather than
+Java.
+
+This step assumes that you created your project in [step 1.](#example-project)
+using the `-a kotlin` option.
+
+Start by opening the Android host portion of your Flutter app in Android Studio:
+
+1. Start Android Studio
+
+1. Select the menu item 'File > Open...'
+
+1. Navigate to the directory holding your Flutter app, and select the `android`
+   folder inside it. Click OK.
+
+1. Open the file `MainActivity.kt` located in the `kotlin` folder in the Project
+   view. (Note: If you are editing using Android Studio 2.3, note that the
+   'kotlin' folder will be shown as-if named 'java'.)
+
+Next, inside the `onCreate` method, create a `MethodChannel` and call
+`setMethodCallHandler`. Make sure to use the same channel name as was used on
+the Flutter client side.
+
+```kotlin
+import android.os.Bundle
+import io.flutter.app.FlutterActivity
+import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
+
+class MainActivity() : FlutterActivity() {
+  private val CHANNEL = "samples.flutter.io/battery"
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    GeneratedPluginRegistrant.registerWith(this)
+
+    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // TODO
+    }
+  }
+}
+```
+
+Next, we add the actual Android Kotlin code that uses the Android battery APIs to
+retrieve the battery level. This code is exactly the same as you would have
+written in a native Android app.
+
+Add the following as a new method in the `MainActivity` class, below the `onCreate`
+method:
+
+```kotlin
+  private fun getBatteryLevel(): Int {
+    val batteryLevel: Int
+    if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+      val batteryManager = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+      batteryLevel = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+    } else {
+      val intent = ContextWrapper(applicationContext).registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+      batteryLevel = intent!!.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) * 100 / intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
+    }
+
+    return batteryLevel
+  }
+```
+
+Add the corresponding imports:
+
+```
+import android.content.Context
+import android.content.ContextWrapper
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.BatteryManager
+import android.os.Build.VERSION
+import android.os.Build.VERSION_CODES
+```
+
+Finally, we complete the `onMethodCall` method we added earlier. We need to
+handle a single platform method, `getBatteryLevel`, so we test for that in the
+`call` argument. The implementation of this platform method simply calls the
+Android code we wrote in the previous step, and passes back a response for both
+the success and error cases using the `response` argument. If an unknown method
+is called, we report that instead. Replace:
+
+```kotlin
+    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // TODO
+    }
+```
+
+with:
+
+```kotlin
+    MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      if (call.method == "getBatteryLevel") {
+        val batteryLevel = getBatteryLevel()
+
+        if (batteryLevel != -1) {
+          result.success(batteryLevel)
+        } else {
+          result.error("UNAVAILABLE", "Battery level not available.", null)
+        }
+      } else {
+        result.notImplemented()
+      }
+    }
+```
+
+You should now be able to run the app on Android. If you are using the Android
+Emulator, you can set the battery level in the Extended Controls panel
+accessible from the `...` button in the toolbar.
+
+### Step 4a: Add an iOS platform-specific implementation using Objective-C {#example-objc}
 
 *Note*: The following steps use Objective-C. If you prefer Swift, skip to step
-3c.
+4b.
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -335,7 +459,8 @@ as was used on the Flutter client side.
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // TODO
   }];
-  return YES;
+
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 ```
 
@@ -386,10 +511,13 @@ You should now be able to run the app on iOS. If you are using the iOS
 Simulator, note that it does not support battery APIs, and the app will thus
 display 'battery info unavailable'.
 
-### Step 3c: Add an iOS platform-specific implementation using Swift {#example-swift}
+### Step 4b: Add an iOS platform-specific implementation using Swift {#example-swift}
 
-*Note*: The following steps are similar to step 3b, only using Swift rather than
+*Note*: The following steps are similar to step 4a, only using Swift rather than
 Objective-C.
+
+This step assumes that you created your project in [step 1.](#example-project)
+using the `-i swift` option.
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -405,36 +533,11 @@ Objective-C:
 
 1. Expand Runner > Runner in the Project navigator.
 
-1. If present, delete the files `AppDelegate.h`, `AppDelegate.m`, and
-`Supporting files/main.h`. Select 'Move to trash' when asked.
-
-1. Add a new `AppDelegate.swift` main file:
-  * Right-click the Runner>Runner folder, and select **New File...**. 
-  * Select `Swift File`, and click **Next**
-  * Name the file `AppDelegate.swift`
-  * Select **Create Bridging Header** when asked.
-1. Open `Runner-Bridging-Header.h`, and add a Flutter import:
-    ```
-    #import "../Flutter/Flutter.framework/Headers/Flutter.h"
-    #import "GeneratedPluginRegistrant.h" //for other plugins
-    ```
 1. Open the file `AppDelegate.swift` located under Runner > Runner in the Project
-navigator, and replace `import Foundation` with:
-    ```swift
-    import UIKit
-    import Flutter
+navigator.
 
-    @UIApplicationMain
-    @objc class AppDelegate: FlutterAppDelegate {
-    }
-    ```
-1. Validate that the project builds (shortcut `cmd-b`).
-
-With the project converted to use Swift for the main application class we can
-now begin.
-
-First we override `didFinishLaunchingWithOptions` to contain a
-`FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
+Next, override the `application` function and create a `FlutterMethodChannel`
+tied to the channel name `samples.flutter.io/battery`:
 
 ```swift
 @UIApplicationMain
@@ -442,24 +545,24 @@ First we override `didFinishLaunchingWithOptions` to contain a
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    GeneratedPluginRegistrant.register(with: self)
+    GeneratedPluginRegistrant.register(with: self);
+
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
     let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
                                                    binaryMessenger: controller);
-  
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Handle battery messages.
     });
-   
-    return true
+
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }
 }
 ```
 
-Next, we add the actual iOS Swift code that uses the iOS battery APIs to
-retrieve the battery level. This code is exactly the same as you would have
-written in a native iOS app.
+Next, add the actual iOS Swift code that uses the iOS battery APIs to retrieve
+the battery level. This code is exactly the same as you would have written in a
+native iOS app.
 
 Add the following as a new method at the bottom of `AppDelegate.swift`:
 
@@ -477,7 +580,7 @@ private func receiveBatteryLevel(result: FlutterResult) {
 }
 ```
 
-Finally, we complete the `setMethodCallHandler` method we added earlier. We need
+Finally, complete the `setMethodCallHandler` method we added earlier. We need
 to handle a single platform method, `getBatteryLevel`, so we test for that in
 the `call` argument. The implementation of this platform method simply calls the
 iOS code we wrote in the previous step. If an unknown method
@@ -498,14 +601,14 @@ You should now be able to run the app on iOS. If you are using the iOS
 Simulator, note that it does not support battery APIs, and the app will thus
 display 'Battery info unavailable.'.
 
-## Separate platform plugin code from UI code
+## Separate platform-specific code from UI code {#separate}
 
 If you expect to use your platform-specific code in multiple Flutter apps, it
 can be useful to separate the code into a platform plugin located in a directory
 outside your main application. See [developing packages](/developing-packages/)
 for details.
 
-## Publish a platform plugin {#publish}
+## Publish platform-specific code as a package {#publish}
 
 If you wish to share your platform-specific with other developers in the Flutter
 ecosystem, please see [publishing packages](/developing-packages/#publish)
