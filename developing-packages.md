@@ -30,7 +30,7 @@ Packages can contain several kinds of content:
 
 * *Plugin packages*: A specialized Dart package which contain an API written in
   Dart code combined with a platform-specific implementation for Android (using
-  ObjC or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
+  Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
   the [`battery`](https://pub.dartlang.org/packages/battery) plugin package.
 
 ## Developing Dart packages {#dart}
