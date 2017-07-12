@@ -103,7 +103,7 @@ hide_title: true
 
         <p>
         Easily compose your UI with Flutter's
-        modern functional-reactive framework and
+        modern reactive framework and
         rich set of platform, layout, and foundation widgets.
         Solve your tough UI challenges with
         powerful and flexible APIs for 2D, animation, gestures,
@@ -144,7 +144,7 @@ class CounterState extends State<Counter> {
         <p>
         Browse the <a href="/widgets/">widget catalog</a>
         and learn more about the
-        <a href="/widgets-intro/">functional-reactive framework</a>.
+        <a href="/widgets-intro/">reactive framework</a>.
         </p>
 
     </section>
