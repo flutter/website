@@ -47,7 +47,7 @@ Second use the font by creating a [`TextStyle`](https://docs.flutter.io/flutter/
 Then set the [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) `fontFamily` property 
 and use the font family specified in the `pubsec.yaml` declarations. 
 
-```
+```dart
 // declare the text style
 const textStyle = const TextStyle(
   fontFamily: 'Raleway',
@@ -65,7 +65,7 @@ var buttonText = const Text(
 When you want to use the Material Design fonts,
 they can be simply included by adding a property `uses-material-design: true` to the `pubspec.yaml` file.
 
-```
+```yaml
 flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
