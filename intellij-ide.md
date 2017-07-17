@@ -114,24 +114,28 @@ To edit your code and hot reload changes:
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with 'Debug', and then open the Flutter tool window using 'View > Tool Windows > Flutter'. This offers three tools for visual debugging:
+To debug a visual issue, start the app with 'Debug', and then open the Flutter tool
+window using 'View > Tool Windows > Flutter'.
 
 ![IntelliJ Flutter tool window](/images/intellij/visual-debugging.png)
 
-* 'Debug paint': Add visual debugging hints to the rendering. All boxes get a
-bright teal border, padding (from widgets like Padding) are shown in faded blue
-with a darker blue box around the child, alignment (from widgets like Center and
-Align) is shown with yellow arrows, and spacers (from widgets like Container
-when they have no child) are shown in gray.
+This offers many debugging tools; for details on these please see
+[Debugging Flutter Apps](https://flutter.io/debugging/).
 
-* 'Perf overlay': Show two performance graphs. The top one is the time spent by
-the GPU thread, the bottom one is the time spent by the CPU thread. The white
-lines across the graphs show 16ms increments along the vertical axis; if the
-graph ever goes over one of these lines then you are running at less than 60Hz.
-The horizontal axis represents frames. The graph is only updated when your
-application paints, so if it is idle the graph will stop moving.
+* 'Debug paint': Add visual debugging hints to the rendering displaying borders,
+   padding, alignment, and spacers.
+
+* 'Perf overlay': Show performance graphs for the GPU & CPU threads.
 
 * 'Platform toggle': Toggle between rendering for Android or iOS.
+
+* 'Paint baselines': Show alphabetic and ideographic paint baseline.
+
+* 'Repaint rainbow': Show rotating colors on layers when repainting.
+
+* 'Slow animations': Slow down animations to enable visual inspection.
+
+* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a debug build.
 
 ### Debugging with Observatory
 
