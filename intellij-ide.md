@@ -67,6 +67,7 @@ The Dart plugin performs code analysis that enables:
 ## Running and Debugging
 
 Running and Debugging is controlled from the main toolbar:
+
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
 ### Selecting a target
@@ -85,7 +86,7 @@ You need to connect a device, or start a simulator, to proceed.
 ### Run app without breakpoints
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
-* The bottom **Run** pane will show logs output:
+* The bottom **Run** pane will show logs output:<br>
 ![Log pane](/images/intellij/log.png)
 
 ### Run app with breakpoints
@@ -156,6 +157,7 @@ are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
 the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
 here:
+
 ![IntelliJ editing assists](/images/intellij/assists.gif)
 
 Quick Fixes are similar, only they are shown with a piece of code has an error and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -175,6 +177,7 @@ We currently support the following assists & quick fixes:
 Live templates can be used to speed up entering typical code structures. They
 are invoked by typing their 'prefix', and then selecting it in the code
 completion window:
+
 ![IntelliJ live templates](/images/intellij/templates.gif)
 
 The Flutter plugin includes the following templates:
