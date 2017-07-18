@@ -110,7 +110,34 @@ To edit your code and hot reload changes:
 1. Do not press the 'Stop' button; rather, to see your changes just click the
 **Hot Reload button** (the button with the lightning bolt icon).
 
-### Advanced debugging with Observatory
+## Advanced debugging
+
+### Debugging visual layout issues
+
+To debug a visual issue, start the app with 'Debug', and then open the Flutter tool
+window using 'View > Tool Windows > Flutter'.
+
+![IntelliJ Flutter tool window](/images/intellij/visual-debugging.png)
+
+This offers many debugging tools; for details on these please see
+[Debugging Flutter Apps](https://flutter.io/debugging/).
+
+* 'Debug paint': Add visual debugging hints to the rendering displaying borders,
+   padding, alignment, and spacers.
+
+* 'Perf overlay': Show performance graphs for the GPU & CPU threads.
+
+* 'Platform toggle': Toggle between rendering for Android or iOS.
+
+* 'Paint baselines': Show alphabetic and ideographic paint baseline.
+
+* 'Repaint rainbow': Show rotating colors on layers when repainting.
+
+* 'Slow animations': Slow down animations to enable visual inspection.
+
+* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a debug build.
+
+### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
 html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
