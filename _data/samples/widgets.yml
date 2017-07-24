@@ -1,0 +1,12 @@
+- name: "AppBar"
+  link: "https://docs.flutter.io/flutter/material/AppBar-class.html"
+  image: "<img class='media-object' src='/images/samples/ios_animated_list_small.png' alt=''>"
+  description: "Lorem ipsum"
+  detail-page: "/catalog/basic_app_bar/"
+  classes:
+
+- name: "AnimatedList"
+  link: "https://docs.flutter.io/flutter/widgets/AnimatedList-class.html"
+  image: "<img class='media-object' src='/images/samples/ios_animated_list_small.png' alt=''>"
+  description: "Quo Lorem ipsum"
+  classes: 
