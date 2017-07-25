@@ -4,9 +4,9 @@ title: Writing custom platform-specific code with platform channels
 permalink: /platform-channels/
 ---
 
-This guide describes how to write custom platform-specific code. If you just
-want to use call platform-specific code in existing packages, please see [using
-packages](/using-packages/).
+This guide describes how to write custom platform-specific code. Some
+platform-specific functionality is available through existing packages;
+please see [using packages](/using-packages/).
 
 * TOC
 {:toc}
@@ -18,7 +18,7 @@ code on iOS.
 Flutter's platform-specific API support does not rely on code generation, but
 rather on a flexible message passing style:
 
-* The Flutter portion of your app sends messages to it's *host*, the iOS or
+* The Flutter portion of your app sends messages to its *host*, the iOS or
  Android portion of your app, over a platform channel.
 
 * The *host* listens on the platform channel, and receives the message. It then
