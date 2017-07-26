@@ -9,6 +9,8 @@ is where we push 'known good builds' of Flutter. If you need to
 view the very latest changes, you can track the `master` branch, but note this is where
 we do our daily development, so stability is much lower.
 
+To view your current branch, use `flutter channel`.
+
 To change branch, use `flutter channel alpha` / `flutter channel master`.
 
 ## Specifying the Flutter SDK for your project
