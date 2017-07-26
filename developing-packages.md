@@ -99,7 +99,7 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
-* `android/src/main/java/com/yourcompany/hello/HelloPlugin.java`:
+* `android/src/main/java/&#8203;com/yourcompany/hello/&#8203;HelloPlugin.java`:
    - The Android platform specific implementation of the plugin API.
 * `ios/Classes/HelloPlugin.m`: 
    - The iOS platform specific implementation of the plugin API.
