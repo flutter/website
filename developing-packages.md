@@ -99,7 +99,7 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
-* `android/src/main/java/com/yourcompany/hello/HelloPlugin.java`:
+* <code>android/src/main/java/com/yourcompany/&#8203;hello/HelloPlugin.java</code>:
    - The Android platform specific implementation of the plugin API.
 * `ios/Classes/HelloPlugin.m`: 
    - The iOS platform specific implementation of the plugin API.
@@ -144,7 +144,7 @@ Next,
    for this project'.
 
 The Android platform code of your plugin is located in
-`hello/java/com.yourcompany.hello/HelloPlugin`.
+<code>hello/java/com.yourcompany.hello/&#8203;HelloPlugin</code>.
 
 You can run the example app from Android Studio by pressing the &#9654; button.
 
