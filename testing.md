@@ -208,9 +208,7 @@ dev_dependencies:
 ### Creating instrumented Flutter apps
 
 An instrumented app is a Flutter app that has the Flutter Driver
-_extension_ enabled. To enable the extension call
-`enableFlutterDriverExtension()` from
-`package:flutter_driver/driver_extension.dart`.
+_extension_ enabled. To enable the extension call `enableFlutterDriverExtension()`.
 
 Example:
 
