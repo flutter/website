@@ -17,8 +17,8 @@ When you're ready to prepare a *release* version for Android, for example to
 
 ## Reviewing the App Manifest
 
-When you create a new app, a default [App Manifest][manifest] file is created
-at `<app dir>/android/app/src/main/AndroidManifest.xml`. Before releasing,
+When you create a new app, a default [App Manifest][manifest] file `AndroidManifest.xml`
+is created in `<app dir>/android/app/src/main/`. Before releasing,
 review the contents of this file and verify the values are correct, especially:
 
 * `application`: Edit the [`application`][applicationtag] tag to reflect the final name of the app.
