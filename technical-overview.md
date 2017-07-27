@@ -165,7 +165,7 @@ These widgets subclass [StatefulWidget](https://docs.flutter.io/flutter/widgets/
 (rather than [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
 and store their mutable state in a subclass of [State](https://docs.flutter.io/flutter/widgets/State-class.html).
 
-<object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg"></object>
+<object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
