@@ -48,9 +48,9 @@ What are some advantages of Flutter? It helps you:
 
 ## Core principles
 
-Flutter includes a reactive framework, a 2D rendering engine, ready-made
-widgets, and development tools. These components work together to help you
-design, build, test, and debug apps. Everything is organized around a few core
+Flutter includes a modern reactive-style framework, a 2D rendering engine,
+ready-made widgets, and development tools. These components work together to help
+you design, build, test, and debug apps. Everything is organized around a few core
 principles.
 
 ### Everything's a Widget

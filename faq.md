@@ -110,8 +110,9 @@ built with Flutter to users. We'd love to hear what you're building!
 
 ### What is inside the Flutter SDK?
 
-* Heavily optimized, mobile-first 2D rendering engine with excellent support for text
-* Reactive framework
+* Heavily optimized, mobile-first 2D rendering engine with excellent support for
+  text
+* Modern reactive-style framework
 * Rich set of widgets for Android and iOS
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
@@ -129,7 +130,7 @@ and one of the many editors that support [editing Dart](https://www.dartlang.org
 
 ### Does Flutter come with a framework?
 
-Yes! Flutter ships with a reactive style framework, inspired by React.
+Yes! Flutter ships with a modern framework, inspired by React.
 Flutter's framework is designed to be layered and customizable (and optional).
 Developers can choose to use only parts of the framework, or a different
 framework.
@@ -232,11 +233,9 @@ The primary criteria we used to pick a programming language were the following:
   performance and delivers predictable performance, without periodic
   pauses that would cause dropped frames.
 
-* _Fast allocation_. The Flutter framework uses a reactive style
-  programming model, whose performance depends heavily on the underlying memory
-  allocator efficiently handling small, short-lived allocations. The
-  reactive style was developed in languages with this property and
-  does not work efficiently in languages that lack this facility.
+* _Fast allocation_. The Flutter framework uses a functional-style flow
+  that depends heavily on the underlying memory
+  allocator efficiently handling small, short-lived allocations.
 
 Dart scores highly on all four dimensions. In addition, we have the opportunity
 to work closely with the Dart community, which is actively investing resources
