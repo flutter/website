@@ -112,7 +112,7 @@ built with Flutter to users. We'd love to hear what you're building!
 
 * Heavily optimized, mobile-first 2D rendering engine with excellent support for
   text
-* Modern reactive-style framework
+* Modern reactive framework
 * Rich set of widgets for Android and iOS
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
