@@ -110,8 +110,9 @@ built with Flutter to users. We'd love to hear what you're building!
 
 ### What is inside the Flutter SDK?
 
-* Heavily optimized, mobile-first 2D rendering engine with excellent support for text
-* Functional-reactive framework
+* Heavily optimized, mobile-first 2D rendering engine with excellent support for
+  text
+* Modern react-style framework
 * Rich set of widgets for Android and iOS
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
@@ -129,9 +130,8 @@ and one of the many editors that support [editing Dart](https://www.dartlang.org
 
 ### Does Flutter come with a framework?
 
-Yes! Flutter ships with a functional-reactive style framework, inspired by
-React. Flutter's framework is designed to be layered and customizable
-(and optional).
+Yes! Flutter ships with a modern framework, inspired by React.
+Flutter's framework is designed to be layered and customizable (and optional).
 Developers can choose to use only parts of the framework, or a different
 framework.
 
@@ -233,11 +233,11 @@ The primary criteria we used to pick a programming language were the following:
   performance and delivers predictable performance, without periodic
   pauses that would cause dropped frames.
 
-* _Fast allocation_. The Flutter framework uses a functional-reactive style
-  programming model, whose performance depends heavily on the underlying memory
-  allocator efficiently handling small, short-lived allocations. The
-  functional-reactive style was developed in languages with this property and
-  does not work efficiently in languages that lack this facility.
+* _Fast allocation_. The Flutter framework uses a functional-style flow
+  that depends heavily on the underlying memory
+  allocator efficiently handling small, short-lived allocations.
+  This style was developed in languages with this property and does
+  not work efficiently in languages that lack this facility.
 
 Dart scores highly on all four dimensions. In addition, we have the opportunity
 to work closely with the Dart community, which is actively investing resources
@@ -483,7 +483,7 @@ can do anything, including interpreting markup and turning it into widgets.
 
 ### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
 
-By default `flutter run` command uses the debug build configuration. 
+By default `flutter run` command uses the debug build configuration.
 
 The debug configuration runs your Dart code in a VM (Virtual Machine) enabling a
 fast development cycle with [hot reload](#hot-reload) (release builds are
@@ -495,7 +495,7 @@ early during development, but imposes a runtime cost. The "slow mode" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
-If you are using the Flutter plugin for IntelliJ, you can launch the app in 
+If you are using the Flutter plugin for IntelliJ, you can launch the app in
 profile or release mode using the menu entries **Run > Flutter Run in Profile Mode**
 or **Release Mode**.
 
