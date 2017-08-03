@@ -112,7 +112,7 @@ built with Flutter to users. We'd love to hear what you're building!
 
 * Heavily optimized, mobile-first 2D rendering engine with excellent support for
   text
-* Modern reactive framework
+* Modern react-style framework
 * Rich set of widgets for Android and iOS
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
@@ -236,6 +236,8 @@ The primary criteria we used to pick a programming language were the following:
 * _Fast allocation_. The Flutter framework uses a functional-style flow
   that depends heavily on the underlying memory
   allocator efficiently handling small, short-lived allocations.
+  This style was developed in languages with this property and does
+  not work efficiently in languages that lack this facility.
 
 Dart scores highly on all four dimensions. In addition, we have the opportunity
 to work closely with the Dart community, which is actively investing resources

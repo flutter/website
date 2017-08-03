@@ -9,7 +9,7 @@ permalink: /widgets-intro/
 
 ## Introduction
 
-Flutter widgets are built using a modern reactive framework, which takes
+Flutter widgets are built using a modern react-style framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
