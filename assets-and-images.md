@@ -232,15 +232,17 @@ In your Flutter project's root directory, navigate to `.../ios/Runner/Assets.xca
 
 ![iOS icon location](/images/assets-and-images/ios-icon-path.png)
 
-## Updating the launch screen
+### Updating the launch screen
 
 <p align="center">
-  <img src="images/assets-and-images/launch-screen.png" alt="Launch screen" />
+  <img src="/images/assets-and-images/launch-screen.png" alt="Launch screen" />
 </p>
 
 Flutter also uses native platform mechanisms to draw transitional launch screens to your Flutter app while the Flutter framework loads. This launch screen will persist until Flutter renders the first frame of your application.
 
-This also implies if you don't call [runApp](https://docs.flutter.io/flutter/widgets/runApp.html) in the `void main()` function of your app, the launch screen will persist forever.
+<aside class="alert alert-info" markdown="1">
+**Note:** this implies that if you don't call [runApp](https://docs.flutter.io/flutter/widgets/runApp.html) in the `void main()` function of your app (or more specifically, if you don't call [`window.render`](https://docs.flutter.io/flutter/dart-ui/Window/render.html) in response to [`window.onDrawFrame`](https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html)), the launch screen will persist forever.
+</aside>
 
 #### Android
 
