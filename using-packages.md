@@ -16,7 +16,7 @@ APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
 platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
-If you are looking to developer a new package, please see [developing packages](/developing-packages/).
+If you are looking to develop a new package, please see [developing packages](/developing-packages/).
 
 * TOC
 {:toc}
