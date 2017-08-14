@@ -228,7 +228,7 @@ In your Flutter project's root directory, navigate to `.../android/app/src/main/
 
 #### iOS
 
-In your Flutter project's root directory, navigate to `.../ios/Runner/Assets.xcassets/AppIcon.appiconset`. The directory already contains placeholder images. Simply replace them with the appropriately sized images as indicated by their filename as dictated by the Apple [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon). Keep the original file names.
+In your Flutter project's root directory, navigate to `.../ios/Runner`. The directory `Assets.xcassets/AppIcon.appiconset` already contains placeholder images. Simply replace them with the appropriately sized images as indicated by their filename as dictated by the Apple [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon). Keep the original file names.
 
 ![iOS icon location](/images/assets-and-images/ios-icon-path.png)
 
@@ -246,12 +246,12 @@ Flutter also uses native platform mechanisms to draw transitional launch screens
 
 #### Android
 
-To add a "splash screen" to your Flutter application, open `.../android/app/src/main/res/drawable/launch_background.xml`. You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource.html) to achieve the intended effect.
+To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource.html) to achieve the intended effect.
 
 #### iOS
 
-To add an image to the center of your "splash screen", navigate to `.../ios/Runner/Assets.xcassets/LaunchImage.imageset` and drop in images named `LaunchImage.png`, `LaunchImage@2x.png`, `LaunchImage@3x.png`. If you use different filenames, you'll have to update `.../ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json`.
+To add an image to the center of your "splash screen", navigate to `.../ios/Runner`. In, `Assets.xcassets/LaunchImage.imageset`, drop in images named `LaunchImage.png`, `LaunchImage@2x.png`, `LaunchImage@3x.png`. If you use different filenames, you'll also have to update the `Contents.json` file in the same directory.
 
-You can also fully customize your launch screen storyboard in Xcode by opening `.../ios/Runner.xcworkspace`. Drop in images by opening `Runner/Runner/Assets.xcassets` in the Project Navigator or do any customization using the Interface Builder in `Runner/Runner/LaunchScreen.storyboard`.
+You can also fully customize your launch screen storyboard in Xcode by opening `.../ios/Runner.xcworkspace`. Navigate to `Runner/Runner` in the Project Navigator and drop in images by opening `Assets.xcassets` or do any customization using the Interface Builder in `LaunchScreen.storyboard`.
 
 ![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
