@@ -16,6 +16,8 @@ APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
 platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
+If you are looking to develop a new package, please see [developing packages](/developing-packages/).
+
 * TOC
 {:toc}
 
@@ -25,7 +27,7 @@ platform SDKs (like
 
 Packages are published to the *[Pub](https://pub.dartlang.org)* package repository. 
 
-The list of [Flutter packages](https://pub.dartlang.org/flutter/packages) displays
+The [list of Flutter packages](https://pub.dartlang.org/flutter/packages) displays
 packages that have been developed specifically for Flutter (i.e., that declare a
 dependency on the Flutter framework). Flutter-specific packages are presented
 with a Flutter logo adornment.
@@ -58,6 +60,11 @@ The
 tab available on any package page on Pub is a handy reference for these steps.
 
 For a complete example, see [CSS Colors example](#css-example) below.
+
+## Developing new packages
+
+Should a package not be available for your specific use case, you can [develop new
+custom packages](https://flutter.io/developing-packages/).
 
 ## Managing package dependencies & versions
 
