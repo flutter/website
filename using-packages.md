@@ -107,7 +107,7 @@ run `flutter packages get`.
 
 If you want to upgrade to a new version of the package, for example to use new
 features in that package, run `flutter packages upgrade` ('Upgrade dependencies'
-in IntelliJ). This will retrive the highest available version of the package,
+in IntelliJ). This will retrieve the highest available version of the package,
 which is allowed by the version constraint you have specified in `pubspec.yaml`.
 
 ### Dependencies on unpublished packages
