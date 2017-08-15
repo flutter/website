@@ -48,7 +48,7 @@ the platform acting as client to methods implemented in Dart.
 
 [MethodChannel]: https://docs.flutter.io/flutter/services/MethodChannel-class.html
 [MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
-[MethodChanneliOS]: https://github.com/flutter/engine/blob/master/shell/platform/darwin/ios/framework/Headers/FlutterChannels.h
+[MethodChanneliOS]: https://docs.flutter.io/objcdoc/Classes/FlutterMethodChannel.html
 
 ### Platform channel data types support and codecs {#codec}
 
