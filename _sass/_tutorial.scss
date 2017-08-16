@@ -1,0 +1,16 @@
+// Styling for "What's the Point" blocks
+.whats-the-point {
+  background-color: $grey-color-light;
+  padding: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  margin-top: 0px; 
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  ul {
+    padding-left: 15px;
+    margin-bottom: 0;
+  }
+}

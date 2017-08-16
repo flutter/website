@@ -1,7 +1,6 @@
 ---
 layout: page
 title: A Tour of the Flutter Widget Framework
-sidebar: home_sidebar
 permalink: /widgets-intro/
 ---
 
@@ -10,7 +9,7 @@ permalink: /widgets-intro/
 
 ## Introduction
 
-Flutter widgets are built using a functional-reactive framework, which takes
+Flutter widgets are built using a modern react-style framework, which takes
 inspiration from [React](http://facebook.github.io/react/). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
@@ -66,7 +65,7 @@ in widgets that represent the underlying render object.
 Basic widgets
 -------------
 
-_Main article: [Widgets Overview - Layout Models](https://flutter.io/widgets/#layout-models)_
+_Main article: [Widgets Overview - Layout Models](https://flutter.io/widgets/layout)_
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
@@ -123,7 +122,7 @@ class MyAppBar extends StatelessWidget {
     return new Container(
       height: 56.0, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(backgroundColor: Colors.blue[500]),
+      decoration: new BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
       child: new Row(
         // <Widget> is the type of items in the list.
@@ -166,7 +165,7 @@ class MyScaffold extends StatelessWidget {
             child: new Center(
               child: new Text('Hello, world!'),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -222,13 +221,13 @@ variety of ways. Finally, `MyScaffold` uses a
 [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
-Using material design
+Using Material Design
 ---------------------
 
-_Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/#material-design-widgets)_
+_Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
-Material Design. A Material Design app start with the
+Material Design. A Material Design app starts with the
 [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
 widget, which builds a number of useful widgets at the root of your app,
 including a
@@ -253,7 +252,7 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Scafold is a layout for the major material design widgets.
+    // Scaffold is a layout for the major Material Design widgets.
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(
@@ -329,7 +328,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: new BoxDecoration(
           borderRadius: new BorderRadius.circular(5.0),
-          backgroundColor: Colors.lightGreen[500],
+          color: Colors.lightGreen[500],
         ),
         child: new Center(
           child: new Text('Engage'),

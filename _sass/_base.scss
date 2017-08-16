@@ -1,3 +1,8 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 /**
  * Reset some basic elements
  */
@@ -117,33 +122,6 @@ blockquote {
 }
 
 
-
-/**
- * Code formatting
- */
-pre {
-    font-size: 15px;
-}
-
-code, code[class*="language-"], pre[class*="language-"]{
-  font-family: 'Source Code Pro', monospace !important;
-  font-size: 1em;
-  padding: 0;
-}
-
-pre {
-    overflow-x: auto;
-    padding: 8px 12px;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-
-
 /**
  * Wrapper
  */
@@ -210,7 +188,7 @@ pre {
  */
 .licenses {
   font-size: 10px;
-  width: 66%;
+  width: 72%;
 }
 
 .nav-searchbox {
@@ -232,4 +210,8 @@ pre {
     padding: 4px 6px;
     font-size: 15px;
   }
+}
+
+.contribute {
+  float: right;
 }

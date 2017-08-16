@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Developing apps in the IntelliJ IDE
-sidebar: home_sidebar
+
 permalink: /intellij-ide/
 ---
 
@@ -67,12 +67,17 @@ The Dart plugin performs code analysis that enables:
 ## Running and Debugging
 
 Running and Debugging is controlled from the main toolbar:
+
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
 ### Selecting a target
 
 When a Flutter project is open in IntelliJ, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
+
+*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
+has not been able to discover any connected iOS or Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
 
 1. Locate the **Flutter Target Selector** drop-down button. This will show a
  list of available targets. Select the target you want your app to started on.
@@ -81,7 +86,7 @@ specific buttons on the right-hand side of the toolbar.
 ### Run app without breakpoints
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
-* The bottom **Run** pane will show logs output:
+* The bottom **Run** pane will show logs output:<br>
 ![Log pane](/images/intellij/log.png)
 
 ### Run app with breakpoints
@@ -106,7 +111,34 @@ To edit your code and hot reload changes:
 1. Do not press the 'Stop' button; rather, to see your changes just click the
 **Hot Reload button** (the button with the lightning bolt icon).
 
-### Advanced debugging with Observatory
+## Advanced debugging
+
+### Debugging visual layout issues
+
+To debug a visual issue, start the app with 'Debug', and then open the Flutter tool
+window using 'View > Tool Windows > Flutter'.
+
+![IntelliJ Flutter tool window](/images/intellij/visual-debugging.png)
+
+This offers many debugging tools; for details on these please see
+[Debugging Flutter Apps](https://flutter.io/debugging/).
+
+* 'Debug paint': Add visual debugging hints to the rendering displaying borders,
+   padding, alignment, and spacers.
+
+* 'Perf overlay': Show performance graphs for the GPU & CPU threads.
+
+* 'Platform toggle': Toggle between rendering for Android or iOS.
+
+* 'Paint baselines': Show alphabetic and ideographic paint baseline.
+
+* 'Repaint rainbow': Show rotating colors on layers when repainting.
+
+* 'Slow animations': Slow down animations to enable visual inspection.
+
+* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a debug build.
+
+### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
 html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
@@ -125,6 +157,7 @@ are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
 the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
 here:
+
 ![IntelliJ editing assists](/images/intellij/assists.gif)
 
 Quick Fixes are similar, only they are shown with a piece of code has an error and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -144,6 +177,7 @@ We currently support the following assists & quick fixes:
 Live templates can be used to speed up entering typical code structures. They
 are invoked by typing their 'prefix', and then selecting it in the code
 completion window:
+
 ![IntelliJ live templates](/images/intellij/templates.gif)
 
 The Flutter plugin includes the following templates:
@@ -197,6 +231,7 @@ reload' button.
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:
 
+1. In Preferences->Plugins, enable **Android Support** if you haven't already.
 1. Right-click the **android** folder in the Project view, and select **Open
 Module Settings**.
 1. In **Sources** tab, locate the **Language level** field, and select level '8'

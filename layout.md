@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Dealing with box constraints in Flutter
-sidebar: home_sidebar
+
 permalink: /layout/
 ---
 

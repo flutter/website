@@ -1,14 +1,15 @@
 ---
 layout: page
-title: Flutter Setup
-sidebar: home_sidebar
+title: Flutter installation & setup
 permalink: /setup/
 ---
 
-This page describes how to set up your development environment to run Flutter apps on
+This page describes how to prepare your development environment to run Flutter apps on
 iOS or Android.
 
-<div class="dropdown">
+{% include note.html content="_Flutter is an alpha, open-source project_." %}
+
+<div class="dropdown" style="margin-bottom: 24px">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Operating System
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
@@ -23,7 +24,7 @@ To start coding Flutter apps, complete all the tasks marked Required Now in this
 The remaining tasks can be deferred until later in the development cycle, when you're ready
 to test and iterate using a simulator or physical device.
 
-<table>
+<table class="flutter-table">
  <tr><th>Task</th><th>Required Now?</th></tr>
  <tr>
   <td style="width:1600px;">Verify your system meets the requirements for Flutter and dependencies (<a href="/setup-macos/#system-requirements">Mac</a>) (<a href="/setup-windows/#system-requirements">Windows</a>) (<a href="/setup-linux/#system-requirements">Linux</a>)</td><td align="center">Y</td>
@@ -32,7 +33,7 @@ to test and iterate using a simulator or physical device.
   <td>Clone the Flutter repo (<a href="/setup-macos/#clone-the-repo">Mac</a>) (<a href="/setup-windows/#clone-the-repo">Windows</a>) (<a href="/setup-linux/#clone-the-repo">Linux</a>)</td><td align="center">Y</td>
  </tr>
  <tr>
-  <td>Update your path (<a href="/setup-macos/#update-your-path">Mac</a>) (<a href="/setup-linux/#update-your-path">Linux)</a></td><td align="center">Y</td>
+  <td>Update your path (<a href="/setup-macos/#update-your-path">Mac</a>) (<a href="/setup-windows/#update-your-path">Windows</a>) (<a href="/setup-linux/#update-your-path">Linux)</a></td><td align="center">Y</td>
  </tr>
  <tr>
    <td>Run <code>flutter doctor</code> and resolve any issues found (<a href="/setup-macos/#run-flutter-doctor">Mac</a>) (<a href="/setup-windows/#run-flutter-doctor">Windows</a>) (<a href="/setup-linux/#run-flutter-doctor">Linux</a>)</td><td align="center">Y</td>
@@ -50,4 +51,3 @@ inline error checking, and visual debugging features.</td>
    <td>Perform Android setup tasks to develop apps for Android (<a href="/setup-macos/#android-setup">Mac</a>) (<a href="/setup-windows/#android-setup">Windows</a>) (<a href="/setup-linux/#android-setup">Linux</a>)</td><td align="center"></td>
  </tr>
 </table>
-

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Preparing an Android App for Release
-sidebar: home_sidebar
+
 permalink: /android-release/
 ---
 
@@ -17,8 +17,8 @@ When you're ready to prepare a *release* version for Android, for example to
 
 ## Reviewing the App Manifest
 
-When you create a new app, a default [App Manifest][manifest] file is created
-at `<app dir>/android/app/src/main/AndroidManifest.xml`. Before releasing,
+When you create a new app, a default [App Manifest][manifest] file `AndroidManifest.xml`
+is created in `<app dir>/android/app/src/main/`. Before releasing,
 review the contents of this file and verify the values are correct, especially:
 
 * `application`: Edit the [`application`][applicationtag] tag to reflect the final name of the app.
@@ -58,6 +58,10 @@ by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
 
 *Note*: Keep this file private; do not check it into public source control.
+
+*Note*: `keytool` may not be in your path. It is part of the Java JDK, which is installed as 
+part of Android Studio. For the concrete path, run `flutter doctor` and see the path printed 
+after 'Java binary at:', and then use that fully qualified path replacing `java` with `keytool`.
 
 ### Reference the keystore from the app
 
@@ -128,7 +132,7 @@ signing steps in the previous section, the release APK will be signed.
 Using the command line:
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
-1. Run `flutter build apk`.
+1. Run `flutter build apk` (`flutter build` defaults to `--release`).
 
 The release APK for your app is created at `<app dir>/build/app/outputs/apk/app-release.apk`.
 

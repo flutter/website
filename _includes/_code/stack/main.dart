@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         new Container(
           decoration: new BoxDecoration(
-            backgroundColor: Colors.black45,
+            color: Colors.black45,
           ),
           child: new Text(
             'Mia B',

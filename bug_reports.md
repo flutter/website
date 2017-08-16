@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Creating Useful Bug Reports
-sidebar: home_sidebar
+
 permalink: /bug-reports/
 ---
 

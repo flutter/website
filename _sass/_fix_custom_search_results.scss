@@ -1,0 +1,31 @@
+/* Needed for bootstrap and GSC to play nice */
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
+{
+  box-sizing: content-box;
+  line-height: normal;
+}
+
+.gsc-tabsArea div
+{
+  overflow: visible;
+}
+
+.gsc-selected-option {
+  width: 100px !important;
+}
+
+.gscb_a{
+  font: inherit !important;
+}
+
+.gs-snippet{
+  margin-left: 9px !important;
+}
+
+.gs-title{
+  text-decoration: none !important;
+}
+
+.gs-title b{
+  text-decoration: none !important;
+}

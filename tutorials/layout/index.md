@@ -1,11 +1,11 @@
 ---
 layout: tutorial
 title: "Building Layouts in Flutter"
-sidebar: home_sidebar
+
 permalink: /tutorials/layout/
 ---
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
@@ -47,10 +47,6 @@ some of the most common layout widgets are covered.
 
 <a name="building"></a>
 ## Building a layout
-
-This section walks you through the layout for the following screenshot:
-
-<img src="images/lakes.jpg" style="border:1px solid black" alt="A screenshot of the lakes app that you will build in this section">
 
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout](#approach).
@@ -393,7 +389,7 @@ shown in the screenshots. You can add interactivity to this layout by following
 <a name="approach"></a>
 ## Flutter's approach to layout
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -451,13 +447,13 @@ the children should occupy.
 <a name="lay-out-a-widget"></a>
 ## Lay out a widget
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 {% comment %}
 * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
-  [Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+  [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
   or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 * Add it to a layout widget, such as
   [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
@@ -580,7 +576,7 @@ class _MyHomePageState extends State<MyHomePage> {
 <aside class="alert alert-info" markdown="1">
 **Note:**
 The material library implements widgets that follow
-[material design principles](https://material.io/guidelines/).
+[Material Design principles](https://material.io/guidelines/).
 When designing your UI, you can exclusively use widgets from the standard
 [widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
 or you can use widgets from the [material
@@ -610,7 +606,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      decoration: new BoxDecoration(backgroundColor: Colors.white),
+      decoration: new BoxDecoration(color: Colors.white),
       child: new Center(
         child: new Text('Hello World',
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
@@ -645,7 +641,7 @@ One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
 and a Column widget to arrange widgets vertically.
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -1187,7 +1183,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     var container = new Container(
       decoration: new BoxDecoration(
-        backgroundColor: Colors.black26,
+        color: Colors.black26,
       ),
       child: new Column(
         children: [
@@ -1351,12 +1347,12 @@ A Divider separates the theaters from the restaurants.<br>
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the material design color palette">
+<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the Material Design color palette">
 
 Uses ListView to display the
 [Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
 from the
-[material design palette](https://material.io/guidelines/style/color.html)
+[Material Design palette](https://material.io/guidelines/style/color.html)
 for a particular color family.<br>
 **Dart code:** [colors_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/colors_demo.dart)
 from the [Flutter
@@ -1464,7 +1460,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         new Container(
           decoration: new BoxDecoration(
-            backgroundColor: Colors.black45,
+            color: Colors.black45,
           ),
           child: new Text(
             'Mia B',
@@ -1498,7 +1494,7 @@ In Flutter, a Card features slightly rounded corners
 and a drop shadow, giving it a 3D effect.
 Changing a Card's `elevation`
 property allows you to control the drop shadow effect.
-Setting the elevation to 24, for example, visually lifts the Card further
+Setting the elevation to 24.0, for example, visually lifts the Card further
 from the surface and causes the shadow to become more dispersed.
 For a list of supported elevation values, see
 [Elevation and
@@ -1508,7 +1504,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 #### Card summary:
 
-* Implements a [material design
+* Implements a [Material Design
   card](https://material.io/guidelines/components/cards.html)
 * Used for presenting related nuggets of information
 * Accepts a single child, but that child can be a Row, Column, or other
@@ -1635,7 +1631,7 @@ The following resources may help when writing layout code.
   to Flutter features.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many material design widgets and other Flutter features.
+  Demo app showcasing many Material Design widgets and other Flutter features.
 * [Flutter API documentation](https://docs.flutter.io/)<br>
   Reference documentation for all of the Flutter libraries.
 * [Dealing with Box Constraints in Flutter](/layout)<br>

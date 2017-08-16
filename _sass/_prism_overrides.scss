@@ -1,0 +1,8 @@
+// Overrides properties from _prism.scss, which is a generated file, see:
+// https://github.com/flutter/website#syntax-highlighting.
+
+// Fix background color of operators to resemble other elements.
+// https://github.com/flutter/flutter/issues/11335
+.token.operator {
+    background: none !important;
+}

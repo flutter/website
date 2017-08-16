@@ -64,7 +64,7 @@ class TapboxB extends StatelessWidget {
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor: active ? Colors.lightGreen[700] : Colors.grey[600],
+          color: active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );

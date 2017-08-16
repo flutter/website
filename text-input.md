@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Handling Text Input
-sidebar: home_sidebar
 permalink: /text-input/
 ---
 
@@ -19,7 +18,7 @@ is the most commonly used text input widget.
 
 By default, a `TextField` is decorated with an underline. You can add a label,
 an icon, inline hint text, and error text by supplying an
-[`InputDecoration`(https://docs.flutter.io/flutter/material/InputDecoration-class.html)
+[`InputDecoration`](https://docs.flutter.io/flutter/material/InputDecoration-class.html)
 as the [`decoration`](https://docs.flutter.io/flutter/material/TextField/decoration.html)
 property of the `TextField`. To remove the decoration entirely (including the
 underline and the space reserved for the label), set the `decoration` to null

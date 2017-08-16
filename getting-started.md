@@ -1,20 +1,14 @@
 ---
 layout: page
-title: Getting Started with Flutter
-sidebar: home_sidebar
+title: Getting started with your first Flutter app
+
 permalink: /getting-started/
 ---
 
-This quickstart guide describes how to create and run your first Flutter app on iOS or Android.
+This quickstart guide describes how to create and run your first Flutter app. **It assumes you have already [installed the Flutter SDK](/setup/)**.
 
 * Placeholder for TOC
 {:toc}
-
-## Before you begin
-
-To write Flutter apps, you will need to install the Flutter SDK. You also need to set up a Linux or
-Mac development machine to run and test your apps on Android or iOS. See
-[Flutter Setup](../setup) for instructions on how to set up your development environment.
 
 ## Creating your first Flutter app
 
@@ -65,6 +59,10 @@ plugins](/intellij-setup/), you can start your Flutter app from there:
 
 ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
 
+*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
+has not been able to discover any connected iOS or Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
+
 If everything works, you should see your starter app on your device or simulator.
 
 <div id="starter-app-screenshots">
@@ -104,9 +102,9 @@ changes are supported by the hot reload feature can be found on the page
 Please reach out to us at our [mailing list][mailinglist]. We'd love
 to hear from you!
 
-You might also want to check out our
-[Introduction to Flutter's Widget Framework](/widgets-intro/)
-and our [Debugging guide](/debugging).
+You might also want to check out:
+* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)
+* [Introduction to Flutter's Widget Framework](/widgets-intro/)
 
 Happy Fluttering!
 

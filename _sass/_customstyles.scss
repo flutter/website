@@ -69,26 +69,9 @@ body {
   background-color: #eeeeee;
 }
 
-
-
 .breadcrumb > .active {color: #777 !important;}
 
-/* make room for the nav bar */
-h1[id],
-h2[id],
-h3[id],
-h4[id],
-h5[id],
-h6[id],
-dt[id]{
-padding-top: 60px;
-margin-top: -40px
-}
-
-body h1 {margin-top:40px;}
-
 .post-content img {
-    margin: 12px 0px 3px 0px;
     width: auto;
     height: auto;
     max-width: 100%;
@@ -114,80 +97,90 @@ body h1 {margin-top:40px;}
     color: gray;
 }
 
-table {
-    background-color: transparent;
-}
+
+
 caption {
     padding-top: 8px;
     padding-bottom: 8px;
     color: #777;
     text-align: left;
 }
-th {
-    text-align: left;
-}
-table {
-    max-width: 90%;
-    margin-bottom: 20px;
-    border: 1px solid #dedede;
+
+table.flutter-table {
+  background-color: transparent;
 }
 
-table > thead > tr > th,
-table > tbody > tr > th,
-table > tfoot > tr > th,
-table > thead > tr > td,
-table > tbody > tr > td,
-table > tfoot > tr > td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-}
-table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
-    text-transform: none;
-    background-color: #777;
-    color: white;
-    text-align: left;
-}
-table > caption + thead > tr:first-child > th,
-table > colgroup + thead > tr:first-child > th,
-table > thead:first-child > tr:first-child > th,
-table > caption + thead > tr:first-child > td,
-table > colgroup + thead > tr:first-child > td,
-table > thead:first-child > tr:first-child > td {
-    border-top: 0;
-}
-table > tbody > tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
+table.flutter-table th {
+  text-align: left;
 }
 
-table col[class*="col-"] {
-    position: static;
-    display: table-column;
-    float: none;
+table.flutter-table  {
+  max-width: 90%;
+  margin-bottom: 20px;
+  border: 1px solid #dedede;
 }
-table td[class*="col-"],
-table th[class*="col-"] {
-    position: static;
-    display: table-cell;
-    float: none;
+
+table.flutter-table  > thead > tr > th,
+table.flutter-table  > tbody > tr > th,
+table.flutter-table  > tfoot > tr > th,
+table.flutter-table  > thead > tr > td,
+table.flutter-table  > tbody > tr > td,
+table.flutter-table  > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+table.flutter-table  > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+  text-transform: none;
+  background-color: #777;
+  color: white;
+  text-align: left;
+}
+
+table.flutter-table  > caption + thead > tr:first-child > th,
+table.flutter-table  > colgroup + thead > tr:first-child > th,
+table.flutter-table  > thead:first-child > tr:first-child > th,
+table.flutter-table  > caption + thead > tr:first-child > td,
+table.flutter-table  > colgroup + thead > tr:first-child > td,
+table.flutter-table  > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+
+table.flutter-table  > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+table.flutter-table  col[class*="col-"] {
+  position: static;
+  display: table-column;
+  float: none;
+}
+
+table.flutter-table  td[class*="col-"],
+table.flutter-table  th[class*="col-"] {
+  position: static;
+  display: table-cell;
+  float: none;
+}
+
+table.flutter-table  td:first-child {
+  width: 150px;
+  /*font-weight: bold;*/
+}
+
+table.flutter-table .boldFirstColumn td:first-child {
+  font-weight: bold;
+}
+
+table.flutter-table  tr td {
+  hyphens: auto;
 }
 
 
-table td:first-child {
-    width: 150px;
-    /*font-weight:bold;*/
-}
-
-table.boldFirstColumn td:first-child {
-    font-weight: bold;
-}
-
-table tr td {
-    hyphens: auto;
-}
 
 
 p.external a {
@@ -316,119 +309,6 @@ footer {
 a.accordion-toggle, a.accordion-collapsed {
     font-size: 14px;
     text-decoration: none;
-}
-
-/* navgoco sidebar styles (customized) */
-.nav, .nav ul, .nav li {
-    list-style: none;
-}
-
-.nav ul {
-    padding: 0;
-    /*margin: 0 0 0 18px;*/
-    margin:0px;
-}
-
-.nav {
-    /* padding: 4px;*/
-    padding:0px;
-    margin: 0px;
-}
-
-.nav > li {
-    margin: 1px 0;
-}
-
-.nav > li li {
-    margin: 2px 0;
-}
-
-.nav a {
-    color: #333;
-    display: block;
-    outline: none;
-    /*-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;*/
-    text-decoration: none;
-}
-
-.nav li > a > span {
-    float: right;
-    font-size: 19px;
-    font-weight: bolder;
-}
-
-
-.nav li > a > span:after {
-    content: '\25be';
-}
-.nav li.open > a > span:after {
-    content: '\25b4';
-}
-
-.nav a:hover, .nav li.active > a {
-    background-color: #eeeeee;
-
-}
-
-.nav > li.active > a  {
-background-color: #eeeeee;
-}
-
-.nav li a {
-    font-size: 12px;
-    line-height: 18px;
-    padding: 2px 10px;
-    background-color: #f1f1f1;
-}
-
-.nav > li > a {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 5px 10px;
-}
-
-ul#mysidebar {
-    border-radius:0px;
-}
-
-.nav ul li ul li a {
-    padding-left:40px;
-}
-
-.nav li.thirdlevel > a {
-    color: #248EC2;
-    font-weight:bold;
-    padding-left:20px;
-    background-color: whitesmoke !important;
-}
-
-
-.nav ul li a {
-    background-color: #FAFAFA;
-}
-
-.nav li a {
-    padding-right:10px;
-}
-
-.nav li a:hover {
-    background-color: #eeeeee;
-}
-
-.nav ul li a {
-    border-top:1px solid whitesmoke;
-    padding-left:10px;
-}
-/* end sidebar */
-
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    border-radius:5px;
-}
-
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
-    border-radius: 5px;
 }
 
 span.projectTitle {
@@ -623,23 +503,6 @@ div#toc ul li ul li {
     margin: 5px 0px 0px 0px;
 }
 
-.tab-content {
-    padding: 15px;
-    background-color: #FAFAFA;
-}
-
-span.tagTitle {font-weight: 500;}
-
-li.activeSeries {
-    font-weight: bold;
-}
-
-.seriesContext .dropdown-menu li.active {
-    font-weight: bold;
-    margin-left: 43px;
-    font-size:18px;
-}
-
 .alert {
     border: 0;
     border-radius: 0;
@@ -664,10 +527,6 @@ div.alert code, h2 code {
 
 div.tags {padding: 10px 5px;}
 
-.tabLabel {
-    font-weight: normal;
-}
-
 hr {
     border: 0;
     border-bottom: 1px dashed #ccc;
@@ -688,21 +547,6 @@ h2  {
 }
 span.otherProgrammingLanguages {
     font-style: normal;
-}
-
-a[data-toggle="tooltip"] {
-    color: #649345;
-    font-style: italic;
-    cursor: default;
-}
-
-.seriesNext, .seriesContext {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.seriescontext ol li {
-    list-style-type: upper-roman;
 }
 
 ol.series li {
@@ -730,36 +574,6 @@ ol.series li {
     color: #444;
     display:block;
 }
-
-/* not sure if using this ...*/
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #248ec2 !important;
-}
-
-#mysidebar .nav ul {
-    background-color: #FAFAFA;
-}
-.nav ul.series li {
-    list-style: decimal;
-    font-size:12px;
-}
-
-.nav ul.series li a:hover {
-    background-color: #eeeeee;
-}
-.nav ul.series {
-    padding-left: 30px;
-}
-
-.nav ul.series {
-    background-color: #FAFAFA;
-}
-
-/*
-a.dropdown-toggle.otherProgLangs {
-    color: #f7e68f !important;
-}
-*/
 
 span.muted {color: #666;}
 
@@ -879,32 +693,6 @@ span.soft {
     background-color: whitesmoke;
 }
 
-@media (max-width: 767px) {
-    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-        color: #444;
-    }
-}
-
-@media (max-width: 990px) {
-    #mysidebar {
-        position: relative;
-    }
-}
-
-@media (min-width: 1000px) {
-
-    ul#mysidebar {
-        width: 225px;
-    }
-}
-
-@media (max-width: 900px) {
-
-    ul#mysidebar {
-        max-width: 100%;
-    }
-}
-
 .col-md-9 img {
     max-width: 100%;
     max-height: 100%;
@@ -934,26 +722,6 @@ span.soft {
     color: white;
     background-color: #444;
     padding:10px;
-}
-
-/* this part adds an icon after external links, using FontAwesome*/
-a[href^="http://"]:after, a[href^="https://"]:after {
-    content: "\f08e";
-    font-family: FontAwesome;
-    vertical-align: super;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 45%;
-    display: inline-block;
-    text-decoration: none;
-    padding-left: 3px;
-}
-
-/* Strip the outbound icon when this class is present */
-a[href^="http://own-domain.com"]:after, a[href^="https://docs.flutter.io"]:after, 
-a.no_icon:after {
-    content:none !important;
-    padding-left: 0;
 }
 
 .btn-default {
@@ -1016,21 +784,9 @@ span.label.label-primary {
 }
 .col-lg-12 .nav li a {background-color: white}
 
-li.sidebarTitle {
-    margin-top:40px;
-    font-weight:normal;
-    font-size:130%;
-    color: #ED1951;
-    margin-bottom:10px;
-    margin-left: 5px;
-
+code {
+    white-space: pre-wrap;   
 }
-
-.nav li.active > a.subfoldersTitle {
-    background-color: whitesmoke;
-    font-weight: bold;
-    color: black;
-    }
 
 a code {
     color: $brand-color;
@@ -1055,18 +811,3 @@ table th code {
     font-size: 16px;
     font-style: inherit;
 }
-
-div.prev-next {
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-div.prev-next-right {
-    display: inline-block;
-    float: right;
-}
-
-div.prev-next-left {
-    display: inline-block;
-}
-

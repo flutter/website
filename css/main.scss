@@ -27,7 +27,7 @@ $nav-text-color:   white;
 // Width of the content area
 $content-width:    800px;
 
-$on-palm:          600px;
+$on-palm:          640px;
 $on-laptop:        800px;
 
 
@@ -50,41 +50,15 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "fix_custom_search_results",
         "layout",
+        "header",
         "customstyles",
-        "prism"
+        "sidebar",
+        "tutorial",
+        "prism",
+        "prism_overrides",
+        "code_pre",
+        "catalog",
+        "homepage"
 ;
-
-// Columns
-.col2 {
-  list-style: none;
-  column-count: 2;
-  column-gap: 0;
-  li {
-    page-break-inside: avoid;
-  }
-}
-.col3 {
-  list-style: none;
-  column-count: 3;
-  column-gap: 0;
-  li {
-   page-break-inside: avoid;
-  }
-}
-
-// Styling for "What's the Point" blocks
-.panel {
-  background-color: $grey-color-light;
-  padding: 20px;
-  margin-bottom: 20px;
-  padding-top: 10px;
-  margin-top: 0px; 
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin-bottom: 5px;
-  }
-  ul {
-    padding-left: 15px;
-  }
-}

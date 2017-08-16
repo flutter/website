@@ -1,11 +1,11 @@
 ---
 layout: tutorial
 title: "Adding Interactivity to Your Flutter App"
-sidebar: home_sidebar
+
 permalink: /tutorials/interactive/
 ---
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
@@ -88,7 +88,7 @@ If you want to try different ways of managing state, skip to
 <a name="stateful-stateless"></a>
 ## Stateful and stateless widgets
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -105,7 +105,7 @@ If you want to try different ways of managing state, skip to
 </div>
 
 A _stateless_ widget has no internal state to manage.
-[Icon](https://docs.flutter.io/flutter/material/Icon-class.html),
+[Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html),
 and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are
 examples of stateless widgets, which subclass
@@ -126,7 +126,7 @@ are examples of stateful widgets, which subclass
 <a name="creating-stateful-widget"></a>
 ## Creating a stateful widget
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -221,7 +221,7 @@ should redraw. The `_toggleFavorite` function swaps the UI between
 <!-- _code/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-class FavoriteWidgetState extends State<FavoriteWidget> {
+class _FavoriteWidgetState extends State<FavoriteWidget> {
   [[highlight]]bool _isFavorited = true;[[/highlight]]
   [[highlight]]int _favoriteCount = 41;[[/highlight]]
 
@@ -332,7 +332,7 @@ check your code against the interactive Lakes example on GitHub.
 * [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
 * [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
-If you still have questions, refer to [Get support.](/#get-support)
+If you still have questions, refer to [Get support.](/support/)
 
 ---
 
@@ -342,7 +342,7 @@ and lists other available interactive widgets.
 <a name="managing-state"></a>
 ## Managing state
 
-<div class="panel" markdown="1">
+<div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
@@ -460,7 +460,7 @@ class _TapboxAState extends State<TapboxA> {
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor: _active ? Colors.lightGreen[700] : Colors.grey[600],
+          color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -576,7 +576,7 @@ class TapboxB extends StatelessWidget {
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor: active ? Colors.lightGreen[700] : Colors.grey[600],
+          color: active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
     );
@@ -720,7 +720,7 @@ class _TapboxCState extends State<TapboxC> {
         width: 200.0,
         height: 200.0,
         decoration: new BoxDecoration(
-          backgroundColor:
+          color:
               widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
               ? new Border.all(
@@ -751,7 +751,7 @@ and prefers that the tap box handles those details.
 ## Other interactive widgets
 
 Flutter offers a variety of buttons and similar interactive widgets.
-Most of these widgets implement the [material design
+Most of these widgets implement the [Material Design
 guidelines,](https://material.io/guidelines/) which define a set of
 components with an opinionated UI.
 
@@ -804,7 +804,7 @@ The following resources may help when adding interactivity to your app.
   Reference documentation for all of the Flutter libraries.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many material design widgets and other Flutter features.
+  Demo app showcasing many Material Design widgets and other Flutter features.
 * [Flutter's Layered
    Design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
    This video includes information about state and stateless widgets.

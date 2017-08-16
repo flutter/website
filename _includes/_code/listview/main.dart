@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
-        elevation: 5, // Removing the drop shadow cast by the app bar.
+        elevation: 5.0, // Removing the drop shadow cast by the app bar.
       ),
       body: new Center(
         child: new ListView(

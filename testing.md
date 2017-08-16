@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Testing Flutter Apps
-sidebar: home_sidebar
 permalink: /testing/
 ---
 
@@ -44,6 +43,8 @@ There are many kinds of automated testing. These are summarized below:
 
 Here is a table summarizing the tradeoffs concerning the choice between
 different kinds of tests:
+
+{: .flutter-table}
 
 |                      | Unit   | Widget | Integration |
 |----------------------|--------|--------|-------------|
@@ -207,16 +208,14 @@ dev_dependencies:
 ### Creating instrumented Flutter apps
 
 An instrumented app is a Flutter app that has the Flutter Driver
-_extension_ enabled. To enable the extension call
-`enableFlutterDriverExtension()` from
-`package:flutter_driver/driver_extension.dart`.
+_extension_ enabled. To enable the extension call `enableFlutterDriverExtension()`.
 
 Example:
 
 Let's assume you have an app with the entry point in
 `my_app/lib/main.dart`. To create an instrumented version of it, create a Dart
 file under `my_app/test_driver/`. Name it after the feature you are testing;
-let's go for `my_app/test_driver/user_list_scrolling.dart`:
+let's go for `user_list_scrolling.dart` located in my_app/test_driver/:
 
 ```dart
 // This line imports the extension
@@ -240,7 +239,7 @@ did it.
 Example:
 
 Just for fun let's also make our test record the performance timeline. Let's
-create a test file `my_app/test_driver/user_list_scrolling_test.dart`:
+create a test file `user_list_scrolling_test.dart` located in `my_app/test_driver/`:
 
 ```dart
 import 'dart:async';
@@ -314,7 +313,7 @@ This command will:
 
 * build the `--target` app and install it on the device
 * launch the app
-* run the `my_app/test_driver/user_list_scrolling_test.dart` test
+* run the `user_list_scrolling_test.dart` test located in `my_app/test_driver/`
 
 You might be wondering how the command finds the correct test file. The
 `flutter drive` command uses a convention to look for the test file in the same
