@@ -478,7 +478,7 @@ We have also found that our "code-first" better allows for features like
 hot reload and dynamic environment adaptations.
 
 It is possible to create a custom language that is then
-converted to widgets on the fly. Since build methods are "just code", they
+converted to widgets on the fly. Because build methods are "just code", they
 can do anything, including interpreting markup and turning it into widgets.
 
 ### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
@@ -501,9 +501,9 @@ or **Release Mode**.
 
 ### What programming paradigm does Flutter's framework use?
 
-Flutter is a multiparadigm programming environment. Many programming techniques
-developed over the past few decades are used where they are appropriate, to solve
-problems in a clean way. In no particular order:
+Flutter is a multi-paradigm programming environment. Many programming techniques
+developed over the past few decades are used in Flutter, each to solve
+a particular set of problems in a clean way. In no particular order:
 
 * Composition: The primary paradigm used by Flutter is that of using small objects with narrow
 scopes of behavior, composed together to obtain more complicated effects. Most widgets
@@ -548,20 +548,29 @@ within an object, is used where it provides the most intuitive solution. For exa
 written in an imperative style, first describing the situation under test, then listing the invariants
 that the test must match, then advancing the clock or inserting events as necessary for the test.
 
-* Reactive programming: The widget and element trees are sometimes described as reactive, since new inputs 
+* Reactive programming: The widget and element trees are sometimes described as reactive, because new inputs 
 provided in a widget's constructor are immediately propagated as changes to lower-level widgets by
 the widget's build method, and changes made in the lower widgets (e.g. in response to user input) propagate
 back up the tree via event handlers. Aspects of both functional-reactive and imperative-reactive are
 present in the framework.
 
 * Declarative programming: The build functions of widgets are typically a single expression with multiple levels
-of nested constructors, very much a declarative approach to building UI. This can also be combined with
+of nested constructors, very much a declarative approach to building UI (such nested expressions could be mechanically
+transformed to or from any suitably expressive markup language). This can also be combined with
 the imperative style to build UIs that would be harder to describe in a pure-declarative approach.
 
 * Generic programming: Types can be used to help catch programming errors early. The Flutter framework
 uses generic programming to help in this regard. For example, the
 [State](https://docs.flutter.io/flutter/widgets/State-class.html) class is parameterized in terms
-of the type of its associated widget, so that it 
+of the type of its associated widget, so that the Dart analyzer can catch mismatches of states and widgets.
+Similarly, the [GlobalKey](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html) class takes a type
+parameter so that it can access a remote widget's state in a type-safe manner (with runtime checking),
+the [Route](https://docs.flutter.io/flutter/widgets/Route-class.html) interface is parameterized with the
+type that it is expected to use when [popped](https://docs.flutter.io/flutter/widgets/Navigator/pop.html),
+and collections such as [List](https://docs.flutter.io/flutter/dart-core/List-class.html)s,
+[Map](https://docs.flutter.io/flutter/dart-core/Map-class.html)s, and
+[Set](https://docs.flutter.io/flutter/dart-core/Set-class.html)s are all parameterized so that mismatched
+elements can be caught early either by the analyzer or at runtime during debugging.
 
 * Concurrent programming: Flutter makes heavy use of
 [Future](https://docs.flutter.io/flutter/dart-async/Future-class.html)s and other asynchronous APIs.
