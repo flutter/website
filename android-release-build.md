@@ -15,21 +15,36 @@ When you're ready to prepare a *release* version for Android, for example to
 * TOC Placeholder
 {:toc}
 
-## Reviewing the App Manifest
+## Review the App Manifest
 
-When you create a new app, a default [App Manifest][manifest] file `AndroidManifest.xml`
-is created in `<app dir>/android/app/src/main/`. Before releasing,
-review the contents of this file and verify the values are correct, especially:
+Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
+in `<app dir>/android/app/src/main/` and verify the values are correct,
+especially:
 
-* `application`: Edit the [`application`][applicationtag] tag to reflect the final name of the app.
+* `application`: Edit the [`application`][applicationtag] tag to reflect the
+final name of the app.
 
-* `manifest`: Specify the [version][versions] code and name in the [`manifest`][manifesttag] tag.
+* `uses-permission`: Remove the `android.permission.INTERNET`
+[permission][permissiontag] if your application code does not need Internet
+access. The standard template includes this tag to enable communication between
+Flutter tools and a running app.  
 
-* `uses-sdk`: Specify the [API versions][apiversionstag] the app is compatible with.
+## Review the build configuration
 
-* `uses-permission`: Remove the `android.permission.INTERNET` [permission][permissiontag] if
-  your application code does not need Internet access. The standard template includes this tag
-  to enable communication between Flutter tools and a running app.  
+Review the default [Gradle build file][gradlebuild] file `build.gradle`
+located in `<app dir>/android/app/` and verify the values are correct, especially:
+
+* `defaultConfig`: 
+
+  * `applicationId`: Specify the final, unique (Application Id)[appid]
+
+  * `versionCode` & `versionName`: Specify the interall app version number, and
+  the version number display string. Consult the version information guidance in
+  the [versions documenation][versions] for details.
+
+  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level, and the
+  API level on which the app is designed to run. Consult the API level guidance
+  in the [versions documenation][versions] for details.
 
 ## Adding a Launcher icon
 
@@ -72,7 +87,7 @@ reference to your keystore:
 storePassword=<password from previous step>
 keyPassword=<password from previous step>
 keyAlias=key
-storeFile=<location of the key store file, e.g. '/Users/<user name>/key.jks'>
+storeFile=<location of the key store file, e.g. /Users/<user name>/key.jks>
 ```
 
 *Note*: Keep this file private; do not check it into public source control.
@@ -154,8 +169,8 @@ Google Play Store, see the [Google Play publishing documentation][play].
 
 [manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
 [manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element.html
+[appid]: https://developer.android.com/studio/build/application-id.html
 [permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element.html
-[apiversionstag]: https://developer.android.com/guide/topics/manifest/uses-sdk-element.html
 [applicationtag]: https://developer.android.com/guide/topics/manifest/application-element.html
 [versions]: https://developer.android.com/studio/publish/versioning.html
 [launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html
