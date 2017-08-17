@@ -43,8 +43,8 @@ located in `<app dir>/android/app/` and verify the values are correct, especiall
   the [versions documenation][versions] for details.
 
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level, and the
-  API level on which the app is designed to run. Consult the API level guidance
-  in the [versions documenation][versions] for details.
+  API level on which the app is designed to run. Consult the API level section
+  in the [versions documetation][versions] for details.
 
 ## Adding a Launcher icon
 
