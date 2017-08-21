@@ -65,10 +65,11 @@ For example, Google's mobile sales tool app is built with Flutter, along
 with a Store Manager app for Google Shopping Express. Other Flutter
 apps are in the works, or "inside the firewall".
 
-Teams outside of Google are also using Flutter. For example,
-Newsvoice shipped to both
-[iOS](https://itunes.apple.com/nz/app/newsvoice/id1208421834?mt=8) and
-[Android](https://play.google.com/store/apps/details?id=com.newsvoice.newsvoice).
+Teams outside of Google are also using Flutter.
+For example, the official app for the musical Hamilton
+([Android](https://play.google.com/store/apps/details?id=com.hamilton.app),
+[iOS](https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8))
+is built with Flutter.
 
 ### What makes Flutter unique?
 
