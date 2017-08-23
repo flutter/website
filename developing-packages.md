@@ -37,27 +37,15 @@ Packages can contain several kinds of content:
 
 ### Step 1: Create the package
 
-Flutter currently lacks a dedicated command for creating a package
-(issue [#10377](https://github.com/flutter/flutter/issues/10377)). As a
-workaround use these steps to create a package called `example`:
+To create a Dart package, use the `--template=package` flag with `flutter create`. 
 
-1. Create a standard Flutter application:
-    * `flutter create example`
+This creates a package project in the `hello/` folder with the following
+specialized content:
 
-1. Delete the iOS and Android application containers:
-  * `rm -rf ios`
-  * `rm -rf android`
-
-1. Remove the main application:
-  * `rm lib/main.dart`
-
-1. Add a main package file `lib/example.dart` with the following contents:
-    <!-- skip -->
-    ```dart
-    library example;
-
-    // Add public package code (Classes, etc.) here:
-    ```  
+* `lib/hello.dart`:
+   - The Dart code for the package.
+* `test/hello_test.dart`:
+   - The [unit tests](https://flutter.io/testing/#unit-testing) for the package.
 
 ### Step 2: Implement the package
 
@@ -83,7 +71,7 @@ platform-specific implementation(s) using [platform channels](/platform-channels
 
 ### Step 1: Create the package
 
-To create a plugin package, use the `--plugin` flag with `flutter create`. 
+To create a plugin package, use the `--template=plugin` flag with `flutter create`. 
 
 Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
@@ -91,7 +79,7 @@ generated Android and iOS code.
 
 
 ```
-flutter create --org com.example --plugin hello
+flutter create --org com.example --template=plugin hello
 ```
 
 This creates a plugin project in the `hello/` folder with the following
