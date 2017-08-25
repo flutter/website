@@ -60,10 +60,10 @@ var buttonText = const Text(
 );
 ```
 
-## Using the included Material Design fonts
+## Using the Material Design icon font
 
-When you want to use the Material Design fonts,
-they can be simply included by adding a property `uses-material-design: true` to the `pubspec.yaml` file.
+When you want to use the Material Design icon font,
+it can be simply included by adding a property `uses-material-design: true` to the `pubspec.yaml` file.
 
 ```yaml
 flutter:
@@ -72,35 +72,6 @@ flutter:
   # the Icons class.
   uses-material-design: true
 ```
-
-### Included Material Design fonts
-
-Here are the included fonts that come with `uses-material-design: true`.
-
-| Font | Features |
-| ---- | -------- |
-| Roboto-Regular.ttf | |
-| Roboto-Italic.ttf | italic |
-| Roboto-Thin.ttf | 100 |
-| Roboto-ThinItalic.ttf | 100, italic |
-| Roboto-Light.ttf | 300 |
-| Roboto-LightItalic.ttf | 300, italic |
-| Roboto-Medium.ttf | 500 |
-| Roboto-MediumItalic.ttf | 500, italic |
-| Roboto-Bold.ttf | 700 |
-| Roboto-BoldItalic.ttf | 700, italic |
-| Roboto-Black.ttf | 900 |
-| Roboto-BlackItalic.ttf | 900, italic |
-| &nbsp; | &nbsp; |
-| RobotoCondensed-Regular.ttf | |
-| RobotoCondensed-Italic.ttf | italic |
-| RobotoCondensed-Light.ttf | 300 |
-| RobotoCondensed-LightItalic.ttf | 300, italic |
-| RobotoCondensed-Bold.ttf | 700 |
-| RobotoCondensed-BoldItalic.ttf | 700, italic |
-
-Check out the [material_fonts.yaml](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/schema/material_fonts.yaml) 
-to view all the included fonts.
 
 ## pubspec.yaml option definitions
 
@@ -212,31 +183,6 @@ class FontsPage extends StatefulWidget {
 class _FontsPageState extends State<FontsPage> {
   @override
   Widget build(BuildContext context) {
-    // Roboto - Included with Material Design
-    var robotoContainer = new Container(
-      child: new Column(
-        children: <Widget>[
-          new Text(
-            "Roboto",
-          ),
-          new Text(
-            words1,
-            textAlign: TextAlign.center,
-            style: new TextStyle(
-              fontFamily: "Roboto",
-              fontSize: 20.0,
-            ),
-          ),
-        ],
-      ),
-      margin: const EdgeInsets.all(10.0),
-      padding: const EdgeInsets.all(10.0),
-      decoration: new BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: new BorderRadius.all(new Radius.circular(5.0)),
-      ),
-    );
-
     // Rock Salt - https://fonts.google.com/specimen/Rock+Salt
     var rockSaltContainer = new Container(
       child: new Column(
@@ -392,7 +338,6 @@ class _FontsPageState extends State<FontsPage> {
       ),
       body: new ListView(
         children: <Widget>[
-          robotoContainer,
           rockSaltContainer,
           v2t323Container,
           ewertContainer,
