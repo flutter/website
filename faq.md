@@ -552,10 +552,10 @@ that the test must match, then advancing the clock or inserting events as necess
 provided in a widget's constructor are immediately propagated as changes to lower-level widgets by
 the widget's build method, and changes made in the lower widgets (e.g. in response to user input) propagate
 back up the tree via event handlers. Aspects of both functional-reactive and imperative-reactive are
-present in the framework.
+present in the framework. 
 
 * Declarative programming: The build functions of widgets are typically a single expression with multiple levels
-of nested constructors, very much a declarative approach to building UI (such nested expressions could be mechanically
+of nested constructors, written using a strictly declarative subset of Dart (such nested expressions could be mechanically
 transformed to or from any suitably expressive markup language). This can also be combined with
 the imperative style to build UIs that would be harder to describe in a pure-declarative approach.
 
