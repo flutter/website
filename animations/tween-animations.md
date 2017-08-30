@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tween Animations in Flutter
-permalink: /animations/tween-animations
+permalink: /animations/tween-animations.html
 ---
 
 * TOC Placeholder
@@ -478,7 +478,7 @@ the widget tree dirty as necessary, so you don't need to call
 
 The widget tree for this example looks like this:
 
-<img src="images/AnimatedBuilder-WidgetTree.png">
+<img src="images/AnimatedBuilder-WidgetTree.png" alt="a widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget">
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:

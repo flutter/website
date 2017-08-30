@@ -69,7 +69,7 @@ that defines the timing and speed of the transition.
 The framework calculates how to transition from the beginning point
 to the end point.
 
-* [Tween Animations in Flutter](/animations/tween-animations)<br>
+* [Tween Animations in Flutter](/animations/tween-animations.html)<br>
 This doc guides you through a progression of tween animations using
 different aspects of the Flutter animation APIs.
 
@@ -92,7 +92,7 @@ to the message list.
 
 Learn more about Flutter animations at the following links:
 
-* [Animations: Technical Overview](/animations/overview)<br>
+* [Animations: Technical Overview](/animations/overview.html)<br>
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Animations: Technical Overview"
-permalink: /animations/overview
+permalink: /animations/overview.html
 ---
 
 * TOC Placeholder
