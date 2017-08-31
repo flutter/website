@@ -14,12 +14,12 @@ functions directly by reading their current value and listening to their
 state changes or they can use the animations as the basis of more elaborate
 animations that they pass along to other widgets.
 
-## Animation<double>
+## Animation&lt;double&gt;
 
 In Flutter, an Animation object knows nothing about what is onscreen.
 An Animation is an abstract class that understands its current value
 and its state (completed or dismissed). One of the more commonly used
-animation types is Animation<double>.
+animation types is Animation&lt;double&gt;.
 
 A few facts about Flutter animations:
 
@@ -31,7 +31,7 @@ A few facts about Flutter animations:
   middle.
 
 * Animations can also interpolate types other than double, such as
-  Animation<Color> or Animation<Size>.
+  Animation&lt;Color&gt; or Animation&lt;Size&gt;.
   You'll learn about other types later in this page.
 
 * An `Animation` object has state. Its current value is always available
@@ -54,7 +54,7 @@ final AnimationController controller = new AnimationController(
     duration: const Duration(milliseconds: 2000), vsync: this);
 {% endprettify %}
 
-AnimationController derives from Animation<double>, so it can be used
+AnimationController derives from Animation&lt;double&gt;, so it can be used
 wherever an Animation object is needed. However, the AnimationController
 has additional methods to control the animation. For example, you start
 an animation with the `.forward()` method. The generation of numbers is
@@ -80,7 +80,7 @@ final CurvedAnimation curve =
 {% endprettify %}
 
 CurvedAnimation and AnimationController are both of type
-Animation<double>, so you can pass them interchangeably.
+Animation&lt;double&gt;, so you can pass them interchangeably.
 Note that the CurvedAnimation wraps the object it’s modifying.
 You don’t subclass AnimationController to implement a curve.
 
@@ -115,7 +115,7 @@ The sole job of a Tween is to define a mapping from an input range
 to an output range. The input range is commonly 0.0 to 1.0,
 but that’s not a requirement.
 
-A Tween inherits from Animatable<T>, not from Animation<T>.
+A Tween inherits from Animatable&lt;T&gt;, not from Animation&ltT&gt;.
 An Animatable does not have to output double.
 For example, ColorTween specifies a progression between two colors.
 
@@ -181,13 +181,12 @@ example of `addStatusListener()`.
 
 The examples so far show how to generate a sequence of numbers over time.
 Nothing has been rendered to the screen.
-To render with an Animation<> object, store the Animation object as a
+To render with an Animation&lt;&gt; object, store the Animation object as a
 member of your Widget, then use its value to decide how to draw.
 
 Consider the following application that draws the Flutter logo without
 animation:
 
-<!-- code/... ->
 <!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
