@@ -24,7 +24,7 @@ such as shared element transitions, and physics-based animations.
 If you have a specific request, please
 [file an issue](https://github.com/flutter/flutter/issues).
 
-* [Tutorial: Animations in Flutter](/animations/animation-tutorial.html) <img src="/images/ic_new_releases_black_24px.svg"> NEW<br>
+* [Tutorial: Animations in Flutter](/animations/animation-tutorial.html) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 Explains the fundamental classes in the Flutter animation package
 (controllers, Animatable, curves, listeners, builders),
 as it guides you through a progression of tween animations using
