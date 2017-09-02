@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Tween Animations in Flutter
-permalink: /animations/tween-animations.html
+title: "Tutorial: Animations in Flutter"
+permalink: /animations/animation-tutorial.html
 ---
 
 * TOC Placeholder
