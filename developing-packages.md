@@ -184,7 +184,6 @@ The code below makes the Dart API of the `url_launcher` plugin available to `hel
 
 In `hello/pubspec.yaml`:
 ```yaml
-:
 dependencies:
   url_launcher: ^0.4.2
 ```
@@ -203,7 +202,7 @@ suitable dependency declarations to your platform-specific build files, as shown
 In `hello/android/build.gradle`:
 ```groovy
 android {
-    :
+    // lines skipped
     dependencies {
         provided rootProject.findProject(":url_launcher")
     }
@@ -217,7 +216,7 @@ class in the source code at `hello/android/src`.
 In `hello/ios/hello.podspec`:
 ```ruby
 Pod::Spec.new do |s|
-  :
+  # lines skipped
   s.dependency 'url_launcher'
 ```
 You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
