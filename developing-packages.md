@@ -220,4 +220,34 @@ Pod::Spec.new do |s|
   s.dependency 'url_launcher'
 ```
 You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
-at `hello/ios/Classes'.
+at `hello/ios/Classes`.
+
+### Conflict resolution
+
+It sometimes happens that your package or app depends on packages whose transitive dependencies
+are in conflict. Suppose you want to use `some_package` and `other_package` in package `hello`,
+but both of these depend on `url_launcher` in different versions that cannot be reconciled
+automatically. This can be dealt with by adding a dependency override declaration to the
+`pubspec.yaml` file in `hello`, forcing the use of a particular version:
+
+In `hello/pubspec.yaml`:
+```yaml
+dependencies:
+  some_package:
+  other_package:
+dependency_overrides:
+  url_launcher: '0.4.2'
+```
+
+If the conflicting dependency is not itself a package, but a platform-specific dependency
+like the `guava` library for Android, the dependency override declaration must be added to
+platform-specific build logic instead.
+
+In `hello/android/build.gradle`:
+```groovy
+configurations.all {
+    resolutionStrategy { 
+        force 'com.google.guava:guava:23.0-android'
+    }
+}
+```
