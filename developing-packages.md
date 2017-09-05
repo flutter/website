@@ -100,7 +100,7 @@ specialized content:
 By default, the plugin project uses Objective-C for iOS code and
 Java for Android code. If you prefer Swift or Kotlin, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
-```
+```shell
 flutter create --plugin -i swift -a kotlin hello
 ```
 
