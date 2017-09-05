@@ -224,7 +224,7 @@ at `hello/ios/Classes`.
 
 ### Conflict resolution
 
-It sometimes happens that your package or app depends on packages whose transitive dependencies
+It sometimes happens that your package or app depends on packages whose (transitive) dependencies
 are in conflict. Suppose you want to use `some_package` and `other_package` in package `hello`,
 but both of these depend on `url_launcher` in different versions that cannot be reconciled
 automatically. This can be dealt with by adding a dependency override declaration to the
