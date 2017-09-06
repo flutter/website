@@ -227,8 +227,9 @@ at `hello/ios/Classes`.
 It sometimes happens that your package or app depends on packages whose (transitive) dependencies
 are in conflict. Suppose you want to use `some_package` and `other_package` in package `hello`,
 but both of these depend on `url_launcher` in different versions that cannot be reconciled
-automatically. This can be dealt with by adding a dependency override declaration to the
-`pubspec.yaml` file in `hello`, forcing the use of a particular version:
+automatically. Unless the two packages actually use `url_launcher` in incompatible ways, this
+can be dealt with by adding a dependency override declaration to the `pubspec.yaml` file in
+`hello`, forcing the use of a particular version:
 
 In `hello/pubspec.yaml`:
 ```yaml
@@ -239,9 +240,8 @@ dependency_overrides:
   url_launcher: '0.4.2'
 ```
 
-If the conflicting dependency is not itself a package, but a platform-specific dependency
-like the `guava` library for Android, the dependency override declaration must be added to
-platform-specific build logic instead.
+If the conflicting dependency is not itself a package, but an Android-specific library like `guava`,
+the dependency override declaration must be added to Gradle build logic instead.
 
 In `hello/android/build.gradle`:
 ```groovy
@@ -251,3 +251,17 @@ configurations.all {
     }
 }
 ```
+
+Cocoapods does not currently offer override functionality for iOS-specific dependencies. But conflict
+resolution by override should be used only as a last resort anyway. Developers generally rely on package
+authors making good use of version _ranges_ rather than specific versions, e.g.:
+```ruby
+s.dependency 'AFNetworking', '~> 3'   # Any 3.x.y will do
+```
+instead of 
+```ruby
+s.dependency 'AFNetworking', '3.1.0'  # Only 3.1.0 will do
+```
+If `some_package` declares a `~> 3` dependency on `AFNetworking` in its `Podfile`, then Cocoapods can
+automatically reconcile that dependency with the declaration of, say, a `3.1.0` or `~> 3.1` dependency
+in `other_package`. Similar remarks apply to dependency resolution in pub and Gradle.
