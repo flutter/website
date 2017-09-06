@@ -207,6 +207,47 @@ or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
+### Asset images in package dependencies
+
+To load an image from a package dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html).
+
+
+For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
+
+* .../pubspec.yaml
+* .../icons/heart.png
+* .../icons/1.5x/heart.png
+* .../icons/2.0x/heart.png
+* ...etc.
+
+Then to load the image, use:
+
+```dart
+ new AssetImage('icons/heart.png', package: 'my_icons')
+```
+
+Assets used by the package itself should also be fetched using the `package` argument as above.
+
+#### Bundling of package assets
+
+If the desired asset is specified in the `pubspec.yaml` file of the package, it is bundled automatically with the application. In particular, assets used by the package itself must be specified in its `pubspec.yaml`.
+
+A package can also choose to have assets in its `lib/` folder that are not specified in its `pubspec.yaml` file. In this case, for those images to be bundled, the application has to specify which ones to include. For instance, a package named `fancy_backgrounds` could have the following files:
+
+* .../lib/backgrounds/background1.png
+* .../lib/backgrounds/background2.png
+* .../lib/backgrounds/background3.png
+
+ To include, say the first image, the `pubspec.yaml` of the application should specify it in the `assets` section:
+
+```yaml
+flutter:
+  assets:
+    - packages/fancy_backgrounds/backgrounds/background1.png
+```
+
+Note that the `lib/` is implied, so it should not be included in the asset path.
+
 ## Platform assets
 
 There will also be occasions to work with assets in the platform projects directly. Below are two common cases where assets are used before the Flutter framework is loaded and running.
