@@ -211,7 +211,6 @@ you'll also notice parameters related to scale.)
 
 To load an image from a package dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html).
 
-
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
 * .../pubspec.yaml
