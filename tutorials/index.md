@@ -19,4 +19,9 @@ Choose from the following:
   to make an icon tappable.  Different ways of managing a widget's
   state are also discussed.
 
+* [Animations in Flutter](/tutorials/interactive/)
+: Explains the fundamental classes in the Flutter animation package
+  (controllers, Animatable, curves, listeners, builders),
+  as it guides you through a progression of tween animations using
+  different aspects of the animation APIs.
 
