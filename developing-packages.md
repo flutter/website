@@ -37,7 +37,11 @@ Packages can contain several kinds of content:
 
 ### Step 1: Create the package
 
-To create a Dart package, use the `--template=package` flag with `flutter create`. 
+To create a Dart package, use the `--template=package` flag with `flutter create`:
+
+```shell
+flutter create --template=package hello
+```
 
 This creates a package project in the `hello/` folder with the following
 specialized content:
@@ -77,8 +81,7 @@ Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
 generated Android and iOS code.
 
-
-```
+```shell
 flutter create --org com.example --template=plugin hello
 ```
 
@@ -97,7 +100,7 @@ specialized content:
 By default, the plugin project uses Objective-C for iOS code and
 Java for Android code. If you prefer Swift or Kotlin, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
-```
+```shell
 flutter create --plugin -i swift -a kotlin hello
 ```
 
@@ -173,3 +176,48 @@ packages pub publish --dry-run`. Finally, run the actual publish command:
 
 For details on publishing, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing).
 
+## Handling package interdependencies {#dependencies}
+
+If you are developing a package `hello` that depends on the Dart API exposed by another package,
+you need to add that package to the `dependencies` section of your `pubspec.yaml` file.
+The code below makes the Dart API of the `url_launcher` plugin available to `hello`:
+
+In `hello/pubspec.yaml`:
+```yaml
+dependencies:
+  url_launcher: ^0.4.2
+```
+
+You can now `import 'package:url_launcher/url_launcher.dart'` and `launch(someUrl)` in
+the Dart code of `hello`.
+
+This is no different from how you include packages in Flutter apps or any other Dart project.
+
+But if `hello` happens to be a _plugin_ package whose platform-specific code needs access
+to the platform-specific APIs exposed by `url_launcher`, you also need to add
+suitable dependency declarations to your platform-specific build files, as shown below.
+
+### Android
+
+In `hello/android/build.gradle`:
+```groovy
+android {
+    // lines skipped
+    dependencies {
+        provided rootProject.findProject(":url_launcher")
+    }
+}
+```
+You can now `import io.flutter.plugins.urllauncher.UrlLauncherPlugin` and access the `UrlLauncherPlugin`
+class in the source code at `hello/android/src`.
+
+### iOS
+
+In `hello/ios/hello.podspec`:
+```ruby
+Pod::Spec.new do |s|
+  # lines skipped
+  s.dependency 'url_launcher'
+```
+You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
+at `hello/ios/Classes'.
