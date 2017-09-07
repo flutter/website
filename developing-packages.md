@@ -224,26 +224,40 @@ at `hello/ios/Classes`.
 
 ### Conflict resolution
 
-It sometimes happens that your package or app depends on packages whose (transitive) dependencies
-are in conflict. Suppose you want to use `some_package` and `other_package` in package `hello`,
-but both of these depend on `url_launcher` in different versions that cannot be reconciled
-automatically. Unless the two packages actually use `url_launcher` in incompatible ways, this
-can be dealt with by adding a dependency override declaration to the `pubspec.yaml` file in
-`hello`, forcing the use of a particular version:
+Suppose you want to use `some_package` and `other_package` in your package `hello`, and both of these depend
+on `url_launcher`, but in different versions. Then we have a potential conflict. The best way to avoid this
+is for package authors to use [version _ranges_](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
+rather than specific versions when specifying dependencies. 
 
-In `hello/pubspec.yaml`:
+```yaml
+dependencies:
+  url_launcher: ^0.4.2    # Good, any 0.4.x with x >= 2 will do.
+  image_picker: '0.1.1'   # Not so good, only 0.1.1 will do.
+```
+
+If `some_package` declares the dependencies above and `other_package` declares a compatible  `url_launcher`
+dependency like `'0.4.5'` or `^0.4.0`, `pub` will be able to resolve the issue automatically. Similar
+remarks apply to plugin packages' platform-specific dependencies on [Gradle modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
+and/or [Cocoa pods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
+
+Even if `some_package` and `other_package` declare incompatible versions for `url_launcher`, it may still
+be that they actually use `url_launcher` in compatible ways. Then the conflict can be dealt with by adding
+a dependency override declaration to the `pubspec.yaml` file in `hello`, forcing the use of a particular
+version:
+
+Forcing the use of `url_launcher` version `0.4.3` in `hello/pubspec.yaml`:
 ```yaml
 dependencies:
   some_package:
   other_package:
 dependency_overrides:
-  url_launcher: '0.4.2'
+  url_launcher: '0.4.3'
 ```
 
 If the conflicting dependency is not itself a package, but an Android-specific library like `guava`,
 the dependency override declaration must be added to Gradle build logic instead.
 
-In `hello/android/build.gradle`:
+Forcing the use of `guava` version 23.0 in `hello/android/build.gradle`:
 ```groovy
 configurations.all {
     resolutionStrategy { 
@@ -252,16 +266,4 @@ configurations.all {
 }
 ```
 
-Cocoapods does not currently offer override functionality for iOS-specific dependencies. But conflict
-resolution by override should be used only as a last resort anyway. Developers generally rely on package
-authors making good use of version _ranges_ rather than specific versions, e.g.:
-```ruby
-s.dependency 'AFNetworking', '~> 3'   # Any 3.x.y will do
-```
-instead of 
-```ruby
-s.dependency 'AFNetworking', '3.1.0'  # Only 3.1.0 will do
-```
-If `some_package` declares a `~> 3` dependency on `AFNetworking` in its `Podfile`, then Cocoapods can
-automatically reconcile that dependency with the declaration of, say, a `3.1.0` or `~> 3.1` dependency
-in `other_package`. Similar remarks apply to dependency resolution in pub and Gradle.
+Cocoapods does not currently offer dependency override functionality.
