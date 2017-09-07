@@ -226,7 +226,7 @@ at `hello/ios/Classes`.
 
 Suppose you want to use `some_package` and `other_package` in your package `hello`, and both of these depend
 on `url_launcher`, but in different versions. Then we have a potential conflict. The best way to avoid this
-is for package authors to use [version _ranges_](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
+is for package authors to use [version ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
 rather than specific versions when specifying dependencies. 
 
 ```yaml
@@ -257,7 +257,7 @@ dependency_overrides:
 If the conflicting dependency is not itself a package, but an Android-specific library like `guava`,
 the dependency override declaration must be added to Gradle build logic instead.
 
-Forcing the use of `guava` version 23.0 in `hello/android/build.gradle`:
+Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
 ```groovy
 configurations.all {
     resolutionStrategy { 
