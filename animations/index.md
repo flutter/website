@@ -17,12 +17,14 @@ come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
 The following resources are a good place to start learning the Flutter
-animation framework. Each of these docs shows, step by step, how
+animation framework. Each of these documents shows, step by step, how
 to write animation code.
-Note that more docs are in the works on how to implement common design patterns,
+{% comment %}
+More documentation is in the works on how to implement common design patterns,
 such as shared element transitions, and physics-based animations.
 If you have a specific request, please
 [file an issue](https://github.com/flutter/flutter/issues).
+{% endcomment %}
 
 * [Tutorial: Animations in Flutter](/tutorials/animation/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 Explains the fundamental classes in the Flutter animation package
@@ -46,9 +48,9 @@ to the message list.
 
 Animations fall into one of two categories: tween- or physics-based.
 The following sections explain what these terms mean, and points you to
-resources where you can learn more. Note that, in some cases,
+resources where you can learn more. In some cases,
 the best documentation we currently have is example code in the
-Flutter gallery. More docs and examples will be forthcoming.
+Flutter gallery.
 
 ### Tween animation
 
@@ -58,7 +60,7 @@ that defines the timing and speed of the transition.
 The framework calculates how to transition from the beginning point
 to the end point.
 
-The docs listed above, such as the [animations
+The documents listed above, such as the [animations
 tutorial](/tutorials/animation/) aren't about tweening,
 specifically, but they use tweens in their examples.
 
@@ -70,9 +72,6 @@ it lands depends on how fast it was tossed, how heavy it is, and how
 far off the ground. Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
-Note that more docs and examples on physics-based animations will be
-forthcoming.
-
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 Under **Material Components**, the
 [Grid](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
@@ -80,7 +79,7 @@ demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
 
-* Also see the API docs for
+* Also see the API documentation for
 [AnimationController.animateWith](https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html) and
 [SpringSimulation](https://docs.flutter.io/flutter/physics/SpringSimulation-class.html).
 
@@ -119,7 +118,7 @@ According to Hans, the demo in the Flutter Gallery that is called
 "scroll driven layout demo".
 {% endcomment %}
 
-* Also see the API docs for the
+* Also see the API documentation for the
 [Hero,](https://docs.flutter.io/flutter/widgets/Hero-class.html)
 [Navigator,](https://docs.flutter.io/flutter/widgets/Navigator-class.html) and
 [PageRoute](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
@@ -146,13 +145,12 @@ Until the landing page for the animation library is reworked, leave this
 link out.
 * The [animation
 library](https://docs.flutter.io/flutter/animation/animation-library.html)
-in the [Flutter API docs](https://docs.flutter.io/)<br>
+in the [Flutter API documentation](https://docs.flutter.io/)<br>
 The animation API for the Flutter framework.
 {% endcomment %}
 
 <hr>
 
-We are currently working on creating more animation docs and examples.
-If there is something specific you'd like to see, please
+If there is specific animation documentation you'd like to see, please
 [file an issue](https://github.com/flutter/flutter/issues).
 
