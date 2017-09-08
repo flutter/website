@@ -133,16 +133,18 @@ void main() {
     await tester.pumpWidget(
       new StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
-          return new Material(
-            child: new Center(
-              child: new Slider(
-                key: sliderKey,
-                value: value,
-                onChanged: (double newValue) {
-                  setState(() {
-                    value = newValue;
-                  });
-                },
+          return new MaterialApp(
+            home: new Material(
+              child: new Center(
+                child: new Slider(
+                  key: sliderKey,
+                  value: value,
+                  onChanged: (double newValue) {
+                    setState(() {
+                      value = newValue;
+                    });
+                  },
+                ),
               ),
             ),
           );
