@@ -19,13 +19,13 @@ dart --version
 
 # Analyze the stand-alone sample code files
 
-for D in _includes/_code/*; do
+for D in _includes/_code/*/*; do
   if [ -d "${D}" ]; then
     echo "Run flutter packages get on ${D}"
-    ../flutter/bin/flutter packages get */${D}
+    ../flutter/bin/flutter packages get ${D}
 
     echo "Run flutter analyze on ${D}"
-    ../flutter/bin/flutter analyze */${D}/*.dart
+    ../flutter/bin/flutter analyze ${D}/*.dart
   fi
 done
 
