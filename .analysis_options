@@ -4,3 +4,4 @@ analyzer:
     - '_layouts/**'
   language:
     enableAssertInitializer: true
+    enableSuperMixins: true
