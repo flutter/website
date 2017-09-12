@@ -1409,39 +1409,6 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "AnimatedBuilder",
-    "description": "A general-purpose widget for building animations.",
-    "categories": [
-      "Animation and Motion"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "AnimatedContainer",
-    "description": "A container that gradually changes its values over a period of time.",
-    "categories": [
-      "Animation and Motion"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "AnimatedCrossFade",
-    "description": "A widget that cross-fades between two given children and animates itself between their sizes.",
-    "categories": [
-      "Animation and Motion"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/AnimatedCrossFade-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
     "name": "AnimatedDefaultTextStyle",
     "description": "Animated version of DefaultTextStyle which automatically transitions the default text style (the text style to apply to descendant Text widgets without explicit style) over a given duration whenever the given style changes.",
     "categories": [
