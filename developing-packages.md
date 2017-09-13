@@ -81,9 +81,9 @@ Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
 generated Android and iOS code.
 
-```shell
+{% commandline %}
 flutter create --org com.example --template=plugin hello
-```
+{% endcommandline %}
 
 This creates a plugin project in the `hello/` folder with the following
 specialized content:
@@ -100,9 +100,10 @@ specialized content:
 By default, the plugin project uses Objective-C for iOS code and
 Java for Android code. If you prefer Swift or Kotlin, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
-```shell
+
+{% commandline %}
 flutter create --template=plugin -i swift -a kotlin hello
-```
+{% endcommandline %}
 
 ### Step 2: Implement the package {#edit-plugin-package}
 

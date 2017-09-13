@@ -8,9 +8,9 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 If this is the first time you're installing Flutter on this machine, clone the
 repository:
 
-```
-> git clone -b alpha https://github.com/flutter/flutter.git
-```
+{% commandline %}
+git clone -b alpha https://github.com/flutter/flutter.git
+{% endcommandline %}
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
 
@@ -30,9 +30,9 @@ Close and re-open any terminal window (e.g. command prompt or PowerShell) to app
 Open a new Command Prompt or PowerShell window and run the following command to
 see if there  are any dependencies you need to install to complete the setup:
 
-```
-> flutter doctor
-```
+{% commandline %}
+flutter doctor
+{% endcommandline %}
 
 Run this command in either a Command Prompt or PowerShell window. Currently, Flutter does
 not support third-party shells like Git Bash.
@@ -44,6 +44,7 @@ Check the output carefully for other software you may need to install or further
 tasks to perform .
 
 For example:
+
 ```
 ✗ Minimum supported Android SDK version is 25 but this system has 23. Please upgrade.
 ```

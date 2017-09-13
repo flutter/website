@@ -16,9 +16,9 @@ To create a starter project, open a terminal and run the `flutter create <projec
 
 Here is an example:
 
-```
-$ flutter create myapp
-```
+{% commandline %}
+flutter create myapp
+{% endcommandline %}
 
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
@@ -38,10 +38,11 @@ contains the `pubspec.yaml` file for your project).
 source code, you can hit `r` to hot-reload your application (updating the source on the fly
 without actually restarting the entire app).
 
-```
-$ cd myapp
-$ flutter run
-```
+{% commandline %}
+cd myapp
+flutter run
+{% endcommandline %}
+
 
 If more than one device is connected, use the `flutter devices` command
 to get their IDs, and then `flutter run -d deviceID` to run your app.
