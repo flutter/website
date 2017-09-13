@@ -1,0 +1,9 @@
+name: tapbox_c
+description: Demonstrates some state handled by the parent and some state handled by the stateful widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

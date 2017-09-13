@@ -62,3 +62,7 @@ $on-laptop:        800px;
         "catalog",
         "homepage"
 ;
+
+aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
+    background: inherit;
+}
