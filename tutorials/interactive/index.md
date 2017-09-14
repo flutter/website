@@ -279,7 +279,7 @@ would otherwise occur because those values have different widths.
 Add your custom stateful widget to the widget tree in the app's
 build method. First, locate the code that creates the Icon and Text, and delete it:
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // ...
