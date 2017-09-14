@@ -8,10 +8,11 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 If this is the first time you're installing Flutter on this machine, clone the
 alpha branch of the repository and then add the `flutter` tool to your path:
 
-```
-$ git clone -b alpha https://github.com/flutter/flutter.git
-$ export PATH=`pwd`/flutter/bin:$PATH
-```
+{% commandline %}
+git clone -b alpha https://github.com/flutter/flutter.git
+export PATH=`pwd`/flutter/bin:$PATH
+{% endcommandline %}
+
 The above command sets your PATH variable temporarily, for the current terminal window. To
 permanently add Flutter to your path, see [Update your path](#update-your-path).
 
@@ -23,9 +24,9 @@ To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
 Run the following command to see if there are any dependencies you need to install to complete
 the setup:
 
-```
-$ flutter doctor
-```
+{% commandline %}
+flutter doctor
+{% endcommandline %}
 
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
