@@ -39,9 +39,9 @@ Packages can contain several kinds of content:
 
 To create a Dart package, use the `--template=package` flag with `flutter create`:
 
-```shell
+{% commandline %}
 flutter create --template=package hello
-```
+{% endcommandline %}
 
 This creates a package project in the `hello/` folder with the following
 specialized content:
@@ -171,9 +171,16 @@ Once you have implemented a package, you can publish it on
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 `CHANGELOG.md` files to make sure their content is complete and correct.
 
-Next, run the dry-run command to see if everything passes analysis: `flutter
-packages pub publish --dry-run`. Finally, run the actual publish command:
-`flutter packages pub publish`.
+Next, run the dry-run command to see if everything passes analysis:
+
+{% commandline %}
+flutter packages pub publish --dry-run 
+{% endcommandline %}
+
+Finally, run the actual publish command:
+{% commandline %}
+flutter packages pub publish
+{% endcommandline %}
 
 For details on publishing, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing).
 
