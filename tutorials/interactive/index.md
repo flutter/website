@@ -49,13 +49,13 @@ skip to the next section.
 * [Create a basic Flutter
   app.](https://flutter.io/getting-started/#creating-your-first-flutter-app)
 * Replace the `lib/main.dart` file with
-  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
+  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/main.dart)
   from GitHub.
 * Replace the `pubspec.yaml` file with
-  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
-  [`lake.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg)
+  [`lake.jpg`.](https://github.com/flutter/website/blob/master/_includes/_code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
 simulator](/setup-macos/#set-up-the-ios-simulator) (part of the Flutter install),
@@ -176,7 +176,7 @@ The framework calls `createState()` when it wants to build the widget.
 In this example, `createState()` creates an instance of _FavoriteWidgetState,
 which you'll implement in the next step.
 
-<!-- _code/lakes-interactive/main.dart -->
+<!-- _code/layout/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class FavoriteWidget extends StatefulWidget {
@@ -218,7 +218,7 @@ should redraw. The `_toggleFavorite` function swaps the UI between
 1) a star icon and the number ‘41’, and
 2) a star_border icon and the number ‘40’.
 
-<!-- _code/lakes-interactive/main.dart -->
+<!-- _code/layout/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _FavoriteWidgetState extends State<FavoriteWidget> {
@@ -293,7 +293,7 @@ build method. First, locate the code that creates the Icon and Text, and delete 
 
 In the same location, create the stateful widget:
 
-<!-- _code/lakes-interactive/main.dart -->
+<!-- _code/layout/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -328,9 +328,9 @@ If you can't get your code to run, look in your IDE for possible errors.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
-* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/main.dart)
-* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
-* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
+* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes-interactive/main.dart)
+* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
+* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
 If you still have questions, refer to [Get support.](/support/)
 
@@ -424,7 +424,7 @@ The _TapboxAState class:
   tapped and calls the `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<!-- _code/lakes-interactive/main.dart -->
+<!-- _code/layout/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // TapboxA manages its own state.
@@ -488,7 +488,7 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-a/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/tapbox-a/main.dart)
 
 <hr>
 
@@ -518,7 +518,7 @@ The TapboxB class:
 * Extends StatelessWidget because all state is handled by its parent.
 * When a tap is detected, it notifies the parent.
 
-<!-- _code/tapbox-b/main.dart -->
+<!-- _code/layout/tapbox-b/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // ParentWidget manages the state for TapboxB.
@@ -585,7 +585,7 @@ class TapboxB extends StatelessWidget {
 {% endprettify %}
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-b/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/tapbox-b/main.dart)
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -637,7 +637,7 @@ The _TapboxCState object:
   [widget](https://docs.flutter.io/flutter/widgets/State/widget.html)
   property.
 
-<!-- _code/tapbox-c/main.dart -->
+<!-- _code/layout/tapbox-c/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 //---------------------------- ParentWidget ----------------------------
@@ -743,7 +743,7 @@ The developer probably doesn't care how the highlighting is managed,
 and prefers that the tap box handles those details.
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/tapbox-c/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/tapbox-c/main.dart)
 
 <hr>
 

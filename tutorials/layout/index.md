@@ -64,10 +64,10 @@ Next, add the image to the example:
 
 * Create an `images` directory at the top of the project.
 * Add
- [`lake.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/lakes/images/lake.jpg).
+ [`lake.jpg`](https://github.com/flutter/website/blob/master/_includes/_code/layout/lakes/images/lake.jpg).
   (Note that `wget` doesn't work for saving this binary file.)
 * Update the
-  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/pubspec.yaml)
   file to include an `assets` tag. This makes the image available to your code.
 
 <hr>
@@ -126,11 +126,11 @@ Here's the code that implements the title row.
 <aside class="alert alert-info" markdown="1">
 **Note:**
 If you have problems, you can check your code against
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/main.dart)
 on GitHub.
 </aside>
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -202,7 +202,7 @@ icon over a row of text. The columns in this row are evenly spaced,
 and the text and icons are painted with the primary color,
 which is set to blue in the app's `build()` method:
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -225,7 +225,7 @@ it's most efficient to create a nested function, such as `buildButtonColumn()`,
 which takes an Icon and Text, and returns a column with its widgets
 painted in the primary color.
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -269,7 +269,7 @@ and text specific to that column. Align the columns along the
 main axis using `MainAxisAlignment.spaceEvenly` to arrange the free
 space evenly before, between, and after each column.
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -299,7 +299,7 @@ Put the text in a Container to enable adding 32 pixels of padding along
 each edge. The `softwrap` property indicates whether the text should break
 on soft line breaks, such as periods or commas.
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -329,10 +329,10 @@ online](https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;a
 under the Creative Commons license, but it's large and slow to fetch.
 In [Step 0](#step-0) you included the image in the project and updated the
 [pubspec
-file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/pubspec.yaml)
 so you can now reference it from your code:
 
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 body: new ListView(
@@ -358,7 +358,7 @@ in a ListView, rather than a Column, because the ListView automatically scrolls
 when running the app on a small device.
 
 <!-- skip -->
-<!-- _code/lakes/main.dart -->
+<!-- _code/layout/lakes/main.dart -->
 {% prettify dart %}
 //...
 body: new ListView(
@@ -377,9 +377,9 @@ body: new ListView(
 //...
 {% endprettify %}
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/main.dart)<br>
-**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/lakes/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/lakes/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/main.dart)<br>
+**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/lakes/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/lakes/pubspec.yaml)
 
 That's it! When you hot reload the app, you should see the same layout
 shown in the screenshots. You can add interactivity to this layout by following
@@ -555,7 +555,7 @@ new Center(
    For a material app, you can add the Center widget directly to the
   `body` property for the home page.
 
-<!-- _code/hello-world/main.dart -->
+<!-- _code/layout/hello-world/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -589,7 +589,7 @@ or you can build your own set of custom widgets.
 For a non-material app, you can add the Center widget to the app's `build()`
 method:
 
-<!-- _code/widgets-only/main.dart -->
+<!-- _code/layout/widgets-only/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // This app doesn't use any material widgets, such as Scaffold.
@@ -629,8 +629,8 @@ That's it! When you run the app, you should see:
 
 <img src="images/hello-world.png" style="border:1px solid black" alt="screenshot of a white background with grey 'Hello World' text.">
 
-**Dart code** (material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/hello-world/main.dart)<br>
-**Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/widgets-only/main.dart)
+**Dart code** (material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/hello-world/main.dart)<br>
+**Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/widgets-only/main.dart)
 
 <hr>
 
@@ -726,7 +726,7 @@ classes offer a variety of constants for controlling alignment.
 you need to update the pubspec file to access them&mdash;this
 example uses `Image.asset` to display the images.  For more information,
 see this example's [pubspec.yaml
-file](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row/pubspec.yaml),
+file](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row/pubspec.yaml),
 or [Adding Assets and Images in Flutter](/assets-and-images).
 You don't need to do this if you're referencing online images using
 `Image.network`.
@@ -739,15 +739,15 @@ horizontal space evenly between, before, and after each image.
 
 <div class="row"> <div class="col-md-8" markdown="1">
 
-{% include includelines filename="_code/row/main.dart" start=40 count=8 %}
+{% include includelines filename="_code/layout/row/main.dart" start=40 count=8 %}
 
 </div> <div class="col-md-3" markdown="1">
 
 <center><img src="images/row-spaceevenly-visual.png" style="border:1px solid black" alt="a row showing 3 images spaced evenly in the row"></center>
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row/main.dart)<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/row/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row/pubspec.yaml)
 
 </div> </div>
 
@@ -759,11 +759,11 @@ space evenly between, above, and below each image.
 
 <div class="row"> <div class="col-md-8" markdown="1">
 
-{% include includelines filename="_code/column/main.dart" start=40 count=8 %}
+{% include includelines filename="_code/layout/column/main.dart" start=40 count=8 %}
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/column/main.dart)<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/column/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/column/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/column/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/column/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/column/pubspec.yaml)
 
 </div> <div class="col-md-3" markdown="1">
 
@@ -799,15 +799,15 @@ as wide as the other two widgets, set the flex factor on the middle widget to 2:
 
 <div class="row"> <div class="col-md-8" markdown="1">
 
-{% include includelines filename="_code/row-expanded/main.dart" start=40 count=15 %}
+{% include includelines filename="_code/layout/row-expanded/main.dart" start=40 count=15 %}
 
 </div> <div class="col-md-3" markdown="1">
 
 <img src="images/row-expanded-visual.png" style="border:1px solid black" alt="a row of 3 images with the middle image twice as wide as the others">
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded/main.dart)<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row-expanded/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row-expanded/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/row-expanded/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row-expanded/pubspec.yaml)
 
 </div> </div>
 
@@ -819,15 +819,15 @@ the row to each widget.
 
 <div class="row"> <div class="col-md-8" markdown="1">
 
-{% include includelines filename="_code/row-expanded-2/main.dart" start=40 count=14 %}
+{% include includelines filename="_code/layout/row-expanded-2/main.dart" start=40 count=14 %}
 
 </div> <div class="col-md-3" markdown="1">
 
 <img src="images/row-expanded-2-visual.png" style="border:1px solid black" alt="a row of 3 images that are too wide, but each is constrained to take only 1/3 of the row's available space">
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded-2/main.dart)<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/row-expanded-2/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/row-expanded-2/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row-expanded-2/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/row-expanded-2/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/row-expanded-2/pubspec.yaml)
 
 </div> </div>
 
@@ -841,7 +841,7 @@ uses this property to pack the star icons together.
 
 <div class="row"> <div class="col-md-8" markdown="1">
 
-<!-- _code/packed/main.dart -->
+<!-- _code/layout/packed/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -866,9 +866,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 <img src="images/packed.png" style="border:1px solid black" alt="a row of 5 stars, packed together in the middle of the row">
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/packed/main.dart)<br>
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/packed/main.dart)<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/packed/pubspec.yaml)
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/packed/pubspec.yaml)
 
 </div> </div>
 
@@ -892,7 +892,7 @@ The widget tree for the ratings row:
 The `ratings` variable creates a row containing a smaller row of 5 star icons,
 and text:
 
-<!-- _code/pavlova/main.dart -->
+<!-- _code/layout/pavlova/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -946,7 +946,7 @@ an icon and two lines of text, as you can see in its widget tree:
 
 The `iconList` variable defines the icons row:
 
-<!-- _code/pavlova/main.dart -->
+<!-- _code/layout/pavlova/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -1005,7 +1005,7 @@ class _MyHomePageState extends State<MyHomePage> {
 The `leftColumn` variable contains the ratings and icons rows, as well as
 the title and text that describes the Pavlova:
 
-<!-- _code/pavlova/main.dart -->
+<!-- _code/layout/pavlova/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -1040,11 +1040,11 @@ and is available under the Creative Commons license.
 You can embed an image from the net using `Image.network` but,
 for this example, the image is saved to an images directory in the project,
 added to the [pubspec
-file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/pavlova/pubspec.yaml)
+file,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/pavlova/pubspec.yaml)
 and accessed using `Images.asset`. For more information, see
 [Adding Assets and Images in Flutter](/assets-and-images).
 
-<!-- _code/pavlova/main.dart -->
+<!-- _code/layout/pavlova/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 body: new Center(
@@ -1069,9 +1069,9 @@ body: new Center(
 
 <div class="row"> <div class="col-md-3" markdown="1">
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/pavlova/main.dart)<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/pavlova/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/pavlova/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/pavlova/main.dart)<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/pavlova/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/pavlova/pubspec.yaml)
 
 </div> <div class="col-md-9" markdown="1">
 
@@ -1164,9 +1164,9 @@ Each image uses a Container to add a rounded grey border and margins.
 The Column, which contains the rows of images,
 uses a Container to change the background color to a lighter grey.
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/container/main.dart), snippet below<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/container/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/container/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/container/main.dart), snippet below<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/container/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/container/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -1174,7 +1174,7 @@ uses a Container to change the background color to a lighter grey.
 
 </div> </div>
 
-<!-- _code/container/main.dart -->
+<!-- _code/layout/container/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -1215,7 +1215,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // ...
           // [[highlight]]See the definition for the second row on GitHub:[[/highlight]]
-          // [[highlight]]https://raw.githubusercontent.com/flutter/website/master/_includes/_code/container/main.dart[[/highlight]]
+          // [[highlight]]https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/container/main.dart[[/highlight]]
         ],
       ),
     );
@@ -1262,9 +1262,9 @@ it's the entry in the "calorie" column for the "avocado" row), use
 <img src="images/gridview-extent.png" style="border:1px solid black" alt="a 3-column grid of photos">
 
 Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br>
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/main.dart), snippet below<br>
-**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/grid/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/grid/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/grid/main.dart), snippet below<br>
+**Images:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/grid/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/grid/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -1279,7 +1279,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 </div> </div>
 
-<!-- _code/grid/main.dart -->
+<!-- _code/layout/grid/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
@@ -1341,9 +1341,9 @@ its content is too long for its render box.
 
 Uses ListView to display a list of businesses using ListTiles.
 A Divider separates the theaters from the restaurants.<br>
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/main.dart), snippet below<br>
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/listview/main.dart), snippet below<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/pubspec.yaml)
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/listview/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -1360,7 +1360,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 </div> </div>
 
-<!-- _code/listview/main.dart -->
+<!-- _code/layout/listview/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 List<Widget> list = <Widget>[
@@ -1384,7 +1384,7 @@ List<Widget> list = <Widget>[
   ),
   // ...
   // [[highlight]]See the rest of the column defined on GitHub:[[/highlight]]
-  // [[highlight]]https://raw.githubusercontent.com/flutter/website/master/_includes/_code/listview/main.dart[[/highlight]]
+  // [[highlight]]https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/listview/main.dart[[/highlight]]
 ];
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -1428,9 +1428,9 @@ Uses Stack to overlay a Container (that displays its Text on a translucent
 black background) on top of a Circle Avatar.
 The Stack offsets the text using the `alignment` property and
 FractionalOffsets.<br>
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/stack/main.dart), snippet below<br>
-**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/stack/images)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/stack/pubspec.yaml)
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/stack/main.dart), snippet below<br>
+**Image:** [images](https://github.com/flutter/website/tree/master/_includes/_code/layout/stack/images)<br>
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/stack/pubspec.yaml)
 
 
 </div> <div class="col-md-6" markdown="1">
@@ -1445,7 +1445,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 </div> </div>
 
-<!-- _code/stack/main.dart -->
+<!-- _code/layout/stack/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -1522,9 +1522,9 @@ Specifying an unsupported value disables the drop shadow entirely.
 A Card containing 3 ListTiles and sized by wrapping it with a
 SizedBox. A Divider separates the first and second ListTiles.
 
-**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/card/main.dart), snippet below<br>
+**Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/card/main.dart), snippet below<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
-**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/card/pubspec.yaml)
+**Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/layout/card/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
@@ -1537,7 +1537,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 </div> </div>
 
-<!-- _code/card/main.dart -->
+<!-- _code/layout/card/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
