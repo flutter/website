@@ -55,7 +55,7 @@ concepts (loops, conditionals, etc).
 No prior mobile experience is required in order to learn and use Flutter.
 
 We have seen people with very little programming experience learn
-and use Flutter for prototyping.
+and use Flutter for prototyping and app development.
 
 ### What kinds of apps can I build with Flutter?
 
