@@ -2,6 +2,7 @@ analyzer:
   exclude:
     - '_includes/**'
     - '_layouts/**'
+    - '_includes/_code/*/*/images'
   language:
     enableAssertInitializer: true
     enableSuperMixins: true
