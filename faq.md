@@ -380,6 +380,24 @@ framework, we've decomposed complex widgets to pieces that separately implement
 the visual, interaction, and motion design. You can remix these widgets however
 you like to make your own custom widgets that have full range of expression.
 
+### Why would I want to share layout code across iOS and Android?
+
+More and more, we see mobile app layouts and designs converging
+to be more brand-driven and unified across platforms. For example,
+the "bottom nav bar" pattern can now be naturally found across iOS and Android.
+The brand identity and customization of the app's aesthetic design is now
+becoming more important than strictly adhering to traditional platform aesthetics.
+
+Given the importantance on brand-driven design, plus the fact that
+modern apps often have many customized design elements (including branding,
+widgets, animations, and information architectures) sharing
+layout and UI code across platforms is a common practice.
+
+When designers choose to implement different app layouts for iOS and Android,
+Flutter makes that possible. Developers are free to check the mobile OS
+and render different layouts, though we find this to be not too common in
+practice.
+
 ### Can I interop with my mobile platform's default programming language?
 
 Yes, Flutter supports calling into the platform, including integrating with Java
