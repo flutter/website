@@ -23,9 +23,9 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
 
 1. On your Mac, find the Simulator via Spotlight or by using the following command:
 
-    ```
-    $ open -a Simulator
-    ```
+{% commandline %}
+open -a Simulator
+{% endcommandline %}
 
 2. Make sure your simulator is using a 64-bit device (iPhone 5s or later) by checking the settings
 in the simulator's **Hardware > Device** menu.
@@ -42,12 +42,13 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 1. Open the terminal and run these commands to install the tools for deploying Flutter apps to
 iOS devices.
 
-   ```
-   $ brew update
-   $ brew install --HEAD libimobiledevice
-   $ brew install ideviceinstaller ios-deploy cocoapods
-   $ pod setup
-   ```
+{% commandline %}
+brew update
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller ios-deploy cocoapods
+pod setup
+{% endcommandline %}
+
    If any of these commands fails with an error, run `brew doctor` and follow the instructions
    for resolving the issue.
 

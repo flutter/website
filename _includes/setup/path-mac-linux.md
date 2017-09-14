@@ -12,16 +12,16 @@ a new window. For example:
    different on your machine.
 2. Add the following line:
 
-   ```
-   export PATH=$HOME/flutter/bin:$PATH
-   ```
+{% commandline %}
+export PATH=$HOME/flutter/bin:$PATH
+{% endcommandline %}
 
 3. Run `source $HOME/.bash_profile` to refresh the current window. 
 
 4. Verify that the `flutter/bin` directory is now in your PATH by running:
 
-   ```
-   $ echo $PATH
-   ```
+{% commandline %}
+echo $PATH
+{% endcommandline %}
 
 For more details, see [this StackExchange question](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path).
