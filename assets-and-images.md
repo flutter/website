@@ -207,7 +207,7 @@ or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
-### Asset images in package dependencies {from-packages}
+### Asset images in package dependencies {#from-packages}
 
 To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html).
 
