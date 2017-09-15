@@ -224,6 +224,25 @@ of maintenance for your apps. You can create and maintain a
 single codebase for your UI,
 thus reducing the code of fixing bugs and adding features.
 
+### What happens when my mobile OS updates and introduces new widgets?
+
+The Flutter team watches the adoption and demand for new mobile
+widgets from iOS and Android, and aims to work with the community
+to build support for new widgets. This work may come in the form
+of lower-level framework features, new composable widgets, or new
+widget implementations.
+
+Flutter's layered architecture is designed to support numerous
+widget libraries, and we encourage and support the community in
+building and maintaining widget libraries.
+
+### What happens when my mobile OS updates and introduces new platform capabilities?
+
+Flutter's interop and plugin system is designed to allow
+developers to access new mobile OS features and capabilities
+immediately. Developers don't have to wait for the Flutter team
+to expose the new mobile OS capability.
+
 ### What operating systems can I use to build a Flutter app?
 
 Flutter supports development on Linux, Mac, and, Windows.

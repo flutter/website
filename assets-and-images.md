@@ -132,7 +132,7 @@ Future<String> loadAsset() async {
 Flutter can load resolution-appropriate images for the current device
 pixel ratio.
 
-#### Declaring resolution-aware image assets
+#### Declaring resolution-aware image assets {#resolution-aware}
 
 [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
@@ -207,7 +207,7 @@ or
 [`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
-### Asset images in package dependencies
+### Asset images in package dependencies {#from-packages}
 
 To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html).
 
