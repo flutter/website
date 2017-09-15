@@ -219,10 +219,15 @@ more motion-rich UIs and brand-first designs.
 In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead of the OEM widgets.
 
-By providing our own widgets, we also aim to lower the overall cost
-of maintenance for your apps. You can create and maintain a
-single codebase for your UI,
-thus reducing the code of fixing bugs and adding features.
+By using the same renderer, framework, and set of widgets, we make it
+easier to publish for both iOS and Android concurrently, without having to do
+careful and costly planning to align two separate codebases and feature sets.
+
+By using a single language, a single framework,
+and a single set of libraries for all of your UI
+(regardless if your UI is different for each mobile platform
+or largely consistent), we also aim to
+help lower app development and maintenance costs.
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
