@@ -1,9 +1,0 @@
-name: packed
-description: Demonstrates the mainAxisSize property in Container.
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-flutter:
-  uses-material-design: true
