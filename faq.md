@@ -46,6 +46,17 @@ Fundamentally, Flutter is for users that want beautiful apps,
 with delightful motion and animation, and UIs with character
 and an identity all their own.
 
+### How experienced of a programmer/developer do I have to be to use Flutter?
+
+Flutter is approachable to programmers familiar with object-oriented
+concepts (classes, methods, variables, etc) and imperative programming
+concepts (loops, conditionals, etc).
+
+No prior mobile experience is required in order to learn and use Flutter.
+
+We have seen people with very little programming experience learn
+and use Flutter for prototyping and app development.
+
 ### What kinds of apps can I build with Flutter?
 
 Flutter is optimized for 2D mobile apps that want to run on
@@ -57,6 +68,11 @@ stock platform apps can also be built with Flutter.
 
 You can build full-featured apps with Flutter, including
 camera, geolocation, network, storage, 3rd-party SDKs, and more.
+
+### Who makes Flutter?
+
+Flutter is an open source project, with contributions from Google
+and the community.
 
 ### Who uses Flutter?
 
@@ -182,9 +198,10 @@ is involved).
 
 ### Does Flutter use my system's OEM widgets?
 
-No. Instead, Flutter provides a set of Material Design and
-Cupertino (iOS-styled) widgets, managed and rendered by
-Flutter's framework and engine. You can browse a
+No. Instead, Flutter provides a set of widgets
+(including Material Design and Cupertino (iOS-styled) widgets),
+managed and rendered by Flutter's framework and engine.
+You can browse a
 [catalog of Flutter's widgets](/widgets/).
 
 We are hoping the end-result will be higher quality apps. If we reused
@@ -201,6 +218,16 @@ Modern app design trends point towards designers and users wanting
 more motion-rich UIs and brand-first designs.
 In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead of the OEM widgets.
+
+By using the same renderer, framework, and set of widgets, we make it
+easier to publish for both iOS and Android concurrently, without having to do
+careful and costly planning to align two separate codebases and feature sets.
+
+By using a single language, a single framework,
+and a single set of libraries for all of your UI
+(regardless if your UI is different for each mobile platform
+or largely consistent), we also aim to
+help lower app development and maintenance costs.
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
