@@ -195,7 +195,7 @@ they'll support, since it wouldn't make sense for the toolkit
 libraries to support a different set of locales than the app does.
 
 The `MaterialApp`
-[`supportedLocales`](https://docs.flutter.io/flutter/material/MaterialApp/supportedLocales.html)
+[`supportedLocales`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
 parameter limits locale changes. When the user changes the locale
 setting on their device, the app's `Localizations` widget will only
 follow suit if the new locale is a member of the this list. If an
@@ -211,7 +211,7 @@ English (the first locale in the list) for anything else.
 
 An app that wants to use a different "locale resolution" method, can
 provide a
-[`localeResolutionCallback`](https://docs.flutter.io/flutter/material/MaterialApp/localeResolutionCallback.html). For
+[`localeResolutionCallback`](https://docs.flutter.io/flutter/material/MaterialApp-class.html). For
 example to have your app unconditionally accept whatever locale the
 user selects:
 
