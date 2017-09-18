@@ -35,7 +35,7 @@ with a widget:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new Center(child: new Text('Hello, world!')));
+  runApp(new Center(child: new Text('Hello, world!',textDirection: TextDirection.ltr)));
 }
 ```
 
