@@ -43,7 +43,7 @@ looking for a high-fidelity,
 fast prototyping tool. Prototypes built with Flutter can be
 handed to developers and shipped to users as real apps.
 
-Flutter is also for _eng managers_ that need to lead
+Flutter is also for _engineering managers_ that need to lead
 mobile development teams. Flutter allows eng managers
 to create a single _mobile app dev team_, unifying their
 development investments to ship more features faster,
