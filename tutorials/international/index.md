@@ -11,7 +11,7 @@ permalink: /tutorials/international/
 
 * How to track the device's locale (the user's preferred language).
 * How to manage locale-specific app values.
-* How to extend the locales that Flutter supports.
+* How define the locales an app supports.
 
 </div>
 
