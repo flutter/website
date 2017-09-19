@@ -30,7 +30,7 @@ internationalized.
 The [`Locale`](https://docs.flutter.io/flutter/dart-ui/Locale-class.html)
 class is used to identify the user's language. Mobile devices support
 setting the locale for all applications, usually via a system settings
-menu. Internationalized apps respond by redisplaying values that are
+menu. Internationalized apps respond by displaying values that are
 locale-specific. For example if the user switches the device's locale
 from English to French then a Text widget that displayed "Hello World"
 would be rebuilt with "Bonjour le monde".
@@ -86,7 +86,8 @@ provided by the
 Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
 ```
 
-This particular `Localizations.of()` expression is used frequently, so the MaterialLocalizations class provides a convenient shortand:
+This particular `Localizations.of()` expression is used frequently, so the 
+MaterialLocalizations class provides a convenient shortand:
 
 ```dart
 static MaterialLocalizations of(BuildContext context) {
@@ -133,9 +134,15 @@ class MyLocalizations {
 }
 ```
 
-A class based on the `intl` package imports a generated message catalog that provides the `initializeMessages()` function and the per-locale backing store for `Intl.message()`. The message catalog is produced by an `intl` tool that analyzes the source code for classes that contain `Intl.message()` calls. In this case that would just be the `MyLocalizations` class.
+A class based on the `intl` package imports a generated message catalog that provides
+the `initializeMessages()` function and the per-locale backing store for `Intl.message()`.
+The message catalog is produced by an `intl` tool that analyzes the source code for
+classes that contain `Intl.message()` calls. In this case that would just be the
+`MyLocalizations` class.
 
-One could choose another approach for loading localized resources and looking them up while still conforming to the structure of MyLocalizations. The An Alternative Class for the App's Localized Resources below provides such an example.
+One could choose another approach for loading localized resources and looking them up
+while still conforming to the structure of MyLocalizations. The An Alternative Class
+for the App's Localized Resources below provides such an example.
 
 An instance of `MyLocalizations` is created by a simple `LocalizationsDelegate`:
 
@@ -210,8 +217,8 @@ English (the first locale in the list) for anything else.
 
 An app that wants to use a different "locale resolution" method, can
 provide a
-[`localeResolutionCallback`](https://docs.flutter.io/flutter/material/MaterialApp-class.html). For
-example to have your app unconditionally accept whatever locale the
+[`localeResolutionCallback`](https://docs.flutter.io/flutter/material/MaterialApp-class.html). 
+For example to have your app unconditionally accept whatever locale the
 user selects:
 
 ```dart
