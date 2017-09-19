@@ -15,8 +15,7 @@ permalink: /tutorials/international/
 
 </div>
 
-<a name="How To Write International Flutter Applications"></a>
-## How To Write International Flutter Applications
+## Internationalizing Flutter Applications
 
 If your app might be deployed to users who speak another language then
 you'll need to "internationalize" it. That means you'll need to write
@@ -26,7 +25,7 @@ supports. Flutter provides widgets and classes that help with
 internationalization and the Flutter libraries themselves are
 internationalized.
 
-### The `Locale` class and the `Localizations` Widget
+### Tracking the Locale: The `Locale` class and the `Localizations` Widget
 
 The [`Locale`](https://docs.flutter.io/flutter/dart-ui/Locale-class.html)
 class is used to identify the user's language. Mobile devices support
@@ -100,7 +99,7 @@ static MaterialLocalizations of(BuildContext context) {
 tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 ```
 
-### A Class for the App's Localized Resources
+### Defining a Class for the App's Localized Resources
 
 Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized
@@ -186,7 +185,7 @@ constructed for the new locale. Any reference to
 `MyLocalizations.of()` anywhere in the app will causes its context to
 be rebuilt if the locale changes.
 
-### The App's `supportedLocales` Parameter
+### Specifying the App's `supportedLocales` Parameter
 
 Although the Flutter's Material library includes support for about 16
 languages, only English language translations are available by
