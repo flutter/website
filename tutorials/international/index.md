@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: "International Flutter Apps"
+title: "Internationalizing Flutter Apps"
 
 permalink: /tutorials/international/
 ---
