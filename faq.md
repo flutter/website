@@ -388,7 +388,7 @@ the "bottom nav bar" pattern can now be naturally found across iOS and Android.
 The brand identity and customization of the app's aesthetic design is now
 becoming more important than strictly adhering to traditional platform aesthetics.
 
-Given the importantance on brand-driven design, plus the fact that
+Given the importance on brand-driven design, plus the fact that
 modern apps often have many customized design elements (including branding,
 widgets, animations, and information architectures) sharing
 layout and UI code across platforms is a common practice.
