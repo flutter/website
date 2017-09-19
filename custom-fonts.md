@@ -59,6 +59,38 @@ var buttonText = const Text(
   style: textStyle,
 );
 ```
+### Fonts in package dependencies {#from-packages}
+
+To use a font family defined in a package, the `package` argument must be provided. For instance, suppose the font
+declaration above is in the `pubspec.yaml` of a package named `my_package` which the app depends on. Then creating the
+TextStyle is done as follows:
+
+```dart
+const TextStyle(fontFamily: 'Raleway', package: 'my_package')
+```
+
+This is also how the package itself should create the style.
+
+A package can also provide font files in its `lib/` folder which will not automatically be included in the app. Instead the
+app can use these selectively when declaring a font. Suppose a package named `my_package` has:
+
+```
+lib/fonts/Raleway-Medium.ttf
+```
+
+Then the app can declare a font like in the example below:
+
+```yaml
+ flutter:
+   fonts:
+     - family: Raleway
+       fonts:
+         - asset: assets/fonts/Raleway-Regular.ttf
+         - asset: packages/my_package/fonts/Raleway-Medium.ttf
+           weight: 500
+```
+
+The `lib/` is implied, so it should not be included in the asset path.
 
 ## Using the Material Design icon font
 
