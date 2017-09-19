@@ -18,12 +18,11 @@ and use them when rendering text.
 ## Using fonts
 
 Using fonts in your Flutter application is done in two steps. 
-First declare them in your `pubspec.yaml`, 
-second use the font with a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) property.
+First declare them in your `pubspec.yaml`, to ensure that they are included in the app. Second use the font with a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) property.
 
 ### Declaring in the font asset
 
-First declare your font like in the `pubspec.yaml` example below.
+To include your font in the app, declare it like in the `pubspec.yaml` example below.
 Then copy the font file to the location specified in your `pubspec.yaml`.
 
 ```yaml
@@ -66,13 +65,17 @@ declaration above is in the `pubspec.yaml` of a package named `my_package` which
 TextStyle is done as follows:
 
 ```dart
-const TextStyle(fontFamily: 'Raleway', package: 'my_package')
+const textStyle = const TextStyle(
+  fontFamily: 'Raleway',
+  package: 'my_package',
+);
 ```
 
 This is also how the package itself should create the style.
 
-A package can also provide font files in its `lib/` folder which will not automatically be included in the app. Instead the
-app can use these selectively when declaring a font. Suppose a package named `my_package` has:
+A package can also provide font files in its `lib/` folder which will not automatically be 
+included in the app. Instead the app can use these selectively when declaring a font. 
+Suppose a package named `my_package` has:
 
 ```
 lib/fonts/Raleway-Medium.ttf
