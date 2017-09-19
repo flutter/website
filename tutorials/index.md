@@ -25,7 +25,7 @@ Choose from the following:
   as it guides you through a progression of tween animations using
   different aspects of the animation APIs.
 
-* [International Flutter Apps](/tutorials/international/)
+* [International Flutter Apps](/tutorials/internationalizaztion/)
 : Learn how to internationalize your Flutter application. A guide through
   the widgets and classes that enable apps to display their
   content using the user's language and formatting conventions.
