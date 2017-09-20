@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Demonstrate a factored animation with AnimatedBuilder
+// Demonstrate a factored animation with AnimatedBuilder.
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';

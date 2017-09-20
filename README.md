@@ -180,7 +180,7 @@ You can include a specific range of lines from a file:
 ```
 
 `PATH` must be inside of `_include`. If you are including source code,
-place that code into `_include/_code` to follow our convention.
+place that code into `_include/code` to follow our convention.
 
 ## Code snippet validation
 

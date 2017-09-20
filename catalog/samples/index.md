@@ -8,6 +8,8 @@ This catalog lists applications that demonstrate how to implement common mobile 
 
 If there are other sample apps that you'd like to see we'd appreciate hearing from you on our [Gitter channel](https://gitter.im/flutter/flutter) or [mailing list](https://groups.google.com/d/forum/flutter-dev).
 
+---
+
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 32px">
     <a href="/catalog/samples/animated-list/">
@@ -26,6 +28,29 @@ from the model, the corresponding card animates in or out of view.
       </p>
       <p>
         <a href="/catalog/samples/animated-list/">Learn more</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: 32px">
+    <a href="/tutorials/animation/">
+      <div class="col-md-3">
+        <img style="border:1px solid #000000" src="images/animate.png" alt="Simulator screenshot" class="img-responsive">
+      </div>
+   </a>
+    <div class="col-md-9">
+      <p>
+        A Tween animation that grows the Flutter logo from nothing.
+        This is one of several animation examples,
+        <a href="https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate4/main.dart">animate4</a>,
+        from the <a href="/tutorials/animation/">animation tutorial.</a>
+      </p>
+      <p>
+        This app features the following classes: Animation,
+        AnimationController, CurvedAnimation, AnimatedBuilder.
+      </p>
+      <p>
+        <a href="/tutorials/animation/">Learn more</a>.
       </p>
     </div>
   </div>

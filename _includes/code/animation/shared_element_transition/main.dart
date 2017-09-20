@@ -47,7 +47,7 @@ class SharedElementTransition extends StatelessWidget {
       ),
       body: new Center(
         child: new PhotoHero(
-          photo: 'images/curly.jpg',
+          photo: 'images/flippers-alpha.png',
           width: 300.0,
           onTap: () {
             Navigator.of(context).push(
@@ -62,7 +62,7 @@ class SharedElementTransition extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   alignment: FractionalOffset.topLeft,
                   child: new PhotoHero(
-                    photo: 'images/curly.jpg',
+                    photo: 'images/flippers-alpha.png',
                     width: 100.0,
                     onTap: () {
                       Navigator.of(context).pop();

@@ -28,11 +28,11 @@ class BasicElementTransition extends StatelessWidget {
                       // Use background color to emphasize that it's a new page.
                       color: Colors.lightBlueAccent,
                       child: new Hero(
-                        tag: 'curly',
+                        tag: 'flippers',
                         child: new SizedBox(
                           width: 100.0,
                           child: new Image.asset(
-                            'images/curly.jpg',
+                            'images/flippers-alpha.png',
                           ),
                         ),
                       ),
@@ -44,9 +44,9 @@ class BasicElementTransition extends StatelessWidget {
           },
           // Main page
           child: new Hero(
-            tag: 'curly',
+            tag: 'flippers',
             child: new Image.asset(
-              'images/curly.jpg',
+              'images/flippers-alpha.png',
             ),
           ),
         ),
