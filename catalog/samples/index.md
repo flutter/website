@@ -33,29 +33,6 @@ from the model, the corresponding card animates in or out of view.
   </div>
 
   <div class="row" style="margin-bottom: 32px">
-    <a href="/tutorials/animation/">
-      <div class="col-md-3">
-        <img style="border:1px solid #000000" src="images/animate.png" alt="Simulator screenshot" class="img-responsive">
-      </div>
-   </a>
-    <div class="col-md-9">
-      <p>
-        A Tween animation that grows the Flutter logo from nothing.
-        This is one of several animation examples,
-        <a href="https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate4/main.dart">animate4</a>,
-        from the <a href="/tutorials/animation/">animation tutorial.</a>
-      </p>
-      <p>
-        This app features the following classes: Animation,
-        AnimationController, CurvedAnimation, AnimatedBuilder.
-      </p>
-      <p>
-        <a href="/tutorials/animation/">Learn more</a>.
-      </p>
-    </div>
-  </div>
-
-  <div class="row" style="margin-bottom: 32px">
     <a href="/catalog/samples/app-bar-bottom/">
       <div class="col-md-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/app_bar_bottom_small.png" alt="Android screenshot" class="img-responsive">
