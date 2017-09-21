@@ -43,7 +43,7 @@ class SharedElementTransition extends StatelessWidget {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Main Page'),
+        title: const Text('Shared Element Transition'),
       ),
       body: new Center(
         child: new PhotoHero(
@@ -54,7 +54,7 @@ class SharedElementTransition extends StatelessWidget {
                 new MaterialPageRoute<Null>(builder: (BuildContext context) {
               return new Scaffold(
                 appBar: new AppBar(
-                  title: const Text('Detail Page'),
+                  title: const Text('Flippers Page'),
                 ),
                 body: new Container(
                   // Use background color to emphasize that it's a new page.

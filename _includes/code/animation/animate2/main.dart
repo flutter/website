@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Demonstrate a simple animation with AnimatedWidget
+// Demonstrates a simple animation with AnimatedWidget.
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
