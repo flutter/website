@@ -34,17 +34,36 @@ acts as a productive prototyping tool.
 
 ### Who is Flutter for?
 
-Flutter is for mobile app developers wanting a faster
+Flutter is for _mobile app developers_ wanting a faster
 or easier way to build
 beautiful mobile apps.
 
-Flutter is also for designers looking for a high-fidelity,
+Flutter is also for _designers and prototypers_
+looking for a high-fidelity,
 fast prototyping tool. Prototypes built with Flutter can be
 handed to developers and shipped to users as real apps.
+
+Flutter is also for _engineering managers_ that need to lead
+mobile development teams. Flutter allows eng managers
+to create a single _mobile app dev team_, unifying their
+development investments to ship more features faster,
+ship the same feature set to iOS and Android at the same
+time, and lower maintenance costs.
 
 Fundamentally, Flutter is for users that want beautiful apps,
 with delightful motion and animation, and UIs with character
 and an identity all their own.
+
+### How experienced of a programmer/developer do I have to be to use Flutter?
+
+Flutter is approachable to programmers familiar with object-oriented
+concepts (classes, methods, variables, etc) and imperative programming
+concepts (loops, conditionals, etc).
+
+No prior mobile experience is required in order to learn and use Flutter.
+
+We have seen people with very little programming experience learn
+and use Flutter for prototyping and app development.
 
 ### What kinds of apps can I build with Flutter?
 
@@ -57,6 +76,11 @@ stock platform apps can also be built with Flutter.
 
 You can build full-featured apps with Flutter, including
 camera, geolocation, network, storage, 3rd-party SDKs, and more.
+
+### Who makes Flutter?
+
+Flutter is an open source project, with contributions from Google
+and the community.
 
 ### Who uses Flutter?
 
@@ -182,9 +206,10 @@ is involved).
 
 ### Does Flutter use my system's OEM widgets?
 
-No. Instead, Flutter provides a set of Material Design and
-Cupertino (iOS-styled) widgets, managed and rendered by
-Flutter's framework and engine. You can browse a
+No. Instead, Flutter provides a set of widgets
+(including Material Design and Cupertino (iOS-styled) widgets),
+managed and rendered by Flutter's framework and engine.
+You can browse a
 [catalog of Flutter's widgets](/widgets/).
 
 We are hoping the end-result will be higher quality apps. If we reused
@@ -201,6 +226,35 @@ Modern app design trends point towards designers and users wanting
 more motion-rich UIs and brand-first designs.
 In order to achieve that level of customized, beautiful design,
 Flutter is architectured to drive pixels instead of the OEM widgets.
+
+By using the same renderer, framework, and set of widgets, we make it
+easier to publish for both iOS and Android concurrently, without having to do
+careful and costly planning to align two separate codebases and feature sets.
+
+By using a single language, a single framework,
+and a single set of libraries for all of your UI
+(regardless if your UI is different for each mobile platform
+or largely consistent), we also aim to
+help lower app development and maintenance costs.
+
+### What happens when my mobile OS updates and introduces new widgets?
+
+The Flutter team watches the adoption and demand for new mobile
+widgets from iOS and Android, and aims to work with the community
+to build support for new widgets. This work may come in the form
+of lower-level framework features, new composable widgets, or new
+widget implementations.
+
+Flutter's layered architecture is designed to support numerous
+widget libraries, and we encourage and support the community in
+building and maintaining widget libraries.
+
+### What happens when my mobile OS updates and introduces new platform capabilities?
+
+Flutter's interop and plugin system is designed to allow
+developers to access new mobile OS features and capabilities
+immediately. Developers don't have to wait for the Flutter team
+to expose the new mobile OS capability.
 
 ### What operating systems can I use to build a Flutter app?
 
@@ -379,6 +433,27 @@ of your widgets while also allowing a large amount of code reuse. In the
 framework, we've decomposed complex widgets to pieces that separately implement
 the visual, interaction, and motion design. You can remix these widgets however
 you like to make your own custom widgets that have full range of expression.
+
+### Why would I want to share layout code across iOS and Android?
+
+You can choose to implement different app layouts for iOS and Android.
+Developers are free to check the mobile OS at runtime
+and render different layouts, though we find this practice to be rare.
+
+More and more, we see mobile app layouts and designs evolving
+to be more brand-driven and unified across platforms. This implies
+a strong motivation to share layout and UI code across iOS and
+Android.
+
+The brand identity and customization of the app's aesthetic design is now
+becoming more important than strictly adhering to traditional platform
+aesthetics. For example, app designs often require custom fonts, colors,
+shapes, motion, and more in order to clearly convey their brand identity.
+
+We also see common layout patterns deployed across iOS and Android.
+For example, the "bottom nav bar" pattern can now be naturally found
+across iOS and Android. There seems to be a convergence of design ideas
+across mobile platforms.
 
 ### Can I interop with my mobile platform's default programming language?
 

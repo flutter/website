@@ -147,7 +147,7 @@ The presence of `vsync` prevents offscreen animations from consuming
 unnecessary resources. You can use your stateful object as the vsync
 by adding SingleTickerProviderStateMixin to the class definition.
 You can see an example of this in
-[animate1](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate1.dart)
+[animate1](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate1/main.dart)
 on GitHub.
 {% comment %}
 The `vsync` object ties the ticking of the animation controller to
@@ -377,7 +377,7 @@ memory leaks.
 
 With these few changes, you’ve created your first animation in Flutter!
 You can find the source for this example,
-[animate1.](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate1.dart)
+[animate1.](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate1/main.dart)
 
 <aside class="alert alert-success" markdown="1">
 **Dart language tricks**
@@ -499,7 +499,7 @@ LogoApp passes the Animation object to the base class and uses
 it works exactly the same as before.
 
 You can find the source for this example,
-[animate2,](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate2.dart)
+[animate2,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate2/main.dart)
 on GitHub.
 
 <a name="monitoring"></a>
@@ -520,7 +520,7 @@ It’s often helpful to know when an animation changes state,
 such as finishing, moving forward, or reversing.
 You can get notifications for this with `addStatusListener()`.
 The following code modifies the
-[animate1](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate1.dart)
+[animate1](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate1/main.dart)
 example so that it listens for a state change and prints an update.
 The highlighted line shows the change:
 
@@ -579,7 +579,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 {% endprettify %}
 
 You can find the source for this example,
-[animate3,](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate3.dart)
+[animate3,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate3/main.dart)
 on GitHub.
 
 ### Refactoring with AnimatedBuilder
@@ -601,7 +601,7 @@ on GitHub.
 </div>
 
 One problem with the code in the
-[animate3](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate3.dart)
+[animate3](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate3/main.dart)
 example, is that changing
 the animation required changing the widget that renders the logo.
 A better solution is to separate responsibilities into different
@@ -619,7 +619,7 @@ the widget tree dirty as necessary, so you don't need to call
 `addListener()`.
 
 The widget tree for the
-[animate5](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate5.dart)
+[animate5](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate5/main.dart)
 example looks like this:
 
 <img src="images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
@@ -681,7 +681,7 @@ class GrowTransition extends StatelessWidget {
 
 Finally, the code to initialize the animation looks very similar to
 the first example,
-[animate1.](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate1.dart)
+[animate1.](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate1/main.dart)
 The `initState()` method creates an AnimationController
 and a Tween, then binds them with `animate()`. The magic happens in the
 `build()` method, which returns a GrowTransition object with a
@@ -725,7 +725,7 @@ void main() {
 {% endprettify %}
 
 You can find the source for this example,
-[animate4,](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate4.dart)
+[animate4,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate4/main.dart)
 on GitHub.
 
 ### Simultaneous animations
@@ -743,7 +743,7 @@ on GitHub.
 
 In this section, you'll build on the example from [monitoring
 the progress of the animation](#monitoring)
-([animate3](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate3.dart)),
+([animate3](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate3/main.dart)),
 which used AnimatedWidget to animate in and out continuously. Consider the case
 where you want to animate in and out while the opacity animates from
 transparent to opaque.
@@ -855,7 +855,7 @@ void main() {
 {% endprettify %}
 
 You can find the source for this example,
-[animate5,](https://raw.githubusercontent.com/InMatrix/animation_tutorial/master/lib/animate5.dart)
+[animate5,](https://raw.githubusercontent.com/flutter/website/master/_includes/_code/animation/animate5/main.dart)
 on GitHub.
 
 ## Next steps
