@@ -127,7 +127,7 @@ dependencies:
 ```
 
 * **Git** dependency: You can also depend on a package stored in a Git
- repository. The package must be located in the root of the repo. Use this
+ repository. If the package is located in the root of the repo, use this
  syntax:
 ```
 dependencies:
