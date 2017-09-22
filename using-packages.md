@@ -82,7 +82,6 @@ used. To ensure your app does not break when a package is updated, we recommend
 specifying a version range using one of the following formats:
 
 * Range constraints: Specify a minimum and maximim version, e.g.:
-
 ```
 dependencies:
     url_launcher: '>=0.1.2 <0.2.0'
@@ -90,7 +89,6 @@ dependencies:
 
 * Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax): 
 Similar to a regular range constraints
-
 ```
 dependencies:
     collection: '^0.1.2'
