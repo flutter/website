@@ -127,13 +127,24 @@ dependencies:
 ```
 
 * **Git** dependency: You can also depend on a package stored in a Git
- repository. The package must be located in the root of the repo. Use this
+ repository. If the package is located in the root of the repo, use this
  syntax:
 ```
 dependencies:
     plugin1:
       git:
         url: git://github.com/flutter/plugin1.git
+```
+
+* **Git** dependency on a package in a folder: By default Pub assumes the 
+package is located in the root of the Git repository. If that is not the case, 
+you can specify the location with the `path` argument, e.g.:
+```
+dependencies:
+    package1:
+      git:
+        url: git://github.com/flutter/packages.git
+        path: packages/package1        
 ```
 
 For more details, see the [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
