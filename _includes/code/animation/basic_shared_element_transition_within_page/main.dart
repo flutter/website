@@ -12,8 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({Key key, this.photo, this.onTap, this.width})
-      : super(key: key);
+  const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
 
   final String photo;
   final VoidCallback onTap;
@@ -55,45 +54,47 @@ class BasicHeroTransitionWithinPage extends StatelessWidget {
           photo: 'images/backpack-alpha.png',
           width: 85.0,
           onTap: () {
+            // Push a route with a transparent background so that
+            // it will appear to "pop up" within the same page.
             Navigator.of(context).push(new PageRouteBuilder<Null>(
-                opaque: false,
-                barrierDismissible: true,
-                pageBuilder: (BuildContext context, Animation<double> _,
-                    Animation<double> __) {
-                  return new SizedBox.expand(
-                    child: new Container(
-                      padding: const EdgeInsets.all(32.0),
-                      alignment: FractionalOffset.center,
-                      child: new SizedBox(
-                        width: 350.0,
-                        height: 400.0,
-                        child: new Card(
-                          elevation: 8.0,
-                          child: new Center(
-                            child: new Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                new PhotoHero(
-                                  photo: 'images/backpack-alpha.png',
-                                  width: 225.0,
-                                  onTap: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                new Text(
-                                  'Backpack',
-                                  style: new TextStyle(
-                                      fontWeight: FontWeight.bold),
+              opaque: false,
+              barrierDismissible: true,
+              pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+                return new SizedBox.expand(
+                  child: new Container(
+                    padding: const EdgeInsets.all(32.0),
+                    alignment: FractionalOffset.center,
+                    child: new SizedBox( // The 350x400 popup will appear in the middle
+                      width: 350.0,      // of the page.
+                      height: 400.0,
+                      child: new Card(
+                        elevation: 8.0,
+                        child: new Center(
+                          child: new Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              new PhotoHero(
+                                photo: 'images/backpack-alpha.png',
+                                width: 225.0,
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              new Text(
+                                'Backpack',
+                                style: new TextStyle(
+                                  fontWeight: FontWeight.bold),
                                   textScaleFactor: 3.0,
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                  );
-                }));
+                  ),
+                );
+              },
+            ));
           },
         ),
       ),
