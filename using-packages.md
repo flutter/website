@@ -120,7 +120,6 @@ additional dependency options are avaialble:
  `path:` dependency. The path can be either relative, or absolute. For example, to
  depend on a plugin 'plugin1' located in a directory next to the app, use this
  syntax:
-
 ```
 dependencies:
     plugin1:
@@ -130,7 +129,6 @@ dependencies:
 * **Git** dependency: You can also depend on a package stored in a Git
  repository. If the package is located in the root of the repo, use this
  syntax:
-
 ```
 dependencies:
     plugin1:
