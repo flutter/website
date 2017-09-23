@@ -10,8 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({Key key, this.photo, this.onTap, this.width})
-      : super(key: key);
+  const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
 
   final String photo;
   final VoidCallback onTap;
@@ -43,34 +42,35 @@ class SharedElementTransition extends StatelessWidget {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Main Page'),
+        title: const Text('Shared Element Transition'),
       ),
       body: new Center(
         child: new PhotoHero(
-          photo: 'images/curly.jpg',
+          photo: 'images/flippers-alpha.png',
           width: 300.0,
           onTap: () {
-            Navigator.of(context).push(
-                new MaterialPageRoute<Null>(builder: (BuildContext context) {
-              return new Scaffold(
-                appBar: new AppBar(
-                  title: const Text('Detail Page'),
-                ),
-                body: new Container(
-                  // Use background color to emphasize that it's a new page.
-                  color: Colors.lightBlueAccent,
-                  padding: const EdgeInsets.all(16.0),
-                  alignment: FractionalOffset.topLeft,
-                  child: new PhotoHero(
-                    photo: 'images/curly.jpg',
-                    width: 100.0,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
+            Navigator.of(context).push(new MaterialPageRoute<Null>(
+              builder: (BuildContext context) {
+                return new Scaffold(
+                  appBar: new AppBar(
+                    title: const Text('Flippers Page'),
                   ),
-                ),
-              );
-            }));
+                  body: new Container(
+                    // Use background color to emphasize that it's a new page.
+                    color: Colors.lightBlueAccent,
+                    padding: const EdgeInsets.all(16.0),
+                    alignment: FractionalOffset.topLeft,
+                    child: new PhotoHero(
+                      photo: 'images/flippers-alpha.png',
+                      width: 100.0,
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                );
+              }
+            ));
           },
         ),
       ),

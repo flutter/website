@@ -12,4 +12,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/curly.jpg
+    - images/flippers-alpha.png

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Demonstrate a repeating animation
+// Demonstrates a simple animation with AnimatedWidget.
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
@@ -37,14 +37,6 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller = new AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
     controller.forward();
   }
 

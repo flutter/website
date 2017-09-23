@@ -1,0 +1,17 @@
+name: shared_element_transition_within_page
+description: An example showing how to create a shared element (or Hero) transition within the same page.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/backpack-alpha.png
+    - images/flippers-alpha.png
+    - images/surfboard-alpha.png

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Demonstrates a basic hero animation.
+// Demonstrates a basic shared element (hero) animation.
 
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class BasicElementTransition extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Main Page'),
+        title: const Text('Basic Shared Element Transition'),
       ),
       body: new Center(
         child: new InkWell(
@@ -20,7 +20,7 @@ class BasicElementTransition extends StatelessWidget {
                 builder: (BuildContext context) {
                   return new Scaffold(
                     appBar: new AppBar(
-                      title: const Text('Detail Page'),
+                      title: const Text('Flippers Page'),
                     ),
                     body: new Container(
                       padding: const EdgeInsets.all(8.0),
@@ -28,11 +28,11 @@ class BasicElementTransition extends StatelessWidget {
                       // Use background color to emphasize that it's a new page.
                       color: Colors.lightBlueAccent,
                       child: new Hero(
-                        tag: 'curly',
+                        tag: 'flippers',
                         child: new SizedBox(
                           width: 100.0,
                           child: new Image.asset(
-                            'images/curly.jpg',
+                            'images/flippers-alpha.png',
                           ),
                         ),
                       ),
@@ -44,9 +44,9 @@ class BasicElementTransition extends StatelessWidget {
           },
           // Main page
           child: new Hero(
-            tag: 'curly',
+            tag: 'flippers',
             child: new Image.asset(
-              'images/curly.jpg',
+              'images/flippers-alpha.png',
             ),
           ),
         ),

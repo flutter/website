@@ -8,6 +8,8 @@ This catalog lists applications that demonstrate how to implement common mobile 
 
 If there are other sample apps that you'd like to see we'd appreciate hearing from you on our [Gitter channel](https://gitter.im/flutter/flutter) or [mailing list](https://groups.google.com/d/forum/flutter-dev).
 
+---
+
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 32px">
     <a href="/catalog/samples/animated-list/">
