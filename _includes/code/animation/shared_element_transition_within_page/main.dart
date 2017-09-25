@@ -112,7 +112,7 @@ class HeroTransitionWithinPage extends StatelessWidget {
               children: [
                 makeHero(context, 'images/backpack-alpha.png', 'Backpack'),
                 makeHero(context, 'images/flippers-alpha.png', 'Flippers'),
-                makeHero(context, 'images/surfboard-alpha.png', 'Surfboard'),
+                makeHero(context, 'images/beachball-alpha.png', 'Beach ball'),
               ],
             ),
           ],
