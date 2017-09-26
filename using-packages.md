@@ -147,6 +147,7 @@ dependencies:
         path: packages/package1        
 ```
 
+Finally, you can use `ref` argument to pin the dependency to a specific git commit, branch, or tag. 
 For more details, see the [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
 
 ## Examples
