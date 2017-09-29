@@ -375,7 +375,8 @@ We test on a variety of low-end to high-end phones
 but we don't yet have an official device compatibility guarantee.
 
 We do not test on tablets, so there may be issues with some
-widgets on tablets.
+widgets on tablets. We have not implemented tablet-specific
+adaptations in our widgets.
 
 ### Does Flutter run on the web?
 
