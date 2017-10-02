@@ -17,7 +17,7 @@ hide_title: true
         Flutter is a new mobile app SDK
         to help
         developers and designers build
-        modern mobile apps for iOS and Android.
+        high-quality apps for iOS and Android.
         </div>
 
         <div class="homepage__button_row">
@@ -41,8 +41,7 @@ hide_title: true
 
                 <p>
                 Delight your users and make your brand stand out with
-                rich motion, smooth scrolling, and
-                beautiful customizable components.
+                beautiful customizable components and rich motion controls.
                 </p>
             </div>
 
@@ -84,6 +83,7 @@ hide_title: true
         beautiful Material Design and
         Cupertino (iOS-flavor) widgets, rich motion APIs,
         smooth natural scrolling, and platform awareness.
+        Bring your brand to life across 
         </p>
 
         <div class="screenshot-list">
