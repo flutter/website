@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var stack = new Stack(
-      alignment: const FractionalOffset(0.8, 0.8),
+      alignment: const Alignment(0.6, 0.6),
       children: [
         new CircleAvatar(
           backgroundImage: new AssetImage('images/pic.jpg'),

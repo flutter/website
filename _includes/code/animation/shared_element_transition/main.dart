@@ -59,7 +59,7 @@ class SharedElementTransition extends StatelessWidget {
                     // Use background color to emphasize that it's a new page.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16.0),
-                    alignment: FractionalOffset.topLeft,
+                    alignment: Alignment.topLeft,
                     child: new PhotoHero(
                       photo: 'images/flippers-alpha.png',
                       width: 100.0,

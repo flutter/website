@@ -189,8 +189,8 @@ I/flutter ( 6559):                         └Semantics(container: true; renderO
 I/flutter ( 6559):                          └_FocusScope(this scope has focus)
 I/flutter ( 6559):                           └Offstage(offstage: false; renderObject: RenderOffstage)
 I/flutter ( 6559):                            └IgnorePointer(ignoring: false; renderObject: RenderIgnorePointer)
-I/flutter ( 6559):                             └_MountainViewPageTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩FractionalOffsetTween(FractionalOffset(0.0, 1.0) → FractionalOffset(0.0, 0.0))➩FractionalOffset(0.0, 0.0); state: _AnimatedState(552160732))
-I/flutter ( 6559):                              └SlideTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩FractionalOffsetTween(FractionalOffset(0.0, 1.0) → FractionalOffset(0.0, 0.0))➩FractionalOffset(0.0, 0.0); state: _AnimatedState(714726495))
+I/flutter ( 6559):                             └_MountainViewPageTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(552160732))
+I/flutter ( 6559):                              └SlideTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(714726495))
 I/flutter ( 6559):                               └FractionalTranslation(renderObject: RenderFractionalTranslation)
 I/flutter ( 6559):                                └RepaintBoundary(renderObject: RenderRepaintBoundary)
 I/flutter ( 6559):                                 └PageStorage([GlobalKey 619728754])
@@ -206,7 +206,7 @@ I/flutter ( 6559):                                          └NotificationListe
 I/flutter ( 6559):                                           └_InkFeature([GlobalKey ink renderer]; renderObject: _RenderInkFeatures)
 I/flutter ( 6559):                                            └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(427742350; ticker inactive))
 I/flutter ( 6559):                                             └DefaultTextStyle(inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic)
-I/flutter ( 6559):                                              └Center(alignment: FractionalOffset(0.5, 0.5); renderObject: RenderPositionedBox)
+I/flutter ( 6559):                                              └Center(alignment: Alignment.center; renderObject: RenderPositionedBox)
 I/flutter ( 6559):                                               └FlatButton()
 I/flutter ( 6559):                                                └MaterialButton(state: _MaterialButtonState(398724090))
 I/flutter ( 6559):                                                 └ConstrainedBox(BoxConstraints(88.0<=w<=Infinity, h=36.0); renderObject: RenderConstrainedBox relayoutBoundary=up1)
@@ -220,7 +220,7 @@ I/flutter ( 6559):                                                        └_Ge
 I/flutter ( 6559):                                                         └Listener(listeners: down; behavior: opaque; renderObject: RenderPointerListener relayoutBoundary=up3)
 I/flutter ( 6559):                                                          └Container(padding: EdgeInsets(16.0, 0.0, 16.0, 0.0))
 I/flutter ( 6559):                                                           └Padding(renderObject: RenderPadding relayoutBoundary=up4)
-I/flutter ( 6559):                                                            └Center(alignment: FractionalOffset(0.5, 0.5); widthFactor: 1.0; renderObject: RenderPositionedBox relayoutBoundary=up5)
+I/flutter ( 6559):                                                            └Center(alignment: Alignment.center; widthFactor: 1.0; renderObject: RenderPositionedBox relayoutBoundary=up5)
 I/flutter ( 6559):                                                             └Text("Dump App")
 I/flutter ( 6559):                                                              └RichText(renderObject: RenderParagraph relayoutBoundary=up6)
 ```
@@ -438,7 +438,7 @@ I/flutter ( 6559):            ╎         │   _Theatre ← ⋯
 I/flutter ( 6559):            ╎         │ parentData: <none>
 I/flutter ( 6559):            ╎         │ constraints: BoxConstraints(w=411.4, h=683.4)
 I/flutter ( 6559):            ╎         │ size: Size(411.4, 683.4)
-I/flutter ( 6559):            ╎         │ translation: FractionalOffset(0.0, 0.0)
+I/flutter ( 6559):            ╎         │ translation: Offset(0.0, 0.0)
 I/flutter ( 6559):            ╎         │ transformHitTests: true
 I/flutter ( 6559):            ╎         │
 I/flutter ( 6559):            ╎         └─child: RenderRepaintBoundary
@@ -501,7 +501,7 @@ I/flutter ( 6559):            ╎                   │   Material ← AppHome �
 I/flutter ( 6559):            ╎                   │ parentData: <none>
 I/flutter ( 6559):            ╎                   │ constraints: BoxConstraints(w=411.4, h=683.4)
 I/flutter ( 6559):            ╎                   │ size: Size(411.4, 683.4)
-I/flutter ( 6559):            ╎                   │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter ( 6559):            ╎                   │ alignment: Alignment.center
 I/flutter ( 6559):            ╎                   │ widthFactor: expand
 I/flutter ( 6559):            ╎                   │ heightFactor: expand
 I/flutter ( 6559):            ╎                   │
@@ -554,7 +554,7 @@ I/flutter ( 6559):            ╎                             │   AnimatedDefa
 I/flutter ( 6559):            ╎                             │ parentData: offset=Offset(16.0, 0.0)
 I/flutter ( 6559):            ╎                             │ constraints: BoxConstraints(56.0<=w<=379.4, h=36.0)
 I/flutter ( 6559):            ╎                             │ size: Size(66.0, 36.0)
-I/flutter ( 6559):            ╎                             │ alignment: FractionalOffset(0.5, 0.5)
+I/flutter ( 6559):            ╎                             │ alignment: Alignment.center
 I/flutter ( 6559):            ╎                             │ widthFactor: 1.0
 I/flutter ( 6559):            ╎                             │ heightFactor: expand
 I/flutter ( 6559):            ╎                             │

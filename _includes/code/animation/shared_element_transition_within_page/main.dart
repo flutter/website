@@ -45,7 +45,7 @@ class HeroTransitionWithinPage extends StatelessWidget {
             return new SizedBox.expand(
               child: new Container(
                 padding: const EdgeInsets.all(32.0),
-                alignment: FractionalOffset.center,
+                alignment: Alignment.center,
                 child: new SizedBox(
                   width: 350.0,
                   height: 400.0,
@@ -102,7 +102,7 @@ class HeroTransitionWithinPage extends StatelessWidget {
       ),
       body: new Container(
         padding: const EdgeInsets.all(32.0),
-        alignment: FractionalOffset.bottomLeft,
+        alignment: Alignment.bottomLeft,
         color: Colors.blue[50], // Main page has blue background
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
