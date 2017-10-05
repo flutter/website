@@ -48,7 +48,7 @@ class BasicHeroTransitionWithinPage extends StatelessWidget {
       ),
       body: new Container(
         padding: const EdgeInsets.all(32.0),
-        alignment: FractionalOffset.bottomLeft,
+        alignment: Alignment.bottomLeft,
         color: Colors.blue[50], // Main page has blue background
         child: new PhotoHero(
           photo: 'images/backpack-alpha.png',
@@ -63,7 +63,7 @@ class BasicHeroTransitionWithinPage extends StatelessWidget {
                 return new SizedBox.expand(
                   child: new Container(
                     padding: const EdgeInsets.all(32.0),
-                    alignment: FractionalOffset.center,
+                    alignment: Alignment.center,
                     child: new SizedBox( // The 350x400 popup will appear in the middle
                       width: 350.0,      // of the page.
                       height: 400.0,

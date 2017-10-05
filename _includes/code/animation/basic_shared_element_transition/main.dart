@@ -24,7 +24,7 @@ class BasicElementTransition extends StatelessWidget {
                     ),
                     body: new Container(
                       padding: const EdgeInsets.all(8.0),
-                      alignment: FractionalOffset.topLeft,
+                      alignment: Alignment.topLeft,
                       // Use background color to emphasize that it's a new page.
                       color: Colors.lightBlueAccent,
                       child: new Hero(
