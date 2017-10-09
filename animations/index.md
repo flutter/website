@@ -105,13 +105,15 @@ In this pattern, the user selects an element&mdash;often an
 image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
-Hero animations can also occur in a dialog,
-rather than being routed to a new page.
+
+* [Shared Element Transitions](/animations/shared-element-transitions/)<br>
+  How to create two types of shared element transitions using Hero widgets: flying transitions, and
+  radial expansion transitions.
 
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 You can build the Gallery app yourself, or download it from the Play Store.
 The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
-demo includes an example of a hero animation.
+demo includes an example of a Hero animation.
 {% comment %}
 According to Hans, the demo in the Flutter Gallery that is called
 "Animation" isn't really an animation demo. It's more of a
