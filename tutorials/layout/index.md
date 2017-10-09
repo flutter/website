@@ -1427,7 +1427,7 @@ The widgets can completely or partially overlap the base widget.
 Uses Stack to overlay a Container (that displays its Text on a translucent
 black background) on top of a Circle Avatar.
 The Stack offsets the text using the `alignment` property and
-FractionalOffsets.<br>
+Alignments.<br>
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/stack/main.dart), snippet below<br>
 **Image:** [images](https://github.com/flutter/website/tree/master/_includes/code/layout/stack/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/stack/pubspec.yaml)
@@ -1452,7 +1452,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var stack = new Stack(
-      alignment: const FractionalOffset(0.8, 0.8),
+      alignment: const Alignment(0.6, 0.6),
       children: [
         new CircleAvatar(
           backgroundImage: new AssetImage('images/pic.jpg'),

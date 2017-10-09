@@ -331,7 +331,7 @@ var container = new Container( // gray box
         ),
         padding: new EdgeInsets.all(16.0),
       ),
-[[highlight]]      alignment: FractionalOffset.center,
+[[highlight]]      alignment: Alignment.center,
       transform: new Matrix4.identity()
         ..rotateZ(15 * 3.1415927 / 180),
     ), [[/highlight]]
@@ -396,7 +396,7 @@ var container = new Container( // gray box
         ),
         padding: new EdgeInsets.all(16.0),
       ),
-[[highlight]]      alignment: FractionalOffset.center,
+[[highlight]]      alignment: Alignment.center,
       transform: new Matrix4.identity()
         ..scale(1.5),
      ), [[/highlight]]
@@ -415,7 +415,7 @@ Then use the Container widget’s ```decoration``` property to create a [BoxDeco
 object, and use BoxDecoration's ```gradient``` property to transform the background
 fill.
 
-The gradient “angle” is based on the FractionalOffset (x, y) values:
+The gradient “angle” is based on the Alignment (x, y) values:
 
 * If the beginning and ending x values are equal, the gradient is vertical
 (0° | 180°).
@@ -458,8 +458,8 @@ var container = new Container( // grey box
       ),
 [[highlight]]      decoration: new BoxDecoration(
         gradient: new LinearGradient(
-          begin: const FractionalOffset(0.5, 0.0),
-          end: const FractionalOffset(0.5, 0.8),
+          begin: const Alignment(0.0, -1.0),
+          end: const Alignment(0.0, 0.6),
           colors: <Color>[
             const Color(0xffef5350),
             const Color(0x00ef5350)
@@ -512,8 +512,8 @@ var container = new Container( // grey box
       ),
 [[highlight]]      decoration: new BoxDecoration(
         gradient: new LinearGradient(
-          begin: const FractionalOffset(0.0, 0.5),
-          end: const FractionalOffset(0.8, 0.5),
+          begin: const Alignment(-1.0, 0.0),
+          end: const Alignment(0.6, 0.0),
           colors: <Color>[
             const Color(0xffef5350),
             const Color(0x00ef5350)

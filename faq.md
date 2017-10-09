@@ -371,9 +371,12 @@ iPhone models), and ARM Android devices.
 We support developing Flutter apps with Android and iOS devices, as
 well as with Android emulators and the iOS simulator.
 
-We test on a variety of low-end to high-end phones (excluding tablets)
+We test on a variety of low-end to high-end phones
 but we don't yet have an official device compatibility guarantee.
-We do not offer support for tablets or have tablet-aware layouts.
+
+We do not test on tablets, so there may be issues with some
+widgets on tablets. We have not implemented tablet-specific
+adaptations in our widgets.
 
 ### Does Flutter run on the web?
 
