@@ -76,6 +76,7 @@ class RadialExpansionDemo extends StatelessWidget {
   static Widget _buildPage(BuildContext context, String imageName, String description) {
     return new Container(
       color: Theme.of(context).canvasColor,
+      alignment: Alignment.center,
       child: new SizedBox(
         width: kMaxRadius * 2.0,
         height: kMaxRadius * 2.0,

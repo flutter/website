@@ -86,8 +86,8 @@ Clicking any of the circles animates it to a new page that displays
 the image as a larger square shape. Clicking the image in the square
 returns the user to the original screen.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/vVcZHWBQKVY" frameborder="0" allowfullscreen></iframe></center>
-<center>[PENDING/XXX: Better video needed.]</center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI" frameborder="0" allowfullscreen></iframe></center>
+<center>[PENDING/XXX: Ditto.]</center>
 </li>
 </ul>
 
@@ -134,7 +134,7 @@ For further developments, [watch this
 issue.](https://github.com/flutter/flutter/issues/10667)
 </aside>
 
-Hero transition code has the following general structure:
+Hero transition code has the following structure:
 
 1. Define a starting Hero element. The Hero specifies its location,
    size, a graphical representation (typically an image), and a tag
