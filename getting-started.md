@@ -92,7 +92,8 @@ To edit your code and hot reload changes:
 
 1. Run your app with 'Run' or 'Debug'.
 1. Make desired changes in your source code (without stopping the app).
-1. Click the Hot Reload button (the button with the lightning bolt icon).
+1. Click the Hot Reload button (the button with the lightning bolt icon), 
+   or hit Save All (`cmd-a` / `ctrl-a`) to issue a Hot Reload.
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page
