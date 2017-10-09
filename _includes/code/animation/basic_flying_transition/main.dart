@@ -1,8 +1,8 @@
 // Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+// Use of this source code is governed by a BSD-style license that can
+// be found in the LICENSE file.
 
-// Demonstrates a basic shared element (hero) animation.
+// Demonstrates a basic shared element (Hero) animation.
 
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class BasicElementTransition extends StatelessWidget {
                     ),
                     body: new Container(
                       padding: const EdgeInsets.all(8.0),
-                      alignment: FractionalOffset.topLeft,
+                      alignment: Alignment.topLeft,
                       // Use background color to emphasize that it's a new page.
                       color: Colors.lightBlueAccent,
                       child: new Hero(

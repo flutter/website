@@ -1,5 +1,5 @@
-name: basic_shared_element_transition
-description: An example showing how to create a simple shared element (or Hero) transition.
+name: flying_shared_element_transition
+description: An example showing how to create shared element (or Hero) transition.
 
 dependencies:
   flutter:

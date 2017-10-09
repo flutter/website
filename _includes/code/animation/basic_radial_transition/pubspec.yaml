@@ -1,0 +1,17 @@
+name: basic_radial_transition
+description: Shows how to transition from one page to another using radial motion, building the most basic destination route.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/beachball-alpha.png
+    - images/binoculars-alpha.png
+    - images/chair-alpha.png
