@@ -107,9 +107,10 @@ your changes near instantly.
 To edit your code and hot reload changes:
 
 1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
-1. Make desired changes in your source code
-1. Do not press the 'Stop' button; rather, to see your changes just click the
-**Hot Reload button** (the button with the lightning bolt icon).
+1. Make desired changes in your source code.
+1. Do not press the 'Stop' button; let your app continue to run.
+1. To see your changes invoke **Save All** (`cmd-a` / `ctrl-a`),
+   or click the **Hot Reload button** (the button with the lightning bolt icon).
 
 ## Advanced debugging
 
