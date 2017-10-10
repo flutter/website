@@ -90,9 +90,11 @@ in your simulator, emulator, or device.
 
 To edit your code and hot reload changes:
 
-1. Run your app with 'Run' or 'Debug'.
-1. Make desired changes in your source code (without stopping the app).
-1. Click the Hot Reload button (the button with the lightning bolt icon).
+1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
+1. Make desired changes in your source code.
+1. Do not press the 'Stop' button; let your app continue to run.
+1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`),
+   or click the **Hot Reload button** (the button with the lightning bolt icon).
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page
