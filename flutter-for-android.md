@@ -3,10 +3,17 @@ layout: page
 title: Flutter for Android Developers
 permalink: /flutter-for-android/
 ---
-This document is meant for Android developers looking to transfer their 
-existing Android knowledge to build mobile apps in Flutter. If you understand 
+This document is meant for Android developers looking to apply their 
+existing Android knowledge to build mobile apps with Flutter. If you understand 
 the fundamentals of the Android framework then you can use this document as a 
 jump start to Flutter development.
+
+Your Android knowledge and skill set are highly valuable when building with 
+Flutter, because Flutter relies on the mobile operating system for numerous 
+capabilities and configurations. Flutter is a new way to build UIs for mobile, 
+but it has a plugin system to communicate with Android (and iOS) for non-UI 
+tasks. If you're an expert with Android, you don't have to relearn everything 
+to use Flutter.
 
 This document can be used as a cookbook by jumping around and finding questions 
 that are most relevant to your needs.
@@ -17,13 +24,14 @@ that are most relevant to your needs.
 
 In Android, the View is the foundation of everything that shows up on the 
 screen. From Buttons, Toolbars, and Inputs, everything is a View.  In Flutter 
-the equivalent of a View is Widget. Widgets however, have a few 
-differences when compared with a View. To start, widgets only last for a frame, 
-and on every frame, Flutter's framework creates a tree of widget instances. In comparison, on 
-Android when a View is drawn it does not redraw until invalidate is called. 
+the equivalent of a View is Widget. Widgets however, have a few differences 
+when compared with a View. To start, widgets only last for a frame, and on 
+every frame, Flutter's framework creates a tree of widget instances. In 
+comparison, on Android when a View is drawn it does not redraw until invalidate 
+is called. 
 
-Unlike Android’s view hierarchy system where the framework mutate Views, Widgets in Flutter 
-are immutable, this allows Widgets to be super lightweight.
+Unlike Android’s view hierarchy system where the framework mutate Views, 
+Widgets in Flutter are immutable, this allows Widgets to be super lightweight.
 
 
 
@@ -59,7 +67,7 @@ If you are in doubt, then always remember this rule: If a widget changes (the
 user interacts with it, for example) it’s stateful.
 
 Let's take a look at how you would use a StatelessWidget. A common 
-StatelessWidget is a Text widget. If you look at the implemtnation of the Text 
+StatelessWidget is a Text widget. If you look at the implementation of the Text 
 Widget you'll find it subclasses a StatelessWidget
 
 <!-- skip -->
@@ -76,7 +84,7 @@ renders what is passed in it's constructors and nothing more.
 But, what if you want to make "I Like Flutter" change dynamically, for 
 example from clicking a FloatingActionButton?
 
-This can be acheived by wrapping the Text widget in a StatefulWidget and 
+This can be achieved by wrapping the Text widget in a StatefulWidget and 
 updating it when the button is clicked.
 
 For example:
@@ -113,6 +121,7 @@ class SampleAppPage extends StatefulWidget {
 class _SampleAppPageState extends State<SampleAppPage> {
   // Default placeholder text
   String textToShow = "I Like Flutter";
+
   void _updateText() {
     setState(() {
       // update the text
@@ -140,32 +149,33 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I layout my Widgets? Where is my XML layout file
 
-In Android, you write layouts via XML, but in Flutter you write your 
-layouts with a widget tree. 
+In Android, you write layouts via XML, but in Flutter you write your layouts 
+with a widget tree. 
 
 Here is an example of how you would display a simple Widget on the screen and 
 add some padding to it.
 
 <!-- skip -->
 {% prettify dart %}
-@override
-Widget build(BuildContext context) {
-  return new Scaffold(
-    appBar: new AppBar(
-      title: new Text("Sample App"),
-    ),
-    body: new Center(
-      child: new MaterialButton(
-        onPressed: () {},
-        child: new Text('Hello'),
-        padding: new EdgeInsets.only(left: 10.0, right: 10.0),
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
       ),
-    ),
-  );
-}
+      body: new Center(
+        child: new MaterialButton(
+          onPressed: () {},
+          child: new Text('Hello'),
+          padding: new EdgeInsets.only(left: 10.0, right: 10.0),
+        ),
+      ),
+    );
+  }
 {% endprettify %}
 
-You can view all the layouts that Flutter has to offer here: [https://flutter.io/widgets/layout/](https://flutter.io/widgets/layout/)
+You can view all the layouts that Flutter has to offer here: 
+[https://flutter.io/widgets/layout/](https://flutter.io/widgets/layout/)
 
 ## How do I add or remove a component from my layout
 
@@ -402,9 +412,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new RaisedButton(onPressed: (){
-
-    }, child: new Text(label));
+    return new RaisedButton(onPressed: () {}, child: new Text(label));
   }
 }
 {% endprettify %}
@@ -413,11 +421,12 @@ Then you can use this CustomButton just like you would with any other Widget:
 
 <!-- skip -->
 {% prettify dart %}
-@override
-Widget build(BuildContext context) {
-  return  new Center(
-        child: new CustomButton("Hello"),
-  );
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+      child: new CustomButton("Hello"),
+    );
+  }
 }
 {% endprettify %}
 
@@ -425,10 +434,10 @@ Widget build(BuildContext context) {
 
 ## What is the equivalent of an Intent in Flutter
 
-In Android, there are two main use cases for Intents: switching between Activities, 
-and invoking external components. Flutter on the other hand does not 
-have the concept of Intents, though if needed Flutter can trigger Intents through
-native integration.
+In Android, there are two main use cases for Intents: switching between 
+Activities, and invoking external components. Flutter on the other hand does 
+not have the concept of Intents, though if needed Flutter can trigger Intents 
+through native integration.
 
 To switch between screens in Flutter you can access the router to draw 
 a new Widget.  There are two core concepts and classes for managing many 
@@ -512,11 +521,10 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 
 ## What is the equivalent of runOnUiThread in Flutter
 
-In Android a very common pattern is to do any network or long running
-work in a non UI thread. However, because of Flutters reactive architecture, 
-there is no need to think about when you are touching the UI thread or not. 
-All Dart code runs on the UI thread, but because of Dart's single-threaded async nature, 
-your UI thread is not blocked unless you are doing heavy data processing or computation.
+Dart is a single-threaded execution model, with support for Isolates 
+(a way to run Dart code on another thread), an event loop, 
+and asynchronous programming. Unless you spawn an Isolate, 
+your Dart code runs in the main UI thread and is driven by an event loop.
 
 For example, you can run network code on the UI thread without causing the UI
 to hang:
@@ -570,7 +578,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = new List();
+  List widgets = [];
 
   @override
   void initState() {
@@ -593,7 +601,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Widget getRow(int i) {
-    return new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row ${widgets[i]["title"]}"));
+    return new Padding(
+        padding: new EdgeInsets.all(10.0), 
+        child: new Text("Row ${widgets[i]["title"]}")
+    );
   }
 
   loadData() async {
@@ -610,7 +621,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## What is the equivalent of an AsyncTask or IntentService on Android
 
-In Android, when you want to access a Network resource you would
+In Android, when you want to access a network resource you would
 typically spawn an AsyncTask that would run code outside of the UI thread
 to prevent your UI from blocking. The AsyncTask has a thread pool that manages
 the threads for you. 
@@ -634,25 +645,20 @@ loadData() async {
 
 This is how you would typically do network or database calls. 
 
-With regards to AsyncTask which follows a three step model onPreExecute, 
-doInBackground and onPostExecute, doing a similar model in Flutter is easier. 
-You can write non-blocking code as it is, like you would in onPreExecute 
-and onPostExecute and to run code asynchronously you would call an async 
-function.
+On Android, when you extend AsyncTask, you typically override 3 methods, 
+OnPreExecute, doInBackground and onPostExecute. There is no equivalent to this 
+pattern in Flutter since you would just await on a long running function and 
+Dart's event loop will take care of the rest.
 
-onPostExecute takes the value from the result of the doInBackground 
-task and updates the UI, in Flutter as you can see above you would take 
-the value returned from the await’ed function and update the UI by calling 
-setState.
-
-Yet, there are times where you may be processing a large amount of data and 
+However, there are times where you may be processing a large amount of data and 
 your UI could hang. 
 
-Like AsyncTask is possible to take advantage of multiple CPU cores to do long 
-running or computationally intensive tasks. This is done by using Isolates.
+In this case, like AsyncTask, in Flutter it is possible to take advantage of 
+multiple CPU cores to do long running or computationally intensive tasks. This 
+is done by using Isolates.
 
 Isolates are a separate execution thread that runs and do not share any memory 
-with the main execution thread. This means you can’t access variables from 
+with the main execution memory heap. This means you can’t access variables from 
 the main thread or update your UI by calling setState. 
 
 Let's see an example of a simple Isolate and how you can communicate and share 
@@ -700,7 +706,7 @@ data back to the main thread to update your UI.
   }
 {% endprettify %}
 
-"dataLoader" is the Isolate that runs in its own seperte execution thread, 
+"dataLoader" is the Isolate that runs in its own seperate execution thread, 
 where you can do more CPU intensive processing, for example parsing a lot of 
 JSON - 10k+ lines, or doing computationally intensive math.
 
@@ -740,7 +746,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = new List();
+  List widgets = [];
 
   @override
   void initState() {
@@ -833,8 +839,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## What is the equivalent of OkHttp on Flutter
 
-Making a network call in Flutter is very easy when you use the popular "http" 
-package from [https://pub.dartlang.org/packages/http](https://pub.dartlang.org/packages/http)
+Making a network call in Flutter is easy when you use the popular "http" package.
+
+While the http package does not have all the features OkHttp has implemented,
+the "http" package abstracts away a lot of the networking that you would normally 
+implement yourself, making it a simple way to make network calls.
+
+[https://pub.dartlang.org/packages/http](https://pub.dartlang.org/packages/http)
 
 You can use it by adding it to your dependencies in pubspec.yaml
 
@@ -913,7 +924,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = new List();
+  List widgets = [];
 
   @override
   void initState() {
@@ -1030,9 +1041,10 @@ localization.
 In Android, you add dependencies by adding to your Gradle file located in your 
 Android project.
 
-In Flutter while there are Gradle files under the Android folder in your Flutter project, 
-you would only use these if you are adding dependencies needed for platform integration. 
-Otherwise, you can use pubspec.yaml to declare external dependencies specific to Flutter.
+In Flutter while there are Gradle files under the Android folder in your 
+Flutter project, you would only use these if you are adding dependencies needed 
+for platform integration. Otherwise, you can use pubspec.yaml to declare 
+external dependencies specific to Flutter.
 
 A good place to find great packages for flutter is [Pub](https://pub.dartlang.org/flutter/packages/)
 
@@ -1116,9 +1128,9 @@ void main() {
 
 ## What is the equivalent of a LinearLayout
 
-In Android, a LinearLayout is used to lay your widgets out linearly -horizontally 
-or vertically. In Flutter, you can use the Row widget or Column widget to 
-achieve the same result.
+In Android, a LinearLayout is used to lay your widgets out linearly 
+-horizontally or vertically. In Flutter, you can use the Row widget or Column 
+widget to achieve the same result.
 
 If you notice the two code samples are identical with the exception of the 
 "Row" and "Column" widget. The children are the same and this feature can be 
@@ -1127,44 +1139,34 @@ children.
 
 <!-- skip -->
 {% prettify dart %}
-new Row(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: <Widget>[
-    new Text(
-      'Row One',
-    ),
-    new Text(
-      'Row Two',
-    ),
-    new Text(
-      'Row Three',
-    ),
-    new Text(
-      'Row Four',
-    ),
-  ],
-)
+  @override
+  Widget build(BuildContext context) {
+    return new Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new Text('Row One'),
+        new Text('Row Two'),
+        new Text('Row Three'),
+        new Text('Row Four'),
+      ],
+    );
+  }
 {% endprettify %}
 
 <!-- skip -->
 {% prettify dart %}
-new Column(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: <Widget>[
-    new Text(
-      'Column One',
-    ),
-    new Text(
-      'Column Two',
-    ),
-    new Text(
-      'Column Three',
-    ),
-    new Text(
-      'Column Four',
-    ),
-  ],
-)
+  @override
+  Widget build(BuildContext context) {
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new Text('Column One'),
+        new Text('Column Two'),
+        new Text('Column Three'),
+        new Text('Column Four'),
+      ],
+    );
+  }
 {% endprettify %}
 
 ## What is the equivalent of a RelativeLayout
@@ -1176,17 +1178,14 @@ You can achieve the result of a RelativeLayout by using a combination of
 Column, Row, and Stack widgets. You can specify rules for the widgets 
 constructors on how the children are laid out relative to the parent.
 
-[Simple example]
-
-You can also use the more complex but powerful CustomMultiChildLayout to 
-achieve a RelativeLayout.
-
-[complex code]
+A good example of building a RelativeLayout in Flutter is on StackOverflow
+[https://stackoverflow.com/questions/44396075/equivalent-of-relativelayout-in
+-flutter](https://stackoverflow.com/questions/44396075/equivalent-of-relativelayout-in-flutter)
 
 ## What is the equivalent of a ScrollView
 
-In Android a ScrollView lets you lay your widgets such that if the users' device has a 
-smaller screen than your content, they can scroll.
+In Android a ScrollView lets you lay your widgets such that if the users' 
+device has a smaller screen than your content, they can scroll.
 
 In Flutter the easiest way to do this is using the ListView widget. This might 
 seem like overkill coming from Android, but in Flutter a ListView widget is 
@@ -1194,22 +1193,17 @@ both a ScrollView and an Android ListView.
 
 <!-- skip -->
 {% prettify dart %}
-new ListView(
-  children: <Widget>[
-    new Text(
-      'Row One',
-    ),
-    new Text(
-      'Row Two',
-    ),
-    new Text(
-      'Row Three',
-    ),
-    new Text(
-      'Row Four',
-    ),
-  ],
-)
+  @override
+  Widget build(BuildContext context) {
+    return new ListView(
+      children: <Widget>[
+        new Text('Row One'),
+        new Text('Row Two'),
+        new Text('Row Three'),
+        new Text('Row Four'),
+      ],
+    );
+  }
 {% endprettify %}
 
 # Gesture Detection and Touch Event Handling
@@ -1219,7 +1213,7 @@ new ListView(
 In Android, you can attach onClick to views such as button by calling
 the method 'setOnClickListener'.
 
-In Flutter There are two ways of adding touch listeners
+In Flutter there are two ways of adding touch listeners
 
 1. If the Widget has support for event detection you can just pass in a 
   function to it and handle it. For example, the RaisedButton has an onPressed 
@@ -1227,12 +1221,14 @@ In Flutter There are two ways of adding touch listeners
 
    <!-- skip -->
   {% prettify dart %}
-   @override
-   Widget build(BuildContext context) {
-     return new RaisedButton(onPressed: () {
-       print("click");
-     }, child: new Text("Button"));
-   }
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(
+        onPressed: () {
+          print("click");
+        },
+        child: new Text("Button"));
+  }
    {% endprettify %}
 
 2. If the Widget does not have support for event detection, you can wrap up the 
@@ -1240,21 +1236,22 @@ In Flutter There are two ways of adding touch listeners
 
    <!-- skip -->
   {% prettify dart %}
-     @override
-     Widget build(BuildContext context) {
-       return new Scaffold(
-           body: new Center(
-         child: new GestureDetector(
-           child: new FlutterLogo(
-             size: 200.0,
-           ),
-           onTap: () {
-             print("tap");
-           },
-         ),
-       ));
-     }
-   }
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Center(
+      child: new GestureDetector(
+        child: new FlutterLogo(
+          size: 200.0,
+        ),
+        onTap: () {
+          print("tap");
+        },
+      ),
+    ));
+  }
+}
    {% endprettify %}
 
 ## How do I handle other gestures on widgets
@@ -1317,26 +1314,27 @@ void initState() {
   curve = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
 }
 
-@override
-Widget build(BuildContext context) {
-  return new Scaffold(
-      body: new Center(
-    child: new GestureDetector(
-      child: new RotationTransition(
-          turns: curve,
-          child: new FlutterLogo(
-            size: 200.0,
-          )),
-      onDoubleTap: () {
-        if(controller.isCompleted){
-          controller.reverse();
-        }else{
-          controller.forward();
-        }
-    
-      },
-    ),
-  ));
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Center(
+          child: new GestureDetector(
+            child: new RotationTransition(
+                turns: curve, 
+                child: new FlutterLogo(
+                  size: 200.0,
+                )),
+            onDoubleTap: () {
+              if (controller.isCompleted) {
+                controller.reverse();
+              } else {
+                controller.forward();
+              }
+            },
+        ),
+    ));
+  }
 }
 {% endprettify %}
 
@@ -1347,12 +1345,12 @@ Widget build(BuildContext context) {
 The equivalent to a ListView in Flutter is … a ListView! 
 
 In an Android ListView, you create an adapter that you can then pass into the 
-ListView which will render each row with what your adapter returns. However you have to make 
-sure you recycle your rows , otherwise, you get all sorts of crazy 
+ListView which will render each row with what your adapter returns. However you 
+have to make sure you recycle your rows , otherwise, you get all sorts of crazy 
 visual glitches and memory issues.
 
-In Flutter, due to Flutters immutable widget pattern, you pass in a List 
-of Widgets to your ListView and Flutter will take care of making sure they are 
+In Flutter, due to Flutters immutable widget pattern, you pass in a List of 
+Widgets to your ListView and Flutter will take care of making sure they are 
 scrolling fast and smooth.
 
 <!-- skip -->
@@ -1396,7 +1394,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   _getListData() {
-    List<Widget> widgets = new List();
+    List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")));
     }
@@ -1407,9 +1405,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I know which list item is clicked on
 
-In Android, the ListView has a method to find out which item was clicked 'onItemClickListener'.
-Flutter makes it easier by letting you just use the touch handling that the widgets you 
-passed in have.
+In Android, the ListView has a method to find out which item was clicked 
+'onItemClickListener'. Flutter makes it easier by letting you just use the 
+touch handling that the widgets you passed in have.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1452,10 +1450,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   _getListData() {
-    List<Widget> widgets = new List();
+    List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(new GestureDetector(
-        child: new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")),
+        child: new Padding(
+            padding: new EdgeInsets.all(10.0), 
+            child: new Text("Row $i")),
         onTap: () {
           print('row tapped');
         },
@@ -1468,18 +1468,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I update ListView's dynamically
 
-On Android, you would update the adapter and call notifyDataSetChanged. 
-In Flutter if you were to update the list of widgets inside a setState(), 
-you would quickly see that your data did not change visually. 
+On Android, you would update the adapter and call notifyDataSetChanged. In 
+Flutter if you were to update the list of widgets inside a setState(), you 
+would quickly see that your data did not change visually. 
 
 This is because when setState is called, the Flutter rendering engine will go 
 through all the widgets to see if they have changed. When it gets to your 
 ListView it will do a `==operator` and see that the two ListViews are the same 
 and nothing has changed, hence no update to the data.
 
-To update your ListView then is to create a new 
-List() inside of setState and copy over all the old data to the new list. This is 
-a simple way to achieve an update. 
+To update your ListView then is to create a new List() inside of setState and 
+copy over all the old data to the new list. This is a simple way to achieve an 
+update. 
 
 <!-- skip -->
 {% prettify dart %}
@@ -1511,7 +1511,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = new List();
+  List widgets = [];
 
   @override
   void initState() {
@@ -1533,7 +1533,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return new GestureDetector(
-      child: new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")),
+      child: new Padding(
+          padding: new EdgeInsets.all(10.0), 
+          child: new Text("Row $i")),
       onTap: () {
         setState(() {
           widgets = new List.from(widgets);
@@ -1546,10 +1548,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-However the recommended, efficient and effective way is to use a 
+However the recommended, efficient, and effective way is to use a 
 ListView.Builder. This method is great when you have a dynamic
 List or a List with very large amounts of data. This is essentially
-the equivalent of adding a lot of data and calling 'notifyDataSetChanged' in Android:
+the equivalent of adding a lot of data and calling 'notifyDataSetChanged' in 
+Android:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1581,7 +1584,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = new List();
+  List widgets = [];
 
   @override
   void initState() {
@@ -1606,7 +1609,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return new GestureDetector(
-      child: new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")),
+      child: new Padding(
+          padding: new EdgeInsets.all(10.0), 
+          child: new Text("Row $i")),
       onTap: () {
         setState(() {
           widgets.add(getRow(widgets.length + 1));
@@ -1635,11 +1640,11 @@ the List anymore and instead just .add to it.
 
 ## How do I set custom fonts on my Text widgets
 
-In Android (as of Android O), you would create a Font resource file and pass it
-into the FontFamily param for your TextView.
+In Android SDK (as of Android O), you would create a Font resource file and 
+pass it into the FontFamily param for your TextView.
 
-In Flutter first you need to take your font file and place in folder in your project 
-(best practice is to create a folder called assets).
+In Flutter first you need to take your font file and place in folder in your 
+project (best practice is to create a folder called assets).
 
 Next in your pubspec.yaml file you would declare the fonts
 
@@ -1781,7 +1786,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   bool isEmail(String em) {
-    String p =
+    String emailRegexp =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     
     RegExp regExp = new RegExp(p);
@@ -1796,8 +1801,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I access the GPS sensor
 
-Flutter does not access the GPS sensor directly, instead it relies on Plugins. 
-
 To access the GPS sensor you can use the community plugin 
 [https://pub.dartlang.org/packages/location](https://pub.dartlang.org/packages/location)
 
@@ -1809,7 +1812,7 @@ A popular community plugin to access the camera is
 ## How do I log in with Facebook
 
 To access Facebook Connect functionality you can use 
-[https://pub.dartlang.org/packages/flutter_facebook_connect](https://pub.dartlang.org/packages/flutter_facebook_connect)
+[https://pub.dartlang.org/packages/flutter_facebook_connect](https://pub.dartlang.org/packages/flutter_facebook_connect) .
 
 ## How do I build my own custom native integrations
 
@@ -1817,29 +1820,39 @@ If there is platform specific functionality that Flutter or its community
 Plugins are missing then you can build your own following this tutorial 
 [https://flutter.io/developing-packages/](https://flutter.io/developing-packages/) .
 
-Flutters plugin architecture in a nutshell is a lot like using an Event bus in 
-Android, you fire off a message and let the receiver process and emit a result 
+Flutter's plugin architecture in a nutshell is a lot like using an Event bus in 
+Android: you fire off a message and let the receiver process and emit a result 
 back to you, in this case the receiver would be iOS or Android.
 
 ## How do I use the NDK in my Flutter application
 
-If you are using the NDK in your current application and want to take advatnage 
-of your native libraries in Flutter, then you can build a custom plugin that 
-hooks into Android, which then talks to the NDK, returns the result to Android, 
-which then propagates the result back up to Flutter.
+If you use the NDK in your current Android application and want your Flutter 
+application to take advantage of your native libraries then it's possible by 
+building a custom plugin.
+
+Your custom plugin would first talk to your Android app, where you would be 
+able to call your `native` marked functions. Once a response is ready, you 
+would be able to send a message back to Flutter and render the result.
 
 # Themes
 
-## How do I theme my app
+## How do I theme my Material-styled app
 
-Flutter out of the box comes with a beautiful implementation of Material Design, 
-which takes care of a lot of styling and theming needs that you would typically 
-do. Unlike Android where you declare themes in XML and then assign it to your 
-application via AndroidManifest.xml, in Flutter you can declare themes via the top 
-level widget.
+Flutter out of the box comes with a beautiful implementation of Material 
+Design, which takes care of a lot of styling and theming needs that you would 
+typically do. Unlike Android where you declare themes in XML and then assign it 
+to your application via AndroidManifest.xml, in Flutter you can declare themes 
+via the top level widget.
 
-To take full advantage of MaterialDesign in your app, you can declare a top 
-level widget `MaterialApp` as the entry point to your application. 
+To take full advantage of Material Design in your app, you can declare a top 
+level widget `MaterialApp` as the entry point to your application. MaterialApp 
+is a convenience widget that wraps a number of widgets that are commonly 
+required for material design applications. It builds upon a WidgetsApp by 
+adding material-design specific functionality.
+
+If you don't want to use Material Design, then you can declare a top level 
+widget `WidgetsApp` which is a convenience class that wraps a number of widgets 
+that are commonly required for an application
 
 To customize the colors and styles of Material Design you can pass in a 
 ThemeData object to the MaterialApp widget, for example in the code below you 
