@@ -25,6 +25,12 @@ supports. Flutter provides widgets and classes that help with
 internationalization and the Flutter libraries themselves are
 internationalized.
 
+The tutorial that follows is largely written in terms of the Flutter
+`MaterialApp` class, since most applications are written that way.
+Applications written in terms of the lower level `WidgetsApp` class
+can also be internationalized using the same classes and logic.
+
+<a name="setting-up"></a>
 ### Setting up an Internationalized app: the `flutter_localizations` package
 
 By default Flutter only provides US English localizations. To add
@@ -168,8 +174,8 @@ different delegate of the same base type is specified with the app's
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called `GlobalMaterialLocalizations`
 and `GlobalWidgetsLocalizations`. International apps must specify
-localization delegates for these classes as described in the "Setting
-up an Internationalized app" section above.
+localization delegates for these classes as described in the <a href="#setting-up">Setting
+up an Internationalized app" section</a>.
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
