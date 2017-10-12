@@ -5,7 +5,8 @@ title: Getting started with your first Flutter app
 permalink: /getting-started/
 ---
 
-This quickstart guide describes how to create and run your first Flutter app. **It assumes you have already [installed the Flutter SDK](/setup/)**.
+This quickstart guide describes how to create and run your first Flutter app.
+**It assumes you have already [installed the Flutter SDK](/setup/)**.
 
 * Placeholder for TOC
 {:toc}
@@ -48,7 +49,8 @@ If more than one device is connected, use the `flutter devices` command
 to get their IDs, and then `flutter run -d deviceID` to run your app.
 
 Alternatively, if you are using the [IntelliJ
-IDEA](https://www.jetbrains.com/idea/) IDE with the [Flutter
+IDEA](https://www.jetbrains.com/idea/) IDE (either the free Community Edition, or the
+Ultimate Edition) with the [Flutter
 plugins](/intellij-setup/), you can start your Flutter app from there:
 
 1. In IntelliJ, click **Create New Project** from the Welcome window or
