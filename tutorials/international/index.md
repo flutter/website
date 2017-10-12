@@ -25,6 +25,66 @@ supports. Flutter provides widgets and classes that help with
 internationalization and the Flutter libraries themselves are
 internationalized.
 
+The tutorial that follows is largely written in terms of the Flutter
+`MaterialApp` class, since most applications are written that way.
+Applications written in terms of the lower level `WidgetsApp` class
+can also be internationalized using the same classes and logic.
+
+<a name="setting-up"></a>
+### Setting up an Internationalized app: the `flutter_localizations` package
+
+By default Flutter only provides US English localizations. To add
+support for other languages, applications must specify some additional
+`MaterialApp` properties and include a separate package called
+`flutter_localizations`.  As of October 2017, this package supports 15
+languages.
+
+To use flutter_localizations, add the package as a dependency to your
+`pubspec.yaml` file:
+
+```dart
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+```
+
+Next, import the flutter_localizations library and specify
+`localizationsDelegates` and `supportedLocales` for MaterialApp:
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+new MaterialApp(
+ localizationsDelegates: [
+   // ... app-specific localization delegate[s] here
+   GlobalMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+ ],
+ supportedLocales: [
+    const Locale('en', 'US'), // English
+    const Locale('he', 'IL'), // Hebrew
+    // ... other locales the app supports
+  ],
+  // ...
+)
+```
+
+Apps based on `WidgetsApp` are similar except that the
+`GlobalMaterialLocalizations.delegate` isn't needed.
+
+The elements of the `localizationsDelegates` list are factories that produce
+collections of localized values. `GlobalMaterialLocalizations.delegate`
+provides localized strings and other values for the material
+library. `GlobalWidgetsLocalizations.delegate` defines the default
+text direction, either left to right or right to left, for the widgets
+library.
+
+More information about these app properties, the types they
+depend on, and how internationalized Flutter apps are typically
+structured, can be found below.
+
 ### Tracking the Locale: The `Locale` class and the `Localizations` Widget
 
 The [`Locale`](https://docs.flutter.io/flutter/dart-ui/Locale-class.html)
@@ -98,6 +158,99 @@ static MaterialLocalizations of(BuildContext context) {
 /// are typically written like this:
 
 tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+```
+
+### Using the bundled LocalizationsDelegates
+
+To keep things as small and uncomplicated as possible, the flutter
+package includes implementations of the `MaterialLocalizations` and
+`WidgetsLocalizations` interfaces that only provide US English
+values. These implementation classes are called
+`DefaultMaterialLocalizations` and
+`DefaultWidgetsLocalizations`. They're included automatically unless a
+different delegate of the same base type is specified with the app's
+`localizationsDelegates` parameter.
+
+The flutter_localizations package includes multi-language
+implementations of the localizations interfaces called `GlobalMaterialLocalizations`
+and `GlobalWidgetsLocalizations`. International apps must specify
+localization delegates for these classes as described in the  <a href="#setting-up">Setting up an Internationalized app section</a>.
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+new MaterialApp(
+ localizationsDelegates: [
+   // ... app-specific localization delegate[s] here
+   GlobalMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+ ],
+ supportedLocales: [
+    const Locale('en', 'US'), // English
+    const Locale('he', 'IL'), // Hebrew
+    // ... other locales the app supports
+  ],
+  // ...
+)
+```
+
+The global localization delegates construct locale-specific instances
+of the corresponding classes. For example
+`GlobalMaterialLocalizations.delegate` is a `LocalizationsDelegate`
+that produces an instance of `GlobalMaterialLocalizations`.
+
+As of October 2017, the global localization classes support 
+[15 langauges](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n).
+Applications can add support for additional
+languages by subclassing. For example one could add support for
+a language called `foo` by subclassing GlobalMaterialLocalizations:
+
+```dart
+class FooMaterialLocalizations extends GlobalMaterialLocalizations {
+  FooMaterialLocalizations(Locale locale) : super(locale);
+
+  @override
+  String get backButtonTooltip {
+    if (locale.languageCode == 'foo')
+      return 'foo';
+    return super.backButtonTooltip;
+  }
+
+  // ...
+
+  static final LocalizationsDelegate<MaterialLocalizations> delegate =
+    new FooMaterialLocalizationsDelegate();
+}
+```
+
+A `LocalizationsDelegate` that produced an instance of
+`FooMaterialLocalizations` could be written like this:
+
+```dart
+class FooMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
+  @override
+  Future<FooMaterialLocalizations> load(Locale locale) {
+    return new Future<FooMaterialLocalizations>.value(new FooMaterialLocalizations(locale));
+  }
+
+  @override
+  bool shouldReload(FooMaterialLocalizationsDelegate old) => false;
+}
+```
+
+And finally the app would be configured with the `FooMaterialLocalizations.delegate`:
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+new MaterialApp(
+ localizationsDelegates: [
+   // ... app-specific localization delegate[s] here
+   FooMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+ ],
+ // ...
+)
 ```
 
 ### Defining a Class for the App's Localized Resources
@@ -235,7 +388,6 @@ class MyApp extends StatelessWidget {
 }
 
 ```
-
 
 ### An Alternative Class for the App's Localized Resources
 
