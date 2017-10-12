@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-// A simple radial transition. The destination route is very basic,
-// and has no Card, Column, or Text.
+// A simple radial transition. The destination route is basic,
+// with no Card, Column, or Text.
 
 import 'dart:math' as math;
 
@@ -20,16 +20,13 @@ class Photo extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Material(
       // Slightly opaque color appears where the image has transparency.
+      // Makes it possible to see the radial transformation's boundary.
       color: Theme.of(context).primaryColor.withOpacity(0.25),
       child: new InkWell(
         onTap: onTap,
-        child: new LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints size) {
-            return new Image.asset(
+        child: new Image.asset(
               photo,
               fit: BoxFit.contain,
-            );
-          },
         ),
       ),
     );
@@ -41,20 +38,23 @@ class RadialExpansion extends StatelessWidget {
     Key key,
     this.maxRadius,
     this.child,
-  }) : clipRectSize = 2.0 * (maxRadius / math.SQRT2),
+  }) : clipRectExtent = 2.0 * (maxRadius / math.SQRT2),
        super(key: key);
 
   final double maxRadius;
-  final clipRectSize;
+  final clipRectExtent;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
+    // The ClipOval matches the RadialExpansion widget's bounds,
+    // which change per the Hero's bounds as the Hero flies to
+    // the new route, while the ClipRect's bounds are always fixed.
     return new ClipOval(
       child: new Center(
         child: new SizedBox(
-          width: clipRectSize,
-          height: clipRectSize,
+          width: clipRectExtent,
+          height: clipRectExtent,
           child: new ClipRect(
             child: child,
           ),
@@ -76,7 +76,7 @@ class RadialExpansionDemo extends StatelessWidget {
   static Widget _buildPage(BuildContext context, String imageName, String description) {
     return new Container(
       color: Theme.of(context).canvasColor,
-      alignment: Alignment.center,
+      alignment: FractionalOffset.center,
       child: new SizedBox(
         width: kMaxRadius * 2.0,
         height: kMaxRadius * 2.0,
@@ -133,7 +133,7 @@ class RadialExpansionDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5.0; // 1.0 is normal animation speed.
+    timeDilation = 20.0; // 1.0 is normal animation speed.
 
     return new Scaffold(
       appBar: new AppBar(

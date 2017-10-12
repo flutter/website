@@ -2,11 +2,13 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-// A "radial transition" as defined here:
+// A "radial transformation" as defined here:
 // https://material.io/guidelines/motion/transforming-material.html#transforming-material-radial-transformation
+
 // In this example, the destination route (which completely obscures
-// the home route), displays the Hero image in a Card containing
-// a column of two widgets: the image, and some descriptive text.
+// the source route once the page transition has finished),
+// displays the Hero image in a Card containing a column of two
+// widgets: the image, and some descriptive text.
 
 import 'dart:math' as math;
 

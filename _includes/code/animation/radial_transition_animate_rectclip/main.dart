@@ -7,7 +7,7 @@
 // - The circular *and* the rectangular clips change as t goes from
 //   0.0 to 1.0. (The rectangular clip doesn't change in the
 //   Material motion spec.)
-// - This requires adding a LayoutBuilder and computing t.
+// - This requires adding LayoutBuilders and computing t.
 // - The key is that the rectangular clip grows more slowly than the
 //   circular clip.
 

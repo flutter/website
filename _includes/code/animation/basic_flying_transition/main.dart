@@ -25,7 +25,7 @@ class BasicElementTransition extends StatelessWidget {
                     body: new Container(
                       padding: const EdgeInsets.all(8.0),
                       alignment: Alignment.topLeft,
-                      // Use background color to emphasize that it's a new page.
+                      // Use background color to emphasize that it's a new route.
                       color: Colors.lightBlueAccent,
                       child: new Hero(
                         tag: 'flippers',
@@ -42,7 +42,7 @@ class BasicElementTransition extends StatelessWidget {
               ),
             );
           },
-          // Main page
+          // Main route
           child: new Hero(
             tag: 'flippers',
             child: new Image.asset(

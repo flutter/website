@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Tap on the home route’s photo to push a new route,
+// Tap on the source route’s photo to push a new route,
 // containing the same photo at a different location and scale.
-// Return to the previous route by clicking the image, or by using the
+// Return to the previous route by tapping the image, or by using the
 // device’s back-to-the-previous-screen gesture.
 // You can slow the transition using the timeDilation property.
 
@@ -58,7 +58,7 @@ class SharedElementTransition extends StatelessWidget {
                     title: const Text('Flippers Page'),
                   ),
                   body: new Container(
-                    // Set background to blue to emphasize that it's a new page.
+                    // Set background to blue to emphasize that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16.0),
                     alignment: Alignment.topLeft,

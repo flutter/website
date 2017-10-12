@@ -107,18 +107,18 @@ to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
 * [Shared Element Transitions](/animations/shared-element-transitions/)<br>
-  How to create two types of shared element transitions using Hero widgets: flying transitions, and
-  radial expansion transitions.
+  How to create two types of shared element transitions using Hero
+  widgets:
+  * A transition where the shared (Hero) element simply flies from
+    one page to another.
+  * A more complex transition where the Hero element's boundary
+    changes shape, from a circle to a square, as its flight
+    progresses.
 
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 You can build the Gallery app yourself, or download it from the Play Store.
 The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
 demo includes an example of a Hero animation.
-{% comment %}
-According to Hans, the demo in the Flutter Gallery that is called
-"Animation" isn't really an animation demo. It's more of a
-"scroll driven layout demo".
-{% endcomment %}
 
 * Also see the API documentation for the
 [Hero,](https://docs.flutter.io/flutter/widgets/Hero-class.html)
