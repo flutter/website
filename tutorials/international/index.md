@@ -174,8 +174,8 @@ different delegate of the same base type is specified with the app's
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called `GlobalMaterialLocalizations`
 and `GlobalWidgetsLocalizations`. International apps must specify
-localization delegates for these classes as described in the <a href="#setting-up">Setting
-up an Internationalized app" section</a>.
+localization delegates for these classes as described in the "Setting
+up an Internationalized app section."
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
