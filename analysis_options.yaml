@@ -6,6 +6,3 @@ analyzer:
   exclude:
     - '_includes/**'
     - '_layouts/**'
-linter:
-  rules:
-    - directives_ordering
