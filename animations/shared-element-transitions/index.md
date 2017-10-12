@@ -73,7 +73,7 @@ returns to the original screen.
 
 Before moving to the sections specific to the
 [flying](#flying-transitions)
-or [radial](#radial-transitions) transitions,
+or [radial](#radial-transformations) transitions,
 read the [basic structure of a Hero animation](#basic-structure)
 to learn how to structure your app for either transition type,
 and [behind the scenes](#behind-the-scenes) to understand
