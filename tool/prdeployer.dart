@@ -1,7 +1,8 @@
-import 'package:firebase/firebase_io.dart';
 import 'dart:async';
-import 'package:github/server.dart';
 import 'dart:io';
+
+import 'package:firebase/firebase_io.dart';
+import 'package:github/server.dart';
 
 GitHub github;
 String firebaseAuth;

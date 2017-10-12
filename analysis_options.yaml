@@ -1,7 +1,11 @@
 analyzer:
-  exclude:
-    - '_includes/**'
-    - '_layouts/**'
+  strong-mode: true
   language:
     enableAssertInitializer: true
     enableSuperMixins: true
+  exclude:
+    - '_includes/**'
+    - '_layouts/**'
+linter:
+  rules:
+    - directives_ordering
