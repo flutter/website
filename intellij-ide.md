@@ -5,7 +5,7 @@ title: Developing Flutter apps in the IntelliJ IDE
 permalink: /intellij-ide/
 ---
 
-The Flutter plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/) provide a
+The Flutter plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/) provides a
 fully integrated development experience in the IntelliJ IDE.
 
 * TOC Placeholder
