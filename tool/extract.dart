@@ -108,8 +108,8 @@ void clean() {
   if (!exampleDir.existsSync()) {
     exampleDir.createSync();
   }
-  Iterable<FileSystemEntity> files = exampleDir
+  Iterable<File> files = exampleDir
       .listSync()
       .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
-  files.forEach((FileSystemEntity file) => file.deleteSync());
+  files.forEach((File file) => file.deleteSync());
 }
