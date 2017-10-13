@@ -482,16 +482,14 @@ what you might need reflection/mirrors for – please let us know at
 
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
-Flutter has basic support for accessibility on iOS and Android, though this
-feature is a work in progress.
+Learn more about i18n and l10n in the
+[Flutter Internationalization Tutorial](/tutorials/internationalization/).
 
-Flutter developers are encouraged to use the
-[intl package](https://pub.dartlang.org/packages/intl) for
-internationalization and localization.
+Flutter has basic support for accessibility on iOS and Android, 
+though this feature is a work in progress.
 
-We encourage you to email
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
-with your questions regarding these features.
+We encourage you to email flutter-dev@googlegroups.com with your 
+questions regarding these features.
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
