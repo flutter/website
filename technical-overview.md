@@ -55,9 +55,9 @@ principles.
 
 ### Everything's a Widget
 
-Widgets are the basic building blocks of a Flutter app's UI. Each widget is an
+Widgets are the basic building blocks of a Flutter app's user interface. Each widget is an
 immutable declaration of part of the user interface.  Unlike other frameworks that
-separate views, view-controllers, layouts, and other properties, Flutter has a
+separate views, view controllers, layouts, and other properties, Flutter has a
 consistent, unified object model: the widget.
 
 A widget can define:
