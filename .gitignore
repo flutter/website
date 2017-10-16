@@ -13,3 +13,5 @@ node_modules
 pubspec.lock
 packages
 example/*.dart
+
+.idea/

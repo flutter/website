@@ -1,0 +1,5 @@
+analyzer:
+  strong-mode: true
+linter:
+  rules:
+    - directives_ordering

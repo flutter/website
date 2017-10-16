@@ -18,7 +18,7 @@ void main(List<String> args) {
   Iterable<FileSystemEntity> files = Directory.current
       .listSync()
       .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.md'));
-  files.forEach((File file) => extractCount += _processFile(file));
+  files.forEach((FileSystemEntity file) => extractCount += _processFile(file));
   print('\n$extractCount code snippets extracted.');
 }
 
@@ -103,13 +103,12 @@ String _removeMarkup(String source) {
   return source;
 }
 
-
 void clean() {
   var exampleDir = new Directory('example');
   if (!exampleDir.existsSync()) {
     exampleDir.createSync();
   }
-  Iterable<FileSystemEntity> files = exampleDir
+  Iterable<File> files = exampleDir
       .listSync()
       .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
   files.forEach((File file) => file.deleteSync());

@@ -1,7 +1,6 @@
+include: package:flutter/analysis_options_user.yaml
+
 analyzer:
   exclude:
     - '_includes/**'
     - '_layouts/**'
-  language:
-    enableAssertInitializer: true
-    enableSuperMixins: true
