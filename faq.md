@@ -555,7 +555,7 @@ We have also found that our "code-first" better allows for features like
 hot reload and dynamic environment adaptations.
 
 It is possible to create a custom language that is then
-converted to widgets on the fly. Since build methods are "just code", they
+converted to widgets on the fly. Because build methods are "just code", they
 can do anything, including interpreting markup and turning it into widgets.
 
 ### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
@@ -575,6 +575,146 @@ checks by using either the `--profile` or `--release` flag to `flutter run`.
 If you are using the Flutter plugin for IntelliJ, you can launch the app in
 profile or release mode using the menu entries **Run > Flutter Run in Profile Mode**
 or **Release Mode**.
+
+### What programming paradigm does Flutter's framework use?
+
+Flutter is a multi-paradigm programming environment. Many programming techniques
+developed over the past few decades are used in Flutter. We use each one where
+we believe the strengths of the technique make it particularly well-suited. In
+no particular order:
+
+* Composition: The primary paradigm used by Flutter is that of using
+small objects with narrow scopes of behavior, composed together to
+obtain more complicated effects. Most widgets in the Flutter widget
+library are built in this way. For example, the Material
+[FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
+class is built using a
+[MaterialButton](https://docs.flutter.io/flutter/material/MaterialButton-class.html)
+class, which itself is built using
+an [IconTheme](https://docs.flutter.io/flutter/widgets/IconTheme-class.html),
+an [InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html),
+a [Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html),
+a [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
+a [Material](https://docs.flutter.io/flutter/material/Material-class.html),
+an [AnimatedDefaultTextStyle](https://docs.flutter.io/flutter/widgets/AnimatedDefaultTextStyle-class.html),
+and a [ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html).
+The [InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html)
+is built using a [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
+The [Material](https://docs.flutter.io/flutter/material/Material-class.html)
+is built using an [AnimatedDefaultTextStyle](https://docs.flutter.io/flutter/widgets/AnimatedDefaultTextStyle-class.html),
+a [NotificationListener](https://docs.flutter.io/flutter/widgets/NotificationListener-class.html),
+and an [AnimatedPhysicalModel](https://docs.flutter.io/flutter/widgets/AnimatedPhysicalModel-class.html).
+And so on. It's widgets all the way down.
+
+* Functional programming: Entire applications can be built with only
+[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html)s,
+which are essentially functions that describe how arguments map to other
+functions, bottoming out in primitives that compute layouts or paint graphics.
+(Such applications can't easily have state, so are typically non-interactive.)
+For example, the [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html)
+widget is essentially a function that maps its arguments
+([color](https://docs.flutter.io/flutter/widgets/Icon/color.html),
+[icon](https://docs.flutter.io/flutter/widgets/Icon/icon.html),
+[size](https://docs.flutter.io/flutter/widgets/Icon/size.html)) into layout
+primitives. Additionally, heavy use is made of immutable data structures,
+including the entire
+[Widget](https://docs.flutter.io/flutter/widgets/Widget-class.html) class
+hierarchy as well as numerous supporting classes such as
+[Rect](https://docs.flutter.io/flutter/dart-ui/Rect-class.html) and
+[TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html). On a
+smaller scale, Dart's
+[Iterable](https://docs.flutter.io/flutter/dart-core/Iterable-class.html) API,
+which makes heavy use of the functional style (map, reduce, where, etc), is
+frequently used to process lists of values in the framework.
+
+* Event-driven programming: User interactions are represented by event objects
+that are dispatched to callbacks registered with event handlers. Screen updates
+are triggered by a similar callback mechanism. The
+[Listenable](https://docs.flutter.io/flutter/foundation/Listenable-class.html)
+class, which is used as the basis of the animation system, formalises a
+subscription model for events with multiple listeners.
+
+* Class-based object-orientated programming: Most of the APIs of the framework
+are built using classes with inheritance. We use an approach whereby we define
+very high-level APIs in our base classes, then specialise them iteratively in
+subclasses. For example, our render objects have a base class
+([RenderObject](https://docs.flutter.io/flutter/rendering/RenderObject-class.html))
+that is agnostic regarding the coordinate system, and then we have a subclass
+([RenderBox](https://docs.flutter.io/flutter/rendering/RenderBox-class.html))
+that introduces the opinion that the geometry should be based on the Cartesian
+coordinate system (x/width and y/height).
+
+* Prototype-based object-orientated programming: The
+[ScrollPhysics](https://docs.flutter.io/flutter/widgets/ScrollPhysics-class.html)
+class chains instances to compose the physics that apply to scrolling
+dynamically at runtime. This lets the system compose, for example, paging
+physics with platform-specific physics, without the platform having to be
+selected at compile time.
+
+* Imperative programming: Straightforward imperative programming, usually
+paired with state encapsulated within an object, is used where it provides the
+most intuitive solution. For example, tests are written in an imperative style,
+first describing the situation under test, then listing the invariants that the
+test must match, then advancing the clock or inserting events as necessary for
+the test.
+
+* Reactive programming: The widget and element trees are sometimes described as
+reactive, because new inputs provided in a widget's constructor are immediately
+propagated as changes to lower-level widgets by the widget's build method, and
+changes made in the lower widgets (e.g., in response to user input) propagate
+back up the tree via event handlers. Aspects of both functional-reactive and
+imperative-reactive are present in the framework, depending on the needs of the
+widgets. Widgets with build methods that consist of just an expression
+describing how the widget reacts to changes in its configuration are functional
+reactive widgets (e.g., the material
+[Divider](https://docs.flutter.io/flutter/material/Divider-class.html) class).
+Widgets whose build methods construct a list of children over several
+statements, describing how the widget reacts to changes in its configuration,
+are imperative reactive widgets (e.g., the
+[Chip](https://docs.flutter.io/flutter/material/Chip-class.html) class).
+
+* Declarative programming: The build methods of widgets are often a single
+expression with multiple levels of nested constructors, written using a strictly
+declarative subset of Dart. Such nested expressions could be mechanically
+transformed to or from any suitably expressive markup language. For example,
+the
+[UserAccountsDrawerHeader](https://docs.flutter.io/flutter/material/UserAccountsDrawerHeader-class.html)
+widget has a long build method (20+ lines), consisting of a single nested
+expression. This can also be combined with the imperative style to build UIs
+that would be harder to describe in a pure-declarative approach.
+
+* Generic programming: Types can be used to help developers catch programming
+errors early. The Flutter framework uses generic programming to help in this
+regard. For example, the
+[State](https://docs.flutter.io/flutter/widgets/State-class.html) class is
+parameterized in terms of the type of its associated widget, so that the Dart
+analyzer can catch mismatches of states and widgets. Similarly, the
+[GlobalKey](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html) class
+takes a type parameter so that it can access a remote widget's state in a
+type-safe manner (using runtime checking), the
+[Route](https://docs.flutter.io/flutter/widgets/Route-class.html) interface is
+parameterized with the type that it is expected to use when
+[popped](https://docs.flutter.io/flutter/widgets/Navigator/pop.html), and
+collections such as
+[List](https://docs.flutter.io/flutter/dart-core/List-class.html)s,
+[Map](https://docs.flutter.io/flutter/dart-core/Map-class.html)s, and
+[Set](https://docs.flutter.io/flutter/dart-core/Set-class.html)s are all
+parameterized so that mismatched elements can be caught early either during
+analysis or at runtime during debugging.
+
+* Concurrent programming: Flutter makes heavy use of
+[Future](https://docs.flutter.io/flutter/dart-async/Future-class.html)s and
+other asynchronous APIs. For example, the animation system reports when an
+animation is finished by completing a future. The image loading system similarly
+uses futures to report when a load is complete.
+
+* Constraint programming: The layout system in Flutter uses a weak form of
+constraint programming to determine the geometry of a scene. Constraints (e.g.,
+for cartesian boxes, a minimum and maximum width and a minimum and maximum
+height) are passed from parent to child, and the child selects a resulting
+geometry (e.g., for cartesian boxes, a size, specifically a width and a height)
+that fulfills those constraints. By using this technique, Flutter can usually
+lay out an entire scene with a single pass.
 
 ## Project
 
