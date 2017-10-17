@@ -71,11 +71,13 @@ const textStyle = const TextStyle(
 );
 ```
 
-This is also how the package itself should create the style.
+If the package internally uses the font it defines, it should still specify
+the `package` argument when creating the text style as in the example above.
 
-A package can also provide font files in its `lib/` folder which will not automatically be 
-included in the app. Instead the app can use these selectively when declaring a font. 
-Suppose a package named `my_package` has:
+A package can also provide font files without declaring a font. These files
+should then be in the `lib/` folder of the package. The font files will not
+automatically be bundled in the app, instead the app can use these
+selectively when declaring a font. Suppose a package named `my_package` has:
 
 ```
 lib/fonts/Raleway-Medium.ttf
