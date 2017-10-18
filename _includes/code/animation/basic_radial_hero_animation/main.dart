@@ -137,7 +137,7 @@ class RadialExpansionDemo extends StatelessWidget {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Basic Radial Transition Demo'),
+        title: const Text('Basic Radial Hero Animation Demo'),
       ),
       body: new Container(
         padding: const EdgeInsets.all(32.0),

@@ -1,5 +1,5 @@
-name: basic_flying_transition
-description: Shows how to create a simple shared element (or Hero) transition using the Hero class directly.
+name: hero_animation
+description: Shows how to create a simple Hero transition.
 
 dependencies:
   flutter:

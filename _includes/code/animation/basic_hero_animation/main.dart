@@ -6,11 +6,11 @@
 
 import 'package:flutter/material.dart';
 
-class BasicElementTransition extends StatelessWidget {
+class BasicHeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Basic Shared Element Transition'),
+        title: const Text('Basic Hero Animation'),
       ),
       body: new Center(
         child: new InkWell(
@@ -56,5 +56,5 @@ class BasicElementTransition extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new BasicElementTransition()));
+  runApp(new MaterialApp(home: new BasicHeroAnimation()));
 }

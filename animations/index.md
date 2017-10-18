@@ -20,8 +20,9 @@ The following resources are a good place to start learning the Flutter
 animation framework. Each of these documents shows, step by step, how
 to write animation code.
 {% comment %}
-More documentation is in the works on how to implement common design patterns,
-such as shared element transitions, and physics-based animations.
+More documentation is in the works on how to implement common design
+patterns, such as shared element transitions,
+and physics-based animations.
 If you have a specific request, please
 [file an issue](https://github.com/flutter/flutter/issues).
 {% endcomment %}
@@ -106,9 +107,8 @@ image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
-* [Shared Element Transitions](/animations/shared-element-transitions/)<br>
-  How to create two types of shared element transitions using Hero
-  widgets:
+* [Hero Animations](/animations/hero-animations/)<br>
+  How to create two Hero animations:
   * A transition where the shared (Hero) element simply flies from
     one page to another.
   * A more complex transition where the Hero element's boundary

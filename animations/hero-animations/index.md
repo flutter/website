@@ -1,23 +1,31 @@
 ---
 layout: page
-title: "Shared Element Transitions"
-permalink: /animations/shared-element-transitions/
+title: "Hero Animations"
+permalink: /animations/hero-animations/
 ---
 
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
-* Create a shared element transition using Flutter's Hero widget.
-* Fly the Hero's child from one page to another.
-* Animate the transformation of a Hero's shape from circular to
-  rectangular, while flying it from one page to another.
+* Create a Hero animation using Flutter's Hero widget.
+* Fly the hero from one screen to another.
+* Animate the transformation of a hero's shape from circular to
+  rectangular while flying it from one screen to another.
+* Hero animations are sometimes called _shared element transitions_
+  or _shared element animations_ by UX designers.
 </div>
 
-This guide demonstrates how to build shared element transitions
-in Flutter, also called shared element _animations_. Flutter
-calls these _Hero animations_ because they are implemented
-with Hero widgets.
+You've probably seen hero animations many times. For example,
+a screen displays a list of thumbnails representing items
+for sale.  Selecting an item flies it to a new screen,
+containing more details and a "Buy" button. Flying an image
+from one screen to another is called a _hero animation_
+in Flutter, though the same motion is sometimes referred to as
+a _shared element transition_.
+This guide demonstrates how to build standard
+hero animations, and hero animations that transform the
+image from a circular shape to a square shape during flight.
 
 * TOC Placeholder
 {:toc}
@@ -31,90 +39,93 @@ Flutter](/tutorials/layout/).
 
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
-A _Route_ describes a page or screen in a Flutter app. These terms
-are sometimes used interchangeably.
+A [_Route_](/routing-and-navigation/) describes a page or screen
+in a Flutter app.
 </aside>
 
-A shared element transition animates a Hero's child
-(typically an image) from one route to another.
-This guide focuses on two types of Hero animations:
+You can create this animation in Flutter with Hero objects.
+When a new route appears, a hero animates from the current route to
+the new one. Typically, heroes are small parts of the UI, like
+images, that both routes have in common. From the user's
+perspective the hero "flies" between the routes.
+This guide shows how to create the following hero animations:
 
 <ul>
-<li markdown="1">Flying transitions<br>
-A _flying transition_ animates the Hero
-from one route to a new route, usually landing at a different
-location and with a different size.
+<li markdown="1">Standard hero animations<br>
+A _standard hero animation_ flies the hero from one route to a new
+route, usually landing at a different location and with a
+different size.
 
 The following video (recorded at slow speed) shows a typical example.
-Tapping the flippers in the center of the screen flies them to the
-upper left corner of a new, blue screen, at a smaller size.
-Tapping the flippers in the blue screen
-(or using the device's back-to-previous-screen gesture)
-flies the flippers back to the original screen.
+Tapping the flippers in the center of the route flies them to the
+upper left corner of a new, blue route, at a smaller size.
+Tapping the flippers in the blue route
+(or using the device's back-to-previous-route gesture)
+flies the flippers back to the original route.
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/uF7_JfhBsww" frameborder="0" allowfullscreen></iframe></center>
 </li>&nbsp;
 
-<li markdown="1">Radial transformations<br>
-A _radial transformation_ animates the Hero from
-a circular shape to a rectangular shape, as it flies the image
-from one route to another.
+<li markdown="1">Radial hero animations<br>
+In _radial hero animation_, as the hero flies between routes
+its shape appears to change from circular to rectangular.
 
 The following video (recorded at slow speed),
-shows an example of a radial transformation. At the start,
+shows an example of a radial hero animation. At the start,
 a row of three images appears at the bottom of the route.
-Tapping any of the circles flies the image to a new route that displays
-it as a larger square shape. Tapping the image in the square
-returns to the original screen.
+Tapping any of the circles flies that image to a new route
+that displays it with a square shape.
+Tapping the square image flies the hero back to
+the original route, displayed with a circular shape.
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI" frameborder="0" allowfullscreen></iframe></center>
 </li>
 </ul>
 
-Before moving to the sections specific to the
-[flying](#flying-transitions)
-or [radial](#radial-transformations) transitions,
-read the [basic structure of a Hero animation](#basic-structure)
-to learn how to structure your app for either transition type,
+Before moving to the sections specific to
+[standard](#standard-hero-animations)
+or [radial](#radial-hero-animations) hero animations,
+read [basic structure of a hero animation](#basic-structure)
+to learn how to structure hero animation code,
 and [behind the scenes](#behind-the-scenes) to understand
-how Flutter performs a Hero animation.
+how Flutter performs a hero animation.
 
 <a name="basic-structure"></a>
-## Basic structure of a Hero animation
+## Basic structure of a hero animation
 
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* Use two Hero widgets to implement a shared element transition.
-* The Navigator manages a stack containing the app’s routes (pages).
+* Use two hero widgets with matching tags to implement the transition.
+* The Navigator manages a stack containing the app’s routes.
 * Pushing a route on or popping a route from the Navigator’s stack
   triggers the transition.
-* To make a Hero respond to a tap, wrap it in an Inkwell widget.
-* The Flutter framework calculates the tweens for you, and performs the
-  flight animation in an overlay.
-
+* The Flutter framework calculates a rectangle tween that defines
+  the hero's boundary as it flies from the source to the destination
+  route. During its flight, the hero is moved to an application
+  overlay, so that it appears on top of both routes.
 </div>
 
-In Flutter, shared element transitions are implemented using
-[Hero](https://docs.flutter.io/flutter/widgets/Hero-class.html) widgets.
-While the term "shared element transition" is widely used by motion
-designers and programmers who write animation code, Flutter implements
-this type of transition using two Hero widgets: one describing the
-widget in the source route, and another describing the widget in
-the destination route.  From the user’s point of view,
-the Hero appears to be shared, and only the programmer needs to
-understand this implementation detail.
+<aside class="alert alert-info" markdown="1">
+**Terminology:**
+If the concept of tweens or tweening is new to you, please see the
+[Animations in Flutter tutorial.](/tutorials/animation/)
+</aside>
 
-The actual transition occurs in an overlay that appears over
-the current route, obscuring it during flight.
+Hero animations are implemented using two
+[Hero](https://docs.flutter.io/flutter/widgets/Hero-class.html)
+widgets: one describing the widget in the source route,
+and another describing the widget in the destination route.
+From the user’s point of view, the hero appears to be shared, and
+only the programmer needs to understand this implementation detail.
 
 <aside class="alert alert-info" markdown="1">
 **Note about dialogs:**
 Heroes fly from one PageRoute to another. Dialogs
 (displayed with `showDialog()`, for example), use PopupRoutes,
 which are not PageRoutes.  At least for now,
-you can't animate a Hero to a Dialog.
+you can't animate a hero to a Dialog.
 For further developments (and a possible workaround), [watch this
 issue.](https://github.com/flutter/flutter/issues/10667)
 </aside>
@@ -122,121 +133,108 @@ issue.](https://github.com/flutter/flutter/issues/10667)
 Hero animation code has the following structure:
 
 1. Define a starting Hero object, referred to as the _source
-   Hero_. The Hero specifies its location,
+   hero_. The hero specifies its location,
    size, graphical representation (typically an image), and an
    identifying tag.
-1. Define an ending Hero object, referred to as the _destination Hero_.
-   This Hero also specifies its location, size, graphical
-   representation, and the same tag as the source Hero.
-   It's <strong>essential that both Hero objects are created with
+1. Define an ending Hero object, referred to as the _destination hero_.
+   This hero also specifies its location, size, graphical
+   representation, and the same tag as the source hero.
+   It's <strong>essential that both hero objects are created with
    the same tag</strong>, typically an object that represents the
-   underlying data. For best results, the Heroes should have
+   underlying data. For best results, the heroes should have
    virtually identical widget trees.
-1. (Optional) Place any Hero object that responds to user input,
-   such as a tap, in an Inkwell.
-1. Specify a route that contains the destination Hero.
-   The destination route defines its widget tree at the end
-   of the transition.
+1. Create a route that contains the destination hero.
+   The destination route defines the widget tree that exists
+   at the end of the animation.
 1. Trigger the animation by pushing the route on the Navigator's stack.
-   Popping a route from the Navigator’s stack triggers a return
-   transition.
+   The Navigator push and pop operations trigger a hero animation
+   for each pair of heroes with matching tags in the source
+   and destination routes.
 
 Flutter calculates the tweens required to transition the
-starting Hero to the ending Hero (interpolating size and
+starting hero to the ending hero (interpolating size and
 position changes), and performs the animation in an overlay.
 
 The next section describes Flutter's process in greater detail.
 
 ## Behind the scenes
 
-The source route contains the Hero inside an Inkwell.
-What happens when the InkWell receives a tap gesture?
 The following describes how Flutter performs the transition.
 
 <img src="images/hero-transition-0.png" alt="Before the transition the source hero appears in the source route">
 
-Before transition, the source Hero waits in the source route's widget
+Before transition, the source hero waits in the source route's widget
 tree. The destination route does not yet exist, and the overlay
-is blank and disabled.
+is empty.
 
 ---
 
-<img src="images/hero-transition-1.png" alt="Transition begins and Destination Hero appears in the overlay">
+<img src="images/hero-transition-1.png" alt="Transition begins and Destination hero appears in the overlay">
 
-Tapping the Hero's InkWell triggers the animation, and the
-following occurs:
+Pushing a route to the Navigator triggers the animation.
+At t=0.0, Flutter does the following, mostly offscreen:
 
-* Offscreen, Flutter calculates the transition (including
-  position and size changes) from beginning to end,
-  moving the Hero along a curved path as described in the
-  Material motion spec. Flutter saves the size and location
-  of the Hero at the beginning and end of the transition.
+* Calculates the transition (both position and size changes)
+  from beginning to end, moving the hero along a curved path as
+  described in the Material motion spec.
+  Flutter now knows where the hero ends up.
 
-* Flutter places the destination Hero in the overlay, at the
-  same location and size as the _source_ Hero.
+* Places the destination hero in the overlay, at the
+  same location and size as the _source_ hero.
+  Adding a hero to the overlay changes its Z-order so that
+  it appears on top of all routes.
 
-* Flutter enables the overlay, obscuring the current route.
+* Moves the source hero offscreen.
 
-* Flutter creates the destination route, placing it at the
-  top of the Navigator's stack (above the source route),
-  but it's obscured by the overlay.
-
-* The destination route won't contain the destination Hero
-  until the transition is complete.
-
----
-
-<img src="images/hero-transition-2.png" alt="The Hero flies in the overlay to its final position and size">
-
-While the Hero is in-flight:
-
-* The same Animation object drives both
-  the route transition and the Hero animation.
-
-* As the Hero flies, its rectangular bounds are animated using
-  [Tween&lt;Rect&gt;,](https://docs.flutter.io/flutter/animation/Tween-class.html)
-  accessible via the Hero's `createRectTween` property.
-  By default, Flutter uses an instance of
-  [MaterialRectArcTween,](https://docs.flutter.io/flutter/material/MaterialRectArcTween-class.html)
-  which animates the rectangle's opposing corners along a curved path.
-  (See the [radial transformations](#radial-transformations) section
-  for an example that uses a different Tween animation.)
+The framework kicks off the animation. When the animates
+completes (at t=1.0), Flutter moves both heroes back to the
+routes they came from: the source hero to the source route,
+and the destination hero to the destination route.
 
 ---
 
-<img src="images/hero-transition-3.png" alt="When the transition is complete, the Hero is moved from the overlay to the destination route">
+<img src="images/hero-transition-2.png" alt="The hero flies in the overlay to its final position and size">
+
+As the hero flies, its rectangular bounds are animated using
+[Tween&lt;Rect&gt;,](https://docs.flutter.io/flutter/animation/Tween-class.html)
+specified in Hero's
+[`createRectTween`](https://docs.flutter.io/flutter/widgets/CreateRectTween.html) property.
+By default, Flutter uses an instance of
+[MaterialRectArcTween,](https://docs.flutter.io/flutter/material/MaterialRectArcTween-class.html)
+which animates the rectangle's opposing corners along a curved path.
+(See [Radial hero animations](#radial-hero-animations)
+for an example that uses a different Tween animation.)
+
+---
+
+<img src="images/hero-transition-3.png" alt="When the transition is complete, the hero is moved from the overlay to the destination route">
 
 When the flight completes:
 
-* Flutter moves the Hero widget from the overlay to the
-  destination route.
+* Flutter moves the hero widget from the overlay to the
+  destination route. The overlay is now empty.
 
-* Flutter disables the (now blank) overlay.
-
-* The destination Hero appears in its final position in
+* The destination hero appears in its final position in
   the destination route.
 
 ---
 
 Popping the route performs the same process, animating the
-Hero back to its size and location in the source route.
+hero back to its size and location in the source route.
 
 ### Essential classes
 
 The examples in this guide use the following classes to
-implement shared element transitions:
+implement hero animations:
 
 [Hero](https://docs.flutter.io/flutter/widgets/Hero-class.html)
-: The "shared element" that flies from the source to the destination
-  route. The Hero itself doesn't fly, it's actually the image that
-  represents the Hero, a child of the Hero.
-  Also, the Hero isn’t actually shared in the implementation.
+: The widget that flies from the source to the destination route.
   Define one Hero for the start of the transition and another for
   the end, and assign each the same tag. Flutter animates pairs of
-  Heroes with matching tags.
+  heroes with matching tags.
 
 [Inkwell](https://docs.flutter.io/flutter/material/InkWell-class.html)
-: (Optional) Specifies what happens when tapping the Hero.
+: Specifies what happens when tapping the hero.
   The InkWell's `onTap()` method builds the new route and pushes it
   to the Navigator's stack.
 
@@ -252,15 +250,14 @@ implement shared element transitions:
   or build a custom route using
   [PageRouteBuilder.](https://docs.flutter.io/flutter/widgets/PageRouteBuilder-class.html)
 
-## Flying transitions
+## Standard hero animations
 
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* Specify a route using MaterialPageRoute, CupertinoPageRoute,
-  or PageRouteBuilder. The flying examples shown here use
-  MaterialPageRoute.
+* Specify a route using MaterialPageRoute, CupertinoPageRoute, or
+  PageRouteBuilder. The examples in this section use MaterialPageRoute.
 * Change the size of the image at the end of the transition by
   wrapping the destination's image in a SizedBox.
 * Change the location of the image by placing the destination's
@@ -270,45 +267,43 @@ implement shared element transitions:
 <aside class="alert alert-info" markdown="1">
 **Show me the code!**
 
-Each of the following examples demonstrate flying an element from one
+Each of the following examples demonstrates flying an image from one
 route to another. This guide describes the first example.<br><br>
 
-[flying_transition](https://github.com/flutter/website/tree/master/_includes/code/animation/flying_transition)
-: Movement along a curved path, as described in the Material motion
-  spec. Encapsulates the Hero code in a custom PhotoHero widget.
+[hero_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/hero_animation/)
+: Encapsulates the hero code in a custom PhotoHero widget.
+  Animates the Hero's motion along a curved path,
+  as described in the Material motion spec.
 
-[basic_flying_transition](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_flying_transition)
-: Uses the Hero object directly.
+[basic_hero_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_hero_animation/)
+: Uses the hero object directly.
   This more basic example, provided for your reference, isn't
   described in this guide.
 
 </aside>
 
-Flying an element from one route to another, one of the most
-common types of shared element transitions, is easy to implement
-using Flutter's Hero widget. When using MaterialPageRoute
-to specify the new route, the element flies along a curved path,
+Flying an image from one route to another is easy to implement
+using Flutter's hero widget. When using MaterialPageRoute
+to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion
 spec.](https://material.io/guidelines/motion/movement.html)
-The widget tree for the destination route is created in the `builder`
-property.
 
 [Create a new Flutter example](/getting-started/) and
 update it using the files from the
-[GitHub directory.](https://github.com/flutter/website/tree/master/_includes/code/animation/flying_transition)
+[GitHub directory.](https://github.com/flutter/website/tree/master/_includes/code/animation/hero_animation/)
 
 To run the example:
 
 * Tap on the home route’s photo to fly the image to a new route
   showing the same photo at a different location and scale.
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-screen gesture.
+  device’s back-to-the-previous-route gesture.
 * You can slow the transition further using the `timeDilation`
   property.
 
 ### PhotoHero class
 
-The custom PhotoHero class maintains the Hero, and its size, image,
+The custom PhotoHero class maintains the hero, and its size, image,
 and behavior when tapped. The PhotoHero builds the following
 widget tree:
 
@@ -348,34 +343,33 @@ class PhotoHero extends StatelessWidget {
 
 Key information:
 
-* An InkWell wraps the Hero, making it trivial to add a tap
-  gesture to the both the source and destination Heroes.
+* An InkWell wraps the hero, making it trivial to add a tap
+  gesture to the both the source and destination heroes.
 * Defining the Material widget with a transparent color
   enables the image to "pop out" of the background as it
   flies to its destination.
-* Placing everything in a SizedBox and setting it's width
-  to the passed-in value, determines the size
-  of the image at the end of the animation.
+* The SizedBox specifies the hero's size at the start and
+  end of the animation.
 * Setting the Image's `fit` property to `BoxFit.contain`,
   ensures that the image is as large as possible during the
-  transition while fitting into the target box.
+  transition without changing its aspect ratio.
 
-### SharedElementTransition class
+### HeroAnimation class
 
-The SharedElementTransition class creates the source and destination
+The HeroAnimation class creates the source and destination
 PhotoHeroes, and sets up the transition.
 
 Here's the code:
 
 <!-- skip -->
 {% prettify dart %}
-class SharedElementTransition extends StatelessWidget {
+class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     [[highlight]]timeDilation = 5.0; // 1.0 means normal animation speed.[[/highlight]]
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Shared Element Transition'),
+        title: const Text('Basic Hero Animation'),
       ),
       body: new Center(
         [[highlight]]child: new PhotoHero([[/highlight]]
@@ -414,12 +408,11 @@ class SharedElementTransition extends StatelessWidget {
 
 Key information:
 
-* When the user taps the InkWell containing the source Hero,
+* When the user taps the InkWell containing the source hero,
   the code creates a new MaterialPageRoute (in `onTap()`) and pushes
   it to the Navigator’s stack, triggering the animation.
-* The anonymous builder for the new route creates a Container with the
-  destination PhotoHero. The Container's alignment determines where
-  the destination Hero lands.
+* The Container positions the PhotoHero in the route's top-left
+  corner, below the AppBar.
 * The `onTap()` method for the destination PhotoHero pops the
   Navigator’s stack, triggering the animation that flies
   the Hero back to the original route.
@@ -428,26 +421,27 @@ Key information:
 
 ---
 
-## Radial transformations
+## Radial hero animations
 
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* A radial transformation_ animates a circular element into a square
-  element.
-* Because this is a Hero animation, the Hero transforms while
-  flying in an overlay from the source route to the destination route.
+* A _radial transformation_ animates a circular shape into a square
+  shape.
+* A radial _hero_ animation performs a radial transformation while
+  flying the hero from the source route to the destination route.
 * MaterialRectCenterArcTween defines the tween animation.
 * Build the destination route using PageRouteBuilder.
 </div>
 
-Animating an element as it transforms from a circular shape to a
-rectanglar shape is a slick effect that you can implement using Hero
-widgets. To accomplish this, the code animates the intersection of
-two clip shapes: a circle and a square.
+Flying a hero from one route to another as it transforms from a
+circular shape to a rectanglar shape is a slick effect that you
+can implement using Hero widgets. To accomplish this,
+the code animates the intersection of two clip shapes: a
+circle and a square.
 Throughout the animation, the circle clip (and the image) scales from
-`minRadius` to `maxRadius`, while the square clip maintains a constant
+`minRadius` to `maxRadius`, while the square clip maintains constant
 size. At the same time, the image flies
 from its position in the source route to its position in the
 destination route. For visual examples of this transition, see
@@ -461,29 +455,28 @@ The heavy lifting is done for you.
 <aside class="alert alert-info" markdown="1">
 **Show me the code!**
 
-Each of the following examples demonstrates a radial transformation.
+Each of the following examples demonstrates a radial hero animation.
 This guide describes the first example.<br><br>
 
-[radial_transition](https://github.com/flutter/website/tree/master/_includes/code/animation/radial_transition)
-: A radial transformation as described in the Material motion spec.
+[radial_hero_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/radial_hero_animation)
+: A radial hero animation as described in the Material motion spec.
 
-[basic_radial_transition](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_radial_transition)
-: A radial transformation with a simple destination route&mdash;it has
-  no Scaffold, Card, Column, or Text.
+[basic_radial_hero_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_radial_hero_transition)
+: The simplest example of a radial hero animation. The destination
+  route has no Scaffold, Card, Column, or Text.
   This basic example, provided for your reference, isn't
   described in this guide.
 
-[radial_transition_animate_rectclip](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_radial_transition_animate_rectclip)
-: Extends radial_transition by also animating the size of the
-  rectangular clip.
-  This more advanced example, provided for your reference, isn't
-  described in this guide.
+[radial_hero_animation_animate_rectclip](https://github.com/flutter/website/tree/master/_includes/code/animation/radial_hero_animation_animate_rectclip)
+: Extends radial_hero_animaton by also animating the size of the
+  rectangular clip. This more advanced example,
+  provided for your reference, isn't described in this guide.
 
 </aside>
 
 <aside class="alert alert-info" markdown="1">
 **Pro tip:**
-The radial animation involves intersecting a round shape with
+The radial hero animation involves intersecting a round shape with
 a square shape. This can be hard to see, even when slowing
 the animation with `timeDilation`, so you might consider enabling
 Flutter's [visual debugging mode](/debugging/#visual-debugging)
@@ -495,7 +488,7 @@ during development.
 The following diagram shows the clipped image at the beginning
 (`t = 0.0`), and the end (`t = 1.0`) of the animation.
 
-<img src="images/radial-transition.png" alt="visual diagram of
+<img src="images/radial-hero-animation.png" alt="visual diagram of
 radial transformation from beginning to end">
 
 The blue gradient (representing the image), indicates where these
@@ -507,7 +500,7 @@ the ClipOval scales from `minRadius` to `maxRadius` while the
 [ClipRect](https://docs.flutter.io/flutter/widgets/ClipRect-class.html)
 maintains a constant size.
 At the end of the transition the intersection of the circular and
-rectangular clips yield a rectangle that's the same size as the Hero
+rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
@@ -521,7 +514,7 @@ To run the example:
   to a larger square positioned in the middle of a new route that
   obscures the original route.
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-screen gesture.
+  device’s back-to-the-previous-route gesture.
 * You can slow the transition further using the `timeDilation`
   property.
 
@@ -569,8 +562,8 @@ Key information:
   even for images with transparency.
 
 * The Photo class does not include the Hero in its widget tree.
-  For the animation to work, the Hero
-  wraps the RadialExpansion widget, which wraps the Hero.
+  For the animation to work, the hero
+  wraps the RadialExpansion widget, which wraps the hero.
 
 ### RadialExpansion class
 
@@ -620,24 +613,21 @@ class RadialExpansion extends StatelessWidget {
 Key information:
 
 <ul markdown="1">
-<li markdown="1">The Hero wraps the RadialExpansion widget.
+<li markdown="1">The hero wraps the RadialExpansion widget.
 </li>
-<li markdown="1">As the Hero flies, the RadialExpansion widget's
+<li markdown="1">As the hero flies, the RadialExpansion widget's
 size changes, and the Photo rebuilds.
 </li>
 <li markdown="1">The RadialExpansion animation is created by two
 overlapping clips.
 </li>
 <li markdown="1">The example defines the tweening interpolation using
-[MaterialRectCenterArcTween:](https://docs.flutter.io/flutter/material/MaterialRectCenterArcTween-class.html)
-The default flight path for a Hero animation interpolates the tweens
-using the corners of the Heroes. That approach can affect the
-Hero's aspect ratio during the radial transformation,
-so the example defines a new flight path in
-`_createRectTween()`.
-The new path is calculated using MaterialRectCenterArcTween,
-which interpolates the tweens using
-the center point of both Heroes.
+[MaterialRectCenterArcTween.](https://docs.flutter.io/flutter/material/MaterialRectCenterArcTween-class.html)
+The default flight path for a hero animation interpolates the tweens
+using the corners of the heroes. This approach affects the
+hero's aspect ratio during the radial transformation,
+so the new flight path uses MaterialRectCenterArcTween to
+interpolate the tweens using the center point of each hero.
 
 Here's the code:
 
@@ -648,12 +638,8 @@ static RectTween _createRectTween(Rect begin, Rect end) {
 }
 {% endprettify %}
 
-This changes the default flight path for the Hero, from one where
-its aspect ratio might change during flight,
-to one where the aspect ratio remains constant.
-The Heroes' flight path still follows an arc,
-but now s the center of the Hero that follows the arc,
-not a pair of opposing corners.
+The hero's flight path still follows an arc,
+but the image's aspect ratio remains constant.
 </li>
 </ul>
 
@@ -678,7 +664,7 @@ The following resources may help when writing animations:
 : Demo app showcasing many Material Design widgets and other Flutter
   features.  The [Shrine
   demo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
-  implements a Hero animation.
+  implements a hero animation.
 
 [Material motion spec](https://material.io/guidelines/motion/)
 : Describes motion for Material design apps.

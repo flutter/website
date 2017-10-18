@@ -38,13 +38,13 @@ class PhotoHero extends StatelessWidget {
   }
 }
 
-class SharedElementTransition extends StatelessWidget {
+class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 10.0; // 1.0 means normal animation speed.
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Flying Shared Element Transition'),
+        title: const Text('Basic Hero Animation'),
       ),
       body: new Center(
         child: new PhotoHero(
@@ -81,5 +81,5 @@ class SharedElementTransition extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new SharedElementTransition()));
+  runApp(new MaterialApp(home: new HeroAnimaton()));
 }
