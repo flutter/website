@@ -81,5 +81,5 @@ class HeroAnimation extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new HeroAnimaton()));
+  runApp(new MaterialApp(home: new HeroAnimation()));
 }

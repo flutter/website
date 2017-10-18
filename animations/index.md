@@ -27,7 +27,7 @@ If you have a specific request, please
 [file an issue](https://github.com/flutter/flutter/issues).
 {% endcomment %}
 
-* [Tutorial: Animations in Flutter](/tutorials/animation/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+* [Tutorial: Animations in Flutter](/tutorials/animation/)<br>
 Explains the fundamental classes in the Flutter animation package
 (controllers, Animatable, curves, listeners, builders),
 as it guides you through a progression of tween animations using
@@ -107,10 +107,10 @@ image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
-* [Hero Animations](/animations/hero-animations/)<br>
+* [Hero Animations](/animations/hero-animations/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
   How to create two Hero animations:
-  * A transition where the shared (Hero) element simply flies from
-    one page to another.
+  * A transition where the shared (Hero) element flies from
+    one page to another while changing size.
   * A more complex transition where the Hero element's boundary
     changes shape, from a circle to a square, as its flight
     progresses.
