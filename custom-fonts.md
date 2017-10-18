@@ -97,6 +97,15 @@ Then the app can declare a font like in the example below:
 
 The `lib/` is implied, so it should not be included in the asset path.
 
+In this case, since it is a locally defined font, the TextStyle is created
+without the `package` argument:
+
+```dart
+const textStyle = const TextStyle(
+  fontFamily: 'Raleway',
+);
+```
+
 ## Using the Material Design icon font
 
 When you want to use the Material Design icon font,
