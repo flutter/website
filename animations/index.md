@@ -108,12 +108,11 @@ to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
 * [Hero Animations](/animations/hero-animations/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
-  How to create two Hero animations:
-  * A transition where the shared (Hero) element flies from
-    one page to another while changing size.
-  * A more complex transition where the Hero element's boundary
-    changes shape, from a circle to a square, as its flight
-    progresses.
+How to create two styles of Hero animations:
+  * The hero flies from one page to another while changing position
+    and size.
+  * The hero's boundary changes shape, from a circle to a square,
+    as its flies from one page to another.
 
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 You can build the Gallery app yourself, or download it from the Play Store.

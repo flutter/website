@@ -13,7 +13,7 @@ permalink: /animations/hero-animations/
 * Animate the transformation of a hero's shape from circular to
   rectangular while flying it from one screen to another.
 * Hero animations are sometimes called _shared element transitions_
-  or _shared element animations_ by UX designers.
+  or _shared element animations_.
 </div>
 
 You've probably seen hero animations many times. For example,
