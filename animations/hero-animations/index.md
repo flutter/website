@@ -13,8 +13,9 @@ permalink: /animations/hero-animations/
 * Fly the hero from one screen to another.
 * Animate the transformation of a hero's shape from circular to
   rectangular while flying it from one screen to another.
-* Hero animations are sometimes called _shared element transitions_
-  or _shared element animations_.
+* The Hero widget in Flutter implements a style of animation
+  commonly known as _shared element transitions_ or
+  _shared element animations._
 </div>
 
 You've probably seen hero animations many times. For example,
