@@ -8,13 +8,13 @@ permalink: /animations/hero-animations/
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
+* The _hero_ refers to the widget that flies between screens.
 * Create a hero animation using Flutter's Hero widget.
 * Fly the hero from one screen to another.
 * Animate the transformation of a hero's shape from circular to
   rectangular while flying it from one screen to another.
 * Hero animations are sometimes called _shared element transitions_
   or _shared element animations_.
-* The _hero_ refers to the widget that flies between screens.
 </div>
 
 You've probably seen hero animations many times. For example,
