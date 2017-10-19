@@ -2,9 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Extends basic_shared_element_transition to show:
-// - Time Dilation
-// - The ability to tap on the hero image in either page to swap between them.
+// Tap on the source route’s photo to push a new route,
+// containing the same photo at a different location and scale.
+// Return to the previous route by tapping the image, or by using the
+// device’s back-to-the-previous-screen gesture.
+// You can slow the transition using the timeDilation property.
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
@@ -36,13 +38,13 @@ class PhotoHero extends StatelessWidget {
   }
 }
 
-class SharedElementTransition extends StatelessWidget {
+class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 10.0; // 1.0 means normal animation speed.
 
     return new Scaffold(
       appBar: new AppBar(
-        title: const Text('Shared Element Transition'),
+        title: const Text('Basic Hero Animation'),
       ),
       body: new Center(
         child: new PhotoHero(
@@ -56,7 +58,7 @@ class SharedElementTransition extends StatelessWidget {
                     title: const Text('Flippers Page'),
                   ),
                   body: new Container(
-                    // Use background color to emphasize that it's a new page.
+                    // Set background to blue to emphasize that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16.0),
                     alignment: Alignment.topLeft,
@@ -79,5 +81,5 @@ class SharedElementTransition extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new SharedElementTransition()));
+  runApp(new MaterialApp(home: new HeroAnimation()));
 }

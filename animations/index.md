@@ -20,13 +20,14 @@ The following resources are a good place to start learning the Flutter
 animation framework. Each of these documents shows, step by step, how
 to write animation code.
 {% comment %}
-More documentation is in the works on how to implement common design patterns,
-such as shared element transitions, and physics-based animations.
+More documentation is in the works on how to implement common design
+patterns, such as shared element transitions,
+and physics-based animations.
 If you have a specific request, please
 [file an issue](https://github.com/flutter/flutter/issues).
 {% endcomment %}
 
-* [Tutorial: Animations in Flutter](/tutorials/animation/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+* [Tutorial: Animations in Flutter](/tutorials/animation/)<br>
 Explains the fundamental classes in the Flutter animation package
 (controllers, Animatable, curves, listeners, builders),
 as it guides you through a progression of tween animations using
@@ -105,18 +106,18 @@ In this pattern, the user selects an element&mdash;often an
 image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
-Hero animations can also occur in a dialog,
-rather than being routed to a new page.
+
+* [Hero Animations](/animations/hero-animations/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+How to create two styles of Hero animations:
+  * The hero flies from one page to another while changing position
+    and size.
+  * The hero's boundary changes shape, from a circle to a square,
+    as its flies from one page to another.
 
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 You can build the Gallery app yourself, or download it from the Play Store.
 The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
-demo includes an example of a hero animation.
-{% comment %}
-According to Hans, the demo in the Flutter Gallery that is called
-"Animation" isn't really an animation demo. It's more of a
-"scroll driven layout demo".
-{% endcomment %}
+demo includes an example of a Hero animation.
 
 * Also see the API documentation for the
 [Hero,](https://docs.flutter.io/flutter/widgets/Hero-class.html)
