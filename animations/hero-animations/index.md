@@ -408,7 +408,7 @@ Key information:
   the code creates the destination route using MaterialPageRoute.
   Pushing the destination route to the Navigator’s stack
   triggers the animation.
-* The Container positions the PhotoHero in the destinatin route's
+* The Container positions the PhotoHero in the destination route's
   top-left corner, below the AppBar.
 * The `onTap()` method for the destination PhotoHero pops the
   Navigator’s stack, triggering the animation that flies
