@@ -8,12 +8,14 @@ permalink: /animations/hero-animations/
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
-* Create a Hero animation using Flutter's Hero widget.
+* The _hero_ refers to the widget that flies between screens.
+* Create a hero animation using Flutter's Hero widget.
 * Fly the hero from one screen to another.
 * Animate the transformation of a hero's shape from circular to
   rectangular while flying it from one screen to another.
-* Hero animations are sometimes called _shared element transitions_
-  or _shared element animations_.
+* The Hero widget in Flutter implements a style of animation
+  commonly known as _shared element transitions_ or
+  _shared element animations._
 </div>
 
 You've probably seen hero animations many times. For example,
@@ -23,9 +25,20 @@ containing more details and a "Buy" button. Flying an image
 from one screen to another is called a _hero animation_
 in Flutter, though the same motion is sometimes referred to as
 a _shared element transition_.
+
 This guide demonstrates how to build standard
 hero animations, and hero animations that transform the
 image from a circular shape to a square shape during flight.
+
+<aside class="alert alert-info" markdown="1">
+**Where's the code?**<br>
+
+This guide provides examples of each hero animation style
+at these links:
+
+* [Standard hero animation code](#standard-hero-animation-code)
+* [Radial hero animation code](#radial-hero-animation-code)
+</aside>
 
 * TOC Placeholder
 {:toc}
@@ -51,8 +64,8 @@ images, that both routes have in common. From the user's
 perspective the hero "flies" between the routes.
 This guide shows how to create the following hero animations:
 
-<ul>
-<li markdown="1">Standard hero animations<br>
+**Standard hero animations**<br>
+
 A _standard hero animation_ flies the hero from one route to a new
 route, usually landing at a different location and with a
 different size.
@@ -64,10 +77,10 @@ Tapping the flippers in the blue route
 (or using the device's back-to-previous-route gesture)
 flies the flippers back to the original route.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/uF7_JfhBsww" frameborder="0" allowfullscreen></iframe></center>
-</li>&nbsp;
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/uF7_JfhBsww?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
-<li markdown="1">Radial hero animations<br>
+**Radial hero animations**<br>
+
 In _radial hero animation_, as the hero flies between routes
 its shape appears to change from circular to rectangular.
 
@@ -79,9 +92,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI" frameborder="0" allowfullscreen></iframe></center>
-</li>
-</ul>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -260,8 +271,9 @@ implement hero animations:
   image in a layout widget. These examples use Container.
 </div>
 
+<a name="standard-hero-animation-code"></a>
 <aside class="alert alert-info" markdown="1">
-**Show me the code!**
+**Standard hero animation code**<br>
 
 Each of the following examples demonstrates flying an image from one
 route to another. This guide describes the first example.<br><br>
@@ -275,8 +287,9 @@ route to another. This guide describes the first example.<br><br>
 : Uses the hero widget directly.
   This more basic example, provided for your reference, isn't
   described in this guide.
-
 </aside>
+
+### What's going on?
 
 Flying an image from one route to another is easy to implement
 using Flutter's hero widget. When using MaterialPageRoute
@@ -449,8 +462,9 @@ This animation might seem complex (and it is), but you can
 **customize the provided example to your needs.**
 The heavy lifting is done for you.
 
+<a name="radial-hero-animation-code"></a>
 <aside class="alert alert-info" markdown="1">
-**Show me the code!**
+**Radial hero animation code**<br>
 
 Each of the following examples demonstrates a radial hero animation.
 This guide describes the first example.<br><br>
@@ -468,7 +482,6 @@ This guide describes the first example.<br><br>
 : Extends radial_hero_animaton by also animating the size of the
   rectangular clip. This more advanced example,
   provided for your reference, isn't described in this guide.
-
 </aside>
 
 <aside class="alert alert-info" markdown="1">
