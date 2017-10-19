@@ -43,7 +43,7 @@ A [_Route_](/routing-and-navigation/) describes a page or screen
 in a Flutter app.
 </aside>
 
-You can create this animation in Flutter with Hero objects.
+You can create this animation in Flutter with Hero widgets.
 As the hero animates from the source to the destination route,
 the destination route (minus the hero) fades into view.
 Typically, heroes are small parts of the UI, like
@@ -135,13 +135,13 @@ issue.](https://github.com/flutter/flutter/issues/10667)
 
 Hero animation code has the following structure:
 
-1. Define a starting Hero object, referred to as the _source
+1. Define a starting Hero widget, referred to as the _source
    hero_. The hero specifies its graphical representation
    (typically an image), and an identifying tag.
-1. Define an ending Hero object, referred to as the _destination hero_.
+1. Define an ending Hero widget, referred to as the _destination hero_.
    This hero also specifies its graphical representation,
    and the same tag as the source hero.
-   It's <strong>essential that both hero objects are created with
+   It's <strong>essential that both hero widgets are created with
    the same tag</strong>, typically an object that represents the
    underlying data. For best results, the heroes should have
    virtually identical widget trees.
@@ -177,8 +177,8 @@ is empty.
 Pushing a route to the Navigator triggers the animation.
 At t=0.0, Flutter does the following:
 
-* Lays out the destination route&mdash;off screen&mdash;using the
-  curved path as described in the Material motion spec.
+* Calculates the destination hero's path, offscreen, using the
+  curved motion as described in the Material motion spec.
   Flutter now knows where the hero ends up.
 
 * Places the destination hero in the overlay, at the
@@ -213,6 +213,8 @@ When the flight completes:
 
 * The destination hero appears in its final position in
   the destination route.
+
+* The source hero is restored to its route.
 
 ---
 
@@ -270,7 +272,7 @@ route to another. This guide describes the first example.<br><br>
   as described in the Material motion spec.
 
 [basic_hero_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_hero_animation/)
-: Uses the hero object directly.
+: Uses the hero widget directly.
   This more basic example, provided for your reference, isn't
   described in this guide.
 
