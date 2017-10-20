@@ -61,7 +61,7 @@ comments on other people's PRs. The more reviews the better.
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
 such as whether the code's structure makes sense, as well as
-readability and adherence to the [relevant style guide](https://google.github.io/styleguide/).
+readability and adherence to the [Flutter style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo).
 Use [these best practices](https://mtlynch.io/human-code-reviews-1/)
 when reviewing code and providing comments.
 
