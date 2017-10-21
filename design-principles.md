@@ -51,7 +51,7 @@ also many other benefits of code reviews:
 
 We recommend you consider
 [these suggestions](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)
-for dealing with code reviews.
+for addressing code review comments on your PR.
  
 If you're working on a big patch, don't hesitate to get reviews early,
 before you're ready to check code in. Also, don't hesitate to ask for
@@ -61,12 +61,15 @@ comments on other people's PRs. The more reviews the better.
 Reviewers should carefully read the code and make sure they understand
 it. A reviewer should check the code for both high level concerns,
 such as whether the code's structure makes sense, as well as
-readability and adherence to the style guide. Reviewers should not
-give an LGTM unless the patch has tests that verify all the affected
-code, or unless a test would make no sense. If you review a patch, you
-are sharing the responsibility for the patch with its author. You
-should only give an LGTM if you would feel confident answering
-questions about the code.
+readability and adherence to the [Flutter style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo).
+Use [these best practices](https://mtlynch.io/human-code-reviews-1/)
+when reviewing code and providing comments.
+
+Reviewers should not give an LGTM unless the patch has tests that verify
+all the affected code, or unless a test would make no sense. If you
+review a patch, you are sharing the responsibility for the patch with
+its author. You should only give an LGTM if you would feel confident
+answering questions about the code.
 
 A reviewer may in some circumstances consider the code satisfactory
 without having fully reviewed or understood it. If a reviewer has not
