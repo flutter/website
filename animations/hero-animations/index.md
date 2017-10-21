@@ -77,7 +77,7 @@ Tapping the flippers in the blue route
 (or using the device's back-to-previous-route gesture)
 flies the flippers back to the original route.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/uF7_JfhBsww?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/CEcFnqRDfgw?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 **Radial hero animations**<br>
 
@@ -92,7 +92,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/LWKENpwDKiM?rel=0" frameborder="0" allowfullscreen></iframe></center>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)
