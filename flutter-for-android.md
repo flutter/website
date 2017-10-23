@@ -67,7 +67,9 @@ StatefulWidget has a State object which stores state data across frames and
 restores it.
 
 If you are in doubt, then always remember this rule: If a widget changes (the
-user interacts with it, for example) it’s stateful.
+user interacts with it, for example) it’s stateful. However, if a child 
+is reacting to change, the containing parent can still be a Stateless widget
+if the parent doesn't react to change.
 
 Let's take a look at how you would use a StatelessWidget. A common
 StatelessWidget is a Text widget. If you look at the implementation of the Text
