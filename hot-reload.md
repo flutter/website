@@ -148,19 +148,21 @@ Conversely, in the following example:
 ```
 const foo = 1;
 final bar = foo;
-print(foo);
-print(bar);
+void onClick(){
+  print(foo);
+  print(bar);
+}
 ```
-
-
 running the app for the first time prints `1` and `1`. Then if you make the
 following change: 
 
 ```
 const foo = 2;    //modified
 final bar = foo;
-print(foo);
-print(bar);
+void onClick(){
+  print(foo);
+  print(bar);
+}
 ```
 and hot reload, it now prints `2` and `1`. While changes to `const` field values
 are always hot reloaded, the static field initializer is not rerun.
@@ -192,17 +194,17 @@ Read more about the [differences between the `const` and `final` keywords](https
 
 ### Previous state is combined with new code 
 
-If code changes affect the state of your app (or its dependencies), the Flutter
-framework gives you two options for reconciling old data with new code: throw
+If code changes affect the state of your app (or its dependencies), Flutter
+gives you two options for reconciling old data with new code: throw
 away state or modify the existing state. Throwing away state is what happens
 during a full restart. Depending on the situation, you might prefer to apply
 changes in a more selective way, by marking the widget tree as dirty and
 recomputing the derived layout trees, while leaving the UI state alone. 
 
 Modifying the existing state is what happens during hot reload; however, in this
-scenario the data your app has to work with is not fully consistent with the
-data it would have if it executed from scratch. Thus your app might behave
-differently after hot reload versus a full restart.
+scenario the data your app has to work with might not be fully consistent with 
+the data it would have if it executed from scratch. The result might be 
+different behavior after hot reload versus a full restart.
 
 For example, if you modify a class definition from extending StatelessWidget to
 StatefulWidget (or the reverse), after hot reload the previous state of your
@@ -264,17 +266,17 @@ class Color {
 
 *   Generic type declarations are modified. For example, if you change:
     ```
-Class A<T> {
+class A<T> {
   T i;
-};
+}
     ```
 	to:
 
     ```
-Class A<T, V> {
+class A<T, V> {
   T i;
   V v;
-};
+}
     ```
 
 In these situations, hot reload generates a diagnostic message and fails without
