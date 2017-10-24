@@ -77,7 +77,11 @@ Tapping the flippers in the blue route
 (or using the device's back-to-previous-route gesture)
 flies the flippers back to the original route.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/uF7_JfhBsww?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<!-- 
+  Use this instead of the default YouTube embed code so that the embed
+  is reposnisve.
+-->
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/CEcFnqRDfgw?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 **Radial hero animations**<br>
 
@@ -92,7 +96,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V735TEHW5UI?rel=0" frameborder="0" allowfullscreen></iframe></center>
+<div class="embed-container"><iframe src="https://www.youtube.com/embed/LWKENpwDKiM?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -148,7 +152,8 @@ Hero animation code has the following structure:
 
 1. Define a starting Hero widget, referred to as the _source
    hero_. The hero specifies its graphical representation
-   (typically an image), and an identifying tag.
+   (typically an image), and an identifying tag, and is in
+   the currently displayed widget tree as defined by the source route.
 1. Define an ending Hero widget, referred to as the _destination hero_.
    This hero also specifies its graphical representation,
    and the same tag as the source hero.
@@ -352,7 +357,9 @@ class PhotoHero extends StatelessWidget {
 
 Key information:
 
-* An InkWell wraps the hero, making it trivial to add a tap
+* The starting route is implicitly pushed by MaterialApp when
+  HeroAnimation is provided as the app's home property.
+* An InkWell wraps the image, making it trivial to add a tap
   gesture to the both the source and destination heroes.
 * Defining the Material widget with a transparent color
   enables the image to "pop out" of the background as it
