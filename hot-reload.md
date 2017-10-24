@@ -10,7 +10,7 @@ permalink: /hot-reload/
 ## Using hot reload
 
 Flutter's hot reload feature helps you quickly and easily experiment, build
-UIs, add features and fix bugs. Hot reload works by injecting updated source
+UIs, add features, and fix bugs. Hot reload works by injecting updated source
 code files into the running Dart Virtual Machine (VM). After the VM updates
 classes with the new versions of fields and functions, the Flutter framework
 automatically rebuilds the widget tree, allowing you to quickly view the effects
@@ -24,12 +24,12 @@ physical or virtual device can be the target.
 be hot reloaded; for a list of changes that require a full restart, see
 [Understanding limitations](#understanding-limitations).
 1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
-click the Hot Reload button on the toolbar:
+either click the Hot Reload button on the toolbar:
 
 ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
 
-If you're running the app at the command line using `flutter run`, type `r` in
-the terminal window. 
+or select **File > Save All**. If you're running the app at the command line 
+using `flutter run`, type `r` in the terminal window. 
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -38,21 +38,23 @@ similar to:
 Performing hot reload...
 Reloaded 1 of 448 libraries in 2,777ms.
 ```
-The app's UI is updated to reflect your change, and the current state of the app
+The app is updated to reflect your change, and the current state of the app
 — the value of the counter variable in the above example — is preserved. Your
 app continues to execute from where it was prior to running the hot reload
 command. The code is updated and execution continues.
+
+A code change has a visible effect only if the modified Dart code is run again
+after the change. The following section describes common code patterns where the
+modified code will _not_ run again after hot reload.
 
 ## Troubleshooting hot reload
 
 When you start working with hot reload and using it frequently, you'll likely
 encounter the types of code changes that might need a full app restart:
 
-
-
+*   Changing the `main()` method of the app
 *   Initializing global variables
 *   Initializing static fields
-*   Changing the `main()` method of the app
 
 You can adapt your code to work around the above cases so that hot reload is
 still an option, for example by evaluating an initialization expression after
@@ -240,9 +242,9 @@ myWidget is not a subtype of StatelessWidget
 In addition to edge cases, you might also encounter the rare scenarios where hot
 reload is not supported at all.  These include:
 
-*   Changed source files have compilation errors
-*   Enumerated types are renamed into regular classes or regular classes are
-renamed into enumerated types. For example, if you change:
+*   Changed source files have compilation errors.
+*   Enumerated types are changed to regular classes or regular classes are
+changed to enumerated types. For example, if you change:
 
     ```
 enum Color {
