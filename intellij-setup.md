@@ -13,18 +13,18 @@ This page describes how to set up an IntelliJ IDE to develop Flutter apps.
 ## Flutter IntelliJ IDE plugins
 
 You can write Flutter apps in a text editor, but if you choose to work in an IDE we recommend 
-IntelliJ for a [rich IDE experience](/intellij-ide/). Our Flutter and Dart plug-ins support 
+IntelliJ for a rich IDE experience. Our Flutter and Dart plug-ins support
 editing, running, and debugging Flutter apps.
 
 ### Installing IntelliJ
 
-You can use the IntelliJ plug-ins with one of the following JetBrains IDEs:
+You can use the IntelliJ plugin with the following JetBrains IDEs:
 
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Community (free) edition, version 2017.1 or later.
-* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), Ultimate edition, version 2017.1 or later.
-* [IntelliJ WebStorm](https://www.jetbrains.com/webstorm/download), version 2017.1 or later.
+* [IntelliJ CE](https://www.jetbrains.com/idea/download/) Community Edition (CE), version 2017.1 or later.
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate edition, version 2017.1 or later.
+* [Android Studio 3.0 Preview](https://developer.android.com/studio/preview/index.html) or later.
 
-Android Studio (and various other JetBrains editors) is currently not supported.
+Both IntelliJ CE and Android Studio are free to use and supported for Flutter development.
 
 ### Installing the plugins
 
@@ -54,3 +54,7 @@ navigation panel when you create a new project.
 1. Enter or browse to your Flutter SDK directory in **Flutter SDK path**. This is the top-level `flutter`
    directory, without the `bin` subdirectory. For example, `c:\Users\obiwan\flutter` / `/Users/obiwan/flutter`.
 1. Click **OK**
+
+### Using IntelliJ
+
+See our [additional documentation](/intellij-ide/) for tips on developing with IntelliJ.
