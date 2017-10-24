@@ -35,8 +35,8 @@ acts as a productive prototyping tool.
 ### Who is Flutter for?
 
 Flutter is for _developers_ that want a faster
-or easier way to build
-beautiful mobile apps.
+way to build beautiful mobile apps, or
+a way to reach more users with a single investment.
 
 Flutter is also for _engineering managers_ that need to lead
 mobile development teams. Flutter allows eng managers
@@ -45,13 +45,10 @@ development investments to ship more features faster,
 ship the same feature set to iOS and Android at the same
 time, and lower maintenance costs.
 
-In a sense, Flutter is also for _designers_
+While not the initial target audience,
+Flutter is also for _designers_
 that want their original design visions delivered
 consistently, with high fidelity, to all users on mobile.
-While designers aren't the initial target audience for
-using Flutter, we think designers will be happy
-when their developers use Flutter to make the designs
-come to life.
 
 Fundamentally, Flutter is for users that want beautiful apps,
 with delightful motion and animation, and UIs with character
