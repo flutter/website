@@ -194,9 +194,9 @@ Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
 
 ### How does Flutter run my code on Android? {#run-android}
 
-The engine's C/C++ code is compiled with Android's NDK, and the majority of the
-framework and application code is running as native code
-compiled by the Dart compiler.
+The engine's C/C++ code is compiled with Android's NDK, and any Dart code is AOT-compiled
+into native code. The app runs using the native instruction set (no interpreter
+is involved).
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
