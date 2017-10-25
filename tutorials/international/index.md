@@ -472,8 +472,8 @@ with a different i18n framework.
 [Complete source code](https://github.com/flutter/website/tree/master/_includes/code/internationalization/minimal/)
 for this example app.
 
-In this version of DemoApp the class that contains the
-app's localizations, `DemoLocalizations`, includes all of its translations
+In this version of DemoApp the class that contains the app's
+localizations, `DemoLocalizations`, includes all of its translations
 directly in per language `Map`s.
 
 
