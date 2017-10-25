@@ -25,7 +25,9 @@ be hot reloaded; for a list of changes that require a full restart, see
 [Understanding limitations](#understanding-limitations).
 1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools, select Save All (`cmd-s`/`ctrl-s`), or
 click the Hot Reload button on the toolbar:
+
    ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
+
    If you're running the app at the command line using `flutter run`, type `r` in the terminal window. 
 
 After a successful hot reload operation, you'll see a message in the console
