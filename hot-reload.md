@@ -7,7 +7,7 @@ permalink: /hot-reload/
 * TOC
 {:toc}
 
-## Using hot reload
+## Using hot reload to quickly view changes
 
 Flutter's hot reload feature helps you quickly and easily experiment, build
 UIs, add features, and fix bugs. Hot reload works by injecting updated source
@@ -23,13 +23,10 @@ physical or virtual device can be the target.
 1.  Modify one of the Dart files in your project. Most types of code changes can
 be hot reloaded; for a list of changes that require a full restart, see
 [Understanding limitations](#understanding-limitations).
-1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
-either click the Hot Reload button on the toolbar:
-
-![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
-
-or select **File > Save All**. If you're running the app at the command line 
-using `flutter run`, type `r` in the terminal window. 
+1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools, select Save All (`cmd-s`/`ctrl-s`), or
+click the Hot Reload button on the toolbar:
+   ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
+   If you're running the app at the command line using `flutter run`, type `r` in the terminal window. 
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -47,7 +44,7 @@ A code change has a visible effect only if the modified Dart code is run again
 after the change. The following section describes common code patterns where the
 modified code will _not_ run again after hot reload.
 
-## Troubleshooting hot reload
+## Understanding when a full app restart is needed
 
 When you start working with hot reload and using it frequently, you'll likely
 encounter the types of code changes that might need a full app restart:
@@ -55,18 +52,6 @@ encounter the types of code changes that might need a full app restart:
 *   Changing the `main()` method of the app
 *   Initializing global variables
 *   Initializing static fields
-
-You can adapt your code to work around the above cases so that hot reload is
-still an option, for example by evaluating an initialization expression after
-making a change. To do this in IntelliJ, you could select the `reinitialize`
-option from the context menu in a field declaration. Without adaptations,
-however, hot reload will generate an exception in these cases.
-
-This section gives detailed examples of edge cases for hot reload where there
-is no active call stack in the Dart VM. They apply to most Flutter app
-development cycles. Other subtle interactions that can occur when there is an
-active call stack (such as when an animation is in progress) are not covered
-here.
 
 ### Recent UI change is excluded
 
