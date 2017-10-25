@@ -101,16 +101,8 @@ You need to connect a device, or start a simulator, to proceed.
 ## Fast edit and refresh development cycle
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect of
-your changes near instantly.
-![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
-
-To edit your code and hot reload changes:
-
-1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
-1. Make desired changes in your source code.
-1. Do not press the 'Stop' button; let your app continue to run.
-1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`),
-   or click the **Hot Reload button** (the button with the lightning bolt icon).
+your changes near instantly with it's 'hot reload' support. See the [hot reload page](/hot-reload/)
+for details.
 
 ## Advanced debugging
 
