@@ -18,11 +18,11 @@ editing, running, and debugging Flutter apps.
 
 ### Installing IntelliJ
 
-You can use the IntelliJ plugin with the following JetBrains IDEs:
+You can use the IntelliJ plugin with the following IntelliJ platform IDEs:
 
 * [IntelliJ CE](https://www.jetbrains.com/idea/download/) Community Edition (CE), version 2017.1 or later.
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate edition, version 2017.1 or later.
-* [Android Studio 3.0 Preview](https://developer.android.com/studio/preview/index.html) or later.
+* [Android Studio](https://developer.android.com/studio/index.html), version 3.0 or later.
 
 Both IntelliJ CE and Android Studio are free to use and supported for Flutter development.
 
