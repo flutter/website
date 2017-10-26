@@ -7,7 +7,7 @@ permalink: /hot-reload/
 * TOC
 {:toc}
 
-## Using hot reload to quickly view changes
+## Using hot reload
 
 Flutter's hot reload feature helps you quickly and easily experiment, build
 UIs, add features, and fix bugs. Hot reload works by injecting updated source
@@ -23,8 +23,8 @@ physical or virtual device can be the target.
 1.  Modify one of the Dart files in your project. Most types of code changes can
 be hot reloaded; for a list of changes that require a full restart, see
 [Understanding limitations](#understanding-limitations).
-1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools, select Save All (`cmd-s`/`ctrl-s`), or
-click the Hot Reload button on the toolbar:
+1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
+select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
 
    ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
 
