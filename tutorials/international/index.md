@@ -33,7 +33,7 @@ can also be internationalized using the same classes and logic.
 <aside class="alert alert-info" markdown="1">
 **Sample Internationlized Apps**<br>
 
-If you'd like to start out by reading the code for a internationalized Flutter app, here are two small samples. The first one is intended to be as simple as possible, and the second one uses the APIs and tools provided by the [intl](https://pub.dartlang.org/packages/intl) package.
+If you'd like to start out by reading the code for an internationalized Flutter app, here are two small examples. The first one is intended to be as simple as possible, and the second one uses the APIs and tools provided by the [intl](https://pub.dartlang.org/packages/intl) package.
 
 * [Minimal internationalization](https://github.com/flutter/website/tree/master/_includes/code/internationalization/minimal/)
 * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/_includes/code/internationalization/intl/)
@@ -271,8 +271,7 @@ values. The example that follows is typical of such classes.
 [Complete source code](https://github.com/flutter/website/tree/master/_includes/code/internationalization/intl/) for this example app.
 
 This example is based on the APIs and tools provided by the
-[intl](https://pub.dartlang.org/packages/intl) package. The next
-section describes an example that does not depend in the intl package.
+[intl](https://pub.dartlang.org/packages/intl) package. The section below called "An Alternative Class for the App’s Localized Resources" describes [an example](https://github.com/flutter/website/tree/master/_includes/code/internationalization/minimal/) that does not depend in the intl package.
 
 The `DemoLocalizations` class contains the app's strings (just one for the example)
 translated into the locales that the app supports. It uses the `initializeMessages()` function
@@ -314,38 +313,41 @@ classes that contain `Intl.message()` calls. In this case that would just be the
 
 <aside class="alert alert-info" markdown="1">
 **Using the Dart intl Tools**<br>
-Before building an Api using the [Dart `intl` package](https://pub.dartlang.org/packages/intl) package you'll want to review its documentation. Here's a review of the process for localizing an app that depends on this package.
+Before building an Api using the [Dart `intl` package](https://pub.dartlang.org/packages/intl) package
+you'll want to review its documentation. Here's a summary of the process for localizing an app that
+depends on this package.
 
 The demo app depends on a generated source file called `l10n/messages_all.dart`
 which defines all of the localizable strings used by the app.
 
 Rebuilding `l10n/messages_all.dart` requires two steps.
 
-With the app's root directory as the current directory, generate
+1. With the app's root directory as the current directory, generate
 `l10n/intl_messages.arb` from `lib/main.dart`:
-```
+
+{% commandline %}
 flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/i10n lib/main.dart
-```
+{% endcommandline %}
+
 The `intl_messages.arb` file is a JSON format map with one entry for
 each `Intl.message()` function defined in `main.dart`. This
 file serves as a template for the the English and Spanish translations,
-`intl_en.arb` and `intl_es.arb`.
+`intl_en.arb` and `intl_es.arb`. These translations are created by you,
+the developer.
 
-With the app's root directory as the current directory, generate
+2. With the app's root directory as the current directory, generate
 `intl_messages_<locale>.dart` for each `intl_<locale>.arb` file and
 `intl_messages_all.dart`, which imports all of the messages files:
-```
+
+{% commandline %}
 flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n \
    --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
-```
+{% endcommandline %}
 
 The `DemoLocalizations` class uses the generated `initializeMessages()`
 function (defined in `intl_messages_all.dart`) to load the localized messages
 and `Intl.message()` to look them up.
 </aside>
-
-One could choose another approach for loading localized resources and looking them up
-while still conforming to the structure of DemoLocalizations.
 
 An instance of `DemoLocalizations` is created by a simple `LocalizationsDelegate`:
 
