@@ -101,7 +101,7 @@ You need to connect a device, or start a simulator, to proceed.
 ## Fast edit and refresh development cycle
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect of
-your changes near instantly with it's 'hot reload' support. See the [hot reload page](/hot-reload/)
+your changes almost instantly with the 'hot reload' feature. See [Hot reloading Flutter Apps](/hot-reload/)
 for details.
 
 ## Advanced debugging
