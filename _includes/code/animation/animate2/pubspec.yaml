@@ -4,6 +4,10 @@ description: A new Flutter project.
 dependencies:
   flutter:
     sdk: flutter
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the Icons class.
+  material_icons_font: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -15,12 +19,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the Icons class.
-  uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

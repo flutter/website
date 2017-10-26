@@ -4,12 +4,12 @@ description: Shows how to create a simple Hero transition.
 dependencies:
   flutter:
     sdk: flutter
+  material_icons_font: ^0.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-  uses-material-design: true
   assets:
     - images/flippers-alpha.png

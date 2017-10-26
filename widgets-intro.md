@@ -180,14 +180,14 @@ void main() {
 }
 ```
 
-Be sure to have a `uses-material-design: true` entry in the `flutter`
+Be sure to have a `material_icons_font` dependency in the `dependencies`
 section of your `pubspec.yaml` file. It allows to use the predefined
 set of [material icons](https://design.google.com/icons/).
 
 ```yaml
 name: my_app
-flutter:
-  uses-material-design: true
+dependencies:
+  material_icons_font: ^0.1.1
 ```
 
 Many widgets need to be inside of a

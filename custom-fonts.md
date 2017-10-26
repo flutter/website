@@ -17,7 +17,7 @@ and use them when rendering text.
 
 ## Using fonts
 
-Using fonts in your Flutter application is done in two steps. 
+Using fonts in your Flutter application is done in two steps.
 First declare them in your `pubspec.yaml`, to ensure that they are included in the app. Second use the font with a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) property.
 
 ### Declaring in the font asset
@@ -42,9 +42,9 @@ flutter:
 
 ### Using the font
 
-Second use the font by creating a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html). 
-Then set the [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) `fontFamily` property 
-and use the font family specified in the `pubsec.yaml` declarations. 
+Second use the font by creating a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html).
+Then set the [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) `fontFamily` property
+and use the font family specified in the `pubsec.yaml` declarations.
 
 ```dart
 // declare the text style
@@ -109,14 +109,14 @@ const textStyle = const TextStyle(
 ## Using the Material Design icon font
 
 When you want to use the Material Design icon font,
-it can be simply included by adding a property `uses-material-design: true` to the `pubspec.yaml` file.
+it can be simply included by adding a dependency on the  `material_icons_font` package to the `pubspec.yaml` file.
 
 ```yaml
-flutter:
+dependencies:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the Icons class.
-  uses-material-design: true
+  material_icons_font: ^0.1.1
 ```
 
 ## pubspec.yaml option definitions
@@ -129,7 +129,7 @@ or a [`RichText`](https://docs.flutter.io/flutter/widgets/RichText-class.html)
 widget.
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
-These files contain the outlines for the glyphs in the font. When building your app, 
+These files contain the outlines for the glyphs in the font. When building your app,
 these files are included in your app's asset bundle.
 
 A single font can reference many different files with different outline weights
@@ -174,11 +174,10 @@ description: A new Flutter project.
 dependencies:
   flutter:
     sdk: flutter
-    
-flutter:
   # Include the Material Design fonts.
-  uses-material-design: true
+  material_icons_font: ^0.1.1
 
+flutter:
   fonts:
     - family: Rock Salt
       fonts:
@@ -194,7 +193,7 @@ flutter:
         - asset: fonts/Ewert-Regular.ttf
 ```
 
-Implementing the fonts in the application source code. 
+Implementing the fonts in the application source code.
 
 ```dart
 import 'package:flutter/material.dart';

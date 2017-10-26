@@ -4,9 +4,9 @@ description: Demonstrates the Container widget.
 dependencies:
   flutter:
     sdk: flutter
+  material_icons_font: ^0.1.1
 
 flutter:
-  uses-material-design: true
   assets:
     - images/pic1.jpg
     - images/pic2.jpg

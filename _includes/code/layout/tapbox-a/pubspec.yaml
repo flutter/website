@@ -4,6 +4,4 @@ description: Demonstrates a stateful widget that manages its own state.
 dependencies:
   flutter:
     sdk: flutter
-
-flutter:
-  uses-material-design: true
+  material_icons_font: ^0.1.1

@@ -4,6 +4,4 @@ description: Demonstrates the Card widget.
 dependencies:
   flutter:
     sdk: flutter
-
-flutter:
-  uses-material-design: true
+  material_icons_font: ^0.1.1
