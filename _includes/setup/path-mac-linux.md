@@ -8,17 +8,20 @@ The steps for modifying this variable permanently for all terminal sessions are 
 Typically you add a line to a file that is executed whenever you open 
 a new window. For example:
 
-1. Open (or create) `$HOME/.bash_profile`. The file path and filename might be
+1. Determine the directory where you cloned Flutter's git repo. You will
+   need this in Step 3.
+2. Open (or create) `$HOME/.bash_profile`. The file path and filename might be
    different on your machine.
-2. Add the following line:
+3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
+   the path where you cloned Flutter's git repo:
 
 {% commandline %}
-export PATH=$HOME/flutter/bin:$PATH
+export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
 {% endcommandline %}
 
-3. Run `source $HOME/.bash_profile` to refresh the current window. 
+4. Run `source $HOME/.bash_profile` to refresh the current window. 
 
-4. Verify that the `flutter/bin` directory is now in your PATH by running:
+5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
 {% commandline %}
 echo $PATH
