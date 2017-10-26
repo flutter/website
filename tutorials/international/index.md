@@ -40,7 +40,7 @@ can also be internationalized using the same classes and logic.
 * [Appendix: Using the Dart intl tools](#dart-tools)
 
 <aside class="alert alert-info" markdown="1">
-**Sample internationlized apps**<br>
+**Sample internationalized apps**<br>
 
 If you'd like to start out by reading the code for an internationalized
 Flutter app, here are two small examples. The first one is intended to
