@@ -4,8 +4,8 @@ description: Demonstrates building a layout for the Strawberry Pavlova app.
 dependencies:
   flutter:
     sdk: flutter
+  material_icons_font: ^0.1.1
 
 flutter:
-  uses-material-design: true
   assets:
     - images/pavlova.jpg
