@@ -278,9 +278,9 @@ class DemoLocalizations {
 
 A class based on the `intl` package imports a generated message catalog that provides
 the `initializeMessages()` function and the per-locale backing store for `Intl.message()`.
-The message catalog is produced by an `intl` tool that analyzes the source code for
-classes that contain `Intl.message()` calls. In this case that would just be the
-`DemoLocalizations` class.
+The message catalog is produced by an [`intl` tool](#dart-tools) that analyzes the
+source code for classes that contain `Intl.message()` calls.
+In this case that would just be the DemoLocalizations class.
 
 <a name="specifying-supportedlocales"></a>
 ## Specifying the app's supportedLocales parameter
