@@ -1695,8 +1695,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 However the recommended, efficient, and effective way is to use a
 ListView.Builder. This method is great when you have a dynamic
 List or a List with very large amounts of data. This is essentially
-the equivalent of adding a lot of data and calling 'notifyDataSetChanged' in
-Android:
+the equivalent of using RecyclerView on Android which automatically
+recycles list elements for you:
 
 <!-- skip -->
 {% prettify dart %}
