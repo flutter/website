@@ -225,29 +225,8 @@ of the corresponding classes. For example,
 `GlobalMaterialLocalizations.delegate` is a LocalizationsDelegate
 that produces an instance of GlobalMaterialLocalizations.
 
-As of October 2017, the global localization classes support [20
-langauges.](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
-Applications can add support for additional
-languages by subclassing. For example, one could add support for
-a language called `foo` by subclassing GlobalMaterialLocalizations:
-
-{% prettify dart %}
-class FooMaterialLocalizations extends GlobalMaterialLocalizations {
-  FooMaterialLocalizations(Locale locale) : super(locale);
-
-  @override
-  String get backButtonTooltip {
-    if (locale.languageCode == 'foo')
-      return 'foo';
-    return super.backButtonTooltip;
-  }
-
-  // ...
-
-  static final LocalizationsDelegate<MaterialLocalizations> delegate =
-    new FooMaterialLocalizationsDelegate();
-}
-{% endprettify %}
+As of October 2017, the global localization classes support [about 15
+languages.](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 A LocalizationsDelegate that produces an instance of
 FooMaterialLocalizations could be written like this:
@@ -444,10 +423,10 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 <a name="dart-tools"></a>
 ## Appendix: Using the Dart intl tools
 
-Before building an API using the
-[Dart `intl` package](https://pub.dartlang.org/packages/intl) package
+Before building an API using the Dart
+[`intl`](https://pub.dartlang.org/packages/intl) package
 you'll want to review the `intl` package's documentation. Here's a summary of the process
-for localizing an app that depends on the dart `intl` package.
+for localizing an app that depends on the `intl` package.
 
 The demo app depends on a generated source file called `l10n/messages_all.dart`
 which defines all of the localizable strings used by the app.
@@ -478,7 +457,7 @@ $ flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n \
    --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
 {% endprettify %}
 
-The `DemoLocalizations` class uses the generated `initializeMessages()`
+The DemoLocalizations class uses the generated `initializeMessages()`
 function (defined in `intl_messages_all.dart`) to load the localized messages
 and `Intl.message()` to look them up.
 </li>
