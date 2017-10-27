@@ -228,36 +228,6 @@ that produces an instance of GlobalMaterialLocalizations.
 As of October 2017, the global localization classes support [about 15
 languages.](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
-A LocalizationsDelegate that produces an instance of
-FooMaterialLocalizations could be written like this:
-
-{% prettify dart %}
-class FooMaterialLocalizationsDelegate extends LocalizationsDelegate<MaterialLocalizations> {
-  @override
-  Future<FooMaterialLocalizations> load(Locale locale) {
-    return new Future<FooMaterialLocalizations>.value(new FooMaterialLocalizations(locale));
-  }
-
-  @override
-  bool shouldReload(FooMaterialLocalizationsDelegate old) => false;
-}
-{% endprettify %}
-
-And finally the app would be configured with `FooMaterialLocalizations.delegate`:
-
-{% prettify dart %}
-import 'package:flutter_localizations/flutter_localizations.dart';
-
-new MaterialApp(
- localizationsDelegates: [
-   // ... app-specific localization delegate[s] here
-   FooMaterialLocalizations.delegate,
-   GlobalWidgetsLocalizations.delegate,
- ],
- // ...
-)
-{% endprettify %}
-
 <a name="defining-class"></a>
 ## Defining a class for the app's localized resources
 
