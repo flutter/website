@@ -481,4 +481,6 @@ $ flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n \
 The `DemoLocalizations` class uses the generated `initializeMessages()`
 function (defined in `intl_messages_all.dart`) to load the localized messages
 and `Intl.message()` to look them up.
+</li>
+
 </ol>
