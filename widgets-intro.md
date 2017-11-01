@@ -60,7 +60,7 @@ to implement a
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
 function, which describes the widget in terms of other, lower-level widgets.
 The framework will build those widgets in turn until the process bottoms out
-in widgets that represent the underlying render object.
+in widgets that represent the underlying [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html), which computes and describes the geometry of the widget.
 
 Basic widgets
 -------------
@@ -587,7 +587,7 @@ its internal state, which will trigger the parent to rebuild and create a new
 instance of `ShoppingListItem` with the new `inCart` value. Although the parent
 creates a new instance of `ShoppingListItem` when it rebuilds, that operation is
 cheap because the framework compares the newly built widgets with the previously
-built widgets and applies only the differences to the underlying render objects.
+built widgets and applies only the differences to the underlying [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html).
 
 Let's look at an example parent widget that stores mutable state:
 
