@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hot Reloading Flutter Apps
+title: Using Hot Reload
 permalink: /hot-reload/
 ---
 
