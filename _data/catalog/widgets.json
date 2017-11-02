@@ -547,6 +547,56 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "CupertinoNavigationBar",
+    "description": "An iOS-style top navigation bar. Typically used with CupertinoPageScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-nav-bar.png'>"
+  },
+  {
+    "name": "CupertinoTabBar",
+    "description": "An iOS-style bottom tab bar. Typically used with CupertinoTabScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-bar.png'>"
+  },
+  {
+    "name": "CupertinoPageScaffold",
+    "description": "Basic iOS style page layout structure. Positions a navigation bar and content.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTabScaffold",
+    "description": "Tabbed iOS app structure. Positions a tab bar on top of tabs of content.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabScaffold-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTabView",
+    "description": "Root content of a tab that supports parallel navigation between tabs. Typically used with CupertinoTabScaffolde",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "Padding",
     "description": "A widget that insets its child by the given padding.",
     "categories": [
