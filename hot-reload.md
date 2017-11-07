@@ -24,12 +24,11 @@ physical or virtual device can be the target.
 be hot reloaded; for a list of changes that require a full restart, see
 [Understanding limitations](#understanding-limitations).
 1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
-either click the Hot Reload button on the toolbar:
+select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
 
-![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
+   ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
 
-or select **File > Save All**. If you're running the app at the command line 
-using `flutter run`, type `r` in the terminal window. 
+   If you're running the app at the command line using `flutter run`, type `r` in the terminal window. 
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -55,18 +54,6 @@ encounter the types of code changes that might need a full app restart:
 *   Changing the `main()` method of the app
 *   Initializing global variables
 *   Initializing static fields
-
-You can adapt your code to work around the above cases so that hot reload is
-still an option, for example by evaluating an initialization expression after
-making a change. To do this in IntelliJ, you could select the `reinitialize`
-option from the context menu in a field declaration. Without adaptations,
-however, hot reload will generate an exception in these cases.
-
-This section gives detailed examples of edge cases for hot reload where there
-is no active call stack in the Dart VM. They apply to most Flutter app
-development cycles. Other subtle interactions that can occur when there is an
-active call stack (such as when an animation is in progress) are not covered
-here.
 
 ### Recent UI change is excluded
 
