@@ -18,8 +18,8 @@ platform SDKs (like
 
 If you are looking to develop a new package, please see [developing packages](/developing-packages/).
 
-If you are looking to add assets, images, or fonts to your application, please
-see [Assets & Images](https://flutter.io/assets-and-images/).
+If you are looking to add assets, images, or fonts, whether stored in files or
+packages, please see [Assets & Images](https://flutter.io/assets-and-images/).
 
 * TOC
 {:toc}
