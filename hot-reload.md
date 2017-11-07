@@ -46,7 +46,7 @@ A code change has a visible effect only if the modified Dart code is run again
 after the change. The following section describes common code patterns where the
 modified code will _not_ run again after hot reload.
 
-## Understanding when a full app restart is needed
+## Troubleshooting hot reload
 
 When you start working with hot reload and using it frequently, you'll likely
 encounter the types of code changes that might need a full app restart:
