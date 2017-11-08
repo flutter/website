@@ -268,18 +268,44 @@ virtual machine are implemented in C/C++.
 
 ### Why did Flutter choose to use Dart?
 
-The primary criteria we used to pick a programming language were the following:
+Flutter used four primary dimensions for evaluation, and considered the needs
+of framework authors, developers, and end users. We found some languages met
+some requirements, but Dart scored highly on all of our evaluation dimensions
+and met all our requirements and criteria.
+
+Dart runtimes and compilers support the combination of two critical features for
+Flutter: a JIT-based fast development cycle that allows for shape changing and
+stateful hot reloads in a language with types, plus an Ahead-of-Time compiler
+that emits efficient ARM code for fast startup and predictable performance of
+production deployments.
+
+In addition, we have the opportunity to work closely with the Dart community,
+which is actively investing resources in improving Dart for use in Flutter. For
+example, when we adopted Dart, the language did not have an ahead-of-time
+toolchain for producing native binaries, which is instrumental in achieving
+predictable, high performance, but now the language does because the Dart team
+built it for Flutter. Similarly, the Dart VM has previously been optimized for
+throughput but the team is now optimizing the VM for latency, which is more
+important for Flutter’s workload.
+
+Dart scores highly for us on the following primary criteria:
 
 * _Developer productivity_. One of Flutter's main value propositions is that it
   saves engineering resources by letting developers create apps for both iOS and
   Android with the same codebase. Using a highly productive language
   accelerates developers further and makes Flutter more attractive.
+  This was very important to both our framework team as well as our developers.
+  The majority of Flutter is built in the same language we give to our users, so
+  we need to stay productive at 100k's lines of code, without sacrificing
+  approachability or readability of the framework and widgets for our developers.
 
 * _Object-orientation_. For Flutter, we want a language that's suited to
   Flutter's problem domain: creating visual user experiences. The industry has
   multiple decades of experience building user interface frameworks in
   object-oriented languages. While we could use a non-object-oriented language,
   this would mean reinventing the wheel to solve several hard problems.
+  Plus, the vast majority of developers have experience with object-oriented
+  development, making it easier to learn how to develop with Flutter.
 
 * _Predictable, high performance_. With Flutter, we want to empower developers
   to create fast, fluid user experiences. In order to achieve that, we need to
@@ -293,16 +319,6 @@ The primary criteria we used to pick a programming language were the following:
   allocator efficiently handling small, short-lived allocations.
   This style was developed in languages with this property and does
   not work efficiently in languages that lack this facility.
-
-Dart scores highly on all four dimensions. In addition, we have the opportunity
-to work closely with the Dart community, which is actively investing resources
-in improving Dart for use in Flutter. For example, when we
-adopted Dart, the language did not have an ahead-of-time toolchain for producing
-native binaries, which is instrumental in achieving predictable, high
-performance, but now the language does because the Dart team built it for
-Flutter. Similarly, the Dart VM has previously been optimized for throughput
-but the team is now optimizing the VM for latency, which is more important for
-Flutter's workload.
 
 ### Can Flutter run any Dart code?
 
