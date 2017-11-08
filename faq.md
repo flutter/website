@@ -288,7 +288,7 @@ built it for Flutter. Similarly, the Dart VM has previously been optimized for
 throughput but the team is now optimizing the VM for latency, which is more
 important for Flutter’s workload.
 
-The primary criteria we used to pick a programming language were the following:
+Dart scores highly for us on the following primary criteria:
 
 * _Developer productivity_. One of Flutter's main value propositions is that it
   saves engineering resources by letting developers create apps for both iOS and
@@ -319,8 +319,6 @@ The primary criteria we used to pick a programming language were the following:
   allocator efficiently handling small, short-lived allocations.
   This style was developed in languages with this property and does
   not work efficiently in languages that lack this facility.
-
-Dart scores highly on all four dimensions.
 
 ### Can Flutter run any Dart code?
 
