@@ -1,19 +1,18 @@
 ---
 layout: page
-title: Developing Flutter apps in the IntelliJ IDE
+title: Developing Flutter apps in an IDE
 
-permalink: /intellij-ide/
+permalink: /using-ide/
 ---
 
-The Flutter plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/) provides a
-fully integrated development experience in the IntelliJ IDE.
+The Flutter plugin provides a fully integrated development experience in an IDE.
 
 * TOC Placeholder
 {:toc}
 
 ## Installation and setup
 
-Please follow the [IntelliJ setup](/intellij-setup/) instructions to install IntelliJ and
+Please follow the [IDE setup](/ide-setup/) instructions to install
 the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>

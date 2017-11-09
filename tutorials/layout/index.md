@@ -188,10 +188,10 @@ Or, at the command line, you can use
 For a faster development experience, try Flutter's hot reload feature.
 Hot reload allows you to modify your code and see the changes without
 fully restarting the app. The
-[Flutter plugin for IntelliJ](/intellij-ide/) supports
+[Flutter plugin for IntelliJ](/using-ide/) supports
 hot reload, or you can trigger from the command line.
 For more information, see [Hot Reloads vs. Full Application
-Restarts](https://flutter.io/intellij-ide/#hot-reloads-vs-full-application-restarts).
+Restarts](https://flutter.io/using-ide/#hot-reloads-vs-full-application-restarts).
 </aside>
 
 <a name="step-3"></a>

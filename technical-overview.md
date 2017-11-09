@@ -188,7 +188,7 @@ to start developing and iterating.
 Next steps:
 
 1.  [Install the Flutter SDK](/setup/).
-1.  [Set up IntelliJ](/intellij-setup/) (optional).
+1.  [Set up IntelliJ](/ide-setup/) (optional).
 1.  [Get started](/getting-started/) with the development cycle in a few simple steps.
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
     [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
