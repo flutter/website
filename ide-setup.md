@@ -56,5 +56,5 @@ To install the plugins:
 
 ## Using the IDEs for Flutter
 
-See our [additional documentation](/intellij-ide/) for tips on developing Flutter apps with
+See our [additional documentation](/using-ide/) for tips on developing Flutter apps with
 Android Studio or IntelliJ IDEA.
