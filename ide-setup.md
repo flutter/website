@@ -2,7 +2,7 @@
 layout: page
 title: IDE Setup
 
-permalink: /intellij-setup/
+permalink: /ide-setup/
 ---
 
 This page describes how to set up an IDE to develop Flutter apps.
