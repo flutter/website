@@ -147,7 +147,7 @@ built with Flutter to users. We'd love to hear what you're building!
 ### Does Flutter work with any editors or IDEs?
 
 We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
-enabling [fully integrated development experience](/intellij-ide/) for Flutter.
+enabling [fully integrated development experience](/using-ide/) for Flutter.
 The plugins work in both the Ultimate and the free Community editions.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal

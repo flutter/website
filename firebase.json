@@ -47,6 +47,16 @@
         "source" : "/platform-plugins*",
         "destination" : "/using-packages/",
         "type" : 301
+      },
+      {
+        "source" : "/intellij-setup/",
+        "destination" : "/ide-setup/",
+        "type" : 301
+      },
+      {
+        "source" : "/intellij-ide/",
+        "destination" : "/using-ide/",
+        "type" : 301
       }
     ]
   }

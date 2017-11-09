@@ -51,7 +51,7 @@ to get their IDs, and then `flutter run -d deviceID` to run your app.
 Alternatively, if you are using the [IntelliJ
 IDEA](https://www.jetbrains.com/idea/) IDE (either the free Community Edition, or the
 Ultimate Edition) with the [Flutter
-plugins](/intellij-setup/), you can start your Flutter app from there:
+plugins](/ide-setup/), you can start your Flutter app from there:
 
 1. In IntelliJ, click **Create New Project** from the Welcome window or
 **File > New > Project...** from the main IDE window.
@@ -100,7 +100,7 @@ To edit your code and hot reload changes:
 
 A more detailed detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page
-[Developing apps in the IntelliJ IDE](../intellij-ide/).
+[Developing apps in the IntelliJ IDE](../using-ide/).
 
 ## Next steps
 
