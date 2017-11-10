@@ -35,7 +35,8 @@ with a widget:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new Center(child: new Text('Hello, world!')));
+  runApp(new Center(child:
+    new Text('Hello, world!', textDirection: TextDirection.ltr)));
 }
 ```
 
@@ -48,7 +49,9 @@ of two widgets, the
 and its child, the
 [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 The framework forces the root widget to cover the screen, which means the text
-"Hello, world" ends up centered on screen.
+"Hello, world" ends up centered on screen. The text direction needs to be
+specified in this instance; when the MaterialApp widget is used, this is taken
+care of for you, as demonstrated later.
 
 When writing an app, you'll commonly author new widgets that are subclasses of
 either
