@@ -61,7 +61,7 @@
   },
   {
     "name": "Icon",
-    "description": "A material design icon.",
+    "description": "A Material Design icon.",
     "categories": [
       "Basics",
       "Assets, Images, and Icons"
@@ -74,7 +74,7 @@
   },
   {
     "name": "RaisedButton",
-    "description": "A material design raised button. A raised button consists of a rectangular piece of material that hovers over the interface.",
+    "description": "A Material Design raised button. A raised button consists of a rectangular piece of material that hovers over the interface.",
     "categories": [
       "Basics"
     ],
@@ -87,7 +87,7 @@
   {
     "name": "Scaffold",
     "sample": "Scaffold_index",
-    "description": "Implements the basic material design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.",
+    "description": "Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.",
     "categories": [
       "Basics"
     ],
@@ -100,7 +100,7 @@
   {
     "name": "Appbar",
     "sample": "AppBar_index",
-    "description": "A material design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
+    "description": "A Material Design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
     "categories": [
       "Basics"
     ],
@@ -155,7 +155,7 @@
   {
     "name": "TabBar",
     "sample": "TabBar_index",
-    "description": "A material design widget that displays a horizontal row of tabs.",
+    "description": "A Material Design widget that displays a horizontal row of tabs.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -176,7 +176,7 @@
   },
   {
     "name": "MaterialApp",
-    "description": "A convenience widget that wraps a number of widgets that are commonly required for material design applications.",
+    "description": "A convenience widget that wraps a number of widgets that are commonly required for Material Design applications.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -196,7 +196,7 @@
   },
   {
     "name": "Drawer",
-    "description": "A material design panel that slides in horizontally from the edge of a Scaffold to show navigation links in an application.",
+    "description": "A Material Design panel that slides in horizontally from the edge of a Scaffold to show navigation links in an application.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -368,7 +368,7 @@
   },
   {
     "name": "Chip",
-    "description": "A material design chip. Chips represent complex entities in small blocks, such as a contact.",
+    "description": "A Material Design chip. Chips represent complex entities in small blocks, such as a contact.",
     "categories": [],
     "subcategories": [
       "Information displays"
@@ -398,7 +398,7 @@
   },
   {
     "name": "Card",
-    "description": "A material design card. A card has slightly rounded corners and a shadow.",
+    "description": "A Material Design card. A card has slightly rounded corners and a shadow.",
     "categories": [],
     "subcategories": [
       "Information displays"
@@ -1124,7 +1124,7 @@
   },
   {
     "name": "Scrollbar",
-    "description": "A material design scrollbar. A scrollbar indicates which portion of a Scrollable widget is actually visible.",
+    "description": "A Material Design scrollbar. A scrollbar indicates which portion of a Scrollable widget is actually visible.",
     "categories": [
       "Scrolling"
     ],
@@ -1165,6 +1165,17 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/ScrollConfiguration-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RefreshIndicator",
+    "description": "A Material Design pull-to-refresh wrapper for scrollables.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/material/RefreshIndicator-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png'>"
   },
   {
     "name": "Opacity",
