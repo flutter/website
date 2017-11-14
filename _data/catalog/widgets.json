@@ -1167,6 +1167,17 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "RefreshIndicator",
+    "description": "A material design pull-to-refresh wrapper for scrollables.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/material/RefreshIndicator-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png'>"
+  },
+  {
     "name": "Opacity",
     "description": "A widget that makes its child partially transparent.",
     "categories": [
