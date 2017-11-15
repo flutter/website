@@ -289,10 +289,14 @@ Flutter also uses native platform mechanisms to draw transitional launch screens
 
 To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource.html) to achieve the intended effect.
 
+You can disable the effect of showing the splash screen until Flutter renders the first frame by setting the default first activity's meta-data `io.flutter.app.android.SplashScreenUntilFirstFrame` value to false in the `AndroidManifest.xml` or by not setting a `android:windowBackground` altogether on the activity via the default `@style/LaunchTheme` theme.
+
 #### iOS
 
-To add an image to the center of your "splash screen", navigate to `.../ios/Runner`. In, `Assets.xcassets/LaunchImage.imageset`, drop in images named `LaunchImage.png`, `LaunchImage@2x.png`, `LaunchImage@3x.png`. If you use different filenames, you'll also have to update the `Contents.json` file in the same directory.
+To add an image to the center of your "splash screen", navigate to `.../ios/Runner`. In, `Assets.xcassets/LaunchImage.imageset`, replace the placeholder images in the directory. If you use different filenames, you'll also have to update the `Contents.json` file in the same directory.
 
 You can also fully customize your launch screen storyboard in Xcode by opening `.../ios/Runner.xcworkspace`. Navigate to `Runner/Runner` in the Project Navigator and drop in images by opening `Assets.xcassets` or do any customization using the Interface Builder in `LaunchScreen.storyboard`.
 
 ![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
+
+You can disable the effect of showing the splash screen by un-setting the `Launch Screen File` field in `Runner` project's `General->App Icons and Launch Images` settings section.
