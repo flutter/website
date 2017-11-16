@@ -801,8 +801,8 @@ class AnimatedLogo extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return new Center(
-      child: new Opacity([[/highlight]]
-        opacity: _opacityTween.evaluate(animation),[[/highlight]]
+      child: [[highlight]]new Opacity([[/highlight]]
+        [[highlight]]opacity: _opacityTween.evaluate(animation),[[/highlight]]
         child: new Container(
           margin: new EdgeInsets.symmetric(vertical: 10.0),
           height: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
