@@ -10,10 +10,13 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 class StaggerAnimation extends StatelessWidget {
   StaggerAnimation({ Key key, this.controller }) :
 
-    // Each animation defined here transforms its value between the subset of
-    // the duration defined by the animation's interval. Most of the Intervals
-    // cause the animations' transforms to be "staggered", i.e. to start one
-    // after another.
+    // Each animation defined here transforms its value during the subset
+    // of the controller's duration defined by the animation's interval.
+    // For example the opacity animation transforms its value during
+    // the first 10% of the controller's duration.
+    //
+    // Most of the Intervals cause the animations' transforms to be
+    // "staggered", i.e. to start one after another.
 
     opacity = new Tween<double>(
       begin: 0.0,
@@ -103,6 +106,9 @@ class StaggerAnimation extends StatelessWidget {
   final Animation<BorderRadius> borderRadius;
   final Animation<Color> color;
 
+  // This function is called each the controller "ticks" a new frame.
+  // When it runs, all of the animation's values will have been
+  // updated to reflect the controller's current value.
   Widget _buildAnimation(BuildContext context, Widget child) {
     return new Container(
       padding: padding.value,
