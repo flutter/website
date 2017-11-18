@@ -194,7 +194,7 @@ the range 0.0-1.0).
 
 `Tween` classes are stateless and immutable.
 
-### Chaining animatables
+### Composing animatables
 
 Passing an `Animatable<double>` (the parent) to an `Animatable`'s
 `chain()` method creates a new `Animatable` subclass that applies the
@@ -232,7 +232,7 @@ subclasses of `Animation`.
 Some `Animation` subclasses are stateless, merely forwarding listeners
 to their parents. Some are very stateful.
 
-### Chainable animations
+### Composable animations
 
 Most `Animation` subclasses take an explicit "parent"
 `Animation<double>`. They are driven by that parent.
