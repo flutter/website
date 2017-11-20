@@ -162,7 +162,37 @@ You can run the example app by pressing the &#9654; button.
 
 Finally, you need to connect the API written in Dart code with the platform-specific
 implementations. This is done using [platform channels](/platform-channels/).
+
+## Adding documentation
+
+It is recommended practice to add the following documentation to all packages:
+
+1. A `readme.md` file that introduces the package
+1. A `changelog.md` file that documents changes in each version
+1. A `license` file containing the terms under which the package is licensed
+1. API documentation for all (see below for details)
+
+### API documentation
+
+When you publish a package, API documentation is automatically generated and
+published to dartdocs.org, see for example the
+[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html/).
+
+If you wish to generate API documentation locally on your developement machine, use the following commands:
+
+1. Change directory to the location of your package
+   `cd ~/dev/mypackage`
+
+1. Tell the documentation tool where the Flutter SDK is (change to reflect where you placed it):
+   `export FLUTTER_ROOT=~/dev/flutter` (on macOS or Linux)
+   `set FLUTTER_ROOT=~/dev/flutter` (on Windows)
    
+1. Run the `dartdoc` tool (comes as part of the Flutter SDK):
+   `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc` (on Windows)
+   `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
+
+For tips on how to write API documentation, see [Effective Dart: Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
+
 ## Publishing packages {#publish}
 
 Once you have implemented a package, you can publish it on
