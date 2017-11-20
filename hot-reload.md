@@ -22,7 +22,7 @@ To hot reload a Flutter app:
 physical or virtual device can be the target.
 1.  Modify one of the Dart files in your project. Most types of code changes can
 be hot reloaded; for a list of changes that require a full restart, see
-[Understanding limitations](#understanding-limitations).
+[Limitations](#limitations).
 1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
 select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
 
