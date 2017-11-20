@@ -18,7 +18,7 @@ Build-Tools, which are required by Flutter when developing for Android.
 To prepare to run and test your Flutter app on an Android device, you'll need an
 Android device running Android 4.1 (API level 16) or higher.
 
-1. Enable developer mode on your device by visiting **`Settings>System>About phone`** and
+1. Enable developer mode on your device by visiting **Settings>System>About phone** and
 tapping the **Build number** line seven times.
 2. In **Settings>System>Developer options**, enable **USB debugging**.
 3. Using a USB cable, plug your phone into your computer. If prompted on your
