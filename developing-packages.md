@@ -167,10 +167,10 @@ implementations. This is done using [platform channels](/platform-channels/).
 
 It is recommended practice to add the following documentation to all packages:
 
-1. A `readme.md` file that introduces the package
-1. A `changelog.md` file that documents changes in each version
-1. A `license` file containing the terms under which the package is licensed
-1. API documentation for all (see below for details)
+1. A `README.md` file that introduces the package
+1. A `CHANGELOG.md` file that documents changes in each version
+1. A `LICENSE` file containing the terms under which the package is licensed
+1. API documentation for all public APIs (see below for details)
 
 ### API documentation
 
