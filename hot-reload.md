@@ -45,7 +45,7 @@ command. The code is updated and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
 after the change. The next sections describe common situations where the
-modified code will _not_ run again after hot reload. In some cases,  
+modified code will _not_ run again after hot reload. In some cases, 
 small changes to the Dart code will enable you to continue using hot reload
 for your app.
 
@@ -112,6 +112,8 @@ and then hot reload, the console displays an assertion failure similar to:
 ```
 myWidget is not a subtype of StatelessWidget
 ```
+
+In these situations, a full restart is needed to see the updated app.
 
 ## Recent code change is included but app state is excluded
 
@@ -235,7 +237,6 @@ version of `main()`, and builds a widget tree that displays the text `Hello`.
 However, if you hot reload the app after this change, `main()` is not 
 re-executed, and the widget tree is rebuilt with the unchanged instance of 
 `MyApp` as the root widget. The result is no visible change after hot reload.
-
 
 ## Limitations
 
