@@ -85,17 +85,17 @@ used. To ensure your app does not break when a package is updated, we recommend
 specifying a version range using one of the following formats:
 
 * Range constraints: Specify a minimum and maximim version, e.g.:
-    ```
-    dependencies:
-      url_launcher: '>=0.1.2 <0.2.0'
-    ```
+  ```
+  dependencies:
+    url_launcher: '>=0.1.2 <0.2.0'
+  ```
 
 * Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax): 
-Similar to a regular range constraints
-    ```
-    dependencies:
-      collection: '^0.1.2'
-    ```
+  Similar to a regular range constraints
+  ```
+  dependencies:
+    collection: '^0.1.2'
+  ```
 
 For additional details, see the [Pub versioning guide](https://www.dartlang.org/tools/pub/versioning).
 
@@ -120,14 +120,14 @@ intended for public publishing, or for packages not yet ready for publishing,
 additional dependency options are avaialble:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
- `path:` dependency. The path can be either relative, or absolute. For example, to
- depend on a plugin 'plugin1' located in a directory next to the app, use this
- syntax:
-    ```
-    dependencies:
-      plugin1:
-        path: ../plugin1/
-    ```
+  `path:` dependency. The path can be either relative, or absolute. For example, to
+  depend on a plugin 'plugin1' located in a directory next to the app, use this
+  syntax:
+  ```
+  dependencies:
+    plugin1:
+      path: ../plugin1/
+  ```
 
 * **Git** dependency: You can also depend on a package stored in a Git
   repository. If the package is located in the root of the repo, use this
