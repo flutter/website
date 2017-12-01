@@ -85,17 +85,17 @@ used. To ensure your app does not break when a package is updated, we recommend
 specifying a version range using one of the following formats:
 
 * Range constraints: Specify a minimum and maximim version, e.g.:
-    ```
-    dependencies:
-        url_launcher: '>=0.1.2 <0.2.0'
-    ```
+  ```
+  dependencies:
+    url_launcher: '>=0.1.2 <0.2.0'
+  ```
 
 * Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax): 
-Similar to a regular range constraints
-    ```
-    dependencies:
-        collection: '^0.1.2'
-    ```
+  Similar to a regular range constraints
+  ```
+  dependencies:
+    collection: '^0.1.2'
+  ```
 
 For additional details, see the [Pub versioning guide](https://www.dartlang.org/tools/pub/versioning).
 
@@ -120,37 +120,39 @@ intended for public publishing, or for packages not yet ready for publishing,
 additional dependency options are avaialble:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
- `path:` dependency. The path can be either relative, or absolute. For example, to
- depend on a plugin 'plugin1' located in a directory next to the app, use this
- syntax:
-    ```
-    dependencies:
-        plugin1:
-          path: ../plugin1/
-    ```
+  `path:` dependency. The path can be either relative, or absolute. For example, to
+  depend on a plugin 'plugin1' located in a directory next to the app, use this
+  syntax:
+  ```
+  dependencies:
+    plugin1:
+      path: ../plugin1/
+  ```
 
 * **Git** dependency: You can also depend on a package stored in a Git
- repository. If the package is located in the root of the repo, use this
- syntax:
-    ```
-    dependencies:
-        plugin1:
-          git:
-            url: git://github.com/flutter/plugin1.git
-    ```
+  repository. If the package is located in the root of the repo, use this
+  syntax:
+  ```
+  dependencies:
+    plugin1:
+      git:
+        url: git://github.com/flutter/plugin1.git
+  ```
 
 * **Git** dependency on a package in a folder: By default Pub assumes the 
-package is located in the root of the Git repository. If that is not the case, 
-you can specify the location with the `path` argument, e.g.:
-    ```
-    dependencies:
-        package1:
-          git:
-            url: git://github.com/flutter/packages.git
-            path: packages/package1        
-    ```
+  package is located in the root of the Git repository. If that is not the case, 
+  you can specify the location with the `path` argument, e.g.:
+  ```
+  dependencies:
+    package1:
+      git:
+        url: git://github.com/flutter/packages.git
+        path: packages/package1        
+  ```
 
-    Finally, you can use the `ref` argument to pin the dependency to a specific git commit, branch, or tag. For more details, see the [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
+  Finally, you can use the `ref` argument to pin the dependency to a specific git commit,
+  branch, or tag. For more details, see the
+  [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
 
 ## Examples
 
@@ -165,49 +167,49 @@ To use this package:
 1. Create a new project called 'cssdemo'
 
 1. Open `pubspec.yaml`, and replace:
-    ```
-    dependencies:
-      flutter:
-        sdk: flutter
-    ```
-    with:
+   ```
+   dependencies:
+     flutter:
+       sdk: flutter
+   ```
+   with:
 
-    ```
-    dependencies:
-      flutter:
-        sdk: flutter
-      css_colors: ^1.0.0
-    ```
+   ```
+   dependencies:
+     flutter:
+       sdk: flutter
+     css_colors: ^1.0.0
+   ```
 
 1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
-    ```dart
-    import 'package:flutter/material.dart';
-    import 'package:css_colors/css_colors.dart';
+   ```dart
+   import 'package:flutter/material.dart';
+   import 'package:css_colors/css_colors.dart';
 
-    void main() {
-      runApp(new MyApp());
-    }
+   void main() {
+     runApp(new MyApp());
+   }
 
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return new MaterialApp(
-          home: new DemoPage(),
-        );
-      }
-    }
+   class MyApp extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return new MaterialApp(
+         home: new DemoPage(),
+       );
+     }
+   }
 
-    class DemoPage extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return new Scaffold(
-          body: new Container(color: CSSColors.orange)
-        );
-      }
-    }
-    ```
+   class DemoPage extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return new Scaffold(
+         body: new Container(color: CSSColors.orange)
+       );
+     }
+   }
+   ```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
 phone's default browser open, and the Flutter homepage appear.
@@ -225,59 +227,58 @@ To use this plugin:
 1. Create a new project called 'launchdemo'
 
 1. Open `pubspec.yaml`, and replace:
-    ```
-    dependencies:
-      flutter:
-        sdk: flutter
-    ```
-    with:
+   ```
+   dependencies:
+     flutter:
+       sdk: flutter
+   ```
+   with:
 
-    ```
-    dependencies:
-      flutter:
-        sdk: flutter
-      url_launcher: ^0.4.1
-    ```
+   ```
+   dependencies:
+     flutter:
+       sdk: flutter
+     url_launcher: ^0.4.1
+   ```
 
 1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
-    ```dart
-    import 'package:flutter/material.dart';
-    import 'package:url_launcher/url_launcher.dart';
+   ```dart
+   import 'package:flutter/material.dart';
+   import 'package:url_launcher/url_launcher.dart';
 
-    void main() {
-      runApp(new MyApp());
-    }
+   void main() {
+     runApp(new MyApp());
+   }
 
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return new MaterialApp(
-          home: new DemoPage(),
-        );
-      }
-    }
+   class MyApp extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return new MaterialApp(
+         home: new DemoPage(),
+       );
+     }
+   }
 
-    class DemoPage extends StatelessWidget {
-      launchURL() {
-        launch('https://flutter.io');
-      }
+   class DemoPage extends StatelessWidget {
+     launchURL() {
+       launch('https://flutter.io');
+     }
 
-      @override
-      Widget build(BuildContext context) {
-        return new Scaffold(
-          body: new Center(
-            child: new RaisedButton(
-              onPressed: launchURL,
-              child: new Text('Show Flutter homepage'),
-            ),
-          ),
-        );
-      }
-    }
-    ```
+     @override
+     Widget build(BuildContext context) {
+       return new Scaffold(
+         body: new Center(
+           child: new RaisedButton(
+             onPressed: launchURL,
+             child: new Text('Show Flutter homepage'),
+           ),
+         ),
+       );
+     }
+   }
+   ```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
 phone's default browser open, and the Flutter homepage appear.
-
