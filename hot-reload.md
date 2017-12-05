@@ -22,13 +22,14 @@ To hot reload a Flutter app:
 physical or virtual device can be the target.
 1.  Modify one of the Dart files in your project. Most types of code changes can
 be hot reloaded; for a list of changes that require a full restart, see
-[Understanding limitations](#understanding-limitations).
+[Limitations](#limitations).
 1.  If you're working in an IntelliJ IDE that supports Flutter's IDE tools,
 select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
 
    ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
 
-   If you're running the app at the command line using `flutter run`, type `r` in the terminal window. 
+   If you're running the app at the command line using `flutter run`, type `r` 
+   in the terminal window. 
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -43,74 +44,87 @@ app continues to execute from where it was prior to running the hot reload
 command. The code is updated and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
-after the change. The following section describes common code patterns where the
-modified code will _not_ run again after hot reload.
+after the change. The next sections describe common situations where the
+modified code will _not_ run again after hot reload. In some cases, 
+small changes to the Dart code will enable you to continue using hot reload
+for your app.
 
-## Troubleshooting hot reload
+## Compilation errors
 
-When you start working with hot reload and using it frequently, you'll likely
-encounter the types of code changes that might need a full app restart:
-
-*   Changing the `main()` method of the app
-*   Initializing global variables
-*   Initializing static fields
-
-### Recent UI change is excluded
-
-Even when a hot reload operation appears successful and generates no exceptions,
-some code changes might not be visible in the refreshed UI. This behavior is
-common after changes to the app's `main()` method.
-
-As a general rule, if the modified code is downstream of the root widget's
-build method, then hot reload behaves as expected. However, if the modified code
-won't be re-executed as a result of rebuilding the widget tree, then you won't
-see its effects after hot reload.
-
-For example, consider the following code:
+When a code change introduces a compilation error, hot reload always generates
+an error message similar to:
 ```
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(new MyApp());
-}
-
-class MyApp extends StatelessWidget {
+Hot reload was rejected:
+'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
   Widget build(BuildContext context) {
-    return new GestureDetector(
-      onTap: () => print('tapped'));
+                                     ^
+'/Users/obiwan/Library/Developer/CoreSimulator/Devices/AC94F0FF-16F7-46C8-B4BF-218B73C547AC/data/Containers/Data/Application/4F72B076-42AD-44A4-A7CF-57D9F93E895E/tmp/ios_testWIDYdS/ios_test/lib/main.dart': error: line 33 pos 5: unbalanced ')'
+    );
+    ^
+ ```
+In this situation, simply correct the errors on the specified lines of
+Dart code to keep using hot reload.
+
+## Previous state is combined with new code 
+
+Flutter's hot reload feature, sometimes described as _stateful hot reload_,
+preserves the state of your app. This design enables you to view
+the effect of the most recent change only, without throwing away the
+current state. For example, if your app requires a user to log in, you can
+modify and hot reload a page several levels down in the navigation hierarchy,
+without re-entering your login credentials. State is kept, which is 
+usually the desired behavior.
+
+If code changes affect the state of your app (or its dependencies), 
+the data your app has to work with might not be fully consistent with 
+the data it would have if it executed from scratch. The result might be 
+different behavior after hot reload versus a full restart.
+
+For example, if you modify a class definition from extending StatelessWidget
+to StatefulWidget (or the reverse), after hot reload the previous state of
+your app is preserved. However, the state might not be compatible with the
+new changes.
+
+Consider the following code:
+
+```
+class myWidget extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return new GestureDetector(onTap: () => print('T'));
   }
 }
 ```
-
-After running this app, you might change the code as follows:
+After running the app, if you make the following change:
 
 ```
-import 'package:flutter/widgets.dart';
-void main() {
-  runApp(
-    const Center(
-      child: const Text('Hello', textDirection: TextDirection.ltr)));
-  }
+class myWidget extends StatefulWidget {
+  @override
+  State createState() => new myWidgetState();
+}
+class myWidgetState {
+...
+...
+}
 ```
 
+and then hot reload, the console displays an assertion failure similar to:
 
-With a full restart, the program starts from the beginning, executes the new
-version of `main()`, and builds a widget tree that displays the text `Hello`.
+```
+myWidget is not a subtype of StatelessWidget
+```
 
-However, if you hot reload the app after this change, `main()` is not 
-re-executed, and the widget tree is rebuilt with the unchanged instance of 
-`MyApp` as the root widget. The result is no visible change after hot reload.
+In these situations, a full restart is needed to see the updated app.
 
+## Recent code change is included but app state is excluded
 
-### Recent code change is included but app state is excluded
+In Dart, [static fields are lazily initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static
+field is read, it is set to whatever value its initializer was evaluated to.
+Global variables and static fields are treated as state, and thus not 
+reinitialized during hot reload.
 
-In Dart, [static fields are lazily initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static field is read,
-it is set to whatever value its initializer was evaluated to. Thus if you change
-initializers of global variables and static fields, those changes are not
-visible after hot reload. A full restart is necessary for this type of change
-to take effect. 
-
-For example, consider the following code:
+If you change initializers of global variables and static fields, a full 
+restart is necessary to see the changes. For example, consider the
+following code:
 
 ```
 final sampleTable = [
@@ -178,92 +192,91 @@ get bar => foo;
 
 Read more about the [differences between the `const` and `final` keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart. 
 
+## Recent UI change is excluded
 
-### Previous state is combined with new code 
+Even when a hot reload operation appears successful and generates no exceptions,
+some code changes might not be visible in the refreshed UI. This behavior is
+common after changes to the app's `main()` method.
 
-If code changes affect the state of your app (or its dependencies), Flutter
-gives you two options for reconciling old data with new code: throw
-away state or modify the existing state. Throwing away state is what happens
-during a full restart. Depending on the situation, you might prefer to apply
-changes in a more selective way, by marking the widget tree as dirty and
-recomputing the derived layout trees, while leaving the UI state alone. 
+As a general rule, if the modified code is downstream of the root widget's
+build method, then hot reload behaves as expected. However, if the modified code
+won't be re-executed as a result of rebuilding the widget tree, then you won't
+see its effects after hot reload.
 
-Modifying the existing state is what happens during hot reload; however, in this
-scenario the data your app has to work with might not be fully consistent with 
-the data it would have if it executed from scratch. The result might be 
-different behavior after hot reload versus a full restart.
-
-For example, if you modify a class definition from extending StatelessWidget to
-StatefulWidget (or the reverse), after hot reload the previous state of your
-app is preserved. However, the state might not be compatible with the new
-changes.
-
-Consider the following code:
-
+For example, consider the following code:
 ```
-class myWidget extends StatelessWidget {
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MyApp());
+}
+
+class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
-    return new GestureDetector(onTap: () => print('T'));
+    return new GestureDetector(
+      onTap: () => print('tapped'));
   }
 }
 ```
-After running the app, if you make the following change:
+
+After running this app, you might change the code as follows:
 
 ```
-class myWidget extends StatefulWidget {
-  @override
-  State createState() => new myWidgetState();
-}
-class myWidgetState {
-...
-...
-}
+import 'package:flutter/widgets.dart';
+void main() {
+  runApp(
+    const Center(
+      child: const Text('Hello', textDirection: TextDirection.ltr)));
+  }
 ```
 
-and then hot reload, the console displays an assertion failure similar to:
 
-```
-myWidget is not a subtype of StatelessWidget
-```
+With a full restart, the program starts from the beginning, executes the new
+version of `main()`, and builds a widget tree that displays the text `Hello`.
 
-## Understanding limitations
+However, if you hot reload the app after this change, `main()` is not 
+re-executed, and the widget tree is rebuilt with the unchanged instance of 
+`MyApp` as the root widget. The result is no visible change after hot reload.
 
-In addition to edge cases, you might also encounter the rare scenarios where hot
-reload is not supported at all.  These include:
+## Limitations
 
-*   Changed source files have compilation errors.
-*   Enumerated types are changed to regular classes or regular classes are
+You might also encounter the rare cases where hot reload is not supported
+at all. These include:
+
+*  Enumerated types are changed to regular classes or regular classes are
 changed to enumerated types. For example, if you change:
 
     ```
-enum Color {
-  red,
-  green,
-  blue
-}
+    enum Color {
+      red,
+      green,
+      blue
+    }
+
     ```
 to:
+
    ```
-class Color {
-  Color(this.i, this.j);
-  final Int i;
-  final Int j;
+    class Color {
+      Color(this.i, this.j);
+      final Int i;
+      final Int j;
     	}
     ```
 
 *   Generic type declarations are modified. For example, if you change:
     ```
-class A<T> {
-  T i;
-}
+    class A<T> {
+      T i;
+    }
     ```
 	to:
 
     ```
-class A<T, V> {
-  T i;
-  V v;
-}
+    class A<T, V> {
+      T i;
+      V v;
+    }
     ```
 
 In these situations, hot reload generates a diagnostic message and fails without
