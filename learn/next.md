@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Learn Flutter: Next steps
+title: Learn Flutter; Next steps
 
 permalink: /learn/next/
 ---
