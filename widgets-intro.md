@@ -761,7 +761,7 @@ typically end by calling
 Keys
 ----
 
-_Main article: [`Key`](https://docs.flutter.io/flutter/widgets/Key-class.html)_
+_Main article: [`Key`](https://docs.flutter.io/flutter/foundation/Key-class.html)_
 
 You can use keys to control which widgets the framework will match up with which
 other widgets when a widget rebuilds. By default, the framework matches
