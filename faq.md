@@ -421,7 +421,7 @@ services and APIs from the operating system. However, we want to avoid the
 intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
-packages](https://pub.dartlang.org/flutter/packages) available in the Pub
+packages](https://pub.dartlang.org/flutter/) available in the Pub
 repository. Using an existing package [is easy](/using-packages/).
 
 Finally, we encourage developers to use Flutter's asynchronous message passing
