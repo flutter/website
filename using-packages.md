@@ -50,7 +50,7 @@ To add a package 'css_colors' to an app:
    * Add a corresponding `import` statement in your Dart code.
    
 The
-['Installing'](https://pub.dartlang.org/packages/css_colors#pub-pkg-tab-installing)
+['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
 tab available on any package page on Pub is a handy reference for these steps.
 
 For a complete example, see [CSS Colors example](#css-example) below.
@@ -68,7 +68,7 @@ All packages have a version number, specified in their `pubspec.yaml` file. Pub
 displays the current version of a package next to it's name (for example, see
 the [url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
 well as a list of all prior versions ([url_launcher
-versions](https://pub.dartlang.org/packages/url_launcher#pub-pkg-tab-versions)).
+versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
 
 When a package is added to `pubspec.yaml` using the shorthand form `plugin1:`
 this is interpreted as `plugin1: any`, i.e. any version of the package may be
