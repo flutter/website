@@ -546,6 +546,12 @@ Learn more about creating a
 [release build of your Android app](https://flutter.io/android-release/),
 and creating a [release build of your iOS app](https://flutter.io/ios-release/).
 
+### Do Flutter apps run on Chromebooks?
+
+We have seen Flutter apps run on some Chromebooks.
+We are tracking
+[issues related to running Flutter on Chromebooks](https://github.com/flutter/flutter/labels/platform-arc).
+
 ## Framework
 
 ### Why is the build() method on State, not StatefulWidget?
