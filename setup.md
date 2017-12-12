@@ -7,7 +7,7 @@ permalink: /setup/
 This page describes how to prepare your development environment to run Flutter apps on
 iOS or Android.
 
-{% include note.html content="_Flutter is an alpha, open-source project_." %}
+{% include note.html content="_Flutter is an alpha, open-source project_. _If you're in China, please read [this wiki article](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China) first_." %}
 
 <div class="dropdown" style="margin-bottom: 24px">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Operating System
@@ -52,5 +52,4 @@ inline error checking, and visual debugging features.</td>
  </tr>
 </table>
 
-{% include note.html content="If you're in China, please read [this wiki article](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China) first." %}
 
