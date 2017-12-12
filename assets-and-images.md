@@ -134,7 +134,7 @@ pixel ratio.
 
 #### Declaring resolution-aware image assets {#resolution-aware}
 
-[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
 closely matches the current [device pixel ratio](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html).
 In order for this mapping to
@@ -202,9 +202,9 @@ Widget build(BuildContext context) {
 Anything using the default asset bundle will inherit resolution
 awareness when loading images. (If you work with some of the lower
 level classes, like
-[`ImageStream`](https://docs.flutter.io/flutter/services/ImageStream-class.html)
+[`ImageStream`](https://docs.flutter.io/flutter/painting/ImageStream-class.html)
 or
-[`ImageCache`](https://docs.flutter.io/flutter/services/ImageCache-class.html),
+[`ImageCache`](https://docs.flutter.io/flutter/painting/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {#from-packages}
