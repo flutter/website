@@ -177,7 +177,7 @@ be included in the `pubspec.yaml` manifest, however.
 #### Loading images
 
 To load an image, use the
-[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html)
 class in a widget's `build` method.
 
 For example, your app can load the background image from the asset
@@ -209,7 +209,7 @@ you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {#from-packages}
 
-To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html).
+To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
