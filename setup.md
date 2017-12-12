@@ -51,3 +51,6 @@ inline error checking, and visual debugging features.</td>
    <td>Perform Android setup tasks to develop apps for Android (<a href="/setup-macos/#android-setup">Mac</a>) (<a href="/setup-windows/#android-setup">Windows</a>) (<a href="/setup-linux/#android-setup">Linux</a>)</td><td align="center"></td>
  </tr>
 </table>
+
+{% include note.html content="If you're in China, please read [this wiki article](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China) first." %}
+
