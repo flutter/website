@@ -44,15 +44,12 @@ To install the plugins:
 1. Click `Yes` when prompted to install the Dart plugin.
 1. Click `Restart` when prompted.
 
-### Configuring the Flutter plugin
+### Creating your first project
 
-1. Open preferences (**Preferences** on macOS, **File>Settings** on Windows & Linux).
-1. Select **Languages & Frameworks>Flutter**.
-1. Enter or browse to your Flutter SDK directory in **Flutter SDK path**. This is the top-level `flutter`
+1. Select **File>New Project** (in IntelliJ) and then Flutter, or **File>New Flutter Project** (in Android Studio)
+1. If prompted for a **Flutter SDK path**, enter the location of your SDK directory. This is the top-level `flutter`
    directory, without the `bin` subdirectory. For example, `c:\Users\obiwan\flutter` / `/Users/obiwan/flutter`.
 1. Click **OK**
-
-*Note*: Flutter is only shown under 'Languages & Frameworks' when you have a project opened.
 
 ## Using the IDEs for Flutter
 

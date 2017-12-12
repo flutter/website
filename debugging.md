@@ -69,8 +69,8 @@ you can view using `flutter logs` (which is basically a wrapper around
 `adb logcat`).
 
 If you output too much at once, then Android sometimes discards some
-log lines. To avoid this, you can use `debugPrint()`, from Flutter's
-`services` library. This is a wrapper around `print` which throttles
+log lines. To avoid this, you can use [`debugPrint()`](https://docs.flutter.io/flutter/foundation/debugPrint.html),
+from Flutter's `foundation` library. This is a wrapper around `print` which throttles
 the output to a level that avoids being dropped by Android's kernel.
 
 Many classes in the Flutter framework have useful `toString`

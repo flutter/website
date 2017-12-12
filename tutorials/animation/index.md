@@ -10,7 +10,6 @@ permalink: /tutorials/animation/
 
 * How to use the fundamental classes from the animation library to add
   animation to a widget.
-* How to chain Tween animations.
 * When to use AnimatedWidget vs. AnimatedBuilder.
 
 </div>
@@ -234,12 +233,6 @@ final Animation curve =
     new CurvedAnimation(parent: animation, curve: Curves.easeOut);
 Animation<int> alpha = new IntTween(begin: 0, end: 255).animate(curve);
 {% endprettify %}
-
-You can chain Tweens together using the `.chain()` method,
-in which case a single Animation object will be configured by multiple
-Tween objects called in succession. This is different than calling
-`.animate()` twice, in which case you have two Animate objects,
-each configured with a single Tween.
 
 ### Animation notifications
 
@@ -734,7 +727,6 @@ on GitHub.
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* Chain Tweens together to animate different effects.
 * The [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
   class defines an array of commonly used curves that you can use with a
   [CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html).
@@ -750,18 +742,16 @@ transparent to opaque.
 
 <aside class="alert alert-success" markdown="1">
 **Note:**
-This example shows how to chain tweens together to manage multiple
-effects in an animation. It is for illustrative purposes only.
-If you were tweening opacity and size in production code,
-you would probably use
+This example shows how to use multiple tweens on the same animation
+controller, where each tween manages a different effect in the animation.
+It is for illustrative purposes only. If you were tweening opacity and
+size in production code, you'd probably use
 [FadeTransition](https://docs.flutter.io/flutter/widgets/FadeTransition-class.html) and
 [SizeTransition](https://docs.flutter.io/flutter/widgets/SizeTransition-class.html)
 instead.
 </aside>
 
-Managing multiple animation effects is typically handled by adding Tween
-objects to the animation chain. Each tween manages an aspect of the
-animation. For example:
+Each tween manages an aspect of the animation. For example:
 
 <!-- skip -->
 {% prettify dart %}
@@ -801,8 +791,8 @@ class AnimatedLogo extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return new Center(
-      child: new Opacity([[/highlight]]
-        opacity: _opacityTween.evaluate(animation),[[/highlight]]
+      [[highlight]]child: new Opacity([[/highlight]]
+        [[highlight]]opacity: _opacityTween.evaluate(animation),[[/highlight]]
         child: new Container(
           margin: new EdgeInsets.symmetric(vertical: 10.0),
           height: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
