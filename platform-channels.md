@@ -170,19 +170,17 @@ refreshing the valuer.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return new MaterialApp(
-    home: new Material(
-      child: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            new RaisedButton(
-              child: new Text('Get Battery Level'),
-              onPressed: _getBatteryLevel,
-            ),
-            new Text(_batteryLevel),
-          ],
-        ),
+  return new Material(
+    child: new Center(
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          new RaisedButton(
+            child: new Text('Get Battery Level'),
+            onPressed: _getBatteryLevel,
+          ),
+          new Text(_batteryLevel),
+        ],
       ),
     ),
   );
