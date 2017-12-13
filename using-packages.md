@@ -30,18 +30,9 @@ packages, please see [Assets & Images](https://flutter.io/assets-and-images/).
 
 Packages are published to the *[Pub](https://pub.dartlang.org)* package repository. 
 
-The [list of Flutter packages](https://pub.dartlang.org/flutter/packages) displays
-packages that have been developed specifically for Flutter (i.e., that declare a
-dependency on the Flutter framework). Flutter-specific packages are presented
-with a Flutter logo adornment.
-
-The standard Pub search field supports searching among all published packages.
-Note however that many packages depend on other frameworks, such as the
-[AngularDart](https://webdev.dartlang.org/angular/) web framework, and those
-will not work with Flutter. We [hope to
-offer](https://github.com/dart-lang/pub-dartlang-dart/issues/39) a better search
-experience with support for filtering to only packages that are compatible with
-Flutter in the future.
+The [Flutter landing page](https://pub.dartlang.org/flutter/) displays
+top packages that are compatible with Flutter (i.e., that declare dependencies
+generally compatible with Flutter), and supports searching among all published packages.
 
 ### Adding a package dependency to an app
 
@@ -59,7 +50,7 @@ To add a package 'css_colors' to an app:
    * Add a corresponding `import` statement in your Dart code.
    
 The
-['Installing'](https://pub.dartlang.org/packages/css_colors#pub-pkg-tab-installing)
+['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
 tab available on any package page on Pub is a handy reference for these steps.
 
 For a complete example, see [CSS Colors example](#css-example) below.
@@ -77,7 +68,7 @@ All packages have a version number, specified in their `pubspec.yaml` file. Pub
 displays the current version of a package next to it's name (for example, see
 the [url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
 well as a list of all prior versions ([url_launcher
-versions](https://pub.dartlang.org/packages/url_launcher#pub-pkg-tab-versions)).
+versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
 
 When a package is added to `pubspec.yaml` using the shorthand form `plugin1:`
 this is interpreted as `plugin1: any`, i.e. any version of the package may be

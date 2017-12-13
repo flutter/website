@@ -14,7 +14,7 @@ Flutter apps can include both code and _assets_ (sometimes called
 resources). An asset is a file that is bundled and deployed with your
 app, and is accessible at runtime. Common types of assets include
 static data (for example, JSON files), configuration files, icons, and
-images.
+images (JPEG, WebP, GIF, animated GIF, PNG, BMP and WBMP).
 
 ## Specifying assets
 

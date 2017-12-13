@@ -167,6 +167,8 @@ Run `flutter test test/widget_test.dart`.
 Check out [`package:flutter_test` API](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
 for all the utilities available for widget testing.
 
+To help debug widget tests, you can use the [`debugDumpApp()`](https://docs.flutter.io/flutter/widgets/debugDumpApp.html) function to visualize the UI state of your test or simply `flutter run test/widget_test.dart` to see your test run in your preferred runtime environment such as a simulator or a device. During a `flutter run` session on a widget test, you can also interactively tap parts of the screen for the Flutter tool to print the suggested [`Finder`](https://docs.flutter.io/flutter/flutter_test/CommonFinders-class.html).
+
 
 ## Integration testing
 
