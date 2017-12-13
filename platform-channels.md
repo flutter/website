@@ -128,7 +128,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 ...
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   static const platform = const MethodChannel('samples.flutter.io/battery');
 
   // Get battery level.
@@ -171,17 +170,19 @@ refreshing the valuer.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return new Material(
-    child: new Center(
-      child: new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          new RaisedButton(
-            child: new Text('Get Battery Level'),
-            onPressed: _getBatteryLevel,
-          ),
-          new Text(_batteryLevel),
-        ],
+  return new MaterialApp(
+    home: new Material(
+      child: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            new RaisedButton(
+              child: new Text('Get Battery Level'),
+              onPressed: _getBatteryLevel,
+            ),
+            new Text(_batteryLevel),
+          ],
+        ),
       ),
     ),
   );
