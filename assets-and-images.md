@@ -177,7 +177,7 @@ be included in the `pubspec.yaml` manifest, however.
 #### Loading images
 
 To load an image, use the
-[`AssetImage`](https://docs.flutter.io/flutter/services/AssetImage-class.html)
+[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html)
 class in a widget's `build` method.
 
 For example, your app can load the background image from the asset
