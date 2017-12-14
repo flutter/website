@@ -138,7 +138,9 @@ html-based UI. For details see the [Observatory page](https://dart-lang.github.i
 To open Observatory:
 
 1. Run your app in debug mode.
-1. In the Debug panel at the bottom, click the **Stopwatch icon** ('Open Observatory').
+1. In the Debug panel at the bottom (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
+
+![Debugging panel](/images/intellij/debug-panel.png)
 
 ## Editing tips for Flutter code
 

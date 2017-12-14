@@ -364,7 +364,6 @@ class DemoLocalizations {
     return _localizedValues[locale.languageCode]['title'];
   }
 }
-}
 {% endprettify %}
 
 In the minimal app the DemoLocalizationsDelegate is slightly

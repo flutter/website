@@ -128,7 +128,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 ...
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   static const platform = const MethodChannel('samples.flutter.io/battery');
 
   // Get battery level.
