@@ -64,7 +64,8 @@ There are number of additional IDE & editor options available enabled by communi
   offers a lightweight IDE with rich Flutter support for editing, refactoring, running, debugging, and
   hot reloading Flutter code.
   
-* The [Flutter terminal tools]() combined with [Dart-enabled editor](https://www.dartlang.org/tools)
-  provides the flexibility of your favorite editor with core Flutter support.
+* The Flutter terminal tool from the [Flutter SDK](https://flutter.io/setup/) combined with a
+  [Dart-enabled editor](https://www.dartlang.org/tools) provides the flexibility of your favorite editor
+  while maintaining support for core Flutter development workflows.
   
 
