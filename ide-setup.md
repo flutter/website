@@ -67,5 +67,3 @@ There are number of additional IDE & editor options available enabled by communi
 * The Flutter terminal tool from the [Flutter SDK](https://flutter.io/setup/) combined with a
   [Dart-enabled editor](https://www.dartlang.org/tools) provides the flexibility of your favorite editor
   while maintaining support for core Flutter development workflows.
-  
-
