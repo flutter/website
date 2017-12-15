@@ -10,7 +10,7 @@ alpha branch of the repository and then add the `flutter` tool to your path:
 
 {% commandline %}
 git clone -b alpha https://github.com/flutter/flutter.git
-export PATH=`pwd`/flutter/bin:$PATH
+export PATH=$PATH/flutter/bin:$PATH
 {% endcommandline %}
 
 The above command sets your PATH variable temporarily, for the current terminal window. To
