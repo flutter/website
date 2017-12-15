@@ -1,6 +1,6 @@
 ---
 layout: page
-title: " Staggered Animations"
+title: "Staggered Animations"
 permalink: /animations/staggered-animations/
 ---
 
@@ -11,10 +11,12 @@ permalink: /animations/staggered-animations/
 * A staggered animation consists of sequential or overlapping
   animations.
 * Create a staggered animation using multiple Animation objects.
-* Each Animation object specifies the animation during an interval.
-* Each Animation object specifies one or more Tweens that describe the
-  start and end values for the properties being animated during that
-  interval.
+* One AnimationController controls all of the Animations.
+* Each Animation object specifies the animation during an Interval.
+* Create a Tween for each property being animated.
+* The Tween produces the Animation.
+* The Tween describes the start and end values for the properties being
+  animated during that Interval.
 </div>
 
 <aside class="alert alert-info" markdown="1">
@@ -44,15 +46,23 @@ is available for your reference.
 
 [staggered_pic_selection](https://github.com/flutter/website/tree/master/_includes/code/animation/staggered_pic_selection)
 : Shows deleting an image from a list of images displayed in one of three sizes.
-  This example uses two animation controllers: one for image selection/de-selection,
-  and one for image deletion. The selection/de-selection animation is staggered.
-  (To see effect this yourself, you may need to increase the ```timeDilation``` value.)
+  This example uses two [animation
+  controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
+  one for image selection/de-selection, and one for image deletion.
+  The selection/de-selection animation is staggered.
+  (To see effect this yourself, you may need to increase the `timeDilation` value.)
   Select one of the largest images which shrinks while displaying a checkmark
   inside a blue circle. Then select one of the smallest images. The large image
   expands before the small image shrinks. This behavior is similar to that used
   by Google Photos.
 
 </aside>
+
+{% comment %}
+Not enough structure to warrant a TOC.
+* TOC Placeholder
+{:toc}
+{% endcomment %}
 
 The following video demonstrates a simple staggered animation
 described in this guide:
@@ -75,9 +85,6 @@ The square:
 
 After running forwards, the animation runs in reverse.
 
-* TOC Placeholder
-{:toc}
-
 <aside class="alert alert-info" markdown="1">
 **New to Flutter?**
 You should first understand how to create a layout using Flutter’s
@@ -85,22 +92,34 @@ widgets.  For more information, see [Building Layouts in
 Flutter](/tutorials/layout/).
 </aside>
 
-**Basic structure of a staggered animation**<br>
+## Basic structure of a staggered animation
 
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
-* Break the animation down into Intervals.
-* Regardless of how long the animation lasts in real time,
-  Intervals are specified within the range of 0.0 and 1.0.
-  For example, an Interval might run from 0.5 to 0.55.
-* Create an Animation object for each Interval.
-* Create a Tween for each property that animates in an interval.
+* All of the animations are driven by the same
+  [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
+* Regardless of how long the animations lasts in real time,
+  the controller's values vary between 0.0 and 1.0.
+* Break the animation down into
+  [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)s
+  specified within 0.0 and 1.0.
+  An Interval, for example, might run from 0.5 to 0.55.
+* Create a [Tween](https://docs.flutter.io/flutter/animation/Tween-class.html)
+  for each property that animates in an interval.
   The Tween object specifies the start and end values for that property.
   For example, a width tween might specify a starting width of 50 pixels
   and an ending width of 150.
+* The tween produces an
+  [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html)
+  object.
 </div>
+
+The app is essentially animating a Container whose decoration and size are
+animated. The Container is within another Container whose padding moves the
+inner container around and an Opacity widget that's used to fade everything
+in and out.
 
 The following diagram shows the Intervals used in the
 [basic_staggered_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_staggered_animation)
@@ -108,8 +127,21 @@ example:
 
 <img src="images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
 
-The following code shows how two of the animating properties are
-defined in basic_staggered_animation:
+Set up the animation as follows:
+
+* Create a Tween for each property being animated.
+* Call `animate` on the Tween, and pass in the Animation object.
+  This example uses
+  [CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html)
+  and specifies an eased curve.
+  See [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
+  for other available pre-defined animation curves.
+* Specify the interval on the Animation's `curve` property.
+
+The following code shows how the `width` and
+`borderRadius` properties are set up in the basic_staggered_animation
+example. The `borderRadius` property controls the roundness of
+the square's corners.
 
 <!-- skip -->
 {% prettify dart %}
@@ -138,16 +170,27 @@ borderRadius = new BorderRadiusTween(
     ),
   ),
 ),
-
 {% endprettify %}
 
 The final custom animation consists of a widget pair: a stateless
-and a stateful widget. The stateless widget specifies the Tweens,
-defines the Animation objects, and provides a ```build()```
-function to build the portion of the widget tree that animates.
-For each tick of the animation,
-the values for the properties being animated are updated,
-triggering an update of the the affected widget(s) in the UI.
+and a stateful widget.
+
+The stateless widget specifies the Tweens,
+defines the Animation objects, and provides a `build()` function
+responsible for building the animating portion of the widget tree.
+
+In our example, the build function sets up an
+[AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html),
+general purpose widget for building animations. The example assigns the
+the `_buildAnimation()` callback function (which performs the actual UI updates)
+to its `builder` property.
+
+AnimatedBuilder listens to notifications from the Animation objects,
+and marks the widget tree dirty as values change.
+For each tick of the animation, the values are updated,
+resulting in a call to `_buildAnimation()`.
+
+The code for the stateless widget, StaggerAnimation:
 
 <!-- skip -->
 {% prettify dart %}
@@ -277,8 +320,8 @@ triggering an update of the the affected widget(s) in the UI.
 
   @override
   [[highlight]]Widget build(BuildContext context)[[/highlight]] {
-    return new AnimatedBuilder(
-      builder: _buildAnimation,
+    return [[highlight]]new AnimatedBuilder[[/highlight]](
+      [[highlight]]builder: _buildAnimation[[/highlight]],
       animation: controller,
     );
   }
@@ -289,6 +332,8 @@ The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation is kicked off when a "hit" gesture is detected anywhere
 in the screen. The animation runs forwards, then backwards.
+
+The code for the stateful widget, StaggerDemo:
 
 <!-- skip -->
 {% prettify dart %}
