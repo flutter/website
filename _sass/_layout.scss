@@ -191,3 +191,10 @@
         }
     }
 }
+
+/* Make fragment identifier links visible below the header. */
+:target:before {
+    content: "";
+    display: block;
+    height: 112px;
+}
