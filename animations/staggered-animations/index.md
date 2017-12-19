@@ -14,9 +14,11 @@ permalink: /animations/staggered-animations/
 * One AnimationController controls all of the Animations.
 * Each Animation object specifies the animation during an Interval.
 * Create a Tween for each property being animated.
+{% comment %}
 * The Tween produces the Animation.
 * The Tween describes the start and end values for the properties being
   animated during that Interval.
+{% endcomment %}
 </div>
 
 <aside class="alert alert-info" markdown="1">
@@ -30,7 +32,7 @@ is performed as a series of operations, rather than all at once.
 The animation may be purely sequential, with one motion occuring after
 the next, or it may partially or completely overlap.
 
-This guide shows how to build a staggered animation.
+This guide shows how to build a staggered animation in Flutter.
 
 <aside class="alert alert-info" markdown="1">
 **Where's the code?**<br>
@@ -49,12 +51,12 @@ is available for your reference.
   This example uses two [animation
   controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
   one for image selection/de-selection, and one for image deletion.
-  The selection/de-selection animation is staggered.
-  (To see effect this yourself, you may need to increase the `timeDilation` value.)
-  Select one of the largest images which shrinks while displaying a checkmark
-  inside a blue circle. Then select one of the smallest images. The large image
-  expands before the small image shrinks. This behavior is similar to that used
-  by Google Photos.
+  The selection/de-selection animation is staggered. (To see effect this
+  yourself, you may need to increase the `timeDilation` value.)
+  Select one of the largest images&mdash;it shrinks as it displays a checkmark
+  inside a blue circle. Select one of the smallest images&mdash;the large image
+  expands before the small image shrinks. This staggered behavior is similar
+  to that used by Google Photos.
 
 </aside>
 
@@ -75,7 +77,7 @@ described in this guide:
 
 In the video, you see the following animation on a single widget,
 which begins as a bordered blue square with slightly rounded corners.
-The square:
+In sequential order, the square:
 
 * Fades in
 * Widens
@@ -105,21 +107,24 @@ Flutter](/tutorials/layout/).
 * Break the animation down into
   [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)s
   specified within 0.0 and 1.0.
-  An Interval, for example, might run from 0.5 to 0.55.
 * Create a [Tween](https://docs.flutter.io/flutter/animation/Tween-class.html)
   for each property that animates in an interval.
   The Tween object specifies the start and end values for that property.
-  For example, a width tween might specify a starting width of 50 pixels
-  and an ending width of 150.
-* The tween produces an
+* The Tween produces an
   [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html)
-  object.
+  object that is managed by the controller.
+{% comment %}
+* Configure a widget with the animation's values.
+{% endcomment %}
 </div>
 
+{% comment %}
+XXX: rewrite
 The app is essentially animating a Container whose decoration and size are
 animated. The Container is within another Container whose padding moves the
 inner container around and an Opacity widget that's used to fade everything
 in and out.
+{% endcomment %}
 
 The following diagram shows the Intervals used in the
 [basic_staggered_animation](https://github.com/flutter/website/tree/master/_includes/code/animation/basic_staggered_animation)
@@ -129,19 +134,23 @@ example:
 
 Set up the animation as follows:
 
+* Create an AnimationController that manages all of the Animations.
 * Create a Tween for each property being animated.
-* Call `animate` on the Tween, and pass in the Animation object.
-  This example uses
-  [CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html)
-  and specifies an eased curve.
-  See [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
-  for other available pre-defined animation curves.
+* The Tween defines a range of values.
+* The Tween's `animate` method requires the `parent` controller, and
+  produces an Animation for that property.
 * Specify the interval on the Animation's `curve` property.
+* When the controlling animation's value changes, the new animation's
+  value changes, triggering the UI to update.
 
-The following code shows how the `width` and
-`borderRadius` properties are set up in the basic_staggered_animation
-example. The `borderRadius` property controls the roundness of
-the square's corners.
+The following code shows construction of the `width` and `borderRadius`
+properties in the basic_staggered_animation example.
+The `borderRadius` property controls the roundness of the square's corners.
+Each tween builds a
+[CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html),
+specifying an eased curve.
+See [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
+for other available pre-defined animation curves.
 
 <!-- skip -->
 {% prettify dart %}
@@ -172,6 +181,13 @@ borderRadius = new BorderRadiusTween(
 ),
 {% endprettify %}
 
+{% comment %}
+The AnimatedBuilder (in StaggerAnimation) configures its widget using
+these Tweens.
+{% endcomment %}
+
+### Custom animation widget
+
 The final custom animation consists of a widget pair: a stateless
 and a stateful widget.
 
@@ -179,13 +195,14 @@ The stateless widget specifies the Tweens,
 defines the Animation objects, and provides a `build()` function
 responsible for building the animating portion of the widget tree.
 
-In our example, the build function sets up an
+In our example, the build function creates an
 [AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html),
-general purpose widget for building animations. The example assigns the
-the `_buildAnimation()` callback function (which performs the actual UI updates)
+a general purpose widget for building animations. The AnimatedBuilder
+builds a widget and configures it using the Tweens' current values.
+The example assigns the
+`_buildAnimation()` callback function (which performs the actual UI updates)
 to its `builder` property.
-
-AnimatedBuilder listens to notifications from the Animation objects,
+AnimatedBuilder listens to notifications from the animation controller,
 and marks the widget tree dirty as values change.
 For each tick of the animation, the values are updated,
 resulting in a call to `_buildAnimation()`.
