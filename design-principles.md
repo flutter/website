@@ -350,6 +350,7 @@ agree that the final solution is _better_ than all the conflicting proposals.
 Sometimes the solution is more work than either of the proposals. Please
 see the comments above where we introduce the phrase "embrace the yak shave".
 
+
 Code of conduct
 ---------------
 
