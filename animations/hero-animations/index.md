@@ -31,7 +31,7 @@ hero animations, and hero animations that transform the
 image from a circular shape to a square shape during flight.
 
 <aside class="alert alert-info" markdown="1">
-**Where's the code?**<br>
+**Examples**<br>
 
 This guide provides examples of each hero animation style
 at these links:
@@ -44,8 +44,8 @@ at these links:
 {:toc}
 
 <aside class="alert alert-info" markdown="1">
-**New to Flutter?**
-You should first understand how to create a layout using Flutter’s
+**New to Flutter?**<br>
+This page assumes you know how to create a layout using Flutter’s
 widgets.  For more information, see [Building Layouts in
 Flutter](/tutorials/layout/).
 </aside>
@@ -77,7 +77,7 @@ Tapping the flippers in the blue route
 (or using the device's back-to-previous-route gesture)
 flies the flippers back to the original route.
 
-<!-- 
+<!--
   Use this instead of the default YouTube embed code so that the embed
   is reposnisve.
 -->
@@ -665,7 +665,7 @@ but the image's aspect ratio remains constant.
 
 ## Resources
 
-The following resources may help when writing animations:
+The following resources might help when writing animations:
 
 [Animations landing page](/animations/)
 : Lists the available documentation for Flutter animations.
