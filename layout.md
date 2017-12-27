@@ -99,7 +99,6 @@ when the flex box is inside
 another flex box or inside a scrollable. If you do, you'll get an
 exception message pointing you at this document.
 
-In the _cross_ direction, i.e. in their width for [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html))  
-(vertical flex) and in their height for [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), they must never
+In the _cross_ direction, i.e. in their width for [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (vertical flex) and in their height for [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), they must never
 be unbounded, otherwise they would not be able to reasonably align
 their children.

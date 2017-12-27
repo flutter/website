@@ -176,7 +176,7 @@ It is recommended practice to add the following documentation to all packages:
 
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the
-[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html/).
+[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
