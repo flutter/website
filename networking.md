@@ -45,6 +45,8 @@ above are:
 <!--
 import 'dart:convert';
 import 'dart:io';
+
+main() async {
 -->
 ```dart
 var httpClient = new HttpClient();
@@ -53,6 +55,7 @@ var request = await httpClient.getUrl(uri);
 var response = await request.close();
 var responseBody = await response.transform(utf8.decoder).join();
 ```
+<!-- } -->
 
 See 'Example' below for a full code sample.
 
