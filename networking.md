@@ -46,16 +46,17 @@ above are:
 import 'dart:convert';
 import 'dart:io';
 
-main() async {
 -->
 ```dart
-var httpClient = new HttpClient();
-var uri = Uri.http('http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo');
-var request = await httpClient.getUrl(uri);
-var response = await request.close();
-var responseBody = await response.transform(UTF8.decoder).join();
+get() async {
+  var httpClient = new HttpClient();
+  var uri = new Uri.http(
+      'http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo'});
+  var request = await httpClient.getUrl(uri);
+  var response = await request.close();
+  var responseBody = await response.transform(UTF8.decoder).join();
+}
 ```
-<!-- } -->
 
 See 'Example' below for a full code sample.
 
