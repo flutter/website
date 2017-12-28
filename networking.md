@@ -42,6 +42,10 @@ The networking calls generally follow a stepped approach:
 Several of these steps use Future based APIs. Sample APIs calls for each step
 above are:
 
+<!--
+import 'dart:convert';
+import 'dart:io';
+-->
 ```dart
 var httpClient = new HttpClient();
 var uri = Uri.http('http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo');
