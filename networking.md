@@ -42,11 +42,7 @@ The networking calls generally follow a stepped approach:
 Several of these steps use Future based APIs. Sample APIs calls for each step
 above are:
 
-<!--
-import 'dart:convert';
-import 'dart:io';
-
--->
+<!-- skip -->
 ```dart
 get() async {
   var httpClient = new HttpClient();
