@@ -53,7 +53,7 @@ var httpClient = new HttpClient();
 var uri = Uri.http('http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo');
 var request = await httpClient.getUrl(uri);
 var response = await request.close();
-var responseBody = await response.transform(utf8.decoder).join();
+var responseBody = await response.transform(UTF8.decoder).join();
 ```
 <!-- } -->
 
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
       var request = await httpClient.getUrl(Uri.parse(url));
       var response = await request.close();
       if (response.statusCode == HttpStatus.OK) {
-        var json = await response.transform(utf8.decoder).join();
+        var json = await response.transform(UTF8.decoder).join();
         var data = JSON.decode(json);
         result = data['origin'];
       } else {
