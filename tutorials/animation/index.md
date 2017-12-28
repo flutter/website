@@ -756,7 +756,7 @@ Each tween manages an aspect of the animation. For example:
 <!-- skip -->
 {% prettify dart %}
 final AnimationController controller =
-    new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this,);
+    new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
 final Animation<double> sizeAnimation =
     new Tween(begin: 0.0, end: 300.0).animate(controller);
 final Animation<double> opacityAnimation =
