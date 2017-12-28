@@ -43,7 +43,7 @@ introducing you to different aspects of the animation library.
 
 * The Animation object, a core class in Flutter's animation library,
   interpolates the values used to guide an animation.
-* The animation object knows the current state of an animation (for example,
+* The Animation object knows the current state of an animation (for example,
   whether it's started, stopped, or moving forward or in reverse),
   but doesn't know anything about what appears onscreen.
 * An AnimationController manages the Animation.
