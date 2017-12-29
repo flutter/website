@@ -28,7 +28,7 @@ the app persists the number of button presses across relaunches:
 
 1. Create a new Flutter project with `flutter create` or using File > New Project in IntelliJ.
 
-1. [Declare a dependency](https://pub.dartlang.org/packages/path_provider#-pkg-tab-installing) on the PathProvider plugin in `pubspec.yaml`
+1. [Declare a dependency](https://pub.dartlang.org/packages/path_provider#-installing-tab-) on the PathProvider plugin in `pubspec.yaml`
 
 1. Replace the contents of `lib/main.dart` with the following:
 
