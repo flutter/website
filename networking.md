@@ -116,10 +116,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _ipAddress = 'Unknown';
+  var _ipAddress = 'Unknown';
 
   _getIPAddress() async {
-    String url = 'https://httpbin.org/ip';
+    var url = 'https://httpbin.org/ip';
     var httpClient = new HttpClient();
 
     String result;
@@ -179,10 +179,10 @@ For full API docs, see:
   * [library `dart:io`][dartio]
   * [library `dart:convert`][convert]
 
-[dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
+[dartio]:     https://docs.flutter.io/flutter/dart-io/dart-io-library.html
 [convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
-[client]:     https://api.dartlang.org/stable/dart-io/HttpClient-class.html
-[get]:        https://api.dartlang.org/stable/dart-io/HttpClient/getUrl.html
-[post]:       https://api.dartlang.org/stable/dart-io/HttpClient/postUrl.html
-[put]:        https://api.dartlang.org/stable/dart-io/HttpClient/putUrl.html
-[delete]:     https://api.dartlang.org/stable/dart-io/HttpClient/deleteUrl.html
+[client]:     https://docs.flutter.io/flutter/dart-io/HttpClient-class.html
+[get]:        https://docs.flutter.io/flutter/dart-io/HttpClient/getUrl.html
+[post]:       https://docs.flutter.io/flutter/dart-io/HttpClient/postUrl.html
+[put]:        https://docs.flutter.io/flutter/dart-io/HttpClient/putUrl.html
+[delete]:     https://docs.flutter.io/flutter/dart-io/HttpClient/deleteUrl.html
