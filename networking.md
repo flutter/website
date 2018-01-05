@@ -10,54 +10,51 @@ sockets, see [dart:io][dartio].
 * TOC Placeholder
 {:toc}
 
-## Using the `http` package {#httpdependency}
-
-Flutter supports the [http package][http], version `0.11.3+12` or later.
-
-Start by declaring a dependency on `http` in `pubspec.yaml`:
-
-```
-dependencies:
-  ...
-  http: '>=0.11.3+12'
-```
-
 ## Making HTTP requests
 
-Next, create an HTTP [Client][client]. We recommend using
-[`createHttpClient`](https://docs.flutter.io/flutter/services/createHttpClient.html)
-to enable tests to provide an `http.MockClient`:
-
+The core http support is in [`dart:io`][dartio], so to create an HTTP [Client][client]
+we need to add an import:
 <!-- skip -->
 ```dart
-import 'package:flutter/services.dart';
+import 'dart:io';
 
-var httpClient = createHttpClient();
+var httpClient = new HttpClient();
 ```
 
-The client supports common HTTP operations, such as:
+The client supports common HTTP operations, such as [`GET`][get],
+[`POST`][post], [`PUT`][put], [`DELETE`][delete].  
 
-* **HTTP GET:** Use [`get`][get] for a general request, [`read`][read] for a
- request returning a string, or [`readbytes`][readbytes] for a request
- returning bytes.
-
-* **HTTP POST:** Use [`post`][post] for a general post.
-
-Code sample:
-
-<!-- skip -->
-```dart
-postData() async {
-  ...
-  var response = await httpClient.post(url, body: {'name': 'doodle', 'color': 'blue'});
-  print('Response status: ${response.statusCode}');
-}
-```
+## Dealing with asynchronousy
 
 Note that the HTTP APIs use [Dart
 Futures](https://www.dartlang.org/tutorials/language/futures) in the return
-values. We recommend using the API calls with the `async`/`await` syntax as shown in
-the preceding code sample.
+values. We recommend using the API calls with the `async`/`await` syntax.
+
+The networking calls generally follow a stepped approach:
+
+1. Create the client.
+2. Construct the Uri.
+3. Invoke the operation, and await the request object. Optionally, configure the
+   headers and body of the request.
+4. Close the request, and await the response.
+5. Decode the response.
+
+Several of these steps use Future based APIs. Sample APIs calls for each step
+above are:
+
+<!-- skip -->
+```dart
+get() async {
+  var httpClient = new HttpClient();
+  var uri = new Uri.http(
+      'http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo'});
+  var request = await httpClient.getUrl(uri);
+  var response = await request.close();
+  var responseBody = await response.transform(UTF8.decoder).join();
+}
+```
+
+See 'Example' below for a full code sample.
 
 ## Decoding and encoding JSON
 
@@ -67,7 +64,7 @@ To decode the JSON string and parse the response into a Map:
 
 <!-- skip -->
 ```dart
-Map data = JSON.decode(response.body);
+Map data = JSON.decode(responseBody);
 // Assume the response body is something like: ['foo', { 'bar': 499 }]
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
@@ -84,21 +81,19 @@ String encodedString = JSON.encode([1, 2, { 'a': null }]);
 
 The following example shows how to decode JSON from an HTTPS GET call in a Flutter app.
 
-It calls the [httpbin.com](http://httpbin.com) web service testing API,
+It calls the [httpbin.com](https://httpbin.com) web service testing API,
 which then responds with your local IP address. Note that secure
 networking (HTTPS) is used.
 
 1. Create a new flutter app with `flutter create`.
 
-1. Add the [http dependency](#httpdependency).
-
 1. Replace the contents of `lib/main.dart` with the following:
 
 ```dart
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(new MyApp());
@@ -121,14 +116,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String _ipAddress = 'Unknown';
+  var _ipAddress = 'Unknown';
 
   _getIPAddress() async {
-    String url = 'https://httpbin.org/ip';
-    var httpClient = createHttpClient();
-    var response = await httpClient.read(url);
-    Map data = JSON.decode(response);
-    String ip = data['origin'];
+    var url = 'https://httpbin.org/ip';
+    var httpClient = new HttpClient();
+
+    String result;
+    try {
+      var request = await httpClient.getUrl(Uri.parse(url));
+      var response = await request.close();
+      if (response.statusCode == HttpStatus.OK) {
+        var json = await response.transform(UTF8.decoder).join();
+        var data = JSON.decode(json);
+        result = data['origin'];
+      } else {
+        result =
+            'Error getting IP address:\nHttp status ${response.statusCode}';
+      }
+    } catch (exception) {
+      result = 'Failed getting IP address';
+    }
 
     // If the widget was removed from the tree while the message was in flight,
     // we want to discard the reply rather than calling setState to update our
@@ -136,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!mounted) return;
 
     setState(() {
-      _ipAddress = ip;
+      _ipAddress = result;
     });
   }
 
@@ -147,8 +155,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return new Scaffold(
       body: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            spacer,
             new Text('Your current IP address is:'),
             new Text('$_ipAddress.'),
             spacer,
@@ -168,16 +176,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
 For full API docs, see:
 
-  * [package `http`][http]
-  * [`Client` in package `http`][client]
-  * [library `dart:convert`][convert]
   * [library `dart:io`][dartio]
+  * [library `dart:convert`][convert]
 
-[http]:       https://pub.dartlang.org/packages/http
-[client]:     https://www.dartdocs.org/documentation/http/latest/http/Client-class.html
-[get]:        https://www.dartdocs.org/documentation/http/latest/http/get.html
-[read]:       https://www.dartdocs.org/documentation/http/latest/http/read.html
-[readbytes]:  https://www.dartdocs.org/documentation/http/latest/http/readBytes.html
-[post]:       https://www.dartdocs.org/documentation/http/latest/http/post.html
+[dartio]:     https://docs.flutter.io/flutter/dart-io/dart-io-library.html
 [convert]:    https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html
-[dartio]:     https://api.dartlang.org/stable/dart-io/dart-io-library.html
+[client]:     https://docs.flutter.io/flutter/dart-io/HttpClient-class.html
+[get]:        https://docs.flutter.io/flutter/dart-io/HttpClient/getUrl.html
+[post]:       https://docs.flutter.io/flutter/dart-io/HttpClient/postUrl.html
+[put]:        https://docs.flutter.io/flutter/dart-io/HttpClient/putUrl.html
+[delete]:     https://docs.flutter.io/flutter/dart-io/HttpClient/deleteUrl.html

@@ -151,6 +151,11 @@ To make a change that will require developers to change their code:
     changes. You should leave some time between steps 2 and 3 (at a bare minimum
     24 hours during the work week so that people in all time zones have had a
     chance to see it, but ideally a week or so).
+    
+ 4. If you landed a breaking change, add a bullet point to the top section of
+    the [Changelog page on the wiki](https://github.com/flutter/flutter/wiki/Changelog),
+    describing your change and
+    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev).
 
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
 for example by introducing a new class and marking the old class `@deprecated`. When
@@ -159,7 +164,7 @@ example:
 
 <!-- skip -->
 ```dart
-@Deprecated('FooInterface has been deprecated; it is recommended that you transition to the new FooDelegate.')
+@Deprecated('FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate.')
 class FooInterface {
   /// ...
 }
@@ -344,6 +349,7 @@ into one mediocre solution. A conflict is addressed when the participants
 agree that the final solution is _better_ than all the conflicting proposals.
 Sometimes the solution is more work than either of the proposals. Please
 see the comments above where we introduce the phrase "embrace the yak shave".
+
 
 Code of conduct
 ---------------

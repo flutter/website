@@ -14,9 +14,6 @@ class StaggerAnimation extends StatelessWidget {
     // of the controller's duration defined by the animation's interval.
     // For example the opacity animation transforms its value during
     // the first 10% of the controller's duration.
-    //
-    // Most of the Intervals cause the animations' transforms to be
-    // "staggered", i.e. to start one after another.
 
     opacity = new Tween<double>(
       begin: 0.0,
