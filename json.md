@@ -113,6 +113,7 @@ documentation](https://api.dartlang.org/stable/1.24.3/dart-convert/JsonCodec-cla
 we see that we can decode the JSON by calling the `JSON.decode` method, with our
 JSON string as the method argument.
 
+<!-- skip -->
 ```dart
 Map<String, dynamic> user = JSON.decode(json);
 
@@ -169,6 +170,7 @@ class User {
 Now the responsibility of the serialization logic is moved inside the model
 itself. With this new approach, we can deserialize a user quite easily.
 
+<!-- skip -->
 ```dart
 Map userMap = JSON.decode(json);
 var user = new User.fromJson(userMap);
@@ -179,6 +181,7 @@ print('We sent the verification link to ${user.email}.');
 
 To serialize a user, we just call the `toJson` method in the `User` class.
 
+<!-- skip -->
 ```dart
 String json = JSON.encode(user.toJson());
 ```
@@ -212,6 +215,7 @@ sake of simplicity, we use the dumbed-down JSON model from the previous samples.
 
 **user.dart**
 
+<!-- skip -->
 {% prettify dart %} 
 /// This allows the generated code access our class members. 
 /// The value for this is the same as the source file name, 
@@ -248,6 +252,7 @@ class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin 
 To deserialize a JSON string `json_serializable` way, we do not have actually to
 make any changes to our previous code.
 
+<!-- skip -->
 ```dart
 Map userMap = JSON.decode(json);
 var user = new User.fromJson(userMap);
@@ -255,6 +260,7 @@ var user = new User.fromJson(userMap);
 
 Same goes for serialization. The calling API is the same as before.
 
+<!-- skip -->
 ```dart
 String json = JSON.encode(user.toJson());
 ```
@@ -319,6 +325,7 @@ We'll create our build action file in `<project_root>/tool/build_actions.dart`.
 
 **tool/build_actions.dart**
 
+<!-- skip -->
 {% prettify dart %} 
 import 'package:build_runner/build_runner.dart';
 import 'package:json_serializable/json_serializable.dart';
@@ -362,6 +369,7 @@ We'll create the build file in `<project_root>/tool/build.dart`.
 
 **tool/build.dart**
 
+<!-- skip -->
 ```dart
 import 'dart:io';
 import 'package:build_runner/build_runner.dart';
@@ -391,6 +399,7 @@ The watcher file also lives in the tool folder, so we create it in
 
 **tool/watch.dart**
 
+<!-- skip -->
 ```dart
 import 'package:build_runner/build_runner.dart';
 import 'build_actions.dart';
