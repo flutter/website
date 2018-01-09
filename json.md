@@ -147,6 +147,7 @@ instead of crashing on runtime.
 
 **user.dart**
 
+<!-- skip -->
 ```dart
 class User {
   final String name;
