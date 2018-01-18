@@ -65,7 +65,7 @@ hide_title: true
         <p>
             Flutter's <em>hot reload</em> helps you quickly
             and easily experiment, build UIs, add features, and fix
-            bug faster. Experience sub-second reload times,
+            bugs faster. Experience sub-second reload times,
             without losing state, on
             emulators, simulators, and hardware for iOS
             and Android.
