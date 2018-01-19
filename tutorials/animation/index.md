@@ -230,7 +230,7 @@ The following example shows a controller, a curve, and a Tween:
 final AnimationController controller = new AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
 final Animation curve =
-    new CurvedAnimation(parent: animation, curve: Curves.easeOut);
+    new CurvedAnimation(parent: controller, curve: Curves.easeOut);
 Animation<int> alpha = new IntTween(begin: 0, end: 255).animate(curve);
 {% endprettify %}
 
