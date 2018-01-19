@@ -61,7 +61,7 @@ Android Studio or IntelliJ IDEA.
 There are number of additional IDE & editor options available enabled by
 community contributions:
 
-* [VS Code](https://code.visualstudio.com/) with the [Dart Code plugin for VS Code](https://marketplace.visualstudio.com/items?itemName=DanTup.dart-code)
+* [VS Code](https://code.visualstudio.com/) with the [Dart Code plugin for VS Code](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
   offers a lightweight IDE with rich Flutter support for editing, refactoring, running, debugging, and
   hot reloading Flutter code.
   
