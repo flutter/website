@@ -1022,8 +1022,7 @@ import 'package:http/http.dart' as http;
 Once you have the result you can tell Flutter to update its state by calling
 setState, which will update your UI with the result from your network call.
 
-## How do I show progress indicator in Flutter when there is a task that is
-running
+## How do I show progress indicator in Flutter when there is a task that is running
 
 In Android you would typically show a progress indicator when you execute
 a long running task.

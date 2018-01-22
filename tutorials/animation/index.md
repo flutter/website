@@ -230,7 +230,7 @@ The following example shows a controller, a curve, and a Tween:
 final AnimationController controller = new AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
 final Animation curve =
-    new CurvedAnimation(parent: animation, curve: Curves.easeOut);
+    new CurvedAnimation(parent: controller, curve: Curves.easeOut);
 Animation<int> alpha = new IntTween(begin: 0, end: 255).animate(curve);
 {% endprettify %}
 
@@ -760,7 +760,7 @@ final AnimationController controller =
 final Animation<double> sizeAnimation =
     new Tween(begin: 0.0, end: 300.0).animate(controller);
 final Animation<double> opacityAnimation =
-    new Tween(begin: 1.0, end: 0.3).animate(controller);
+    new Tween(begin: 0.1, end: 1.0).animate(controller);
 {% endprettify %}
 
 You can get the size with `sizeAnimation.value` and the opacity
@@ -782,7 +782,7 @@ import 'package:flutter/material.dart';
 
 class AnimatedLogo extends AnimatedWidget {
   // The Tweens are static because they don't change.
-  [[highlight]]static final _opacityTween = new Tween<double>(begin: 1.0, end: 0.1);[[/highlight]]
+  [[highlight]]static final _opacityTween = new Tween<double>(begin: 0.1, end: 1.0);[[/highlight]]
   [[highlight]]static final _sizeTween = new Tween<double>(begin: 0.0, end: 300.0);[[/highlight]]
 
   AnimatedLogo({Key key, Animation<double> animation})
