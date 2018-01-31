@@ -154,17 +154,19 @@ here:
 
 ![IntelliJ editing assists](/images/intellij/assists.gif)
 
-Quick Fixes are similar, only they are shown with a piece of code has an error and they can assist in correcting it. They are indicated with a red lightbulb.
+Quick Fixes are similar, only they are shown with a piece of code has an error and they
+can assist in correcting it. They are indicated with a red lightbulb.
 
-We currently support the following assists & quick fixes:
-
-* 'Wrap new-expression with new widget': This can be used when you have a widget
- that you want to wrap in a surrounding widget, for example if you want to wrap
- a widget in a `Row` or `Column`.  
-* 'Wrap widget list with new widget': Similar to the assist above, but for
- wrapping an existing list of widgets rather than an individual widget.
-* 'Convert child to children': Changes a child argument to a children argument,
- and wraps the argument value in a list.
+#### Wrap with new widget assist
+This can be used when you have a widget that you want to wrap in a surrounding widget,
+for example if you want to wrap a widget in a `Row` or `Column`.
+ 
+####  Wrap widget list with new widget assist
+Similar to the assist above, but for wrapping an existing list of widgets rather than an
+individual widget.
+ 
+#### Convert child to children assist
+Changes a child argument to a children argument, and wraps the argument value in a list.
 
 ### Live Templates
 
@@ -200,7 +202,6 @@ Keyboard mappings can be changed in IntelliJ Preferences/Settings: Select
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
 ![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
-
 
 ### 'Hot Reloads' vs 'Full Application Restarts'
 
