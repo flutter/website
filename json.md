@@ -5,10 +5,10 @@ permalink: /json/
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a web
-server at some point. When making network-connected apps, chances are that we
+server at some point. When making network-connected apps, the chances are that we
 need to consume some good old JSON, sooner or later.
 
-In this tutorial, we look into ways of using JSON with Flutter. We will go over
+In this tutorial, we look into ways of using JSON with Flutter. We go over
 what JSON solution to use in different scenarios and why.
 
 * TOC Placeholder
@@ -48,7 +48,7 @@ generate the serialization boilerplate for you. They involve some initial setup
 and running a file watcher that generates the code from your model classes. For
 example,
 [json_serializable](https://pub.dartlang.org/packages/json_serializable) and
-[built_value](https://pub.dartlang.org/packages/built_value) are these kind of
+[built_value](https://pub.dartlang.org/packages/built_value) are these kinds of
 libraries.
 
 This approach scales well for a larger project. There is no hand-written
@@ -63,10 +63,10 @@ serialization, [see here](#code-generation).
 
 ## Is there a GSON/Jackson/Moshi equivalent in Flutter?
 
-The simple answer is no. It would require runtime reflection, which is disabled
-in Flutter.
+The simple answer is no. 
 
-Dart has supported _tree shaking_ for quite a long time. With tree shaking, we
+Such a library would require using runtime reflection, which is disabled
+in Flutter. Dart has supported _tree shaking_ for quite a long time. With tree shaking, we
 can “shake off” unused code from our release builds. Tree shaking allows us to
 optimize the size of our applications significantly.
 
@@ -94,7 +94,7 @@ Basic JSON serialization in Flutter is very simple. Flutter has a built-in
 `dart:convert` library, which includes a straightforward JSON encoder and
 decoder.
 
-Here is an example JSON for a simple user.
+Here is an example JSON for a simple user model.
 
 ```json
 {
@@ -128,7 +128,7 @@ autocompletion and most importantly, compile-time exceptions. Our code can
 become instantly more error-prone.
 
 For example, whenever we access the `name` or `email` fields, we could quickly
-introduce a typo. A typo which our compiler does not know of, since our entire
+introduce a typo. A typo which our compiler does not know of since our entire
 JSON merely lives in a map structure.
 
 ### Serializing JSON inside model classes
@@ -203,13 +203,36 @@ us. Luckily, there is!
 <a name="code-generation"></a>
 ## Serializing JSON using json_serializable
 
-The `json_serializable` package is an automated source code generator that can
-generate the JSON serializing boilerplate for us.
+The [json_serializable package](https://github.com/dart-lang/json_serializable) is an automated source code generator that can generate the JSON serializing boilerplate for us.
 
 Since the serialization code is not handwritten and maintained by us anymore, we
 minimize the risk of having JSON serialization exceptions at runtime.
 
-### How does a json_serializable class look?
+### Setting up json_serializable in a project
+
+To include `json_serializable` in our project, we need one regular and two _dev
+dependencies_. In short, _dev dependencies_ are dependencies that are not
+included in our app source code.
+
+The latest versions of these required dependencies can be seen by following
+[this link](https://github.com/dart-lang/json_serializable/blob/master/example/pubspec.yaml).
+
+**pubspec.yaml**
+
+```yaml
+dependencies:
+  # Your other regular dependencies here
+  json_annotation: ^0.2.2
+
+dev_dependencies:
+  # Your other dev_dependencies here
+  build_runner: ^0.6.1
+  json_serializable: ^0.3.0
+```
+
+Run `flutter packages get` inside your project root folder (or click "Packages Get" in your editor) to make these new dependencies available in your project.
+
+### Creating model classes the json_serializable way
 
 Let's see how to convert our `User` class to a `json_serializable` one. For the
 sake of simplicity, we use the dumbed-down JSON model from the previous samples.
@@ -231,7 +254,7 @@ import 'package:json_annotation/json_annotation.dart';
 part '[[highlight]]user[[/highlight]].g.dart';
 
 /// An annotation for the code generator to know that this class needs the 
-/// source generator to generate JSON serialization logic.
+/// JSON serialization logic to be generated.
 [[highlight]]@JsonSerializable()[[/highlight]]
 
 /// Every json_serializable class must have the serializer mixin. 
@@ -249,6 +272,42 @@ class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin 
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 }
 {% endprettify %}
+
+With this setup, the source code generator will generate code for serializing the `name` and `email` fields from JSON and back.
+
+If needed, it is also easy to customize the naming strategy. For example, if the API we are working with returns objects with _snake\_case_, and we want to use _lowerCamelCase_ in our models, we can use the `@JsonKey` annotation with a name parameter:
+
+<!-- skip -->
+```dart
+/// Tell json_serializable that "registration_date_millis" should be
+/// mapped to this property.
+@JsonKey(name: 'registration_date_millis')
+final int registrationDateMillis;
+```
+
+### Running the code generation utility
+
+When creating `json_serializable` classes the first time, you will get errors similar to the image below.
+
+![IDE warning when the generated code for a model class does not exist yet.](/images/json/ide_warning.png)
+
+These errors are entirely normal and are simply because the generated code for the model class does not exist yet. To resolve this, we must run the code generator that generates the serialization boilerplate for us.
+
+There are two ways of running the code generator.
+
+#### One-time code generation
+
+By running `flutter packages pub run build_runner build` in our project root, we can generate json serialization code for our models whenever needed. This triggers a one-time build which goes through our source files, picks the relevant ones and generates the necessary serialization code for them.
+
+While this is pretty convenient, it would nice if we did not have to run the build manually every time we make changes in our model classes.
+
+#### Generating code continuously
+
+A _watcher_ can make our source code generation progress more convenient. It watches changes in our project files and automatically builds the necessary files when needed. We can start the watcher by running `flutter packages pub run build_runner watch` in our project root.
+
+It is safe to start the watcher once and leave it running in the background.
+
+### Consuming json_serializable models
 
 To deserialize a JSON string `json_serializable` way, we do not have actually to
 make any changes to our previous code.
@@ -273,143 +332,9 @@ to write automated tests to be sure that the serialization works - it is now
 _the library's responsibility_ to make sure the serialization works
 appropriately.
 
-Now that we have learned how the model classes look, let's go through the
-required steps to introduce `json_serializable` to our project.
+## Further references
 
-### Setting up json_serializable in a project
-
-To have `json_serializable` up and running, we have to go through some steps
-first. We need to do this only ** once per project**. After the initial setup,
-creating JSON model classes is trivial.
-
-#### Setting up the pubspec dependencies
-
-To include `json_serializable` in our project, we need one regular and two _dev\
-dependencies_. In short, _dev dependencies_ are dependencies that are not
-included in our app source code.
-
-The latest versions of these required dependencies can be seen by following
-[this link](https://github.com/dart-lang/json_serializable/blob/master/example/pubspec.yaml).
-
-**pubspec.yaml**
-
-```yaml
-dependencies:
-  # Your other regular dependencies here
-  json_annotation: ^0.2.2
-
-dev_dependencies:
-  # Your other dev_dependencies here
-  build_runner: ^0.6.1
-  json_serializable: ^0.3.0
-```
-
-After declaring the needed dependencies, synchronize your packages. In IntelliJ
-IDEA, click the _Packages get_ link on the top of an opened `pubspec.yaml` file.
-Alternatively, you can do synchronize packages by running `flutter packages get`
-from the command line in your projects' root folder.
-
-Next,  define some build actions.
-
-#### Defining the build actions
-
-_Build actions_ are a way of running _builders_ in our project's source files.
-
-Our build action has the following parameters:
-
-* **builder**, which in our case is a `jsonPartBuilder`
-* **package name** which is the specific package this build action will be
-  performed on
-* **inputs**, which are files the build action is performed on.
-
-We'll create our build action file in `<project_root>/tool/build_actions.dart`.
-
-**tool/build_actions.dart**
-
-<!-- skip -->
-{% prettify dart %} 
-import 'package:build_runner/build_runner.dart';
-import 'package:json_serializable/json_serializable.dart';
-
-List<BuildAction> get buildActions => [
-      new BuildAction(
-        // The builder to run on our source files.
-        jsonPartBuilder(),
-
-        // The name of the current package, usually the same as the name 
-        // for your Flutter project. For example, if you created a new
-        // project with "flutter run hello", your package name here would
-        // be 'hello'.
-        '[[highlight]]<your_package_name_here>[[/highlight]]',
-
-        // All of the files this `BuildAction` should target when run.
-        inputs: const [
-          'lib/*.dart',
-        ],
-      ),
-    ];
-{% endprettify %}
-
-We are declaring a top-level variable called `buildActions`, which returns a
-`List` containing all build actions in our project. In this case, we only have
-one build action, which generates JSON serialization logic for files in the
-_lib_ folder.
-
-It is good practice to define build actions in the same file, as they are used
-by the _build_ and the _watcher_ files.
-
-Which brings us to the next topic, the build file.
-
-#### Creating the build file
-
-Our build file runs the actions responsible for generating JSON serialization
-logic for our classes. When run, it triggers the build actions, searches for all
-the relevant files, generates the necessary code and then complete.
-
-We'll create the build file in `<project_root>/tool/build.dart`.
-
-**tool/build.dart**
-
-<!-- skip -->
-```dart
-import 'dart:io';
-import 'package:build_runner/build_runner.dart';
-import 'build_actions.dart';
-
-main() async {
-  var result = await build(buildActions, deleteFilesByDefault: true);
-  if (result.status == BuildStatus.failure) {
-    exitCode = 1;
-  }
-}
-```
-
-Now we can generate all the necessary JSON serialization source files by running
-`dart tool/build.dart` in our project's root folder. While the build file is all
-we need for one-time source code generation, it would be nice if we did not have
-to run it manually every time we make changes.
-
-#### Creating the watcher file
-
-A _watcher_ makes our source code generation progress more convenient. It
-watches changes in our project and automatically builds the necessary files when
-needed.
-
-The watcher file also lives in the tool folder, so we create it in
-`<project_root>/tool/watch.dart`.
-
-**tool/watch.dart**
-
-<!-- skip -->
-```dart
-import 'package:build_runner/build_runner.dart';
-import 'build_actions.dart';
-
-main() {
-  watch(buildActions, deleteFilesByDefault: true);
-}
-```
-
-We can run the watcher by doing `dart tool/watch.dart` in our project's root
-folder. It is safe to start the watcher once and leave it running in the
-background.
+* [JsonCodec documentation](https://api.dartlang.org/stable/1.24.3/dart-convert/JsonCodec-class.html)
+* [The json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
+* [json_serializable examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+* [Discussion about dart:mirrors](https://github.com/flutter/flutter/issues/1150)
