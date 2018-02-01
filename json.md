@@ -5,11 +5,11 @@ permalink: /json/
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a web
-server at some point. When making network-connected apps, the chances are that we
-need to consume some good old JSON, sooner or later.
+server at some point. When making network-connected apps, the chances are that
+we need to consume some good old JSON, sooner or later.
 
-In this tutorial, we look into ways of using JSON with Flutter. We go over
-what JSON solution to use in different scenarios and why.
+In this tutorial, we look into ways of using JSON with Flutter. We go over what
+JSON solution to use in different scenarios and why.
 
 * TOC Placeholder
 {:toc}
@@ -65,10 +65,10 @@ serialization, [see here](#code-generation).
 
 The simple answer is no. 
 
-Such a library would require using runtime reflection, which is disabled
-in Flutter. Dart has supported _tree shaking_ for quite a long time. With tree shaking, we
-can “shake off” unused code from our release builds. Tree shaking allows us to
-optimize the size of our applications significantly.
+Such a library would require using runtime reflection, which is disabled in
+Flutter. Dart has supported _tree shaking_ for quite a long time. With tree
+shaking, we can “shake off” unused code from our release builds. Tree shaking
+allows us to optimize the size of our applications significantly.
 
 Since reflection makes all code implicitly used by default, it interferes with
 tree shaking. The tools cannot know what parts are unused at runtime; the
@@ -79,8 +79,7 @@ using reflection.
 **What about dartson?**
 
 The [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
-reflection, which makes it not compatible with Flutter.
-</aside>
+reflection, which makes it not compatible with Flutter. </aside>
 
 Although we cannot use runtime reflection with Flutter, some libraries give us
 similarly easy to use APIs but are based on code generation instead. This
@@ -203,7 +202,9 @@ us. Luckily, there is!
 <a name="code-generation"></a>
 ## Serializing JSON using json_serializable
 
-The [json_serializable package](https://github.com/dart-lang/json_serializable) is an automated source code generator that can generate the JSON serializing boilerplate for us.
+The [json_serializable package](https://github.com/dart-lang/json_serializable)
+is an automated source code generator that can generate the JSON serializing
+boilerplate for us.
 
 Since the serialization code is not handwritten and maintained by us anymore, we
 minimize the risk of having JSON serialization exceptions at runtime.
@@ -230,7 +231,8 @@ dev_dependencies:
   json_serializable: ^0.3.0
 ```
 
-Run `flutter packages get` inside your project root folder (or click "Packages Get" in your editor) to make these new dependencies available in your project.
+Run `flutter packages get` inside your project root folder (or click "Packages
+Get" in your editor) to make these new dependencies available in your project.
 
 ### Creating model classes the json_serializable way
 
@@ -273,9 +275,13 @@ class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin 
 }
 {% endprettify %}
 
-With this setup, the source code generator will generate code for serializing the `name` and `email` fields from JSON and back.
+With this setup, the source code generator will generate code for serializing
+the `name` and `email` fields from JSON and back.
 
-If needed, it is also easy to customize the naming strategy. For example, if the API we are working with returns objects with _snake\_case_, and we want to use _lowerCamelCase_ in our models, we can use the `@JsonKey` annotation with a name parameter:
+If needed, it is also easy to customize the naming strategy. For example, if the
+API we are working with returns objects with _snake\_case_, and we want to use
+_lowerCamelCase_ in our models, we can use the `@JsonKey` annotation with a name
+parameter:
 
 <!-- skip -->
 ```dart
@@ -287,23 +293,34 @@ final int registrationDateMillis;
 
 ### Running the code generation utility
 
-When creating `json_serializable` classes the first time, you will get errors similar to the image below.
+When creating `json_serializable` classes the first time, you will get errors
+similar to the image below.
 
-![IDE warning when the generated code for a model class does not exist yet.](/images/json/ide_warning.png)
+![IDE warning when the generated code for a model class does not exist
+yet.](/images/json/ide_warning.png)
 
-These errors are entirely normal and are simply because the generated code for the model class does not exist yet. To resolve this, we must run the code generator that generates the serialization boilerplate for us.
+These errors are entirely normal and are simply because the generated code for
+the model class does not exist yet. To resolve this, we must run the code
+generator that generates the serialization boilerplate for us.
 
 There are two ways of running the code generator.
 
 #### One-time code generation
 
-By running `flutter packages pub run build_runner build` in our project root, we can generate json serialization code for our models whenever needed. This triggers a one-time build which goes through our source files, picks the relevant ones and generates the necessary serialization code for them.
+By running `flutter packages pub run build_runner build` in our project root, we
+can generate json serialization code for our models whenever needed. This
+triggers a one-time build which goes through our source files, picks the
+relevant ones and generates the necessary serialization code for them.
 
-While this is pretty convenient, it would nice if we did not have to run the build manually every time we make changes in our model classes.
+While this is pretty convenient, it would nice if we did not have to run the
+build manually every time we make changes in our model classes.
 
 #### Generating code continuously
 
-A _watcher_ can make our source code generation progress more convenient. It watches changes in our project files and automatically builds the necessary files when needed. We can start the watcher by running `flutter packages pub run build_runner watch` in our project root.
+A _watcher_ can make our source code generation progress more convenient. It
+watches changes in our project files and automatically builds the necessary
+files when needed. We can start the watcher by running `flutter packages pub run
+build_runner watch` in our project root.
 
 It is safe to start the watcher once and leave it running in the background.
 
