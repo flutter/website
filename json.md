@@ -184,11 +184,13 @@ print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
 ```
 
-To serialize a user, we just call the `toJson` method in the `User` class.
+To serialize a user, we just pass the `User` object to the `JSON.encode` method.
+We don't need to call the `toJson` method here, since `JSON.encode` already does
+it for us.
 
 <!-- skip -->
 ```dart
-String json = JSON.encode(user.toJson());
+String json = JSON.encode(user);
 ```
 
 This way, the calling code does not have to worry about JSON serialization at
@@ -208,7 +210,7 @@ us. Luckily, there is!
 ## Serializing JSON using code generation libraries
 
 Although there are other libraries available, in this tutorial, we use the
-[json_serializable package](https://github.com/dart-lang/json_serializable). It
+[json_serializable package](https://pub.dartlang.org/packages/json_serializable). It
 is an automated source code generator that can generate the JSON serialization
 boilerplate for us.
 
@@ -345,7 +347,7 @@ Same goes for serialization. The calling API is the same as before.
 
 <!-- skip -->
 ```dart
-String json = JSON.encode(user.toJson());
+String json = JSON.encode(user);
 ```
 
 With `json_serializable`, we can forget any manual JSON serialization in the
