@@ -5,8 +5,9 @@ permalink: /json/
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a web
-server at some point. When making network-connected apps, the chances are that
-we need to consume some good old JSON, sooner or later.
+server or easily store structured data at some point. When making
+network-connected apps, the chances are that we need to consume some good old
+JSON, sooner or later.
 
 In this tutorial, we look into ways of using JSON with Flutter. We go over what
 JSON solution to use in different scenarios and why.
@@ -16,7 +17,10 @@ JSON solution to use in different scenarios and why.
 
 ## Which JSON serialization method is right for me?
 
-There isn't a one size fits all JSON solution for every project. 
+This article covers two general strategies for working with JSON:
+
+* Manual serialization and deserialization
+* Automated serialization and deserialization via code generation
 
 Different projects come with different complexities and use cases. For smaller
 proof-of-concept projects or quick prototypes, using code generators might be
@@ -79,7 +83,8 @@ using reflection.
 **What about dartson?**
 
 The [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
-reflection, which makes it not compatible with Flutter. </aside>
+reflection, which makes it not compatible with Flutter.
+</aside>
 
 Although we cannot use runtime reflection with Flutter, some libraries give us
 similarly easy to use APIs but are based on code generation instead. This
@@ -200,10 +205,11 @@ It would be nice if there were something that handled the JSON serialization for
 us. Luckily, there is!
 
 <a name="code-generation"></a>
-## Serializing JSON using json_serializable
+## Serializing JSON using code generation libraries
 
-The [json_serializable package](https://github.com/dart-lang/json_serializable)
-is an automated source code generator that can generate the JSON serializing
+Although there are other libraries available, in this tutorial, we use the
+[json_serializable package](https://github.com/dart-lang/json_serializable). It
+is an automated source code generator that can generate the JSON serialization
 boilerplate for us.
 
 Since the serialization code is not handwritten and maintained by us anymore, we
