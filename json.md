@@ -234,7 +234,7 @@ dependencies:
 
 dev_dependencies:
   # Your other dev_dependencies here
-  build_runner: ^0.6.1
+  build_runner: ^0.7.0
   json_serializable: ^0.3.0
 ```
 
