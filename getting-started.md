@@ -100,7 +100,7 @@ To edit your code and hot reload changes:
 1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`),
    or click the **Hot Reload button** (the button with the lightning bolt icon).
 
-A more detailed detailed description on how to use the IntelliJ plugin and which
+A more detailed description on how to use the IntelliJ plugin and which
 changes are supported by the hot reload feature can be found on the page
 [Developing apps in the IntelliJ IDE](../using-ide/).
 
