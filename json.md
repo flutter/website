@@ -70,14 +70,15 @@ serialization, [see here](#code-generation).
 The simple answer is no. 
 
 Such a library would require using runtime reflection, which is disabled in
-Flutter. Dart has supported _tree shaking_ for quite a long time. With tree
-shaking, we can “shake off” unused code from our release builds. Tree shaking
-allows us to optimize the size of our applications significantly.
+Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
+supported for quite a long time. With tree shaking, we can “shake off” unused
+code from our release builds. This allows us to optimize the size of our
+applications significantly.
 
-Since reflection makes all code implicitly used by default, it interferes with
-tree shaking. The tools cannot know what parts are unused at runtime; the
-redundant code is impossible to strip away. App sizes cannot be optimized when
-using reflection.
+Since reflection makes all code implicitly used by default, it makes tree
+shaking difficult. The tools cannot know what parts are unused at runtime, so
+the redundant code is hard to strip away. App sizes cannot be easily optimized
+when using reflection.
 
 <aside class="alert alert-info" markdown="1">
 **What about dartson?**
