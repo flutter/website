@@ -324,7 +324,7 @@ build manually every time we make changes in our model classes.
 
 #### Generating code continuously
 
-A _watcher_ can make our source code generation progress more convenient. It
+A _watcher_ can make our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. We can start the watcher by running `flutter packages pub run
 build_runner watch` in our project root.
@@ -361,4 +361,4 @@ appropriately.
 * [JsonCodec documentation](https://api.dartlang.org/stable/1.24.3/dart-convert/JsonCodec-class.html)
 * [The json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
 * [json_serializable examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
-* [Discussion about dart:mirrors](https://github.com/flutter/flutter/issues/1150)
+* [Discussion about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
