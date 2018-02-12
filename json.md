@@ -70,14 +70,15 @@ serialization, [see here](#code-generation).
 The simple answer is no. 
 
 Such a library would require using runtime reflection, which is disabled in
-Flutter. Dart has supported _tree shaking_ for quite a long time. With tree
-shaking, we can “shake off” unused code from our release builds. Tree shaking
-allows us to optimize the size of our applications significantly.
+Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
+supported for quite a long time. With tree shaking, we can “shake off” unused
+code from our release builds. This allows us to optimize the size of our
+applications significantly.
 
-Since reflection makes all code implicitly used by default, it interferes with
-tree shaking. The tools cannot know what parts are unused at runtime; the
-redundant code is impossible to strip away. App sizes cannot be optimized when
-using reflection.
+Since reflection makes all code implicitly used by default, it makes tree
+shaking difficult. The tools cannot know what parts are unused at runtime, so
+the redundant code is hard to strip away. App sizes cannot be easily optimized
+when using reflection.
 
 <aside class="alert alert-info" markdown="1">
 **What about dartson?**
@@ -324,7 +325,7 @@ build manually every time we make changes in our model classes.
 
 #### Generating code continuously
 
-A _watcher_ can make our source code generation progress more convenient. It
+A _watcher_ can make our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. We can start the watcher by running `flutter packages pub run
 build_runner watch` in our project root.
@@ -361,4 +362,4 @@ appropriately.
 * [JsonCodec documentation](https://api.dartlang.org/stable/1.24.3/dart-convert/JsonCodec-class.html)
 * [The json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
 * [json_serializable examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
-* [Discussion about dart:mirrors](https://github.com/flutter/flutter/issues/1150)
+* [Discussion about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
