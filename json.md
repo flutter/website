@@ -235,8 +235,8 @@ dependencies:
 
 dev_dependencies:
   # Your other dev_dependencies here
-  build_runner: ^0.7.0
-  json_serializable: ^0.3.0
+  build_runner: ^0.7.6
+  json_serializable: ^0.3.2
 ```
 
 Run `flutter packages get` inside your project root folder (or click "Packages
@@ -251,11 +251,6 @@ sake of simplicity, we use the dumbed-down JSON model from the previous samples.
 
 <!-- skip -->
 {% prettify dart %} 
-/// This allows the generated code access our class members. 
-/// The value for this is the same as the source file name, 
-/// in this case, user.dart without the .dart file extension.
-library [[highlight]]user[[/highlight]];
-
 import 'package:json_annotation/json_annotation.dart';
 
 /// This allows our `User` class to access private members in 
