@@ -234,8 +234,8 @@ dependencies:
 
 dev_dependencies:
   # Your other dev_dependencies here
-  build_runner: ^0.7.0
-  json_serializable: ^0.3.0
+  build_runner: ^0.7.6
+  json_serializable: ^0.3.2
 ```
 
 Run `flutter packages get` inside your project root folder (or click "Packages
