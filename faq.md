@@ -421,7 +421,7 @@ services and APIs from the operating system. However, we want to avoid the
 intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
-packages](https://pub.dartlang.org/flutter/packages) available in the Pub
+packages](https://pub.dartlang.org/flutter/) available in the Pub
 repository. Using an existing package [is easy](/using-packages/).
 
 Finally, we encourage developers to use Flutter's asynchronous message passing
@@ -524,6 +524,9 @@ Absolutely. There are libraries in
 [pub.dartlang.org](https://pub.dartlang.org) for JSON, XML,
 protobufs, and many other utilities and formats.
 
+For a detailed writeup on using JSON with Flutter, check out [the JSON
+tutorial](/json/).
+
 ### Can I build 3D (OpenGL) apps with Flutter?
 
 Today we don't support for 3D via OpenGL ES or similar. We have long-term plans
@@ -545,6 +548,12 @@ than a _debug build_.
 Learn more about creating a
 [release build of your Android app](https://flutter.io/android-release/),
 and creating a [release build of your iOS app](https://flutter.io/ios-release/).
+
+### Do Flutter apps run on Chromebooks?
+
+We have seen Flutter apps run on some Chromebooks.
+We are tracking
+[issues related to running Flutter on Chromebooks](https://github.com/flutter/flutter/labels/platform-arc).
 
 ## Framework
 

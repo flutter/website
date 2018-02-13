@@ -176,19 +176,24 @@ It is recommended practice to add the following documentation to all packages:
 
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the
-[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html/).
+[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
-1. Change directory to the location of your package
+1. Change directory to the location of your package:
+
    `cd ~/dev/mypackage`
 
 1. Tell the documentation tool where the Flutter SDK is (change to reflect where you placed it):
+
    `export FLUTTER_ROOT=~/dev/flutter` (on macOS or Linux)
+
    `set FLUTTER_ROOT=~/dev/flutter` (on Windows)
    
 1. Run the `dartdoc` tool (comes as part of the Flutter SDK):
-   `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc` (on Windows)
+
+   `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc` (on macOS or Linux)
+
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
 For tips on how to write API documentation, see [Effective Dart: Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).

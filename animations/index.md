@@ -107,7 +107,7 @@ image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
-* [Hero Animations](/animations/hero-animations/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+* [Hero Animations](/animations/hero-animations/)
 How to create two styles of Hero animations:
   * The hero flies from one page to another while changing position
     and size.
@@ -125,10 +125,12 @@ demo includes an example of a Hero animation.
 [PageRoute](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
 classes.
 
-{% comment %}
 ### Staggered animation
-We have nothing to show yet.
-{% endcomment %}
+
+Animations that are broken into smaller motions, where some of the motion is delayed.
+The smaller animations may be sequential, or may partially or completely overlap.
+
+* [Staggered Animations](/animations/staggered-animations/) <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
 
 ## Other resources
 

@@ -57,6 +57,16 @@
         "source" : "/intellij-ide/",
         "destination" : "/using-ide/",
         "type" : 301
+      },
+      {
+        "source": "/app/appcastwin.json",
+        "destination": "http://flutterapp.com",
+        "type": 301
+      },
+      {
+        "source": "/privacy",
+        "destination": "https://www.google.com/intl/en/policies/privacy/",
+        "type": 301
       }
     ]
   }

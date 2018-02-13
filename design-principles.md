@@ -52,7 +52,7 @@ also many other benefits of code reviews:
 We recommend you consider
 [these suggestions](https://testing.googleblog.com/2017/06/code-health-too-many-comments-on-your.html)
 for addressing code review comments on your PR.
- 
+
 If you're working on a big patch, don't hesitate to get reviews early,
 before you're ready to check code in. Also, don't hesitate to ask for
 multiple people to review your code, and don't hesitate to provide unsolicited
@@ -130,7 +130,7 @@ To make a change that will require developers to change their code:
       matters (so that people can spot these e-mails among the noise).
 
     - A summary of each change you propose.
-    
+
     - A link to the issue you filed in step 1, and any PRs you may have already
       posted relating to this change.
 
@@ -142,7 +142,7 @@ To make a change that will require developers to change their code:
 
     - A sincere offer to help port code, which includes the preferred venue for
       contacting the person who made the change.
-      
+
     - A request that people notify you if this change will be a problem,
       perhaps by discussing the change in the issue tracker on on the pull request.
 
@@ -152,6 +152,15 @@ To make a change that will require developers to change their code:
     24 hours during the work week so that people in all time zones have had a
     chance to see it, but ideally a week or so).
 
+ 4. If you landed a breaking change, add a bullet point to the top section of
+    the [Changelog page on the wiki](https://github.com/flutter/flutter/wiki/Changelog),
+    describing your change and
+    linking to your e-mail in [the mailing list archives](https://groups.google.com/forum/#!forum/flutter-dev).
+    To figure out the correct version heading for the changelog run
+    `git fetch upstream && flutter --version`. For example, if it says
+    "Flutter 0.0.23-pre.10" in the output your changelog entry should be under
+    heading "Changes since 0.0.22".
+
 Where possible, even "breaking" changes should be made in a backwards-compatible way,
 for example by introducing a new class and marking the old class `@deprecated`. When
 doing this, include a description of how to transition in the deprecation notice, for
@@ -159,7 +168,7 @@ example:
 
 <!-- skip -->
 ```dart
-@Deprecated('FooInterface has been deprecated; it is recommended that you transition to the new FooDelegate.')
+@Deprecated('FooInterface has been deprecated because ...; it is recommended that you transition to the new FooDelegate.')
 class FooInterface {
   /// ...
 }
@@ -344,6 +353,7 @@ into one mediocre solution. A conflict is addressed when the participants
 agree that the final solution is _better_ than all the conflicting proposals.
 Sometimes the solution is more work than either of the proposals. Please
 see the comments above where we introduce the phrase "embrace the yak shave".
+
 
 Code of conduct
 ---------------
