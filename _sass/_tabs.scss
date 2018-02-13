@@ -1,0 +1,33 @@
+// Tabs (e.g. in Getting Started, to select which OS to use for instruction)
+
+$tab-accent-color: $brand-color;
+
+ul.tabs__top-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.tabs__top-bar li {
+  background: none;
+  color: $grey-color;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs__top-bar li.current{
+  background: $tab-accent-color;
+  color: $background-color;
+}
+
+.tabs__content{
+  display: none;
+  border: 2px solid $tab-accent-color;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.tabs__content.current{
+  display: inherit;
+}
