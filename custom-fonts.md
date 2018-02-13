@@ -183,7 +183,7 @@ flutter:
     - family: Rock Salt
       fonts:
         # https://fonts.google.com/specimen/Rock+Salt
-        - asset: fonts/RockSalt.ttf
+        - asset: fonts/RockSalt-Regular.ttf
     - family: VT323
       fonts:
         # https://fonts.google.com/specimen/VT323

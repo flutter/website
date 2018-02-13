@@ -47,7 +47,7 @@ above are:
 get() async {
   var httpClient = new HttpClient();
   var uri = new Uri.http(
-      'http://example.com/', 'path1/path2', {'param1': '42', 'param2': 'foo'});
+      'example.com', '/path1/path2', {'param1': '42', 'param2': 'foo'});
   var request = await httpClient.getUrl(uri);
   var response = await request.close();
   var responseBody = await response.transform(UTF8.decoder).join();
@@ -58,9 +58,11 @@ See 'Example' below for a full code sample.
 
 ## Decoding and encoding JSON
 
-Support for decoding and encoding JSON is provided by the [`dart:convert`](https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html) library.
+Simple decoding and encoding of JSON is possible using the
+[`dart:convert`](https://docs.flutter.io/flutter/dart-convert/dart-convert-library.html)
+library. For additional JSON documentation, see [JSON and serialization](/json/).
 
-To decode the JSON string and parse the response into a Map:
+To decode a simple JSON string and parse the response into a Map:
 
 <!-- skip -->
 ```dart
@@ -69,7 +71,7 @@ Map data = JSON.decode(responseBody);
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
 
-To encode JSON, pass a simple value (string, boolean, or number literal), or a
+To encode simple JSON, pass a simple value (string, boolean, or number literal), or a
 Map, List, or List of Maps containing simple values, to the `encode` method:
 
 <!-- skip -->

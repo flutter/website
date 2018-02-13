@@ -6,10 +6,10 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 ### Clone the repo
 
 If this is the first time you're installing Flutter on this machine, clone the
-alpha branch of the repository and then add the `flutter` tool to your path:
+`dev` branch of the repository and then add the `flutter` tool to your path:
 
 {% commandline %}
-git clone -b alpha https://github.com/flutter/flutter.git
+git clone -b dev https://github.com/flutter/flutter.git
 export PATH=`pwd`/flutter/bin:$PATH
 {% endcommandline %}
 
@@ -42,7 +42,7 @@ For example:
       visit https://flutter.io/setup/#android-setup for detailed instructions.
 ```
 
-The first time you run the `flutter` command, it downloads its own dependencies and compiles
+The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
 itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.

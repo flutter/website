@@ -47,10 +47,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
-    mini_portile2 (2.1.0)
+    mini_portile2 (2.3.0)
     minitest (5.10.1)
-    nokogiri (1.7.0.1)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     parallel (1.10.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
@@ -81,4 +81,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   1.14.3
+   1.16.0
