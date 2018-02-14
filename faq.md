@@ -524,6 +524,9 @@ Absolutely. There are libraries in
 [pub.dartlang.org](https://pub.dartlang.org) for JSON, XML,
 protobufs, and many other utilities and formats.
 
+For a detailed writeup on using JSON with Flutter, check out [the JSON
+tutorial](/json/).
+
 ### Can I build 3D (OpenGL) apps with Flutter?
 
 Today we don't support for 3D via OpenGL ES or similar. We have long-term plans
