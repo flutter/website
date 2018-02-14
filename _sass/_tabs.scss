@@ -35,17 +35,16 @@ ul.tabs__top-bar li.current{
 // OS Tabs (e.g. in Getting Started). These are intended for short terminal
 // commands that are are OS specifc.
 
-
 ul.ostabs__top-bar {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: inline;
 }
 
 ul.ostabs__top-bar li {
-  display: inline;
-  border: 1px solid $tab-accent-color;
+  background: none;
+  color: $grey-color;
+  display: inline-block;
   padding: 5px 5px;
   cursor: pointer;
 }
@@ -57,8 +56,9 @@ ul.ostabs__top-bar li.current{
 
 .ostabs__content{
   display: none;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  border: 1px solid $tab-accent-color;
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 .ostabs__content.current{

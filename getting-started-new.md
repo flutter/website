@@ -127,13 +127,36 @@ Flutter apps in your editor of choice.
 ## 3: Installing the Flutter SDK
 
    1. Download the latest beta SDK from the [Flutter download page](todo).
-   1. Select the desired installation location, and unzip the downloaded SDK:
-   {% commandline %}
-   cd /users/Obiwan/development/
-   unzip /users/Obiwan/downloads/flutter-sdk.zip
-   cd flutter
-   export PATH=`pwd`/flutter/bin:$PATH
-   {% endcommandline %}
+   1. Install the downloaded SDK:
+
+<ul class="ostabs__top-bar">
+    <li class="ostab-link current" data-tab="tab-os-install-windows">Windows</li>
+    <li class="ostab-link" data-tab="tab-os-install-mac">Mac</li>
+    <li class="ostab-link" data-tab="tab-os-install-linux">Linux</li>
+</ul>
+<div id="tab-os-install-windows" class="ostabs__content current" markdown="1">
+   1. In Windows Explorer, navigate to 'Downloads'
+   1. Double click `flutter-sdk.zip`
+   1. Click Extract
+   1. Place the extracted files in your desired directory
+</div>
+<div id="tab-os-install-mac" class="ostabs__content" markdown="1">
+```
+cd /users/Obiwan/development/
+unzip /users/Obiwan/downloads/flutter-sdk.zip
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
+```
+</div>
+<div id="tab-os-install-linux" class="ostabs__content" markdown="1">
+```
+cd /users/Obiwan/development/
+unzip /users/Obiwan/downloads/flutter-sdk.zip
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
+```
+</div>
+
 
 ## 4: Validate your setup with the flutter doctor
 

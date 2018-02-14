@@ -39,8 +39,8 @@ function setupOsTabs() {
   function selectOperatingSystemInTabs(osName) {
     clearTabsCurrent();
 
-    $("li[data-tab='tab-sdk-install-" + osName + "']").addClass('current');
-    $('#tab-sdk-install-' + osName).addClass('current');
+    $("li[data-tab='tab-os-install-" + osName + "']").addClass('current');
+    $('#tab-os-install-' + osName).addClass('current');
   }
 
   if (window.navigator.userAgent.indexOf("Mac") != -1) {
