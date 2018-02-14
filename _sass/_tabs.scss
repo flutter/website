@@ -1,0 +1,67 @@
+$tab-accent-color: $brand-color;
+
+// General tabs. These are intended for instructions that vary according to user
+// selection, e.g. around editor choice in getting started.
+
+ul.tabs__top-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+
+ul.tabs__top-bar li {
+  display: inline;
+  border: 1px solid $tab-accent-color;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+ul.tabs__top-bar li.current{
+  background: $tab-accent-color;
+  color: $background-color;
+}
+
+.tabs__content{
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tabs__content.current{
+  display: inherit;
+}
+
+// OS Tabs (e.g. in Getting Started). These are intended for short terminal
+// commands that are are OS specifc.
+
+
+ul.ostabs__top-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+
+ul.ostabs__top-bar li {
+  display: inline;
+  border: 1px solid $tab-accent-color;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+ul.ostabs__top-bar li.current{
+  background: $tab-accent-color;
+  color: $background-color;
+}
+
+.ostabs__content{
+  display: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.ostabs__content.current{
+  display: inherit;
+}
+
