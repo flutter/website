@@ -14,7 +14,8 @@ experience with Dart or mobile programming.
 
 ### What are Flutter and Dart?
 
-_Flutter_ is a mobile app SDK to help developers and designers build modern mobile apps for iOS and Android.
+_Flutter_ is a mobile app SDK to help developers and designers build
+modern mobile apps for iOS and Android.
 
 _Dart_ is an application programming language from Google that's easy
 to learn, easy to use, and deployable everywhere. Flutter apps are
@@ -22,17 +23,17 @@ written in Dart.
 
 ### What you'll build
 
-You'll implement a simple mobile app that proposes startup names.
-The user can select and unselect proposed names, saving the best ones.
-The code generates ten names at a time. As the user scrolls, new
-batches of names are generated.
+You'll implement a simple mobile app that proposes names for a startup
+company.  The user can select and unselect proposed names,
+saving the best ones.  The code generates ten names at a time.
+As the user scrolls, new batches of names are generated.
 
 <center><img src="images/StartupNameGenerator-screenshot.png" alt="Screenshot of the name generator"></center>
 <center>[PENDING: Temporary image - replace this with video.]</center><br><br>
 
-The following video shows how the app works:
+The following video shows how the finished app works:
 
-[PENDING: insert video]
+[PENDING: Matt is making the video]
 
 <div class="whats-the-point" markdown="1">
 
@@ -42,7 +43,7 @@ The following video shows how the app works:
 * Finding and using packages to extend functionality.
 * Using hot reload for a quicker development cycle.
 * How to implement a stateful widget.
-* How to create an infinite lazily loaded list.
+* How to create an infinite, lazily loaded list.
 * How to create and navigate to a second screen.
 * ...
 
@@ -54,101 +55,24 @@ The following video shows how the app works:
 
 This tutorial requires version xxx or later of the Flutter SDK.
 When you install Flutter, you get the correct version of the Dart SDK
-as part of the install.
+as part of the install. You also get a Flutter Simulator, which you can
+use instead of a physical mobile device.
 
 These instructions feature the Android Studio IDE, but you
 can use whichever tools you prefer&mdash;Flutter and Dart plugins
 are also available for VSCode and JetBrains products.
-You can test your code using Flutter's Simulator or an actual
-device.
 
-See [Mit's new setup page](xxx) for information on how to set up
-your environment.
+See [Mit's new setup page](todo) for information on how to set up
+your environment and create your first simple Flutter app.
 
 </div>
 
-## Step 1: Create a basic Flutter app
+## Step 1: Create the starting Flutter app
 
-In this step, you create a Flutter app, no coding required.
-Android Studio uses a template to provide all the files your
-app needs.
-
-<ol markdown="1">
-
-<li markdown="1">Launch Android Studio <img src="images/AndroidStudioIcon.png" alt="Icon for Android Studio">
-</li>
-
-<li markdown="1">In the **Welcome to Android Studio** window, click
-    **Start a New Flutter project**. A **New Flutter Project**
-    form appears.
-</li>
-
-<li markdown="1">Select **Flutter Application** from the images
-    that appear. Click **NEXT**.
-</li>
-
-<li markdown="1">[PENDING: A way to select a "HelloWorld" app,
-    rather than the default click counting app, is coming.]
-</li>
-
-<li markdown="1">In the form that appears, enter
-    **startup_namer**.
-</li>
-
-<li markdown="1">If the **Flutter SDK path** field is empty,
-    enter the location of the SDK on your hard drive.
-    Change the **Project location** or **Description** fields,
-    if you wish. Click **NEXT**.
-</li>
-
-<li markdown="1">A **Set the package name** form appears.
-    [PENDING: Do we care about this one?] Click **FINISH**.
-</li>
-
-</ol>
-
-### What did you get?
-
-An Android Studio project window appears, called **startup_namer**.
-On your hard drive, Android Studio created a directory
-with the same name that contains all the files
-you'll need to create and run a simple Flutter app.
-Here are the most important files:
-
-* **lib/main.dart**: Bootstraps the application to run on a mobile
-  device or a simulator. It runs on both iOS and Android. This file will
-  contain all the Dart code needed for this example.
-* **pubspec.yaml**: Describes this Flutter package (the app) and
-  its dependencies. As you add packages or images to your app, you
-  list them in the pubspec file.
-
-### Run the app
-
-Make sure that you have a connected device, or a running Simulator
-before attempting to launch the app.
-
-<ol markdown="1">
-
-<li markdown="1"> Click the green "run" button
-    (<img src="images/green-run.png">) at the top of the
-    window.
-</li>
-
-<li markdown="1"> In the lib/main.dart file, modify the text to
-    something else, such as "Bonjour le monde".
-</li>
-
-<li markdown="1"> Update the running app by clicking the
-    hot reload button, which looks like a lightning bolt,
-    (<img src="images/hot-reload-button.png" alt="hot reload lightning bolt image">).
-</li>
-
-</ol>
-
-Hot reload modifies the running app without otherwise changing the
-app's state. When you need a full app restart,
-use the green run button, but when you want to update the running
-app while preserving state, use hot reload.
+Create a basic Flutter app, using the instructions in [Mit's new page,
+preferably linked to a specific anchor for creating the templated
+app](todo). Name the project **startup_namer**. You'll be modifying
+this starter app to create the finished app.
 
 ### View the code
 
@@ -179,7 +103,7 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-### <img src="images/eyeball.png" alt="image of an eyeball">Observations
+### Observations
 
 <ul markdown="1">
 
@@ -191,7 +115,7 @@ class MyApp extends StatelessWidget {
 </li>
 <li markdown="1"> The app extends StatelessWidget which makes
     the app itself a widget.  In Flutter, most everything is a widget,
-    including alignment and padding.
+    including alignment, padding, and layout.
 </li>
 <li markdown="1"> The Scaffold widget, from the Material library,
     provides a default app bar, title, and a body property
@@ -208,7 +132,7 @@ class MyApp extends StatelessWidget {
     of other, lower level widgets.
 </li>
 <li markdown="1"> Moving the "hello world" text into a separate
-    widget, HelloWorld, creates an identical widget tree:
+    widget, HelloWorld, results in an identical widget tree:
 </li>
 </ul>
 
@@ -224,4 +148,200 @@ class HelloWorld extends StatelessWidget {
 }
 {% endprettify %}
 
+---
 
+## Step 2: Use an external package
+
+In this step, you'll start using an open-source package named
+**english_words**, which contains a few thousand of the most used
+English words plus some utility functions.
+
+You can find the
+[english_words](https://pub.dartlang.org/packages/english_words)
+package, as well as many other open source packages, on
+[pub.dartlang.org](https://pub.dartlang.org/).
+
+<ol markdown="1">
+
+<li markdown="1">
+In **pubspec.yaml**, add **english_words** (3.0.1 or higher)
+to the **dependencies** list. The new line is highlighted below:
+
+<!-- skip -->
+{% prettify yaml %}
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.0
+  [[highlight]]english_words: ^3.0.1[[/highlight]]
+{% endprettify %}
+</li>
+
+<li markdown="1">
+Click **Packages get**, at the upper right of Android Studio
+editor's view of `pubspec.yaml`. This pulls the package into
+your project.
+</li>
+<li markdown="1">
+In **lib/main.dart**, add the import for `english_words`, as
+shown in the highlighted line:
+
+{% prettify dart %}
+import 'package:flutter/material.dart';
+[[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
+{% endprettify %}
+
+As you type, Android Studio gives you suggestions for libraries to
+import.  It then renders the import string in gray, letting you know
+that the imported library is unused (so far).
+</li>
+<li markdown="1">
+Use the English Words package to generate the text for Hello World by
+adding the RandomWords class and using an instance of RandomWords
+as the child for the Center widget. The changes are highlighted
+below:
+
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Welcome to Flutter',
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Welcome to Flutter'),
+        ),
+        body: new Center(
+          [[highlight]]//child: new Text('Hello World')[[/highlight]]  //old line
+          [[highlight]]child: new RandomWords(),[[/highlight]] //new line
+        ),
+      ),
+    );
+  }
+}
+
+// new class
+[[highlight]]class RandomWords extends StatelessWidget {[[/highlight]]
+  [[highlight]]@override[[/highlight]]
+  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
+    [[highlight]]var wordPair = generateWordPairs().first;[[/highlight]]
+    [[highlight]]return new Center([[/highlight]]
+      [[highlight]]child: new Text('${wordPair.first} ${wordPair.second}'),[[/highlight]]
+    [[highlight]]);[[/highlight]]
+  [[highlight]]}[[/highlight]]
+[[highlight]]}[[/highlight]]
+{% endprettify %}
+</li>
+<li markdown="1">
+If the app is running, use the hot reload button
+(<img src="images/hot-reload-button.png" alt="lightning bolt icon")
+to update the running app. Each time you click hot reload, you should
+see two different words, chosen at random, in the running app.
+</li>
+</ol>
+
+### Problems?
+
+If your app isn't running correctly, look for typos.
+
+The files you edited in this step should now look like this
+(minus the comments):
+
+**pubspec.yaml**
+
+{% prettify yaml %}
+name: startup_namer
+description: A new Flutter application.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.0
+  english_words: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+{% endprettify %}
+
+**lib/main.dart**
+
+{% prettify dart %}
+import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Welcome to Flutter',
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Welcome to Flutter'),
+        ),
+        body: new Center(
+          child: new RandomWords(),
+        ),
+      ),
+    );
+  }
+}
+
+class RandomWords extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var wordPair = generateWordPairs().first;
+    return new Center(
+      child: new Text('${wordPair.first} ${wordPair.second}'),
+    );
+  }
+}
+{% endprettify %}
+
+---
+
+## Step 3: Add a Stateful widget
+
+Stateless widgets are immutable, meaning that their
+properties can't change&mdash;all values are final.
+
+Stateful widgets maintain state that might change during the
+lifetime of the widget. Implementing a stateful widget requires
+at least two classes: 1) a StatefulWidget class that creates an
+instance of 2) a State class.
+The StatefulWidget class is, itself, immutable,
+but the State class persists over the lifetime of the widget.
+
+In this step, we'll change RandomWords to be a stateful widget.
+The accompanying State class, _RandomWordsState,
+maintains lists of proposed and favorite word pairs.
+
+[PENDING: Realized we need to make sure the final code is final
+and have it reviewed by Ian or another SWE.]
+
+<ol markdown="1">
+
+<li markdown="1">
+</li>
+
+<li markdown="1">
+</li>
+
+<li markdown="1">
+</li>
+
+<li markdown="1">
+</li>
+
+</ol>
