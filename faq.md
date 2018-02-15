@@ -518,6 +518,19 @@ solutions for this.
 Check out an
 [example of using isolates with Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
 
+### Can I run Dart code in the background of an Flutter app?
+
+Running code in the background has platform-specific APIs due to fundamental
+differences in the support for background execution on each of the for Android
+and iOS platforms.
+
+On Android, the [`android_alarm_manager`](https://pub.dartlang.org/packages/android_alarm_manager)
+plugin enables you to run Dart code in the background, even when your Flutter
+app is not in the foreground.
+
+On iOS we currently do not support this capability. Please keep an eye on [bug
+6192] (https://github.com/flutter/flutter/issues/6192) for updates.
+
 ### Can I use JSON/XML/protobuffers/etc with Flutter?
 
 Absolutely. There are libraries in
