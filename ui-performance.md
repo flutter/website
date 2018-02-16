@@ -289,7 +289,7 @@ its time.
     This grabs the stack at its current state
     and displays a screen that looks something like the following:
 
-<center><img src="images/timeline-initial.png" alt="screenshot of the timeline with values from the running app"></center>
+<center><img srw="images/timeline-initial.png" alt="Screenshot of the timeline with values from the running app"></center>
 
 <!--
 1. Each of the "hairs" on the timeline represent a time slice from the Dart profiler.
@@ -313,7 +313,7 @@ You'll see slices for each phase: layout, compositing, animation, etc.
 
     Once enlarged, the bottom middle graph looks like the following:
 
-<center><img sr="images/timeline-data-enlarged.png" "alt="Screenshot showing blocks of color with text labels"></center>
+<center><img src="images/timeline-data-enlarged.png" "alt="Screenshot showing blocks of color with text labels"></center>
 
     Click on one of the hairs and you'll see a stack trace with the corresponding
     Dart code for that instant.
