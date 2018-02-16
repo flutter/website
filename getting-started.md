@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Getting Started with Flutter
-permalink: /getting-started-new/
+permalink: /getting-started/
 ---
 
 This page describes how to prepare your development environment to run Flutter
