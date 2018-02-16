@@ -1,119 +1,237 @@
 ---
 layout: page
-title: Getting started with your first Flutter app
-
-permalink: /getting-started/
+title: Getting Started with Flutter
+permalink: /getting-started-new/
 ---
 
-This page describes how to create and run your first Flutter app.
+This page describes how to prepare your development environment to run Flutter
+apps on Android. A [later step](todo) will detail how to run Flutter apps on iOS.
 
-{% include note.html content="The Flutter SDK is a prerequisite for the tasks on this page. 
-Make sure you [install the Flutter SDK](/setup/) before continuing." %}
+## 1: Select your preferences
 
-* Placeholder for TOC
-{:toc}
+Flutter is a flexible toolkit, so please start by selecting your development
+tool of choice for writing, building, and running your Flutter app.
 
-## Creating your first Flutter app
+<ul class="tabs__top-bar">
+    <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
+    <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
+    <li class="tab-link" data-tab="tab-install-terminal">Terminal + editor</li>
+</ul>
 
-To create a starter project, open a terminal and run the `flutter create <project name>` command .
+<div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
 
-Here is an example:
+*Android Studio:* A complete, integrated IDE experience for Flutter. 
 
-{% commandline %}
-flutter create myapp
-{% endcommandline %}
+## 2: Android Studio setup
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
-app that uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+<aside id="note" class="alert alert-info" markdown="1">
+**Note** you can also use other IntelliJ IDEs such as [IntelliJ
+IDEA](https://www.jetbrains.com/idea/download/), however you still need Android
+Studio installed to aquire needed Android components.)
+</aside>
 
-In the project directory, the code for your app is in `myapp/lib/main.dart`.
+### 2a. Install Android Studio:
 
-## Running your Flutter app
+   * Download and install Android Studio 3.0 or later from the the [Android
+     Studio site](https://developer.android.com/studio/index.html)
 
-Use the `flutter run` command to run your Flutter app on a connected
-device or simulator.
+### 2b. Install the Flutter and Dart plugins:
 
-To run your app from the command-line:
+   * The `Flutter` plugin powers Flutter developer workflows (running,
+     debugging, hot reload, etc.).
+   * The `Dart` plugin offers code analysis (code validation as you type, code
+     completions, etc.).
 
-1. Open a terminal and change directories to the root of your app (the same directory that
-contains the `pubspec.yaml` file for your project).
-2. Run the following command. Once the `flutter` tool is running, if you change the app's
-source code, you can hit `r` to hot-reload your application (updating the source on the fly
-without actually restarting the entire app).
+Installation steps:
 
-{% commandline %}
-cd myapp
-flutter run
-{% endcommandline %}
+   1. Start IntelliJ IDEA or Android Studio.
+   1. Open plugin preferences (**Preferences>Plugins** on macOS,
+      **File>Settings>Plugins** on Windows & Linux).
+   1. Select **Browse repositories…**,  select the Flutter plug-in and click
+      `install`.
+   1. Click `Yes` when prompted to install the Dart plugin.
+   1. Click `Restart` when prompted.
 
+## 3: Installing the Flutter SDK, and creating your first Flutter app
 
-If more than one device is connected, use the `flutter devices` command
-to get their IDs, and then `flutter run -d deviceID` to run your app.
+   1. Select **File>New Flutter Project**
+   1. Under **Flutter SDK path**, select **Install SDK...**, and enter the
+      location where you want to install the Flutter SDK
+   1. Click **OK**
+   1. Wait for Android Studio to install the SDK, and create the project.
 
-Alternatively, if you are using the [IntelliJ
-IDEA](https://www.jetbrains.com/idea/) IDE (either the free Community Edition, or the
-Ultimate Edition) with the [Flutter
-plugins](/ide-setup/), you can start your Flutter app from there:
+## 4: Run the Flutter app
 
-1. In IntelliJ, click **Create New Project** from the Welcome window or
-**File > New > Project...** from the main IDE window.
-1. Select **Flutter** in the menu, and click **Next**.
-1. Under **Project location** enter, or browse to, the directory holding your new Flutter app.
-1. Click **Finish**.
-1. Click the **Run icon** in the toolbar, or invoke the menu item **Run > Run**.
+   1. Locate the main Android Studio toolbar:<br>
+      ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+   1. In the **target selector**, select an Android device for running the app.
+      If none are listed as available, select **Tools>Android>AVD Manager** and
+      create one there. For details, see [Managing
+      AVDs](https://developer.android.com/studio/run/managing-avds.html).
+   1. Click the **Run icon** in the toolbar, or invoke the menu item **Run >
+      Run**.
+   1. If everything works, you should see your starter app on your device or
+      simulator:<br>
+      ![Starter App on Android](/images/flutter-starter-app-android.png)
 
-![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+## 5: Try a hot reload
 
-*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
-has not been able to discover any connected iOS or Android devices or simulators.
-You need to connect a device, or start a simulator, to proceed.
+Flutter offers a fast development cycle with _hot reload_, the ability to reload
+the code of a live running app without restarting or losing app state. Simply
+make a change to your source code, tell your IDE or command-line tool that you
+want to hot reload, and see the change in your simulator, emulator, or device.
 
-If everything works, you should see your starter app on your device or simulator.
+  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Do not press the 'Stop' button; let your app continue to run.
+  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
+     **Hot Reload button** (the button with the lightning bolt icon).
 
-<div id="starter-app-screenshots">
-  <figure style='display: inline-block'>
-    <img src="/images/flutter-starter-app-ios.png" alt="Starter App on iOS">
-    <figcaption>Figure 1. iOS (iPhone 6s Plus)</figcaption>
-  </figure>
-  <figure style='display: inline-block'>
-    <img src="/images/flutter-starter-app-android.png" alt="Starter App on Android">
-    <figcaption>Figure 2. Android (Nexus 6P)</figcaption>
-  </figure>
+You should see the updated string in the running app almost immediately.
+
 </div>
 
-## Quickly viewing source code changes with 'hot reload'
+<div id="tab-install-vscode" class="tabs__content" markdown="1">
 
-Flutter offers a fast development cycle with _hot reload_,
-the ability to reload the code of a live running app
-without restarting or losing app state. Simply make a
-change to your source code, tell your IDE or command-line
-tool that you want to hot reload, and see the change
-in your simulator, emulator, or device.
+*VS Code:* A light-weight editor with Flutter run and debug support.
 
-![Hot reload in IntelliJ](/images/intellij/hot-reload.gif)
+## 2: Android Studio setup
 
-To edit your code and hot reload changes:
+**TODO TODO TODO TODO TODO TODO TODO.**
 
-1. Start your app with 'Run' (without breakpoints) or 'Debug' (with breakpoints).
-1. Make desired changes in your source code.
-1. Do not press the 'Stop' button; let your app continue to run.
-1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`),
-   or click the **Hot Reload button** (the button with the lightning bolt icon).
+</div>
 
-A more detailed description on how to use the IntelliJ plugin and which
-changes are supported by the hot reload feature can be found on the page
-[Developing apps in the IntelliJ IDE](../using-ide/).
+<div id="tab-install-terminal" class="tabs__content" markdown="1">
+
+*Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
+for running and building.
+
+## 2: Android Studio setup
+
+<aside id="note" class="alert alert-info" markdown="1">
+**Note** Android Studio must be installed and initialized to get all required
+Android components. Once they have been installed, you can continue to developer
+Flutter apps in your editor of choice.
+</aside>
+
+   1. Download and install Android Studio 3.0 or later from the the [Android
+      Studio site](https://developer.android.com/studio/index.html)
+   1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
+      This will install the latest Android SDK, Android SDK Platform-Tools, and
+      Android SDK Build-Tools, which are required by Flutter when developing for
+      Android.
+   1. Select **File>New Project** to create a regular Android project, and wait
+      for it to initialize. Then select **Tools>Android>AVD Manager** make sure
+      at least one Emulator image has been defined.
+   1. Start the Emulator image.
+
+## 3: Installing the Flutter SDK
+
+   1. Download the latest beta SDK from the [Flutter download page](todo).
+   1. Install the downloaded SDK:
+
+<ul class="ostabs__top-bar">
+    <li class="ostab-link current" data-tab="tab-os-install-windows">Windows</li>
+    <li class="ostab-link" data-tab="tab-os-install-mac">Mac</li>
+    <li class="ostab-link" data-tab="tab-os-install-linux">Linux</li>
+</ul>
+<div id="tab-os-install-windows" class="ostabs__content current" markdown="1">
+   1. In Windows Explorer, navigate to 'Downloads'
+   1. Double click `flutter-sdk.zip`
+   1. Click Extract
+   1. Place the extracted files in your desired directory
+</div>
+<div id="tab-os-install-mac" class="ostabs__content" markdown="1">
+```
+cd /users/Obiwan/development/
+unzip /users/Obiwan/downloads/flutter-sdk.zip
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
+```
+</div>
+<div id="tab-os-install-linux" class="ostabs__content" markdown="1">
+```
+cd /users/Obiwan/development/
+unzip /users/Obiwan/downloads/flutter-sdk.zip
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
+```
+</div>
+
+
+## 4: Validate your setup with the flutter doctor
+
+   1. Run the following command to see if there are any dependencies you need to
+      install to complete the setup:
+   {% commandline %}
+   flutter doctor
+   {% endcommandline %}
+
+This command checks your environment and displays a report to the terminal window.
+The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
+Check the output carefully for other software you may need to install or further 
+tasks to perform (shown in **bold** text).
+
+For example:
+```
+[-] Android toolchain - develop for Android devices
+    • Android SDK at /Users/obiwan/Library/Android/sdk
+    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
+    • Try re-installing or updating your Android SDK,
+      visit https://flutter.io/setup/#android-setup for detailed instructions.
+```
+
+The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
+itself. Subsequent runs should be much faster.
+
+## 4: Creating your first Flutter app
+
+   1. Use the `flutter create` command to create a new project:
+   {% commandline %}
+   cd /users/Obiwan/projects/
+   flutter create hello_flutter
+   cd hello_flutter
+   {% endcommandline %}
+
+## 5: Run the Flutter app
+
+   1. Check that an Android device is running. If none is shown, go back to step 2.
+   {% commandline %}
+   flutter devices
+   {% endcommandline %}
+   1. Run the app with the `flutter run command`:
+   {% commandline %}
+   flutter run
+   {% endcommandline %}
+
+   1. If everything works, after the app has been built, you should see your
+      starter app on your device or simulator:<br>
+      ![Starter App on Android](/images/flutter-starter-app-android.png)
+
+## 6: Try a hot reload
+
+Flutter offers a fast development cycle with _hot reload_, the ability to reload
+the code of a live running app without restarting or losing app state. Simply
+make a change to your source code, tell your IDE or command-line tool that you
+want to hot reload, and see the change in your simulator, emulator, or device.
+
+  1. Open the file `lib/main.dart` in your favorite Dart code editor
+  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Do not press the 'Stop' button; let your app continue to run.
+  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
+     **Hot Reload button** (the button with the lightning bolt icon).
+
+You should see the updated string in the running app almost immediately.
+
+<ul class="ostabs__top-bar">Current development OS:
+    <li class="ostab-link" data-tab="tab-install-windows">Windows</li>
+    <li class="ostab-link" data-tab="tab-install-linux">Linux</li>
+    <li class="ostab-link" data-tab="tab-install-mac">Mac</li>
+</ul>
+
+</div>
 
 ## Next steps
 
-Please reach out to us at our [mailing list][mailinglist]. We'd love
-to hear from you!
-
-You might also want to check out:
-* [Building Beautiful UIs with Flutter - Codelab](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)
-* [Introduction to Flutter's Widget Framework](/widgets-intro/)
-
-Happy Fluttering!
-
-
-[mailinglist]: mailto:flutter-dev@googlegroups.com
+Now that you have your first Flutter app running, and have experienced 'hot
+reload', let's learn some core Flutter concepts, and [extend the 'Hello from
+Flutter'-app](/getting-started/app/) to a more complete app.
