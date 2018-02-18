@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Material Design Widgets
+title: Material Components Widgets
 
 permalink: widgets/material/
 ---

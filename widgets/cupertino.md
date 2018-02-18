@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cupertino (iOS-style) Widgets
+title: Cupertino (Apple-style) Widgets
 
 permalink: widgets/cupertino/
 ---

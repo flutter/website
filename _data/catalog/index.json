@@ -6,8 +6,8 @@
     "id":"basics"
   },
   {
-    "name": "Material Design",
-    "description": "Visual, behavioral, and motion-rich widgets implementing Google’s <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
+    "name": "Material Components",
+    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
     "subcategories": [
       {
         "name": "App structure and navigation"
@@ -32,7 +32,7 @@
     "id":"material"
   },
   {
-    "name": "Cupertino (iOS-style widgets)",
+    "name": "Cupertino (Apple-style widgets)",
     "description": "Beautiful and high-fidelity widgets for current iOS design language.",
     "id":"cupertino"
   },
@@ -66,7 +66,7 @@
   },
   {
     "name": "Input",
-    "description": "Take user input in addition to input widgets in in Material Design and Cupertino.",
+    "description": "Take user input in addition to input widgets in Material Components and Cupertino.",
     "id":"input"
   },
   {

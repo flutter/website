@@ -114,6 +114,6 @@ void main() {
 ```
 
 <h2>See also:</h2>
-- The "Components-Tabs" section of the material design specification:
+- The "Components-Tabs" section of the Material Design specification:
     <https://material.io/guidelines/components/tabs.html>
 - The source code in [examples/catalog/lib/tabbed_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/tabbed_app_bar.dart).
