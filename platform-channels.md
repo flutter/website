@@ -356,7 +356,19 @@ Next, we add the actual Android Kotlin code that uses the Android battery APIs t
 retrieve the battery level. This code is exactly the same as you would have
 written in a native Android app.
 
-Add the following as a new method in the `MainActivity` class, below the `onCreate`
+First, add the needed imports at the top of the file:
+
+```
+import android.content.Context
+import android.content.ContextWrapper
+import android.content.Intent
+import android.content.IntentFilter
+import android.os.BatteryManager
+import android.os.Build.VERSION
+import android.os.Build.VERSION_CODES
+```
+
+Next, add the following as a new method in the `MainActivity` class, below the `onCreate`
 method:
 
 ```kotlin
@@ -372,18 +384,6 @@ method:
 
     return batteryLevel
   }
-```
-
-Add the corresponding imports:
-
-```
-import android.content.Context
-import android.content.ContextWrapper
-import android.content.Intent
-import android.content.IntentFilter
-import android.os.BatteryManager
-import android.os.Build.VERSION
-import android.os.Build.VERSION_CODES
 ```
 
 Finally, we complete the `onMethodCall` method we added earlier. We need to
