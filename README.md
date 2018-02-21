@@ -38,6 +38,48 @@ A tldr version follows:
 1. Prior to submitting, run link validation:<br>
 `rake checklinks`
 
+## Deploy to a staging site
+
+For edits made directly in the GitHub web UI, the changes will be deployed to a
+staging site (such as `https://flutter-io-deploy-three.firebaseapp.com/inspector`)
+by the Travis job.
+
+For edits you make locally (using the 'developing' steps above), you can deploy them
+to a personal staging site as follows (steps 1 and 2 need to be done only once):
+
+1. In the [Firebase Console](https://console.firebase.google.com),
+create your own Firebase project (e.g. 'mit-flutter-staging')
+
+1. Tell Firebase about that project with the firebase
+[`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
+	```
+	$ firebase use --add
+	? Which project do you want to add? <select the project you created>
+	? What alias do you want to use for this project? (e.g. staging) staging
+	```
+
+1. Tell Firebase that you want to deploy to staging:
+	```
+	$ firebase use staging
+	Now using alias staging (<your project name>)
+	```
+
+1. Tell Firebase to deploy:
+	```
+	$ firebase use staging
+	Now using alias staging (<your project name>)
+	$ firebase deploy
+
+	=== Deploying to '<your project name>'...
+
+	i  deploying hosting
+	i  hosting: preparing _site directory for upload...
+	✔  hosting: 213 files uploaded successfully
+	i  starting release process (may take several minutes)...
+
+	✔  Deploy complete!
+	```
+
 ## Writing for flutter.io
 
 (Eventually, this section should be expanded to its own page.)
