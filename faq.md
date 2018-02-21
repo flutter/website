@@ -163,7 +163,7 @@ framework.
 ### Does Flutter come with widgets?
 
 Yes! Flutter ships with a set of
-[high quality Material Design and Cupertino (Apple-style) widgets][widgets], layouts,
+[high quality Material Design and Cupertino (iOS-style) widgets][widgets], layouts,
 and themes. Of
 course, these widgets are only a starting point.
 Flutter is designed to make it easy to
@@ -207,7 +207,7 @@ is involved).
 ### Does Flutter use my system's OEM widgets?
 
 No. Instead, Flutter provides a set of widgets
-(including Material Design and Cupertino (Apple-styled) widgets),
+(including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
 [catalog of Flutter's widgets](/widgets/).

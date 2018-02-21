@@ -32,7 +32,7 @@
     "id":"material"
   },
   {
-    "name": "Cupertino (Apple-style widgets)",
+    "name": "Cupertino (iOS-style widgets)",
     "description": "Beautiful and high-fidelity widgets for current iOS design language.",
     "id":"cupertino"
   },

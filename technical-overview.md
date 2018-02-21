@@ -41,7 +41,7 @@ What are some advantages of Flutter? It helps you:
             hot reload)
         *   Fix crashes and continue debugging from where the app left off
 *   Create beautiful, highly-customized user experiences
-    *   Benefit from a rich set of Material Design and Cupertino (Apple-flavor)
+    *   Benefit from a rich set of Material Design and Cupertino (iOS-flavor)
         widgets built using Flutter's own framework
     *   Realize custom, beautiful, brand-driven designs, without the
         limitations of OEM widget sets

@@ -82,7 +82,7 @@ hide_title: true
         <p>
         Delight your users with Flutter's beautiful,
         built-in widgets, both Material Design and
-        Cupertino (Apple-flavor), rich motion APIs,
+        Cupertino (iOS-flavor), rich motion APIs,
         smooth natural scrolling, and platform awareness.
         </p>
 
