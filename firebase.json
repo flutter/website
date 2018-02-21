@@ -67,6 +67,11 @@
         "source": "/privacy",
         "destination": "https://www.google.com/intl/en/policies/privacy/",
         "type": 301
+      },
+      {
+        "source": "/get-started/",
+        "destination": "/setup/",
+        "type": 301
       }
     ]
   }
