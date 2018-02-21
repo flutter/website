@@ -1,11 +1,8 @@
 ---
 layout: page
-title: "Get Started: Path setup"
-permalink: /get-started/setup-path/
+title: "Get Started: System Requirements"
+permalink: /get-started/system-requirements/
 ---
-
-If you wish to run Flutter from the Terminal / Command Promt,
-you need to add it to path:
 
 <ul class="ostabs__top-bar">
     <li class="ostab-link current" data-tab="tab-os-install-windows">Windows</li>
@@ -14,13 +11,13 @@ you need to add it to path:
 </ul>
 
 <div id="tab-os-install-windows" class="ostabs__content current" markdown="1">
-{% include setup/path-windows.md %}
+{% include setup/system-win.md %}
 </div>
 
 <div id="tab-os-install-mac" class="ostabs__content" markdown="1">
-{% include setup/path-mac-linux.md %}
+{% include setup/system-mac.md %}
 </div>
 
 <div id="tab-os-install-linux" class="ostabs__content" markdown="1">
-{% include setup/path-mac-linux.md %}
+{% include setup/system-win.md %}
 </div>

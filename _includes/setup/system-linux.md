@@ -1,5 +1,3 @@
-## System requirements
-
 To install and run Flutter, your development environment must meet these minimum requirements:
 
 * **Operating Systems**: Linux (64-bit)
