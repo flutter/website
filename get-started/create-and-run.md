@@ -49,7 +49,8 @@ the code of a live running app without restarting or losing app state. Simply
 make a change to your source code, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
 
-  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Change the string `'You have pushed the button this many times:'` to `'You
+     have clicked the button this many times:'`
   1. Do not press the 'Stop' button; let your app continue to run.
   1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
      **Hot Reload button** (the button with the lightning bolt icon).
@@ -64,15 +65,34 @@ You should see the updated string in the running app almost immediately.
 
 ## Create your first Flutter app
 
-   1. TODO
+  1. Start VS Code
+  1. Invoke **View>Command Palette...**
+  1. Type 'flutter', and select the **'Flutter: New Project'** action
+  1. Enter a project name (e.g. `firstapp`), and press Enter
+  1. Specify a location to place the project, and press the blue OK button
+  1. Wait for the project creation to continue, and the `main.dart` file to appear 
 
 ## Run the app
 
-   1. TODO
+  1. Make sure a target device is selected in the lower, right-hand corner of VS Code
+  1. Press the F5 button on the keyboard, or invoke **Debug>Start Debugging**
+  1. Wait for the app to launch
 
 ## Try a hot reload
 
-   1. TODO
+Flutter offers a fast development cycle with _hot reload_, the ability to reload
+the code of a live running app without restarting or losing app state. Simply
+make a change to your source code, tell your IDE or command-line tool that you
+want to hot reload, and see the change in your simulator, emulator, or device.
+
+  1. Open the file `lib/main.dart` in your favorite Dart code editor
+  1. Change the string `'You have pushed the button this many times:'` to `'You
+     have clicked the button this many times:'`
+  1. Do not press the 'Stop' button; let your app continue to run.
+  1. To see your changes invoke **Save** (`cmd-s` / `ctrl-s`), or click the
+     **Hot Reload button** (the green circular arrow button).
+
+You should see the updated string in the running app almost immediately.
 
 </div>
 
@@ -90,7 +110,7 @@ for running and building.
    cd hello_flutter
    {% endcommandline %}
 
-## Run the Flutter app
+## Run the app
 
    1. Check that an Android device is running. If none is shown, go back to step 2.
    {% commandline %}
@@ -113,7 +133,8 @@ make a change to your source code, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
 
   1. Open the file `lib/main.dart` in your favorite Dart code editor
-  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Change the string `'You have pushed the button this many times:'` to `'You
+     have clicked the button this many times:'`
   1. Do not press the 'Stop' button; let your app continue to run.
   1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
      **Hot Reload button** (the button with the lightning bolt icon).
