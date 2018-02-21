@@ -163,7 +163,7 @@ framework.
 ### Does Flutter come with widgets?
 
 Yes! Flutter ships with a set of
-[high quality Material and Cupertino (iOS-style) widgets][widgets], layouts,
+[high quality Material Design and Cupertino (iOS-style) widgets][widgets], layouts,
 and themes. Of
 course, these widgets are only a starting point.
 Flutter is designed to make it easy to
@@ -328,7 +328,7 @@ or directly) dart:mirrors or dart:html.
 ### How big is the Flutter engine?
 
 In June 2017, we measured the size of a minimal Flutter app
-(no Material Design, just a single `Center` widget, built with
+(no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and
 compressed as a release APK, to be approximately 6.7MB.
 
@@ -704,7 +704,7 @@ back up the tree via event handlers. Aspects of both functional-reactive and
 imperative-reactive are present in the framework, depending on the needs of the
 widgets. Widgets with build methods that consist of just an expression
 describing how the widget reacts to changes in its configuration are functional
-reactive widgets (e.g., the material
+reactive widgets (e.g., the Material
 [Divider](https://docs.flutter.io/flutter/material/Divider-class.html) class).
 Widgets whose build methods construct a list of children over several
 statements, describing how the widget reacts to changes in its configuration,
@@ -805,7 +805,7 @@ There's an API to find the list of licenses you need to show:
 * If your application has a [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
   add an [AboutListTile](https://docs.flutter.io/flutter/material/AboutListTile-class.html).
 
-* If your application doesn't have a Drawer but does use the material
+* If your application doesn't have a Drawer but does use the Material Components
   library, call either [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
   or [showLicensePage](https://docs.flutter.io/flutter/material/showLicensePage.html).
 

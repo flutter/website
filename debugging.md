@@ -607,7 +607,7 @@ probably part of the
 [`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)'s
 definition, sets a minimum width of 88 pixels on its contents and a
 specific height of 36.0. (This is the `FlatButton` class implementing
-the Material Design rules regarding button dimensions.)
+the Material Design guidelines regarding button dimensions.)
 
 The inner-most `RenderPositionedBox` loosens the constraints again,
 this time to center the text within the button. The
@@ -848,7 +848,7 @@ will be misleading.
 ## Material grid
 
 When developing applications that implement [Material
-design](https://www.google.com/design/spec/material-design/introduction.html),
+Design](https://www.google.com/design/spec/material-design/introduction.html),
 it can be helpful to overlay a [Material Design baseline
 grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the

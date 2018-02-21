@@ -30,7 +30,7 @@ reflects what's visible.
 
 When displayed within a scrollable that creates its list items lazily,
 like a scrollable list created with `ListView.builder()`, ExpansionTiles
-can be quite efficient, particularly for material design "expand/collapse"
+can be quite efficient, particularly for Material Design "expand/collapse"
 lists.
 
 Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
@@ -132,6 +132,6 @@ void main() {
 ```
 
 <h2>See also:</h2>
-- The "expand/collapse" part of the material design specification:
+- The "expand/collapse" part of the Material Design specification:
     <https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls>
 - The source code in [examples/catalog/lib/expansion_tile_sample.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/expansion_tile_sample.dart).

@@ -80,9 +80,9 @@ hide_title: true
         <h1>Expressive, beautiful UIs</h1>
 
         <p>
-        Delight your users with Flutter's built-in
-        beautiful Material Design and
-        Cupertino (iOS-flavor) widgets, rich motion APIs,
+        Delight your users with Flutter's beautiful,
+        built-in widgets, both Material Design and
+        Cupertino (iOS-flavor), rich motion APIs,
         smooth natural scrolling, and platform awareness.
         </p>
 
@@ -211,7 +211,7 @@ Future<Null> getBatteryLevel() async {
                     <li>Rich 2D GPU-accelerated APIs</li>
                     <li>Reactive framework</li>
                     <li>Animation/motion APIs</li>
-                    <li>Material Design and iOS widgets</li>
+                    <li>Material Components and Cupertino widgets</li>
                 </ul>
 
                 <h4>Fluid coding experience</h4>
