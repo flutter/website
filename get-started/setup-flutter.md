@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Get Started: Setup"
-permalink: /get-started/setup/
+title: "Get Started: Setup Flutter"
+permalink: /get-started/setup-flutter/
 ---
 
 This page describes how to setup your development environment to run Flutter
@@ -129,8 +129,7 @@ itself. Subsequent runs should be much faster.
 
 ## Next step
 
-Now that you have the Flutter framework setup, let create a first project,
-run it, and experiencee 'hot reload'.
+Now that you have the Flutter framework setup, select an editor.
 
-[Next step: Create and run your first app](/get-started/create-and-run/)
+[Next step: Setup Editor](/get-started/setup-editor/)
 

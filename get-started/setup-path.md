@@ -4,7 +4,7 @@ title: "Get Started: Path setup"
 permalink: /get-started/setup-path/
 ---
 
-If you wish to run Flutter from the Terminal / Command Promt,
+If you wish to run Flutter from the Terminal / Command Prompt,
 you need to add it to path:
 
 <ul class="ostabs__top-bar">
