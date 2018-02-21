@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Getting Started with Flutter
-permalink: /getting-started/
+title: "Get Started: Setup"
+permalink: /get-started/setup/
 ---
 
-This page describes how to prepare your development environment to run Flutter
-apps on Android. A [later step](todo) will detail how to run Flutter apps on iOS.
+This page describes how to setup your development environment to run Flutter
+apps on Android. A [later step](/get-started/setup-ios/) will detail how to run Flutter apps on iOS.
 
 ## 1: Select your preferences
 
@@ -230,8 +230,10 @@ You should see the updated string in the running app almost immediately.
 
 </div>
 
-## Next steps
+## Next step
 
-Now that you have your first Flutter app running, and have experienced 'hot
-reload', let's learn some core Flutter concepts, and [extend the 'Hello from
-Flutter'-app](/getting-started/app/) to a more complete app.
+Now that you have the Flutter framework setup, let create a first project,
+run it, and experiencee 'hot reload'.
+
+[Next step: Create and run your first app](/get-started/create-and-run/)
+

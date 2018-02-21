@@ -21,7 +21,7 @@ hide_title: true
         </div>
 
         <div class="homepage__button_row">
-        <a href="/getting-started" class="get-started-button">Get Started</a>
+        <a href="/get-started/" class="get-started-button">Get Started</a>
         {% include note.html content="_Flutter is an alpha, open-source project_." %}
         </div>
 
@@ -292,7 +292,7 @@ Future<Null> getBatteryLevel() async {
         <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
 
         <div class="homepage__button_row">
-        <a href="/getting-started" class="get-started-button">Get Started</a>
+        <a href="/get-started/" class="get-started-button">Get Started</a>
         {% include note.html content="_Flutter is an alpha, open-source project_." %}
         </div>
 
