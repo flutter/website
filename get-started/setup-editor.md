@@ -47,9 +47,10 @@ To install these:
    1. Click `Yes` when prompted to install the Dart plugin.
    1. Click `Restart` when prompted.
 
-{% include /get-started/android_device.md %}
-
 ## Validate your setup with the flutter doctor
+
+  1. Create a new Flutter project
+  1. TODO
 
 </div>
 
@@ -57,8 +58,9 @@ To install these:
 
 *VS Code:* A light-weight editor with Flutter run and debug support.
 
+## Visual Studio Code (VS Code) setup
 
-### Install Visual Studio Code
+### Install VS Code
 
   1. Install VS Code from the main [VS Code site](https://code.visualstudio.com/)
 
@@ -71,8 +73,13 @@ To install these:
      click **Install**
   1. Select 'OK' to reload VS Code
 
-</div>
+## Validate your setup with the Flutter Doctor
 
+  1. Invoke **View>Command Palette...**
+  1. Type 'doctor', and select the **'Flutter: Run Flutter Doctor'** action
+  1. Review the output in the 'OUTPUT' pane for any issues
+
+</div>
 <div id="tab-install-terminal" class="tabs__content" markdown="1">
 
 *Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
@@ -84,12 +91,16 @@ If you wish to run Flutter from the Terminal / Command Prompt, you need to add
 `<Flutter SDK dir>/bin/flutter` to Path ([detailed
 instructions](/get-started/setup-path/)).
 
-
 ## Select a Dart editor
 
 Flutter programs are written using the Dart programming langauge. For a
 selection of editors that have dedicated Dart support, see the [Dart tools
 page](https://www.dartlang.org/tools).
+
+## Validate your setup with the Flutter Doctor
+
+  1. Open a Terminal, and run the command `flutter doctor`
+  1. Review the output for any issues
 
 </div>
 
@@ -99,4 +110,3 @@ Now that you have the Flutter editor configured, let create a first project,
 run it, and experiencee 'hot reload'.
 
 [Next step: Create and run your first app](/get-started/create-and-run/)
-

@@ -5,125 +5,77 @@ permalink: /get-started/setup-flutter/
 ---
 
 This page describes how to setup your development environment to run Flutter
-apps on Android.
+apps.
 
-A [later step](/get-started/setup-ios/) will detail how to run Flutter apps on iOS.
-
-Flutter is a flexible toolkit, so please start by selecting your development
-tool of choice for writing, building, and running your Flutter app.
-
-<ul class="tabs__top-bar">
-    <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
-    <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
-    <li class="tab-link" data-tab="tab-install-terminal">Terminal + editor</li>
+<ul class="ostabs__top-bar">
+    <li class="ostab-link current" data-tab="tab-os-install-windows">Windows</li>
+    <li class="ostab-link" data-tab="tab-os-install-mac">Mac</li>
+    <li class="ostab-link" data-tab="tab-os-install-linux">Linux</li>
 </ul>
 
-<div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
 
-*Android Studio:* A complete, integrated IDE experience for Flutter. 
+<div id="tab-os-install-windows" class="ostabs__content current" markdown="1">
 
-## Install the Flutter SDK
+## Download and install Flutter SDK
 
-{% include /get-started/install_flutter_sdk.md %}
+* Download the latest [*not ready yet*]().
+* Install the downloaded SDK:
+  * In Windows Explorer, navigate to 'Downloads'
+  * Double click `flutter-sdk.zip`
+  * Click Extract
+  * Place the extracted files in your desired directory
 
-## Android Studio setup
+{% include /get-started/privacy_note.md %}
 
-### Install Android Studio:
+{% include /get-started/android_setup.md %}
 
-   * Download and install Android Studio 3.0 or later from the the [Android
-     Studio site](https://developer.android.com/studio/index.html)
+## iOS setup
 
-### Install the Flutter and Dart plugins
-
-Flutter is supported by two plugins:
-
-   * The `Flutter` plugin powers Flutter developer workflows (running,
-     debugging, hot reload, etc.).
-   * The `Dart` plugin offers code analysis (code validation as you type, code
-     completions, etc.).
-
-To install these:
-
-   1. Start Android Studio.
-   1. Open plugin preferences (**Preferences>Plugins** on macOS,
-      **File>Settings>Plugins** on Windows & Linux).
-   1. Select **Browse repositories…**,  select the Flutter plug-in and click
-      `install`.
-   1. Click `Yes` when prompted to install the Dart plugin.
-   1. Click `Restart` when prompted.
-
-{% include /get-started/android_device.md %}
-
-## Validate your setup with the flutter doctor
+Running Flutter app on iOS is unfortunately not supported on Windows.
 
 </div>
 
-<div id="tab-install-vscode" class="tabs__content" markdown="1">
+<div id="tab-os-install-mac" class="ostabs__content" markdown="1">
 
-*VS Code:* A light-weight editor with Flutter run and debug support.
+## Download and install Flutter SDK
 
-## Install the Flutter SDK
+* Download the latest [beta SDK archive](https://storage.googleapis.com/flutter_infra/releases/dev/macos/flutter_macos_v0.1.2-dev.tar.xz).
+* Install the downloaded SDK:
+```terminal
+cd /users/Obiwan/development/
+tar -xf /users/Obiwan/downloads/flutter_macos_v0.1.2-dev.tar.xz
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
+```
 
-{% include /get-started/install_flutter_sdk.md %}
+{% include /get-started/privacy_note.md %}
 
-## Android Studio setup
+{% include /get-started/android_setup.md %}
 
-**TODO TODO TODO TODO TODO TODO TODO.**
+{% include setup/ios-setup.md %}
 
 </div>
 
-<div id="tab-install-terminal" class="tabs__content" markdown="1">
+<div id="tab-os-install-linux" class="ostabs__content" markdown="1">
 
-*Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
-for running and building.
+## Download and install Flutter SDK
 
-## Install the Flutter SDK
-
-{% include /get-started/install_flutter_sdk.md %}
-
-## Android Studio setup
-
-<aside id="note" class="alert alert-info" markdown="1">
-**Note** Android Studio must be installed and initialized to get all required
-Android components. Once they have been installed, you can continue to developer
-Flutter apps in your editor of choice.
-</aside>
-
-   1. Download and install Android Studio 3.0 or later from the the [Android
-      Studio site](https://developer.android.com/studio/index.html)
-   1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
-      This will install the latest Android SDK, Android SDK Platform-Tools, and
-      Android SDK Build-Tools, which are required by Flutter when developing for
-      Android.
-   1. Select **File>New Project** to create a regular Android project, and wait
-      for it to initialize. Then select **Tools>Android>AVD Manager** make sure
-      at least one Emulator image has been defined.
-   1. Start the Emulator image.
-
-## Validate your setup with the flutter doctor
-
-   1. Run the following command to see if there are any dependencies you need to
-      install to complete the setup:
-   {% commandline %}
-   flutter doctor
-   {% endcommandline %}
-
-This command checks your environment and displays a report to the terminal window.
-The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
-Check the output carefully for other software you may need to install or further 
-tasks to perform (shown in **bold** text).
-
-For example:
-```
-[-] Android toolchain - develop for Android devices
-    • Android SDK at /Users/obiwan/Library/Android/sdk
-    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
-    • Try re-installing or updating your Android SDK,
-      visit https://flutter.io/setup/#android-setup for detailed instructions.
+* Download the latest [beta SDK archive](https://storage.googleapis.com/flutter_infra/releases/dev/macos/flutter_linux_v0.1.2-dev.tar.xz).
+* Install the downloaded SDK:
+```terminal
+cd /users/Obiwan/development/
+tar -xf /users/Obiwan/downloads/flutter_linux_v0.1.2-dev.tar.xz
+cd flutter
+export PATH=`pwd`/flutter/bin:$PATH
 ```
 
-The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
-itself. Subsequent runs should be much faster.
+{% include /get-started/privacy_note.md %}
+
+{% include /get-started/android_setup.md %}
+
+## iOS setup
+
+Running Flutter app on iOS is unfortunately not supported on Linux.
 
 </div>
 
