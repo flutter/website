@@ -4,7 +4,139 @@ title: "Get Started: Create and Run Your First App"
 permalink: /get-started/create-and-run/
 ---
 
-TODO
+This page describes how to create your first Flutter app, run it, and learn
+how to make changes with Hot Reload.
+
+Flutter is a flexible toolkit, so please start by selecting your development
+tool of choice for writing, building, and running your Flutter app.
+
+<ul class="tabs__top-bar">
+    <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
+    <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
+    <li class="tab-link" data-tab="tab-install-terminal">Terminal + editor</li>
+</ul>
+
+<div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
+
+*Android Studio:* A complete, integrated IDE experience for Flutter. 
+
+## Create your first Flutter app
+
+   1. Select **File>New Flutter Project**
+   1. Under **Flutter SDK path**, select **Install SDK...**, and enter the
+      location where you want to install the Flutter SDK
+   1. Click **OK**
+   1. Wait for Android Studio to install the SDK, and create the project.
+
+## Run the app
+
+   1. Locate the main Android Studio toolbar:<br>
+      ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+   1. In the **target selector**, select an Android device for running the app.
+      If none are listed as available, select **Tools>Android>AVD Manager** and
+      create one there. For details, see [Managing
+      AVDs](https://developer.android.com/studio/run/managing-avds.html).
+   1. Click the **Run icon** in the toolbar, or invoke the menu item **Run >
+      Run**.
+   1. If everything works, you should see your starter app on your device or
+      simulator:<br>
+      ![Starter App on Android](/images/flutter-starter-app-android.png)
+
+## Try a hot reload
+
+Flutter offers a fast development cycle with _hot reload_, the ability to reload
+the code of a live running app without restarting or losing app state. Simply
+make a change to your source code, tell your IDE or command-line tool that you
+want to hot reload, and see the change in your simulator, emulator, or device.
+
+  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Do not press the 'Stop' button; let your app continue to run.
+  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
+     **Hot Reload button** (the button with the lightning bolt icon).
+
+You should see the updated string in the running app almost immediately.
+
+</div>
+
+<div id="tab-install-vscode" class="tabs__content" markdown="1">
+
+*VS Code:* A light-weight editor with Flutter run and debug support.
+
+## Create your first Flutter app
+
+   1. TODO
+
+## Run the app
+
+   1. TODO
+
+## Try a hot reload
+
+   1. TODO
+
+</div>
+
+<div id="tab-install-terminal" class="tabs__content" markdown="1">
+
+*Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
+for running and building.
+
+## Create your first Flutter app
+
+   1. Use the `flutter create` command to create a new project:
+   {% commandline %}
+   cd /users/Obiwan/projects/
+   flutter create hello_flutter
+   cd hello_flutter
+   {% endcommandline %}
+
+## Run the Flutter app
+
+   1. Check that an Android device is running. If none is shown, go back to step 2.
+   {% commandline %}
+   flutter devices
+   {% endcommandline %}
+   1. Run the app with the `flutter run command`:
+   {% commandline %}
+   flutter run
+   {% endcommandline %}
+
+   1. If everything works, after the app has been built, you should see your
+      starter app on your device or simulator:<br>
+      ![Starter App on Android](/images/flutter-starter-app-android.png)
+
+## Try a hot reload
+
+Flutter offers a fast development cycle with _hot reload_, the ability to reload
+the code of a live running app without restarting or losing app state. Simply
+make a change to your source code, tell your IDE or command-line tool that you
+want to hot reload, and see the change in your simulator, emulator, or device.
+
+  1. Open the file `lib/main.dart` in your favorite Dart code editor
+  1. Change the string `'Hello from Flutter!'` to `'Hello from my app!'`
+  1. Do not press the 'Stop' button; let your app continue to run.
+  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
+     **Hot Reload button** (the button with the lightning bolt icon).
+
+You should see the updated string in the running app almost immediately.
+
+<ul class="ostabs__top-bar">Current development OS:
+    <li class="ostab-link" data-tab="tab-install-windows">Windows</li>
+    <li class="ostab-link" data-tab="tab-install-linux">Linux</li>
+    <li class="ostab-link" data-tab="tab-install-mac">Mac</li>
+</ul>
+
+</div>
+
+## Next step
+
+Now that you have the Flutter framework setup, let create a first project,
+run it, and experiencee 'hot reload'.
+
+[Next step: Create and run your first app](/get-started/create-and-run/)
+
+
+
 
 ## Next step
 
