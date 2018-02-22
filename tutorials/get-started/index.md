@@ -155,7 +155,7 @@ Run the app. You should see the following screen.
     lower level widgets.
 </li>
 <li markdown="1"> Moving the “hello world” text into a separate widget,
-    HelloWorld, results in an identical widget tree as the code abovr.
+    HelloWorld, results in an identical widget tree as the code above.
     (This code is informational only. You are starting with the Hello
     World code above.)
 
@@ -530,6 +530,10 @@ class RandomWordsState extends State<RandomWords> {
 <li markdown="1"> Add a `_buildSuggestions()` function to the RandomWordsState
 class. This function grabs word pairings in batches of 10 and
 displays them in the ListView.
+
+The ListView class provides a builder property, `itemBuilder`, where the rows
+are built inside an anonymous function. Two parameters are passed to
+the function, the BuildContext, and the row iterator.
 
 <!-- skip -->
 {% prettify dart %}
@@ -969,21 +973,273 @@ yet, because the `_pushSaved` function is empty.
 
 <li markdown="1">
 When the user taps the list icon in the app bar, build a Material route
-and push it to the Navigator's stack. The MaterialPageRoute class provides
-a builder method ... [PENDING]
+and push it to the Navigator's stack. This action changes the screen to
+display the new route.
+
+The content for the new page is built in MaterialPageRoute's `builder`
+property, in an anonymous function.
+
+Add the call to Navigator.push, as shown by the highlighted code,
+which pushes the route to the Navigator's stack.
 
 <!-- skip -->
 {% prettify dart %}
+  void _pushSaved() {
+    [[highlight]]Navigator.of(context).push([[/highlight]]
+      [[highlight]]);[[/highlight]]
+  }
 {% endprettify %}
 </li>
+
 <li markdown="1">
+Add the MaterialPageRoute and its builder. For now, add the code that
+generates the ListTile rows. The `divideTiles()` function of ListTile
+adds horizontal spacing between each ListTile. The `divided` variable
+holds the final rows, converted to a list by the convienice function, `toList()`.
+
+<!-- skip -->
+{% prettify dart %}
+  void _pushSaved() {
+    Navigator.of(context).push([[/highlight]]
+      [[highlight]]new MaterialPageRoute([[/highlight]]
+        [[highlight]]builder: (context) {[[/highlight]]
+          [[highlight]]final tiles = _saved.map((pair) {[[/highlight]]
+            [[highlight]]return new ListTile([[/highlight]]
+                [[highlight]]title: new Text([[/highlight]]
+                  [[highlight]]pair.asPascalCase,[[/highlight]]
+                  [[highlight]]style: _biggerFont,[[/highlight]]
+                [[highlight]]));[[/highlight]]
+          [[highlight]]});[[/highlight]]
+          [[highlight]]final divided = ListTile[[/highlight]]
+              [[highlight]].divideTiles([[/highlight]]
+            [[highlight]]context: context,[[/highlight]]
+            [[highlight]]tiles: tiles,[[/highlight]]
+          [[highlight]])[[/highlight]]
+              [[highlight]].toList();[[/highlight]]
+
+        [[highlight]]},[[/highlight]]
+      [[highlight]]),[[/highlight]]
+    );
+  }
+}
+{% endprettify %}
 </li>
+
 <li markdown="1">
+The builder function returns a Scaffold. From the Material library,
+this widget provides an app bar for the new route with the name,
+"Saved Suggestions". The body consists of a ListView with the
+ListTiles.
+
+Add the highlisted text below:
+
+<!-- skip -->
+{% prettify dart %}
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+        builder: (context) {
+          final tiles = _saved.map((pair) {
+            return new ListTile(
+                title: new Text(
+              pair.asPascalCase,
+              style: _biggerFont,
+            ));
+          });
+          final divided = ListTile
+              .divideTiles(
+                context: context,
+                tiles: tiles,
+              )
+              .toList();
+
+          [[highlight]]return new Scaffold([[/highlight]]
+            [[highlight]]appBar: new AppBar([[/highlight]]
+              [[highlight]]title: new Text('Saved suggestions'),[[/highlight]]
+            [[highlight]]),[[/highlight]]
+            [[highlight]]body: new ListView(children: divided),[[/highlight]]
+          [[highlight]]);[[/highlight]]
+        },
+      ),
+    );
+  }
+{% endprettify %}
 </li>
+
 <li markdown="1">
+Run the app. Favorite some of the selections and tap the list icon in
+the app bar. The new route appears containing the favorites. Note that the
+Navigator adds a "Back" button to the app bar. You didn't have to explicitly
+implement Navigator.pop. Tap the back button to return to the home route.
 </li>
+
 <li markdown="1">
+You can easily change an app's theme by configuring the ThemeData class.
+Our app uses the default Theme, but you can use themes to make the app
+reflect your branding.
+
+You'll set the primary color of your theme to be white, but you can play
+with this feature to test other themes.
+
+Add the following code to MyApp:
+
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Startup Name Generator',
+      [[highlight]]theme: new ThemeData([[/highlight]]
+        [[highlight]]primaryColor: Colors.white,[[/highlight]]
+      [[highlight]]),[[/highlight]]
+      home: new RandomWords(),
+    );
+  }
+}
+{% endprettify %}
 </li>
+
 <li markdown="1">
+Run the app. You'll notice that the background is white, even the app bar.
 </li>
 </ol>
+
+### Problems?
+
+If you've gotten off track, use the following code for
+**lib/main.dart** to get back on track.
+
+{% prettify dart %}
+import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Startup Name Generator',
+      theme: new ThemeData(
+        primaryColor: Colors.white,
+      ),
+      home: new RandomWords(),
+    );
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  @override
+  createState() => new RandomWordsState();
+}
+
+class RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+
+  final _saved = new Set<WordPair>();
+
+  final TextStyle _biggerFont = new TextStyle(fontSize: 18.0);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+          title: new Text('Startup Name Generator'),
+          actions: <Widget>[
+            new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved)
+          ]),
+      body: _buildSuggestions(),
+    );
+  }
+
+  Widget _buildSuggestions() {
+    return new ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemBuilder: (context, i) {
+          if (i.isOdd) return new Divider();
+
+          final index = i ~/ 2;
+          if (index >= _suggestions.length) {
+            _suggestions.addAll(generateWordPairs().take(10));
+          }
+          return _buildRow(_suggestions[index]);
+        });
+  }
+
+  Widget _buildRow(WordPair pair) {
+    final alreadySaved = _saved.contains(pair);
+    return new ListTile(
+        title: new Text(
+          pair.asPascalCase,
+          style: _biggerFont,
+        ),
+        trailing: new Icon(
+          alreadySaved ? Icons.favorite : Icons.favorite_border,
+          color: alreadySaved ? Colors.red : null,
+        ),
+        onTap: () {
+          setState(() {
+            if (alreadySaved) {
+              _saved.remove(pair);
+            } else {
+              _saved.add(pair);
+            }
+          });
+        });
+  }
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+        builder: (context) {
+          final tiles = _saved.map((pair) {
+            return new ListTile(
+                title: new Text(
+              pair.asPascalCase,
+              style: _biggerFont,
+            ));
+          });
+          final divided = ListTile
+              .divideTiles(
+                context: context,
+                tiles: tiles,
+              )
+              .toList();
+
+          return new Scaffold(
+            appBar: new AppBar(
+              title: new Text('Saved suggestions'),
+            ),
+            body: new ListView(children: divided),
+          );
+        },
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+---
+
+## Well done!
+
+You've written a Flutter app that uses Material Design widgets.  You've edited
+a pubspec file to pull in a third party library and leveraged the library
+in your code. You've written Dart code. xxx [PENDING]
+
+
+
+Here are some resources you might find useful:
+
+{% comment %}
+Once the cookbook and the "Flutter for React" docs (etc) are done, add here.
+{% endcomment %}
+
+* [Flutter API docs](https://docs.flutter.io/)
+* [Building Layouts in Flutter](https://flutter.io/tutorials/layout/) tutorial
+* [Add Interactivity](https://flutter.io/tutorials/interactive/) tutorial
+* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
+
+You can learn more about Flutter at [flutter.io,](https://flutter.io/)
+and Dart at [www.dartlang.org.](https://www.dartlang.org/)
