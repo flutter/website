@@ -17,3 +17,10 @@ permalink: /get-started/learn-more/
 * Other resources
 
   * [Bootstrap into Dart: learn more about the language](/bootstrap-into-dart/)
+
+Please reach out to us at our [mailing list][mailinglist]. We'd love
+to hear from you!
+
+Happy Fluttering!
+
+[mailinglist]: mailto:flutter-dev@googlegroups.com

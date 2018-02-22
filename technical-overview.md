@@ -114,7 +114,7 @@ frequently than the lower layers. For the complete set of libraries that make up
 the Flutter's layered framework, see our [API documentation](https://docs.flutter.io).
 
 The goal of this design is to help you do more with less code.  For example,
-the material layer is built by composing basic widgets from the widgets layer,
+the Material layer is built by composing basic widgets from the widgets layer,
 and the widgets layer itself is built by orchestrating lower-level objects from
 the rendering layer.
 

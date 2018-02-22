@@ -28,6 +28,11 @@ tool of choice for writing, building, and running your Flutter app.
    1. Click **OK**
    1. Wait for Android Studio to install the SDK, and create the project.
 
+The above command creates a Flutter project directory called `myapp` that contains a simple demo
+app that uses [Material Components](https://material.io/guidelines/).
+
+In the project directory, the code for your app is in `myapp/lib/main.dart`.
+
 ## Run the app
 
    1. Locate the main Android Studio toolbar:<br>
@@ -72,6 +77,11 @@ You should see the updated string in the running app almost immediately.
   1. Specify a location to place the project, and press the blue OK button
   1. Wait for the project creation to continue, and the `main.dart` file to appear 
 
+The above command creates a Flutter project directory called `myapp` that contains a simple demo
+app that uses [Material Components](https://material.io/guidelines/).
+
+In the project directory, the code for your app is in `myapp/lib/main.dart`.
+
 ## Run the app
 
   1. Make sure a target device is selected in the lower, right-hand corner of VS Code
@@ -112,6 +122,11 @@ for running and building.
    flutter create hello_flutter
    cd hello_flutter
    {% endcommandline %}
+
+The above command creates a Flutter project directory called `myapp` that contains a simple demo
+app that uses [Material Components](https://material.io/guidelines/).
+
+In the project directory, the code for your app is in `myapp/lib/main.dart`.
 
 ## Run the app
 

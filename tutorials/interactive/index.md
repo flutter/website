@@ -36,7 +36,7 @@ that manages two stateless widgets.
   * [A mix-and-match approach](#mix-and-match)
 * [Other interactive widgets](#other-interactive-widgets)
   * [Standard widgets](#standard-widgets)
-  * [Material widgets](#material-widgets)
+  * [Material Components](#material-components)
 * [Resources](#resources)
 
 ## Getting ready
@@ -775,7 +775,7 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 * [Form](https://docs.flutter.io/flutter/widgets/Form-class.html)
 * [FormField](https://docs.flutter.io/flutter/widgets/FormField-class.html)
 
-### Material widgets:
+### Material Components:
 
 * [Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html)
 * [DropdownButton](https://docs.flutter.io/flutter/material/DropdownButton-class.html)
@@ -803,7 +803,7 @@ The following resources may help when adding interactivity to your app.
   Reference documentation for all of the Flutter libraries.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many Material Design widgets and other Flutter features.
+  Demo app showcasing many Material Components and other Flutter features.
 * [Flutter's Layered
    Design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
    This video includes information about state and stateless widgets.
