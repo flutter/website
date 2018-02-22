@@ -602,7 +602,7 @@ pre, table code {
 }
 
 pre {
-    margin: 25px 0px;
+    margin: 25px 0 !important;
     /* Added from dartlang to enable highlighting in code blocks. */
     /* site-www/src/_assets/stylesheets/main.css */
     .highlight {
