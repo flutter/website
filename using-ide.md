@@ -107,28 +107,35 @@ for details.
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with 'Debug', and then open the Flutter tool
-window using 'View > Tool Windows > Flutter'.
+To debug a visual issue, start the app with 'Debug', and then open the Flutter inspector tool
+window using 'View > Tool Windows > Flutter Inspector'.
 
-![IntelliJ Flutter tool window](/images/intellij/visual-debugging.png)
+![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
 
 This offers many debugging tools; for details on these please see
 [Debugging Flutter Apps](https://flutter.io/debugging/).
 
+* 'Select widget': Select a widget on the device to inspect it in the [Flutter Inspector](/inspector/).
+
 * 'Debug paint': Add visual debugging hints to the rendering displaying borders,
    padding, alignment, and spacers.
 
-* 'Perf overlay': Show performance graphs for the GPU & CPU threads.
-
 * 'Platform toggle': Toggle between rendering for Android or iOS.
 
-* 'Paint baselines': Show alphabetic and ideographic paint baseline.
+* 'Performance overlay': Show performance graphs for the GPU & CPU threads.
+
+* 'Performance overlay': Show performance graphs for the GPU & CPU threads.
+
+* 'Timeline view': Analyze activity of the application as it runs.
+
+* 'Open observatory': A profiler for Dart applications.
 
 * 'Repaint rainbow': Show rotating colors on layers when repainting.
 
 * 'Slow animations': Slow down animations to enable visual inspection.
 
 * 'Hide slow mode banner': Hide the 'slow mode' banner even when running a debug build.
+
 
 ### Debugging with Observatory
 
@@ -138,7 +145,7 @@ html-based UI. For details see the [Observatory page](https://dart-lang.github.i
 To open Observatory:
 
 1. Run your app in debug mode.
-1. In the Debug panel at the bottom (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
+1. Select 'open observatory from the In the Debug panel at the bottom (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
 
 ![Debugging panel](/images/intellij/debug-panel.png)
 
