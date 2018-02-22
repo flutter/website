@@ -81,6 +81,7 @@
       {
         "source": "/setup-ide",
         "destination": "/get-started/setup-editor/",
+        "type": 301
       }
     ]
   }
