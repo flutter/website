@@ -98,7 +98,7 @@ Apps based on WidgetsApp are similar except that the
 
 The elements of the `localizationsDelegates` list are factories that produce
 collections of localized values. `GlobalMaterialLocalizations.delegate`
-provides localized strings and other values for the material
+provides localized strings and other values for the Material Components
 library. `GlobalWidgetsLocalizations.delegate` defines the default
 text direction, either left to right or right to left, for the widgets
 library.
@@ -159,7 +159,7 @@ table of objects, one per LocalizationsDelegate. To retrieve the
 object produced by one of the LocalizationsDelegate's `load` methods,
 you specify a BuildContext and the object's type.
 
-For example, the localized strings for the Material widgets are defined by the
+For example, the localized strings for the Material Components widgets are defined by the
 [MaterialLocalizations](https://docs.flutter.io/flutter/material/MaterialLocalizations-class.html)
 class. Instances of this class are created by a LocalizationDelegate
 provided by the
@@ -285,7 +285,7 @@ In this case that would just be the DemoLocalizations class.
 <a name="specifying-supportedlocales"></a>
 ## Specifying the app's supportedLocales parameter
 
-Although Flutter's Material library includes support for about 16
+Although Flutter's Material Components library includes support for about 16
 languages, only English language translations are available by default.
 It's up to the developer to decide exactly which languages
 to support, since it wouldn't make sense for the toolkit

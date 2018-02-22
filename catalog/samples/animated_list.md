@@ -239,6 +239,6 @@ void main() {
 ```
 
 <h2>See also:</h2>
-- The "Components-Lists: Controls" section of the material design specification:
+- The "Components-Lists: Controls" section of the Material Design specification:
     <https://material.io/guidelines/components/lists-controls.html#>
 - The source code in [examples/catalog/lib/animated_list.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/animated_list.dart).

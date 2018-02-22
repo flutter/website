@@ -1987,17 +1987,17 @@ typically do. Unlike Android where you declare themes in XML and then assign it
 to your application via AndroidManifest.xml, in Flutter you can declare themes
 via the top level widget.
 
-To take full advantage of Material Design in your app, you can declare a top
+To take full advantage of Material Components in your app, you can declare a top
 level widget `MaterialApp` as the entry point to your application. MaterialApp
 is a convenience widget that wraps a number of widgets that are commonly
-required for material design applications. It builds upon a WidgetsApp by
-adding material-design specific functionality.
+required for applications implementing Material Design. It builds upon a WidgetsApp by
+adding Material specific functionality.
 
-If you don't want to use Material Design, then you can declare a top level
+If you don't want to use Material Components, then you can declare a top level
 widget `WidgetsApp` which is a convenience class that wraps a number of widgets
 that are commonly required for an application
 
-To customize the colors and styles of Material Design you can pass in a
+To customize the colors and styles of Material Components you can pass in a
 ThemeData object to the MaterialApp widget, for example in the code below you
 can see the primary swatch is set to blue and all text selection color should
 be red.

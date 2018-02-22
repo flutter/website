@@ -371,10 +371,10 @@ The following resources might help when writing animations:
   documentation.
 
 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-: Demo app showcasing many Material Design widgets and other Flutter
+: Demo app showcasing many Material Components and other Flutter
   features.  The [Shrine
   demo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   implements a hero animation.
 
 [Material motion spec](https://material.io/guidelines/motion/)
-: Describes motion for Material design apps.
+: Describes motion for Material apps.
