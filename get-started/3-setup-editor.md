@@ -4,29 +4,31 @@ title: "Get Started: Setup Editor"
 permalink: /get-started/setup-editor/
 ---
 
-This page describes how to setup your development environment to edit Flutter
-apps.
+Flutter is a flexible toolkit, which supports writing Flutter apps using a
+number of editors. The previous [setup step](/get-started/setup/)
+installed the `flutter` terminal/command-line tool, which combined with a
+[Dart-enabled code editor](https://www.dartlang.org/tools) is enough to
+developer Flutter apps.
 
-Flutter is a flexible toolkit, so please start by selecting your development
-tool of choice for writing, building, and running your Flutter app.
+Should you desire a more intergrated experience, follow the steps below to
+configure a fully Flutter-enabled editor. If not, you can skip directly to
+[Next step: Create and run your first app](/get-started/create-and-run/).
 
 <ul class="tabs__top-bar">
     <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
     <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
-    <li class="tab-link" data-tab="tab-install-terminal">Terminal + editor</li>
 </ul>
 
 <div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
 
-*Android Studio:* A complete, integrated IDE experience for Flutter. 
-
 ## Android Studio setup
+
+*Android Studio:* A complete, integrated IDE experience for Flutter. 
 
 ### Install Android Studio:
 
-   * Verify that you have already downloaded and installed Android Studio 3.0 or
-     later from the the [Android Studio
-     site](https://developer.android.com/studio/index.html)
+   * Downloaded and installed Android Studio 3.0 or later from the the [Android
+     Studio site](https://developer.android.com/studio/index.html)
 
 ### Install the Flutter and Dart plugins
 
@@ -47,22 +49,17 @@ To install these:
    1. Click `Yes` when prompted to install the Dart plugin.
    1. Click `Restart` when prompted.
 
-## Validate your setup with the flutter doctor
-
-  1. Create a new Flutter project
-  1. TODO
-
 </div>
 
 <div id="tab-install-vscode" class="tabs__content" markdown="1">
 
-*VS Code:* A light-weight editor with Flutter run and debug support.
-
 ## Visual Studio Code (VS Code) setup
+
+*VS Code:* A light-weight editor with Flutter run and debug support.
 
 ### Install VS Code
 
-  1. Install VS Code from the main [VS Code site](https://code.visualstudio.com/)
+  * Install VS Code from the main [VS Code site](https://code.visualstudio.com/)
 
 ### Install the Dart Code plugin
 
@@ -78,29 +75,6 @@ To install these:
   1. Invoke **View>Command Palette...**
   1. Type 'doctor', and select the **'Flutter: Run Flutter Doctor'** action
   1. Review the output in the 'OUTPUT' pane for any issues
-
-</div>
-<div id="tab-install-terminal" class="tabs__content" markdown="1">
-
-*Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
-for running and building.
-
-## Add the `flutter` command to path
-
-If you wish to run Flutter from the Terminal / Command Prompt, you need to add
-`<Flutter SDK dir>/bin/flutter` to Path ([detailed
-instructions](/get-started/setup-path/)).
-
-## Select a Dart editor
-
-Flutter programs are written using the Dart programming langauge. For a
-selection of editors that have dedicated Dart support, see the [Dart tools
-page](https://www.dartlang.org/tools).
-
-## Validate your setup with the Flutter Doctor
-
-  1. Open a Terminal, and run the command `flutter doctor`
-  1. Review the output for any issues
 
 </div>
 

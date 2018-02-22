@@ -302,7 +302,7 @@ to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion
 spec.](https://material.io/guidelines/motion/movement.html)
 
-[Create a new Flutter example](/getting-started/) and
+[Create a new Flutter example](/get-started/create-and-run/) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/_includes/code/animation/hero_animation/)
 
@@ -521,7 +521,7 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-[Create a new Flutter example](/getting-started/) and
+[Create a new Flutter example](/get-started/create-and-run/) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/_includes/code/animation/radial_hero_animation)
 

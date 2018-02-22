@@ -25,7 +25,6 @@ first Flutter app.
 
 {% include setup/android-setup.md %}
 
-## Next steps
+## Next step
 
-Now, follow our [Getting Started guide](/getting-started/)
-to run your first Flutter app on iOS or Android.
+[Next step: Setup Editor](/get-started/setup-editor/)
