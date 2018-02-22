@@ -4,4 +4,4 @@ title: Material Components Widgets
 
 permalink: widgets/material/
 ---
-{% include catalogpage.html category="Material Design"%}     
+{% include catalogpage.html category="Material Components"%}     
