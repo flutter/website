@@ -1,0 +1,15 @@
+- name: API Docs
+  description: Generated reference docs for the Flutter framework.
+  url: https://docs.flutter.io/
+- name: Widgets Catalog
+  description: The rich set of Flutter widgets available in the SDK.
+  url: /widgets
+- name: Tutorials
+  description: Topics ranging from creating a layout, to internationalizing your app.
+  url: /tutorials
+- name: Setup
+  description: How to set up your environment for developing Flutter apps.
+  url: /setup
+- name: First steps
+  description: How to create and run a basic Flutter app, and how to use hot reload.
+  url: /getting-started
