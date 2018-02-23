@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Write Your First Flutter App
-permalink: /tutorials/get-started/
+permalink: /get-started/codelab/
 ---
 
 This is a guide to creating your first Flutter app. If you
@@ -40,6 +40,7 @@ The following video shows how the finished app works:
 <div class="embed-container"><iframe width = "300" src="https://www.youtube.com/embed/jQgy1Fe1Uy8?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <!-- I'd like a video that shows the cursor movement and more of the display, but
      this is OK for now. -->
+<center>Need a GIF or another solution.</center>
 
 <div class="whats-the-point" markdown="1">
 
@@ -63,10 +64,10 @@ You'll need to install the following:
 <ul markdown="1">
 <li markdown="1"> Flutter SDK<br>
     The Flutter SDK includes Flutter's engine, framework, widgets, tools,
-    and a Dart SDK. This tutorial requires v0.1.4 or later.
+    and a Dart SDK. This codelab requires v0.1.4 or later.
 </li>
 <li markdown="1"> Android Studio IDE<br>
-    This tutorial features the Android Studio IDE, but you can use
+    This codelab features the Android Studio IDE, but you can use
     another IDE, or work from the command line.
 </li>
 <li markdown="1"> Plugin for your IDE<br>
@@ -91,7 +92,7 @@ You’ll be modifying this starter app to create the finished app.
 
 ## Replace lib/main.dart
 
-In this tutorial, you'll mostly be editing **lib/main.dart**,
+In this codelab, you'll mostly be editing **lib/main.dart**,
 where the Dart code lives.
 
 <aside class="alert alert-success" markdown="1">
@@ -122,7 +123,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -131,15 +131,18 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text('Welcome to Flutter'),
         ),
-        body: new Center(child: new Text('Hello World')),
+        body: new Center(
+          child: new Text('Hello World'),
+        ),
       ),
     );
   }
 }
+
 {% endprettify %}
 </li>
 
-<li markdown="1"> Hot reload the app. You should see the following screen.
+<li markdown="1"> Run the app. You should see the following screen.
 
 <center><img src="images/hello-world-screenshot.png" alt="screenshot of hello world app"></center>
 </li>
@@ -163,7 +166,7 @@ class MyApp extends StatelessWidget {
      holds the widget tree for the home screen. The widget subtree
      can be quite complex.
 </li>
-<li markdown="1"> A widget’s main job is to provide a `build` method
+<li markdown="1"> A widget’s main job is to provide a `build()` method
     that describes how to display the widget in terms of other,
     lower level widgets.
 </li>
@@ -172,7 +175,7 @@ class MyApp extends StatelessWidget {
      widget subtree to the center of the screen.
 </li>
 {% comment %}
-Removing this for now. A) It might be confusing and B) the code is wrong.
+Removing this for now. A) It might be confusing and B) the code as shown here is wrong.
 <li markdown="1"> Moving the “hello world” text into a separate widget,
     HelloWorld, results in an identical widget tree as the code above.
     (This code is informational only. You are starting with the Hello
@@ -240,8 +243,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0
   [[highlight]]english_words: ^3.1.0[[/highlight]]
 {% endprettify %}
@@ -285,13 +286,9 @@ import 'package:english_words/english_words.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // Use the WordPair class in english_words to generate
-    // a new word pairing.
     [[highlight]]final wordPair = new WordPair.random();[[/highlight]]
-
     return new MaterialApp(
       title: 'Welcome to Flutter',
       home: new Scaffold(
@@ -314,7 +311,7 @@ class MyApp extends StatelessWidget {
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
-    This is because the word pairing is generated inside the `build`
+    This is because the word pairing is generated inside the build
     method, which is run each time the app is hot loaded or saved.
 
 <center><img src="images/step2-screenshot.png" alt="screenshot at completion of second step"></center>
@@ -364,7 +361,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wordPair = new WordPair.random();
-
     return new MaterialApp(
       title: 'Welcome to Flutter',
       home: new Scaffold(
@@ -431,11 +427,11 @@ class RandomWordsState extends State<RandomWords> {
 </li>
 
 <li markdown="1"> After adding the state class, the IDE complains that
-    the class is missing a `build` method. Next, you'll add a basic
+    the class is missing a build method. Next, you'll add a basic
     build method that generates the word pairs by moving the
     word generation code from MyApp to RandomWordsState.
 
-Add the `build` method to RandomWordState, as shown
+Add the build method to RandomWordState, as shown
 by the highlighted text:
 
 <!-- skip -->
@@ -446,6 +442,7 @@ class RandomWordsState extends State<RandomWords> {
     [[highlight]]final wordPair = new WordPair.random();[[/highlight]]
     [[highlight]]return(new Text(wordPair.asPascalCase));[[/highlight]]
   [[highlight]]}[[/highlight]]
+}
 {% endprettify %}
 </li>
 
@@ -466,8 +463,8 @@ class MyApp extends StatelessWidget {
           title: new Text('Welcome to Flutter'),
        ),
         body: new Center(
-          //child: new [[highlight]]Text(wordPair.asPascalCase)[[/highlight]] // Change the highlighted text to...
-          child: new [[highlight]]RandomWords()[[/highlight]] // ... this highlighted text
+          //child: new [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
+          child: new [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
         ),
       ),
     );
@@ -478,7 +475,15 @@ class MyApp extends StatelessWidget {
 
 </ol>
 
-Hot reload the app. It should behave as before, displaying a word
+Restart the app. If you try to hot reload, you might see an error:
+
+{% prettify sh %}
+Reloading...
+Not all changed program elements ran during view reassembly; consider
+restarting.
+{% endprettify %}
+
+The app should behave as before, displaying a word
 pairing each time you hot reload or save the app.
 
 <center><img src="images/step3-screenshot.png" alt="screenshot at completion of third step"></center>
@@ -507,7 +512,7 @@ class MyApp extends StatelessWidget {
           title: new Text('Welcome to Flutter'),
         ),
         body: new Center(
-          child: new RandomWords()
+          child: new RandomWords(),
         ),
       ),
     );
@@ -530,7 +535,7 @@ class RandomWordsState extends State<RandomWords> {
 
 ---
 
-# Step 4: Create a ListView
+# Step 4: Create an infinite scrolling ListView
 
 In this step, you'll expand RandomWordsState to generate
 and display a list of word pairings. As the user scrolls, the list
@@ -560,10 +565,10 @@ displays them in the ListView.
 
 The ListView class provides a builder property, `itemBuilder`, where the rows
 are built inside an anonymous function. Two parameters are passed to
-the function&mdash;the BuildContext, and the row iterator.
+the function&mdash;the BuildContext, and the row iterator, `i`.
 
 {% comment %}
-xxx: Explain this by breaking it down further.
+xxx: Todo: Explain this by breaking it down further.
 {% endcomment %}
 <!-- skip -->
 {% prettify dart %}
@@ -587,11 +592,24 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
+<li markdown="1"> Add a `biggerFont` variable for making the font size larger:
+
+<!-- skip -->
+{% prettify dart %}
+class RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+
+  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
+  ...
+}
+{% endprettify %}
+</li>
+
 <li markdown="1"> The `_buildSuggestions` method calls `_buildRow` once per
 word pair. This method displays each new pair in a ListTile,
 which allows you to make the rows more attractive in the next step.
 
-Add a `_buildRow` method:
+Add a `_buildRow` method to RandomWordsState:
 
 <!-- skip -->
 {% prettify dart %}
@@ -610,21 +628,8 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `biggerFont` variable for making the font size larger:
-
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-
-  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
-  ...
-}
-{% endprettify %}
-</li>
-
-<li markdown="1"> Update the `build` method for RandomWordsState to use
-`_buildSuggestions`, rather than directly calling the word
+<li markdown="1"> Update the build method for RandomWordsState to use
+`_buildSuggestions()`, rather than directly calling the word
 generation library. Make the highlighted changes:
 
 <!-- skip -->
@@ -647,31 +652,31 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Update the `build` method for MyApp. Replace the
-    contents of the build method with the following highlighted code.
+<li markdown="1"> Update the build method for MyApp. Replace the
+    contents of the original method with the following highlighted code.
     This removes the Scaffold and AppBar instances from MyApp.
     These are now managed by RandomWordsState and make it possible to
     navigate from one screen to another in the next step.
 
-Make the changes as shown below:
+Replace the original method with the highlighted build method below:
 
 <!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
     [[highlight]]return new MaterialApp([[/highlight]]
       [[highlight]]title: 'Startup Name Generator',[[/highlight]]
       [[highlight]]home: new RandomWords(),[[/highlight]]
-    );
-  }
+    [[highlight]]);[[/highlight]]
+  [[highlight]]}[[/highlight]]
 }
 {% endprettify %}
 </li>
 
 </ol>
 
-Hot reload the app. You should see a list of word pairings. Scroll down
+Restart the app. You should see a list of word pairings. Scroll down
 as far as you want and you will continue to see new word pairings.
 
 <center><img src="images/step4-screenshot.png" alt="screenshot at completion of fourth step"></center>
@@ -719,24 +724,26 @@ class RandomWordsState extends State<RandomWords> {
 
   Widget _buildSuggestions() {
     return new ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider();
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i.isOdd) return new Divider();
 
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
+        final index = i ~/ 2;
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+        return _buildRow(_suggestions[index]);
+      },
+    );
   }
 
   Widget _buildRow(WordPair pair) {
     return new ListTile(
-        title: new Text(
-      pair.asPascalCase,
-      style: _biggerFont,
-    ));
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+    );
   }
 }
 {% endprettify %}
@@ -782,31 +789,31 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Also in `_buildRow`, add heart-shaped icons to the
-    ListTiles to enable favoriting. Display favorite entries with a
-    solid red heart, and other entries with a heart-shaped outline.
+<li markdown="1"> Also in `_buildRow()`, add heart-shaped icons to the
+    ListTiles to enable favoriting. Later, you'll add the ability to
+    interact with the heart icons.
 
-Make the highlighted changes below:
+Add the highlighted lines below:
 
 <!-- skip -->
 {% prettify dart %}
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return new ListTile(
-        title: new Text(
-          pair.asPascalCase,
-          style: _biggerFont,
-        [[highlight]]),[[/highlight]]  // Replace the "));" with this.
-        [[highlight]]trailing: new Icon([[/highlight]] // Add this line, plus the next 3 lines.
-          [[highlight]]alreadySaved ? Icons.favorite : Icons.favorite_border,[[/highlight]]
-          [[highlight]]color: alreadySaved ? Colors.red : null,[[/highlight]]
-        [[highlight]]));[[/highlight]]
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+      [[highlight]]trailing: new Icon([[/highlight]]
+        [[highlight]]alreadySaved ? Icons.favorite : Icons.favorite_border,[[/highlight]]
+        [[highlight]]color: alreadySaved ? Colors.red : null,[[/highlight]]
+      [[highlight]]),[[/highlight]]
+    );
   }
-}
 {% endprettify %}
 </li>
 
-<li markdown="1"> Hot reload the app. You should now see open hearts on each row,
+<li markdown="1"> Restart the app. You should now see open hearts on each row,
     but they aren't yet interactive.
 </li>
 
@@ -816,30 +823,33 @@ Make the highlighted changes below:
     calls `setState()`. Calling this method signals the build system that
     state has changed and that the state needs updating.
 
-Make the highlighted changes:
+Add the highlighted lines:
 
 <!-- skip -->
 {% prettify dart %}
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return new ListTile(
-        title: new Text(
-          pair.asPascalCase,
-          style: _biggerFont,
-        ),
-        trailing: new Icon(
-          alreadySaved ? Icons.favorite : Icons.favorite_border,
-          color: alreadySaved ? Colors.red : null,
-        [[highlight]]),[[/highlight]] // Replace the "))," with "),"
-        [[highlight]]onTap: () {[[/highlight]] //Add this and the remaining highlighted lines.
-          [[highlight]]setState(() {[[/highlight]]
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
+      ),
+      [[highlight]]onTap: () {[[/highlight]]
+        [[highlight]]setState([[/highlight]]
+              [[highlight]]() {[[/highlight]]
             [[highlight]]if (alreadySaved) {[[/highlight]]
               [[highlight]]_saved.remove(pair);[[/highlight]]
             [[highlight]]} else {[[/highlight]]
               [[highlight]]_saved.add(pair);[[/highlight]]
             [[highlight]]}[[/highlight]]
-          [[highlight]]});[[/highlight]]
-        [[highlight]]});[[/highlight]]
+          [[highlight]]},[[/highlight]]
+        [[highlight]]);[[/highlight]]
+      [[highlight]]},[[/highlight]]
+    );
   }
 {% endprettify %}
 </li>
@@ -896,38 +906,42 @@ class RandomWordsState extends State<RandomWords> {
 
   Widget _buildSuggestions() {
     return new ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider();
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i.isOdd) return new Divider();
 
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
+        final index = i ~/ 2;
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+        return _buildRow(_suggestions[index]);
+      },
+    );
   }
 
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return new ListTile(
-        title: new Text(
-          pair.asPascalCase,
-          style: _biggerFont,
-        ),
-        trailing: new Icon(
-          alreadySaved ? Icons.favorite : Icons.favorite_border,
-          color: alreadySaved ? Colors.red : null,
-        ),
-        onTap: () {
-          setState(() {
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
+      ),
+      onTap: () {
+        setState(
+              () {
             if (alreadySaved) {
               _saved.remove(pair);
             } else {
               _saved.add(pair);
             }
-          });
-        });
+          },
+        );
+      },
+    );
   }
 }
 {% endprettify %}
@@ -946,16 +960,16 @@ Popping a route from the Navigator's stack, returns the display to the previous
 route.
 
 <ol markdown="1">
-<li markdown="1"> Add a list icon to the AppBar in the `build` method
+<li markdown="1"> Add a list icon to the AppBar in the build method
     for RandomWordsState.  When the user clicks the list icon, a new
-    route that contains the favorites items is pushed to the Navigator, displaying the
-    new list.
+    route that contains the favorites items is pushed to the Navigator,
+    displaying the icon.
 
 Note that the `actions` property takes an array of widgets. Some properties
 take a single widget (`child`), and other properties take multiple widgets
 (`children`), as indicated by the square brackets (`[]`).
 
-Add the highlighted "action" code to the build method:
+Add the icon and its acton to the build method:
 
 <!-- skip -->
 {% prettify dart %}
@@ -967,11 +981,8 @@ class RandomWordsState extends State<RandomWords> {
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         [[highlight]]actions: <Widget>[[[/highlight]]
-          [[highlight]]new IconButton([[/highlight]]
-            [[highlight]]icon: new Icon(Icons.list),[[/highlight]]
-            [[highlight]]onPressed: _pushSaved[[/highlight]]
-          [[highlight]])[[/highlight]]
-        [[highlight]]][[/highlight]]
+          [[highlight]]new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
+        [[highlight]]],[[/highlight]]
       ),
       body: _buildSuggestions(),
     );
@@ -992,8 +1003,8 @@ class RandomWordsState extends State<RandomWords> {
 }
 {% endprettify %}
 
-Hot reload the app. The list icon appears in the app bar. Tapping it does nothing
-yet, because the `_pushSaved` method is empty.
+Hot reload the app. The list icon appears in the app bar.
+Tapping it does nothing yet, because the `_pushSaved` method is empty.
 </li>
 
 <li markdown="1"> When the user taps the list icon in the app bar,
@@ -1027,25 +1038,24 @@ which pushes the route to the Navigator's stack.
     Navigator.of(context).push(
       [[highlight]]new MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
-          [[highlight]]final tiles = _saved.map((pair) {[[/highlight]]
-            [[highlight]]return new ListTile([[/highlight]]
+          [[highlight]]final tiles = _saved.map([[/highlight]]
+                [[highlight]](pair) {[[/highlight]]
+              [[highlight]]return new ListTile([[/highlight]]
                 [[highlight]]title: new Text([[/highlight]]
                   [[highlight]]pair.asPascalCase,[[/highlight]]
                   [[highlight]]style: _biggerFont,[[/highlight]]
-                [[highlight]]),);[[/highlight]]  // xxx -- added comma affects dartfmt
-          [[highlight]]});[[/highlight]]
+                [[highlight]]),[[/highlight]]
+              [[highlight]]);[[/highlight]]
+            [[highlight]]},[[/highlight]]
+          [[highlight]]);[[/highlight]]
           [[highlight]]final divided = ListTile[[/highlight]]
               [[highlight]].divideTiles([[/highlight]]
             [[highlight]]context: context,[[/highlight]]
             [[highlight]]tiles: tiles,[[/highlight]]
           [[highlight]])[[/highlight]]
               [[highlight]].toList();[[/highlight]]
-
-        [[highlight]]},[[/highlight]]
-      [[highlight]]),[[/highlight]]
     );
   }
-}
 {% endprettify %}
 </li>
 
@@ -1054,7 +1064,7 @@ which pushes the route to the Navigator's stack.
     new route with the name, "Saved Suggestions". The body consists of a
     ListView with the ListTiles.
 
-Add the highlisted text below:
+Add the highlisted code below:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1062,18 +1072,21 @@ Add the highlisted text below:
     Navigator.of(context).push(
       new MaterialPageRoute(
         builder: (context) {
-          final tiles = _saved.map((pair) {
-            return new ListTile(
+          final tiles = _saved.map(
+                (pair) {
+              return new ListTile(
                 title: new Text(
-              pair.asPascalCase,
-              style: _biggerFont,
-            ));
-          });
+                  pair.asPascalCase,
+                  style: _biggerFont,
+                ),
+              );
+            },
+          );
           final divided = ListTile
               .divideTiles(
-                context: context,
-                tiles: tiles,
-              )
+            context: context,
+            tiles: tiles,
+          )
               .toList();
 
           [[highlight]]return new Scaffold([[/highlight]]
@@ -1086,6 +1099,7 @@ Add the highlisted text below:
       ),
     );
   }
+
 {% endprettify %}
 </li>
 
@@ -1169,66 +1183,74 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text('Startup Name Generator'),
-          actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved)
-          ]),
+        title: new Text('Startup Name Generator'),
+        actions: <Widget>[
+          new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),
+        ],
+      ),
       body: _buildSuggestions(),
     );
   }
 
   Widget _buildSuggestions() {
     return new ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider();
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i.isOdd) return new Divider();
 
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
+        final index = i ~/ 2;
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(10));
+        }
+        return _buildRow(_suggestions[index]);
+      },
+    );
   }
 
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
     return new ListTile(
-        title: new Text(
-          pair.asPascalCase,
-          style: _biggerFont,
-        ),
-        trailing: new Icon(
-          alreadySaved ? Icons.favorite : Icons.favorite_border,
-          color: alreadySaved ? Colors.red : null,
-        ),
-        onTap: () {
-          setState(() {
+      title: new Text(
+        pair.asPascalCase,
+        style: _biggerFont,
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color: alreadySaved ? Colors.red : null,
+      ),
+      onTap: () {
+        setState(
+          () {
             if (alreadySaved) {
               _saved.remove(pair);
             } else {
               _saved.add(pair);
             }
-          });
-        });
+          },
+        );
+      },
+    );
   }
 
   void _pushSaved() {
     Navigator.of(context).push(
       new MaterialPageRoute(
         builder: (context) {
-          final tiles = _saved.map((pair) {
-            return new ListTile(
+          final tiles = _saved.map(
+                (pair) {
+              return new ListTile(
                 title: new Text(
-              pair.asPascalCase,
-              style: _biggerFont,
-            ));
-          });
+                  pair.asPascalCase,
+                  style: _biggerFont,
+                ),
+              );
+            },
+          );
           final divided = ListTile
               .divideTiles(
-                context: context,
-                tiles: tiles,
-              )
+            context: context,
+            tiles: tiles,
+          )
               .toList();
 
           return new Scaffold(
@@ -1249,11 +1271,11 @@ class RandomWordsState extends State<RandomWords> {
 # Well done!
 
 You've written an interactive Flutter app that runs on both iOS and Android.
-In this tutorial, you've:
+In this codelab, you've:
 
 * Created a Flutter app from the ground up.
 * Written Dart code.
-* Added, and used, an external library.
+* Leveraged an external, third party library.
 * Used hot reload for a faster development cycle.
 * Implemented a stateful widget, adding interactivity to your app.
 * Created a lazily loaded, infinite scrolling list displayed with a
