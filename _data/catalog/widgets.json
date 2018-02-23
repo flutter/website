@@ -166,7 +166,7 @@
   {
     "name": "TabBarView",
     "sample": "TabBarView_index",
-    "description": "A page view that displays the widget which corresponds to the currently selected tab. Typically used in conjuction with a TabBar.",
+    "description": "A page view that displays the widget which corresponds to the currently selected tab. Typically used in conjunction with a TabBar.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -176,7 +176,7 @@
   },
   {
     "name": "MaterialApp",
-    "description": "A convenience widget that wraps a number of widgets that are commonly required for Material Design applications.",
+    "description": "A convenience widget that wraps a number of widgets that are commonly required for applications implementing Material Design.",
     "categories": [],
     "subcategories": [
       "App structure and navigation"
@@ -216,7 +216,7 @@
   },
   {
     "name": "FlatButton",
-    "description": "A flat button is a section printed on a Material widget that reacts to touches by filling with color.",
+    "description": "A flat button is a section printed on a Material Components widget that reacts to touches by filling with color.",
     "categories": [],
     "subcategories": [
       "Buttons"
@@ -438,7 +438,7 @@
   },
   {
     "name": "Stepper",
-    "description": "A material stepper widget that displays progress through a sequence of steps.",
+    "description": "A Material Design stepper widget that displays progress through a sequence of steps.",
     "categories": [],
     "subcategories": [
       "Layout"
@@ -1361,7 +1361,7 @@
   },
   {
     "name": "ExcludeSemantics",
-    "description": "A widget that drops all the semantics of its descendants. This can be used to hide subwidgets that would otherwise be reported but that would only be confusing. For example, the material library's Chip widget hides the avatar since it is redundant with the chip label.",
+    "description": "A widget that drops all the semantics of its descendants. This can be used to hide subwidgets that would otherwise be reported but that would only be confusing. For example, the Material Components Chip widget hides the avatar since it is redundant with the chip label.",
     "categories": [
       "Accessibility"
     ],

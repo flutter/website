@@ -87,7 +87,7 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
 To listen to gestures from the widgets layer, use a
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
 
-If you're using Material widgets, many of those widgets already respond
+If you're using Material Components, many of those widgets already respond
 to taps or gestures.
 For example,
 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) and
