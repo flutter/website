@@ -85,7 +85,7 @@ your environment.
 # Step 1: Create the starting Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/get-started/)
+[Getting Started with your first Flutter app.](/getting-started/)
 Name the project **startup_namer** (instead of _myapp_).
 You’ll be modifying this starter app to create the finished app.
 
