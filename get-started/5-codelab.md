@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Get Started: Core Concepts Tutorial"
+title: "Get Started: Core Concepts Codelab"
 permalink: /get-started/codelab/
 ---
 
-**Coming soon:** Flutter core concepts tutorial
+**Coming soon:** Flutter core concepts codelab
 
 ## Next step
 
