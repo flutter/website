@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Get Started: Core Concepts Tutorial"
-permalink: /get-started/tutorial/
+permalink: /get-started/codelab/
 ---
 
 **Coming soon:** Flutter core concepts tutorial

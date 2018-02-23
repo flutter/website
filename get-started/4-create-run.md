@@ -171,4 +171,4 @@ You should see the updated string in the running app almost immediately.
 
 Let's learn some core Flutter concepts, by creating a small app.
 
-[Next step: Core Concepts Tutorial](/get-started/tutorial/)
+[Next step: Core Concepts Tutorial](/get-started/codelab/)
