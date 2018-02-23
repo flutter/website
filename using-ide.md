@@ -116,27 +116,30 @@ inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 This offers many debugging tools; for details on these please see
 [Debugging Flutter Apps](https://flutter.io/debugging/).
 
-* 'Select widget': Select a widget on the device to inspect it in the
+* 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
   [Flutter Inspector](/inspector/).
 
-* 'Debug paint': Add visual debugging hints to the rendering displaying
+* 'Toggle Debug Paint': Add visual debugging hints to the rendering displaying
    borders, padding, alignment, and spacers.
 
-* 'Platform toggle': Toggle between rendering for Android or iOS.
+* 'Toggle Platform Mode': Toggle between rendering for Android or iOS.
 
-* 'Performance overlay': Show performance graphs for the GPU & CPU threads.
+* 'Toggle Performance Overlay': Show performance graphs for the GPU & CPU threads.
 
-* 'Performance overlay': Show performance graphs for the GPU & CPU threads.
+* 'Open Timeline View': Analyze activity of the application as it runs.
 
-* 'Timeline view': Analyze activity of the application as it runs.
+* 'Open Observatory': A profiler for Dart applications.
 
-* 'Open observatory': A profiler for Dart applications.
+Also available in the additional actions menu:
 
-* 'Repaint rainbow': Show rotating colors on layers when repainting.
+* 'Show Paint Baselines': Causes each RenderBox to paint a line at each of its
+  baselines.
 
-* 'Slow animations': Slow down animations to enable visual inspection.
+* 'Enable Repaint Rainbow': Show rotating colors on layers when repainting.
 
-* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a
+* 'Enable Slow Animations': Slow down animations to enable visual inspection.
+
+* 'Hide Slow Mode Banner': Hide the 'slow mode' banner even when running a
   debug build.
 
 
@@ -148,7 +151,7 @@ html-based UI. For details see the [Observatory page](https://dart-lang.github.i
 To open Observatory:
 
 1. Run your app in debug mode.
-1. Select 'open observatory from the In the Debug panel at the bottom (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
+1. Select the 'open observatory' action from the Debug panel (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
 
 ![Debugging panel](/images/intellij/debug-panel.png)
 

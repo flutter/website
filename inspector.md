@@ -25,7 +25,7 @@ these widget trees. It can be helpful when:
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
 
 
-To startclick "Select widget" on the Flutter Inspector toolbar and then click
+To start click "Select widget" on the Flutter Inspector toolbar and then click
 on the device to select a widget. The selected widget will then be highlighted
 on the device and in the widget tree.
 ![Select Demo](/images/intellij/inspector_select_example.gif)
