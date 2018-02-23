@@ -73,7 +73,7 @@ You'll need to install the following:
 <li markdown="1"> Plugin for your IDE<br>
     The Flutter and Dart plugins must be installed separately for your
     IDE. Besides Android Studio, Flutter and Dart plugins are also available
-    for the [VSCode](https://code.visualstudio.com/download) and
+    for the [VS Code](https://code.visualstudio.com/download) and
     [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac) IDEs.
 </li>
 </ul>
@@ -102,7 +102,7 @@ become skewed. You can fix this automatically with the Flutter tools:
 
 * Android Studio / IntelliJ IDEA: Right-click the dart code and
   select **Reformat with Dart Style**.
-* VSCode: Right-click the code and select **Reformat Code with dartfmt**.
+* VS Code: Right-click the code and select **Reformat Code with dartfmt**.
   Dart code and selecting **Reformat Code with dartfmt**.
 * Terminal: Run `flutter format <filename>`.
 
@@ -750,7 +750,7 @@ class RandomWordsState extends State<RandomWords> {
 
 ---
 
-# Step 5: Save favorite word pairings
+# Step 5: Add interactivity
 
 In this step, you'll add tappable heart icons to each row.
 When the user taps an entry in the list, toggling its
