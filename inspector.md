@@ -15,8 +15,8 @@ Flutter widget trees.
 
 The Flutter framework uses widgets as [the core building
 block](https://flutter.io/widgets-intro/) for anything from controls (text,
-buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.). The
-Inspector is powerful tool for visualizing and exploring Flutter
+buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
+The Inspector is powerful tool for visualizing and exploring Flutter
 these widget trees. It can be helpful when:
 
 * Undestanding existing layouts
@@ -25,12 +25,18 @@ these widget trees. It can be helpful when:
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
 
 
-The typical workflow using the inspector is to click "Select widget" on the Flutter Inspector toolbar and then click on the device to select a widget. The selected widget will then be highlighted on the device and in the widget tree.
+To startclick "Select widget" on the Flutter Inspector toolbar and then click
+on the device to select a widget. The selected widget will then be highlighted
+on the device and in the widget tree.
 ![Select Demo](/images/intellij/inspector_select_example.gif)
 
-You can then browse around the interactive widget tree in IntelliJ to view nearby widgets and see their field values. If you are trying to debug a layout issue, then the Widgets layer’s tree may be insufficiently detailed. In that case click on the Render Tree tab to view the render tree corresponding to the same location in the tree. When debugging layout issues, the key fields to look at are the `size`
-and `constraints` fields. The constraints flow down the tree, and the
-sizes flow back up.
+You can then browse around the interactive widget tree in the IDE to view
+nearby widgets and see their field values. If you are trying to debug a layout
+issue, then the Widgets layer’s tree may be insufficiently detailed. In that
+case click on the Render Tree tab to view the render tree corresponding to the
+same location in the tree. When debugging layout issues, the key fields to look
+at are the `size` and `constraints` fields. The constraints flow down the tree,
+and the sizes flow back up.
 
 ![Switch Trees](/images/intellij/switch_inspector_tree.gif)
 
@@ -44,4 +50,5 @@ plugin](https://flutter.io/ide-setup/) for Android Studio, or IntelliJ IDEA.
 
 ## Feedback issues
 
-If you have suggestions, or encounter issues, please [file an issue in our tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!
+If you have suggestions, or encounter issues, please
+[file an issue in our tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!

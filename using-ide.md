@@ -94,31 +94,33 @@ You need to connect a device, or start a simulator, to proceed.
 1. Click the **Debug icon** in the toolbar, or invoke **Run>Debug**.
 * The bottom **Debugger** pane will show Stack Frames and Variables.
 * The bottom **Console** pane will show detailed logs output.
-* Debugging is based on a default launch configuration. To customize this, click.
- the drop-down button to the right of the device selector, and select **Edit configuration**.
+* Debugging is based on a default launch configuration. To customize this,
+  click. the drop-down button to the right of the device selector, and select
+  **Edit configuration**.
 
 ## Fast edit and refresh development cycle
 
-Flutter offers a best-in-class developer cycle enabling you to see the effect of
-your changes almost instantly with the 'hot reload' feature. See [Hot reloading Flutter Apps](/hot-reload/)
-for details.
+Flutter offers a best-in-class developer cycle enabling you to see the effect
+of your changes almost instantly with the 'hot reload' feature. See
+[Hot reloading Flutter Apps](/hot-reload/) for details.
 
 ## Advanced debugging
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with 'Debug', and then open the Flutter inspector tool
-window using 'View > Tool Windows > Flutter Inspector'.
+To debug a visual issue, start the app with 'Debug', and then open the Flutter
+inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
 
 This offers many debugging tools; for details on these please see
 [Debugging Flutter Apps](https://flutter.io/debugging/).
 
-* 'Select widget': Select a widget on the device to inspect it in the [Flutter Inspector](/inspector/).
+* 'Select widget': Select a widget on the device to inspect it in the
+  [Flutter Inspector](/inspector/).
 
-* 'Debug paint': Add visual debugging hints to the rendering displaying borders,
-   padding, alignment, and spacers.
+* 'Debug paint': Add visual debugging hints to the rendering displaying
+   borders, padding, alignment, and spacers.
 
 * 'Platform toggle': Toggle between rendering for Android or iOS.
 
@@ -134,7 +136,8 @@ This offers many debugging tools; for details on these please see
 
 * 'Slow animations': Slow down animations to enable visual inspection.
 
-* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a debug build.
+* 'Hide slow mode banner': Hide the 'slow mode' banner even when running a
+  debug build.
 
 
 ### Debugging with Observatory
