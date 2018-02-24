@@ -27,7 +27,7 @@ For a demonstration of the Inspector, please see the recent
 
 ## Get Started with the Inspector
 
-The Inspector is currently available in [the Flutter plugin](/get-started/setup-editor/)
+The Inspector is currently available in [the Flutter plugin](/get-started/editor-configuration/)
 for Android Studio, or IntelliJ IDEA.
 
 ## Feedback issues

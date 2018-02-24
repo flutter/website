@@ -17,4 +17,4 @@ permalink: /setup-windows/
 
 ## Next step
 
-[Next step: Setup Editor](/get-started/setup-editor/)
+[Next step: Setup Editor](/get-started/editor-configuration/)

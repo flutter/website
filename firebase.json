@@ -75,12 +75,12 @@
       },
       {
         "source": "/setup",
-        "destination": "/get-started/setup/",
+        "destination": "/get-started/install/",
         "type": 301
       },
       {
         "source": "/setup-ide",
-        "destination": "/get-started/setup-editor/",
+        "destination": "/get-started/editor-configuration/",
         "type": 301
       }
     ]

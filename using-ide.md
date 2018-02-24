@@ -13,7 +13,7 @@ Android Studio or IntelliJ IDEs.
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/setup-editor/) instructions to install
+Please follow the [Editor Setup](/get-started/editor-configuration/) instructions to install
 the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>

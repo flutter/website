@@ -187,7 +187,7 @@ to start developing and iterating.
 
 Next steps:
 
-1.  [Follow the Flutte Getting Started guide](/get-started/).
+1.  [Follow the Flutter Getting Started guide](/get-started/).
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
     [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).

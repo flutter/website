@@ -19,4 +19,4 @@ permalink: /setup-linux/
 
 ## Next step
 
-[Next step: Setup Editor](/get-started/setup-editor/)
+[Next step: Setup Editor](/get-started/editor-configuration/)

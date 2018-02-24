@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Get Started: Create and Run Your First App"
-permalink: /get-started/create-and-run/
+title: "Get Started: Test Drive an App"
+permalink: /get-started/test-drive/
 ---
 
-This page describes how to create your first Flutter app, run it, and learn
-how to make changes with Hot Reload.
+This page describes how to "test drive" Flutter: create a new Flutter app from
+our templates, run it, and learn how to make changes with Hot Reload.
 
 Flutter is a flexible toolkit, so please start by selecting your development
 tool of choice for writing, building, and running your Flutter app.
@@ -20,7 +20,7 @@ tool of choice for writing, building, and running your Flutter app.
 
 *Android Studio:* A complete, integrated IDE experience for Flutter. 
 
-## Create your first Flutter app
+## Create new app
 
    1. Select **File>New Flutter Project**
    1. Under **Flutter SDK path**, select **Install SDK...**, and enter the

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Get Started: Setup Editor"
-permalink: /get-started/setup-editor/
+title: "Get Started: Editor Configuration"
+permalink: /get-started/editor-configuration/
 ---
 
 You can build apps with Flutter using any text editor combioned with our
@@ -11,7 +11,7 @@ highlighting, widget edditing assists, run & debug support, and more.
 
 Follow the steps before to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, simply skip ahead to
-[Next step: Create and run your first app](/get-started/create-and-run/).
+[Next step: Create and run your first app](/get-started/test-drive/).
 
 <ul class="tabs__top-bar">
     <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
@@ -82,4 +82,4 @@ To install these:
 Now that you have the Flutter editor configured, let create a first project,
 run it, and experiencee 'hot reload'.
 
-[Next step: Create and run your first app](/get-started/create-and-run/)
+[Next step: Create and run your first app](/get-started/test-drive/)

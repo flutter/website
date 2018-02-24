@@ -14,4 +14,4 @@ Welcome to the Flutter Get Started Experience. We will help you:
 
 ## Next step
 
-[Next step: Setup Flutter](/get-started/setup/)
+[Next step: Setup Flutter](/get-started/install/)
