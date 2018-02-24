@@ -786,10 +786,10 @@ which pushes the route to the Navigator's stack.
 
 <!-- skip -->
 {% prettify dart %}
-  void _pushSaved() {
+  [[highlight]]void _pushSaved() {[[/highlight]]
     [[highlight]]Navigator.of(context).push([[/highlight]]
     [[highlight]]);[[/highlight]]
-  }
+  [[highlight]]}[[/highlight]]
 {% endprettify %}
 </li>
 
