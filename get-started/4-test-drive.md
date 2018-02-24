@@ -68,7 +68,7 @@ You should see the updated string in the running app almost immediately.
 
 *VS Code:* A light-weight editor with Flutter run and debug support.
 
-## Create your first Flutter app
+## Create new app
 
   1. Start VS Code
   1. Invoke **View>Command Palette...**
@@ -114,7 +114,7 @@ You should see the updated string in the running app almost immediately.
 *Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
 for running and building.
 
-## Create your first Flutter app
+## Create new app
 
    1. Use the `flutter create` command to create a new project:
    {% commandline %}
