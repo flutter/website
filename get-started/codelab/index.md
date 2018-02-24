@@ -8,7 +8,6 @@ permalink: /get-started/codelab/
     <img src="images/startup-namer-app.gif" 
          alt="Animated GIF of the app that you will be building."
          style="box-shadow: 0 0 3px; margin-bottom: 10px" >
-    <figcaption>This is the app you will be building.</figcaption>
 </figure>
 
 This is a guide to creating your first Flutter app. If you
@@ -30,17 +29,6 @@ TODO: (later)
 
 * TOC
 {:toc}
-
-## What are Flutter and Dart?
-
-_Flutter_ is Google's mobile UI framework for crafting high-quality
-native interfaces on iOS and Android in record time. Flutter works with
-existing code, is used by organizations around the world, and is free
-and open source.
-
-_Dart_ is an application programming language from Google that's
-easy to learn, easy to use, and deployable everywhere.
-Flutter apps are written in Dart.
 
 ## What you'll build
 
