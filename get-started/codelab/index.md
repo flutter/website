@@ -4,6 +4,13 @@ title: Write Your First Flutter App
 permalink: /get-started/codelab/
 ---
 
+<figure class="right-figure" style="max-width: 250px">
+    <img src="images/startup-namer-app.gif" 
+         alt="Animated GIF of the app that you will be building."
+         style="box-shadow: 0 0 3px; margin-bottom: 10px" >
+    <figcaption>This is the app you will be building.</figcaption>
+</figure>
+
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
@@ -20,9 +27,6 @@ TODO: (later)
 - Second route should be named "Saved Suggestions" - name
   should be consistent: screenshot, code, markdown content.
 {% endcomment %}
-
-[PENDING: Insert animated gif here. The next lines create the
-automated TOC.]]
 
 * TOC
 {:toc}
