@@ -23,7 +23,7 @@ permalink: /docs/
 
 ## New to Flutter?
 
-* [Write Your First Flutter App](/tutorials/get-started/)  
+* [Write Your First Flutter App](http://example.com)  
   A walkthrough on creating a Flutter app that generates names for startup companies.
 
 * [Flutter for Android Developers](/flutter-for-android/)  
@@ -35,7 +35,7 @@ permalink: /docs/
 * [Building Layouts in Flutter](/tutorials/layout/)  
   Walkthrough showing how to create layouts in Flutter, where everything is a widget.
 
-* [Add Interactivity to Your Flutter App](/tutorials/interactivity/)  
+* [Add Interactivity to Your Flutter App](/tutorials/interactive/)  
   Walkthrough showing how to add a stateful widget to your app.
 
 * [A Tour of the Flutter Widget Framework](/widgets-intro/)  
@@ -51,7 +51,7 @@ You’ve mastered the basics and want to add to your skills.
 * [Cookbook](/cookbook/)  
   A (growing) collection of recipes that address common Flutter use cases.
 
-* [Sample App Catalog](/samples/)  
+* [Sample App Catalog](/catalog/samples/)  
   Simple apps that show how to implement features and widgets.
 
 * [Adding Assets and Images in Flutter](/assets-and-images/)  
