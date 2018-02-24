@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Get Started: Flutter Installation"
+title: "Get Started: Install Flutter"
 permalink: /get-started/install/
 ---
 
