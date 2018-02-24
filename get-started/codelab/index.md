@@ -11,8 +11,18 @@ you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
 {% comment %}
-Retake screenshots on the Android emulator?
+TODO: (later)
+- Break down the logic further where it calculates divided cells.
+  (Search for xxx)
+- Retake screenshots on the Android emulator?
+- Somehow cross links from code to text so people can restart
+  and fine their place more easily? (Tao)
+- Second route should be named "Saved Suggestions" - name
+  should be consistent: screenshot, code, markdown content.
 {% endcomment %}
+
+[PENDING: Insert animated gif here. The next lines create the
+automated TOC.]]
 
 * TOC
 {:toc}
@@ -30,17 +40,12 @@ Flutter apps are written in Dart.
 
 ## What you'll build
 
-You’ll implement a simple mobile app that proposes names for a
+You’ll implement a simple mobile app that generates proposed names for a
 startup company. The user can select and unselect proposed names,
 saving the best ones. The code generates ten names at a time.
 As the user scrolls, new batches of names are generated.
 
-The following video shows how the finished app works:
-
-<div class="embed-container"><iframe width = "300" src="https://www.youtube.com/embed/jQgy1Fe1Uy8?rel=0" frameborder="0" allowfullscreen></iframe></div>
-<!-- I'd like a video that shows the cursor movement and more of the display, but
-     this is OK for now. -->
-<center>Need a GIF or another solution.</center>
+The animated GIF above shows how the finished app works.
 
 <div class="whats-the-point" markdown="1">
 
@@ -101,13 +106,9 @@ When pasting code into your app, indentation can
 become skewed. You can fix this automatically with the Flutter tools:
 
 * Android Studio / IntelliJ IDEA: Right-click the dart code and
-  select **Reformat with Dart Style**.
+  select **Reformat Code with dartfmt**.
 * VS Code: Right-click the code and select **Reformat Code with dartfmt**.
-  Dart code and selecting **Reformat Code with dartfmt**.
 * Terminal: Run `flutter format <filename>`.
-
-Or, at the command line, you can use
-[dartfmt](https://github.com/dart-lang/dart_style).
 </aside>
 
 <ol markdown="1">
@@ -153,6 +154,9 @@ class MyApp extends StatelessWidget {
 
 <ul markdown="1">
 <li markdown="1"> This example creates a Material app.
+    [Material](https://material.io/guidelines/) is a visual design language
+    that is standard on Android and the web. Flutter offers a rich set
+    of Material widgets.
 </li>
 <li markdown="1"> The main method specifies fat arrow (`=>`) notation,
      which is short hand used for one-line functions or methods.
@@ -321,60 +325,12 @@ class MyApp extends StatelessWidget {
 
 ## Problems?
 
-If your app isn't running correctly, look for typos.
-If needed, use the following code to get back on track.
+If your app isn't running correctly, look for typos. If needed,
+use the code at the following links to get back on track.
 
-The files you edited in this step should now look like this
-(minus the comments):
-
-**pubspec.yaml**
-
-<!-- skip -->
-{% prettify yaml %}
-name: startup_namer
-description: A new Flutter application.
-
-dependencies:
-  flutter:
-    sdk: flutter
-
-  cupertino_icons: ^0.1.0
-  english_words: ^3.1.0
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-flutter:
-  uses-material-design: true
-{% endprettify %}
-
-**lib/main.dart**
-
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final wordPair = new WordPair.random();
-    return new MaterialApp(
-      title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
-        ),
-        body: new Center(
-          child: new Text(wordPair.asPascalCase),
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
+* [**pubspec.yaml**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/pubspec.yaml)
+(The **pubspec.yaml** file won't change again.)
+* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/main.dart)
 
 ---
 
@@ -483,6 +439,9 @@ Not all changed program elements ran during view reassembly; consider
 restarting.
 {% endprettify %}
 
+It may be a false positive, but consider restarting in order to make sure
+that your changes are reflected in the app's UI.
+
 The app should behave as before, displaying a word
 pairing each time you hot reload or save the app.
 
@@ -491,47 +450,11 @@ pairing each time you hot reload or save the app.
 ## Problems?
 
 If your app isn't running correctly, you can use the code
-below to get back on track.
+at the following links to get back on track.
 
-The **pubspec.yaml** file won't change again.
-The **lib/main.dart** file should now look like this:
-
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
-        ),
-        body: new Center(
-          child: new RandomWords(),
-        ),
-      ),
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  createState() => new RandomWordsState();
-}
-
-class RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    final wordPair = new WordPair.random();
-    return(new Text(wordPair.asPascalCase));
-  }
-}
-{% endprettify %}
+xxx
+* [**pubspec.yaml**]()
+* [**lib/main.dart**]()
 
 ---
 
@@ -550,10 +473,14 @@ class for saving suggested word pairings. Note that the variable begins
 with an underscore (`_`).  Prefixing an identifier with an underscore enforces
 privacy in the Dart language.
 
+Also, add a `biggerFont` variable for making the font size larger.
+
 <!-- skip -->
 {% prettify dart %}
 class RandomWordsState extends State<RandomWords> {
   [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
+
+  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
   ...
 }
 {% endprettify %}
@@ -588,19 +515,6 @@ class RandomWordsState extends State<RandomWords> {
       [[highlight]]}[[/highlight]]
     [[highlight]]);[[/highlight]]
   [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
-
-<li markdown="1"> Add a `biggerFont` variable for making the font size larger:
-
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-
-  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
-  ...
 }
 {% endprettify %}
 </li>
@@ -820,8 +734,14 @@ Add the highlighted lines below:
 <li markdown="1"> Make the hearts tappable in the `_buildRow` method.
     If a word entry has already been added to favorites, tapping it again
     removes it from favorites. When the heart has been tapped, the method
-    calls `setState()`. Calling this method signals the build system that
-    state has changed and that the state needs updating.
+    calls `setState()` to notify the framework that state has changed.
+
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+In Flutter's react style framework, calling `setState()` triggers
+a call to the `build()` method of the State object, resulting in
+an update to the UI.
+</aside>
 
 Add the highlighted lines:
 
@@ -952,7 +872,7 @@ class RandomWordsState extends State<RandomWords> {
 
 In this step, you'll add a new screen (called a _route_ in Flutter) that
 displays the favorites. You'll learn how to navigate between the home route
-and the new route. Finally, you'll add a Theme to the app's UI.
+and the new route.
 
 In Flutter, the Navigator manages a stack containing the app's routes.
 Pushing a route onto the Navigator's stack, updates the display to that route.
@@ -1054,6 +974,8 @@ which pushes the route to the Navigator's stack.
             [[highlight]]tiles: tiles,[[/highlight]]
           [[highlight]])[[/highlight]]
               [[highlight]].toList();[[/highlight]]
+        [[highlight]]},[[/highlight]]
+      [[highlight]]),[[/highlight]]
     );
   }
 {% endprettify %}
@@ -1091,7 +1013,7 @@ Add the highlisted code below:
 
           [[highlight]]return new Scaffold([[/highlight]]
             [[highlight]]appBar: new AppBar([[/highlight]]
-              [[highlight]]title: new Text('Saved suggestions'),[[/highlight]]
+              [[highlight]]title: new Text('Saved Suggestions'),[[/highlight]]
             [[highlight]]),[[/highlight]]
             [[highlight]]body: new ListView(children: divided),[[/highlight]]
           [[highlight]]);[[/highlight]]
@@ -1109,38 +1031,9 @@ Add the highlisted code below:
     app bar. You didn't have to explicitly implement Navigator.pop.
     Tap the back button to return to the home route.
 </li>
-
-<li markdown="1"> You can easily change an app's theme by configuring
-    the ThemeData class.  Our app uses the default Theme, but you can use
-    themes to make the app reflect your branding.
-
-You'll set the primary color of your theme to be white, but you can play
-with this feature to test other themes.
-
-Add the following code to MyApp:
-
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Startup Name Generator',
-      [[highlight]]theme: new ThemeData([[/highlight]]
-        [[highlight]]primaryColor: Colors.white,[[/highlight]]
-      [[highlight]]),[[/highlight]]
-      home: new RandomWords(),
-    );
-  }
-}
-{% endprettify %}
-</li>
-
-<li markdown="1"> Hot reload the app. You'll notice that the background is white,
-    even the app bar.
-</li>
 </ol>
 
+xxx: replace images
 <center><img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step"><img src="images/step6b-screenshot.png" alt="second route"></center>
 
 ## Problems?
@@ -1159,9 +1052,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Startup Name Generator',
-      theme: new ThemeData(
-        primaryColor: Colors.white,
-      ),
       home: new RandomWords(),
     );
   }
@@ -1180,8 +1070,7 @@ class RandomWordsState extends State<RandomWords> {
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
   @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
+  Widget build(BuildContext context) { return new Scaffold(
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
@@ -1255,7 +1144,7 @@ class RandomWordsState extends State<RandomWords> {
 
           return new Scaffold(
             appBar: new AppBar(
-              title: new Text('Saved suggestions'),
+              title: new Text('Saved Suggestions'),
             ),
             body: new ListView(children: divided),
           );
@@ -1265,6 +1154,51 @@ class RandomWordsState extends State<RandomWords> {
   }
 }
 {% endprettify %}
+
+---
+# Step 7: Using Themes
+
+In this final step, you'll play with the app's theme. The
+_theme_ controls the look and feel of your app. You can use
+the default theme, which is dependent on the physical device
+or emulator, or you can customize the theme to reflect your branding.
+
+<ol markdown="1">
+<li markdown="1"> You can easily change an app's theme by configuring
+    the ThemeData class.  Our app uses the default Theme, but you can use
+    themes to make the app reflect your branding.
+
+Change the app's theme to white by adding the highlighted code to MyApp:
+
+<!-- skip -->
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Startup Name Generator',
+      [[highlight]]theme: new ThemeData([[/highlight]]
+        [[highlight]]primaryColor: Colors.white,[[/highlight]]
+      [[highlight]]),[[/highlight]]
+      home: new RandomWords(),
+    );
+  }
+}
+{% endprettify %}
+</li>
+
+<li markdown="1">
+Hot reload the app. Notice that the entire background is white,
+even the app bar.
+</li>
+</ol>
+
+## Problems?
+
+If you've gotten off track, use the code from the following link
+to get back on track.
+
+* [**lib/main.dart**]()
 
 ---
 
@@ -1282,7 +1216,7 @@ In this codelab, you've:
   ListView and ListTiles.
 * Created a route and added logic for moving between the home route
   and the new route.
-* Learned about Themes.
+* Learned about changing the look of your app's UI using Themes.
 
 Here are some resources you might find useful:
 
