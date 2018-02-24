@@ -79,7 +79,7 @@ To install these:
 
 ## Next step
 
-Now that you have the Flutter editor configured, let create a first project,
-run it, and experiencee 'hot reload'.
+Let's take Flutter for a test drive: create a first project, run it, and
+experiencee 'hot reload'.
 
-[Next step: Create and run your first app](/get-started/test-drive/)
+[Next step: Test drive Flutter](/get-started/test-drive/)
