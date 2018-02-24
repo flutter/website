@@ -765,8 +765,8 @@ class RandomWordsState extends State<RandomWords> {
 {% prettify dart %}
 class RandomWordsState extends State<RandomWords> {
   ...
-  void _pushSaved() {
-  }
+  [[highlight]]void _pushSaved() {[[/highlight]]
+  [[highlight]]}[[/highlight]]
 }
 {% endprettify %}
 
