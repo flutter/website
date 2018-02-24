@@ -17,9 +17,7 @@ you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
 {% comment %}
-TODO: (later)
-- Break down the logic further where it calculates divided cells.
-  (Tao) (Search for xxx)
+TODO: (maybe, but later)
 - Retake screenshots on the Android emulator? (Tao)
 - Somehow cross link from code to text so people can restart
   and find their place more easily? (Tao)
@@ -268,8 +266,17 @@ know that the imported library is unused (so far).
 </li>
 
 <li markdown="1"> Use the English words package to generate the text instead of
-    using the string "Hello World". Make the following changes,
-    as highlighted below:
+    using the string "Hello World".
+
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+"Pascal case" (also known as "upper camel case"),
+means that each word in the string, including the first one,
+begins with an uppercase letter. So, "uppercamelcase" becomes
+"UpperCamelCase".
+</aside>
+
+Make the following changes, as highlighted below:
 
 <!-- skip -->
 {% prettify dart %}
@@ -474,16 +481,18 @@ class RandomWordsState extends State<RandomWords> {
 </li>
 
 <li markdown="1"> Add a `_buildSuggestions()` function to the RandomWordsState
-class. This method grabs word pairings in batches of 10 and
-displays them in the ListView.
+class. This method builds the ListView that displays the suggested word
+pairing.
 
-The ListView class provides a builder property, `itemBuilder`, where the rows
-are built inside an anonymous function. Two parameters are passed to
-the function&mdash;the BuildContext, and the row iterator, `i`.
+The ListView class provides a builder property, `itemBuilder`,
+a factory builder and callback function specified as an anonymous function.
+Two parameters are passed to the function&mdash;the BuildContext,
+and the row iterator, `i`. The iterator begins at 0 and increments
+each time the function is called, once for every suggested word pairing.
+This model allows the suggested list to grow infinitely as the user scrolls.
 
-{% comment %}
-xxx: Todo: Explain this by breaking it down further.
-{% endcomment %}
+Add the highlighted lines below:
+
 <!-- skip -->
 {% prettify dart %}
 class RandomWordsState extends State<RandomWords> {
@@ -491,11 +500,23 @@ class RandomWordsState extends State<RandomWords> {
   [[highlight]]Widget _buildSuggestions() {[[/highlight]]
     [[highlight]]return new ListView.builder([[/highlight]]
       [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
+      // The itemBuilder callback is called, once per suggested word pairing,
+      // and places each suggestion into a ListTile row.
+      // For odd rows, the function adds two rows to the ListView - one
+      // for the word pairing, and a second holds a Divider widget to
+      // visually separate the entries.
       [[highlight]]itemBuilder: (context, i) {[[/highlight]]
+        // Add a one-pixel-high divider widget before each row in theListView.
         [[highlight]]if (i.isOdd) return new Divider();[[/highlight]]
 
+        // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
+        // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
+        // This calculates the actual number of word pairings in the ListView,
+        // minus the divider widgets.
         [[highlight]]final index = i ~/ 2;[[/highlight]]
+        // If you've reached the end of the available word pairings...
         [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
+          // ...then generate 10 more and add them to the suggestions list.
           [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
         [[highlight]]}[[/highlight]]
         [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
@@ -600,9 +621,8 @@ set of saved favorites.
 
 <ol markdown="1">
 <li markdown="1"> Add a `_saved` Set to RandomWordsState. This Set stores
-    the word pairings that the user favorited. A Set is used instead of a List
-    because a Set doesn't allow duplicates, if it's implemented not to
-    do so.
+    the word pairings that the user favorited. Set is preferred to List
+    because a properly implemented Set doesn't allow duplicate entries.
 
 <!-- skip -->
 {% prettify dart %}
@@ -617,8 +637,8 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> In the `_buildRow` function, add `alreadySaved`,
-    a check to ensure that a word pairing hasn't already been added to
+<li markdown="1"> In the `_buildRow` function, add an `alreadySaved`
+    check to ensure that a word pairing hasn't already been added to
     favorites.
 
 <!-- skip -->
@@ -663,13 +683,6 @@ Add the highlighted lines below:
     removes it from favorites. When the heart has been tapped, the function
     calls `setState()` to notify the framework that state has changed.
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-In Flutter's react style framework, calling `setState()` triggers
-a call to the `build()` method of the State object, resulting in
-an update to the UI.
-</aside>
-
 Add the highlighted lines:
 
 <!-- skip -->
@@ -702,9 +715,16 @@ Add the highlighted lines:
 </li>
 </ol>
 
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+In Flutter's react style framework, calling `setState()` triggers
+a call to the `build()` method for the State object, resulting in
+an update to the UI.
+</aside>
+
 Hot reload the app. You should be able to tap any row to favorite, or unfavorite,
-the entries. Note that toggling a heart's state generates an implicit ink
-splash animation.
+the entry. Note that tapping a row generates an implicit ink splash animation
+that emanates from the heart icon.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
@@ -734,11 +754,14 @@ route.
     route that contains the favorites items is pushed to the Navigator,
     displaying the icon.
 
-Note that the `actions` property takes an array of widgets. Some properties
-take a single widget (`child`), and other properties take multiple widgets
-(`children`), as indicated by the square brackets (`[]`).
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Tip:**
+Some widget properties take a single widget (`child`), and other properties,
+such as `action`, take an array of widgets (`children`),
+as indicated by the square brackets (`[]`).
+</aside>
 
-Add the icon and its acton to the build method:
+Add the icon and its corresponding action to the build method:
 
 <!-- skip -->
 {% prettify dart %}
@@ -870,7 +893,6 @@ Add the highlisted code below:
       ),
     );
   }
-
 {% endprettify %}
 </li>
 
