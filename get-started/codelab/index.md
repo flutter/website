@@ -19,8 +19,8 @@ previous experience with Dart or mobile programming.
 {% comment %}
 TODO: (later)
 - Break down the logic further where it calculates divided cells.
-  (Search for xxx)
-- Retake screenshots on the Android emulator?
+  (Tao) (Search for xxx)
+- Retake screenshots on the Android emulator? (Tao)
 - Somehow cross link from code to text so people can restart
   and find their place more easily? (Tao)
 {% endcomment %}
@@ -31,11 +31,13 @@ TODO: (later)
 ## What you'll build
 
 You’ll implement a simple mobile app that generates proposed names for a
-startup company. The user can select and unselect proposed names,
+startup company. The user can select and unselect names,
 saving the best ones. The code generates ten names at a time.
 As the user scrolls, new batches of names are generated.
+The user can tap the list icon in the upper right of the app bar
+to move to a new route that lists only the favorited names.
 
-The animated GIF above shows how the finished app works.
+The animated GIF shows how the finished app works.
 
 <div class="whats-the-point" markdown="1">
 
@@ -364,8 +366,8 @@ class by adding the highlighted text:
 
 <!-- skip -->
 {% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-}
+[[highlight]]class RandomWordsState extends State<RandomWords> {[[/highlight]]
+[[highlight]]}[[/highlight]]
 {% endprettify %}
 </li>
 
@@ -471,7 +473,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_buildSuggestions()` method to the RandomWordsState
+<li markdown="1"> Add a `_buildSuggestions()` function to the RandomWordsState
 class. This method grabs word pairings in batches of 10 and
 displays them in the ListView.
 
@@ -504,11 +506,11 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> The `_buildSuggestions` method calls `_buildRow` once per
-word pair. This method displays each new pair in a ListTile,
+<li markdown="1"> The `_buildSuggestions` function calls `_buildRow` once per
+word pair. This function displays each new pair in a ListTile,
 which allows you to make the rows more attractive in the next step.
 
-Add a `_buildRow` method to RandomWordsState:
+Add a `_buildRow` function to RandomWordsState:
 
 <!-- skip -->
 {% prettify dart %}
@@ -551,11 +553,11 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Update the build method for MyApp. Replace the
-    contents of the original method with the following highlighted code.
-    This removes the Scaffold and AppBar instances from MyApp.
-    These are now managed by RandomWordsState and make it possible to
-    navigate from one screen to another in the next step.
+<li markdown="1"> Update the build method for MyApp.
+    Remove the Scaffold and AppBar instances from MyApp.
+    These will be managed by RandomWordsState, which makes it easier to
+    change the name of the route in the app bar as the user
+    navigates from one screen to another in the next step.
 
 Replace the original method with the highlighted build method below:
 
@@ -615,7 +617,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> In the `_buildRow` method, add `alreadySaved`,
+<li markdown="1"> In the `_buildRow` function, add `alreadySaved`,
     a check to ensure that a word pairing hasn't already been added to
     favorites.
 
@@ -656,9 +658,9 @@ Add the highlighted lines below:
     but they aren't yet interactive.
 </li>
 
-<li markdown="1"> Make the hearts tappable in the `_buildRow` method.
+<li markdown="1"> Make the hearts tappable in the `_buildRow` function.
     If a word entry has already been added to favorites, tapping it again
-    removes it from favorites. When the heart has been tapped, the method
+    removes it from favorites. When the heart has been tapped, the function
     calls `setState()` to notify the framework that state has changed.
 
 <aside class="alert alert-success" markdown="1">
@@ -759,7 +761,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_pushSaved()` method to the RandomWordsState class.
+<li markdown="1"> Add a `_pushSaved()` function to the RandomWordsState class.
 
 <!-- skip -->
 {% prettify dart %}
@@ -771,7 +773,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 
 Hot reload the app. The list icon appears in the app bar.
-Tapping it does nothing yet, because the `_pushSaved` method is empty.
+Tapping it does nothing yet, because the `_pushSaved` function is empty.
 </li>
 
 <li markdown="1"> When the user taps the list icon in the app bar,
