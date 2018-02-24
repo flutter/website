@@ -5,7 +5,7 @@ permalink: /get-started/codelab/
 ---
 
 <figure class="right-figure" style="max-width: 250px">
-    <img src="images/startup-namer-app.gif" 
+    <img src="images/startup-namer-app.gif"
          alt="Animated GIF of the app that you will be building."
          style="box-shadow: 0 0 3px; margin-bottom: 10px" >
 </figure>
@@ -21,10 +21,8 @@ TODO: (later)
 - Break down the logic further where it calculates divided cells.
   (Search for xxx)
 - Retake screenshots on the Android emulator?
-- Somehow cross links from code to text so people can restart
-  and fine their place more easily? (Tao)
-- Second route should be named "Saved Suggestions" - name
-  should be consistent: screenshot, code, markdown content.
+- Somehow cross link from code to text so people can restart
+  and find their place more easily? (Tao)
 {% endcomment %}
 
 * TOC
@@ -49,6 +47,7 @@ The animated GIF above shows how the finished app works.
 * How to implement a stateful widget.
 * How to create an infinite, lazily loaded list.
 * How to create and navigate to a second screen.
+* How to change the look of an app using Themes.
 
 </div>
 
@@ -75,8 +74,8 @@ You'll need to install the following:
 </li>
 </ul>
 
-See [Flutter Installation and Setup](/setup/) for information on how to set up
-your environment.
+See [Flutter Installation and Setup](/setup/) for information on how
+to set up your environment.
 
 </div>
 
@@ -86,8 +85,6 @@ Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app.](/getting-started/)
 Name the project **startup_namer** (instead of _myapp_).
 You’ll be modifying this starter app to create the finished app.
-
-## Replace lib/main.dart
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
 where the Dart code lives.
@@ -105,11 +102,11 @@ become skewed. You can fix this automatically with the Flutter tools:
 
 <ol markdown="1">
 
-<li markdown="1"> Delete all of the code from **lib/main.dart**.
+<li markdown="1"> Replace lib/main.dart.<br>
+    Delete all of the code from **lib/main.dart**.
     Replace with the following code, which displays "Hello World" in the center
     of the screen.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -131,7 +128,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 {% endprettify %}
 </li>
 
@@ -139,79 +135,78 @@ class MyApp extends StatelessWidget {
 
 <center><img src="images/hello-world-screenshot.png" alt="screenshot of hello world app"></center>
 </li>
-
 </ol>
 
-## Observations
+<p class="h2-like">Observations</p>
 
-<ul markdown="1">
-<li markdown="1"> This example creates a Material app.
-    [Material](https://material.io/guidelines/) is a visual design language
-    that is standard on Android and the web. Flutter offers a rich set
-    of Material widgets.
-</li>
-<li markdown="1"> The main method specifies fat arrow (`=>`) notation,
-     which is short hand used for one-line functions or methods.
-</li>
-<li markdown="1"> The app extends StatelessWidget which makes the app itself a
-     widget. In Flutter, most everything is a widget, including
-     alignment, padding, and layout.
-</li>
-<li markdown="1"> The Scaffold widget, from the Material library,
-     provides a default app bar, title, and a body property that
-     holds the widget tree for the home screen. The widget subtree
-     can be quite complex.
-</li>
-<li markdown="1"> A widget’s main job is to provide a `build()` method
-    that describes how to display the widget in terms of other,
-    lower level widgets.
-</li>
-<li markdown="1"> The widget tree for this example consists of a Center widget
-     containing a Text child widget. The Center widget aligns its
-     widget subtree to the center of the screen.
-</li>
-{% comment %}
-Removing this for now. A) It might be confusing and B) the code as shown here is wrong.
-<li markdown="1"> Moving the “hello world” text into a separate widget,
-    HelloWorld, results in an identical widget tree as the code above.
-    (This code is informational only. You are starting with the Hello
-    World code above.)
-
-<!-- skip -->
-{% prettify dart %}
-import 'package: flutter/material.dart';
-
-class MyApp extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   return new MaterialApp(
-     title: 'Welcome to Flutter',
-     home: new Scaffold(
-       appBar: new AppBar(
-         title: new Text('Welcome to Flutter'),
-       ),
-       body: new Center(
-         child: new Text('Hello World')
-       ),
-     ),
-   );
- }
-}
-{% endprettify %}
-
-Update with this code:
-
-class HelloWorld extends StatelessWidget {
- @override
- Widget build(BuildContext context) {
-   return new Center(
-     child: new Text('Hello World'),
-   );
- }
-}
-</li>
-{% endcomment %}
+  <ul markdown="1">
+  <li markdown="1"> This example creates a Material app.
+      [Material](https://material.io/guidelines/) is a visual design language
+      that is standard on Android and the web. Flutter offers a rich set
+      of Material widgets.
+  </li>
+  <li markdown="1"> The main method specifies fat arrow (`=>`) notation,
+       which is short hand used for one-line functions or methods.
+  </li>
+  <li markdown="1"> The app extends StatelessWidget which makes the app itself a
+       widget. In Flutter, most everything is a widget, including
+       alignment, padding, and layout.
+  </li>
+  <li markdown="1"> The Scaffold widget, from the Material library,
+       provides a default app bar, title, and a body property that
+       holds the widget tree for the home screen. The widget subtree
+       can be quite complex.
+  </li>
+  <li markdown="1"> A widget’s main job is to provide a `build()` method
+      that describes how to display the widget in terms of other,
+      lower level widgets.
+  </li>
+  <li markdown="1"> The widget tree for this example consists of a Center widget
+       containing a Text child widget. The Center widget aligns its
+       widget subtree to the center of the screen.
+  </li>
 </ul>
+{% comment %}
+  Removing this for now. A) It might be confusing and B) the code as shown here is wrong.
+  <li markdown="1"> Moving the “hello world” text into a separate widget,
+      HelloWorld, results in an identical widget tree as the code above.
+      (This code is informational only. You are starting with the Hello
+      World code above.)
+
+  <!-- skip -->
+  {% prettify dart %}
+  import 'package: flutter/material.dart';
+
+  class MyApp extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return new MaterialApp(
+       title: 'Welcome to Flutter',
+       home: new Scaffold(
+         appBar: new AppBar(
+           title: new Text('Welcome to Flutter'),
+         ),
+         body: new Center(
+           child: new Text('Hello World')
+         ),
+       ),
+     );
+   }
+  }
+  {% endprettify %}
+
+  Update with this code:
+
+  class HelloWorld extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return new Center(
+       child: new Text('Hello World'),
+     );
+   }
+  }
+  </li>
+{% endcomment %}
 
 ---
 
@@ -423,7 +418,7 @@ class MyApp extends StatelessWidget {
 
 </ol>
 
-Restart the app. If you try to hot reload, you might see an error:
+Restart the app. If you try to hot reload, you might see a warning:
 
 {% prettify sh %}
 Reloading...
@@ -442,11 +437,9 @@ pairing each time you hot reload or save the app.
 <p class="h2-like">Problems?</p>
 
 If your app isn't running correctly, you can use the code
-at the following links to get back on track.
+at the following link to get back on track.
 
-xxx
-* [**pubspec.yaml**]()
-* [**lib/main.dart**]()
+* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/329c397b97309ce99f834bf70ebb90778baa5cfe/main.dart)
 
 ---
 
@@ -589,70 +582,10 @@ as far as you want and you will continue to see new word pairings.
 
 <p class="h2-like">Problems?</p>
 
-If you've gotten off track, you can use the following
-**lib/main.dart** code to get back on track.
+If your app isn't running correctly, you can use the code
+at the following link to get back on track.
 
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Startup Name Generator',
-      home: new RandomWords(),
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  createState() => new RandomWordsState();
-}
-
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
-      ),
-      body: _buildSuggestions(),
-    );
-  }
-
-  Widget _buildSuggestions() {
-    return new ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, i) {
-        if (i.isOdd) return new Divider();
-
-        final index = i ~/ 2;
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-        return _buildRow(_suggestions[index]);
-      },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    return new ListTile(
-      title: new Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-    );
-  }
-}
-{% endprettify %}
+* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d6f9460a04d3a429eb6ac0b0f07da564/raw/34fe240f4122435c871bb737708ee0357741801c/main.dart)
 
 ---
 
@@ -775,88 +708,10 @@ splash animation.
 
 <p class="h2-like">Problems?</p>
 
-If you've gotten off track, you can use the following
-**lib/main.dart** code to get back on track.
+If your app isn't running correctly, you can use the code
+at the following link to get back on track.
 
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Startup Name Generator',
-      home: new RandomWords(),
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  createState() => new RandomWordsState();
-}
-
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-
-  final _saved = new Set<WordPair>();
-
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
-      ),
-      body: _buildSuggestions(),
-    );
-  }
-
-  Widget _buildSuggestions() {
-    return new ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, i) {
-        if (i.isOdd) return new Divider();
-
-        final index = i ~/ 2;
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-        return _buildRow(_suggestions[index]);
-      },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
-    return new ListTile(
-      title: new Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      trailing: new Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      onTap: () {
-        setState(
-              () {
-            if (alreadySaved) {
-              _saved.remove(pair);
-            } else {
-              _saved.add(pair);
-            }
-          },
-        );
-      },
-    );
-  }
-}
-{% endprettify %}
+* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/936ce0059029a8c6e88aaa826a3789cd/raw/a3065d5c681a81eff32f75a9cd5f4d9a5b24f9ff/main.dart)
 
 ---
 
@@ -933,7 +788,7 @@ which pushes the route to the Navigator's stack.
 {% prettify dart %}
   void _pushSaved() {
     [[highlight]]Navigator.of(context).push([[/highlight]]
-      [[highlight]]);[[/highlight]]
+    [[highlight]]);[[/highlight]]
   }
 {% endprettify %}
 </li>
@@ -1025,127 +880,14 @@ Add the highlisted code below:
 </li>
 </ol>
 
-xxx: replace images
 <center><img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step"><img src="images/step6b-screenshot.png" alt="second route"></center>
 
 <p class="h2-like">Problems?</p>
 
-If you've gotten off track, use the following code for
-**lib/main.dart** to get back on track.
+If your app isn't running correctly, you can use the code
+at the following link to get back on track.
 
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-
-void main() => runApp(new MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Startup Name Generator',
-      home: new RandomWords(),
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  createState() => new RandomWordsState();
-}
-
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-
-  final _saved = new Set<WordPair>();
-
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
-  @override
-  Widget build(BuildContext context) { return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
-        actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),
-        ],
-      ),
-      body: _buildSuggestions(),
-    );
-  }
-
-  Widget _buildSuggestions() {
-    return new ListView.builder(
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: (context, i) {
-        if (i.isOdd) return new Divider();
-
-        final index = i ~/ 2;
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(10));
-        }
-        return _buildRow(_suggestions[index]);
-      },
-    );
-  }
-
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
-    return new ListTile(
-      title: new Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      trailing: new Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      onTap: () {
-        setState(
-          () {
-            if (alreadySaved) {
-              _saved.remove(pair);
-            } else {
-              _saved.add(pair);
-            }
-          },
-        );
-      },
-    );
-  }
-
-  void _pushSaved() {
-    Navigator.of(context).push(
-      new MaterialPageRoute(
-        builder: (context) {
-          final tiles = _saved.map(
-                (pair) {
-              return new ListTile(
-                title: new Text(
-                  pair.asPascalCase,
-                  style: _biggerFont,
-                ),
-              );
-            },
-          );
-          final divided = ListTile
-              .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
-              .toList();
-
-          return new Scaffold(
-            appBar: new AppBar(
-              title: new Text('Saved Suggestions'),
-            ),
-            body: new ListView(children: divided),
-          );
-        },
-      ),
-    );
-  }
-}
-{% endprettify %}
+* [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)
 
 ---
 # Step 7: Using Themes
@@ -1157,8 +899,8 @@ or emulator, or you can customize the theme to reflect your branding.
 
 <ol markdown="1">
 <li markdown="1"> You can easily change an app's theme by configuring
-    the ThemeData class.  Our app uses the default Theme, but you can use
-    themes to make the app reflect your branding.
+    the ThemeData class.  Your app currently uses the default theme,
+    but you'll be changing the primary color to be white.
 
 Change the app's theme to white by adding the highlighted code to MyApp:
 
@@ -1179,18 +921,27 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 </li>
 
-<li markdown="1">
-Hot reload the app. Notice that the entire background is white,
+<li markdown="1"> Hot reload the app. Notice that the entire background is white,
 even the app bar.
 </li>
+
+<li markdown="1"> As an exercise for the reader, use
+[ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+to change other aspects of the  UI. The
+[Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
+class in the Material library provides many color constants you can play with,
+and hot reload makes experimenting with the UI quick and easy.
+</li>
 </ol>
+
+<center><img src="images/step7-themes.png" alt="screenshot at completion of 7th step"></center>
 
 <p class="h2-like">Problems?</p>
 
 If you've gotten off track, use the code from the following link
-to get back on track.
+to see the code for the final app.
 
-* [**lib/main.dart**]()
+* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/c07c91a4061fce4b5eacaaf4d82e4993/raw/4001a72c0133b97c8e16bdeb3195ca03525696bd/main.dart)
 
 ---
 
