@@ -63,6 +63,16 @@ figcaption {
     font-size: $small-font-size;
 }
 
+.right-figure {
+  float: right;
+  margin: 0 0 5px 20px;
+
+  @include media-query($on-palm) {
+    margin: inherit;
+    float: inherit;
+  }
+}
+
 
 
 /**

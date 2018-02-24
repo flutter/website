@@ -815,3 +815,12 @@ table th code {
 .alert__banner {
     margin-top: 3em;
 }
+
+.h2-like {
+    // This is for headlines that should look like H2 but shouldn't appear
+    // in the TOC.
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    margin-bottom: 15px;
+}
