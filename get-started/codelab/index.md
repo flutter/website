@@ -327,7 +327,7 @@ class MyApp extends StatelessWidget {
 
 </ol>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If your app isn't running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
@@ -451,7 +451,7 @@ pairing each time you hot reload or save the app.
 
 <center><img src="images/step3-screenshot.png" alt="screenshot at completion of third step"></center>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If your app isn't running correctly, you can use the code
 at the following links to get back on track.
@@ -599,7 +599,7 @@ as far as you want and you will continue to see new word pairings.
 
 <center><img src="images/step4-screenshot.png" alt="screenshot at completion of fourth step"></center>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If you've gotten off track, you can use the following
 **lib/main.dart** code to get back on track.
@@ -785,7 +785,7 @@ splash animation.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If you've gotten off track, you can use the following
 **lib/main.dart** code to get back on track.
@@ -1040,7 +1040,7 @@ Add the highlisted code below:
 xxx: replace images
 <center><img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step"><img src="images/step6b-screenshot.png" alt="second route"></center>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If you've gotten off track, use the following code for
 **lib/main.dart** to get back on track.
@@ -1197,7 +1197,7 @@ even the app bar.
 </li>
 </ol>
 
-## Problems?
+<p class="h2-like">Problems?</p>
 
 If you've gotten off track, use the code from the following link
 to get back on track.
