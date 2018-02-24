@@ -28,7 +28,7 @@ TODO: (later)
 * TOC
 {:toc}
 
-## What you'll build
+<p class="h2-like">What you'll build</p>
 
 You’ll implement a simple mobile app that generates proposed names for a
 startup company. The user can select and unselect names,
@@ -892,7 +892,7 @@ at the following link to get back on track.
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)
 
 ---
-# Step 7: Using Themes
+# Step 7: Change the UI using Themes
 
 In this final step, you'll play with the app's theme. The
 _theme_ controls the look and feel of your app. You can use
