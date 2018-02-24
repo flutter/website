@@ -4,14 +4,13 @@ title: "Get Started: Setup Editor"
 permalink: /get-started/setup-editor/
 ---
 
-Flutter is a flexible toolkit, which supports writing Flutter apps using a
-number of editors. The previous [setup step](/get-started/setup/)
-installed the `flutter` terminal/command-line tool, which combined with a
-[Dart-enabled code editor](https://www.dartlang.org/tools) is enough to
-developer Flutter apps.
+You can build apps with Flutter using any text editor combioned with our
+command-line tools. However, we recommend using one of our editor plugins for an
+even better experience. With our editor plugins, you get code completion, syntax
+highlighting, widget edditing assists, run & debug support, and more.
 
-Should you desire a more intergrated experience, follow the steps below to
-configure a fully Flutter-enabled editor. If not, you can skip directly to
+Follow the steps before to add an editor plugin for Android Studio, IntelliJ, or
+VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 [Next step: Create and run your first app](/get-started/create-and-run/).
 
 <ul class="tabs__top-bar">
