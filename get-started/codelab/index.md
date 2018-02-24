@@ -142,7 +142,7 @@ class MyApp extends StatelessWidget {
   <ul markdown="1">
   <li markdown="1"> This example creates a Material app.
       [Material](https://material.io/guidelines/) is a visual design language
-      that is standard on Android and the web. Flutter offers a rich set
+      that is standard on mobile and the web. Flutter offers a rich set
       of Material widgets.
   </li>
   <li markdown="1"> The main method specifies fat arrow (`=>`) notation,
