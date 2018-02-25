@@ -62,7 +62,7 @@ To install these:
 
 ### Install VS Code
 
-  * [VS Code](https://code.visualstudio.com/), version 1.19 or later.
+  * [VS Code](https://code.visualstudio.com/), version 1.20.1 or later.
 
 ### Install the Dart Code plugin
 
