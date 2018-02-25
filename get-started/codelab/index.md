@@ -96,7 +96,7 @@ become skewed. You can fix this automatically with the Flutter tools:
 
 * Android Studio / IntelliJ IDEA: Right-click the dart code and
   select **Reformat Code with dartfmt**.
-* VS Code: Right-click the code and select **Reformat Code with dartfmt**.
+* VS Code: Right-click and select **Format Document**.
 * Terminal: Run `flutter format <filename>`.
 </aside>
 
