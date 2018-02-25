@@ -23,15 +23,15 @@ tool of choice for writing, building, and running your Flutter app.
 ## Create new app {#create-app}
 
    1. Select **File>New Flutter Project**
-   1. Under **Flutter SDK path**, select **Install SDK...**, and enter the
-      location where you want to install the Flutter SDK
-   1. Click **OK**
+   1. Select **Flutter application** as the project type, and press Next
+   1. Enter a project name (e.g. `myapp`), and press Next
+   1. Click **Finish**
    1. Wait for Android Studio to install the SDK, and create the project.
 
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `myapp/lib/main.dart`.
+In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
@@ -73,14 +73,14 @@ You should see the updated string in the running app almost immediately.
   1. Start VS Code
   1. Invoke **View>Command Palette...**
   1. Type 'flutter', and select the **'Flutter: New Project'** action
-  1. Enter a project name (e.g. `firstapp`), and press Enter
+  1. Enter a project name (e.g. `myapp`), and press Enter
   1. Specify a location to place the project, and press the blue OK button
   1. Wait for the project creation to continue, and the `main.dart` file to appear 
 
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `myapp/lib/main.dart`.
+In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
@@ -118,27 +118,25 @@ for running and building.
 
    1. Use the `flutter create` command to create a new project:
    {% commandline %}
-   cd /users/Obiwan/projects/
-   flutter create hello_flutter
-   cd hello_flutter
+   flutter create myapp
+   cd myapp
    {% endcommandline %}
 
 The above command creates a Flutter project directory called `myapp` that contains a simple demo
 app that uses [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `myapp/lib/main.dart`.
+In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
-   * Check that an Android device is running. If none is shown, go back to step 2.
+   * Check that an Android device is running. If none are shown, see [setup](/get-started/install/).
    {% commandline %}
    flutter devices
    {% endcommandline %}
-   * Run the app with the `flutter run command`:
+   * Run the app with the `flutter run` command:
    {% commandline %}
    flutter run
    {% endcommandline %}
-
    * If everything works, after the app has been built, you should see your
       starter app on your device or simulator:<br>
       ![Starter App on Android](/images/flutter-starter-app-android.png)
@@ -150,7 +148,7 @@ the code of a live running app without restarting or losing app state. Simply
 make a change to your source code, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
 
-  1. Open the file `lib/main.dart` in your favorite Dart code editor
+  1. Open the file `lib/main.dart`
   1. Change the string<br>`'You have pushed the button this many times:'`
      to<br>`'You have clicked the button this many times:'`
   1. Do not press the 'Stop' button; let your app continue to run.
@@ -158,12 +156,6 @@ want to hot reload, and see the change in your simulator, emulator, or device.
      **Hot Reload button** (the button with the lightning bolt icon).
 
 You should see the updated string in the running app almost immediately.
-
-<ul class="ostabs__top-bar">Current development OS:
-    <li class="ostab-link" data-tab="tab-install-windows">Windows</li>
-    <li class="ostab-link" data-tab="tab-install-linux">Linux</li>
-    <li class="ostab-link" data-tab="tab-install-mac">Mac</li>
-</ul>
 
 </div>
 
