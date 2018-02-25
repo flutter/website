@@ -51,7 +51,3 @@ inline error checking, and visual debugging features.</td>
    <td>Perform Android setup tasks to develop apps for Android (<a href="/setup-macos/#android-setup">Mac</a>) (<a href="/setup-windows/#android-setup">Windows</a>) (<a href="/setup-linux/#android-setup">Linux</a>)</td><td align="center"></td>
  </tr>
 </table>
-
-## Next step
-
-[Next step: Configure Editor](/get-started/editor/)
