@@ -74,15 +74,15 @@ You'll need to install the following:
 </li>
 </ul>
 
-See [Flutter Installation and Setup](/setup/) for information on how
-to set up your environment.
+See [Flutter Installation and Setup](/get-started/install/) for information on
+how to set up your environment.
 
 </div>
 
 # Step 1: Create the starting Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/getting-started/)
+[Getting Started with your first Flutter app.](/get-started/test-drive/#create-app)
 Name the project **startup_namer** (instead of _myapp_).
 You’ll be modifying this starter app to create the finished app.
 
@@ -985,18 +985,6 @@ In this codelab, you've:
   and the new route.
 * Learned about changing the look of your app's UI using Themes.
 
-Here are some resources you might find useful:
+## Next step
 
-{% comment %}
-Once the "Flutter for React" doc (etc) are done, add here.
-{% endcomment %}
-
-* [Flutter API docs](https://docs.flutter.io/)
-* [Building Layouts in Flutter](/tutorials/layout/) tutorial
-* [Add Interactivity](/tutorials/interactive/) tutorial
-* [Flutter Cookbook](/cookbook/)
-* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
-
-You can learn more about Flutter at [flutter.io,](https://flutter.io/)
-and Dart at [www.dartlang.org.](https://www.dartlang.org/)
-
+[Next step: Learn More](/get-started/learn-more/)

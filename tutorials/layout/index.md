@@ -57,7 +57,7 @@ start with [Flutter's approach to layout](#approach).
 First, get the code:
 
 * Make sure you've [set up](/get-started/install/) your environment.
-* [Create a basic Flutter app](/get-started/test-drive/#create-new-app).
+* [Create a basic Flutter app](/get-started/test-drive/#create-app).
 
 Next, add the image to the example:
 

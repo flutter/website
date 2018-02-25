@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Get Started: Test Drive an App"
+title: "Get Started: Test Drive"
 permalink: /get-started/test-drive/
 ---
 
@@ -20,7 +20,7 @@ tool of choice for writing, building, and running your Flutter app.
 
 *Android Studio:* A complete, integrated IDE experience for Flutter. 
 
-## Create new app
+## Create new app {#create-app}
 
    1. Select **File>New Flutter Project**
    1. Under **Flutter SDK path**, select **Install SDK...**, and enter the
@@ -171,4 +171,4 @@ You should see the updated string in the running app almost immediately.
 
 Let's learn some core Flutter concepts, by creating a small app.
 
-[Next step: Core Concepts Tutorial](/get-started/codelab/)
+[Next step: Write your first app](/get-started/codelab/)

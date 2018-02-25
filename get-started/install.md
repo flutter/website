@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Get Started: Install Flutter"
+title: "Get Started: Install"
 permalink: /get-started/install/
 ---
 
@@ -39,7 +39,7 @@ to test and iterate using a simulator or physical device.
    <td>Run <code>flutter doctor</code> and resolve any issues found (<a href="/setup-macos/#run-flutter-doctor">Mac</a>) (<a href="/setup-windows/#run-flutter-doctor">Windows</a>) (<a href="/setup-linux/#run-flutter-doctor">Linux</a>)</td><td align="center">Y</td>
  </tr>
  <tr>
-   <td colspan="2"><a href="/get-started/editor-configuration/">Install and configure an editor to develop Flutter apps</a></td>
+   <td colspan="2"><a href="/get-started/editor/">Install and configure an editor to develop Flutter apps</a></td>
  </tr>
  <tr><td class="alert-warning" colspan="2">Using an IDE is optional. However, we recommend using an IntelliJ IDE with Flutter for code completion, 
 inline error checking, and visual debugging features.</td>
@@ -52,4 +52,6 @@ inline error checking, and visual debugging features.</td>
  </tr>
 </table>
 
+## Next step
 
+[Next step: Configure Editor](/get-started/editor/)
