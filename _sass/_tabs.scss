@@ -13,7 +13,7 @@ ul.tabs__top-bar li {
   background: none;
   color: $grey-color;
   display: inline-block;
-  padding: 5px 5px;
+  padding: 5px 12px;
   cursor: pointer;
 }
 
@@ -25,7 +25,7 @@ ul.tabs__top-bar li.current{
 .tabs__content{
   display: none;
   border: 1px solid $tab-accent-color;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 20px;
 }
 
