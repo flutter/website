@@ -24,10 +24,14 @@ VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 
 *Android Studio:* A complete, integrated IDE experience for Flutter. 
 
-### Install Android Studio:
+### Install Android Studio
 
-   * Downloaded and installed Android Studio 3.0 or later from the the [Android
-     Studio site](https://developer.android.com/studio/index.html)
+   * [Android Studio](https://developer.android.com/studio/index.html), version 3.0 or later.
+
+Alternatively, you can also use IntelliJ:
+
+   * [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), version 2017.1 or later.
+   * [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), version 2017.1 or later.
 
 ### Install the Flutter and Dart plugins
 
@@ -58,7 +62,7 @@ To install these:
 
 ### Install VS Code
 
-  * Install VS Code from the main [VS Code site](https://code.visualstudio.com/)
+  * [VS Code](https://code.visualstudio.com/), version 1.19 or later.
 
 ### Install the Dart Code plugin
 
