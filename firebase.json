@@ -69,8 +69,18 @@
         "type": 301
       },
       {
-        "source": "/get-started/",
-        "destination": "/setup/",
+        "source": "/getting-started",
+        "destination": "/get-started/",
+        "type": 301
+      },
+      {
+        "source": "/setup",
+        "destination": "/get-started/install/",
+        "type": 301
+      },
+      {
+        "source": "/ide-setup",
+        "destination": "/get-started/editor/",
         "type": 301
       }
     ]
