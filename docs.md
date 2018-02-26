@@ -23,7 +23,7 @@ permalink: /docs/
 
 ## New to Flutter?
 
-* [Write Your First Flutter App](http://example.com)  
+* [Write Your First Flutter App](/get-started/codelab/)  
   A walkthrough on creating a Flutter app that generates names for startup companies.
 
 * [Flutter for Android Developers](/flutter-for-android/)  
