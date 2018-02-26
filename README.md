@@ -258,3 +258,39 @@ If new sample apps have been added, update `_data/catalog/widget.json`. The entr
 ```
 
 The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
+
+## Preventing broken links
+
+Some form of broken links prevention is done automatically by `rake checklinks`
+on every commit (through `tool/travis.sh`). But this won't see any Firebase 
+redirects (`rake checklinks` doesn't run the Firebase server) and it won't
+check incoming links.
+
+Before we can move the more complete
+[automated `linkcheck` solution](https://github.com/dart-lang/site-webdev/blob/master/scripts/check-links-using-fb.sh)
+from dartlang.org, we recommend manually running the following.
+
+* First time setup:
+ 
+  ```
+  pub global activate linkcheck
+  npm install -g superstatic
+  ``` 
+
+* Start the localhost Firebase server:
+
+  ```
+  superstatic --port 3474
+  ```
+  
+* Run the link checker:
+
+  ```
+  linkcheck :3474
+  ```
+  
+  Even better, to check that old URLs are correctly redirected:
+
+  ```
+  linkcheck :3474 --input tool/sitemap.txt
+  ```
