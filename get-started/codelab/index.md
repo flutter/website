@@ -19,6 +19,7 @@ previous experience with Dart or mobile programming.
 {% comment %}
 TODO: (maybe, but later)
 - Retake screenshots on the Android emulator? (Tao)
+  Maybe alternate between Android and iOS emulators?
 - Somehow cross link from code to text so people can restart
   and find their place more easily? (Tao)
 {% endcomment %}
@@ -676,14 +677,15 @@ Add the highlighted lines below:
 {% endprettify %}
 </li>
 
-<li markdown="1"> Restart the app. You should now see open hearts on each row,
-    but they aren't yet interactive.
+<li markdown="1"> Restart the app. You should now see open hearts on
+    each row, but they aren't yet interactive.
 </li>
 
-<li markdown="1"> Make the hearts tappable in the `_buildRow` function.
-    If a word entry has already been added to favorites, tapping it again
-    removes it from favorites. When the heart has been tapped, the function
-    calls `setState()` to notify the framework that state has changed.
+<li markdown="1"> Make the hearts tappable in the `_buildRow`
+    function. If a word entry has already been added to favorites,
+    tapping it again removes it from favorites.
+    When the heart has been tapped, the function calls
+    `setState()` to notify the framework that state has changed.
 
 Add the highlighted lines:
 
@@ -701,15 +703,13 @@ Add the highlighted lines:
         color: alreadySaved ? Colors.red : null,
       ),
       [[highlight]]onTap: () {[[/highlight]]
-        [[highlight]]setState([[/highlight]]
-              [[highlight]]() {[[/highlight]]
-            [[highlight]]if (alreadySaved) {[[/highlight]]
-              [[highlight]]_saved.remove(pair);[[/highlight]]
-            [[highlight]]} else {[[/highlight]]
-              [[highlight]]_saved.add(pair);[[/highlight]]
-            [[highlight]]}[[/highlight]]
-          [[highlight]]},[[/highlight]]
-        [[highlight]]);[[/highlight]]
+        [[highlight]]setState(() {[[/highlight]]
+          [[highlight]]if (alreadySaved) {[[/highlight]]
+            [[highlight]]_saved.remove(pair);[[/highlight]]
+          [[highlight]]} else {[[/highlight]]
+            [[highlight]]_saved.add(pair);[[/highlight]]
+          [[highlight]]}[[/highlight]]
+        [[highlight]]});[[/highlight]]
       [[highlight]]},[[/highlight]]
     );
   }
@@ -855,10 +855,11 @@ which pushes the route to the Navigator's stack.
 {% endprettify %}
 </li>
 
-<li markdown="1"> The builder property returns a Scaffold.
-    From the Material library, this widget provides an app bar for the
-    new route with the name, "Saved Suggestions". The body consists of a
-    ListView with the ListTiles.
+<li markdown="1"> The builder property returns a Scaffold,
+    containing the app bar for the new route, named
+    "Saved Suggestions." The body of the new route
+    consists of a ListView containing the ListTiles rows;
+    each row is separated by a divider.
 
 Add the highlisted code below:
 
