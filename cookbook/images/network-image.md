@@ -8,13 +8,13 @@ Displaying images is fundamental for most mobile apps. Flutter provides the
 [`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) Widget to 
 display different types of images.
 
-In order to work with images from the web, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html) 
+In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html) 
 constructor.
 
 ```dart
 new Image.network(
   'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
-)
+);
 ```
 
 ## Bonus: Animated Gifs
@@ -25,8 +25,18 @@ of the box!
 ```dart
 new Image.network(
   'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
-)
+);
 ```
+
+## Placeholders and Caching
+
+The default `Image.network` constructor does not handle more advanced 
+functionality, such as fading images in after loading or caching images
+to the device after they're downloaded. To achieve these tasks, please see
+the following recipes:
+
+  * [Fade in images with a placeholder](/cookbook/images/fading-in-images/)
+  * [Working with cached images](/cookbook/images/cached-images/) 
 
 ## Complete Example
 
