@@ -6,6 +6,7 @@ build
 .firebaserc
 .*swp
 node_modules
+.jekyll-metadata
 
 # Dart ignores.
 .packages
