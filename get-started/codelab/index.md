@@ -312,7 +312,8 @@ class MyApp extends StatelessWidget {
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
     This is because the word pairing is generated inside the build
-    method, which is run each time the app is hot loaded or saved.
+    method, which is run each time the MaterialApp requires rendering,
+    or when toggling the Platform in Flutter Inspector.
 
 <center><img src="images/step2-screenshot.png" alt="screenshot at completion of second step"></center>
 </li>
@@ -392,7 +393,7 @@ class RandomWordsState extends State<RandomWords> {
   [[highlight]]@override[[/highlight]]
   [[highlight]]Widget build(BuildContext context) {[[/highlight]]
     [[highlight]]final wordPair = new WordPair.random();[[/highlight]]
-    [[highlight]]return(new Text(wordPair.asPascalCase));[[/highlight]]
+    [[highlight]]return new Text(wordPair.asPascalCase);[[/highlight]]
   [[highlight]]}[[/highlight]]
 }
 {% endprettify %}
@@ -504,7 +505,8 @@ class RandomWordsState extends State<RandomWords> {
       // and places each suggestion into a ListTile row.
       // For odd rows, the function adds two rows to the ListView - one
       // for the word pairing, and a second holds a Divider widget to
-      // visually separate the entries.
+      // visually separate the entries. Note that the divider may be
+      // difficult to see on smaller devices.
       [[highlight]]itemBuilder: (context, i) {[[/highlight]]
         // Add a one-pixel-high divider widget before each row in theListView.
         [[highlight]]if (i.isOdd) return new Divider();[[/highlight]]
@@ -543,7 +545,7 @@ class RandomWordsState extends State<RandomWords> {
       [[highlight]]title: new Text([[/highlight]]
         [[highlight]]pair.asPascalCase,[[/highlight]]
         [[highlight]]style: _biggerFont,[[/highlight]]
-      [[highlight]])[[/highlight]]
+      [[highlight]]),[[/highlight]]
     [[highlight]]);[[/highlight]]
   [[highlight]]}[[/highlight]]
 }
@@ -561,7 +563,7 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     [[strike]]final wordPair = new WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]Return(new Text(wordPair.asPascalCase));[[/strike]]
+    [[strike]]Return new Text(wordPair.asPascalCase);[[/strike]]
     [[highlight]]return new Scaffold ([[/highlight]]
       [[highlight]]appBar: new AppBar([[/highlight]]
         [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
