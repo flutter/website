@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter Setup for Linux
+title: "Get Started: Install on Linux"
 permalink: /setup-linux/
 ---
 

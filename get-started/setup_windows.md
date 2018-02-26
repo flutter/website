@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter Setup for Windows
+title: "Get Started: Install on Windows"
 permalink: /setup-windows/
 ---
 

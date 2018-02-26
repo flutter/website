@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter Setup for macOS
+title: "Get Started: Install on macOS"
 permalink: /setup-macos/
 ---
 
