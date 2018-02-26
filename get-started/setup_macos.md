@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter Setup for macOS
+title: "Get Started: Install on macOS"
 permalink: /setup-macos/
 ---
 
@@ -25,7 +25,6 @@ first Flutter app.
 
 {% include setup/android-setup.md %}
 
-## Next steps
+## Next step
 
-Now, follow our [Getting Started guide](/getting-started/)
-to run your first Flutter app on iOS or Android.
+[Next step: Configure Editor](/get-started/editor/)

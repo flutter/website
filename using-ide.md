@@ -5,14 +5,15 @@ title: Developing Flutter apps in an IDE
 permalink: /using-ide/
 ---
 
-The Flutter plugin provides a fully integrated development experience in an IDE.
+The Flutter plugin provides a fully integrated development experience in the
+Android Studio or IntelliJ IDEs.
 
 * TOC Placeholder
 {:toc}
 
 ## Installation and setup
 
-Please follow the [IDE setup](/ide-setup/) instructions to install
+Please follow the [Editor Setup](/get-started/editor/) instructions to install
 the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
