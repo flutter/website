@@ -29,7 +29,7 @@ hide_title: true
     </div>
 
     <div class="homepage__button_row">
-    <a href="/setup/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">Get Started</a>
     </div>
 
     <div class="key-points">
@@ -297,7 +297,7 @@ Future<Null> getBatteryLevel() async {
     <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
 
     <div class="homepage__button_row">
-    <a href="/setup/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">Get Started</a>
     </div>
 
 </section>
