@@ -23,10 +23,9 @@ permalink: /docs/
 
 ## New to Flutter?
 
-Start here.
-
-* [Write Your First Flutter App](/get-started/codelab/)<br>
-  Create a Flutter app that generates names for startup companies.
+Once you've gone through [Get Started](/get-started/install/),
+including [Write Your First Flutter App](/get-started/codelab/)
+here are some next steps.
 
 * [Flutter for Android Developers](/flutter-for-android/)<br>
   Review these tips if you have Android experience.
