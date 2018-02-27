@@ -1,4 +1,5 @@
 function setupToolsTabs() {
+  var tabIdPrefix = "tab-install-";
   var tabs = $('.tabs__top-bar li');
   var tabContents = $('.tabs__content');
 
@@ -9,7 +10,7 @@ function setupToolsTabs() {
 
   function selectTool(id) {
     var escapedId = $.escapeSelector(id);
-    var tab = tabs.filter("[data-tab='tab-install-" + id + "']");
+    var tab = tabs.filter("[data-tab='" + tabIdPrefix + id + "']");
     tab.click();
   }
 
@@ -20,6 +21,9 @@ function setupToolsTabs() {
 
     $(this).addClass('current');
     $("#" + tab_id).addClass('current');
+
+    // Add to the url for better reloading/copy/pasting
+    location.hash = '#' + tab_id.replace(tabIdPrefix, '');
   });
 
   // If we have a tool in the url fragement, pre-select it
