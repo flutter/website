@@ -14,8 +14,19 @@
     .project-status {
       vertical-align: -webkit-baseline-middle;
     }
+}
 
-    .header-contents {
+.header-contents {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.homepage .header-contents {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0;
+
+    @include media-query($content-width + 50px) {
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -91,6 +102,7 @@
         .trigger {
             clear: both;
             display: none;
+            padding-top: 20px;
 
           input {
             margin-right: 5px;
@@ -122,13 +134,17 @@
     border-top: 1px solid $grey-color-light;
     padding-top: $spacing-unit;
     padding-bottom: $spacing-unit;
-}
+    background: #0091ea;
+    color: white;
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin: 0;
-    color: $brand-color;
+    a {
+        color: white;
+    }
+
+    &__link-list {
+        font-size: 14px;
+        font-weight: 300;
+    }
 }
 
 .logo {
