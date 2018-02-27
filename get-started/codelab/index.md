@@ -4,10 +4,10 @@ title: Write Your First Flutter App
 permalink: /get-started/codelab/
 ---
 
-<figure class="right-figure" style="max-width: 250px">
+<figure class="right-figure" style="max-width: 260px; padding-right: 10px">
     <img src="images/startup-namer-app.gif"
          alt="Animated GIF of the app that you will be building."
-         style="box-shadow: 0 0 3px; margin-bottom: 10px" >
+         style="border: 10px solid #333; border-radius: 10px; margin-bottom: 10px" >
 </figure>
 
 This is a guide to creating your first Flutter app. If you
@@ -988,6 +988,6 @@ In this codelab, you've:
   and the new route.
 * Learned about changing the look of your app's UI using Themes.
 
-## Next step
+<p class="h2-like">Next step</p>
 
 [Next step: Learn More](/get-started/learn-more/)
