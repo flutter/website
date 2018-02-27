@@ -2,13 +2,18 @@ $(document).ready(function() {
 
 	function initSideNav() {
 	  var sideBarToggle = document.getElementById('sidebar-toggle-button');
+    var sideNavContainer = document.getElementById('side-nav-container');
 	  var sideDrawer = document.getElementById('mysidebar');
 	  var background = document.getElementById('overlay-under-drawer');
 
-	  function toggleBoth() {
+	  function toggleAll() {
 	    if (sideDrawer) {
 	      sideDrawer.classList.toggle('active');
 	    }
+
+	    if (sideNavContainer) {
+	    	sideNavContainer.classList.toggle('active');
+			}
 
 	    if (background) {
 	      background.classList.toggle('active');
@@ -17,13 +22,13 @@ $(document).ready(function() {
 
 	  if (background) {
 	    background.addEventListener('click', function(e) {
-	      toggleBoth();
+	      toggleAll();
 	    });
 	  }
 
 	  if (sideBarToggle) {
 	    sideBarToggle.addEventListener('click', function(e) {
-	      toggleBoth();
+	      toggleAll();
 	    });
 	  }
 	}

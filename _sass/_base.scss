@@ -193,12 +193,33 @@ blockquote {
   font-size: 14px;
 }
 
-/**
- * The licenses used for the content.
- */
-.licenses {
-  font-size: 10px;
-  width: 72%;
+.site-footer {
+  /**
+   * The licenses used for the content.
+   */
+  .licenses {
+    font-size: 10px;
+    width: 72%;
+
+    @include media-query($on-palm) {
+      width: 100%;
+    }
+  }
+
+  margin-left: 250px;
+  width: calc(100% - 250px);
+
+  .row {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+}
+
+.homepage {
+  .site-footer {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 .nav-searchbox {
@@ -219,6 +240,10 @@ blockquote {
     font-family: inherit;
     padding: 4px 6px;
     font-size: 15px;
+
+    @include media-query($on-palm + 100px) {
+      width: 100px;
+    }
   }
 }
 

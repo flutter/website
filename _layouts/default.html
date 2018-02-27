@@ -2,7 +2,7 @@
 <html lang="en">
   {% include head.html %}
 
-  <body>
+  <body class="{% if page.url == '/' %}homepage{% endif %}">
 
     <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
 
@@ -12,11 +12,24 @@
     <div class="container-fluid contents">
       <!-- Content Row -->
       <div class="row">
-        
+
         <!-- Sidebar Column -->
         <div id="side-nav-container" class="col-sm-3">
           {% include sidebar.html %}
         </div>
+
+        {% if page.url == '/' %}
+        {% comment %} Homepage {% endcomment %}
+
+        <!-- Homepage Content Column -->
+        <div class="col-sm-12 main-contents">
+          <div class="main-contents-body">
+            {{content}}
+          </div>
+        </div>
+
+        {% else %}
+        {% comment %} Regular page, not homepage {% endcomment %}
 
         <!-- Content Column -->
         <div class="col-sm-9 main-contents">
@@ -24,6 +37,9 @@
             {{content}}
           </div>
         </div>
+
+        {% endif %}
+
       </div> <!-- /.row -->
     </div> <!-- /.container -->
 

@@ -138,7 +138,6 @@ http://localhost:3474/setup-windows/
 http://localhost:3474/setup-macos
 http://localhost:3474/images/flutter-mark-square-100.png
 http://localhost:3474/setup-macos/
-http://localhost:3474/images/homepage/hot-reload-bolt.png
 http://localhost:3474/images/homepage/screenshot-1.png
 http://localhost:3474/images/homepage/screenshot-2.png
 http://localhost:3474/images/homepage/ios-friendlychat.png

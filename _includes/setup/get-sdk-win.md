@@ -9,7 +9,7 @@ If this is the first time you're installing Flutter on this machine, clone the
 repository:
 
 {% commandline %}
-git clone -b dev https://github.com/flutter/flutter.git
+git clone -b beta https://github.com/flutter/flutter.git
 {% endcommandline %}
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
