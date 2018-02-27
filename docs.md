@@ -46,7 +46,7 @@ here are some next steps.
 &nbsp;
 
 
-## Want to improve your skills?
+## Want to skill up?
 
 Once, you’ve mastered the basics, try these pages.
 
