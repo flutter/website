@@ -240,7 +240,7 @@ In React Native, you would start off your development process by creating the pr
 $ create-react-native-app {projectname}
 {% endprettify %}
 
-In [Flutter](https://flutter.io/getting-started/), you can use this command line tool to do the same.
+In [Flutter](https://flutter.io/get-started/), you can use this command line tool to do the same.
 
 <!-- skip -->
 {% prettify shell %}
@@ -251,10 +251,10 @@ $ flutter create {projectname}
 
 In React Native, you would go to the project directory and use 
 `npm run ios/android` or `yarn run ios/android`.
-In [Flutter](https://flutter.io/getting-started/), if you are using the terminal, then you use the `flutter run` command in the project root directory to run your app on a connected device or simulator. 
+In [Flutter](https://flutter.io/get-started/), if you are using the terminal, then you use the `flutter run` command in the project root directory to run your app on a connected device or simulator. 
 If you are using an IDE like IntelliJ, Android Studio, or VS Code with the Flutter plugin installed then you can use the in-built tools to run the app. 
 
-Refer [here](https://flutter.io/getting-started/) for more details.
+Refer [here](https://flutter.io/get-started/) for more details.
 
 ### How do I use import statements?
 
