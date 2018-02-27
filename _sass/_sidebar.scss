@@ -17,7 +17,7 @@
 }
 
 .main-contents-body {
-    width: 980px;
+    width: $content-width;
 }
 
 #mysidebar {
@@ -56,6 +56,11 @@
     }
 
     .main-contents {
+        margin-left: inherit;
+        width: inherit;
+    }
+
+    .site-footer {
         margin-left: inherit;
         width: inherit;
     }
