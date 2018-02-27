@@ -9,7 +9,7 @@ If this is the first time you're installing Flutter on this machine, clone the
 `dev` branch of the repository and then add the `flutter` tool to your path:
 
 {% commandline %}
-git clone -b dev https://github.com/flutter/flutter.git
+git clone -b beta https://github.com/flutter/flutter.git
 export PATH=`pwd`/flutter/bin:$PATH
 {% endcommandline %}
 
