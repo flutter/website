@@ -6,7 +6,7 @@ permalink: /cookbook/lists/long-lists/
 
 The standard [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
 constructor works well for small lists. In order to work with lists that contain
-a large number of items, it's best to use the [`Listview.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html) 
+a large number of items, it's best to use the [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html) 
 constructor.
 
 Whereas the default `ListView` constructor requires us to create all items at
