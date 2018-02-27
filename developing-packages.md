@@ -75,7 +75,7 @@ platform-specific implementation(s) using [platform channels](/platform-channels
 
 ### Step 1: Create the package
 
-To create a plugin package, use the `--template=plugin` flag with `flutter create`. 
+To create a plugin package, use the `--template=plugin` flag with `flutter create`.
 
 Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
@@ -92,7 +92,7 @@ specialized content:
    - The Dart API for the plugin.
 * <code>android/src/main/java/com/yourcompany/&#8203;hello/HelloPlugin.java</code>:
    - The Android platform specific implementation of the plugin API.
-* `ios/Classes/HelloPlugin.m`: 
+* `ios/Classes/HelloPlugin.m`:
    - The iOS platform specific implementation of the plugin API.
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it.
@@ -122,13 +122,13 @@ folder in IntelliJ IDEA (or your favorite Dart editor). Locate the file
 We recommend you edit the Android code using Android Studio.
 
 Before editing the Android platform code in Android Studio, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ, 
-or in a terminal execute `cd hello/example; flutter build apk`). 
+the code has been built at least once (i.e., run the example app from IntelliJ,
+or in a terminal execute `cd hello/example; flutter build apk`).
 
 Next,
 
 1. Launch Android Studio
-1. Select 'Import project' in 'Welcome to Android Studio' dialog, or select 
+1. Select 'Import project' in 'Welcome to Android Studio' dialog, or select
 'File > New > Import Project...'' in the menu, and select the
 `hello/example/android/build.gradle` file.
 1. In the 'Gradle Sync' dialog, select 'OK'.
@@ -145,8 +145,8 @@ You can run the example app from Android Studio by pressing the &#9654; button.
 We recommend you edit the iOS code usign Xcode.
 
 Before editing the iOS platform code in Xcode, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ, 
-or in a terminal execute `cd hello/example; flutter build ios`).
+the code has been built at least once (i.e., run the example app from IntelliJ,
+or in a terminal execute `cd hello/example; flutter build ios --no-codesign`).
 
 Next,
 
@@ -189,7 +189,7 @@ If you wish to generate API documentation locally on your developement machine, 
    `export FLUTTER_ROOT=~/dev/flutter` (on macOS or Linux)
 
    `set FLUTTER_ROOT=~/dev/flutter` (on Windows)
-   
+
 1. Run the `dartdoc` tool (comes as part of the Flutter SDK):
 
    `$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartdoc` (on macOS or Linux)
@@ -209,7 +209,7 @@ Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 Next, run the dry-run command to see if everything passes analysis:
 
 {% commandline %}
-flutter packages pub publish --dry-run 
+flutter packages pub publish --dry-run
 {% endcommandline %}
 
 Finally, run the actual publish command:
@@ -270,7 +270,7 @@ at `hello/ios/Classes`.
 Suppose you want to use `some_package` and `other_package` in your package `hello`, and both of these depend
 on `url_launcher`, but in different versions. Then we have a potential conflict. The best way to avoid this
 is for package authors to use [version ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
-rather than specific versions when specifying dependencies. 
+rather than specific versions when specifying dependencies.
 
 ```yaml
 dependencies:
@@ -303,7 +303,7 @@ the dependency override declaration must be added to Gradle build logic instead.
 Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
 ```groovy
 configurations.all {
-    resolutionStrategy { 
+    resolutionStrategy {
         force 'com.google.guava:guava:23.0-android'
     }
 }
