@@ -319,13 +319,13 @@ In Flutter, the execution starts off with the `main()` function inside which a [
 
 When writing an app, you will commonly author new widgets that are subclasses of either [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html) or [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), depending on whether your widget manages any state. In the above Hello World example, HelloWorldApp class extends a StatelessWidget and overrides a build function which describes the widget in terms of other, lower-level widgets.
 
-In the above example, the widget tree consists of five widgets,the [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html),[Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) and the [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The `MaterialApp` wraps a number of widgets that are commonly required for material design applications and the `Scaffold` implements the basic material design visual layout structure. In simple apps it is easy to nest widgets, but as the code base gets larger and the app becomes complex it is advisable to break deeply nested widgets into functions that return the widget or smaller classes.
+In the above example, the widget tree consists of five widgets, the [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html), [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) and the [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The `MaterialApp` wraps a number of widgets that are commonly required for material design applications and the `Scaffold` implements the basic material design visual layout structure. In simple apps it is easy to nest widgets, but as the code base gets larger and the app becomes complex it is advisable to break deeply nested widgets into functions that return the widget or smaller classes.
 
 ##### Preview
 
-|Android|iOS|
+|Android |iOS |
 |:---:|:--:|
-|<img src="./hello-world/flutterhelloworld/screenshots/android.png" width="300">|<img src="./hello-world/flutterhelloworld/screenshots/iOS.png" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/rnhelloworld/App.js) code.
 
@@ -399,7 +399,7 @@ The above shown constructor for the `CustomCard` class is a Dart feature. The cu
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./modular/fluttermodular/screenshots/android.png" width="300">|<img src="./modular/fluttermodular/screenshots/iOS.png" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code in [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/rnmodular/App.js) code.
 
@@ -568,7 +568,7 @@ new ListView.builder(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./scrollable/flutterscrollable/screenshots/android.gif" width="300">|<img src="./scrollable/flutterscrollable/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/scrollable/flutterscrollable/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/scrollable/flutterscrollable/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/scrollable/flutterscrollable/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/scrollable/rnscrollable/App.js) code.
 
@@ -635,7 +635,7 @@ class _MyCanvasState extends State<MyCanvas> {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./canvas/fluttercanvas/screenshots/android.png" width="300">|<img src="./canvas/fluttercanvas/screenshots/iOS.png" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/canvas/fluttercanvas/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/canvas/fluttercanvas/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/canvas/fluttercanvas/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/canvas/rncanvas/App.js) code.
 
@@ -699,7 +699,7 @@ Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/w
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./Layout_sample/basiclayout_sample/screenshots/android.gif" width="300">|<img src="./Layout_sample/basiclayout_sample/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Layout_sample/basiclayout_sample/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Layout_sample/basiclayout_sample/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Layout_sample/basiclayout_sample/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Layout_sample/rnlayout/App.js) code.
 
@@ -738,7 +738,7 @@ The above example uses `Stack` to overlay a Container (that displays its `Text` 
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./stack_example/flutter_stack/screenshots/android.png" width="300">|<img src="./stack_example/flutter_stack/screenshots/iOS.png" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 ### Styling
 ### How to custom style my components in Flutter?
@@ -796,7 +796,7 @@ new Center(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./styling/flutterstyling/screenshots/android.gif" width="300">|<img src="./styling/flutterstyling/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/styling/flutterstyling/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/styling/flutterstyling/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/styling/flutterstyling/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/styling/rnstyling/App.js) code.
 
@@ -1081,7 +1081,7 @@ class MyStatelessWidget extends StatelessWidget {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./State_sample/flutter_basic_statesample/screenshots/android.gif" width="300">|<img src="./State_sample/flutter_basic_statesample/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/State_sample/flutter_basic_statesample/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/State_sample/flutter_basic_statesample/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/State_sample/flutter_basic_statesample/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/State_sample/reactnative-state-sample/App.js) code.
 
@@ -1168,7 +1168,7 @@ new CustomCard(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./modular/fluttermodular/screenshots/android.png" width="300">|<img src="./modular/fluttermodular/screenshots/iOS.png" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code in [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/rnmodular/App.js) code.
 
@@ -1412,7 +1412,7 @@ Widget build(BuildContext context) {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./Navigation_example/flutternavigation/screenshots/android.gif" width="300">|<img src="./Navigation_example/flutternavigation/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Navigation_example/flutternavigation/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Navigation_example/flutternavigation/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Navigation_example/flutternavigation/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/Navigation_example/reactnative-navigation-example/App.js) code.
 
@@ -1507,7 +1507,7 @@ You can check the list of all Flutter `GestureDetector` callbacks [here](https:/
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./gestures/fluttergestures/screenshots/android.gif" width="300">|<img src="./gestures/fluttergestures/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/gestures/fluttergestures/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/gestures/fluttergestures/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/gestures/fluttergestures/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/gestures/rngestures/App.js) code.
 
@@ -1558,7 +1558,7 @@ _getIPAddress() async {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./api-calls/flutterapicalls/screenshots/android.gif" width="300">|<img src="./api-calls/flutterapicalls/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/api-calls/flutterapicalls/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/api-calls/flutterapicalls/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/api-calls/flutterapicalls/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/api-calls/rnapicalls/App.js) code.
 
@@ -1663,7 +1663,7 @@ void _submit() {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./input-fields/flutterinputfields/screenshots/android.gif" width="300">|<img src="./input-fields/flutterinputfields/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/input-fields/flutterinputfields/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/input-fields/flutterinputfields/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check out the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/input-fields/flutterinputfields/lib/main.dart) and [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/input-fields/rninputfields/App.js)
 
@@ -1825,7 +1825,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./animations/flutterfade/screenshots/android.gif" width="300">|<img src="./animations/flutterfade/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/flutterfade/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/flutterfade/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/flutterfade/lib/main.dart) and [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/rnfade/App.js).
 
@@ -1850,7 +1850,7 @@ child: new Dismissible(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="./animations/fluttercardswipe/screenshots/android.gif" width="300">|<img src="./animations/fluttercardswipe/screenshots/iOS.gif" width="300">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code [here](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/lib/main.dart).
 
