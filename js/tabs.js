@@ -8,6 +8,8 @@ function setupToolsTabs() {
     tabContents.removeClass('current');
   }
 
+  // Searches for the tab for a tool by its ID and selects it
+  // (used to pre-select a tool from url fragement/localStorage)
   function selectTool(id) {
     var escapedId = $.escapeSelector(id);
     var tab = tabs.filter("[data-tab='" + tabIdPrefix + id + "']");
