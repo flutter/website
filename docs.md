@@ -23,51 +23,56 @@ permalink: /docs/
 
 ## New to Flutter?
 
-* [Write Your First Flutter App](/get-started/codelab/)  
-  A walkthrough on creating a Flutter app that generates names for startup companies.
+Start here.
 
-* [Flutter for Android Developers](/flutter-for-android/)  
-  Tips for Android developers.
+* [Write Your First Flutter App](/get-started/codelab/)<br>
+  Create a Flutter app that generates names for startup companies.
 
-* [HTML/CSS patterns](/web-analogs/)  
-  Tips for web developers showing how HTML and CSS syntax maps to Flutter widgets.
+* [Flutter for Android Developers](/flutter-for-android/)<br>
+  Review these tips if you have Android experience.
 
-* [Building Layouts in Flutter](/tutorials/layout/)  
-  Walkthrough showing how to create layouts in Flutter, where everything is a widget.
+* [HTML/CSS patterns](/web-analogs/)<br>
+  Review these HTML -> Flutter analogs if you have web experience.
 
-* [Add Interactivity to Your Flutter App](/tutorials/interactive/)  
-  Walkthrough showing how to add a stateful widget to your app.
+* [Building Layouts in Flutter](/tutorials/layout/)<br>
+  Learn how to create layouts in Flutter, where everything is
+  a widget.
 
-* [A Tour of the Flutter Widget Framework](/widgets-intro/)  
-  A short, conceptual tour through the Flutter framework.
+* [Adding Interactivity to Your Flutter App](/tutorials/interactive/)<br>
+  Learn how to add a stateful widget to your app.
+
+* [A Tour of the Flutter Widget Framework](/widgets-intro/)<br>
+  Learn more about Flutter's react-style framework.
 
 &nbsp;
 
 
-## Want to skill up?
+## Want to improve your skills?
 
-You’ve mastered the basics and want to add to your skills.
+Once, you’ve mastered the basics, try these pages.
 
-* [Cookbook](/cookbook/)  
-  A (growing) collection of recipes that address common Flutter use cases.
+* [Cookbook](/cookbook/)<br>
+  A (growing) collection of recipes that address common Flutter
+  use cases.
 
-* [Sample App Catalog](/catalog/samples/)  
-  Simple apps that show how to implement features and widgets.
+* [Sample App Catalog](/catalog/samples/)<br>
+  Simple apps that demonstrate how to implement features and widgets.
 
-* [Adding Assets and Images in Flutter](/assets-and-images/)  
+* [Adding Assets and Images in Flutter](/assets-and-images/)<br>
   How to add resources to a Flutter app.
 
-* [Animations in Flutter](/animations/)  
-  Flutter supports different types of animations. Learn how to create standard,
-  hero, or staggered animations, to name a few.
+* [Animations in Flutter](/animations/)<br>
+  How to create standard, hero, or staggered animations, to
+  name a few animations styles that Flutter supports.
 
-* [Routing and Navigation](/routing-and-navigation/)  
-  How to create and navigate to new pages.
-  
-* [Internationalization](/tutorials/internationalization/)  
+* [Routing and Navigation](/routing-and-navigation/)<br>
+  How to create and navigate to a new screen (called a
+  _route_ in Flutter).
+
+* [Internationalization](/tutorials/internationalization/)<br>
   Go global! How to internationalize your Flutter app.
 
-* [Effective Dart](https://www.dartlang.org/guides/language/effective-dart)  
+* [Effective Dart](https://www.dartlang.org/guides/language/effective-dart)<br>
   Guides on how to write better Dart code.
 
 &nbsp;
@@ -75,20 +80,25 @@ You’ve mastered the basics and want to add to your skills.
 
 ## Specialized topics
 
-* [Custom fonts](/custom-fonts/)  
+Dive deeper into topics that interest you.
+
+* [Flutter Widget Inspector](/inspector/)<br>
+  How to use the widget inspector, a powerful tool that allows
+  you to explore widget trees, disable the emulators "slow mode"
+  banner, display the performance overlay, and much more.
+
+* [Custom Fonts](/custom-fonts/)<br>
   How to add new fonts to your app.
 
-* [Text input](/text-input/)  
+* [Text Input](/text-input/)<br>
   How to set up basic text input.
 
-* [Debugging Flutter Apps](/debugging/)  
+* [Debugging Flutter Apps](/debugging/)<br>
   Tools and tips for debugging your app.
-  
-* [Flutter Widget Inspector](/inspector/)  
-  The Flutter Inspector, a tool available in the Flutter plugin for your IDE.
+
 
 &nbsp;
 
 
-This is not a complete list. Please use the left navigation, or the search 
-field to find other topics.
+This is not a complete list. Please use the left navigation,
+or the search field to find other topics.
