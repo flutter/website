@@ -4,8 +4,6 @@ layout: page
 permalink: /technical-overview/
 ---
 
-{% include note.html content="_Flutter is an alpha, open-source project_. We hope you try it and send us [feedback](/support/)." %}
-
 ## What is Flutter?
 
 Flutter is a mobile app SDK for building high-performance, high-fidelity,
