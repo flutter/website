@@ -24,7 +24,7 @@ permalink: /docs/
 ## New to Flutter?
 
 Once you've gone through [Get Started](/get-started/install/),
-including [Write Your First Flutter App](/get-started/codelab/)
+including [Write Your First Flutter App,](/get-started/codelab/)
 here are some next steps.
 
 * [Flutter for Android Developers](/flutter-for-android/)<br>
