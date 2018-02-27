@@ -504,10 +504,10 @@ class RandomWordsState extends State<RandomWords> {
       [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
       // The itemBuilder callback is called, once per suggested word pairing,
       // and places each suggestion into a ListTile row.
-      // For odd rows, the function adds two rows to the ListView - one
-      // for the word pairing, and a second holds a Divider widget to
-      // visually separate the entries. Note that the divider may be
-      // difficult to see on smaller devices.
+      // For even rows, the function adds a ListTile row for the word pairing.
+      // For odd rows, the function adds a Divider widget to visually
+      // separate the entries. Note that the divider may be difficult
+      // to see on smaller devices.
       [[highlight]]itemBuilder: (context, i) {[[/highlight]]
         // Add a one-pixel-high divider widget before each row in theListView.
         [[highlight]]if (i.isOdd) return new Divider();[[/highlight]]
