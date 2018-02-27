@@ -22,13 +22,22 @@ function setupToolsTabs() {
     $(this).addClass('current');
     $("#" + tab_id).addClass('current');
 
+    var selectedTool = tab_id.replace(tabIdPrefix, '');
+
     // Add to the url for better reloading/copy/pasting
-    location.hash = '#' + tab_id.replace(tabIdPrefix, '');
+    if (history.replaceState)
+      history.replaceState(undefined, undefined, '#' + selectedTool);
+
+    // Persist in local storage so we can pre-select around the site
+    if (window.localStorage)
+      window.localStorage.setItem('selectedTool', selectedTool);
   });
 
   // If we have a tool in the url fragement, pre-select it
   if (location.hash && location.hash.length > 1)
     selectTool(location.hash.substr(1));
+  else if (window.localStorage && window.localStorage.getItem('selectedTool'))
+    selectTool(window.localStorage.getItem('selectedTool'));
 }
 
 $(document).ready(function () {
