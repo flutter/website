@@ -22,7 +22,7 @@ hide_title: true
 
         <div class="homepage__button_row">
         <a href="/get-started/" class="get-started-button">Get Started</a>
-        {% include note.html content="_Flutter is an alpha, open-source project_." %}
+        {% include note.html content="_Flutter is a beta, open-source project_." %}
         </div>
 
         <div class="key-points">
@@ -180,7 +180,7 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
         <p>
-        Learn how to use <a href="/using-packages/">packages</a>, or 
+        Learn how to use <a href="/using-packages/">packages</a>, or
         write <a href="/platform-channels/">platform channels</a>,
         to access native code, APIs, and SDKs.
         </p>
@@ -293,7 +293,7 @@ Future<Null> getBatteryLevel() async {
 
         <div class="homepage__button_row">
         <a href="/get-started/" class="get-started-button">Get Started</a>
-        {% include note.html content="_Flutter is an alpha, open-source project_." %}
+        {% include note.html content="_Flutter is a beta, open-source project_." %}
         </div>
 
     </section>
