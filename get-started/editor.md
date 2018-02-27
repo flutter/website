@@ -84,6 +84,6 @@ To install these:
 ## Next step
 
 Let's take Flutter for a test drive: create a first project, run it, and
-experiencee 'hot reload'.
+experience 'hot reload'.
 
 [Next step: Test drive Flutter](/get-started/test-drive/)
