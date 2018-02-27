@@ -8,8 +8,10 @@ hide_title: true
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
         <span>Flutter is now in Beta!</span>
+        {% comment %}
         &nbsp;
         <a href="https://medium.com/flutter-io/announcing-flutter-beta-1-build-beautiful-native-apps-dc142aea74c0">Learn More</a>.
+        {% endcomment %}
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
