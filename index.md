@@ -1,6 +1,7 @@
 ---
-title: Easy and fast SDK for beautiful apps
+title: Flutter - Beautiful native apps in record time
 layout: page
+homepage: true
 hide_title: true
 ---
 
