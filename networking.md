@@ -79,6 +79,40 @@ Map, List, or List of Maps containing simple values, to the `encode` method:
 String encodedString = JSON.encode([1, 2, { 'a': null }]);
 ```
 
+## Example: JSON request via HTTPS POST
+
+The following example shows how to make a RESTful style JSON request via an HTTPS POST call.
+
+```dart
+import 'dart:async';
+import 'dart:convert' show UTF8, JSON;
+import 'dart:io';
+
+
+Future<Map<String, dynamic>> performApiRequest(HttpClient client, String url, Map<String, dynamic> jsonBody, [String accessToken]) async {
+	final String requestBody = JSON.encode(jsonBody);
+	HttpClientRequest request = await client.postUrl(Uri.parse(url))
+		..headers.add(HttpHeaders.ACCEPT, ContentType.JSON)
+		..headers.contentType = ContentType.JSON
+		..headers.contentLength = requestBody.length
+		..headers.chunkedTransferEncoding = false;
+	if (accessToken != null) {
+		request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer ${accessToken}');
+	}
+	request.write(requestBody);
+	HttpClientResponse response = await request.close();
+	if (response.headers.contentType.toString() != ContentType.JSON.toString()) {
+		throw new UnsupportedError('Server returned an unsupported content type: '
+			'${response.headers.contentType} from ${request.uri}');
+	}
+	if (response.statusCode != HttpStatus.OK) {
+		throw new StateError('Server responded with error: ${response.statusCode} ${response.reasonPhrase}');
+	}
+	return JSON.decode(await response.transform(UTF8.decoder).join());
+}
+```
+
+
 ## Example: decoding JSON from HTTPS GET
 
 The following example shows how to decode JSON from an HTTPS GET call in a Flutter app.
