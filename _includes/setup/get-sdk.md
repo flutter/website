@@ -34,13 +34,13 @@ Check the output carefully for other software you may need to install or further
 tasks to perform (shown in **bold** text).
 
 For example:
-```
+<pre>
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/obiwan/Library/Android/sdk
-    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
+    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
       visit https://flutter.io/setup/#android-setup for detailed instructions.
-```
+</pre>
 
 The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
 itself. Subsequent runs should be much faster.
