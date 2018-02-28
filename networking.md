@@ -88,27 +88,29 @@ import 'dart:async';
 import 'dart:convert' show UTF8, JSON;
 import 'dart:io';
 
-
-Future<Map<String, dynamic>> performApiRequest(HttpClient client, String url, Map<String, dynamic> jsonBody, [String accessToken]) async {
-	final String requestBody = JSON.encode(jsonBody);
-	HttpClientRequest request = await client.postUrl(Uri.parse(url))
-		..headers.add(HttpHeaders.ACCEPT, ContentType.JSON)
-		..headers.contentType = ContentType.JSON
-		..headers.contentLength = requestBody.length
-		..headers.chunkedTransferEncoding = false;
-	if (accessToken != null) {
-		request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer $accessToken');
-	}
-	request.write(requestBody);
-	HttpClientResponse response = await request.close();
-	if (response.headers.contentType.toString() != ContentType.JSON.toString()) {
-		throw new UnsupportedError('Server returned an unsupported content type: '
-			'${response.headers.contentType} from ${request.uri}');
-	}
-	if (response.statusCode != HttpStatus.OK) {
-		throw new StateError('Server responded with error: ${response.statusCode} ${response.reasonPhrase}');
-	}
-	return JSON.decode(await response.transform(UTF8.decoder).join());
+Future<Map<String, dynamic>> performApiRequest(
+    HttpClient client, String url, Map<String, dynamic> jsonBody,
+    [String accessToken]) async {
+  final String requestBody = JSON.encode(jsonBody);
+  HttpClientRequest request = await client.postUrl(Uri.parse(url))
+    ..headers.add(HttpHeaders.ACCEPT, ContentType.JSON)
+    ..headers.contentType = ContentType.JSON
+    ..headers.contentLength = requestBody.length
+    ..headers.chunkedTransferEncoding = false;
+  if (accessToken != null) {
+    request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer $accessToken');
+  }
+  request.write(requestBody);
+  HttpClientResponse response = await request.close();
+  if (response.headers.contentType.toString() != ContentType.JSON.toString()) {
+    throw new UnsupportedError('Server returned an unsupported content type: '
+        '${response.headers.contentType} from ${request.uri}');
+  }
+  if (response.statusCode != HttpStatus.OK) {
+    throw new StateError(
+        'Server responded with error: ${response.statusCode} ${response.reasonPhrase}');
+  }
+  return JSON.decode(await response.transform(UTF8.decoder).join());
 }
 ```
 
