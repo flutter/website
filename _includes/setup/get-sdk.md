@@ -6,7 +6,7 @@ Running `flutter doctor` shows any remaining dependencies you may need to instal
 ### Clone the repo
 
 If this is the first time you're installing Flutter on this machine, clone the
-`dev` branch of the repository and then add the `flutter` tool to your path:
+`beta` branch of the repository and then add the `flutter` tool to your path:
 
 {% commandline %}
 git clone -b beta https://github.com/flutter/flutter.git
