@@ -97,7 +97,7 @@ Future<Map<String, dynamic>> performApiRequest(HttpClient client, String url, Ma
 		..headers.contentLength = requestBody.length
 		..headers.chunkedTransferEncoding = false;
 	if (accessToken != null) {
-		request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer ${accessToken}');
+		request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer $accessToken');
 	}
 	request.write(requestBody);
 	HttpClientResponse response = await request.close();
