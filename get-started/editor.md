@@ -4,7 +4,7 @@ title: "Get Started: Configure Editor"
 permalink: /get-started/editor/
 ---
 
-You can build apps with Flutter using any text editor combioned with our
+You can build apps with Flutter using any text editor combined with our
 command-line tools. However, we recommend using one of our editor plugins for an
 even better experience. With our editor plugins, you get code completion, syntax
 highlighting, widget edditing assists, run & debug support, and more.
