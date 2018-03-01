@@ -58,7 +58,9 @@ Try it out in [DartPad](https://dartpad.dartlang.org/cf9e652f77636224d3e37d96dcf
 ### Variables
 #### Creating and Assigning Variables
 
-While JavaScript variables cannot be typed, Dart variables are optionally typed but it is a good practice to use typed variables. In [Dart 2](https://www.dartlang.org/dart-2), both static and runtime type checks, it also has a sound type system. This type system enables better tooling, as well as earlier feedback when you write code.
+While JavaScript variables cannot be typed, Dart variables are optionally typed but it is a good practice to use typed variables.
+
+In [Dart 2](https://www.dartlang.org/dart-2), variables must either be explicitly typed or it must be possible for the type system to infer the proper type automatically. Dart 2 performs both static and runtime type checks, using a sound type system. This type system enables better tooling, as well as earlier feedback when you write code.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -79,7 +81,7 @@ Try it out in [DartPad](https://dartpad.dartlang.org/3f4625c16e05eec396d60468837
 
 #### Default value
 
-In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, variables are `undefined`.
+In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, uninitialized variables are `undefined`.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -100,7 +102,7 @@ Try it out in the [DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74
 
 ### Checking for null/zero
 
-In Dart, only the boolean value true is treated as true. But in JavaScript, values like 1 or any other non-null objects are treated as true.
+In Dart, only the boolean value `true` is treated as true. But in JavaScript, values like 1 or any non-null objects are treated as true.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -186,8 +188,7 @@ Whereas Dart uses [`Future`](https://www.dartlang.org/tutorials/language/futures
 // Dart
 _getIPAddress() {
   final url = 'https://httpbin.org/ip';
-  Future<HttpRequest> request = HttpRequest.request(url);
-  request.then((value) {
+  HttpRequest.request(url).then((value) {
       print(JSON.decode(value.responseText)['origin']);
   }).catchError((error) => print(error));
 }
@@ -195,7 +196,7 @@ _getIPAddress() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/b68eb981456c5eec03daa3c05ee59486).
 
-**Note:** Check [here](https://www.dartlang.org/tutorials/language/futures) for more details on future.
+**Note:** Check [here](https://www.dartlang.org/tutorials/language/futures) for more details on Futures.
 
 #### async / await
 
@@ -265,14 +266,16 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 {% endprettify %}
 
-Contrary to React Native’s way of importing each component as they are used, in Flutter, you import the `material.dart` from the flutter package, which allows you to use any material design widget without explicitly importing it.
+Contrary to React Native’s way of importing each component needed, in Flutter, you import `material.dart` from the flutter package, which allows you to use any material design widget without explicitly importing it. Dart automatically imports only the widgets that are actually used.
+
+Alternatively, you could import the `cupertino` widgets, the basic `widgets` or another widget library. 
 
 <!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 {% endprettify %}
 
-### What is the equivalent of React Native `Hello World` app in Flutter?
+### What is the equivalent of the React Native `Hello World` app in Flutter?
 
 Let’s take a look at how we can define the app in their respective frameworks:
 
@@ -296,7 +299,7 @@ export default class HelloWorldApp extends React.Component {
 <!-- skip -->
 {% prettify dart %}
 // Flutter
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() { 
   runApp(
@@ -313,7 +316,9 @@ void main() {
 
 The `HelloWorldApp` class in React Native extends `React.Component` and implements the render method by returning a view component as shown.
 
-In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The text direction needs to be specified in this instance; when the MaterialApp widget is used, this is taken care of for you. Further when developing you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
+In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The text direction needs to be specified in this instance; when a MaterialApp widget is used, this is taken care of for you.
+
+When developing a more complex app you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
 
 ### How do I use Widgets and nest them to form a Widget tree?
 
