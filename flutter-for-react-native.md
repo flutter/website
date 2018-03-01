@@ -320,17 +320,46 @@ In Flutter, the execution starts off with the `main()` function inside which a [
 
 When developing a more complex app you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
 
-### How do I use Widgets and nest them to form a Widget tree?
-
-When writing an app, you will commonly author new widgets that are subclasses of either [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html) or [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), depending on whether your widget manages any state. In the above Hello World example, HelloWorldApp class extends a StatelessWidget and overrides a build function which describes the widget in terms of other, lower-level widgets.
-
-In the above example, the widget tree consists of five widgets, the [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html), [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) and the [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The `MaterialApp` wraps a number of widgets that are commonly required for material design applications and the `Scaffold` implements the basic material design visual layout structure. In simple apps it is easy to nest widgets, but as the code base gets larger and the app becomes complex it is advisable to break deeply nested widgets into functions that return the widget or smaller classes.
 
 ##### Preview
 
 |Android |iOS |
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
+
+
+### How do I use Widgets and nest them to form a Widget tree?
+
+When writing an app, you will commonly author new widgets that are subclasses of either [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html) or [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), depending on whether your widget manages any state. In the above Hello World example, HelloWorldApp class extends a StatelessWidget and overrides a build function which describes the widget in terms of other, lower-level widgets.
+
+<!-- skip -->
+{% prettify dart %}
+// Flutter
+import 'package:flutter/material.dart';
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        home: new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Flutter"),
+      ),
+      body: new Center(
+        child: new Text(
+          'Hello World',
+        ),
+      ),
+    ));
+  }
+}
+
+{% endprettify %}
+
+In the above example, the widget tree consists of five widgets, the [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html), [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [AppBar](https://docs.flutter.io/flutter/material/AppBar-class.html) and the [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The `MaterialApp` wraps a number of widgets that are commonly required for material design applications and the `Scaffold` implements the basic material design visual layout structure. In simple apps it is easy to nest widgets, but as the code base gets larger and the app becomes complex it is advisable to break deeply nested widgets into functions that return the widget or smaller classes.
+
 
 **Note:** You can check the working code for [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/rnhelloworld/App.js) code.
 
@@ -398,7 +427,7 @@ new CustomCard(
     ...
 {% endprettify %}
 
-The above shown constructor for the `CustomCard` class is a Dart feature. The curly braces inside the constructor indicates that the parameters are optional when initialising just like functions and method. In order to make these fields required, we have two options- first one is to remove the curly braces from the constructor and the second is to add the `@required` to the constructor. The latter approach enables the developer to provide parameter names when using the `CustomCard` class in the app code as show in the (Usage section) example above. 
+The above shown constructor for the `CustomCard` class is a Dart feature. The curly braces inside the constructor indicates that the parameters are optional when initialising. In order to make these fields required, we have two options- first one is to remove the curly braces from the constructor and the second is to add the `@required` to the constructor. The latter approach enables the developer to provide parameter names when using the `CustomCard` class in the app code as show in the (Usage section) example above. 
 
 ##### Preview
 
@@ -698,7 +727,9 @@ Another example would be when you need to align your components in a [Row](https
 
 In React Native, you would specify it as a prop. `flexDirection: “row”` . But in Flutter, you would use a [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) widget and provide the required widget/widget tree as its children.
 
-Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html). Here are more [layout widgets](https://flutter.io/widgets/layout/).
+Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
+
+Here is documentation for more [layout widgets](https://flutter.io/widgets/layout/).
 
 ##### Preview
 
@@ -849,8 +880,10 @@ A `Theme` can be applied even without using the `MaterialApp` widget. The [`Them
         brightness: brightness,
       ),
       child: new Scaffold(
+         backgroundColor: Theme.of(context).primaryColor,
               ...
               ...
+              
       ),
     );
   }
@@ -1308,7 +1341,7 @@ A TabBar Widget is used to create a TabBar and [`Tab`](https://docs.flutter.io/f
 <!-- skip -->
 {% prettify dart %}
 // Flutter
-TabController controller=new TabController(length: 3, vsync: this);
+TabController controller=new TabController(length: 2, vsync: this);
 
 new TabBar(
   tabs: <Tab> [
@@ -1329,27 +1362,31 @@ The `length` argument of the `TabController`'s constructor is the total number o
 <!-- skip -->
 {% prettify dart %}
 // Flutter
-@override
-Widget build(BuildContext context) {
-  return new Scaffold(
-    bottomNavigationBar: new Material (
-      child: new TabBar(
-        tabs: <Tab> [
-          new Tab(icon: new Icon(Icons.person),),
-          new Tab(icon: new Icon(Icons.email),),
+
+class _NavigationHomePageState extends State<NavigationHomePage> with SingleTickerProviderStateMixin {
+  TabController controller=new TabController(length: 2, vsync: this);
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      bottomNavigationBar: new Material (
+        child: new TabBar(
+          tabs: <Tab> [
+            new Tab(icon: new Icon(Icons.person),)
+            new Tab(icon: new Icon(Icons.email),),
+          ],
+          controller: controller,
+        ),
+        color: Colors.blue,
+      ),
+      body: new TabBarView(
+        children: <Widget> [
+          new home.homeScreen(),
+          new tabScreen.tabScreen()
         ],
         controller: controller,
-      ),
-      color: Colors.blue,
-    ),
-    body: new TabBarView(
-      children: <Widget> [
-        new home.homeScreen(),
-        new tabScreen.tabScreen()
-      ],
-      controller: controller,
-    )
-  );
+      )
+    );
+  }
 }
 {% endprettify %}
 
