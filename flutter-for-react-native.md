@@ -81,7 +81,7 @@ Try it out in [DartPad](https://dartpad.dartlang.org/3f4625c16e05eec396d60468837
 
 #### Default value
 
-In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, uninitialized variables are `undefined`.
+In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, uninitialized variables are "undefined".
 
 <!-- skip -->
 {% prettify javascript %}
@@ -98,7 +98,7 @@ int x; // == null
 
 Try it out in the [DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74e9781a2c7).
 
-**Note:** Check [here](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-3) for more details on variables.
+**Note:** For more information, see the documentation on [variables](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-3).
 
 ### Checking for null/zero
 
@@ -158,7 +158,7 @@ bool fn() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/5454e8bfadf3000179d19b9bc6be9918).
 
-**Note:** Check [here](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-6) for more details on functions.
+**Note:** For more information, see the documentation on [functions](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-6).
 
 ### Asynchronous Programming
 #### Futures
@@ -196,7 +196,7 @@ _getIPAddress() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/b68eb981456c5eec03daa3c05ee59486).
 
-**Note:** Check [here](https://www.dartlang.org/tutorials/language/futures) for more details on Futures.
+**Note:** For more information, see the documentation on [Futures](https://www.dartlang.org/tutorials/language/futures).
 
 #### async / await
 
@@ -229,7 +229,7 @@ _getIPAddress() async {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/96e845a844d8f8d91c6f5b826ef38951).
 
-**Note:** Check [here](https://www.dartlang.org/articles/language/await-async) for more details on async/await.
+**Note:** For more information, see the documentation on [async/await](https://www.dartlang.org/articles/language/await-async).
 
 ## Learn The Basics of Flutter
 ### How do I create a Flutter app?
@@ -255,7 +255,7 @@ In React Native, you would go to the project directory and use
 In [Flutter](https://flutter.io/get-started/), if you are using the terminal, then you use the `flutter run` command in the project root directory to run your app on a connected device or simulator. 
 If you are using an IDE like IntelliJ, Android Studio, or VS Code with the Flutter plugin installed then you can use the in-built tools to run the app. 
 
-Refer [here](https://flutter.io/get-started/) for more details.
+For more information, see the documentation on [getting started](https://flutter.io/get-started/).
 
 ### How do I use import statements?
 
@@ -268,7 +268,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 Contrary to React Native’s way of importing each component needed, in Flutter, you import `material.dart` from the flutter package, which allows you to use any material design widget without explicitly importing it. Dart automatically imports only the widgets that are actually used.
 
-Alternatively, you could import the `cupertino` widgets, the basic `widgets` or another widget library. 
+Alternatively, you could import the `cupertino` widgets, the basic `widgets`, or your own custom widget library. 
 
 <!-- skip -->
 {% prettify dart %}
@@ -515,7 +515,7 @@ dependencies:
 import 'package:google_sign_in/google_sign_in.dart';
 {% endprettify %}
 
-You can find the Flutter packages [here](https://pub.dartlang.org/flutter/packages) and compare them based on their scores.
+Here are descriptions of the [Flutter packages](https://pub.dartlang.org/flutter/packages), including scores to help you compare them.
 
 ## Built-In Widgets
 
@@ -538,7 +538,7 @@ In React Native, View is a container that supports layout with <b>`Flexbox`</b>,
 
 In Flutter, we have layout specific widgets like [Container](https://docs.flutter.io/flutter/widgets/Container-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Row](https://docs.flutter.io/flutter/widgets/Row-class.html), [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) etc. You can also use higher-level widgets like the [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html) widget which provides options for showing drawers, snack bars, and bottom sheets. Higher-level widgets are built from lower-level widgets using composition (instead of inheritance).
 
-**Note:** You can also check the layout widget catalog [here](https://flutter.io/widgets/layout/).
+**Note:** Here is the [layout widget catalog](https://flutter.io/widgets/layout/).
 
 ### What is the equivalent of `FlatList` / `ListView`?
 
@@ -698,7 +698,7 @@ Another example would be when you need to align your components in a [Row](https
 
 In React Native, you would specify it as a prop. `flexDirection: “row”` . But in Flutter, you would use a [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) widget and provide the required widget/widget tree as its children.
 
-Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html). Refer [here](https://flutter.io/widgets/layout/) for more layout widgets.
+Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html). Here are more [layout widgets](https://flutter.io/widgets/layout/).
 
 ##### Preview
 
@@ -809,7 +809,7 @@ new Center(
 
 There is no inbuilt support for icons in React Native, so third party libraries have to be used. Flutter has inbuilt support for Material icons as well as Cupertino (iOS-like) icons. To use Material icons, [`Icons`](https://docs.flutter.io/flutter/material/Icons-class.html) class is used. To use [`Cupertino icons`](https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html), make sure you add a dependency on cupertino_icons in your project's pubspec.yaml file.
 
-You can get the list of all Material icons [here](https://docs.flutter.io/flutter/material/Icons-class.html#constants).
+Here is the list of all [Material icons](https://docs.flutter.io/flutter/material/Icons-class.html#constants).
 
 For Colors, [`Colors`](https://docs.flutter.io/flutter/material/Colors-class.html) class is used which uses Material design's [color palette](https://material.io/guidelines/style/color.html).
 
@@ -1506,7 +1506,7 @@ new GestureDetector(
 );
 {% endprettify %}
 
-You can check the list of all Flutter `GestureDetector` callbacks [here](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties) .
+Here is the list of all [Flutter `GestureDetector` callbacks](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
 
 ##### Preview
 
@@ -1741,7 +1741,7 @@ The Flutter plugin v21 announced a new feature called "Flutter Inspector" for In
 
 The inspector view can be opened via View > Tool Windows > Flutter Inspector (it shows content only when an app is running). To inspect a specific widget, select the ‘Toggle inspect mode’ action in the toolbar, then click on the desired widget on the phone or simulator. The widget will be highlighted in your app’s UI, you’ll see the widget in the widget hierarchy in IntelliJ, and will be able to view the individual properties for that widget.
 
-**Note:** You can check [here](https://flutter.io/debugging/) for more details on debugging in Flutter.
+**Note:** For more details, see the documentation on [debugging in Flutter](https://flutter.io/debugging/).
 
 ## Animations
 
@@ -1857,7 +1857,7 @@ child: new Dismissible(
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
-**Note:** You can check the working code [here](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/lib/main.dart).
+**Note:** Here is the [working code](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/lib/main.dart).
 
 ## CheatSheet
 
