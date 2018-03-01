@@ -63,17 +63,25 @@ class MyApp extends StatelessWidget {
         ),
         body: new ListView(
           children: <Widget>[
-            new ListTile(
-              leading: new Icon(Icons.map),
-              title: new Text('Map'),
+            new Container(
+              width: 160.0,
+              color: Colors.red,
             ),
-            new ListTile(
-              leading: new Icon(Icons.photo),
-              title: new Text('Album'),
+            new Container(
+              width: 160.0,
+              color: Colors.blue,
             ),
-            new ListTile(
-              leading: new Icon(Icons.phone),
-              title: new Text('Phone'),
+            new Container(
+              width: 160.0,
+              color: Colors.green,
+            ),
+            new Container(
+              width: 160.0,
+              color: Colors.yellow,
+            ),
+            new Container(
+              width: 160.0,
+              color: Colors.green,
             ),
           ],
         ),
