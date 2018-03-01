@@ -102,10 +102,10 @@ debugger. An in-between mode that turns off all the debugging aids
 _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
 
-## Dumping the application state
+## Debugging application layers
 
 Each layer of the Flutter framework provides a function to dump its
-current state to the console (using `debugPrint`).
+current state or events to the console (using `debugPrint`).
 
 ### Widget layer
 
@@ -607,7 +607,7 @@ probably part of the
 [`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)'s
 definition, sets a minimum width of 88 pixels on its contents and a
 specific height of 36.0. (This is the `FlatButton` class implementing
-the Material Design rules regarding button dimensions.)
+the Material Design guidelines regarding button dimensions.)
 
 The inner-most `RenderPositionedBox` loosens the constraints again,
 this time to center the text within the button. The
@@ -685,6 +685,21 @@ I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTap
 ```
 
 <!-- this tree is bad, see https://github.com/flutter/flutter/issues/2476 -->
+
+### Scheduling
+
+To find out where your events happen relative to the frame's begin/end, you can toggle the [`debugPrintBeginFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintBeginFrameBanner.html) and the [`debugPrintEndFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintEndFrameBanner.html) booleans to print the beginning and end of the frames to the console. 
+
+For example:
+
+```
+I/flutter : ▄▄▄▄▄▄▄▄ Frame 12         30s 437.086ms ▄▄▄▄▄▄▄▄
+I/flutter : Debug print: Am I performing this work more than once per frame?
+I/flutter : Debug print: Am I performing this work more than once per frame?
+I/flutter : ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+```
+
+[`debugPrintScheduleFrameStacks`](https://docs.flutter.io/flutter/scheduler/debugPrintScheduleFrameStacks.html) can also be used to print the call stack causing the current frame to be scheduled. 
 
 ## Visual debugging
 
@@ -833,7 +848,7 @@ will be misleading.
 ## Material grid
 
 When developing applications that implement [Material
-design](https://www.google.com/design/spec/material-design/introduction.html),
+Design](https://www.google.com/design/spec/material-design/introduction.html),
 it can be helpful to overlay a [Material Design baseline
 grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the

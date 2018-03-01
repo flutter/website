@@ -191,7 +191,7 @@ void main() {
 
 Be sure to have a `uses-material-design: true` entry in the `flutter`
 section of your `pubspec.yaml` file. It allows to use the predefined
-set of [material icons](https://design.google.com/icons/).
+set of [Material icons](https://design.google.com/icons/).
 
 ```yaml
 name: my_app
@@ -230,13 +230,13 @@ variety of ways. Finally, `MyScaffold` uses a
 [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html) to
 fill the remaining space with its body, which consists a centered message.
 
-Using Material Design
+Using Material Components
 ---------------------
 
-_Main article: [Widgets Overview - Material Design Widgets](https://flutter.io/widgets/material)_
+_Main article: [Widgets Overview - Material Components](https://flutter.io/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
-Material Design. A Material Design app starts with the
+Material Design. A Material app starts with the
 [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
 widget, which builds a number of useful widgets at the root of your app,
 including a
@@ -261,7 +261,7 @@ void main() {
 class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Scaffold is a layout for the major Material Design widgets.
+    // Scaffold is a layout for the major Material Components.
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(
@@ -295,8 +295,8 @@ class TutorialHome extends StatelessWidget {
 Now that we've switched from `MyAppBar` and `MyScaffold` to the
 [`AppBar`](https://docs.flutter.io/flutter/material/AppBar-class.html) and
 [`Scaffold`](https://docs.flutter.io/flutter/material/Scaffold-class.html)
-widgets from `material.dart`, our app is starting to look at bit more like
-Material Design. For example, the app bar has a shadow and the title text
+widgets from `material.dart`, our app is starting to look at bit more
+Material. For example, the app bar has a shadow and the title text
 inherits the correct styling automatically. We've also added a floating action
 button for good measure.
 

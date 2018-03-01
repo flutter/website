@@ -9,7 +9,7 @@ If this is the first time you're installing Flutter on this machine, clone the
 repository:
 
 {% commandline %}
-git clone -b dev https://github.com/flutter/flutter.git
+git clone -b beta https://github.com/flutter/flutter.git
 {% endcommandline %}
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
@@ -41,20 +41,23 @@ not support third-party shells like Git Bash.
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
 Check the output carefully for other software you may need to install or further 
-tasks to perform .
+tasks to perform (shown in **bold** text).
 
 For example:
+<pre>
+[-] Android toolchain - develop for Android devices
+    • Android SDK at D:\Android\sdk
+    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
+    • Try re-installing or updating your Android SDK,
+      visit https://flutter.io/setup/#android-setup for detailed instructions.
+</pre>
 
-```
-✗ Minimum supported Android SDK version is 25 but this system has 23. Please upgrade.
-```
-
-The first time you run the `flutter` command, it downloads its own dependencies and compiles
+The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
 itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
 You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are available for IntelliJ IDEA. See [IntelliJ Setup](/ide-setup/)
+are available for IntelliJ IDEA, Android Studio, and VS Code. See [Editor Setup](/get-started/editor/)
 for the steps to install the Flutter and Dart plugins.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to

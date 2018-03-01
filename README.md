@@ -38,6 +38,48 @@ A tldr version follows:
 1. Prior to submitting, run link validation:<br>
 `rake checklinks`
 
+## Deploy to a staging site
+
+For edits made directly in the GitHub web UI, the changes will be deployed to a
+staging site (such as `https://flutter-io-deploy-three.firebaseapp.com/inspector`)
+by the Travis job.
+
+For edits you make locally (using the 'developing' steps above), you can deploy them
+to a personal staging site as follows (steps 1 and 2 need to be done only once):
+
+1. In the [Firebase Console](https://console.firebase.google.com),
+create your own Firebase project (e.g. 'mit-flutter-staging')
+
+1. Tell Firebase about that project with the firebase
+[`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
+	```
+	$ firebase use --add
+	? Which project do you want to add? <select the project you created>
+	? What alias do you want to use for this project? (e.g. staging) staging
+	```
+
+1. Tell Firebase that you want to deploy to staging:
+	```
+	$ firebase use staging
+	Now using alias staging (<your project name>)
+	```
+
+1. Tell Firebase to deploy:
+	```
+	$ firebase use staging
+	Now using alias staging (<your project name>)
+	$ firebase deploy
+
+	=== Deploying to '<your project name>'...
+
+	i  deploying hosting
+	i  hosting: preparing _site directory for upload...
+	✔  hosting: 213 files uploaded successfully
+	i  starting release process (may take several minutes)...
+
+	✔  Deploy complete!
+	```
+
 ## Writing for flutter.io
 
 (Eventually, this section should be expanded to its own page.)
@@ -216,3 +258,39 @@ If new sample apps have been added, update `_data/catalog/widget.json`. The entr
 ```
 
 The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
+
+## Preventing broken links
+
+Some form of broken links prevention is done automatically by `rake checklinks`
+on every commit (through `tool/travis.sh`). But this won't see any Firebase 
+redirects (`rake checklinks` doesn't run the Firebase server) and it won't
+check incoming links.
+
+Before we can move the more complete
+[automated `linkcheck` solution](https://github.com/dart-lang/site-webdev/blob/master/scripts/check-links-using-fb.sh)
+from dartlang.org, we recommend manually running the following.
+
+* First time setup:
+ 
+  ```
+  pub global activate linkcheck
+  npm install -g superstatic
+  ``` 
+
+* Start the localhost Firebase server:
+
+  ```
+  superstatic --port 3474
+  ```
+  
+* Run the link checker:
+
+  ```
+  linkcheck :3474
+  ```
+  
+  Even better, to check that old URLs are correctly redirected:
+
+  ```
+  linkcheck :3474 --input tool/sitemap.txt
+  ```

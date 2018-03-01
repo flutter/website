@@ -67,6 +67,21 @@
         "source": "/privacy",
         "destination": "https://www.google.com/intl/en/policies/privacy/",
         "type": 301
+      },
+      {
+        "source": "/getting-started",
+        "destination": "/get-started/",
+        "type": 301
+      },
+      {
+        "source": "/setup",
+        "destination": "/get-started/install/",
+        "type": 301
+      },
+      {
+        "source": "/ide-setup",
+        "destination": "/get-started/editor/",
+        "type": 301
       }
     ]
   }

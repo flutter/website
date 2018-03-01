@@ -1,0 +1,34 @@
+$tab-accent-color: $brand-color;
+
+// General tabs. These are intended for instructions that vary according to user
+// selection, e.g. around editor choice in getting started.
+
+ul.tabs__top-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.tabs__top-bar li {
+  background: none;
+  color: $grey-color;
+  display: inline-block;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+ul.tabs__top-bar li.current{
+  background: $tab-accent-color;
+  color: $background-color;
+}
+
+.tabs__content{
+  display: none;
+  border: 1px solid $tab-accent-color;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs__content.current{
+  display: inherit;
+}
