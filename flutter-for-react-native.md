@@ -399,7 +399,7 @@ The above shown constructor for the `CustomCard` class is a Dart feature. The cu
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|
+|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 **Note:** You can check the working code in [Flutter](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/fluttermodular/lib/main.dart) and its equivalent [React Native](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/modular/rnmodular/App.js) code.
 
