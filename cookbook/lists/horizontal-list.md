@@ -62,6 +62,7 @@ class MyApp extends StatelessWidget {
           title: new Text(title),
         ),
         body: new ListView(
+          scrollDirection: Axis.horizontal,
           children: <Widget>[
             new Container(
               width: 160.0,
