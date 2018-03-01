@@ -58,7 +58,9 @@ Try it out in [DartPad](https://dartpad.dartlang.org/cf9e652f77636224d3e37d96dcf
 ### Variables
 #### Creating and Assigning Variables
 
-While JavaScript variables cannot be typed, Dart variables are optionally typed but it is a good practice to use typed variables. In [Dart 2](https://www.dartlang.org/dart-2), both static and runtime type checks, it also has a sound type system. This type system enables better tooling, as well as earlier feedback when you write code.
+While JavaScript variables cannot be typed, Dart variables are optionally typed but it is a good practice to use typed variables.
+
+In [Dart 2](https://www.dartlang.org/dart-2), variables must either be explicitly typed or it must be possible for the type system to infer the proper type automatically. Dart 2 performs both static and runtime type checks, using a sound type system. This type system enables better tooling, as well as earlier feedback when you write code.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -79,7 +81,7 @@ Try it out in [DartPad](https://dartpad.dartlang.org/3f4625c16e05eec396d60468837
 
 #### Default value
 
-In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, variables are `undefined`.
+In Dart, uninitialized variables have an initial value of `null`. Even variables with numeric types are initially null because numbers are objects in Dart. But in JavaScript, uninitialized variables are "undefined".
 
 <!-- skip -->
 {% prettify javascript %}
@@ -96,11 +98,11 @@ int x; // == null
 
 Try it out in the [DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74e9781a2c7).
 
-**Note:** Check [here](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-3) for more details on variables.
+**Note:** For more information, see the documentation on [variables](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-3).
 
 ### Checking for null/zero
 
-In Dart, only the boolean value true is treated as true. But in JavaScript, values like 1 or any other non-null objects are treated as true.
+In Dart, only the boolean value `true` is treated as true. But in JavaScript, values like 1 or any non-null objects are treated as true.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -156,7 +158,7 @@ bool fn() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/5454e8bfadf3000179d19b9bc6be9918).
 
-**Note:** Check [here](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-6) for more details on functions.
+**Note:** For more information, see the documentation on [functions](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-6).
 
 ### Asynchronous Programming
 #### Futures
@@ -186,8 +188,7 @@ Whereas Dart uses [`Future`](https://www.dartlang.org/tutorials/language/futures
 // Dart
 _getIPAddress() {
   final url = 'https://httpbin.org/ip';
-  Future<HttpRequest> request = HttpRequest.request(url);
-  request.then((value) {
+  HttpRequest.request(url).then((value) {
       print(JSON.decode(value.responseText)['origin']);
   }).catchError((error) => print(error));
 }
@@ -195,7 +196,7 @@ _getIPAddress() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/b68eb981456c5eec03daa3c05ee59486).
 
-**Note:** Check [here](https://www.dartlang.org/tutorials/language/futures) for more details on future.
+**Note:** For more information, see the documentation on [Futures](https://www.dartlang.org/tutorials/language/futures).
 
 #### async / await
 
@@ -228,7 +229,7 @@ _getIPAddress() async {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/96e845a844d8f8d91c6f5b826ef38951).
 
-**Note:** Check [here](https://www.dartlang.org/articles/language/await-async) for more details on async/await.
+**Note:** For more information, see the documentation on [async/await](https://www.dartlang.org/articles/language/await-async).
 
 ## Learn The Basics of Flutter
 ### How do I create a Flutter app?
@@ -254,7 +255,7 @@ In React Native, you would go to the project directory and use
 In [Flutter](https://flutter.io/get-started/), if you are using the terminal, then you use the `flutter run` command in the project root directory to run your app on a connected device or simulator. 
 If you are using an IDE like IntelliJ, Android Studio, or VS Code with the Flutter plugin installed then you can use the in-built tools to run the app. 
 
-Refer [here](https://flutter.io/get-started/) for more details.
+For more information, see the documentation on [getting started](https://flutter.io/get-started/).
 
 ### How do I use import statements?
 
@@ -265,14 +266,16 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 {% endprettify %}
 
-Contrary to React Native’s way of importing each component as they are used, in Flutter, you import the `material.dart` from the flutter package, which allows you to use any material design widget without explicitly importing it.
+Contrary to React Native’s way of importing each component needed, in Flutter, you import `material.dart` from the flutter package, which allows you to use any material design widget without explicitly importing it. Dart automatically imports only the widgets that are actually used.
+
+Alternatively, you could import the `cupertino` widgets, the basic `widgets`, or your own custom widget library. 
 
 <!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 {% endprettify %}
 
-### What is the equivalent of React Native `Hello World` app in Flutter?
+### What is the equivalent of the React Native `Hello World` app in Flutter?
 
 Let’s take a look at how we can define the app in their respective frameworks:
 
@@ -296,7 +299,7 @@ export default class HelloWorldApp extends React.Component {
 <!-- skip -->
 {% prettify dart %}
 // Flutter
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() { 
   runApp(
@@ -313,7 +316,9 @@ void main() {
 
 The `HelloWorldApp` class in React Native extends `React.Component` and implements the render method by returning a view component as shown.
 
-In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The text direction needs to be specified in this instance; when the MaterialApp widget is used, this is taken care of for you. Further when developing you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
+In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The text direction needs to be specified in this instance; when a MaterialApp widget is used, this is taken care of for you.
+
+When developing a more complex app you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
 
 
 ##### Preview
@@ -539,7 +544,7 @@ dependencies:
 import 'package:google_sign_in/google_sign_in.dart';
 {% endprettify %}
 
-You can find the Flutter packages [here](https://pub.dartlang.org/flutter/packages) and compare them based on their scores.
+Here are descriptions of the [Flutter packages](https://pub.dartlang.org/flutter/packages), including scores to help you compare them.
 
 ## Built-In Widgets
 
@@ -562,7 +567,7 @@ In React Native, View is a container that supports layout with <b>`Flexbox`</b>,
 
 In Flutter, we have layout specific widgets like [Container](https://docs.flutter.io/flutter/widgets/Container-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Row](https://docs.flutter.io/flutter/widgets/Row-class.html), [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) etc. You can also use higher-level widgets like the [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html) widget which provides options for showing drawers, snack bars, and bottom sheets. Higher-level widgets are built from lower-level widgets using composition (instead of inheritance).
 
-**Note:** You can also check the layout widget catalog [here](https://flutter.io/widgets/layout/).
+**Note:** Here is the [layout widget catalog](https://flutter.io/widgets/layout/).
 
 ### What is the equivalent of `FlatList` / `ListView`?
 
@@ -722,9 +727,9 @@ Another example would be when you need to align your components in a [Row](https
 
 In React Native, you would specify it as a prop. `flexDirection: “row”` . But in Flutter, you would use a [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) widget and provide the required widget/widget tree as its children.
 
-Other layout widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html). 
+Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
-Refer [here](https://flutter.io/widgets/layout/) for more layout widgets.
+Here is documentation for more [layout widgets](https://flutter.io/widgets/layout/).
 
 ##### Preview
 
@@ -835,7 +840,7 @@ new Center(
 
 There is no inbuilt support for icons in React Native, so third party libraries have to be used. Flutter has inbuilt support for Material icons as well as Cupertino (iOS-like) icons. To use Material icons, [`Icons`](https://docs.flutter.io/flutter/material/Icons-class.html) class is used. To use [`Cupertino icons`](https://docs.flutter.io/flutter/cupertino/CupertinoIcons-class.html), make sure you add a dependency on cupertino_icons in your project's pubspec.yaml file.
 
-You can get the list of all Material icons [here](https://docs.flutter.io/flutter/material/Icons-class.html#constants).
+Here is the list of all [Material icons](https://docs.flutter.io/flutter/material/Icons-class.html#constants).
 
 For Colors, [`Colors`](https://docs.flutter.io/flutter/material/Colors-class.html) class is used which uses Material design's [color palette](https://material.io/guidelines/style/color.html).
 
@@ -1538,7 +1543,7 @@ new GestureDetector(
 );
 {% endprettify %}
 
-You can check the list of all Flutter `GestureDetector` callbacks [here](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties) .
+Here is the list of all [Flutter `GestureDetector` callbacks](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
 
 ##### Preview
 
@@ -1773,7 +1778,7 @@ The Flutter plugin v21 announced a new feature called "Flutter Inspector" for In
 
 The inspector view can be opened via View > Tool Windows > Flutter Inspector (it shows content only when an app is running). To inspect a specific widget, select the ‘Toggle inspect mode’ action in the toolbar, then click on the desired widget on the phone or simulator. The widget will be highlighted in your app’s UI, you’ll see the widget in the widget hierarchy in IntelliJ, and will be able to view the individual properties for that widget.
 
-**Note:** You can check [here](https://flutter.io/debugging/) for more details on debugging in Flutter.
+**Note:** For more details, see the documentation on [debugging in Flutter](https://flutter.io/debugging/).
 
 ## Animations
 
@@ -1889,7 +1894,7 @@ child: new Dismissible(
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/screenshots/iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
-**Note:** You can check the working code [here](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/lib/main.dart).
+**Note:** Here is the [working code](https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/animations/fluttercardswipe/lib/main.dart).
 
 ## CheatSheet
 
