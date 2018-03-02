@@ -684,8 +684,8 @@ In React Native, you would normally use the style prop on the view component to 
   style={{
     flex: 1,
     flexDirection: "column",
-    justifyContent: “space-between”,
-    alignItems: “center”
+    justifyContent: "space-between",
+    alignItems: "center"
   }}
 >
 {% endprettify %}
