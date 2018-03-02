@@ -327,7 +327,7 @@ When developing a more complex app you would create another class that is either
 ##### Preview
 
 |Android |iOS |
-|:---:|:--:|
+|:---:|:---:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 <br/>
 
