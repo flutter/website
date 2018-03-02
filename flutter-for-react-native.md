@@ -727,7 +727,7 @@ Another example would be when you need to align your components in a [Row](https
 
 In React Native, you would specify it as a prop. `flexDirection: “row”` . But in Flutter, you would use a [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) widget and provide the required widget/widget tree as its children.
 
-Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
+Other layout widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
 Here is documentation for more [layout widgets](https://flutter.io/widgets/layout/).
 
