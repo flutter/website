@@ -722,7 +722,7 @@ new Center(
 )
 {% endprettify %}
 
-Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html), [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
+Other layout widgets available are [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html), [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
 For more information, see the documentation for the [layout widgets](https://flutter.io/widgets/layout/).
 
