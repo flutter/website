@@ -319,15 +319,17 @@ void main() {
 
 The `HelloWorldApp` class in React Native extends `React.Component` and implements the render method by returning a view component as shown.
 
-In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget. The text direction needs to be specified in this instance; when a MaterialApp widget is used, this is taken care of for you.
+In Flutter, the execution starts off with the `main()` function inside which a [`runApp()`](https://docs.flutter.io/flutter/widgets/runApp.html) function is used to take the given Widget and make it the root of the widget tree. In the Flutter example above, the widget tree consists of two widgets, the [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget and its child, the [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
 
-#### Preview
+The text direction needs to be specified in this instance; when a MaterialApp widget is used, this is taken care of for you.
+When developing a more complex app you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
+
+##### Preview
 
 |Android |iOS |
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
-
-When developing a more complex app you would create another class that is either a Stateless or Stateful widget and also use a [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget as the root and pass several other widgets to it.
+<br/>
 
 ### How do I use Widgets and nest them to form a Widget tree?
 
@@ -681,12 +683,12 @@ In React Native, you would normally use the style prop on the view component to 
 {% prettify javascript %}
 // React Native
 <View
-  style={{
+  style={%raw%}{{
     flex: 1,
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center"
-  }}
+  }}{%endraw%}
 >
 {% endprettify %}
 
@@ -779,7 +781,7 @@ In React Native, we can use inline styling as well as `stylesheets.create`.
 {% prettify javascript %}
 // React Native
 <View style={styles.container}>
-  <Text style={{ fontSize: 32, color: "cyan", fontWeight: "600" }}>
+  <Text style={%raw%}{{ fontSize: 32, color: "cyan", fontWeight: "600" }}{%endraw%}>
     This is a sample text
   </Text>
 </View>
@@ -921,7 +923,7 @@ export default class BlinkApp extends Component {
   render() {
     let display = this.state.showText ? this.state.text : " ";
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={%raw%}{{ flex: 1, justifyContent: "center", alignItems: "center" }}{%endraw%}>
         <StatusBar hidden={true} />
         <Text>{display} </Text>
         <Button onPress={this.toggleBlinkState} title={this.state.buttonText} />
@@ -1794,7 +1796,7 @@ class FadeInView extends React.Component {
   }
   render() {
     return (
-      <Animated.View style={{...this.props.style, opacity: this.state.fadeAnim }} >
+      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
         {this.props.children}
       </Animated.View>
     );
