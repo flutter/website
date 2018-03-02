@@ -23,7 +23,7 @@ To run the `flutter` command in any terminal session, you need to add it to your
     * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
     * If the entry does not exist, create a new user variable named `Path` with the full path to `flutter\bin` as its value.
 
-Close and re-open any terminal window (e.g. command prompt or PowerShell) to apply this change.
+Reboot Windows to fully apply this change.
 
 ### Run flutter doctor
 
