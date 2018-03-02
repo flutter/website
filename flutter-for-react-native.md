@@ -1865,7 +1865,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
 ### How do I add swipe animation to Cards?
 
-In React Native, you either use PanResponder or third-party libraries for swipe animation. In Flutter, we can achieve this animation simply by using the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html) widget and nest the child widgets.
+In React Native, you either use PanResponder or third-party libraries for swipe animation. In Flutter, we can achieve this animation by using the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html) widget and nest the child widgets.
 
 <!-- skip -->
 {% prettify dart %}
