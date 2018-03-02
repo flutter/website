@@ -1056,8 +1056,7 @@ There are three main ways to manage state:
 * The parent manages the widget’s state.
 * A mix-and-match approach
   
-##### How do you decide which approach to use? The following principles should help you decide:
-
+How do you decide which approach to use? The following principles should help you decide:
 * If the state in question is user data, for example the checked or unchecked mode of a checkbox, or the position of a slider, then the state is best managed by the parent widget.
 * If the state in question is aesthetic, for example an animation, then the widget itself best manages the state.
 * When in doubt, let the parent widget manage the child widget's state.
