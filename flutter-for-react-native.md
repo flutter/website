@@ -428,7 +428,7 @@ new CustomCard(
 
 The constructor for the `CustomCard` class shows a Dart feature. The curly braces inside the constructor indicates that the parameters are optional when initialising. In order to make these fields required, we have two options- first one is to remove the curly braces from the constructor and the second is to add the `@required` to the constructor. The latter approach enables the developer to provide parameter names when using the `CustomCard` class in the app code as show in the (Usage section) example above. 
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -597,7 +597,7 @@ new ListView.builder(
 )
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -664,7 +664,7 @@ class _MyCanvasState extends State<MyCanvas> {
 }
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -726,7 +726,7 @@ Other layput widgets available are [`Padding`](https://docs.flutter.io/flutter/w
 
 For more information, see the documentation for the [layout widgets](https://flutter.io/widgets/layout/).
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -764,7 +764,7 @@ new Stack(
 
 The above example uses `Stack` to overlay a Container (that displays its `Text` on a translucent black background) on top of a `CircleAvatar`. The Stack offsets the text using the alignment property and Alignments.
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -821,7 +821,7 @@ new Center(
 )
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1107,7 +1107,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1192,7 +1192,7 @@ new CustomCard(
 {% endprettify %}
 
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1440,7 +1440,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1535,7 +1535,7 @@ new GestureDetector(
 
 Here is the list of all [Flutter `GestureDetector` callbacks](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1586,7 +1586,7 @@ _getIPAddress() async {
 }
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1691,7 +1691,7 @@ void _submit() {
 {% endprettify %}
 
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1854,7 +1854,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 {% endprettify %}
 
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
@@ -1879,7 +1879,7 @@ child: new Dismissible(
 ),
 {% endprettify %}
 
-##### Preview
+#### Preview
 
 |Android|iOS|
 |:---:|:--:|
