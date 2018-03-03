@@ -465,8 +465,8 @@ lazily, on demand.
 <ol markdown="1">
 
 <li markdown="1"> Add a `_suggestions` list to the RandomWordsState
-class for saving suggested word pairings. Note that the variable begins
-with an underscore (`_`).  Prefixing an identifier with an underscore enforces
+class for saving suggested word pairings. The variable begins with
+an underscore (`_`)&mdash;prefixing an identifier with an underscore enforces
 privacy in the Dart language.
 
 Also, add a `biggerFont` variable for making the font size larger.
@@ -502,7 +502,7 @@ class RandomWordsState extends State<RandomWords> {
   [[highlight]]Widget _buildSuggestions() {[[/highlight]]
     [[highlight]]return new ListView.builder([[/highlight]]
       [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
-      // The itemBuilder callback is called, once per suggested word pairing,
+      // The itemBuilder callback is called once per suggested word pairing,
       // and places each suggestion into a ListTile row.
       // For even rows, the function adds a ListTile row for the word pairing.
       // For odd rows, the function adds a Divider widget to visually
