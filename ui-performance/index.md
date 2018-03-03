@@ -455,8 +455,8 @@ a section in [Testing Flutter Apps](https://flutter.io/testing/).
 
 ## More information
 
-The following resources provide more information on using Flutter's tools and debugging
-in Flutter:
+The following resources provide more information on using Flutter's tools
+and debugging in Flutter:
 
 * [Debugging Flutter Apps](https://flutter.io/debugging/)
 * [Flutter Inspector](https://www.youtube.com/watch?v=JIcmJNT9DNI), a
@@ -464,7 +464,7 @@ in Flutter:
 * [Observatory: A Profiler for Dart Apps](https://dart-lang.github.io/observatory/)
 * [Flutter API](https://docs.flutter.io/index.html) docs,
   particularly the
-  [PerformanceOverlay](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html) class,
-  and the
+  [PerformanceOverlay](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html)
+  class, and the
   [dart:developer](https://docs.flutter.io/flutter/dart-developer/dart-developer-library.html)
   package.
