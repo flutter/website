@@ -327,10 +327,11 @@ When developing a more complex app you would create another class that is either
 ##### Preview
 
 |Android |iOS |
-|:---:|:---:|
+|:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
-<br/>
 
+
+<br/>
 ### How do I use Widgets and nest them to form a Widget tree?
 
 When writing an app, you will commonly author new widgets that are subclasses of either [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html) or [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), depending on whether your widget manages any state. In the above Hello World example, HelloWorldApp class extends a StatelessWidget and overrides a build function that describes the widget in terms of other, lower-level widgets.
@@ -772,6 +773,7 @@ The above example uses `Stack` to overlay a Container (that displays its `Text` 
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
+<br/>
 ### Styling
 ### How to custom style my components in Flutter?
 
