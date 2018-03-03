@@ -564,7 +564,7 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     [[strike]]final wordPair = new WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]Return new Text(wordPair.asPascalCase);[[/strike]]
+    [[strike]]return new Text(wordPair.asPascalCase);[[/strike]]
     [[highlight]]return new Scaffold ([[/highlight]]
       [[highlight]]appBar: new AppBar([[/highlight]]
         [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
