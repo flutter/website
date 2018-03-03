@@ -13,7 +13,7 @@ constructor.
 
 ```dart
 new Image.network(
-  'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
 )
 ```
 
