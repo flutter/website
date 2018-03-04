@@ -53,10 +53,10 @@
 | website/_includes/sidebar.html | http://doc.flutter-dev.cn/docs/ | ok | [_番茄沙司](https://github.com/ZhangQinglian) | 
 | website/_includes/footer.html |http://doc.flutter-dev.cn/  |  ok | [\_番茄沙司](https://github.com/ZhangQinglian) | 
 | website/get-started/codelab/index.md | http://doc.flutter-dev.cn/get-started/codelab/  | no | [MelonRice](https://github.com/MelonRice) | 
+| website/get-started/setup_windows.md |  http://doc.flutter-dev.cn/setup-windows/  |  no  |  [gdmec07120731](https://github.com/gdmec07120731)  |
 | website/bug_reports.md |http://doc.flutter-dev.cn/bug-reports/ | no | |
 | website/bootstrap-into-dart.md  |  http://doc.flutter-dev.cn/bootstrap-into-dart/ | no | |
 | website/android-release-build.md|  http://doc.flutter-dev.cn/android-release/ | no   |     |   
 | website/404.md  | http://doc.flutter-dev.cn/404 | no   |     |   
 | website/docs.md | http://doc.flutter-dev.cn/docs/ |  no  |     |   
-|    |    |    |     |   
 |    |    |   |     |   
