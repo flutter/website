@@ -48,14 +48,14 @@
 ## 任务认领及进度
 | 任务文件 | url | 是否完成 | 译者 |
 | ---------- | --- | ----------- | ----- |
-| website/index.md |http://doc.flutter-dev.cn/  |- [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
-| website/_includes/sidebar.html | http://doc.flutter-dev.cn/docs/ |- [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
-| website/_includes/footer.html |http://doc.flutter-dev.cn/  |  - [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
-| website/get-started/codelab/index.md | http://doc.flutter-dev.cn/get-started/codelab/  | - [ ] | [MelonRice](https://github.com/MelonRice) | 
-| website/bug_reports.md |http://doc.flutter-dev.cn/bug-reports/ | - [ ] | |
-| website/bootstrap-into-dart.md  |  http://doc.flutter-dev.cn/bootstrap-into-dart/ | - [ ] | |
-| website/android-release-build.md|  http://doc.flutter-dev.cn/android-release/ |  - [ ]   |     |   
-| website/404.md  | http://doc.flutter-dev.cn/404 |  - [ ]   |     |   
-| website/docs.md | http://doc.flutter-dev.cn/docs/ |  - [ ]   |     |   
-|    |    |  - [ ]   |     |   
-|    |    |  - [ ]   |     |   
+| website/index.md |http://doc.flutter-dev.cn/  | ok | [_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/_includes/sidebar.html | http://doc.flutter-dev.cn/docs/ | ok | [_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/_includes/footer.html |http://doc.flutter-dev.cn/  |  ok | [\_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/get-started/codelab/index.md | http://doc.flutter-dev.cn/get-started/codelab/  | no | [MelonRice](https://github.com/MelonRice) | 
+| website/bug_reports.md |http://doc.flutter-dev.cn/bug-reports/ | no | |
+| website/bootstrap-into-dart.md  |  http://doc.flutter-dev.cn/bootstrap-into-dart/ | no | |
+| website/android-release-build.md|  http://doc.flutter-dev.cn/android-release/ | no   |     |   
+| website/404.md  | http://doc.flutter-dev.cn/404 | no   |     |   
+| website/docs.md | http://doc.flutter-dev.cn/docs/ |  no  |     |   
+|    |    |    |     |   
+|    |    |   |     |   
