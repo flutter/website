@@ -824,7 +824,7 @@ which pushes the route to the Navigator's stack.
     add the code that generates the ListTile rows. The `divideTiles()`
     method of ListTile adds horizontal spacing between each ListTile.
     The `divided` variable holds the final rows, converted to a list
-    by the convienice function, `toList()`.
+    by the convenience function, `toList()`.
 
 <!-- skip -->
 {% prettify dart %}
