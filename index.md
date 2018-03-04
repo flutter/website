@@ -7,9 +7,9 @@ hide_title: true
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter is now in Beta!</span>
+        <span>Flutter Beta 版已发布!</span>
         &nbsp;
-        <a href="https://medium.com/flutter-io/announcing-flutter-beta-1-build-beautiful-native-apps-dc142aea74c0">Learn More</a>.
+        <a href="https://medium.com/flutter-io/announcing-flutter-beta-1-build-beautiful-native-apps-dc142aea74c0">了解更多</a>.
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
@@ -18,47 +18,40 @@ hide_title: true
 
 <section class="homepage__key_points card">
     <h1 class="homepage__title">
-        Build beautiful native apps in&nbsp;record&nbsp;time
+        以极短的时间构建优雅的原生级应用
     </h1>
 
     <div class="homepage__tagline">
-    Flutter is Google’s mobile UI framework
-    for crafting high-quality native interfaces
-    on iOS and Android in record time. Flutter works with existing code,
-    is used by developers and organizations around the world,
-    and is free and open source.
+    Flutter 是谷歌的移动端 UI 框架，可在极短的时间内构建 Android 和 iOS 上高质量的原生级应用。 Flutter 可与现有代码一起工作, 它被世界各地的开发者和组织使用, 并且 Flutter 是免费和开源的.
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">开始</a>
     </div>
 
     <div class="key-points">
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Fast Development</div>
+            <div class="homepage__key_point_title">快速开发</div>
 
             <p>
-            Hot Reload in milliseconds to paint your app to life. 
-            Use a rich set of fully-customizable widgets to build native interfaces in minutes. 
+            程序的热重载可以在瞬间完成，让应用在生命周期内得到重绘。丰富且完全可定制的部件可以让你在几分钟内构建原生级界面。
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Expressive and Flexible UI</div>
+            <div class="homepage__key_point_title">极具表现力和灵活性的 UI</div>
 
             <p>
-            Quickly ship features with a focus on native end-user experiences. 
-            Layered architecture allows full customization, 
-            which results in incredibly fast rendering and expressive and flexible designs.
+            Flutter 能够快速发布专注于终端用户体验的功能。其分层架构允许完全自定义，从而实现快速渲染和极具表现力与灵活性的设计。
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Native Performance</div>
+            <div class="homepage__key_point_title">本地化表现</div>
 
             <p>
-            Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts to provide full native performance on both iOS and Android.
+            Flutter 的部件包含所有重要的平台差异，如滚动，导航，图标和字体，以在 iOS 和 Android 上提供完整的 UI 本地化表现。
             </p>
         </div>
 
@@ -66,15 +59,10 @@ hide_title: true
 </section>
 
 <section class="homepage__hot_reload card">
-    <h1>Fast development</h1>
+    <h1>快速开发</h1>
 
     <p>
-        Flutter's <em>hot reload</em> helps you quickly
-        and easily experiment, build UIs, add features, and fix
-        bugs faster. Experience sub-second reload times,
-        without losing state, on
-        emulators, simulators, and hardware for iOS
-        and Android.
+        Flutter 的热重载 可帮助您快速轻松地试验，构建 UI，添加功能和快速地修复错误。在 iOS 和 Android 的模拟器与硬件上体验亚秒级重载的同时不会丢失状态。
     </p>
 
     <div class="hot-reload-gif-container">
@@ -83,13 +71,10 @@ hide_title: true
 </section>
 
 <section class="homepage__beautiful_uis card ">
-    <h1>Expressive, beautiful UIs</h1>
+    <h1>极具表现力和美观 UI</h1>
 
     <p>
-    Delight your users with Flutter's built-in
-    beautiful Material Design and
-    Cupertino (iOS-flavor) widgets, rich motion APIs,
-    smooth natural scrolling, and platform awareness.
+    使用 Flutter 内置的 Material Design 和 Cupertino（iOS 风格）的部件、丰富的手势 API、自然平滑的滑动和不同的平台表现来提升用户体验。
     </p>
 
     <div class="screenshot-list">
@@ -100,7 +85,7 @@ hide_title: true
     </div>
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>.
+    浏览 <a href="/widgets/">部件目录</a>.
     </p>
 </section>
 
