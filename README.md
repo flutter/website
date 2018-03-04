@@ -44,3 +44,18 @@
 ## 注意事项
 1. 提交时，comment 的写法为 `transition + path ` 如：`transition website/index.md`
 2. 专有名词，类名，关键字与约定俗成的单词或词组无需翻译。如：`Material Design`, `Widget` 等。
+
+## 任务认领及进度
+| 任务文件 | url | 是否完成 | 译者 |
+| ---------- | --- | ----------- | ----- |
+| website/index.md |http://doc.flutter-dev.cn/  |- [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/_includes/sidebar.html | http://doc.flutter-dev.cn/docs/ |- [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/_includes/footer.html |http://doc.flutter-dev.cn/  |  - [x] | [_番茄沙司](https://github.com/ZhangQinglian) | 
+| website/get-started/codelab/index.md | http://doc.flutter-dev.cn/get-started/codelab/  | - [ ] | [MelonRice](https://github.com/MelonRice) | 
+| website/bug_reports.md |http://doc.flutter-dev.cn/bug-reports/ | - [ ] | |
+| website/bootstrap-into-dart.md  |  http://doc.flutter-dev.cn/bootstrap-into-dart/ | - [ ] | |
+| website/android-release-build.md|  http://doc.flutter-dev.cn/android-release/ |  - [ ]   |     |   
+| website/404.md  | http://doc.flutter-dev.cn/404 |  - [ ]   |     |   
+| website/docs.md | http://doc.flutter-dev.cn/docs/ |  - [ ]   |     |   
+|    |    |  - [ ]   |     |   
+|    |    |  - [ ]   |     |   
