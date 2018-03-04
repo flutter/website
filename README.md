@@ -44,6 +44,7 @@
 ## 注意事项
 1. 提交时，comment 的写法为 `transition + path ` 如：`transition website/index.md`
 2. 专有名词，类名，关键字与约定俗成的单词或词组无需翻译。如：`Material Design`, `Widget` 等。
+3. 当中英数字混合的时候，中文和英文与数字键应添加空格，如 Flutter 在 Github 上目前有 15269 个 star 。
 
 ## 任务认领及进度
 | 任务文件 | url | 是否完成 | 译者 |
