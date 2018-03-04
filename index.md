@@ -90,15 +90,10 @@ hide_title: true
 </section>
 
 <section class="homepage__reactive_framework card">
-    <h1>Modern, reactive framework</h1>
+    <h1>现代化响应式框架</h1>
 
     <p>
-    Easily compose your UI with Flutter's
-    modern reactive framework and
-    rich set of platform, layout, and foundation widgets.
-    Solve your tough UI challenges with
-    powerful and flexible APIs for 2D, animation, gestures,
-    effects, and more.
+    使用Flutter的现代化响应式框架和丰富的平台、布局和基础组件来构建你的用户界面。使用功能强大且灵活的API（针对 2D，动画，手势，动效等）解决复杂的用户界面设计。
     </p>
 
 {% prettify dart %}
@@ -133,26 +128,22 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>
-    and learn more about the
-    <a href="/widgets-intro/">reactive framework</a>.
+    浏览 <a href="/widgets/">组件目录</a>
+    来学习
+    <a href="/widgets-intro/">响应式框架。</a>.
     </p>
 
 </section>
 
 <section class="homepage__interop card">
-    <h1>Access native features and SDKs</h1>
+    <h1>使用平台原生功能及 SDK</h1>
 
     <p>
-    Make your app come to life
-    with platform APIs, 3rd party SDKs,
-    and native code.
-    Flutter lets you reuse your existing Java, Swift, and ObjC code,
-    and access native features and SDKs on iOS and Android.
+    通过平台 API，第三方 SDK 和原生代码让你的应用具有强大的扩展性。 Flutter 允许重复使用现有的 Java，Swift 和 ObjC代码，并访问 iOS 和 Android 上的原生功能和 SDK。
     </p>
 
     <p>
-    Accessing platform features is easy. Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>:
+    访问平台的原生功能非常简单。 如以下是来自 <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">平台交互 demo</a> 的代码片段：
     </p>
 
 {% prettify dart %}
@@ -171,98 +162,92 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages/">packages</a>, or 
-    write <a href="/platform-channels/">platform channels</a>,
-    to access native code, APIs, and SDKs.
+    学习如何使用 <a href="/using-packages/">扩展库</a>, 或者编写
+     <a href="/platform-channels/">平台通道</a>,
+    来访问原生代码、API 和 SDK。
     </p>
 
 </section>
 
 <section class="homepage__features card">
-    <h1>Unified app development</h1>
+    <h1>统一应用开发</h1>
 
     <p>
-    Flutter has the tools and libraries to help you easily
-    bring your ideas to life on iOS and Android.
-    If you don't have any mobile development experience, Flutter
-    is an easy and fast way to build beautiful mobile apps.
-    If you are an experienced iOS or Android developer,
-    you can use Flutter for your views and leverage much of your
-    existing Java/ObjC/Swift investment.
+    Flutter 的工具和库可以帮助你轻松地将自己的想法带到 iOS 和 Android 设备上。如果你没有任何移动开发经验，用 Flutter 来构建漂亮的移动应用是你不错的选择。如果你是一位经验丰富的 iOS 或 Android 开发人员，则可以使用 Flutter 作为你应用的用户界面开发工具，并充分利用现有的大部分Java、ObjC 或 Swift 代码。
     </p>
 
     <div class="feature-lists">
 
         <div class="feature-list-group">
-            <h3>Build</h3>
+            <h3>应用构建</h3>
 
-            <h4>Beautiful app UIs</h4>
+            <h4>漂亮的用户界面</h4>
 
                 <ul>
-                    <li>Rich 2D GPU-accelerated APIs</li>
-                    <li>Reactive framework</li>
-                    <li>Animation/motion APIs</li>
-                    <li>Material Components and Cupertino widgets</li>
+                    <li>丰富的2D 硬件加速API</li>
+                    <li>响应式框架</li>
+                    <li>动画和运动 API</li>
+                    <li>Material 风格和 Cupertino 风格的部件</li>
                 </ul>
 
-            <h4>Fluid coding experience</h4>
+            <h4>流畅的编程体验</h4>
 
             <ul>
-                <li>Sub-second, stateful hot reload</li>
-                <li>IntelliJ: refactor, code completion, etc</li>
-                <li>Dart language and core libs</li>
-                <li>Package manager</li>
+                <li>亚秒级、保留状态的热重载</li>
+                <li>IntelliJ 的 refactor、代码补齐等功能</li>
+                <li>Dart 语言及其核心库</li>
+                <li>依赖库管理</li>
             </ul>
 
-            <h4>Full-features apps</h4>
+            <h4>构建功能齐全的应用</h4>
 
             <ul>
-                <li>Interop with mobile OS APIs &amp; SDKs</li>
+                <li>调用平台的 API 和 SDK</li>
                 <li>Maven/Java</li>
                 <li>Cocoapods/ObjC/Swift</li>
             </ul>
         </div>
 
         <div class="feature-list-group">
-            <h3>Optimize</h3>
+            <h3>应用优化</h3>
 
-            <h4>Test</h4>
+            <h4>测试</h4>
 
             <ul>
-                <li>Unit testing</li>
-                <li>Integration testing</li>
-                <li>On-device testing</li>
+                <li>单元测试</li>
+                <li>集成测试</li>
+                <li>设备端实时测试</li>
             </ul>
 
-            <h4>Debug</h4>
+            <h4>调试</h4>
 
             <ul>
-                <li>IDE debugger</li>
-                <li>Web-based debugger</li>
-                <li>async/await aware</li>
-                <li>Expression evaluator</li>
+                <li>IDE 调试器</li>
+                <li>基于 Web 的调试器</li>
+                <li>async/await 的可感知</li>
+                <li>实时表达式值显示</li>
             </ul>
 
-            <h4>Profile</h4>
+            <h4>分析</h4>
 
             <ul>
-                <li>Timeline</li>
-                <li>CPU and memory</li>
-                <li>In-app perf charts</li>
+                <li>时间线</li>
+                <li>CPU 和 内存</li>
+                <li>应用内视图</li>
             </ul>
         </div>
 
         <div class="feature-list-group">
-            <h3>Deploy</h3>
+            <h3>部署</h3>
 
-            <h4>Compile</h4>
+            <h4>编译</h4>
 
             <ul>
-                <li>Native ARM code</li>
-                <li>Dead code elimination</li>
+                <li>本地 ARM 机器码</li>
+                <li>消除冗余代码</li>
             </ul>
 
-            <h4>Distribution</h4>
+            <h4>分发</h4>
 
             <ul>
                 <li>App Store</li>
@@ -273,17 +258,16 @@ Future<Null> getBatteryLevel() async {
     </div>
 
     <p>
-    Learn more about what makes Flutter special in the
-    <a href="/technical-overview/">technical overview</a>.
+    通过学习 <a href="/technical-overview/">技术概览</a> 来了解 Flutter 为什么如此特殊。
     </p>
 </section>
 
 <section class="homepage__try_flutter card">
 
-    <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
+    <div class="homepage__try_today">现在就来体验 Flutter，轻松入门。</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">开始</a>
     </div>
 
 </section>
