@@ -41,3 +41,6 @@
 
 11.由群主关闭对应翻译 issue 。
 
+## 注意事项
+1. 提交时，comment 的写法为 `transition + path ` 如：`transition website/index.md`
+2. 专有名词，类名，关键字与约定俗成的单词或词组无需翻译。如：`Material Design`, `Widget` 等。
