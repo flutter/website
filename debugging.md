@@ -21,7 +21,7 @@ and help you find possible mistakes. If you're using the
 The Dart analyzer makes heavy use of type annotations that you put in
 your code to help track problems down. You are encouraged to use them
 everywhere (avoiding `var`, untyped arguments, untyped list literals,
-etc) as this is the quickest and least paintful way of tracking down
+etc) as this is the quickest and least painful way of tracking down
 problems.
 
 ## Dart Observatory (statement-level single-stepping debugger and profiler)
@@ -90,7 +90,7 @@ During development, you are highly encouraged to use Flutter's "debug"
 mode, sometimes referred to as "checked" mode. This is the default if
 you use `flutter run`. In this mode, the Dart `assert` statement is
 enabled, and the Flutter framework uses this to perform many runtime
-checks verifying that invariants aren't being violated.
+checks verifying that invariants are not being violated.
 
 When an invariant is violated, it is reported to the console, with
 some context information to help with tracking down the source of the
