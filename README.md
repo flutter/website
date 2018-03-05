@@ -46,6 +46,7 @@
 2. 专有名词，类名，关键字与约定俗成的单词或词组无需翻译。如：`Material Design`, `Widget` 等。
 3. 当中英数字混合的时候，中文和英文与数字间应添加空格，如 Flutter 在 Github 上目前有 15269 个 star 。
 
+
 ## 任务认领及进度
 | 任务文件 | url | 是否完成 | 译者 |
 | ---------- | --- | ----------- | ----- |
@@ -60,3 +61,10 @@
 | website/404.md  | http://doc.flutter-dev.cn/404 | no   |     |   
 | website/docs.md | http://doc.flutter-dev.cn/docs/ |  no  |     |   
 |    |    |   |     |   
+
+
+## 本次翻译贡献者（排名不分先后）
+[_番茄沙司](https://github.com/ZhangQinglian)
+[MelonRice](https://github.com/MelonRice)
+[gdmec07120731](https://github.com/gdmec07120731) 
+[debuggerx01](https://github.com/debuggerx01)
