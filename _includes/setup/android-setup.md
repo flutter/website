@@ -1,51 +1,41 @@
-## Android setup
+## Android 设置
 
-### Install Android Studio
+### 安装Android Studio
 
-To develop Flutter apps for Android, you can use a Mac, Windows, or Linux
-(64-bit) machine.
+为Android开发Flutter应用，你可以使用Mac，Windows或者是Linux（64位）机器。
 
-Flutter requires Android Studio to be installed and configured:
+Flutter要求安装和配置Android Studio：
 
-1. Download and install [Android Studio](https://developer.android.com/studio/index.html).
+1. 下载并安装[Android Studio](https://developer.android.com/studio/index.html)。
 
-1. Start Android Studio, and go through the 'Android Studio Setup Wizard'. This
-will install the latest Android SDK, Android SDK Platform-Tools, and Android SDK
-Build-Tools, which are required by Flutter when developing for Android.
+1. 启动Android Studio，并执行Android Studio安装向导。这将会安装Flutter为Android开发所需的最新的Android SDK，Android SDK平台工具和Android SDK构建工具。
 
-### Set up your Android device
+### 设置你的Android设备
 
-To prepare to run and test your Flutter app on an Android device, you'll need an
-Android device running Android 4.1 (API level 16) or higher.
+为了在Android设备上运行和测试你的Flutter应用，你需要一台运行Android4.1（API级别16）或者更高版本的Android设备。
 
-1. Enable **Developer options** and **USB debugging** on your device. Detailed instructions
-are available in the [Android documentation](https://developer.android.com/studio/debug/dev-options.html).
-3. Using a USB cable, plug your phone into your computer. If prompted on your
-device, authorize your computer to access your device.
-4. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
-connected Android device.
-5. Start your app by running `flutter run`.
+1. 在你的设备上启动**开发者选项** 和**USB调试**，详情说明可在[Android文档](https://developer.android.com/studio/debug/dev-options.html)中找到。
+3. 使用USB线将设备插入电脑。如果在设备上出现提示，请授权你的电脑访问你的设备。
+4. 在终端运行 `flutter devices` 命令来验证Flutter识别到你连接的Android设备。
+5. 运行`flutter run`来启动的你的应用。
 
-By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
-you want Flutter to use a different installation of the Android SDK, you must set the
-`ANDROID_HOME` environment variable to that installation directory.
 
-### Set up the Android emulator
+通常情况下，Flutter使用了`adb` 工具所基于的Android SDk版本，如果你要安装使用不同的Android SDK版本，就必须设置`ANDROID_HOME` 环境变量设置为安装目录。
 
-To prepare to run and test your Flutter app on the Android emulator, follow these steps:
+### 设置Android模拟器
 
-1. Enable [VM acceleration](https://developer.android.com/studio/run/emulator-acceleration.html) on your machine.
-1. Launch **Android Studio>Tools>Android>AVD Manager** and select **Create Virtual Device**.
-1. Choose a device definition and select **Next**.
-1. Select one or more system images for the Android versions you want to emulate, 
-   and select **Next**. An _x86_ or _x86\_64_ image is recommended.
-1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable 
-[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html). 
-1. Verify the AVD configuration is correct, and select **Finish**.
+准备在Android模拟器上运行和测试你的Flutter应用，需要按照以下几个步骤来操作：
 
-   For details on the above steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
-1. In Android Virtual Device Manager, click **Run** in the toolbar.
-   The emulator starts up and displays the default canvas for your selected OS version
-   and device.
-1. Start your app by running `flutter run`. The connected device name is
-   `Android SDK built for <platform>`, where _platform_ is the chip family, such as x86.
+
+1. 在你的电脑上启动[VM加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
+1. 启动 **Android Studio > Tools > Android > AVD Manager** 和选择**Create Virtual Device**。
+1. 选择一个设备的定义和选择**Next**。
+1. 为你的模拟器Android版本选择一个或者多个系统镜像，和选择 **Next**。推荐使用_x86_ or _x86\_64_镜像。
+1. 为了提高模拟器性能，选择**Hardware - GLES 2.0**来启动[硬件加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
+1. 验证AVD的配置是否正确，然后选择**Finish**。
+
+ 
+   有关上述步骤的详细信息,请查阅[管理AVDs](https://developer.android.com/studio/run/managing-avds.html)。
+   
+1. 在Android虚拟设备管理器中，在工具栏点击**Run**。模拟器启动和显示所选操作系统版本和设备的默认界面。
+1. 通过`flutter run`来启动你的应用，连接设备的名称是`Android SDK built for <platform>`，这里的_platform_ 是指设备soc芯片系列，比如x86。
