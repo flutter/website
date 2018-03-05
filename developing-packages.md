@@ -145,7 +145,7 @@ You can run the example app from Android Studio by pressing the &#9654; button.
 We recommend you edit the iOS code usign Xcode.
 
 Before editing the iOS platform code in Xcode, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ,
+the code has been built at least once (i.e., run the example app from Xcode,
 or in a terminal execute `cd hello/example; flutter build ios --no-codesign`).
 
 Next,
