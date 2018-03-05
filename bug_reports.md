@@ -12,7 +12,7 @@ permalink: /bug-reports/
 
 本文档中的说明详细介绍了当崩溃和其他异常现象发生时，创建一份最为有效的反馈报告的通用步骤。虽然每一个步骤都不是必须的，但会极大地提高问题确定和定位的速度，所以我们希望您能够尽可能多地提供反馈信息。
 
-## 在Github上创建Issue
+## 在 Github 上创建 Issue
 * 您可以在如下位置创建一个新的 issue ： [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
 
 ## 提供 Flutter 的诊断信息
