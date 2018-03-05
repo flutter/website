@@ -1,5 +1,5 @@
 ---
-title: Flutter - Beautiful native apps in record time
+title: Flutter - 极速构建漂亮的本地应用
 layout: page
 homepage: true
 hide_title: true
