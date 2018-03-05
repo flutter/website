@@ -60,6 +60,13 @@
 | website/android-release-build.md|  http://doc.flutter-dev.cn/android-release/ | no   |     |   
 | website/404.md  | http://doc.flutter-dev.cn/404 | no   |     |   
 | website/docs.md | http://doc.flutter-dev.cn/docs/ |  no  |     |   
+| website/custom-fonts.md  |  http://doc.flutter-dev.cn/custom-fonts/  |  no |     |   
+| website/debugging.md  | http://doc.flutter-dev.cn/debugging/   |  no |     |   
+|    |    |   |     |   
+|    |    |   |     |   
+|    |    |   |     |   
+|    |    |   |     |   
+|    |    |   |     |   
 |    |    |   |     |   
 
 
