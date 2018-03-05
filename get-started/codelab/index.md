@@ -415,7 +415,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Welcome to Flutter'),
-       ),
+        ),
         body: new Center(
           //child: new [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
           child: new [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
@@ -569,7 +569,7 @@ class RandomWordsState extends State<RandomWords> {
       [[highlight]]appBar: new AppBar([[/highlight]]
         [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
       [[highlight]]),[[/highlight]]
-    [[highlight]]body: _buildSuggestions(),[[/highlight]]
+      [[highlight]]body: _buildSuggestions(),[[/highlight]]
     [[highlight]]);[[/highlight]]
   }
   ...
@@ -833,7 +833,7 @@ which pushes the route to the Navigator's stack.
       [[highlight]]new MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
           [[highlight]]final tiles = _saved.map([[/highlight]]
-                [[highlight]](pair) {[[/highlight]]
+            [[highlight]](pair) {[[/highlight]]
               [[highlight]]return new ListTile([[/highlight]]
                 [[highlight]]title: new Text([[/highlight]]
                   [[highlight]]pair.asPascalCase,[[/highlight]]
@@ -843,11 +843,11 @@ which pushes the route to the Navigator's stack.
             [[highlight]]},[[/highlight]]
           [[highlight]]);[[/highlight]]
           [[highlight]]final divided = ListTile[[/highlight]]
-              [[highlight]].divideTiles([[/highlight]]
-            [[highlight]]context: context,[[/highlight]]
-            [[highlight]]tiles: tiles,[[/highlight]]
-          [[highlight]])[[/highlight]]
-              [[highlight]].toList();[[/highlight]]
+            [[highlight]].divideTiles([[/highlight]]
+              [[highlight]]context: context,[[/highlight]]
+              [[highlight]]tiles: tiles,[[/highlight]]
+            [[highlight]])[[/highlight]]
+            [[highlight]].toList();[[/highlight]]
         [[highlight]]},[[/highlight]]
       [[highlight]]),[[/highlight]]
     );
@@ -870,7 +870,7 @@ Add the highlisted code below:
       new MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
-                (pair) {
+            (pair) {
               return new ListTile(
                 title: new Text(
                   pair.asPascalCase,
@@ -880,11 +880,11 @@ Add the highlisted code below:
             },
           );
           final divided = ListTile
-              .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
-              .toList();
+            .divideTiles(
+              context: context,
+              tiles: tiles,
+            )
+            .toList();
 
           [[highlight]]return new Scaffold([[/highlight]]
             [[highlight]]appBar: new AppBar([[/highlight]]
