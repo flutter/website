@@ -64,7 +64,7 @@
 
 
 ## 本次翻译贡献者（排名不分先后）
-[_番茄沙司](https://github.com/ZhangQinglian)
-[MelonRice](https://github.com/MelonRice)
-[gdmec07120731](https://github.com/gdmec07120731) 
+[_番茄沙司](https://github.com/ZhangQinglian)、
+[MelonRice](https://github.com/MelonRice)、
+[gdmec07120731](https://github.com/gdmec07120731) 、
 [debuggerx01](https://github.com/debuggerx01)
