@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Bootstrap into Dart
+title: Dart 入门引导
 
 permalink: /bootstrap-into-dart/
 ---
@@ -11,42 +11,36 @@ dd {
 }
 </style>
 
-New to the [Dart](https://www.dartlang.org) language?
-We compiled our favorite resources to
-help you quickly learn Dart.
-We looked at a lot of languages, and
-[we found Dart easy and fun to learn](/faq/#why-did-flutter-choose-to-use-dart).
-We hope these resources make Dart
-easy for you to learn, too.
+您是第一次接触 [Dart](https://www.dartlang.org) 这门语言？
+我们收编了一些非常不错的资源来帮助您快速地入门学习 Dart。
 
-[Language tour](https://www.dartlang.org/docs/dart-up-and-running/ch02.html)
-: Your best introduction to the Dart language. Learn about Dart's
-  features such as _optional types_, _closures_, _libraries_, _lexical scoping_,
-  _top-level functions_, _named parameters_, _async / await_, and lots more.
+我们曾尝试过很多不同语言, 最终
+[我们发现 Dart 非常简单易学](/faq/#why-did-flutter-choose-to-use-dart)。
+我们希望这些资源也能帮助您轻松地学会 Dart。
 
-[Library tour](https://www.dartlang.org/docs/dart-up-and-running/ch03.html)
-: A good overview of Dart's powerful core libraries. Learn about
-  Dart's support for collections, async, math, numbers, strings, JSON, and more.
+[Language tour](https://www.dartlang.org/docs/dart-up-and-running/ch02.html) (语法总览)
+: 您快速认识学习 Dart 语言的最佳途径 。在这里您可以学到 Dart 语言的诸多特性，例如 _optional types_ (可选类型)、 _closures_ (闭包)、 _libraries_ (类库)、 _lexical scoping_ (词法作用域)、
+  _top-level functions_ (顶层函数)、 _named parameters_ (命名参数)、 _async / await_ (异步操作) 等等……
 
-[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart/index.html#0">Intro to Dart for Java Developers - Codelab)
-: Use your Java knowledge to get up and running quickly with Dart. Learn about
-  classes, constructors, parameters, and interfaces with examples from the Java
-  Tutorial. 
+[Library tour](https://www.dartlang.org/docs/dart-up-and-running/ch03.html) (类库总览)
+: Dart 强大内置类库的概览汇总。在这里您可以学到 Dart 如何支持集合、异步、数学运算、数字类型、字符串及 JSON 操作等等……
 
-[Effective Dart](https://www.dartlang.org/effective-dart/)
-: Guides for style, authoring documentation, usage, and more.
+[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart/index.html#0">Intro to Dart for Java Developers - Codelab) (为 Java 开发者准备的 Dart 介绍)
+: 利用您已有的 Java 知识快速入门并运行 Dart 代码。在这里您可以从例子中学到 Java 教程中诸如
+  classes (类)， constructors (构造函数)， parameters (参数)， interfaces (接口) 等知识点。 
 
-[Futures Tutorial](https://www.dartlang.org/docs/tutorials/futures/)
-: Learn how to use Futures, which are used extensively in the Dart core
-  libraries.  Futures can be used instead of one-time callbacks.
+[Effective Dart](https://www.dartlang.org/effective-dart/) (Dart 最佳实践)
+: 一本包含编码风格、文档编写、用法惯例等的指南。
 
-[Streams Tutorial](https://www.dartlang.org/docs/tutorials/streams/)
-: Learn how to use Streams, which are used extensively in the Dart core
-  libraries. Streams can be used instead repeating callbacks.
-  For example, the
+[Futures Tutorial](https://www.dartlang.org/docs/tutorials/futures/) (Futures 教程)
+: 学习如何使用 Futures 这种在 Dart 核心类库中广泛使用的特性。Futures 可用于代替一次性的回调函数。
+
+[Streams Tutorial](https://www.dartlang.org/docs/tutorials/streams/) (Streams 教程)
+: 学习如何使用 Streams 这种在 Dart 核心类库中广泛使用的特性. Streams 可用于代替重复执行的回调函数。
+  比如在
   [File class](https://docs.flutter.io/flutter/dart-io/File-class.html)
-  uses Streams to read bytes from a file.
+  中就利用了 Streams 从文件中读取字节数据。
 
-Want to learn more? Check out one of the
-[many books about Dart](https://www.dartlang.org/books/),
-or ask questions on [Stack Overflow](https://stackoverflow.com/tags/dart).
+还想学习更多？ 请查看这些
+[与 Dart 相关的书籍](https://www.dartlang.org/books/),
+或者在 [Stack Overflow](https://stackoverflow.com/tags/dart) 上提问。
