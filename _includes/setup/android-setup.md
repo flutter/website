@@ -22,20 +22,20 @@ Flutter要求安装和配置Android Studio：
 
 通常情况下，Flutter使用了`adb` 工具所基于的Android SDk版本，如果你要安装使用不同的Android SDK版本，就必须设置`ANDROID_HOME` 环境变量设置为安装目录。
 
-### 设置Android模拟器
+### 设置 Android 模拟器
 
-准备在Android模拟器上运行和测试你的Flutter应用，需要按照以下几个步骤来操作：
+准备在 Android 模拟器上运行和测试你的 Flutter 应用，需要按照以下几个步骤来操作：
 
 
-1. 在你的电脑上启动[VM加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
-1. 启动 **Android Studio > Tools > Android > AVD Manager** 和选择**Create Virtual Device**。
-1. 选择一个设备的定义和选择**Next**。
-1. 为你的模拟器Android版本选择一个或者多个系统镜像，和选择 **Next**。推荐使用_x86_ or _x86\_64_镜像。
-1. 为了提高模拟器性能，选择**Hardware - GLES 2.0**来启动[硬件加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
-1. 验证AVD的配置是否正确，然后选择**Finish**。
+1. 在你的电脑上启动 [VM 加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
+1. 启动 **Android Studio > Tools > Android > AVD Manager** 和选择 **Create Virtual Device** 。
+1. 选择一个设备的定义和选择 **Next** 。
+1. 为你的模拟器 Android 版本选择一个或者多个系统镜像，和选择 **Next** 。推荐使用 _x86_ or _x86\_64_ 镜像。
+1. 为了提高模拟器性能，选择 **Hardware - GLES 2.0** 来启动[硬件加速](https://developer.android.com/studio/run/emulator-acceleration.html)。
+1. 验证AVD的配置是否正确，然后选择 **Finish** 。
 
  
-   有关上述步骤的详细信息,请查阅[管理AVDs](https://developer.android.com/studio/run/managing-avds.html)。
+   有关上述步骤的详细信息,请查阅[管理 AVDs ](https://developer.android.com/studio/run/managing-avds.html)。
    
-1. 在Android虚拟设备管理器中，在工具栏点击**Run**。模拟器启动和显示所选操作系统版本和设备的默认界面。
-1. 通过`flutter run`来启动你的应用，连接设备的名称是`Android SDK built for <platform>`，这里的_platform_ 是指设备soc芯片系列，比如x86。
+1. 在Android虚拟设备管理器中，在工具栏点击 **Run** 。模拟器启动和显示所选操作系统版本和设备的默认界面。
+1. 通过 `flutter run` 来启动你的应用，连接设备的名称是 `Android SDK built for <platform>` ，这里的 _platform_  是指设备 soc 芯片系列，比如 x86 。

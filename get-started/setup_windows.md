@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "开始使用: 在Windows上安装"
+title: "开始使用：在 Windows 上安装"
 permalink: /setup-windows/
 ---
 
@@ -17,4 +17,4 @@ permalink: /setup-windows/
 
 ## 下一步
 
-[下一步: 配置编译器](/get-started/editor/)
+[下一步：配置编译器](/get-started/editor/)
