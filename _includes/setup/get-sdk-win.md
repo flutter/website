@@ -15,12 +15,12 @@ git clone -b beta https://github.com/flutter/flutter.git
 
 ### 更新你的环境变量
 
-为了可以在任意的终端会话使用 `flutter` 命令，你需要添加它到你的 PATH 环境变量：
+为了可以在任意的终端会话使用 `flutter` 命令，你需要添加它到你的 PATH 环境变量：
 
 * 打开 “控制面板  > 系统和安全 > 系统 > 高级系统设置 > 环境变量”。
-* 在用户变量下，检测有没有名叫 “Path” 的环境变量：
+* 在用户变量下，检测是否存在 “Path” 的环境变量：
     * 如果这个 Path 变量已经存在了，就添加`;`到原来的 Path 值的末尾，并且加上 `flutter\bin` 的全路径。
-    * 如果这个 Path 变量不存在，就要在用户变量下创建新的 `Path` 的变量名，并且它的变量值设置为 `flutter\bin` 的全路径。
+    * 如果这个 Path 变量不存在，就要在用户变量下创建新的 `Path` 的变量名，并且它的变量值设置为 `flutter\bin` 的全路径。
 
 重启 Windows 以完全应用此更改。
 
@@ -51,9 +51,9 @@ flutter doctor
 （比如 `flutter doctor` ），它会下载自己的依赖库并且自行编译。后续运行 flutter 命令就会很快了。
 
 
-接下来的部分描述怎么去执行这些任务并完成这些设置过程。如果你选择了使用 IDE ，你会在 `flutter doctor` 的输出看到， IntelliJ IDEA ， Android Studio 和 VS Code 有可用插件。参阅[编译器设置](/get-started/editor/)获取安装 Flutter 和 Dart 插件的步骤。
+接下来的部分描述怎么去执行这些任务并完成这些设置过程。如果你选择了使用 IDE ，你会在 `flutter doctor` 的输出看到， IntelliJ IDEA ， Android Studio 和 VS Code 有可用插件。参阅[编译器设置](/get-started/editor/)获取安装 Flutter 和 Dart 插件的步骤。
 
-当你已经安装好缺失的依赖库，运行 `flutter doctor` 命令会再次验证你是否正确设置所有内容。
+当你已经安装好缺失的依赖库，运行 `flutter doctor` 命令会再次验证你是否正确设置所有内容。
 
 
 `flutter` 使用 Google Analytics 匿名报告功能使用情况统计信息和基本崩溃报告。
