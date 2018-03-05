@@ -1,11 +1,11 @@
-## System requirements
+## 系统要求
 
-To install and run Flutter, your development environment must meet these minimum requirements:
+要安装并运行 Flutter ，你的开发环境必须满足这些最低要求：
 
-* **Operating Systems**: Windows 7 or later (64-bit)
-* **Disk Space**: 400 MB (does not include disk space for Android Studio).
-* **Tools**: Flutter depends on these command-line tools being available in your environment.
-  * [Git for Windows](https://git-scm.com/download/win) (with the Use Git from the Windows Command Prompt option)
+* **操作系统**：Windows 7 或者更高版本（64 位）。
+* **磁盘空间**：400 MB（不包括 Android Studio 在内的磁盘空间）。
+* **工具**： Flutter 依赖了你环境中可用的命令行工具。
+  * [Git for Windows](https://git-scm.com/download/win) (从 Windows 命令提示符选项中使用 Git )。
      
-     If Git for Windows is already installed, make sure you can run `git` commands from the
-     Command Prompt or PowerShell.
+    
+     如果你已经安装了 Git for Windows ，确保你可以在 Windows 命令提示符或者 PowerShell 中运行 git 。
