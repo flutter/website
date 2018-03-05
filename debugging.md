@@ -854,7 +854,7 @@ grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
-has a `debugShowGrid` argument which, when set to `true` in debug
+has a `debugShowMaterialGrid` argument which, when set to `true` in debug
 mode, will overlay such a grid.
 
 You can also overlay such a grid on non-Material applications by using
