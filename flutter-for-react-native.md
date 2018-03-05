@@ -696,7 +696,7 @@ In React Native, you would normally use the style prop on the view component to 
 In Flutter, layout is determined by a combination of the type of Widget that you choose and its layout and style properties. Contrary to how it is done in React Native, where most of the layout can be done with the props that are passed to a specific component, in Flutter most of the layout is done by the use of widgets that are specifically designed to provide layout.
 The Flutter widgets [Column](https://docs.flutter.io/flutter/widgets/Column-class.html) and [Row](https://docs.flutter.io/flutter/widgets/Row-class.html) take an array of children and not styling properties (although there are layout properties such as `CrossAxisAlignment` and `direction`) and aligns them vertically and horizontally respectively. A [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) takes a combination of layout and styling properties. A [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget centers its child widget tree.
 
-For example, if you want to arrange your components in a [Row](https://docs.flutter.io/flutter/widgets/Row-class.html).
+For example, if you want to arrange your components in a [Column](https://docs.flutter.io/flutter/widgets/Column-class.html).
 In React Native, you would specify it as a prop: `flexDirection: “column”`. But in Flutter, you would use a [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) widget and provide the required children widgets.
 
 <!-- skip -->
