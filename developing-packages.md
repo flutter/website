@@ -17,7 +17,7 @@ minimal package consists of:
 
 * A `lib` directory containing the public code in the package, minimally a
   single `<package-name>.dart` file.
-
+https://github.com/USAsunlight/pantsu-plugin/projects/2#card-7915543
 ### Package types {#types}
 
 Packages can contain several kinds of content:
