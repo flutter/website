@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Jank No More
+title: Improving UI Performance
 subtitle: Where to look when your Flutter app has UI performance issues.
 description: Diagnosing UI performance issues in Flutter.
 permalink: /ui-performance/
@@ -303,8 +303,9 @@ If this command isn’t available, make sure that the app is running.
 **Note:** The Observatory UI and Flutter's custom timeline page are currently
 evolving.  For this reason, we aren't fully documenting the UI at this time.
 If you are comfortable experimenting with Observatory, and would like to give
-us feedback, please file issues or features requests as you find them.
-[PENDING: Where to file issues against the Flutter version of the timeline?]
+us feedback, please file [issues or feature
+requests](https://github.com/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory)
+as you find them.
 </aside>
 
 ### Identifying problems in the rasterizer graph
@@ -347,8 +348,10 @@ on your behalf. You can check whether your scene is using saveLayer with the
 [PerformanceOverlayLayer.checkerboardOffscreenLayers](https://docs.flutter.io/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html)
 switch.
 
+{% comment %}
 [PENDING: how to turn it on (Flutter Inspector doesn't seem to support this?
 Also disable the graphs and checkerboardRasterCachedImages.]
+{% endcomment %}
 
 Once the switch is enabled, run the app and look for any images that are
 outlined with a flickering box. The box flickers from frame to frame if a
@@ -422,7 +425,9 @@ for debugging performance issues.
   calls this command.) Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
 * [`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)<br>
+{% comment %}
   [PENDING: xxx]
+{% endcomment %}
 * [`debugRepaintRainbowEnabled`](https://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)<br>
   Enable this property and run your app to see if any parts of your UI
   that aren't changing (for example, a static header) are rotating
