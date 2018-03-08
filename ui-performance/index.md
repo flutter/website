@@ -27,7 +27,7 @@ help.
 * TOC Placeholder
 {:toc}
 
-## A workflow for diagnosing jank
+## Diagnosing jank
 
 <div class="whats-the-point" markdown="1">
 
@@ -244,7 +244,10 @@ to capture a snapshot of the stack at a moment in time.
 When you open Observatorty's timeline from the Flutter Inspector,
 you'll be using a version that has been customized for Flutter apps.
 
+{% comment %}
+I've talked to tooling SWEs who feel we're not ready to document this.
 [PENDING: getting a tour of the new Flutter timeline and will update/complete the instructions.]
+{% endcomment %}
 
 Go to Flutter's timeline view in a browser as follows:
 
@@ -264,80 +267,21 @@ timeline, not the version customized for Flutter.)
 In VS Code, bring up the command palette and enter "observatory".
 Select **Flutter: Open Observatory Timeline** from the list that pops up.
 If this command isn’t available, make sure that the app is running.
+{% comment %}
 [PENDING: Can you go to the timeline directly? If so, which command?]
+{% endcomment %}
 </li>
 </ol>
 
 #### Using Observatory's timeline
 
-Observatory is a web application that is hosted by the VM. It provides a
-suite of program inspection and analysis tools, but for purposes of
-debugging jank, you are primarily using the timeline to grab and view
-slices of the stack to determine where your Flutter app is spending its time.
-
-<ol markdown="1">
-
-<li markdown="1"> When bringing up Observatory from an IDE,
-    it takes you directly to the timeline view, customized for Flutter.
-    If you are looking at Observatory’s front page,
-    click the "view <u>timeline</u>" link.<br><br>
-    Initially, the timeline page contains no timeline data. In the
-    **Recorded Streams Profile**, select the **Flutter Developer profile**
-    radio button. This simultaneously selects the **Dart**,
-    **Embedder**, and **GC** streams.
-</li>
-
-<li markdown="1"> Run the app and get it to the state that you want to examine.
-</li>
-
-<li markdown="1"> Click the **Refresh** button at the top right.
-    This grabs the stack at its current state
-    and displays a screen that looks something like the following:
-
-<!--
-<center><img src = "images/timeline-initial.png" alt="Screenshot of the timeline with values from the running app"></center><br><br>
--->
-You can see data, but you can't read it. To make the data readable,
-hover the cursor over the area in the view that you want to enlarge
-and use the keyboard keys (as many times as needed) as follows:
-
-<ul markdown="1">
-<li markdown="1"> w&mdash;widen
-</li>
-<li markdown="1"> s&mdash;narrow
-</li>
-<li markdown="1"> a&mdash;shift right
-</li>
-<li markdown="1"> d&mdash;shift left
-</li>
-</ul>
-
-Once enlarged, the bottom middle graph looks like the following:
-
-<center><img src="images/timeline-data-enlarged.png" "alt="Screenshot showing blocks of color with text labels"></center>
-
-Click on one of the hairs and you'll see a stack trace with the corresponding
-Dart code for that instant.
-<!--
-[PENDING: Get feedback from Ryan to make this more understandable.]
--->
-</li>
-</ol>
-
-If the problem is in your Dart code, fix that performance issue.
-
-If the problem is buried deep in the framework's code, then the app is
-doing something to make the framework slow. You can learn more by adding
-custom slices to the timeline using the
-[Timeline](https://docs.flutter.io/flutter/dart-developer/Timeline-class.html)
-class in the
-[dart:developer](https://docs.flutter.io/flutter/dart-developer/dart-developer-library.html)
-package.
-
-[PENDING: would be nice to have example of code with time slices, but not required]
-
-Iterate until you can determine what in your code is causing the performance
-issue.
+<aside class="alert alert-info" markdown="1">
+**Note:** The Observatory UI and Flutter's custom timeline page are currently
+evolving.  For this reason, we aren't fully documenting the UI at this time.
+If you are comfortable experimenting with Observatory, and would like to give
+us feedback, please file issues or features requests as you find them.
+[PENDING: Where to file issues against the Flutter version of the timeline?]
+</aside>
 
 ### Identifying problems in the rasterizer graph
 
