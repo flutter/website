@@ -69,7 +69,8 @@ class SecondScreen extends StatelessWidget {
 
 In order to Navigate to a new screen, we'll need to use the 
 [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html) 
-method.
+method. The `push` method will add a `Route` to the stack of routes managed by
+the Navigator!
 
 The `push` method requires a `Route`, but where does the `Route` come from? 
 We can create our own, or use the [`MaterialPageRoute`](https://docs.flutter.io/flutter/material/MaterialPageRoute-class.html)
@@ -93,7 +94,8 @@ onPressed: () {
 
 Now that we're on our second screen, how do we close it out and return to the 
 first? Using the [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
-method!
+method! The `pop` method will remove the current `Route` from the stack of 
+routes managed by the navigator.
 
 For this part, we'll need to update the `onPressed` callback found in our 
 `SecondScreen` Widget

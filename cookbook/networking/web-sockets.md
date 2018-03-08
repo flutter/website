@@ -7,8 +7,8 @@ permalink: /cookbook/networking/web-sockets/
 In addition to normal HTTP requests, we can connect to servers using WebSockets.
 WebSockets allow for two-way communication with a server without polling.
 
-In this example, we'll connect to a test server provided by 
-[websocket.org](http://www.websocket.org/echo.html). The server will simply send
+In this example, we'll connect to a [test server provided by 
+websocket.org](http://www.websocket.org/echo.html). The server will simply send
 back the same message we send to it!
 
 ## Directions
@@ -97,7 +97,7 @@ channel.sink.close();
 ## Complete Example
 
 ```dart
-  import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';

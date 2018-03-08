@@ -28,7 +28,6 @@ new MaterialApp(
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
     accentColor: Colors.cyan[600],
-    fontFamily: 'Merriweather',
   ),
 );
 ```
@@ -39,15 +38,43 @@ documentation to see all of the colors and fonts you can define.
 ## Themes for part of an application
 
 If we want to override the app-wide theme in part of our application, we can 
-wrap a section of our app in a `Theme` Widget. 
+wrap a section of our app in a `Theme` Widget.
+
+There are two ways to approach this: creating unique `ThemeData`, or 
+extending the parent theme.
+
+### Creating unique `ThemeData`
+
+If we don't want to inherit any application colors or font styles, we can create
+a `new ThemeData()` instance and pass that to the `Theme` Widget.
 
 ```dart
 new Theme(
+  // Create a unique theme with "new ThemeData"
   data: new ThemeData(
     accentColor: Colors.yellow,
   ),
   child: new FloatingActionButton(
     onPressed: () {},
+    child: new Icon(Icons.add),
+  ),
+);
+```
+
+### Extending the parent theme
+
+Rather than overriding everything, it often makes sense to extend the parent
+theme. We can achieve this by using the 
+[`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html) 
+method.
+
+```dart
+new Theme(
+  // Find and Extend the parent theme using "copyWith". Please see the next 
+  // section for more info on `Theme.of`.
+  data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+  child: new FloatingActionButton(
+    onPressed: null,
     child: new Icon(Icons.add),
   ),
 );
@@ -61,6 +88,9 @@ by using the `Theme.of(context)` function!
 `Theme.of(context)` will look up the Widget tree and return the nearest `Theme` 
 in the tree. If we have a stand-alone `Theme` defined above our Widget, it 
 returns that. If not, it returns the App theme.
+
+In fact, the `FloatingActionButton` uses this exact technique to find the 
+`accentColor`!
  
 ```dart
 new Container(
@@ -89,18 +119,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final title = 'Custom Themes';
+    final appName = 'Custom Themes';
 
     return new MaterialApp(
-      title: title,
+      title: appName,
       theme: new ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
         accentColor: Colors.cyan[600],
-        fontFamily: 'Merriweather',
       ),
       home: new MyHomePage(
-        title: title,
+        title: appName,
       ),
     );
   }
@@ -125,23 +154,16 @@ class MyHomePage extends StatelessWidget {
             borderRadius: new BorderRadius.circular(8.0),
           ),
           child: new Text(
-            'Hi Friends!',
+            'My Button',
             style: Theme.of(context).textTheme.title,
           ),
         ),
       ),
       floatingActionButton: new Theme(
-        data: new ThemeData(
-          accentColor: Colors.yellow,
-        ),
-        child: new Theme(
-          data: new ThemeData(
-            accentColor: Colors.yellow,
-          ),
-          child: new FloatingActionButton(
-            onPressed: null,
-            child: new Icon(Icons.add),
-          ),
+        data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+        child: new FloatingActionButton(
+          onPressed: null,
+          child: new Icon(Icons.add),
         ),
       ),
     );

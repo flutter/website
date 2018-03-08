@@ -52,9 +52,6 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       title: title,
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text(title),

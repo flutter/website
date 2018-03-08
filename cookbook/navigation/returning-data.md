@@ -171,7 +171,7 @@ _navigateAndDisplaySelection(BuildContext context) async {
   // After the Selection Screen returns a result, show it in a Snackbar!
   Scaffold
       .of(context)
-      .showSnackBar(new SnackBar(content: new Text(result.toString())));
+      .showSnackBar(new SnackBar(content: new Text("$result")));
 }
 ```
  
@@ -224,7 +224,7 @@ class SelectionButton extends StatelessWidget {
     // After the Selection Screen returns a result, show it in a Snackbar!
     Scaffold
         .of(context)
-        .showSnackBar(new SnackBar(content: new Text(result.toString())));
+        .showSnackBar(new SnackBar(content: new Text("$result")));
   }
 }
 

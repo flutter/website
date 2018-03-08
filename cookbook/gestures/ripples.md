@@ -17,7 +17,7 @@ Widget to achieve this effect.
   
 ```dart
 // The InkWell Wraps our custom flat button Widget
-return new InkWell(
+new InkWell(
   // When the user taps the button, show a snackbar
   onTap: () {
     Scaffold.of(context).showSnackBar(new SnackBar(
