@@ -14,8 +14,8 @@ permalink: /ui-performance/
   fps performance on devices capable of 120Hz updates.
 * For 60fps, frames need to render every 16ms.
 * Jank occurs when the UI doesn't render smoothly. For example, every so
-  often, a frame takes 10 times longer to render, causing the animation
-  to jerk visibly.
+  often, a frame takes 10 times longer to render, so it gets dropped, and
+  the animation visibly jerks.
 
 </div>
 
@@ -34,7 +34,7 @@ help.
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
 
 * Profile your app on a physical device.
-* Profile your app in profile mode.
+* Profile your app in [profile mode](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
 * Check performance on the slowest device your users might use.
 * Start by enabling the performance overlay.
 
@@ -57,7 +57,7 @@ on the slowest device that your users might reasonably use._
   faster on simulators than real devices, and some are slower.
 * Debug mode enables additional checks (such as asserts) that don’t run
   in profile or release builds, and these checks can be expensive.
-  This is why debug mode is also called "slow mode."
+  This is why debug mode is sometimes called "slow mode."
 * Debug mode also executes code in a different way than release mode.
   The debug build compiles the Dart code "just in time" (also called JIT)
   as the app runs, but profile and release builds are pre-compiled to native
@@ -121,27 +121,51 @@ Gallery example:
 <center>The graphs produced by the performance overlay.<br>The vertical green
 bars represent the current frame.</center><br>
 
-Each graph represents the last 300 frames for the following two threads used
-in every Flutter app:
+Flutter uses several threads to do its work. You have direct control
+over what happens in the UI thread, but no direct access to the other
+threads.
+
+1. UI thread<br>
+   The platform's main thread executes Dart code in the Dart VM.
+   This thread includes code that you wrote, and code executed by
+   Flutter's framework on your app's behalf.
+   Also referred to as Flutter's _engine_, plugins typically run here.
+
+1. Dart application thread<br>
+   [PENDING: Not sure what runs here, since I thought all Dart code
+   ran in the UI thread...]
+
+1. GPU or rasterizer thread<br>
+   The thread responsible for painting your application, or
+   interfacing with the phone's GPU (graphic processing unit) thread.
+   When your app creates and displays a scene, the framwork, creates a
+   "layer tree", a lightweight object containing device-agnostic
+   painting commands, and sends the layer tree to the GPU thread to
+   be rendered on the device. You cannot directly access the GPU thread or
+   its data but, if this thread is slow, it's a result of something
+   you've done in the Dart code.
+   Skia, the graphics library, runs on this thread, which also
+   handles image I/O. [PENDING: Does it handle image I/O?]
+
+1. I/O thread<br>
+   This thread handles all I/O.
+
+For more information, see
+[Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
+
+Each graph in the performance overlay represents the last 300 frames
+for the UI and GPU threads:
 
 * Engine<br>
-  The engine graph (on the bottom) represents time spent executing Dart code in
-  the Dart VM. This thread is sometimes called the UI thread and includes code
-  that you wrote, and code executed by Flutter’s framework on your app’s behalf.
+  The engine graph (on the bottom) reflects the activity in the UI thread.
 
 * Rasterizer<br>
-  The rasterizer graph (on the top) represents time spent painting your
-  application, or interfacing with the phone’s GPU (graphics processing unit)
-  thread. When your app creates and displays a scene, the framework creates a
-  "layer tree", a lightweight object containing device-agnostic painting
-  commands, and sends the layer tree to the GPU thread to be rendered on the
-  device.  You cannot directly access the GPU thread or its data but,
-  if this thread is slow, it’s a result of something you’ve done in the
-  Dart code.
+  The rasterizer graph (on the top) reflects the activity in the GPU thread.
 
-Generally, each frame should be created and displayed within 16ms
-(or 1/60th of a second).  A frame exceeding this limit fails to display,
-resulting in jank, and a vertical red bar appears in one or both of the graphs.
+Each frame should be created and displayed within 16ms
+(or 1/60th of a second).  A frame exceeding this limit (in either graph)
+fails to display, resulting in jank, and a vertical red bar appears in one or
+both of the graphs.
 If a red bar appears in the engine graph, the Dart code is too expensive.
 If a red vertical bar appears in the rasterizer graph, the scene is too
 complicated to render quickly.
@@ -345,17 +369,29 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 
 * Does the app need this effect?
 * Can any of these calls be eliminated?
+* Can I apply the same effect to an individual element instead of a group?
 
 #### Checking for non-cached images
 
-Image I/O, such as passing images from host memory to device memory,
-can be expensive. Where possible, you want to cache images.
+One of the most expensive operations, from a resource perspective, is
+rendering a texture using an image file. First, the compressed image is
+fetched from persistent storage (disk, for example).
+The image is decompressed into device memory (memory on the GPU). The
+decompressed image is then passed to the host memory (RAM on the phone).
+
+In other words, image I/O can be expensive.
+The cache provides snapshots of complex hierarchies so they are easier to
+render in subsequent frames.
+_You want to cache images only where absolutely necessary._
+
 You can see which images are being cached by enabled the
 [PerformanceOverlayLayer.checkerboardRasterCachedImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
 switch.
 
+{% comment %}
 [PENDING: How to do this, either via UI or programmatically. At this point,
 disable the graphs and checkerboardOffScreenLayers.]
+{% endcomment %}
 
 Run the app and look for images rendered with a randomly colored checkerboard,
 indicating that the image is cached. As you interact with the scene,
@@ -366,7 +402,8 @@ In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image is not cached,
 you can cache it by placing it into a
 [RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
-widget.
+widget. Though the engine may still ignore a repaint boundary if it
+thinks the image is not complex enough.
 
 ## Debug flags
 
