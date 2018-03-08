@@ -157,10 +157,10 @@ Each graph in the performance overlay represents the last 300 frames
 for the UI and GPU threads:
 
 * Engine<br>
-  The engine graph (on the bottom) reflects the activity in the UI thread.
+  The engine graph (on the bottom) reflects activity in the UI thread.
 
 * Rasterizer<br>
-  The rasterizer graph (on the top) reflects the activity in the GPU thread.
+  The rasterizer graph (on the top) reflects activity in the GPU thread.
 
 Each frame should be created and displayed within 16ms
 (or 1/60th of a second).  A frame exceeding this limit (in either graph)
