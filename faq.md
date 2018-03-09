@@ -384,6 +384,10 @@ iOS 8 or newer.
 Mobile hardware: 64-bit iOS devices (starting with iPhone 5S and newer
 iPhone models), and ARM Android devices.
 
+Note that we currently do not support:
+  * ARM32 iOS devices (iPhone 4, iPhone 5; issue [#2089](https://github.com/flutter/flutter/issues/2089))
+  * x86 Android devices (issue [#9253](https://github.com/flutter/flutter/issues/9253))
+
 We support developing Flutter apps with Android and iOS devices, as
 well as with Android emulators and the iOS simulator.
 

@@ -48,7 +48,7 @@ here are some next steps.
 
 ## Want to skill up?
 
-Once, you’ve mastered the basics, try these pages.
+Once you’ve mastered the basics, try these pages.
 
 * [Cookbook](/cookbook/)<br>
   A (growing) collection of recipes that address common Flutter
