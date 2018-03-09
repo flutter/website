@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Improving UI Performance
+title: Flutter Performance Profiling
 subtitle: Where to look when your Flutter app has UI performance issues.
 description: Diagnosing UI performance issues in Flutter.
 permalink: /ui-performance/
@@ -121,34 +121,41 @@ Gallery example:
 <center>The graphs produced by the performance overlay.<br>The vertical green
 bars represent the current frame.</center><br>
 
-Flutter uses several threads to do its work. You have direct control
+Flutter uses several threads to do its work. All your Dart code runs on
+the UI thread. Although you have no direct access to any other thread,
+your actions on the UI thread have performance conseuences on other threads.
+You have direct control
 over what happens in the UI thread, but no direct access to the other
 threads.
 
+1. Platform thread<br>
+   The platform's main thread. Plugin code runs here.
+   For more information, see the
+   [UIKit](https://developer.apple.com/documentation/uikit)
+   documentation for iOS, and the
+   [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread.html)
+   documentation for Android.
+
 1. UI thread<br>
-   The platform's main thread executes Dart code in the Dart VM.
+   The UI thread executes Dart code in the Dart VM.
    This thread includes code that you wrote, and code executed by
    Flutter's framework on your app's behalf.
-   Also referred to as Flutter's _engine_, plugins typically run here.
-
-1. Dart application thread<br>
-   [PENDING: Not sure what runs here, since I thought all Dart code
-   ran in the UI thread...]
-
-1. GPU or rasterizer thread<br>
-   The thread responsible for painting your application, or
-   interfacing with the phone's GPU (graphic processing unit) thread.
-   When your app creates and displays a scene, the framwork, creates a
-   "layer tree", a lightweight object containing device-agnostic
+   When your app cretes and displays a scene, the UI thread creates
+   a _layer tree_, a lightweight object containing device-agnostic
    painting commands, and sends the layer tree to the GPU thread to
-   be rendered on the device. You cannot directly access the GPU thread or
+   be rendered on the device. _Don't block this thread!_
+
+1. GPU thread<br>
+   The GPU thread takes the layer tree and displays it by talking
+   to the GPU (graphic processing unit).
+   You cannot directly access the GPU thread or
    its data but, if this thread is slow, it's a result of something
    you've done in the Dart code.
-   Skia, the graphics library, runs on this thread, which also
-   handles image I/O. [PENDING: Does it handle image I/O?]
+   Skia, the graphics library, runs on this thread.
 
 1. I/O thread<br>
-   This thread handles all I/O.
+   Performs expensive tasks (mostly I/O) that would otherwise block
+   either the UI or GPU threads.
 
 For more information, see
 [Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
@@ -156,11 +163,11 @@ For more information, see
 Each graph in the performance overlay represents the last 300 frames
 for the UI and GPU threads:
 
-* Engine<br>
-  The engine graph (on the bottom) reflects activity in the UI thread.
-
 * Rasterizer<br>
   The rasterizer graph (on the top) reflects activity in the GPU thread.
+
+* Engine<br>
+  The engine graph (on the bottom) reflects activity in the UI thread.
 
 Each frame should be created and displayed within 16ms
 (or 1/60th of a second).  A frame exceeding this limit (in either graph)
@@ -378,14 +385,15 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 
 One of the most expensive operations, from a resource perspective, is
 rendering a texture using an image file. First, the compressed image is
-fetched from persistent storage (disk, for example).
-The image is decompressed into device memory (memory on the GPU). The
-decompressed image is then passed to the host memory (RAM on the phone).
+fetched from persistent storage.
+The image is decompressed into host memory (GPU memory), and transferred
+to device memory (RAM).
 
 In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so they are easier to
 render in subsequent frames.
-_You want to cache images only where absolutely necessary._
+_Because raster cache entries are expensive to construct and take up loads
+of GPU memory, you want to cache images only where absolutely necessary._
 
 You can see which images are being cached by enabled the
 [PerformanceOverlayLayer.checkerboardRasterCachedImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
