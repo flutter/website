@@ -123,16 +123,13 @@ bars represent the current frame.</center><br>
 
 Flutter uses several threads to do its work. All your Dart code runs on
 the UI thread. Although you have no direct access to any other thread,
-your actions on the UI thread have performance conseuences on other threads.
-You have direct control
-over what happens in the UI thread, but no direct access to the other
-threads.
+your actions on the UI thread have performance consequences on other threads.
 
 1. Platform thread<br>
    The platform's main thread. Plugin code runs here.
    For more information, see the
    [UIKit](https://developer.apple.com/documentation/uikit)
-   documentation for iOS, and the
+   documentation for iOS, or the
    [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread.html)
    documentation for Android.
 
@@ -147,11 +144,11 @@ threads.
 
 1. GPU thread<br>
    The GPU thread takes the layer tree and displays it by talking
-   to the GPU (graphic processing unit).
-   You cannot directly access the GPU thread or
-   its data but, if this thread is slow, it's a result of something
-   you've done in the Dart code.
-   Skia, the graphics library, runs on this thread.
+   to the GPU (graphic processing unit). You cannot directly access
+   the GPU thread or its data but, if this thread is slow,
+   it's a result of something you've done in the Dart code.
+   Skia, the graphics library, runs on this thread, which is sometimes
+   called the _rasterizer_ thread.
 
 1. I/O thread<br>
    Performs expensive tasks (mostly I/O) that would otherwise block
@@ -277,7 +274,6 @@ you'll be using a version that has been customized for Flutter apps.
 
 {% comment %}
 I've talked to tooling SWEs who feel we're not ready to document this.
-[PENDING: getting a tour of the new Flutter timeline and will update/complete the instructions.]
 {% endcomment %}
 
 Go to Flutter's timeline view in a browser as follows:
@@ -393,7 +389,7 @@ In other words, image I/O can be expensive.
 The cache provides snapshots of complex hierarchies so they are easier to
 render in subsequent frames.
 _Because raster cache entries are expensive to construct and take up loads
-of GPU memory, you want to cache images only where absolutely necessary._
+of GPU memory, cache images only where absolutely necessary._
 
 You can see which images are being cached by enabled the
 [PerformanceOverlayLayer.checkerboardRasterCachedImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
@@ -432,10 +428,7 @@ for debugging performance issues.
   rendering tree to the console.  (Pressing **t** from `flutter run`
   calls this command.) Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
-* [`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)<br>
-{% comment %}
-  [PENDING: xxx]
-{% endcomment %}
+* [`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
 * [`debugRepaintRainbowEnabled`](https://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)<br>
   Enable this property and run your app to see if any parts of your UI
   that aren't changing (for example, a static header) are rotating
