@@ -1,29 +1,25 @@
 ---
 layout: page
-title: Using Fonts
+title: 自定义体
 
 permalink: /custom-fonts/
 ---
 
-## Introduction
+## 前言
 
-You can use different fonts in your Flutter application.
-For example, you may have a custom font that your designer created,
-or you may have a font from [Google Fonts](https://fonts.google.com/).
+你可以在你 Flutter 应用中使用不同的字体。比如，你可以使用你们设计师设计的字体库，或者使用来自[谷歌字体库](https://fonts.google.com/)的字体。
 
-This page describes how to configure fonts for your Flutter app,
-and use them when rendering text.
+这篇文章将指导你怎样定义你的 Flutter 应用的字体，并且在渲染文本时使用这种字体。
 
+## 更换字体
 
-## Using fonts
+在你的应用中更换字体需要两个步骤。
 
-Using fonts in your Flutter application is done in two steps. 
-First declare them in your `pubspec.yaml`, to ensure that they are included in the app. Second use the font with a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) property.
+首先，需要在 `pubspec.yaml` 文件中声明，确保他们在应用中被引用。然后在 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 属性中使用他们。
 
-### Declaring in the font asset
+### 在字体库中声明
 
-To include your font in the app, declare it like in the `pubspec.yaml` example below.
-Then copy the font file to the location specified in your `pubspec.yaml`.
+为了使你的字体被应用引入，你需要在 `pubspec.yaml` 中声明他，如下面例子。然后把字体文件复制到你的 `pubspec.yaml` 文件声明的对应文件夹下。
 
 ```yaml
 flutter:
@@ -40,11 +36,10 @@ flutter:
         - asset: assets/fonts/abrilfatface/AbrilFatface-Regular.ttf
 ```
 
-### Using the font
+### 使用字体
 
-Second use the font by creating a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html). 
-Then set the [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) `fontFamily` property 
-and use the font family specified in the `pubsec.yaml` declarations. 
+第二步，通过创建 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 以使用该字体。
+然后把 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 的 `fontFamily` 属性设置为在 `pubsec.yaml` 文件中定义的字体。
 
 ```dart
 // declare the text style
@@ -58,11 +53,9 @@ var buttonText = const Text(
   style: textStyle,
 );
 ```
-### Fonts in package dependencies {#from-packages}
+### 使用依赖包中的字体 {#from-packages}
 
-To use a font family defined in a package, the `package` argument must be provided. For instance, suppose the font
-declaration above is in the `pubspec.yaml` of a package named `my_package` which the app depends on. Then creating the
-TextStyle is done as follows:
+使用依赖包中定义的字体，必须提供`依赖包`相关的参数。举个例子，假设上面在 `pubspec.yaml` 文件中声明的字体是一个名字是 `my_package` 的应用依赖包。然后可以像下面一样创建 TextStyle 。
 
 ```dart
 const textStyle = const TextStyle(
@@ -71,20 +64,15 @@ const textStyle = const TextStyle(
 );
 ```
 
-If the package internally uses the font it defines, it should still specify
-the `package` argument when creating the text style as in the example above.
+在上面的例子中，如果这个依赖包内部使用的是它自己定义的字体，在创建 TextStyle 的时候仍然要明确指明`依赖包`参数。
 
-A package can also provide font files without declaring a font in its `pubspec.yaml`. These files
-should then be in the `lib/` folder of the package. The font files will not
-automatically be bundled in the app, instead the app can use these
-selectively when declaring a font. Suppose a package named `my_package` has:
+依赖包也可以在直接提供字体文件，而不必在 `pubspec.yaml` 文件中声明。这些字体文件必须放在 `/lib` 文件夹下。字体文件不会被应用自动的引入，应用可以在定义字体时选择性的使用某些字体。假设 `my_package` 依赖包中有如下字体文件：
 
 ```
 lib/fonts/Raleway-Medium.ttf
 ```
 
-Then the app can declare a font like in the example below:
-
+然后应用就可以像以下例子一样声明一种字体：
 ```yaml
  flutter:
    fonts:
@@ -95,22 +83,18 @@ Then the app can declare a font like in the example below:
            weight: 500
 ```
 
-The `lib/` is implied, so it should not be included in the asset path.
+由于声明了是 `lib/` 文件夹，所以字体文件不必包含在asset路径中。
 
-In this case, since the app locally defines the font, the TextStyle is created
-without the `package` argument:
-
+在这个例子中，由于应用局部定义了字体，在创建TextStyle的时候不需要`依赖包`的参数：
 ```dart
 const textStyle = const TextStyle(
   fontFamily: 'Raleway',
 );
 ```
 
-## Using the Material Design icon font
+## 使用Material Design图标字体
 
-When you want to use the Material Design icon font,
-it can be simply included by adding a property `uses-material-design: true` to the `pubspec.yaml` file.
-
+如果你想使用Material Design图标字体，只需要把 `pubsec.yaml` 文件中添加一行 `uses-material-design: true` 。
 ```yaml
 flutter:
   # The following line ensures that the Material Icons font is
@@ -119,53 +103,33 @@ flutter:
   uses-material-design: true
 ```
 
-## pubspec.yaml option definitions
+## pubspec.yaml可选定义
 
-The `family` determines the name of the font, which you can use in the
-[`fontFamily`](https://docs.flutter.io/flutter/painting/TextStyle/fontFamily.html)
-property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-object to use the font with a [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html)
-or a [`RichText`](https://docs.flutter.io/flutter/widgets/RichText-class.html)
-widget.
+`falimy` 定义了在 [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) 或者 [`RichText`](https://docs.flutter.io/flutter/widgets/RichText-class.html) 组件中的 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 对象的 [`fontFamily`](https://docs.flutter.io/flutter/painting/TextStyle/fontFamily.html) 属性中可以使用的字体名称。
 
-The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
-These files contain the outlines for the glyphs in the font. When building your app, 
-these files are included in your app's asset bundle.
+`asset` 是一个相对于 `pubspec.yaml` 文件位置的相对路径。
 
-A single font can reference many different files with different outline weights
-and styles:
+这些文件会被包含在你应用的资源包中。
 
-  * The `weight` property specifies the weight of the outlines in the file as an
-    integer multiple of 100 between 100 and 900. These values correspond to the
-    [`FontWeight`](https://docs.flutter.io/flutter/dart-ui/FontWeight-class.html)
-    and can be used in the [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-    object.
+一种字体可以引入不同的轮廓线粗细和样式的文件。
 
-  * The `style` property specfies whether the outlines in the file are
-    `italic` or `normal`. These values correspond to the
-    [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html)
-    and can be used in the [fontStyle](https://docs.flutter.io/flutter/painting/TextStyle/fontStyle.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-    object.
+  * `weight` 属性可以定义轮廓线的粗细，这个值应该是一个在100-900之间的100的整数倍的数字。这个值和 [`FontWeight`](https://docs.flutter.io/flutter/dart-ui/FontWeight-class.html) 属性一样，并且可以在 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 对象的 [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html) 属性中使用该值。
+
+  * `style` 属性定义了文件中的字体是 `italic` 或者 `normal` 。这个值和 [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html) 属性一样，并且可以在 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 对象中的 [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html) 属性中使用。
 
 ## TextStyle
 
-If a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-object specifies a weight or style for which is there is no exact font file, the
-engine uses one of the more generic files for the font and attempts to
-extrapolate outlines for the requested weight and style.
+如果 [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) 对象对不存在的字体文件定义了粗细和样式，引擎会使用另一种字体文件，并且会尝试将定义的粗细和样式运用在这种字体上。
 
+## 举例来说
 
-## Example
-Here is an example delcaring and using the fonts in a simple application.
+这个例子中，应用声明和使用了一种字体。
 
 | iOS | Android |
 |------|------|
 | <img style="width: 200px;" src="/images/fonts-example-ios.png" alt="Display of the fonts on ios." /> | <img style="width: 200px;" src="/images/fonts-example-android.png" alt="Display of the fonts on android." /> |
 
-
-Declaring the fonts in the pubsec.yaml.
+在 pubsec.yaml 文件中声明了字体。
 
 ```yaml
 name: my_application
@@ -174,7 +138,7 @@ description: A new Flutter project.
 dependencies:
   flutter:
     sdk: flutter
-    
+
 flutter:
   # Include the Material Design fonts.
   uses-material-design: true
@@ -194,7 +158,7 @@ flutter:
         - asset: fonts/Ewert-Regular.ttf
 ```
 
-Implementing the fonts in the application source code. 
+在应用代码中使字体生效。
 
 ```dart
 import 'package:flutter/material.dart';
