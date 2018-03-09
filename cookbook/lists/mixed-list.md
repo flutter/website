@@ -22,7 +22,7 @@ How would we create such a structure with Flutter?
 In order to represent different types of items in a List, we'll need to define
 a class for each type of item.
 
-In this example, we'll work on app that shows a header followed by five 
+In this example, we'll work on an app that shows a header followed by five 
 messages. Therefore, we'll create three classes: `ListItem`, `HeadingItem`, 
 and `MessageItem`.
 

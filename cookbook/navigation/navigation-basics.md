@@ -8,6 +8,9 @@ Most apps contain several screens for displaying different types of information.
 For example, we might have a screen that shows products. Our users could then
 tap on a product to get more information about it on a new screen.
 
+In Android terms, our screens would be new Activities. In iOS terms, new 
+ViewControllers. In Flutter, screens are just Widgets!
+
 So how do we navigate to new screens? Using the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
 
 ## Directions

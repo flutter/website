@@ -7,7 +7,8 @@ permalink: /cookbook/design/themes/
 In order to share colors and font styles throughout our app, we can take 
 advantage of themes. There are two ways to define themes: App-wide or using 
 `Theme` Widgets that define the colors and font styles for a particular part of 
-our application. 
+our application. In fact, app-wide themes are just `Theme` Widgets created at 
+the root of our apps by the `MaterialApp`! 
 
 After we define a Theme, we can use it within our own Widgets. In addition, the 
 Material Widgets provided by Flutter will use our Theme to set the background 
@@ -94,13 +95,9 @@ In fact, the `FloatingActionButton` uses this exact technique to find the
  
 ```dart
 new Container(
-  padding: new EdgeInsets.all(12.0),
-  decoration: new BoxDecoration(
-    color: Theme.of(context).accentColor,
-    borderRadius: new BorderRadius.circular(8.0),
-  ),
+  color: Theme.of(context).accentColor,
   child: new Text(
-    'Hi Friends!',
+    'Text with a background color',
     style: Theme.of(context).textTheme.title,
   ),
 );
@@ -148,13 +145,9 @@ class MyHomePage extends StatelessWidget {
       ),
       body: new Center(
         child: new Container(
-          padding: new EdgeInsets.all(12.0),
-          decoration: new BoxDecoration(
-            color: Theme.of(context).accentColor,
-            borderRadius: new BorderRadius.circular(8.0),
-          ),
+          color: Theme.of(context).accentColor,
           child: new Text(
-            'My Button',
+            'Text with a background color',
             style: Theme.of(context).textTheme.title,
           ),
         ),
