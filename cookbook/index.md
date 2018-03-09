@@ -22,3 +22,7 @@ reference to help you build up an application.
 
   * [Fetch data from the internet](/cookbook/networking/fetch-data/)
   * [Making authenticated requests](/cookbook/networking/authenticated-requests/)
+
+## Persistence
+
+  * [Storing key-value data on disk](/cookbook/persistence/key-value)
