@@ -465,7 +465,7 @@ The minimal Flutter app simply calls the `runApp()` function with a widget. The 
 
 <b>`projectname/android`</b> - directory containing android-specific files.
 
-<b>`projectname/build`</b> - stores iOS apk and Android app installation packages.
+<b>`projectname/build`</b> - stores iOS and Android build files.
 
 <b> `projectname/ios` </b> - directory containing iOS-specific files.
 
