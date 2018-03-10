@@ -30,7 +30,7 @@ reference to help you build up an application.
 
   * [Handling Taps](/cookbook/gestures/handling-taps/)
   * [Adding Material Touch ripples](/cookbook/gestures/ripples/)
-  * [Implement Swipe to Dismiss](/cookbook/gestures/dismissible/)
+  * [Implement Swipe to Dismiss](/cookbook/gestures/dismissable/)
   
 ## Navigation
 

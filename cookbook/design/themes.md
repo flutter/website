@@ -163,3 +163,5 @@ class MyHomePage extends StatelessWidget {
   }
 }
 ```
+
+![Themes Demo](/images/cookbook/themes.png)

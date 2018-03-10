@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Implement Swipe to Dismiss"
-permalink: /cookbook/gestures/dismissible/
+permalink: /cookbook/gestures/dismissable/
 ---
 
 The "Swipe to dismiss" pattern is common in many mobile apps. For example, if 
@@ -159,3 +159,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Dismissable Demo](/images/cookbook/dismissable.gif)
