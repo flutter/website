@@ -160,7 +160,7 @@ If a red bar appears in the UI graph, the Dart code is too expensive.
 If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
-<center><img src="images/performance-overlay-jank.png" al="Screenshot of performance overlay showing jank."></center>
+<center><img src="images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
 <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
 
 ### Displaying the performance overlay
@@ -262,7 +262,7 @@ Go to Flutter's timeline view in a browser as follows:
 Open Observatory using the line chart icon (<img src="images/observatory-timeline-icon.png" alt="zig-zag line chart icon">)
 from the Flutter Inspector.
 
-(Instead, you could open Observatory using the stopwatch icon (<img src="images/observatory-icon.png">),
+(Instead, you could open Observatory using the stopwatch icon (<img src="images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
 but the "view <u>inspector</u>" link takes you to the standard version of the
 timeline, not the version customized for Flutter.)
 
