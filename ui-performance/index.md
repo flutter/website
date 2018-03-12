@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flutter Performance Profiling
-subtitle: Where to look when your Flutter app has UI performance issues.
+subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 permalink: /ui-performance/
 ---
@@ -10,9 +10,9 @@ permalink: /ui-performance/
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
 
-* Flutter aims to provide 60 frames per second (fps) performance, and 120
+* Flutter aims to provide 60 frames per second (fps) performance, or 120
   fps performance on devices capable of 120Hz updates.
-* For 60fps, frames need to render every 16ms.
+* For 60fps, frames need to render approximately every 16ms.
 * Jank occurs when the UI doesn't render smoothly. For example, every so
   often, a frame takes 10 times longer to render, so it gets dropped, and
   the animation visibly jerks.
@@ -23,6 +23,15 @@ It's been said that "a _fast_ app is great, but a _smooth_ app is even better."
 If your app isn't rendering smoothly, how do you fix it? Where do you begin?
 This guide shows shows you where to start, steps to take, and tools that can
 help.
+
+<aside class="alert alert-info" markdown="1">
+**Note:** An app's performance is determined by more than one measure.
+Performance sometimes refers to raw speed, but also to the UI's smoothness and
+lack of stutter. Other examples of performance include I/O or network speed.
+This page primarily focuses on the second type of performance (UI smoothness),
+but you can use most of the same tools to diagnose other performance
+problems.
+</aside>
 
 * TOC Placeholder
 {:toc}
@@ -57,12 +66,12 @@ on the slowest device that your users might reasonably use._
   faster on simulators than real devices, and some are slower.
 * Debug mode enables additional checks (such as asserts) that don’t run
   in profile or release builds, and these checks can be expensive.
-  This is why debug mode is sometimes called "slow mode."
 * Debug mode also executes code in a different way than release mode.
-  The debug build compiles the Dart code "just in time" (also called JIT)
+  The debug build compiles the Dart code "just in time" (JIT)
   as the app runs, but profile and release builds are pre-compiled to native
   instructions (also called “ahead of time”, or AOT) before the app is
-  loaded onto the device.
+  loaded onto the device. JIT can cause the app to pause for JIT
+  compilation, which itself can cause jank.
 </aside>
 
 ### Run in profile mode
@@ -100,7 +109,7 @@ in the next section.
 
 ## The performance overlay
 
-The performance overly displays statistics in two graphs
+The performance overlay displays statistics in two graphs
 that show where time is being spent in your app.
 If the UI is janky (skipping frames), these graphs help you figure out why.
 The graphs display on top of your running app, but they aren’t drawn
@@ -152,8 +161,8 @@ your actions on the UI thread have performance consequences on other threads.
 For more information on these threads, see
 [Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
 
-Each frame should be created and displayed within 16ms
-(or 1/60th of a second).  A frame exceeding this limit (in either graph)
+Each frame should be created and displayed within 1/60th of a second
+(approximately 16ms). A frame exceeding this limit (in either graph)
 fails to display, resulting in jank, and a vertical red bar appears in one or
 both of the graphs.
 If a red bar appears in the UI graph, the Dart code is too expensive.
@@ -229,7 +238,8 @@ class MyApp extends StatelessWidget {
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,
-[download](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery),
+use the copy in the [examples](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
+directory that was installed with Flutter,
 and run the app in profile mode. The program is written
 so that the app menu allows you to dynamically toggle the overlay,
 as well as enable checks for calls to `saveLayer` and the presence of
@@ -368,7 +378,7 @@ render in subsequent frames.
 _Because raster cache entries are expensive to construct and take up loads
 of GPU memory, cache images only where absolutely necessary._
 
-You can see which images are being cached by enabled the
+You can see which images are being cached by enabling the
 [PerformanceOverlayLayer.checkerboardRasterCachedImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
 switch.
 
