@@ -20,7 +20,7 @@ permalink: /ui-performance/
 </div>
 
 It's been said that "a _fast_ app is great, but a _smooth_ app is even better."
-If your app is not rendering smoothly, how do you fix it? Where do you begin?
+If your app isn't rendering smoothly, how do you fix it? Where do you begin?
 This guide shows shows you where to start, steps to take, and tools that can
 help.
 
@@ -65,7 +65,7 @@ on the slowest device that your users might reasonably use._
   loaded onto the device.
 </aside>
 
-### Compile in profile mode
+### Run in profile mode
 
 Flutter’s profile mode compiles and launches your application almost
 identically to release mode, but with just enough additional
@@ -100,26 +100,21 @@ in the next section.
 
 ## The performance overlay
 
-The performance overly displays performance statistics in two graphs
-that show you where time is being spent in your app.
+The performance overly displays statistics in two graphs
+that show where time is being spent in your app.
 If the UI is janky (skipping frames), these graphs help you figure out why.
 The graphs display on top of your running app, but they aren’t drawn
 like a normal widget&mdash;the Flutter engine itself paints the overlay.
+Each graph represents the last 300 frames for that thread.
 
-This section describes how to enable the performance overlay,
+This section describes how to enable the
+[PerformanceOverlay,](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html)
 and use it to diagnose the cause of jank in your application.
-
-The
-[PerformanceOverlay](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html)
-widget, from the [widget
-library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
-displays performance statistics using two graphs.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
 <center><img src="images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
-<center>The graphs produced by the performance overlay.<br>The vertical green
-bars represent the current frame.</center><br>
+<center>The vertical green bars represent the current frame.</center><br>
 
 Flutter uses several threads to do its work. All your Dart code runs on
 the UI thread. Although you have no direct access to any other thread,
@@ -154,28 +149,19 @@ your actions on the UI thread have performance consequences on other threads.
    Performs expensive tasks (mostly I/O) that would otherwise block
    either the UI or GPU threads.
 
-For more information, see
+For more information on these threads, see
 [Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
-
-Each graph in the performance overlay represents the last 300 frames
-for the UI and GPU threads:
-
-* Rasterizer<br>
-  The rasterizer graph (on the top) reflects activity in the GPU thread.
-
-* Engine<br>
-  The engine graph (on the bottom) reflects activity in the UI thread.
 
 Each frame should be created and displayed within 16ms
 (or 1/60th of a second).  A frame exceeding this limit (in either graph)
 fails to display, resulting in jank, and a vertical red bar appears in one or
 both of the graphs.
-If a red bar appears in the engine graph, the Dart code is too expensive.
-If a red vertical bar appears in the rasterizer graph, the scene is too
+If a red bar appears in the UI graph, the Dart code is too expensive.
+If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
 <center><img src="images/performance-overlay-jank.png" al="Screenshot of performance overlay showing jank."></center>
-<center>The vertical red bar in the rasterier graph indicates that the current frame is expensive to paint.</center><br>
+<center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
 
 ### Displaying the performance overlay
 
@@ -190,7 +176,7 @@ You can toggle display of the performance overlay as follows:
 The easiest way to enable the PerformanceOverlay widget is by enabling it
 in the Flutter Inspector, which is available through the Flutter plugin
 for your IDE. The Inspector view opens by default when running an
-application. If the inspector is not open, you can display it as follows.
+application. If the inspector isn't open, you can display it as follows.
 
 In Android Studio and IntelliJ IDEA:
 
@@ -201,7 +187,6 @@ In Android Studio and IntelliJ IDEA:
 
 The Flutter Inspector is available in the VS Code, Android Studio,
 and IntelliJ plugins, but its UI may change as it continues to evolve.
-The inspector is not currently available from the command line.
 Learn more about what the inspector can do in the
 [Flutter Widget Inspector](/inspector/) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
@@ -220,7 +205,7 @@ Toggle the performance overlay using the **P** key from the command line.
 
 #### Programmatically
 
-You can programmatically enable the PerformanceOverlay widget is by
+You can programmatically enable the PerformanceOverlay widget by
 setting the `showPerformanceOverlay` property to `true` on the MaterialApp
 or WidgetsApp constructor:
 
@@ -256,25 +241,19 @@ is compiled to release mode (not profile mode), and doesn’t provide
 a menu for enabling or disabling the overlay.
 </aside>
 
-### Identifying problems in the engine graph
+### Identifying problems in the UI graph
 
-If the performance overlay shows red in the engine graph, start by profiling
-the engine (Dart VM), even if the rasterizer graph also shows red.
-To do this, use
+If the performance overlay shows red in the UI graph, start by profiling
+the Dart VM, even if the GPU graph also shows red. To do this, use
 [Observatory](https://dart-lang.github.io/observatory/), Dart’s profiling tool.
 
 #### Displaying Observatory
 
-Observatory provides a statement-level single-stepping debugger for Dart and
-Flutter applications.  It also supports profiling, examining the heap,
-and reporting on code coverage. Observatory's _timeline_ view allows you
+Observatory provides features like profiling, examining the heap,
+and displaying code coverage. Observatory's _timeline_ view allows you
 to capture a snapshot of the stack at a moment in time.
 When you open Observatorty's timeline from the Flutter Inspector,
 you'll be using a version that has been customized for Flutter apps.
-
-{% comment %}
-I've talked to tooling SWEs who feel we're not ready to document this.
-{% endcomment %}
 
 Go to Flutter's timeline view in a browser as follows:
 
@@ -294,9 +273,6 @@ timeline, not the version customized for Flutter.)
 In VS Code, bring up the command palette and enter "observatory".
 Select **Flutter: Open Observatory Timeline** from the list that pops up.
 If this command isn’t available, make sure that the app is running.
-{% comment %}
-[PENDING: Can you go to the timeline directly? If so, which command?]
-{% endcomment %}
 </li>
 </ol>
 
@@ -304,18 +280,18 @@ If this command isn’t available, make sure that the app is running.
 
 <aside class="alert alert-info" markdown="1">
 **Note:** The Observatory UI and Flutter's custom timeline page are currently
-evolving.  For this reason, we aren't fully documenting the UI at this time.
+evolving. For this reason, we aren't fully documenting the UI at this time.
 If you are comfortable experimenting with Observatory, and would like to give
 us feedback, please file [issues or feature
 requests](https://github.com/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory)
 as you find them.
 </aside>
 
-### Identifying problems in the rasterizer graph
+### Identifying problems in the GPU graph
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the GPU thread. When this happens,
-the engine graph has no red, but the rasterizer graph shows red.
+the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more difficult for
 the GPU.  They may involve unnecessary calls to
@@ -352,8 +328,8 @@ on your behalf. You can check whether your scene is using saveLayer with the
 switch.
 
 {% comment %}
-[PENDING: how to turn it on (Flutter Inspector doesn't seem to support this?
-Also disable the graphs and checkerboardRasterCachedImages.]
+[TODO: Document disabling the graphs and checkerboardRasterCachedImages.
+Flutter Inspector doesn't seem to support this?]
 {% endcomment %}
 
 Once the switch is enabled, run the app and look for any images that are
@@ -396,8 +372,8 @@ You can see which images are being cached by enabled the
 switch.
 
 {% comment %}
-[PENDING: How to do this, either via UI or programmatically. At this point,
-disable the graphs and checkerboardOffScreenLayers.]
+[TODO: Document how to do this, either via UI or programmatically.
+At this point, disable the graphs and checkerboardOffScreenLayers.]
 {% endcomment %}
 
 Run the app and look for images rendered with a randomly colored checkerboard,
@@ -406,11 +382,11 @@ the checkerboarded images should remain constant—you don’t want to see
 flickering, which would indicate that the cached image is being re-cached.
 
 In most cases, you want to see checkerboards on static images,
-but not on non-static images.  If a static image is not cached,
+but not on non-static images.  If a static image isn't cached,
 you can cache it by placing it into a
 [RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
 widget. Though the engine may still ignore a repaint boundary if it
-thinks the image is not complex enough.
+thinks the image isn't complex enough.
 
 ## Debug flags
 
