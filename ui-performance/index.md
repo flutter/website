@@ -186,7 +186,8 @@ In Android Studio and IntelliJ IDEA:
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)<br>
 
 The Flutter Inspector is available in the VS Code, Android Studio,
-and IntelliJ plugins, but its UI may change as it continues to evolve.
+and IntelliJ plugins to the Flutter Inspector,
+but its UI may change as it continues to evolve.
 Learn more about what the inspector can do in the
 [Flutter Widget Inspector](/inspector/) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
@@ -259,8 +260,8 @@ Go to Flutter's timeline view in a browser as follows:
 
 <ol markdown="1">
 <li markdown="1">
-Open Observatory using the line chart icon (<img src="images/observatory-timeline-icon.png" alt="zig-zag line chart icon">)
-from the Flutter Inspector.
+To open the timeline view, use the line chart
+icon <img src="images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
 
 (Instead, you could open Observatory using the stopwatch icon (<img src="images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
 but the "view <u>inspector</u>" link takes you to the standard version of the
