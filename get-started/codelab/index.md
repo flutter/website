@@ -150,7 +150,7 @@ class MyApp extends StatelessWidget {
        which is short hand used for one-line functions or methods.
   </li>
   <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, most everything is a widget, including
+       widget. In Flutter, almost everything is a widget, including
        alignment, padding, and layout.
   </li>
   <li markdown="1"> The Scaffold widget, from the Material library,
