@@ -43,7 +43,8 @@ To add a package 'css_colors' to an app:
      `css_colors:` under `dependencies`.
 
 1. Install it
-   * From the terminal: Run `flutter packages get`
+   * From the terminal: Run `flutter packages get`<br/>
+   **OR**
    * From IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
 
 1. Import it
