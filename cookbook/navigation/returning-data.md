@@ -14,7 +14,7 @@ How can we achieve this? Using [`Navigator.pop`](https://docs.flutter.io/flutter
 ## Directions
 
   1. Define the home screen
-  2. Add a button that launches the the selection screen
+  2. Add a button that launches the selection screen
   3. Show the selection screen with two buttons
   4. When a button is tapped, close the selection screen
   5. Show a snackbar on the home screen with the selection
