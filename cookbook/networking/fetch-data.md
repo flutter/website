@@ -11,6 +11,7 @@ Flutter provide tools for this type of work!
 
   1. Make a network request using the `http` package
   2. Convert the response into a custom Dart object
+  3. Fetch and Display the data with Flutter
   
 ## 1. Make a network request
 
@@ -91,18 +92,51 @@ Future<Post> fetchPost() async {
 Hooray! Now we've got a function that we can call to fetch a Post from the 
 internet!
 
+## 3. Fetch and Display the data
+
+In order to fetch the data and display it on screen, we can use the
+[`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html)
+widget! The `FutureBuilder` Widget comes with Flutter and makes it easy to work
+with async data sources.
+
+We must provide two parameters:
+
+  1. The `Future` we want to work with. In our case, we'll call our
+  `fetchPost()` function.
+  2. A `builder` function that tells Flutter what to render, depending on the
+  state of the `Future`: loading, success, or error.
+
+```dart
+new FutureBuilder<Post>(
+  future: fetchPost(),
+  builder: (context, snapshot) {
+    if (snapshot.hasData) {
+      return new Text(snapshot.data.title);
+    } else if (snapshot.hasError) {
+      return new Text("${snapshot.error}");
+    }
+
+    // By default, show a loading spinner
+    return new CircularProgressIndicator();
+  },
+);
+```
+
 ## Complete Example
 
 ```dart
 import 'dart:async';
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Post> fetchPost() async {
-  final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = JSON.decode(response.body); 
-  
-  return new Post.fromJson(json); 
+  final response =
+      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+  final json = JSON.decode(response.body);
+
+  return new Post.fromJson(json);
 }
 
 class Post {
@@ -119,6 +153,40 @@ class Post {
       id: json['id'],
       title: json['title'],
       body: json['body'],
+    );
+  }
+}
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Fetch Data Example',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Fetch Data Example'),
+        ),
+        body: new Center(
+          child: new FutureBuilder<Post>(
+            future: fetchPost(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return new Text(snapshot.data.title);
+              } else if (snapshot.hasError) {
+                return new Text("${snapshot.error}");
+              }
+
+              // By default, show a loading spinner
+              return new CircularProgressIndicator();
+            },
+          ),
+        ),
+      ),
     );
   }
 }
