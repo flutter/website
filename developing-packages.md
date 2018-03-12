@@ -142,7 +142,7 @@ You can run the example app from Android Studio by pressing the &#9654; button.
 
 #### Step 2c: Add iOS platform code (.h+.m/.swift)
 
-We recommend you edit the iOS code usign Xcode.
+We recommend you edit the iOS code using Xcode.
 
 Before editing the iOS platform code in Xcode, first make sure that
 the code has been built at least once (i.e., run the example app from IntelliJ,
