@@ -4,11 +4,9 @@ title: "Storing key-value data on disk"
 permalink: /cookbook/persistence/key-value/
 ---
 
-If you have a relatively small collection of key-values that you'd like to save, you should use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) APIs
+If you have a relatively small collection of key-values that you'd like to save, you can use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin.
 
-Normally we would have to write native platform integration for storing data for both platforms, but fortunetly [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin can be used for that. 
-
-Shared preferences plugin wraps `NSUserDefaults` (on iOS) and `SharedPreferences` (on Android), providing a persistent store for simple data. Data is persisted to disk automatically and asynchronously.
+Normally we would have to write native platform integration for storing data for both platforms, but fortunately [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin can be used for that. Shared preferences plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android, providing a persistent store for simple data.
 
 ## Setup
 
@@ -21,9 +19,10 @@ dependencies:
   shared_preferences: "<newest version>"
 ```
 
-## Saving, reading and removing data
+## Saving data
 
 In order to access store simply use `SharedPreferences` class.
+
 
 ```dart
 // import shared preferences plugin
@@ -32,23 +31,36 @@ import 'package:shared_preferences/shared_preferences.dart';
 // obtain shared preferences 
 SharedPreferences prefs = await SharedPreferences.getInstance();
 
-// get  value by key, return null if not available
-int counter = (prefs.getInt('counter') ?? 0) + 1;
-print('Pressed $counter times.');
-
 // set new value
 prefs.setInt('counter', counter);
+```
 
-// removes value for given key
+
+## Reading data
+
+```dart
+import 'package:shared_preferences/shared_preferences.dart';
+
+SharedPreferences prefs = await SharedPreferences.getInstance();
+
+int counter = (prefs.getInt('counter') ?? 0) + 1;
+```
+
+## Removing data
+
+```dart
+import 'package:shared_preferences/shared_preferences.dart';
+
+SharedPreferences prefs = await SharedPreferences.getInstance();
+
 prefs.remove('counter');
-
 ```
 
 In example above we load data from `counter` key, if it not exists, `0` is returned. 
 
-For saving data we call `set` method. Note that data is persisted on disk automatically and asynchronously. If you want to get notified when data is saved use `commit()` function. 
+For saving data we call `set` method. Note that data is persisted asynchronously. If you want to get notified when data is saved use `commit()` function. 
 
-Adequately setter and getter methods are available for all primitive types.
+Setter and getter methods are available for all primitive types.
 
 ## Supported types
 
@@ -66,25 +78,86 @@ If you want to read more about Shared preferences on Android please visit [Share
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(new MaterialApp(
-    home: new Scaffold(
-      body: new Center(
-      child: new RaisedButton(
-        onPressed: _incrementCounter,
-        child: new Text('Increment Counter'),
-        ),
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Shared preferences demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
       ),
-    ),
-  ));
+      home: new MyHomePage(title: 'Shared preferences demo'),
+    );
+  }
 }
 
-_incrementCounter() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  int counter = (prefs.getInt('counter') ?? 0) + 1;
-  print('Pressed $counter times.');
-  prefs.setInt('counter', counter);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
 }
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCounter();
+  }
+
+  //Loading counter value on start 
+  _loadCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _counter = (prefs.getInt('counter') ?? 0);
+    });
+  }
+  
+  //Incrementing counter after click
+  _incrementCounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _counter = (prefs.getInt('counter') ?? 0) + 1;
+    setState(() {
+      _counter;
+    });
+    prefs.setInt('counter', _counter);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'You have pushed the button this many times:',
+            ),
+            new Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
 ```
 
 ## Testing support
