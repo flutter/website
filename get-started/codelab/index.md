@@ -150,7 +150,7 @@ class MyApp extends StatelessWidget {
        which is short hand used for one-line functions or methods.
   </li>
   <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, most everything is a widget, including
+       widget. In Flutter, almost everything is a widget, including
        alignment, padding, and layout.
   </li>
   <li markdown="1"> The Scaffold widget, from the Material library,
@@ -323,7 +323,7 @@ class MyApp extends StatelessWidget {
 
 <p class="h2-like">Problems?</p>
 
-If your app isn't running correctly, look for typos. If needed,
+If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
 * [**pubspec.yaml**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/pubspec.yaml)
@@ -415,7 +415,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Welcome to Flutter'),
-       ),
+        ),
         body: new Center(
           //child: new [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
           child: new [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
@@ -447,7 +447,7 @@ pairing each time you hot reload or save the app.
 
 <p class="h2-like">Problems?</p>
 
-If your app isn't running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/329c397b97309ce99f834bf70ebb90778baa5cfe/main.dart)
@@ -465,8 +465,8 @@ lazily, on demand.
 <ol markdown="1">
 
 <li markdown="1"> Add a `_suggestions` list to the RandomWordsState
-class for saving suggested word pairings. Note that the variable begins
-with an underscore (`_`).  Prefixing an identifier with an underscore enforces
+class for saving suggested word pairings. The variable begins with
+an underscore (`_`)&mdash;prefixing an identifier with an underscore enforces
 privacy in the Dart language.
 
 Also, add a `biggerFont` variable for making the font size larger.
@@ -502,7 +502,7 @@ class RandomWordsState extends State<RandomWords> {
   [[highlight]]Widget _buildSuggestions() {[[/highlight]]
     [[highlight]]return new ListView.builder([[/highlight]]
       [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
-      // The itemBuilder callback is called, once per suggested word pairing,
+      // The itemBuilder callback is called once per suggested word pairing,
       // and places each suggestion into a ListTile row.
       // For even rows, the function adds a ListTile row for the word pairing.
       // For odd rows, the function adds a Divider widget to visually
@@ -564,12 +564,12 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     [[strike]]final wordPair = new WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]Return new Text(wordPair.asPascalCase);[[/strike]]
+    [[strike]]return new Text(wordPair.asPascalCase);[[/strike]]
     [[highlight]]return new Scaffold ([[/highlight]]
       [[highlight]]appBar: new AppBar([[/highlight]]
         [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
       [[highlight]]),[[/highlight]]
-    [[highlight]]body: _buildSuggestions(),[[/highlight]]
+      [[highlight]]body: _buildSuggestions(),[[/highlight]]
     [[highlight]]);[[/highlight]]
   }
   ...
@@ -608,7 +608,7 @@ as far as you want and you will continue to see new word pairings.
 
 <p class="h2-like">Problems?</p>
 
-If your app isn't running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d6f9460a04d3a429eb6ac0b0f07da564/raw/34fe240f4122435c871bb737708ee0357741801c/main.dart)
@@ -625,7 +625,7 @@ set of saved favorites.
 <ol markdown="1">
 <li markdown="1"> Add a `_saved` Set to RandomWordsState. This Set stores
     the word pairings that the user favorited. Set is preferred to List
-    because a properly implemented Set doesn't allow duplicate entries.
+    because a properly implemented Set does not allow duplicate entries.
 
 <!-- skip -->
 {% prettify dart %}
@@ -641,7 +641,7 @@ class RandomWordsState extends State<RandomWords> {
 </li>
 
 <li markdown="1"> In the `_buildRow` function, add an `alreadySaved`
-    check to ensure that a word pairing hasn't already been added to
+    check to ensure that a word pairing has not already been added to
     favorites.
 
 <!-- skip -->
@@ -678,7 +678,7 @@ Add the highlighted lines below:
 </li>
 
 <li markdown="1"> Restart the app. You should now see open hearts on
-    each row, but they aren't yet interactive.
+    each row, but they are not yet interactive.
 </li>
 
 <li markdown="1"> Make the hearts tappable in the `_buildRow`
@@ -732,7 +732,7 @@ that emanates from the heart icon.
 
 <p class="h2-like">Problems?</p>
 
-If your app isn't running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/936ce0059029a8c6e88aaa826a3789cd/raw/a3065d5c681a81eff32f75a9cd5f4d9a5b24f9ff/main.dart)
@@ -824,7 +824,7 @@ which pushes the route to the Navigator's stack.
     add the code that generates the ListTile rows. The `divideTiles()`
     method of ListTile adds horizontal spacing between each ListTile.
     The `divided` variable holds the final rows, converted to a list
-    by the convienice function, `toList()`.
+    by the convenience function, `toList()`.
 
 <!-- skip -->
 {% prettify dart %}
@@ -833,7 +833,7 @@ which pushes the route to the Navigator's stack.
       [[highlight]]new MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
           [[highlight]]final tiles = _saved.map([[/highlight]]
-                [[highlight]](pair) {[[/highlight]]
+            [[highlight]](pair) {[[/highlight]]
               [[highlight]]return new ListTile([[/highlight]]
                 [[highlight]]title: new Text([[/highlight]]
                   [[highlight]]pair.asPascalCase,[[/highlight]]
@@ -843,11 +843,11 @@ which pushes the route to the Navigator's stack.
             [[highlight]]},[[/highlight]]
           [[highlight]]);[[/highlight]]
           [[highlight]]final divided = ListTile[[/highlight]]
-              [[highlight]].divideTiles([[/highlight]]
-            [[highlight]]context: context,[[/highlight]]
-            [[highlight]]tiles: tiles,[[/highlight]]
-          [[highlight]])[[/highlight]]
-              [[highlight]].toList();[[/highlight]]
+            [[highlight]].divideTiles([[/highlight]]
+              [[highlight]]context: context,[[/highlight]]
+              [[highlight]]tiles: tiles,[[/highlight]]
+            [[highlight]])[[/highlight]]
+            [[highlight]].toList();[[/highlight]]
         [[highlight]]},[[/highlight]]
       [[highlight]]),[[/highlight]]
     );
@@ -861,7 +861,7 @@ which pushes the route to the Navigator's stack.
     consists of a ListView containing the ListTiles rows;
     each row is separated by a divider.
 
-Add the highlisted code below:
+Add the highlighted code below:
 
 <!-- skip -->
 {% prettify dart %}
@@ -870,7 +870,7 @@ Add the highlisted code below:
       new MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
-                (pair) {
+            (pair) {
               return new ListTile(
                 title: new Text(
                   pair.asPascalCase,
@@ -880,11 +880,11 @@ Add the highlisted code below:
             },
           );
           final divided = ListTile
-              .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
-              .toList();
+            .divideTiles(
+              context: context,
+              tiles: tiles,
+            )
+            .toList();
 
           [[highlight]]return new Scaffold([[/highlight]]
             [[highlight]]appBar: new AppBar([[/highlight]]
@@ -902,7 +902,7 @@ Add the highlisted code below:
 <li markdown="1"> Hot reload the app. Favorite some of the selections and
     tap the list icon in the app bar. The new route appears containing
     the favorites. Note that the Navigator adds a "Back" button to the
-    app bar. You didn't have to explicitly implement Navigator.pop.
+    app bar. You did not have to explicitly implement Navigator.pop.
     Tap the back button to return to the home route.
 </li>
 </ol>
@@ -911,7 +911,7 @@ Add the highlisted code below:
 
 <p class="h2-like">Problems?</p>
 
-If your app isn't running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)

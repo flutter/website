@@ -329,8 +329,10 @@ When developing a more complex app you would create another class that is either
 |Android |iOS |
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/hello-world/flutterhelloworld/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
-<br/>
 
+
+
+<br/>
 ### How do I use Widgets and nest them to form a Widget tree?
 
 When writing an app, you will commonly author new widgets that are subclasses of either [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html) or [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html), depending on whether your widget manages any state. In the above Hello World example, HelloWorldApp class extends a StatelessWidget and overrides a build function that describes the widget in terms of other, lower-level widgets.
@@ -464,7 +466,7 @@ The minimal Flutter app simply calls the `runApp()` function with a widget. The 
 
 <b>`projectname/android`</b> - directory containing android-specific files.
 
-<b>`projectname/build`</b> - stores iOS apk and Android app installation packages.
+<b>`projectname/build`</b> - stores iOS and Android build files.
 
 <b> `projectname/ios` </b> - directory containing iOS-specific files.
 
@@ -695,7 +697,7 @@ In React Native, you would normally use the style prop on the view component to 
 In Flutter, layout is determined by a combination of the type of Widget that you choose and its layout and style properties. Contrary to how it is done in React Native, where most of the layout can be done with the props that are passed to a specific component, in Flutter most of the layout is done by the use of widgets that are specifically designed to provide layout.
 The Flutter widgets [Column](https://docs.flutter.io/flutter/widgets/Column-class.html) and [Row](https://docs.flutter.io/flutter/widgets/Row-class.html) take an array of children and not styling properties (although there are layout properties such as `CrossAxisAlignment` and `direction`) and aligns them vertically and horizontally respectively. A [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) takes a combination of layout and styling properties. A [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) widget centers its child widget tree.
 
-For example, if you want to arrange your components in a [Row](https://docs.flutter.io/flutter/widgets/Row-class.html).
+For example, if you want to arrange your components in a [Column](https://docs.flutter.io/flutter/widgets/Column-class.html).
 In React Native, you would specify it as a prop: `flexDirection: “column”`. But in Flutter, you would use a [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) widget and provide the required children widgets.
 
 <!-- skip -->
@@ -772,6 +774,7 @@ The above example uses `Stack` to overlay a Container (that displays its `Text` 
 |:---:|:--:|
 |<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="https://github.com/GeekyAnts/flutter-docs-code-samples/blob/master/stack_example/flutter_stack/screenshots/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
+<br/>
 ### Styling
 ### How to custom style my components in Flutter?
 
@@ -1865,7 +1868,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
 ### How do I add swipe animation to Cards?
 
-In React Native, you either use PanResponder or third-party libraries for swipe animation. In Flutter, we can achieve this animation simply by using the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html) widget and nest the child widgets.
+In React Native, you either use PanResponder or third-party libraries for swipe animation. In Flutter, we can achieve this animation by using the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html) widget and nest the child widgets.
 
 <!-- skip -->
 {% prettify dart %}
