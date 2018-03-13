@@ -4,13 +4,13 @@ title: "Storing key-value data on disk"
 permalink: /cookbook/persistence/key-value/
 ---
 
-If you have a relatively small collection of key-values that you'd like to save, you can use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin.
+If we have a relatively small collection of key-values that we'd like to save, we can use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin.
 
-Normally we would have to write native platform integration for storing data for both platforms, but fortunately [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin can be used for that. Shared preferences plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android, providing a persistent store for simple data.
+Normally we would have to write native platform integration for storing data for both platforms. Fortunately the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin can be used for that. Shared preferences plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android, providing a persistent store for simple data.
 
 ## Setup
 
-Before you start, you need to add [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin to you `pubspec.yaml` file:
+Before we start, we need to add [shared_preferences](https://pub.dartlang.org/packages/shared_preferences) plugin to our `pubspec.yaml` file:
 
 ```yaml
 dependencies:
@@ -21,7 +21,7 @@ dependencies:
 
 ## Saving data
 
-In order to access store simply use `SharedPreferences` class.
+In order to access store, we can use `SharedPreferences` class.
 
 
 ```dart
@@ -58,7 +58,7 @@ prefs.remove('counter');
 
 In example above we load data from `counter` key, if it not exists, `0` is returned. 
 
-For saving data we call `set` method. Note that data is persisted asynchronously. If you want to get notified when data is saved use `commit()` function. 
+For saving data we call `set` method. Note that data is persisted asynchronously. If we want to get notified when data is saved use `commit()` function. 
 
 Setter and getter methods are available for all primitive types.
 
@@ -70,7 +70,7 @@ While is easy and convenient to use key-value storage, it has limitations:
   - `int`, `double`, `bool`, `string` and `string list`
 - It's not designed to store a lot of data so it's not suitable as application cache.
 
-If you want to read more about Shared preferences on Android please visit [Shared preferences documentation](https://developer.android.com/guide/topics/data/data-storage.html#pref) on Android developers website.
+If we want to read more about Shared preferences on Android please visit [Shared preferences documentation](https://developer.android.com/guide/topics/data/data-storage.html#pref) on Android developers website.
 
 ## Example
 
@@ -81,7 +81,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  // This widget is the root of our application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## Testing support
 
-You can populate SharedPreferences with initial values in your tests by running this code:
+We can populate SharedPreferences with initial values in our tests by running this code:
 
 ```dart
 const MethodChannel('plugins.flutter.io/shared_preferences')
