@@ -182,3 +182,5 @@ class MessageItem implements ListItem {
   MessageItem(this.sender, this.body);
 }
 ```
+
+![Mixed List Demo](/images/cookbook/mixed-list.png)

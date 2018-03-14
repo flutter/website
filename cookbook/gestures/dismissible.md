@@ -9,13 +9,13 @@ we're writing an email app, we might want to allow our users to swipe away email
 messages in a list. When they do, we'll want to move the item from the Inbox to 
 the Trash.
 
-Flutter makes this task easy by providing the [`Dismissable`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
+Flutter makes this task easy by providing the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
 Widget.
 
 ## Directions
 
   1. Create List of Items
-  2. Wrap each item in a `Dismissable` Widget
+  2. Wrap each item in a `Dismissible` Widget
   3. Provide "Leave Behind" indicators  
 
 ## 1. Create List of Items
@@ -59,7 +59,7 @@ database.
 
 This is where the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
 Widget comes into play! In our example, we'll update our `itemBuilder` function 
-to return a `Dismissable` Widget.
+to return a `Dismissible` Widget.
 
 ```dart
 new Dismissible(
@@ -87,7 +87,7 @@ not give them a visual indication of what happens when they do. To provide a cue
 that we're removing items, we'll display a "Leave Behind" indicator as they 
 swipe the item off the screen. In this case, a red background!
 
-For this purpose, we'll provide a `background` parameter to the `Dismissable`.  
+For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 
 ```dart
 new Dismissible(
@@ -159,3 +159,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Dismissible Demo](/images/cookbook/dismissible.gif)
