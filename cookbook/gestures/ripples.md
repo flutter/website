@@ -85,3 +85,5 @@ class MyButton extends StatelessWidget {
   }
 }
 ```
+
+![Ripples Demo](/images/cookbook/ripples.gif)

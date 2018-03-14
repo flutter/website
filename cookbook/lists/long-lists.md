@@ -86,3 +86,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Long Lists Demo](/images/cookbook/long-lists.gif)

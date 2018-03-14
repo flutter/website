@@ -65,3 +65,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Fading In Image Demo](/images/cookbook/fading-in-images.gif)

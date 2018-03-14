@@ -266,3 +266,5 @@ class SelectionScreen extends StatelessWidget {
   }
 }
 ```
+
+![Returning Data Demo](/images/cookbook/returning-data.gif)
