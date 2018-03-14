@@ -36,8 +36,15 @@ problems.
 * TOC Placeholder
 {:toc}
 
-## Diagnosing jank
+## Diagnosing performance problems
 
+To diagnose an app with performance problems, you'll enable
+the performance overlay to look at the UI and GPU threads. Before
+you begin, you want to make sure that you're running in profile mode,
+and that you're not using an emulator. For best results, you might
+choose the slowest device that your users might use.
+
+{% comment %}
 <div class="whats-the-point" markdown="1">
 
 <b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
@@ -48,6 +55,7 @@ problems.
 * Start by enabling the performance overlay.
 
 </div>
+{% endcomment %}
 
 ### Connect to a physical device
 
@@ -113,7 +121,8 @@ The performance overlay displays statistics in two graphs
 that show where time is being spent in your app.
 If the UI is janky (skipping frames), these graphs help you figure out why.
 The graphs display on top of your running app, but they aren’t drawn
-like a normal widget&mdash;the Flutter engine itself paints the overlay.
+like a normal widget&mdash;the Flutter engine itself paints the overlay
+and only minimally impacts performance.
 Each graph represents the last 300 frames for that thread.
 
 This section describes how to enable the
@@ -306,7 +315,7 @@ the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more difficult for
 the GPU.  They may involve unnecessary calls to
-[saveLayer](https://docs.flutter.io/flutter/dart-ui/Canvas/saveLayer.html),
+[`saveLayer`](https://docs.flutter.io/flutter/dart-ui/Canvas/saveLayer.html),
 intersecting opacities with multiple objects, and clips or shadows in specific
 situations.
 
@@ -326,15 +335,19 @@ Maybe there's an
 alternative way of drawing the scene that doesn't use clipping. For example,
 overlay opaque corners onto a square instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise manipluated,
-maybe a RepaintBoundary can help.
+maybe a
+[RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
+can help.
 
 #### Checking for offscreen layers
 
-The `saveLayer` method is one of the most expensive methods in the Flutter
+The
+[`saveLayer`](https://docs.flutter.io/flutter/dart-ui/Canvas/saveLayer.html)
+method is one of the most expensive methods in the Flutter
 framework.  It’s useful when applying post-processing to the scene,
 but it can slow your app and should be avoided if you don’t need it.
 Even if you don’t call `saveLayer` explicitly, implicit calls may happen
-on your behalf. You can check whether your scene is using saveLayer with the
+on your behalf. You can check whether your scene is using `saveLayer` with the
 [PerformanceOverlayLayer.checkerboardOffscreenLayers](https://docs.flutter.io/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html)
 switch.
 
@@ -365,6 +378,10 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 * Can I apply the same effect to an individual element instead of a group?
 
 #### Checking for non-cached images
+
+Caching an image with
+[RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
+is good, _when it makes sense_.
 
 One of the most expensive operations, from a resource perspective, is
 rendering a texture using an image file. First, the compressed image is
