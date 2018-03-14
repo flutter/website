@@ -21,8 +21,8 @@ dependencies:
 
 ## Saving data
 
-To persist key-value data, we can use `SharedPreferences` class.
-For saving data we call `set` method. Note that data is persisted asynchronously. If we want to get notified when data is saved use `commit()` function. 
+To persist key-value data, we can use the `SharedPreferences` class.
+For saving data we call the `set` method. Note that data is persisted asynchronously. If we want to get notified when data is saved use the `commit()` function. 
 
 ```dart
 // obtain shared preferences 
@@ -41,7 +41,7 @@ SharedPreferences prefs = await SharedPreferences.getInstance();
 int counter = (prefs.getInt('counter') ?? 0) + 1;
 ```
 
-In example above we load data from the `counter` key, if it not exists, `0` is returned. 
+In example above we load data from the `counter` key, if it does not exists, `0` is returned. 
 
 
 ## Removing data
@@ -166,4 +166,4 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
   });
 ```
 
-Code above should be placed inside test file under `test` folder.
+The code above should be placed inside test file under `test` folder.
