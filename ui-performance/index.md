@@ -189,7 +189,7 @@ You can toggle display of the performance overlay as follows:
 * From the command line
 * Programmatically
 
-#### Flutter Inspector
+#### From the Flutter Inspector
 
 The easiest way to enable the PerformanceOverlay widget is by enabling it
 in the Flutter Inspector, which is available through the Flutter plugin
@@ -203,22 +203,20 @@ In Android Studio and IntelliJ IDEA:
 
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)<br>
 
-The Flutter Inspector is available in the VS Code, Android Studio,
-and IntelliJ plugins to the Flutter Inspector,
-but its UI may change as it continues to evolve.
-Learn more about what the inspector can do in the
+The Flutter Inspector is available in Android Studio and IntelliJ.
+Learn more about what the Inspector can do in the
 [Flutter Widget Inspector](/inspector/) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.
 
-In VS Code:
+#### In VS Code
 
 1. Select **View > Command Palette…** to bring up the command palette.
 1. In the text field, enter "performance" and select
    **Toggle Performance Overlay** from the list that pops up.
    If this command isn’t available, make sure that that the app is running.
 
-#### Command line
+#### From the Command line
 
 Toggle the performance overlay using the **P** key from the command line.
 
@@ -363,7 +361,6 @@ objects with opacities that are rendered using `saveLayer`. In this case,
 it's probably more performant to apply an opacity to each individual widget,
 rather than a parent widget higher up in the widget tree. The same goes for
 other potentially expensive operations, such as clipping or shadows.
-
 
 <aside class="alert alert-info" markdown="1">
 **Note:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
