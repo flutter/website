@@ -49,4 +49,5 @@ reference to help you build up an application.
 
 ## Persistence
 
+  * [Storing key-value data on disk](/cookbook/persistence/key-value)
   * [Reading and Writing Files](/cookbook/persistence/reading-writing-files/)
