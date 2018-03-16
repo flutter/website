@@ -5,12 +5,14 @@ permalink: /cookbook/
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems 
-while writing Flutter apps. Each recipe is self-contained and can be used as 
+while writing Flutter apps. Each recipe is self-contained and can be used as a
 reference to help you build up an application.
 
-## Design basics
+## Material Design basics
 
   * [Using Themes to share colors and font styles](/cookbook/design/themes/)
+  * [Displaying SnackBars](/cookbook/design/snackbars/)
+  * [Working with Tabs](/cookbook/design/tabs/)
   
 ## Images
 
@@ -37,6 +39,7 @@ reference to help you build up an application.
   * [Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
   * [Send data to a new screen](/cookbook/navigation/passing-data/)
   * [Return data from a screen](/cookbook/navigation/returning-data/)
+  * [Animating a Widget across screens](/cookbook/navigation/hero-animations/)
 
 ## Networking
 
@@ -47,3 +50,4 @@ reference to help you build up an application.
 ## Persistence
 
   * [Storing key-value data on disk](/cookbook/persistence/key-value)
+  * [Reading and Writing Files](/cookbook/persistence/reading-writing-files/)

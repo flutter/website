@@ -533,7 +533,7 @@ plugin enables you to run Dart code in the background, even when your Flutter
 app is not in the foreground.
 
 On iOS we currently do not support this capability. Please keep an eye on [bug
-6192] (https://github.com/flutter/flutter/issues/6192) for updates.
+6192](https://github.com/flutter/flutter/issues/6192) for updates.
 
 ### Can I use JSON/XML/protobuffers/etc with Flutter?
 

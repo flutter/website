@@ -64,3 +64,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Network Image Demo](/images/cookbook/network-image.png)

@@ -150,7 +150,7 @@ class MyApp extends StatelessWidget {
        which is short hand used for one-line functions or methods.
   </li>
   <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, most everything is a widget, including
+       widget. In Flutter, almost everything is a widget, including
        alignment, padding, and layout.
   </li>
   <li markdown="1"> The Scaffold widget, from the Material library,
@@ -911,7 +911,7 @@ Add the highlighted code below:
 
 <p class="h2-like">Problems?</p>
 
-    If your app is not running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)
