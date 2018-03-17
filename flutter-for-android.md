@@ -386,7 +386,7 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: new CustomPaint(painter: new SignaturePainter(_points)),
+      child: new CustomPaint(painter: new SignaturePainter(_points), size: Size.infinite),
     );
   }
 }
