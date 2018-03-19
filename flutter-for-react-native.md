@@ -1567,11 +1567,11 @@ _getIPAddress = () => {
 };
 {% endprettify %}
 
-Similar flow is followed in Flutter but it uses the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html) core HTTP support, so to create an HTTP Client we need to add an import.
+A similar flow is followed in Flutter but it uses the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html) core HTTP support, so to create an HTTP Client we need to add an import.
 
 <!-- skip -->
 {% prettify dart %}
-import 'package:flutter/services.dart';
+import 'dart:io';
 {% endprettify %}
 
 The client supports HTTP operations, such as GET, POST, PUT, DELETE.
@@ -1579,11 +1579,13 @@ The client supports HTTP operations, such as GET, POST, PUT, DELETE.
 <!-- skip -->
 {% prettify dart %}
 // Flutter
-final url = 'https://httpbin.org/ip';
-final httpClient = createHttpClient();
+final url = new Uri.https('httpbin.org', 'ip');
+final httpClient = new HttpClient();
 _getIPAddress() async {
-  var response = await httpClient.get(url);
-  String ip = JSON.decode(response.body)['origin'];
+  var request = await httpClient.getUrl(url);
+  var response = await request.close();
+  var responseBody = await response.transform(UTF8.decoder).join();
+  String ip = JSON.decode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
