@@ -1954,8 +1954,8 @@ A popular community plugin to access the camera is
 
 ## How do I log in with Facebook
 
-To access Facebook Connect functionality you can use
-[https://pub.dartlang.org/packages/flutter_facebook_connect](https://pub.dartlang.org/packages/flutter_facebook_connect) .
+To Login with Facebook you can use
+[https://pub.dartlang.org/packages/flutter_facebook_login](https://pub.dartlang.org/packages/flutter_facebook_login) .
 
 ## How do I build my own custom native integrations
 
