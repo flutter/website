@@ -1073,7 +1073,7 @@ The `MyStatefulWidget` class manages its own state, so it overrides `createState
 <!-- skip -->
 {% prettify dart %}
 class MyStatefulWidget extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyStatefulWidget({Key key, this.title}) : super(key: key);
   final String title;
   
   @override
