@@ -42,7 +42,7 @@ some of the most common layout widgets are covered.
   * [Nesting rows and columns](#nesting)
 * [Common layout widgets](#common-layout-widgets)
   * [Standard widgets](#standard-widgets)
-  * [Material widgets](#material-widgets)
+  * [Material Components](#material-components)
 * [Resources](#resources)
 
 <a name="building"></a>
@@ -56,9 +56,8 @@ start with [Flutter's approach to layout](#approach).
 
 First, get the code:
 
-* Make sure you've [set up](/setup/) your environment.
-* [Create a basic Flutter
-  app](/getting-started/#creating-your-first-flutter-app).
+* Make sure you've [set up](/get-started/install/) your environment.
+* [Create a basic Flutter app](/get-started/test-drive/#create-app).
 
 Next, add the image to the example:
 
@@ -468,7 +467,7 @@ the children should occupy.
 * To display the widget on the device, add the layout widget to the app widget.
 * It's easiest to use
   [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html),
-  a widget from the material library, which provides a default banner,
+  a widget from the Material Components library, which provides a default banner,
   background color, and has API for adding drawers, snack bars,
   and bottom sheets.
 * If you prefer, you can build an app that only uses standard widgets
@@ -552,7 +551,7 @@ new Center(
    method. Declaring the widget in the app's build method displays the widget
    on the device.
 
-   For a material app, you can add the Center widget directly to the
+   For a Material app, you can add the Center widget directly to the
   `body` property for the home page.
 
 <!-- code/layout/hello-world/main.dart -->
@@ -575,27 +574,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
 <aside class="alert alert-info" markdown="1">
 **Note:**
-The material library implements widgets that follow
+The Material Components library implements widgets that follow
 [Material Design principles](https://material.io/guidelines/).
 When designing your UI, you can exclusively use widgets from the standard
 [widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
-or you can use widgets from the [material
-library](https://docs.flutter.io/flutter/material/material-library.html).
-You can mix widgets from both libraries (resulting in a material app),
+or you can use widgets from [Material Components](https://docs.flutter.io/flutter/material/material-library.html).
+You can mix widgets from both libraries,
 you can customize existing widgets,
 or you can build your own set of custom widgets.
 </aside>
 
-For a non-material app, you can add the Center widget to the app's `build()`
+For a non-Material app, you can add the Center widget to the app's `build()`
 method:
 
 <!-- code/layout/widgets-only/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-// This app doesn't use any material widgets, such as Scaffold.
+// This app doesn't use any Material Components, such as Scaffold.
 // Normally, an app that doesn't use Scaffold has a black background
 // and the default text color is black. This app changes its background
-// to white and its text color to dark grey to mimic a material app.
+// to white and its text color to dark grey to mimic a Material app.
 import 'package:flutter/material.dart';
 
 void main() {
@@ -609,6 +607,7 @@ class MyApp extends StatelessWidget {
       decoration: new BoxDecoration(color: Colors.white),
       child: new Center(
         child: new Text('Hello World',
+            textDirection: TextDirection.ltr,
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
       ),
     );
@@ -616,10 +615,10 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-Note that, by default, the non-material app doesn't include an AppBar, title,
-or background color. If you want these features in a non-material app,
+Note that, by default, the non-Material app doesn't include an AppBar, title,
+or background color. If you want these features in a non-Material app,
 you have to build them yourself. This app changes the background color to
-white and the text to dark grey to mimic a material app.
+white and the text to dark grey to mimic a Material app.
 
 </li>
 
@@ -629,7 +628,7 @@ That's it! When you run the app, you should see:
 
 <img src="images/hello-world.png" style="border:1px solid black" alt="screenshot of a white background with grey 'Hello World' text.">
 
-**Dart code** (material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/hello-world/main.dart)<br>
+**Dart code** (Material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/hello-world/main.dart)<br>
 **Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/widgets-only/main.dart)
 
 <hr>
@@ -1103,9 +1102,9 @@ about similar widgets that might better suit your needs.
 The following widgets fall into two categories: standard widgets from the
 [widgets library,](https://docs.flutter.io/flutter/widgets/widgets-library.html)
 and specialized widgets from the
-[material library](https://docs.flutter.io/flutter/material/material-library.html).
-Any app can use the widgets library but only material apps can use the
-material library.
+[Material Components library](https://docs.flutter.io/flutter/material/material-library.html).
+Any app can use the widgets library but only Material apps can use the
+Material Components library.
 
 ### Standard widgets
 
@@ -1119,7 +1118,7 @@ material library.
 * [Stack](#stack)
 : Overlaps a widget on top of another.
 
-### Material widgets
+### Material Components
 
 * [Card](#card)
 : Organizes related info into a box with rounded corners and a drop shadow.
@@ -1482,7 +1481,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### Card
 
-A Card, from the material library, contains related nuggets of information
+A Card, from the Material Components library, contains related nuggets of information
 and can be composed from most any widget, but is often used with ListTile.
 Card has a single child, but its child can be a column, row, list, grid,
 or other widget that supports multiple children. By default, a Card shrinks
@@ -1499,7 +1498,7 @@ from the surface and causes the shadow to become more dispersed.
 For a list of supported elevation values, see
 [Elevation and
 Shadows](https://material.io/guidelines/material-design/elevation-shadows.html)
-in the [material guidelines](https://material.io/guidelines/).
+in the [Material guidelines](https://material.io/guidelines/).
 Specifying an unsupported value disables the drop shadow entirely.
 
 #### Card summary:
@@ -1511,7 +1510,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   widget that holds a list of children
 * Displayed with rounded corners and a drop shadow
 * A Card's content can't scroll
-* From the material library
+* From the Material Components library
 
 #### Card examples:
 
@@ -1586,7 +1585,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ### ListTile
 
 Use
-ListTile, a specialized row widget from the material library, for an easy
+ListTile, a specialized row widget from the Material Components library, for an easy
 way to create a row containing up to 3 lines of text and optional leading
 and trailing icons. ListTile is most commonly used in Card or ListView,
 but can be used elsewhere.
@@ -1595,7 +1594,7 @@ but can be used elsewhere.
 
 * A specialized row that contains up to 3 lines of text and optional icons
 * Less configurable than Row, but easier to use
-* From the material library
+* From the Material Components library
 
 #### ListTile examples:
 

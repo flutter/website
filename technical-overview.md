@@ -4,8 +4,6 @@ layout: page
 permalink: /technical-overview/
 ---
 
-{% include note.html content="_Flutter is an alpha, open-source project_. We hope you try it and send us [feedback](/support/)." %}
-
 ## What is Flutter?
 
 Flutter is a mobile app SDK for building high-performance, high-fidelity,
@@ -114,7 +112,7 @@ frequently than the lower layers. For the complete set of libraries that make up
 the Flutter's layered framework, see our [API documentation](https://docs.flutter.io).
 
 The goal of this design is to help you do more with less code.  For example,
-the material layer is built by composing basic widgets from the widgets layer,
+the Material layer is built by composing basic widgets from the widgets layer,
 and the widgets layer itself is built by orchestrating lower-level objects from
 the rendering layer.
 
@@ -187,9 +185,7 @@ to start developing and iterating.
 
 Next steps:
 
-1.  [Install the Flutter SDK](/setup/).
-1.  [Set up IntelliJ](/ide-setup/) (optional).
-1.  [Get started](/getting-started/) with the development cycle in a few simple steps.
+1.  [Follow the Flutter Getting Started guide](/get-started/).
 1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
     [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
 1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).

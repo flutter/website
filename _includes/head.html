@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.homepage == true %} {{site.homepage_title}} {% elsif page.title %}{{ page.title }}{% endif %}  - {{ site.title }}</title>
+  <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="{{ "/images/favicon.png" | prepend: site.baseurl  }}">
 
   <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">

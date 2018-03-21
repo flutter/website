@@ -36,7 +36,7 @@ that manages two stateless widgets.
   * [A mix-and-match approach](#mix-and-match)
 * [Other interactive widgets](#other-interactive-widgets)
   * [Standard widgets](#standard-widgets)
-  * [Material widgets](#material-widgets)
+  * [Material Components](#material-components)
 * [Resources](#resources)
 
 ## Getting ready
@@ -45,9 +45,8 @@ If you've already build the layout in
 [Building Layouts in Flutter](/tutorials/layout/),
 skip to the next section.
 
-* Make sure you've [set up](https://flutter.io/setup/) your environment.
-* [Create a basic Flutter
-  app.](https://flutter.io/getting-started/#creating-your-first-flutter-app)
+* Make sure you've [set up](/get-started/install/) your environment.
+* [Create a basic Flutter app.](/get-started/test-drive/#create-app)
 * Replace the `lib/main.dart` file with
   [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/main.dart)
   from GitHub.
@@ -352,10 +351,10 @@ and lists other available interactive widgets.
 
 </div>
 
-Who manage's the stateful widget's state? The widget itself? The parent widget?
+Who manages the stateful widget's state? The widget itself? The parent widget?
 Both? Another object? The answer is... it depends.
 There are several valid ways to make your widget interactive.
-You, as the widget designer, makes the decision based on how you expect your
+You, as the widget designer, make the decision based on how you expect your
 widget to be used. Here are the most common ways to manage state:
 
 * [The widget manages its own state](#self-managed)
@@ -776,7 +775,7 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 * [Form](https://docs.flutter.io/flutter/widgets/Form-class.html)
 * [FormField](https://docs.flutter.io/flutter/widgets/FormField-class.html)
 
-### Material widgets:
+### Material Components:
 
 * [Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html)
 * [DropdownButton](https://docs.flutter.io/flutter/material/DropdownButton-class.html)
@@ -804,7 +803,7 @@ The following resources may help when adding interactivity to your app.
   Reference documentation for all of the Flutter libraries.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
-  Demo app showcasing many Material Design widgets and other Flutter features.
+  Demo app showcasing many Material Components and other Flutter features.
 * [Flutter's Layered
    Design (video)](https://www.youtube.com/watch?v=dkyY9WCGMi0)<br>
    This video includes information about state and stateless widgets.

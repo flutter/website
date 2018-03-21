@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter Setup for Windows
+title: "Get Started: Install on Windows"
 permalink: /setup-windows/
 ---
 
@@ -15,7 +15,6 @@ permalink: /setup-windows/
 
 {% include setup/android-setup.md %}
 
-## Next steps
+## Next step
 
-Now, follow our [Getting Started guide](/getting-started/)
-to run your first Flutter app on Android.
+[Next step: Configure Editor](/get-started/editor/)

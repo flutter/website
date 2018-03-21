@@ -4,7 +4,7 @@ title: "AppBar Basics"
 permalink: /catalog/samples/basic-app-bar/
 ---
 
-A typcial AppBar with a title, actions, and an overflow dropdown menu.
+A typical AppBar with a title, actions, and an overflow dropdown menu.
 
 <p>
   <div class="container-fluid">
@@ -133,6 +133,6 @@ void main() {
 ```
 
 <h2>See also:</h2>
-- The "Layout-Structure" section of the material design specification:
+- The "Layout-Structure" section of the Material Design specification:
     <https://material.io/guidelines/layout/structure.html#structure-app-bar>
 - The source code in [examples/catalog/lib/basic_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/basic_app_bar.dart).

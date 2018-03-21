@@ -25,10 +25,10 @@ $primary-color:    #01579b;
 $nav-text-color:   white;
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    980px;
 
 $on-palm:          640px;
-$on-laptop:        800px;
+$on-laptop:        980px;
 
 
 
@@ -61,7 +61,8 @@ $on-laptop:        800px;
         "code_pre",
         "catalog",
         "homepage",
-        "responsive_embeds"
+        "responsive_embeds",
+        "tabs"
 ;
 
 aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
