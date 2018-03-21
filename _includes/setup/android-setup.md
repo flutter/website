@@ -3,7 +3,7 @@
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Note:**
 Flutter relies on a full installation of Android Studio to supply
-it's Android platform dependencies. However, you can write your
+its Android platform dependencies. However, you can write your
 Flutter apps in a number of editors; a later step will discuss that.
 </aside>
 
