@@ -66,9 +66,10 @@ function updateTable(releases, os) {
     releasesForChannel.forEach(function (release, index) {
       // If this is the first row after the cut-off, insert the "Show more..." link.
       if (index === releasesToShow) {
-        var showAll = $("<a />").text("Show all...").attr("href", "#").click(function () {
+        var showAll = $("<a />").text("Show all...").attr("href", "#").click(function (event) {
           $(this).closest("table").removeClass("collapsed");
           $(this).closest("tr").remove();
+          event.preventDefault();
         });
         $("<tr>").append($("<td colspan=\"3\"></td></tr>").append(showAll)).appendTo(table);
       }
