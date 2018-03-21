@@ -43,4 +43,5 @@ function setupToolsTabs(container, tabIdPrefix, storageName) {
 
 $(document).ready(function () {
   setupToolsTabs($("#tab-set-install"), "tab-install-", "selectedTool");
+  setupToolsTabs($("#tab-set-os"), "tab-os-", "selectedOS");
 });
