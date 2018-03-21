@@ -5,7 +5,7 @@ title: Flutter SDK Archive
 permalink: /sdk-archive/
 ---
 
-The Beta channel contains the most stable known Flutter builds. See [Flutter’s
+The Beta channel contains the most stable Flutter builds. See [Flutter’s
 channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels)
 for details.
 
@@ -20,7 +20,7 @@ for details.
 ## Master channel
 
 Installation bundles are not available for master. However, you can get the SDK
-from directly from our GitHub repo by git closing the master channel (as
+directly from our GitHub repo by 'git cloning' the master channel (as
 specified by -b master), and then trigger a download of the SDK dependencies:
 
 ```terminal
