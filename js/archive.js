@@ -2,7 +2,7 @@
 var releasesToShow = 5;
 
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
-var fetchFlutterReleases = function (os, callback) {
+var fetchFlutterReleases = function (os, callback, errorCallback) {
   // OS: windows, macos, linux
   var url = "https://storage.googleapis.com/flutter_infra/releases/releases_" + os + ".json";
   $.ajax({
@@ -13,7 +13,7 @@ var fetchFlutterReleases = function (os, callback) {
       callback(data, os);
     },
     error: function (xhr, textStatus, errorThrown) {
-      console.log(textStatus);
+      errorCallback(os);
     }
   })
 }
@@ -85,10 +85,15 @@ function updateTable(releases, os) {
   }
 }
 
+function updateTableFailed(os) {
+  var tab = $("#tab-os-" + os);
+  tab.find(".loading").text("Failed to load releases");
+}
+
 // Send requests to render the tables.
 $(function () {
-  fetchFlutterReleases("windows", updateTable);
-  fetchFlutterReleases("macos", updateTable);
-  fetchFlutterReleases("linux", updateTable);
+  fetchFlutterReleases("windows", updateTable, updateTableFailed);
+  fetchFlutterReleases("macos", updateTable, updateTableFailed);
+  fetchFlutterReleases("linux", updateTable, updateTableFailed);
 });
 
