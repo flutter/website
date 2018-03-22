@@ -12,7 +12,7 @@ for details.
 <div id="tab-set-os" class="sdk-archives">
 	<ul class="tabs__top-bar">
 		<li class="tab-link current" data-tab="tab-os-windows">Windows</li>
-		<li class="tab-link" data-tab="tab-os-macos">Mac OS</li>
+		<li class="tab-link" data-tab="tab-os-macos">macOS</li>
 		<li class="tab-link" data-tab="tab-os-linux">Linux</li>
 	</ul>
 	<div id="tab-os-windows" class="tabs__content current">
@@ -29,12 +29,12 @@ for details.
 		<section id="categories" markdown="1">{% include sdk-archive-master.md %}</section>
 	</div>
 	<div id="tab-os-macos" class="tabs__content">
-		<h2>Beta channel, Mac OS</h2>
+		<h2>Beta channel, macOS</h2>
 		<table id="downloads-macos-beta">
 			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
 			<tr class="loading"><td colspan="3">Loading...</td></tr>
 		</table><br/>
-		<h2>Dev channel, Mac OS</h2>
+		<h2>Dev channel, macOS</h2>
 		<table id="downloads-macos-dev">
 			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
 			<tr class="loading"><td colspan="3">Loading...</td></tr>
