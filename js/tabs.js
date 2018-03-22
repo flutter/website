@@ -16,9 +16,19 @@ function setupToolsTabs(container, tabIdPrefix, storageName) {
   }
 
   tabs.click(function () {
-    clearTabsCurrent();
-
     var tab_id = $(this).attr('data-tab');
+    var tab_href = $(this).attr('data-tab-href');
+
+    if (tab_href) {
+      location.href = tab_href;
+      return;
+    }
+
+    if (!$("#" + tab_id).length) {
+      return;
+    }
+
+    clearTabsCurrent();
 
     $(this).addClass('current');
     $("#" + tab_id).addClass('current');
