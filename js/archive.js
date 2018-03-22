@@ -93,8 +93,10 @@ function updateTableFailed(os) {
 
 // Send requests to render the tables.
 $(function () {
-  fetchFlutterReleases("windows", updateTable, updateTableFailed);
-  fetchFlutterReleases("macos", updateTable, updateTableFailed);
-  fetchFlutterReleases("linux", updateTable, updateTableFailed);
+  if ($(".sdk-archives").length) {
+    fetchFlutterReleases("windows", updateTable, updateTableFailed);
+    fetchFlutterReleases("macos", updateTable, updateTableFailed);
+    fetchFlutterReleases("linux", updateTable, updateTableFailed);
+  }
 });
 
