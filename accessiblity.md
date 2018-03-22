@@ -14,20 +14,20 @@ motor impairment.
 
 # Flutter's accessibility support
 
-Flutter supports three components of accessibility support:
+Flutter supports three components for accessibility support:
 
-* **[Large fonts](#large-fonts)**: Render text widgets with user specified font
+* **[Large fonts](#large-fonts)**: Render text widgets with user-specified font
   font sizes
 * **[Screen readers](#screen-reader)**: Communicate spoken feedback about UI
   contents
-* **[High contrast](#high-contrast)**: Render widgets with colors that have
+* **[Sufficient contrast](#sufficient-contrast)**: Render widgets with colors that have
   sufficient contrast
 
 ## Large fonts {#large-fonts}
 
-Both Android and iOS contain system settings for configure the desired font
+Both Android and iOS contain system settings to configure the desired font
 sizes used by apps. Flutter text widgets respect this OS setting when
-determining fint font sizes.
+determining font sizes.
 
 ### Tips for developers
 
@@ -48,24 +48,22 @@ specified in Android accessibility settings.
 
 ## Screen readers {#screen-reader}
 
-Screen readers ([TalkBack][talkback], [VoiceOver][voiceover]) visually impaired
-users can use a screen reader to get spoken feedback about the contents of the
-screen.
+Screen readers ([TalkBack][talkback], [VoiceOver][voiceover]) enable visually
+impaired users to get spoken feedback about the contents of the screen.
 
 ### Tips for developers
 
-To enable screen readers you as a developer must annotate the widget
+To enable screen readers, you, as a developer must annotate the widget
 tree with descriptions using the [Semantics widget][semanticswidget].
-
 
 [talkback]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [voiceover]: https://www.apple.com/lae/accessibility/iphone/vision/
 [semanticswidget]: https://docs.flutter.io/flutter/widgets/Semantics-class.html
 
-## High contract {#high-contrast}
+## Sufficient contract {#sufficient-contrast}
 
 Sufficient color contrast makes text and images easier to read. Along with
-benefiting users with various visual impairments, sufficient color contrast
+benefitting users with various visual impairments, sufficient color contrast
 helps all users when viewing an interface on devices in extreme lighting
 conditions, such as when exposed to direct sunlight or on a display with low
 brightness.
@@ -80,4 +78,5 @@ The [W3C recommends](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-con
 
 Make sure any images you include have sufficient contrast.
 
-When specifying colors on widgets, make sure sufficient contrast is used.
+When specifying colors on widgets, make sure sufficient contrast is used between
+foreground and background color selections.
