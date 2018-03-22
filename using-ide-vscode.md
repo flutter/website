@@ -11,99 +11,98 @@ permalink: /using-ide-vscode/
 </ul>
 
 <div class="tabs__content current" markdown="1">
-The Flutter plugin provides a fully integrated development experience in the
-Android Studio or IntelliJ IDEs.
+
+
+The Dart extension provides a fully integrated development experience in the
+Visual Studio Code editor.
 
 * TOC Placeholder
 {:toc}
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor/) instructions to install
-the Dart and Flutter plugins.
+Please follow the [Editor Setup](/get-started/editor/#vscode) instructions to install
+the Dart extension.
 
-### Updating the plugins<a name="updating"/>
+### Updating the extension<a name="updating"/>
 
-Updates to the plugins will be shipped on a regular basis. You should get
-prompted in IntelliJ when an update is available.
+Updates to the extension will be shipped on a regular basis. By default, VS Code will
+automatically update extensions when updates are available.
 
-To check for updates manually:
+To install updates manually:
 
-1. Open preferences (**IntelliJ IDEA>Check for Updates...** on macOS,
-**Help>Check for Updates...** on Linux).
-1. If `dart` or `flutter` are listed, update them.
+1. Click on the Extensions button in the side bar
+1. If the Dart extension is shown with an available update, click the update button and then
+the reload button
 
 ## Creating projects
 
 ### Creating a new project
 
-To create a new Flutter IntelliJ project from the Flutter starter app template:
+To create a new Flutter project from the Flutter starter app template:
 
-1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
-**File>New>Project...** from the main IDE window.
-1. Select **Flutter** in the menu, and click **Next**.
-1. Enter your desired **Project name** and **Project location**.
-1. Click **Finish**.
+1. Open the Command Palette (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
+1. Select the **Flutter: New Project** command and press `Enter`.
+1. Enter your desired **Project name**.
+1. Select a **Project location**.
 
 ### Creating a new project from existing source code
 
-To create a new Flutter IntelliJ project containing existing Flutter source code
+To open a Flutter project containing existing Flutter source code
 files:
 
-1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
-**File>New>Project...** from the main IDE window.
-  - **Note**: Do *not* use the **New>Project from existing sources...** option for Flutter projects.
-1. Select **Flutter** in the menu, and click **Next**.
-1. Under **Project location** enter, or browse to, the directory holding your
-existing Flutter source code files.
-1. Click **Finish**.
+1. Click **File>Open...** from the main IDE window.
+1. Browse to the directory holding your existing Flutter source code files.
+1. Click **Open**.
 
 ## Editing code, and viewing code problems
 
-The Dart plugin performs code analysis that enables:
+The Dart extension performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Navigate>Declaration**), and finding type
-  usages (**Edit>Find>Find Usages**).
-* Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
-  Any analysis issues will be shows in the Dart Analysis pane:<br>
-  ![Dart Analysis pane](/images/intellij/dart-analysis.png)
+* Navigating to type declarations (**Go to Definition** or `F12`), and finding type
+  usages (**Find All References** or `Shift`+`F12`).
+* Viewing all current source code problems (**View>Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
+  Any analysis issues will be shows in the Problems pane:<br>
+  <img src="/images/vscode/problems.png" style="width:660px;height:141px" alt="Problems pane" />
 
 ## Running and Debugging
 
-Running and Debugging is controlled from the main toolbar:
+Start debugging by clicking **Debug>Start Debugging** from the main IDE window or press `F5`.
 
-![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+### Selecting a target device
 
-### Selecting a target
+When a Flutter project is open in VS Code, you should see a set of Flutter
+specific entries in the status bar, including a Flutter SDK version and a
+select device (or the message **No Devices**).
 
-When a Flutter project is open in IntelliJ, you should see a set of Flutter
-specific buttons on the right-hand side of the toolbar.
+*Note*: If you do not see a Flutter version number or device info your project may not have been detected
+as a Flutter project. Please ensure the folder that contains your `pubspec.yaml` is inside a VS Code **Workspace Folder**
 
-*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
-has not been able to discover any connected iOS or Android devices or simulators.
-You need to connect a device, or start a simulator, to proceed.
+*Note*: If the status bar reads **No Devices** Flutter has not been able to discover any connected
+iOS or Android devices or simulators. You need to connect a device, or start a simulator, to proceed.
 
-1. Locate the **Flutter Target Selector** drop-down button. This will show a
- list of available targets. Select the target you want your app to started on.
-* When you connect devices, or start simulators, additional entries will appear.
+The Dart extension will automatically select the last device connected, however if you have multiple
+devices/simulators connected you can click on the device in the status bar to be presented with a pick-list
+at the top of the screen to allow you to select the device to use for running/debugging.
 
 ### Run app without breakpoints
 
-1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
-* The bottom **Run** pane will show logs output:<br>
-![Log pane](/images/intellij/log.png)
+1. Click **Debug>Start Without Debugging** in main IDE window or press `Ctrl`+`F5`.
+* The status bar will turn orange to show you are in a debug session
+* The bottom **Debug Console** will show output:<br>
+<img src="/images/vscode/debug_console.png" style="width:490px;height:208px" alt="Debug Console" />
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. Click the **Debug icon** in the toolbar, or invoke **Run>Debug**.
-* The bottom **Debugger** pane will show Stack Frames and Variables.
-* The bottom **Console** pane will show detailed logs output.
+1. CClick **Debug>Start Debugging** in main IDE window or press `F5`.
+* The left **Debug Sidebar** will show Stack Frames and Variables.
+* The bottom **Debug Console** pane will show detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
-  click. the drop-down button to the right of the device selector, and select
-  **Edit configuration**.
+  click the cog at the top of the **Debug Sidebar** to create a `launch.json`
+  file and customise values.
 
 ## Fast edit and refresh development cycle
 
@@ -115,38 +114,16 @@ of your changes almost instantly with the 'hot reload' feature. See
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with 'Debug', and then open the Flutter
-inspector tool window using 'View > Tool Windows > Flutter Inspector'.
+During a debug session, several debugging commands will be added to the **Command Palette**, including:
 
-![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
-
-This offers many debugging tools; for details on these please see
-[Debugging Flutter Apps](https://flutter.io/debugging/).
-
-* 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
-  [Flutter Inspector](/inspector/).
-
-* 'Toggle Debug Paint': Add visual debugging hints to the rendering displaying
-   borders, padding, alignment, and spacers.
-
-* 'Toggle Platform Mode': Toggle between rendering for Android or iOS.
-
-* 'Toggle Performance Overlay': Show performance graphs for the GPU & CPU threads.
-
-* 'Open Timeline View': Analyze activity of the application as it runs.
-
-* 'Open Observatory': A profiler for Dart applications.
-
-Also available in the additional actions menu:
-
-* 'Show Paint Baselines': Causes each RenderBox to paint a line at each of its
+* 'Toggle Baseline Painting': Causes each RenderBox to paint a line at each of its
   baselines.
 
-* 'Enable Repaint Rainbow': Show rotating colors on layers when repainting.
+* 'Toggle Repaint Rainbow': Show rotating colors on layers when repainting.
 
-* 'Enable Slow Animations': Slow down animations to enable visual inspection.
+* 'Toggle Slow Animations': Slow down animations to enable visual inspection.
 
-* 'Hide Slow Mode Banner': Hide the 'slow mode' banner even when running a
+* 'Toggle Slow-Mode Banner': Hide the 'slow mode' banner even when running a
   debug build.
 
 
@@ -158,9 +135,7 @@ html-based UI. For details see the [Observatory page](https://dart-lang.github.i
 To open Observatory:
 
 1. Run your app in debug mode.
-1. Select the 'open observatory' action from the Debug panel (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
-
-![Debugging panel](/images/intellij/debug-panel.png)
+1. Run the **Open Observatory** command from the **Command Palette**.
 
 ## Editing tips for Flutter code
 
@@ -169,13 +144,13 @@ To open Observatory:
 Assists are code changes related to a certain code identifier. A number of these
 are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
+the lightbulb, or by using the keyboard shortcut `Ctrl`+`Enter`, as illustrated
 here:
 
-![IntelliJ editing assists](/images/intellij/assists.gif)
+<img src="/images/vscode/assists.png" style="width:467px;height:234px" alt="Code Assists" />
 
 Quick Fixes are similar, only they are shown with a piece of code has an error and they
-can assist in correcting it. They are indicated with a red lightbulb.
+can assist in correcting it.
 
 #### Wrap with new widget assist
 This can be used when you have a widget that you want to wrap in a surrounding widget,
@@ -188,15 +163,15 @@ individual widget.
 #### Convert child to children assist
 Changes a child argument to a children argument, and wraps the argument value in a list.
 
-### Live Templates
+### Snippets
 
-Live templates can be used to speed up entering typical code structures. They
-are invoked by typing their 'prefix', and then selecting it in the code
+Snippets can be used to speed up entering typical code structures. They
+are invoked by typing their 'prefix', and then selecting from the code
 completion window:
 
-![IntelliJ live templates](/images/intellij/templates.gif)
+<img src="/images/vscode/snippets.png" style="width:706px;height258px" alt="Snippets" />
 
-The Flutter plugin includes the following templates:
+The Dart extension includes the following snippets:
 
 * Prefix `stless`: Create a new subclass of `StatelessWidget`.
 * Prefix `stful`: Create a new subclass of `StatefulWidget` and it's associated
@@ -205,23 +180,20 @@ The Flutter plugin includes the following templates:
  associated State subclass including a field initialized with an
  `AnimationController`.
 
-You can also define custom templates in **Settings > Editor > Live Templates**.
+You can also define custom snippets by executing **Configure User Snippets** from
+the **Command Palette**.
 
-### IntelliJ keyboard shortcuts
+### Keyboard Shortcuts
 
 **Hot Reload**
 
-On Linux (IntelliJ keymaps _Default for XWin_) and Windows the keyboard shortcuts
-are `ctrl-alt-;` and `ctrl-\`.
+During a debug session clicking the **Restart** button on the **Debug Toolbar** or
+pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS) will perform a hot reload.
 
-On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `⌘-⌥-;`
-and `⌘-\`.
+Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts** command
+from the **Command Palette**.
 
-Keyboard mappings can be changed in IntelliJ Preferences/Settings: Select
-*Keymap*, then enter _flutter_ into the search box in the upper right corner.
-Right click the binding you want to change and _Add Keyboard Shortcut_.
-
-![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
+**Full Restart**
 
 ### 'Hot Reloads' vs 'Full Application Restarts'
 
@@ -235,48 +207,18 @@ types of code changes cannot be hot reloaded though:
 * The `main()` method of the app.
 
 For these changes you can fully restart your application, without having to end
-your debugging session:
-
-1. Don't click the Stop button; simply re-click the Run button (if in a run
-session) or Debug button (if in a debug session), or shift-click the 'hot
-reload' button.
-
-## Editing Android code in IntelliJ IDEA {#edit-android-code}
-
-To enable editing of Android code in IntelliJ IDEA, you need to configure the
-location of the Android SDK:
-
-1. In Preferences->Plugins, enable **Android Support** if you haven't already.
-1. Right-click the **android** folder in the Project view, and select **Open
-Module Settings**.
-1. In **Sources** tab, locate the **Language level** field, and select level '8'
-or later.
-1. In **Dependencies** tab, locate the **Module SDK** field, and select an
-Android SDK. If no SDK is listed, click **New...** and specify the location of
-the Android SDK. Make sure to select an Android SDK matching the one used by
-Flutter (as reported by `flutter doctor`).
-1. Click **OK**.
-
-## Tips and tricks
-
-Please checkout these 'cheat sheets':
-
-  * [Flutter IntelliJ cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-  * [Flutter IntelliJ cheat sheet, Windows & Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+your debugging session by running the **Flutter: Full Restart** command from the
+**Command Palette** or pressing `Ctrl`+`F5` will cause a full restart of the
+application.
 
 ## Troubleshooting
 
 ### Known issues and feedback
 
-Important known issues that may impact your experience are documented in the
-[Flutter plugin README](https://github.com/flutter/flutter-intellij/blob/master/README.md) file.
+All known bugs are tracked in the issue tracker:
 
-All known bugs are tracked in the issue trackers:
-
-  * Flutter plugin: [GitHub issue
-   tracker](https://github.com/flutter/flutter-intellij/issues).
-  * Dart plugin: [JetBrains
-   YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
+  * Dart extension: [GitHub issue
+   tracker](https://github.com/Dart-Code/Dart-Code/issues).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
 to filing new issues, please:
