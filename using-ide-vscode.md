@@ -21,7 +21,7 @@ Visual Studio Code editor.
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor/#vscode) instructions to install
+Please follow the [Editor Setup](/get-started/editor/) instructions to install
 the Dart extension.
 
 ### Updating the extension<a name="updating"/>
