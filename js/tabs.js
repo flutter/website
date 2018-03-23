@@ -1,7 +1,6 @@
-function setupToolsTabs() {
-  var tabIdPrefix = "tab-install-";
-  var tabs = $('.tabs__top-bar li');
-  var tabContents = $('.tabs__content');
+function setupToolsTabs(container, tabIdPrefix, storageName) {
+  var tabs = $('.tabs__top-bar li', container);
+  var tabContents = $('.tabs__content', container);
 
   function clearTabsCurrent() {
     tabs.removeClass('current');
@@ -32,16 +31,17 @@ function setupToolsTabs() {
 
     // Persist in local storage so we can pre-select around the site
     if (window.localStorage)
-      window.localStorage.setItem('selectedTool', selectedTool);
+      window.localStorage.setItem(storageName, selectedTool);
   });
 
   // If we have a tool in the url fragement, pre-select it
   if (location.hash && location.hash.length > 1)
     selectTool(location.hash.substr(1));
-  else if (window.localStorage && window.localStorage.getItem('selectedTool'))
-    selectTool(window.localStorage.getItem('selectedTool'));
+  else if (window.localStorage && window.localStorage.getItem(storageName))
+    selectTool(window.localStorage.getItem(storageName));
 }
 
 $(document).ready(function () {
-  setupToolsTabs();
+  setupToolsTabs($("#tab-set-install"), "tab-install-", "selectedTool");
+  setupToolsTabs($("#tab-set-os"), "tab-os-", "selectedOS");
 });
