@@ -18,42 +18,9 @@ var fetchFlutterReleases = function (os, callback, errorCallback) {
   })
 }
 
-function convertReleaseFormat(releases, os) {
-  // Convert releases into a format that's easier to work with:
-  // Old
-  // "1f3eb5034ff2372956620b2a9eb88683eee9495e": {
-  // 	"dev": {
-  // 		"release_date": "2018-02-27T00:26:37.058993Z",
-  // 		"version": "v0.1.6",
-  // 		"windows_archive": "dev/windows/flutter_windows_v0.1.6-dev.zip"
-  // 	}
-  // },
-  // New:
-  // {
-  //   hash: 1f3eb5034ff2372956620b2a9eb88683eee9495e,
-  //   channel: dev,
-  // 	 release_date: Date("2018-02-27T00:26:37.058993Z"),
-  // 	 version: "v0.1.6",
-  //   archive: "dev/windows/flutter_windows_v0.1.6-dev.zip"
-  // }
-  return Object.keys(releases.releases).map(function (hash) {
-    var release = releases.releases[hash];
-    var channel = Object.keys(release)[0];
-    return {
-      hash: hash,
-      channel: channel,
-      release_date: new Date(Date.parse(release[channel].release_date)),
-      version: release[channel].version,
-      archive: release[channel][os + "_archive"]
-    }
-  })
-}
-
 function updateTable(releases, os) {
   // Convert the data for easier parsing and sort.
-  var releaseData = convertReleaseFormat(releases, os).sort(function (r1, r2) {
-    return r2.release_date.getTime() - r1.release_date.getTime();
-  });
+  var releaseData = releases.releases;
 
   for (var channel in releases.current_release) {
     var table = $("#downloads-" + os + "-" + channel);
@@ -79,9 +46,10 @@ function updateTable(releases, os) {
       var row = $("<tr />").addClass(className).appendTo(table);
       var hashLabel = $("<span />").text(release.hash.substr(0, 7)).addClass("git-hash");
       var downloadLink = $("<a />").attr("href", url).text(release.version);
+      var date = new Date(Date.parse(release.release_date));
       $("<td />").append(downloadLink).appendTo(row);
       $("<td />").append(hashLabel).appendTo(row);
-      $("<td />").addClass("date").text(release.release_date.toLocaleDateString()).appendTo(row);
+      $("<td />").addClass("date").text(date.toLocaleDateString()).appendTo(row);
     });
   }
 }
