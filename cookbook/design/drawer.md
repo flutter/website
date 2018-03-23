@@ -52,8 +52,9 @@ new Scaffold(
 
 Now that we have a `Drawer` in place, we can add content to it! In this example, 
 we will use a [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html). 
-`ListView` is handy in this situation because it will allow users to scroll 
-through the drawer if the content takes up more space than the screen supports.
+While we could use a `Column` Widget, `ListView` is handy in this situation 
+because it will allow users to scroll through the drawer if the content takes up 
+more space than the screen supports.
 
 We will populate the `ListView` with a [`DrawerHeader`](https://docs.flutter.io/flutter/material/DrawerHeader-class.html) 
 and two [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html) 
@@ -98,8 +99,10 @@ new Drawer(
 
 After a user taps on an item, we often want to close the drawer. How can we 
 achieve this? Using the [Navigator](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
-When a user taps on an item, we can call `Navigator.pop(context)` to close the
-drawer.
+
+When a user opens the Drawer, Flutter will add the drawer to the navigation 
+stack under the hood. Therefore, to close the drawer, we can call 
+`Navigator.pop(context)`.  
 
 ```dart
 new ListTile(

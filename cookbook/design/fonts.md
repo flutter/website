@@ -45,7 +45,6 @@ We can do so by including a font definition in the `pubspec.yaml`.
 ```yaml
 flutter:
   fonts:
-    # 
     - family: Raleway
       fonts:
         - asset: fonts/Raleway-Regular.ttf
