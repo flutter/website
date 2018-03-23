@@ -681,10 +681,10 @@ Add the highlighted lines below:
     each row, but they are not yet interactive.
 </li>
 
-<li markdown="1"> Make the hearts tappable in the `_buildRow`
+<li markdown="1"> Make the name suggestion tiles tappable in the `_buildRow`
     function. If a word entry has already been added to favorites,
     tapping it again removes it from favorites.
-    When the heart has been tapped, the function calls
+    When a tile has been tapped, the function calls
     `setState()` to notify the framework that state has changed.
 
 Add the highlighted lines:
@@ -724,9 +724,9 @@ a call to the `build()` method for the State object, resulting in
 an update to the UI.
 </aside>
 
-Hot reload the app. You should be able to tap any row to favorite, or unfavorite,
-the entry. Note that tapping a row generates an implicit ink splash animation
-that emanates from the heart icon.
+Hot reload the app. You should be able to tap any tile to favorite, or unfavorite,
+the entry. Note that tapping a tile generates an implicit ink splash animation
+that emanates from wherever you tapped.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
