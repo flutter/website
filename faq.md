@@ -505,11 +505,7 @@ what you might need reflection/mirrors for – please let us know at
 Learn more about i18n and l10n in the
 [Flutter Internationalization Tutorial](/tutorials/internationalization/).
 
-Flutter has basic support for accessibility on iOS and Android, 
-though this feature is a work in progress.
-
-We encourage you to email flutter-dev@googlegroups.com with your 
-questions regarding these features.
+Learn more about a11y in the [accessibility documentation](/accessibility/).
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
