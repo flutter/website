@@ -11,6 +11,8 @@ permalink: /setup-windows/
 
 {% include setup/get-sdk-win.md %}
 
+{% include setup/doctor-win.md %}
+
 {% include setup/editor-setup.md %}
 
 {% include setup/android-setup.md %}

@@ -11,6 +11,8 @@ permalink: /setup-macos/
 
 {% include setup/get-sdk.md %} 
 
+{% include setup/doctor.md %}
+
 {% include setup/path-mac-linux.md %}
 
 {% include setup/editor-setup.md %}
