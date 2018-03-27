@@ -92,6 +92,16 @@
         "source": "/reading-writing-files/",
         "destination": "/cookbook/persistence/reading-writing-files/",
         "type": 301
+      },
+      {
+        "source": "/custom-fonts/",
+        "destination": "/cookbook/design/fonts/",
+        "type": 301
+      },
+      {
+        "source": "/routing-and-navigation/",
+        "destination": "/cookbook/navigation/navigation-basics/",
+        "type": 301
       }
     ]
   }

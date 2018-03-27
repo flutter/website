@@ -74,7 +74,7 @@ final snackBar = new SnackBar(
 
 Note: In this example, we'll show the SnackBar when a user taps on a button.
 For more information on working with user input, please see the 
-[Handling Gestures](http://localhost:4000/cookbook/#handling-gestures) section
+[Handling Gestures](/cookbook/#handling-gestures) section
 of the Cookbook.
 
 ```dart

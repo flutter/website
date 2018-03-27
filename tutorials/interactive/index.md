@@ -596,7 +596,7 @@ library](https://docs.flutter.io/flutter/foundation/foundation-library.html)
 [meta.dart](https://pub.dartlang.org/packages/meta) library):
 
 <pre>
-import 'package: flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 </pre>
 </aside>
 
