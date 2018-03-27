@@ -1,15 +1,11 @@
 ### Run flutter doctor
 
-Open a new Command Prompt or PowerShell window and run the following command to
-see if there  are any dependencies you need to install to complete the setup:
+In the Flutter Console, run the following command to
+see if there are any dependencies you need to install to complete the setup:
 
 {% commandline %}
 flutter doctor
 {% endcommandline %}
-
-Run this command in either a Command Prompt or PowerShell window. Currently, Flutter does
-not support third-party shells like Git Bash.
-{: .alert-warning}
 
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
@@ -24,9 +20,6 @@ For example:
     • Try re-installing or updating your Android SDK,
       visit https://flutter.io/setup/#android-setup for detailed instructions.
 </pre>
-
-The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
-itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
 You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
