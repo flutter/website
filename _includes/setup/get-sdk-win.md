@@ -12,6 +12,21 @@ You are now ready to run Flutter commands in the Flutter Console!
 
 To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
 
+### Update your path
+
+If you wish to run Flutter commands in the regular Windows command prompt, take
+these steps to add Flutter to the PATH environment variable:
+
+* Go to "Control Panel > User Accounts > User Accounts > Change my environment
+  variables"
+* Under "User variables" check if there is an entry called "Path":
+    * If the entry does exist, append the full path to `flutter\bin` using `;`
+      as a separator from existing values.
+    * If the entry does not exist, create a new user variable named `Path` with
+      the full path to `flutter\bin` as its value.
+
+Reboot Windows to fully apply this change.
+
 ### Run flutter doctor
 
 In the Flutter Console, run the following command to
