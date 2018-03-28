@@ -80,6 +80,10 @@ function updateDownloadLink(releases, os) {
   $(".download-latest-link-filename-" + os).text(archiveFilename);
 }
 
+function updateDownloadLinkFailed(os) {
+  $(".download-latest-link-" + os).text("(failed)");
+}
+
 // Send requests to render the tables.
 $(function () {
   if ($(".sdk-archives").length) {
@@ -88,10 +92,10 @@ $(function () {
     fetchFlutterReleases("linux", updateTable, updateTableFailed);
   }
   if ($(".download-latest-link-windows").length)
-    fetchFlutterReleases("windows", updateDownloadLink);
+    fetchFlutterReleases("windows", updateDownloadLink, updateDownloadLinkFailed);
   if ($(".download-latest-link-macos").length)
-    fetchFlutterReleases("macos", updateDownloadLink);
+    fetchFlutterReleases("macos", updateDownloadLink, updateDownloadLinkFailed);
   if ($(".download-latest-link-linux").length)
-    fetchFlutterReleases("linux", updateDownloadLink);
+    fetchFlutterReleases("linux", updateDownloadLink, updateDownloadLinkFailed);
 });
 
