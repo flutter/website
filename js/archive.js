@@ -69,11 +69,15 @@ function updateDownloadLink(releases, os) {
 
   var release = releasesForChannel[0];
   var linkSegments = release.archive.split("/");
-  var linkDisplay = linkSegments[linkSegments.length - 1]; // Just the filename part of url
+  var archiveFilename = linkSegments[linkSegments.length - 1]; // Just the filename part of url
   var downloadLink = $(".download-latest-link-" + os);
   downloadLink
-    .text(linkDisplay)
+    .text(archiveFilename)
     .attr("href", releases.base_url + "/" + release.archive);
+
+  // We have may other placeholders on the page that want to show the download filename, so
+  // update them.
+  $(".download-latest-link-filename-" + os).text(archiveFilename);
 }
 
 // Send requests to render the tables.

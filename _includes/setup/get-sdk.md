@@ -11,7 +11,11 @@ archive](/sdk-archive/) page.):
 1. Extract the file in the desired location, e.g.:
     {% commandline %}
     cd ~/development
-    unzip ~/Downloads/flutter_macos_v0.1.5-beta.zip
+{% if page.url contains "linux" %}
+    unzip ~/Downloads/<span class="download-latest-link-filename-linux">flutter_linux_v0.1.5-beta.tar.xz</span>
+{% else %}
+    unzip ~/Downloads/<span class="download-latest-link-filename-macos">flutter_macos_v0.1.5-beta.zip</span>
+{% endif %}
     {% endcommandline %}
 
 1. Add the `flutter` tool to your path:
