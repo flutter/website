@@ -12,7 +12,7 @@ archive](/sdk-archive/) page.):
     {% commandline %}
     cd ~/development
 {% if page.url contains "linux" %}
-    unzip ~/Downloads/<span class="download-latest-link-filename-linux">flutter_linux_xxx.tar.xz</span>
+    tar xf ~/Downloads/<span class="download-latest-link-filename-linux">flutter_linux_xxx.tar.xz</span>
 {% else %}
     unzip ~/Downloads/<span class="download-latest-link-filename-macos">flutter_macos_xxx.zip</span>
 {% endif %}
