@@ -46,7 +46,7 @@ class RadialExpansion extends StatelessWidget {
     Key key,
     this.maxRadius,
     this.child,
-  }) : clipRectSize = 2.0 * (maxRadius / math.SQRT2),
+  }) : clipRectSize = 2.0 * (maxRadius / math.sqrt2),
        super(key: key);
 
   final double maxRadius;
