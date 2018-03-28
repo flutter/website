@@ -40,9 +40,9 @@ Future<Post> fetchPost() async {
     'https://jsonplaceholder.typicode.com/posts/1',
     headers: {HttpHeaders.AUTHORIZATION: "Basic your_api_token_here"},
   );
-  final json = JSON.decode(response.body); 
-  
-  return new Post.fromJson(json); 
+  final json = json.decode(response.body);
+
+  return new Post.fromJson(json);
 }
 
 class Post {

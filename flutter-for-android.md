@@ -679,7 +679,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = JSON.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
@@ -755,7 +755,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }
@@ -782,7 +782,7 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = JSON.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
@@ -839,7 +839,7 @@ data back to the main thread to update your UI.
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(JSON.decode(response.body));
+      replyTo.send(json.decode(response.body));
     }
   }
 
@@ -966,7 +966,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(JSON.decode(response.body));
+      replyTo.send(json.decode(response.body));
     }
   }
 
@@ -1013,7 +1013,7 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }
@@ -1118,7 +1118,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }

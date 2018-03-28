@@ -83,13 +83,13 @@ we'll need to:
 ```dart
 Future<Post> fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = JSON.decode(response.body); 
-  
-  return new Post.fromJson(json); 
+  final json = json.decode(response.body);
+
+  return new Post.fromJson(json);
 }
 ```
 
-Hooray! Now we've got a function that we can call to fetch a Post from the 
+Hooray! Now we've got a function that we can call to fetch a Post from the
 internet!
 
 ## 3. Fetch and Display the data
@@ -134,7 +134,7 @@ import 'package:http/http.dart' as http;
 Future<Post> fetchPost() async {
   final response =
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = JSON.decode(response.body);
+  final json = json.decode(response.body);
 
   return new Post.fromJson(json);
 }
