@@ -3,12 +3,19 @@
 1. Download the following installation bundle to get the latest beta release of the
 Flutter SDK (for other release channels, and older builds, see the [SDK
 archive](/sdk-archive/) page.):
-    * [flutter_macos_v0.1.5-beta.zip](https://storage.googleapis.com/flutter_infra/releases/beta/macos/flutter_macos_v0.1.5-beta.zip)
-<br><br>
+{% if page.url contains "linux" %}
+    * [(loading...)](#){:.download-latest-link-linux}
+{% else %}
+    * [(loading...)](#){:.download-latest-link-macos}
+{% endif %}<br><br>
 1. Extract the file in the desired location, e.g.:
     {% commandline %}
     cd ~/development
-    unzip ~/Downloads/flutter_macos_v0.1.5-beta.zip
+{% if page.url contains "linux" %}
+    unzip ~/Downloads/<span class="download-latest-link-filename-linux">flutter_linux_xxx.tar.xz</span>
+{% else %}
+    unzip ~/Downloads/<span class="download-latest-link-filename-macos">flutter_macos_xxx.zip</span>
+{% endif %}
     {% endcommandline %}
 
 1. Add the `flutter` tool to your path:
