@@ -13,7 +13,8 @@ var fetchFlutterReleases = function (os, callback, errorCallback) {
       callback(data, os);
     },
     error: function (xhr, textStatus, errorThrown) {
-      errorCallback(os);
+      if (errorCallback)
+        errorCallback(os);
     }
   })
 }
