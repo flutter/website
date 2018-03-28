@@ -20,7 +20,6 @@ var fetchFlutterReleases = function (os, callback, errorCallback) {
 }
 
 function updateTable(releases, os) {
-  // Convert the data for easier parsing and sort.
   var releaseData = releases.releases;
 
   for (var channel in releases.current_release) {
