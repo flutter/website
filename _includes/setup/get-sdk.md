@@ -4,9 +4,9 @@
 Flutter SDK (for other release channels, and older builds, see the [SDK
 archive](/sdk-archive/) page.):
 {% if page.url contains "linux" %}
-    * [flutter_linux_v0.1.5-beta.tar.xz](https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.1.5-beta.tar.xz)
+    * [flutter_linux_v0.1.5-beta.tar.xz](https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.1.5-beta.tar.xz){:.download-latest-link-linux}
 {% else %}
-    * [flutter_macos_v0.1.5-beta.zip](https://storage.googleapis.com/flutter_infra/releases/beta/macos/flutter_macos_v0.1.5-beta.zip)
+    * [flutter_macos_v0.1.5-beta.zip](https://storage.googleapis.com/flutter_infra/releases/beta/macos/flutter_macos_v0.1.5-beta.zip){:.download-latest-link-macos}
 {% endif %}<br><br>
 1. Extract the file in the desired location, e.g.:
     {% commandline %}
