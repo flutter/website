@@ -50,7 +50,7 @@ get() async {
       'example.com', '/path1/path2', {'param1': '42', 'param2': 'foo'});
   var request = await httpClient.getUrl(uri);
   var response = await request.close();
-  var responseBody = await response.transform(UTF8.decoder).join();
+  var responseBody = await response.transform(utf8.decoder).join();
 }
 ```
 
@@ -66,7 +66,7 @@ To decode a simple JSON string and parse the response into a Map:
 
 <!-- skip -->
 ```dart
-Map data = JSON.decode(responseBody);
+Map data = json.decode(responseBody);
 // Assume the response body is something like: ['foo', { 'bar': 499 }]
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
@@ -76,7 +76,7 @@ Map, List, or List of Maps containing simple values, to the `encode` method:
 
 <!-- skip -->
 ```dart
-String encodedString = JSON.encode([1, 2, { 'a': null }]);
+String encodedString = json.encode([1, 2, { 'a': null }]);
 ```
 
 ## Example: decoding JSON from HTTPS GET
@@ -129,8 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
       var request = await httpClient.getUrl(Uri.parse(url));
       var response = await request.close();
       if (response.statusCode == HttpStatus.OK) {
-        var json = await response.transform(UTF8.decoder).join();
-        var data = JSON.decode(json);
+        var jsonString = await response.transform(utf8.decoder).join();
+        var data = json.decode(jsonString);
         result = data['origin'];
       } else {
         result =

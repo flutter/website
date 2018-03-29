@@ -189,7 +189,7 @@ Whereas Dart uses [`Future`](https://www.dartlang.org/tutorials/language/futures
 _getIPAddress() {
   final url = 'https://httpbin.org/ip';
   HttpRequest.request(url).then((value) {
-      print(JSON.decode(value.responseText)['origin']);
+      print(json.decode(value.responseText)['origin']);
   }).catchError((error) => print(error));
 }
 {% endprettify %}
@@ -222,7 +222,7 @@ Whereas in Dart, an `async` function returns a `Future`, and the body of the fun
 _getIPAddress() async {
   final url = 'https://httpbin.org/ip';
   var request = await HttpRequest.request(url);
-  String ip = JSON.decode(request.responseText)['origin'];
+  String ip = json.decode(request.responseText)['origin'];
   print(ip);
 }
 {% endprettify %}
@@ -1212,7 +1212,7 @@ In React Native, you would use the `setItem` and `getItem` functions of the `Asy
 <!-- skip -->
 {% prettify javascript %}
 // React Native
-await AsyncStorage.setItem( "counterkey", JSON.stringify(++this.state.counter));
+await AsyncStorage.setItem( "counterkey", json.stringify(++this.state.counter));
 AsyncStorage.getItem("counterkey").then(value => {
   if (value != null) {
     this.setState({ counter: value });
@@ -1584,8 +1584,8 @@ final httpClient = new HttpClient();
 _getIPAddress() async {
   var request = await httpClient.getUrl(url);
   var response = await request.close();
-  var responseBody = await response.transform(UTF8.decoder).join();
-  String ip = JSON.decode(responseBody)['origin'];
+  var responseBody = await response.transform(utf8.decoder).join();
+  String ip = json.decode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
