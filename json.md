@@ -31,7 +31,7 @@ lots of small errors.
 ### Use manual serialization for smaller projects
 
 Manual JSON serialization refers to using the built-in JSON decoder in
-`dart:convert`. It involves passing the raw JSON string to the `JSON.decode()`
+`dart:convert`. It involves passing the raw JSON string to the `json.decode()`
 method, and then looking up the values you need in the `Map<String, dynamic>`
 the method returns. It has no external dependencies or particular setup process,
 and it is good for quick proof of concepts.
@@ -115,18 +115,18 @@ look at both.
 
 By looking at [the dart:convert JSON
 documentation](https://api.dartlang.org/stable/1.24.3/dart-convert/JsonCodec-class.html),
-we see that we can decode the JSON by calling the `JSON.decode` method, with our
+we see that we can decode the JSON by calling the `json.decode` method, with our
 JSON string as the method argument.
 
 <!-- skip -->
 ```dart
-Map<String, dynamic> user = JSON.decode(json);
+Map<String, dynamic> user = json.decode(json);
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
 ```
 
-Unfortunately, `JSON.decode()` merely returns a `Map<String, dynamic>`, meaning
+Unfortunately, `json.decode()` merely returns a `Map<String, dynamic>`, meaning
 that we do not know the types of the values until runtime. With this approach,
 we lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Our code can
@@ -177,20 +177,20 @@ itself. With this new approach, we can deserialize a user quite easily.
 
 <!-- skip -->
 ```dart
-Map userMap = JSON.decode(json);
+Map userMap = json.decode(json);
 var user = new User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
 ```
 
-To serialize a user, we just pass the `User` object to the `JSON.encode` method.
-We don't need to call the `toJson` method here, since `JSON.encode` already does
+To serialize a user, we just pass the `User` object to the `json.encode` method.
+We don't need to call the `toJson` method here, since `json.encode` already does
 it for us.
 
 <!-- skip -->
 ```dart
-String json = JSON.encode(user);
+String json = json.encode(user);
 ```
 
 This way, the calling code does not have to worry about JSON serialization at
@@ -334,7 +334,7 @@ make any changes to our previous code.
 
 <!-- skip -->
 ```dart
-Map userMap = JSON.decode(json);
+Map userMap = json.decode(json);
 var user = new User.fromJson(userMap);
 ```
 
@@ -342,7 +342,7 @@ Same goes for serialization. The calling API is the same as before.
 
 <!-- skip -->
 ```dart
-String json = JSON.encode(user);
+String json = json.encode(user);
 ```
 
 With `json_serializable`, we can forget any manual JSON serialization in the
