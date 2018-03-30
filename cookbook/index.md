@@ -16,6 +16,7 @@ reference to help you build up an application.
   * [Using custom fonts](/cookbook/design/fonts/)
   * [Exporting fonts from a package](/cookbook/design/package-fonts/)
   * [Add a Drawer to a screen](/cookbook/design/drawer/)
+  * [Updating the UI based on orientation](/cookbook/design/orientation/)
   
 ## Images
 

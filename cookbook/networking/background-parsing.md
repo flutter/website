@@ -236,3 +236,5 @@ class PhotosList extends StatelessWidget {
   }
 }
 ```
+
+![Isolate Demo](/images/cookbook/isolate.gif)
