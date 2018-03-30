@@ -53,6 +53,7 @@ reference to help you build up an application.
   * [Fetch data from the internet](/cookbook/networking/fetch-data/)
   * [Making authenticated requests](/cookbook/networking/authenticated-requests/)
   * [Working with WebSockets](/cookbook/networking/web-sockets/)
+  * [Parsing json in the background](/cookbook/networking/background-parsing/)
 
 ## Persistence
 
