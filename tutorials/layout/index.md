@@ -1124,7 +1124,7 @@ Material Components library.
 : Organizes related info into a box with rounded corners and a drop shadow.
 
 * [ListTile](#listtile)
-: Organizes up to 3 lines of text, and optional leading and training icons,
+: Organizes up to 3 lines of text, and optional leading and trailing icons,
   into a row.
 
 ### Container
