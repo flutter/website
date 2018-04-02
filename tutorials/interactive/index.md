@@ -59,7 +59,6 @@ skip to the next section.
 Once you have a connected and enabled device, or you've launched the [iOS
 simulator](/setup-macos/#set-up-the-ios-simulator) (part of the Flutter install),
 you are good to go!
-</aside>
 
 [Building Layouts for Flutter](https://flutter.io/tutorials/layout/)
 showed how to create the layout for the following screenshot.
