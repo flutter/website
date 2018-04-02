@@ -22,7 +22,7 @@ var httpClient = new HttpClient();
 ```
 
 The client supports common HTTP operations, such as [`GET`][get],
-[`POST`][post], [`PUT`][put], [`DELETE`][delete].  
+[`POST`][post], [`PUT`][put], [`DELETE`][delete].
 
 ## Dealing with asynchronousy
 
@@ -85,13 +85,13 @@ The following example shows how to make a RESTful style JSON request via an HTTP
 
 ```dart
 import 'dart:async';
-import 'dart:convert' show UTF8, JSON;
+import 'dart:convert' show utf8, json;
 import 'dart:io';
 
 Future<Map<String, dynamic>> performApiRequest(
     HttpClient client, String url, Map<String, dynamic> jsonBody,
     [String accessToken]) async {
-  final String requestBody = JSON.encode(jsonBody);
+  final String requestBody = json.encode(jsonBody);
   HttpClientRequest request = await client.postUrl(Uri.parse(url))
     ..headers.add(HttpHeaders.ACCEPT, ContentType.JSON)
     ..headers.contentType = ContentType.JSON
@@ -110,7 +110,7 @@ Future<Map<String, dynamic>> performApiRequest(
     throw new StateError(
         'Server responded with error: ${response.statusCode} ${response.reasonPhrase}');
   }
-  return JSON.decode(await response.transform(UTF8.decoder).join());
+  return json.decode(await response.transform(utf8.decoder).join());
 }
 ```
 
