@@ -12,9 +12,7 @@ permalink: /using-ide-vscode/
 
 <div class="tabs__content current" markdown="1">
 
-
-The Dart extension provides a fully integrated development experience in the
-Visual Studio Code editor.
+The Dart extension provides a fully integrated development experience in Visual Studio Code.
 
 * TOC Placeholder
 {:toc}
@@ -22,7 +20,7 @@ Visual Studio Code editor.
 ## Installation and setup
 
 Please follow the [Editor Setup](/get-started/editor/) instructions to install
-the Dart extension.
+the Dart extension (which includes Flutter functionality).
 
 ### Updating the extension<a name="updating"/>
 
@@ -46,16 +44,15 @@ To create a new Flutter project from the Flutter starter app template:
 1. Enter your desired **Project name**.
 1. Select a **Project location**.
 
-### Creating a new project from existing source code
+### Opening a project from existing source code
 
-To open a Flutter project containing existing Flutter source code
-files:
+To open an existing Flutter project:
 
 1. Click **File>Open...** from the main IDE window.
 1. Browse to the directory holding your existing Flutter source code files.
 1. Click **Open**.
 
-## Editing code, and viewing code problems
+## Editing code and viewing issues
 
 The Dart extension performs code analysis that enables:
 
