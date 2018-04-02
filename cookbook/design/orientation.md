@@ -16,37 +16,47 @@ portrait mode and 3 columns in landscape mode.
 
 ## Directions
 
-  1. Use the `MediaQuery` class to determine the `Orientation`
-  2. Build a List with either 2 or 3 columns
+  1. Build a `GridView` with 2 columns
+  2. Use an `OrientationBuilder` to change the number of columns
 
-## 1. Use the `MediaQuery` class to determine the `Orientation`
+## 1. Build a `GridView` with 2 columns
 
-In order to determine the `Orientation` of the screen, we need to use the 
-[`MediaQuery`](https://docs.flutter.io/flutter/widgets/MediaQuery-class.html) 
-class within our `build` function: 
-
-```dart
-final orientation = MediaQuery.of(context).orientation;
-```
-
-The `MediaQuery` class returns more than just the `Orientation`. You can
-also use this class to determine the size of the screen, the device pixel ratio, 
-and more!
-
-## 2. Build a List with either 2 or 3 columns
-
-Now that we know the orientation of the screen, we can build a list that 
-displays 2 columns in portrait mode, or 3 columns in landscape mode.
+First, we'll need a list of items to work with. Rather than using a normal list,
+we'll want a list that displays items in a Grid. For now, we'll create a grid
+with 2 columns.
 
 ```dart
 new GridView.count(
-  crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+  // A list with 2 columns
+  crossAxisCount: 2,
   // ...
 );
 ```
 
 To learn more about working with `GridViews`, please see the 
-[Creating a grid List](/cookbook/lists/grid-lists/) recipe.
+[Creating a grid list](/cookbook/lists/grid-lists/) recipe.
+
+## 2. Use an `OrientationBuilder` to change the number of columns
+
+In order to determine the `Orientation` of the screen, we can use the 
+[`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html) 
+Widget. The `OrientationBuilder` will determine the current `Orientation` and
+rebuild when the `Orientation` changes.
+
+Using the `Orientation`, we can build a list that displays 2 columns in portrait 
+mode, or 3 columns in landscape mode.
+
+```dart
+new OrientationBuilder(
+  builder: (context, orientation) {
+    return new GridView.count(
+      // Create a grid with 2 columns in portrait mode, or 3 columns in
+      // landscape mode.
+      crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+    );
+  },
+);
+```
 
 ## Complete Example
 
@@ -64,7 +74,9 @@ class MyApp extends StatelessWidget {
 
     return new MaterialApp(
       title: appTitle,
-      home: new OrientationList(title: appTitle,),
+      home: new OrientationList(
+        title: appTitle,
+      ),
     );
   }
 }
@@ -76,25 +88,25 @@ class OrientationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final orientation = MediaQuery.of(context).orientation;
-
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(title),
-      ),
-      body: new GridView.count(
-        // Create a grid with 2 columns in portrait mode, or 3 columns in
-        // landscape mode.
-        crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-        // Generate 100 Widgets that display their index in the List
-        children: new List.generate(100, (index) {
-          return new Center(
-            child: new Text(
-              'Item $index',
-              style: Theme.of(context).textTheme.headline,
-            ),
+      appBar: new AppBar(title: new Text(title)),
+      body: new OrientationBuilder(
+        builder: (context, orientation) {
+          return new GridView.count(
+            // Create a grid with 2 columns in portrait mode, or 3 columns in
+            // landscape mode.
+            crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
+            // Generate 100 Widgets that display their index in the List
+            children: new List.generate(100, (index) {
+              return new Center(
+                child: new Text(
+                  'Item $index',
+                  style: Theme.of(context).textTheme.headline,
+                ),
+              );
+            }),
           );
-        }),
+        },
       ),
     );
   }

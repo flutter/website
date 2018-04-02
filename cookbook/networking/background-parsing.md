@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Parsing json in the background"
+title: "Parsing JSON in the background"
 permalink: /cookbook/networking/background-parsing/
 ---
 
@@ -9,7 +9,7 @@ this model simplifies coding and is fast enough that it does not result in
 poor app performance or stuttering animations, often called "jank."
 
 However, we may need to perform an expensive computation, such as parsing a 
-very large json document. If this work takes more than 16 milliseconds, our 
+very large JSON document. If this work takes more than 16 milliseconds, our 
 users will experience jank.
 
 To avoid jank, we need to perform expensive computations like this in the 
@@ -18,22 +18,20 @@ In Flutter, we can use a separate [Isolate](https://docs.flutter.io/flutter/dart
 
 ## Directions
 
-  1. Add the `http` and `isolate` packages
+  1. Add the `http` package
   2. Make a network request using the `http` package
-  3. Parse and Convert the json into a List of Photos
+  3. Convert the response into a List of Photos
   4. Move this work to a separate isolate
   
-## 1. Add the `http` and `isolate` packages
+## 1. Add the `http` package
 
 First, we'll want to add the [`http`](https://pub.dartlang.org/packages/http) 
-and [`isolate`](https://pub.dartlang.org/packages/isolate) packages to our 
-project. The `http` package makes it easier to perform network requests, and 
-the `isolate` package makes it easier to work with `Isolates`!
+package to our project. The `http` package makes it easier to perform network 
+requests, such as fetching data from a JSON endpoint.
 
 ```yaml
 dependencies:
   http: <latest_version>
-  isolate: <latest_version>
 ```
   
 ## 2. Make a network request
@@ -82,21 +80,27 @@ class Photo {
 }
 ```
 
-### Convert the `http.Response` into a `List<Photo>`
+### Convert the response into a List of Photos
 
-Now, we'll update the `fetchPhotos` function to return a `Future<List<Photo>>`. 
-To do so, we'll need to:
+Now, we'll update the `fetchPhotos` function so it can return a 
+`Future<List<Photo>>`. To do so, we'll need to:
 
-  1. Parse the response body using the `dart:convert` package
-  2. Convert the parsed response into a `List<Photo>`
+  1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
+  2. Use the `parsePhotos` function in the `fetchPhotos` function
 
 ```dart
+// A function that will convert a response body into a List<Photo>
+List<Photo> parsePhotos(String responseBody) {
+  final parsed = json.decode(responseBody);
+
+  return parsed.map((json) => new Photo.fromJson(json)).toList();
+}
+
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
-  final parsed = json.decode(response.body);
 
-  return parsed.map((json) => new Photo.fromJson(json)).toList();
+  return parsePhotos(response.body);
 }
 ```
 
@@ -107,29 +111,29 @@ freezes for a brief moment as it parses and converts the json. This is jank,
 and we want to be rid of it!
 
 So how can we do that? By moving the parsing and conversion to a background
-isolate. To do so, we'll need to:
-
-  1. Create an `IsolateRunner`. This will allow us to run the `fetchPhotos`
-  function in a background isolate.
-  2. Execute the `fetchPhotos` function using the `IsolateRunner`, passing 
-  through the appropriate `http.Client`
-  3. Close the `IsolateRunner` when the operation is complete to ensure we clean
-  up after ourselves.
-
-In code:
+isolate using the [`compute`](https://docs.flutter.io/flutter/foundation/compute.html) 
+function provided by Flutter. The `compute` function will run expensive 
+functions in a background isolate and return the result. In this case, we want 
+to run the `parsePhotos` function in the background!
 
 ```dart
-Future<List<Photo>> fetchPhotosInBackground(http.Client client) async {
-  // Spawn a new Isolate and wait for it to be ready
-  final runner = await IsolateRunner.spawn();
+Future<List<Photo>> fetchPhotos(http.Client client) async {
+  final response =
+      await client.get('https://jsonplaceholder.typicode.com/photos');
 
-  return runner
-      // Run the fetchPhotos function inside the new isolate
-      .run(fetchPhotos, client)
-      // Shut the isolate down after the operation is complete
-      .whenComplete(() => runner.close());
+  // Use the compute function to run parsePhotos in a separate isolate
+  return compute(parsePhotos, response.body);
 }
 ```
+
+## Notes on working with Isolates
+
+Isolates communicate by passing messages back and forth. These messages can
+be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or 
+simple objects such as the `List<Photo>` in this example.
+
+You may experience errors if you try to pass more complex objects, such as 
+a `Future` or `http.Response` between isolates.
 
 ## Complete Example
 
@@ -137,25 +141,21 @@ Future<List<Photo>> fetchPhotosInBackground(http.Client client) async {
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:isolate/isolate_runner.dart';
-
-Future<List<Photo>> fetchPhotosInBackground(http.Client client) async {
-  // Spawn a new Isolate and wait for it to be ready
-  final runner = await IsolateRunner.spawn();
-
-  return runner
-      // Run the fetchPhotos function inside the new isolate
-      .run(fetchPhotos, client)
-      // Shut the isolate down after the operation is complete
-      .whenComplete(() => runner.close());
-}
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
-  final parsed = json.decode(response.body);
+
+  // Use the compute function to run parsePhotos in a separate isolate
+  return compute(parsePhotos, response.body);
+}
+
+// A function that will convert a response body into a List<Photo>
+List<Photo> parsePhotos(String responseBody) {
+  final parsed = json.decode(responseBody);
 
   return parsed.map((json) => new Photo.fromJson(json)).toList();
 }
@@ -206,8 +206,10 @@ class MyHomePage extends StatelessWidget {
         title: new Text(title),
       ),
       body: new FutureBuilder<List<Photo>>(
-        future: fetchPhotosInBackground(new http.Client()),
+        future: fetchPhotos(new http.Client()),
         builder: (context, snapshot) {
+          if (snapshot.hasError) print(snapshot.error);
+
           return snapshot.hasData
               ? new PhotosList(photos: snapshot.data)
               : new Center(child: new CircularProgressIndicator());
