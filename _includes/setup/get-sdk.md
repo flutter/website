@@ -46,9 +46,6 @@ The first time you run a flutter command (such as `flutter doctor`), it download
 itself. Subsequent runs should be much faster.
 
 The following sections describe how to perform these tasks and finish the setup process.
-You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are available for IntelliJ IDEA, Android Studio, and VS Code. See [Editor Setup](/get-started/editor/)
-for the steps to install the Flutter and Dart plugins.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
