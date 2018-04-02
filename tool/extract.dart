@@ -37,18 +37,18 @@ int _processFile(File file) {
 
   while (index < lines.length) {
     // Look for ```dart sections.
-    if (lines[index].startsWith('```dart') && lastComment?.trim() != 'skip') {
+    if (lines[index].trim().startsWith('```dart') && lastComment?.trim() != 'skip') {
       int startIndex = index + 1;
       index++;
-      while (index < lines.length && !lines[index].startsWith('```')) {
+      while (index < lines.length && !lines[index].trim().startsWith('```')) {
         index++;
       }
       _extractSnippet(name, ++count, startIndex, lines.sublist(startIndex, index),
           includeSource: lastComment);
-    } else if (lines[index].startsWith('<!--')) {
+    } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
       int startIndex = index;
-      while (!lines[index].endsWith('-->')) {
+      while (!lines[index].trim().endsWith('-->')) {
         index++;
       }
 
