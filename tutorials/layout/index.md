@@ -1095,7 +1095,7 @@ Flutter has a rich library of layout widgets, but here a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
 available widgets, refer to the [Widget Overview](https://flutter.io/widgets/),
-or use the Search box in the the [API reference docs](https://docs.flutter.io/).
+or use the Search box in the [API reference docs](https://docs.flutter.io/).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
