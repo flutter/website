@@ -13,10 +13,10 @@ void main(List<String> args) {
   // Remove any previously generated files.
   clean();
 
-  // Traverse markdown files in the root.
+  // Traverse all markdown files in the repository.
   int extractCount = 0;
   Iterable<FileSystemEntity> files = Directory.current
-      .listSync()
+      .listSync(recursive: true)
       .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.md'));
   files.forEach((FileSystemEntity file) => extractCount += _processFile(file));
   print('\n$extractCount code snippets extracted.');
