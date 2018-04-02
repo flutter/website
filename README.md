@@ -141,7 +141,6 @@ it with triple backticks followed by the language.
 Here's an example:
 
 <!-- skip -->
-
 	```dart
 	class SomeCode {
 	  String name;
@@ -262,7 +261,7 @@ The `sample_page.dart` app will print a list of all of the `"sample"` properties
 ## Preventing broken links
 
 Some form of broken links prevention is done automatically by `rake checklinks`
-on every commit (through `tool/travis.sh`). But this won't see any Firebase 
+on every commit (through `tool/travis.sh`). But this won't see any Firebase
 redirects (`rake checklinks` doesn't run the Firebase server) and it won't
 check incoming links.
 
@@ -271,24 +270,24 @@ Before we can move the more complete
 from dartlang.org, we recommend manually running the following.
 
 * First time setup:
- 
+
   ```
   pub global activate linkcheck
   npm install -g superstatic
-  ``` 
+  ```
 
 * Start the localhost Firebase server:
 
   ```
   superstatic --port 3474
   ```
-  
+
 * Run the link checker:
 
   ```
   linkcheck :3474
   ```
-  
+
   Even better, to check that old URLs are correctly redirected:
 
   ```
