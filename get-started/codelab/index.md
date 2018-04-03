@@ -103,7 +103,7 @@ become skewed. You can fix this automatically with the Flutter tools:
 
 <ol markdown="1">
 
-<li markdown="1"> Replace lib/main.dart.<br>
+<li markdown="1"> Replace `lib/main.dart`.<br>
     Delete all of the code from **lib/main.dart**.
     Replace with the following code, which displays "Hello World" in the center
     of the screen.
@@ -902,7 +902,7 @@ Add the highlighted code below:
 <li markdown="1"> Hot reload the app. Favorite some of the selections and
     tap the list icon in the app bar. The new route appears containing
     the favorites. Note that the Navigator adds a "Back" button to the
-    app bar. You did not have to explicitly implement Navigator.pop.
+    app bar. You did not have to explicitly implement `Navigator.pop`.
     Tap the back button to return to the home route.
 </li>
 </ol>
