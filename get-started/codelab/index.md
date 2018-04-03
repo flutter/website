@@ -786,7 +786,7 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_pushSaved()` function to the `RandomWordsState class`.
+<li markdown="1"> Add a `_pushSaved()` function to the RandomWordsState class.
 
 <!-- skip -->
 {% prettify dart %}
@@ -857,7 +857,7 @@ which pushes the route to the Navigator's stack.
 
 <li markdown="1"> The builder property returns a Scaffold,
     containing the app bar for the new route, named
-    "Saved Suggestions". The body of the new route
+    "Saved Suggestions." The body of the new route
     consists of a ListView containing the ListTiles rows;
     each row is separated by a divider.
 
@@ -926,7 +926,7 @@ or emulator, or you can customize the theme to reflect your branding.
 
 <ol markdown="1">
 <li markdown="1"> You can easily change an app's theme by configuring
-    the `ThemeData class`.  Your app currently uses the default theme,
+    the ThemeData class.  Your app currently uses the default theme,
     but you'll be changing the primary color to be white.
 
 Change the app's theme to white by adding the highlighted code to MyApp:
