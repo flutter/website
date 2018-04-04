@@ -83,9 +83,9 @@ we'll need to:
 ```dart
 Future<Post> fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = json.decode(response.body); 
+  final responseJson = json.decode(response.body); 
   
-  return new Post.fromJson(json); 
+  return new Post.fromJson(responseJson); 
 }
 ```
 
@@ -134,9 +134,9 @@ import 'package:http/http.dart' as http;
 Future<Post> fetchPost() async {
   final response =
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = json.decode(response.body);
+  final responseJson = json.decode(response.body);
 
-  return new Post.fromJson(json);
+  return new Post.fromJson(responseJson);
 }
 
 class Post {
