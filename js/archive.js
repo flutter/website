@@ -13,13 +13,13 @@ var fetchFlutterReleases = function (os, callback, errorCallback) {
       callback(data, os);
     },
     error: function (xhr, textStatus, errorThrown) {
-      errorCallback(os);
+      if (errorCallback)
+        errorCallback(os);
     }
   })
 }
 
 function updateTable(releases, os) {
-  // Convert the data for easier parsing and sort.
   var releaseData = releases.releases;
 
   for (var channel in releases.current_release) {
@@ -59,6 +59,31 @@ function updateTableFailed(os) {
   tab.find(".loading").text("Failed to load releases");
 }
 
+function updateDownloadLink(releases, os) {
+  var channel = "beta";
+  var releasesForChannel = releases.releases.filter(function (release) {
+    return release.channel == channel;
+  });
+  if (!releasesForChannel.length)
+    return;
+
+  var release = releasesForChannel[0];
+  var linkSegments = release.archive.split("/");
+  var archiveFilename = linkSegments[linkSegments.length - 1]; // Just the filename part of url
+  var downloadLink = $(".download-latest-link-" + os);
+  downloadLink
+    .text(archiveFilename)
+    .attr("href", releases.base_url + "/" + release.archive);
+
+  // We have may other placeholders on the page that want to show the download filename, so
+  // update them.
+  $(".download-latest-link-filename-" + os).text(archiveFilename);
+}
+
+function updateDownloadLinkFailed(os) {
+  $(".download-latest-link-" + os).text("(failed)");
+}
+
 // Send requests to render the tables.
 $(function () {
   if ($(".sdk-archives").length) {
@@ -66,5 +91,11 @@ $(function () {
     fetchFlutterReleases("macos", updateTable, updateTableFailed);
     fetchFlutterReleases("linux", updateTable, updateTableFailed);
   }
+  if ($(".download-latest-link-windows").length)
+    fetchFlutterReleases("windows", updateDownloadLink, updateDownloadLinkFailed);
+  if ($(".download-latest-link-macos").length)
+    fetchFlutterReleases("macos", updateDownloadLink, updateDownloadLinkFailed);
+  if ($(".download-latest-link-linux").length)
+    fetchFlutterReleases("linux", updateDownloadLink, updateDownloadLinkFailed);
 });
 
