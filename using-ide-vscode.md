@@ -5,6 +5,8 @@ title: Developing Flutter apps in an IDE
 permalink: /using-ide-vscode/
 ---
 
+<div id="tab-set-install">
+
 <ul class="tabs__top-bar">
     <li class="tab-link" data-tab-href="/using-ide/">Android Studio / IntelliJ</li>
     <li class="tab-link current">VS Code</li>
@@ -72,7 +74,9 @@ Start debugging by clicking **Debug>Start Debugging** from the main IDE window o
 
 When a Flutter project is open in VS Code, you should see a set of Flutter
 specific entries in the status bar, including a Flutter SDK version and a
-select device (or the message **No Devices**).
+device name (or the message **No Devices**).
+
+<img src="/images/vscode/device_status_bar.png" style="width:477px;height:73px" alt="Flutter device" />
 
 *Note*: If you do not see a Flutter version number or device info your project may not have been detected
 as a Flutter project. Please ensure the folder that contains your `pubspec.yaml` is inside a VS Code **Workspace Folder**
@@ -94,7 +98,7 @@ at the top of the screen to allow you to select the device to use for running/de
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. CClick **Debug>Start Debugging** in main IDE window or press `F5`.
+1. Click **Debug>Start Debugging** in main IDE window or press `F5`.
 * The left **Debug Sidebar** will show Stack Frames and Variables.
 * The bottom **Debug Console** pane will show detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
@@ -111,7 +115,7 @@ of your changes almost instantly with the 'hot reload' feature. See
 
 ### Debugging visual layout issues
 
-During a debug session, several debugging commands will be added to the **Command Palette**, including:
+During a debug session, several additional debugging commands will be added to the **Command Palette**, including:
 
 * 'Toggle Baseline Painting': Causes each RenderBox to paint a line at each of its
   baselines.
@@ -123,6 +127,7 @@ During a debug session, several debugging commands will be added to the **Comman
 * 'Toggle Slow-Mode Banner': Hide the 'slow mode' banner even when running a
   debug build.
 
+<img src="/images/vscode/flutter_commands.png" style="width:632px;height:431px" alt="Flutter commands" />
 
 ### Debugging with Observatory
 
@@ -227,5 +232,7 @@ to filing new issues, please:
 
 When filing new issues, please include the output of [`flutter
 doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
+
+</div>
 
 </div>

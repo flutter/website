@@ -5,6 +5,8 @@ title: Developing Flutter apps in an IDE
 permalink: /using-ide/
 ---
 
+<div id="tab-set-install">
+
 <ul class="tabs__top-bar">
     <li class="tab-link current" >Android Studio / IntelliJ</li>
     <li class="tab-link" data-tab-href="/using-ide-vscode/">VS Code</li>
@@ -289,5 +291,7 @@ to filing new issues, please:
 
 When filing new issues, please include the output of [`flutter
 doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
+
+</div>
 
 </div>
