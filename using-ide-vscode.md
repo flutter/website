@@ -31,7 +31,7 @@ automatically update extensions when updates are available.
 
 To install updates manually:
 
-1. Click on the Extensions button in the side bar
+1. Click on the Extensions button in the Side Bar
 1. If the Dart extension is shown with an available update, click the update button and then
 the reload button
 
