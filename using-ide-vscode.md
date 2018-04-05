@@ -21,7 +21,7 @@ The Dart extension provides a fully integrated development experience in Visual 
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor/) instructions to install
+Please follow the [Editor Setup](/get-started/editor/#vscode) instructions to install
 the Dart extension (which includes Flutter functionality).
 
 ### Updating the extension<a name="updating"/>
