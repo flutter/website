@@ -115,7 +115,7 @@ of your changes almost instantly with the 'hot reload' feature. See
 
 ### Debugging visual layout issues
 
-During a debug session, several additional debugging commands will be added to the **Command Palette**, including:
+During a debug session, several additional debugging commands will be added to the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), including:
 
 * 'Toggle Baseline Painting': Causes each RenderBox to paint a line at each of its
   baselines.
@@ -127,8 +127,6 @@ During a debug session, several additional debugging commands will be added to t
 * 'Toggle Slow-Mode Banner': Hide the 'slow mode' banner even when running a
   debug build.
 
-<img src="/images/vscode/flutter_commands.png" style="width:632px;height:431px" alt="Flutter commands" />
-
 ### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
@@ -137,7 +135,7 @@ html-based UI. For details see the [Observatory page](https://dart-lang.github.i
 To open Observatory:
 
 1. Run your app in debug mode.
-1. Run the **Open Observatory** command from the **Command Palette**.
+1. Run the **Open Observatory** command from the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 ## Editing tips for Flutter code
 
@@ -183,7 +181,7 @@ The Dart extension includes the following snippets:
  `AnimationController`.
 
 You can also define custom snippets by executing **Configure User Snippets** from
-the **Command Palette**.
+the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 ### Keyboard Shortcuts
 
@@ -193,7 +191,7 @@ During a debug session clicking the **Restart** button on the **Debug Toolbar** 
 pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS) will perform a hot reload.
 
 Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts** command
-from the **Command Palette**.
+from the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 **Full Restart**
 
@@ -210,7 +208,7 @@ types of code changes cannot be hot reloaded though:
 
 For these changes you can fully restart your application, without having to end
 your debugging session by running the **Flutter: Full Restart** command from the
-**Command Palette** or pressing `Ctrl`+`F5` will cause a full restart of the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a full restart of the
 application.
 
 ## Troubleshooting
