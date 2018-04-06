@@ -250,11 +250,16 @@ The `lib/` is implied, so it should not be included in the asset path.
 
 ## Sharing assets with the underlying platform
 
-It is possible in the underlying platform to access assets included in Flutter. 
+Flutter assets are readily available to platform code via AssetManager on Android and NSBundle on iOS.
 
 ### Android
 
-On Android the assets can be accessed through the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html). The file name to be used as lookup key in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) can be found using ```lookupKeyForAsset``` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) which is available when developing a plugin or ```getLookupKeyForAsset``` on [FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html) which would be the choice when developing an app including a platform view.
+On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html). 
+The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) is obtained from 
+`lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on 
+[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html). 
+`PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an 
+app including a platform view.
 
 As an example, suppose you have specified this in your pubspec.yaml
 
@@ -269,28 +274,33 @@ reflecting the following structure in your Flutter app.
 * .../icons/heart.png
 * ...etc.
 
-To access ```icons/heart.png``` from your ```java``` plugin code you would do 
+To access ```icons/heart.png``` from your Java plugin code you would do 
 
 ```java
 AssetManager assetManager = registrar.context().getAssets();
-String asset = registrar.lookupKeyForAsset("icons/heart.png");
-AssetFileDescriptor fd = assetManager.openFd(asset);
+String key = registrar.lookupKeyForAsset("icons/heart.png");
+AssetFileDescriptor fd = assetManager.openFd(key);
 ```
 
 ### iOS
 
-On iOS the assets can be accessed through the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle). The name to be used as lookup key in for instance [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) can be found using ```lookupKeyForAsset``` or ```lookupKeyForAsset:fromPackage:``` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) which is available when developing a plugin or ```lookupKeyForAsset:``` or ```lookupKeyForAsset:fromPackage:``` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html) which would be the choice when developing an app including a platform view.
+On iOS the assets are available via the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle). 
+The lookup key used in for instance [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) is obtained from
+`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or 
+`lookupKeyForAsset:fromPackage:` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html). 
+`FlutterPluginRegistrar` is available when developing 
+a plugin while `FlutterViewController` would be the choice when developing an app including a platform view.
 
 As an example, suppose you have the Flutter setting from above.
 
 To access ```icons/heart.png``` from your ```Objective-C``` plugin code you would do
 
-```
-NSString* asset = [registrar lookupKeyForAsset:@"icons/heart.png"]; 
-NSString* path = [[NSBundle mainBundle] pathForResource:asset ofType:nil];
+```objective-c
+NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"]; 
+NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 
-For a more complete example see the Flutter [video_payer plugin](https://pub.dartlang.org/packages/video_player).
+For a more complete example see the implementation of the Flutter [video_payer plugin](https://pub.dartlang.org/packages/video_player).
 
 ## Platform assets
 
