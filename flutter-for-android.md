@@ -413,7 +413,7 @@ view to override and implement methods in order to obtain the desired behavior.
 In Flutter building a custom widget is often accomplished by not extending but
 composing smaller widgets. It is somewhat similar to implementing a custom
 `ViewGroup` in Android, where all the building blocks are already existing, but
-you provide a different behavior — for example, custom layout logic.
+you provide a different behavior — for example, custom layout logic.
 
 Let's take a look at how to build a `CustomButton` that takes in a label in the
 constructor. This is achieved by composing it with `RaisedButton`, rather than
@@ -670,15 +670,25 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 
 # Async UI
 
-## What is the equivalent of runOnUiThread in Flutter
+## What is the equivalent of `runOnUiThread()` in Flutter?
 
-Dart is a single-threaded execution model, with support for Isolates
-(a way to run Dart code on another thread), an event loop,
-and asynchronous programming. Unless you spawn an Isolate,
-your Dart code runs in the main UI thread and is driven by an event loop.
+Dart has a single-threaded execution model, with support for `Isolate`s
+(a way to run Dart code on another thread), an event loop, and
+asynchronous programming. Unless you spawn an `Isolate`, your Dart code
+runs in the main UI thread and is driven by an event loop. Flutter's event
+loop is equivalent to Android's main `Looper` — that is, the `Looper` that
+is attached to the main thread.
 
-For example, you can run network code on the UI thread without causing the UI
-to hang:
+Dart's single-threaded model doesn't mean you need to run everything as a
+blocking operation that will cause the UI to freeze. Unlike Android, which
+requires you to keep the main thread free at all times, in Flutter you just
+use the asynchronous facilities that the Dart language provides, such as
+`async`/`await`, to perform asynchronous work. You may be familiar with
+the `async`/`await` paradigm if you've used it in C#, Javascript, or if you
+have used Kotlin's coroutines.
+
+For example, you can run network code without causing the UI to hang by
+using `async`/`await` and letting Dart do the heavy lifting:
 
 <!-- skip -->
 {% prettify dart %}
@@ -691,11 +701,12 @@ loadData() async {
 }
 {% endprettify %}
 
-To update the UI you would call setState which would trigger the build method
-to run again and update the data.
+Once the `await`ed network call is done, you update the UI calling
+`setState()`, which triggers a rebuild of the widget tree and updates the
+data.
 
-Here is the full example of loading data asynchronously and displaying it in a
-ListView:
+Next, here's an example of loading data asynchronously and displaying it 
+in a `ListView`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -741,20 +752,20 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Sample App"),
-        ),
-        body: new ListView.builder(
-            itemCount: widgets.length,
-            itemBuilder: (BuildContext context, int position) {
-              return getRow(position);
-            }));
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView.builder(
+          itemCount: widgets.length,
+          itemBuilder: (BuildContext context, int position) {
+            return getRow(position);
+          }));
   }
 
   Widget getRow(int i) {
     return new Padding(
-        padding: new EdgeInsets.all(10.0),
-        child: new Text("Row ${widgets[i]["title"]}")
+      padding: new EdgeInsets.all(10.0),
+      child: new Text("Row ${widgets[i]["title"]}")
     );
   }
 
@@ -768,20 +779,27 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
+Refer to the next section for more information on doing work in
+background in Flutter and how it differs from Android.
 
+## How do you move work to a background thread?
 
-## What is the equivalent of an AsyncTask or IntentService on Android
-
-In Android, when you want to access a network resource you would
-typically spawn an AsyncTask that would run code outside of the UI thread
-to prevent your UI from blocking. The AsyncTask has a thread pool that manages
-the threads for you.
+In Android, when you want to access a network resource you would typically
+move to a background thread and do the work, as to not block the main thread,
+and avoid ANRs. For example, you may be using an `AsyncTask`, a `LiveData`,
+an `IntentService`, a `JobScheduler` job, or an RxJava pipeline with a
+scheduler that works on background threads.
 
 Since Flutter is single threaded and runs an event loop (like Node.js), you
-don't have to worry about thread management or spawing AsyncTasks or IntentServices.
+don't have to worry about thread management or spawing background threads. If
+you're doing I/O-bound work, such as a disk access or a network call, then
+you can safely just use `async`/`await` and you're all set. If, on the other
+hand, you need to do computationally intensive work that keeps the CPU busy,
+you want to move it to an `Isolate` as to avoid blocking the event loop, like
+you would want to keep _any_ sort of work out of the main thread in Android.
 
-To run code asynchronously you can declare the function as an async function
-and await on long running tasks in the function
+For I/O bound work, you can declare the function as an `async` function
+and `await` on long running tasks in the function:
 
 <!-- skip -->
 {% prettify dart %}
@@ -794,72 +812,73 @@ loadData() async {
 }
 {% endprettify %}
 
-This is how you would typically do network or database calls.
+This is how you would typically do network or database calls, which are both
+I/O operations.
 
-On Android, when you extend AsyncTask, you typically override 3 methods,
-OnPreExecute, doInBackground and onPostExecute. There is no equivalent to this
-pattern in Flutter since you would just await on a long running function and
+On Android, when you extend `AsyncTask`, you typically override 3 methods,
+`onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no 
+equivalent to this since you would just await on a long running function and
 Dart's event loop will take care of the rest.
 
 However, there are times where you may be processing a large amount of data and
-your UI could hang.
-
-In this case, like AsyncTask, in Flutter it is possible to take advantage of
-multiple CPU cores to do long running or computationally intensive tasks. This
-is done by using Isolates.
+your UI could hang. In this case, like on Android, in Flutter it is possible to
+take advantage of multiple CPU cores to do long running or computationally
+intensive tasks. This is done by using `Isolate`s.
 
 Isolates are a separate execution thread that runs and do not share any memory
 with the main execution memory heap. This means you can’t access variables from
-the main thread or update your UI by calling setState.
+the main thread or update your UI by calling `setState()`. Isolates are true to
+their name; unlike on Android threads, isolates cannot share memory (e.g., in
+the form of static fields).
 
-Let's see an example of a simple Isolate and how you can communicate and share
+Let's see an example of a simple isolate and how you can communicate and share
 data back to the main thread to update your UI.
 
 <!-- skip -->
 {% prettify dart %}
-  loadData() async {
-    ReceivePort receivePort = new ReceivePort();
-    await Isolate.spawn(dataLoader, receivePort.sendPort);
+loadData() async {
+  ReceivePort receivePort = new ReceivePort();
+  await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-    // The 'echo' isolate sends it's SendPort as the first message
-    SendPort sendPort = await receivePort.first;
+  // The 'echo' isolate sends its SendPort as the first message
+  SendPort sendPort = await receivePort.first;
 
-    List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+  List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
 
-    setState(() {
-      widgets = msg;
-    });
+  setState(() {
+    widgets = msg;
+  });
+}
+
+// The entry point for the isolate
+static dataLoader(SendPort sendPort) async {
+  // Open the ReceivePort for incoming messages.
+  ReceivePort port = new ReceivePort();
+
+  // Notify any other isolates what port this isolate listens to.
+  sendPort.send(port.sendPort);
+
+  await for (var msg in port) {
+    String data = msg[0];
+    SendPort replyTo = msg[1];
+
+    String dataURL = data;
+    http.Response response = await http.get(dataURL);
+    // Lots of JSON to parse
+    replyTo.send(json.decode(response.body));
   }
+}
 
-// the entry point for the isolate
-  static dataLoader(SendPort sendPort) async {
-    // Open the ReceivePort for incoming messages.
-    ReceivePort port = new ReceivePort();
-
-    // Notify any other isolates what port this isolate listens to.
-    sendPort.send(port.sendPort);
-
-    await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
-
-      String dataURL = data;
-      http.Response response = await http.get(dataURL);
-      // Lots of JSON to parse
-      replyTo.send(json.decode(response.body));
-    }
-  }
-
-  Future sendReceive(SendPort port, msg) {
-    ReceivePort response = new ReceivePort();
-    port.send([msg, response.sendPort]);
-    return response.first;
-  }
+Future sendReceive(SendPort port, msg) {
+  ReceivePort response = new ReceivePort();
+  port.send([msg, response.sendPort]);
+  return response.first;
+}
 {% endprettify %}
 
-"dataLoader" is the Isolate that runs in its own seperate execution thread,
-where you can do more CPU intensive processing, for example parsing a lot of
-JSON - 10k+ lines, or doing computationally intensive math.
+Here, `dataLoader()` is the `Isolate` that runs in its own separate execution thread.
+In this isolate you can do more CPU intensive processing, for example parsing a big
+JSON, or doing computationally intensive math such as crypto or signal processing.
 
 A full example that you can run is below.
 
@@ -948,7 +967,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     ReceivePort receivePort = new ReceivePort();
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-    // The 'echo' isolate sends it's SendPort as the first message
+    // The 'echo' isolate sends its SendPort as the first message
     SendPort sendPort = await receivePort.first;
 
     List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
@@ -982,23 +1001,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
 }
-
-
 {% endprettify %}
 
-## What is the equivalent of OkHttp on Flutter
+## What is the equivalent of OkHttp on Flutter?
 
-Making a network call in Flutter is easy when you use the popular "http" package.
+Making a network call in Flutter is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http).
 
 While the http package does not have all the features OkHttp has implemented,
-the "http" package abstracts away a lot of the networking that you would normally
-implement yourself, making it a simple way to make network calls.
+it abstracts away a lot of the networking that you would normally implement
+yourself, making it a simple way to make network calls.
 
-[https://pub.dartlang.org/packages/http](https://pub.dartlang.org/packages/http)
-
-You can use it by adding it to your dependencies in pubspec.yaml
+You can use it by adding it to your dependencies in `pubspec.yaml`:
 
 <!-- skip -->
 {% prettify yaml %}
@@ -1007,7 +1021,7 @@ dependencies:
   http: '>=0.11.3+12'
 {% endprettify %}
 
-Then to make a network call, for example to this JSON GIST on GitHub you can call:
+Then to make a network call, you just `await` on the `async` function `http.get()`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1026,21 +1040,20 @@ import 'package:http/http.dart' as http;
 }
 {% endprettify %}
 
-Once you have the result you can tell Flutter to update its state by calling
-setState, which will update your UI with the result from your network call.
+## How do I show the progress for a long-running task in Flutter?
 
-## How do I show progress indicator in Flutter when there is a task that is running
+In Android you would typically show a `ProgressBar` view in your UI while you
+execute a long running task on a background thread.
 
-In Android you would typically show a progress indicator when you execute
-a long running task.
-
-In Flutter this can be done by rendering a Progress Indicator widget. You can
-show the Progress Indicator programmatically by controlling when its rendered
-through a boolean and telling Flutter to update it's state before your long running task.
+In Flutter this can be done by using a `ProgressIndicator` widget. You can
+show the progress UI programmatically by controlling when it's rendered
+through a boolean flag, and telling Flutter to update its state before your
+long running task starts, and hiding it after it ends.
 
 In the example below, we break up the build function into three different
-functions. If showLoadingDialog is true (when widgets.length == 0) then we
-render the ProgressIndicator, else we render the ListView with all the data.
+functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`)
+then we render the `ProgressIndicator`, else we render the `ListView` with
+the data.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1083,11 +1096,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   showLoadingDialog() {
-    if (widgets.length == 0) {
-      return true;
-    }
-
-    return false;
+    return widgets.length == 0;
   }
 
   getBody() {
