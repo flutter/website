@@ -447,23 +447,27 @@ Widget build(BuildContext context) {
 
 # Intents
 
-## What is the equivalent of an Intent in Flutter
+## What is the equivalent of an `Intent` in Flutter?
 
-In Android, there are two main use cases for Intents: switching between
-Activities, and invoking external components. Flutter on the other hand does
-not have the concept of Intents, though if needed Flutter can trigger Intents
-through native integration.
+In Android, there are two main use cases for `Intent`s: navigating between
+Activities, and communicating with components. Flutter on the other hand does
+not have the concept of intents, although you can still start intents
+through native integrations (via [a plugin](https://pub.dartlang.org/packages/android_intent)).
 
-To switch between screens in Flutter you can access the router to draw
-a new Widget.  There are two core concepts and classes for managing many
-screens: Route and Navigator. A Route is an abstraction for a “screen” or
-“page” of an app (think Activity), and a Navigator is a widget that manages
-routes. A Navigator can push and pop routes to help a user move from screen to
-screen.
+Flutter doesn't really have a direct equivalent to activities and fragments;
+rather, in Flutter you navigate between screens, using a `Navigator` and
+`Route`s, all within the same `Activity`.
 
-Like Android where you can declare your Activities inside the
-AndroidManifest.xml, in Flutter you can pass in a Map of named routes to the
-top level MaterialApp instance
+A `Route` is an abstraction for a “screen” or “page” of an app, and a
+`Navigator` is a widget that manages routes. A route roughly maps to an
+`Activity`, but it does not carry the same meaning. A navigator can push
+and pop routes to move from screen to screen. Navigators work like a stack
+on which you can `push()` new routes you want to navigate to, and from
+which you can `pop()` routes when you want to "go back".
+
+Similarly to Android, where you declare your activities inside the app's
+`AndroidManifest.xml`, in Flutter you can pass in a `Map` of named routes
+to the top level `MaterialApp` instance to declare all your routes:
 
 <!-- skip -->
 {% prettify dart %}
@@ -478,67 +482,59 @@ top level MaterialApp instance
   ));
 }
 {% endprettify %}
-Then you can change to this route by getting an hold of the Navigator and
-calling this named route.
+
+Then you can navigate to a route by getting an hold of the `Navigator` and
+`push`ing one of the named routes.
 
 <!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
 
-The other popular use-case for Intents is to call external components such as a
-Camera or File picker. For this, you would need to create a native platform
-integration (or use an existing library)
+The other popular use-case for `Intent`s is to call external components such
+as a Camera or File picker. For this, you would need to create a native platform
+integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 
 See [Flutter Plugins] to learn how to build a native platform integration.
 
-
-
-## How do I handle incoming Intents from external applications in Flutter
+## How do I handle incoming intents from external applications in Flutter?
 
 Flutter can handle incoming intents from Android by directly talking to the
 Android layer and requesting the data that was shared.
 
-In this example we are registering a text share intent, so other apps
-can share text to our Flutter app.
+In this example we are registering a text share intent filter on the native
+activity that runs our Flutter code, so other apps can share text to our
+Flutter app.
 
-The basic flow of this application would be we first handle the shared text
-data on Android's side, and then wait till Flutter requests for the data to
-send it via a MethodChannel.
+The basic flow implies that we first handle the shared text data on the
+Android native side (in our `Activity`), and then wait until Flutter requests
+for the data to provide it via a `MethodChannel`.
 
-First we register the intent we want to handle in AndroidManifest.xml
+First we register the intent filter for the intents that we want to handle in
+our `AndroidManifest.xml`:
 
 <!-- skip -->
 {% prettify xml %}
-     <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-            <!-- This keeps the window background of the activity showing
-                 until Flutter renders its first frame. It can be removed if
-                 there is no splash screen (such as the default splash screen
-                 defined in @style/LaunchTheme). -->
-            <meta-data
-                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-                android:value="true" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
+<activity
+  android:name=".MainActivity"
+  android:launchMode="singleTop"
+  android:theme="@style/LaunchTheme"
+  android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
+  android:hardwareAccelerated="true"
+  android:windowSoftInputMode="adjustResize">
+  <!-- ... -->
+  <intent-filter>
+    <action android:name="android.intent.action.SEND" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <data android:mimeType="text/plain" />
+  </intent-filter>
+</activity>
 {% endprettify %}
 
-Then in MainActivity you can handle the intent, once we get the shared text
-data from the intent, we hold onto it till Flutter requests for it when it's
-all ready to go.
+Then in `MainActivity` you can handle the intent, extract the text that was
+shared from the intent, and hold onto it. When Flutter is ready to process
+the data it will request it via a platform channel, and we can then send it
+across from the native side:
 
 <!-- skip -->
 {% prettify java %}
@@ -556,42 +552,43 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
-    String sharedText;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        GeneratedPluginRegistrant.registerWith(this);
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        String type = intent.getType();
+  private String sharedText;
 
-        if (Intent.ACTION_SEND.equals(action) && type != null) {
-            if ("text/plain".equals(type)) {
-                handleSendText(intent); // Handle text being sent
-            }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    GeneratedPluginRegistrant.registerWith(this);
+    Intent intent = getIntent();
+    String action = intent.getAction();
+    String type = intent.getType();
+
+    if (Intent.ACTION_SEND.equals(action) && type != null) {
+      if ("text/plain".equals(type)) {
+        handleSendText(intent); // Handle text being sent
+      }
+    }
+
+    new MethodChannel(getFlutterView(), "app.channel.shared.data")
+      .setMethodCallHandler(new MethodChannel.MethodCallHandler() {
+        @Override
+        public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
+          if (methodCall.method.contentEquals("getSharedText")) {
+            result.success(sharedText);
+            sharedText = null;
+          }
         }
+      });
+  }
 
-        new MethodChannel(getFlutterView(), "app.channel.shared.data").setMethodCallHandler(new MethodChannel.MethodCallHandler() {
-            @Override
-            public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
-                if (methodCall.method.contentEquals("getSharedText")) {
-                    result.success(sharedText);
-                    sharedText = null;
-                }
-            }
-        });
-    }
-
-
-    void handleSendText(Intent intent) {
-        sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
-    }
+  void handleSendText(Intent intent) {
+    sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+  }
 }
 {% endprettify %}
 
-Lastly, in Flutter you can request the data when the the Flutter view is
-rendered.
+Lastly, you can request the data from the Flutter side when the widget is
+rendered:
 
 <!-- skip -->
 {% prettify dart %}
@@ -649,22 +646,22 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
+## What is the equivalent of `startActivityForResult()`?
 
-
-## What is the equivalent of startActivityForResult
-
-The Navigator class which handles all Routing in Flutter can be used to get a
+The `Navigator` class which handles all routing in Flutter can be used to get a
 result back from a route that you have pushed on the stack. This can be done by
-await'ing on the Future returned by push. For example if you were to start a
-location route which let the user select their location, you could do:
+`await`ing on the `Future` returned by `push()`.
+
+For example, if you were to start a location route which lets the user select
+their location, you could do:
 
 <!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
 
-then inside your location route once the user has selected their location you
-can "pop" the stack with the result
+And then, inside your location route, once the user has selected their location
+you can `pop` the stack with the result:
 
 <!-- skip -->
 {% prettify dart %}
