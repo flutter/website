@@ -53,13 +53,13 @@ asset bundle along with the specified asset.
 
 For example, if you have the following files in your application
 directory:
-
-* .../pubspec.yaml
-* .../graphics/my_icon.png
-* .../graphics/background.png
-* .../graphics/dark/background.png
-* ...etc.
-
+```
+  .../pubspec.yaml
+  .../graphics/my_icon.png
+  .../graphics/background.png
+  .../graphics/dark/background.png
+  ...etc.
+```
 ...and your `pubspec.yaml` file contains:
 
 ```yaml
@@ -140,11 +140,12 @@ closely matches the current [device pixel ratio](https://docs.flutter.io/flutter
 In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
 
-* .../image.png
-* .../Mx/image.png
-* .../Nx/image.png
-* ...etc.
-
+```
+  .../image.png
+  .../Mx/image.png
+  .../Nx/image.png
+  ...etc.
+```
 ...where _M_ and _N_ are numeric identifiers that correspond to the nominal resolution
 of the images contained within, in other words, they specify the device pixel ratio that
 the images are intended for.
@@ -153,9 +154,11 @@ The main asset is assumed to correspond to a
 resolution of 1.0. For example, consider the following asset layout for an
 image named `my_icon.png`:
 
-* .../my_icon.png
-* .../2.0x/my_icon.png
-* .../3.0x/my_icon.png
+```
+  .../my_icon.png
+  .../2.0x/my_icon.png
+  .../3.0x/my_icon.png
+```
 
 On devices with a device pixel ratio of 1.8, the asset `.../2.0x/my_icon.png`
 would be chosen. For a device pixel ratio of 2.7, the asset
@@ -213,11 +216,13 @@ To load an image from a [package](https://flutter.io/using-packages/) dependency
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
-* .../pubspec.yaml
-* .../icons/heart.png
-* .../icons/1.5x/heart.png
-* .../icons/2.0x/heart.png
-* ...etc.
+```
+  .../pubspec.yaml
+  .../icons/heart.png
+  .../icons/1.5x/heart.png
+  .../icons/2.0x/heart.png
+  ...etc.
+```
 
 Then to load the image, use:
 
@@ -234,10 +239,11 @@ If the desired asset is specified in the `pubspec.yaml` file of the package, it 
 
 A package can also choose to have assets in its `lib/` folder that are not specified in its `pubspec.yaml` file. In this case, for those images to be bundled, the application has to specify which ones to include in its `pubspec.yaml`. For instance, a package named `fancy_backgrounds` could have the following files:
 
-* .../lib/backgrounds/background1.png
-* .../lib/backgrounds/background2.png
-* .../lib/backgrounds/background3.png
-
+```
+  .../lib/backgrounds/background1.png
+  .../lib/backgrounds/background2.png
+  .../lib/backgrounds/background3.png
+```
  To include, say, the first image, the `pubspec.yaml` of the application should specify it in the `assets` section:
 
 ```yaml
@@ -247,6 +253,62 @@ flutter:
 ```
 
 The `lib/` is implied, so it should not be included in the asset path.
+
+## Sharing assets with the underlying platform
+
+Flutter assets are readily available to platform code via AssetManager on Android and NSBundle on iOS.
+
+### Android
+
+On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html). 
+The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) is obtained from 
+`lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on 
+[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html). 
+`PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an 
+app including a platform view.
+
+As an example, suppose you have specified this in your pubspec.yaml
+
+```yaml
+flutter:
+  assets:
+    - icons/heart.png
+```
+reflecting the following structure in your Flutter app.
+
+```
+  .../pubspec.yaml
+  .../icons/heart.png
+  ...etc.
+```
+
+To access `icons/heart.png` from your Java plugin code you would do; 
+
+```java
+AssetManager assetManager = registrar.context().getAssets();
+String key = registrar.lookupKeyForAsset("icons/heart.png");
+AssetFileDescriptor fd = assetManager.openFd(key);
+```
+
+### iOS
+
+On iOS the assets are available via the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle). 
+The lookup key used in for instance [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) is obtained from
+`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or 
+`lookupKeyForAsset:fromPackage:` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html). 
+`FlutterPluginRegistrar` is available when developing 
+a plugin while `FlutterViewController` would be the choice when developing an app including a platform view.
+
+As an example, suppose you have the Flutter setting from above.
+
+To access `icons/heart.png` from your Objective-C plugin code you would do;
+
+```objective-c
+NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"]; 
+NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
+```
+
+For a more complete example see the implementation of the Flutter [video_payer plugin](https://pub.dartlang.org/packages/video_player).
 
 ## Platform assets
 
