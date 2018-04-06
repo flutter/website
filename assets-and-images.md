@@ -53,13 +53,13 @@ asset bundle along with the specified asset.
 
 For example, if you have the following files in your application
 directory:
-
-* .../pubspec.yaml
-* .../graphics/my_icon.png
-* .../graphics/background.png
-* .../graphics/dark/background.png
-* ...etc.
-
+```
+  .../pubspec.yaml
+  .../graphics/my_icon.png
+  .../graphics/background.png
+  .../graphics/dark/background.png
+  ...etc.
+```
 ...and your `pubspec.yaml` file contains:
 
 ```yaml
@@ -140,11 +140,12 @@ closely matches the current [device pixel ratio](https://docs.flutter.io/flutter
 In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
 
-* .../image.png
-* .../Mx/image.png
-* .../Nx/image.png
-* ...etc.
-
+```
+  .../image.png
+  .../Mx/image.png
+  .../Nx/image.png
+  ...etc.
+```
 ...where _M_ and _N_ are numeric identifiers that correspond to the nominal resolution
 of the images contained within, in other words, they specify the device pixel ratio that
 the images are intended for.
@@ -153,9 +154,11 @@ The main asset is assumed to correspond to a
 resolution of 1.0. For example, consider the following asset layout for an
 image named `my_icon.png`:
 
-* .../my_icon.png
-* .../2.0x/my_icon.png
-* .../3.0x/my_icon.png
+```
+  .../my_icon.png
+  .../2.0x/my_icon.png
+  .../3.0x/my_icon.png
+```
 
 On devices with a device pixel ratio of 1.8, the asset `.../2.0x/my_icon.png`
 would be chosen. For a device pixel ratio of 2.7, the asset
@@ -213,11 +216,13 @@ To load an image from a [package](https://flutter.io/using-packages/) dependency
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
-* .../pubspec.yaml
-* .../icons/heart.png
-* .../icons/1.5x/heart.png
-* .../icons/2.0x/heart.png
-* ...etc.
+```
+  .../pubspec.yaml
+  .../icons/heart.png
+  .../icons/1.5x/heart.png
+  .../icons/2.0x/heart.png
+  ...etc.
+```
 
 Then to load the image, use:
 
@@ -234,10 +239,11 @@ If the desired asset is specified in the `pubspec.yaml` file of the package, it 
 
 A package can also choose to have assets in its `lib/` folder that are not specified in its `pubspec.yaml` file. In this case, for those images to be bundled, the application has to specify which ones to include in its `pubspec.yaml`. For instance, a package named `fancy_backgrounds` could have the following files:
 
-* .../lib/backgrounds/background1.png
-* .../lib/backgrounds/background2.png
-* .../lib/backgrounds/background3.png
-
+```
+  .../lib/backgrounds/background1.png
+  .../lib/backgrounds/background2.png
+  .../lib/backgrounds/background3.png
+```
  To include, say, the first image, the `pubspec.yaml` of the application should specify it in the `assets` section:
 
 ```yaml
@@ -270,11 +276,13 @@ flutter:
 ```
 reflecting the following structure in your Flutter app.
 
-* .../pubspec.yaml
-* .../icons/heart.png
-* ...etc.
+```
+  .../pubspec.yaml
+  .../icons/heart.png
+  ...etc.
+```
 
-To access ```icons/heart.png``` from your Java plugin code you would do 
+To access `icons/heart.png` from your Java plugin code you would do; 
 
 ```java
 AssetManager assetManager = registrar.context().getAssets();
@@ -293,7 +301,7 @@ a plugin while `FlutterViewController` would be the choice when developing an ap
 
 As an example, suppose you have the Flutter setting from above.
 
-To access ```icons/heart.png``` from your ```Objective-C``` plugin code you would do
+To access `icons/heart.png` from your Objective-C plugin code you would do;
 
 ```objective-c
 NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"]; 
