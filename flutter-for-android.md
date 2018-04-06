@@ -23,57 +23,56 @@ that are most relevant to your needs.
 
 # Views
 
-## What is the equivalent of a View in Flutter
+## What is the equivalent of a `View` in Flutter?
 
-In Android, the View is the foundation of everything that shows up on the
-screen. From Buttons, Toolbars, and Inputs, everything is a View.  In Flutter
-the equivalent of a View is Widget. Widgets however, have a few differences
-when compared with a View. To start, widgets only last for a frame, and on
-every frame, Flutter's framework creates a tree of widget instances. In
-comparison, on Android when a View is drawn it does not redraw until invalidate
+In Android, the `View` is the foundation of everything that shows up on the
+screen. Buttons, toolbars, and inputs, everything is a View. In Flutter
+the equivalent of a view is `Widget`. Widgets, however, have a few differences
+when compared with a view. To start, widgets only exist for one frame, and on
+every new frame, Flutter's framework creates a new tree of widget instances. In
+comparison, an Android view is drawn once and does not redraw until invalidate
 is called.
 
-Unlike Android’s view hierarchy system where the framework mutate Views,
-Widgets in Flutter are immutable, this allows Widgets to be super lightweight.
+Unlike Android’s view hierarchy system where the framework mutate views,
+widgets in Flutter are immutable. This allows Flutter widgets to be very
+lightweight.
 
-
-
-## How do I update Widgets
+## How do I update `Widget`s?
 
 In Android you update your views by directly mutating them. However,
-in Flutter Widgets are immutable and are not updated directly, instead
-you have to work with the Widget's state.
+in Flutter `Widget`s are immutable and are not updated directly, instead
+you have to work with the widget's state.
 
 This is where the concept of Stateful vs Stateless widgets comes from. A
-StatelessWidget is just what it sounds like, a widget with no state
+`StatelessWidget` is just what it sounds like, a widget with no state
 information.
 
-StatelessWidgets are useful when the part of the user interface
+`StatelessWidgets` are useful when the part of the user interface
 you are describing does not depend on anything other than the configuration
 information in the object.
 
-For example, in Android, this would be similar to just placing an ImageView
+For example, in Android, this would be similar to just placing an `ImageView`
 with your logo. The logo is not going to change during runtime and because
-of that you would use a StatelessWidget in Flutter.
+of that you would use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with StatefulWidget and tell the Flutter framework that the widget’s State
+with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
 has been updated so it can update that widget.
 
-The important thing to note here is at the core both Stateless and Stateful
+The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
-StatefulWidget has a State object which stores state data across frames and
-restores it.
+`StatefulWidget` has a `State` object which stores state data across frames
+and restores it.
 
-If you are in doubt, then always remember this rule: If a widget changes (the
-user interacts with it, for example) it’s stateful. However, if a child 
-is reacting to change, the containing parent can still be a Stateless widget
-if the parent doesn't react to change.
+If you are in doubt, then always remember this rule: if a widget changes (e.g.,
+because of user interactions) it’s stateful. However, if a widget is reacting
+to change, the containing parent widget can still be stateless if it doesn't
+itself react to change.
 
-Let's take a look at how you would use a StatelessWidget. A common
-StatelessWidget is a Text widget. If you look at the implementation of the Text
-Widget you'll find it subclasses a StatelessWidget
+Let's take a look at how you would use a `StatelessWidget`. A common
+`StatelessWidget` is the `Text` widget. If you look at the implementation of the
+`Text` widget you'll find it subclasses a `StatelessWidget`.
 
 <!-- skip -->
 {% prettify dart %}
@@ -83,13 +82,13 @@ new Text(
 );
 {% endprettify %}
 
-As you can see, the Text Widget has no state information associated with it, it
-renders what is passed in it's constructors and nothing more.
+As you can see, the `Text` Widget has no state information associated with it,
+it renders what is passed in its constructors and nothing more.
 
 But, what if you want to make "I Like Flutter" change dynamically, for
-example from clicking a FloatingActionButton?
+example when clicking a `FloatingActionButton`?
 
-This can be achieved by wrapping the Text widget in a StatefulWidget and
+This can be achieved by wrapping the `Text` widget in a `StatefulWidget` and
 updating it when the button is clicked.
 
 For example:
@@ -151,13 +150,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-
-## How do I layout my Widgets? Where is my XML layout file
+## How do I layout my Widgets? Where is my XML layout file?
 
 In Android, you write layouts via XML, but in Flutter you write your layouts
 with a widget tree.
 
-Here is an example of how you would display a simple Widget on the screen and
+Here is an example of how you would display a simple widget on the screen and
 add some padding to it.
 
 <!-- skip -->
@@ -179,18 +177,18 @@ add some padding to it.
   }
 {% endprettify %}
 
-You can view all the layouts that Flutter has to offer here:
-[https://flutter.io/widgets/layout/](https://flutter.io/widgets/layout/)
+You can view all the layouts that Flutter has to offer in the
+[widget catalog](https://flutter.io/widgets/layout/).
 
-## How do I add or remove a component from my layout
+## How do I add or remove a component from my layout?
 
-In Android, you would call addChild or removeChild from a parent to dynamically
-add or remove views from a parent. In Flutter, because widgets are immutable
-there is no addChild. Instead, you can pass in a function that returns a widget
-to the parent and control that child's creation via a boolean.
+In Android, you would call `addChild()` or `removeChild()` on a parent to dynamically
+add or remove child views. In Flutter, because widgets are immutable there is no direct
+equivalent to `addChild()`. Instead, you can pass in a function that returns a widget
+to the parent and control that child's creation via a boolean flag.
 
-For example here is how you can toggle between two widgets when you click on a
-FloatingActionButton:
+For example, here is how you can toggle between two widgets when you click on a
+`FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -257,21 +255,30 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
+## In Android, I can animate a view by calling `animate()`; how do I animate a Widget?
 
-## In Android, I can Animate a view by View.animate(), how can I do that to a Widget
+In Android you would either create animations via XML or call the `animate()`
+method on a view. In Flutter, animating widgets can be done via the animation
+library by wrapping widgets inside an animated widget.
 
-In Flutter, animating widgets can be done via the animation library.
+Similarly to Android's `Animator`s, in Flutter you have an `AnimationController`
+which is an `Animation<double>` that can pause, seek, stop and reverse. It
+requires a `Ticker` which signals when vsync happens, and produces a linear
+interpolation between 0 and 1 on each frame while it's running.
 
-In Android you would either create animations via XML or call the .animate()
-property on Views, in Flutter you can wrap widgets inside an Animation.
+You then create one or more `Animation`s and attach them to the controller; for
+example, you could have a `CurvedAnimation` to have an animation which uses a
+curve to interpolate another animation. In this sense, the controller is the
+"master" source of the animation progress and the `CurvedAnimation` is tasked
+to modify the controller's linear output to a curve. Like widgets, animations in
+Flutter work with composition.
 
-Like Android, in Flutter you have an AnimationController and a
-Interpolator which is an extension of the Animation class, for example a
-CurvedAnimation. You pass the controller and Animation into an AnimationWidget
-and tell the controller to start the animation.
+When building the widget tree you then assign the `Animation` to an animated
+property of a widget, such as the opacity of a `FadeTransition`, and tell the
+controller to start the animation.
 
-Let's take a look at how to write a FadeTransition that will Fade in a logo
-when you press
+Let's take a look at how to write a `FadeTransition` that will fade in a logo
+when you press a `FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -337,20 +344,22 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 }
 {% endprettify %}
 
+See [https://flutter.io/widgets/animation/](https://flutter.io/widgets/animation/) and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/animation) for
+more specific details.
 
-See [https://flutter.io/widgets/animation/](https://flutter.io/widgets/animation/) and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/animation) for more specific details.
+## How do I use a `Canvas` to draw/paint?
 
-## How do I use a Canvas to draw/paint
+In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
+to the screen. Flutter has a very similar `Canvas` API as well, since it is based
+on the same low-level rendering engine, Skia. As a result, painting to a canvas in
+Flutter is a very familiar task for Android developers.
 
-In Android, you would use the Canvas to draw custom shapes to the screen.
+Flutter has two classes that help you draw to the canvas: `CustomPaint`
+and `CustomPainter`, the latter of which implements your algorithm to draw to
+the canvas.
 
-Flutter has two classes that will help you draw to the canvas, the CustomPaint
-and CustomPainter which implements your algorithm to draw to canvas.
-
-In this popular StackOverFlow answer you can see how
-a signature painter is implemented.
-
-See [https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter](https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter)
+In this [popular StackOverFlow answer](https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter)
+you can see how to implement a signature painter in Flutter.
 
 <!-- skip -->
 {% prettify dart %}
@@ -396,23 +405,25 @@ class DemoApp extends StatelessWidget {
 void main() => runApp(new MaterialApp(home: new DemoApp()));
 {% endprettify %}
 
+## How do I build custom widgets?
 
-## How do I build custom Widgets
-
-In Android, you would typically subclass from a View or a pre-existing
-Widget to override and implement methods.
+In Android, you would typically subclass from `View` or a pre-existing
+view to override and implement methods in order to obtain the desired behavior.
 
 In Flutter building a custom widget is often accomplished by not extending but
-composing smaller widgets.
+composing smaller widgets. It is somewhat similar to implementing a custom
+`ViewGroup` in Android, where all the building blocks are already existing, but
+you provide a different behavior — for example, custom layout logic.
 
-Let's take a look at how to build a CustomButton that takes in the label in the
-constructor. This is achieved by composing it with a RaisedButton, rather than
-extending the RaisedButton and overriding and implementing new methods:
+Let's take a look at how to build a `CustomButton` that takes in a label in the
+constructor. This is achieved by composing it with `RaisedButton`, rather than
+extending `RaisedButton` and overriding and implementing new methods:
 
 <!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
+
   CustomButton(this.label);
 
   @override
@@ -422,16 +433,15 @@ class CustomButton extends StatelessWidget {
 }
 {% endprettify %}
 
-Then you can use this CustomButton just like you would with any other Widget:
+Then you can use this `CustomButton` just like you would with any other widget:
 
 <!-- skip -->
 {% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Center(
-      child: new CustomButton("Hello"),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return new Center(
+    child: new CustomButton("Hello"),
+  );
 }
 {% endprettify %}
 
@@ -2076,4 +2086,3 @@ notifications for your app.
 
 In Flutter, you can access this functionality by using the Firebase_Messaging
 plugin [Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
- 
