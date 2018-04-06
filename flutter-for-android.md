@@ -1142,26 +1142,53 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Project Structure & Resources
 
-## Where do I store my resolution dependent image files? HDPI/XXHDPI
+## Where do I store my resolution dependent image files?
 
-Flutter follows a simple 3 resolution format like iOS. 1x, 2x, and 3x.
+While Android has resources as a distinct notion from assets, Flutter apps have
+only assets. All your resources which would be living in the `res/drawable-*`
+folders on Android, should be instead put in an assets folder.
 
-Create a folder called images and for each of your image files, generate a @2x
-and @3x variant and place them in the folder like such
+Flutter follows a simple density-based format like iOS. Assets can be `1.0x`, 
+`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
+are logical pixels, which are basically the same as device-independent pixels.
+The so-called [`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+expresses the ratio of physical pixels in a single logical pixel.
 
-- …/my_icon.png
+The equivalent to Android's density buckets are:
 
-- …/2.0x/my_icon.png
-- …/3.0x/my_icon.png
+ Android density qualifier | Flutter pixel ratio
+ --- | ---
+ `ldpi` | `0.75x`
+ `mdpi` | `1.0x`
+ `hdpi` | `1.5x`
+ `xhdpi` | `2.0x`
+ `xxhdpi` | `3.0x`
+ `xxxhdpi` | `4.0x`
 
-Then you would need to declare these images in your pubspec.yaml file
+Assets on Flutter can be located in any arbitrary folder; there is no predefined
+folder structure. You then declare where the assets are located in the pubspec
+file, and Flutter will pick them up. Note that Flutter assets are not accessible
+from the native side, and vice versa native assets and resources aren't available
+from Flutter as they live in separate folders.
+
+To add a new image asset called `my_icon.png` to our Flutter project, for example,
+and deciding that it should live in a folder we arbitrarily called `images`, you
+would put the base image (1.0x) in the `images` folder, and all the other
+variants in sub-folders called with the appropriate ratio multiplier:
+
+```
+images/my_icon.png       // Base: 1.0x image
+images/2.0x/my_icon.png  // 2.0x image
+images/3.0x/my_icon.png  // 3.0x image
+```
+
+Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 <!-- skip -->
 {% prettify yaml %}
 assets:
- - images/a_dot_burr.jpeg
- - images/a_dot_ham.jpeg
-     {% endprettify %}
+ - images/my_icon.jpeg
+{% endprettify %}
 
 You can then access your images using AssetImage
 
@@ -1170,22 +1197,31 @@ You can then access your images using AssetImage
 return new AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
 
-## Where do I store strings? How do I store different locales
-
-At the moment, best practice is to create a class called Strings, for example
+or directly in an `Image` widget:
 
 <!-- skip -->
 {% prettify dart %}
-class Strings{
+return new AssetImage("images/a_dot_burr.jpeg");
+{% endprettify %}
+
+## Where do I store strings? How do I handle localization?
+
+Flutter currently doesn't have a dedicated resources-like system for strings.
+At the moment, the best practice is to hold your copy text in a class as
+static fields and accessing them from there. For example:
+
+<!-- skip -->
+{% prettify dart %}
+class Strings {
   static String welcomeMessage = "Welcome To Flutter";
 }
 {% endprettify %}
 
-Then in your code, you can access your Strings as such
+Then in your code, you can access your strings as such:
 
 <!-- skip -->
 {% prettify dart %}
- new Text(Strings.welcomeMessage)
+new Text(Strings.welcomeMessage)
 {% endprettify %}
 
 Flutter has basic support for accessibility on Android, though this feature is
@@ -1195,17 +1231,19 @@ Flutter developers are encouraged to use the [intl
 package](https://pub.dartlang.org/packages/intl) for internationalization and
 localization.
 
-## What is the equivalent of a Gradle file to add my external dependencies
+## What is the equivalent of a Gradle file? How do I add dependencies?
 
-In Android, you add dependencies by adding to your Gradle file located in your
-Android project.
+In Android, you add dependencies by adding to your Gradle build script. Flutter
+uses Dart's own build system, and the Pub package manager, delegating then the
+building of the native Android and iOS wrapper apps to the respective build
+systems.
 
-In Flutter while there are Gradle files under the Android folder in your
-Flutter project, you would only use these if you are adding dependencies needed
-for platform integration. Otherwise, you can use pubspec.yaml to declare
-external dependencies specific to Flutter.
+While there are Gradle files under the `android` folder in your Flutter project,
+you would only use these if you were adding native dependencies needed for
+per-platform integration. In general, you can use `pubspec.yaml` to declare
+external dependencies to use in Flutter.
 
-A good place to find great packages for flutter is [Pub](https://pub.dartlang.org/flutter/packages/)
+A good place to find great packages for flutter is [Pub](https://pub.dartlang.org/flutter/packages/).
 
 # Activities and Fragments
 
