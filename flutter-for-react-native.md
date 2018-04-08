@@ -430,7 +430,7 @@ new CustomCard(
     ...
 {% endprettify %}
 
-The constructor for the `CustomCard` class shows a Dart feature. The curly braces inside the constructor indicates that the parameters are optional when initialising. In order to make these fields required, we have two options- first one is to remove the curly braces from the constructor and the second is to add the `@required` to the constructor. The latter approach enables the developer to provide parameter names when using the `CustomCard` class in the app code as show in the (Usage section) example above. 
+The constructor for the `CustomCard` class shows a Dart feature. The curly braces inside the constructor indicates that the parameters are optional when initialising. In order to make these fields required, we have two options- first one is to remove the curly braces from the constructor and the second is to add the `@required` to the constructor. The latter approach enables the developer to provide parameter names when using the `CustomCard` class in the app code as shown in the (Usage section) example above. 
 
 #### Preview
 
@@ -634,7 +634,7 @@ render() {
 }
 {% endprettify %}
 
-In Flutter, we use [`CustomPaint`](https://docs.flutter.io/flutter/widgets/CustomPaint-class.html) widget to draw during the paint phase. We implement abstract class [`CustomPainter`](https://docs.flutter.io/flutter/rendering/CustomPainter-class.html) and pass it to `painter` property in `CustomPaint` widget.
+In Flutter, we use the [`CustomPaint`](https://docs.flutter.io/flutter/widgets/CustomPaint-class.html) widget to draw during the paint phase. We implement abstract class [`CustomPainter`](https://docs.flutter.io/flutter/rendering/CustomPainter-class.html) and pass it to `painter` property in `CustomPaint` widget.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1121,7 +1121,7 @@ class MyStatelessWidget extends StatelessWidget {
 
 ### Props
 
-In React Native, most components can be customized when they are created with different parameters. These creation parameters are called props. These parameters can be used in child component using `this.props`.
+In React Native, most components can be customized when they are created with different parameters. These creation parameters are called props. These parameters can be used in a child component using `this.props`.
 
 <!-- skip -->
 {% prettify javascript %}
@@ -1707,7 +1707,8 @@ void _submit() {
 
 ## Platform-specific code
 
-When building a cross-platform app, you'll want to re-use as much code as possible across platforms. Scenarios may arise where it makes sense for the code to be different. In React Native, separate implementation can be given at almost anywhere in the app code by recognizing the platform the app will run on. To get the target platform, you need to use this component :
+When building a cross-platform app, you'll want to re-use as much code as possible across platforms. Scenarios may arise where it makes sense for the code to be different. In React Native, separate implementation can be given at almost anywhere in the app code by recognizing the platform the app will run on. To get the target platform,
+you can either use platform file extensions or the `Platform` module as below:
 
 <!-- skip -->
 {% prettify javascript %}
@@ -1814,7 +1815,7 @@ class FadeInView extends React.Component {
     ...
 {% endprettify %}
 
-In the equivalent Flutter example, we use an [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html) object `controller` and specify the duration inside it. We animation is defined as a [`Tween`](https://docs.flutter.io/flutter/animation/Tween-class.html) which basically describes some interpolation between a beginning and ending value. We are using a [`FadeTransition`](https://docs.flutter.io/flutter/widgets/FadeTransition-class.html) widget where we have `opacity` property which is mapped to the `animation` object. The sole job of a Tween is to define a mapping from an input range to an output range. Then we start the animation using `controller.forward()`. We can perform other operations too using the controller. In the example, We are using the [`FlutterLogo`](https://docs.flutter.io/flutter/material/FlutterLogo-class.html) inside the `FadeTransition` widget.
+In the equivalent Flutter example, we use an [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html) object `controller` and specify the duration inside it. The animation is defined as a [`Tween`](https://docs.flutter.io/flutter/animation/Tween-class.html) which basically describes some interpolation between a beginning and ending value. We are using a [`FadeTransition`](https://docs.flutter.io/flutter/widgets/FadeTransition-class.html) widget where we have `opacity` property which is mapped to the `animation` object. The sole job of a Tween is to define a mapping from an input range to an output range. Then we start the animation using `controller.forward()`. We can perform other operations too using the controller. In the example, We are using the [`FlutterLogo`](https://docs.flutter.io/flutter/material/FlutterLogo-class.html) inside the `FadeTransition` widget.
 
 <!-- skip -->
 {% prettify dart %}

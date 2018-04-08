@@ -134,9 +134,8 @@ class _MyHomePageState extends State<MyHomePage> {
   //Incrementing counter after click
   _incrementCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _counter = (prefs.getInt('counter') ?? 0) + 1;
     setState(() {
-      _counter;
+      _counter = (prefs.getInt('counter') ?? 0) + 1;
     });
     prefs.setInt('counter', _counter);
   }
@@ -190,3 +189,5 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
     return null;
   });
 ```
+
+The code above should be placed inside a test file under the `test` folder.

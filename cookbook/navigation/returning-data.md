@@ -123,7 +123,7 @@ class SelectionScreen extends StatelessWidget {
 
 Now, we'll want to update the `onPressed` callback for both of our buttons! In
 order to return data to the first screen, we'll need to use the 
-[`Navitator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
+[`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
 method.
 
 `Navigator.pop` accepts an optional second argument called `result`. If we 

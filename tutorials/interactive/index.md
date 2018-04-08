@@ -41,7 +41,7 @@ that manages two stateless widgets.
 
 ## Getting ready
 
-If you've already build the layout in
+If you've already built the layout in
 [Building Layouts in Flutter](/tutorials/layout/),
 skip to the next section.
 
