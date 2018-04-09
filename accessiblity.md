@@ -5,9 +5,9 @@ title: Accessibility
 permalink: /accessibility/
 ---
 
-Flutter is committed to enable developers to make their Flutter apps accessible:
-usable for all users, including users with disabilities such as blindness or
-motor impairment.
+Flutter is committed to enable developers to make their apps accessible: usable
+for all, including those with disabilities such as blindness or motor
+impairment.
 
 * Placeholder for TOC
 {:toc}
@@ -22,6 +22,29 @@ Flutter supports three components for accessibility support:
   contents
 * **[Sufficient contrast](#sufficient-contrast)**: Render widgets with colors that have
   sufficient contrast
+
+## Inspecting Accessibility support
+
+Details of these are discussed below. In additional to testing for these
+specific topics, we recommend using automated accessibility scanners:
+
+  * For Android:
+    1. Install the [Accessibility Scanner][accessibility-scanner] for Android
+    1. Enable the Accessiility Scanner from Android Settings > Accessibility >
+       Accssibility Scaenner > On
+    1. Navigate to the Accessiility Scanner 'checkbox' iconbutton to initiate a
+       scan
+  * For iOS:
+    1. Open the `iOS` folder of your Flutter app in xCode
+    1. Select a Simulator as the target, and click Run button
+    1. In xCode, select xCode > Open Developer Tools > Accessibility Inspector
+    1. In the Accessbility Inspector, select Inspection > Enable Point to
+       Inspect, and then select the various user interface elements in running
+       Flutter app to inspect their accessibility attributes
+    1. In the Accessbility Inspector, select Audit in the toolbar, and then
+       select Run Audio to get a report of potential issues
+
+[accessibility-scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 
 ## Large fonts {#large-fonts}
 
@@ -53,14 +76,17 @@ impaired users to get spoken feedback about the contents of the screen.
 
 ### Tips for developers
 
-To enable screen readers, you, as a developer must annotate the widget
-tree with descriptions using the [Semantics widget][semanticswidget].
+The core widgets in the Flutter framework should already be compatible with
+screen readers. If you create custom widgets -- for example by composing several
+existing widgets into a single widget -- you can annotate those custom widgets
+with the the [Semantics widget][semanticswidget] to customize the accessibility
+experience of the custom widget.
 
 [talkback]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [voiceover]: https://www.apple.com/lae/accessibility/iphone/vision/
 [semanticswidget]: https://docs.flutter.io/flutter/widgets/Semantics-class.html
 
-## Sufficient contract {#sufficient-contrast}
+## Sufficient contrast {#sufficient-contrast}
 
 Sufficient color contrast makes text and images easier to read. Along with
 benefitting users with various visual impairments, sufficient color contrast
