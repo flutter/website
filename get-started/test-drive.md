@@ -10,6 +10,10 @@ our templates, run it, and learn how to make changes with Hot Reload.
 Flutter is a flexible toolkit, so please start by selecting your development
 tool of choice for writing, building, and running your Flutter app.
 
+By default our template supports writing Android code using Java, or iOS code using Objective-C. To use Kotlin or Swift, use the -i and/or -a flags:
+
+In a terminal run: flutter create -i swift -a kotlin myapp
+
 <div id="tab-set-install">
 
 <ul class="tabs__top-bar">
