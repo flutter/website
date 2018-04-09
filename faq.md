@@ -149,7 +149,7 @@ built with Flutter to users. We'd love to hear what you're building!
 We are building plugins for [Android Studio](https://developer.android.com/studio/),
 [IntelliJ IDEA](https://www.jetbrains.com/idea/), and [VS Code](https://code.visualstudio.com/).
 
-See [editor configuration](get-started/editor/) for setup details, and
+See [editor configuration](/get-started/editor/) for setup details, and
 ['Developing Flutter apps in an IDE'](/using-ide/) for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
