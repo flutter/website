@@ -106,9 +106,9 @@ class _ExampleWidgetState extends State<ExampleWidget> {
             showDialog(
               context: context,
               builder: (_) => new AlertDialog(
-                title: new Text('What you typed'),
-                content: new Text(_controller.text),
-              ),
+                    title: new Text('What you typed'),
+                    content: new Text(_controller.text),
+                  ),
             );
           },
           child: new Text('DONE'),
