@@ -1,11 +1,14 @@
 ## Android setup
 
+<aside class="alert alert-success" markdown="1">
+<i class="fa fa-lightbulb-o"> </i> **Note:**
+Flutter relies on a full installation of Android Studio to supply
+its Android platform dependencies. However, you can write your
+Flutter apps in a number of editors; a later step will discuss that.
+</aside>
+
+
 ### Install Android Studio
-
-To develop Flutter apps for Android, you can use a Mac, Windows, or Linux
-(64-bit) machine.
-
-Flutter requires Android Studio to be installed and configured:
 
 1. Download and install [Android Studio](https://developer.android.com/studio/index.html).
 

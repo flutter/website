@@ -10,13 +10,15 @@ our templates, run it, and learn how to make changes with Hot Reload.
 Flutter is a flexible toolkit, so please start by selecting your development
 tool of choice for writing, building, and running your Flutter app.
 
+<div id="tab-set-install">
+
 <ul class="tabs__top-bar">
-    <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
+    <li class="tab-link current" data-tab="tab-install-androidstudio">Android Studio</li>
     <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
     <li class="tab-link" data-tab="tab-install-terminal">Terminal + editor</li>
 </ul>
 
-<div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
+<div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
 *Android Studio:* A complete, integrated IDE experience for Flutter. 
 
@@ -156,6 +158,8 @@ want to hot reload, and see the change in your simulator, emulator, or device.
      **Hot Reload button** (the button with the lightning bolt icon).
 
 You should see the updated string in the running app almost immediately.
+
+</div>
 
 </div>
 

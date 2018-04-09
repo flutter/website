@@ -103,7 +103,7 @@ become skewed. You can fix this automatically with the Flutter tools:
 
 <ol markdown="1">
 
-<li markdown="1"> Replace lib/main.dart.<br>
+<li markdown="1"> Replace `lib/main.dart`.<br>
     Delete all of the code from **lib/main.dart**.
     Replace with the following code, which displays "Hello World" in the center
     of the screen.
@@ -150,7 +150,7 @@ class MyApp extends StatelessWidget {
        which is short hand used for one-line functions or methods.
   </li>
   <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, most everything is a widget, including
+       widget. In Flutter, almost everything is a widget, including
        alignment, padding, and layout.
   </li>
   <li markdown="1"> The Scaffold widget, from the Material library,
@@ -415,7 +415,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('Welcome to Flutter'),
-       ),
+        ),
         body: new Center(
           //child: new [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
           child: new [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
@@ -569,7 +569,7 @@ class RandomWordsState extends State<RandomWords> {
       [[highlight]]appBar: new AppBar([[/highlight]]
         [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
       [[highlight]]),[[/highlight]]
-    [[highlight]]body: _buildSuggestions(),[[/highlight]]
+      [[highlight]]body: _buildSuggestions(),[[/highlight]]
     [[highlight]]);[[/highlight]]
   }
   ...
@@ -681,10 +681,10 @@ Add the highlighted lines below:
     each row, but they are not yet interactive.
 </li>
 
-<li markdown="1"> Make the hearts tappable in the `_buildRow`
+<li markdown="1"> Make the name suggestion tiles tappable in the `_buildRow`
     function. If a word entry has already been added to favorites,
     tapping it again removes it from favorites.
-    When the heart has been tapped, the function calls
+    When a tile has been tapped, the function calls
     `setState()` to notify the framework that state has changed.
 
 Add the highlighted lines:
@@ -724,9 +724,9 @@ a call to the `build()` method for the State object, resulting in
 an update to the UI.
 </aside>
 
-Hot reload the app. You should be able to tap any row to favorite, or unfavorite,
-the entry. Note that tapping a row generates an implicit ink splash animation
-that emanates from the heart icon.
+Hot reload the app. You should be able to tap any tile to favorite, or unfavorite,
+the entry. Note that tapping a tile generates an implicit ink splash animation
+that emanates from wherever you tapped.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
@@ -833,7 +833,7 @@ which pushes the route to the Navigator's stack.
       [[highlight]]new MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
           [[highlight]]final tiles = _saved.map([[/highlight]]
-                [[highlight]](pair) {[[/highlight]]
+            [[highlight]](pair) {[[/highlight]]
               [[highlight]]return new ListTile([[/highlight]]
                 [[highlight]]title: new Text([[/highlight]]
                   [[highlight]]pair.asPascalCase,[[/highlight]]
@@ -843,11 +843,11 @@ which pushes the route to the Navigator's stack.
             [[highlight]]},[[/highlight]]
           [[highlight]]);[[/highlight]]
           [[highlight]]final divided = ListTile[[/highlight]]
-              [[highlight]].divideTiles([[/highlight]]
-            [[highlight]]context: context,[[/highlight]]
-            [[highlight]]tiles: tiles,[[/highlight]]
-          [[highlight]])[[/highlight]]
-              [[highlight]].toList();[[/highlight]]
+            [[highlight]].divideTiles([[/highlight]]
+              [[highlight]]context: context,[[/highlight]]
+              [[highlight]]tiles: tiles,[[/highlight]]
+            [[highlight]])[[/highlight]]
+            [[highlight]].toList();[[/highlight]]
         [[highlight]]},[[/highlight]]
       [[highlight]]),[[/highlight]]
     );
@@ -870,7 +870,7 @@ Add the highlighted code below:
       new MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
-                (pair) {
+            (pair) {
               return new ListTile(
                 title: new Text(
                   pair.asPascalCase,
@@ -880,11 +880,11 @@ Add the highlighted code below:
             },
           );
           final divided = ListTile
-              .divideTiles(
-            context: context,
-            tiles: tiles,
-          )
-              .toList();
+            .divideTiles(
+              context: context,
+              tiles: tiles,
+            )
+            .toList();
 
           [[highlight]]return new Scaffold([[/highlight]]
             [[highlight]]appBar: new AppBar([[/highlight]]
@@ -902,7 +902,7 @@ Add the highlighted code below:
 <li markdown="1"> Hot reload the app. Favorite some of the selections and
     tap the list icon in the app bar. The new route appears containing
     the favorites. Note that the Navigator adds a "Back" button to the
-    app bar. You did not have to explicitly implement Navigator.pop.
+    app bar. You did not have to explicitly implement `Navigator.pop`.
     Tap the back button to return to the home route.
 </li>
 </ol>
@@ -911,7 +911,7 @@ Add the highlighted code below:
 
 <p class="h2-like">Problems?</p>
 
-    If your app is not running correctly, you can use the code
+If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)

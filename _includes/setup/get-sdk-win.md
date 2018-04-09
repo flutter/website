@@ -1,42 +1,40 @@
 ## Get the Flutter SDK
 
-To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path.
-Running `flutter doctor` shows any remaining dependencies you may need to install.
+1. Download the following installation bundle to get the latest beta release of the
+Flutter SDK (for other release channels, and older builds, see the [SDK
+archive](/sdk-archive/) page.):
+    * [(loading...)](#){:.download-latest-link-windows}
+1. Extract the zip-file and place the contained `flutter` in the desired
+   installation location for the Flutter SDK
+1. Locate the file `flutter_console.bat` inside the `flutter` directory. Start it by double-clicking.
 
-### Clone the repo
+You are now ready to run Flutter commands in the Flutter Console!
 
-If this is the first time you're installing Flutter on this machine, clone the
-repository:
-
-{% commandline %}
-git clone -b beta https://github.com/flutter/flutter.git
-{% endcommandline %}
-
-To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/)
+To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
 
 ### Update your path
 
-To run the `flutter` command in any terminal session, you need to add it to your PATH environment variable:
+If you wish to run Flutter commands in the regular Windows command prompt, take
+these steps to add Flutter to the PATH environment variable:
 
-* Go to "Control Panel > User Accounts > User Accounts > Change my environment variables"
+* Go to "Control Panel > User Accounts > User Accounts > Change my environment
+  variables"
 * Under "User variables" check if there is an entry called "Path":
-    * If the entry does exist, append the full path to `flutter\bin` using `;` as a separator from existing values.
-    * If the entry does not exist, create a new user variable named `Path` with the full path to `flutter\bin` as its value.
+    * If the entry does exist, append the full path to `flutter\bin` using `;`
+      as a separator from existing values.
+    * If the entry does not exist, create a new user variable named `Path` with
+      the full path to `flutter\bin` as its value.
 
 Reboot Windows to fully apply this change.
 
 ### Run flutter doctor
 
-Open a new Command Prompt or PowerShell window and run the following command to
-see if there  are any dependencies you need to install to complete the setup:
+In the Flutter Console, run the following command to
+see if there are any dependencies you need to install to complete the setup:
 
 {% commandline %}
 flutter doctor
 {% endcommandline %}
-
-Run this command in either a Command Prompt or PowerShell window. Currently, Flutter does
-not support third-party shells like Git Bash.
-{: .alert-warning}
 
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
@@ -52,14 +50,7 @@ For example:
       visit https://flutter.io/setup/#android-setup for detailed instructions.
 </pre>
 
-The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
-itself. Subsequent runs should be much faster.
-
 The following sections describe how to perform these tasks and finish the setup process.
-You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are available for IntelliJ IDEA, Android Studio, and VS Code. See [Editor Setup](/get-started/editor/)
-for the steps to install the Flutter and Dart plugins.
-
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
 

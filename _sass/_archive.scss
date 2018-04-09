@@ -1,0 +1,27 @@
+.sdk-archives {
+
+  th, td {
+    padding-right: 30px;
+  }
+
+  .date {
+    text-align: right;
+  }
+
+  .collapsed .overflow {
+    display: none;
+  }
+
+  .loading {
+    font-weight: italic;
+    color: #999999;
+  }
+
+  .git-hash:before {
+    padding-left: 5px;
+  }
+
+  .git-hash {
+    color: #999999;
+  }
+}

@@ -7,7 +7,7 @@ task :checklinks do
     :empty_alt_ignore => true,
     :url_ignore => [
       # Skip fragment identifiers, as these are not real links
-      '#',
+      /#/,
       # Skip httpbin links as they are not allowed from TravisCI
       'http://httpbin.com',
       # Skip links that have been auto-inserted for the 'Edit Source' action (i.e. that match this regexp)

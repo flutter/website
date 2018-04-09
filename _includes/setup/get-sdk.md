@@ -1,23 +1,34 @@
-## Get the Flutter SDK
+## Get the Flutter SDK {#get-sdk}
 
-To get Flutter, use `git` to clone the repository and then add the `flutter` tool to your path.
-Running `flutter doctor` shows any remaining dependencies you may need to install.
+1. Download the following installation bundle to get the latest beta release of the
+Flutter SDK (for other release channels, and older builds, see the [SDK
+archive](/sdk-archive/) page.):
+{% if page.url contains "linux" %}
+    * [(loading...)](#){:.download-latest-link-linux}
+{% else %}
+    * [(loading...)](#){:.download-latest-link-macos}
+{% endif %}<br><br>
+1. Extract the file in the desired location, e.g.:
+    {% commandline %}
+    cd ~/development
+{% if page.url contains "linux" %}
+    tar xf ~/Downloads/<span class="download-latest-link-filename-linux">flutter_linux_xxx.tar.xz</span>
+{% else %}
+    unzip ~/Downloads/<span class="download-latest-link-filename-macos">flutter_macos_xxx.zip</span>
+{% endif %}
+    {% endcommandline %}
 
-### Clone the repo
-
-If this is the first time you're installing Flutter on this machine, clone the
-`beta` branch of the repository and then add the `flutter` tool to your path:
-
-{% commandline %}
-git clone -b beta https://github.com/flutter/flutter.git
-export PATH=`pwd`/flutter/bin:$PATH
-{% endcommandline %}
+1. Add the `flutter` tool to your path:
+    {% commandline %}
+    export PATH=`pwd`/flutter/bin:$PATH
+    {% endcommandline %}
 
 The above command sets your PATH variable temporarily, for the current terminal window. To
 permanently add Flutter to your path, see [Update your path](#update-your-path).
 
-To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
+You are now ready to run Flutter commands!
 
+To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
 
 ### Run flutter doctor
 
@@ -42,13 +53,7 @@ For example:
       visit https://flutter.io/setup/#android-setup for detailed instructions.
 </pre>
 
-The first time you run a flutter command (such as `flutter doctor`), it downloads its own dependencies and compiles
-itself. Subsequent runs should be much faster.
-
 The following sections describe how to perform these tasks and finish the setup process.
-You'll see in `flutter doctor` output that if you choose to use an IDE, plugins
-are available for IntelliJ IDEA, Android Studio, and VS Code. See [Editor Setup](/get-started/editor/)
-for the steps to install the Flutter and Dart plugins.
 
 Once you have installed any missing dependencies, run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.

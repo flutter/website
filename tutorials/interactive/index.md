@@ -59,7 +59,6 @@ skip to the next section.
 Once you have a connected and enabled device, or you've launched the [iOS
 simulator](/setup-macos/#set-up-the-ios-simulator) (part of the Flutter install),
 you are good to go!
-</aside>
 
 [Building Layouts for Flutter](https://flutter.io/tutorials/layout/)
 showed how to create the layout for the following screenshot.
@@ -351,10 +350,10 @@ and lists other available interactive widgets.
 
 </div>
 
-Who manage's the stateful widget's state? The widget itself? The parent widget?
+Who manages the stateful widget's state? The widget itself? The parent widget?
 Both? Another object? The answer is... it depends.
 There are several valid ways to make your widget interactive.
-You, as the widget designer, makes the decision based on how you expect your
+You, as the widget designer, make the decision based on how you expect your
 widget to be used. Here are the most common ways to manage state:
 
 * [The widget manages its own state](#self-managed)
@@ -596,7 +595,7 @@ library](https://docs.flutter.io/flutter/foundation/foundation-library.html)
 [meta.dart](https://pub.dartlang.org/packages/meta) library):
 
 <pre>
-import 'package: flutter/foundation.dart';
+import 'package:flutter/foundation.dart';
 </pre>
 </aside>
 
