@@ -4,7 +4,7 @@ title: "Cookbook"
 permalink: /cookbook/
 ---
 
-This cookbook contains recipes that demonstrate how to solve common problems 
+This cookbook contains recipes that demonstrate how to solve common problems
 while writing Flutter apps. Each recipe is self-contained and can be used as a
 reference to help you build up an application.
 
@@ -16,7 +16,7 @@ reference to help you build up an application.
   * [Using custom fonts](/cookbook/design/fonts/)
   * [Exporting fonts from a package](/cookbook/design/package-fonts/)
   * [Add a Drawer to a screen](/cookbook/design/drawer/)
-  
+
 ## Images
 
   * [Display images from the internet](/cookbook/images/network-image/)
@@ -30,22 +30,22 @@ reference to help you build up an application.
   * [Working with long lists](/cookbook/lists/long-lists/)
   * [Creating lists with different types of items](/cookbook/lists/mixed-list/)
   * [Creating a grid List](/cookbook/lists/grid-lists/)
-  
+
 ## Handling Gestures
 
   * [Handling Taps](/cookbook/gestures/handling-taps/)
   * [Adding Material Touch ripples](/cookbook/gestures/ripples/)
   * [Implement Swipe to Dismiss](/cookbook/gestures/dismissible/)
-  
+
 ## Navigation
 
   * [Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
   * [Send data to a new screen](/cookbook/navigation/passing-data/)
   * [Return data from a screen](/cookbook/navigation/returning-data/)
   * [Animating a Widget across screens](/cookbook/navigation/hero-animations/)
-  
+
 ## Animation
-  
+
   * [Fade a Widget in and out](/cookbook/animation/opacity-animation/)
 
 ## Networking
