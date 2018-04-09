@@ -147,7 +147,7 @@ signing steps in the previous section, the release APK will be signed.
 Using the command line:
 
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
-1. Run `flutter build apk` (`flutter build` defaults to `--release`).
+1. Run `flutter build apk` (`flutter build` defaults to `--release`. add `--preview-dart-2` if you use Dart2 Preview).
 
 The release APK for your app is created at `<app dir>/build/app/outputs/apk/app-release.apk`.
 
