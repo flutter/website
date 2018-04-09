@@ -146,9 +146,11 @@ built with Flutter to users. We'd love to hear what you're building!
 
 ### Does Flutter work with any editors or IDEs?
 
-We are building plugins for [IntelliJ IDEA](https://www.jetbrains.com/idea/),
-enabling [fully integrated development experience](/using-ide/) for Flutter.
-The plugins work in both the Ultimate and the free Community editions.
+We are building plugins for [Android Studio](https://developer.android.com/studio/),
+[IntelliJ IDEA](https://www.jetbrains.com/idea/), and [VS Code](https://code.visualstudio.com/).
+
+See [editor configuration](get-started/editor/) for setup details, and
+['Developing Flutter apps in an IDE'](/using-ide/) for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
 and one of the many editors that support [editing Dart](https://www.dartlang.org/tools).
@@ -372,6 +374,8 @@ types of code changes cannot be hot reloaded though:
 * Static field initializers.
 * The `main()` method of the app.
 
+See [Using Hot Reload](/hot-reload/) for additional details.
+
 ### Where can I deploy my Flutter app?
 
 You can compile and deploy your Flutter app to iOS and Android.
@@ -409,13 +413,14 @@ encourage the community to use Flutter in a variety of interesting ways.
 
 ### Can I use Flutter inside of my existing native app?
 
-Yes, you can embed a Flutter view in your existing Android or iOS app.
-You can learn more about this at [[docs coming soon]]. If you want to do this,
-we encourage you to email our mailing list:
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+Yes, you can embed a Flutter view in your existing Android or iOS app, however
+our tooling is currently not fully optimized for this use case (see
+[this issue](https://github.com/flutter/flutter/issues/14821) for details).
 
-Please follow [this issue](https://github.com/flutter/flutter/issues/8945)
-to be notified when docs for this feature are available.
+Two current demonstrations of this are the [platform_view](https://github.com/flutter/flutter/tree/master/examples/platform_view)
+and [flutter_view](https://github.com/flutter/flutter/tree/master/examples/flutter_view)
+examples. Some initial documentation is available in the wiki page
+[Add Flutter to existing apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps).
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -480,7 +485,7 @@ across mobile platforms.
 
 ### Can I interop with my mobile platform's default programming language?
 
-Yes, Flutter supports calling into the platform, including integrating with Java
+Yes, Flutter supports calling into the platform, including integrating with Java or Kotlin
 code on Android, and ObjectiveC or Swift code on iOS. This is enabled via a
 flexible message passing style where a Flutter app may send and receive messages
 to the mobile platform using a
