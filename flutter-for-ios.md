@@ -4,6 +4,12 @@ title: Flutter for iOS Developers
 permalink: /flutter-for-ios/
 ---
 
+# This document is a work in progress
+We're working on this document right now. Please do not rely on its completeness
+and accuracy until it's finished and it's shown in the sidebar as a link.
+
+---
+
 This document is meant for iOS developers looking to apply their
 existing iOS knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the iOS framework then you can use this document as a
