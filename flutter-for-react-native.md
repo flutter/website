@@ -1707,8 +1707,10 @@ void _submit() {
 
 ## Platform-specific code
 
-When building a cross-platform app, you'll want to re-use as much code as possible across platforms. Scenarios may arise where it makes sense for the code to be different. In React Native, separate implementation can be given at almost anywhere in the app code by recognizing the platform the app will run on. To get the target platform,
-you can either use platform file extensions or the `Platform` module as below:
+When building a cross-platform app, you'll want to re-use as much code as possible across platforms. Scenarios may arise
+where it makes sense for the code to be different. In React Native, a separate implementation can be given almost
+anywhere in the app code by recognizing the platform the app will run on. To get the target platform, you can either use
+platform file extensions, or the `Platform` module as below:
 
 <!-- skip -->
 {% prettify javascript %}
