@@ -1167,9 +1167,24 @@ The equivalent to Android's density buckets are:
 
 Assets on Flutter can be located in any arbitrary folder; there is no predefined
 folder structure. You then declare where the assets are located in the pubspec
-file, and Flutter will pick them up. Note that Flutter assets are not accessible
-from the native side, and vice versa native assets and resources aren't available
-from Flutter as they live in separate folders.
+file, and Flutter will pick them up.
+
+Note that before Flutter 1.0 beta 2, assets
+defined in Flutter are not accessible from the native side, and vice versa,
+native assets and resources aren't available from Flutter as they live in
+separate folders.
+
+Starting from Flutter 1.0 beta 2, Flutter assets are stored in
+the native asset folder, and can be accessed on the native side via the Android
+`AssetManager`:
+
+<!-- skip -->
+{% prettify kotlin %}
+val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
+{% endprettify %}
+
+As of Flutter 1.0 beta 2, Flutter still cannot access native resources, nor it can
+access native assets
 
 To add a new image asset called `my_icon.png` to our Flutter project, for example,
 and deciding that it should live in a folder we arbitrarily called `images`, you
@@ -1190,7 +1205,7 @@ assets:
  - images/my_icon.jpeg
 {% endprettify %}
 
-You can then access your images using AssetImage
+You can then access your images using `AssetImage`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1201,7 +1216,10 @@ or directly in an `Image` widget:
 
 <!-- skip -->
 {% prettify dart %}
-return new AssetImage("images/a_dot_burr.jpeg");
+@override
+Widget build(BuildContext context) {
+  return new Image.asset("images/my_image.png");
+}
 {% endprettify %}
 
 ## Where do I store strings? How do I handle localization?
