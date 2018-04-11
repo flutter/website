@@ -238,18 +238,24 @@ so as to make it reappear on the list.
 API design
 ----------
 
-We have various lessons we have learnt over the years.
+We have learned various lessons over the years.
 
-* There should be no objects that represent live state that reflects
+* There should be no objects that represent live state that reflect
   some state from another source, since they are expensive to maintain.
   (The Web's `HTMLCollection` object is an example of such an object.)
   In other words, **keep only one source of truth**, and **don't replicate
   live state**.
 
 * Property getters should be efficient (e.g. just returning a cached
-  value, or an O(1) table lookup). If an operation is inefficient it
+  value, or an O(1) table lookup). If an operation is inefficient, it
   should be a method instead. e.g. `document.getForms()`, not
   `document.forms` (it walks the entire tree).
+  
+  - Asynchronous expensive operations can be represented by futures.
+    A method can start the work and return a future; a getter can return 
+    a future corresponding to already-running work. A getter should not
+    kick-off the work and return the future, since getters appear idempotent
+    and side-effect free.
 
 * There should be no APIs that require synchronously completing an
   expensive operation (e.g. computing a full app layout outside of the
@@ -278,7 +284,9 @@ We have various lessons we have learnt over the years.
     be interpreted or parsed is a bad practice as it leads to code
     injection vulnerabilities.
     
-  - APIs should not hide expensive operations. 
+  - If an operation is expensive, that expense should be represented
+    in the API (e.g. by returning a `Future` or a `Stream`).  Avoid
+    providing APIs that hide the expense of tasks.
 
 * Convenience APIs that wrap some aspect of a service from one environment
   for exposure in another environment (for example, exposing an Android API
@@ -289,9 +297,9 @@ We have various lessons we have learnt over the years.
   
 * APIs that wrap underlying services but prevent the underlying API from
   being directly accessed (e.g. how `dart:ui` exposes Skia) should carefully
-  expose only the best parts of the underlying API, possibly refactoring
-  features so that they are more usable if necessary, and avoiding exposing
-  convenience features that hide expensive operations unless there's a
+  expose only the best parts of the underlying API. This may require refactoring
+  features so that they are more usable. It may mean avoiding exposing
+  convenience features that abstract over expensive operations unless there's a
   distinct performance gain from doing so. A smaller API surface is easier
   to understand.
   
