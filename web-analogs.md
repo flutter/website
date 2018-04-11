@@ -157,10 +157,10 @@ var container = new Container( // grey box
 ### Setting Container Width
 
 To specify the width of a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget you set its ```width``` property just like in CSS. To
-mimic CSS's ```max-width``` in Flutter, use the ```constraints``` property of the Container.
+widget you set its `width` property just like in CSS. To
+mimic CSS's `max-width` in Flutter, use the `constraints` property of the Container.
 Create a new [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
-widget with a ```minWidth``` or ```maxWidth```.
+widget with a `minWidth` or `maxWidth`.
 
 For nested Containers, if the parent’s width is less than the child’s width,
 the child Container sizes itself to match the parent.
