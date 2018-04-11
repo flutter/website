@@ -133,8 +133,7 @@ class FirstScreen extends StatelessWidget {
         child: new RaisedButton(
           child: new Text('Launch new screen'),
           onPressed: () {
-            Navigator.push(
-              context,
+            Navigator.of(context).push(
               new MaterialPageRoute(builder: (context) => new SecondScreen()),
             );
           },
