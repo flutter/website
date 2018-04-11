@@ -189,5 +189,3 @@ const MethodChannel('plugins.flutter.io/shared_preferences')
     return null;
   });
 ```
-
-The code above should be placed inside a test file under the `test` folder.
