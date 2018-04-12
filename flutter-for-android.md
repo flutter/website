@@ -1146,7 +1146,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 While Android has resources as a distinct notion from assets, Flutter apps have
 only assets. All your resources which would be living in the `res/drawable-*`
-folders on Android, should be instead put in an assets folder.
+folders on Android should be instead put in an assets folder.
 
 Flutter follows a simple density-based format like iOS. Assets can be `1.0x`, 
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
@@ -1169,12 +1169,12 @@ Assets on Flutter can be located in any arbitrary folder; there is no predefined
 folder structure. You then declare where the assets are located in the pubspec
 file, and Flutter will pick them up.
 
-Note that before Flutter 1.0 beta 2, assets
+Note that before Flutter beta 2, assets
 defined in Flutter are not accessible from the native side, and vice versa,
 native assets and resources aren't available from Flutter as they live in
 separate folders.
 
-Starting from Flutter 1.0 beta 2, Flutter assets are stored in
+Starting from Flutter beta 2, Flutter assets are stored in
 the native asset folder, and can be accessed on the native side via the Android
 `AssetManager`:
 
@@ -1183,7 +1183,7 @@ the native asset folder, and can be accessed on the native side via the Android
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 {% endprettify %}
 
-As of Flutter 1.0 beta 2, Flutter still cannot access native resources, nor it can
+As of Flutter beta 2, Flutter still cannot access native resources, nor it can
 access native assets
 
 To add a new image asset called `my_icon.png` to our Flutter project, for example,
