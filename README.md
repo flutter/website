@@ -292,5 +292,5 @@ from dartlang.org, we recommend manually running the following.
   Even better, to check that old URLs are correctly redirected:
 
   ```
-  linkcheck :3474 --input tool/sitemap.txt
+  linkcheck :3474 --input-file tool/sitemap.txt
   ```

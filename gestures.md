@@ -95,8 +95,8 @@ For example,
 respond to presses (taps), and
 [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 responds to swipes to trigger scrolling.
-If you aren't using those widgets, but you want the "ink splash" effect on a tap,
-you can use
+If you are not using those widgets, but you want the "ink splash" effect on a
+tap, you can use
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
 
 ## Gesture disambiguation

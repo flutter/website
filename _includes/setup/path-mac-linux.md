@@ -1,7 +1,7 @@
 ### Update your path
 
 You can update your PATH variable for the current session only at the command line,
-as shown in [Clone the Flutter repo](./#clone-the-repo). You'll probably want to 
+as shown in [Get the Flutter SDK](./#get-sdk). You'll probably want to
 update this variable permanently, so you can run `flutter` commands in any terminal session.
 
 The steps for modifying this variable permanently for all terminal sessions are machine-specific.

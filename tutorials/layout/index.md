@@ -607,6 +607,7 @@ class MyApp extends StatelessWidget {
       decoration: new BoxDecoration(color: Colors.white),
       child: new Center(
         child: new Text('Hello World',
+            textDirection: TextDirection.ltr,
             style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
       ),
     );
@@ -1094,7 +1095,7 @@ Flutter has a rich library of layout widgets, but here a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
 available widgets, refer to the [Widget Overview](https://flutter.io/widgets/),
-or use the Search box in the the [API reference docs](https://docs.flutter.io/).
+or use the Search box in the [API reference docs](https://docs.flutter.io/).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
@@ -1123,7 +1124,7 @@ Material Components library.
 : Organizes related info into a box with rounded corners and a drop shadow.
 
 * [ListTile](#listtile)
-: Organizes up to 3 lines of text, and optional leading and training icons,
+: Organizes up to 3 lines of text, and optional leading and trailing icons,
   into a row.
 
 ### Container

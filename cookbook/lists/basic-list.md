@@ -19,7 +19,7 @@ new ListView(
   children: <Widget>[
     new ListTile(
       leading: new Icon(Icons.map),
-      title: new Text('Maps'),
+      title: new Text('Map'),
     ),
     new ListTile(
       leading: new Icon(Icons.photo_album),
@@ -47,9 +47,6 @@ class MyApp extends StatelessWidget {
     
     return new MaterialApp(
       title: title,
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text(title),
@@ -61,7 +58,7 @@ class MyApp extends StatelessWidget {
               title: new Text('Map'),
             ),
             new ListTile(
-              leading: new Icon(Icons.photo),
+              leading: new Icon(Icons.photo_album),
               title: new Text('Album'),
             ),
             new ListTile(
@@ -75,3 +72,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+![Basic List Demo](/images/cookbook/basic-list.png)

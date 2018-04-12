@@ -62,7 +62,7 @@ The framework calculates how to transition from the beginning point
 to the end point.
 
 The documents listed above, such as the [animations
-tutorial](/tutorials/animation/) aren't about tweening,
+tutorial](/tutorials/animation/) are not about tweening,
 specifically, but they use tweens in their examples.
 
 ### Physics-based animation

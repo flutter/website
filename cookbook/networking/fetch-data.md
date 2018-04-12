@@ -9,13 +9,26 @@ Flutter provide tools for this type of work!
   
 ## Directions
 
-  1. Make a network request using the `http` package
-  2. Convert the response into a custom Dart object
+  1. Add the `http` package
+  2. Make a network request using the `http` package
+  3. Convert the response into a custom Dart object
+  4. Fetch and Display the data with Flutter
   
-## 1. Make a network request
+## 1. Add the `http` package
 
 The [`http`](https://pub.dartlang.org/packages/http) package provides the 
 simplest way to fetch data from the internet.
+
+To install the `http` package, we need to add it to the dependencies section
+of our `pubspec.yaml`. We can [find the latest version of the http package on 
+the pub website](https://pub.dartlang.org/packages/http#-installing-tab-).
+
+```yaml
+dependencies:
+  http: <latest_version>
+```
+  
+## 2. Make a network request
 
 In this example, we'll fetch a sample post from the 
 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the 
@@ -36,7 +49,7 @@ The `http.get` method returns a `Future` that contains a `Response`.
   * The `http.Response` class contains the data received from a successful http 
   call.  
 
-## 2. Convert the response into a custom Dart object
+## 3. Convert the response into a custom Dart object
 
 While it's easy to make a network request, working with a raw 
 `Future<http.Response>` isn't very convenient. To make our lives easier, we can 
@@ -82,27 +95,60 @@ we'll need to:
 ```dart
 Future<Post> fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = JSON.decode(response.body); 
+  final responseJson = json.decode(response.body); 
   
-  return new Post.fromJson(json); 
+  return new Post.fromJson(responseJson); 
 }
 ```
 
 Hooray! Now we've got a function that we can call to fetch a Post from the 
 internet!
 
+## 4. Fetch and Display the data
+
+In order to fetch the data and display it on screen, we can use the
+[`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html)
+widget! The `FutureBuilder` Widget comes with Flutter and makes it easy to work
+with async data sources.
+
+We must provide two parameters:
+
+  1. The `Future` we want to work with. In our case, we'll call our
+  `fetchPost()` function.
+  2. A `builder` function that tells Flutter what to render, depending on the
+  state of the `Future`: loading, success, or error.
+
+```dart
+new FutureBuilder<Post>(
+  future: fetchPost(),
+  builder: (context, snapshot) {
+    if (snapshot.hasData) {
+      return new Text(snapshot.data.title);
+    } else if (snapshot.hasError) {
+      return new Text("${snapshot.error}");
+    }
+
+    // By default, show a loading spinner
+    return new CircularProgressIndicator();
+  },
+);
+```
+
 ## Complete Example
 
 ```dart
 import 'dart:async';
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Post> fetchPost() async {
-  final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
-  final json = JSON.decode(response.body); 
-  
-  return new Post.fromJson(json); 
+  final response =
+      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+  final responseJson = json.decode(response.body);
+
+  return new Post.fromJson(responseJson);
 }
 
 class Post {
@@ -119,6 +165,40 @@ class Post {
       id: json['id'],
       title: json['title'],
       body: json['body'],
+    );
+  }
+}
+
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Fetch Data Example',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Fetch Data Example'),
+        ),
+        body: new Center(
+          child: new FutureBuilder<Post>(
+            future: fetchPost(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return new Text(snapshot.data.title);
+              } else if (snapshot.hasError) {
+                return new Text("${snapshot.error}");
+              }
+
+              // By default, show a loading spinner
+              return new CircularProgressIndicator();
+            },
+          ),
+        ),
+      ),
     );
   }
 }
