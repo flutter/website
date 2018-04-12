@@ -1287,7 +1287,7 @@ For more details on the meaning of these states, you can check the
 [`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
 
 As you might have noticed, only a small minority of the Activity lifecycle events
-are available; while `FlutterActivity` do capture almost all the activity lifecycle
+are available; while `FlutterActivity` does capture almost all the activity lifecycle
 events internally and send them over to the Flutter engine, they're mostly shielded
 away from you. Flutter takes care of starting and stopping the engine for you, and
 there is little reason for needing to observe the activity lifecycle on the Flutter
