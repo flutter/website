@@ -1148,7 +1148,7 @@ While Android has resources as a distinct notion from assets, Flutter apps have
 only assets. All your resources which would be living in the `res/drawable-*`
 folders on Android, should be instead put in an assets folder.
 
-Flutter follows a simple density-based format like iOS. Assets can be `1.0x`, 
+Flutter follows a simple density-based format like iOS. Assets can be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
 The so-called [`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
@@ -1247,34 +1247,54 @@ A good place to find great packages for flutter is [Pub](https://pub.dartlang.or
 
 # Activities and Fragments
 
-## What are the equivalent of activities and fragments
+## What are the equivalent of activities and fragments in Flutter?
 
-In Android, an Activity represents a single focused thing the user can do. A
-Fragment represents a way to modularize your code, build more
-sophisticated user interfaces for larger screens, and help scale your
-application between small and large screens. In Flutter both of these concepts
-fall under the concept of a Widget.
+In Android, an `Activity` represents a single focused thing the user can do. A
+`Fragment` represents a behavior or a portion of user interface. Fragments
+are a way to modularize your code, compose sophisticated user interfaces for
+larger screens, and help scale your application UI. In Flutter both of these
+concepts fall under the umbrella of `Widget`s.
 
-## How do I listen to Android Activity lifecycle events
+As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
+section, screens in Flutter are represented by `Widget`s since everything is
+a widget in Flutter. You use a `Navigator` to move between different `Route`s
+which represent different screens or pages, or maybe just different states or
+renderings of the same data.
 
-In Android you can override methods from the Activity to capture lifecycle
-methods for the Activity.
+## How do I listen to Android activity lifecycle events?
 
-In Flutter You can listen to lifecycle events by hooking into the WidgetsBinding
-observer and listening to the didChangeAppLifecycleState change event.
+In Android, you can override methods from the `Activity` to capture lifecycle
+methods for the activity itself, or register `ActivityLifecycleCallbacks` on
+the `Application`. In Flutter you have neither concept, but you can instead
+listen to lifecycle events by hooking into the `WidgetsBinding` observer and
+listening to the `didChangeAppLifecycleState()` change event.
 
-The lifecycle events you can observe are
+The lifecycle events you can observe are:
 
-- resumed - The application is visible and responding to user input. This is
-  onResume from Android
-- inactive - The application is in an inactive state and is not receiving user
-  input. This event is unused on Android and only works with iOS.
-- paused - The application is not currently visible to the user, not responding
-  to user input, and running in the background. This is onPause from Android
-- suspending - The application will be suspended momentarily. This is unused on
-  iOS
+* `inactive` — The application is in an inactive state and is not receiving user
+  input. This event only works on iOS, as there is no equivalent event to map to
+  on Android
+* `paused` — The application is not currently visible to the user, not responding
+  to user input, and running in the background. This is equivalent to `onPause()`
+  in Android
+* `resumed` — The application is visible and responding to user input. This is
+  equivalent to `onPostResume()` in Android
+* `suspending` — The application will be suspended momentarily. This is equivalent
+  to `onStop` in Android; it is not triggered on iOS as there is no equivalent
+  event to map to on iOS
 
+For more details on the meaning of these states, you can check the
+[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
 
+As you might have noticed, only a small minority of the Activity lifecycle events
+are available; while `FlutterActivity` does capture almost all the activity lifecycle
+events internally and send them over to the Flutter engine, they're mostly shielded
+away from you. Flutter takes care of starting and stopping the engine for you, and
+there is little reason for needing to observe the activity lifecycle on the Flutter
+side in most cases. If you need to observe the lifecycle to acquire or release any
+native resources, you should likely be doing it from the native side, at any rate.
+
+Here's an example of how to observe the lifecycle status of the containing activity:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1311,6 +1331,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
   Widget build(BuildContext context) {
     if (_lastLifecyleState == null)
       return new Text('This widget has not observed any lifecycle changes.', textDirection: TextDirection.ltr);
+
     return new Text('The most recent lifecycle state this widget observed was: $_lastLifecyleState.',
         textDirection: TextDirection.ltr);
   }
