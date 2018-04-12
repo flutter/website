@@ -1250,20 +1250,20 @@ A good place to find great packages for flutter is [Pub](https://pub.dartlang.or
 ## What are the equivalent of activities and fragments in Flutter?
 
 In Android, an `Activity` represents a single focused thing the user can do. A
-`Fragment` represents a a behavior or a portion of user interface. Fragments
+`Fragment` represents a behavior or a portion of user interface. Fragments
 are a way to modularize your code, compose sophisticated user interfaces for
 larger screens, and help scale your application UI. In Flutter both of these
 concepts fall under the umbrella of `Widget`s.
 
 As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
-section, in Flutter screens are represented by `Widgets`, since everything is
+section, screens in Flutter are represented by `Widget`s since everything is
 a widget in Flutter. You use a `Navigator` to move between different `Route`s
 which represent different screens or pages, or maybe just different states or
 renderings of the same data.
 
 ## How do I listen to Android activity lifecycle events?
 
-In Android you can override methods from the `Activity` to capture lifecycle
+In Android, you can override methods from the `Activity` to capture lifecycle
 methods for the activity itself, or register `ActivityLifecycleCallbacks` on
 the `Application`. In Flutter you have neither concept, but you can instead
 listen to lifecycle events by hooking into the `WidgetsBinding` observer and
@@ -1294,7 +1294,7 @@ there is little reason for needing to observe the activity lifecycle on the Flut
 side in most cases. If you need to observe the lifecycle to acquire or release any
 native resources, you should likely be doing it from the native side, at any rate.
 
-Here's an example on how to observe the lifecycle status of the containing activity:
+Here's an example of how to observe the lifecycle status of the containing activity:
 
 <!-- skip -->
 {% prettify dart %}
