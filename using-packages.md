@@ -9,7 +9,7 @@ Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch.
 
 Existing packages enable many use cases, for example, making network requests
-([`http`](/networking/)), custom navigation/route handling
+([`http`](/cookbook/networking/fetch-data/)), custom navigation/route handling
 ([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
 APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
 [`battery`](https://pub.dartlang.org/packages/battery)), and using third-party
