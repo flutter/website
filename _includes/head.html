@@ -5,8 +5,18 @@
   <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="{{ "/images/favicon.png" | prepend: site.baseurl  }}">
 
-  <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+  {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
+  <meta name="description" content="{{desc}}">
   <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@flutterio">
+
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:description" content="{{desc}}">
+  {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
+  <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
   <link rel="stylesheet" href="{{ "/css/lavish-bootstrap.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
