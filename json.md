@@ -148,7 +148,7 @@ class, which we call `User`. Inside the `User` class, we have:
 This way, the _calling code_ can now have type safety, autocompletion for the
 `name` and `email` fields and compile-time exceptions. If we make typos or treat
 the fields as `int`s instead of `String`s, our app will not even compile,
-instead of crashing on runtime.
+instead of crashing at runtime.
 
 **user.dart**
 
