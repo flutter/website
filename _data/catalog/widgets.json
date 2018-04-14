@@ -598,7 +598,7 @@
   },
   {
     "name": "CupertinoTabView",
-    "description": "Root content of a tab that supports parallel navigation between tabs. Typically used with CupertinoTabScaffolde",
+    "description": "Root content of a tab that supports parallel navigation between tabs. Typically used with CupertinoTabScaffold",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
