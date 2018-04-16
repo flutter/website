@@ -50,47 +50,35 @@ void main() => runApp(new MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final title = 'Horizontal List';
-
+    final title = 'Basic List';
+    
     return new MaterialApp(
       title: title,
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text(title),
         ),
-        body: new Container(
-          margin: new EdgeInsets.symmetric(vertical: 20.0),
-          height: 200.0,
-          child: new ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              new Container(
-                width: 160.0,
-                color: Colors.red,
-              ),
-              new Container(
-                width: 160.0,
-                color: Colors.blue,
-              ),
-              new Container(
-                width: 160.0,
-                color: Colors.green,
-              ),
-              new Container(
-                width: 160.0,
-                color: Colors.yellow,
-              ),
-              new Container(
-                width: 160.0,
-                color: Colors.orange,
-              ),
-            ],
-          ),
+        body: new ListView(
+          children: <Widget>[
+            new ListTile(
+              leading: new Icon(Icons.map),
+              title: new Text('Map'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.photo),
+              title: new Text('Album'),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.phone),
+              title: new Text('Phone'),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 ```
-
-![Horizontal List Demo](/images/cookbook/horizontal-list.gif)

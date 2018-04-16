@@ -22,7 +22,7 @@ var httpClient = new HttpClient();
 ```
 
 The client supports common HTTP operations, such as [`GET`][get],
-[`POST`][post], [`PUT`][put], [`DELETE`][delete].
+[`POST`][post], [`PUT`][put], [`DELETE`][delete].  
 
 ## Dealing with asynchronousy
 
@@ -50,7 +50,7 @@ get() async {
       'example.com', '/path1/path2', {'param1': '42', 'param2': 'foo'});
   var request = await httpClient.getUrl(uri);
   var response = await request.close();
-  var responseBody = await response.transform(utf8.decoder).join();
+  var responseBody = await response.transform(UTF8.decoder).join();
 }
 ```
 
@@ -66,7 +66,7 @@ To decode a simple JSON string and parse the response into a Map:
 
 <!-- skip -->
 ```dart
-Map data = json.decode(responseBody);
+Map data = JSON.decode(responseBody);
 // Assume the response body is something like: ['foo', { 'bar': 499 }]
 int barValue = data[1]['bar']; // barValue is set to 499
 ```
@@ -76,44 +76,8 @@ Map, List, or List of Maps containing simple values, to the `encode` method:
 
 <!-- skip -->
 ```dart
-String encodedString = json.encode([1, 2, { 'a': null }]);
+String encodedString = JSON.encode([1, 2, { 'a': null }]);
 ```
-
-## Example: JSON request via HTTPS POST
-
-The following example shows how to make a RESTful style JSON request via an HTTPS POST call.
-
-```dart
-import 'dart:async';
-import 'dart:convert' show utf8, json;
-import 'dart:io';
-
-Future<Map<String, dynamic>> performApiRequest(
-    HttpClient client, String url, Map<String, dynamic> jsonBody,
-    [String accessToken]) async {
-  final String requestBody = json.encode(jsonBody);
-  HttpClientRequest request = await client.postUrl(Uri.parse(url))
-    ..headers.add(HttpHeaders.ACCEPT, ContentType.JSON)
-    ..headers.contentType = ContentType.JSON
-    ..headers.contentLength = requestBody.length
-    ..headers.chunkedTransferEncoding = false;
-  if (accessToken != null) {
-    request.headers.add(HttpHeaders.AUTHORIZATION, 'Bearer $accessToken');
-  }
-  request.write(requestBody);
-  HttpClientResponse response = await request.close();
-  if (response.headers.contentType.toString() != ContentType.JSON.toString()) {
-    throw new UnsupportedError('Server returned an unsupported content type: '
-        '${response.headers.contentType} from ${request.uri}');
-  }
-  if (response.statusCode != HttpStatus.OK) {
-    throw new StateError(
-        'Server responded with error: ${response.statusCode} ${response.reasonPhrase}');
-  }
-  return json.decode(await response.transform(utf8.decoder).join());
-}
-```
-
 
 ## Example: decoding JSON from HTTPS GET
 
@@ -165,8 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
       var request = await httpClient.getUrl(Uri.parse(url));
       var response = await request.close();
       if (response.statusCode == HttpStatus.OK) {
-        var jsonString = await response.transform(utf8.decoder).join();
-        var data = json.decode(jsonString);
+        var json = await response.transform(UTF8.decoder).join();
+        var data = JSON.decode(json);
         result = data['origin'];
       } else {
         result =

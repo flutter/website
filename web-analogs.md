@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Flutter for Web (HTML/CSS) Developers
+title: HTML/CSS Analogs in Flutter
 permalink: /web-analogs/
 ---
 

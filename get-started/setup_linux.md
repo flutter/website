@@ -13,6 +13,8 @@ permalink: /setup-linux/
 
 {% include setup/path-mac-linux.md %}
 
+{% include setup/editor-setup.md %}
+
 {% include setup/android-setup.md %}
 
 ## Next step
