@@ -55,6 +55,7 @@ GEM
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
+    rake (12.3.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
@@ -78,7 +79,8 @@ PLATFORMS
 DEPENDENCIES
   html-proofer
   jekyll (= 3.3.1)
+  rake
   therubyracer
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

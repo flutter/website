@@ -5,6 +5,7 @@ email_name: flutter-dev@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://flutter.io"
 github_username: flutter
+lang: zh_CN
 
 # Build settings
 markdown: kramdown
