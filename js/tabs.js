@@ -1,4 +1,4 @@
-function setupToolsTabs(container, tabIdPrefix, storageName) {
+function setupToolsTabs(container, tabIdPrefix, storageName, defaultTab) {
   var tabs = $('.tabs__top-bar li', container);
   var tabContents = $('.tabs__content', container);
 
@@ -49,9 +49,21 @@ function setupToolsTabs(container, tabIdPrefix, storageName) {
     selectTool(location.hash.substr(1));
   else if (storageName && window.localStorage && window.localStorage.getItem(storageName))
     selectTool(window.localStorage.getItem(storageName));
+  else if (defaultTab)
+    selectTool(defaultTab);
 }
 
 $(document).ready(function () {
   setupToolsTabs($("#tab-set-install"), "tab-install-", "selectedTool");
-  setupToolsTabs($("#tab-set-os"), "tab-os-", null);
+  setupToolsTabs($("#tab-set-os"), "tab-os-", null, getOS());
 });
+
+function getOS() {
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.indexOf("win") !== -1)
+    return "windows";
+  if (ua.indexOf("mac") !== -1)
+    return "macos";
+  if (ua.indexOf("linux") !== -1)
+    return "linux";
+}
