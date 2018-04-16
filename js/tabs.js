@@ -40,18 +40,18 @@ function setupToolsTabs(container, tabIdPrefix, storageName) {
       history.replaceState(undefined, undefined, '#' + selectedTool);
 
     // Persist in local storage so we can pre-select around the site
-    if (window.localStorage)
+    if (storageName && window.localStorage)
       window.localStorage.setItem(storageName, selectedTool);
   });
 
   // If we have a tool in the url fragement, pre-select it
   if (location.hash && location.hash.length > 1)
     selectTool(location.hash.substr(1));
-  else if (window.localStorage && window.localStorage.getItem(storageName))
+  else if (storageName && window.localStorage && window.localStorage.getItem(storageName))
     selectTool(window.localStorage.getItem(storageName));
 }
 
 $(document).ready(function () {
   setupToolsTabs($("#tab-set-install"), "tab-install-", "selectedTool");
-  setupToolsTabs($("#tab-set-os"), "tab-os-", "selectedOS");
+  setupToolsTabs($("#tab-set-os"), "tab-os-", null);
 });
