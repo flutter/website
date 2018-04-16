@@ -4,7 +4,7 @@ title: "AppBar Basics"
 permalink: /catalog/samples/basic-app-bar/
 ---
 
-A typical AppBar with a title, actions, and an overflow dropdown menu.
+A typcial AppBar with a title, actions, and an overflow dropdown menu.
 
 <p>
   <div class="container-fluid">

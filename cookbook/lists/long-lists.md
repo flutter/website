@@ -6,7 +6,7 @@ permalink: /cookbook/lists/long-lists/
 
 The standard [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
 constructor works well for small lists. In order to work with lists that contain
-a large number of items, it's best to use the [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html) 
+a large number of items, it's best to use the [`Listview.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html) 
 constructor.
 
 Whereas the default `ListView` constructor requires us to create all items at
@@ -17,74 +17,140 @@ onto the screen.
 
 First, we'll need a data source to work with. For example, your data source 
 might be a list of messages, search results, or products in a store. Most of 
-the time, this data will come from the internet or a database. 
+the time, this data will come from the internet or a database. For this example, 
+we'll manually create a List of Messages to work with.
 
-For this example, we'll generate a list of 10000 Strings using the 
-[`List.generate`](https://docs.flutter.io/flutter/dart-core/List/List.generate.html) 
-constructor.
+### Define a Message class
+
+We'll need to create a class that holds the data of each message.
 
 ```dart
-final items = new List<String>.generate(10000, (i) => "Item $i");
+class Message {
+  final String sender;
+  final String subject;
+  final String body;
+
+  Message({this.sender, this.subject, this.body});
+}
 ```
 
-## 2. Convert the data source into Widgets
+### Create a list of Messages
 
-In order to display our List of Strings, we'll need to render each String as 
-a Widget!
+Now that we've got a Message class to work with, we'll create a list of sample
+data to work with. 
+
+```dart
+final messages = [
+  new Message(
+    sender: 'Flutter Weekly',
+    subject: 'Flutter Weekly #5',
+    body: 'Check out this week\'s latest Flutter news'
+  ),
+  new Message(
+    sender: 'Drew',
+    subject: 'Scuba Photos',
+    body: 'Check out the pictures from our last trip'
+  ),
+  new Message(
+    sender: 'Lindsey',
+    subject: 'Catch up on Thursday?',
+    body: 'Long time no see, let\'s grab coffee!'
+  ),
+];
+```
+
+## 2. Convert our Items into a List
+
+In order to display out list of messages, we'll need to render each Message as 
+a Widget for our users to interact with!
 
 This is where the `ListView.builder` will come into play. In our case, we'll 
-display each String on it's own line. 
+display a list of messages that imitate the Gmail app.
 
 ```dart
 new ListView.builder(
-  itemCount: items.length,
+  // Pass the number of messages in your list to the builder
+  itemCount: messages.length,
+  // Provide a function that will build each Widget as it's scrolled on screen
   itemBuilder: (context, index) {
+    final message = messages[index];
+
     return new ListTile(
-      title: new Text('${items[index]}'),
+      leading: new CircleAvatar(
+        child: new Text(message.sender[0]),
+      ),
+      title: new Text(message.sender),
+      subtitle: new Text('${message.subject}\n${message.body}'),
+      isThreeLine: true,
     );
-  },
+  }
 );
 ```
 
 ## Complete Example
 
 ```dart
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(new MyApp(
-    items: new List<String>.generate(10000, (i) => "Item $i"),
-  ));
+void main() => runApp(new MyApp());
+
+class Message {
+  final String sender;
+  final String subject;
+  final String body;
+
+  Message({this.sender, this.subject, this.body});
 }
 
+final messages = [
+  new Message(
+    sender: 'Flutter Weekly',
+    subject: 'Flutter Weekly #5',
+    body: 'Check out this week\'s latest Flutter news'
+  ),
+  new Message(
+    sender: 'Drew',
+    subject: 'Scuba Photos',
+    body: 'Check out the pictures from our last trip'
+  ),
+  new Message(
+    sender: 'Lindsey',
+    subject: 'Catch up on Thursday?',
+    body: 'Long time no see, let\'s grab coffee!'
+  ),
+];
+
 class MyApp extends StatelessWidget {
-  final List<String> items;
-
-  MyApp({Key key, @required this.items}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    final title = 'Long List';
+    final title = 'Basic List';
 
     return new MaterialApp(
       title: title,
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text(title),
         ),
         body: new ListView.builder(
-          itemCount: items.length,
+          itemCount: messages.length,
           itemBuilder: (context, index) {
+            final message = messages[index];
+
             return new ListTile(
-              title: new Text('${items[index]}'),
+              leading: new CircleAvatar(
+                child: new Text(message.sender[0]),
+              ),
+              title: new Text(message.sender),
+              subtitle: new Text('${message.subject}\n${message.body}'),
+              isThreeLine: true,
             );
-          },
+          }
         ),
       ),
     );
   }
 }
 ```
-
-![Long Lists Demo](/images/cookbook/long-lists.gif)
