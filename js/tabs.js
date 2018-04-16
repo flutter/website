@@ -59,11 +59,13 @@ $(document).ready(function () {
 });
 
 function getOS() {
-  var ua = navigator.userAgent.toLowerCase();
-  if (ua.indexOf("win") !== -1)
+  var ua = navigator.userAgent;
+  if (ua.indexOf("Win") !== -1)
     return "windows";
-  if (ua.indexOf("mac") !== -1)
+  if (ua.indexOf("Mac") !== -1)
     return "macos";
-  if (ua.indexOf("linux") !== -1)
+  if (ua.indexOf("Linux") !== -1)
+    return "linux";
+  if (ua.indexOf("X11") !== -1)
     return "linux";
 }
