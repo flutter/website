@@ -30,8 +30,8 @@ and manage releases to the App Store and TestFlight.
 Registering your app involves two steps: registering a unique Bundle ID, and
 creating an application record on iTunes Connect.
 
-For a detailed overview of iTunes Connect, see the [iTunes Connect Developer
-Guide][itunesconnect_guide].
+For a detailed overview of iTunes Connect, see the [iTunes Connect][itunesconnect_guide]
+guide.
 
 ### Register a Bundle ID
 
@@ -62,14 +62,13 @@ Next, you'll register your app on iTunes Connect:
 1. In the General Information section, select the Bundle ID you registered in
    the preceding step.
 
-For a detailed overview, see [Creating an iTunes Connect Record for an
-App][itunesconnect_guide_register].
+For a detailed overview, see [Add an app to your account][itunesconnect_guide_register].
 
 ## Review Xcode project settings
 
 In this step, you'll review the most important settings in the Xcode workspace.
-For detailed procedures and descriptions, see [Configuring Your Xcode Project
-for Distribution][distributionguide_config].
+For detailed procedures and descriptions, see [Prepare for app distribution]
+[distributionguide_config].
 
 Navigate to your target's settings in Xcode:
 
@@ -107,8 +106,8 @@ The General tab of your project settings should resemble the following:
 
 ![Xcode Project Settings](/images/releaseguide/xcode_settings.png)
 
-For a detailed overview of app signing, see [Maintaining Your Signing
-Identities and Certificates][appsigning].
+For a detailed overview of app signing, see [Create, export, and delete signing
+certificates][appsigning].
 
 ## Add an App Icon
 
@@ -166,8 +165,7 @@ been validated and is available to release to testers on TestFlight. At this
 point you can choose whether to release on TestFlight, or go ahead and release
 your app to the App Store.
 
-For more details, see [Uploading Your App to iTunes
-Connect][distributionguide_upload].
+For more details, see [Upload an app to iTunes Connect][distributionguide_upload].
 
 ## Release your app on TestFlight
 
@@ -183,8 +181,8 @@ TestFlight.
    internal users in the Users and Roles page of iTunes Connect, available from
    the dropdown menu at the top of the page.
 
-For more details, see [Distributing Your App Using
-TestFlight][distributionguide_testflight].
+For more details, see [Distribute an app using TestFlight]
+[distributionguide_testflight].
 
 ## Release your app to the App Store
 
@@ -203,32 +201,29 @@ Apple will notify you when their app review process is complete. Your app will
 be released according to the instructions you specified in the **Version
 Release** section.
 
-For more details, see [Submitting Your App to the
-Store][distributionguide_submit].
+For more details, see [Distribute an app through the App Store]
+[distributionguide_submit].
 
 ## Troubleshooting
 
-The [App Distribution Guide][distributionguide] provides a detailed overview of
-the process of releasing an app to the App Store. It includes a
-[Troubleshooting guide][distributionguide_troubleshooting] that includes
-solutions to commonly-encountered problems with app distribution.
+The [Distribute your app][distributionguide] guide provides a detailed overview of
+the process of releasing an app to the App Store.
 
 [appicon]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/
 [appreview]: https://developer.apple.com/app-store/review/
-[appsigning]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html
+[appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
 [devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
-[distributionguide]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html
-[distributionguide_config]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html
-[distributionguide_submit]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html
-[distributionguide_testflight]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/DistributingYourAppUsingTestFlight/DistributingYourAppUsingTestFlight.html
-[distributionguide_troubleshooting]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Troubleshooting/Troubleshooting.html
-[distributionguide_upload]: https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html
+[distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
+[distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
+[distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
+[distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
+[distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [itunesconnect]: https://developer.apple.com/support/itunes-connect/
-[itunesconnect_guide]: https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html
-[itunesconnect_guide_register]: https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html
+[itunesconnect_guide]: https://developer.apple.com/support/itunes-connect/
+[itunesconnect_guide_register]: https://help.apple.com/itunes-connect/developer/#/dev2cd126805
 [itunesconnect_login]: https://itunesconnect.apple.com/
 [testflight]: https://developer.apple.com/testflight/

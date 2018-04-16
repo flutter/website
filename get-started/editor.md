@@ -13,12 +13,14 @@ Follow the steps before to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 [Next step: Create and run your first app](/get-started/test-drive/).
 
+<div id="tab-set-install">
+
 <ul class="tabs__top-bar">
-    <li class="tab-link current" data-tab="tab-install-androidsstudio">Android Studio</li>
+    <li class="tab-link current" data-tab="tab-install-androidstudio">Android Studio</li>
     <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
 </ul>
 
-<div id="tab-install-androidsstudio" class="tabs__content current" markdown="1">
+<div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
 ## Android Studio setup
 
@@ -78,6 +80,8 @@ To install these:
   1. Invoke **View>Command Palette...**
   1. Type 'doctor', and select the **'Flutter: Run Flutter Doctor'** action
   1. Review the output in the 'OUTPUT' pane for any issues
+
+</div>
 
 </div>
 

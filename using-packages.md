@@ -9,7 +9,7 @@ Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch.
 
 Existing packages enable many use cases, for example, making network requests
-([`http`](/networking/)), custom navigation/route handling
+([`http`](/cookbook/networking/fetch-data/)), custom navigation/route handling
 ([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
 APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
 [`battery`](https://pub.dartlang.org/packages/battery)), and using third-party
@@ -43,7 +43,8 @@ To add a package 'css_colors' to an app:
      `css_colors:` under `dependencies`.
 
 1. Install it
-   * From the terminal: Run `flutter packages get`
+   * From the terminal: Run `flutter packages get`<br/>
+   **OR**
    * From IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
 
 1. Import it

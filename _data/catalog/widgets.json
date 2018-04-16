@@ -527,6 +527,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-switch.png'>"
   },
   {
+    "name": "CupertinoPicker",
+    "description": "An iOS-style picker control. Used to select an item in a short list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
+  },
+  {
     "name": "CupertinoPageTransition",
     "description": "Provides an iOS-style page transition animation.",
     "categories": [

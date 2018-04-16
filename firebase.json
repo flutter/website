@@ -82,6 +82,31 @@
         "source": "/ide-setup",
         "destination": "/get-started/editor/",
         "type": 301
+      },
+      {
+        "source": "/catalog/samples/tabbed-app-bar/",
+        "destination": "/cookbook/design/tabs/",
+        "type": 301
+      },
+      {
+        "source": "/reading-writing-files/",
+        "destination": "/cookbook/persistence/reading-writing-files/",
+        "type": 301
+      },
+      {
+        "source": "/custom-fonts/",
+        "destination": "/cookbook/design/fonts/",
+        "type": 301
+      },
+      {
+        "source": "/routing-and-navigation/",
+        "destination": "/cookbook/navigation/navigation-basics/",
+        "type": 301
+      },
+      {
+        "source": "/networking/",
+        "destination": "/cookbook/networking/fetch-data/",
+        "type": 301
       }
     ]
   }

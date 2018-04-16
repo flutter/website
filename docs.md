@@ -48,7 +48,7 @@ here are some next steps.
 
 ## Want to skill up?
 
-Once, you’ve mastered the basics, try these pages.
+Once you’ve mastered the basics, try these pages.
 
 * [Cookbook](/cookbook/)<br>
   A (growing) collection of recipes that address common Flutter
@@ -64,7 +64,7 @@ Once, you’ve mastered the basics, try these pages.
   How to create standard, hero, or staggered animations, to
   name a few animations styles that Flutter supports.
 
-* [Routing and Navigation](/routing-and-navigation/)<br>
+* [Routing and Navigation](/cookbook/navigation/navigation-basics/)<br>
   How to create and navigate to a new screen (called a
   _route_ in Flutter).
 
@@ -86,7 +86,7 @@ Dive deeper into topics that interest you.
   you to explore widget trees, disable the emulators "slow mode"
   banner, display the performance overlay, and much more.
 
-* [Custom Fonts](/custom-fonts/)<br>
+* [Custom Fonts](/cookbook/design/fonts/)<br>
   How to add new fonts to your app.
 
 * [Text Input](/text-input/)<br>

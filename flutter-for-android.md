@@ -23,57 +23,56 @@ that are most relevant to your needs.
 
 # Views
 
-## What is the equivalent of a View in Flutter
+## What is the equivalent of a `View` in Flutter?
 
-In Android, the View is the foundation of everything that shows up on the
-screen. From Buttons, Toolbars, and Inputs, everything is a View.  In Flutter
-the equivalent of a View is Widget. Widgets however, have a few differences
-when compared with a View. To start, widgets only last for a frame, and on
-every frame, Flutter's framework creates a tree of widget instances. In
-comparison, on Android when a View is drawn it does not redraw until invalidate
+In Android, the `View` is the foundation of everything that shows up on the
+screen. Buttons, toolbars, and inputs, everything is a View. In Flutter
+the equivalent of a view is `Widget`. Widgets, however, have a few differences
+when compared with a view. To start, widgets only exist for one frame, and on
+every new frame, Flutter's framework creates a new tree of widget instances. In
+comparison, an Android view is drawn once and does not redraw until invalidate
 is called.
 
-Unlike Android’s view hierarchy system where the framework mutate Views,
-Widgets in Flutter are immutable, this allows Widgets to be super lightweight.
+Unlike Android’s view hierarchy system where the framework mutate views,
+widgets in Flutter are immutable. This allows Flutter widgets to be very
+lightweight.
 
-
-
-## How do I update Widgets
+## How do I update `Widget`s?
 
 In Android you update your views by directly mutating them. However,
-in Flutter Widgets are immutable and are not updated directly, instead
-you have to work with the Widget's state.
+in Flutter `Widget`s are immutable and are not updated directly, instead
+you have to work with the widget's state.
 
 This is where the concept of Stateful vs Stateless widgets comes from. A
-StatelessWidget is just what it sounds like, a widget with no state
+`StatelessWidget` is just what it sounds like, a widget with no state
 information.
 
-StatelessWidgets are useful when the part of the user interface
+`StatelessWidgets` are useful when the part of the user interface
 you are describing does not depend on anything other than the configuration
 information in the object.
 
-For example, in Android, this would be similar to just placing an ImageView
+For example, in Android, this would be similar to just placing an `ImageView`
 with your logo. The logo is not going to change during runtime and because
-of that you would use a StatelessWidget in Flutter.
+of that you would use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with StatefulWidget and tell the Flutter framework that the widget’s State
+with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
 has been updated so it can update that widget.
 
-The important thing to note here is at the core both Stateless and Stateful
+The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
-StatefulWidget has a State object which stores state data across frames and
-restores it.
+`StatefulWidget` has a `State` object which stores state data across frames
+and restores it.
 
-If you are in doubt, then always remember this rule: If a widget changes (the
-user interacts with it, for example) it’s stateful. However, if a child 
-is reacting to change, the containing parent can still be a Stateless widget
-if the parent doesn't react to change.
+If you are in doubt, then always remember this rule: if a widget changes (e.g.,
+because of user interactions) it’s stateful. However, if a widget is reacting
+to change, the containing parent widget can still be stateless if it doesn't
+itself react to change.
 
-Let's take a look at how you would use a StatelessWidget. A common
-StatelessWidget is a Text widget. If you look at the implementation of the Text
-Widget you'll find it subclasses a StatelessWidget
+Let's take a look at how you would use a `StatelessWidget`. A common
+`StatelessWidget` is the `Text` widget. If you look at the implementation of the
+`Text` widget you'll find it subclasses a `StatelessWidget`.
 
 <!-- skip -->
 {% prettify dart %}
@@ -83,13 +82,13 @@ new Text(
 );
 {% endprettify %}
 
-As you can see, the Text Widget has no state information associated with it, it
-renders what is passed in it's constructors and nothing more.
+As you can see, the `Text` Widget has no state information associated with it,
+it renders what is passed in its constructors and nothing more.
 
 But, what if you want to make "I Like Flutter" change dynamically, for
-example from clicking a FloatingActionButton?
+example when clicking a `FloatingActionButton`?
 
-This can be achieved by wrapping the Text widget in a StatefulWidget and
+This can be achieved by wrapping the `Text` widget in a `StatefulWidget` and
 updating it when the button is clicked.
 
 For example:
@@ -151,13 +150,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-
-## How do I layout my Widgets? Where is my XML layout file
+## How do I layout my Widgets? Where is my XML layout file?
 
 In Android, you write layouts via XML, but in Flutter you write your layouts
 with a widget tree.
 
-Here is an example of how you would display a simple Widget on the screen and
+Here is an example of how you would display a simple widget on the screen and
 add some padding to it.
 
 <!-- skip -->
@@ -179,18 +177,18 @@ add some padding to it.
   }
 {% endprettify %}
 
-You can view all the layouts that Flutter has to offer here:
-[https://flutter.io/widgets/layout/](https://flutter.io/widgets/layout/)
+You can view all the layouts that Flutter has to offer in the
+[widget catalog](https://flutter.io/widgets/layout/).
 
-## How do I add or remove a component from my layout
+## How do I add or remove a component from my layout?
 
-In Android, you would call addChild or removeChild from a parent to dynamically
-add or remove views from a parent. In Flutter, because widgets are immutable
-there is no addChild. Instead, you can pass in a function that returns a widget
-to the parent and control that child's creation via a boolean.
+In Android, you would call `addChild()` or `removeChild()` on a parent to dynamically
+add or remove child views. In Flutter, because widgets are immutable there is no direct
+equivalent to `addChild()`. Instead, you can pass in a function that returns a widget
+to the parent and control that child's creation via a boolean flag.
 
-For example here is how you can toggle between two widgets when you click on a
-FloatingActionButton:
+For example, here is how you can toggle between two widgets when you click on a
+`FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -257,21 +255,30 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
+## In Android, I can animate a view by calling `animate()`; how do I animate a Widget?
 
-## In Android, I can Animate a view by View.animate(), how can I do that to a Widget
+In Android you would either create animations via XML or call the `animate()`
+method on a view. In Flutter, animating widgets can be done via the animation
+library by wrapping widgets inside an animated widget.
 
-In Flutter, animating widgets can be done via the animation library.
+Similarly to Android's `Animator`s, in Flutter you have an `AnimationController`
+which is an `Animation<double>` that can pause, seek, stop and reverse. It
+requires a `Ticker` which signals when vsync happens, and produces a linear
+interpolation between 0 and 1 on each frame while it's running.
 
-In Android you would either create animations via XML or call the .animate()
-property on Views, in Flutter you can wrap widgets inside an Animation.
+You then create one or more `Animation`s and attach them to the controller; for
+example, you could have a `CurvedAnimation` to have an animation which uses a
+curve to interpolate another animation. In this sense, the controller is the
+"master" source of the animation progress and the `CurvedAnimation` is tasked
+to modify the controller's linear output to a curve. Like widgets, animations in
+Flutter work with composition.
 
-Like Android, in Flutter you have an AnimationController and a
-Interpolator which is an extension of the Animation class, for example a
-CurvedAnimation. You pass the controller and Animation into an AnimationWidget
-and tell the controller to start the animation.
+When building the widget tree you then assign the `Animation` to an animated
+property of a widget, such as the opacity of a `FadeTransition`, and tell the
+controller to start the animation.
 
-Let's take a look at how to write a FadeTransition that will Fade in a logo
-when you press
+Let's take a look at how to write a `FadeTransition` that will fade in a logo
+when you press a `FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -337,20 +344,22 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 }
 {% endprettify %}
 
+See [https://flutter.io/widgets/animation/](https://flutter.io/widgets/animation/) and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/animation) for
+more specific details.
 
-See [https://flutter.io/widgets/animation/](https://flutter.io/widgets/animation/) and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/animation) for more specific details.
+## How do I use a `Canvas` to draw/paint?
 
-## How do I use a Canvas to draw/paint
+In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
+to the screen. Flutter has a very similar `Canvas` API as well, since it is based
+on the same low-level rendering engine, Skia. As a result, painting to a canvas in
+Flutter is a very familiar task for Android developers.
 
-In Android, you would use the Canvas to draw custom shapes to the screen.
+Flutter has two classes that help you draw to the canvas: `CustomPaint`
+and `CustomPainter`, the latter of which implements your algorithm to draw to
+the canvas.
 
-Flutter has two classes that will help you draw to the canvas, the CustomPaint
-and CustomPainter which implements your algorithm to draw to canvas.
-
-In this popular StackOverFlow answer you can see how
-a signature painter is implemented.
-
-See [https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter](https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter)
+In this [popular StackOverFlow answer](https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter)
+you can see how to implement a signature painter in Flutter.
 
 <!-- skip -->
 {% prettify dart %}
@@ -386,7 +395,7 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (DragEndDetails details) => _points.add(null),
-      child: new CustomPaint(painter: new SignaturePainter(_points)),
+      child: new CustomPaint(painter: new SignaturePainter(_points), size: Size.infinite),
     );
   }
 }
@@ -396,23 +405,25 @@ class DemoApp extends StatelessWidget {
 void main() => runApp(new MaterialApp(home: new DemoApp()));
 {% endprettify %}
 
+## How do I build custom widgets?
 
-## How do I build custom Widgets
-
-In Android, you would typically subclass from a View or a pre-existing
-Widget to override and implement methods.
+In Android, you would typically subclass from `View` or a pre-existing
+view to override and implement methods in order to obtain the desired behavior.
 
 In Flutter building a custom widget is often accomplished by not extending but
-composing smaller widgets.
+composing smaller widgets. It is somewhat similar to implementing a custom
+`ViewGroup` in Android, where all the building blocks are already existing, but
+you provide a different behavior — for example, custom layout logic.
 
-Let's take a look at how to build a CustomButton that takes in the label in the
-constructor. This is achieved by composing it with a RaisedButton, rather than
-extending the RaisedButton and overriding and implementing new methods:
+Let's take a look at how to build a `CustomButton` that takes in a label in the
+constructor. This is achieved by composing it with `RaisedButton`, rather than
+extending `RaisedButton` and overriding and implementing new methods:
 
 <!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
+
   CustomButton(this.label);
 
   @override
@@ -422,38 +433,41 @@ class CustomButton extends StatelessWidget {
 }
 {% endprettify %}
 
-Then you can use this CustomButton just like you would with any other Widget:
+Then you can use this `CustomButton` just like you would with any other widget:
 
 <!-- skip -->
 {% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Center(
-      child: new CustomButton("Hello"),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return new Center(
+    child: new CustomButton("Hello"),
+  );
 }
 {% endprettify %}
 
 # Intents
 
-## What is the equivalent of an Intent in Flutter
+## What is the equivalent of an `Intent` in Flutter?
 
-In Android, there are two main use cases for Intents: switching between
-Activities, and invoking external components. Flutter on the other hand does
-not have the concept of Intents, though if needed Flutter can trigger Intents
-through native integration.
+In Android, there are two main use cases for `Intent`s: navigating between
+Activities, and communicating with components. Flutter on the other hand does
+not have the concept of intents, although you can still start intents
+through native integrations (via [a plugin](https://pub.dartlang.org/packages/android_intent)).
 
-To switch between screens in Flutter you can access the router to draw
-a new Widget.  There are two core concepts and classes for managing many
-screens: Route and Navigator. A Route is an abstraction for a “screen” or
-“page” of an app (think Activity), and a Navigator is a widget that manages
-routes. A Navigator can push and pop routes to help a user move from screen to
-screen.
+Flutter doesn't really have a direct equivalent to activities and fragments;
+rather, in Flutter you navigate between screens, using a `Navigator` and
+`Route`s, all within the same `Activity`.
 
-Like Android where you can declare your Activities inside the
-AndroidManifest.xml, in Flutter you can pass in a Map of named routes to the
-top level MaterialApp instance
+A `Route` is an abstraction for a “screen” or “page” of an app, and a
+`Navigator` is a widget that manages routes. A route roughly maps to an
+`Activity`, but it does not carry the same meaning. A navigator can push
+and pop routes to move from screen to screen. Navigators work like a stack
+on which you can `push()` new routes you want to navigate to, and from
+which you can `pop()` routes when you want to "go back".
+
+Similarly to Android, where you declare your activities inside the app's
+`AndroidManifest.xml`, in Flutter you can pass in a `Map` of named routes
+to the top level `MaterialApp` instance to declare all your routes:
 
 <!-- skip -->
 {% prettify dart %}
@@ -468,67 +482,59 @@ top level MaterialApp instance
   ));
 }
 {% endprettify %}
-Then you can change to this route by getting an hold of the Navigator and
-calling this named route.
+
+Then you can navigate to a route by getting an hold of the `Navigator` and
+`push`ing one of the named routes.
 
 <!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
 
-The other popular use-case for Intents is to call external components such as a
-Camera or File picker. For this, you would need to create a native platform
-integration (or use an existing library)
+The other popular use-case for `Intent`s is to call external components such
+as a Camera or File picker. For this, you would need to create a native platform
+integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 
 See [Flutter Plugins] to learn how to build a native platform integration.
 
-
-
-## How do I handle incoming Intents from external applications in Flutter
+## How do I handle incoming intents from external applications in Flutter?
 
 Flutter can handle incoming intents from Android by directly talking to the
 Android layer and requesting the data that was shared.
 
-In this example we are registering a text share intent, so other apps
-can share text to our Flutter app.
+In this example we are registering a text share intent filter on the native
+activity that runs our Flutter code, so other apps can share text to our
+Flutter app.
 
-The basic flow of this application would be we first handle the shared text
-data on Android's side, and then wait till Flutter requests for the data to
-send it via a MethodChannel.
+The basic flow implies that we first handle the shared text data on the
+Android native side (in our `Activity`), and then wait until Flutter requests
+for the data to provide it via a `MethodChannel`.
 
-First we register the intent we want to handle in AndroidManifest.xml
+First we register the intent filter for the intents that we want to handle in
+our `AndroidManifest.xml`:
 
 <!-- skip -->
 {% prettify xml %}
-     <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-            <!-- This keeps the window background of the activity showing
-                 until Flutter renders its first frame. It can be removed if
-                 there is no splash screen (such as the default splash screen
-                 defined in @style/LaunchTheme). -->
-            <meta-data
-                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-                android:value="true" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
+<activity
+  android:name=".MainActivity"
+  android:launchMode="singleTop"
+  android:theme="@style/LaunchTheme"
+  android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection"
+  android:hardwareAccelerated="true"
+  android:windowSoftInputMode="adjustResize">
+  <!-- ... -->
+  <intent-filter>
+    <action android:name="android.intent.action.SEND" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <data android:mimeType="text/plain" />
+  </intent-filter>
+</activity>
 {% endprettify %}
 
-Then in MainActivity you can handle the intent, once we get the shared text
-data from the intent, we hold onto it till Flutter requests for it when it's
-all ready to go.
+Then in `MainActivity` you can handle the intent, extract the text that was
+shared from the intent, and hold onto it. When Flutter is ready to process
+the data it will request it via a platform channel, and we can then send it
+across from the native side:
 
 <!-- skip -->
 {% prettify java %}
@@ -546,42 +552,43 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity {
-    String sharedText;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        GeneratedPluginRegistrant.registerWith(this);
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        String type = intent.getType();
+  private String sharedText;
 
-        if (Intent.ACTION_SEND.equals(action) && type != null) {
-            if ("text/plain".equals(type)) {
-                handleSendText(intent); // Handle text being sent
-            }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    GeneratedPluginRegistrant.registerWith(this);
+    Intent intent = getIntent();
+    String action = intent.getAction();
+    String type = intent.getType();
+
+    if (Intent.ACTION_SEND.equals(action) && type != null) {
+      if ("text/plain".equals(type)) {
+        handleSendText(intent); // Handle text being sent
+      }
+    }
+
+    new MethodChannel(getFlutterView(), "app.channel.shared.data")
+      .setMethodCallHandler(new MethodChannel.MethodCallHandler() {
+        @Override
+        public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
+          if (methodCall.method.contentEquals("getSharedText")) {
+            result.success(sharedText);
+            sharedText = null;
+          }
         }
+      });
+  }
 
-        new MethodChannel(getFlutterView(), "app.channel.shared.data").setMethodCallHandler(new MethodChannel.MethodCallHandler() {
-            @Override
-            public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
-                if (methodCall.method.contentEquals("getSharedText")) {
-                    result.success(sharedText);
-                    sharedText = null;
-                }
-            }
-        });
-    }
-
-
-    void handleSendText(Intent intent) {
-        sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
-    }
+  void handleSendText(Intent intent) {
+    sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+  }
 }
 {% endprettify %}
 
-Lastly, in Flutter you can request the data when the the Flutter view is
-rendered.
+Lastly, you can request the data from the Flutter side when the widget is
+rendered:
 
 <!-- skip -->
 {% prettify dart %}
@@ -639,22 +646,22 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
+## What is the equivalent of `startActivityForResult()`?
 
-
-## What is the equivalent of startActivityForResult
-
-The Navigator class which handles all Routing in Flutter can be used to get a
+The `Navigator` class which handles all routing in Flutter can be used to get a
 result back from a route that you have pushed on the stack. This can be done by
-await'ing on the Future returned by push. For example if you were to start a
-location route which let the user select their location, you could do:
+`await`ing on the `Future` returned by `push()`.
+
+For example, if you were to start a location route which lets the user select
+their location, you could do:
 
 <!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
 
-then inside your location route once the user has selected their location you
-can "pop" the stack with the result
+And then, inside your location route, once the user has selected their location
+you can `pop` the stack with the result:
 
 <!-- skip -->
 {% prettify dart %}
@@ -663,15 +670,25 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 
 # Async UI
 
-## What is the equivalent of runOnUiThread in Flutter
+## What is the equivalent of `runOnUiThread()` in Flutter?
 
-Dart is a single-threaded execution model, with support for Isolates
-(a way to run Dart code on another thread), an event loop,
-and asynchronous programming. Unless you spawn an Isolate,
-your Dart code runs in the main UI thread and is driven by an event loop.
+Dart has a single-threaded execution model, with support for `Isolate`s
+(a way to run Dart code on another thread), an event loop, and
+asynchronous programming. Unless you spawn an `Isolate`, your Dart code
+runs in the main UI thread and is driven by an event loop. Flutter's event
+loop is equivalent to Android's main `Looper` — that is, the `Looper` that
+is attached to the main thread.
 
-For example, you can run network code on the UI thread without causing the UI
-to hang:
+Dart's single-threaded model doesn't mean you need to run everything as a
+blocking operation that will cause the UI to freeze. Unlike Android, which
+requires you to keep the main thread free at all times, in Flutter you just
+use the asynchronous facilities that the Dart language provides, such as
+`async`/`await`, to perform asynchronous work. You may be familiar with
+the `async`/`await` paradigm if you've used it in C#, Javascript, or if you
+have used Kotlin's coroutines.
+
+For example, you can run network code without causing the UI to hang by
+using `async`/`await` and letting Dart do the heavy lifting:
 
 <!-- skip -->
 {% prettify dart %}
@@ -679,16 +696,17 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = JSON.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
 
-To update the UI you would call setState which would trigger the build method
-to run again and update the data.
+Once the `await`ed network call is done, you update the UI calling
+`setState()`, which triggers a rebuild of the widget tree and updates the
+data.
 
-Here is the full example of loading data asynchronously and displaying it in a
-ListView:
+Next, here's an example of loading data asynchronously and displaying it 
+in a `ListView`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -734,20 +752,20 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Sample App"),
-        ),
-        body: new ListView.builder(
-            itemCount: widgets.length,
-            itemBuilder: (BuildContext context, int position) {
-              return getRow(position);
-            }));
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView.builder(
+          itemCount: widgets.length,
+          itemBuilder: (BuildContext context, int position) {
+            return getRow(position);
+          }));
   }
 
   Widget getRow(int i) {
     return new Padding(
-        padding: new EdgeInsets.all(10.0),
-        child: new Text("Row ${widgets[i]["title"]}")
+      padding: new EdgeInsets.all(10.0),
+      child: new Text("Row ${widgets[i]["title"]}")
     );
   }
 
@@ -755,26 +773,33 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }
 {% endprettify %}
 
+Refer to the next section for more information on doing work in
+background in Flutter and how it differs from Android.
 
+## How do you move work to a background thread?
 
-## What is the equivalent of an AsyncTask or IntentService on Android
-
-In Android, when you want to access a network resource you would
-typically spawn an AsyncTask that would run code outside of the UI thread
-to prevent your UI from blocking. The AsyncTask has a thread pool that manages
-the threads for you.
+In Android, when you want to access a network resource you would typically
+move to a background thread and do the work, as to not block the main thread,
+and avoid ANRs. For example, you may be using an `AsyncTask`, a `LiveData`,
+an `IntentService`, a `JobScheduler` job, or an RxJava pipeline with a
+scheduler that works on background threads.
 
 Since Flutter is single threaded and runs an event loop (like Node.js), you
-don't have to worry about thread management or spawing AsyncTasks or IntentServices.
+don't have to worry about thread management or spawing background threads. If
+you're doing I/O-bound work, such as a disk access or a network call, then
+you can safely just use `async`/`await` and you're all set. If, on the other
+hand, you need to do computationally intensive work that keeps the CPU busy,
+you want to move it to an `Isolate` as to avoid blocking the event loop, like
+you would want to keep _any_ sort of work out of the main thread in Android.
 
-To run code asynchronously you can declare the function as an async function
-and await on long running tasks in the function
+For I/O bound work, you can declare the function as an `async` function
+and `await` on long running tasks in the function:
 
 <!-- skip -->
 {% prettify dart %}
@@ -782,77 +807,78 @@ loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
   setState(() {
-    widgets = JSON.decode(response.body);
+    widgets = json.decode(response.body);
   });
 }
 {% endprettify %}
 
-This is how you would typically do network or database calls.
+This is how you would typically do network or database calls, which are both
+I/O operations.
 
-On Android, when you extend AsyncTask, you typically override 3 methods,
-OnPreExecute, doInBackground and onPostExecute. There is no equivalent to this
-pattern in Flutter since you would just await on a long running function and
+On Android, when you extend `AsyncTask`, you typically override 3 methods,
+`onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no 
+equivalent to this since you would just await on a long running function and
 Dart's event loop will take care of the rest.
 
 However, there are times where you may be processing a large amount of data and
-your UI could hang.
-
-In this case, like AsyncTask, in Flutter it is possible to take advantage of
-multiple CPU cores to do long running or computationally intensive tasks. This
-is done by using Isolates.
+your UI could hang. In this case, like on Android, in Flutter it is possible to
+take advantage of multiple CPU cores to do long running or computationally
+intensive tasks. This is done by using `Isolate`s.
 
 Isolates are a separate execution thread that runs and do not share any memory
 with the main execution memory heap. This means you can’t access variables from
-the main thread or update your UI by calling setState.
+the main thread or update your UI by calling `setState()`. Isolates are true to
+their name; unlike on Android threads, isolates cannot share memory (e.g., in
+the form of static fields).
 
-Let's see an example of a simple Isolate and how you can communicate and share
+Let's see an example of a simple isolate and how you can communicate and share
 data back to the main thread to update your UI.
 
 <!-- skip -->
 {% prettify dart %}
-  loadData() async {
-    ReceivePort receivePort = new ReceivePort();
-    await Isolate.spawn(dataLoader, receivePort.sendPort);
+loadData() async {
+  ReceivePort receivePort = new ReceivePort();
+  await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-    // The 'echo' isolate sends it's SendPort as the first message
-    SendPort sendPort = await receivePort.first;
+  // The 'echo' isolate sends its SendPort as the first message
+  SendPort sendPort = await receivePort.first;
 
-    List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+  List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
 
-    setState(() {
-      widgets = msg;
-    });
+  setState(() {
+    widgets = msg;
+  });
+}
+
+// The entry point for the isolate
+static dataLoader(SendPort sendPort) async {
+  // Open the ReceivePort for incoming messages.
+  ReceivePort port = new ReceivePort();
+
+  // Notify any other isolates what port this isolate listens to.
+  sendPort.send(port.sendPort);
+
+  await for (var msg in port) {
+    String data = msg[0];
+    SendPort replyTo = msg[1];
+
+    String dataURL = data;
+    http.Response response = await http.get(dataURL);
+    // Lots of JSON to parse
+    replyTo.send(json.decode(response.body));
   }
+}
 
-// the entry point for the isolate
-  static dataLoader(SendPort sendPort) async {
-    // Open the ReceivePort for incoming messages.
-    ReceivePort port = new ReceivePort();
-
-    // Notify any other isolates what port this isolate listens to.
-    sendPort.send(port.sendPort);
-
-    await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
-
-      String dataURL = data;
-      http.Response response = await http.get(dataURL);
-      // Lots of JSON to parse
-      replyTo.send(JSON.decode(response.body));
-    }
-  }
-
-  Future sendReceive(SendPort port, msg) {
-    ReceivePort response = new ReceivePort();
-    port.send([msg, response.sendPort]);
-    return response.first;
-  }
+Future sendReceive(SendPort port, msg) {
+  ReceivePort response = new ReceivePort();
+  port.send([msg, response.sendPort]);
+  return response.first;
+}
 {% endprettify %}
 
-"dataLoader" is the Isolate that runs in its own seperate execution thread,
-where you can do more CPU intensive processing, for example parsing a lot of
-JSON - 10k+ lines, or doing computationally intensive math.
+Here, `dataLoader()` is the `Isolate` that runs in its own separate execution thread.
+In this isolate you can do more CPU intensive processing, for example parsing a big
+JSON, or doing computationally intensive math such as crypto or signal processing.
 
 A full example that you can run is below.
 
@@ -941,7 +967,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     ReceivePort receivePort = new ReceivePort();
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-    // The 'echo' isolate sends it's SendPort as the first message
+    // The 'echo' isolate sends its SendPort as the first message
     SendPort sendPort = await receivePort.first;
 
     List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
@@ -966,7 +992,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       String dataURL = data;
       http.Response response = await http.get(dataURL);
       // Lots of JSON to parse
-      replyTo.send(JSON.decode(response.body));
+      replyTo.send(json.decode(response.body));
     }
   }
 
@@ -975,32 +1001,27 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
 }
-
-
 {% endprettify %}
 
-## What is the equivalent of OkHttp on Flutter
+## What is the equivalent of OkHttp on Flutter?
 
-Making a network call in Flutter is easy when you use the popular "http" package.
+Making a network call in Flutter is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http).
 
 While the http package does not have all the features OkHttp has implemented,
-the "http" package abstracts away a lot of the networking that you would normally
-implement yourself, making it a simple way to make network calls.
+it abstracts away a lot of the networking that you would normally implement
+yourself, making it a simple way to make network calls.
 
-[https://pub.dartlang.org/packages/http](https://pub.dartlang.org/packages/http)
-
-You can use it by adding it to your dependencies in pubspec.yaml
+You can use it by adding it to your dependencies in `pubspec.yaml`:
 
 <!-- skip -->
 {% prettify yaml %}
 dependencies:
   ...
-  http: '>=0.11.3+12'
+  http: '>=0.11.3+16'
 {% endprettify %}
 
-Then to make a network call, for example to this JSON GIST on GitHub you can call:
+Then to make a network call, you just `await` on the `async` function `http.get()`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1013,27 +1034,26 @@ import 'package:http/http.dart' as http;
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }
 {% endprettify %}
 
-Once you have the result you can tell Flutter to update its state by calling
-setState, which will update your UI with the result from your network call.
+## How do I show the progress for a long-running task in Flutter?
 
-## How do I show progress indicator in Flutter when there is a task that is running
+In Android you would typically show a `ProgressBar` view in your UI while you
+execute a long running task on a background thread.
 
-In Android you would typically show a progress indicator when you execute
-a long running task.
-
-In Flutter this can be done by rendering a Progress Indicator widget. You can
-show the Progress Indicator programmatically by controlling when its rendered
-through a boolean and telling Flutter to update it's state before your long running task.
+In Flutter this can be done by using a `ProgressIndicator` widget. You can
+show the progress UI programmatically by controlling when it's rendered
+through a boolean flag, and telling Flutter to update its state before your
+long running task starts, and hiding it after it ends.
 
 In the example below, we break up the build function into three different
-functions. If showLoadingDialog is true (when widgets.length == 0) then we
-render the ProgressIndicator, else we render the ListView with all the data.
+functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`)
+then we render the `ProgressIndicator`, else we render the `ListView` with
+the data.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1076,11 +1096,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   showLoadingDialog() {
-    if (widgets.length == 0) {
-      return true;
-    }
-
-    return false;
+    return widgets.length == 0;
   }
 
   getBody() {
@@ -1118,7 +1134,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String dataURL = "https://jsonplaceholder.typicode.com/posts";
     http.Response response = await http.get(dataURL);
     setState(() {
-      widgets = JSON.decode(response.body);
+      widgets = json.decode(response.body);
     });
   }
 }
@@ -1126,50 +1142,104 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Project Structure & Resources
 
-## Where do I store my resolution dependent image files? HDPI/XXHDPI
+## Where do I store my resolution dependent image files?
 
-Flutter follows a simple 3 resolution format like iOS. 1x, 2x, and 3x.
+While Android has resources as a distinct notion from assets, Flutter apps have
+only assets. All your resources which would be living in the `res/drawable-*`
+folders on Android should be instead put in an assets folder.
 
-Create a folder called images and for each of your image files, generate a @2x
-and @3x variant and place them in the folder like such
+Flutter follows a simple density-based format like iOS. Assets can be `1.0x`,
+`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
+are logical pixels, which are basically the same as device-independent pixels.
+The so-called [`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+expresses the ratio of physical pixels in a single logical pixel.
 
-- …/my_icon.png
+The equivalent to Android's density buckets are:
 
-- …/2.0x/my_icon.png
-- …/3.0x/my_icon.png
+ Android density qualifier | Flutter pixel ratio
+ --- | ---
+ `ldpi` | `0.75x`
+ `mdpi` | `1.0x`
+ `hdpi` | `1.5x`
+ `xhdpi` | `2.0x`
+ `xxhdpi` | `3.0x`
+ `xxxhdpi` | `4.0x`
 
-Then you would need to declare these images in your pubspec.yaml file
+Assets on Flutter can be located in any arbitrary folder; there is no predefined
+folder structure. You then declare where the assets are located in the pubspec
+file, and Flutter will pick them up.
+
+Note that before Flutter beta 2, assets
+defined in Flutter are not accessible from the native side, and vice versa,
+native assets and resources aren't available from Flutter as they live in
+separate folders.
+
+Starting from Flutter beta 2, Flutter assets are stored in
+the native asset folder, and can be accessed on the native side via the Android
+`AssetManager`:
+
+<!-- skip -->
+{% prettify kotlin %}
+val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
+{% endprettify %}
+
+As of Flutter beta 2, Flutter still cannot access native resources, nor it can
+access native assets
+
+To add a new image asset called `my_icon.png` to our Flutter project, for example,
+and deciding that it should live in a folder we arbitrarily called `images`, you
+would put the base image (1.0x) in the `images` folder, and all the other
+variants in sub-folders called with the appropriate ratio multiplier:
+
+```
+images/my_icon.png       // Base: 1.0x image
+images/2.0x/my_icon.png  // 2.0x image
+images/3.0x/my_icon.png  // 3.0x image
+```
+
+Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 <!-- skip -->
 {% prettify yaml %}
 assets:
- - images/a_dot_burr.jpeg
- - images/a_dot_ham.jpeg
-     {% endprettify %}
+ - images/my_icon.jpeg
+{% endprettify %}
 
-You can then access your images using AssetImage
+You can then access your images using `AssetImage`:
 
 <!-- skip -->
 {% prettify dart %}
 return new AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
 
-## Where do I store strings? How do I store different locales
-
-At the moment, best practice is to create a class called Strings, for example
+or directly in an `Image` widget:
 
 <!-- skip -->
 {% prettify dart %}
-class Strings{
+@override
+Widget build(BuildContext context) {
+  return new Image.asset("images/my_image.png");
+}
+{% endprettify %}
+
+## Where do I store strings? How do I handle localization?
+
+Flutter currently doesn't have a dedicated resources-like system for strings.
+At the moment, the best practice is to hold your copy text in a class as
+static fields and accessing them from there. For example:
+
+<!-- skip -->
+{% prettify dart %}
+class Strings {
   static String welcomeMessage = "Welcome To Flutter";
 }
 {% endprettify %}
 
-Then in your code, you can access your Strings as such
+Then in your code, you can access your strings as such:
 
 <!-- skip -->
 {% prettify dart %}
- new Text(Strings.welcomeMessage)
+new Text(Strings.welcomeMessage)
 {% endprettify %}
 
 Flutter has basic support for accessibility on Android, though this feature is
@@ -1179,48 +1249,70 @@ Flutter developers are encouraged to use the [intl
 package](https://pub.dartlang.org/packages/intl) for internationalization and
 localization.
 
-## What is the equivalent of a Gradle file to add my external dependencies
+## What is the equivalent of a Gradle file? How do I add dependencies?
 
-In Android, you add dependencies by adding to your Gradle file located in your
-Android project.
+In Android, you add dependencies by adding to your Gradle build script. Flutter
+uses Dart's own build system, and the Pub package manager, delegating then the
+building of the native Android and iOS wrapper apps to the respective build
+systems.
 
-In Flutter while there are Gradle files under the Android folder in your
-Flutter project, you would only use these if you are adding dependencies needed
-for platform integration. Otherwise, you can use pubspec.yaml to declare
-external dependencies specific to Flutter.
+While there are Gradle files under the `android` folder in your Flutter project,
+you would only use these if you were adding native dependencies needed for
+per-platform integration. In general, you can use `pubspec.yaml` to declare
+external dependencies to use in Flutter.
 
-A good place to find great packages for flutter is [Pub](https://pub.dartlang.org/flutter/packages/)
+A good place to find great packages for flutter is [Pub](https://pub.dartlang.org/flutter/packages/).
 
 # Activities and Fragments
 
-## What are the equivalent of activities and fragments
+## What are the equivalent of activities and fragments in Flutter?
 
-In Android, an Activity represents a single focused thing the user can do. A
-Fragment represents a way to modularize your code, build more
-sophisticated user interfaces for larger screens, and help scale your
-application between small and large screens. In Flutter both of these concepts
-fall under the concept of a Widget.
+In Android, an `Activity` represents a single focused thing the user can do. A
+`Fragment` represents a behavior or a portion of user interface. Fragments
+are a way to modularize your code, compose sophisticated user interfaces for
+larger screens, and help scale your application UI. In Flutter both of these
+concepts fall under the umbrella of `Widget`s.
 
-## How do I listen to Android Activity lifecycle events
+As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
+section, screens in Flutter are represented by `Widget`s since everything is
+a widget in Flutter. You use a `Navigator` to move between different `Route`s
+which represent different screens or pages, or maybe just different states or
+renderings of the same data.
 
-In Android you can override methods from the Activity to capture lifecycle
-methods for the Activity.
+## How do I listen to Android activity lifecycle events?
 
-In Flutter You can listen to lifecycle events by hooking into the WidgetsBinding
-observer and listening to the didChangeAppLifecycleState change event.
+In Android, you can override methods from the `Activity` to capture lifecycle
+methods for the activity itself, or register `ActivityLifecycleCallbacks` on
+the `Application`. In Flutter you have neither concept, but you can instead
+listen to lifecycle events by hooking into the `WidgetsBinding` observer and
+listening to the `didChangeAppLifecycleState()` change event.
 
-The lifecycle events you can observe are
+The lifecycle events you can observe are:
 
-- resumed - The application is visible and responding to user input. This is
-  onResume from Android
-- inactive - The application is in an inactive state and is not receiving user
-  input. This event is unused on Android and only works with iOS.
-- paused - The application is not currently visible to the user, not responding
-  to user input, and running in the background. This is onPause from Android
-- suspending - The application will be suspended momentarily. This is unused on
-  iOS
+* `inactive` — The application is in an inactive state and is not receiving user
+  input. This event only works on iOS, as there is no equivalent event to map to
+  on Android
+* `paused` — The application is not currently visible to the user, not responding
+  to user input, and running in the background. This is equivalent to `onPause()`
+  in Android
+* `resumed` — The application is visible and responding to user input. This is
+  equivalent to `onPostResume()` in Android
+* `suspending` — The application will be suspended momentarily. This is equivalent
+  to `onStop` in Android; it is not triggered on iOS as there is no equivalent
+  event to map to on iOS
 
+For more details on the meaning of these states, you can check the
+[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
 
+As you might have noticed, only a small minority of the Activity lifecycle events
+are available; while `FlutterActivity` does capture almost all the activity lifecycle
+events internally and send them over to the Flutter engine, they're mostly shielded
+away from you. Flutter takes care of starting and stopping the engine for you, and
+there is little reason for needing to observe the activity lifecycle on the Flutter
+side in most cases. If you need to observe the lifecycle to acquire or release any
+native resources, you should likely be doing it from the native side, at any rate.
+
+Here's an example of how to observe the lifecycle status of the containing activity:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1257,6 +1349,7 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
   Widget build(BuildContext context) {
     if (_lastLifecyleState == null)
       return new Text('This widget has not observed any lifecycle changes.', textDirection: TextDirection.ltr);
+
     return new Text('The most recent lifecycle state this widget observed was: $_lastLifecyleState.',
         textDirection: TextDirection.ltr);
   }
@@ -1954,8 +2047,8 @@ A popular community plugin to access the camera is
 
 ## How do I log in with Facebook
 
-To access Facebook Connect functionality you can use
-[https://pub.dartlang.org/packages/flutter_facebook_connect](https://pub.dartlang.org/packages/flutter_facebook_connect) .
+To Login with Facebook you can use
+[https://pub.dartlang.org/packages/flutter_facebook_login](https://pub.dartlang.org/packages/flutter_facebook_login) .
 
 ## How do I build my own custom native integrations
 
@@ -2076,4 +2169,3 @@ notifications for your app.
 
 In Flutter, you can access this functionality by using the Firebase_Messaging
 plugin [Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
- 

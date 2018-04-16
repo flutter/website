@@ -22,7 +22,7 @@ time may be better spent on code behavior rather than code style.
 
 ### Automatically formatting code in Android Studio, and IntelliJ
 
-Install the the `Dart` plugin (see [Editor setup](/get-started/editor/))
+Install the `Dart` plugin (see [Editor setup](/get-started/editor/))
 to get automatic formatting of code in Android Studio and IntelliJ.
 
 To automatically format the code in the current source code window, right-click

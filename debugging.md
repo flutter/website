@@ -11,6 +11,11 @@ applications.
 * TOC Placeholder
 {:toc}
 
+<aside class="alert alert-info" markdown="1">
+**Note:** If your app's UI isn't running as smoothly as you expect,
+check out [Flutter Performance Profiling](/ui-performance/).
+</aside>
+
 ## The Dart Analyzer
 
 Before running your applications, test your code with `flutter analyze`. This
@@ -21,7 +26,7 @@ and help you find possible mistakes. If you're using the
 The Dart analyzer makes heavy use of type annotations that you put in
 your code to help track problems down. You are encouraged to use them
 everywhere (avoiding `var`, untyped arguments, untyped list literals,
-etc) as this is the quickest and least paintful way of tracking down
+etc) as this is the quickest and least painful way of tracking down
 problems.
 
 ## Dart Observatory (statement-level single-stepping debugger and profiler)
@@ -90,7 +95,7 @@ During development, you are highly encouraged to use Flutter's "debug"
 mode, sometimes referred to as "checked" mode. This is the default if
 you use `flutter run`. In this mode, the Dart `assert` statement is
 enabled, and the Flutter framework uses this to perform many runtime
-checks verifying that invariants aren't being violated.
+checks verifying that invariants are not being violated.
 
 When an invariant is violated, it is reported to the console, with
 some context information to help with tracking down the source of the
@@ -688,7 +693,7 @@ I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTap
 
 ### Scheduling
 
-To find out where your events happen relative to the frame's begin/end, you can toggle the [`debugPrintBeginFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintBeginFrameBanner.html) and the [`debugPrintEndFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintEndFrameBanner.html) booleans to print the beginning and end of the frames to the console. 
+To find out where your events happen relative to the frame's begin/end, you can toggle the [`debugPrintBeginFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintBeginFrameBanner.html) and the [`debugPrintEndFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintEndFrameBanner.html) booleans to print the beginning and end of the frames to the console.
 
 For example:
 
@@ -699,7 +704,7 @@ I/flutter : Debug print: Am I performing this work more than once per frame?
 I/flutter : ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 ```
 
-[`debugPrintScheduleFrameStacks`](https://docs.flutter.io/flutter/scheduler/debugPrintScheduleFrameStacks.html) can also be used to print the call stack causing the current frame to be scheduled. 
+[`debugPrintScheduleFrameStacks`](https://docs.flutter.io/flutter/scheduler/debugPrintScheduleFrameStacks.html) can also be used to print the call stack causing the current frame to be scheduled.
 
 ## Visual debugging
 
@@ -854,7 +859,7 @@ grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
-has a `debugShowGrid` argument which, when set to `true` in debug
+has a `debugShowMaterialGrid` argument which, when set to `true` in debug
 mode, will overlay such a grid.
 
 You can also overlay such a grid on non-Material applications by using

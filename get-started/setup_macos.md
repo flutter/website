@@ -13,8 +13,6 @@ permalink: /setup-macos/
 
 {% include setup/path-mac-linux.md %}
 
-{% include setup/editor-setup.md %}
-
 ## Platform setup
 
 macOS supports developing Flutter apps for both iOS and Android. Complete at

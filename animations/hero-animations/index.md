@@ -52,7 +52,7 @@ Flutter](/tutorials/layout/).
 
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
-A [_Route_](/routing-and-navigation/) describes a page or screen
+A [_Route_](/cookbook/navigation/navigation-basics/) describes a page or screen
 in a Flutter app.
 </aside>
 
@@ -603,7 +603,7 @@ class RadialExpansion extends StatelessWidget {
     Key key,
     this.maxRadius,
     this.child,
-  }) : [[highlight]]clipRectSize = 2.0 * (maxRadius / math.SQRT2),[[/highlight]]
+  }) : [[highlight]]clipRectSize = 2.0 * (maxRadius / math.sqrt2),[[/highlight]]
        super(key: key);
 
   final double maxRadius;
