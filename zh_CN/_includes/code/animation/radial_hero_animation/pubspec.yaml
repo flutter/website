@@ -1,0 +1,17 @@
+name: radial_hero_animation
+description: Shows how to apply a radial transformation to the Hero as it animates to the new route.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/beachball-alpha.png
+    - images/binoculars-alpha.png
+    - images/chair-alpha.png

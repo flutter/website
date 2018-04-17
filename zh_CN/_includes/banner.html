@@ -1,0 +1,4 @@
+{% assign blacklist = "/,/setup/,/bootstrap-into-dart/" | split:"," %}
+{% unless blacklist contains include.url %}
+<div class="alert alert-info alert__banner" role="alert"><i class="fa fa-chevron-circle-right "></i> &nbsp; {{include.content}}</div>
+{% endunless %}

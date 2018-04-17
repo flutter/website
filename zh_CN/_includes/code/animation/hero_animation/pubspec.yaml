@@ -1,0 +1,15 @@
+name: hero_animation
+description: Shows how to create a simple Hero transition.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/flippers-alpha.png

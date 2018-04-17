@@ -1,0 +1,9 @@
+name: hello_world
+description: Demonstrates a basic "Hello World" material app.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

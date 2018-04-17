@@ -1,0 +1,67 @@
+<div class="catalog">
+    {% for section in site.data.catalog.index %}
+    {% if section.name contains include.category %}
+    <div class="category-description"><p>{{section.description}}</p></div>
+    {% endif %}
+    {% endfor %}
+
+    <ul>
+        {% for category in site.data.catalog.index %}
+        {% if category.name == include.category %}
+        {% for sub in category.subcategories %}
+        <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+    <p>See more widgets in the <a href="/widgets">Flutter widget catalog</a>.</p>
+
+    <ul class="cards">
+        {% for comp in site.data.catalog.widgets %}
+        {% if comp.categories contains include.category %}
+        <li class="cards__item">
+            <div class="catalog-entry">
+                <div class="catalog-image-holder">{{comp.image}}</div>
+                <h3>{{comp.name}}</h3>
+                <p class="scrollable-description"> {{comp.description}} </p>
+                <p>
+                    <a href="{{comp.link}}">Documentation</a>
+                    {% if comp.sample %}, <a href="/catalog/samples/{{comp.sample}}/">Samples</a>{% endif %}
+                </p>
+                <div class="clear"></div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+
+    {% for category in site.data.catalog.index %}
+    {% if category.name == include.category %}
+    {% for sub in category.subcategories %}
+    <h1 id="{{sub.name}}">{{sub.name}}</h1>
+    <ul class="cards">
+        {% for comp in site.data.catalog.widgets %}
+        {% if comp.subcategories contains sub.name %}
+        <li class="cards__item">
+            <div class="catalog-entry" >
+                <div class="catalog-image-holder">{{comp.image}}</div>
+                <h3>{{comp.name}}</h3>
+                <p class="scrollable-description"> {{comp.description}} </p>
+                <p>
+                    <a href="{{comp.link}}">Documentation</a>
+                    {% if comp.sample %}, <a href="/catalog/samples/{{comp.sample}}/">Samples</a>{% endif %}
+                </p>
+                <div class="clear"></div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+
+    <p>See more widgets in the <a href="/widgets">Flutter widget catalog</a>.</p>
+</div>

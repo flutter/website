@@ -1,0 +1,11 @@
+name: lakes_interactive
+description: Demonstrates adding interactivity to the "Lakes" app.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/lake.jpg
