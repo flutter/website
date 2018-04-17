@@ -412,7 +412,7 @@ $ flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/i10n lib/
 
 The `intl_messages.arb` file is a JSON format map with one entry for
 each `Intl.message()` function defined in `main.dart`. This
-file serves as a template for the the English and Spanish translations,
+file serves as a template for the English and Spanish translations,
 `intl_en.arb` and `intl_es.arb`. These translations are created by you,
 the developer.
 </li>

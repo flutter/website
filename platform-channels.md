@@ -165,7 +165,7 @@ inside `setState`.
 
 Finally, we replace the `build` method from the template to contain a small user
 interface that displays the battery state in a string, and a button for
-refreshing the valuer.
+refreshing the value.
 
 <!-- skip -->
 ```dart

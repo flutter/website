@@ -59,7 +59,7 @@ from the model, the corresponding card animates in or out of view.
    </a>
     <div class="col-md-9">
       <p>
-        A typcial AppBar with a title, actions, and an overflow dropdown menu.
+        A typical AppBar with a title, actions, and an overflow dropdown menu.
       </p>
       <p>
         This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
@@ -78,7 +78,7 @@ from the model, the corresponding card animates in or out of view.
    </a>
     <div class="col-md-9">
       <p>
-        ExpansionTiles can used to produce two-level or multi-level lists.
+        ExpansionTiles can be used to produce two-level or multi-level lists.
       </p>
       <p>
         This app features the following classes: ExpansionTile, ListView.

@@ -7,9 +7,9 @@ hide_title: true
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter is now in Beta!</span>
+        <span>Flutter Beta 2 now available!</span>
         &nbsp;
-        <a href="https://medium.com/flutter-io/announcing-flutter-beta-1-build-beautiful-native-apps-dc142aea74c0">Learn More</a>.
+        <a href="https://medium.com/flutter-io/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e">Learn More</a>.
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
