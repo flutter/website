@@ -30,18 +30,18 @@ specific topics, we recommend using automated accessibility scanners:
 
   * For Android:
     1. Install the [Accessibility Scanner][accessibility-scanner] for Android
-    1. Enable the Accessiility Scanner from Android Settings > Accessibility >
-       Accssibility Scaenner > On
-    1. Navigate to the Accessiility Scanner 'checkbox' iconbutton to initiate a
+    1. Enable the Accessibility Scanner from Android Settings > Accessibility >
+       Accssibility Scanner > On
+    1. Navigate to the Accessibility Scanner 'checkbox' icon button to initiate a
        scan
   * For iOS:
-    1. Open the `iOS` folder of your Flutter app in xCode
+    1. Open the `iOS` folder of your Flutter app in Xcode
     1. Select a Simulator as the target, and click Run button
-    1. In xCode, select xCode > Open Developer Tools > Accessibility Inspector
-    1. In the Accessbility Inspector, select Inspection > Enable Point to
+    1. In Xcode, select Xcode > Open Developer Tools > Accessibility Inspector
+    1. In the Accessibility Inspector, select Inspection > Enable Point to
        Inspect, and then select the various user interface elements in running
        Flutter app to inspect their accessibility attributes
-    1. In the Accessbility Inspector, select Audit in the toolbar, and then
+    1. In the Accessibility Inspector, select Audit in the toolbar, and then
        select Run Audio to get a report of potential issues
 
 [accessibility-scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
@@ -76,11 +76,9 @@ impaired users to get spoken feedback about the contents of the screen.
 
 ### Tips for developers
 
-The core widgets in the Flutter framework should already be compatible with
-screen readers. If you create custom widgets -- for example by composing several
-existing widgets into a single widget -- you can annotate those custom widgets
-with the the [Semantics widget][semanticswidget] to customize the accessibility
-experience of the custom widget.
+Turn on VoiceOver or TalkBack on your device and navigate around your app. If
+you run into any issues, use the [Semantics widget][semanticswidget] to
+customize the accessibility experience of your app.
 
 [talkback]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [voiceover]: https://www.apple.com/lae/accessibility/iphone/vision/
