@@ -102,6 +102,11 @@
         "source": "/routing-and-navigation/",
         "destination": "/cookbook/navigation/navigation-basics/",
         "type": 301
+      },
+      {
+        "source": "/networking/",
+        "destination": "/cookbook/networking/fetch-data/",
+        "type": 301
       }
     ]
   }
