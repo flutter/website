@@ -1,5 +1,7 @@
 # [Flutter][]'s website
 
+[中文翻译流程，见此处](https://github.com/flutter-dev/website/tree/master/zh_CN)
+
 The website for [Flutter][].
 
 [![Build Status](https://travis-ci.org/flutter/website.svg?branch=master)](https://travis-ci.org/flutter/website)
