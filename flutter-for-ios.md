@@ -27,7 +27,9 @@ that are most relevant to your needs.
 
 * TOC Placeholder {:toc}
 
-# Views ## What is the equivalent of a `UIView` in Flutter?
+# Views 
+
+## What is the equivalent of a `UIView` in Flutter?
 
 On iOS the majority of anything you may want to create in the UI is done using
 view objects, which are instances of the `UIView` class.  These can act as
