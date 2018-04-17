@@ -64,8 +64,6 @@ function getOS() {
     return "windows";
   if (ua.indexOf("Mac") !== -1)
     return "macos";
-  if (ua.indexOf("Linux") !== -1)
-    return "linux";
-  if (ua.indexOf("X11") !== -1)
+  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
     return "linux";
 }
