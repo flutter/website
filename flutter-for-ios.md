@@ -977,3 +977,99 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 }
 {% endprettify %}
+
+# Project Structure & Resources
+
+## How do I include image assets for Flutter? What about multiple resolutions?
+
+While iOS treats images and assets as distinct items, Flutter apps have only
+assets. All your resources which would be placed in the `Images.xcasset`
+folder on iOS should be instead put in an assets folder.
+
+Flutter follows a simple density-based format like iOS. Assets can be `1.0x`,
+`2.0x`, `3.0x`, or any other multiplier. The so-called
+[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-
+ui/Window/devicePixelRatio.html) expresses the ratio of physical pixels in a
+single logical pixel.
+
+Assets on Flutter can be located in any arbitrary folder; there is no
+predefined folder structure. You then declare where the assets are located in
+the `pubspec.yaml` file and Flutter will pick them up.
+
+For example, to add a new image asset called `my_icon.png` to your Flutter
+project, you may decide to store it in a folder we arbitrarily called `images`.
+You would then put the base image (1.0x) in the `images` folder, and all the
+other variants in sub-folders named after the appropriate ratio multiplier:
+ 
+```
+images/my_icon.png       // Base: 1.0x image
+images/2.0x/my_icon.png  // 2.0x image
+images/3.0x/my_icon.png  // 3.0x image
+```
+
+Next, you will need to declare these images in our `pubspec.yaml` file:
+
+<!-- skip -->
+{% prettify yaml %}
+assets:
+ - images/my_icon.jpeg
+{% endprettify %}
+
+You can then access your images using `AssetImage`:
+
+<!-- skip -->
+{% prettify dart %}
+return new AssetImage("images/a_dot_burr.jpeg");
+{% endprettify %}
+
+or directly in an `Image` widget:
+
+<!-- skip -->
+{% prettify dart %}
+@override
+Widget build(BuildContext context) {
+  return new Image.asset("images/my_image.png");
+}
+{% endprettify %}
+
+## Where do I store strings? How do I handle localization?
+
+Unlike iOS, which has the `Localizable.strings` file, Flutter does not
+currently have a dedicated system for handling strings. At the moment, the
+best practice is to declare your copy text in a class as static fields and
+access them from there. For example:
+
+<!-- skip -->
+{% prettify dart %}
+class Strings {
+  static String welcomeMessage = "Welcome To Flutter";
+}
+{% endprettify %}
+
+You can access your strings as such:
+
+<!-- skip -->
+{% prettify dart %}
+new Text(Strings.welcomeMessage)
+{% endprettify %}
+
+
+While there's no functionality built into Flutter to handle
+internationalization or localization, Flutter developers are encouraged to use
+the [intl package](https://pub.dartlang.org/packages/intl) for those needs.
+
+Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
+accessible from the native side, and vice versa, native assets and resources
+weren’t available from Flutter as they lived in separate folders.
+
+## What is the equivalent of Cocoapods? How do I add dependencies?
+
+In iOS, you add dependencies by adding to your `Podfile`. Flutter uses Dart’s
+own build system and the Pub package manager to handle dependencies. They then
+delegate the building of the native Android and iOS wrapper apps to the
+respective build systems. While there is a Podfile in the iOS folder in your
+Flutter project, you should only use this if you are adding native
+dependencies needed for per-platform integration. In general, you can use
+`pubspec.yaml` to declare external dependencies in Flutter. A good place to
+find great packages for Flutter is
+[Pub](https://pub.dartlang.org/flutter/packages/).
