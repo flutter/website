@@ -22,6 +22,7 @@ as well as how to focus a text field when a button is tapped.
 In order to focus a text field as soon as it's visible, we can use the 
 `autofocus` property.
 
+<!-- skip -->
 ```dart
 new TextField(
   autofocus: true,
@@ -53,6 +54,7 @@ We will use the `FocusNode` to identify a specific `TextField` in Flutter's
 Since focus nodes are long-lived objects, we need to store them in a `State` 
 class. In addition, we need to `dispose` of them when they're no longer needed! 
 
+<!-- skip -->
 ```dart
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
@@ -86,6 +88,7 @@ class _MyFormState extends State<MyForm> {
 Now that we have our `FocusNode`, we can pass it to a specific `TextField` in 
 the `build` method. 
 
+<!-- skip -->
 ```dart
 class _MyFormState extends State<MyForm> {
   // Code to create the Focus node...
@@ -105,6 +108,7 @@ Finally, we'll want to focus the text field when the user taps a floating
 action button! We'll use the [`requestFocus`](https://docs.flutter.io/flutter/widgets/FocusScopeNode/requestFocus.html) 
 method to achieve this task.
 
+<!-- skip -->
 ```dart
 new FloatingActionButton(
   // When the button is pressed, ask Flutter to focus our text field using

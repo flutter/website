@@ -20,6 +20,7 @@ package for a simple transparent placeholder. You can also consider using local
 assets for placeholders by following the [Assets and Images](/assets-and-images/)
 guide.
 
+<!-- skip -->
 ```dart
 new FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,

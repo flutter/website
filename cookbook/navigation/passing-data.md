@@ -24,6 +24,7 @@ displays information about the todo.
 First, we'll need a simple way to represent Todos. For this example, we'll 
 create a class that contains two pieces of data: the title and description.
 
+<!-- skip -->
 ```dart
 class Todo {
   final String title;
@@ -41,6 +42,7 @@ Lists, please see the [`Basic List`](/cookbook/lists/basic-list/) recipe.
 
 ### Generate the List of Todos
 
+<!-- skip -->
 ```dart
 final todos = new List<Todo>.generate(
   20,
@@ -53,6 +55,7 @@ final todos = new List<Todo>.generate(
 
 ### Display the List of Todos using a ListView
 
+<!-- skip -->
 ```dart
 new ListView.builder(
   itemCount: todos.length,
@@ -74,6 +77,7 @@ title of the todo, and the body of the screen will show the description.
 Since it's a normal `StatelessWidget`, we'll simply require that users creating 
 the Screen pass through a `Todo`! Then, we'll build a UI using the given Todo.
 
+<!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
   // Declare a field that holds the Todo
@@ -109,6 +113,7 @@ callback for our `ListTile` Widget. Within our `onTap` callback, we'll once
 again employ the [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
 method. 
 
+<!-- skip -->
 ```dart
 new ListView.builder(
   itemCount: todos.length,

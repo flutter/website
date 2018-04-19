@@ -33,6 +33,7 @@ When we create the form, we'll also need to provide a [`GlobalKey`](https://docs
 This will uniquely identify the `Form` that we're working with, and will allow
 us to validate the form in a later step. 
 
+<!-- skip -->
 ```dart
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
@@ -76,6 +77,7 @@ anything.
 In this example, we will create a `validator` that ensures the `TextFormField`
 isn't empty. If it is empty, we will return a friendly error message!
 
+<!-- skip -->
 ```dart
 new TextFormField(
   // The validator receives the text the user has typed in
@@ -96,6 +98,7 @@ When the user attempts to submit the form, we'll need to check if the form is
 valid. If it is, we will show a success message. If the text field has no 
 content, we'll want to display the error message.
 
+<!-- skip -->
 ```dart
 new RaisedButton(
   onPressed: () {

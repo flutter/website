@@ -71,6 +71,7 @@ to change the appearance of text. To use package fonts, we need to not only
 declare which font we'd like to use, we need to declare the `package` the font
 belongs to. 
 
+<!-- skip -->
 ```dart
 new Text(
   'Using the Raleway font from the awesome_package',
@@ -136,7 +137,7 @@ class MyHomePage extends StatelessWidget {
       // The AppBar will use the app-default Raleway font
       appBar: new AppBar(title: new Text('Package Fonts')),
       body: new Center(
-        // This Text Widget will use the RobotoMono font 
+        // This Text Widget will use the RobotoMono font
         child: new Text(
           'Using the Raleway font from the awesome_package',
           style: new TextStyle(

@@ -25,6 +25,7 @@ First, we'll need a list of items to work with. Rather than using a normal list,
 we'll want a list that displays items in a Grid. For now, we'll create a grid
 with 2 columns.
 
+<!-- skip -->
 ```dart
 new GridView.count(
   // A list with 2 columns
@@ -46,6 +47,7 @@ rebuild when the `Orientation` changes.
 Using the `Orientation`, we can build a list that displays 2 columns in portrait 
 mode, or 3 columns in landscape mode.
 
+<!-- skip -->
 ```dart
 new OrientationBuilder(
   builder: (context, orientation) {

@@ -11,3 +11,8 @@ dev_dependencies:
   test: ^0.12.13
   url_launcher:
   path_provider:
+  cached_network_image: 0.4.0
+  shared_preferences: 0.4.1
+  transparent_image: 0.1.0
+  css_colors: 1.0.1
+  web_socket_channel: 1.0.7

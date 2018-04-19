@@ -26,6 +26,7 @@ In this example, we'll work on an app that shows a header followed by five
 messages. Therefore, we'll create three classes: `ListItem`, `HeadingItem`, 
 and `MessageItem`.
 
+<!-- skip -->
 ```dart
 // The base class for the different types of items the List can contain
 abstract class ListItem {}
@@ -54,6 +55,7 @@ convert that data into a list of items.
 For this example, we'll generate a list of items to work with. The list will
 contain a header followed by five messages. Rinse, repeat.
 
+<!-- skip -->
 ```dart
 final items = new List<ListItem>.generate(
   1200,
@@ -78,6 +80,7 @@ with can be handy. It's fast, and will automatically cast each item to the
 appropriate type. However, there are different ways to approach this problem if 
 you prefer another pattern!
 
+<!-- skip -->
 ```dart
 new ListView.builder(
   // Let the ListView know how many items it needs to build

@@ -176,32 +176,31 @@ To use this package:
 1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
-   ```dart
-   import 'package:flutter/material.dart';
-   import 'package:css_colors/css_colors.dart';
 
-   void main() {
-     runApp(new MyApp());
-   }
+```dart
+import 'package:css_colors/css_colors.dart';
+import 'package:flutter/material.dart';
 
-   class MyApp extends StatelessWidget {
-     @override
-     Widget build(BuildContext context) {
-       return new MaterialApp(
-         home: new DemoPage(),
-       );
-     }
-   }
+void main() {
+  runApp(new MyApp());
+}
 
-   class DemoPage extends StatelessWidget {
-     @override
-     Widget build(BuildContext context) {
-       return new Scaffold(
-         body: new Container(color: CSSColors.orange)
-       );
-     }
-   }
-   ```
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new DemoPage(),
+    );
+  }
+}
+
+class DemoPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(body: new Container(color: CSSColors.orange));
+  }
+}
+```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
 phone's default browser open, and the Flutter homepage appear.
@@ -236,41 +235,42 @@ To use this plugin:
 1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
-   ```dart
-   import 'package:flutter/material.dart';
-   import 'package:url_launcher/url_launcher.dart';
 
-   void main() {
-     runApp(new MyApp());
-   }
+```dart
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-   class MyApp extends StatelessWidget {
-     @override
-     Widget build(BuildContext context) {
-       return new MaterialApp(
-         home: new DemoPage(),
-       );
-     }
-   }
+void main() {
+  runApp(new MyApp());
+}
 
-   class DemoPage extends StatelessWidget {
-     launchURL() {
-       launch('https://flutter.io');
-     }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new DemoPage(),
+    );
+  }
+}
 
-     @override
-     Widget build(BuildContext context) {
-       return new Scaffold(
-         body: new Center(
-           child: new RaisedButton(
-             onPressed: launchURL,
-             child: new Text('Show Flutter homepage'),
-           ),
-         ),
-       );
-     }
-   }
-   ```
+class DemoPage extends StatelessWidget {
+  launchURL() {
+    launch('https://flutter.io');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Center(
+        child: new RaisedButton(
+          onPressed: launchURL,
+          child: new Text('Show Flutter homepage'),
+        ),
+      ),
+    );
+  }
+}
+```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
 phone's default browser open, and the Flutter homepage appear.

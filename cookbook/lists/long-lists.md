@@ -23,6 +23,7 @@ For this example, we'll generate a list of 10000 Strings using the
 [`List.generate`](https://docs.flutter.io/flutter/dart-core/List/List.generate.html) 
 constructor.
 
+<!-- skip -->
 ```dart
 final items = new List<String>.generate(10000, (i) => "Item $i");
 ```
@@ -35,6 +36,7 @@ a Widget!
 This is where the `ListView.builder` will come into play. In our case, we'll 
 display each String on it's own line. 
 
+<!-- skip -->
 ```dart
 new ListView.builder(
   itemCount: items.length,

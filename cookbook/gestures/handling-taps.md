@@ -17,6 +17,7 @@ we approach this?
   1. Create the button
   2. Wrap it in a `GestureDetector` with an `onTap` callback
 
+<!-- skip -->
 ```dart
 // Our GestureDetector wraps our button
 new GestureDetector(
