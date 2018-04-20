@@ -1432,3 +1432,133 @@ Widget build(BuildContext context) {
 
 For a more detailed view at the different layout widgets available on Flutter,
 see the documentation [here](https://flutter.io/widgets/layout/).
+
+# Gesture Detection and Touch Event Handling
+
+## How do I add a click listener to a widget in Flutter?
+
+In iOS, you can attach a `GestureRecognizer` to a view in order to handle
+click events. In Flutter there are two ways of adding touch listeners:
+
+1. If the widget has support for event detection you can just pass in a
+   function to it and handle the event in the function. For example, the
+   `RaisedButton` has an `onPressed` parameter:
+
+   <!-- skip -->
+   {% prettify dart %}
+   @override
+   Widget build(BuildContext context) {
+     return new RaisedButton(
+       onPressed: () {
+         print("click");
+       },
+       child: new Text("Button"),
+     );
+   }
+   {% endprettify %}
+
+2. If the widget does not have support for event detection, you can wrap up the
+   widget in a `GestureDetector` and pass in a function to the `onTap` parameter.
+
+   <!-- skip -->
+   {% prettify dart %}
+   class SampleApp extends StatelessWidget {
+     @override
+     Widget build(BuildContext context) {
+       return new Scaffold(
+         body: new Center(
+           child: new GestureDetector(
+             child: new FlutterLogo(
+               size: 200.0,
+             ),
+             onTap: () {
+               print("tap");
+             },
+           ),
+         ),
+       );
+     }
+   }
+   {% endprettify %}
+
+## How do I handle other gestures on widgets?
+
+Using the `GestureDetector` we can listen to a wide range of gestures such as:
+
+- Tapping
+
+  - `onTapDown` — A pointer that might cause a tap has contacted the screen at a
+    particular location.
+  - `onTapUp` — A pointer that will trigger a tap has stopped contacting the
+    screen at a particular location.
+  - `onTap` — A tap has occurred.
+  - `onTapCancel` — The pointer that previously triggered the `onTapDown` will
+    not end up causing a tap.
+
+- Double tapping
+
+  - `onDoubleTap` — The user has tapped the screen at the same location twice in
+    quick succession.
+
+- Long pressing
+
+  - `onLongPress` — A pointer has remained in contact with the screen at the same
+    location for a long period of time.
+
+- Vertical dragging
+
+  - `onVerticalDragStart` — A pointer has contacted the screen and might begin to
+    move vertically.
+  - `onVerticalDragUpdate` — A pointer that is in contact with the screen and
+    moving vertically has moved in the vertical direction.
+  - `onVerticalDragEnd` — A pointer that was previously in contact with the
+    screen and moving vertically is no longer in contact with the screen and was
+    moving at a specific velocity when it stopped contacting the screen.
+
+- Horizontal dragging
+
+  - `onHorizontalDragStart` — A pointer has contacted the screen and might begin
+    to move horizontally.
+  - `onHorizontalDragUpdate` — A pointer that is in contact with the screen and
+    moving horizontally has moved more in the horizontal direction.
+  - `onHorizontalDragEnd` — A pointer that was previously in contact with the
+    screen and moving horizontally is no longer in contact with the screen.
+
+For example here is a `GestureDetector` for double tapping on the Flutter logo that
+will make it rotate:
+
+<!-- skip -->
+{% prettify dart %}
+AnimationController controller;
+CurvedAnimation curve;
+
+@override
+void initState() {
+  controller = new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+  curve = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Center(
+        child: new GestureDetector(
+          child: new RotationTransition(
+            turns: curve,
+            child: new FlutterLogo(
+              size: 200.0,
+            )),
+          onDoubleTap: () {
+            if (controller.isCompleted) {
+              controller.reverse();
+            } else {
+              controller.forward();
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+{% endprettify %}
