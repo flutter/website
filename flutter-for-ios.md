@@ -1744,3 +1744,42 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 }
 {% endprettify %}
+
+# Interacting with hardware, third party services and the platform
+
+## How do I access the GPS sensor?
+
+To access the GPS sensor you can use the [`location`](https://pub.dartlang.org/packages/location)
+community plugin.
+
+## How do I access the Camera?
+
+A popular plugin to access the camera is [`image_picker`](https://pub.dartlang.org/packages/image_picker).
+
+## How do I Log in with Facebook?
+
+To Log in with Facebook, you can use the
+[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
+
+## How do I use Firebase features?
+
+Most Firebase functions are covered by [first or third party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+For example:
+
+ * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
+ * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
+ * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`](https://pub.dartlang.org/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+
+## How do I build my own custom native integrations?
+
+If there is platform-specific functionality that Flutter or its community
+Plugins are missing, then you can build your own following [this tutorial](https://flutter.io/developing-packages/).
+
+Flutter's plugin architecture, in a nutshell, is a lot like using an Event bus in
+Android: you fire off a message and let the receiver process and emit a result
+back to you. In this case, the receiver would be code running on the native side
+on Android or iOS.
