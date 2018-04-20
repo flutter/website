@@ -1109,3 +1109,326 @@ For more details on the meaning of these states, you can check the
 [`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
 /AppLifecycleState-class.html).
 
+# Layouts
+
+## What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
+
+In iOS, you might show a list in either a `UITableView` or a
+`UICollectionView`. In Flutter, you can have a similar implementation using a
+`ListView`.
+
+In iOS, these views have delegate methods for deciding the number of rows, the
+cell for each index path, and the size of the cells. In Flutter, due to
+Flutter’s immutable widget pattern, you pass in a list of widgets to your
+`ListView`, and Flutter will take care of making sure they are scrolling fast
+and smooth.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: _getListData()),
+    );
+  }
+
+  _getListData() {
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")));
+    }
+    return widgets;
+  }
+}
+{% endprettify %}
+
+## How do I know which list item is clicked?
+
+In iOS, you would implement the delegate method `tableView:didSelectRowAtIndexPath:`. Flutter makes it even easier by letting you just use the touch handling that the widgets you passed in have.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: _getListData()),
+    );
+  }
+
+  _getListData() {
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(new GestureDetector(
+        child: new Padding(
+          padding: new EdgeInsets.all(10.0),
+          child: new Text("Row $i"),
+        ),
+        onTap: () {
+          print('row tapped');
+        },
+      ));
+    }
+    return widgets;
+  }
+}
+{% endprettify %}
+
+## How do I update `ListView`s dynamically?
+
+In iOS, you would update the data for the list view, and notify the table or
+collection view using the `reloadData` method. In Flutter if you were to update
+the list of widgets inside a `setState()`, you would quickly see that your
+data did not change visually.
+
+This is because when `setState()` is called, the Flutter rendering engine will
+go through all the widgets to see if they have changed. When it gets to your
+`ListView` it will do a `==` check and see that the two `ListView`s are the
+same and nothing has changed, hence no update to the data.
+
+To update your `ListView` then you need to create a new `List` inside of
+`setState()` and copy over all the old data to the new list. This is a simple
+way to achieve an update.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: widgets),
+    );
+  }
+
+  Widget getRow(int i) {
+    return new GestureDetector(
+      child: new Padding(
+        padding: new EdgeInsets.all(10.0),
+        child: new Text("Row $i"),
+      ),
+      onTap: () {
+        setState(() {
+          widgets = new List.from(widgets);
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
+  }
+}
+{% endprettify %}
+
+However the recommended, efficient, and effective way is to use a
+`ListView.Builder`. This method is great when you have a dynamic
+list or a list with very large amounts of data.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView.builder(
+        itemCount: widgets.length,
+        itemBuilder: (BuildContext context, int position) {
+          return getRow(position);
+        },
+      ),
+    );
+  }
+
+  Widget getRow(int i) {
+    return new GestureDetector(
+      child: new Padding(
+        padding: new EdgeInsets.all(10.0),
+        child: new Text("Row $i"),
+      ),
+      onTap: () {
+        setState(() {
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
+  }
+}
+{% endprettify %}
+
+Instead of creating a "new ListView", we create a new `ListView.builder` which
+takes two key parameters, the initial length of the list and an `ItemBuilder`
+function.
+
+The `ItemBuilder` function is similar to the `cellForItemAt` delegate method
+in an iOS table or collection view, as it takes a position and returns the
+cell that you want to be rendered for that position.
+
+Lastly, but most importantly, you can notice that in the `onTap()` function we
+don't recreate the list anymore but instead just `.add` to it.
+
+## What is the equivalent of a `ScrollView` in Flutter?
+
+In iOS, you wrap your views in a `ScrollView` which allows a user to scroll
+your content if needed.
+
+In Flutter the easiest way to do this is using the `ListView` widget. This
+acts as both a `ScrollView` and an iOS `TableView`, as you can layout widgets
+in a vertical format.
+  
+<!-- skip -->  
+{% prettify dart %}  
+@override  
+Widget build(BuildContext context) {  
+  return new ListView(  
+    children: <Widget>[  
+      new Text('Row One'),  
+      new Text('Row Two'),  
+      new Text('Row Three'),  
+      new Text('Row Four'),  
+    ],  
+  );  
+}  
+{% endprettify %}
+
+For a more detailed view at the different layout widgets available on Flutter,
+see the documentation [here](https://flutter.io/widgets/layout/).
