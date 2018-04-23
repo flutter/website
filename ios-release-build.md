@@ -209,7 +209,7 @@ For more details, see [Distribute an app through the App Store]
 The [Distribute your app][distributionguide] guide provides a detailed overview of
 the process of releasing an app to the App Store.
 
-[appicon]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon/
+[appicon]: https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/app-icon/
 [appreview]: https://developer.apple.com/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
