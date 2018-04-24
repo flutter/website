@@ -5,9 +5,9 @@ title: Accessibility
 permalink: /accessibility/
 ---
 
-Flutter is committed to enable developers to make their apps accessible: usable
-for all, including those with disabilities such as blindness or motor
-impairment.
+Flutter is committed to supporting developers who want to make their apps more
+accessible: usable by as many people as possible, including those with
+disabilities such as blindness or motor impairment.
 
 * Placeholder for TOC
 {:toc}
@@ -31,7 +31,7 @@ specific topics, we recommend using automated accessibility scanners:
   * For Android:
     1. Install the [Accessibility Scanner][accessibility-scanner] for Android
     1. Enable the Accessibility Scanner from Android Settings > Accessibility >
-       Accssibility Scanner > On
+       Accessibility Scanner > On
     1. Navigate to the Accessibility Scanner 'checkbox' icon button to initiate a
        scan
   * For iOS:
