@@ -56,18 +56,18 @@ determining font sizes.
 
 Font sizes are calculated automatically by Flutter based on the OS setting.
 However, as a developer you should make sure your all layout has enough room to
-render all it's contents when the font sizes are increased, for example by
-testing all of your app on a small-screen device configured to use the largest
-font setting.
+render all it's contents when the font sizes are increased. For example you can
+test all parts of your app on a small-screen device configured to use the
+largest font setting.
 
 ### Example
 
 The following two screenshots show the standard Flutter app template rendered 1)
-with default Android font setting, and 2) with the largest font setting
-specified in Android accessibility settings.
+with default iOS font setting, and 2) with the largest font setting
+selected in iOS accessibility settings.
 
-![Screenshot showing a Flutter app using regular font sizes](/images/a18n/a18n-fonts-regular.png)
-![Screenshot showing a Flutter app using large font sizes](/images/a18n/a18n-fonts-large.png)
+![Screenshot showing a Flutter app using regular font size](/images/a18n/a18n-fonts-regular.png)
+![Screenshot showing a Flutter app using largest available font size](/images/a18n/a18n-fonts-large.png)
 
 ## Screen readers {#screen-reader}
 
