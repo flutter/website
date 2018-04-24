@@ -91,7 +91,7 @@ Now, we'll update the `fetchPhotos` function so it can return a
 ```dart
 // A function that will convert a response body into a List<Photo>
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody);
+  final parsed = json.decode(responseBody) as List;
 
   return parsed.map((json) => new Photo.fromJson(json)).toList();
 }
@@ -155,7 +155,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 // A function that will convert a response body into a List<Photo>
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody);
+  final parsed = json.decode(responseBody) as List;
 
   return parsed.map((json) => new Photo.fromJson(json)).toList();
 }
