@@ -451,7 +451,7 @@ You can learn about other debug flags in
 
 You can measure and track your app’s performance by writing benchmark tests.
 The Flutter Driver library provides support for benchmarking. Using this
-integration test framework, you can generates metrics to track the following:
+integration test framework, you can generate metrics to track the following:
 
 * Jank
 * Download size
