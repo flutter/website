@@ -458,7 +458,7 @@ integration test framework, you can generate metrics to track the following:
 * Battery efficiency
 * Startup time
 
-Tracking these benchmarks allows you to be informed with a regression is
+Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
 
 For more information, see
