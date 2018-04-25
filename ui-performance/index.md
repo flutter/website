@@ -150,7 +150,7 @@ your actions on the UI thread have performance consequences on other threads.
    The UI thread executes Dart code in the Dart VM.
    This thread includes code that you wrote, and code executed by
    Flutter's framework on your app's behalf.
-   When your app cretes and displays a scene, the UI thread creates
+   When your app creates and displays a scene, the UI thread creates
    a _layer tree_, a lightweight object containing device-agnostic
    painting commands, and sends the layer tree to the GPU thread to
    be rendered on the device. _Don't block this thread!_
