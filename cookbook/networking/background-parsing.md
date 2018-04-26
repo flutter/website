@@ -157,7 +157,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody);
 
-  return parsed.map<Photo>((json) => new Photo.fromJson(json)).toList();
+  return parsed.map<Photo> ((json) => new Photo.fromJson(json)).toList();
 }
 
 class Photo {
