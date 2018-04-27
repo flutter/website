@@ -48,7 +48,7 @@ them to be very lightweight. By default, Flutter’s widgets are styled as
 widgets](https://flutter.io/widgets/cupertino/) to specify an iOS theme if you
 require.
 
-### How do I update `Widget`s?
+## How do I update `Widget`s?
 
 To update your views on iOS you directly mutate them. In Flutter, widgets are
 immutable and not updated directly. Instead, you have to manipulate the
