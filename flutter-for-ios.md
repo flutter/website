@@ -190,7 +190,7 @@ constraints in iOS.
 You can view all the layouts that Flutter has to offer in the [widget
 catalog](https://flutter.io/widgets/layout/).
 
-### How do I add or remove a component from my layout?
+## How do I add or remove a component from my layout?
 
 In iOS, you would call `addSubview()` on the parent or `removeFromSuperview()`
 on a child view to dynamically add or remove child views. In Flutter, because
