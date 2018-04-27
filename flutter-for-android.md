@@ -364,24 +364,17 @@ you can see how to implement a signature painter in Flutter.
 <!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
-class SignaturePainter extends CustomPainter {
-  SignaturePainter(this.points);
-  final List<Offset> points;
-  void paint(Canvas canvas, Size size) {
-    var paint = new Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
-    for (int i = 0; i < points.length - 1; i++) {
-      if (points[i] != null && points[i + 1] != null)
-        canvas.drawLine(points[i], points[i + 1], paint);
-    }
-  }
-  bool shouldRepaint(SignaturePainter other) => other.points != points;
+
+void main() => runApp(new MaterialApp(home: new DemoApp()));
+
+class DemoApp extends StatelessWidget {
+  Widget build(BuildContext context) => new Scaffold(body: new Signature());
 }
+
 class Signature extends StatefulWidget {
   SignatureState createState() => new SignatureState();
 }
+
 class SignatureState extends State<Signature> {
   List<Offset> _points = <Offset>[];
   Widget build(BuildContext context) {
@@ -399,10 +392,22 @@ class SignatureState extends State<Signature> {
     );
   }
 }
-class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) => new Scaffold(body: new Signature());
+
+class SignaturePainter extends CustomPainter {
+  SignaturePainter(this.points);
+  final List<Offset> points;
+  void paint(Canvas canvas, Size size) {
+    var paint = new Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5.0;
+    for (int i = 0; i < points.length - 1; i++) {
+      if (points[i] != null && points[i + 1] != null)
+        canvas.drawLine(points[i], points[i + 1], paint);
+    }
+  }
+  bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
-void main() => runApp(new MaterialApp(home: new DemoApp()));
 {% endprettify %}
 
 ## How do I build custom widgets?
