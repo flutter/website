@@ -1804,3 +1804,12 @@ relate to your models.
 
 In Flutter, you can access this functionality by using the SQFlite plugin 
 [SQFlite](https://pub.dartlang.org/packages/sqflite).
+
+# Notifications
+
+## How do I setup Push Notifications?
+
+In iOS, you would need to register your app on the developer portal to allow
+push notifications. In Flutter, you can access this functionality by using the
+`Firebase_Messaging` plugin. You can find full instructions on how to get set
+up [here](https://pub.dartlang.org/packages/firebase_messaging).
