@@ -32,11 +32,11 @@ that are most relevant to your needs.
 
 ## What is the equivalent of a `UIView` in Flutter?
 
-On iOS the majority of anything you may want to create in the UI is done using
+On iOS, the majority of anything you may want to create in the UI is done using
 view objects, which are instances of the `UIView` class.  These can act as
 containers for other `UIView` classes, which form your layout.
 
-In Flutter, the equivalent to this is a `Widget`. However these have a few
+In Flutter, the equivalent to this is a `Widget`. However, these have a few
 differences to a  `UIView`. To start, widgets only exist for one frame, and on
 every new frame, Flutter’s framework creates a new tree of widget instances.
 In comparison, an iOS view is drawn once and does not redraw until it is
@@ -51,7 +51,7 @@ require.
 ### How do I update `Widget`s?
 
 To update your views on iOS you directly mutate them. In Flutter, widgets are
-immutable and not updated directly. Instead you have to manipulate the
+immutable and not updated directly. Instead, you have to manipulate the
 widget’s state. This is where the concept of Stateful vs Stateless widgets
 comes in. A `StatelessWidget` is just what it sounds like - a widget with no
 state attached.
@@ -64,7 +64,7 @@ For example, in iOS, this would be similar to placing a `UIImageView` with
 your logo as the `image`. If the logo is not going to change during runtime,
 you would use a `StatelessWidget` in Flutter.
 
-If you want to dynamically change the UI based on data received after making a
+If you want to dynamically change the UI based on data received after making an
 HTTP call then you would use a `StatefulWidget`. After the HTTP call had
 complete, you would tell the Flutter framework that the widget’s `State` has
 been updated so it could update the widget.
@@ -265,14 +265,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I animate a Widget?
 
-In iOS you would create an animation by calling the
+In iOS, you would create an animation by calling the
 `animate(withDuration:animations:)` method on a view. In Flutter, animating
 widgets can be done via the animation library by wrapping widgets inside an
 animated widget.
 
 In Flutter you use an `AnimationController` which is an `Animation<double>`
 that can pause, seek, stop and reverse the animation. It requires a `Ticker`
-which signals when vsync happens, and produces a linear interpolation between
+which signals when vsync happens and produces a linear interpolation between
 0 and 1 on each frame while it's running.You then create one or more
 `Animation`s and attach them to the controller.
 
@@ -365,7 +365,7 @@ screen. Flutter has a different API based on the `Canvas` class, with two
 other classes that help you draw: `CustomPaint` and `CustomPainter`, the
 latter of which implements your algorithm to draw to the canvas.
 
-In this [popular StackOverFlow
+In this [popular StackOverflow
 answer](https://stackoverflow.com/questions/46241071/create-signature-area-
 for-mobile-app-in-dart-flutter) you can see how to implement a signature
 painter in Flutter.
