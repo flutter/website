@@ -25,7 +25,8 @@ to use Flutter.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-* TOC Placeholder {:toc}
+* TOC Placeholder
+{:toc}
 
 # Views 
 
