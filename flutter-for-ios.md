@@ -1415,7 +1415,7 @@ In Flutter the easiest way to do this is using the `ListView` widget. This
 acts as both a `ScrollView` and an iOS `TableView`, as you can layout widgets
 in a vertical format.
   
-<!-- skip -->  
+<!-- skip -->
 {% prettify dart %}  
 @override  
 Widget build(BuildContext context) {  
