@@ -2025,7 +2025,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     String emailRegexp =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
-    RegExp regExp = new RegExp(p);
+    RegExp regExp = new RegExp(emailRegexp);
 
     return regExp.hasMatch(em);
   }
@@ -2035,40 +2035,54 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Flutter Plugins
 
-## How do I access the GPS sensor
+## How do I access the GPS sensor?
 
-To access the GPS sensor you can use the community plugin
-[https://pub.dartlang.org/packages/location](https://pub.dartlang.org/packages/location)
+To access the GPS sensor you can use the [`location`](https://pub.dartlang.org/packages/location)
+community plugin.
 
-## How do I access the Camera
+## How do I access the Camera?
 
-A popular community plugin to access the camera is
-[https://pub.dartlang.org/packages/image_picker](https://pub.dartlang.org/packages/image_picker)
+A popular plugin to access the camera is [`image_picker`](https://pub.dartlang.org/packages/image_picker).
 
-## How do I log in with Facebook
+## How do I log in with Facebook?
 
-To Login with Facebook you can use
-[https://pub.dartlang.org/packages/flutter_facebook_login](https://pub.dartlang.org/packages/flutter_facebook_login) .
+To log in with Facebook, you can use the
+[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
 
-## How do I build my own custom native integrations
+## How do I use Firebase features?
 
-If there is platform specific functionality that Flutter or its community
-Plugins are missing then you can build your own following this tutorial
-[https://flutter.io/developing-packages/](https://flutter.io/developing-packages/) .
+Most Firebase functions are covered by [first or third party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+For example:
 
-Flutter's plugin architecture in a nutshell is a lot like using an Event bus in
+ * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
+ * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
+ * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`](https://pub.dartlang.org/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+
+## How do I build my own custom native integrations?
+
+If there is platform-specific functionality that Flutter or its community
+Plugins are missing, then you can build your own following [this tutorial](https://flutter.io/developing-packages/).
+
+Flutter's plugin architecture, in a nutshell, is a lot like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result
-back to you, in this case the receiver would be iOS or Android.
+back to you. In this case, the receiver would be code running on the native side
+on Android or iOS.
 
-## How do I use the NDK in my Flutter application
+## How do I use the NDK in my Flutter application?
 
 If you use the NDK in your current Android application and want your Flutter
 application to take advantage of your native libraries then it's possible by
 building a custom plugin.
 
 Your custom plugin would first talk to your Android app, where you would be
-able to call your `native` marked functions. Once a response is ready, you
+able to call your `native` functions over JNI. Once a response is ready, you
 would be able to send a message back to Flutter and render the result.
+
+Calling native code directly from Flutter is currently not supported.
 
 # Themes
 

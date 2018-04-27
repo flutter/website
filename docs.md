@@ -89,7 +89,7 @@ Dive deeper into topics that interest you.
 * [Custom Fonts](/cookbook/design/fonts/)<br>
   How to add new fonts to your app.
 
-* [Text Input](/text-input/)<br>
+* [Text Input](/cookbook/forms/text-input/)<br>
   How to set up basic text input.
 
 * [Debugging Flutter Apps](/debugging/)<br>
