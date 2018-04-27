@@ -41,7 +41,7 @@ server.
 
 After we send a message to the test server, it will send the same message back. 
 
-How how do we listen for messages and display them? In this example, we'll use 
+How do we listen for messages and display them? In this example, we'll use 
 a [`StreamBuilder`](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html) 
 Widget to listen for new messages and a [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) 
 Widget to display them.
