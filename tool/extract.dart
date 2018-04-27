@@ -28,7 +28,7 @@ int _processFile(File file) {
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
-  List<String> lines = source.split('\n');
+  List<String> lines = source.split('\n').map((String line) => line.trimRight());
 
   int index = 1;
   int count = 0;
