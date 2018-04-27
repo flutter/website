@@ -1786,21 +1786,21 @@ on Android or iOS.
 
 # Databases and local storage
 
-## How do I access UserDefaults in Flutter?
+## How do I access `UserDefaults` in Flutter?
 
 In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
 
-In Flutter, you can access this functionality by using the
-[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences). 
+In Flutter, you can access the equivalent functionality by using the
+[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
 ## What is the equivalent to CoreData in Flutter?
-
-In iOS, you can use CoreData to store structured data. This is simply a layer
-on top of an SQL database, making it easier to make queries that relate to
-your models.
+In iOS, you can use CoreData to store structured data. This is simply a
+layer on top of an SQL database, making it easier to make queries that
+relate to your models.
 
 In Flutter, you can access this functionality by using the SQFlite plugin 
 [SQFlite](https://pub.dartlang.org/packages/sqflite).
