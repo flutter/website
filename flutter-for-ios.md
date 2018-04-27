@@ -355,8 +355,8 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
 See
 [https://flutter.io/widgets/animation/](https://flutter.io/widgets/animation/)
-and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/anim
-ation) for more specific details.
+and [https://flutter.io/tutorials/animation](https://flutter.io/tutorials/animation)
+for more specific details.
 
 ## How do I draw to the screen?
 
