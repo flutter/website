@@ -28,6 +28,7 @@ components, such as Drawers, AppBars, and SnackBars.
 
 In this case, we'll want to create a `Scaffold` with a `drawer`:
 
+<!-- skip -->
 ```dart
 new Scaffold(
   drawer: // We'll add our Drawer here in the next step!
@@ -40,6 +41,7 @@ We can now add a drawer to our `Scaffold`. A drawer could be any Widget, but
 it's often best to use the `Drawer` widget from the [material library](https://docs.flutter.io/flutter/material/material-library.html), 
 which adheres to the Material Design spec.
 
+<!-- skip -->
 ```dart
 new Scaffold(
   drawer: new Drawer(
@@ -61,6 +63,7 @@ and two [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.htm
 Widgets. For more information on working with Lists, please see the 
 [list recipes](/cookbook/#lists).
 
+<!-- skip -->
 ```dart
 new Drawer(
   // Add a ListView to the drawer. This ensures the user can scroll
@@ -104,6 +107,7 @@ When a user opens the Drawer, Flutter will add the drawer to the navigation
 stack under the hood. Therefore, to close the drawer, we can call 
 `Navigator.pop(context)`.  
 
+<!-- skip -->
 ```dart
 new ListTile(
   title: new Text('Item 1'),

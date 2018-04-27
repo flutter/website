@@ -35,6 +35,7 @@ In this example, we'll fetch a sample post from the
 [`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html) 
 method.
 
+<!-- skip -->
 ```dart
 Future<http.Response> fetchPost() {
   return http.get('https://jsonplaceholder.typicode.com/posts/1');
@@ -64,6 +65,7 @@ create a `Post` from json.
 Converting JSON by hand is only one option. For more information, please see the 
 full article on [JSON and serialization](/json). 
 
+<!-- skip -->
 ```dart
 class Post {
   final int userId;
@@ -92,6 +94,7 @@ we'll need to:
   1. Convert the response body into a json `Map` with the `dart:convert` package
   2. Convert the json `Map` into a `Post` using the `fromJson` factory.
 
+<!-- skip -->
 ```dart
 Future<Post> fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
@@ -118,6 +121,7 @@ We must provide two parameters:
   2. A `builder` function that tells Flutter what to render, depending on the
   state of the `Future`: loading, success, or error.
 
+<!-- skip -->
 ```dart
 new FutureBuilder<Post>(
   future: fetchPost(),

@@ -11,6 +11,7 @@ Widget supports horizontal lists out of the box.
 We'll use the standard `ListView` constructor, passing through a horizontal 
 `scrollDirection`, which will override the default vertical direction.
 
+<!-- skip -->
 ```dart
 new ListView(
   // This next line does the trick.

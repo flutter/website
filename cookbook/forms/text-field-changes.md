@@ -181,7 +181,6 @@ class _MyFormState extends State<MyForm> {
   // of the TextField!
   final myController = new TextEditingController();
 
-
   @override
   void initState() {
     super.initState();

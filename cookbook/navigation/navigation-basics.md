@@ -83,6 +83,7 @@ new screen using a platform-specific animation.
 In the `build` method of our `FirstScreen` Widget, we'll update the `onPressed` 
 callback:
 
+<!-- skip -->
 ```dart
 // Within the `FirstScreen` Widget
 onPressed: () {
@@ -103,6 +104,7 @@ routes managed by the navigator.
 For this part, we'll need to update the `onPressed` callback found in our 
 `SecondScreen` Widget
 
+<!-- skip -->
 ```dart
 // Within the SecondScreen Widget
 onPressed: () {

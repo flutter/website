@@ -29,6 +29,7 @@ away. For more detailed instructions on how to create a list, please follow the
 In our example, we'll want 20 sample items to work with. To keep it simple, 
 we'll generate a List of Strings.
 
+<!-- skip -->
 ```dart
 final items = new List<String>.generate(20, (i) => "Item ${i + 1}");
 ```
@@ -38,6 +39,7 @@ final items = new List<String>.generate(20, (i) => "Item ${i + 1}");
 At first, we'll simply display each item in the List on screen. Users will
 not be able to swipe away with these items just yet!
 
+<!-- skip -->
 ```dart
 new ListView.builder(
   itemCount: items.length,
@@ -61,6 +63,7 @@ This is where the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismis
 Widget comes into play! In our example, we'll update our `itemBuilder` function 
 to return a `Dismissible` Widget.
 
+<!-- skip -->
 ```dart
 new Dismissible(
   // Each Dismissible must contain a Key. Keys allow Flutter to
@@ -89,6 +92,7 @@ swipe the item off the screen. In this case, a red background!
 
 For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 
+<!-- skip -->
 ```dart
 new Dismissible(
   // Show a red background as the item is swiped away

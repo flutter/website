@@ -12,6 +12,7 @@ package.
 In addition to caching, the cached_image_network package also supports 
 placeholders and fading images in as they're loaded! 
 
+<!-- skip -->
 ```dart
 new CachedNetworkImage(
   imageUrl: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
@@ -23,6 +24,7 @@ new CachedNetworkImage(
 The `cached_network_image` package allows us to use any Widget as a placeholder! 
 In this example, we'll display a spinner while the image loads.
 
+<!-- skip -->
 ```dart
 new CachedNetworkImage(
   placeholder: new CircularProgressIndicator(),
@@ -32,6 +34,7 @@ new CachedNetworkImage(
 
 ## Complete Example
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';

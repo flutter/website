@@ -24,6 +24,7 @@ We can either manually create a `TabController` or use the
 Widget. Using the `DefaultTabController` is the simplest option, since it will 
 create a `TabController` for us and make it available to all descendant Widgets.
 
+<!-- skip -->
 ```dart
 new DefaultTabController(
   // The number of tabs / content sections we need to display
@@ -39,6 +40,7 @@ the [`TabBar`](https://docs.flutter.io/flutter/material/TabController-class.html
 Widget. In this example, we'll create a `TabBar` with 3 [`Tab`](https://docs.flutter.io/flutter/material/Tab-class.html) 
 Widgets and place it within an [`AppBar`](https://docs.flutter.io/flutter/material/AppBar-class.html).
 
+<!-- skip -->
 ```dart
 new DefaultTabController(
   length: 3,
@@ -69,6 +71,7 @@ Widget.
 *Note:* Order is important and must correspond to the order of the tabs in the 
 `TabBar`!
 
+<!-- skip -->
 ```dart
 new TabBarView(
   children: [

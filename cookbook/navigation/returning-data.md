@@ -24,6 +24,7 @@ How can we achieve this? Using [`Navigator.pop`](https://docs.flutter.io/flutter
 The home screen will display a button. When tapped, it will launch the selection 
 screen!
 
+<!-- skip -->
 ```dart
 class HomeScreen extends StatelessWidget {
   @override
@@ -46,6 +47,7 @@ Now, we'll create our SelectionButton. Our selection button will:
   1. Launch the SelectionScreen when it's tapped
   2. Wait for the SelectionScreen to return a result
 
+<!-- skip -->
 ```dart
 class SelectionButton extends StatelessWidget {
   @override
@@ -131,6 +133,7 @@ provide a result, it will be returned to the `Future` in our SelectionButton!
 
 ### Yep button
 
+<!-- skip -->
 ```dart
 new RaisedButton(
   onPressed: () {
@@ -143,6 +146,7 @@ new RaisedButton(
 
 ### Nope button
 
+<!-- skip -->
 ```dart
 new RaisedButton(
   onPressed: () {
@@ -161,6 +165,7 @@ to do something with the information that's returned!
 In this case, we'll show a Snackbar displaying the result. To do so, we'll 
 update the `_navigateAndDisplaySelection` method in our `SelectionButton`.
 
+<!-- skip -->
 ```dart
 _navigateAndDisplaySelection(BuildContext context) async {
   final result = await Navigator.push(
@@ -174,7 +179,6 @@ _navigateAndDisplaySelection(BuildContext context) async {
       .showSnackBar(new SnackBar(content: new Text("$result")));
 }
 ```
- 
 
 ## Complete Example
 

@@ -44,6 +44,7 @@ locations:
 In our case, we'll want to store information in the documents directory! We
 can find the path to the documents directory like so:
   
+<!-- skip -->
 ```dart
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
@@ -59,6 +60,7 @@ file's full location. We can use the [`File`](https://docs.flutter.io/flutter/da
 class from the [dart:io](https://docs.flutter.io/flutter/dart-io/dart-io-library.html) 
 library to achieve this.
 
+<!-- skip -->
 ```dart
 Future<File> get _localFile async {
   final path = await _localPath;
@@ -72,6 +74,7 @@ Now that we have a `File` to work with, we can use it to read and write data!
 First, we'll write some data to the file. Since we're working with a counter,
 we'll simply store the integer as a String.
 
+<!-- skip -->
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
@@ -86,6 +89,7 @@ Future<File> writeCounter(int counter) async {
 Now that we have some data on disk, we can read it! Once again, we'll use the 
 `File` class to do so.
 
+<!-- skip -->
 ```dart
 Future<int> readCounter() async {
   try {
@@ -114,6 +118,7 @@ interact with our test environment's filesystem!
 To mock the method call, we can provide a `setupAll` function in our test file.
 This function will run before the tests are executed.
 
+<!-- skip -->
 ```dart
 setUpAll(() async {
   // Create a temporary directory to work with
