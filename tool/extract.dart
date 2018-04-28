@@ -15,9 +15,9 @@ void main(List<String> args) {
 
   // Traverse markdown files in the root.
   int extractCount = 0;
-  Iterable<FileSystemEntity> files = Directory.current
-      .listSync()
-      .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.md'));
+  Iterable<FileSystemEntity> files = Directory.current.listSync().where(
+      (FileSystemEntity entity) =>
+          entity is File && entity.path.endsWith('.md'));
   files.forEach((FileSystemEntity file) => extractCount += _processFile(file));
   print('\n$extractCount code snippets extracted.');
 }
@@ -28,7 +28,8 @@ int _processFile(File file) {
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
-  List<String> lines = source.split('\n').map((String line) => line.trimRight());
+  List<String> lines =
+      source.split('\n').map((String line) => line.trimRight()).toList();
 
   int index = 1;
   int count = 0;
@@ -43,7 +44,8 @@ int _processFile(File file) {
       while (index < lines.length && !lines[index].startsWith('```')) {
         index++;
       }
-      _extractSnippet(name, ++count, startIndex, lines.sublist(startIndex, index),
+      _extractSnippet(
+          name, ++count, startIndex, lines.sublist(startIndex, index),
           includeSource: lastComment);
     } else if (lines[index].startsWith('<!--')) {
       // Look for <!-- comment sections.
@@ -69,7 +71,8 @@ int _processFile(File file) {
   return count;
 }
 
-void _extractSnippet(String filename, int snippet, int startLine, List<String> lines,
+void _extractSnippet(
+    String filename, int snippet, int startLine, List<String> lines,
     {String includeSource}) {
   bool hasImport = lines.any((String line) => line.startsWith('import '));
   String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
@@ -108,8 +111,8 @@ void clean() {
   if (!exampleDir.existsSync()) {
     exampleDir.createSync();
   }
-  Iterable<File> files = exampleDir
-      .listSync()
-      .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
+  Iterable<File> files = exampleDir.listSync().where(
+      (FileSystemEntity entity) =>
+          entity is File && entity.path.endsWith('.dart'));
   files.forEach((File file) => file.deleteSync());
 }
