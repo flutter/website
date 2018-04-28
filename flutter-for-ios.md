@@ -1053,10 +1053,68 @@ You can access your strings as such:
 new Text(Strings.welcomeMessage)
 {% endprettify %}
 
+By default Flutter only supports US English for its strings. If you need to
+add support for further languages, you can include the `flutter_localizations`
+package. You will also likely need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
+package to use i10n machinery such as date/time formatting.
 
-While there's no functionality built into Flutter to handle
-internationalization or localization, Flutter developers are encouraged to use
-the [intl package](https://pub.dartlang.org/packages/intl) for those needs.
+<!-- skip -->
+{% prettify yaml %}
+dependencies:
+  # ...
+  flutter_localizations:
+    sdk: flutter
+  intl: "^0.15.6"
+{% endprettify %}
+
+In order to use the `flutter_localizations` package you will need to 
+specify the `localizationsDelegates` and `supportedLocales` on the app widget:
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+new MaterialApp(
+ localizationsDelegates: [
+   // Add app-specific localization delegate[s] here
+   GlobalMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+ ],
+ supportedLocales: [
+    const Locale('en', 'US'), // English
+    const Locale('he', 'IL'), // Hebrew
+    // ... other locales the app supports
+  ],
+  // ...
+)
+{% endprettify %}
+
+The delegates contain the actual localized values, while the `supportedLocales`
+defines which locales the app supports. In the above example, we are using a
+`MaterialApp` and have thus both a `GlobalWidgetsLocalizations` for the base
+widgets localized values, and a `MaterialWidgetsLocalizations` for the Material
+widgets localizations. If you were using a `WidgetsApp` as your app, you would
+not need the latter. Please note that these two delegates contain "default"
+values, but you'll need to provide one or more delegates for your own app's
+localizable copy if you want those to be localized too.
+
+When initialized, the `WidgetsApp` (or `MaterialApp`) will create a
+[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+widget for you, with the delegates you specify.
+The current locale for the device is always accessible via the `Localizations`
+widget from the current context in the form of a `Locale` object, or via the
+[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+
+To access localized resources you would use the `Localizations.of()` method to
+access a specific localizations class that is provided by a given delegate.
+You can use the [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+package to extract translatable copy to [arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+files for translating, and importing them back into the app for using them
+with `intl`.
+
+For further details on internationalization and localization in Flutter,
+please refer to the [internationalization guide](tutorials/internationalization),
+which also has sample code both with and without using `intl`.
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
