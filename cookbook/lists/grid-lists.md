@@ -16,6 +16,7 @@ constructor, because it allow us to specify how many rows or columns we'd like.
 In this example, we'll generate a List of 100 Widgets that display their
 index in the list. This will help us us visualize how `GridView`  works.
 
+<!-- skip -->
 ```dart
 new GridView.count(
   // Create a grid with 2 columns. If you change the scrollDirection to 

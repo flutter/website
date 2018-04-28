@@ -41,6 +41,7 @@ photo objects from the [JSONPlaceholder REST API](https://jsonplaceholder.typico
 using the [`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html) 
 method. 
 
+<!-- skip -->
 ```dart
 Future<http.Response> fetchPhotos(http.Client client) async {
   return client.get('https://jsonplaceholder.typicode.com/photos');
@@ -62,6 +63,7 @@ First, we'll need to create a `Photo` class that contains data about a photo.
 We will also include a `fromJson` factory to make it easy to create a `Photo` 
 starting with a json object.
 
+<!-- skip -->
 ```dart
 class Photo {
   final int id;
@@ -88,12 +90,13 @@ Now, we'll update the `fetchPhotos` function so it can return a
   1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
   2. Use the `parsePhotos` function in the `fetchPhotos` function
 
+<!-- skip -->
 ```dart
 // A function that will convert a response body into a List<Photo>
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody);
+  final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map((json) => new Photo.fromJson(json)).toList();
+  return parsed.map<Photo>((json) => new Photo.fromJson(json)).toList();
 }
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
@@ -116,6 +119,7 @@ function provided by Flutter. The `compute` function will run expensive
 functions in a background isolate and return the result. In this case, we want 
 to run the `parsePhotos` function in the background!
 
+<!-- skip -->
 ```dart
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
@@ -155,9 +159,9 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 // A function that will convert a response body into a List<Photo>
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = json.decode(responseBody);
+  final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map((json) => new Photo.fromJson(json)).toList();
+  return parsed.map<Photo>((json) => new Photo.fromJson(json)).toList();
 }
 
 class Photo {

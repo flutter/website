@@ -42,6 +42,7 @@ types, such as `setInt`, `setBool`, and `setString`.
 Setter methods do two things: First, synchronously update the key-value pair 
 in-memory. Then, persist the data to disk.
 
+<!-- skip -->
 ```dart
 // obtain shared preferences 
 final prefs = await SharedPreferences.getInstance();
@@ -56,6 +57,7 @@ To read data, we can use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter. 
 For example, we can use the `getInt`, `getBool`, and `getString` methods.  
 
+<!-- skip -->
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -67,6 +69,7 @@ final counter = prefs.getInt('counter') ?? 0;
 
 To delete data, we can use the `remove` method.
 
+<!-- skip -->
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -83,6 +86,26 @@ While it is easy and convenient to use key-value storage, it has limitations:
 For more information about Shared Preferences on Android, please visit 
 [Shared preferences documentation](https://developer.android.com/guide/topics/data/data-storage.html#pref) 
 on the Android developers website.
+
+## Testing support
+
+It can be a good idea to test code that persists data using 
+`shared_preferences`. To do so, we'll need to mock out the `MethodChannel` used 
+by the `shared_preferences` library.
+
+We can populate `SharedPreferences` with initial values in our tests by running
+the following code in a `setupAll` method in our test files:
+
+<!-- skip -->
+```dart
+const MethodChannel('plugins.flutter.io/shared_preferences')
+  .setMockMethodCallHandler((MethodCall methodCall) async {
+    if (methodCall.method == 'getAll') {
+      return <String, dynamic>{}; // set initial values here if desired
+    }
+    return null;
+  });
+```
 
 ## Example
 
@@ -123,14 +146,14 @@ class _MyHomePageState extends State<MyHomePage> {
     _loadCounter();
   }
 
-  //Loading counter value on start 
+  //Loading counter value on start
   _loadCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       _counter = (prefs.getInt('counter') ?? 0);
     });
   }
-  
+
   //Incrementing counter after click
   _incrementCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -169,24 +192,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-```
-
-## Testing support
-
-It can be a good idea to test code that persists data using 
-`shared_preferences`. To do so, we'll need to mock out the `MethodChannel` used 
-by the `shared_preferences` library.
-
-We can populate `SharedPreferences` with initial values in our tests by running
-the following code in a `setupAll` method in our test files:
-
-```dart
-const MethodChannel('plugins.flutter.io/shared_preferences')
-  .setMockMethodCallHandler((MethodCall methodCall) async {
-    if (methodCall.method == 'getAll') {
-      return <String, dynamic>{}; // set initial values here if desired
-    }
-    return null;
-  });
 ```

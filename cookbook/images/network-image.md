@@ -11,6 +11,7 @@ display different types of images.
 In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html) 
 constructor.
 
+<!-- skip -->
 ```dart
 new Image.network(
   'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
@@ -22,6 +23,7 @@ new Image.network(
 One amazing thing about the `Image` Widget: It also supports animated gifs out
 of the box!
 
+<!-- skip -->
 ```dart
 new Image.network(
   'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',

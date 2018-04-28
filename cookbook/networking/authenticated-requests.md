@@ -14,6 +14,7 @@ The [`http`](https://pub.dartlang.org/packages/http) package provides a
 convenient way to add headers to your requests. You can also take advantage of 
 the `dart:io` package for common `HttpHeaders`.
 
+<!-- skip -->
 ```dart
 Future<http.Response> fetchPost() {
   return http.get(
@@ -33,6 +34,7 @@ recipe.
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:http/http.dart' as http;
 
 Future<Post> fetchPost() async {
@@ -40,9 +42,9 @@ Future<Post> fetchPost() async {
     'https://jsonplaceholder.typicode.com/posts/1',
     headers: {HttpHeaders.AUTHORIZATION: "Basic your_api_token_here"},
   );
-  final json = json.decode(response.body); 
-  
-  return new Post.fromJson(json); 
+  final responseJson = json.decode(response.body);
+
+  return new Post.fromJson(responseJson);
 }
 
 class Post {

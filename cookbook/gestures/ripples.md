@@ -14,7 +14,8 @@ Widget to achieve this effect.
 
   1. Create a Widget we want to tap
   2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations 
-  
+ 
+<!-- skip -->
 ```dart
 // The InkWell Wraps our custom flat button Widget
 new InkWell(
@@ -74,8 +75,8 @@ class MyButton extends StatelessWidget {
       // When the user taps the button, show a snackbar
       onTap: () {
         Scaffold.of(context).showSnackBar(new SnackBar(
-          content: new Text('Tap'),
-        ));
+              content: new Text('Tap'),
+            ));
       },
       child: new Container(
         padding: new EdgeInsets.all(12.0),

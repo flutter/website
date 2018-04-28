@@ -94,6 +94,7 @@ To use a font as the default, we can set the `fontFamily` property as part of
 the app's `theme`. The value we provide to `fontFamily` must match the `family` 
 name declared in the `pubspec.yaml`. 
 
+<!-- skip -->
 ```dart
 new MaterialApp(
   title: 'Custom Fonts',
@@ -116,6 +117,7 @@ In this example, we'll apply the RobotoMono font to a single `Text` Widget. Once
 again, the `fontFamily` must match the `family` name we declared in the 
 `pubspec.yaml`. 
 
+<!-- skip -->
 ```dart
 new Text(
   'Roboto Mono sample',
@@ -191,7 +193,7 @@ class MyHomePage extends StatelessWidget {
       // The AppBar will use the app-default Raleway font
       appBar: new AppBar(title: new Text('Custom Fonts')),
       body: new Center(
-        // This Text Widget will use the RobotoMono font 
+        // This Text Widget will use the RobotoMono font
         child: new Text(
           'Roboto Mono sample',
           style: new TextStyle(fontFamily: 'RobotoMono'),

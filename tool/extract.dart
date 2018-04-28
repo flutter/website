@@ -13,11 +13,14 @@ void main(List<String> args) {
   // Remove any previously generated files.
   clean();
 
-  // Traverse markdown files in the root.
+  // Traverse all markdown files in the repository.
   int extractCount = 0;
-  Iterable<FileSystemEntity> files = Directory.current.listSync().where(
-      (FileSystemEntity entity) =>
-          entity is File && entity.path.endsWith('.md'));
+  Iterable<FileSystemEntity> files = Directory.current
+      .listSync(recursive: true)
+      .where((FileSystemEntity entity) =>
+          entity is File &&
+          entity.path.endsWith('.md') &&
+          !entity.path.contains('README.md'));
   files.forEach((FileSystemEntity file) => extractCount += _processFile(file));
   print('\n$extractCount code snippets extracted.');
 }
@@ -28,8 +31,7 @@ int _processFile(File file) {
 
   // Look for ```dart sections.
   String source = file.readAsStringSync();
-  List<String> lines =
-      source.split('\n').map((String line) => line.trimRight()).toList();
+  List<String> lines = source.split('\n');
 
   int index = 1;
   int count = 0;
@@ -38,19 +40,20 @@ int _processFile(File file) {
 
   while (index < lines.length) {
     // Look for ```dart sections.
-    if (lines[index].startsWith('```dart') && lastComment?.trim() != 'skip') {
+    if (lines[index].trim().startsWith('```dart') &&
+        lastComment?.trim() != 'skip') {
       int startIndex = index + 1;
       index++;
-      while (index < lines.length && !lines[index].startsWith('```')) {
+      while (index < lines.length && !lines[index].trim().startsWith('```')) {
         index++;
       }
       _extractSnippet(
           name, ++count, startIndex, lines.sublist(startIndex, index),
           includeSource: lastComment);
-    } else if (lines[index].startsWith('<!--')) {
+    } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
       int startIndex = index;
-      while (!lines[index].endsWith('-->')) {
+      while (!lines[index].trim().endsWith('-->')) {
         index++;
       }
 
@@ -74,7 +77,8 @@ int _processFile(File file) {
 void _extractSnippet(
     String filename, int snippet, int startLine, List<String> lines,
     {String includeSource}) {
-  bool hasImport = lines.any((String line) => line.startsWith('import '));
+  bool hasImport =
+      lines.any((String line) => line.trim().startsWith('import '));
   String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
       '$snippet.dart';
 

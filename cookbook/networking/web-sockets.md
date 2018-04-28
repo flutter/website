@@ -29,6 +29,7 @@ messages from the server as well as push messages to the server.
 In Flutter, we can create a `WebSocketChannel` that connects to a server in one 
 line:
 
+<!-- skip -->
 ```dart
 final channel = new IOWebSocketChannel.connect('ws://echo.websocket.org');
 ```
@@ -40,11 +41,12 @@ server.
 
 After we send a message to the test server, it will send the same message back. 
 
-How how do we listen for messages and display them? In this example, we'll use 
+How do we listen for messages and display them? In this example, we'll use 
 a [`StreamBuilder`](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html) 
 Widget to listen for new messages and a [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) 
 Widget to display them.
 
+<!-- skip -->
 ```dart
 new StreamBuilder(
   stream: widget.channel.stream,
@@ -73,6 +75,7 @@ receives an event using the given `builder` function!
 In order to send data to the server, we'll `add` messages to the `sink` provided
 by the `WebSocketChannel`.
 
+<!-- skip -->
 ```dart
 channel.sink.add('Hello!');
 ```
@@ -90,6 +93,7 @@ data source.
 After we're done using the WebSocket, we'll want to close the connection! To do 
 so, we can close the `sink`.
 
+<!-- skip -->
 ```dart
 channel.sink.close();
 ```
