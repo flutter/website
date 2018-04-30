@@ -850,7 +850,7 @@ You can use it by adding it to your dependencies in `pubspec.yaml`:
 {% prettify yaml %}
 dependencies:
   ...
-  http: '>=0.11.3+16'
+  http: "^0.11.3+16"
 {% endprettify %}
 
 Then to make a network call, you `await` on the `async` function `http.get()`:
