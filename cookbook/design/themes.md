@@ -12,7 +12,7 @@ the root of our apps by the `MaterialApp`!
 
 After we define a Theme, we can use it within our own Widgets. In addition, the 
 Material Widgets provided by Flutter will use our Theme to set the background 
-colors and and font styles for AppBars, Buttons, Checkboxes, and more.    
+colors and font styles for AppBars, Buttons, Checkboxes, and more.    
 
 ## Creating an app theme
 
