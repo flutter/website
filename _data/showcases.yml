@@ -1,0 +1,52 @@
+- name: AdWords
+  description: Google’s Adwords App drives tens of billions of dollars to Google.
+  screenshot: /showcase/images/Birch-screenshot3.png
+  android_download: https://example.com
+- name: Hamilton Musical
+  description: >
+    Hamilton is the most popular Broadway show in history and Flutter
+    allowed them to build and launch an app in less than 3 months
+    which is used by 1M+ fans.
+  screenshot: /showcase/images/Hamilton-screenshot.jpg
+  android_download: https://example.com
+  ios_download: https://example.com
+- name: Birch
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Birch-screenshot3.png
+  learn_more_link: http://www.birch.com/
+- name: Alibaba
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Birch-screenshot3.png
+  android_download: https://example.com
+  ios_download: https://example.com
+- name: McDonalds
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Birch-screenshot3.png
+  android_download: https://example.com
+  ios_download: https://example.com
+- name: Hookle
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Hookle_screenshot.jpeg
+  android_download: https://example.com
+  ios_download: https://example.com
+- name: vivaBem
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/vivabem_home_mindfulness.png
+  learn_more_link: https://example.com
+- name: Hyve
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Birch-screenshot3.png
+  android_download: https://example.com
+  ios_download: https://example.com
+- name: Karlmax
+  description: >
+    Lorem ipsum dolor sit amet.
+  screenshot: /showcase/images/Karlmax_CoachYourself.PNG
+  android_download: https://example.com
+  ios_download: https://example.com

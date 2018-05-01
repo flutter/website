@@ -49,7 +49,7 @@
     transition: opacity 0.5s ease-out;
 }
 
-@media screen and (max-width:767px) {
+@include media-query($on-palm) {
 
     #side-nav-container {
         position: relative;
