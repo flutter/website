@@ -4,10 +4,10 @@ title: Flutter for iOS Developers
 permalink: /flutter-for-ios/
 ---
 
-This document is meant for iOS developers looking to apply their
-existing iOS knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the iOS framework then you can use this document as a
-jump start to Flutter development.
+This document is for iOS developers looking to apply their existing iOS knowledge
+to build mobile apps with Flutter. If you understand the fundamentals of the iOS
+framework then you can use this document as a way to get started learning Flutter
+development.
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -26,21 +26,21 @@ that are most relevant to your needs.
 
 ## What is the equivalent of a `UIView` in Flutter?
 
-On iOS, the majority of anything you may want to create in the UI is done using
-view objects, which are instances of the `UIView` class.  These can act as
-containers for other `UIView` classes, which form your layout.
+On iOS, most of what you create in the UI is done using view objects, which are
+instances of the `UIView` class. These can act as containers for other `UIView`
+classes, which form your layout.
 
 In Flutter, the equivalent to this is a `Widget`. However, these have a few
-differences to a  `UIView`. To start, widgets only exist for one frame, and on
+differences to a `UIView`. To start, widgets only exist for one frame, and on
 every new frame, Flutter’s framework creates a new tree of widget instances.
 In comparison, an iOS view is drawn once and does not redraw until it is
 invalidated using `setNeedsDisplay()`.
 
 Furthermore, unlike `UIView`, Flutter’s widgets are immutable, which allows
 them to be very lightweight. By default, Flutter’s widgets are styled as
-‘Material’ (i.e. Android themed), however you can use [Cupertino
-widgets](https://flutter.io/widgets/cupertino/) to specify an iOS theme if you
-require.
+‘Material’ components (i.e., Android themed), however you can use
+[Cupertino widgets](https://flutter.io/widgets/cupertino/) to specify an iOS
+theme if required.
 
 ## How do I update `Widget`s?
 
@@ -59,8 +59,8 @@ your logo as the `image`. If the logo is not going to change during runtime,
 you would use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received after making an
-HTTP call then you would use a `StatefulWidget`. After the HTTP call had
-complete, you would tell the Flutter framework that the widget’s `State` has
+HTTP call then you would use a `StatefulWidget`. After the HTTP call has
+completed, you would tell the Flutter framework that the widget’s `State` has
 been updated so it could update the widget.
 
 The important thing to note here is at the core both stateless and stateful
@@ -149,7 +149,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I layout my widgets? Where is my Storyboard? 
 
-In iOS, you may use a Storyboard file to organise your views and set
+In iOS, you may use a Storyboard file to organize your views and set
 constraints, or set your constraints programmatically within your view
 controllers. In Flutter, you declare your layouts within code, by composing
 the layout tree.
@@ -715,7 +715,6 @@ JSON, or doing computationally intensive math such as encryption or signal proce
 
 A full example that you can run is below.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -850,7 +849,7 @@ You can use it by adding it to your dependencies in `pubspec.yaml`:
 {% prettify yaml %}
 dependencies:
   ...
-  http: "^0.11.3+16"
+  http: ^0.11.3+16
 {% endprettify %}
 
 Then to make a network call, you `await` on the `async` function `http.get()`:
@@ -1107,7 +1106,7 @@ files for translating, and importing them back into the app for using them
 with `intl`.
 
 For further details on internationalization and localization in Flutter,
-please refer to the [internationalization guide](/tutorials/internationalization),
+please refer to the [internationalization guide](tutorials/internationalization),
 which also has sample code both with and without using `intl`.
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
@@ -1150,12 +1149,12 @@ listening to the `didChangeAppLifecycleState()` change event.
 The lifecycle events you can observe are:
 
 * `inactive` — The application is in an inactive state and is not receiving
-user   input. This event only works on iOS, as there is no equivalent event to
-map to   on Android * `paused` — The application is not currently visible to
-the user, not responding   to user input, and running in the background. *
+user input. This event only works on iOS, as there is no equivalent event to
+map to on Android * `paused` — The application is not currently visible to
+the user, not responding to user input, and running in the background. *
 `resumed` — The application is visible and responding to user input. *
 `suspending` — The application will be suspended momentarily. It is not
-triggered on iOS as there is no equivalent   event to map to on iOS
+triggered on iOS as there is no equivalent event to map to on iOS
 
 For more details on the meaning of these states, you can check the
 [`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
@@ -1469,7 +1468,7 @@ in a vertical format.
   
 <!-- skip -->
 {% prettify dart %}  
-@override  
+@override 
 Widget build(BuildContext context) {  
   return new ListView(  
     children: <Widget>[  
@@ -1863,5 +1862,6 @@ In Flutter, you can access this functionality by using the SQFlite plugin
 
 In iOS, you would need to register your app on the developer portal to allow
 push notifications. In Flutter, you can access this functionality by using the
-`Firebase_Messaging` plugin. You can find full instructions on how to get set
-up [here](https://pub.dartlang.org/packages/firebase_messaging).
+`firebase_messaging` plugin. See the [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+plugin documentation for more information on using the Firebase Cloud Messaging
+API in Flutter.
