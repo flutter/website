@@ -12,9 +12,9 @@ description: >
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter Beta 2 now available!</span>
+        <span>Flutter at Google I/O:</span>
         &nbsp;
-        <a href="https://medium.com/flutter-io/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e">Learn More</a>.
+        <a href="https://medium.com/flutter-io/how-to-watch-flutter-at-google-i-o-2018-c7e082fc836f">How to watch</a>
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
