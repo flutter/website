@@ -882,7 +882,6 @@ JSON, or doing computationally intensive math such as crypto or signal processin
 
 A full example that you can run is below.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -977,7 +976,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 
-// the entry point for the isolate
+  // the entry point for the isolate
   static dataLoader(SendPort sendPort) async {
     // Open the ReceivePort for incoming messages.
     ReceivePort port = new ReceivePort();
@@ -1018,7 +1017,7 @@ You can use it by adding it to your dependencies in `pubspec.yaml`:
 {% prettify yaml %}
 dependencies:
   ...
-  http: "^0.11.3+16"
+  http: ^0.11.3+16
 {% endprettify %}
 
 Then to make a network call, you just `await` on the `async` function `http.get()`:
