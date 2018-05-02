@@ -20,8 +20,8 @@ check out [Flutter Performance Profiling](/ui-performance/).
 
 Before running your applications, test your code with `flutter analyze`. This
 tool (which is a wrapper around the `dartanalyzer` tool) will analyze your code
-and help you find possible mistakes. If you're using the
-[Flutter plugin for IntelliJ](/using-ide/), this is already happening for you.
+and help you find possible mistakes. If you're using a [Flutter enabled IDE/editor](/get-started/editor/),
+this is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
 your code to help track problems down. You are encouraged to use them
@@ -35,8 +35,8 @@ If you started your application using `flutter run`, then,
 while it is running, you can open the Web page at the Observatory URL printed
 to the console (e.g., `Observatory listening on http://127.0.0.1:8100/`), to
 connect to your application directly with a statement-level single-stepping
-debugger. If you're using IntelliJ, you can also debug your application using
-its built-in debugger.
+debugger. If you're using a [Flutter enabled IDE/editor](/get-started/editor/),
+you can also debug your application using its built-in debugger.
 
 Observatory also supports profiling, examining the heap, etc. For more
 information on Observatory, see
@@ -50,8 +50,8 @@ invariants (see "Debug mode assertions" below).
 
 ### `debugger()` statement
 
-When using the Dart Observatory (or another Dart debugger, such as the
-debugger in the IntelliJ IDE), you can insert programmatic breakpoints
+When using the Dart Observatory (or another Dart debugger integrated into
+a Flutter enabled IDE/editor), you can insert programmatic breakpoints
 using the `debugger()` statement. To use this, you have to put `import
 'dart:developer';` at the top of the relevant file.
 
