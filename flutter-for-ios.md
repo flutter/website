@@ -1621,9 +1621,11 @@ class SampleApp extends StatelessWidget {
 
 You may have noticed a lot of the examples in this document use a `MaterialApp`
 as their app widget. This provides a base of themed widgets to use in your app.
-However these are more themed to an Android device, so in order to use more iOS
-focused widgets you will need to implement these as needed. You can find the
-full set [here](https://flutter.io/widgets/cupertino/).
+However these are themed to fit within a Material Design app, such as what you
+would find on an Android device. In order to have more iOS-focused widgets you
+will need to use the Cupertino widgets instead, which mimick the iOS look and
+feel closely and adhere to the iOS [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
+You can find the full set of these widgets [in the Cupertino widgets gallery](https://flutter.io/widgets/cupertino/).
 
 You could also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not yet as broad as `MaterialApp`.
