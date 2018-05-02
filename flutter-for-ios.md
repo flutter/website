@@ -1844,16 +1844,20 @@ To Log in with Facebook, you can use the
 
 ## How do I use Firebase features?
 
-Most Firebase functions are covered by [first or third party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
-For example:
+Most Firebase functions are covered by [first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+These plugins are first-party integrations, maintained buy the Flutter team:
 
  * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
  * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
  * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
+ * [`firebase_core`](https://pub.dartlang.org/packages/firebase_core) for Firebase's Core package
  * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
  * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
  * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`](https://pub.dartlang.org/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) for Firebase Cloud Firestore
+
+You can also find some third-party Firebase plugins on Pub that cover areas
+that aren't directly covered by the first-party plugins.
 
 ## How do I build my own custom native integrations?
 
