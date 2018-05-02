@@ -1711,6 +1711,70 @@ customize many parameters, such as:
 
 # Form Input
 
+## How do forms work in Flutter? How do I retrieve user input?
+
+Given how Flutter uses immutable widgets with a separate state, you may be
+wondering how you does user input fit into the picture. On iOS, you usually
+just query the widgets for their current values when it's time to submit the
+user input, or action on it. How does that work in Flutter?
+
+In practice forms are handled, like everything in Flutter, by specialized
+widgets. If you have a `TextField` or a `TextFormField`, you can supply to
+them a [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+which can be used to retrieve the user input:
+
+<!-- skip -->
+{% prettify dart %}
+class _MyFormState extends State<MyForm> {
+  // Create a text controller. We will use it to retrieve the current value
+  // of the TextField!
+  final myController = new TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the Widget is disposed
+    myController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Retrieve Text Input'),
+      ),
+      body: new Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: new TextField(
+          controller: myController,
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        // When the user presses the button, show an alert dialog with the
+        // text the user has typed into our text field.
+        onPressed: () {
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return new AlertDialog(
+                // Retrieve the text the user has typed in using our
+                // TextEditingController
+                content: new Text(myController.text),
+              );
+            },
+          );
+        },
+        tooltip: 'Show me the value!',
+        child: new Icon(Icons.text_fields),
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+You can find more information and the full code listing for the example on the
+[Retrieve the value of a text field](/cookbook/forms/retrieve-input/) page.
+
 ## What is the equivalent of a placeholder in a text field?
 
 In Flutter you can easily show a "hint" or a placeholder text for your field by
