@@ -1150,10 +1150,11 @@ The lifecycle events you can observe are:
 
 * `inactive` — The application is in an inactive state and is not receiving
 user input. This event only works on iOS, as there is no equivalent event to
-map to on Android * `paused` — The application is not currently visible to
-the user, not responding to user input, and running in the background. *
-`resumed` — The application is visible and responding to user input. *
-`suspending` — The application will be suspended momentarily. It is not
+map to on Android
+* `paused` — The application is not currently visible to
+the user, not responding to user input, and running in the background.
+* `resumed` — The application is visible and responding to user input.
+* `suspending` — The application will be suspended momentarily. It is not
 triggered on iOS as there is no equivalent event to map to on iOS
 
 For more details on the meaning of these states, you can check the
