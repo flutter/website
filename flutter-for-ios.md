@@ -147,7 +147,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I layout my widgets? Where is my Storyboard? 
+## How do I layout my widgets? Where is my Storyboard?
 
 In iOS, you may use a Storyboard file to organize your views and set
 constraints, or set your constraints programmatically within your view
@@ -480,7 +480,7 @@ void main() {
   ));
 }
 {% endprettify %}
- 
+
 You can then navigate to a route by getting hold of the `Navigator` and
 `push`ing one of the named routes.
 
@@ -530,7 +530,7 @@ driven by an event loop. Flutter’s event loop is equivalent to the iOS main lo
 Dart’s single-threaded model doesn’t mean you are required to run everything as
 a blocking operation that will cause the UI to freeze. Instead, in Flutter you
 use the asynchronous facilities that the Dart language provides, such as
-`async`/`await`, to perform asynchronous work. 
+`async`/`await`, to perform asynchronous work.
 
 For example, you can run network code without causing the UI to hang by using
 `async`/`await` and letting Dart do the heavy lifting:
@@ -551,7 +551,7 @@ Once the `await`ed network call is done, you update the UI calling
 `setState()`, which triggers a rebuild of the widget tree and updates the
 data.
 
-Here's an example of loading data asynchronously and displaying it 
+Here's an example of loading data asynchronously and displaying it
 in a `ListView`:
 
 <!-- skip -->
@@ -874,7 +874,7 @@ import 'package:http/http.dart' as http;
 ## How do I show the progress of a long-running task in Flutter?
 
 In iOS, you would typically use a `UIProgressView` while executing a
-long-running task in the background. 
+long-running task in the background.
 
 In Flutter this can be done by using a `ProgressIndicator` widget. You can
 show the progress UI programmatically by controlling when it's rendered
@@ -971,19 +971,44 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-# Project Structure & Resources
+# Project structure, localization, dependencies and assets
 
 ## How do I include image assets for Flutter? What about multiple resolutions?
 
 While iOS treats images and assets as distinct items, Flutter apps have only
 assets. All your resources which would be placed in the `Images.xcasset`
-folder on iOS should be instead put in an assets folder.
+folder on iOS should be instead put in an assets folder. Just like on iOS,
+assets can be any type of file, not just images. You could have, for example,
+a JSON file located in the `my-assets` folder:
 
-Flutter follows a simple density-based format like iOS. Assets can be `1.0x`,
-`2.0x`, `3.0x`, or any other multiplier. The so-called
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-
-ui/Window/devicePixelRatio.html) expresses the ratio of physical pixels in a
-single logical pixel.
+```
+my-assets/data.json
+```
+
+You also need to declare the asset in the `pubspec.yaml` file:
+
+<!-- skip -->
+{% prettify yaml %}
+assets:
+ - my-assets/data.json
+{% endprettify %}
+
+And then you can access it from code using an [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html):
+
+<!-- skip -->
+{% prettify dart %}
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+
+Future<String> loadAsset() async {
+  return await rootBundle.loadString('my-assets/data.json');
+}
+{% endprettify %}
+
+For images, Flutter follows a simple density-based format like iOS. Image assets
+can be `1.0x`, `2.0x`, `3.0x`, or any other multiplier. The so-called
+[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+expresses the ratio of physical pixels in a single logical pixel.
 
 Assets on Flutter can be located in any arbitrary folder; there is no
 predefined folder structure. You then declare where the assets are located in
@@ -993,7 +1018,7 @@ For example, to add a new image asset called `my_icon.png` to your Flutter
 project, you may decide to store it in a folder we arbitrarily called `images`.
 You would then put the base image (1.0x) in the `images` folder, and all the
 other variants in sub-folders named after the appropriate ratio multiplier:
- 
+
 ```
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image
@@ -1024,6 +1049,9 @@ Widget build(BuildContext context) {
   return new Image.asset("images/my_image.png");
 }
 {% endprettify %}
+
+For more details you can check out the
+[Adding Assets and Images in Flutter](/assets-and-images) page.
 
 ## Where do I store strings? How do I handle localization?
 
@@ -1060,7 +1088,7 @@ dependencies:
   intl: "^0.15.6"
 {% endprettify %}
 
-In order to use the `flutter_localizations` package you will need to 
+In order to use the `flutter_localizations` package you will need to
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
 <!-- skip -->
@@ -1466,20 +1494,20 @@ your content if needed.
 In Flutter the easiest way to do this is using the `ListView` widget. This
 acts as both a `ScrollView` and an iOS `TableView`, as you can layout widgets
 in a vertical format.
-  
+
 <!-- skip -->
-{% prettify dart %}  
-@override 
-Widget build(BuildContext context) {  
-  return new ListView(  
-    children: <Widget>[  
-      new Text('Row One'),  
-      new Text('Row Two'),  
-      new Text('Row Three'),  
-      new Text('Row Four'),  
-    ],  
-  );  
-}  
+{% prettify dart %}
+@override
+Widget build(BuildContext context) {
+  return new ListView(
+    children: <Widget>[
+      new Text('Row One'),
+      new Text('Row Two'),
+      new Text('Row Three'),
+      new Text('Row Four'),
+    ],
+  );
+}
 {% endprettify %}
 
 For a more detailed view at the different layout widgets available on Flutter,
@@ -1953,7 +1981,7 @@ In iOS, you can use CoreData to store structured data. This is simply a
 layer on top of an SQL database, making it easier to make queries that
 relate to your models.
 
-In Flutter, you can access this functionality by using the SQFlite plugin 
+In Flutter, you can access this functionality by using the SQFlite plugin
 [SQFlite](https://pub.dartlang.org/packages/sqflite).
 
 # Notifications
