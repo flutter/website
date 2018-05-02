@@ -1799,6 +1799,35 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Interacting with hardware, third party services and the platform
 
+## How do I interact with the platform, and with platform native code?
+
+Flutter doesn't run code directly on the underlying platform; rather, the Dart code
+that makes up a Flutter app is run natively on the device, "sidestepping" the SDK
+the platform provides. That means that, for example, when you do a network request
+in Dart, that's run directly in the Dart context, and not using the Android or iOS
+APIs you would normally take advantage of when writing native apps. Your Flutter
+app is still hosted in a native app's `ViewController` as a view, but you don't
+have direct access to the `ViewController` itself or the native framework.
+
+This doesn't mean Flutter apps cannot interact with those native APIs, or with any
+native code you have. Flutter provides [platform channels](https://flutter.io/platform-channels/),
+that you can use to communicate and exchange data with the `ViewController` that
+hosts your Flutter view. Platform channels are essentially an asynchronous messaging
+mechanism that is used to bridge the Dart code with the host `ViewController` and
+the iOS framework it runs on. You can use platform channels to execute a method on
+the native side, or to retrieve some data from the device's sensors, for example.
+
+In addition to directly using platform channels, you can use a variety of pre-made
+[plugins](https://flutter.io/using-packages/) that encapsulate all the native and
+Dart code you need for a specific goal. For example, you can use a plugin to access
+the camera roll and the device camera directly from Flutter, without having to
+write your own integration. Plugins can be found [on Pub](https://pub.dartlang.org/),
+Dart and Flutter's default package manager, and may support native integrations on
+iOS, or Android, or both.
+
+If there is no plugin that fits your needs on Pub yet, you can also [write your own](https://flutter.io/developing-packages/)
+and then [publish it on Pub](https://flutter.io/developing-packages/#publish).
+
 ## How do I access the GPS sensor?
 
 To access the GPS sensor you can use the [`location`](https://pub.dartlang.org/packages/location)
