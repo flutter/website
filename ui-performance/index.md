@@ -100,6 +100,20 @@ Not yet available in VS Code.
 <li markdown="1">In Android Studio and IntelliJ, use the
     **Run > Flutter Run main.dart in Profile Mode** menu item.
 </li>
+<li markdown="1">In VS Code, open your `launch.json` file, and set the
+`flutterMode` property to `profile`
+(when done profiling, change it back to `release` or `debug`):
+
+```
+"configurations": [
+	{
+		"name": "Flutter",
+		"request": "launch",
+		"type": "dart",
+		"flutterMode": "profile"
+	}
+]
+```
 <li markdown="1">From the command line, use the `--profile`
     flag:
 
