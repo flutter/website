@@ -8,6 +8,9 @@ permalink: /showcase/
 Flutter is used by Google and developers and organizations around the world
 to deliver beautiful native apps on iOS and Android.
 Here is a small selection of apps made with Flutter.
+If you want to be featured, [let us know][]!
+
+[let us know]: https://docs.google.com/forms/d/e/1FAIpQLScP5iDNGrlVXdGxmRDzjCnqXS0KUDld-3cR-njAL0kDO2ULFg/viewform
 
 <div class="showcase-grid__row row">
 
@@ -45,7 +48,7 @@ Here is a small selection of apps made with Flutter.
         {% if case.ios_download and case.android_download %}
         <p>
             Download:
-            <a href="{{case.ios_download}}">iOS</a>,
+            <a href="{{case.android_download}}">iOS</a>,
             <a href="{{case.ios_download}}">Android</a>
         </p>
         {% elsif case.ios_download %}
@@ -56,12 +59,12 @@ Here is a small selection of apps made with Flutter.
         {% elsif case.android_download %}
         <p>
             Download:
-            <a href="{{case.ios_download}}">Android</a>
+            <a href="{{case.android_download}}">Android</a>
         </p>
         {% endif %}
 
         {% if case.learn_more_link %}
-        <p><a href="{{case.learn_more_link}}">Learn more</a>.</p>
+        <p><a href="{{case.learn_more_link}}">Learn more</a></p>
         {% endif %}
     </div>
 {% endfor %}
