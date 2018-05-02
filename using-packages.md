@@ -45,7 +45,8 @@ To add a package 'css_colors' to an app:
 1. Install it
    * From the terminal: Run `flutter packages get`<br/>
    **OR**
-   * From IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
+   * From Android Studio/IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
+   * From VS Code: Click 'Get Package' located in right side of the action ribbon at the top of `pubspec.yaml`
 
 1. Import it
    * Add a corresponding `import` statement in your Dart code.
