@@ -253,7 +253,8 @@ $ flutter create {projectname}
 In React Native, you would go to the project directory and use 
 `npm run ios/android` or `yarn run ios/android`.
 In [Flutter](https://flutter.io/get-started/), if you are using the terminal, then you use the `flutter run` command in the project root directory to run your app on a connected device or simulator. 
-If you are using an IDE like IntelliJ, Android Studio, or VS Code with the Flutter plugin installed then you can use the in-built tools to run the app. 
+If you are using an IDE like IntelliJ, Android Studio, or VS Code with the [Flutter plugin installed](/get-started/editor/)
+then you can use the in-built tools to run the app. 
 
 For more information, see the documentation on [getting started](https://flutter.io/get-started/).
 
