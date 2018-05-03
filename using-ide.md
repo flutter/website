@@ -32,7 +32,7 @@ prompted in IntelliJ when an update is available.
 
 To check for updates manually:
 
-1. Open preferences (**IntelliJ IDEA>Check for Updates...** on macOS,
+1. Open preferences (**Android Studio>Check for Updates...** on macOS,
 **Help>Check for Updates...** on Linux).
 1. If `dart` or `flutter` are listed, update them.
 
@@ -40,9 +40,9 @@ To check for updates manually:
 
 ### Creating a new project
 
-To create a new Flutter IntelliJ project from the Flutter starter app template:
+To create a new Flutter project from the Flutter starter app template:
 
-1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
+1. In the IDE, click **Create New Project** from the 'Welcome' window or
 **File>New>Project...** from the main IDE window.
 1. Select **Flutter** in the menu, and click **Next**.
 1. Enter your desired **Project name** and **Project location**.
@@ -50,10 +50,10 @@ To create a new Flutter IntelliJ project from the Flutter starter app template:
 
 ### Creating a new project from existing source code
 
-To create a new Flutter IntelliJ project containing existing Flutter source code
+To create a new Flutter project containing existing Flutter source code
 files:
 
-1. In IntelliJ, click **Create New Project** from the 'Welcome' window or
+1. In the IDE, click **Create New Project** from the 'Welcome' window or
 **File>New>Project...** from the main IDE window.
   - **Note**: Do *not* use the **New>Project from existing sources...** option for Flutter projects.
 1. Select **Flutter** in the menu, and click **Next**.
@@ -81,7 +81,7 @@ Running and Debugging is controlled from the main toolbar:
 
 ### Selecting a target
 
-When a Flutter project is open in IntelliJ, you should see a set of Flutter
+When a Flutter project is open in the IDE, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
 
 *Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
@@ -121,7 +121,7 @@ of your changes almost instantly with the 'hot reload' feature. See
 To debug a visual issue, start the app with 'Debug', and then open the Flutter
 inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 
-![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)
+![Flutter Inspector Window](/images/intellij/visual-debugging.png)
 
 This offers many debugging tools; for details on these please see
 [Debugging Flutter Apps](https://flutter.io/debugging/).
@@ -210,17 +210,17 @@ The Flutter plugin includes the following templates:
 
 You can also define custom templates in **Settings > Editor > Live Templates**.
 
-### IntelliJ keyboard shortcuts
+### Keyboard shortcuts
 
 **Hot Reload**
 
-On Linux (IntelliJ keymaps _Default for XWin_) and Windows the keyboard shortcuts
+On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `ctrl-alt-;` and `ctrl-\`.
 
-On macOS (IntelliJ keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `⌘-⌥-;`
+On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `⌘-⌥-;`
 and `⌘-\`.
 
-Keyboard mappings can be changed in IntelliJ Preferences/Settings: Select
+Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
@@ -264,8 +264,8 @@ Flutter (as reported by `flutter doctor`).
 
 Please checkout these 'cheat sheets':
 
-  * [Flutter IntelliJ cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-  * [Flutter IntelliJ cheat sheet, Windows & Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+  * [Flutter cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+  * [Flutter cheat sheet, Windows & Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
