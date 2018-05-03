@@ -30,17 +30,28 @@ On iOS, most of what you create in the UI is done using view objects, which are
 instances of the `UIView` class. These can act as containers for other `UIView`
 classes, which form your layout.
 
-In Flutter, the equivalent to this is a `Widget`. However, these have a few
-differences to a `UIView`. To start, widgets only exist for one frame, and on
-every new frame, Flutter’s framework creates a new tree of widget instances.
-In comparison, an iOS view is drawn once and does not redraw until it is
-invalidated using `setNeedsDisplay()`.
+In Flutter, the rough equivalent to a `UIView` is a `Widget`. Widgets don't map
+exactly to iOS views, but while you're getting acquainted with how Flutter works
+you can think of them as "the way you declare and construct UI".
 
-Furthermore, unlike `UIView`, Flutter’s widgets are immutable, which allows
-them to be very lightweight. By default, Flutter’s widgets are styled as
-‘Material’ components (i.e., Android themed), however you can use
-[Cupertino widgets](https://flutter.io/widgets/cupertino/) to specify an iOS
-theme if required.
+However, these have a few differences to a `UIView`. To start, widgets have a
+different lifespan: they are immutable and only exist until they need to be
+changed. Whenever widgets or their state change, Flutter’s framework creates
+a new tree of widget instances. In comparison, an iOS view is not recreated when
+it changes, but rather it's a mutable entity which is drawn once and does not
+redraw until it is invalidated using `setNeedsDisplay()`.
+
+Furthermore, unlike `UIView`, Flutter’s widgets are very lightweight, in part due
+to their immutability. They're lightweight and immutable because they aren't views
+themselves, and aren't directly drawing anything, but rather are a description
+of the UI and its semantics that get "inflated" into actual view objects under
+the hood.
+
+You'll see that Flutter’s widgets are often styled as ‘Material’ components that
+fit well in a Material Design context such as Android. Material design is just
+one language Flutter UIs can implement, though. On iOS, you can use the
+[Cupertino widgets](https://flutter.io/widgets/cupertino/) to produce an
+interface that looks and feels like native iOS.
 
 ## How do I update `Widget`s?
 
