@@ -611,7 +611,7 @@ compiled using the standard [Android](#run-android) and [iOS](#run-ios)
 toolchains).
 
 The debug configuration also checks all asserts, which helps you catch errors
-early during development, but imposes a runtime cost. The "slow mode" banner
+early during development, but imposes a runtime cost. The "Debug" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
