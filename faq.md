@@ -601,7 +601,7 @@ It is possible to create a custom language that is then
 converted to widgets on the fly. Because build methods are "just code", they
 can do anything, including interpreting markup and turning it into widgets.
 
-### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
+### My app has a Debug banner/ribbon in the upper right. Why am I seeing that?
 
 By default `flutter run` command uses the debug build configuration.
 
