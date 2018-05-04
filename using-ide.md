@@ -149,7 +149,7 @@ Also available in the additional actions menu:
 
 * 'Enable Slow Animations': Slow down animations to enable visual inspection.
 
-* 'Hide Slow Mode Banner': Hide the 'slow mode' banner even when running a
+* 'Hide Debug Banner': Hide the 'debug' banner even when running a
   debug build.
 
 
@@ -183,11 +183,11 @@ can assist in correcting it. They are indicated with a red lightbulb.
 #### Wrap with new widget assist
 This can be used when you have a widget that you want to wrap in a surrounding widget,
 for example if you want to wrap a widget in a `Row` or `Column`.
- 
+
 ####  Wrap widget list with new widget assist
 Similar to the assist above, but for wrapping an existing list of widgets rather than an
 individual widget.
- 
+
 #### Convert child to children assist
 Changes a child argument to a children argument, and wraps the argument value in a list.
 
