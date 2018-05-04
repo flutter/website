@@ -140,11 +140,9 @@ file.
 Release builds of your app will now automatically be signed.
 
 
-## Obfuscation and minification
+## Minfify and obfuscate
 
-Android build tools allow reduce the size of the APK file and obfuscate classes and methods. By default, Flutter tool won't use these tools. However, if your application uses third-party Java and Android libraries, you may want to reduce the size of the APK. 
-
-There are two steps to enable minification and obfuscation.
+By default, Flutter does not obfuscate or minify Android wrapper. If you intend to use third-party Java or Android libraries, you may want to reduce the size of the APK or protect that code from reverse engineering.
 
 ### Step 1 - Configure obfuscation tool
 
@@ -164,7 +162,7 @@ The configuration above will only protect Flutter libraries. Any additional libr
 
 ### Step 2 - Enable obfuscation and/or minification
 
-Open `/android/app/build.gradle` file and locate `buildTypes` definition. Inside `release` configuration set `minifiyEnabled` and `useProguard` flags. You have to also point ProGuard to the file you have created in step 1.
+Open `/android/app/build.gradle` file and locate `buildTypes` definition. Inside `release` configuration set `minifiyEnabled` and `useProguard` flags to true. You have to also point ProGuard to the file you have created in step 1.
 
 ```
 android {
