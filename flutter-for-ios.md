@@ -74,16 +74,15 @@ HTTP call then you would use a `StatefulWidget`. After the HTTP call has
 completed, you would tell the Flutter framework that the widget’s `State` has
 been updated so it could update the widget.
 
-The important thing to note here is at the core both stateless and stateful
-widgets behave the same i.e. they rebuild every frame. The difference is that
-the `StatefulWidget` has a `State` object which stores state data across
-frames and restores it after being rebuilt.
+The important thing to note here is that the difference between stateless and
+stateful widgets is that `StatefulWidget`s have a `State` object which stores
+state data and carries it over across tree rebuilds, so that it's not lost.
 
-If you are in doubt, then always remember this rule: if a widget changes (e.g.
-because of runtime user interactions) it’s stateful. If the only time data
-changes is at instantiation, it’s stateless. However, if a widget is reacting
-to change, then the containing parent widget can still be stateless if it
-isn’t itself reacting to change.
+If you are in doubt, then remember this rule: if a widget changes outside of
+the `build` method (e.g., because of runtime user interactions) it’s stateful.
+If the only time the widget changes is when it's constructed, it’s stateless.
+However, even if a widget is stateful, the containing parent widget can still
+be stateless if it isn’t itself reacting to those changes (or other inputs).
 
 Let's take a look at how you would use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
@@ -354,6 +353,12 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       ),
     );
   }
+
+  @override
+  dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
 {% endprettify %}
 
@@ -558,9 +563,8 @@ loadData() async {
 {% endprettify %}
 
 
-Once the `await`ed network call is done, you update the UI calling
-`setState()`, which triggers a rebuild of the widget tree and updates the
-data.
+Once the `await`ed network call is done, you update the UI calling `setState()`,
+which triggers a rebuild of the widget sub-tree and updates the data.
 
 Here's an example of loading data asynchronously and displaying it
 in a `ListView`:
