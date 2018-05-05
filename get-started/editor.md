@@ -9,7 +9,7 @@ command-line tools. However, we recommend using one of our editor plugins for an
 even better experience. With our editor plugins, you get code completion, syntax
 highlighting, widget edditing assists, run & debug support, and more.
 
-Follow the steps before to add an editor plugin for Android Studio, IntelliJ, or
+Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 [Next step: Create and run your first app](/get-started/test-drive/).
 
