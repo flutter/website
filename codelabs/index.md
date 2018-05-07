@@ -30,7 +30,7 @@ the UI for iOS and Android.
 For a full list of available Flutter codelabs, see the
 [Flutter category](https://codelabs.developers.google.com/?cat=Flutter)
 on [Google Developers](https://codelabs.developers.google.com/).
-If you are in a country where the previous link doesn't work, try
+If the previous link doesn't work for you, try
 [Flutter Codelabs](https://codelabs.flutter-io.cn/).
 
 {% comment %}
