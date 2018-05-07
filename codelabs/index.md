@@ -31,7 +31,7 @@ For a full list of available Flutter codelabs, see the
 [Flutter category](https://codelabs.developers.google.com/?cat=Flutter)
 on [Google Developers](https://codelabs.developers.google.com/).
 If the previous link doesn't work for you, try
-[Flutter Codelabs](https://codelabs.flutter-io.cn/).
+[this mirror of the Flutter Codelabs](https://codelabs.flutter-io.cn/).
 
 {% comment %}
 // Right now, there's only the Java->Dart lab, which is also in the
