@@ -17,6 +17,7 @@ Once the "Flutter for React" doc (etc) are done, add here.
   
 * Other resources
 
+  * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
   * [Flutter Cookbook](/cookbook/)
   * [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
   * [Bootstrap into Dart: learn more about the language](/bootstrap-into-dart/)

@@ -114,7 +114,7 @@ experience.
 #### Step 2a: Define the package API (.dart)
 
 The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in IntelliJ IDEA (or your favorite Dart editor). Locate the file
+folder in your favorite [Flutter editor](/get-started/editor/). Locate the file
 `lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
@@ -122,7 +122,7 @@ folder in IntelliJ IDEA (or your favorite Dart editor). Locate the file
 We recommend you edit the Android code using Android Studio.
 
 Before editing the Android platform code in Android Studio, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ,
+the code has been built at least once (i.e., run the example app from your IDE/editor,
 or in a terminal execute `cd hello/example; flutter build apk`).
 
 Next,
@@ -145,7 +145,7 @@ You can run the example app from Android Studio by pressing the &#9654; button.
 We recommend you edit the iOS code using Xcode.
 
 Before editing the iOS platform code in Xcode, first make sure that
-the code has been built at least once (i.e., run the example app from IntelliJ,
+the code has been built at least once (i.e., run the example app from your IDE/editor,
 or in a terminal execute `cd hello/example; flutter build ios --no-codesign`).
 
 Next,

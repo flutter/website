@@ -176,20 +176,17 @@ class MyApp extends StatelessWidget {
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 When pasting code into your app, indentation can
-become skewed. You can fix this in IntelliJ by right-clicking the
-Dart code and selecting **Reformat with Dart Style**.
-Or, at the command line, you can use
-[dartfmt](https://github.com/dart-lang/dart_style).
+become skewed. You can fix this in your Flutter editor
+using the [automatic reformatting support](/formatting/).
 </aside>
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 For a faster development experience, try Flutter's hot reload feature.
 Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The
-[Flutter plugin for IntelliJ](/using-ide/) supports
-hot reload, or you can trigger from the command line.
-For more information, see [Hot Reloads vs. Full Application
+fully restarting the app. The Flutter enabled IDEs support
+['hot reload on save'](/hot-reload/), or you can trigger from the command line.
+For more information about reloads, see [Hot Reloads vs. Full Application
 Restarts](https://flutter.io/using-ide/#hot-reloads-vs-full-application-restarts).
 </aside>
 

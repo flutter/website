@@ -601,7 +601,7 @@ It is possible to create a custom language that is then
 converted to widgets on the fly. Because build methods are "just code", they
 can do anything, including interpreting markup and turning it into widgets.
 
-### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
+### My app has a Debug banner/ribbon in the upper right. Why am I seeing that?
 
 By default `flutter run` command uses the debug build configuration.
 
@@ -611,7 +611,7 @@ compiled using the standard [Android](#run-android) and [iOS](#run-ios)
 toolchains).
 
 The debug configuration also checks all asserts, which helps you catch errors
-early during development, but imposes a runtime cost. The "slow mode" banner
+early during development, but imposes a runtime cost. The "Debug" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 
