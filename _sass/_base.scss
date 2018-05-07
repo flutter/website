@@ -241,7 +241,7 @@ blockquote {
     padding: 4px 6px;
     font-size: 15px;
 
-    @include media-query($on-palm + 100px) {
+    @include media-query($on-palm + 150px) {
       width: 100px;
     }
   }
