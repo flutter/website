@@ -1,6 +1,6 @@
 - name: Alibaba
   description: >
-    Alibaba’s app built with Flutter services hundreds of millions of users.
+    Alibaba’s app incorporates Flutter to power parts of their app.
   screenshot: /showcase/images/v4_alibaba.png
   learn_more_link: https://www.alibaba.com/
 
