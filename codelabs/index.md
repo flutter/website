@@ -25,11 +25,12 @@ A deeper "first dive" than "Write Your First Flutter App." In this codelab
 you'll create a chat app that includes a simple animation, and customizes
 the UI for iOS and Android.
 
+---
+
 For a full list of available Flutter codelabs, see the
 [Flutter category](https://codelabs.developers.google.com/?cat=Flutter)
 on [Google Developers](https://codelabs.developers.google.com/).
-
-If you are in a location where the previous link doesn't work, see
+If you are in a country where the previous link doesn't work, try
 [Flutter Codelabs](https://codelabs.flutter-io.cn/).
 
 {% comment %}
