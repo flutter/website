@@ -48,8 +48,8 @@ If you want to be featured, [let us know][]!
         {% if case.ios_download and case.android_download %}
         <p>
             Download:
-            <a href="{{case.android_download}}">iOS</a>,
-            <a href="{{case.ios_download}}">Android</a>
+            <a href="{{case.ios_download}}">iOS</a>,
+            <a href="{{case.android_download}}">Android</a>
         </p>
         {% elsif case.ios_download %}
         <p>
