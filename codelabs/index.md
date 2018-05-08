@@ -25,13 +25,18 @@ A deeper "first dive" than "Write Your First Flutter App." In this codelab
 you'll create a chat app that includes a simple animation, and customizes
 the UI for iOS and Android.
 
+#### [Firebase for Flutter](https://codelabs.developers.google.com/codelabs/flutter-firebase/)
+
+Learn how to connect a Flutter app to a Firebase database, and how to use
+a transaction to update shared information.
+
 ---
 
 For a full list of available Flutter codelabs, see the
 [Flutter category](https://codelabs.developers.google.com/?cat=Flutter)
 on [Google Developers](https://codelabs.developers.google.com/).
 If the previous link doesn't work for you, try
-[this mirror of the Flutter Codelabs](https://codelabs.flutter-io.cn/).
+[this mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
 
 {% comment %}
 // Right now, there's only the Java->Dart lab, which is also in the
