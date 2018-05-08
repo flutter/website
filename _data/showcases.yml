@@ -35,8 +35,8 @@
   description: >
     A meditation app for the German-language market with coach Ramin Raygan.
   screenshot: /showcase/images/v3_CoachYourself.png
-  android_download: https://itunes.apple.com/us/app/coach-yourself/id1372759980
-  ios_download: https://play.google.com/store/apps/details?id=eu.coach_yourself.app
+  android_download: https://play.google.com/store/apps/details?id=eu.coach_yourself.app
+  ios_download: https://itunes.apple.com/us/app/coach-yourself/id1372759980
 
 - name: Google Greentea
   description: >
