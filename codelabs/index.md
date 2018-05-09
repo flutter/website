@@ -19,6 +19,12 @@ the user to select favorite word pairs, and add a second "Saved Favorites"
 page where users can view the selected names.
 Finally, you'll change the app's theme color.
 
+#### Material Design with Flutter Material Components (MDC), [Part 1](https://codelabs.developers.google.com/codelabs/mdc-101-flutter/) [Part 2](https://codelabs.developers.google.com/codelabs/mdc-102-flutter/) [Part 3](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/) [Part 4](https://codelabs.developers.google.com/codelabs/mdc-104-flutter/)
+
+Material Components (MDC) help developers implement Material Design.
+In this codelab you'll build an app called Shrine, an e-commerce app
+that sells clothing and home goods, using Material Components
+
 #### [Building Beautiful UIs with Flutter](https://codelabs.developers.google.com/codelabs/flutter)
 
 A deeper "first dive" than "Write Your First Flutter App." In this codelab
