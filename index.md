@@ -208,7 +208,7 @@ Future<Null> getBatteryLevel() async {
     is an easy and fast way to build beautiful mobile apps.
     If you are an experienced iOS or Android developer,
     you can use Flutter for your views and leverage much of your
-    existing Java/ObjC/Swift investment.
+    existing Java/Kotlin/ObjC/Swift investment.
     </p>
 
     <div class="feature-lists">
@@ -229,7 +229,7 @@ Future<Null> getBatteryLevel() async {
 
             <ul>
                 <li>Sub-second, stateful hot reload</li>
-                <li>IntelliJ: refactor, code completion, etc</li>
+                <li>IntelliJ/Android Studio: refactor, code completion, etc</li>
                 <li>Dart language and core libs</li>
                 <li>Package manager</li>
             </ul>
@@ -238,7 +238,7 @@ Future<Null> getBatteryLevel() async {
 
             <ul>
                 <li>Interop with mobile OS APIs &amp; SDKs</li>
-                <li>Maven/Java</li>
+                <li>Gradle/Java/Kotlin</li>
                 <li>Cocoapods/ObjC/Swift</li>
             </ul>
         </div>
