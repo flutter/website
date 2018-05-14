@@ -24,30 +24,30 @@ continuous delivery from a local machine.
 
 1. Install Fastlane `gem install fastlane` or `brew cask install fastlane`.
 1. Create your Flutter project and when ready, make sure that your project builds via
-    * ![Android](images/fastlane-cd/android.png) `flutter build apk --release`; and
-    * ![iOS](images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`; and
+    * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
 1. Initialize the Fastlane projects for each platform.
-    * ![Android](images/fastlane-cd/android.png) In your `[project]/android`
+    * ![Android](/images/fastlane-cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
-    * ![iOS](images/fastlane-cd/ios.png) In your `[project]/ios` directory,
+    * ![iOS](/images/fastlane-cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
 1. Edit the `Appfile`s to ensure it has adequate matadata for your app.
-    * ![Android](images/fastlane-cd/android.png) Ensure `package_name` in
+    * ![Android](/images/fastlane-cd/android.png) Ensure `package_name` in
     `[project]/android/Appfile` matches your package in pubspec.yaml.
-    * ![iOS](images/fastlane-cd/ios.png) Ensure `app_identifier` in
+    * ![iOS](/images/fastlane-cd/ios.png) Ensure `app_identifier` in
     `[project]/ios/Appfile` also matches. Also fill in `apple_id`, `itc_team_id`,
     `team_id` with your respective account info.
 1. Set up your local login credentials for the stores.
-    * ![Android](images/fastlane-cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
+    * ![Android](/images/fastlane-cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
     and ensure that `fastlane supply init` can successfully sync data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
-    * ![iOS](images/fastlane-cd/ios.png) Your iTunes Connect username is already
+    * ![iOS](/images/fastlane-cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. You can set `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
     prompted whe uploading to iTunes/TestFlight.
 1. Set up code signing.
-    * ![Android](images/fastlane-cd/android.png) On Android, there are 2 signing
+    * ![Android](/images/fastlane-cd/android.png) On Android, there are 2 signing
     keys. The 'deployment key' is used to sign the .apk end-users ultimately
     download. An 'upload key' is used to authenticate the .apk uploaded by
     developers onto the Play Store and is re-signed over with the deployment key
@@ -59,19 +59,19 @@ continuous delivery from a local machine.
         * Configure gradle to use your upload key when building your app in
         release mode by editing `android.buildTypes.release` in
         `[project]/android/app/build.gradle`.
-    * ![iOS](images/fastlane-cd/ios.png) On iOS, you need to create and sign
+    * ![iOS](/images/fastlane-cd/ios.png) On iOS, you need to create and sign
     using a distribution certificate instead of a development certification when
     you're ready to test and deploy using TestFlight or App Store.
         * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
         certificate in your target's settings pane.
 1. Create a `Fastfile` script for each platform.
-    * ![Android](images/fastlane-cd/android.png) On Android, follow the
+    * ![Android](/images/fastlane-cd/android.png) On Android, follow the
     [Fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
     It could be as simple as a `lane` that calls `upload_to_play_store`. The
     `apk` argument can be set to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
-    * ![iOS](images/fastlane-cd/ios.png) On iOS, follow the [Fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
+    * ![iOS](/images/fastlane-cd/ios.png) On iOS, follow the [Fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
     It could be as simple as a `lane` that calls `build_ios_app` with
     `export_method: 'app-store'` and `upload_to_testflight`. An extra build is
     used after `flutter build` on iOS since `flutter build` builds and .app and
@@ -83,13 +83,13 @@ process to a CI system.
 ## Running deployment locally
 
 1. Build the release mode app.
-    * ![Android](images/fastlane-cd/android.png) `flutter build apk --release`.
-    * ![iOS](images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
+    * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`.
+    * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
     No need to sign now since we'll archive using Fastlane which will sign at that point.
 1. Run the Fastfile script on each platform.
-    * ![Android](images/fastlane-cd/android.png) `cd android` then
+    * ![Android](/images/fastlane-cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
-    * ![iOS](images/fastlane-cd/ios.png) `cd ios` then
+    * ![iOS](/images/fastlane-cd/ios.png) `cd ios` then
     `fastlane [name of the lane you created]`.
 
 ## Cloud build and deploy setup
@@ -113,7 +113,7 @@ request that prints these secrets out. Be careful with interactions with these
 secrets in pull requests you accept and merge.
 
 1. Make login credentials ephemeral.
-    * ![Android](images/fastlane-cd/android.png) On Android:
+    * ![Android](/images/fastlane-cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
         content of the JSON in your CI system's encrypted variable. Use the
         `json_key_data` argument in `upload_to_play_store` to read the
@@ -124,7 +124,7 @@ secrets in pull requests you accept and merge.
         ```bash
         echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/travis/[directory and filename specified in your gradle].keystore
         ```
-    * ![iOS](images/fastlane-cd/ios.png) On iOS:
+    * ![iOS](/images/fastlane-cd/ios.png) On iOS:
         * Move the `FASTLANE_PASSWORD` variable to use encrypted environment variables.
         * The CI system needs access to your distribution certificate. Fastlane's
         [Match](https://docs.fastlane.tools/actions/match/) system is
