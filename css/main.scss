@@ -27,7 +27,7 @@ $nav-text-color:   white;
 // Width of the content area
 $content-width:    980px;
 
-$on-palm:          640px;
+$on-palm:          710px;
 $on-laptop:        980px;
 
 
@@ -63,7 +63,8 @@ $on-laptop:        980px;
         "homepage",
         "responsive_embeds",
         "tabs",
-        "archive"
+        "archive",
+        "showcase"
 ;
 
 aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
