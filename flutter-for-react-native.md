@@ -1755,13 +1755,13 @@ In Flutter, if you are using an IDE, you can use its built-in tools. If you star
 | To save a screenshot to flutter. png| `s` ||
 | To quit| `q` ||
 
-### How do I perform hot reload?
+### How do I perform a hot reload?
 
 Instead of recompiling your app every time you make a change, you can reload your app instantly. The app is updated to reflect your change, and the current state of the app is preserved.
 In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on Android emulators.
 In Flutter, If you are using IntelliJ IDE or Android Studio, you can select Save All (⌘s/ctrl-s), or click the Hot Reload button on the toolbar.
 If you are running the app at the command line using flutter run, type `r` in the terminal window.
-You can also perform full restart by typing `R` in the terminal window.
+You can also perform a hot restart by typing `R` in the terminal window.
 
 ### Is there anything like Chrome Developer Tools in Flutter?
 

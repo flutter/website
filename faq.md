@@ -363,7 +363,7 @@ is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
-### How is 'hot reload' different from 'full restart'?
+### How is 'hot reload' different from 'hot restart'?
 
 Hot Reload works by injecting updated source code files into the running Dart VM
 (Virtual Machine). This includes not only adding new classes, but also adding

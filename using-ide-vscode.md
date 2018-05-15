@@ -193,9 +193,9 @@ pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS) will perform a hot re
 Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts** command
 from the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
-**Full Restart**
+**Hot Restart**
 
-### 'Hot Reloads' vs 'Full Application Restarts'
+### 'Hot Reloads' vs 'Hot Restarts'
 
 Hot Reload works by injecting updated source code files into the running Dart VM
 (Virtual Machine). This includes not only adding new classes, but also adding
@@ -207,8 +207,8 @@ types of code changes cannot be hot reloaded though:
 * The `main()` method of the app.
 
 For these changes you can fully restart your application, without having to end
-your debugging session by running the **Flutter: Full Restart** command from the
-[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a full restart of the
+your debugging session by running the **Flutter: Hot Restart** command from the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a hot restart of the
 application.
 
 ## Troubleshooting
