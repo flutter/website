@@ -538,7 +538,7 @@ across from the native side:
 
 <!-- skip -->
 {% prettify java %}
-package com.yourcompany.shared;
+package com.example.shared;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -705,7 +705,7 @@ Once the `await`ed network call is done, you update the UI calling
 `setState()`, which triggers a rebuild of the widget tree and updates the
 data.
 
-Next, here's an example of loading data asynchronously and displaying it 
+Next, here's an example of loading data asynchronously and displaying it
 in a `ListView`:
 
 <!-- skip -->
@@ -816,7 +816,7 @@ This is how you would typically do network or database calls, which are both
 I/O operations.
 
 On Android, when you extend `AsyncTask`, you typically override 3 methods,
-`onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no 
+`onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no
 equivalent to this since you would just await on a long running function and
 Dart's event loop will take care of the rest.
 
@@ -2136,7 +2136,7 @@ the SharedPreferences API.
 In Flutter, you can access this functionality by using the
 Shared Preferences plugin [Shared_Preferences](https://pub.dartlang.org/packages/shared_preferences)
 
-This plugin wraps the functionality of both Shared Preferences and 
+This plugin wraps the functionality of both Shared Preferences and
 NSUserDefaults (the iOS equivalent).
 
 <!-- skip -->
@@ -2169,16 +2169,16 @@ _incrementCounter() async {
 {% endprettify %}
 
 ## How do I access SQLite in Flutter?
-In Android, you would use SQLite to store structured data that you can query 
+In Android, you would use SQLite to store structured data that you can query
 via SQL.
 
-In Flutter, you can access this functionality by using the SQFlite plugin 
+In Flutter, you can access this functionality by using the SQFlite plugin
 [SQFlite](https://pub.dartlang.org/packages/sqflite)
 
 # Notifications
 
-## How do I setup Push Notifications 
-In Android, you would use Firebase Cloud Messaging to setup push 
+## How do I setup Push Notifications
+In Android, you would use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, you can access this functionality by using the Firebase_Messaging
