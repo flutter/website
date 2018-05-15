@@ -20,17 +20,19 @@ tool of choice for writing, building, and running your Flutter app.
 
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
-*Android Studio:* A complete, integrated IDE experience for Flutter. 
+*Android Studio:* A complete, integrated IDE experience for Flutter.
 
 ## Create new app {#create-app}
 
    1. Select **File>New Flutter Project**
    1. Select **Flutter application** as the project type, and press Next
    1. Enter a project name (e.g. `myapp`), and press Next
+   1. If you might publish this app, [set the company domain](#note).
    1. Click **Finish**
    1. Wait for Android Studio to install the SDK, and create the project.
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
+The above command creates a Flutter project directory called `myapp`
+that contains a simple demo
 app that uses [Material Components](https://material.io/guidelines/).
 
 In the project directory, the code for your app is in `lib/main.dart`.
@@ -77,16 +79,19 @@ You should see the updated string in the running app almost immediately.
   1. Type 'flutter', and select the **'Flutter: New Project'** action
   1. Enter a project name (e.g. `myapp`), and press Enter
   1. Specify a location to place the project, and press the blue OK button
-  1. Wait for the project creation to continue, and the `main.dart` file to appear 
+  1. Wait for the project creation to continue, and the `main.dart`
+     file to appear
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
+The above command creates a Flutter project directory called `myapp` that
+contains a simple demo
 app that uses [Material Components](https://material.io/guidelines/).
 
 In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
-  1. Make sure a target device is selected in the lower, right-hand corner of VS Code
+  1. Make sure a target device is selected in the lower, right-hand corner of
+     VS Code
   1. Press the F5 button on the keyboard, or invoke **Debug>Start Debugging**
   1. Wait for the app to launch
   1. If everything works, after the app has been built, you should see your
@@ -124,14 +129,16 @@ for running and building.
    cd myapp
    {% endcommandline %}
 
-The above command creates a Flutter project directory called `myapp` that contains a simple demo
-app that uses [Material Components](https://material.io/guidelines/).
+The above command creates a Flutter project directory called `myapp` that
+contains a simple demo app that uses
+[Material Components](https://material.io/guidelines/).
 
 In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
-   * Check that an Android device is running. If none are shown, see [setup](/get-started/install/).
+   * Check that an Android device is running. If none are shown, see
+     [setup](/get-started/install/).
    {% commandline %}
    flutter devices
    {% endcommandline %}
@@ -162,6 +169,18 @@ You should see the updated string in the running app almost immediately.
 </div>
 
 </div>
+
+<a name="note"></a>
+<aside class="alert alert-info" markdown="1">
+**Setting the company domain**<br>
+When creating a new app, some Flutter IDE plugins ask for an
+organization name in reverse domain order,
+something like `com.yourcompany`. Along with the name of the app,
+this is used as the package name for Android, and the Bundle ID for iOS
+when the app is released. If you think you might ever release this app,
+it is better to specify these now. They cannot be changed once the app
+is released. Your organization name should be unique.
+</aside>
 
 ## Next step
 
