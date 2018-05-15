@@ -14,7 +14,7 @@ permalink: /using-ide-vscode/
 
 <div class="tabs__content current" markdown="1">
 
-The Flutter extension provides a fully integrated development experience in Visual Studio Code.
+The [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) provides a fully integrated development experience in Visual Studio Code.
 
 * TOC Placeholder
 {:toc}
