@@ -27,6 +27,7 @@ A tldr version follows:
 
 1. Install all dependencies:<br>
 `bundle install`
+    * On macOS, if you encounter errors while building native Ruby extensions, there are some troubleshooting steps available [here](http://www.nokogiri.org/tutorials/installing_nokogiri.html#mac_os_x)
 
 1. Create a branch.
 
