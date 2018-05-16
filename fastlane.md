@@ -112,7 +112,7 @@ until they're merged to ensure that malicious actors cannot create a pull
 request that prints these secrets out. Be careful with interactions with these
 secrets in pull requests that you accept and merge.
 
-1. Make login credentials temporary.
+1. Make login credentials ephemeral.
     * ![Android](/images/fastlane-cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
         content of the JSON in your CI system's encrypted variable. Use the
@@ -133,7 +133,7 @@ secrets in pull requests that you accept and merge.
 
 2. It's recommended to use a Gemfile instead of using an indeterministic `gem
 install fastlane` on the CI system each time to ensure the Fastlane
-dependencies are stable and reproducible between local and cloud machines.
+dependencies are stable and reproducible between local and cloud machines. However, this step is optional.
     * In both your `[project]/android` and `[project]/ios` folders, create a
     `Gemfile` containing the following content:
       ```
