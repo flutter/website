@@ -131,8 +131,8 @@ secrets in pull requests that you accept and merge.
         [Match](https://docs.fastlane.tools/actions/match/) system is
         recommended to synchronize your certificates across machines.
 
-2. It's recommended to use a Gemfile instead of using an indeterministic `gem
-install fastlane` on the CI system each time to ensure the Fastlane
+2. It's recommended to use a Gemfile instead of using an indeterministic
+`gem install fastlane` on the CI system each time to ensure the Fastlane
 dependencies are stable and reproducible between local and cloud machines. However, this step is optional.
     * In both your `[project]/android` and `[project]/ios` folders, create a
     `Gemfile` containing the following content:
@@ -159,8 +159,7 @@ repository root.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
     * In the script phase of the CI task:
-         * Run `flutter build apk --release` or `flutter build ios --release
-         --no-codesign` depending on the platform.
+         * Run `flutter build apk --release` or `flutter build ios --release --no-codesign` depending on the platform.
          * `cd android` or `cd ios`.
          * `bundle exec fastlane [name of the lane]`.
 
@@ -168,4 +167,4 @@ repository root.
 
 The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 uses Fastlane for continuous deployment. See the source for a working example of
-Fastlane in action. The Travis script is at https://github.com/flutter/flutter/blob/master/.travis.yml.
+Fastlane in action. The Travis script is [here](https://github.com/flutter/flutter/blob/master/.travis.yml).
