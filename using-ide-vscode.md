@@ -14,7 +14,7 @@ permalink: /using-ide-vscode/
 
 <div class="tabs__content current" markdown="1">
 
-The Dart extension provides a fully integrated development experience in Visual Studio Code.
+The [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) provides a fully integrated development experience in Visual Studio Code.
 
 * TOC Placeholder
 {:toc}
@@ -22,7 +22,7 @@ The Dart extension provides a fully integrated development experience in Visual 
 ## Installation and setup
 
 Please follow the [Editor Setup](/get-started/editor/#vscode) instructions to install
-the Dart extension (which includes Flutter functionality).
+the Flutter extension (which includes Flutter functionality).
 
 ### Updating the extension<a name="updating"/>
 
@@ -32,7 +32,7 @@ automatically update extensions when updates are available.
 To install updates manually:
 
 1. Click on the Extensions button in the Side Bar
-1. If the Dart extension is shown with an available update, click the update button and then
+1. If the Flutter extension is shown with an available update, click the update button and then
 the reload button
 
 ## Creating projects
@@ -56,7 +56,7 @@ To open an existing Flutter project:
 
 ## Editing code and viewing issues
 
-The Dart extension performs code analysis that enables:
+The Flutter extension performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
@@ -84,7 +84,7 @@ as a Flutter project. Please ensure the folder that contains your `pubspec.yaml`
 *Note*: If the status bar reads **No Devices** Flutter has not been able to discover any connected
 iOS or Android devices or simulators. You need to connect a device, or start a simulator, to proceed.
 
-The Dart extension will automatically select the last device connected, however if you have multiple
+The Flutter extension will automatically select the last device connected, however if you have multiple
 devices/simulators connected you can click on the device in the status bar to be presented with a pick-list
 at the top of the screen to allow you to select the device to use for running/debugging.
 
@@ -171,7 +171,7 @@ completion window:
 
 <img src="/images/vscode/snippets.png" style="width:706px;height258px" alt="Snippets" />
 
-The Dart extension includes the following snippets:
+The Flutter extension includes the following snippets:
 
 * Prefix `stless`: Create a new subclass of `StatelessWidget`.
 * Prefix `stful`: Create a new subclass of `StatefulWidget` and it's associated
@@ -193,9 +193,9 @@ pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS) will perform a hot re
 Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts** command
 from the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
-**Full Restart**
+**Hot Restart**
 
-### 'Hot Reloads' vs 'Full Application Restarts'
+### 'Hot Reloads' vs 'Hot Restarts'
 
 Hot Reload works by injecting updated source code files into the running Dart VM
 (Virtual Machine). This includes not only adding new classes, but also adding
@@ -207,8 +207,8 @@ types of code changes cannot be hot reloaded though:
 * The `main()` method of the app.
 
 For these changes you can fully restart your application, without having to end
-your debugging session by running the **Flutter: Full Restart** command from the
-[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a full restart of the
+your debugging session by running the **Flutter: Hot Restart** command from the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a hot restart of the
 application.
 
 ## Troubleshooting
@@ -217,7 +217,7 @@ application.
 
 All known bugs are tracked in the issue tracker:
 
-  * Dart extension: [GitHub issue
+  * Dart and Flutter extensions: [GitHub issue
    tracker](https://github.com/Dart-Code/Dart-Code/issues).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior

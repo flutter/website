@@ -66,12 +66,12 @@ To install these:
 
   * [VS Code](https://code.visualstudio.com/), version 1.20.1 or later.
 
-### Install the Dart Code plugin
+### Install the Flutter plugin
 
   1. Start VS Code
   1. Invoke **View>Command Palette...**
   1. Type 'install', and select the **'Extensions: Install Extension'** action
-  1. Enter `dart code` in the search field, select 'Dart Code' in the list, and
+  1. Enter `flutter` in the search field, select 'Flutter' in the list, and
      click **Install**
   1. Select 'OK' to reload VS Code
 

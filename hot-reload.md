@@ -21,7 +21,7 @@ To hot reload a Flutter app:
 1.  Run the app from a supported [Flutter editor](/get-started/editor/)
 or a terminal window. Either a physical or virtual device can be the target.
 1.  Modify one of the Dart files in your project. Most types of code changes can
-be hot reloaded; for a list of changes that require a full restart, see
+be hot reloaded; for a list of changes that require a hot restart, see
 [Limitations](#limitations).
 1.  If you're working in an IDE/editor that supports Flutter's IDE tools,
 select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
@@ -78,7 +78,7 @@ usually the desired behavior.
 If code changes affect the state of your app (or its dependencies), 
 the data your app has to work with might not be fully consistent with 
 the data it would have if it executed from scratch. The result might be 
-different behavior after hot reload versus a full restart.
+different behavior after hot reload versus a hot restart.
 
 For example, if you modify a class definition from extending StatelessWidget
 to StatefulWidget (or the reverse), after hot reload the previous state of
@@ -113,7 +113,7 @@ and then hot reload, the console displays an assertion failure similar to:
 myWidget is not a subtype of StatelessWidget
 ```
 
-In these situations, a full restart is needed to see the updated app.
+In these situations, a hot restart is needed to see the updated app.
 
 ## Recent code change is included but app state is excluded
 
@@ -170,7 +170,7 @@ are always hot reloaded, the static field initializer is not rerun.
 Conceptually, `const` fields are treated like aliases instead of state.
 
 The Dart VM detects initializer changes and flags when a set of changes needs a
-full restart to take effect. The flagging mechanism is triggered for most of the
+hot restart to take effect. The flagging mechanism is triggered for most of the
 initialization work in the above example, but not for cases like:
 
 ```
@@ -231,7 +231,7 @@ void main() {
 ```
 
 
-With a full restart, the program starts from the beginning, executes the new
+With a hot restart, the program starts from the beginning, executes the new
 version of `main()`, and builds a widget tree that displays the text `Hello`.
 
 However, if you hot reload the app after this change, `main()` is not 

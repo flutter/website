@@ -31,7 +31,7 @@ shortcut to this in Keymap section of IntelliJ Preferences.
 
 ### Automatically formatting code in VS Code
 
-Install the `Dart-Code` plugin (see [Editor setup](/get-started/editor/))
+Install the `Flutter` extension (see [Editor setup](/get-started/editor/))
 to get automatic formatting of code in VS Code.
 
 To automatically format the code in the current source code window, right-click
