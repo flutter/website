@@ -23,11 +23,12 @@ Android device running Android 4.1 (API level 16) or higher.
 
 1. Enable **Developer options** and **USB debugging** on your device. Detailed instructions
 are available in the [Android documentation](https://developer.android.com/studio/debug/dev-options.html).
-3. Using a USB cable, plug your phone into your computer. If prompted on your
+1. Windows-only: Install the [Google USB Driver](https://developer.android.com/studio/run/win-usb)
+1. Using a USB cable, plug your phone into your computer. If prompted on your
 device, authorize your computer to access your device.
-4. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
+1. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
 connected Android device.
-5. Start your app by running `flutter run`.
+1. Start your app by running `flutter run`.
 
 By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
