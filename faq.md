@@ -390,11 +390,12 @@ You can compile and deploy your Flutter app to iOS and Android.
 Mobile operating systems: Android Jelly Bean, v16, 4.1.x or newer, and
 iOS 8 or newer.
 
-Mobile hardware: iOS devices (starting with iPhone 5 and newer
-iPhone models), and ARM Android devices.
+Mobile hardware: iOS devices (iPhone 4S or newer) and ARM Android devices.
 
-Note that we currently do not support:
-  * x86 Android devices (issue [#9253](https://github.com/flutter/flutter/issues/9253))
+Note Flutter currently does not support building for x86 Android
+(issue [#9253](https://github.com/flutter/flutter/issues/9253))
+directly, however apps built for ARMv7 or ARM64 run fine (via ARM emulation
+on many x86 Android devices.
 
 We support developing Flutter apps with Android and iOS devices, as
 well as with Android emulators and the iOS simulator.
