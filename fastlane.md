@@ -32,7 +32,7 @@ delivery from a local machine.
     directory, run `fastlane init`.
     * ![iOS](/images/fastlane-cd/ios.png) In your `[project]/ios` directory,
     run `fastlane init`.
-1. Edit the `Appfile`s to ensure they have adequate matadata for your app.
+1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
     * ![Android](/images/fastlane-cd/android.png) Check that `package_name` in
     `[project]/android/Appfile` matches your package in pubspec.yaml.
     * ![iOS](/images/fastlane-cd/ios.png) Check that `app_identifier` in
@@ -46,12 +46,12 @@ delivery from a local machine.
     * ![iOS](/images/fastlane-cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
     environment variable with your iTunes Connect password. Otherwise, you'll be
-    prompted whe uploading to iTunes/TestFlight.
+    prompted when uploading to iTunes/TestFlight.
 1. Set up code signing.
     * ![Android](/images/fastlane-cd/android.png) On Android, there are two
     signing keys: deployment and upload. The end-users download the .apk signed
     with the 'deployment key'. An 'upload key' is used to authenticate the .apk
-    uploaded by developers onto the Play Store and is re-signed over with the
+    uploaded by developers onto the Play Store and is re-signed with the
     deployment key once in the Play Store.
         * It's highly recommended to use the automatic cloud managed signing for
         the deployment key. For more information, see the [official Play Store documentation](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
@@ -61,7 +61,7 @@ delivery from a local machine.
         release mode by editing `android.buildTypes.release` in
         `[project]/android/app/build.gradle`.
     * ![iOS](/images/fastlane-cd/ios.png) On iOS, create and sign using a
-    distribution certificate instead of a development certification when you're
+    distribution certificate instead of a development certificate when you're
     ready to test and deploy using TestFlight or App Store.
         * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
@@ -69,11 +69,11 @@ delivery from a local machine.
 1. Create a `Fastfile` script for each platform.
     * ![Android](/images/fastlane-cd/android.png) On Android, follow the
     [Fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
-    It could be as simple as adding a `lane` that calls `upload_to_play_store`.
+    Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
     Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
     * ![iOS](/images/fastlane-cd/ios.png) On iOS, follow the [Fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
-    It could be as simple as adding a `lane` that calls `build_ios_app` with
+    Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
     `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
     build is required since `flutter build` builds an .app rather than archiving
     .ipas for release.
@@ -98,7 +98,7 @@ process to a continuous integration (CI) system.
 First, follow the local setup section described in 'Local setup' to make sure
 the process works before migrating onto a cloud system like Travis.
 
-The main caveat to consider is that since cloud instances are ephemeral and
+The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
