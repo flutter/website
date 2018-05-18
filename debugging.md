@@ -712,7 +712,18 @@ You can also debug a layout problem visually, by setting
 [`debugPaintSizeEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintSizeEnabled.html)
 to `true`. This is a boolean from the `rendering` library. It can be
 enabled at any time and affects all painting while it is true. The
-easiest way to set it is at the top of your `void main()` entry point.
+easiest way to set it is at the top of your `void main()` entry point. See code below:
+
+<!-- skip -->
+```dart
+//add import to rendering library
+import 'package:flutter/rendering.dart';
+
+void main() {
+  debugPaintSizeEnabled=true;
+  runApp(new MyApp());
+}
+```
 
 When it is enabled, all boxes get a bright teal border, padding (from
 widgets like `Padding`) is shown in faded blue with a darker blue box
