@@ -714,6 +714,7 @@ to `true`. This is a boolean from the `rendering` library. It can be
 enabled at any time and affects all painting while it is true. The
 easiest way to set it is at the top of your `void main()` entry point. See code below:
 
+<!-- skip -->
 ```dart
 //add import to rendering library
 import 'package:flutter/rendering.dart';
