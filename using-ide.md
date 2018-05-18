@@ -46,7 +46,10 @@ To create a new Flutter project from the Flutter starter app template:
 **File>New>Project...** from the main IDE window.
 1. Select **Flutter** in the menu, and click **Next**.
 1. Enter your desired **Project name** and **Project location**.
+1. If you might publish this app, [set the company domain](#note).
 1. Click **Finish**.
+
+{% include content/set-domain.md %}
 
 ### Creating a new project from existing source code
 
