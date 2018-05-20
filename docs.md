@@ -83,7 +83,7 @@ Dive deeper into topics that interest you.
 
 * [Flutter Widget Inspector](/inspector/)<br>
   How to use the widget inspector, a powerful tool that allows
-  you to explore widget trees, disable the emulators "slow mode"
+  you to explore widget trees, disable the "DEBUG"
   banner, display the performance overlay, and much more.
 
 * [Custom Fonts](/cookbook/design/fonts/)<br>
