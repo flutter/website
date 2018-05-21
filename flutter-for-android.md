@@ -1442,7 +1442,15 @@ both a ScrollView and an Android ListView.
   }
 {% endprettify %}
 
-# Gesture Detection and Touch Event Handling
+## How do I handle landscape transitions in Flutter?
+
+FlutterView handles the config change if AndroidManifest.xml contains:
+
+{% prettify yaml %}
+android:configChanges="orientation|screenSize"
+{% endprettify %}
+
+# Gesture detection and touch event handling
 
 ## How do I add an onClick listener to a widget in Flutter
 
