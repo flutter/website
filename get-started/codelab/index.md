@@ -523,7 +523,7 @@ class RandomWordsState extends State<RandomWords> {
           // ...then generate 10 more and add them to the suggestions list.
           [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
         [[highlight]]}[[/highlight]]
-        [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
+        [[highlight]]return _buildRow(_suggestions[i]);[[/highlight]]
       [[highlight]]}[[/highlight]]
     [[highlight]]);[[/highlight]]
   [[highlight]]}[[/highlight]]
