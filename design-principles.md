@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Design Principles
+title: Flutter's Development Philosophy
 
 permalink: /design-principles/
 ---
