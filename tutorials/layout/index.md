@@ -896,24 +896,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    var ratings = new Container(
-      padding: new EdgeInsets.all(20.0),
+    final Container ratings = new Container(
+      padding: const  EdgeInsets.all(20.0),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
+        children: <Widget>[
           new Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
+              const Icon(Icons.star, color: Colors.black),
+              const Icon(Icons.star, color: Colors.black),
+              const Icon(Icons.star, color: Colors.black),
+              const Icon(Icons.star, color: Colors.black),
+              const Icon(Icons.star, color: Colors.black),
             ],
           ),
-          new Text(
+          const Text(
             '170 Reviews',
-            style: new TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w800,
               fontFamily: 'Roboto',
@@ -950,7 +950,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // ...
 
-    var descTextStyle = new TextStyle(
+    final TextStyle descTextStyle = const TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
@@ -961,32 +961,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // DefaultTextStyle.merge allows you to create a default text
     // style that is inherited by its child and all subsequent children.
-    var iconList = DefaultTextStyle.merge(
+    final Widget iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: new Container(
         padding: new EdgeInsets.all(20.0),
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             new Column(
-              children: [
+              children: <Widget>[
                 new Icon(Icons.kitchen, color: Colors.green[500]),
-                new Text('PREP:'),
-                new Text('25 min'),
+                const Text('PREP:'),
+                const Text('25 min'),
               ],
             ),
             new Column(
-              children: [
+              children: <Widget>[
                 new Icon(Icons.timer, color: Colors.green[500]),
-                new Text('COOK:'),
-                new Text('1 hr'),
+                const Text('COOK:'),
+                const Text('1 hr'),
               ],
             ),
             new Column(
-              children: [
+              children: <Widget>[
                 new Icon(Icons.restaurant, color: Colors.green[500]),
-                new Text('FEEDS:'),
-                new Text('4-6'),
+                const Text('FEEDS:'),
+                const Text('4-6'),
               ],
             ),
           ],
@@ -1009,10 +1009,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    var leftColumn = new Container(
-      padding: new EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
+    final Container leftColumn = new Container(
+      padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
       child: new Column(
-        children: [
+        children: <Widget>[
           titleText,
           subTitle,
           ratings,
@@ -1045,12 +1045,12 @@ and accessed using `Images.asset`. For more information, see
 {% prettify dart %}
 body: new Center(
   child: new Container(
-    margin: new EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
+    margin: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
     height: 600.0,
     child: new Card(
       child: new Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           new Container(
             width: 440.0,
             child: leftColumn,
