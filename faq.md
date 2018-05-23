@@ -12,10 +12,10 @@ permalink: /faq/
 
 ### What is Flutter?
 
-Flutter is a mobile app SDK, complete with
-framework, widgets, and tools, that gives developers an
-easy and productive way to build and deploy
-beautiful mobile apps on both Android and iOS.
+Flutter is Google’s mobile app SDK for crafting high-quality
+native experiences on iOS and Android in record time.
+Flutter works with existing code, is used by developers
+and organizations around the world, and is free and open source.
 
 ### What does Flutter do?
 
@@ -114,18 +114,17 @@ to approachability for the majority of the system.
 ### Should I build my next production app with Flutter?
 
 Flutter is still being developed and is not yet at
-1.0.
+1.0. But Flutter is used inside of Google and apps built
+with Flutter are deployed to users in production.
+A few sample apps are shown in the [showcase](/showcase/).
+
+Some key features are not yet complete, however features that
+are completed are generally of high-quality and ready for use.
 
 Our APIs are stabilizing, and we continue to improve
 parts of the system based on user feedback.
 We email [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 when we make a change that might impact our users.
-
-Flutter is used inside of Google and apps built with Flutter
-are deployed to users.
-
-Some key features, such as accessibility, are not yet ready for
-broad deployment.
 
 So really, it is up to you. The features you need may be
 available today. Please let us know if you released an app
@@ -170,6 +169,12 @@ and themes. Of
 course, these widgets are only a starting point.
 Flutter is designed to make it easy to
 create your own widgets, or customize the existing widgets.
+
+### Does Flutter support Material Theming?
+
+Yes! The Flutter and Material teams collaborate closely,
+and Material Theming is fully supported. A number of
+examples of this are shown in the [MDC-103 Flutter: Material Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/) codelab.
 
 ### Does Flutter come with a testing framework?
 
@@ -363,7 +368,7 @@ is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
-### How is 'hot reload' different from 'full restart'?
+### How is 'hot reload' different from 'hot restart'?
 
 Hot Reload works by injecting updated source code files into the running Dart VM
 (Virtual Machine). This includes not only adding new classes, but also adding
@@ -385,12 +390,12 @@ You can compile and deploy your Flutter app to iOS and Android.
 Mobile operating systems: Android Jelly Bean, v16, 4.1.x or newer, and
 iOS 8 or newer.
 
-Mobile hardware: 64-bit iOS devices (starting with iPhone 5S and newer
-iPhone models), and ARM Android devices.
+Mobile hardware: iOS devices (iPhone 4S or newer) and ARM Android devices.
 
-Note that we currently do not support:
-  * ARM32 iOS devices (iPhone 4, iPhone 5; issue [#2089](https://github.com/flutter/flutter/issues/2089))
-  * x86 Android devices (issue [#9253](https://github.com/flutter/flutter/issues/9253))
+Note Flutter currently does not support building for x86 Android
+(issue [#9253](https://github.com/flutter/flutter/issues/9253))
+directly, however apps built for ARMv7 or ARM64 run fine (via ARM emulation
+on many x86 Android devices.
 
 We support developing Flutter apps with Android and iOS devices, as
 well as with Android emulators and the iOS simulator.
@@ -510,15 +515,7 @@ what you might need reflection/mirrors for – please let us know at
 Learn more about i18n and l10n in the
 [Flutter Internationalization Tutorial](/tutorials/internationalization/).
 
-Flutter has built-in support for basic accessibility features including
-screen readers on Android and iOS. Check the
-[Semantics](https://docs.flutter.io/flutter/widgets/Semantics-class.html)
-widget for ways to customize the accessibility experience of
-your Flutter app.
-
-We encourage you to email
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com) with your
-questions regarding these features.
+Learn more about a11y in the [accessibility documentation](/accessibility/).
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -609,7 +606,7 @@ It is possible to create a custom language that is then
 converted to widgets on the fly. Because build methods are "just code", they
 can do anything, including interpreting markup and turning it into widgets.
 
-### My app has a Slow Mode banner/ribbon in the upper right. Why am I seeing that?
+### My app has a Debug banner/ribbon in the upper right. Why am I seeing that?
 
 By default `flutter run` command uses the debug build configuration.
 
@@ -619,7 +616,7 @@ compiled using the standard [Android](#run-android) and [iOS](#run-ios)
 toolchains).
 
 The debug configuration also checks all asserts, which helps you catch errors
-early during development, but imposes a runtime cost. The "slow mode" banner
+early during development, but imposes a runtime cost. The "Debug" banner
 indicates that these checks are enabled. You can run your app without these
 checks by using either the `--profile` or `--release` flag to `flutter run`.
 

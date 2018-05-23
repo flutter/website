@@ -148,7 +148,7 @@ class, which we call `User`. Inside the `User` class, we have:
 This way, the _calling code_ can now have type safety, autocompletion for the
 `name` and `email` fields and compile-time exceptions. If we make typos or treat
 the fields as `int`s instead of `String`s, our app will not even compile,
-instead of crashing on runtime.
+instead of crashing at runtime.
 
 **user.dart**
 
@@ -231,12 +231,12 @@ The latest versions of these required dependencies can be seen by following
 ```yaml
 dependencies:
   # Your other regular dependencies here
-  json_annotation: ^0.2.2
+  json_annotation: ^0.2.3
 
 dev_dependencies:
   # Your other dev_dependencies here
-  build_runner: ^0.7.6
-  json_serializable: ^0.3.2
+  build_runner: ^0.8.0
+  json_serializable: ^0.5.0
 ```
 
 Run `flutter packages get` inside your project root folder (or click "Packages

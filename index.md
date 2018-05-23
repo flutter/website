@@ -3,13 +3,18 @@ title: Flutter - Beautiful native apps in record time
 layout: page
 homepage: true
 hide_title: true
+description: >
+  Flutter is Google’s mobile UI framework for crafting high-quality
+  native experiences on iOS and Android in record time.
+  Flutter works with existing code, is used by developers and organizations
+  around the world, and is free and open source.
 ---
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter Beta 2 now available!</span>
+        <span>Flutter Beta 3:</span>
         &nbsp;
-        <a href="https://medium.com/flutter-io/https-medium-com-flutter-io-announcing-flutters-beta-2-c85ba1557d5e">Learn More</a>.
+        <a href="https://developers.googleblog.com/2018/05/ready-for-production-apps-flutter-beta-3.html?utm_source=google&utm_medium=banner&utm_campaign=beta_3">Ready for production</a>
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
@@ -22,7 +27,7 @@ hide_title: true
     </h1>
 
     <div class="homepage__tagline">
-    Flutter is Google’s mobile UI framework
+    Flutter is Google’s mobile app SDK
     for crafting high-quality native interfaces
     on iOS and Android in record time. Flutter works with existing code,
     is used by developers and organizations around the world,

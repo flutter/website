@@ -14,6 +14,7 @@ Using the standard `ListView` constructor is perfect for lists that contain only
 a few items. We will also employ the built-in `ListTile` Widget to give our 
 items a visual structure.
 
+<!-- skip -->
 ```dart
 new ListView(
   children: <Widget>[
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'Basic List';
-    
+
     return new MaterialApp(
       title: title,
       home: new Scaffold(

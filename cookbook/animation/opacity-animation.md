@@ -24,6 +24,7 @@ Widget.
 First, we'll need something to fade in and out! In this example, we'll draw a
 green box on screen.
 
+<!-- skip -->
 ```dart
 new Container(
   width: 200.0,
@@ -50,6 +51,7 @@ To construct a `StatefulWidget`, we need to create two classes: A
 for Android Studio and VSCode include the `stful` snippet to quickly generate 
 this code!
 
+<!-- skip -->
 ```dart
 // The StatefulWidget's job is to take in some data and create a State class.
 // In this case, our Widget takes in a title, and creates a _MyHomePageState.
@@ -90,6 +92,7 @@ rebuild the Widget.
 Note: For more information on working with user input, please see the 
 [Handling Gestures](/cookbook/#handling-gestures) section of the Cookbook.
 
+<!-- skip -->
 ```dart
 new FloatingActionButton(
   onPressed: () {
@@ -117,6 +120,7 @@ The `AnimatedOpacity` Widget requires three arguments:
   * `duration`: How long the animation should take to complete
   * `child`: The Widget to animate. In our case, the green box.
 
+<!-- skip -->
 ```dart
 new AnimatedOpacity(
   // If the Widget should be visible, animate to 1.0 (fully visible). If

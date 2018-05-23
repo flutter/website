@@ -80,6 +80,7 @@ requires two arguments:
   screens.
   2. `child`: The Widget we want to animate across screens.
   
+<!-- skip -->
 ```dart
 new Hero(
   tag: 'imageHero',
@@ -98,6 +99,7 @@ as the first screen.
 After you apply the `Hero` Widget to the second screen, the animation between 
 screens will work!
 
+<!-- skip -->
 ```dart
 new Hero(
   tag: 'imageHero',

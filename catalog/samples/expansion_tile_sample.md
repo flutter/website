@@ -51,7 +51,8 @@ class ExpansionTileSample extends StatelessWidget {
           title: const Text('ExpansionTile'),
         ),
         body: new ListView.builder(
-          itemBuilder: (BuildContext context, int index) => new EntryItem(data[index]),
+          itemBuilder: (BuildContext context, int index) =>
+              new EntryItem(data[index]),
           itemCount: data.length,
         ),
       ),
@@ -62,15 +63,18 @@ class ExpansionTileSample extends StatelessWidget {
 // One entry in the multilevel list displayed by this app.
 class Entry {
   Entry(this.title, [this.children = const <Entry>[]]);
+
   final String title;
   final List<Entry> children;
 }
 
 // The entire multilevel list displayed by this app.
 final List<Entry> data = <Entry>[
-  new Entry('Chapter A',
+  new Entry(
+    'Chapter A',
     <Entry>[
-      new Entry('Section A0',
+      new Entry(
+        'Section A0',
         <Entry>[
           new Entry('Item A0.1'),
           new Entry('Item A0.2'),
@@ -81,17 +85,20 @@ final List<Entry> data = <Entry>[
       new Entry('Section A2'),
     ],
   ),
-  new Entry('Chapter B',
+  new Entry(
+    'Chapter B',
     <Entry>[
       new Entry('Section B0'),
       new Entry('Section B1'),
     ],
   ),
-  new Entry('Chapter C',
+  new Entry(
+    'Chapter C',
     <Entry>[
       new Entry('Section C0'),
       new Entry('Section C1'),
-      new Entry('Section C2',
+      new Entry(
+        'Section C2',
         <Entry>[
           new Entry('Item C2.0'),
           new Entry('Item C2.1'),
@@ -111,8 +118,7 @@ class EntryItem extends StatelessWidget {
   final Entry entry;
 
   Widget _buildTiles(Entry root) {
-    if (root.children.isEmpty)
-      return new ListTile(title: new Text(root.title));
+    if (root.children.isEmpty) return new ListTile(title: new Text(root.title));
     return new ExpansionTile(
       key: new PageStorageKey<Entry>(root),
       title: new Text(root.title),

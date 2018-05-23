@@ -1,0 +1,87 @@
+- name: Alibaba
+  description: >
+    Alibaba’s app incorporates Flutter to power parts of their app.
+  screenshot: /showcase/images/v4_alibaba.png
+  learn_more_link: https://www.alibaba.com/
+
+- name: Google AdWords
+  description: >
+    The Google AdWords app helps you keep your ad campaigns running smoothly
+    — no matter where your business takes you.
+  screenshot: /showcase/images/v3_adwords.png
+  learn_more_link: https://adwords.google.com/home/resources/adwords-app.html
+
+- name: AppTree
+  description: >
+    AppTree provides a low-code enterprise app platform for brands
+    like McDonalds, Stanford, Wayfair & Fermilab.
+  screenshot: /showcase/images/v3_apptree.png
+  learn_more_link: https://www.apptreerevolution.com/
+
+- name: Topline
+  description: >
+    Abbey Road Studios’ newest app for quick capture of song ideas.
+  screenshot: /showcase/images/v3_abbey_road_toplineapp_screenshot.png
+  android_download: https://play.google.com/store/apps/details?id=com.abbeyroadandroid
+
+- name: Birch Finance
+  description: >
+    Credit card rewards app to manage and optimize your existing cards.
+  screenshot: /showcase/images/v3_birch.png
+  android_download: https://play.google.com/store/apps/details?id=com.birch
+  learn_more_link: https://birchfinance.com/
+
+- name: Coach Yourself
+  description: >
+    A meditation app for the German-language market with coach Ramin Raygan.
+  screenshot: /showcase/images/v3_CoachYourself.png
+  android_download: https://play.google.com/store/apps/details?id=eu.coach_yourself.app
+  ios_download: https://itunes.apple.com/us/app/coach-yourself/id1372759980
+
+- name: Google Greentea
+  description: >
+    An internal customer management app used widely by Google sales
+    that provides rich visualizations for tracking sales targets.
+  screenshot: /showcase/images/v3_greentea.png
+
+- name: Hamilton Musical
+  description: >
+    Official app of the hit Broadway musical, Hamilton.
+    Includes daily lotteries, exclusive news and videos, a trivia game,
+    merchandise store, and more.
+  screenshot: /showcase/images/v3_hamliton.png
+  android_download: https://play.google.com/store/apps/details?id=com.hamilton.app
+  ios_download: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
+  learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
+
+- name: Hookle
+  description: >
+    Tool to share posts, monitor social activity, and manage multiple
+    social media accounts in one place.
+  screenshot: /showcase/images/v3_hookle.png
+  android_download: https://play.google.com/store/apps/details?id=net.hookle
+  ios_download: https://itunes.apple.com/us/app/hookle/id1330557977
+  learn_more_link: https://www.hookle.net
+
+- name: OfflinePal
+  description: >
+    OfflinePal collects activities in one place, from concerts and theaters,
+    to mountain hiking and tourist attractions.
+  screenshot: /showcase/images/v3_offlinepal.png
+  learn_more_link: https://www.youtube.com/watch?v=0guDC2S6EeY
+
+- name: VivaBem UOL
+  description: >
+    Guided meditation videos. UOL also provides news and information
+    about health and well-being from specialists.
+  screenshot: /showcase/images/v3_vivabem.png
+  ios_download: https://itunes.apple.com/br/app/vivabem-medita%C3%A7%C3%A3o/id1376295130
+  android_download: https://play.google.com/store/apps/details?id=br.com.uol.uolvivabem
+  learn_more_link: https://vivabem.uol.com.br/equilibrio/
+
+- name: BetaBubs
+  description: >
+    Emoji-only chat app for children with parental controls.
+  screenshot: /showcase/images/v3_betabubs.png
+  ios_download: https://itunes.apple.com/us/app/betabubs-play-emojis/id1363316057
+  android_download: https://play.google.com/store/apps/details?id=com.betabubs.playemojis

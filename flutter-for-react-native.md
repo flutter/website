@@ -287,12 +287,14 @@ For more information, see the [Get Started: Overview](https://flutter.io/get-sta
 
 ### How do I run my app?
 
+
 To run an app in React Native, from the project directory, the
 `npm run ios/android` or `yarn run ios/android` commands are used.
 
 ```JavaScript
 // React Native
 $ npm run ios/android
+
 
 //or
 
@@ -1946,7 +1948,7 @@ In Flutter, if you are using an IDE, you can use the IDE tools. If you start you
 | To save a screenshot to flutter. png| `s` ||
 | To quit| `q` ||
 
-### How do I perform hot reload?
+### How do I perform a hot reload?
 
 Flutter’s hot reload feature helps you quickly and easily experiment, build UIs, add features, and fix bugs. Instead of recompiling your app every time you make a change, you can reload your app instantly.
 The app is updated to reflect your change, and the current state of the app is preserved.
@@ -1954,8 +1956,10 @@ The app is updated to reflect your change, and the current state of the app is p
 In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on Android emulators.
 
 In Flutter, If you are using IntelliJ IDE or Android Studio, you can select Save All (⌘s/ctrl-s), or click the Hot Reload button on the toolbar.
+
 If you are running the app at the command line using `flutter run`, type `r` in the Terminal window.
 You can also perform a full restart by typing `R` in the Terminal window.
+
 
 ### Is there anything like Chrome Developer Tools in Flutter?
 
@@ -2138,7 +2142,7 @@ The following table lists commonly-used React Native components mapped to the co
 ||itemBuilder [required] |[[ Indexed Widget Builder](https://docs.flutter.io/flutter/widgets/IndexedWidgetBuilder.html)] helps in building the children on demand. This callback is called only with indices greater than or equal to zero and less than the itemCount.
 ||itemCount |[ int ] improves the ability of the ListView to estimate the maximum scroll extent.
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [Image](https://docs.flutter.io/flutter/widgets/Image-class.html)                         | [Image](https://facebook.github.io/react-native/docs/image.html)                                           | A widget that displays an image.                                                                                                       |
+| [Image](https://facebook.github.io/react-native/docs/image.html)                         | [Image](https://docs.flutter.io/flutter/widgets/Image-class.html)                                           | A widget that displays an image.                                                                                                       |
 |                                                                                           |  image [required]                                                                                          | The image to display.                                                                                                                  |
 |                                                                                           | Image. asset                                                                                                | Several constructors are provided for the various ways that an image can be specified.                                                 |
 |                                                                                           | width, height, color, alignment                                                                            | The style and layout for the image.                                                                                                         |
@@ -2173,8 +2177,10 @@ The following table lists commonly-used React Native components mapped to the co
 |                                                                                           | onTap                                                                                                      | A callback when a tap occurs.                                                                                                               |
 |                                                                                           | onDoubleTap                                                                                                | A callback when a tap occurs at the same location twice in quick succession.
 |||
+
 | [Text Input](https://docs.flutter.io/flutter/services/TextInput-class.html)                | [Text Input](https://facebook.github.io/react-native/docs/textinput.html)                                   | The interface to the system's text input control.                                                                                           |
 |                                                                                           | controller                                                                                                 | [ The [Text Editing Controller](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html) ] used to access and modify text.
+
 |||
 | [Text](https://facebook.github.io/react-native/docs/text.html)                          | [Text](https://docs.flutter.io/flutter/widgets/Text-class.html)                                            | The Text widget that displays a string of text with a single style.                                                                                                                                                                           |
 |                                                                                         | data                                                                                                      | [ String ] The text to display.                                                                                                                                                                              |

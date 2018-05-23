@@ -12,7 +12,7 @@ the root of our apps by the `MaterialApp`!
 
 After we define a Theme, we can use it within our own Widgets. In addition, the 
 Material Widgets provided by Flutter will use our Theme to set the background 
-colors and and font styles for AppBars, Buttons, Checkboxes, and more.    
+colors and font styles for AppBars, Buttons, Checkboxes, and more.    
 
 ## Creating an app theme
 
@@ -22,6 +22,7 @@ to the `MaterialApp` constructor.
 
 If no `theme` is provided, Flutter will create a fallback theme under the hood.
 
+<!-- skip -->
 ```dart
 new MaterialApp(
   title: title,
@@ -49,6 +50,7 @@ extending the parent theme.
 If we don't want to inherit any application colors or font styles, we can create
 a `new ThemeData()` instance and pass that to the `Theme` Widget.
 
+<!-- skip -->
 ```dart
 new Theme(
   // Create a unique theme with "new ThemeData"
@@ -69,6 +71,7 @@ theme. We can achieve this by using the
 [`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html) 
 method.
 
+<!-- skip -->
 ```dart
 new Theme(
   // Find and Extend the parent theme using "copyWith". Please see the next 
@@ -93,6 +96,7 @@ returns that. If not, it returns the App theme.
 In fact, the `FloatingActionButton` uses this exact technique to find the 
 `accentColor`!
  
+<!-- skip -->
 ```dart
 new Container(
   color: Theme.of(context).accentColor,

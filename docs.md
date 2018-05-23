@@ -83,13 +83,13 @@ Dive deeper into topics that interest you.
 
 * [Flutter Widget Inspector](/inspector/)<br>
   How to use the widget inspector, a powerful tool that allows
-  you to explore widget trees, disable the emulators "slow mode"
+  you to explore widget trees, disable the "DEBUG"
   banner, display the performance overlay, and much more.
 
 * [Custom Fonts](/cookbook/design/fonts/)<br>
   How to add new fonts to your app.
 
-* [Text Input](/text-input/)<br>
+* [Text Input](/cookbook/forms/text-input/)<br>
   How to set up basic text input.
 
 * [Debugging Flutter Apps](/debugging/)<br>

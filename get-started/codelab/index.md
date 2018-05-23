@@ -2,6 +2,7 @@
 layout: tutorial
 title: Write Your First Flutter App
 permalink: /get-started/codelab/
+image: /get-started/codelab/images/step7-themes.png
 ---
 
 <figure class="right-figure" style="max-width: 260px; padding-right: 10px">

@@ -9,7 +9,7 @@ command-line tools. However, we recommend using one of our editor plugins for an
 even better experience. With our editor plugins, you get code completion, syntax
 highlighting, widget edditing assists, run & debug support, and more.
 
-Follow the steps before to add an editor plugin for Android Studio, IntelliJ, or
+Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 [Next step: Create and run your first app](/get-started/test-drive/).
 
@@ -66,12 +66,12 @@ To install these:
 
   * [VS Code](https://code.visualstudio.com/), version 1.20.1 or later.
 
-### Install the Dart Code plugin
+### Install the Flutter plugin
 
   1. Start VS Code
   1. Invoke **View>Command Palette...**
   1. Type 'install', and select the **'Extensions: Install Extension'** action
-  1. Enter `dart code` in the search field, select 'Dart Code' in the list, and
+  1. Enter `flutter` in the search field, select 'Flutter' in the list, and
      click **Install**
   1. Select 'OK' to reload VS Code
 

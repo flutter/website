@@ -58,7 +58,7 @@ If Dart's intl package is new to you, see [Using the Dart intl tools.](#dart-too
 By default Flutter only provides US English localizations. To add
 support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
-`flutter_localizations`.  As of October 2017, this package supports 15
+`flutter_localizations`.  As of May 2018, this package supports 24
 languages.
 
 To use flutter_localizations, add the package as a dependency to your
@@ -225,7 +225,7 @@ of the corresponding classes. For example,
 `GlobalMaterialLocalizations.delegate` is a LocalizationsDelegate
 that produces an instance of GlobalMaterialLocalizations.
 
-As of October 2017, the global localization classes support [about 15
+As of May 2018, the global localization classes support [about 24
 languages.](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 <a name="defining-class"></a>

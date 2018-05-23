@@ -29,6 +29,7 @@ Widget from the [material library](https://docs.flutter.io/flutter/material/mate
 creates this visual structure for us and ensures important Widgets don't 
 overlap!
 
+<!-- skip -->
 ```dart
 new Scaffold(
   appBar: new AppBar(
@@ -43,6 +44,7 @@ new Scaffold(
 With the `Scaffold` in place, we can display a `SnackBar`! First, we need to 
 create a `SnackBar`, then display it using the `Scaffold`.
 
+<!-- skip -->
 ```dart
 final snackBar = new SnackBar(content: new Text('Yay! A SnackBar!'));
 

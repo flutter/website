@@ -43,6 +43,7 @@ reference to help you build up an application.
   * [Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
   * [Send data to a new screen](/cookbook/navigation/passing-data/)
   * [Return data from a screen](/cookbook/navigation/returning-data/)
+  * [Navigate with named routes](/cookbook/networking/named-routes/)
   * [Animating a Widget across screens](/cookbook/navigation/hero-animations/)
   
 ## Animation
@@ -63,4 +64,12 @@ reference to help you build up an application.
 
 ## Forms
 
+  * [Create and style a text field](/cookbook/forms/text-input/)
+  * [Retrieve the value of a text field](/cookbook/forms/retrieve-input/)
+  * [Handling changes to a text field](/cookbook/forms/text-field-changes/)
+  * [Focus a text field](/cookbook/forms/focus/)
   * [Building a form with validation](/cookbook/forms/validation/)
+
+## App Maintenance
+
+  * [Report errors to a service](/cookbook/maintenance/error-reporting/)
