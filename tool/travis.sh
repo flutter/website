@@ -41,7 +41,7 @@ dart tool/extract.dart
 
 echo "Analyzing the extracted Dart libraries."
 
-../flutter/bin/flutter analyze example/*.dart
+../flutter/bin/flutter analyze --no-current-package example/
 
 echo "Check formatting of the extracted Dart libraries."
 
