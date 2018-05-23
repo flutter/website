@@ -32,7 +32,7 @@ for D in _includes/code/*/*; do
     ../flutter/bin/flutter packages get ${D}
 
     echo "Run flutter analyze on ${D}"
-    ../flutter/bin/flutter analyze ${D}/*.dart
+    ../flutter/bin/flutter analyze --no-current-package ${D}
   fi
 done
 
