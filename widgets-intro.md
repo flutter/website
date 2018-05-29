@@ -46,6 +46,8 @@ void main() {
 }
 ```
 
+**Note:** Only takes change in `Fullter Full Restart` mode when copy into an exist main.dart file.
+
 The [`runApp`](https://docs.flutter.io/flutter/widgets/runApp.html) function
 takes the given
 [`Widget`](https://docs.flutter.io/flutter/widgets/Widget-class.html) and
