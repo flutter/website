@@ -81,7 +81,7 @@ completed, tell the Flutter framework that the widget’s `State` is
 updated, so it can update the UI.
 
 The important difference between stateless and
-stateful widgets is that `StatefulWidget`s have a `State` object which stores
+stateful widgets is that `StatefulWidget`s have a `State` object that stores
 state data and carries it over across tree rebuilds, so it's not lost.
 
 If you are in doubt, remember this rule: if a widget changes outside of
@@ -90,7 +90,7 @@ If the widget never changes, once built, it's stateless.
 However, even if a widget is stateful, the containing parent widget can still
 be stateless if it isn’t itself reacting to those changes (or other inputs).
 
-Let's take a look at how you use a `StatelessWidget`. A common
+The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
