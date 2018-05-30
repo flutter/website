@@ -364,24 +364,17 @@ you can see how to implement a signature painter in Flutter.
 <!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
-class SignaturePainter extends CustomPainter {
-  SignaturePainter(this.points);
-  final List<Offset> points;
-  void paint(Canvas canvas, Size size) {
-    var paint = new Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
-    for (int i = 0; i < points.length - 1; i++) {
-      if (points[i] != null && points[i + 1] != null)
-        canvas.drawLine(points[i], points[i + 1], paint);
-    }
-  }
-  bool shouldRepaint(SignaturePainter other) => other.points != points;
+
+void main() => runApp(new MaterialApp(home: new DemoApp()));
+
+class DemoApp extends StatelessWidget {
+  Widget build(BuildContext context) => new Scaffold(body: new Signature());
 }
+
 class Signature extends StatefulWidget {
   SignatureState createState() => new SignatureState();
 }
+
 class SignatureState extends State<Signature> {
   List<Offset> _points = <Offset>[];
   Widget build(BuildContext context) {
@@ -399,10 +392,22 @@ class SignatureState extends State<Signature> {
     );
   }
 }
-class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) => new Scaffold(body: new Signature());
+
+class SignaturePainter extends CustomPainter {
+  SignaturePainter(this.points);
+  final List<Offset> points;
+  void paint(Canvas canvas, Size size) {
+    var paint = new Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5.0;
+    for (int i = 0; i < points.length - 1; i++) {
+      if (points[i] != null && points[i + 1] != null)
+        canvas.drawLine(points[i], points[i + 1], paint);
+    }
+  }
+  bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
-void main() => runApp(new MaterialApp(home: new DemoApp()));
 {% endprettify %}
 
 ## How do I build custom widgets?
@@ -882,7 +887,6 @@ JSON, or doing computationally intensive math such as crypto or signal processin
 
 A full example that you can run is below.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -977,7 +981,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 
-// the entry point for the isolate
+  // the entry point for the isolate
   static dataLoader(SendPort sendPort) async {
     // Open the ReceivePort for incoming messages.
     ReceivePort port = new ReceivePort();
@@ -1018,7 +1022,7 @@ You can use it by adding it to your dependencies in `pubspec.yaml`:
 {% prettify yaml %}
 dependencies:
   ...
-  http: '>=0.11.3+16'
+  http: ^0.11.3+16
 {% endprettify %}
 
 Then to make a network call, you just `await` on the `async` function `http.get()`:

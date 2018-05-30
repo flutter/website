@@ -177,7 +177,7 @@ pair - a test script and a Flutter app instrumented to receive commands
 from the test. Unlike unit and widget tests, integration test code does not run
 in the same process as the app that's being tested. Instead, the tested
 app is launched on a _real device_ or in an _emulator_ (e.g. Android
-simulator or iOS Simulator). The test script runs on your computer. It connects
+Emulator or iOS Simulator). The test script runs on your computer. It connects
 to the app and issues commands to the app to perform various
 user actions. This is known as "driving" the app. Flutter provides tools
 and APIs, collectively referred to as _Flutter Driver_, to do just that.

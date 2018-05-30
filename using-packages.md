@@ -50,7 +50,12 @@ To add a package 'css_colors' to an app:
 
 1. Import it
    * Add a corresponding `import` statement in your Dart code.
-   
+
+1. Stop and restart the app, if necessary
+   * If the package brings platform-specific code (Java/Kotlin for Android, Swift/Objective-C for iOS), that code
+     must be built into your app. Hot reload and hot restart do this only for the Dart code of the package, so you
+     may have to do a full restart of the app to avoid errors like `MissingPluginException` when using the package.
+
 The
 ['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
 tab available on any package page on Pub is a handy reference for these steps.
@@ -273,5 +278,4 @@ class DemoPage extends StatelessWidget {
 }
 ```
 
-1. Run the app. When you click the 'Show Flutter homepage' you should see the
-phone's default browser open, and the Flutter homepage appear.
+1. Run the app (or stop and restart it, if you already had it running before adding the plugin). When you click the 'Show Flutter homepage' you should see the phone's default browser open, and the Flutter homepage appear.

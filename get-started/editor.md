@@ -7,7 +7,7 @@ permalink: /get-started/editor/
 You can build apps with Flutter using any text editor combined with our
 command-line tools. However, we recommend using one of our editor plugins for an
 even better experience. With our editor plugins, you get code completion, syntax
-highlighting, widget edditing assists, run & debug support, and more.
+highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, simply skip ahead to
