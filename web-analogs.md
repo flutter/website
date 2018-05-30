@@ -79,7 +79,7 @@ the top left.
 </div>
 
 ### Setting Background Color
-In Flutter, you set background color in a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
+In Flutter, you set the background color in a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
 ```decoration``` property.
 
 The CSS examples use the hex color equivalents to the Material color palette.
@@ -157,11 +157,10 @@ var container = new Container( // grey box
 ### Setting Container Width
 
 To specify the width of a [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget you set its ```width``` property. This is a fixed width, unlike the
-CSS max-width property which adjusts container width up to a maximum value. To
-mimic that effect in Flutter, use the ```constraints``` property of the Container.
+widget you set its `width` property just like in CSS. To
+mimic CSS's `max-width` in Flutter, use the `constraints` property of the Container.
 Create a new [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
-widget with a ```minWidth``` or ```maxWidth```.
+widget with a `minWidth` or `maxWidth`.
 
 For nested Containers, if the parent’s width is less than the child’s width,
 the child Container sizes itself to match the parent.
@@ -665,7 +664,8 @@ var container = new Container( // grey box
 
 ### Making Circles and Ellipses
 Making a circle in CSS requires a workaround of applying a border-radius of
-50% to all four sides of a rectangle.
+50% to all four sides of a rectangle (although there are [basic-shapes](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape)
+for some tasks).
 
 While this approach is supported with the ```borderRadius``` property of
 [BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html),
@@ -801,7 +801,7 @@ property.
 
 In Flutter, you transform the contents of a Text widget using the methods and
 operators of the [String class](https://docs.flutter.io/flutter/dart-core/String-class.html)
-in the dart:core library.
+in the dart:core library as you would with JavaScript instead.
 <div class="lefthighlight">
 {% prettify css%}
 <div class="greybox">

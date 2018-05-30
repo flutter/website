@@ -33,7 +33,7 @@ every new frame, Flutter's framework creates a new tree of widget instances. In
 comparison, an Android view is drawn once and does not redraw until invalidate
 is called.
 
-Unlike Android’s view hierarchy system where the framework mutate views,
+Unlike Android’s view hierarchy system where the framework mutates views,
 widgets in Flutter are immutable. This allows Flutter widgets to be very
 lightweight.
 

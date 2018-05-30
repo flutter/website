@@ -350,7 +350,7 @@ class MyButton extends StatelessWidget {
 
 The
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
-widget doesn't have an visual representation but instead detects gestures made
+widget doesn't have a visual representation but instead detects gestures made
 by the user. When the user taps the
 [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html),
 the
@@ -632,7 +632,7 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
-      // When user changes what is in the cart, we need to change _shoppingCart
+      // When a user changes what is in the cart, we need to change _shoppingCart
       // inside a setState call to trigger a rebuild. The framework then calls
       // build, below, which updates the visual appearance of the app.
 
