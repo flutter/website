@@ -47,11 +47,17 @@ themselves, and aren't directly drawing anything, but rather are a description
 of the UI and its semantics that get "inflated" into actual view objects under
 the hood.
 
-You'll see that Flutter’s widgets are often styled as ‘Material’ components that
-fit well in a Material Design context such as Android. Material design is just
-one language Flutter UIs can implement, though. On iOS, you can use the
-[Cupertino widgets](/widgets/cupertino/) to produce an
-interface that looks and feels like native iOS.
+Flutter includes the [Material Components](https://material.io/develop/flutter/)
+library. These are widgets that implement the
+[Material Design guidelines](https://material.io/design/). Material Design is a
+flexible design system [optimized for all
+platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+including iOS.
+
+But Flutter is flexible and expressive enough to implement any design language.
+On iOS, you can use the [Cupertino widgets](https://flutter.io/widgets/cupertino/)
+to produce an interface that looks like
+[Apple's iOS design language](https://developer.apple.com/design/resources/).
 
 ## How do I update `Widget`s?
 
