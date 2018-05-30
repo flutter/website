@@ -229,7 +229,7 @@ Future<Null> getBatteryLevel() async {
 
             <ul>
                 <li>Sub-second, stateful hot reload</li>
-                <li>IntelliJ/Android Studio: refactor, code completion, etc</li>
+                <li>Refactor, code completion, etc.</li>
                 <li>Dart language and core libs</li>
                 <li>Package manager</li>
             </ul>
@@ -238,8 +238,8 @@ Future<Null> getBatteryLevel() async {
 
             <ul>
                 <li>Interop with mobile OS APIs &amp; SDKs</li>
-                <li>Gradle/Java/Kotlin</li>
-                <li>Cocoapods/ObjC/Swift</li>
+                <li>Gradle: Java/Kotlin</li>
+                <li>Cocoapods: ObjC/Swift</li>
             </ul>
         </div>
 
@@ -279,14 +279,14 @@ Future<Null> getBatteryLevel() async {
 
             <ul>
                 <li>Native ARM code</li>
-                <li>Dead code elimination</li>
+                <li>"Tree shaking" compiler</li>
             </ul>
 
             <h4>Distribution</h4>
 
             <ul>
-                <li>App Store</li>
-                <li>Play Store</li>
+                <li>Apple App Store</li>
+                <li>Google Play Store</li>
             </ul>
         </div>
 
