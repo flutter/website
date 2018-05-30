@@ -365,7 +365,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 For more information, see
 [Animation & Motion widgets](/widgets/animation/),
 the [Animations tutorial](/tutorials/animation),
-and the [Animations overview](/animation/).
+and the [Animations overview](/animations/).
 
 ## How do I use a `Canvas` to draw/paint?
 
