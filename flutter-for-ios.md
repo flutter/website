@@ -2034,7 +2034,7 @@ In Flutter, access this functionality using the
 
 # Notifications
 
-## How do I set up Push Notifications?
+## How do I set up push notifications?
 
 In iOS, you need to register your app on the developer portal to allow
 push notifications.
