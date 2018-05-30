@@ -38,10 +38,10 @@ However, these have a few differences to a `UIView`. To start, widgets have a
 different lifespan: they are immutable and only exist until they need to be
 changed. Whenever widgets or their state change, Flutter’s framework creates
 a new tree of widget instances. In comparison, an iOS view is not recreated when
-it changes, but rather it's a mutable entity which is drawn once and does not
+it changes, but rather it's a mutable entity that is drawn once and doesn't
 redraw until it is invalidated using `setNeedsDisplay()`.
 
-Furthermore, unlike `UIView`, Flutter’s widgets are very lightweight, in part due
+Furthermore, unlike `UIView`, Flutter’s widgets are lightweight, in part due
 to their immutability. They're lightweight and immutable because they aren't views
 themselves, and aren't directly drawing anything, but rather are a description
 of the UI and its semantics that get "inflated" into actual view objects under
@@ -86,7 +86,7 @@ state data and carries it over across tree rebuilds, so it's not lost.
 
 If you are in doubt, remember this rule: if a widget changes outside of
 the `build` method (because of runtime user interactions, for example), it’s stateful.
-If the only time the widget changes is when it's constructed, it’s stateless.
+If the widget never changes, once built, it's stateless.
 However, even if a widget is stateful, the containing parent widget can still
 be stateless if it isn’t itself reacting to those changes (or other inputs).
 
@@ -163,11 +163,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I layout my widgets? Where is my Storyboard?
+## How do I lay out my widgets? Where is my Storyboard?
 
 In iOS, you might use a Storyboard file to organize your views and set
-constraints, or you might set your constraints programmatically within your view
-controllers. In Flutter, declare your layouts within code by composing
+constraints, or you might set your constraints programmatically in your view
+controllers. In Flutter, declare your layout in code by composing
 a widget tree.
 
 The following example shows how to display a simple widget and add padding to it:
