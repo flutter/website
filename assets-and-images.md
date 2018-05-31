@@ -32,13 +32,20 @@ flutter:
     - assets/background.png
 ```
 
-To include all assets under a folder specify the folder name with the `/` character at the end:
+To include all assets under a directory, specify the directory name with
+the `/` character at the end:
 
 ```yaml
 flutter:
   assets:
     - assets/
 ```
+
+Note that only files located directly in the directory will be
+included; to add files located in subdirectories, create an entry per
+directory.
+
+### Asset bundling
 
 The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
