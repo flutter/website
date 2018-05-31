@@ -776,7 +776,7 @@ class RandomWordsState extends State<RandomWords> {
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         [[highlight]]actions: <Widget>[[[/highlight]]
-          [[highlight]]new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
+          [[highlight]]new IconButton(icon: new Icon(Icons.list), onPressed: () => _pushSaved(context)),[[/highlight]]
         [[highlight]]],[[/highlight]]
       ),
       body: _buildSuggestions(),
@@ -787,13 +787,13 @@ class RandomWordsState extends State<RandomWords> {
 {% endprettify %}
 </li>
 
-<li markdown="1"> Add a `_pushSaved()` function to the RandomWordsState class.
+<li markdown="1"> Add a `_pushSaved(BuildContext context)` function to the RandomWordsState class.
 
 <!-- skip -->
 {% prettify dart %}
 class RandomWordsState extends State<RandomWords> {
   ...
-  [[highlight]]void _pushSaved() {[[/highlight]]
+  [[highlight]]void _pushSaved(BuildContext context) {[[/highlight]]
   [[highlight]]}[[/highlight]]
 }
 {% endprettify %}
@@ -814,7 +814,7 @@ which pushes the route to the Navigator's stack.
 
 <!-- skip -->
 {% prettify dart %}
-  [[highlight]]void _pushSaved() {[[/highlight]]
+  [[highlight]]void _pushSaved(BuildContext context) {[[/highlight]]
     [[highlight]]Navigator.of(context).push([[/highlight]]
     [[highlight]]);[[/highlight]]
   [[highlight]]}[[/highlight]]
@@ -829,7 +829,7 @@ which pushes the route to the Navigator's stack.
 
 <!-- skip -->
 {% prettify dart %}
-  void _pushSaved() {
+  void _pushSaved(BuildContext context) {
     Navigator.of(context).push(
       [[highlight]]new MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
@@ -866,7 +866,7 @@ Add the highlighted code below:
 
 <!-- skip -->
 {% prettify dart %}
-  void _pushSaved() {
+  void _pushSaved(BuildContext context) {
     Navigator.of(context).push(
       new MaterialPageRoute(
         builder: (context) {
