@@ -32,6 +32,21 @@ flutter:
     - assets/background.png
 ```
 
+To include all assets under a directory, specify the directory name with
+the `/` character at the end:
+
+```yaml
+flutter:
+  assets:
+    - assets/
+```
+
+Note that only files located directly in the directory will be
+included; to add files located in subdirectories, create an entry per
+directory.
+
+### Asset bundling
+
 The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
@@ -71,6 +86,15 @@ flutter:
 ...then both `graphics/background.png` and `graphics/dark/background.png`
 will be included in your asset bundle. The former is considered the
 _main asset_, while the latter is considered a _variant_.
+
+If on the other hand the graphics directory is specified:
+```yaml
+flutter:
+  assets:
+    - graphics/
+```
+
+... then `graphics/my_icon.png`, `graphics/background.png` and `graphics/dark/background.png` will be included.
 
 Flutter uses asset variants when choosing resolution appropriate
 images; see below. In the future, this mechanism may be extended to

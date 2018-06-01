@@ -337,14 +337,12 @@ the Flutter client side.
 import android.os.Bundle
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity() : FlutterActivity() {
   private val CHANNEL = "samples.flutter.io/battery"
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    GeneratedPluginRegistrant.registerWith(this)
 
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
       // TODO
@@ -545,7 +543,6 @@ tied to the channel name `samples.flutter.io/battery`:
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    GeneratedPluginRegistrant.register(with: self);
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
     let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
