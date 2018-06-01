@@ -124,10 +124,14 @@ To make a change that will require developers to change their code:
     label.
 
  2. Send an e-mail to <mailto:flutter-dev@googlegroups.com> to socialize
-    your proposed change. The e-mail should include the following:
+    your proposed change. The purpose of this e-mail is to see if you can
+    get consensus around your change. **You are not telling people that
+    the change will happen, you are asking them for permission.**
+    The e-mail should include the following:
 
-    - A subject line that clearly summarises the change and sounds like it
-      matters (so that people can spot these e-mails among the noise).
+    - A subject line that clearly summarises the proposed change and sounds like it
+      matters (so that people can spot these e-mails among the noise). Prefix
+      the subject line with `[Breaking Change]`.
 
     - A summary of each change you propose.
 
@@ -146,8 +150,8 @@ To make a change that will require developers to change their code:
     - A request that people notify you if this change will be a problem,
       perhaps by discussing the change in the issue tracker on on the pull request.
 
- 3. If folks agree that the benefits of changing the API outweigh the stablity
-    costs, you can proceed with the normal code review process for making
+ 3. **If folks agree that the benefits of changing the API outweigh the stablity
+    costs**, you can proceed with the normal code review process for making
     changes. You should leave some time between steps 2 and 3 (at a bare minimum
     24 hours during the work week so that people in all time zones have had a
     chance to see it, but ideally a week or so).
@@ -175,7 +179,7 @@ class FooInterface {
 ```
 
 If you use `@deprecated`, make sure to remember to actually remove the feature a few
-weeks later, do not just leave it forever!
+weeks later (after the next beta release), do not just leave it forever!
 
 
 #### Google-only responsibilities
