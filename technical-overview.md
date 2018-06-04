@@ -22,7 +22,7 @@ buttons, dropdown lists, and a shopping cart page. To look at the single codebas
 for this and more examples, [visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
-in [Dart](https://dartlang.org/), which will look familiar if you've used a
+in [Dart](https://dartlang.org/), which looks familiar if you've used a
 language like Java or JavaScript. Experience with object-oriented languages
 is definitely helpful, but even non-programmers have made Flutter apps!
 

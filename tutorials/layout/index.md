@@ -1479,7 +1479,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ### Card
 
 A Card, from the Material Components library, contains related nuggets of information
-and can be composed from most any widget, but is often used with ListTile.
+and can be composed from almost any widget, but is often used with ListTile.
 Card has a single child, but its child can be a column, row, list, grid,
 or other widget that supports multiple children. By default, a Card shrinks
 its size to 0 by 0 pixels. You can use

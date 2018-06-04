@@ -26,8 +26,8 @@ the Flutter extension (which includes Flutter functionality).
 
 ### Updating the extension<a name="updating"/>
 
-Updates to the extension will be shipped on a regular basis. By default, VS Code will
-automatically update extensions when updates are available.
+Updates to the extension are shipped on a regular basis. By default,
+VS Code automatically updates extensions when updates are available.
 
 To install updates manually:
 
@@ -63,7 +63,7 @@ The Flutter extension performs code analysis that enables:
 * Navigating to type declarations (**Go to Definition** or `F12`), and finding type
   usages (**Find All References** or `Shift`+`F12`).
 * Viewing all current source code problems (**View>Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
-  Any analysis issues will be shows in the Problems pane:<br>
+  Any analysis issues are shown in the Problems pane:<br>
   <img src="/images/vscode/problems.png" style="width:660px;height:141px" alt="Problems pane" />
 
 ## Running and Debugging
@@ -84,23 +84,25 @@ as a Flutter project. Please ensure the folder that contains your `pubspec.yaml`
 *Note*: If the status bar reads **No Devices** Flutter has not been able to discover any connected
 iOS or Android devices or simulators. You need to connect a device, or start a simulator, to proceed.
 
-The Flutter extension will automatically select the last device connected, however if you have multiple
-devices/simulators connected you can click on the device in the status bar to be presented with a pick-list
-at the top of the screen to allow you to select the device to use for running/debugging.
+The Flutter extension automatically selects the last device connected,
+however if you have multiple devices/simulators connected you can click
+on the device in the status bar to be presented with a pick-list
+at the top of the screen that allows you to select the device to use for
+running/debugging.
 
 ### Run app without breakpoints
 
 1. Click **Debug>Start Without Debugging** in main IDE window or press `Ctrl`+`F5`.
-* The status bar will turn orange to show you are in a debug session
-* The bottom **Debug Console** will show output:<br>
+* The status bar turns orange to show you are in a debug session
+* The bottom **Debug Console** shows output:<br>
 <img src="/images/vscode/debug_console.png" style="width:490px;height:208px" alt="Debug Console" />
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
 1. Click **Debug>Start Debugging** in main IDE window or press `F5`.
-* The left **Debug Sidebar** will show Stack Frames and Variables.
-* The bottom **Debug Console** pane will show detailed logs output.
+* The left **Debug Sidebar** shows Stack Frames and Variables.
+* The bottom **Debug Console** pane shows detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
   click the cog at the top of the **Debug Sidebar** to create a `launch.json`
   file and customise values.
@@ -115,7 +117,9 @@ of your changes almost instantly with the 'hot reload' feature. See
 
 ### Debugging visual layout issues
 
-During a debug session, several additional debugging commands will be added to the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), including:
+During a debug session, several additional debugging commands are added to the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette),
+including:
 
 * 'Toggle Baseline Painting': Causes each RenderBox to paint a line at each of its
   baselines.
@@ -155,11 +159,11 @@ can assist in correcting it.
 #### Wrap with new widget assist
 This can be used when you have a widget that you want to wrap in a surrounding widget,
 for example if you want to wrap a widget in a `Row` or `Column`.
- 
+
 ####  Wrap widget list with new widget assist
 Similar to the assist above, but for wrapping an existing list of widgets rather than an
 individual widget.
- 
+
 #### Convert child to children assist
 Changes a child argument to a children argument, and wraps the argument value in a list.
 
@@ -187,11 +191,13 @@ the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterfac
 
 **Hot Reload**
 
-During a debug session clicking the **Restart** button on the **Debug Toolbar** or
-pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS) will perform a hot reload.
+During a debug session, clicking the **Restart** button on the **Debug
+Toolbar**, or pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS)
+performs a hot reload.
 
-Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts** command
-from the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts**
+command from the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 **Hot Restart**
 
@@ -208,7 +214,7 @@ types of code changes cannot be hot reloaded though:
 
 For these changes you can fully restart your application, without having to end
 your debugging session by running the **Flutter: Hot Restart** command from the
-[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` will cause a hot restart of the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` causes a hot restart of the
 application.
 
 ## Troubleshooting
