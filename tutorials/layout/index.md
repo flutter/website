@@ -302,7 +302,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //...
-
     Widget textSection = new Container(
       padding: const EdgeInsets.all(32.0),
       child: new Text(
@@ -331,6 +330,8 @@ so you can now reference it from your code:
 <!-- code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
+return new MaterialApp(
+//...
 body: new ListView(
   children: [
     new Image.asset(
@@ -340,7 +341,9 @@ body: new ListView(
     ),
     // ...
   ],
-)
+),
+//...
+);
 {% endprettify %}
 
 `BoxFit.cover` tells the framework that the image should be as small as
@@ -357,19 +360,30 @@ when running the app on a small device.
 <!-- code/layout/lakes/main.dart -->
 {% prettify dart %}
 //...
-body: new ListView(
-  children: [
-    new Image.asset(
-      'images/lake.jpg',
-      width: 600.0,
-      height: 240.0,
-      fit: BoxFit.cover,
-    ),
-    titleSection,
-    buttonSection,
-    textSection,
-  ],
-),
+return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Top Lakes'),
+        ),
+        body: new ListView(
+          children: [
+            new Image.asset(
+              'images/lake.jpg',
+              width: 600.0,
+              height: 240.0,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
+      ),
+    );
 //...
 {% endprettify %}
 
