@@ -327,3 +327,14 @@ You might be wondering how the command finds the correct test file. The
 `flutter drive` command uses a convention to look for the test file in the same
 directory as the instrumented `--target` app that has the same file name
 but for the `_test` suffix in it.
+
+## Continuous integration and testing
+
+For information on continuous deployment and testing, see
+
+* [Continuous Delivery using Fastlane with Flutter](/fastlane-cd/)
+* [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
+
+
+
+
