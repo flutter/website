@@ -32,12 +32,12 @@ A few examples of the differences between JavaScript and Dart are described
 
 ### Entry point
 
-JavaScript doesn't have an entry function—you define the entry point.
+JavaScript doesn't have a pre-defined entry function—you define the entry point.
 
 <!-- skip -->
 ```JavaScript
 // JavaScript
-function main() {
+function startHere() {
   // Can be used as entry point
 }
 ```
@@ -129,7 +129,7 @@ int x; // == null
 
 Try it out in the [DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74e9781a2c7).
 
-For more information, see the documentation on [variables](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-3).
+For more information, see the documentation on [variables](https://www.dartlang.org/guides/language/language-tour#variables).
 
 ### Checking for null or zero
 
@@ -191,7 +191,7 @@ bool fn() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/5454e8bfadf3000179d19b9bc6be9918).
 
-For more information, see the documentation on [functions](https://www.dartlang.org/resources/dart-tips/dart-tips-ep-6).
+For more information, see the documentation on [functions](https://www.dartlang.org/guides/language/language-tour#functions).
 
 ### Asynchronous programming
 #### Futures
@@ -293,7 +293,7 @@ To create an app in Flutter, do one of the following:
 $ flutter create <projectname>
 {% endprettify%}
 
-For more information, see the [Get Started: Overview](../get-started/) tutorial that
+For more information, see the [Get Started: Overview](/get-started/) tutorial that
 walks you through creating a button-click counter app. Creating a Flutter
  project builds all the files that you need to run a sample app on both Android
  and iOS devices.
@@ -310,9 +310,9 @@ In React Native, you would run `npm run` or `yarn run` from the project
 
  Your app runs on a connected device, the iOS emulator, or the Android simulator.
 
-For more information, see the Flutter [Getting Started](../get-started/) documentation.
+For more information, see the Flutter [Getting Started](/get-started/) documentation.
 
-### How do I import widgets??
+### How do I import widgets?
 
 In React Native, you need to import each required component.
 
@@ -334,7 +334,7 @@ import 'package:flutter/my_widgets.dart';
 Whichever widget package you import, Dart pulls in only the widgets that are
  used in your app.
 
-For more information, see the [Flutter Widgets Catalog](../widgets/).
+For more information, see the [Flutter Widgets Catalog](/widgets/).
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
 
@@ -466,20 +466,6 @@ The important difference between stateless and stateful widgets is that
  StatefulWidgets have a State object that stores state data and carries it over
   across tree rebuilds, so it's not lost.
 
-The widget tree for the previous example consists of 5 widgets: the
- [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) root widget, and the  [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html), [AppBar](https://docs.flutter.io/flutter/material/AppBar-class.html),   [Center](https://docs.flutter.io/flutter/widgets/Center-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widgets.
-
-The `MaterialApp` widget wraps a number of widgets that are commonly required
-for Material Design applications and the `Scaffold` widget implements the basic
-Material Design visual layout structure.
-
-When you create an app that uses Material Design, use the
-[MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
-class as the root and define a theme that can be accessed across the app. And
-when you create a screen, use the
-[`Scaffold`](https://docs.flutter.io/flutter/material/Scaffold-class.html)
-widget which creates a visual scaffold for the Material Design widgets.
-
 In simple or basic apps it's easy to nest widgets, but as the code base gets
 larger and the app becomes complex, you should break deeply nested widgets into
 functions that return the widget or smaller classes. Creating separate functions
@@ -522,7 +508,7 @@ as shown in the `build` function in the following example.
 
 // Flutter
 class CustomCard extends StatelessWidget {
-  [[highlight]]CustomCard({@requiredthis.index, @required [[/highlight]]
+  [[highlight]]CustomCard({@required this.index, @required [[/highlight]]
      [[highlight]]this.onPress});[[/highlight]]
 
   final index;
@@ -659,7 +645,7 @@ widget’s build method.
 image: new AssetImage('assets/background.png'),
 ```
 
-For more information, see [Adding Assets and Images in Flutter](../assets-and-images/).
+For more information, see [Adding Assets and Images in Flutter](/assets-and-images/).
 
 ### How do I load images over a network?
 
@@ -707,9 +693,9 @@ If using an IDE, it often runs `flutter packages get` for you, or it might
 import 'package:flutter/cupertino.dart';
 ```
 
-For more information, see [Using Packages](../using-packages/) and [Developing Packages & Plugins](../developing-packages/).
+For more information, see [Using Packages](/using-packages/) and [Developing Packages & Plugins](/developing-packages/).
 
-You can find many packages shared by Flutter developers in the [Flutter Packages](https://pub.dartlang.org/flutter/) section of [pub.dartlang.org](pub.dartlang.org).
+You can find many packages shared by Flutter developers in the [Flutter Packages](https://pub.dartlang.org/flutter/) section of [pub.dartlang.org](https://pub.dartlang.org/).
 
 ## Flutter widgets
 
@@ -731,11 +717,11 @@ a visual representation of their own. Instead, their sole purpose is to control
 some aspect of another widget’s layout. To understand why a widget renders in a
 certain way, it’s often helpful to inspect the neighboring widgets.
 
-For more information, see the [Flutter Technical Overview](../technical-overview/).
+For more information, see the [Flutter Technical Overview](/technical-overview/).
 
 For more information about the core widgets from the Widgets package, see
-[Flutter Basic Widgets](../widgets/basics/), the [Flutter Widget Catalog](../widgets/), or the
-[Flutter Widget Index](../widgets/widgetindex/).
+[Flutter Basic Widgets](/widgets/basics/), the [Flutter Widget Catalog](/widgets/), or the
+[Flutter Widget Index](/widgets/widgetindex/).
 
 ## Views
 ### What is the equivalent of the `View` container?
@@ -746,7 +732,7 @@ style, touch handling, and accessibility controls.
 In Flutter, you can use the core layout widgets in the Widgets library, such
  as  [Container](https://docs.flutter.io/flutter/widgets/Container-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Row](https://docs.flutter.io/flutter/widgets/Row-class.html), and     [Center](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
-For more information, see the [Layout Widgets](../widgets/layout/) catalog.
+For more information, see the [Layout Widgets](/widgets/layout/) catalog.
 
 ### What is the equivalent of `FlatList` or `SectionList`?
 
@@ -868,8 +854,8 @@ class _MyCanvasState extends State<MyCanvas> {
 In React Native, most of the layout can be done with the props that are passed
 to a specific component. For example, you could use the `style` prop on the
 `View` component in order to specify the flexbox properties. To arrange your
-components in a column, you would specify a prop such as: `flexDirection:
-“column”`.
+components in a column, you would specify a prop such as:
+`flexDirection: “column”`.
 
 <!-- skip -->
 ```JavaScript
@@ -920,7 +906,7 @@ new Center(
 ```
 Flutter provides a variety of layout widgets in its core widget library. For example, [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html), and [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
-For a complete list, see [Layout Widgets](../widgets/layout/).
+For a complete list, see [Layout Widgets](/widgets/layout/).
 
 
 
@@ -1048,13 +1034,12 @@ new Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 When using the `Icons` class, make sure to set `uses-material-design: true` in
 the project's `pubspec.yaml` file. This ensures that
 the `MaterialIcons` font, which displays the icons, is included in your app.
-This font is used to display the icons.
 {% prettify dart %}
 name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
-Flutter's [Cupertino (iOS-style)](../widgets/cupertino/) package provides high fidelity widgets
+Flutter's [Cupertino (iOS-style)](/widgets/cupertino/) package provides high fidelity widgets
 for the current iOS design language. To use the `CupertinoIcons` font, add
  a dependency for `cupertino_icons` in your project's 
  `pubspec.yaml` file.
@@ -1065,7 +1050,7 @@ dependencies:
   cupertino_icons: ^0.1.0
 ```
 
-To globally customize the colors and styles of Material Components, use a `ThemeData` to specify default colors for various aspects of the theme. Set the theme property in `MaterialApp` to the `ThemeData` object. The  [`Colors`](https://docs.flutter.io/flutter/material/Colors-class.html)
+To globally customize the colors and styles of components, use `ThemeData` to specify default colors for various aspects of the theme. Set the theme property in `MaterialApp` to the `ThemeData` object. The  [`Colors`](https://docs.flutter.io/flutter/material/Colors-class.html)
  class provides colors from the Material Design [color palette](https://material.io/guidelines/style/color.html).
 
  The following example sets the primary swatch to `blue` and the text selection to `red`.
@@ -1093,7 +1078,7 @@ class SampleApp extends StatelessWidget {
 In React Native, common themes are defined for components in stylesheets and
 then used in components.
 
-In Flutter, you can add uniform styling for almost everything by defining the
+In Flutter, create uniform styling for almost everything by defining the
  styling in the [`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html) class and passing it to the theme property
  in the [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget.
 
@@ -1137,57 +1122,8 @@ A `Theme` can be applied even without using the `MaterialApp` widget. The
 State is information that can be read synchronously when a widget is built or information that might change during the lifetime of a widget. To manage app state in Flutter, use a
  [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html) paired with a State object.
 
-### What are stateful and stateless widgets and how do I use them?
 
-In React Native, state-specific components don't exist, but you can call
- `setState` in any component provided that it manages that state.
-
-<!-- skip -->
-```JavaScript
-// React Native
-export default class BlinkApp extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      buttonText: "blink",
-      showText: true,
-      text: "I love blinking"
-    };
-    this.toggleBlinkState = this.toggleBlinkState.bind(this);
-    var handle;
-  }
-
-  toggleBlinkState() {
-    if (this.state.buttonText == "blink") {
-      handle = setInterval(() => {
-        this.setState(previousState => {
-          return { showText: !previousState.showText };
-        });
-      }, 1000);
-      this.setState({
-        buttonText: "Stop blinking"
-      });
-    } else {
-      clearInterval(handle);
-      this.setState({ buttonText: "blink", showText: true });
-    }
-  }
-
-  render() {
-    let display = this.state.showText ? this.state.text : " ";
-    return (
-      <View style={%raw%}{{ flex: 1, justifyContent: "center", alignItems: "center" }}{%endraw%}>
-        <StatusBar hidden={true} />
-        <Text>{display} </Text>
-        <Button onPress={this.toggleBlinkState} title={this.state.buttonText} />
-      </View>
-    );
-  }
-}
-```
-
-#### The StatelessWidget
+### The StatelessWidget
 
 A `StatelessWidget` in Flutter is a widget that doesn't require a state change—it has no
 internal state to manage.
@@ -1196,7 +1132,7 @@ internal state to manage.
  describing does not depend on anything other than the configuration information
  in the object itself and the [`BuildContext`](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) in which the widget is inflated.
 
- [Icons](https://docs.flutter.io/flutter/material/Icons-class.html), [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets, which subclass [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
+[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html),  [CircleAvator](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets which subclass  [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
 
 <!-- skip -->
@@ -1222,17 +1158,17 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-In the previous example, you use the constructor of the `MyStatelessWidget` class
+In the previous example, you used the constructor of the `MyStatelessWidget` class
 to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`—it contains immutable data.
 
-The `build` method of a stateless widget is typically only called in three
+The `build` method of a stateless widget is typically called in only three
  situations:
 * When the widget is inserted into a tree
 * When the widget's parent changes its configuration
 * When an [`InheritedWidget`](https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html) it depends on, changes
 
-#### The StatefulWidget
+### The StatefulWidget
 
 A [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html) is a widget that changes state. Use the `setState`
 method to manage the state changes for a `StatefulWidget`. A call to `setState`
@@ -1402,6 +1338,49 @@ class MyStatelessWidget extends StatelessWidget {
 |<img src="images/state_change_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="images/state_change_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
+
+## Props
+
+In React Native, most components can be customized when they are created with
+different parameters or properties, called `props`. These
+parameters can be used in a child component using `this.props`.
+
+<!-- skip -->
+```JavaScript
+// React Native
+class CustomCard extends React.Component {
+  render() {
+    return (
+      <View>
+        <Text> Card {this.props.index} </Text>
+        <Button
+          title="Press"
+          onPress={() => this.props.onPress(this.props.index)}
+        />
+      </View>
+    );
+  }
+}
+class App extends React.Component {
+
+  onPress = index => {
+    console.log("Card ", index);
+  };
+
+  render() {
+    return (
+      <View>
+        <FlatList
+          data={[ ... ]}
+          renderItem={({ item }) => (
+            <CustomCard onPress={this.onPress} index={item.key} />
+          )}
+        />
+      </View>
+    );
+  }
+}
+```
 
 In Flutter, you assign a local variable or function marked `final` with the
  property received in the parameterized constructor.
@@ -1622,12 +1601,9 @@ const MyApp = TabNavigator(
 ```
 
 Flutter provides several specialized widgets for drawer and tab navigation:
-
 * [TabController](https://docs.flutter.io/flutter/material/TabController-class.html)—Coordinates the tab selection between a TabBar and a TabBarView.  
-
 * [TabBar](https://docs.flutter.io/flutter/material/TabBar-class.html) —Displays a horizontal row of tabs.  
 * [Tab](https://docs.flutter.io/flutter/material/Tab-class.html)—Creates a material design TabBar tab.  
-
 * [TabBarView](https://docs.flutter.io/flutter/material/TabBarView-class.html)—Displays the widget that corresponds to the currently selected tab.
 
 
@@ -1762,7 +1738,7 @@ Widget build(BuildContext context) {
 
 ## Gesture detection and touch event handling
 
-To listen for and respond to gestures, Flutter includes taps, drags, and
+To listen for and respond to gestures, Flutter supports taps, drags, and
 scaling. The gesture system in Flutter has two separate layers. The first layer
 includes raw pointer events, which describe the location and movement of
 pointers, (such as touches, mice, and styli movements), across the screen. The
@@ -1820,10 +1796,7 @@ class App extends Component {
 }
 ```
 
-In Flutter, to add a click or press listeners to a widget, you can use buttons
- or touchable widgets which have `onPress` parameters. Or, you can wrap widgets
-  in a [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) widget that can add event detection to any widget
-  by passing the function in the respective callback.
+In Flutter, to add a click (or press) listener to a widget, use a button or a touchable widget that has an `onPress: field`. Or, add gesture detection to any widget by wrapping it in a [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
 
 <!-- skip -->
 ```Dart
@@ -1867,7 +1840,7 @@ For more information, including a list of Flutter `GestureDetector` callbacks,
 
 <br>
 
-## Making HTTP networking requests
+## Making HTTP network requests
 
 Fetching data from the internet is common for most apps. And in Flutter, the `http` package provides the simplest way to fetch data from the internet.
 
@@ -1991,9 +1964,9 @@ displays the current text entered in the text field. This is achieved using an
 [`alertDialog`](https://docs.flutter.io/flutter/material/AlertDialog-class.html) widget that displays the alert message, and the text from
 the `TextField` is accessed by the `text` property of the [TextEditingController](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html).
 
-### How do I use form widgets?
+### How do I use Form widgets?
 
-In Flutter, use the [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html) widget—where [`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html) widgets along
+In Flutter, use the [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html) widget where [`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html) widgets along
 with the submit button are passed as children. The `TextFormField` widget has a
  parameter called [`onSaved`](https://docs.flutter.io/flutter/widgets/FormField/onSaved.html) which takes a callback and executes when
  the form is saved. A `FormState` object is used to save, reset, or validate
@@ -2113,7 +2086,7 @@ in the terminal window, or type the following shortcuts:
 | Widget hierarchy of the app| `w`| debugDumpApp()|
 | Rendering tree of the app | `t`| debugDumpRenderTree()|
 | Layers| `L`| debugDumpLayerTree()|
-| Accessibility | `S` (traversal order) or `U` (inverse hit test order)|debugDumpSemantics()|
+| Accessibility | `S` (traversal order) or<br>`U` (inverse hit test order)|debugDumpSemantics()|
 | To toggle the widget inspector | `i` | WidgetsApp. showWidgetInspectorOverride|
 | To toggle the display of construction lines| `p` | debugPaintSizeEnabled|
 | To simulate different operating systems| `o` | defaultTargetPlatform|
@@ -2172,7 +2145,7 @@ toolbar, then click on the desired widget on an attached phone or simulator. The
 widget is highlighted in your app’s UI. You’ll see the widget in the widget
 hierarchy in IntelliJ and the individual properties for that widget.
 
-For more information, see  [Debugging Flutter Apps](../debugging/).
+For more information, see  [Debugging Flutter Apps](/debugging/).
 
 ## Animation
 
@@ -2344,11 +2317,11 @@ The following table lists commonly-used React Native components mapped to the co
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Raised Button](https://docs.flutter.io/flutter/material/RaisedButton-class.html)                           | A basic raised button.                                                                              |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                          |
-|                                                                                           | Child  (A Text widget)                                                                             | The button's label.                                                                                                      |
+|                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
 | [Button](https://facebook.github.io/react-native/docs/button.html)                        | [Flat Button](https://docs.flutter.io/flutter/material/FlatButton-class.html)                               | A basic flat button.                                                                                                         |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                            |
-|                                                                                           | Child  (a Text widget)                                                                             | The button's label.                                                                                                      |
+|                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
 | [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html)                | [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html)                                    | A scrollable list of widgets arranged linearly.|
 ||        children                                                                              | 	( <Widget\> [ ])  List of child widgets to display.
