@@ -331,16 +331,22 @@ so you can now reference it from your code:
 <!-- code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-body: new ListView(
-  children: [
-    new Image.asset(
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    //...
+
+    Widget imageSection = new Image.asset(
       'images/lake.jpg',
+      width: 600.0,
       height: 240.0,
       fit: BoxFit.cover,
-    ),
-    // ...
-  ],
-)
+    );
+
+    //...
+  }
+}
 {% endprettify %}
 
 `BoxFit.cover` tells the framework that the image should be as small as
@@ -359,12 +365,7 @@ when running the app on a small device.
 //...
 body: new ListView(
   children: [
-    new Image.asset(
-      'images/lake.jpg',
-      width: 600.0,
-      height: 240.0,
-      fit: BoxFit.cover,
-    ),
+    imageSection,
     titleSection,
     buttonSection,
     textSection,
