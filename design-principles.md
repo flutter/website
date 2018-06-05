@@ -135,14 +135,14 @@ To make a change that will require developers to change their code:
 
     - A summary of each change you propose.
 
+    - A brief justification for the change.
+
     - A link to the issue you filed in step 1, and any PRs you may have already
       posted relating to this change.
 
     - Clear mechanical steps for porting the code from the old form to the new
       form, if possible. If not possible, clear steps for figuring out how to
       port the code.
-
-    - A brief justification for the change.
 
     - A sincere offer to help port code, which includes the preferred venue for
       contacting the person who made the change.
