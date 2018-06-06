@@ -28,7 +28,6 @@ are available in the [Android documentation](https://developer.android.com/studi
 device, authorize your computer to access your device.
 1. In the terminal, run the `flutter devices` command to verify that Flutter recognizes your
 connected Android device.
-1. Start your app by running `flutter run`.
 
 By default, Flutter uses the version of the Android SDK where your `adb` tool is based. If
 you want Flutter to use a different installation of the Android SDK, you must set the
@@ -51,5 +50,3 @@ To prepare to run and test your Flutter app on the Android emulator, follow thes
 1. In Android Virtual Device Manager, click **Run** in the toolbar.
    The emulator starts up and displays the default canvas for your selected OS version
    and device.
-1. Start your app by running `flutter run`. The connected device name is
-   `Android SDK built for <platform>`, where _platform_ is the chip family, such as x86.
