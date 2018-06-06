@@ -27,7 +27,7 @@ the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
 
-Updates to the plugins will be shipped on a regular basis. You should get
+Updates to the plugins are shipped on a regular basis. You should get
 prompted in IntelliJ when an update is available.
 
 To check for updates manually:
@@ -85,7 +85,7 @@ The Dart plugin performs code analysis that enables:
 * Navigating to type declarations (**Navigate>Declaration**), and finding type
   usages (**Edit>Find>Find Usages**).
 * Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
-  Any analysis issues will be shows in the Dart Analysis pane:<br>
+  Any analysis issues are shown in the Dart Analysis pane:<br>
   ![Dart Analysis pane](/images/intellij/dart-analysis.png)
 
 ## Running and Debugging
@@ -103,22 +103,22 @@ specific buttons on the right-hand side of the toolbar.
 has not been able to discover any connected iOS or Android devices or simulators.
 You need to connect a device, or start a simulator, to proceed.
 
-1. Locate the **Flutter Target Selector** drop-down button. This will show a
+1. Locate the **Flutter Target Selector** drop-down button. This shows a
  list of available targets. Select the target you want your app to started on.
-* When you connect devices, or start simulators, additional entries will appear.
+* When you connect devices, or start simulators, additional entries appear.
 
 ### Run app without breakpoints
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
-* The bottom **Run** pane will show logs output:<br>
+* The bottom **Run** pane shows logs output:<br>
 ![Log pane](/images/intellij/log.png)
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
 1. Click the **Debug icon** in the toolbar, or invoke **Run>Debug**.
-* The bottom **Debugger** pane will show Stack Frames and Variables.
-* The bottom **Console** pane will show detailed logs output.
+* The bottom **Debugger** pane shows Stack Frames and Variables.
+* The bottom **Console** pane shows detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
   click. the drop-down button to the right of the device selector, and select
   **Edit configuration**.

@@ -248,7 +248,7 @@ resulting in a call to `_buildAnimation()`.
   [[highlight]]final Animation<BorderRadius> borderRadius;[[/highlight]]
   [[highlight]]final Animation<Color> color;[[/highlight]]
 
-  // This function is called each the controller "ticks" a new frame.
+  // This function is called each time the controller "ticks" a new frame.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
   [[highlight]]Widget _buildAnimation(BuildContext context, Widget child)[[/highlight]] {

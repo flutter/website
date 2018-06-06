@@ -68,7 +68,7 @@ depending on whether your widget manages any state. A widget's main job is
 to implement a
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
 function, which describes the widget in terms of other, lower-level widgets.
-The framework will build those widgets in turn until the process bottoms out
+The framework builds those widgets in turn until the process bottoms out
 in widgets that represent the underlying [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html), which computes and describes the geometry of the widget.
 
 Basic widgets
@@ -350,12 +350,12 @@ class MyButton extends StatelessWidget {
 
 The
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
-widget doesn't have an visual representation but instead detects gestures made
+widget doesn't have a visual representation but instead detects gestures made
 by the user. When the user taps the
 [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html),
 the
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
-will call its
+calls its
 [`onTap`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#onTap)
 callback, in this case printing a message to the console. You can use
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
@@ -384,8 +384,8 @@ member variables. When a widget is asked to
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html),
 it uses these stored values to derive new arguments for the widgets it creates.
 
-In order to build more complex experiences - for example, to react in more
-interesting ways to user input - applications will typically carry some state.
+In order to build more complex experiences&mdash;for example, to react in more
+interesting ways to user input&mdash;applications typically carry some state.
 Flutter uses StatefulWidgets to capture this idea. StatefulWidgets are
 special widgets that know how to generate State objects, which are then used to
 hold state. Consider this basic example, using the
@@ -591,8 +591,8 @@ time. In the extreme, the state stored on the widget passed to
 [`runApp`](https://docs.flutter.io/flutter/widgets/runApp.html) persists for
 the lifetime of the application.
 
-When the parent receives the `onCartChanged` callback, the parent will update
-its internal state, which will trigger the parent to rebuild and create a new
+When the parent receives the `onCartChanged` callback, the parent updates
+its internal state, which triggers the parent to rebuild and create a new
 instance of `ShoppingListItem` with the new `inCart` value. Although the parent
 creates a new instance of `ShoppingListItem` when it rebuilds, that operation is
 cheap because the framework compares the newly built widgets with the previously
@@ -620,7 +620,7 @@ class ShoppingList extends StatefulWidget {
 
   // The framework calls createState the first time a widget appears at a given
   // location in the tree. If the parent rebuilds and uses the same type of
-  // widget (with the same key), the framework will re-use the State object
+  // widget (with the same key), the framework re-uses the State object
   // instead of creating a new State object.
 
   @override
@@ -632,7 +632,7 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
-      // When user changes what is in the cart, we need to change _shoppingCart
+      // When a user changes what's in the cart, we need to change _shoppingCart
       // inside a setState call to trigger a rebuild. The framework then calls
       // build, below, which updates the visual appearance of the app.
 
@@ -686,8 +686,8 @@ function to create a fresh instance of `_ShoppingListState` to associate with
 that location in the tree. (Notice that we typically name subclasses of
 [`State`](https://docs.flutter.io/flutter/widgets/State-class.html) with
 leading underscores to indicate that they are private implementation details.)
-When this widget's parent rebuilds, the parent will create a new instance of
-`ShoppingList`, but the framework will reuse the `_ShoppingListState` instance
+When this widget's parent rebuilds, the parent creates a new instance of
+`ShoppingList`, but the framework reuses the `_ShoppingListState` instance
 that is already in the tree rather than calling
 [`createState`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html#createState)
 again.
@@ -696,7 +696,7 @@ To access properties of the current `ShoppingList`, the `_ShoppingListState` can
 use its
 [`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 property. If the parent rebuilds and creates a new `ShoppingList`, the
-`_ShoppingListState` will also rebuild with the new
+`_ShoppingListState` rebuilds with the new
 [`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
 value. If you wish to be notified when the
 [`widget`](https://docs.flutter.io/flutter/widgets/State-class.html#widget)
@@ -763,7 +763,7 @@ Keys
 
 _Main article: [`Key`](https://docs.flutter.io/flutter/foundation/Key-class.html)_
 
-You can use keys to control which widgets the framework will match up with which
+You can use keys to control which widgets the framework matches up with
 other widgets when a widget rebuilds. By default, the framework matches
 widgets in the current and previous build according to their
 [`runtimeType`](https://docs.flutter.io/flutter/widgets/Widget-class.html#runtimeType)
@@ -782,10 +782,10 @@ widget. For example, the `ShoppingList` widget, which builds just enough
    the list just scrolled off screen and is no longer visible in the viewport.
 
  * By assigning each entry in the list a "semantic" key, the infinite list can
-   be more efficient because the framework will sync entries with matching
+   be more efficient because the framework syncs entries with matching
    semantic keys and therefore similar (or identical) visual appearances.
    Moreover, syncing the entries semantically means that state retained in
-   stateful child widgets will remain attached to the same semantic entry rather
+   stateful child widgets remains attached to the same semantic entry rather
    than the entry in the same numerical position in the viewport.
 
 Global Keys
