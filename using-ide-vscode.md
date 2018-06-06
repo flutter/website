@@ -81,31 +81,32 @@ device name (or the message **No Devices**).
 *Note*: If you do not see a Flutter version number or device info your project may not have been detected
 as a Flutter project. Please ensure the folder that contains your `pubspec.yaml` is inside a VS Code **Workspace Folder**
 
-*Note*: If the status bar reads **No Devices** Flutter has not been able to discover any connected
-iOS or Android devices or simulators. You need to connect a device, or start a simulator, to proceed.
+*Note*: If the status bar reads **No Devices** Flutter has not been
+able to discover any connected iOS or Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
 
-The Flutter extension automatically selects the last device connected,
-however if you have multiple devices/simulators connected you can click
-on the device in the status bar to be presented with a pick-list
-at the top of the screen that allows you to select the device to use for
-running/debugging.
+The Flutter extension automatically selects the last device connected.
+However, if you have multiple devices/simulators connected, click
+**device** in the status bar to see a pick-list
+at the top of the screen. Select the device you want to use for
+running or debugging.
 
 ### Run app without breakpoints
 
-1. Click **Debug>Start Without Debugging** in main IDE window or press `Ctrl`+`F5`.
-* The status bar turns orange to show you are in a debug session
-* The bottom **Debug Console** shows output:<br>
+1. Click **Debug>Start Without Debugging** in the main IDE window, or
+  press `Ctrl`+`F5`.
+* The status bar turns orange to show you are in a debug session.<br>
 <img src="/images/vscode/debug_console.png" style="width:490px;height:208px" alt="Debug Console" />
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. Click **Debug>Start Debugging** in main IDE window or press `F5`.
-* The left **Debug Sidebar** shows Stack Frames and Variables.
-* The bottom **Debug Console** pane shows detailed logs output.
-* Debugging is based on a default launch configuration. To customize this,
+1. Click **Debug>Start Debugging** in the main IDE window, or press `F5`.
+* The left **Debug Sidebar** shows stack frames and variables.
+* The bottom **Debug Console** pane shows detailed logging output.
+* Debugging is based on a default launch configuration. To customize,
   click the cog at the top of the **Debug Sidebar** to create a `launch.json`
-  file and customise values.
+  file. You can then modify the values.
 
 ## Fast edit and refresh development cycle
 
@@ -195,9 +196,9 @@ During a debug session, clicking the **Restart** button on the **Debug
 Toolbar**, or pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS)
 performs a hot reload.
 
-Keyboard mappings can be changed by executing the **Open Keyboard Shotcuts**
-command from the
-[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
+command from the [Command
+Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 **Hot Restart**
 
@@ -212,10 +213,10 @@ types of code changes cannot be hot reloaded though:
 * Static field initializers.
 * The `main()` method of the app.
 
-For these changes you can fully restart your application, without having to end
-your debugging session by running the **Flutter: Hot Restart** command from the
-[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) or pressing `Ctrl`+`F5` causes a hot restart of the
-application.
+For these changes, fully restart your application without having to end
+your debugging session. To perform a hot restart, run the
+**Flutter: Hot Restart** command from the
+[Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), or press `Ctrl`+`F5`.
 
 ## Troubleshooting
 

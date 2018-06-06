@@ -85,7 +85,7 @@ the top left, by default.
 
 ### Setting background color
 
-In Flutter, you set the background color in a
+In Flutter, you set the background color using a
 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
 `decoration` property.
 
@@ -166,8 +166,8 @@ var container = new Container( // grey box
 
 To specify the width of a
 [Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
-widget you set its `width` property. This is a fixed width, unlike the
-CSS max-width property which adjusts container width up to a maximum value.
+widget, its `width` property. This is a fixed width, unlike the
+CSS max-width property that adjusts the container width up to a maximum value.
 To mimic that effect in Flutter, use the `constraints` property of the
 Container. Create a new
 [BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
@@ -362,7 +362,7 @@ var container = new Container( // gray box
 To scale a widget up or down, nest it in a
 [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
 widget. Use the Transform widget’s `alignment` and `origin`
-properties to specify the transform origin (fulcrum) in relative and
+properties to specify the transform origin (fulcrum) in relative or
 absolute terms, respectively.
 
 For a simple scaling operation along the x-axis, create a new
