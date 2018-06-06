@@ -18,7 +18,7 @@ There are many kinds of automated testing. These are summarized below:
 
 - A _unit test_ tests a single function, method, or class. External dependencies
   of the unit under test are generally mocked out using, for example,
-  [`package:mockito`](https://github.com/fibulwinter/dart-mockito/blob/master/README.md).
+  [`package:mockito`](https://github.com/dart-lang/mockito).
   Unit tests generally do not read from/write to disk, render to screen and do
   not receive user actions from outside the process running the test. The goal
   of a unit test is to verify the correctness of a unit of logic under a
