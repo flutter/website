@@ -139,6 +139,54 @@ file.
 
 Release builds of your app will now automatically be signed.
 
+
+## Minfify and obfuscate
+
+By default, Flutter does not obfuscate or minify Android wrapper. If you intend to use third-party Java or Android libraries, you may want to reduce the size of the APK or protect that code from reverse engineering.
+
+### Step 1 - Configure obfuscation tool
+
+Create `/android/app/proguard-rules.pro` file and add rules listed below.
+
+```
+#Flutter Wrapper
+-keep class io.flutter.app.** { *; }
+-keep class io.flutter.plugin.**  { *; }
+-keep class io.flutter.util.**  { *; }
+-keep class io.flutter.view.**  { *; }
+-keep class io.flutter.**  { *; }
+-keep class io.flutter.plugins.**  { *; }
+```
+
+The configuration above will only protect Flutter libraries. Any additional libraries e.g. Firebase will require their own rules to be added.
+
+### Step 2 - Enable obfuscation and/or minification
+
+Open `/android/app/build.gradle` file and locate `buildTypes` definition. Inside `release` configuration set `minifiyEnabled` and `useProguard` flags to true. You have to also point ProGuard to the file you have created in step 1.
+
+```
+android {
+
+    ...
+
+    buildTypes {
+
+        release {
+            
+            signingConfig signingConfigs.debug     
+
+            minifyEnabled true
+            useProguard true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
+
+        }
+    }
+}
+``` 
+
+Note: Obfuscation and minification can considerably extend compile time of the Android application. 
+
 ## Building a release APK
 
 This section describes how to build a release APK. If you completed the
