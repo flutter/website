@@ -78,6 +78,7 @@ function, method or class. In this example, we'll create a `Counter` class
 inside the `lib/counter.dart` file. It will be responsible for incrementing and 
 decrementing a `value` starting at `0`. 
 
+<!-- skip -->
 ```dart
 class Counter {
   int value = 0;
