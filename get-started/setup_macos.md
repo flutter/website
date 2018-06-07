@@ -13,6 +13,10 @@ permalink: /setup-macos/
 
 {% include setup/path-mac-linux.md %}
 
+Create a directory for your project and run the command in the directory.
+
+  flutter create ./
+
 ## Platform setup
 
 macOS supports developing Flutter apps for both iOS and Android. Complete at
