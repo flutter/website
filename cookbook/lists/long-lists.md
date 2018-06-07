@@ -25,7 +25,7 @@ constructor.
 
 <!-- skip -->
 ```dart
-final items = new List<String>.generate(10000, (i) => "Item $i");
+final items = List<String>.generate(10000, (i) => "Item $i");
 ```
 
 ## 2. Convert the data source into Widgets
@@ -38,11 +38,11 @@ display each String on it's own line.
 
 <!-- skip -->
 ```dart
-new ListView.builder(
+ListView.builder(
   itemCount: items.length,
   itemBuilder: (context, index) {
-    return new ListTile(
-      title: new Text('${items[index]}'),
+    return ListTile(
+      title: Text('${items[index]}'),
     );
   },
 );
@@ -55,8 +55,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp(
-    items: new List<String>.generate(10000, (i) => "Item $i"),
+  runApp(MyApp(
+    items: List<String>.generate(10000, (i) => "Item $i"),
   ));
 }
 
@@ -69,17 +69,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Long List';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new ListView.builder(
+        body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
-            return new ListTile(
-              title: new Text('${items[index]}'),
+            return ListTile(
+              title: Text('${items[index]}'),
             );
           },
         ),

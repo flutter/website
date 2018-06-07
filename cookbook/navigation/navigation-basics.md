@@ -32,13 +32,13 @@ First, we'll set up the visual structure.
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('First Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
       ),
-      body: new Center(
-        child: new RaisedButton(
-          child: new Text('Launch new screen'),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Launch screen'),
           onPressed: () {
             // Navigate to second screen when tapped!
           },
@@ -51,16 +51,16 @@ class FirstScreen extends StatelessWidget {
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Second Screen"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Screen"),
       ),
-      body: new Center(
-        child: new RaisedButton(
+      body: Center(
+        child: RaisedButton(
           onPressed: () {
             // Navigate back to first screen when tapped!
           },
-          child: new Text('Go back!'),
+          child: Text('Go back!'),
         ),
       ),
     );
@@ -89,7 +89,7 @@ callback:
 onPressed: () {
   Navigator.push(
     context,
-    new MaterialPageRoute(builder: (context) => new SecondScreen()),
+    MaterialPageRoute(builder: (context) => SecondScreen()),
   );
 }
 ``` 
@@ -118,26 +118,26 @@ onPressed: () {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'Navigation Basics',
-    home: new FirstScreen(),
+    home: FirstScreen(),
   ));
 }
 
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('First Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
       ),
-      body: new Center(
-        child: new RaisedButton(
-          child: new Text('Launch new screen'),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Launch screen'),
           onPressed: () {
             Navigator.push(
               context,
-              new MaterialPageRoute(builder: (context) => new SecondScreen()),
+              MaterialPageRoute(builder: (context) => SecondScreen()),
             );
           },
         ),
@@ -149,16 +149,16 @@ class FirstScreen extends StatelessWidget {
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Second Screen"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Screen"),
       ),
-      body: new Center(
-        child: new RaisedButton(
+      body: Center(
+        child: RaisedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: new Text('Go back!'),
+          child: Text('Go back!'),
         ),
       ),
     );

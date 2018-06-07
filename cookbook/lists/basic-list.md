@@ -16,19 +16,19 @@ items a visual structure.
 
 <!-- skip -->
 ```dart
-new ListView(
+ListView(
   children: <Widget>[
-    new ListTile(
-      leading: new Icon(Icons.map),
-      title: new Text('Map'),
+    ListTile(
+      leading: Icon(Icons.map),
+      title: Text('Map'),
     ),
-    new ListTile(
-      leading: new Icon(Icons.photo_album),
-      title: new Text('Album'),
+    ListTile(
+      leading: Icon(Icons.photo_album),
+      title: Text('Album'),
     ),
-    new ListTile(
-      leading: new Icon(Icons.phone),
-      title: new Text('Phone'),
+    ListTile(
+      leading: Icon(Icons.phone),
+      title: Text('Phone'),
     ),
   ],
 );
@@ -39,32 +39,32 @@ new ListView(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'Basic List';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new ListView(
+        body: ListView(
           children: <Widget>[
-            new ListTile(
-              leading: new Icon(Icons.map),
-              title: new Text('Map'),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
             ),
-            new ListTile(
-              leading: new Icon(Icons.photo_album),
-              title: new Text('Album'),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
             ),
-            new ListTile(
-              leading: new Icon(Icons.phone),
-              title: new Text('Phone'),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
             ),
           ],
         ),

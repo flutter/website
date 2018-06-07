@@ -73,9 +73,9 @@ belongs to.
 
 <!-- skip -->
 ```dart
-new Text(
+Text(
   'Using the Raleway font from the awesome_package',
-  style: new TextStyle(
+  style: TextStyle(
     fontFamily: 'Raleway',
     package: 'awesome_package',
   ),
@@ -118,14 +118,14 @@ flutter:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Package Fonts',
-      home: new MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -133,14 +133,14 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       // The AppBar will use the app-default Raleway font
-      appBar: new AppBar(title: new Text('Package Fonts')),
-      body: new Center(
+      appBar: AppBar(title: Text('Package Fonts')),
+      body: Center(
         // This Text Widget will use the RobotoMono font
-        child: new Text(
+        child: Text(
           'Using the Raleway font from the awesome_package',
-          style: new TextStyle(
+          style: TextStyle(
             fontFamily: 'Raleway',
             package: 'awesome_package',
           ),

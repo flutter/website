@@ -96,11 +96,11 @@ name declared in the `pubspec.yaml`.
 
 <!-- skip -->
 ```dart
-new MaterialApp(
+MaterialApp(
   title: 'Custom Fonts',
   // Set Raleway as the default app font
-  theme: new ThemeData(fontFamily: 'Raleway'),
-  home: new MyHomePage(),
+  theme: ThemeData(fontFamily: 'Raleway'),
+  home: MyHomePage(),
 );
 ```
 
@@ -119,9 +119,9 @@ again, the `fontFamily` must match the `family` name we declared in the
 
 <!-- skip -->
 ```dart
-new Text(
+Text(
   'Roboto Mono sample',
-  style: new TextStyle(fontFamily: 'RobotoMono'),
+  style: TextStyle(fontFamily: 'RobotoMono'),
 );
 ```
 
@@ -172,16 +172,16 @@ flutter:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Custom Fonts',
       // Set Raleway as the default app font
-      theme: new ThemeData(fontFamily: 'Raleway'),
-      home: new MyHomePage(),
+      theme: ThemeData(fontFamily: 'Raleway'),
+      home: MyHomePage(),
     );
   }
 }
@@ -189,14 +189,14 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       // The AppBar will use the app-default Raleway font
-      appBar: new AppBar(title: new Text('Custom Fonts')),
-      body: new Center(
+      appBar: AppBar(title: Text('Custom Fonts')),
+      body: Center(
         // This Text Widget will use the RobotoMono font
-        child: new Text(
+        child: Text(
           'Roboto Mono sample',
-          style: new TextStyle(fontFamily: 'RobotoMono'),
+          style: TextStyle(fontFamily: 'RobotoMono'),
         ),
       ),
     );

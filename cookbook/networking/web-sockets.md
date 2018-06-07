@@ -31,7 +31,7 @@ line:
 
 <!-- skip -->
 ```dart
-final channel = new IOWebSocketChannel.connect('ws://echo.websocket.org');
+final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
 ```
 
 ## 2. Listen for messages from the server
@@ -48,10 +48,10 @@ Widget to display them.
 
 <!-- skip -->
 ```dart
-new StreamBuilder(
+StreamBuilder(
   stream: widget.channel.stream,
   builder: (context, snapshot) {
-    return new Text(snapshot.hasData ? '${snapshot.data}' : '');
+    return Text(snapshot.hasData ? '${snapshot.data}' : '');
   },
 );
 ```
@@ -106,17 +106,17 @@ import 'package:web_socket_channel/io.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'WebSocket Demo';
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new MyHomePage(
+      home: MyHomePage(
         title: title,
-        channel: new IOWebSocketChannel.connect('ws://echo.websocket.org'),
+        channel: IOWebSocketChannel.connect('ws://echo.websocket.org'),
       ),
     );
   }
@@ -130,45 +130,45 @@ class MyHomePage extends StatefulWidget {
       : super(key: key);
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _controller = new TextEditingController();
+  TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Padding(
+      body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: new Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Form(
-              child: new TextFormField(
+            Form(
+              child: TextFormField(
                 controller: _controller,
-                decoration: new InputDecoration(labelText: 'Send a message'),
+                decoration: InputDecoration(labelText: 'Send a message'),
               ),
             ),
-            new StreamBuilder(
+            StreamBuilder(
               stream: widget.channel.stream,
               builder: (context, snapshot) {
-                return new Padding(
+                return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 24.0),
-                  child: new Text(snapshot.hasData ? '${snapshot.data}' : ''),
+                  child: Text(snapshot.hasData ? '${snapshot.data}' : ''),
                 );
               },
             )
           ],
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _sendMessage,
         tooltip: 'Send message',
-        child: new Icon(Icons.send),
+        child: Icon(Icons.send),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

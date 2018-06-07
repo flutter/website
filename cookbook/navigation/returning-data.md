@@ -29,12 +29,12 @@ screen!
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Returning Data Demo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Returning Data Demo'),
       ),
       // We'll create the SelectionButton Widget in the next step 
-      body: new Center(child: new SelectionButton()),
+      body: Center(child: SelectionButton()),
     );
   }
 }
@@ -52,11 +52,11 @@ Now, we'll create our SelectionButton. Our selection button will:
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new RaisedButton(
+    return RaisedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
-      child: new Text('Pick an option, any option!'),
+      child: Text('Pick an option, any option!'),
     );
   }
 
@@ -68,7 +68,7 @@ class SelectionButton extends StatelessWidget {
     final result = await Navigator.push(
       context,
       // We'll create the SelectionScreen in the next step!
-      new MaterialPageRoute(builder: (context) => new SelectionScreen()),
+      MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
   }
 }
@@ -87,30 +87,30 @@ step.
 class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Pick an option'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pick an option'),
       ),
-      body: new Center(
-        child: new Column(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: new RaisedButton(
+              child: RaisedButton(
                 onPressed: () {
                   // Pop here with "Yep"...
                 },
-                child: new Text('Yep!'),
+                child: Text('Yep!'),
               ),
             ),
-            new Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: new RaisedButton(
+              child: RaisedButton(
                 onPressed: () {
                   // Pop here with "Nope"
                 },
-                child: new Text('Nope.'),
+                child: Text('Nope.'),
               ),
             )
           ],
@@ -135,12 +135,12 @@ provide a result, it will be returned to the `Future` in our SelectionButton!
 
 <!-- skip -->
 ```dart
-new RaisedButton(
+RaisedButton(
   onPressed: () {
     // Our Yep button will return "Yep!" as the result
     Navigator.pop(context, 'Yep!');
   },
-  child: new Text('Yep!'),
+  child: Text('Yep!'),
 );
 ```
 
@@ -148,12 +148,12 @@ new RaisedButton(
 
 <!-- skip -->
 ```dart
-new RaisedButton(
+RaisedButton(
   onPressed: () {
     // Our Nope button will return "Nope!" as the result
     Navigator.pop(context, 'Nope!');
   },
-  child: new Text('Nope!'),
+  child: Text('Nope!'),
 );
 ```
 
@@ -170,13 +170,13 @@ update the `_navigateAndDisplaySelection` method in our `SelectionButton`.
 _navigateAndDisplaySelection(BuildContext context) async {
   final result = await Navigator.push(
     context,
-    new MaterialPageRoute(builder: (context) => new SelectionScreen()),
+    MaterialPageRoute(builder: (context) => SelectionScreen()),
   );
 
   // After the Selection Screen returns a result, show it in a Snackbar!
   Scaffold
       .of(context)
-      .showSnackBar(new SnackBar(content: new Text("$result")));
+      .showSnackBar(SnackBar(content: Text("$result")));
 }
 ```
 
@@ -186,20 +186,20 @@ _navigateAndDisplaySelection(BuildContext context) async {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'Returning Data',
-    home: new HomeScreen(),
+    home: HomeScreen(),
   ));
 }
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Returning Data Demo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Returning Data Demo'),
       ),
-      body: new Center(child: new SelectionButton()),
+      body: Center(child: SelectionButton()),
     );
   }
 }
@@ -207,11 +207,11 @@ class HomeScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new RaisedButton(
+    return RaisedButton(
       onPressed: () {
         _navigateAndDisplaySelection(context);
       },
-      child: new Text('Pick an option, any option!'),
+      child: Text('Pick an option, any option!'),
     );
   }
 
@@ -222,45 +222,45 @@ class SelectionButton extends StatelessWidget {
     // Navigator.pop on the Selection Screen!
     final result = await Navigator.push(
       context,
-      new MaterialPageRoute(builder: (context) => new SelectionScreen()),
+      MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
     // After the Selection Screen returns a result, show it in a Snackbar!
     Scaffold
         .of(context)
-        .showSnackBar(new SnackBar(content: new Text("$result")));
+        .showSnackBar(SnackBar(content: Text("$result")));
   }
 }
 
 class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Pick an option'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pick an option'),
       ),
-      body: new Center(
-        child: new Column(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: new RaisedButton(
+              child: RaisedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result
                   Navigator.pop(context, 'Yep!');
                 },
-                child: new Text('Yep!'),
+                child: Text('Yep!'),
               ),
             ),
-            new Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: new RaisedButton(
+              child: RaisedButton(
                 onPressed: () {
                   // Close the screen and return "Nope!" as the result
                   Navigator.pop(context, 'Nope.');
                 },
-                child: new Text('Nope.'),
+                child: Text('Nope.'),
               ),
             )
           ],

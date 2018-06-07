@@ -26,7 +26,7 @@ create a `TabController` for us and make it available to all descendant Widgets.
 
 <!-- skip -->
 ```dart
-new DefaultTabController(
+DefaultTabController(
   // The number of tabs / content sections we need to display
   length: 3,
   child: // See the next step! 
@@ -42,15 +42,15 @@ Widgets and place it within an [`AppBar`](https://docs.flutter.io/flutter/materi
 
 <!-- skip -->
 ```dart
-new DefaultTabController(
+DefaultTabController(
   length: 3,
-  child: new Scaffold(
-    appBar: new AppBar(
-      bottom: new TabBar(
+  child: Scaffold(
+    appBar: AppBar(
+      bottom: TabBar(
         tabs: [
-          new Tab(icon: new Icon(Icons.directions_car)),
-          new Tab(icon: new Icon(Icons.directions_transit)),
-          new Tab(icon: new Icon(Icons.directions_bike)),
+          Tab(icon: Icon(Icons.directions_car)),
+          Tab(icon: Icon(Icons.directions_transit)),
+          Tab(icon: Icon(Icons.directions_bike)),
         ],
       ),
     ),
@@ -73,11 +73,11 @@ Widget.
 
 <!-- skip -->
 ```dart
-new TabBarView(
+TabBarView(
   children: [
-    new Icon(Icons.directions_car),
-    new Icon(Icons.directions_transit),
-    new Icon(Icons.directions_bike),
+    Icon(Icons.directions_car),
+    Icon(Icons.directions_transit),
+    Icon(Icons.directions_bike),
   ],
 );
 ```
@@ -88,31 +88,31 @@ new TabBarView(
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new TabBarDemo());
+  runApp(TabBarDemo());
 }
 
 class TabBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new DefaultTabController(
+    return MaterialApp(
+      home: DefaultTabController(
         length: 3,
-        child: new Scaffold(
-          appBar: new AppBar(
-            bottom: new TabBar(
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
               tabs: [
-                new Tab(icon: new Icon(Icons.directions_car)),
-                new Tab(icon: new Icon(Icons.directions_transit)),
-                new Tab(icon: new Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_bike)),
               ],
             ),
-            title: new Text('Tabs Demo'),
+            title: Text('Tabs Demo'),
           ),
-          body: new TabBarView(
+          body: TabBarView(
             children: [
-              new Icon(Icons.directions_car),
-              new Icon(Icons.directions_transit),
-              new Icon(Icons.directions_bike),
+              Icon(Icons.directions_car),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
             ],
           ),
         ),

@@ -33,17 +33,17 @@ and [Handling Taps](/cookbook/gestures/handling-taps/) recipes.
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Main Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Main Screen'),
       ),
-      body: new GestureDetector(
+      body: GestureDetector(
         onTap: () {
-          Navigator.push(context, new MaterialPageRoute(builder: (_) {
-            return new DetailScreen();
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return DetailScreen();
           }));
         },
-        child: new Image.network(
+        child: Image.network(
           'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
         ),
       ),
@@ -54,13 +54,13 @@ class MainScreen extends StatelessWidget {
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new GestureDetector(
+    return Scaffold(
+      body: GestureDetector(
         onTap: () {
           Navigator.pop(context);
         },
-        child: new Center(
-          child: new Image.network(
+        child: Center(
+          child: Image.network(
             'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
           ),
         ),
@@ -82,9 +82,9 @@ requires two arguments:
   
 <!-- skip -->
 ```dart
-new Hero(
+Hero(
   tag: 'imageHero',
-  child: new Image.network(
+  child: Image.network(
     'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
   ),
 );
@@ -101,9 +101,9 @@ screens will work!
 
 <!-- skip -->
 ```dart
-new Hero(
+Hero(
   tag: 'imageHero',
-  child: new Image.network(
+  child: Image.network(
     'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
   ),
 );
@@ -118,14 +118,14 @@ we'll duplicate the code for demonstration purposes.
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new HeroApp());
+void main() => runApp(HeroApp());
 
 class HeroApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Transition Demo',
-      home: new MainScreen(),
+      home: MainScreen(),
     );
   }
 }
@@ -133,20 +133,20 @@ class HeroApp extends StatelessWidget {
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Main Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Main Screen'),
       ),
-      body: new GestureDetector(
-        child: new Hero(
+      body: GestureDetector(
+        child: Hero(
           tag: 'imageHero',
-          child: new Image.network(
+          child: Image.network(
             'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
           ),
         ),
         onTap: () {
-          Navigator.push(context, new MaterialPageRoute(builder: (_) {
-            return new DetailScreen();
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return DetailScreen();
           }));
         },
       ),
@@ -157,12 +157,12 @@ class MainScreen extends StatelessWidget {
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new GestureDetector(
-        child: new Center(
-          child: new Hero(
+    return Scaffold(
+      body: GestureDetector(
+        child: Center(
+          child: Hero(
             tag: 'imageHero',
-            child: new Image.network(
+            child: Image.network(
               'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
             ),
           ),

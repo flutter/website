@@ -73,7 +73,7 @@ class Photo {
   Photo({this.id, this.title, this.thumbnailUrl});
 
   factory Photo.fromJson(Map<String, dynamic> json) {
-    return new Photo(
+    return Photo(
       id: json['id'] as int,
       title: json['title'] as String,
       thumbnailUrl: json['thumbnailUrl'] as String,
@@ -96,7 +96,7 @@ Now, we'll update the `fetchPhotos` function so it can return a
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map<Photo>((json) => new Photo.fromJson(json)).toList();
+  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
@@ -161,7 +161,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map<Photo>((json) => new Photo.fromJson(json)).toList();
+  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
 
 class Photo {
@@ -174,7 +174,7 @@ class Photo {
   Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
 
   factory Photo.fromJson(Map<String, dynamic> json) {
-    return new Photo(
+    return Photo(
       albumId: json['albumId'] as int,
       id: json['id'] as int,
       title: json['title'] as String,
@@ -184,16 +184,16 @@ class Photo {
   }
 }
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTitle = 'Isolate Demo';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: appTitle,
-      home: new MyHomePage(title: appTitle),
+      home: MyHomePage(title: appTitle),
     );
   }
 }
@@ -205,18 +205,18 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
       ),
-      body: new FutureBuilder<List<Photo>>(
-        future: fetchPhotos(new http.Client()),
+      body: FutureBuilder<List<Photo>>(
+        future: fetchPhotos(http.Client()),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
 
           return snapshot.hasData
-              ? new PhotosList(photos: snapshot.data)
-              : new Center(child: new CircularProgressIndicator());
+              ? PhotosList(photos: snapshot.data)
+              : Center(child: CircularProgressIndicator());
         },
       ),
     );
@@ -230,13 +230,13 @@ class PhotosList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new GridView.builder(
-      gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       itemCount: photos.length,
       itemBuilder: (context, index) {
-        return new Image.network(photos[index].thumbnailUrl);
+        return Image.network(photos[index].thumbnailUrl);
       },
     );
   }

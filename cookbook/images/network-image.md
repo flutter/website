@@ -13,7 +13,7 @@ constructor.
 
 <!-- skip -->
 ```dart
-new Image.network(
+Image.network(
   'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
 )
 ```
@@ -25,7 +25,7 @@ of the box!
 
 <!-- skip -->
 ```dart
-new Image.network(
+Image.network(
   'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
 );
 ```
@@ -45,20 +45,20 @@ the following recipes:
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var title = 'Web Images';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new Image.network(
+        body: Image.network(
           'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
         ),
       ),
