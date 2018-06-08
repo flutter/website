@@ -107,8 +107,9 @@ RaisedButton(
     if (_formKey.currentState.validate()) {
       // If the form is valid, display a snackbar. In the real world, you'd
       // often want to call a server or save the information in a database
-      Scaffold.of(context).showSnackBar(
-          SnackBar(content: Text('Processing Data')));
+      Scaffold
+          .of(context)
+          .showSnackBar(SnackBar(content: Text('Processing Data')));
     }
   },
   child: Text('Submit'),
@@ -189,8 +190,9 @@ class MyFormState extends State<MyForm> {
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
                   // If the form is valid, we want to show a Snackbar
-                  Scaffold.of(context).showSnackBar(
-                      SnackBar(content: Text('Processing Data')));
+                  Scaffold
+                      .of(context)
+                      .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
               },
               child: Text('Submit'),

@@ -76,8 +76,9 @@ Dismissible(
     items.removeAt(index);
 
     // Show a snackbar! This snackbar could also contain "Undo" actions.
-    Scaffold.of(context).showSnackBar(
-        SnackBar(content: Text("$item dismissed")));
+    Scaffold
+        .of(context)
+        .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
   child: ListTile(title: Text('$item')),
 );
@@ -101,8 +102,9 @@ Dismissible(
   onDismissed: (direction) {
     items.removeAt(index);
 
-    Scaffold.of(context).showSnackBar(
-        SnackBar(content: Text("$item dismissed")));
+    Scaffold
+        .of(context)
+        .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
   child: ListTile(title: Text('$item')),
 );
@@ -149,8 +151,9 @@ class MyApp extends StatelessWidget {
               onDismissed: (direction) {
                 items.removeAt(index);
 
-                Scaffold.of(context).showSnackBar(
-                    SnackBar(content: Text("$item dismissed")));
+                Scaffold
+                    .of(context)
+                    .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away
               background: Container(color: Colors.red),
