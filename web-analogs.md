@@ -769,7 +769,7 @@ respectively. The amount of space can be in px, pt, cm, em, etc.
 
 In Flutter, you specify white space as logical pixels
 (negative values are allowed)
-for the `letterSpacing` and wordSpacing `properties` of a
+for the `letterSpacing` and `wordSpacing` properties of a
 [TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
 child of a Text widget.
 
