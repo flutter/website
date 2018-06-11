@@ -22,7 +22,7 @@ package for a simple transparent placeholder.
 
 <!-- skip -->
 ```dart
-new FadeInImage.memoryNetwork(
+FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,
   image: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
@@ -35,7 +35,7 @@ import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -43,17 +43,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Fade in images';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new Stack(
+        body: Stack(
           children: <Widget>[
-            new Center(child: new CircularProgressIndicator()),
-            new Center(
-              child: new FadeInImage.memoryNetwork(
+            Center(child: CircularProgressIndicator()),
+            Center(
+              child: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
                 image:
                     'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
@@ -100,7 +100,7 @@ FadeInImage.assetNetwork(
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -108,14 +108,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Fade in images';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
         body: Center(
-          child: new FadeInImage.assetNetwork(
+          child: FadeInImage.assetNetwork(
             placeholder: 'assets/loading.gif',
             image:
                 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
