@@ -5,7 +5,8 @@ Flutter SDK (for other release channels, and older builds, see the [SDK
 archive](/sdk-archive/) page.):
     * [(loading...)](#){:.download-latest-link-windows}
 1. Extract the zip-file and place the contained `flutter` in the desired
-   installation location for the Flutter SDK
+   installation location for the Flutter SDK (eg. `C:\src\flutter`; do not install
+   flutter in a folder like `C:\Program Files\` that requires elevated privileges)
 1. Locate the file `flutter_console.bat` inside the `flutter` directory. Start it by double-clicking.
 
 You are now ready to run Flutter commands in the Flutter Console!
