@@ -115,7 +115,7 @@ class MyApp extends StatelessWidget {
           title: new Text(title),
         ),
         body: Center(
-          child: new FadeInImage.memoryNetwork(
+          child: new FadeInImage.assetNetwork(
             placeholder: 'assets/loading.gif',
             image:
                 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
