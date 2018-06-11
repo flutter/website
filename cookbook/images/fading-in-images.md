@@ -126,3 +126,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+<img alt="Demo of asset fading in" height="566" src="/images/cookbook/fading-in-asset-demo.gif" width="318" />
