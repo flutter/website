@@ -64,7 +64,7 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   static const _appTitle = 'Todo List';
   final todos = <String>[];
-  final controller = new TextEditingController();
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -76,19 +76,15 @@ class _TodoListState extends State<TodoList> {
         ),
         body: Column(
           children: [
-            // We'll provide a TextField that users can enter text into
             TextField(
               controller: controller,
             ),
-            // After a user has added a new item, we'll display it in a list
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
                 itemBuilder: (BuildContext context, int index) {
                   final todo = todos[index];
 
-                  // When the user performs a swipe-to-dismiss action on an 
-                  // item, we'll remove the item from the list
                   return Dismissible(
                     key: Key('$todo$index'),
                     onDismissed: (direction) => todos.removeAt(index),
@@ -100,8 +96,6 @@ class _TodoListState extends State<TodoList> {
             ),
           ],
         ),
-        // When a user taps on the FloatingActionButton, it should add a new
-        // item to the list and clear the TextField 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
@@ -252,7 +246,7 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   static const _appTitle = 'Todo List';
   final todos = <String>[];
-  final controller = new TextEditingController();
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
