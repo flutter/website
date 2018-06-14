@@ -1,0 +1,300 @@
+ Pull request   Compare This branch is 1 commit ahead of flutter:master.
+@tyetech
+tyetech Add  …
+Latest commit ff2e327  a minute ago
+_data	Add iOS download for VivaBem UOL (#1025)	a month ago
+_diagrams	Adding a page on staggered animations. (#763)	6 months ago
+_includes	Explicitly call out that you shouldn't install in Program Files (#1063)	3 days ago
+_layouts	Fix links in "File issue" links	2 months ago
+_plugins	make the CLI prompt non-selectable (#669)	9 months ago
+_sass	Fix word-wrapping of code (#1043)	21 days ago
+animations	Addressing still-valid bugs in a PR (#1052)	8 days ago
+catalog/samples	Reenable proper .md snippet extraction, fix analysis errors in cookbo…	2 months ago
+codelabs	Adding MDC codelabs. (#1016)	a month ago
+cookbook	Add `FadeInImage.assetNetwork` example (#1064)	2 days ago
+css	Add showcase section (#1007)	a month ago
+downloads	Update sheets to reflect removed full restart keyboard shortcut (#494)	a year ago
+firebase_config	default jekyll build location, default to staging server on non-maste… (	2 years ago
+flutter-for-react-native	Latest rn changes (#1054)	9 days ago
+get-started	Update editor.md (#1044)	16 days ago
+images	Add `FadeInImage.assetNetwork` example (#1064)	2 days ago
+js	Combine Linux/Unix conditions	2 months ago
+showcase	Fix download links (#1014)	a month ago
+tool	adjust analysis options (#1050)	13 days ago
+tutorials	Addressing still-valid bugs in a PR (#1052)	8 days ago
+ui-performance	Update IDE steps to be consistent with supported IDEs (#997)	a month ago
+widgets	Fixing missing material page contents (#810)	4 months ago
+.gitignore	Ignore Jekyll metadata (#824)	4 months ago
+.travis.yml	Update to latest rubygems (#960)	2 months ago
+404.md	Fix Uri of 404 page (#776)	5 months ago
+AUTHORS	Flutter for iOS — Page contents (squashed) (#993)	24 days ago
+Gemfile	adding rake to Gemfile. Rake is used to validate links as described i…	2 months ago
+Gemfile.lock	Update to latest rubygems (#960)	2 months ago
+README.md	Add an extra troubleshooting tip for development on macOS (#1030)	29 days ago
+Rakefile	Fix Apple.com links (#931)	2 months ago
+_config.yml	Updated url property to use https	2 years ago
+accessiblity.md	Initial accessibility docs (#902)	2 months ago
+analysis_options.yaml	Fix Build (#916)	3 months ago
+android-release-build.md	Android obfuscation (#1002)	8 days ago
+assets-and-images.md	Tweaks to asset directory docs (#1049)	14 days ago
+bootstrap-into-dart.md	Adding codelab links to website! (#578)	a year ago
+bug_reports.md	New homepage (#555)	a year ago
+debugging.md	Added sample code to enable Visual Debugging (#1033)	27 days ago
+design-principles.md	Put brief justification right under summary (#1053)	9 days ago
+developing-packages.md	Removing instances of "yourcompany" and replacing with "example". (co…	29 days ago
+docs.md	Update docs.md (#1034)	25 days ago
+faq.md	A few FAQ updates (#1031)	27 days ago
+fastlane.md	Add a doc for using Fastlane (#1026)	28 days ago
+firebase.json	Rename 'full start' to 'hot restart' (#1024)	a month ago
+flutter-for-android.md	Adding info on landscape view to Android page. (#1037)	14 days ago
+flutter-for-ios.md	Adding info on landscape view to Android page. (#1037)	14 days ago
+formatting.md	Update references from Dart Code to Flutter plugin (#1027)	29 days ago
+gestures.md	Fix some more typos (#862)	3 months ago
+hot-reload.md	Rename 'full start' to 'hot restart' (#1024)	a month ago
+index.md	Update interop list (#1021)	16 days ago
+inspector.md	Reworked getting started experience (#800)	4 months ago
+ios-release-build.md	Update apple icons link (#969)	2 months ago
+json.md	Update dependencies for json_serializable (#1017)	a month ago
+layout.md	fix layout.md (#768)	6 months ago
+platform-channels.md	Remove GeneratedPluginRegistrant (#1041)	22 days ago
+pubspec.yaml	Reenable proper .md snippet extraction, fix analysis errors in cookbo…	2 months ago
+rendering.md	New homepage (#555)	a year ago
+sdk-archive.md	Add new SDK archive page (#901)	3 months ago
+search.md	adding a custom search engine	3 years ago
+support.md	encourage people to thumbs up issues (#579)	a year ago
+technical-overview.md	Addressing still-valid bugs in a PR (#1052)	8 days ago
+terraform-master.zip	Add	a minute ago
+testing.md	Update testing.md (#1056)	8 days ago
+tos.md	New homepage (#555)	a year ago
+upgrading.md	Change dev to beta (#837)	4 months ago
+using-ide-vscode.md	Addressing still-valid bugs in a PR (#1052)	8 days ago
+using-ide.md	Addressing still-valid bugs in a PR (#1052)	8 days ago
+using-packages.md	Restart is needed after adding a plugin dependency (#1038)	23 days ago
+web-analogs.md	Fix incorrect wordSpacing code markup (#1061)	4 days ago
+widgets-intro.md	Addressing still-valid bugs in a PR (#1052)	8 days ago
+widgets.md	Widgetindex & Duplicate removal (#558)	a year ago
+ README.md
+Flutter's website
+
+The website for Flutter.
+
+Build Status
+
+Issues, bugs, and requests
+
+We welcome contributions and feedback on our website! Please file a request in our issue tracker and we'll take a look.
+
+Developing
+
+Install Jekyll and related tools by following the instructions provided by GitHub.
+
+A tldr version follows:
+
+Ensure you have Ruby installed; you need version 2.2.2 or later:
+ruby --version
+
+Ensure you have Bundler installed; if not install with:
+gem install bundler
+
+Install all dependencies:
+bundle install
+
+On macOS, if you encounter errors while building native Ruby extensions, see Installing Nokogiri for troubleshooting tips.
+Create a branch.
+
+Make your changes.
+
+Test your changes by serving the site locally:
+bundle exec jekyll serve (or jekyll serve -w --force_polling)
+
+Prior to submitting, run link validation:
+rake checklinks
+
+Deploy to a staging site
+
+For edits made directly in the GitHub web UI, the changes will be deployed to a staging site (such as https://flutter-io-deploy-three.firebaseapp.com/inspector) by the Travis job.
+
+For edits you make locally (using the 'developing' steps above), you can deploy them to a personal staging site as follows (steps 1 and 2 need to be done only once):
+
+In the Firebase Console, create your own Firebase project (e.g. 'mit-flutter-staging')
+
+Tell Firebase about that project with the firebase use command:
+
+$ firebase use --add
+? Which project do you want to add? <select the project you created>
+? What alias do you want to use for this project? (e.g. staging) staging
+Tell Firebase that you want to deploy to staging:
+
+$ firebase use staging
+Now using alias staging (<your project name>)
+Tell Firebase to deploy:
+
+$ firebase use staging
+Now using alias staging (<your project name>)
+$ firebase deploy
+
+=== Deploying to '<your project name>'...
+
+i  deploying hosting
+i  hosting: preparing _site directory for upload...
+✔  hosting: 213 files uploaded successfully
+i  starting release process (may take several minutes)...
+
+✔  Deploy complete!
+Writing for flutter.io
+
+(Eventually, this section should be expanded to its own page.)
+
+Adding next/previous page links
+
+If you have a document that spans multiple pages, you can add next and previous page links to make navigating these pages easier. It involves adding some information to the front matter of each page, and including some HTML.
+
+---
+layout: tutorial
+title: "Constraints"
+
+permalink: /tutorials/layout/constraints.html
+prev-page: /tutorials/layout/properties.html
+prev-page-title: "Container Properties"
+next-page: /tutorials/layout/create.html
+next-page-title: "Create a Layout"
+---
+
+{% include prev-next-nav.html %}
+
+{:toc}
+
+<!-- PAGE CONTENT -->
+
+{% include prev-next-nav.html %}
+Omit the "prev-page" info for the first page, and the "next-page" info for the last page.
+
+Syntax highlighting
+
+The flutter.io website uses prism.js for syntax highlighting. This section covers how to use syntax highlighting, and how to update our syntax highlighter for new languages.
+
+Supported languages
+
+This website can syntax highlight the following languages:
+
+shell
+dart
+html
+css
+javascript
+java
+objectivec
+swift
+Using syntax highlighting
+
+The easiest way to syntax highlight a block of code is to wrap it with triple backticks followed by the language.
+
+Here's an example:
+
+```dart
+class ExampleWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container();
+  }
+}
+```
+See the list of supported languages above for what to use following the first triple backticks.
+
+Adding more languages for syntax highlighting
+
+The flutter.io website uses a custom build of prism, which includes only the languages the website requires. To improve load times and user experience, we do not support every language that prism supports.
+
+To add a new language for syntax highlighting, you will need to generate a new copy of the prism.js file.
+
+Follow these steps to generate a new copy of prism.js:
+
+Open js/prism.js
+Copy the URL in the comment of the first line of the file
+Paste it into a browser window/tab
+Add the new language that you wish to syntax highlight
+DO NOT change the other plugins, languages, or settings
+Download the generated JavaScript, and use it to replace js/prism.js
+Download the generated CSS, and use it to replace _sass/_prism.scss
+Advanced stylization of code blocks
+
+Do you want to highlight (make the background yellow) code inside a code block? Do you want to strike-through code inside a code block? We got that!
+
+For syntax highlighting, plus yellow highlighting and strike-through formatting, use the prettify tag with additional custom inline markup.
+
+If you want to highlight a specific bit of code, use the [[highlight]]highlight this text[[/highlight]] syntax with the prettify tag.
+
+For example:
+
+{% prettify dart %} void main() { print([[highlight]]'Hello World'[[/highlight]]); } {% endprettify %}
+
+If you want to strike-through a specific bit of code, use the [[strike]]highlight this text[[/strike]] syntax with the prettify tag.
+
+For example:
+
+{% prettify dart %} void main() { print([[strike]]'Hello World'[[/strike]]); } {% endprettify %}
+
+The prettify plugin will also unindent your code.
+
+If you want to see how this functionality was added to this site, refer to this commit.
+
+Including a region of a file
+
+You can include a specific range of lines from a file:
+
+{% include includelines filename=PATH start=INT count=INT %}
+PATH must be inside of _include. If you are including source code, place that code into _include/code to follow our convention.
+
+Code snippet validation
+
+The code snippets in the markdown documentation are validated as part of the build process. Anything within a '```dart' code fence will be extracted into its own file and checked for analysis issues. Some ways to tweak that:
+
+If a code snippet should not be analyzed, immediately proceed it with a <!-- skip --> comment
+To include code to be analyzed, but not displayed, add that in a comment immediately proceeding the snippet (e.g., <!-- someCodeHere(); -->)
+A snippet without any import statements will have an import ('package:flutter/material.dart') automatically added to it
+We ignore special formatting tags like [[highlight]].
+Updating the Sample Catalog
+
+The sample catalog's markdown files are generated by running sample_page.dart from the Flutter github repo. Starting from the root of the Flutter repo:
+
+cd examples/catalog
+dart bin/sample_page.dart '<commit hashcode here>'
+cp examples/catalog/.generated/*.md <your website repo>/catalog/samples
+The generated markdown files will contain cloud storage links for sample app screenshots. Screenshots for each sample app are automatically generated for each Flutter repo commit. Choose a recent commit hashcode and confirm that the screenshots look OK.
+
+If new sample apps have been added, update _data/catalog/widget.json. The entry for each widget class that's featured in a sample app should contain "sample" line like:
+
+"sample": "ListView_index",
+The sample_page.dart app will print a list of all of the "sample" properties that should appear in the widget.json file.
+
+Preventing broken links
+
+Some form of broken links prevention is done automatically by rake checklinks on every commit (through tool/travis.sh). But this won't see any Firebase redirects (rake checklinks doesn't run the Firebase server) and it won't check incoming links.
+
+Before we can move the more complete automated linkcheck solution from dartlang.org, we recommend manually running the following.
+
+First time setup:
+
+pub global activate linkcheck
+npm install -g superstatic
+Start the localhost Firebase server:
+
+superstatic --port 3474
+Run the link checker:
+
+linkcheck :3474
+Even better, to check that old URLs are correctly redirected:
+
+linkcheck :3474 --input-file tool/sitemap.txt
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
