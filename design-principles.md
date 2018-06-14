@@ -231,10 +231,17 @@ our systems, please place whatever answer you subsequently discover
 into the documentation in the same place where you first looked for
 the answer.
 
-It's better to not document something than to document it poorly
-(because if you don't document it, it still appears on our list of
-things to document). Feel free to remove documentation that violates
-our
+We try to avoid reliance on "oral tradition". It should be possible
+for anyone to begin contributing without having had to learn all the
+secrets from existing team members. To that end, all processes should
+be documented (typically on the wikis), code should be self-explanatory
+or commented, and conventions should be written down, e.g. in our style
+guide.
+
+There is one exception: it's better to _not_ document something in our API
+docs than to document it poorly. This is because if you don't document it,
+it still appears on our list of things to document. Feel free to remove
+documentation that violates our
 [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo),
 so as to make it reappear on the list.
 
