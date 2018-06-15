@@ -31,12 +31,12 @@
   android_download: https://play.google.com/store/apps/details?id=com.birch
   learn_more_link: https://birchfinance.com/
 
-- name: Coach Yourself
+- name: Reflectly
   description: >
-    A meditation app for the German-language market with coach Ramin Raygan.
-  screenshot: /showcase/images/v3_CoachYourself.png
-  android_download: https://play.google.com/store/apps/details?id=eu.coach_yourself.app
-  ios_download: https://itunes.apple.com/us/app/coach-yourself/id1372759980
+    A beautiful journal and mindfulness app driven by artificial intelligence. 
+  screenshot: /showcase/images/reflectly.png
+  android_download: https://play.google.com/store/apps/details?id=com.reflectlyApp
+  learn_more_link: http://reflect.ly/
 
 - name: Google Greentea
   description: >
@@ -85,3 +85,11 @@
   screenshot: /showcase/images/v3_betabubs.png
   ios_download: https://itunes.apple.com/us/app/betabubs-play-emojis/id1363316057
   android_download: https://play.google.com/store/apps/details?id=com.betabubs.playemojis
+  
+- name: Coach Yourself
+  description: >
+    A meditation app for the German-language market with coach Ramin Raygan.
+  screenshot: /showcase/images/v3_CoachYourself.png
+  android_download: https://play.google.com/store/apps/details?id=eu.coach_yourself.app
+  ios_download: https://itunes.apple.com/us/app/coach-yourself/id1372759980
+
