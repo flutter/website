@@ -369,7 +369,7 @@ class DemoLocalizations {
 In the minimal app the DemoLocalizationsDelegate is slightly
 different. Its `load` method returns a
 [SynchronousFuture](https://docs.flutter.io/flutter/foundation/SynchronousFuture-class.html)
-because no asynnchronous loading needs to take place.
+because no asynchronous loading needs to take place.
 
 
 {% prettify dart %}
