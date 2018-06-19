@@ -13,27 +13,27 @@ We'll use the standard `ListView` constructor, passing through a horizontal
 
 <!-- skip -->
 ```dart
-new ListView(
+ListView(
   // This next line does the trick.
   scrollDirection: Axis.horizontal,
   children: <Widget>[
-    new Container(
+    Container(
       width: 160.0,
       color: Colors.red,
     ),
-    new Container(
+    Container(
       width: 160.0,
       color: Colors.blue,
     ),
-    new Container(
+    Container(
       width: 160.0,
       color: Colors.green,
     ),
-    new Container(
+    Container(
       width: 160.0,
       color: Colors.yellow,
     ),
-    new Container(
+    Container(
       width: 160.0,
       color: Colors.orange,
     ),
@@ -46,42 +46,42 @@ new ListView(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'Horizontal List';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new Container(
-          margin: new EdgeInsets.symmetric(vertical: 20.0),
+        body: Container(
+          margin: EdgeInsets.symmetric(vertical: 20.0),
           height: 200.0,
-          child: new ListView(
+          child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              new Container(
+              Container(
                 width: 160.0,
                 color: Colors.red,
               ),
-              new Container(
+              Container(
                 width: 160.0,
                 color: Colors.blue,
               ),
-              new Container(
+              Container(
                 width: 160.0,
                 color: Colors.green,
               ),
-              new Container(
+              Container(
                 width: 160.0,
                 color: Colors.yellow,
               ),
-              new Container(
+              Container(
                 width: 160.0,
                 color: Colors.orange,
               ),

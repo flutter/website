@@ -30,7 +30,7 @@ In this case, we'll want to create a `Scaffold` with a `drawer`:
 
 <!-- skip -->
 ```dart
-new Scaffold(
+Scaffold(
   drawer: // We'll add our Drawer here in the next step!
 );
 ```
@@ -43,8 +43,8 @@ which adheres to the Material Design spec.
 
 <!-- skip -->
 ```dart
-new Scaffold(
-  drawer: new Drawer(
+Scaffold(
+  drawer: Drawer(
     child: // We'll populate the Drawer in the next step!
   )
 );
@@ -65,29 +65,29 @@ Widgets. For more information on working with Lists, please see the
 
 <!-- skip -->
 ```dart
-new Drawer(
+Drawer(
   // Add a ListView to the drawer. This ensures the user can scroll
   // through the options in the Drawer if there isn't enough vertical
   // space to fit everything.
-  child: new ListView(
+  child: ListView(
     // Important: Remove any padding from the ListView.
     padding: EdgeInsets.zero,
     children: <Widget>[
-      new DrawerHeader(
-        child: new Text('Drawer Header'),
-        decoration: new BoxDecoration(
+      DrawerHeader(
+        child: Text('Drawer Header'),
+        decoration: BoxDecoration(
           color: Colors.blue,
         ),
       ),
-      new ListTile(
-        title: new Text('Item 1'),
+      ListTile(
+        title: Text('Item 1'),
         onTap: () {
           // Update the state of the app
           // ...
         },
       ),
-      new ListTile(
-        title: new Text('Item 2'),
+      ListTile(
+        title: Text('Item 2'),
         onTap: () {
           // Update the state of the app
           // ...
@@ -109,8 +109,8 @@ stack under the hood. Therefore, to close the drawer, we can call
 
 <!-- skip -->
 ```dart
-new ListTile(
-  title: new Text('Item 1'),
+ListTile(
+  title: Text('Item 1'),
   onTap: () {
     // Update the state of the app
     // ...
@@ -125,16 +125,16 @@ new ListTile(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final appTitle = 'Drawer Demo';
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: appTitle,
-      home: new MyHomePage(title: appTitle),
+      home: MyHomePage(title: appTitle),
     );
   }
 }
@@ -146,25 +146,25 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(title: new Text(title)),
-      body: new Center(child: new Text('My Page!')),
-      drawer: new Drawer(
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(child: Text('My Page!')),
+      drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the Drawer if there isn't enough vertical
         // space to fit everything.
-        child: new ListView(
+        child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            new DrawerHeader(
-              child: new Text('Drawer Header'),
-              decoration: new BoxDecoration(
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
-            new ListTile(
-              title: new Text('Item 1'),
+            ListTile(
+              title: Text('Item 1'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -172,8 +172,8 @@ class MyHomePage extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            new ListTile(
-              title: new Text('Item 2'),
+            ListTile(
+              title: Text('Item 2'),
               onTap: () {
                 // Update the state of the app
                 // ...

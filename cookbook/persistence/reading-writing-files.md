@@ -64,7 +64,7 @@ library to achieve this.
 ```dart
 Future<File> get _localFile async {
   final path = await _localPath;
-  return new File('$path/counter.txt');
+  return File('$path/counter.txt');
 }
 ```
 
@@ -149,9 +149,9 @@ import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(
-    new MaterialApp(
+    MaterialApp(
       title: 'Reading and Writing Files',
-      home: new FlutterDemo(storage: new CounterStorage()),
+      home: FlutterDemo(storage: CounterStorage()),
     ),
   );
 }
@@ -165,7 +165,7 @@ class CounterStorage {
 
   Future<File> get _localFile async {
     final path = await _localPath;
-    return new File('$path/counter.txt');
+    return File('$path/counter.txt');
   }
 
   Future<int> readCounter() async {
@@ -196,7 +196,7 @@ class FlutterDemo extends StatefulWidget {
   FlutterDemo({Key key, @required this.storage}) : super(key: key);
 
   @override
-  _FlutterDemoState createState() => new _FlutterDemoState();
+  _FlutterDemoState createState() => _FlutterDemoState();
 }
 
 class _FlutterDemoState extends State<FlutterDemo> {
@@ -223,17 +223,17 @@ class _FlutterDemoState extends State<FlutterDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(title: new Text('Reading and Writing Files')),
-      body: new Center(
-        child: new Text(
+    return Scaffold(
+      appBar: AppBar(title: Text('Reading and Writing Files')),
+      body: Center(
+        child: Text(
           'Button tapped $_counter time${_counter == 1 ? '' : 's'}.',
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }

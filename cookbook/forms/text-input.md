@@ -26,8 +26,8 @@ explicitly.
 
 <!-- skip -->
 ```dart
-new TextField(
-  decoration: new InputDecoration(
+TextField(
+  decoration: InputDecoration(
     border: InputBorder.none,
     hintText: 'Please enter a search term'
   ),
@@ -45,8 +45,8 @@ widgets.
 
 <!-- skip -->
 ```dart
-new TextFormField(
-  decoration: new InputDecoration(
+TextFormField(
+  decoration: InputDecoration(
     labelText: 'Enter your username'
   ),
 );

@@ -24,7 +24,7 @@ In order to focus a text field as soon as it's visible, we can use the
 
 <!-- skip -->
 ```dart
-new TextField(
+TextField(
   autofocus: true,
 );
 ```
@@ -59,14 +59,14 @@ class. In addition, we need to `dispose` of them when they're no longer needed!
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => new _MyFormState();
+  _MyFormState createState() => _MyFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // the form.
 class _MyFormState extends State<MyForm> {
   // Create the focus node. We will pass it to the TextField below.
-  final FocusNode myFocusNode = new FocusNode();
+  final FocusNode myFocusNode = FocusNode();
 
   @override
   void dispose() {
@@ -95,7 +95,7 @@ class _MyFormState extends State<MyForm> {
 
   @override
   Widget build(BuildContext context) {
-    return new TextField(
+    return TextField(
       focusNode: myFocusNode,
     );
   }
@@ -110,7 +110,7 @@ method to achieve this task.
 
 <!-- skip -->
 ```dart
-new FloatingActionButton(
+FloatingActionButton(
   // When the button is pressed, ask Flutter to focus our text field using
   // myFocusNode.
   onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
@@ -122,14 +122,14 @@ new FloatingActionButton(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Text Field Focus',
-      home: new MyForm(),
+      home: MyForm(),
     );
   }
 }
@@ -137,14 +137,14 @@ class MyApp extends StatelessWidget {
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => new _MyFormState();
+  _MyFormState createState() => _MyFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // the form.
 class _MyFormState extends State<MyForm> {
   // Create the focus node. We will pass it to the TextField below.
-  final FocusNode myFocusNode = new FocusNode();
+  final FocusNode myFocusNode = FocusNode();
 
   @override
   void dispose() {
@@ -156,32 +156,32 @@ class _MyFormState extends State<MyForm> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Text Field Focus'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Text Field Focus'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: new Column(
+        child: Column(
           children: [
             // The first text field will be focused as soon as the app starts
-            new TextField(
+            TextField(
               autofocus: true,
             ),
             // The second text field will be focused when a user taps on the
             // FloatingActionButton
-            new TextField(
+            TextField(
               focusNode: myFocusNode,
             ),
           ],
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         // When the button is pressed, ask Flutter to focus our text field using
         // myFocusNode.
         onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
         tooltip: 'Focus Second Text Field',
-        child: new Icon(Icons.edit),
+        child: Icon(Icons.edit),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

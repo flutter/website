@@ -44,9 +44,9 @@ Lists, please see the [`Basic List`](/cookbook/lists/basic-list/) recipe.
 
 <!-- skip -->
 ```dart
-final todos = new List<Todo>.generate(
+final todos = List<Todo>.generate(
   20,
-  (i) => new Todo(
+  (i) => Todo(
         'Todo $i',
         'A description of what needs to be done for Todo $i',
       ),
@@ -57,11 +57,11 @@ final todos = new List<Todo>.generate(
 
 <!-- skip -->
 ```dart
-new ListView.builder(
+ListView.builder(
   itemCount: todos.length,
   itemBuilder: (context, index) {
-    return new ListTile(
-      title: new Text(todos[index].title),
+    return ListTile(
+      title: Text(todos[index].title),
     );
   },
 );
@@ -89,13 +89,13 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Use the Todo to create our UI
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("${todo.title}"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("${todo.title}"),
       ),
-      body: new Padding(
-        padding: new EdgeInsets.all(16.0),
-        child: new Text('${todo.description}'),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text('${todo.description}'),
       ),
     );
   }
@@ -115,19 +115,19 @@ method.
 
 <!-- skip -->
 ```dart
-new ListView.builder(
+ListView.builder(
   itemCount: todos.length,
   itemBuilder: (context, index) {
-    return new ListTile(
-      title: new Text(todos[index].title),
+    return ListTile(
+      title: Text(todos[index].title),
       // When a user taps on the ListTile, navigate to the DetailScreen.
-      // Notice that we're not only creating a new DetailScreen, we're
+      // Notice that we're not only creating a DetailScreen, we're
       // also passing the current todo to it!
       onTap: () {
         Navigator.push(
           context,
-          new MaterialPageRoute(
-            builder: (context) => new DetailScreen(todo: todos[index]),
+          MaterialPageRoute(
+            builder: (context) => DetailScreen(todo: todos[index]),
           ),
         );
       },
@@ -150,12 +150,12 @@ class Todo {
 }
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'Passing Data',
-    home: new TodosScreen(
-      todos: new List.generate(
+    home: TodosScreen(
+      todos: List.generate(
         20,
-        (i) => new Todo(
+        (i) => Todo(
               'Todo $i',
               'A description of what needs to be done for Todo $i',
             ),
@@ -171,23 +171,23 @@ class TodosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Todos'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todos'),
       ),
-      body: new ListView.builder(
+      body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
-          return new ListTile(
-            title: new Text(todos[index].title),
+          return ListTile(
+            title: Text(todos[index].title),
             // When a user taps on the ListTile, navigate to the DetailScreen.
-            // Notice that we're not only creating a new DetailScreen, we're
+            // Notice that we're not only creating a DetailScreen, we're
             // also passing the current todo through to it!
             onTap: () {
               Navigator.push(
                 context,
-                new MaterialPageRoute(
-                  builder: (context) => new DetailScreen(todo: todos[index]),
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
             },
@@ -208,13 +208,13 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Use the Todo to create our UI
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("${todo.title}"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("${todo.title}"),
       ),
-      body: new Padding(
-        padding: new EdgeInsets.all(16.0),
-        child: new Text('${todo.description}'),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text('${todo.description}'),
       ),
     );
   }

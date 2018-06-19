@@ -39,7 +39,7 @@ us to validate the form in a later step.
 class MyForm extends StatefulWidget {
   @override
   MyFormState createState() {
-    return new MyFormState();
+    return MyFormState();
   }
 }
 
@@ -48,12 +48,12 @@ class MyForm extends StatefulWidget {
 class MyFormState extends State<MyForm> {
   // Create a global key that will uniquely identify the Form widget and allow
   // us to validate the form
-  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey we created above
-    return new Form(
+    return Form(
       key: _formKey,
       child: // We'll build this out in the next steps!
     );
@@ -79,7 +79,7 @@ isn't empty. If it is empty, we will return a friendly error message!
 
 <!-- skip -->
 ```dart
-new TextFormField(
+TextFormField(
   // The validator receives the text the user has typed in
   validator: (value) {
     if (value.isEmpty) {
@@ -100,18 +100,19 @@ content, we'll want to display the error message.
 
 <!-- skip -->
 ```dart
-new RaisedButton(
+RaisedButton(
   onPressed: () {
     // Validate will return true if the form is valid, or false if
     // the form is invalid.
     if (_formKey.currentState.validate()) {
       // If the form is valid, display a snackbar. In the real world, you'd
       // often want to call a server or save the information in a database
-      Scaffold.of(context).showSnackBar(
-          new SnackBar(content: new Text('Processing Data')));
+      Scaffold
+          .of(context)
+          .showSnackBar(SnackBar(content: Text('Processing Data')));
     }
   },
-  child: new Text('Submit'),
+  child: Text('Submit'),
 );
 ```
 
@@ -133,20 +134,20 @@ errors, it will display the error message for each invalid text field and return
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTitle = 'Form Validation Demo';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: appTitle,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(appTitle),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(appTitle),
         ),
-        body: new MyForm(),
+        body: MyForm(),
       ),
     );
   }
@@ -156,7 +157,7 @@ class MyApp extends StatelessWidget {
 class MyForm extends StatefulWidget {
   @override
   MyFormState createState() {
-    return new MyFormState();
+    return MyFormState();
   }
 }
 
@@ -164,36 +165,37 @@ class MyForm extends StatefulWidget {
 // the form.
 class MyFormState extends State<MyForm> {
   // Create a global key that will uniquely identify the `Form` widget
-  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey we created above
-    return new Form(
+    return Form(
       key: _formKey,
-      child: new Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new TextFormField(
+          TextFormField(
             validator: (value) {
               if (value.isEmpty) {
                 return 'Please enter some text';
               }
             },
           ),
-          new Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: new RaisedButton(
+            child: RaisedButton(
               onPressed: () {
                 // Validate will return true if the form is valid, or false if
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
                   // If the form is valid, we want to show a Snackbar
-                  Scaffold.of(context).showSnackBar(
-                      new SnackBar(content: new Text('Processing Data')));
+                  Scaffold
+                      .of(context)
+                      .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
               },
-              child: new Text('Submit'),
+              child: Text('Submit'),
             ),
           ),
         ],

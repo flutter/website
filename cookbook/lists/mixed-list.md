@@ -57,11 +57,11 @@ contain a header followed by five messages. Rinse, repeat.
 
 <!-- skip -->
 ```dart
-final items = new List<ListItem>.generate(
+final items = List<ListItem>.generate(
   1200,
   (i) => i % 6 == 0
-      ? new HeadingItem("Heading $i")
-      : new MessageItem("Sender $i", "Message body $i"),
+      ? HeadingItem("Heading $i")
+      : MessageItem("Sender $i", "Message body $i"),
 );
 ```
 
@@ -82,7 +82,7 @@ you prefer another pattern!
 
 <!-- skip -->
 ```dart
-new ListView.builder(
+ListView.builder(
   // Let the ListView know how many items it needs to build
   itemCount: items.length,
   // Provide a builder function. This is where the magic happens! We'll
@@ -91,16 +91,16 @@ new ListView.builder(
     final item = items[index];
 
     if (item is HeadingItem) {
-      return new ListTile(
-        title: new Text(
+      return ListTile(
+        title: Text(
           item.heading,
           style: Theme.of(context).textTheme.headline,
         ),
       );
     } else if (item is MessageItem) {
-      return new ListTile(
-        title: new Text(item.sender),
-        subtitle: new Text(item.body),
+      return ListTile(
+        title: Text(item.sender),
+        subtitle: Text(item.body),
       );
     }
   },
@@ -114,12 +114,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp(
-    items: new List<ListItem>.generate(
+  runApp(MyApp(
+    items: List<ListItem>.generate(
       1000,
       (i) => i % 6 == 0
-          ? new HeadingItem("Heading $i")
-          : new MessageItem("Sender $i", "Message body $i"),
+          ? HeadingItem("Heading $i")
+          : MessageItem("Sender $i", "Message body $i"),
     ),
   ));
 }
@@ -133,13 +133,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Mixed List';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new ListView.builder(
+        body: ListView.builder(
           // Let the ListView know how many items it needs to build
           itemCount: items.length,
           // Provide a builder function. This is where the magic happens! We'll
@@ -148,16 +148,16 @@ class MyApp extends StatelessWidget {
             final item = items[index];
 
             if (item is HeadingItem) {
-              return new ListTile(
-                title: new Text(
+              return ListTile(
+                title: Text(
                   item.heading,
                   style: Theme.of(context).textTheme.headline,
                 ),
               );
             } else if (item is MessageItem) {
-              return new ListTile(
-                title: new Text(item.sender),
-                subtitle: new Text(item.body),
+              return ListTile(
+                title: Text(item.sender),
+                subtitle: Text(item.body),
               );
             }
           },

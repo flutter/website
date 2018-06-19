@@ -76,7 +76,7 @@ class Post {
   Post({this.userId, this.id, this.title, this.body});
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return new Post(
+    return Post(
       userId: json['userId'],
       id: json['id'],
       title: json['title'],
@@ -100,7 +100,7 @@ Future<Post> fetchPost() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
   final responseJson = json.decode(response.body); 
   
-  return new Post.fromJson(responseJson); 
+  return Post.fromJson(responseJson); 
 }
 ```
 
@@ -123,17 +123,17 @@ We must provide two parameters:
 
 <!-- skip -->
 ```dart
-new FutureBuilder<Post>(
+FutureBuilder<Post>(
   future: fetchPost(),
   builder: (context, snapshot) {
     if (snapshot.hasData) {
-      return new Text(snapshot.data.title);
+      return Text(snapshot.data.title);
     } else if (snapshot.hasError) {
-      return new Text("${snapshot.error}");
+      return Text("${snapshot.error}");
     }
 
     // By default, show a loading spinner
-    return new CircularProgressIndicator();
+    return CircularProgressIndicator();
   },
 );
 ```
@@ -152,7 +152,7 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
   final responseJson = json.decode(response.body);
 
-  return new Post.fromJson(responseJson);
+  return Post.fromJson(responseJson);
 }
 
 class Post {
@@ -164,7 +164,7 @@ class Post {
   Post({this.userId, this.id, this.title, this.body});
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return new Post(
+    return Post(
       userId: json['userId'],
       id: json['id'],
       title: json['title'],
@@ -173,32 +173,32 @@ class Post {
   }
 }
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Fetch Data Example',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Fetch Data Example'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Fetch Data Example'),
         ),
-        body: new Center(
-          child: new FutureBuilder<Post>(
+        body: Center(
+          child: FutureBuilder<Post>(
             future: fetchPost(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return new Text(snapshot.data.title);
+                return Text(snapshot.data.title);
               } else if (snapshot.hasError) {
-                return new Text("${snapshot.error}");
+                return Text("${snapshot.error}");
               }
 
               // By default, show a loading spinner
-              return new CircularProgressIndicator();
+              return CircularProgressIndicator();
             },
           ),
         ),

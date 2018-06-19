@@ -24,9 +24,9 @@ If no `theme` is provided, Flutter will create a fallback theme under the hood.
 
 <!-- skip -->
 ```dart
-new MaterialApp(
+MaterialApp(
   title: title,
-  theme: new ThemeData(
+  theme: ThemeData(
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
     accentColor: Colors.cyan[600],
@@ -48,18 +48,18 @@ extending the parent theme.
 ### Creating unique `ThemeData`
 
 If we don't want to inherit any application colors or font styles, we can create
-a `new ThemeData()` instance and pass that to the `Theme` Widget.
+a `ThemeData()` instance and pass that to the `Theme` Widget.
 
 <!-- skip -->
 ```dart
-new Theme(
-  // Create a unique theme with "new ThemeData"
-  data: new ThemeData(
+Theme(
+  // Create a unique theme with "ThemeData"
+  data: ThemeData(
     accentColor: Colors.yellow,
   ),
-  child: new FloatingActionButton(
+  child: FloatingActionButton(
     onPressed: () {},
-    child: new Icon(Icons.add),
+    child: Icon(Icons.add),
   ),
 );
 ```
@@ -73,13 +73,13 @@ method.
 
 <!-- skip -->
 ```dart
-new Theme(
+Theme(
   // Find and Extend the parent theme using "copyWith". Please see the next 
   // section for more info on `Theme.of`.
   data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-  child: new FloatingActionButton(
+  child: FloatingActionButton(
     onPressed: null,
-    child: new Icon(Icons.add),
+    child: Icon(Icons.add),
   ),
 );
 ```
@@ -98,9 +98,9 @@ In fact, the `FloatingActionButton` uses this exact technique to find the
  
 <!-- skip -->
 ```dart
-new Container(
+Container(
   color: Theme.of(context).accentColor,
-  child: new Text(
+  child: Text(
     'Text with a background color',
     style: Theme.of(context).textTheme.title,
   ),
@@ -114,7 +114,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -122,14 +122,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appName = 'Custom Themes';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: appName,
-      theme: new ThemeData(
+      theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
         accentColor: Colors.cyan[600],
       ),
-      home: new MyHomePage(
+      home: MyHomePage(
         title: appName,
       ),
     );
@@ -143,24 +143,24 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
       ),
-      body: new Center(
-        child: new Container(
+      body: Center(
+        child: Container(
           color: Theme.of(context).accentColor,
-          child: new Text(
+          child: Text(
             'Text with a background color',
             style: Theme.of(context).textTheme.title,
           ),
         ),
       ),
-      floatingActionButton: new Theme(
+      floatingActionButton: Theme(
         data: Theme.of(context).copyWith(accentColor: Colors.yellow),
-        child: new FloatingActionButton(
+        child: FloatingActionButton(
           onPressed: null,
-          child: new Icon(Icons.add),
+          child: Icon(Icons.add),
         ),
       ),
     );

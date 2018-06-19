@@ -31,7 +31,7 @@ we'll generate a List of Strings.
 
 <!-- skip -->
 ```dart
-final items = new List<String>.generate(20, (i) => "Item ${i + 1}");
+final items = List<String>.generate(20, (i) => "Item ${i + 1}");
 ```
 
 ### Convert the data source into a List
@@ -41,10 +41,10 @@ not be able to swipe away with these items just yet!
 
 <!-- skip -->
 ```dart
-new ListView.builder(
+ListView.builder(
   itemCount: items.length,
   itemBuilder: (context, index) {
-    return new ListTile(title: new Text('${items[index]}'));
+    return ListTile(title: Text('${items[index]}'));
   },
 );
 ```
@@ -65,10 +65,10 @@ to return a `Dismissible` Widget.
 
 <!-- skip -->
 ```dart
-new Dismissible(
+Dismissible(
   // Each Dismissible must contain a Key. Keys allow Flutter to
   // uniquely identify Widgets.
-  key: new Key(item),
+  key: Key(item),
   // We also need to provide a function that will tell our app
   // what to do after an item has been swiped away.
   onDismissed: (direction) {
@@ -76,10 +76,11 @@ new Dismissible(
     items.removeAt(index);
 
     // Show a snackbar! This snackbar could also contain "Undo" actions.
-    Scaffold.of(context).showSnackBar(
-        new SnackBar(content: new Text("$item dismissed")));
+    Scaffold
+        .of(context)
+        .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
-  child: new ListTile(title: new Text('$item')),
+  child: ListTile(title: Text('$item')),
 );
 ```
 
@@ -94,17 +95,18 @@ For this purpose, we'll provide a `background` parameter to the `Dismissible`.
 
 <!-- skip -->
 ```dart
-new Dismissible(
+Dismissible(
   // Show a red background as the item is swiped away
-  background: new Container(color: Colors.red),
-  key: new Key(item),
+  background: Container(color: Colors.red),
+  key: Key(item),
   onDismissed: (direction) {
     items.removeAt(index);
 
-    Scaffold.of(context).showSnackBar(
-        new SnackBar(content: new Text("$item dismissed")));
+    Scaffold
+        .of(context)
+        .showSnackBar(SnackBar(content: Text("$item dismissed")));
   },
-  child: new ListTile(title: new Text('$item')),
+  child: ListTile(title: Text('$item')),
 );
 ``` 
 
@@ -115,8 +117,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp(
-    items: new List<String>.generate(20, (i) => "Item ${i + 1}"),
+  runApp(MyApp(
+    items: List<String>.generate(20, (i) => "Item ${i + 1}"),
   ));
 }
 
@@ -129,32 +131,33 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final title = 'Dismissing Items';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new ListView.builder(
+        body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
 
-            return new Dismissible(
+            return Dismissible(
               // Each Dismissible must contain a Key. Keys allow Flutter to
               // uniquely identify Widgets.
-              key: new Key(item),
+              key: Key(item),
               // We also need to provide a function that will tell our app
               // what to do after an item has been swiped away.
               onDismissed: (direction) {
                 items.removeAt(index);
 
-                Scaffold.of(context).showSnackBar(
-                    new SnackBar(content: new Text("$item dismissed")));
+                Scaffold
+                    .of(context)
+                    .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away
-              background: new Container(color: Colors.red),
-              child: new ListTile(title: new Text('$item')),
+              background: Container(color: Colors.red),
+              child: ListTile(title: Text('$item')),
             );
           },
         ),

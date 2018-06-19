@@ -62,7 +62,7 @@ error reports to the sentry service!
 
 <!-- skip -->
 ```dart
-final SentryClient _sentry = new SentryClient(dsn: "App DSN goes Here");
+final SentryClient _sentry = SentryClient(dsn: "App DSN goes Here");
 ```
 
 ## 4. Create a function to report errors
@@ -124,7 +124,7 @@ providing an `onError` callback.
 <!-- skip -->
 ```dart
 runZoned<Future<Null>>(() async {
-  runApp(new CrashyApp());
+  runApp(CrashyApp());
 }, onError: (error, stackTrace) {
   // Whenever an error occurs, call the `_reportError` function. This will send
   // Dart errors to our dev console or Sentry depending on the environment.

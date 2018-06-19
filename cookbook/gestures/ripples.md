@@ -18,16 +18,16 @@ Widget to achieve this effect.
 <!-- skip -->
 ```dart
 // The InkWell Wraps our custom flat button Widget
-new InkWell(
+InkWell(
   // When the user taps the button, show a snackbar
   onTap: () {
-    Scaffold.of(context).showSnackBar(new SnackBar(
-      content: new Text('Tap'),
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text('Tap'),
     ));
   },
-  child: new Container(
-    padding: new EdgeInsets.all(12.0),
-    child: new Text('Flat Button'),
+  child: Container(
+    padding: EdgeInsets.all(12.0),
+    child: Text('Flat Button'),
   ),
 );
 ```   
@@ -37,16 +37,16 @@ new InkWell(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'InkWell Demo';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      home: new MyHomePage(title: title),
+      home: MyHomePage(title: title),
     );
   }
 }
@@ -58,11 +58,11 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
       ),
-      body: new Center(child: new MyButton()),
+      body: Center(child: MyButton()),
     );
   }
 }
@@ -71,16 +71,16 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // The InkWell Wraps our custom flat button Widget
-    return new InkWell(
+    return InkWell(
       // When the user taps the button, show a snackbar
       onTap: () {
-        Scaffold.of(context).showSnackBar(new SnackBar(
-              content: new Text('Tap'),
+        Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text('Tap'),
             ));
       },
-      child: new Container(
-        padding: new EdgeInsets.all(12.0),
-        child: new Text('Flat Button'),
+      child: Container(
+        padding: EdgeInsets.all(12.0),
+        child: Text('Flat Button'),
       ),
     );
   }

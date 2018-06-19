@@ -26,7 +26,7 @@ green box on screen.
 
 <!-- skip -->
 ```dart
-new Container(
+Container(
   width: 200.0,
   height: 200.0,
   color: Colors.green,
@@ -61,7 +61,7 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 // The State class is responsible for two things: holding some data we can 
@@ -94,7 +94,7 @@ Note: For more information on working with user input, please see the
 
 <!-- skip -->
 ```dart
-new FloatingActionButton(
+FloatingActionButton(
   onPressed: () {
     // Make sure we call setState! This will tell Flutter to rebuild the
     // UI with our changes!
@@ -103,7 +103,7 @@ new FloatingActionButton(
     });
   },
   tooltip: 'Toggle Opacity',
-  child: new Icon(Icons.flip),
+  child: Icon(Icons.flip),
 );
 ``` 
 
@@ -122,13 +122,13 @@ The `AnimatedOpacity` Widget requires three arguments:
 
 <!-- skip -->
 ```dart
-new AnimatedOpacity(
+AnimatedOpacity(
   // If the Widget should be visible, animate to 1.0 (fully visible). If
   // the Widget should be hidden, animate to 0.0 (invisible).
   opacity: _visible ? 1.0 : 0.0,
-  duration: new Duration(milliseconds: 500),
+  duration: Duration(milliseconds: 500),
   // The green box needs to be the child of the AnimatedOpacity
-  child: new Container(
+  child: Container(
     width: 200.0,
     height: 200.0,
     color: Colors.green,
@@ -141,15 +141,15 @@ new AnimatedOpacity(
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTitle = 'Opacity Demo';
-    return new MaterialApp(
+    return MaterialApp(
       title: appTitle,
-      home: new MyHomePage(title: appTitle),
+      home: MyHomePage(title: appTitle),
     );
   }
 }
@@ -162,7 +162,7 @@ class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 // The State class is responsible for two things: holding some data we can
@@ -173,25 +173,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
-        child: new AnimatedOpacity(
+      body: Center(
+        child: AnimatedOpacity(
           // If the Widget should be visible, animate to 1.0 (fully visible). If
           // the Widget should be hidden, animate to 0.0 (invisible).
           opacity: _visible ? 1.0 : 0.0,
-          duration: new Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 500),
           // The green box needs to be the child of the AnimatedOpacity
-          child: new Container(
+          child: Container(
             width: 200.0,
             height: 200.0,
             color: Colors.green,
           ),
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Make sure we call setState! This will tell Flutter to rebuild the
           // UI with our changes!
@@ -200,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
         tooltip: 'Toggle Opacity',
-        child: new Icon(Icons.flip),
+        child: Icon(Icons.flip),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

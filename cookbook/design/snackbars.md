@@ -31,11 +31,11 @@ overlap!
 
 <!-- skip -->
 ```dart
-new Scaffold(
-  appBar: new AppBar(
-    title: new Text('SnackBar Demo'),
+Scaffold(
+  appBar: AppBar(
+    title: Text('SnackBar Demo'),
   ),
-  body: new SnackBarPage(), // We'll fill this in below!
+  body: SnackBarPage(), // We'll fill this in below!
 );
 ```
 
@@ -46,7 +46,7 @@ create a `SnackBar`, then display it using the `Scaffold`.
 
 <!-- skip -->
 ```dart
-final snackBar = new SnackBar(content: new Text('Yay! A SnackBar!'));
+final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
 // Find the Scaffold in the Widget tree and use it to show a SnackBar
 Scaffold.of(context).showSnackBar(snackBar);
@@ -61,9 +61,9 @@ message, we could provide an action to undo that change.
 To achieve this, we can provide an additional `action` to the `SnackBar` Widget.
 
 ```dart
-final snackBar = new SnackBar(
-  content: new Text('Yay! A SnackBar!'),
-  action: new SnackBarAction(
+final snackBar = SnackBar(
+  content: Text('Yay! A SnackBar!'),
+  action: SnackBarAction(
     label: 'Undo',
     onPressed: () {
       // Some code to undo the change!
@@ -82,18 +82,18 @@ of the Cookbook.
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new SnackBarDemo());
+void main() => runApp(SnackBarDemo());
 
 class SnackBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'SnackBar Demo',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('SnackBar Demo'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('SnackBar Demo'),
         ),
-        body: new SnackBarPage(),
+        body: SnackBarPage(),
       ),
     );
   }
@@ -102,12 +102,12 @@ class SnackBarDemo extends StatelessWidget {
 class SnackBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new RaisedButton(
+    return Center(
+      child: RaisedButton(
         onPressed: () {
-          final snackBar = new SnackBar(
-            content: new Text('Yay! A SnackBar!'),
-            action: new SnackBarAction(
+          final snackBar = SnackBar(
+            content: Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
               label: 'Undo',
               onPressed: () {
                 // Some code to undo the change!
@@ -118,7 +118,7 @@ class SnackBarPage extends StatelessWidget {
           // Find the Scaffold in the Widget tree and use it to show a SnackBar!
           Scaffold.of(context).showSnackBar(snackBar);
         },
-        child: new Text('Show SnackBar'),
+        child: Text('Show SnackBar'),
       ),
     );
   }

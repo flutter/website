@@ -27,7 +27,7 @@ console every time the text changes.
 
 <!-- skip -->
 ```dart
-new TextField(
+TextField(
   onChanged: (text) {
     print("First text field: $text");
   },
@@ -63,7 +63,7 @@ these two classes together, we can listen for changes to the text field!
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => new _MyFormState();
+  _MyFormState createState() => _MyFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
@@ -71,7 +71,7 @@ class MyForm extends StatefulWidget {
 class _MyFormState extends State<MyForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
-  final myController = new TextEditingController();
+  final myController = TextEditingController();
 
   @override
   void dispose() {
@@ -98,7 +98,7 @@ for changes to the text field.
 
 <!-- skip -->
 ```dart
-new TextField(
+TextField(
   controller: myController,
 );
 ```
@@ -156,14 +156,14 @@ class _MyFormState extends State<MyForm> {
 ```dart
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Retrieve Text Input',
-      home: new MyForm(),
+      home: MyForm(),
     );
   }
 }
@@ -171,7 +171,7 @@ class MyApp extends StatelessWidget {
 // Define a Custom Form Widget
 class MyForm extends StatefulWidget {
   @override
-  _MyFormState createState() => new _MyFormState();
+  _MyFormState createState() => _MyFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
@@ -179,7 +179,7 @@ class MyForm extends StatefulWidget {
 class _MyFormState extends State<MyForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
-  final myController = new TextEditingController();
+  final myController = TextEditingController();
 
   @override
   void initState() {
@@ -202,20 +202,20 @@ class _MyFormState extends State<MyForm> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Retrieve Text Input'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Retrieve Text Input'),
       ),
-      body: new Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            new TextField(
+            TextField(
               onChanged: (text) {
                 print("First text field: $text");
               },
             ),
-            new TextField(
+            TextField(
               controller: myController,
             ),
           ],
