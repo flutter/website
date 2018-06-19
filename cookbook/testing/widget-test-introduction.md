@@ -252,7 +252,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: new Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           title: Text(title),
         ),
