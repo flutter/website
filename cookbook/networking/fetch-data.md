@@ -148,7 +148,11 @@ FutureBuilder<Post>(
 
 ## Testing
 
-For information on how to test this class, please see the 
+For information on how to test this functionality, please see the following 
+recipes:
+
+  * [Introduction to unit testing](/cookbook/testing/unit-test/)
+  * [Mock dependencies using Mockito](/cookbook/testing/mocking/) 
 
 ## Complete Example
 
@@ -168,7 +172,7 @@ Future<Post> fetchPost() async {
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that call was not successful, throw an error.
-    throw new Exception('Failed to load post');
+    throw Exception('Failed to load post');
   }
 }
 

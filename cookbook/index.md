@@ -49,7 +49,7 @@ reference to help you build up an application.
 ## Animation
   
   * [Fade a Widget in and out](/cookbook/animation/opacity-animation/)
-  
+
 ## Networking
 
   * [Fetch data from the internet](/cookbook/networking/fetch-data/)
