@@ -32,7 +32,7 @@ CachedNetworkImage(
 );
 ``` 
 
-## Complete Example
+## Complete example
 
 <!-- skip -->
 ```dart

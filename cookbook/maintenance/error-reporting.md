@@ -159,7 +159,7 @@ FlutterError.onError = (FlutterErrorDetails details) {
 };
 ```
 
-## Complete Example
+## Complete example
 
 To view a working example, please view the 
 [Crashy](https://github.com/flutter/crashy) example app. 

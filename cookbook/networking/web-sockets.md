@@ -98,7 +98,7 @@ so, we can close the `sink`.
 channel.sink.close();
 ```
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/foundation.dart';

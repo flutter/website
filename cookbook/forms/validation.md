@@ -129,7 +129,7 @@ If everything looks good, the method returns `true`. If any text field contains
 errors, it will display the error message for each invalid text field and return 
 `false`.
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

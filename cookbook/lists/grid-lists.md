@@ -34,7 +34,7 @@ GridView.count(
 );
 ```
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

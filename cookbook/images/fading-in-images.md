@@ -28,7 +28,7 @@ FadeInImage.memoryNetwork(
 );
 ```
 
-### Complete Example
+### Complete example
 
 ```dart
 import 'package:flutter/material.dart';
@@ -94,7 +94,7 @@ FadeInImage.assetNetwork(
 );
 ```
 
-### Complete Example
+### Complete example
 
 ```dart
 import 'package:flutter/material.dart';

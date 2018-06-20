@@ -137,7 +137,7 @@ setUpAll(() async {
 });
 ``` 
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'dart:async';
