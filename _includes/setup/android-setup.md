@@ -38,12 +38,14 @@ you want Flutter to use a different installation of the Android SDK, you must se
 To prepare to run and test your Flutter app on the Android emulator, follow these steps:
 
 1. Enable [VM acceleration](https://developer.android.com/studio/run/emulator-acceleration.html) on your machine.
-1. Launch **Android Studio>Tools>Android>AVD Manager** and select **Create Virtual Device**.
+1. Launch **Android Studio>Tools>Android>AVD Manager** and select
+**Create Virtual Device**. (The **Android** submenu is only present
+when inside an Android project.)
 1. Choose a device definition and select **Next**.
-1. Select one or more system images for the Android versions you want to emulate, 
+1. Select one or more system images for the Android versions you want to emulate,
    and select **Next**. An _x86_ or _x86\_64_ image is recommended.
-1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable 
-[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html). 
+1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
+[hardware acceleration](https://developer.android.com/studio/run/emulator-acceleration.html).
 1. Verify the AVD configuration is correct, and select **Finish**.
 
    For details on the above steps, see [Managing AVDs](https://developer.android.com/studio/run/managing-avds.html).
