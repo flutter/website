@@ -12,9 +12,9 @@ description: >
 
 <div class="homepage__illustration">
     <h1 class="homepage__illustration--text">
-        <span>Flutter Beta 3:</span>
+        <span>Latest release:</span>
         &nbsp;
-        <a href="https://developers.googleblog.com/2018/05/ready-for-production-apps-flutter-beta-3.html?utm_source=google&utm_medium=banner&utm_campaign=beta_3">Ready for production</a>
+        <a href="https://medium.com/flutter-io/flutter-release-preview-1-943a9b6ee65a?linkId=53249457">Flutter Release Preview 1</a>
     </h1>
     <img src="images/homepage/header-illustration.png" 
          class="homepage__illustration--image"
