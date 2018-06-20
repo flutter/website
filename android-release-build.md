@@ -140,7 +140,7 @@ file.
 Release builds of your app will now automatically be signed.
 
 
-## Minify and obfuscate
+## Minify and obfuscate the Android wrapper
 
 By default, Flutter does not obfuscate or minify the Android wrapper.
 If you intend to use third-party Java or Android libraries,
@@ -193,6 +193,20 @@ android {
 
 Note: Obfuscation and minification can considerably extend compile time
 of the Android application.
+
+## Obfuscate your Dart code
+
+To obfuscate the function and class names in your Dart code,
+add the following line to `<ProjectRoot>/android/gradle.properties`:
+
+```
+extra-gen-snapshot-options=--obfuscate
+```
+
+Note that Dart obfuscation has not yet been thoroughly tested.
+Please [file a bug](https://github.com/flutter/flutter/issues/new/choose)
+if you experience any issues. For more information, see [Stack
+Overflow](https://stackoverflow.com/questions/50542764/how-to-obfuscate-flutter-apps).
 
 ## Building a release APK
 
