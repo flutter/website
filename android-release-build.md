@@ -204,7 +204,7 @@ extra-gen-snapshot-options=--obfuscate
 ```
 
 Note that Dart obfuscation has not yet been thoroughly tested.
-Please [file a bug](https://github.com/flutter/flutter/issues/new/choose)
+Please [file a bug](https://github.com/flutter/flutter/issues)
 if you experience any issues. For more information, see [Stack
 Overflow](https://stackoverflow.com/questions/50542764/how-to-obfuscate-flutter-apps).
 
