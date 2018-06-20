@@ -49,7 +49,7 @@ GestureDetector(
   and [CupertinoButton](https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html)
     
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

@@ -151,7 +151,7 @@ class _MyFormState extends State<MyForm> {
 }
 ```
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

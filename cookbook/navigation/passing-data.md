@@ -136,7 +136,7 @@ ListView.builder(
 );
 ```      
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/foundation.dart';

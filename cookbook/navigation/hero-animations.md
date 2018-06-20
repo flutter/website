@@ -113,7 +113,7 @@ Note: this code is identical to what we had on the first screen! In general, you
 could create a reusable Widget instead of repeating code, but for this example, 
 we'll duplicate the code for demonstration purposes.
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

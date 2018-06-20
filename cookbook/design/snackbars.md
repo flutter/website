@@ -72,7 +72,7 @@ final snackBar = SnackBar(
 );
 ``` 
 
-## Complete Example
+## Complete example
 
 Note: In this example, we'll show the SnackBar when a user taps on a button.
 For more information on working with user input, please see the 

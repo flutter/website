@@ -173,7 +173,7 @@ loop as well as the ability to set breakpoints.
     3. Click the `Start Debugging` option
     4. *Alternatively, use the appropriate keyboard shortcut for your platform!*
 
-#### Run Tests in a terminal
+#### Run tests in a terminal
 
 We can also use a terminal to run our tests by executing the following
 command from the root of the project:

@@ -132,7 +132,7 @@ object specifies a weight or style for which is there is no exact font file, the
 engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.  
 
-## Complete Example
+## Complete example
 
 ### Fonts
 

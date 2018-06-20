@@ -7,7 +7,7 @@ permalink: /cookbook/testing/mocking/
 In certain cases, unit tests may depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
 
-  * Calling live services or databases will slow down test execution
+  * Calling live services or databases will slow down test execution.
   * A passing test may start failing if a web service or database returns 
   unexpected results. This is known as a "flaky test."
   * It is difficult to test all possible success & failure scenarios using a 

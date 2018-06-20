@@ -91,7 +91,8 @@ class Post {
 Now, we'll update the `fetchPost` function to return a `Future<Post>`. To do so,
 we'll need to:
 
-  1. Convert the response body into a json `Map` with the `dart:convert` package
+  1. Convert the response body into a json `Map` with the `dart:convert`
+  package.
   2. If the server returns an "OK" response with a status code of 200, convert 
   the json `Map` into a `Post` using the `fromJson` factory.
   3. If the server returns an unexpected response, throw an error
@@ -154,7 +155,7 @@ recipes:
   * [Introduction to unit testing](/cookbook/testing/unit-test/)
   * [Mock dependencies using Mockito](/cookbook/testing/mocking/) 
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'dart:async';

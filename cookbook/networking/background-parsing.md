@@ -139,7 +139,7 @@ simple objects such as the `List<Photo>` in this example.
 You may experience errors if you try to pass more complex objects, such as 
 a `Future` or `http.Response` between isolates.
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'dart:async';

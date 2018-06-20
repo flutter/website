@@ -39,8 +39,8 @@ together throughout this recipe.
 
 Before we can begin writing tests, we'll need to include the `flutter_test` 
 dependency in the `dev_dependencies` section of our `pubspec.yaml` file. If 
-you create a new Flutter project with the command line tools, this dependency
-should already be in place!
+you create a new Flutter project with the command line tools or code editor, 
+this dependency should already be in place!
 
 ```yaml
 dev_dependencies:
@@ -137,8 +137,8 @@ one of the following methods to ask Flutter to build our Widget once again.
 
   - [tester.pump()](https://docs.flutter.io/flutter/flutter_test/TestWidgetsFlutterBinding/pump.html) 
   : Triggers a rebuild of the Widget after a given duration.
-  - [tester.pumpAndSetttle()](https://docs.flutter.io/flutter/flutter_test/TestWidgetsFlutterBinding/pump.html)
-  : Triggers a rebuild of the Widget after animations have completed.
+  - [tester.pumpAndSettle()](https://docs.flutter.io/flutter/flutter_test/WidgetTester/pumpAndSettle.html)
+  : Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
 
 These methods provide fine-grained control over the build lifecycle, which is
 particularly useful while testing.
@@ -213,7 +213,7 @@ common cases.
   * [findsNWidgets](https://docs.flutter.io/flutter/flutter_test/findsNWidgets.html)
   : verifies a specific number of Widgets are found
 
-### Complete Example
+### Complete example
 
 ```dart
 import 'package:flutter/material.dart';

@@ -25,7 +25,7 @@ Future<http.Response> fetchPost() {
 }
 ```
 
-## Complete Example
+## Complete example
 
 This example builds upon the [Fetching Data from the Internet](/cookbook/networking/fetch-data/) 
 recipe.

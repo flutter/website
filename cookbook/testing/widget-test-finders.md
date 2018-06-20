@@ -103,7 +103,7 @@ If the above examples do not work for a particular use-case, please see the
 [`CommonFinders` documentation](https://docs.flutter.io/flutter/flutter_driver/CommonFinders-class.html)
 to review all available methods. 
 
-### Complete Example
+### Complete example
 
 ```dart
 import 'package:flutter/material.dart';

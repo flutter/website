@@ -4,7 +4,7 @@ title: "Tapping, Dragging and Entering Text in Widget Tests"
 permalink: /cookbook/testing/widget-test-tap-drag/
 ---
 
-Many of the Widgets we build not only display information, they also respond to
+Many of the Widgets we build not only display information, but also respond to
 user interaction. This includes buttons that users can tap on, dragging items 
 across the screen, or entering text into a 
 [`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html).
@@ -178,12 +178,12 @@ item will remove it from the list. This will involve three steps:
 
   1. Use the 
   [`drag`](https://docs.flutter.io/flutter/flutter_test/WidgetController/drag.html)
-  method to perform a swipe-to-dismiss action
+  method to perform a swipe-to-dismiss action.
   2. Use the
   [`pumpAndSettle`](https://docs.flutter.io/flutter/flutter_test/WidgetTester/pumpAndSettle.html)
   method to continually rebuild our Widget tree until the dismiss animation is 
   complete.
-  3. Ensure the item no longer appears on screen
+  3. Ensure the item no longer appears on screen.
 
 <!-- skip -->
 ```dart
@@ -201,7 +201,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 });
 ```
 
-### Complete Example
+### Complete example
 
 Once we've completed these steps, we should have a working app with a test to
 ensure it works correctly!

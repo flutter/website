@@ -40,7 +40,7 @@ the following recipes:
   * [Fade in images with a placeholder](/cookbook/images/fading-in-images/)
   * [Working with cached images](/cookbook/images/cached-images/) 
 
-## Complete Example
+## Complete example
 
 ```dart
 import 'package:flutter/material.dart';

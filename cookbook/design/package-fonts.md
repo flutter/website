@@ -82,7 +82,7 @@ Text(
 );
 ```
 
-## Complete Example
+## Complete example
 
 ### Fonts
 
