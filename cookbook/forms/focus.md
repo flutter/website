@@ -8,7 +8,7 @@ When a text field is selected and accepting input, it is said to have "focus."
 Generally, users can focus text fields by tapping on them, and developers 
 can focus text fields using the tools described in this recipe. 
 
-Managing focus is fundamental tool for creating forms with an intuitive 
+Managing focus is a fundamental tool for creating forms with an intuitive 
 flow. For example, say we have a search screen with a text field. When 
 the user navigates to the search screen, we can focus the search term text field. 
 This allows the user to start typing as soon as the screen 
