@@ -36,6 +36,7 @@
     A beautiful journal and mindfulness app driven by artificial intelligence. 
   screenshot: /showcase/images/reflectly.png
   android_download: https://play.google.com/store/apps/details?id=com.reflectlyApp
+  ios_download: https://itunes.apple.com/us/app/reflectly-mindfulness-journal/id1241229134
   learn_more_link: http://reflect.ly/
 
 - name: Google Greentea
