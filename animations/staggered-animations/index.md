@@ -378,3 +378,9 @@ The following resources might help when writing animations:
 
 [Material motion spec](https://material.io/guidelines/motion/)
 : Describes motion for Material apps.
+
+## Other resources
+
+* For an alternate approach to sequence animation, see the
+[flutter_sequence_animation](https://pub.dartlang.org/packages/flutter_sequence_animation)
+package on [pub.dartlang.org](https://pub.dartlang.org/packages).
