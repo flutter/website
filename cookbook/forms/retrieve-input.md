@@ -30,14 +30,14 @@ object.
 <!-- skip -->
 ```dart
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // our Form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
   final myController = TextEditingController();
@@ -113,20 +113,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Retrieve Text Input',
-      home: MyForm(),
+      home: MyCustomForm(),
     );
   }
 }
 
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // our Form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
   final myController = TextEditingController();
