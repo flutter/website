@@ -36,19 +36,21 @@ us to validate the form in a later step.
 <!-- skip -->
 ```dart
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  MyFormState createState() {
-    return MyFormState();
+  MyCustomFormState createState() {
+    return MyCustomFormState();
   }
 }
 
 // Define a corresponding State class. This class will hold the data related to 
 // the form.
-class MyFormState extends State<MyForm> {
+class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that will uniquely identify the Form widget and allow
   // us to validate the form
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  //
+  // Note: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>! 
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -147,25 +149,28 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text(appTitle),
         ),
-        body: MyForm(),
+        body: MyCustomForm(),
       ),
     );
   }
 }
 
 // Create a Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  MyFormState createState() {
-    return MyFormState();
+  MyCustomFormState createState() {
+    return MyCustomFormState();
   }
 }
 
 // Create a corresponding State class. This class will hold the data related to
 // the form.
-class MyFormState extends State<MyForm> {
-  // Create a global key that will uniquely identify the `Form` widget
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+class MyCustomFormState extends State<MyCustomForm> {
+  // Create a global key that will uniquely identify the Form widget and allow
+  // us to validate the form
+  //
+  // Note: This is a GlobalKey<FormState>, not a GlobalKey<MyCustomFormState>!
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {

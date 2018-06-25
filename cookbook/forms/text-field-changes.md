@@ -17,8 +17,10 @@ we have two options:
 
 ## 1. Supply an `onChanged` callback to a `TextField`
 
-The simplest approach is to supply an [`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html) 
-callback to a [`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html). 
+The simplest approach is to supply an 
+[`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html) 
+callback to a 
+[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html). 
 Whenever the text changes, the callback will be invoked. One downside to this 
 approach is it does not work with `TextFormField` Widgets.
 
@@ -38,7 +40,8 @@ TextField(
 
 A more powerful, but more elaborate approach, is to supply a
 [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
-as the [`controller`](https://docs.flutter.io/flutter/material/TextField/controller.html)
+as the 
+[`controller`](https://docs.flutter.io/flutter/material/TextField/controller.html)
 property of the `TextField` or a `TextFormField`.
 
 To be notified when the text changes, we can listen to the controller using its
@@ -61,14 +64,14 @@ these two classes together, we can listen for changes to the text field!
 <!-- skip -->
 ```dart
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // our Form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
   final myController = TextEditingController();
@@ -109,7 +112,7 @@ Now, we'll need a function that should run every time the text changes! In this
 example, we'll create a method that prints out the current value of the text
 field.
 
-This method will live inside our `_MyFormState` class.
+This method will live inside our `_MyCustomFormState` class.
 
 <!-- skip -->
 ```dart
@@ -125,12 +128,13 @@ Finally, we need to listen to the `TextEditingController` and run the
 [`addListener`](https://docs.flutter.io/flutter/foundation/ChangeNotifier/addListener.html)
 method to achieve this task.
 
-In this example, we will begin listening for changes when the `_MyFormState` 
-class is initialized, and stop listening when the `_MyFormState` is disposed.
+In this example, we will begin listening for changes when the
+`_MyCustomFormState` class is initialized, and stop listening when the
+`_MyCustomFormState` is disposed.
 
 <!-- skip -->
 ```dart
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   @override
   void initState() {
     super.initState();
@@ -163,20 +167,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Retrieve Text Input',
-      home: MyForm(),
+      home: MyCustomForm(),
     );
   }
 }
 
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // our Form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create a text controller. We will use it to retrieve the current value
   // of the TextField!
   final myController = TextEditingController();
