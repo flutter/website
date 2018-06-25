@@ -22,15 +22,146 @@ that are most relevant to your needs.
 
 # Views
 
-## What is the equivalent of a `UIView` in Flutter?
+## What is the equivalent of a `Page` or `Element` in Flutter?
 
-TODO
+A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you could 
+use in a Xamarin.Forms application. These pages would then hold `Element`s to display
+the various controls.
+
+In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`. In Flutter, there 
+is no difference between a `Page` or `Element`, everything is a `Widget`. The root of
+a page in Flutter is a `Widget`. A `Widget` can contain more `Widget`s to build out your
+page.
+
+Flutter includes the [Material Components](https://material.io/develop/flutter/)
+library. These are widgets that implement the
+[Material Design guidelines](https://material.io/design/). Material Design is a
+flexible design system [optimized for all
+platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+including iOS.
+
+But Flutter is flexible and expressive enough to implement any design language.
+For example, on iOS, you can use the [Cupertino widgets](https://flutter.io/widgets/cupertino/)
+to produce an interface that looks like
+[Apple's iOS design language](https://developer.apple.com/design/resources/).
 
 ## How do I update `Widget`s?
 
-TODO
+In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has properties and
+methods. You update your `Element` by updating a property, and this is propagated down
+to the native control. 
 
-## How do I lay out my widgets? Where is my Storyboard?
+In Flutter, `Widget`s are immutable and you can not directly update them by changing a
+property, instead you have to work with the widget's state.
+
+This is where the concept of Stateful vs Stateless widgets comes from. A
+`StatelessWidget` is just what it sounds like&mdash;a widget with no state
+information.
+
+`StatelessWidgets` are useful when the part of the user interface
+you are describing does not depend on anything other than the configuration
+information in the object.
+
+For example, in Xamarin.Forms, this is similar to placing an `Image`
+with your logo. The logo is not going to change during runtime, so
+use a `StatelessWidget` in Flutter.
+
+If you want to dynamically change the UI based on data received
+after making an HTTP call or user interaction then you have to work
+with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
+has been updated so it can update that widget.
+
+The important thing to note here is at the core both stateless and stateful
+widgets behave the same. They rebuild every frame, the difference is the
+`StatefulWidget` has a `State` object that stores state data across frames
+and restores it.
+
+If you are in doubt, then always remember this rule: if a widget changes
+(because of user interactions, for example) it’s stateful.
+However, if a widget reacts to change, the containing parent widget can
+still be stateless if it doesn't itself react to change.
+
+The following example shows how to use a `StatelessWidget`. A common
+`StatelessWidget` is the `Text` widget. If you look at the implementation of
+the `Text` widget you'll find it subclasses `StatelessWidget`.
+
+<!-- skip -->
+{% prettify dart %}
+new Text(
+  'I like Flutter!',
+  style: new TextStyle(fontWeight: FontWeight.bold),
+);
+{% endprettify %}
+
+As you can see, the `Text` Widget has no state information associated with it,
+it renders what is passed in its constructors and nothing more.
+
+But, what if you want to make "I Like Flutter" change dynamically, for
+example when clicking a `FloatingActionButton`?
+
+To achieve this, wrap the `Text` widget in a `StatefulWidget` and
+update it when the user clicks the button.
+
+For example:
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  // Default placeholder text
+  String textToShow = "I Like Flutter";
+
+  void _updateText() {
+    setState(() {
+      // update the text
+      textToShow = "Flutter is Awesome!";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new Center(child: new Text(textToShow)),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _updateText,
+        tooltip: 'Update Text',
+        child: new Icon(Icons.update),
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+## How do I lay out my widgets?
 
 TODO
 
