@@ -1358,7 +1358,7 @@ class LifecycleWatcher extends StatefulWidget {
 }
 
 class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBindingObserver {
-  AppLifecycleState _lastLifecyleState;
+  AppLifecycleState _lastLifecycleState;
 
   @override
   void initState() {
@@ -1375,16 +1375,16 @@ class _LifecycleWatcherState extends State<LifecycleWatcher> with WidgetsBinding
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     setState(() {
-      _lastLifecyleState = state;
+      _lastLifecycleState = state;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_lastLifecyleState == null)
+    if (_lastLifecycleState == null)
       return new Text('This widget has not observed any lifecycle changes.', textDirection: TextDirection.ltr);
 
-    return new Text('The most recent lifecycle state this widget observed was: $_lastLifecyleState.',
+    return new Text('The most recent lifecycle state this widget observed was: $_lastLifecycleState.',
         textDirection: TextDirection.ltr);
   }
 }
