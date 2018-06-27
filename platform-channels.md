@@ -587,7 +587,7 @@ is called, we report that instead.
 batteryChannel.setMethodCallHandler({
   (call: FlutterMethodCall, result: FlutterResult) -> Void in
   if ("getBatteryLevel" == call.method) {
-    receiveBatteryLevel(result: result);
+    self.receiveBatteryLevel(result: result);
   } else {
     result(FlutterMethodNotImplemented);
   }

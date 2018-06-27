@@ -57,14 +57,14 @@ class. In addition, we need to `dispose` of them when they're no longer needed!
 <!-- skip -->
 ```dart
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // the form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create the focus node. We will pass it to the TextField below.
   final FocusNode myFocusNode = FocusNode();
 
@@ -90,7 +90,7 @@ the `build` method.
 
 <!-- skip -->
 ```dart
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Code to create the Focus node...
 
   @override
@@ -129,20 +129,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Text Field Focus',
-      home: MyForm(),
+      home: MyCustomForm(),
     );
   }
 }
 
 // Define a Custom Form Widget
-class MyForm extends StatefulWidget {
+class MyCustomForm extends StatefulWidget {
   @override
-  _MyFormState createState() => _MyFormState();
+  _MyCustomFormState createState() => _MyCustomFormState();
 }
 
 // Define a corresponding State class. This class will hold the data related to
 // the form.
-class _MyFormState extends State<MyForm> {
+class _MyCustomFormState extends State<MyCustomForm> {
   // Create the focus node. We will pass it to the TextField below.
   final FocusNode myFocusNode = FocusNode();
 
