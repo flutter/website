@@ -140,7 +140,7 @@ file.
 Release builds of your app will now automatically be signed.
 
 
-## Minify and obfuscate
+## Minify and obfuscate the Android host
 
 By default, Flutter does not obfuscate or minify the Android wrapper.
 If you intend to use third-party Java or Android libraries,
