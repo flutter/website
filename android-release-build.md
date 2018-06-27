@@ -65,6 +65,8 @@ The default `mipmap-` folders demonstrate the correct naming convention.
 1. To verify the icon has been replaced, run your app using `flutter run`
 and inspect the app icon in the Launcher.
 
+Alternatively if you want a more automated way to change the launcher icons you can use the [Flutter Launcher Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+
 ## Signing the app
 
 ### Create a keystore
