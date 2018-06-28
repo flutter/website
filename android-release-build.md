@@ -164,7 +164,7 @@ Create `/android/app/proguard-rules.pro` file and add rules listed below.
 -keep class io.flutter.plugins.**  { *; }
 ```
 
-The configuration above only protects Flutter libraries.
+The configuration above only protects Flutter engine libraries.
 Any additional libraries (for example, Firebase) require their own
 rules to be added.
 
