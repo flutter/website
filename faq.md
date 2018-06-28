@@ -208,7 +208,7 @@ thing is built into an APK. When launched, the app loads the Flutter library.
 Any rendering, input or event handling, and so on, are delegated to the compiled
 Flutter and app code. This is similar to the way many game engines work.
 
-Debug mode builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
 banner they show to remind people that they're slightly slower) in order to
 enable stateful hot reload.
 
@@ -221,7 +221,7 @@ into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
 input or event handling, and so on, are delegated to the compiled Flutter and
 app code. This is similar to the way many game engines work.
 
-Debug mode builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
 banner they show to remind people that they're slightly slower) in order to
 enable stateful hot reload.
 
