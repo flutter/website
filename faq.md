@@ -201,27 +201,27 @@ Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
 
 ### How does Flutter run my code on Android? {#run-android}
 
-The engine's C/C++ code is compiled with Android's NDK, and both the SDK's and
-your app's Dart code are ahead-of-time compiled into a native, ARM library. That
-library is then included in a "runner" Android project, and the whole thing's
-built into an APK. When the app is launched, it loads the Flutter library, and
-then delegates rendering, handling input, and so on to the compiled Flutter and
-app code. This is similar to the way many game engines work.
+The engine's C and C++ code are compiled with Android's NDK. The Dart code
+(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM
+library. That library is included in a "runner" Android project, and the whole
+thing is built into an APK. When launched, the app loads the Flutter library.
+Any rendering, input or event handling, and so on, are delegated to the compiled
+Flutter and app code. This is similar to the way many game engines work.
 
-Debug builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
+Debug mode builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
 banner they show to remind people that they're slightly slower) in order to
 enable stateful hot reload.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C/C++ code is compiled with LLVM, and both the SDK's and
-your app's Dart code are ahead-of-time compiled into a native, ARM library. That
-library is then included in a "runner" iOS project, and the whole thing's
-built into an `.ipa`. When the app is launched, it loads the Flutter library,
-and then delegates rendering, handling input, and so on to the compiled Flutter
-and app code. This is similar to the way many game engines work.
+The engine's C and C++ code are compiled with LLVM. The Dart code (both the
+SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
+That library is included in a "runner" iOS project, and the whole thing is built
+into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
+input or event handling, and so on, are delegated to the compiled Flutter and
+app code. This is similar to the way many game engines work.
 
-Debug builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
+Debug mode builds use a Virtual Machine (VM) to run Dart code (hence the "debug"
 banner they show to remind people that they're slightly slower) in order to
 enable stateful hot reload.
 
