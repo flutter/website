@@ -189,12 +189,11 @@ with the `prettify` tag.
 
 For example:
 
-<!-- skip -->
-{% prettify dart %}
-void main() {
-  print([[highlight]]'Hello World'[[/highlight]]);
-}
-{% endprettify %}
+    {% prettify dart %}
+    void main() {
+      print([[highlight]]'Hello World'[[/highlight]]);
+    }
+    {% endprettify %}
 
 If you want to strike-through a specific bit of code, use the
 `[[strike]]highlight this text[[/strike]]` syntax
@@ -202,12 +201,11 @@ with the `prettify` tag.
 
 For example:
 
-<!-- skip -->
-{% prettify dart %}
-void main() {
-  print([[strike]]'Hello World'[[/strike]]);
-}
-{% endprettify %}
+    {% prettify dart %}
+    void main() {
+      print([[strike]]'Hello World'[[/strike]]);
+    }
+    {% endprettify %}
 
 The `prettify` plugin will also unindent your code.
 
