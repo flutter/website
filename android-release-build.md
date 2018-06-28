@@ -137,17 +137,20 @@ file.
    }
 ```
 
-Release builds of your app will now automatically be signed.
+Release builds of your app will now be signed automatically.
 
 
-## Minify and obfuscate
+## Enabling Proguard
 
-By default, Flutter does not obfuscate or minify the Android wrapper.
+By default, Flutter does not obfuscate or minify the Android host.
 If you intend to use third-party Java or Android libraries,
 you may want to reduce the size of the APK or protect that code from
 reverse engineering.
 
-### Step 1 - Configure obfuscation tool
+For information on obfuscating Dart code, see [Obfuscating Dart
+Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code).
+
+### Step 1 - Configure Proguard
 
 Create `/android/app/proguard-rules.pro` file and add rules listed below.
 
@@ -161,8 +164,9 @@ Create `/android/app/proguard-rules.pro` file and add rules listed below.
 -keep class io.flutter.plugins.**  { *; }
 ```
 
-The configuration above will only protect Flutter libraries.
-Any additional libraries e.g. Firebase will require their own rules to be added.
+The configuration above only protects Flutter engine libraries.
+Any additional libraries (for example, Firebase) require their own
+rules to be added.
 
 ### Step 2 - Enable obfuscation and/or minification
 
