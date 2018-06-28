@@ -147,6 +147,10 @@ If you intend to use third-party Java or Android libraries,
 you may want to reduce the size of the APK or protect that code from
 reverse engineering.
 
+For information on obfuscating Dart code, see [Obfuscating Dart
+Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code)
+in the [Flutter wiki](https://github.com/flutter/flutter/wiki/).
+
 ### Step 1 - Configure Proguard
 
 Create `/android/app/proguard-rules.pro` file and add rules listed below.
@@ -161,7 +165,7 @@ Create `/android/app/proguard-rules.pro` file and add rules listed below.
 -keep class io.flutter.plugins.**  { *; }
 ```
 
-The configuration above only protects Flutter libraries.
+The configuration above only protects Flutter engine libraries.
 Any additional libraries (for example, Firebase) require their own
 rules to be added.
 
