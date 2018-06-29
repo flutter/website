@@ -213,10 +213,10 @@ declarations above:
 ```dart
 Widget build(BuildContext context) {
   // ...
-  return new DecoratedBox(
-    decoration: new BoxDecoration(
-      image: new DecorationImage(
-        image: new AssetImage('graphics/background.png'),
+  return DecoratedBox(
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage('graphics/background.png'),
         // ...
       ),
       // ...
@@ -252,7 +252,7 @@ Then to load the image, use:
 
 <!-- skip -->
 ```dart
- new AssetImage('icons/heart.png', package: 'my_icons')
+ AssetImage('icons/heart.png', package: 'my_icons')
 ```
 
 Assets used by the package itself should also be fetched using the `package` argument as above.
@@ -284,11 +284,11 @@ Flutter assets are readily available to platform code via AssetManager on Androi
 
 ### Android
 
-On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html). 
-The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) is obtained from 
-`lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on 
-[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html). 
-`PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an 
+On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html).
+The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) is obtained from
+`lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on
+[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html).
+`PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an
 app including a platform view.
 
 As an example, suppose you have specified this in your pubspec.yaml
@@ -306,7 +306,7 @@ reflecting the following structure in your Flutter app.
   ...etc.
 ```
 
-To access `icons/heart.png` from your Java plugin code you would do; 
+To access `icons/heart.png` from your Java plugin code you would do;
 
 ```java
 AssetManager assetManager = registrar.context().getAssets();
@@ -316,11 +316,11 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 ### iOS
 
-On iOS the assets are available via the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle). 
+On iOS the assets are available via the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle).
 The lookup key used in for instance [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) is obtained from
-`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or 
-`lookupKeyForAsset:fromPackage:` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html). 
-`FlutterPluginRegistrar` is available when developing 
+`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or
+`lookupKeyForAsset:fromPackage:` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html).
+`FlutterPluginRegistrar` is available when developing
 a plugin while `FlutterViewController` would be the choice when developing an app including a platform view.
 
 As an example, suppose you have the Flutter setting from above.
@@ -328,7 +328,7 @@ As an example, suppose you have the Flutter setting from above.
 To access `icons/heart.png` from your Objective-C plugin code you would do;
 
 ```objective-c
-NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"]; 
+NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
 NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 

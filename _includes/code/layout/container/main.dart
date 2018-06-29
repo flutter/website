@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -30,66 +30,66 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var container = new Container(
-      decoration: new BoxDecoration(
+    var container = Container(
+      decoration: BoxDecoration(
         color: Colors.black26,
       ),
-      child: new Column(
+      child: Column(
         children: [
-          new Row(
+          Row(
             children: [
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic1.jpg'),
+                  child: Image.asset('images/pic1.jpg'),
                 ),
               ),
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic2.jpg'),
+                  child: Image.asset('images/pic2.jpg'),
                 ),
               ),
             ],
           ),
-          new Row(
+          Row(
             children: [
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic3.jpg'),
+                  child: Image.asset('images/pic3.jpg'),
                 ),
               ),
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic4.jpg'),
+                  child: Image.asset('images/pic4.jpg'),
                 ),
               ),
             ],
@@ -98,11 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
+      body: Center(
         child: container,
       ),
     );

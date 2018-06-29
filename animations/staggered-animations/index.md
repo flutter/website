@@ -151,13 +151,13 @@ for other available pre-defined animation curves.
 
 <!-- skip -->
 {% prettify dart %}
-width = new Tween<double>(
+width = Tween<double>(
   begin: 50.0,
   end: 150.0,
 ).animate(
-  new CurvedAnimation(
+  CurvedAnimation(
     parent: controller,
-    curve: new Interval(
+    curve: Interval(
       0.125, 0.250,
       curve: Curves.ease,
     ),
@@ -171,13 +171,13 @@ The following code builds the tween for the `borderRadius` property
 `BorderRadius.circular()`.
 
 {% prettify dart %}
-borderRadius = new BorderRadiusTween(
-  begin: new BorderRadius.circular(4.0),
-  end: new BorderRadius.circular(75.0),
+borderRadius = BorderRadiusTween(
+  begin: BorderRadius.circular(4.0),
+  end: BorderRadius.circular(75.0),
 ).animate(
-  new CurvedAnimation(
+  CurvedAnimation(
     parent: controller,
-    curve: new Interval(
+    curve: Interval(
       0.375, 0.500,
       curve: Curves.ease,
     ),
@@ -223,13 +223,13 @@ resulting in a call to `_buildAnimation()`.
     // For example the opacity animation transforms its value during
     // the first 10% of the controller's duration.
 
-    [[highlight]]opacity = new Tween<double>[[/highlight]](
+    [[highlight]]opacity = Tween<double>[[/highlight]](
       begin: 0.0,
       end: 1.0,
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.0, 0.100,
           curve: Curves.ease,
         ),
@@ -252,17 +252,17 @@ resulting in a call to `_buildAnimation()`.
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
   [[highlight]]Widget _buildAnimation(BuildContext context, Widget child)[[/highlight]] {
-    return new Container(
+    return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
-      child: new Opacity(
+      child: Opacity(
         opacity: opacity.value,
-        child: new Container(
+        child: Container(
           width: width.value,
           height: height.value,
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             color: color.value,
-            border: new Border.all(
+            border: Border.all(
               color: Colors.indigo[300],
               width: 3.0,
             ),
@@ -275,7 +275,7 @@ resulting in a call to `_buildAnimation()`.
 
   @override
   [[highlight]]Widget build(BuildContext context)[[/highlight]] {
-    return [[highlight]]new AnimatedBuilder[[/highlight]](
+    return [[highlight]]AnimatedBuilder[[/highlight]](
       [[highlight]]builder: _buildAnimation[[/highlight]],
       animation: controller,
     );
@@ -295,7 +295,7 @@ The animation runs forward, then backward.
 {% prettify dart %}
 [[highlight]]class StaggerDemo extends StatefulWidget[[/highlight]] {
   @override
-  _StaggerDemoState createState() => new _StaggerDemoState();
+  _StaggerDemoState createState() => _StaggerDemoState();
 }
 
 class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin {
@@ -305,7 +305,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   void initState() {
     super.initState();
 
-    _controller = new AnimationController(
+    _controller = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this
     );
@@ -325,26 +325,26 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   @override
   [[highlight]]Widget build(BuildContext context)[[/highlight]] {
     timeDilation = 10.0; // 1.0 is normal animation speed.
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Staggered Animation'),
       ),
-      body: new GestureDetector(
+      body: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
           _playAnimation();
         },
-        child: new Center(
-          child: new Container(
+        child: Center(
+          child: Container(
             width: 300.0,
             height: 300.0,
-            decoration: new BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.1),
-              border: new Border.all(
+              border: Border.all(
                 color:  Colors.black.withOpacity(0.5),
               ),
             ),
-            child: new StaggerAnimation(
+            child: StaggerAnimation(
               controller: _controller.view
             ),
           ),

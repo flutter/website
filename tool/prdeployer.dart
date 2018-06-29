@@ -12,12 +12,12 @@ String firebaseRoot = "https://flutter-web-controller.firebaseio.com/flutter/pul
 
 main(List<String> arguments) async {
   Map<String, String> env = Platform.environment;
-  github = createGitHubClient(auth: new Authentication.withToken(env["GITHUB_TOKEN"]));
+  github = createGitHubClient(auth: Authentication.withToken(env["GITHUB_TOKEN"]));
 
   firebaseAuth = arguments[1];
   String branchName = arguments[0];
 
-  FirebaseClient fbClient = new FirebaseClient(firebaseAuth);
+  FirebaseClient fbClient = FirebaseClient(firebaseAuth);
 
   List<PullRequest> prsList = await getPullRequests();
   currentPullRequest = prsList.firstWhere((p) => p.head.ref == branchName);
@@ -64,7 +64,7 @@ Future<bool> isBranchOld(String branchName) async {
 }
 
 Future<List<PullRequest>> getPullRequests() async {
-  Stream<PullRequest> pullRequests = await github.pullRequests.list(new RepositorySlug.full("flutter/website"));
+  Stream<PullRequest> pullRequests = await github.pullRequests.list(RepositorySlug.full("flutter/website"));
   return await pullRequests.toList();
 }
 
@@ -74,7 +74,7 @@ Future<IssueComment> postLinkToGithub(String projectToDeploy, PullRequest reques
   }
 
   IssueComment issueComment = await github.issues.createComment(
-      new RepositorySlug.full("flutter/website"),
+      RepositorySlug.full("flutter/website"),
       request.number,
       "Staging URL Generated At https://${projectToDeploy}.firebaseapp.com . Please allow Travis Build to finish to view the URL.");
   return issueComment;

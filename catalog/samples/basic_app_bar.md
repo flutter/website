@@ -39,7 +39,7 @@ import 'package:flutter/material.dart';
 // This app is a stateful, it tracks the user's current choice.
 class BasicAppBarSample extends StatefulWidget {
   @override
-  _BasicAppBarSampleState createState() => new _BasicAppBarSampleState();
+  _BasicAppBarSampleState createState() => _BasicAppBarSampleState();
 }
 
 class _BasicAppBarSampleState extends State<BasicAppBarSample> {
@@ -54,42 +54,42 @@ class _BasicAppBarSampleState extends State<BasicAppBarSample> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
           title: const Text('Basic AppBar'),
           actions: <Widget>[
             // action button
-            new IconButton(
-              icon: new Icon(choices[0].icon),
+            IconButton(
+              icon: Icon(choices[0].icon),
               onPressed: () {
                 _select(choices[0]);
               },
             ),
             // action button
-            new IconButton(
-              icon: new Icon(choices[1].icon),
+            IconButton(
+              icon: Icon(choices[1].icon),
               onPressed: () {
                 _select(choices[1]);
               },
             ),
             // overflow menu
-            new PopupMenuButton<Choice>(
+            PopupMenuButton<Choice>(
               onSelected: _select,
               itemBuilder: (BuildContext context) {
                 return choices.skip(2).map((Choice choice) {
-                  return new PopupMenuItem<Choice>(
+                  return PopupMenuItem<Choice>(
                     value: choice,
-                    child: new Text(choice.title),
+                    child: Text(choice.title),
                   );
                 }).toList();
               },
             ),
           ],
         ),
-        body: new Padding(
+        body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: new ChoiceCard(choice: _selectedChoice),
+          child: ChoiceCard(choice: _selectedChoice),
         ),
       ),
     );
@@ -120,15 +120,15 @@ class ChoiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.display1;
-    return new Card(
+    return Card(
       color: Colors.white,
-      child: new Center(
-        child: new Column(
+      child: Center(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            new Icon(choice.icon, size: 128.0, color: textStyle.color),
-            new Text(choice.title, style: textStyle),
+            Icon(choice.icon, size: 128.0, color: textStyle.color),
+            Text(choice.title, style: textStyle),
           ],
         ),
       ),
@@ -137,7 +137,7 @@ class ChoiceCard extends StatelessWidget {
 }
 
 void main() {
-  runApp(new BasicAppBarSample());
+  runApp(BasicAppBarSample());
 }
 ```
 

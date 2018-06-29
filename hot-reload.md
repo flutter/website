@@ -28,8 +28,8 @@ select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the to
 
    ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
 
-   If you're running the app at the command line using `flutter run`, type `r` 
-   in the terminal window. 
+   If you're running the app at the command line using `flutter run`, type `r`
+   in the terminal window.
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -45,7 +45,7 @@ command. The code is updated and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
 after the change. The next sections describe common situations where the
-modified code will _not_ run again after hot reload. In some cases, 
+modified code will _not_ run again after hot reload. In some cases,
 small changes to the Dart code will enable you to continue using hot reload
 for your app.
 
@@ -65,19 +65,19 @@ Hot reload was rejected:
 In this situation, simply correct the errors on the specified lines of
 Dart code to keep using hot reload.
 
-## Previous state is combined with new code 
+## Previous state is combined with new code
 
 Flutter's hot reload feature, sometimes described as _stateful hot reload_,
 preserves the state of your app. This design enables you to view
 the effect of the most recent change only, without throwing away the
 current state. For example, if your app requires a user to log in, you can
 modify and hot reload a page several levels down in the navigation hierarchy,
-without re-entering your login credentials. State is kept, which is 
+without re-entering your login credentials. State is kept, which is
 usually the desired behavior.
 
-If code changes affect the state of your app (or its dependencies), 
-the data your app has to work with might not be fully consistent with 
-the data it would have if it executed from scratch. The result might be 
+If code changes affect the state of your app (or its dependencies),
+the data your app has to work with might not be fully consistent with
+the data it would have if it executed from scratch. The result might be
 different behavior after hot reload versus a hot restart.
 
 For example, if you modify a class definition from extending StatelessWidget
@@ -90,7 +90,7 @@ Consider the following code:
 ```
 class myWidget extends StatelessWidget {
   Widget build(BuildContext context) {
-    return new GestureDetector(onTap: () => print('T'));
+    return GestureDetector(onTap: () => print('T'));
   }
 }
 ```
@@ -99,7 +99,7 @@ After running the app, if you make the following change:
 ```
 class myWidget extends StatefulWidget {
   @override
-  State createState() => new myWidgetState();
+  State createState() => myWidgetState();
 }
 class myWidgetState {
 ...
@@ -119,31 +119,31 @@ In these situations, a hot restart is needed to see the updated app.
 
 In Dart, [static fields are lazily initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static
 field is read, it is set to whatever value its initializer was evaluated to.
-Global variables and static fields are treated as state, and thus not 
+Global variables and static fields are treated as state, and thus not
 reinitialized during hot reload.
 
-If you change initializers of global variables and static fields, a full 
+If you change initializers of global variables and static fields, a full
 restart is necessary to see the changes. For example, consider the
 following code:
 
 ```
 final sampleTable = [
-  new Table("T1"),
-  new Table("T2"),
-  new Table("T3"),
-  new Table("T4"),
+  Table("T1"),
+  Table("T2"),
+  Table("T3"),
+  Table("T4"),
 ];
 ```
 After running the app, if you make the following change:
 ```
 final sampleTable = [
-  new Table("T1"),
-  new Table("T2"),
-  new Table("T3"),
-  new Table("T10"),    //modified
+  Table("T1"),
+  Table("T2"),
+  Table("T3"),
+  Table("T10"),    //modified
 ];
 ```
-and then hot reload, the change is not reflected. 
+and then hot reload, the change is not reflected.
 
 Conversely, in the following example:
 ```
@@ -155,7 +155,7 @@ void onClick(){
 }
 ```
 running the app for the first time prints `1` and `1`. Then if you make the
-following change: 
+following change:
 
 ```
 const foo = 2;    //modified
@@ -190,7 +190,7 @@ or:
 get bar => foo;
 ```
 
-Read more about the [differences between the `const` and `final` keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart. 
+Read more about the [differences between the `const` and `final` keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart.
 
 ## Recent UI change is excluded
 
@@ -208,12 +208,12 @@ For example, consider the following code:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () => print('tapped'));
   }
 }
@@ -234,8 +234,8 @@ void main() {
 With a hot restart, the program starts from the beginning, executes the new
 version of `main()`, and builds a widget tree that displays the text `Hello`.
 
-However, if you hot reload the app after this change, `main()` is not 
-re-executed, and the widget tree is rebuilt with the unchanged instance of 
+However, if you hot reload the app after this change, `main()` is not
+re-executed, and the widget tree is rebuilt with the unchanged instance of
 `MyApp` as the root widget. The result is no visible change after hot reload.
 
 ## Limitations

@@ -29,7 +29,7 @@ for consistency with the Flutter model.
 * In Flutter, the default styling of the "Lorem ipsum" text is defined by the
 `bold24Roboto` variable as follows, to keep the syntax simple:
   {% prettify dart %}
-  TextStyle bold24Roboto = new TextStyle(
+  TextStyle bold24Roboto = TextStyle(
       color: Colors.white,
       fontSize: 24.0,
       fontWeight: FontWeight.w900,
@@ -67,10 +67,10 @@ the top left, by default.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-  var container = new Container( // grey box
-    child: new Text(
+  var container = Container( // grey box
+    child: Text(
       "Lorem ipsum",
-      style: [[highlight]]new TextStyle(
+      style: [[highlight]]TextStyle(
         fontSize: 24.0
         fontWeight: FontWeight.w900,
         fontFamily: "Georgia",
@@ -107,8 +107,8 @@ The CSS examples use the hex color equivalents to the Material color palette.
 
 <div class="righthighlight">
 {% prettify dart %}
-  var container = new Container( // grey box
-    child: new Text(
+  var container = Container( // grey box
+    child: Text(
       "Lorem ipsum",
       style: bold24Roboto,
     ),
@@ -148,9 +148,9 @@ behavior.
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: [[highlight]] new Center(
-    child: [[/highlight]] new Text(
+var container = Container( // grey box
+  child: [[highlight]] Center(
+    child: [[/highlight]] Text(
       "Lorem ipsum",
       style: bold24Roboto,
     ),
@@ -205,17 +205,17 @@ the child Container sizes itself to match the parent.
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red[400],
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
 [[highlight]]      width: 240.0, [[/highlight]]//max-width is 240.0
     ),
   ),
@@ -267,19 +267,19 @@ widget that is, in turn, nested in a
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-[[highlight]]  child: new Stack(
+var container = Container( // grey box
+[[highlight]]  child: Stack(
     children: [
-      new Positioned( // red box
-        child: [[/highlight]] new Container(
-          child: new Text(
+      Positioned( // red box
+        child: [[/highlight]] Container(
+          child: Text(
             "Lorem ipsum",
             style: bold24Roboto,
           ),
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.red[400],
           ),
-          padding: new EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
         ),
 [[highlight]]        left: 24.0,
         top: 24.0,
@@ -331,22 +331,22 @@ For a simple 2D rotation, the widget is rotated on the Z axis using radians.
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // gray box
-  child: new Center(
-    child: [[highlight]] new Transform(
-      child: [[/highlight]] new Container( // red box
-        child: new Text(
+var container = Container( // gray box
+  child: Center(
+    child: [[highlight]] Transform(
+      child: [[/highlight]] Container( // red box
+        child: Text(
           "Lorem ipsum",
           style: bold24Roboto,
           textAlign: TextAlign.center,
         ),
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.red[400],
         ),
-        padding: new EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
       ),
 [[highlight]]      alignment: Alignment.center,
-      transform: new Matrix4.identity()
+      transform: Matrix4.identity()
         ..rotateZ(15 * 3.1415927 / 180),
     ), [[/highlight]]
   ),
@@ -398,22 +398,22 @@ When you scale a parent widget, its child widgets are scaled accordingly.
 
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // gray box
-  child: new Center(
-    child: [[highlight]] new Transform(
-      child: [[/highlight]] new Container( // red box
-        child: new Text(
+var container = Container( // gray box
+  child: Center(
+    child: [[highlight]] Transform(
+      child: [[/highlight]] Container( // red box
+        child: Text(
           "Lorem ipsum",
           style: bold24Roboto,
           textAlign: TextAlign.center,
         ),
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.red[400],
         ),
-        padding: new EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
       ),
 [[highlight]]      alignment: Alignment.center,
-      transform: new Matrix4.identity()
+      transform: Matrix4.identity()
         ..scale(1.5),
      ), [[/highlight]]
   width: 320.0,
@@ -468,15 +468,15 @@ The gradient “angle” is based on the Alignment (x, y) values:
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
       ),
-[[highlight]]      decoration: new BoxDecoration(
-        gradient: new LinearGradient(
+[[highlight]]      decoration: BoxDecoration(
+        gradient: LinearGradient(
           begin: const Alignment(0.0, -1.0),
           end: const Alignment(0.0, 0.6),
           colors: <Color>[
@@ -485,7 +485,7 @@ var container = new Container( // grey box
           ],
         ),
       ), [[/highlight]]
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
@@ -522,15 +522,15 @@ var container = new Container( // grey box
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
       ),
-[[highlight]]      decoration: new BoxDecoration(
-        gradient: new LinearGradient(
+[[highlight]]      decoration: BoxDecoration(
+        gradient: LinearGradient(
           begin: const Alignment(-1.0, 0.0),
           end: const Alignment(0.6, 0.0),
           colors: <Color>[
@@ -539,7 +539,7 @@ var container = new Container( // grey box
           ],
         ),
       ), [[/highlight]]
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
@@ -588,20 +588,20 @@ object that specifies the radii for rounding each corner.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red circle
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red circle
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red[400],
-[[highlight]]        borderRadius: new BorderRadius.all(
+[[highlight]]        borderRadius: BorderRadius.all(
           const Radius.circular(8.0),
         ), [[/highlight]]
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
@@ -654,37 +654,37 @@ to customize the shadow depth, color, etc.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red[400],
 [[highlight]]        boxShadow: <BoxShadow>[
-          new BoxShadow (
+          BoxShadow (
             color: const Color(0xcc000000),
-            offset: new Offset(0.0, 2.0),
+            offset: Offset(0.0, 2.0),
             blurRadius: 4.0,
           ),
-          new BoxShadow (
+          BoxShadow (
             color: const Color(0x80000000),
-            offset: new Offset(0.0, 6.0),
+            offset: Offset(0.0, 6.0),
             blurRadius: 20.0,
           ),
         ], [[/highlight]]
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
   height: 240.0,
-  decoration: new BoxDecoration(
+  decoration: BoxDecoration(
     color: Colors.grey[300],
   ),
-  margin: new EdgeInsets.only(bottom: 16.0),
+  margin: EdgeInsets.only(bottom: 16.0),
 );
 {% endprettify %}
 </div>
@@ -731,19 +731,19 @@ for this purpose.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red circle
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red circle
+      child: Text(
         "Lorem ipsum",
         style: bold24Roboto,
 [[highlight]]        textAlign: TextAlign.center, [[/highlight]]
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red[400],
 [[highlight]]        shape: BoxShape.circle, [[/highlight]]
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
 [[highlight]]      width: 160.0,
       height: 160.0, [[/highlight]]
     ),
@@ -800,22 +800,22 @@ child of a Text widget.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum",
-        style: new TextStyle(
+        style: TextStyle(
           color: Colors.white,
           fontSize: 24.0,
           fontWeight: FontWeight.w900,
 [[highlight]]          letterSpacing: 4.0, [[/highlight]]
         ),
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.red[400],
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
@@ -871,17 +871,17 @@ styling.
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: [[highlight]] new RichText(
-        text: new TextSpan(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: [[highlight]] RichText(
+        text: TextSpan(
           style: bold24Roboto,
           children: <TextSpan>[
-            new TextSpan(text: "Lorem "),
-            new TextSpan(
+            TextSpan(text: "Lorem "),
+            TextSpan(
               text: "ipsum",
-              style: new TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontStyle: FontStyle.italic,
                 fontSize: 48.0,
@@ -890,10 +890,10 @@ var container = new Container( // grey box
           ],
         ),
       ), [[/highlight]]
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         backgroundColor: Colors.red[400],
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,
@@ -943,19 +943,19 @@ widget to specify the number of lines to include in the excerpt, and the
 </div>
 <div class="righthighlight">
 {% prettify dart %}
-var container = new Container( // grey box
-  child: new Center(
-    child: new Container( // red box
-      child: new Text(
+var container = Container( // grey box
+  child: Center(
+    child: Container( // red box
+      child: Text(
         "Lorem ipsum dolor sit amet, consec etur",
         style: bold24Roboto,
 [[highlight]]        overflow: TextOverflow.ellipsis,
         maxLines: 1, [[/highlight]]
       ),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         backgroundColor: Colors.red[400],
       ),
-      padding: new EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
     ),
   ),
   width: 320.0,

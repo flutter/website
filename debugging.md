@@ -128,8 +128,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    new MaterialApp(
-      home: new AppHome(),
+    MaterialApp(
+      home: AppHome(),
     ),
   );
 }
@@ -137,13 +137,13 @@ void main() {
 class AppHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Material(
-      child: new Center(
-        child: new FlatButton(
+    return Material(
+      child: Center(
+        child: FlatButton(
           onPressed: () {
             debugDumpApp();
           },
-          child: new Text('Dump App'),
+          child: Text('Dump App'),
         ),
       ),
     );
@@ -721,7 +721,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   debugPaintSizeEnabled=true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 ```
 
@@ -846,7 +846,7 @@ constructor has a similar argument. (If you're not using `MaterialApp`
 or `WidgetsApp`, you can get the same effect by wrapping your
 application in a stack and putting a widget on your stack that was
 created by calling
-[`new PerformanceOverlay.allEnabled()`](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
+[`PerformanceOverlay.allEnabled()`](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
 
 This will show two graphs. The top one is the time spent by the GPU
 thread, the bottom one is the time spent by the CPU thread. The white

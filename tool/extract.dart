@@ -5,7 +5,7 @@ import 'package:path/path.dart' as p;
 /// Extract Dart snippets from the markdown documentation.
 void main(List<String> args) {
   // Validate our cwd.
-  if (!new File('pubspec.yaml').existsSync()) {
+  if (!File('pubspec.yaml').existsSync()) {
     print('This tool must be run from the project root.');
     exit(1);
   }
@@ -89,7 +89,7 @@ void _extractSnippet(String filename, int snippet, int startLine, List<String> l
 
   source = _removeMarkup(source);
 
-  new File(path).writeAsStringSync(source);
+  File(path).writeAsStringSync(source);
   print('  ${lines.length} line snippet ==> $path');
 }
 
@@ -104,7 +104,7 @@ String _removeMarkup(String source) {
 }
 
 void clean() {
-  var exampleDir = new Directory('example');
+  var exampleDir = Directory('example');
   if (!exampleDir.existsSync()) {
     exampleDir.createSync();
   }

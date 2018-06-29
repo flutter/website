@@ -135,37 +135,37 @@ on GitHub.
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = new Container(
+    Widget titleSection = Container(
       padding: const EdgeInsets.all(32.0),
-      child: new Row(
+      child: Row(
         children: [
-          new Expanded(
-            child: new Column(
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                new Container(
+                Container(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: new Text(
+                  child: Text(
                     'Oeschinen Lake Campground',
-                    style: new TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                new Text(
+                Text(
                   'Kandersteg, Switzerland',
-                  style: new TextStyle(
+                  style: TextStyle(
                     color: Colors.grey[500],
                   ),
                 ),
               ],
             ),
           ),
-          new Icon(
+          Icon(
             Icons.star,
             color: Colors.red[500],
           ),
-          new Text('41'),
+          Text('41'),
         ],
       ),
     );
@@ -206,9 +206,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //...
 
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
 
@@ -232,16 +232,16 @@ class MyApp extends StatelessWidget {
     Column buildButtonColumn(IconData icon, String label) {
       Color color = Theme.of(context).primaryColor;
 
-      return new Column(
+      return Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          new Icon(icon, color: color),
-          new Container(
+          Icon(icon, color: color),
+          Container(
             margin: const EdgeInsets.only(top: 8.0),
-            child: new Text(
+            child: Text(
               label,
-              style: new TextStyle(
+              style: TextStyle(
                 fontSize: 12.0,
                 fontWeight: FontWeight.w400,
                 color: color,
@@ -273,8 +273,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //...
 
-    Widget buttonSection = new Container(
-      child: new Row(
+    Widget buttonSection = Container(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           buildButtonColumn(Icons.call, 'CALL'),
@@ -302,9 +302,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //...
-    Widget textSection = new Container(
+    Widget textSection = Container(
       padding: const EdgeInsets.all(32.0),
-      child: new Text(
+      child: Text(
         '''
 Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
         ''',
@@ -330,11 +330,11 @@ so you can now reference it from your code:
 <!-- code/layout/lakes/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-return new MaterialApp(
+return MaterialApp(
 //...
-body: new ListView(
+body: ListView(
   children: [
-    new Image.asset(
+    Image.asset(
       'images/lake.jpg',
       height: 240.0,
       fit: BoxFit.cover,
@@ -360,18 +360,18 @@ when running the app on a small device.
 <!-- code/layout/lakes/main.dart -->
 {% prettify dart %}
 //...
-return new MaterialApp(
+return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Top Lakes'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Top Lakes'),
         ),
-        body: new ListView(
+        body: ListView(
           children: [
-            new Image.asset(
+            Image.asset(
               'images/lake.jpg',
               width: 600.0,
               height: 240.0,
@@ -521,21 +521,21 @@ For example, create a Text widget:
 
 <!-- skip -->
 {% prettify dart %}
-new Text('Hello World', style: new TextStyle(fontSize: 32.0))
+Text('Hello World', style: TextStyle(fontSize: 32.0))
 {% endprettify %}
 
 Create an Image widget:
 
 <!-- skip -->
 {% prettify dart %}
-new Image.asset('images/myPic.jpg', fit: BoxFit.cover)
+Image.asset('images/myPic.jpg', fit: BoxFit.cover)
 {% endprettify %}
 
 Create an Icon widget:
 
 <!-- skip -->
 {% prettify dart %}
-new Icon(Icons.star, color: Colors.red[500])
+Icon(Icons.star, color: Colors.red[500])
 {% endprettify %}
 
 </li>
@@ -550,8 +550,8 @@ Add the Text widget to the Center widget:
 
 <!-- skip -->
 {% prettify dart %}
-new Center(
-  child: new Text('Hello World', style: new TextStyle(fontSize: 32.0))
+Center(
+  child: Text('Hello World', style: TextStyle(fontSize: 32.0))
 {% endprettify %}
 
 </li>
@@ -571,12 +571,12 @@ new Center(
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
-        child: new Text('Hello World', style: new TextStyle(fontSize: 32.0)),
+      body: Center(
+        child: Text('Hello World', style: TextStyle(fontSize: 32.0)),
       ),
     );
   }
@@ -608,18 +608,18 @@ method:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      decoration: new BoxDecoration(color: Colors.white),
-      child: new Center(
-        child: new Text('Hello World',
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Center(
+        child: Text('Hello World',
             textDirection: TextDirection.ltr,
-            style: new TextStyle(fontSize: 40.0, color: Colors.black87)),
+            style: TextStyle(fontSize: 40.0, color: Colors.black87)),
       ),
     );
   }
@@ -857,14 +857,14 @@ uses this property to pack the star icons together.
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var packedRow = new Row(
+    var packedRow = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        new Icon(Icons.star, color: Colors.green[500]),
-        new Icon(Icons.star, color: Colors.green[500]),
-        new Icon(Icons.star, color: Colors.green[500]),
-        new Icon(Icons.star, color: Colors.black),
-        new Icon(Icons.star, color: Colors.black),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.black),
+        Icon(Icons.star, color: Colors.black),
       ],
     );
 
@@ -910,24 +910,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    var ratings = new Container(
-      padding: new EdgeInsets.all(20.0),
-      child: new Row(
+    var ratings = Container(
+      padding: EdgeInsets.all(20.0),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          new Row(
+          Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
             ],
           ),
-          new Text(
+          Text(
             '170 Reviews',
-            style: new TextStyle(
+            style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w800,
               fontFamily: 'Roboto',
@@ -964,7 +964,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // ...
 
-    var descTextStyle = new TextStyle(
+    var descTextStyle = TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
@@ -977,30 +977,30 @@ class _MyHomePageState extends State<MyHomePage> {
     // style that is inherited by its child and all subsequent children.
     var iconList = DefaultTextStyle.merge(
       style: descTextStyle,
-      child: new Container(
-        padding: new EdgeInsets.all(20.0),
-        child: new Row(
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.kitchen, color: Colors.green[500]),
-                new Text('PREP:'),
-                new Text('25 min'),
+                Icon(Icons.kitchen, color: Colors.green[500]),
+                Text('PREP:'),
+                Text('25 min'),
               ],
             ),
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.timer, color: Colors.green[500]),
-                new Text('COOK:'),
-                new Text('1 hr'),
+                Icon(Icons.timer, color: Colors.green[500]),
+                Text('COOK:'),
+                Text('1 hr'),
               ],
             ),
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.restaurant, color: Colors.green[500]),
-                new Text('FEEDS:'),
-                new Text('4-6'),
+                Icon(Icons.restaurant, color: Colors.green[500]),
+                Text('FEEDS:'),
+                Text('4-6'),
               ],
             ),
           ],
@@ -1023,9 +1023,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     //...
 
-    var leftColumn = new Container(
-      padding: new EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
-      child: new Column(
+    var leftColumn = Container(
+      padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
+      child: Column(
         children: [
           titleText,
           subTitle,
@@ -1057,15 +1057,15 @@ and accessed using `Images.asset`. For more information, see
 <!-- code/layout/pavlova/main.dart -->
 <!-- skip -->
 {% prettify dart %}
-body: new Center(
-  child: new Container(
-    margin: new EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
+body: Center(
+  child: Container(
+    margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
     height: 600.0,
-    child: new Card(
-      child: new Row(
+    child: Card(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          new Container(
+          Container(
             width: 440.0,
             child: leftColumn,
           ),
@@ -1191,34 +1191,34 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var container = new Container(
-      decoration: new BoxDecoration(
+    var container = Container(
+      decoration: BoxDecoration(
         color: Colors.black26,
       ),
-      child: new Column(
+      child: Column(
         children: [
-          new Row(
+          Row(
             children: [
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic1.jpg'),
+                  child: Image.asset('images/pic1.jpg'),
                 ),
               ),
-              new Expanded(
-                child: new Container(
-                  decoration: new BoxDecoration(
-                    border: new Border.all(width: 10.0, color: Colors.black38),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 10.0, color: Colors.black38),
                     borderRadius:
                         const BorderRadius.all(const Radius.circular(8.0)),
                   ),
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic2.jpg'),
+                  child: Image.asset('images/pic2.jpg'),
                 ),
               ),
             ],
@@ -1297,14 +1297,14 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 // a list when objects have a predictable naming pattern.
 List<Container> _buildGridTileList(int count) {
 
-  return new List<Container>.generate(
+  return List<Container>.generate(
       count,
       (int index) =>
-          new Container(child: new Image.asset('images/pic${index+1}.jpg')));
+          Container(child: Image.asset('images/pic${index+1}.jpg')));
 }
 
 Widget buildGrid() {
-  return new GridView.extent(
+  return GridView.extent(
       maxCrossAxisExtent: 150.0,
       padding: const EdgeInsets.all(4.0),
       mainAxisSpacing: 4.0,
@@ -1315,11 +1315,11 @@ Widget buildGrid() {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
+      body: Center(
         child: buildGrid(),
       ),
     );
@@ -1374,20 +1374,20 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 <!-- skip -->
 {% prettify dart %}
 List<Widget> list = <Widget>[
-  new ListTile(
-    title: new Text('CineArts at the Empire',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('85 W Portal Ave'),
-    leading: new Icon(
+  ListTile(
+    title: Text('CineArts at the Empire',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('85 W Portal Ave'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('The Castro Theater',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('429 Castro St'),
-    leading: new Icon(
+  ListTile(
+    title: Text('The Castro Theater',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('429 Castro St'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
@@ -1400,10 +1400,10 @@ List<Widget> list = <Widget>[
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       // ...
-      body: new Center(
-        child: new ListView(
+      body: Center(
+        child: ListView(
           children: list,
         ),
       ),
@@ -1461,20 +1461,20 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var stack = new Stack(
+    var stack = Stack(
       alignment: const Alignment(0.6, 0.6),
       children: [
-        new CircleAvatar(
-          backgroundImage: new AssetImage('images/pic.jpg'),
+        CircleAvatar(
+          backgroundImage: AssetImage('images/pic.jpg'),
           radius: 100.0,
         ),
-        new Container(
-          decoration: new BoxDecoration(
+        Container(
+          decoration: BoxDecoration(
             color: Colors.black45,
           ),
-          child: new Text(
+          child: Text(
             'Mia B',
-            style: new TextStyle(
+            style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -1553,32 +1553,32 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var card = new SizedBox(
+    var card = SizedBox(
       height: 210.0,
-      child: new Card(
-        child: new Column(
+      child: Card(
+        child: Column(
           children: [
-            new ListTile(
-              title: new Text('1625 Main Street',
-                  style: new TextStyle(fontWeight: FontWeight.w500)),
-              subtitle: new Text('My City, CA 99984'),
-              leading: new Icon(
+            ListTile(
+              title: Text('1625 Main Street',
+                  style: TextStyle(fontWeight: FontWeight.w500)),
+              subtitle: Text('My City, CA 99984'),
+              leading: Icon(
                 Icons.restaurant_menu,
                 color: Colors.blue[500],
               ),
             ),
-            new Divider(),
-            new ListTile(
-              title: new Text('(408) 555-1212',
-                  style: new TextStyle(fontWeight: FontWeight.w500)),
-              leading: new Icon(
+            Divider(),
+            ListTile(
+              title: Text('(408) 555-1212',
+                  style: TextStyle(fontWeight: FontWeight.w500)),
+              leading: Icon(
                 Icons.contact_phone,
                 color: Colors.blue[500],
               ),
             ),
-            new ListTile(
-              title: new Text('costa@example.com'),
-              leading: new Icon(
+            ListTile(
+              title: Text('costa@example.com'),
+              leading: Icon(
                 Icons.contact_mail,
                 color: Colors.blue[500],
               ),

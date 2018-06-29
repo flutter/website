@@ -254,7 +254,7 @@ A `RenderBox` subclass is required to implement the following contract:
   // In RenderFoo
   void setupParentData(RenderObject child) {
     if (child.parentData is! FooParentData)
-      child.parentData = new FooParentData();
+      child.parentData = FooParentData();
   }
 ```
 

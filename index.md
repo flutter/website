@@ -16,7 +16,7 @@ description: >
         &nbsp;
         <a href="https://medium.com/flutter-io/flutter-release-preview-1-943a9b6ee65a?linkId=53249457">Flutter Release Preview 1</a>
     </h1>
-    <img src="images/homepage/header-illustration.png" 
+    <img src="images/homepage/header-illustration.png"
          class="homepage__illustration--image"
          alt="Illustration with a mobile phone, a pencil, and an abstract drawing of widgets.">
 </div>
@@ -44,8 +44,8 @@ description: >
             <div class="homepage__key_point_title">Fast Development</div>
 
             <p>
-            Hot Reload in milliseconds to paint your app to life. 
-            Use a rich set of fully-customizable widgets to build native interfaces in minutes. 
+            Hot Reload in milliseconds to paint your app to life.
+            Use a rich set of fully-customizable widgets to build native interfaces in minutes.
             </p>
         </div>
 
@@ -53,8 +53,8 @@ description: >
             <div class="homepage__key_point_title">Expressive and Flexible UI</div>
 
             <p>
-            Quickly ship features with a focus on native end-user experiences. 
-            Layered architecture allows full customization, 
+            Quickly ship features with a focus on native end-user experiences.
+            Layered architecture allows full customization,
             which results in incredibly fast rendering and expressive and flexible designs.
             </p>
         </div>
@@ -139,13 +139,13 @@ class CounterState extends State<Counter> {
     // build methods fast, so that you can just rebuild anything that
     // needs updating rather than having to individually change
     // instances of widgets.
-    return new Row(
+    return Row(
       children: <Widget>[
-        new RaisedButton(
+        RaisedButton(
           onPressed: increment,
-          child: new Text('Increment'),
+          child: Text('Increment'),
         ),
-        new Text('Count: $counter'),
+        Text('Count: $counter'),
       ],
     );
   }
@@ -191,7 +191,7 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages/">packages</a>, or 
+    Learn how to use <a href="/using-packages/">packages</a>, or
     write <a href="/platform-channels/">platform channels</a>,
     to access native code, APIs, and SDKs.
     </p>
@@ -307,4 +307,3 @@ Future<Null> getBatteryLevel() async {
     </div>
 
 </section>
-

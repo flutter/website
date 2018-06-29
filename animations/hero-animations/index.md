@@ -335,15 +335,15 @@ class PhotoHero extends StatelessWidget {
   final double width;
 
   Widget build(BuildContext context) {
-    return new SizedBox(
+    return SizedBox(
       width: width,
-      child: new Hero(
+      child: Hero(
         tag: photo,
-        child: new Material(
+        child: Material(
           color: Colors.transparent,
-          child: new InkWell(
+          child: InkWell(
             onTap: onTap,
-            child: new Image.asset(
+            child: Image.asset(
               photo,
               fit: BoxFit.contain,
             ),
@@ -383,27 +383,27 @@ class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     [[highlight]]timeDilation = 5.0; // 1.0 means normal animation speed.[[/highlight]]
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Basic Hero Animation'),
       ),
-      body: new Center(
-        [[highlight]]child: new PhotoHero([[/highlight]]
+      body: Center(
+        [[highlight]]child: PhotoHero([[/highlight]]
           photo: 'images/flippers-alpha.png',
           width: 300.0,
           [[highlight]]onTap: ()[[/highlight]] {
-            [[highlight]]Navigator.of(context).push(new MaterialPageRoute<Null>([[/highlight]]
+            [[highlight]]Navigator.of(context).push(MaterialPageRoute<Null>([[/highlight]]
               [[highlight]]builder: (BuildContext context)[[/highlight]] {
-                return new Scaffold(
-                  appBar: new AppBar(
+                return Scaffold(
+                  appBar: AppBar(
                     title: const Text('Flippers Page'),
                   ),
-                  body: new Container(
+                  body: Container(
                     // The blue background emphasizes that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16.0),
                     alignment: Alignment.topLeft,
-                    [[highlight]]child: new PhotoHero([[/highlight]]
+                    [[highlight]]child: PhotoHero([[/highlight]]
                       photo: 'images/flippers-alpha.png',
                       width: 100.0,
                       [[highlight]]onTap: ()[[/highlight]] {
@@ -549,12 +549,12 @@ class Photo extends StatelessWidget {
   final VoidCallback onTap;
 
   Widget build(BuildContext context) {
-    return [[highlight]]new Material([[/highlight]]
+    return [[highlight]]Material([[/highlight]]
       // Slightly opaque color appears where the image has transparency.
       [[highlight]]color: Theme.of(context).primaryColor.withOpacity(0.25),[[/highlight]]
-      child: [[highlight]]new InkWell([[/highlight]]
+      child: [[highlight]]InkWell([[/highlight]]
         onTap: [[highlight]]onTap,[[/highlight]]
-        child: [[highlight]]new Image.asset([[/highlight]]
+        child: [[highlight]]Image.asset([[/highlight]]
             photo,
             fit: BoxFit.contain,
           )
@@ -612,12 +612,12 @@ class RadialExpansion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {[[/highlight]]
-    return [[highlight]]new ClipOval([[/highlight]]
-      child: [[highlight]]new Center([[/highlight]]
-        child: [[highlight]]new SizedBox([[/highlight]]
+    return [[highlight]]ClipOval([[/highlight]]
+      child: [[highlight]]Center([[/highlight]]
+        child: [[highlight]]SizedBox([[/highlight]]
           width: clipRectSize,
           height: clipRectSize,
-          child: [[highlight]]new ClipRect([[/highlight]]
+          child: [[highlight]]ClipRect([[/highlight]]
             child: [[highlight]]child,[[/highlight]]  // Photo
           ),
         ),
@@ -652,7 +652,7 @@ Here's the code:
 <!-- skip -->
 {% prettify dart %}
 static RectTween _createRectTween(Rect begin, Rect end) {
-  return new MaterialRectCenterArcTween(begin: begin, end: end);
+  return MaterialRectCenterArcTween(begin: begin, end: end);
 }
 {% endprettify %}
 
