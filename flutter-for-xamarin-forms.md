@@ -1000,21 +1000,191 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Project structure & resources
 
-## Where do I store my resolution-dependent image files?
+## Where do I store my image files?
 
-TODO: iOS and Android specific references here
+Xamarin.Forms has no platform independent way of storing images, you had to place
+images in the iOS `xcasset` folder or on Android, in the various `drawable` folders.
+
+While Android and iOS treat resources and assets as distinct items, Flutter apps have
+only assets. All resources that would live in the `Resources/drawable-*`
+folders on Android, are placed in an assets folder for Flutter.
+
+Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
+`2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
+are logical pixels, which are basically the same as device-independent pixels.
+The so-called
+[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+expresses the ratio of physical pixels in a single logical pixel.
+
+The equivalent to Android's density buckets are:
+
+ Android density qualifier | Flutter pixel ratio
+ --- | ---
+ `ldpi` | `0.75x`
+ `mdpi` | `1.0x`
+ `hdpi` | `1.5x`
+ `xhdpi` | `2.0x`
+ `xxhdpi` | `3.0x`
+ `xxxhdpi` | `4.0x`
+
+Assets are located in any arbitrary folder&mdash;Flutter has no
+predefined folder structure. You declare the assets (with location) in
+the `pubspec.yaml` file, and Flutter picks them up.
+
+Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
+accessible from the native side, and vice versa, native assets and resources
+weren’t available to Flutter, as they lived in separate folders.
+
+As of Flutter beta 2, assets are stored in the native asset folder,
+and are accessed on the native side using Android's `AssetManager`:
+
+As of Flutter beta 2, Flutter still cannot access native resources, nor it can
+access native assets.
+
+To add a new image asset called `my_icon.png` to our Flutter project, for example,
+and deciding that it should live in a folder we arbitrarily called `images`, you
+would put the base image (1.0x) in the `images` folder, and all the other
+variants in sub-folders called with the appropriate ratio multiplier:
+
+```
+images/my_icon.png       // Base: 1.0x image
+images/2.0x/my_icon.png  // 2.0x image
+images/3.0x/my_icon.png  // 3.0x image
+```
+
+Next, you'll need to declare these images in your `pubspec.yaml` file:
+
+<!-- skip -->
+{% prettify yaml %}
+assets:
+ - images/my_icon.jpeg
+{% endprettify %}
+
+You can then access your images using `AssetImage`:
+
+<!-- skip -->
+{% prettify dart %}
+return new AssetImage("images/a_dot_burr.jpeg");
+{% endprettify %}
+
+or directly in an `Image` widget:
+
+<!-- skip -->
+{% prettify dart %}
+@override
+Widget build(BuildContext context) {
+  return new Image.asset("images/my_image.png");
+}
+{% endprettify %}
+
+More detailed information can be found in 
+[Adding Assets and Images in Flutter](https://flutter.io/assets-and-images/).
 
 ## Where do I store strings? How do I handle localization?
 
-TODO
+Unlike .NET which has `resx` files, Flutter currently doesn't have a dedicated 
+resources-like system for strings. At the moment, the best practice is to hold your 
+copy text in a class as static fields and accessing them from there. For example:
+
+<!-- skip -->
+{% prettify dart %}
+class Strings {
+  static String welcomeMessage = "Welcome To Flutter";
+}
+{% endprettify %}
+
+Then in your code, you can access your strings as such:
+
+<!-- skip -->
+{% prettify dart %}
+new Text(Strings.welcomeMessage)
+{% endprettify %}
+
+By default, Flutter only supports US English for its strings. If you need to
+add support for other languages, include the `flutter_localizations`
+package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
+package to use i10n machinery, such as date/time formatting.
+
+<!-- skip -->
+{% prettify yaml %}
+dependencies:
+  # ...
+  flutter_localizations:
+    sdk: flutter
+  intl: "^0.15.6"
+{% endprettify %}
+
+To use the `flutter_localizations` package,
+specify the `localizationsDelegates` and `supportedLocales` on the app widget:
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+new MaterialApp(
+ localizationsDelegates: [
+   // Add app-specific localization delegate[s] here
+   GlobalMaterialLocalizations.delegate,
+   GlobalWidgetsLocalizations.delegate,
+ ],
+ supportedLocales: [
+    const Locale('en', 'US'), // English
+    const Locale('he', 'IL'), // Hebrew
+    // ... other locales the app supports
+  ],
+  // ...
+)
+{% endprettify %}
+
+The delegates contain the actual localized values, while the `supportedLocales`
+defines which locales the app supports. The above example uses a `MaterialApp`,
+so it has both a `GlobalWidgetsLocalizations` for the base
+widgets localized values, and a `MaterialWidgetsLocalizations` for the Material
+widgets localizations. If you use `WidgetsApp` for your app, you don't
+need the latter. Note that these two delegates contain "default"
+values, but you'll need to provide one or more delegates for your own app's
+localizable copy, if you want those to be localized too.
+
+When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
+[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+widget for you, with the delegates you specify.
+The current locale for the device is always accessible from the `Localizations`
+widget from the current context (in the form of a `Locale` object), or using the
+[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+
+To access localized resources, use the `Localizations.of()` method to
+access a specific localizations class that is provided by a given delegate.
+Use the [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+package to extract translatable copy to
+[arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+files for translating, and importing them back into the app for using them
+with `intl`.
+
+For further details on internationalization and localization in Flutter, see the
+[internationalization guide](/tutorials/internationalization),
+which has sample code with and without the `intl` package.
 
 ## Where is my project file?
 
-In Xamarin.Forms you will have a `csproj` file.
+In Xamarin.Forms you will have a `csproj` file. Flutter doesn't have a project file.
+Most similar to this, is pubspec.yaml, which contains package dependencies and 
+various project details.
 
 ## What is the equivalent of Nuget? How do I add dependencies?
 
-TODO
+In the .NET eco-system, native Xamarin projects and Xamarin.Forms projects had access
+to Nuget and the inbuilt package management system. Flutter apps contain a native 
+Android app, native iOS app and Flutter app.
+
+In Android, you add dependencies by adding to your Gradle build script. In iOS, you add 
+dependencies by adding to your `Podfile`.
+
+Flutter uses Dart's own build system, and the Pub package manager.
+The tools delegate the building of the native Android and iOS wrapper apps to the
+respective build systems.
+
+In general, use `pubspec.yaml` to declare external dependencies to use in Flutter. A good 
+place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter/packages/).
 
 # Application Lifecycle
 
