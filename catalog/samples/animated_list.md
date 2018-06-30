@@ -48,8 +48,7 @@ class AnimatedListSample extends StatefulWidget {
 }
 
 class _AnimatedListSampleState extends State<AnimatedListSample> {
-  final GlobalKey<AnimatedListState> _listKey =
-      GlobalKey<AnimatedListState>();
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
   ListModel<int> _list;
   int _selectedItem;
   int _nextItem; // The next item inserted when the user presses the '+' button.
