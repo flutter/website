@@ -161,17 +161,267 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I lay out my widgets?
+## How do I lay out my widgets? What is the equivalent of a XAML file?
 
-TODO
+In Xamarin.Forms, most developers write layouts in XAML, though sometimes in C#.
+In Flutter you write your layouts with a widget tree in code.
+
+The following example shows how to display a simple widget with padding:
+
+<!-- skip -->
+{% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new Center(
+        child: new MaterialButton(
+          onPressed: () {},
+          child: new Text('Hello'),
+          padding: new EdgeInsets.only(left: 10.0, right: 10.0),
+        ),
+      ),
+    );
+  }
+{% endprettify %}
+
+You can view the layouts that Flutter has to offer in the [widget
+catalog](/widgets/layout/).
+
+## How do I add or remove an Element from my layout?
+
+In Xamarin.Forms, if you had to remove or add an `Element`, you had to do so in
+code. This would involve either setting the `Content` property or calling
+`Add()` or `Remove` if it was a list. 
+
+In Flutter, because widgets are immutable there is no direct equivalent.
+Instead, you can pass a function to the parent that returns a widget, and
+control that child's creation with a boolean flag.
+
+The following example shows how to toggle between two widgets when the user clicks
+the `FloatingActionButton`:
+
+<!-- skip -->
+{% prettify dart %}
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  // Default value for toggle
+  bool toggle = true;
+  void _toggle() {
+    setState(() {
+      toggle = !toggle;
+    });
+  }
+
+  _getToggleChild() {
+    if (toggle) {
+      return new Text('Toggle One');
+    } else {
+      return new CupertinoButton(
+        onPressed: () {},
+        child: new Text('Toggle Two'),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new Center(
+        child: _getToggleChild(),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _toggle,
+        tooltip: 'Update Text',
+        child: new Icon(Icons.update),
+      ),
+    );
+  }
+}
+{% endprettify %}
 
 ## How do I animate a widget?
 
-TODO
+In Xamarin.Forms, you create simple animations using ViewExtensions that include
+methods such as `FadeTo` and `TranslateTo`. You would use these methods on a view
+to perform the required animations. In Flutter, you animate widgets using the 
+animation library by wrapping widgets inside an animated widget.
 
-## How do I use a `Canvas` to draw/paint?
+In Flutter, use an `AnimationController` which is an `Animation<double>`
+that can pause, seek, stop and reverse the animation. It requires a `Ticker`
+that signals when vsync happens, and produces a linear interpolation between
+0 and 1 on each frame while it's running. You then create one or more
+`Animation`s and attach them to the controller.
 
-TODO
+For example, you might use `CurvedAnimation` to implement an animation
+along an interpolated curve. In this sense, the controller
+is the "master" source of the animation progress and the `CurvedAnimation`
+computes the curve that replaces the controller's default linear motion.
+Like widgets, animations in Flutter work with composition.
+
+When building the widget tree you assign the `Animation` to an animated
+property of a widget, such as the opacity of a `FadeTransition`, and tell the
+controller to start the animation.
+
+The following example shows how to write a `FadeTransition` that fades the widget
+into a logo when you press the `FloatingActionButton`:
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new FadeAppTest());
+}
+
+class FadeAppTest extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Fade Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new MyFadeTest(title: 'Fade Demo'),
+    );
+  }
+}
+
+class MyFadeTest extends StatefulWidget {
+  MyFadeTest({Key key, this.title}) : super(key: key);
+  final String title;
+  @override
+  _MyFadeTest createState() => new _MyFadeTest();
+}
+
+class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
+  AnimationController controller;
+  CurvedAnimation curve;
+
+  @override
+  void initState() {
+    controller = new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    curve = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+          child: new Container(
+              child: new FadeTransition(
+                  opacity: curve,
+                  child: new FlutterLogo(
+                    size: 100.0,
+                  )))),
+      floatingActionButton: new FloatingActionButton(
+        tooltip: 'Fade',
+        child: new Icon(Icons.brush),
+        onPressed: () {
+          controller.forward();
+        },
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+For more information, see
+[Animation & Motion widgets](/widgets/animation/),
+the [Animations tutorial](/tutorials/animation),
+and the [Animations overview](/animations/).
+
+## How do I draw/paint on the screen?
+
+Xamarin.Forms never had any built in way to draw directly on the screen.
+Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
+you have direct access to the Skia Canvas and can easily draw on screen.
+
+Flutter has two classes that help you draw to the canvas: `CustomPaint`
+and `CustomPainter`, the latter of which implements your algorithm to draw to
+the canvas.
+
+To learn how to implement a signature painter in Flutter, see Collin's answer on
+[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
+for-mobile-app-in-dart-flutter).
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() => runApp(new MaterialApp(home: new DemoApp()));
+
+class DemoApp extends StatelessWidget {
+  Widget build(BuildContext context) => new Scaffold(body: new Signature());
+}
+
+class Signature extends StatefulWidget {
+  SignatureState createState() => new SignatureState();
+}
+
+class SignatureState extends State<Signature> {
+  List<Offset> _points = <Offset>[];
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      onPanUpdate: (DragUpdateDetails details) {
+        setState(() {
+          RenderBox referenceBox = context.findRenderObject();
+          Offset localPosition =
+          referenceBox.globalToLocal(details.globalPosition);
+          _points = new List.from(_points)..add(localPosition);
+        });
+      },
+      onPanEnd: (DragEndDetails details) => _points.add(null),
+      child: new CustomPaint(painter: new SignaturePainter(_points), size: Size.infinite),
+    );
+  }
+}
+
+class SignaturePainter extends CustomPainter {
+  SignaturePainter(this.points);
+  final List<Offset> points;
+  void paint(Canvas canvas, Size size) {
+    var paint = new Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5.0;
+    for (int i = 0; i < points.length - 1; i++) {
+      if (points[i] != null && points[i + 1] != null)
+        canvas.drawLine(points[i], points[i + 1], paint);
+    }
+  }
+  bool shouldRepaint(SignaturePainter other) => other.points != points;
+}
+{% endprettify %}
 
 ## How do I build custom widgets?
 
