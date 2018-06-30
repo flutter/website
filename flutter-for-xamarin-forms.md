@@ -423,21 +423,52 @@ class SignaturePainter extends CustomPainter {
 }
 {% endprettify %}
 
-## How do I build custom widgets?
-
-TODO
-
-## How do I draw to the screen? (NOT REALLY RELEVANT TO XF)
-
-TODO
-
 ## Where is the widget's opacity?
 
-TODO
+On Xamarin.Forms, all `VisualElement`s have an Opacity. In Flutter, you need to
+wrap a widget in an [Opacity widget](https://docs.flutter.io/flutter/widgets/Opacity-class.html) 
+to accomplish this.
 
 ## How do I build custom widgets?
 
-TODO
+In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing 
+`VisualElement`, to override and implement methods that achieve the desired behavior.
+
+In Flutter, build a custom widget by
+[composing](/technical-overview/#everythings-a-widget) smaller widgets
+(instead of extending them).
+It is somewhat similar to implementing a custom control based off a `Grid` with
+numerous `VisualElement`s added in, while extending with custom logic.
+
+For example, how do you build a `CustomButton` that takes a label in
+the constructor? Create a CustomButton that composes a `RaisedButton` with a label,
+rather than by extending `RaisedButton`:
+
+<!-- skip -->
+{% prettify dart %}
+class CustomButton extends StatelessWidget {
+  final String label;
+
+  CustomButton(this.label);
+
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(onPressed: () {}, child: new Text(label));
+  }
+}
+{% endprettify %}
+
+Then use `CustomButton`, just as you'd use any other Flutter widget:
+
+<!-- skip -->
+{% prettify dart %}
+@override
+Widget build(BuildContext context) {
+  return new Center(
+    child: new CustomButton("Hello"),
+  );
+}
+{% endprettify %}
 
 # Navigation
 
