@@ -50,7 +50,7 @@ class DemoLocalizations {
 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      return new DemoLocalizations();
+      return DemoLocalizations();
     });
   }
 
@@ -83,12 +83,12 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(DemoLocalizations.of(context).title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(DemoLocalizations.of(context).title),
       ),
-      body: new Center(
-        child: new Text(DemoLocalizations.of(context).title),
+      body: Center(
+        child: Text(DemoLocalizations.of(context).title),
       ),
     );
   }
@@ -97,7 +97,7 @@ class DemoApp extends StatelessWidget {
 class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       onGenerateTitle: (BuildContext context) => DemoLocalizations.of(context).title,
       localizationsDelegates: [
         const DemoLocalizationsDelegate(),
@@ -112,11 +112,11 @@ class Demo extends StatelessWidget {
       // with the specified delegates. DemoLocalizations.of()
       // will only find the app's Localizations widget if its
       // context is a child of the app.
-      home: new DemoApp(),
+      home: DemoApp(),
     );
   }
 }
 
 void main() {
-  runApp(new Demo());
+  runApp(Demo());
 }

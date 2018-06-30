@@ -10,18 +10,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: new MyHomePage(title: 'Strawberry Pavlova Recipe'),
+      home: MyHomePage(title: 'Strawberry Pavlova Recipe'),
     );
   }
 }
@@ -32,17 +32,17 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var titleText = new Container(
-      padding: new EdgeInsets.all(20.0),
-      child: new Text(
+    var titleText = Container(
+      padding: EdgeInsets.all(20.0),
+      child: Text(
         'Strawberry Pavlova',
-        style: new TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w800,
           letterSpacing: 0.5,
           fontSize: 30.0,
@@ -50,35 +50,35 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    var subTitle = new Text(
+    var subTitle = Text(
       '''
 Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova. Pavlova features a crisp crust and soft, light inside, topped with fruit and whipped cream.
 ''',
       textAlign: TextAlign.center,
-      style: new TextStyle(
+      style: TextStyle(
         fontFamily: 'Georgia',
         fontSize: 25.0,
       ),
     );
 
-    var ratings = new Container(
-      padding: new EdgeInsets.all(20.0),
-      child: new Row(
+    var ratings = Container(
+      padding: EdgeInsets.all(20.0),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          new Row(
+          Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
-              new Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
+              Icon(Icons.star, color: Colors.black),
             ],
           ),
-          new Text(
+          Text(
             '170 Reviews',
-            style: new TextStyle(
+            style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w800,
               fontFamily: 'Roboto',
@@ -90,7 +90,7 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
       ),
     );
 
-    var descTextStyle = new TextStyle(
+    var descTextStyle = TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
@@ -103,30 +103,30 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
     // style that is inherited by its child and all subsequent children.
     var iconList = DefaultTextStyle.merge(
       style: descTextStyle,
-      child: new Container(
-        padding: new EdgeInsets.all(20.0),
-        child: new Row(
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.kitchen, color: Colors.green[500]),
-                new Text('PREP:'),
-                new Text('25 min'),
+                Icon(Icons.kitchen, color: Colors.green[500]),
+                Text('PREP:'),
+                Text('25 min'),
               ],
             ),
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.timer, color: Colors.green[500]),
-                new Text('COOK:'),
-                new Text('1 hr'),
+                Icon(Icons.timer, color: Colors.green[500]),
+                Text('COOK:'),
+                Text('1 hr'),
               ],
             ),
-            new Column(
+            Column(
               children: [
-                new Icon(Icons.restaurant, color: Colors.green[500]),
-                new Text('FEEDS:'),
-                new Text('4-6'),
+                Icon(Icons.restaurant, color: Colors.green[500]),
+                Text('FEEDS:'),
+                Text('4-6'),
               ],
             ),
           ],
@@ -134,9 +134,9 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
       ),
     );
 
-    var leftColumn = new Container(
-      padding: new EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
-      child: new Column(
+    var leftColumn = Container(
+      padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
+      child: Column(
         children: [
           titleText,
           subTitle,
@@ -146,24 +146,24 @@ Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlo
       ),
     );
 
-    var mainImage = new Image.asset(
+    var mainImage = Image.asset(
       'images/pavlova.jpg',
       fit: BoxFit.cover,
     );
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
-        child: new Container(
-          margin: new EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
+      body: Center(
+        child: Container(
+          margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
           height: 600.0,
-          child: new Card(
-            child: new Row(
+          child: Card(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                new Container(
+                Container(
                   width: 440.0,
                   child: leftColumn,
                 ),

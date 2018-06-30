@@ -28,7 +28,7 @@ packages, please see [Assets & Images](https://flutter.io/assets-and-images/).
 
 ### Searching for packages
 
-Packages are published to the *[Pub](https://pub.dartlang.org)* package repository. 
+Packages are published to the *[Pub](https://pub.dartlang.org)* package repository.
 
 The [Flutter landing page](https://pub.dartlang.org/flutter/) displays
 top packages that are compatible with Flutter (i.e., that declare dependencies
@@ -88,7 +88,7 @@ specifying a version range using one of the following formats:
     url_launcher: '>=0.1.2 <0.2.0'
   ```
 
-* Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax): 
+* Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax):
   Similar to a regular range constraints
   ```
   dependencies:
@@ -137,8 +137,8 @@ additional dependency options are avaialble:
         url: git://github.com/flutter/plugin1.git
   ```
 
-* **Git** dependency on a package in a folder: By default Pub assumes the 
-  package is located in the root of the Git repository. If that is not the case, 
+* **Git** dependency on a package in a folder: By default Pub assumes the
+  package is located in the root of the Git repository. If that is not the case,
   you can specify the location with the `path` argument, e.g.:
   ```
   dependencies:
@@ -188,14 +188,14 @@ import 'package:css_colors/css_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new DemoPage(),
+    return MaterialApp(
+      home: DemoPage(),
     );
   }
 }
@@ -203,7 +203,7 @@ class MyApp extends StatelessWidget {
 class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(body: new Container(color: CSSColors.orange));
+    return Scaffold(body: Container(color: CSSColors.orange));
   }
 }
 ```
@@ -247,14 +247,14 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new DemoPage(),
+    return MaterialApp(
+      home: DemoPage(),
     );
   }
 }
@@ -266,11 +266,11 @@ class DemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Center(
-        child: new RaisedButton(
+    return Scaffold(
+      body: Center(
+        child: RaisedButton(
           onPressed: launchURL,
-          child: new Text('Show Flutter homepage'),
+          child: Text('Show Flutter homepage'),
         ),
       ),
     );

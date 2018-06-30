@@ -112,19 +112,19 @@ become skewed. You can fix this automatically with the Flutter tools:
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
         ),
-        body: new Center(
-          child: new Text('Hello World'),
+        body: Center(
+          child: Text('Hello World'),
         ),
       ),
     );
@@ -182,14 +182,14 @@ class MyApp extends StatelessWidget {
   class MyApp extends StatelessWidget {
    @override
    Widget build(BuildContext context) {
-     return new MaterialApp(
+     return MaterialApp(
        title: 'Welcome to Flutter',
-       home: new Scaffold(
-         appBar: new AppBar(
-           title: new Text('Welcome to Flutter'),
+       home: Scaffold(
+         appBar: AppBar(
+           title: Text('Welcome to Flutter'),
          ),
-         body: new Center(
-           child: new Text('Hello World')
+         body: Center(
+           child: Text('Hello World')
          ),
        ),
      );
@@ -202,8 +202,8 @@ class MyApp extends StatelessWidget {
   class HelloWorld extends StatelessWidget {
    @override
    Widget build(BuildContext context) {
-     return new Center(
-       child: new Text('Hello World'),
+     return Center(
+       child: Text('Hello World'),
      );
    }
   }
@@ -285,21 +285,21 @@ Make the following changes, as highlighted below:
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    [[highlight]]final wordPair = new WordPair.random();[[/highlight]]
-    return new MaterialApp(
+    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+    return MaterialApp(
       title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
         ),
-        body: new Center(
-          //child: new Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
-          child: new Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
+        body: Center(
+          //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
+          child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
         ),
       ),
     );
@@ -359,7 +359,7 @@ maintain the proposed and favorite word pairs for the widget.
 {% prettify dart %}
 class RandomWords extends StatefulWidget {
   @override
-  createState() => new RandomWordsState();
+  createState() => RandomWordsState();
 }
 {% endprettify %}
 </li>
@@ -394,8 +394,8 @@ by the highlighted text:
 class RandomWordsState extends State<RandomWords> {
   [[highlight]]@override[[/highlight]]
   [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]final wordPair = new WordPair.random();[[/highlight]]
-    [[highlight]]return new Text(wordPair.asPascalCase);[[/highlight]]
+    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+    [[highlight]]return Text(wordPair.asPascalCase);[[/highlight]]
   [[highlight]]}[[/highlight]]
 }
 {% endprettify %}
@@ -409,17 +409,17 @@ class RandomWordsState extends State<RandomWords> {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    [[strike]]final wordPair = new WordPair.random();[[/strike]]  // Delete this line
+    [[strike]]final wordPair = WordPair.random();[[/strike]]  // Delete this line
 
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
         ),
-        body: new Center(
-          //child: new [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
-          child: new [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
+        body: Center(
+          //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
+          child: [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
         ),
       ),
     );
@@ -501,7 +501,7 @@ Add the highlighted lines below:
 class RandomWordsState extends State<RandomWords> {
   ...
   [[highlight]]Widget _buildSuggestions() {[[/highlight]]
-    [[highlight]]return new ListView.builder([[/highlight]]
+    [[highlight]]return ListView.builder([[/highlight]]
       [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
       // The itemBuilder callback is called once per suggested word pairing,
       // and places each suggestion into a ListTile row.
@@ -511,7 +511,7 @@ class RandomWordsState extends State<RandomWords> {
       // to see on smaller devices.
       [[highlight]]itemBuilder: (context, i) {[[/highlight]]
         // Add a one-pixel-high divider widget before each row in theListView.
-        [[highlight]]if (i.isOdd) return new Divider();[[/highlight]]
+        [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
 
         // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
         // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
@@ -543,8 +543,8 @@ class RandomWordsState extends State<RandomWords> {
   ...
 
   [[highlight]]Widget _buildRow(WordPair pair) {[[/highlight]]
-    [[highlight]]return new ListTile([[/highlight]]
-      [[highlight]]title: new Text([[/highlight]]
+    [[highlight]]return ListTile([[/highlight]]
+      [[highlight]]title: Text([[/highlight]]
         [[highlight]]pair.asPascalCase,[[/highlight]]
         [[highlight]]style: _biggerFont,[[/highlight]]
       [[highlight]]),[[/highlight]]
@@ -564,11 +564,11 @@ class RandomWordsState extends State<RandomWords> {
   ...
   @override
   Widget build(BuildContext context) {
-    [[strike]]final wordPair = new WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]return new Text(wordPair.asPascalCase);[[/strike]]
-    [[highlight]]return new Scaffold ([[/highlight]]
-      [[highlight]]appBar: new AppBar([[/highlight]]
-        [[highlight]]title: new Text('Startup Name Generator'),[[/highlight]]
+    [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
+    [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
+    [[highlight]]return Scaffold ([[/highlight]]
+      [[highlight]]appBar: AppBar([[/highlight]]
+        [[highlight]]title: Text('Startup Name Generator'),[[/highlight]]
       [[highlight]]),[[/highlight]]
       [[highlight]]body: _buildSuggestions(),[[/highlight]]
     [[highlight]]);[[/highlight]]
@@ -591,9 +591,9 @@ Replace the original method with the highlighted build method below:
 class MyApp extends StatelessWidget {
   @override
   [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]return new MaterialApp([[/highlight]]
+    [[highlight]]return MaterialApp([[/highlight]]
       [[highlight]]title: 'Startup Name Generator',[[/highlight]]
-      [[highlight]]home: new RandomWords(),[[/highlight]]
+      [[highlight]]home: RandomWords(),[[/highlight]]
     [[highlight]]);[[/highlight]]
   [[highlight]]}[[/highlight]]
 }
@@ -633,7 +633,7 @@ set of saved favorites.
 class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
 
-  [[highlight]]final _saved = new Set<WordPair>();[[/highlight]]
+  [[highlight]]final _saved = Set<WordPair>();[[/highlight]]
 
   final _biggerFont = const TextStyle(fontSize: 18.0);
   ...
@@ -664,12 +664,12 @@ Add the highlighted lines below:
 {% prettify dart %}
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
-    return new ListTile(
-      title: new Text(
+    return ListTile(
+      title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      [[highlight]]trailing: new Icon([[/highlight]]
+      [[highlight]]trailing: Icon([[/highlight]]
         [[highlight]]alreadySaved ? Icons.favorite : Icons.favorite_border,[[/highlight]]
         [[highlight]]color: alreadySaved ? Colors.red : null,[[/highlight]]
       [[highlight]]),[[/highlight]]
@@ -694,12 +694,12 @@ Add the highlighted lines:
 {% prettify dart %}
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
-    return new ListTile(
-      title: new Text(
+    return ListTile(
+      title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      trailing: new Icon(
+      trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
       ),
@@ -772,11 +772,11 @@ class RandomWordsState extends State<RandomWords> {
   ...
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
         [[highlight]]actions: <Widget>[[[/highlight]]
-          [[highlight]]new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
+          [[highlight]]IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
         [[highlight]]],[[/highlight]]
       ),
       body: _buildSuggestions(),
@@ -831,12 +831,12 @@ which pushes the route to the Navigator's stack.
 {% prettify dart %}
   void _pushSaved() {
     Navigator.of(context).push(
-      [[highlight]]new MaterialPageRoute([[/highlight]]
+      [[highlight]]MaterialPageRoute([[/highlight]]
         [[highlight]]builder: (context) {[[/highlight]]
           [[highlight]]final tiles = _saved.map([[/highlight]]
             [[highlight]](pair) {[[/highlight]]
-              [[highlight]]return new ListTile([[/highlight]]
-                [[highlight]]title: new Text([[/highlight]]
+              [[highlight]]return ListTile([[/highlight]]
+                [[highlight]]title: Text([[/highlight]]
                   [[highlight]]pair.asPascalCase,[[/highlight]]
                   [[highlight]]style: _biggerFont,[[/highlight]]
                 [[highlight]]),[[/highlight]]
@@ -868,12 +868,12 @@ Add the highlighted code below:
 {% prettify dart %}
   void _pushSaved() {
     Navigator.of(context).push(
-      new MaterialPageRoute(
+      MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
             (pair) {
-              return new ListTile(
-                title: new Text(
+              return ListTile(
+                title: Text(
                   pair.asPascalCase,
                   style: _biggerFont,
                 ),
@@ -887,11 +887,11 @@ Add the highlighted code below:
             )
             .toList();
 
-          [[highlight]]return new Scaffold([[/highlight]]
-            [[highlight]]appBar: new AppBar([[/highlight]]
-              [[highlight]]title: new Text('Saved Suggestions'),[[/highlight]]
+          [[highlight]]return Scaffold([[/highlight]]
+            [[highlight]]appBar: AppBar([[/highlight]]
+              [[highlight]]title: Text('Saved Suggestions'),[[/highlight]]
             [[highlight]]),[[/highlight]]
-            [[highlight]]body: new ListView(children: divided),[[/highlight]]
+            [[highlight]]body: ListView(children: divided),[[/highlight]]
           [[highlight]]);[[/highlight]]
         },
       ),
@@ -937,12 +937,12 @@ Change the app's theme to white by adding the highlighted code to MyApp:
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Startup Name Generator',
-      [[highlight]]theme: new ThemeData([[/highlight]]
+      [[highlight]]theme: ThemeData([[/highlight]]
         [[highlight]]primaryColor: Colors.white,[[/highlight]]
       [[highlight]]),[[/highlight]]
-      home: new RandomWords(),
+      home: RandomWords(),
     );
   }
 }

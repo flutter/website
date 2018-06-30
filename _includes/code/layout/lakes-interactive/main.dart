@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class FavoriteWidget extends StatefulWidget {
   @override
-  _FavoriteWidgetState createState() => new _FavoriteWidgetState();
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {
@@ -36,23 +36,23 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        new Container(
-          padding: new EdgeInsets.all(0.0),
-          child: new IconButton(
+        Container(
+          padding: EdgeInsets.all(0.0),
+          child: IconButton(
             icon: (_isFavorited
-                ? new Icon(Icons.star)
-                : new Icon(Icons.star_border)),
+                ? Icon(Icons.star)
+                : Icon(Icons.star_border)),
             color: Colors.red[500],
             onPressed: _toggleFavorite,
           ),
         ),
-        new SizedBox(
+        SizedBox(
           width: 18.0,
-          child: new Container(
-            child: new Text('$_favoriteCount'),
+          child: Container(
+            child: Text('$_favoriteCount'),
           ),
         ),
       ],
@@ -63,33 +63,33 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = new Container(
+    Widget titleSection = Container(
       padding: const EdgeInsets.all(32.0),
-      child: new Row(
+      child: Row(
         children: [
-          new Expanded(
-            child: new Column(
+          Expanded(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                new Container(
+                Container(
                   padding: const EdgeInsets.only(bottom: 8.0),
-                  child: new Text(
+                  child: Text(
                     'Oeschinen Lake Campground',
-                    style: new TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                new Text(
+                Text(
                   'Kandersteg, Switzerland',
-                  style: new TextStyle(
+                  style: TextStyle(
                     color: Colors.grey[500],
                   ),
                 ),
               ],
             ),
           ),
-          new FavoriteWidget(),
+          FavoriteWidget(),
         ],
       ),
     );
@@ -97,16 +97,16 @@ class MyApp extends StatelessWidget {
     Column buildButtonColumn(IconData icon, String label) {
       Color color = Theme.of(context).primaryColor;
 
-      return new Column(
+      return Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          new Icon(icon, color: color),
-          new Container(
+          Icon(icon, color: color),
+          Container(
             margin: const EdgeInsets.only(top: 8.0),
-            child: new Text(
+            child: Text(
               label,
-              style: new TextStyle(
+              style: TextStyle(
                 fontSize: 12.0,
                 fontWeight: FontWeight.w400,
                 color: color,
@@ -117,8 +117,8 @@ class MyApp extends StatelessWidget {
       );
     }
 
-    Widget buttonSection = new Container(
-      child: new Row(
+    Widget buttonSection = Container(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           buildButtonColumn(Icons.call, 'CALL'),
@@ -128,24 +128,24 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Widget textSection = new Container(
+    Widget textSection = Container(
       padding: const EdgeInsets.all(32.0),
-      child: new Text(
+      child: Text(
         '''
 Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
         ''',
         softWrap: true,
       ),
     );
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Top Lakes'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Top Lakes'),
         ),
-        body: new ListView(
+        body: ListView(
           children: [
-            new Image.asset(
+            Image.asset(
               'images/lake.jpg',
               height: 240.0,
               fit: BoxFit.cover,

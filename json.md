@@ -45,7 +45,7 @@ If you do not have many JSON models in your project and are looking to test a
 concept quickly, manual serialization might be the way you want to start. For an
 example of manual serialization, [see here](#manual-serialization).
 
-### Use code generation for medium to large projects 
+### Use code generation for medium to large projects
 
 JSON serialization with code generation means having an external library
 generate the serialization boilerplate for you. They involve some initial setup
@@ -67,7 +67,7 @@ serialization, [see here](#code-generation).
 
 ## Is there a GSON/Jackson/Moshi equivalent in Flutter?
 
-The simple answer is no. 
+The simple answer is no.
 
 Such a library would require using runtime reflection, which is disabled in
 Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
@@ -250,20 +250,20 @@ sake of simplicity, we use the dumbed-down JSON model from the previous samples.
 **user.dart**
 
 <!-- skip -->
-{% prettify dart %} 
+{% prettify dart %}
 import 'package:json_annotation/json_annotation.dart';
 
-/// This allows our `User` class to access private members in 
-/// the generated file. The value for this is *.g.dart, where 
+/// This allows our `User` class to access private members in
+/// the generated file. The value for this is *.g.dart, where
 /// the star denotes the source file name.
 part '[[highlight]]user[[/highlight]].g.dart';
 
-/// An annotation for the code generator to know that this class needs the 
+/// An annotation for the code generator to know that this class needs the
 /// JSON serialization logic to be generated.
 [[highlight]]@JsonSerializable()[[/highlight]]
 
-/// Every json_serializable class must have the serializer mixin. 
-/// It makes the generated toJson() method to be usable for the class. 
+/// Every json_serializable class must have the serializer mixin.
+/// It makes the generated toJson() method to be usable for the class.
 /// The mixin's name follows the source class, in this case, User.
 class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin {
   User(this.name, this.email);
@@ -272,7 +272,7 @@ class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin 
   String email;
 
   /// A necessary factory constructor for creating a new User instance
-  /// from a map. We pass the map to the generated _$UserFromJson constructor. 
+  /// from a map. We pass the map to the generated _$UserFromJson constructor.
   /// The constructor is named after the source class, in this case User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 }
@@ -335,7 +335,7 @@ make any changes to our previous code.
 <!-- skip -->
 ```dart
 Map userMap = json.decode(json);
-var user = new User.fromJson(userMap);
+var user = User.fromJson(userMap);
 ```
 
 Same goes for serialization. The calling API is the same as before.

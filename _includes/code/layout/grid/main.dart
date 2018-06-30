@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -30,22 +30,22 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 // The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
 // The List.generate constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
 List<Container> _buildGridTileList(int count) {
-  List<Container> containers = new List<Container>.generate(
+  List<Container> containers = List<Container>.generate(
       count,
       (int index) =>
-          new Container(child: new Image.asset('images/pic${index+1}.jpg')));
+          Container(child: Image.asset('images/pic${index+1}.jpg')));
   return containers;
 }
 
 Widget buildGrid() {
-  return new GridView.extent(
+  return GridView.extent(
       maxCrossAxisExtent: 150.0,
       padding: const EdgeInsets.all(4.0),
       mainAxisSpacing: 4.0,
@@ -56,11 +56,11 @@ Widget buildGrid() {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
+      body: Center(
         child: buildGrid(),
       ),
     );

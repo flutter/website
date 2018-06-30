@@ -9,22 +9,22 @@ import 'package:flutter/material.dart';
 
 class AnimatedLogo extends AnimatedWidget {
   // Make the Tweens static because they don't change.
-  static final _opacityTween = new Tween<double>(begin: 0.1, end: 1.0);
-  static final _sizeTween = new Tween<double>(begin: 0.0, end: 300.0);
+  static final _opacityTween = Tween<double>(begin: 0.1, end: 1.0);
+  static final _sizeTween = Tween<double>(begin: 0.0, end: 300.0);
 
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
-    return new Center(
-      child: new Opacity(
+    return Center(
+      child: Opacity(
         opacity: _opacityTween.evaluate(animation),
-        child: new Container(
-          margin: new EdgeInsets.symmetric(vertical: 10.0),
+        child: Container(
+          margin: EdgeInsets.symmetric(vertical: 10.0),
           height: _sizeTween.evaluate(animation),
           width: _sizeTween.evaluate(animation),
-          child: new FlutterLogo(),
+          child: FlutterLogo(),
         ),
       ),
     );
@@ -32,7 +32,7 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
@@ -41,9 +41,9 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -57,7 +57,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    return new AnimatedLogo(animation: animation);
+    return AnimatedLogo(animation: animation);
   }
 
   dispose() {
@@ -67,5 +67,5 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }

@@ -171,16 +171,16 @@ refreshing the value.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return new Material(
-    child: new Center(
-      child: new Column(
+  return Material(
+    child: Center(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          new RaisedButton(
-            child: new Text('Get Battery Level'),
+          RaisedButton(
+            child: Text('Get Battery Level'),
             onPressed: _getBatteryLevel,
           ),
-          new Text(_batteryLevel),
+          Text(_batteryLevel),
         ],
       ),
     ),
@@ -225,8 +225,8 @@ public class MainActivity extends FlutterActivity {
 
         super.onCreate(savedInstanceState);
 
-        new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
-                new MethodCallHandler() {
+        MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
+                MethodCallHandler() {
                     @Override
                     public void onMethodCall(MethodCall call, Result result) {
                         // TODO

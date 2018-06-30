@@ -92,7 +92,7 @@ A CurvedAnimation defines the animation's progress as a non-linear curve.
 <!-- skip -->
 {% prettify dart %}
 final CurvedAnimation curve =
-    new CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    CurvedAnimation(parent: controller, curve: Curves.easeIn);
 {% endprettify %}
 
 <aside class="alert alert-success" markdown="1">
@@ -127,7 +127,7 @@ but does not start it running:
 
 <!-- skip -->
 {% prettify dart %}
-final AnimationController controller = new AnimationController(
+final AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 2000), vsync: this);
 {% endprettify %}
 
@@ -182,7 +182,7 @@ goes from -200.0 to 0.0:
 
 <!-- skip -->
 {% prettify dart %}
-final Tween doubleTween = new Tween<double>(begin: -200.0, end: 0.0);
+final Tween doubleTween = Tween<double>(begin: -200.0, end: 0.0);
 {% endprettify %}
 
 A Tween is a stateless object that takes only `begin` and `end`.
@@ -197,7 +197,7 @@ For example, ColorTween specifies a progression between two colors.
 <!--- skip -->
 {% prettify dart %}
 final Tween colorTween =
-    new ColorTween(begin: Colors.transparent, end: Colors.black54);
+    ColorTween(begin: Colors.transparent, end: Colors.black54);
 {% endprettify %}
 
 A Tween object does not store any state. Instead, it provides the
@@ -216,9 +216,9 @@ integer values from 0 to 255 over the course of 500 ms.
 
 <!-- skip -->
 {% prettify dart %}
-final AnimationController controller = new AnimationController(
+final AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
-Animation<int> alpha = new IntTween(begin: 0, end: 255).animate(controller);
+Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
 {% endprettify %}
 
 Notice that `animate()` returns an Animation, not an Animatable.
@@ -227,11 +227,11 @@ The following example shows a controller, a curve, and a Tween:
 
 <!-- skip -->
 {% prettify dart %}
-final AnimationController controller = new AnimationController(
+final AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
 final Animation curve =
-    new CurvedAnimation(parent: controller, curve: Curves.easeOut);
-Animation<int> alpha = new IntTween(begin: 0, end: 255).animate(curve);
+    CurvedAnimation(parent: controller, curve: Curves.easeOut);
+Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 {% endprettify %}
 
 ### Animation notifications
@@ -283,24 +283,24 @@ animation:
 import 'package:flutter/material.dart';
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> {
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Container(
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+    return Center(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
         height: 300.0,
         width: 300.0,
-        child: new FlutterLogo(),
+        child: FlutterLogo(),
       ),
     );
   }
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }
 {% endprettify %}
 
@@ -318,7 +318,7 @@ The changes from the non-animated example are highlighted:
 import 'package:flutter/material.dart';
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> [[highlight]]with SingleTickerProviderStateMixin[[/highlight]] {
@@ -327,9 +327,9 @@ class _LogoAppState extends State<LogoApp> [[highlight]]with SingleTickerProvide
 
   [[highlight]]initState() {[[/highlight]]
     [[highlight]]super.initState();[[/highlight]]
-    [[highlight]]controller = new AnimationController([[/highlight]]
+    [[highlight]]controller = AnimationController([[/highlight]]
         [[highlight]]duration: const Duration(milliseconds: 2000), vsync: this);[[/highlight]]
-    [[highlight]]animation = new Tween(begin: 0.0, end: 300.0).animate(controller)[[/highlight]]
+    [[highlight]]animation = Tween(begin: 0.0, end: 300.0).animate(controller)[[/highlight]]
       [[highlight]]..addListener(() {[[/highlight]]
         [[highlight]]setState(() {[[/highlight]]
           [[highlight]]// the state that has changed here is the animation object’s value[[/highlight]]
@@ -339,12 +339,12 @@ class _LogoAppState extends State<LogoApp> [[highlight]]with SingleTickerProvide
   [[highlight]]}[[/highlight]]
 
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Container(
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+    return Center(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
         height: [[highlight]]animation.value,[[/highlight]]
         width: [[highlight]]animation.value,[[/highlight]]
-        child: new FlutterLogo(),
+        child: FlutterLogo(),
       ),
     );
   }
@@ -356,7 +356,7 @@ class _LogoAppState extends State<LogoApp> [[highlight]]with SingleTickerProvide
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }
 {% endprettify %}
 
@@ -445,19 +445,19 @@ class AnimatedLogo extends AnimatedWidget {
 
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
-    return new Center(
-      child: new Container(
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+    return Center(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
         height: animation.value,
         width: animation.value,
-        child: new FlutterLogo(),
+        child: FlutterLogo(),
       ),
     );
   }
 }
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
@@ -466,14 +466,14 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
     controller.forward();
   }
 
   Widget build(BuildContext context) {
-    return new AnimatedLogo(animation: animation);
+    return AnimatedLogo(animation: animation);
   }
 
   dispose() {
@@ -483,7 +483,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }
 {% endprettify %}
 
@@ -525,9 +525,9 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller)
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
       [[highlight]]..addStatusListener((state) => print("$state"));[[/highlight]]
     controller.forward();
   }
@@ -554,9 +554,9 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
 
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -625,9 +625,9 @@ the logo is straightforward:
 class LogoWidget extends StatelessWidget {
   // Leave out the height and width so it fills the animating parent
   build(BuildContext context) {
-    return new Container(
-      margin: new EdgeInsets.symmetric(vertical: 10.0),
-      child: new FlutterLogo(),
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      child: FlutterLogo(),
     );
   }
 }
@@ -659,11 +659,11 @@ class GrowTransition extends StatelessWidget {
   final Animation<double> animation;
 
   Widget build(BuildContext context) {
-    return new Center(
-      child: new AnimatedBuilder(
+    return Center(
+      child: AnimatedBuilder(
           animation: animation,
           builder: (BuildContext context, Widget child) {
-            return new Container(
+            return Container(
                 height: animation.value, width: animation.value, child: child);
           },
           child: child),
@@ -685,7 +685,7 @@ These are the three elements listed in the bullet points above.
 <!-- skip -->
 {% prettify dart %}
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
@@ -694,16 +694,16 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     final CurvedAnimation curve =
-        new CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(curve);
+        CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation = Tween(begin: 0.0, end: 300.0).animate(curve);
     controller.forward();
   }
 
   Widget build(BuildContext context) {
-    return new GrowTransition(child: new LogoWidget(), animation: animation);
+    return GrowTransition(child: LogoWidget(), animation: animation);
   }
 
   dispose() {
@@ -713,7 +713,7 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }
 {% endprettify %}
 
@@ -756,11 +756,11 @@ Each tween manages an aspect of the animation. For example:
 <!-- skip -->
 {% prettify dart %}
 final AnimationController controller =
-    new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+    AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
 final Animation<double> sizeAnimation =
-    new Tween(begin: 0.0, end: 300.0).animate(controller);
+    Tween(begin: 0.0, end: 300.0).animate(controller);
 final Animation<double> opacityAnimation =
-    new Tween(begin: 0.1, end: 1.0).animate(controller);
+    Tween(begin: 0.1, end: 1.0).animate(controller);
 {% endprettify %}
 
 You can get the size with `sizeAnimation.value` and the opacity
@@ -782,22 +782,22 @@ import 'package:flutter/material.dart';
 
 class AnimatedLogo extends AnimatedWidget {
   // The Tweens are static because they don't change.
-  [[highlight]]static final _opacityTween = new Tween<double>(begin: 0.1, end: 1.0);[[/highlight]]
-  [[highlight]]static final _sizeTween = new Tween<double>(begin: 0.0, end: 300.0);[[/highlight]]
+  [[highlight]]static final _opacityTween = Tween<double>(begin: 0.1, end: 1.0);[[/highlight]]
+  [[highlight]]static final _sizeTween = Tween<double>(begin: 0.0, end: 300.0);[[/highlight]]
 
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
-    return new Center(
-      [[highlight]]child: new Opacity([[/highlight]]
+    return Center(
+      [[highlight]]child: Opacity([[/highlight]]
         [[highlight]]opacity: _opacityTween.evaluate(animation),[[/highlight]]
-        child: new Container(
-          margin: new EdgeInsets.symmetric(vertical: 10.0),
+        child: Container(
+          margin: EdgeInsets.symmetric(vertical: 10.0),
           height: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
           width: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
-          child: new FlutterLogo(),
+          child: FlutterLogo(),
         ),
       ),
     );
@@ -805,7 +805,7 @@ class AnimatedLogo extends AnimatedWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
@@ -814,9 +814,9 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = [[highlight]]new CurvedAnimation(parent: controller, curve: Curves.easeIn);[[/highlight]]
+    animation = [[highlight]]CurvedAnimation(parent: controller, curve: Curves.easeIn);[[/highlight]]
 
     animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
@@ -830,7 +830,7 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    return new AnimatedLogo(animation: animation);
+    return AnimatedLogo(animation: animation);
   }
 
   dispose() {
@@ -840,7 +840,7 @@ class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }
 {% endprettify %}
 
@@ -857,4 +857,3 @@ animations specific to Material Design, ReverseAnimation, shared element
 transitions (also known as Hero animations), physics simulations and
 `fling()` methods. See the [animations landing page](/animations/)
 for the latest available documents and examples.
-

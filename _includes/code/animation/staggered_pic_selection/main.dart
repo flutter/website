@@ -30,8 +30,8 @@ class Photo {
   int get hashCode => id.hashCode;
 }
 
-final List<Photo> allPhotos = new List<Photo>.generate(30, (int index) {
-  return new Photo('images/pic${index+1}.jpg', index);
+final List<Photo> allPhotos = List<Photo>.generate(30, (int index) {
+  return Photo('images/pic${index+1}.jpg', index);
 });
 
 class PhotoFrame {
@@ -57,10 +57,10 @@ class PhotoCheck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new DecoratedBox(
-      decoration: new BoxDecoration(
+    return DecoratedBox(
+      decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: new BorderRadius.all(const Radius.circular(16.0)),
+        borderRadius: BorderRadius.all(const Radius.circular(16.0)),
       ),
       child: const Icon(
         Icons.check,
@@ -86,7 +86,7 @@ class PhotoItem extends StatefulWidget {
   final bool selected;
 
   @override
-  _PhotoItemState createState() => new _PhotoItemState();
+  _PhotoItemState createState() => _PhotoItemState();
 }
 
 class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
@@ -111,46 +111,46 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
 
     _oldPhoto = widget.photo;
 
-    _selectController = new AnimationController(
+    _selectController = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this
     );
-    final Animation<double> easeSelection = new CurvedAnimation(
+    final Animation<double> easeSelection = CurvedAnimation(
       parent: _selectController,
       curve: Curves.easeIn,
     );
-    _stackScaleAnimation = new Tween<double>(begin: 1.0, end: 0.85).animate(easeSelection);
-    _checkScaleAnimation = new Tween<double>(begin: 0.0, end: 1.25).animate(easeSelection);
-    _checkSelectedOpacityAnimation = new Tween<double>(begin: 0.0, end: 1.0).animate(easeSelection);
-    _imagePositionAnimation = new RelativeRectTween(
+    _stackScaleAnimation = Tween<double>(begin: 1.0, end: 0.85).animate(easeSelection);
+    _checkScaleAnimation = Tween<double>(begin: 0.0, end: 1.25).animate(easeSelection);
+    _checkSelectedOpacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(easeSelection);
+    _imagePositionAnimation = RelativeRectTween(
       begin: const RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0),
       end: const RelativeRect.fromLTRB(12.0, 12.0, 12.0, 12.0),
     ).animate(easeSelection);
 
-    _replaceController = new AnimationController(
+    _replaceController = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this
     );
 
-    final Animation<double> easeInsert = new CurvedAnimation(
+    final Animation<double> easeInsert = CurvedAnimation(
       parent: _replaceController,
       curve: Curves.easeIn,
     );
 
-    _replaceNewPhotoAnimation = new Tween<Offset>(
+    _replaceNewPhotoAnimation = Tween<Offset>(
       begin: const Offset(1.0, 0.0),
       end: Offset.zero,
     ).animate(easeInsert);
 
-    _replaceOldPhotoAnimation = new Tween<Offset>(
+    _replaceOldPhotoAnimation = Tween<Offset>(
       begin: const Offset(0.0, 0.0),
       end: const Offset(-1.0, 0.0),
     ).animate(easeInsert);
 
-    _removeCheckAnimation = new Tween<double>(begin: 1.0, end: 0.0).animate(
-      new CurvedAnimation(
+    _removeCheckAnimation = Tween<double>(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(
         parent: _replaceController,
-        curve: new Interval(0.0, 0.25, curve: Curves.easeIn),
+        curve: Interval(0.0, 0.25, curve: Curves.easeIn),
       ),
     );
 
@@ -199,35 +199,35 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    return new Stack(
+    return Stack(
       children: <Widget>[
-        new Positioned.fill(
-          child: new ClipRect(
-            child: new SlideTransition(
+        Positioned.fill(
+          child: ClipRect(
+            child: SlideTransition(
               position: _replaceOldPhotoAnimation,
-              child: new Material(
+              child: Material(
                 color: widget.color,
-                child: new InkWell(
+                child: InkWell(
                   onTap: widget.onTap,
-                  child: new ScaleTransition(
+                  child: ScaleTransition(
                     scale: _stackScaleAnimation,
-                    child: new Stack(
+                    child: Stack(
                       children: <Widget>[
-                        new PositionedTransition(
+                        PositionedTransition(
                           rect: _imagePositionAnimation,
-                          child: new Image.asset(
+                          child: Image.asset(
                             _oldPhoto.asset,
                             fit: BoxFit.cover,
                           ),
                         ),
-                        new Positioned(
+                        Positioned(
                           top: 0.0,
                           left: 0.0,
-                          child: new FadeTransition(
+                          child: FadeTransition(
                             opacity: _checkSelectedOpacityAnimation,
-                            child: new FadeTransition(
+                            child: FadeTransition(
                               opacity: _removeCheckAnimation,
-                              child: new ScaleTransition(
+                              child: ScaleTransition(
                                 alignment: Alignment.topLeft,
                                 scale: _checkScaleAnimation,
                                 child: const PhotoCheck(),
@@ -235,14 +235,14 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
                             ),
                           ),
                         ),
-                        new PositionedTransition(
+                        PositionedTransition(
                           rect: _imagePositionAnimation,
-                          child: new Container(
+                          child: Container(
                             margin: const EdgeInsets.all(8.0),
                             alignment: Alignment.topRight,
-                            child: new Text(
+                            child: Text(
                               widget.photo.id.toString(),
-                              style: new TextStyle(color: Colors.green),
+                              style: TextStyle(color: Colors.green),
                             ),
                           ),
                         ),
@@ -254,11 +254,11 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
             ),
           ),
         ),
-        new Positioned.fill(
-          child: new ClipRect(
-            child: new SlideTransition(
+        Positioned.fill(
+          child: ClipRect(
+            child: SlideTransition(
               position: _replaceNewPhotoAnimation,
-              child: _newPhoto == null ? null : new Image.asset(
+              child: _newPhoto == null ? null : Image.asset(
                 _newPhoto.asset,
                 fit: BoxFit.cover,
               ),
@@ -272,7 +272,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
 
 class ImagesDemo extends StatefulWidget {
   @override
-  _ImagesDemoState createState() => new _ImagesDemoState();
+  _ImagesDemoState createState() => _ImagesDemoState();
 }
 
 class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateMixin {
@@ -307,12 +307,12 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
         final PhotoFrame frame = photoBlockFrames[rowIndex][frameIndex];
         final int photoIndex = startPhotoIndex + frameIndex;
         rowChildren.add(
-          new Expanded(
+          Expanded(
             flex: (frame.width * 100.0).toInt(),
-            child: new Container(
+            child: Container(
               padding: const EdgeInsets.all(4.0),
               height: frame.height * _photoBlockHeight,
-              child: new PhotoItem(
+              child: PhotoItem(
                 photo: allPhotos[photoIndex],
                 color: photoColor,
                 selected: photoIndex == _selectedPhotoIndex,
@@ -325,7 +325,7 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
         );
       }
       rows.add(
-        new Row(
+        Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: rowChildren,
         )
@@ -333,7 +333,7 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
       startPhotoIndex += rowLength;
     }
 
-    return new Column(
+    return Column(
       children: rows
     );
   }
@@ -345,19 +345,19 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
     // Number of PhotoBlockFrames in each _photoBlockHeight block
     final int photoBlockFrameCount = photoBlockFrames.map((List<PhotoFrame> l) => l.length).reduce((s, n) => s + n);
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Images Demo'),
         actions: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.delete),
+          IconButton(
+            icon: Icon(Icons.delete),
             onPressed: _removeSelectedPhoto,
           ),
         ],
       ),
-      body: new SizedBox.expand(
-        child: new ListView.builder(
-          padding: new EdgeInsets.all(4.0),
+      body: SizedBox.expand(
+        child: ListView.builder(
+          padding: EdgeInsets.all(4.0),
           itemExtent: _photoBlockHeight,
           itemCount: (allPhotos.length / photoBlockFrameCount).floor(),
           itemBuilder: (BuildContext context, int blockIndex) {
@@ -370,5 +370,5 @@ class _ImagesDemoState extends State<ImagesDemo> with SingleTickerProviderStateM
 }
 
 void main() {
-  runApp(new MaterialApp(home: new ImagesDemo()));
+  runApp(MaterialApp(home: ImagesDemo()));
 }

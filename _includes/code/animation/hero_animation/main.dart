@@ -19,15 +19,15 @@ class PhotoHero extends StatelessWidget {
   final double width;
 
   Widget build(BuildContext context) {
-    return new SizedBox(
+    return SizedBox(
       width: width,
-      child: new Hero(
+      child: Hero(
         tag: photo,
-        child: new Material(
+        child: Material(
           color: Colors.transparent,
-          child: new InkWell(
+          child: InkWell(
             onTap: onTap,
-            child: new Image.asset(
+            child: Image.asset(
               photo,
               fit: BoxFit.contain,
             ),
@@ -42,27 +42,27 @@ class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 10.0; // 1.0 means normal animation speed.
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Basic Hero Animation'),
       ),
-      body: new Center(
-        child: new PhotoHero(
+      body: Center(
+        child: PhotoHero(
           photo: 'images/flippers-alpha.png',
           width: 300.0,
           onTap: () {
-            Navigator.of(context).push(new MaterialPageRoute<Null>(
+            Navigator.of(context).push(MaterialPageRoute<Null>(
               builder: (BuildContext context) {
-                return new Scaffold(
-                  appBar: new AppBar(
+                return Scaffold(
+                  appBar: AppBar(
                     title: const Text('Flippers Page'),
                   ),
-                  body: new Container(
+                  body: Container(
                     // Set background to blue to emphasize that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16.0),
                     alignment: Alignment.topLeft,
-                    child: new PhotoHero(
+                    child: PhotoHero(
                       photo: 'images/flippers-alpha.png',
                       width: 100.0,
                       onTap: () {
@@ -81,5 +81,5 @@ class HeroAnimation extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new HeroAnimation()));
+  runApp(MaterialApp(home: HeroAnimation()));
 }

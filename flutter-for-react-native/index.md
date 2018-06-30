@@ -376,8 +376,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    new Center(
-      child: new Text(
+    Center(
+      child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
       ),
@@ -426,19 +426,19 @@ The following example shows the "Hello world!" app using widgets from the
 // Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Welcome to Flutter',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Welcome to Flutter'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Welcome to Flutter'),
         ),
-        body: new Center(
-          child: new Text('Hello world'),
+        body: Center(
+          child: Text('Hello world'),
         ),
       ),
     );
@@ -516,11 +516,11 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Card(
-      child: new Column(
+    return Card(
+      child: Column(
         children: <Widget>[
-          new Text('Card $index'),
-          new FlatButton(
+          Text('Card $index'),
+          FlatButton(
             child: const Text('Press'),
             onPressed: this.onPress,
           ),
@@ -531,7 +531,7 @@ class CustomCard extends StatelessWidget {
 }
     ...
 // Usage
-new CustomCard(
+CustomCard(
   [[highlight]]index: index,[[/highlight]]
   [[highlight]]onPress: () { [[/highlight]]
     print('Card $index');
@@ -642,7 +642,7 @@ widget’s build method.
 
 <!-- skip -->
 ```Dart
-image: new AssetImage('assets/background.png'),
+image: AssetImage('assets/background.png'),
 ```
 
 For more information, see [Adding Assets and Images in Flutter](/assets-and-images/).
@@ -760,10 +760,10 @@ sectioned lists.
 ```Dart
 // Flutter
 var data = [ ... ];
-new ListView.builder(
+ListView.builder(
   itemCount: data.length,
   itemBuilder: (context, int index) {
-    return new Text(
+    return Text(
       data[index],
     );
   },
@@ -815,12 +815,12 @@ class MyCanvasPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = new Paint();
+    Paint paint = Paint();
     paint.color = Colors.amber;
-    canvas.drawCircle(new Offset(100.0, 200.0), 40.0, paint);
-    Paint paintRect = new Paint();
+    canvas.drawCircle(Offset(100.0, 200.0), 40.0, paint);
+    Paint paintRect = Paint();
     paintRect.color = Colors.lightBlue;
-    Rect rect = new Rect.fromPoints(new Offset(150.0, 300.0), new Offset(300.0, 400.0));
+    Rect rect = Rect.fromPoints(Offset(150.0, 300.0), Offset(300.0, 400.0));
     canvas.drawRect(rect, paintRect);
   }
 
@@ -831,9 +831,9 @@ class _MyCanvasState extends State<MyCanvas> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new CustomPaint(
-        painter: new MyCanvasPainter(),
+    return Scaffold(
+      body: CustomPaint(
+        painter: MyCanvasPainter(),
       ),
     );
   }
@@ -882,20 +882,20 @@ its child widgets.
 <!-- skip -->
 ```Dart
 // Flutter
-new Center(
-  child: new Column(
+Center(
+  child: Column(
     children: <Widget>[
-      new Container(
+      Container(
         color: Colors.red,
         width: 100.0,
         height: 100.0,
       ),
-      new Container(
+      Container(
         color: Colors.blue,
         width: 100.0,
         height: 100.0,
       ),
-      new Container(
+      Container(
         color: Colors.green,
         width: 100.0,
         height: 100.0,
@@ -929,18 +929,18 @@ class is useful if you simply want to overlap several children widgets.
 <!-- skip -->
 ```Dart
 // Flutter
-new Stack(
+Stack(
   alignment: const Alignment(0.6, 0.6),
   children: <Widget>[
-    new CircleAvatar(
-      backgroundImage: new NetworkImage(
+    CircleAvatar(
+      backgroundImage: NetworkImage(
         "https://avatars3.githubusercontent.com/u/14101776?v=4"),
     ),
-    new Container(
-      decoration: new BoxDecoration(
+    Container(
+      decoration: BoxDecoration(
           color: Colors.black45,
       ),
-      child: new Text('Flutter'),
+      child: Text('Flutter'),
     ),
   ],
 )
@@ -991,19 +991,19 @@ In Flutter, a `Text` widget can take a `TextStyle` class for
 <!-- skip -->
 ```Dart
 // Flutter
-var textStyle = new TextStyle(fontSize: 32.0, color: Colors.cyan, fontWeight:
+var textStyle = TextStyle(fontSize: 32.0, color: Colors.cyan, fontWeight:
    FontWeight.w600);
 	...
-new Center(
-  child: new Column(
+Center(
+  child: Column(
     children: <Widget>[
-      new Text(
+      Text(
         'Sample text',
         style: textStyle,
       ),
-      new Padding(
-        padding: new EdgeInsets.all(20.0),
-        child: new Icon(Icons.lightbulb_outline,
+      Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Icon(Icons.lightbulb_outline,
           size: 48.0, color: Colors.redAccent)
       ),
     ],
@@ -1028,7 +1028,7 @@ In Flutter, importing the Material library also pulls in
 
 <!-- skip -->
 ```Dart
-new Icon(Icons.lightbulb_outline, color: Colors.redAccent)
+Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
 When using the `Icons` class, make sure to set `uses-material-design: true` in
@@ -1059,13 +1059,13 @@ To globally customize the colors and styles of components, use `ThemeData` to sp
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Sample App',
-      theme: new ThemeData(
+      theme: ThemeData(
         [[highlight]]primarySwatch: Colors.blue,[[/highlight]]
         [[highlight]]textSelectionColor: Colors.red[[/highlight]]
       ),
-      home: new SampleAppPage(),
+      home: SampleAppPage(),
     );
   }
 }
@@ -1086,12 +1086,12 @@ In Flutter, create uniform styling for almost everything by defining the
 ```Dart
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      theme: new ThemeData(
+    return MaterialApp(
+      theme: ThemeData(
         primaryColor: Colors.cyan,
         brightness: Brightness.dark,
       ),
-      home: new StylingPage(),
+      home: StylingPage(),
     );
   }
 ```
@@ -1104,12 +1104,12 @@ A `Theme` can be applied even without using the `MaterialApp` widget. The
 ```Dart
  @override
   Widget build(BuildContext context) {
-    return new Theme(
-      data: new ThemeData(
+    return Theme(
+      data: ThemeData(
         primaryColor: Colors.cyan,
         brightness: brightness,
       ),
-      child: new Scaffold(
+      child: Scaffold(
          backgroundColor: Theme.of(context).primaryColor,
               ...
               ...
@@ -1140,7 +1140,7 @@ internal state to manage.
 // Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyStatelessWidget(text: "StatelessWidget Example to show immutable data"));
+void main() => runApp(MyStatelessWidget(text: "StatelessWidget Example to show immutable data"));
 
 class MyStatelessWidget extends StatelessWidget {
   final String text;
@@ -1148,8 +1148,8 @@ class MyStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Text(
+    return Center(
+      child: Text(
         text,
         textDirection: TextDirection.ltr,
       ),
@@ -1192,7 +1192,7 @@ class MyStatefulWidget extends StatefulWidget {
   final String title;
 
   @override
-  _MyStatefulWidgetState createState() => new _MyStatefulWidgetState();
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 ```
 
@@ -1211,7 +1211,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
     var twenty = const Duration(milliseconds: 1000);
     if(toggleState==false) {
-      t2 = new Timer.periodic(twenty, (Timer t) {
+      t2 = Timer.periodic(twenty, (Timer t) {
         toggleShowText();
       });
     } else {
@@ -1227,21 +1227,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Center(
-        child: new Column(
+    return Scaffold(
+      body: Center(
+        child: Column(
           children: <Widget>[
             (showtext
-              ?(new Text('This execution will be done before you can blink.'))
-              :(new Container())
+              ?(Text('This execution will be done before you can blink.'))
+              :(Container())
             ),
-            new Padding(
-              padding: new EdgeInsets.only(top: 70.0),
-              child: new RaisedButton(
+            Padding(
+              padding: EdgeInsets.only(top: 70.0),
+              child: RaisedButton(
                 onPressed: toggleBlinkState,
                 child: (toggleState
-                  ?( new Text('Blink'))
-                  :(new Text('Stop Blinking'))
+                  ?( Text('Blink'))
+                  :(Text('Stop Blinking'))
                 )
               )
             )
@@ -1297,7 +1297,7 @@ class MyStatefulWidget extends StatefulWidget {
   final String title;
 
   @override
-  _MyStatefulWidgetState createState() => new _MyStatefulWidgetState();
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
@@ -1320,12 +1320,12 @@ class MyStatelessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyStatefulWidget(title: 'State Change Demo'),
+      home: MyStatefulWidget(title: 'State Change Demo'),
     );
   }
 }
@@ -1396,11 +1396,11 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return new Card(
-    child: new Column(
+  return Card(
+    child: Column(
       children: <Widget>[
-        new Text('Card $index'),
-        new FlatButton(
+        Text('Card $index'),
+        FlatButton(
           child: const Text('Press'),
           onPressed: this.onPress,
         ),
@@ -1410,7 +1410,7 @@ class CustomCard extends StatelessWidget {
 }
     ...
 //Usage
-new CustomCard(
+CustomCard(
   index: index,
   onPress: () {
     print('Card $index');
@@ -1543,11 +1543,11 @@ class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
             ...
       routes: <String, WidgetBuilder>{
-        '/a': (BuildContext context) => new usualNavscreen(),
-        '/b': (BuildContext context) => new drawerNavscreen(),
+        '/a': (BuildContext context) => usualNavscreen(),
+        '/b': (BuildContext context) => drawerNavscreen(),
       }
             ...
   );
@@ -1573,8 +1573,8 @@ transition. It takes a [`WidgetBuilder`](https://docs.flutter.io/flutter/widgets
 
 <!-- skip -->
 ```Dart
-Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context)
- => new UsualNavscreen()));
+Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
+ => UsualNavscreen()));
 ```
 
 ### How do I use tab navigation and drawer navigation?
@@ -1610,12 +1610,12 @@ Flutter provides several specialized widgets for drawer and tab navigation:
 <!-- skip -->
 ```Dart
 // Flutter
-TabController controller=new TabController(length: 2, vsync: this);
+TabController controller=TabController(length: 2, vsync: this);
 
-new TabBar(
+TabBar(
   tabs: <Tab>[
-    new Tab(icon: new Icon(Icons.person),),
-    new Tab(icon: new Icon(Icons.email),),
+    Tab(icon: Icon(Icons.person),),
+    Tab(icon: Icon(Icons.email),),
   ],
   controller: controller,
 ),
@@ -1636,24 +1636,24 @@ The `TabBarView` widget is passed as the `body` parameter of the `Scaffold` widg
 // Flutter
 
 class _NavigationHomePageState extends State<NavigationHomePage> with SingleTickerProviderStateMixin {
-  TabController controller=new TabController(length: 2, vsync: this);
+  TabController controller=TabController(length: 2, vsync: this);
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      bottomNavigationBar: new Material (
-        child: new TabBar(
+    return Scaffold(
+      bottomNavigationBar: Material (
+        child: TabBar(
           tabs: <Tab> [
-            new Tab(icon: new Icon(Icons.person),)
-            new Tab(icon: new Icon(Icons.email),),
+            Tab(icon: Icon(Icons.person),)
+            Tab(icon: Icon(Icons.email),),
           ],
           controller: controller,
         ),
         color: Colors.blue,
       ),
-      body: new TabBarView(
+      body: TabBarView(
         children: <Widget> [
-          new home.homeScreen(),
-          new tabScreen.tabScreen()
+          home.homeScreen(),
+          tabScreen.tabScreen()
         ],
         controller: controller,
       )
@@ -1690,10 +1690,10 @@ The `Drawer` widget is a Material Design panel that slides in horizontally from
 <!-- skip -->
 ```Dart
 // Flutter
-new Drawer(
-  child:new ListTile(
-    leading: new Icon(Icons.change_history),
-    title: new Text('Screen2'),
+Drawer(
+  child:ListTile(
+    leading: Icon(Icons.change_history),
+    title: Text('Screen2'),
     onTap: () {
       Navigator.of(context).pushNamed("/b");
     },
@@ -1709,21 +1709,21 @@ The `Scaffold` widget also includes an `AppBar` widget that automatically displa
 // Flutter
 @override
 Widget build(BuildContext context) {
-  return new Scaffold(
-    drawer: new Drawer(
-      child: new ListTile(
-        leading: new Icon(Icons.change_history),
-        title: new Text('Screen2'),
+  return Scaffold(
+    drawer: Drawer(
+      child: ListTile(
+        leading: Icon(Icons.change_history),
+        title: Text('Screen2'),
         onTap: () {
           Navigator.of(context).pushNamed("/b");
         },
       ),
       elevation: 20.0,
     ),
-    appBar: new AppBar(
-      title: new Text("Home"),
+    appBar: AppBar(
+      title: Text("Home"),
     ),
-    body: new Container(),
+    body: Container(),
   );
 }
 ```
@@ -1801,16 +1801,16 @@ In Flutter, to add a click (or press) listener to a widget, use a button or a to
 <!-- skip -->
 ```Dart
 // Flutter
-new GestureDetector(
-  child: new Scaffold(
-    appBar: new AppBar(
-      title: new Text("Gestures"),
+GestureDetector(
+  child: Scaffold(
+    appBar: AppBar(
+      title: Text("Gestures"),
     ),
-    body: new Center(
-      child: new Column(
+    body: Center(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Text('Tap, Long Press, Swipe Horizontally or Vertically '),
+          Text('Tap, Long Press, Swipe Horizontally or Vertically '),
         ],
       )
     ),
@@ -1884,8 +1884,8 @@ The client supports the following HTTP operations: GET, POST, PUT, and DELETE.
 <!-- skip -->
 ```Dart
 // Flutter
-final url = new Uri.https('httpbin.org', 'ip');
-final httpClient = new HttpClient();
+final url = Uri.https('httpbin.org', 'ip');
+final httpClient = HttpClient();
 _getIPAddress() async {
   var request = await httpClient.getUrl(url);
   var response = await request.close();
@@ -1936,22 +1936,22 @@ the controller.
 <!-- skip -->
 ```Dart
 // Flutter
-final TextEditingController _controller = new TextEditingController();
+final TextEditingController _controller = TextEditingController();
       ...
-new TextField(
+TextField(
   controller: _controller,
-  decoration: new InputDecoration(
+  decoration: InputDecoration(
     hintText: 'Type something', labelText: "Text Field "
   ),
 ),
-new RaisedButton(
-  child: new Text('Submit'),
+RaisedButton(
+  child: Text('Submit'),
   onPressed: () {
     showDialog(
       context: context,
-        child: new AlertDialog(
-          title: new Text('Alert'),
-          content: new Text('You typed ${_controller.text}'),
+        child: AlertDialog(
+          title: Text('Alert'),
+          content: Text('You typed ${_controller.text}'),
         ),
      );
    },
@@ -1976,15 +1976,15 @@ with the submit button are passed as children. The `TextFormField` widget has a
 
 <!-- skip -->
 ```Dart
-final formKey = new GlobalKey<FormState>();
+final formKey = GlobalKey<FormState>();
 
 ...
 
-new Form(
+Form(
   key:formKey,
-  child: new Column(
+  child: Column(
     children: <Widget>[
-      new TextFormField(
+      TextFormField(
         validator: (value) => !value.contains('@') ? 'Not a valid email.' : null,
         onSaved: (val) => _email = val,
         decoration: const InputDecoration(
@@ -1992,9 +1992,9 @@ new Form(
           labelText: 'Email',
         ),
       ),
-      new RaisedButton(
+      RaisedButton(
         onPressed: _submit,
-        child: new Text('Login'),
+        child: Text('Login'),
       ),
     ],
   ),
@@ -2012,9 +2012,9 @@ void _submit() {
     form.save();
     showDialog(
       context: context,
-      child: new AlertDialog(
-        title: new Text('Alert'),
-        content: new Text('Email: $_email, password: $_password'),
+      child: AlertDialog(
+        title: Text('Alert'),
+        content: Text('Email: $_email, password: $_password'),
       )
     );
   }
@@ -2235,11 +2235,11 @@ example, the [`FlutterLogo`](https://docs.flutter.io/flutter/material/FlutterLog
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new Center(child: new LogoFade()));
+  runApp(Center(child: LogoFade()));
 }
 
 class LogoFade extends StatefulWidget {
-  _LogoFadeState createState() => new _LogoFadeState();
+  _LogoFadeState createState() => _LogoFadeState();
 }
 
 class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
@@ -2248,21 +2248,21 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 3000), vsync: this);
     final CurvedAnimation curve =
-    new CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = new Tween(begin: 0.0, end: 1.0).animate(curve);
+    CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation = Tween(begin: 0.0, end: 1.0).animate(curve);
     controller.forward();
   }
 
   Widget build(BuildContext context) {
-    return new FadeTransition(
+    return FadeTransition(
       opacity: animation,
-      child: new Container(
+      child: Container(
         height: 300.0,
         width: 300.0,
-        child: new FlutterLogo(),
+        child: FlutterLogo(),
       ),
     );
   }
@@ -2290,12 +2290,12 @@ In Flutter, to add a swipe animation, use the [`Dismissible`](https://docs.flutt
 
 <!-- skip -->
 ```Dart
-child: new Dismissible(
+child: Dismissible(
   key: key,
   onDismissed: (DismissDirection dir) {
     cards.removeLast();
   },
-  child: new Container(
+  child: Container(
     ...
   ),
 ),

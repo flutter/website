@@ -245,13 +245,13 @@ or WidgetsApp constructor:
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       [[highlight]]showPerformanceOverlay: true,[[/highlight]]
       title: 'My Awesome App',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'My Awesome App'),
+      home: MyHomePage(title: 'My Awesome App'),
     );
   }
 }
