@@ -474,34 +474,529 @@ Widget build(BuildContext context) {
 
 ## How do I navigate between pages?
 
-TODO
+In Xamarin.Forms, you navigate between pages normally through a, you can use a
+`NavigationPage` that manages the stack of pages to display.
+
+Flutter has a similar implementation, using a `Navigator` and
+`Routes`. A `Route` is an abstraction for a `Page` of an app, and
+a `Navigator` is a [widget](technical-overview/#everythings-a-widget)
+that manages routes. 
+
+A route roughly maps to a `Page`. The navigator works in a similar way to the 
+Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes 
+depending on whether you want to navigate to, or back from, a view.
+
+To navigate between pages, you have a couple options:
+
+* Specify a `Map` of route names. (MaterialApp)
+* Directly navigate to a route. (WidgetApp)
+
+The following example builds a Map.
+
+<!-- skip -->
+{% prettify dart %}
+void main() {
+  runApp(new MaterialApp(
+    home: new MyAppHome(), // becomes the route named '/'
+    routes: <String, WidgetBuilder> {
+      '/a': (BuildContext context) => new MyPage(title: 'page A'),
+      '/b': (BuildContext context) => new MyPage(title: 'page B'),
+      '/c': (BuildContext context) => new MyPage(title: 'page C'),
+    },
+  ));
+}
+{% endprettify %}
+
+Navigate to a route by `push`ing its name to the `Navigator`.
+
+<!-- skip -->
+{% prettify dart %}
+Navigator.of(context).pushNamed('/b');
+{% endprettify %}
+
+The `Navigator` class handles routing in Flutter and is used to get
+a result back from a route that you have pushed on the stack. This is done
+by `await`ing on the `Future` returned by `push()`.
+
+For example, to start a ‘location’ route that lets the user select their
+location, you might do the following:
+
+<!-- skip -->
+{% prettify dart %}
+Map coordinates = await Navigator.of(context).pushNamed('/location');
+{% endprettify %}
+
+And then, inside your ‘location’ route, once the user has selected their
+location, `pop()` the stack with the result:
+
+<!-- skip -->
+{% prettify dart %}
+Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
+{% endprettify %}
 
 ## How do I navigate to another app?
 
-TODO
+In Xamarin.Forms, to send the user to another application, you use a
+specific URI scheme, using `Device.OpenUrl("mailto://")` 
+
+To implement this functionality in Flutter, create a native platform integration, 
+or use an existing [plugin](#plugins), such as
+[`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
 
 # Async UI
 
 ## What is the equivalent of `Device.BeginOnMainThread()` in Flutter?
 
+Dart has a single-threaded execution model, with support for `Isolate`s
+(a way to run Dart code on another thread), an event loop, and
+asynchronous programming. Unless you spawn an `Isolate`, your Dart code
+runs in the main UI thread and is driven by an event loop.
 
-TODO
+Dart's single-threaded model doesn't mean you need to run everything as a
+blocking operation that causes the UI to freeze. Much like Xamarin.Forms, you 
+need to keep the UI thread free. You would use `async`/`await` to perform
+tasks, where you must wait for the response.
+
+In Flutter, use the asynchronous facilities that the Dart language provides, also
+named `async`/`await`, to perform asynchronous work. This is very similar to
+C# and should be very easy to use for any Xamarin.Forms developer.
+
+For example, you can run network code without causing the UI to hang by
+using `async`/`await` and letting Dart do the heavy lifting:
+
+<!-- skip -->
+{% prettify dart %}
+loadData() async {
+  String dataURL = "https://jsonplaceholder.typicode.com/posts";
+  http.Response response = await http.get(dataURL);
+  setState(() {
+    widgets = json.decode(response.body);
+  });
+}
+{% endprettify %}
+
+Once the `await`ed network call is done, update the UI by calling `setState()`,
+which triggers a rebuild of the widget sub-tree and updates the data.
+
+The following example loads data asynchronously and displays it in a `ListView`:
+
+<!-- skip -->
+{% prettify dart %}
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView.builder(
+          itemCount: widgets.length,
+          itemBuilder: (BuildContext context, int position) {
+            return getRow(position);
+          }));
+  }
+
+  Widget getRow(int i) {
+    return new Padding(
+      padding: new EdgeInsets.all(10.0),
+      child: new Text("Row ${widgets[i]["title"]}")
+    );
+  }
+
+  loadData() async {
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
+  }
+}
+{% endprettify %}
+
+Refer to the next section for more information on doing work in the
+background, and how Flutter differs from Android.
 
 ## How do you move work to a background thread?
 
-TODO
+Since Flutter is single threaded and runs an event loop, you
+don't have to worry about thread management or spawning background threads. 
+This is very similar to Xamarin.Forms. If you're doing I/O-bound work, such as disk 
+access or a network call, then you can safely use `async`/`await` and you're all set. 
+
+If, on the other hand, you need to do computationally intensive work that keeps the 
+CPU busy, you want to move it to an `Isolate` to avoid blocking the event loop, like
+you would keep _any_ sort of work out of the main thread. This is similar to when you 
+move things to a different thread via `Task.Run()` in Xamarin.Forms.
+
+For I/O-bound work, declare the function as an `async` function,
+and `await` on long-running tasks inside the function:
+
+<!-- skip -->
+{% prettify dart %}
+loadData() async {
+  String dataURL = "https://jsonplaceholder.typicode.com/posts";
+  http.Response response = await http.get(dataURL);
+  setState(() {
+    widgets = json.decode(response.body);
+  });
+}
+{% endprettify %}
+
+This is how you would typically do network or database calls, which are both
+I/O operations.
+
+However, there are times when you might be processing a large amount of data and
+your UI hangs. In Flutter, use `Isolate`s to take advantage of
+multiple CPU cores to do long-running or computationally intensive tasks.
+
+Isolates are separate execution threads that do not share any memory
+with the main execution memory heap. THis is a difference between `Task.Run()`. This
+means you can’t access variables from the main thread, or update your UI by calling 
+`setState()`.
+
+The following example shows, in a simple isolate, how to share data back to
+the main thread to update the UI.
+
+<!-- skip -->
+{% prettify dart %}
+loadData() async {
+  ReceivePort receivePort = new ReceivePort();
+  await Isolate.spawn(dataLoader, receivePort.sendPort);
+
+  // The 'echo' isolate sends its SendPort as the first message
+  SendPort sendPort = await receivePort.first;
+
+  List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+
+  setState(() {
+    widgets = msg;
+  });
+}
+
+// The entry point for the isolate
+static dataLoader(SendPort sendPort) async {
+  // Open the ReceivePort for incoming messages.
+  ReceivePort port = new ReceivePort();
+
+  // Notify any other isolates what port this isolate listens to.
+  sendPort.send(port.sendPort);
+
+  await for (var msg in port) {
+    String data = msg[0];
+    SendPort replyTo = msg[1];
+
+    String dataURL = data;
+    http.Response response = await http.get(dataURL);
+    // Lots of JSON to parse
+    replyTo.send(json.decode(response.body));
+  }
+}
+
+Future sendReceive(SendPort port, msg) {
+  ReceivePort response = new ReceivePort();
+  port.send([msg, response.sendPort]);
+  return response.first;
+}
+{% endprettify %}
+
+Here, `dataLoader()` is the `Isolate` that runs in its own separate execution thread.
+In the isolate you can perform more CPU intensive processing (parsing a big JSON, for
+example), or perform computationally intensive math, such as encryption or signal processing.
+
+You can run the full example below:
+
+{% prettify dart %}
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:isolate';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  showLoadingDialog() {
+    if (widgets.length == 0) {
+      return true;
+    }
+
+    return false;
+  }
+
+  getBody() {
+    if (showLoadingDialog()) {
+      return getProgressDialog();
+    } else {
+      return getListView();
+    }
+  }
+
+  getProgressDialog() {
+    return new Center(child: new CircularProgressIndicator());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Sample App"),
+        ),
+        body: getBody());
+  }
+
+  ListView getListView() => new ListView.builder(
+      itemCount: widgets.length,
+      itemBuilder: (BuildContext context, int position) {
+        return getRow(position);
+      });
+
+  Widget getRow(int i) {
+    return new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row ${widgets[i]["title"]}"));
+  }
+
+  loadData() async {
+    ReceivePort receivePort = new ReceivePort();
+    await Isolate.spawn(dataLoader, receivePort.sendPort);
+
+    // The 'echo' isolate sends its SendPort as the first message
+    SendPort sendPort = await receivePort.first;
+
+    List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
+
+    setState(() {
+      widgets = msg;
+    });
+  }
+
+  // the entry point for the isolate
+  static dataLoader(SendPort sendPort) async {
+    // Open the ReceivePort for incoming messages.
+    ReceivePort port = new ReceivePort();
+
+    // Notify any other isolates what port this isolate listens to.
+    sendPort.send(port.sendPort);
+
+    await for (var msg in port) {
+      String data = msg[0];
+      SendPort replyTo = msg[1];
+
+      String dataURL = data;
+      http.Response response = await http.get(dataURL);
+      // Lots of JSON to parse
+      replyTo.send(json.decode(response.body));
+    }
+  }
+
+  Future sendReceive(SendPort port, msg) {
+    ReceivePort response = new ReceivePort();
+    port.send([msg, response.sendPort]);
+    return response.first;
+  }
+}
+{% endprettify %}
 
 ## How do I make network requests?
 
-TODO
+In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
+is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http). 
+This abstracts away a lot of the networking that you might normally implement yourself,
+making it simple to make network calls.
 
-## What is the equivalent of HttpClient on Flutter?
+To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
-TODO
+<!-- skip -->
+{% prettify yaml %}
+dependencies:
+  ...
+  http: ^0.11.3+16
+{% endprettify %}
+
+To make a network call, call `await` on the `async` function `http.get()`:
+
+<!-- skip -->
+{% prettify dart %}
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+[...]
+  loadData() async {
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
+  }
+}
+{% endprettify %}
 
 ## How do I show the progress for a long-running task?
 
-TODO
+In Xamarin.Forms you would typically create a loading indicator, either
+directly in XAML or through a 3rd party plugin such as AcrDialogs.
+
+In Flutter, use a `ProgressIndicator` widget. Show the progress programmatically 
+by controlling when it's rendered through a boolean flag. Tell Flutter to update 
+its state before your long-running task starts, and hide it after it ends.
+
+In the following example, the build function is separated into three different
+functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
+then render the `ProgressIndicator`. Otherwise, render the
+`ListView` with the data returned from a network call.
+
+<!-- skip -->
+{% prettify dart %}
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  showLoadingDialog() {
+    return widgets.length == 0;
+  }
+
+  getBody() {
+    if (showLoadingDialog()) {
+      return getProgressDialog();
+    } else {
+      return getListView();
+    }
+  }
+
+  getProgressDialog() {
+    return new Center(child: new CircularProgressIndicator());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Sample App"),
+        ),
+        body: getBody());
+  }
+
+  ListView getListView() => new ListView.builder(
+      itemCount: widgets.length,
+      itemBuilder: (BuildContext context, int position) {
+        return getRow(position);
+      });
+
+  Widget getRow(int i) {
+    return new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row ${widgets[i]["title"]}"));
+  }
+
+  loadData() async {
+    String dataURL = "https://jsonplaceholder.typicode.com/posts";
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
+  }
+}
+{% endprettify %}
 
 # Project structure & resources
 
@@ -513,13 +1008,17 @@ TODO: iOS and Android specific references here
 
 TODO
 
+## Where is my project file?
+
+In Xamarin.Forms you will have a `csproj` file.
+
 ## What is the equivalent of Nuget? How do I add dependencies?
 
 TODO
 
-# Activities and fragments (XF Equivalent)
+# Application Lifecycle
 
-## How do I listen to Android activity lifecycle events? (XF Equiv)
+## How do I listen to application lifecycle events?
 
 TODO
 
