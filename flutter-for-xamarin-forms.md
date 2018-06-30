@@ -1190,13 +1190,30 @@ place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter/package
 
 ## How do I listen to application lifecycle events?
 
-TODO
+In Xamarin.Forms, you have an `Application` that contains `OnStart`, `OnResume` and
+`OnSleep`. In Flutter you can instead listen to similar lifecycle events by hooking into 
+the `WidgetsBinding` observer and listening to the `didChangeAppLifecycleState()` change event.
+
+The observable lifecycle events are:
+
+* `inactive` — The application is in an inactive state and is not receiving
+user input. This event only works on iOS, as there is no equivalent event on
+Android.
+* `paused` — The application is not currently visible to
+the user, is not responding to user input, but is running in the background.
+* `resumed` — The application is visible and responding to user input.
+* `suspending` — The application is suspended momentarily. The iOS platform
+has no equivalent event.
+
+For more details on the meaning of these states, see
+[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
+/AppLifecycleState-class.html).
 
 # Layouts
 
-## What is the equivalent of a LinearLayout?
+## What is the equivalent of a Grid?
 
-## What is the equivalent of a RelativeLayout?
+## What is the equivalent of a StackLayout?
 
 ## What is the equivalent of a ScrollView?
 
@@ -1270,10 +1287,6 @@ Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result
 back to you. In this case, the receiver is code running on the native side
 on Android or iOS.
-
-## How do I use the NDK in my Flutter application?
-
-TODO
 
 # Themes (Styles)
 
