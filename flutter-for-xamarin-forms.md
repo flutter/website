@@ -194,7 +194,7 @@ catalog](/widgets/layout/).
 
 In Xamarin.Forms, if you had to remove or add an `Element`, you had to do so in
 code. This would involve either setting the `Content` property or calling
-`Add()` or `Remove` if it was a list. 
+`Add()` or `Remove()` if it was a list. 
 
 In Flutter, because widgets are immutable there is no direct equivalent.
 Instead, you can pass a function to the parent that returns a widget, and
