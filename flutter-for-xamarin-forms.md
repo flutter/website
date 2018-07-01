@@ -1394,7 +1394,11 @@ class SampleApp extends StatelessWidget {
 
 ## How do I handle other gestures on widgets?
 
-Using the GestureDetector, you can listen to a wide range of Gestures such as:
+In Xamarin.Forms you would add a `GestureRecognizer` to the `VisualElement`. You
+would normally be limited to `TapGestureRecognizer`, `PinchGestureRecognizer` and
+`PanGestureRecognizer`, unless you built your own.
+
+In Flutter, using the GestureDetector, you can listen to a wide range of Gestures such as:
 
 * Tap
 
@@ -1779,7 +1783,62 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 ## How do I set custom fonts on my Text widgets?
 
+In Xamarin.Forms, you would have to add a custom font in each native project. Then
+in your `Element` you would assign this font name to the `FontFamily` attribute
+using `filename#fontname` and just `fontname` for iOS.
+
+In Flutter, place the font file in a folder and reference it in the
+`pubspec.yaml` file, similar to how you import images.
+
+<!-- skip -->
+{% prettify yaml %}
+fonts:
+   - family: MyCustomFont
+     fonts:
+       - asset: fonts/MyCustomFont.ttf
+       - style: italic
+           {% endprettify %}
+
+Then assign the font to your `Text` widget:
+
+<!-- skip -->
+{% prettify dart %}
+@override
+Widget build(BuildContext context) {
+  return new Scaffold(
+    appBar: new AppBar(
+      title: new Text("Sample App"),
+    ),
+    body: new Center(
+      child: new Text(
+        'This is a custom font text',
+        style: new TextStyle(fontFamily: 'MyCustomFont'),
+      ),
+    ),
+  );
+}
+{% endprettify %}
+
 ## How do I style my Text widgets?
+
+Along with fonts, you can customize other styling elements on a `Text` widget.
+The style parameter of a `Text` widget takes a `TextStyle` object, where you can
+customize many parameters, such as:
+
+* `color`
+* `decoration`
+* `decorationColor`
+* `decorationStyle`
+* `fontFamily`
+* `fontSize`
+* `fontStyle`
+* `fontWeight`
+* `hashCode`
+* `height`
+* `inherit`
+* `letterSpacing`
+* `textBaseline`
+* `wordSpacing`
 
 # Form input
 
