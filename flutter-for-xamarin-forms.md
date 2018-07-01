@@ -1478,9 +1478,302 @@ class SampleApp extends StatelessWidget {
 
 ## What is the alternative to a ListView in Flutter?
 
+The equivalent to a `ListView` in Flutter is … a `ListView`!
+
+In a Xamarin.Forms `ListView`, you create a `ViewCell` and possibly a `DataTemplateSelector`
+and pass it into the `ListView`, which renders each row with what your `DataTemplateSelector`
+or `ViewCell` returns. However, you often have have to make sure you turn on Cell Recycling
+otherwise you will run into memory issues and slow scrolling speeds.
+
+Due to Flutter's immutable widget pattern, you pass a List of
+Widgets to your `ListView`, and Flutter takes care of making sure
+that scrolling is fast and smooth.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: _getListData()),
+    );
+  }
+
+  _getListData() {
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(new Padding(padding: new EdgeInsets.all(10.0), child: new Text("Row $i")));
+    }
+    return widgets;
+  }
+}
+{% endprettify %}
+
 ## How do I know which list item is clicked on?
 
+In Xamarin.Forms, the ListView has a method to find out which item was clicked
+`ItemTapped`. There are many other techniques you may have used such as checking
+when `SelectedItem` or adding an `EventToCommand` behavior changes.
+
+In Flutter, use the touch handling provided by the passed-in widgets.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: _getListData()),
+    );
+  }
+
+  _getListData() {
+    List<Widget> widgets = [];
+    for (int i = 0; i < 100; i++) {
+      widgets.add(new GestureDetector(
+        child: new Padding(
+            padding: new EdgeInsets.all(10.0),
+            child: new Text("Row $i")),
+        onTap: () {
+          print('row tapped');
+        },
+      ));
+    }
+    return widgets;
+  }
+}
+{% endprettify %}
+
 ## How do I update ListView's dynamically?
+
+In Xamarin.Forms, if you bound the `ItemsSource` property to an `ObservableCollection`
+you would just update the list in your ViewModel. Alternative you could assign
+a new `List` to property `ItemsSource` is bound to to change all items.
+
+In Flutter, things work a little differently. if you were to update the list of widgets
+inside a `setState()`, you would quickly see that your data did not change visually.
+This is because when `setState()` is called, the Flutter rendering engine
+looks at the widget tree to see if anything has changed. When it gets to your
+`ListView`, it performs a `==` check, and determines that the two `ListView`s are the
+same. Nothing has changed, so no update is required.
+
+For a simple way to update your `ListView`, create a new `List` inside of
+`setState()`, and copy the data from the old list to the new list.
+While this approach is simple, it is not recommended for large data sets,
+as shown in the next example.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new ListView(children: widgets),
+    );
+  }
+
+  Widget getRow(int i) {
+    return new GestureDetector(
+      child: new Padding(
+          padding: new EdgeInsets.all(10.0),
+          child: new Text("Row $i")),
+      onTap: () {
+        setState(() {
+          widgets = new List.from(widgets);
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
+  }
+}
+{% endprettify %}
+
+The recommended, efficient, and effective way to build a list uses a
+ListView.Builder. This method is great when you have a dynamic
+List or a List with very large amounts of data. This is essentially
+the equivalent of RecyclerView on Android, which automatically
+recycles list elements for you:
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 100; i++) {
+      widgets.add(getRow(i));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Sample App"),
+        ),
+        body: new ListView.builder(
+            itemCount: widgets.length,
+            itemBuilder: (BuildContext context, int position) {
+              return getRow(position);
+            }));
+  }
+
+  Widget getRow(int i) {
+    return new GestureDetector(
+      child: new Padding(
+          padding: new EdgeInsets.all(10.0),
+          child: new Text("Row $i")),
+      onTap: () {
+        setState(() {
+          widgets.add(getRow(widgets.length + 1));
+          print('row $i');
+        });
+      },
+    );
+  }
+}
+{% endprettify %}
+
+Instead of creating a "ListView", create a ListView.builder that
+takes two key parameters: the initial length of the list, and an ItemBuilder
+function.
+
+The ItemBuilder function is similar to the `getView` function in an Android
+adapter; it takes a position, and returns the row you want rendered at
+that position.
+
+Finally, but most importantly, notice that the `onTap()` function
+doesn't recreate the list anymore, but instead `.add`s to it.
 
 # Working with text
 
