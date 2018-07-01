@@ -20,18 +20,163 @@ that are most relevant to your needs.
 * TOC Placeholder
 {:toc}
 
+# Project Setup
+
+## How does the app start?
+
+For each platform in Xamarin.Forms, you call the `LoadApplication` method, that
+creates a new Application and starts your app.
+
+<!-- skip -->
+{% prettify csharp %}
+LoadApplication(new App());
+{% endprettify %}
+
+In Flutter, the default main entry point is `main` where you will load your
+Flutter app.
+
+{% prettify dart %}
+void main() {
+  runApp(new MyApp());
+}
+{% endprettify %}
+
+In Xamarin.Forms, you have an `Application` where you assign the `MainPage`.
+
+<!-- skip -->
+{% prettify csharp %}
+public class App: Application
+{
+    public App()
+    {
+      MainPage = new ContentPage() 
+                 { 
+                   new Label() 
+                   { 
+                     Text="Hello World",
+                     HorizontalOptions = LayoutOptions.Center,
+                     VerticalOptions = LayoutOptions.Center 
+                   } 
+                 };
+    }  
+}
+{% endprettify %}
+
+In Flutter your `MyApp` is a `Widget`, and here is an example of a simple `Widget`.
+
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new Center(
+        child: Text("Hello World!", textDirection: TextDirection.ltr));
+  }
+}
+{% endprettify %}
+
+## How do you create a Page?
+
+Xamarin.Forms has many different types of pages, the most common, a `ContentPage`.
+
+In Flutter you commonly use a widget such as `MaterialApp` to start as your root page.
+
+{% prettify dart %}
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Flutter Demo',
+      theme: new ThemeData(      
+        primarySwatch: Colors.blue,
+      ),
+      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+{% endprettify %}
+
+From here, your actual first page is another `Widget`, in which you create your state.
+
+{% prettify dart %}
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+{% endprettify %}
+
+The `State` object takes a generic type of your page and has a `build` override
+method of its own.
+
+Whenever you want to update the state of your page, you call the `setState()` method.
+
+{% prettify dart %}
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'You have pushed the button this many times:',
+            ),
+            new Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+A `View` in Flutter is immutable, meaning you can not change its state once it is
+built. When you call `setState`, you change fields in your `State` class, then
+rebuild the entire `View` (also called a `Widget Tree`) again.
+
+This way of generating `View`s is different than Xamarin.Forms, but there are many benefits 
+to this approach.
+
 # Views
 
 ## What is the equivalent of a `Page` or `Element` in Flutter?
 
 A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you could 
 use in a Xamarin.Forms application. These pages would then hold `Element`s to display
-the various controls.
+the various controls. In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`. 
 
-In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`. In Flutter, there 
-is no difference between a `Page` or `Element`, everything is a `Widget`. The root of
-a page in Flutter is a `Widget`. A `Widget` can contain more `Widget`s to build out your
-page.
+In Flutter, there is no difference between a `Page` or `Element`, everything is a `Widget`. 
+The root of a page in Flutter is a `Widget`. A `Widget` can contain more `Widget`s to build 
+out your page.
 
 Flutter includes the [Material Components](https://material.io/develop/flutter/)
 library. These are widgets that implement the
@@ -269,10 +414,22 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 In Xamarin.Forms, you create simple animations using ViewExtensions that include
 methods such as `FadeTo` and `TranslateTo`. You would use these methods on a view
-to perform the required animations. In Flutter, you animate widgets using the 
-animation library by wrapping widgets inside an animated widget.
+to perform the required animations. 
 
-In Flutter, use an `AnimationController` which is an `Animation<double>`
+<!-- skip -->
+{% prettify xml %}
+<Image Source="{Binding MyImage}" x:Name="myImage" />
+{% endprettify %}
+
+Then in code behind, or a behavior, this would fade in the image, over a 1 second period.
+
+<!-- skip -->
+{% prettify csharp %}
+myImage.FadeTo(0, 1000);
+{% endprettify %}
+
+In Flutter, you animate widgets using the animation library by wrapping widgets 
+inside an animated widget. Use an `AnimationController` which is an `Animation<double>`
 that can pause, seek, stop and reverse the animation. It requires a `Ticker`
 that signals when vsync happens, and produces a linear interpolation between
 0 and 1 on each frame while it's running. You then create one or more
