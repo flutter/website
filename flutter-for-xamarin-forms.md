@@ -2013,6 +2013,38 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 # Flutter plugins
 
+# Interacting with hardware, third party services and the platform
+
+## How do I interact with the platform, and with platform native code?
+
+Flutter doesn't run code directly on the underlying platform; rather, the Dart code
+that makes up a Flutter app is run natively on the device, "sidestepping" the SDK
+provided by the platform. That means, for example, when you perform a network request
+in Dart, it runs directly in the Dart context. You don't use the Android or iOS
+APIs you normally take advantage of when writing native apps. Your Flutter
+app is still hosted in a native app's `ViewController` or `Activity` as a view, 
+but you don't have direct access to this, or the native framework.
+
+This doesn't mean Flutter apps cannot interact with those native APIs, or with any
+native code you have. Flutter provides [platform channels](/platform-channels/),
+that communicate and exchange data with the `ViewController` or `Activity` that
+hosts your Flutter view. Platform channels are essentially an asynchronous messaging
+mechanism that bridge the Dart code with the host `ViewController` or `Activity` and
+the iOS or Android framework it runs on. You can use platform channels to execute a method on
+the native side, or to retrieve some data from the device's sensors, for example.
+
+In addition to directly using platform channels, you can use a variety of pre-made
+[plugins](/using-packages/) that encapsulate the native and
+Dart code for a specific goal. For example, you can use a plugin to access
+the camera roll and the device camera directly from Flutter, without having to
+write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
+Dart and Flutter's open source package repository. Some packages might
+support native integrations on iOS, or Android, or both.
+
+If you can't find a plugin on Pub that fits your needs, you can
+[write your own](/developing-packages/)
+and [publish it on Pub](/developing-packages/#publish).
+
 ## How do I access the GPS sensor?
 
 Use the [`location`](https://pub.dartlang.org/packages/location) community plugin.
@@ -2060,16 +2092,60 @@ on Android or iOS.
 
 ## How do I theme my app?
 
+Out of the box, Flutter comes with a beautiful implementation of Material
+Design, which takes care of a lot of styling and theming needs that you would
+typically do. 
+
+Xamarin.Forms does have a global `ResourceDictionary` where you can share styles
+across your app. Alternatively there is Theme support currently in preview.
+
+In Flutter you declare themes in the top level widget.
+
+To take full advantage of Material Components in your app, you can declare a top
+level widget `MaterialApp` as the entry point to your application. MaterialApp
+is a convenience widget that wraps a number of widgets that are commonly
+required for applications implementing Material Design. It builds upon a WidgetsApp by
+adding Material specific functionality.
+
+You can also use a `WidgetApp` as your app widget, which provides some of the
+same functionality, but is not as rich as `MaterialApp`.
+
+To customize the colors and styles of any child components, pass a
+`ThemeData` object to the `MaterialApp` widget. For example, in the code below,
+the primary swatch is set to blue and text selection color is red.
+
+<!-- skip -->
+{% prettify dart %}
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+        textSelectionColor: Colors.red
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+{% endprettify %}
 
 # Databases and local storage
 
-## How do I access Shared Preferences?
+## How do I access Shared Preferences or UserDefaults?
 
+Xamarin.Forms developers will likely be familar with the `Xam.Plugins.Settings` plugin.
+
+In Flutter, access equivalent functionality using the
+[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+This plugin wraps the functionality of both `UserDefaults` and the Android
+equivalent, `SharedPreferences`.
 
 ## How do I access SQLite in Flutter?
 
-In Android, you use SQLite to store structured data that you can query
-using SQL.
+In Xamarin.Forms most applications would use the `sqlite-net-pcl` plugin to access
+SQLite databases.
 
 In Flutter, access this functionality using the
 [SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
@@ -2077,3 +2153,13 @@ In Flutter, access this functionality using the
 # Notifications
 
 ## How do I set up push notifications?
+
+In Android, you use Firebase Cloud Messaging to setup push
+notifications for your app.
+
+In Flutter, access this functionality using the
+[Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
+plugin.
+For more information on using the Firebase Cloud Messaging API, see the
+[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+plugin documentation.
