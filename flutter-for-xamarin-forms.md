@@ -1211,17 +1211,268 @@ For more details on the meaning of these states, see
 
 # Layouts
 
+## What is the equivalent of a StackLayout?
+
+In Xamarin.Forms you can create a `StackLayout` with an `Orientation` of Horizontal or Vertical.
+Flutter has a similar approach, however you would use the `Row` or `Column` widgets.
+
+If you notice the two code samples are identical with the exception of the
+"Row" and "Column" widget. The children are the same and this feature can be
+exploited to develop rich layouts that can change overtime with the same
+children.
+
+<!-- skip -->
+{% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new Text('Row One'),
+        new Text('Row Two'),
+        new Text('Row Three'),
+        new Text('Row Four'),
+      ],
+    );
+  }
+{% endprettify %}
+
+<!-- skip -->
+{% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new Text('Column One'),
+        new Text('Column Two'),
+        new Text('Column Three'),
+        new Text('Column Four'),
+      ],
+    );
+  }
+{% endprettify %}
+
 ## What is the equivalent of a Grid?
 
-## What is the equivalent of a StackLayout?
+The closest equivalent of a `Grid` would be to use a `GridView`. This is much more powerful
+than what you are used to in Xamarin.Forms. A `GridView` contains a scrolling as well.
+
+<!-- skip -->
+{% prettify dart %}
+  GridView.count(
+    // Create a grid with 2 columns. If you change the scrollDirection to 
+    // horizontal, this would produce 2 rows.
+    crossAxisCount: 2,
+    // Generate 100 Widgets that display their index in the List
+    children: List.generate(100, (index) {
+      return Center(
+        child: Text(
+          'Item $index',
+          style: Theme.of(context).textTheme.headline,
+        ),
+      );
+    }),
+  );
+{% endprettify %}
+
+Alternatively you might have used `Grid`s in Xamarin.Forms to overlay elements. In this case,
+you would use a `Stack` to overlay elements on top of each other.
+
+This sample will create two icons that overlap each other.
+
+<!-- skip -->
+{% prettify dart %}
+  child: new Stack(
+    children: <Widget>[
+      new Icon(Icons.add_box, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+      new Positioned(
+        left: 10.0,
+        child: new Icon(Icons.add_circle, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+      ),
+    ],
+  ),
+{% endprettify %}
 
 ## What is the equivalent of a ScrollView?
 
+In Xamarin.Forms you use a ScrollView wrap around a `VisualElement` and if the content is
+larger than the device screen, it scrolls.
+
+In Flutter, the closest match is the `SingleChildScrollView` widget. You simply fill the 
+Widget with the content that you want to be scrollable.
+
+<!-- skip -->
+{% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new SingleChildScrollView(
+      child: new Text('Long Content'),
+    );
+  }
+{% endprettify %}
+
+If you have many items you want to wrap in a scroll, even of different `Widget` types, you might want
+to use a `ListView`. This might seem like overkill, but in Flutter this is far more optimized 
+and less intensive than a Xamarin.Forms `ListView` which is backing on to platform specific controls.
+
+<!-- skip -->
+{% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new ListView(
+      children: <Widget>[
+        new Text('Row One'),
+        new Text('Row Two'),
+        new Text('Row Three'),
+        new Text('Row Four'),
+      ],
+    );
+  }
+{% endprettify %}
+
 ## How do I handle landscape transitions in Flutter?
+
+FlutterView handles the config change if AndroidManifest.xml contains:
+
+{% prettify yaml %}
+android:configChanges="orientation|screenSize"
+{% endprettify %}
 
 # Gesture detection and touch event handling
 
 ## How do I add GestureRecognizers to a widget in Flutter?
+
+In Xamarin.Forms, `Element`s may contain a Click event you can attach to. Many elements
+also contain a `Command` that is tied to this event. Alternatively you would use the 
+`TapGestureRecognizer`. In Flutter there are two very similar ways:
+
+<ol markdown="1">
+<li markdown="1">
+If the Widget supports event detection, pass a function to it and handle it
+in the function. For example, the RaisedButton has an `onPressed` parameter:
+
+   <!-- skip -->
+  {% prettify dart %}
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(
+        onPressed: () {
+          print("click");
+        },
+        child: new Text("Button"));
+  }
+   {% endprettify %}
+
+</li>
+
+<li markdown="1">
+If the Widget doesn't support event detection, wrap the
+widget in a GestureDetector and pass a function to the `onTap` parameter.
+
+   <!-- skip -->
+  {% prettify dart %}
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Center(
+      child: new GestureDetector(
+        child: new FlutterLogo(
+          size: 200.0,
+        ),
+        onTap: () {
+          print("tap");
+        },
+      ),
+    ));
+  }
+}
+   {% endprettify %}
+</li>
+</ol>
+
+## How do I handle other gestures on widgets?
+
+Using the GestureDetector, you can listen to a wide range of Gestures such as:
+
+* Tap
+
+  * `onTapDown` - A pointer that might cause a tap has contacted the screen at a
+     particular location.
+  * `onTapUp` - A pointer that triggers a tap has stopped contacting the
+     screen at a particular location.
+  * `onTap` - A tap has occurred.
+  * `onTapCancel` - The pointer that previously triggered the `onTapDown` won't
+     cause a tap.
+
+* Double tap
+
+  * `onDoubleTap` - The user tapped the screen at the same location twice in
+     quick succession.
+
+* Long press
+
+  * `onLongPress` - A pointer has remained in contact with the screen at the same
+    location for a long period of time.
+
+* Vertical drag
+
+  * `onVerticalDragStart` - A pointer has contacted the screen and might begin to
+    move vertically.
+  * `onVerticalDragUpdate` - A pointer in contact with the screen
+    has moved further in the vertical direction.
+  * `onVerticalDragEnd` - A pointer that was previously in contact with the
+    screen and moving vertically is no longer in contact with the screen and was
+    moving at a specific velocity when it stopped contacting the screen.
+
+* Horizontal drag
+
+  * `onHorizontalDragStart` - A pointer has contacted the screen and might begin
+    to move horizontally.
+  * `onHorizontalDragUpdate` - A pointer in contact with the screen
+    has moved further in the horizontal direction.
+  * `onHorizontalDragEnd` - A pointer that was previously in contact with the
+    screen and moving horizontally is no longer in contact with the screen and was
+    moving at a specific velocity when it stopped contacting the screen.
+
+The following example shows a `GestureDetector` that rotates the Flutter logo
+on a double tap:
+
+<!-- skip -->
+{% prettify dart %}
+AnimationController controller;
+CurvedAnimation curve;
+
+@override
+void initState() {
+  controller = new AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
+  curve = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
+}
+
+class SampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Center(
+          child: new GestureDetector(
+            child: new RotationTransition(
+                turns: curve,
+                child: new FlutterLogo(
+                  size: 200.0,
+                )),
+            onDoubleTap: () {
+              if (controller.isCompleted) {
+                controller.reverse();
+              } else {
+                controller.forward();
+              }
+            },
+        ),
+    ));
+  }
+}
+{% endprettify %}
 
 # Listviews & adapters
 
