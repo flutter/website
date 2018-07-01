@@ -1842,9 +1842,174 @@ customize many parameters, such as:
 
 # Form input
 
-## What is the equivalent of a "Placeholder" on an Input?
+## How do I retrieve user input?
+
+Xamarin.Forms `element`s allow you to directly query the `element` to determine
+the state of any of its properties, or it is bound to a property in a `ViewModel`.
+
+Retrieving information in Flutter is handled by specialized widgets and is different
+than how you are used to. If you have a `TextField` or a `TextFormField`, you can supply a
+[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+to retrieve user input:
+
+<!-- skip -->
+{% prettify dart %}
+class _MyFormState extends State<MyForm> {
+  // Create a text controller and use it to retrieve the current value.
+  // of the TextField!
+  final myController = new TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when disposing of the Widget.
+    myController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Retrieve Text Input'),
+      ),
+      body: new Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: new TextField(
+          controller: myController,
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        // When the user presses the button, show an alert dialog with the
+        // text the user has typed into our text field.
+        onPressed: () {
+          return showDialog(
+            context: context,
+            builder: (context) {
+              return new AlertDialog(
+                // Retrieve the text the user has typed in using our
+                // TextEditingController
+                content: new Text(myController.text),
+              );
+            },
+          );
+        },
+        tooltip: 'Show me the value!',
+        child: new Icon(Icons.text_fields),
+      ),
+    );
+  }
+}
+{% endprettify %}
+
+You can find more information and the full code listing in
+[Retrieve the value of a text field](/cookbook/forms/retrieve-input/),
+from the [Flutter Cookbook](https://flutter.io/cookbook/).
+
+## What is the equivalent of a "Placeholder" on an Entry?
+
+In Xamarin.Forms, some `Elements` support a `Placeholder` property, you would
+assign a value to. e.g.
+
+<!-- skip -->
+{% prettify xml %}
+  <Entry Placeholder="This is a hint">
+{% endprettify %}
+
+In Flutter, you can easily show a "hint" or a placeholder text for your input by
+adding an InputDecoration object to the decoration constructor parameter for
+the Text Widget.
+
+<!-- skip -->
+{% prettify dart %}
+body: new Center(
+  child: new TextField(
+    decoration: new InputDecoration(hintText: "This is a hint"),
+  )
+)
+{% endprettify %}
 
 ## How do I show validation errors?
+
+With Xamarin.Forms, if you wished to provide a visual hint of a
+validation error, you would need to create new properties and `VisualElement`s
+surrounding the `Element`s that had validation errors.
+
+In Flutter we pass through an InputDecoration object to the decoration 
+constructor for the Text widget.
+
+However, you don't want to start off by showing an error.
+Instead, when the user has entered invalid data,
+update the state, and pass a new `InputDecoration` object.
+
+<!-- skip -->
+{% prettify dart %}
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new SampleApp());
+}
+
+class SampleApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Sample App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: new SampleAppPage(),
+    );
+  }
+}
+
+class SampleAppPage extends StatefulWidget {
+  SampleAppPage({Key key}) : super(key: key);
+
+  @override
+  _SampleAppPageState createState() => new _SampleAppPageState();
+}
+
+class _SampleAppPageState extends State<SampleAppPage> {
+  String _errorText;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sample App"),
+      ),
+      body: new Center(
+        child: new TextField(
+          onSubmitted: (String text) {
+            setState(() {
+              if (!isEmail(text)) {
+                _errorText = 'Error: This is not an email';
+              } else {
+                _errorText = null;
+              }
+            });
+          },
+          decoration: new InputDecoration(hintText: "This is a hint", errorText: _getErrorText()),
+        ),
+      ),
+    );
+  }
+
+  _getErrorText() {
+    return _errorText;
+  }
+
+  bool isEmail(String em) {
+    String emailRegexp =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+
+    RegExp regExp = new RegExp(emailRegexp);
+
+    return regExp.hasMatch(em);
+  }
+}
+{% endprettify %}
 
 # Flutter plugins
 
