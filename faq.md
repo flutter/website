@@ -201,15 +201,29 @@ Flutter is built with C, C++, Dart, and Skia (a 2D rendering engine). See this
 
 ### How does Flutter run my code on Android? {#run-android}
 
-The engine's C/C++ code is compiled with Android's NDK, and any Dart code is AOT-compiled
-into native code. The app runs using the native instruction set (no interpreter
-is involved).
+The engine's C and C++ code are compiled with Android's NDK. The Dart code
+(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM
+library. That library is included in a "runner" Android project, and the whole
+thing is built into an APK. When launched, the app loads the Flutter library.
+Any rendering, input or event handling, and so on, are delegated to the compiled
+Flutter and app code. This is similar to the way many game engines work.
+
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
+banner they show to remind people that they're slightly slower) in order to
+enable stateful hot reload.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
-The engine's C/C++ code is compiled with LLVM, and any Dart code is AOT-compiled
-into native code. The app runs using the native instruction set (no interpreter
-is involved).
+The engine's C and C++ code are compiled with LLVM. The Dart code (both the
+SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
+That library is included in a "runner" iOS project, and the whole thing is built
+into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
+input or event handling, and so on, are delegated to the compiled Flutter and
+app code. This is similar to the way many game engines work.
+
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
+banner they show to remind people that they're slightly slower) in order to
+enable stateful hot reload.
 
 ### Does Flutter use my system's OEM widgets?
 

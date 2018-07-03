@@ -18,13 +18,13 @@ class Photo extends StatelessWidget {
   final VoidCallback onTap;
 
   Widget build(BuildContext context) {
-    return new Material(
+    return Material(
       // Slightly opaque color appears where the image has transparency.
       // Makes it possible to see the radial transformation's boundary.
       color: Theme.of(context).primaryColor.withOpacity(0.25),
-      child: new InkWell(
+      child: InkWell(
         onTap: onTap,
-        child: new Image.asset(
+        child: Image.asset(
               photo,
               fit: BoxFit.contain,
         ),
@@ -50,12 +50,12 @@ class RadialExpansion extends StatelessWidget {
     // The ClipOval matches the RadialExpansion widget's bounds,
     // which change per the Hero's bounds as the Hero flies to
     // the new route, while the ClipRect's bounds are always fixed.
-    return new ClipOval(
-      child: new Center(
-        child: new SizedBox(
+    return ClipOval(
+      child: Center(
+        child: SizedBox(
           width: clipRectExtent,
           height: clipRectExtent,
-          child: new ClipRect(
+          child: ClipRect(
             child: child,
           ),
         ),
@@ -70,22 +70,22 @@ class RadialExpansionDemo extends StatelessWidget {
   static const opacityCurve = const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
   static RectTween _createRectTween(Rect begin, Rect end) {
-    return new MaterialRectCenterArcTween(begin: begin, end: end);
+    return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
   static Widget _buildPage(BuildContext context, String imageName, String description) {
-    return new Container(
+    return Container(
       color: Theme.of(context).canvasColor,
       alignment: FractionalOffset.center,
-      child: new SizedBox(
+      child: SizedBox(
         width: kMaxRadius * 2.0,
         height: kMaxRadius * 2.0,
-        child: new Hero(
+        child: Hero(
           createRectTween: _createRectTween,
           tag: imageName,
-          child: new RadialExpansion(
+          child: RadialExpansion(
             maxRadius: kMaxRadius,
-            child: new Photo(
+            child: Photo(
               photo: imageName,
               onTap: () {
                 Navigator.of(context).pop();
@@ -98,24 +98,24 @@ class RadialExpansionDemo extends StatelessWidget {
   }
 
   Widget _buildHero(BuildContext context, String imageName, String description) {
-    return new Container(
+    return Container(
       width: kMinRadius * 2.0,
       height: kMinRadius * 2.0,
-      child: new Hero(
+      child: Hero(
         createRectTween: _createRectTween,
         tag: imageName,
-        child: new RadialExpansion(
+        child: RadialExpansion(
           maxRadius: kMaxRadius,
-          child: new Photo(
+          child: Photo(
             photo: imageName,
             onTap: () {
               Navigator.of(context).push(
-                new PageRouteBuilder<Null>(
+                PageRouteBuilder<Null>(
                   pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
-                    return new AnimatedBuilder(
+                    return AnimatedBuilder(
                       animation: animation,
                       builder: (BuildContext context, Widget child) {
-                        return new Opacity(
+                        return Opacity(
                           opacity: opacityCurve.transform(animation.value),
                           child: _buildPage(context, imageName, description),
                         );
@@ -135,14 +135,14 @@ class RadialExpansionDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 20.0; // 1.0 is normal animation speed.
 
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Basic Radial Hero Animation Demo'),
       ),
-      body: new Container(
+      body: Container(
         padding: const EdgeInsets.all(32.0),
         alignment: FractionalOffset.bottomLeft,
-        child: new Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildHero(context, 'images/chair-alpha.png', 'Chair'),
@@ -156,5 +156,5 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(home: new RadialExpansionDemo()));
+  runApp(MaterialApp(home: RadialExpansionDemo()));
 }

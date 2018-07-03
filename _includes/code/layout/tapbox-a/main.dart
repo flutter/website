@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 // TapboxA manages its own state.
@@ -19,7 +19,7 @@ class TapboxA extends StatefulWidget {
   TapboxA({Key key}) : super(key: key);
 
   @override
-  _TapboxAState createState() => new _TapboxAState();
+  _TapboxAState createState() => _TapboxAState();
 }
 
 class _TapboxAState extends State<TapboxA> {
@@ -32,18 +32,18 @@ class _TapboxAState extends State<TapboxA> {
   }
 
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: _handleTap,
-      child: new Container(
-        child: new Center(
-          child: new Text(
+      child: Container(
+        child: Center(
+          child: Text(
             _active ? 'Active' : 'Inactive',
-            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+            style: TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
         height: 200.0,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
@@ -56,14 +56,14 @@ class _TapboxAState extends State<TapboxA> {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Flutter Demo'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Demo'),
         ),
-        body: new Center(
-          child: new TapboxA(),
+        body: Center(
+          child: TapboxA(),
         ),
       ),
     );

@@ -10,9 +10,9 @@ import 'package:flutter/material.dart';
 class LogoWidget extends StatelessWidget {
   // Leave out the height and width so it fills the animating parent
   build(BuildContext context) {
-    return new Container(
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
-        child: new FlutterLogo());
+    return Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
+        child: FlutterLogo());
   }
 }
 
@@ -23,11 +23,11 @@ class GrowTransition extends StatelessWidget {
   final Animation<double> animation;
 
   Widget build(BuildContext context) {
-    return new Center(
-      child: new AnimatedBuilder(
+    return Center(
+      child: AnimatedBuilder(
           animation: animation,
           builder: (BuildContext context, Widget child) {
-            return new Container(
+            return Container(
                 height: animation.value, width: animation.value, child: child);
           },
           child: child),
@@ -36,7 +36,7 @@ class GrowTransition extends StatelessWidget {
 }
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
@@ -45,16 +45,16 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     final CurvedAnimation curve =
-        new CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(curve);
+        CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation = Tween(begin: 0.0, end: 300.0).animate(curve);
     controller.forward();
   }
 
   Widget build(BuildContext context) {
-    return new GrowTransition(child: new LogoWidget(), animation: animation);
+    return GrowTransition(child: LogoWidget(), animation: animation);
   }
 
   dispose() {
@@ -64,5 +64,5 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }

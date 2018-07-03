@@ -179,7 +179,7 @@ which you'll implement in the next step.
 {% prettify dart %}
 class FavoriteWidget extends StatefulWidget {
   @override
-  _FavoriteWidgetState createState() => new _FavoriteWidgetState();
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
 {% endprettify %}
 
@@ -239,23 +239,23 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        new Container(
-          padding: new EdgeInsets.all(0.0),
-          child: new IconButton(
+        Container(
+          padding: EdgeInsets.all(0.0),
+          child: IconButton(
             [[highlight]]icon: (_isFavorited[[/highlight]]
-                [[highlight]]? new Icon(Icons.star)[[/highlight]]
-                [[highlight]]: new Icon(Icons.star_border)),[[/highlight]]
+                [[highlight]]? Icon(Icons.star)[[/highlight]]
+                [[highlight]]: Icon(Icons.star_border)),[[/highlight]]
             color: Colors.red[500],
             [[highlight]]onPressed: _toggleFavorite,[[/highlight]]
           ),
         ),
-        new SizedBox(
+        SizedBox(
           width: 18.0,
-          child: new Container(
-            [[highlight]]child: new Text('$_favoriteCount'),[[/highlight]]
+          child: Container(
+            [[highlight]]child: Text('$_favoriteCount'),[[/highlight]]
           ),
         ),
       ],
@@ -281,11 +281,11 @@ build method. First, locate the code that creates the Icon and Text, and delete 
 <!-- skip -->
 {% prettify dart %}
 // ...
-[[strike]]new Icon([[/strike]]
+[[strike]]Icon([[/strike]]
   [[strike]]Icons.star,[[/strike]]
   [[strike]]color: Colors.red[500],[[/strike]]
 [[strike]]),[[/strike]]
-[[strike]]new Text('41')[[/strike]]
+[[strike]]Text('41')[[/strike]]
 // ...
 {% endprettify %}
 
@@ -297,20 +297,20 @@ In the same location, create the stateful widget:
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = new Container(
+    Widget titleSection = Container(
       // ...
-      child: new Row(
+      child: Row(
         children: [
-          new Expanded(
-            child: new Column(
+          Expanded(
+            child: Column(
               // ...
           ),
-          [[highlight]]new FavoriteWidget()[[/highlight]],
+          [[highlight]]FavoriteWidget()[[/highlight]],
         ],
       ),
     );
 
-    return new MaterialApp(
+    return MaterialApp(
       // ...
     );
   }
@@ -433,7 +433,7 @@ class TapboxA extends StatefulWidget {
   TapboxA({Key key}) : super(key: key);
 
   @override
-  _TapboxAState createState() => new _TapboxAState();
+  _TapboxAState createState() => _TapboxAState();
 }
 
 class _TapboxAState extends State<TapboxA> {
@@ -446,18 +446,18 @@ class _TapboxAState extends State<TapboxA> {
   }
 
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: _handleTap,
-      child: new Container(
-        child: new Center(
-          child: new Text(
+      child: Container(
+        child: Center(
+          child: Text(
             _active ? 'Active' : 'Inactive',
-            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+            style: TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
         height: 200.0,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
@@ -470,14 +470,14 @@ class _TapboxAState extends State<TapboxA> {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Flutter Demo'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Demo'),
         ),
-        body: new Center(
-          child: new TapboxA(),
+        body: Center(
+          child: TapboxA(),
         ),
       ),
     );
@@ -525,7 +525,7 @@ The TapboxB class:
 
 class ParentWidget extends StatefulWidget {
   @override
-  _ParentWidgetState createState() => new _ParentWidgetState();
+  _ParentWidgetState createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -539,8 +539,8 @@ class _ParentWidgetState extends State<ParentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      child: new TapboxB(
+    return Container(
+      child: TapboxB(
         active: _active,
         onChanged: _handleTapboxChanged,
       ),
@@ -562,18 +562,18 @@ class TapboxB extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: _handleTap,
-      child: new Container(
-        child: new Center(
-          child: new Text(
+      child: Container(
+        child: Center(
+          child: Text(
             active ? 'Active' : 'Inactive',
-            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+            style: TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
         height: 200.0,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
       ),
@@ -642,7 +642,7 @@ The _TapboxCState object:
 
 class ParentWidget extends StatefulWidget {
   @override
-  _ParentWidgetState createState() => new _ParentWidgetState();
+  _ParentWidgetState createState() => _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget> {
@@ -656,8 +656,8 @@ class _ParentWidgetState extends State<ParentWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      child: new TapboxC(
+    return Container(
+      child: TapboxC(
         active: _active,
         onChanged: _handleTapboxChanged,
       ),
@@ -674,7 +674,7 @@ class TapboxC extends StatefulWidget {
   final bool active;
   final ValueChanged<bool> onChanged;
 
-  _TapboxCState createState() => new _TapboxCState();
+  _TapboxCState createState() => _TapboxCState();
 }
 
 class _TapboxCState extends State<TapboxC> {
@@ -705,23 +705,23 @@ class _TapboxCState extends State<TapboxC> {
   Widget build(BuildContext context) {
     // This example adds a green border on tap down.
     // On tap up, the square changes to the opposite state.
-    return new GestureDetector(
+    return GestureDetector(
       onTapDown: _handleTapDown, // Handle the tap events in the order that
       onTapUp: _handleTapUp, // they occur: down, up, tap, cancel
       onTap: _handleTap,
       onTapCancel: _handleTapCancel,
-      child: new Container(
-        child: new Center(
-          child: new Text(widget.active ? 'Active' : 'Inactive',
-              style: new TextStyle(fontSize: 32.0, color: Colors.white)),
+      child: Container(
+        child: Center(
+          child: Text(widget.active ? 'Active' : 'Inactive',
+              style: TextStyle(fontSize: 32.0, color: Colors.white)),
         ),
         width: 200.0,
         height: 200.0,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color:
               widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
-              ? new Border.all(
+              ? Border.all(
                   color: Colors.teal[700],
                   width: 10.0,
                 )

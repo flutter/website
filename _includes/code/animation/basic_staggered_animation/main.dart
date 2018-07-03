@@ -15,78 +15,78 @@ class StaggerAnimation extends StatelessWidget {
     // For example the opacity animation transforms its value during
     // the first 10% of the controller's duration.
 
-    opacity = new Tween<double>(
+    opacity = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.0, 0.100,
           curve: Curves.ease,
         ),
       ),
     ),
 
-    width = new Tween<double>(
+    width = Tween<double>(
       begin: 50.0,
       end: 150.0,
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.125, 0.250,
           curve: Curves.ease,
         ),
       ),
     ),
 
-    height = new Tween<double>(
+    height = Tween<double>(
       begin: 50.0,
       end: 150.0
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.250, 0.375,
           curve: Curves.ease,
         ),
       ),
     ),
 
-    padding = new EdgeInsetsTween(
+    padding = EdgeInsetsTween(
       begin: const EdgeInsets.only(bottom: 16.0),
       end: const EdgeInsets.only(bottom: 75.0),
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.250, 0.375,
           curve: Curves.ease,
         ),
       ),
     ),
 
-    borderRadius = new BorderRadiusTween(
-      begin: new BorderRadius.circular(4.0),
-      end: new BorderRadius.circular(75.0),
+    borderRadius = BorderRadiusTween(
+      begin: BorderRadius.circular(4.0),
+      end: BorderRadius.circular(75.0),
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.375, 0.500,
           curve: Curves.ease,
         ),
       ),
     ),
 
-    color = new ColorTween(
+    color = ColorTween(
       begin: Colors.indigo[100],
       end: Colors.orange[400],
     ).animate(
-      new CurvedAnimation(
+      CurvedAnimation(
         parent: controller,
-        curve: new Interval(
+        curve: Interval(
           0.500, 0.750,
           curve: Curves.ease,
         ),
@@ -107,17 +107,17 @@ class StaggerAnimation extends StatelessWidget {
   // When it runs, all of the animation's values will have been
   // updated to reflect the controller's current value.
   Widget _buildAnimation(BuildContext context, Widget child) {
-    return new Container(
+    return Container(
       padding: padding.value,
       alignment: Alignment.bottomCenter,
-      child: new Opacity(
+      child: Opacity(
         opacity: opacity.value,
-        child: new Container(
+        child: Container(
           width: width.value,
           height: height.value,
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             color: color.value,
-            border: new Border.all(
+            border: Border.all(
               color: Colors.indigo[300],
               width: 3.0,
             ),
@@ -130,7 +130,7 @@ class StaggerAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new AnimatedBuilder(
+    return AnimatedBuilder(
       builder: _buildAnimation,
       animation: controller,
     );
@@ -139,7 +139,7 @@ class StaggerAnimation extends StatelessWidget {
 
 class StaggerDemo extends StatefulWidget {
   @override
-  _StaggerDemoState createState() => new _StaggerDemoState();
+  _StaggerDemoState createState() => _StaggerDemoState();
 }
 
 class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin {
@@ -149,7 +149,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   void initState() {
     super.initState();
 
-    _controller = new AnimationController(
+    _controller = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this
     );
@@ -173,26 +173,26 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     timeDilation = 10.0; // 1.0 is normal animation speed.
-    return new Scaffold(
-      appBar: new AppBar(
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Staggered Animation'),
       ),
-      body: new GestureDetector(
+      body: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
           _playAnimation();
         },
-        child: new Center(
-          child: new Container(
+        child: Center(
+          child: Container(
             width: 300.0,
             height: 300.0,
-            decoration: new BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.1),
-              border: new Border.all(
+              border: Border.all(
                 color:  Colors.black.withOpacity(0.5),
               ),
             ),
-            child: new StaggerAnimation(
+            child: StaggerAnimation(
               controller: _controller.view
             ),
           ),
@@ -203,5 +203,5 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 }
 
 void main() {
-  runApp(new MaterialApp(home: new StaggerDemo()));
+  runApp(MaterialApp(home: StaggerDemo()));
 }

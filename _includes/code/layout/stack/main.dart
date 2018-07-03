@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -30,26 +30,26 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var stack = new Stack(
+    var stack = Stack(
       alignment: const Alignment(0.6, 0.6),
       children: [
-        new CircleAvatar(
-          backgroundImage: new AssetImage('images/pic.jpg'),
+        CircleAvatar(
+          backgroundImage: AssetImage('images/pic.jpg'),
           radius: 100.0,
         ),
-        new Container(
-          decoration: new BoxDecoration(
+        Container(
+          decoration: BoxDecoration(
             color: Colors.black45,
           ),
-          child: new Text(
+          child: Text(
             'Mia B',
-            style: new TextStyle(
+            style: TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -59,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(
+      body: Center(
         child: stack,
       ),
     );

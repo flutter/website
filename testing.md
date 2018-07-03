@@ -126,17 +126,17 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('my first widget test', (WidgetTester tester) async {
     // You can use keys to locate the widget you need to test
-    var sliderKey = new UniqueKey();
+    var sliderKey = UniqueKey();
     var value = 0.0;
 
     // Tells the tester to build a UI based on the widget tree passed to it
     await tester.pumpWidget(
-      new StatefulBuilder(
+      StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
-          return new MaterialApp(
-            home: new Material(
-              child: new Center(
-                child: new Slider(
+          return MaterialApp(
+            home: Material(
+              child: Center(
+                child: Slider(
                   key: sliderKey,
                   value: value,
                   onChanged: (double newValue) {
@@ -278,25 +278,25 @@ void main() {
         for (int i = 0; i < 5; i++) {
           // Scroll 300 pixels down, for 300 millis
           await driver.scroll(
-              userList, 0.0, -300.0, new Duration(milliseconds: 300));
+              userList, 0.0, -300.0, Duration(milliseconds: 300));
 
           // Emulate a user's finger taking its time to go back to the original
           // position before the next scroll
-          await new Future<Null>.delayed(new Duration(milliseconds: 500));
+          await Future<Null>.delayed(Duration(milliseconds: 500));
         }
 
         // Scroll up 5 times
         for (int i = 0; i < 5; i++) {
           await driver.scroll(
-              userList, 0.0, 300.0, new Duration(milliseconds: 300));
-          await new Future<Null>.delayed(new Duration(milliseconds: 500));
+              userList, 0.0, 300.0, Duration(milliseconds: 300));
+          await Future<Null>.delayed(Duration(milliseconds: 500));
         }
       });
 
       // The `timeline` object contains all the performance data recorded during
       // the scrolling session. It can be digested into a handful of useful
       // aggregate numbers, such as "average frame build time".
-      TimelineSummary summary = new TimelineSummary.summarize(timeline);
+      TimelineSummary summary = TimelineSummary.summarize(timeline);
 
       // The following line saves the timeline summary to a JSON file.
       summary.writeSummaryToFile('scrolling_performance', pretty: true);
@@ -334,7 +334,3 @@ For information on continuous deployment and testing, see
 
 * [Continuous Delivery using Fastlane with Flutter](/fastlane-cd/)
 * [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
-
-
-
-

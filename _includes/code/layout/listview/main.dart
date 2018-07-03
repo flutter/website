@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -30,97 +30,97 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 List<Widget> list = <Widget>[
-  new ListTile(
-    title: new Text('CineArts at the Empire',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('85 W Portal Ave'),
-    leading: new Icon(
+  ListTile(
+    title: Text('CineArts at the Empire',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('85 W Portal Ave'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('The Castro Theater',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('429 Castro St'),
-    leading: new Icon(
+  ListTile(
+    title: Text('The Castro Theater',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('429 Castro St'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('Alamo Drafthouse Cinema',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('2550 Mission St'),
-    leading: new Icon(
+  ListTile(
+    title: Text('Alamo Drafthouse Cinema',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('2550 Mission St'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('Roxie Theater',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('3117 16th St'),
-    leading: new Icon(
+  ListTile(
+    title: Text('Roxie Theater',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('3117 16th St'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('United Artists Stonestown Twin',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('501 Buckingham Way'),
-    leading: new Icon(
+  ListTile(
+    title: Text('United Artists Stonestown Twin',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('501 Buckingham Way'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('AMC Metreon 16',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('135 4th St #3000'),
-    leading: new Icon(
+  ListTile(
+    title: Text('AMC Metreon 16',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('135 4th St #3000'),
+    leading: Icon(
       Icons.theaters,
       color: Colors.blue[500],
     ),
   ),
-  new Divider(),
-  new ListTile(
-    title: new Text('K\'s Kitchen',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('757 Monterey Blvd'),
-    leading: new Icon(
+  Divider(),
+  ListTile(
+    title: Text('K\'s Kitchen',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('757 Monterey Blvd'),
+    leading: Icon(
       Icons.restaurant,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('Emmy\'s Restaurant',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('1923 Ocean Ave'),
-    leading: new Icon(
+  ListTile(
+    title: Text('Emmy\'s Restaurant',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('1923 Ocean Ave'),
+    leading: Icon(
       Icons.restaurant,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('Chaiya Thai Restaurant',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('272 Claremont Blvd'),
-    leading: new Icon(
+  ListTile(
+    title: Text('Chaiya Thai Restaurant',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('272 Claremont Blvd'),
+    leading: Icon(
       Icons.restaurant,
       color: Colors.blue[500],
     ),
   ),
-  new ListTile(
-    title: new Text('La Ciccia',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: new Text('291 30th St'),
-    leading: new Icon(
+  ListTile(
+    title: Text('La Ciccia',
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: Text('291 30th St'),
+    leading: Icon(
       Icons.restaurant,
       color: Colors.blue[500],
     ),
@@ -130,13 +130,13 @@ List<Widget> list = <Widget>[
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
         elevation: 5.0, // Removing the drop shadow cast by the app bar.
       ),
-      body: new Center(
-        child: new ListView(
+      body: Center(
+        child: ListView(
           children: list,
         ),
       ),

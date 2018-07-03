@@ -78,7 +78,7 @@ Next, import the flutter_localizations library and specify
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-new MaterialApp(
+MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
    GlobalMaterialLocalizations.delegate,
@@ -205,7 +205,7 @@ localization delegates for these classes as described in
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-new MaterialApp(
+MaterialApp(
  localizationsDelegates: [
    // ... app-specific localization delegate[s] here
    GlobalMaterialLocalizations.delegate,
@@ -258,7 +258,7 @@ class DemoLocalizations {
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((Null _) {
       Intl.defaultLocale = localeName;
-      return new DemoLocalizations();
+      return DemoLocalizations();
     });
   }
 
@@ -315,7 +315,7 @@ user selects:
 class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
        localeResolutionCallback(Locale locale, Iterable<Locale> supportedLocales) {
          return locale;
        }
@@ -381,7 +381,7 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
-    return new SynchronousFuture<DemoLocalizations>(new DemoLocalizations(locale));
+    return SynchronousFuture<DemoLocalizations>(DemoLocalizations(locale));
   }
 
   @override

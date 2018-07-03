@@ -6,7 +6,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => new _LogoAppState();
+  _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
@@ -15,9 +15,9 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   initState() {
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller)
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
       ..addListener(() {
         setState(() {
           // the state that has changed here is the animation object’s value
@@ -27,12 +27,12 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Container(
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+    return Center(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
         height: animation.value,
         width: animation.value,
-        child: new FlutterLogo(),
+        child: FlutterLogo(),
       ),
     );
   }
@@ -44,5 +44,5 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 }
 
 void main() {
-  runApp(new LogoApp());
+  runApp(LogoApp());
 }

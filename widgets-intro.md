@@ -36,8 +36,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    new Center(
-      child: new Text(
+    Center(
+      child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
       ),
@@ -128,25 +128,25 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
       height: 56.0, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: new BoxDecoration(color: Colors.blue[500]),
+      decoration: BoxDecoration(color: Colors.blue[500]),
       // Row is a horizontal, linear layout.
-      child: new Row(
+      child: Row(
         // <Widget> is the type of items in the list.
         children: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.menu),
+          IconButton(
+            icon: Icon(Icons.menu),
             tooltip: 'Navigation menu',
             onPressed: null, // null disables the button
           ),
           // Expanded expands its child to fill the available space.
-          new Expanded(
+          Expanded(
             child: title,
           ),
-          new IconButton(
-            icon: new Icon(Icons.search),
+          IconButton(
+            icon: Icon(Icons.search),
             tooltip: 'Search',
             onPressed: null,
           ),
@@ -160,19 +160,19 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Material is a conceptual piece of paper on which the UI appears.
-    return new Material(
+    return Material(
       // Column is a vertical, linear layout.
-      child: new Column(
+      child: Column(
         children: <Widget>[
-          new MyAppBar(
-            title: new Text(
+          MyAppBar(
+            title: Text(
               'Example title',
               style: Theme.of(context).primaryTextTheme.title,
             ),
           ),
-          new Expanded(
-            child: new Center(
-              child: new Text('Hello, world!'),
+          Expanded(
+            child: Center(
+              child: Text('Hello, world!'),
             ),
           ),
         ],
@@ -182,9 +182,9 @@ class MyScaffold extends StatelessWidget {
 }
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'My app', // used by the OS task switcher
-    home: new MyScaffold(),
+    home: MyScaffold(),
   ));
 }
 ```
@@ -252,9 +252,9 @@ widget is entirely optional but a good practice.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'Flutter Tutorial',
-    home: new TutorialHome(),
+    home: TutorialHome(),
   ));
 }
 
@@ -262,29 +262,29 @@ class TutorialHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Scaffold is a layout for the major Material Components.
-    return new Scaffold(
-      appBar: new AppBar(
-        leading: new IconButton(
-          icon: new Icon(Icons.menu),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
           tooltip: 'Navigation menu',
           onPressed: null,
         ),
-        title: new Text('Example title'),
+        title: Text('Example title'),
         actions: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.search),
+          IconButton(
+            icon: Icon(Icons.search),
             tooltip: 'Search',
             onPressed: null,
           ),
         ],
       ),
       // body is the majority of the screen.
-      body: new Center(
-        child: new Text('Hello, world!'),
+      body: Center(
+        child: Text('Hello, world!'),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
-        child: new Icon(Icons.add),
+        child: Icon(Icons.add),
         onPressed: null,
       ),
     );
@@ -327,20 +327,20 @@ input gestures. Let's see how that works by creating a simple button:
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTap: () {
         print('MyButton was tapped!');
       },
-      child: new Container(
+      child: Container(
         height: 36.0,
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-        decoration: new BoxDecoration(
-          borderRadius: new BorderRadius.circular(5.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
           color: Colors.lightGreen[500],
         ),
-        child: new Center(
-          child: new Text('Engage'),
+        child: Center(
+          child: Text('Engage'),
         ),
       ),
     );
@@ -399,7 +399,7 @@ class Counter extends StatefulWidget {
   // method of the State. Fields in a Widget subclass are always marked "final".
 
   @override
-  _CounterState createState() => new _CounterState();
+  _CounterState createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -425,13 +425,13 @@ class _CounterState extends State<Counter> {
     // build methods fast, so that you can just rebuild anything that
     // needs updating rather than having to individually change
     // instances of widgets.
-    return new Row(
+    return Row(
       children: <Widget>[
-        new RaisedButton(
+        RaisedButton(
           onPressed: _increment,
-          child: new Text('Increment'),
+          child: Text('Increment'),
         ),
-        new Text('Count: $_counter'),
+        Text('Count: $_counter'),
       ],
     );
   }
@@ -466,7 +466,7 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Text('Count: $count');
+    return Text('Count: $count');
   }
 }
 
@@ -477,16 +477,16 @@ class CounterIncrementor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new RaisedButton(
+    return RaisedButton(
       onPressed: onPressed,
-      child: new Text('Increment'),
+      child: Text('Increment'),
     );
   }
 }
 
 class Counter extends StatefulWidget {
   @override
-  _CounterState createState() => new _CounterState();
+  _CounterState createState() => _CounterState();
 }
 
 class _CounterState extends State<Counter> {
@@ -500,9 +500,9 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(children: <Widget>[
-      new CounterIncrementor(onPressed: _increment),
-      new CounterDisplay(count: _counter),
+    return Row(children: <Widget>[
+      CounterIncrementor(onPressed: _increment),
+      CounterDisplay(count: _counter),
     ]);
   }
 }
@@ -535,7 +535,7 @@ typedef void CartChangedCallback(Product product, bool inCart);
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({Product product, this.inCart, this.onCartChanged})
       : product = product,
-        super(key: new ObjectKey(product));
+        super(key: ObjectKey(product));
 
   final Product product;
   final bool inCart;
@@ -552,7 +552,7 @@ class ShoppingListItem extends StatelessWidget {
   TextStyle _getTextStyle(BuildContext context) {
     if (!inCart) return null;
 
-    return new TextStyle(
+    return TextStyle(
       color: Colors.black54,
       decoration: TextDecoration.lineThrough,
     );
@@ -560,15 +560,15 @@ class ShoppingListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListTile(
+    return ListTile(
       onTap: () {
         onCartChanged(product, !inCart);
       },
-      leading: new CircleAvatar(
+      leading: CircleAvatar(
         backgroundColor: _getColor(context),
-        child: new Text(product.name[0]),
+        child: Text(product.name[0]),
       ),
-      title: new Text(product.name, style: _getTextStyle(context)),
+      title: Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -624,11 +624,11 @@ class ShoppingList extends StatefulWidget {
   // instead of creating a new State object.
 
   @override
-  _ShoppingListState createState() => new _ShoppingListState();
+  _ShoppingListState createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {
-  Set<Product> _shoppingCart = new Set<Product>();
+  Set<Product> _shoppingCart = Set<Product>();
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
@@ -645,14 +645,14 @@ class _ShoppingListState extends State<ShoppingList> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Shopping List'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Shopping List'),
       ),
-      body: new ListView(
-        padding: new EdgeInsets.symmetric(vertical: 8.0),
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 8.0),
         children: widget.products.map((Product product) {
-          return new ShoppingListItem(
+          return ShoppingListItem(
             product: product,
             inCart: _shoppingCart.contains(product),
             onCartChanged: _handleCartChanged,
@@ -664,13 +664,13 @@ class _ShoppingListState extends State<ShoppingList> {
 }
 
 void main() {
-  runApp(new MaterialApp(
+  runApp(MaterialApp(
     title: 'Shopping App',
-    home: new ShoppingList(
+    home: ShoppingList(
       products: <Product>[
-        new Product(name: 'Eggs'),
-        new Product(name: 'Flour'),
-        new Product(name: 'Chocolate chips'),
+        Product(name: 'Eggs'),
+        Product(name: 'Flour'),
+        Product(name: 'Chocolate chips'),
       ],
     ),
   ));

@@ -21,7 +21,7 @@ permalink: /ui-performance/
 
 It's been said that "a _fast_ app is great, but a _smooth_ app is even better."
 If your app isn't rendering smoothly, how do you fix it? Where do you begin?
-This guide shows shows you where to start, steps to take, and tools that can
+This guide shows you where to start, steps to take, and tools that can
 help.
 
 <aside class="alert alert-info" markdown="1">
@@ -245,13 +245,13 @@ or WidgetsApp constructor:
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       [[highlight]]showPerformanceOverlay: true,[[/highlight]]
       title: 'My Awesome App',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'My Awesome App'),
+      home: MyHomePage(title: 'My Awesome App'),
     );
   }
 }
