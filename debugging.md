@@ -877,3 +877,25 @@ You can also overlay such a grid on non-Material applications by using
 the
 [`GridPaper`](https://docs.flutter.io/flutter/widgets/GridPaper-class.html)
 widget directly.
+
+## Common problems
+
+{% comment %}
+Rewrite the following when we have a larger collection of problems.
+{% endcomment %}
+The following is a problem that some have encountered on MacOS.
+
+### "Too many open files" exception (MacOS)
+
+The Mac file system has a default limit on how many files it can have open
+at a time. If you run into this limit, increase the number of available
+file handlers using the `ulimit` command:
+
+```
+ulimit -S -n 2048
+```
+
+If you use Travis for testing, increase the number of available file
+handlers that Travis can open by adding the same line to
+flutter/travis.yml.
+
