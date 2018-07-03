@@ -49,7 +49,9 @@ located in `<app dir>/android/app/` and verify the values are correct, especiall
 ## Adding a Launcher icon
 
 When a new Flutter app is created, it has a default Launcher icon. To
-customize this icon:
+customize this icon you might want to check out the [Flutter Launcher Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+
+Alternatively, if you want to do it manually, here's how:
 
 1. Review the [Android Launcher Icons][launchericons] guidelines for icon
 design.
@@ -64,8 +66,6 @@ The default `mipmap-` folders demonstrate the correct naming convention.
 
 1. To verify the icon has been replaced, run your app using `flutter run`
 and inspect the app icon in the Launcher.
-
-Alternatively if you want a more automated way to change the launcher icons you can use the [Flutter Launcher Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
 
 ## Signing the app
 
