@@ -187,7 +187,7 @@ To open Observatory:
 Assists are code changes related to a certain code identifier. A number of these
 are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
+the lightbulb, or by using the keyboard shortcut (`Alt-Enter` on Linux and Windows, `option-return` on macOS), as illustrated
 here:
 
 ![IntelliJ editing assists](/images/intellij/assists.gif)
