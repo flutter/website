@@ -104,7 +104,7 @@ has not been able to discover any connected iOS or Android devices or simulators
 You need to connect a device, or start a simulator, to proceed.
 
 1. Locate the **Flutter Target Selector** drop-down button. This shows a
- list of available targets. Select the target you want your app to started on.
+ list of available targets. Select the target you want your app to be started on.
 * When you connect devices, or start simulators, additional entries appear.
 
 ### Run app without breakpoints
@@ -187,7 +187,7 @@ To open Observatory:
 Assists are code changes related to a certain code identifier. A number of these
 are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut `Alt-Enter`, as illustrated
+the lightbulb, or by using the keyboard shortcut (`Alt-Enter` on Linux and Windows, `option-return` on macOS), as illustrated
 here:
 
 ![IntelliJ editing assists](/images/intellij/assists.gif)
