@@ -10,8 +10,8 @@ permalink: /testing/
 ## Introduction
 
 The more features your app has, the harder it is to test it manually. A
-good set of automated tests will help you make sure your app performs
-correctly before you publish it while retaining your feature and bug fix
+good set of automated tests help you make sure your app performs
+correctly before you publish it, while retaining your feature and bug fix
 velocity.
 
 There are many kinds of automated testing. These are summarized below:
@@ -317,11 +317,11 @@ computer and enable USB debugging. Then run the following command:
 flutter drive --target=my_app/test_driver/user_list_scrolling.dart
 ```
 
-This command will:
+This command:
 
-* build the `--target` app and install it on the device
-* launch the app
-* run the `user_list_scrolling_test.dart` test located in `my_app/test_driver/`
+* builds the `--target` app and install it on the device
+* launches the app
+* runs the `user_list_scrolling_test.dart` test located in `my_app/test_driver/`
 
 You might be wondering how the command finds the correct test file. The
 `flutter drive` command uses a convention to look for the test file in the same
@@ -334,3 +334,8 @@ For information on continuous deployment and testing, see
 
 * [Continuous Delivery using Fastlane with Flutter](/fastlane-cd/)
 * [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
+* Test Flutter apps with [GitLab
+  CI](https://docs.gitlab.com/ee/ci/README.html#doc-nav). You'll
+  need to create and configure a `.gitlab-ci.yml` file. You can [find an
+  example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
+  in the [flutter_redux library](https://github.com/brianegan/flutter_redux).
