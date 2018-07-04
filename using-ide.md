@@ -104,7 +104,7 @@ has not been able to discover any connected iOS or Android devices or simulators
 You need to connect a device, or start a simulator, to proceed.
 
 1. Locate the **Flutter Target Selector** drop-down button. This shows a
- list of available targets. Select the target you want your app to started on.
+ list of available targets. Select the target you want your app to be started on.
 * When you connect devices, or start simulators, additional entries appear.
 
 ### Run app without breakpoints
