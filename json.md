@@ -315,7 +315,7 @@ can generate json serialization code for our models whenever needed. This
 triggers a one-time build which goes through our source files, picks the
 relevant ones and generates the necessary serialization code for them.
 
-While this is pretty convenient, it would nice if we did not have to run the
+While this is pretty convenient, it would be nice if we did not have to run the
 build manually every time we make changes in our model classes.
 
 #### Generating code continuously
