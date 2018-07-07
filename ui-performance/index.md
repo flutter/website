@@ -114,6 +114,7 @@ Not yet available in VS Code.
 	}
 ]
 ```
+</li>
 <li markdown="1">From the command line, use the `--profile`
     flag:
 
