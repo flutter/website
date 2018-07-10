@@ -887,8 +887,9 @@ The following is a problem that some have encountered on MacOS.
 
 ### "Too many open files" exception (MacOS)
 
-The Mac file system has a default limit on how many files it can have open
-at a time. If you run into this limit, increase the number of available
+The default limit for Mac OS on how many files it can have open at a
+time is rather low.  If you run into this limit,
+increase the number of available
 file handlers using the `ulimit` command:
 
 ```
