@@ -145,12 +145,12 @@ dependencies are stable and reproducible between local and cloud machines. Howev
     `Gemfile.lock` into source control.
     * When running locally, use `bundle exec fastlane` instead of `fastlane`.
 
-3. Create the CI test script such `.travis.yml` or `.cirrus.yml` in your
+3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
 repository root.
-    * Shard your script to run on both Linux and OSX platforms.
-    * Remember to specify a dependency on Xcode for OSX (for example
+    * Shard your script to run on both Linux and macOS platforms.
+    * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [Fastlane CI documentation](https://docs.fastlane.tools/best-practices/continuous-integration/)
+    * See [Fastlane CI documentation](https://flutter.io/fastlane-cd/)
     for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.

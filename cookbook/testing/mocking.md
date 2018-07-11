@@ -97,7 +97,7 @@ different http responses in each test.
 <!-- skip -->
 ```dart
 // Create a MockClient using the Mock class provided by the Mockito package.
-// We will create a new instances of this class in each test. 
+// We will create new instances of this class in each test. 
 class MockClient extends Mock implements http.Client {}
 
 main() {

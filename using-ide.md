@@ -187,7 +187,7 @@ To open Observatory:
 Assists are code changes related to a certain code identifier. A number of these
 are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut (`Alt-Enter` on Linux and Windows, `option-return` on macOS), as illustrated
+the lightbulb, or by using the keyboard shortcut (`Alt`+`Enter` on Linux and Windows, `Option`+`Return` on macOS), as illustrated
 here:
 
 ![IntelliJ editing assists](/images/intellij/assists.gif)
@@ -230,10 +230,10 @@ You can also define custom templates in **Settings > Editor > Live Templates**.
 **Hot Reload**
 
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
-are `ctrl-alt-;` and `ctrl-\`.
+are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
 
-On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `⌘-⌥-;`
-and `⌘-\`.
+On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `Command`+`Option`;`
+and `Command`+`Backslash`.
 
 Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
