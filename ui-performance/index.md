@@ -36,6 +36,12 @@ problems.
 * TOC Placeholder
 {:toc}
 
+<aside class="alert alert-info" markdown="1">
+**Note**: To perform tracing inside your Dart code, see [Tracing
+any Dart code performance](/debugging/#tracing-any-dart-code-performance)
+in the [Debugging](/debugging) page.
+</aside>
+
 ## Diagnosing performance problems
 
 To diagnose an app with performance problems, you'll enable
