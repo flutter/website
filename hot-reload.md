@@ -45,7 +45,9 @@ app continues to execute from where it was prior to running the hot reload
 command. The code is updated and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
-after the change. Specifically, a hot reload causes all the existing widgets to rebuild. Code that is not invoked during the rebuilding of the widgets are not automatically re-executed.
+after the change. Specifically, a hot reload causes all the existing widgets to
+rebuild. Only code involved in the rebuilding of the widgets are automatically
+re-executed.
 
 The next sections describe common situations where the
 modified code will _not_ run again after hot reload. In some cases,
@@ -287,8 +289,19 @@ committing any changes.
 
 ## How it works
 
-When hot reload is invoked, the host machine looks at the edited code since the last compilation. Each library with changed code, the application's main library, and the libraries from the main library leading to affected libraries are recompiled. In Dart 2, those libraries' Dart source code are turned into [kernel files](https://github.com/dart-lang/sdk/tree/master/pkg/kernel) and sent to the mobile device's Dart VM.
+When hot reload is invoked, the host machine looks at the edited code since the
+last compilation. The following libraries are recompiled:
 
-The Dart VM re-loads all libraries from the new kernel file. So far no code is re-executed.
+ * Any libraries with changed code.
+ * The application's main library.
+ * The libraries from the main library leading to affected libraries.
 
-The hot reload mechanism then causes the Flutter framework to trigger a rebuild/re-layout/repaint of all widgets and render objects.
+In Dart 2, those libraries' Dart source code are turned into
+[kernel files](https://github.com/dart-lang/sdk/tree/master/pkg/kernel) and
+sent to the mobile device's Dart VM.
+
+The Dart VM re-loads all libraries from the new kernel file. So far no code is
+re-executed.
+
+The hot reload mechanism then causes the Flutter framework to trigger a
+rebuild/re-layout/repaint of all existing widgets and render objects.
