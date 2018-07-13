@@ -28,7 +28,8 @@ TODO: (maybe, but later)
 * TOC
 {:toc}
 
-<p class="h2-like">What you'll build</p>
+## What you'll build
+{:.no_toc}
 
 You’ll implement a simple mobile app that generates proposed names for a
 startup company. The user can select and unselect names,
@@ -40,45 +41,38 @@ to move to a new route that lists only the favorited names.
 The animated GIF shows how the finished app works.
 
 <div class="whats-the-point" markdown="1">
+  <h4>What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* Basic structure of a Flutter app.
-* Finding and using packages to extend functionality.
-* Using hot reload for a quicker development cycle.
-* How to implement a stateful widget.
-* How to create an infinite, lazily loaded list.
-* How to create and navigate to a second screen.
-* How to change the look of an app using Themes.
-
+  * Basic structure of a Flutter app.
+  * Finding and using packages to extend functionality.
+  * Using hot reload for a quicker development cycle.
+  * How to implement a stateful widget.
+  * How to create an infinite, lazily loaded list.
+  * How to create and navigate to a second screen.
+  * How to change the look of an app using Themes.
 </div>
 
 <div class="whats-the-point" markdown="1">
+  <h4>What you'll use</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll use:</b>
+  You'll need to install the following:
 
-You'll need to install the following:
-
-<ul markdown="1">
-<li markdown="1"> Flutter SDK<br>
+  - Flutter SDK<br>
     The Flutter SDK includes Flutter's engine, framework, widgets, tools,
     and a Dart SDK. This codelab requires v0.1.4 or later.
-</li>
-<li markdown="1"> Android Studio IDE<br>
+
+  - Android Studio IDE<br>
     This codelab features the Android Studio IDE, but you can use
     another IDE, or work from the command line.
-</li>
-<li markdown="1"> Plugin for your IDE<br>
+
+  - Plugin for your IDE<br>
     The Flutter and Dart plugins must be installed separately for your
     IDE. Besides Android Studio, Flutter and Dart plugins are also available
     for the [VS Code](https://code.visualstudio.com/download) and
     [IntelliJ](https://www.jetbrains.com/idea/download/#section=mac) IDEs.
-</li>
-</ul>
 
-See [Flutter Installation and Setup](/get-started/install/) for information on
-how to set up your environment.
-
+  See [Flutter Installation and Setup](/get-started/install/) for information on
+  how to set up your environment.
 </div>
 
 # Step 1: Create the starting Flutter app
@@ -92,82 +86,72 @@ In this codelab, you'll mostly be editing **lib/main.dart**,
 where the Dart code lives.
 
 <aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-When pasting code into your app, indentation can
-become skewed. You can fix this automatically with the Flutter tools:
+  <i class="fa fa-lightbulb-o"></i> **Tip:**
+  When pasting code into your app, indentation can
+  become skewed. You can fix this automatically with the Flutter tools:
 
-* Android Studio / IntelliJ IDEA: Right-click the dart code and
-  select **Reformat Code with dartfmt**.
-* VS Code: Right-click and select **Format Document**.
-* Terminal: Run `flutter format <filename>`.
+  * Android Studio / IntelliJ IDEA: Right-click the dart code and
+    select **Reformat Code with dartfmt**.
+  * VS Code: Right-click and select **Format Document**.
+  * Terminal: Run `flutter format <filename>`.
 </aside>
 
-<ol markdown="1">
-
-<li markdown="1"> Replace `lib/main.dart`.<br>
+ 1. Replace `lib/main.dart`.<br>
     Delete all of the code from **lib/main.dart**.
     Replace with the following code, which displays "Hello World" in the center
     of the screen.
 
-{% prettify dart %}
-import 'package:flutter/material.dart';
+    ```dart
+    import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+    void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
-</li>
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          title: 'Welcome to Flutter',
+          home: Scaffold(
+            appBar: AppBar(
+              title: Text('Welcome to Flutter'),
+            ),
+            body: Center(
+              child: Text('Hello World'),
+            ),
+          ),
+        );
+      }
+    }
+    ```
 
-<li markdown="1"> Run the app. You should see the following screen.
+ 2. Run the app. You should see the following screen.
 
-<center><img src="images/hello-world-screenshot.png" alt="screenshot of hello world app"></center>
-</li>
-</ol>
+    <center><img src="images/hello-world-screenshot.png" alt="screenshot of hello world app"></center>
 
-<p class="h2-like">Observations</p>
 
-  <ul markdown="1">
-  <li markdown="1"> This example creates a Material app.
-      [Material](https://material.io/guidelines/) is a visual design language
-      that is standard on mobile and the web. Flutter offers a rich set
-      of Material widgets.
-  </li>
-  <li markdown="1"> The main method specifies fat arrow (`=>`) notation,
-       which is short hand used for one-line functions or methods.
-  </li>
-  <li markdown="1"> The app extends StatelessWidget which makes the app itself a
-       widget. In Flutter, almost everything is a widget, including
-       alignment, padding, and layout.
-  </li>
-  <li markdown="1"> The Scaffold widget, from the Material library,
-       provides a default app bar, title, and a body property that
-       holds the widget tree for the home screen. The widget subtree
-       can be quite complex.
-  </li>
-  <li markdown="1"> A widget’s main job is to provide a `build()` method
-      that describes how to display the widget in terms of other,
-      lower level widgets.
-  </li>
-  <li markdown="1"> The widget tree for this example consists of a Center widget
-       containing a Text child widget. The Center widget aligns its
-       widget subtree to the center of the screen.
-  </li>
-</ul>
+## Observations
+{:.no_toc}
+
+- This example creates a Material app.
+  [Material](https://material.io/guidelines/) is a visual design language
+  that is standard on mobile and the web. Flutter offers a rich set
+  of Material widgets.
+- The main method specifies fat arrow (`=>`) notation,
+  which is short hand used for one-line functions or methods.
+- The app extends StatelessWidget which makes the app itself a
+  widget. In Flutter, almost everything is a widget, including
+  alignment, padding, and layout.
+- The Scaffold widget, from the Material library,
+  provides a default app bar, title, and a body property that
+  holds the widget tree for the home screen. The widget subtree
+  can be quite complex.
+- A widget’s main job is to provide a `build()` method
+  that describes how to display the widget in terms of other,
+  lower level widgets.
+- The widget tree for this example consists of a Center widget
+  containing a Text child widget. The Center widget aligns its
+  widget subtree to the center of the screen.
+
 {% comment %}
   Removing this for now. A) It might be confusing and B) the code as shown here is wrong.
   <li markdown="1"> Moving the “hello world” text into a separate widget,

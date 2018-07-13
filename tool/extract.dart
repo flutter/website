@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:path/path.dart' as p;
 
@@ -43,7 +44,8 @@ int _processFile(File file) {
       while (index < lines.length && !lines[index].trim().startsWith('```')) {
         index++;
       }
-      _extractSnippet(name, ++count, startIndex, lines.sublist(startIndex, index),
+      final snippet = maxUnindent(lines.sublist(startIndex, index));
+      _extractSnippet(name, ++count, startIndex, snippet,
           includeSource: lastComment);
     } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
@@ -69,7 +71,7 @@ int _processFile(File file) {
   return count;
 }
 
-void _extractSnippet(String filename, int snippet, int startLine, List<String> lines,
+void _extractSnippet(String filename, int snippet, int startLine, Iterable<String> lines,
     {String includeSource}) {
   bool hasImport = lines.any((String line) => line.trim().startsWith('import '));
   String path = 'example/${filename.replaceAll('-', '_').replaceAll('.', '_')}_'
@@ -108,8 +110,29 @@ void clean() {
   if (!exampleDir.existsSync()) {
     exampleDir.createSync();
   }
-  Iterable<File> files = exampleDir
+  final files = exampleDir
       .listSync()
-      .where((FileSystemEntity entity) => entity is File && entity.path.endsWith('.dart'));
-  files.forEach((File file) => file.deleteSync());
+      .where((entity) => entity is File && entity.path.endsWith('.dart'));
+  files.forEach((file) => file.deleteSync());
+}
+
+final blankLine = new RegExp(r'^\s*$');
+final _leadingWhitespace = new RegExp(r'^[ \t]*');
+
+/// Unindent [lines] to the extent possible without losing
+/// the relative inter-line indentation. Note that blank
+/// lines are ignored in the process computing the maximal
+/// left-shift.
+Iterable<String> maxUnindent(Iterable<String> lines) {
+  final nonblankLines = lines.where((s) => !blankLine.hasMatch(s));
+  // Length of leading spaces to be trimmed
+  final lengths = nonblankLines.map((s) {
+    final match = _leadingWhitespace.firstMatch(s);
+    return match == null ? 0 : match[0].length;
+  });
+  if (lengths.isEmpty) return lines;
+  final len = lengths.reduce(min);
+  return len == 0
+      ? lines
+      : lines.map((line) => line.length < len ? line : line.substring(len));
 }
