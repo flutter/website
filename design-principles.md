@@ -411,6 +411,6 @@ Specifically:
 
 Should you experience anything that makes you feel unwelcome in Flutter's
 community, please contact someone on the team, for instance
-[Ian](mailto:ian@hixie.ch) or [Adam](mailto:abarth@google.com). We will
+[Ian](mailto:ian@hixie.ch) or [Tim](mailto:timsneath@google.com). We will
 not tolerate harrasment from anyone in Flutter's community, even outside
 of Flutter's public communication channels.
