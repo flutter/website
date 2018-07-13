@@ -19,7 +19,8 @@ of your changes.
 To hot reload a Flutter app:
 
 1.  Run the app from a supported [Flutter editor](/get-started/editor/)
-or a terminal window. Either a physical or virtual device can be the target.
+or a terminal window. Either a physical or virtual device can be the target. Only
+Flutter apps in debug mode can be hot reloaded.
 1.  Modify one of the Dart files in your project. Most types of code changes can
 be hot reloaded; for a list of changes that require a hot restart, see
 [Limitations](#limitations).
@@ -44,7 +45,11 @@ app continues to execute from where it was prior to running the hot reload
 command. The code is updated and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
-after the change. The next sections describe common situations where the
+after the change. Specifically, a hot reload causes all the existing widgets to
+rebuild. Only code involved in the rebuilding of the widgets are automatically
+re-executed.
+
+The next sections describe common situations where the
 modified code will _not_ run again after hot reload. In some cases,
 small changes to the Dart code will enable you to continue using hot reload
 for your app.
@@ -281,3 +286,22 @@ to:
 
 In these situations, hot reload generates a diagnostic message and fails without
 committing any changes.
+
+## How it works
+
+When hot reload is invoked, the host machine looks at the edited code since the
+last compilation. The following libraries are recompiled:
+
+ * Any libraries with changed code.
+ * The application's main library.
+ * The libraries from the main library leading to affected libraries.
+
+In Dart 2, those libraries' Dart source code are turned into
+[kernel files](https://github.com/dart-lang/sdk/tree/master/pkg/kernel) and
+sent to the mobile device's Dart VM.
+
+The Dart VM re-loads all libraries from the new kernel file. So far no code is
+re-executed.
+
+The hot reload mechanism then causes the Flutter framework to trigger a
+rebuild/re-layout/repaint of all existing widgets and render objects.
