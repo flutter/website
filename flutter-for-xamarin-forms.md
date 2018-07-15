@@ -8,11 +8,10 @@ existing knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the Xamarin.Forms framework then you can use this document as a
 jump start to Flutter development.
 
-Your Android (and iOS) knowledge and skill set are highly valuable when building with
-Flutter, because Flutter relies on the mobile operating system for numerous
-capabilities and configurations. Flutter is a new way to build UIs for mobile,
-and is similar to how you create a single UI in Xamarin.Forms, that is used on multiple
-platforms. 
+Your Android and iOS knowledge and skill set are valuable when building with
+Flutter, because Flutter relies on the native operating system configurations, similar to
+how you would configure your native Xamarin.Forms projects. The Flutter Frameworks is 
+is also similar to how you create a single UI, that is used on multiple platforms. 
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
@@ -32,7 +31,7 @@ creates a new Application and starts your app.
 LoadApplication(new App());
 {% endprettify %}
 
-In Flutter, the default main entry point is `main` where you will load your
+In Flutter, the default main entry point is `main` where you load your
 Flutter app.
 
 {% prettify dart %}
@@ -41,7 +40,7 @@ void main() {
 }
 {% endprettify %}
 
-In Xamarin.Forms, you have an `Application` where you assign the `MainPage`.
+In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the `Application` class.
 
 <!-- skip -->
 {% prettify csharp %}
@@ -62,7 +61,8 @@ public class App: Application
 }
 {% endprettify %}
 
-In Flutter your `MyApp` is a `Widget`, and here is an example of a simple `Widget`.
+In Flutter, "everything is a widget", even the application itself. The following example shows 
+`MyApp`, a simple application `Widget`.
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -77,9 +77,15 @@ class MyApp extends StatelessWidget {
 
 ## How do you create a Page?
 
-Xamarin.Forms has many different types of pages, the most common, a `ContentPage`.
+Xamarin.Forms has many different types of pages; `ContentPage` is the most common.
 
-In Flutter you commonly use a widget such as `MaterialApp` to start as your root page.
+In Flutter, you specify an application widget that holds your root page. You can use 
+a [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget, which 
+supports [Material Design](https://material.io/design/), or you can use the lower level 
+[WidetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way 
+you want.
+
+The following example uses MaterialApp, which holds its root page in the `home` property.
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
