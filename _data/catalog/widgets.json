@@ -607,6 +607,16 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "SegmentedControl",
+    "description": "Used to select between two or more mutually exclusive options.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/SegmentedControl-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/segmented-control.png'>"
+  },
+  {
     "name": "Padding",
     "description": "A widget that insets its child by the given padding.",
     "categories": [
