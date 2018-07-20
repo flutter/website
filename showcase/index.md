@@ -12,6 +12,8 @@ If you want to be featured, [let us know][]!
 
 [let us know]: https://docs.google.com/forms/d/e/1FAIpQLScP5iDNGrlVXdGxmRDzjCnqXS0KUDld-3cR-njAL0kDO2ULFg/viewform
 
+You can see a full list of apps on [itsallwidgets.com](https://itsallwidgets.com/flutter-apps).
+
 <div class="showcase-grid__row row">
 
 {% for case in site.data.showcases %}
