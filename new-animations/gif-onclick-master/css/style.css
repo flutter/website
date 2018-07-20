@@ -1,0 +1,149 @@
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+body {
+  margin: 0;
+  background-color: #e6e9ed;
+  font-family: "Lato", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #fff;
+  vertical-align: top;
+  -webkit-transition: opacity 350ms;
+          transition: opacity 350ms;
+}
+header {
+  background-color: #254d86;
+}
+header h1,
+header a {
+  padding: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+header h1 {
+  float: left;
+  margin: 0;
+}
+header a {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  float: right;
+  background-color: #1a365e;
+}
+header a:hover {
+  background-color: #1f4272;
+}
+figure {
+  width: 33.33333333%;
+  margin: 0;
+  float: left;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+figure:before,
+figure:after {
+  position: absolute;
+}
+figure:before {
+  top: 103.5px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  background-color: rgba(204, 209, 217, 0.3);
+  font-family: 'Ionicons';
+  content: '\f215';
+  text-align: center;
+  line-height: 45px;
+  font-size: 19px;
+  color: #F5F7FA;
+}
+figure:after {
+  content: 'gif';
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 3px;
+  color: #656D78;
+  background-color: rgba(170, 178, 189, 0.1);
+  text-transform: uppercase;
+}
+figure.play:before {
+  display: none;
+}
+figure.play:after {
+  color: #fff;
+  background-color: #8CC152;
+}
+figcaption {
+  padding-top: 15px;
+  font-size: 14px;
+  color: #8d9bad;
+}
+figcaption a {
+  color: #59687b;
+  text-decoration: none;
+}
+.demo-content {
+  width: 960px;
+  height: 300px;
+  margin-top: 90px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-transition: opacity 350ms;
+          transition: opacity 350ms;
+}
+.pace {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.pace-inactive {
+  display: none;
+}
+.pace .pace-progress {
+  background: #29d;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+.pace-running .demo-content {
+  opacity: 0.5;
+}
+/*# sourceMappingURL=style.css.map */
