@@ -4,9 +4,6 @@ title: Flutter Documentation
 permalink: /docs/
 ---
 
-{% include note.html content="Please take this [5-min survey](
-https://google.qualtrics.com/jfe/form/SV_03bYD0Eo8nIYvGd?Source=Website) to help improve Flutter!" 
-%}
 <ul class="cards">
 {% for card in site.data.docs_cards %}
 	<li class="cards__item">
