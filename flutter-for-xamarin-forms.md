@@ -690,7 +690,7 @@ moves to that route. Popping a route from the stack, returns to the previous rou
 is done by `await`ing on the `Future` returned by `push()`.
 
 `Async`/`await` is very similar to the .NET implementation and is explained in more detail
-in [Async UI](/flutter-for-xamarin-forms.html/#async-ui).
+in [Async UI](/flutter-for-xamarin-forms/#async-ui).
 
 For example, to start a `location` route that lets the user select their
 location, you might do the following:
