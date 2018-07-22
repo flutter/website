@@ -279,8 +279,8 @@ In iOS, you create an animation by calling the
 `animate(withDuration:animations:)` method on a view. In Flutter,
 use the animation library to wrap widgets inside an animated widget.
 
-In Flutter, use an `AnimationController` which is an `Animation<double>`
-that can pause, seek, stop and reverse the animation. It requires a `Ticker`
+In Flutter, use an `AnimationController`, which is an `Animation<double>`
+that can pause, seek, stop, and reverse the animation. It requires a `Ticker`
 that signals when vsync happens and produces a linear interpolation between
 0 and 1 on each frame while it's running. You then create one or more
 `Animation`s and attach them to the controller.
@@ -544,6 +544,21 @@ depends on the app. To implement this functionality in Flutter,
 create a native platform integration, or use an existing
 [plugin](#plugins), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+
+## How do I pop back to the iOS native viewcontroller?
+
+Calling `SystemNavigator.pop()` from your Dart code invokes the
+following iOS code:
+
+```
+UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+  if ([viewController isKindOfClass:[UINavigationController class]]) {
+    [((UINavigationController*)viewController) popViewControllerAnimated:NO];
+  }
+```
+
+If that doesn't do what you want, you can create your own
+[platform channel](/platform-channels/) to invoke arbitrary iOS code.
 
 # Threading & asynchronicity
 
