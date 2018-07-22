@@ -85,6 +85,10 @@ supports [Material Design](https://material.io/design/), or you can use the lowe
 [WidetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way 
 you want.
 
+The following code defines the home page, a stateful widget. In Flutter, all widgets are immutable, 
+but two types of widgets are supported: stateful and stateless. Examples of a stateless widget are titles, 
+icons, or images.
+
 The following example uses MaterialApp, which holds its root page in the `home` property.
 
 {% prettify dart %}
@@ -97,13 +101,16 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(      
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      [[highlight]]home: new MyHomePage(title: 'Flutter Demo Home Page'),[[/highlight]]
     );
   }
 }
 {% endprettify %}
 
 From here, your actual first page is another `Widget`, in which you create your state.
+
+A stateful widget, such as MyHomePage below, consists of two parts. The first part, which is itself immutable, 
+creates a State object, which holds the state of the object. The State object persists over the life of the widget.
 
 {% prettify dart %}
 class MyHomePage extends StatefulWidget {
@@ -116,10 +123,11 @@ class MyHomePage extends StatefulWidget {
 }
 {% endprettify %}
 
-The `State` object takes a generic type of your page and has a `build` override
-method of its own.
+The `state` object implements the `build` method for the stateful widget.
 
-Whenever you want to update the state of your page, you call the `setState()` method.
+When the state of the widget tree changes, call `setState()`, which triggers a build of that portion of the UI.
+Make sure to call `setState()` only when necessary, and only on the part of the widget tree that has changed, or 
+it can result in poor UI performance.
 
 {% prettify dart %}
 class _MyHomePageState extends State<MyHomePage> {
@@ -165,11 +173,11 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-A `View` in Flutter is immutable, meaning you can not change its state once it is
-built. When you call `setState`, you change fields in your `State` class, then
-rebuild the entire `View` (also called a `Widget Tree`) again.
+The UI, also known as widget tree, in Flutter is immutable, meaning you can not change its 
+state once it is built. You change fields in your `State` class, then call `setState` to 
+rebuild the entire widget tree again.
 
-This way of generating `View`s is different than Xamarin.Forms, but there are many benefits 
+This way of generating UI is different than Xamarin.Forms, but there are many benefits 
 to this approach.
 
 # Views
@@ -180,11 +188,11 @@ A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you cou
 use in a Xamarin.Forms application. These pages would then hold `Element`s to display
 the various controls. In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`. 
 
-In Flutter, there is no difference between a `Page` or `Element`, everything is a `Widget`. 
-The root of a page in Flutter is a `Widget`. A `Widget` can contain more `Widget`s to build 
-out your page.
+In Flutter, almost everything is a widget. A `Page`, called a `Route` in Flutter, is a widget. 
+Buttons, progress bars, animation controllers are all widgets. When building a route, you create 
+a widget tree.
 
-Flutter includes the [Material Components](https://material.io/develop/flutter/)
+Flutter includes the [Material Components](https://flutter.io/widgets/material/)
 library. These are widgets that implement the
 [Material Design guidelines](https://material.io/design/). Material Design is a
 flexible design system [optimized for all
@@ -677,11 +685,14 @@ Navigate to a route by `push`ing its name to the `Navigator`.
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
 
-The `Navigator` class handles routing in Flutter and is used to get
-a result back from a route that you have pushed on the stack. This is done
-by `await`ing on the `Future` returned by `push()`.
+The Navigator is a stack that manages your app's routes. Pushing a route to the stack 
+moves to that route. Popping a route from the stack, returns to the previous route. This 
+is done by `await`ing on the `Future` returned by `push()`.
 
-For example, to start a ‘location’ route that lets the user select their
+`Async`/`await` is very similar to the .NET implementation and is explained in more detail
+in [Async UI](/flutter-for-xamarin-forms.html/#async-ui).
+
+For example, to start a `location` route that lets the user select their
 location, you might do the following:
 
 <!-- skip -->
@@ -704,7 +715,8 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter, create a native platform integration, 
 or use an existing [plugin](#plugins), such as
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+[`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with 
+many other packages on [pub.dartlang](https://pub.dartlang.org/flutter).
 
 # Async UI
 
@@ -1043,7 +1055,7 @@ dependencies:
   http: ^0.11.3+16
 {% endprettify %}
 
-To make a network call, call `await` on the `async` function `http.get()`:
+To make a network request, call `await` on the `async` function `http.get()`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1329,9 +1341,9 @@ which has sample code with and without the `intl` package.
 
 ## Where is my project file?
 
-In Xamarin.Forms you will have a `csproj` file. Flutter doesn't have a project file.
-Most similar to this, is pubspec.yaml, which contains package dependencies and 
-various project details.
+In Xamarin.Forms you will have a `csproj` file. The closest equivalent in Flutter is pubspec.yaml, 
+which contains package dependencies and various project details. Similar to .NET Standard, 
+files within the same directory are considered part of the project.
 
 ## What is the equivalent of Nuget? How do I add dependencies?
 
@@ -1347,7 +1359,7 @@ The tools delegate the building of the native Android and iOS wrapper apps to th
 respective build systems.
 
 In general, use `pubspec.yaml` to declare external dependencies to use in Flutter. A good 
-place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter/packages/).
+place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter).
 
 # Application Lifecycle
 
@@ -1360,13 +1372,12 @@ the `WidgetsBinding` observer and listening to the `didChangeAppLifecycleState()
 The observable lifecycle events are:
 
 * `inactive` — The application is in an inactive state and is not receiving
-user input. This event only works on iOS, as there is no equivalent event on
-Android.
+user input. This event is iOS only.
 * `paused` — The application is not currently visible to
 the user, is not responding to user input, but is running in the background.
 * `resumed` — The application is visible and responding to user input.
-* `suspending` — The application is suspended momentarily. The iOS platform
-has no equivalent event.
+* `suspending` — The application is suspended momentarily. This event is Android
+only.
 
 For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
@@ -1419,7 +1430,8 @@ children.
 ## What is the equivalent of a Grid?
 
 The closest equivalent of a `Grid` would be to use a `GridView`. This is much more powerful
-than what you are used to in Xamarin.Forms. A `GridView` contains a scrolling as well.
+than what you are used to in Xamarin.Forms. A `GridView` provides automatic scrolling when the 
+content exceeds the its viewable space.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1439,10 +1451,10 @@ than what you are used to in Xamarin.Forms. A `GridView` contains a scrolling as
   );
 {% endprettify %}
 
-Alternatively you might have used `Grid`s in Xamarin.Forms to overlay elements. In this case,
-you would use a `Stack` to overlay elements on top of each other.
+You may have used a `Grid` in Xamarin.Forms to implement widgets that overlay other widgets. 
+In Flutter, you accomplish this with the `Stack` widget.
 
-This sample will create two icons that overlap each other.
+This sample creates two icons that overlap each other.
 
 <!-- skip -->
 {% prettify dart %}
@@ -1459,8 +1471,8 @@ This sample will create two icons that overlap each other.
 
 ## What is the equivalent of a ScrollView?
 
-In Xamarin.Forms you use a ScrollView wrap around a `VisualElement` and if the content is
-larger than the device screen, it scrolls.
+In Xamarin.Forms, a `ScrollView` wraps around a `VisualElement` and, if the content is larger than
+the device screen, it scrolls.
 
 In Flutter, the closest match is the `SingleChildScrollView` widget. You simply fill the 
 Widget with the content that you want to be scrollable.
@@ -1496,7 +1508,8 @@ and less intensive than a Xamarin.Forms `ListView` which is backing on to platfo
 
 ## How do I handle landscape transitions in Flutter?
 
-FlutterView handles the config change if AndroidManifest.xml contains:
+Landscape transitions can be handled automatically by setting the `configChanges` 
+property in the AndroidManifest.xml:
 
 {% prettify yaml %}
 android:configChanges="orientation|screenSize"
@@ -1941,6 +1954,10 @@ that position.
 
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
+
+For more information, please visit 
+[Write your first Flutter app, part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0) 
+and [Write your first Flutter app, part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
 
 # Working with text
 
