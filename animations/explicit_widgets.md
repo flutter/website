@@ -85,7 +85,7 @@ add the code for the explicit widget
 
 ## Explicit animations widgets
 
-The Flutter SDK includes the following explicit animation widgets.
+The Flutter SDK includes the following explicit animation widgets. This is a sample of the many explicit widgets that are included in the Flutter SDK.
 
 <div>
 <table class="table" width="100%">
@@ -93,22 +93,74 @@ The Flutter SDK includes the following explicit animation widgets.
   <col width="70%">
 	<thead>
 		<tr>
-			<th>Implicit widget</th>
+			<th>Explicit widget</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
     <tr>
-			<td><a href="url">explicitanimation</a> </td>
-			<td>This widget < description > <br>
-			Flutter SDK libary: <a href="https://docs.flutter.io/flutter/widgets/widgets-library.html">widgets</a>
+			<td><a href="https://docs.flutter.io/flutter/material/BottomSheet-class.html">BottomSheet</a> </td>
+			<td>This widget is a material design bottom sheet. There are two kinds of bottom sheets in material design:  <br>      
+      <b>Persistent</b>—A persistent bottom sheet shows information that supplements the primary content of the app. A persistent bottom sheet remains visible even when the user interacts with other parts of the app.  <br>
+      <b>Modal</b>—A modal bottom sheet is an alternative to a menu or a dialog and prevents the user from interacting with the rest of the app.  <br>
+<!-- <span style="padding-left: 20px; display:block">
+</span> -->  
+			Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
       </td>
 		</tr>
     <tr>
-			<td><a href="url">explicitanimation</a> </td>
-			<td>This widget < description > <br>
-			Flutter SDK libary: <a href="https://docs.flutter.io/flutter/widgets/widgets-library.html">widgets</a>
+			<td><a href="https://docs.flutter.io/flutter/material/ExpansionTile-class.html">ExpansionTile</a> </td>
+			<td>This widget is a single-line <a href="https://docs.flutter.io/flutter/material/ListTile-class.html">ListTile</a> with a trailing button that expands or collapses the tile to reveal or hide the children.<br>
+			Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
       </td>
 		</tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/PopupMenuButton-class.html">PopupMenuButton</a> </td>
+      <td>This widget displays a menu when pressed and calls <code>onSelected</code> when the menu is dismissed because an item was selected. The value passed to <code>onSelected</code> is the value of the selected menu item. <br>
+      	Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/ProgressIndicator-class.html">ProgressIndicator</a> </td>
+      <td>This widget is a base class for Material Design progress indicators.<br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/RefreshIndicator-class.html">RefreshIndicator</a> </td>
+      <td>This widget supports the Material <em>swipe to refresh</em> idiom.<br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/Scaffold-class.html">Scaffold</a> </td>
+      <td>This widget implements the basic Material Design visual layout structure and provides APIs for showing drawers, snack bars, and bottom sheets.<br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/SnackBar-class.html">SnackBar</a> </td>
+      <td>This widget is a lightweight message with an optional action which briefly displays at the bottom of the screen. To display a snack bar, call <code>Scaffold.of(context).showSnackBar()</code>, passing an instance of <code>SnackBar</code> that describes the message.<br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/TabBar-class.html">TabBar</a> </td>
+      <td>This widget is a Material Design widget that displays a horizontal row of tabs.<br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/TextField-class.html">TextField</a> </td>
+      <td>This widget is a Material Design text field that lets a user enter text, either with the hardware keyboard or with an onscreen keyboard. <br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.flutter.io/flutter/material/ExpansionTile-class.html">ExpansionTile</a> </td>
+      <td>This widget is a single-line <a href="https://docs.flutter.io/flutter/material/ListTile-class.html">ListTile</a> with with a trailing button that expands or collapses the tile to reveal or hide the children. <br>
+      Flutter SDK libary: <a href="https://docs.flutter.io/flutter/material/material-library.html">material</a>
+      </td>
+    </tr>
 	</tbody>
 </table>

@@ -149,7 +149,7 @@ The Flutter SDK includes the following transition animation widgets. These are i
   <col width="70%">
 	<thead>
 		<tr>
-			<th>Implicit widget</th>
+			<th>Transition widget</th>
 			<th>Description</th>
 		</tr>
 	</thead>
