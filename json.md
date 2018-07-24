@@ -80,8 +80,7 @@ The simple answer is no.
 Such a library would require using runtime reflection, which is disabled in
 Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
 supported for quite a long time. With tree shaking, you can “shake off” unused
-code from your release builds. This allows optimizing the app's size
-significantly.
+code from your release builds. This optimizes the app's size significantly.
 
 Since reflection makes all code implicitly used by default, it makes tree
 shaking difficult. The tools cannot know what parts are unused at runtime, so
@@ -147,14 +146,14 @@ JSON lives in a map structure.
 ### Serializing JSON inside model classes
 
 You can combat the previously mentioned problems by introducing a plain model
-class, which is called `User`. Inside the `User` class, you'll find:
+class called `User` in this example. Inside the `User` class, you'll find:
 
 * A `User.fromJson` constructor, for constructing a new `User` instance from a
-  map structure
+  map structure.
 * A `toJson` method, which converts a `User` instance into a map.
 
-This way, the _calling code_ can have type safety, autocompletion for the
-`name` and `email` fields, and compile-time exceptions.
+With this approach, the _calling code_ can have type safety,
+autocompletion for the `name` and `email` fields, and compile-time exceptions.
 If you make typos or treat the fields as `int`s instead of `String`s,
 the app won't compile, instead of crashing at runtime.
 
@@ -180,7 +179,7 @@ class User {
 }
 ```
 
-Now the responsibility of the deserialization logic is moved inside the model
+The responsibility of the deserialization logic is now moved inside the model
 itself. With this new approach, you can deserialize a user easily.
 
 <!-- skip -->
@@ -193,7 +192,7 @@ print('We sent the verification link to ${user.email}.');
 ```
 
 To serialize a user, pass the `User` object to the `json.encode` method.
-You don't need to call the `toJson` method here, since `json.encode`
+You don't need to call the `toJson` method, since `json.encode`
 already does it for us.
 
 <!-- skip -->
@@ -201,13 +200,13 @@ already does it for us.
 String json = json.encode(user);
 ```
 
-This way, the calling code doesn't have to worry about JSON serialization at
-all. However, the model class still definitely has to. In a production app, you
-would want to ensure that the serialization works properly. In practice, the
-`User.fromJson` and `User.toJson` methods both need to have unit tests in place
-to verify correct behavior.
+With this approach, the calling code doesn't have to worry about JSON
+serialization at all. However, the model class still definitely has to.
+In a production app, you would want to ensure that the serialization works
+properly. In practice, the `User.fromJson` and `User.toJson` methods
+both need to have unit tests in place to verify correct behavior.
 
-Also, real-world scenarios are not usually that simple. It is unlikely that you
+Also, real-world scenarios are not usually that simple. It's unlikely that you
 can get by with such small JSON responses. Nested JSON objects are not that
 uncommon either.
 
@@ -222,14 +221,16 @@ Although there are other libraries available, this guide uses the
 It's an automated source code generator that generates the JSON serialization
 boilerplate for us.
 
-Since the serialization code is not handwritten and maintained by you anymore,
-you minimize the risk of having JSON serialization exceptions at runtime.
+Since the serialization code is not handwritten or maintained manually
+anymore, you minimize the risk of having JSON serialization exceptions at
+runtime.
 
 ### Setting up json_serializable in a project
 
-To include `json_serializable` in your project, you need one regular and two
-_dev dependencies_. In short, _dev dependencies_ are dependencies that are not
-included in our app source code.
+To include `json_serializable` in your project, you need one regular
+dependency, and two _dev dependencies_. In short, _dev dependencies_
+are dependencies that are not included in our app source code&mdash;they
+are only used in the development environment.
 
 The latest versions of these required dependencies can be seen by following
 [the pubspec file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
@@ -289,7 +290,7 @@ class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin 
 {% endprettify %}
 
 With this setup, the source code generator generates code for serializing
-the `name` and `email` fields from JSON and back.
+and deserializing the `name` and `email` fields from JSON.
 
 If needed, it is also easy to customize the naming strategy. For example, if the
 API returns objects with _snake\_case_, and you want to use
@@ -307,7 +308,7 @@ final int registrationDateMillis;
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time, you'll get errors
-similar to the image below.
+similar to what is shown in the image below.
 
 ![IDE warning when the generated code for a model class does not exist
 yet.](/images/json/ide_warning.png)
@@ -320,8 +321,8 @@ There are two ways of running the code generator.
 
 #### One-time code generation
 
-By running `flutter packages pub run build_runner build` in our project root,
-you generate json serialization code for your models whenever needed. This
+By running `flutter packages pub run build_runner build` in the project root,
+you generate JSON serialization code for your model whenever its needed. This
 triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
 
@@ -330,10 +331,10 @@ build manually every time you make changes in your model classes.
 
 #### Generating code continuously
 
-A _watcher_ can make our source code generation process more convenient. It
+A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
-files when needed. We can start the watcher by running `flutter packages pub run
-build_runner watch` in our project root.
+files when needed. We can start the watcher by running
+`flutter packages pub run build_runner watch` in the project root.
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -362,6 +363,8 @@ now _the library's responsibility_ to make sure the serialization works
 appropriately.
 
 ## Further references
+
+For more information, see the following resources:
 
 * [JsonCodec documentation](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html)
 * [The json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
