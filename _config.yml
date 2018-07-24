@@ -4,6 +4,7 @@ email: flutter-dev@googlegroups.com
 email_name: flutter-dev@
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: https://flutter.io
+port: 4002
 github_username: flutter
 
 # Build settings
