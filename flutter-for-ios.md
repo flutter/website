@@ -4,10 +4,10 @@ title: Flutter for iOS Developers
 permalink: /flutter-for-ios/
 ---
 
-This document is for iOS developers looking to apply their existing iOS knowledge
-to build mobile apps with Flutter. If you understand the fundamentals of the iOS
-framework then you can use this document as a way to get started learning Flutter
-development.
+This document is for iOS developers looking to apply their existing iOS
+knowledge to build mobile apps with Flutter. If you understand the
+fundamentals of the iOS framework then you can use this document as a
+way to get started learning Flutter development.
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
