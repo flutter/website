@@ -16,25 +16,25 @@ arranging components of an application's UI. It maps HTML/CSS code snippets to
 their Flutter/Dart code equivalents.
 
 The examples assume:
-* The HTML document starts with a modern HTML DOCTYPE, and the CSS box model
-for all HTML elements is set to
-[`border-box`](https://css-tricks.com/box-sizing/),
-for consistency with the Flutter model.
-   {% prettify css %}<!DOCTYPE html>
 
-   {
-     box-sizing: border-box;
-   }
-{% endprettify %}
+* The HTML document starts with `<!DOCTYPE html>`, and the CSS box model
+  for all HTML elements is set to
+  [`border-box`](https://css-tricks.com/box-sizing/),
+  for consistency with the Flutter model.
+  ```css
+  {
+    box-sizing: border-box;
+  }
+  ```
 * In Flutter, the default styling of the "Lorem ipsum" text is defined by the
-`bold24Roboto` variable as follows, to keep the syntax simple:
-  {% prettify dart %}
+  `bold24Roboto` variable as follows, to keep the syntax simple:
+  ```dart
   TextStyle bold24Roboto = TextStyle(
-      color: Colors.white,
-      fontSize: 24.0,
-      fontWeight: FontWeight.w900,
+    color: Colors.white,
+    fontSize: 24.0,
+    fontWeight: FontWeight.w900,
   );
-{% endprettify %}
+  ```
 
 ## Performing basic layout operations
 

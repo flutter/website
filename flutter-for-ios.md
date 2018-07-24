@@ -1550,52 +1550,46 @@ see the [layout tutorial](/widgets/layout/).
 In iOS, you attach a `GestureRecognizer` to a view to handle
 click events. In Flutter, there are two ways of adding touch listeners:
 
-<ol markdown="1">
-<li markdown="1">
-If the widget supports event detection, pass a function to it,
- and handle the event in the function. For example, the
-`RaisedButton` widget has an `onPressed` parameter:
+ 1. If the widget supports event detection, pass a function to it,
+    and handle the event in the function. For example, the
+    `RaisedButton` widget has an `onPressed` parameter:
 
-   <!-- skip -->
-   {% prettify dart %}
-   @override
-   Widget build(BuildContext context) {
-     return RaisedButton(
-       onPressed: () {
-         print("click");
-       },
-       child: Text("Button"),
-     );
-   }
-   {% endprettify %}
-</li>
+    <!-- skip -->
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+      return RaisedButton(
+        onPressed: () {
+          print("click");
+        },
+        child: Text("Button"),
+      );
+    }
+    ```
 
-<li markdown="1">
-If the Widget doesn't support event detection, wrap the
-widget in a GestureDetector and pass a function to the `onTap` parameter.
+ 2. If the Widget doesn't support event detection, wrap the
+    widget in a GestureDetector and pass a function to the `onTap` parameter.
 
-   <!-- skip -->
-   {% prettify dart %}
-   class SampleApp extends StatelessWidget {
-     @override
-     Widget build(BuildContext context) {
-       return Scaffold(
-         body: Center(
-           child: GestureDetector(
-             child: FlutterLogo(
-               size: 200.0,
-             ),
-             onTap: () {
-               print("tap");
-             },
-           ),
-         ),
-       );
-     }
-   }
-   {% endprettify %}
-</li>
-</ol>
+    <!-- skip -->
+    ```dart
+    class SampleApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: GestureDetector(
+              child: FlutterLogo(
+                size: 200.0,
+              ),
+              onTap: () {
+                print("tap");
+              },
+            ),
+          ),
+        );
+      }
+    }
+    ```
 
 ## How do I handle other gestures on widgets?
 

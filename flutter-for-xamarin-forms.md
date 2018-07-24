@@ -10,8 +10,8 @@ jump start to Flutter development.
 
 Your Android and iOS knowledge and skill set are valuable when building with
 Flutter, because Flutter relies on the native operating system configurations, similar to
-how you would configure your native Xamarin.Forms projects. The Flutter Frameworks is 
-is also similar to how you create a single UI, that is used on multiple platforms. 
+how you would configure your native Xamarin.Forms projects. The Flutter Frameworks is
+is also similar to how you create a single UI, that is used on multiple platforms.
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
@@ -48,20 +48,20 @@ public class App: Application
 {
     public App()
     {
-      MainPage = new ContentPage() 
-                 { 
-                   new Label() 
-                   { 
+      MainPage = new ContentPage()
+                 {
+                   new Label()
+                   {
                      Text="Hello World",
                      HorizontalOptions = LayoutOptions.Center,
-                     VerticalOptions = LayoutOptions.Center 
-                   } 
+                     VerticalOptions = LayoutOptions.Center
+                   }
                  };
-    }  
+    }
 }
 {% endprettify %}
 
-In Flutter, "everything is a widget", even the application itself. The following example shows 
+In Flutter, "everything is a widget", even the application itself. The following example shows
 `MyApp`, a simple application `Widget`.
 
 {% prettify dart %}
@@ -79,14 +79,14 @@ class MyApp extends StatelessWidget {
 
 Xamarin.Forms has many different types of pages; `ContentPage` is the most common.
 
-In Flutter, you specify an application widget that holds your root page. You can use 
-a [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget, which 
-supports [Material Design](https://material.io/design/), or you can use the lower level 
-[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way 
+In Flutter, you specify an application widget that holds your root page. You can use
+a [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget, which
+supports [Material Design](https://material.io/design/), or you can use the lower level
+[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way
 you want.
 
-The following code defines the home page, a stateful widget. In Flutter, all widgets are immutable, 
-but two types of widgets are supported: stateful and stateless. Examples of a stateless widget are titles, 
+The following code defines the home page, a stateful widget. In Flutter, all widgets are immutable,
+but two types of widgets are supported: stateful and stateless. Examples of a stateless widget are titles,
 icons, or images.
 
 The following example uses MaterialApp, which holds its root page in the `home` property.
@@ -98,7 +98,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(      
+      theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
       [[highlight]]home: new MyHomePage(title: 'Flutter Demo Home Page'),[[/highlight]]
@@ -109,7 +109,7 @@ class MyApp extends StatelessWidget {
 
 From here, your actual first page is another `Widget`, in which you create your state.
 
-A stateful widget, such as MyHomePage below, consists of two parts. The first part, which is itself immutable, 
+A stateful widget, such as MyHomePage below, consists of two parts. The first part, which is itself immutable,
 creates a State object, which holds the state of the object. The State object persists over the life of the widget.
 
 {% prettify dart %}
@@ -126,7 +126,7 @@ class MyHomePage extends StatefulWidget {
 The `state` object implements the `build` method for the stateful widget.
 
 When the state of the widget tree changes, call `setState()`, which triggers a build of that portion of the UI.
-Make sure to call `setState()` only when necessary, and only on the part of the widget tree that has changed, or 
+Make sure to call `setState()` only when necessary, and only on the part of the widget tree that has changed, or
 it can result in poor UI performance.
 
 {% prettify dart %}
@@ -173,23 +173,23 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-The UI, also known as widget tree, in Flutter is immutable, meaning you can not change its 
-state once it is built. You change fields in your `State` class, then call `setState` to 
+The UI, also known as widget tree, in Flutter is immutable, meaning you can not change its
+state once it is built. You change fields in your `State` class, then call `setState` to
 rebuild the entire widget tree again.
 
-This way of generating UI is different than Xamarin.Forms, but there are many benefits 
+This way of generating UI is different than Xamarin.Forms, but there are many benefits
 to this approach.
 
 # Views
 
 ## What is the equivalent of a `Page` or `Element` in Flutter?
 
-A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you could 
+A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you could
 use in a Xamarin.Forms application. These pages would then hold `Element`s to display
-the various controls. In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`. 
+the various controls. In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`.
 
-In Flutter, almost everything is a widget. A `Page`, called a `Route` in Flutter, is a widget. 
-Buttons, progress bars, animation controllers are all widgets. When building a route, you create 
+In Flutter, almost everything is a widget. A `Page`, called a `Route` in Flutter, is a widget.
+Buttons, progress bars, animation controllers are all widgets. When building a route, you create
 a widget tree.
 
 Flutter includes the [Material Components](https://flutter.io/widgets/material/)
@@ -208,7 +208,7 @@ to produce an interface that looks like
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has properties and
 methods. You update your `Element` by updating a property, and this is propagated down
-to the native control. 
+to the native control.
 
 In Flutter, `Widget`s are immutable and you can not directly update them by changing a
 property, instead you have to work with the widget's state.
@@ -353,7 +353,7 @@ catalog](/widgets/layout/).
 
 In Xamarin.Forms, if you had to remove or add an `Element`, you had to do so in
 code. This would involve either setting the `Content` property or calling
-`Add()` or `Remove()` if it was a list. 
+`Add()` or `Remove()` if it was a list.
 
 In Flutter, because widgets are immutable there is no direct equivalent.
 Instead, you can pass a function to the parent that returns a widget, and
@@ -428,7 +428,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 In Xamarin.Forms, you create simple animations using ViewExtensions that include
 methods such as `FadeTo` and `TranslateTo`. You would use these methods on a view
-to perform the required animations. 
+to perform the required animations.
 
 <!-- skip -->
 {% prettify xml %}
@@ -442,7 +442,7 @@ Then in code behind, or a behavior, this would fade in the image, over a 1 secon
 myImage.FadeTo(0, 1000);
 {% endprettify %}
 
-In Flutter, you animate widgets using the animation library by wrapping widgets 
+In Flutter, you animate widgets using the animation library by wrapping widgets
 inside an animated widget. Use an `AnimationController` which is an `Animation<double>`
 that can pause, seek, stop and reverse the animation. It requires a `Ticker`
 that signals when vsync happens, and produces a linear interpolation between
@@ -597,12 +597,12 @@ class SignaturePainter extends CustomPainter {
 ## Where is the widget's opacity?
 
 On Xamarin.Forms, all `VisualElement`s have an Opacity. In Flutter, you need to
-wrap a widget in an [Opacity widget](https://docs.flutter.io/flutter/widgets/Opacity-class.html) 
+wrap a widget in an [Opacity widget](https://docs.flutter.io/flutter/widgets/Opacity-class.html)
 to accomplish this.
 
 ## How do I build custom widgets?
 
-In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing 
+In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing
 `VisualElement`, to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
@@ -651,10 +651,10 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
 a `Navigator` is a [widget](technical-overview/#everythings-a-widget)
-that manages routes. 
+that manages routes.
 
-A route roughly maps to a `Page`. The navigator works in a similar way to the 
-Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes 
+A route roughly maps to a `Page`. The navigator works in a similar way to the
+Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes
 depending on whether you want to navigate to, or back from, a view.
 
 To navigate between pages, you have a couple options:
@@ -685,8 +685,8 @@ Navigate to a route by `push`ing its name to the `Navigator`.
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
 
-The Navigator is a stack that manages your app's routes. Pushing a route to the stack 
-moves to that route. Popping a route from the stack, returns to the previous route. This 
+The Navigator is a stack that manages your app's routes. Pushing a route to the stack
+moves to that route. Popping a route from the stack, returns to the previous route. This
 is done by `await`ing on the `Future` returned by `push()`.
 
 `Async`/`await` is very similar to the .NET implementation and is explained in more detail
@@ -711,11 +711,11 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 ## How do I navigate to another app?
 
 In Xamarin.Forms, to send the user to another application, you use a
-specific URI scheme, using `Device.OpenUrl("mailto://")` 
+specific URI scheme, using `Device.OpenUrl("mailto://")`
 
-To implement this functionality in Flutter, create a native platform integration, 
+To implement this functionality in Flutter, create a native platform integration,
 or use an existing [plugin](#plugins), such as
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with 
+[`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with
 many other packages on [pub.dartlang](https://pub.dartlang.org/flutter).
 
 # Async UI
@@ -728,7 +728,7 @@ asynchronous programming. Unless you spawn an `Isolate`, your Dart code
 runs in the main UI thread and is driven by an event loop.
 
 Dart's single-threaded model doesn't mean you need to run everything as a
-blocking operation that causes the UI to freeze. Much like Xamarin.Forms, you 
+blocking operation that causes the UI to freeze. Much like Xamarin.Forms, you
 need to keep the UI thread free. You would use `async`/`await` to perform
 tasks, where you must wait for the response.
 
@@ -832,13 +832,13 @@ background, and how Flutter differs from Android.
 ## How do you move work to a background thread?
 
 Since Flutter is single threaded and runs an event loop, you
-don't have to worry about thread management or spawning background threads. 
-This is very similar to Xamarin.Forms. If you're doing I/O-bound work, such as disk 
-access or a network call, then you can safely use `async`/`await` and you're all set. 
+don't have to worry about thread management or spawning background threads.
+This is very similar to Xamarin.Forms. If you're doing I/O-bound work, such as disk
+access or a network call, then you can safely use `async`/`await` and you're all set.
 
-If, on the other hand, you need to do computationally intensive work that keeps the 
+If, on the other hand, you need to do computationally intensive work that keeps the
 CPU busy, you want to move it to an `Isolate` to avoid blocking the event loop, like
-you would keep _any_ sort of work out of the main thread. This is similar to when you 
+you would keep _any_ sort of work out of the main thread. This is similar to when you
 move things to a different thread via `Task.Run()` in Xamarin.Forms.
 
 For I/O-bound work, declare the function as an `async` function,
@@ -864,7 +864,7 @@ multiple CPU cores to do long-running or computationally intensive tasks.
 
 Isolates are separate execution threads that do not share any memory
 with the main execution memory heap. THis is a difference between `Task.Run()`. This
-means you can’t access variables from the main thread, or update your UI by calling 
+means you can’t access variables from the main thread, or update your UI by calling
 `setState()`.
 
 The following example shows, in a simple isolate, how to share data back to
@@ -1042,7 +1042,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ## How do I make network requests?
 
 In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
-is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http). 
+is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http).
 This abstracts away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
@@ -1079,8 +1079,8 @@ import 'package:http/http.dart' as http;
 In Xamarin.Forms you would typically create a loading indicator, either
 directly in XAML or through a 3rd party plugin such as AcrDialogs.
 
-In Flutter, use a `ProgressIndicator` widget. Show the progress programmatically 
-by controlling when it's rendered through a boolean flag. Tell Flutter to update 
+In Flutter, use a `ProgressIndicator` widget. Show the progress programmatically
+by controlling when it's rendered through a boolean flag. Tell Flutter to update
 its state before your long-running task starts, and hide it after it ends.
 
 In the following example, the build function is separated into three different
@@ -1252,13 +1252,13 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-More detailed information can be found in 
+More detailed information can be found in
 [Adding Assets and Images in Flutter](https://flutter.io/assets-and-images/).
 
 ## Where do I store strings? How do I handle localization?
 
-Unlike .NET which has `resx` files, Flutter currently doesn't have a dedicated 
-resources-like system for strings. At the moment, the best practice is to hold your 
+Unlike .NET which has `resx` files, Flutter currently doesn't have a dedicated
+resources-like system for strings. At the moment, the best practice is to hold your
 copy text in a class as static fields and accessing them from there. For example:
 
 <!-- skip -->
@@ -1341,24 +1341,24 @@ which has sample code with and without the `intl` package.
 
 ## Where is my project file?
 
-In Xamarin.Forms you will have a `csproj` file. The closest equivalent in Flutter is pubspec.yaml, 
-which contains package dependencies and various project details. Similar to .NET Standard, 
+In Xamarin.Forms you will have a `csproj` file. The closest equivalent in Flutter is pubspec.yaml,
+which contains package dependencies and various project details. Similar to .NET Standard,
 files within the same directory are considered part of the project.
 
 ## What is the equivalent of Nuget? How do I add dependencies?
 
 In the .NET eco-system, native Xamarin projects and Xamarin.Forms projects had access
-to Nuget and the inbuilt package management system. Flutter apps contain a native 
+to Nuget and the inbuilt package management system. Flutter apps contain a native
 Android app, native iOS app and Flutter app.
 
-In Android, you add dependencies by adding to your Gradle build script. In iOS, you add 
+In Android, you add dependencies by adding to your Gradle build script. In iOS, you add
 dependencies by adding to your `Podfile`.
 
 Flutter uses Dart's own build system, and the Pub package manager.
 The tools delegate the building of the native Android and iOS wrapper apps to the
 respective build systems.
 
-In general, use `pubspec.yaml` to declare external dependencies to use in Flutter. A good 
+In general, use `pubspec.yaml` to declare external dependencies to use in Flutter. A good
 place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter).
 
 # Application Lifecycle
@@ -1366,7 +1366,7 @@ place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter).
 ## How do I listen to application lifecycle events?
 
 In Xamarin.Forms, you have an `Application` that contains `OnStart`, `OnResume` and
-`OnSleep`. In Flutter you can instead listen to similar lifecycle events by hooking into 
+`OnSleep`. In Flutter you can instead listen to similar lifecycle events by hooking into
 the `WidgetsBinding` observer and listening to the `didChangeAppLifecycleState()` change event.
 
 The observable lifecycle events are:
@@ -1430,13 +1430,13 @@ children.
 ## What is the equivalent of a Grid?
 
 The closest equivalent of a `Grid` would be to use a `GridView`. This is much more powerful
-than what you are used to in Xamarin.Forms. A `GridView` provides automatic scrolling when the 
+than what you are used to in Xamarin.Forms. A `GridView` provides automatic scrolling when the
 content exceeds the its viewable space.
 
 <!-- skip -->
 {% prettify dart %}
   GridView.count(
-    // Create a grid with 2 columns. If you change the scrollDirection to 
+    // Create a grid with 2 columns. If you change the scrollDirection to
     // horizontal, this would produce 2 rows.
     crossAxisCount: 2,
     // Generate 100 Widgets that display their index in the List
@@ -1451,7 +1451,7 @@ content exceeds the its viewable space.
   );
 {% endprettify %}
 
-You may have used a `Grid` in Xamarin.Forms to implement widgets that overlay other widgets. 
+You may have used a `Grid` in Xamarin.Forms to implement widgets that overlay other widgets.
 In Flutter, you accomplish this with the `Stack` widget.
 
 This sample creates two icons that overlap each other.
@@ -1474,7 +1474,7 @@ This sample creates two icons that overlap each other.
 In Xamarin.Forms, a `ScrollView` wraps around a `VisualElement` and, if the content is larger than
 the device screen, it scrolls.
 
-In Flutter, the closest match is the `SingleChildScrollView` widget. You simply fill the 
+In Flutter, the closest match is the `SingleChildScrollView` widget. You simply fill the
 Widget with the content that you want to be scrollable.
 
 <!-- skip -->
@@ -1488,7 +1488,7 @@ Widget with the content that you want to be scrollable.
 {% endprettify %}
 
 If you have many items you want to wrap in a scroll, even of different `Widget` types, you might want
-to use a `ListView`. This might seem like overkill, but in Flutter this is far more optimized 
+to use a `ListView`. This might seem like overkill, but in Flutter this is far more optimized
 and less intensive than a Xamarin.Forms `ListView` which is backing on to platform specific controls.
 
 <!-- skip -->
@@ -1508,7 +1508,7 @@ and less intensive than a Xamarin.Forms `ListView` which is backing on to platfo
 
 ## How do I handle landscape transitions in Flutter?
 
-Landscape transitions can be handled automatically by setting the `configChanges` 
+Landscape transitions can be handled automatically by setting the `configChanges`
 property in the AndroidManifest.xml:
 
 {% prettify yaml %}
@@ -1520,53 +1520,46 @@ android:configChanges="orientation|screenSize"
 ## How do I add GestureRecognizers to a widget in Flutter?
 
 In Xamarin.Forms, `Element`s may contain a Click event you can attach to. Many elements
-also contain a `Command` that is tied to this event. Alternatively you would use the 
+also contain a `Command` that is tied to this event. Alternatively you would use the
 `TapGestureRecognizer`. In Flutter there are two very similar ways:
 
-<ol markdown="1">
-<li markdown="1">
-If the Widget supports event detection, pass a function to it and handle it
-in the function. For example, the RaisedButton has an `onPressed` parameter:
+ 1. If the Widget supports event detection, pass a function to it and handle it
+    in the function. For example, the RaisedButton has an `onPressed` parameter:
 
-   <!-- skip -->
-  {% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new RaisedButton(
-        onPressed: () {
-          print("click");
-        },
-        child: new Text("Button"));
-  }
-   {% endprettify %}
+    <!-- skip -->
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+      return new RaisedButton(
+          onPressed: () {
+            print("click");
+          },
+          child: new Text("Button"));
+    }
+    ```
 
-</li>
+ 2. If the Widget doesn't support event detection, wrap the
+    widget in a GestureDetector and pass a function to the `onTap` parameter.
 
-<li markdown="1">
-If the Widget doesn't support event detection, wrap the
-widget in a GestureDetector and pass a function to the `onTap` parameter.
-
-   <!-- skip -->
-  {% prettify dart %}
-class SampleApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        body: new Center(
-      child: new GestureDetector(
-        child: new FlutterLogo(
-          size: 200.0,
-        ),
-        onTap: () {
-          print("tap");
-        },
-      ),
-    ));
-  }
-}
-   {% endprettify %}
-</li>
-</ol>
+    <!-- skip -->
+    ```dart
+    class SampleApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return new Scaffold(
+            body: new Center(
+          child: new GestureDetector(
+            child: new FlutterLogo(
+              size: 200.0,
+            ),
+            onTap: () {
+              print("tap");
+            },
+          ),
+        ));
+      }
+    }
+    ```
 
 ## How do I handle other gestures on widgets?
 
@@ -1955,8 +1948,8 @@ that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
-For more information, please visit 
-[Write your first Flutter app, part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0) 
+For more information, please visit
+[Write your first Flutter app, part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
 and [Write your first Flutter app, part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
 
 # Working with text
@@ -1977,7 +1970,7 @@ fonts:
      fonts:
        - asset: fonts/MyCustomFont.ttf
        - style: italic
-           {% endprettify %}
+{% endprettify %}
 
 Then assign the font to your `Text` widget:
 
@@ -2114,7 +2107,7 @@ With Xamarin.Forms, if you wished to provide a visual hint of a
 validation error, you would need to create new properties and `VisualElement`s
 surrounding the `Element`s that had validation errors.
 
-In Flutter we pass through an InputDecoration object to the decoration 
+In Flutter we pass through an InputDecoration object to the decoration
 constructor for the Text widget.
 
 However, you don't want to start off by showing an error.
@@ -2202,7 +2195,7 @@ that makes up a Flutter app is run natively on the device, "sidestepping" the SD
 provided by the platform. That means, for example, when you perform a network request
 in Dart, it runs directly in the Dart context. You don't use the Android or iOS
 APIs you normally take advantage of when writing native apps. Your Flutter
-app is still hosted in a native app's `ViewController` or `Activity` as a view, 
+app is still hosted in a native app's `ViewController` or `Activity` as a view,
 but you don't have direct access to this, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
@@ -2274,7 +2267,7 @@ on Android or iOS.
 
 Out of the box, Flutter comes with a beautiful implementation of Material
 Design, which takes care of a lot of styling and theming needs that you would
-typically do. 
+typically do.
 
 Xamarin.Forms does have a global `ResourceDictionary` where you can share styles
 across your app. Alternatively there is Theme support currently in preview.
