@@ -1970,7 +1970,7 @@ and [publish it on Pub](/developing-packages/#publish).
 
 ## How do I access the GPS sensor?
 
-Use the [`location`](https://pub.dartlang.org/packages/location) community plugin.
+Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
 
 ## How do I access the camera?
 
