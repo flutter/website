@@ -4,8 +4,8 @@ title: JSON and serialization
 permalink: /json/
 ---
 
-It is hard to think of a mobile app that doesn't need to communicate with a web
-server or easily store structured data at some point. When making
+It is hard to think of a mobile app that doesn't need to communicate with a
+web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
 JSON, sooner or later.
 
