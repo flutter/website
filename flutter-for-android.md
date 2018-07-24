@@ -2083,7 +2083,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ## How do I access the GPS sensor?
 
-Use the [`location`](https://pub.dartlang.org/packages/location) community plugin.
+Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
 
 ## How do I access the camera?
 

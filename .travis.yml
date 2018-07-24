@@ -1,8 +1,18 @@
 language: node_js
-node_js:
-  - "8.1"
+node_js: 8
 sudo: false
+
 before_install:
-  - rvm install 2.2.7
+  - rvm install 2.4.3
   - ./tool/before_install.sh
+
 script: ./tool/travis.sh
+
+cache:
+  timeout: 300
+  bundler: true
+  directories:
+  - $HOME/.pub-cache
+  - $HOME/.nvm
+  - $HOME/.rvm
+  - node_modules

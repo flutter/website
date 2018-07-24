@@ -82,7 +82,7 @@ Xamarin.Forms has many different types of pages; `ContentPage` is the most commo
 In Flutter, you specify an application widget that holds your root page. You can use 
 a [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget, which 
 supports [Material Design](https://material.io/design/), or you can use the lower level 
-[WidetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way 
+[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way 
 you want.
 
 The following code defines the home page, a stateful widget. In Flutter, all widgets are immutable, 
@@ -2227,7 +2227,7 @@ and [publish it on Pub](/developing-packages/#publish).
 
 ## How do I access the GPS sensor?
 
-Use the [`location`](https://pub.dartlang.org/packages/location) community plugin.
+Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
 
 ## How do I access the camera?
 
