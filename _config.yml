@@ -3,7 +3,7 @@ title: Flutter
 email: flutter-dev@googlegroups.com
 email_name: flutter-dev@
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://flutter.io"
+url: https://flutter.io
 github_username: flutter
 
 # Build settings
@@ -15,5 +15,5 @@ kramdown:
 
 exclude: [example, packages, tool]
 
-gems:
+plugins:
   - jekyll-redirect-from
