@@ -9,7 +9,7 @@ server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
 JSON, sooner or later.
 
-This guide look into ways of using JSON with Flutter. It covers which
+This guide looks into ways of using JSON with Flutter. It covers which
 JSON solution to use in different scenarios and why.
 
 <aside class="alert alert-info" markdown="1">
