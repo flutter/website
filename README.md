@@ -19,7 +19,7 @@ provided by GitHub.
 
 A tldr version follows:
 
-1. Ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed; you need version 2.2.2 or later:<br>
+1. Ensure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) installed; you need version 2.4.3 or later:<br>
 `ruby --version`
 
 1. Ensure you have [Bundler](http://bundler.io/) installed; if not install with:<br>
