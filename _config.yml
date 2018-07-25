@@ -22,9 +22,9 @@ plugins:
 ## Site-wide shorthands
 
 alert:
-  tip: >- # Use fa-lightbulb-o for tip?
+  tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="fa fa-check-square-o"></i> **Tip:**
+    <i class="fa fa-lightbulb-o"></i> **Tip:**
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fa fa-info-circle"></i> **Note:**
