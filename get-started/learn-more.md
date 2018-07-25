@@ -6,9 +6,10 @@ permalink: /get-started/learn-more/
 
 Learn more about the Flutter framework:
 
-{%- comment %}
-Once the "Flutter for React" doc (etc) are done, add here.
-{% endcomment %}
+* [Flutter for Android](/flutter-for-android/)
+* [Flutter for iOS](/flutter-for-ios/)
+* [Flutter for React Native](/flutter-for-react-native/)
+* [Flutter for Xamarin.Forms](/flutter-for-xamarin-forms/)
 * [Building Layouts in Flutter](/tutorials/layout/) tutorial
 * [Add Interactivity](/tutorials/interactive/) tutorial
 * [A Tour of the Flutter Widget Framework](/widgets-intro/)
