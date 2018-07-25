@@ -9,10 +9,10 @@ rotates their screen from portrait mode to landscape mode. For example, we may
 want to show one item after the next in portrait mode, yet put those same items 
 side-by-side in landscape mode.
 
-In Flutter, we can build different layouts depending on the 
-[`Orientation`](https://docs.flutter.io/flutter/widgets/Orientation-class.html)
-of the screen. In this example, we'll build a list that displays 2 columns in 
-portrait mode and 3 columns in landscape mode.
+In Flutter, we can build different layouts depending on a given
+[`Orientation`](https://docs.flutter.io/flutter/widgets/Orientation-class.html).
+In this example, we'll build a list that displays 2 columns in portrait mode and
+3 columns in landscape mode.
 
 ## Directions
 
@@ -39,10 +39,11 @@ To learn more about working with `GridViews`, please see the
 
 ## 2. Use an `OrientationBuilder` to change the number of columns
 
-In order to determine the `Orientation` of the screen, we can use the 
+In order to determine the current `Orientation`, we can use the 
 [`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html) 
-Widget. The `OrientationBuilder` will determine the current `Orientation` and
-rebuild when the `Orientation` changes.
+Widget. The `OrientationBuilder` will calculate the current `Orientation` by
+comparing the available width and height, and will rebuild when the available
+width and height changes.
 
 Using the `Orientation`, we can build a list that displays 2 columns in portrait 
 mode, or 3 columns in landscape mode.
