@@ -41,9 +41,7 @@ module Prettify
     def initCssClasses
       @cssClasses = []
       unless @lang == 'nocode' || @lang == 'none'
-        @cssClasses << 'prettyprint highlighter-rouge highlight' # TODO: Unnecessary, remove after transition
         @cssClasses << "lang-#{@lang}" if @lang
-        @cssClasses << "language-#{@lang}" if @lang # TODO: Unnecessary, remove after transition
       end
       @cssClasses << @args[:class] if @args[:class]
     end
@@ -68,11 +66,11 @@ module Prettify
       end
 
       # Names of tags previously supported: highlight, note, red, strike.
-      code.gsub!(/\[\[(\w+)\]\]/, '<span class="nocode \1">') # TODO: 'nocode' is unnecessary, remove after transition
+      code.gsub!(/\[\[(\w+)\]\]/, '<span class="\1">')
       code.gsub!(/\[\[\/(\w+)\]\]/, '</span>')
 
       # Flutter tag syntax variant:
-      code.gsub!(/\/\*\*(\w+)\*\//, '<span class="nocode \1">') # TODO: 'nocode' is unnecessary, remove after transition
+      code.gsub!(/\/\*\*(\w+)\*\//, '<span class="\1">')
       code.gsub!(/\/\*-(\w+)\*\//, '</span>')
 
       code.gsub!('[!', '<span class="highlight">')
