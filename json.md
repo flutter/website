@@ -373,7 +373,11 @@ appropriately.
 
 For more information, see the following resources:
 
-* [JsonCodec documentation](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html)
-* [The json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
-* [json_serializable examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
-* [Discussion about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
+* [JsonCodec
+  documentation](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html)
+* [The
+  json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
+* [json_serializable
+  examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+* [Discussion
+  about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
