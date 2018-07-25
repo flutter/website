@@ -54,7 +54,7 @@ int _processFile(File file) {
         index++;
       }
 
-      lastComment = lines.sublist(startIndex, index + 1).join('\n');
+      lastComment = lines.sublist(startIndex, index + 1).join('\n').trim();
       lastComment = lastComment.substring(4);
       if (lines[startIndex].trim() == '<!--') {
         // remove the first \n

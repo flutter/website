@@ -1494,50 +1494,43 @@ the method 'setOnClickListener'.
 
 In Flutter there are two ways of adding touch listeners:
 
-<ol markdown="1">
-<li markdown="1">
-If the Widget supports event detection, pass a function to it and handle it
-in the function. For example, the RaisedButton has an `onPressed` parameter:
+ 1. If the Widget supports event detection, pass a function to it and handle it
+    in the function. For example, the RaisedButton has an `onPressed` parameter:
 
-   <!-- skip -->
-  {% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return RaisedButton(
-        onPressed: () {
-          print("click");
-        },
-        child: Text("Button"));
-  }
-   {% endprettify %}
+    <!-- skip -->
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+      return RaisedButton(
+          onPressed: () {
+            print("click");
+          },
+          child: Text("Button"));
+    }
+    ```
 
-</li>
+ 2. If the Widget doesn't support event detection, wrap the
+    widget in a GestureDetector and pass a function to the `onTap` parameter.
 
-<li markdown="1">
-If the Widget doesn't support event detection, wrap the
-widget in a GestureDetector and pass a function to the `onTap` parameter.
-
-   <!-- skip -->
-  {% prettify dart %}
-class SampleApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-      child: GestureDetector(
-        child: FlutterLogo(
-          size: 200.0,
-        ),
-        onTap: () {
-          print("tap");
-        },
-      ),
-    ));
-  }
-}
-   {% endprettify %}
-</li>
-</ol>
+    <!-- skip -->
+    ```dart
+    class SampleApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+            body: Center(
+          child: GestureDetector(
+            child: FlutterLogo(
+              size: 200.0,
+            ),
+            onTap: () {
+              print("tap");
+            },
+          ),
+        ));
+      }
+    }
+    ```
 
 ## How do I handle other gestures on widgets?
 
@@ -1935,7 +1928,7 @@ fonts:
      fonts:
        - asset: fonts/MyCustomFont.ttf
        - style: italic
-           {% endprettify %}
+{% endprettify %}
 
 Then assign the font to your `Text` widget:
 
