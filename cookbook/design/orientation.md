@@ -42,8 +42,8 @@ To learn more about working with `GridViews`, please see the
 In order to determine the current `Orientation`, we can use the 
 [`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html) 
 Widget. The `OrientationBuilder` will calculate the current `Orientation` by
-comparing the available width and height, and will rebuild when the available
-width and height changes.
+comparing the width and height available to the parent widget, and will rebuild 
+when the size of the parent changes.
 
 Using the `Orientation`, we can build a list that displays 2 columns in portrait 
 mode, or 3 columns in landscape mode.
@@ -60,6 +60,10 @@ OrientationBuilder(
   },
 );
 ```
+
+Note: If you're interested in the orientation of the screen, rather than
+the amount of space available to the parent, please use 
+`MediaQuery.of(context).orientation` instead of an `OrientationBuilder` Widget.
 
 ## Complete example
 
