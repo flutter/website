@@ -5,7 +5,7 @@
 
 
 
-// Our variables
+// Variables
 $base-font-family: Roboto, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -23,6 +23,12 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 $primary-color:    #01579b;
 $nav-text-color:   white;
+
+// Copied from site-www _colors.scss
+$grey-500: #9E9E9E;
+$grey-900: #212121;
+$light-green-600: #7CB342;
+$light-green-A700: #64DD17;
 
 // Width of the content area
 $content-width:    980px;

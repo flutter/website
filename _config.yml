@@ -18,3 +18,30 @@ exclude: [example, packages, tool]
 
 plugins:
   - jekyll-redirect-from
+
+## Site-wide shorthands
+
+alert:
+  tip: >-
+    <aside class="alert alert-success" role="alert" markdown="1">
+    <i class="fa fa-lightbulb-o"></i> **Tip:**
+  note: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fa fa-info-circle"></i> **Note:**
+  important: >-
+    <aside class="alert alert-warning" role="alert">
+    <i class="fa fa-warning"></i> **Important:**
+  warning: >-
+    <aside class="alert alert-danger" role="alert">
+    <i class="fa fa-exclamation-circle"></i> **Warning:**
+  end: </aside>
+
+  # callout_danger: '<div class="bs-callout bs-callout-danger">'
+  # callout_default: '<div class="bs-callout bs-callout-default">'
+  # callout_primary: '<div class="bs-callout bs-callout-primary">'
+  # callout_success: '<div class="bs-callout bs-callout-success">'
+  # callout_info: '<div class="bs-callout bs-callout-info">'
+  # callout_warning: '<div class="bs-callout bs-callout-warning">'
+
+  # hr_faded: '<hr class="faded"/>'
+  # hr_shaded: '<hr class="shaded"/>'
