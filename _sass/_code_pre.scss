@@ -20,3 +20,35 @@ pre {
         padding-left: 0;
     }
 }
+
+//
+// Rouge / pygments classes (https://github.com/jneen/rouge)
+//
+
+$generic-output-color: white;
+
+@mixin console-base($color: $light-green-A700) {
+  background: $grey-900;
+  color: $color;
+}
+
+.language-console .highlight,
+.highlight > code.language-console
+ {
+  @include console-base;
+  .go { color: $generic-output-color; } /* Generic.Output */
+}
+
+pre.console-output {
+  @include console-base($generic-output-color)
+}
+
+// `terminal` is like `console` with prompts and output colored differently
+.language-terminal .highlight,
+.highlight > code.language-terminal
+{
+  @include console-base;
+  .gp { color: $grey-500; } /* Generic.Prompt */
+  .nb { color: $light-green-600; } /* Name.Builtin */
+  .go { color: $generic-output-color; } /* Generic.Output */
+}

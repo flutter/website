@@ -85,8 +85,7 @@ You’ll be modifying this starter app to create the finished app.
 In this codelab, you'll mostly be editing **lib/main.dart**,
 where the Dart code lives.
 
-<aside class="alert alert-success" markdown="1">
-  <i class="fa fa-lightbulb-o"></i> **Tip:**
+{{site.alert.tip}}
   When pasting code into your app, indentation can
   become skewed. You can fix this automatically with the Flutter tools:
 
@@ -94,7 +93,7 @@ where the Dart code lives.
     select **Reformat Code with dartfmt**.
   * VS Code: Right-click and select **Format Document**.
   * Terminal: Run `flutter format <filename>`.
-</aside>
+{{site.alert.end}}
 
  1. Replace `lib/main.dart`.<br>
     Delete all of the code from **lib/main.dart**.
@@ -138,18 +137,18 @@ where the Dart code lives.
   of Material widgets.
 - The main method specifies fat arrow (`=>`) notation,
   which is short hand used for one-line functions or methods.
-- The app extends StatelessWidget which makes the app itself a
+- The app extends `StatelessWidget` which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
   alignment, padding, and layout.
-- The Scaffold widget, from the Material library,
+- The `Scaffold` widget, from the Material library,
   provides a default app bar, title, and a body property that
   holds the widget tree for the home screen. The widget subtree
   can be quite complex.
 - A widget’s main job is to provide a `build()` method
   that describes how to display the widget in terms of other,
   lower level widgets.
-- The widget tree for this example consists of a Center widget
-  containing a Text child widget. The Center widget aligns its
+- The widget tree for this example consists of a `Center` widget
+  containing a `Text` child widget. The `Center` widget aligns its
   widget subtree to the center of the screen.
 
 {% comment %}
@@ -207,92 +206,83 @@ You can find the
 package, as well as many other open source packages, on
 [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 
-<ol markdown="1">
-
-<li markdown="1"> The pubspec file manages the assets for a Flutter app.
+ 1. The pubspec file manages the assets for a Flutter app.
     In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
     to the dependencies list.
     The new line is highlighted below:
 
-<!-- skip -->
-{% prettify dart %}
-dependencies:
-  flutter:
-    sdk: flutter
+    {% prettify yaml %}
+      dependencies:
+        flutter:
+          sdk: flutter
 
-  cupertino_icons: ^0.1.0
-  [[highlight]]english_words: ^3.1.0[[/highlight]]
-{% endprettify %}
-</li>
+        cupertino_icons: ^0.1.0
+        [[highlight]]english_words: ^3.1.0[[/highlight]]
+    {% endprettify %}
 
-<li markdown="1"> While viewing the pubspec in Android Studio's editor view,
+ 2. While viewing the pubspec in Android Studio's editor view,
     click **Packages get** upper right. This pulls the package into
     your project. You should see the following in the console:
 
-<!-- skip -->
-{% prettify dart %}
-flutter packages get
-Running "flutter packages get" in startup_namer...
-Process finished with exit code 0
-{% endprettify %}
-</li>
+    ```terminal
+    > flutter packages get
+    Running "flutter packages get" in startup_namer...
+    Process finished with exit code 0
+    ```
 
-<li markdown="1"> In **lib/main.dart**, add the import for `english_words`,
+ 3. In **lib/main.dart**, add the import for `english_words`,
     as shown in the highlighted line:
 
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/material.dart';
-[[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+      import 'package:flutter/material.dart';
+      [[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
+    {% endprettify %}
 
-As you type, Android Studio gives you suggestions for libraries to
-import. It then renders the import string in gray, letting you
-know that the imported library is unused (so far).
-</li>
+    As you type, Android Studio gives you suggestions for libraries to
+    import. It then renders the import string in gray, letting you
+    know that the imported library is unused (so far).
 
-<li markdown="1"> Use the English words package to generate the text instead of
+ 4. Use the English words package to generate the text instead of
     using the string "Hello World".
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-"Pascal case" (also known as "upper camel case"),
-means that each word in the string, including the first one,
-begins with an uppercase letter. So, "uppercamelcase" becomes
-"UpperCamelCase".
-</aside>
+    {{site.alert.note}}
+      "Pascal case" (also known as "upper camel case"),
+      means that each word in the string, including the first one,
+      begins with an uppercase letter. So, "uppercamelcase" becomes
+      "UpperCamelCase".
+    {{site.alert.end}}
 
-Make the following changes, as highlighted below:
+    Make the following changes, as highlighted below:
 
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+    <!-- skip -->
+    {% prettify dart %}
+      import 'package:flutter/material.dart';
+      import 'package:english_words/english_words.dart';
 
-void main() => runApp(MyApp());
+      void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
-          child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
-</li>
+      class MyApp extends StatelessWidget {
+        @override
+        Widget build(BuildContext context) {
+          [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+          return MaterialApp(
+            title: 'Welcome to Flutter',
+            home: Scaffold(
+              appBar: AppBar(
+                title: Text('Welcome to Flutter'),
+              ),
+              body: Center(
+                //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
+                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
+              ),
+            ),
+          );
+        }
+      }
+    {% endprettify %}
 
-<li markdown="1"> If the app is running, use the hot reload button
+ 5. If the app is running, use the hot reload button
     (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
@@ -302,11 +292,10 @@ class MyApp extends StatelessWidget {
     or when toggling the Platform in Flutter Inspector.
 
 <center><img src="images/step2-screenshot.png" alt="screenshot at completion of second step"></center>
-</li>
 
-</ol>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
@@ -333,94 +322,87 @@ In this step, you’ll add a stateful widget, RandomWords, which creates
 its State class, RandomWordsState. The State class will eventually
 maintain the proposed and favorite word pairs for the widget.
 
-<ol markdown="1">
-<li markdown="1"> Add the stateful RandomWords widget to main.dart.
+ 1. Add the stateful RandomWords widget to main.dart.
     It can go anywhere in the file, outside of MyApp, but the solution
     places it at the bottom of the file. The RandomWords widget does little
     else besides creating its State class:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWords extends StatefulWidget {
-  @override
-  createState() => RandomWordsState();
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWords extends StatefulWidget {
+      @override
+      createState() => RandomWordsState();
+    }
+    {% endprettify %}
 
-<li markdown="1"> Add the RandomWordsState class. Most of the
+ 2. Add the RandomWordsState class. Most of the
     app’s code resides in this class, which maintains the state for the
     RandomWords widget. This class will save the generated word pairs,
     which grow infinitely as the user scrolls, and also favorite
     word pairs, as the user adds or removes them from the list by
     toggling the heart icon.
 
-You’ll build this class bit by bit. To begin, create a minimal
-class by adding the highlighted text:
+    You’ll build this class bit by bit. To begin, create a minimal
+    class by adding the highlighted text:
 
-<!-- skip -->
-{% prettify dart %}
-[[highlight]]class RandomWordsState extends State<RandomWords> {[[/highlight]]
-[[highlight]]}[[/highlight]]
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    [[highlight]]class RandomWordsState extends State<RandomWords> {[[/highlight]]
+    [[highlight]]}[[/highlight]]
+    {% endprettify %}
 
-<li markdown="1"> After adding the state class, the IDE complains that
+ 3. After adding the state class, the IDE complains that
     the class is missing a build method. Next, you'll add a basic
     build method that generates the word pairs by moving the
     word generation code from MyApp to RandomWordsState.
 
-Add the build method to RandomWordState, as shown
-by the highlighted text:
+    Add the build method to RandomWordState, as shown
+    by the highlighted text:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  [[highlight]]@override[[/highlight]]
-  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
-    [[highlight]]return Text(wordPair.asPascalCase);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      [[highlight]]@override[[/highlight]]
+      [[highlight]]Widget build(BuildContext context) {[[/highlight]]
+        [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+        [[highlight]]return Text(wordPair.asPascalCase);[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    }
+    {% endprettify %}
 
-<li markdown="1"> Remove the word generation code from MyApp by making
+ 4. Remove the word generation code from MyApp by making
     the highlighted changes below:
 
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    [[strike]]final wordPair = WordPair.random();[[/strike]]  // Delete this line
+    <!-- skip -->
+    {% prettify dart %}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        [[strike]]final wordPair = WordPair.random();[[/strike]]  // Delete this line
 
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
-          child: [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
-</li>
-
-</ol>
+        return MaterialApp(
+          title: 'Welcome to Flutter',
+          home: Scaffold(
+            appBar: AppBar(
+              title: Text('Welcome to Flutter'),
+            ),
+            body: Center(
+              //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
+              child: [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
+            ),
+          ),
+        );
+      }
+    }
+    {% endprettify %}
 
 Restart the app. If you try to hot reload, you might see a warning:
 
-{% prettify sh %}
+```nocode
 Reloading...
 Not all changed program elements ran during view reassembly; consider
 restarting.
-{% endprettify %}
+```
 
 It may be a false positive, but consider restarting in order to make sure
 that your changes are reflected in the app's UI.
@@ -430,7 +412,8 @@ pairing each time you hot reload or save the app.
 
 <center><img src="images/step3-screenshot.png" alt="screenshot at completion of third step"></center>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
@@ -447,151 +430,143 @@ displayed in a ListView widget, grows infinitely. ListView's
 `builder` factory constructor allows you to build a list view
 lazily, on demand.
 
-<ol markdown="1">
+ 1. Add a `_suggestions` list to the RandomWordsState
+    class for saving suggested word pairings. The variable begins with
+    an underscore (`_`)&mdash;prefixing an identifier with an underscore enforces
+    privacy in the Dart language.
 
-<li markdown="1"> Add a `_suggestions` list to the RandomWordsState
-class for saving suggested word pairings. The variable begins with
-an underscore (`_`)&mdash;prefixing an identifier with an underscore enforces
-privacy in the Dart language.
+    Also, add a `biggerFont` variable for making the font size larger.
 
-Also, add a `biggerFont` variable for making the font size larger.
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
+      [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
+      ...
+    }
+    {% endprettify %}
 
-  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
-  ...
-}
-{% endprettify %}
-</li>
+ 2. Add a `_buildSuggestions()` function to the RandomWordsState
+    class. This method builds the ListView that displays the suggested word
+    pairing.
 
-<li markdown="1"> Add a `_buildSuggestions()` function to the RandomWordsState
-class. This method builds the ListView that displays the suggested word
-pairing.
+    The ListView class provides a builder property, `itemBuilder`,
+    a factory builder and callback function specified as an anonymous function.
+    Two parameters are passed to the function&mdash;the BuildContext,
+    and the row iterator, `i`. The iterator begins at 0 and increments
+    each time the function is called, once for every suggested word pairing.
+    This model allows the suggested list to grow infinitely as the user scrolls.
 
-The ListView class provides a builder property, `itemBuilder`,
-a factory builder and callback function specified as an anonymous function.
-Two parameters are passed to the function&mdash;the BuildContext,
-and the row iterator, `i`. The iterator begins at 0 and increments
-each time the function is called, once for every suggested word pairing.
-This model allows the suggested list to grow infinitely as the user scrolls.
+    Add the highlighted lines below:
 
-Add the highlighted lines below:
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      ...
+      [[highlight]]Widget _buildSuggestions() {[[/highlight]]
+        [[highlight]]return ListView.builder([[/highlight]]
+          [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
+          // The itemBuilder callback is called once per suggested word pairing,
+          // and places each suggestion into a ListTile row.
+          // For even rows, the function adds a ListTile row for the word pairing.
+          // For odd rows, the function adds a Divider widget to visually
+          // separate the entries. Note that the divider may be difficult
+          // to see on smaller devices.
+          [[highlight]]itemBuilder: (context, i) {[[/highlight]]
+            // Add a one-pixel-high divider widget before each row in theListView.
+            [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  [[highlight]]Widget _buildSuggestions() {[[/highlight]]
-    [[highlight]]return ListView.builder([[/highlight]]
-      [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
-      // The itemBuilder callback is called once per suggested word pairing,
-      // and places each suggestion into a ListTile row.
-      // For even rows, the function adds a ListTile row for the word pairing.
-      // For odd rows, the function adds a Divider widget to visually
-      // separate the entries. Note that the divider may be difficult
-      // to see on smaller devices.
-      [[highlight]]itemBuilder: (context, i) {[[/highlight]]
-        // Add a one-pixel-high divider widget before each row in theListView.
-        [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
-
-        // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
-        // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
-        // This calculates the actual number of word pairings in the ListView,
-        // minus the divider widgets.
-        [[highlight]]final index = i ~/ 2;[[/highlight]]
-        // If you've reached the end of the available word pairings...
-        [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
-          // ...then generate 10 more and add them to the suggestions list.
-          [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
-        [[highlight]]}[[/highlight]]
-        [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
+            // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
+            // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
+            // This calculates the actual number of word pairings in the ListView,
+            // minus the divider widgets.
+            [[highlight]]final index = i ~/ 2;[[/highlight]]
+            // If you've reached the end of the available word pairings...
+            [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
+              // ...then generate 10 more and add them to the suggestions list.
+              [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
+            [[highlight]]}[[/highlight]]
+            [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
+          [[highlight]]}[[/highlight]]
+        [[highlight]]);[[/highlight]]
       [[highlight]]}[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
+    }
+    {% endprettify %}
 
-<li markdown="1"> The `_buildSuggestions` function calls `_buildRow` once per
-word pair. This function displays each new pair in a ListTile,
-which allows you to make the rows more attractive in the next step.
+ 3. The `_buildSuggestions` function calls `_buildRow` once per
+    word pair. This function displays each new pair in a ListTile,
+    which allows you to make the rows more attractive in the next step.
 
-Add a `_buildRow` function to RandomWordsState:
+    Add a `_buildRow` function to RandomWordsState:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      ...
 
-  [[highlight]]Widget _buildRow(WordPair pair) {[[/highlight]]
-    [[highlight]]return ListTile([[/highlight]]
-      [[highlight]]title: Text([[/highlight]]
-        [[highlight]]pair.asPascalCase,[[/highlight]]
-        [[highlight]]style: _biggerFont,[[/highlight]]
-      [[highlight]]),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
+      [[highlight]]Widget _buildRow(WordPair pair) {[[/highlight]]
+        [[highlight]]return ListTile([[/highlight]]
+          [[highlight]]title: Text([[/highlight]]
+            [[highlight]]pair.asPascalCase,[[/highlight]]
+            [[highlight]]style: _biggerFont,[[/highlight]]
+          [[highlight]]),[[/highlight]]
+        [[highlight]]);[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    }
+    {% endprettify %}
 
-<li markdown="1"> Update the build method for RandomWordsState to use
-`_buildSuggestions()`, rather than directly calling the word
-generation library. Make the highlighted changes:
+ 4. Update the build method for RandomWordsState to use
+    `_buildSuggestions()`, rather than directly calling the word
+    generation library. Make the highlighted changes:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  @override
-  Widget build(BuildContext context) {
-    [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
-    [[highlight]]return Scaffold ([[/highlight]]
-      [[highlight]]appBar: AppBar([[/highlight]]
-        [[highlight]]title: Text('Startup Name Generator'),[[/highlight]]
-      [[highlight]]),[[/highlight]]
-      [[highlight]]body: _buildSuggestions(),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  }
-  ...
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      ...
+      @override
+      Widget build(BuildContext context) {
+        [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
+        [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
+        [[highlight]]return Scaffold ([[/highlight]]
+          [[highlight]]appBar: AppBar([[/highlight]]
+            [[highlight]]title: Text('Startup Name Generator'),[[/highlight]]
+          [[highlight]]),[[/highlight]]
+          [[highlight]]body: _buildSuggestions(),[[/highlight]]
+        [[highlight]]);[[/highlight]]
+      }
+      ...
+    }
+    {% endprettify %}
 
-<li markdown="1"> Update the build method for MyApp.
+ 5. Update the build method for MyApp.
     Remove the Scaffold and AppBar instances from MyApp.
     These will be managed by RandomWordsState, which makes it easier to
     change the name of the route in the app bar as the user
     navigates from one screen to another in the next step.
 
-Replace the original method with the highlighted build method below:
+    Replace the original method with the highlighted build method below:
 
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]return MaterialApp([[/highlight]]
-      [[highlight]]title: 'Startup Name Generator',[[/highlight]]
-      [[highlight]]home: RandomWords(),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
-
-</ol>
+    <!-- skip -->
+    {% prettify dart %}
+    class MyApp extends StatelessWidget {
+      @override
+      [[highlight]]Widget build(BuildContext context) {[[/highlight]]
+        [[highlight]]return MaterialApp([[/highlight]]
+          [[highlight]]title: 'Startup Name Generator',[[/highlight]]
+          [[highlight]]home: RandomWords(),[[/highlight]]
+        [[highlight]]);[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    }
+    {% endprettify %}
 
 Restart the app. You should see a list of word pairings. Scroll down
 as far as you want and you will continue to see new word pairings.
 
 <center><img src="images/step4-screenshot.png" alt="screenshot at completion of fourth step"></center>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
@@ -607,107 +582,99 @@ When the user taps an entry in the list, toggling its
 "favorited" state, that word pairing is added or removed from a
 set of saved favorites.
 
-<ol markdown="1">
-<li markdown="1"> Add a `_saved` Set to RandomWordsState. This Set stores
+ 1. Add a `_saved` Set to RandomWordsState. This Set stores
     the word pairings that the user favorited. Set is preferred to List
     because a properly implemented Set does not allow duplicate entries.
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      final _suggestions = <WordPair>[];
 
-  [[highlight]]final _saved = Set<WordPair>();[[/highlight]]
+      [[highlight]]final _saved = Set<WordPair>();[[/highlight]]
 
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-  ...
-}
-{% endprettify %}
-</li>
+      final _biggerFont = const TextStyle(fontSize: 18.0);
+      ...
+    }
+    {% endprettify %}
 
-<li markdown="1"> In the `_buildRow` function, add an `alreadySaved`
+ 2. In the `_buildRow` function, add an `alreadySaved`
     check to ensure that a word pairing has not already been added to
     favorites.
 
-<!-- skip -->
-{% prettify dart %}
-  Widget _buildRow(WordPair pair) {
-    [[highlight]]final alreadySaved = _saved.contains(pair);[[/highlight]]
-    ...
-  }
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+      Widget _buildRow(WordPair pair) {
+        [[highlight]]final alreadySaved = _saved.contains(pair);[[/highlight]]
+        ...
+      }
+    {% endprettify %}
 
-<li markdown="1"> Also in `_buildRow()`, add heart-shaped icons to the
+ 3. Also in `_buildRow()`, add heart-shaped icons to the
     ListTiles to enable favoriting. Later, you'll add the ability to
     interact with the heart icons.
 
-Add the highlighted lines below:
+    Add the highlighted lines below:
 
-<!-- skip -->
-{% prettify dart %}
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      [[highlight]]trailing: Icon([[/highlight]]
-        [[highlight]]alreadySaved ? Icons.favorite : Icons.favorite_border,[[/highlight]]
-        [[highlight]]color: alreadySaved ? Colors.red : null,[[/highlight]]
-      [[highlight]]),[[/highlight]]
-    );
-  }
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+      Widget _buildRow(WordPair pair) {
+        final alreadySaved = _saved.contains(pair);
+        return ListTile(
+          title: Text(
+            pair.asPascalCase,
+            style: _biggerFont,
+          ),
+          [[highlight]]trailing: Icon([[/highlight]]
+            [[highlight]]alreadySaved ? Icons.favorite : Icons.favorite_border,[[/highlight]]
+            [[highlight]]color: alreadySaved ? Colors.red : null,[[/highlight]]
+          [[highlight]]),[[/highlight]]
+        );
+      }
+    {% endprettify %}
 
-<li markdown="1"> Restart the app. You should now see open hearts on
+ 4. Restart the app. You should now see open hearts on
     each row, but they are not yet interactive.
-</li>
 
-<li markdown="1"> Make the name suggestion tiles tappable in the `_buildRow`
+ 5. Make the name suggestion tiles tappable in the `_buildRow`
     function. If a word entry has already been added to favorites,
     tapping it again removes it from favorites.
     When a tile has been tapped, the function calls
     `setState()` to notify the framework that state has changed.
 
-Add the highlighted lines:
+    Add the highlighted lines:
 
-<!-- skip -->
-{% prettify dart %}
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      trailing: Icon(
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      [[highlight]]onTap: () {[[/highlight]]
-        [[highlight]]setState(() {[[/highlight]]
-          [[highlight]]if (alreadySaved) {[[/highlight]]
-            [[highlight]]_saved.remove(pair);[[/highlight]]
-          [[highlight]]} else {[[/highlight]]
-            [[highlight]]_saved.add(pair);[[/highlight]]
-          [[highlight]]}[[/highlight]]
-        [[highlight]]});[[/highlight]]
-      [[highlight]]},[[/highlight]]
-    );
-  }
-{% endprettify %}
-</li>
-</ol>
+    <!-- skip -->
+    {% prettify dart %}
+      Widget _buildRow(WordPair pair) {
+        final alreadySaved = _saved.contains(pair);
+        return ListTile(
+          title: Text(
+            pair.asPascalCase,
+            style: _biggerFont,
+          ),
+          trailing: Icon(
+            alreadySaved ? Icons.favorite : Icons.favorite_border,
+            color: alreadySaved ? Colors.red : null,
+          ),
+          [[highlight]]onTap: () {[[/highlight]]
+            [[highlight]]setState(() {[[/highlight]]
+              [[highlight]]if (alreadySaved) {[[/highlight]]
+                [[highlight]]_saved.remove(pair);[[/highlight]]
+              [[highlight]]} else {[[/highlight]]
+                [[highlight]]_saved.add(pair);[[/highlight]]
+              [[highlight]]}[[/highlight]]
+            [[highlight]]});[[/highlight]]
+          [[highlight]]},[[/highlight]]
+        );
+      }
+    {% endprettify %}
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-In Flutter's react style framework, calling `setState()` triggers
-a call to the `build()` method for the State object, resulting in
-an update to the UI.
-</aside>
+{{site.alert.tip}}
+  In Flutter's react style framework, calling `setState()`
+  triggers a call to the `build()` method for the State object, resulting in an
+  update to the UI.
+{{site.alert.end}}
 
 Hot reload the app. You should be able to tap any tile to favorite, or unfavorite,
 the entry. Note that tapping a tile generates an implicit ink splash animation
@@ -715,7 +682,8 @@ that emanates from wherever you tapped.
 
 <center><img src="images/step5-screenshot.png" alt="screenshot at completion of 5th step"></center>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
@@ -735,166 +703,161 @@ Pushing a route onto the Navigator's stack, updates the display to that route.
 Popping a route from the Navigator's stack, returns the display to the previous
 route.
 
-<ol markdown="1">
-<li markdown="1"> Add a list icon to the AppBar in the build method
+ 1. Add a list icon to the AppBar in the build method
     for RandomWordsState.  When the user clicks the list icon, a new
     route that contains the favorites items is pushed to the Navigator,
     displaying the icon.
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-Some widget properties take a single widget (`child`), and other properties,
-such as `action`, take an array of widgets (`children`),
-as indicated by the square brackets (`[]`).
-</aside>
+    {{site.alert.tip}}
+      Some widget properties take a single widget (`child`), and other properties,
+      such as `action`, take an array of widgets (`children`),
+      as indicated by the square brackets (`[]`).
+    {{site.alert.end}}
 
-Add the icon and its corresponding action to the build method:
+    Add the icon and its corresponding action to the build method:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
-        [[highlight]]actions: <Widget>[[[/highlight]]
-          [[highlight]]IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
-        [[highlight]]],[[/highlight]]
-      ),
-      body: _buildSuggestions(),
-    );
-  }
-  ...
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      ...
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Startup Name Generator'),
+            [[highlight]]actions: <Widget>[[[/highlight]]
+              [[highlight]]IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),[[/highlight]]
+            [[highlight]]],[[/highlight]]
+          ),
+          body: _buildSuggestions(),
+        );
+      }
+      ...
+    }
+    {% endprettify %}
 
-<li markdown="1"> Add a `_pushSaved()` function to the RandomWordsState class.
+ 2. Add a `_pushSaved()` function to the RandomWordsState class.
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  [[highlight]]void _pushSaved() {[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+    class RandomWordsState extends State<RandomWords> {
+      ...
+      [[highlight]]void _pushSaved() {[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    }
+    {% endprettify %}
 
-Hot reload the app. The list icon appears in the app bar.
-Tapping it does nothing yet, because the `_pushSaved` function is empty.
-</li>
+    Hot reload the app. The list icon appears in the app bar.
+    Tapping it does nothing yet, because the `_pushSaved` function is empty.
 
-<li markdown="1"> When the user taps the list icon in the app bar,
+ 3. When the user taps the list icon in the app bar,
     build a route and push it to the Navigator's stack.
     This action changes the screen to display the new route.
 
-The content for the new page is built in MaterialPageRoute's `builder`
-property, in an anonymous function.
+    The content for the new page is built in MaterialPageRoute's `builder`
+    property, in an anonymous function.
 
-Add the call to Navigator.push, as shown by the highlighted code,
-which pushes the route to the Navigator's stack.
+    Add the call to Navigator.push, as shown by the highlighted code,
+    which pushes the route to the Navigator's stack.
 
-<!-- skip -->
-{% prettify dart %}
-  [[highlight]]void _pushSaved() {[[/highlight]]
-    [[highlight]]Navigator.of(context).push([[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+      [[highlight]]void _pushSaved() {[[/highlight]]
+        [[highlight]]Navigator.of(context).push([[/highlight]]
+        [[highlight]]);[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    {% endprettify %}
 
-<li markdown="1"> Add the MaterialPageRoute and its builder. For now,
+ 4. Add the MaterialPageRoute and its builder. For now,
     add the code that generates the ListTile rows. The `divideTiles()`
     method of ListTile adds horizontal spacing between each ListTile.
     The `divided` variable holds the final rows, converted to a list
     by the convenience function, `toList()`.
 
-<!-- skip -->
-{% prettify dart %}
-  void _pushSaved() {
-    Navigator.of(context).push(
-      [[highlight]]MaterialPageRoute([[/highlight]]
-        [[highlight]]builder: (context) {[[/highlight]]
-          [[highlight]]final tiles = _saved.map([[/highlight]]
-            [[highlight]](pair) {[[/highlight]]
-              [[highlight]]return ListTile([[/highlight]]
-                [[highlight]]title: Text([[/highlight]]
-                  [[highlight]]pair.asPascalCase,[[/highlight]]
-                  [[highlight]]style: _biggerFont,[[/highlight]]
-                [[highlight]]),[[/highlight]]
+    <!-- skip -->
+    {% prettify dart %}
+      void _pushSaved() {
+        Navigator.of(context).push(
+          [[highlight]]MaterialPageRoute([[/highlight]]
+            [[highlight]]builder: (context) {[[/highlight]]
+              [[highlight]]final tiles = _saved.map([[/highlight]]
+                [[highlight]](pair) {[[/highlight]]
+                  [[highlight]]return ListTile([[/highlight]]
+                    [[highlight]]title: Text([[/highlight]]
+                      [[highlight]]pair.asPascalCase,[[/highlight]]
+                      [[highlight]]style: _biggerFont,[[/highlight]]
+                    [[highlight]]),[[/highlight]]
+                  [[highlight]]);[[/highlight]]
+                [[highlight]]},[[/highlight]]
               [[highlight]]);[[/highlight]]
+              [[highlight]]final divided = ListTile[[/highlight]]
+                [[highlight]].divideTiles([[/highlight]]
+                  [[highlight]]context: context,[[/highlight]]
+                  [[highlight]]tiles: tiles,[[/highlight]]
+                [[highlight]])[[/highlight]]
+                [[highlight]].toList();[[/highlight]]
             [[highlight]]},[[/highlight]]
-          [[highlight]]);[[/highlight]]
-          [[highlight]]final divided = ListTile[[/highlight]]
-            [[highlight]].divideTiles([[/highlight]]
-              [[highlight]]context: context,[[/highlight]]
-              [[highlight]]tiles: tiles,[[/highlight]]
-            [[highlight]])[[/highlight]]
-            [[highlight]].toList();[[/highlight]]
-        [[highlight]]},[[/highlight]]
-      [[highlight]]),[[/highlight]]
-    );
-  }
-{% endprettify %}
-</li>
+          [[highlight]]),[[/highlight]]
+        );
+      }
+    {% endprettify %}
 
-<li markdown="1"> The builder property returns a Scaffold,
+ 5. The builder property returns a Scaffold,
     containing the app bar for the new route, named
     "Saved Suggestions." The body of the new route
     consists of a ListView containing the ListTiles rows;
     each row is separated by a divider.
 
-Add the highlighted code below:
+    Add the highlighted code below:
 
-<!-- skip -->
-{% prettify dart %}
-  void _pushSaved() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          final tiles = _saved.map(
-            (pair) {
-              return ListTile(
-                title: Text(
-                  pair.asPascalCase,
-                  style: _biggerFont,
-                ),
+    <!-- skip -->
+    {% prettify dart %}
+      void _pushSaved() {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              final tiles = _saved.map(
+                (pair) {
+                  return ListTile(
+                    title: Text(
+                      pair.asPascalCase,
+                      style: _biggerFont,
+                    ),
+                  );
+                },
               );
+              final divided = ListTile
+                .divideTiles(
+                  context: context,
+                  tiles: tiles,
+                )
+                .toList();
+
+              [[highlight]]return Scaffold([[/highlight]]
+                [[highlight]]appBar: AppBar([[/highlight]]
+                  [[highlight]]title: Text('Saved Suggestions'),[[/highlight]]
+                [[highlight]]),[[/highlight]]
+                [[highlight]]body: ListView(children: divided),[[/highlight]]
+              [[highlight]]);[[/highlight]]
             },
-          );
-          final divided = ListTile
-            .divideTiles(
-              context: context,
-              tiles: tiles,
-            )
-            .toList();
+          ),
+        );
+      }
+    {% endprettify %}
 
-          [[highlight]]return Scaffold([[/highlight]]
-            [[highlight]]appBar: AppBar([[/highlight]]
-              [[highlight]]title: Text('Saved Suggestions'),[[/highlight]]
-            [[highlight]]),[[/highlight]]
-            [[highlight]]body: ListView(children: divided),[[/highlight]]
-          [[highlight]]);[[/highlight]]
-        },
-      ),
-    );
-  }
-{% endprettify %}
-</li>
-
-<li markdown="1"> Hot reload the app. Favorite some of the selections and
+ 6. Hot reload the app. Favorite some of the selections and
     tap the list icon in the app bar. The new route appears containing
     the favorites. Note that the Navigator adds a "Back" button to the
     app bar. You did not have to explicitly implement `Navigator.pop`.
     Tap the back button to return to the home route.
-</li>
-</ol>
 
-<center><img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step"><img src="images/step6b-screenshot.png" alt="second route"></center>
+<center>
+  <img src="images/step6a-screenshot.png" alt="screenshot at completion of 6th step">
+  <img src="images/step6b-screenshot.png" alt="second route">
+</center>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
@@ -902,6 +865,7 @@ at the following link to get back on track.
 * [**lib/main.dart**](https://gist.github.com/Sfshaza/bc5547e112e4dc3a1aa87afdf917caeb)
 
 ---
+
 # Step 7: Change the UI using Themes
 
 In this final step, you'll play with the app's theme. The
@@ -909,46 +873,42 @@ _theme_ controls the look and feel of your app. You can use
 the default theme, which is dependent on the physical device
 or emulator, or you can customize the theme to reflect your branding.
 
-<ol markdown="1">
-<li markdown="1"> You can easily change an app's theme by configuring
+ 1. You can easily change an app's theme by configuring
     the ThemeData class.  Your app currently uses the default theme,
     but you'll be changing the primary color to be white.
 
-Change the app's theme to white by adding the highlighted code to MyApp:
+    Change the app's theme to white by adding the highlighted code to MyApp:
 
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Startup Name Generator',
-      [[highlight]]theme: ThemeData([[/highlight]]
-        [[highlight]]primaryColor: Colors.white,[[/highlight]]
-      [[highlight]]),[[/highlight]]
-      home: RandomWords(),
-    );
-  }
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          title: 'Startup Name Generator',
+          [[highlight]]theme: ThemeData([[/highlight]]
+            [[highlight]]primaryColor: Colors.white,[[/highlight]]
+          [[highlight]]),[[/highlight]]
+          home: RandomWords(),
+        );
+      }
+    }
+    {% endprettify %}
 
-<li markdown="1"> Hot reload the app. Notice that the entire background is white,
-even the app bar.
-</li>
+ 2. Hot reload the app. Notice that the entire background is white,
+    even the app bar.
 
-<li markdown="1"> As an exercise for the reader, use
-[ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
-to change other aspects of the  UI. The
-[Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
-class in the Material library provides many color constants you can play with,
-and hot reload makes experimenting with the UI quick and easy.
-</li>
-</ol>
+ 3. As an exercise for the reader, use
+    [ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+    to change other aspects of the  UI. The
+    [Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
+    class in the Material library provides many color constants you can play with,
+    and hot reload makes experimenting with the UI quick and easy.
 
 <center><img src="images/step7-themes.png" alt="screenshot at completion of 7th step"></center>
 
-<p class="h2-like">Problems?</p>
+## Problems?
+{:.no_toc}
 
 If you've gotten off track, use the code from the following link
 to see the code for the final app.
@@ -973,6 +933,7 @@ In this codelab, you've:
   and the new route.
 * Learned about changing the look of your app's UI using Themes.
 
-<p class="h2-like">Next step</p>
+## Next step
+{:.no_toc}
 
-[Next step: Learn More](/get-started/learn-more/)
+[Learn More](/get-started/learn-more/)
