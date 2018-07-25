@@ -1359,17 +1359,17 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I update `ListView`s dynamically?
+## How do I dynamically update a `ListView`s?
 
 In iOS, you update the data for the list view, and notify the table or
 collection view using the `reloadData` method.
 
-In Flutter, if you were to update the list of widgets inside a `setState()`,
-you would quickly see that your data did not change visually.
+In Flutter, if you update the list of widgets inside a `setState()`,
+you quickly see that your data doesn't change visually.
 This is because when `setState()` is called, the Flutter rendering engine
 looks at the widget tree to see if anything has changed. When it gets to your
-`ListView`, it performs a `==` check, and determines that the two `ListView`s are the
-same. Nothing has changed, so no update is required.
+`ListView`, it performs an `==` check, and determines that the two `ListView`s
+are the same. Nothing has changed, so no update is required.
 
 For a simple way to update your `ListView`, create a new `List` inside of
 `setState()`, and copy the data from the old list to the new list.
