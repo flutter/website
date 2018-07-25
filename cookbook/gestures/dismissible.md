@@ -20,9 +20,9 @@ Widget.
 
 ## 1. Create List of Items
 
-The first step in this recipe will be to create a list of items we can swipe
-away. For more detailed instructions on how to create a list, please follow the
-[Working with long lists](/cookbook/lists/long-lists/) recipe.
+First, we'll create a list of items we can swipe away. For more detailed
+instructions on how to create a list, please follow the [Working with long
+lists](/cookbook/lists/long-lists/) recipe.
 
 ### Create a Data Source
 
@@ -88,7 +88,7 @@ Dismissible(
 
 ## 3. Provide "Leave Behind" indicators  
 
-As it stands, our app will allow users to swipe items off the List, but it might
+As it stands, our app allows users to swipe items off the List, but it might
 not give them a visual indication of what happens when they do. To provide a cue 
 that we're removing items, we'll display a "Leave Behind" indicator as they 
 swipe the item off the screen. In this case, a red background!
@@ -121,44 +121,46 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
-// MyApp will be a StatefulWidget. This will allow us to update the state of the
+// MyApp is a StatefulWidget. This allows us to update the state of the
 // Widget whenever an item is removed.
 class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
+
   @override
   MyAppState createState() {
-    return new MyAppState();
+    return MyAppState();
   }
 }
 
 class MyAppState extends State<MyApp> {
-  final items = new List<String>.generate(3, (i) => "Item ${i + 1}");
+  final items = List<String>.generate(3, (i) => "Item ${i + 1}");
 
   @override
   Widget build(BuildContext context) {
     final title = 'Dismissing Items';
 
-    return new MaterialApp(
+    return MaterialApp(
       title: title,
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text(title),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
         ),
-        body: new ListView.builder(
+        body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
 
-            return new Dismissible(
+            return Dismissible(
               // Each Dismissible must contain a Key. Keys allow Flutter to
               // uniquely identify Widgets.
-              key: new Key(item),
-              // We also need to provide a function that will tell our app
+              key: Key(item),
+              // We also need to provide a function that tells our app
               // what to do after an item has been swiped away.
               onDismissed: (direction) {
                 // Remove the item from our data source.
@@ -167,12 +169,13 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar!
-                Scaffold.of(context).showSnackBar(
-                    new SnackBar(content: new Text("$item dismissed")));
+                Scaffold
+                    .of(context)
+                    .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away
-              background: new Container(color: Colors.red),
-              child: new ListTile(title: new Text('$item')),
+              background: Container(color: Colors.red),
+              child: ListTile(title: Text('$item')),
             );
           },
         ),
