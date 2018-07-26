@@ -4,10 +4,10 @@ title: Flutter for iOS Developers
 permalink: /flutter-for-ios/
 ---
 
-This document is for iOS developers looking to apply their existing iOS knowledge
-to build mobile apps with Flutter. If you understand the fundamentals of the iOS
-framework then you can use this document as a way to get started learning Flutter
-development.
+This document is for iOS developers looking to apply their existing iOS
+knowledge to build mobile apps with Flutter. If you understand the
+fundamentals of the iOS framework then you can use this document as a
+way to get started learning Flutter development.
 
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -279,8 +279,8 @@ In iOS, you create an animation by calling the
 `animate(withDuration:animations:)` method on a view. In Flutter,
 use the animation library to wrap widgets inside an animated widget.
 
-In Flutter, use an `AnimationController` which is an `Animation<double>`
-that can pause, seek, stop and reverse the animation. It requires a `Ticker`
+In Flutter, use an `AnimationController`, which is an `Animation<double>`
+that can pause, seek, stop, and reverse the animation. It requires a `Ticker`
 that signals when vsync happens and produces a linear interpolation between
 0 and 1 on each frame while it's running. You then create one or more
 `Animation`s and attach them to the controller.
@@ -544,6 +544,21 @@ depends on the app. To implement this functionality in Flutter,
 create a native platform integration, or use an existing
 [plugin](#plugins), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+
+## How do I pop back to the iOS native viewcontroller?
+
+Calling `SystemNavigator.pop()` from your Dart code invokes the
+following iOS code:
+
+```
+UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+  if ([viewController isKindOfClass:[UINavigationController class]]) {
+    [((UINavigationController*)viewController) popViewControllerAnimated:NO];
+  }
+```
+
+If that doesn't do what you want, you can create your own
+[platform channel](/platform-channels/) to invoke arbitrary iOS code.
 
 # Threading & asynchronicity
 
@@ -1344,17 +1359,17 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I update `ListView`s dynamically?
+## How do I dynamically update a `ListView`s?
 
 In iOS, you update the data for the list view, and notify the table or
 collection view using the `reloadData` method.
 
-In Flutter, if you were to update the list of widgets inside a `setState()`,
-you would quickly see that your data did not change visually.
+In Flutter, if you update the list of widgets inside a `setState()`,
+you quickly see that your data doesn't change visually.
 This is because when `setState()` is called, the Flutter rendering engine
 looks at the widget tree to see if anything has changed. When it gets to your
-`ListView`, it performs a `==` check, and determines that the two `ListView`s are the
-same. Nothing has changed, so no update is required.
+`ListView`, it performs an `==` check, and determines that the two `ListView`s
+are the same. Nothing has changed, so no update is required.
 
 For a simple way to update your `ListView`, create a new `List` inside of
 `setState()`, and copy the data from the old list to the new list.
