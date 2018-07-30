@@ -34,17 +34,16 @@ The animated GIF shows how the app works at the completion of part 1:
 <div class="whats-the-point" markdown="1">
   <h4>What you’ll learn in part 1</h4>
 
-* How to write a Flutter app that looks natural on both iOS and Android.
-* Basic structure of a Flutter app.
-* Finding and using packages to extend functionality.
-* Using hot reload for a quicker development cycle.
-* How to implement a stateful widget.
-* How to create an infinite, lazily loaded list.
+  * How to write a Flutter app that looks natural on both iOS and Android.
+  * Basic structure of a Flutter app.
+  * Finding and using packages to extend functionality.
+  * Using hot reload for a quicker development cycle.
+  * How to implement a stateful widget.
+  * How to create an infinite, lazily loaded list.
 
-In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
-of this codelab, you'll add interactivity, modify the app's theme, and
-add the ability to navigate to a new page (called a _route_ in Flutter).
-
+  In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+  of this codelab, you'll add interactivity, modify the app's theme, and
+  add the ability to navigate to a new page (called a _route_ in Flutter).
 </div>
 
 <div class="whats-the-point" markdown="1">
@@ -110,27 +109,27 @@ where the Dart code lives.
     }
     ```
 
-{{site.alert.tip}}
-  When pasting code into your app, indentation can become skewed.
-  You can fix this automatically with the Flutter tools:
+    {{site.alert.tip}}
+      When pasting code into your app, indentation can become skewed.
+      You can fix this automatically with the Flutter tools:
 
-  * Android Studio / IntelliJ IDEA: Right-click the dart code and
-    select **Reformat Code with dartfmt**.
-  * VS Code: Right-click and select **Format Document**.
-  * Terminal: Run `flutter format <filename>`.
-{{site.alert.end}}
+      * Android Studio / IntelliJ IDEA: Right-click the dart code and
+        select **Reformat Code with dartfmt**.
+      * VS Code: Right-click and select **Format Document**.
+      * Terminal: Run `flutter format <filename>`.
+    {{site.alert.end}}
 
  2. [Run the app](/get-started/test-drive/#androidstudio).
     You should see either Android or iOS output, depending on your device.
 
-<center><img src="images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
-<center>Android (left) and iOS (right)</center><br>
+    <center><img src="images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
+    <center>Android (left) and iOS (right)</center><br>
 
-{{site.alert.tip}}
-  The first time you run on a physical device, it can take awhile to load.
-  After this, you can use hot reload for quick updates. **Save** also
-  performs a hot reload if the app is running.
-{{site.alert.end}}
+    {{site.alert.tip}}
+      The first time you run on a physical device, it can take awhile to load.
+      After this, you can use hot reload for quick updates. **Save** also
+      performs a hot reload if the app is running.
+    {{site.alert.end}}
 
 ## Observations
 {:.no_toc}
@@ -167,90 +166,82 @@ English words plus some utility functions.
 You can find the english_words package, as well as many other open source
 packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 
-<ol markdown="1">
-<li markdown="1">The pubspec file manages the assets for a Flutter app.
+ 1. The pubspec file manages the assets for a Flutter app.
     In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
     to the dependencies list.
     The new line is highlighted below:
 
-{% prettify yaml %}
-dependencies:
-  flutter:
-    sdk: flutter
+    {% prettify yaml %}
+      dependencies:
+        flutter:
+          sdk: flutter
 
-  cupertino_icons: ^0.1.0
-  [[highlight]]english_words: ^3.1.0[[/highlight]]
-{% endprettify %}
+        cupertino_icons: ^0.1.0
+        [[highlight]]english_words: ^3.1.0[[/highlight]]
+    {% endprettify %}
 
-</li>
-
-<li markdown="1">While viewing the pubspec in Android Studio's editor view,
+ 2. While viewing the pubspec in Android Studio's editor view,
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
-```terminal
-> flutter packages get
-Running "flutter packages get" in startup_namer...
-Process finished with exit code 0
-```
-</li>
+    ```terminal
+    > flutter packages get
+    Running "flutter packages get" in startup_namer...
+    Process finished with exit code 0
+    ```
 
-<li markdown="1">In **lib/main.dart**, import the new package:
+ 3. In **lib/main.dart**, import the new package:
 
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/material.dart';
-[[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+      import 'package:flutter/material.dart';
+      [[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
+    {% endprettify %}
 
-As you type, Android Studio gives you suggestions for libraries to
-import. It then renders the import string in gray, letting you
-know that the imported library is unused (so far).
+    As you type, Android Studio gives you suggestions for libraries to
+    import. It then renders the import string in gray, letting you
+    know that the imported library is unused (so far).
 
-</li>
-
-<li markdown="1">Use the English words package to generate the text instead of
+ 4. Use the English words package to generate the text instead of
     using the string "Hello World".
 
-Make the following changes, as highlighted below:
+    Make the following changes, as highlighted below:
 
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+    <!-- skip -->
+    {% prettify dart %}
+      import 'package:flutter/material.dart';
+      import 'package:english_words/english_words.dart';
 
-void main() => runApp(MyApp());
+      void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
-          child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
+      class MyApp extends StatelessWidget {
+        @override
+        Widget build(BuildContext context) {
+          [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+          return MaterialApp(
+            title: 'Welcome to Flutter',
+            home: Scaffold(
+              appBar: AppBar(
+                title: Text('Welcome to Flutter'),
+              ),
+              body: Center(
+                //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
+                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
+              ),
+            ),
+          );
+        }
+      }
+    {% endprettify %}
 
-{{site.alert.note}}
-  "Pascal case" (also known as "upper camel case"),
-  means that each word in the string, including the first one,
-  begins with an uppercase letter. So, "uppercamelcase" becomes
-  "UpperCamelCase".
-{{site.alert.end}}
+    {{site.alert.note}}
+      "Pascal case" (also known as "upper camel case"),
+      means that each word in the string, including the first one,
+      begins with an uppercase letter. So, "uppercamelcase" becomes
+      "UpperCamelCase".
+    {{site.alert.end}}
 
-</li>
-
-<li markdown="1">If the app is running, use the hot reload button
+ 5. If the app is running, use the hot reload button
     (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
@@ -259,11 +250,8 @@ class MyApp extends StatelessWidget {
     method, which is run each time the MaterialApp requires rendering,
     or when toggling the Platform in Flutter Inspector.
 
-<center><img src="images/android-step2-frame.png" alt="screenshot at completion of second step in Android"> <img src="images/step2-screenshot-ios.png" alt="screenshot at completion of second step in iOS"></center>
-<center>Android (left) and iOS (right)</center><br>
-
-</li>
-</ol>
+    <center><img src="images/android-step2-frame.png" alt="screenshot at completion of second step in Android"> <img src="images/step2-screenshot-ios.png" alt="screenshot at completion of second step in iOS"></center>
+    <center>Android (left) and iOS (right)</center>
 
 ## Problems?
 {:.no_toc}
@@ -293,104 +281,92 @@ In this step, you’ll add a stateful widget, RandomWords, which creates
 its State class, RandomWordsState. You'll then use RandomWords as
 a child inside the existing MyApp stateless widget.
 
-<ol markdown="1">
-<li markdown="1">Create a minimal state class.
+ 1. Create a minimal state class.
     It can go anywhere in the file, outside of MyApp, but the
     [solution](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/8c6c97b34b97645415de66dc944824993c26cfa5/main.dart)
     places it at the bottom of the file. Add the following text:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWords extends StatefulWidget {
-  // TODO: Add build method.
-}
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWords extends StatefulWidget {
+        // TODO: Add build method.
+      }
+    {% endprettify %}
 
-Notice the declaration `State<RandomWords>`. This indicates that we're
-using the generic
-[State](https://docs.flutter.io/flutter/widgets/State-class.html)
-class specialized for use with RandomWords. Most of the app's logic
-and state resides here&mdash;it maintains the state for the RandomWords
-widget. This class saves the generated word pairs, which grows infinitely
-as the user scrolls, and favorite word pairs (in
-[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)),
-as the user adds or removes them from the list by toggling the heart icon.
+    Notice the declaration `State<RandomWords>`. This indicates that we're
+    using the generic
+    [State](https://docs.flutter.io/flutter/widgets/State-class.html)
+    class specialized for use with RandomWords. Most of the app's logic
+    and state resides here&mdash;it maintains the state for the RandomWords
+    widget. This class saves the generated word pairs, which grows infinitely
+    as the user scrolls, and favorite word pairs (in
+    [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)),
+    as the user adds or removes them from the list by toggling the heart icon.
 
-RandomWordsState depends on the RandomWords class. You'll add that next.
+    RandomWordsState depends on the RandomWords class. You'll add that next.
 
-<li markdown="1">Add the stateful RandomWords widget to main.dart.
-  The RandomWords widget does little else beside creating its State class:
+ 2. Add the stateful RandomWords widget to main.dart.
+    The RandomWords widget does little else beside creating its State class:
 
-<!-- skip -->
-{% prettify dart %}
-[[highlight]]class RandomWords extends StatefulWidget {[[/highlight]]
-  [[highlight]]@override[[/highlight]]
-  [[highlight]]RandomWordsState createState() => new RandomWordsState();[[/highlight]]
-[[highlight]]}[[/highlight]]
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+      [[highlight]]class RandomWords extends StatefulWidget {[[/highlight]]
+        [[highlight]]@override[[/highlight]]
+        [[highlight]]RandomWordsState createState() => new RandomWordsState();[[/highlight]]
+      [[highlight]]}[[/highlight]]
+    {% endprettify %}
 
-After adding the state class, the IDE complains that
-the class is missing a build method. Next, you'll add a basic
-build method that generates the word pairs by moving the
-word generation code from MyApp to RandomWordsState.
+    After adding the state class, the IDE complains that
+    the class is missing a build method. Next, you'll add a basic
+    build method that generates the word pairs by moving the
+    word generation code from MyApp to RandomWordsState.
 
-</li>
+ 3. Add the build method to RandomWordState,
+    as shown by the highlighted text:
 
-<li markdown="1"> Add the build method to RandomWordState,
-  as shown by the highlighted text:
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        [[highlight]]@override[[/highlight]]
+        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
+          [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+          [[highlight]]return Text(wordPair.asPascalCase);[[/highlight]]
+        [[highlight]]}[[/highlight]]
+      }
+    {% endprettify %}
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  [[highlight]]@override[[/highlight]]
-  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]final wordPair = WordPair.random();[[/highlight]]
-    [[highlight]]return Text(wordPair.asPascalCase);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-
-</li>
-
-<li markdown="1">Remove the word generation code from MyApp by making
+ 4. Remove the word generation code from MyApp by making
     the highlighted changes below:
 
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    [[strike]]final wordPair = WordPair.random();[[/strike]]  // Delete this line
+    <!-- skip -->
+    {% prettify dart %}
+      class MyApp extends StatelessWidget {
+        @override
+        Widget build(BuildContext context) {
+          [[strike]]final wordPair = WordPair.random();[[/strike]]  // Delete this line
 
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
-          child: [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
-        ),
-      ),
-    );
-  }
-}
-{% endprettify %}
+          return MaterialApp(
+            title: 'Welcome to Flutter',
+            home: Scaffold(
+              appBar: AppBar(
+                title: Text('Welcome to Flutter'),
+              ),
+              body: Center(
+                //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // Change the highlighted text to...
+                child: [[highlight]]RandomWords(),[[/highlight]] // ... this highlighted text
+              ),
+            ),
+          );
+        }
+      }
+    {% endprettify %}
 
-</li>
+ 5. Remove the word generation code from MyApp by making
+    the changes below:
 
-<li markdown="1">Remove the word generation code from MyApp by making
-the changes below:
-
-<li markdown="1"> Restart the app.
-The app should behave as before, displaying a word
-pairing each time you hot reload or save the app.
-
-</li>
-
-</ol>
-
+ 6.  Restart the app.
+    The app should behave as before, displaying a word
+    pairing each time you hot reload or save the app.
 
 {{site.alert.tip}}
   If you see the following warning on a hot reload, consider restarting
@@ -423,150 +399,143 @@ displayed in a ListView widget, grows infinitely. ListView's
 `builder` factory constructor allows you to build a list view
 lazily, on demand.
 
-<ol markdown="1">
-<li markdown="1">Add a `_suggestions` list to the RandomWordsState
+ 1. Add a `_suggestions` list to the RandomWordsState
     class for saving suggested word pairings.
     Also, add a `biggerFont` variable for making the font size larger.
 
-{{site.alert.tip}}
-  Prefixing an identifier with an underscore enforces privacy in the Dart
-  language.
-{{site.alert.end}}
+    {{site.alert.tip}}
+      Prefixing an identifier with an underscore enforces privacy in the Dart
+      language.
+    {{site.alert.end}}
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
 
-  [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
-  ...
-}
-{% endprettify %}
-</li>
+        [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
+        ...
+      }
+    {% endprettify %}
 
-<p>
-Next, you'll add a `_buildSuggestions()` function to the RandomwordsState
-class. This method builds the ListView that displays the suggested
-word pairing.</p>
+    Next, you'll add a `_buildSuggestions()` function to the RandomwordsState
+    class. This method builds the ListView that displays the suggested
+    word pairing.
 
-The ListView class provides a builder property, `itemBuilder`, that's a
-a factory builder and callback function specified as an anonymous function.
-Two parameters are passed to the function&mdash;the BuildContext,
-and the row iterator, `i`. The iterator begins at 0 and increments
-each time the function is called, once for every suggested word pairing.
-This model allows the suggested list to grow infinitely as the user scrolls.
+    The ListView class provides a builder property, `itemBuilder`, that's a
+    a factory builder and callback function specified as an anonymous function.
+    Two parameters are passed to the function&mdash;the BuildContext,
+    and the row iterator, `i`. The iterator begins at 0 and increments
+    each time the function is called, once for every suggested word pairing.
+    This model allows the suggested list to grow infinitely as the user scrolls.
 
-<li markdown="1">Add the entire `_buildSuggestions()` function, shown
-  below, to the RandomWordsState class (delete the comments, if you prefer).
+ 2. Add the entire `_buildSuggestions()` function, shown
+    below, to the RandomWordsState class (delete the comments, if you prefer).
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  [[highlight]]Widget _buildSuggestions() {[[/highlight]]
-    [[highlight]]return ListView.builder([[/highlight]]
-      [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
-      // The itemBuilder callback is called once per suggested word pairing,
-      // and places each suggestion into a ListTile row.
-      // For even rows, the function adds a ListTile row for the word pairing.
-      // For odd rows, the function adds a Divider widget to visually
-      // separate the entries. Note that the divider may be difficult
-      // to see on smaller devices.
-      [[highlight]]itemBuilder: (context, i) {[[/highlight]]
-        // Add a one-pixel-high divider widget before each row in theListView.
-        [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        ...
+        [[highlight]]Widget _buildSuggestions() {[[/highlight]]
+          [[highlight]]return ListView.builder([[/highlight]]
+            [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
+            // The itemBuilder callback is called once per suggested word pairing,
+            // and places each suggestion into a ListTile row.
+            // For even rows, the function adds a ListTile row for the word pairing.
+            // For odd rows, the function adds a Divider widget to visually
+            // separate the entries. Note that the divider may be difficult
+            // to see on smaller devices.
+            [[highlight]]itemBuilder: (context, i) {[[/highlight]]
+              // Add a one-pixel-high divider widget before each row in theListView.
+              [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
 
-        // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
-        // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
-        // This calculates the actual number of word pairings in the ListView,
-        // minus the divider widgets.
-        [[highlight]]final index = i ~/ 2;[[/highlight]]
-        // If you've reached the end of the available word pairings...
-        [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
-          // ...then generate 10 more and add them to the suggestions list.
-          [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
+              // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
+              // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
+              // This calculates the actual number of word pairings in the ListView,
+              // minus the divider widgets.
+              [[highlight]]final index = i ~/ 2;[[/highlight]]
+              // If you've reached the end of the available word pairings...
+              [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
+                // ...then generate 10 more and add them to the suggestions list.
+                [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
+              [[highlight]]}[[/highlight]]
+              [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
+            [[highlight]]}[[/highlight]]
+          [[highlight]]);[[/highlight]]
         [[highlight]]}[[/highlight]]
-        [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
-      [[highlight]]}[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
+      }
+    {% endprettify %}
 
-The `_buildSuggestions` function calls `_buildRow` once per
-word pair. This function displays each new pair in a ListTile,
-which allows you to make the rows more attractive in the next step.
-</li>
+    The `_buildSuggestions` function calls `_buildRow` once per
+    word pair. This function displays each new pair in a ListTile,
+    which allows you to make the rows more attractive in the next step.
 
-<li markdown="1">Add a `_buildRow` function to RandomWordsState:
+ 3. Add a `_buildRow` function to RandomWordsState:
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        ...
 
-  [[highlight]]Widget _buildRow(WordPair pair) {[[/highlight]]
-    [[highlight]]return ListTile([[/highlight]]
-      [[highlight]]title: Text([[/highlight]]
-        [[highlight]]pair.asPascalCase,[[/highlight]]
-        [[highlight]]style: _biggerFont,[[/highlight]]
-      [[highlight]]),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
+        [[highlight]]Widget _buildRow(WordPair pair) {[[/highlight]]
+          [[highlight]]return ListTile([[/highlight]]
+            [[highlight]]title: Text([[/highlight]]
+              [[highlight]]pair.asPascalCase,[[/highlight]]
+              [[highlight]]style: _biggerFont,[[/highlight]]
+            [[highlight]]),[[/highlight]]
+          [[highlight]]);[[/highlight]]
+        [[highlight]]}[[/highlight]]
+      }
+    {% endprettify %}
 
-<li markdown="1">Update the `build` method for RandomWordsState to use
+ 4. Update the `build` method for RandomWordsState to use
     `_buildSuggestions()`, rather than directly calling the word
     generation library.
     ([Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
     implements the basic Material Design visual layout.)
 
-<!-- skip -->
-{% prettify dart %}
-class RandomWordsState extends State<RandomWords> {
-  ...
-  @override
-  Widget build(BuildContext context) {
-    [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
-    [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
-    [[highlight]]return Scaffold ([[/highlight]]
-      [[highlight]]appBar: AppBar([[/highlight]]
-        [[highlight]]title: Text('Startup Name Generator'),[[/highlight]]
-      [[highlight]]),[[/highlight]]
-      [[highlight]]body: _buildSuggestions(),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  }
-  ...
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        ...
+        @override
+        Widget build(BuildContext context) {
+          [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
+          [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
+          [[highlight]]return Scaffold ([[/highlight]]
+            [[highlight]]appBar: AppBar([[/highlight]]
+              [[highlight]]title: Text('Startup Name Generator'),[[/highlight]]
+            [[highlight]]),[[/highlight]]
+            [[highlight]]body: _buildSuggestions(),[[/highlight]]
+          [[highlight]]);[[/highlight]]
+        }
+        ...
+      }
+    {% endprettify %}
 
-<li markdown="1">Update the build method for MyApp, changing the title,
-  and changing the home to be a RandomWords widget.
+ 5. Update the build method for MyApp, changing the title,
+    and changing the home to be a RandomWords widget.
 
-  Replace the original method with the highlighted build method below:
+    Replace the original method with the highlighted build method below:
 
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-    [[highlight]]return MaterialApp([[/highlight]]
-      [[highlight]]title: 'Startup Name Generator',[[/highlight]]
-      [[highlight]]home: RandomWords(),[[/highlight]]
-    [[highlight]]);[[/highlight]]
-  [[highlight]]}[[/highlight]]
-}
-{% endprettify %}
-</li>
+    <!-- skip -->
+    {% prettify dart %}
+      class MyApp extends StatelessWidget {
+        @override
+        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
+          [[highlight]]return MaterialApp([[/highlight]]
+            [[highlight]]title: 'Startup Name Generator',[[/highlight]]
+            [[highlight]]home: RandomWords(),[[/highlight]]
+          [[highlight]]);[[/highlight]]
+        [[highlight]]}[[/highlight]]
+      }
+    {% endprettify %}
 
-<li markdown="1">Restart the app. You should see a list of word pairings
-no matter how far you scroll.
+ 6. Restart the app. You should see a list of word pairings
+    no matter how far you scroll.
 
-<center><img src="images/android-infinite-list-frame.png" alt="screenshot at completion of fourth step in Android"><img src="images/step4-screenshot-ios.png" alt="screenshot at completion of fourth step in iOS"></center>
-<center>Android (left) and iOS (right)</center><br>
+    <center><img src="images/android-infinite-list-frame.png" alt="screenshot at completion of fourth step in Android"><img src="images/step4-screenshot-ios.png" alt="screenshot at completion of fourth step in iOS"></center>
+    <center>Android (left) and iOS (right)</center>
 
 ## Problems?
 {:.no_toc}
@@ -600,14 +569,12 @@ In this codelab, you've:
 * Implemented a stateful widget.
 * Created a lazily loaded, infinite scrolling list displayed with a
   ListView and ListTiles.
-<br>
 
-<p>
 If you would like to extend this app, proceed to
 [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)
 on the
 [Google Developers Codelabs](https://codelabs.developers.google.com/) site,
-where you add the following functionality:</p>
+where you add the following functionality:
 
 * Implement interactivity by adding a clickable heart icon to save
   favorite pairings.
