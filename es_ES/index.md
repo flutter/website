@@ -3,6 +3,7 @@ title: Flutter - Beautiful native apps in record time
 layout: page
 homepage: true
 hide_title: true
+permalink: /
 description: >
   Flutter is Google’s mobile UI framework for crafting high-quality
   native experiences on iOS and Android in record time.

@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-gem 'jekyll'
+gem 'jekyll', '3.3.1'
 gem 'therubyracer'
 gem 'html-proofer'
 gem 'rake'
-gem 'jekyll-redirect-from'
-gem 'liquid-tag-parser'
