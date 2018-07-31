@@ -308,6 +308,14 @@ void main() {
 }
 ```
 
+### Running only one test
+
+It is possible to run only one test, using `--plain-name`:
+
+```
+flutter test --plain-name "Description passed to testWidgets() or to test()" path/to/test_file.dart 
+```
+
 ### Running integration tests
 
 To run the test on an Android device, connect the device via USB to your
