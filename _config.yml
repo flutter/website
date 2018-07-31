@@ -46,3 +46,4 @@ exclude: [example, packages, tool]
 
   # hr_faded: '<hr class="faded"/>'
   # hr_shaded: '<hr class="shaded"/>'
+theme: jekyll-theme-cayman
