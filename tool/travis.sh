@@ -76,7 +76,7 @@ bundle exec jekyll build
 echo "Validating all links."
 rake checklinks
 
-# TODO DEPLOY A FIREBASE
+# TODO DEPLOY A FIREBASE ... ver opcion de githubpages
 # if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
 #   # Deploy pushes to master to Firebase hosting.
 #   echo "Deploying to Firebase."
