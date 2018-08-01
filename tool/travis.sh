@@ -76,13 +76,13 @@ bundle exec jekyll build
 echo "Validating all links."
 rake checklinks
 
-# TODO DEPLOY A FIREBASE ... ver opcion de githubpages
-# if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-#   # Deploy pushes to master to Firebase hosting.
-#   echo "Deploying to Firebase."
-#   npm install --global firebase-tools@3.19.3
-#   firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" --non-interactive deploy
-# fi
+
+if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+  # Deploy pushes to master to Firebase hosting.
+  echo "Deploying to Firebase."
+  npm install --global firebase-tools@3.19.3
+  firebase deploy --token "$FIREBASE_TOKEN" 
+fi
 
 
 # Temporarily disable deploy to staging server
