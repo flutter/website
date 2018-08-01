@@ -2,7 +2,7 @@
 
 El sitio web para [Flutter][].
 
-[![Estatus de Version ](https://travis-ci.org/flutter/website.svg?branch=master)](https://travis-ci.org/flutter/website)
+[![Estatus de Version ](https://travis-ci.org/flutter-es/website.svg?branch=master)](https://travis-ci.org/flutter-es/website)
 
 ## Problemas, errores y peticiones
 
