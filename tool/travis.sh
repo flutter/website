@@ -81,7 +81,7 @@ if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
   # Deploy pushes to master to Firebase hosting.
   echo "Deploying to Firebase."
   npm install --global firebase-tools@3.19.3
-  firebase deploy --token "$FIREBASE_TOKEN" 
+  firebase -P sweltering-fire-2088 --token "$FIREBASE_TOKEN" --non-interactive deploy
 fi
 
 
