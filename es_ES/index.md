@@ -1,14 +1,11 @@
 ---
-title: Flutter - Beautiful native apps in record time
+title: Flutter - Crea hermosas aplicaciones nativas en tiempo récord
 layout: page
 homepage: true
 hide_title: true
 permalink: /
 description: >
-  Flutter is Google’s mobile UI framework for crafting high-quality
-  native experiences on iOS and Android in record time.
-  Flutter works with existing code, is used by developers and organizations
-  around the world, and is free and open source.
+  Flutter es el SDK de aplicaciones móviles de Google para crear interfaces nativas de alta calidad en iOS y Android en un tiempo récord. Flutter funciona con código existente, es utilizado por desarrolladores y organizaciones de todo el mundo, y es gratuito y de código abierto.
 ---
 
 <div class="homepage__illustration">
@@ -24,47 +21,47 @@ description: >
 
 <section class="homepage__key_points card">
     <h1 class="homepage__title">
-        Build beautiful native apps in&nbsp;record&nbsp;time
+        Crea hermosas aplicaciones nativas en&nbsp;tiempo&nbsp;récord
     </h1>
 
     <div class="homepage__tagline">
-    Flutter is Google’s mobile app SDK
-    for crafting high-quality native interfaces
-    on iOS and Android in record time. Flutter works with existing code,
-    is used by developers and organizations around the world,
-    and is free and open source.
+    Flutter es el SDK de aplicaciones móviles de Google
+    para crear interfaces nativas de alta calidad
+    en iOS y Android en un tiempo récord. Flutter funciona con código existente,
+    es utilizado por desarrolladores y organizaciones de todo el mundo,
+    y es gratuito y de código abierto.
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
     </div>
 
     <div class="key-points">
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Fast Development</div>
+            <div class="homepage__key_point_title">Desarrollo rápido</div>
 
             <p>
-            Hot Reload in milliseconds to paint your app to life.
-            Use a rich set of fully-customizable widgets to build native interfaces in minutes.
+            Hot Reload en milisegundos para dar vida a tu aplicación.
+            Utilice un amplio conjunto de widgets totalmente personalizables para construir interfaces nativas en minutos.
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Expressive and Flexible UI</div>
+            <div class="homepage__key_point_title">UI flexible y expresiva</div>
 
             <p>
-            Quickly ship features with a focus on native end-user experiences.
-            Layered architecture allows full customization,
-            which results in incredibly fast rendering and expressive and flexible designs.
+            Genere rapidamente las funcionalidades con el foco puesto en una experiencia de usuario nativa.
+            La arquitectura en capas permite una personalización completa,
+            lo que resulta en una renderización increíblemente rápida y diseños expresivos y flexibles.
             </p>
         </div>
 
         <div class="homepage__key_point">
-            <div class="homepage__key_point_title">Native Performance</div>
+            <div class="homepage__key_point_title">Rendimiento nativo</div>
 
             <p>
-            Flutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts to provide full native performance on both iOS and Android.
+            Los widgets de Flutter incorporan todas las diferencias críticas de la plataforma, como el scroll, la navegación, los íconos y las fuentes, para proporcionar un rendimiento nativo completo tanto en iOS como en Android.
             </p>
         </div>
 
@@ -72,30 +69,24 @@ description: >
 </section>
 
 <section class="homepage__hot_reload card">
-    <h1>Fast development</h1>
+    <h1>Desarrollo rápido</h1>
 
     <p>
-        Flutter's <em>hot reload</em> helps you quickly
-        and easily experiment, build UIs, add features, and fix
-        bugs faster. Experience sub-second reload times,
-        without losing state, on
-        emulators, simulators, and hardware for iOS
-        and Android.
+        El <em>hot reload</em> de Flutter te ayuda a experimentar rápida y fácilmente, crear interfaces de usuario, agregar funcionalidades y corregir errores más rápido. Experimenta tiempos de recarga menores a un segundo, sin perder el estado de la aplicación, en emuladores, simuladores y hardware para iOS y Android. 
     </p>
 
     <div class="hot-reload-gif-container">
-        <img src="/images/intellij/hot-reload.gif" class="hot-reload-gif" alt="Make a change in your code, and your app is changed instantly.">
+        <img src="/images/intellij/hot-reload.gif" class="hot-reload-gif" alt="Haz un cambio en tu código y tu aplicación cambia instantáneamente.">
     </div>
 </section>
 
 <section class="homepage__beautiful_uis card ">
-    <h1>Expressive, beautiful UIs</h1>
+    <h1>Interfaces de usuario bellas y expresivas.</h1>
 
     <p>
-    Delight your users with Flutter's built-in
-    beautiful Material Design and
-    Cupertino (iOS-flavor) widgets, rich motion APIs,
-    smooth natural scrolling, and platform awareness.
+    Deleita a tus usuarios con los hermosos widgets incorporados 
+    en Material Design y Cupertino(iOS-flavor) de Flutter, rica APIs de movimiento, suave scroll natural, y conocimiento de la plataforma.
+
     </p>
 
     <div class="screenshot-list">
@@ -111,15 +102,11 @@ description: >
 </section>
 
 <section class="homepage__reactive_framework card">
-    <h1>Modern, reactive framework</h1>
+    <h1>Framework moderno y reactivo</h1>
 
     <p>
-    Easily compose your UI with Flutter's
-    modern reactive framework and
-    rich set of platform, layout, and foundation widgets.
-    Solve your tough UI challenges with
-    powerful and flexible APIs for 2D, animation, gestures,
-    effects, and more.
+    Componga fácilmente su interfaz de usuario con el moderno framework reactivo de Flutter y un amplio conjunto de widgets, de plataforma, de layout y básicos.
+    Resuelva sus desafíos de interfaz de usuario con poderosas y flexibles APIs para 2D, animación, gestos, efectos y más.
     </p>
 
 {% prettify dart %}
@@ -127,19 +114,19 @@ class CounterState extends State<Counter> {
   int counter = 0;
 
   void increment() {
-    // Tells the Flutter framework that state has changed,
-    // so the framework can run build() and update the display.
+    // Avisa al framework de Flutter que este estado ha cambiado,
+    // entonces el framework puede ejecutar build() y actualizar la pantalla.
     setState(() {
       counter++;
     });
   }
 
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called.
-    // The Flutter framework has been optimized to make rerunning
-    // build methods fast, so that you can just rebuild anything that
-    // needs updating rather than having to individually change
-    // instances of widgets.
+    // Este método es ejecutado cada vez que setState es llamado.
+    // El framework de Flutter ha sido optimizado para rellamar
+    // los metodos build rápido, para que puedas reconstruir cualquier cosa
+    // que necesite actualizarse en lugar de tener que cambiar individualmente
+    // instancias de widgets.
     return Row(
       children: <Widget>[
         RaisedButton(
@@ -154,26 +141,25 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>
-    and learn more about the
-    <a href="/widgets-intro/">reactive framework</a>.
+    Explora el<a href="/widgets/">catálogo de widgets</a>
+    y aprende más sobre el  <a href="/widgets-intro/">framework reactivo</a>.
     </p>
 
 </section>
 
 <section class="homepage__interop card">
-    <h1>Access native features and SDKs</h1>
+    <h1>Acede a funcionalidades y SDKs nativos</h1>
 
     <p>
-    Make your app come to life
-    with platform APIs, 3rd party SDKs,
-    and native code.
-    Flutter lets you reuse your existing Java, Swift, and ObjC code,
-    and access native features and SDKs on iOS and Android.
+    Haz que tu aplicación cobre vida
+    con las APIs de cada plataforma, SDKs de terceros
+    y código nativo.
+    Flutter te permite reutilizar tu código existente en Java, Swift y Objective C
+    y acceder a funcionalidades nativas y SDKs en iOS y Android.
     </p>
 
     <p>
-    Accessing platform features is easy. Here is a snippet from our <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel">interop example</a>:
+    Acceder a las funcionalidades de cada plataforma es facil. Aqui hay un snippet de nuestro <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel"> repositorio de ejemplos</a>:
     </p>
 
 {% prettify dart %}
@@ -192,60 +178,59 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages/">packages</a>, or
-    write <a href="/platform-channels/">platform channels</a>,
-    to access native code, APIs, and SDKs.
+    Aprende como usar <a href="/using-packages/">paquetes</a>, o
+    escribir <a href="/platform-channels/">canales de plataforma</a>,
+    para acceder a código nativo, APIs y SDKs.
     </p>
 
 </section>
 
 <section class="homepage__features card">
-    <h1>Unified app development</h1>
+    <h1>Desarrollo unificado de aplicaciones</h1>
 
     <p>
-    Flutter has the tools and libraries to help you easily
-    bring your ideas to life on iOS and Android.
-    If you don't have any mobile development experience, Flutter
-    is an easy and fast way to build beautiful mobile apps.
-    If you are an experienced iOS or Android developer,
-    you can use Flutter for your views and leverage much of your
-    existing Java/Kotlin/ObjC/Swift investment.
+    Flutter tiene las herramientas y librerías para ayudarte 
+    a que tus ideas cobren vida en iOS y Android.
+    Si no tienes ninguna experiencia en desarrollo para móviles, Flutter
+    es un camino fácil y rápido para construir hermosas aplicaciones móviles.
+    Si eres un desarrollador experimentado en iOS o Android
+    puedes usar Flutter para tus vistas y aprovechar su conocimiento existente en Java/Kotlin/ObjC/Swift.
     </p>
 
     <div class="feature-lists">
 
         <div class="feature-list-group">
-            <h3>Build</h3>
+            <h3>Construye</h3>
 
-            <h4>Beautiful app UIs</h4>
+            <h4>Hermosas Interfaces de aplicación</h4>
 
                 <ul>
-                    <li>Rich 2D GPU-accelerated APIs</li>
-                    <li>Reactive framework</li>
-                    <li>Animation/motion APIs</li>
-                    <li>Material Components and Cupertino widgets</li>
+                    <li>Rica API 2D acelerada por GPU</li>
+                    <li>Framework reactivo</li>
+                    <li>APIs de Animaciones/movimiento APIs</li>
+                    <li>Material Components y widgets para Cupertino</li>
                 </ul>
 
-            <h4>Fluid coding experience</h4>
+            <h4>Experiencia fluida de cógigo</h4>
 
             <ul>
-                <li>Sub-second, stateful hot reload</li>
-                <li>Refactor, code completion, etc.</li>
-                <li>Dart language and core libs</li>
-                <li>Package manager</li>
+                <li>Inferior a un segundo, hot reload manteniendo el estado</li>
+                <li>Refactorización, autocompletado, etc.</li>
+                <li>Uso de Dart como lenguaje y en las librerías del core</li>
+                <li>Gestor de paquetes</li>
             </ul>
 
-            <h4>Full-features apps</h4>
+            <h4>Aplicaciones con funcionalidad completa</h4>
 
             <ul>
-                <li>Interop with mobile OS APIs &amp; SDKs</li>
+                <li>Interoperatividad con las APIs &amp; SDKs de OS </li>
                 <li>Gradle: Java/Kotlin</li>
                 <li>Cocoapods: ObjC/Swift</li>
             </ul>
         </div>
 
         <div class="feature-list-group">
-            <h3>Optimize</h3>
+            <h3>Optimizado</h3>
 
             <h4>Test</h4>
 
@@ -260,15 +245,15 @@ Future<Null> getBatteryLevel() async {
             <ul>
                 <li>IDE debugger</li>
                 <li>Web-based debugger</li>
-                <li>async/await aware</li>
-                <li>Expression evaluator</li>
+                <li>async/await</li>
+                <li>Evaluador de expresiones</li>
             </ul>
 
             <h4>Profile</h4>
 
             <ul>
                 <li>Timeline</li>
-                <li>CPU and memory</li>
+                <li>CPU y memoria</li>
                 <li>In-app perf charts</li>
             </ul>
         </div>
@@ -276,14 +261,14 @@ Future<Null> getBatteryLevel() async {
         <div class="feature-list-group">
             <h3>Deploy</h3>
 
-            <h4>Compile</h4>
+            <h4>Compilado</h4>
 
             <ul>
-                <li>Native ARM code</li>
+                <li>Código nativo ARM</li>
                 <li>"Tree shaking" compiler</li>
             </ul>
 
-            <h4>Distribution</h4>
+            <h4>Distribución</h4>
 
             <ul>
                 <li>Apple App Store</li>
@@ -294,17 +279,18 @@ Future<Null> getBatteryLevel() async {
     </div>
 
     <p>
+    Aprende mas sobre que hace especial a Flutter en esta
     Learn more about what makes Flutter special in the
-    <a href="/technical-overview/">technical overview</a>.
+    <a href="/technical-overview/">descripción técnica general</a>.
     </p>
 </section>
 
 <section class="homepage__try_flutter card">
 
-    <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
+    <div class="homepage__try_today">Prueba Flutter hoy. Empezar es fácil.</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
     </div>
 
 </section>
