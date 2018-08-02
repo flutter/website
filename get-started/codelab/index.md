@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Write Your First Flutter App
+title: Write Your First Flutter App, part 1
 permalink: /get-started/codelab/
 image: /get-started/codelab/images/step7-themes.png
 ---
@@ -8,7 +8,7 @@ image: /get-started/codelab/images/step7-themes.png
 <figure class="right-figure" style="max-width: 260px; padding-right: 10px">
     <img src="images/startup_namer_1_opt.gif"
          alt="Animated GIF of the app that you will be building."
-         style="border: 10px solid #333; border-radius: 10px; margin-bottom: 10px" >
+         style="border: margin-bottom: 10px" >
 </figure>
 
 This is a guide to creating your first Flutter app. If you
@@ -16,6 +16,12 @@ are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
+
+This guide is part 1 of a two-part codelab. You can find
+[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+on [Google Developers](https://codelabs.developers.google.com/).
+[Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
+can also be found on [Google Developers](https://codelabs.developers.google.com/).
 
 * TOC
 {:toc}
@@ -25,11 +31,11 @@ previous experience with Dart or mobile programming.
 
 You’ll implement a simple mobile app that generates proposed names for a
 startup company. The user can select and unselect names,
-saving the best ones. The code lazily generates ten names at a time.
-As the user scrolls, new batches of names are generated.
-The user can scroll forever, with new names being continually generated.
+saving the best ones. The code lazily generates names.
+As the user scrolls, more names are generated.
+There is no limit to how far a user can scroll.
 
-The animated GIF shows how the app works at the completion of part 1:
+The animated GIF shows how the app works at the completion of Part 1.
 
 <div class="whats-the-point" markdown="1">
   <h4>What you’ll learn in part 1</h4>
@@ -41,7 +47,7 @@ The animated GIF shows how the app works at the completion of part 1:
   * How to implement a stateful widget.
   * How to create an infinite, lazily loaded list.
 
-  In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+  In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and
   add the ability to navigate to a new screen (called a _route_ in Flutter).
 </div>
@@ -60,17 +66,14 @@ The animated GIF shows how the app works at the completion of part 1:
     or [iOS](/setup-macos/#deploy-to-ios-devices)) connected to your
     computer and set to developer mode.
   * The [iOS simulator](/setup-macos/#set-up-the-ios-simulator).
-    (Requires installing XCode tools.)
   * The [Android emulator](/setup-macos/#set-up-the-android-emulator).
-    (Requires setup in Android Studio.)
 </div>
 
-# Step 1: Create the initial Flutter app
+# Step 1: Create the starter Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app.](/get-started/test-drive/#create-app)
 Name the project **startup_namer** (instead of _myapp_).
-You’ll be modifying this starter app to create the finished app.
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE, make
@@ -113,7 +116,7 @@ where the Dart code lives.
       When pasting code into your app, indentation can become skewed.
       You can fix this automatically with the Flutter tools:
 
-      * Android Studio / IntelliJ IDEA: Right-click the dart code and
+      * Android Studio / IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
       * VS Code: Right-click and select **Format Document**.
       * Terminal: Run `flutter format <filename>`.
@@ -124,7 +127,7 @@ where the Dart code lives.
     You should see either Android or iOS output, depending on your device.
 
     <center><img src="images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
-    <center>Android (left) and iOS (right)</center><br>
+    <center>Android (left) and iOS (right)</center>
 
     {{site.alert.tip}}
       The first time you run on a physical device, it can take awhile to load.
@@ -151,8 +154,8 @@ where the Dart code lives.
 * A widget’s main job is to provide a `build()` method
   that describes how to display the widget in terms of other,
   lower level widgets.
-* The body for this example consists of a Center widget containing
-  a Text child widget. The Center widget aligns its widget subtree
+* The body for this example consists of a `Center` widget containing
+  a `Text` child widget. The Center widget aligns its widget subtree
   to the center of the screen.
 
 ---
@@ -167,10 +170,10 @@ English words plus some utility functions.
 You can find the english_words package, as well as many other open source
 packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 
- 1. The pubspec manages the assets for a Flutter app.
+ 1. The pubspec file manages the assets and dependencies for a Flutter app.
     In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
     to the dependencies list.
-    The new line is highlighted below:
+    Add the highlighted line below:
 
     {% prettify yaml %}
       dependencies:
@@ -210,7 +213,7 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
  4. Use the English words package to generate the text instead of
     using the string "Hello World".
 
-    Make the following changes, as highlighted below:
+    Make the following changes:
 
     <!-- skip -->
     {% prettify dart %}
@@ -264,9 +267,8 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
-* [**pubspec.yaml**]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/pubspec.yaml)
-(The **pubspec.yaml** file won't change again.)
-* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/lib/main.dart)
+* [pubspec.yaml]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/pubspec.yaml)
+* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/lib/main.dart)
 
 ---
 
@@ -282,14 +284,12 @@ that creates an instance of 2) a State class. The StatefulWidget
 class is, itself, immutable, but the State class persists over the
 lifetime of the widget.
 
-In this step, you’ll add a stateful widget, RandomWords, which creates
-its State class, RandomWordsState. You'll then use RandomWords as
-a child inside the existing MyApp stateless widget.
+In this step, you’ll add a stateful widget, `RandomWords`, which creates
+its `State` class, `RandomWordsState`. You'll then use `RandomWords` as
+a child inside the existing `MyApp` stateless widget.
 
- 1. Create a minimal state class.
-    It can go anywhere in the file, outside of MyApp, but the
-    [solution]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
-    places it at the bottom of the file. Add the following text:
+ 1. Create a minimal state class. Add the following to the bottom
+    of `main.dart`:
 
     <!-- skip -->
     {% prettify dart %}
@@ -301,17 +301,17 @@ a child inside the existing MyApp stateless widget.
     Notice the declaration `State<RandomWords>`. This indicates that we're
     using the generic
     [State](https://docs.flutter.io/flutter/widgets/State-class.html)
-    class specialized for use with RandomWords. Most of the app's logic
-    and state resides here&mdash;it maintains the state for the RandomWords
+    class specialized for use with `RandomWords`. Most of the app's logic
+    and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
     as the user scrolls, and favorite word pairs (in
-    [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)),
+    [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)),
     as the user adds or removes them from the list by toggling the heart icon.
 
-    RandomWordsState depends on the RandomWords class. You'll add that next.
+    `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
 
- 2. Add the stateful RandomWords widget to main.dart.
-    The RandomWords widget does little else beside creating its State class:
+ 2. Add the stateful `RandomWords` widget to `main.dart`.
+    The `RandomWords` widget does little else beside creating its State class:
 
     <!-- skip -->
     {% prettify dart %}
@@ -324,10 +324,9 @@ a child inside the existing MyApp stateless widget.
     After adding the state class, the IDE complains that
     the class is missing a build method. Next, you'll add a basic
     build method that generates the word pairs by moving the
-    word generation code from MyApp to RandomWordsState.
+    word generation code from `MyApp` to `RandomWordsState`.
 
- 3. Add the build method to RandomWordState,
-    as shown by the highlighted text:
+ 3. Add the `build()` method to `RandomWordState`:
 
     <!-- skip -->
     {% prettify dart %}
@@ -340,8 +339,7 @@ a child inside the existing MyApp stateless widget.
       }
     {% endprettify %}
 
- 4. Remove the word generation code from MyApp by making
-    the highlighted changes below:
+ 4. Remove the word generation code from `MyApp`:
 
     <!-- skip -->
     {% prettify dart %}
@@ -366,7 +364,7 @@ a child inside the existing MyApp stateless widget.
       }
     {% endprettify %}
 
- 6.  Restart the app.
+ 5. Restart the app.
     The app should behave as before, displaying a word
     pairing each time you hot reload or save the app.
 
@@ -390,24 +388,26 @@ a child inside the existing MyApp stateless widget.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
+* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
 
 ---
 
 # Step 4: Create an infinite scrolling ListView
 
-In this step, you'll expand RandomWordsState to generate
+In this step, you'll expand `RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls, the list
-displayed in a ListView widget, grows infinitely. ListView's
+displayed in a `ListView` widget, grows infinitely. `ListView`'s
 `builder` factory constructor allows you to build a list view
 lazily, on demand.
 
- 1. Add a `_suggestions` list to the RandomWordsState
+ 1. Add a `_suggestions` list to the `RandomWordsState`
     class for saving suggested word pairings.
     Also, add a `biggerFont` variable for making the font size larger.
 
     {{site.alert.tip}}
-      Prefixing an identifier with an underscore enforces privacy in the Dart
+      Prefixing an identifier with an underscore [enforces
+      privacy](https://www.dartlang.org/guides/language/language-tour)
+      in the Dart
       language.
     {{site.alert.end}}
 
@@ -421,19 +421,19 @@ lazily, on demand.
       }
     {% endprettify %}
 
-    Next, you'll add a `_buildSuggestions()` function to the RandomwordsState
-    class. This method builds the ListView that displays the suggested
+    Next, you'll add a `_buildSuggestions()` function to the `RandomwordsState`
+    class. This method builds the `ListView` that displays the suggested
     word pairing.
 
-    The ListView class provides a builder property, `itemBuilder`, that's a
-    a factory builder and callback function specified as an anonymous function.
-    Two parameters are passed to the function&mdash;the BuildContext,
+    The `ListView` class provides a builder property, `itemBuilder`, that's a
+    factory builder and callback function specified as an anonymous function.
+    Two parameters are passed to the function&mdash;the `BuildContext`,
     and the row iterator, `i`. The iterator begins at 0 and increments
     each time the function is called, once for every suggested word pairing.
     This model allows the suggested list to grow infinitely as the user scrolls.
 
  2. Add the entire `_buildSuggestions()` function, shown
-    below, to the RandomWordsState class (delete the comments, if you prefer).
+    below, to the `RandomWordsState` class (delete the comments, if you prefer).
 
     <!-- skip -->
     {% prettify dart %}
@@ -469,11 +469,11 @@ lazily, on demand.
       }
     {% endprettify %}
 
-    The `_buildSuggestions` function calls `_buildRow` once per
-    word pair. This function displays each new pair in a ListTile,
+    The `_buildSuggestions()` function calls `_buildRow()` once per
+    word pair. This function displays each new pair in a `ListTile`,
     which allows you to make the rows more attractive in the next step.
 
- 3. Add a `_buildRow` function to RandomWordsState:
+ 3. Add a `_buildRow()` function to `RandomWordsState`:
 
     <!-- skip -->
     {% prettify dart %}
@@ -546,7 +546,7 @@ lazily, on demand.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
+* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
 
 ---
 
@@ -556,7 +556,7 @@ at the following link to get back on track.
 <figure class="right-figure" style="max-width: 260px; padding-right: 10px">
     <img src="images/startup-namer-app.gif"
          alt="Animated GIF of the app that you will be building."
-         style="border: 10px solid #333; border-radius: 10px; margin-bottom: 10px" >
+         style="border: margin-bottom: 10px" >
     <center>The app at the end of step 2</center><br>
 </figure>
 
@@ -574,7 +574,7 @@ In this codelab, you've:
   ListView and ListTiles.
 
 If you would like to extend this app, proceed to
-[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0)
+[part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 on the
 [Google Developers Codelabs](https://codelabs.developers.google.com/) site,
 where you add the following functionality:
