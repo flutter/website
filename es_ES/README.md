@@ -31,7 +31,8 @@ Versión resumida a continuación:
 
 4. Crea un rama (branch).
 
-5. Realice sus cambios.
+5. Realice sus cambios
+> IMPORTANTE todas las traducciones se realizarán dentro de la carpeta es_ES
 
 6. Prueba tus cambios ejecutando el sitio localmente:<br>
 `bundle exec jekyll serve` (o `jekyll serve -w --force_polling`)
