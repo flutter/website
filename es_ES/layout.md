@@ -39,40 +39,29 @@ Algunas cajas _pierden_ las restricciones, significa que el valor máximo es man
 Restricciones Ilimitadas
 ------------------------
 
-En ciertas situaciones, las restricciones dadas por la caja pueden ser _ilimitadas_, o infinitas. Estos significa que ya sea el máximo de ancho o el máximo de alto es colocado a `double.INFINITY`.
+En ciertas situaciones, las restricciones dadas por la caja pueden ser _ilimitadas_, o infinitas. Estos significa que el valor máximo de ancho o el máximo de alto es colocado a `double.INFINITY`.
 
 
-A box that tries to be as big as possible won't function usefully when
-given an unbounded constraint, and in checked mode, such a combination
-will throw an exception that points to this file.
+Una caja que trata de ser tan grande como pueda, no tendrá una función útil cuando se le dan restricciones ilimitadas, y en modo chequeado, esa combinación va a lanzar una excepción que apunta a ese archivo.
 
-The most common cases where a render box finds itself with unbounded
-constraints are within flex boxes ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
-and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)), 
-and **within scrollable regions** 
+Los casos más comunes en los que se encuentra una caja de renderizado con restricciones ilimitadas están dentro de las cajas flexibles ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
+y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)), 
+y **dentro de regiones desplazables** 
 ([`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
-and other [`ScrollView`](https://docs.flutter.io/flutter/widgets/ScrollView-class.html) subclasses).
+y otras subclasses de [`ScrollView`](https://docs.flutter.io/flutter/widgets/ScrollView-class.html)).
 
-In particular, [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-tries to expand to fit the space available
-in its cross-direction (i.e. if it's a vertically-scrolling block, it
-will try to be as wide as its parent). If you nest a vertically
-scrolling [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-inside a horizontally scrolling [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html),
-the inner one will try to be as wide as possible, which is infinitely
-wide, since the outer one is scrollable in that direction.
+En particular, [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+trata de expandirse para tratar de encajar en el espacio disponible en su dirección transversal (i.e. Si es un bloque de desplazamiento vertical, tratara de ser tan ancho como su padre). Si anida un
+[`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) con desplazamiento vertical dentro de un [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) con desplazamiento horizontal el interno tratara de ser tan ancho como sea posible, el cual es amplio infinitamente, puesto que el externo es desplazable en esa dirección.
 
 Flexibles
 ---------
 
-Flex boxes themselves ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
-and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)) 
-behave differently based on
-whether they are in a bounded constraints or unbounded constraints in
-their given direction.
+Las cajas comunes ellas mismas ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
+y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)) 
+se comportan de forma diferente basados en si se encuentran en una restricción limitada o restricciones ilimitadas en su dirección dada.
 
-In bounded constraints, they try to be as big as possible in that
-direction.
+En restricciones limitadas, tratan de ser lo más grande posible en esa dirección.
 
 In unbounded constraints, they try to fit their children in that
 direction. In this case, you cannot set `flex` on the children to
