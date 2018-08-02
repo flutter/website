@@ -23,7 +23,7 @@ sus restricciones:
   Por ejemplo, las cajas usadas por [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) y [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html).
 - Aquellos que tratan de tener el mismo tamaño que su hijo.
   Por ejemplo, las cajas usadas por [`Transform`](https://docs.flutter.io/flutter/widgets/Transform-class.html) y [`Opacity`](https://docs.flutter.io/flutter/widgets/Opacity-class.html).
-- Aquellos que tratan de tener un tamaña en particular.
+- Aquellos que tratan de tener un tamaño en particular.
   Por ejemplo, las cajas usadas por [`Image`](https://docs.flutter.io/flutter/dart-ui/Image-class.html) y [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html).
 
 Algunos widgets, por ejemplo [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), varian de tipo en tipo basados en sus argumentos de construcción. En el caso de [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), este por defecto trata de ser tan grande como sea posible, pero si tu colocas un valor en `width`, para esa instancia, trata de honrar ese valor y tomar un tamaño particular.
@@ -32,7 +32,7 @@ Otras, por ejemplo [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.htm
 
 Las restricciones a veces son "estrictas", lo que significa que no dejan espacio para que la caja en el renderizado decida un tamaño
 (e.g. si el mínimo y máximo  de ancho son el mismo, se dice que tienen un ancho estricto). El widget de ejemplo principal de esta `App`, es restringido por la clase
-[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html): la caja usada por el niño devuelto por la función principal de la aplicación [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) le da una restricción que lo fuerza a llenar exactamente el área del contenido de la aplicación  (comúnmente toda la aplicación). Muchas de las cajas en Flutter, especialmente aquellas que tienen un único hijo, van pasar sus restricciones a sus hijos. Eso significa que si anida un grupo de cajas dentro de otra en la raíz del árbol de renderizado de tu aplicación, todas encajarán exactamente entre sí, forzadas por las restricciones estrictas.
+[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html): la caja usada por el hijo devuelto por la función principal de la aplicación [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) le da una restricción que lo fuerza a llenar exactamente el área del contenido de la aplicación  (comúnmente toda la aplicación). Muchas de las cajas en Flutter, especialmente aquellas que tienen un único hijo, van a pasar sus restricciones a sus hijos. Eso significa que si anida un grupo de cajas dentro de otra en la raíz del árbol de renderizado de tu aplicación, todas encajarán exactamente entre sí, forzadas por las restricciones estrictas.
 
 Algunas cajas _pierden_ las restricciones, significa que el valor máximo es mantenido pero que el mínimo es removido. Por ejemplo, [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
@@ -65,4 +65,4 @@ En restricciones limitadas, tratan de ser lo más grande posible en esa direcci�
 En las restricciones ilimitadas, tratan de adaptarse a sus hijos en esa dirección. En ese caso, tú no puedes colocar valor en `flex` en los hijos o en ningún otro que no sea 0 (el valor por defecto). En la librería de widget, esto significa que no puedes usar [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html)
 cuando una caja flexible está dentro de otra caja flexible o dentro de una desplazable. Si lo haces, Obtendrás un mensaje de excepción apuntando a ese documento.
 
-En la dirección transversal, es decir, en el ancho para [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (vertical flex) y en la altura para [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), nunca deben ser ilimitadas, de lo contrario no serían capaces de alinear razonablemente a sus hijos.
+En la dirección _transversal_, es decir, en el ancho para [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (vertical flex) y en la altura para [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), nunca deben ser ilimitadas, de lo contrario no serían capaces de alinear razonablemente a sus hijos.
