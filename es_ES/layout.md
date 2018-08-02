@@ -57,20 +57,12 @@ trata de expandirse para tratar de encajar en el espacio disponible en su direcc
 Flexibles
 ---------
 
-Las cajas comunes ellas mismas ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
-y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)) 
-se comportan de forma diferente basados en si se encuentran en una restricción limitada o restricciones ilimitadas en su dirección dada.
+Las cajas comunes ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
+y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html))  ellas mismas se comportan de forma diferente basados en si se encuentran en una restricción limitada o restricciones ilimitadas en su dirección dada.
 
 En restricciones limitadas, tratan de ser lo más grande posible en esa dirección.
 
-In unbounded constraints, they try to fit their children in that
-direction. In this case, you cannot set `flex` on the children to
-anything other than 0 (the default). In the widget library, this
-means that you cannot use [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html)
-when the flex box is inside
-another flex box or inside a scrollable. If you do, you'll get an
-exception message pointing you at this document.
+En las restricciones ilimitadas, tratan de adaptarse a sus hijos en esa dirección. En ese caso, tú no puedes colocar valor en `flex` en los hijos o en ningún otro que no sea 0 (el valor por defecto). En la librería de widget, esto significa que no puedes usar [`Expanded`](https://docs.flutter.io/flutter/widgets/Expanded-class.html)
+cuando una caja flexible está dentro de otra caja flexible o dentro de una desplazable. Si lo haces, Obtendrás un mensaje de excepción apuntando a ese documento.
 
-In the _cross_ direction, i.e. in their width for [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (vertical flex) and in their height for [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), they must never
-be unbounded, otherwise they would not be able to reasonably align
-their children.
+En la dirección transversal, es decir, en el ancho para [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (vertical flex) y en la altura para [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) (horizontal flex), nunca deben ser ilimitadas, de lo contrario no serían capaces de alinear razonablemente a sus hijos.
