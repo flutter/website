@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dealing with box constraints in Flutter
+title: Tratando con las restricciones de cajas en Flutter
 
 permalink: /layout/
 ---
@@ -13,51 +13,34 @@ Usted puede ser redirigido a esta página si el maframework detecta un problema 
 
 ## Introducción
 
-En Flutter, los widgets son renderizados por sus objetos [`RenderBox`](https://docs.flutter.io/flutter/rendering/RenderBox-class.html) subyacentes. Render boxes are given
-constraints by their parent, and size themselves within those
-constraints. Constraints consist of minimum and maximum widths and
-heights; sizes consist of a specific width and height.
+En Flutter, los widgets son renderizados por sus objetos [`RenderBox`](https://docs.flutter.io/flutter/rendering/RenderBox-class.html) subyacentes. Los cuadros generadores obtienen restricciones por parte de sus padres y se clasifican dentro de esas restricciones. 
+Las restricciones consisten en valores mínimos y maximos para el ancho y alto; los tamaños consisten en un ancho y alto específicos.
 
-Generally, there are three kinds of boxes, in terms of how they handle
-their constraints:
+En general, hay tres tipos de cajas, en términos de cómo manejar
+sus restricciones:
 
-- Those that try to be as big as possible.
-  For example, the boxes used by [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) and [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html).
-- Those that try to be the same size as their children.
-  For example, the boxes used by [`Transform`](https://docs.flutter.io/flutter/widgets/Transform-class.html) and [`Opacity`](https://docs.flutter.io/flutter/widgets/Opacity-class.html).
-- Those that try to be a particular size.
-  For example, the boxes used by [`Image`](https://docs.flutter.io/flutter/dart-ui/Image-class.html) and [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html).
+- Aquellos que tratan de ser los más grandes posible.
+  Por ejemplo, las cajas usadas por [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) y [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html).
+- Aquellos que tratan de tener el mismo tamaño que su hijo.
+  Por ejemplo, las cajas usadas por [`Transform`](https://docs.flutter.io/flutter/widgets/Transform-class.html) y [`Opacity`](https://docs.flutter.io/flutter/widgets/Opacity-class.html).
+- Aquellos que tratan de tener un tamaña en particular.
+  Por ejemplo, las cajas usadas por [`Image`](https://docs.flutter.io/flutter/dart-ui/Image-class.html) y [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html).
 
-Some widgets, for example [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), vary from type to type based on
-their constructor arguments. In the case of [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), it defaults
-to trying to be as big as possible, but if you give it a `width`, for
-instance, it tries to honor that and be that particular size.
+Algunos widgets, por ejemplo [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), varian de tipo en tipo basados en sus argumentos de construcción. En el caso de [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html), este por defecto trata de ser tan grande como sea posible, pero si tu colocas un valor en `width`, para esa instancia, trata de honrar ese valor y tomar un tamaño particular.
 
-Others, for example [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (flex boxes) vary based on the
-constraints they are given, as described below in the "Flex" section.
+Otras, por ejemplo [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (cajas flexibles) varían basándose en las restricciones que se les otorgue, como se describe a continuación en la sección "Flex".
 
-The constraints are sometimes "tight", meaning that they leave no room
-for the render box to decide on a size (e.g. if the minimum and
-maximum width are the same, it is said to have a tight width). The
-main example of this is the `App` widget, which is contained by the
-[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html) class: the box used by the child returned by the
-application's [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) function is given a constraint that forces it to
-exactly fill the application's content area (typically, the entire
-screen). Many of the boxes in Flutter, especially those that just take a
-single child, will pass their constraint on to their children. This
-means that if you nest a bunch of boxes inside each other at the root
-of your application's render tree, they'll all exactly fit in each
-other, forced by these tight constraints.
+Las restricciones a veces son "estrictas", lo que significa que no dejan espacio para que la caja en el renderizado decida un tamaño
+(e.g. si el mínimo y máximo  de ancho son el mismo, se dice que tienen un ancho estricto). El widget de ejemplo principal de esta `App`, es restringido por la clase
+[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html): la caja usada por el niño devuelto por la función principal de la aplicación [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) le da una restricción que lo fuerza a llenar exactamente el área del contenido de la aplicación  (comúnmente toda la aplicación). Muchas de las cajas en Flutter, especialmente aquellas que tienen un único hijo, van pasar sus restricciones a sus hijos. Eso significa que si anida un grupo de cajas dentro de otra en la raíz del árbol de renderizado de tu aplicación, todas encajarán exactamente entre sí, forzadas por las restricciones estrictas.
 
-Some boxes _loosen_ the constraints, meaning the maximum is maintained
-but the minimum is removed. For example, [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
+Algunas cajas _pierden_ las restricciones, significa que el valor máximo es mantenido pero que el mínimo es removido. Por ejemplo, [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
-Unbounded constraints
----------------------
+Restricciones Ilimitadas
+------------------------
 
-In certain situations, the constraint that is given to a box will be
-_unbounded_, or infinite. This means that either the maximum width or
-the maximum height is set to `double.INFINITY`.
+En ciertas situaciones, las restricciones dadas por la caja pueden ser _ilimitadas_, o infinitas. Estos significa que ya sea el máximo de ancho o el máximo de alto es colocado a `double.INFINITY`.
+
 
 A box that tries to be as big as possible won't function usefully when
 given an unbounded constraint, and in checked mode, such a combination
@@ -79,8 +62,8 @@ inside a horizontally scrolling [`ListView`](https://docs.flutter.io/flutter/wid
 the inner one will try to be as wide as possible, which is infinitely
 wide, since the outer one is scrollable in that direction.
 
-Flex
-----
+Flexibles
+---------
 
 Flex boxes themselves ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
 and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)) 
