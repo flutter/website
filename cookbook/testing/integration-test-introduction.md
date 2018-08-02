@@ -162,6 +162,7 @@ Now, we can instrument the app. This will involve two steps:
 
 We will add this code inside the `flutter_driver/app.dart` file.
 
+<!-- skip -->
 ```dart
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:counter_app/main.dart' as app;

@@ -93,6 +93,7 @@ class MyApp extends StatelessWidget {
 Next, we'll need to create an instrumented version of our app. This code lives
 in a file called `test_driver/app.dart`.
 
+<!-- skip -->
 ```dart
 import 'package:flutter_driver/driver_extension.dart';
 import 'package:scrollable_app/main.dart' as app;
