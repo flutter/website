@@ -43,7 +43,7 @@ The animated GIF shows how the app works at the completion of part 1:
 
   In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
   of this codelab, you'll add interactivity, modify the app's theme, and
-  add the ability to navigate to a new page (called a _route_ in Flutter).
+  add the ability to navigate to a new screen (called a _route_ in Flutter).
 </div>
 
 <div class="whats-the-point" markdown="1">
@@ -119,7 +119,8 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. [Run the app](/get-started/test-drive/#androidstudio).
+ 2. [Run the app](/get-started/test-drive/#androidstudio) by clicking
+    the green arrow in the IDE.
     You should see either Android or iOS output, depending on your device.
 
     <center><img src="images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
@@ -166,7 +167,7 @@ English words plus some utility functions.
 You can find the english_words package, as well as many other open source
 packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 
- 1. The pubspec file manages the assets for a Flutter app.
+ 1. The pubspec manages the assets for a Flutter app.
     In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
     to the dependencies list.
     The new line is highlighted below:
@@ -189,6 +190,10 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
     Running "flutter packages get" in startup_namer...
     Process finished with exit code 0
     ```
+
+    Performing `Packages get` also auto-generates the `pubspec.lock`
+    file with a list of all packages pulled into the project and
+    their version numbers.
 
  3. In **lib/main.dart**, import the new package:
 
@@ -259,9 +264,9 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
-* [**pubspec.yaml**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/57c25b976ec34d56591cb898a3df0b320e903b99/pubspec.yaml)
+* [**pubspec.yaml**]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/pubspec.yaml)
 (The **pubspec.yaml** file won't change again.)
-* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/bb51e3b7df4ebbf3dfd02a4a38db2655/raw/f9afd92ffd4ac5cc50549b1854db0b84bd2b78fd/main.dart)
+* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/lib/main.dart)
 
 ---
 
@@ -283,13 +288,13 @@ a child inside the existing MyApp stateless widget.
 
  1. Create a minimal state class.
     It can go anywhere in the file, outside of MyApp, but the
-    [solution](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/8c6c97b34b97645415de66dc944824993c26cfa5/main.dart)
+    [solution]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
     places it at the bottom of the file. Add the following text:
 
     <!-- skip -->
     {% prettify dart %}
-      class RandomWords extends StatefulWidget {
-        // TODO: Add build method.
+      class RandomWordsState extends State<RandomWords> {
+        // TODO Add build method
       }
     {% endprettify %}
 
@@ -361,9 +366,6 @@ a child inside the existing MyApp stateless widget.
       }
     {% endprettify %}
 
- 5. Remove the word generation code from MyApp by making
-    the changes below:
-
  6.  Restart the app.
     The app should behave as before, displaying a word
     pairing each time you hot reload or save the app.
@@ -373,8 +375,9 @@ a child inside the existing MyApp stateless widget.
   the app:
 
   **Reloading...<br>
-  Not all changed program elements ran during view reassembly;<br>
-  consider restarting.**
+  Some program elements were changed during reload but did not run when
+  the view was reassembled; you may need to restart the app (by pressing "R")
+  for the changes to have an effect.**
 
   It may be a false positive, but restarting ensures that your changes
   are reflected in the app's UI.
@@ -387,7 +390,7 @@ a child inside the existing MyApp stateless widget.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d7f13ddd8888556232476be8578efe40/raw/8c6c97b34b97645415de66dc944824993c26cfa5/main.dart)
+* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
 
 ---
 
@@ -543,7 +546,7 @@ lazily, on demand.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [**lib/main.dart**](https://gist.githubusercontent.com/Sfshaza/d6f9460a04d3a429eb6ac0b0f07da564/raw/34fe240f4122435c871bb737708ee0357741801c/main.dart)
+* [**lib/main.dart**]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
 
 ---
 
@@ -578,8 +581,8 @@ where you add the following functionality:
 
 * Implement interactivity by adding a clickable heart icon to save
   favorite pairings.
-* Implement navigation to a new route by adding a new page
+* Implement navigation to a new route by adding a new screen
   containing the saved favorites.
-* Modify the theme color.
+* Modify the theme color, making an all-white app.
 
 [Learn More](/get-started/learn-more/)
