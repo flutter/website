@@ -35,7 +35,7 @@ saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
 
-The animated GIF shows how the app works at the completion of Part 1.
+The animated GIF shows how the app works at the completion of part 1.
 
 <div class="whats-the-point" markdown="1">
   <h4>What you’ll learn in part 1</h4>
@@ -557,7 +557,7 @@ at the following link to get back on track.
     <img src="images/startup-namer-app.gif"
          alt="Animated GIF of the app that you will be building."
          style="border: margin-bottom: 10px" >
-    <center>The app at the end of step 2</center><br>
+    <center>The app from part 2</center><br>
 </figure>
 
 Congratulations!
@@ -567,11 +567,10 @@ In this codelab, you've:
 
 * Created a Flutter app from the ground up.
 * Written Dart code.
-* Leveraged an external, third party library.
+* Leveraged an external, third-party library.
 * Used hot reload for a faster development cycle.
 * Implemented a stateful widget.
-* Created a lazily loaded, infinite scrolling list displayed with a
-  ListView and ListTiles.
+* Created a lazily loaded, infinite scrolling list.
 
 If you would like to extend this app, proceed to
 [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
