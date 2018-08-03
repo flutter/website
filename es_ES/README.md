@@ -13,32 +13,8 @@ y le daremos un vistazo.
 
 ## Desarrollo
 
-Instalar Jekyll y herramientas relacionadas siguiento estas 
-[instrucciones](https://help.github.com/articles/using-jekyll-with-pages/)
-de Github
+Sigue nuestra guía en nuestra [wiki](https://github.com/flutter-es/website/wiki/Como-colaborar)
 
-Versión resumida a continuación:
-
-1. Asegurate de tener [Ruby](https://www.ruby-lang.org/en/documentation/installation/) instalado; necesitas la versión 2.4.3 o superior:<br>
-`ruby --version`
-
-2. Asegurate de tener [Bundler](http://bundler.io/) instalado; si no se instala así:<br>
-`gem install bundler`
-
-3. Instala todas las dependencias:<br>
-`bundle install`
-    * En macOS, si encuentra errores mientras se contruyen las extensiones nativas de Ruby, vea [Instalación de Nokogiri](http://www.nokogiri.org/tutorials/installing_nokogiri.html#mac_os_x) para consejos sobre solución de problemas.
-
-4. Crea un rama (branch).
-
-5. Realice sus cambios
-> IMPORTANTE todas las traducciones se realizarán dentro de la carpeta es_ES
-
-6. Prueba tus cambios ejecutando el sitio localmente:<br>
-`bundle exec jekyll serve` (o `jekyll serve -w --force_polling`)
-
-7. Antes de enviarlo, ejecuta el enlace de validación:<br>
-`rake checklinks`
 
 ## Desplegar a un staging site
 
@@ -48,7 +24,7 @@ a un sitio de staging personal de la forma siguiente (los paso 1 y 2 solo necesi
 1. En la [Consola Firebase](https://console.firebase.google.com),
 crea tu propio projecto Firebase (ej. 'mi-flutter-staging')
 
-2. Comunica a Firebase acerca del proyecto con firebase CLI
+1. Comunica a Firebase acerca del proyecto con firebase CLI
 [commando `use` ](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
 	```
 	$ firebase use --add
