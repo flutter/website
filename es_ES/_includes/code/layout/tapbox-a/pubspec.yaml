@@ -1,0 +1,9 @@
+name: tapbox_a
+description: Demonstrates a stateful widget that manages its own state.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

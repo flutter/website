@@ -16,7 +16,7 @@ permalink: /setup-macos/
 ## Configurar plataforma
 
 macOS permite desarrollar apps con Fluter para ambos iOS y Android. Termine al menos
-una de las configuraciones para las pltaformas ahora, para poder ser capaz de contruir y correr
+una de las configuraciones para las pltaformas ahora, para poder ser capaz de crear y ejecutar
 su primera app en Flutter.
 
 {% include setup/ios-setup.md %}
