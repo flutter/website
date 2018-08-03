@@ -11,7 +11,7 @@ Por favor realiza una peticion en nuestro
 [issue traker](https://github.com/flutter-es/website/issues/new)
 y le daremos un vistazo.
 
-## Desarollo
+## Desarrollo
 
 Instalar Jekyll y herramientas relacionadas siguiento estas 
 [instrucciones](https://help.github.com/articles/using-jekyll-with-pages/)
