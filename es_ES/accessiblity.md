@@ -6,7 +6,7 @@ permalink: /accessibility/
 ---
 
 Flutter se compromete a apoyar a los desarrolladores que quieran hacer sus aplicaciones más
-accesible: utilizable por la mayor cantidad de gente posible, incluidos aquellos con
+accesibles: utilizable por la mayor cantidad de gente posible, incluidos aquellos con
 discapacidades tales como ceguera o impedimento motor.
 
 * Placeholder for TOC
@@ -29,7 +29,7 @@ Los detalles de estos se discuten a continuación. Además de las pruebas para e
     1. Habilite el Escáner de Accesibilidad desde Android Settings > Accessibility >
        Accessibility Scanner > On
     1. Acceda al botón de icono 'casilla de verificación' del Analizador de accesibilidad para iniciar un escaneo
-  * For iOS:
+  * Para iOS:
     1. Abra la carpeta `iOS` de su aplicación Flutter en Xcode
     1. Seleccione un simulador como objetivo y haga clic en el botón Run
     1. En Xcode, seleccione Xcode > Open Developer Tools > Accessibility Inspector
