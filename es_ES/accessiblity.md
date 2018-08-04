@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Accessibility
+title: Accesibilidad
 
 permalink: /accessibility/
 ---
