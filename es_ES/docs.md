@@ -28,16 +28,16 @@ incluido [Escribe tu primera App con Flutter,](/get-started/codelab/)
 aquí tienes algunos pasos para seguir.
 
 * [Flutter para Desarrolladores Android](/flutter-for-android/)<br>
-  Revisa estas notas si tienes experienca en Android.
+  Revisa estas notas si tienes experiencia en Android.
 
 * [Patrones HTML/CSS](/web-analogs/)<br>
   Revisa estas analogías entre HTML y Flutter si tienes experiencia en web.
 
 * [Construye Layouts en Flutter](/tutorials/layout/)<br>
-  Aprende como crear layouts en Flutter, donde todo es un widget.
+  Aprende cómo crear layouts en Flutter, donde todo es un widget.
 
 * [Añade Interactividad a tu aplicación Flutter](/tutorials/interactive/)<br>
-  Aprende como añadir un stateful widget a tu app.
+  Aprende cómo añadir un stateful widget a tu app.
 
 * [Un Tour por el Framework de Widgets de Flutter](/widgets-intro/)<br>
   Aprende más sobre el estilo reactivo del framework de Flutter.
@@ -53,23 +53,23 @@ Cuando domines lo básico, prueba estas páginas.
   Una (creciente) colección de recetas que abordan los casos de uso comunes con Flutter.
 
 * [Catálogo de Apps de Ejemplo](/catalog/samples/)<br>
-  Aplicaciones simples que demuestran como implementar funcionalidades y widgets.
+  Aplicaciones simples que demuestran cómo implementar funcionalidades y widgets.
 
 * [Añadir Assets e Imágenes en Flutter](/assets-and-images/)<br>
-  Como añadir recursos a una aplicación en Flutter.
+  Cómo añadir recursos a una aplicación en Flutter.
 
 * [Animaciones en Flutter](/animations/)<br>
-  Como crear animaciones standard, hero, o staggered, por nombrar algunos estilos de animación que soporta Flutter.
+  Cómo crear animaciones standard, hero, o staggered, por nombrar algunos estilos de animación que soporta Flutter.
 
-* [Rutas y Navigación](/cookbook/navigation/navigation-basics/)<br>
-  Como crear y navegar a una nueva pantalla (llamada
+* [Rutas y Navegación](/cookbook/navigation/navigation-basics/)<br>
+  Cómo crear y navegar a una nueva pantalla (llamada
   _route_ en Flutter).
 
 * [Internacionalización](/tutorials/internationalization/)<br>
-  Sé global! Como internacionalizar tu aplicación Flutter.
+  Sé global! Cómo internacionalizar tu aplicación Flutter.
 
 * [Dart Eficaz](https://www.dartlang.org/guides/language/effective-dart)<br>
-  Guías sobre como escribir mejor código con Dart.
+  Guías sobre cómo escribir mejor código con Dart.
 
 &nbsp;
 
@@ -79,17 +79,17 @@ Cuando domines lo básico, prueba estas páginas.
 Sumérgete en los temas que te interesen.
 
 * [Flutter Widget Inspector](/inspector/)<br>
-  Como usar el inspector de widgets, una poderasa herramienta que te permite
+  Cómo usar el inspector de widgets, una poderosa herramienta que te permite
   explorar el árbol de widgets, deshabilitar el banner "DEBUG"
   , mostrar la capa sobrepuesta de rendimiento, y mucho más.
 
 * [Fuentes Propias](/cookbook/design/fonts/)<br>
-  Como añadir fuentes a tu aplicación.
+  Cómo añadir fuentes a tu aplicación.
 
 * [Text Input](/cookbook/forms/text-input/)<br>
-  Como configurar un text input básico.
+  Cómo configurar un text input básico.
 
-* [Debugar aplicaciones Flutter](/debugging/)<br>
+* [Depurar aplicaciones Flutter](/debugging/)<br>
   Herramientas y consejos para debugar tu app.
 
 
