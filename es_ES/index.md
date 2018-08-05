@@ -21,7 +21,7 @@ description: >
 
 <section class="homepage__key_points card">
     <h1 class="homepage__title">
-        Crea hermosas aplicaciones nativas en&nbsp;tiempo&nbsp;récord
+        Crea bellas aplicaciones nativas en tiempo récord
     </h1>
 
     <div class="homepage__tagline">
@@ -33,7 +33,7 @@ description: >
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
+    <a href="/get-started/install/" class="get-started-button">Empezar</a>
     </div>
 
     <div class="key-points">
@@ -97,7 +97,7 @@ description: >
     </div>
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>.
+    Navega por el <a href="/widgets/">catálogo de widget</a>.
     </p>
 </section>
 
@@ -280,7 +280,6 @@ Future<Null> getBatteryLevel() async {
 
     <p>
     Aprende mas sobre que hace especial a Flutter en esta
-    Learn more about what makes Flutter special in the
     <a href="/technical-overview/">descripción técnica general</a>.
     </p>
 </section>
@@ -290,7 +289,7 @@ Future<Null> getBatteryLevel() async {
     <div class="homepage__try_today">Prueba Flutter hoy. Empezar es fácil.</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
+    <a href="/get-started/install/" class="get-started-button">EMPEZAR</a>
     </div>
 
 </section>
