@@ -90,7 +90,7 @@ Sumérgete en los temas que te interesen.
   Cómo configurar un text input básico.
 
 * [Depurar aplicaciones Flutter](/debugging/)<br>
-  Herramientas y consejos para debugar tu app.
+  Herramientas y consejos para depurar tu app.
 
 
 &nbsp;
