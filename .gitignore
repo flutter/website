@@ -16,4 +16,4 @@ packages
 example/*.dart
 
 .idea/
-.vscode/settings.json
+.vscode/
