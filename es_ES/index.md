@@ -16,7 +16,7 @@ description: >
     </h1>
     <img src="images/homepage/header-illustration.png"
          class="homepage__illustration--image"
-         alt="Ilustracion con un teléfono móvil, un lápiz y un dibujo abstracto de widgets.">
+         alt="Ilustración con un teléfono móvil, un lápiz y un dibujo abstracto de widgets.">
 </div>
 
 <section class="homepage__key_points card">
