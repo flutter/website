@@ -94,7 +94,7 @@ as possible.
 Wait for Travis to give the green light before merging a PR. Travis
 runs a bunch of precommit checks (see the tests for the
 [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
-the [engine](https://github.com/flutter/engine/blob/master/travis/build.sh),
+the [engine](https://github.com/flutter/engine/blob/master/ci/build.sh),
 and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
 These checks include checks on comments, so make sure you wait for the
 green light even if your patch is _obviously_ fine!
