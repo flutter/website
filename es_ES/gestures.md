@@ -13,7 +13,7 @@ permalink: /gestures/
 Este documento explica como escuchar y responder a _gestos_ en Flutter. Los ejemplos de gestos incluye taps, drags y scalling.
 
 El sistema de gestos en flutter tiene dos capas separadas.
-La primera capa tiene eventos de puntero en bruto, que describen la ubicación y el movimiento de punteros (ej., taps, mice, styli) en la pantalla. La segunda capa tiene _gestos_, que describen acciones semánticas que consisten en uno o más movimientos de puntero.
+La primera capa tiene eventos de puntero en bruto, que describen la ubicación y el movimiento de punteros (ej. taps, mice, styli) en la pantalla. La segunda capa tiene _gestos_, que describen acciones semánticas que consisten en uno o más movimientos de puntero.
 
 
 # Punteros
@@ -40,7 +40,7 @@ widget. Sin embargo, en general, considere usar gestos en su lugar (como se disc
 
 # Gestos
 
-Los gestos representan acciones semánticas (e.g., tap, drag, y scale) que se reconocen a partir de múltiples eventos de puntero individuales, potencialmente incluso varios punteros individuales. Los gestos pueden enviar varios eventos, correspondientes al ciclo de vida del gesto (e.g., drag start, drag update, y drag end):
+Los gestos representan acciones semánticas (ej. tap, drag, y scale) que se reconocen a partir de múltiples eventos de puntero individuales, potencialmente incluso varios punteros individuales. Los gestos pueden enviar varios eventos, correspondientes al ciclo de vida del gesto (ej. drag start, drag update, y drag end):
 
 - Tap
   - `onTapDown` Un puntero que podría causar un tap, ha entrado en contacto con la pantalla en una ubicación particular.
