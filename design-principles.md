@@ -91,10 +91,10 @@ should review the patch as soon as possible. If a reviewer finds
 problems with a patch marked TBR, the issues should be fixed as soon
 as possible.
 
-Wait for Travis to give the green light before merging a PR. Travis
+Wait for Cirrus to give the green light before merging a PR. Cirrus
 runs a bunch of precommit checks (see the tests for the
 [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
-the [engine](https://github.com/flutter/engine/blob/master/travis/build.sh),
+the [engine](https://github.com/flutter/engine/blob/master/ci/build.sh),
 and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
 These checks include checks on comments, so make sure you wait for the
 green light even if your patch is _obviously_ fine!
@@ -105,7 +105,7 @@ that locally first too before checking anything in.
 
 Make sure all the trees and dashboards are green before checking in:
 the [infra waterfall](https://build.chromium.org/p/client.flutter/waterfall),
-our [travis dashboard](https://travis-ci.org/flutter/flutter/builds),
+our [Cirrus dashboard](https://cirrus-ci.com/github/flutter/flutter/master),
 our [test dashboard](https://flutter-dashboard.appspot.com/build.html), and
 our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html) (Google-only, sorry).
 

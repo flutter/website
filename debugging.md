@@ -896,7 +896,7 @@ file handlers using the `ulimit` command:
 ulimit -S -n 2048
 ```
 
-If you use Travis for testing, increase the number of available file
-handlers that Travis can open by adding the same line to
-flutter/travis.yml.
+If you use Travis or Cirrus for testing, increase the number of
+available file handlers that they can open by adding the same line to
+flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
 
