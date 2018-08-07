@@ -10,10 +10,10 @@ permalink: /gestures/
 
 # Introducción
 
-Este documento explica como escuchar y responder a _gestos_ en Flutter. Los ejemplos de gestos incluye taps, drags y ajustar tamaño.
+Este documento explica como escuchar y responder a _gestos_ en Flutter. Los ejemplos de gestos incluye taps, drags y scalling.
 
-El sistema de gestos en flutter tienen dos capas separadas.
-La primera capa tiene eventos de puntero en bruto, que describen la ubicación y el movimiento de punteros (e.g., taps, ratones, styli) en la pantalla. La segunda capa tiene _gestos_, que describen acciones semánticas que consisten en uno o más movimientos de puntero.
+El sistema de gestos en flutter tiene dos capas separadas.
+La primera capa tiene eventos de puntero en bruto, que describen la ubicación y el movimiento de punteros (ej., taps, mice, styli) en la pantalla. La segunda capa tiene _gestos_, que describen acciones semánticas que consisten en uno o más movimientos de puntero.
 
 
 # Punteros
@@ -29,9 +29,9 @@ El puntero se ha movido de una ubicación de la pantalla a otra.
 - [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
   La acción de ese puntero ya no está dirigida hacia esta aplicación.
 
-En el pointer down, el framework hace una _prueba de éxito_ en tu aplicación para determinar que widgets existen en esa ubicación donde el puntero entró en contacto con la pantalla.
+En el pointer down, el framework hace una _hit test_ en tu aplicación para determinar que widgets existen en esa ubicación donde el puntero entró en contacto con la pantalla.
 
-El evento pointer down (y los eventos posteriores para ese puntero) se envían luego al widget más interno encontrado por la prueba de éxito.
+El evento pointer down (y los eventos posteriores para ese puntero) se envían luego al widget más interno encontrado por el hit test.
 
 A partir de ahí, los eventos emergen en el árbol y son enviados a todos los widgets en el camino desde el widget más interno a la raíz del árbol. No hay ningún mecanismo para cancelar o detener los eventos de punteros de ser enviados más allá.
 
@@ -48,7 +48,7 @@ Los gestos representan acciones semánticas (e.g., tap, drag, y scale) que se re
   - `onTap` Se ha producido un tap.
   - `onTapCancel` El puntero que activó previamente el  `onTapDown` no terminará causando un tap.
 - Doble tap
-  - `onDoubleTap` El usuario ha pinchado la pantalla en la misma ubicación dos veces en una sucesión rápida.
+  - `onDoubleTap` El usuario ha tocado la pantalla en la misma ubicación dos veces en una sucesión rápida.
 - Long press
   - `onLongPress` Un puntero ha permanecido en contacto con la pantalla en el mismo lugar durante un largo período de tiempo.
 - Drag vertical 
@@ -63,19 +63,18 @@ Los gestos representan acciones semánticas (e.g., tap, drag, y scale) que se re
 Para escuchar los gestos de la capa de widgets, utilice un
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) widget.
 
-Si está utilizando componentes material, muchos de esos widgets ya responden a los taps o gestos. Por ejemplo,
+Si está utilizando Material Components, muchos de esos widgets ya responden a los taps o gestos. Por ejemplo,
 [IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) y [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
 responden a la presión (taps), y
 [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-responde a golpes para disparar el desplazamiento.
+responde a swipes para disparar el desplazamiento.
 Si no está utilizando los widgets, pero desea que el efecto  "Ink Splash " en un tap, puede utilizar
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
 
 ## Desambiguación de gesto
 
-En una ubicación determinada en la pantalla, puede haber múltiples detectores de gestos. Todos estos detectores de gestos escuchan la secuencia de eventos de puntero a medida que pasan e intentan reconocer gestos específicos. El
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
-widget decide qué gestos tratar de reconocer basado en cuáles de sus callbacks no son nulos.
+En una ubicación determinada en la pantalla, puede haber múltiples detectores de gestos. Todos estos detectores de gestos escuchan la secuencia de eventos de puntero a medida que pasan e intentan reconocer gestos específicos. El widget
+[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) decide qué gestos tratar de reconocer basándose en cuáles de sus callbacks no son nulos.
 
 Cuando hay más de un reconocedor de gestos para un puntero dado en la pantalla, el framework desambigua qué gesto pretende el usuario haciendo que cada reconocedor se una a la _arena de gestos_. La arena de gestos determina qué gesto gana usando las siguientes reglas:
 
