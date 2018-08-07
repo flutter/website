@@ -26,4 +26,4 @@ issues important to you in our [issue tracker][issues]:
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter
-[reddit:]: https://www.reddit.com/r/FlutterDev/
+[reddit]: https://www.reddit.com/r/FlutterDev/
