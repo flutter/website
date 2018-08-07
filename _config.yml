@@ -6,6 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: https://flutter.io
 port: 4002
 github_username: flutter
+lang: es_ES
 
 # Build settings
 markdown: kramdown
@@ -16,25 +17,25 @@ kramdown:
 
 exclude: [example, packages, tool]
 
-plugins:
-  - jekyll-redirect-from
+# plugins:
+#   - jekyll-redirect-from
 
-## Site-wide shorthands
+# ## Site-wide shorthands
 
-alert:
-  tip: >-
-    <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="fa fa-lightbulb-o"></i> **Tip:**
-  note: >-
-    <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fa fa-info-circle"></i> **Note:**
-  important: >-
-    <aside class="alert alert-warning" role="alert">
-    <i class="fa fa-warning"></i> **Important:**
-  warning: >-
-    <aside class="alert alert-danger" role="alert">
-    <i class="fa fa-exclamation-circle"></i> **Warning:**
-  end: </aside>
+# alert:
+#   tip: >-
+#     <aside class="alert alert-success" role="alert" markdown="1">
+#     <i class="fa fa-lightbulb-o"></i> **Tip:**
+#   note: >-
+#     <aside class="alert alert-info" role="alert" markdown="1">
+#     <i class="fa fa-info-circle"></i> **Note:**
+#   important: >-
+#     <aside class="alert alert-warning" role="alert">
+#     <i class="fa fa-warning"></i> **Important:**
+#   warning: >-
+#     <aside class="alert alert-danger" role="alert">
+#     <i class="fa fa-exclamation-circle"></i> **Warning:**
+#   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'
   # callout_default: '<div class="bs-callout bs-callout-default">'

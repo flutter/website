@@ -1,0 +1,11 @@
+name: lakes
+description: Demonstrates building a layout for the "Lakes" app.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/lake.jpg

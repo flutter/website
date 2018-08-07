@@ -1,6 +1,9 @@
 # [Flutter][]'s website
 
+
+Proyecto de traducción de:
 The website for [Flutter][].
+[Readme en español](https://github.com/flutter-es/website/tree/master/es_ES/)
 
 [![Build Status](https://travis-ci.org/flutter/website.svg?branch=master)](https://travis-ci.org/flutter/website)
 

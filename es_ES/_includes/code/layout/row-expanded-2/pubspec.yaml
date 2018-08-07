@@ -1,0 +1,13 @@
+name: row_expanded_2
+description: Demonstrates a Row widget containing an Expanded widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pic1.jpg
+    - images/pic2.jpg
+    - images/pic3.jpg
