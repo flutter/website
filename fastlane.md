@@ -102,8 +102,8 @@ The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
-CI systems, such as [Travis](https://docs.travis-ci.com/user/environment-variables/#Encrypting-environment-variables)
-or [Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables)
+Continuous Integration (CI) systems, such as
+[Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables)
 generally support encrypted environment variables to store private data.
 
 **Take precaution not to re-echo those variable values back onto the console in
@@ -122,7 +122,7 @@ secrets in pull requests that you accept and merge.
         an encrypted environment variable. You can deserialize it on your CI
         system during the install phase with
         ```bash
-        echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/travis/[directory and filename specified in your gradle].keystore
+        echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/cirrus/[directory # and filename specified in your gradle].keystore
         ```
     * ![iOS](/images/fastlane-cd/ios.png) On iOS:
         * Move the local environment variable `FASTLANE_PASSWORD` to use
@@ -167,4 +167,4 @@ repository root.
 
 The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 uses Fastlane for continuous deployment. See the source for a working example of
-Fastlane in action. The Travis script is [here](https://github.com/flutter/flutter/blob/master/.travis.yml).
+Fastlane in action. The Flutter framework repository's Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
