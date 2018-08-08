@@ -29,7 +29,7 @@ El puntero se ha movido de una ubicación de la pantalla a otra.
 - [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
   La acción de ese puntero ya no está dirigida hacia esta aplicación.
 
-En el pointer down, el framework hace una _hit test_ en tu aplicación para determinar que widgets existen en esa ubicación donde el puntero entró en contacto con la pantalla.
+En el pointer down, el framework hace un _hit test_ en tu aplicación para determinar que widgets existen en esa ubicación donde el puntero entró en contacto con la pantalla.
 
 El evento pointer down (y los eventos posteriores para ese puntero) se envían luego al widget más interno encontrado por el hit test.
 
