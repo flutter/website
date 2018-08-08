@@ -11,7 +11,7 @@ Widget to make working with lists a breeze!
 ## Create a ListView 
 
 Using the standard `ListView` constructor is perfect for lists that contain only 
-a few items. We will also employ the built-in `ListTile` Widget to give our 
+a few items. We will also employ the built-in [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html) Widget to give our 
 items a visual structure.
 
 <!-- skip -->
