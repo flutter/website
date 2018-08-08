@@ -1440,6 +1440,8 @@ children.
   }
 {% endprettify %}
 
+To learn more in detail how to build LinearLayout, see this [Article](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
+
 ## What is the equivalent of a RelativeLayout?
 
 A RelativeLayout lays your widgets out relative to each other. In
