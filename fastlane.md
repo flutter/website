@@ -167,4 +167,4 @@ repository root.
 
 The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 uses Fastlane for continuous deployment. See the source for a working example of
-Fastlane in action. The Travis script is [here](https://github.com/flutter/flutter/blob/master/.travis.yml).
+Fastlane in action. The Flutter framework repository’s Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
