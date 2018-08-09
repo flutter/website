@@ -28,7 +28,7 @@ easy for you to learn, too.
 : A good overview of Dart's powerful core libraries. Learn about
   Dart's support for collections, async, math, numbers, strings, JSON, and more.
 
-[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart/index.html?index=..%2F..%2Findex#0)
+[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart)
 : Use your Java knowledge to get up and running quickly with Dart. Learn about
   classes, constructors, parameters, and interfaces with examples from the Java
   Tutorial.
