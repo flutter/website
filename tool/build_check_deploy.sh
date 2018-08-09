@@ -43,7 +43,7 @@ function check_formatting() {
 # Deploys website to Firebase, trying up to total_tries times.
 function deploy() {
   local total_tries="$1"
-  local remaining_tries=$(($total_tries - 1))
+  local remaining_tries="$total_tries"
   local project="$2"
   while [[ "$remaining_tries" > 0 ]]; do
     # FIREBASE_TOKEN is set in the .cirrus.yml file.
