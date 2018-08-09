@@ -5,7 +5,7 @@ website_task:
   env:
     CIRRUS_WORKING_DIR: "/opt/website"
     # For deploying master website to Firebase master branch site
-    FIREBASE_TOKEN: ENCRYPTED[882ce80b2cc441774c7c4ca4aa861cca2581b70e88cfe0b6cb94094f40ff424f335888eec191ca71379652056d760231]
+    FIREBASE_TOKEN: ENCRYPTED[e207f0b4fb77024c6a2d9f43b25c6a0d04b1e9f6ea77f50904d815a82062ad62043303ade58a2cab809848435799b01c]
   git_fetch_script: git fetch origin
   setup_script: ./tool/setup.sh
   pub_cache:
