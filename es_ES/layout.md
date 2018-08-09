@@ -31,7 +31,7 @@ Algunos widgets, por ejemplo [`Container`](https://docs.flutter.io/flutter/widge
 Otras, por ejemplo [`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) y [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html) (cajas flexibles) varían basándose en las restricciones que se les otorgue, como se describe a continuación en la sección "Flex".
 
 Las restricciones a veces son "estrictas", lo que significa que no dejan espacio para que el Render Box decida un tamaño
-(e.g. si el mínimo y máximo  de ancho son el mismo, se dice que tienen un ancho estricto). El ejemplo principal de esto es el widget`App`, el cual es contenido por la clase
+(ej. si el mínimo y máximo  de ancho son el mismo, se dice que tienen un ancho estricto). El ejemplo principal de esto es el widget `App`, el cual es contenido por la clase
 [`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html): la caja usada por el hijo retornado por la función [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) de la aplicación, le da una restricción que lo fuerza a rellenar exactamente el área de contención de la aplicación ( normalmente, toda la pantalla). Muchas de las cajas en Flutter, especialmente aquellas que tienen un único hijo, van a pasar sus restricciones a sus hijos. Eso significa que si anida un grupo de cajas dentro de otra en la raíz del árbol de renderizado de tu aplicación, todas encajarán exactamente entre sí, forzadas por las restricciones estrictas.
 
 Algunas cajas _pierden_ las restricciones, significa que el valor máximo es mantenido pero que el mínimo es removido. Por ejemplo, [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
@@ -51,7 +51,7 @@ y **dentro de regiones scrollables**
 y otras subclases de [`ScrollView`](https://docs.flutter.io/flutter/widgets/ScrollView-class.html)).
 
 En particular, [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-trata de expandirse para tratar de encajar en el espacio disponible en su dirección transversal (i.e. Si es un bloque de scroll vertical, tratara de ser tan ancho como su padre). Si anida un
+trata de expandirse para tratar de encajar en el espacio disponible en su dirección transversal (Es decir, si es un bloque de scroll vertical, tratara de ser tan ancho como su padre). Si anida un
 [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) con scroll vertical dentro de un [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) con scroll horizontal el interno tratara de ser tan ancho como sea posible, el cual es infinitamente ancho, puesto que el externo es scrollable en esa dirección.
 
 Flex
