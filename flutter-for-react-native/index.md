@@ -2083,14 +2083,14 @@ in the terminal window, or type the following shortcuts:
 
 | Action| Terminal Shortcut| Debug functions and properties|
 | :------- | :------: | :------ |
-| Widget hierarchy of the app| `w`| debugDumpApp()|
-| Rendering tree of the app | `t`| debugDumpRenderTree()|
-| Layers| `L`| debugDumpLayerTree()|
-| Accessibility | `S` (traversal order) or<br>`U` (inverse hit test order)|debugDumpSemantics()|
-| To toggle the widget inspector | `i` | WidgetsApp. showWidgetInspectorOverride|
-| To toggle the display of construction lines| `p` | debugPaintSizeEnabled|
-| To simulate different operating systems| `o` | defaultTargetPlatform|
-| To display the performance overlay | `P` | WidgetsApp. showPerformanceOverlay|
+| Widget hierarchy of the app| `w`| debug DumpApp()|
+| Rendering tree of the app | `t`| debug Dump RenderTree()|
+| Layers| `L`| debug Dump LayerTree()|
+| Accessibility | `S` (traversal order) or<br>`U` (inverse hit test order)|debug DumpSemantics()|
+| To toggle the widget inspector | `i` | WidgetsApp. show WidgetInspector Override|
+| To toggle the display of construction lines| `p` | debug Paint Size Enabled|
+| To simulate different operating systems| `o` | default Target Platform|
+| To display the performance overlay | `P` | WidgetsApp. show Performance Overlay|
 | To save a screenshot to flutter. png| `s` ||
 | To quit| `q` ||
 
@@ -2344,7 +2344,7 @@ The following table lists commonly-used React Native components mapped to the co
 |                                                                                           |                                                                                                            |                                                                                                                                        |
 |  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Circular Progress Indicator](https://docs.flutter.io/flutter/material/CircularProgressIndicator-class.html) | A widget that shows progress along a circle.                                                                                           |
 |                                                                                           | strokeWidth                                                                                                | The width of the line used to draw the circle.                                                                                         |
-|                                                                                           | backgroundColor                                                                                            | The progress indicator's background color. The current theme's `ThemeData.backgroundColor` by default.                                   |
+|                                                                                           | backgroundColor                                                                                            | The progress indicator's background color. The current theme's `ThemeData. backgroundColor` by default.                                   |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
 |  [Activity Indicator](https://facebook.github.io/react-native/docs/activityindicator.html) | [Linear Progress Indicator](https://docs.flutter.io/flutter/material/LinearProgressIndicator-class.html)     | A widget that shows progress along a circle.                                                                                           |
 |                                                                                           | value                                                                                                      | The value of this progress indicator.                                                                                                   |
