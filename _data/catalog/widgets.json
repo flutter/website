@@ -474,7 +474,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoAlertDialog-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-alert-dialog.png'>"
   },
   {
     "name": "CupertinoButton",
@@ -504,7 +504,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialogAction-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog-action.png'>"
   },
   {
     "name": "CupertinoSlider",
