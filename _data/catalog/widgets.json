@@ -544,7 +544,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-transition.png'>"
   },
   {
     "name": "CupertinoFullscreenDialogTransition",
@@ -554,7 +554,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
   },
   {
     "name": "CupertinoNavigationBar",
@@ -584,7 +584,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-scaffold.png'>"
   },
   {
     "name": "CupertinoTabScaffold",
@@ -594,7 +594,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabScaffold-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-scaffold.png'>"
   },
   {
     "name": "CupertinoTabView",
@@ -604,7 +604,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
   },
   {
     "name": "Padding",
