@@ -69,7 +69,7 @@ implementar una función de construcción
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
 , que describe el widget en términos de otros widgets de nivel inferior.
 El framework construye estos widgets en orden, hasta que el proceso toca fondo
-en widgets que representan el [`RenderObject`] (https://docs.flutter.io/flutter/rendering/RenderObject-class.html) subyacente, el cual calcula y describe la geometría del widget.
+en widgets que representan el [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html) subyacente, el cual calcula y describe la geometría del widget.
 
 Widgets básicos
 ---------------
