@@ -85,7 +85,7 @@ results:
   skipped frames, slowest build times, and more.
   2. It can save the complete `Timeline` as a json file on disk. This file can 
   be opened with the Chrome browser's tracing tools found at 
-  [`chrome://tracing`](`chrome://tracing`).
+  [chrome://tracing](chrome://tracing).
 
 <!-- skip -->
 ```dart
@@ -122,7 +122,7 @@ the project contains two files:
   runs and create a graph of the results.
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
   Open the file using the Chrome browser's tracing tools found at 
-  [`chrome://tracing`](`chrome://tracing`). The tracing tools provide a 
+  [chrome://tracing](chrome://tracing). The tracing tools provide a 
   convenient interface for inspecting the timeline data in order to discover 
   the source of a performance issue.
 
