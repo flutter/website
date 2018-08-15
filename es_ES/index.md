@@ -43,7 +43,7 @@ description: >
 
             <p>
             Hot Reload en milisegundos para dar vida a tu aplicación.
-            Utilice un amplio conjunto de widgets totalmente personalizables para construir interfaces nativas en minutos.
+            Utiliza un amplio conjunto de widgets totalmente personalizables para construir interfaces nativas en minutos.
             </p>
         </div>
 
@@ -51,7 +51,7 @@ description: >
             <div class="homepage__key_point_title">UI flexible y expresiva</div>
 
             <p>
-            Genere rápidamente las funcionalidades con el foco puesto en una experiencia de usuario nativa.
+            Genera rápidamente las funcionalidades con el foco puesto en una experiencia de usuario nativa.
             La arquitectura en capas permite una personalización completa,
             lo que resulta en una renderización increíblemente rápida y diseños expresivos y flexibles.
             </p>
@@ -105,8 +105,8 @@ description: >
     <h1>Framework moderno y reactivo</h1>
 
     <p>
-    Componga fácilmente su interfaz de usuario con el moderno framework reactivo de Flutter y un amplio conjunto de widgets, de plataforma, de layout y básicos.
-    Resuelva sus desafíos de interfaz de usuario con poderosas y flexibles APIs para 2D, animación, gestos, efectos y más.
+    Compón fácilmente tu interfaz de usuario con el moderno framework reactivo de Flutter y un amplio conjunto de widgets, de plataforma, de layout y básicos.
+    Resuelve tus desafíos de interfaz de usuario con poderosas y flexibles APIs para 2D, animación, gestos, efectos y más.
     </p>
 
 {% prettify dart %}
@@ -159,7 +159,7 @@ class CounterState extends State<Counter> {
     </p>
 
     <p>
-    Acceder a las funcionalidades de cada plataforma es facil. Aqui hay un snippet de nuestro <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel"> repositorio de ejemplos</a>:
+    Acceder a las funcionalidades de cada plataforma es fácil. Aqui hay un snippet de nuestro <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel"> repositorio de ejemplos</a>:
     </p>
 
 {% prettify dart %}
@@ -194,7 +194,7 @@ Future<Null> getBatteryLevel() async {
     Si no tienes ninguna experiencia en desarrollo para móviles, Flutter
     es un camino fácil y rápido para construir hermosas aplicaciones móviles.
     Si eres un desarrollador experimentado en iOS o Android
-    puedes usar Flutter para tus vistas y aprovechar su conocimiento existente en Java/Kotlin/ObjC/Swift.
+    puedes usar Flutter para tus vistas y aprovechar tu conocimiento existente en Java/Kotlin/ObjC/Swift.
     </p>
 
     <div class="feature-lists">
