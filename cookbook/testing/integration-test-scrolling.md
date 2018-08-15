@@ -120,8 +120,10 @@ class provides three methods for scrolling through lists:
   method allows us to scroll through a specific list by a given amount. 
   - The
   [`scrollIntoView`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
-  method finds a specific Widget that's currently displayed on screen and will
-  scroll it completely into view.
+  method finds a specific Widget that's already been rendered, and will scroll 
+  it completely into view. Some Widgets, such as 
+  [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html),
+  render items on-demand.
   - The
   [`scrollUntilVisible`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
   method scrolls through a list until a specific Widget is visible.
@@ -131,14 +133,15 @@ oftentimes the most robust option. Why?
 
   1. If we use the `scroll` method alone, we might incorrectly assume the height
   of each item in the list. This could lead to scrolling too much or too little.
-  2. If we use the `scrollIntoView` method, we're assuming the Widget is visible
-  on screen. In order to verify our apps work on a broad range of devices, we
-  might run our integration tests against devices with different screen sizes.
-  Whether or not a particular Widget is visible can depend on the size of the
-  screen.
+  2. If we use the `scrollIntoView` method, we assume the Widget has been
+  instantiated and rendered. In order to verify our apps work on a broad range
+  of devices, we might run our integration tests against devices with different
+  screen sizes. Since `ListView.builder` will render items on-demand,
+  whether or not a particular Widget has been rendered can depend 
+  on the size of the screen.
 
 Therefore, rather than assuming we know the height of all the items in a list,
-or that a particular Widget will be visible on all devices, we can use the
+or that a particular Widget will be rendered on all devices, we can use the
 `scrollUntilVisible` method to repeatedly scroll through a list of items until
 we find what we're looking for!
 

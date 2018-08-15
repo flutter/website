@@ -26,7 +26,7 @@ a local file.
   2. Record the performance of the app
   3. Save the results to disk
   4. Run the test
-  5. View the summary
+  5. Review the results
 
 ### 1. Write a test that scrolls through a list of items
 
@@ -71,20 +71,21 @@ final timeline = await driver.traceAction(() async {
 
 ### 3. Save the results to disk
 
-Now that we've captured a performance timeline, we need a way to inspect it! 
+Now that we've captured a performance timeline, we need a way to review it! 
 The `Timeline` object provides detailed information about all of the events that
-took place. Therefore, it can be a bit difficult to read and understand.
+took place, but it does not provide a convenient way to review the results.
 
-Instead of inspecting the raw data contained within the `Timeline`, we can
-convert the `Timeline` into a
+Therefore, we can convert the `Timeline` into a
 [`TimelineSummary`](https://docs.flutter.io/flutter/flutter_driver/TimelineSummary-class.html).
-The `TimelineSummary` will extract statistics from the `Timeline` in a format
-that's easier to consume.
+The `TimelineSummary` can perform two tasks that make it easier to review the
+results:
 
-Finally, we need a way to review the summary. The easiest option is to save the
-summary to your local hard drive and review the results. With a more advanced
-setup, we could save a summary after each test run performed on each
-device and create a graph of the results!
+  1. It can write a json document on disk that summarizes the data contained 
+  within the `Timeline`. This summary includes information about the number of 
+  skipped frames, slowest build times, and more.
+  2. It can save the complete `Timeline` as a json file on disk. This file can 
+  be opened with the Chrome browser's tracing tools found at 
+  [`chrome://tracing`](`chrome://tracing`).
 
 <!-- skip -->
 ```dart
@@ -93,7 +94,12 @@ device and create a graph of the results!
 final summary = new TimelineSummary.summarize(timeline);
 
 // Then, save the summary to disk
-summary.writeSummaryToFile('scrolling_performance', pretty: true);
+summary.writeSummaryToFile('scrolling_summary', pretty: true);
+
+// Optionally, write the entire timeline to disk in a json format. This
+// file can be opened in the Chrome browser's tracing tools found by
+// navigating to chrome://tracing.
+summary.writeTimelineToFile('scrolling_timeline', pretty: true);
 ```
 
 ### 4. Run the test
@@ -105,13 +111,22 @@ summary of the results to disk, we can run the test with the following command:
 flutter drive --target=test_driver/app.dart
 ```
 
-### 5. Inspect the summary
+### 5. Review the results
 
-Once the test has completed successfully, find the summary inside the `build` 
-directory of the app in a file called 
-`scrolling_performance.timeline_summary.json`.
+After the test completes successfully, the `build` directory at the root of 
+the project contains two files:
 
-#### Example:
+  1. `scrolling_summary.timeline_summary.json` contains the summary. Open
+  the file with any text editor to review the information contained within.
+  With a more advanced setup, we could save a summary every time the test 
+  runs and create a graph of the results.
+  2. `scrolling_timeline.timeline.json` contains the complete timeline data.
+  Open the file using the Chrome browser's tracing tools found at 
+  [`chrome://tracing`](`chrome://tracing`). The tracing tools provide a 
+  convenient interface for inspecting the timeline data in order to discover 
+  the source of a performance issue.
+
+#### Summary Example
 
 ```json
 {
@@ -175,7 +190,12 @@ void main() {
       final summary = new TimelineSummary.summarize(timeline);
 
       // Then, save the summary to disk
-      summary.writeSummaryToFile('scrolling_performance', pretty: true);
+      summary.writeSummaryToFile('scrolling_summary', pretty: true);
+
+      // Optionally, write the entire timeline to disk in a json format. This
+      // file can be opened in the Chrome browser's tracing tools found by
+      // navigating to chrome://tracing.
+      summary.writeTimelineToFile('scrolling_timeline', pretty: true);
     });
   });
 }

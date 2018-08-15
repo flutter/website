@@ -7,7 +7,7 @@ permalink: /cookbook/testing/integration-test-introduction/
 Unit tests and Widget tests are handy for testing individual classes, functions,
 or Widgets. However, they generally don't test how individual pieces work
 together as a whole or capture the performance of an application running on a
-real device. These tasks are performed with integration tests.
+real device. These tasks are performed with *integration tests*.
 
 Integration tests work as a pair: first, deploy an instrumented application to a
 real device or emulator and then "drive" the application from a separate test
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### 2. Add the `flutter_test` dependency
+### 2. Add the `flutter_driver` dependency
 
 Next, we'll need the `flutter_driver` package to write integration tests. We 
 can add the `flutter_driver` dependency to the `dev_dependencies` section of 
