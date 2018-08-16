@@ -82,6 +82,12 @@ reference to help you build up an application.
   * [Introduction to Widget testing](/cookbook/testing/widget-test-introduction/)
   * [Finding Widgets in a Widget Test](/cookbook/testing/widget-test-finders/)
   * [Tapping and Dragging in Widget Tests](/cookbook/testing/widget-test-tap-drag/)
+  
+### Integration Tests
+
+  * [Introduction to integration testing](/cookbook/testing/integration-test-introduction/)
+  * [Scrolling in integration tests](/cookbook/testing/integration-test-scrolling/)
+  * [Performance profiling with integration tests](/cookbook/testing/integration-test-profiling/)
     
 ## App Maintenance
 
