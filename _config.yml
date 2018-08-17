@@ -14,7 +14,7 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-exclude: [example, packages, tool]
+exclude: [example, packages, tool, Gemfile*]
 
 plugins:
   - jekyll-redirect-from
