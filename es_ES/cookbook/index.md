@@ -83,6 +83,6 @@ referencia para ayudar a construir una aplicación.
   * [Encontrando Widgets en una prueba de Widgets](/cookbook/testing/widget-test-finders/)
   * [Pulsar y Arrastrar en una prueba de Widgets](/cookbook/testing/widget-test-tap-drag/)
     
-## Manteimiento de la App
+## Mantenimiento de la App
 
   * [Reportar errores a un servicio](/cookbook/maintenance/error-reporting/)
