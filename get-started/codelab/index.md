@@ -326,7 +326,7 @@ a child inside the existing `MyApp` stateless widget.
     build method that generates the word pairs by moving the
     word generation code from `MyApp` to `RandomWordsState`.
 
- 3. Add the `build()` method to `RandomWordState`:
+ 3. Add the `build()` method to `RandomWordsState`:
 
     <!-- skip -->
     {% prettify dart %}
