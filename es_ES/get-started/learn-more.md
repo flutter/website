@@ -13,7 +13,6 @@ Aprender más acerca del framework de Flutter:
 * [Contruyendo Layouts en Flutter](/tutorials/layout/) tutorial
 * [Agregar Interactividad](/tutorials/interactive/) tutorial
 * [Un Tour de widgets en Flutter](/widgets-intro/)
-* [Flutter para desarrolladores de Android](/flutter-for-android/)
 
 Otras fuentes:
 
