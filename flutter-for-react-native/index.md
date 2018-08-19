@@ -1132,7 +1132,7 @@ internal state to manage.
  describing does not depend on anything other than the configuration information
  in the object itself and the [`BuildContext`](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) in which the widget is inflated.
 
-[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html),  [CircleAvator](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets which subclass  [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
+[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html),  [CircleAvatar](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets which subclass  [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
 
 <!-- skip -->
