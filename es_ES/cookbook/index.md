@@ -82,7 +82,13 @@ referencia para ayudar a construir una aplicación.
   * [Introducción a las pruebas de Widgets](/cookbook/testing/widget-test-introduction/)
   * [Encontrando Widgets en una prueba de Widgets](/cookbook/testing/widget-test-finders/)
   * [Pulsar y Arrastrar en una prueba de Widgets](/cookbook/testing/widget-test-tap-drag/)
-    
+
+### Tests de integración
+  
+  * [Introducción a los test de integración](/cookbook/testing/integration-test-introduction/)
+  * [Haciendo scroll en test de integración](/cookbook/testing/integration-test-scrolling/)
+  * [Perfiles de rendimiento en test de integración](/cookbook/testing/integration-test-profiling/)  
+
 ## Mantenimiento de la App
 
   * [Reportar errores a un servicio](/cookbook/maintenance/error-reporting/)
