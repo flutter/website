@@ -6,7 +6,7 @@
           <img src="/images/flutter-mono-81x100.png" alt="Flutter Logo" width="81" height="100">
         </div>
           <p class="site-footer__link-list">
-            <a href="https://groups.google.com/forum/#!forum/flutter-dev">{{ site.email_name }}</a> &bull;
+            <a href="https://groups.google.com/forum/#!forum/flutter-dev">{{ site.email  | regex_replace: '(.*?@).*', '\1' }}</a> &bull;
             <a href="https://twitter.com/flutterio">twitter</a> &bull;
             <a href="https://github.com/flutter/">github</a> &bull;
             <a href="/tos">terms</a> &bull;

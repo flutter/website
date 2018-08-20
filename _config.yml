@@ -1,18 +1,12 @@
 # Site settings
 title: Flutter
+# description: TBC
 email: flutter-dev@googlegroups.com
-email_name: flutter-dev@
-baseurl: "" # the subpath of your site, e.g. /blog/
 url: https://flutter.io
 port: 4002
 github_username: flutter
-
-# Build settings
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  hard_wrap: false
+repo: https://github.com/flutter/website
+branch: master
 
 exclude: [example, packages, tool, Gemfile*]
 

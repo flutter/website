@@ -25,4 +25,4 @@ Please reach out to us at our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 
-[mailing list]: mailto:flutter-dev@googlegroups.com
+[mailing list]: mailto:{{site.email}}
