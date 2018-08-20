@@ -11,8 +11,6 @@ branch: master
 # Build settings
 source: src
 
-exclude: [example]
-
 plugins:
   - jekyll-redirect-from
 

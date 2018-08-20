@@ -3,6 +3,22 @@
 # Fast fail the script on failures.
 set -e
 
+BUILD=1
+CHECK_LINKS=1
+PUB_CMD="get"
+
+while [[ "$1" == -* ]]; do
+  case "$1" in
+    --no-build) BUILD=; shift;;
+    --no-check-links) CHECK_LINKS=; shift;;
+    --no-get)   PUB_CMD=""; shift;;
+    --up*)      PUB_CMD="upgrade"; shift;;
+    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links]]";
+                exit 0;;
+    *)          echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
+  esac
+done
+
 # Write errors to stderr
 function error() {
   echo "FAIL: $@" 1>&2
@@ -75,6 +91,9 @@ function script_location() {
 # Set the FLUTTER_ROOT and PATH, in case we're running this script locally.
 # Assumes that the flutter dir is at the same level as the website dir.
 FLUTTER_ROOT="${FLUTTER_ROOT:-$(script_location)/../../flutter}"
+FLUTTER_ROOT="$(cd $FLUTTER_ROOT; pwd)"
+echo "Using FLUTTER_ROOT '$FLUTTER_ROOT'"
+
 export PATH="$FLUTTER_ROOT/bin/cache/dart-sdk/bin:$FLUTTER_ROOT/bin:$PATH"
 
 if [[ ! -x "$FLUTTER_ROOT/bin/flutter" ]]; then
@@ -96,43 +115,53 @@ dartfmt="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt"
 pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
 flutter="$FLUTTER_ROOT/bin/flutter"
 
-echo "Using Dart version:"
+echo "Using Dart SDK: $dart"
 "$dart" --version
 
-"$flutter" packages get
+if [[ -n $PUB_CMD ]]; then
+  "$flutter" packages $PUB_CMD
 
-# Analyze the stand-alone sample code files
-for sample in src/_includes/code/*/*; do
-    echo "Run flutter packages get on ${sample}"
-  if [[ -d "${sample}" ]]; then
-    "$flutter" packages get ${sample}
-  fi
-done
+  # Analyze the stand-alone sample code files
+  for sample in src/_includes/code/*/*; do
+    if [[ -d "${sample}" ]]; then
+      echo "Run flutter packages $PUB_CMD on ${sample}"
+      "$flutter" packages $PUB_CMD ${sample}
+    fi
+  done
+fi
 
-echo "Run flutter analyze on _includes/code/"
+echo "ANALYZING _includes/code/*:"
 "$flutter" analyze --no-current-package src/_includes/code/
 
-echo "Extract Dart snippets from the markdown documentation."
-"$dart" tool/extract.dart
+echo "EXTRACTING code snippets from the markdown:"
+"$dart" --preview-dart-2 tool/extract.dart
 
-echo "Analyzing the extracted Dart libraries."
-"$flutter" analyze --no-current-package example/
+echo "ANALYZING extracted code snippets:"
+"$flutter" analyze --no-current-package example.g/
 
-echo "Check formatting of the extracted Dart libraries."
-check_formatting example/*.dart
+echo "DARTFMT check of extracted code snippets:"
+check_formatting example.g/*.dart
 
-echo "Building site."
-bundle exec jekyll build
+if [[ -n $BUILD ]]; then
+  echo "BUILDING site:"
+  bundle exec jekyll build
+else
+  echo "SKIPPING: site build"
+fi
 
-echo "Validating all links."
-rake checklinks
-echo "SUCCESS: All integration checks complete."
+if [[ -n $CHECK_LINKS ]]; then
+  echo "CHECKING links:"
+  rake checklinks
+  echo "SUCCESS: check links"
+else
+  echo "SKIPPING: check links"
+fi
 
 # Deploy on all non-PR master branch builds.
 if [[ -z "$CIRRUS_PR" && "$CIRRUS_BRANCH" == "master" ]]; then
-  echo "Deploying website to Firebase."
+  echo "Deploying website to Firebase:"
   deploy 5 sweltering-fire-2088
-  echo "SUCCESS: Website deployed successfully."
+  echo "SUCCESS: Website deployed"
 fi
 
 exit 0

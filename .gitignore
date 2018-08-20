@@ -12,6 +12,6 @@ node_modules
 .pub/
 pubspec.lock
 packages
-example/*.dart
+example.g/
 
 .idea/
