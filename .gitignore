@@ -1,18 +1,17 @@
-.firebaserc
 .DS_Store
 _site
-.sass-cache
+.*-cache
+.*-metadata
 build
-.firebaserc
 .*swp
 node_modules
-.jekyll-metadata
 
-# Dart ignores.
+# Dart
+.flutter-plugins
 .packages
 .pub/
 pubspec.lock
 packages
-example/*.dart
+example.g/
 
 .idea/
