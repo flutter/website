@@ -9,54 +9,54 @@
     ],
     "redirects": [
       {
-        "source" : "/style-guide*",
-        "destination" : "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo",
-        "type" : 301
+        "source": "/style-guide*",
+        "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo",
+        "type": 301
       },
       {
-        "source" : "/tutorial/",
-        "destination" : "/widgets-intro/",
-        "type" : 301
+        "source": "/tutorial/",
+        "destination": "/widgets-intro/",
+        "type": 301
       },
       {
-        "source" : "/basic-widgets/",
-        "destination" : "/widgets/",
-        "type" : 301
+        "source": "/basic-widgets/",
+        "destination": "/widgets/",
+        "type": 301
       },
       {
-        "source" : "/material-design-catalog/",
-        "destination" : "/widgets/",
-        "type" : 301
+        "source": "/material-design-catalog/",
+        "destination": "/widgets/",
+        "type": 301
       },
       {
-        "source" : "/chat",
-        "destination" : "https://gitter.im/flutter/flutter",
-        "type" : 302
+        "source": "/chat",
+        "destination": "https://gitter.im/flutter/flutter",
+        "type": 302
       },
       {
-        "source" : "/issues",
-        "destination" : "https://github.com/flutter/flutter/issues",
-        "type" : 302
+        "source": "/issues",
+        "destination": "https://github.com/flutter/flutter/issues",
+        "type": 302
       },
       {
-        "source" : "/platform-services*",
-        "destination" : "/using-packages/",
-        "type" : 301
+        "source": "/platform-services*",
+        "destination": "/using-packages/",
+        "type": 301
       },
       {
-        "source" : "/platform-plugins*",
-        "destination" : "/using-packages/",
-        "type" : 301
+        "source": "/platform-plugins*",
+        "destination": "/using-packages/",
+        "type": 301
       },
       {
-        "source" : "/intellij-setup/",
-        "destination" : "/ide-setup/",
-        "type" : 301
+        "source": "/intellij-setup/",
+        "destination": "/ide-setup/",
+        "type": 301
       },
       {
-        "source" : "/intellij-ide/",
-        "destination" : "/using-ide/",
-        "type" : 301
+        "source": "/intellij-ide/",
+        "destination": "/using-ide/",
+        "type": 301
       },
       {
         "source": "/app/appcastwin.json",
