@@ -8,7 +8,10 @@ github_username: flutter
 repo: https://github.com/flutter/website
 branch: master
 
-exclude: [example, packages, tool, Gemfile*]
+# Build settings
+source: src
+
+exclude: [example]
 
 plugins:
   - jekyll-redirect-from

@@ -102,15 +102,15 @@ echo "Using Dart version:"
 "$flutter" packages get
 
 # Analyze the stand-alone sample code files
-for sample in _includes/code/*/*; do
-  if [[ -d "${sample}" ]]; then
+for sample in src/_includes/code/*/*; do
     echo "Run flutter packages get on ${sample}"
+  if [[ -d "${sample}" ]]; then
     "$flutter" packages get ${sample}
   fi
 done
 
 echo "Run flutter analyze on _includes/code/"
-"$flutter" analyze --no-current-package _includes/code/
+"$flutter" analyze --no-current-package src/_includes/code/
 
 echo "Extract Dart snippets from the markdown documentation."
 "$dart" tool/extract.dart
