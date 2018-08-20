@@ -123,7 +123,7 @@ are completed are generally of high-quality and ready for use.
 
 Our APIs are stabilizing, and we continue to improve
 parts of the system based on user feedback.
-We email [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
+We email [{{site.email}}](mailto:{{site.email}})
 when we make a change that might impact our users.
 
 So really, it is up to you. The features you need may be
@@ -190,7 +190,7 @@ on every commit.
 ### Does Flutter come with a dependency injection framework or solution?
 
 Not at this time. Please share your ideas at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ## Technology
 
@@ -524,7 +524,7 @@ iOS and Android.
 Not at this time. Because Flutter apps are pre-compiled for iOS, and binary size
 is always a concern with mobile apps, we disabled dart:mirrors. We are curious
 what you might need reflection/mirrors for – please let us know at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
@@ -790,7 +790,7 @@ encourage you to use
 [Stack Overflow](https://stackoverflow.com/tags/flutter) for "HOWTO"
 type questions. For discussions,
 please join our mailing list at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ### How do I get involved?
 
@@ -799,7 +799,7 @@ simply filing issues for feature requests and bugs in our
 [issue tracker](https://github.com/flutter/flutter/issues).
 
 We recommend that you join our mailing list at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com) and let us
+[{{site.email}}](mailto:{{site.email}}) and let us
 know how you're using Flutter and what you'd like to do with it.
 
 If you're
