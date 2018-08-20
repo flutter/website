@@ -91,11 +91,11 @@ should review the patch as soon as possible. If a reviewer finds
 problems with a patch marked TBR, the issues should be fixed as soon
 as possible.
 
-Wait for Travis to give the green light before merging a PR. Travis
+Wait for Cirrus to give the green light before merging a PR. Cirrus
 runs a bunch of precommit checks (see the tests for the
 [framework](https://github.com/flutter/flutter/blob/master/dev/bots/test.dart),
 the [engine](https://github.com/flutter/engine/blob/master/ci/build.sh),
-and the [website](https://github.com/flutter/website/blob/master/tool/travis.sh)).
+and the website).
 These checks include checks on comments, so make sure you wait for the
 green light even if your patch is _obviously_ fine!
 
@@ -105,7 +105,7 @@ that locally first too before checking anything in.
 
 Make sure all the trees and dashboards are green before checking in:
 the [infra waterfall](https://build.chromium.org/p/client.flutter/waterfall),
-our [travis dashboard](https://travis-ci.org/flutter/flutter/builds),
+our [Cirrus dashboard](https://cirrus-ci.com/github/flutter/flutter/master),
 our [test dashboard](https://flutter-dashboard.appspot.com/build.html), and
 our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html) (Google-only, sorry).
 
@@ -123,7 +123,7 @@ To make a change that will require developers to change their code:
  1. File an issue or create a pull request with the `prod: API break`
     label.
 
- 2. Send an e-mail to <mailto:flutter-dev@googlegroups.com> to socialize
+ 2. Send an e-mail to <mailto:{{site.email}}> to socialize
     your proposed change. The purpose of this e-mail is to see if you can
     get consensus around your change. **You are not telling people that
     the change will happen, you are asking them for permission.**
@@ -261,7 +261,7 @@ We have learned various lessons over the years.
   value, or an O(1) table lookup). If an operation is inefficient, it
   should be a method instead. e.g. `document.getForms()`, not
   `document.forms` (it walks the entire tree).
-  
+
   - Asynchronous expensive operations can be represented by futures.
     A method can start the work and return a future; a getter can return 
     a future corresponding to already-running work. A getter should not
@@ -294,7 +294,7 @@ We have learned various lessons over the years.
   - String manipulation to generate data or code that will subsequently
     be interpreted or parsed is a bad practice as it leads to code
     injection vulnerabilities.
-    
+
   - If an operation is expensive, that expense should be represented
     in the API (e.g. by returning a `Future` or a `Stream`).  Avoid
     providing APIs that hide the expense of tasks.
@@ -305,7 +305,7 @@ We have learned various lessons over the years.
   when interacting with that service (where you are fine using the exposed
   API up to a point, but beyond that have to learn all about the underlying
   service).
-  
+
 * APIs that wrap underlying services but prevent the underlying API from
   being directly accessed (e.g. how `dart:ui` exposes Skia) should carefully
   expose only the best parts of the underlying API. This may require refactoring
@@ -313,7 +313,7 @@ We have learned various lessons over the years.
   convenience features that abstract over expensive operations unless there's a
   distinct performance gain from doing so. A smaller API surface is easier
   to understand.
-  
+
   - This is why `dart:ui` doesn't expose `Path.fromSVG()`: we checked, and it
     is just as fast to do that work directly in Dart, so there is no benefit
     to exposing it. That way, we avoid the costs (bigger API surfaces are more

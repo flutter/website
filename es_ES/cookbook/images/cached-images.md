@@ -27,7 +27,7 @@ En este ejemplo, mostraremos un spinner mientras se carga la imagen.
 ```dart
 CachedNetworkImage(
   placeholder: CircularProgressIndicator(),
-  imageUrl: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  imageUrl: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
 ``` 
 
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
           child: CachedNetworkImage(
             placeholder: CircularProgressIndicator(),
             imageUrl:
-                'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
           ),
         ),
       ),

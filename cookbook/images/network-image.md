@@ -14,7 +14,7 @@ constructor.
 <!-- skip -->
 ```dart
 Image.network(
-  'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+  'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
 )
 ```
 
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: Image.network(
-          'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
         ),
       ),
     );

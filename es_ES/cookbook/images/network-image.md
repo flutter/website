@@ -12,7 +12,7 @@ Para trabajar con imágenes desde una URL, usa el constructor [`Image.network`](
 <!-- skip -->
 ```dart
 Image.network(
-  'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+  'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
 )
 ```
 
@@ -23,7 +23,7 @@ Una cosa increíble sobre el widget `Image` : ¡también es compatible con los g
 <!-- skip -->
 ```dart
 Image.network(
-  'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
+  'https://github.com/flutter/plugins/raw/master/src/packages/video_player/doc/demo_ipod.gif?raw=true',
 );
 ```
 
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: Image.network(
-          'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
         ),
       ),
     );

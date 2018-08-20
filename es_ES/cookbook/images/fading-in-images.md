@@ -20,7 +20,7 @@ En este ejemplo, usaremos el paquete [transparent_image](https://pub.dartlang.or
 ```dart
 FadeInImage.memoryNetwork(
   placeholder: kTransparentImage,
-  image: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  image: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
 ```
 
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               child: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
                 image:
-                    'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                    'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
               ),
             ),
           ],
@@ -84,7 +84,7 @@ Luego, usa el constructor [`FadeInImage.assetNetwork`](https://docs.flutter.io/f
 ```dart
 FadeInImage.assetNetwork(
   placeholder: 'assets/loading.gif',
-  image: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  image: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
 ```
 
@@ -112,7 +112,7 @@ class MyApp extends StatelessWidget {
           child: FadeInImage.assetNetwork(
             placeholder: 'assets/loading.gif',
             image:
-                'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
           ),
         ),
       ),
