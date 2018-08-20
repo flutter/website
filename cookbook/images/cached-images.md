@@ -15,7 +15,7 @@ placeholders and fading images in as they're loaded!
 <!-- skip -->
 ```dart
 CachedNetworkImage(
-  imageUrl: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  imageUrl: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
 ```
 
@@ -28,7 +28,7 @@ In this example, we'll display a spinner while the image loads.
 ```dart
 CachedNetworkImage(
   placeholder: CircularProgressIndicator(),
-  imageUrl: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  imageUrl: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
 );
 ``` 
 
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
           child: CachedNetworkImage(
             placeholder: CircularProgressIndicator(),
             imageUrl:
-                'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
           ),
         ),
       ),

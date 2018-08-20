@@ -1,0 +1,10 @@
+name: stack
+description: Demonstrates the Stack widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pic.jpg

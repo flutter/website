@@ -16,3 +16,6 @@ packages
 example/*.dart
 
 .idea/
+.vscode/
+vendor/
+.bundle/config

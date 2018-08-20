@@ -1,0 +1,9 @@
+name: listview
+description: Demonstrates the ListView and ListTile widgets.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

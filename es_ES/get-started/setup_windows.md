@@ -15,4 +15,4 @@ permalink: /setup-windows/
 
 ## Siguiente paso
 
-[Siguiente Paso: Configurar su Editor](/get-started/editor/)
+[Siguiente Paso: Configurar su editor](/get-started/editor/)
