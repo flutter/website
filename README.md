@@ -2,7 +2,7 @@
 
 The website for [Flutter][].
 
-[![Build Status](https://api.cirrus-ci.com/github/flutter/website.svg?branch=master)](https://cirrus-ci.com/github/flutter/website)
+[![Build Status](https://api.cirrus-ci.com/github/flutter/website.svg?branch=master)](https://cirrus-ci.com/github/flutter/website/master)
 
 ## Issues, bugs, and requests
 
