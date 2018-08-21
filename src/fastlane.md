@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Continuous Delivery using Fastlane with Flutter
-description: How to use Fastlane to automate continuous building and releasing of your Flutter app.
+title: Continuous Delivery using fastlane with Flutter
+description: How to use fastlane to automate continuous building and releasing of your Flutter app.
 
 permalink: /fastlane-cd/
 ---
@@ -10,7 +10,7 @@ Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
-This guide shows how to integrate [Fastlane](https://docs.fastlane.tools/), an
+This guide shows how to integrate [fastlane](https://docs.fastlane.tools/), an
 open-source tool suite, with your existing testing and continuous integration
 (CI) workflows (for example, Travis or Cirrus).
 
@@ -23,11 +23,11 @@ It's recommended that you test the build and deployment process locally before
 migrating to a cloud-based system. You could also choose to perform continuous
 delivery from a local machine.
 
-1. Install Fastlane `gem install fastlane` or `brew cask install fastlane`.
+1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`; and
     * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
-1. Initialize the Fastlane projects for each platform.
+1. Initialize the fastlane projects for each platform.
     * ![Android](/images/fastlane-cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
     * ![iOS](/images/fastlane-cd/ios.png) In your `[project]/ios` directory,
@@ -72,7 +72,7 @@ delivery from a local machine.
     Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
     Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
-    * ![iOS](/images/fastlane-cd/ios.png) On iOS, follow the [Fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
+    * ![iOS](/images/fastlane-cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
     Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
     `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
     build is required since `flutter build` builds an .app rather than archiving
@@ -86,7 +86,7 @@ process to a continuous integration (CI) system.
 1. Build the release mode app.
     * ![Android](/images/fastlane-cd/android.png) `flutter build apk --release`.
     * ![iOS](/images/fastlane-cd/ios.png) `flutter build ios --release --no-codesign`.
-    No need to sign now since Fastlane will sign when archiving.
+    No need to sign now since fastlane will sign when archiving.
 1. Run the Fastfile script on each platform.
     * ![Android](/images/fastlane-cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
@@ -127,12 +127,12 @@ secrets in pull requests that you accept and merge.
     * ![iOS](/images/fastlane-cd/ios.png) On iOS:
         * Move the local environment variable `FASTLANE_PASSWORD` to use
         encrypted environment variables on the CI system.
-        * The CI system needs access to your distribution certificate. Fastlane's
+        * The CI system needs access to your distribution certificate. fastlane's
         [Match](https://docs.fastlane.tools/actions/match/) system is
         recommended to synchronize your certificates across machines.
 
 2. It's recommended to use a Gemfile instead of using an indeterministic
-`gem install fastlane` on the CI system each time to ensure the Fastlane
+`gem install fastlane` on the CI system each time to ensure the fastlane
 dependencies are stable and reproducible between local and cloud machines. However, this step is optional.
     * In both your `[project]/android` and `[project]/ios` folders, create a
     `Gemfile` containing the following content:
@@ -150,7 +150,7 @@ repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [Fastlane CI documentation](https://flutter.io/fastlane-cd/)
+    * See [fastlane CI documentation](https://flutter.io/fastlane-cd/)
     for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
