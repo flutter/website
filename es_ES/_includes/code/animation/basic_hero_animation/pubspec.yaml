@@ -1,0 +1,15 @@
+name: basic_hero_transition
+description: Shows how to create a simple or Hero animation using the Hero class directly.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/flippers-alpha.png

@@ -48,13 +48,13 @@ skip to the next section.
 * Make sure you've [set up](/get-started/install/) your environment.
 * [Create a basic Flutter app.](/get-started/test-drive/#create-app)
 * Replace the `lib/main.dart` file with
-  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/main.dart)
+  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
   from GitHub.
 * Replace the `pubspec.yaml` file with
-  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/pubspec.yaml)
+  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
-  [`lake.jpg`.](https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg)
+  [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
 simulator](/setup-macos/#set-up-the-ios-simulator) (part of the Flutter install),
@@ -326,9 +326,9 @@ If you can't get your code to run, look in your IDE for possible errors.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
-* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes-interactive/main.dart)
-* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
-* [`lakes.jpg`](https://github.com/flutter/website/blob/master/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
+* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes-interactive/main.dart)
+* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
+* [`lakes.jpg`](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
 If you still have questions, refer to [Get support.](/support/)
 
@@ -486,7 +486,7 @@ class MyApp extends StatelessWidget {
 {% endprettify %}
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/tapbox-a/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-a/main.dart)
 
 <hr>
 
@@ -583,7 +583,7 @@ class TapboxB extends StatelessWidget {
 {% endprettify %}
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/tapbox-b/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-b/main.dart)
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -741,7 +741,7 @@ The developer probably doesn't care how the highlighting is managed,
 and prefers that the tap box handles those details.
 
 **Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/tapbox-c/main.dart)
+[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-c/main.dart)
 
 <hr>
 

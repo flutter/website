@@ -1,0 +1,1571 @@
+[
+  {
+    "name": "Container",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "description": "Un widget de conveniencia que combina widgets comunes de dibujado, posicionado y dimensionado",
+    "link": "https://docs.flutter.io/flutter/widgets/Container-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-container-1' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#f50057'/></marker><marker id='arrow-container-2' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker><filter id='shadow-container' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur stdDeviation='4'/></filter><linearGradient id='gradient-container' x1='0' y1='0.2' x2='0.4' y2='0.9'><stop offset='55%' stop-color='#ffffff'/><stop offset='100%' stop-color='#fdccdd'/></linearGradient></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='15' y='25' width='70' height='47.5' rx='10' ry='10' fill='#000000' filter='url(#shadow-container)'/><rect x='15' y='25' width='70' height='47.5' rx='10' ry='10' fill='url(#gradient-container)' stroke-width='5' stroke='#3b75ad'/><rect x='30' y='40' width='40' height='30' fill='#4dd0e1'/><line x1='20' y1='55' x2='27' y2='55' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-container-1)' marker-end='url(#arrow-container-1)'/><line x1='73' y1='55' x2='80' y2='55' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-container-1)' marker-end='url(#arrow-container-1)'/><line x1='50' y1='30' x2='50' y2='37' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-container-1)' marker-end='url(#arrow-container-1)'/><line x1='50' y1='78' x2='50' y2='82' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-container-1)' marker-end='url(#arrow-container-1)'/><line x1='16' y1='17.5' x2='85' y2='17.5' stroke='#ffffff' stroke-width='2' marker-start='url(#arrow-container-2)' marker-end='url(#arrow-container-2)'/><line x1='7.5' y1='26' x2='7.5' y2='72' stroke='#ffffff' stroke-width='2' marker-start='url(#arrow-container-2)' marker-end='url(#arrow-container-2)'/></svg>"
+  },
+  {
+    "name": "Row",
+    "description": "Layout con una lista de widgets hijos en dirección horizontal.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Row-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='30' width='80' height='40' fill='#ffffff'/><rect x='15' y='40' width='20' height='20' fill='#4dd0e1'/><rect x='40' y='35' width='30' height='30' fill='#4dd0e1'/></svg>"
+  },
+  {
+    "name": "Column",
+    "description": "Layout con una lista de widgets hijos en dirección vertical.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Column-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='40' y='15' width='20' height='20' fill='#4dd0e1'/><rect x='35' y='40' width='30' height='30' fill='#4dd0e1'/></svg>"
+  },
+  {
+    "name": "Image",
+    "description": "Un widget que muestra una imagen.",
+    "categories": [
+      "Basics",
+      "Assets, Images, and Icons"
+    ],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Image-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='60' fill='#ffffff'/><image x='22.5' y='22.5' width='55' height='55' xlink:href='/images/owl.jpg'/></svg>"
+  },
+  {
+    "name": "Text",
+    "description": "Una línea de texto con un solo estilo.",
+    "categories": [
+      "Basics",
+      "Text"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/widgets/Text-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='30' width='60' height='40' fill='#ffffff'/><text x='50' y='60' text-anchor='middle' font-family='Roboto' font-size='25' fill='#3b75ad'>Abc</text></svg>"
+  },
+  {
+    "name": "Icon",
+    "description": "Un ícono de Material Design.",
+    "categories": [
+      "Basics",
+      "Assets, Images, and Icons"
+    ],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Icon-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RaisedButton",
+    "description": "Un botón elevado (RaisedButton) de Material Design. Un botón elevado consiste en una pieza rectangular que flota sobre la interfaz",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/RaisedButton-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VbDh6YmNiYVc3SHM/components_buttons_usage2.png'>"
+  },
+  {
+    "name": "Scaffold",
+    "sample": "Scaffold_index",
+    "description": "Implementa la estructura de diseño visual básica de Material Design. Esta clase proporciona API para mostrar drawers, snack bars, y bottom sheets.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Scaffold-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7T0hfM01sSmRyTG8/layout_structure_regions_mobile.png'>"
+  },
+  {
+    "name": "Appbar",
+    "sample": "AppBar_index",
+    "description": "Una barra de aplicaciones (Appbar) de Material Design. Una barra de aplicaciones consiste en una barra de herramientas y potencialmente otros widgets, como TabBar y FlexibleSpaceBar.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/AppBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VclpfSFpuelBGR1k/components_toolbars.png'>"
+  },
+  {
+    "name": "FlutterLogo",
+    "description": "El logotipo de Flutter, en forma de widget. Este widget respeta IconTheme.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/material/FlutterLogo-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Stack",
+    "description": "Esta clase es útil si desea superponer varios widgets hijos de una manera simple, por ejemplo, tener texto y una imagen, superpuestos con un degradado y un botón adjunto a la parte inferior.",
+    "categories": [
+      "Stack"
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Stack-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='80' height='80' fill='#ffffff'/><rect x='25' y='25' width='40' height='30' fill='#3b75ad'/><rect x='45' y='35' width='30' height='30' fill='#4dd0e1'/><rect x='40' y='50' width='10' height='10' fill='#f50057'/></svg>"
+  },
+  {
+    "name": "Placeholder",
+    "description": "Un widget que dibuja un recuadro que representa dónde se agregarán otros widgets algún día.",
+    "categories": [
+      "Basics"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/widgets/Placeholder-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "BottomNavigationBar",
+    "description": "Las barras de navegación inferiores facilitan explorar y cambiar entre las vistas de nivel superior en un solo toque. El widget BottomNavigationBar implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/BottomNavigationBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWG5nei0wWXpoczA/components_bottom_navigation.png'>"
+  },
+  {
+    "name": "TabBar",
+    "sample": "TabBar_index",
+    "description": "Un widget de Material Design que muestra una fila horizontal de pestañas.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/TabBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VaWdBdnhMT3ViXzQ/components_tabs.png'>"
+  },
+  {
+    "name": "TabBarView",
+    "sample": "TabBarView_index",
+    "description": "Una vista de página que muestra el widget que corresponde a la pestaña seleccionada actualmente. Normalmente se usa junto con un TabBar.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/TabBarView-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaWdBdnhMT3ViXzQ/components_tabs.png'>"
+  },
+  {
+    "name": "MaterialApp",
+    "description": "Un widget de conveniencia que envuelve una cantidad de widgets que comúnmente se requieren para las aplicaciones que implementan Material Design.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/MaterialApp-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png'>"
+  },
+  {
+    "name": "WidgetsApp",
+    "description": "Una clase de conveniencia que envuelve una serie de widgets que comúnmente se requieren para una aplicación.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Drawer",
+    "description": "Un panel de Material Design que se desliza horizontalmente desde el borde de un Scaffold para mostrar enlaces de navegación en una aplicación.",
+    "categories": [],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Drawer-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaDhWUXJTTng4ZGs/patterns_navigation_drawer.png'>"
+  },
+  {
+    "name": "FloatingActionButton",
+    "description": "Un botón de acción flotante (FloatingActionButton) es un botón de icono circular que flota sobre el contenido para promover una acción principal en la aplicación. Los botones de acción flotante se usan más comúnmente en el campo Scaffold.floatingActionButton.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/FloatingActionButton-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VN20tOXJoUjVxQjg/components_buttons_fab.png'>"
+  },
+  {
+    "name": "FlatButton",
+    "description": "Un botón plano (FlatButton) es una sección dibujada en un widget de Componentes de Material que reacciona a los toques rellenándose de color.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/FlatButton-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
+  },
+  {
+    "name": "IconButton",
+    "sample": "IconButton_index",
+    "description": "Un botón de icono es una imagen dibujada en un widget Material que reacciona a los toques rellenando con color (tinta).",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/IconButton-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png'>"
+  },
+  {
+    "name": "PopupMenuButton",
+    "sample": "PopupMenuButton_index",
+    "description": "Muestra un menú cuando se presiona y llama onSelected cuando se descarta el menú porque se seleccionó un elemento.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/PopupMenuButton-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png'>"
+  },
+  {
+    "name": "ButtonBar",
+    "description": "Un conjunto de botones dispuestos horizontalmente.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/ButtonBar-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "TextField",
+    "description": "Tocar un campo de texto (TextField) coloca el cursor y muestra el teclado. El widget TextField implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/TextField-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VbURLNTM0N0R6eUE/components_text_fields.png'>"
+  },
+  {
+    "name": "Checkbox",
+    "description": "Las casillas de verificación (Checkbox) permiten al usuario seleccionar múltiples opciones de un conjunto. El widget Checkbox implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Checkbox-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7T2xGbGo0cUlPVG8/components_switches_check1.png'>"
+  },
+  {
+    "name": "Radio",
+    "description": "Utilizar los Radio Buttons permiten al usuario seleccionar una opción de un conjunto. Utilice los botones de opción para selección exclusiva si cree que el usuario necesita ver todas las opciones disponibles una al lado de la otra.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Radio-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7Z1NaaXh2ZkpDRkE/components_switches_radio1.png'>"
+  },
+  {
+    "name": "Switch",
+    "description": "Los interruptores de encendido/apagado alternan el estado de una opción de configuración única. El widget Switch implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Switch-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7NDg4aGIzVXYxVEE/components_switches_switch1.png'>"
+  },
+  {
+    "name": "Slider",
+    "description": "Sliders permiten que los usuarios seleccionen entre un rango de valores moviendo el control deslizante.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Slider-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTmJrQUYzajFIclE/components_sliders.png'>"
+  },
+  {
+    "name": "Date & Time Pickers",
+    "description": "Los Date pickers usan una ventana de diálogo para seleccionar una sola fecha en el móvil. Los Time pickers de tiempo usan un diálogo para seleccionar un tiempo individual ( en formato horas:minutos) en el móvil.",
+    "categories": [],
+    "subcategories": [
+      "Input and selections"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/showDatePicker.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VY2h4WElGdEhPb2c/components_pickers.png'>"
+  },
+  {
+    "name": "SimpleDialog",
+    "description": "Los diálogos simples pueden proporcionar detalles o acciones adicionales sobre un elemento de la lista. Por ejemplo, pueden mostrar iconos de avatares que clarifican el subtexto u otras acciones ortogonales (como agregar una cuenta).",
+    "categories": [],
+    "subcategories": [
+      "Dialogs, alerts, and panels"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/SimpleDialog-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVGNnN3NvMGdoQTg/components_dialogs.png'>"
+  },
+  {
+    "name": "AlertDialog",
+    "description": "Las alertas son interrupciones urgentes que requieren reconocimiento e informan al usuario sobre una situación. El widget AlertDialog implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Dialogs, alerts, and panels"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/AlertDialog-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0Bzhp5Z4wHba3TzFHYVlrbWF2bnM/components_alerts_1.png'>"
+  },
+  {
+    "name": "BottomSheet",
+    "description": "Bottom sheets se deslizan hacia arriba desde la parte inferior de la pantalla para revelar más contenido. Puede llamar a showBottomSheet () para implementar una hoja inferior persistente o showModalBottomSheet () para implementar una hoja inferior modal.",
+    "categories": [],
+    "subcategories": [
+      "Dialogs, alerts, and panels"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/BottomSheet-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVWZzZ1FIN09XWGc/components_bottom_sheets.png'>"
+  },
+  {
+    "name": "ExpansionPanel",
+    "description": "Los paneles de expansión contienen flujos de creación y permiten una edición ligera de un elemento. El widget ExpansionPanel implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Dialogs, alerts, and panels"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/ExpansionPanel-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png'>"
+  },
+  {
+    "name": "SnackBar",
+    "description": "Un mensaje ligero con una acción opcional que se muestra brevemente en la parte inferior de la pantalla.",
+    "categories": [],
+    "subcategories": [
+      "Dialogs, alerts, and panels"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/SnackBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VSjZkendtc19iZ2M/components_snackbars.png'>"
+  },
+  {
+    "name": "Chip",
+    "description": "Un ficha (Chip) de Material Design. Las fichas representan entidades complejas en bloques pequeños, como un contacto.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Chip-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VM1VORGxxWUx5U0E/components_chips.png'>"
+  },
+  {
+    "name": "Tooltip",
+    "description": "La información sobre herramientas proporciona etiquetas de texto que ayudan a explicar la función de un botón u otra acción de la interfaz del usuario. Ajuste el botón en un widget Tooltip para mostrar una etiqueta cuando el widget se presiona por largo tiempo (o cuando el usuario realiza alguna otra acción apropiada).",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Tooltip-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VZ1JKMzJFcmhOWkk/components_tooltips.png'>"
+  },
+  {
+    "name": "DataTable",
+    "description": "Las tablas de datos muestran conjuntos de datos sin formato. Suelen aparecer en productos empresariales de escritorio. El widget DataTable implementa este componente.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/DataTable-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWTJHMmJZdWZ5LU0/components_data_tables.png'>"
+  },
+  {
+    "name": "Card",
+    "description": "Una tarjeta de Material Design. Una Card tiene esquinas ligeramente redondeadas y una sombra.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Card-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VR0ptbC1RV1NLNlk/components_cards.png'>"
+  },
+  {
+    "name": "LinearProgressIndicator",
+    "description": "Los indicadores de progreso y actividad son indicaciones visuales de la carga de contenido en la aplicación. El widget LinearProgressIndicator implementa este componente. Además, también puede usar el widget CircularProgressIndicator.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/LinearProgressIndicator-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png'>"
+  },
+  {
+    "name": "GridView",
+    "description": "Una lista de cuadrículas consiste en un patrón repetido de celdas dispuestas en un layout vertical y horizontal. El widget GridView implementa este componente. ",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VandQYXpNMG9aQUk/components_grid_lists.png'>"
+  },
+  {
+    "name": "ListTile",
+    "description": "Una única fila de altura fija que generalmente contiene algo de texto y un ícono inicial o final.",
+    "categories": [],
+    "subcategories": [
+      "Layout"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/ListTile-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7UUw0bzVwU2lMUHc/components_lists_keylines_single10.png'>"
+  },
+  {
+    "name": "Stepper",
+    "description": "Un widget paso a paso de Material Design que muestra el progreso a través de una secuencia de pasos.",
+    "categories": [],
+    "subcategories": [
+      "Layout"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Stepper-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTndyUnNCR2tQREE/components_steppers.png'>"
+  },
+  {
+    "name": "Divider",
+    "description": "Una línea horizontal con un grosor de un pixel lógico y padding a cada lado.",
+    "categories": [],
+    "subcategories": [
+      "Layout"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Divider-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VUVlmbHM1Q013RU0/components_dividers.png'>"
+  },
+  {
+    "name": "CupertinoActivityIndicator",
+    "description": "Un indicador de actividad con el estilo iOS. Muestra un 'spinner' circular.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoActivityIndicator-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-activity-indicator.png'>"
+  },
+  {
+    "name": "CupertinoAlertDialog",
+    "description": "Un diálogo de alerta con el estilo iOS",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoAlertDialog-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoButton",
+    "description": "Un botón con el estilo iOS",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
+  },
+  {
+    "name": "CupertinoDialog",
+    "description": "Un diálogo con el estilo iOS",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialog-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog.png'>"
+  },
+  {
+    "name": "CupertinoDialogAction",
+    "description": "Un botón típicamente usado en un CupertinoAlertDialog. ",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialogAction-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoSlider",
+    "description": "Se usa para seleccionar de un rango de valores. ",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoSlider-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-slider.png'>"
+  },
+  {
+    "name": "CupertinoSwitch",
+    "description": "Un switch con el estilo iOS. Se usa para activar o desactivar el estado de una configuración única.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoSwitch-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-switch.png'>"
+  },
+  {
+    "name": "CupertinoPicker",
+    "description": "Un selector con el estilo iOS. Se usa para seleccionar un elemento en una lista breve.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
+  },
+  {
+    "name": "CupertinoPageTransition",
+    "description": "Proporciona una animación de transición de página con el estilo iOS.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoFullscreenDialogTransition",
+    "description": "Una transición con el estilo iOS utilizada para invocar diálogos de pantalla completa.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoNavigationBar",
+    "description": "Una barra de navegación superior con el estilo iOS. Normalmente se usa con CupertinoPageScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-nav-bar.png'>"
+  },
+  {
+    "name": "CupertinoTabBar",
+    "description": "Una barra de pestañas inferior con el estilo iOS. Normalmente se usa con CupertinoTabScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabBar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-bar.png'>"
+  },
+  {
+    "name": "CupertinoPageScaffold",
+    "description": "Estructura básica de diseño de página con el estilo iOS. Posiciona una barra de navegación y contenido. ",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTabScaffold",
+    "description": "Estructura de la aplicación de iOS con pestañas. Coloca una barra de pestañas en la parte superior de las pestañas de contenido. ",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabScaffold-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTabView",
+    "description": "El contenido raíz de una pestaña que soporta navegar paralelamente entre pestañas. Normalmente se usa con CupertinoTabScaffold ",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Padding",
+    "description": "Un widget que encuadra a sus hijos con el padding dado.",
+    "categories": [
+      "Styling"
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Padding-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-padding' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#f50057'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='20' width='80' height='60' fill='#ffffff'/><rect x='25' y='30' width='50' height='30' fill='#4dd0e1'/><line x1='13' y1='45' x2='22' y2='45' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-padding)' marker-end='url(#arrow-padding)'/><line x1='78' y1='45' x2='87' y2='45' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-padding)' marker-end='url(#arrow-padding)'/><line x1='50' y1='23' x2='50' y2='27' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-padding)' marker-end='url(#arrow-padding)'/><line x1='50' y1='63' x2='50' y2='77' stroke='#f50057' stroke-width='2' marker-start='url(#arrow-padding)' marker-end='url(#arrow-padding)'/></svg>"
+  },
+  {
+    "name": "Center",
+    "description": "Un widget que centra su hijo en sí mismo.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Center-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-center' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#f50057'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='20' width='80' height='60' fill='#ffffff'/><rect x='25' y='35' width='50' height='30' fill='#4dd0e1'/><line x1='10' y1='50' x2='22' y2='50' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-center)'/><line x1='90' y1='50' x2='78' y2='50' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-center)'/><line x1='50' y1='20' x2='50' y2='32' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-center)'/><line x1='50' y1='80' x2='50' y2='68' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-center)'/></svg>"
+  },
+  {
+    "name": "Align",
+    "description": "Un widget que alinea a su hijo dentro de sí mismo y, opcionalmente, se dimensiona en función del tamaño del child.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Align-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-align' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#f50057'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='20' width='80' height='60' fill='#ffffff'/><rect x='15' y='50' width='50' height='30' fill='#4dd0e1'/><line x1='10' y1='65' x2='12' y2='65' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/><line x1='90' y1='65' x2='68' y2='65' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/><line x1='40' y1='20' x2='40' y2='47' stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/></svg>"
+  },
+  {
+    "name": "FittedBox",
+    "description": "Escala y posiciona a su hijo dentro de él de acuerdo con el ajuste.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FittedBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AspectRatio",
+    "description": "Un widget que intenta dimensionar al hijo a una relación de aspecto específica. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AspectRatio-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-aspect-ratio' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='25' y='35' width='50' height='30' fill='#ffffff'/><rect x='27.5' y='37.5' width='45' height='25' fill='#4dd0e1'/><line x1='31' y1='41' x2='69' y2='59' stroke='#ffffff' stroke-width='2' marker-start='url(#arrow-aspect-ratio)' marker-end='url(#arrow-aspect-ratio)'/></svg>"
+  },
+  {
+    "name": "ConstrainedBox",
+    "description": "Un widget que impone restricciones adicionales en su hijo. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-constrained-box' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='30' width='50' height='40' fill='#ffffff'/><rect x='22.5' y='32.5' width='45' height='35' fill='#4dd0e1'/><path d='M63 23 v 40' stroke='#ffffff' stroke-width='1' stroke-linecap='round' stroke-dasharray='0.5 3.1' fill='transparent'/><path d='M77 23 v 54' stroke='#ffffff' stroke-width='1' stroke-linecap='round' stroke-dasharray='0.5 3.1' fill='transparent'/><path d='M13 63 h 50' stroke='#ffffff' stroke-width='1' stroke-linecap='round' stroke-dasharray='0.5 3.1' fill='transparent'/><path d='M13 77 h 64' stroke='#ffffff' stroke-width='1' stroke-linecap='round' stroke-dasharray='0.5 3.1' fill='transparent'/><path d='M50 25 L60 25' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-constrained-box)'/><path d='M90 25 L80 25' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-constrained-box)'/><path d='M15 50 L15 60' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-constrained-box)'/><path d='M15 90 L15 80' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-constrained-box)'/></svg>"
+  },
+  {
+    "name": "Baseline",
+    "description": "Un widget que posiciona a su hijo de acuerdo con la línea base del hijo. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Baseline-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-baseline' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='50' fill='#ffffff'/><rect x='20' y='45' width='60' height='30' fill='#4dd0e1'/><line x1='85' y1='20' x2='85' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='15' y1='20' x2='15' y2='66' stroke='#ffffff' stroke-width='2' marker-end='url(#arrow-baseline)'/><line x1='10' y1='70' x2='90' y2='70' stroke='#ffffff' stroke-width='2'/><text x='50' y='69' text-anchor='middle' font-family='Roboto' font-size='25' fill='#3b75ad'>Abc </text></svg>"
+  },
+  {
+    "name": "FractionallySizedBox",
+    "description": "Un widget que dimensiona su hijo a una fracción del espacio total disponible. Para obtener más detalles sobre el algoritmo de diseño, consulte RenderFractionallySizedOverflowBox. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FractionallySizedBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "IntrinsicHeight",
+    "description": "Un widget que dimensiona su hijo de acuerdo a la altura intrínseca de los hijos de este.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/IntrinsicHeight-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "IntrinsicWidth",
+    "description": "Un widget que dimensiona su hijo de acuerdo a la anchura intrínseca de los hijos de este.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/IntrinsicWidth-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "LimitedBox",
+    "description": "Una caja que limita su tamaño solo cuando no está restringida. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/LimitedBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Offstage",
+    "description": "Un widget que posiciona su hijo fuera, como si estuviera en el árbol de widgets, pero sin pintar nada , sin que esté disponible para el hit testing y sin ocupar ningún espacio en el padre.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Offstage-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "OverflowBox",
+    "description": "Un widget que impone diferentes restricciones en su hijo de las que obtiene de su padre, permitiendo posiblemente que el hijo desborde al padre. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/OverflowBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SizedBox",
+    "description": "Una caja con un tamaño específico. Si se le proporciona un hijo, este widget forzará a su hijo a tener una anchura y/o altura específicos ( asumiendo que los valores pueden ser permitidos por los padres de este widget). Si la anchura o la altura fueran null, este widget se dimensionará a sí mismo para ajustarse al tamaño de sus hijos en esa dirección.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SizedBox-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><marker id='arrow-sized-box' orient='auto-start-reverse' viewBox='0 0 1 1' markerWidth='3' markerHeight='3' refX='0.5' refY='0.5'><path d='M 1 0.5 L 0.5 0 L 0.5 1 z' fill='#ffffff'/></marker></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='25' y='35' width='50' height='30' fill='#ffffff'/><rect x='27.5' y='37.5' width='45' height='25' fill='#4dd0e1'/><line x1='28' y1='30' x2='72' y2='30' stroke='#ffffff' stroke-width='2' marker-start='url(#arrow-sized-box)' marker-end='url(#arrow-sized-box)'/><line x1='20' y1='38' x2='20' y2='62' stroke='#ffffff' stroke-width='2' marker-start='url(#arrow-sized-box)' marker-end='url(#arrow-sized-box)'/></svg>"
+  },
+  {
+    "name": "SizedOverflowBox",
+    "description": "Un widget que tiene un tamaño específico pero pasa sus restricciones originales a través de su hijo, que probablemente se desbordará. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SizedOverflowBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Transform",
+    "description": "Un widget que aplica una transformación antes de pintar a su hijo. ",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Transform-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='17.5' y='42.5' width='50' height='30' fill='#ffffff'/><rect x='20' y='45' width='45' height='25' fill='#3b75ad'/><rect x='20' y='45' width='45' height='25' fill='#4dd0e1' transform='translate(15 -5) rotate(-23) skewX(-10)'/></svg>"
+  },
+  {
+    "name": "CustomSingleChildLayout",
+    "description": "Un widget que difiere el diseño de su hijo único a un delegado.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Single-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/CustomSingleChildLayout-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "IndexedStack",
+    "description": "Una pila que muestra un solo hijo de una lista de hijos.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/IndexedStack-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "GridView",
+    "description": "Un array 2D de widgets desplazable.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Flow",
+    "description": "Un widget que implementa el algoritmo de flow layout.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Flow-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Table",
+    "description": "Un widget que usa el algoritmo de table layout para sus hijos.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Table-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Wrap",
+    "description": "Un widget que muestra sus hijos en múltiples líneas horizontales o verticales.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Wrap-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ListBody",
+    "description": "Un widget que ordena sus hijos secuencialmente a lo largo de un eje dado, forzándolos a la dimensión del elemento padre en el otro eje.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ListBody-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ListView",
+    "sample": "ListView_index",
+    "description": "Una lista desplazable y lineal de widgets. ListView es el widget de desplazamiento más comúnmente utilizado. Muestra sus hijos uno tras otro en la dirección de desplazamiento. En el eje transversal, los hijos deben rellenar ListView.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
+    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
+  },
+  {
+    "name": "CustomMultiChildLayout",
+    "description": "Un widget que utiliza un delegado para dimensionar y ubicar varios hijos.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Multi-child layout widgets"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/CustomMultiChildLayout-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "LayoutBuilder",
+    "description": "Crea un árbol de widgets que puede depender de los tamaños de los widgets del padre.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Layout helpers"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/LayoutBuilder-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RichText",
+    "description": "El widget RichText muestra texto que usa múltiples estilos diferentes. El texto para mostrar se describe utilizando un árbol de objetos TextSpan, cada uno de los cuales tiene un estilo asociado que se utiliza para ese subárbol. El texto puede dividirse en varias líneas o puede que se muestren todos en la misma línea, dependiendo de las restricciones del layout",
+    "categories": [
+      "Text"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RichText-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "DefaultTextStyle",
+    "description": "El estilo de texto para aplicar a widgets de texto descendientes sin estilo explícito.",
+    "categories": [
+      "Text"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/DefaultTextStyle-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RawImage",
+    "description": "Un widget que muestra una dart:ui.Image directamente.",
+    "categories": [
+      "Assets, Images, and Icons"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RawImage-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AssetBundle",
+    "description": "Los Asset bundles contienen recursos, como imágenes y cadenas de texto, que pueden ser utilizados por una aplicación. El acceso a estos recursos es asíncrono, por lo que se pueden cargar de forma transparente a través de una red (por ejemplo, desde un NetworkAssetBundle) o desde el sistema de archivos local sin bloquear la interfaz de usuario de la aplicación.",
+    "categories": [
+      "Assets, Images, and Icons"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/services/AssetBundle-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Form",
+    "description": "Un contenedor opcional para agrupar varios widgets de form field (por ejemplo, widgets TextField).",
+    "categories": [
+      "Input"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Form-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "FormField",
+    "description": "Un único form field. Este widget mantiene el estado actual del form field, por lo que las actualizaciones y los errores de validación se reflejan visualmente en la interfaz de usuario.",
+    "categories": [
+      "Input"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FormField-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RawKeyboardListener",
+    "description": "Un widget que ejecuta un callback cuando el usuario presiona o suelta una tecla en el teclado.",
+    "categories": [
+      "Input"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RawKeyboardListener-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedContainer",
+    "description": "Un contenedor que gradualmente cambiar su valor en un período de tiempo.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedCrossFade",
+    "description": "Un widget que realiza una animación cross-fade entre dos hijos dados, realizando la transición entre sus dimensiones.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedCrossFade-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Hero",
+    "description": "Un widget que marca a su hijo como candidato para animaciones Hero.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+      "Routing"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Hero-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedBuilder",
+    "description": "Un widget de propósito general para construir animaciones. AnimatedBuilder es útil para widgets más complejos que deseen incluir una animación como parte de una función de construcción más grande. Para usar AnimatedBuilder, simplemente construya el widget y pásele una función de constructor.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Draggable",
+    "description": "Un widget que se puede arrastrar desde un DragTarget. Cuando un widget arrastrable reconoce el inicio de un gesto de arrastre, muestra un widget de retroalimentación que rastrea el dedo del usuario a través de la pantalla. Si el usuario levanta el dedo mientras está en la parte superior de un DragTarget, se le da la oportunidad de aceptar los datos transportados por el objetivo arrastrable.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Draggable-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "LongPressDraggable",
+    "description": "Hace que su hijo sea arrastrable a partir de una pulsación larga.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/LongPressDraggable-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "GestureDetector",
+    "description": "Un widget que detecta gestos. Intenta reconocer gestos que se corresponden con sus callbacks no nulos. Si este widget tiene un hijo, difiere a este hijo su comportamiento para dimensionarse. Si no tiene un hijo, crecerá hasta rellenar el widget padre.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/GestureDetector-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "DragTarget",
+    "description": "Un widget que recibe datos cuando un widget Draggable es soltado. Cuando un draggable es soltado encima de un drag target, al drag target se le consultará si acepta los datos que el draggable porta. Si el usuario suelta el draggable encima del drag target (y el drag target ha indicado que aceptará los datos del draggable), entonces el drag target es consultado para aceptar los datos del draggable.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/DragTarget-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Dismissible",
+    "description": "Un widget que puede ser descartado arrastrándolo en la dirección indicada. Arrastran o arrojando este widget en la DismissDirection causa que su hijo se deslize fuera de la vista. Seguido de la animación slide. si resizeDuration no es nulo, el widget Dismissible anima su altura( o anchura, cualquiera que sea perpendicular a DismissDirection) hasta cero durante la resizeDuration.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Dismissible-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "IgnorePointer",
+    "description": "Un widget que es invisible durante la hit testing. Cuando ignoring es true, este widget (y su subárbol) es invisible para el hit testing. Todavía consume espacio durante el layout y pinta a su hijo como de costumbre. Simplemente no puede ser el objetivo de eventos localizados, porque devuelve false desde RenderBox.hitTest.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/IgnorePointer-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AbsorbPointer",
+    "description": "Un widget que absorbe los punteros durante el hit testing. Cuando la obsorbing es true, este widget evita que su subárbol reciba eventos de puntero terminando el hit testing en sí mismo. Todavía consume espacio durante el diseño y pinta a su hijo como de costumbre. Simplemente impide que sus hijos sean el objetivo de eventos localizados, porque devuelve true desde RenderBox.hitTest.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AbsorbPointer-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Navigator",
+    "description": "Un widget que gestiona un conjunto de widgets hijo con una disciplina de pila. Muchas aplicaciones tienen un navegador cerca de la parte superior de su jerarquía de widgets para mostrar su historial lógico utilizando una sobreimpresión con las páginas visitadas más recientemente visualmente encima de las páginas más antiguas. El uso de este patrón permite al navegador realizar una transición visual de una página a otra moviendo los widgets en la capa sobrepuesta. Del mismo modo, el navegador puede ser utilizado para mostrar un diálogo posicionando el widget de diálogo sobre la página actual.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Routing"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Navigator-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Theme",
+    "description": "Aplica un theme a sus widgets descendientes. Un theme describe los colores y las opciones tipográficas de una aplicación.",
+    "categories": [
+      "Styling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Theme-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "MediaQuery",
+    "description": "Establece un sub-árbol en el cual las media queries se resuelven con los datos dados.",
+    "categories": [
+      "Styling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/MediaQuery-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ListView",
+    "description": "Una lista lineal y desplazable de widgets. ListView es el widget de desplazamiento más utilizado. Muestra a sus hijos uno tras otro en la dirección de desplazamiento. En el eje transversal, se requiere que los hijos llenen el ListView.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "NestedScrollView",
+    "description": "",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/NestedScrollView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "GridView",
+    "description": "Una matriz de widgets en 2D que se puede desplazar. Los diseños de cuadrícula más utilizados son GridView.count, que crea un diseño con un número fijo de tiles en el eje transversal, y GridView.extent, que crea un diseño con tiles que tienen una extensión máxima en el eje transversal. Un SliverGridDelegate personalizado puede producir un arreglo arbitrario 2D de hijos, incluyendo arreglos que no están alineados o que se superponen.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SingleChildScrollView",
+    "description": "Un cuadro en el que se puede desplazar un único widget. Este widget es útil cuando tiene una sola caja que normalmente será completamente visible, por ejemplo una cara de reloj en un selector de tiempo, pero necesita asegurarse de que se puede desplazar si el contenedor se vuelve demasiado pequeño en un eje (la dirección de desplazamiento).",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SingleChildScrollView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Scrollable",
+    "description": "Scrollable implementa el modelo de interacción para un widget desplazable, incluyendo el reconocimiento de gestos, pero no tiene una opinión sobre cómo se construye el viewport, que en realidad muestra a los hijos.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+      "Touch interactions"
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Scrollable-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Scrollbar",
+    "description": "Una barra de desplazamiento de Material Design. Una barra de desplazamiento indica qué parte de un widget desplazable es realmente visible.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/material/Scrollbar-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CustomScrollView",
+    "description": "Una vista de desplazamiento que crea efectos de desplazamiento personalizados utilizando slivers.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "NotificationListener",
+    "description": "Un widget que escucha las notificaciones que se propagan hacia arriba por el árbol de widgets.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/NotificationListener-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ScrollConfiguration",
+    "description": "Controla cómo se comportan los widgets desplazables en un subárbol.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ScrollConfiguration-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RefreshIndicator",
+    "description": "Una envoltura pull-to-refresh de Material Design para productos deslizables.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/material/RefreshIndicator-class.html",
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png'>"
+  },
+  {
+    "name": "Opacity",
+    "description": "Un widget que hace que su hijo sea parcialmente transparente.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Opacity-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
+  },
+  {
+    "name": "DecoratedBox",
+    "description": "Un widget que pinta un Decoration antes o después de que su hijo lo pinte.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><filter id='shadow-decorated-box' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur stdDeviation='4'/></filter><linearGradient id='gradient-decorated-box' x1='0' y1='0' x2='0.5' y2='1'><stop offset='50%' stop-color='#ffffff'/><stop offset='100%' stop-color='#f50057'/></linearGradient></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='25' y='25' width='50' height='50' rx='10' ry='10' fill='#000000' filter='url(#shadow-decorated-box)'/><rect x='25' y='25' width='50' height='50' rx='10' ry='10' fill='url(#gradient-decorated-box)' stroke-width='5' stroke='#4dd0e1'/></svg>"
+  },
+  {
+    "name": "FractionalTranslation",
+    "description": "Un widget que aplica una traslación expresada como una fracción del tamaño de su caja antes de pintar su hijo.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FractionalTranslation-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RotatedBox",
+    "description": "Un widget que rota a su hijo por un número integral de cuartos de vuelta.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RotatedBox-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ClipOval",
+    "description": "Un widget que recorta a su hijo usando un óvalo.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ClipOval-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><clipPath id='clip-oval'><circle cx='40' cy='50' r='30'/></clipPath></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' opacity='0.05'/><circle cx='40' cy='50' r='30' fill='#ffffff'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' clip-path='url(#clip-oval)'/></svg>"
+  },
+  {
+    "name": "ClipPath",
+    "description": "Un widget que recorta su hijo usando una trayectoria.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ClipPath-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ClipRect",
+    "description": "Un widget que recorta su hijo usando un rectángulo.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ClipRect-class.html",
+    "image": "<svg viewBox='0 0 100 100'><defs><clipPath id='clip-rect'><rect x='10' y='20' width='60' height='60'/></clipPath></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' opacity='0.05'/><rect x='10' y='20' width='60' height='60' fill='#ffffff'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' clip-path='url(#clip-rect)'/></svg>"
+  },
+  {
+    "name": "CustomPaint",
+    "description": "Un widget que proporciona un lienzo sobre el que dibujar durante la fase de pintura.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/CustomPaint-class.html",
+    "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='60' fill='#ffffff'/><ellipse cx='40' cy='35' rx='10' ry='10' stroke-width='5' stroke='#4dd0e1' fill='transparent'/><ellipse cx='20' cy='71' rx='15' ry='20' stroke-width='5' stroke='#4dd0e1' fill='transparent' transform='rotate(-25)'/></svg>"
+  },
+  {
+    "name": "BackdropFilter",
+    "description": "Un widget que aplica un filtro al contenido pintado existente y luego pinta al hijo. Este efecto es relativamente costoso, especialmente si el filtro no es local, como un desenfoque.",
+    "categories": [
+      "Painting and effects"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/BackdropFilter-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Semantics",
+    "description": "Un widget que anota el árbol de widgets con una descripción del significado de los widgets. Utilizado por herramientas de accesibilidad, motores de búsqueda y otros programas de análisis semántico para determinar el significado de la aplicación.",
+    "categories": [
+      "Accessibility"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/Semantics-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "MergeSemantics",
+    "description": "Un widget que fusiona la semántica de sus descendientes.",
+    "categories": [
+      "Accessibility"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/MergeSemantics-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ExcludeSemantics",
+    "description": "Un widget que deja de lado toda la semántica de sus descendientes. Esto se puede utilizar para ocultar subwidgets que de otro modo serían reportados pero que sólo serían confusos. Por ejemplo, el widget Material Components Chip oculta el avatar ya que es redundante con la etiqueta del chip.",
+    "categories": [
+      "Accessibility"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ExcludeSemantics-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "FutureBuilder",
+    "description": "Widget que se construye a sí mismo basado en la última fotografía de la interacción con un Future.",
+    "categories": [
+      "Async"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "StreamBuilder",
+    "description": "Widget que se construye a sí mismo basado en la última fotografía de interacción con un Stream.",
+    "categories": [
+      "Async"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "DecoratedBoxTransition",
+    "description": "Versión animada de una DecoratedBox que anima las diferentes propiedades de su Decoración.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/DecoratedBoxTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "FadeTransition",
+    "description": "Anima la opacidad de un widget.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/FadeTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "PositionedTransition",
+    "description": "Versión animada de Positioned (Posicionado) que toma una animación específica para cambiar la posición del hijo de una posición inicial a una posición final a lo largo de la vida de la animación.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/PositionedTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "RotationTransition",
+    "description": "Anima la rotación de un widget.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/RotationTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "ScaleTransition",
+    "description": "Anima la escala del widget transformado.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/ScaleTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SizeTransition",
+    "description": "Animar su propio tamaño y recorta y alinea al hijo.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SizeTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SlideTransition",
+    "description": "Anima la posición de un widget con respecto a su posición normal.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/SlideTransition-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedDefaultTextStyle",
+    "description": "Versión animada de DefaultTextStyle que transiciona automáticamente el estilo de texto predeterminado (el estilo de texto que se aplica a los widgets de texto descendente sin estilo explícito) durante una duración determinada cada vez que el estilo cambia.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedDefaultTextStyle-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedListState",
+    "sample": "AnimatedListState_index",
+    "description": "El estado de un contenedor de desplazamiento que anima los elementos cuando se insertan o se quitan.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedListState-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedModalBarrier",
+    "description": "Un widget que evita que el usuario interactúe con widgets detrás de sí mismo.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedModalBarrier-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedOpacity",
+    "description": "Versión animada de Opacidad que transiciona automáticamente la opacidad del hijo durante un tiempo determinado cada vez que la opacidad cambia.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedPhysicalModel",
+    "description": "Versión animada de PhysicalModel.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedPhysicalModel-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedPositioned",
+    "description": "Versión animada de Positioned que cambia automáticamente la posición del hijo durante un tiempo determinado cada vez que cambia de posición.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedPositioned-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedSize",
+    "description": "Widget animado que transiciona automáticamente su tamaño a lo largo de una duración determinada cada vez que cambia el tamaño del hijo.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedSize-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedWidget",
+    "description": "Un widget que se reconstruye cuando el Listenable dado cambia de valor.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedWidget-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "AnimatedWidgetBaseState",
+    "description": "Una clase base para widgets con animaciones implícitas.",
+    "categories": [
+      "Animation and Motion"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/AnimatedWidgetBaseState-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  }
+]

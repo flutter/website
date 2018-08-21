@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Get Started: Test Drive"
+title: "Empezar: Prueba Inicial"
 permalink: /get-started/test-drive/
 ---
 
-This page describes how to "test drive" Flutter: create a new Flutter app from
-our templates, run it, and learn how to make changes with Hot Reload.
+Esta página describe como hacer tu prueba inicial en Flutter: crear una nueva app de Flutter 
+con nuestras plantillas, ejecutarla, y aprender cómo hacer cambios con "Hot Reload".
 
-Flutter is a flexible toolkit, so please start by selecting your development
-tool of choice for writing, building, and running your Flutter app.
+Flutter es un juego de herramientas flexible, por favor empieza por seleccionar tu herramienta
+de desarrollo favorita para escribir, crear y ejecutar tus apps de Flutter.
 
 <div id="tab-set-install">
 
@@ -20,166 +20,160 @@ tool of choice for writing, building, and running your Flutter app.
 
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
-*Android Studio:* A complete, integrated IDE experience for Flutter.
+*Android Studio:* Un experiencia completa e integrada del IDE para Flutter. 
 
-## Create new app {#create-app}
+## Crear una app nueva {#create-app}
 
-   1. Select **File > New Flutter Project**
-   1. Select **Flutter application** as the project type, and press Next
-   1. Enter a project name (e.g. `myapp`), and press Next
-   1. Click **Finish**
-   1. Wait for Android Studio to install the SDK, and create the project.
+   1. Seleccionar **File > New Flutter Project**
+   1. Seleccionar **Flutter application** como tipo de proyecto, y presionar siguiente
+   1. Introducir nombre de proyecto (ej. `myapp`), y presionar siguiente
+   1. Clic en **Finish**
+   1. Espera mientras Android Studio instala el SDK, y crear el proyecto.
 
-The above command creates a Flutter project directory called `myapp`
-that contains a simple demo
-app that uses [Material Components](https://material.io/guidelines/).
+Los comandos de arriba crean un directorio para el proyecto llamado `myapp`
+el cual contiene una app demo sencilla
+que utiliza [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `lib/main.dart`.
+Dentro del directorio del proyecto, el código de tu app, esta en `lib/main.dart`.
 
-## Run the app
+## Ejecutar app
 
-   1. Locate the main Android Studio toolbar:<br>
+   1. Localiza la barra de herramientas principal de Android Studio:<br>
       ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
-   1. In the **target selector**, select an Android device for running the app.
-      If none are listed as available, select **Tools> Android > AVD Manager** and
-      create one there. For details, see [Managing
+   1. En el **target selector**, selecciona un dispositivo android para ejecutar la app.
+      Si ninguno esta en la lista como disponible, selecciona **Tools> Android > AVD Manager** y
+      crea uno ahí mismo. Para mas detalle, vea [Administrando
       AVDs](https://developer.android.com/studio/run/managing-avds.html).
-   1. Click the **Run icon** in the toolbar, or invoke the menu item **Run >
-      Run**.
-   1. If everything works, you should see your starter app on your device or
-      simulator:<br>
-      ![Starter App on Android](/images/flutter-starter-app-android.png)
+   1. Clic en el **Run icon** en la barra de herramientas, seleccionar **Run >
+      Run** del menú.
+   1. Si todo funciona, deberás de ver iniciar tu app en el dispositivo o 
+      simulador:<br>
+      ![App iniciada en Android](/images/flutter-starter-app-android.png)
 
-## Try a hot reload
+## Probando hot reload
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter ofrece un ciclo de desarrollo rápido con _hot reaload_, la habilidad de recargar 
+el código en una app ejecutando en vivo sin reiniciar o perder el estado de la app. simplemente
+hace un cambio a tu código fuente, diciéndole a tu IDE o herramienta de linea de comandos que
+quieres recargar, y ver los cambio en tu simulador, emulador, o dispositivo.
 
-  1. Change the string<br>`'You have pushed the button this many times:'`
-     to<br>`'You have clicked the button this many times:'`
-  1. Do not press the 'Stop' button; let your app continue to run.
-  1. To see your changes invoke **Save All**, or click
-     **Hot Reload** (the button with the lightning bolt icon).
+  1. Cambia el texto<br>`'You have pushed the button this many times:'`
+     a<br>`'You have clicked the button this many times:'`
+  1. No presione el botón de 'Stop'; permita que su app continué ejecutándose.
+  1. Para ver tus cambios presione **Save All**, o clic
+     **Hot Reload** (el botón con el icono del relámpago).
 
-You should see the updated string in the running app almost immediately.
+Deberás ver como el texto actualizado en la app ejecutándose casi inmediatamente.
 
 </div>
 
 <div id="tab-install-vscode" class="tabs__content" markdown="1">
 
-*VS Code:* A light-weight editor with Flutter run and debug support.
+*VS Code:* Un editor ligero con Flutter, asistencia al correr y depurar.
 
-## Create new app
+## Crear una nueva app
 
-  1. Start VS Code
-  1. Invoke **View > Command Palette**
-  1. Type "flutter", and select the **Flutter: New Project** action
-  1. Enter a project name (such as `myapp`), and press **Enter**
-  1. Create or select the parent directory for the new project folder
-  1. Wait for project creation to complete and the `main.dart`
-     file to appear
+  1. Iniciar VS Code
+  1. llamar **View > Command Palette**
+  1. Teclea "flutter", y selecciona la acción **Flutter: New Project**
+  1. Introducir el nombre del proyecto (como `myapp`), y presiona **Enter**
+  1. Crear o seleccionar el directorio padre para el nuevo folder del proyecto
+  1. Espera la creación del proyecto y completar la generación de el archivo `main.dart` y que
+     aparezca.
 
-The command above creates a Flutter project directory called `myapp` that
-contains a simple demo
-app that uses [Material Components](https://material.io/guidelines).
+Los comando de arriba crean un directorio para el proyecto llamado `myapp`
+el cual contiene una app demo sencilla
+que utiliza [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `lib/main.dart`.
+Dentro del directorio del proyecto, el código de tu app esta en `lib/main.dart`.
 
-## Run the app
+## Ejecutar app
 
- 1. Locate the VS Code status bar (the blue bar at the bottom of the window)
- 1. Select a device from the **Device Selector** area.
-    For details, see [Quickly Switching Between Flutter Devices][].
-    - If no device is available and you'd like to use a device simulator,
-      click **No Devices** and launch a simulator.
-    - To setup a real device, follow the device-specific instructions on the
-      [Get Started: Install](/get-started/install) page for your OS.
- 1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>
- 1. Wait for the app to launch &mdash; progress is printed
-    in the **Debug Console** view
- 1. If everything works, after the app has been built, you'll see the
-    starter app on your device:<br>
-    ![Starter App on Android](/images/flutter-starter-app-android.png)
+ 1. Localizar la barra de estado de VS Code(la barra azul en la parte de abajo de la ventana)
+ 1. Seleccionar el dispositivo de el área de **Device Selector**.
+    Para detalles, vea [Cambio rápido entre dispositivos de Flutter][].
+    - Si no se encuentra ningún dispositivo disponible y prefieres usar un simulador,
+      clic **No Devices** y lance un simulador.
+    - Para configurar un dispositivo real, siga las instrucciones para el dispositivo en específico para [empezar: instalar](/get-started/install) en el SO que utilice.
+ 1. llamar a **Debug > Start Debugging** o presionar <kbd>F5</kbd>
+ 1. Espere que el app sea lanzada &mdash; el progreso se imprimirá en la vista de
+    **Debug Console**
+ 1. Si todo funciona, después de que la app sea construida, podrá ver
+    la app iniciada en su dispositivo:<br>
+    ![App Iniciada en Android](/images/flutter-starter-app-android.png)
 
-[Quickly Switching Between Flutter Devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
+[Cambio rápido entre dispositivos de Flutter]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 
-## Try a hot reload
+## Probando el hot reload
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter ofrece un ciclo de desarrollo rápido con _hot reload_, la habilidad de recargar 
+el código en una app ejecutando en vivo sin reiniciar o perder el estado de la app. simplemente
+hace un cambio a tu código fuente, diciéndole a tu IDE o herramienta de linea de comandos que
+quieres recargar, y ver los cambio en tu simulador, emulador, o dispositivo.
 
- 1. Open `lib/main.dart`
- 1. Change the string<br>
-    `'You have pushed the button this many times:'` to<br>
-    `'You have clicked the button this many times:'`<br>
-    **Important**: do _not_ press the _Stop_ button; let your app run
- 1. Save your changes: invoke **File > Save All**,
-    or click **Hot Reload** (the green circular arrow button)
+  1. Cambia el texto<br>`'You have pushed the button this many times:'`
+     a<br>`'You have clicked the button this many times:'`
+  1. No presione el botón de 'Stop'; permita que su app continué ejecutándose.
+  1. Para ver tus cambios presione **Save All**, o clic
+     **Hot Reload** (el botón con el icono del relámpago).
 
-You'll see the updated string in the running app almost immediately.
+Deberás ver como el texto actualizado en la app ejecutándose casi inmediatamente.
 
 </div>
 
 <div id="tab-install-terminal" class="tabs__content" markdown="1">
 
-*Terminal + editor:* Your editor-of-choice combined with Flutter's terminal tool
-for running and building.
+*Terminal + editor:* Su editor de elección combinado con herramienta de terminal de Flutter
+para ejecutar y construir.
 
-## Create new app
+## Crear una nueva app
 
-   1. Use the `flutter create` command to create a new project:
+   1. Use el comando `flutter create` para crear un nuevo proyecto:
    {% commandline %}
    flutter create myapp
    cd myapp
    {% endcommandline %}
 
-The above command creates a Flutter project directory called `myapp` that
-contains a simple demo app that uses
+El comando de arriba crea el directorio del proyecto de Flutter llamado `myapp` el cual
+contiene una app demo sencilla que utiliza
 [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `lib/main.dart`.
+Dentro del directorio del proyecto, el código de tu app esta en `lib/main.dart`.
 
-## Run the app
+## Ejecutar app
 
-   * Check that an Android device is running. If none are shown, see
-     [setup](/get-started/install/).
+   * Verifica que un dispositivo Android se este ejecutando. Si no se muestra ninguno, vea
+     [configuración](/get-started/install/).
    {% commandline %}
    flutter devices
    {% endcommandline %}
-   * Run the app with the `flutter run` command:
+   * Ejecuta la app con el comando `flutter run`:
    {% commandline %}
    flutter run
    {% endcommandline %}
-   * If everything works, after the app has been built, you should see your
-      starter app on your device or simulator:<br>
-      ![Starter App on Android](/images/flutter-starter-app-android.png)
+   * Si todo funciona, después de que la app sea construida, deberás ver tu app iniciada en el dispositivo o simulador:<br>
+      ![App Iniciada en Android](/images/flutter-starter-app-android.png)
 
-## Try a hot reload
+## Probando el hot reload
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state. Simply
-make a change to your source code, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter ofrece un ciclo de desarrollo rápido con _hot reload_, la habilidad de recargar 
+el código en una app ejecutando en vivo sin reiniciar o perder el estado de la app. simplemente
+hace un cambio a tu código fuente, diciéndole a tu IDE o herramienta de línea de comandos que
+quieres recargar, y ver los cambio en tu simulador, emulador, o dispositivo.
 
-  1. Open the file `lib/main.dart`
-  1. Change the string<br>`'You have pushed the button this many times:'`
-     to<br>`'You have clicked the button this many times:'`
-  1. Do not press the 'Stop' button; let your app continue to run.
-  1. To see your changes invoke **Save All** (`cmd-s` / `ctrl-s`), or click the
-     **Hot Reload button** (the button with the lightning bolt icon).
+  1. Cambia el texto<br>`'You have pushed the button this many times:'`
+     a<br>`'You have clicked the button this many times:'`
+  1. No presione el botón de 'Stop'; permita que su app continué ejecutándose.
+  1. Para ver tus cambios presione **Save All**, o clic
+     **Hot Reload** (el botón con el icono del relámpago).
 
-You should see the updated string in the running app almost immediately.
 
 </div>
 
 </div>
 
-## Next step
+## Siguiente paso
 
-Let's learn some core Flutter concepts, by creating a small app.
+Aprendamos algunos conceptos del núcleo de Flutter, creando una pequeña app
 
-[Next step: Write your first app](/get-started/codelab/)
+[Siguiente paso: Escribir tu primera app](/get-started/codelab/)

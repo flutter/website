@@ -1,0 +1,9 @@
+name: widgets_only
+description: Demonstrates a "Hello World" example that uses no material widgets.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

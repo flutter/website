@@ -44,7 +44,7 @@ class MainScreen extends StatelessWidget {
           }));
         },
         child: Image.network(
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
         ),
       ),
     );
@@ -61,7 +61,7 @@ class DetailScreen extends StatelessWidget {
         },
         child: Center(
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
           ),
         ),
       ),
@@ -85,7 +85,7 @@ requires two arguments:
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
   ),
 );
 ```  
@@ -104,7 +104,7 @@ screens will work!
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
   ),
 );
 ```
@@ -141,7 +141,7 @@ class MainScreen extends StatelessWidget {
         child: Hero(
           tag: 'imageHero',
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
           ),
         ),
         onTap: () {
@@ -163,7 +163,7 @@ class DetailScreen extends StatelessWidget {
           child: Hero(
             tag: 'imageHero',
             child: Image.network(
-              'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+              'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
             ),
           ),
         ),

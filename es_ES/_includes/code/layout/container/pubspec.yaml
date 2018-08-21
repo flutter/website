@@ -1,0 +1,14 @@
+name: container
+description: Demonstrates the Container widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/pic1.jpg
+    - images/pic2.jpg
+    - images/pic3.jpg
+    - images/pic4.jpg

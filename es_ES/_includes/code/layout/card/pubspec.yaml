@@ -1,0 +1,9 @@
+name: card
+description: Demonstrates the Card widget.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

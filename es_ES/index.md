@@ -16,12 +16,12 @@ description: >
     </h1>
     <img src="images/homepage/header-illustration.png"
          class="homepage__illustration--image"
-         alt="Illustration with a mobile phone, a pencil, and an abstract drawing of widgets.">
+         alt="Ilustración con un teléfono móvil, un lápiz y un dibujo abstracto de widgets.">
 </div>
 
 <section class="homepage__key_points card">
     <h1 class="homepage__title">
-        Crea hermosas aplicaciones nativas en&nbsp;tiempo&nbsp;récord
+        Crea bellas aplicaciones nativas en tiempo récord
     </h1>
 
     <div class="homepage__tagline">
@@ -33,7 +33,7 @@ description: >
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
+    <a href="/get-started/install/" class="get-started-button">Empezar</a>
     </div>
 
     <div class="key-points">
@@ -43,7 +43,7 @@ description: >
 
             <p>
             Hot Reload en milisegundos para dar vida a tu aplicación.
-            Utilice un amplio conjunto de widgets totalmente personalizables para construir interfaces nativas en minutos.
+            Utiliza un amplio conjunto de widgets totalmente personalizables para construir interfaces nativas en minutos.
             </p>
         </div>
 
@@ -51,7 +51,7 @@ description: >
             <div class="homepage__key_point_title">UI flexible y expresiva</div>
 
             <p>
-            Genere rapidamente las funcionalidades con el foco puesto en una experiencia de usuario nativa.
+            Genera rápidamente las funcionalidades con el foco puesto en una experiencia de usuario nativa.
             La arquitectura en capas permite una personalización completa,
             lo que resulta en una renderización increíblemente rápida y diseños expresivos y flexibles.
             </p>
@@ -97,7 +97,7 @@ description: >
     </div>
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>.
+    Navega por el <a href="/widgets/">catálogo de widget</a>.
     </p>
 </section>
 
@@ -105,8 +105,8 @@ description: >
     <h1>Framework moderno y reactivo</h1>
 
     <p>
-    Componga fácilmente su interfaz de usuario con el moderno framework reactivo de Flutter y un amplio conjunto de widgets, de plataforma, de layout y básicos.
-    Resuelva sus desafíos de interfaz de usuario con poderosas y flexibles APIs para 2D, animación, gestos, efectos y más.
+    Compón fácilmente tu interfaz de usuario con el moderno framework reactivo de Flutter y un amplio conjunto de widgets, de plataforma, de layout y básicos.
+    Resuelve tus desafíos de interfaz de usuario con poderosas y flexibles APIs para 2D, animación, gestos, efectos y más.
     </p>
 
 {% prettify dart %}
@@ -141,14 +141,14 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Explora el<a href="/widgets/">catálogo de widgets</a>
+    Explora el <a href="/widgets/">catálogo de widgets</a>
     y aprende más sobre el  <a href="/widgets-intro/">framework reactivo</a>.
     </p>
 
 </section>
 
 <section class="homepage__interop card">
-    <h1>Acede a funcionalidades y SDKs nativos</h1>
+    <h1>Accede a funcionalidades y SDKs nativos</h1>
 
     <p>
     Haz que tu aplicación cobre vida
@@ -159,7 +159,7 @@ class CounterState extends State<Counter> {
     </p>
 
     <p>
-    Acceder a las funcionalidades de cada plataforma es facil. Aqui hay un snippet de nuestro <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel"> repositorio de ejemplos</a>:
+    Acceder a las funcionalidades de cada plataforma es fácil. Aqui hay un snippet de nuestro <a href="https://github.com/flutter/flutter/tree/master/examples/platform_channel"> repositorio de ejemplos</a>:
     </p>
 
 {% prettify dart %}
@@ -194,7 +194,7 @@ Future<Null> getBatteryLevel() async {
     Si no tienes ninguna experiencia en desarrollo para móviles, Flutter
     es un camino fácil y rápido para construir hermosas aplicaciones móviles.
     Si eres un desarrollador experimentado en iOS o Android
-    puedes usar Flutter para tus vistas y aprovechar su conocimiento existente en Java/Kotlin/ObjC/Swift.
+    puedes usar Flutter para tus vistas y aprovechar tu conocimiento existente en Java/Kotlin/ObjC/Swift.
     </p>
 
     <div class="feature-lists">
@@ -279,8 +279,7 @@ Future<Null> getBatteryLevel() async {
     </div>
 
     <p>
-    Aprende mas sobre que hace especial a Flutter en esta
-    Learn more about what makes Flutter special in the
+    Aprende más sobre que hace especial a Flutter en esta
     <a href="/technical-overview/">descripción técnica general</a>.
     </p>
 </section>
@@ -290,7 +289,7 @@ Future<Null> getBatteryLevel() async {
     <div class="homepage__try_today">Prueba Flutter hoy. Empezar es fácil.</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Inicio rápido</a>
+    <a href="/get-started/install/" class="get-started-button">EMPEZAR</a>
     </div>
 
 </section>

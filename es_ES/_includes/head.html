@@ -1,0 +1,46 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
+  <link rel="shortcut icon" href="{{ "/images/favicon.png" | prepend: site.baseurl  }}">
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5CZXWP');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  {% assign desc = page.description | default: page.content | strip_html | replace:'"','' | strip_newlines | truncatewords: 50 | split: '{%' | first %}
+  <meta name="description" content="{{desc}}">
+  <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@EsFlutter">
+
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:description" content="{{desc}}">
+  {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
+  <meta property="og:image" content="{{og_image_path | absolute_url}}">
+
+  <link rel="stylesheet" href="{{ "/css/lavish-bootstrap.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
+  {% for css_name in page.extra_css %}
+      <link rel="stylesheet" href="{{ css_name }}">
+  {% endfor %}
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123350679-1"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){
+      dataLayer.push(arguments);
+    } 
+    gtag('js', new Date()); 
+    gtag('config', 'UA-123350679-1'); 
+  </script>
+
+  <!-- <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" /> -->
+</head>
