@@ -223,3 +223,4 @@ Para obtener instrucciones detalladas sobre la publicación de la versión relea
 [launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html
 [configurationqualifiers]: https://developer.android.com/guide/practices/screens_support.html#qualifiers
 [play]: https://developer.android.com/distribute/googleplay/start.html
+[gradlebuild]: https://developer.android.com/studio/build/#module-level
