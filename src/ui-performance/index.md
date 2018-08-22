@@ -153,7 +153,8 @@ The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
 <center><img src="images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
-<center>The vertical green bars represent the current frame.</center><br>
+<center>Performance overlay showing the UI thread (top), and GPU thread (bottom). 
+	The vertical green bars represent the current frame.</center><br>
 
 Flutter uses several threads to do its work. All your Dart code runs on
 the UI thread. Although you have no direct access to any other thread,
@@ -166,6 +167,7 @@ your actions on the UI thread have performance consequences on other threads.
    documentation for iOS, or the
    [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread.html)
    documentation for Android.
+   This thread is not shown in the performance overlay.
 
 1. UI thread<br>
    The UI thread executes Dart code in the Dart VM.
@@ -175,6 +177,7 @@ your actions on the UI thread have performance consequences on other threads.
    a _layer tree_, a lightweight object containing device-agnostic
    painting commands, and sends the layer tree to the GPU thread to
    be rendered on the device. _Don't block this thread!_
+   Shown in the top row of the performance overlay.
 
 1. GPU thread<br>
    The GPU thread takes the layer tree and displays it by talking
@@ -183,10 +186,13 @@ your actions on the UI thread have performance consequences on other threads.
    it's a result of something you've done in the Dart code.
    Skia, the graphics library, runs on this thread, which is sometimes
    called the _rasterizer_ thread.
+   Shown in the bottom row of the performance overlay.
 
 1. I/O thread<br>
    Performs expensive tasks (mostly I/O) that would otherwise block
    either the UI or GPU threads.
+   This thread is not shown in the performance overlay.
+
 
 For more information on these threads, see
 [Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
