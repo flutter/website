@@ -68,7 +68,6 @@ The following table shows how Dart values are received on the platform side and 
 | bool        | java.lang.Boolean   | NSNumber numberWithBool:
 | int         | java.lang.Integer   | NSNumber numberWithInt:
 | int, if 32 bits not enough | java.lang.Long       | NSNumber numberWithLong:
-| int, if 64 bits not enough | java.math.BigInteger | FlutterStandardBigInteger
 | double      | java.lang.Double    | NSNumber numberWithDouble:
 | String      | java.lang.String    | NSString
 | Uint8List   | byte[]   | FlutterStandardTypedData typedDataWithBytes:
