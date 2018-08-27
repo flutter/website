@@ -92,13 +92,14 @@ of the object.
 ## Debug mode assertions
 
 During development, you are highly encouraged to use Flutter's "debug"
-mode, sometimes referred to as "checked" mode. This is the default if
-you use `flutter run`. In this mode, the Dart `assert` statement is
-enabled, and the Flutter framework uses this to perform many runtime
-checks verifying that invariants are not being violated.
+mode. This is the default if you use `flutter run`.
+Some tools support assert statements through the command line flag
+`--enable-asserts`. In this mode, Dart
+`assert` statements are enabled, and the Flutter framework uses this to
+perform many runtime checks verifying that invariants are not being violated.
 
 When an invariant is violated, it is reported to the console, with
-some context information to help with tracking down the source of the
+some context information to help track down the source of the
 problem.
 
 To turn off debug mode, and use release mode, run your application
@@ -106,6 +107,9 @@ using `flutter run --release`. This also turns off the Observatory
 debugger. An in-between mode that turns off all the debugging aids
 _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
+
+For more information, see
+[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
 
 ## Debugging application layers
 
