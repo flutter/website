@@ -863,7 +863,7 @@ your UI hangs. In Flutter, use `Isolate`s to take advantage of
 multiple CPU cores to do long-running or computationally intensive tasks.
 
 Isolates are separate execution threads that do not share any memory
-with the main execution memory heap. THis is a difference between `Task.Run()`. This
+with the main execution memory heap. This is a difference between `Task.Run()`. This
 means you can’t access variables from the main thread, or update your UI by calling
 `setState()`.
 
