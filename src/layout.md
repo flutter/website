@@ -40,50 +40,55 @@ The constraints are sometimes "tight", meaning that they leave no room
 for the render box to decide on a size (e.g. if the minimum and
 maximum width are the same, it is said to have a tight width). The
 main example of this is the `App` widget, which is contained by the
-[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html) class: the box used by the child returned by the
-application's [`build`](https://docs.flutter.io/flutter/widgets/State/build.html) function is given a constraint that forces it to
+[`RenderView`](https://docs.flutter.io/flutter/rendering/RenderView-class.html)
+class: the box used by the child returned by the
+application's [`build`](https://docs.flutter.io/flutter/widgets/State/build.html)
+function is given a constraint that forces it to
 exactly fill the application's content area (typically, the entire
 screen). Many of the boxes in Flutter, especially those that just take a
-single child, will pass their constraint on to their children. This
+single child, pass their constraint on to their children. This
 means that if you nest a bunch of boxes inside each other at the root
 of your application's render tree, they'll all exactly fit in each
 other, forced by these tight constraints.
 
 Some boxes _loosen_ the constraints, meaning the maximum is maintained
-but the minimum is removed. For example, [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
+but the minimum is removed. For example,
+[`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
 Unbounded constraints
 ---------------------
 
-In certain situations, the constraint that is given to a box will be
+In certain situations, the constraint that is given to a box is
 _unbounded_, or infinite. This means that either the maximum width or
 the maximum height is set to `double.INFINITY`.
 
 A box that tries to be as big as possible won't function usefully when
-given an unbounded constraint, and in checked mode, such a combination
-will throw an exception that points to this file.
+given an unbounded constraint and, in debug mode, such a combination
+throws an exception that points to this file.
 
 The most common cases where a render box finds itself with unbounded
-constraints are within flex boxes ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
-and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)), 
-and **within scrollable regions** 
-([`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
+constraints are within flex boxes
+([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
+and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)),
+and **within scrollable regions**
+([`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 and other [`ScrollView`](https://docs.flutter.io/flutter/widgets/ScrollView-class.html) subclasses).
 
 In particular, [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 tries to expand to fit the space available
 in its cross-direction (i.e. if it's a vertically-scrolling block, it
-will try to be as wide as its parent). If you nest a vertically
+tries to be as wide as its parent). If you nest a vertically
 scrolling [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 inside a horizontally scrolling [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html),
-the inner one will try to be as wide as possible, which is infinitely
+the inner one tries to be as wide as possible, which is infinitely
 wide, since the outer one is scrollable in that direction.
 
 Flex
 ----
 
-Flex boxes themselves ([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html) 
-and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html)) 
+Flex boxes themselves
+([`Row`](https://docs.flutter.io/flutter/widgets/Row-class.html)
+and [`Column`](https://docs.flutter.io/flutter/widgets/Column-class.html))
 behave differently based on
 whether they are in a bounded constraints or unbounded constraints in
 their given direction.

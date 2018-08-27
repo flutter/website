@@ -19,8 +19,9 @@ check out [Flutter Performance Profiling](/ui-performance/).
 ## The Dart Analyzer
 
 Before running your applications, test your code with `flutter analyze`. This
-tool (which is a wrapper around the `dartanalyzer` tool) will analyze your code
-and help you find possible mistakes. If you're using a [Flutter enabled IDE/editor](/get-started/editor/),
+tool (which is a wrapper around the `dartanalyzer` tool) analyzes your code
+and helps you find possible mistakes. If you're using a
+[Flutter enabled IDE/editor](/get-started/editor/),
 this is already happening for you.
 
 The Dart analyzer makes heavy use of type annotations that you put in
@@ -44,8 +45,8 @@ information on Observatory, see
 
 If you use Observatory for profiling, make sure to run your
 application in profile mode, by passing `--profile` to the `flutter
-run` command. Otherwise, the main thing that will appear on your
-profile will be the debug asserts verifying the framework's various
+run` command. Otherwise, the main thing that appears on your
+profile is the debug asserts verifying the framework's various
 invariants (see "Debug mode assertions" below).
 
 ### `debugger()` statement
@@ -69,7 +70,7 @@ void someFunction(double offset) {
 
 ## `print` and `debugPrint` with `flutter logs`
 
-The Dart `print()` function will output to the system console, which
+The Dart `print()` function outputs to the system console, which
 you can view using `flutter logs` (which is basically a wrapper around
 `adb logcat`).
 
@@ -92,13 +93,14 @@ of the object.
 ## Debug mode assertions
 
 During development, you are highly encouraged to use Flutter's "debug"
-mode, sometimes referred to as "checked" mode. This is the default if
-you use `flutter run`. In this mode, the Dart `assert` statement is
-enabled, and the Flutter framework uses this to perform many runtime
-checks verifying that invariants are not being violated.
+mode. This is the default if you use `flutter run` or the bug icon
+in Android Studio. Some tools support assert statements through the
+command-line flag `--enable-asserts`.  In this mode,
+Dart `assert` statements are enabled, and the Flutter framework performs
+runtime checks verifying that invariants are not being violated.
 
-When an invariant is violated, it is reported to the console, with
-some context information to help with tracking down the source of the
+When an invariant is violated, it's reported to the console, with
+some context information to help track down the source of the
 problem.
 
 To turn off debug mode, and use release mode, run your application
@@ -106,6 +108,9 @@ using `flutter run --release`. This also turns off the Observatory
 debugger. An in-between mode that turns off all the debugging aids
 _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
+
+For more information, see
+[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
 
 ## Debugging application layers
 
@@ -151,7 +156,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-...will output something like this (the precise details will vary on
+...outputs something like this (the precise details vary by
 the version of the framework, the size of the device, and so forth):
 
 ```
@@ -247,7 +252,7 @@ from being pressed to being released, it coincides with the
 object calling
 [`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html)
 and thus marking itself dirty. That is why if you look at the dump you
-will see that specific object marked "dirty". You can also see what
+see that specific object marked "dirty". You can also see what
 gesture listeners have been registered; in this case, a single
 GestureDetector is listed, and it is listening only to a "tap" gesture
 ("tap" is the output of a `TapGestureDetector`'s `toStringShort`
@@ -754,19 +759,19 @@ flag, which causes layers to be overlayed with a rotating set of
 colors whenever they are repainted.
 
 All of these flags only work in debug mode. In general, anything in
-the Flutter framework that starts with "`debug...`" will only work in
+the Flutter framework that starts with "`debug...`" only works in
 debug mode.
 
 ## Debugging animations
 
-The easiest way to debug animations is to slow them way down. To do
-that, set the
+The easiest way to debug animations is to slow them down. To do that,
+set the
 [`timeDilation`](https://docs.flutter.io/flutter/scheduler/timeDilation.html)
 variable (from the `scheduler` library) to a number greater than 1.0,
 for instance, 50.0. It's best to only set this once on app startup. If
 you change it on the fly, especially if you reduce it while animations
 are running, it's possible that the framework will observe time going
-backwards, which will probably result in asserts and generally will
+backwards, which will probably result in asserts and generally
 interfere with your efforts.
 
 ## Debugging performance problems
@@ -776,7 +781,7 @@ set the
 [`debugPrintMarkNeedsLayoutStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)
 and
 [`debugPrintMarkNeedsPaintStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)
-flags respectively. These will log a stack trace to the console any
+flags, respectively. These log a stack trace to the console any
 time a render box is asked to relayout and repaint. You can use the
 `debugPrintStack()` method from the `services` library to print your
 own stack traces on demand, if this kind of approach is useful to you.
@@ -828,7 +833,7 @@ Timeline.finishSync();
 Then open your app's Observatory's timeline page, check the 'Dart'
 recording option and perform the function you want to measure.
 
-Refreshing the page will display the chronological timeline records
+Refreshing the page displays the chronological timeline records
 of your app in Chrome's [tracing tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
 
 Be sure to `flutter run` your app with the `--profile` flag to ensure
@@ -848,18 +853,18 @@ application in a stack and putting a widget on your stack that was
 created by calling
 [`PerformanceOverlay.allEnabled()`](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
 
-This will show two graphs. The top one is the time spent by the GPU
+This shows two graphs. The top one is the time spent by the GPU
 thread, the bottom one is the time spent by the CPU thread. The white
 lines across the graphs show 16ms increments along the vertical axis;
 if the graph ever goes over one of these lines then you are running at
 less than 60Hz. The horizontal axis represents frames. The graph is
 only updated when your application paints, so if it is idle the graph
-will stop moving.
+stops moving.
 
 This should always be done in release mode, since in debug mode
 performance is intentionally sacrificed in exchange for expensive
 asserts that are intended to aid development, and thus the results
-will be misleading.
+are misleading.
 
 ## Material grid
 
@@ -871,7 +876,7 @@ over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
 has a `debugShowMaterialGrid` argument which, when set to `true` in debug
-mode, will overlay such a grid.
+mode, overlays such a grid.
 
 You can also overlay such a grid on non-Material applications by using
 the

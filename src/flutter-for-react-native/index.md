@@ -9,7 +9,7 @@ This document is for React Native (RN) developers looking to apply their existin
 This document can be used as a cookbook by jumping around and finding questions that are most relevant to your needs.
 
 
-*****  
+*****
 
 * TOC Placeholder
 {:toc}
@@ -232,11 +232,11 @@ _getIPAddress() {
 
 Try it out in [DartPad](https://dartpad.dartlang.org/b68eb981456c5eec03daa3c05ee59486).
 
-For more information, see the documentation on [Futures](https://www.dartlang.org/tutorials/language/futures).  
+For more information, see the documentation on [Futures](https://www.dartlang.org/tutorials/language/futures).
 
 #### `async` and `await`
 
-The `async` function declaration defines an asynchronous function.  
+The `async` function declaration defines an asynchronous function.
 
 In JavaScript, the `async` function returns a `Promise`. The `await` operator is
 used to wait for a `Promise`.
@@ -389,18 +389,18 @@ void main() {
 
 
 
-The following images show the Android and iOS UI for the basic Flutter "Hello world!" app.  
+The following images show the Android and iOS UI for the basic Flutter "Hello world!" app.
 
 |Android |iOS |
 |:---:|:--:|
-|<img src="images/hello_world_basic_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="images/hello_world_basic_iOS.png?raw=true" style="width:300px;" alt="Loading">|  
+|<img src="images/hello_world_basic_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="images/hello_world_basic_iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 Now that you've seen the most basic Flutter app, the next section shows
  how to take advantage of Flutter's rich widget libraries to create a modern,
   polished app.
 
-### How do I use widgets and nest them to form a widget tree?  
+### How do I use widgets and nest them to form a widget tree?
 
 In Flutter, almost everything is a widget.
 
@@ -412,9 +412,9 @@ the root widget serves this role.
 
 A widget can define:
 
-* A structural element—like a button or menu  
-* A stylistic element—like a font or color scheme  
-* An aspect of layout—like padding or alignment  
+* A structural element—like a button or menu
+* A stylistic element—like a font or color scheme
+* An aspect of layout—like padding or alignment
 
 The following example shows the "Hello world!" app using widgets from the
  Material library. In this example, the widget tree is nested inside the
@@ -452,7 +452,7 @@ The following images show "Hello world!" built from Material Design widgets. You
 
 |Android |iOS |
 |:---:|:--:|
-|<img src="images/6b18b6e158b15685.png?raw=true" style="width:275px;" alt="Loading">|<img src="images/2e973d40d6e82114.png?raw=true" style="width:300px;" alt="Loading">|  
+|<img src="images/6b18b6e158b15685.png?raw=true" style="width:275px;" alt="Loading">|<img src="images/2e973d40d6e82114.png?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -469,7 +469,7 @@ The important difference between stateless and stateful widgets is that
 In simple or basic apps it's easy to nest widgets, but as the code base gets
 larger and the app becomes complex, you should break deeply nested widgets into
 functions that return the widget or smaller classes. Creating separate functions
-and widgets allows you to reuse the components within the app.  
+and widgets allows you to reuse the components within the app.
 
 ### How do I create reusable components?
 
@@ -573,7 +573,7 @@ void main(){
 In Flutter, the entry point file is `’projectname’/lib/main.dart` and execution
 starts from the `main` function.
 
-### How are files structured in a Flutter app?  
+### How are files structured in a Flutter app?
 
 When you create a new Flutter project, it builds the following directory structure. You can customize it later, but this is where you start.
 <pre>
@@ -600,8 +600,8 @@ When you create a new Flutter project, it builds the following directory structu
 A Flutter resource or asset is a file that is bundled and deployed with your app
 and is accessible at runtime. Flutter apps can include the following asset
 types:
-* Static data such as JSON files  
-* Configuration files  
+* Static data such as JSON files
+* Configuration files
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
   and WBMP)
 
@@ -675,7 +675,7 @@ In Flutter, install a package using the following instructions:
 
 1. Add the package name and version to the `pubspec.yaml` dependencies section.
 The example below shows how to add the `google_sign_in` Dart package to the
-`pubspec.yaml` file. Check your spaces when working in the YAML file because **white space matters**!  
+`pubspec.yaml` file. Check your spaces when working in the YAML file because **white space matters**!
 <!-- skip -->
 ```yaml
 dependencies:
@@ -1132,7 +1132,7 @@ internal state to manage.
  describing does not depend on anything other than the configuration information
  in the object itself and the [`BuildContext`](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) in which the widget is inflated.
 
-[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html),  [CircleAvator](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets which subclass  [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
+[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html),  [CircleAvatar](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), and [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) are examples of stateless widgets which subclass  [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
 
 <!-- skip -->
@@ -1601,9 +1601,9 @@ const MyApp = TabNavigator(
 ```
 
 Flutter provides several specialized widgets for drawer and tab navigation:
-* [TabController](https://docs.flutter.io/flutter/material/TabController-class.html)—Coordinates the tab selection between a TabBar and a TabBarView.  
-* [TabBar](https://docs.flutter.io/flutter/material/TabBar-class.html) —Displays a horizontal row of tabs.  
-* [Tab](https://docs.flutter.io/flutter/material/Tab-class.html)—Creates a material design TabBar tab.  
+* [TabController](https://docs.flutter.io/flutter/material/TabController-class.html)—Coordinates the tab selection between a TabBar and a TabBarView.
+* [TabBar](https://docs.flutter.io/flutter/material/TabBar-class.html) —Displays a horizontal row of tabs.
+* [Tab](https://docs.flutter.io/flutter/material/Tab-class.html)—Creates a material design TabBar tab.
 * [TabBarView](https://docs.flutter.io/flutter/material/TabBarView-class.html)—Displays the widget that corresponds to the currently selected tab.
 
 
@@ -2159,7 +2159,7 @@ app.
 In React Native, Animated APIs are used to create animations.
 
 In Flutter, use the [`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
-class and the [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html) class.  
+class and the [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html) class.
 `Animation` is an abstract class that understands its current value and
 its state (completed or dismissed). The `AnimationController` class lets you
 play an animation forward or in reverse, or stop animation and set the animation
@@ -2305,13 +2305,14 @@ child: Dismissible(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="images/card_swipe_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="images/card_swipe_iOS.gif?raw=true" style="width:300px;" alt="Loading">|  
+|<img src="images/card_swipe_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="images/card_swipe_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
 ## React Native and Flutter Widget equivalent components
 
-The following table lists commonly-used React Native components mapped to the corresponding Flutter widget and common widget properties.
+The following table lists commonly-used React Native components mapped to the
+corresponding Flutter widget and common widget properties.
 
 | React Native Component                                                                    | Flutter Widget                                                                                             | Description                                                                                                                            |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
