@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{page.title}} {% if page.homepage != true %} - {{ site.title }} {% endif %}</title>
   <link rel="shortcut icon" href="/images/favicon.png">
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,13 +27,13 @@
   {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
   <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
-  <link rel="stylesheet" href="/css/lavish-bootstrap.css">
-  <link rel="stylesheet" href="/css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
+  {% asset main.css %}
   {% for css_name in page.extra_css -%}
       <link rel="stylesheet" href="{{ css_name }}">
   {% endfor %}
+  {% asset main.js %}
   <link rel="canonical" href="{{ page_url }}">
 
   <script>
