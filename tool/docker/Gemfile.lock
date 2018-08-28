@@ -124,7 +124,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails (= 9.1.2)
+  autoprefixer-rails
   bootstrap-sass
   font-awesome-sass
   html-proofer
