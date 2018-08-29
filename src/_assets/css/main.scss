@@ -44,7 +44,6 @@ $on-laptop:        980px;
 }
 
 @import '_bootstrap_config';
-@import 'bootstrap-sprockets'; // TODO: remove for BS 4
 @import 'bootstrap';
 
 // Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
