@@ -30,8 +30,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
   {% asset main.css %}
-  {% for css_name in page.extra_css -%}
-      <link rel="stylesheet" href="{{ css_name }}">
+  {% for css in page.css -%}
+    {% asset '{{css}}' %}
   {% endfor %}
   {% asset main.js %}
   <link rel="canonical" href="{{ page_url }}">
