@@ -2,9 +2,8 @@
 layout: page
 title: Flutter for Web (HTML/CSS) Developers
 permalink: /web-analogs/
+css: [two_column.css]
 ---
-
-<link rel="stylesheet" href="/css/two_column.css">
 
 Contents:
 * TOC Placeholder

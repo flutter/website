@@ -168,6 +168,7 @@ $homepage-illustration-text-break-size: 720px;
         // No need for margin, we don't show sidebar on homepage.
         margin-left: auto;
         width: auto;
+        float: none; // Match Lavish settings
 
         @include media-query($on-palm) {
             padding-left: 0;

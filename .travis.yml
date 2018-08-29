@@ -1,0 +1,51 @@
+language: node_js
+node_js: 10
+sudo: false
+
+# Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
+# https://github.com/flutter/flutter/issues/6207
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
+    packages:
+      - lib32stdc++6
+      - libstdc++6
+
+env:
+  global:
+    - JEKYLL_ENV=production
+    - TZ=US/Pacific # normalize build timestamp
+  matrix:
+    - TASK="./tool/check-examples.sh"
+    - TASK="rake checklinks" # Run jekyll build and check links
+
+before_install:
+  - rvm install 2.4.3
+  - rvm use 2.4.3
+  - ./tool/before_install.sh
+
+script: $TASK
+
+deploy:
+  - provider: script
+    script:
+      - ! type -t firebase && npm install --global firebase-tools@4.0.3
+      - ./tool/deploy-firebase.sh
+    skip_cleanup: true
+    on:
+      repo: flutter/website
+      branch: master
+
+# Only run Travis jobs for named branches (to avoid double builds for each PR)
+branches:
+  only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
+
+cache:
+  timeout: 300
+  bundler: true
+  directories:
+  - $HOME/.pub-cache
+  - $HOME/.nvm
+  - $HOME/.rvm
+  - node_modules
