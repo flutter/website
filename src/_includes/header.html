@@ -1,31 +1,28 @@
 <header class="site-header">
-  <div class="container-fluid header-contents">
-    <div class="row">
-      <div class="col-md-12">
-        <i class="fa fa-bars" id="sidebar-toggle-button" aria-hidden="true" style="display:none"></i>
-        <img src="/images/flutter-mark-square-100.png" alt="Flutter Logo" width="40" height="40" style="vertical-align:middle">
+  <nav class="navbar justify-content-between py-0">
+    <div class="nav-brand">
+      <i class="fa fa-bars" id="sidebar-toggle-button" aria-hidden="true" style="display:none"></i>
+      <img src="/images/flutter-mark-square-100.png" alt="Flutter Logo" width="40" height="40" style="vertical-align:middle">
+      <a class="site-title" href="/">{{site.title}}</a>
+    </div>
 
-        <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-        <nav class="site-nav">
-          <a href="#" class="menu-icon">
-            <i class="material-icons-extended">more_vert</i>
-          </a>
-          <div class="trigger">
-            <a class="page-link" href="/docs/">Docs</a>
-            <a class="page-link" href="/showcase/">Showcase</a>
-            <a class="page-link" href="https://github.com/flutter/flutter">GitHub</a>
-            <a class="page-link" href="https://pub.dartlang.org/flutter">Packages</a>
-            <a class="page-link" href="/support/">Support</a>
-            <form action="/search/" class="nav-searchbox" id="cse-search-box" style="display: inline">
-              <input type="hidden" name="cx" value="007067728241810524621:gm6vraqlc8c">
-              <input type="hidden" name="ie" value="UTF-8">
-              <input type="hidden" name="hl" value="en">
-              <input type="search" name="q" id="q" autocomplete="off" placeholder="Search">
-            </form>
-          </div>
-        </nav>
+    <a href="#" class="nav-item d-md-none">
+      <i class="material-icons-extended">more_vert</i>
+    </a>
+    <div class="d-none d-md-block">
+      <div class="trigger">
+        <a class="nav-item" href="/docs/">Docs</a>
+        <a class="nav-item" href="/showcase/">Showcase</a>
+        <a class="nav-item" href="{{site.repo.flutter}}">GitHub</a>
+        <a class="nav-item" href="{{site.pub}}/flutter">Packages</a>
+        <a class="nav-item" href="/support/">Support</a>
+        <form action="/search/" class="nav-searchbox" id="cse-search-box" style="display: inline">
+          <input type="hidden" name="cx" value="007067728241810524621:gm6vraqlc8c">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input type="hidden" name="hl" value="en">
+          <input type="search" name="q" id="q" autocomplete="off" placeholder="Search">
+        </form>
       </div>
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
+    </div>
+  </nav>
 </header>

@@ -5,8 +5,12 @@ email: flutter-dev@googlegroups.com
 url: https://flutter.io
 port: 4002
 github_username: flutter
-repo: https://github.com/flutter/website
+repo:
+  this: https://github.com/flutter/website
+  flutter: https://github.com/flutter/flutter
 branch: master
+
+pub: https://pub.dartlang.org
 
 # Build settings
 source: src
