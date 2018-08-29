@@ -1,0 +1,17 @@
+// Config necessary only to match the formerly used lavish-bootstrap styles;
+// this will temporarily ensure that the site appearance
+
+.alert { padding: 15px; }
+
+.btn-sm {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+// Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
+.container-fluid { padding: 0; }
+
+.lavish-row {
+  @extend .row;
+  display: block;
+}
