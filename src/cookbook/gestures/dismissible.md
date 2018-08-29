@@ -169,8 +169,7 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar!
-                Scaffold
-                    .of(context)
+                Scaffold.of(context)
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               // Show a red background as the item is swiped away
