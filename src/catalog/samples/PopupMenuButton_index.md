@@ -15,7 +15,7 @@ All of the sample apps listed here use the Flutter PopupMenuButton class in an i
    </a>
     <div class="col-md-9">
       <p>
-        A typcial AppBar with a title, actions, and an overflow dropdown menu.
+        A typical AppBar with a title, actions, and an overflow dropdown menu.
       </p>
       <p>
         This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
