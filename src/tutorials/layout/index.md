@@ -716,12 +716,12 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <p></p>
 <img src="images/row-diagram.png" alt="diagram showing the main axis and cross axis for a row">
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/column-diagram.png" alt="diagram showing the main axis and cross axis for a column">
 
@@ -747,11 +747,11 @@ The render box (in this case, the entire screen) is more than 300 pixels wide,
 so setting the main axis alignment to `spaceEvenly` divides the free
 horizontal space evenly between, before, and after each image.
 
-<div class="row"> <div class="col-md-8" markdown="1">
+<div class="row"> <div class="col-lg-8" markdown="1">
 
 {% include includelines filename="code/layout/row/main.dart" start=40 count=8 %}
 
-</div> <div class="col-md-3" markdown="1">
+</div> <div class="col-lg-3" markdown="1">
 
 <center><img src="images/row-spaceevenly-visual.png" style="border:1px solid black" alt="a row showing 3 images spaced evenly in the row"></center>
 
@@ -767,7 +767,7 @@ of 3 images, each is 100 pixels high. The height of the render box
 setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
-<div class="row"> <div class="col-md-8" markdown="1">
+<div class="row"> <div class="col-lg-8" markdown="1">
 
 {% include includelines filename="code/layout/column/main.dart" start=40 count=8 %}
 
@@ -775,7 +775,7 @@ space evenly between, above, and below each image.
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/column/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/column/pubspec.yaml)
 
-</div> <div class="col-md-3" markdown="1">
+</div> <div class="col-lg-3" markdown="1">
 
 <img src="images/column-visual.png" style="border:1px solid black" alt="a column showing 3 images spaced evenly in the column">
 
@@ -807,11 +807,11 @@ widget is 1.
 For example, to create a row of three widgets where the middle widget is twice
 as wide as the other two widgets, set the flex factor on the middle widget to 2:
 
-<div class="row"> <div class="col-md-8" markdown="1">
+<div class="row"> <div class="col-lg-8" markdown="1">
 
 {% include includelines filename="code/layout/row-expanded/main.dart" start=40 count=15 %}
 
-</div> <div class="col-md-3" markdown="1">
+</div> <div class="col-lg-3" markdown="1">
 
 <img src="images/row-expanded-visual.png" style="border:1px solid black" alt="a row of 3 images with the middle image twice as wide as the others">
 
@@ -827,11 +827,11 @@ wrap each widget with an Expanded widget.
 By default, each widget has a flex factor of 1, assigning one-third of
 the row to each widget.
 
-<div class="row"> <div class="col-md-8" markdown="1">
+<div class="row"> <div class="col-lg-8" markdown="1">
 
 {% include includelines filename="code/layout/row-expanded-2/main.dart" start=40 count=14 %}
 
-</div> <div class="col-md-3" markdown="1">
+</div> <div class="col-lg-3" markdown="1">
 
 <img src="images/row-expanded-2-visual.png" style="border:1px solid black" alt="a row of 3 images that are too wide, but each is constrained to take only 1/3 of the row's available space">
 
@@ -849,7 +849,7 @@ as possible, but if you want to pack the children closely together,
 set its `mainAxisSize` to `MainAxisSize.min`. The following example
 uses this property to pack the star icons together.
 
-<div class="row"> <div class="col-md-8" markdown="1">
+<div class="row"> <div class="col-lg-8" markdown="1">
 
 <!-- code/layout/packed/main.dart -->
 <!-- skip -->
@@ -872,7 +872,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-</div> <div class="col-md-3" markdown="1">
+</div> <div class="col-lg-3" markdown="1">
 
 <img src="images/packed.png" style="border:1px solid black" alt="a row of 5 stars, packed together in the middle of the row">
 
@@ -1077,13 +1077,13 @@ body: Center(
 ),
 {% endprettify %}
 
-<div class="row"> <div class="col-md-3" markdown="1">
+<div class="row"> <div class="col-lg-3" markdown="1">
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/pavlova/main.dart)<br>
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/pavlova/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/pavlova/pubspec.yaml)
 
-</div> <div class="col-md-9" markdown="1">
+</div> <div class="col-lg-9" markdown="1">
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -1145,7 +1145,7 @@ or to add borders or margins. You can change the device's background by
 placing the entire layout into a Container and changing its background color
 or image.
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 #### Container summary:
 
@@ -1154,7 +1154,7 @@ or image.
 * Contains a single child widget, but that child can be a Row, Column,
   or even the root of a widget tree
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/margin-padding-border.png" alt="a diagram showing that margins, borders, and padding, that surround content in a container">
 
@@ -1167,7 +1167,7 @@ many examples in this tutorial use Container. You can also find more
 Container examples in the [Flutter
 Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery).
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 This layout consists of a column of two rows, each containing 2 images.
 Each image uses a Container to add a rounded grey border and margins.
@@ -1178,7 +1178,7 @@ uses a Container to change the background color to a lighter grey.
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/container/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/container/pubspec.yaml)
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/container.png" alt="a screenshot showing 2 rows, each containing 2 images; the images have grey rounded borders, and the background is a lighter grey">
 
@@ -1267,7 +1267,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 #### GridView examples:
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <img src="images/gridview-extent.png" style="border:1px solid black" alt="a 3-column grid of photos">
 
@@ -1276,7 +1276,7 @@ Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/grid/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/grid/pubspec.yaml)
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/gridview-count-flutter-gallery.png" style="border:1px solid black" alt="a 2 column grid with footers containing titles on a partially translucent background">
 
@@ -1345,7 +1345,7 @@ its content is too long for its render box.
 
 #### ListView examples:
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <img src="images/listview.png" style="border:1px solid black" alt="a ListView containing movie theaters and restaurants">
 
@@ -1355,7 +1355,7 @@ A Divider separates the theaters from the restaurants.<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/listview/pubspec.yaml)
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the Material Design color palette">
 
@@ -1430,7 +1430,7 @@ The widgets can completely or partially overlap the base widget.
 
 #### Stack examples:
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <img src="images/stack.png" style="border:1px solid black" alt="a circular avatar containing the label 'Mia B' in the lower right portion of the circle">
 
@@ -1443,7 +1443,7 @@ Alignments.<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/stack/pubspec.yaml)
 
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/stack-flutter-gallery.png" style="border:1px solid black" alt="an image with a grey gradient across the top; on top of the gradient is tools painted in white">
 
@@ -1525,7 +1525,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 #### Card examples:
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
@@ -1536,7 +1536,7 @@ SizedBox. A Divider separates the first and second ListTiles.
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/card/pubspec.yaml)
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/card-flutter-gallery.png" style="border:1px solid black" alt="a Card containing an image and text and buttons under the image">
 
@@ -1609,14 +1609,14 @@ but can be used elsewhere.
 
 #### ListTile examples:
 
-<div class="row"> <div class="col-md-6" markdown="1">
+<div class="row"> <div class="col-lg-6" markdown="1">
 
 <img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
 A Card containing 3 ListTiles.<br>
 **Dart code:** See [Card examples](#card-examples).
 
-</div> <div class="col-md-6" markdown="1">
+</div> <div class="col-lg-6" markdown="1">
 
 <img src="images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, each containing a pull-down button">
 

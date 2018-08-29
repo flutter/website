@@ -693,7 +693,7 @@ span.soft {
     background-color: whitesmoke;
 }
 
-.col-md-9 img {
+.col-lg-9 img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -707,7 +707,7 @@ span.soft {
 
 
 @media (min-width: 900px) {
-    .col-md-9 img {
+    .col-lg-9 img {
         max-width: 700px;
         max-height: 700px;
     }
@@ -782,10 +782,9 @@ span.label.label-default {
 span.label.label-primary {
     background-color: #f0ad4e;
 }
-.col-lg-12 .nav li a {background-color: white}
 
 code {
-    white-space: pre-wrap;   
+    white-space: pre-wrap;
 }
 
 a code {

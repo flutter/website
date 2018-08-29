@@ -11,7 +11,7 @@ from the model, the corresponding card animates in or out of view.
 <p>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-lg-4">
         <div class="panel panel-default">
           <div class="panel-body" style="padding: 16px 32px;">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/animated_list_small.png" alt="Android screenshot" class="img-responsive">

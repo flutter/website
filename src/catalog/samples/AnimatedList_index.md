@@ -9,11 +9,11 @@ All of the sample apps listed here use the Flutter AnimatedList class in an inte
 <div class="container-fluid">
   <div class="row" style="margin-bottom: 32px">
     <a href="/catalog/samples/animated-list/">
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/animated_list_small.png" alt="Android screenshot" class="img-responsive">
       </div>
    </a>
-    <div class="col-md-9">
+    <div class="col-lg-9">
       <p>
         An AnimatedList that displays a list of cards which stay
 in sync with an app-specific ListModel. When an item is added to or removed
