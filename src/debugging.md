@@ -95,9 +95,12 @@ of the object.
 During development, you are highly encouraged to use Flutter's "debug"
 mode. This is the default if you use `flutter run` or the bug icon
 in Android Studio. Some tools support assert statements through the
-command-line flag `--enable-asserts`.  In this mode,
-Dart `assert` statements are enabled, and the Flutter framework performs
-runtime checks verifying that invariants are not being violated.
+command-line flag `--enable-asserts`.
+In this mode, Dart assert statements are enabled, and the Flutter
+framework evaluates the argument to each assert statement encountered during
+execution, throwing an exception if the result is false. This allows
+developers to enable or disable invariant checking, such that the associated
+performance cost is only paid during debugging sessions.
 
 When an invariant is violated, it's reported to the console, with
 some context information to help track down the source of the
@@ -251,8 +254,8 @@ from being pressed to being released, it coincides with the
 [`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)
 object calling
 [`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html)
-and thus marking itself dirty. That is why if you look at the dump you
-see that specific object marked "dirty". You can also see what
+and thus marking itself dirty. That is why, when you look at the dump you
+should see that specific object marked as "dirty". You can also see what
 gesture listeners have been registered; in this case, a single
 GestureDetector is listed, and it is listening only to a "tap" gesture
 ("tap" is the output of a `TapGestureDetector`'s `toStringShort`
