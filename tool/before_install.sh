@@ -11,8 +11,10 @@ echo "Downloading Flutter"
 # echo "Download Google OAuth Tool"
 # pip install --user google-oauth2l --upgrade
 
-if [[ -z "$TASK" || "$TASK" == *jekyll\ build* ]]; then
+if [[ -z "$TASK" || "$TASK" == *jekyll* || "$TASK" == *rake* ]]; then
   echo "Install bundler and gems"
   gem install bundler
   bundle install
+else
+  echo "SKIPPING 'Install bundler and gems' since this isn't a jekyll build task"
 fi
