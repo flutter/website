@@ -1307,6 +1307,8 @@ are a way to modularize your code, compose sophisticated user interfaces for
 larger screens, and help scale your application UI. In Flutter, both of these
 concepts fall under the umbrella of `Widget`s.
 
+To learn more about building Activity/Fragment UI, see the medium article [Flutter For Android Developers : How to design Activity UI in Flutter](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
+
 As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
 section, screens in Flutter are represented by `Widget`s since everything is
 a widget in Flutter. You use a `Navigator` to move between different `Route`s
