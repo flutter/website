@@ -75,8 +75,8 @@ class MyButton extends StatelessWidget {
       // When the user taps the button, show a snackbar
       onTap: () {
         Scaffold.of(context).showSnackBar(SnackBar(
-              content: Text('Tap'),
-            ));
+          content: Text('Tap'),
+        ));
       },
       child: Container(
         padding: EdgeInsets.all(12.0),
