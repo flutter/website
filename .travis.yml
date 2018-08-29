@@ -1,0 +1,41 @@
+language: node_js
+node_js: 10
+sudo: true
+
+env:
+  global:
+    - JEKYLL_ENV=production
+    - TZ=US/Pacific # normalize build timestamp
+  matrix:
+    - TASK="./tool/build_check_deploy.sh --no-build --no-check-links"
+    - TASK="bundle exec jekyll build && rake checklinks"
+
+before_install:
+  - rvm install 2.4.3
+  - rvm use 2.4.3
+  - ./tool/before_install.sh
+
+script: $TASK
+
+deploy:
+  - provider: script
+    script:
+      - ! type -t firebase && npm install --global firebase-tools@4.0.3
+      - ./tool/deploy-firebase.sh
+    skip_cleanup: true
+    on:
+      repo: flutter/website
+      branch: master
+
+# Only run Travis jobs for named branches (to avoid double builds for each PR)
+branches:
+  only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
+
+cache:
+  timeout: 300
+  bundler: true
+  directories:
+  - $HOME/.pub-cache
+  - $HOME/.nvm
+  - $HOME/.rvm
+  - node_modules
