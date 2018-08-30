@@ -10,8 +10,8 @@ Any widget with a PreferredSize can appear at the bottom of an AppBar.
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-4">
-        <div class="panel panel-default">
-          <div class="panel-body" style="padding: 16px 32px;">
+        <div class="panel">
+          <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/app_bar_bottom_small.png" alt="Android screenshot" class="img-fluid">
           </div>
           <div class="panel-footer">

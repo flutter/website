@@ -109,6 +109,12 @@ pre {
   padding: 0 !important;
   width: unset !important;
 }
+
+.panel-body {
+  @extend .card-body;
+  padding: 16px 32px !important;
+}
+
 .panel-footer {
   @extend .card-footer;
 }
