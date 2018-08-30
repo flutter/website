@@ -21,15 +21,45 @@ ul#mysidebar {
   padding: 5px 10px;
 }
 
-.col-md-9 { max-width: none; } // Used, e.g., in Showcase
+//== Grid
+
+.col-lg-3 {
+  @include media-breakpoint-up(lg) {
+    width: 25%;
+    float: left;
+  }
+}
+
+.col-md-9 { // Used in Showcase
+  max-width: none;
+  // @include media-breakpoint-up(lg) { float: left; }
+}
+.col-lg-9 { // Used in Samples
+  max-width: none;
+  width: 75%;
+  @include media-breakpoint-up(lg) { float: left; }
+}
 
 // Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
 .container-fluid { padding: 0; }
 
-.lavish-row {
-  @extend .row;
+.lavish-row { @extend .row; display: block; }
+.lavish-table-row {
+  // @extend .row;
+  margin-left: -15px;
+  margin-right: -15px;
+  &:after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}
+
+.img-responsive {
   display: block;
 }
+
+//== Code
 
 code,
 pre {
