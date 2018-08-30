@@ -17,6 +17,14 @@
     padding-left: 24px;
     padding-right: 24px;
 
+    .site-nav-horizontal {
+      @include media-breakpoint-down(sm) { display: none; }
+    }
+
+    .site-nav-vertical {
+      @include media-breakpoint-up(pa) { display: none; }
+    }
+
     .dropdown-item {
       // Match 2018 site
       color: $color;

@@ -15,18 +15,27 @@ $code-bg:   #f0f0f0; // Match Lavish settings
 $pre-color: #77777a; // Match Lavish settings
 
 //== Grid https://getbootstrap.com/docs/4.0/layout/grid/#grid-tiers
+//
+// Media of at least the minimum breakpoint width.
+//   @include media-breakpoint-up(bp) { ... }
+//
+// Media of at most the maximum breakpoint width.
+//   @include media-breakpoint-down(bp) { ... }
 
 // Use old flutter/website palm and laptop breakpoints for md and lg.
+//
+// Why the + 0.02px? Bootstrap uses fractional widths with max-width media
+// queires. The 2018Q1 site design breaks on exact widths (e.g., $on-palm).
 
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  pa: $on-palm,
+  pa: $on-palm + 0.02px,
   md: 768px,
-  la: $on-laptop,
+  la: $on-laptop + 0.02px,
   lg: 992px,
   xl: 1200px
-) !default;
+);
 
 $container-max-widths: (
   sm: 540px,
@@ -35,4 +44,4 @@ $container-max-widths: (
   lg: 960px,
   la: $on-laptop, // Note: exceptionally la max-width == la breakpoint
   xl: 1140px
-) !default;
+);
