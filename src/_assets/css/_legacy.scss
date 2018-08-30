@@ -1,11 +1,15 @@
-// Temporary config necessary only to match the former (2018Q1) site design
+//=
+//=  Temporary config necessary only to match the former (2018Q1) site design
+//=
 
 ul#mysidebar {
   list-style: none;
   // li { display: block; }
 }
 
-//= lavish-bootstrap compatibility
+//=
+//= Lavish-bootstrap compatibility
+//=
 
 .alert { padding: 15px; }
 
@@ -13,6 +17,8 @@ ul#mysidebar {
   font-size: 12px;
   padding: 5px 10px;
 }
+
+.col-md-9 { max-width: none; } // Used, e.g., in Showcase
 
 // Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
 .container-fluid { padding: 0; }

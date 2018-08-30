@@ -21,14 +21,18 @@ $pre-color: #77777a; // Match Lavish settings
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  md: $on-palm,   // was: 768px,
-  lg: $on-laptop, // was: 992px,
+  pa: $on-palm,
+  md: 768px,
+  la: $on-laptop,
+  lg: 992px,
   xl: 1200px
 ) !default;
 
 $container-max-widths: (
   sm: 540px,
-  md: $on-palm - 40px, // was: 720px,
-  lg: $on-laptop,      // was: 960px,
+  pa: $on-palm - 40px,
+  md: 720px,
+  lg: 960px,
+  la: $on-laptop, // Note: exceptionally la max-width == la breakpoint
   xl: 1140px
 ) !default;
