@@ -14,14 +14,20 @@ ul#mysidebar {
 //= Lavish-bootstrap compatibility
 //=
 
+//== alerts
+
 .alert { padding: 15px; }
+.alert > p, .alert > ul { margin-bottom: 0; }
+.alert > p + p { margin-top: 5px; }
+
+//== Buttons
 
 .btn-sm {
   font-size: 12px;
   padding: 5px 10px;
 }
 
-//== Grid
+//== Grid and layout
 
 .col-md-3 { // Used in side-nave only
   @include media-breakpoint-up(md) { max-width: none; }
@@ -37,8 +43,10 @@ ul#mysidebar {
 .col-md-9 { max-width: none; } // Used in Showcase
 .col-lg-9 { // Used in Samples
   max-width: none;
-  width: 75%;
-  @include media-breakpoint-up(lg) { float: left; }
+  @include media-breakpoint-up(lg) {
+    float: left;
+    width: 75%;
+  }
 }
 
 // Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding. TODO: eliminate uses of this class.
@@ -92,3 +100,5 @@ pre {
 //== Typography
 
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace !default;  // Match Lavish settings
+
+b, strong { font-weight: bold; }
