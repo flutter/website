@@ -6,12 +6,15 @@ build
 .*swp
 node_modules
 
-# Dart
+# Dart and Flutter
 .flutter-plugins
 .packages
 .pub/
 pubspec.lock
 packages
 example.g/
+
+src/_includes/code/**/android/
+src/_includes/code/**/ios/
 
 .idea/
