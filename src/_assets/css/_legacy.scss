@@ -23,6 +23,10 @@ ul#mysidebar {
 
 //== Grid
 
+.col-md-3 { // Used in side-nave only
+  @include media-breakpoint-up(md) { max-width: none; }
+}
+
 .col-lg-3 {
   @include media-breakpoint-up(lg) {
     width: 25%;
@@ -30,17 +34,14 @@ ul#mysidebar {
   }
 }
 
-.col-md-9 { // Used in Showcase
-  max-width: none;
-  // @include media-breakpoint-up(lg) { float: left; }
-}
+.col-md-9 { max-width: none; } // Used in Showcase
 .col-lg-9 { // Used in Samples
   max-width: none;
   width: 75%;
   @include media-breakpoint-up(lg) { float: left; }
 }
 
-// Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
+// Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding. TODO: eliminate uses of this class.
 .container-fluid { padding: 0; }
 
 .lavish-row { @extend .row; display: block; }
