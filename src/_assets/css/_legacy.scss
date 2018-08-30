@@ -97,6 +97,20 @@ pre {
   border-radius: 4px;
 }
 
+//== Panels were dropped from BS 4. Eventually, just use a .card.
+//
+// AFAICT(chalin), .panel is only used in a few catalog/samples pages.
+
+.panel {
+  @extend .card;
+  border-bottom-color: transparent !important;
+  padding: 0 !important;
+  width: unset !important;
+}
+.panel-footer {
+  @extend .card-footer;
+}
+
 //== Typography
 
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace !default;  // Match Lavish settings
