@@ -1,6 +1,23 @@
-// Grid https://getbootstrap.com/docs/4.0/layout/grid/#grid-tiers
+//== General
 
-// Add palm and laptop tiers:
+$enable-shadows: true;
+
+//== Card
+
+$card-border-width: 0;
+// $card-border-color: rgba(0,0,0,0);
+
+
+//== Code
+
+$code-color:   #444; // Match Lavish settings
+$code-bg:   #f0f0f0; // Match Lavish settings
+$pre-color: #77777a; // Match Lavish settings
+
+//== Grid https://getbootstrap.com/docs/4.0/layout/grid/#grid-tiers
+
+// Use old flutter/website palm and laptop breakpoints for md and lg.
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -15,13 +32,3 @@ $container-max-widths: (
   lg: $on-laptop,      // was: 960px,
   xl: 1140px
 ) !default;
-
-// Typography
-
-$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace !default;  // Match Lavish settings
-
-// Code
-
-$code-color:   #444; // Match Lavish settings
-$code-bg:   #f0f0f0; // Match Lavish settings
-$pre-color: #77777a; // Match Lavish settings

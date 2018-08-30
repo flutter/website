@@ -15,3 +15,7 @@
   @extend .row;
   display: block;
 }
+
+//== Typography
+
+$font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace !default;  // Match Lavish settings

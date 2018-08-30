@@ -1,19 +1,72 @@
 /**
- * Site header
+ * Site header and navbar
  */
 .site-header {
+  $color: #424242;
+
   position: fixed;
   right: 0;
   left: 0;
   z-index: 1000;
   min-height: 56px;
   background-color: white;
-  color: #424242;
+  color: $color;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 
   .navbar {
     padding-left: 24px;
     padding-right: 24px;
+
+    .dropdown-item {
+      // Match 2018 site
+      color: $color;
+      font-size: $body-font-size;
+      font-weight: $font-weight-light;
+    }
+    .dropdown-menu {
+      // Match 2018 site
+      border-color: $grey-color-light;
+    }
+    .dropdown-toggle {
+      // Match 2018 site menu icon
+      &:after {
+        // Reset bootstrap settings
+        border: none;
+        height: auto;
+        width: auto;
+        // Set our own icon
+        @include md-icon-content('more_vert');
+        font-size: $h4-font-size;
+      }
+    }
+
+    // Searchbox
+
+    .dropdown-menu .form-group {
+      margin-bottom: 0;
+    }
+
+    #cse-search-box {
+      display: inline;
+
+      input {
+        font-size: $body-font-size;
+        font-weight: $font-weight-light;
+        color: $color;
+        // Match 2018 site searchbox
+        height: 28px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: inherit;
+        input { width: auto; }
+      }
+
+      // Just before the down(sm) break point, the nav gets too large
+      // so make the searchbox a litte narrower.
+      @include media-query($on-palm + 58px) { input { width: 100px; } }
+    }
+
     .nav-item {
       color: #424242;
       line-height: $base-line-height;
@@ -21,10 +74,6 @@
       // Gaps between nav items, but not on the first one
       &:not(:first-child) {
           margin-left: 20px;
-      }
-
-      @include media-query($on-palm) {
-          color: $brand-color;
       }
     }
   }
@@ -59,70 +108,6 @@
 .contents {
     padding: 56px 24px 24px 24px;
 }
-
-
-.site-nav {
-  float: right;
-  line-height: 56px;
-
-  .menu-icon {
-      display: none;
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: 10px;
-    background-color: $background-color;
-    border-radius: 5px;
-    text-align: right;
-
-    .menu-icon {
-        display: block;
-        float: right;
-        width: 36px;
-        height: 26px;
-        line-height: 0;
-        padding-top: 10px;
-        text-align: center;
-        color: black;
-
-        > svg {
-            width: 18px;
-            height: 15px;
-
-            path {
-                fill: $grey-color-dark;
-            }
-        }
-    }
-
-    .trigger {
-        clear: both;
-        display: none;
-        padding-top: 20px;
-
-      input {
-        margin-right: 5px;
-      }
-    }
-
-    &:hover .trigger {
-        display: block;
-        padding-bottom: 10px;
-    }
-
-    &:hover {
-        border: 1px solid $grey-color-light;
-    }
-
-    .page-link {
-        display: block;
-        padding: 5px 10px;
-    }
-  }
-}
-
 
 
 /**

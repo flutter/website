@@ -1,6 +1,6 @@
 // Variables
 $base-font-family: Roboto, sans-serif;
-$base-font-size:   16px;
+$base-font-size:   16px; // Note: most of the current site SCSS doesn't use this; instead 15px is used.
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
@@ -36,6 +36,9 @@ $on-laptop:        980px;
     }
 }
 
+// 2018 site style compatibility config (to be dropped with new design)
+$body-font-size: 15px;
+
 @import '_bootstrap_config';
 @import 'bootstrap';
 @import '_bootstrap_lavish_compatibility'; // TODO: temporary
@@ -45,6 +48,7 @@ $on-laptop:        980px;
 @import
         "base",
         "fix_custom_search_results",
+        "icons",
         "layout",
         "header",
         "customstyles",
