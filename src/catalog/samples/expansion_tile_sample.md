@@ -12,7 +12,7 @@ ExpansionTiles can used to produce two-level or multi-level lists.
       <div class="col-lg-4">
         <div class="panel panel-default">
           <div class="panel-body" style="padding: 16px 32px;">
-            <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/expansion_tile_sample_small.png" alt="Android screenshot" class="img-responsive">
+            <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/expansion_tile_sample_small.png" alt="Android screenshot" class="img-fluid">
           </div>
           <div class="panel-footer">
             Android screenshot

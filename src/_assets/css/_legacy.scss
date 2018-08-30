@@ -53,8 +53,8 @@ ul#mysidebar {
 .container-fluid { padding: 0; }
 
 .lavish-row { @extend .row; display: block; }
-.lavish-table-row {
-  // @extend .row;
+
+@mixin lavish-table-row() {
   margin-left: -15px;
   margin-right: -15px;
   &:after {
@@ -64,8 +64,10 @@ ul#mysidebar {
   }
 }
 
-.img-responsive {
-  display: block;
+.lavish-table-row { @include lavish-table-row; }
+.lavish-table-row-mb {
+  @include lavish-table-row;
+  margin-bottom: 32px;
 }
 
 //== Code
