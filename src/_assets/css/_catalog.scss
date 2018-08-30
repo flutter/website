@@ -74,6 +74,7 @@
   overflow: auto;
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
 }
 
