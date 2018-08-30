@@ -41,7 +41,7 @@ $body-font-size: 15px;
 
 @import '_bootstrap_config';
 @import 'bootstrap';
-@import '_bootstrap_lavish_compatibility'; // TODO: temporary
+@import '_legacy'; // TODO: temporary
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 

@@ -1,5 +1,11 @@
-// Config necessary only to match the formerly used lavish-bootstrap styles;
-// this will temporarily ensure that the site appearance
+// Temporary config necessary only to match the former (2018Q1) site design
+
+ul#mysidebar {
+  list-style: none;
+  // li { display: block; }
+}
+
+//= lavish-bootstrap compatibility
 
 .alert { padding: 15px; }
 
