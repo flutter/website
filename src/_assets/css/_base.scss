@@ -235,6 +235,7 @@ code {
 
 .contribute {
   float: right;
+  .btn.text-muted { cursor: inherit; }
 }
 
 .noselect {
