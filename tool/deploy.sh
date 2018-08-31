@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+if [ ! $(type -t travis_fold) ]; then travis_fold () { true; } fi
+
 function _installFBT() {
   _PKG="firebase-tools@4.0.3"
   if ! type -t firebase > /dev/null; then
+    travis_fold start deploy.firebase-tools-install
     (set -x; npm install --global $_PKG)
+    travis_fold end deploy.firebase-tools-install
   fi
 }
 
@@ -44,5 +48,8 @@ fi
 
 _ARGS+=" --project $_FB_PROJ"
 
-[[ -z $QUIET ]] && echo "Deploying to Firebase project: $_FB_PROJ"
-echo firebase deploy $_ARGS
+if [[ -z $QUIET ]]; then
+  echo "Deploying to Firebase project: $_FB_PROJ"
+  set -x # Travis masks out secrets from logs so enabling command echo is safe.
+fi
+firebase deploy $_ARGS
