@@ -3,23 +3,22 @@ layout: default
 ---
 
 <article class="post-content">
-
-  {% unless page.hide_title %}
+  {% unless page.hide_title -%}
   <header class="post-header">
-      <div class="btn-group contribute" role="group">
-         <a href="https://github.com/flutter/website/blob/master/src/{{page.path}}" class="btn btn-sm">
-            <i class="fa fa-pencil"></i> Edit Source
-         </a>
-         <a href="https://github.com/flutter/flutter/issues/new?title=Issue from website page {{page.title}}&body=From URL: {{site.url}}{{page.url}}&labels=dev: docs - website" class="btn btn-sm">
-            <i class="fa fa-github"></i> File Issue
-        </a>
-     </div>
-   <div>
-    <h1 class="post-title">{{ page.title }} </h1>
-   </div>
-
+    <div class="btn-group contribute" role="group" title="We're not accepting page changes at the moment.">
+      <a class="btn btn-sm text-muted">
+        {%- comment %}href="{{site.repo.this}}/blob/master/src/{{page.path}}"{% endcomment -%}
+        <i class="fa fa-pencil"></i> Edit Source
+      </a>
+      <a href="{{site.repo.this}}/issues/new?title=Issue from website page {{page.title}}&body=From URL: {{site.url}}{{page.url}}&labels=dev: docs - website"
+        class="btn btn-sm">
+        <i class="fa fa-github"></i> File Issue
+      </a>
+    </div>
+    <div>
+      <h1 class="post-title">{{ page.title }} </h1>
+    </div>
   </header>
-  {% endunless %}
-
+  {% endunless -%}
   {{ content }}
 </article>
