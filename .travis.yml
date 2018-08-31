@@ -18,7 +18,7 @@ env:
     - TZ=US/Pacific # normalize build timestamp
   matrix:
     - TASK="./tool/check-examples.sh"
-    - TASK="rake checklinks" # Run jekyll build and check links
+    - TASK="rake build_and_checklinks"
 
 before_install:
   - rvm install 2.4.3
@@ -29,13 +29,12 @@ script: $TASK
 
 deploy:
   - provider: script
-    script:
-      - ! type -t firebase && npm install --global firebase-tools@4.0.3
-      - ./tool/deploy-firebase.sh
+    script: ./tool/deploy-firebase.sh --install
     skip_cleanup: true
     on:
       repo: flutter/website
       branch: master
+      condition: $TASK == *build*
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:

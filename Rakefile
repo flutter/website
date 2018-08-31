@@ -1,6 +1,6 @@
 require 'html-proofer'
 
-task :checklinks do
+task :build_and_checklinks do
   sh "bundle exec jekyll build"
   options = {
     :log_level => :info,
