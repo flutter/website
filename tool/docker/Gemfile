@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # New infrastructure gems
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass' # Bootstrap v3; use 'bootstrap' package for v4
+gem 'bootstrap'
 gem 'font-awesome-sass'
 gem 'jekyll'
 gem 'jekyll-assets', group: :jekyll_plugins

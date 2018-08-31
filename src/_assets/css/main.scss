@@ -1,6 +1,6 @@
 // Variables
 $base-font-family: Roboto, sans-serif;
-$base-font-size:   16px;
+$base-font-size:   16px; // Note: most of the current site SCSS doesn't use this; instead 15px is used.
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
@@ -30,34 +30,25 @@ $on-palm:          710px;
 $on-laptop:        980px;
 
 
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
+// 2018 site style compatibility config (to be dropped with new design)
+$body-font-size: 15px;
+
 @import '_bootstrap_config';
-@import 'bootstrap-sprockets'; // TODO: remove for BS 4
 @import 'bootstrap';
-
-// Lavish-bootstrap didn't have container-fluid, so undo BS3's added padding
-.container-fluid {
-  padding: 0;
-}
-
+@import '_legacy'; // TODO: temporary
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
 @import
         "base",
         "fix_custom_search_results",
+        "icons",
         "layout",
         "header",
         "customstyles",

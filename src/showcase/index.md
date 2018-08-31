@@ -20,22 +20,22 @@ For a longer list of apps check out [itsallwidgets.com](https://itsallwidgets.co
     {% capture modulo4 %}{{ forloop.index0 | modulo:4 }}{% endcapture %}
 
     {% if modulo4 == '0' %}
-     <div class="clearfix visible-lg"></div>
+     <div class="clearfix d-none d-xl-block"></div>
     {% endif %}
 
     {% capture modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
 
     {% if modulo3 == '0' %}
-     <div class="clearfix visible-md"></div>
+     <div class="clearfix d-none d-lg-block"></div>
     {% endif %}
 
     {% capture modulo2 %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
 
     {% if modulo2 == '0' %}
-     <div class="clearfix visible-sm"></div>
+     <div class="clearfix d-none d-md-block"></div>
     {% endif %}
 
-    <div class="showcase-grid__item col-lg-3 col-md-4 col-sm-6">
+    <div class="showcase-grid__item col-xl-3 col-lg-4 col-md-6">
         <h2>{{case.name}}</h2>
 
         <div class="showcase-grid__screenshot">
