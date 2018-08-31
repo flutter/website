@@ -29,7 +29,7 @@ script: $TASK
 
 deploy:
   - provider: script
-    script: ./tool/deploy-firebase.sh --install
+    script: ./tool/deploy.sh --install
     skip_cleanup: true
     on:
       repo: flutter/website
