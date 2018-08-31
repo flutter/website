@@ -18,3 +18,4 @@ src/_includes/code/**/android/
 src/_includes/code/**/ios/
 
 .idea/
+.firebase/
