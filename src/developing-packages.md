@@ -281,7 +281,7 @@ dependencies:
 If `some_package` declares the dependencies above and `other_package` declares a compatible  `url_launcher`
 dependency like `'0.4.5'` or `^0.4.0`, `pub` will be able to resolve the issue automatically. Similar
 remarks apply to plugin packages' platform-specific dependencies on [Gradle modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
-and/or [Cocoa pods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
+and/or [CocoaPods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
 
 Even if `some_package` and `other_package` declare incompatible versions for `url_launcher`, it may still
 be that they actually use `url_launcher` in compatible ways. Then the conflict can be dealt with by adding
@@ -309,4 +309,4 @@ configurations.all {
 }
 ```
 
-Cocoapods does not currently offer dependency override functionality.
+CocoaPods does not currently offer dependency override functionality.

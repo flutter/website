@@ -1182,7 +1182,7 @@ Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
 weren’t available to Flutter, as they lived in separate folders.
 
-## What is the equivalent of Cocoapods? How do I add dependencies?
+## What is the equivalent of CocoaPods? How do I add dependencies?
 
 In iOS, you add dependencies by adding to your `Podfile`. Flutter uses Dart’s
 build system and the Pub package manager to handle dependencies. The tools
