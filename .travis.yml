@@ -41,7 +41,7 @@ branches:
   only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
 
 cache:
-  timeout: 300
+  timeout: 1000
   bundler: true
   directories:
   - $HOME/.pub-cache
