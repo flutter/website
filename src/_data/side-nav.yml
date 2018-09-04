@@ -1,0 +1,149 @@
+- title: Getting Started
+  permalink: /get-started
+  urlExactMatch: true
+  children:
+  - title: "1: Install"
+    permalink: /get-started/install
+  - title: "2: Configure editor"
+    permalink: /get-started/editor
+  - title: "3: Test drive"
+    permalink: /get-started/test-drive
+  - title: "4: Write your first app"
+    permalink: /get-started/codelab
+  - title: "5: Learn more"
+    permalink: /get-started/learn-more
+  - title: Coming from another platform?
+    children:
+    - title: Flutter for Android devs
+      permalink: /flutter-for-android
+    - title: Flutter for iOS devs
+      permalink: /flutter-for-ios
+    - title: Flutter for React Native devs
+      permalink: /flutter-for-react-native
+    - title: Flutter for Xamarin.Forms devs
+      permalink: /flutter-for-xamarin-forms
+
+- title: "Samples & Codelabs"
+  children:
+  - title: Cookbook
+    permalink: /cookbook
+  - title: UI samples catalog
+    permalink: /catalog/samples
+  - title: Codelabs
+    permalink: /codelabs
+  - title: GitHub samples
+    permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+  - title: Flutter Gallery - demo app
+    permalink: xxx
+
+- title: Development
+  children:
+  - title: 
+    User interface
+    children:
+    - title: Tour the framework
+      permalink: /widgets-into
+    - title: Building layouts
+      permalink: /tutorials/layout
+    - title: Adding interactivity
+      permalink: /tutorials/interactive
+    - title: "Assets and images"
+      permanlink: /assets-and-images
+    - title: "Navigation & routing"
+      permalink: /cookbook/navigation/navigation-basics
+    - title: Inspect an app's UI
+      permalink: /inspector
+    - title: Animations
+      permalink: /animations
+      children:
+      - title: Animations overview
+      - title: Implicitly animated widgets
+      - title: Transition widgets
+      - title: Explicit animation widgets
+      - title: Hero animations
+      - title: Staggered animations
+    - title: Advanced UI
+      children:
+      - title: "Focus handling system (where did this go?)"
+      - title: Gestures
+        permalink: /gestures
+    - title: Platform-specific theming
+    - title: Widget catalog
+      permalink: /widgets
+  - title: Data and backend
+    children:
+    - title: Architect app to manage data flow
+    - title: JSON and serialization
+      permalink: /json
+    - title: Back-end services
+    - title: Use Firebase with Flutter
+    - title: Run background processes
+  - title: "Accessibility & Internationalization"
+    children:
+    - title: Accessibility
+      permalink: /accessibility
+    - title: Internationalization
+      permalink: /tutorials/internationalization
+  - title: Platform Integration
+    children:
+    - title: Embedding Flutter views in non-Flutter apps
+    - title: Writing platform-specific code
+      permalink: /platform-channels
+  - title: "Packages & Plugins"
+    children:
+    - title: Using packages
+      permalink: /using-packages
+    - title: Developing packages and plugins
+      permalink: /developing-packages
+    - title: Package site
+      permalink: http://pub.dartlang.org/flutter
+  - Tools
+    children:
+    - title: Using hot reload
+      permalink: /hot-reload
+    - title: Using an IDE
+      permalink: xxx
+    - title: "Format Flutter code (??)"
+    - title: Widget inspector
+      permalink: /inspector
+
+- title: "Testing & Optimization"
+  children:
+  - title: Debugging your app
+    permalink: /debugging
+  - title: Testing your app
+    permalink: /testing
+  - title: Performance profiling
+    permalink: /ui-performance
+  - title: Making your compiled app smaller
+
+- title: Deployment
+  children:
+  - title: Build and release for Android
+    permalink: /android-release
+  - title: Build and release for iOS
+    permalink: /ios-release
+  - title: Continuous deployment with fastlane
+    permalink: /fastlane-cd
+
+- title: Resources
+  children:
+  - title: Dart resources
+  - title: Flutter best practices
+  - title: Technical videos for learning Flutter
+  - title: Flutter developer communities
+  - title: Flutter learning resources
+  - title: FAQ
+    permalink: /faq
+
+- title: "APIs & References"
+  children:
+  - title: Widget catalog
+    permalink: /widgets
+  - title: API reference
+    permalink: https://docs.flutter.io/
+  - title: Package site
+    permalink: http://pub.dartlang.org/flutter
+
+      
+  
