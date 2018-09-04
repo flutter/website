@@ -38,8 +38,7 @@
 
 - title: Development
   children:
-  - title: 
-    User interface
+  - title: User interface
     children:
     - title: Tour the framework
       permalink: /widgets-into
@@ -97,7 +96,7 @@
       permalink: /developing-packages
     - title: Package site
       permalink: http://pub.dartlang.org/flutter
-  - Tools
+  - title: Tools
     children:
     - title: Using hot reload
       permalink: /hot-reload
@@ -145,5 +144,5 @@
   - title: Package site
     permalink: http://pub.dartlang.org/flutter
 
-      
-  
+
+
