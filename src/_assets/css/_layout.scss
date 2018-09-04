@@ -37,6 +37,7 @@
     }
     .dropdown-toggle {
       // Match 2018 site menu icon
+      cursor: pointer;
       &:after {
         // Reset bootstrap settings
         border: none;
