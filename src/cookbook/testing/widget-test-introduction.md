@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Introduction to Widget testing"
 ---
 

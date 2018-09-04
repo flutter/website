@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Adding Assets and Images in Flutter
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Tapping, Dragging and Entering Text in Widget Tests"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Dealing with box constraints in Flutter
 ---
 

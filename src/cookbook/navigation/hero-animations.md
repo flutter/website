@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Animating a Widget across screens"
 ---
 

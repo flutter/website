@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "AppBar with a custom bottom widget."
 ---
 

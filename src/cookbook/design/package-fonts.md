@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Exporting fonts from a package"
 ---
 

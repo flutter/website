@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Send data to a new screen"
 ---
 

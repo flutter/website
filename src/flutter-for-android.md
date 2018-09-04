@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Flutter for Android Developers
 ---
 This document is meant for Android developers looking to apply their

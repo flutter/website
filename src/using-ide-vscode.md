@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Developing Flutter apps in an IDE
 ---
 

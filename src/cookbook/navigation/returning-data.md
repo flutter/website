@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Return data from a screen"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Handling changes to a text field"
 ---
 

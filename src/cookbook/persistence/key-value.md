@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Storing key-value data on disk"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Parsing JSON in the background
 ---
 

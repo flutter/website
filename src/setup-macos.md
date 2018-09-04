@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Get Started: Install on macOS"
 ---
 

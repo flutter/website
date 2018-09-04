@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Preparing an iOS App for Release
 ---
 

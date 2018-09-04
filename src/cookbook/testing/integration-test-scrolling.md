@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Scrolling in integration tests"
 ---
 

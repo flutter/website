@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Flutter for Xamarin.Forms Developers
 ---
 This document is meant for Xamarin.Forms developers looking to apply their

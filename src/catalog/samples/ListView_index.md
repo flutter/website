@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "ListView Sample Apps"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Creating Useful Bug Reports
 ---
 

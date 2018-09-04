@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Fade in images with a placeholder"
 ---
 

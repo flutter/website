@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "TabBar Sample Apps"
 ---
 

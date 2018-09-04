@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Updating the UI based on orientation"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Performance profiling with integration tests"
 ---
 

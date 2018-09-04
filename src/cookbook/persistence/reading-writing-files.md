@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Reading and Writing Files"
 ---
 

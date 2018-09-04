@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Writing custom platform-specific code with platform channels
 ---
 

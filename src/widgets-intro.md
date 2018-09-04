@@ -1,5 +1,4 @@
 ---
-layout: page
 title: A Tour of the Flutter Widget Framework
 ---
 

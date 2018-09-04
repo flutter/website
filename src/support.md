@@ -1,6 +1,5 @@
 ---
 title: Support
-layout: page
 ---
 
 We're open source and would love to hear from you!

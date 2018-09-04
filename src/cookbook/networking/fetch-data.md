@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Fetch data from the internet
 ---
 

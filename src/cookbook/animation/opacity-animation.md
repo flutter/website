@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Fade a Widget in and out"
 ---
 

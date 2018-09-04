@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Create a horizontal list"
 ---
 

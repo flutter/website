@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Flutter for Web (HTML/CSS) Developers
 css-old: [two_column.css]
 ---

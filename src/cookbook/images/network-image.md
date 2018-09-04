@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Display images from the internet"
 ---
 

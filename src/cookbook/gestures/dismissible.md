@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Implement Swipe to Dismiss"
 ---
 

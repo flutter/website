@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Creating lists with different types of items"
 ---
 

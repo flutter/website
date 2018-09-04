@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Flutter Widget Index
 ---
 

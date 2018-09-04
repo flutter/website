@@ -1,6 +1,5 @@
 ---
 title: Technical Overview
-layout: page
 ---
 
 ## What is Flutter?

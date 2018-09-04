@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Focus on a Text Field"
 ---
 

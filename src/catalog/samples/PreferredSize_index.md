@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "PreferredSize Sample Apps"
 ---
 

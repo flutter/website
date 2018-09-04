@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Finding Widgets in a Widget Test"
 ---
 

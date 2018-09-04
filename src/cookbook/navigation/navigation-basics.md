@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Navigate to a new screen and back"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Create and style a text field"
 ---
 

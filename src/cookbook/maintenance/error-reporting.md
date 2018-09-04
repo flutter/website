@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Report errors to a service"
 ---
 

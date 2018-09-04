@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Working with long lists"
 ---
 

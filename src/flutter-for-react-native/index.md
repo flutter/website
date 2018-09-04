@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Flutter for React Native Developers
 ---
 

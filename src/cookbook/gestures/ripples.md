@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Adding Material Touch Ripples"
 ---
 

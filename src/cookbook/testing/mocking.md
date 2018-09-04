@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Mock dependencies using Mockito"
 ---
 

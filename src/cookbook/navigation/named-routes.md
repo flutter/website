@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Navigate with named routes"
 ---
 

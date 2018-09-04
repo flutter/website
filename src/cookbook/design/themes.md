@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Using Themes to share colors and font styles"
 ---
 

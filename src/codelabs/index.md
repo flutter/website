@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Codelabs
 description: "Codelabs to help you quickly get started programming Flutter."
 ---

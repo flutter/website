@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Retrieve the value of a text field"
 ---
 

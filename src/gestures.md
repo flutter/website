@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Taps, drags, and other gestures in Flutter
 ---
 
