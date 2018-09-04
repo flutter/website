@@ -1,12 +1,10 @@
 ---
-layout: page
-title: "Handling Taps"
-permalink: /cookbook/gestures/handling-taps/
+title: Handling Taps
 ---
 
-We not only want to display information to our users, we want our users to 
-interact with our apps! So how do we respond to fundamental actions such as 
-tapping and dragging? We'll use the [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html) 
+We not only want to display information to our users, we want our users to
+interact with our apps! So how do we respond to fundamental actions such as
+tapping and dragging? We'll use the [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
 Widget!
 
 Say we want to make a custom button that shows a snackbar when tapped. How would
@@ -21,7 +19,7 @@ we approach this?
 ```dart
 // Our GestureDetector wraps our button
 GestureDetector(
-  // When the child is tapped, show a snackbar 
+  // When the child is tapped, show a snackbar
   onTap: () {
     final snackBar = SnackBar(content: Text("Tap"));
 
@@ -43,11 +41,11 @@ GestureDetector(
 
   1. If you'd like to add the Material Ripple effect to your button, please
   see the "[Adding Material Touch ripples](/cookbook/gestures/ripples/)" recipe.
-  2. While we've created a custom button to demonstrate these concepts, Flutter 
-  includes a handful of buttons out of the box: [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html), 
-  [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html), 
+  2. While we've created a custom button to demonstrate these concepts, Flutter
+  includes a handful of buttons out of the box: [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html),
+  [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html),
   and [CupertinoButton](https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html)
-    
+
 
 ## Complete example
 

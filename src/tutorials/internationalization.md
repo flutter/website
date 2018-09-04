@@ -1,8 +1,6 @@
 ---
 layout: tutorial
-title: "Internationalizing Flutter Apps"
-
-permalink: /tutorials/internationalization/
+title: Internationalizing Flutter Apps
 ---
 
 <div class="whats-the-point" markdown="1">

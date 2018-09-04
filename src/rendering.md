@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Rendering in Flutter
-
-permalink: /rendering/
 ---
 
 * TOC Placeholder

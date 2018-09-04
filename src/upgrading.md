@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Upgrading Flutter
-permalink: /upgrading/
 ---
 
 We strongly recommend tracking the `beta` branch in the flutter repository, which

@@ -1,15 +1,13 @@
 ---
-layout: page
-title: "Handling changes to a text field"
-permalink: /cookbook/forms/text-field-changes/
+title: Handling changes to a text field
 ---
 
 In some cases, it can be handy to run a callback function every time the text
-in a text field changes. For example, we might want to build a search screen 
-with autocomplete functionality. In this case, we would want to update the 
+in a text field changes. For example, we might want to build a search screen
+with autocomplete functionality. In this case, we would want to update the
 results as the user types.
 
-How can we run a callback function every time the text changes? With Flutter, 
+How can we run a callback function every time the text changes? With Flutter,
 we have two options:
 
   1. Supply an `onChanged` callback to a `TextField`
@@ -17,14 +15,14 @@ we have two options:
 
 ## 1. Supply an `onChanged` callback to a `TextField`
 
-The simplest approach is to supply an 
-[`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html) 
-callback to a 
-[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html). 
-Whenever the text changes, the callback will be invoked. One downside to this 
+The simplest approach is to supply an
+[`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html)
+callback to a
+[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html).
+Whenever the text changes, the callback will be invoked. One downside to this
 approach is it does not work with `TextFormField` Widgets.
 
-In this example, we will print the current value of the text field to the 
+In this example, we will print the current value of the text field to the
 console every time the text changes.
 
 <!-- skip -->
@@ -40,7 +38,7 @@ TextField(
 
 A more powerful, but more elaborate approach, is to supply a
 [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
-as the 
+as the
 [`controller`](https://docs.flutter.io/flutter/material/TextField/controller.html)
 property of the `TextField` or a `TextFormField`.
 
@@ -95,9 +93,9 @@ longer needed. This will ensure we discard any resources used by the object.
 
 ### Supply the `TextEditingController` to a `TextField`
 
-In order to work, the `TextEditingController` must be supplied to either a 
+In order to work, the `TextEditingController` must be supplied to either a
 `TextField` or a `TextFormField`. Once it's wired up, we can begin listening
-for changes to the text field. 
+for changes to the text field.
 
 <!-- skip -->
 ```dart
@@ -123,8 +121,8 @@ _printLatestValue() {
 
 ### Listen to the controller for changes
 
-Finally, we need to listen to the `TextEditingController` and run the 
-`_printLatestValue` method whenever the text changes. We will use the 
+Finally, we need to listen to the `TextEditingController` and run the
+`_printLatestValue` method whenever the text changes. We will use the
 [`addListener`](https://docs.flutter.io/flutter/foundation/ChangeNotifier/addListener.html)
 method to achieve this task.
 
@@ -139,7 +137,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   void initState() {
     super.initState();
 
-    // Start listening to changes 
+    // Start listening to changes
     myController.addListener(_printLatestValue);
   }
 
@@ -147,7 +145,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   void dispose() {
     // Stop listening to text changes
     myController.removeListener(_printLatestValue);
-    
+
     // Clean up the controller when the Widget is removed from the Widget tree
     myController.dispose();
     super.dispose();

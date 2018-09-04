@@ -102,7 +102,7 @@ to the front matter of each page, and including some HTML.
 ```
 ---
 layout: tutorial
-title: "Constraints"
+title: Constraints
 
 permalink: /tutorials/layout/constraints.html
 prev-page: /tutorials/layout/properties.html

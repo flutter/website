@@ -1,8 +1,6 @@
 ---
 layout: tutorial
-title: "Adding Interactivity to Your Flutter App"
-
-permalink: /tutorials/interactive/
+title: Adding Interactivity to Your Flutter App
 ---
 
 <div class="whats-the-point" markdown="1">
@@ -57,13 +55,13 @@ skip to the next section.
   [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
-simulator](/setup-macos/#set-up-the-ios-simulator) (part of the Flutter install),
+simulator](/setup-macos#set-up-the-ios-simulator) (part of the Flutter install),
 you are good to go!
 
 [Building Layouts for Flutter](https://flutter.io/tutorials/layout/)
 showed how to create the layout for the following screenshot.
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
+<img src="/tutorials/interactive/images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
 When the app first launches, the star is solid red, indicating that this lake
 has previously been favorited. The number next to the star indicates that
@@ -72,7 +70,7 @@ tapping the star removes its favorited status, replacing
 the solid star with an outline and decreasing the count. Tapping
 again favorites the lake, drawing a solid star and increasing the count.
 
-<img src="images/favorited-not-favorited.png" alt="the custom widget you'll create">
+<img src="/tutorials/interactive/images/favorited-not-favorited.png" alt="the custom widget you'll create">
 
 To accomplish this, you'll create a single custom widget that includes both the
 star and the count, which are themselves widgets. Because tapping the star
@@ -398,7 +396,7 @@ when tapped, toggles between a green or grey box.
 The `_active` boolean determines the color: green for active or
 grey for inactive.
 
-<img src="images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
+<img src="/tutorials/interactive/images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=/tutorials/interactive/"images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
 
 These examples use
 [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)

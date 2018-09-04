@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Flutter's Development Philosophy
-
-permalink: /design-principles/
 ---
 
 * TOC Placeholder

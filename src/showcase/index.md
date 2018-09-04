@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Showcase
-
-permalink: /showcase/
 ---
 
 Flutter is used by Google and developers and organizations around the world

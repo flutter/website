@@ -1,22 +1,20 @@
 ---
-layout: page
-title: "Using Themes to share colors and font styles"
-permalink: /cookbook/design/themes/
+title: Using Themes to share colors and font styles
 ---
 
-In order to share colors and font styles throughout our app, we can take 
-advantage of themes. There are two ways to define themes: App-wide or using 
-`Theme` Widgets that define the colors and font styles for a particular part of 
-our application. In fact, app-wide themes are just `Theme` Widgets created at 
-the root of our apps by the `MaterialApp`! 
+In order to share colors and font styles throughout our app, we can take
+advantage of themes. There are two ways to define themes: App-wide or using
+`Theme` Widgets that define the colors and font styles for a particular part of
+our application. In fact, app-wide themes are just `Theme` Widgets created at
+the root of our apps by the `MaterialApp`!
 
-After we define a Theme, we can use it within our own Widgets. In addition, the 
-Material Widgets provided by Flutter will use our Theme to set the background 
-colors and font styles for AppBars, Buttons, Checkboxes, and more.    
+After we define a Theme, we can use it within our own Widgets. In addition, the
+Material Widgets provided by Flutter will use our Theme to set the background
+colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 ## Creating an app theme
 
-In order to share a Theme containing colors and font styles across our entire 
+In order to share a Theme containing colors and font styles across our entire
 app, we can provide [`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html)
 to the `MaterialApp` constructor.
 
@@ -39,10 +37,10 @@ documentation to see all of the colors and fonts you can define.
 
 ## Themes for part of an application
 
-If we want to override the app-wide theme in part of our application, we can 
+If we want to override the app-wide theme in part of our application, we can
 wrap a section of our app in a `Theme` Widget.
 
-There are two ways to approach this: creating unique `ThemeData`, or 
+There are two ways to approach this: creating unique `ThemeData`, or
 extending the parent theme.
 
 ### Creating unique `ThemeData`
@@ -67,14 +65,14 @@ Theme(
 ### Extending the parent theme
 
 Rather than overriding everything, it often makes sense to extend the parent
-theme. We can achieve this by using the 
-[`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html) 
+theme. We can achieve this by using the
+[`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html)
 method.
 
 <!-- skip -->
 ```dart
 Theme(
-  // Find and Extend the parent theme using "copyWith". Please see the next 
+  // Find and Extend the parent theme using "copyWith". Please see the next
   // section for more info on `Theme.of`.
   data: Theme.of(context).copyWith(accentColor: Colors.yellow),
   child: FloatingActionButton(
@@ -89,13 +87,13 @@ Theme(
 Now that we've defined a theme, we can use it within our Widget `build` methods
 by using the `Theme.of(context)` function!
 
-`Theme.of(context)` will look up the Widget tree and return the nearest `Theme` 
-in the tree. If we have a stand-alone `Theme` defined above our Widget, it 
+`Theme.of(context)` will look up the Widget tree and return the nearest `Theme`
+in the tree. If we have a stand-alone `Theme` defined above our Widget, it
 returns that. If not, it returns the App theme.
 
-In fact, the `FloatingActionButton` uses this exact technique to find the 
+In fact, the `FloatingActionButton` uses this exact technique to find the
 `accentColor`!
- 
+
 <!-- skip -->
 ```dart
 Container(
@@ -105,7 +103,7 @@ Container(
     style: Theme.of(context).textTheme.title,
   ),
 );
-```   
+```
 
 ## Complete example
 

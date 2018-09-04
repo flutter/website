@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Preparing an Android App for Release
-
-permalink: /android-release/
 ---
 
 During the typical development cycle, you'll test an app using `flutter run` at the

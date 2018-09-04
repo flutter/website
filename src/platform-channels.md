@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Writing custom platform-specific code with platform channels
-permalink: /platform-channels/
 ---
 
 This guide describes how to write custom platform-specific code. Some

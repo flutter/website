@@ -1,14 +1,12 @@
 ---
-layout: page
-title: "Display images from the internet"
-permalink: /cookbook/images/network-image/
+title: Display images from the internet
 ---
 
-Displaying images is fundamental for most mobile apps. Flutter provides the 
-[`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) Widget to 
+Displaying images is fundamental for most mobile apps. Flutter provides the
+[`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) Widget to
 display different types of images.
 
-In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html) 
+In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html)
 constructor.
 
 <!-- skip -->
@@ -32,13 +30,13 @@ Image.network(
 
 ## Placeholders and Caching
 
-The default `Image.network` constructor does not handle more advanced 
+The default `Image.network` constructor does not handle more advanced
 functionality, such as fading images in after loading or caching images
 to the device after they're downloaded. To achieve these tasks, please see
 the following recipes:
 
   * [Fade in images with a placeholder](/cookbook/images/fading-in-images/)
-  * [Working with cached images](/cookbook/images/cached-images/) 
+  * [Working with cached images](/cookbook/images/cached-images/)
 
 ## Complete example
 

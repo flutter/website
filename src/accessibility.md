@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Accessibility
-
-permalink: /accessibility/
 ---
 
 Flutter is committed to supporting developers who want to make their apps more

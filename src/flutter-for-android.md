@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Flutter for Android Developers
-permalink: /flutter-for-android/
 ---
 This document is meant for Android developers looking to apply their
 existing Android knowledge to build mobile apps with Flutter. If you understand

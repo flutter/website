@@ -1,19 +1,17 @@
 ---
-layout: page
-title: "Parsing JSON in the background"
-permalink: /cookbook/networking/background-parsing/
+title: Parsing JSON in the background
 ---
 
-By default, Dart apps do all of their work on a single thread. In many cases, 
-this model simplifies coding and is fast enough that it does not result in 
+By default, Dart apps do all of their work on a single thread. In many cases,
+this model simplifies coding and is fast enough that it does not result in
 poor app performance or stuttering animations, often called "jank."
 
-However, we may need to perform an expensive computation, such as parsing a 
-very large JSON document. If this work takes more than 16 milliseconds, our 
+However, we may need to perform an expensive computation, such as parsing a
+very large JSON document. If this work takes more than 16 milliseconds, our
 users will experience jank.
 
-To avoid jank, we need to perform expensive computations like this in the 
-background. On Android, this would mean scheduling work on a different thread. 
+To avoid jank, we need to perform expensive computations like this in the
+background. On Android, this would mean scheduling work on a different thread.
 In Flutter, we can use a separate [Isolate](https://docs.flutter.io/flutter/dart-isolate/Isolate-class.html).
 
 ## Directions
@@ -22,24 +20,24 @@ In Flutter, we can use a separate [Isolate](https://docs.flutter.io/flutter/dart
   2. Make a network request using the `http` package
   3. Convert the response into a List of Photos
   4. Move this work to a separate isolate
-  
+
 ## 1. Add the `http` package
 
-First, we'll want to add the [`http`](https://pub.dartlang.org/packages/http) 
-package to our project. The `http` package makes it easier to perform network 
+First, we'll want to add the [`http`](https://pub.dartlang.org/packages/http)
+package to our project. The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
 ```yaml
 dependencies:
   http: <latest_version>
 ```
-  
+
 ## 2. Make a network request
 
-In this example, we'll fetch a JSON large document that contains a list of 5000 
-photo objects from the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) 
-using the [`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html) 
-method. 
+In this example, we'll fetch a JSON large document that contains a list of 5000
+photo objects from the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/)
+using the [`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html)
+method.
 
 <!-- skip -->
 ```dart
@@ -59,8 +57,8 @@ This will make the data easier to work with in the future.
 
 ### Create a `Photo` class
 
-First, we'll need to create a `Photo` class that contains data about a photo. 
-We will also include a `fromJson` factory to make it easy to create a `Photo` 
+First, we'll need to create a `Photo` class that contains data about a photo.
+We will also include a `fromJson` factory to make it easy to create a `Photo`
 starting with a json object.
 
 <!-- skip -->
@@ -84,7 +82,7 @@ class Photo {
 
 ### Convert the response into a List of Photos
 
-Now, we'll update the `fetchPhotos` function so it can return a 
+Now, we'll update the `fetchPhotos` function so it can return a
 `Future<List<Photo>>`. To do so, we'll need to:
 
   1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
@@ -109,14 +107,14 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 ## 4. Move this work to a separate isolate
 
-If you run the `fetchPhotos` function on a slower phone, you may notice the app 
-freezes for a brief moment as it parses and converts the json. This is jank, 
+If you run the `fetchPhotos` function on a slower phone, you may notice the app
+freezes for a brief moment as it parses and converts the json. This is jank,
 and we want to be rid of it!
 
 So how can we do that? By moving the parsing and conversion to a background
-isolate using the [`compute`](https://docs.flutter.io/flutter/foundation/compute.html) 
-function provided by Flutter. The `compute` function will run expensive 
-functions in a background isolate and return the result. In this case, we want 
+isolate using the [`compute`](https://docs.flutter.io/flutter/foundation/compute.html)
+function provided by Flutter. The `compute` function will run expensive
+functions in a background isolate and return the result. In this case, we want
 to run the `parsePhotos` function in the background!
 
 <!-- skip -->
@@ -133,10 +131,10 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 ## Notes on working with Isolates
 
 Isolates communicate by passing messages back and forth. These messages can
-be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or 
+be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or
 simple objects such as the `List<Photo>` in this example.
 
-You may experience errors if you try to pass more complex objects, such as 
+You may experience errors if you try to pass more complex objects, such as
 a `Future` or `http.Response` between isolates.
 
 ## Complete example

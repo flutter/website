@@ -1,12 +1,10 @@
 ---
-layout: page
-title: "Updating the UI based on orientation"
-permalink: /cookbook/design/orientation/
+title: Updating the UI based on orientation
 ---
 
 In certain cases, it can be handy to update the design of an app when the user
-rotates their screen from portrait mode to landscape mode. For example, we may 
-want to show one item after the next in portrait mode, yet put those same items 
+rotates their screen from portrait mode to landscape mode. For example, we may
+want to show one item after the next in portrait mode, yet put those same items
 side-by-side in landscape mode.
 
 In Flutter, we can build different layouts depending on a given
@@ -34,18 +32,18 @@ GridView.count(
 );
 ```
 
-To learn more about working with `GridViews`, please see the 
+To learn more about working with `GridViews`, please see the
 [Creating a grid list](/cookbook/lists/grid-lists/) recipe.
 
 ## 2. Use an `OrientationBuilder` to change the number of columns
 
-In order to determine the current `Orientation`, we can use the 
-[`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html) 
+In order to determine the current `Orientation`, we can use the
+[`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html)
 Widget. The `OrientationBuilder` calculates the current `Orientation` by
-comparing the width and height available to the parent widget, and rebuilds 
+comparing the width and height available to the parent widget, and rebuilds
 when the size of the parent changes.
 
-Using the `Orientation`, we can build a list that displays 2 columns in portrait 
+Using the `Orientation`, we can build a list that displays 2 columns in portrait
 mode, or 3 columns in landscape mode.
 
 <!-- skip -->
@@ -62,7 +60,7 @@ OrientationBuilder(
 ```
 
 Note: If you're interested in the orientation of the screen, rather than
-the amount of space available to the parent, please use 
+the amount of space available to the parent, please use
 `MediaQuery.of(context).orientation` instead of an `OrientationBuilder` Widget.
 
 ## Complete example

@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Debugging Flutter Apps
-
-permalink: /debugging/
 ---
 
 There are a wide variety of tools and features to help debug Flutter

@@ -1,22 +1,20 @@
 ---
-layout: page
-title: "Navigate with named routes"
-permalink: /cookbook/networking/named-routes/
+title: Navigate with named routes
 ---
 
-In the 
+In the
 [Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
 recipe, we learned how to Navigate to a new screen by creating a new route and
-pushing it to the 
-[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html). 
+pushing it to the
+[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html).
 
 However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define
 a "named route," and use the named route for Navigation.
 
-To work with named routes, we can use the 
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html) 
-function. This example will replicate the functionality from the original 
+To work with named routes, we can use the
+[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html)
+function. This example will replicate the functionality from the original
 recipe, demonstrating how to use named routes instead.
 
 ## Directions
@@ -28,8 +26,8 @@ recipe, demonstrating how to use named routes instead.
 
 ## 1. Create two screens
 
-First, we'll need two screens to work with. The first screen will contain a 
-button that navigates to the second screen. The second screen will contain a 
+First, we'll need two screens to work with. The first screen will contain a
+button that navigates to the second screen. The second screen will contain a
 button that navigates back to the first.
 
 ```dart
@@ -95,9 +93,9 @@ MaterialApp(
     '/second': (context) => SecondScreen(),
   },
 );
-```   
+```
 
-Note: When using `initialRoute`, be sure you do not define a `home` property.   
+Note: When using `initialRoute`, be sure you do not define a `home` property.
 
 ## 3. Navigate to the second screen
 
@@ -117,11 +115,11 @@ onPressed: () {
   // Navigate to the second screen using a named route
   Navigator.pushNamed(context, '/second');
 }
-``` 
+```
 
 ## 4. Return to the first screen
 
-In order to navigate back to the first page, we can use the 
+In order to navigate back to the first page, we can use the
 [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
 function.
 
@@ -133,7 +131,7 @@ onPressed: () {
   // off the stack
   Navigator.pop(context);
 }
-```    
+```
 
 ## Complete example
 

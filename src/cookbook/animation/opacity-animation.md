@@ -1,10 +1,8 @@
 ---
-layout: page
-title: "Fade a Widget in and out"
-permalink: /cookbook/animation/opacity-animation/
+title: Fade a Widget in and out
 ---
 
-As UI developers, we often need to show and hide elements on screen. However, 
+As UI developers, we often need to show and hide elements on screen. However,
 quickly popping elements on and off the screen can feel jarring to end users.
 Instead, we can fade elements in and out with an opacity animation to create
 a smooth experience.
@@ -18,7 +16,7 @@ Widget.
   2. Define a `StatefulWidget`
   3. Display a button that toggles the visibility
   4. Fade the box in and out
-  
+
 ## 1. Create a box to fade in and out
 
 First, we'll need something to fade in and out! In this example, we'll draw a
@@ -35,20 +33,20 @@ Container(
 
 ## 2. Define a `StatefulWidget`
 
-Now that we have a green box to animate, we'll need a way to know whether the 
-box should be visible or invisible. To accomplish this, we can use a 
+Now that we have a green box to animate, we'll need a way to know whether the
+box should be visible or invisible. To accomplish this, we can use a
 [`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
 
 A `StatefulWidget` is a class that creates a `State` object. The `State` object
-holds some data about our app and provides a way to update that data. When we 
+holds some data about our app and provides a way to update that data. When we
 update the data, we can also ask Flutter to rebuild our UI with those changes.
 
-In our case, we'll have one piece of data: a boolean representing whether the 
-button is visible or invisible. 
+In our case, we'll have one piece of data: a boolean representing whether the
+button is visible or invisible.
 
-To construct a `StatefulWidget`, we need to create two classes: A 
-`StatefulWidget` and a corresponding `State` class. Pro tip: The Flutter plugins 
-for Android Studio and VSCode include the `stful` snippet to quickly generate 
+To construct a `StatefulWidget`, we need to create two classes: A
+`StatefulWidget` and a corresponding `State` class. Pro tip: The Flutter plugins
+for Android Studio and VSCode include the `stful` snippet to quickly generate
 this code!
 
 <!-- skip -->
@@ -64,7 +62,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-// The State class is responsible for two things: holding some data we can 
+// The State class is responsible for two things: holding some data we can
 // update and building the UI using that data.
 class _MyHomePageState extends State<MyHomePage> {
   // Whether the green box should be visible or invisible
@@ -81,15 +79,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Now that we have some data to determine whether our green box should be visible
 or invisible, we'll need a way update that data. In our case, if the box is
-visible, we want to hide it. If the box is hidden, we want to show it!  
+visible, we want to hide it. If the box is hidden, we want to show it!
 
-To achieve this, we'll display a button. When a user presses the button, we'll 
-flip the boolean from true to false, or false to true. We need to make this 
+To achieve this, we'll display a button. When a user presses the button, we'll
+flip the boolean from true to false, or false to true. We need to make this
 change using [`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html),
-which is a method on the `State` class. This will let Flutter know it needs to 
+which is a method on the `State` class. This will let Flutter know it needs to
 rebuild the Widget.
 
-Note: For more information on working with user input, please see the 
+Note: For more information on working with user input, please see the
 [Handling Gestures](/cookbook/#handling-gestures) section of the Cookbook.
 
 <!-- skip -->
@@ -105,13 +103,13 @@ FloatingActionButton(
   tooltip: 'Toggle Opacity',
   child: Icon(Icons.flip),
 );
-``` 
+```
 
 ## 4. Fade the box in and out
 
 We've got a green box on screen. We've got a button to toggle the visibility
-to `true` or `false`. So how do we fade the box in and out? With an 
-[`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html) 
+to `true` or `false`. So how do we fade the box in and out? With an
+[`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html)
 Widget!
 
 The `AnimatedOpacity` Widget requires three arguments:

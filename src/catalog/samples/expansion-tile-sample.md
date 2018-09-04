@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "ExpansionTile"
-permalink: /catalog/samples/expansion-tile-sample/
+title: ExpansionTile
 ---
 
 ExpansionTiles can used to produce two-level or multi-level lists.

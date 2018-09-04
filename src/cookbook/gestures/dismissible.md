@@ -1,12 +1,10 @@
 ---
-layout: page
-title: "Implement Swipe to Dismiss"
-permalink: /cookbook/gestures/dismissible/
+title: Implement Swipe to Dismiss
 ---
 
-The "Swipe to dismiss" pattern is common in many mobile apps. For example, if 
-we're writing an email app, we might want to allow our users to swipe away email 
-messages in a list. When they do, we'll want to move the item from the Inbox to 
+The "Swipe to dismiss" pattern is common in many mobile apps. For example, if
+we're writing an email app, we might want to allow our users to swipe away email
+messages in a list. When they do, we'll want to move the item from the Inbox to
 the Trash.
 
 Flutter makes this task easy by providing the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
@@ -16,7 +14,7 @@ Widget.
 
   1. Create List of Items
   2. Wrap each item in a `Dismissible` Widget
-  3. Provide "Leave Behind" indicators  
+  3. Provide "Leave Behind" indicators
 
 ## 1. Create List of Items
 
@@ -26,7 +24,7 @@ lists](/cookbook/lists/long-lists/) recipe.
 
 ### Create a Data Source
 
-In our example, we'll want 20 sample items to work with. To keep it simple, 
+In our example, we'll want 20 sample items to work with. To keep it simple,
 we'll generate a List of Strings.
 
 <!-- skip -->
@@ -54,13 +52,13 @@ ListView.builder(
 Now that we're displaying a list of items, we'll want to give our users the
 ability to swipe each item off the list!
 
-After the user has swiped away the item, we'll need to run some code to remove 
-the item from the list and display a Snackbar. In a real app, you might need to 
-perform more complex logic, such as removing the item from a web service or 
+After the user has swiped away the item, we'll need to run some code to remove
+the item from the list and display a Snackbar. In a real app, you might need to
+perform more complex logic, such as removing the item from a web service or
 database.
 
 This is where the [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)
-Widget comes into play! In our example, we'll update our `itemBuilder` function 
+Widget comes into play! In our example, we'll update our `itemBuilder` function
 to return a `Dismissible` Widget.
 
 <!-- skip -->
@@ -86,11 +84,11 @@ Dismissible(
 );
 ```
 
-## 3. Provide "Leave Behind" indicators  
+## 3. Provide "Leave Behind" indicators
 
 As it stands, our app allows users to swipe items off the List, but it might
-not give them a visual indication of what happens when they do. To provide a cue 
-that we're removing items, we'll display a "Leave Behind" indicator as they 
+not give them a visual indication of what happens when they do. To provide a cue
+that we're removing items, we'll display a "Leave Behind" indicator as they
 swipe the item off the screen. In this case, a red background!
 
 For this purpose, we'll provide a `background` parameter to the `Dismissible`.
@@ -112,7 +110,7 @@ Dismissible(
   },
   child: ListTile(title: Text('$item')),
 );
-``` 
+```
 
 ## Complete example
 

@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Bootstrap into Dart
-
-permalink: /bootstrap-into-dart/
 ---
 
 <style>
