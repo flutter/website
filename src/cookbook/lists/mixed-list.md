@@ -1,11 +1,9 @@
 ---
-layout: page
-title: "Creating lists with different types of items"
-permalink: /cookbook/lists/mixed-list/
+title: Creating lists with different types of items
 ---
 
-We often need to create lists that display different types of content. For 
-example, we might be working on a List that shows a heading followed by a few 
+We often need to create lists that display different types of content. For
+example, we might be working on a List that shows a heading followed by a few
 items related to the heading, followed by another heading, and so on.
 
 How would we create such a structure with Flutter?
@@ -22,8 +20,8 @@ How would we create such a structure with Flutter?
 In order to represent different types of items in a List, we'll need to define
 a class for each type of item.
 
-In this example, we'll work on an app that shows a header followed by five 
-messages. Therefore, we'll create three classes: `ListItem`, `HeadingItem`, 
+In this example, we'll work on an app that shows a header followed by five
+messages. Therefore, we'll create three classes: `ListItem`, `HeadingItem`,
 and `MessageItem`.
 
 <!-- skip -->
@@ -51,7 +49,7 @@ class MessageItem implements ListItem {
 
 Most of the time, we'd fetch data from the internet or a local database and
 convert that data into a list of items.
- 
+
 For this example, we'll generate a list of items to work with. The list will
 contain a header followed by five messages. Rinse, repeat.
 
@@ -71,13 +69,13 @@ In order to handle converting each item into a Widget, we'll employ the
 [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
-In general, we'll want to provide a `builder` function that checks for what type 
+In general, we'll want to provide a `builder` function that checks for what type
 of item we're dealing with, and returns the appropriate Widget for that type of
 item.
 
-In this example, using the `is` keyword to check the type of item we're dealing 
-with can be handy. It's fast, and will automatically cast each item to the 
-appropriate type. However, there are different ways to approach this problem if 
+In this example, using the `is` keyword to check the type of item we're dealing
+with can be handy. It's fast, and will automatically cast each item to the
+appropriate type. However, there are different ways to approach this problem if
 you prefer another pattern!
 
 <!-- skip -->

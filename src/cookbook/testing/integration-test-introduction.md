@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "Introduction to Integration testing"
-permalink: /cookbook/testing/integration-test-introduction/
+title: Introduction to Integration testing
 ---
 
 Unit tests and Widget tests are handy for testing individual classes, functions,
@@ -13,14 +11,14 @@ Integration tests work as a pair: first, deploy an instrumented application to a
 real device or emulator and then "drive" the application from a separate test
 suite, checking to make sure everything is correct along the way.
 
-To create this test pair, we can use the 
-[flutter_driver](https://docs.flutter.io/flutter/flutter_driver/flutter_driver-library.html) 
+To create this test pair, we can use the
+[flutter_driver](https://docs.flutter.io/flutter/flutter_driver/flutter_driver-library.html)
 package. It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
 In this recipe, we'll learn how to test a counter app. It will demonstrate
-how to setup integration tests, how to verify specific text is displayed by the 
-app, how to tap on specific Widgets, and how to run integration tests. 
+how to setup integration tests, how to verify specific text is displayed by the
+app, how to tap on specific Widgets, and how to run integration tests.
 
 ### Directions
 
@@ -30,17 +28,17 @@ app, how to tap on specific Widgets, and how to run integration tests.
   4. Instrument the app
   5. Write the integration tests
   6. Run the integration test
-  
+
 ### 1. Create an app to test
 
-First, we'll create an app that we can test! In this example, we'll test the 
+First, we'll create an app that we can test! In this example, we'll test the
 counter app produced by the `flutter create` command. This app allows
 a user to tap on a button to increase a counter.
 
 Furthermore, we'll also need to provide a
 [`ValueKey`](https://docs.flutter.io/flutter/foundation/ValueKey-class.html) to
-the `Text` and `FloatingActionButton` Widgets. This allows us to identify 
-and interact with these specific Widgets inside the test suite. 
+the `Text` and `FloatingActionButton` Widgets. This allows us to identify
+and interact with these specific Widgets inside the test suite.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -114,21 +112,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ### 2. Add the `flutter_driver` dependency
 
-Next, we'll need the `flutter_driver` package to write integration tests. We 
-can add the `flutter_driver` dependency to the `dev_dependencies` section of 
-our apps's `pubspec.yaml` file. 
+Next, we'll need the `flutter_driver` package to write integration tests. We
+can add the `flutter_driver` dependency to the `dev_dependencies` section of
+our apps's `pubspec.yaml` file.
 
 ```yaml
 dev_dependencies:
   flutter_driver:
     sdk: flutter
 ```
-    
+
 ### 3. Create the test files
 
-Unlike unit and widget tests, integration test suites do not run in the same 
-process as the app being tested. Therefore, we need to create two files that 
-reside in the same directory. By convention, the directory is named 
+Unlike unit and widget tests, integration test suites do not run in the same
+process as the app being tested. Therefore, we need to create two files that
+reside in the same directory. By convention, the directory is named
 `test_driver`.
 
   1. The first file contains an "instrumented" version of the app. The
@@ -136,11 +134,11 @@ reside in the same directory. By convention, the directory is named
   from a test suite. This file can be given any name that makes sense. For this
   example, create a file called `test_driver/app.dart`.
   2. The second file contains the test suite, which drives the app and verifies
-  it works as expected. The test suite can also record performance profiles. 
-  The name of the test file must correspond to the name of the file that 
-  contains the instrumented app, with `_test` added at the end. Therefore, 
+  it works as expected. The test suite can also record performance profiles.
+  The name of the test file must correspond to the name of the file that
+  contains the instrumented app, with `_test` added at the end. Therefore,
   create a second file called `test_driver/app_test.dart`.
-  
+
 This leaves us with the following directory structure:
 
 ```
@@ -150,8 +148,8 @@ counter_app/
   test_driver/
     app.dart
     app_test.dart
-``` 
- 
+```
+
 
 ### 4. Instrument the app
 
@@ -171,7 +169,7 @@ void main() {
   // This line enables the extension
   enableFlutterDriverExtension();
 
-  // Call the `main()` function of your app or call `runApp` with any widget you 
+  // Call the `main()` function of your app or call `runApp` with any widget you
   // are interested in testing.
   app.main();
 }
@@ -189,7 +187,7 @@ will involve four steps:
   3. Test the important scenarios
   4. Disconnect from the app in the `teardownAll` function after our tests
   complete
- 
+
 ```dart
 // Imports the Flutter Driver API
 import 'package:flutter_driver/flutter_driver.dart';
@@ -236,7 +234,7 @@ void main() {
 ### 6. Run the tests
 
 Now that we have an instrumented app and a test suite, we can run the tests!
-First, be sure to launch an Android Emulator, iOS Simulator, or connect your 
+First, be sure to launch an Android Emulator, iOS Simulator, or connect your
 computer to a real iOS / Android device.
 
 Then, run the following command from the root of the project:

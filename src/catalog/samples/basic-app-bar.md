@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "AppBar Basics"
-permalink: /catalog/samples/basic-app-bar/
+title: AppBar Basics
 ---
 
 A typical AppBar with a title, actions, and an overflow dropdown menu.

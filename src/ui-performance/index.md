@@ -1,9 +1,7 @@
 ---
-layout: page
 title: Flutter Performance Profiling
 subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
-permalink: /ui-performance/
 ---
 
 <div class="whats-the-point" markdown="1">
@@ -152,8 +150,8 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
-<center><img src="images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
-<center>Performance overlay showing the UI thread (top), and GPU thread (bottom). 
+<center><img src="/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
+<center>Performance overlay showing the UI thread (top), and GPU thread (bottom).
 	The vertical green bars represent the current frame.</center><br>
 
 Flutter uses several threads to do its work. All your Dart code runs on
@@ -205,7 +203,7 @@ If a red bar appears in the UI graph, the Dart code is too expensive.
 If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
-<center><img src="images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
+<center><img src="/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
 <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
 
 ### Displaying the performance overlay
@@ -226,7 +224,7 @@ application. If the inspector isn't open, you can display it as follows.
 In Android Studio and IntelliJ IDEA:
 
 1. Select **View > Tool Windows > Flutter Inspector**.
-1. In the toolbar, select the icon that looks like a bookshelf (<img src="images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
+1. In the toolbar, select the icon that looks like a bookshelf (<img src="/ui-performance/images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
 
 ![IntelliJ Flutter Inspector Window](/images/intellij/visual-debugging.png)<br>
 
@@ -305,9 +303,9 @@ Go to Flutter's timeline view in a browser as follows:
 <ol markdown="1">
 <li markdown="1">
 To open the timeline view, use the line chart
-icon <img src="images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
+icon <img src="/ui-performance/images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
 
-(Instead, you could open Observatory using the stopwatch icon (<img src="images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
+(Instead, you could open Observatory using the stopwatch icon (<img src="/ui-performance/images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
 but the "view <u>inspector</u>" link takes you to the standard version of the
 timeline, not the version customized for Flutter.)
 

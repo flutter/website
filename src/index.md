@@ -1,6 +1,5 @@
 ---
 title: Flutter - Beautiful native apps in record time
-layout: page
 homepage: true
 hide_title: true
 description: >
@@ -35,7 +34,7 @@ description: >
     </div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install" class="get-started-button">Get Started</a>
     </div>
 
     <div class="key-points">
@@ -105,7 +104,7 @@ description: >
     </div>
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>.
+    Browse the <a href="/widgets">widget catalog</a>.
     </p>
 </section>
 
@@ -153,9 +152,9 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Browse the <a href="/widgets/">widget catalog</a>
+    Browse the <a href="/widgets">widget catalog</a>
     and learn more about the
-    <a href="/widgets-intro/">reactive framework</a>.
+    <a href="/widgets-intro">reactive framework</a>.
     </p>
 
 </section>
@@ -191,8 +190,8 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages/">packages</a>, or
-    write <a href="/platform-channels/">platform channels</a>,
+    Learn how to use <a href="/using-packages">packages</a>, or
+    write <a href="/platform-channels">platform channels</a>,
     to access native code, APIs, and SDKs.
     </p>
 
@@ -294,7 +293,7 @@ Future<Null> getBatteryLevel() async {
 
     <p>
     Learn more about what makes Flutter special in the
-    <a href="/technical-overview/">technical overview</a>.
+    <a href="/technical-overview">technical overview</a>.
     </p>
 </section>
 
@@ -303,7 +302,7 @@ Future<Null> getBatteryLevel() async {
     <div class="homepage__try_today">Try Flutter today. Getting started is easy.</div>
 
     <div class="homepage__button_row">
-    <a href="/get-started/install/" class="get-started-button">Get Started</a>
+    <a href="/get-started/install" class="get-started-button">Get Started</a>
     </div>
 
 </section>

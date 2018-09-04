@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Taps, drags, and other gestures in Flutter
-
-permalink: /gestures/
 ---
 
 * TOC Placeholder

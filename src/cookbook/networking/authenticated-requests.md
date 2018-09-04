@@ -1,17 +1,15 @@
 ---
-layout: page
-title: "Making authenticated requests"
-permalink: /cookbook/networking/authenticated-requests/
+title: Making authenticated requests
 ---
 
-In order to fetch data from many web services, you need to provide 
-authorization. There are many ways to do this, but perhaps the most common 
+In order to fetch data from many web services, you need to provide
+authorization. There are many ways to do this, but perhaps the most common
 requires using the `Authorization` HTTP header.
 
 ## Add Authorization Headers
 
-The [`http`](https://pub.dartlang.org/packages/http) package provides a 
-convenient way to add headers to your requests. You can also take advantage of 
+The [`http`](https://pub.dartlang.org/packages/http) package provides a
+convenient way to add headers to your requests. You can also take advantage of
 the `dart:io` package for common `HttpHeaders`.
 
 <!-- skip -->
@@ -27,7 +25,7 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-This example builds upon the [Fetching Data from the Internet](/cookbook/networking/fetch-data/) 
+This example builds upon the [Fetching Data from the Internet](/cookbook/networking/fetch-data/)
 recipe.
 
 ```dart

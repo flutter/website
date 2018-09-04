@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Terms of Service
-permalink: /tos/
 ---
 
 The Flutter website (the "Website") is hosted by Google. By using and / or

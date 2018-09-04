@@ -1,61 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
+---
+layout: base
+---
 
-  <body class="{% if page.url == '/' %}homepage{% endif %}">
-    {% include body.html %}
-
-    <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
-
-    {% include header.html %}
-
-    <!-- Page Content -->
-    <div class="contents">
-      <!-- Content Row -->
-      <div class="lavish-row">
-
-        <!-- Sidebar Column -->
-        <div id="side-nav-container" class="col-md-3">
-          {% include sidebar.html %}
-        </div>
-
-        {% if page.url == '/' %}
-        {% comment %} Homepage {% endcomment %}
-
-        <!-- Homepage Content Column -->
-        <div class="col-md-12 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
-        {% else %}
-        {% comment %} Regular page, not homepage {% endcomment %}
-
-        <!-- Content Column -->
-        <div class="col-md-9 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
-        {% endif %}
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-    {% include footer.html %}
-
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="{{ "/js/sidebar_toggle.js" }}"></script>
-    <script src="{{ "/js/customscripts.js" }}"></script>
-    <script src="{{ "/js/prism.js" }}"></script>
-    <script src="{{ "/js/tabs.js" }}"></script>
-    <script src="{{ "/js/archive.js" }}"></script>
-
-    <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
-  </body>
-</html>
+<article class="post-content">
+  {% unless page.hide_title -%}
+  <header class="post-header">
+    <div class="btn-group contribute" role="group" title="We're not accepting page changes at the moment.">
+      <a class="btn btn-sm text-muted">
+        {%- comment %}href="{{site.repo.this}}/blob/master/src/{{page.path}}"{% endcomment -%}
+        <i class="fa fa-pencil"></i> Edit Source
+      </a>
+      <a href="{{site.repo.this}}/issues/new?title=Issue from website page {{page.title}}&body=From URL: {{site.url}}{{page.url}}&labels=dev: docs - website"
+        class="btn btn-sm">
+        <i class="fa fa-github"></i> File Issue
+      </a>
+    </div>
+    <div>
+      <h1 class="post-title">{{ page.title }} </h1>
+    </div>
+  </header>
+  {% endunless -%}
+  {{ content }}
+</article>

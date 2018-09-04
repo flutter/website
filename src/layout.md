@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Dealing with box constraints in Flutter
-
-permalink: /layout/
 ---
 
 You may be directed to this page if the framework detects a problem

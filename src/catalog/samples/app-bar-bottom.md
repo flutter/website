@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "AppBar with a custom bottom widget."
-permalink: /catalog/samples/app-bar-bottom/
+title: AppBar with a custom bottom widget
 ---
 
 Any widget with a PreferredSize can appear at the bottom of an AppBar.

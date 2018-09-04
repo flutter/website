@@ -1,11 +1,9 @@
 ---
-layout: page
-title: "Adding Material Touch Ripples"
-permalink: /cookbook/gestures/ripples/
+title: Adding Material Touch Ripples
 ---
 
-While designing an app that should follow the Material Design Guidelines, we'll 
-want to add the ripple animation to Widgets when tapped. 
+While designing an app that should follow the Material Design Guidelines, we'll
+want to add the ripple animation to Widgets when tapped.
 
 Flutter provides the [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html)
 Widget to achieve this effect.
@@ -13,8 +11,8 @@ Widget to achieve this effect.
 ## Directions
 
   1. Create a Widget we want to tap
-  2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations 
- 
+  2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations
+
 <!-- skip -->
 ```dart
 // The InkWell Wraps our custom flat button Widget
@@ -30,7 +28,7 @@ InkWell(
     child: Text('Flat Button'),
   ),
 );
-```   
+```
 
 ## Complete example
 

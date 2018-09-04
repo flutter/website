@@ -1,14 +1,11 @@
 ---
-layout: page
 title: Developing Flutter apps in an IDE
-
-permalink: /using-ide-vscode/
 ---
 
 <div id="tab-set-install">
 
 <ul class="tabs__top-bar">
-    <li class="tab-link" data-tab-href="/using-ide/">Android Studio / IntelliJ</li>
+    <li class="tab-link" data-tab-href="/using-ide">Android Studio / IntelliJ</li>
     <li class="tab-link current">VS Code</li>
 </ul>
 

@@ -1,7 +1,5 @@
 ---
-layout: page
 title: "Get Started: Install on Linux"
-permalink: /setup-linux/
 ---
 
 * TOC Placeholder

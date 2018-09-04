@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Using Hot Reload
-permalink: /hot-reload/
 ---
 
 * TOC

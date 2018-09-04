@@ -1,0 +1,94 @@
+// Variables
+$base-font-family: Roboto, sans-serif;
+$base-font-size:   16px; // Note: most of the current site SCSS doesn't use this; instead 15px is used.
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #0091ea;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$primary-color:    #01579b;
+$nav-text-color:   white;
+
+// Copied from site-www _colors.scss
+$grey-500: #9E9E9E;
+$grey-900: #212121;
+$light-green-600: #7CB342;
+$light-green-A700: #64DD17;
+
+// Width of the content area
+$content-width:    980px;
+
+$on-palm:          710px;
+$on-laptop:        980px;
+
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// 2018 site style compatibility config (to be dropped with new design)
+$body-font-size: 15px;
+
+@import '_bootstrap_config';
+@import 'bootstrap';
+@import '_legacy'; // TODO: temporary
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@import
+        "base",
+        "fix_custom_search_results",
+        "icons",
+        "layout",
+        "header",
+        "customstyles",
+        "sidebar",
+        "tutorial",
+        "prism",
+        "prism_overrides",
+        "code_pre",
+        "catalog",
+        "homepage",
+        "responsive_embeds",
+        "tabs",
+        "archive",
+        "showcase"
+;
+
+aside > :not(pre) > code[class*="language-"], aside > pre[class*="language-"] {
+    background: inherit;
+}
+
+@media print {
+    /* Don't display header, footer, sidenav when printing */
+    #side-nav-container, .site-header, .site-footer, .contribute {
+        display:none;
+    }
+
+    /* Use the whole page */
+    .main-contents, .container-fluid {
+        width: auto;
+        margin: 0;
+        padding: 1em;
+    }
+
+    /* Because we have some long code samples, allow page breaks within them */
+    pre {
+      page-break-inside: auto;
+    }
+
+    /* Remove link path */
+    a:after {
+        content: none !important;
+    }
+}

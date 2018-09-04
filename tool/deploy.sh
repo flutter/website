@@ -35,10 +35,8 @@ while [[ "$1" == -* ]]; do
   esac
 done
 
-_FB_PROJ=$1
-: ${_FB_PROJ:=default}
-
 _ARGS=""
+_FB_PROJ=${1:-default}
 
 if [[ -z $LOCAL && -z "$FIREBASE_TOKEN" ]]; then
   _error "Cannot deploy, the FIREBASE_TOKEN environment variable isn't defined."

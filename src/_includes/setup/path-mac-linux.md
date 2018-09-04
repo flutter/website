@@ -1,11 +1,11 @@
 ### Update your path
 
 You can update your PATH variable for the current session only at the command line,
-as shown in [Get the Flutter SDK](./#get-sdk). You'll probably want to
+as shown in [Get the Flutter SDK](#get-sdk). You'll probably want to
 update this variable permanently, so you can run `flutter` commands in any terminal session.
 
 The steps for modifying this variable permanently for all terminal sessions are machine-specific.
-Typically you add a line to a file that is executed whenever you open 
+Typically you add a line to a file that is executed whenever you open
 a new window. For example:
 
 1. Determine the directory where you placed the Flutter SDK. You will
@@ -19,7 +19,7 @@ a new window. For example:
 export PATH=[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin:$PATH
 {% endcommandline %}
 
-4. Run `source $HOME/.bash_profile` to refresh the current window. 
+4. Run `source $HOME/.bash_profile` to refresh the current window.
 
 5. Verify that the `flutter/bin` directory is now in your PATH by running:
 

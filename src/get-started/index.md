@@ -1,7 +1,5 @@
 ---
-layout: page
 title: "Get Started: Overview"
-permalink: /get-started/
 ---
 
 Welcome to the Flutter Get Started Experience. We will help you:

@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Flutter Tutorials
-
-permalink: /tutorials/
 ---
 
 The **Flutter Tutorials** teach you how to use the Flutter framework to

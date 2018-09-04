@@ -1,8 +1,5 @@
 ---
-layout: page
 title: FAQ
-
-permalink: /faq/
 ---
 
 * Placeholder for TOC

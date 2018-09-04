@@ -1,14 +1,12 @@
 ---
-layout: page
-title: "TabBarView Sample Apps"
-permalink: /catalog/samples/TabBarView_index/
+title: TabBarView Sample Apps
 ---
 
-All of the sample apps listed here use the Flutter TabBarView class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.
+All of the sample apps listed here use the Flutter TabBarView class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.
 
 <div class="container-fluid">
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/app-bar-bottom/">
+    <a href="/catalog/samples/app-bar-bottom">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/app_bar_bottom_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -21,13 +19,13 @@ All of the sample apps listed here use the Flutter TabBarView class in an intere
         This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
       </p>
       <p>
-        <a href="/catalog/samples/app-bar-bottom/">Learn more</a>.
+        <a href="/catalog/samples/app-bar-bottom">Learn more</a>.
       </p>
     </div>
   </div>
 
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/tabbed-app-bar/">
+    <a href="/catalog/samples/tabbed-app-bar">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/tabbed_app_bar_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -40,7 +38,7 @@ All of the sample apps listed here use the Flutter TabBarView class in an intere
         This app features the following classes: AppBar, DefaultTabController, TabBar, Scaffold, TabBarView.
       </p>
       <p>
-        <a href="/catalog/samples/tabbed-app-bar/">Learn more</a>.
+        <a href="/catalog/samples/tabbed-app-bar">Learn more</a>.
       </p>
     </div>
   </div>

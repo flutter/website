@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Testing Flutter Apps
-permalink: /testing/
 ---
 
 * TOC

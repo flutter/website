@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Flutter SDK Archive
-
-permalink: /sdk-archive/
 ---
 
 The Beta channel contains the most stable Flutter builds. See [Flutter’s

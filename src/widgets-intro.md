@@ -1,7 +1,5 @@
 ---
-layout: page
 title: A Tour of the Flutter Widget Framework
-permalink: /widgets-intro/
 ---
 
 * TOC Placeholder

@@ -1,7 +1,5 @@
 ---
-layout: page
 title: "Get Started: Configure Editor"
-permalink: /get-started/editor/
 ---
 
 You can build apps with Flutter using any text editor combined with our
@@ -22,9 +20,9 @@ VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
-## Android Studio setup
+## Android Studio setup {#androidstudio}
 
-*Android Studio:* A complete, integrated IDE experience for Flutter. 
+*Android Studio:* A complete, integrated IDE experience for Flutter.
 
 ### Install Android Studio
 

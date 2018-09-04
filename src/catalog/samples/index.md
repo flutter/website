@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "Sample App Catalog"
-permalink: /catalog/samples/
+title: Sample App Catalog
 ---
 
 This catalog lists applications that demonstrate how to implement common mobile design patterns with Flutter. Each sample demonstrates how a few Flutter widgets can be put together to implement a meaningful user interface. The samples are short - just one Dart file - but they're complete applications. They should be easy to try out and tweak with your favorite IDE/code editor.
@@ -12,7 +10,7 @@ If there are other sample apps that you'd like to see we'd appreciate hearing fr
 
 <div class="">
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/animated-list/">
+    <a href="/catalog/samples/animated-list">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/animated_list_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -27,13 +25,13 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AnimatedList, AnimatedListState.
       </p>
       <p>
-        <a href="/catalog/samples/animated-list/">Learn more</a>.
+        <a href="/catalog/samples/animated-list">Learn more</a>.
       </p>
     </div>
   </div>
 
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/app-bar-bottom/">
+    <a href="/catalog/samples/app-bar-bottom">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/app_bar_bottom_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -46,13 +44,13 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
       </p>
       <p>
-        <a href="/catalog/samples/app-bar-bottom/">Learn more</a>.
+        <a href="/catalog/samples/app-bar-bottom">Learn more</a>.
       </p>
     </div>
   </div>
 
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/basic-app-bar/">
+    <a href="/catalog/samples/basic-app-bar">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/basic_app_bar_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -65,13 +63,13 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
       </p>
       <p>
-        <a href="/catalog/samples/basic-app-bar/">Learn more</a>.
+        <a href="/catalog/samples/basic-app-bar">Learn more</a>.
       </p>
     </div>
   </div>
 
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/expansion-tile-sample/">
+    <a href="/catalog/samples/expansion-tile-sample">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/expansion_tile_sample_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -84,7 +82,7 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: ExpansionTile, ListView.
       </p>
       <p>
-        <a href="/catalog/samples/expansion-tile-sample/">Learn more</a>.
+        <a href="/catalog/samples/expansion-tile-sample">Learn more</a>.
       </p>
     </div>
   </div>

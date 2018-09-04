@@ -1,7 +1,5 @@
 ---
 title: Technical Overview
-layout: page
-permalink: /technical-overview/
 ---
 
 ## What is Flutter?

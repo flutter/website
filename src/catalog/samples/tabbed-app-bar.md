@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "Tabbed AppBar"
-permalink: /catalog/samples/tabbed-app-bar/
+title: Tabbed AppBar
 ---
 
 An AppBar with a TabBar as its bottom widget.

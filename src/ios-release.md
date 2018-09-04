@@ -1,8 +1,5 @@
 ---
-layout: page
 title: Preparing an iOS App for Release
-
-permalink: /ios-release/
 ---
 
 This guide provides a step-by-step walkthrough of releasing a Flutter app to
