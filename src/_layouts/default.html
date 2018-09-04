@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
+  {% include head.html -%}
 
   <body class="{% if page.url == '/' %}homepage{% endif %}">
-    {% include body.html %}
+    {% include body.html -%}
 
     <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
 
-    {% include header.html %}
+    {% include header.html -%}
 
     <!-- Page Content -->
     <div class="contents">
@@ -19,8 +19,8 @@
           {% include sidebar.html %}
         </div>
 
-        {% if page.url == '/' %}
-        {% comment %} Homepage {% endcomment %}
+        {%- if page.url == '/' %}
+        {% comment %} Homepage {% endcomment -%}
 
         <!-- Homepage Content Column -->
         <div class="col-md-12 main-contents">
@@ -29,8 +29,8 @@
           </div>
         </div>
 
-        {% else %}
-        {% comment %} Regular page, not homepage {% endcomment %}
+        {%- else %}
+        {% comment %} Regular page, not homepage {% endcomment -%}
 
         <!-- Content Column -->
         <div class="col-md-9 main-contents">
@@ -39,23 +39,21 @@
           </div>
         </div>
 
-        {% endif %}
+        {%- endif %}
 
       </div> <!-- /.row -->
     </div> <!-- /.container -->
 
-    {% include footer.html %}
+    {%- include footer.html %}
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    {% comment %}
+    TODO(chalin): do we really need these. If so, integrate into main.js
     <script src="{{ "/js/sidebar_toggle.js" }}"></script>
     <script src="{{ "/js/customscripts.js" }}"></script>
     <script src="{{ "/js/prism.js" }}"></script>
     <script src="{{ "/js/tabs.js" }}"></script>
     <script src="{{ "/js/archive.js" }}"></script>
-
+    {% endcomment -%}
     <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=at3ul57xpub2vk3oxt2ytw365i"></script>
   </body>
 </html>

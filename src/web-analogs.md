@@ -2,7 +2,7 @@
 layout: page
 title: Flutter for Web (HTML/CSS) Developers
 permalink: /web-analogs/
-css: [two_column.css]
+css-old: [two_column.css]
 ---
 
 Contents:

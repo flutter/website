@@ -27,8 +27,11 @@
   {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
   <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
+  {% comment %}
+  TODO(chalin) do we still need these, if so, at least for Material Icons, have a local copy in vendor?
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro%7CRoboto:500,400italic,300,400" rel="stylesheet">
+  {% endcomment %}
   {% asset main.css %}
   {% for css in page.css -%}
     {% asset '{{css}}' %}
