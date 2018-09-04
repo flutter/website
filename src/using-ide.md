@@ -7,7 +7,7 @@ title: Developing Flutter apps in an IDE
 
 <ul class="tabs__top-bar">
     <li class="tab-link current" >Android Studio / IntelliJ</li>
-    <li class="tab-link" data-tab-href="/using-ide-vscode/">VS Code</li>
+    <li class="tab-link" data-tab-href="/using-ide-vscode">VS Code</li>
 </ul>
 
 <div class="tabs__content current" markdown="1">
