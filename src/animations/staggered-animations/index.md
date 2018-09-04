@@ -126,7 +126,7 @@ example. You might notice the following characteristics:
 * The padding and border radius changes occur during the same exact interval,
   but they don't have to.
 
-<img src="images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
+<img src="/animations/staggered-animations/images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
 
 To set up the animation:
 

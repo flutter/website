@@ -128,7 +128,7 @@ classes.
 Animations that are broken into smaller motions, where some of the motion is delayed.
 The smaller animations may be sequential, or may partially or completely overlap.
 
-* [Staggered Animations](/animations/staggered-animations/)
+* [Staggered Animations](/animations/staggered-animations)
 
 <!-- Save so I can remember how to add it back later.
 <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
