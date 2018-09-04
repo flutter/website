@@ -1,5 +1,5 @@
 ---
-title: "Tabbed AppBar"
+title: Tabbed AppBar
 ---
 
 An AppBar with a TabBar as its bottom widget.

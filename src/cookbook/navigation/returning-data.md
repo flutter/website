@@ -1,11 +1,11 @@
 ---
-title: "Return data from a screen"
+title: Return data from a screen
 ---
 
 In some cases, we might want to return data from a new screen. For example, say
 we push a new screen that presents two options to a user. When the user taps on
-an option, we'll want to inform our first screen of the user's selection so it 
-can act on that information! 
+an option, we'll want to inform our first screen of the user's selection so it
+can act on that information!
 
 How can we achieve this? Using [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)!
 
@@ -19,7 +19,7 @@ How can we achieve this? Using [`Navigator.pop`](https://docs.flutter.io/flutter
 
 ## 1. Define the home screen
 
-The home screen will display a button. When tapped, it will launch the selection 
+The home screen will display a button. When tapped, it will launch the selection
 screen!
 
 <!-- skip -->
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Returning Data Demo'),
       ),
-      // We'll create the SelectionButton Widget in the next step 
+      // We'll create the SelectionButton Widget in the next step
       body: Center(child: SelectionButton()),
     );
   }
@@ -78,7 +78,7 @@ Now, we'll need to build a selection screen! It will contain two buttons. When
 a user taps on a button, it should close the selection screen and let the home
 screen know which button was tapped!
 
-For now, we'll define the UI, and figure out how to return data in the next 
+For now, we'll define the UI, and figure out how to return data in the next
 step.
 
 ```dart
@@ -117,16 +117,16 @@ class SelectionScreen extends StatelessWidget {
     );
   }
 }
-``` 
+```
 
 ## 4. When a button is tapped, close the selection screen
 
 Now, we'll want to update the `onPressed` callback for both of our buttons! In
-order to return data to the first screen, we'll need to use the 
+order to return data to the first screen, we'll need to use the
 [`Navitator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
 method.
 
-`Navigator.pop` accepts an optional second argument called `result`. If we 
+`Navigator.pop` accepts an optional second argument called `result`. If we
 provide a result, it will be returned to the `Future` in our SelectionButton!
 
 ### Yep button
@@ -157,10 +157,10 @@ RaisedButton(
 
 ## 5. Show a snackbar on the home screen with the selection
 
-Now that we're launching a selection screen and awaiting the result, we'll want 
+Now that we're launching a selection screen and awaiting the result, we'll want
 to do something with the information that's returned!
 
-In this case, we'll show a Snackbar displaying the result. To do so, we'll 
+In this case, we'll show a Snackbar displaying the result. To do so, we'll
 update the `_navigateAndDisplaySelection` method in our `SelectionButton`.
 
 <!-- skip -->

@@ -1,5 +1,5 @@
 ---
-title: "Scrolling in integration tests"
+title: Scrolling in integration tests
 ---
 
 Many apps feature lists of content, from email clients to music apps and beyond.
@@ -31,7 +31,7 @@ testing](/cookbook/testing/integration-test-introduction/) recipe.
 In this recipe, we'll build an app that shows a long list of items. In order to
 keep this recipe focused on testing, we'll use the app we created in the
 [Working with long lists](/cookbook/lists/long-lists/) recipe. If you're unsure
-of how to work with lists of content, please see that recipe for an 
+of how to work with lists of content, please see that recipe for an
 introduction.
 
 As we did in the [Introduction to integration
@@ -100,7 +100,7 @@ void main() {
   // This line enables the extension
   enableFlutterDriverExtension();
 
-  // Call the `main()` function of your app or call `runApp` with any widget you 
+  // Call the `main()` function of your app or call `runApp` with any widget you
   // are interested in testing.
   app.main();
 }
@@ -115,11 +115,11 @@ class provides three methods for scrolling through lists:
 
   - The
   [`scroll`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scroll.html)
-  method allows us to scroll through a specific list by a given amount. 
+  method allows us to scroll through a specific list by a given amount.
   - The
   [`scrollIntoView`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
-  method finds a specific Widget that's already been rendered, and will scroll 
-  it completely into view. Some Widgets, such as 
+  method finds a specific Widget that's already been rendered, and will scroll
+  it completely into view. Some Widgets, such as
   [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html),
   render items on-demand.
   - The
@@ -135,7 +135,7 @@ oftentimes the most robust option. Why?
   instantiated and rendered. In order to verify our apps work on a broad range
   of devices, we might run our integration tests against devices with different
   screen sizes. Since `ListView.builder` will render items on-demand,
-  whether or not a particular Widget has been rendered can depend 
+  whether or not a particular Widget has been rendered can depend
   on the size of the screen.
 
 Therefore, rather than assuming we know the height of all the items in a list,

@@ -1,9 +1,9 @@
 ---
-title: "Create and style a text field"
+title: Create and style a text field
 ---
 
-Text fields allow users to type text into our apps. Text fields can be used to 
-build forms, messaging apps, search experiences, and more! In this recipe, 
+Text fields allow users to type text into our apps. Text fields can be used to
+build forms, messaging apps, search experiences, and more! In this recipe,
 we'll explore how to create and style text fields.
 
 Flutter provides two text fields out of the box: [`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html)
@@ -50,5 +50,5 @@ TextFormField(
 );
 ```
 
-For more information on input validation, please see the 
+For more information on input validation, please see the
 [Building a form with validation](/cookbook/forms/validation/) recipe.

@@ -1,5 +1,5 @@
 ---
-title: "AppBar Basics"
+title: AppBar Basics
 ---
 
 A typical AppBar with a title, actions, and an overflow dropdown menu.

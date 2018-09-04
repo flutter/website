@@ -1,12 +1,12 @@
 ---
-title: "Create a horizontal list"
+title: Create a horizontal list
 ---
 
-At times, you may want to create a List that scrolls horizontally rather than 
-vertically. The [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
+At times, you may want to create a List that scrolls horizontally rather than
+vertically. The [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
 Widget supports horizontal lists out of the box.
 
-We'll use the standard `ListView` constructor, passing through a horizontal 
+We'll use the standard `ListView` constructor, passing through a horizontal
 `scrollDirection`, which will override the default vertical direction.
 
 <!-- skip -->

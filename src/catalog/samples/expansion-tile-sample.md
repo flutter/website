@@ -1,5 +1,5 @@
 ---
-title: "ExpansionTile"
+title: ExpansionTile
 ---
 
 ExpansionTiles can used to produce two-level or multi-level lists.

@@ -1,5 +1,5 @@
 ---
-title: "AppBar with a custom bottom widget."
+title: AppBar with a custom bottom widget
 ---
 
 Any widget with a PreferredSize can appear at the bottom of an AppBar.

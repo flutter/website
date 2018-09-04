@@ -1,14 +1,14 @@
 ---
-title: "Animating a Widget across screens"
+title: Animating a Widget across screens
 ---
 
 It's often helpful to guide users through our apps as they navigate from screen
-to screen. A common technique to lead users through an app is to animate a 
+to screen. A common technique to lead users through an app is to animate a
 Widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
-How can we animate a Widget from one screen to the next with Flutter? Using the 
-[`Hero`](https://docs.flutter.io/flutter/widgets/Hero-class.html) Widget!  
+How can we animate a Widget from one screen to the next with Flutter? Using the
+[`Hero`](https://docs.flutter.io/flutter/widgets/Hero-class.html) Widget!
 
 ## Directions
 
@@ -18,14 +18,14 @@ How can we animate a Widget from one screen to the next with Flutter? Using the
 
 ## 1. Create two screens showing the same image
 
-In this example, we'll display the same image on both screens. We'll want to 
-animate the image from the first screen to the second screen when the user taps 
-on the image. For now, we'll create the visual structure, and handle animations 
+In this example, we'll display the same image on both screens. We'll want to
+animate the image from the first screen to the second screen when the user taps
+on the image. For now, we'll create the visual structure, and handle animations
 in the next steps!
 
-*Note:* This example builds upon the 
-[Navigate to a new screen and back](/cookbook/navigation/navigation-basics/) 
-and [Handling Taps](/cookbook/gestures/handling-taps/) recipes. 
+*Note:* This example builds upon the
+[Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
+and [Handling Taps](/cookbook/gestures/handling-taps/) recipes.
 
 ```dart
 class MainScreen extends StatelessWidget {
@@ -71,13 +71,13 @@ class DetailScreen extends StatelessWidget {
 ## 2. Add a `Hero` Widget to the first screen
 
 In order to connect the two screens together with an animation, we need to wrap
-the `Image` Widget on both screens in a `Hero` Widget. The `Hero` Widget 
+the `Image` Widget on both screens in a `Hero` Widget. The `Hero` Widget
 requires two arguments:
 
-  1. `tag`: An object that identifies the `Hero`. It must be the same on both 
+  1. `tag`: An object that identifies the `Hero`. It must be the same on both
   screens.
   2. `child`: The Widget we want to animate across screens.
-  
+
 <!-- skip -->
 ```dart
 Hero(
@@ -86,15 +86,15 @@ Hero(
     'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
   ),
 );
-```  
+```
 
 ## 3. Add a `Hero` Widget to the second screen
 
-To complete the connection with the first screen, we need to wrap the `Image` 
-on the second screen with a `Hero` Widget as well! It must use the same `tag` 
+To complete the connection with the first screen, we need to wrap the `Image`
+on the second screen with a `Hero` Widget as well! It must use the same `tag`
 as the first screen.
 
-After you apply the `Hero` Widget to the second screen, the animation between 
+After you apply the `Hero` Widget to the second screen, the animation between
 screens will work!
 
 <!-- skip -->
@@ -107,8 +107,8 @@ Hero(
 );
 ```
 
-Note: this code is identical to what we had on the first screen! In general, you 
-could create a reusable Widget instead of repeating code, but for this example, 
+Note: this code is identical to what we had on the first screen! In general, you
+could create a reusable Widget instead of repeating code, but for this example,
 we'll duplicate the code for demonstration purposes.
 
 ## Complete example

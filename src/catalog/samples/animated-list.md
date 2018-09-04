@@ -1,5 +1,5 @@
 ---
-title: "AnimatedList"
+title: AnimatedList
 ---
 
 An AnimatedList that displays a list of cards which stay

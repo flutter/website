@@ -1,61 +1,61 @@
 ---
-title: "Reading and Writing Files"
+title: Reading and Writing Files
 ---
 
-In some cases, it can be handy to read and write files to disk. This can be 
+In some cases, it can be handy to read and write files to disk. This can be
 used to persist data across app launches or download data from the internet and
 save it for later offline use.
 
-In order to save files to disk, we'll need to combine the 
-[`path_provider` plugin](https://pub.dartlang.org/packages/path_provider) with 
-the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html) 
+In order to save files to disk, we'll need to combine the
+[`path_provider` plugin](https://pub.dartlang.org/packages/path_provider) with
+the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
 library.
-  
+
 ## Directions
 
   1. Find the correct local path
   2. Create a reference to the file location
   3. Write data to the file
   4. Read data from the file
-  
+
 ## 1. Find the correct local path
 
-In this example, we'll display a counter. When the counter changes, we'll want 
-to write data on disk so we can read it again when the app loads. Therefore, we 
+In this example, we'll display a counter. When the counter changes, we'll want
+to write data on disk so we can read it again when the app loads. Therefore, we
 need to ask: Where should we store this data?
 
-The [`path_provider`](https://pub.dartlang.org/packages/path_provider) plugin 
-provides a platform-agnostic way to access commonly used locations on the 
-device's filesystem. The plugin currently supports access to two filesystem 
+The [`path_provider`](https://pub.dartlang.org/packages/path_provider) plugin
+provides a platform-agnostic way to access commonly used locations on the
+device's filesystem. The plugin currently supports access to two filesystem
 locations:
 
-  * *Temporary directory:* A temporary directory (cache) that the system can 
-  clear at any time. On iOS, this corresponds to the value that 
-  [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory) 
-  returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context.html#getCacheDir()) 
+  * *Temporary directory:* A temporary directory (cache) that the system can
+  clear at any time. On iOS, this corresponds to the value that
+  [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
+  returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context.html#getCacheDir())
   returns.
-  * *Documents directory:* A directory for the app to store files that only 
-  it can access. The system clears the directory only when the app is deleted. 
-  On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the 
+  * *Documents directory:* A directory for the app to store files that only
+  it can access. The system clears the directory only when the app is deleted.
+  On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
   `AppData` directory.
-  
+
 In our case, we'll want to store information in the documents directory! We
 can find the path to the documents directory like so:
-  
+
 <!-- skip -->
 ```dart
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
-  
+
   return directory.path;
 }
 ```
 
 ## 2. Create a reference to the file location
 
-Once we know where to store the file, we'll need to create a reference to the 
-file's full location. We can use the [`File`](https://docs.flutter.io/flutter/dart-io/File-class.html) 
-class from the [dart:io](https://docs.flutter.io/flutter/dart-io/dart-io-library.html) 
+Once we know where to store the file, we'll need to create a reference to the
+file's full location. We can use the [`File`](https://docs.flutter.io/flutter/dart-io/File-class.html)
+class from the [dart:io](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
 library to achieve this.
 
 <!-- skip -->
@@ -68,7 +68,7 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Now that we have a `File` to work with, we can use it to read and write data! 
+Now that we have a `File` to work with, we can use it to read and write data!
 First, we'll write some data to the file. Since we're working with a counter,
 we'll simply store the integer as a String.
 
@@ -76,15 +76,15 @@ we'll simply store the integer as a String.
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
-  
+
   // Write the file
   return file.writeAsString('$counter');
 }
-``` 
+```
 
 ## 4. Read data from the file
 
-Now that we have some data on disk, we can read it! Once again, we'll use the 
+Now that we have some data on disk, we can read it! Once again, we'll use the
 `File` class to do so.
 
 <!-- skip -->
@@ -102,7 +102,7 @@ Future<int> readCounter() async {
     return 0;
   }
 }
-``` 
+```
 
 ## Testing
 
@@ -121,7 +121,7 @@ This function will run before the tests are executed.
 setUpAll(() async {
   // Create a temporary directory to work with
   final directory = await Directory.systemTemp.createTemp();
-  
+
   // Mock out the MethodChannel for the path_provider plugin
   const MethodChannel('plugins.flutter.io/path_provider')
       .setMockMethodCallHandler((MethodCall methodCall) async {
@@ -133,7 +133,7 @@ setUpAll(() async {
     return null;
   });
 });
-``` 
+```
 
 ## Complete example
 

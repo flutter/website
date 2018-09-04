@@ -1,24 +1,24 @@
 ---
-title: "Finding Widgets in a Widget Test"
+title: Finding Widgets in a Widget Test
 ---
 
-In order to locate Widgets in a test environment, we need to use `Finder` 
+In order to locate Widgets in a test environment, we need to use `Finder`
 classes. While it's possible to write our own `Finder` classes, it's generally
-more convenient to locate Widgets using the tools provided by the 
-[`flutter_test`](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html) 
+more convenient to locate Widgets using the tools provided by the
+[`flutter_test`](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
 package.
 
 In this recipe, we'll look at the
 [`find`](https://docs.flutter.io/flutter/flutter_test/find-constant.html)
 constant provided by the `flutter_test` package and demonstrate how to work with
 some of the `Finders` it provides. For a full list of available finders, please
-consult the 
+consult the
 [`CommonFinders` documentation](https://docs.flutter.io/flutter/flutter_driver/CommonFinders-class.html).
 
-If you're unfamiliar with Widget testing and the role of `Finder` classes, 
-please review the 
-[Introduction to Widget testing](/cookbook/testing/widget-test-introduction/) 
-recipe. 
+If you're unfamiliar with Widget testing and the role of `Finder` classes,
+please review the
+[Introduction to Widget testing](/cookbook/testing/widget-test-introduction/)
+recipe.
 
 ### Directions
 
@@ -29,7 +29,7 @@ recipe.
 ### 1. Find a `Text` Widget
 
 In our tests, we often need to find Widgets that contain specific text. This is
-exactly what the `find.text` method is for. It will create a `Finder` that 
+exactly what the `find.text` method is for. It will create a `Finder` that
 searches for Widgets that display a specific `String` of text.
 
 <!-- skip -->
@@ -49,9 +49,9 @@ testWidgets('finds a Text Widget', (WidgetTester tester) async {
 
 ### 2. Find a Widget with a specific `Key`
 
-In some cases, we may want to find a Widget based on the Key that has been 
-provided to it. This can be handy if we're displaying multiple instances of the 
-same Widget. For example, we might have a `ListView` that displays several 
+In some cases, we may want to find a Widget based on the Key that has been
+provided to it. This can be handy if we're displaying multiple instances of the
+same Widget. For example, we might have a `ListView` that displays several
 `Text` Widgets that contain the same text.
 
 In this case, we can provide a `Key` to each Widget in the list. This will allow
@@ -75,7 +75,7 @@ testWidgets('finds a Widget using a Key', (WidgetTester tester) async {
 ### 3. Find a specific Widget instance
 
 Finally, we might be interested in locating a specific instance of a Widget.
-For example, this can be useful when creating Widgets that take a `child` 
+For example, this can be useful when creating Widgets that take a `child`
 property and we want to ensure we're rendering the `child` Widget.
 
 <!-- skip -->
@@ -86,7 +86,7 @@ testWidgets('finds a specific instance', (WidgetTester tester) async {
   // Provide our childWidget to the Container
   await tester.pumpWidget(Container(child: childWidget));
 
-  // Search for the childWidget in the tree and verify it exists  
+  // Search for the childWidget in the tree and verify it exists
   expect(find.byWidget(childWidget), findsOneWidget);
 });
 ```
@@ -94,12 +94,12 @@ testWidgets('finds a specific instance', (WidgetTester tester) async {
 ### Summary
 
 The `find` constant provided by the `flutter_test` package gives us several ways
-to locate Widgets in the test environment. This recipe demonstrated three of 
+to locate Widgets in the test environment. This recipe demonstrated three of
 these methods, and several more methods exist for different purposes.
 
-If the above examples do not work for a particular use-case, please see the 
+If the above examples do not work for a particular use-case, please see the
 [`CommonFinders` documentation](https://docs.flutter.io/flutter/flutter_driver/CommonFinders-class.html)
-to review all available methods. 
+to review all available methods.
 
 ### Complete example
 

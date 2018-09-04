@@ -1,19 +1,19 @@
 ---
-title: "Building a form with validation"
+title: Building a form with validation
 ---
 
-Apps often require users to enter information into a text field. For 
-example, we might be working on an app that requires our users to log in with an 
+Apps often require users to enter information into a text field. For
+example, we might be working on an app that requires our users to log in with an
 email address and password combination.
 
-In order to make our apps secure and easy to use, we can check whether the 
+In order to make our apps secure and easy to use, we can check whether the
 information the user has provided is valid. If the user has correctly filled
 out the form, we can process the information. If the user submits incorrect
 information, we can display a friendly error message letting them know what went
 wrong.
 
-In this example, we'll see how to add validation to a form with a single 
-text field. 
+In this example, we'll see how to add validation to a form with a single
+text field.
 
 ## Directions
 
@@ -23,13 +23,13 @@ text field.
 
 ## 1. Create a `Form` with a `GlobalKey`
 
-First, we'll need a [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html) 
-to work with. The `Form` Widget acts as a container to group and validate 
+First, we'll need a [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html)
+to work with. The `Form` Widget acts as a container to group and validate
 multiple form fields.
 
-When we create the form, we'll also need to provide a [`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html). 
+When we create the form, we'll also need to provide a [`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html).
 This will uniquely identify the `Form` that we're working with, and will allow
-us to validate the form in a later step. 
+us to validate the form in a later step.
 
 <!-- skip -->
 ```dart
@@ -41,13 +41,13 @@ class MyCustomForm extends StatefulWidget {
   }
 }
 
-// Define a corresponding State class. This class will hold the data related to 
+// Define a corresponding State class. This class will hold the data related to
 // the form.
 class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that will uniquely identify the Form widget and allow
   // us to validate the form
   //
-  // Note: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>! 
+  // Note: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>!
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -63,12 +63,12 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 ## 2. Add a `TextFormField` with validation logic
 
-We have our `Form` in place, but we haven't provided a way for our users to 
+We have our `Form` in place, but we haven't provided a way for our users to
 enter text! This the job of a [`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html).
 The `TextFormField` Widget renders a material design text input and knows how to
 display validation errors when they occur.
 
-How can we validate the input? By providing a `validator` function to the 
+How can we validate the input? By providing a `validator` function to the
 `TextFormField`. If there is an error with the information the user has
 provided, the `validator` function must return a `String` containing
 an error message. If there are no errors, the function should not return
@@ -91,11 +91,11 @@ TextFormField(
 
 ## 3. Create a button to validate and submit the form
 
-Now that we have a form with a text field, we'll need to provide a button the 
-user can tap to submit the information. 
+Now that we have a form with a text field, we'll need to provide a button the
+user can tap to submit the information.
 
-When the user attempts to submit the form, we'll need to check if the form is 
-valid. If it is, we will show a success message. If the text field has no 
+When the user attempts to submit the form, we'll need to check if the form is
+valid. If it is, we will show a success message. If the text field has no
 content, we'll want to display the error message.
 
 <!-- skip -->
@@ -118,15 +118,15 @@ RaisedButton(
 
 ### How does this work?
 
-In order to validate the form, we'll need to use the `_formKey` created in 
-step 1. We can use the `_formKey.currentState` method to access the 
+In order to validate the form, we'll need to use the `_formKey` created in
+step 1. We can use the `_formKey.currentState` method to access the
 [`FormState`](https://docs.flutter.io/flutter/widgets/FormState-class.html),
-which is automatically created by Flutter when we build a `Form`. 
+which is automatically created by Flutter when we build a `Form`.
 
 The `FormState` class contains the `validate` method. When the `validate` method
-is called, it will run the `validator` function for each text field in the form. 
+is called, it will run the `validator` function for each text field in the form.
 If everything looks good, the method returns `true`. If any text field contains
-errors, it will display the error message for each invalid text field and return 
+errors, it will display the error message for each invalid text field and return
 `false`.
 
 ## Complete example

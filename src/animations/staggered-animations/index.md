@@ -1,5 +1,5 @@
 ---
-title: "Staggered Animations"
+title: Staggered Animations
 ---
 
 <div class="whats-the-point" markdown="1">

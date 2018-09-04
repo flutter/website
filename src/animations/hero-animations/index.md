@@ -1,5 +1,5 @@
 ---
-title: "Hero Animations"
+title: Hero Animations
 ---
 
 <div class="whats-the-point" markdown="1">

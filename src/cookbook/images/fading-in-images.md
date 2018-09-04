@@ -1,16 +1,16 @@
 ---
-title: "Fade in images with a placeholder"
+title: Fade in images with a placeholder
 ---
 
-When displaying images using the default `Image` widget, you might notice they 
+When displaying images using the default `Image` widget, you might notice they
 simply pop onto the screen as they're loaded. This might feel visually jarring
 to your users.
 
-Instead, wouldn't it be nice if you could display a placeholder at first, and 
-images would fade in as they're loaded? We can use the [`FadeInImage`](https://docs.flutter.io/flutter/widgets/FadeInImage-class.html) 
+Instead, wouldn't it be nice if you could display a placeholder at first, and
+images would fade in as they're loaded? We can use the [`FadeInImage`](https://docs.flutter.io/flutter/widgets/FadeInImage-class.html)
 Widget packaged with Flutter for exactly this purpose!
 
-`FadeInImage` works with images of any type: in-memory, local assets, or images 
+`FadeInImage` works with images of any type: in-memory, local assets, or images
 from the internet.
 
 ## In-Memory

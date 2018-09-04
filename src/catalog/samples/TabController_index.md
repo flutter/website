@@ -1,5 +1,5 @@
 ---
-title: "TabController Sample Apps"
+title: TabController Sample Apps
 ---
 
 All of the sample apps listed here use the Flutter TabController class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.

@@ -1,5 +1,5 @@
 ---
-title: "TabBarView Sample Apps"
+title: TabBarView Sample Apps
 ---
 
 All of the sample apps listed here use the Flutter TabBarView class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.

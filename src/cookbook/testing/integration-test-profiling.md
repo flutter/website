@@ -1,11 +1,11 @@
 ---
-title: "Performance profiling with integration tests"
+title: Performance profiling with integration tests
 ---
 
 When it comes to mobile apps, performance is critical to user experience. Users
 expect apps to have smooth scrolling and meaningful animations free of
 stuttering or skipped frames, known as "jank." How can we ensure our apps are
-free of jank on a wide variety of devices? 
+free of jank on a wide variety of devices?
 
 There are two options: first, we could manually test the app on different
 devices. While that approach might work for a smaller app, it will become more
@@ -15,7 +15,7 @@ can examine the results to determine whether or not a specific section of our
 app needs to be improved.
 
 In this recipe, we'll learn how to write a test that records a performance
-timeline while performing a specific task and saves a summary of the results to 
+timeline while performing a specific task and saves a summary of the results to
 a local file.
 
 ### Directions
@@ -29,8 +29,8 @@ a local file.
 ### 1. Write a test that scrolls through a list of items
 
 In this recipe, we'll record the performance of an app as it scrolls through a
-list of items. In order to focus on performance profiling, this recipe builds 
-upon the 
+list of items. In order to focus on performance profiling, this recipe builds
+upon the
 [Scrolling in integration tests](/cookbook/testing/integration-test-scrolling/)
 recipe.
 
@@ -69,7 +69,7 @@ final timeline = await driver.traceAction(() async {
 
 ### 3. Save the results to disk
 
-Now that we've captured a performance timeline, we need a way to review it! 
+Now that we've captured a performance timeline, we need a way to review it!
 The `Timeline` object provides detailed information about all of the events that
 took place, but it does not provide a convenient way to review the results.
 
@@ -78,11 +78,11 @@ Therefore, we can convert the `Timeline` into a
 The `TimelineSummary` can perform two tasks that make it easier to review the
 results:
 
-  1. It can write a json document on disk that summarizes the data contained 
-  within the `Timeline`. This summary includes information about the number of 
+  1. It can write a json document on disk that summarizes the data contained
+  within the `Timeline`. This summary includes information about the number of
   skipped frames, slowest build times, and more.
-  2. It can save the complete `Timeline` as a json file on disk. This file can 
-  be opened with the Chrome browser's tracing tools found at 
+  2. It can save the complete `Timeline` as a json file on disk. This file can
+  be opened with the Chrome browser's tracing tools found at
   [chrome://tracing](chrome://tracing).
 
 <!-- skip -->
@@ -102,7 +102,7 @@ summary.writeTimelineToFile('scrolling_timeline', pretty: true);
 
 ### 4. Run the test
 
-After we've configured our test to capture a performance `Timeline` and save a 
+After we've configured our test to capture a performance `Timeline` and save a
 summary of the results to disk, we can run the test with the following command:
 
 ```
@@ -111,17 +111,17 @@ flutter drive --target=test_driver/app.dart
 
 ### 5. Review the results
 
-After the test completes successfully, the `build` directory at the root of 
+After the test completes successfully, the `build` directory at the root of
 the project contains two files:
 
   1. `scrolling_summary.timeline_summary.json` contains the summary. Open
   the file with any text editor to review the information contained within.
-  With a more advanced setup, we could save a summary every time the test 
+  With a more advanced setup, we could save a summary every time the test
   runs and create a graph of the results.
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
-  Open the file using the Chrome browser's tracing tools found at 
-  [chrome://tracing](chrome://tracing). The tracing tools provide a 
-  convenient interface for inspecting the timeline data in order to discover 
+  Open the file using the Chrome browser's tracing tools found at
+  [chrome://tracing](chrome://tracing). The tracing tools provide a
+  convenient interface for inspecting the timeline data in order to discover
   the source of a performance issue.
 
 #### Summary Example

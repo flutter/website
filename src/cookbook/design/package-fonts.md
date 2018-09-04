@@ -1,25 +1,25 @@
 ---
-title: "Exporting fonts from a package"
+title: Exporting fonts from a package
 ---
 
 Rather than declaring a font as part of our app, we can declare a font as part
-of a separate package. This is a convenient way to share the same font across 
-several different projects or for coders publishing their packages to the 
-[pub website](https://pub.dartlang.org/).  
+of a separate package. This is a convenient way to share the same font across
+several different projects or for coders publishing their packages to the
+[pub website](https://pub.dartlang.org/).
 
 ## Directions
 
   1. Add a font to a package
   2. Add the package and font to our app
   3. Use the font
-  
+
 ## 1. Add fonts to a package
 
 To export a font from a package, we need to import the font files into the `lib`
-folder of our package project. We can place font files directly in the `lib` 
-folder or in a subdirectory, such as `lib/fonts`. 
+folder of our package project. We can place font files directly in the `lib`
+folder or in a subdirectory, such as `lib/fonts`.
 
-In this example, we'll assume we've got a Flutter library called 
+In this example, we'll assume we've got a Flutter library called
 `awesome_package` with fonts living in a `lib/fonts` folder.
 
 ```
@@ -33,8 +33,8 @@ awesome_package/
 
 ## 2. Add the package and fonts to our app
 
-We can now consume the package and use the fonts it provides. This involves 
-updating the `pubspec.yaml` in our *app's* root directory. 
+We can now consume the package and use the fonts it provides. This involves
+updating the `pubspec.yaml` in our *app's* root directory.
 
 ### Add the package to the project
 
@@ -45,10 +45,10 @@ dependencies:
 
 ### Declare the font assets
 
-Now that we've imported the package, we need to tell Flutter where to find the 
+Now that we've imported the package, we need to tell Flutter where to find the
 fonts from our `awesome_package`.
 
-To declare package fonts, we must must prefix the path to the font with 
+To declare package fonts, we must must prefix the path to the font with
 `packages/awesome_package`. This will tell Flutter to look in the `lib` folder
 of the package for the font.
 
@@ -65,9 +65,9 @@ flutter:
 ## 3. Use the font
 
 We can use a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-to change the appearance of text. To use package fonts, we need to not only 
+to change the appearance of text. To use package fonts, we need to not only
 declare which font we'd like to use, we need to declare the `package` the font
-belongs to. 
+belongs to.
 
 <!-- skip -->
 ```dart
