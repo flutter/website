@@ -29,7 +29,7 @@ script: $TASK
 
 deploy:
   - provider: script
-    script: ./tool/deploy.sh --install
+    script: ./tool/deploy.sh --install dash
     skip_cleanup: true
     on:
       repo: flutter/website
@@ -38,7 +38,7 @@ deploy:
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:
-  only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]
+  only: [master, dash, /^\d\.x$/, /^\d-dev$/, /travis-build/]
 
 cache:
   timeout: 1000

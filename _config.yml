@@ -8,7 +8,7 @@ github_username: flutter
 repo:
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
-branch: master
+branch: dash # TODO: reset to master
 
 pub: https://pub.dartlang.org
 
