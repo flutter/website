@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Flutter Widget Inspector
-
-permalink: /inspector/
 ---
 
 The Flutter Widget Inspector is powerful tool for visualizing and exploring

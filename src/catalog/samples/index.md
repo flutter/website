@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Sample App Catalog"
-permalink: /catalog/samples/
 ---
 
 This catalog lists applications that demonstrate how to implement common mobile design patterns with Flutter. Each sample demonstrates how a few Flutter widgets can be put together to implement a meaningful user interface. The samples are short - just one Dart file - but they're complete applications. They should be easy to try out and tweak with your favorite IDE/code editor.

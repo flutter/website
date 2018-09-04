@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Adding Assets and Images in Flutter
-
-permalink: /assets-and-images/
 ---
 
 * TOC Placeholder

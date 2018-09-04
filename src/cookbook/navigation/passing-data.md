@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Send data to a new screen"
-permalink: /cookbook/navigation/passing-data/
 ---
 
 Oftentimes, we not only want to navigate to a new screen, but also pass some

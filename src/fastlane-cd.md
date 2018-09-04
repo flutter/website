@@ -2,8 +2,6 @@
 layout: page
 title: Continuous Delivery using fastlane with Flutter
 description: How to use fastlane to automate continuous building and releasing of your Flutter app.
-
-permalink: /fastlane-cd/
 ---
 
 Follow continuous delivery best practices with Flutter to make sure your

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Storing key-value data on disk"
-permalink: /cookbook/persistence/key-value/
 ---
 
 If we have a relatively small collection of key-values that we'd like to save, 

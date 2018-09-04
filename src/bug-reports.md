@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Creating Useful Bug Reports
-
-permalink: /bug-reports/
 ---
 
 * TOC Placeholder

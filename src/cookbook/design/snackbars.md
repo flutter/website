@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Displaying SnackBars"
-permalink: /cookbook/design/snackbars/
 ---
 
 In some cases, it can be handy to briefly inform our users when certain actions

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter Documentation
-permalink: /docs/
 ---
 
 <ul class="cards">

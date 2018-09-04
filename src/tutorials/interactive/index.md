@@ -1,8 +1,6 @@
 ---
 layout: tutorial
 title: "Adding Interactivity to Your Flutter App"
-
-permalink: /tutorials/interactive/
 ---
 
 <div class="whats-the-point" markdown="1">

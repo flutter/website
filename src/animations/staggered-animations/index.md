@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Staggered Animations"
-permalink: /animations/staggered-animations/
 ---
 
 <div class="whats-the-point" markdown="1">

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Working with WebSockets"
-permalink: /cookbook/networking/web-sockets/
 ---
 
 In addition to normal HTTP requests, we can connect to servers using WebSockets.

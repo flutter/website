@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Get Started: Configure Editor"
-permalink: /get-started/editor/
 ---
 
 You can build apps with Flutter using any text editor combined with our

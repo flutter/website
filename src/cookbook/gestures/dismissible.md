@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Implement Swipe to Dismiss"
-permalink: /cookbook/gestures/dismissible/
 ---
 
 The "Swipe to dismiss" pattern is common in many mobile apps. For example, if 

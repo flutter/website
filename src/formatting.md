@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Formatting Flutter code
-
-permalink: /formatting/
 ---
 
 * TOC Placeholder

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Report errors to a service"
-permalink: /cookbook/maintenance/error-reporting/
 ---
 
 While we always do our best to create apps that are free of bugs, they're sure 

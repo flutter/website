@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter for Web (HTML/CSS) Developers
-permalink: /web-analogs/
 css-old: [two_column.css]
 ---
 

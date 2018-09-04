@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Handling changes to a text field"
-permalink: /cookbook/forms/text-field-changes/
 ---
 
 In some cases, it can be handy to run a callback function every time the text

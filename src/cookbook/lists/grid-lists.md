@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Creating a Grid List"
-permalink: /cookbook/lists/grid-lists/
 ---
 
 In some cases, you might want to display your items as a Grid rather than 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Navigate with named routes"
-permalink: /cookbook/networking/named-routes/
 ---
 
 In the 

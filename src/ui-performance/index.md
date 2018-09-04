@@ -3,7 +3,6 @@ layout: page
 title: Flutter Performance Profiling
 subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
-permalink: /ui-performance/
 ---
 
 <div class="whats-the-point" markdown="1">

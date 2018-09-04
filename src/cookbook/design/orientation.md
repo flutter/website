@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Updating the UI based on orientation"
-permalink: /cookbook/design/orientation/
 ---
 
 In certain cases, it can be handy to update the design of an app when the user

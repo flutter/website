@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Creating lists with different types of items"
-permalink: /cookbook/lists/mixed-list/
 ---
 
 We often need to create lists that display different types of content. For 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Hero Animations"
-permalink: /animations/hero-animations/
 ---
 
 <div class="whats-the-point" markdown="1">

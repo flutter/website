@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Navigate to a new screen and back"
-permalink: /cookbook/navigation/navigation-basics/
 ---
 
 Most apps contain several screens for displaying different types of information. 

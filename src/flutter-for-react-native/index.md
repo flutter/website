@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter for React Native Developers
-permalink: /flutter-for-react-native/
 ---
 
 This document is for React Native (RN) developers looking to apply their existing RN knowledge to build mobile apps with Flutter. If you understand the fundamentals of the RN framework then you can use this document as a way to get started learning Flutter development.

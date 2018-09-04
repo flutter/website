@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Using Packages
-permalink: /using-packages/
 ---
 
 Flutter supports using shared packages contributed by other developers to the

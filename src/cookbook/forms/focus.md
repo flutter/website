@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Focus on a Text Field"
-permalink: /cookbook/forms/focus/
 ---
 
 When a text field is selected and accepting input, it is said to have "focus." 

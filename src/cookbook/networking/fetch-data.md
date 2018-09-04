@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Fetch data from the internet"
-permalink: /cookbook/networking/fetch-data/
 ---
 
 Fetching data from the internet is necessary for most apps. Luckily, Dart and 

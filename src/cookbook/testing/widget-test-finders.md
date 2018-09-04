@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Finding Widgets in a Widget Test"
-permalink: /cookbook/testing/widget-test-finders/
 ---
 
 In order to locate Widgets in a test environment, we need to use `Finder` 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Performance profiling with integration tests"
-permalink: /cookbook/testing/integration-test-profiling/
 ---
 
 When it comes to mobile apps, performance is critical to user experience. Users

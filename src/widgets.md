@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Widgets Catalog
-permalink: /widgets/
 ---
 
 Create beautiful apps faster with Flutter's

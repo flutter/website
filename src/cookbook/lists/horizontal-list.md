@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Create a horizontal list"
-permalink: /cookbook/lists/horizontal-list/
 ---
 
 At times, you may want to create a List that scrolls horizontally rather than 

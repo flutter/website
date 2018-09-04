@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Developing Flutter apps in an IDE
-
-permalink: /using-ide/
 ---
 
 <div id="tab-set-install">

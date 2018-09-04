@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Fade in images with a placeholder"
-permalink: /cookbook/images/fading-in-images/
 ---
 
 When displaying images using the default `Image` widget, you might notice they 

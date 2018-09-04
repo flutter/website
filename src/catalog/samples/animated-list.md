@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "AnimatedList"
-permalink: /catalog/samples/animated-list/
 ---
 
 An AnimatedList that displays a list of cards which stay

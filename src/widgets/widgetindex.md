@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Flutter Widget Index
-permalink: widgets/widgetindex/
 ---
+
 {% assign sorted = site.data.catalog.widgets | sort:'name' %}
 <div class="catalog">
     <div class="category-description"><p>This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/widgets">browse widgets by category.</a></p></div>

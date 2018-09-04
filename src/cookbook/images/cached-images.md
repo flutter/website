@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Working with cached images"
-permalink: /cookbook/images/cached-images/
 ---
 
 In some cases, it can be handy to cache images as they're downloaded from the 

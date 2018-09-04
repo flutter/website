@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Tutorial: Animations in Flutter"
-permalink: /tutorials/animation/
 ---
 
 <div class="whats-the-point" markdown="1">

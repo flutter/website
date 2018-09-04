@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Animations in Flutter
-permalink: /animations/
 ---
 
 * TOC Placeholder

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Using Themes to share colors and font styles"
-permalink: /cookbook/design/themes/
 ---
 
 In order to share colors and font styles throughout our app, we can take 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Introduction to unit testing"
-permalink: /cookbook/testing/unit-test/
 ---
 
 How can we ensure that our apps continue to work as we add more features or 

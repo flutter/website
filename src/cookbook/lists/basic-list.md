@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Basic List"
-permalink: /cookbook/lists/basic-list/
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps. Flutter 

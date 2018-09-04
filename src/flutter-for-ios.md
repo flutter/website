@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter for iOS Developers
-permalink: /flutter-for-ios/
 ---
 
 This document is for iOS developers looking to apply their existing iOS

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Mock dependencies using Mockito"
-permalink: /cookbook/testing/mocking/
 ---
 
 In certain cases, unit tests may depend on classes that fetch data from live

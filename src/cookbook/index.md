@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Cookbook"
-permalink: /cookbook/
 ---
 
 This cookbook contains recipes that demonstrate how to solve common problems 

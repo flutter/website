@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Working with long lists"
-permalink: /cookbook/lists/long-lists/
 ---
 
 The standard [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 

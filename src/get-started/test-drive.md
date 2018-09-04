@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Get Started: Test Drive"
-permalink: /get-started/test-drive/
 ---
 
 This page describes how to "test drive" Flutter: create a new Flutter app from

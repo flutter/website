@@ -1,7 +1,6 @@
 ---
 layout: tutorial
 title: Write Your First Flutter App, part 1
-permalink: /get-started/codelab/
 image: /get-started/codelab/images/step7-themes.png
 ---
 

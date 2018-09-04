@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Making authenticated requests"
-permalink: /cookbook/networking/authenticated-requests/
 ---
 
 In order to fetch data from many web services, you need to provide 

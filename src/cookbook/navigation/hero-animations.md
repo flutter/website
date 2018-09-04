@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Animating a Widget across screens"
-permalink: /cookbook/navigation/hero-animations/
 ---
 
 It's often helpful to guide users through our apps as they navigate from screen

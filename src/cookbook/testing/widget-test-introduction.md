@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Introduction to Widget testing"
-permalink: /cookbook/testing/widget-test-introduction/
 ---
 
 In the [introduction to unit testing](/cookbook/testing/unit-test/) recipe, we

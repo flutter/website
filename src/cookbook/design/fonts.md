@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Using custom fonts"
-permalink: /cookbook/design/fonts/
 ---
 
 While Android and iOS offer high quality system fonts, one of the most common

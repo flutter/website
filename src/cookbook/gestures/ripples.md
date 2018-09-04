@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Adding Material Touch Ripples"
-permalink: /cookbook/gestures/ripples/
 ---
 
 While designing an app that should follow the Material Design Guidelines, we'll 

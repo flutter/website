@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Create and style a text field"
-permalink: /cookbook/forms/text-input/
 ---
 
 Text fields allow users to type text into our apps. Text fields can be used to 

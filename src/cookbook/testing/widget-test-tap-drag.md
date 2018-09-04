@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Tapping, Dragging and Entering Text in Widget Tests"
-permalink: /cookbook/testing/widget-test-tap-drag/
 ---
 
 Many of the Widgets we build not only display information, but also respond to

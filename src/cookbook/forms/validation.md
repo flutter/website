@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Building a form with validation"
-permalink: /cookbook/forms/validation/
 ---
 
 Apps often require users to enter information into a text field. For 

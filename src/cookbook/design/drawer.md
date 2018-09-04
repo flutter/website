@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Add a Drawer to a screen"
-permalink: /cookbook/design/drawer/
 ---
 
 In apps that employ Material Design, there are two primary options for

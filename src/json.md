@@ -1,7 +1,6 @@
 ---
 layout: page
 title: JSON and serialization
-permalink: /json/
 ---
 
 It is hard to think of a mobile app that doesn't need to communicate with a

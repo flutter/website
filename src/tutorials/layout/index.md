@@ -1,8 +1,6 @@
 ---
 layout: tutorial
 title: "Building Layouts in Flutter"
-
-permalink: /tutorials/layout/
 ---
 
 <div class="whats-the-point" markdown="1">

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Return data from a screen"
-permalink: /cookbook/navigation/returning-data/
 ---
 
 In some cases, we might want to return data from a new screen. For example, say

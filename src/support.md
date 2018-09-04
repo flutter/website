@@ -1,7 +1,6 @@
 ---
 title: Support
 layout: page
-permalink: /support/
 ---
 
 We're open source and would love to hear from you!

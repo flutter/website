@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Get Started: Learn More"
-permalink: /get-started/learn-more/
 ---
 
 Learn more about the Flutter framework:

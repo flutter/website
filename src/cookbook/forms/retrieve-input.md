@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Retrieve the value of a text field"
-permalink: /cookbook/forms/retrieve-input/
 ---
 
 In this recipe, we'll see how to retrieve the text a user has typed into a text 

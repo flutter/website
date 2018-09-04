@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Handling Taps"
-permalink: /cookbook/gestures/handling-taps/
 ---
 
 We not only want to display information to our users, we want our users to 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Exporting fonts from a package"
-permalink: /cookbook/design/package-fonts/
 ---
 
 Rather than declaring a font as part of our app, we can declare a font as part

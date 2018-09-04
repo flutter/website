@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Developing Packages & Plugins
-permalink: /developing-packages/
 ---
 
 * TOC

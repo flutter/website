@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "PreferredSize Sample Apps"
-permalink: /catalog/samples/PreferredSize_index/
 ---
 
 All of the sample apps listed here use the Flutter PreferredSize class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.

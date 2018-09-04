@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Display images from the internet"
-permalink: /cookbook/images/network-image/
 ---
 
 Displaying images is fundamental for most mobile apps. Flutter provides the 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Fade a Widget in and out"
-permalink: /cookbook/animation/opacity-animation/
 ---
 
 As UI developers, we often need to show and hide elements on screen. However, 

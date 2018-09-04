@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Get Started: Install"
-permalink: /get-started/install/
 ---
 
 Please select the operating system on which you are installing Flutter:

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Reading and Writing Files"
-permalink: /cookbook/persistence/reading-writing-files/
 ---
 
 In some cases, it can be handy to read and write files to disk. This can be 

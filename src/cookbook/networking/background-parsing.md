@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Parsing JSON in the background"
-permalink: /cookbook/networking/background-parsing/
 ---
 
 By default, Dart apps do all of their work on a single thread. In many cases, 

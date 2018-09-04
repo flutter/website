@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Working with Tabs"
-permalink: /cookbook/design/tabs/
 ---
 
 Working with tabs is a common pattern in apps following the Material Design 

@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Scrolling in integration tests"
-permalink: /cookbook/testing/integration-test-scrolling/
 ---
 
 Many apps feature lists of content, from email clients to music apps and beyond.

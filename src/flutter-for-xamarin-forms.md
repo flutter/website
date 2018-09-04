@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Flutter for Xamarin.Forms Developers
-permalink: /flutter-for-xamarin-forms/
 ---
 This document is meant for Xamarin.Forms developers looking to apply their
 existing knowledge to build mobile apps with Flutter. If you understand

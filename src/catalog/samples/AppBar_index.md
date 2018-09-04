@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "AppBar Sample Apps"
-permalink: /catalog/samples/AppBar_index/
 ---
 
 All of the sample apps listed here use the Flutter AppBar class in an interesting way. The <a href="/catalog/samples/">Sample App Catalog</a> page lists all of the sample apps.

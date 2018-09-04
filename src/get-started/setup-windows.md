@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Get Started: Install on Windows"
-permalink: /setup-windows/
 ---
 
 * TOC Placeholder

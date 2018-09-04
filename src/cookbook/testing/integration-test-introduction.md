@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Introduction to Integration testing"
-permalink: /cookbook/testing/integration-test-introduction/
 ---
 
 Unit tests and Widget tests are handy for testing individual classes, functions,
