@@ -29,11 +29,11 @@ script: $TASK
 
 deploy:
   - provider: script
-    script: ./tool/deploy.sh --install dash
+    script: ./tool/deploy.sh --install dash # TODO: drop dash
     skip_cleanup: true
     on:
       repo: flutter/website
-      branch: master
+      branch: dash # TODO: revert to master
       condition: $TASK == *build*
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
