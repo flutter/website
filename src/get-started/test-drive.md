@@ -20,6 +20,7 @@ tool of choice for writing, building, and running your Flutter app.
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
 
 *Android Studio:* A complete, integrated IDE experience for Flutter.
+{:id="androidstudio"}
 
 ## Create new app {#create-app}
 

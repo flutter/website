@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: "Building Layouts in Flutter"
+title: Building Layouts in Flutter
 ---
 
 <div class="whats-the-point" markdown="1">
@@ -16,7 +16,7 @@ title: "Building Layouts in Flutter"
 This is a guide to building layouts in Flutter.
 You'll build the layout for the following screenshot:
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that you'll build in 'Building a Layout'">
+<img src="/tutorials/layout/images/lakes.jpg" style="border:1px solid black" alt="finished lakes app that you'll build in 'Building a Layout'">
 
 This guide then takes a step back to explain Flutter's approach to layout,
 and shows how to place a single widget on the screen.
@@ -83,7 +83,7 @@ The first step is to break the layout down to its basic elements:
 First, identify the larger elements. In this example, four elements are
 arranged into a column: an image, two rows, and a block of text.
 
-<img src="images/lakes-diagram.png" alt="diagramming the rows in the lakes screenshot">
+<img src="/tutorials/layout/images/lakes-diagram.png" alt="diagramming the rows in the lakes screenshot">
 
 Next, diagram each row. The first row, called the Title
 section, has 3 children: a column of text, a star icon,
@@ -91,12 +91,12 @@ and a number. Its first child, the column, contains 2 lines of text.
 That first column takes a lot of space, so it must be wrapped in an
 Expanded widget.
 
-<img src="images/title-section-diagram.png" alt="diagramming the widgets in the Title section">
+<img src="/tutorials/layout/images/title-section-diagram.png" alt="diagramming the widgets in the Title section">
 
 The second row, called the Button section, also has
 3 children: each child is a column that contains an icon and text.
 
-<img src="images/button-section-diagram.png" alt="diagramming the widgets in the button section">
+<img src="/tutorials/layout/images/button-section-diagram.png" alt="diagramming the widgets in the button section">
 
 Once the layout has been diagrammed, it's easiest to take a bottom-up
 approach to implementing it. To minimize the visual
@@ -417,7 +417,7 @@ You create a layout by composing widgets to build more complex widgets.
 For example, the screenshot on the left shows 3 icons with a label under
 each one:
 
-<img src="images/lakes-icons.png" style="border:1px solid black" alt="sample layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/lakes-icons-visual.png" style="border:1px solid black" alt="sample sample layout with visual debugging turned on">
+<img src="/tutorials/layout/images/lakes-icons.png" style="border:1px solid black" alt="sample layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=/tutorials/"layout/images/lakes-icons-visual.png" style="border:1px solid black" alt="sample sample layout with visual debugging turned on">
 
 The second screenshot displays the visual layout, showing a row of
 3 columns where each column contains an icon and a label.
@@ -432,7 +432,7 @@ For more information, see
 
 Here's a diagram of the widget tree for this UI:
 
-<img src="images/sample-flutter-layout.png" alt="node tree representing the sample layout">
+<img src="/tutorials/layout/images/sample-flutter-layout.png" alt="node tree representing the sample layout">
 
 Most of this should look as you might expect, but you might be wondering
 about the Containers (shown in pink). Container is a widget that allows
@@ -635,7 +635,7 @@ white and the text to dark grey to mimic a Material app.
 
 That's it! When you run the app, you should see:
 
-<img src="images/hello-world.png" style="border:1px solid black" alt="screenshot of a white background with grey 'Hello World' text.">
+<img src="/tutorials/layout/images/hello-world.png" style="border:1px solid black" alt="screenshot of a white background with grey 'Hello World' text.">
 
 **Dart code** (Material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/hello-world/main.dart)<br>
 **Dart code** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/widgets-only/main.dart)
@@ -681,11 +681,11 @@ This layout is organized as a Row. The row contains two children:
 a column on the left, and an image on the right:
 
 
-<center><img src="images/pavlova-diagram.png" alt="screenshot with callouts showing the row containing two children: a column and an image."></center><br>
+<center><img src="/tutorials/layout/images/pavlova-diagram.png" alt="screenshot with callouts showing the row containing two children: a column and an image."></center><br>
 
 The left column's widget tree nests rows and columns.
 
-<center><img src="images/pavlova-left-column-diagram.png" alt="diagram showing a left column broken down to its sub-rows and sub-columns"></center><br>
+<center><img src="/tutorials/layout/images/pavlova-left-column-diagram.png" alt="diagram showing a left column broken down to its sub-rows and sub-columns"></center><br>
 
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting).
@@ -717,11 +717,11 @@ axis runs horizontally.
 <div class="row"> <div class="col-lg-6" markdown="1">
 
 <p></p>
-<img src="images/row-diagram.png" alt="diagram showing the main axis and cross axis for a row">
+<img src="/tutorials/layout/images/row-diagram.png" alt="diagram showing the main axis and cross axis for a row">
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/column-diagram.png" alt="diagram showing the main axis and cross axis for a column">
+<img src="/tutorials/layout/images/column-diagram.png" alt="diagram showing the main axis and cross axis for a column">
 
 </div> </div>
 
@@ -751,7 +751,7 @@ horizontal space evenly between, before, and after each image.
 
 </div> <div class="col-lg-3" markdown="1">
 
-<center><img src="images/row-spaceevenly-visual.png" style="border:1px solid black" alt="a row showing 3 images spaced evenly in the row"></center>
+<center><img src="/tutorials/layout/images/row-spaceevenly-visual.png" style="border:1px solid black" alt="a row showing 3 images spaced evenly in the row"></center>
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row/main.dart)<br>
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row/images)<br>
@@ -775,7 +775,7 @@ space evenly between, above, and below each image.
 
 </div> <div class="col-lg-3" markdown="1">
 
-<img src="images/column-visual.png" style="border:1px solid black" alt="a column showing 3 images spaced evenly in the column">
+<img src="/tutorials/layout/images/column-visual.png" style="border:1px solid black" alt="a column showing 3 images spaced evenly in the column">
 
 </div> </div>
 
@@ -785,7 +785,7 @@ When a layout is too large to fit the device, a red strip appears along the
 affected edge. For example, the row in the following screenshot is too
 wide for the device's screen:
 
-<center><img src="images/layout-too-large.png" style="border:1px solid black" alt="a row that is too wide, showing a red string along the right edge"></center>
+<center><img src="/tutorials/layout/images/layout-too-large.png" style="border:1px solid black" alt="a row that is too wide, showing a red string along the right edge"></center>
 
 Widgets can be sized to fit within a row or column by using an Expanded widget,
 which is described in the [Sizing widgets](#sizing) section below.
@@ -811,7 +811,7 @@ as wide as the other two widgets, set the flex factor on the middle widget to 2:
 
 </div> <div class="col-lg-3" markdown="1">
 
-<img src="images/row-expanded-visual.png" style="border:1px solid black" alt="a row of 3 images with the middle image twice as wide as the others">
+<img src="/tutorials/layout/images/row-expanded-visual.png" style="border:1px solid black" alt="a row of 3 images with the middle image twice as wide as the others">
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row-expanded/main.dart)<br>
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row-expanded/images)<br>
@@ -831,7 +831,7 @@ the row to each widget.
 
 </div> <div class="col-lg-3" markdown="1">
 
-<img src="images/row-expanded-2-visual.png" style="border:1px solid black" alt="a row of 3 images that are too wide, but each is constrained to take only 1/3 of the row's available space">
+<img src="/tutorials/layout/images/row-expanded-2-visual.png" style="border:1px solid black" alt="a row of 3 images that are too wide, but each is constrained to take only 1/3 of the row's available space">
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row-expanded-2/main.dart)<br>
 **Images:** [images](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row-expanded-2/images)<br>
@@ -872,7 +872,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 </div> <div class="col-lg-3" markdown="1">
 
-<img src="images/packed.png" style="border:1px solid black" alt="a row of 5 stars, packed together in the middle of the row">
+<img src="/tutorials/layout/images/packed.png" style="border:1px solid black" alt="a row of 5 stars, packed together in the middle of the row">
 
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/packed/main.dart)<br>
 **Icons:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
@@ -887,7 +887,7 @@ The layout framework allows you to nest rows and columns inside of rows
 and columns as deeply as you need. Let's look the code for the outlined section
 of the following layout:
 
-<img src="images/pavlova-large-annotated.png" style="border:1px solid black" alt="a screenshot of the pavlova app, with the ratings and icon rows outlined in red">
+<img src="/tutorials/layout/images/pavlova-large-annotated.png" style="border:1px solid black" alt="a screenshot of the pavlova app, with the ratings and icon rows outlined in red">
 
 The outlined section is implemented as two rows. The ratings row contains
 five stars and the number of reviews. The icons row contains three
@@ -895,7 +895,7 @@ columns of icons and text.
 
 The widget tree for the ratings row:
 
-<center><img src="images/widget-tree-pavlova-rating-row.png" alt="a node tree showing the widgets in the ratings row"></center><br>
+<center><img src="/tutorials/layout/images/widget-tree-pavlova-rating-row.png" alt="a node tree showing the widgets in the ratings row"></center><br>
 
 The `ratings` variable creates a row containing a smaller row of 5 star icons,
 and text:
@@ -950,7 +950,7 @@ code, implement pieces of the UI in variables and functions.
 The icons row, below the ratings row, contains 3 columns; each column contains
 an icon and two lines of text, as you can see in its widget tree:
 
-<img src="images/widget-tree-pavlova-icon-row.png" alt="a node tree for the widets in the icons row">
+<img src="/tutorials/layout/images/widget-tree-pavlova-icon-row.png" alt="a node tree for the widets in the icons row">
 
 The `iconList` variable defines the icons row:
 
@@ -1154,7 +1154,7 @@ or image.
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/margin-padding-border.png" alt="a diagram showing that margins, borders, and padding, that surround content in a container">
+<img src="/tutorials/layout/images/margin-padding-border.png" alt="a diagram showing that margins, borders, and padding, that surround content in a container">
 
 </div> </div>
 
@@ -1178,7 +1178,7 @@ uses a Container to change the background color to a lighter grey.
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/container.png" alt="a screenshot showing 2 rows, each containing 2 images; the images have grey rounded borders, and the background is a lighter grey">
+<img src="/tutorials/layout/images/container.png" alt="a screenshot showing 2 rows, each containing 2 images; the images have grey rounded borders, and the background is a lighter grey">
 
 </div> </div>
 
@@ -1267,7 +1267,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 <div class="row"> <div class="col-lg-6" markdown="1">
 
-<img src="images/gridview-extent.png" style="border:1px solid black" alt="a 3-column grid of photos">
+<img src="/tutorials/layout/images/gridview-extent.png" style="border:1px solid black" alt="a 3-column grid of photos">
 
 Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br>
 **Dart code:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/grid/main.dart), snippet below<br>
@@ -1276,7 +1276,7 @@ Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.<br
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/gridview-count-flutter-gallery.png" style="border:1px solid black" alt="a 2 column grid with footers containing titles on a partially translucent background">
+<img src="/tutorials/layout/images/gridview-count-flutter-gallery.png" style="border:1px solid black" alt="a 2 column grid with footers containing titles on a partially translucent background">
 
 Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
 and 3 tiles wide in landscape mode. The titles are created by setting the
@@ -1345,7 +1345,7 @@ its content is too long for its render box.
 
 <div class="row"> <div class="col-lg-6" markdown="1">
 
-<img src="images/listview.png" style="border:1px solid black" alt="a ListView containing movie theaters and restaurants">
+<img src="/tutorials/layout/images/listview.png" style="border:1px solid black" alt="a ListView containing movie theaters and restaurants">
 
 Uses ListView to display a list of businesses using ListTiles.
 A Divider separates the theaters from the restaurants.<br>
@@ -1355,7 +1355,7 @@ A Divider separates the theaters from the restaurants.<br>
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the Material Design color palette">
+<img src="/tutorials/layout/images/listview-flutter-gallery.png" style="border:1px solid black" alt="a ListView containing shades of blue from the Material Design color palette">
 
 Uses ListView to display the
 [Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
@@ -1430,7 +1430,7 @@ The widgets can completely or partially overlap the base widget.
 
 <div class="row"> <div class="col-lg-6" markdown="1">
 
-<img src="images/stack.png" style="border:1px solid black" alt="a circular avatar containing the label 'Mia B' in the lower right portion of the circle">
+<img src="/tutorials/layout/images/stack.png" style="border:1px solid black" alt="a circular avatar containing the label 'Mia B' in the lower right portion of the circle">
 
 Uses Stack to overlay a Container (that displays its Text on a translucent
 black background) on top of a Circle Avatar.
@@ -1443,7 +1443,7 @@ Alignments.<br>
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/stack-flutter-gallery.png" style="border:1px solid black" alt="an image with a grey gradient across the top; on top of the gradient is tools painted in white">
+<img src="/tutorials/layout/images/stack-flutter-gallery.png" style="border:1px solid black" alt="an image with a grey gradient across the top; on top of the gradient is tools painted in white">
 
 Uses Stack to overlay a gradient to the top of the image. The gradient
 ensures that the toolbar's icons are distinct against the image.<br>
@@ -1525,7 +1525,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <div class="row"> <div class="col-lg-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
+<img src="/tutorials/layout/images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
 A Card containing 3 ListTiles and sized by wrapping it with a
 SizedBox. A Divider separates the first and second ListTiles.
@@ -1536,7 +1536,7 @@ SizedBox. A Divider separates the first and second ListTiles.
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/card-flutter-gallery.png" style="border:1px solid black" alt="a Card containing an image and text and buttons under the image">
+<img src="/tutorials/layout/images/card-flutter-gallery.png" style="border:1px solid black" alt="a Card containing an image and text and buttons under the image">
 
 A Card containing an image and text.<br>
 **Dart code:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/cards_demo.dart)
@@ -1609,14 +1609,14 @@ but can be used elsewhere.
 
 <div class="row"> <div class="col-lg-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
+<img src="/tutorials/layout/images/card.png" style="border:1px solid black" alt="a Card containing 3 ListTiles">
 
 A Card containing 3 ListTiles.<br>
 **Dart code:** See [Card examples](#card-examples).
 
 </div> <div class="col-lg-6" markdown="1">
 
-<img src="images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, each containing a pull-down button">
+<img src="/tutorials/layout/images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, each containing a pull-down button">
 
 Uses ListTile to list 3 drop down button types.<br>
 **Dart code:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/buttons_demo.dart)

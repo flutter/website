@@ -1,37 +1,37 @@
 ---
 layout: page
-title: "Fetch data from the internet"
+title: Fetch data from the internet
 ---
 
-Fetching data from the internet is necessary for most apps. Luckily, Dart and 
+Fetching data from the internet is necessary for most apps. Luckily, Dart and
 Flutter provide tools for this type of work!
-  
+
 ## Directions
 
   1. Add the `http` package
   2. Make a network request using the `http` package
   3. Convert the response into a custom Dart object
   4. Fetch and Display the data with Flutter
-  
+
 ## 1. Add the `http` package
 
-The [`http`](https://pub.dartlang.org/packages/http) package provides the 
+The [`http`](https://pub.dartlang.org/packages/http) package provides the
 simplest way to fetch data from the internet.
 
 To install the `http` package, we need to add it to the dependencies section
-of our `pubspec.yaml`. We can [find the latest version of the http package on 
+of our `pubspec.yaml`. We can [find the latest version of the http package on
 the pub website](https://pub.dartlang.org/packages/http#-installing-tab-).
 
 ```yaml
 dependencies:
   http: <latest_version>
 ```
-  
+
 ## 2. Make a network request
 
-In this example, we'll fetch a sample post from the 
-[JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the 
-[`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html) 
+In this example, we'll fetch a sample post from the
+[JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the
+[`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html)
 method.
 
 <!-- skip -->
@@ -41,28 +41,28 @@ Future<http.Response> fetchPost() {
 }
 ```
 
-The `http.get` method returns a `Future` that contains a `Response`. 
+The `http.get` method returns a `Future` that contains a `Response`.
 
-  * [`Future`](https://docs.flutter.io/flutter/dart-async/Future-class.html) is 
-  a core Dart class for working with async operations. It is used to represent a 
+  * [`Future`](https://docs.flutter.io/flutter/dart-async/Future-class.html) is
+  a core Dart class for working with async operations. It is used to represent a
   potential value or error that will be available at some time in the future.
-  * The `http.Response` class contains the data received from a successful http 
-  call.  
+  * The `http.Response` class contains the data received from a successful http
+  call.
 
 ## 3. Convert the response into a custom Dart object
 
-While it's easy to make a network request, working with a raw 
-`Future<http.Response>` isn't very convenient. To make our lives easier, we can 
+While it's easy to make a network request, working with a raw
+`Future<http.Response>` isn't very convenient. To make our lives easier, we can
 convert the `http.Response` into our own Dart object.
 
 ### Create a `Post` class
 
-First, we'll need to create a `Post` class that contains the data from our 
-network request. It will also include a factory constructor that allows us to 
+First, we'll need to create a `Post` class that contains the data from our
+network request. It will also include a factory constructor that allows us to
 create a `Post` from json.
 
-Converting JSON by hand is only one option. For more information, please see the 
-full article on [JSON and serialization](/json). 
+Converting JSON by hand is only one option. For more information, please see the
+full article on [JSON and serialization](/json).
 
 <!-- skip -->
 ```dart
@@ -92,7 +92,7 @@ we'll need to:
 
   1. Convert the response body into a json `Map` with the `dart:convert`
   package.
-  2. If the server returns an "OK" response with a status code of 200, convert 
+  2. If the server returns an "OK" response with a status code of 200, convert
   the json `Map` into a `Post` using the `fromJson` factory.
   3. If the server returns an unexpected response, throw an error
 
@@ -112,7 +112,7 @@ Future<Post> fetchPost() async {
 }
 ```
 
-Hooray! Now we've got a function that we can call to fetch a Post from the 
+Hooray! Now we've got a function that we can call to fetch a Post from the
 internet!
 
 ## 4. Fetch and Display the data
@@ -148,11 +148,11 @@ FutureBuilder<Post>(
 
 ## Testing
 
-For information on how to test this functionality, please see the following 
+For information on how to test this functionality, please see the following
 recipes:
 
   * [Introduction to unit testing](/cookbook/testing/unit-test/)
-  * [Mock dependencies using Mockito](/cookbook/testing/mocking/) 
+  * [Mock dependencies using Mockito](/cookbook/testing/mocking/)
 
 ## Complete example
 

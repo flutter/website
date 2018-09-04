@@ -540,8 +540,8 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 In iOS, to send the user to another application, you use a
 specific URL scheme. For the system level apps, the scheme
 depends on the app. To implement this functionality in Flutter,
-create a native platform integration, or use an existing
-[plugin](#plugins), such as
+create a native platform integration, or use an
+[existing plugin](https://pub.dartlang.org/flutter/), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
 
 ## How do I pop back to the iOS native viewcontroller?

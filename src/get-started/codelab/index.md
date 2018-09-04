@@ -5,7 +5,7 @@ image: /get-started/codelab/images/step7-themes.png
 ---
 
 <figure class="right-figure" style="max-width: 260px; padding-right: 10px">
-    <img src="images/startup_namer_1_opt.gif"
+    <img src="/get-started/codelab/images/startup_namer_1_opt.gif"
          alt="Animated GIF of the app that you will be building."
          style="border: margin-bottom: 10px" >
 </figure>
@@ -61,23 +61,23 @@ The animated GIF shows how the app works at the completion of part 1.
 
   You can run this codelab using any of the following devices:
 
-  * A physical device ([Android](/setup-macos/#set-up-your-android-device)
-    or [iOS](/setup-macos/#deploy-to-ios-devices)) connected to your
+  * A physical device ([Android](/setup-macos#set-up-your-android-device)
+    or [iOS](/setup-macos#deploy-to-ios-devices)) connected to your
     computer and set to developer mode.
-  * The [iOS simulator](/setup-macos/#set-up-the-ios-simulator).
-  * The [Android emulator](/setup-macos/#set-up-the-android-emulator).
+  * The [iOS simulator](/setup-macos#set-up-the-ios-simulator).
+  * The [Android emulator](/setup-macos#set-up-the-android-emulator).
 </div>
 
 # Step 1: Create the starter Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/get-started/test-drive/#create-app)
+[Getting Started with your first Flutter app.](/get-started/test-drive#create-app)
 Name the project **startup_namer** (instead of _myapp_).
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE, make
   sure you have the [plugins installed for Flutter and
-  Dart](/get-started/editor/#androidstudio).
+  Dart](/get-started/editor#androidstudio).
 {{site.alert.end}}
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
@@ -121,11 +121,11 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. [Run the app](/get-started/test-drive/#androidstudio) by clicking
+ 2. [Run the app](/get-started/test-drive#androidstudio) by clicking
     the green arrow in the IDE.
     You should see either Android or iOS output, depending on your device.
 
-    <center><img src="images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
+    <center><img src="/get-started/codelab/images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="/get-started/codelab/images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
     <center>Android (left) and iOS (right)</center>
 
     {{site.alert.tip}}
@@ -249,7 +249,7 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
     {{site.alert.end}}
 
  5. If the app is running, use the hot reload button
-    (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
+    (<img src="/get-started/codelab/images/hot-reload-button.png" alt="lightning bolt icon">)
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
@@ -257,7 +257,7 @@ packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
     method, which is run each time the MaterialApp requires rendering,
     or when toggling the Platform in Flutter Inspector.
 
-    <center><img src="images/android-step2-frame.png" alt="screenshot at completion of second step in Android"> <img src="images/step2-screenshot-ios.png" alt="screenshot at completion of second step in iOS"></center>
+    <center><img src="/get-started/codelab/images/android-step2-frame.png" alt="screenshot at completion of second step in Android"> <img src="/get-started/codelab/images/step2-screenshot-ios.png" alt="screenshot at completion of second step in iOS"></center>
     <center>Android (left) and iOS (right)</center>
 
 ## Problems?
@@ -536,7 +536,7 @@ lazily, on demand.
  6. Restart the app. You should see a list of word pairings
     no matter how far you scroll.
 
-    <center><img src="images/android-infinite-list-frame.png" alt="screenshot at completion of fourth step in Android"><img src="images/step4-screenshot-ios.png" alt="screenshot at completion of fourth step in iOS"></center>
+    <center><img src="/get-started/codelab/images/android-infinite-list-frame.png" alt="screenshot at completion of fourth step in Android"><img src="/get-started/codelab/images/step4-screenshot-ios.png" alt="screenshot at completion of fourth step in iOS"></center>
     <center>Android (left) and iOS (right)</center>
 
 ## Problems?
@@ -553,7 +553,7 @@ at the following link to get back on track.
 {:.no_toc}
 
 <figure class="right-figure" style="max-width: 260px; padding-right: 10px">
-    <img src="images/startup-namer-app.gif"
+    <img src="/get-started/codelab/images/startup-namer-app.gif"
          alt="Animated GIF of the app that you will be building."
          style="border: margin-bottom: 10px" >
     <center>The app from part 2</center><br>

@@ -713,7 +713,7 @@ In Xamarin.Forms, to send the user to another application, you use a
 specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter, create a native platform integration,
-or use an existing [plugin](#plugins), such as
+or use an [existing plugin](https://pub.dartlang.org/flutter/), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with
 many other packages on [pub.dartlang](https://pub.dartlang.org/flutter).
 
