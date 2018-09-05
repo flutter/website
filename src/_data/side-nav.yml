@@ -17,11 +17,13 @@
     - title: Flutter for Android devs
       permalink: /get-started/flutter-for/android-devs
     - title: Flutter for iOS devs
-      permalink: /get-started/ios-devs
+      permalink: /get-started/flutter-for/ios-devs
     - title: Flutter for React Native devs
-      permalink: /react-native-devs
+      permalink: /get-started/flutter-for/react-native-devs
+    - title: Flutter for Web devs
+      permalink: /get-started/flutter-for/web-devs
     - title: Flutter for Xamarin.Forms devs
-      permalink: /xamarin-forms-devs
+      permalink: /get-started/flutter-for/xamarin-forms-devs
 
 - title: "Samples & Codelabs"
   children:
