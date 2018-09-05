@@ -1,14 +1,18 @@
 ---
 title: Flutter for React Native Developers
+description: Learn how to apply React Native developer knowledge when learning Flutter.
 ---
 
-This document is for React Native (RN) developers looking to apply their existing RN knowledge to build mobile apps with Flutter. If you understand the fundamentals of the RN framework then you can use this document as a way to get started learning Flutter development.
+This document is for React Native (RN) developers looking to apply their
+existing RN knowledge to build mobile apps with Flutter. If you understand
+the fundamentals of the RN framework then you can use this document as a
+way to get started learning Flutter development.
 
-This document can be used as a cookbook by jumping around and finding questions that are most relevant to your needs.
+This document can be used as a cookbook by jumping around and finding
+questions that are most relevant to your needs.
 
 
 *****
-
 * TOC Placeholder
 {:toc}
 *****

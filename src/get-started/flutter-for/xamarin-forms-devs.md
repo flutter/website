@@ -1,6 +1,8 @@
 ---
 title: Flutter for Xamarin.Forms Developers
+description: Learn how to apply Xamarin.Forms developer knowledge when learning Flutter.
 ---
+
 This document is meant for Xamarin.Forms developers looking to apply their
 existing knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the Xamarin.Forms framework then you can use this document as a

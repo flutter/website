@@ -1,5 +1,6 @@
 ---
 title: Flutter for Android Developers
+description: Learn how to apply Android developer knowledge when learning Flutter.
 ---
 This document is meant for Android developers looking to apply their
 existing Android knowledge to build mobile apps with Flutter. If you understand

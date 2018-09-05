@@ -1,5 +1,6 @@
 ---
 title: Flutter for Web (HTML/CSS) Developers
+description: Learn how to apply Web developer knowledge when learning Flutter.
 css-old: [two_column.css]
 ---
 
