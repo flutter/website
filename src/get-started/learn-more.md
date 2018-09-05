@@ -1,16 +1,17 @@
 ---
 title: "Get Started: Learn More"
+description: More resources to help you learn Flutter.
 ---
 
 Learn more about the Flutter framework:
 
-* [Flutter for Android](/flutter-for-android/)
-* [Flutter for iOS](/flutter-for-ios/)
-* [Flutter for React Native](/flutter-for-react-native/)
-* [Flutter for Xamarin.Forms](/flutter-for-xamarin-forms/)
-* [Building Layouts in Flutter](/tutorials/layout/) tutorial
-* [Add Interactivity](/tutorials/interactive/) tutorial
-* [A Tour of the Flutter Widget Framework](/widgets-intro/)
+* [Flutter for Android](/get-started/flutter-for/android-devs)
+* [Flutter for iOS](/get-started/flutter-for/ios-devs)
+* [Flutter for React Native](/get-started/flutter-for/react-native-devs)
+* [Flutter for Xamarin.Forms](/get-startedflutter-for/xamarin-forms-devs)
+* [Building Layouts in Flutter](/tutorials/layout) tutorial
+* [Add Interactivity](/tutorials/interactive) tutorial
+* [A Tour of the Flutter Widget Framework](/widgets-intro)
 
 Other resources:
 
