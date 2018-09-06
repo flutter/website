@@ -1,0 +1,11 @@
+# Enter regexp pattern, one per line.
+
+# FIXME(Temporary):
+/web-analogs
+/flutter-for-*
+/get-startedflutter-for
+/using-ide
+/hot-reload
+/inspector
+/formatting
+/images/intellij/main-toolbar.png

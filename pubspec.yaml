@@ -1,20 +1,18 @@
-# TODO(chalin): Consider using two pubspecs:
-# - This main one should depend on the Dart VM and be used to run VM scripts.
-# - Another pubspec (possibly under exmaples.g), would be for running examples.
-
 name: flutter_io
 
 environment:
   sdk: '>=2.0.0-dev <3.0.0'
 
 dev_dependencies:
-  flutter_driver:
-    sdk: flutter
-  path: ^1.5.0
-  test: '>= 0.12.37 <2.0.0'
-  url_launcher: ^3.0.3
-  path_provider: ^0.4.1
-  shared_preferences: 0.4.1
-  transparent_image: 0.1.0
-  css_colors: 1.0.2
-  web_socket_channel: 1.0.9
+  build_runner: ^0.10.1
+  code_excerpt_updater: any
+  code_excerpter: any
+  linkcheck: ^2.0.4
+
+dependency_overrides:
+  code_excerpt_updater:
+    git: https://github.com/chalin/code_excerpt_updater.git
+    # path: ../code_excerpt_updater
+  code_excerpter:
+    git: https://github.com/chalin/code_excerpter.git
+    # path: ../code_excerpter
