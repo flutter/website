@@ -145,7 +145,7 @@ In the project directory, the code for your app is in `lib/main.dart`.
 ## Run the app
 
    * Check that an Android device is running. If none are shown, see
-     [setup](/get-started/install/).
+     [setup](/get-started/install).
    {% commandline %}
    flutter devices
    {% endcommandline %}
@@ -181,4 +181,4 @@ You should see the updated string in the running app almost immediately.
 
 Let's learn some core Flutter concepts, by creating a small app.
 
-[Next step: Write your first app](/get-started/codelab/)
+[Next step: Write your first app](/get-started/codelab)

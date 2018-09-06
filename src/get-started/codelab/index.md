@@ -55,7 +55,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4>What you'll use</h4>
 
   You need two pieces of software to complete this lab: the
-  [Flutter SDK](/get-started/install/) and [an editor](/get-started/editor/).
+  [Flutter SDK](/get-started/install) and [an editor](/get-started/editor).
   This codelab assumes Android Studio, but you can use your preferred
   editor.
 
@@ -167,7 +167,7 @@ which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the english_words package, as well as many other open source
-packages, on [pub.dartlang.org](https://pub.dartlang.org/flutter/).
+packages, on [the Package site](https://pub.dartlang.org/flutter/).
 
  1. The pubspec file manages the assets and dependencies for a Flutter app.
     In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
@@ -583,4 +583,4 @@ where you add the following functionality:
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
 
-[Learn More](/get-started/learn-more/)
+[Learn More](/get-started/learn-more)

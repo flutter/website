@@ -54,8 +54,8 @@ start with [Flutter's approach to layout](#approach).
 
 First, get the code:
 
-* Make sure you've [set up](/get-started/install/) your environment.
-* [Create a basic Flutter app](/get-started/test-drive/#create-app).
+* Make sure you've [set up](/get-started/install) your environment.
+* [Create a basic Flutter app](/get-started/test-drive#create-app).
 
 Next, add the image to the example:
 
@@ -175,17 +175,18 @@ class MyApp extends StatelessWidget {
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 When pasting code into your app, indentation can
 become skewed. You can fix this in your Flutter editor
-using the [automatic reformatting support](/formatting/).
+using the [automatic reformatting support](/tools/formatting).
 </aside>
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 For a faster development experience, try Flutter's hot reload feature.
 Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The Flutter enabled IDEs support
-['hot reload on save'](/hot-reload/), or you can trigger from the command line.
-For more information about reloads, see [Hot Reloads vs. Full Application
-Restarts](https://flutter.io/using-ide/#hot-reloads-vs-full-application-restarts).
+fully restarting the app. The Flutter enabled IDEs support [hot
+reload on save](/tools/hot-reload), or you can trigger hot reload from the
+command line.
+For more information, see [Hot Reloads vs. Full Application
+Restarts](/tools/using-ide#hot-reloads-vs-full-application-restarts).
 </aside>
 
 <a name="step-3"></a>
@@ -391,7 +392,7 @@ return MaterialApp(
 
 That's it! When you hot reload the app, you should see the same layout
 shown in the screenshots. You can add interactivity to this layout by following
-[Adding Interactivity to Your Flutter App](/tutorials/interactive/).
+[Adding Interactivity to Your Flutter App](/tutorials/interactive).
 
 <hr>
 <a name="approach"></a>
@@ -427,7 +428,7 @@ The second screenshot displays the visual layout, showing a row of
 `debugPaintSizeEnabled` set to true so you can see the visual layout.
 For more information, see
 [Visual debugging](https://flutter.io/debugging/#visual-debugging), a section in
-[Debugging Flutter Apps](https://flutter.io/debugging/).
+[Debugging Flutter Apps](/debugging).
 </aside>
 
 Here's a diagram of the widget tree for this UI:
@@ -494,7 +495,7 @@ it takes only a few steps to put text, an icon, or an image on the screen.
 <ol markdown="1">
 
 <li markdown="1"> Select a layout widget to hold the object.<br>
-    Choose from a variety of [layout widgets](/widgets/) based
+    Choose from a variety of [layout widgets](/widgets) based
     on how you want to align or constrain the visible widget,
     as these characteristics are typically passed on to the
     contained widget.
@@ -1103,7 +1104,7 @@ recommend the iPad Pro. You can change its orientation to landscape mode using
 Flutter has a rich library of layout widgets, but here a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget Overview](https://flutter.io/widgets/),
+available widgets, refer to the [Widget Overview](/widgets),
 or use the Search box in the [API reference docs](https://docs.flutter.io/).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.

@@ -1,5 +1,6 @@
 ---
 title: Formatting Flutter code
+description: Flutter's code formatter formats your code along recommended style guidelines.
 ---
 
 * TOC Placeholder
@@ -7,28 +8,29 @@ title: Formatting Flutter code
 
 ## Automatically formatting code
 
-While your code may follow any preferred style -- in our experience -- teams of
-developers may find it more productive to:
+While your code may follow any preferred style&mdash;in our
+experience&mdash;teams of developers may find it more productive to:
 
-1. have a single, shared style, and
+* Have a single, shared style, and
 
-1. to enforce this style through automatic formatting.
+* Enforce this style through automatic formatting.
 
 The alternative is often tiring formatting debates during code reviews, where
 time may be better spent on code behavior rather than code style.
 
-### Automatically formatting code in Android Studio, and IntelliJ
+### Automatically formatting code in Android Studio and IntelliJ
 
-Install the `Dart` plugin (see [Editor setup](/get-started/editor/))
+Install the `Dart` plugin (see [Editor setup](/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
 
 To automatically format the code in the current source code window, right-click
-in the code window and select `Reformat Code with dartfmt`. You can add a keyboard
-shortcut to this in Keymap section of IntelliJ Preferences.
+in the code window and select `Reformat Code with dartfmt`.
+You can add a keyboard shortcut to this in Keymap section of IntelliJ
+Preferences.
 
 ### Automatically formatting code in VS Code
 
-Install the `Flutter` extension (see [Editor setup](/get-started/editor/))
+Install the `Flutter` extension (see [Editor setup](/get-started/editor))
 to get automatic formatting of code in VS Code.
 
 To automatically format the code in the current source code window, right-click
@@ -55,13 +57,13 @@ for example in a `build` method. To get good automatic formatting, we recommend
 you adopt the optional *trailing commas*. The guideline for adding a trailing
 comma is simple: Always add a trailing comma at the end of a parameter list in
 functions, methods, and constructors where you care about keeping the formatting
-you crafted. This will help the automatic formatter to insert an appropriate
+you crafted. This helps the automatic formatter to insert an appropriate
 amount of line breaks for Flutter-style code.
 
 Here is an example of automatically formatted code *with* trailing commas:
 
-![Automatically formatted code with trailing commas](/images/intellij/trailing-comma-with.png)
+![Automatically formatted code with trailing commas](/tools/images/trailing-comma-with.png)
 
 And the same code automatically formatted code *without* trailing commas:
 
-![Automatically formatted code without trailing commas](/images/intellij/trailing-comma-without.png)
+![Automatically formatted code without trailing commas](/tools/images/trailing-comma-without.png)

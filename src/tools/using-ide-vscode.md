@@ -1,11 +1,12 @@
 ---
 title: Developing Flutter apps in an IDE
+description: How to develop a Flutter app in Android Studio or other IntelliJ products.
 ---
 
 <div id="tab-set-install">
 
 <ul class="tabs__top-bar">
-    <li class="tab-link" data-tab-href="/using-ide">Android Studio / IntelliJ</li>
+    <li class="tab-link" data-tab-href="/tools/using-ide">Android Studio / IntelliJ</li>
     <li class="tab-link current">VS Code</li>
 </ul>
 
@@ -18,7 +19,7 @@ The [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor/#vscode) instructions to install
+Please follow the [Editor Setup](/get-started/editor#vscode) instructions to install
 the Flutter extension (which includes Flutter functionality).
 
 ### Updating the extension<a name="updating"/>
@@ -65,7 +66,8 @@ The Flutter extension performs code analysis that enables:
 
 ## Running and Debugging
 
-Start debugging by clicking **Debug>Start Debugging** from the main IDE window or press `F5`.
+Start debugging by clicking **Debug>Start Debugging** from the main IDE window or
+press `F5`.
 
 ### Selecting a target device
 
@@ -109,7 +111,7 @@ running or debugging.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the 'hot reload' feature. See
-[Hot reloading Flutter Apps](/hot-reload/) for details.
+[Hot reloading Flutter Apps](/tools/hot-reload) for details.
 
 ## Advanced debugging
 

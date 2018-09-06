@@ -1,12 +1,13 @@
 ---
 title: Developing Flutter apps in an IDE
+description: How to develop a Flutter app in VSCode.
 ---
 
 <div id="tab-set-install">
 
 <ul class="tabs__top-bar">
     <li class="tab-link current" >Android Studio / IntelliJ</li>
-    <li class="tab-link" data-tab-href="/using-ide-vscode">VS Code</li>
+    <li class="tab-link" data-tab-href="/tools/using-ide-vscode">VS Code</li>
 </ul>
 
 <div class="tabs__content current" markdown="1">
@@ -19,7 +20,7 @@ Android Studio or IntelliJ IDEs.
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor/) instructions to install
+Please follow the [Editor Setup](/get-started/editor) instructions to install
 the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
@@ -83,22 +84,22 @@ The Dart plugin performs code analysis that enables:
   usages (**Edit>Find>Find Usages**).
 * Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane](/images/intellij/dart-analysis.png)
+  ![Dart Analysis pane](/tools/images/dart-analysis.png)
 
-## Running and Debugging
+## Running and debugging
 
-Running and Debugging is controlled from the main toolbar:
+Running and debugging are controlled from the main toolbar:
 
-![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+![Main IntelliJ toolbar](/tools/images/main-toolbar.png)
 
 ### Selecting a target
 
 When a Flutter project is open in the IDE, you should see a set of Flutter
 specific buttons on the right-hand side of the toolbar.
 
-*Note*: If the Run & Debug buttons are disabled, and no targets are listed, Flutter
-has not been able to discover any connected iOS or Android devices or simulators.
-You need to connect a device, or start a simulator, to proceed.
+*Note*: If the Run and Debug buttons are disabled, and no targets are listed,
+Flutter has not been able to discover any connected iOS or Android devices or
+simulators.  You need to connect a device, or start a simulator, to proceed.
 
 1. Locate the **Flutter Target Selector** drop-down button. This shows a
  list of available targets. Select the target you want your app to be started on.
@@ -108,7 +109,7 @@ You need to connect a device, or start a simulator, to proceed.
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
 * The bottom **Run** pane shows logs output:<br>
-![Log pane](/images/intellij/log.png)
+![Log pane](/tools/images/log.png)
 
 ### Run app with breakpoints
 
@@ -117,14 +118,14 @@ You need to connect a device, or start a simulator, to proceed.
 * The bottom **Debugger** pane shows Stack Frames and Variables.
 * The bottom **Console** pane shows detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
-  click. the drop-down button to the right of the device selector, and select
+  click the drop-down button to the right of the device selector, and select
   **Edit configuration**.
 
 ## Fast edit and refresh development cycle
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the 'hot reload' feature. See
-[Hot reloading Flutter Apps](/hot-reload/) for details.
+[using hot reload](/tools/hot-reload) for details.
 
 ## Advanced debugging
 
@@ -133,13 +134,13 @@ of your changes almost instantly with the 'hot reload' feature. See
 To debug a visual issue, start the app with 'Debug', and then open the Flutter
 inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 
-![Flutter Inspector Window](/images/intellij/visual-debugging.png)
+![Flutter Inspector Window](/tools/images/visual-debugging.png)
 
-This offers many debugging tools; for details on these please see
-[Debugging Flutter Apps](https://flutter.io/debugging/).
+This offers many debugging tools; for details on these see
+[Debugging Flutter Apps](/debugging).
 
 * 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
-  [Flutter Inspector](/inspector/).
+  [Flutter Inspector](/tools/inspector).
 
 * 'Toggle Debug Paint': Add visual debugging hints to the rendering displaying
    borders, padding, alignment, and spacers.
@@ -157,25 +158,26 @@ Also available in the additional actions menu:
 * 'Show Paint Baselines': Causes each RenderBox to paint a line at each of its
   baselines.
 
-* 'Enable Repaint Rainbow': Show rotating colors on layers when repainting.
+* 'Enable Repaint Rainbow': Shows rotating colors on layers when repainting.
 
-* 'Enable Slow Animations': Slow down animations to enable visual inspection.
+* 'Enable Slow Animations': Slows down animations to enable visual inspection.
 
-* 'Hide Debug Banner': Hide the 'debug' banner even when running a
+* 'Hide Debug Banner': Hides the 'debug' banner even when running a
   debug build.
 
 
 ### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
+html-based UI. For details see the [Observatory
+page](https://dart-lang.github.io/observatory/).
 
 To open Observatory:
 
 1. Run your app in debug mode.
 1. Select the 'open observatory' action from the Debug panel (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
 
-![Debugging panel](/images/intellij/debug-panel.png)
+![Debugging panel](/tools/images/debug-panel.png)
 
 ## Editing tips for Flutter code
 
@@ -184,32 +186,35 @@ To open Observatory:
 Assists are code changes related to a certain code identifier. A number of these
 are available when the cursor is placed on a Flutter widget identifier, as
 indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut (`Alt`+`Enter` on Linux and Windows, `Option`+`Return` on macOS), as illustrated
+the lightbulb, or by using the keyboard shortcut
+(`Alt`+`Enter` on Linux and Windows, `Option`+`Return` on macOS), as illustrated
 here:
 
-![IntelliJ editing assists](/images/intellij/assists.gif)
+![IntelliJ editing assists](/tools/images/assists.gif)
 
-Quick Fixes are similar, only they are shown with a piece of code has an error and they
-can assist in correcting it. They are indicated with a red lightbulb.
+Quick Fixes are similar, only they are shown with a piece of code has an error
+and they can assist in correcting it. They are indicated with a red lightbulb.
 
 #### Wrap with new widget assist
-This can be used when you have a widget that you want to wrap in a surrounding widget,
-for example if you want to wrap a widget in a `Row` or `Column`.
+
+This can be used when you have a widget that you want to wrap in a surrounding
+widget, for example if you want to wrap a widget in a `Row` or `Column`.
 
 ####  Wrap widget list with new widget assist
-Similar to the assist above, but for wrapping an existing list of widgets rather than an
-individual widget.
+
+Similar to the assist above, but for wrapping an existing list of widgets rather
+than an individual widget.
 
 #### Convert child to children assist
 Changes a child argument to a children argument, and wraps the argument value in a list.
 
-### Live Templates
+### Live templates
 
 Live templates can be used to speed up entering typical code structures. They
 are invoked by typing their 'prefix', and then selecting it in the code
 completion window:
 
-![IntelliJ live templates](/images/intellij/templates.gif)
+![IntelliJ live templates](/tools/images/templates.gif)
 
 The Flutter plugin includes the following templates:
 
@@ -229,14 +234,14 @@ You can also define custom templates in **Settings > Editor > Live Templates**.
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
 
-On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are `Command`+`Option`;`
-and `Command`+`Backslash`.
+On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
+`Command`+`Option`;` and `Command`+`Backslash`.
 
 Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
-![IntelliJ Settings Keymap](/images/intellij/keymap-settings-flutter-plugin.png)
+![IntelliJ Settings Keymap](/tools/images/keymap-settings-flutter-plugin.png)
 
 ### 'Hot Reloads' vs 'Full Application Restarts'
 
@@ -264,9 +269,9 @@ location of the Android SDK:
 1. In Preferences->Plugins, enable **Android Support** if you haven't already.
 1. Right-click the **android** folder in the Project view, and select **Open
 Module Settings**.
-1. In **Sources** tab, locate the **Language level** field, and select level '8'
+1. In the **Sources** tab, locate the **Language level** field, and select level '8'
 or later.
-1. In **Dependencies** tab, locate the **Module SDK** field, and select an
+1. In the **Dependencies** tab, locate the **Module SDK** field, and select an
 Android SDK. If no SDK is listed, click **New...** and specify the location of
 the Android SDK. Make sure to select an Android SDK matching the one used by
 Flutter (as reported by `flutter doctor`).
@@ -276,33 +281,36 @@ Flutter (as reported by `flutter doctor`).
 
 Please checkout these 'cheat sheets':
 
-  * [Flutter IDE cheat sheet, MacOS version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-  * [Flutter IDE cheat sheet, Windows & Linux version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+  * [Flutter IDE cheat sheet, MacOS
+    version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+  * [Flutter IDE cheat sheet, Windows & Linux
+    version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
 ### Known issues and feedback
 
 Important known issues that may impact your experience are documented in the
-[Flutter plugin README](https://github.com/flutter/flutter-intellij/blob/master/README.md) file.
+[Flutter plugin
+README](https://github.com/flutter/flutter-intellij/blob/master/README.md) file.
 
 All known bugs are tracked in the issue trackers:
 
   * Flutter plugin: [GitHub issue
-   tracker](https://github.com/flutter/flutter-intellij/issues).
+    tracker](https://github.com/flutter/flutter-intellij/issues).
   * Dart plugin: [JetBrains
-   YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
+    YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
-to filing new issues, please:
+to filing new issues:
 
-  * do a quick search in the issue trackers to see if the issue is already
-   tracked.
-  * make sure you have [updated](#updating) to the most recent version of the
-   plugin.
+  * Do a quick search in the issue trackers to see if the issue is already
+    tracked.
+  * Make sure you have [updated](#updating) to the most recent version of the
+    plugin.
 
-When filing new issues, please include the output of [`flutter
-doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
+When filing new issues, include the output of [`flutter
+doctor`](/bug-reports#provide-some-flutter-diagnostics).
 
 </div>
 
