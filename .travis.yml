@@ -19,7 +19,7 @@ env:
   matrix:
     - TASK="./tool/check-examples.sh"
     # SKIP link checking until we can get linkcheck running
-    # - TASK="rake build_and_checklinks"
+    - TASK="bundle exec jekyll build"
 
 before_install:
   - rvm install 2.4.3
