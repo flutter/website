@@ -35,7 +35,7 @@ all of the sample apps.
    </a>
     <div class="col-lg-9">
       <p>
-        A typcial AppBar with a title, actions, and an overflow dropdown menu.
+        A typical AppBar with a title, actions, and an overflow dropdown menu.
       </p>
       <p>
         This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
