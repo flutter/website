@@ -1,5 +1,6 @@
 ---
 title: Developing Packages & Plugins
+description: How to write packages and plugins for Flutter.
 ---
 
 * TOC
@@ -47,18 +48,18 @@ specialized content:
 * `lib/hello.dart`:
    - The Dart code for the package.
 * `test/hello_test.dart`:
-   - The [unit tests](https://flutter.io/testing/#unit-testing) for the package.
+   - The [unit tests](/testing#unit-testing) for the package.
 
 ### Step 2: Implement the package
 
 For pure Dart packages, simply add the functionality inside the main
 `lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-To test the package, add [unit tests](https://flutter.io/testing/#unit-testing)
+To test the package, add [unit tests](/testing#unit-testing)
 in a `test` directory.
 
-For additional details on how to organize the package contents, see the [Dart
-library
+For additional details on how to organize the package contents, see the
+[Dart library
 package](https://www.dartlang.org/guides/libraries/create-library-packages)
 documentation.
 
@@ -69,7 +70,7 @@ need to develop a plugin package. A plugin package is a specialized version of a
 Dart package, that in addition to the content described above also contains
 platform-specific implementations written for Android (Java or Kotlin code), for
 iOS (Objective-C or Swift code), or for both. The API is connected to the
-platform-specific implementation(s) using [platform channels](/platform-channels/).
+platform-specific implementation(s) using [platform channels](/platform-channels).
 
 ### Step 1: Create the package
 
@@ -112,7 +113,7 @@ experience.
 #### Step 2a: Define the package API (.dart)
 
 The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in your favorite [Flutter editor](/get-started/editor/). Locate the file
+folder in your favorite [Flutter editor](/get-started/editor). Locate the file
 `lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
@@ -159,7 +160,7 @@ You can run the example app by pressing the &#9654; button.
 #### Step 2d: Connect the API and the platform code
 
 Finally, you need to connect the API written in Dart code with the platform-specific
-implementations. This is done using [platform channels](/platform-channels/).
+implementations. This is done using [platform channels](/platform-channels).
 
 ## Adding documentation
 
@@ -173,8 +174,8 @@ It is recommended practice to add the following documentation to all packages:
 ### API documentation
 
 When you publish a package, API documentation is automatically generated and
-published to dartdocs.org, see for example the
-[device_info docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
+published to dartdocs.org, see for example the [device_info
+docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
@@ -194,12 +195,14 @@ If you wish to generate API documentation locally on your developement machine, 
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
-For tips on how to write API documentation, see [Effective Dart: Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
+For tips on how to write API documentation, see [Effective Dart:
+Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
 
 ## Publishing packages {#publish}
 
-Once you have implemented a package, you can publish it on
-[Pub](https://pub.dartlang.org/), so that other developers can easily use it.
+Once you have implemented a package, you can publish it on the
+[Package site](https://pub.dartlang.org/), so that other developers can
+easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 `CHANGELOG.md` files to make sure their content is complete and correct.
@@ -215,7 +218,9 @@ Finally, run the actual publish command:
 flutter packages pub publish
 {% endcommandline %}
 
-For details on publishing, see the [Pub publishing docs](https://www.dartlang.org/tools/pub/publishing).
+For details on publishing, see the
+[publishing docs](https://www.dartlang.org/tools/pub/publishing).
+for the Package site.
 
 ## Handling package interdependencies {#dependencies}
 
@@ -267,7 +272,8 @@ at `hello/ios/Classes`.
 
 Suppose you want to use `some_package` and `other_package` in your package `hello`, and both of these depend
 on `url_launcher`, but in different versions. Then we have a potential conflict. The best way to avoid this
-is for package authors to use [version ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
+is for package authors to use [version
+ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
 rather than specific versions when specifying dependencies.
 
 ```yaml
@@ -278,15 +284,18 @@ dependencies:
 
 If `some_package` declares the dependencies above and `other_package` declares a compatible  `url_launcher`
 dependency like `'0.4.5'` or `^0.4.0`, `pub` will be able to resolve the issue automatically. Similar
-remarks apply to plugin packages' platform-specific dependencies on [Gradle modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
-and/or [Cocoa pods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
+remarks apply to plugin packages' platform-specific dependencies on [Gradle
+modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
+and/or [CocoaPods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
 
-Even if `some_package` and `other_package` declare incompatible versions for `url_launcher`, it may still
-be that they actually use `url_launcher` in compatible ways. Then the conflict can be dealt with by adding
-a dependency override declaration to the `pubspec.yaml` file in `hello`, forcing the use of a particular
-version:
+Even if `some_package` and `other_package` declare incompatible versions for
+`url_launcher`, it may still be that they actually use `url_launcher` in
+compatible ways. Then the conflict can be dealt with by adding
+a dependency override declaration to the `pubspec.yaml` file in `hello`,
+forcing the use of a particular version.
 
 Forcing the use of `url_launcher` version `0.4.3` in `hello/pubspec.yaml`:
+
 ```yaml
 dependencies:
   some_package:
@@ -295,10 +304,12 @@ dependency_overrides:
   url_launcher: '0.4.3'
 ```
 
-If the conflicting dependency is not itself a package, but an Android-specific library like `guava`,
-the dependency override declaration must be added to Gradle build logic instead.
+If the conflicting dependency is not itself a package,
+but an Android-specific library like `guava`, the dependency override
+declaration must be added to Gradle build logic instead.
 
 Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
+
 ```groovy
 configurations.all {
     resolutionStrategy {
@@ -307,4 +318,4 @@ configurations.all {
 }
 ```
 
-Cocoapods does not currently offer dependency override functionality.
+CocoaPods does not currently offer dependency override functionality.

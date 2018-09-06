@@ -1,6 +1,6 @@
 ---
-layout: tutorial
 title: Building Layouts in Flutter
+description: Learn how Flutter's layout mechanism works and how to build a layout.
 ---
 
 <div class="whats-the-point" markdown="1">
@@ -1635,7 +1635,7 @@ The following resources may help when writing layout code.
 
 * [Widget Overview](/widgets)<br>
   Describes many of the widgets available in Flutter.
-* [HTML/CSS Analogs in Flutter](/web-analogs)<br>
+* [HTML/CSS Analogs in Flutter](/get-started/flutter-for/web-devs)<br>
   For those familiar with web programming, this page maps HTML/CSS functionality
   to Flutter features.
 * [Flutter

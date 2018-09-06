@@ -1,5 +1,6 @@
 ---
 title: Using Packages
+description: Learn how to use packages in your Flutter app.
 ---
 
 Flutter supports using shared packages contributed by other developers to the
@@ -7,17 +8,18 @@ Flutter and Dart ecosystems. This allows you to quickly build your app without
 having to develop everything from scratch.
 
 Existing packages enable many use cases, for example, making network requests
-([`http`](/cookbook/networking/fetch-data/)), custom navigation/route handling
+([`http`](/cookbook/networking/fetch-data)), custom navigation/route handling
 ([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
 APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
 [`battery`](https://pub.dartlang.org/packages/battery)), and using third-party
 platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
-If you are looking to develop a new package, please see [developing packages](/developing-packages/).
+If you are looking to develop a new package, please see
+[developing packages](/developing-packages).
 
 If you are looking to add assets, images, or fonts, whether stored in files or
-packages, please see [Assets & Images](https://flutter.io/assets-and-images/).
+packages, please see [Assets & Images](/assets-and-images).
 
 * TOC
 {:toc}
@@ -26,11 +28,12 @@ packages, please see [Assets & Images](https://flutter.io/assets-and-images/).
 
 ### Searching for packages
 
-Packages are published to the *[Pub](https://pub.dartlang.org)* package repository.
+Packages are published to the *[Package](https://pub.dartlang.org)* site.
 
-The [Flutter landing page](https://pub.dartlang.org/flutter/) displays
-top packages that are compatible with Flutter (i.e., that declare dependencies
-generally compatible with Flutter), and supports searching among all published packages.
+The [Flutter landing page](https://pub.dartlang.org/flutter/) on
+the Package site displays top packages that are compatible with Flutter
+(those that declare dependencies generally compatible with Flutter),
+and supports searching among all published packages.
 
 ### Adding a package dependency to an app
 
@@ -43,16 +46,20 @@ To add a package 'css_colors' to an app:
 1. Install it
    * From the terminal: Run `flutter packages get`<br/>
    **OR**
-   * From Android Studio/IntelliJ: Click 'Packages Get' in the action ribbon at the top of `pubspec.yaml`
-   * From VS Code: Click 'Get Packages' located in right side of the action ribbon at the top of `pubspec.yaml`
+   * From Android Studio/IntelliJ: Click 'Packages Get' in the action
+     ribbon at the top of `pubspec.yaml`
+   * From VS Code: Click 'Get Packages' located in right side of the action
+     ribbon at the top of `pubspec.yaml`
 
 1. Import it
    * Add a corresponding `import` statement in your Dart code.
 
 1. Stop and restart the app, if necessary
-   * If the package brings platform-specific code (Java/Kotlin for Android, Swift/Objective-C for iOS), that code
-     must be built into your app. Hot reload and hot restart do this only for the Dart code of the package, so you
-     may have to do a full restart of the app to avoid errors like `MissingPluginException` when using the package.
+   * If the package brings platform-specific code (Java/Kotlin for Android,
+     Swift/Objective-C for iOS), that code must be built into your app.
+     Hot reload and hot restart do this only for the Dart code of the
+     package, so you may have to do a full restart of the app to avoid
+     errors like `MissingPluginException` when using the package.
 
 The
 ['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
@@ -62,16 +69,17 @@ For a complete example, see [CSS Colors example](#css-example) below.
 
 ## Developing new packages
 
-Should a package not be available for your specific use case, you can [develop new
-custom packages](https://flutter.io/developing-packages/).
+Should a package not be available for your specific use case, you can
+[develop new custom packages](/developing-packages).
 
 ## Managing package dependencies & versions
 
 ### Package versions
 
-All packages have a version number, specified in their `pubspec.yaml` file. Pub
-displays the current version of a package next to it's name (for example, see
-the [url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
+All packages have a version number, specified in their `pubspec.yaml` file.
+The current version of a package is displayed next to its name (for example,
+see the
+[url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
 well as a list of all prior versions ([url_launcher
 versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
 
@@ -86,14 +94,17 @@ specifying a version range using one of the following formats:
     url_launcher: '>=0.1.2 <0.2.0'
   ```
 
-* Range constraint with [*caret syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax):
-  Similar to a regular range constraints
+* Range constraint with [*caret
+  syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax)
+  is similar to regular range constraints:
+
   ```
   dependencies:
     collection: '^0.1.2'
   ```
 
-For additional details, see the [Pub versioning guide](https://www.dartlang.org/tools/pub/versioning).
+For additional details, see the [Pub versioning
+guide](https://www.dartlang.org/tools/pub/versioning).
 
 ### Updating package dependencies
 
@@ -143,7 +154,7 @@ additional dependency options are avaialble:
     package1:
       git:
         url: git://github.com/flutter/packages.git
-        path: packages/package1        
+        path: packages/package1
   ```
 
   Finally, you can use the `ref` argument to pin the dependency to a specific git commit,
@@ -207,15 +218,16 @@ class DemoPage extends StatelessWidget {
 ```
 
 1. Run the app. When you click the 'Show Flutter homepage' you should see the
-phone's default browser open, and the Flutter homepage appear.
+   phone's default browser open, and the Flutter homepage appear.
 
 
 ### Example: Using the URL Launcher package to launch the browser {#url-example}
 
-The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin package
-enables you to open the default browser on the mobile platform to display a
-given URL. It demonstrates how packages may also contain platform-specific code
-(we call these packages 'plugins'). It is supported on both Android and iOS.
+The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
+package enables you to open the default browser on the mobile platform to
+display a given URL. It demonstrates how packages may also contain
+platform-specific code (we call these packages 'plugins').
+It is supported on both Android and iOS.
 
 To use this plugin:
 
@@ -236,7 +248,8 @@ To use this plugin:
      url_launcher: ^0.4.1
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
+1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+   IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
 
@@ -276,4 +289,7 @@ class DemoPage extends StatelessWidget {
 }
 ```
 
-1. Run the app (or stop and restart it, if you already had it running before adding the plugin). When you click the 'Show Flutter homepage' you should see the phone's default browser open, and the Flutter homepage appear.
+1. Run the app (or stop and restart it, if you already had it running
+   before adding the plugin). When you click the 'Show Flutter homepage'
+   you should see the phone's default browser open, and the Flutter
+   homepage appear.

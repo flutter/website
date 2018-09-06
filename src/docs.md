@@ -45,10 +45,10 @@ here are some next steps.
   Learn how to create layouts in Flutter, where everything is
   a widget.
 
-* [Adding Interactivity to Your Flutter App](/tutorials/interactive/)<br>
+* [Adding Interactivity to Your Flutter App](/tutorials/interactive)<br>
   Learn how to add a stateful widget to your app.
 
-* [A Tour of the Flutter Widget Framework](/widgets-intro/)<br>
+* [A Tour of the Flutter Widget Framework](/widgets-intro)<br>
   Learn more about Flutter's react-style framework.
 
 &nbsp;
@@ -89,7 +89,7 @@ Once you’ve mastered the basics, try these pages.
 
 Dive deeper into topics that interest you.
 
-* [Flutter Widget Inspector](/inspector)<br>
+* [Flutter Widget Inspector](/tools/inspector)<br>
   How to use the widget inspector, a powerful tool that allows
   you to explore widget trees, disable the "DEBUG"
   banner, display the performance overlay, and much more.

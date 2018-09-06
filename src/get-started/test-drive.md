@@ -38,7 +38,7 @@ In the project directory, the code for your app is in `lib/main.dart`.
 ## Run the app
 
    1. Locate the main Android Studio toolbar:<br>
-      ![Main IntelliJ toolbar](/images/intellij/main-toolbar.png)
+      ![Main IntelliJ toolbar](/tools/images/main-toolbar.png)
    1. In the **target selector**, select an Android device for running the app.
       If none are listed as available, select **Tools> Android > AVD Manager** and
       create one there. For details, see [Managing

@@ -481,7 +481,7 @@ display.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a “screen” or “page” of an app, and
-a `Navigator` is a [widget](technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/technical-overview#everythings-a-widget)
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
 `UINavigationController`, in that it can `push()` and `pop()` routes depending
@@ -1181,7 +1181,7 @@ Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
 weren’t available to Flutter, as they lived in separate folders.
 
-## What is the equivalent of Cocoapods? How do I add dependencies?
+## What is the equivalent of CocoaPods? How do I add dependencies?
 
 In iOS, you add dependencies by adding to your `Podfile`. Flutter uses Dart’s
 build system and the Pub package manager to handle dependencies. The tools

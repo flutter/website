@@ -650,7 +650,7 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget](technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/technical-overview#everythings-a-widget)
 that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the
@@ -690,7 +690,7 @@ moves to that route. Popping a route from the stack, returns to the previous rou
 is done by `await`ing on the `Future` returned by `push()`.
 
 `Async`/`await` is very similar to the .NET implementation and is explained in more detail
-in [Async UI](/get-started/flutter-for/xamarin-forms-dev#async-ui).
+in [Async UI](#async-ui).
 
 For example, to start a `location` route that lets the user select their
 location, you might do the following:

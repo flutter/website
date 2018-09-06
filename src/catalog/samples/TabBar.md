@@ -1,8 +1,11 @@
 ---
-title: DefaultTabController Sample Apps
+title: TabBar Sample Apps
+description: Examples that use TabBars.
 ---
 
-All of the sample apps listed here use the Flutter DefaultTabController class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.
+All of the sample apps listed here use the Flutter TabBar class in
+an interesting way. The [Sample App Catalog](/catalog/samples) page lists
+all of the sample apps.
 
 <div class="container-fluid">
   <div class="lavish-table-row-mb">
@@ -23,5 +26,4 @@ All of the sample apps listed here use the Flutter DefaultTabController class in
       </p>
     </div>
   </div>
-
 </div>

@@ -1,10 +1,18 @@
 ---
 title: Sample App Catalog
+description: A list of samples that demonstrate some common mobile design patterns.
 ---
 
-This catalog lists applications that demonstrate how to implement common mobile design patterns with Flutter. Each sample demonstrates how a few Flutter widgets can be put together to implement a meaningful user interface. The samples are short - just one Dart file - but they're complete applications. They should be easy to try out and tweak with your favorite IDE/code editor.
+This catalog lists applications that demonstrate how to implement common
+mobile design patterns with Flutter. Each sample demonstrates how a few
+Flutter widgets can be put together to implement a meaningful user interface.
+The samples are short&mdash;just one Dart file&mdash;but they're complete
+applications. They should be easy to try out and tweak with your favorite
+IDE/code editor.
 
-If there are other sample apps that you'd like to see we'd appreciate hearing from you on our [Gitter channel](https://gitter.im/flutter/flutter) or [mailing list](https://groups.google.com/d/forum/flutter-dev).
+If there are other sample apps that you'd like to see, let us know on our
+[Gitter channel](https://gitter.im/flutter/flutter) or
+[mailing list](https://groups.google.com/d/forum/flutter-dev).
 
 ---
 
@@ -17,7 +25,7 @@ If there are other sample apps that you'd like to see we'd appreciate hearing fr
    </a>
     <div class="col-lg-9">
       <p>
-        An AnimatedList that displays a list of cards which stay
+        An AnimatedList that displays a list of cards that stay
 in sync with an app-specific ListModel. When an item is added to or removed
 from the model, the corresponding card animates in or out of view.
       </p>
