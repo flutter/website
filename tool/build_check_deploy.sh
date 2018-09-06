@@ -1,15 +1,19 @@
 #!/bin/bash
+#
+# FIXME(chalin): this script really needs to be split into multiple scripts.
 
 # Fast fail the script on failures.
 set -e
 
 BUILD=1
+CHECK_CODE=1
 CHECK_LINKS=1
 PUB_CMD="get"
 
 while [[ "$1" == -* ]]; do
   case "$1" in
     --no-build) BUILD=; shift;;
+    --no-check-code)  CHECK_CODE=; shift;;
     --no-check-links) CHECK_LINKS=; shift;;
     --no-get)   PUB_CMD=""; shift;;
     --up*)      PUB_CMD="upgrade"; shift;;
@@ -130,17 +134,21 @@ if [[ -n $PUB_CMD ]]; then
   done
 fi
 
-echo "ANALYZING _includes/code/*:"
-"$flutter" analyze --no-current-package src/_includes/code/
+if [[ -n $CHECK_CODE ]]; then
+  echo "ANALYZING _includes/code/*:"
+  "$flutter" analyze --no-current-package src/_includes/code/
 
-echo "EXTRACTING code snippets from the markdown:"
-"$dart" --preview-dart-2 tool/extract.dart
+  echo "EXTRACTING code snippets from the markdown:"
+  "$dart" --preview-dart-2 tool/extract.dart
 
-echo "ANALYZING extracted code snippets:"
-"$flutter" analyze --no-current-package example.g/
+  echo "ANALYZING extracted code snippets:"
+  "$flutter" analyze --no-current-package example.g/
 
-echo "DARTFMT check of extracted code snippets:"
-check_formatting example.g/*.dart
+  echo "DARTFMT check of extracted code snippets:"
+  check_formatting example.g/*.dart
+else
+  echo "SKIPPING: code checks"
+fi
 
 if [[ -n $BUILD ]]; then
   echo "BUILDING site:"

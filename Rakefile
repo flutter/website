@@ -1,7 +1,10 @@
 require 'html-proofer'
 
-task :build_and_checklinks do
+task :build do
   sh "bundle exec jekyll build"
+end
+
+task :checklinks do
   options = {
     :log_level => :info,
     :empty_alt_ignore => true,
@@ -24,4 +27,3 @@ task :build_and_checklinks do
   }
   HTMLProofer.check_directory("./_site", options).run
 end
-
