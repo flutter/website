@@ -82,7 +82,7 @@ description: >
     </p>
 
     <div class="hot-reload-gif-container">
-        <img src="/images/intellij/hot-reload.gif" class="hot-reload-gif" alt="Make a change in your code, and your app is changed instantly.">
+        <img src="/tools/images/hot-reload.gif" class="hot-reload-gif" alt="Make a change in your code, and your app is changed instantly.">
     </div>
 </section>
 

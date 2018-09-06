@@ -1,5 +1,6 @@
 ---
 title: Using Hot Reload
+description: How to speed up development using Flutter's hot reload feature.
 ---
 
 * TOC
@@ -16,19 +17,20 @@ of your changes.
 
 To hot reload a Flutter app:
 
-1.  Run the app from a supported [Flutter editor](/get-started/editor/)
-or a terminal window. Either a physical or virtual device can be the target. Only
-Flutter apps in debug mode can be hot reloaded.
-1.  Modify one of the Dart files in your project. Most types of code changes can
-be hot reloaded; for a list of changes that require a hot restart, see
-[Limitations](#limitations).
-1.  If you're working in an IDE/editor that supports Flutter's IDE tools,
-select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the toolbar:
+1. Run the app from a supported [Flutter editor](/get-started/editor)
+   or a terminal window. Either a physical or virtual device can be the target.
+   Only Flutter apps in debug mode can be hot reloaded.
+1. Modify one of the Dart files in your project. Most types of code changes can
+   be hot reloaded; for a list of changes that require a hot restart, see
+   [Limitations](#limitations).
+1. If you're working in an IDE/editor that supports Flutter's IDE tools,
+   select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the
+   toolbar:
 
-   ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
+   ![alt_text](/tools/images/hot-reload.gif "image_tooltip")
 
-   If you're running the app at the command line using `flutter run`, type `r`
-   in the terminal window.
+   If you're running the app at the command line using `flutter run`,
+   enter `r` in the terminal window.
 
 After a successful hot reload operation, you'll see a message in the console
 similar to:
@@ -37,10 +39,10 @@ similar to:
 Performing hot reload...
 Reloaded 1 of 448 libraries in 2,777ms.
 ```
-The app is updated to reflect your change, and the current state of the app
-— the value of the counter variable in the above example — is preserved. Your
-app continues to execute from where it was prior to running the hot reload
-command. The code is updated and execution continues.
+The app updates to reflect your change, and the current state of the
+app&mdash;the value of the counter variable in the above example&mdash;is
+preserved. Your app continues to execute from where it was prior to running
+the hot reload command. The code updates and execution continues.
 
 A code change has a visible effect only if the modified Dart code is run again
 after the change. Specifically, a hot reload causes all the existing widgets to
@@ -116,13 +118,14 @@ and then hot reload, the console displays an assertion failure similar to:
 myWidget is not a subtype of StatelessWidget
 ```
 
-In these situations, a hot restart is needed to see the updated app.
+In these situations, a hot restart is required to see the updated app.
 
 ## Recent code change is included but app state is excluded
 
-In Dart, [static fields are lazily initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static
+In Dart, [static fields are lazily
+initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static
 field is read, it is set to whatever value its initializer was evaluated to.
-Global variables and static fields are treated as state, and thus not
+Global variables and static fields are treated as state, and are therefore not
 reinitialized during hot reload.
 
 If you change initializers of global variables and static fields, a full
@@ -157,7 +160,7 @@ void onClick(){
   print(bar);
 }
 ```
-running the app for the first time prints `1` and `1`. Then if you make the
+running the app for the first time prints `1` and `1`. Then, if you make the
 following change:
 
 ```
@@ -193,7 +196,8 @@ or:
 get bar => foo;
 ```
 
-Read more about the [differences between the `const` and `final` keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart.
+Read more about the [differences between the `const` and `final`
+keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart.
 
 ## Recent UI change is excluded
 

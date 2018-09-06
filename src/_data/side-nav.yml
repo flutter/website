@@ -101,12 +101,15 @@
   - title: Tools
     children:
     - title: Using hot reload
-      permalink: /hot-reload
+      permalink: /tools/hot-reload
     - title: Using an IDE
-      permalink: xxx
-    - title: "Format Flutter code (??)"
+      permalink: /tools/using-ide
+    - title: Using an IDE
+      permalink: /tools/using-ide/vscode
+    - title: Format Flutter code
+      permalink: /tools/formatting
     - title: Widget inspector
-      permalink: /inspector
+      permalink: /tools/inspector
 
 - title: "Testing & Optimization"
   children:
