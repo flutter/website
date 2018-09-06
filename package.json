@@ -1,0 +1,14 @@
+{
+  "name": "www.dartlang.org",
+  "version": "0.0.0",
+  "private": true,
+  "description": "www.dartlang.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dart-lang/site-www.git"
+  },
+  "devDependencies": {
+    "firebase-tools": "4.0.3",
+    "superstatic": "^5.0.2"
+  }
+}
