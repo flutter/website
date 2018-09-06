@@ -15,13 +15,15 @@
   - title: Coming from another platform?
     children:
     - title: Flutter for Android devs
-      permalink: /flutter-for-android
+      permalink: /get-started/flutter-for/android-devs
     - title: Flutter for iOS devs
-      permalink: /flutter-for-ios
+      permalink: /get-started/flutter-for/ios-devs
     - title: Flutter for React Native devs
-      permalink: /flutter-for-react-native
+      permalink: /get-started/flutter-for/react-native-devs
+    - title: Flutter for Web devs
+      permalink: /get-started/flutter-for/web-devs
     - title: Flutter for Xamarin.Forms devs
-      permalink: /flutter-for-xamarin-forms
+      permalink: /get-started/flutter-for/xamarin-forms-devs
 
 - title: "Samples & Codelabs"
   children:
@@ -92,7 +94,7 @@
     children:
     - title: Using packages
       permalink: /using-packages
-    - title: Developing packages and plugins
+    - title: "Developing packages & plugins"
       permalink: /developing-packages
     - title: Package site
       permalink: http://pub.dartlang.org/flutter

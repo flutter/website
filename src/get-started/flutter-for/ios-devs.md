@@ -1,5 +1,6 @@
 ---
 title: Flutter for iOS Developers
+description: Learn how to apply iOS developer knowledge when building Flutter apps.
 ---
 
 This document is for iOS developers looking to apply their existing iOS
@@ -52,7 +53,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the [Cupertino widgets](https://flutter.io/widgets/cupertino/)
+On iOS, you can use the [Cupertino widgets](/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -196,7 +197,7 @@ You can add padding to any widget, which mimics the functionality of
 constraints in iOS.
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout/).
+catalog](/widgets/layout).
 
 ## How do I add or remove a component from my layout?
 
@@ -366,9 +367,9 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation/),
+[Animation & Motion widgets](/widgets/animation),
 the [Animations tutorial](/tutorials/animation),
-and the [Animations overview](/animations/).
+and the [Animations overview](/animations).
 
 ## How do I draw to the screen?
 
@@ -437,7 +438,7 @@ wrap a widget in an Opacity widget to accomplish this.
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
 In Flutter, build a custom widget by
-[composing](/technical-overview/#everythings-a-widget) smaller widgets
+[composing](/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 
 For example, how do you build a `CustomButton` that takes a label in
@@ -480,7 +481,7 @@ display.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a “screen” or “page” of an app, and
-a `Navigator` is a [widget](technical-overview/#everythings-a-widget)
+a `Navigator` is a [widget](technical-overview#everythings-a-widget)
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
 `UINavigationController`, in that it can `push()` and `pop()` routes depending
@@ -556,7 +557,7 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 ```
 
 If that doesn't do what you want, you can create your own
-[platform channel](/platform-channels/) to invoke arbitrary iOS code.
+[platform channel](/platform-channels) to invoke arbitrary iOS code.
 
 # Threading & asynchronicity
 
@@ -1554,7 +1555,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more detailed docs on how to lay out widgets in Flutter,
-see the [layout tutorial](/widgets/layout/).
+see the [layout tutorial](/widgets/layout).
 
 # Gesture detection and touch event handling
 
@@ -1705,7 +1706,7 @@ On iOS, you can use the
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
-[Cupertino widgets gallery](/widgets/cupertino/).
+[Cupertino widgets gallery](/widgets/cupertino).
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
@@ -1852,8 +1853,8 @@ class _MyFormState extends State<MyForm> {
 {% endprettify %}
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field](/cookbook/forms/retrieve-input/),
-from the [Flutter Cookbook](https://flutter.io/cookbook/).
+[Retrieve the value of a text field](/cookbook/forms/retrieve-input),
+from the [Flutter Cookbook](/cookbook).
 
 ## What is the equivalent of a placeholder in a text field?
 
@@ -1956,7 +1957,7 @@ app is still hosted in a native app's `ViewController` as a view, but you don't
 have direct access to the `ViewController` itself, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels](/platform-channels/),
+native code you have. Flutter provides [platform channels](/platform-channels),
 that communicate and exchange data with the `ViewController` that
 hosts your Flutter view. Platform channels are essentially an asynchronous messaging
 mechanism that bridge the Dart code with the host `ViewController` and
@@ -1964,7 +1965,7 @@ the iOS framework it runs on. You can use platform channels to execute a method 
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/using-packages/) that encapsulate the native and
+[plugins](/using-packages) that encapsulate the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
 write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
@@ -1972,8 +1973,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/developing-packages/)
-and [publish it on Pub](/developing-packages/#publish).
+[write your own](/developing-packages)
+and [publish it on Pub](/developing-packages#publish).
 
 ## How do I access the GPS sensor?
 
@@ -2011,7 +2012,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/developing-packages/) page.
+[developing packages and plugins](/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

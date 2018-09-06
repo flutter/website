@@ -1,6 +1,8 @@
 ---
 title: Flutter for Android Developers
+description: Learn how to apply Android developer knowledge when building Flutter apps.
 ---
+
 This document is meant for Android developers looking to apply their
 existing Android knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the Android framework then you can use this document as a
@@ -49,7 +51,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](https://flutter.io/widgets/cupertino/)
+For example, on iOS, you can use the [Cupertino widgets](/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -193,7 +195,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout/).
+catalog](/widgets/layout).
 
 ## How do I add or remove a component from my layout?
 
@@ -361,9 +363,9 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation/),
+[Animation & Motion widgets](/widgets/animation),
 the [Animations tutorial](/tutorials/animation),
-and the [Animations overview](/animations/).
+and the [Animations overview](/animations).
 
 ## How do I use a `Canvas` to draw/paint?
 
@@ -435,7 +437,7 @@ In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/technical-overview/#everythings-a-widget) smaller widgets
+[composing](/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom
 `ViewGroup` in Android, where all the building blocks are already existing, but
@@ -527,7 +529,7 @@ as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 
 To learn how to build a native platform integration, see
-[Developing Packages and Plugins](/developing-packages/).
+[Developing Packages and Plugins](/developing-packages).
 
 ## How do I handle incoming intents from external applications in Flutter?
 
@@ -1305,6 +1307,11 @@ are a way to modularize your code, compose sophisticated user interfaces for
 larger screens, and help scale your application UI. In Flutter, both of these
 concepts fall under the umbrella of `Widget`s.
 
+To learn more about the UI for building Activities and Fragements, see
+the community-contributed medium article,
+[Flutter For Android Developers : How to design an Activity UI in
+Flutter](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
+
 As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
 section, screens in Flutter are represented by `Widget`s since everything is
 a widget in Flutter. You use a `Navigator` to move between different `Route`s
@@ -1438,7 +1445,9 @@ children.
   }
 {% endprettify %}
 
-To learn more about building linear layouts, see the medium article [Flutter For Android Developers : How to design LinearLayout in Flutter?](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
+To learn more about building linear layouts, see the community contributed medium
+article [Flutter For Android Developers : How to design LinearLayout in
+Flutter?](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
 
 ## What is the equivalent of a RelativeLayout?
 
@@ -1974,8 +1983,8 @@ customize many parameters, such as:
 # Form input
 
 For more information on using Forms, see
-[Retrieve the value of a text field](/cookbook/forms/retrieve-input/),
-from the [Flutter Cookbook](https://flutter.io/cookbook/).
+[Retrieve the value of a text field](/cookbook/forms/retrieve-input),
+from the [Flutter Cookbook](/cookbook).
 
 ## What is the equivalent of a "hint" on an Input?
 
@@ -2110,7 +2119,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/developing-packages/) page.
+[developing packages and plugins](/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

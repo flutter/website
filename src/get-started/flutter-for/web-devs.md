@@ -1,5 +1,6 @@
 ---
 title: Flutter for Web (HTML/CSS) Developers
+description: Learn how to apply Web developer knowledge when building Flutter apps.
 css-old: [two_column.css]
 ---
 
@@ -94,7 +95,7 @@ The CSS examples use the hex color equivalents to the Material color palette.
 </div>
 
 .greybox {
-[[highlight]]      background-color: #e0e0e0; [[/highlight]] /* grey 300 */
+[[highlight]]      background-color: #e0e0e0;[[/highlight]]  /* grey 300 */
       width: 320px;
       height: 240px;
       font: 900 24px Roboto;

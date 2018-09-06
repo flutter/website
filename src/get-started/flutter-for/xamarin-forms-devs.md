@@ -1,6 +1,8 @@
 ---
 title: Flutter for Xamarin.Forms Developers
+description: Learn how to apply Xamarin.Forms developer knowledge when building Flutter apps.
 ---
+
 This document is meant for Xamarin.Forms developers looking to apply their
 existing knowledge to build mobile apps with Flutter. If you understand
 the fundamentals of the Xamarin.Forms framework then you can use this document as a
@@ -198,7 +200,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](https://flutter.io/widgets/cupertino/)
+For example, on iOS, you can use the [Cupertino widgets](/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -345,7 +347,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout/).
+catalog](/widgets/layout).
 
 ## How do I add or remove an Element from my layout?
 
@@ -525,9 +527,9 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation/),
+[Animation & Motion widgets](/widgets/animation),
 the [Animations tutorial](/tutorials/animation),
-and the [Animations overview](/animations/).
+and the [Animations overview](/animations).
 
 ## How do I draw/paint on the screen?
 
@@ -604,7 +606,7 @@ In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing
 `VisualElement`, to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/technical-overview/#everythings-a-widget) smaller widgets
+[composing](/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom control based off a `Grid` with
 numerous `VisualElement`s added in, while extending with custom logic.
@@ -648,7 +650,7 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget](technical-overview/#everythings-a-widget)
+a `Navigator` is a [widget](technical-overview#everythings-a-widget)
 that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the
@@ -688,7 +690,7 @@ moves to that route. Popping a route from the stack, returns to the previous rou
 is done by `await`ing on the `Future` returned by `push()`.
 
 `Async`/`await` is very similar to the .NET implementation and is explained in more detail
-in [Async UI](/flutter-for-xamarin-forms/#async-ui).
+in [Async UI](/get-started/flutter-for/xamarin-forms-dev#async-ui).
 
 For example, to start a `location` route that lets the user select their
 location, you might do the following:
@@ -1040,7 +1042,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ## How do I make network requests?
 
 In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
-is easy when you use the popular [`http` package](https://pub.dartlang.org/packages/http).
+is easy when you use the popular
+[`http` package](https://pub.dartlang.org/packages/http).
 This abstracts away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
@@ -1251,7 +1254,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 More detailed information can be found in
-[Adding Assets and Images in Flutter](https://flutter.io/assets-and-images/).
+[Adding Assets and Images in Flutter](/assets-and-images).
 
 ## Where do I store strings? How do I handle localization?
 
@@ -1378,8 +1381,8 @@ the user, is not responding to user input, but is running in the background.
 only.
 
 For more details on the meaning of these states, see
-[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
-/AppLifecycleState-class.html).
+[`AppLifecycleStatus`
+documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
 
 # Layouts
 
@@ -1947,8 +1950,10 @@ Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
-[Write your first Flutter app, part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
-and [Write your first Flutter app, part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+[Write your first Flutter app,
+part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
+and [Write your first Flutter app,
+part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
 
 # Working with text
 
@@ -2073,8 +2078,8 @@ class _MyFormState extends State<MyForm> {
 {% endprettify %}
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field](/cookbook/forms/retrieve-input/),
-from the [Flutter Cookbook](https://flutter.io/cookbook/).
+[Retrieve the value of a text field](/cookbook/forms/retrieve-input),
+from the [Flutter Cookbook](/cookbook).
 
 ## What is the equivalent of a "Placeholder" on an Entry?
 
@@ -2197,7 +2202,7 @@ app is still hosted in a native app's `ViewController` or `Activity` as a view,
 but you don't have direct access to this, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels](/platform-channels/),
+native code you have. Flutter provides [platform channels](/platform-channels),
 that communicate and exchange data with the `ViewController` or `Activity` that
 hosts your Flutter view. Platform channels are essentially an asynchronous messaging
 mechanism that bridge the Dart code with the host `ViewController` or `Activity` and
@@ -2205,7 +2210,7 @@ the iOS or Android framework it runs on. You can use platform channels to execut
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/using-packages/) that encapsulate the native and
+[plugins](/using-packages) that encapsulate the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
 write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
@@ -2213,8 +2218,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/developing-packages/)
-and [publish it on Pub](/developing-packages/#publish).
+[write your own](/developing-packages)
+and [publish it on Pub](/developing-packages#publish).
 
 ## How do I access the GPS sensor?
 
@@ -2252,7 +2257,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/developing-packages/) page.
+[developing packages and plugins](/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result
