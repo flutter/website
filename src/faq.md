@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: Commonly asked questions and answers.
+description: Frequently asked questions and answers.
 ---
 
 * Placeholder for TOC
@@ -399,7 +399,7 @@ types of code changes cannot be hot reloaded though:
 * Static field initializers.
 * The `main()` method of the app.
 
-See [Using Hot Reload](/hot-reload) for additional details.
+See [Using Hot Reload](/tools/hot-reload) for additional details.
 
 ### Where can I deploy my Flutter app?
 

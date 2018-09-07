@@ -1,5 +1,6 @@
 ---
 title: ExpansionTile
+description: An example that uses ExpansionTiles.
 ---
 
 ExpansionTiles can used to produce two-level or multi-level lists.
@@ -12,9 +13,9 @@ ExpansionTiles can used to produce two-level or multi-level lists.
           <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/expansion_tile_sample_small.png" alt="Android screenshot" class="img-fluid">
           </div>
-          <div class="panel-footer">
+          <!-- <div class="panel-footer">
             Android screenshot
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -31,7 +32,8 @@ like a scrollable list created with `ListView.builder()`, ExpansionTiles
 can be quite efficient, particularly for Material Design "expand/collapse"
 lists.
 
-Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+Try this app out by creating a new project with `flutter create` and
+replacing the contents of `lib/main.dart` with the following code.
 
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -135,7 +137,9 @@ void main() {
 }
 ```
 
-<h2>See also:</h2>
-- The "expand/collapse" part of the Material Design specification:
-    <https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls>
-- The source code in [examples/catalog/lib/expansion_tile_sample.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/expansion_tile_sample.dart).
+## See also
+
+* The [expand/collapse](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
+  part of the [Material Design](https://material.io) specification:
+* The source code in
+  [examples/catalog/lib/expansion_tile_sample.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/expansion_tile_sample.dart).

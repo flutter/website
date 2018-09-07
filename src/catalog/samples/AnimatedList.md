@@ -1,8 +1,11 @@
 ---
-title: AnimatedListState Sample Apps
+title: AnimatedList Sample Apps
+description: Examples that use AnimatedList.
 ---
 
-All of the sample apps listed here use the Flutter AnimatedListState class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.
+All of the sample apps listed here use the Flutter AnimatedList class in
+an interesting way. The [Sample App Catalog](/catalog/samples) page lists
+all of the sample apps.
 
 <div class="container-fluid">
   <div class="lavish-table-row-mb">
@@ -13,7 +16,7 @@ All of the sample apps listed here use the Flutter AnimatedListState class in an
    </a>
     <div class="col-lg-9">
       <p>
-        An AnimatedList that displays a list of cards which stay
+        An AnimatedList that displays a list of cards that stay
 in sync with an app-specific ListModel. When an item is added to or removed
 from the model, the corresponding card animates in or out of view.
       </p>
@@ -21,9 +24,8 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AnimatedList, AnimatedListState.
       </p>
       <p>
-        <a href="/catalog/samples/animated-list">Learn more</a>.
+        [Animated List example](/catalog/samples/animated-list)
       </p>
     </div>
   </div>
-
 </div>

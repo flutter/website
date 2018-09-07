@@ -238,7 +238,7 @@ Future<Null> getBatteryLevel() async {
             <ul>
                 <li>Interop with mobile OS APIs &amp; SDKs</li>
                 <li>Gradle: Java/Kotlin</li>
-                <li>Cocoapods: ObjC/Swift</li>
+                <li>CocoaPods: ObjC/Swift</li>
             </ul>
         </div>
 

@@ -1,5 +1,6 @@
 ---
 title: Tabbed AppBar
+description: An example that uses a TabBar for its AppBar.
 ---
 
 An AppBar with a TabBar as its bottom widget.
@@ -12,9 +13,9 @@ An AppBar with a TabBar as its bottom widget.
           <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/tabbed_app_bar_small.png" alt="Android screenshot" class="img-fluid">
           </div>
-          <div class="panel-footer">
+          <!-- <div class="panel-footer">
             Android screenshot
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -25,7 +26,8 @@ A TabBar can be used to navigate among the pages displayed in a TabBarView.
 Although a TabBar is an ordinary widget that can appear anywhere, it's most often
 included in the application's AppBar.
 
-Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+Try this app out by creating a new project with `flutter create` and
+replacing the contents of `lib/main.dart` with the following code.
 
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -112,7 +114,9 @@ void main() {
 }
 ```
 
-<h2>See also:</h2>
-- The "Components-Tabs" section of the Material Design specification:
-    <https://material.io/guidelines/components/tabs.html>
-- The source code in [examples/catalog/lib/tabbed_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/tabbed_app_bar.dart).
+## See also
+
+* The [Components-Tabs](https://material.io/guidelines/components/tabs.html)
+  section of the [Material Design](https://material.io) specification:
+* The source code in
+  [examples/catalog/lib/tabbed_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/tabbed_app_bar.dart).

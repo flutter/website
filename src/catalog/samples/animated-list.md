@@ -1,9 +1,10 @@
 ---
 title: AnimatedList
+description: An example that uses AnimatedList.
 ---
 
-An AnimatedList that displays a list of cards which stay
-in sync with an app-specific ListModel. When an item is added to or removed
+An AnimatedList that displays a list of cards that stay in sync
+with an app-specific ListModel. When an item is added to or removed
 from the model, the corresponding card animates in or out of view.
 
 <p>
@@ -14,9 +15,9 @@ from the model, the corresponding card animates in or out of view.
           <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/animated_list_small.png" alt="Android screenshot" class="img-fluid">
           </div>
-          <div class="panel-footer">
+          <!-- <div class="panel-footer">
             Android screenshot
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -30,7 +31,8 @@ that keeps the AnimatedList in sync. The list model has a GlobalKey for
 its animated list. It uses the key to call the insertItem and removeItem
 methods defined by AnimatedListState.
 
-Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+Try this app out by creating a new project with `flutter create`
+and replacing the contents of `lib/main.dart` with the following code.
 
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -242,7 +244,10 @@ void main() {
 }
 ```
 
-<h2>See also:</h2>
-- The "Components-Lists: Controls" section of the Material Design specification:
-    <https://material.io/guidelines/components/lists-controls.html#>
-- The source code in [examples/catalog/lib/animated_list.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/animated_list.dart).
+## See also
+
+* The
+  [Components-Lists: Controls](https://material.io/guidelines/components/lists-controls.html#)
+  section of the [Material Design](https://material.io) specification:
+* The source code in
+  [examples/catalog/lib/animated_list.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/animated_list.dart).

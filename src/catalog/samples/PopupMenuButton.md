@@ -1,8 +1,11 @@
 ---
-title: IconButton Sample Apps
+title: PopupMenuButton Sample Apps
+description: Examples that use PopupMenuButtons.
 ---
 
-All of the sample apps listed here use the Flutter IconButton class in an interesting way. The <a href="/catalog/samples">Sample App Catalog</a> page lists all of the sample apps.
+All of the sample apps listed here use the Flutter PopupMenuButton class
+in an interesting way. The [Sample App Catalog](/catalog/samples) page lists
+all of the sample apps.
 
 <div class="container-fluid">
   <div class="lavish-table-row-mb">
@@ -13,7 +16,7 @@ All of the sample apps listed here use the Flutter IconButton class in an intere
    </a>
     <div class="col-lg-9">
       <p>
-        A typcial AppBar with a title, actions, and an overflow dropdown menu.
+        A typical AppBar with a title, actions, and an overflow dropdown menu.
       </p>
       <p>
         This app features the following classes: AppBar, IconButton, PopupMenuButton, Scaffold.
@@ -23,5 +26,4 @@ All of the sample apps listed here use the Flutter IconButton class in an intere
       </p>
     </div>
   </div>
-
 </div>

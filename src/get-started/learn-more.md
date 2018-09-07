@@ -8,7 +8,7 @@ Learn more about the Flutter framework:
 * [Flutter for Android](/get-started/flutter-for/android-devs)
 * [Flutter for iOS](/get-started/flutter-for/ios-devs)
 * [Flutter for React Native](/get-started/flutter-for/react-native-devs)
-* [Flutter for Xamarin.Forms](/get-startedflutter-for/xamarin-forms-devs)
+* [Flutter for Xamarin.Forms](/get-started/flutter-for/xamarin-forms-devs)
 * [Building Layouts in Flutter](/tutorials/layout) tutorial
 * [Add Interactivity](/tutorials/interactive) tutorial
 * [A Tour of the Flutter Widget Framework](/widgets-intro)

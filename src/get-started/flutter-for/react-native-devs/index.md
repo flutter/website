@@ -19,18 +19,22 @@ questions that are most relevant to your needs.
 
 ## Introduction to Dart for JavaScript Developers
 
-Like React Native, Flutter uses reactive-style views. However, while RN transpiles to native widgets, Flutter compiles all the way to native code. Flutter controls each pixel on the screen, which avoids performance problems caused by the need for a JavaScript bridge.
+Like React Native, Flutter uses reactive-style views. However, while RN
+transpiles to native widgets, Flutter compiles all the way to native code.
+Flutter controls each pixel on the screen, which avoids performance problems
+caused by the need for a JavaScript bridge.
 
 Dart is an easy language to learn and offers the following features:
+
 * Provides an open-source, scalable programming language for building web,
- server, and mobile apps.
+  server, and mobile apps.
 * Provides an object-oriented, single inheritance language that uses a C-style
- syntax that is AOT-compiled into native.
+  syntax that is AOT-compiled into native.
 * Transcompiles optionally into JavaScript.
 * Supports interfaces and abstract classes.
 
 A few examples of the differences between JavaScript and Dart are described
- below.
+below.
 
 ### Entry point
 
@@ -73,7 +77,8 @@ console.log("Hello world!");
 print('Hello world!');
 ```
 
-Try it out in [DartPad](https://dartpad.dartlang.org/cf9e652f77636224d3e37d96dcf238e5).
+Try it out in
+[DartPad](https://dartpad.dartlang.org/cf9e652f77636224d3e37d96dcf238e5).
 
 
 ### Variables
@@ -104,7 +109,8 @@ var otherName = 'Dart'; // Inferred string.
 // Both are acceptable in Dart.
 ```
 
-Try it out in [DartPad](https://dartpad.dartlang.org/3f4625c16e05eec396d6046883739612).
+Try it out in
+[DartPad](https://dartpad.dartlang.org/3f4625c16e05eec396d6046883739612).
 
 For more information, see [Dart's Type
 System](https://www.dartlang.org/guides/language/sound-dart).
@@ -130,7 +136,8 @@ var name; // == null
 int x; // == null
 ```
 
-Try it out in the [DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74e9781a2c7).
+Try it out in
+[DartPad](https://dartpad.dartlang.org/57ec21faa8b6fe2326ffd74e9781a2c7).
 
 For more information, see the documentation on
 [variables](https://www.dartlang.org/guides/language/language-tour#variables).
@@ -203,10 +210,12 @@ For more information, see the documentation on
 ### Asynchronous programming
 #### Futures
 
-Like JavaScript, Dart supports single-threaded execution. In JavaScript, the Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+Like JavaScript, Dart supports single-threaded execution. In JavaScript,
+the Promise object represents the eventual completion (or failure)
+of an asynchronous operation and its resulting value.
 
-
-Whereas Dart uses  [`Future`](https://www.dartlang.org/tutorials/language/futures) objects to handle this.
+Dart uses [`Future`](https://www.dartlang.org/tutorials/language/futures)
+objects to handle this.
 
 <!-- skip -->
 ```JavaScript
@@ -296,7 +305,8 @@ $ create-react-native-app <projectname>
 
 To create an app in Flutter, do one of the following:
 
-* Use the `flutter create` command from the command line. Make sure that the Flutter SDK is in your PATH.
+* Use the `flutter create` command from the command line. Make sure that the
+  Flutter SDK is in your PATH.
 * Use an IDE with the Flutter and Dart plugins installed.
 
 <!-- skip -->
@@ -400,7 +410,8 @@ void main() {
 
 
 
-The following images show the Android and iOS UI for the basic Flutter "Hello world!" app.
+The following images show the Android and iOS UI for the basic Flutter
+"Hello world!" app.
 
 |Android |iOS |
 |:---:|:--:|
@@ -564,7 +575,7 @@ The following screenshots show an example of the reusable CustomCard class.
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-startedflutter-for/react-native-devs/images/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/iOS.png?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -796,7 +807,7 @@ ListView.builder(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/flatlist_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/flatlist_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/flatlist_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/flatlist_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 To learn how to implement an infinite scrolling list, see the
@@ -874,7 +885,7 @@ class _MyCanvasState extends State<MyCanvas> {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-startedflutter-for/react-native-devs/images/canvas_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/canvas_iOS.png?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/canvas_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/canvas_iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -950,7 +961,7 @@ For a complete list, see [Layout Widgets](/widgets/layout).
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/basic_layout_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/basic_layout_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/basic_layout_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/basic_layout_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -992,7 +1003,7 @@ the text using the alignment property and Alignment coordinates.
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/stack_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native/images/stack_iOS.png?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/stack_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/stack_iOS.png?raw=true" style="width:300px;" alt="Loading">|
 ge
 <br/>
 
@@ -1055,7 +1066,7 @@ Center(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/flutterstyling_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/flutter-for/react-native-devs/images/flutterstyling_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/flutterstyling_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/flutterstyling_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -1402,7 +1413,7 @@ class MyStatelessWidget extends StatelessWidget {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/state_change_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/state_change_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/state_change_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/state_change_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -1490,7 +1501,7 @@ CustomCard(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-startedflutter-for/react-native-devs/images/modular_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/modular_iOS.png?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/modular_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/modular_iOS.png?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -2013,7 +2024,7 @@ _getIPAddress() async {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/api_calls_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/api_calls_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/api_calls_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/api_calls_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 
@@ -2411,7 +2422,7 @@ class _LogoFadeState extends State<LogoFade> with TickerProviderStateMixin {
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/flutter_fade_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-startedflutter-for/react-native-devs/images/flutter_fade_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/flutter_fade_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/flutter_fade_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 ### How do I add swipe animation to cards?
@@ -2440,7 +2451,7 @@ child: Dismissible(
 
 |Android|iOS|
 |:---:|:--:|
-|<img src="/get-started/flutter-for/react-native-devs/images/card_swipe_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native/images/card_swipe_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
+|<img src="/get-started/flutter-for/react-native-devs/images/card_swipe_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/card_swipe_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
 
 <br>
 

@@ -1,5 +1,6 @@
 ---
 title: AppBar with a custom bottom widget
+description: An example that uses an AppBar at the bottom of the page.
 ---
 
 Any widget with a PreferredSize can appear at the bottom of an AppBar.
@@ -12,9 +13,9 @@ Any widget with a PreferredSize can appear at the bottom of an AppBar.
           <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/app_bar_bottom_small.png" alt="Android screenshot" class="img-fluid">
           </div>
-          <div class="panel-footer">
+          <!-- <div class="panel-footer">
             Android screenshot
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -27,7 +28,8 @@ TabPageSelector that displays the relative position of the selected page
 in the app's TabBarView. The arrow buttons in the toolbar part of the app
 bar and they select the previous or the next page.
 
-Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+Try this app out by creating a new project with `flutter create` and
+replacing the contents of `lib/main.dart` with the following code.
 
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -156,7 +158,9 @@ void main() {
 }
 ```
 
-<h2>See also:</h2>
-- The "Components-Tabs" section of the Material Design specification:
-    <https://material.io/guidelines/components/tabs.html>
-- The source code in [examples/catalog/lib/app_bar_bottom.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/app_bar_bottom.dart).
+## See also
+
+* The [Components-Tabs](https://material.io/guidelines/components/tabs.html)
+  section of the [Material Design](https://material.io) specification.
+* The source code in
+  [examples/catalog/lib/app_bar_bottom.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/animated_list.dart).

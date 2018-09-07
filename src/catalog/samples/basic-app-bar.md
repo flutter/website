@@ -1,5 +1,6 @@
 ---
 title: AppBar Basics
+description: An example that implements a basic AppBar.
 ---
 
 A typical AppBar with a title, actions, and an overflow dropdown menu.
@@ -12,9 +13,9 @@ A typical AppBar with a title, actions, and an overflow dropdown menu.
           <div class="panel-body">
             <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/basic_app_bar_small.png" alt="Android screenshot" class="img-fluid">
           </div>
-          <div class="panel-footer">
+          <!-- <div class="panel-footer">
             Android screenshot
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -25,7 +26,8 @@ An app that displays one of a half dozen choices with an icon and a title.
 The two most common choices are available as action buttons and the remaining
 choices are included in the overflow dropdow menu.
 
-Try this app out by creating a new project with `flutter create` and replacing the contents of `lib/main.dart` with the code that follows.
+Try this app out by creating a new project with `flutter create` and
+replacing the contents of `lib/main.dart` with the following code.
 
 ```dart
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -139,7 +141,9 @@ void main() {
 }
 ```
 
-<h2>See also:</h2>
-- The "Layout-Structure" section of the Material Design specification:
-    <https://material.io/guidelines/layout/structure.html#structure-app-bar>
-- The source code in [examples/catalog/lib/basic_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/basic_app_bar.dart).
+## See also
+
+* The [Layout-Structure](https://material.io/guidelines/layout/structure.html#structure-app-bar)
+  section of the [Material Design](https://material.io) specification:
+* The source code in
+  [examples/catalog/lib/basic_app_bar.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/basic_app_bar.dart).

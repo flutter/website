@@ -86,7 +86,7 @@
   },
   {
     "name": "Scaffold",
-    "sample": "Scaffold_index",
+    "sample": "Scaffold",
     "description": "Implements the basic Material Design visual layout structure. This class provides APIs for showing drawers, snack bars, and bottom sheets.",
     "categories": [
       "Basics"
@@ -99,7 +99,7 @@
   },
   {
     "name": "Appbar",
-    "sample": "AppBar_index",
+    "sample": "AppBar",
     "description": "A Material Design app bar. An app bar consists of a toolbar and potentially other widgets, such as a TabBar and a FlexibleSpaceBar.",
     "categories": [
       "Basics"
@@ -154,7 +154,7 @@
   },
   {
     "name": "TabBar",
-    "sample": "TabBar_index",
+    "sample": "TabBar",
     "description": "A Material Design widget that displays a horizontal row of tabs.",
     "categories": [],
     "subcategories": [
@@ -165,7 +165,7 @@
   },
   {
     "name": "TabBarView",
-    "sample": "TabBarView_index",
+    "sample": "TabBarView",
     "description": "A page view that displays the widget which corresponds to the currently selected tab. Typically used in conjunction with a TabBar.",
     "categories": [],
     "subcategories": [
@@ -226,7 +226,7 @@
   },
   {
     "name": "IconButton",
-    "sample": "IconButton_index",
+    "sample": "IconButton",
     "description": "An icon button is a picture printed on a Material widget that reacts to touches by filling with color (ink).",
     "categories": [],
     "subcategories": [
@@ -237,7 +237,7 @@
   },
   {
     "name": "PopupMenuButton",
-    "sample": "PopupMenuButton_index",
+    "sample": "PopupMenuButton",
     "description": "Displays a menu when pressed and calls onSelected when the menu is dismissed because an item was selected.",
     "categories": [],
     "subcategories": [
@@ -862,7 +862,7 @@
   },
   {
     "name": "ListView",
-    "sample": "ListView_index",
+    "sample": "ListView",
     "description": "A scrollable, linear list of widgets. ListView is the most commonly used scrolling widget. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.",
     "categories": [
     ],
@@ -1492,7 +1492,7 @@
   },
   {
     "name": "AnimatedListState",
-    "sample": "AnimatedListState_index",
+    "sample": "AnimatedListState",
     "description": "The state for a scrolling container that animates items when they are inserted or removed.",
     "categories": [
       "Animation and Motion"
