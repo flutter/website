@@ -38,6 +38,7 @@ can also be internationalized using the same classes and logic.
 * [Specifying the app's supportedLocales parameter](#specifying-supportedlocales)
 * [An alternative class for the app's localized resources](#alternative-class)
 * [Appendix: Using the Dart intl tools](#dart-tools)
+* [Appendix: Updating the iOS app bundle](#ios-specifics)
 
 <aside class="alert alert-info" markdown="1">
 **Sample internationalized apps**<br>
@@ -430,5 +431,26 @@ The DemoLocalizations class uses the generated `initializeMessages()`
 function (defined in `intl_messages_all.dart`) to load the localized messages
 and `Intl.message()` to look them up.
 </li>
-
 </ol>
+
+<a name="ios-specifics"></a>
+### Appendix: Updating the iOS app bundle
+
+iOS applications define key application metadata, including supported locales,
+in an `Info.plist` file that is built into the application bundle. To configure
+the locales supported by your app, you'll need to edit this file.
+
+First, open your project's `ios/Runner.xcworkspace` Xcode workspace file then,
+in the Project Navigator, open the `Info.plist` file under the `Runner`
+project's `Runner` folder.
+
+Next, select the `Information Property List` item, select *Add Item* from
+the *Editor* menu, then select `Localizations` from the pop-up menu.
+
+Select and expand the newly-created `Localizations` item then, for each locale
+your application supports, add a new item and select the locale you wish to add
+from the pop-up menu in the *Value* field. This list should be consistent with
+the languages listed in the [supportedLocales](#specifying-supportedlocales)
+parameter.
+
+Once all supported locales have been added, save the file.
