@@ -1,77 +1,87 @@
-<ul id="mysidebar">
+<ul class="nav flex-column">
 
-  <li class="sidebar-title">Get started</li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" data-target="#getStartedMenu" role="button" aria-expanded="false" aria-controls="getStartedMenu">Get started</a>
+  </li>
 
-    <ul class="sidebar-items">
-      <li><a href="/get-started/install">1: Install</a></li>
-      <li><a href="/get-started/editor">2: Configure editor</a></li>
-      <li><a href="/get-started/test-drive">3: Test drive</a></li>
-      <li><a href="/get-started/codelab">4: Write your first app</a></li>
-      <li><a href="/get-started/learn-more">5: Learn more</a></li>
-    </ul>
+  <ul class="nav flex-column flex-nowrap collapse" id="getStartedMenu">
+    <li class="nav-item"><a class="nav-link" href="/get-started/install">1: Install</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/editor">2: Configure editor</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/test-drive">3: Test drive</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/codelab">4: Write your first app</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/learn-more">5: Learn more</a></li>
+  </ul>
 
-  <li class="sidebar-title">Build UIs</li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" data-target="#buildUIsMenu" role="button" aria-expanded="false" aria-controls="buildUIsMenu">Build UIs</a>
+  </li>
 
-    <ul class="sidebar-items">
-      <li><a href="/widgets-intro">Tour the framework</a></li>
-      <li><a href="/widgets">Widget catalog</a></li>
-      <li><a href="/cookbook">Cookbook</a></li>
-      <li><a href="/catalog/samples">Sample catalog</a></li>
-      <li><a href="/codelabs">Codelabs</a></li>
-      <li><a href="/tutorials/layout">Build layouts - Tutorial</a></li>
-      <li><a href="/tutorials/interactive">Add interactivity - Tutorial</a></li>
-      <li><a href="/get-started/flutter-for/web-devs">Flutter for Web devs</a></li>
-      <li><a href="/get-started/flutter-for/android-devs">Flutter for Android devs</a></li>
-      <li><a href="/get-started/flutter-for/ios-devs">Flutter for iOS devs</a></li>
-      <li><a href="/get-started/flutter-for/react-native-devs">Flutter for React Native devs</a></li>
-      <li><a href="/get-started/flutter-for/xamarin-forms-devs">Flutter for Xamarin.Forms devs</a></li>
-      <li><a href="/gestures">Gestures</a></li>
-      <li><a href="/animations">Animations</a></li>
-      <li><a href="/layout">Box constraints</a></li>
-      <li><a href="/assets-and-images">Assets and images</a></li>
-      <li><a href="/tutorials/internationalization">Internationalization</a></li>
-      <li><a href="/accessibility">Accessibility</a></li>
-    </ul>
+  <ul class="nav flex-column flex-nowrap collapse" id="buildUIsMenu">
+    <li class="nav-item"><a class="nav-link" href="/widgets-intro">Tour the framework</a></li>
+    <li class="nav-item"><a class="nav-link" href="/widgets">Widget catalog</a></li>
+    <li class="nav-item"><a class="nav-link" href="/cookbook">Cookbook</a></li>
+    <li class="nav-item"><a class="nav-link" href="/catalog/samples">Sample catalog</a></li>
+    <li class="nav-item"><a class="nav-link" href="/codelabs">Codelabs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tutorials/layout">Build layouts - Tutorial</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tutorials/interactive">Add interactivity - Tutorial</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/web-devs">Flutter for Web devs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/android-devs">Flutter for Android devs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/ios-devs">Flutter for iOS devs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/react-native-devs">Flutter for React Native devs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/xamarin-forms-devs">Flutter for Xamarin.Forms devs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/gestures">Gestures</a></li>
+    <li class="nav-item"><a class="nav-link" href="/animations">Animations</a></li>
+    <li class="nav-item"><a class="nav-link" href="/layout">Box constraints</a></li>
+    <li class="nav-item"><a class="nav-link" href="/assets-and-images">Assets and images</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tutorials/internationalization">Internationalization</a></li>
+    <li class="nav-item"><a class="nav-link" href="/accessibility">Accessibility</a></li>
+  </ul>
 
-  <li class="sidebar-title">Use device and SDK APIs</li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" data-target="#apisMenu" role="button" aria-expanded="false" aria-controls="apisMenu">Use device and SDK APIs</a>
+  </li>
 
-    <ul class="sidebar-items">
-      <li><a href="/using-packages">Using packages</a></li>
-      <li><a href="/developing-packages">Developing packages</a></li>
-      <li><a href="/platform-channels">Platform-specific code</a></li>
-      <li><a href="/json">JSON and serialization</a></li>
-      {% comment %}
-      <!-- Temporarily removed because the codelab is broken and possibly
-           about to be replaced by a completely new one. -->
-      <li><a href="https://codelabs.developers.google.com/codelabs/flutter-firebase/index.html#0">Firebase for Flutter - Codelab</a></li>
-      {% endcomment %}
-    </ul>
+  <ul class="nav flex-column flex-nowrap collapse" id="apisMenu">
+    <li class="nav-item"><a class="nav-link" href="/using-packages">Using packages</a></li>
+    <li class="nav-item"><a class="nav-link" href="/developing-packages">Developing packages</a></li>
+    <li class="nav-item"><a class="nav-link" href="/platform-channels">Platform-specific code</a></li>
+    <li class="nav-item"><a class="nav-link" href="/json">JSON and serialization</a></li>
+    {% comment %}
+    <!-- Temporarily removed because the codelab is broken and possibly
+         about to be replaced by a completely new one. -->
+    <li class="nav-item"><a class="nav-link" href="https://codelabs.developers.google.com/codelabs/flutter-firebase/index.html#0">Firebase for Flutter - Codelab</a></li>
+    {% endcomment %}
+  </ul>
 
-  <li class="sidebar-title">Development and tools</li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" data-target="#toolsMenu" role="button" aria-expanded="false" aria-controls="toolsMenu">Development and tools</a>
+  </li>
 
-    <ul class="sidebar-items">
-      <li><a href="/tools/using-ide">Using Flutter IDEs</a></li>
-      <li><a href="/tools/hot-reload">Using hot reload</a></li>
-      <li><a href="/testing">Test your app</a></li>
-      <li><a href="/debugging">Debug your app</a></li>
-      <li><a href="/ui-performance">Performance Profiling</a></li>
-      <li><a href="/tools/inspector">Inspect your UI</a></li>
-      <li><a href="/android-release">Build and release for Android</a></li>
-      <li><a href="/ios-release">Build and release for iOS</a></li>
-      <li><a href="/fastlane-cd">Continuous deployment with Fastlane</a></li>
-      <li><a href="/upgrading">Upgrade your Flutter install</a></li>
-      <li><a href="/tools/formatting">Format your source code</a></li>
-    </ul>
+  <ul class="nav flex-column flex-nowrap collapse" id="toolsMenu">
+    <li class="nav-item"><a class="nav-link" href="/tools/using-ide">Using Flutter IDEs</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tools/hot-reload">Using hot reload</a></li>
+    <li class="nav-item"><a class="nav-link" href="/testing">Test your app</a></li>
+    <li class="nav-item"><a class="nav-link" href="/debugging">Debug your app</a></li>
+    <li class="nav-item"><a class="nav-link" href="/ui-performance">Performance Profiling</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tools/inspector">Inspect your UI</a></li>
+    <li class="nav-item"><a class="nav-link" href="/android-release">Build and release for Android</a></li>
+    <li class="nav-item"><a class="nav-link" href="/ios-release">Build and release for iOS</a></li>
+    <li class="nav-item"><a class="nav-link" href="/fastlane-cd">Continuous deployment with Fastlane</a></li>
+    <li class="nav-item"><a class="nav-link" href="/upgrading">Upgrade your Flutter install</a></li>
+    <li class="nav-item"><a class="nav-link" href="/tools/formatting">Format your source code</a></li>
+  </ul>
 
-  <li class="sidebar-title">More details</li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" data-target="#detailsMenu" role="button" aria-expanded="false" aria-controls="detailsMenu">More details</a>
+  </li>
 
-    <ul class="sidebar-items">
-      <li><a href="/faq">FAQ</a></li>
-      <li><a href="/technical-overview">Technical overview</a></li>
-      <li><a href="https://docs.google.com/presentation/d/1B3p0kP6NV_XMOimRV09Ms75ymIjU5gr6GGIX74Om_DE/edit?usp=sharing">Magic of Flutter slides</a></li>
-      <li><a href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing">Architecture diagrams</a></li>
-      <li><a href="https://www.youtube.com/watch?v=dkyY9WCGMi0">Framework's layered design <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
-      <li><a href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter's rendering pipeline <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
-    </ul>
+  <ul class="nav flex-column flex-nowrap collapse" id="detailsMenu">
+    <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+    <li class="nav-item"><a class="nav-link" href="/technical-overview">Technical overview</a></li>
+    <li class="nav-item"><a class="nav-link" href="https://docs.google.com/presentation/d/1B3p0kP6NV_XMOimRV09Ms75ymIjU5gr6GGIX74Om_DE/edit?usp=sharing">Magic of Flutter slides</a></li>
+    <li class="nav-item"><a class="nav-link" href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing">Architecture diagrams</a></li>
+    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/watch?v=dkyY9WCGMi0">Framework's layered design <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter's rendering pipeline <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+  </ul>
 
 </ul>
