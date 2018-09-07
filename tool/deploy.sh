@@ -20,7 +20,7 @@ while [[ "$1" == -* ]]; do
     -h|--help)     _usage;;
     -l|--local)    LOCAL=1; shift;;
     -q|--quiet)    QUIET=1; shift;;
-    *)             _error echo "Unrecognized option: $1. Use --help for details.";;
+    *)             _error "Unrecognized option: $1. Use --help for details.";;
   esac
 done
 
