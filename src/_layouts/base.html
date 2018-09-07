@@ -2,47 +2,14 @@
 <html lang="en">
   {% include head.html -%}
 
-  <body class="{% if page.url == '/' %}homepage{% endif %}">
+  <body>
     {% include body.html -%}
 
     <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
 
     {% include header.html -%}
 
-    <!-- Page Content -->
-    <div class="contents">
-      <!-- Content Row -->
-      <div class="lavish-row">
-
-        <!-- Sidebar Column -->
-        <div id="side-nav-container" class="col-md-3">
-          {% include sidebar.html %}
-        </div>
-
-        {%- if page.url == '/' %}
-        {% comment %} Homepage {% endcomment -%}
-
-        <!-- Homepage Content Column -->
-        <div class="col-md-12 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
-        {%- else %}
-        {% comment %} Regular page, not homepage {% endcomment -%}
-
-        <!-- Content Column -->
-        <div class="col-md-9 main-contents">
-          <div class="main-contents-body">
-            {{content}}
-          </div>
-        </div>
-
-        {%- endif %}
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
+    {{ content }}
 
     {%- include footer.html %}
 

@@ -1,5 +1,6 @@
 ---
 title: Flutter - Beautiful native apps in record time
+layout: landing
 homepage: true
 hide_title: true
 description: >
