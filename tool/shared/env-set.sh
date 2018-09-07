@@ -34,9 +34,12 @@ if [[ "$_DART_SITE_ENV_SET_INSTALL_OPT" != "--quick" ]]; then
   unset DART_SITE_ENV_DEFS
 fi
 
-if [[ -z "$(type -t rvm)" ]]; then
+__type_t() { if [[ -n "$ZSH_VERSION" ]]; then whence -w $*; else type -t $*; fi }
+export -f __type_t > /dev/null
+
+if ! __type_t rvm > /dev/null; then
   echo "ERROR: rvm not installed. See README setup instructions. Skipping setup."
-elif [[ -z "$(type -t nvm)" ]]; then
+elif ! __type_t nvm > /dev/null; then
   echo "ERROR: nvm not installed. See README setup instructions. Skipping setup."
 elif [[ -z "$DART_SITE_ENV_DEFS" ]]; then
   export DART_SITE_ENV_DEFS=1
@@ -51,11 +54,11 @@ elif [[ -z "$DART_SITE_ENV_DEFS" ]]; then
   fi
   source tool/shared/get-ruby.sh "$_DART_SITE_ENV_SET_INSTALL_OPT"
 
-  if [ ! $(type -t travis_fold) ]; then
-      # In case this is being run locally. Turn travis_fold into a noop.
-      travis_fold () { true; }
+  if ! __type_t travis_fold > /dev/null; then
+    # In case this is being run locally. Turn travis_fold into a noop.
+    travis_fold () { return 0; }
+    export -f travis_fold > /dev/null
   fi
-  export -f travis_fold
 
   case "$(uname -a)" in
       Darwin\ *) _OS_NAME=macos ;;
@@ -73,7 +76,7 @@ elif [[ -z "$DART_SITE_ENV_DEFS" ]]; then
     [[ ! -d "$TMP" ]] && mkdir "$TMP"
     [[ ! -d "$PKG" ]] && mkdir "$PKG"
   else
-    if [[ -z "$(type -t dart)" && ! $PATH =~ \/dart-sdk ]]; then
+    if [[ -z "$(__type_t dart)" && ! $PATH =~ \/dart-sdk ]]; then
         export DART_SDK="$PKG/dart-sdk"
         # Updating PATH to include access to Dart bin.
         export PATH="$PATH:$DART_SDK/bin"

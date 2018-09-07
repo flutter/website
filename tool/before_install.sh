@@ -7,6 +7,8 @@ set -e
 
 if [[ "$1" == --force ]]; then FORCE=1; fi
 
+if ! __type_t travis_fold; then travis_fold() { true; } fi # For ZSH users
+
 # if [[ -n "$TRAVIS" ]]; then
 #   ./tool/env-info-and-check.sh
 # fi
@@ -15,12 +17,14 @@ FLUTTER_ROOT=../flutter
 FLUTTER_BIN="$FLUTTER_ROOT/bin"
 # Run doctor to download the Dart SDK that is vendored with Flutter
 if [[ ! -e "$FLUTTER_ROOT" || -n "$FORCE" ]]; then
+  travis_fold start before_install.flutter
   echo "Downloading Flutter"
   (
     set -x;
     git clone -b beta https://github.com/flutter/flutter.git "$FLUTTER_ROOT";
     "$FLUTTER_BIN/flutter" doctor
   )
+  travis_fold end before_install.flutter
 else
   echo "Flutter already installed: $FLUTTER_ROOT"
 fi
