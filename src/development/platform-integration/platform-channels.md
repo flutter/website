@@ -532,8 +532,8 @@ Objective-C:
 1. Open the file `AppDelegate.swift` located under Runner > Runner in the Project
 navigator.
 
-Next, override the `application` function and create a `FlutterMethodChannel`
-tied to the channel name `samples.flutter.io/battery`:
+Next, override the `application:didFinishLaunchingWithOptions:` function and create
+a `FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
 
 ```swift
 @UIApplicationMain
@@ -542,15 +542,15 @@ tied to the channel name `samples.flutter.io/battery`:
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController;
-    let batteryChannel = FlutterMethodChannel.init(name: "samples.flutter.io/battery",
-                                                   binaryMessenger: controller);
+    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+    let batteryChannel = FlutterMethodChannel(name: "samples.flutter.io/battery",
+                                              binaryMessenger: controller)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Handle battery messages.
-    });
+    })
 
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions);
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
 ```
@@ -563,14 +563,14 @@ Add the following as a new method at the bottom of `AppDelegate.swift`:
 
 ```swift
 private func receiveBatteryLevel(result: FlutterResult) {
-  let device = UIDevice.current;
-  device.isBatteryMonitoringEnabled = true;
-  if (device.batteryState == UIDeviceBatteryState.unknown) {
-    result(FlutterError.init(code: "UNAVAILABLE",
-                             message: "Battery info unavailable",
-                             details: nil));
+  let device = UIDevice.current
+  device.isBatteryMonitoringEnabled = true
+  if device.batteryState == UIDeviceBatteryState.unknown {
+    result(FlutterError(code: "UNAVAILABLE",
+                        message: "Battery info unavailable",
+                        details: nil))
   } else {
-    result(Int(device.batteryLevel * 100));
+    result(Int(device.batteryLevel * 100))
   }
 }
 ```
@@ -584,12 +584,12 @@ is called, report that instead.
 ```swift
 batteryChannel.setMethodCallHandler({
   (call: FlutterMethodCall, result: FlutterResult) -> Void in
-  if ("getBatteryLevel" == call.method) {
-    self.receiveBatteryLevel(result: result);
+  if "getBatteryLevel" == call.method {
+    self.receiveBatteryLevel(result: result)
   } else {
-    result(FlutterMethodNotImplemented);
+    result(FlutterMethodNotImplemented)
   }
-});
+})
 ```
 
 You should now be able to run the app on iOS. If you are using the iOS
