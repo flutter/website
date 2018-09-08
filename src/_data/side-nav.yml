@@ -36,7 +36,7 @@
   - title: GitHub samples
     permalink: https://github.com/flutter/samples/blob/master/INDEX.md
   - title: Flutter Gallery - demo app
-    permalink: xxx
+    permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
   children:
@@ -124,21 +124,22 @@
 - title: Deployment
   children:
   - title: Build and release for Android
-    permalink: /android-release
+    permalink: /deployment/android-release
   - title: Build and release for iOS
-    permalink: /ios-release
+    permalink: /deployment/ios-release
   - title: Continuous deployment with fastlane
-    permalink: /fastlane-cd
+    permalink: /deployment/fastlane-cd
 
 - title: Resources
   children:
   - title: Dart resources
+    permalink: /resources/bootstrap-into-dart
   - title: Flutter best practices
   - title: Technical videos for learning Flutter
   - title: Flutter developer communities
   - title: Flutter learning resources
   - title: FAQ
-    permalink: /faq
+    permalink: /resources/faq
 
 - title: "APIs & References"
   children:
