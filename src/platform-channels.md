@@ -4,7 +4,7 @@ title: Writing custom platform-specific code with platform channels
 
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
-please see [using packages](/using-packages/).
+please see [using packages](/development/packages/using-packages).
 
 * TOC
 {:toc}
@@ -20,8 +20,8 @@ rather on a flexible message passing style:
  Android portion of your app, over a platform channel.
 
 * The *host* listens on the platform channel, and receives the message. It then
- calls into any number of platform-specific APIs -- using the native
- programming language -- and sends back a response to the *client*, the Flutter
+ calls into any number of platform-specific APIs&mdash;using the native
+ programming language&mdash;and sends back a response to the *client*, the Flutter
  portion of your app.
 
 ## Architectural overview: platform channels {#architecture}
@@ -60,7 +60,7 @@ messages happens automatically when you send and receive values.
 
 The following table shows how Dart values are received on the platform side and vice versa:
 
-| Dart        | Android             | iOS                        
+| Dart        | Android             | iOS
 |-------------|---------------------|----
 | null        | null                | nil (NSNull when nested)
 | bool        | java.lang.Boolean   | NSNumber numberWithBool:
@@ -86,8 +86,8 @@ the iOS `device.batteryLevel` API, via a single platform message,
 The example adds the platform-specific code inside the main app itself. If you
 want to reuse the platform-specific code for multiple apps, the project creation
 step is slightly different (see [developing
-packages](/developing-packages/#plugin)), but the platform channel code is still
-written in the same way.
+packages](/development/packages/developing-packages#plugin)),
+but the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
 [`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
@@ -132,12 +132,12 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-Next, we invoke a method on the method channel, specifying the concrete method
-to call via the String identifier `getBatteryLevel`. The call may fail -- for
+Next, invoke a method on the method channel, specifying the concrete method
+to call via the String identifier `getBatteryLevel`. The call may fail&mdash;for
 example if the platform does not support the platform API (such as when running
-in a simulator), so we wrap the `invokeMethod` call in a try-catch statement.
+in a simulator), so wrap the `invokeMethod` call in a try-catch statement.
 
-We use the returned result to update our user interface state in `_batteryLevel`
+Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
 <!-- skip -->
@@ -160,7 +160,7 @@ inside `setState`.
   }
 ```
 
-Finally, we replace the `build` method from the template to contain a small user
+Finally, replace the `build` method from the template to contain a small user
 interface that displays the battery state in a string, and a button for
 refreshing the value.
 
@@ -270,12 +270,12 @@ private int getBatteryLevel() {
 }
 ```
 
-Finally, we complete the `onMethodCall` method we added earlier. We need to
-handle a single platform method, `getBatteryLevel`, so we test for that in the
+Finally, complete the `onMethodCall` method added earlier. You need to
+handle a single platform method, `getBatteryLevel`, so test for that in the
 `call` argument. The implementation of this platform method simply calls the
-Android code we wrote in the previous step, and passes back a response for both
+Android code written in the previous step, and passes back a response for both
 the success and error cases using the `response` argument. If an unknown method
-is called, we report that instead. Replace:
+is called, report that instead. Replace:
 
 ```java
 public void onMethodCall(MethodCall call, Result result) {
@@ -299,7 +299,7 @@ public void onMethodCall(MethodCall call, Result result) {
     } else {
         result.notImplemented();
     }
-}               
+}
 ```
 
 You should now be able to run the app on Android. If you are using the Android
@@ -325,7 +325,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
 
 1. Open the file `MainActivity.kt` located in the `kotlin` folder in the Project
    view. (Note: If you are editing using Android Studio 2.3, note that the
-   'kotlin' folder will be shown as-if named 'java'.)
+   'kotlin' folder is shown as-if named 'java'.)
 
 Next, inside the `onCreate` method, create a `MethodChannel` and call
 `setMethodCallHandler`. Make sure to use the same channel name as was used on
@@ -349,7 +349,7 @@ class MainActivity() : FlutterActivity() {
 }
 ```
 
-Next, we add the actual Android Kotlin code that uses the Android battery APIs to
+Next, add the actual Android Kotlin code that uses the Android battery APIs to
 retrieve the battery level. This code is exactly the same as you would have
 written in a native Android app.
 
@@ -383,12 +383,12 @@ method:
   }
 ```
 
-Finally, we complete the `onMethodCall` method we added earlier. We need to
-handle a single platform method, `getBatteryLevel`, so we test for that in the
+Finally, complete the `onMethodCall` method added earlier. You need to
+handle a single platform method, `getBatteryLevel`, so test for that in the
 `call` argument. The implementation of this platform method simply calls the
-Android code we wrote in the previous step, and passes back a response for both
+Android code written in the previous step, and passes back a response for both
 the success and error cases using the `response` argument. If an unknown method
-is called, we report that instead. Replace:
+is called, report that instead. Replace:
 
 ```kotlin
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
@@ -460,7 +460,7 @@ as was used on the Flutter client side.
 }
 ```
 
-Next, we add the actual iOS ObjectiveC code that uses the iOS battery APIs to
+Next, add the actual iOS ObjectiveC code that uses the iOS battery APIs to
 retrieve the battery level. This code is exactly the same as you would have
 written in a native iOS app.
 
@@ -478,12 +478,12 @@ Add the following as a new method in the `AppDelegate` class, just before `@end`
 }
 ```
 
-Finally, we complete the `setMethodCallHandler` method we added earlier. We need
-to handle a single platform method, `getBatteryLevel`, so we test for that in
+Finally, complete the `setMethodCallHandler` method added earlier. You need
+to handle a single platform method, `getBatteryLevel`, so test for that in
 the `call` argument. The implementation of this platform method simply calls the
-iOS code we wrote in the previous step, and passes back a response for both
+iOS code written in the previous step, and passes back a response for both
 the success and error cases using the `result` argument. If an unknown method
-is called, we report that instead.
+is called, report that instead.
 
 ```objectivec
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
@@ -524,7 +524,7 @@ Start by opening the iOS host portion of your Flutter app in Xcode:
 1. Navigate to the directory holding your Flutter app, and select the `ios`
 folder inside it. Click OK.
 
-Next, we add support for Swift in the standard template setup that uses
+Next, add support for Swift in the standard template setup that uses
 Objective-C:
 
 1. Expand Runner > Runner in the Project navigator.
@@ -575,11 +575,11 @@ private func receiveBatteryLevel(result: FlutterResult) {
 }
 ```
 
-Finally, complete the `setMethodCallHandler` method we added earlier. We need
-to handle a single platform method, `getBatteryLevel`, so we test for that in
+Finally, complete the `setMethodCallHandler` method added earlier. You need
+to handle a single platform method, `getBatteryLevel`, so test for that in
 the `call` argument. The implementation of this platform method simply calls the
-iOS code we wrote in the previous step. If an unknown method
-is called, we report that instead.
+iOS code written in the previous step. If an unknown method
+is called, report that instead.
 
 ```swift
 batteryChannel.setMethodCallHandler({
@@ -593,21 +593,21 @@ batteryChannel.setMethodCallHandler({
 ```
 
 You should now be able to run the app on iOS. If you are using the iOS
-Simulator, note that it does not support battery APIs, and the app will thus
-display 'Battery info unavailable.'.
+Simulator, note that it does not support battery APIs, and the app
+displays 'Battery info unavailable.'.
 
 ## Separate platform-specific code from UI code {#separate}
 
 If you expect to use your platform-specific code in multiple Flutter apps, it
 can be useful to separate the code into a platform plugin located in a directory
-outside your main application. See [developing packages](/developing-packages/)
-for details.
+outside your main application. See [developing
+packages](/development/packages/developing-packages) for details.
 
 ## Publish platform-specific code as a package {#publish}
 
 If you wish to share your platform-specific with other developers in the Flutter
-ecosystem, please see [publishing packages](/developing-packages/#publish)
-for details.
+ecosystem, please see [publishing
+packages](/development/packages/developing-packages#publish) for details.
 
 ## Custom channels and codecs
 

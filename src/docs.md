@@ -41,11 +41,11 @@ here are some next steps.
 * [Flutter for Xamarin.Forms Devs](/get-started/flutter-for/xamarin-forms-devs)<br>
   Review these tips if you have Xamarin Forms experience.
 
-* [Building Layouts in Flutter](/tutorials/layout)<br>
+* [Building Layouts in Flutter](/development/ui/layout)<br>
   Learn how to create layouts in Flutter, where everything is
   a widget.
 
-* [Adding Interactivity to Your Flutter App](/tutorials/interactive)<br>
+* [Adding Interactivity to Your Flutter App](/development/ui/interactive)<br>
   Learn how to add a stateful widget to your app.
 
 * [A Tour of the Flutter Widget Framework](/widgets-intro)<br>
@@ -65,10 +65,10 @@ Once you’ve mastered the basics, try these pages.
 * [Sample App Catalog](/catalog/samples)<br>
   Simple apps that demonstrate how to implement features and widgets.
 
-* [Adding Assets and Images in Flutter](/assets-and-images)<br>
+* [Adding Assets and Images in Flutter](/development/ui/assets-and-images)<br>
   How to add resources to a Flutter app.
 
-* [Animations in Flutter](/animations)<br>
+* [Animations in Flutter](/development/ui/animations)<br>
   How to create standard, hero, or staggered animations, to
   name a few animations styles that Flutter supports.
 
@@ -89,7 +89,7 @@ Once you’ve mastered the basics, try these pages.
 
 Dive deeper into topics that interest you.
 
-* [Flutter Widget Inspector](/tools/inspector)<br>
+* [Flutter Widget Inspector](/development/tools/inspector)<br>
   How to use the widget inspector, a powerful tool that allows
   you to explore widget trees, disable the "DEBUG"
   banner, display the performance overlay, and much more.

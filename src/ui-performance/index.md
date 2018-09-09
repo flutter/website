@@ -226,11 +226,11 @@ In Android Studio and IntelliJ IDEA:
 1. Select **View > Tool Windows > Flutter Inspector**.
 1. In the toolbar, select the icon that looks like a bookshelf (<img src="/ui-performance/images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
 
-![IntelliJ Flutter Inspector Window](/tools/images/visual-debugging.png)<br>
+![IntelliJ Flutter Inspector Window](/development/tools/images/visual-debugging.png)<br>
 
 The Flutter Inspector is available in Android Studio and IntelliJ.
 Learn more about what the Inspector can do in the
-[Flutter Widget Inspector](/tools/inspector) doc, as well as the
+[Flutter Widget Inspector](/development/tools/inspector) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.
 
@@ -309,7 +309,7 @@ icon <img src="/ui-performance/images/observatory-timeline-icon.png" alt="zig-za
 but the "view <u>inspector</u>" link takes you to the standard version of the
 timeline, not the version customized for Flutter.)
 
-![IntelliJ Flutter Inspector Window](/tools/images/visual-debugging.png)
+![IntelliJ Flutter Inspector Window](/development/tools/images/visual-debugging.png)
 </li>
 
 <li markdown="1">
@@ -487,7 +487,7 @@ Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
 
 For more information, see
-[Integration testing](https://flutter.io/testing/#integration-testing),
+[Integration testing](/testing/#integration-testing),
 a section in [Testing Flutter Apps](/testing).
 
 ## More information
@@ -496,7 +496,7 @@ The following resources provide more information on using Flutter's tools
 and debugging in Flutter:
 
 * [Debugging Flutter Apps](/debugging)
-* [Flutter Widget Inspector](/tools/inspector)
+* [Flutter Widget Inspector](/development/tools/inspector)
 * [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI),
   presented at DartConf 2018
 * [Why Flutter Uses

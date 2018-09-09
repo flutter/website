@@ -368,8 +368,8 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
 For more information, see
 [Animation & Motion widgets](/widgets/animation),
-the [Animations tutorial](/tutorials/animation),
-and the [Animations overview](/animations).
+the [Animations tutorial](/development/ui/animations/tutorial),
+and the [Animations overview](/development/ui/animations).
 
 ## How do I draw to the screen?
 
@@ -1090,7 +1090,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more details, see
-[Adding Assets and Images in Flutter](/assets-and-images).
+[Adding Assets and Images in Flutter](/development/ui/assets-and-images).
 
 ## Where do I store strings? How do I handle localization?
 
@@ -1965,7 +1965,7 @@ the iOS framework it runs on. You can use platform channels to execute a method 
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/using-packages) that encapsulate the native and
+[plugins](/development/packages/using-packages) that encapsulate the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
 write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
@@ -1973,8 +1973,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/developing-packages)
-and [publish it on Pub](/developing-packages#publish).
+[write your own](/development/packages/developing-packages)
+and [publish it on Pub](/development/packages/developing-packages#publish).
 
 ## How do I access the GPS sensor?
 
@@ -2012,7 +2012,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/developing-packages) page.
+[developing packages and plugins](/development/packages/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

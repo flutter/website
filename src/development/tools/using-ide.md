@@ -7,7 +7,7 @@ description: How to develop a Flutter app in VSCode.
 
 <ul class="tabs__top-bar">
     <li class="tab-link current" >Android Studio / IntelliJ</li>
-    <li class="tab-link" data-tab-href="/tools/using-ide-vscode">VS Code</li>
+    <li class="tab-link" data-tab-href="/development/tools/using-ide-vscode">VS Code</li>
 </ul>
 
 <div class="tabs__content current" markdown="1">
@@ -84,13 +84,13 @@ The Dart plugin performs code analysis that enables:
   usages (**Edit>Find>Find Usages**).
 * Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
-  ![Dart Analysis pane](/tools/images/dart-analysis.png)
+  ![Dart Analysis pane](images/dart-analysis.png)
 
 ## Running and debugging
 
 Running and debugging are controlled from the main toolbar:
 
-![Main IntelliJ toolbar](/tools/images/main-toolbar.png)
+![Main IntelliJ toolbar](images/main-toolbar.png)
 
 ### Selecting a target
 
@@ -109,7 +109,7 @@ simulators.  You need to connect a device, or start a simulator, to proceed.
 
 1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
 * The bottom **Run** pane shows logs output:<br>
-![Log pane](/tools/images/log.png)
+![Log pane](images/log.png)
 
 ### Run app with breakpoints
 
@@ -125,7 +125,7 @@ simulators.  You need to connect a device, or start a simulator, to proceed.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the 'hot reload' feature. See
-[using hot reload](/tools/hot-reload) for details.
+[using hot reload](/development/tools/hot-reload) for details.
 
 ## Advanced debugging
 
@@ -134,13 +134,13 @@ of your changes almost instantly with the 'hot reload' feature. See
 To debug a visual issue, start the app with 'Debug', and then open the Flutter
 inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 
-![Flutter Inspector Window](/tools/images/visual-debugging.png)
+![Flutter Inspector Window](images/visual-debugging.png)
 
 This offers many debugging tools; for details on these see
 [Debugging Flutter Apps](/debugging).
 
 * 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
-  [Flutter Inspector](/tools/inspector).
+  [Flutter Inspector](/development/tools/inspector).
 
 * 'Toggle Debug Paint': Add visual debugging hints to the rendering displaying
    borders, padding, alignment, and spacers.
@@ -177,7 +177,7 @@ To open Observatory:
 1. Run your app in debug mode.
 1. Select the 'open observatory' action from the Debug panel (see screenshot below), click the **Stopwatch icon** ('Open Observatory').
 
-![Debugging panel](/tools/images/debug-panel.png)
+![Debugging panel](images/debug-panel.png)
 
 ## Editing tips for Flutter code
 
@@ -190,7 +190,7 @@ the lightbulb, or by using the keyboard shortcut
 (`Alt`+`Enter` on Linux and Windows, `Option`+`Return` on macOS), as illustrated
 here:
 
-![IntelliJ editing assists](/tools/images/assists.gif)
+![IntelliJ editing assists](images/assists.gif)
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -214,7 +214,7 @@ Live templates can be used to speed up entering typical code structures. They
 are invoked by typing their 'prefix', and then selecting it in the code
 completion window:
 
-![IntelliJ live templates](/tools/images/templates.gif)
+![IntelliJ live templates](images/templates.gif)
 
 The Flutter plugin includes the following templates:
 
@@ -241,7 +241,7 @@ Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
-![IntelliJ Settings Keymap](/tools/images/keymap-settings-flutter-plugin.png)
+![IntelliJ Settings Keymap](images/keymap-settings-flutter-plugin.png)
 
 ### 'Hot Reloads' vs 'Full Application Restarts'
 

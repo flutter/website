@@ -1,4 +1,4 @@
 ---
 title: Styling Widgets
 ---
-{% include catalogpage.html category="Styling"%}
+{% include catalogpage.html category="Styling" %}

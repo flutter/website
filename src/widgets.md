@@ -7,7 +7,8 @@ collection of visual, structural, platform,
 and interactive widgets.
 
 <p>In addition to browsing widgets by category,
-you can also see all the widgets in the <a href="/widgets/widgetindex">Flutter widget index</a>.</p>
+you can also see all the widgets in the
+<a href="/widgets/widgetindex">Flutter widget index</a>.</p>
 
 <ul class="cards">
 {% for section in site.data.catalog.index %}

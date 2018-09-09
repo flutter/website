@@ -2,4 +2,4 @@
 title: Basic Widgets
 ---
 
-{% include catalogpage.html category="Basics"%}
+{% include catalogpage.html category="Basics" %}

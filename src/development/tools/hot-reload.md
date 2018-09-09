@@ -27,7 +27,7 @@ To hot reload a Flutter app:
    select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload button on the
    toolbar:
 
-   ![alt_text](/tools/images/hot-reload.gif "image_tooltip")
+   ![alt_text](images/hot-reload.gif "image_tooltip")
 
    If you're running the app at the command line using `flutter run`,
    enter `r` in the terminal window.

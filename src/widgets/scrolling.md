@@ -1,4 +1,4 @@
 ---
 title: Scrolling Widgets
 ---
-{% include catalogpage.html category="Scrolling"%}
+{% include catalogpage.html category="Scrolling" %}

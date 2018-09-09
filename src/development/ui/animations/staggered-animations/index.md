@@ -17,7 +17,7 @@ title: Staggered Animations
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
 If the concept of tweens or tweening is new to you, see the
-[Animations in Flutter tutorial.](/tutorials/animation/)
+[Animations in Flutter tutorial.](/development/ui/animations/tutorial)
 </aside>
 
 Staggered animations are a straightforward concept: visual changes
@@ -82,7 +82,7 @@ After running forward, the animation runs in reverse.
 **New to Flutter?**<br>
 This page assumes you know how to create a layout using Flutter’s
 widgets.  For more information, see [Building Layouts in
-Flutter](/tutorials/layout/).
+Flutter](/development/ui/layout).
 </aside>
 
 ## Basic structure of a staggered animation
@@ -126,7 +126,7 @@ example. You might notice the following characteristics:
 * The padding and border radius changes occur during the same exact interval,
   but they don't have to.
 
-<img src="/animations/staggered-animations/images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
+<img src="images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
 
 To set up the animation:
 
@@ -357,10 +357,10 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
 The following resources might help when writing animations:
 
-[Animations landing page](/animations/)
+[Animations landing page](/development/ui/animations)
 : Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
-  [Animations tutorial](/tutorials/animation/).
+  [Animations tutorial](/development/ui/animations/tutorial).
 
 [Flutter API documentation](https://docs.flutter.io/)
 : Reference documentation for all of the Flutter libraries.

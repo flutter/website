@@ -148,7 +148,7 @@ Studio](https://developer.android.com/studio/),
 and [VS Code](https://code.visualstudio.com/).
 
 See [editor configuration](/get-started/editor) for setup details, and
-['Developing Flutter apps in an IDE'](/tools/using-ide) for tips on how to
+['Developing Flutter apps in an IDE'](/development/tools/using-ide) for tips on how to
 use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
@@ -399,7 +399,7 @@ types of code changes cannot be hot reloaded though:
 * Static field initializers.
 * The `main()` method of the app.
 
-See [Using Hot Reload](/tools/hot-reload) for additional details.
+See [Using Hot Reload](/development/tools/hot-reload) for additional details.
 
 ### Where can I deploy my Flutter app?
 
@@ -458,7 +458,7 @@ intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
 packages](https://pub.dartlang.org/flutter/) available in the Package
-site. Using an existing package [is easy](/using-packages).
+site. Using an existing package [is easy](/development/packages/using-packages).
 
 Finally, we encourage developers to use Flutter's asynchronous message passing
 system to create your own integrations with [platform and third-party
@@ -571,7 +571,7 @@ Absolutely. There are libraries on the
 protobufs, and many other utilities and formats.
 
 For a detailed writeup on using JSON with Flutter, check out [the JSON
-tutorial](/json).
+tutorial](/development/data/json).
 
 ### Can I build 3D (OpenGL) apps with Flutter?
 
@@ -592,8 +592,8 @@ A release build is usually _much_ smaller
 than a _debug build_.
 
 Learn more about creating a
-[release build of your Android app](/android-release),
-and creating a [release build of your iOS app](/ios-release).
+[release build of your Android app](/deployment/android-release),
+and creating a [release build of your iOS app](/deployment/ios-release).
 
 ### Do Flutter apps run on Chromebooks?
 

@@ -62,8 +62,8 @@ amount of line breaks for Flutter-style code.
 
 Here is an example of automatically formatted code *with* trailing commas:
 
-![Automatically formatted code with trailing commas](/tools/images/trailing-comma-with.png)
+![Automatically formatted code with trailing commas](images/trailing-comma-with.png)
 
 And the same code automatically formatted code *without* trailing commas:
 
-![Automatically formatted code without trailing commas](/tools/images/trailing-comma-without.png)
+![Automatically formatted code without trailing commas](images/trailing-comma-without.png)

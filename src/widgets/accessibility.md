@@ -1,4 +1,4 @@
 ---
 title: Accessibility Widgets
 ---
-{% include catalogpage.html category="Accessibility"%}
+{% include catalogpage.html category="Accessibility" %}
