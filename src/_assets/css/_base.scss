@@ -1,0 +1,16 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn {
+  font-family: $flutter-font-family-alt;
+}
+
+.flutter-sticky-col {
+  @include media-breakpoint-up(md) {
+    align-self: start;
+    position: sticky;
+    top: $flutter-header-height;
+  }
+}

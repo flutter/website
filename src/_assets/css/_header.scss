@@ -1,0 +1,12 @@
+.flutter-header {
+  background-color: $flutter-color-white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .1);
+  font-family: $flutter-font-family-alt;
+  position: sticky;
+  top: 0;
+  z-index: $flutter-z-header;
+
+  .nav-link {
+    color: $flutter-color-nav-links;
+  }
+}
