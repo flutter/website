@@ -30,7 +30,7 @@ env:
 
 before_install:
   - source ./tool/env-set.sh
-  - ./tool/before_install.sh
+  - ./tool/before-install.sh
 
 install:
   - ./tool/install.sh
