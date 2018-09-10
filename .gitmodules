@@ -1,0 +1,4 @@
+[submodule "site-shared"]
+	path = site-shared
+	url = https://github.com/dart-lang/site-shared.git
+	branch = chalin-zsh-0810
