@@ -11,31 +11,39 @@ addons:
       - lib32stdc++6
       - libstdc++6
 
+cache:
+  timeout: 1000
+  bundler: true
+  directories:
+  - $HOME/.pub-cache
+  - $HOME/.nvm
+  - $HOME/.rvm
+  - node_modules
+
 env:
   global:
     - JEKYLL_ENV=production
     - TZ=US/Pacific # normalize build timestamp
   matrix:
-    - TASK="./tool/check-examples.sh"
-    # SKIP link checking until we can get linkcheck running
+    - TASK="./tool/check-code.sh"
     - TASK="bundle exec jekyll build"
 
 before_install:
   - source ./tool/env-set.sh
-  - ./tool/before_install.sh
+  - ./tool/before-install.sh
 
 install:
   - ./tool/install.sh
-  # - ./tool/write-ci-info.sh -v
+  # - ./tool/shared/write-ci-info.sh -v
 
 script: $TASK
 
 after_script:
-  - if [[ $TASK == *build* ]]; then ./tool/check-links.sh || travis_terminate 1; fi
+  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh || travis_terminate 1; fi
 
 deploy:
   - provider: script
-    script: ./tool/deploy.sh dash # TODO: drop dash
+    script: ./tool/shared/deploy.sh dash # TODO: drop dash
     skip_cleanup: true
     on:
       repo: flutter/website
@@ -45,12 +53,3 @@ deploy:
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:
   only: [master, dash, /^\d\.x$/, /^\d-dev$/, /travis-build/]
-
-cache:
-  timeout: 1000
-  bundler: true
-  directories:
-  - $HOME/.pub-cache
-  - $HOME/.nvm
-  - $HOME/.rvm
-  - node_modules

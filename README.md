@@ -81,7 +81,7 @@ if you already have the required packages installed.
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
 
  1. Prior to submitting, run link validation:<br>
-    `tool/check-links.sh`
+    `tool/shared/check-links.sh`
 
 ## Deploy to a staging site
 

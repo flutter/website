@@ -1,18 +1,13 @@
-# This bash file is meant to be source'd, not executed.
+# This bash file is meant to be source'd from the repo root, not executed.
 
 source tool/shared/env-set.sh
 
-# Temporary, until we start using site-shared:
+# Site-specific settings here: currently, none.
 
-# nvm install 10
-# nvm use 10
-# rvm install 2.4.3
-# rvm use 2.4.3
+export FLUTTER_ROOT=flutter
+export FLUTTER_BIN="$FLUTTER_ROOT/bin"
 
-# function travis_fold () { true; }
-# export -f travis_fold
-
-# : ${TMP:=tmp}
-# [[ -e "$TMP" ]] || mkdir -pv "$TMP"
-
-# Site specific settings here: currently, none.
+if [[ ! -e "$FLUTTER_ROOT" ]]; then
+  echo "ERROR: The ~/flutter git submodule is missing. For initialization instructions, see the repo README."
+  exit 1;
+fi

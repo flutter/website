@@ -1,0 +1,1 @@
+../../site-shared/src/_plugins/symlinked_sources_listener.rb
