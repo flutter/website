@@ -7,6 +7,10 @@ gem 'font-awesome-sass'
 gem 'jekyll'
 gem 'jekyll-assets', group: :jekyll_plugins
 gem 'liquid-tag-parser'
+gem 'jekyll-toc',
+  # :path => '~/git/dart/jekyll-toc'
+  :git => 'https://github.com/chalin/jekyll-toc.git',
+  :branch => 'chalin-no-toc'
 gem 'sass'
 gem 'sprockets', '~> 4.0.beta' , { require: false }
 gem 'uglifier'

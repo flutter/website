@@ -1,0 +1,16 @@
+.site-sidebar {
+  padding-top: $flutter-content-top-padding;
+
+  > .nav > .nav-item {
+    font-family: $flutter-font-family-alt;
+    font-size: 20px;
+  }
+
+  > .nav > .nav > .nav-item {
+    font-size: 14px;
+
+    .nav-link {
+      color: $flutter-color-body-light;
+    }
+  }
+}

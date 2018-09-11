@@ -1,26 +1,18 @@
 ---
 title: Widgets Catalog
+toc: false
 ---
 
-Create beautiful apps faster with Flutter's
-collection of visual, structural, platform,
-and interactive widgets.
+Create beautiful apps faster with Flutter's collection of visual, structural,
+platform, and interactive widgets.
 
-<p>In addition to browsing widgets by category,
-you can also see all the widgets in the
-<a href="/widgets/widgetindex">Flutter widget index</a>.</p>
+In addition to browsing widgets by category,
+you can also see all the widgets in the [Flutter widget index](/widgets/widgetindex).
 
-<ul class="cards">
 {% for section in site.data.catalog.index %}
-	<li class="cards__item">
-	    <div class="card">
-		    <h3 class="catalog-category-title"><a class="action-link" href="/widgets/{{section.id}}">{{section.name}}</a></h3>
-		    <p>{{section.description}}</p>
-		    <div class="card-action">
-		        <a class="action-link" href="/widgets/{{section.id}}">VISIT</a>
-		    </div>
-		</div>
+- ### [{{section.name}}](/widgets/{{section.id}})
+  {:.catalog-category-title}
 
-	</li>
- {% endfor %}
-</ul>
+  {{section.description}}
+{:.card}
+{% endfor %}

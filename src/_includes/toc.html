@@ -1,7 +1,4 @@
-<ul class="nav flex-column">
-
-  <li class="nav-item"><a class="nav-link">Content heading 1</a></li>
-  <li class="nav-item"><a class="nav-link">Content heading 2</a></li>
-  <li class="nav-item"><a class="nav-link">Content heading 3</a></li>
-
-</ul>
+{% if page.toc -%}
+<div class="flutter-toc__title">Contents</div>
+{{ content | toc_only }}
+{% endif -%}

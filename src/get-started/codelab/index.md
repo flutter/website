@@ -4,11 +4,7 @@ title: Write Your First Flutter App, part 1
 image: /get-started/codelab/images/step7-themes.png
 ---
 
-<figure class="right-figure" style="max-width: 260px; padding-right: 10px">
-    <img src="/get-started/codelab/images/startup_namer_1_opt.gif"
-         alt="Animated GIF of the app that you will be building."
-         style="border: margin-bottom: 10px" >
-</figure>
+<img src="/get-started/codelab/images/startup_namer_1_opt.gif" alt="The app that you'll be building">
 
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
@@ -22,9 +18,6 @@ on [Google Developers](https://codelabs.developers.google.com/).
 [Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 can also be found on [Google Developers](https://codelabs.developers.google.com/).
 
-* TOC
-{:toc}
-
 ## What you'll build in part 1
 {:.no_toc}
 
@@ -37,7 +30,7 @@ There is no limit to how far a user can scroll.
 The animated GIF shows how the app works at the completion of part 1.
 
 <div class="whats-the-point" markdown="1">
-  <h4>What you’ll learn in part 1</h4>
+  <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on both iOS and Android.
   * Basic structure of a Flutter app.
@@ -52,7 +45,7 @@ The animated GIF shows how the app works at the completion of part 1.
 </div>
 
 <div class="whats-the-point" markdown="1">
-  <h4>What you'll use</h4>
+  <h4 class="no_toc">What you'll use</h4>
 
   You need two pieces of software to complete this lab: the
   [Flutter SDK](/get-started/install) and [an editor](/get-started/editor).
@@ -68,7 +61,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * The [Android emulator](/setup-macos#set-up-the-android-emulator).
 </div>
 
-# Step 1: Create the starter Flutter app
+## Step 1: Create the starter Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app.](/get-started/test-drive#create-app)
@@ -159,7 +152,7 @@ where the Dart code lives.
 
 ---
 
-# Step 2: Use an external package
+## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
 [english_words](https://pub.dartlang.org/packages/english_words),
@@ -271,7 +264,7 @@ use the code at the following links to get back on track.
 
 ---
 
-# Step 3: Add a Stateful widget
+## Step 3: Add a Stateful widget
 
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
@@ -391,7 +384,7 @@ at the following link to get back on track.
 
 ---
 
-# Step 4: Create an infinite scrolling ListView
+## Step 4: Create an infinite scrolling ListView
 
 In this step, you'll expand `RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls, the list

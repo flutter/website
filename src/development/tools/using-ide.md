@@ -15,9 +15,6 @@ description: How to develop a Flutter app in VSCode.
 The Flutter plugin provides a fully integrated development experience in the
 Android Studio or IntelliJ IDEs.
 
-* TOC Placeholder
-{:toc}
-
 ## Installation and setup
 
 Please follow the [Editor Setup](/get-started/editor) instructions to install

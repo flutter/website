@@ -1,4 +1,12 @@
+@import '_variables';
+
 @import '_bootstrap_config';
 @import 'bootstrap';
+
+@import '_base';
+@import '_header';
+@import '_sidebar';
+@import '_toc';
+@import '_content';
 // @import 'font-awesome-sprockets';
 // @import 'font-awesome';
