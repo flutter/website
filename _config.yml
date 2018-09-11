@@ -18,6 +18,10 @@ defaults:
   values:
     layout: default
     toc: true
+- scope:
+    path: 'widgets'
+  values:
+    toc: false
 
 # Build settings
 
