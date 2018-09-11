@@ -7,7 +7,7 @@ body {
   font-family: $flutter-font-family-alt;
 }
 
-.flutter-sticky-col {
+.sticky-col {
   @include media-breakpoint-up(md) {
     align-self: start;
     position: sticky;
