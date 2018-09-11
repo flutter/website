@@ -13,14 +13,16 @@ typography, icons, and more.
 
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
-This is a demo app from the [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+This is a demo app from the
+[Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter and setting
 up your environment. Shrine has high-quality scrolling images, interactive cards,
 buttons, dropdown lists, and a shopping cart page. To look at the single codebase
-for this and more examples, [visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
+for this and more examples,
+[visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
-in [Dart](https://dartlang.org/), which looks familiar if you've used a
+in [Dart](https://www.dartlang.org), which looks familiar if you've used a
 language like Java or JavaScript. Experience with object-oriented languages
 is definitely helpful, but even non-programmers have made Flutter apps!
 
@@ -166,7 +168,9 @@ and store their mutable state in a subclass of [State](https://docs.flutter.io/f
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
 signal the framework to update the user interface by calling the State's build
-method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl) that's created with each new Flutter project.
+method again. For an example of managing state, see the
+[MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl)
+that's created with each new Flutter project.
 
 Having separate state and widget objects lets other widgets treat stateless and
 stateful widgets in the same way, without being concerned about losing state.
@@ -183,10 +187,10 @@ to start developing and iterating.
 
 Next steps:
 
-1.  [Follow the Flutter Getting Started guide](/get-started/).
-1.  Try [Building Layouts in Flutter](/tutorials/layout/) and
-    [Adding Interactivity to Your Flutter App](/tutorials/interactive/).
-1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro/).
+1.  [Follow the Flutter Getting Started guide](/get-started).
+1.  Try [Building Layouts in Flutter](/development/ui/layout) and
+    [Adding Interactivity to Your Flutter App](/development/ui/interactive).
+1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro).
 
 ## Get support
 

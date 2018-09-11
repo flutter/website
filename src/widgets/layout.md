@@ -1,4 +1,4 @@
 ---
 title: Layout Widgets
 ---
-{% include catalogpage.html category="Layout"%}
+{% include catalogpage.html category="Layout" %}

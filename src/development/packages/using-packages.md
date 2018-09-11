@@ -16,10 +16,13 @@ platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
-[developing packages](/developing-packages).
+[developing packages](/development/packages/developing-packages).
 
 If you are looking to add assets, images, or fonts, whether stored in files or
-packages, please see [Assets & Images](/assets-and-images).
+packages, please see [Assets & Images](/development/ui/assets-and-images).
+
+* TOC
+{:toc}
 
 ## Using packages
 
@@ -67,7 +70,7 @@ For a complete example, see [CSS Colors example](#css-example) below.
 ## Developing new packages
 
 Should a package not be available for your specific use case, you can
-[develop new custom packages](/developing-packages).
+[develop new custom packages](/development/packages/developing-packages).
 
 ## Managing package dependencies & versions
 
@@ -155,8 +158,8 @@ additional dependency options are avaialble:
   ```
 
   Finally, you can use the `ref` argument to pin the dependency to a specific git commit,
-  branch, or tag. For more details, see the
-  [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
+  branch, or tag. For more details, see
+  [Pub Dependencies](https://www.dartlang.org/tools/pub/dependencies).
 
 ## Examples
 

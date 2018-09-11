@@ -45,12 +45,12 @@ at these links:
 **New to Flutter?**<br>
 This page assumes you know how to create a layout using Flutter’s
 widgets.  For more information, see [Building Layouts in
-Flutter](/tutorials/layout/).
+Flutter](/development/ui/layout).
 </aside>
 
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
-A [_Route_](/cookbook/navigation/navigation-basics/) describes a page or screen
+A [_Route_](/cookbook/navigation/navigation-basics) describes a page or screen
 in a Flutter app.
 </aside>
 
@@ -126,7 +126,7 @@ how Flutter performs a hero animation.
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
 If the concept of tweens or tweening is new to you, please see the
-[Animations in Flutter tutorial.](/tutorials/animation/)
+[Animations in Flutter tutorial.](/development/ui/animations/tutorial)
 </aside>
 
 Hero animations are implemented using two
@@ -178,7 +178,7 @@ The next section describes Flutter's process in greater detail.
 The following describes how Flutter performs the transition from
 one route to another.
 
-<img src="/animations/hero-animations/images/hero-transition-0.png" alt="Before the transition the source hero appears in the source route">
+<img src="/development/ui/animations/hero-animations/images/hero-transition-0.png" alt="Before the transition the source hero appears in the source route">
 
 Before transition, the source hero waits in the source route's widget
 tree. The destination route does not yet exist, and the overlay
@@ -186,7 +186,7 @@ is empty.
 
 ---
 
-<img src="/animations/hero-animations/images/hero-transition-1.png" alt="The transition begins">
+<img src="/development/ui/animations/hero-animations/images/hero-transition-1.png" alt="The transition begins">
 
 Pushing a route to the Navigator triggers the animation.
 At t=0.0, Flutter does the following:
@@ -204,7 +204,7 @@ At t=0.0, Flutter does the following:
 
 ---
 
-<img src="/animations/hero-animations/images/hero-transition-2.png" alt="The hero flies in the overlay to its final position and size">
+<img src="/development/ui/animations/hero-animations/images/hero-transition-2.png" alt="The hero flies in the overlay to its final position and size">
 
 As the hero flies, its rectangular bounds are animated using
 [Tween&lt;Rect&gt;,](https://docs.flutter.io/flutter/animation/Tween-class.html)
@@ -218,7 +218,7 @@ for an example that uses a different Tween animation.)
 
 ---
 
-<img src="/animations/hero-animations/images/hero-transition-3.png" alt="When the transition is complete, the hero is moved from the overlay to the destination route">
+<img src="/development/ui/animations/hero-animations/images/hero-transition-3.png" alt="When the transition is complete, the hero is moved from the overlay to the destination route">
 
 When the flight completes:
 
@@ -319,7 +319,7 @@ The custom PhotoHero class maintains the hero, and its size, image,
 and behavior when tapped. The PhotoHero builds the following
 widget tree:
 
-<img src="/animations/hero-animations/images/photohero-class.png" alt="widget tree for the PhotoHero class">
+<img src="/development/ui/animations/hero-animations/images/photohero-class.png" alt="widget tree for the PhotoHero class">
 
 Here's the code:
 
@@ -503,7 +503,7 @@ during development.
 The following diagram shows the clipped image at the beginning
 (`t = 0.0`), and the end (`t = 1.0`) of the animation.
 
-<img src="/animations/hero-animations/images/radial-hero-animation.png" alt="visual diagram of
+<img src="/development/ui/animations/hero-animations/images/radial-hero-animation.png" alt="visual diagram of
 radial transformation from beginning to end">
 
 The blue gradient (representing the image), indicates where the clip
@@ -590,7 +590,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-<img src="/animations/hero-animations/images/radial-expansion-class.png" alt="widget tree for the RadialExpansion widget">
+<img src="/development/ui/animations/hero-animations/images/radial-expansion-class.png" alt="widget tree for the RadialExpansion widget">
 
 Here's the code:
 
@@ -665,10 +665,10 @@ but the image's aspect ratio remains constant.
 
 The following resources might help when writing animations:
 
-[Animations landing page](/animations/)
+[Animations landing page](/development/ui/animations)
 : Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
-  [Animations tutorial](/tutorials/animation/).
+  [Animations tutorial](/development/ui/animations/tutorial).
 
 [Flutter API documentation](https://docs.flutter.io/)
 : Reference documentation for all of the Flutter libraries.

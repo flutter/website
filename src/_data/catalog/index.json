@@ -71,7 +71,7 @@
   },
   {
     "name": "Animation and Motion",
-    "description": "Bring animations to your app. Check out <a href=\"/animations/\">Animations</a> in Flutter for an overview.",
+    "description": "Bring animations to your app.",
     "id":"animation"
   },
   {

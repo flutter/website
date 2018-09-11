@@ -36,7 +36,7 @@
   - title: GitHub samples
     permalink: https://github.com/flutter/samples/blob/master/INDEX.md
   - title: Flutter Gallery - demo app
-    permalink: xxx
+    permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
   children:
@@ -45,17 +45,17 @@
     - title: Tour the framework
       permalink: /widgets-into
     - title: Building layouts
-      permalink: /tutorials/layout
+      permalink: /development/ui/layout
     - title: Adding interactivity
-      permalink: /tutorials/interactive
+      permalink: /development/ui/interactive
     - title: "Assets and images"
-      permanlink: /assets-and-images
+      permanlink: /development/ui/assets-and-images
     - title: "Navigation & routing"
       permalink: /cookbook/navigation/navigation-basics
     - title: Inspect an app's UI
-      permalink: /inspector
+      permalink: /development/tools/inspector
     - title: Animations
-      permalink: /animations
+      permalink: /development/ui/animations
       children:
       - title: Animations overview
       - title: Implicitly animated widgets
@@ -75,7 +75,7 @@
     children:
     - title: Architect app to manage data flow
     - title: JSON and serialization
-      permalink: /json
+      permalink: /development/data/json
     - title: Back-end services
     - title: Use Firebase with Flutter
     - title: Run background processes
@@ -93,23 +93,23 @@
   - title: "Packages & Plugins"
     children:
     - title: Using packages
-      permalink: /using-packages
+      permalink: /development/packages/using-packages
     - title: "Developing packages & plugins"
-      permalink: /developing-packages
+      permalink: /development/packages/developing-packages
     - title: Package site
       permalink: http://pub.dartlang.org/flutter
   - title: Tools
     children:
     - title: Using hot reload
-      permalink: /tools/hot-reload
+      permalink: /development/tools/hot-reload
     - title: Using an IDE
-      permalink: /tools/using-ide
+      permalink: /development/tools/using-ide
     - title: Using an IDE
-      permalink: /tools/using-ide/vscode
+      permalink: /development/tools/using-ide/vscode
     - title: Format Flutter code
-      permalink: /tools/formatting
+      permalink: /development/tools/formatting
     - title: Widget inspector
-      permalink: /tools/inspector
+      permalink: /development/tools/inspector
 
 - title: "Testing & Optimization"
   children:
@@ -124,21 +124,22 @@
 - title: Deployment
   children:
   - title: Build and release for Android
-    permalink: /android-release
+    permalink: /deployment/android-release
   - title: Build and release for iOS
-    permalink: /ios-release
+    permalink: /deployment/ios-release
   - title: Continuous deployment with fastlane
-    permalink: /fastlane-cd
+    permalink: /deployment/fastlane-cd
 
 - title: Resources
   children:
   - title: Dart resources
+    permalink: /resources/bootstrap-into-dart
   - title: Flutter best practices
   - title: Technical videos for learning Flutter
   - title: Flutter developer communities
   - title: Flutter learning resources
   - title: FAQ
-    permalink: /faq
+    permalink: /resources/faq
 
 - title: "APIs & References"
   children:

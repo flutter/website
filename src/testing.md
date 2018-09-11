@@ -330,7 +330,7 @@ but for the `_test` suffix in it.
 
 For information on continuous deployment and testing, see
 
-* [Continuous Delivery using Fastlane with Flutter](/fastlane-cd/)
+* [Continuous Delivery using fastlane with Flutter](/deployment/fastlane-cd/)
 * [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
 * Test Flutter apps with [GitLab
   CI](https://docs.gitlab.com/ee/ci/README.html#doc-nav). You'll

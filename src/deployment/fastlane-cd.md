@@ -65,7 +65,7 @@ delivery from a local machine.
         certificate in your target's settings pane.
 1. Create a `Fastfile` script for each platform.
     * ![Android](/images/fastlane-cd/android.png) On Android, follow the
-    [Fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
+    [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
     Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
     Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
     to use the apk `flutter build` already built.
@@ -147,7 +147,7 @@ repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [fastlane CI documentation](https://flutter.io/fastlane-cd/)
+    * See [fastlane CI documentation](/deployment/fastlane-cd)
     for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
@@ -163,5 +163,5 @@ repository root.
 ## Reference
 
 The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-uses Fastlane for continuous deployment. See the source for a working example of
-Fastlane in action. The Flutter framework repository's Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
+uses fastlane for continuous deployment. See the source for a working example of
+fastlane in action. The Flutter framework repository's Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).

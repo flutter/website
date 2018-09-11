@@ -82,7 +82,7 @@ description: >
     </p>
 
     <div class="hot-reload-gif-container">
-        <img src="/tools/images/hot-reload.gif" class="hot-reload-gif" alt="Make a change in your code, and your app is changed instantly.">
+        <img src="/development/tools/images/hot-reload.gif" class="hot-reload-gif" alt="Make a change in your code, and your app is changed instantly.">
     </div>
 </section>
 
@@ -190,8 +190,8 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/using-packages">packages</a>, or
-    write <a href="/platform-channels">platform channels</a>,
+    Learn how to use <a href="/development/packages/using-packages">packages</a>,
+    or write <a href="/platform-channels">platform channels</a>,
     to access native code, APIs, and SDKs.
     </p>
 

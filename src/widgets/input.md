@@ -1,4 +1,4 @@
 ---
 title: Input Widgets
 ---
-{% include catalogpage.html category="Input"%}
+{% include catalogpage.html category="Input" %}

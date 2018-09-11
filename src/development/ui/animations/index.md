@@ -10,7 +10,7 @@ contribute to the slick look and feel of a polished app,
 and improve the user experience. Flutter's animation support
 makes it easy to implement a variety of animation types.
 Many widgets, especially
-[Material Design widgets](https://flutter.io/widgets/material/),
+[Material Design widgets](/widgets/material),
 come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
@@ -22,26 +22,26 @@ More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
 If you have a specific request, please
-[file an issue](https://github.com/flutter/flutter/issues).
+[file an issue](https://github.com/flutter/website/issues).
 {% endcomment %}
 
-* [Tutorial: Animations in Flutter](/tutorials/animation/)<br>
-Explains the fundamental classes in the Flutter animation package
-(controllers, Animatable, curves, listeners, builders),
-as it guides you through a progression of tween animations using
-different aspects of the animation APIs.
+* [Tutorial: Animations in Flutter](/development/ui/animations/tutorial)<br>
+  Explains the fundamental classes in the Flutter animation package
+  (controllers, Animatable, curves, listeners, builders),
+  as it guides you through a progression of tween animations using
+  different aspects of the animation APIs.
 
 * [Zero to One with Flutter, part
-1](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
-2](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
-Medium articles showing how to create an animated chart using tweening.
+  1](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
+  2](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
-Flutter](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)<br>
-Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-your app)](https://codelabs.developers.google.com/codelabs/flutter/index.html#6)
-shows how to animate the new message&mdash;sliding it from the input area up
-to the message list.
+  Flutter](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)<br>
+  Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
+  your app)](https://codelabs.developers.google.com/codelabs/flutter/index.html#6)
+  shows how to animate the new message&mdash;sliding it from the input area up
+  to the message list.
 
 ## Animation types
 
@@ -60,7 +60,7 @@ The framework calculates how to transition from the beginning point
 to the end point.
 
 The documents listed above, such as the [animations
-tutorial](/tutorials/animation/) are not about tweening,
+tutorial](/development/ui/animations/tutorial) are not about tweening,
 specifically, but they use tweens in their examples.
 
 ### Physics-based animation
@@ -105,7 +105,7 @@ image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
-* [Hero Animations](/animations/hero-animations/)
+* [Hero Animations](/development/ui/animations/hero-animations)
 How to create two styles of Hero animations:
   * The hero flies from one page to another while changing position
     and size.
@@ -128,7 +128,7 @@ classes.
 Animations that are broken into smaller motions, where some of the motion is delayed.
 The smaller animations may be sequential, or may partially or completely overlap.
 
-* [Staggered Animations](/animations/staggered-animations)
+* [Staggered Animations](/development/ui/animations/staggered-animations)
 
 <!-- Save so I can remember how to add it back later.
 <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
@@ -138,7 +138,7 @@ The smaller animations may be sequential, or may partially or completely overlap
 
 Learn more about Flutter animations at the following links:
 
-* [Animations: Technical Overview](/animations/overview.html)<br>
+* [Animations: Technical Overview](/development/ui/animations/overview.html)<br>
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 
@@ -157,5 +157,5 @@ The animation API for the Flutter framework.
 <hr>
 
 If there is specific animation documentation you'd like to see, please
-[file an issue](https://github.com/flutter/flutter/issues).
+[file an issue](https://github.com/flutter/website/issues).
 

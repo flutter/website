@@ -341,7 +341,7 @@ from dartlang.org, we recommend manually running the following.
 [Build Status SVG]: https://travis-ci.org/flutter/website.svg?branch=dash
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Dart install]: https://www.dartlang.org/install
-[Flutter install]: https://flutter.io/get-started/install
+[Flutter install]: /get-started/install
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
 [first-timers]: https://www.firsttimersonly.com/

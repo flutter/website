@@ -613,7 +613,7 @@ The widget tree for the
 [animate5](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/animation/animate5/main.dart)
 example looks like this:
 
-<img src="/tutorials/animation/images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
+<img src="/development/ui/animations/tutorial/images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
@@ -853,5 +853,6 @@ using Tweens, but there are many other classes to explore.
 You might investigate the specialized Tween classes,
 animations specific to Material Design, ReverseAnimation, shared element
 transitions (also known as Hero animations), physics simulations and
-`fling()` methods. See the [animations landing page](/animations/)
+`fling()` methods. See the
+[animations landing page](/development/ui/animations)
 for the latest available documents and examples.

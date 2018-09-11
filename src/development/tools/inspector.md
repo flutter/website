@@ -20,13 +20,13 @@ these widget trees. It can be helpful when:
 * Undestanding existing layouts
 * Diagnosing layout issues
 
-![IntelliJ Flutter Inspector Window](/tools/images/visual-debugging.png)
+![IntelliJ Flutter Inspector Window](images/visual-debugging.png)
 
 To start click "Select widget" on the Flutter Inspector toolbar, and then click
 on the device to select a widget. The selected widget is then highlighted
 on the device and in the widget tree.
 
-![Select Demo](/tools/images/inspector_select_example.gif)
+![Select Demo](images/inspector_select_example.gif)
 
 You can then browse around the interactive widget tree in the IDE to view
 nearby widgets and see their field values. If you are trying to debug a layout
@@ -36,7 +36,7 @@ same location in the tree. When debugging layout issues, the key fields to look
 at are the `size` and `constraints` fields. The constraints flow down the tree,
 and the sizes flow back up.
 
-![Switch Trees](/tools/images/switch_inspector_tree.gif)
+![Switch Trees](images/switch_inspector_tree.gif)
 
 For a more complete demonstration of the Inspector, please see the
 [DartConf 2018 talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).

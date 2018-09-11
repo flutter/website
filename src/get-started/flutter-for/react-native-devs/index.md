@@ -653,7 +653,8 @@ the same name in adjacent subdirectories. These files are also included in the
 asset bundle along with the specified asset. Flutter uses asset variants when
 choosing resolution-appropriate images for your app.
 
-In React Native, you would add a static image by placing the image file in a source code directory and referencing it.
+In React Native, you would add a static image by placing the image file in a
+source code directory and referencing it.
 
 <!-- skip -->
 ```JavaScript
@@ -668,7 +669,8 @@ widget’s build method.
 image: AssetImage('assets/background.png'),
 ```
 
-For more information, see [Adding Assets and Images in Flutter](/assets-and-images).
+For more information, see [Adding Assets and Images in
+Flutter](/development/ui/assets-and-images).
 
 ### How do I load images over a network?
 
@@ -698,7 +700,9 @@ In Flutter, install a package using the following instructions:
 
 1. Add the package name and version to the `pubspec.yaml` dependencies section.
 The example below shows how to add the `google_sign_in` Dart package to the
-`pubspec.yaml` file. Check your spaces when working in the YAML file because **white space matters**!
+`pubspec.yaml` file. Check your spaces when working in the YAML file because
+**white space matters**!
+
 <!-- skip -->
 ```yaml
 dependencies:
@@ -708,20 +712,23 @@ dependencies:
 ```
 
 2. Install the package from the command line by using `flutter packages get`.
-If using an IDE, it often runs `flutter packages get` for you, or it might
- prompt you to do so.
+   If using an IDE, it often runs `flutter packages get` for you, or it might
+   prompt you to do so.
 3. Import the package into your app code as shown below:
+
 <!-- skip -->
 ```Dart
 import 'package:flutter/cupertino.dart';
 ```
 
-For more information, see [Using Packages](/using-packages) and
-[Developing Packages & Plugins](/developing-packages).
+For more information, see [Using
+Packages](/development/packages/using-packages) and
+[Developing Packages &
+Plugins](/development/packages/developing-packages).
 
 You can find many packages shared by Flutter developers in the [Flutter
 Packages](https://pub.dartlang.org/flutter/) section of
-[pub.dartlang.org](https://pub.dartlang.org/).
+the [Package site](https://pub.dartlang.org/).
 
 ## Flutter widgets
 
@@ -803,8 +810,6 @@ ListView.builder(
 )
 ```
 
-
-
 |Android|iOS|
 |:---:|:--:|
 |<img src="/get-started/flutter-for/react-native-devs/images/flatlist_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/flatlist_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
@@ -880,7 +885,6 @@ class _MyCanvasState extends State<MyCanvas> {
   }
 }
 ```
-
 
 
 |Android|iOS|
@@ -969,11 +973,13 @@ For a complete list, see [Layout Widgets](/widgets/layout).
 
 In React Native, components can be layered using `absolute` positioning.
 
-Flutter uses the [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html) widget to arrange children widgets in layers.
+Flutter uses the
+[`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html)
+widget to arrange children widgets in layers.
 The widgets can entirely or partially overlap the base widget.
 
-The `Stack` widget positions its children relative to the edges of its box. This
-class is useful if you simply want to overlap several children widgets.
+The `Stack` widget positions its children relative to the edges of its box.
+This class is useful if you simply want to overlap several children widgets.
 
 <!-- skip -->
 ```Dart
@@ -999,21 +1005,21 @@ The previous example uses `Stack` to overlay a Container (that displays its `Tex
 on a translucent black background) on top of a `CircleAvatar`. The Stack offsets
 the text using the alignment property and Alignment coordinates.
 
-
-
 |Android|iOS|
 |:---:|:--:|
 |<img src="/get-started/flutter-for/react-native-devs/images/stack_android.png?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/stack_iOS.png?raw=true" style="width:300px;" alt="Loading">|
 ge
 <br/>
 
-For more information, see the [Stack](https://docs.flutter.io/flutter/widgets/Stack-class.html) class documentation.
+For more information, see the
+[Stack](https://docs.flutter.io/flutter/widgets/Stack-class.html)
+class documentation.
 
 ## Styling
 ### How do I style my components?
 
 In React Native, inline styling and `stylesheets.create` are used to style
-  components.
+components.
 
 <!-- skip -->
 ```JavaScript
@@ -1062,8 +1068,6 @@ Center(
 )
 ```
 
-
-
 |Android|iOS|
 |:---:|:--:|
 |<img src="/get-started/flutter-for/react-native-devs/images/flutterstyling_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/flutterstyling_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
@@ -1091,7 +1095,7 @@ name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
-Flutter's [Cupertino (iOS-style)](/widgets/cupertino/) package provides high
+Flutter's [Cupertino (iOS-style)](/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
 font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 
@@ -1156,8 +1160,9 @@ widget.
 ```
 
 A `Theme` can be applied even without using the `MaterialApp` widget. The
- [`Theme`](https://docs.flutter.io/flutter/material/Theme-class.html) widget takes a `ThemeData` in its `data` parameter and applies the
- `ThemeData` to all of its children widgets.
+[`Theme`](https://docs.flutter.io/flutter/material/Theme-class.html)
+widget takes a `ThemeData` in its `data` parameter and applies the
+`ThemeData` to all of its children widgets.
 
 <!-- skip -->
 ```Dart
@@ -1178,6 +1183,7 @@ A `Theme` can be applied even without using the `MaterialApp` widget. The
 ```
 
 ## State Management
+
 State is information that can be read synchronously when a widget is built
 or information that might change during the lifetime of a widget.
 To manage app state in Flutter, use a
@@ -1186,8 +1192,8 @@ paired with a State object.
 
 ### The StatelessWidget
 
-A `StatelessWidget` in Flutter is a widget that doesn't require a state change—it has no
-internal state to manage.
+A `StatelessWidget` in Flutter is a widget that doesn't require a state
+change&mdash;it has no internal state to manage.
 
 Stateless widgets are useful when the part of the user interface you are
 describing does not depend on anything other than the configuration information
@@ -1231,6 +1237,7 @@ to pass the `text`, which is marked as `final`. This class extends
 
 The `build` method of a stateless widget is typically called in only three
  situations:
+
 * When the widget is inserted into a tree
 * When the widget's parent changes its configuration
 * When an
@@ -1248,7 +1255,9 @@ rerun the `build` method so that the app can reflect the change.
 State is information that can be read synchronously when a widget is built and
 might change during the lifetime of the widget. It's the responsibility of the
 widget implementer to ensure that the state is promptly notified when the state
-changes. Use `StatefulWidget` when a widget can change dynamically. For example, the state of the widget changes by typing into a form, or moving a slider. Or, it can change over time—perhaps a data feed updates the UI.
+changes. Use `StatefulWidget` when a widget can change dynamically.
+For example, the state of the widget changes by typing into a form,
+or moving a slider. Or, it can change over time—perhaps a data feed updates the UI.
 
 [Checkbox](https://docs.flutter.io/flutter/material/Checkbox-class.html),
 [Radio](https://docs.flutter.io/flutter/material/Radio-class.html),
@@ -1274,7 +1283,10 @@ class MyStatefulWidget extends StatefulWidget {
 }
 ```
 
-The following state class, `_MyStatefulWidgetState`, implements the `build()` method for the widget. When the state changes, for example, when the user toggles the button, `setState` is called with the new toggle value. This causes the framework to rebuild this widget in the UI.
+The following state class, `_MyStatefulWidgetState`, implements the `build()`
+method for the widget. When the state changes, for example, when the user toggles
+the button, `setState` is called with the new toggle value. This causes the
+framework to rebuild this widget in the UI.
 
 <!-- skip -->
 ```Dart
@@ -1339,25 +1351,27 @@ Here are a few things to consider when designing your widget.
 
 
 In Flutter, widgets are either Stateful or Stateless—depending on whether
- they depend on a state change.
-* If a widget changes—the user interacts with it or a data feed interrupts
- the UI, then it’s Stateful.
+they depend on a state change.
 
+* If a widget changes—the user interacts with it or a data feed interrupts
+  the UI, then it’s Stateful.
 * If a widget is final or immutable, then it's Stateless.
 
 #### 2. Determine which object manages the widget’s state (for a StatefulWidget)
 
 In Flutter, there are three primary ways to manage state:
+
 * The widget manages its own state
 * The parent widget manages the widget’s state
 * A mix-and-match approach
 
 When deciding which approach to use, consider the following principles:
+
 * If the state in question is user data, for example the checked or unchecked
- mode of a checkbox, or the position of a slider, then the state is best managed
+  mode of a checkbox, or the position of a slider, then the state is best managed
   by the parent widget.
 * If the state in question is aesthetic, for example an animation, then the
- widget itself best manages the state.
+  widget itself best manages the state.
 * When in doubt, let the parent widget manage the child widget's state.
 
 #### 3. Subclass StatefulWidget and State
@@ -1408,8 +1422,6 @@ class MyStatelessWidget extends StatelessWidget {
   }
 }
 ```
-
-
 
 |Android|iOS|
 |:---:|:--:|
@@ -1507,7 +1519,10 @@ CustomCard(
 
 ## Local storage
 
-If you don't need to store a lot of data and it doesn't require structure, you can use `shared_preferences` which allows you to read and write persistent key-value pairs of primitive data types: booleans, floats, ints, longs, and strings.
+If you don't need to store a lot of data and it doesn't require
+structure, you can use `shared_preferences` which allows you to
+read and write persistent key-value pairs of primitive data
+types: booleans, floats, ints, longs, and strings.
 
 ### How do I store persistent key-value pairs that are global to the app?
 
@@ -1718,7 +1733,12 @@ TabBar(
 ```
 
 
-A `TabController` is required to coordinate the tab selection between a `TabBar` and a `TabBarView`. The `TabController` constructor length argument is the total number of tabs. A `TickerProvider` is required to trigger the notification whenever a frame triggers a state change. The `TickerProvider` is `vsync`. Pass the `vsync: this` argument to the `TabController` constructor whenever you create a new `TabController`.
+A `TabController` is required to coordinate the tab selection between a `TabBar`
+and a `TabBarView`. The `TabController` constructor `length` argument is the total
+number of tabs. A `TickerProvider` is required to trigger the notification whenever
+a frame triggers a state change. The `TickerProvider` is `vsync`. Pass the
+`vsync: this` argument to the `TabController` constructor whenever you create
+a new `TabController`.
 
 The [TickerProvider](https://docs.flutter.io/flutter/scheduler/TickerProvider-class.html)
 is an interface implemented by classes that can vend
@@ -1772,7 +1792,8 @@ class _NavigationHomePageState extends State<NavigationHomePage> with SingleTick
 
 #### Drawer navigation
 
-In React Native, import the needed react-navigation packages and then use `createDrawerNavigator` and `DrawerNavigation`.
+In React Native, import the needed react-navigation packages and then use
+`createDrawerNavigator` and `DrawerNavigation`.
 
 <!-- skip -->
 ```JavaScript
@@ -1818,7 +1839,10 @@ Drawer(
 ),
 ```
 
-The `Scaffold` widget also includes an `AppBar` widget that automatically displays an appropriate IconButton to show the `Drawer` when a Drawer is available in the `Scaffold`. The `Scaffold` automatically handles the edge-swipe gesture to show the `Drawer`.
+The `Scaffold` widget also includes an `AppBar` widget that automatically
+displays an appropriate IconButton to show the `Drawer` when a Drawer is
+available in the `Scaffold`. The `Scaffold` automatically handles the
+edge-swipe gesture to show the `Drawer`.
 
 <!-- skip -->
 ```Dart
@@ -1844,8 +1868,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
-
 |Android|iOS|
 |:---:|:--:|
 |<img src="/get-started/flutter-for/react-native-devs/images/navigation_android.gif?raw=true" style="width:300px;" alt="Loading">|<img src="/get-started/flutter-for/react-native-devs/images/navigation_iOS.gif?raw=true" style="width:300px;" alt="Loading">|
@@ -1863,7 +1885,8 @@ one or more pointer movements.
 
 ### How do I add a click or press listeners to a widget?
 
-In React Native, listeners are added to components using `PanResponder` or the `Touchable` components.
+In React Native, listeners are added to components using `PanResponder` or
+the `Touchable` components.
 
 <!-- skip -->
 ```JavaScript
@@ -1951,7 +1974,8 @@ GestureDetector(
 ```
 For more information, including a list of Flutter `GestureDetector` callbacks,
 see the
-[GestureDetector class](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
+[GestureDetector
+class](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
 
 
 
@@ -1963,7 +1987,8 @@ see the
 
 ## Making HTTP network requests
 
-Fetching data from the internet is common for most apps. And in Flutter, the `http` package provides the simplest way to fetch data from the internet.
+Fetching data from the internet is common for most apps. And in Flutter,
+the `http` package provides the simplest way to fetch data from the internet.
 
 ### How do I fetch data from API calls?
 
@@ -1984,7 +2009,10 @@ _getIPAddress = () => {
     });
 };
 ```
-Flutter uses the `http` package. To install the `http` package, add it to the dependencies section of our pubspec.yaml.
+
+Flutter uses the `http` package. To install the `http` package, add it to
+the dependencies section of our pubspec.yaml.
+
 <!-- skip -->
 ```yaml
 dependencies:
@@ -2342,7 +2370,7 @@ class FadeInView extends React.Component {
 ```
 
 To create the same animation in Flutter, create an
-`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html)
+[`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html)
 object named `controller` and specify the duration. By default, an
 `AnimationController` linearly produces values that range from 0.0 to 1.0,
 during a given duration. The animation controller generates a new value

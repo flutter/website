@@ -15,8 +15,8 @@ needed in the underlying render tree to transition from one state to the next.
 <aside id="note" class="alert alert-info" markdown="1">
 **Note:** If you would like to become better acquainted with Flutter by diving
 into some code, check out
-[Building Layouts in Flutter](/tutorials/layout/) and
-[Adding Interactivity to Your Flutter App](/tutorials/interactive/).
+[Building Layouts in Flutter](/development/ui/layout) and
+[Adding Interactivity to Your Flutter App](/development/ui/interactive).
 </aside>
 
 Hello World
@@ -64,12 +64,14 @@ to implement a
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
 function, which describes the widget in terms of other, lower-level widgets.
 The framework builds those widgets in turn until the process bottoms out
-in widgets that represent the underlying [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html), which computes and describes the geometry of the widget.
+in widgets that represent the underlying
+[`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html),
+which computes and describes the geometry of the widget.
 
 Basic widgets
 -------------
 
-_Main article: [Widgets Overview - Layout Models](https://flutter.io/widgets/layout)_
+_Main article: [Widgets Overview - Layout Models](/widgets/layout)_
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
@@ -228,7 +230,7 @@ fill the remaining space with its body, which consists a centered message.
 Using Material Components
 ---------------------
 
-_Main article: [Widgets Overview - Material Components](https://flutter.io/widgets/material)_
+_Main article: [Widgets Overview - Material Components](/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material app starts with the
@@ -312,7 +314,7 @@ consider when designing your own widgets.
 Handling gestures
 -----------------
 
-_Main article: [Gestures in Flutter](https://flutter.io/gestures/)_
+_Main article: [Gestures in Flutter](/gestures)_
 
 Most applications include some form of user interaction with the system. The
 first step in building an interactive application is to detect
@@ -449,8 +451,8 @@ use that information to change the overall presentation.
 
 In Flutter, change notifications flow "up" the widget hierarchy by way of
 callbacks, while current state flows "down" to the stateless widgets that do
-presentation. The common parent that redirects this flow is the State. Let's
-see how that works in practice, with this slightly more complex example:
+presentation. The common parent that redirects this flow is the State.
+The following slightly more complex example shows how this works in practice:
 
 
 ```dart
@@ -513,10 +515,10 @@ widgets, while maintaining simplicity in the parent.
 Bringing it all together
 ------------------------
 
-Let's consider a more complete example that brings together the concepts
-introduced above. We'll work with a hypothetical shopping application, which
-displays various products offered for sale and maintains a shopping cart for
-intended purchases. Let's start by defining our presentation class,
+What follows is a more complete example that brings together the concepts
+introduced above: A hypothetical shopping application displays various
+products offered for sale, and maintains a shopping cart for
+intended purchases. Start by defining the presentation class,
 `ShoppingListItem`:
 
 ```dart
@@ -574,8 +576,8 @@ widgets. It stores the values it receives in its constructor in
 [`final`](https://www.dartlang.org/guides/language/language-tour#final-and-const)
 member variables, which it then uses during its
 [`build`](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
-function. For example, the `inCart` boolean to toggle between two visual
-appearances: one that uses the primary color from the current theme and another
+function. For example, the `inCart` boolean toggles between two visual
+appearances: one that uses the primary color from the current theme, and another
 that uses gray.
 
 When the user taps the list item, the widget doesn't modify its `inCart`
@@ -591,9 +593,10 @@ its internal state, which triggers the parent to rebuild and create a new
 instance of `ShoppingListItem` with the new `inCart` value. Although the parent
 creates a new instance of `ShoppingListItem` when it rebuilds, that operation is
 cheap because the framework compares the newly built widgets with the previously
-built widgets and applies only the differences to the underlying [`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html).
+built widgets and applies only the differences to the underlying
+[`RenderObject`](https://docs.flutter.io/flutter/rendering/RenderObject-class.html).
 
-Let's look at an example parent widget that stores mutable state:
+Here's an example parent widget that stores mutable state:
 
 <!--
 class Product {
@@ -678,8 +681,9 @@ which means this widget stores mutable state. When the `ShoppingList`
 widget is first inserted into the tree, the framework calls the
 [`createState`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html#createState)
 function to create a fresh instance of `_ShoppingListState` to associate with
-that location in the tree. (Notice that we typically name subclasses of
-[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) with
+that location in the tree. (Notice that subclasses of
+[`State`](https://docs.flutter.io/flutter/widgets/State-class.html)
+are typically named with
 leading underscores to indicate that they are private implementation details.)
 When this widget's parent rebuilds, the parent creates a new instance of
 `ShoppingList`, but the framework reuses the `_ShoppingListState` instance

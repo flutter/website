@@ -1,4 +1,4 @@
 ---
 title: Material Components Widgets
 ---
-{% include catalogpage.html category="Material Components"%}
+{% include catalogpage.html category="Material Components" %}
