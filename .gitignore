@@ -11,7 +11,6 @@ node_modules
 .packages
 .dart_tool
 # pubspec.lock
-packages
 example.g
 
 # We haven't had any issues due to npm (sub-)package version discrepancies,
