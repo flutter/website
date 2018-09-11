@@ -2,9 +2,6 @@
 title: A Tour of the Flutter Widget Framework
 ---
 
-* TOC Placeholder
-{:toc}
-
 ## Introduction
 
 Flutter widgets are built using a modern react-style framework, which takes

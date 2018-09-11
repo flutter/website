@@ -21,9 +21,6 @@ If you are looking to develop a new package, please see
 If you are looking to add assets, images, or fonts, whether stored in files or
 packages, please see [Assets & Images](/assets-and-images).
 
-* TOC
-{:toc}
-
 ## Using packages
 
 ### Searching for packages

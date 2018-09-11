@@ -31,9 +31,6 @@ but you can use most of the same tools to diagnose other performance
 problems.
 </aside>
 
-* TOC Placeholder
-{:toc}
-
 <aside class="alert alert-info" markdown="1">
 **Note**: To perform tracing inside your Dart code, see [Tracing
 any Dart code performance](/debugging/#tracing-any-dart-code-performance)
