@@ -6,7 +6,41 @@
   top: 0;
   z-index: $flutter-z-header;
 
-  .nav-link {
-    color: $flutter-color-nav-links;
+  .navbar {
+    font-size: 20px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 14px;
+    }
+
+    .navbar-toggler {
+      color: $flutter-color-body;
+      margin-right: 16px;
+      padding: 0;
+    }
+
+    .btn {
+      font-size: 14px;
+      padding: 10px 40px;
+
+      @include media-breakpoint-up(md) {
+        margin-left: 16px;
+      }
+    }
+
+    .nav-link {
+      color: $flutter-color-nav-links;
+      padding: 20px 0;
+
+      @include media-breakpoint-up(md) {
+        padding: 0 16px;
+      }
+    }
+  }
+
+  &__searchfield {
+    @include media-breakpoint-up(md) {
+      margin-left: 16px;
+    }
   }
 }

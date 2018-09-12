@@ -1,11 +1,18 @@
 <ul class="nav flex-column">
 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" data-target="#getStartedMenu" role="button" aria-expanded="false" aria-controls="getStartedMenu">Get started</a>
+    <a class="nav-link collapsed" data-toggle="collapse" data-target="#getStartedMenu" role="button" aria-expanded="false" aria-controls="getStartedMenu">Get started</a>
   </li>
 
   <ul class="nav flex-column flex-nowrap collapse" id="getStartedMenu">
-    <li class="nav-item"><a class="nav-link" href="/get-started/install">1: Install</a></li>
+    <li class="nav-item"><a class="nav-link active" href="/get-started/install">1: Install</a></li>
+
+    <ul class="nav flex-column flex-nowrap" id="installSubMenu">
+      <li class="nav-item"><a class="nav-link active" href="/get-started/editor">Upgrade Flutter</a></li>
+      <li class="nav-item"><a class="nav-link" href="/get-started/test-drive">Configure editor</a></li>
+      <li class="nav-item"><a class="nav-link" href="/get-started/codelab">Use Flutter in IDEs</a></li>
+    </ul>
+
     <li class="nav-item"><a class="nav-link" href="/get-started/editor">2: Configure editor</a></li>
     <li class="nav-item"><a class="nav-link" href="/get-started/test-drive">3: Test drive</a></li>
     <li class="nav-item"><a class="nav-link" href="/get-started/codelab">4: Write your first app</a></li>
@@ -13,7 +20,7 @@
   </ul>
 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" data-target="#buildUIsMenu" role="button" aria-expanded="false" aria-controls="buildUIsMenu">Build UIs</a>
+    <a class="nav-link collapsed" data-toggle="collapse" data-target="#buildUIsMenu" role="button" aria-expanded="false" aria-controls="buildUIsMenu">Build UIs</a>
   </li>
 
   <ul class="nav flex-column flex-nowrap collapse" id="buildUIsMenu">
@@ -38,7 +45,7 @@
   </ul>
 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" data-target="#apisMenu" role="button" aria-expanded="false" aria-controls="apisMenu">Use device and SDK APIs</a>
+    <a class="nav-link collapsed" data-toggle="collapse" data-target="#apisMenu" role="button" aria-expanded="false" aria-controls="apisMenu">Use device and SDK APIs</a>
   </li>
 
   <ul class="nav flex-column flex-nowrap collapse" id="apisMenu">
@@ -54,7 +61,7 @@
   </ul>
 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" data-target="#toolsMenu" role="button" aria-expanded="false" aria-controls="toolsMenu">Development and tools</a>
+    <a class="nav-link collapsed" data-toggle="collapse" data-target="#toolsMenu" role="button" aria-expanded="false" aria-controls="toolsMenu">Development and tools</a>
   </li>
 
   <ul class="nav flex-column flex-nowrap collapse" id="toolsMenu">
@@ -72,7 +79,7 @@
   </ul>
 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" data-target="#detailsMenu" role="button" aria-expanded="false" aria-controls="detailsMenu">More details</a>
+    <a class="nav-link collapsed" data-toggle="collapse" data-target="#detailsMenu" role="button" aria-expanded="false" aria-controls="detailsMenu">More details</a>
   </li>
 
   <ul class="nav flex-column flex-nowrap collapse" id="detailsMenu">
