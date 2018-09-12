@@ -2,7 +2,7 @@
   padding-top: $flutter-content-top-padding;
 
   .nav-item {
-    font-size: 14px;
+    font-size: $font-size-sm;
 
     .nav-link {
       color: $flutter-color-body-light;
@@ -13,7 +13,7 @@
 
   &__title {
     font-family: $flutter-font-family-alt;
-    font-size: 20px;
+    font-size: $font-size-lg;
     margin-bottom: 8px;
   }
 }

@@ -1,16 +1,63 @@
 .site-sidebar {
   padding-top: $flutter-content-top-padding;
 
-  > .nav > .nav-item {
-    font-family: $flutter-font-family-alt;
-    font-size: 20px;
+  .nav-link {
+    padding: 6px 0;
+    position: relative;
   }
 
+  // First nav level
+  > .nav > .nav-item {
+    font-family: $flutter-font-family-alt;
+    font-size: $font-size-lg;
+
+    .nav-link {
+      align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      padding: 12px 0;
+
+      &::after {
+        content: 'keyboard_arrow_down';
+        font: $flutter-font-icon;
+        transition: transform .25s ease-in-out;
+      }
+
+      &:not(.collapsed) {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  // Second nav level
   > .nav > .nav > .nav-item {
-    font-size: 14px;
+    font-size: $font-size-sm;
 
     .nav-link {
       color: $flutter-color-body-light;
+
+      &.active {
+        font-weight: 400;
+      }
+    }
+  }
+
+  // Third nav level
+  > .nav > .nav > .nav > .nav-item {
+    font-size: $font-size-sm;
+
+    .nav-link {
+      border-left: 1px solid $flutter-color-light-grey;
+      color: $flutter-color-body-light;
+      padding-left: 16px;
+
+      &.active {
+        border-color: $flutter-color-blue-500;
+        color: $flutter-color-blue-500;
+      }
     }
   }
 }

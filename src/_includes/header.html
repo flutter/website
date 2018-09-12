@@ -1,12 +1,13 @@
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg justify-content-between">
+  <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="material-icons">menu</i>
+    </button>
+
     <a class="navbar-brand" href="/">
       <img class="d-inline-block align-middle" src="/images/flutter-mark-square-100.png" alt="Flutter Logo" width="40" height="40">
       {{site.title}}
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
       <ul class="navbar-nav">
@@ -26,9 +27,9 @@
           <a class="nav-link" href="/support">Support</a>
         </li>
       </ul>
-      <a class="btn btn-primary mt-2 mb-3 mt-lg-0 mb-lg-0 ml-lg-3" href="/get-started/install/">Get started</a>
-      <form action="/search/" class="form-inline">
-        <input type="search" name="q" id="q" autocomplete="off" class="form-control mb-3 mb-lg-0 ml-lg-3" placeholder="Search" aria-label="Search">
+      <a class="btn btn-primary d-none d-md-block" href="/get-started/install/">Get started</a>
+      <form action="/search/" class="form-inline d-none d-md-block">
+        <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
       </form>
     </div>
   </nav>
