@@ -1,5 +1,4 @@
 ---
-layout: tutorial
 title: Internationalizing Flutter Apps
 ---
 
