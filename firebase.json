@@ -26,7 +26,9 @@
       { "source": "/custom-fonts", "destination": "/cookbook/design/fonts", "type": 301 },
       { "source": "/routing-and-navigation", "destination": "/cookbook/navigation/navigation-basics", "type": 301 },
       { "source": "/networking", "destination": "/cookbook/networking/fetch-data", "type": 301 },
-      { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 }
+      { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 },
+      { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
+      { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 }
     ]
   }
 }
