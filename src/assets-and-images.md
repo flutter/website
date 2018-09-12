@@ -332,7 +332,7 @@ NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
 NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 
-For a more complete example see the implementation of the Flutter [video_payer plugin](https://pub.dartlang.org/packages/video_player).
+For a more complete example see the implementation of the Flutter [video_player plugin](https://pub.dartlang.org/packages/video_player).
 
 ## Platform assets
 
