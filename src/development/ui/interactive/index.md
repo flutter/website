@@ -1,5 +1,4 @@
 ---
-layout: tutorial
 title: Adding Interactivity to Your Flutter App
 ---
 
