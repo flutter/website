@@ -5,7 +5,3 @@
 /assets/main(-[0-9a-f]+)?.css
 
 # Temporary skip rules below this point:
-
-# FIXME(https://github.com/flutter/website/issues/1259):
-# Ignore invalid anchors for now (new Jekyll-toc seems to have issues)
-\#

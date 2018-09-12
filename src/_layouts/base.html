@@ -5,7 +5,9 @@
   <body>
     {% include body.html -%}
 
-    <div id="overlay-under-drawer"><!-- for the drawer on narrow screens --></div>
+    <div id="overlay-under-drawer">
+      {%- comment %} For the drawer on narrow screens {% endcomment -%}
+    </div>
 
     {% include header.html -%}
 
