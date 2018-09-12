@@ -7,10 +7,10 @@
   z-index: $flutter-z-header;
 
   .navbar {
-    font-size: 20px;
+    font-size: $font-size-lg;
 
     @include media-breakpoint-up(md) {
-      font-size: 14px;
+      font-size: $font-size-sm;
     }
 
     .navbar-toggler {
@@ -20,7 +20,7 @@
     }
 
     .btn {
-      font-size: 14px;
+      font-size: $font-size-sm;
       padding: 10px 40px;
 
       @include media-breakpoint-up(md) {

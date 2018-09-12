@@ -9,19 +9,19 @@
   // First nav level
   > .nav > .nav-item {
     font-family: $flutter-font-family-alt;
-    font-size: 20px;
+    font-size: $font-size-lg;
 
     .nav-link {
+      align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
       padding: 12px 0;
 
       &::after {
         content: 'keyboard_arrow_down';
-        display: inline-block;
         font: $flutter-font-icon;
-        position: absolute;
-        right: 0;
         transition: transform .25s ease-in-out;
-        vertical-align: middle;
       }
 
       &:not(.collapsed) {
@@ -34,7 +34,7 @@
 
   // Second nav level
   > .nav > .nav > .nav-item {
-    font-size: 14px;
+    font-size: $font-size-sm;
 
     .nav-link {
       color: $flutter-color-body-light;
@@ -47,7 +47,7 @@
 
   // Third nav level
   > .nav > .nav > .nav > .nav-item {
-    font-size: 14px;
+    font-size: $font-size-sm;
 
     .nav-link {
       border-left: 1px solid $flutter-color-light-grey;
