@@ -11,10 +11,14 @@ layout: base
       {% include toc.html %}
     </div>
     <main class="site-content col-12 col-md-9 col-xl-8" role="main">
+      <div>
+        {% include shared/page-github-links.html %}
+        <h1>{{ page.title }}</h1>
+      </div>
       <div class="d-xl-none">
         {% include toc.html %}
       </div>
-      {{content}}
+      {{ content | inject_anchors }}
     </main>
   </div>
 </div>
