@@ -18,4 +18,3 @@ gem 'uglifier'
 # Remaining old infrastructure gems
 gem 'html-proofer' # TODO: drop
 gem 'rake' # TODO: drop (this seems to be needed only for support of html-proofer)
-gem 'jekyll-redirect-from' # TODO: drop; replace with tri-site solution.

@@ -25,18 +25,13 @@ defaults:
 
 # Build settings
 
+# kramdown: {show_warnings: true}
+plugins: [jekyll-toc]
 source: src
 # `symlinked-sources` can refer to individual files or directories
 # under `src` that are symlinked to somewhere outside `src`, or it can
 # refer to the root folder of the symlinked content (like `site-shared/src`):
 symlinked-sources: [site-shared/src]
-
-plugins:
-  - jekyll-redirect-from # TODO(chalin): drop this in favor of Firebase redirects
-  - jekyll-toc
-
-# kramdown: {show_warnings: true}
-
 toc:
   min_level: 2
   max_level: 4
