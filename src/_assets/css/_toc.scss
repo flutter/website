@@ -1,12 +1,25 @@
 .site-toc {
-  padding-top: $flutter-content-top-padding;
+  $line-height: normal; // was: 26px // == map-get($spacers, 4_5);
+
+  @at-root {
+    #site-toc__side { display: none; }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: $flutter-content-top-padding;
+
+    @at-root {
+      #site-toc__inline { display: none; }
+      #site-toc__side { display: block; }
+    }
+  }
 
   .nav-item {
     font-size: $font-size-sm;
 
     .nav-link {
       color: $flutter-color-body-light;
-      line-height: 26px;
+      line-height: $line-height;
       padding: 0;
     }
   }
@@ -14,6 +27,50 @@
   &__title {
     font-family: $flutter-font-family-alt;
     font-size: $font-size-lg;
-    margin-bottom: 8px;
+    margin-bottom: map-get($spacers, 2); // was: 8px;
   }
+
+  &--button__page-top {
+    @include float-right;
+    font-size: $font-size-sm;
+    line-height: $line-height;
+    padding-top: 0;
+    padding-right: 0;
+
+    &::after {
+      content: 'vertical_align_top'; // 'keyboard_arrow_up';
+      font: $flutter-font-icon;
+    }
+  }
+
+  // (chalin) Styles copied over from site-www as-is below this point.
+  // They'll need to be cleaned up / merged. Feel free to readjust:
+
+  ul.section-nav { // Should be equivalent to ul.nav
+    $padding: map-get($spacers, 2);
+    line-height: normal;
+
+    @include media-breakpoint-up(xl) {
+      @include list-unstyled;
+    }
+
+    > li { padding-bottom: $padding; } // Extra space for top-level entries
+  }
+
+  // Override BS defaults for .nav, etc.
+  .nav {
+    display: block;
+    .nav-link {
+      padding: 0 !important;
+      color: theme-color('primary');
+      &.active {
+        color: theme-color('secondary'); // $gray-dark;
+        // &:before {
+        //   @include md-icon-content('chevron_right'); // alt: '〉 '; // '▷ '; // '◾ '; // '▸ '; // '● ';
+        //   margin-left: -0.9rem; // We tune the margin for top-level entries below.
+        // }
+      }
+    }
+  }
+  ul.section-nav.nav > li > .nav-link:before { margin-left: -1rem; }
 }

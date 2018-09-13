@@ -2,6 +2,8 @@
 
 @import '_bootstrap_config';
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 @import '_base';
 @import '_header';
@@ -9,5 +11,3 @@
 @import '_toc';
 @import '_content';
 @import '_footer';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';

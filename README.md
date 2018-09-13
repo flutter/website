@@ -98,22 +98,22 @@ create your own Firebase project (e.g. 'mit-flutter-staging')
 1. Tell Firebase about that project with the firebase
 [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
 	```
-	$ firebase use --add
+	$ npx firebase use --add
 	? Which project do you want to add? <select the project you created>
 	? What alias do you want to use for this project? (e.g. staging) staging
 	```
 
 1. Tell Firebase that you want to deploy to staging:
 	```
-	$ firebase use staging
+	$ npx firebase use staging
 	Now using alias staging (<your project name>)
 	```
 
 1. Tell Firebase to deploy:
 	```
-	$ firebase use staging
+	$ npx firebase use staging
 	Now using alias staging (<your project name>)
-	$ firebase deploy
+	$ npx firebase deploy
 
 	=== Deploying to '<your project name>'...
 
@@ -317,13 +317,13 @@ from dartlang.org, we recommend manually running the following.
 
   ```
   pub global activate linkcheck
-  npm install -g superstatic
+  npm install
   ```
 
 * Start the localhost Firebase server:
 
   ```
-  superstatic --port 4002
+  npx superstatic --port 4002
   ```
 
 * Run the link checker:

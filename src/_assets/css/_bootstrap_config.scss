@@ -16,3 +16,10 @@ $font-family-sans-serif: $flutter-font-family-base;
 $font-weight-base: 300;
 $headings-font-family: $flutter-font-family-alt;
 $headings-font-weight: 400;
+
+// Spacing (extra spacers beyond Bootstrap's defaults)
+
+$site-spacer: 1rem; // assert: should match Bootstrap $spacer
+$spacers: (
+  4_5: ($site-spacer * 1.625), // 4.5
+);
