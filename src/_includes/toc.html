@@ -1,4 +1,23 @@
-{% if page.toc -%}
-<div class="site-toc__title">Contents</div>
-{{ content | toc_only }}
+{% comment %}
+  Include parameters:
+
+  - class: CSS classes to add to toc element.
+  - header: header text, default 'Contents'
+  - kind: should be one of 'inline' or 'side'; if present it is
+    suffixed to the toc id, e.g. id="site-toc--side"
+
+  If you don't want the back-to-top button style `site-toc__back-to-top` as `display: none`.
+{% endcomment -%}
+
+{% if include.kind -%}
+  {% assign id-suffix = include.kind | prepend: '__' -%}
 {% endif -%}
+<div id="site-toc{{id-suffix}}" class="site-toc {{include.class}}">
+  <header class="site-toc__title">
+    {{include.header | default: 'Contents'}}
+    {% unless include.kind == 'inline' -%}
+      <button type="button" class="btn site-toc--button__page-top" aria-label="Page top"></button>
+    {% endunless -%}
+  </header>
+  {{ content | toc_only }}
+</div>

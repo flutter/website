@@ -2,22 +2,32 @@
 layout: base
 ---
 
+{% comment %} TODO(chalin): The following should probably just be encoded in Sass. {% endcomment -%}
+{% if page.toc -%}
+  {% assign main-col = 'col-12 col-md-9 col-xl-8' -%}
+  {% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
+  {% comment %}Side toc is col-xl-2{% endcomment -%}
+{% else -%}
+  {% assign main-col = 'col-12 col-md-9' -%}
+  {% assign sidebar-col = 'col-12 col-md-3' -%}
+{% endif -%}
+
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
-    <div class="sticky-col site-sidebar col-12 col-md-3 col-xl-2">
+    <div class="sticky-col site-sidebar {{sidebar-col}}">
       {% include sidebar.html %}
     </div>
-    <div class="sticky-col site-toc d-none d-xl-block col-xl-2 order-3">
-      {% include toc.html %}
-    </div>
-    <main class="site-content col-12 col-md-9 col-xl-8" role="main">
-      <div>
+    {% if page.toc -%}
+      {% include toc.html kind="side" class="sticky-col col-xl-2 order-3" %}
+    {% endif -%}
+    <main class="site-content {{main-col}}" role="main">
+      <header class="site-content__title">
         {% include shared/page-github-links.html %}
         <h1>{{ page.title }}</h1>
-      </div>
-      <div class="site-toc d-xl-none">
-        {% include toc.html %}
-      </div>
+      </header>
+      {% if page.toc -%}
+        {% include toc.html kind="inline" %}
+      {% endif -%}
       {{ content | inject_anchors }}
     </main>
   </div>

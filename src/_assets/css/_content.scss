@@ -4,4 +4,15 @@
   @include media-breakpoint-up(md) {
     border-left: 1px solid $flutter-color-light-grey;
   }
+
+  &__title {
+    padding-bottom: map-get($spacers, 3);
+
+    @at-root {
+      #page-github-links {
+        @include float-right;
+        .btn { padding: 0 ($btn-padding-x / 2); }
+      }
+    }
+  }
 }
