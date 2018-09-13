@@ -1,10 +1,11 @@
 <footer class="site-footer">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <div class="logo">
+      <div class="col-md-12 site-footer__wrapper">
+        <div class="site-footer__logo">
           <img src="/images/flutter-mono-81x100.png" alt="Flutter Logo" width="81" height="100">
         </div>
+        <div class="site-footer__content">
           <p class="site-footer__link-list">
             <a href="https://groups.google.com/forum/#!forum/flutter-dev">{{ site.email  | regex_replace: '(.*?@).*', '\1' }}</a> &bull;
             <a href="https://twitter.com/flutterio">twitter</a> &bull;
@@ -21,6 +22,7 @@
             Commons Attribution 4.0 International License</a>,
             and code samples are licensed under the BSD License.
           </p>
+        </div>
       </div>
     </div>
   </div>

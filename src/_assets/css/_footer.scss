@@ -1,0 +1,33 @@
+.site-footer {
+  background-color: $flutter-color-footer;
+  color: $flutter-color-white;
+  padding: 20px 0;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    font-size: $font-size-sm;
+    margin: 20px 0;
+
+    a {
+      color: $flutter-color-white;
+    }
+
+    .licenses {
+      font-size: 10px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin: 0 20px;
+      flex-grow: 1;
+    }
+  }
+}
