@@ -38,6 +38,8 @@ toc:
 
 ## Site-wide shorthands
 
+os-list: [Windows, macOS, Linux]
+
 alert:
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
@@ -46,10 +48,10 @@ alert:
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fa fa-info-circle"></i> **Note:**
   important: >-
-    <aside class="alert alert-warning" role="alert">
+    <aside class="alert alert-warning" role="alert" markdown="1">
     <i class="fa fa-warning"></i> **Important:**
   warning: >-
-    <aside class="alert alert-danger" role="alert">
+    <aside class="alert alert-danger" role="alert" markdown="1">
     <i class="fa fa-exclamation-circle"></i> **Warning:**
   end: </aside>
 
