@@ -151,6 +151,7 @@
     @include media-breakpoint-down(sm) {
       font-size: $font-size-lg;
       height: 66px;
+      width: 100%;
     }
 
     @include media-breakpoint-up(md) {
