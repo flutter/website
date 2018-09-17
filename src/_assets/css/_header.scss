@@ -15,25 +15,25 @@
 
     .navbar-toggler {
       color: $flutter-color-body;
-      margin-right: 16px;
+      margin-right: bs-spacer(4);
       padding: 0;
     }
 
     .btn {
       font-size: $font-size-sm;
-      padding: 10px 40px;
+      padding: bs-spacer(2) bs-spacer(10);
 
       @include media-breakpoint-up(md) {
-        margin-left: 16px;
+        margin-left: bs-spacer(4);
       }
     }
 
     .nav-link {
       color: $flutter-color-nav-links;
-      padding: 20px 0;
+      padding: bs-spacer(5) 0;
 
       @include media-breakpoint-up(md) {
-        padding: 0 16px;
+        padding: 0 bs-spacer(4);
       }
     }
   }
@@ -67,7 +67,7 @@
       }
 
       .navbar-nav {
-        margin-bottom: 20px;
+        margin-bottom: bs-spacer(5);
         overflow-y: auto;
       }
     }
@@ -118,7 +118,7 @@
   &__cta {
     @include media-breakpoint-down(sm) {
       flex-shrink: 0;
-      margin: auto 20px 20px;
+      margin: auto bs-spacer(5) bs-spacer(5);
       order: 1;
     }
   }
@@ -131,7 +131,7 @@
       font: $flutter-font-icon;
       pointer-events: none;
       position: absolute;
-      left: 0;
+      left: bs-spacer(1);
     }
 
     @include media-breakpoint-down(sm) {
@@ -147,14 +147,14 @@
     }
 
     @include media-breakpoint-up(md) {
-      margin-left: 16px;
+      margin-left: bs-spacer(4);
     }
   }
 
   &__searchfield {
     border: 0;
     font-size: $font-size-sm;
-    padding-left: 32px;
+    padding-left: bs-spacer(8);
 
     @include media-breakpoint-down(sm) {
       font-size: $font-size-lg;

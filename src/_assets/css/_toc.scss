@@ -1,5 +1,5 @@
 .site-toc {
-  $line-height: normal; // was: 26px // == map-get($spacers, 4_5);
+  $line-height: normal;
 
   @at-root {
     #site-toc__side { display: none; }
@@ -27,7 +27,7 @@
   &__title {
     font-family: $flutter-font-family-alt;
     font-size: $font-size-lg;
-    margin-bottom: map-get($spacers, 2); // was: 8px;
+    margin-bottom: bs-spacer(2);
   }
 
   &--button__page-top {
