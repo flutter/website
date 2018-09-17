@@ -14,7 +14,7 @@ layout: base
 
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
-    <div class="sticky-col site-sidebar {{sidebar-col}}">
+    <div class="sticky-col site-sidebar {{sidebar-col}} d-none d-md-block">
       {% include sidebar.html %}
     </div>
     {% if page.toc -%}

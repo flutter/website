@@ -65,6 +65,11 @@
           opacity: 1;
         }
       }
+
+      .navbar-nav {
+        margin-bottom: 20px;
+        overflow-y: auto;
+      }
     }
 
     @include media-breakpoint-up(md) {
@@ -112,6 +117,8 @@
 
   &__cta {
     @include media-breakpoint-down(sm) {
+      flex-shrink: 0;
+      margin: auto 20px 20px;
       order: 1;
     }
   }
@@ -129,9 +136,10 @@
 
     @include media-breakpoint-down(sm) {
       border-bottom: 1px solid $flutter-color-light-grey;
+      flex-shrink: 0;
       margin: 0;
-      padding: 0 $flutter-nav-mobile-side-padding;
       order: -1;
+      padding: 0 $flutter-nav-mobile-side-padding;
 
       &::before {
         left: $flutter-nav-mobile-side-padding;

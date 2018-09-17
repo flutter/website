@@ -1,6 +1,25 @@
 .site-sidebar {
   padding-top: $flutter-content-top-padding;
 
+  // Customization for sidebar in mobile nav
+  &.site-sidebar--header {
+    padding-left: 8px;
+    padding-top: 0;
+
+    > .nav > .nav-item {
+      font-size: $font-size-base;
+    }
+
+    > .nav > .nav-item,
+    > .nav > .nav > .nav-item,
+    > .nav > .nav > .nav > .nav-item {
+      .nav-link {
+        padding-bottom: 8px;
+        padding-top: 8px;
+      }
+    }
+  }
+
   .nav-link {
     padding: 6px 0;
     position: relative;
@@ -38,6 +57,7 @@
 
     .nav-link {
       color: $flutter-color-body-light;
+      margin-left: 16px;
 
       &.active {
         font-weight: 400;
@@ -52,6 +72,7 @@
     .nav-link {
       border-left: 1px solid $flutter-color-light-grey;
       color: $flutter-color-body-light;
+      margin-left: 16px;
       padding-left: 16px;
 
       &.active {
