@@ -1,7 +1,7 @@
 .site-footer {
   background-color: $flutter-color-footer;
   color: $flutter-color-white;
-  padding: 20px 0;
+  padding: bs-spacer(5) 0;
 
   &__wrapper {
     align-items: center;
@@ -15,7 +15,7 @@
 
   &__content {
     font-size: $font-size-sm;
-    margin: 20px 0;
+    margin: bs-spacer(5) 0;
 
     a {
       color: $flutter-color-white;
@@ -26,7 +26,7 @@
     }
 
     @include media-breakpoint-up(md) {
-      margin: 0 20px;
+      margin: 0 bs-spacer(5);
       flex-grow: 1;
     }
   }
