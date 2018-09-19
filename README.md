@@ -77,43 +77,39 @@ if you already have the required packages installed.
 
  1. Test your changes by serving the site locally. Run either **one** of these commands:
 
-    - `tool/serve.sh`, _or_
+    - `./tool/serve.sh`, _or_
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
 
- 1. Prior to submitting, run link validation:<br>
-    `tool/shared/check-links.sh`
+ 1. Prior to submitting, validate site links:<br>
+    `./tool/shared/check-links.sh`
 
 ## Deploy to a staging site
 
-For edits made directly in the GitHub web UI, the changes will be deployed to a
-staging site (such as `https://flutter-io-deploy-three.firebaseapp.com/inspector`)
-by the Travis job.
-
-For edits you make locally (using the 'developing' steps above), you can deploy them
-to a personal staging site as follows (steps 1 and 2 need to be done only once):
+You can deploy your local edits to a personal staging site as follows (steps 1 and 2 need to be done only once):
 
 1. In the [Firebase Console](https://console.firebase.google.com),
 create your own Firebase project (e.g. 'mit-flutter-staging')
 
 1. Tell Firebase about that project with the firebase
 [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
-	```
+
+	```console
 	$ npx firebase use --add
 	? Which project do you want to add? <select the project you created>
 	? What alias do you want to use for this project? (e.g. staging) staging
 	```
 
 1. Tell Firebase that you want to deploy to staging:
-	```
+
+	```console
 	$ npx firebase use staging
 	Now using alias staging (<your project name>)
 	```
 
 1. Tell Firebase to deploy:
-	```
-	$ npx firebase use staging
-	Now using alias staging (<your project name>)
-	$ npx firebase deploy
+
+  ```console
+  $ ./tool/shared/deploy.sh staging
 
 	=== Deploying to '<your project name>'...
 
@@ -124,6 +120,15 @@ create your own Firebase project (e.g. 'mit-flutter-staging')
 
 	✔  Deploy complete!
 	```
+
+## Deploying to the official site
+
+Deploy to the `default` firebase project (hosting the official site) using this
+command:
+
+```
+./tool/shared/deploy.sh --robots ok default
+```
 
 ## Writing for flutter.io
 
@@ -301,42 +306,6 @@ If new sample apps have been added, update `_data/catalog/widget.json`. The entr
 ```
 
 The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
-
-## Preventing broken links
-
-Some form of broken links prevention is done automatically by `rake checklinks`
-on every commit (through `tool/travis.sh`). But this won't see any Firebase
-redirects (`rake checklinks` doesn't run the Firebase server) and it won't
-check incoming links.
-
-Before we can move the more complete
-[automated `linkcheck` solution](https://github.com/dart-lang/site-webdev/blob/master/tool/check-links-using-fb.sh)
-from dartlang.org, we recommend manually running the following.
-
-* First time setup:
-
-  ```
-  pub global activate linkcheck
-  npm install
-  ```
-
-* Start the localhost Firebase server:
-
-  ```
-  npx superstatic --port 4002
-  ```
-
-* Run the link checker:
-
-  ```
-  linkcheck :4002
-  ```
-
-  Even better, to check that old URLs are correctly redirected:
-
-  ```
-  linkcheck :4002 --input-file tool/sitemap.txt
-  ```
 
 [Build Status SVG]: https://travis-ci.org/flutter/website.svg?branch=dash
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
