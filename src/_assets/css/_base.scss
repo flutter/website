@@ -4,17 +4,17 @@ body {
 }
 
 .btn {
-  font-family: $flutter-font-family-alt;
+  font-family: $site-font-family-alt;
 }
 
 .sticky-col {
   @include media-breakpoint-up(md) {
     align-self: start;
     position: sticky;
-    top: $flutter-header-height;
+    top: $site-header-height;
   }
 }
 
 .material-icons {
-  font: $flutter-font-icon;
+  font: $site-font-icon;
 }

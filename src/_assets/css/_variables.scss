@@ -1,22 +1,23 @@
 // Colors
 $flutter-color-blue-500: #1389FD;
-$flutter-color-white: #FFF;
-$flutter-color-light-grey: #D8D8D8;
-$flutter-color-nav-links: #6E7274;
-$flutter-color-body: #4A4A4A;
-$flutter-color-body-light: rgba(74/255, 74/255, 74/255, .8);
-$flutter-color-footer: #303c42;
+$site-color-white: #FFF;
+$site-color-light-grey: #D8D8D8;
+$site-color-nav-links: #6E7274;
+$site-color-body: #4A4A4A;
+$site-color-body-light: rgba(74/255, 74/255, 74/255, .8);
+$site-color-footer: #303c42;
+$site-color-primary: $flutter-color-blue-500;
 
 // Fonts
-$flutter-font-family-base: 'Roboto', sans-serif;
-$flutter-font-family-alt: 'Google Sans', 'Roboto', sans-serif;
-$flutter-font-family-icon: 'Material Icons';
-$flutter-font-icon: 24px/1 $flutter-font-family-icon;
+$site-font-family-base: 'Roboto', sans-serif;
+$site-font-family-alt: 'Google Sans', 'Roboto', sans-serif;
+$site-font-family-icon: 'Material Icons';
+$site-font-icon: 24px/1 $site-font-family-icon;
 
 // Layout
-$flutter-header-height: 66px;
-$flutter-content-top-padding: 40px;
-$flutter-nav-mobile-side-padding: 20px;
+$site-header-height: 66px;
+$site-content-top-padding: 40px;
+$site-nav-mobile-side-padding: 20px;
 
 // Layer stack
-$flutter-z-header: 100;
+$site-z-header: 100;

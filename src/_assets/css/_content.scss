@@ -1,8 +1,8 @@
 .site-content {
-  padding-top: $flutter-content-top-padding;
+  padding-top: $site-content-top-padding;
 
   @include media-breakpoint-up(md) {
-    border-left: 1px solid $flutter-color-light-grey;
+    border-left: 1px solid $site-color-light-grey;
   }
 
   &__title {

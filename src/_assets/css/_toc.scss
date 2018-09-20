@@ -6,7 +6,7 @@
   }
 
   @include media-breakpoint-up(xl) {
-    padding-top: $flutter-content-top-padding;
+    padding-top: $site-content-top-padding;
 
     @at-root {
       #site-toc__inline { display: none; }
@@ -18,14 +18,14 @@
     font-size: $font-size-sm;
 
     .nav-link {
-      color: $flutter-color-body-light;
+      color: $site-color-body-light;
       line-height: $line-height;
       padding: 0;
     }
   }
 
   &__title {
-    font-family: $flutter-font-family-alt;
+    font-family: $site-font-family-alt;
     font-size: $font-size-lg;
     margin-bottom: bs-spacer(2);
   }
@@ -39,7 +39,7 @@
 
     &::after {
       content: 'vertical_align_top'; // 'keyboard_arrow_up';
-      font: $flutter-font-icon;
+      font: $site-font-icon;
     }
   }
 
