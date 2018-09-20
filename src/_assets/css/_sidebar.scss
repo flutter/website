@@ -1,5 +1,5 @@
 .site-sidebar {
-  padding-top: $flutter-content-top-padding;
+  padding-top: $site-content-top-padding;
 
   // Customization for sidebar in mobile nav
   &.site-sidebar--header {
@@ -27,7 +27,7 @@
 
   // First nav level
   > .nav > .nav-item {
-    font-family: $flutter-font-family-alt;
+    font-family: $site-font-family-alt;
     font-size: $font-size-lg;
 
     .nav-link {
@@ -39,7 +39,7 @@
 
       &::after {
         content: 'keyboard_arrow_down';
-        font: $flutter-font-icon;
+        font: $site-font-icon;
         transition: transform .25s ease-in-out;
       }
 
@@ -56,7 +56,7 @@
     font-size: $font-size-sm;
 
     .nav-link {
-      color: $flutter-color-body-light;
+      color: $site-color-body-light;
       margin-left: bs-spacer(4);
 
       &.active {
@@ -70,14 +70,14 @@
     font-size: $font-size-sm;
 
     .nav-link {
-      border-left: 1px solid $flutter-color-light-grey;
-      color: $flutter-color-body-light;
+      border-left: 1px solid $site-color-light-grey;
+      color: $site-color-body-light;
       margin-left: bs-spacer(4);
       padding-left: bs-spacer(4);
 
       &.active {
-        border-color: $flutter-color-blue-500;
-        color: $flutter-color-blue-500;
+        border-color: $site-color-primary;
+        color: $site-color-primary;
       }
     }
   }

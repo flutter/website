@@ -2,8 +2,8 @@
 // Reference: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
 
 // Color config
-$primary: $flutter-color-blue-500;
-$body-color: $flutter-color-body;
+$primary: $site-color-primary;
+$body-color: $site-color-body;
 
 // Component config
 $border-radius: 0;
@@ -12,9 +12,9 @@ $border-radius-sm: 0;
 $btn-font-weight: 400;
 
 // Font config
-$font-family-sans-serif: $flutter-font-family-base;
+$font-family-sans-serif: $site-font-family-base;
 $font-weight-base: 300;
-$headings-font-family: $flutter-font-family-alt;
+$headings-font-family: $site-font-family-alt;
 $headings-font-weight: 400;
 
 // Spacing (extra spacers beyond Bootstrap's defaults)
