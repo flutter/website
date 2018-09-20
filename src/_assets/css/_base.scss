@@ -3,6 +3,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  color: $site-color-primary;
+  font: $site-font-h1;
+  margin-bottom: bs-spacer(12);
+}
+
+h2 {
+  color: $site-color-primary;
+  font: $site-font-h2;
+  margin: bs-spacer(12) 0 bs-spacer(8);
+}
+
+h3 {
+  font: $site-font-h3;
+  margin: bs-spacer(8) 0 bs-spacer(4);
+}
+
+a.card {
+  color: inherit;
+
+  &:hover {
+    border-bottom: 4px solid $site-color-primary;
+    text-decoration: none;
+
+    .card-title {
+      color: $site-color-primary;
+    }
+
+    .card-body {
+      padding-bottom: 17px;
+    }
+  }
+}
+
 .btn {
   font-family: $site-font-family-alt;
 }
