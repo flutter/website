@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/chalin/jekyll-toc.git
-  revision: 273f37489245ac6c945e1523c45932bae0beab36
-  branch: chalin-no-toc
+  revision: 7125625d6a067b4545d79b4f4454c7167095ced1
+  branch: master
   specs:
     jekyll-toc (0.7.0.pre.dev.1)
       nokogiri (~> 1.7)
