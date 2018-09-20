@@ -1,4 +1,5 @@
 .site-content {
+  padding-bottom: $site-content-top-padding;
   padding-top: $site-content-top-padding;
 
   @include media-breakpoint-up(md) {
@@ -6,8 +7,6 @@
   }
 
   &__title {
-    padding-bottom: map-get($spacers, 3);
-
     @at-root {
       #page-github-links {
         @include float-right;
