@@ -2,6 +2,8 @@
   background-color: $site-color-footer;
   color: $site-color-white;
   padding: bs-spacer(5) 0;
+  position: relative;
+  z-index: $site-z-footer;
 
   &__wrapper {
     align-items: center;

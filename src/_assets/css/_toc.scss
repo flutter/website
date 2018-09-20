@@ -6,12 +6,17 @@
   }
 
   @include media-breakpoint-up(xl) {
+    padding-bottom: $site-content-top-padding;
     padding-top: $site-content-top-padding;
 
     @at-root {
       #site-toc__inline { display: none; }
       #site-toc__side { display: block; }
     }
+  }
+
+  &.site-toc--side {
+    right: 0;
   }
 
   .nav-item {

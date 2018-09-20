@@ -10,6 +10,7 @@ $(function () {
   // });
 
   adjustToc();
+  initFixedColumns();
 })
 
 // TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
@@ -35,4 +36,26 @@ function adjustToc() {
   $(li).find('a').addClass('nav-link');
 
   $('body').scrollspy({ offset: 100, target: tocId });
+}
+
+function initFixedColumns() {
+  var fixedColumnsSelector = '[data-fixed-column]';
+  var footerSelector = 'footer.site-footer';
+  var headerHeight = 66;
+
+  function adjustFixedColumns() {
+    var footerOffset = $(footerSelector).offset().top;
+    var footerPosition = footerOffset - $(window).scrollTop();
+    var footerVisibleOffset = $(window).height() - footerPosition;
+    if (footerVisibleOffset > 0) {
+      var fixedColumnsMaxHeight = $(window).height() - headerHeight - footerVisibleOffset;
+      $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
+    } else {
+      $(fixedColumnsSelector).css('max-height', '');
+    }
+  }
+
+  // listen for scroll and execute once
+  $(window).scroll(adjustFixedColumns);
+  adjustFixedColumns();
 }
