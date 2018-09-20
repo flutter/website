@@ -12,7 +12,11 @@
 {% if include.kind -%}
   {% assign id-suffix = include.kind | prepend: '__' -%}
 {% endif -%}
-<div id="site-toc{{id-suffix}}" class="site-toc {{include.class}}">
+<div
+  id="site-toc{{id-suffix}}"
+  class="site-toc site-toc--{{include.kind}} {{include.class}}"
+  {% if include.kind == 'side' %}data-fixed-column{% endif %}
+>
   <header class="site-toc__title">
     {{include.header | default: 'Contents'}}
     {% unless include.kind == 'inline' -%}
