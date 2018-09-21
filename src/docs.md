@@ -3,13 +3,16 @@ title: Flutter Documentation
 description: The landing page for Flutter documentation.
 ---
 
+<div class="card-deck">
 {% for card in site.data.docs_cards %}
-- ### [{{card.name}}]({{card.url}})
-  {:.card-title.no_toc}
-
-  {{card.description}}
-{:.card}
+    <a class="card" href="{{card.url}}">
+        <div class="card-body">
+            <header class="card-title">{{card.name}}</header>
+            <p class="card-text">{{card.description}}</p>
+        </div>    
+    </a>
 {% endfor %}
+</div>
 
 ## New to Flutter?
 

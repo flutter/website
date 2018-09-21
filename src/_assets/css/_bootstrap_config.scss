@@ -10,12 +10,17 @@ $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
 $btn-font-weight: 400;
+$card-border-radius: 4px;
 
 // Font config
 $font-family-sans-serif: $site-font-family-base;
 $font-weight-base: 300;
 $headings-font-family: $site-font-family-alt;
 $headings-font-weight: 400;
+$h1-font-size: 3rem;
+$h2-font-size: 2.25rem;
+$h3-font-size: 1.125rem;
+$dt-font-weight: 300;
 
 // Spacing (extra spacers beyond Bootstrap's defaults)
 $site-spacer: 1rem; // assert: should match Bootstrap $spacer

@@ -3,6 +3,45 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  margin-bottom: bs-spacer(12);
+}
+
+h2 {
+  margin: bs-spacer(12) 0 bs-spacer(8);
+}
+
+h3 {
+  margin: bs-spacer(8) 0 bs-spacer(4);
+}
+
+dd {
+  margin-bottom: .75rem;
+}
+
+a.card {
+  color: inherit;
+
+  &:hover {
+    border-bottom: 4px solid $site-color-primary;
+    text-decoration: none;
+
+    .card-title {
+      color: $site-color-primary;
+    }
+
+    .card-body {
+      padding-bottom: 17px;
+    }
+  }
+}
+
+.card-title {
+  font-family: $site-font-family-alt;
+  font-size: $font-size-lg;
+  margin-bottom: bs-spacer(2);
+}
+
 .btn {
   font-family: $site-font-family-alt;
 }
