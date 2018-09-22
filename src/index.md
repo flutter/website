@@ -293,7 +293,7 @@ Future<Null> getBatteryLevel() async {
 
     <p>
     Learn more about what makes Flutter special in the
-    <a href="/technical-overview">technical overview</a>.
+    <a href="/resources/technical-overview">technical overview</a>.
     </p>
 </section>
 

@@ -2,7 +2,7 @@
 
 1. Download the following installation bundle to get the latest beta release of the
 Flutter SDK (for other release channels, and older builds, see the [SDK
-archive](/sdk-archive/) page.):
+archive](/get-started/sdk-archive) page.):
 {% if page.url contains "linux" %}
     * [(loading...)](#){:.download-latest-link-linux}
 {% else %}

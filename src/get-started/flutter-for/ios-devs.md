@@ -438,7 +438,7 @@ wrap a widget in an Opacity widget to accomplish this.
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
 In Flutter, build a custom widget by
-[composing](/technical-overview#everythings-a-widget) smaller widgets
+[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 
 For example, how do you build a `CustomButton` that takes a label in
@@ -481,7 +481,7 @@ display.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a “screen” or “page” of an app, and
-a `Navigator` is a [widget](/technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/resources/technical-overview#everythings-a-widget)
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
 `UINavigationController`, in that it can `push()` and `pop()` routes depending

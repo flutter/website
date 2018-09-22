@@ -606,7 +606,7 @@ In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing
 `VisualElement`, to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/technical-overview#everythings-a-widget) smaller widgets
+[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom control based off a `Grid` with
 numerous `VisualElement`s added in, while extending with custom logic.
@@ -650,7 +650,7 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget](/technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/resources/technical-overview#everythings-a-widget)
 that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the

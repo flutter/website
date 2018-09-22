@@ -437,7 +437,7 @@ In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/technical-overview#everythings-a-widget) smaller widgets
+[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom
 `ViewGroup` in Android, where all the building blocks are already existing, but

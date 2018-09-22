@@ -750,7 +750,8 @@ a visual representation of their own. Instead, their sole purpose is to control
 some aspect of another widget’s layout. To understand why a widget renders in a
 certain way, it’s often helpful to inspect the neighboring widgets.
 
-For more information, see the [Flutter Technical Overview](/technical-overview).
+For more information, see the [Flutter Technical
+Overview](/resources/technical-overview).
 
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/development/ui/widgets/basics), the
