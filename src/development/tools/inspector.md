@@ -12,7 +12,7 @@ Flutter widget trees.
 ## Flutter Widget Inspector
 
 The Flutter framework uses widgets as [the core building
-block](/widgets-intro) for anything from controls (text,
+block](/development/ui/widgets-intro) for anything from controls (text,
 buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
 The Inspector is powerful tool for visualizing and exploring Flutter
 these widget trees. It can be helpful when:
@@ -43,8 +43,8 @@ For a more complete demonstration of the Inspector, please see the
 
 ## Get Started with the Inspector
 
-The Inspector is currently available in [the Flutter plugin](/get-started/editor)
-for Android Studio, or IntelliJ IDEA.
+The Inspector is currently available in [the Flutter
+plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
 
 ## Feedback issues
 

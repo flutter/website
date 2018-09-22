@@ -134,7 +134,7 @@ inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 ![Flutter Inspector Window](images/visual-debugging.png)
 
 This offers many debugging tools; for details on these see
-[Debugging Flutter Apps](/debugging).
+[Debugging Flutter Apps](/testing/debugging).
 
 * 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
   [Flutter Inspector](/development/tools/inspector).
@@ -307,7 +307,7 @@ to filing new issues:
     plugin.
 
 When filing new issues, include the output of [`flutter
-doctor`](/bug-reports#provide-some-flutter-diagnostics).
+doctor`](/resources/bug-reports#provide-some-flutter-diagnostics).
 
 </div>
 

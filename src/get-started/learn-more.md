@@ -11,7 +11,7 @@ Learn more about the Flutter framework:
 * [Flutter for Xamarin.Forms Devs](/get-started/flutter-for/xamarin-forms-devs)
 * [Building Layouts in Flutter](/development/ui/layout) tutorial
 * [Add Interactivity](/development/ui/interactive) tutorial
-* [A Tour of the Flutter Widget Framework](/widgets-intro)
+* [A Tour of the Flutter Widget Framework](/development/ui/widgets-intro)
 
 Other resources:
 

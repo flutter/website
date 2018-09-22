@@ -51,7 +51,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino widgets](/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -195,7 +195,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout).
+catalog](/development/ui/widgets/layout).
 
 ## How do I add or remove a component from my layout?
 
@@ -363,7 +363,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation),
+[Animation & Motion widgets](/development/ui/widgets/animation),
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
@@ -529,7 +529,7 @@ as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 
 To learn how to build a native platform integration, see
-[Developing Packages and Plugins](/development/packages/developing-packages).
+[Developing Packages and Plugins](/development/packages-and-plugins/developing-packages).
 
 ## How do I handle incoming intents from external applications in Flutter?
 
@@ -2119,7 +2119,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/development/packages/developing-packages) page.
+[developing packages and plugins](/development/packages-and-plugins/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

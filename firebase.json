@@ -7,16 +7,9 @@
     "ignore": [ "assets/.sprockets-manifest-*.json" ],
     "redirects": [
       { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
-      { "source": "/tutorial", "destination": "/widgets-intro", "type": 301 },
-      { "source": "/basic-widgets", "destination": "/widgets", "type": 301 },
-      { "source": "/material-design-catalog", "destination": "/widgets", "type": 301 },
       { "source": "/chat", "destination": "https://gitter.im/flutter/flutter", "type": 302 },
-      { "source": "/issues", "destination": "https://github.com/flutter/flutter/issues", "type": 302 },
-      { "source": "/platform-services*", "destination": "/using-packages", "type": 301 },
-      { "source": "/platform-plugins*", "destination": "/using-packages", "type": 301 },
-      { "source": "/intellij-setup", "destination": "/ide-setup", "type": 301 },
-      { "source": "/intellij-ide", "destination": "/using-ide", "type": 301 },
-      { "source": "/app/appcastwin.json", "destination": "http://flutterapp.com", "type": 301 },
+      { "source": "/platform-services*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
+      { "source": "/platform-plugins*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
       { "source": "/getting-started", "destination": "/get-started", "type": 301 },
       { "source": "/setup", "destination": "/get-started/install", "type": 301 },
@@ -28,6 +21,7 @@
       { "source": "/networking", "destination": "/cookbook/networking/fetch-data", "type": 301 },
       { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 },
       { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
+      { "source": "/layout", "destination": "/development/ui/layout/box-constraints", "type": 301 },
       { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 }
     ]
   }

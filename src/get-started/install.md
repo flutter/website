@@ -6,7 +6,7 @@ toc: false
 Select the operating system on which you are installing Flutter:
 
 {% for os in site.os-list -%}
-- [{{os}}](/setup-{{os | downcase}})
+- [{{os}}](setup-{{os | downcase}})
 {% endfor %}
 
 {{site.alert.important}}

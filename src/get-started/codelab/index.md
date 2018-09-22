@@ -53,11 +53,11 @@ The animated GIF shows how the app works at the completion of part 1.
 
   You can run this codelab using any of the following devices:
 
-  * A physical device ([Android](/setup-macos#set-up-your-android-device)
-    or [iOS](/setup-macos#deploy-to-ios-devices)) connected to your
+  * A physical device ([Android](setup-macos#set-up-your-android-device)
+    or [iOS](setup-macos#deploy-to-ios-devices)) connected to your
     computer and set to developer mode.
-  * The [iOS simulator](/setup-macos#set-up-the-ios-simulator).
-  * The [Android emulator](/setup-macos#set-up-the-android-emulator).
+  * The [iOS simulator](setup-macos#set-up-the-ios-simulator).
+  * The [Android emulator](setup-macos#set-up-the-android-emulator).
 </div>
 
 ## Step 1: Create the starter Flutter app

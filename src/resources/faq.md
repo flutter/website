@@ -148,8 +148,8 @@ Studio](https://developer.android.com/studio/),
 and [VS Code](https://code.visualstudio.com/).
 
 See [editor configuration](/get-started/editor) for setup details, and
-['Developing Flutter apps in an IDE'](/development/tools/using-ide) for tips on how to
-use the plugins.
+['Developing Flutter apps in an IDE'](/development/tools/using-ide)
+for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
 and one of the many editors that support [editing
@@ -166,8 +166,7 @@ framework.
 
 Yes! Flutter ships with a set of
 [high quality Material Design and Cupertino (iOS-style) widgets][widgets],
-layouts, and themes. Of
-course, these widgets are only a starting point.
+layouts, and themes. Of course, these widgets are only a starting point.
 Flutter is designed to make it easy to
 create your own widgets, or customize the existing widgets.
 
@@ -235,7 +234,7 @@ No. Instead, Flutter provides a set of widgets
 (including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
-[catalog of Flutter's widgets](/widgets).
+[catalog of Flutter's widgets](/development/ui/widgets).
 
 We are hoping the end-result will be higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
@@ -244,7 +243,7 @@ limited by the quality of those widgets.
 In Android, for example, there's a hard-coded set of gestures and fixed
 rules for disambiguating them. In Flutter, you can write your
 own gesture recognizer that is a first-class participant in the
-[gesture system](/gestures). Moreover, two widgets
+[gesture system](/development/ui/advanced/gestures). Moreover, two widgets
 authored by different people can coordinate to disambiguate gestures.
 
 Modern app design trends point towards designers and users wanting
@@ -440,7 +439,7 @@ encourage the community to use Flutter in a variety of interesting ways.
 
 Yes, you can embed a Flutter view in your existing Android or iOS app, however
 our tooling is currently not fully optimized for this use case (see
-[this issue](https://github.com/flutter/flutter/issues/14821) for details).
+[issue #14821](https://github.com/flutter/flutter/issues/14821) for details).
 
 Two current demonstrations of this are the
 [platform_view](https://github.com/flutter/flutter/tree/master/examples/platform_view)
@@ -458,11 +457,13 @@ intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
 packages](https://pub.dartlang.org/flutter/) available in the Package
-site. Using an existing package [is easy](/development/packages/using-packages).
+site. Using an existing package [is
+easy](/development/packages-and-plugins/using-packages).
 
 Finally, we encourage developers to use Flutter's asynchronous message passing
 system to create your own integrations with [platform and third-party
-APIs](/platform-channels). Developers can expose as much or as little of the
+APIs](/development/platform-integration/platform-channels).
+Developers can expose as much or as little of the
 platform APIs as they need, and build layers of abstractions that are a best fit
 for their project.
 
@@ -519,7 +520,7 @@ may send and receive messages to the mobile platform using a
 [`BasicMessageChannel`](https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html).
 
 Learn more about accessing platform and third-party services in Flutter with
-[platform channels](/platform-channels).
+[platform channels](/development/platform-integration/platform-channels).
 
 Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
 that shows how to use a platform channel to access battery state information on
@@ -535,7 +536,7 @@ what you might need reflection/mirrors for&mdash;please let us know at
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
 Learn more about i18n and l10n in the
-[internationalization tutorial](/tutorials/internationalization).
+[internationalization tutorial](/accessibility/internationalization).
 
 Learn more about a11y in the [accessibility documentation](/accessibility).
 
@@ -552,17 +553,10 @@ Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services
 
 ### Can I run Dart code in the background of an Flutter app?
 
-Running code in the background has platform-specific APIs due to fundamental
-differences in the support for background execution on each of the for Android
-and iOS platforms.
-
-On Android, the
-[`android_alarm_manager`](https://pub.dartlang.org/packages/android_alarm_manager)
-plugin enables you to run Dart code in the background, even when your Flutter
-app is not in the foreground.
-
-On iOS we currently do not support this capability. Please keep an eye on [bug
-6192](https://github.com/flutter/flutter/issues/6192) for updates.
+Yes, you can run Dart code in a background process on both iOS and Android.
+For more information, see the Medium article
+[Executing Dart in the Background with Flutter Plugins and
+Geofencing](https://medium.com/flutter-io/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124).
 
 ### Can I use JSON/XML/protobuffers/etc with Flutter?
 
@@ -571,7 +565,7 @@ Absolutely. There are libraries on the
 protobufs, and many other utilities and formats.
 
 For a detailed writeup on using JSON with Flutter, check out [the JSON
-tutorial](/development/data/json).
+tutorial](/development/data-and-backend/json).
 
 ### Can I build 3D (OpenGL) apps with Flutter?
 
@@ -858,7 +852,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /widgets
+[widgets]: /development/ui/widgets
 
 ### What are Flutter's guiding principles?
 

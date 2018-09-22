@@ -61,7 +61,7 @@ network request. It will also include a factory constructor that allows us to
 create a `Post` from json.
 
 Converting JSON by hand is only one option. For more information, please see the
-full article on [JSON and serialization](/development/data/json).
+full article on [JSON and serialization](/development/data-and-backend/json).
 
 <!-- skip -->
 ```dart
@@ -150,8 +150,8 @@ FutureBuilder<Post>(
 For information on how to test this functionality, please see the following
 recipes:
 
-  * [Introduction to unit testing](/cookbook/testing/unit-test/)
-  * [Mock dependencies using Mockito](/cookbook/testing/mocking/)
+  * [Introduction to unit testing](/cookbook/testing/unit-test)
+  * [Mock dependencies using Mockito](/cookbook/testing/mocking)
 
 ## Complete example
 

@@ -53,7 +53,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the [Cupertino widgets](/widgets/cupertino)
+On iOS, you can use the [Cupertino widgets](/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -197,7 +197,7 @@ You can add padding to any widget, which mimics the functionality of
 constraints in iOS.
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout).
+catalog](/development/ui/widgets/layout).
 
 ## How do I add or remove a component from my layout?
 
@@ -367,7 +367,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation),
+[Animation & Motion widgets](/development/ui/widgets/animation),
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
@@ -557,7 +557,7 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 ```
 
 If that doesn't do what you want, you can create your own
-[platform channel](/platform-channels) to invoke arbitrary iOS code.
+[platform channel](/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
 
 # Threading & asynchronicity
 
@@ -1174,7 +1174,7 @@ files for translating, and importing them back into the app for using them
 with `intl`.
 
 For further details on internationalization and localization in Flutter, see the
-[internationalization guide](/tutorials/internationalization),
+[internationalization guide](/accessibility/internationalization),
 which has sample code with and without the `intl` package.
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
@@ -1555,7 +1555,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more detailed docs on how to lay out widgets in Flutter,
-see the [layout tutorial](/widgets/layout).
+see the [layout tutorial](/development/ui/widgets/layout).
 
 # Gesture detection and touch event handling
 
@@ -1706,7 +1706,7 @@ On iOS, you can use the
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
-[Cupertino widgets gallery](/widgets/cupertino).
+[Cupertino widgets gallery](/development/ui/widgets/cupertino).
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
@@ -1957,7 +1957,7 @@ app is still hosted in a native app's `ViewController` as a view, but you don't
 have direct access to the `ViewController` itself, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels](/platform-channels),
+native code you have. Flutter provides [platform channels](/development/platform-integration/platform-channels),
 that communicate and exchange data with the `ViewController` that
 hosts your Flutter view. Platform channels are essentially an asynchronous messaging
 mechanism that bridge the Dart code with the host `ViewController` and
@@ -1965,7 +1965,8 @@ the iOS framework it runs on. You can use platform channels to execute a method 
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/development/packages/using-packages) that encapsulate the native and
+[plugins](/development/packages-and-plugins/using-packages) that encapsulate
+the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
 write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
@@ -1973,8 +1974,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/development/packages/developing-packages)
-and [publish it on Pub](/development/packages/developing-packages#publish).
+[write your own](/development/packages-and-plugins/developing-packages)
+and [publish it on Pub](/development/packages-and-plugins/developing-packages#publish).
 
 ## How do I access the GPS sensor?
 
@@ -2012,7 +2013,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/development/packages/developing-packages) page.
+[developing packages and plugins](/development/packages-and-plugins/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

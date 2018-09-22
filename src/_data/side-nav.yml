@@ -43,7 +43,7 @@
   - title: User interface
     children:
     - title: Tour the framework
-      permalink: /widgets-into
+      permalink: /development/ui/widgets-into
     - title: Building layouts
       permalink: /development/ui/layout
     - title: Adding interactivity
@@ -67,15 +67,15 @@
       children:
       - title: "Focus handling system (where did this go?)"
       - title: Gestures
-        permalink: /gestures
+        permalink: /development/ui/advanced/gestures
     - title: Platform-specific theming
     - title: Widget catalog
-      permalink: /widgets
+      permalink: /development/ui/widgets
   - title: Data and backend
     children:
     - title: Architect app to manage data flow
     - title: JSON and serialization
-      permalink: /development/data/json
+      permalink: /development/data-and-backend/json
     - title: Back-end services
     - title: Use Firebase with Flutter
     - title: Run background processes
@@ -84,18 +84,18 @@
     - title: Accessibility
       permalink: /accessibility
     - title: Internationalization
-      permalink: /tutorials/internationalization
+      permalink: /accessibility/internationalization
   - title: Platform Integration
     children:
     - title: Embedding Flutter views in non-Flutter apps
     - title: Writing platform-specific code
-      permalink: /platform-channels
+      permalink: /development/platform-integration/platform-channels
   - title: "Packages & Plugins"
     children:
     - title: Using packages
-      permalink: /development/packages/using-packages
+      permalink: /development/packages-and-plugins/using-packages
     - title: "Developing packages & plugins"
-      permalink: /development/packages/developing-packages
+      permalink: /development/packages-and-plugins/developing-packages
     - title: Package site
       permalink: http://pub.dartlang.org/flutter
   - title: Tools
@@ -114,11 +114,11 @@
 - title: "Testing & Optimization"
   children:
   - title: Debugging your app
-    permalink: /debugging
+    permalink: /testing/debugging
   - title: Testing your app
     permalink: /testing
   - title: Performance profiling
-    permalink: /ui-performance
+    permalink: /testing/ui-performance
   - title: Making your compiled app smaller
 
 - title: Deployment
@@ -144,7 +144,7 @@
 - title: "APIs & References"
   children:
   - title: Widget catalog
-    permalink: /widgets
+    permalink: /development/ui/widgets
   - title: API reference
     permalink: https://docs.flutter.io/
   - title: Package site

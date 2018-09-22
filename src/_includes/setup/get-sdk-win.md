@@ -11,7 +11,7 @@ archive](/sdk-archive/) page.):
 
 You are now ready to run Flutter commands in the Flutter Console!
 
-To update an existing version of Flutter, see [Upgrading Flutter](/upgrading/).
+To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/upgrading).
 
 ### Update your path
 
@@ -39,7 +39,7 @@ flutter doctor
 
 This command checks your environment and displays a report to the terminal window.
 The Dart SDK is bundled with Flutter; it is not necessary to install Dart separately.
-Check the output carefully for other software you may need to install or further 
+Check the output carefully for other software you may need to install or further
 tasks to perform (shown in **bold** text).
 
 For example:
@@ -58,7 +58,7 @@ verify that you’ve set everything up correctly.
 The `flutter` tool uses Google Analytics to anonymously report feature usage statistics
 and basic crash reports. This data is used to help improve Flutter tools over time.
 Analytics is not sent on the very first run or for any runs involving `flutter config`,
-so you can opt out of analytics before any data is sent. To disable reporting, 
-type `flutter config --no-analytics` and to display the current setting, type 
+so you can opt out of analytics before any data is sent. To disable reporting,
+type `flutter config --no-analytics` and to display the current setting, type
 `flutter config`. See Google's privacy policy:[www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
 {: .alert-warning}
