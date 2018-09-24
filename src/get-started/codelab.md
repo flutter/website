@@ -3,8 +3,6 @@ title: Write Your First Flutter App, part 1
 ---
 
 {% comment %}
-TODO: Design/style: drop <hr> elements from page?
-
 TODO: Fernando: Adjust image max-width and placement across different breakpoints? If so remove float-right below.
 {% endcomment -%}
 
@@ -132,7 +130,7 @@ where the Dart code lives.
       performs a hot reload if the app is running.
     {{site.alert.end}}
 
-## Observations
+### Observations
 {:.no_toc}
 
 * This example creates a Material app.
@@ -154,8 +152,6 @@ where the Dart code lives.
 * The body for this example consists of a `Center` widget containing
   a `Text` child widget. The Center widget aligns its widget subtree
   to the center of the screen.
-
----
 
 ## Step 2: Use an external package
 
@@ -259,7 +255,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
       {% include_relative _android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
-## Problems?
+### Problems?
 {:.no_toc}
 
 If your app is not running correctly, look for typos. If needed,
@@ -267,8 +263,6 @@ use the code at the following links to get back on track.
 
 * [pubspec.yaml]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/pubspec.yaml)
 * [lib/main.dart]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/lib/main.dart)
-
----
 
 ## Step 3: Add a Stateful widget
 
@@ -380,15 +374,13 @@ a child inside the existing `MyApp` stateless widget.
 {{site.alert.end}}
 
 
-## Problems?
+### Problems?
 {:.no_toc}
 
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
 * [lib/main.dart]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
-
----
 
 ## Step 4: Create an infinite scrolling ListView
 
@@ -539,7 +531,7 @@ lazily, on demand.
       {% include_relative _android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
-## Problems?
+### Problems?
 {:.no_toc}
 
 If your app is not running correctly, you can use the code
@@ -547,11 +539,9 @@ at the following link to get back on track.
 
 * [lib/main.dart]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
 
----
-
 {% include_relative _app-figure.md image="startup-namer.gif" caption="The app from part 2" class="float-right" %}
 
-# Next steps
+## Next steps
 {:.no_toc}
 
 Congratulations!
