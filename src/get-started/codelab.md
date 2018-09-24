@@ -2,11 +2,7 @@
 title: Write Your First Flutter App, part 1
 ---
 
-{% comment %}
-TODO: Fernando: Adjust image max-width and placement across different breakpoints? If so remove float-right below.
-{% endcomment -%}
-
-{% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='float-right' %}
+{% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
 
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
@@ -539,7 +535,7 @@ at the following link to get back on track.
 
 * [lib/main.dart]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
 
-{% include_relative _app-figure.md image="startup-namer.gif" caption="The app from part 2" class="float-right" %}
+{% include_relative _app-figure.md image="startup-namer.gif" caption="The app from part 2" %}
 
 ## Next steps
 {:.no_toc}

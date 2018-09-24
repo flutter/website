@@ -19,3 +19,21 @@ a.card {
     }
   }
 }
+
+.btn {
+  font-family: $site-font-family-alt;
+}
+
+code {
+  background-color: $flutter-color-light-blue;
+  padding: 0 3px;
+}
+
+pre {
+  background-color: $site-color-codeblock-bg;
+  padding: bs-spacer(7) bs-spacer(8);
+
+  code {
+    background-color: transparent;
+  }
+}

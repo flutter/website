@@ -4,16 +4,11 @@
 // Color config
 $primary: $site-color-primary;
 $body-color: $site-color-body;
-
-// Component config
-$border-radius: 0;
-$border-radius-lg: 0;
-$border-radius-sm: 0;
-$btn-font-weight: 400;
-$card-border-radius: 4px;
+$code-color: $site-color-body;
 
 // Font config
 $font-family-sans-serif: $site-font-family-base;
+$font-family-monospace: $site-font-family-monospace;
 $font-weight-base: 300;
 $headings-font-family: $site-font-family-alt;
 $headings-font-weight: 400;
@@ -38,7 +33,17 @@ $spacers: (
   11: ($site-spacer * 2.75),
   12: ($site-spacer * 3),
 );
+$grid-gutter-width: 50px;
 
 @function bs-spacer($key: 3) {
   @return map-get($spacers, $key);
 }
+
+// Component config
+$alert-padding-y: bs-spacer(6);
+$alert-padding-x: bs-spacer(6);
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+$btn-font-weight: 400;
+$card-border-radius: 4px;
