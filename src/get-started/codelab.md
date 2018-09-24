@@ -31,7 +31,7 @@ There is no limit to how far a user can scroll.
 
 The animated GIF shows how the app works at the completion of part 1.
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
   * How to write a Flutter app that looks natural on both iOS and Android.
@@ -44,9 +44,9 @@ The animated GIF shows how the app works at the completion of part 1.
   In [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and
   add the ability to navigate to a new screen (called a _route_ in Flutter).
-</div>
+{{site.alert.end}}
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
   <h4 class="no_toc">What you'll use</h4>
 
   You need two pieces of software to complete this lab: the
@@ -61,7 +61,7 @@ The animated GIF shows how the app works at the completion of part 1.
     computer and set to developer mode.
   * The [iOS simulator](/setup-macos#set-up-the-ios-simulator).
   * The [Android emulator](/setup-macos#set-up-the-android-emulator).
-</div>
+{{site.alert.end}}
 
 ## Step 1: Create the starter Flutter app
 

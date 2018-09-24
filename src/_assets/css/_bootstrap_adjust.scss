@@ -1,0 +1,4 @@
+.alert {
+  > p:last-child { margin-bottom: 0; }
+  > ul:last-child { margin-bottom: 0; }
+}
