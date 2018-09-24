@@ -2,7 +2,7 @@
 
 1. Download the following installation bundle to get the latest beta release of the
 Flutter SDK (for other release channels, and older builds, see the [SDK
-archive](/get-started/sdk-archive) page.):
+archive](/development/tools/sdk/archive) page.):
     * [(loading...)](#){:.download-latest-link-windows}
 1. Extract the zip-file and place the contained `flutter` in the desired
    installation location for the Flutter SDK (eg. `C:\src\flutter`; do not install
