@@ -22,3 +22,4 @@ src/_includes/code/**/ios/
 
 .idea/
 .firebase/
+firebase-debug.log
