@@ -1,9 +1,14 @@
 ---
 title: Write Your First Flutter App, part 1
-image: /get-started/codelab/images/step7-themes.png
 ---
 
-<img src="/get-started/codelab/images/startup_namer_1_opt.gif" alt="The app that you'll be building">
+{% comment %}
+TODO: Design/style: drop <hr> elements from page?
+
+TODO: Fernando: Adjust image max-width and placement across different breakpoints? If so remove float-right below.
+{% endcomment -%}
+
+{% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='float-right' %}
 
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
@@ -117,8 +122,9 @@ where the Dart code lives.
     the green arrow in the IDE.
     You should see either Android or iOS output, depending on your device.
 
-    <center><img src="/get-started/codelab/images/android-hello-world-frame.png" alt="screenshot of hello world app on Android"><img src="/get-started/codelab/images/hello-world-screenshot-ios.png" alt="screenshot of hello world app on iOS"></center>
-    <center>Android (left) and iOS (right)</center>
+    {% indent %}
+      {% include_relative _android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+    {% endindent %}
 
     {{site.alert.tip}}
       The first time you run on a physical device, it can take awhile to load.
@@ -241,7 +247,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     {{site.alert.end}}
 
  5. If the app is running, use the hot reload button
-    (<img src="/get-started/codelab/images/hot-reload-button.png" alt="lightning bolt icon">)
+    <i class="material-icons align-bottom">offline_bolt</i>
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
@@ -249,8 +255,9 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     method, which is run each time the MaterialApp requires rendering,
     or when toggling the Platform in Flutter Inspector.
 
-    <center><img src="/get-started/codelab/images/android-step2-frame.png" alt="screenshot at completion of second step in Android"> <img src="/get-started/codelab/images/step2-screenshot-ios.png" alt="screenshot at completion of second step in iOS"></center>
-    <center>Android (left) and iOS (right)</center>
+    {% indent %}
+      {% include_relative _android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+    {% endindent %}
 
 ## Problems?
 {:.no_toc}
@@ -528,8 +535,9 @@ lazily, on demand.
  6. Restart the app. You should see a list of word pairings
     no matter how far you scroll.
 
-    <center><img src="/get-started/codelab/images/android-infinite-list-frame.png" alt="screenshot at completion of fourth step in Android"><img src="/get-started/codelab/images/step4-screenshot-ios.png" alt="screenshot at completion of fourth step in iOS"></center>
-    <center>Android (left) and iOS (right)</center>
+    {% indent %}
+      {% include_relative _android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+    {% endindent %}
 
 ## Problems?
 {:.no_toc}
@@ -541,15 +549,10 @@ at the following link to get back on track.
 
 ---
 
+{% include_relative _app-figure.md image="startup-namer.gif" caption="The app from part 2" class="float-right" %}
+
 # Next steps
 {:.no_toc}
-
-<figure class="right-figure" style="max-width: 260px; padding-right: 10px">
-    <img src="/get-started/codelab/images/startup-namer-app.gif"
-         alt="Animated GIF of the app that you will be building."
-         style="border: margin-bottom: 10px" >
-    <center>The app from part 2</center><br>
-</figure>
 
 Congratulations!
 
