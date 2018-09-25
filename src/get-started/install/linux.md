@@ -1,6 +1,9 @@
 ---
 title: "Get Started: Install on Linux"
+# js: [{defer: true, url: /assets/archive.js}]
 ---
+
+{% assign os = 'linux' -%}
 
 ## System requirements
 

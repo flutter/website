@@ -1,6 +1,9 @@
 ---
 title: "Get Started: Install on macOS"
+# js: [{defer: true, url: /assets/archive.js}]
 ---
+
+{% assign os = 'macos' -%}
 
 ## System requirements
 

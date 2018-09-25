@@ -66,12 +66,12 @@ module Prettify
       end
 
       # Names of tags previously supported: highlight, note, red, strike.
-      code.gsub!(/\[\[(\w+)\]\]/, '<span class="\1">')
-      code.gsub!(/\[\[\/(\w+)\]\]/, '</span>')
+      code.gsub!(/\[\[([\w-]+)\]\]/, '<span class="\1">')
+      code.gsub!(/\[\[\/([\w-]*)\]\]/, '</span>')
 
       # Flutter tag syntax variant:
-      code.gsub!(/\/\*\*(\w+)\*\//, '<span class="\1">')
-      code.gsub!(/\/\*-(\w+)\*\//, '</span>')
+      code.gsub!(/\/\*\*([\w-]+)\*\//, '<span class="\1">')
+      code.gsub!(/\/\*-([\w-]*)\*\//, '</span>')
 
       code.gsub!('[!', '<span class="highlight">')
       code.gsub!('!]', '</span>')
