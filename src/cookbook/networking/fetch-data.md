@@ -252,7 +252,7 @@ void main() => runApp(MyApp(post: fetchPost()));
 class MyApp extends StatelessWidget {
   final Future<Post> post;
 
-  MyApp({key key, this.post}) : super(key: key);
+  MyApp({Key key, this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -267,7 +267,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: FutureBuilder<Post>(
-            future: post(),
+            future: post,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Text(snapshot.data.title);
