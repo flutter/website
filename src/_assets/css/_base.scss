@@ -22,16 +22,16 @@ dd {
 a.card {
   color: inherit;
 
+  .card-title { color: $site-color-primary; }
+
   &:hover {
-    border-bottom: 4px solid $site-color-primary;
+    $border-height: 0.25rem;
+
+    border-bottom: $border-height solid $site-color-primary;
     text-decoration: none;
 
-    .card-title {
-      color: $site-color-primary;
-    }
-
     .card-body {
-      padding-bottom: 17px;
+      padding-bottom: $card-spacer-x - $border-height;
     }
   }
 }
