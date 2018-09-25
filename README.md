@@ -190,14 +190,14 @@ it with triple backticks followed by the language.
 
 Here's an example:
 
-	```dart
-	class ExampleWidget extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return new Container();
-      }
-    }
-	```
+```dart
+class ExampleWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container();
+  }
+}
+```
 
 See the list of supported languages above for what to use
 following the first triple backticks.

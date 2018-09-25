@@ -145,6 +145,60 @@ FutureBuilder<Post>(
 );
 ```
 
+## 5. Moving the fetch call out of the `build` method
+
+Although it's convenient, it's not recommended to put a call to an API in your
+`build` method.
+
+Flutter calls the `build` method every time it wants to change anything in the
+view, and this happens surprisingly often.  If you leave the fetch call in your
+`build` method, you'll flood the API with unnecessary calls and slow down your
+app.
+
+Here are some better options so it'll only hit the API when the page is
+initially loaded.
+
+### Pass it into a `StatelessWidget`
+
+With this strategy, the parent widget is responsible for calling the fetch
+method, storing its result, and then passing it to your widget.
+
+<!-- skip -->
+```dart
+class MyApp extends StatelessWidget {
+  final Future<Post> post;
+
+  MyApp({Key key, this.post}) : super(key: key);
+```
+
+You can see a working example of this in the complete example below.
+
+### Call it in the lifecycle of a `StatefulWidget`'s state
+
+If your widget is stateful, you can call the fetch method in either the
+[`initState`](https://docs.flutter.io/flutter/widgets/State/initState.html) or
+[`didChangeDependencies`](https://docs.flutter.io/flutter/widgets/State/didChangeDependencies.html)
+methods.
+
+`initState` is called exactly once and then never again. If you want to have the
+option of reloading the API in response to an
+[`InheritedWidget`](https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html)
+changing, put the call into the `didChangeDependencies` method.  See
+[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) for more
+details.
+
+<!-- skip -->
+```dart
+class _MyAppState extends State<MyApp> {
+  Future<Post> post;
+
+  @override
+  void initState() {
+    super.initState();
+    post = fetchPost();
+  }
+```
+
 ## Testing
 
 For information on how to test this functionality, please see the following
@@ -193,9 +247,13 @@ class Post {
   }
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp(post: fetchPost()));
 
 class MyApp extends StatelessWidget {
+  final Future<Post> post;
+
+  MyApp({key key, this.post}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -209,7 +267,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: FutureBuilder<Post>(
-            future: fetchPost(),
+            future: post(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Text(snapshot.data.title);
