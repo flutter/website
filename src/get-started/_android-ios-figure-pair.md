@@ -11,12 +11,12 @@ Sadly, Jekyll doesn't seem to supported nested includes, so the following won't 
 {% endcomment -%}
 
 <figure class="site-figure">
-  <div>
+  <div class="site-figure-container">
       {% asset 'get-started/android/{{include.image}}'
           alt='{{include.alt}} on Android' %}
       <figcaption class="figure-caption">Android</figcaption>
   </div>
-  <div>
+  <div class="site-figure-container">
       {% asset 'get-started/ios/{{include.image}}'
           alt='{{include.alt}} on iOS' %}
       <figcaption class="figure-caption">iOS</figcaption>

@@ -15,7 +15,7 @@ TODO: Fernando, should we set all `figure-caption` to have centered text,
 {% endif -%}
 
 <figure class="site-figure {{include.class}}">
-  <div>
+  <div class="site-figure-container">
       {% asset '{{path}}/{{include.image}}' alt='{{alt}}' %}
       {% if caption -%}
       <figcaption class="figure-caption">{{caption}}</figcaption>
