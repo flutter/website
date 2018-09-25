@@ -39,10 +39,10 @@ that manages two stateless widgets.
 ## Getting ready
 
 If you've already built the layout in
-[Building Layouts in Flutter](/development/ui/layout/),
+[Building Layouts in Flutter](/development/ui/layout),
 skip to the next section.
 
-* Make sure you've [set up](/get-started/install/) your environment.
+* Make sure you've [set up](/get-started/install) your environment.
 * [Create a basic Flutter app.](/get-started/test-drive/#create-app)
 * Replace the `lib/main.dart` file with
   [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
@@ -54,10 +54,11 @@ skip to the next section.
   [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
-simulator](/setup-macos#set-up-the-ios-simulator) (part of the Flutter install),
+simulator](/get-started/setup-macos#set-up-the-ios-simulator)
+(part of the Flutter install),
 you are good to go!
 
-[Building Layouts for Flutter](/development/ui/layout/)
+[Building Layouts for Flutter](/development/ui/layout)
 showed how to create the layout for the following screenshot.
 
 <img src="/development/ui/interactive/images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
@@ -327,7 +328,7 @@ check your code against the interactive Lakes example on GitHub.
 * [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
 * [`lakes.jpg`](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
-If you still have questions, refer to [Get support.](/support/)
+If you still have questions, refer to [Get support.](/community)
 
 ---
 

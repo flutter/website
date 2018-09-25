@@ -7,7 +7,7 @@ title: "Get Started: Install on Linux"
 
 {% include setup/system-linux.md %}
 
-{% include setup/get-sdk.md %} 
+{% include setup/get-sdk.md %}
 
 {% include setup/path-mac-linux.md %}
 
@@ -15,4 +15,4 @@ title: "Get Started: Install on Linux"
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor/)
+[Next step: Configure Editor](/get-started/editor)

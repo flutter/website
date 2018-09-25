@@ -134,7 +134,7 @@ inspector tool window using 'View > Tool Windows > Flutter Inspector'.
 ![Flutter Inspector Window](images/visual-debugging.png)
 
 This offers many debugging tools; for details on these see
-[Debugging Flutter Apps](/debugging).
+[Debugging Flutter Apps](/testing/debugging).
 
 * 'Toggle Select Widget Mode': Select a widget on the device to inspect it in the
   [Flutter Inspector](/development/tools/inspector).
@@ -279,9 +279,9 @@ Flutter (as reported by `flutter doctor`).
 Please checkout these 'cheat sheets':
 
   * [Flutter IDE cheat sheet, MacOS
-    version](/downloads/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+    version](/f/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
   * [Flutter IDE cheat sheet, Windows & Linux
-    version](/downloads/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+    version](/f/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
@@ -307,7 +307,7 @@ to filing new issues:
     plugin.
 
 When filing new issues, include the output of [`flutter
-doctor`](/bug-reports#provide-some-flutter-diagnostics).
+doctor`](/resources/bug-reports#provide-some-flutter-diagnostics).
 
 </div>
 

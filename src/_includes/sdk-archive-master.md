@@ -10,4 +10,5 @@ git clone -b master https://github.com/flutter/flutter.git
 ```
 
 For additional details on how our installation bundles are structured, see
-[Installation bundles](https://github.com/flutter/flutter/wiki/Flutter-Installation-Bundles).
+[Installation
+bundles](https://github.com/flutter/flutter/wiki/Flutter-Installation-Bundles).

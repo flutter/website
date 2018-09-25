@@ -41,7 +41,7 @@ here are some next steps.
 [Adding Interactivity to Your Flutter App](/development/ui/interactive)
 : Learn how to add a stateful widget to your app.
 
-[A Tour of the Flutter Widget Framework](/widgets-intro)
+[A Tour of the Flutter Widget Framework](/development/ui/widgets-intro)
 : Learn more about Flutter's react-style framework.
 
 ## Want to skill up?
@@ -64,7 +64,7 @@ Once you’ve mastered the basics, try these pages.
 [Routing and Navigation](/cookbook/navigation/navigation-basics)
 : How to create and navigate to a new screen (called a _route_ in Flutter).
 
-[Internationalization](/tutorials/internationalization)
+[Internationalization](/accessibility/internationalization)
 : Go global! How to internationalize your Flutter app.
 
 [Effective Dart](https://www.dartlang.org/guides/language/effective-dart)
@@ -85,7 +85,7 @@ Dive deeper into topics that interest you.
 [Text Input](/cookbook/forms/text-input)
 : How to set up basic text input.
 
-[Debugging Flutter Apps](/debugging)
+[Debugging Flutter Apps](/testing/debugging)
 : Tools and tips for debugging your app.
 
 This is not a complete list. Please use the left navigation,

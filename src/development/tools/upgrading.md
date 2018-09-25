@@ -2,10 +2,10 @@
 title: Upgrading Flutter
 ---
 
-We strongly recommend tracking the `beta` branch in the flutter repository, which
-is where we push 'known good builds' of Flutter. If you need to 
-view the very latest changes, you can track the `master` branch, but note this is where
-we do our daily development, so stability is much lower.
+We strongly recommend tracking the `beta` branch in the flutter repository,
+which is where we push 'known good builds' of Flutter. If you need to
+view the very latest changes, you can track the `master` branch,
+but note this is where we do our daily development, so stability is much lower.
 
 To view your current branch, use `flutter channel`.
 
@@ -27,7 +27,7 @@ dev_dependencies:
     sdk: flutter
 ```
 
-The `sdk: flutter` line tells the `flutter` command-line tool find the
+The `sdk: flutter` line tells the `flutter` command-line tool to find the
 correct package for you.
 
 Do not use the `pub get` or `pub upgrade` commands to manage your dependencies.
@@ -49,10 +49,11 @@ $ flutter upgrade
 If you've modified your `pubspec.yaml` file, or you want to only update
 the packages your app depends upon instead of both the packages and
 Flutter itself, then use the following commands:
-* `flutter packages get` to get all the dependencies listed
-in the `pubspec.yaml` file, or
-* `flutter packages upgrade` to get the latest versions
-of all the dependencies listed in the `pubspec.yaml` file
+
+* `flutter packages get` retrieves all the dependencies listed
+   in the `pubspec.yaml` file, or
+* `flutter packages upgrade` retrieves the latest versions
+   of all the dependencies listed in the `pubspec.yaml` file
 
 We publish breaking change announcements to our
 [mailing list](https://groups.google.com/forum/#!forum/flutter-dev). We

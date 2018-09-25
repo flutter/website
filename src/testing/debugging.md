@@ -10,7 +10,7 @@ applications.
 
 <aside class="alert alert-info" markdown="1">
 **Note:** If your app's UI isn't running as smoothly as you expect,
-check out [Flutter Performance Profiling](/ui-performance/).
+check out [Flutter Performance Profiling](ui-performance).
 </aside>
 
 ## The Dart Analyzer

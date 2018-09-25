@@ -16,7 +16,7 @@ platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
-[developing packages](/development/packages/developing-packages).
+[developing packages](/development/packages-and-plugins/developing-packages).
 
 If you are looking to add assets, images, or fonts, whether stored in files or
 packages, please see [Assets & Images](/development/ui/assets-and-images).
@@ -70,7 +70,7 @@ For a complete example, see [CSS Colors example](#css-example) below.
 ## Developing new packages
 
 Should a package not be available for your specific use case, you can
-[develop new custom packages](/development/packages/developing-packages).
+[develop new custom packages](/development/packages-and-plugins/developing-packages).
 
 ## Managing package dependencies & versions
 

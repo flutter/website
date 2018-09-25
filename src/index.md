@@ -104,7 +104,7 @@ description: >
     </div>
 
     <p>
-    Browse the <a href="/widgets">widget catalog</a>.
+    Browse the <a href="/development/ui/widgets">widget catalog</a>.
     </p>
 </section>
 
@@ -152,9 +152,9 @@ class CounterState extends State<Counter> {
 {% endprettify %}
 
     <p>
-    Browse the <a href="/widgets">widget catalog</a>
+    Browse the <a href="/development/ui/widgets">widget catalog</a>
     and learn more about the
-    <a href="/widgets-intro">reactive framework</a>.
+    <a href="/development/ui/widgets-intro">reactive framework</a>.
     </p>
 
 </section>
@@ -190,8 +190,8 @@ Future<Null> getBatteryLevel() async {
 {% endprettify %}
 
     <p>
-    Learn how to use <a href="/development/packages/using-packages">packages</a>,
-    or write <a href="/platform-channels">platform channels</a>,
+    Learn how to use <a href="/development/packages-and-plugins/using-packages">packages</a>,
+    or write <a href="/development/platform-integration/platform-channels">platform channels</a>,
     to access native code, APIs, and SDKs.
     </p>
 
@@ -293,7 +293,7 @@ Future<Null> getBatteryLevel() async {
 
     <p>
     Learn more about what makes Flutter special in the
-    <a href="/technical-overview">technical overview</a>.
+    <a href="/resources/technical-overview">technical overview</a>.
     </p>
 </section>
 

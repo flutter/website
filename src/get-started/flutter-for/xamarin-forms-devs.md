@@ -200,7 +200,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino widgets](/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -347,7 +347,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/widgets/layout).
+catalog](/development/ui/widgets/layout).
 
 ## How do I add or remove an Element from my layout?
 
@@ -527,7 +527,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/widgets/animation),
+[Animation & Motion widgets](/development/ui/widgets/animation),
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
@@ -606,7 +606,7 @@ In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing
 `VisualElement`, to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/technical-overview#everythings-a-widget) smaller widgets
+[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom control based off a `Grid` with
 numerous `VisualElement`s added in, while extending with custom logic.
@@ -650,7 +650,7 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget](/technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/resources/technical-overview#everythings-a-widget)
 that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the
@@ -716,7 +716,7 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 To implement this functionality in Flutter, create a native platform integration,
 or use an [existing plugin](https://pub.dartlang.org/flutter/), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with
-many other packages on [pub.dartlang](https://pub.dartlang.org/flutter).
+many other packages on the [Package site](https://pub.dartlang.org/flutter).
 
 # Async UI
 
@@ -1337,7 +1337,7 @@ files for translating, and importing them back into the app for using them
 with `intl`.
 
 For further details on internationalization and localization in Flutter, see the
-[internationalization guide](/tutorials/internationalization),
+[internationalization guide](/accessibility/internationalization),
 which has sample code with and without the `intl` package.
 
 ## Where is my project file?
@@ -2202,7 +2202,7 @@ app is still hosted in a native app's `ViewController` or `Activity` as a view,
 but you don't have direct access to this, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels](/platform-channels),
+native code you have. Flutter provides [platform channels](/development/platform-integration/platform-channels),
 that communicate and exchange data with the `ViewController` or `Activity` that
 hosts your Flutter view. Platform channels are essentially an asynchronous messaging
 mechanism that bridge the Dart code with the host `ViewController` or `Activity` and
@@ -2210,7 +2210,8 @@ the iOS or Android framework it runs on. You can use platform channels to execut
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/development/packages/using-packages) that encapsulate the native and
+[plugins](/development/packages-and-plugins/using-packages) that encapsulate
+the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
 write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
@@ -2218,8 +2219,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/development/packages/developing-packages)
-and [publish it on Pub](/development/packages/developing-packages#publish).
+[write your own](/development/packages-and-plugins/developing-packages)
+and [publish it on Pub](/development/packages-and-plugins/developing-packages#publish).
 
 ## How do I access the GPS sensor?
 
@@ -2257,7 +2258,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/development/packages/developing-packages) page.
+[developing packages and plugins](/development/packages-and-plugins/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

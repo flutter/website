@@ -10,7 +10,7 @@ contribute to the slick look and feel of a polished app,
 and improve the user experience. Flutter's animation support
 makes it easy to implement a variety of animation types.
 Many widgets, especially
-[Material Design widgets](/widgets/material),
+[Material Design widgets](/development/ui/widgets/material),
 come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
@@ -92,7 +92,7 @@ used animation patterns, and tells you where you can learn more.
 This pattern involves animating the addition or removal of elements from a
 list or grid.
 
-* [AnimatedList example](/catalog/samples/animated-list/)<br>
+* [AnimatedList example](/catalog/samples/animated-list)<br>
 This demo, from the [Sample App Catalog](/catalog/samples), shows how to
 animate adding an element to a list, or removing a selected element.
 The internal Dart list is synced as the user modifies the list using
@@ -142,7 +142,7 @@ Learn more about Flutter animations at the following links:
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 
-* [Animation and Motion Widgets](/widgets/animation/)<br>
+* [Animation and Motion Widgets](/development/ui/widgets/animation)<br>
 A catalog of some of the animation widgets provided in the Flutter APIs.
 
 {% comment %}

@@ -300,7 +300,7 @@ to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion
 spec.](https://material.io/guidelines/motion/movement.html)
 
-[Create a new Flutter example](/get-started/test-drive/) and
+[Create a new Flutter example](/get-started/test-drive) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/hero_animation/)
 
@@ -494,7 +494,7 @@ This guide describes the first example.<br><br>
 The radial hero animation involves intersecting a round shape with
 a square shape. This can be hard to see, even when slowing
 the animation with `timeDilation`, so you might consider enabling
-Flutter's [visual debugging mode](/debugging/#visual-debugging)
+Flutter's [visual debugging mode](/testing/debugging#visual-debugging)
 during development.
 </aside>
 
@@ -519,7 +519,7 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-[Create a new Flutter example](/get-started/test-drive/) and
+[Create a new Flutter example](/get-started/test-drive) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
 

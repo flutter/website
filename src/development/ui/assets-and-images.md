@@ -329,20 +329,28 @@ NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
 NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 
-For a more complete example see the implementation of the Flutter [video_payer plugin](https://pub.dartlang.org/packages/video_player).
+For a more complete example see the implementation of the Flutter
+[video_player plugin](https://pub.dartlang.org/packages/video_player).
 
 ## Platform assets
 
-There will also be occasions to work with assets in the platform projects directly. Below are two common cases where assets are used before the Flutter framework is loaded and running.
+There will also be occasions to work with assets in the platform projects directly.
+Below are two common cases where assets are used before the Flutter framework is loaded and running.
 
 ### Updating the app icon
-Updating your Flutter application's launch icon works the same way as updating launch icons in native Android or iOS applications.
+
+Updating your Flutter application's launch icon works the same way as updating launch icons in
+native Android or iOS applications.
 
 ![Launch icon](/images/assets-and-images/icon.png)
 
 #### Android
 
-In your Flutter project's root directory, navigate to `.../android/app/src/main/res`. The various bitmap resource folders such as `mipmap-hdpi` already contain placeholder images named `ic_launcher.png`. Simply replace them with your desired assets respecting the recommended icon size per screen density as indicated by the [Android Developer Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size).
+In your Flutter project's root directory, navigate to `.../android/app/src/main/res`.
+The various bitmap resource folders such as `mipmap-hdpi` already contain placeholder images named
+`ic_launcher.png`. Simply replace them with your desired assets respecting the recommended icon size
+per screen density as indicated by the [Android Developer
+Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size).
 
 ![Android icon location](/images/assets-and-images/android-icon-path.png)
 

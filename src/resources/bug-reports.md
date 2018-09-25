@@ -7,10 +7,14 @@ title: Creating Useful Bug Reports
 
 ## Introduction
 
-The instructions in this document detail the current steps required to provide the most actionable bug reports for crashes and other bad behavior. Each step is optional but will greatly improve how quickly issues are diagnosed and addressed. We appreciate your effort in sending us as much feedback as possible.
+The instructions in this document detail the current steps required to provide the most
+actionable bug reports for crashes and other bad behavior. Each step is optional but
+will greatly improve how quickly issues are diagnosed and addressed. We appreciate your
+effort in sending us as much feedback as possible.
 
 ## Create an Issue on Github
-* A new Github issue may be created at [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
+* A new Github issue may be created at
+ [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
 
 ## Provide some Flutter Diagnostics
 * Run `flutter doctor` in your project directory and paste the results into the Github Issue:

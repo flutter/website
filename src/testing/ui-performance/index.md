@@ -33,8 +33,8 @@ problems.
 
 <aside class="alert alert-info" markdown="1">
 **Note**: To perform tracing inside your Dart code, see [Tracing
-any Dart code performance](/debugging/#tracing-any-dart-code-performance)
-in the [Debugging](/debugging) page.
+any Dart code performance](/testing/debugging#tracing-any-dart-code-performance)
+in the [Debugging](/testing/debugging) page.
 </aside>
 
 ## Diagnosing performance problems
@@ -147,7 +147,7 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
-<center><img src="/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
+<center><img src="/testing/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
 <center>Performance overlay showing the UI thread (top), and GPU thread (bottom).
 	The vertical green bars represent the current frame.</center><br>
 
@@ -200,7 +200,7 @@ If a red bar appears in the UI graph, the Dart code is too expensive.
 If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
-<center><img src="/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
+<center><img src="/testing/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
 <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
 
 ### Displaying the performance overlay
@@ -221,7 +221,7 @@ application. If the inspector isn't open, you can display it as follows.
 In Android Studio and IntelliJ IDEA:
 
 1. Select **View > Tool Windows > Flutter Inspector**.
-1. In the toolbar, select the icon that looks like a bookshelf (<img src="/ui-performance/images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
+1. In the toolbar, select the icon that looks like a bookshelf (<img src="/testing/ui-performance/images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
 
 ![IntelliJ Flutter Inspector Window](/development/tools/images/visual-debugging.png)<br>
 
@@ -300,9 +300,9 @@ Go to Flutter's timeline view in a browser as follows:
 <ol markdown="1">
 <li markdown="1">
 To open the timeline view, use the line chart
-icon <img src="/ui-performance/images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
+icon <img src="/testing/ui-performance/images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
 
-(Instead, you could open Observatory using the stopwatch icon (<img src="/ui-performance/images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
+(Instead, you could open Observatory using the stopwatch icon (<img src="/testing/ui-performance/images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
 but the "view <u>inspector</u>" link takes you to the standard version of the
 timeline, not the version customized for Flutter.)
 
@@ -467,7 +467,7 @@ for debugging performance issues.
   Similar to `debugPrintMarkNeedsLayoutStack`, but for excess painting.
 
 You can learn about other debug flags in
-[Debugging Flutter Apps](/debugging).
+[Debugging Flutter Apps](/testing/debugging).
 
 ## Benchmarking
 
@@ -484,7 +484,7 @@ Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
 
 For more information, see
-[Integration testing](/testing/#integration-testing),
+[Integration testing](/testing#integration-testing),
 a section in [Testing Flutter Apps](/testing).
 
 ## More information
@@ -492,7 +492,7 @@ a section in [Testing Flutter Apps](/testing).
 The following resources provide more information on using Flutter's tools
 and debugging in Flutter:
 
-* [Debugging Flutter Apps](/debugging)
+* [Debugging Flutter Apps](/testing/debugging)
 * [Flutter Widget Inspector](/development/tools/inspector)
 * [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI),
   presented at DartConf 2018

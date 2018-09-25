@@ -4,7 +4,7 @@ title: Writing custom platform-specific code with platform channels
 
 This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
-please see [using packages](/development/packages/using-packages).
+please see [using packages](/development/packages-and-plugins/using-packages).
 
 * TOC
 {:toc}
@@ -86,7 +86,7 @@ the iOS `device.batteryLevel` API, via a single platform message,
 The example adds the platform-specific code inside the main app itself. If you
 want to reuse the platform-specific code for multiple apps, the project creation
 step is slightly different (see [developing
-packages](/development/packages/developing-packages#plugin)),
+packages](/development/packages-and-plugins/developing-packages#plugin)),
 but the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
@@ -601,13 +601,13 @@ displays 'Battery info unavailable.'.
 If you expect to use your platform-specific code in multiple Flutter apps, it
 can be useful to separate the code into a platform plugin located in a directory
 outside your main application. See [developing
-packages](/development/packages/developing-packages) for details.
+packages](/development/packages-and-plugins/developing-packages) for details.
 
 ## Publish platform-specific code as a package {#publish}
 
 If you wish to share your platform-specific with other developers in the Flutter
 ecosystem, please see [publishing
-packages](/development/packages/developing-packages#publish) for details.
+packages](/development/packages-and-plugins/developing-packages#publish) for details.
 
 ## Custom channels and codecs
 

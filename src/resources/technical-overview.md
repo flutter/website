@@ -190,7 +190,7 @@ Next steps:
 1.  [Follow the Flutter Getting Started guide](/get-started).
 1.  Try [Building Layouts in Flutter](/development/ui/layout) and
     [Adding Interactivity to Your Flutter App](/development/ui/interactive).
-1.  Follow a detailed example in [Tour of the Widget Framework](/widgets-intro).
+1.  Follow a detailed example in [Tour of the Widget Framework](/development/ui/widgets-intro).
 
 ## Get support
 
