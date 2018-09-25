@@ -54,7 +54,7 @@ skip to the next section.
   [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
-simulator](/get-started/setup-macos#set-up-the-ios-simulator)
+simulator](/get-started/install/macos#set-up-the-ios-simulator)
 (part of the Flutter install),
 you are good to go!
 
