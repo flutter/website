@@ -19,23 +19,6 @@ dd {
   margin-bottom: .75rem;
 }
 
-a.card {
-  color: inherit;
-
-  &:hover {
-    border-bottom: 4px solid $site-color-primary;
-    text-decoration: none;
-
-    .card-title {
-      color: $site-color-primary;
-    }
-
-    .card-body {
-      padding-bottom: 17px;
-    }
-  }
-}
-
 .card-title {
   font-family: $site-font-family-alt;
   font-size: $font-size-lg;
