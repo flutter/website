@@ -145,14 +145,14 @@ FutureBuilder<Post>(
 );
 ```
 
-## 5. Moving the fetch call out of the `build` method
+## 5. Moving the fetch call out of the `build()` method
 
 Although it's convenient, it's not recommended to put a call to an API in your
-`build` method.
+`build()` method.
 
-Flutter calls the `build` method every time it wants to change anything in the
+Flutter calls the `build()` method every time it wants to change anything in the
 view, and this happens surprisingly often.  If you leave the fetch call in your
-`build` method, you'll flood the API with unnecessary calls and slow down your
+`build()` method, you'll flood the API with unnecessary calls and slow down your
 app.
 
 Here are some better options so it'll only hit the API when the page is

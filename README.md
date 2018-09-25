@@ -194,7 +194,7 @@ Here's an example:
 class ExampleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Container();
+    return Container();
   }
 }
 ```
