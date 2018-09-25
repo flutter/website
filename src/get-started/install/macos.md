@@ -2,25 +2,29 @@
 title: "Get Started: Install on macOS"
 ---
 
-* TOC Placeholder
-{:toc}
+## System requirements
 
-{% include_relative setup/system-mac.md %}
+To install and run Flutter, your development environment must meet these minimum requirements:
 
-{% include_relative setup/get-sdk.md %}
+- **Operating Systems**: macOS (64-bit)
+- **Disk Space**: 700 MB (does not include disk space for IDE/tools).
+- **Tools**: Flutter depends on these command-line tools being available in your environment.
+  - `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`, `which`
 
-{% include_relative setup/path-mac-linux.md %}
+{% include_relative _get-sdk.md %}
+
+{% include_relative _path-mac-linux.md %}
 
 ## Platform setup
 
-macOS supports developing Flutter apps for both iOS and Android. Complete at
+MacOS supports developing Flutter apps for both iOS and Android. Complete at
 least one of the two platform setup steps now, to be able to build and run your
 first Flutter app.
 
-{% include_relative setup/ios-setup.md %}
+{% include_relative _ios-setup.md %}
 
-{% include_relative setup/android-setup.md %}
+{% include_relative _android-setup.md %}
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor/)
+[Next step: Configure Editor](/get-started/editor)
