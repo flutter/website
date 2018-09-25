@@ -5,11 +5,11 @@ title: "Get Started: Install on Windows"
 * TOC Placeholder
 {:toc}
 
-{% include setup/system-win.md %}
+{% include_relative setup/system-win.md %}
 
-{% include setup/get-sdk-win.md %}
+{% include_relative setup/get-sdk-win.md %}
 
-{% include setup/android-setup.md %}
+{% include_relative setup/android-setup.md %}
 
 ## Next step
 
