@@ -33,6 +33,9 @@
     {% asset '{{css}}' %}
   {% endfor %}
   {% asset main.js %}
+  {% for js in page.js -%}
+    <script {% if js.defer %}defer{% endif %} src="{{js.url | default: js}}"></script>
+  {% endfor -%}
   <link rel="canonical" href="{{ page_url }}">
 
   <script>
