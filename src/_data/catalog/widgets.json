@@ -457,6 +457,16 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VUVlmbHM1Q013RU0/components_dividers.png'>"
   },
   {
+    "name": "CupertinoActionSheet",
+    "description": "An iOS-style bottom action sheet.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoActionSheet-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-action-sheet.png'>"
+  },
+  {
     "name": "CupertinoActivityIndicator",
     "description": "An iOS-style activity indicator. Displays a circular 'spinner'.",
     "categories": [
@@ -505,6 +515,16 @@
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialogAction-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog-action.png'>"
+  },
+  {
+    "name": "CupertinoSegmentedControl",
+    "description": "An iOS-style segmented control. Used to select mutually exclusive options in a horizontal list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoSegmentedControl-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-segmented-control.png'>"
   },
   {
     "name": "CupertinoSlider",
@@ -605,6 +625,16 @@
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
+  },
+  {
+    "name": "CupertinoTimerPicker",
+    "description": "An iOS-style countdown timer picker.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTimerPicker-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-timer-picker.png'>"
   },
   {
     "name": "Padding",
