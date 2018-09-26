@@ -25,18 +25,20 @@
             <a class="nav-link" href="/showcase">Showcase</a>
           </li>
           {% comment %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.repo.flutter}}">GitHub</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.pub}}/flutter">Packages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/support">Support</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{site.repo.flutter}}">GitHub</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{site.pub}}/flutter">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/support">Support</a>
+            </li>
           {% endcomment %}
         </ul>
+        {% unless layout.nav-get-started-button == 'hide' || page.nav-get-started-button == 'hide' -%}
         <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
+        {% endunless -%}
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
         </form>
