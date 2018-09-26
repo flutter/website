@@ -279,9 +279,9 @@ Flutter (as reported by `flutter doctor`).
 Please checkout these 'cheat sheets':
 
   * [Flutter IDE cheat sheet, MacOS
-    version](/f/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+    version](/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
   * [Flutter IDE cheat sheet, Windows & Linux
-    version](/f/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+    version](/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
