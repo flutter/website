@@ -486,9 +486,10 @@ the success and error cases using the `result` argument. If an unknown method
 is called, report that instead.
 
 ```objectivec
+__weak typeof(self) weakSelf = self
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
-    int batteryLevel = [self getBatteryLevel];
+    int batteryLevel = [weakSelf getBatteryLevel];
 
     if (batteryLevel == -1) {
       result([FlutterError errorWithCode:@"UNAVAILABLE"
@@ -583,12 +584,12 @@ is called, report that instead.
 
 ```swift
 batteryChannel.setMethodCallHandler({
-  (call: FlutterMethodCall, result: FlutterResult) -> Void in
-  if "getBatteryLevel" == call.method {
-    self.receiveBatteryLevel(result: result)
-  } else {
+  [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+  guard call.method == "getBatteryLevel" else {
     result(FlutterMethodNotImplemented)
+    return
   }
+  self.receiveBatteryLevel(result: result)
 })
 ```
 
