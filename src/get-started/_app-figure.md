@@ -14,9 +14,11 @@ TODO: Fernando, should we set all `figure-caption` to have centered text,
   {% assign path = path | append: '/' | append: platform_in_lowercase -%}
 {% endif -%}
 
-<figure class="figure {{include.class}}">
-  {% asset '{{path}}/{{include.image}}' alt='{{alt}}' class='figure-img img-fluid' %}
-  {% if caption -%}
-  <figcaption class="figure-caption text-center">{{caption}}</figcaption>
-  {% endif -%}
+<figure class="site-figure {{include.class}}">
+  <div class="site-figure-container">
+      {% asset '{{path}}/{{include.image}}' alt='{{alt}}' %}
+      {% if caption -%}
+      <figcaption class="figure-caption">{{caption}}</figcaption>
+      {% endif -%}
+  </div>
 </figure>

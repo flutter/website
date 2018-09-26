@@ -9,6 +9,7 @@ h1 {
 
 h2 {
   margin: bs-spacer(12) 0 bs-spacer(8);
+  clear: both;
 }
 
 h3 {
@@ -25,10 +26,6 @@ dd {
   margin-bottom: bs-spacer(2);
 }
 
-.btn {
-  font-family: $site-font-family-alt;
-}
-
 .fixed-col {
   @include media-breakpoint-up(md) {
     bottom: 0;
@@ -40,4 +37,36 @@ dd {
 
 .material-icons {
   font: $site-font-icon;
+}
+
+.site-image-right {
+  display: block;
+  margin: 0 auto;
+  max-height: 60vh;
+  max-width: 100%;
+
+  @include media-breakpoint-up(md) {
+    float: right;
+    margin: 0 0 bs-spacer(10) bs-spacer(10);
+    max-height: none;
+    max-width: calc((100%/2.5) - #{bs-spacer(10)});
+  }
+}
+
+.site-figure {
+  display: flex;
+  justify-content: center;
+
+  .site-figure-container {
+    flex: 0 1 auto;
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+    margin-top: bs-spacer(4);
+    text-align: center;
+  }
+  }
 }
