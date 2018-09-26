@@ -18,7 +18,7 @@ $(function () {
 function adjustToc() {
   // Adjustments to the jekyll-toc TOC.
 
-  var tocId = '#site-toc__side';
+  var tocId = '#site-toc--side';
   var tocWrapper = $(tocId);
   $(tocWrapper).find('.site-toc--button__page-top').click(function() {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
