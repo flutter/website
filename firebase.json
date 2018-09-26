@@ -8,6 +8,7 @@
     "redirects": [
       { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/chat", "destination": "https://gitter.im/flutter/flutter", "type": 302 },
+      { "source": "/downloads/:resource*", "destination": "/resources/:resource*", "type": 301 },
       { "source": "/platform-services*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/platform-plugins*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
