@@ -9,13 +9,13 @@ $code-color: $site-color-body;
 // Font config
 $font-family-sans-serif: $site-font-family-base;
 $font-family-monospace: $site-font-family-monospace;
-$font-weight-base: 300;
+$font-weight-base: 400;
 $headings-font-family: $site-font-family-alt;
 $headings-font-weight: 400;
 $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
 $h3-font-size: 1.125rem;
-$dt-font-weight: 300;
+$dt-font-weight: 400;
 
 // Spacing (extra spacers beyond Bootstrap's defaults)
 $site-spacer: 1rem; // assert: should match Bootstrap $spacer
@@ -33,7 +33,6 @@ $spacers: (
   11: ($site-spacer * 2.75),
   12: ($site-spacer * 3),
 );
-$grid-gutter-width: 50px;
 
 @function bs-spacer($key: 3) {
   @return map-get($spacers, $key);
@@ -47,3 +46,5 @@ $border-radius-lg: 0;
 $border-radius-sm: 0;
 $btn-font-weight: 400;
 $card-border-radius: 4px;
+$card-group-margin: bs-spacer(2);
+$grid-gutter-width: 50px;
