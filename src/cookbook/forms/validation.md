@@ -64,7 +64,8 @@ class MyCustomFormState extends State<MyCustomForm> {
 ## 2. Add a `TextFormField` with validation logic
 
 We have our `Form` in place, but we haven't provided a way for our users to
-enter text! This the job of a [`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html).
+enter text! This is the job of a
+[`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html).
 The `TextFormField` Widget renders a material design text input and knows how to
 display validation errors when they occur.
 

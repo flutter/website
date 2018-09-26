@@ -602,11 +602,11 @@ public class MainActivity extends FlutterActivity {
       }
     }
 
-    MethodChannel(getFlutterView(), "app.channel.shared.data")
-      .setMethodCallHandler(MethodChannel.MethodCallHandler() {
+    new MethodChannel(getFlutterView(), "app.channel.shared.data").setMethodCallHandler(
+      new MethodCallHandler() {
         @Override
-        public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
-          if (methodCall.method.contentEquals("getSharedText")) {
+        public void onMethodCall(MethodCall call, MethodChannel.Result result) {
+          if (call.method.contentEquals("getSharedText")) {
             result.success(sharedText);
             sharedText = null;
           }

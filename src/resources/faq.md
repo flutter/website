@@ -528,10 +528,10 @@ iOS and Android.
 
 ### Does Flutter come with a reflection/mirrors system?
 
-Not at this time. Because Flutter apps are pre-compiled for iOS, and binary size
-is always a concern with mobile apps, we disabled dart:mirrors. We are curious
-what you might need reflection/mirrors for&mdash;please let us know at
-[{{site.email}}](mailto:{{site.email}}).
+Not at this time. Because Flutter apps are pre-compiled for production,
+and binary size is always a concern with mobile apps, we disabled
+dart:mirrors. We are curious what you might need reflection/mirrors
+for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
 
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
