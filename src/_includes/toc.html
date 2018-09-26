@@ -10,7 +10,7 @@
 {% endcomment -%}
 
 {% if include.kind -%}
-  {% assign id-suffix = include.kind | prepend: '__' -%}
+  {% assign id-suffix = include.kind | prepend: '--' -%}
 {% endif -%}
 <div
   id="site-toc{{id-suffix}}"
