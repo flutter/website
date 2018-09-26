@@ -32,8 +32,8 @@ Episode One: The Boring Flutter Show<br>
 
 Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lkF0TQJO0bA?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist](??) (No playlist yet)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lkF0TQJO0bA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=lkF0TQJO0bA&list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
 
 ## Flutter Challenge series by Fluttery
 
@@ -56,33 +56,15 @@ Weekly episodes, released on Sunday, feature Flutter widgets.
 
 Here are a few recent Flutter talks given at various conferences, listed by newist first.
 
-## Open Source for Busy People - live coding a Flutter GitHub app. (OSCON 2018)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FIs0C17sJAc?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Build reactive mobile apps with Flutter (Google I/O '18)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RS36gBEp8OI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Total mobile app development made fun with Flutter and Firebase (Google I/O '18)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p4yLzYwy_4g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Code beautiful UIs with Flutter and Material Design (Google I/O '18)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hA0hrpR-o8U?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Keep it Simple, State: Architecture for Flutter Apps (DartConf 2018)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zKXz3pUkw9A?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[Conference Talks playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIKVFj6DCJHTwvSzUBa2R8Ec)
 
 # Flutter DevBytes
 
-These 10-minute (more or less) videos feature core Flutter concepts.
+These 10-minute (more or less) tutorials teach core Flutter concepts.
 
-## Building Your First Flutter Widget
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W1pNjxmNHNQ?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Using Material Design with Flutter
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DL0Ix1lnC4w?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-## Using Firestore as a backend to your Flutter app
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DqJ_KjFzL9I?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W1pNjxmNHNQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[DevBytes playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK_ZeW1fh49iu5-j2D99O-P)
 
 ---
 
