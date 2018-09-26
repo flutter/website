@@ -17,7 +17,7 @@ buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
 The Inspector is powerful tool for visualizing and exploring Flutter
 these widget trees. It can be helpful when:
 
-* Undestanding existing layouts
+* Understanding existing layouts
 * Diagnosing layout issues
 
 ![IntelliJ Flutter Inspector Window](images/visual-debugging.png)
