@@ -24,7 +24,7 @@
   .nav-link {
     padding: 6px 0;
     position: relative;
-
+    color: inherit;
     .disabled { color: $btn-link-disabled-color; }
   }
 
@@ -58,7 +58,7 @@
   > .nav > .nav-item > .nav > .nav-item {
     font-size: $font-size-sm;
 
-    .nav-link {
+    > .nav-link {
       color: $site-color-body-light;
       margin-left: bs-spacer(4);
 
@@ -70,7 +70,7 @@
   > .nav > .nav-item > .nav > .nav-item > .nav > .nav-item {
     font-size: $font-size-sm;
 
-    .nav-link {
+    > .nav-link {
       border-left: 1px solid $site-color-light-grey;
       color: $site-color-body-light;
       margin-left: bs-spacer(4);
