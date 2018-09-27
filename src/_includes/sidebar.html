@@ -1,94 +1,120 @@
+{% comment %}
+  Strip out any trailing '/', etc. for exact URL match.
+{% endcomment -%}
+{% assign pageUrl = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
+
+{% comment %}
+TODO(chalin): rename link to top_level_nav_entry
+{% endcomment -%}
+
 <ul class="nav flex-column">
+    {%- for link in include.list -%}
 
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-toggle="collapse" data-target="#getStartedMenu" role="button" aria-expanded="false" aria-controls="getStartedMenu">Get started</a>
-  </li>
+    {%- assign isActive = false -%}
+    {%- if link.urlExactMatch and pageUrl == link.permalink -%}
+      {%- assign isActive = true -%}
+    {%- elsif link.urlExactMatch == nil and pageUrl contains link.permalink -%}
+      {%- assign isActive = true -%}
+    {%- endif -%}
 
-  <ul class="nav flex-column flex-nowrap collapse" id="getStartedMenu">
-    <li class="nav-item"><a class="nav-link active" href="/get-started/install">1: Install</a></li>
+    {% if isActive -%}
+      {% assign class = 'active' -%}
+      {% assign expanded = 'true' -%}
+      {% assign show = 'show' -%}
+    {% else -%}
+      {% assign class = 'collapsed' -%}
+      {% assign expanded = 'false' -%}
+      {% assign show = '' -%}
+    {% endif -%}
+    {% assign id = 'side-bar-' | append: forloop.index -%}
 
-    <ul class="nav d-block" id="installSubMenu">
-      <li class="nav-item"><a class="nav-link active" href="/get-started/editor">Upgrade Flutter</a></li>
-      <li class="nav-item"><a class="nav-link" href="/get-started/test-drive">Configure editor</a></li>
-      <li class="nav-item"><a class="nav-link" href="/get-started/codelab">Use Flutter in IDEs</a></li>
-    </ul>
+    <li class="nav-item">
+      <a class="nav-link {{class}}" data-toggle="collapse" href="#{{id}}" role="button"
+        aria-expanded="{{expanded}}" aria-controls="{{id}}"
+      >{{link.title}}</a>
 
-    <li class="nav-item"><a class="nav-link" href="/get-started/editor">2: Configure editor</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/test-drive">3: Test drive</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/codelab">4: Write your first app</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/learn-more">5: Learn more</a></li>
-  </ul>
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-toggle="collapse" data-target="#buildUIsMenu" role="button" aria-expanded="false" aria-controls="buildUIsMenu">Build UIs</a>
-  </li>
-
-  <ul class="nav flex-column flex-nowrap collapse" id="buildUIsMenu">
-    <li class="nav-item"><a class="nav-link" href="/development/ui/widgets-intro">Tour the framework</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/widgets">Widget catalog</a></li>
-    <li class="nav-item"><a class="nav-link" href="/cookbook">Cookbook</a></li>
-    <li class="nav-item"><a class="nav-link" href="/catalog/samples">Sample catalog</a></li>
-    <li class="nav-item"><a class="nav-link" href="/codelabs">Codelabs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/layout">Build layouts - Tutorial</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/interactive">Add interactivity - Tutorial</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/web-devs">Flutter for Web devs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/android-devs">Flutter for Android devs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/ios-devs">Flutter for iOS devs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/react-native-devs">Flutter for React Native devs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/get-started/flutter-for/xamarin-forms-devs">Flutter for Xamarin.Forms devs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/advanced/gestures">Gestures</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/animations">Animations</a></li>
-    <li class="nav-item"><a class="nav-link" href="/layout">Box constraints</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/ui/assets-and-images">Assets and images</a></li>
-    <li class="nav-item"><a class="nav-link" href="/accessibility/internationalization">Internationalization</a></li>
-    <li class="nav-item"><a class="nav-link" href="/accessibility">Accessibility</a></li>
-  </ul>
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-toggle="collapse" data-target="#apisMenu" role="button" aria-expanded="false" aria-controls="apisMenu">Use device and SDK APIs</a>
-  </li>
-
-  <ul class="nav flex-column flex-nowrap collapse" id="apisMenu">
-    <li class="nav-item"><a class="nav-link" href="/development/packages-and-plugins/using-packages">Using packages</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/packages-and-plugins/developing-packages">Developing packages</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/platform-integration/platform-channels">Platform-specific code</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/data-and-backend/json">JSON and serialization</a></li>
-    {% comment %}
-    <!-- Temporarily removed because the codelab is broken and possibly
-         about to be replaced by a completely new one. -->
-    <li class="nav-item"><a class="nav-link" href="https://codelabs.developers.google.com/codelabs/flutter-firebase/index.html#0">Firebase for Flutter - Codelab</a></li>
-    {% endcomment %}
-  </ul>
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-toggle="collapse" data-target="#toolsMenu" role="button" aria-expanded="false" aria-controls="toolsMenu">Development and tools</a>
-  </li>
-
-  <ul class="nav flex-column flex-nowrap collapse" id="toolsMenu">
-    <li class="nav-item"><a class="nav-link" href="/development/tools/using-ide">Using Flutter IDEs</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/tools/hot-reload">Using hot reload</a></li>
-    <li class="nav-item"><a class="nav-link" href="/testing">Test your app</a></li>
-    <li class="nav-item"><a class="nav-link" href="/testing/debugging">Debug your app</a></li>
-    <li class="nav-item"><a class="nav-link" href="/testing/ui-performance">Performance Profiling</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/tools/inspector">Inspect your UI</a></li>
-    <li class="nav-item"><a class="nav-link" href="/deployment/android-release">Build and release for Android</a></li>
-    <li class="nav-item"><a class="nav-link" href="/deployment/ios-release">Build and release for iOS</a></li>
-    <li class="nav-item"><a class="nav-link" href="/deployment/fastlane-cd">Continuous deployment with fastlane</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/tools/upgrading">Upgrade your Flutter install</a></li>
-    <li class="nav-item"><a class="nav-link" href="/development/tools/formatting">Format your source code</a></li>
-  </ul>
-
-  <li class="nav-item">
-    <a class="nav-link collapsed" data-toggle="collapse" data-target="#detailsMenu" role="button" aria-expanded="false" aria-controls="detailsMenu">More details</a>
-  </li>
-
-  <ul class="nav flex-column flex-nowrap collapse" id="detailsMenu">
-    <li class="nav-item"><a class="nav-link" href="/resources/faq">FAQ</a></li>
-    <li class="nav-item"><a class="nav-link" href="/resources/technical-overview">Technical overview</a></li>
-    <li class="nav-item"><a class="nav-link" href="https://docs.google.com/presentation/d/1B3p0kP6NV_XMOimRV09Ms75ymIjU5gr6GGIX74Om_DE/edit?usp=sharing">Magic of Flutter slides</a></li>
-    <li class="nav-item"><a class="nav-link" href="https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit?usp=sharing">Architecture diagrams</a></li>
-    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/watch?v=dkyY9WCGMi0">Framework's layered design <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
-    <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/watch?v=UUfXWzp0-DU">Flutter's rendering pipeline <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
-  </ul>
-
+      <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
+        {% for child in link.children -%}
+          {% comment %}
+            TODO: rename dropdown to hasChildren
+          {% endcomment -%}
+          {% capture dropdown %}{{ child.children | size }}{% endcapture -%}
+          {% if child == 'divider' -%}
+            <div class="dropdown-divider"></div>
+          {%- elsif dropdown == '0' -%}
+            {%- capture startsWithChildLink %}^{{ child.permalink }}{% endcapture -%}
+            {%- capture url %}{{ page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' }}{% endcapture -%}
+            {%- capture p %}{{ pageUrl | regex_replace: startsWithChildLink }}{% endcapture -%}
+            {%- assign isActive = false -%}
+            {%- if child.urlExactMatch and child.permalink == url -%}
+              {%- assign isActive = true -%}
+            {%- elsif child.urlExactMatch == nil and url != p -%}
+              {%- assign isActive = true -%}
+            {%- endif -%}
+            <li class="nav-item">
+              <a class="nav-link
+                  {%- if isActive %} active{% endif -%}
+                  {%- unless child.permalink %} disabled{% endunless -%}
+                  "
+                {% if child.permalink -%}
+                  href="{{child.permalink}}"
+                {% endif -%}
+                {% comment %}
+                  TODO: add title?
+                  title="{{child.title}}"
+                {% endcomment -%}
+              >{{child.title}}</a>
+            </li>
+          {%- else -%}
+            {% assign isActive = false %}
+            {% if page.sideNavGroup and page.sideNavGroup == child.sideNavGroup %}
+              {% assign isActive = true %}
+            {% elsif page.url contains child.permalink and child.sideNavGroup != 'basic' %}
+              {% assign isActive = true %}
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link
+                  {%- if isActive %} active{% endif -%}
+                  {%- unless child.permalink %} disabled{% endunless -%}
+                  "
+                {% if child.permalink -%}
+                  href="{{child.permalink}}"
+                {% endif -%}
+                {% comment %}
+                  TODO: add title?
+                  title="{{child.title}}"
+                {% endcomment -%}
+              >{{child.title}}</a>
+              {% comment %}
+                TODO: also make this a collapsable entry?
+              {% endcomment -%}
+              <ul class="nav d-block">
+                {%- for c in child.children -%}
+                  {%- assign isActive = false -%}
+                  {%- if c.urlExactMatch and pageUrl == c.permalink -%}
+                    {%- assign isActive = true -%}
+                  {%- elsif c.urlExactMatch == nil and pageUrl contains c.permalink -%}
+                    {%- assign isActive = true -%}
+                  {%- endif -%}
+                  <li class="nav-item">
+                    <a class="nav-link
+                        {%- if isActive %} active{% endif %}
+                        {%- unless c.permalink %} disabled{% endunless -%}
+                        "
+                        {% if c.permalink -%}
+                          href="{{c.permalink}}"
+                        {% endif -%}
+                        {% comment %}
+                          TODO: add title?
+                          title="{{c.title}}"
+                        {% endcomment -%}
+                      >{{c.title}}</a>
+                  </li>
+                {%- endfor %}
+              </ul>
+          {%- endif -%}
+        {%- endfor %}
+      </ul>
+    </li>
+  {%- endfor -%}
 </ul>

@@ -1,6 +1,5 @@
 - title: Getting Started
   permalink: /get-started
-  urlExactMatch: true
   children:
   - title: "1: Install"
     permalink: /get-started/install
@@ -12,20 +11,23 @@
     permalink: /get-started/codelab
   - title: "5: Learn more"
     permalink: /get-started/learn-more
+  - divider
   - title: Coming from another platform?
     children:
-    - title: Flutter for Android devs
+    - title: Flutter for Android Devs
       permalink: /get-started/flutter-for/android-devs
-    - title: Flutter for iOS devs
+    - title: Flutter for iOS Devs
       permalink: /get-started/flutter-for/ios-devs
-    - title: Flutter for React Native devs
+    - title: Flutter for React Native Devs
       permalink: /get-started/flutter-for/react-native-devs
-    - title: Flutter for Web devs
+    - title: Flutter for Web Devs
       permalink: /get-started/flutter-for/web-devs
-    - title: Flutter for Xamarin.Forms devs
+    - title: Flutter for Xamarin.Forms Devs
       permalink: /get-started/flutter-for/xamarin-forms-devs
 
-- title: "Samples & Codelabs"
+- title: Samples & Codelabs
+  # FIXME: we need a permalink that is common to all children
+  # permalink: ?
   children:
   - title: Cookbook
     permalink: /cookbook
@@ -39,18 +41,20 @@
     permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
+  permalink: /development
   children:
   - title: User interface
+    # permalink: /development/ui
     children:
     - title: Tour the framework
-      permalink: /development/ui/widgets-into
+      permalink: /development/ui/widgets-intro
     - title: Building layouts
       permalink: /development/ui/layout
     - title: Adding interactivity
       permalink: /development/ui/interactive
     - title: "Assets and images"
       permanlink: /development/ui/assets-and-images
-    - title: "Navigation & routing"
+    - title: Navigation & routing
       permalink: /cookbook/navigation/navigation-basics
     - title: Inspect an app's UI
       permalink: /development/tools/inspector
@@ -71,6 +75,7 @@
     - title: Platform-specific theming
     - title: Widget catalog
       permalink: /development/ui/widgets
+      urlExactMatch: true
   - title: Data and backend
     children:
     - title: Architect app to manage data flow
@@ -90,7 +95,7 @@
     - title: Embedding Flutter views in non-Flutter apps
     - title: Writing platform-specific code
       permalink: /development/platform-integration/platform-channels
-  - title: "Packages & Plugins"
+  - title: Packages & Plugins
     children:
     - title: Using packages
       permalink: /development/packages-and-plugins/using-packages
@@ -100,28 +105,33 @@
       permalink: http://pub.dartlang.org/flutter
   - title: Tools
     children:
+    - title: Use Flutter in IDEs
+      permalink: /development/tools/using-ide
     - title: Using hot reload
       permalink: /development/tools/hot-reload
-    - title: Using an IDE
-      permalink: /development/tools/using-ide
-    - title: Using an IDE
-      permalink: /development/tools/using-ide/vscode
+    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here? (The link is currently invalid.)
+    # - title: Using an IDE
+    #   permalink: /development/tools/using-ide/vscode
     - title: Format Flutter code
       permalink: /development/tools/formatting
     - title: Widget inspector
       permalink: /development/tools/inspector
 
-- title: "Testing & Optimization"
+- title: Testing & Optimization
+  permalink: /testing
   children:
   - title: Debugging your app
     permalink: /testing/debugging
   - title: Testing your app
     permalink: /testing
+    urlExactMatch: true
   - title: Performance profiling
     permalink: /testing/ui-performance
-  - title: Making your compiled app smaller
+  # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
+  # - title: Making your compiled app smaller
 
 - title: Deployment
+  permalink: /deployment
   children:
   - title: Build and release for Android
     permalink: /deployment/android-release
@@ -131,6 +141,7 @@
     permalink: /deployment/fastlane-cd
 
 - title: Resources
+  permalink: /resources
   children:
   - title: Dart resources
     permalink: /resources/bootstrap-into-dart
@@ -141,14 +152,14 @@
   - title: FAQ
     permalink: /resources/faq
 
-- title: "APIs & References"
+- title: APIs & References
   children:
   - title: Widget catalog
     permalink: /development/ui/widgets
   - title: API reference
-    permalink: https://docs.flutter.io/
+    permalink: https://docs.flutter.io
   - title: Package site
-    permalink: http://pub.dartlang.org/flutter
+    permalink: https://pub.dartlang.org/flutter
 
 
 

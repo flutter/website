@@ -24,14 +24,16 @@
   .nav-link {
     padding: 6px 0;
     position: relative;
+
+    .disabled { color: $btn-link-disabled-color; }
   }
 
-  // First nav level
+  // Top-level nav item
   > .nav > .nav-item {
     font-family: $site-font-family-alt;
     font-size: $font-size-lg;
 
-    .nav-link {
+    > .nav-link {
       align-items: flex-end;
       display: flex;
       justify-content: space-between;
@@ -52,22 +54,20 @@
     }
   }
 
-  // Second nav level
-  > .nav > .nav > .nav-item {
+  // Second-level nav item
+  > .nav > .nav-item > .nav > .nav-item {
     font-size: $font-size-sm;
 
     .nav-link {
       color: $site-color-body-light;
       margin-left: bs-spacer(4);
 
-      &.active {
-        font-weight: 400;
-      }
+      &.active { font-weight: $font-weight-bold; }
     }
   }
 
-  // Third nav level
-  > .nav > .nav > .nav > .nav-item {
+  // Third-level nav item
+  > .nav > .nav-item > .nav > .nav-item > .nav > .nav-item {
     font-size: $font-size-sm;
 
     .nav-link {
