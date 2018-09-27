@@ -3,13 +3,12 @@ layout: base
 ---
 
 {% comment %} TODO(chalin): The following should probably just be encoded in Sass. {% endcomment -%}
+{% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
 {% if page.toc -%}
   {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2' -%}
-  {% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
   {% comment %}Side toc is col-xl-2{% endcomment -%}
 {% else -%}
-  {% assign main-col = 'col-12 col-md-9 offset-md-3' -%}
-  {% assign sidebar-col = 'col-12 col-md-3' -%}
+  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2' -%}
 {% endif -%}
 
 <div class="container-fluid">

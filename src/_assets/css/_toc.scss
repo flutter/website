@@ -10,7 +10,7 @@
     color: theme-color('primary');
     &.active {
       color: theme-color('secondary'); // $gray-dark;
-      font-weight: bolder;
+      font-weight: 500;
     }
   }
 
