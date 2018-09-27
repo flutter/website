@@ -12,6 +12,9 @@
 @import '_content';
 @import '_footer';
 @import '_bootstrap_adjust';
-@import '_code-highlight';
+@import '_material_colors';
+@import '_pygments-bg-light';
+// @import '_pygments-bg-dark';
+@import '_code_pre';
 
 @import 'site_overrides';
