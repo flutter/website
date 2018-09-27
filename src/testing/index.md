@@ -67,7 +67,9 @@ Engine, which supplies these libraries. Using this command you can run any test,
 whether it depends on Flutter libraries or not.
 
 Write a Flutter unit test as a normal `package:test` test. Writing unit tests
-using `package:test` is documented [here](https://github.com/dart-lang/test/blob/master/README.md).
+using `package:test` is documented on the [Dart
+testing](https://github.com/dart-lang/test/blob/master/README.md)
+repo.
 
 Example:
 
