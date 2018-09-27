@@ -18,4 +18,4 @@ Check out our detailed [documentation](https://developer.nevercode.io/docs/build
 
 [Step-by-step guide how to go from zero to Flutter hero with Nevercode](https://nevercode.io/blog/continuous-integration-and-delivery-ci-cd-for-flutter-apps-with-nevercode/)
 
-For more about Nevercode CI/CD for mobile, visit [www.nevercode.io](www.nevercode.io)
+For more about Nevercode CI/CD for mobile, visit [www.nevercode.io](http://nevercode.io/)
