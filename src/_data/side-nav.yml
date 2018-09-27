@@ -127,6 +127,8 @@
     permalink: /deployment/android-release
   - title: Build and release for iOS
     permalink: /deployment/ios-release
+  - title: Continuous integration and delivery with Nevercode
+    permalink: /deployment/nevercode
   - title: Continuous deployment with fastlane
     permalink: /deployment/fastlane-cd
 
