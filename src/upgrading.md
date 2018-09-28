@@ -49,7 +49,7 @@ $ flutter upgrade
 ## Upgrading your packages
 
 If your Flutter app depends on one or more packages, make sure to
-[update those dependencies](/using-packages/#updating-package-dependencies)
+[update packages dependencies](/using-packages/#updating-package-dependencies)
 on a regular basis.
 
 We publish breaking change announcements to our
