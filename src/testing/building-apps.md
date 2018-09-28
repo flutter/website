@@ -1,5 +1,5 @@
 ---
-title: Building Flutter Apps
+title: Building Flutter apps
 ---
 
 The Flutter tooling supports three modes when compiling your app,
@@ -24,7 +24,7 @@ device, emulator, or simulator. Debug mode means that:
 * [Assertions](https://www.dartlang.org/guides/language/language-tour#assert)
    are enabled.
 * [Observatory](https://dart-lang.github.io/observatory/) is enabled,
-   allowing you to profile timeline data.
+   allowing you to use the dart debugger.
 * Service extensions are enabled.
 * Compilation is optimized for fast development and run cycles (but not for
   execution speed, binary size, or deployment.)
@@ -55,6 +55,10 @@ provides a **Run > Run...** menu option, as well as a green bug
 icon overlayed with a small triangle on the project page.
 (The menu item shows a pic of the corresponding icon.)
 
+You can also compile to release mode with `flutter build`.
+For more information, see the docs on releasing
+[iOS](deployment/ios-release) and [Android](deployment/android-release) apps.
+
 ## Profile
 
 In _profile mode_, some debugging ability is maintained&mdash;enough
@@ -64,9 +68,8 @@ of real performance. Profile mode is similar to release mode, with
 the following differences:
 
 * Some service extensions, such as the one that enables the performance
-  overlay, is enabled.
-* Tracing is enabled, and Observatory can, most likely, connect to
-  the process.
+  overlay, are enabled.
+* Tracing is enabled, and Observatory can connect to the process.
 
 The command `flutter run --profile` compiles to profile mode.
 Your IDE also supports these modes. Android Studio, for example,
