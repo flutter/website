@@ -87,39 +87,39 @@ if you already have the required packages installed.
 
 You can deploy your local edits to a personal staging site as follows (steps 1 and 2 need to be done only once):
 
-1. In the [Firebase Console](https://console.firebase.google.com),
-create your own Firebase project (e.g. 'mit-flutter-staging')
+ 1. In the [Firebase Console](https://console.firebase.google.com),
+    create your own Firebase project (e.g. 'mit-flutter-staging')
 
-1. Tell Firebase about that project with the firebase
-[`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
+ 1. Tell Firebase about that project with the firebase
+    [`use` command](https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html):
 
-	```console
-	$ npx firebase use --add
-	? Which project do you want to add? <select the project you created>
-	? What alias do you want to use for this project? (e.g. staging) staging
-	```
+      ```console
+      $ npx firebase use --add
+      ? Which project do you want to add? <select the project you created>
+      ? What alias do you want to use for this project? (e.g. staging) staging
+      ```
 
-1. Tell Firebase that you want to deploy to staging:
+ 1. Tell Firebase that you want to deploy to staging:
 
-	```console
-	$ npx firebase use staging
-	Now using alias staging (<your project name>)
-	```
+    ```console
+    $ npx firebase use staging
+    Now using alias staging (<your project name>)
+    ```
 
-1. Tell Firebase to deploy:
+ 1. Tell Firebase to deploy:
 
-  ```console
-  $ ./tool/shared/deploy.sh staging
+    ```console
+    $ ./tool/shared/deploy.sh staging
 
-	=== Deploying to '<your project name>'...
+    === Deploying to '<your project name>'...
 
-	i  deploying hosting
-	i  hosting: preparing _site directory for upload...
-	✔  hosting: 213 files uploaded successfully
-	i  starting release process (may take several minutes)...
+    i  deploying hosting
+    i  hosting: preparing _site directory for upload...
+    ✔  hosting: 213 files uploaded successfully
+    i  starting release process (may take several minutes)...
 
-	✔  Deploy complete!
-	```
+    ✔  Deploy complete!
+    ```
 
 ## Deploying to the official site
 
@@ -133,36 +133,6 @@ command:
 ## Writing for flutter.io
 
 (Eventually, this section should be expanded to its own page.)
-
-### Adding next/previous page links
-
-If you have a document that spans multiple pages, you can add next and previous
-page links to make navigating these pages easier. It involves adding some information
-to the front matter of each page, and including some HTML.
-
-```
----
-layout: tutorial
-title: Constraints
-
-permalink: /tutorials/layout/constraints.html
-prev-page: /tutorials/layout/properties.html
-prev-page-title: "Container Properties"
-next-page: /tutorials/layout/create.html
-next-page-title: "Create a Layout"
----
-
-{% include prev-next-nav.html %}
-
-{:toc}
-
-<!-- PAGE CONTENT -->
-
-{% include prev-next-nav.html %}
-```
-
-Omit the "prev-page" info for the first page, and the "next-page" info for the
-last page.
 
 ## Syntax highlighting
 
