@@ -113,8 +113,8 @@ which is allowed by the [version constraint](https://www.dartlang.org/tools/pub/
 you have specified in `pubspec.yaml`.
 
 **Note:** We recommend that you ocassionally review your dependencies to see if
-never major versions are available, and that you consider upgrading your
-version constraints to allow those (e.g., update a `^1.2` constraint to `^2.0`).
+newer major versions are available, and that you consider upgrading your
+version constraints to allow those (for example, update a `^1.2` constraint to `^2.0`).
 
 ### Dependencies on unpublished packages
 
