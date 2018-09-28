@@ -11,9 +11,9 @@ TODO(chalin): rename link to top_level_nav_entry
     {%- for link in include.list -%}
 
     {%- assign isActive = false -%}
-    {%- if link.urlExactMatch and pageUrl == link.permalink -%}
+    {%- if link.match-page-url-exactly and pageUrl == link.permalink -%}
       {%- assign isActive = true -%}
-    {%- elsif link.urlExactMatch == nil and pageUrl contains link.permalink -%}
+    {%- elsif link.match-page-url-exactly == nil and pageUrl contains link.permalink -%}
       {%- assign isActive = true -%}
     {%- endif -%}
 
@@ -46,9 +46,9 @@ TODO(chalin): rename link to top_level_nav_entry
             {%- capture url %}{{ page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' }}{% endcapture -%}
             {%- capture p %}{{ pageUrl | regex_replace: startsWithChildLink }}{% endcapture -%}
             {%- assign isActive = false -%}
-            {%- if child.urlExactMatch and child.permalink == url -%}
+            {%- if child.match-page-url-exactly and child.permalink == url -%}
               {%- assign isActive = true -%}
-            {%- elsif child.urlExactMatch == nil and url != p -%}
+            {%- elsif child.match-page-url-exactly == nil and url != p -%}
               {%- assign isActive = true -%}
             {%- endif -%}
             <li class="nav-item">
@@ -105,9 +105,9 @@ TODO(chalin): rename link to top_level_nav_entry
               <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id2}}">
                 {%- for c in child.children -%}
                   {%- assign isActive = false -%}
-                  {%- if c.urlExactMatch and pageUrl == c.permalink -%}
+                  {%- if c.match-page-url-exactly and pageUrl == c.permalink -%}
                     {%- assign isActive = true -%}
-                  {%- elsif c.urlExactMatch == nil and pageUrl contains c.permalink -%}
+                  {%- elsif c.match-page-url-exactly == nil and pageUrl contains c.permalink -%}
                     {%- assign isActive = true -%}
                   {%- endif -%}
                   <li class="nav-item">

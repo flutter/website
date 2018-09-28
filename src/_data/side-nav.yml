@@ -75,7 +75,7 @@
     - title: Platform-specific theming
     - title: Widget catalog
       permalink: /development/ui/widgets
-      urlExactMatch: true
+      match-page-url-exactly: true
   - title: Data and backend
     children:
     - title: Architect app to manage data flow
@@ -128,7 +128,7 @@
       permalink: /testing/debugging/oem
   - title: Testing
     permalink: /testing
-    urlExactMatch: true
+    match-page-url-exactly: true
   - title: Performance profiling
     permalink: /testing/ui-performance
   # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
@@ -168,7 +168,7 @@
   children:
   - title: Widget catalog
     permalink: /development/ui/widgets
-    urlExactMatch: true
+    match-page-url-exactly: true
   - title: API reference
     permalink: https://docs.flutter.io
   - title: Package site
