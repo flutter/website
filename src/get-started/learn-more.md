@@ -1,6 +1,7 @@
 ---
 title: "Get Started: Learn More"
 description: More resources to help you learn Flutter.
+toc: false
 ---
 
 Learn more about the Flutter framework:
@@ -20,7 +21,7 @@ Other resources:
 * [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
 * [Bootstrap into Dart: learn more about the language](/resources/bootstrap-into-dart)
 
-Please reach out to us at our [mailing list][]. We'd love to hear from you!
+Reach out to us at our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 
