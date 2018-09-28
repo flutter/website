@@ -2,22 +2,21 @@
 title: Staggered Animations
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* A staggered animation consists of sequential or overlapping
-  animations.
-* To create a staggered animation, use multiple Animation objects.
-* One AnimationController controls all of the Animations.
-* Each Animation object specifies the animation during an Interval.
-* For each property being animated, create a Tween.
-</div>
+  * A staggered animation consists of sequential or overlapping
+    animations.
+  * To create a staggered animation, use multiple Animation objects.
+  * One AnimationController controls all of the Animations.
+  * Each Animation object specifies the animation during an Interval.
+  * For each property being animated, create a Tween.
+{{site.alert.end}}
 
 <aside class="alert alert-info" markdown="1">
-**Terminology:**
-If the concept of tweens or tweening is new to you, see the
-[Animations in Flutter tutorial.](/development/ui/animations/tutorial)
+  **Terminology:**
+  If the concept of tweens or tweening is new to you, see the
+  [Animations in Flutter tutorial.](/development/ui/animations/tutorial)
 </aside>
 
 Staggered animations are a straightforward concept: visual changes
@@ -28,34 +27,32 @@ have gaps, where no changes occur.
 
 This guide shows how to build a staggered animation in Flutter.
 
-<aside class="alert alert-info" markdown="1">
-**Examples**<br>
+{{site.alert.secondary}}
+  <h4 class="no_toc">Examples</h4>
 
-This guide explains the basic_staggered_animation example. You can also
-refer to a more complex example, staggered_pic_selection.
+  This guide explains the basic_staggered_animation example. You can also
+  refer to a more complex example, staggered_pic_selection.
 
-[basic_staggered_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_staggered_animation)
-: Shows a series of sequential and overlapping animations of a single widget.
-  Tapping the screen begins an animation that changes opacity, size,
-  shape, color, and padding.
+  [basic_staggered_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_staggered_animation)
+  : Shows a series of sequential and overlapping animations of a single widget.
+    Tapping the screen begins an animation that changes opacity, size,
+    shape, color, and padding.
 
-[staggered_pic_selection](https://github.com/flutter/website/tree/master/src/_includes/code/animation/staggered_pic_selection)
-: Shows deleting an image from a list of images displayed in one of three sizes.
-  This example uses two [animation
-  controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
-  one for image selection/deselection, and one for image deletion.
-  The selection/deselection animation is staggered. (To see this effect,
-  you might need to increase the `timeDilation` value.)
-  Select one of the largest images&mdash;it shrinks as it displays a checkmark
-  inside a blue circle. Next, select one of the smallest images&mdash;the
-  large image expands as the checkmark disappears. Before the large image
-  has finished expanding, the small image shrinks to display its checkmark.
-  This staggered behavior is similar to what you might see in Google Photos.
+  [staggered_pic_selection](https://github.com/flutter/website/tree/master/src/_includes/code/animation/staggered_pic_selection)
+  : Shows deleting an image from a list of images displayed in one of three sizes.
+    This example uses two [animation
+    controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
+    one for image selection/deselection, and one for image deletion.
+    The selection/deselection animation is staggered. (To see this effect,
+    you might need to increase the `timeDilation` value.)
+    Select one of the largest images&mdash;it shrinks as it displays a checkmark
+    inside a blue circle. Next, select one of the smallest images&mdash;the
+    large image expands as the checkmark disappears. Before the large image
+    has finished expanding, the small image shrinks to display its checkmark.
+    This staggered behavior is similar to what you might see in Google Photos.
+{{site.alert.end}}
 
-</aside>
 
-* TOC Placeholder
-{:toc}
 
 The following video demonstrates the animation performed by
 basic_staggered_animation:

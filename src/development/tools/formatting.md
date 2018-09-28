@@ -3,22 +3,17 @@ title: Formatting Flutter code
 description: Flutter's code formatter formats your code along recommended style guidelines.
 ---
 
-* TOC Placeholder
-{:toc}
-
-## Automatically formatting code
 
 While your code may follow any preferred style&mdash;in our
 experience&mdash;teams of developers may find it more productive to:
 
 * Have a single, shared style, and
-
 * Enforce this style through automatic formatting.
 
 The alternative is often tiring formatting debates during code reviews, where
 time may be better spent on code behavior rather than code style.
 
-### Automatically formatting code in Android Studio and IntelliJ
+## Automatically formatting code in Android Studio and IntelliJ
 
 Install the `Dart` plugin (see [Editor setup](/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
@@ -28,7 +23,7 @@ in the code window and select `Reformat Code with dartfmt`.
 You can add a keyboard shortcut to this in Keymap section of IntelliJ
 Preferences.
 
-### Automatically formatting code in VS Code
+## Automatically formatting code in VS Code
 
 Install the `Flutter` extension (see [Editor setup](/get-started/editor))
 to get automatic formatting of code in VS Code.
@@ -40,7 +35,7 @@ shortcut to this VS Code Preferences.
 To automatically format code whenever you save a file, set the
 `editor.formatOnSave` setting to `true`.
 
-### Automatically formatting code with the `flutter` command
+## Automatically formatting code with the `flutter` command
 
 You can also automatically format code in the command line interface (CLI) using
 the `flutter format` command:
@@ -50,7 +45,7 @@ Usage: flutter format <one or more paths>
 -h, --help    Print this usage information.
 ```
 
-### Using 'trailing commas'
+## Using 'trailing commas'
 
 Flutter code often involves building fairly deep tree-shaped data structures,
 for example in a `build` method. To get good automatic formatting, we recommend

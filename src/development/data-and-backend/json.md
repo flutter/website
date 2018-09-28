@@ -11,19 +11,16 @@ This guide looks into ways of using JSON with Flutter. It covers which
 JSON solution to use in different scenarios, and why.
 
 <aside class="alert alert-info" markdown="1">
-**Terminology:** _Encoding_ and _serialization_ are the same thing&mdash;turning
-a data structure into a string. _Decoding_ and _deserialization_ are the
-opposite process&mdash;turning a string into a data structure.
-However, _serialization_ also commonly refers to the entire process of
-translating data structures to and from a more easily readable format.
+  **Terminology:** _Encoding_ and _serialization_ are the same thing&mdash;turning
+  a data structure into a string. _Decoding_ and _deserialization_ are the
+  opposite process&mdash;turning a string into a data structure.
+  However, _serialization_ also commonly refers to the entire process of
+  translating data structures to and from a more easily readable format.
 
-To avoid confusion, this doc uses "serialization" when referring to the
-overall process, and "encoding" and "decoding" when specifically
-referring to those processes.
+  To avoid confusion, this doc uses "serialization" when referring to the
+  overall process, and "encoding" and "decoding" when specifically
+  referring to those processes.
 </aside>
-
-* TOC Placeholder
-{:toc}
 
 ## Which JSON serialization method is right for me?
 

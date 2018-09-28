@@ -3,9 +3,6 @@ title: Technical videos
 description: Available videos on various aspects of developing in Flutter.
 ---
 
-* TOC Placeholder
-{:toc}
-
 These Flutter videos, produced both internally at Google and by the
 Flutter community, may help if you are a visual learner.
 
@@ -14,12 +11,12 @@ we like, but there are many others.
 
 ---
 
-# Series
+## Series
 
 The following list of series features the first episode in the series,
 with a link to the complete playlist.
 
-## The Boring Flutter Show
+### The Boring Flutter Show
 
 This series features Flutter programmers live coding in real time.
 Coding mistakes, solutions, and snazzy intro music included.
@@ -28,14 +25,14 @@ Coding mistakes, solutions, and snazzy intro music included.
 Episode One: The Boring Flutter Show<br>
 [The Boring Flutter Show playlist](https://www.youtube.com/watch?v=yr8F2S3Amas&list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK)
 
-## Flutter Widget of the Week
+### Flutter Widget of the Week
 
 Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lkF0TQJO0bA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=lkF0TQJO0bA&list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
 
-## Flutter Challenge series by Fluttery
+### Flutter Challenge series by Fluttery
 
 Each episode solves a different design challenge.
 
@@ -43,7 +40,7 @@ Each episode solves a different design challenge.
 [Flutter Challenge playlist](https://www.youtube.com/watch?v=GFRfSM4yA9U&list=PLFqMllUBmHbjgLjAUA0_8Ca140rn-7WjZ)
 
 
-## Flutter Weekly Widgets by MTechViral
+### Flutter Weekly Widgets by MTechViral
 
 Weekly episodes, released on Sunday, feature Flutter widgets.
 
@@ -52,14 +49,14 @@ Weekly episodes, released on Sunday, feature Flutter widgets.
 
 ---
 
-# Conference talks
+## Conference talks
 
 Here are a few recent Flutter talks given at various conferences, listed by newist first.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p4yLzYwy_4g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Conference Talks playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIKVFj6DCJHTwvSzUBa2R8Ec)
 
-# Flutter DevBytes
+## Flutter DevBytes
 
 These 10-minute (more or less) tutorials teach core Flutter concepts.
 
@@ -68,7 +65,7 @@ These 10-minute (more or less) tutorials teach core Flutter concepts.
 
 ---
 
-# Online course
+## Online course
 
 Learn how to build Flutter apps from this free Udacity course:
 

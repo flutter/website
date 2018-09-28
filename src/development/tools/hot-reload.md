@@ -3,11 +3,6 @@ title: Using Hot Reload
 description: How to speed up development using Flutter's hot reload feature.
 ---
 
-* TOC
-{:toc}
-
-## Using hot reload
-
 Flutter's hot reload feature helps you quickly and easily experiment, build
 UIs, add features, and fix bugs. Hot reload works by injecting updated source
 code files into the running Dart Virtual Machine (VM). After the VM updates

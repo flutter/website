@@ -1,6 +1,6 @@
 ---
 title: Developing Flutter apps in an IDE
-description: How to develop a Flutter app in VSCode.
+description: How to develop a Flutter app in Android Studio or other IntelliJ products.
 ---
 
 <div id="tab-set-install">
@@ -27,8 +27,8 @@ prompted in IntelliJ when an update is available.
 
 To check for updates manually:
 
-1. Open preferences (**Android Studio>Check for Updates...** on macOS,
-**Help>Check for Updates...** on Linux).
+1. Open preferences (**Android Studio > Check for Updates** on macOS,
+**Help > Check for Updates** on Linux).
 1. If `dart` or `flutter` are listed, update them.
 
 ## Creating projects
@@ -38,25 +38,23 @@ To check for updates manually:
 To create a new Flutter project from the Flutter starter app template:
 
 1. In the IDE, click **Create New Project** from the 'Welcome' window or
-**File>New>Project...** from the main IDE window.
+**File > New > Project** from the main IDE window.
 1. Select **Flutter** in the menu, and click **Next**.
 1. Enter your desired **Project name** and **Project location**.
 1. If you might publish this app, [set the company domain](#note).
 1. Click **Finish**.
 
-<div>
-<a name="note"></a>
 <aside class="alert alert-info" markdown="1">
-**Setting the company domain**<br>
-When creating a new app, some Flutter IDE plugins ask for an
-organization name in reverse domain order,
-something like `com.example`. Along with the name of the app,
-this is used as the package name for Android, and the Bundle ID for iOS
-when the app is released. If you think you might ever release this app,
-it is better to specify these now. They cannot be changed once the app
-is released. Your organization name should be unique.
+  <h4 id="note" class="no_toc">Setting the company domain</h4>
+
+  When creating a new app, some Flutter IDE plugins ask for an
+  organization name in reverse domain order,
+  something like `com.example`. Along with the name of the app,
+  this is used as the package name for Android, and the Bundle ID for iOS
+  when the app is released. If you think you might ever release this app,
+  it is better to specify these now. They cannot be changed once the app
+  is released. Your organization name should be unique.
 </aside>
-</div>
 
 ### Creating a new project from existing source code
 
@@ -64,8 +62,8 @@ To create a new Flutter project containing existing Flutter source code
 files:
 
 1. In the IDE, click **Create New Project** from the 'Welcome' window or
-**File>New>Project...** from the main IDE window.
-  - **Note**: Do *not* use the **New>Project from existing sources...** option for Flutter projects.
+**File > New > Project** from the main IDE window.
+  - **Note**: Do *not* use the **New > Project from existing sources** option for Flutter projects.
 1. Select **Flutter** in the menu, and click **Next**.
 1. Under **Project location** enter, or browse to, the directory holding your
 existing Flutter source code files.
@@ -77,9 +75,9 @@ The Dart plugin performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Navigate>Declaration**), and finding type
-  usages (**Edit>Find>Find Usages**).
-* Viewing all current source code problems (**View>Tool Windows>Dart Analysis**).
+* Navigating to type declarations (**Navigate > Declaration**), and finding type
+  usages (**Edit > Find > Find Usages**).
+* Viewing all current source code problems (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
   ![Dart Analysis pane](images/dart-analysis.png)
 
@@ -104,14 +102,14 @@ simulators.  You need to connect a device, or start a simulator, to proceed.
 
 ### Run app without breakpoints
 
-1. Click the **Play icon** in the toolbar, or invoke **Run>Run**.
+1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
 * The bottom **Run** pane shows logs output:<br>
 ![Log pane](images/log.png)
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. Click the **Debug icon** in the toolbar, or invoke **Run>Debug**.
+1. Click the **Debug icon** in the toolbar, or invoke **Run > Debug**.
 * The bottom **Debugger** pane shows Stack Frames and Variables.
 * The bottom **Console** pane shows detailed logs output.
 * Debugging is based on a default launch configuration. To customize this,
@@ -269,7 +267,7 @@ Module Settings**.
 1. In the **Sources** tab, locate the **Language level** field, and select level '8'
 or later.
 1. In the **Dependencies** tab, locate the **Module SDK** field, and select an
-Android SDK. If no SDK is listed, click **New...** and specify the location of
+Android SDK. If no SDK is listed, click **New** and specify the location of
 the Android SDK. Make sure to select an Android SDK matching the one used by
 Flutter (as reported by `flutter doctor`).
 1. Click **OK**.

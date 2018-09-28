@@ -3,9 +3,6 @@ title: Developing Packages & Plugins
 description: How to write packages and plugins for Flutter.
 ---
 
-* TOC
-{:toc}
-
 ## Package introduction
 
 Packages enable the creation of modular code that can be shared easily. A

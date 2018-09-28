@@ -104,14 +104,12 @@
     - title: Package site
       permalink: http://pub.dartlang.org/flutter
   - title: Tools
+    permalink: /development/tools
     children:
     - title: Use Flutter in IDEs
       permalink: /development/tools/using-ide
     - title: Using hot reload
       permalink: /development/tools/hot-reload
-    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here? (The link is currently invalid.)
-    # - title: Using an IDE
-    #   permalink: /development/tools/using-ide/vscode
     - title: Format Flutter code
       permalink: /development/tools/formatting
     - title: Widget inspector

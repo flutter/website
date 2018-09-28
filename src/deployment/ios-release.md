@@ -8,9 +8,6 @@ the [App Store][appstore] and [TestFlight][testflight].
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code).
 
-* TOC Placeholder
-{:toc}
-
 ## Preliminaries
 
 Before beginning the process of releasing your app, ensure that it meets

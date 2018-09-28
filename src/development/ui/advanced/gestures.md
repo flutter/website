@@ -2,11 +2,6 @@
 title: Taps, drags, and other gestures in Flutter
 ---
 
-* TOC Placeholder
-{:toc}
-
-# Introduction
-
 This document explains how to listen for, and respond to,
 _gestures_ in Flutter. Examples of gestures include
 taps, drags, and scaling.
@@ -16,7 +11,7 @@ pointer events, which describe the location and movement of pointers (e.g.,
 touches, mice, and styli) across the screen. The second layer has _gestures_,
 which describe semantic actions that consist of one or more pointer movements.
 
-# Pointers
+## Pointers
 
 Pointers represent raw data about the user's interaction with the device's
 screen.  There are four types of pointer events:
@@ -43,7 +38,7 @@ To listen to pointer events directly from the widgets layer, use a
 widget. However, generally, consider using gestures (as discussed
 below) instead.
 
-# Gestures
+## Gestures
 
 Gestures represent semantic actions (e.g., tap, drag, and scale) that are
 recognized from multiple individual pointer events, potentially even multiple
@@ -96,7 +91,7 @@ If you are not using those widgets, but you want the "ink splash" effect on a
 tap, you can use
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
 
-## Gesture disambiguation
+### Gesture disambiguation
 
 At a given location on screen, there might be multiple gesture detectors. All
 of these gesture detectors listen to the stream of pointer events as they flow

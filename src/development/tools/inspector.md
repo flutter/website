@@ -6,11 +6,6 @@ description: A brief overview of Flutter's widget inspector.
 The Flutter Widget Inspector is powerful tool for visualizing and exploring
 Flutter widget trees.
 
-* TOC Placeholder
-{:toc}
-
-## Flutter Widget Inspector
-
 The Flutter framework uses widgets as [the core building
 block](/development/ui/widgets-intro) for anything from controls (text,
 buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
@@ -46,7 +41,7 @@ For a more complete demonstration of the Inspector, please see the
 The Inspector is currently available in [the Flutter
 plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
 
-## Feedback issues
+## Feedback
 
 If you have suggestions, or encounter issues, please
 [file an issue in our tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!

@@ -2,13 +2,11 @@
 title: Dealing with box constraints in Flutter
 ---
 
-You may be directed to this page if the framework detects a problem
-involving box constraints.
+{{site.alert.note}}
+  You may be directed to this page if the framework detects a problem involving
+  box constraints.
+{{site.alert.end}}
 
-* Placeholder for TOC
-{:toc}
-
-## Introduction
 
 In Flutter, widgets are rendered by their underlying [`RenderBox`](https://docs.flutter.io/flutter/rendering/RenderBox-class.html) objects. Render boxes are given
 constraints by their parent, and size themselves within those

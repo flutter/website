@@ -18,12 +18,10 @@ to use Flutter.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-* TOC Placeholder
-{:toc}
 
-# Views
+## Views
 
-## What is the equivalent of a `View` in Flutter?
+### What is the equivalent of a `View` in Flutter?
 
 In Android, the `View` is the foundation of everything that shows up on the
 screen. Buttons, toolbars, and inputs, everything is a View.
@@ -55,7 +53,7 @@ For example, on iOS, you can use the [Cupertino widgets](/development/ui/widgets
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
-## How do I update `Widget`s?
+### How do I update `Widget`s?
 
 In Android, you update your views by directly mutating them. However,
 in Flutter, `Widget`s are immutable and are not updated directly, instead
@@ -168,7 +166,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I lay out my widgets? Where is my XML layout file?
+### How do I lay out my widgets? Where is my XML layout file?
 
 In Android, you write layouts in XML, but in Flutter you write your layouts
 with a widget tree.
@@ -197,7 +195,7 @@ The following example shows how to display a simple widget with padding:
 You can view the layouts that Flutter has to offer in the [widget
 catalog](/development/ui/widgets/layout).
 
-## How do I add or remove a component from my layout?
+### How do I add or remove a component from my layout?
 
 In Android, you call `addChild()` or `removeChild()` on a parent to dynamically
 add or remove child views. In Flutter, because widgets are immutable there is no direct
@@ -273,7 +271,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I animate a widget?
+### How do I animate a widget?
 
 In Android, you either create animations using XML, or call the `animate()`
 method on a view. In Flutter, animate widgets using the animation
@@ -367,7 +365,7 @@ For more information, see
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
-## How do I use a `Canvas` to draw/paint?
+### How do I use a `Canvas` to draw/paint?
 
 In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
 to the screen. Flutter has a similar `Canvas` API as well, since it is based
@@ -431,7 +429,7 @@ class SignaturePainter extends CustomPainter {
 }
 {% endprettify %}
 
-## How do I build custom widgets?
+### How do I build custom widgets?
 
 In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
@@ -473,9 +471,9 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-# Intents
+## Intents
 
-## What is the equivalent of an `Intent` in Flutter?
+### What is the equivalent of an `Intent` in Flutter?
 
 In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand, does
@@ -531,7 +529,7 @@ integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 To learn how to build a native platform integration, see
 [Developing Packages and Plugins](/development/packages-and-plugins/developing-packages).
 
-## How do I handle incoming intents from external applications in Flutter?
+### How do I handle incoming intents from external applications in Flutter?
 
 Flutter can handle incoming intents from Android by directly talking to the
 Android layer and requesting the data that was shared.
@@ -678,7 +676,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## What is the equivalent of `startActivityForResult()`?
+### What is the equivalent of `startActivityForResult()`?
 
 The `Navigator` class handles routing in Flutter and is used to get
 a result back from a route that you have pushed on the stack. This is done
@@ -700,9 +698,9 @@ you can `pop` the stack with the result:
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
 
-# Async UI
+## Async UI
 
-## What is the equivalent of `runOnUiThread()` in Flutter?
+### What is the equivalent of `runOnUiThread()` in Flutter?
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -812,7 +810,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 Refer to the next section for more information on doing work in the
 background, and how Flutter differs from Android.
 
-## How do you move work to a background thread?
+### How do you move work to a background thread?
 
 In Android, when you want to access a network resource you would typically
 move to a background thread and do the work, as to not block the main thread,
@@ -1032,7 +1030,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## What is the equivalent of OkHttp on Flutter?
+### What is the equivalent of OkHttp on Flutter?
 
 Making a network call in Flutter is easy when you use the popular
 [`http` package](https://pub.dartlang.org/packages/http).
@@ -1069,7 +1067,7 @@ import 'package:http/http.dart' as http;
 }
 {% endprettify %}
 
-## How do I show the progress for a long-running task?
+### How do I show the progress for a long-running task?
 
 In Android you would typically show a `ProgressBar` view in your UI while
 executing a long running task on a background thread.
@@ -1169,9 +1167,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-# Project structure & resources
+## Project structure & resources
 
-## Where do I store my resolution-dependent image files?
+### Where do I store my resolution-dependent image files?
 
 While Android treats resources and assets as distinct items, Flutter apps have
 only assets. All resources that would live in the `res/drawable-*`
@@ -1250,7 +1248,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-## Where do I store strings? How do I handle localization?
+### Where do I store strings? How do I handle localization?
 
 Flutter currently doesn't have a dedicated resources-like system for strings.
 At the moment, the best practice is to hold your copy text in a class as
@@ -1277,7 +1275,7 @@ Flutter developers are encouraged to use the [intl
 package](https://pub.dartlang.org/packages/intl) for internationalization and
 localization.
 
-## What is the equivalent of a Gradle file? How do I add dependencies?
+### What is the equivalent of a Gradle file? How do I add dependencies?
 
 In Android, you add dependencies by adding to your Gradle build script. Flutter
 uses Dart's own build system, and the Pub package manager.
@@ -1290,7 +1288,7 @@ per-platform integration. In general, use `pubspec.yaml` to declare
 external dependencies to use in Flutter. A good place to find Flutter packages is
 [Pub](https://pub.dartlang.org/flutter/packages/).
 
-# Activities and fragments
+## Activities and fragments
 
 <aside class="alert alert-info" markdown="1">
 **Note:** You almost never want Android to restart the activity for a Flutter
@@ -1299,7 +1297,7 @@ documentation. So supporting split screen, for example, requires you to add
 `screenLayout` and probably `density` too.
 </aside>
 
-## What are the equivalent of activities and fragments in Flutter?
+### What are the equivalent of activities and fragments in Flutter?
 
 In Android, an `Activity` represents a single focused thing the user can do. A
 `Fragment` represents a behavior or a portion of user interface. Fragments
@@ -1318,7 +1316,7 @@ a widget in Flutter. You use a `Navigator` to move between different `Route`s
 that represent different screens or pages, or maybe just different states or
 renderings of the same data.
 
-## How do I listen to Android activity lifecycle events?
+### How do I listen to Android activity lifecycle events?
 
 In Android, you can override methods from the `Activity` to capture lifecycle
 methods for the activity itself, or register `ActivityLifecycleCallbacks` on
@@ -1399,9 +1397,9 @@ void main() {
 }
 {% endprettify %}
 
-# Layouts
+## Layouts
 
-## What is the equivalent of a LinearLayout?
+### What is the equivalent of a LinearLayout?
 
 In Android, a LinearLayout is used to lay your widgets out
 linearly&mdash;either horizontally or vertically.
@@ -1449,7 +1447,7 @@ To learn more about building linear layouts, see the community contributed mediu
 article [Flutter For Android Developers : How to design LinearLayout in
 Flutter?](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
 
-## What is the equivalent of a RelativeLayout?
+### What is the equivalent of a RelativeLayout?
 
 A RelativeLayout lays your widgets out relative to each other. In
 Flutter, there are a few ways to achieve the same result.
@@ -1462,7 +1460,7 @@ For a good example of building a RelativeLayout in Flutter, see Collin's
 answer on
 [StackOverflow](https://stackoverflow.com/questions/44396075/equivalent-of-relativelayout-in-flutter).
 
-## What is the equivalent of a ScrollView?
+### What is the equivalent of a ScrollView?
 
 In Android, use a ScrollView to lay out your widgets&mdash;if the user's
 device has a smaller screen than your content, it scrolls.
@@ -1486,7 +1484,7 @@ both a ScrollView and an Android ListView.
   }
 {% endprettify %}
 
-## How do I handle landscape transitions in Flutter?
+### How do I handle landscape transitions in Flutter?
 
 FlutterView handles the config change if AndroidManifest.xml contains:
 
@@ -1494,9 +1492,9 @@ FlutterView handles the config change if AndroidManifest.xml contains:
 android:configChanges="orientation|screenSize"
 {% endprettify %}
 
-# Gesture detection and touch event handling
+## Gesture detection and touch event handling
 
-## How do I add an onClick listener to a widget in Flutter?
+### How do I add an onClick listener to a widget in Flutter?
 
 In Android, you can attach onClick to views such as button by calling
 the method 'setOnClickListener'.
@@ -1541,7 +1539,7 @@ In Flutter there are two ways of adding touch listeners:
     }
     ```
 
-## How do I handle other gestures on widgets?
+### How do I handle other gestures on widgets?
 
 Using the GestureDetector, you can listen to a wide range of Gestures such as:
 
@@ -1623,9 +1621,9 @@ class SampleApp extends StatelessWidget {
 }
 {% endprettify %}
 
-# Listviews & adapters
+## Listviews & adapters
 
-## What is the alternative to a ListView in Flutter?
+### What is the alternative to a ListView in Flutter?
 
 The equivalent to a ListView in Flutter is … a ListView!
 
@@ -1688,7 +1686,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I know which list item is clicked on?
+### How do I know which list item is clicked on?
 
 In Android, the ListView has a method to find out which item was clicked
 'onItemClickListener'.
@@ -1751,7 +1749,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I update ListView's dynamically?
+### How do I update ListView's dynamically?
 
 On Android, you update the adapter and call `notifyDataSetChanged`.
 
@@ -1920,9 +1918,9 @@ that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
-# Working with text
+## Working with text
 
-## How do I set custom fonts on my Text widgets?
+### How do I set custom fonts on my Text widgets?
 
 In Android SDK (as of Android O), you create a Font resource file and
 pass it into the FontFamily param for your TextView.
@@ -1959,7 +1957,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-## How do I style my Text widgets?
+### How do I style my Text widgets?
 
 Along with fonts, you can customize other styling elements on a `Text` widget.
 The style parameter of a `Text` widget takes a `TextStyle` object, where you can
@@ -1980,13 +1978,13 @@ customize many parameters, such as:
 * textBaseline
 * wordSpacing
 
-# Form input
+## Form input
 
 For more information on using Forms, see
 [Retrieve the value of a text field](/cookbook/forms/retrieve-input),
 from the [Flutter Cookbook](/cookbook).
 
-## What is the equivalent of a "hint" on an Input?
+### What is the equivalent of a "hint" on an Input?
 
 In Flutter, you can easily show a "hint" or a placeholder text for your input by
 adding an InputDecoration object to the decoration constructor parameter for
@@ -2001,7 +1999,7 @@ body: Center(
 )
 {% endprettify %}
 
-## How do I show validation errors?
+### How do I show validation errors?
 
 Just as you would with a "hint", pass an InputDecoration object
 to the decoration constructor for the Text widget.
@@ -2081,23 +2079,23 @@ class _SampleAppPageState extends State<SampleAppPage> {
 {% endprettify %}
 
 
-# Flutter plugins
+## Flutter plugins
 
-## How do I access the GPS sensor?
+### How do I access the GPS sensor?
 
 Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
 
-## How do I access the camera?
+### How do I access the camera?
 
 The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
 for accessing the camera.
 
-## How do I log in with Facebook?
+### How do I log in with Facebook?
 
 To Log in with Facebook, use the
 [`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
 
-## How do I use Firebase features?
+### How do I use Firebase features?
 
 Most Firebase functions are covered by
 [first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
@@ -2115,7 +2113,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
 You can also find some third-party Firebase plugins on Pub that cover areas
 not directly covered by the first-party plugins.
 
-## How do I build my own custom native integrations?
+### How do I build my own custom native integrations?
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
@@ -2126,7 +2124,7 @@ Android: you fire off a message and let the receiver process and emit a result
 back to you. In this case, the receiver is code running on the native side
 on Android or iOS.
 
-## How do I use the NDK in my Flutter application?
+### How do I use the NDK in my Flutter application?
 
 If you use the NDK in your current Android application and want your Flutter
 application to take advantage of your native libraries then it's possible by
@@ -2138,9 +2136,9 @@ send a message back to Flutter and render the result.
 
 Calling native code directly from Flutter is currently not supported.
 
-# Themes
+## Themes
 
-## How do I theme my app?
+### How do I theme my app?
 
 Out of the box, Flutter comes with a beautiful implementation of Material
 Design, which takes care of a lot of styling and theming needs that you would
@@ -2179,9 +2177,9 @@ class SampleApp extends StatelessWidget {
 {% endprettify %}
 
 
-# Databases and local storage
+## Databases and local storage
 
-## How do I access Shared Preferences?
+### How do I access Shared Preferences?
 
 In Android, you can store a small collection of key-value pairs using
 the SharedPreferences API.
@@ -2220,7 +2218,7 @@ _incrementCounter() async {
 
 {% endprettify %}
 
-## How do I access SQLite in Flutter?
+### How do I access SQLite in Flutter?
 
 In Android, you use SQLite to store structured data that you can query
 using SQL.
@@ -2228,9 +2226,9 @@ using SQL.
 In Flutter, access this functionality using the
 [SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
 
-# Notifications
+## Notifications
 
-## How do I set up push notifications?
+### How do I set up push notifications?
 
 In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.

@@ -6,11 +6,6 @@ Flutter is committed to supporting developers who want to make their apps more
 accessible: usable by as many people as possible, including those with
 disabilities such as blindness or motor impairment.
 
-* Placeholder for TOC
-{:toc}
-
-# Flutter's accessibility support
-
 Flutter supports three components for accessibility support:
 
 * **[Large fonts](#large-fonts)**: Render text widgets with user-specified font

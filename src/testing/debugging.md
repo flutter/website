@@ -5,13 +5,10 @@ title: Debugging Flutter Apps
 There are a wide variety of tools and features to help debug Flutter
 applications.
 
-* TOC Placeholder
-{:toc}
-
-<aside class="alert alert-info" markdown="1">
-**Note:** If your app's UI isn't running as smoothly as you expect,
-check out [Flutter Performance Profiling](ui-performance).
-</aside>
+{{site.alert.note}}
+  If your app's UI isn't running as smoothly as you expect,
+  check out [Flutter Performance Profiling](ui-performance).
+{{site.alert.end}}
 
 ## The Dart Analyzer
 

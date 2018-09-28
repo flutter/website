@@ -2,9 +2,6 @@
 title: Rendering in Flutter
 ---
 
-* TOC Placeholder
-{:toc}
-
 ## Introduction
 
 The Flutter render tree is a low-level layout and painting system based on a

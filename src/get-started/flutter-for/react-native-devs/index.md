@@ -12,11 +12,6 @@ This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
 
-*****
-* TOC Placeholder
-{:toc}
-*****
-
 ## Introduction to Dart for JavaScript Developers
 
 Like React Native, Flutter uses reactive-style views. However, while RN

@@ -2,9 +2,6 @@
 title: Animations in Flutter
 ---
 
-* TOC Placeholder
-{:toc}
-
 Well-designed animations makes a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
 and improve the user experience. Flutter's animation support
