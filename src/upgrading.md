@@ -48,13 +48,9 @@ $ flutter upgrade
 
 ## Upgrading your packages
 
-If you've modified your `pubspec.yaml` file, or you want to only update
-the packages your app depends upon instead of both the packages and
-Flutter itself, then use the following commands:
-* `flutter packages get` to get all the dependencies listed
-in the `pubspec.yaml` file, or
-* `flutter packages upgrade` to get the latest versions
-of all the dependencies listed in the `pubspec.yaml` file
+If your Flutter app depends on one or more packages, make sure to
+[update those dependencies](/using-packages/#updating-package-dependencies)
+on a regular basis.
 
 We publish breaking change announcements to our
 [mailing list](https://groups.google.com/forum/#!forum/flutter-dev). We
