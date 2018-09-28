@@ -6,9 +6,6 @@ This guide describes how to write custom platform-specific code. Some
 platform-specific functionality is available through existing packages;
 please see [using packages](/development/packages-and-plugins/using-packages).
 
-* TOC
-{:toc}
-
 Flutter uses a flexible system that allows you to call platform-specific APIs
 whether available in Java or Kotlin code on Android, or in ObjectiveC or Swift
 code on iOS.

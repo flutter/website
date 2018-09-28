@@ -4,11 +4,6 @@ description: Learn how to apply Web developer knowledge when building Flutter ap
 css-old: [two_column.css]
 ---
 
-Contents:
-* TOC Placeholder
-{:toc}
-
-<div class="begin-examples"></div>
 This page is for users who are familiar with the HTML and CSS syntax for
 arranging components of an application's UI. It maps HTML/CSS code snippets to
 their Flutter/Dart code equivalents.

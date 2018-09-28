@@ -11,9 +11,6 @@ This guide shows how to integrate [fastlane](https://docs.fastlane.tools/), an
 open-source tool suite, with your existing testing and continuous integration
 (CI) workflows (for example, Travis or Cirrus).
 
-* TOC Placeholder
-{:toc}
-
 ## Local setup
 
 It's recommended that you test the build and deployment process locally before

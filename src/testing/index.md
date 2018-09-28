@@ -2,11 +2,6 @@
 title: Testing Flutter Apps
 ---
 
-* TOC
-{:toc}
-
-## Introduction
-
 The more features your app has, the harder it is to test it manually. A
 good set of automated tests help you make sure your app performs
 correctly before you publish it, while retaining your feature and bug fix
@@ -42,15 +37,13 @@ There are many kinds of automated testing. These are summarized below:
 Here is a table summarizing the tradeoffs concerning the choice between
 different kinds of tests:
 
-{: .flutter-table}
-
 |                      | Unit   | Widget | Integration |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
 | **Maintenance cost** | Low    | Higher | Highest     |
 | **Dependencies**     | Few    | More   | Lots        |
 | **Execution speed**  | Quick  | Slower | Slowest     |
-|                      |        |        |             |
+{:.table.table-striped}
 
 **Tip**: As a rule of thumb a well-tested app has a very high number of unit
 and widget tests, tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),

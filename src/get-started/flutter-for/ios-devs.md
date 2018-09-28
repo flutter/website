@@ -18,12 +18,9 @@ to use Flutter.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-* TOC Placeholder
-{:toc}
+## Views
 
-# Views
-
-## What is the equivalent of a `UIView` in Flutter?
+### What is the equivalent of a `UIView` in Flutter?
 
 On iOS, most of what you create in the UI is done using view objects, which are
 instances of the `UIView` class. These can act as containers for other `UIView`
@@ -57,7 +54,7 @@ On iOS, you can use the [Cupertino widgets](/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
-## How do I update `Widget`s?
+### How do I update `Widget`s?
 
 To update your views on iOS, you directly mutate them. In Flutter, widgets are
 immutable and not updated directly. Instead, you have to manipulate the
@@ -163,7 +160,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I lay out my widgets? Where is my Storyboard?
+### How do I lay out my widgets? Where is my Storyboard?
 
 In iOS, you might use a Storyboard file to organize your views and set
 constraints, or you might set your constraints programmatically in your view
@@ -199,7 +196,7 @@ constraints in iOS.
 You can view the layouts that Flutter has to offer in the [widget
 catalog](/development/ui/widgets/layout).
 
-## How do I add or remove a component from my layout?
+### How do I add or remove a component from my layout?
 
 In iOS, you call `addSubview()` on the parent, or `removeFromSuperview()`
 on a child view to dynamically add or remove child views. In Flutter, because
@@ -272,7 +269,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I animate a Widget?
+### How do I animate a Widget?
 
 In iOS, you create an animation by calling the
 `animate(withDuration:animations:)` method on a view. In Flutter,
@@ -371,7 +368,7 @@ For more information, see
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
-## How do I draw to the screen?
+### How do I draw to the screen?
 
 On iOS, you use `CoreGraphics` to draw lines and shapes to the
 screen. Flutter has a different API based on the `Canvas` class, with two
@@ -428,12 +425,12 @@ class SignatureState extends State<Signature> {
 }
 {% endprettify %}
 
-## Where is the widget's opacity?
+### Where is the widget's opacity?
 
 On iOS, everything has .opacity or .alpha. In Flutter, most of the time you need to
 wrap a widget in an Opacity widget to accomplish this.
 
-## How do I build custom widgets?
+### How do I build custom widgets?
 
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
@@ -471,9 +468,9 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-# Navigation
+## Navigation
 
-## How do I navigate between pages?
+### How do I navigate between pages?
 
 In iOS, to travel between view controllers, you can use a
 `UINavigationController` that manages the stack of view controllers to
@@ -535,7 +532,7 @@ location, `pop()` the stack with the result:
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
 
-## How do I navigate to another app?
+### How do I navigate to another app?
 
 In iOS, to send the user to another application, you use a
 specific URL scheme. For the system level apps, the scheme
@@ -544,7 +541,7 @@ create a native platform integration, or use an
 [existing plugin](https://pub.dartlang.org/flutter/), such as
 [`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
 
-## How do I pop back to the iOS native viewcontroller?
+### How do I pop back to the iOS native viewcontroller?
 
 Calling `SystemNavigator.pop()` from your Dart code invokes the
 following iOS code:
@@ -559,9 +556,9 @@ UIViewController* viewController = [UIApplication sharedApplication].keyWindow.r
 If that doesn't do what you want, you can create your own
 [platform channel](/development/platform-integration/platform-channels) to invoke arbitrary iOS code.
 
-# Threading & asynchronicity
+## Threading & asynchronicity
 
-## How do I write asynchronous code?
+### How do I write asynchronous code?
 
 Dart has a single-threaded execution model, with support for `Isolate`s (a way
 to run Dart code on another thread), an event loop, and asynchronous programming.
@@ -667,7 +664,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 Refer to the next section for more information on doing work in the
 background, and how Flutter differs from iOS.
 
-## How do you move work to a background thread?
+### How do you move work to a background thread?
 
 Since Flutter is single threaded and runs an event loop (like Node.js), you
 don't have to worry about thread management or spawning background threads. If
@@ -874,7 +871,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I make network requests?
+### How do I make network requests?
 
 Making a network call in Flutter is easy when you use the popular
 [`http` package](https://pub.dartlang.org/packages/http). This abstracts
@@ -909,7 +906,7 @@ import 'package:http/http.dart' as http;
 }
 {% endprettify %}
 
-## How do I show the progress of a long-running task?
+### How do I show the progress of a long-running task?
 
 In iOS, you typically use a `UIProgressView` while executing a
 long-running task in the background.
@@ -1009,9 +1006,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-# Project structure, localization, dependencies and assets
+## Project structure, localization, dependencies and assets
 
-## How do I include image assets for Flutter? What about multiple resolutions?
+### How do I include image assets for Flutter? What about multiple resolutions?
 
 While iOS treats images and assets as distinct items, Flutter apps have only
 assets. Resources that are placed in the `Images.xcasset` folder on iOS,
@@ -1092,7 +1089,7 @@ Widget build(BuildContext context) {
 For more details, see
 [Adding Assets and Images in Flutter](/development/ui/assets-and-images).
 
-## Where do I store strings? How do I handle localization?
+### Where do I store strings? How do I handle localization?
 
 Unlike iOS, which has the `Localizable.strings` file, Flutter doesn't
 currently have a dedicated system for handling strings. At the moment, the
@@ -1181,7 +1178,7 @@ Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
 accessible from the native side, and vice versa, native assets and resources
 weren’t available to Flutter, as they lived in separate folders.
 
-## What is the equivalent of CocoaPods? How do I add dependencies?
+### What is the equivalent of CocoaPods? How do I add dependencies?
 
 In iOS, you add dependencies by adding to your `Podfile`. Flutter uses Dart’s
 build system and the Pub package manager to handle dependencies. The tools
@@ -1195,9 +1192,9 @@ dependencies needed for per-platform integration. In general, use
 find great packages for Flutter is
 [Pub](https://pub.dartlang.org/flutter/packages/).
 
-# ViewControllers
+## ViewControllers
 
-## What is the equivalent to `ViewController`s in Flutter?
+### What is the equivalent to `ViewController`s in Flutter?
 
 In iOS, a `ViewController` represents a portion of user interface, most
 commonly used for a screen or section. These are composed together to build
@@ -1208,7 +1205,7 @@ widget!" Use a `Navigator` to move between different `Route`s
 that represent different screens or pages, or maybe different states or
 renderings of the same data.
 
-## How do I listen to iOS lifecycle events?
+### How do I listen to iOS lifecycle events?
 
 In iOS, you can override methods to the `ViewController` to capture lifecycle
 methods for the view itself, or register lifecycle callbacks in the
@@ -1231,9 +1228,9 @@ For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
 /AppLifecycleState-class.html).
 
-# Layouts
+## Layouts
 
-## What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
+### What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
 
 In iOS, you might show a list in either a `UITableView` or a
 `UICollectionView`. In Flutter, you have a similar implementation using a
@@ -1295,7 +1292,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I know which list item is clicked?
+### How do I know which list item is clicked?
 
 In iOS, you implement the delegate method, `tableView:didSelectRowAtIndexPath:`.
 In Flutter, use the touch handling provided by the passed-in widgets.
@@ -1358,7 +1355,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## How do I dynamically update a `ListView`s?
+### How do I dynamically update a `ListView`s?
 
 In iOS, you update the data for the list view, and notify the table or
 collection view using the `reloadData` method.
@@ -1530,7 +1527,7 @@ cell you want rendered at that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
-## What is the equivalent of a `ScrollView` in Flutter?
+### What is the equivalent of a `ScrollView` in Flutter?
 
 In iOS, you wrap your views in a `ScrollView` that allows a user to scroll
 your content if needed.
@@ -1557,9 +1554,9 @@ Widget build(BuildContext context) {
 For more detailed docs on how to lay out widgets in Flutter,
 see the [layout tutorial](/development/ui/widgets/layout).
 
-# Gesture detection and touch event handling
+## Gesture detection and touch event handling
 
-## How do I add a click listener to a widget in Flutter?
+### How do I add a click listener to a widget in Flutter?
 
 In iOS, you attach a `GestureRecognizer` to a view to handle
 click events. In Flutter, there are two ways of adding touch listeners:
@@ -1605,7 +1602,7 @@ click events. In Flutter, there are two ways of adding touch listeners:
     }
     ```
 
-## How do I handle other gestures on widgets?
+### How do I handle other gestures on widgets?
 
 Using `GestureDetector` you can listen to a wide range of gestures such as:
 
@@ -1687,9 +1684,9 @@ class SampleApp extends StatelessWidget {
 }
 {% endprettify %}
 
-# Theming and text
+## Theming and text
 
-## How do I theme an app?
+### How do I theme an app?
 
 Out of the box, Flutter comes with a beautiful implementation of Material Design,
 which takes care of a lot of styling and theming needs that you would typically do.
@@ -1732,7 +1729,7 @@ class SampleApp extends StatelessWidget {
 }
 {% endprettify %}
 
-## How do I set custom fonts on my `Text` widgets?
+### How do I set custom fonts on my `Text` widgets?
 
 In iOS, you import any `ttf` font files into your project and create a
 reference in the `info.plist` file. In Flutter, place the font file
@@ -1768,7 +1765,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-## How do I style my `Text` widgets?
+### How do I style my `Text` widgets?
 
 Along with fonts, you can customize other styling elements on a `Text` widget.
 The style parameter of a `Text` widget takes a `TextStyle` object, where you can
@@ -1789,9 +1786,9 @@ customize many parameters, such as:
 * `textBaseline`
 * `wordSpacing`
 
-# Form input
+## Form input
 
-## How do forms work in Flutter? How do I retrieve user input?
+### How do forms work in Flutter? How do I retrieve user input?
 
 Given how Flutter uses immutable widgets with a separate state, you might be
 wondering how user input fits into the picture. On iOS, you usually
@@ -1856,7 +1853,7 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/cookbook/forms/retrieve-input),
 from the [Flutter Cookbook](/cookbook).
 
-## What is the equivalent of a placeholder in a text field?
+### What is the equivalent of a placeholder in a text field?
 
 In Flutter you can easily show a "hint" or a placeholder text for your field by
 adding an `InputDecoration` object to the decoration constructor parameter for
@@ -1871,7 +1868,7 @@ body: Center(
 )
 {% endprettify %}
 
-## How do I show validation errors?
+### How do I show validation errors?
 
 Just as you would with a "hint", pass an `InputDecoration` object
 to the decoration constructor for the `Text` widget.
@@ -1944,9 +1941,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-# Interacting with hardware, third party services and the platform
+## Interacting with hardware, third party services and the platform
 
-## How do I interact with the platform, and with platform native code?
+### How do I interact with the platform, and with platform native code?
 
 Flutter doesn't run code directly on the underlying platform; rather, the Dart code
 that makes up a Flutter app is run natively on the device, "sidestepping" the SDK
@@ -1977,21 +1974,21 @@ If you can't find a plugin on Pub that fits your needs, you can
 [write your own](/development/packages-and-plugins/developing-packages)
 and [publish it on Pub](/development/packages-and-plugins/developing-packages#publish).
 
-## How do I access the GPS sensor?
+### How do I access the GPS sensor?
 
 Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
 
-## How do I access the camera?
+### How do I access the camera?
 
 The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
 for accessing the camera.
 
-## How do I log in with Facebook?
+### How do I log in with Facebook?
 
 To log in with Facebook, use the
 [`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
 
-## How do I use Firebase features?
+### How do I use Firebase features?
 
 Most Firebase functions are covered by
 [first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
@@ -2009,7 +2006,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
 You can also find some third-party Firebase plugins on Pub that cover areas
 not directly covered by the first-party plugins.
 
-## How do I build my own custom native integrations?
+### How do I build my own custom native integrations?
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
@@ -2020,9 +2017,9 @@ Android: you fire off a message and let the receiver process and emit a result
 back to you. In this case, the receiver is code running on the native side
 on Android or iOS.
 
-# Databases and local storage
+## Databases and local storage
 
-## How do I access `UserDefaults` in Flutter?
+### How do I access `UserDefaults` in Flutter?
 
 In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
@@ -2032,7 +2029,7 @@ In Flutter, access equivalent functionality using the
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
-## What is the equivalent to CoreData in Flutter?
+### What is the equivalent to CoreData in Flutter?
 
 In iOS, you can use CoreData to store structured data. This is simply a
 layer on top of an SQL database, making it easier to make queries that
@@ -2041,9 +2038,9 @@ relate to your models.
 In Flutter, access this functionality using the
 [SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
 
-# Notifications
+## Notifications
 
-## How do I set up push notifications?
+### How do I set up push notifications?
 
 In iOS, you need to register your app on the developer portal to allow
 push notifications.

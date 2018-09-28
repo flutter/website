@@ -2,19 +2,18 @@
 title: Hero Animations
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* The _hero_ refers to the widget that flies between screens.
-* Create a hero animation using Flutter's Hero widget.
-* Fly the hero from one screen to another.
-* Animate the transformation of a hero's shape from circular to
-  rectangular while flying it from one screen to another.
-* The Hero widget in Flutter implements a style of animation
-  commonly known as _shared element transitions_ or
-  _shared element animations._
-</div>
+  * The _hero_ refers to the widget that flies between screens.
+  * Create a hero animation using Flutter's Hero widget.
+  * Fly the hero from one screen to another.
+  * Animate the transformation of a hero's shape from circular to
+    rectangular while flying it from one screen to another.
+  * The Hero widget in Flutter implements a style of animation
+    commonly known as _shared element transitions_ or
+    _shared element animations._
+{{site.alert.end}}
 
 You've probably seen hero animations many times. For example,
 a screen displays a list of thumbnails representing items
@@ -38,8 +37,6 @@ at these links:
 * [Radial hero animation code](#radial-hero-animation-code)
 </aside>
 
-* TOC Placeholder
-{:toc}
 
 <aside class="alert alert-info" markdown="1">
 **New to Flutter?**<br>

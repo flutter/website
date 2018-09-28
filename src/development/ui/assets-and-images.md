@@ -2,11 +2,6 @@
 title: Adding Assets and Images in Flutter
 ---
 
-* TOC Placeholder
-{:toc}
-
-## Introduction
-
 Flutter apps can include both code and _assets_ (sometimes called
 resources). An asset is a file that is bundled and deployed with your
 app, and is accessible at runtime. Common types of assets include
@@ -65,6 +60,7 @@ asset bundle along with the specified asset.
 
 For example, if you have the following files in your application
 directory:
+
 ```
   .../pubspec.yaml
   .../graphics/my_icon.png
@@ -72,6 +68,7 @@ directory:
   .../graphics/dark/background.png
   ...etc.
 ```
+
 ...and your `pubspec.yaml` file contains:
 
 ```yaml
@@ -85,6 +82,7 @@ will be included in your asset bundle. The former is considered the
 _main asset_, while the latter is considered a _variant_.
 
 If on the other hand the graphics directory is specified:
+
 ```yaml
 flutter:
   assets:
@@ -129,10 +127,8 @@ Typically, you'll use `DefaultAssetBundle.of()` to indirectly load an
 asset, for example a JSON file, from the app's runtime `rootBundle`.
 
 {% comment %}
-
   Need example here to show obtaining the AssetBundle for the current
   BuildContext using DefaultAssetBundle.of
-
 {% endcomment %}
 
 Outside of a Widget context, or when a handle to an AssetBundle is not
@@ -167,6 +163,7 @@ work, assets should be arranged according to a particular directory structure:
   .../Nx/image.png
   ...etc.
 ```
+
 ...where _M_ and _N_ are numeric identifiers that correspond to the nominal resolution
 of the images contained within, in other words, they specify the device pixel ratio that
 the images are intended for.
@@ -265,7 +262,8 @@ A package can also choose to have assets in its `lib/` folder that are not speci
   .../lib/backgrounds/background2.png
   .../lib/backgrounds/background3.png
 ```
- To include, say, the first image, the `pubspec.yaml` of the application should specify it in the `assets` section:
+
+To include, say, the first image, the `pubspec.yaml` of the application should specify it in the `assets` section:
 
 ```yaml
 flutter:
@@ -295,6 +293,7 @@ flutter:
   assets:
     - icons/heart.png
 ```
+
 reflecting the following structure in your Flutter app.
 
 ```
@@ -354,9 +353,10 @@ Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_l
 
 ![Android icon location](/images/assets-and-images/android-icon-path.png)
 
-<aside class="alert alert-info" markdown="1">
-**Note:** if you rename the .png files, you must also match the new name in your `AndroidManifest.xml`'s `<application>` tag's `android:icon` attribute.
-</aside>
+{{site.alert.note}}
+  If you rename the .png files, you must also match the new name in your
+  `AndroidManifest.xml`'s `<application>` tag's `android:icon` attribute.
+{{site.alert.end}}
 
 #### iOS
 

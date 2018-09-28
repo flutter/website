@@ -9,9 +9,6 @@ Flutter builds a *debug* version of your app.
 When you're ready to prepare a *release* version for Android, for example to
 [publish to the Google Play Store][play], follow the steps on this page.
 
-* TOC Placeholder
-{:toc}
-
 ## Review the App Manifest
 
 Review the default [App Manifest][manifest] file `AndroidManifest.xml` located

@@ -3,9 +3,6 @@ title: FAQ
 description: Frequently asked questions and answers.
 ---
 
-* Placeholder for TOC
-{:toc}
-
 ## Introduction
 
 ### What is Flutter?

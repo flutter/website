@@ -2,12 +2,6 @@
 title: Flutter's Development Philosophy
 ---
 
-* TOC Placeholder
-{:toc}
-
-Introduction
-------------
-
 Flutter is written based on some core principles that were mostly
 intuited from past experiences with other platforms such as the Web
 and Android, some of which are summarised below.
@@ -19,8 +13,7 @@ our
 for more specific guidelines regarding writing Dart code for Flutter.
 
 
-Code review and checking in code
---------------------------------
+## Code review and checking in code
 
 Every PR must be code-reviewed before check-in, including things like
 rolling a dependency. Getting a review means that a regular Flutter
@@ -109,9 +102,7 @@ our [benchmarks dashboard](https://flutter-dashboard.appspot.com/benchmarks.html
 **If the trees or dashboards are showing any regressions, only fixes
 that improve the situation are allowed to go in.**
 
-
-Handling breaking changes
--------------------------
+## Handling breaking changes
 
 We're attempting to stablize the APIs for the
 [packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
@@ -179,14 +170,13 @@ If you use `@deprecated`, make sure to remember to actually remove the feature a
 weeks later (after the next beta release), do not just leave it forever!
 
 
-#### Google-only responsibilities
+### Google-only responsibilities
 
 If you work for Google, you have the added responsibility of updating Google's
 internal copy of Flutter and fixing any broken call-sites reasonably quickly
 after merging the upstream change.
 
-Lazy programming
-----------------
+## Lazy programming
 
 Write what you need and no more, but when you write it, do it right.
 
@@ -208,9 +198,7 @@ shave](http://www.catb.org/jargon/html/Y/yak-shaving.html)!". This is
 an encouragement to take on the larger effort necessary to perform a
 proper fix for a problem rather than just applying a band-aid.
 
-
-Tests
------
+##Tests
 
 **Write Tests, Find Bugs**
 
@@ -220,8 +208,7 @@ and verify the test passes.
 When you implement a new feature, write tests for it.
 
 
-Documentation
--------------
+## Documentation
 
 When working on Flutter, if you find yourself asking a question about
 our systems, please place whatever answer you subsequently discover
@@ -242,9 +229,7 @@ documentation that violates our
 [style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo),
 so as to make it reappear on the list.
 
-
-API design
-----------
+## API design
 
 We have learned various lessons over the years.
 
@@ -260,7 +245,7 @@ We have learned various lessons over the years.
   `document.forms` (it walks the entire tree).
 
   - Asynchronous expensive operations can be represented by futures.
-    A method can start the work and return a future; a getter can return 
+    A method can start the work and return a future; a getter can return
     a future corresponding to already-running work. A getter should not
     kick-off the work and return the future, since getters appear idempotent
     and side-effect free.
@@ -317,9 +302,7 @@ We have learned various lessons over the years.
     expensive to maintain, document, and test, and put a compatibility burden
     on the underlying API).
 
-
-Bugs
-----
+## Bugs
 
 Only assign a bug to yourself when you are actively working on it. If
 you're not working on it, leave it unassigned. Don't assign bugs to
@@ -341,9 +324,7 @@ File bugs for anything that you come across that needs doing. When you
 implement something but know it's not complete, file bugs for what you
 haven't done. That way, we can keep track of what still needs doing.
 
-
-Regressions
------------
+## Regressions
 
 If a check-in has caused a regression on the trunk, roll back the
 check-in (even if it isn't yours) unless doing so would take longer
@@ -361,16 +342,12 @@ the future. Postmortems are emphatically _not_ about assigning blame.
 
 There is no shame in making mistakes.
 
-
-Questions
----------
+## Questions
 
 It's always ok to ask questions. Our systems are large, nobody will be
 an expert in all the systems.
 
-
-Conflict resolution
--------------------
+## Conflict resolution
 
 When multiple contributors disagree on the direction for a particular
 patch or the general direction of the project, the conflict should be
@@ -390,9 +367,7 @@ agree that the final solution is _better_ than all the conflicting proposals.
 Sometimes the solution is more work than either of the proposals. Please
 see the comments above where we introduce the phrase "embrace the yak shave".
 
-
-Code of conduct
----------------
+## Code of conduct
 
 This section is the last section in this document because it should be
 the most obvious. However, it is also the most important.

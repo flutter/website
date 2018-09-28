@@ -2,39 +2,19 @@
 title: Adding Interactivity to Your Flutter App
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* How to respond to taps.
-* How to create a custom widget.
-* The difference between stateless and stateful widgets.
-
-</div>
+  * How to respond to taps.
+  * How to create a custom widget.
+  * The difference between stateless and stateful widgets.
+{{site.alert.end}}
 
 How do you modify your app to make it react to user input?
 In this tutorial, you'll add interactivity to an app that contains only
 non-interactive widgets.  Specifically, you'll modify an icon to make
 it tappable by creating a custom stateful widget
 that manages two stateless widgets.
-
-### Contents
-
-* [Stateful and stateless widgets](#stateful-stateless)
-* [Creating a stateful widget](#creating-stateful-widget)
-  * [Step 1: Decide which object manages the widget's state](#step-1)
-  * [Step 2: Subclass StatefulWidget](#step-2)
-  * [Step 3: Subclass State](#step-3)
-  * [Step 4: Plug the stateful widget into the widget tree](#step-4)
-  * [Problems?](#problems)
-* [Managing state](#managing-state)
-  * [The widget manages its own state](#self-managed)
-  * [The parent manages the widget's state](#parent-managed)
-  * [A mix-and-match approach](#mix-and-match)
-* [Other interactive widgets](#other-interactive-widgets)
-  * [Standard widgets](#standard-widgets)
-  * [Material Components](#material-components)
-* [Resources](#resources)
 
 ## Getting ready
 

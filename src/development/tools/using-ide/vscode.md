@@ -1,6 +1,6 @@
 ---
 title: Developing Flutter apps in an IDE
-description: How to develop a Flutter app in Android Studio or other IntelliJ products.
+description: How to develop a Flutter app in VSCode.
 ---
 
 <div id="tab-set-install">
@@ -14,15 +14,13 @@ description: How to develop a Flutter app in Android Studio or other IntelliJ pr
 
 The [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) provides a fully integrated development experience in Visual Studio Code.
 
-* TOC Placeholder
-{:toc}
 
 ## Installation and setup
 
 Please follow the [Editor Setup](/get-started/editor#vscode) instructions to install
 the Flutter extension (which includes Flutter functionality).
 
-### Updating the extension<a name="updating"/>
+### Updating the extension {#updating}
 
 Updates to the extension are shipped on a regular basis. By default,
 VS Code automatically updates extensions when updates are available.
@@ -48,7 +46,7 @@ To create a new Flutter project from the Flutter starter app template:
 
 To open an existing Flutter project:
 
-1. Click **File>Open...** from the main IDE window.
+1. Click **File > Open** from the main IDE window.
 1. Browse to the directory holding your existing Flutter source code files.
 1. Click **Open**.
 
@@ -60,13 +58,13 @@ The Flutter extension performs code analysis that enables:
 * Code completions based on rich type analysis.
 * Navigating to type declarations (**Go to Definition** or `F12`), and finding type
   usages (**Find All References** or `Shift`+`F12`).
-* Viewing all current source code problems (**View>Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
+* Viewing all current source code problems (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
   Any analysis issues are shown in the Problems pane:<br>
   <img src="/images/vscode/problems.png" style="width:660px;height:141px" alt="Problems pane" />
 
 ## Running and Debugging
 
-Start debugging by clicking **Debug>Start Debugging** from the main IDE window or
+Start debugging by clicking **Debug > Start Debugging** from the main IDE window or
 press `F5`.
 
 ### Selecting a target device
@@ -92,7 +90,7 @@ running or debugging.
 
 ### Run app without breakpoints
 
-1. Click **Debug>Start Without Debugging** in the main IDE window, or
+1. Click **Debug > Start Without Debugging** in the main IDE window, or
   press `Ctrl`+`F5`.
 * The status bar turns orange to show you are in a debug session.<br>
 <img src="/images/vscode/debug_console.png" style="width:490px;height:208px" alt="Debug Console" />
@@ -100,7 +98,7 @@ running or debugging.
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. Click **Debug>Start Debugging** in the main IDE window, or press `F5`.
+1. Click **Debug > Start Debugging** in the main IDE window, or press `F5`.
 * The left **Debug Sidebar** shows stack frames and variables.
 * The bottom **Debug Console** pane shows detailed logging output.
 * Debugging is based on a default launch configuration. To customize,

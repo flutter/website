@@ -2,15 +2,13 @@
 title: Internationalizing Flutter Apps
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* How to track the device's locale (the user's preferred language).
-* How to manage locale-specific app values.
-* How define the locales an app supports.
-
-</div>
+  * How to track the device's locale (the user's preferred language).
+  * How to manage locale-specific app values.
+  * How define the locales an app supports.
+{{site.alert.end}}
 
 If your app might be deployed to users who speak another language then
 you'll need to "internationalize" it. That means you'll need to write
@@ -25,33 +23,20 @@ MaterialApp class, since most applications are written that way.
 Applications written in terms of the lower level WidgetsApp class
 can also be internationalized using the same classes and logic.
 
-### Contents
-
-* [Setting up an internationalized app: the flutter_localizations package](#setting-up)
-* [Tracking the locale: The Locale class and the Localizations widget](#tracking-locale)
-* [Loading and retrieving localized values](#loading-and-retrieving)
-* [Using the bundled LocalizationsDelegates](#using-bundles)
-* [Defining a class for the app's localized resources](#defining-class)
-* [Specifying the app's supportedLocales parameter](#specifying-supportedlocales)
-* [An alternative class for the app's localized resources](#alternative-class)
-* [Appendix: Using the Dart intl tools](#dart-tools)
-* [Appendix: Updating the iOS app bundle](#ios-specifics)
-
 <aside class="alert alert-info" markdown="1">
-**Sample internationalized apps**<br>
+  <h4 class="no_toc">Sample internationalized apps</h4>
 
-If you'd like to start out by reading the code for an internationalized
-Flutter app, here are two small examples. The first one is intended to
-be as simple as possible, and the second one uses the APIs and tools
-provided by the [intl](https://pub.dartlang.org/packages/intl) package.
-If Dart's intl package is new to you, see [Using the Dart intl tools.](#dart-tools)
+  If you'd like to start out by reading the code for an internationalized
+  Flutter app, here are two small examples. The first one is intended to
+  be as simple as possible, and the second one uses the APIs and tools
+  provided by the [intl](https://pub.dartlang.org/packages/intl) package.
+  If Dart's intl package is new to you, see [Using the Dart intl tools.](#dart-tools)
 
-* [Minimal internationalization](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
-* [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
+  * [Minimal internationalization](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
+  * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
 </aside>
 
-<a name="setting-up"></a>
-## Setting up an internationalized app: the flutter_localizations package
+## Setting up an internationalized app: the flutter_localizations package {#setting-up}
 
 By default Flutter only provides US English localizations. To add
 support for other languages, an application must specify additional

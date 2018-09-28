@@ -2,9 +2,6 @@
 title: "Animations: Technical Overview"
 ---
 
-* TOC Placeholder
-{:toc}
-
 The animation system in Flutter is based on typed
 [`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
 objects. Widgets can either incorporate these animations in their build

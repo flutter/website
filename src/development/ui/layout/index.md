@@ -3,15 +3,17 @@ title: Building Layouts in Flutter
 description: Learn how Flutter's layout mechanism works and how to build a layout.
 ---
 
-<div class="whats-the-point" markdown="1">
+{% comment %}
+  TODO(chalin): more markdown cleanup is neede in this file: e.g., {#foo} for headings, {{site.alert.foo}}, etc.
+{% endcomment -%}
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-* How Flutter's layout mechanism works.
-* How to lay out widgets vertically and horizontally.
-* How to build a Flutter layout.
-
-</div>
+  * How Flutter's layout mechanism works.
+  * How to lay out widgets vertically and horizontally.
+  * How to build a Flutter layout.
+{{site.alert.end}}
 
 This is a guide to building layouts in Flutter.
 You'll build the layout for the following screenshot:
@@ -23,34 +25,12 @@ and shows how to place a single widget on the screen.
 After a discussion of how to lay widgets out horizontally and vertically,
 some of the most common layout widgets are covered.
 
-* [Building a layout](#building)
-  * [Step 0: Set up](#step-0)
-  * [Step 1: Diagram the layout](#step-1)
-  * [Step 2: Implement the title row](#step-2)
-  * [Step 3: Implement the button row](#step-3)
-  * [Step 4: Implement the text section](#step-4)
-  * [Step 5: Implement the image section](#step-5)
-  * [Step 6: Put it together](#step-6)
-* [Flutter's approach to layout](#approach)
-* [Lay out a widget](#lay-out-a-widget)
-* [Lay out multiple widgets vertically and horizontally](#rows-and-columns)
-  * [Aligning widgets](#alignment)
-  * [Sizing widgets](#sizing)
-  * [Packing widgets](#packing)
-  * [Nesting rows and columns](#nesting)
-* [Common layout widgets](#common-layout-widgets)
-  * [Standard widgets](#standard-widgets)
-  * [Material Components](#material-components)
-* [Resources](#resources)
-
-<a name="building"></a>
-## Building a layout
+## Building a layout {#building}
 
 If you want a "big picture" understanding of the layout mechanism,
 start with [Flutter's approach to layout](#approach).
 
-<a name="step-0"></a>
-### Step 0: Set up
+### Step 0: Set up {#step-0}
 
 First, get the code:
 
@@ -69,8 +49,7 @@ Next, add the image to the example:
 
 <hr>
 
-<a name="step-1"></a>
-### Step 1: Diagram the layout
+### Step 1: Diagram the layout {#step-1}
 
 The first step is to break the layout down to its basic elements:
 
@@ -103,8 +82,7 @@ approach to implementing it. To minimize the visual
 confusion of deeply nested layout code, place some of the implementation
 in variables and functions.
 
-<a name="step-2"></a>
-### Step 2: Implement the title row
+### Step 2: Implement the title row {#step-2}
 
 First, you'll build the left column in the title section. Putting Column
 inside an Expanded widget stretches the column to use all remaining free
@@ -120,12 +98,11 @@ along each edge with 32 pixels.
 
 Here's the code that implements the title row.
 
-<aside class="alert alert-info" markdown="1">
-**Note:**
-If you have problems, you can check your code against
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
-on GitHub.
-</aside>
+{{site.alert.secondary}}
+  If you have problems, you can check your code against
+  [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
+  on GitHub.
+{{site.alert.end}}
 
 <!-- code/layout/lakes/main.dart -->
 <!-- skip -->
@@ -189,8 +166,7 @@ For more information, see [Hot Reloads vs. Full Application
 Restarts](/development/tools/using-ide#hot-reloads-vs-full-application-restarts).
 </aside>
 
-<a name="step-3"></a>
-### Step 3: Implement the button row
+### Step 3: Implement the button row {#step-3}
 
 The button section contains 3 columns that use the same layout&mdash;an
 icon over a row of text. The columns in this row are evenly spaced,
@@ -286,8 +262,7 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-<a name="step-4"></a>
-### Step 4: Implement the text section
+### Step 4: Implement the text section {#step-4}
 
 Define the text section, which is fairly long, as a variable.
 Put the text in a Container to enable adding 32 pixels of padding along
@@ -314,8 +289,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
 }
 {% endprettify %}
 
-<a name="step-5"></a>
-### Step 5: Implement the image section
+### Step 5: Implement the image section {#step-5}
 
 Three of the four column elements are now complete, leaving only the image.
 This image is [available
@@ -348,8 +322,7 @@ body: ListView(
 `BoxFit.cover` tells the framework that the image should be as small as
 possible but cover its entire render box.
 
-<a name="step-6"></a>
-### Step 6: Put it together
+### Step 6: Put it together {#step-6}
 
 In the final step, you assemble the pieces together. The widgets are arranged
 in a ListView, rather than a Column, because the ListView automatically scrolls
@@ -394,19 +367,15 @@ That's it! When you hot reload the app, you should see the same layout
 shown in the screenshots. You can add interactivity to this layout by following
 [Adding Interactivity to Your Flutter App](/development/ui/interactive).
 
-<hr>
-<a name="approach"></a>
-## Flutter's approach to layout
+## Flutter's approach to layout {#approach}
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* Widgets are classes used to build UIs.
-* Widgets are used for both layout and UI elements.
-* Compose simple widgets to build complex widgets.
-
-</div>
+  * Widgets are classes used to build UIs.
+  * Widgets are used for both layout and UI elements.
+  * Compose simple widgets to build complex widgets.
+{{site.alert.end}}
 
 The core of Flutter's layout mechanism is widgets. In Flutter, almost
 everything is a widget&mdash;even layout models are widgets.
@@ -418,18 +387,19 @@ You create a layout by composing widgets to build more complex widgets.
 For example, the screenshot on the left shows 3 icons with a label under
 each one:
 
-<img src="/development/ui/layout/images/lakes-icons.png" style="border:1px solid black" alt="sample layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=/development/ui/layout/images/lakes-icons-visual.png" style="border:1px solid black" alt="sample sample layout with visual debugging turned on">
+<img src="/development/ui/layout/images/lakes-icons.png" style="border:1px solid black" alt="sample layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/development/ui/layout/images/lakes-icons-visual.png" style="border:1px solid black" alt="sample sample layout with visual debugging turned on">
 
 The second screenshot displays the visual layout, showing a row of
 3 columns where each column contains an icon and a label.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** Most of the screenshots in this tutorial are displayed with
-`debugPaintSizeEnabled` set to true so you can see the visual layout.
-For more information, see
-[Visual debugging](/testing/debugging#visual-debugging), a section in
-[Debugging Flutter Apps](/testing/debugging).
-</aside>
+{{site.alert.note}}
+  Most of the screenshots in this tutorial are displayed with
+  `debugPaintSizeEnabled` set to true so you can see the visual layout.
+  For more information, see
+  [Visual debugging](/testing/debugging#visual-debugging), a section in
+  [Debugging Flutter Apps](/testing/debugging).
+{{site.alert.end}}
 
 Here's a diagram of the widget tree for this UI:
 
@@ -451,39 +421,35 @@ Columns and Rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
 the children should occupy.
 
-<hr>
-
-<a name="lay-out-a-widget"></a>
 ## Lay out a widget
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
+  {% comment %}
+    * Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
+      [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
+      or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
+    * Add it to a layout widget, such as
+      [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
+      [Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
+      [SizedBox](https://docs.flutter.io/flutter/widgets/SizedBox-class.html),
+      or [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
+      to name a few.
+    * Add the layout widget to the root of the widget tree.
+  {% endcomment -%}
 
-{% comment %}
-* Create an [Image](https://docs.flutter.io/flutter/widgets/Image-class.html),
-  [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html),
-  or [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
-* Add it to a layout widget, such as
-  [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
-  [Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
-  [SizedBox](https://docs.flutter.io/flutter/widgets/SizedBox-class.html),
-  or [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
-  to name a few.
-* Add the layout widget to the root of the widget tree.
-{% endcomment %}
-* Even the app itself is a widget.
-* It's easy to create a widget and add it to a layout widget.
-* To display the widget on the device, add the layout widget to the app widget.
-* It's easiest to use
-  [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html),
-  a widget from the Material Components library, which provides a default banner,
-  background color, and has API for adding drawers, snack bars,
-  and bottom sheets.
-* If you prefer, you can build an app that only uses standard widgets
-  from the widgets library.
-
-</div>
+  * Even the app itself is a widget.
+  * It's easy to create a widget and add it to a layout widget.
+  * To display the widget on the device, add the layout widget to the app widget.
+  * It's easiest to use
+    [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html),
+    a widget from the Material Components library, which provides a default banner,
+    background color, and has API for adding drawers, snack bars,
+    and bottom sheets.
+  * If you prefer, you can build an app that only uses standard widgets
+    from the widgets library.
+{{site.alert.end}}
 
 How do you layout a single widget in Flutter?
 This section shows how to create a simple widget and display it on screen.
@@ -505,16 +471,15 @@ it takes only a few steps to put text, an icon, or an image on the screen.
 
 <li markdown="1"> Create a widget to hold the visible object.<br>
 
-<aside class="alert alert-info" markdown="1">
-**Note:**
-Flutter apps are written in the [Dart language](https://www.dartlang.org/).
-If you know Java or similar object-oriented coding languages, Dart
-will feel very familiar. If not, you might try
-[DartPad](https://www.dartlang.org/tools/dartpad), an interactive Dart
-playground you can use from any browser. The
-[Language Tour](https://www.dartlang.org/guides/language) provides an
-overview of the features of the Dart Language.
-</aside>
+{{site.alert.note}}
+  Flutter apps are written in the [Dart language](https://www.dartlang.org/).
+  If you know Java or similar object-oriented coding languages, Dart
+  will feel very familiar. If not, you might try
+  [DartPad](https://www.dartlang.org/tools/dartpad), an interactive Dart
+  playground you can use from any browser. The
+  [Language Tour](https://www.dartlang.org/guides/language) provides an
+  overview of the features of the Dart Language.
+{{site.alert.end}}
 
 For example, create a Text widget:
 
@@ -582,17 +547,16 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-<aside class="alert alert-info" markdown="1">
-**Note:**
-The Material Components library implements widgets that follow
-[Material Design principles](https://material.io/guidelines/).
-When designing your UI, you can exclusively use widgets from the standard
-[widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
-or you can use widgets from [Material Components](https://docs.flutter.io/flutter/material/material-library.html).
-You can mix widgets from both libraries,
-you can customize existing widgets,
-or you can build your own set of custom widgets.
-</aside>
+{{site.alert.note}}
+  The Material Components library implements widgets that follow
+  [Material Design principles](https://material.io/guidelines/).
+  When designing your UI, you can exclusively use widgets from the standard
+  [widgets library](https://docs.flutter.io/flutter/widgets/widgets-library.html),
+  or you can use widgets from [Material Components](https://docs.flutter.io/flutter/material/material-library.html).
+  You can mix widgets from both libraries,
+  you can customize existing widgets,
+  or you can build your own set of custom widgets.
+{{site.alert.end}}
 
 For a non-Material app, you can add the Center widget to the app's `build()`
 method:
@@ -650,26 +614,17 @@ One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
 and a Column widget to arrange widgets vertically.
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* Row and Column are two of the most commonly used layout patterns.
-* Row and Column each take a list of child widgets.
-* A child widget can itself be a Row, Column, or other complex widget.
-* You can specify how a Row or Column aligns its children, both vertically
-  and horizontally.
-* You can stretch or constrain specific child widgets.
-* You can specify how child widgets use the Row's or Column's available space.
-
-</div>
-
-### Contents
-
-* [Aligning widgets](#alignment)
-* [Sizing widgets](#sizing)
-* [Packing widgets](#packing)
-* [Nesting rows and columns](#nesting)
+  * Row and Column are two of the most commonly used layout patterns.
+  * Row and Column each take a list of child widgets.
+  * A child widget can itself be a Row, Column, or other complex widget.
+  * You can specify how a Row or Column aligns its children, both vertically
+    and horizontally.
+  * You can stretch or constrain specific child widgets.
+  * You can specify how child widgets use the Row's or Column's available space.
+{{site.alert.end}}
 
 To create a row or column in Flutter, you add a list of children widgets to a
 [Row](https://docs.flutter.io/flutter/widgets/Row-class.html) or
@@ -681,7 +636,6 @@ of rows or columns.
 This layout is organized as a Row. The row contains two children:
 a column on the left, and an image on the right:
 
-
 <center><img src="/development/ui/layout/images/pavlova-diagram.png" alt="screenshot with callouts showing the row containing two children: a column and an image."></center><br>
 
 The left column's widget tree nests rows and columns.
@@ -691,23 +645,22 @@ The left column's widget tree nests rows and columns.
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting).
 
-<aside class="alert alert-info" markdown="1">
-**Note:** Row and Column are basic primitive widgets for horizontal
-and vertical layouts&mdash;these low-level widgets allow for maximum
-customization. Flutter also offers specialized, higher level widgets
-that might be sufficient for your needs. For example, instead of Row
-you might prefer
-[ListTile](https://docs.flutter.io/flutter/material/ListTile-class.html),
-an easy-to-use widget with properties for leading and trailing icons,
-and up to 3 lines of text.  Instead of Column, you might prefer
-[ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
-a column-like layout that automatically scrolls if its content is too long
-to fit the available space.  For more information,
-see [Common layout widgets](#common-layout-widgets).
-</aside>
+{{site.alert.note}}
+  Row and Column are basic primitive widgets for horizontal
+  and vertical layouts&mdash;these low-level widgets allow for maximum
+  customization. Flutter also offers specialized, higher level widgets
+  that might be sufficient for your needs. For example, instead of Row
+  you might prefer
+  [ListTile](https://docs.flutter.io/flutter/material/ListTile-class.html),
+  an easy-to-use widget with properties for leading and trailing icons,
+  and up to 3 lines of text.  Instead of Column, you might prefer
+  [ListView](https://docs.flutter.io/flutter/widgets/ListView-class.html),
+  a column-like layout that automatically scrolls if its content is too long
+  to fit the available space.  For more information,
+  see [Common layout widgets](#common-layout-widgets).
+{{site.alert.end}}
 
-<a name="alignment"></a>
-### Aligning widgets
+### Aligning widgets {#alignment}
 
 You control how a row or column aligns its children using the
 `mainAxisAlignment` and `crossAxisAlignment` properties.
@@ -730,16 +683,16 @@ The [MainAxisAlignment](https://docs.flutter.io/flutter/rendering/MainAxisAlignm
 and [CrossAxisAlignment](https://docs.flutter.io/flutter/rendering/CrossAxisAlignment-class.html)
 classes offer a variety of constants for controlling alignment.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** When you add images to your project,
-you need to update the pubspec file to access them&mdash;this
-example uses `Image.asset` to display the images.  For more information,
-see this example's [pubspec.yaml
-file](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row/pubspec.yaml),
-or [Adding Assets and Images in Flutter](/development/ui/assets-and-images).
-You don't need to do this if you're referencing online images using
-`Image.network`.
-</aside>
+{{site.alert.note}}
+  When you add images to your project,
+  you need to update the pubspec file to access them&mdash;this
+  example uses `Image.asset` to display the images.  For more information,
+  see this example's [pubspec.yaml
+  file](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row/pubspec.yaml),
+  or [Adding Assets and Images in Flutter](/development/ui/assets-and-images).
+  You don't need to do this if you're referencing online images using
+  `Image.network`.
+{{site.alert.end}}
 
 In the following example, each of the 3 images is 100 pixels wide.
 The render box (in this case, the entire screen) is more than 300 pixels wide,
@@ -780,20 +733,18 @@ space evenly between, above, and below each image.
 
 </div> </div>
 
-<aside class="alert alert-info" markdown="1">
-**Note:**
-When a layout is too large to fit the device, a red strip appears along the
-affected edge. For example, the row in the following screenshot is too
-wide for the device's screen:
+{{site.alert.note}}
+  When a layout is too large to fit the device, a red strip appears along the
+  affected edge. For example, the row in the following screenshot is too
+  wide for the device's screen:
 
-<center><img src="/development/ui/layout/images/layout-too-large.png" style="border:1px solid black" alt="a row that is too wide, showing a red string along the right edge"></center>
+  <center><img src="/development/ui/layout/images/layout-too-large.png" style="border:1px solid black" alt="a row that is too wide, showing a red string along the right edge"></center>
 
-Widgets can be sized to fit within a row or column by using an Expanded widget,
-which is described in the [Sizing widgets](#sizing) section below.
-</aside>
+  Widgets can be sized to fit within a row or column by using an Expanded widget,
+  which is described in the [Sizing widgets](#sizing) section below.
+{{site.alert.end}}
 
-<a name="sizing"></a>
-### Sizing widgets
+### Sizing widgets {#sizing}
 
 Perhaps you want a widget to occupy twice as much space as its siblings.
 You can place the child of a row or column in an
@@ -840,8 +791,7 @@ the row to each widget.
 
 </div> </div>
 
-<a name="packing"></a>
-### Packing widgets
+### Packing widgets {#packing}
 
 By default, a row or column occupies as much space along its main axis
 as possible, but if you want to pack the children closely together,
@@ -881,8 +831,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 </div> </div>
 
-<a name="nesting"></a>
-### Nesting rows and columns
+### Nesting rows and columns {#nesting}
 
 The layout framework allows you to nest rows and columns inside of rows
 and columns as deeply as you need. Let's look the code for the outlined section
@@ -942,11 +891,10 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-To minimize the visual confusion that can result from heavily nested layout
-code, implement pieces of the UI in variables and functions.
-</aside>
+{{site.alert.tip}}
+  To minimize the visual confusion that can result from heavily nested layout
+  code, implement pieces of the UI in variables and functions.
+{{site.alert.end}}
 
 The icons row, below the ratings row, contains 3 columns; each column contains
 an icon and two lines of text, as you can see in its widget tree:
