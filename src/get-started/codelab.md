@@ -133,7 +133,7 @@ where the Dart code lives.
   [Material](https://material.io/guidelines/) is a visual design language
   that is standard on mobile and the web. Flutter offers a rich set
   of Material widgets.
-* The main method specifies arrow (`=>`) notation.
+* The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget` which makes the app itself a
   widget. In Flutter, almost everything is a widget, including
