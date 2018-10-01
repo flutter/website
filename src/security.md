@@ -26,7 +26,7 @@ For more information about how Google handles security issues, see
 * **Keep your application’s dependencies up to date.**
   Make sure you [upgrade your package
   dependencies](/development/packages/using-packages/#updating-package-dependencies)
-  to keep the dependencies up-to-date. Avoid pinning to specific versions
+  to keep the dependencies up to date. Avoid pinning to specific versions
   for your dependencies and, if you do, make sure you check
   periodically to see if your dependencies have had security updates,
   and update the pin accordingly.
@@ -34,7 +34,7 @@ For more information about how Google handles security issues, see
 * **Keep your copy of Flutter up to date** Private, customized versions
   of Flutter tend to fall behind the current, version and may not
   include important security fixes and enhancements. Instead,
-  routinely update your copy of Flutter. If you're makong changes to
-  improve Flutter, be sure to update your fork and share your changes
-  with the community.
+  routinely update your copy of Flutter. If you're making changes to
+  improve Flutter, be sure to update your fork and consider sharing your
+  changes with the community.
 
