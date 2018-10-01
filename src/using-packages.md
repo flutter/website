@@ -112,9 +112,12 @@ in IntelliJ). This will retrieve the highest available version of the package,
 which is allowed by the [version constraint](https://www.dartlang.org/tools/pub/versioning#version-constraints)
 you have specified in `pubspec.yaml`.
 
-**Note:** We recommend that you ocassionally review your dependencies to see if
+{{site.alert.note}}
+We recommend that you occasionally review your dependencies to see if
 newer major versions are available, and that you consider upgrading your
-version constraints to allow those (for example, update a `^1.2` constraint to `^2.0`).
+version constraints to allow those. For example, `^1.0` or `^1.2` might become
+`^2.0`).
+{{site.alert.end}}
 
 ### Dependencies on unpublished packages
 
