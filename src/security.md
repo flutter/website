@@ -2,14 +2,15 @@
 title: Security
 ---
 
-The Flutter community takes the security of Flutter and the applications
-it can create seriously. This page describes how to report any
-vulnerabilities you may find, and collects best practices for developers
-using Flutter to build their applications.
+The Flutter team takes the security of Flutter and the applications
+created with it seriously. This page describes how to report any
+vulnerabilities you may find, and lists best practices to minimize
+the risk of introducing a vulnerability.
 
 ## Reporting vulnerabilities
 
-To report vulnerabilities in Flutter itself, email us at
+In the rare event that you find a vulnerability in Flutter itself,
+email us at
 [product-security@google.com](mailto:product-security@google.com).
 For more information about how Google handles security issues, see
 [Google’s security philosophy](https://www.google.com/about/appsecurity/).
@@ -22,8 +23,18 @@ For more information about how Google handles security issues, see
   [change log](https://github.com/flutter/flutter/wiki/Changelog)
   for security-related updates.
 
-* **Don’t modify your copy of Flutter.** Private, customized versions
-  of Flutter tend to fall behind the current version and may not
+* **Keep your application’s dependencies up to date.**
+  Make sure you [upgrade your package
+  dependencies](/development/packages/using-packages/#updating-package-dependencies)
+  to keep the dependencies up-to-date. Avoid pinning to specific versions
+  for your dependencies and, if you do, make sure you check
+  periodically to see if your dependencies have had security updates,
+  and update the pin accordingly.
+
+* **Keep your copy of Flutter up to date** Private, customized versions
+  of Flutter tend to fall behind the current, version and may not
   include important security fixes and enhancements. Instead,
-  share your Flutter improvements with the community and make a pull request.
+  routinely update your copy of Flutter. If you're makong changes to
+  improve Flutter, be sure to update your fork and share your changes
+  with the community.
 
