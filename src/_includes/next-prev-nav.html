@@ -1,0 +1,20 @@
+{% if page.next or page.prev -%}
+  {% assign nav_class = 'site-nextprev-nav__single' -%}
+  {% if page.next and page.prev -%}
+    {% assign nav_class = 'site-nextprev-nav' -%}
+  {% endif -%}
+  <nav class="{{nav_class}}">
+    <ul>
+      {% if page.prev.path -%}
+      <li class="prev">
+          <a href="{{ page.prev.path }}">{{ page.prev.title }}</a>
+      </li>
+      {% endif -%}
+      {% if page.next.path -%}
+      <li class="next">
+          <a href="{{ page.next.path }}">{{ page.next.title }}</a>
+      </li>
+      {% endif -%}
+    </ul>
+  </nav>
+{% endif -%}
