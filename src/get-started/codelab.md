@@ -569,5 +569,3 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
-
-[Learn More](/get-started/learn-more)

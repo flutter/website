@@ -186,5 +186,3 @@ You should see the updated string in the running app almost immediately.
 ## Next step
 
 Let's learn some core Flutter concepts, by creating a small app.
-
-[Next step: Write your first app](/get-started/codelab)
