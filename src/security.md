@@ -31,7 +31,7 @@ For more information about how Google handles security issues, see
   periodically to see if your dependencies have had security updates,
   and update the pin accordingly.
 
-* **Keep your copy of Flutter up to date** Private, customized versions
+* **Keep your copy of Flutter up to date.** Private, customized versions
   of Flutter tend to fall behind the current, version and may not
   include important security fixes and enhancements. Instead,
   routinely update your copy of Flutter. If you're making changes to
