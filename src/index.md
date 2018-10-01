@@ -168,8 +168,7 @@ description: >
                 Organizations around the world are  building apps with Flutter.
                 </p>
                 
-                <!-- TODO(shaza): What should this link out to? -->
-                <a href="#">See what’s being created.</a>
+                <a href="/showcase">See what’s being created.</a>
             </div>
         </div>
     </div>
@@ -197,7 +196,7 @@ description: >
         <img class="card-img-top" src="" alt="A news item image">
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Why You Should Start Looking At Google's Flutter And Fuchsia Now</h3>
+            <h3>Why you should start looking at Google's Flutter now</h3>
             <a href="#">Read More</a>
         </div>
     </div>
