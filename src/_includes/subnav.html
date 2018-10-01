@@ -1,0 +1,16 @@
+{% if page.next or page.prev -%}
+<nav id="subnav">
+  <ul>
+    <li class="previous">
+      {% if page.prev.path -%}
+        <a href="{{ page.prev.path }}">{{ page.prev.title }}</a>
+      {% endif -%}
+    </li>
+    <li class="next">
+      {% if page.next.path -%}
+        <a href="{{ page.next.path }}">{{ page.next.title }}</a>
+      {% endif -%}
+    </li>
+  </ul>
+</nav>
+{% endif -%}

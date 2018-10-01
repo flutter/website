@@ -1,5 +1,11 @@
 ---
 title: "Get Started: Configure Editor"
+prev:
+  title: Install
+  path: /get-started/install
+next:
+  title: Test Drive
+  path: /get-started/test-drive
 ---
 
 You can build apps with Flutter using any text editor combined with our

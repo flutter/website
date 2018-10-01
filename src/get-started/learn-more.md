@@ -1,6 +1,9 @@
 ---
 title: "Get Started: Learn More"
 description: More resources to help you learn Flutter.
+prev:
+  title: Write Your First Flutter App
+  path: /get-started/codelab
 toc: false
 ---
 
