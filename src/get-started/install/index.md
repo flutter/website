@@ -1,5 +1,8 @@
 ---
 title: "Get Started: Install"
+next:
+  title: Configure Editor
+  path: /get-started/editor
 toc: false
 ---
 

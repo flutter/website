@@ -1,5 +1,11 @@
 ---
 title: Write Your First Flutter App, part 1
+prev:
+  title: Test Drive
+  path: /get-started/test-drive
+next:
+  title: Learn More
+  path: /get-started/learn-more
 ---
 
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
@@ -563,5 +569,3 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
-
-[Learn More](/get-started/learn-more)

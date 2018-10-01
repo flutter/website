@@ -1,5 +1,11 @@
 ---
 title: "Get Started: Test Drive"
+prev:
+  title: Configure Editor
+  path: /get-started/editor
+next:
+  title: Write Your First Flutter App
+  path: /get-started/codelab
 ---
 
 This page describes how to "test drive" Flutter: create a new Flutter app from
@@ -180,5 +186,3 @@ You should see the updated string in the running app almost immediately.
 ## Next step
 
 Let's learn some core Flutter concepts, by creating a small app.
-
-[Next step: Write your first app](/get-started/codelab)
