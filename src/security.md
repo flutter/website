@@ -32,7 +32,7 @@ For more information about how Google handles security issues, see
   and update the pin accordingly.
 
 * **Keep your copy of Flutter up to date.** Private, customized versions
-  of Flutter tend to fall behind the current, version and may not
+  of Flutter tend to fall behind the current version and may not
   include important security fixes and enhancements. Instead,
   routinely update your copy of Flutter. If you're making changes to
   improve Flutter, be sure to update your fork and consider sharing your
