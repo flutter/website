@@ -1,10 +1,10 @@
 ---
-title: "Get Started: Test Drive"
+title: Test drive
 prev:
-  title: Configure Editor
+  title: Configure dditor
   path: /get-started/editor
 next:
-  title: Write Your First Flutter App
+  title: Write your first Flutter app
   path: /get-started/codelab
 ---
 

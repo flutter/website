@@ -1,8 +1,8 @@
 ---
-title: "Get Started: Learn More"
+title: Learn more
 description: More resources to help you learn Flutter.
 prev:
-  title: Write Your First Flutter App
+  title: Write your first Flutter app
   path: /get-started/codelab
 toc: false
 ---

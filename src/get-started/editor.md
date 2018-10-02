@@ -1,10 +1,10 @@
 ---
-title: "Get Started: Configure Editor"
+title: Configure editor
 prev:
   title: Install
   path: /get-started/install
 next:
-  title: Test Drive
+  title: Test drive
   path: /get-started/test-drive
 ---
 

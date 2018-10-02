@@ -1,10 +1,10 @@
 ---
-title: Write Your First Flutter App, part 1
+title: Write your first Flutter app, part 1
 prev:
-  title: Test Drive
+  title: Test drive
   path: /get-started/test-drive
 next:
-  title: Learn More
+  title: Learn more
   path: /get-started/learn-more
 ---
 

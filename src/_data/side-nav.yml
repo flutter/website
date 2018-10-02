@@ -1,31 +1,31 @@
-- title: Getting Started
+- title: Getting started
   permalink: /get-started
   children:
-  - title: "1: Install"
+  - title: 1. Install
     permalink: /get-started/install
-  - title: "2: Configure editor"
+  - title: 2. Configure editor
     permalink: /get-started/editor
-  - title: "3: Test drive"
+  - title: 3. Test drive
     permalink: /get-started/test-drive
-  - title: "4: Write your first app"
+  - title: 4. Write your first app
     permalink: /get-started/codelab
-  - title: "5: Learn more"
+  - title: 5. Learn more
     permalink: /get-started/learn-more
   - divider
   - title: Coming from another platform?
     children:
-    - title: Flutter for Android Devs
+    - title: Flutter for Android devs
       permalink: /get-started/flutter-for/android-devs
-    - title: Flutter for iOS Devs
+    - title: Flutter for iOS devs
       permalink: /get-started/flutter-for/ios-devs
-    - title: Flutter for React Native Devs
+    - title: Flutter for React Native devs
       permalink: /get-started/flutter-for/react-native-devs
-    - title: Flutter for Web Devs
+    - title: Flutter for web devs
       permalink: /get-started/flutter-for/web-devs
-    - title: Flutter for Xamarin.Forms Devs
+    - title: Flutter for Xamarin.Forms devs
       permalink: /get-started/flutter-for/xamarin-forms-devs
 
-- title: Samples & Codelabs
+- title: Samples & codelabs
   # FIXME: we need a permalink that is common to all children
   # permalink: ?
   children:
@@ -37,7 +37,7 @@
     permalink: /codelabs
   - title: GitHub samples
     permalink: https://github.com/flutter/samples/blob/master/INDEX.md
-  - title: Flutter Gallery - demo app
+  - title: Flutter gallery - demo app
     permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
@@ -117,7 +117,7 @@
     - title: Widget inspector
       permalink: /development/tools/inspector
 
-- title: Testing & Optimization
+- title: Testing & optimization
   permalink: /testing
   children:
   - title: Debugging your app
@@ -152,7 +152,7 @@
   - title: FAQ
     permalink: /resources/faq
 
-- title: APIs & References
+- title: APIs & references
   children:
   - title: Widget catalog
     permalink: /development/ui/widgets
