@@ -69,10 +69,12 @@ $homepage-illustration-text-break-size: 720px;
     color: white;
     font-size: 24px;
     font-weight: 300;
-    margin: 0;
+    padding: 1rem 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
 
     @include media-query($homepage-illustration-text-break-size) {
         font-size: 16px;
+        padding-left: 1.5rem;
     }
 
     a, a:hover {
