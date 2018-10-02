@@ -47,17 +47,12 @@
 
 img.homepage__illustration--image {
     position: absolute;
-    top: 0;
     right: 0;
     width: 40%;
     z-index: 10;
 
-    @include media-query(570px) {
-        top: 30px;
-    }
-
     @include media-query(480px) {
-        top: 75px;
+        margin-top: 60px;
         width: 150px;
     }
 }

@@ -12,6 +12,8 @@ branch: master
 
 pub: https://pub.dartlang.org
 
+show_banner: false
+
 # Build settings
 source: src
 
