@@ -37,16 +37,17 @@ especially:
   * `versionCode` & `versionName`: Specify the internal app version number,
      and the version number display string. You can do this by setting
      the `version` property in the pubspec.yaml file. Consult the version
-     information guidance in the [versions documenation][versions] for details.
+     information guidance in the [versions documentation][versions].
 
   * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
      and the API level on which the app is designed to run. Consult the API
-     level section in the [versions documetation][versions] for details.
+     level section in the [versions documentation][versions] for details.
 
 ## Adding a Launcher icon
 
 When a new Flutter app is created, it has a default Launcher icon. To
-customize this icon you might want to check out the [Flutter Launcher Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+customize this icon you might want to check out the [Flutter Launcher
+Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
 
 Alternatively, if you want to do it manually, here's how:
 
@@ -73,7 +74,7 @@ by running the following at the command line:
 
 *Note:* Keep this file private; do not check it into public source control.
 
-*Note:* `keytool` may not be in your path. It is part of the Java JDK,
+*Note:* `keytool` might not be in your path. It is part of the Java JDK,
 which is installed as part of Android Studio. For the concrete path,
 run `flutter doctor -v` and see the path printed after 'Java binary at:',
 and then use that fully qualified path replacing `java` with `keytool`.
@@ -94,8 +95,8 @@ storeFile=<location of the key store file, e.g. /Users/<user name>/key.jks>
 
 ### Configure signing in gradle
 
-Configure signing for your app by editing the `<app dir>/android/app/build.gradle`
-file.
+Configure signing for your app by editing the
+`<app dir>/android/app/build.gradle` file.
 
 1. Replace:
 ```
@@ -209,7 +210,8 @@ Using the command line:
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
 
-The release APK for your app is created at `<app dir>/build/app/outputs/apk/app-release.apk`.
+The release APK for your app is created at
+`<app dir>/build/app/outputs/apk/app-release.apk`.
 
 ## Installing a release APK on a device
 
