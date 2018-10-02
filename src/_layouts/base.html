@@ -2,7 +2,7 @@
 <html lang="en">
   {% include head.html -%}
 
-  <body>
+  <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
     {% include body.html -%}
 
     <div id="overlay-under-drawer">

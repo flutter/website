@@ -27,7 +27,7 @@
   {% assign og_image_path = page.image | default: layout.image | default: '/images/flutter-logo-sharing.png' %}
   <meta property="og:image" content="{{og_image_path | absolute_url}}">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400|Roboto:300,400,500|Roboto+Mono:400,700|Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500|Roboto+Mono:400,700|Material+Icons" rel="stylesheet">
   {% asset main.css %}
   {% for css in page.css -%}
     {% asset '{{css}}' %}

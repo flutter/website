@@ -1,0 +1,148 @@
+.homepage {
+  background-color: $site-color-codeblock-bg;
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 2.75rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .card {
+    margin-bottom: bs-spacer(8);
+
+    .card-body {
+      padding: 40px 20px;
+      @include media-breakpoint-up(md) {
+        padding: 40px;
+      }
+      @include media-breakpoint-up(lg) {
+        padding: 60px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding: 80px;
+      }
+    }
+  }
+
+  .btn {
+    font-weight: 500;
+    padding: bs-spacer(3) bs-spacer(12);
+  }
+
+  &__tagline {
+    font-family: $site-font-family-alt;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
+    @include media-breakpoint-up(md) {
+      font-size: 1.75rem;
+    }
+
+    &__partner {
+      font-size: 1.25rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__statement {
+      margin: bs-spacer(8) 0;
+      @include media-breakpoint-up(md) {
+        margin: bs-spacer(12) 0;
+      }
+    }
+  }
+
+  &__icon {
+    align-items: center;
+    background-color: $site-color-primary;
+    border-radius: 50%;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    margin-bottom: bs-spacer(4);
+    overflow: hidden;
+    width: 48px;
+    @include media-breakpoint-up(md) {
+      height: 68px;
+      width: 68px;
+    }
+
+    img {
+      max-width: 50%;
+    }
+  }
+
+  &__key-point {
+    @include media-breakpoint-down(md) {
+      &:not(:last-of-type) {
+        margin-bottom: bs-spacer(12);
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-graphic {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: bs-spacer(5);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__news {
+    .card .card-body {
+      padding: 20px;
+      @include media-breakpoint-up(lg) {
+        padding: 40px;
+      }
+    }
+  }
+
+  &__try {
+    &__headline {
+      margin-bottom: bs-spacer(2);
+      @include media-breakpoint-up(md) {
+        margin-bottom: bs-spacer(4);
+      }
+    }
+
+    &__body {
+      font-size: 1.25rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.35rem;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__cta {
+      margin-top: bs-spacer(4);
+      @include media-breakpoint-up(md) {
+        margin-top: bs-spacer(8);
+      }
+    }
+  }
+}

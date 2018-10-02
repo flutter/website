@@ -1,10 +1,13 @@
+// variables
 @import '_variables';
 
+// configs
 @import '_bootstrap_config';
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// components
 @import '_base';
 @import '_header';
 @import '_next-prev-nav';
@@ -17,5 +20,8 @@
 @import '_pygments-bg-light';
 // @import '_pygments-bg-dark';
 @import '_code_pre';
+
+// page types
+@import '_homepage';
 
 @import 'site_overrides';

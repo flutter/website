@@ -21,7 +21,6 @@
 
     .btn {
       font-size: $font-size-sm;
-      padding: bs-spacer(2) bs-spacer(10);
 
       @include media-breakpoint-up(md) {
         margin-left: bs-spacer(4);
