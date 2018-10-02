@@ -8,8 +8,8 @@ and Android, some of which are summarised below.
 
 This document is most useful if you want to contribute to Flutter, as
 then we hope you will also follow these philosophies. Please also read
-our
-[style guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo)
+our [style
+guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo)
 for more specific guidelines regarding writing Dart code for Flutter.
 
 
@@ -136,7 +136,7 @@ To make a change that will require developers to change their code:
       contacting the person who made the change.
 
     - A request that people notify you if this change will be a problem,
-      perhaps by discussing the change in the issue tracker on on the pull request.
+      perhaps by discussing the change in the issue tracker on the pull request.
 
  3. **If folks agree that the benefits of changing the API outweigh the stablity
     costs**, you can proceed with the normal code review process for making

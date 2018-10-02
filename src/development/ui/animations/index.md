@@ -63,9 +63,9 @@ specifically, but they use tweens in their examples.
 ### Physics-based animation
 
 In physics-based animation, motion is modeled to resemble real-world
-behavior. When you toss a ball, for example, where and when
-it lands depends on how fast it was tossed, how heavy it is, and how
-far off the ground. Similarly, dropping a ball attached to a spring falls
+behavior. When you toss a ball, for example, where and when it lands
+depends on how fast it was tossed and how far it was from the ground.
+Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
 * [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
