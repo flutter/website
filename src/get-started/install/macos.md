@@ -1,6 +1,8 @@
 ---
 title: "Get Started: Install on macOS"
-# js: [{defer: true, url: /assets/archive.js}]
+next:
+  title: Configure editor
+  path: /get-started/editor
 ---
 
 {% assign os = 'macos' -%}
