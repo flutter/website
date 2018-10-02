@@ -2,8 +2,9 @@
 title: Preparing an Android App for Release
 ---
 
-During the typical development cycle, you'll test an app using `flutter run` at the
-command line, the Run and Debug toolbar buttons in IntelliJ, or both. By default,
+During a typical development cycle, you test an app using
+`flutter run` at the command line, the **Run** and **Debug**
+toolbar buttons in IntelliJ. By default,
 Flutter builds a *debug* version of your app.
 
 When you're ready to prepare a *release* version for Android, for example to
@@ -12,54 +13,57 @@ When you're ready to prepare a *release* version for Android, for example to
 ## Review the App Manifest
 
 Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
-in `<app dir>/android/app/src/main/` and verify the values are correct,
+in `<app dir>/android/app/src/main` and verify the values are correct,
 especially:
 
 * `application`: Edit the [`application`][applicationtag] tag to reflect the
-final name of the app.
+  final name of the app.
 
 * `uses-permission`: Remove the `android.permission.INTERNET`
-[permission][permissiontag] if your application code does not need Internet
-access. The standard template includes this tag to enable communication between
-Flutter tools and a running app.
+  [permission][permissiontag] if your application code does not need Internet
+  access. The standard template includes this tag to enable communication
+  between Flutter tools and a running app.
 
 ## Review the build configuration
 
 Review the default [Gradle build file][gradlebuild] file `build.gradle`
-located in `<app dir>/android/app/` and verify the values are correct, especially:
+located in `<app dir>/android/app` and verify the values are correct,
+especially:
 
 * `defaultConfig`:
 
   * `applicationId`: Specify the final, unique (Application Id)[appid]
 
-  * `versionCode` & `versionName`: Specify the interall app version number, and
-  the version number display string. Consult the version information guidance in
-  the [versions documenation][versions] for details.
+  * `versionCode` & `versionName`: Specify the internal app version number,
+     and the version number display string. You can do this by setting
+     the `version` property in the pubspec.yaml file. Consult the version
+     information guidance in the [versions documentation][versions].
 
-  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level, and the
-  API level on which the app is designed to run. Consult the API level section
-  in the [versions documetation][versions] for details.
+  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
+     and the API level on which the app is designed to run. Consult the API
+     level section in the [versions documentation][versions] for details.
 
 ## Adding a Launcher icon
 
 When a new Flutter app is created, it has a default Launcher icon. To
-customize this icon you might want to check out the [Flutter Launcher Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+customize this icon you might want to check out the [Flutter Launcher
+Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
 
 Alternatively, if you want to do it manually, here's how:
 
 1. Review the [Android Launcher Icons][launchericons] guidelines for icon
-design.
+   design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
-in folders named using [Configuration Qualifiers][configurationqualifiers].
-The default `mipmap-` folders demonstrate the correct naming convention.
+   in folders named using [Configuration Qualifiers][configurationqualifiers].
+   The default `mipmap-` folders demonstrate the correct naming convention.
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
-`android:icon` attribute to reference icons from the previous step (e.g.
-`<application android:icon="@mipmap/ic_launcher" ...`).
+   `android:icon` attribute to reference icons from the previous step (for
+   example, `<application android:icon="@mipmap/ic_launcher" ...`).
 
 1. To verify the icon has been replaced, run your app using `flutter run`
-and inspect the app icon in the Launcher.
+   and inspect the app icon in the Launcher.
 
 ## Signing the app
 
@@ -68,11 +72,12 @@ If you have an existing keystore, skip to the next step. If not, create one
 by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
 
-*Note*: Keep this file private; do not check it into public source control.
+*Note:* Keep this file private; do not check it into public source control.
 
-*Note*: `keytool` may not be in your path. It is part of the Java JDK, which is installed as
-part of Android Studio. For the concrete path, run `flutter doctor -v` and see the path printed
-after 'Java binary at:', and then use that fully qualified path replacing `java` with `keytool`.
+*Note:* `keytool` might not be in your path. It is part of the Java JDK,
+which is installed as part of Android Studio. For the concrete path,
+run `flutter doctor -v` and see the path printed after 'Java binary at:',
+and then use that fully qualified path replacing `java` with `keytool`.
 
 ### Reference the keystore from the app
 
@@ -86,12 +91,12 @@ keyAlias=key
 storeFile=<location of the key store file, e.g. /Users/<user name>/key.jks>
 ```
 
-*Note*: Keep this file private; do not check it into public source control.
+*Note:* Keep this file private; do not check it into public source control.
 
 ### Configure signing in gradle
 
-Configure signing for your app by editing the `<app dir>/android/app/build.gradle`
-file.
+Configure signing for your app by editing the
+`<app dir>/android/app/build.gradle` file.
 
 1. Replace:
 ```
@@ -205,7 +210,8 @@ Using the command line:
 1. `cd <app dir>` (replace `<app dir>` with your application's directory).
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
 
-The release APK for your app is created at `<app dir>/build/app/outputs/apk/app-release.apk`.
+The release APK for your app is created at
+`<app dir>/build/app/outputs/apk/app-release.apk`.
 
 ## Installing a release APK on a device
 

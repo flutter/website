@@ -13,8 +13,8 @@ To change branch, use `flutter channel beta` / `flutter channel master`.
 
 ## Specifying the Flutter SDK for your project
 
-You specify dependencies from the Flutter SDK in the `pubspec.yaml` file. For
-example, the following snippet specifies that the
+You specify dependencies from the Flutter SDK in the `pubspec.yaml` file.
+For example, the following snippet specifies that the
 `flutter` and `flutter_test` packages use the Flutter SDK.
 
 ```
@@ -31,8 +31,9 @@ The `sdk: flutter` line tells the `flutter` command-line tool to find the
 correct package for you.
 
 Do not use the `pub get` or `pub upgrade` commands to manage your dependencies.
-Instead, use `flutter packages get` or `flutter packages upgrade`. If you want to use
-pub manually, you can run it directly by setting the `FLUTTER_ROOT` environment variable.
+Instead, use `flutter packages get` or `flutter packages upgrade`.
+If you want to use pub manually, you can run it directly by setting the
+`FLUTTER_ROOT` environment variable.
 
 ## Upgrading Flutter channel and your packages
 
