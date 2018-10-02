@@ -812,7 +812,11 @@ table th code {
 }
 
 .alert__banner {
-    margin-top: 3em;
+    margin-bottom: 2.5rem;
+}
+
+.homepage .alert__banner {
+  background-color: white;
 }
 
 .h2-like {
