@@ -110,6 +110,8 @@
       permalink: /development/tools/using-ide
     - title: Using hot reload
       permalink: /development/tools/hot-reload
+    - title: Upgrading Flutter
+      permalink: /development/tools/upgrading
     - title: Format Flutter code
       permalink: /development/tools/formatting
     - title: Widget inspector

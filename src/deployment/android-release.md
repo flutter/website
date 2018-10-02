@@ -2,9 +2,9 @@
 title: Preparing an Android App for Release
 ---
 
-During the typical development cycle, you'll test an app using
-`flutter run` at the command line, the Run and Debug toolbar buttons
-in IntelliJ, or both. By default,
+During a typical development cycle, you test an app using
+`flutter run` at the command line, the **Run** and **Debug**
+toolbar buttons in IntelliJ. By default,
 Flutter builds a *debug* version of your app.
 
 When you're ready to prepare a *release* version for Android, for example to
@@ -13,21 +13,21 @@ When you're ready to prepare a *release* version for Android, for example to
 ## Review the App Manifest
 
 Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
-in `<app dir>/android/app/src/main/` and verify the values are correct,
+in `<app dir>/android/app/src/main` and verify the values are correct,
 especially:
 
 * `application`: Edit the [`application`][applicationtag] tag to reflect the
-final name of the app.
+  final name of the app.
 
 * `uses-permission`: Remove the `android.permission.INTERNET`
-[permission][permissiontag] if your application code does not need Internet
-access. The standard template includes this tag to enable communication between
-Flutter tools and a running app.
+  [permission][permissiontag] if your application code does not need Internet
+  access. The standard template includes this tag to enable communication
+  between Flutter tools and a running app.
 
 ## Review the build configuration
 
 Review the default [Gradle build file][gradlebuild] file `build.gradle`
-located in `<app dir>/android/app/` and verify the values are correct,
+located in `<app dir>/android/app` and verify the values are correct,
 especially:
 
 * `defaultConfig`:
