@@ -5,11 +5,12 @@ _site
 build
 .*swp
 node_modules
+package-lock.json
 
 # Dart and Flutter
 .flutter-plugins
 .packages
-.pub/
+.dart_tool
 pubspec.lock
 packages
 example.g/
@@ -19,3 +20,7 @@ src/_includes/code/**/ios/
 
 .idea/
 .firebase/
+
+# Submodules
+flutter/
+site-shared/
