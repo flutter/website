@@ -12,6 +12,8 @@ branch: dash # TODO: reset to master
 
 pub: https://pub.dartlang.org
 
+show_banner: true
+
 defaults:
 - scope:
     path: ''
