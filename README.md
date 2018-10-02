@@ -77,8 +77,15 @@ if you already have the required packages installed.
 
  1. Test your changes by serving the site locally. Run either **one** of these commands:
 
-    - `./tool/serve.sh`, _or_
+    - `./tool/serve.sh`
+    
+    or
+    
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
+    
+      **Note**: Unless you're editing files under `site-shared`, you can safely 
+      ignore `ERROR: directory is already being watched` messages.
+      For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
