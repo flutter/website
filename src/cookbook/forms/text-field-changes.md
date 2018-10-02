@@ -140,16 +140,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
     // Start listening to changes
     myController.addListener(_printLatestValue);
   }
-
-  @override
-  void dispose() {
-    // Stop listening to text changes
-    myController.removeListener(_printLatestValue);
-
-    // Clean up the controller when the Widget is removed from the Widget tree
-    myController.dispose();
-    super.dispose();
-  }
 }
 ```
 
@@ -193,7 +183,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   void dispose() {
     // Clean up the controller when the Widget is removed from the Widget tree
-    myController.removeListener(_printLatestValue);
+    // This also removes the _printLatestValue listener
     myController.dispose();
     super.dispose();
   }
