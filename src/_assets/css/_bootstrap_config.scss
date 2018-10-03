@@ -17,7 +17,22 @@ $h2-font-size: 2.25rem;
 $h3-font-size: 1.125rem;
 $dt-font-weight: $font-weight-base;
 
-// Spacing (extra spacers beyond Bootstrap's defaults)
+// Layout config
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1330px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
 $site-spacer: 1rem; // assert: should match Bootstrap $spacer
 $spacers: (
   1: ($site-spacer * 0.25),
