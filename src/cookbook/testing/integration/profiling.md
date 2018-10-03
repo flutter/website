@@ -31,7 +31,7 @@ a local file.
 In this recipe, we'll record the performance of an app as it scrolls through a
 list of items. In order to focus on performance profiling, this recipe builds
 upon the
-[Scrolling in integration tests](/cookbook/testing/integration-test-scrolling/)
+[Scrolling in integration tests](/cookbook/testing/integration/scrolling)
 recipe.
 
 Please follow the instructions in that recipe to create an app, instrument the
@@ -41,13 +41,13 @@ app, and write a test to verify everything works as expected.
 
 Next, we need to record the performance of the app as it scrolls through the
 list. To achieve this task, we can use the
-[`traceAction`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/traceAction.html)
+[`traceAction`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
 method provided by the
-[`FlutterDriver`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html)
+[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class.
 
 This method runs the the provided function and records a
-[`Timeline`](https://docs.flutter.io/flutter/flutter_driver/Timeline-class.html)
+[`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
 with detailed information about the performance of the app. In this example, we
 provide a function that scrolls through the list of items, ensuring a specific
 item is displayed. When the function completes, the `traceAction` method returns
@@ -74,7 +74,7 @@ The `Timeline` object provides detailed information about all of the events that
 took place, but it does not provide a convenient way to review the results.
 
 Therefore, we can convert the `Timeline` into a
-[`TimelineSummary`](https://docs.flutter.io/flutter/flutter_driver/TimelineSummary-class.html).
+[`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html).
 The `TimelineSummary` can perform two tasks that make it easier to review the
 results:
 

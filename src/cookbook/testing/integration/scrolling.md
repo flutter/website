@@ -8,16 +8,16 @@ tests, we need a way to scroll through lists to search for particular items.
 
 In order to scroll through lists via integration tests, we can use the methods
 provided by the
-[`FlutterDriver`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html)
+[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class, which is included in the
-[`flutter_driver`](https://docs.flutter.io/flutter/flutter_driver/flutter_driver-library.html)
+[`flutter_driver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
 package:
 
 In this recipe, we'll learn how to scroll through a list of items in order to
 verify a specific Widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
 please read through the [Introduction to integration
-testing](/cookbook/testing/integration-test-introduction/) recipe.
+testing](/cookbook/testing/integration) recipe.
 
 ### Directions
 
@@ -30,13 +30,13 @@ testing](/cookbook/testing/integration-test-introduction/) recipe.
 
 In this recipe, we'll build an app that shows a long list of items. In order to
 keep this recipe focused on testing, we'll use the app we created in the
-[Working with long lists](/cookbook/lists/long-lists/) recipe. If you're unsure
+[Working with long lists](/cookbook/lists/long-lists) recipe. If you're unsure
 of how to work with lists of content, please see that recipe for an
 introduction.
 
 As we did in the [Introduction to integration
-testing](/cookbook/testing/integration-test-introduction/) recipe, we'll also
-add Keys to the widgets we want to interact with inside our integration tests.
+testing](/cookbook/testing/integration) recipe, we'll also add keys to the
+widgets we want to interact with inside our integration tests.
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -110,20 +110,20 @@ void main() {
 
 Now, we can write our test! In this example, we need to scroll through the list
 of items and verify that a particular item exists in the list. The
-[`FlutterDriver`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html)
+[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class provides three methods for scrolling through lists:
 
   - The
-  [`scroll`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scroll.html)
+  [`scroll`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html)
   method allows us to scroll through a specific list by a given amount.
   - The
-  [`scrollIntoView`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
+  [`scrollIntoView`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
   method finds a specific Widget that's already been rendered, and will scroll
   it completely into view. Some Widgets, such as
-  [`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html),
+  [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
   render items on-demand.
   - The
-  [`scrollUntilVisible`](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
+  [`scrollUntilVisible`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
   method scrolls through a list until a specific Widget is visible.
 
 While all three methods work for specific use-cases, `scrollUntilVisible` is

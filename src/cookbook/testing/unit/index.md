@@ -6,9 +6,9 @@ How can we ensure that our apps continue to work as we add more features or
 change existing functionality? By writing tests!
 
 Unit tests are handy for verifying the behavior of a single function, method, or
-class. The [`test`](https://pub.dartlang.org/packages/test) package provides the
+class. The [`test`]({{site.pub-pkg}}/test) package provides the
 core framework for writing unit tests, and the
-[`flutter_test`](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
+[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 package provides additional utilities for testing Widgets.
 
 This recipe demonstrates the core features provided by the `test` package. For

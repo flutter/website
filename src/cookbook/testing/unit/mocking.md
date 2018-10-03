@@ -18,11 +18,11 @@ return specific results depending on the situation.
 Generally speaking, we can mock dependencies by creating an alternative
 implementation of a class. We can write these alternative implementations by
 hand or make use of the
-[Mockito package](https://pub.dartlang.org/packages/mockito) as a shortcut.
+[Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
 
 This recipe demonstrates the basics of mocking using the Mockito package.
 For more information, please see the
-[mockito package documentation](https://pub.dartlang.org/packages/mockito).
+[Mockito package documentation]({{site.pub-pkg}}/mockito).
 
 ## Directions
 
@@ -85,7 +85,7 @@ Future<Post> fetchPost(http.Client client) async {
 
 Next, we'll need to create our test file along with a `MockClient` class.
 Following the advice in the
-[Introduction to unit testing](/cookbook/testing/unit-test/) recipe, we will
+[Introduction to unit testing](/cookbook/testing/unit/) recipe, we will
 create a file called `fetch_post_test.dart` file in the root `test` folder.
 
 The `MockClient` class will implement the `http.Client` class. This will allow
@@ -154,13 +154,13 @@ main() {
 Now that we have a `fetchPost` function with tests in place, we can run the
 tests!
 
-```
-flutter test test/counter_test.dart
+```terminal
+$ flutter test test/counter_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the instructions
 in the
-[Introduction to unit testing](/cookbook/testing/unit-test/#run-tests-using-intellij-or-vscode)
+[Introduction to unit testing](/cookbook/testing/unit#run-tests-using-intellij-or-vscode)
 recipe.
 
 ### Summary
