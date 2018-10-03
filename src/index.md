@@ -10,6 +10,10 @@ description: >
   around the world, and is free and open source.
 ---
 
+<div class="homepage__tagline text-center">
+  {% include banner.html -%}
+</div>
+
 <div class="homepage__hero text-center">
     <h1 class="homepage__hero--text">Build Beautiful Apps</h1>
 </div>
