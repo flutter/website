@@ -145,6 +145,8 @@
   children:
   - title: Dart resources
     permalink: /resources/bootstrap-into-dart
+  - title: Inside Flutter
+    permalink: /resources/inside-flutter
   - title: Flutter best practices
   - title: Technical videos for learning Flutter
   - title: Flutter developer communities
