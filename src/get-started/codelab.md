@@ -413,7 +413,7 @@ lazily, on demand.
       }
     {% endprettify %}
 
-    Next, you'll add a `_buildSuggestions()` function to the `RandomwordsState`
+    Next, you'll add a `_buildSuggestions()` function to the `RandomWordsState`
     class. This method builds the `ListView` that displays the suggested
     word pairing.
 
