@@ -14,7 +14,7 @@ With some additional details, this design also makes it easy for developers
 to create infinite scrolling lists using callbacks that build exactly those
 widgets that are visible to the user.
 
-# Aggressive Composability
+# Aggressive composability
 
 One of the most distinctive aspects of Flutter is its _aggressive
 composability_. Widgets are built by composing other widgets,
