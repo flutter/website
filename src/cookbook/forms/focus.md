@@ -49,8 +49,10 @@ First, we'll need to create a [`FocusNode`](https://docs.flutter.io/flutter/widg
 We will use the `FocusNode` to identify a specific `TextField` in Flutter's
 "focus tree." This will allow us to focus the `TextField` in the next steps.
 
-Since focus nodes are long-lived objects, we need to store them in a `State`
-class. In addition, we need to `dispose` of them when they're no longer needed!
+Since focus nodes are long-lived objects, we need to manage the lifecycle 
+using a `State`class. To do so, create the `FocusNode` instance inside the 
+`initState` method of a `State` class, and clean them up inside the `dispose` 
+method.
 
 <!-- skip -->
 ```dart
@@ -63,8 +65,16 @@ class MyCustomForm extends StatefulWidget {
 // Define a corresponding State class. This class will hold the data related to
 // the form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create the focus node. We will pass it to the TextField below.
-  final FocusNode myFocusNode = FocusNode();
+  // Define the focus node. To manage the lifecycle, create the FocusNode in
+  // the initState method, and clean it up in the dispose method
+  FocusNode myFocusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    
+    myFocusNode = FocusNode();
+  }
 
   @override
   void dispose() {
@@ -141,8 +151,16 @@ class MyCustomForm extends StatefulWidget {
 // Define a corresponding State class. This class will hold the data related to
 // the form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create the focus node. We will pass it to the TextField below.
-  final FocusNode myFocusNode = FocusNode();
+  // Define the focus node. To manage the lifecycle, create the FocusNode in
+  // the initState method, and clean it up in the dispose method
+  FocusNode myFocusNode;
+
+  @override
+  void initState() {
+    super.initState();
+
+    myFocusNode = FocusNode();
+  }
 
   @override
   void dispose() {
