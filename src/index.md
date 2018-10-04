@@ -10,7 +10,7 @@ description: >
   around the world, and is free and open source.
 ---
 
-<div class="homepage__tagline text-center">
+<div class="text-center">
   {% include banner.html -%}
 </div>
 
@@ -18,12 +18,12 @@ description: >
     <h1 class="homepage__hero--text">Build Beautiful Apps</h1>
 </div>
 
-<section class="homepage__tagline card text-center">
+<section class="homepage__intro card text-center">
     <div class="card-body">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <span class="homepage__tagline__partner">Partnered with Google</span>
-                <p class="homepage__tagline__statement">
+                <span class="homepage__intro__partner">Made by <img src="/images/logo-google.svg" alt="Google"></span>
+                <p class="homepage__intro__statement">
                 Flutter is Google’s mobile app SDK
                 for crafting high-quality native interfaces
                 on iOS and Android in record time. Flutter works with existing code,
@@ -31,8 +31,9 @@ description: >
                 and is free and open source.
                 </p>
             
-                <div class="homepage__button_row">
-                    <a href="/get-started/install" class="btn btn-primary">Get Started</a>
+                <div class="homepage__intro__buttons">
+                    <a class="btn btn-primary" href="/get-started/install">Get Started</a>
+                    <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch video</button>
                 </div>
             </div>
         </div>
@@ -84,7 +85,7 @@ description: >
 <section class="homepage__hot-reload card">
     <div class="card-body">
         <div class="row">
-            <div class="homepage__card-graphic col-lg-8">
+            <div class="homepage__card-graphic--fill col-lg-8">
                 <img src="/development/tools/images/hot-reload.gif" alt="Make a change in your code, and your app is changed instantly.">
             </div>
             
@@ -109,8 +110,17 @@ description: >
 <section class="homepage__beautiful-uis card ">
     <div class="card-body">
         <div class="row">
-            <div class="homepage__card-graphic col-lg-8 order-lg-1">
-                <img src="/images/homepage/reflectly.png" alt="Delight your users with expressive, beautiful UIs.">
+            <div class="homepage__card-graphic--fill col-lg-8 order-lg-1">
+                <div>
+                    <div class="homepage__beautiful-uis__app-info">
+                        <h5>Reflectly</h5>
+                        <small>
+                        Download: <a href="https://itunes.apple.com/us/app/reflectly-mindfulness-journal/id1241229134" target="_blank">iOS</a>, <a href="https://play.google.com/store/apps/details?id=com.reflectlyApp&e=-EnableAppDetailsPageRedesign" target="_blank">Android</a><br>
+                        <a href="https://reflect.ly/" target="blank">Learn more</a>
+                        </small>
+                    </div>
+                    <img src="/images/homepage/reflectly.png" alt="Delight your users with expressive, beautiful UIs.">
+                </div>
             </div>
             <div class="col-lg-4">
                 <div class="homepage__icon"><img src="/images/icon-ui.svg"></div>
@@ -133,7 +143,7 @@ description: >
 <section class="homepage__native-performance card ">
     <div class="card-body">
         <div class="row">
-            <div class="homepage__card-graphic col-lg-8">
+            <div class="homepage__card-graphic--fill col-lg-8">
                 <img src="/images/homepage/platform-parity.png" alt="Delight your users with expressive, beautiful UIs.">
             </div>
             <div class="col-lg-4">
@@ -155,7 +165,9 @@ description: >
     <div class="card-body">
         <div class="row">
             <div class="homepage__card-graphic col-lg-8 order-lg-1">
-                <!-- TODO(fguerrero): Add images for this section -->
+                <div class="embedded-video-wrapper">
+                    <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/W1pNjxmNHNQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
             </div>
             <div class="col-lg-4">
                 <h2>Learn from developers</h2>
@@ -173,10 +185,21 @@ description: >
 <section class="homepage__use-cases card ">
     <div class="card-body">
         <div class="row">
-            <div class="homepage__card-graphic col-lg-8 order-lg-1">
-                <!-- TODO(fguerrero): Add images for this section -->
+            <div class="homepage__card-graphic col-lg-7 order-lg-1">
+                <div>
+                    <div class="row align-items-center">
+                        <img class="col-4" src="/images/homepage/logo-alibaba.png" alt="Alibaba Logo" width="151">
+                        <img class="col-4" src="/images/homepage/logo-hamilton.png" alt="Hamilton Logo" width="108">
+                        <img class="col-4" src="/images/homepage/logo-groupon.png" alt="Groupon Logo" width="168">
+                    </div>
+                    <div class="row align-items-center">
+                        <img class="col-4" src="/images/homepage/logo-tencent.png" alt="Tencent Logo" width="192">
+                        <img class="col-4" src="/images/homepage/logo-abbey_road_studios.png" alt="Abbey Road Studios Logo" width="78">
+                        <img class="col-4" src="/images/homepage/logo-google_adwords.png" alt="Google AdWords Logo" width="183">
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <h2>Join brands who are building with Flutter</h2>
 
                 <p>
@@ -184,23 +207,6 @@ description: >
                 </p>
                 
                 <a href="/showcase">See what’s being created.</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="homepage__community card ">
-    <div class="card-body">
-        <div class="row">
-            <div class="homepage__card-graphic col-lg-8 order-lg-1">
-                <!-- TODO(fguerrero): Add map for this section -->
-            </div>
-            <div class="col-lg-4">
-                <p><small class="text-muted">Community</small></p>
-                <h3>Find other developers building with Flutter</h3>
-                
-                <input type="number" class="form-control" placeholder="Enter Zip Code" aria-label="Zip Code">
-                <a href="#" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </div>
@@ -232,3 +238,16 @@ description: >
         <a class="homepage__try__cta btn btn-primary" href="/get-started/install">Get Started</a>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="embedded-video-wrapper">
+            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
