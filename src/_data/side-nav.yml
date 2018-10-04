@@ -120,14 +120,17 @@
 - title: Testing & optimization
   permalink: /testing
   children:
-  - title: Debugging your app
+  - title: Debugging
     permalink: /testing/debugging
-  - title: Testing your app
+  - title: Using OEM debuggers
+    permalink: /testing/oem-debugging
+  - title: Testing
     permalink: /testing
     urlExactMatch: true
   - title: Performance profiling
     permalink: /testing/ui-performance
   # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
+  # We don't have this page yet, so that's fine.
   # - title: Making your compiled app smaller
 
 - title: Deployment
@@ -147,10 +150,14 @@
     permalink: /resources/bootstrap-into-dart
   - title: Inside Flutter
     permalink: /resources/inside-flutter
-  - title: Flutter best practices
+  # - title: Flutter best practices
+  # TODO: We don't have this page yet.
   - title: Technical videos for learning Flutter
-  - title: Flutter developer communities
-  - title: Flutter learning resources
+    permalink: /resources/videos
+  # - title: Flutter developer communities
+  # TODO: We don't have this page yet.
+  # - title: Flutter learning resources
+  # TODO: We don't have this page yet.
   - title: FAQ
     permalink: /resources/faq
 
