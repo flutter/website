@@ -10,7 +10,10 @@ repo:
   flutter: https://github.com/flutter/flutter
 branch: dash # TODO: reset to master
 
+api: https://docs.flutter.io
 pub: https://pub.dartlang.org
+pub-api: https://pub.dartlang.org/documentation
+pub-pkg: https://pub.dartlang.org/packages
 
 defaults:
 - scope:

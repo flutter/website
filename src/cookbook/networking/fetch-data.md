@@ -204,8 +204,8 @@ class _MyAppState extends State<MyApp> {
 For information on how to test this functionality, please see the following
 recipes:
 
-  * [Introduction to unit testing](/cookbook/testing/unit-test)
-  * [Mock dependencies using Mockito](/cookbook/testing/mocking)
+  * [Introduction to unit testing](/cookbook/testing/unit)
+  * [Mock dependencies using Mockito](/cookbook/testing/unit/mocking)
 
 ## Complete example
 

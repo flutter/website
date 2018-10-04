@@ -10,7 +10,7 @@ reference to help you build up an application.
 
   * [Using Themes to share colors and font styles](/cookbook/design/themes)
   * [Displaying SnackBars](/cookbook/design/snackbars)
-  * [Working with Tabs](/cookbook/design/tabs)
+  * [Working with tabs](/cookbook/design/tabs)
   * [Using custom fonts](/cookbook/design/fonts)
   * [Exporting fonts from a package](/cookbook/design/package-fonts)
   * [Add a Drawer to a screen](/cookbook/design/drawer)
@@ -30,11 +30,11 @@ reference to help you build up an application.
   * [Creating lists with different types of items](/cookbook/lists/mixed-list)
   * [Creating a grid List](/cookbook/lists/grid-lists)
 
-## Handling Gestures
+## Handling gestures
 
-  * [Handling Taps](/cookbook/gestures/handling-taps)
-  * [Adding Material Touch ripples](/cookbook/gestures/ripples)
-  * [Implement Swipe to Dismiss](/cookbook/gestures/dismissible)
+  * [Handling taps](/cookbook/gestures/handling-taps)
+  * [Adding Material touch ripples](/cookbook/gestures/ripples)
+  * [Implement swipe to dismiss](/cookbook/gestures/dismissible)
 
 ## Navigation
 
@@ -42,11 +42,11 @@ reference to help you build up an application.
   * [Send data to a new screen](/cookbook/navigation/passing-data)
   * [Return data from a screen](/cookbook/navigation/returning-data)
   * [Navigate with named routes](/cookbook/navigation/named-routes)
-  * [Animating a Widget across screens](/cookbook/navigation/hero-animations)
+  * [Animating a widget across screens](/cookbook/navigation/hero-animations)
 
 ## Animation
 
-  * [Fade a Widget in and out](/cookbook/animation/opacity-animation)
+  * [Fade a widget in and out](/cookbook/animation/opacity-animation)
 
 ## Networking
 
@@ -70,23 +70,23 @@ reference to help you build up an application.
 
 ## Testing
 
-### Unit Tests
+### Unit tests
 
-  * [Introduction to unit testing](/cookbook/testing/unit-test)
-  * [Mock dependencies using Mockito](/cookbook/testing/mocking)
+  * [Introduction to unit testing](/cookbook/testing/unit)
+  * [Mock dependencies using Mockito](/cookbook/testing/unit/mocking)
 
-### Widget Tests
+### Widget tests
 
-  * [Introduction to Widget testing](/cookbook/testing/widget-test-introduction)
-  * [Finding Widgets in a Widget Test](/cookbook/testing/widget-test-finders)
-  * [Tapping and Dragging in Widget Tests](/cookbook/testing/widget-test-tap-drag)
+  * [Introduction to widget testing](/cookbook/testing/widget)
+  * [Finding widgets in a widget test](/cookbook/testing/widget/finders)
+  * [Tapping and Dragging in widget tests](/cookbook/testing/widget/tap-drag)
 
-### Integration Tests
+### Integration tests
 
-  * [Introduction to integration testing](/cookbook/testing/integration-test-introduction)
-  * [Scrolling in integration tests](/cookbook/testing/integration-test-scrolling)
-  * [Performance profiling with integration tests](/cookbook/testing/integration-test-profiling)
+  * [Introduction to integration testing](/cookbook/testing/integration)
+  * [Scrolling in integration tests](/cookbook/testing/integration/scrolling)
+  * [Performance profiling with integration tests](/cookbook/testing/integration/profiling)
 
-## App Maintenance
+## App maintenance
 
   * [Report errors to a service](/cookbook/maintenance/error-reporting)

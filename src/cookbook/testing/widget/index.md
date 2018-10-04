@@ -2,22 +2,24 @@
 title: Introduction to Widget testing
 ---
 
-In the [introduction to unit testing](/cookbook/testing/unit-test/) recipe, we
+{% assign api = site.api | append: '/flutter' -%}
+
+In the [introduction to unit testing](/cookbook/testing/unit) recipe, we
 learned how to test Dart classes using the `test` package. In order to test
 Widget classes, we'll need a few additional tools provided by the
-[`flutter_test`](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
+[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
 package, which ships with the Flutter SDK.
 
 The `flutter_test` package provides the following tools for testing Widgets:
 
-  * The [`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html),
+  * The [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html),
   which allows us to build and interact with Widgets in a test environment.
-  * The [`testWidgets`](https://docs.flutter.io/flutter/flutter_test/testWidgets.html)
+  * The [`testWidgets`]({{api}}/flutter_test/testWidgets.html)
   function. This function will automatically create a new `WidgetTester` for
   each test case, and is used in place of the normal `test` function.
-  * [`Finder`](https://docs.flutter.io/flutter/flutter_test/Finder-class.html)
+  * [`Finder`]({{api}}/flutter_test/Finder-class.html)
   classes. These allow us to search for Widgets in the test environment.
-  * Widget-specific [`Matcher`](https://docs.flutter.io/flutter/package-matcher_matcher/Matcher-class.html)
+  * Widget-specific [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html)
   constants, which help us verify whether a `Finder` locates a Widget or
   multiple Widgets in the test environment.
 
@@ -83,7 +85,7 @@ class MyWidget extends StatelessWidget {
 
 Now that we have a Widget to test, we can begin writing our first test! To get
 started, we'll use the
-[`testWidgets`](https://docs.flutter.io/flutter/flutter_test/testWidgets.html)
+[`testWidgets`]({{api}}/flutter_test/testWidgets.html)
 function provided by the `flutter_test` package to define a test. The
 `testWidgets` function will allow us to define a Widget test and will create a
 `WidgetTester` for us to work with.
@@ -106,7 +108,7 @@ void main() {
 
 Next, we'll want to build `MyWidget` inside the test environment. To do so, we
 can use the
-[`pumpWidget`](https://docs.flutter.io/flutter/flutter_test/WidgetTester/pumpWidget.html)
+[`pumpWidget`]({{api}}/flutter_test/WidgetTester/pumpWidget.html)
 method provided by the `WidgetTester`. The `pumpWidget` method will build and
 render the Widget we provide.
 
@@ -133,9 +135,9 @@ For example, if we tap a button, and this button calls `setState`, Flutter will
 not automatically rebuild your Widget in the test environment. We need to use
 one of the following methods to ask Flutter to build our Widget once again.
 
-  - [tester.pump()](https://docs.flutter.io/flutter/flutter_test/TestWidgetsFlutterBinding/pump.html)
+  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
   : Triggers a rebuild of the Widget after a given duration.
-  - [tester.pumpAndSettle()](https://docs.flutter.io/flutter/flutter_test/WidgetTester/pumpAndSettle.html)
+  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
   : Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
 
 These methods provide fine-grained control over the build lifecycle, which is
@@ -148,14 +150,14 @@ through the Widget tree for the `title` and `message` Text Widgets using a
 `Finder`. This will allow us to verify that we're displaying these Widgets
 correctly!
 
-In this case, we'll use the top-level [`find`](https://docs.flutter.io/flutter/flutter_test/find-constant.html)
+In this case, we'll use the top-level [`find`]({{api}}/flutter_test/find-constant.html)
 method provided by the `flutter_test` package to create our `Finders`. Since we
 know we're looking for `Text` widgets, we can use the
-[`find.text`](https://docs.flutter.io/flutter/flutter_test/CommonFinders-class.html)
+[`find.text`]({{api}}/flutter_test/CommonFinders-class.html)
 method.
 
 For more information about `Finder` classes, please see the
-[Finding Widgets in a Widget Test](/cookbook/testing/widget-test-finders/)
+[Finding Widgets in a Widget Test](/cookbook/testing/widget/finders)
 recipe.
 
 <!-- skip -->
@@ -180,7 +182,7 @@ value meets our expectations.
 
 In this case, we want to ensure our Widgets appear on screen exactly one time.
 Therefore, we can use the
-[`findsOneWidget`](https://docs.flutter.io/flutter/flutter_test/findsOneWidget-constant.html)
+[`findsOneWidget`]({{api}}/flutter_test/findsOneWidget-constant.html)
 `Matcher`.
 
 <!-- skip -->
@@ -204,11 +206,11 @@ void main() {
 In addition to `findsOneWidget`, `flutter_test` provides additional matchers for
 common cases.
 
-  * [findsNothing](https://docs.flutter.io/flutter/flutter_test/findsNothing-constant.html)
+  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)
   : verifies that no Widgets are found
-  * [findsWidgets](https://docs.flutter.io/flutter/flutter_test/findsWidgets-constant.html)
+  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)
   : verifies one or more Widgets are found
-  * [findsNWidgets](https://docs.flutter.io/flutter/flutter_test/findsNWidgets.html)
+  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)
   : verifies a specific number of Widgets are found
 
 ### Complete example
