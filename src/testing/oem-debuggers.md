@@ -13,23 +13,19 @@ that portion of your code using XCode (for iOS) or Android Gradle (for Android).
 This guide shows you how you can connect _two_ debuggers to your Dart app,
 one for Dart, and one for the OEM code.
 
-* TOC Placeholder
-{:toc}
-
-# Debugging Dart code
+## Debugging Dart code
 
 Use your IDE for standard Dart debugging. These instructions describe Android
 Studio, but you can use your preferred IDE with the Flutter and Dart
 plugins installed and configured.
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-Connect to a physical device when debugging, rather than an emulator or
-simulator, which don't support profile mode. For more information, see
-[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
-</aside>
+{{site.alert.tip}}
+  Connect to a physical device when debugging, rather than an emulator or
+  simulator, which don't support profile mode. For more information, see
+  [Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
+{{site.alert.end}}
 
-## Dart debugger
+### Dart debugger
 
 * Open your project in Android Studio. If you don't have a project yet,
   create one using the instructions in [Test drive](/get-started/test-drive).
@@ -70,7 +66,7 @@ You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
 The **5: Debug** button toggles display of the debug pane.
 
-## Flutter inspector
+### Flutter inspector
 
 There are two other features provided by the Flutter plugin that you may
 find useful.  The Flutter inspector is a tool for visualizing and exploring
@@ -84,65 +80,68 @@ right of the Android Studio window.
 
 {% asset 'testing/debugging/oem/flutter-inspector.png' alt='Flutter inspector' %}
 
-## Flutter outline
+### Flutter outline
 
 The Flutter Outline displays the build method in visual form.
 Note that this may be different than the widget tree for the
-build method.
-Toggle display of the outline using the vertical button to the
-right of the AS window.
+build method. Toggle display of the outline using the vertical
+button to the right of the AS window.
 
 {% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}
 
 {% comment %}
-TODO:
-Android Tips - How to assign a keyboard shortcut on the Mac?
+TODO: Android Tips - How to assign a keyboard shortcut on the Mac?
 {% endcomment %}
 
 The rest of this guide shows how to set up your environment to debug OEM
 code. As you'd expect, the process works differently for iOS and Android.
 
-[PENDING: Consider moving to another doc]
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-Become a pro user of Android Studio by installing the **Presentation Assistant**
-plugin. You can find and install this plugin using
-**Preferences** > **Browsing repositories...** and start entering _Presen_ in
-the search field.
+{% comment %}
+Considere moving the info below to a new page.
+{% endcomment %}
 
-Once installed and AS is relaunched, this plugin helps you to become a
-pro user by:
+{{site.alert.tip}}
+  Become a pro user of Android Studio by installing the **Presentation
+  Assistant** plugin. You can find and install this plugin using
+  **Preferences** > **Browsing repositories...** and start entering
+  _Presen_ in the search field.
 
-* Showing the name and Windows/Linux/Mac shortcuts of any action you invoke.
-* Allowing you to search and find available actions, settings, docs, and so on.
-* Allowing you to toggle preferences, open up views, or run actions.
-* Allowing you to assign keyboard shortcuts (?? Can't make this work on Mac.)
+  Once installed and AS is relaunched, this plugin helps you to become a
+  pro user by:
 
-For example, try this:
+  * Showing the name and Windows/Linux/Mac shortcuts of any action you
+    invoke.
+  * Allowing you to search and find available actions, settings, docs,
+    and so on.
+  * Allowing you to toggle preferences, open up views, or run actions.
+  * Allowing you to assign keyboard shortcuts (?? Can't make this work on
+    Mac.)
 
-* While focus is in the Edit pane, enter **command-Shift-A** (Mac) or
-  **shift-control-A** (Windows and Linux).
-  The plugin simultaneously brings up the Find panel and shows a hint for
-  performing this same operation on all three platforms.
+  For example, try this:
 
-  {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}
-  Presentation assistant's Find panel
+  * While focus is in the Edit pane, enter **command-Shift-A** (Mac) or
+    **shift-control-A** (Windows and Linux).
+    The plugin simultaneously brings up the Find panel and shows a hint for
+    performing this same operation on all three platforms.
 
-  {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}
-  Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux
+    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}
+    Presentation assistant's Find panel
 
-* Enter _attach_ to see the following:
+    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}
+    Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux
 
-  {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
+  * Enter _attach_ to see the following:
 
-* After an update, you might enter _Flutter_ or _Dart_ to see if new actions
-  are available.
+    {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
+
+  * After an update, you might enter _Flutter_ or _Dart_ to see if new actions
+    are available.
 
   Hide the Presentation Assistant's Find panel by using **Escape**.
-</aside>
+{{site.alert.end}}
 
 
-# Debugging with Android Gradle (Android)
+## Debugging with Android Gradle (Android)
 
 In order to debug OEM Android code, you need an app that contains OEM Android code.
 In this section, you'll learn how to connect two debuggers to your app: 1) the
@@ -289,14 +288,14 @@ dev_dependencies:
 * Click the **Attach debugger to Android process** button (
   {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-If this button doesn't appear in the Projects menu bar, make sure that
-you are inside a Flutter project but <em>not a Flutter plugin</em>.
-</aside>
+{{site.alert.tip}}
+  If this button doesn't appear in the Projects menu bar, make sure that
+  you are inside a Flutter project but <em>not a Flutter plugin</em>.
+{{site.alert.end}}
 
 * From the process dialog, you should see an entry for each connected device.
-  Select **show all processes** to display available processes for each device.
+  Select **show all processes** to display available processes for each
+  device.
 
 * Choose the process you want to attach to. In this case, it's the
   `com.google.clickcount`
@@ -324,30 +323,36 @@ In other words, DEBUG!
   Toggle between the debuggers by clicking the appropriate debugger in
    the Debug pane's banner.
 
-# Debugging with XCode (iOS)
+## Debugging with XCode (iOS)
 
 In order to debug OEM iOS code, you need an app that contains OEM iOS code.
 In this section, you'll learn how to connect two debuggers to your app: 1) the
 Dart debugger and, 2) the XCode debugger.
 
-# Resources
+## Resources
 
 The following resources have more information on debugging Flutter,
 iOS, and Android:
 
-## Flutter
+### Flutter
 
 * [Debugging Flutter Apps](..)
 * [Advanced debugging](/development/tools/using-ide#advanced-debugging), a section in
   [Developing Flutter Apps in an IDE](/development/tools/using-ide).
 * [Performance Profiling](/testing/ui-performance)
 
-## Android (developer.android.com)
+### Android
+
+You can find the following debugging resources on
+[developer.android.com](https://developer.android.com/).
 
 * [Debug your app](https://developer.android.com/studio/debug/)
 * [Android Debug Bridge (adb)](https://developer.android.com/studio/command-line/adb)
 
-## iOS (developer.apple.com)
+### iOS
+
+You can find the following debugging resources on
+[developer.apple.com](https://developer.apple.com/).
 
 * [Debugging](https://developer.apple.com/support/debugging/)
 * [Instruments Help](https://help.apple.com/instruments/mac/current/)
