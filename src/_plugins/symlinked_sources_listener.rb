@@ -1,1 +1,1 @@
-../../site-shared/src/_plugins/symlinked_sources_listener.rb
+../_shared/_plugins/symlinked_sources_listener.rb

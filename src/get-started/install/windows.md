@@ -1,5 +1,6 @@
 ---
-title: "Get Started: Install on Windows"
+title: Windows install
+short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Configure editor

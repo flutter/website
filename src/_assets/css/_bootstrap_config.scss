@@ -54,11 +54,19 @@ $spacers: (
 }
 
 // Component config
+
 $alert-padding-y: bs-spacer(6);
 $alert-padding-x: bs-spacer(6);
+
 $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
+
+// $breadcrumb-divider: 'chevron_right';
+$breadcrumb-item-padding: .25rem;
+
 $card-border-radius: 4px;
 $card-group-margin: bs-spacer(2);
+
 $grid-gutter-width: 50px;
+

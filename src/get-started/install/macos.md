@@ -1,5 +1,6 @@
 ---
-title: "Get Started: Install on macOS"
+title: MacOS install
+short-title: MacOS
 next:
   title: Configure editor
   path: /get-started/editor

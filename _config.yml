@@ -26,6 +26,14 @@ defaults:
     # `show_banner: true` to the page's frontmatter.
     show_banner: true
 - scope:
+    path: 'get-started'
+  values:
+    show_breadcrumbs: true
+- scope:
+    path: 'get-started/flutter-for'
+  values:
+    show_breadcrumbs: false
+- scope:
     path: 'widgets'
   values:
     toc: false

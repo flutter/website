@@ -20,6 +20,9 @@ layout: base
     {% endif -%}
     <main class="site-content {{main-col}}" role="main">
       {% include banner.html -%}
+      {% if page.show_breadcrumbs -%}
+        {% include shared/breadcrumbs.html %}
+      {% endif -%}
       {% include next-prev-nav.html %}
       <header class="site-content__title">
         {% include shared/page-github-links.html %}
