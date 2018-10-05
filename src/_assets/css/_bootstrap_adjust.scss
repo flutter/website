@@ -20,6 +20,10 @@ a.card {
   }
 }
 
+.breadcrumb-item+.breadcrumb-item::before {
+  // font-family: $site-font-family-icon;
+}
+
 .btn {
   font-family: $site-font-family-alt;
   padding: bs-spacer(2) bs-spacer(10);

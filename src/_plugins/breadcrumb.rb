@@ -1,0 +1,1 @@
+../_shared/_plugins/breadcrumb.rb
