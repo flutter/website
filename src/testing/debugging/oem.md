@@ -35,16 +35,14 @@ simulator, which don't support profile mode. For more information, see
   create one using the instructions in [Test drive](/get-started/test-drive).
 
 * Simultaneously bring up the Debug pane and run the app in the Console
-  view by clicking the bug icon.
-  <img src="images/debug-run.png" style="border: 1px solid #ccc;"
-   alt="looks like a bug superimposed with a tiny green run triangle">
+  view by clicking the bug icon
+  ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %}).
 
   The first time you launch the app is the slowest.
   You should see the Debug pane appear at the bottom of the window that
   looks something like the following:
 
-  <center><img src="images/debug-pane.png" style="border: 1px solid #ccc;"
-   alt="the debug pane showing that it's connected to the debugger and running the app"></center>
+  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}
 
   You can configure where the debug pane appears, or even tear it off to its own
   window using the gear to the right in the Debug pane bar.
@@ -55,9 +53,8 @@ simulator, which don't support profile mode. For more information, see
 {% comment %}
 Not needed for breakpoints to work.
 * Hot reload the app.
-  <img src="images/hot-reload-button.png" style="border: 1px solid #ccc;"
-   alt="looks like a lightning bolt">
-{% endcomment %}
+  {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}
+{% endcomment -%}
 
 * In the app, click the **+** button (FloatingActionButton, or FAB, for short)
   to increment the counter. The app pauses.
@@ -67,8 +64,7 @@ Not needed for breakpoints to work.
   * State of the app in the debug pane, when paused at the breakpoint.
   * `this` variable expanded to display its values.
 
-  <center><img src="images/debug-pane-action.png" style="border: 1px solid #ccc;"
-   alt="the status of the app when hitting the set breakpoint"></center>
+  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}
 
 You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
@@ -86,8 +82,7 @@ the Flutter widget tree and helps you:
 Toggle display of the inspector using the vertical button to the
 right of the Android Studio window.
 
-  <center><img src="images/flutter-inspector.png" style="border: 1px solid #ccc;"
-   alt="screenshot showing the Flutter inspector"></center>
+{% asset 'testing/debugging/oem/flutter-inspector.png' alt='Flutter inspector' %}
 
 ## Flutter outline
 
@@ -97,8 +92,7 @@ build method.
 Toggle display of the outline using the vertical button to the
 right of the AS window.
 
-  <center><img src="images/flutter-outline.png" style="border: 1px solid #ccc;"
-   alt="screenshot showing the Flutter inspector"></center>
+{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}
 
 {% comment %}
 TODO:
@@ -118,6 +112,7 @@ the search field.
 
 Once installed and AS is relaunched, this plugin helps you to become a
 pro user by:
+
 * Showing the name and Windows/Linux/Mac shortcuts of any action you invoke.
 * Allowing you to search and find available actions, settings, docs, and so on.
 * Allowing you to toggle preferences, open up views, or run actions.
@@ -126,27 +121,24 @@ pro user by:
 For example, try this:
 
 * While focus is in the Edit pane, enter **command-Shift-A** (Mac) or
-**shift-control-A** (Windows and Linux).
-The plugin simultaneously brings up the Find panel and shows a hint for
-performing this same operation on all three platforms.
+  **shift-control-A** (Windows and Linux).
+  The plugin simultaneously brings up the Find panel and shows a hint for
+  performing this same operation on all three platforms.
 
-<center><img src="images/presentation-assistant-find-pane.png" style="border: 1px solid #ccc;"
- alt="example of presentation assistant's Find panel"></center>
-<center>Presentation assistant's Find panel</center>
+  {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}
+  Presentation assistant's Find panel
 
-<center><img src="images/presentation-assistant-teaches.png" style="border: 1px solid #ccc;"
- alt="example of presentation assistant's find pane"></center>
-<center>Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux</center>
+  {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}
+  Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux
 
 * Enter _attach_ to see the following:
 
-<center><img src="images/presentation-assistant-search-results.png" style="border: 1px solid #ccc;"
- alt="example of presentation assistant's Find panel"></center>
+  {% asset 'testing/debugging/oem/presentation-assistant-search-results.png' alt='Find panel' %}
 
 * After an update, you might enter _Flutter_ or _Dart_ to see if new actions
   are available.
 
-Hide the Presentation Assistant's Find panel by using **Escape**.
+  Hide the Presentation Assistant's Find panel by using **Escape**.
 </aside>
 
 
@@ -282,9 +274,8 @@ dev_dependencies:
     sdk: flutter
 {% endprettify %}
 
-* Click the debug icon ( <img src="images/debug-run.png"
-  style="border: 1px solid #ccc;"
-  alt="looks like a bug superimposed with a tiny green run triangle"> )
+* Click the debug icon
+  ({% asset 'testing/debugging/oem/debug-run.png' alt='Debug-run icon' %})
   to simultaneously bring up the Debug pane and launch the app.
   Wait for the app to launch on the device, and for the debug pane to
   indicate **Connected**.
@@ -293,13 +284,10 @@ dev_dependencies:
    opens flutter.io in your phone's default browser and 2) **Launch
    in app** opens flutter.io within your app.
 
-
-  <center><img src="images/launch-flutter-io.png" style="border: 1px solid #ccc;"
-   alt="screenshot containing two buttons for opening flutter.io"></center>
+  {% asset 'testing/debugging/oem/launch-flutter-io.png' alt='screenshot containing two buttons for opening flutter.io' %}
 
 * Click the **Attach debugger to Android process** button (
-  <img src="images/attach-process-button.png" style="border: 1px solid #ccc;"
-   alt="looks like a rectangle superimposed with a tiny green bug"> )
+  {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
 
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
@@ -315,8 +303,7 @@ you are inside a Flutter project but <em>not a Flutter plugin</em>.
    (or <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  <center><img src="images/choose-process-dialog.png" style="border: 1px solid #ccc;"
-   alt="screenshot containing two buttons for opening flutter.io"></center>
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.io' %}
 
 *  In the debug pane, you should now see a tab for **Android Debugger**.
 
@@ -328,16 +315,14 @@ Both the Dart and OEM debuggers are interacting with the the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
 In other words, DEBUG!
 
-  <center><img src="images/dart-debugger.png" style="border: 1px solid #ccc;"
-   alt="screenshot of Android Studio in the Dart debug pane."></center>
-  <center>The Dart debug pane with two breakpoints set in `lib/main.dart`.</center>
+  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}
+  The Dart debug pane with two breakpoints set in `lib/main.dart`.
 
-  <center><img src="images/android-debugger.png" style="border: 1px solid #ccc;"
-   alt="screenshot of Android Studio in the Android debug pane."></center>
-  <center>The Android debug pane with one breakpoint set in
-   `GeneratedPluginRegistrant.java`.</center>
-  <center>Toggle between the debuggers by clicking the appropriate debugger in
-   the Debug pane's banner.</center>
+  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}
+  The Android debug pane with one breakpoint set in
+   `GeneratedPluginRegistrant.java`.
+  Toggle between the debuggers by clicking the appropriate debugger in
+   the Debug pane's banner.
 
 # Debugging with XCode (iOS)
 
@@ -352,10 +337,10 @@ iOS, and Android:
 
 ## Flutter
 
-* [Debugging Flutter Apps](/debugging/)
-* [Advanced debugging](/using-ide/#advanced-debugging), a section in
-  [Developing Flutter Apps in an IDE](/using-ide/).
-* [Performance Profiling](/performance/)
+* [Debugging Flutter Apps](..)
+* [Advanced debugging](/development/tools/using-ide#advanced-debugging), a section in
+  [Developing Flutter Apps in an IDE](/development/tools/using-ide).
+* [Performance Profiling](/testing/ui-performance)
 
 ## Android (developer.android.com)
 

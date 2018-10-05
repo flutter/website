@@ -122,8 +122,9 @@
   children:
   - title: Debugging
     permalink: /testing/debugging
+    urlExactMatch: true
   - title: Using OEM debuggers
-    permalink: /testing/oem-debugging
+    permalink: /testing/debugging/oem
   - title: Testing
     permalink: /testing
     urlExactMatch: true
