@@ -22,7 +22,7 @@ description: >
     <div class="card-body">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <span class="homepage__intro__partner">Made by <img src="/images/logo-google.svg" alt="Google"></span>
+                <span class="homepage__intro__partner">Made by {% asset 'homepage/logo-google.svg' alt='Google logo' %}</span>
                 <p class="homepage__intro__statement">
                 Flutter is Google’s mobile app SDK
                 for crafting high-quality native interfaces
@@ -32,7 +32,7 @@ description: >
                 </p>
             
                 <div class="homepage__intro__buttons">
-                    <a class="btn btn-primary" href="/get-started/install">Get Started</a>
+                    <a class="btn btn-primary" href="/get-started/install">Get started</a>
                     <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch video</button>
                 </div>
             </div>
@@ -45,7 +45,7 @@ description: >
         <div class="row">
 
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-development.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-development.svg' alt='Fast development icon' %}</div>
                 
                 <h3>Fast Development</h3>
     
@@ -56,7 +56,7 @@ description: >
             </div>
     
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-ui.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-ui.svg' alt='Expressive and flexible IU icon' %}</div>
                 
                 <h3>Expressive and Flexible UI</h3>
     
@@ -68,7 +68,7 @@ description: >
             </div>
     
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-performance.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-performance.svg' alt='Native performance icon' %}</div>
                 
                 <h3>Native Performance</h3>
     
@@ -86,11 +86,11 @@ description: >
     <div class="card-body">
         <div class="row">
             <div class="homepage__card-graphic--fill col-lg-8">
-                <img src="/development/tools/images/hot-reload.gif" alt="Make a change in your code, and your app is changed instantly.">
+                {% asset 'homepage/hot-reload.gif' alt='Make a change in your code, and your app is changed instantly.' %}
             </div>
             
             <div class="col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-development.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-development.svg' alt='Fast development icon' %}</div>
                 
                 <h2>Fast development</h2>
         
@@ -119,11 +119,11 @@ description: >
                         <a href="https://reflect.ly/" target="blank">Learn more</a>
                         </small>
                     </div>
-                    <img src="/images/homepage/reflectly.png" alt="Delight your users with expressive, beautiful UIs.">
+                    {% asset 'homepage/reflectly.png' alt='Delight your users with expressive, beautiful UIs.' %}
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-ui.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-ui.svg' alt='Expressive and flexible IU icon' %}</div>
                 
                 <h2>Expressive, beautiful UIs</h2>
 
@@ -144,10 +144,10 @@ description: >
     <div class="card-body">
         <div class="row">
             <div class="homepage__card-graphic--fill col-lg-8">
-                <img src="/images/homepage/platform-parity.png" alt="Delight your users with expressive, beautiful UIs.">
+                {% asset 'homepage/platform-parity.png' alt='Native performance on all platforms.' %}
             </div>
             <div class="col-lg-4">
-                <div class="homepage__icon"><img src="/images/icon-performance.svg"></div>
+                <div class="homepage__icon">{% asset 'homepage/icon-performance.svg' alt='Native performance icon' %}</div>
                 
                 <h2>Native Performance</h2>
 
@@ -188,14 +188,14 @@ description: >
             <div class="homepage__card-graphic col-lg-7 order-lg-1">
                 <div>
                     <div class="row align-items-center">
-                        <img class="col-4" src="/images/homepage/logo-alibaba.png" alt="Alibaba Logo" width="151">
-                        <img class="col-4" src="/images/homepage/logo-hamilton.png" alt="Hamilton Logo" width="108">
-                        <img class="col-4" src="/images/homepage/logo-groupon.png" alt="Groupon Logo" width="168">
+                        {% asset 'homepage/logo-alibaba.png' alt='Alibaba logo' width="151" class="col-4" %}
+                        {% asset 'homepage/logo-hamilton.png' alt='Hamilton logo' width="108" class="col-4" %}
+                        {% asset 'homepage/logo-groupon.png' alt='Groupon logo' width="168" class="col-4" %}
                     </div>
                     <div class="row align-items-center">
-                        <img class="col-4" src="/images/homepage/logo-tencent.png" alt="Tencent Logo" width="192">
-                        <img class="col-4" src="/images/homepage/logo-abbey_road_studios.png" alt="Abbey Road Studios Logo" width="78">
-                        <img class="col-4" src="/images/homepage/logo-google_adwords.png" alt="Google AdWords Logo" width="183">
+                        {% asset 'homepage/logo-tencent.png' alt='Tencent logo' width="192" class="col-4" %}
+                        {% asset 'homepage/logo-abbey_road_studios.png' alt='Abbey Road Studios logo' width="78" class="col-4" %}
+                        {% asset 'homepage/logo-google_adwords.png' alt='Google AdWords logo' width="183" class="col-4" %}
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@ description: >
 
 <div class="homepage__news card-deck">
     <div class="card">
-        <img class="card-img-top" src="/images/homepage/news-1.png" alt="A news item image">
+        {% asset 'homepage/news-1.png' alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
             <h3>Why you should start looking at Google's Flutter now</h3>
@@ -222,7 +222,7 @@ description: >
         </div>
     </div>
     <div class="card">
-        <img class="card-img-top" src="/images/homepage/news-2.png" alt="A news item image">
+        {% asset 'homepage/news-2.png' alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
             <h3>Unpack the role of Google's Flutter app dev framework </h3>
@@ -235,7 +235,7 @@ description: >
     <div class="card-body">
         <h2 class="homepage__try__headline">Try Flutter today.</h2>
         <p class="homepage__try__body">Getting started is easy.</p>
-        <a class="homepage__try__cta btn btn-primary" href="/get-started/install">Get Started</a>
+        <a class="homepage__try__cta btn btn-primary" href="/get-started/install">Get started</a>
     </div>
 </section>
 
