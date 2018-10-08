@@ -3,7 +3,7 @@
   children:
   - title: 1. Install
     permalink: /get-started/install
-  - title: 2. Configure editor
+  - title: 2. Set up an editor
     permalink: /get-started/editor
   - title: 3. Test drive
     permalink: /get-started/test-drive

@@ -1,11 +1,12 @@
 ---
 title: Test drive
 prev:
-  title: Configure dditor
+  title: Configure editor
   path: /get-started/editor
 next:
   title: Write your first Flutter app
   path: /get-started/codelab
+toc: false
 ---
 
 This page describes how to "test drive" Flutter: create a new Flutter app from
