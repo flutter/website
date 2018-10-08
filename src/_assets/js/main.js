@@ -2,6 +2,9 @@
 //= require popper
 //= require bootstrap
 //= require archive.js
+//= require tabs.js
+
+// TODO(chalin): find a way to selectively generate (as individual files) and then include archive.js and/or tabs.js
 
 $(function () {
   // // Sidenav
@@ -12,6 +15,9 @@ $(function () {
 
   adjustToc();
   initFixedColumns();
+
+  setupToolsTabs($("#tab-set-install"), "tab-install-", "selectedTool");
+  setupToolsTabs($("#tab-set-os"), "tab-os-", null, getOS());
 })
 
 // TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared

@@ -20,8 +20,8 @@ VS Code. If you want to use a different editor, that's OK, simply skip ahead to
 <div id="tab-set-install">
 
 <ul class="tabs__top-bar">
-    <li class="tab-link current" data-tab="tab-install-androidstudio">Android Studio</li>
-    <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
+  <li class="tab-link current" data-tab="tab-install-androidstudio">Android Studio</li>
+  <li class="tab-link" data-tab="tab-install-vscode">VS Code</li>
 </ul>
 
 <div id="tab-install-androidstudio" class="tabs__content current" markdown="1">
