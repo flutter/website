@@ -1,8 +1,54 @@
+function setupTabs(container, storageName, defaultTab) {
+  var tabs = $('li a', container);
+
+  // console.log('>> #tabs', tabs.length, storageName);
+
+  tabs.click(function (e) {
+
+    // console.log('>> click event for tab:', $(this));
+    e.preventDefault();
+    $(this).tab('show');
+
+    var id = $(this).attr('href').substr(1);
+
+    // Persist to local storage so we can pre-select around the site
+    if (storageName && window.localStorage) {
+      // console.log('>> setting localStorage', storageName, id);
+      window.localStorage.setItem(storageName, id);
+    }
+
+    if (id) location.href = '#' + id;
+
+    // // Add to the url for better reloading/copy/pasting
+    // if (history.replaceState && id != location.hash) {
+    //   history.replaceState(undefined, undefined, id);
+    // }
+  });
+
+  function selectTab(id) {
+    var tab = tabs.filter('[href="#' + id + '"]');
+    tab.click();
+  }
+
+  // If we have a tool in the url fragement, pre-select it
+  if (location.hash && location.hash.length > 1) {
+    // console.log('>> setting tab from location:', location.hash)
+    selectTab(location.hash.substr(1));
+  } else if (storageName && window.localStorage && window.localStorage.getItem(storageName)) {
+    // console.log('>> setting tab from localStorage: ', window.localStorage.getItem(storageName))
+    selectTab(window.localStorage.getItem(storageName));
+  } else if (defaultTab) {
+    // console.log('>> setting tab from defaultTab')
+    selectTab(defaultTab);
+  } else {
+    // console.log('>> not setting the tab - using page default')
+  }
+}
+
+// TODO(chalin): Temporary until we convert all tabs to BS tabs
 function setupToolsTabs(container, tabIdPrefix, storageName, defaultTab) {
   var tabs = $('.tabs__top-bar li', container);
   var tabContents = $('.tabs__content', container);
-
-  console.log('>> #tabs', tabs.length);
 
   function clearTabsCurrent() {
     tabs.removeClass('current');
@@ -53,14 +99,4 @@ function setupToolsTabs(container, tabIdPrefix, storageName, defaultTab) {
     selectTool(window.localStorage.getItem(storageName));
   else if (defaultTab)
     selectTool(defaultTab);
-}
-
-function getOS() {
-  var ua = navigator.userAgent;
-  if (ua.indexOf("Win") !== -1)
-    return "windows";
-  if (ua.indexOf("Mac") !== -1)
-    return "macos";
-  if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
-    return "linux";
 }
