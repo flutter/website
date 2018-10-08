@@ -1,5 +1,6 @@
 ---
 title: Showcase
+show-nav-get-started-button: true
 toc: false
 ---
 
