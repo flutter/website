@@ -70,3 +70,24 @@ dd {
   }
   }
 }
+
+.btn-icon {
+  align-items: center;
+  display: flex;
+
+  .material-icons {
+    margin-right: bs-spacer(2);
+  }
+}
+
+.embedded-video-wrapper {
+  width: 100%;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  position: relative;
+
+  &__frame {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}

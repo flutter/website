@@ -47,7 +47,7 @@
     padding: bs-spacer(3) bs-spacer(12);
   }
 
-  &__tagline {
+  &__intro{
     font-family: $site-font-family-alt;
     font-size: 1.5rem;
     line-height: 2.125rem;
@@ -68,12 +68,26 @@
         margin: bs-spacer(12) 0;
       }
     }
+
+    &__buttons {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      a,
+      button {
+        &:not(:last-child) {
+          margin-bottom: bs-spacer(4);
+        }
+      }
+    }
   }
 
   &__icon {
     align-items: center;
-    background-color: $site-color-primary;
+    background-color: $flutter-color-light-blue;
     border-radius: 50%;
+    color: $site-color-primary;
     display: flex;
     height: 48px;
     justify-content: center;
@@ -103,16 +117,37 @@
   }
 
   &__card-graphic {
-    align-items: center;
-    display: flex;
-    justify-content: center;
     margin-bottom: bs-spacer(5);
     @include media-breakpoint-up(lg) {
       margin-bottom: 0;
     }
 
-    img {
-      max-width: 100%;
+    &--fill {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__beautiful-uis {
+    .homepage__card-graphic {
+      position: relative;
+    }
+
+    &__app-info {
+      text-align: center;
+      margin-bottom: bs-spacer(4);
+
+      @include media-breakpoint-up(sm) {
+        bottom: 0;
+        position: absolute;
+        right: bs-spacer(6);
+        text-align: center;
+      }
     }
   }
 

@@ -29,6 +29,11 @@ a.card {
   padding: bs-spacer(2) bs-spacer(10);
 }
 
+.btn-link:hover,
+.btn-link:focus{
+  text-decoration: none;
+}
+
 code {
   background-color: $flutter-color-light-blue;
   padding: 0 3px;
