@@ -37,11 +37,19 @@
           </li>
         </ul>
         {% if page.show-nav-get-started-button -%}
-        <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
+          <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
         {% endif -%}
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
         </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link pr-3" href="https://twitter.com/flutterio"><i class="fab fa-twitter fa-lg"></i></a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link pl-0" href="{{site.repo.organization}}"><i class="fab fa-github fa-lg"></i></a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
