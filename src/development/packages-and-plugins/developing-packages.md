@@ -14,6 +14,13 @@ minimal package consists of:
 * A `lib` directory containing the public code in the package, minimally a
   single `<package-name>.dart` file.
 
+{{site.alert.note}}
+For a list of dos and don'ts when writing an effective plugin,
+see [Writing a good
+plugin](https://medium.com/flutter-io/writing-a-good-flutter-plugin-1a561b986c9c)
+on Medium.
+{{site.alert.end}}
+
 ### Package types {#types}
 
 Packages can contain several kinds of content:
@@ -269,8 +276,9 @@ at `hello/ios/Classes`.
 
 ### Conflict resolution
 
-Suppose you want to use `some_package` and `other_package` in your package `hello`, and both of these depend
-on `url_launcher`, but in different versions. Then we have a potential conflict. The best way to avoid this
+Suppose you want to use `some_package` and `other_package` in your package
+`hello`, and both of these depend on `url_launcher`, but in different
+versions. Then we have a potential conflict. The best way to avoid this
 is for package authors to use [version
 ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
 rather than specific versions when specifying dependencies.
@@ -281,11 +289,13 @@ dependencies:
   image_picker: '0.1.1'   # Not so good, only 0.1.1 will do.
 ```
 
-If `some_package` declares the dependencies above and `other_package` declares a compatible  `url_launcher`
-dependency like `'0.4.5'` or `^0.4.0`, `pub` will be able to resolve the issue automatically. Similar
+If `some_package` declares the dependencies above and `other_package`
+declares a compatible  `url_launcher` dependency like `'0.4.5'` or `^0.4.0`,
+`pub` is able to resolve the issue automatically. Similar
 remarks apply to plugin packages' platform-specific dependencies on [Gradle
 modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
-and/or [CocoaPods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
+and/or
+[CocoaPods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
 
 Even if `some_package` and `other_package` declare incompatible versions for
 `url_launcher`, it may still be that they actually use `url_launcher` in

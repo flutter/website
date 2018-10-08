@@ -3,23 +3,24 @@ title: Using Packages
 description: Learn how to use packages in your Flutter app.
 ---
 
-Flutter supports using shared packages contributed by other developers to the
-Flutter and Dart ecosystems. This allows you to quickly build your app without
-having to develop everything from scratch.
+Flutter supports using shared packages contributed by other developers
+to the Flutter and Dart ecosystems. This allows you to quickly build
+your app without having to develop everything from scratch.
 
 Existing packages enable many use cases, for example, making network requests
 ([`http`](/cookbook/networking/fetch-data)), custom navigation/route handling
 ([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
 APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
-[`battery`](https://pub.dartlang.org/packages/battery)), and using third-party
-platform SDKs (like
+[`battery`](https://pub.dartlang.org/packages/battery)),
+and using third-party platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
 [developing packages](/development/packages-and-plugins/developing-packages).
 
-If you are looking to add assets, images, or fonts, whether stored in files or
-packages, please see [Assets & Images](/development/ui/assets-and-images).
+If you are looking to add assets, images, or fonts, whether stored in
+files or packages, please see [Assets &
+Images](/development/ui/assets-and-images).
 
 ## Using packages
 
@@ -60,14 +61,16 @@ To add a package 'css_colors' to an app:
 
 The
 ['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
-tab available on any package page on Pub is a handy reference for these steps.
+tab available on any package page on Pub is a handy reference for these
+steps.
 
 For a complete example, see [CSS Colors example](#css-example) below.
 
 ## Developing new packages
 
 Should a package not be available for your specific use case, you can
-[develop new custom packages](/development/packages-and-plugins/developing-packages).
+[develop new custom
+packages](/development/packages-and-plugins/developing-packages).
 
 ## Managing package dependencies & versions
 
@@ -82,10 +85,11 @@ versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
 
 When a package is added to `pubspec.yaml` using the shorthand form `plugin1:`
 this is interpreted as `plugin1: any`, i.e. any version of the package may be
-used. To ensure your app does not break when a package is updated, we recommend
-specifying a version range using one of the following formats:
+used. To ensure your app does not break when a package is updated,
+we recommend specifying a version range using one of the following formats:
 
-* Range constraints: Specify a minimum and maximim version, e.g.:
+* Range constraints: Specify a minimum and maximim version. For example:
+
   ```
   dependencies:
     url_launcher: '>=0.1.2 <0.2.0'
@@ -105,17 +109,19 @@ guide](https://www.dartlang.org/tools/pub/versioning).
 
 ### Updating package dependencies
 
-When you run `flutter packages get` ('Packages Get' in IntelliJ) for the first
-time after adding a package, Flutter saves the concrete package version found in
-the `pubspec.lock`
-[lockfile](https://www.dartlang.org/tools/pub/glossary#lockfile). This ensures
-that you get the same version again if you, or another developer on your team,
-run `flutter packages get`.
+When you run `flutter packages get` ('Packages Get' in IntelliJ) for
+the first time after adding a package, Flutter saves the concrete package
+version found in the `pubspec.lock`
+[lockfile](https://www.dartlang.org/tools/pub/glossary#lockfile).
+This ensures that you get the same version again if you, or another
+developer on your team, run `flutter packages get`.
 
-If you want to upgrade to a new version of the package, for example to use new
-features in that package, run `flutter packages upgrade` ('Upgrade dependencies'
-in IntelliJ). This will retrieve the highest available version of the package,
-which is allowed by the version constraint you have specified in `pubspec.yaml`.
+If you want to upgrade to a new version of the package,
+for example to use new features in that package, run
+`flutter packages upgrade` ('Upgrade dependencies'
+in IntelliJ). This retrieves the highest available version of the package
+that is allowed by the version constraint you have specified in
+`pubspec.yaml`.
 
 ### Dependencies on unpublished packages
 
@@ -124,9 +130,10 @@ intended for public publishing, or for packages not yet ready for publishing,
 additional dependency options are avaialble:
 
 * **Path** dependency: A Flutter app can depend on a plugin via a file system
-  `path:` dependency. The path can be either relative, or absolute. For example, to
-  depend on a plugin 'plugin1' located in a directory next to the app, use this
-  syntax:
+  `path:` dependency. The path can be either relative, or absolute.
+  For example, to depend on a plugin 'plugin1' located in a directory
+  next to the app, use this syntax:
+
   ```
   dependencies:
     plugin1:
@@ -144,8 +151,8 @@ additional dependency options are avaialble:
   ```
 
 * **Git** dependency on a package in a folder: By default Pub assumes the
-  package is located in the root of the Git repository. If that is not the case,
-  you can specify the location with the `path` argument, e.g.:
+  package is located in the root of the Git repository. If that is not the
+  case, you can specify the location with the `path` argument. For example:
   ```
   dependencies:
     package1:
@@ -154,17 +161,17 @@ additional dependency options are avaialble:
         path: packages/package1
   ```
 
-  Finally, you can use the `ref` argument to pin the dependency to a specific git commit,
-  branch, or tag. For more details, see
+  Finally, you can use the `ref` argument to pin the dependency to a
+  specific git commit, branch, or tag. For more details, see
   [Pub Dependencies](https://www.dartlang.org/tools/pub/dependencies).
 
 ## Examples
 
 ### Example: Using the CSS Colors package {#css-example}
 
-The [`css_colors`](https://pub.dartlang.org/packages/css_colors) package defines
-color constants for the CSS colors, allowing you to use them wherever the
-Flutter framework expects the `Color` type.
+The [`css_colors`](https://pub.dartlang.org/packages/css_colors) package
+defines color constants for the CSS colors, allowing you to use them
+wherever the Flutter framework expects the `Color` type.
 
 To use this package:
 
@@ -185,7 +192,8 @@ To use this package:
      css_colors: ^1.0.0
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in IntelliJ
+1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+   IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
 

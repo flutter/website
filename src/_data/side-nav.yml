@@ -98,6 +98,8 @@
           permalink: /development/packages-and-plugins/using-packages
         - title: Developing packages & plugins
           permalink: /development/packages-and-plugins/developing-packages
+        - title: Background processes
+          permalink: /development/packages-and-plugins/background-processes
         - title: Package site
           permalink: http://pub.dartlang.org/flutter
     - title: Tools
