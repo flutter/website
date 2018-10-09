@@ -15,10 +15,10 @@ minimal package consists of:
   single `<package-name>.dart` file.
 
 {{site.alert.note}}
-For a list of dos and don'ts when writing an effective plugin,
-see [Writing a good
-plugin](https://medium.com/flutter-io/writing-a-good-flutter-plugin-1a561b986c9c)
-on Medium.
+  For a list of dos and don'ts when writing an effective plugin,
+  see [Writing a good
+  plugin](https://medium.com/flutter-io/writing-a-good-flutter-plugin-1a561b986c9c)
+  on Medium.
 {{site.alert.end}}
 
 ### Package types {#types}

@@ -16,7 +16,7 @@ description: The landing page for Flutter documentation.
 
 ## What's new on flutter.io
 
-<b>Oct 31, 2018</b>
+**Oct 31, 2018**
 
 Welcome to the revamped Flutter website!
 
@@ -24,32 +24,28 @@ We've spent the last few months redesigning the website and how its
 information is organized. We hope you can more easily find the docs
 you are looking for. Some of the changes to the website include:
 
-* New [landing](/) page
-* New [showcase](/showcase) page
-* New navigation in the left side bar
-* New table of contents on the right side of most pages
-* New 404 page (_not yet_)
-* A [sitemap](/sitemap) (_not yet_)
-* New custom search  (_not yet_)
+* Revised [landing](/) page
+* Revised [showcase](/showcase) page
+* Revised navigation in the left side bar
+* Table of contents on the right side of most pages
 
-Some of the new and updated content includes:
+Some of the new content includes:
 
-* New [cookbook](/cookbook) recipes
-* A deep dive on Flutter internals called
+* Additional [cookbook](/cookbook) recipes
+* Deep dive on Flutter internals,
   [Inside Flutter](/resources/inside-flutter)
-* A new [technical videos](/resources/videos) page.
-* A new page (not yet complete) on how to connect [a native debugger _and_
+* [Technical videos](/resources/videos) page
+* How to connect [a native debugger _and_
   a Dart debugger to your app](/testing/debugging/oem)
-* A [placeholder page for the new background Dart processes
-  feature](development/packages-and-plugins/background-processes)
-  (recently introduced to Flutter), that links to an in-depth post
-  on Medium. (This will be eventually replaced by actual documentation.)
-* [PENDING]
+  (not yet complete)
+* [Background Dart
+  processes](development/packages-and-plugins/background-processes)
+  placeholder that links to an in-depth post
+  on Medium. (To be eventually replaced by actual documentation.)
+* [Flutter's build modes](/testing/build-modes)
 
-If you have questions or comments about the new site, [file an
-issue](https://github.com/flutter/website/issues).
-
----
+If you have questions or comments about the revamped site, [file an
+issue]({{site.repo.this}}/issues).
 
 ## New to Flutter?
 

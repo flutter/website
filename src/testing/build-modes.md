@@ -1,5 +1,6 @@
 ---
-title: Building Flutter apps
+title: Flutter's build modes
+description: Describes Flutter's build modes and when you should use debug, release, or profile mode?
 ---
 
 The Flutter tooling supports three modes when compiling your app,
@@ -7,8 +8,6 @@ and a headless mode for testing.
 This doc explains the three modes and tells you when to use which.
 For more information on headless testing, see
 [Unit testing.](/testing#unit-testing)
-
-# Flutter modes
 
 You choose the compilation mode depending on where you are in
 the development cycle. Are you debugging your code? Do you
