@@ -1,15 +1,19 @@
 function setupTabs(container, storageName, defaultTab) {
   var tabs = $('li a', container);
-
   // console.log('>> #tabs', tabs.length, storageName);
 
-  tabs.click(function (e) {
+  // Return 'foo' from either '#foo' or '?ide=foo'
+  function getIde(query) {
+    var match = query.match(/(#|\bide=)(\w+)/);
+    return match ? match[2] : '';
+  }
 
+  function clickHandler(e) {
     // console.log('>> click event for tab:', $(this));
     e.preventDefault();
     $(this).tab('show');
 
-    var id = $(this).attr('href').substr(1);
+    var id = getIde($(this).attr('href'));
 
     // Persist to local storage so we can pre-select around the site
     if (storageName && window.localStorage) {
@@ -17,26 +21,32 @@ function setupTabs(container, storageName, defaultTab) {
       window.localStorage.setItem(storageName, id);
     }
 
-    if (id) location.href = '#' + id;
-
-    // // Add to the url for better reloading/copy/pasting
-    // if (history.replaceState && id != location.hash) {
-    //   history.replaceState(undefined, undefined, id);
-    // }
-  });
+    var l = location, query = '?ide=' + id;
+    if (id && l.search != query) {
+      var url = l.protocol + '//' + l.host + l.pathname + query + l.hash;
+      // console.log('>> history.replaceState of', url);
+      history.replaceState(undefined, undefined, url);
+    } else {
+      // console.log('>> location.search is already "', query, '"');
+    }
+  }
 
   function selectTab(id) {
     var tab = tabs.filter('[href="#' + id + '"]');
+    // console.log('>> selectedTab:', id, tab);
     tab.click();
   }
 
-  // If we have a tool in the url fragement, pre-select it
-  if (location.hash && location.hash.length > 1) {
-    // console.log('>> setting tab from location:', location.hash)
-    selectTab(location.hash.substr(1));
-  } else if (storageName && window.localStorage && window.localStorage.getItem(storageName)) {
-    // console.log('>> setting tab from localStorage: ', window.localStorage.getItem(storageName))
-    selectTab(window.localStorage.getItem(storageName));
+  tabs.click(clickHandler);
+
+  var selectedTab;
+  if (selectedTab = getIde(location.search)) {
+    // console.log('>> setting tab from location:', selectedTab)
+    selectTab(selectedTab);
+  } else if (storageName && window.localStorage
+    && (selectedTab = window.localStorage.getItem(storageName))) {
+    // console.log('>> setting tab from localStorage: ', selectedTab)
+    selectTab(selectedTab);
   } else if (defaultTab) {
     // console.log('>> setting tab from defaultTab')
     selectTab(defaultTab);
