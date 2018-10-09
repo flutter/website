@@ -1,7 +1,7 @@
 ---
 title: Install
 next:
-  title: Configure editor
+  title: Set up an editor
   path: /get-started/editor
 toc: false
 ---

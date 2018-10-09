@@ -2,7 +2,7 @@
 title: MacOS install
 short-title: MacOS
 next:
-  title: Configure editor
+  title: Set up an editor
   path: /get-started/editor
 ---
 
