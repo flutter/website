@@ -1,7 +1,7 @@
 ---
 title: Flutter - Beautiful native apps in record time
 layout: landing
-body_class: homepage
+body_class: landing-page homepage
 homepage: true
 description: >
   Flutter is Google’s mobile UI framework for crafting high-quality
@@ -231,11 +231,11 @@ description: >
     </div>
 </div>
 
-<section class="homepage__try card text-center">
+<section class="landing-page__cta card text-center">
     <div class="card-body">
-        <h2 class="homepage__try__headline">Try Flutter today.</h2>
-        <p class="homepage__try__body">Getting started is easy.</p>
-        <a class="homepage__try__cta btn btn-primary" href="/get-started/install">Get started</a>
+        <h2 class="landing-page__cta__headline">Try Flutter today.</h2>
+        <p class="landing-page__cta__body">Getting started is easy.</p>
+        <a class="landing-page__cta__button btn btn-primary" href="/get-started/install">Get started</a>
     </div>
 </section>
 

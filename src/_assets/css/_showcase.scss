@@ -1,0 +1,19 @@
+.showcase {
+  &__apps {
+    &__cards {
+      margin-top: bs-spacer(12);
+
+      .col-lg-4 {
+        padding-left: bs-spacer(3);
+        padding-right: bs-spacer(3);
+      }
+      .card {
+        margin-bottom: bs-spacer(6);
+
+        .card-body {
+          padding: bs-spacer(6);
+        }
+      }
+    }
+  }
+}
