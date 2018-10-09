@@ -1,5 +1,13 @@
 # Enter regexp pattern, one per line.
 
+# The following pattern isn't working for external links
+# (https://github.com/filiph/linkcheck/issues/27):
+#
+# forum/flutter-dev # To avoid "missing anchor" error
+#
+# The full link is:
+# https://groups.google.com/forum/#!forum/flutter-dev
+
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
