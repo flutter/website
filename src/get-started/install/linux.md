@@ -3,7 +3,7 @@ title: Linux install
 short-title: Linux
 # js: [{defer: true, url: /assets/archive.js}]
 next:
-  title: Configure editor
+  title: Set up an editor
   path: /get-started/editor
 ---
 

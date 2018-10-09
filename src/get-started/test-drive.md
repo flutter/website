@@ -1,7 +1,7 @@
 ---
 title: Test drive
 prev:
-  title: Configure editor
+  title: Set up an editor
   path: /get-started/editor
 next:
   title: Write your first Flutter app
