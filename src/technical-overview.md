@@ -168,7 +168,7 @@ and store their mutable state in a subclass of [State](https://docs.flutter.io/f
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
 signal the framework to update the user interface by calling the State's build
-method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl) that's created with each new Flutter project.
+method again. For an example of managing state, see the [MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl) that's created with each new Flutter project.
 
 Having separate state and widget objects lets other widgets treat stateless and
 stateful widgets in the same way, without being concerned about losing state.
