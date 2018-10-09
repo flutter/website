@@ -102,6 +102,8 @@ description: >
                     emulators, simulators, and hardware for iOS
                     and Android.
                 </p>
+                
+                <a href="development/tools/hot-reload">Learn more</a>
             </div>
         </div>
     </div>
@@ -134,7 +136,7 @@ description: >
                 smooth natural scrolling, and platform awareness.
                 </p>
                 
-                <a href="/development/ui/widgets">Browse the widget catalog.</a>
+                <a href="/development/ui/widgets">Browse the widget catalog</a>
             </div>
         </div>
     </div>
@@ -156,6 +158,8 @@ description: >
                 as scrolling, navigation, icons and fonts to provide  full native
                 performance on both iOS and Android.
                 </p>
+                
+                <a href="/showcase">Examples of apps built with Flutter</a>
             </div>
         </div>
     </div>
@@ -206,7 +210,7 @@ description: >
                 Organizations around the world are  building apps with Flutter.
                 </p>
                 
-                <a href="/showcase">See what’s being created.</a>
+                <a href="/showcase">See what’s being created</a>
             </div>
         </div>
     </div>
