@@ -17,6 +17,14 @@
       color: $site-color-body;
       margin-right: bs-spacer(4);
       padding: 0;
+
+      .material-icons {
+        font-size: 28px;
+      }
+    }
+
+    .navbar-brand {
+      margin-right: auto;
     }
 
     .btn {

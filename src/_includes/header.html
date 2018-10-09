@@ -5,8 +5,8 @@
     </button>
 
     <a class="navbar-brand" href="/">
-      <img class="d-inline-block align-middle" src="/images/flutter-mark-square-100.png" alt="Flutter Logo" width="40" height="40">
-      {{site.title}}
+      {% asset 'flutter-lockup_w_tagline.svg' alt='Flutter by Google' height="37" width="217" class="d-none d-lg-inline-block align-middle" %}
+      {% asset 'flutter-lockup.svg' alt='Flutter by Google' height="37" width="129" class="d-lg-none align-middle" %}
     </a>
 
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
@@ -42,15 +42,11 @@
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
         </form>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link pr-3" href="https://twitter.com/flutterio"><i class="fab fa-twitter fa-lg"></i></a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link pl-0" href="{{site.repo.organization}}"><i class="fab fa-github fa-lg"></i></a>
-          </li>
-        </ul>
       </div>
+    </div>
+    <div class="navbar-nav flex-row">
+      <a class="nav-item nav-link pr-3" href="https://twitter.com/flutterio"><i class="fab fa-twitter fa-lg"></i></a>
+      <a  class="nav-item nav-link pl-0" href="{{site.repo.organization}}"><i class="fab fa-github fa-lg"></i></a>
     </div>
   </nav>
 </header>
