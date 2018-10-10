@@ -25,7 +25,7 @@
     padding: 6px 0;
     position: relative;
     color: inherit;
-    .disabled { color: $btn-link-disabled-color; }
+    &.disabled { opacity: 0.5; }
   }
 
   // Top-level nav item
