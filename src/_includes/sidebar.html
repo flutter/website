@@ -19,6 +19,9 @@ TODO(chalin): rename link to top_level_nav_entry
 
     {% if isActive -%}
       {% assign class = 'active' -%}
+    {% endif -%}
+
+    {% if isActive or link.expanded -%}
       {% assign expanded = 'true' -%}
       {% assign show = 'show' -%}
     {% else -%}
@@ -26,6 +29,7 @@ TODO(chalin): rename link to top_level_nav_entry
       {% assign expanded = 'false' -%}
       {% assign show = '' -%}
     {% endif -%}
+
     {% assign id = 'side-bar-' | append: forloop.index -%}
 
     <li class="nav-item">
