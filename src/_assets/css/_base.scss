@@ -72,14 +72,21 @@ dd {
   }
 }
 
-.btn-icon {
+.btn.btn-icon {
   align-items: center;
   display: flex;
+  justify-content: center;
 
   .material-icons {
     margin-right: bs-spacer(2);
   }
 }
+
+.btn.btn-cta {
+    font-weight: 500;
+    padding: bs-spacer(6) bs-spacer(12);
+    min-width: 275px;
+  }
 
 .embedded-video-wrapper {
   width: 100%;

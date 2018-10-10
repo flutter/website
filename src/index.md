@@ -2,6 +2,7 @@
 title: Flutter - Beautiful native apps in record time
 layout: landing
 body_class: landing-page homepage
+show-nav-get-started-button: true
 homepage: true
 description: >
   Flutter is Google’s mobile UI framework for crafting high-quality
@@ -21,19 +22,15 @@ description: >
 <section class="homepage__intro card text-center">
     <div class="card-body">
         <div class="row">
-            <div class="col-md-10 offset-md-1">
+            <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2">
                 <span class="homepage__intro__partner">Made by {% asset 'homepage/logo-google.svg' alt='Google logo' %}</span>
                 <p class="homepage__intro__statement">
-                Flutter is Google’s mobile app SDK
-                for crafting high-quality native interfaces
-                on iOS and Android in record time. Flutter works with existing code,
-                is used by developers and organizations around the world,
-                and is free and open source.
+                Flutter is a mobile SDK for iOS and Android apps developed at Google in partnership with the global community. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
                 </p>
             
                 <div class="homepage__intro__buttons">
-                    <a class="btn btn-primary" href="/get-started/install">Get started</a>
-                    <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch video</button>
+                    <a class="btn btn-primary btn-cta" href="/get-started/install">Get started</a>
+                    <button class="btn btn-link btn-cta btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch video</button>
                 </div>
             </div>
         </div>
@@ -180,7 +177,7 @@ description: >
                 Watch these videos to learn from Google and developers as you build with Flutter.
                 </p>
                 
-                <a href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw">Visit our YouTube channel.</a>
+                <a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr">Visit our YouTube channel.</a>
             </div>
         </div>
     </div>
@@ -191,12 +188,12 @@ description: >
         <div class="row">
             <div class="homepage__card-graphic col-lg-7 order-lg-1">
                 <div>
-                    <div class="row align-items-center">
+                    <div class="homepage__card-graphic__logo-row row align-items-center">
                         {% asset 'homepage/logo-alibaba.png' alt='Alibaba logo' width="151" class="col-4" %}
                         {% asset 'homepage/logo-hamilton.png' alt='Hamilton logo' width="108" class="col-4" %}
                         {% asset 'homepage/logo-groupon.png' alt='Groupon logo' width="168" class="col-4" %}
                     </div>
-                    <div class="row align-items-center">
+                    <div class="homepage__card-graphic__logo-row row align-items-center">
                         {% asset 'homepage/logo-tencent.png' alt='Tencent logo' width="192" class="col-4" %}
                         {% asset 'homepage/logo-abbey_road_studios.png' alt='Abbey Road Studios logo' width="78" class="col-4" %}
                         {% asset 'homepage/logo-google_adwords.png' alt='Google AdWords logo' width="183" class="col-4" %}
@@ -239,7 +236,7 @@ description: >
     <div class="card-body">
         <h2 class="landing-page__cta__headline">Try Flutter today.</h2>
         <p class="landing-page__cta__body">Getting started is easy.</p>
-        <a class="landing-page__cta__button btn btn-primary" href="/get-started/install">Get started</a>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/get-started/install">Get started</a>
     </div>
 </section>
 
@@ -249,7 +246,7 @@ description: >
     <div class="modal-content">
       <div class="modal-body">
         <div class="embedded-video-wrapper">
-            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU?cc_lang_pref=en&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>

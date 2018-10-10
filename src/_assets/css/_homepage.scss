@@ -83,6 +83,12 @@
         max-width: 100%;
       }
     }
+
+    &__logo-row {
+      &:not(:last-child) {
+        margin-bottom: bs-spacer(12);
+      }
+    }
   }
 
   &__beautiful-uis {
