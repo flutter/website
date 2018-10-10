@@ -48,19 +48,28 @@
     margin-bottom: 40px;
     margin-left: -50vw;
     margin-right: -50vw;
-    min-height: 75vh;
-    padding: 40px 0;
     position: relative;
     right: 50%;
     width: 100vw;
     @include media-breakpoint-up(md) {
       margin-bottom: 80px;
-      min-height: 640px;
-      padding: 80px 0;
     }
 
-    .card .card-body {
-      padding: bs-spacer(6);
+    .card {
+      .card-body {
+        padding: bs-spacer(6);
+      }
+
+      .card-category {
+        color: $site-color-primary;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        margin-bottom: bs-spacer(4);
+      }
+
+      .btn.btn-link {
+        padding: 0;
+      }
     }
   }
 

@@ -6,20 +6,24 @@ show-nav-get-started-button: true
 toc: false
 ---
 
-<section class="landing-page__hero">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-4 offset-md-5 offset-lg-7">
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Featured</h2>
-                        <h3>Hamilton Musical</h3>
-                        <p>
-                        Official app of the hit Broadway musical, Hamilton. Includes daily lotteries,  exclusive news and
-                        videos, a trivia game, merchandise store, and more.
-                        </p>
-                        <a class="btn btn-link" href="#">Learn more</a>
-                        <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+<section class="landing-page__hero showcase__carousel">
+    <div class="showcase__carousel__slide" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-category">Featured</h2>
+                            <h3>Hamilton Musical</h3>
+                            <p>
+                            Official app of the hit Broadway musical, Hamilton. Includes daily lotteries,  exclusive news and
+                            videos, a trivia game, merchandise store, and more.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
+                            <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,21 +46,43 @@ toc: false
         {% for case in site.data.showcases %}
             {% capture modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
             {% if modulo3 == '0' %}
-                <div class="showcase__apps__cards text-left card-deck">
+                <div class="showcase__apps__cards text-left card-deck flex-column flex-lg-row">
             {% endif %}
                     <div class="card">
+                        <div class="card-header">
+                            {% if case.logo_src %}
+                                {% asset '{{ case.logo_src }}' class='showcase__apps__logo' %}
+                            {% endif %}
+                        </div>
                         <div class="card-body">
                             <h3>{{ case.name }}</h3>
                             <p>{{ case.description }}</p>
                         </div>
                         <div class="card-footer">
-                            <a class="btn btn-link" href="{{ case.learn_more_link }}">Learn more</a>
+                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">Learn more</a>{% endif %}
+                            {% if case.play_store_link or case.app_store_link %}
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Download
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank">Android</a>{% endif %}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank">iOS</a>{% endif %}
+                                    </div>
+                                </span>
+                            {% endif %}
                         </div>
                     </div>
             {% if modulo3 == '2' or forloop.last %}
                 </div>
             {% endif %}
         {% endfor %}
+        
+        <div class="row">
+            <div class="col-12 text-center">
+                <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/" target="_blank">Explore more apps built with Flutter</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -64,7 +90,7 @@ toc: false
     <div class="card-body">
         <h2 class="landing-page__cta__headline">Try Flutter today.</h2>
         <p class="landing-page__cta__body">Getting started is easy.</p>
-        <a class="landing-page__cta__button btn btn-primary" href="/get-started/install">Get started</a>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/get-started/install">Get started</a>
     </div>
 </section>
 
@@ -74,7 +100,7 @@ toc: false
     <div class="modal-content">
       <div class="modal-body">
         <div class="embedded-video-wrapper">
-            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/kfd-oLypqFI?cc_lang_pref=en&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
