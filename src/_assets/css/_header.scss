@@ -10,7 +10,7 @@
     font-size: $font-size-lg;
 
     @include media-breakpoint-up(md) {
-      font-size: $font-size-sm;
+      font-size: $font-size-base;
     }
 
     .navbar-toggler {
@@ -28,8 +28,6 @@
     }
 
     .btn {
-      font-size: $font-size-sm;
-
       @include media-breakpoint-up(md) {
         margin-left: bs-spacer(4);
       }
@@ -132,6 +130,9 @@
       flex-shrink: 0;
       margin: auto bs-spacer(5) bs-spacer(5);
       order: 1;
+    }
+    @include media-breakpoint-up(md) {
+      order: -1;
     }
   }
 
