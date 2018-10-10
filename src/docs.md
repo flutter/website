@@ -36,7 +36,7 @@ Some of the new content includes:
   [Inside Flutter](/resources/inside-flutter)
 * [Technical videos](/resources/videos) page
 * How to connect [a native debugger _and_
-  a Dart debugger to your app](/testing/debugging/oem)
+  a Dart debugger to your app](/testing/oem-debuggers)
   (not yet complete)
 * [Background Dart
   processes](development/packages-and-plugins/background-processes)

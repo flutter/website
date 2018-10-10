@@ -22,7 +22,7 @@ device, emulator, or simulator. Debug mode means that:
 
 * [Assertions](https://www.dartlang.org/guides/language/language-tour#assert)
    are enabled.
-* [Observatory](https://dart-lang.github.io/observatory/) is enabled,
+* [Observatory](https://dart-lang.github.io/observatory) is enabled,
    allowing you to use the dart debugger.
 * Service extensions are enabled.
 * Compilation is optimized for fast development and run cycles (but not for
@@ -56,7 +56,7 @@ icon overlayed with a small triangle on the project page.
 
 You can also compile to release mode with `flutter build`.
 For more information, see the docs on releasing
-[iOS](deployment/ios-release) and [Android](deployment/android-release) apps.
+[iOS](../deployment/ios-release) and [Android](../deployment/android-release) apps.
 
 ## Profile
 
