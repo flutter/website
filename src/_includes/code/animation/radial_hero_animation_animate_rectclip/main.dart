@@ -64,8 +64,7 @@ class RadialExpansion extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints size) {
         final double t = (size.biggest.width / 2.0 - minRadius) / (maxRadius - minRadius);
-        // FIXME(https://github.com/flutter/website/issues/1423): temporary ignore instruction
-        final double rectClipExtent = clipTween.lerp(t); // ignore: invalid_use_of_protected_member
+        final double rectClipExtent = clipTween.transform(t);
         return ClipOval(
           child: Center(
             child: SizedBox(
