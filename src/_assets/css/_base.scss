@@ -106,3 +106,5 @@ dd {
   opacity: 0.5;
   vertical-align: top;
 }
+
+.fa-macos { @extend .fa-apple; }
