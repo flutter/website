@@ -1,5 +1,6 @@
 ---
-title: Building Flutter apps
+title: Flutter's build modes
+description: Describes Flutter's build modes and when you should use debug, release, or profile mode?
 ---
 
 The Flutter tooling supports three modes when compiling your app,
@@ -7,8 +8,6 @@ and a headless mode for testing.
 This doc explains the three modes and tells you when to use which.
 For more information on headless testing, see
 [Unit testing.](/testing#unit-testing)
-
-# Flutter modes
 
 You choose the compilation mode depending on where you are in
 the development cycle. Are you debugging your code? Do you
@@ -23,7 +22,7 @@ device, emulator, or simulator. Debug mode means that:
 
 * [Assertions](https://www.dartlang.org/guides/language/language-tour#assert)
    are enabled.
-* [Observatory](https://dart-lang.github.io/observatory/) is enabled,
+* [Observatory](https://dart-lang.github.io/observatory) is enabled,
    allowing you to use the dart debugger.
 * Service extensions are enabled.
 * Compilation is optimized for fast development and run cycles (but not for
@@ -57,7 +56,7 @@ icon overlayed with a small triangle on the project page.
 
 You can also compile to release mode with `flutter build`.
 For more information, see the docs on releasing
-[iOS](deployment/ios-release) and [Android](deployment/android-release) apps.
+[iOS](../deployment/ios-release) and [Android](../deployment/android-release) apps.
 
 ## Profile
 

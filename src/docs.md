@@ -9,10 +9,43 @@ description: The landing page for Flutter documentation.
         <div class="card-body">
             <header class="card-title">{{card.name}}</header>
             <p class="card-text">{{card.description}}</p>
-        </div>    
+        </div>
     </a>
 {% endfor %}
 </div>
+
+## What's new on flutter.io
+
+**Oct 31, 2018**
+
+Welcome to the revamped Flutter website!
+
+We've spent the last few months redesigning the website and how its
+information is organized. We hope you can more easily find the docs
+you are looking for. Some of the changes to the website include:
+
+* Revised [landing](/) page
+* Revised [showcase](/showcase) page
+* Revised navigation in the left side bar
+* Table of contents on the right side of most pages
+
+Some of the new content includes:
+
+* Additional [cookbook](/cookbook) recipes
+* Deep dive on Flutter internals,
+  [Inside Flutter](/resources/inside-flutter)
+* [Technical videos](/resources/videos) page
+* How to connect [a native debugger _and_
+  a Dart debugger to your app](/testing/oem-debuggers)
+  (not yet complete)
+* [Background Dart
+  processes](development/packages-and-plugins/background-processes)
+  placeholder that links to an in-depth post
+  on Medium. (To be eventually replaced by actual documentation.)
+* [Flutter's build modes](/testing/build-modes)
+
+If you have questions or comments about the revamped site, [file an
+issue]({{site.repo.this}}/issues).
 
 ## New to Flutter?
 

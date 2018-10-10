@@ -98,6 +98,8 @@
           permalink: /development/packages-and-plugins/using-packages
         - title: Developing packages & plugins
           permalink: /development/packages-and-plugins/developing-packages
+        - title: Background processes
+          permalink: /development/packages-and-plugins/background-processes
         - title: Package site
           permalink: http://pub.dartlang.org/flutter
     - title: Tools
@@ -120,6 +122,8 @@
       permalink: /testing/debugging
     - title: Using OEM debuggers
       permalink: /testing/oem-debuggers
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
     - title: Testing
       permalink: /testing
       match-page-url-exactly: true
