@@ -42,6 +42,11 @@
       @include media-breakpoint-up(md) {
         padding: 0 bs-spacer(4);
       }
+
+      &.active {
+        border-bottom: 0.25rem solid $site-color-primary;
+        // font-weight: $font-weight-bold;
+      }
     }
   }
 
