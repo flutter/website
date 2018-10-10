@@ -39,13 +39,9 @@ TODO(chalin): rename link to top_level_nav_entry
 
       <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
         {% for child in link.children -%}
-          {% comment %}
-            TODO: rename dropdown to hasChildren
-          {% endcomment -%}
-          {% capture dropdown %}{{ child.children | size }}{% endcapture -%}
           {% if child == 'divider' -%}
             <div class="dropdown-divider"></div>
-          {%- elsif dropdown == '0' -%}
+          {%- elsif child.children == nil -%}
             {%- capture startsWithChildLink %}^{{ child.permalink }}{% endcapture -%}
             {%- capture url %}{{ page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' }}{% endcapture -%}
             {%- capture p %}{{ pageUrl | regex_replace: startsWithChildLink }}{% endcapture -%}
@@ -70,29 +66,43 @@ TODO(chalin): rename link to top_level_nav_entry
               >{{child.title}}</a>
             </li>
           {%- else -%}
-            {% assign isActive = false %}
-            {% if page.sideNavGroup and page.sideNavGroup == child.sideNavGroup %}
-              {% assign isActive = true %}
-            {% elsif page.url contains child.permalink and child.sideNavGroup != 'basic' %}
-              {% assign isActive = true %}
-            {% endif %}
+            {% assign isActive = false -%}
+            {% if page.sideNavGroup and page.sideNavGroup == child.sideNavGroup -%}
+              {% assign isActive = true -%}
+            {% elsif page.url contains child.permalink and child.sideNavGroup != 'basic' -%}
+              {% assign isActive = true -%}
+            {% endif -%}
+
+            {% if isActive -%}
+              {% assign class = 'active' -%}
+            {% endif -%}
+
+            {% if isActive or child.expanded -%}
+              {% assign expanded = 'true' -%}
+              {% assign show = 'show' -%}
+            {% else -%}
+              {% assign class = 'collapsed' -%}
+              {% assign expanded = 'false' -%}
+              {% assign show = '' -%}
+            {% endif -%}
+
+            {% assign id2 = id | append: '-' | append: forloop.index -%}
+            {% assign href = child.permalink -%}
+            {% unless href -%}
+              {% assign href = '#' | append: id2 -%}
+            {% endunless -%}
+
             <li class="nav-item">
-              <a class="nav-link
-                  {%- if isActive %} active{% endif -%}
-                  {%- unless child.permalink %} disabled{% endunless -%}
-                  "
-                {% if child.permalink -%}
-                  href="{{child.permalink}}"
-                {% endif -%}
+              <a class="nav-link {{class}} {%- unless child.permalink %} disabled{% endunless -%}"
+                data-toggle="collapse" data-target="#{{id2}}"
+                href="{{href}}" role="button"
+                aria-expanded="{{expanded}}" aria-controls="{{id2}}"
                 {% comment %}
                   TODO: add title?
                   title="{{child.title}}"
                 {% endcomment -%}
               >{{child.title}}</a>
-              {% comment %}
-                TODO: also make this a collapsable entry?
-              {% endcomment -%}
-              <ul class="nav d-block">
+              <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id2}}">
                 {%- for c in child.children -%}
                   {%- assign isActive = false -%}
                   {%- if c.urlExactMatch and pageUrl == c.permalink -%}

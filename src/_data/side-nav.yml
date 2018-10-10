@@ -45,7 +45,6 @@
   permalink: /development
   children:
   - title: User interface
-    # permalink: /development/ui
     children:
     - title: Tour the framework
       permalink: /development/ui/widgets-intro
@@ -53,7 +52,7 @@
       permalink: /development/ui/layout
     - title: Adding interactivity
       permalink: /development/ui/interactive
-    - title: "Assets and images"
+    - title: Assets and images
       permanlink: /development/ui/assets-and-images
     - title: Navigation & routing
       permalink: /cookbook/navigation/navigation-basics
@@ -85,22 +84,23 @@
     - title: Back-end services
     - title: Use Firebase with Flutter
     - title: Run background processes
-  - title: "Accessibility & Internationalization"
+  - title: Accessibility & internationalization
+    permalink: /accessibility
     children:
     - title: Accessibility
       permalink: /accessibility
     - title: Internationalization
       permalink: /accessibility/internationalization
-  - title: Platform Integration
+  - title: Platform integration
     children:
     - title: Embedding Flutter views in non-Flutter apps
     - title: Writing platform-specific code
       permalink: /development/platform-integration/platform-channels
-  - title: Packages & Plugins
+  - title: Packages & plugins
     children:
     - title: Using packages
       permalink: /development/packages-and-plugins/using-packages
-    - title: "Developing packages & plugins"
+    - title: Developing packages & plugins
       permalink: /development/packages-and-plugins/developing-packages
     - title: Package site
       permalink: http://pub.dartlang.org/flutter
@@ -168,6 +168,7 @@
   children:
   - title: Widget catalog
     permalink: /development/ui/widgets
+    urlExactMatch: true
   - title: API reference
     permalink: https://docs.flutter.io
   - title: Package site
