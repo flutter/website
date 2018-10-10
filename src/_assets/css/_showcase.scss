@@ -1,4 +1,62 @@
 .showcase {
+  .card {
+    margin-bottom: bs-spacer(6);
+    padding: bs-spacer(8) bs-spacer(6);
+
+    .card-header {
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      margin-bottom: bs-spacer(8);
+      min-height: 46px;
+      padding: 0;
+
+      .showcase__apps__logo {
+        max-width: 50%;
+        max-height: 46px;
+        height: auto;
+      }
+    }
+
+    .card-body {
+      margin-bottom: bs-spacer(4);
+      padding: 0;
+    }
+
+    .card-footer {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+
+      > *:not(:last-child) {
+        margin-right: bs-spacer(4);
+      }
+    }
+  }
+
+  &__carousel {
+    &__slide {
+      background-position: center center;
+      background-size: cover;
+      min-height: 75vh;
+      padding: 40px 0;
+      position: relative;
+      @include media-breakpoint-up(md) {
+        min-height: 640px;
+        padding: 80px 0;
+      }
+
+      &__background {
+        left: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
   &__apps {
     &__cards {
       margin-top: bs-spacer(12);
@@ -6,13 +64,6 @@
       .col-lg-4 {
         padding-left: bs-spacer(3);
         padding-right: bs-spacer(3);
-      }
-      .card {
-        margin-bottom: bs-spacer(6);
-
-        .card-body {
-          padding: bs-spacer(6);
-        }
       }
     }
   }
