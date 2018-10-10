@@ -11,6 +11,7 @@ SERVE=superstatic
 
 while [[ "$1" == -* ]]; do
   case "$1" in
+    --clean)      shift;; # Forward compatibility with dash version of script
     --dev)        FILE=_config_dev.yml
                   if [[ -e $FILE ]]; then
                     CONFIG=",$FILE$CONFIG"
