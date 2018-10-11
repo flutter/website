@@ -138,7 +138,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 smooth natural scrolling, and platform awareness.
                 </p>
 
-                <a href="/api-and-reference/widgets">Browse the widget catalog</a>
+                <a href="/api-and-reference/widgets/catalog">Browse the widget catalog</a>
             </div>
         </div>
     </div>
