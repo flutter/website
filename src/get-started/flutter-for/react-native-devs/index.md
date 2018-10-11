@@ -350,7 +350,7 @@ import 'package:flutter/my_widgets.dart';
 Whichever widget package you import, Dart pulls in only the widgets that are
  used in your app.
 
-For more information, see the [Flutter Widgets Catalog](/development/ui/widgets).
+For more information, see the [Flutter Widgets Catalog](/api-and-reference/widgets).
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
 
@@ -749,9 +749,9 @@ For more information, see the [Flutter Technical
 Overview](/resources/technical-overview).
 
 For more information about the core widgets from the Widgets package, see
-[Flutter Basic Widgets](/development/ui/widgets/basics), the
-[Flutter Widget Catalog](/development/ui/widgets), or the
-[Flutter Widget Index](/development/ui/widgets/widgetindex).
+[Flutter Basic Widgets](/api-and-reference/widgets/basics), the
+[Flutter Widget Catalog](/api-and-reference/widgets), or the
+[Flutter Widget Index](/api-and-reference/widgets/widgetindex).
 
 ## Views
 ### What is the equivalent of the `View` container?
@@ -765,7 +765,7 @@ as  [Container](https://docs.flutter.io/flutter/widgets/Container-class.html),
 [Row](https://docs.flutter.io/flutter/widgets/Row-class.html),
 and [Center](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
-For more information, see the [Layout Widgets](/development/ui/widgets/layout) catalog.
+For more information, see the [Layout Widgets](/api-and-reference/widgets/layout) catalog.
 
 ### What is the equivalent of `FlatList` or `SectionList`?
 
@@ -955,7 +955,7 @@ For example, [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.h
 [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),
 and [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
-For a complete list, see [Layout Widgets](/development/ui/widgets/layout).
+For a complete list, see [Layout Widgets](/api-and-reference/widgets/layout).
 
 
 
@@ -1091,7 +1091,7 @@ name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
-Flutter's [Cupertino (iOS-style)](/development/ui/widgets/cupertino) package provides high
+Flutter's [Cupertino (iOS-style)](/api-and-reference/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
 font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 

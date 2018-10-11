@@ -70,7 +70,7 @@
               permalink: /development/ui/advanced/gestures
         - title: Platform-specific theming
         - title: Widget catalog
-          permalink: /development/ui/widgets
+          permalink: /api-and-reference/widgets
           match-page-url-exactly: true
     - title: Data and backend
       children:
@@ -163,7 +163,7 @@
   expanded: true
   children:
     - title: Widget catalog
-      permalink: /development/ui/widgets
+      permalink: /api-and-reference/widgets
       match-page-url-exactly: true
     - title: API reference
       permalink: https://docs.flutter.io

@@ -32,7 +32,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 <p class="homepage__intro__statement">
                 Flutter is a mobile SDK for iOS and Android apps developed at Google in partnership with the global community. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
                 </p>
-            
+
                 <div class="homepage__intro__buttons">
                     <a class="btn btn-primary btn-cta" href="/get-started/install">Get started</a>
                     <button class="btn btn-link btn-cta btn-icon" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch video</button>
@@ -48,38 +48,38 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
 
             <div class="homepage__key-point col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-development.svg' alt='Fast development icon' %}</div>
-                
+
                 <h3>Fast Development</h3>
-    
+
                 <p>
                 Hot Reload in milliseconds to paint your app to life.
                 Use a rich set of fully-customizable widgets to build native interfaces in minutes.
                 </p>
             </div>
-    
+
             <div class="homepage__key-point col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-ui.svg' alt='Expressive and flexible IU icon' %}</div>
-                
+
                 <h3>Expressive and Flexible UI</h3>
-    
+
                 <p>
                 Quickly ship features with a focus on native end-user experiences.
                 Layered architecture allows full customization,
                 which results in incredibly fast rendering and expressive and flexible designs.
                 </p>
             </div>
-    
+
             <div class="homepage__key-point col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-performance.svg' alt='Native performance icon' %}</div>
-                
+
                 <h3>Native Performance</h3>
-    
+
                 <p>
-                Flutter’s widgets incorporate all critical platform differences such as scrolling, 
+                Flutter’s widgets incorporate all critical platform differences such as scrolling,
                 navigation, icons and fonts to provide full native performance on both iOS and Android.
                 </p>
             </div>
-    
+
         </div>
     </div>
 </section>
@@ -90,12 +90,12 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
             <div class="homepage__card-graphic--fill col-lg-8">
                 {% asset 'homepage/hot-reload.gif' alt='Make a change in your code, and your app is changed instantly.' %}
             </div>
-            
+
             <div class="col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-development.svg' alt='Fast development icon' %}</div>
-                
+
                 <h2>Fast development</h2>
-        
+
                 <p>
                     Flutter's <em>hot reload</em> helps you quickly
                     and easily experiment, build UIs, add features, and fix
@@ -104,7 +104,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                     emulators, simulators, and hardware for iOS
                     and Android.
                 </p>
-                
+
                 <a href="development/tools/hot-reload">Learn more</a>
             </div>
         </div>
@@ -128,7 +128,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
             </div>
             <div class="col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-ui.svg' alt='Expressive and flexible IU icon' %}</div>
-                
+
                 <h2>Expressive, beautiful UIs</h2>
 
                 <p>
@@ -137,8 +137,8 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 Cupertino (iOS-flavor) widgets, rich motion APIs,
                 smooth natural scrolling, and platform awareness.
                 </p>
-                
-                <a href="/development/ui/widgets">Browse the widget catalog</a>
+
+                <a href="/api-and-reference/widgets">Browse the widget catalog</a>
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
             </div>
             <div class="col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-performance.svg' alt='Native performance icon' %}</div>
-                
+
                 <h2>Native Performance</h2>
 
                 <p>
@@ -160,7 +160,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 as scrolling, navigation, icons and fonts to provide  full native
                 performance on both iOS and Android.
                 </p>
-                
+
                 <a href="/showcase">Examples of apps built with Flutter</a>
             </div>
         </div>
@@ -181,7 +181,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 <p>
                 Watch these videos to learn from Google and developers as you build with Flutter.
                 </p>
-                
+
                 <a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr">Visit our YouTube channel.</a>
             </div>
         </div>
@@ -211,7 +211,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
                 <p>
                 Organizations around the world are  building apps with Flutter.
                 </p>
-                
+
                 <a href="/showcase">See what’s being created</a>
             </div>
         </div>
