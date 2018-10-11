@@ -1,5 +1,5 @@
 ---
-title: Widgets Catalog
+title: Widget catalog
 toc: false
 ---
 

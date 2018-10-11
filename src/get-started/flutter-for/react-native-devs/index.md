@@ -350,7 +350,7 @@ import 'package:flutter/my_widgets.dart';
 Whichever widget package you import, Dart pulls in only the widgets that are
  used in your app.
 
-For more information, see the [Flutter Widgets Catalog](/api-and-reference/widgets/catalog).
+For more information, see the [Flutter Widgets Catalog](/development/ui/widgets-catalog).
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
 
@@ -750,7 +750,7 @@ Overview](/resources/technical-overview).
 
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/api-and-reference/widgets/basics), the
-[Flutter Widget Catalog](/api-and-reference/widgets/catalog), or the
+[Flutter Widget Catalog](/development/ui/widgets-catalog), or the
 [Flutter Widget Index](/api-and-reference/widgets).
 
 ## Views

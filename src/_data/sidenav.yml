@@ -70,8 +70,7 @@
               permalink: /development/ui/advanced/gestures
         - title: Platform-specific theming
         - title: Widget catalog
-          permalink: /api-and-reference/widgets/catalog
-          match-page-url-exactly: true
+          permalink: /development/ui/widgets-catalog
     - title: Data and backend
       children:
         - title: Architect app to manage data flow
@@ -162,9 +161,8 @@
 - title: APIs & references
   expanded: true
   children:
-    - title: Widget catalog
-      permalink: /api-and-reference/widgets/catalog
-      match-page-url-exactly: true
+    - title: Widget index
+      permalink: /api-and-reference/widgets
     - title: API reference
       permalink: https://docs.flutter.io
     - title: Package site
