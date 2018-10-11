@@ -1,5 +1,5 @@
 ---
-title: Flutter Widget Index
+title: Flutter widget index
 ---
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' %}
