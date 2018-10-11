@@ -44,6 +44,24 @@ a.card {
   text-decoration: none;
 }
 
+.nav-tabs {
+  font-family: $site-font-family-alt;
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  margin-right: bs-spacer(8);
+}
+
+.nav-tabs .nav-item a {
+  color: $site-color-nav-links;
+  padding: bs-spacer(4) 0;
+}
+
+.nav-tabs .nav-link.active {
+  border: none;
+  border-bottom: 2px solid $site-color-primary;
+}
+
 @mixin pre-defaults {
   padding: bs-spacer(3) bs-spacer(4);
 }
