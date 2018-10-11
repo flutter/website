@@ -71,7 +71,7 @@ which computes and describes the geometry of the widget.
 Basic widgets
 -------------
 
-_Main article: [Widgets Overview - Layout Models](/development/ui/widgets/layout)_
+_Main article: [Widgets Overview - Layout Models](/api-and-reference/widgets/layout)_
 
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
@@ -230,7 +230,7 @@ fill the remaining space with its body, which consists a centered message.
 Using Material Components
 ---------------------
 
-_Main article: [Widgets Overview - Material Components](/development/ui/widgets/material)_
+_Main article: [Widgets Overview - Material Components](/api-and-reference/widgets/material)_
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material app starts with the

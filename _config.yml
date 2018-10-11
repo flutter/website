@@ -35,8 +35,9 @@ defaults:
   values:
     show_breadcrumbs: false
 - scope:
-    path: 'widgets'
+    path: 'api-and-reference/widgets'
   values:
+    show_breadcrumbs: true
     toc: false
 
 # Build settings

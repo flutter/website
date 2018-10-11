@@ -49,7 +49,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/development/ui/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino widgets](/api-and-reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -193,7 +193,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/development/ui/widgets/layout).
+catalog](/api-and-reference/widgets/layout).
 
 ### How do I add or remove a component from my layout?
 
@@ -361,7 +361,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/development/ui/widgets/animation),
+[Animation & Motion widgets](/api-and-reference/widgets/animation),
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
