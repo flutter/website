@@ -8,6 +8,7 @@
 
   .navbar {
     font-size: $font-size-lg;
+    min-height: $site-header-height;
 
     @include media-breakpoint-up(md) {
       font-size: $font-size-base;
@@ -36,14 +37,29 @@
     .nav-link {
       color: $site-color-nav-links;
       padding: bs-spacer(5) 0;
+      position: relative;
 
       @include media-breakpoint-up(md) {
         padding: 0 bs-spacer(4);
       }
 
       &.active {
-        border-bottom: 0.25rem solid $site-color-primary;
-        // font-weight: $font-weight-bold;
+        color: $site-color-body;
+        font-weight: 500;
+
+        @include media-breakpoint-up(md) {
+          &:after {
+            $nav-active-marker-thickness: 3px;
+            background-color: $site-color-primary;
+            content: '';
+            display: block;
+            height: $nav-active-marker-thickness;
+            left: 0;
+            position: absolute;
+            top: calc(50% + (#{$site-header-height} / 2) - #{$nav-active-marker-thickness});
+            width: 100%;
+          }
+        }
       }
     }
   }

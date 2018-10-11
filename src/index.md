@@ -44,7 +44,7 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
 
 <section class="homepage__key-points card">
     <div class="card-body">
-        <div class="row">
+        <div class="row text-center">
 
             <div class="homepage__key-point col-lg-4">
                 <div class="homepage__icon">{% asset 'homepage/icon-development.svg' alt='Fast development icon' %}</div>
@@ -194,14 +194,14 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
             <div class="homepage__card-graphic col-lg-7 order-lg-1">
                 <div>
                     <div class="homepage__card-graphic__logo-row row align-items-center">
-                        {% asset 'homepage/logo-alibaba.png' alt='Alibaba logo' width="151" class="col-4" %}
-                        {% asset 'homepage/logo-hamilton.png' alt='Hamilton logo' width="108" class="col-4" %}
-                        {% asset 'homepage/logo-groupon.png' alt='Groupon logo' width="168" class="col-4" %}
+                        {% asset 'homepage/logo-alibaba.png' alt='Alibaba logo' class="col-4" %}
+                        {% asset 'homepage/logo-hamilton.png' alt='Hamilton logo' class="col-4" %}
+                        {% asset 'homepage/logo-google.svg' alt='Google logo' class="col-4" %}
                     </div>
                     <div class="homepage__card-graphic__logo-row row align-items-center">
-                        {% asset 'homepage/logo-tencent.png' alt='Tencent logo' width="192" class="col-4" %}
-                        {% asset 'homepage/logo-abbey_road_studios.png' alt='Abbey Road Studios logo' width="78" class="col-4" %}
-                        {% asset 'homepage/logo-google_adwords.png' alt='Google AdWords logo' width="183" class="col-4" %}
+                        {% asset 'homepage/logo-tencent.png' alt='Tencent logo' class="col-4" %}
+                        {% asset 'homepage/logo-abbey_road_studios.png' alt='Abbey Road Studios logo' class="col-4" %}
+                        {% asset 'homepage/logo-google_adwords.png' alt='Google AdWords logo' class="col-4" %}
                     </div>
                 </div>
             </div>
@@ -223,16 +223,16 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
         {% asset 'homepage/news-1.png' alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Why you should start looking at Google's Flutter now</h3>
-            <a href="#">Read More</a>
+            <h3>Flutter Release Preview 2:  Pixel-Perfect on iOS</h3>
+            <a href="https://developers.googleblog.com/2018/09/flutter-release-preview-2-pixel-perfect.html">Read More</a>
         </div>
     </div>
     <div class="card">
         {% asset 'homepage/news-2.png' alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Unpack the role of Google's Flutter app dev framework </h3>
-            <a href="#">Read More</a>
+            <h3>Flutter’s iOS Application Bundle</h3>
+            <a href="https://medium.com/flutter-io/flutters-ios-application-bundle-6f56d4e88cf8">Read More</a>
         </div>
     </div>
 </div>
