@@ -20,9 +20,18 @@ a.card {
   }
 }
 
-// .breadcrumb-item+.breadcrumb-item::before {
-//   font-family: $site-font-family-icon;
-// }
+.breadcrumb {
+  align-items: center;
+}
+
+.breadcrumb-item {
+  align-items: center;
+  display: flex;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  font: $site-font-icon;
+}
 
 .btn {
   font-family: $site-font-family-alt;
@@ -33,6 +42,24 @@ a.card {
 .btn-link:hover,
 .btn-link:focus {
   text-decoration: none;
+}
+
+.nav-tabs {
+  font-family: $site-font-family-alt;
+}
+
+.nav-tabs .nav-item:not(:last-child) {
+  margin-right: bs-spacer(8);
+}
+
+.nav-tabs .nav-item a {
+  color: $site-color-nav-links;
+  padding: bs-spacer(4) 0;
+}
+
+.nav-tabs .nav-link.active {
+  border: none;
+  border-bottom: 2px solid $site-color-primary;
 }
 
 @mixin pre-defaults {

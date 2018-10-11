@@ -8,11 +8,17 @@
   }
 
   &__title {
+    margin-bottom: bs-spacer(12);
+
     @at-root {
       #page-github-links {
         @include float-right;
         .btn { padding: 0 ($btn-padding-x / 2); }
       }
+    }
+
+    h1 {
+      margin-bottom: 0;
     }
   }
 }

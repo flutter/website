@@ -62,11 +62,15 @@ $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
 
-// $breadcrumb-divider: 'chevron_right';
+$breadcrumb-divider: 'chevron_right';
 $breadcrumb-item-padding: .25rem;
+$breadcrumb-bg: none;
+$breadcrumb-padding-x: 0;
 
 $card-border-radius: 4px;
 $card-group-margin: bs-spacer(2);
 
 $grid-gutter-width: 50px;
 
+$nav-tabs-link-active-color: $site-color-body;
+$nav-tabs-link-active-border-color: transparent transparent $site-color-primary;
