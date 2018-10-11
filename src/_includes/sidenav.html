@@ -1,10 +1,10 @@
 {% comment %} Cononicalize page URL path {% endcomment -%}
 {% assign page_url_path = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
 
-{% assign active_entries = include.list | active_nav_entry_index_array: page_url_path -%}
+{% assign active_entries = include.nav | active_nav_entry_index_array: page_url_path -%}
 
 <ul class="nav flex-column">
-  {%- for entry1 in include.list -%}
+  {%- for entry1 in include.nav -%}
 
     {% assign class1 = '' -%}
     {% assign id1 = 'sidenav-' | append: forloop.index -%}
