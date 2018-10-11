@@ -38,7 +38,6 @@
       permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
-  expanded: true
   children:
     - title: User interface
       children:
@@ -159,7 +158,6 @@
       permalink: /resources/faq
 
 - title: APIs & references
-  expanded: true
   children:
     - title: Widget index
       permalink: /api-and-reference/widgets
