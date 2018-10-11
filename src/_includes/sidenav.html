@@ -60,6 +60,8 @@
 
           {%- else -%}
 
+            {% assign class2 = class2 | append: ' collapsable' -%}
+
             {% if isActive2 or entry2.expanded -%}
               {% assign expanded = 'true' -%}
               {% assign show = 'show' -%}
@@ -80,7 +82,7 @@
                 data-toggle="collapse" data-target="#{{id2}}"
                 href="{{href}}" role="button"
                 aria-expanded="{{expanded}}" aria-controls="{{id2}}"
-              >{{entry2.title}}&hellip;
+              >{{entry2.title}}
               </a>
               <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id2}}">
                 {%- for entry3 in entry2.children -%}
