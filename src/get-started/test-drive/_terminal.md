@@ -17,14 +17,14 @@ In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
- 1. Check that an Android device is running. If none are shown, see
-    [setup](/get-started/install).
+ 1. Check that an Android device is running. If none are shown, follow the
+    device-specific instructions on the [Install][] page for your OS.
 
     ```terminal
     $ flutter devices
     ```
 
- 2. Run the app with the `flutter run` command:
+ 2. Run the app with the following command:
 
     ```terminal
     $ flutter run
@@ -32,4 +32,5 @@ In the project directory, the code for your app is in `lib/main.dart`.
 
 {% include_relative _try-hot-reload.md %}
 
+[Install]: /get-started/install
 </div>
