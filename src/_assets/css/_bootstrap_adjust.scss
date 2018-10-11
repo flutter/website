@@ -20,9 +20,18 @@ a.card {
   }
 }
 
-// .breadcrumb-item+.breadcrumb-item::before {
-//   font-family: $site-font-family-icon;
-// }
+.breadcrumb {
+  align-items: center;
+}
+
+.breadcrumb-item {
+  align-items: center;
+  display: flex;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  font: $site-font-icon;
+}
 
 .btn {
   font-family: $site-font-family-alt;
