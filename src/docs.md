@@ -16,7 +16,7 @@ description: The landing page for Flutter documentation.
 
 ## What's new on flutter.io
 
-**Oct 31, 2018**
+**November 4, 2018**
 
 Welcome to the revamped Flutter website!
 
