@@ -147,9 +147,9 @@ for example to determine the current theme color, the build phase
 would become O(N²) in the depth of the tree, which can be quite
 large due to aggressive composition. To avoid these parent walks,
 the framework pushes information down the element tree by maintaining
-a hash table of InheritedWidgets at each element. Typically, many
+a hash table of `InheritedWidget`s at each element. Typically, many
 elements will reference the same hash table, which changes only at
-elements that introduce a new InheritedWidget.
+elements that introduce a new `InheritedWidget`.
 
 ## Linear reconciliation
 
@@ -264,7 +264,7 @@ Flutter supports infinite scrolling lists with a simple interface
 based on the _builder_ pattern, in which a `ListView` uses a callback
 to build widgets on demand as they become visible to the user during
 scrolling. Supporting this feature requires _viewport-aware layout_
-and _building widgets on demand__.
+and _building widgets on demand_.
 
 ## Viewport-aware layout
 
@@ -347,22 +347,22 @@ in aid of usability.
 
 ## Specializing APIs to match the developer's mindset
 
-The base class for nodes in Flutter's Widget, Element, and RenderObject
+The base class for nodes in Flutter's `Widget`, `Element`, and `RenderObject`
 trees does not define a child model. This allows each node to be
 specialized for the child model that is applicable to that node.
 
-Most Widget objects have a single child Widget, and therefore only expose
+Most `Widget` objects have a single child `Widget`, and therefore only expose
 a single `child` parameter. Some widgets support an arbitrary number of
 children, and expose a `children` parameter that takes a list.
 Some widgets don't have any children at all and reserve no memory,
-and have no parameters, for them. Similarly, RenderObjects expose APIs
-specific to their child model. RenderImage is a leaf node, and has no
-concept of children. RenderPadding takes a single child, so it has storage
-for a single pointer to a single child. RenderFlex takes an arbitrary
+and have no parameters for them. Similarly, `RenderObjects` expose APIs
+specific to their child model. `RenderImage` is a leaf node, and has no
+concept of children. `RenderPadding` takes a single child, so it has storage
+for a single pointer to a single child. `RenderFlex` takes an arbitrary
 number of children and manages it as a linked list.
 
 In some rare cases, more complicated child models are used. The
-RenderTable render object's constructor takes an array of arrays of
+`RenderTable` render object's constructor takes an array of arrays of
 children, the class exposes getters and setters that control the number
 of rows and columns, and there are specific methods to replace
 individual children by x,y coordinate, to add a row, to provide a
@@ -371,7 +371,7 @@ with a single array and a column count. In the implementation,
 the object does not use a linked list like most render objects but
 instead uses an indexable array.
 
-The Chip widgets and InputDecoration objects have fields that match
+The `Chip` widgets and `InputDecoration` objects have fields that match
 the slots that exist on the relevant controls. Where a one-size-fits-all
 child model would force semantics to be layered on top of a list of
 children, for example, defining the first child to be the prefix value
@@ -384,9 +384,9 @@ in a table, causing all the other cells to wrap around; similarly,
 it's rare to want to remove a child from a flex row by index instead
 of by reference.
 
-The RenderParagraph object is the most extreme case: it has a child of
-an entirely different type, TextSpan. At the RenderParagraph boundary,
-the RenderObject tree transitions into being a TextSpan tree.
+The `RenderParagraph` object is the most extreme case: it has a child of
+an entirely different type, `TextSpan`. At the `RenderParagraph` boundary,
+the `RenderObject` tree transitions into being a `TextSpan` tree.
 
 The overall approach of specializing APIs to meet the developer's
 expectations is applied to more than just child models.
@@ -394,14 +394,14 @@ expectations is applied to more than just child models.
 Some rather trivial widgets exist specifically so that developers
 will find them when looking for a solution to a problem. Adding a
 space to a row or column is easily done once one knows how, using
-the Expanded widget and a zero-sized SizedBox child, but discovering
-that pattern is unnecessary because searching for `space` will
-uncover the Spacer widget, which uses Expanded and SizedBox directly
+the `Expanded` widget and a zero-sized `SizedBox` child, but discovering
+that pattern is unnecessary because searching for `space`
+uncovers the `Spacer` widget, which uses `Expanded` and `SizedBox` directly
 to achieve the effect.
 
 Similarly, hiding a widget subtree is easily done by not including the
 widget subtree in the build at all. However, developers typically expect
-there to be a widget to do this, and so the Visibility widget exists
+there to be a widget to do this, and so the `Visibility` widget exists
 to wrap this pattern in a trivial reusable widget.
 
 ## Explicit arguments
@@ -418,7 +418,7 @@ and in particular is extended to any boolean argument, so that isolated
 `true` or `false` literals in method calls are always self-documenting.
 Furthermore, to avoid confusion commonly caused by double negatives
 in APIs, boolean arguments and properties are always named in the
-positive form (e.g. `enabled: true` rather than `disabled: false`).
+positive form (for example, `enabled: true` rather than `disabled: false`).
 
 ## Paving over pitfalls
 
@@ -430,11 +430,11 @@ For example, interpolation functions allow one or both ends of the
 interpolation to be null, instead of defining that as an error case:
 interpolating between two null values is always null, and interpolating
 from a null value or to a null value is the equivalent of interpolating
-to the zero analogue for the given type. This means that developers
+to the zero analog for the given type. This means that developers
 who accidentally pass null to an interpolation function will not hit
 an error case, but will instead get a reasonable result.
 
-A more subtle example is in the Flex layout algorithm. The concept of
+A more subtle example is in the `Flex` layout algorithm. The concept of
 this layout is that the space given to the flex render object is
 divided among its children, so the size of the flex should be the
 entirety of the available space. In the original design, providing
@@ -445,14 +445,14 @@ render object, the render object sizes itself to fit the desired
 size of the children, reducing the possible number of error cases.
 
 The approach is also used to avoid having constructors that allow
-inconsistent data to be created. For instance, the PointerDownEvent
-constructor does not allow the `down` property of PointerEvent to
+inconsistent data to be created. For instance, the `PointerDownEvent`
+constructor does not allow the `down` property of `PointerEvent` to
 be set to `false` (a situation that would be self-contradictory);
 instead, the constructor does not have a parameter for the `down`
 field and always sets it to `true`.
 
 In general, the approach is to define valid interpretations for all
-values in the input domain. The simplest example is the Color constructor.
+values in the input domain. The simplest example is the `Color` constructor.
 Instead of taking four integers, one for red, one for green,
 one for blue, and one for alpha, each of which could be out of range,
 the default constructor takes a single integer value, and defines
@@ -474,12 +474,12 @@ monitored and when inconsistencies are detected they immediately
 cause an exception to be thrown.
 
 In some cases, this is taken to extremes: for example, when running
-unit tests, regardless of what else the test is doing, every RenderBox
+unit tests, regardless of what else the test is doing, every `RenderBox`
 subclass that is laid out aggressively inspects whether its intrinsic
 sizing methods fulfill the intrinsic sizing contract. This helps catch
 errors in APIs that might otherwise not be exercised.
 
-When exceptions do get thrown, they include as much information as
+When exceptions are thrown, they include as much information as
 is available. Some of Flutter's error messages proactively probe the
 associated stack trace to determine the most likely location of the
 actual bug. Others walk the relevant trees to determine the source
@@ -548,23 +548,23 @@ and the specific logic relating to how to paint each frame to be
 entirely separated from each other.
 
 This approach is broadly applicable. In Flutter, basic types like
-Colors and Shapes can be interpolated, but so can much more elaborate
-types such as Decorations, TextStyles, or entire Themes. These are
+`Color` and `Shape` can be interpolated, but so can much more elaborate
+types such as `Decoration`, `TextStyle`, or `Theme`. These are
 typically constructed from components that can themselves be interpolated,
 and interpolating the more complicated objects is often as simple as
 recursively interpolating all the values that describe the complicated
 objects.
 
 Some interpolatable objects are defined by class hierarchies. For example,
-shapes are represented by the ShapeBorder interface, and there exists a
-variety of shapes, including BeveledRectangleBorder, BoxBorder,
-CircleBorder, RoundedRectangleBorder, and StadiumBorder. A single
+shapes are represented by the `ShapeBorder` interface, and there exists a
+variety of shapes, including `BeveledRectangleBorder`, `BoxBorder`,
+`CircleBorder`, `RoundedRectangleBorder`, and `StadiumBorder`. A single
 `lerp` function cannot have a priori knowledge of all the possible types,
 and therefore the interface instead defines `lerpFrom` and `lerpTo` methods,
 which the static `lerp` method defers to. When told to interpolate from
 a shape A to a shape B, first B is asked if it can `lerpFrom` A, then,
 if it cannot, A is instead asked if it can `lerpTo` B. (If neither is
-possible, then the function returns A from values of t less than 0.5,
+possible, then the function returns A from values of `t` less than 0.5,
 and returns B otherwise.)
 
 This allows the class hierarchy to be arbitrarily extended, with later
@@ -574,7 +574,7 @@ and themselves.
 In some cases, the interpolation itself cannot be described by any of
 the available classes, and a private class is defined to describe the
 intermediate stage. This is the case, for instance, when interpolating
-between a CircleBorder and a RoundedRectangleBorder.
+between a `CircleBorder` and a `RoundedRectangleBorder`.
 
 This mechanism has one further added advantage: it can handle interpolation
 from intermediate stages to new values. For example, half-way through
@@ -595,6 +595,7 @@ easy for developers to create infinite scrolling lists that build
 widgets on demand when they become visible.
 
 ---
+**Footnotes:**
 
 <sup><a name="a1">1</a></sup> For layout, at least. It may be revisited
   for painting, for building the accessibility tree if necessary,
