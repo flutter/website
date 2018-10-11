@@ -102,6 +102,10 @@
     p {
       margin-bottom: 0;
     }
+
+    .homepage__icon {
+      margin: 0 auto bs-spacer(8);
+    }
   }
 
   &__card-graphic {
@@ -142,6 +146,13 @@
         right: bs-spacer(6);
         text-align: center;
       }
+    }
+  }
+
+  &__use-cases {
+    .homepage__card-graphic {
+      align-items: center;
+      display: flex;
     }
   }
 
