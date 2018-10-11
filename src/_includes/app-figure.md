@@ -10,7 +10,7 @@
 
 <figure class="site-figure {{include.class}}">
   <div class="site-figure-container">
-    {% asset '{{path}}/{{include.image}}' alt='{{alt}}' %}
+    {% asset '{{path}}/{{include.image}}' class='{{include.img-class}}' alt='{{alt}}' %}
     {% if caption -%}
     <figcaption class="figure-caption">{{caption}}</figcaption>
     {% endif -%}
