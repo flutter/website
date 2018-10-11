@@ -13,7 +13,7 @@ layout: base
 <div class="container-fluid">
   <div class="row flex-xl-nowrap">
     <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
-      {% include sidebar.html list=site.data.side-nav %}
+      {% include sidenav.html list=site.data.sidenav %}
     </div>
     {% if page.toc -%}
       {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" %}
