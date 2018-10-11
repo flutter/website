@@ -9,12 +9,13 @@ toc: false
 
 Learn more about the Flutter framework:
 
-* [Flutter for Android Devs](/get-started/flutter-for/android-devs)
-* [Flutter for iOS Devs](/get-started/flutter-for/ios-devs)
-* [Flutter for React Native Devs](/get-started/flutter-for/react-native-devs)
-* [Flutter for Xamarin.Forms Devs](/get-started/flutter-for/xamarin-forms-devs)
-* [Building Layouts in Flutter](/development/ui/layout) tutorial
-* [Add Interactivity](/development/ui/interactive) tutorial
+* [Flutter for Android developers](/get-started/flutter-for/android-devs)
+* [Flutter for iOS developers](/get-started/flutter-for/ios-devs)
+* [Flutter for React Native developers](/get-started/flutter-for/react-native-devs)
+* [Flutter for Xamarin.Forms developers](/get-started/flutter-for/xamarin-forms-devs)
+* [Flutter for web developers](/get-started/flutter-for/web-devs)
+* [Building layouts in Flutter](/development/ui/layout) tutorial
+* [Add interactivity](/development/ui/interactive) tutorial
 * [A Tour of the Flutter Widget Framework](/development/ui/widgets-intro)
 
 Other resources:

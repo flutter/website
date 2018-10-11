@@ -1,5 +1,5 @@
 ---
-title: Flutter for Android Developers
+title: Flutter for Android developers
 description: Learn how to apply Android developer knowledge when building Flutter apps.
 ---
 
