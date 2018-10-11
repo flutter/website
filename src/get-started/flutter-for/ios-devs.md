@@ -1,5 +1,5 @@
 ---
-title: Flutter for iOS Developers
+title: Flutter for iOS developers
 description: Learn how to apply iOS developer knowledge when building Flutter apps.
 ---
 

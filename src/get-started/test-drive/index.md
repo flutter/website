@@ -9,11 +9,10 @@ next:
 toc: false
 ---
 
-This page describes how to "test drive" Flutter: create a new Flutter app from
-our templates, run it, and learn how to make changes with Hot Reload.
+This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.
 
-Flutter is a flexible toolkit, so please start by selecting your development
-tool of choice for writing, building, and running your Flutter app.
+Select your development tool of choice for writing, building, and running
+Flutter apps.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -37,4 +36,4 @@ tool of choice for writing, building, and running your Flutter app.
 
 ## Next step
 
-Let's learn some core Flutter concepts, by creating a small app.
+You'll next learn some core Flutter concepts by creating a small app.

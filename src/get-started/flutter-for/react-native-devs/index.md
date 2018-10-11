@@ -1,5 +1,5 @@
 ---
-title: Flutter for React Native Developers
+title: Flutter for React Native developers
 description: Learn how to apply React Native developer knowledge when building Flutter apps.
 ---
 

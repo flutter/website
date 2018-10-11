@@ -5,8 +5,8 @@ TODO: Fernando, should we set all `figure-caption` to have centered text,
 
 Sadly, Jekyll doesn't seem to supported nested includes, so the following won't work:
 
-  {% include_relative _app-figure.md image="{{include.image}}" platform="Android" %}
-  {% include_relative _app-figure.md image="{{include.image}}" platform="iOS" %}
+  {% include app-figure.md image="{{include.image}}" platform="Android" %}
+  {% include app-figure.md image="{{include.image}}" platform="iOS" %}
 
 {% endcomment -%}
 

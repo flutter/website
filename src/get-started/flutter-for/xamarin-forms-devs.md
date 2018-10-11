@@ -1,5 +1,5 @@
 ---
-title: Flutter for Xamarin.Forms Developers
+title: Flutter for Xamarin.Forms developers
 description: Learn how to apply Xamarin.Forms developer knowledge when building Flutter apps.
 ---
 
