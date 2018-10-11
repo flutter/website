@@ -42,6 +42,7 @@
   description: >
     An internal customer management app used widely by Google sales that provides rich visualizations for tracking sales
     targets.
+  logo_src: showcase/logo-greentea.png
 
 - name: Abbey Road
   description: >
@@ -61,6 +62,7 @@
 - name: JD.com
   description: >
     JD Finance is JD.com’s finance and investment mobile app with hundreds of millions of users.
+  logo_src: showcase/logo-jd.jpg
   learn_more_link: https://jd.com
   app_store_link: https://itunes.apple.com/cn/app/jing-dong-jin-rong-hui-li/id895682747?mt=8
   play_store_link: http://storage.jd.com/jdmobile/JDMALL-PC2.apk

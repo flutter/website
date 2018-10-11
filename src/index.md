@@ -15,9 +15,14 @@ description: >
   {% include banner.html -%}
 </div>
 
-<div class="homepage__hero text-center">
-    <h1 class="homepage__hero--text">Build Beautiful Apps</h1>
-</div>
+<section class="homepage__hero text-center">
+    {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
+    <h1 class="homepage__hero__text">Build <span class="color-white">Beautiful</span> Apps</h1>
+</section>
+
+<section class="homepage__platforms text-center">
+Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">iOS</a>, <a href="/get-started/flutter-for/android-devs">Android</a>, <a href="/get-started/flutter-for/web-devs">Web</a>, <a href="/get-started/flutter-for/react-native-devs">React Native</a>, <a href="/get-started/flutter-for/xamarin-forms-devs">Xamarin</a>
+</section>
 
 <section class="homepage__intro card text-center">
     <div class="card-body">
