@@ -71,7 +71,7 @@ alert:
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="fa fa-lightbulb-o"></i> **Tip:**
+    <i class="far fa-lightbulb"></i> **Tip:**
   warning: >-
     <aside class="alert alert-danger" role="alert" markdown="1">
     <i class="fa fa-exclamation-circle"></i> **Warning:**
