@@ -1,4 +1,40 @@
 .homepage {
+  &__hero {
+    padding: 40px 0;
+    position: relative;
+
+    &__image {
+      max-width: 100%;
+    }
+
+    &__text {
+      color: $site-color-primary;
+      left: 50%;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      @include media-breakpoint-up(sm) {
+        font-size: 64px;
+      }
+      @include media-breakpoint-up(md) {
+        font-size: 84px;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 100px;
+      }
+
+      .color-white {
+        color: $site-color-white;
+      }
+    }
+  }
+
+  &__platforms {
+    margin-bottom: 40px;
+  }
+
   &__intro{
     font-family: $site-font-family-alt;
     font-size: 1.5rem;
