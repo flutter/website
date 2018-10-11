@@ -1,20 +1,19 @@
-//= require vendor/jquery-3.3.1
+//= require shared/vendor/jquery-3.3.1
 //= require popper
 //= require bootstrap
 //= require archive.js
 //= require tabs.js
+//= require shared/vendor/code-prettify/prettify
+//= require shared/vendor/code-prettify/lang-css
+//= require shared/vendor/code-prettify/lang-dart
+//= require shared/vendor/code-prettify/lang-yaml
 
 // TODO(chalin): find a way to selectively generate (as individual files) and then include archive.js and/or tabs.js
 
 $(function () {
-  // // Sidenav
-  // $('#sidenav i').on('click', function (e) {
-  //   e.stopPropagation();
-  //   $(this).parent('li').toggleClass('active');
-  // });
-
   adjustToc();
   initFixedColumns();
+  prettyPrint();
 
   // New (dash) tabs
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');

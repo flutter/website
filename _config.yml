@@ -41,6 +41,10 @@ defaults:
 
 # Build settings
 
+assets:
+  sources:
+    - _assets/shared # Forces jekyll to go through the symlink
+
 # kramdown: {show_warnings: true}
 plugins: [jekyll-toc]
 source: src

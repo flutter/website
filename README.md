@@ -79,12 +79,12 @@ if you already have the required packages installed.
  1. Test your changes by serving the site locally. Run either **one** of these commands:
 
     - `./tool/serve.sh`
-    
+
     or
-    
+
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
-    
-      **Note**: Unless you're editing files under `site-shared`, you can safely 
+
+      **Note**: Unless you're editing files under `site-shared`, you can safely
       ignore `ERROR: directory is already being watched` messages.
       For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
@@ -144,25 +144,6 @@ command:
 
 ## Syntax highlighting
 
-The flutter.io website uses [prism.js](http://prismjs.com/) for syntax
-highlighting. This section covers how to use syntax highlighting, and
-how to update our syntax highlighter for new languages.
-
-### Supported languages
-
-This website can syntax highlight the following languages:
-
-* shell
-* dart
-* html
-* css
-* javascript
-* java
-* objectivec
-* swift
-
-### Using syntax highlighting
-
 The easiest way to syntax highlight a block of code is to wrap
 it with triple backticks followed by the language.
 
@@ -176,29 +157,6 @@ class ExampleWidget extends StatelessWidget {
   }
 }
 ```
-
-See the list of supported languages above for what to use
-following the first triple backticks.
-
-### Adding more languages for syntax highlighting
-
-The flutter.io website uses a custom build of prism, which
-includes only the languages the website requires. To improve
-load times and user experience, we do not support every
-language that prism supports.
-
-To add a new language for syntax highlighting, you will need
-to generate a new copy of the `prism.js` file.
-
-Follow these steps to generate a new copy of `prism.js`:
-
-* Open `js/prism.js`
-* Copy the URL in the comment of the first line of the file
-* Paste it into a browser window/tab
-* Add the new language that you wish to syntax highlight
-* DO NOT change the other plugins, languages, or settings
-* Download the generated JavaScript, and use it to replace `js/prism.js`
-* Download the generated CSS, and use it to replace `_sass/_prism.scss`
 
 ## Advanced stylization of code blocks
 
