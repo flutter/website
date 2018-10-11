@@ -352,8 +352,8 @@ trees does not define a child model. This allows each node to be
 specialized for the child model that is applicable to that node.
 
 Most Widget objects have a single child Widget, and therefore only expose
-a single "child" parameter. Some widgets support an arbitrary number of
-children, and expose a "children" parameter that takes a list.
+a single `child` parameter. Some widgets support an arbitrary number of
+children, and expose a `children` parameter that takes a list.
 Some widgets don't have any children at all and reserve no memory,
 and have no parameters, for them. Similarly, RenderObjects expose APIs
 specific to their child model. RenderImage is a leaf node, and has no
@@ -395,7 +395,7 @@ Some rather trivial widgets exist specifically so that developers
 will find them when looking for a solution to a problem. Adding a
 space to a row or column is easily done once one knows how, using
 the Expanded widget and a zero-sized SizedBox child, but discovering
-that pattern is unnecessary because searching for "space" will
+that pattern is unnecessary because searching for `space` will
 uncover the Spacer widget, which uses Expanded and SizedBox directly
 to achieve the effect.
 
@@ -415,10 +415,10 @@ Flutter's API is able to keep such build methods clear and understandable.
 
 This pattern is extended to any method with multiple arguments,
 and in particular is extended to any boolean argument, so that isolated
-"true" or "false" literals in method calls are always self-documenting.
+`true` or `false` literals in method calls are always self-documenting.
 Furthermore, to avoid confusion commonly caused by double negatives
 in APIs, boolean arguments and properties are always named in the
-positive form (e.g. "enabled: true" rather than "disabled: false").
+positive form (e.g. `enabled: true` rather than `disabled: false`).
 
 ## Paving over pitfalls
 
@@ -446,10 +446,10 @@ size of the children, reducing the possible number of error cases.
 
 The approach is also used to avoid having constructors that allow
 inconsistent data to be created. For instance, the PointerDownEvent
-constructor does not allow the "down" property of PointerEvent to
-be set to "false" (a situation that would be self-contradictory);
-instead, the constructor does not have a parameter for the "down"
-field and always sets it to "true".
+constructor does not allow the `down` property of PointerEvent to
+be set to `false` (a situation that would be self-contradictory);
+instead, the constructor does not have a parameter for the `down`
+field and always sets it to `true`.
 
 In general, the approach is to define valid interpretations for all
 values in the input domain. The simplest example is the Color constructor.
@@ -523,22 +523,22 @@ keeps a record of the current value of the input, and begins an animation
 sequence whenever the input value changes, transitioning from the current
 value to the new value over a specified duration.
 
-This is implemented using "lerp" ("linear interpolation") functions using
+This is implemented using `lerp` (linear interpolation) functions using
 immutable objects. Each state (circle and square, in this case)
 is represented as an immutable object that is configured with
 appropriate settings (color, stroke width, etc) and knows how to paint
 itself. When it is time to draw the intermediate steps during the animation,
-the start and end values are passed to the appropriate "lerp" function
+the start and end values are passed to the appropriate `lerp` function
 along with a _t_ value representing the point along the animation,
-where 0.0 represents the "start" and 1.0 represents the "end",
+where 0.0 represents the `start` and 1.0 represents the `end`,
 and the function returns a third immutable object representing the
 intermediate stage.
 
-For the circle-to-square transition, the "lerp" function would return
+For the circle-to-square transition, the `lerp` function would return
 an object representing a "rounded square" with a radius described as
 a fraction derived from the _t_ value, a color interpolated using the
-"lerp" function for colors, and a stroke width interpolated using the
-"lerp" function for doubles. That object, which would implement the
+`lerp` function for colors, and a stroke width interpolated using the
+`lerp` function for doubles. That object, which implements the
 same interface as circles and squares, would then be able to paint
 itself when requested to.
 
@@ -559,11 +559,11 @@ Some interpolatable objects are defined by class hierarchies. For example,
 shapes are represented by the ShapeBorder interface, and there exists a
 variety of shapes, including BeveledRectangleBorder, BoxBorder,
 CircleBorder, RoundedRectangleBorder, and StadiumBorder. A single
-"lerp" function cannot have a priori knowledge of all the possible types,
-and therefore the interface instead defines "lerpFrom" and "lerpTo" methods,
-which the static "lerp" method defers to. When told to interpolate from
-a shape A to a shape B, first B is asked if it can "lerpFrom" A, then,
-if it cannot, A is instead asked if it can "lerpTo" B. (If neither is
+`lerp` function cannot have a priori knowledge of all the possible types,
+and therefore the interface instead defines `lerpFrom` and `lerpTo` methods,
+which the static `lerp` method defers to. When told to interpolate from
+a shape A to a shape B, first B is asked if it can `lerpFrom` A, then,
+if it cannot, A is instead asked if it can `lerpTo` B. (If neither is
 possible, then the function returns A from values of t less than 0.5,
 and returns B otherwise.)
 
@@ -580,7 +580,7 @@ This mechanism has one further added advantage: it can handle interpolation
 from intermediate stages to new values. For example, half-way through
 a circle-to-square transition, the shape could be changed once more,
 causing the animation to need to interpolate to a triangle. So long as
-the triangle class can "lerpFrom" the rounded-square intermediate class,
+the triangle class can `lerpFrom` the rounded-square intermediate class,
 the transition can be seamlessly performed.
 
 # Conclusion
