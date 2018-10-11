@@ -751,7 +751,7 @@ Overview](/resources/technical-overview).
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/api-and-reference/widgets/basics), the
 [Flutter Widget Catalog](/api-and-reference/widgets/catalog), or the
-[Flutter Widget Index](/api-and-reference/widgets/widgetindex).
+[Flutter Widget Index](/api-and-reference/widgets).
 
 ## Views
 ### What is the equivalent of the `View` container?
