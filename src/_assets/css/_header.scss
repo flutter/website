@@ -30,7 +30,7 @@
 
     .btn {
       @include media-breakpoint-up(md) {
-        margin-left: bs-spacer(4);
+        margin-right: bs-spacer(4);
       }
     }
 

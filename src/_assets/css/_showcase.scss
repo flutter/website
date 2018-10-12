@@ -1,5 +1,5 @@
 .showcase {
-  .card {
+  .card.card--app {
     margin-bottom: bs-spacer(6);
     padding: bs-spacer(8) bs-spacer(6);
 
@@ -25,13 +25,7 @@
     }
 
     .card-footer {
-      border: none;
-      background-color: transparent;
       padding: 0;
-
-      > *:not(:last-child) {
-        margin-right: bs-spacer(4);
-      }
     }
   }
 

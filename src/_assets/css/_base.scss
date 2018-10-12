@@ -21,10 +21,42 @@ dd {
   margin-bottom: .75rem;
 }
 
-.card-title {
-  font-family: $site-font-family-alt;
-  font-size: $font-size-lg;
-  margin-bottom: bs-spacer(2);
+.card-deck.card-deck--responsive {
+  .card {
+    flex: 0 0 calc((100% / 3) - #{bs-spacer(4)});
+    margin-bottom: bs-spacer(4);
+  }
+}
+
+.card-footer.card-footer--transparent {
+  border: none;
+  background-color: transparent;
+
+}
+
+.card-footer.card-footer--links {
+  > *:not(:last-child) {
+    margin-right: bs-spacer(4);
+  }
+}
+
+.card-image-holder {
+  align-items: center;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+
+  img {
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .fixed-col {

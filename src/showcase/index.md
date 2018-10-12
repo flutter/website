@@ -11,7 +11,7 @@ toc: false
         <div class="container">
             <div class="row">
                 <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
-                    <div class="card">
+                    <div class="card card--app">
                         <div class="card-body">
                             <h2 class="card-category">Featured</h2>
                             <h3>Hamilton Musical</h3>
@@ -20,7 +20,7 @@ toc: false
                             videos, a trivia game, merchandise store, and more.
                             </p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer card-footer--transparent card-footer--links">
                             <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
                             <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
                         </div>
@@ -48,7 +48,7 @@ toc: false
             {% if modulo3 == '0' %}
                 <div class="showcase__apps__cards text-left card-deck flex-column flex-lg-row">
             {% endif %}
-                    <div class="card">
+                    <div class="card card--app">
                         <div class="card-header">
                             {% if case.logo_src %}
                                 {% asset '{{ case.logo_src }}' class='showcase__apps__logo' %}
@@ -58,7 +58,7 @@ toc: false
                             <h3>{{ case.name }}</h3>
                             <p>{{ case.description }}</p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer card-footer--transparent card-footer--links">
                             {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">Learn more</a>{% endif %}
                             {% if case.play_store_link or case.app_store_link %}
                                 <span class="dropdown">
