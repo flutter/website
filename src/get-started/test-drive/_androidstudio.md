@@ -3,10 +3,12 @@
 ## Create the app {#create-app}
 
  1. Select **File > New Flutter Project**.
- 1. Select **Flutter application** as the project type, and press **Next**.
- 1. Enter a project name, such as `myapp`, and press **Next**.
+ 1. Select **Flutter application** as the project type, and press Next.
+ 1. Make sure that the **Flutter SDK Path** text field specifies the
+    location of the SDK. Install the SDK if you haven't yet done so.
+ 1. Enter a project name (for example, `myapp`), and press Next.
  1. Click **Finish**.
- 1. Wait for Android Studio to install the SDK and create the project.
+ 1. Wait for Android Studio to install the SDK, and create the project.
 
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
