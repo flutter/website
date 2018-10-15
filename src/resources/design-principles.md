@@ -108,7 +108,7 @@ We're attempting to stablize the APIs for the
 [packages in the SDK](https://github.com/flutter/flutter/tree/master/packages).
 To make a change that will require developers to change their code:
 
- 1. File an issue or create a pull request with the `prod: API break`
+ 1. File an issue or create a pull request with the `severe: API break`
     label.
 
  2. Send an e-mail to <mailto:{{site.email}}> to socialize
