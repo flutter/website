@@ -47,6 +47,7 @@ Some of the new content includes:
 If you have questions or comments about the revamped site, [file an
 issue]({{site.repo.this}}/issues).
 
+{% comment %}
 # TODO (Not for publication)
 
 * Finish reviewing all pages and fixing issues
@@ -63,6 +64,7 @@ issue]({{site.repo.this}}/issues).
 * A new 404 page
 * Complete styling for widget catalog
 * More new content (by Flutter Live)
+{% endcomment %}
 
 
 ## New to Flutter?

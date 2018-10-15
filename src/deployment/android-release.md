@@ -16,8 +16,8 @@ Review the default [App Manifest][manifest] file `AndroidManifest.xml` located
 in `<app dir>/android/app/src/main` and verify the values are correct,
 especially:
 
-* `application`: Edit the [`application`][applicationtag] tag to reflect the
-  final name of the app.
+* `application`: Edit the `android:label` in the
+ [`application`][applicationtag] tag to reflect the final name of the app.
 
 * `uses-permission`: Remove the `android.permission.INTERNET`
   [permission][permissiontag] if your application code does not need Internet
