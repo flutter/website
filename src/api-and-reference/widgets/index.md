@@ -9,15 +9,19 @@ toc: true
 
 This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/development/ui/widgets-catalog">browse widgets by category.
 
-<ul class="cards">
-  {% for comp in sorted %}
-  <li class="cards__item">
-      <div class="catalog-entry">
-          <div class="catalog-image-holder">{{comp.image}}</div>
-          <h3>{{comp.name}}</h3>
-          <p class="scrollable-description"> {{comp.description}} </p>
-          <p><a href="{{comp.link}}">Documentation</a></p><div class="clear"></div>
-      </div>
-  </li>
-  {% endfor %}
-</ul>
+<div class="card-deck card-deck--responsive">
+{% for comp in sorted %}
+    <div class="card">
+        <div class="card-image-holder">
+            {{comp.image}}
+        </div>
+        <div class="card-body">
+            <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
+            <p class="card-text">{{comp.description}}</p>
+        </div>
+        <div class="card-footer card-footer--transparent">
+            <a href="{{comp.link}}">Documentation</a>
+        </div>
+    </div>
+{% endfor %}
+</div>

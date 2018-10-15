@@ -20,6 +20,12 @@ a.card {
   }
 }
 
+.card-title {
+  font-family: $site-font-family-alt;
+  font-size: $font-size-lg;
+  margin-bottom: bs-spacer(2);
+}
+
 .breadcrumb {
   align-items: center;
 }
@@ -57,9 +63,14 @@ a.card {
   padding: bs-spacer(4) 0;
 }
 
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-link,
+.nav-tabs .nav-link:hover {
   border: none;
-  border-bottom: 2px solid $site-color-primary;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: $site-color-primary;
 }
 
 @mixin pre-defaults {
