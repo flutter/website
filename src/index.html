@@ -245,12 +245,12 @@ Coming from another platform? Docs: <a href="/get-started/flutter-for/ios-devs">
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <div class="embedded-video-wrapper">
-            <iframe class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU?cc_lang_pref=en&cc_load_policy=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/fq4N0hgOWzU?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
