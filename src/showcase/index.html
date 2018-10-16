@@ -38,11 +38,11 @@ toc: false
                 <h2>Made with Flutter</h2>
                 <p>
                 Flutter is used by Google and developers and organizations around  the world to deliver beautiful native apps on
-                iOS and Android. Here is a  small selection of apps made with Flutter. 
+                iOS and Android. Here is a  small selection of apps made with Flutter.
                 </p>
             </div>
         </div>
-        
+
         {% for case in site.data.showcases %}
             {% capture modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
             {% if modulo3 == '0' %}
@@ -77,7 +77,7 @@ toc: false
                 </div>
             {% endif %}
         {% endfor %}
-        
+
         <div class="row">
             <div class="col-12 text-center">
                 <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/" target="_blank">Explore more apps built with Flutter</a>
