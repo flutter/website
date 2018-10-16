@@ -1,0 +1,23 @@
+{% for entry4 in entry3.children -%}
+
+  {% assign class4 = 'nav-link' -%}
+  {% assign isActive4 = false -%}
+  {% if isActive3 and forloop.index == active_entries[3] -%}
+    {% assign isActive4 = true -%}
+    {% assign class4 = class4 | append: ' active' -%}
+  {% endif -%}
+
+  <li class="nav-item">
+    <a class="{{class4}} {%- unless entry4.permalink %} disabled {%- endunless %}"
+        {% if entry4.permalink -%}
+          href="{{entry4.permalink}}"
+        {% endif -%}
+      >{{entry4.title}}
+      {%- if entry4.permalink == nil -%}
+        (TBC)
+      {%- elsif entry4.permalink contains '://' -%}
+        <i class="fas fa-external-link-alt"></i>
+      {%- endif -%}
+      </a>
+  </li>
+{% endfor -%}
