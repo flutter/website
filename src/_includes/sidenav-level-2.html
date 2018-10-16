@@ -53,6 +53,9 @@
       aria-expanded="{{expanded}}" aria-controls="{{id2}}"
     >{{entry2.title}}
     </a>
-    {% include sidenav-level-3.html -%}
-{%- endif -%}
-{%- endfor %}
+    <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id2}}">
+      {% include sidenav-level-3.html -%}
+    </ul>
+  </li>
+{% endif -%}
+{% endfor %}
