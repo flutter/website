@@ -72,6 +72,7 @@
     right: 0;
     top: 0;
     transition-duration: 0s;
+    z-index: $site-z-header;
 
     @include media-breakpoint-down(sm) {
       pointer-events: none;
@@ -198,6 +199,12 @@
       &:focus {
         width: 220px !important;
       }
+    }
+  }
+
+  &__social {
+    .nav-item.nav-link {
+      padding: 0 bs-spacer(2);
     }
   }
 }
