@@ -16,7 +16,7 @@
 
 - name: AppTree
   description: >
-    AppTree provides a low-code enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab.
+    AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab
   logo_src: showcase/logo-app_tree.png
   learn_more_link: https://www.apptreerevolution.com/
   play_store_link: https://play.google.com/store/apps/details?id=com.apptreesoftware.revolution.enterpriseedition&hl=en_US&e=-EnableAppDetailsPageRedesign
@@ -44,7 +44,7 @@
     targets.
   logo_src: showcase/logo-greentea.png
 
-- name: Abbey Road
+- name: Abbey Road Studios
   description: >
     Abbey Road’s Topline app helps artists record songs. You can share files, sing over imported tracks, add lyrics and
     more.
