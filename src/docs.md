@@ -54,7 +54,7 @@ issue]({{site.repo.this}}/issues).
 * Add a TOC back to pages containing tabs
 * Run site through accessibility testing/review
 * UX testing of new site
-* Custom search
+* Custom search - open issue
 * Deprecated/watermark format option
 * Add descriptions to each page
 * Sitemap

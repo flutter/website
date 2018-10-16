@@ -130,8 +130,8 @@ on the inherited widget is created. When an inherited widget changes
 contexts are rebuilt.
 
 Localized values are loaded by the Localizations widget's list of
-[LocalizationsDelegate](https://docs.flutter.io/flutter/widgets/LocalizationsDelegate-class.html)s.
-Each delegate must define an async
+[LocalizationsDelegate]({{site.api}}/flutter/widgets/LocalizationsDelegate-class.html)s.
+Each delegate must define an asynchronous
 [`load()`](https://docs.flutter.io/flutter/widgets/LocalizationsDelegate/load.html)
 method that produces an object which encapsulates a collection of
 localized values. Typically these objects define one method per localized value.
