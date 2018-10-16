@@ -11,6 +11,10 @@ repo:
   flutter: https://github.com/flutter/flutter
 branch: dash # TODO: reset to master
 
+social:
+  twitter: https://twitter.com/flutterio
+  youtube: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
+
 api: https://docs.flutter.io
 pub: https://pub.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
