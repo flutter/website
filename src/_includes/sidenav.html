@@ -50,11 +50,11 @@
                   href="{{entry2.permalink}}"
                 {% endif -%}
               >{{entry2.title}}
-              {% if entry2.permalink == nil -%}
+              {%- if entry2.permalink == nil -%}
                 (TBC)
               {%- elsif entry2.permalink contains '://' -%}
                 <i class="fas fa-external-link-alt"></i>
-              {% endif -%}
+              {%- endif -%}
               </a>
             </li>
 
@@ -100,11 +100,11 @@
                           href="{{entry3.permalink}}"
                         {% endif -%}
                       >{{entry3.title}}
-                      {% if entry3.permalink == nil -%}
+                      {%- if entry3.permalink == nil -%}
                         (TBC)
                       {%- elsif entry3.permalink contains '://' -%}
                         <i class="fas fa-external-link-alt external"></i>
-                      {% endif -%}
+                      {%- endif -%}
                       </a>
                   </li>
                 {%- endfor %}
