@@ -212,20 +212,18 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 
 ### Known issues and feedback
 
-All known bugs are tracked in the issue tracker:
-
-* Dart and Flutter extensions: [GitHub issue
-  tracker](https://github.com/Dart-Code/Dart-Code/issues).
+All known bugs are tracked in the issue tracker: [Dart and Flutter extensions GitHub issue
+tracker](https://github.com/Dart-Code/Dart-Code/issues).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
-to filing new issues, please:
+to filing new issues:
 
-* do a quick search in the issue trackers to see if the issue is already
+* Do a quick search in the issue trackers to see if the issue is already
   tracked.
-* make sure you have [updated](#updating) to the most recent version of the
+* Make sure you have [updated](#updating) to the most recent version of the
   plugin.
 
-When filing new issues, please include the output of [`flutter
-doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
+When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[flutter doctor]: {{site.url}}/bug-reports/#provide-some-flutter-diagnostics
