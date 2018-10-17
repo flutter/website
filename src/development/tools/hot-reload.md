@@ -90,7 +90,7 @@ new changes.
 Consider the following code:
 
 ```dart
-class myWidget extends StatelessWidget {
+class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(onTap: () => print('T'));
   }
@@ -99,27 +99,28 @@ class myWidget extends StatelessWidget {
 
 After running the app, if you make the following change:
 
+<!-- skip -->
 ```dart
-class myWidget extends StatefulWidget {
+class MyWidget extends StatefulWidget {
   @override
-  State createState() => myWidgetState();
+  State<MyWidget> createState() => MyWidgetState();
 }
 
-class myWidgetState { /*...*/ }
+class MyWidgetState extends State<MyWidget> { /*...*/ }
 ```
 
-and then hot reload, the console displays an assertion failure similar to:
+Then hot reload; the console displays an assertion failure similar to:
 
 ```nocode
-myWidget is not a subtype of StatelessWidget
+MyWidget is not a subtype of StatelessWidget
 ```
 
 In these situations, a hot restart is required to see the updated app.
 
 ## Recent code change is included but app state is excluded
 
-In Dart, [static fields are lazily
-initialized](https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html). This means that the first time you run a Flutter app and a static
+In Dart, [static fields are lazily initialized][].
+This means that the first time you run a Flutter app and a static
 field is read, it is set to whatever value its initializer was evaluated to.
 Global variables and static fields are treated as state, and are therefore not
 reinitialized during hot reload.
@@ -128,6 +129,7 @@ If you change initializers of global variables and static fields, a full
 restart is necessary to see the changes. For example, consider the
 following code:
 
+<!-- skip -->
 ```dart
 final sampleTable = [
   Table("T1"),
@@ -139,6 +141,7 @@ final sampleTable = [
 
 After running the app, if you make the following change:
 
+<!-- skip -->
 ```dart
 final sampleTable = [
   Table("T1"),
@@ -152,6 +155,7 @@ and then hot reload, the change is not reflected.
 
 Conversely, in the following example:
 
+<!-- skip -->
 ```dart
 const foo = 1;
 final bar = foo;
@@ -164,6 +168,7 @@ void onClick() {
 running the app for the first time prints `1` and `1`. Then, if you make the
 following change:
 
+<!-- skip -->
 ```dart
 const foo = 2;    // modified
 final bar = foo;
@@ -181,6 +186,7 @@ The Dart VM detects initializer changes and flags when a set of changes needs a
 hot restart to take effect. The flagging mechanism is triggered for most of the
 initialization work in the above example, but not for cases like:
 
+<!-- skip -->
 ```dart
 final bar = foo;
 ```
@@ -189,12 +195,14 @@ To be able to update `foo` and view the change after hot reload, consider
 redefining the field as `const` or using a getter to return the value, rather
 than using `final`. For example:
 
+<!-- skip -->
 ```dart
 const bar = foo;
 ```
 
 or:
 
+<!-- skip -->
 ```dart
 get bar => foo;
 ```
@@ -224,8 +232,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => print('tapped'));
+    return GestureDetector(onTap: () => print('tapped'));
   }
 }
 ```
@@ -234,9 +241,9 @@ After running this app, you might change the code as follows:
 
 ```dart
 import 'package:flutter/widgets.dart';
+
 void main() {
-  runApp(
-    const Center(
+  runApp(const Center(
       child: const Text('Hello', textDirection: TextDirection.ltr)));
 }
 ```
@@ -257,6 +264,7 @@ all. These include:
 * Enumerated types are changed to regular classes or regular classes are changed
   to enumerated types. For example, if you change:
 
+  <!-- skip -->
   ```dart
   enum Color {
     red,
@@ -267,6 +275,7 @@ all. These include:
 
   to:
 
+  <!-- skip -->
   ```dart
   class Color {
     Color(this.i, this.j);
@@ -277,6 +286,7 @@ all. These include:
 
 * Generic type declarations are modified. For example, if you change:
 
+  <!-- skip -->
   ```dart
   class A<T> {
     T i;
@@ -285,6 +295,7 @@ all. These include:
 
   to:
 
+  <!-- skip -->
   ```dart
   class A<T, V> {
     T i;
@@ -313,3 +324,5 @@ re-executed.
 
 The hot reload mechanism then causes the Flutter framework to trigger a
 rebuild/re-layout/repaint of all existing widgets and render objects.
+
+[static fields are lazily initialized]: https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html
