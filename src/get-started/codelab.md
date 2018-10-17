@@ -75,7 +75,7 @@ Name the project **startup_namer** (instead of _myapp_).
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE, make
   sure you have the [plugins installed for Flutter and
-  Dart](/get-started/editor#androidstudio).
+  Dart](/get-started/editor).
 {{site.alert.end}}
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
