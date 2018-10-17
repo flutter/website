@@ -1,5 +1,6 @@
 ---
 title: Upgrading Flutter
+short-title: Upgrading
 ---
 
 We strongly recommend tracking the `beta` branch in the flutter repository,
@@ -17,7 +18,7 @@ You specify dependencies from the Flutter SDK in the `pubspec.yaml` file.
 For example, the following snippet specifies that the
 `flutter` and `flutter_test` packages use the Flutter SDK.
 
-```
+```yaml
 name: hello_world
 dependencies:
   flutter:
@@ -41,7 +42,7 @@ To update both the Flutter SDK and your packages, use the `flutter upgrade`
 command from the root of your app (the same directory that contains the
 `pubspec.yaml` file):
 
-```
+```terminal
 $ flutter upgrade
 ```
 

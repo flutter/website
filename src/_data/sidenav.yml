@@ -103,9 +103,17 @@
     - title: Tools & techniques
       children:
         - title: IDEs
-          permalink: /development/tools/ide
-        - title: Flutter SDK (upgrading & archive)
-          permalink: /development/tools/sdk
+          children:
+            - title: Android Studio / IntelliJ
+              permalink: /development/tools/ide/android-studio
+            - title: Visual Studio Code
+              permalink: /development/tools/ide/vs-code
+        - title: Flutter SDK
+          children:
+            - title: Upgrading
+              permalink: /development/tools/sdk/upgrading
+            - title: Archive
+              permalink: /development/tools/sdk/archive
         - title: Using hot reload
           permalink: /development/tools/hot-reload
         - title: Formatting Flutter code
