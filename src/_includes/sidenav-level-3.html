@@ -19,7 +19,7 @@
         href="{{entry3.permalink}}"
       {% endif -%}
     >{{entry3.title}}
-    {%- if entry3.permalink == nil -%}
+    {%- if entry3.permalink == nil %}
       (TBC)
     {%- elsif entry3.permalink contains '://' -%}
       <i class="fas fa-external-link-alt"></i>
