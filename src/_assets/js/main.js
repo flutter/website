@@ -13,6 +13,7 @@
 $(function () {
   adjustToc();
   initFixedColumns();
+  initVideoModal();
   prettyPrint();
 
   // New (dash) tabs
@@ -77,4 +78,32 @@ function getOS() {
     return "macos";
   if (ua.indexOf("Linux") !== -1 || ua.indexOf("X11") !== -1)
     return "linux";
+}
+
+function initVideoModal() {
+  var videoModalObject = $('[data-video-modal]');
+
+  if (videoModalObject.length) {
+    // there is a video modal in the DOM, load the YouTube API
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    window.onYouTubeIframeAPIReady = function () {
+      window.videoPlayer = new YT.Player('video-player-iframe');
+    };
+  }
+
+  videoModalObject.on('shown.bs.modal', function (e) {
+    if (window.videoPlayer) {
+      window.videoPlayer.playVideo();
+    }
+  });
+
+  videoModalObject.on('hide.bs.modal', function (e) {
+    if (window.videoPlayer) {
+      window.videoPlayer.stopVideo();
+    }
+  });
 }
