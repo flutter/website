@@ -104,20 +104,20 @@ You can deploy your local edits to a personal staging site as follows (steps 1 a
       ```console
       $ npx firebase use --add
       ? Which project do you want to add? <select the project you created>
-      ? What alias do you want to use for this project? (e.g. staging) staging
+      ? What alias do you want to use for this project? (e.g. staging) my-foo
       ```
 
  1. Tell Firebase that you want to deploy to staging:
 
     ```console
-    $ npx firebase use staging
+    $ npx firebase use my-foo
     Now using alias staging (<your project name>)
     ```
 
  1. Tell Firebase to deploy:
 
     ```console
-    $ ./tool/shared/deploy.sh staging
+    $ ./tool/shared/deploy.sh --local my-foo
 
     === Deploying to '<your project name>'...
 
@@ -135,7 +135,7 @@ Deploy to the `default` firebase project (hosting the official site) using this
 command:
 
 ```
-./tool/shared/deploy.sh --robots ok default
+./tool/shared/deploy.sh --local --robots ok default
 ```
 
 ## Writing for flutter.io
