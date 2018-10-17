@@ -1,24 +1,21 @@
 ---
-title: Developing Flutter apps in an IDE
-description: How to develop a Flutter app in Android Studio or other IntelliJ products.
+title: Developing Flutter apps using Android Studio / IntelliJ
+description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 ---
 
-<div id="tab-set-install">
-
-<ul class="tabs__top-bar">
-    <li class="tab-link current" >Android Studio / IntelliJ</li>
-    <li class="tab-link" data-tab-href="/development/tools/using-ide-vscode">VS Code</li>
+<ul class="nav nav-tabs" id="ide" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" role="tab" aria-selected="true">Android Studio / IntelliJ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/development/tools/ide/vscode" role="tab" aria-selected="false">Visual Studio Code</a>
+  </li>
 </ul>
-
-<div class="tabs__content current" markdown="1">
-
-The Flutter plugin provides a fully integrated development experience in the
-Android Studio or IntelliJ IDEs.
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor) instructions to install
-the Dart and Flutter plugins.
+Follow the [Set up an editor](/get-started/editor?ide=androidstudio)
+instructions to install the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>
 
@@ -306,7 +303,3 @@ to filing new issues:
 
 When filing new issues, include the output of [`flutter
 doctor`](/resources/bug-reports#provide-some-flutter-diagnostics).
-
-</div>
-
-</div>

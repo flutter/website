@@ -1,35 +1,32 @@
 ---
-title: Developing Flutter apps in an IDE
-description: How to develop a Flutter app in VSCode.
+title: Developing Flutter apps using Visual Studio Code
+description: How to develop Flutter apps in VSCode.
 ---
 
-<div id="tab-set-install">
-
-<ul class="tabs__top-bar">
-    <li class="tab-link" data-tab-href="/tools/using-ide">Android Studio / IntelliJ</li>
-    <li class="tab-link current">VS Code</li>
+<ul class="nav nav-tabs" id="ide" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link" href="/development/tools/ide" role="tab" aria-selected="false">Android Studio / IntelliJ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>
+  </li>
 </ul>
-
-<div class="tabs__content current" markdown="1">
-
-The [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) provides a fully integrated development experience in Visual Studio Code.
-
 
 ## Installation and setup
 
-Please follow the [Editor Setup](/get-started/editor#vscode) instructions to install
-the Flutter extension (which includes Flutter functionality).
+Follow the [Set up an editor](/get-started/editor?ide=vscode) instructions to
+install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}
 
-Updates to the extension are shipped on a regular basis. By default,
+Updates to the extensions are shipped on a regular basis. By default,
 VS Code automatically updates extensions when updates are available.
 
 To install updates manually:
 
-1. Click on the Extensions button in the Side Bar
-1. If the Flutter extension is shown with an available update, click the update button and then
-the reload button
+ 1. Click on the Extensions button in the Side Bar
+ 1. If the Flutter extension is shown with an available update, click the update button and then
+    the reload button
 
 ## Creating projects
 
@@ -234,7 +231,3 @@ to filing new issues, please:
 
 When filing new issues, please include the output of [`flutter
 doctor`](https://flutter.io/bug-reports/#provide-some-flutter-diagnostics).
-
-</div>
-
-</div>
