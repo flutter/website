@@ -1,5 +1,6 @@
 ---
 title: Formatting Flutter code
+title: Formatting
 description: Flutter's code formatter formats your code along recommended style guidelines.
 ---
 
@@ -35,17 +36,16 @@ shortcut to this VS Code Preferences.
 To automatically format code whenever you save a file, set the
 `editor.formatOnSave` setting to `true`.
 
-## Automatically formatting code with the `flutter` command
+## Automatically formatting code with the 'flutter' command
 
 You can also automatically format code in the command line interface (CLI) using
 the `flutter format` command:
 
-```
-Usage: flutter format <one or more paths>
--h, --help    Print this usage information.
+```terminal
+$ flutter format path1 path2 ...
 ```
 
-## Using 'trailing commas'
+## Using trailing commas
 
 Flutter code often involves building fairly deep tree-shaped data structures,
 for example in a `build` method. To get good automatic formatting, we recommend
@@ -57,8 +57,8 @@ amount of line breaks for Flutter-style code.
 
 Here is an example of automatically formatted code *with* trailing commas:
 
-![Automatically formatted code with trailing commas](images/trailing-comma-with.png)
+![Automatically formatted code with trailing commas]({% asset tools/android-studio/trailing-comma-with.png @path %})
 
 And the same code automatically formatted code *without* trailing commas:
 
-![Automatically formatted code without trailing commas](images/trailing-comma-without.png)
+![Automatically formatted code without trailing commas]({% asset tools/android-studio/trailing-comma-without.png @path %})

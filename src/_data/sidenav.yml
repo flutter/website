@@ -64,7 +64,7 @@
             - title: Staggered animations
         - title: Advanced UI
           children:
-            - title: "Focus handling system (where did this go?)"
+            - title: Focus handling system # Where did this go?
             - title: Gestures
               permalink: /development/ui/advanced/gestures
         - title: Platform-specific theming
@@ -100,15 +100,23 @@
           permalink: /development/packages-and-plugins/background-processes
         - title: Package site
           permalink: http://pub.dartlang.org/flutter
-    - title: Tools
+    - title: Tools & techniques
       children:
-        - title: Use Flutter in IDEs
-          permalink: /development/tools/using-ide
+        - title: IDEs
+          children:
+            - title: Android Studio / IntelliJ
+              permalink: /development/tools/ide/android-studio
+            - title: Visual Studio Code
+              permalink: /development/tools/ide/vs-code
+        - title: Flutter SDK
+          children:
+            - title: Upgrading
+              permalink: /development/tools/sdk/upgrading
+            - title: Archive
+              permalink: /development/tools/sdk/archive
         - title: Using hot reload
           permalink: /development/tools/hot-reload
-        - title: Upgrading Flutter
-          permalink: /development/tools/upgrading
-        - title: Format Flutter code
+        - title: Formatting Flutter code
           permalink: /development/tools/formatting
         - title: Widget inspector
           permalink: /development/tools/inspector

@@ -16,7 +16,8 @@ In the project directory, the code for your app is in `lib/main.dart`.
 
 ## Run the app
 
- 1. Locate the VS Code status bar (the blue bar at the bottom of the window).
+ 1. Locate the VS Code status bar (the blue bar at the bottom of the
+    window):<br> ![status bar][]{:width="450px"}
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
@@ -37,5 +38,6 @@ In the project directory, the code for your app is in `lib/main.dart`.
 [Install]: /get-started/install
 [Material Components]: https://material.io/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
+[status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
 
 </div>

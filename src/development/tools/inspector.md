@@ -1,5 +1,6 @@
 ---
 title: Flutter's Widget Inspector
+short-title: Widget Inspector
 description: A brief overview of Flutter's widget inspector.
 ---
 
@@ -15,13 +16,13 @@ these widget trees. It can be helpful when:
 * Understanding existing layouts
 * Diagnosing layout issues
 
-![IntelliJ Flutter Inspector Window](images/visual-debugging.png)
+![IntelliJ Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 To start click "Select widget" on the Flutter Inspector toolbar, and then click
 on the device to select a widget. The selected widget is then highlighted
 on the device and in the widget tree.
 
-![Select Demo](images/inspector_select_example.gif)
+![Select Demo]({% asset tools/android-studio/inspector_select_example.gif @path %})
 
 You can then browse around the interactive widget tree in the IDE to view
 nearby widgets and see their field values. If you are trying to debug a layout
@@ -31,9 +32,9 @@ same location in the tree. When debugging layout issues, the key fields to look
 at are the `size` and `constraints` fields. The constraints flow down the tree,
 and the sizes flow back up.
 
-![Switch Trees](images/switch_inspector_tree.gif)
+![Switch Trees]({% asset tools/android-studio/switch_inspector_tree.gif @path %})
 
-For a more complete demonstration of the Inspector, please see the
+For a more complete demonstration of the Inspector, see the
 [DartConf 2018 talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
 
 ## Get Started with the Inspector

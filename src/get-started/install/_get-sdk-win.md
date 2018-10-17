@@ -16,7 +16,7 @@
 
 You are now ready to run Flutter commands in the Flutter Console!
 
-To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/upgrading).
+To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/sdk/upgrading).
 
 ### Update your path
 

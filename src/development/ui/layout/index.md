@@ -148,23 +148,16 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-When pasting code into your app, indentation can
-become skewed. You can fix this in your Flutter editor
-using the [automatic reformatting support](/development/tools/formatting).
-</aside>
+{{site.alert.tip}}
+  - When pasting code into your app, indentation can
+    become skewed. You can fix this in your Flutter editor
+    using the [automatic reformatting support](/development/tools/formatting).
+  - For a faster development experience, try Flutter's [hot reload][] feature.
+    For more information, see [Hot reload vs. Full app restart][].
 
-<aside class="alert alert-success" markdown="1">
-<i class="fa fa-lightbulb-o"> </i> **Tip:**
-For a faster development experience, try Flutter's hot reload feature.
-Hot reload allows you to modify your code and see the changes without
-fully restarting the app. The Flutter enabled IDEs support [hot
-reload on save](/development/tools/hot-reload), or you can trigger hot reload from the
-command line.
-For more information, see [Hot Reloads vs. Full Application
-Restarts](/development/tools/using-ide#hot-reloads-vs-full-application-restarts).
-</aside>
+  [hot reload]: /development/tools/hot-reload
+  [Hot reload vs. Full app restart]: /development/tools/ide#hot-reload-vs-full-app-restart
+{{site.alert.end}}
 
 ### Step 3: Implement the button row {#step-3}
 

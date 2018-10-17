@@ -1,5 +1,6 @@
 ---
 title: Flutter SDK Archive
+short-title: Archive
 ---
 
 The Beta channel contains the most stable Flutter builds. See [Flutter’s
@@ -23,7 +24,7 @@ for details.
 			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
 			<tr class="loading"><td colspan="3">Loading...</td></tr>
 		</table><br/>
-		<section id="categories" markdown="1">{% include sdk-archive-master.md %}</section>
+		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
 	</div>
 	<div id="tab-os-macos" class="tabs__content">
 		<h2>Beta channel, macOS</h2>
@@ -36,7 +37,7 @@ for details.
 			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
 			<tr class="loading"><td colspan="3">Loading...</td></tr>
 		</table><br/>
-		<section id="categories" markdown="1">{% include sdk-archive-master.md %}</section>
+		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
 	</div>
 	<div id="tab-os-linux" class="tabs__content">
 		<h2>Beta channel, Linux</h2>
@@ -49,6 +50,6 @@ for details.
 			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
 			<tr class="loading"><td colspan="3">Loading...</td></tr>
 		</table><br/>
-		<section id="categories" markdown="1">{% include sdk-archive-master.md %}</section>
+		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
 	</div>
 </div>

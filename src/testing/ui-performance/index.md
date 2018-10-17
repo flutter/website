@@ -4,38 +4,33 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* Flutter aims to provide 60 frames per second (fps) performance, or 120
-  fps performance on devices capable of 120Hz updates.
-* For 60fps, frames need to render approximately every 16ms.
-* Jank occurs when the UI doesn't render smoothly. For example, every so
-  often, a frame takes 10 times longer to render, so it gets dropped, and
-  the animation visibly jerks.
-
-</div>
+  * Flutter aims to provide 60 frames per second (fps) performance, or 120
+    fps performance on devices capable of 120Hz updates.
+  * For 60fps, frames need to render approximately every 16ms.
+  * Jank occurs when the UI doesn't render smoothly. For example, every so
+    often, a frame takes 10 times longer to render, so it gets dropped, and
+    the animation visibly jerks.
+{{site.alert.end}}
 
 It's been said that "a _fast_ app is great, but a _smooth_ app is even better."
 If your app isn't rendering smoothly, how do you fix it? Where do you begin?
 This guide shows you where to start, steps to take, and tools that can
 help.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** An app's performance is determined by more than one measure.
-Performance sometimes refers to raw speed, but also to the UI's smoothness and
-lack of stutter. Other examples of performance include I/O or network speed.
-This page primarily focuses on the second type of performance (UI smoothness),
-but you can use most of the same tools to diagnose other performance
-problems.
-</aside>
-
-<aside class="alert alert-info" markdown="1">
-**Note**: To perform tracing inside your Dart code, see [Tracing
-any Dart code performance](/testing/debugging#tracing-any-dart-code-performance)
-in the [Debugging](/testing/debugging) page.
-</aside>
+{{site.alert.note}}
+  - An app's performance is determined by more than one measure. Performance
+    sometimes refers to raw speed, but also to the UI's smoothness and lack of
+    stutter. Other examples of performance include I/O or network speed. This
+    page primarily focuses on the second type of performance (UI smoothness),
+    but you can use most of the same tools to diagnose other performance
+    problems.
+  - To perform tracing inside your Dart code, see [Tracing any Dart code
+    performance](/testing/debugging#tracing-any-dart-code-performance) in the
+    [Debugging](/testing/debugging) page.
+{{site.alert.end}}
 
 ## Diagnosing performance problems
 
@@ -220,16 +215,19 @@ application. If the inspector isn't open, you can display it as follows.
 
 In Android Studio and IntelliJ IDEA:
 
-1. Select **View > Tool Windows > Flutter Inspector**.
-1. In the toolbar, select the icon that looks like a bookshelf (<img src="/testing/ui-performance/images/performance-overlay-icon.png" alt="icon that resembles a bookshelf">).
+ 1. Select **View > Tool Windows > Flutter Inspector**.
+ 1. In the toolbar, select the icon that looks like a bookshelf
+    (![bookshelf-like icon][]).
 
-![IntelliJ Flutter Inspector Window](/development/tools/images/visual-debugging.png)<br>
+    ![IntelliJ Flutter Inspector Window][]
 
 The Flutter Inspector is available in Android Studio and IntelliJ.
 Learn more about what the Inspector can do in the
 [Flutter Widget Inspector](/development/tools/inspector) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.
+
+[bookshelf-like icon]: /testing/ui-performance/images/performance-overlay-icon.png
 
 #### In VS Code
 
@@ -297,24 +295,21 @@ you'll be using a version that has been customized for Flutter apps.
 
 Go to Flutter's timeline view in a browser as follows:
 
-<ol markdown="1">
-<li markdown="1">
-To open the timeline view, use the line chart
-icon <img src="/testing/ui-performance/images/observatory-timeline-icon.png" alt="zig-zag line chart icon">).
+ 1. To open the timeline view, use the line chart icon ![line-chart icon][].
 
-(Instead, you could open Observatory using the stopwatch icon (<img src="/testing/ui-performance/images/observatory-icon.png" alt="stopwatch icon used by Observatory">),
-but the "view <u>inspector</u>" link takes you to the standard version of the
-timeline, not the version customized for Flutter.)
+    (Instead, you could open Observatory using the stopwatch icon (![stopwatch
+    icon][]), but the "view <u>inspector</u>" link takes you to the standard
+    version of the timeline, not the version customized for Flutter.)
 
-![IntelliJ Flutter Inspector Window](/development/tools/images/visual-debugging.png)
-</li>
+    ![IntelliJ Flutter Inspector Window][]
 
-<li markdown="1">
-In VS Code, bring up the command palette and enter "observatory".
-Select **Flutter: Open Observatory Timeline** from the list that pops up.
-If this command isn’t available, make sure that the app is running.
-</li>
-</ol>
+    [line-chart icon]: /testing/ui-performance/images/observatory-timeline-icon.png
+    [stopwatch icon]: /testing/ui-performance/images/observatory-icon.png
+
+ 1. In VS Code, bring up the command palette and enter "observatory".
+    Select **Flutter: Open Observatory Timeline** from the list that pops up.
+    If this command isn’t available, make sure that the app is running.
+
 
 #### Using Observatory's timeline
 
@@ -505,3 +500,5 @@ and debugging in Flutter:
   class, and the
   [dart:developer](https://docs.flutter.io/flutter/dart-developer/dart-developer-library.html)
   package.
+
+[IntelliJ Flutter Inspector Window]: {% asset tools/android-studio/visual-debugging.png @path %}

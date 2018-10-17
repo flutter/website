@@ -43,7 +43,7 @@ path](#update-your-path).
 
 You are now ready to run Flutter commands!
 
-To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/upgrading).
+To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/sdk/upgrading).
 
 ### Run flutter doctor
 
