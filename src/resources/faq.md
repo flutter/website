@@ -533,9 +533,9 @@ for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
 Learn more about i18n and l10n in the
-[internationalization tutorial](/accessibility/internationalization).
+[internationalization tutorial](/development/accessibility-and-localization/internationalization).
 
-Learn more about a11y in the [accessibility documentation](/accessibility).
+Learn more about a11y in the [accessibility documentation](/development/accessibility-and-localization/accessibility).
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 

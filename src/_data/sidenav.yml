@@ -82,14 +82,13 @@
         - title: Back-end services
         - title: Use Firebase with Flutter
         - title: Run background processes
-    - title: Accessibility & internationalization
-      permalink: /accessibility
+    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
+      permalink: /development/accessibility-and-localization
       children:
         - title: Accessibility
-          permalink: /accessibility
-          match-page-url-exactly: true
+          permalink: /development/accessibility-and-localization/accessibility
         - title: Internationalization
-          permalink: /accessibility/internationalization
+          permalink: /development/accessibility-and-localization/internationalization
     - title: Platform integration
       permalink: /development/platform-integration
       children:

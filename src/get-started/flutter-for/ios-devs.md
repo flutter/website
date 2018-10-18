@@ -1171,7 +1171,7 @@ files for translating, and importing them back into the app for using them
 with `intl`.
 
 For further details on internationalization and localization in Flutter, see the
-[internationalization guide](/accessibility/internationalization),
+[internationalization guide](/development/accessibility-and-localization/internationalization),
 which has sample code with and without the `intl` package.
 
 Note that before Flutter 1.0 beta 2, assets defined in Flutter were not
