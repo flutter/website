@@ -1,3 +1,10 @@
+@mixin header-clearance {
+  $clearance: 100px;
+
+  margin-top: -$clearance;
+  padding-top: $clearance;
+}
+
 .site-content {
   padding-bottom: $site-content-top-padding;
   padding-top: $site-content-top-padding;
@@ -19,6 +26,16 @@
 
     h1 {
       margin-bottom: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    // Invisible pre-element to avoid modifying styles on headings.
+    &[id]:not(.no_toc)::before {
+      @include header-clearance;
+
+      content: "";
+      display: block;
     }
   }
 }
