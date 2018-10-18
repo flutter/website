@@ -102,7 +102,7 @@ a concrete value for the current frame of an animation, you also need an
 animation to determine the current state. There are two ways to combine a tween
 with an animation to get a concrete value:
 
-1. You can [`evaluate`](https://docs.flutter.io/flutter/animation/Tween/evaluate.html)
+1. You can [`evaluate`](https://docs.flutter.io/flutter/animation/Animatable/evaluate.html)
    the tween at the current value of an animation. This approach is most useful
    for widgets that are already listening to the animation and hence
    rebuilding whenever the animation changes value.
