@@ -28,15 +28,24 @@ a.card {
 
 .breadcrumb {
   align-items: center;
-}
 
-.breadcrumb-item {
-  align-items: center;
-  display: flex;
-}
+  @at-root {
+    .breadcrumb-item {
+      align-items: center;
+      display: flex;
 
-.breadcrumb-item+.breadcrumb-item::before {
-  font: $site-font-icon;
+      + .breadcrumb-item {
+        // padding-left: 0; // Fix BS 4.1 padding issue: push left padding into ::before for balance
+        &::before { font: $site-font-icon; }
+      }
+
+      &.active a {
+        color: $breadcrumb-active-color;
+        cursor: default;
+        &:hover { text-decoration: none; }
+      }
+    }
+  }
 }
 
 .btn {
