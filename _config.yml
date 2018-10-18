@@ -17,6 +17,7 @@ social:
 
 api: https://docs.flutter.io
 pub: https://pub.dartlang.org
+www: https://www.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
 pub-pkg: https://pub.dartlang.org/packages
 
