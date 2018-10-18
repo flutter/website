@@ -1,8 +1,10 @@
 {% if site.show_banner -%}
+  {% assign fl_url = 'https://developers.google.com/events/flutter-live' -%}
   <div class="alert alert-info alert__banner" role="alert">
     {% comment %} For headings use <h3> elements. {% endcomment -%}
-    Save the date for <strong>Flutter Live</strong>!
-    For more information, see
-    <a href="https://developers.google.com/events/flutter-live">Flutter Live 2018</a>.
+    Save the date for <strong><a href="{{fl_url}}"target="_blank" rel="noopener">Flutter Live</a></strong>!
+    Spots are limited around this special two-hour event.
+    Don’t wait to sign up! Registration opens at 18:00 GMT +1 (10:00am PDT) on Tuesday,
+    23 October.
   </div>
 {% endif -%}
