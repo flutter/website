@@ -1,5 +1,6 @@
 ---
 title: Hero Animations
+short-title: Hero
 ---
 
 {{site.alert.secondary}}

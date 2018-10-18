@@ -97,7 +97,7 @@ Once you’ve mastered the basics, try these pages.
 [Routing and Navigation](/cookbook/navigation/navigation-basics)
 : How to create and navigate to a new screen (called a _route_ in Flutter).
 
-[Internationalization](/accessibility/internationalization)
+[Internationalization](/development/accessibility-and-localization/internationalization)
 : Go global! How to internationalize your Flutter app.
 
 [Effective Dart](https://www.dartlang.org/guides/language/effective-dart)

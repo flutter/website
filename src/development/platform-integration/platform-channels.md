@@ -1,5 +1,6 @@
 ---
-title: Writing custom platform-specific code with platform channels
+title: Writing custom platform-specific code
+short-title: Platform-specific code
 ---
 
 This guide describes how to write custom platform-specific code. Some

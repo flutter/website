@@ -38,10 +38,12 @@
       permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
+  permalink: /development
   children:
     - title: User interface
+      permalink: /development/ui
       children:
-        - title: Tour the framework
+        - title: Introduction to Widgets
           permalink: /development/ui/widgets-intro
         - title: Building layouts
           permalink: /development/ui/layout
@@ -52,7 +54,7 @@
         - title: Navigation & routing
           permalink: /cookbook/navigation/navigation-basics
         - title: Inspect an app's UI
-          permalink: /development/tools/inspector
+          permalink: /development/ui/inspector # Redirects to /development/tools/inspector
         - title: Animations
           permalink: /development/ui/animations
           children:
@@ -63,14 +65,16 @@
             - title: Hero animations
             - title: Staggered animations
         - title: Advanced UI
+          permalink: /development/ui/advanced
           children:
             - title: Focus handling system # Where did this go?
             - title: Gestures
               permalink: /development/ui/advanced/gestures
         - title: Platform-specific theming
         - title: Widget catalog
-          permalink: /development/ui/widgets-catalog
-    - title: Data and backend
+          permalink: /development/ui/widget-catalog
+    - title: Data & backend
+      permalink: /development/data-and-backend
       children:
         - title: Architect app to manage data flow
         - title: JSON and serialization
@@ -78,19 +82,21 @@
         - title: Back-end services
         - title: Use Firebase with Flutter
         - title: Run background processes
-    - title: Accessibility & internationalization
-      permalink: /accessibility
+    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
+      permalink: /development/accessibility-and-localization
       children:
         - title: Accessibility
-          permalink: /accessibility
+          permalink: /development/accessibility-and-localization/accessibility
         - title: Internationalization
-          permalink: /accessibility/internationalization
+          permalink: /development/accessibility-and-localization/internationalization
     - title: Platform integration
+      permalink: /development/platform-integration
       children:
         - title: Embedding Flutter views in non-Flutter apps
         - title: Writing platform-specific code
           permalink: /development/platform-integration/platform-channels
     - title: Packages & plugins
+      permalink: /development/packages-and-plugins
       children:
         - title: Using packages
           permalink: /development/packages-and-plugins/using-packages
@@ -101,14 +107,17 @@
         - title: Package site
           permalink: http://pub.dartlang.org/flutter
     - title: Tools & techniques
+      permalink: /development/tools
       children:
         - title: IDEs
+          permalink: /development/tools/ide
           children:
             - title: Android Studio / IntelliJ
               permalink: /development/tools/ide/android-studio
             - title: Visual Studio Code
               permalink: /development/tools/ide/vs-code
         - title: Flutter SDK
+          permalink: /development/tools/sdk
           children:
             - title: Upgrading
               permalink: /development/tools/sdk/upgrading
@@ -118,7 +127,7 @@
           permalink: /development/tools/hot-reload
         - title: Formatting Flutter code
           permalink: /development/tools/formatting
-        - title: Widget inspector
+        - title: Widget Inspector
           permalink: /development/tools/inspector
 
 - title: Testing & optimization

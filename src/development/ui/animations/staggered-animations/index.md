@@ -1,5 +1,6 @@
 ---
 title: Staggered Animations
+short-title: Staggered
 ---
 
 {{site.alert.secondary}}

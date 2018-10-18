@@ -231,7 +231,7 @@ No. Instead, Flutter provides a set of widgets
 (including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
-[catalog of Flutter's widgets](/development/ui/widgets-catalog).
+[catalog of Flutter's widgets](/development/ui/widget-catalog).
 
 We are hoping the end-result will be higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
@@ -533,9 +533,9 @@ for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
 Learn more about i18n and l10n in the
-[internationalization tutorial](/accessibility/internationalization).
+[internationalization tutorial](/development/accessibility-and-localization/internationalization).
 
-Learn more about a11y in the [accessibility documentation](/accessibility).
+Learn more about a11y in the [accessibility documentation](/development/accessibility-and-localization/accessibility).
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -849,7 +849,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /development/ui/widgets-catalog
+[widgets]: /development/ui/widget-catalog
 
 ### What are Flutter's guiding principles?
 

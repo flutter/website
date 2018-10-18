@@ -1,5 +1,5 @@
 ---
-title: Using Packages
+title: Using packages
 description: Learn how to use packages in your Flutter app.
 ---
 
@@ -19,8 +19,7 @@ If you are looking to develop a new package, please see
 [developing packages](/development/packages-and-plugins/developing-packages).
 
 If you are looking to add assets, images, or fonts, whether stored in
-files or packages, please see [Assets &
-Images](/development/ui/assets-and-images).
+files or packages, please see [Assets & images](/development/ui/assets-and-images).
 
 ## Using packages
 

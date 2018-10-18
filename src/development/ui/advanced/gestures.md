@@ -1,5 +1,5 @@
 ---
-title: Taps, drags, and other gestures in Flutter
+title: Taps, drags, and other gestures
 ---
 
 This document explains how to listen for, and respond to,

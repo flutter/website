@@ -1,5 +1,6 @@
 ---
-title: "Animations: Technical Overview"
+title: Animations overview
+short-title: Overview
 ---
 
 The animation system in Flutter is based on typed

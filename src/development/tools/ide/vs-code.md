@@ -1,6 +1,7 @@
 ---
-title: Developing Flutter apps using Visual Studio Code
-description: How to develop Flutter apps in VSCode.
+title: Visual Studio Code
+short-title: VS Code
+description: How to develop Flutter apps in Visual Studio Code.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">

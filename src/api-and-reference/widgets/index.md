@@ -7,7 +7,7 @@ toc: true
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
 
-This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/development/ui/widgets-catalog">browse widgets by category.
+This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/development/ui/widget-catalog">browse widgets by category.
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
