@@ -1,6 +1,7 @@
 ---
 title: Flutter SDK Archive
 short-title: Archive
+toc: false
 ---
 
 The Beta channel contains the most stable Flutter builds. See [Flutter’s

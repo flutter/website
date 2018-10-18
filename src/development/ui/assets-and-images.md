@@ -1,5 +1,5 @@
 ---
-title: Adding Assets and Images in Flutter
+title: Adding Assets and Images
 ---
 
 Flutter apps can include both code and _assets_ (sometimes called

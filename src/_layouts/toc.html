@@ -1,0 +1,35 @@
+---
+layout: default
+toc: false
+---
+
+{% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
+{% assign path_parts = url | split: '/' -%}
+{% assign num_parts = path_parts | size -%}
+
+{% if num_parts == 2 -%}
+
+  {% assign topics = site.data.sidenav -%}
+
+{% else -%}
+
+  {% assign path1 = '/' | append: path_parts[1] -%}
+
+  {% assign topics = site.data.sidenav | where: "permalink", path1 -%}
+
+  {% if num_parts > 3 -%}
+    {% assign path2 = path1 | append: '/' | append: path_parts[2] -%}
+    {% assign topics = topics[0].children | where: "permalink", path2 -%}
+  {% endif -%}
+
+  {% assign topics = topics[0].children -%}
+
+  {% endif -%}
+
+{% assign topics = topics | where: "title", page.title -%}
+{% assign entries = topics[0].children -%}
+
+{% capture md %}{% include mini-toc.md %}{% endcapture %}
+{{ md | markdownify }}
+
+{{content}}

@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Animations in Flutter"
+short-title: Tutorial
 ---
 
 <div class="whats-the-point" markdown="1">

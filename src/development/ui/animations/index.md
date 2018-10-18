@@ -1,5 +1,5 @@
 ---
-title: Animations in Flutter
+title: Animations
 ---
 
 Well-designed animations makes a UI feel more intuitive,

@@ -1,5 +1,6 @@
 ---
 title: Adding Interactivity to Your Flutter App
+short-title: Adding Interactivity
 ---
 
 {{site.alert.secondary}}

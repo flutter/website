@@ -1,7 +1,7 @@
 ---
 title: Flutter's Widget Inspector
 short-title: Widget Inspector
-description: A brief overview of Flutter's widget inspector.
+description: A brief overview of Flutter's Widget Inspector.
 ---
 
 The Flutter Widget Inspector is powerful tool for visualizing and exploring
