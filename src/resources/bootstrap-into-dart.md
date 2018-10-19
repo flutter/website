@@ -1,12 +1,7 @@
 ---
 title: Bootstrap into Dart
+toc: false
 ---
-
-<style>
-dd {
-    margin-bottom: 8px;
-}
-</style>
 
 New to the [Dart](https://www.dartlang.org) language?
 We compiled our favorite resources to

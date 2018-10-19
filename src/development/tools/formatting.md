@@ -1,6 +1,5 @@
 ---
-title: Formatting Flutter code
-title: Formatting
+title: Code formatting
 description: Flutter's code formatter formats your code along recommended style guidelines.
 ---
 
