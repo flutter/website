@@ -52,7 +52,8 @@ defaults:
 
 assets:
   sources:
-    - _assets/shared # Forces jekyll to go through the symlink
+    - _shared/_assets
+    - _shared/_assets/css
 
 # kramdown: {show_warnings: true}
 plugins: [jekyll-toc]
