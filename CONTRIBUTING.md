@@ -15,20 +15,6 @@ Looking for the [Effective Dart]({{site.www}}/guides/language/effective-dart)?
 This comprehensive set of guides for the Dart language (which is used by Flutter),
 includes guides on style, documentation, usage, and design.
 
-* [Types of contributor](#types-of-contributor)
-* [Ways to contribute](#ways-to-contribute)
-
-# Types of contributor
-
-You can contribute to the Flutter SDK or the Flutter website. There are two
-levels of contributors:
-
-* A _contributor_ has signed the Contributor License Agreement (CLA) and
-  submittecd one or more patches.
-
-* A _trusted contributor_ is granted commit access by gaining our trust and
-  demonstrating a commitment to Flutter.
-
 # Ways to contribute
 
 We encourage you to reach out and join the conversation in a variety of ways.
@@ -56,3 +42,7 @@ Other ways you can contribute:
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter
 [reddit]: https://www.reddit.com/r/FlutterDev
+
+For more information on contributing, see
+[Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+in the [Flutter SDK](https://github.com/flutter/flutter) repo.
