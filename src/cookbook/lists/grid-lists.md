@@ -12,7 +12,7 @@ The simplest way to get started using grids is by using the
 constructor, because it allow us to specify how many rows or columns we'd like.
 
 In this example, we'll generate a List of 100 Widgets that display their
-index in the list. This will help us us visualize how `GridView`  works.
+index in the list. This will help us visualize how `GridView`  works.
 
 <!-- skip -->
 ```dart
