@@ -86,6 +86,16 @@ a.card {
   padding: bs-spacer(3) bs-spacer(4);
 }
 
+@mixin reset-carousel-animation {
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: none;
+  }
+  .carousel-item-left {
+    transform: none;
+  }
+}
+
 code {
   color: #008f83;
 }

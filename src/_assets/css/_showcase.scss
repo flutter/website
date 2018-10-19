@@ -30,6 +30,8 @@
   }
 
   &__carousel {
+    @include reset-carousel-animation;
+
     &__slide {
       background-position: center center;
       background-size: cover;
@@ -39,14 +41,6 @@
       @include media-breakpoint-up(md) {
         min-height: 640px;
         padding: 80px 0;
-      }
-
-      &__background {
-        left: 0;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 100%;
       }
     }
   }

@@ -14,6 +14,7 @@ $(function () {
   adjustToc();
   initFixedColumns();
   initVideoModal();
+  initCarousel();
   prettyPrint();
 
   // New (dash) tabs
@@ -105,5 +106,18 @@ function initVideoModal() {
     if (window.videoPlayer) {
       window.videoPlayer.stopVideo();
     }
+  });
+}
+
+function initCarousel() {
+  var CAROUSEL_SELECTOR = '.carousel';
+  var CAROUSEL_ITEM_SELECTOR = '.carousel-item';
+  var carousel = $(CAROUSEL_SELECTOR);
+
+  carousel.on('slide.bs.carousel', function (e) {
+    carousel.find(CAROUSEL_ITEM_SELECTOR).eq(e.from).addClass('transition-out');
+  });
+  carousel.on('slid.bs.carousel', function (e) {
+    carousel.find(CAROUSEL_ITEM_SELECTOR).eq(e.from).removeClass('transition-out');
   });
 }

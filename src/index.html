@@ -15,9 +15,23 @@ description: >
   {% include banner.html -%}
 </div>
 
-<section class="homepage__hero text-center">
-    {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
-    <h1 class="homepage__hero__text">Build <span class="color-white">Beautiful</span> Apps</h1>
+<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=3000>
+
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
+            <h1 class="homepage__hero__text">Build <span class="color-white">Beautiful</span> Apps</h1>
+        </div>
+        <div class="carousel-item">
+            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
+            <h1 class="homepage__hero__text">Viewing <span class="color-white">Second</span> Slide</h1>
+        </div>
+        <div class="carousel-item">
+            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
+            <h1 class="homepage__hero__text">Viewing <span class="color-white">Third</span> Slide</h1>
+        </div>
+    </div>
 </section>
 
 <section class="homepage__platforms text-center">

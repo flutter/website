@@ -6,23 +6,48 @@ show-nav-get-started-button: true
 toc: false
 ---
 
-<section class="landing-page__hero showcase__carousel">
-    <div class="showcase__carousel__slide" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
-                    <div class="card card--app">
-                        <div class="card-body">
-                            <h2 class="card-category">Featured</h2>
-                            <h3>Hamilton Musical</h3>
-                            <p>
-                            Official app of the hit Broadway musical, Hamilton. Includes daily lotteries,  exclusive news and
-                            videos, a trivia game, merchandise store, and more.
-                            </p>
+<section class="landing-page__hero showcase__carousel carousel slide" data-ride="carousel">
+
+
+    <div class="carousel-inner">
+        <div class="showcase__carousel__slide carousel-item active" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
+                        <div class="card card--app">
+                            <div class="card-body">
+                                <h2 class="card-category">Featured</h2>
+                                <h3>Hamilton Musical</h3>
+                                <p>
+                                Official app of the hit Broadway musical, Hamilton. Includes daily lotteries,  exclusive news and
+                                videos, a trivia game, merchandise store, and more.
+                                </p>
+                            </div>
+                            <div class="card-footer card-footer--transparent card-footer--links">
+                                <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
+                                <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+                            </div>
                         </div>
-                        <div class="card-footer card-footer--transparent card-footer--links">
-                            <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
-                            <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase__carousel__slide carousel-item" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
+                        <div class="card card--app">
+                            <div class="card-body">
+                                <h2 class="card-category">Featured</h2>
+                                <h3>Second featured app</h3>
+                                <p>
+                                Description for second featured app.
+                                </p>
+                            </div>
+                            <div class="card-footer card-footer--transparent card-footer--links">
+                                <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
+                                <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+                            </div>
                         </div>
                     </div>
                 </div>
