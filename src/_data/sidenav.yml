@@ -11,7 +11,7 @@
     - title: 5. Learn more
       permalink: /get-started/learn-more
     - divider
-    - title: Coming from another platform
+    - title: From another platform?
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
@@ -125,11 +125,11 @@
               permalink: /development/tools/sdk/upgrading
             - title: Archive
               permalink: /development/tools/sdk/archive
-        - title: Using hot reload
+        - title: Hot reload
           permalink: /development/tools/hot-reload
-        - title: Formatting Flutter code
+        - title: Code formatting
           permalink: /development/tools/formatting
-        - title: Widget Inspector
+        - title: Widget inspector
           permalink: /development/tools/inspector
 
 - title: Testing & optimization
@@ -184,6 +184,3 @@
       permalink: https://docs.flutter.io
     - title: Package site
       permalink: https://pub.dartlang.org/flutter
-
-
-

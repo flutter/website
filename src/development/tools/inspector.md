@@ -1,24 +1,23 @@
 ---
-title: Flutter's Widget Inspector
-short-title: Widget Inspector
-description: A brief overview of Flutter's Widget Inspector.
+title: Widget inspector
+description: A brief overview of Flutter's widget inspector.
 ---
 
-The Flutter Widget Inspector is powerful tool for visualizing and exploring
+The Flutter widget inspector is powerful tool for visualizing and exploring
 Flutter widget trees.
 
 The Flutter framework uses widgets as [the core building
 block](/development/ui/widgets-intro) for anything from controls (text,
 buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
-The Inspector is powerful tool for visualizing and exploring Flutter
+The inspector is powerful tool for visualizing and exploring Flutter
 these widget trees. It can be helpful when:
 
 * Understanding existing layouts
 * Diagnosing layout issues
 
-![IntelliJ Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
+![IntelliJ Flutter inspector window]({% asset tools/android-studio/visual-debugging.png @path %})
 
-To start click "Select widget" on the Flutter Inspector toolbar, and then click
+To start click "Select widget" on the Flutter inspector toolbar, and then click
 on the device to select a widget. The selected widget is then highlighted
 on the device and in the widget tree.
 
@@ -34,12 +33,12 @@ and the sizes flow back up.
 
 ![Switch Trees]({% asset tools/android-studio/switch_inspector_tree.gif @path %})
 
-For a more complete demonstration of the Inspector, see the
+For a more complete demonstration of the inspector, see the
 [DartConf 2018 talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
 
-## Get Started with the Inspector
+## Get Started with the inspector
 
-The Inspector is currently available in [the Flutter
+The inspector is currently available in [the Flutter
 plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
 
 ## Feedback

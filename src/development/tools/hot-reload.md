@@ -1,5 +1,5 @@
 ---
-title: Using hot reload
+title: Hot reload
 description: Speed up development using Flutter's hot reload feature.
 ---
 
