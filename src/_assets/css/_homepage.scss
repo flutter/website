@@ -1,5 +1,7 @@
 .homepage {
   &__hero {
+    @include reset-carousel-animation;
+
     padding: 40px 0;
     position: relative;
 
