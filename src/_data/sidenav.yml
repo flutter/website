@@ -23,6 +23,8 @@
           permalink: /get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /get-started/flutter-for/xamarin-forms-devs
+    - title: "Dart language overview"
+      permalink: https://www.dartlang.org/guides/language
 
 - title: Samples & codelabs
   children:

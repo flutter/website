@@ -15,12 +15,10 @@
 
   <li class="nav-item">
     <a class="{{class2}} {%- unless entry2.permalink %} disabled {%- endunless %}"
-      {% if entry2.permalink -%}
-        href="{{entry2.permalink}}"
-      {% endif -%}
+      {%- if entry2.permalink %} href="{{entry2.permalink}}" {%- endif -%}
+      {%- if entry2.permalink contains '://' %} target="_blank" rel="noopener" {%- endif -%}
     >{{entry2.title}}
-    {%- if entry2.permalink == nil %}
-      (TBC)
+    {%- if entry2.permalink == nil %} (TBC)
     {%- elsif entry2.permalink contains '://' -%}
       <i class="fas fa-external-link-alt"></i>
     {%- endif -%}
