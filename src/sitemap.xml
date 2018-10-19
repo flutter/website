@@ -1,0 +1,34 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign collections = site.collections | map: 'label' | join: ',' | prepend: 'pages,' | split: ',' | sort -%}
+
+{%- for colName in collections -%}
+{% assign pages = site[colName] | sort: 'url' -%}
+
+{%- for page in pages -%}
+
+{%- unless page.sitemap == false -%}
+<url>
+  <loc>{{ site.url | append: page.url | regex_replace: '/index\.html$|\.html$|/$' }}</loc>
+  <lastmod>
+    {%- if page.sitemap.lastmod -%}
+      {{ page.sitemap.lastmod | date: "%Y-%m-%d" }}
+    {%- else -%}
+      {{ site.now | default: page.date | default: site.time | date_to_xmlschema }}
+    {%- endif -%}
+  </lastmod>
+  <changefreq>{{ page.sitemap.changefreq | default: 'monthly' }}</changefreq>
+  {% if page.sitemap.priority -%}
+  <priority>{{ page.sitemap.priority }}</priority>
+  {%- endif -%}
+</url>
+{% endunless -%}
+
+{%- endfor -%}
+
+{%- endfor -%}
+</urlset>
