@@ -1,5 +1,6 @@
 ---
-title: Adding Assets and Images
+title: Adding assets and images
+short-title: Assets and images
 ---
 
 Flutter apps can include both code and _assets_ (sometimes called
@@ -372,9 +373,15 @@ In your Flutter project's root directory, navigate to `.../ios/Runner`. The dire
 
 Flutter also uses native platform mechanisms to draw transitional launch screens to your Flutter app while the Flutter framework loads. This launch screen will persist until Flutter renders the first frame of your application.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** this implies that if you don't call [runApp](https://docs.flutter.io/flutter/widgets/runApp.html) in the `void main()` function of your app (or more specifically, if you don't call [`window.render`](https://docs.flutter.io/flutter/dart-ui/Window/render.html) in response to [`window.onDrawFrame`](https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html)), the launch screen will persist forever.
-</aside>
+{{site.alert.note}}
+  This implies that if you don't call
+  [runApp()](https://docs.flutter.io/flutter/widgets/runApp.html) in the
+  `main()` function of your app (or more specifically, if you don't call
+  [`window.render()`](https://docs.flutter.io/flutter/dart-ui/Window/render.html)
+  in response to
+  [`window.onDrawFrame`](https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html)),
+  the launch screen will persist forever.
+{{site.alert.end}}
 
 #### Android
 

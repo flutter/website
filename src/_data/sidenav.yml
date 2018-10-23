@@ -52,7 +52,7 @@
         - title: Adding interactivity
           permalink: /development/ui/interactive
         - title: Assets and images
-          permanlink: /development/ui/assets-and-images
+          permalink: /development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /cookbook/navigation/navigation-basics
         - title: Inspect an app's UI
