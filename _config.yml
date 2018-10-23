@@ -56,7 +56,7 @@ assets:
     - _shared/_assets/css
 
 # kramdown: {show_warnings: true}
-plugins: [jekyll-octicons, jekyll-toc]
+plugins: [jekyll-toc]
 source: src
 # `symlinked-sources` can refer to individual files or directories
 # under `src` that are symlinked to somewhere outside `src`, or it can

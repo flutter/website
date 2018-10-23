@@ -6,7 +6,6 @@ gem 'bootstrap'
 gem 'font-awesome-sass'
 gem 'jekyll'
 gem 'jekyll-assets', group: :jekyll_plugins
-gem 'jekyll-octicons'
 gem 'jekyll-toc',
   # :path => '~/git/dart/jekyll-toc'
   :git => 'https://github.com/chalin/jekyll-toc.git',

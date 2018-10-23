@@ -75,9 +75,6 @@ GEM
       nokogiri (~> 1.8)
       pathutil (~> 0.16)
       sprockets (>= 3.3, < 4.1.beta)
-    jekyll-octicons (8.1.0)
-      jekyll (~> 3.1)
-      octicons (= 8.1.0)
     jekyll-sanity (1.2.0)
       jekyll (~> 3.1)
     jekyll-sass-converter (1.5.2)
@@ -98,8 +95,6 @@ GEM
     minitest (5.11.3)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    octicons (8.1.0)
-      nokogiri (>= 1.6.3.1)
     parallel (1.12.1)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
@@ -143,7 +138,6 @@ DEPENDENCIES
   html-proofer
   jekyll
   jekyll-assets
-  jekyll-octicons
   jekyll-toc!
   liquid-tag-parser
   rake
