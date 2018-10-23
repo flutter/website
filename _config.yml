@@ -31,7 +31,7 @@ defaults:
     # `show_banner: true` to the page's frontmatter.
     show_banner: true
 - scope:
-    path: 'api-and-reference/widgets'
+    path: 'reference/widgets'
   values:
     show_breadcrumbs: true
     toc: false

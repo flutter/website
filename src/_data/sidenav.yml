@@ -176,10 +176,10 @@
     - title: FAQ
       permalink: /resources/faq
 
-- title: APIs & references
+- title: Reference
   children:
     - title: Widget index
-      permalink: /api-and-reference/widgets
+      permalink: /reference/widgets
     - title: API reference
       permalink: https://docs.flutter.io
     - title: Package site
