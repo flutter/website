@@ -50,7 +50,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the [Cupertino widgets](/api-and-reference/widgets/cupertino)
+On iOS, you can use the [Cupertino widgets](/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -194,7 +194,7 @@ You can add padding to any widget, which mimics the functionality of
 constraints in iOS.
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/api-and-reference/widgets/layout).
+catalog](/reference/widgets/layout).
 
 ### How do I add or remove a component from my layout?
 
@@ -364,7 +364,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/api-and-reference/widgets/animation),
+[Animation & Motion widgets](/reference/widgets/animation),
 the [Animations tutorial](/development/ui/animations/tutorial),
 and the [Animations overview](/development/ui/animations).
 
@@ -1552,7 +1552,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more detailed docs on how to lay out widgets in Flutter,
-see the [layout tutorial](/api-and-reference/widgets/layout).
+see the [layout tutorial](/reference/widgets/layout).
 
 ## Gesture detection and touch event handling
 
@@ -1703,7 +1703,7 @@ On iOS, you can use the
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
-[Cupertino widgets gallery](/api-and-reference/widgets/cupertino).
+[Cupertino widgets gallery](/reference/widgets/cupertino).
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
