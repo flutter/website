@@ -1,8 +1,16 @@
-@mixin header-clearance {
+// Header clearance of top nav
+@mixin _header-clearance {
   $clearance: 100px;
 
   margin-top: -$clearance;
   padding-top: $clearance;
+}
+
+@mixin header-clearance {
+  @include _header-clearance;
+
+  content: "";
+  display: block;
 }
 
 .site-content {
@@ -31,11 +39,10 @@
 
   h1, h2, h3, h4, h5, h6 {
     // Invisible pre-element to avoid modifying styles on headings.
-    &[id]:not(.no_toc)::before {
-      @include header-clearance;
+    &[id]:not(.no_toc)::before { @include header-clearance; }
 
-      content: "";
-      display: block;
-    }
+    // This case is for jekyll-toc entries that use the computed header id, rather than
+    // the Kramdown id override specified using the {#foo} markdown-extension syntax.
+    > a[id]::before { @include header-clearance; }
   }
 }
