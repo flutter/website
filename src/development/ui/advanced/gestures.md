@@ -25,8 +25,8 @@ screen.  There are four types of pointer events:
 - [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
   Input from this pointer is no longer directed towards this app.
 
-On pointer down, the framework does a _hit test_ on your app to determine what
-widgets exists at the location where the pointer contacted the screen. The
+On pointer down, the framework does a _hit test_ on your app to determine which
+widget exists at the location where the pointer contacted the screen. The
 pointer down event (and subsequent events for that pointer) are then dispatched
 to the innermost widget found by the hit test. From there, the events bubble up
 the tree and are dispatched to all the widgets on the path from the innermost
