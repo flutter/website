@@ -348,18 +348,18 @@ or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
-In September 2018, we measured the size of a
+In October 2018, we measured the size of a
 [minimal Flutter app](https://github.com/flutter/flutter/tree/60d223c20c44424e3c8031d019270d22bab35df6/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and compressed as a release APK, to be
-approximately 4.48MB.
+approximately 4.28 MB.
 
 For this simple app,
-the core engine is approximately 3MB (compressed),
-the framework + app code is approximately 857.5KB (compressed),
-the LICENSE file is 54KB (compressed),
-necessary Java code (classes.dex) is 61KB (compressed),
-and there is approximately 449KB of (compressed) ICU data.
+the core engine is approximately 2.86 MB (compressed),
+the framework + app code is approximately 818 KB (compressed),
+the LICENSE file is 54 KB (compressed),
+necessary Java code (classes.dex) is 62 KB (compressed),
+and there is approximately 449 KB of (compressed) ICU data.
 
 Of course, YMMV, and we recommend that you measure your own app,
 by running `flutter build apk` and looking at
