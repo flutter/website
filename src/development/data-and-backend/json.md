@@ -286,8 +286,8 @@ class User {
   /// The constructor is named after the source class, in this case User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 
-  /// `toJson` is the convention for a class to declare support for JSON
-  /// serialization. The implementation simply calls the private, generated
+  /// `toJson` is the convention for a class to declare support for serialization
+  /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$UserToJson`.
   Map<String, dynamic> toJson() => _$[[highlight]]User[[/highlight]]ToJson(this);
 }
