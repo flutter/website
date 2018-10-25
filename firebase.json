@@ -10,7 +10,6 @@
       { "source": "/chat", "destination": "https://gitter.im/flutter/flutter", "type": 302 },
       { "source": "/development/tools/ide", "destination": "/development/tools/ide/android-studio", "type": 301 },
       { "source": "/development/tools/sdk", "destination": "/development/tools/sdk/upgrading", "type": 301 },
-      { "source": "/development/ui/inspector", "destination": "/development/tools/inspector", "type": 301 },
       { "source": "/downloads/:resource*", "destination": "/resources/:resource*", "type": 301 },
       { "source": "/platform-services*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/platform-plugins*", "destination": "/development/packages-and-plugins/using-packages", "type": 301 },
