@@ -31,7 +31,6 @@ you are looking for. Some of the changes to the website include:
 
 Some of the new content includes:
 
-* Additional [cookbook](/cookbook) recipes
 * Deep dive on Flutter internals,
   [Inside Flutter](/resources/inside-flutter)
 * [Technical videos](/resources/videos) page
@@ -46,26 +45,6 @@ Some of the new content includes:
 
 If you have questions or comments about the revamped site, [file an
 issue]({{site.repo.this}}/issues).
-
-{% comment %}
-# TODO (Not for publication)
-
-* Finish reviewing all pages and fixing issues
-* Add a TOC back to pages containing tabs
-* Run site through accessibility testing/review
-* UX testing of new site
-* Custom search - open issue
-* Deprecated/watermark format option
-* Add descriptions to each page
-* Sitemap
-* Redirects
-* Finalize landing page
-* Finalize showcase page
-* A new 404 page
-* Complete styling for widget catalog
-* More new content (by Flutter Live)
-{% endcomment %}
-
 
 ## New to Flutter?
 
