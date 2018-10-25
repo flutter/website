@@ -8,7 +8,7 @@
     "url": "https://github.com/dart-lang/site-www.git"
   },
   "devDependencies": {
-    "firebase-tools": "4.0.3",
+    "firebase-tools": "^5.1.1",
     "superstatic": "^5.0.2"
   }
 }
