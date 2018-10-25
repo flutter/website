@@ -7,19 +7,20 @@ title: Technical Overview
 Flutter is a mobile app SDK for building high-performance, high-fidelity,
 apps for iOS and Android, from a single codebase.
 
-The goal is to enable developers to deliver high-performance apps that feel natural
-on different platforms. We embrace differences in scrolling behaviors,
+The goal is to enable developers to deliver high-performance apps that feel
+natural on different platforms. We embrace differences in scrolling behaviors,
 typography, icons, and more.
 
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the
 [Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
-a collection of Flutter sample apps you can run after installing Flutter and setting
-up your environment. Shrine has high-quality scrolling images, interactive cards,
-buttons, dropdown lists, and a shopping cart page. To look at the single codebase
-for this and more examples,
-[visit our GitHub repository](https://github.com/flutter/flutter/tree/master/examples).
+a collection of Flutter sample apps you can run after installing Flutter
+and setting up your environment. Shrine has high-quality scrolling images,
+interactive cards, buttons, dropdown lists, and a shopping cart page.
+To look at the single codebase for this and more examples,
+[visit our GitHub
+repository](https://github.com/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
 in [Dart](https://www.dartlang.org), which looks familiar if you've used a
@@ -107,9 +108,10 @@ building upon the previous layer.
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-layercake.svg" style="width: 85%; height: 85%"></object>
 
-The diagram shows the upper layers of the framework, which are used more
-frequently than the lower layers. For the complete set of libraries that make up
-the Flutter's layered framework, see our [API documentation](https://docs.flutter.io).
+The upper layers of the framework are used more frequently than the lower
+layers. For the complete set of libraries that make up
+the Flutter's layered framework, see our
+[API documentation](https://docs.flutter.io).
 
 The goal of this design is to help you do more with less code.  For example,
 the Material layer is built by composing basic widgets from the widgets layer,
@@ -130,14 +132,16 @@ wish into the lower layers.
 
 You define the unique characteristics of a widget by implementing a
 [build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
-function that returns a tree (or hierarchy) of widgets. This tree represents the widget's part
-of the user interface in more concrete terms.  For example, a toolbar widget might
-have a build function that returns a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
+function that returns a tree (or hierarchy) of widgets. This tree represents
+the widget's part of the user interface in more concrete terms.
+For example, a toolbar widget might have a build function that returns
+a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
 of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
 [various](https://docs.flutter.io/flutter/material/IconButton-class.html)
 [buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
-process bottoms out in [fully concrete widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
+process bottoms out in [fully concrete
+widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
 which the framework then stitches together into a tree.
 
 A widget's build function should be free of side effects.  Whenever it is asked
@@ -159,9 +163,12 @@ widget has a counter that increments whenever the user taps a button, the value
 of the counter is the state for that widget. When that value changes, the widget
 needs to be rebuilt to update the UI.
 
-These widgets subclass [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-(rather than [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
-and store their mutable state in a subclass of [State](https://docs.flutter.io/flutter/widgets/State-class.html).
+These widgets subclass
+[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+(rather than
+[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
+and store their mutable state in a subclass of
+[State](https://docs.flutter.io/flutter/widgets/State-class.html).
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
@@ -190,7 +197,8 @@ Next steps:
 1.  [Follow the Flutter Getting Started guide](/get-started).
 1.  Try [Building Layouts in Flutter](/development/ui/layout) and
     [Adding Interactivity to Your Flutter App](/development/ui/interactive).
-1.  Follow a detailed example in [Tour of the Widget Framework](/development/ui/widgets-intro).
+1.  Follow a detailed example in [Tour of the Widget
+    Framework](/development/ui/widgets-intro).
 
 ## Get support
 

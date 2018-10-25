@@ -34,7 +34,7 @@
  1. Add the `flutter` tool to your path:
 
     ```terminal
-    $ export PATH=`pwd`/flutter/bin:$PATH
+    $ export PATH=$PATH:`pwd`/flutter/bin
     ```
 
 The above command sets your `PATH` variable temporarily, for the current terminal
@@ -51,7 +51,7 @@ Run the following command to see if there are any dependencies you need to
 install to complete the setup:
 
 ```terminal
-$ flutter doctor
+$ flutter doctor [-v]
 ```
 
 This command checks your environment and displays a report to the terminal
