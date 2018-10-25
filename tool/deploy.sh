@@ -3,7 +3,7 @@
 if [ ! $(type -t travis_fold) ]; then travis_fold () { true; } fi
 
 function _installFBT() {
-  _PKG="firebase-tools@4.0.3"
+  _PKG="firebase-tools"
   if ! type -t firebase > /dev/null; then
     travis_fold start deploy.firebase-tools-install
     (set -x; npm install --global $_PKG)
