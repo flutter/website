@@ -32,9 +32,6 @@
                 {%- if page_url_path == '/community' %} active {%- endif -%}" href="/community">Community</a>
           </li>
         </ul>
-        {% if page.show-nav-get-started-button -%}
-          <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
-        {% endif -%}
         <form action="/search/" class="site-header__search form-inline">
           <input class="site-header__searchfield form-control" type="search" name="q" id="q" autocomplete="off" placeholder="Search" aria-label="Search">
         </form>
@@ -45,5 +42,8 @@
       <a  class="nav-item nav-link" href="{{site.social.youtube}}"><i class="fab fa-youtube fa-lg"></i></a>
       <a  class="nav-item nav-link" href="{{site.repo.organization}}"><i class="fab fa-github fa-lg"></i></a>
     </div>
+    {% if page.show-nav-get-started-button -%}
+      <a class="site-header__cta btn btn-primary" href="/get-started/install/">Get started</a>
+    {% endif -%}
   </nav>
 </header>

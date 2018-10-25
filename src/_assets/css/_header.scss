@@ -28,11 +28,15 @@
       margin-right: auto;
     }
 
-    .btn {
-      @include media-breakpoint-up(md) {
-        margin-right: bs-spacer(4);
-      }
-    }
+    // TODO: @fertolg, please review.
+    // Disabling as part of fix for https://github.com/flutter/website/issues/1532 because this
+    // site-header global button style change doesn't seem necessary.
+    //
+    // .btn {
+    //   @include media-breakpoint-up(md) {
+    //     margin-right: bs-spacer(4);
+    //   }
+    // }
 
     .nav-link {
       color: $site-color-nav-links;
@@ -143,14 +147,10 @@
   }
 
   &__cta {
-    @include media-breakpoint-down(sm) {
-      flex-shrink: 0;
-      margin: auto bs-spacer(5) bs-spacer(5);
-      order: 1;
-    }
-    @include media-breakpoint-up(md) {
-      order: -1;
-    }
+    margin-left: bs-spacer(2);
+    padding: bs-spacer(2) bs-spacer(4) !important;
+
+    @include media-breakpoint-down(sm) { display: none; }
   }
 
   &__search {
@@ -205,6 +205,11 @@
   &__social {
     .nav-item.nav-link {
       padding: 0 bs-spacer(2);
+
+      @include media-breakpoint-down(sm) {
+        padding: 0 bs-spacer(1);
+        font-size: smaller;
+      }
     }
   }
 }
