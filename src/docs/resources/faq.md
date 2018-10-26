@@ -849,7 +849,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /development/ui/widget-catalog
+[widgets]: /docs/development/ui/widget-catalog
 
 ### What are Flutter's guiding principles?
 

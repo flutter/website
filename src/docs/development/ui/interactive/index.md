@@ -42,7 +42,7 @@ you are good to go!
 [Building Layouts for Flutter](/docs/development/ui/layout)
 showed how to create the layout for the following screenshot.
 
-<img src="/development/ui/interactive/images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
+<img src="/docs/development/ui/interactive/images/lakes.jpg" style="border:1px solid black" alt="The starting Lakes app that we will modify">
 
 When the app first launches, the star is solid red, indicating that this lake
 has previously been favorited. The number next to the star indicates that
@@ -51,7 +51,7 @@ tapping the star removes its favorited status, replacing
 the solid star with an outline and decreasing the count. Tapping
 again favorites the lake, drawing a solid star and increasing the count.
 
-<img src="/development/ui/interactive/images/favorited-not-favorited.png" alt="the custom widget you'll create">
+<img src="/docs/development/ui/interactive/images/favorited-not-favorited.png" alt="the custom widget you'll create">
 
 To accomplish this, you'll create a single custom widget that includes both the
 star and the count, which are themselves widgets. Because tapping the star
@@ -377,7 +377,7 @@ when tapped, toggles between a green or grey box.
 The `_active` boolean determines the color: green for active or
 grey for inactive.
 
-<img src="/development/ui/interactive/images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/development/ui/interactive/images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
+<img src="/docs/development/ui/interactive/images/tapbox-active-state.png" style="border:1px solid black" alt="a large green box with the text, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/docs/development/ui/interactive/images/tapbox-inactive-state.png" style="border:1px solid black" alt="a large grey box with the text, 'Inactive'">
 
 These examples use
 [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)

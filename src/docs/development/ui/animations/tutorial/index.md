@@ -614,7 +614,7 @@ The widget tree for the
 [animate5](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/animation/animate5/main.dart)
 example looks like this:
 
-<img src="/development/ui/animations/tutorial/images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
+<img src="/docs/development/ui/animations/tutorial/images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:

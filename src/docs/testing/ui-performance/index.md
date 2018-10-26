@@ -142,7 +142,7 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
-<center><img src="/testing/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
+<center><img src="/docs/testing/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
 <center>Performance overlay showing the GPU thread (top), and UI thread (bottom).
 	The vertical green bars represent the current frame.</center><br>
 
@@ -195,7 +195,7 @@ If a red bar appears in the UI graph, the Dart code is too expensive.
 If a red vertical bar appears in the GPU graph, the scene is too
 complicated to render quickly.
 
-<center><img src="/testing/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
+<center><img src="/docs/testing/ui-performance/images/performance-overlay-jank.png" alt="Screenshot of performance overlay showing jank with red bars."></center>
 <center>The vertical red bars indicate that the current frame is expensive to both render and paint.<br>When both graphs have red, start by diagnosing the UI thread (Dart VM).</center><br>
 
 ### Displaying the performance overlay
@@ -227,7 +227,7 @@ Learn more about what the Inspector can do in the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.
 
-[bookshelf-like icon]: /testing/ui-performance/images/performance-overlay-icon.png
+[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
 
 #### In VS Code
 
@@ -303,8 +303,8 @@ Go to Flutter's timeline view in a browser as follows:
 
     ![IntelliJ Flutter Inspector Window][]
 
-    [line-chart icon]: /testing/ui-performance/images/observatory-timeline-icon.png
-    [stopwatch icon]: /testing/ui-performance/images/observatory-icon.png
+    [line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
+    [stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
 
  1. In VS Code, bring up the command palette and enter "observatory".
     Select **Flutter: Open Observatory Timeline** from the list that pops up.
