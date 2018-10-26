@@ -5,11 +5,11 @@ description: Examples that use AnimatedListState.
 
 All of the sample apps listed here use the Flutter AnimatedListState
 class in an interesting way. The
-[Sample App Catalog](/catalog/samples) page lists all of the sample apps.
+[Sample App Catalog](/docs/catalog/samples) page lists all of the sample apps.
 
 <div class="container-fluid">
   <div class="lavish-table-row-mb">
-    <a href="/catalog/samples/animated-list">
+    <a href="/docs/catalog/samples/animated-list">
       <div class="col-lg-3">
         <img style="border:1px solid #000000" src="https://storage.googleapis.com/flutter-catalog/cb4a54db8fb3726bf4293b9cc5cb12ce16883803/animated_list_small.png" alt="Android screenshot" class="img-fluid">
       </div>
@@ -24,7 +24,7 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AnimatedList, AnimatedListState.
       </p>
       <p>
-        <a href="/catalog/samples/animated-list">Learn more</a>.
+        <a href="/docs/catalog/samples/animated-list">Learn more</a>.
       </p>
     </div>
   </div>

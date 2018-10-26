@@ -89,8 +89,8 @@ used animation patterns, and tells you where you can learn more.
 This pattern involves animating the addition or removal of elements from a
 list or grid.
 
-* [AnimatedList example](/catalog/samples/animated-list)<br>
-This demo, from the [Sample App Catalog](/catalog/samples), shows how to
+* [AnimatedList example](/docs/catalog/samples/animated-list)<br>
+This demo, from the [Sample App Catalog](/docs/catalog/samples), shows how to
 animate adding an element to a list, or removing a selected element.
 The internal Dart list is synced as the user modifies the list using
 the plus (+) and minus (-) buttons.
