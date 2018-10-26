@@ -17,7 +17,7 @@
 
           <li class="nav-item">
             <a class="nav-link
-                {%- if page_url_path == '/docs' %} active {%- endif -%}" href="/docs">Docs</a>
+                {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">Docs</a>
           </li>
           <div class="site-sidebar site-sidebar--header d-md-none">
             {% include sidenav.html nav=site.data.sidenav %}
