@@ -48,7 +48,7 @@ Flutter](/development/ui/layout).
 
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
-A [_Route_](/cookbook/navigation/navigation-basics) describes a page or screen
+A [_Route_](/docs/cookbook/navigation/navigation-basics) describes a page or screen
 in a Flutter app.
 </aside>
 

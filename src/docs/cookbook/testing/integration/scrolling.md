@@ -17,7 +17,7 @@ In this recipe, we'll learn how to scroll through a list of items in order to
 verify a specific Widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
 please read through the [Introduction to integration
-testing](/cookbook/testing/integration) recipe.
+testing](/docs/cookbook/testing/integration) recipe.
 
 ### Directions
 
@@ -30,12 +30,12 @@ testing](/cookbook/testing/integration) recipe.
 
 In this recipe, we'll build an app that shows a long list of items. In order to
 keep this recipe focused on testing, we'll use the app we created in the
-[Working with long lists](/cookbook/lists/long-lists) recipe. If you're unsure
+[Working with long lists](/docs/cookbook/lists/long-lists) recipe. If you're unsure
 of how to work with lists of content, please see that recipe for an
 introduction.
 
 As we did in the [Introduction to integration
-testing](/cookbook/testing/integration) recipe, we'll also add keys to the
+testing](/docs/cookbook/testing/integration) recipe, we'll also add keys to the
 widgets we want to interact with inside our integration tests.
 
 ```dart

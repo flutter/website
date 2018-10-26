@@ -103,7 +103,7 @@ MaterialApp(
 ```
 
 For more information on themes, please view the ["Using Themes to share colors
-and font styles"](/cookbook/design/themes/) recipe.
+and font styles"](/docs/cookbook/design/themes/) recipe.
 
 ## 4. Use the font in a specific Widget
 

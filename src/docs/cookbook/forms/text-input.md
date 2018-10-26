@@ -51,4 +51,4 @@ TextFormField(
 ```
 
 For more information on input validation, please see the
-[Building a form with validation](/cookbook/forms/validation/) recipe.
+[Building a form with validation](/docs/cookbook/forms/validation/) recipe.

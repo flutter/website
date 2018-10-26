@@ -21,7 +21,7 @@ Learn more about the Flutter framework:
 Other resources:
 
 * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
-* [Flutter Cookbook](/cookbook)
+* [Flutter Cookbook](/docs/cookbook)
 * [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
 * [Bootstrap into Dart: learn more about the language](/resources/bootstrap-into-dart)
 

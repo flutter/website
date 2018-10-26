@@ -28,7 +28,7 @@ TextField(
 ```
 
 For more information on handling input and creating text fields, please see the
-[Forms section of the cookbook](/cookbook#forms).
+[Forms section of the cookbook](/docs/cookbook#forms).
 
 ## Focus a text field when a button is tapped
 
@@ -49,9 +49,9 @@ First, we'll need to create a [`FocusNode`](https://docs.flutter.io/flutter/widg
 We will use the `FocusNode` to identify a specific `TextField` in Flutter's
 "focus tree." This will allow us to focus the `TextField` in the next steps.
 
-Since focus nodes are long-lived objects, we need to manage the lifecycle 
-using a `State`class. To do so, create the `FocusNode` instance inside the 
-`initState` method of a `State` class, and clean them up inside the `dispose` 
+Since focus nodes are long-lived objects, we need to manage the lifecycle
+using a `State`class. To do so, create the `FocusNode` instance inside the
+`initState` method of a `State` class, and clean them up inside the `dispose`
 method.
 
 <!-- skip -->
@@ -72,7 +72,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   void initState() {
     super.initState();
-    
+
     myFocusNode = FocusNode();
   }
 

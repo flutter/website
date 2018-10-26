@@ -3,7 +3,7 @@ title: Navigate with named routes
 ---
 
 In the
-[Navigate to a new screen and back](/cookbook/navigation/navigation-basics/)
+[Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics/)
 recipe, we learned how to Navigate to a new screen by creating a new route and
 pushing it to the
 [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html).

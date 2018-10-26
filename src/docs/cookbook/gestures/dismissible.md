@@ -20,7 +20,7 @@ Widget.
 
 First, we'll create a list of items we can swipe away. For more detailed
 instructions on how to create a list, please follow the [Working with long
-lists](/cookbook/lists/long-lists/) recipe.
+lists](/docs/cookbook/lists/long-lists/) recipe.
 
 ### Create a Data Source
 

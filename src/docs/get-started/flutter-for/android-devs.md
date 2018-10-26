@@ -1981,8 +1981,8 @@ customize many parameters, such as:
 ## Form input
 
 For more information on using Forms, see
-[Retrieve the value of a text field](/cookbook/forms/retrieve-input),
-from the [Flutter Cookbook](/cookbook).
+[Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
+from the [Flutter Cookbook](/docs/cookbook).
 
 ### What is the equivalent of a "hint" on an Input?
 

@@ -31,7 +31,7 @@ a local file.
 In this recipe, we'll record the performance of an app as it scrolls through a
 list of items. In order to focus on performance profiling, this recipe builds
 upon the
-[Scrolling in integration tests](/cookbook/testing/integration/scrolling)
+[Scrolling in integration tests](/docs/cookbook/testing/integration/scrolling)
 recipe.
 
 Please follow the instructions in that recipe to create an app, instrument the

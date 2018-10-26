@@ -51,7 +51,7 @@ will make the function easier to test and use in different environments!
 
 ## 3. Parse and Convert the json into a List of Photos
 
-Next, following the guidance from the [Fetch data from the internet](/cookbook/networking/fetch-data/)
+Next, following the guidance from the [Fetch data from the internet](/docs/cookbook/networking/fetch-data/)
 recipe, we'll want to convert our `http.Response` into a list of Dart objects.
 This will make the data easier to work with in the future.
 

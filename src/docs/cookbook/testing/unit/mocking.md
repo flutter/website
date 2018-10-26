@@ -53,7 +53,7 @@ dev_dependencies:
 ## 2. Create a function to test
 
 In this example, we'll want to unit test the `fetchPost` function from the
-[Fetch data from the internet](/cookbook/networking/fetch-data/) recipe. In
+[Fetch data from the internet](/docs/cookbook/networking/fetch-data/) recipe. In
 order to test this function, we need to make two changes:
 
   1. Provide an `http.Client` to the function. This will allow us to provide the
@@ -85,7 +85,7 @@ Future<Post> fetchPost(http.Client client) async {
 
 Next, we'll need to create our test file along with a `MockClient` class.
 Following the advice in the
-[Introduction to unit testing](/cookbook/testing/unit/) recipe, we will
+[Introduction to unit testing](/docs/cookbook/testing/unit/) recipe, we will
 create a file called `fetch_post_test.dart` file in the root `test` folder.
 
 The `MockClient` class will implement the `http.Client` class. This will allow
@@ -160,7 +160,7 @@ $ flutter test test/counter_test.dart
 
 You can also run tests inside your favorite editor by following the instructions
 in the
-[Introduction to unit testing](/cookbook/testing/unit#run-tests-using-intellij-or-vscode)
+[Introduction to unit testing](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode)
 recipe.
 
 ### Summary

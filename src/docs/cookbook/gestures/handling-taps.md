@@ -40,7 +40,7 @@ GestureDetector(
 ## Notes
 
   1. If you'd like to add the Material Ripple effect to your button, please
-  see the "[Adding Material Touch ripples](/cookbook/gestures/ripples/)" recipe.
+  see the "[Adding Material Touch ripples](/docs/cookbook/gestures/ripples/)" recipe.
   2. While we've created a custom button to demonstrate these concepts, Flutter
   includes a handful of buttons out of the box: [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html),
   [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html),

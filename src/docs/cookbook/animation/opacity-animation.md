@@ -88,7 +88,7 @@ which is a method on the `State` class. This will let Flutter know it needs to
 rebuild the Widget.
 
 Note: For more information on working with user input, please see the
-[Handling Gestures](/cookbook/#handling-gestures) section of the Cookbook.
+[Handling Gestures](/docs/cookbook/#handling-gestures) section of the Cookbook.
 
 <!-- skip -->
 ```dart

@@ -25,7 +25,7 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-This example builds upon the [Fetching Data from the Internet](/cookbook/networking/fetch-data/)
+This example builds upon the [Fetching Data from the Internet](/docs/cookbook/networking/fetch-data/)
 recipe.
 
 ```dart

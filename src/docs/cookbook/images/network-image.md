@@ -35,8 +35,8 @@ functionality, such as fading images in after loading or caching images
 to the device after they're downloaded. To achieve these tasks, please see
 the following recipes:
 
-  * [Fade in images with a placeholder](/cookbook/images/fading-in-images/)
-  * [Working with cached images](/cookbook/images/cached-images/)
+  * [Fade in images with a placeholder](/docs/cookbook/images/fading-in-images/)
+  * [Working with cached images](/docs/cookbook/images/cached-images/)
 
 ## Complete example
 

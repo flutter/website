@@ -18,7 +18,7 @@ consult the
 [`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
 
 If you're unfamiliar with Widget testing and the role of `Finder` classes,
-review the [Introduction to Widget testing](/cookbook/testing/integration) recipe.
+review the [Introduction to Widget testing](/docs/cookbook/testing/integration) recipe.
 
 ### Directions
 

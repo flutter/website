@@ -2076,8 +2076,8 @@ class _MyFormState extends State<MyForm> {
 {% endprettify %}
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field](/cookbook/forms/retrieve-input),
-from the [Flutter Cookbook](/cookbook).
+[Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
+from the [Flutter Cookbook](/docs/cookbook).
 
 ### What is the equivalent of a "Placeholder" on an Entry?
 

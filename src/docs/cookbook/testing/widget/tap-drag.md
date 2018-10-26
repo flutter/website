@@ -50,10 +50,10 @@ To keep the focus on testing, this recipe will not provide a detailed guide on
 how to build the todo app. To learn more about how this app is built, please see
 the relevant recipes:
 
-  * [Create and style a text field](/cookbook/forms/text-input/)
-  * [Handling Taps](/cookbook/gestures/handling-taps/)
-  * [Create a basic list](/cookbook/lists/basic-list/)
-  * [Implement Swipe to Dismiss](/cookbook/gestures/dismissible/)
+  * [Create and style a text field](/docs/cookbook/forms/text-input/)
+  * [Handling Taps](/docs/cookbook/gestures/handling-taps/)
+  * [Create a basic list](/docs/cookbook/lists/basic-list/)
+  * [Implement Swipe to Dismiss](/docs/cookbook/gestures/dismissible/)
 
 ```dart
 class TodoList extends StatefulWidget {

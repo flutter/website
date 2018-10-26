@@ -36,7 +36,7 @@ class Todo {
 
 Second, we'll want to display a list of Todos. In this example, we'll generate
 20 todos and show them using a ListView. For more information on working with
-Lists, please see the [`Basic List`](/cookbook/lists/basic-list/) recipe.
+Lists, please see the [`Basic List`](/docs/cookbook/lists/basic-list/) recipe.
 
 ### Generate the List of Todos
 
