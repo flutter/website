@@ -50,7 +50,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the [Cupertino widgets](/reference/widgets/cupertino)
+On iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -194,7 +194,7 @@ You can add padding to any widget, which mimics the functionality of
 constraints in iOS.
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/reference/widgets/layout).
+catalog](/docs/reference/widgets/layout).
 
 ### How do I add or remove a component from my layout?
 
@@ -364,7 +364,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/reference/widgets/animation),
+[Animation & Motion widgets](/docs/reference/widgets/animation),
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
@@ -435,7 +435,7 @@ wrap a widget in an Opacity widget to accomplish this.
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
 In Flutter, build a custom widget by
-[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
+[composing](/docs/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 
 For example, how do you build a `CustomButton` that takes a label in
@@ -478,7 +478,7 @@ display.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a “screen” or “page” of an app, and
-a `Navigator` is a [widget](/resources/technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/docs/resources/technical-overview#everythings-a-widget)
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
 `UINavigationController`, in that it can `push()` and `pop()` routes depending
@@ -1552,7 +1552,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more detailed docs on how to lay out widgets in Flutter,
-see the [layout tutorial](/reference/widgets/layout).
+see the [layout tutorial](/docs/reference/widgets/layout).
 
 ## Gesture detection and touch event handling
 
@@ -1703,7 +1703,7 @@ On iOS, you can use the
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
-[Cupertino widgets gallery](/reference/widgets/cupertino).
+[Cupertino widgets gallery](/docs/reference/widgets/cupertino).
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.

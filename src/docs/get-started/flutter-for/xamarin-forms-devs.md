@@ -198,7 +198,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/reference/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -345,7 +345,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/reference/widgets/layout).
+catalog](/docs/reference/widgets/layout).
 
 ### How do I add or remove an Element from my layout?
 
@@ -525,7 +525,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/reference/widgets/animation),
+[Animation & Motion widgets](/docs/reference/widgets/animation),
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
@@ -604,7 +604,7 @@ In Xamarin.Forms, you typically subclass `VisualElement`, or use a pre-existing
 `VisualElement`, to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/resources/technical-overview#everythings-a-widget) smaller widgets
+[composing](/docs/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 It is somewhat similar to implementing a custom control based off a `Grid` with
 numerous `VisualElement`s added in, while extending with custom logic.
@@ -648,7 +648,7 @@ In Xamarin.Forms, you navigate between pages normally through a, you can use a
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a [widget](/resources/technical-overview#everythings-a-widget)
+a `Navigator` is a [widget](/docs/resources/technical-overview#everythings-a-widget)
 that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the

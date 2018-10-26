@@ -7,7 +7,7 @@ Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
 
-This guide shows how to integrate [fastlane](https://docs.fastlane.tools/), an
+This guide shows how to integrate [fastlane](https://docs.fastlane.tools), an
 open-source tool suite, with your existing testing and continuous integration
 (CI) workflows (for example, Travis or Cirrus).
 
@@ -144,7 +144,7 @@ repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [fastlane CI documentation](/deployment/fastlane-cd)
+    * See [fastlane CI documentation](/docs/deployment/fastlane-cd)
     for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.

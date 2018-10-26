@@ -583,8 +583,8 @@ A release build is usually _much_ smaller
 than a _debug build_.
 
 Learn more about creating a
-[release build of your Android app](/deployment/android-release),
-and creating a [release build of your iOS app](/deployment/ios-release).
+[release build of your Android app](/docs/deployment/android-release),
+and creating a [release build of your iOS app](/docs/deployment/ios-release).
 
 ### Do Flutter apps run on Chromebooks?
 

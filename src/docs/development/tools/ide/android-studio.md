@@ -269,9 +269,9 @@ location of the Android SDK:
 ## Tips and tricks
 
 * [Flutter IDE cheat sheet, MacOS
-  version](/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
+  version](/docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
 * [Flutter IDE cheat sheet, Windows & Linux
-  version](/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+  version](/docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
 
 ## Troubleshooting
 
@@ -297,4 +297,4 @@ to filing new issues:
   plugin.
 
 When filing new issues, include the output of [`flutter
-doctor`](/resources/bug-reports#provide-some-flutter-diagnostics).
+doctor`](/docs/resources/bug-reports#provide-some-flutter-diagnostics).

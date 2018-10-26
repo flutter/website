@@ -746,12 +746,12 @@ some aspect of another widget’s layout. To understand why a widget renders in 
 certain way, it’s often helpful to inspect the neighboring widgets.
 
 For more information, see the [Flutter Technical
-Overview](/resources/technical-overview).
+Overview](/docs/resources/technical-overview).
 
 For more information about the core widgets from the Widgets package, see
-[Flutter Basic Widgets](/reference/widgets/basics), the
+[Flutter Basic Widgets](/docs/reference/widgets/basics), the
 [Flutter Widget Catalog](/docs/development/ui/widget-catalog), or the
-[Flutter Widget Index](/reference/widgets).
+[Flutter Widget Index](/docs/reference/widgets).
 
 ## Views
 ### What is the equivalent of the `View` container?
@@ -765,7 +765,7 @@ as  [Container](https://docs.flutter.io/flutter/widgets/Container-class.html),
 [Row](https://docs.flutter.io/flutter/widgets/Row-class.html),
 and [Center](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
-For more information, see the [Layout Widgets](/reference/widgets/layout) catalog.
+For more information, see the [Layout Widgets](/docs/reference/widgets/layout) catalog.
 
 ### What is the equivalent of `FlatList` or `SectionList`?
 
@@ -955,7 +955,7 @@ For example, [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.h
 [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html),
 and [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
-For a complete list, see [Layout Widgets](/reference/widgets/layout).
+For a complete list, see [Layout Widgets](/docs/reference/widgets/layout).
 
 
 
@@ -1091,7 +1091,7 @@ name: my_awesome_application
 flutter: [[highlight]]uses-material-design: true[[/highlight]]
 {% endprettify %}
 
-Flutter's [Cupertino (iOS-style)](/reference/widgets/cupertino) package provides high
+Flutter's [Cupertino (iOS-style)](/docs/reference/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
 font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 
