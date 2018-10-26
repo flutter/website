@@ -32,22 +32,22 @@ defaults:
     # `show_banner: true` to the page's frontmatter.
     show_banner: true
 - scope:
-    path: 'reference/widgets'
+    path: 'docs/development'
+  values:
+    show_breadcrumbs: true
+- scope:
+    path: 'docs/get-started'
+  values:
+    show_breadcrumbs: true
+- scope:
+    path: 'docs/get-started/flutter-for'
+  values:
+    show_breadcrumbs: false
+- scope:
+    path: 'docs/reference/widgets'
   values:
     show_breadcrumbs: true
     toc: false
-- scope:
-    path: 'development'
-  values:
-    show_breadcrumbs: true
-- scope:
-    path: 'get-started'
-  values:
-    show_breadcrumbs: true
-- scope:
-    path: 'get-started/flutter-for'
-  values:
-    show_breadcrumbs: false
 
 # Build settings
 
