@@ -14,9 +14,9 @@ Learn more about the Flutter framework:
 * [Flutter for React Native developers](/get-started/flutter-for/react-native-devs)
 * [Flutter for Xamarin.Forms developers](/get-started/flutter-for/xamarin-forms-devs)
 * [Flutter for web developers](/get-started/flutter-for/web-devs)
-* [Building layouts in Flutter](/development/ui/layout) tutorial
-* [Add interactivity](/development/ui/interactive) tutorial
-* [A Tour of the Flutter Widget Framework](/development/ui/widgets-intro)
+* [Building layouts in Flutter](/docs/development/ui/layout) tutorial
+* [Add interactivity](/docs/development/ui/interactive) tutorial
+* [A Tour of the Flutter Widget Framework](/docs/development/ui/widgets-intro)
 
 Other resources:
 

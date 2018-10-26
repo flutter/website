@@ -25,7 +25,7 @@ For more information about how Google handles security issues, see
 
 * **Keep your application’s dependencies up to date.**
   Make sure you [upgrade your package
-  dependencies](/development/tools/sdk/upgrading)
+  dependencies](/docs/development/tools/sdk/upgrading)
   to keep the dependencies up to date. Avoid pinning to specific versions
   for your dependencies and, if you do, make sure you check
   periodically to see if your dependencies have had security updates,

@@ -223,7 +223,7 @@ In Android Studio and IntelliJ IDEA:
 
 The Flutter Inspector is available in Android Studio and IntelliJ.
 Learn more about what the Inspector can do in the
-[Flutter Widget Inspector](/development/tools/inspector) doc, as well as the
+[Flutter Widget Inspector](/docs/development/tools/inspector) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.
 
@@ -488,7 +488,7 @@ The following resources provide more information on using Flutter's tools
 and debugging in Flutter:
 
 * [Debugging Flutter Apps](/docs/testing/debugging)
-* [Flutter Widget Inspector](/development/tools/inspector)
+* [Flutter Widget Inspector](/docs/development/tools/inspector)
 * [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI),
   presented at DartConf 2018
 * [Why Flutter Uses

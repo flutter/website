@@ -350,7 +350,7 @@ import 'package:flutter/my_widgets.dart';
 Whichever widget package you import, Dart pulls in only the widgets that are
  used in your app.
 
-For more information, see the [Flutter Widgets Catalog](/development/ui/widget-catalog).
+For more information, see the [Flutter Widgets Catalog](/docs/development/ui/widget-catalog).
 
 ### What is the equivalent of the React Native "Hello world!" app in Flutter?
 
@@ -665,7 +665,7 @@ image: AssetImage('assets/background.png'),
 ```
 
 For more information, see [Adding Assets and Images in
-Flutter](/development/ui/assets-and-images).
+Flutter](/docs/development/ui/assets-and-images).
 
 ### How do I load images over a network?
 
@@ -717,9 +717,9 @@ import 'package:flutter/cupertino.dart';
 ```
 
 For more information, see [Using
-Packages](/development/packages-and-plugins/using-packages) and
+Packages](/docs/development/packages-and-plugins/using-packages) and
 [Developing Packages &
-Plugins](/development/packages-and-plugins/developing-packages).
+Plugins](/docs/development/packages-and-plugins/developing-packages).
 
 You can find many packages shared by Flutter developers in the [Flutter
 Packages](https://pub.dartlang.org/flutter/) section of
@@ -750,7 +750,7 @@ Overview](/resources/technical-overview).
 
 For more information about the core widgets from the Widgets package, see
 [Flutter Basic Widgets](/reference/widgets/basics), the
-[Flutter Widget Catalog](/development/ui/widget-catalog), or the
+[Flutter Widget Catalog](/docs/development/ui/widget-catalog), or the
 [Flutter Widget Index](/reference/widgets).
 
 ## Views

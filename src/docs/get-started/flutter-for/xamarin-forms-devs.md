@@ -526,8 +526,8 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
 For more information, see
 [Animation & Motion widgets](/reference/widgets/animation),
-the [Animations tutorial](/development/ui/animations/tutorial),
-and the [Animations overview](/development/ui/animations).
+the [Animations tutorial](/docs/development/ui/animations/tutorial),
+and the [Animations overview](/docs/development/ui/animations).
 
 ### How do I draw/paint on the screen?
 
@@ -1252,7 +1252,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 More detailed information can be found in
-[Adding Assets and Images in Flutter](/development/ui/assets-and-images).
+[Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
 
 ### Where do I store strings? How do I handle localization?
 
@@ -1335,7 +1335,7 @@ files for translating, and importing them back into the app for using them
 with `intl`.
 
 For further details on internationalization and localization in Flutter, see the
-[internationalization guide](/development/accessibility-and-localization/internationalization),
+[internationalization guide](/docs/development/accessibility-and-localization/internationalization),
 which has sample code with and without the `intl` package.
 
 ### Where is my project file?
@@ -2200,7 +2200,7 @@ app is still hosted in a native app's `ViewController` or `Activity` as a view,
 but you don't have direct access to this, or the native framework.
 
 This doesn't mean Flutter apps cannot interact with those native APIs, or with any
-native code you have. Flutter provides [platform channels](/development/platform-integration/platform-channels),
+native code you have. Flutter provides [platform channels](/docs/development/platform-integration/platform-channels),
 that communicate and exchange data with the `ViewController` or `Activity` that
 hosts your Flutter view. Platform channels are essentially an asynchronous messaging
 mechanism that bridge the Dart code with the host `ViewController` or `Activity` and
@@ -2208,7 +2208,7 @@ the iOS or Android framework it runs on. You can use platform channels to execut
 the native side, or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels, you can use a variety of pre-made
-[plugins](/development/packages-and-plugins/using-packages) that encapsulate
+[plugins](/docs/development/packages-and-plugins/using-packages) that encapsulate
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
@@ -2217,8 +2217,8 @@ Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
 If you can't find a plugin on Pub that fits your needs, you can
-[write your own](/development/packages-and-plugins/developing-packages)
-and [publish it on Pub](/development/packages-and-plugins/developing-packages#publish).
+[write your own](/docs/development/packages-and-plugins/developing-packages)
+and [publish it on Pub](/docs/development/packages-and-plugins/developing-packages#publish).
 
 ### How do I access the GPS sensor?
 
@@ -2256,7 +2256,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/development/packages-and-plugins/developing-packages) page.
+[developing packages and plugins](/docs/development/packages-and-plugins/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

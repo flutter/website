@@ -18,8 +18,8 @@ needed in the underlying render tree to transition from one state to the next.
 <aside id="note" class="alert alert-info" markdown="1">
 **Note:** If you would like to become better acquainted with Flutter by diving
 into some code, check out
-[Building Layouts in Flutter](/development/ui/layout) and
-[Adding Interactivity to Your Flutter App](/development/ui/interactive).
+[Building Layouts in Flutter](/docs/development/ui/layout) and
+[Adding Interactivity to Your Flutter App](/docs/development/ui/interactive).
 </aside>
 
 ## Hello World
@@ -337,7 +337,7 @@ optional callbacks for other widgets. For example, the
 widgets have [onPressed]({{api}}/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
-More information: [Gestures in Flutter](/development/ui/advanced/gestures)
+More information: [Gestures in Flutter](/docs/development/ui/advanced/gestures)
 
 ## Changing widgets in response to input
 

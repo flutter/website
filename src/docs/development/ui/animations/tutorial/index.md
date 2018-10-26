@@ -855,5 +855,5 @@ You might investigate the specialized Tween classes,
 animations specific to Material Design, ReverseAnimation, shared element
 transitions (also known as Hero animations), physics simulations and
 `fling()` methods. See the
-[animations landing page](/development/ui/animations)
+[animations landing page](/docs/development/ui/animations)
 for the latest available documents and examples.

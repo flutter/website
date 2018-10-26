@@ -6,7 +6,7 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK
-    archive](/development/tools/sdk/archive) page.
+    archive](/docs/development/tools/sdk/archive) page.
  1. Extract the zip file and place the contained `flutter` in the desired
     installation location for the Flutter SDK (eg. `C:\src\flutter`; do not
     install flutter in a directory like `C:\Program Files\` that requires
@@ -16,7 +16,7 @@
 
 You are now ready to run Flutter commands in the Flutter Console!
 
-To update an existing version of Flutter, see [Upgrading Flutter](/development/tools/sdk/upgrading).
+To update an existing version of Flutter, see [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
 
 ### Update your path
 

@@ -16,10 +16,10 @@ and using third-party platform SDKs (like
 [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
-[developing packages](/development/packages-and-plugins/developing-packages).
+[developing packages](/docs/development/packages-and-plugins/developing-packages).
 
 If you are looking to add assets, images, or fonts, whether stored in
-files or packages, please see [Assets & images](/development/ui/assets-and-images).
+files or packages, please see [Assets & images](/docs/development/ui/assets-and-images).
 
 ## Using packages
 
@@ -69,7 +69,7 @@ For a complete example, see [CSS Colors example](#css-example) below.
 
 Should a package not be available for your specific use case, you can
 [develop new custom
-packages](/development/packages-and-plugins/developing-packages).
+packages](/docs/development/packages-and-plugins/developing-packages).
 
 ## Managing package dependencies & versions
 

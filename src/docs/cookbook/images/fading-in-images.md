@@ -79,7 +79,7 @@ to the project’s _pubspec.yaml_ file:
 +    - assets/loading.gif
 ```
 
-(See [Assets and Images](/development/ui/assets-and-images/)
+(See [Assets and Images](/docs/development/ui/assets-and-images/)
 for a full guide to adding assets.)
 
 Then, use the [`FadeInImage.assetNetwork`](https://docs.flutter.io/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)

@@ -362,8 +362,8 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 
 For more information, see
 [Animation & Motion widgets](/reference/widgets/animation),
-the [Animations tutorial](/development/ui/animations/tutorial),
-and the [Animations overview](/development/ui/animations).
+the [Animations tutorial](/docs/development/ui/animations/tutorial),
+and the [Animations overview](/docs/development/ui/animations).
 
 ### How do I use a `Canvas` to draw/paint?
 
@@ -527,7 +527,7 @@ as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
 
 To learn how to build a native platform integration, see
-[Developing Packages and Plugins](/development/packages-and-plugins/developing-packages).
+[Developing Packages and Plugins](/docs/development/packages-and-plugins/developing-packages).
 
 ### How do I handle incoming intents from external applications in Flutter?
 
@@ -2117,7 +2117,7 @@ not directly covered by the first-party plugins.
 
 If there is platform-specific functionality that Flutter or its community
 Plugins are missing, you can build your own following the
-[developing packages and plugins](/development/packages-and-plugins/developing-packages) page.
+[developing packages and plugins](/docs/development/packages-and-plugins/developing-packages) page.
 
 Flutter's plugin architecture, in a nutshell, is much like using an Event bus in
 Android: you fire off a message and let the receiver process and emit a result

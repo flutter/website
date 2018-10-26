@@ -8,7 +8,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
     <a class="nav-link active" role="tab" aria-selected="true">Android Studio / IntelliJ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/development/tools/ide/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" href="/docs/development/tools/ide/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
   </li>
 </ul>
 
@@ -138,7 +138,7 @@ This offers many debugging tools; for details on these see
 [Debugging Flutter Apps](/docs/testing/debugging).
 
 * **Toggle Select Widget Mode**: Select a widget on the device to inspect it in the
-  [Flutter Inspector](/development/tools/inspector).
+  [Flutter Inspector](/docs/development/tools/inspector).
 * **Toggle Debug Paint**: Add visual debugging hints to the rendering displaying
    borders, padding, alignment, and spacers.
 * **Toggle Platform Mode**: Toggle between rendering for Android or iOS.

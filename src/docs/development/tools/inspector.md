@@ -7,7 +7,7 @@ The Flutter widget inspector is powerful tool for visualizing and exploring
 Flutter widget trees.
 
 The Flutter framework uses widgets as [the core building
-block](/development/ui/widgets-intro) for anything from controls (text,
+block](/docs/development/ui/widgets-intro) for anything from controls (text,
 buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
 The inspector is powerful tool for visualizing and exploring Flutter
 these widget trees. It can be helpful when:

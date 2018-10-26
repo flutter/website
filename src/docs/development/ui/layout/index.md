@@ -151,7 +151,7 @@ class MyApp extends StatelessWidget {
 {{site.alert.tip}}
   - When pasting code into your app, indentation can
     become skewed. You can fix this in your Flutter editor
-    using the [automatic reformatting support](/development/tools/formatting).
+    using the [automatic reformatting support](/docs/development/tools/formatting).
   - For a faster development experience, try Flutter's [hot reload][] feature.
     For more information, see [Hot reload vs. Full app restart][].
 
@@ -358,7 +358,7 @@ return MaterialApp(
 
 That's it! When you hot reload the app, you should see the same layout
 shown in the screenshots. You can add interactivity to this layout by following
-[Adding Interactivity to Your Flutter App](/development/ui/interactive).
+[Adding Interactivity to Your Flutter App](/docs/development/ui/interactive).
 
 ## Flutter's approach to layout {#approach}
 
@@ -454,7 +454,7 @@ it takes only a few steps to put text, an icon, or an image on the screen.
 <ol markdown="1">
 
 <li markdown="1"> Select a layout widget to hold the object.<br>
-    Choose from a variety of [layout widgets](/development/ui/widget-catalog) based
+    Choose from a variety of [layout widgets](/docs/development/ui/widget-catalog) based
     on how you want to align or constrain the visible widget,
     as these characteristics are typically passed on to the
     contained widget.
@@ -682,7 +682,7 @@ classes offer a variety of constants for controlling alignment.
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
   file](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row/pubspec.yaml),
-  or [Adding Assets and Images in Flutter](/development/ui/assets-and-images).
+  or [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
   You don't need to do this if you're referencing online images using
   `Image.network`.
 {{site.alert.end}}
@@ -992,7 +992,7 @@ for this example, the image is saved to an images directory in the project,
 added to the [pubspec
 file,](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/pavlova/pubspec.yaml)
 and accessed using `Images.asset`. For more information, see
-[Adding Assets and Images in Flutter](/development/ui/assets-and-images).
+[Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
 
 <!-- code/layout/pavlova/main.dart -->
 <!-- skip -->
@@ -1045,7 +1045,7 @@ recommend the iPad Pro. You can change its orientation to landscape mode using
 Flutter has a rich library of layout widgets, but here a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget Overview](/development/ui/widget-catalog),
+available widgets, refer to the [Widget Overview](/docs/development/ui/widget-catalog),
 or use the Search box in the [API reference docs](https://docs.flutter.io/).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
@@ -1574,7 +1574,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 The following resources may help when writing layout code.
 
-* [Widget Overview](/development/ui/widget-catalog)<br>
+* [Widget Overview](/docs/development/ui/widget-catalog)<br>
   Describes many of the widgets available in Flutter.
 * [HTML/CSS Analogs in Flutter](/get-started/flutter-for/web-devs)<br>
   For those familiar with web programming, this page maps HTML/CSS functionality
@@ -1584,9 +1584,9 @@ The following resources may help when writing layout code.
   Demo app showcasing many Material Design widgets and other Flutter features.
 * [Flutter API documentation](https://docs.flutter.io/)<br>
   Reference documentation for all of the Flutter libraries.
-* [Dealing with Box Constraints in Flutter](/development/ui/layout/box-constraints)<br>
+* [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)<br>
   Discusses how widgets are constrained by their render boxes.
-* [Adding Assets and Images in Flutter](/development/ui/assets-and-images)<br>
+* [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)<br>
   Explains how to add images and other assets to your app's package.
 * [Zero to One with
   Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354#.z86tsq4ld)<br>

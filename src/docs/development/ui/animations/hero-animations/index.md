@@ -43,7 +43,7 @@ at these links:
 **New to Flutter?**<br>
 This page assumes you know how to create a layout using Flutter’s
 widgets.  For more information, see [Building Layouts in
-Flutter](/development/ui/layout).
+Flutter](/docs/development/ui/layout).
 </aside>
 
 <aside class="alert alert-info" markdown="1">
@@ -124,7 +124,7 @@ how Flutter performs a hero animation.
 <aside class="alert alert-info" markdown="1">
 **Terminology:**
 If the concept of tweens or tweening is new to you, please see the
-[Animations in Flutter tutorial.](/development/ui/animations/tutorial)
+[Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
 </aside>
 
 Hero animations are implemented using two
@@ -663,10 +663,10 @@ but the image's aspect ratio remains constant.
 
 The following resources might help when writing animations:
 
-[Animations landing page](/development/ui/animations)
+[Animations landing page](/docs/development/ui/animations)
 : Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
-  [Animations tutorial](/development/ui/animations/tutorial).
+  [Animations tutorial](/docs/development/ui/animations/tutorial).
 
 [Flutter API documentation](https://docs.flutter.io/)
 : Reference documentation for all of the Flutter libraries.

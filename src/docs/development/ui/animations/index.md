@@ -22,7 +22,7 @@ If you have a specific request, please
 [file an issue](https://github.com/flutter/website/issues).
 {% endcomment %}
 
-* [Tutorial: Animations in Flutter](/development/ui/animations/tutorial)<br>
+* [Tutorial: Animations in Flutter](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package
   (controllers, Animatable, curves, listeners, builders),
   as it guides you through a progression of tween animations using
@@ -57,7 +57,7 @@ The framework calculates how to transition from the beginning point
 to the end point.
 
 The documents listed above, such as the [animations
-tutorial](/development/ui/animations/tutorial) are not about tweening,
+tutorial](/docs/development/ui/animations/tutorial) are not about tweening,
 specifically, but they use tweens in their examples.
 
 ### Physics-based animation
@@ -102,7 +102,7 @@ image&mdash;from the page, and the UI animates the selected element
 to a new page with more detail. In Flutter, you can easily implement
 shared element transitions between routes (pages) using the Hero widget.
 
-* [Hero Animations](/development/ui/animations/hero-animations)
+* [Hero Animations](/docs/development/ui/animations/hero-animations)
 How to create two styles of Hero animations:
   * The hero flies from one page to another while changing position
     and size.
@@ -125,7 +125,7 @@ classes.
 Animations that are broken into smaller motions, where some of the motion is delayed.
 The smaller animations may be sequential, or may partially or completely overlap.
 
-* [Staggered Animations](/development/ui/animations/staggered-animations)
+* [Staggered Animations](/docs/development/ui/animations/staggered-animations)
 
 <!-- Save so I can remember how to add it back later.
 <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
@@ -135,7 +135,7 @@ The smaller animations may be sequential, or may partially or completely overlap
 
 Learn more about Flutter animations at the following links:
 
-* [Animations: Technical Overview](/development/ui/animations/overview.html)<br>
+* [Animations: Technical Overview](/docs/development/ui/animations/overview.html)<br>
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 

@@ -61,7 +61,7 @@ network request. It will also include a factory constructor that allows us to
 create a `Post` from json.
 
 Converting JSON by hand is only one option. For more information, please see the
-full article on [JSON and serialization](/development/data-and-backend/json).
+full article on [JSON and serialization](/docs/development/data-and-backend/json).
 
 <!-- skip -->
 ```dart
