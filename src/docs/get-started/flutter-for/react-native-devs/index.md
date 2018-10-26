@@ -2306,7 +2306,7 @@ widget is highlighted in your app’s UI. You’ll see the widget in the widget
 hierarchy in IntelliJ and the individual properties for that widget.
 
 For more information, see
-[Debugging Flutter Apps](/testing/debugging).
+[Debugging Flutter Apps](/docs/testing/debugging).
 
 ## Animation
 

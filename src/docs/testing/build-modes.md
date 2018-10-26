@@ -7,7 +7,7 @@ The Flutter tooling supports three modes when compiling your app,
 and a headless mode for testing.
 This doc explains the three modes and tells you when to use which.
 For more information on headless testing, see
-[Unit testing.](/testing#unit-testing)
+[Unit testing.](/docs/testing#unit-testing)
 
 You choose the compilation mode depending on where you are in
 the development cycle. Are you debugging your code? Do you

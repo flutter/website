@@ -492,7 +492,7 @@ This guide describes the first example.<br><br>
 The radial hero animation involves intersecting a round shape with
 a square shape. This can be hard to see, even when slowing
 the animation with `timeDilation`, so you might consider enabling
-Flutter's [visual debugging mode](/testing/debugging#visual-debugging)
+Flutter's [visual debugging mode](/docs/testing/debugging#visual-debugging)
 during development.
 </aside>
 

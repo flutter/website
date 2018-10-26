@@ -336,10 +336,10 @@ iOS, and Android:
 
 ### Flutter
 
-* [Debugging Flutter Apps](/testing/debugging)
+* [Debugging Flutter Apps](/docs/testing/debugging)
 * [Advanced debugging](/development/tools/ide#advanced-debugging), a section in
   [Developing Flutter Apps in an IDE](/development/tools/ide).
-* [Performance Profiling](/testing/ui-performance)
+* [Performance Profiling](/docs/testing/ui-performance)
 
 ### Android
 

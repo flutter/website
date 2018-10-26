@@ -390,8 +390,8 @@ The second screenshot displays the visual layout, showing a row of
   Most of the screenshots in this tutorial are displayed with
   `debugPaintSizeEnabled` set to true so you can see the visual layout.
   For more information, see
-  [Visual debugging](/testing/debugging#visual-debugging), a section in
-  [Debugging Flutter Apps](/testing/debugging).
+  [Visual debugging](/docs/testing/debugging#visual-debugging), a section in
+  [Debugging Flutter Apps](/docs/testing/debugging).
 {{site.alert.end}}
 
 Here's a diagram of the widget tree for this UI:

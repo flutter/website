@@ -28,8 +28,8 @@ help.
     but you can use most of the same tools to diagnose other performance
     problems.
   - To perform tracing inside your Dart code, see [Tracing any Dart code
-    performance](/testing/debugging#tracing-any-dart-code-performance) in the
-    [Debugging](/testing/debugging) page.
+    performance](/docs/testing/debugging#tracing-any-dart-code-performance) in the
+    [Debugging](/docs/testing/debugging) page.
 {{site.alert.end}}
 
 ## Diagnosing performance problems
@@ -462,7 +462,7 @@ for debugging performance issues.
   Similar to `debugPrintMarkNeedsLayoutStack`, but for excess painting.
 
 You can learn about other debug flags in
-[Debugging Flutter Apps](/testing/debugging).
+[Debugging Flutter Apps](/docs/testing/debugging).
 
 ## Benchmarking
 
@@ -479,15 +479,15 @@ Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
 
 For more information, see
-[Integration testing](/testing#integration-testing),
-a section in [Testing Flutter Apps](/testing).
+[Integration testing](/docs/testing#integration-testing),
+a section in [Testing Flutter Apps](/docs/testing).
 
 ## More information
 
 The following resources provide more information on using Flutter's tools
 and debugging in Flutter:
 
-* [Debugging Flutter Apps](/testing/debugging)
+* [Debugging Flutter Apps](/docs/testing/debugging)
 * [Flutter Widget Inspector](/development/tools/inspector)
 * [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI),
   presented at DartConf 2018

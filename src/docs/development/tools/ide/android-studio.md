@@ -135,7 +135,7 @@ inspector tool window using **View > Tool Windows > Flutter Inspector**.
 ![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 This offers many debugging tools; for details on these see
-[Debugging Flutter Apps](/testing/debugging).
+[Debugging Flutter Apps](/docs/testing/debugging).
 
 * **Toggle Select Widget Mode**: Select a widget on the device to inspect it in the
   [Flutter Inspector](/development/tools/inspector).

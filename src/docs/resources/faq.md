@@ -179,7 +179,7 @@ codelab.
 
 Yes, Flutter provides APIs for writing unit and integration
 tests. Learn more about
-[testing with Flutter](/testing).
+[testing with Flutter](/docs/testing).
 
 We use our own testing capabilities to test our SDK. We measure our
 [test coverage](https://coveralls.io/github/flutter/flutter?branch=master)

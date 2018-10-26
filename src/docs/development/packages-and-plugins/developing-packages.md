@@ -53,14 +53,14 @@ specialized content:
 * `lib/hello.dart`:
    - The Dart code for the package.
 * `test/hello_test.dart`:
-   - The [unit tests](/testing#unit-testing) for the package.
+   - The [unit tests](/docs/testing#unit-testing) for the package.
 
 ### Step 2: Implement the package
 
 For pure Dart packages, simply add the functionality inside the main
 `lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-To test the package, add [unit tests](/testing#unit-testing)
+To test the package, add [unit tests](/docs/testing#unit-testing)
 in a `test` directory.
 
 For additional details on how to organize the package contents, see the
