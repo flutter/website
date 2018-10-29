@@ -11,9 +11,11 @@ This is an alphabetical list of nearly every widget that is bundled with Flutter
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
     <div class="card">
-        <div class="card-image-holder">
-            {{comp.image}}
-        </div>
+        <a href="{{comp.link}}">
+            <div class="card-image-holder">
+                {{comp.image}}
+            </div>
+        </a>
         <div class="card-body">
             <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
             <p class="card-text">{{comp.description}}</p>
