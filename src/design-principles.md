@@ -123,7 +123,7 @@ To make a change that will require developers to change their code:
  1. File an issue or create a pull request with the `prod: API break`
     label.
 
- 2. Send an e-mail to <mailto:{{site.email}}> to socialize
+ 2. Send an e-mail to <mailto:flutter-announce@googlegroups.com> to socialize
     your proposed change. The purpose of this e-mail is to see if you can
     get consensus around your change. **You are not telling people that
     the change will happen, you are asking them for permission.**
