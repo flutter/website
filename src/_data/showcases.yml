@@ -3,7 +3,8 @@
     Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and
     Android on their Xianyu app, which has 50M+ downloads.
   logo_src: showcase/logo-alibaba.png
-  learn_more_link: https://www.alibaba.com/
+  learn_more_cta: Learn more
+  learn_more_link: https://www.youtube.com/watch?v=jtYk3gWRSw0
   app_store_link: https://itunes.apple.com/cn/app/%E9%97%B2%E9%B1%BC-%E6%8C%82%E9%97%B2%E9%B1%BC-%E9%97%B2%E7%BD%AE%E8%83%BD%E6%8D%A2%E9%92%B1/id510909506?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.taobao.idlefish&e=-EnableAppDetailsPageRedesign
 
@@ -18,6 +19,7 @@
   description: >
     AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab
   logo_src: showcase/logo-app_tree.png
+  learn_more_cta: Developer website
   learn_more_link: https://www.apptreerevolution.com/
   play_store_link: https://play.google.com/store/apps/details?id=com.apptreesoftware.revolution.enterpriseedition&hl=en_US&e=-EnableAppDetailsPageRedesign
 
@@ -25,7 +27,8 @@
   description: >
     A beautiful journal and mindfulness app driven by artificial intelligence.
   logo_src: showcase/logo-reflectly.png
-  learn_more_link: https://reflect.ly/
+  learn_more_cta: Learn more
+  learn_more_link: https://medium.com/reflectly-engineering/reflectly-from-react-native-to-flutter-2e3dffced2ea
   app_store_link: https://itunes.apple.com/us/app/reflectly-mindfulness-journal/id1241229134
   play_store_link: https://play.google.com/store/apps/details?id=com.reflectlyApp&e=-EnableAppDetailsPageRedesign
 
@@ -34,6 +37,7 @@
     Official app of the hit Broadway musical, Hamilton. Includes daily lotteries, exclusive news and videos, a trivia
     game, merchandise store, and more.
   logo_src: showcase/logo-hamilton.png
+  learn_more_cta: Learn more
   learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
   app_store_link: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.hamilton.app&e=-EnableAppDetailsPageRedesign
@@ -49,6 +53,7 @@
     Abbey Road’s Topline app helps artists record songs. You can share files, sing over imported tracks, add lyrics and
     more.
   logo_src: showcase/logo-abbey_road_studios.png
+  learn_more_cta: Developer website
   learn_more_link: https://www.abbeyroad.com/apps
   app_store_link: https://itunes.apple.com/us/app/topline/id1270125833?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.abbeyroadandroid&hl=en_US&e=-EnableAppDetailsPageRedesign
@@ -63,6 +68,7 @@
   description: >
     JD Finance is JD.com’s finance and investment mobile app with hundreds of millions of users.
   logo_src: showcase/logo-jd.jpg
+  learn_more_cta: Developer website
   learn_more_link: https://jd.com
   app_store_link: https://itunes.apple.com/cn/app/jing-dong-jin-rong-hui-li/id895682747?mt=8
   play_store_link: http://storage.jd.com/jdmobile/JDMALL-PC2.apk
