@@ -156,6 +156,8 @@
 
 - title: Deployment
   children:
+    - title: Creating flavors for Flutter
+      permalink:  /docs/deployment/flavors
     - title: Build and release for Android
       permalink: /docs/deployment/android-release
     - title: Build and release for iOS
