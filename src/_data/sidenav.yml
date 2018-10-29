@@ -54,7 +54,7 @@
         - title: Assets and images
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
-          permalink: /docs/cookbook/navigation/navigation-basics
+          permalink: /docs/development/ui/navigation
         # Commenting out the following entry per
         # https://github.com/flutter/website/issues/1496#issuecomment-431455211
         # - title: Inspect an app's UI
