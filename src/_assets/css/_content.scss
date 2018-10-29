@@ -17,6 +17,10 @@
   padding-bottom: $site-content-top-padding;
   padding-top: $site-content-top-padding;
 
+  .container {
+    max-width: $site-content-max-width;
+  }
+
   @include media-breakpoint-up(md) {
     border-left: 1px solid $site-color-light-grey;
     min-height: calc(100vh - #{$site-header-height} - #{$site-footer-md-default-height});
