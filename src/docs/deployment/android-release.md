@@ -104,9 +104,11 @@ Configure signing for your app by editing the
 ```
    with the keystore information from your properties file:
 ```
-   def keystorePropertiesFile = rootProject.file("key.properties")
    def keystoreProperties = new Properties()
-   keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
 
    android {
 ```
