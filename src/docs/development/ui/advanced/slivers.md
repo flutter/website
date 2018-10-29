@@ -11,4 +11,4 @@ For information on implementing slivers in Flutter, including
 [SliverAppBar]({{api}}/flutter/material/SliverAppBar-class.html),
 see [Slivers,
 DeMystified]({{flutter-medium}}/slivers-demystified-6ff68ab0296f),
-an article on Medium's [Flutter Publication]({{medium}}).
+an article on Medium's [Flutter Publication]({{flutter-medium}}).
