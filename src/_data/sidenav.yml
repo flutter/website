@@ -28,16 +28,12 @@
 
 - title: Samples & codelabs
   children:
+    - title: Sample apps on GitHub
+      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
     - title: Cookbook
       permalink: /docs/cookbook
-    - title: UI samples catalog
-      permalink: /docs/catalog/samples
     - title: Codelabs
       permalink: /docs/codelabs
-    - title: GitHub samples
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
-    - title: Flutter gallery - demo app
-      permalink: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery#flutter-gallery
 
 - title: Development
   permalink: /docs/development
