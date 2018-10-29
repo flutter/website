@@ -19,6 +19,8 @@ api: https://docs.flutter.io
 pub: https://pub.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
 pub-pkg: https://pub.dartlang.org/packages
+flutter-medium: https://medium.com/flutter-io
+medium: https://medium.com
 
 defaults:
 - scope:
