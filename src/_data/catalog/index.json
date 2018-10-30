@@ -109,7 +109,7 @@
   },
   {
     "name": "Accessibility",
-    "description": "Make your app accessible. (This is a work-in-progress.)",
+    "description": "Make your app accessible.",
     "id":"accessibility"
   },
 ]
