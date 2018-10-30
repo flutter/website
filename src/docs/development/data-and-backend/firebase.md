@@ -7,9 +7,7 @@ Firebase is a Backend-as-a-Service (BaaS) app development platform
 that you can use as a realtime database, for file storage, for
 authentication, and as a hosting service for your static files.
 
-And Firebase supports Flutter.
-
-For more information, see:
+Firebase works seamlessly with Flutter. For more information, see:
 
 * [Getting started with Firebase and
    Flutter](https://firebase.google.com/docs/flutter/setup)
