@@ -5,7 +5,7 @@ toc: false
 ---
 
 The Flutter community has made a Mandarin version of the flutter.io
-website available at [https://flutter-io.cn](https://flutter-io.cn.).
+website available at [https://flutter-io.cn](https://flutter-io.cn).
 
 If you’d like to install Flutter using an [installation
 bundle](/docs/development/tools/sdk/archive),
