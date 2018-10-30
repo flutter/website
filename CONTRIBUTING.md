@@ -4,12 +4,23 @@ we’re happy to have your help! Anyone can contribute, whether you’re new to
 the project or you’ve been around a long time, and whether you self-identify
 as a developer, an end user, or someone who just can’t stand seeing typos.
 
-For information on contributing code to the Flutter SDK, see
-[Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+If you aren't familiar with how GitHub works, see [Introduction to
+GitHub](https://services.github.com/on-demand/intro-to-github/).
+We have many [repos in the Flutter project](https://github.com/flutter),
+but two of the primary repos are the
+[Flutter SDK](https://github.com/flutter/flutter), and this repo, the
+[Flutter website](https://github.com/flutter/website).
+To contribute a fix to a repo, submit a [pull request
+(PR)](https://services.github.com/on-demand/github-cli/open-pull-request-github).
+
+For information on contributing code or API docs to the Flutter SDK, see
+[Contributing to
+Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
 in the [Flutter SDK](https://github.com/flutter/flutter) repo.
 
 We are also happy to accept your PRs to the
-[Flutter website](https://github.com/flutter/website/) repo.
+[Flutter website](https://github.com/flutter/website/) repo,
+even if it's just to fix a typo.
 
 For ways to get involved in the Flutter community or to learn about us,
 visit the [Flutter community](/community) page.
@@ -30,7 +41,9 @@ Other ways you can contribute:
    mailing list][mailinglist]
 * [Report bugs and request features][issues]
 * [Report API docs bugs][issues]
+* [Submit PRs to the Flutter SDK][PRs]
 * [Request docs for flutter.io][doc-issues]
+* [Submit PRs to flutter.io][doc-PRs]
 * [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
 * [Read the Flutter Publication on Medium](https://medium.com/flutter-io)
 * [Sign up to Future UX Studies on Flutter](/research-signup)
@@ -40,7 +53,9 @@ Other ways you can contribute:
 Happy Fluttering!
 
 [issues]: https://github.com/flutter/flutter/issues
+[PRs]: https://github.com/flutter/flutter/pulls
 [doc-issues]: https://github.com/flutter/website/issues
+[doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter
