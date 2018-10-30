@@ -1,6 +1,6 @@
 ---
 title: Firebase
-description: Docs on how to use Firebase and Firestore with Flutter.
+description: How to use Firebase and Firestore with Flutter.
 ---
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
