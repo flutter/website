@@ -83,7 +83,7 @@ toc: false
                             <p>{{ case.description }}</p>
                         </div>
                         <div class="card-footer card-footer--transparent card-footer--links">
-                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">Learn more</a>{% endif %}
+                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
                             {% if case.play_store_link or case.app_store_link %}
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
