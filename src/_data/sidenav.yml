@@ -83,6 +83,7 @@
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
         - title: Use Firebase with Flutter
+          permalink: /docs/development/data-and-backend/firebase
         - title: Run background processes
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
