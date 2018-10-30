@@ -1,6 +1,6 @@
 ---
 title: Using Flutter in China
-description: Where to a version of flutter.io localized to Mandarin.
+description: Where to find a version of flutter.io that is localized to Mandarin.
 toc: false
 ---
 
