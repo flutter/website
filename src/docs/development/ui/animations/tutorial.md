@@ -3,15 +3,13 @@ title: "Tutorial: Animations in Flutter"
 short-title: Tutorial
 ---
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What you’ll learn</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you'll learn:</b>
-
-* How to use the fundamental classes from the animation library to add
-  animation to a widget.
-* When to use AnimatedWidget vs. AnimatedBuilder.
-
-</div>
+  * How to use the fundamental classes from the animation library to add
+    animation to a widget.
+  * When to use AnimatedWidget vs. AnimatedBuilder.
+{{site.alert.end}}
 
 This tutorial shows you how to build animations in Flutter.
 After introducing some of the essential concepts, classes, and methods
@@ -19,40 +17,24 @@ in the animation library, it walks you through 5 animation examples.
 The examples build on each other,
 introducing you to different aspects of the animation library.
 
-* [Essential animation concepts and classes](#concepts)
-  * [Animations&lt;double&gt;](#animation-class)
-  * [AnimationController](#animationcontroller)
-  * [CurvedAnimation](#curvedanimation)
-  * [Tween](#tween)
-  * [Animation notifications](#animation-notifications)
-* [Animation examples](#animation-examples)
-  * [Rendering animations](#rendering-animations)
-  * [Monitoring the progress of an animation](#monitoring)
-  * [Simplifying with AnimatedWidget](#simplifying-with-animatedwidget)
-  * [Refactoring with AnimatedBuilder](#refactoring-with-animatedbuilder)
-  * [Simultaneous animations](#simultaneous-animations)
-* [Next steps](#next-steps)
-
 <a name="concepts"></a>
 ## Essential animation concepts and classes
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* The Animation object, a core class in Flutter's animation library,
-  interpolates the values used to guide an animation.
-* The Animation object knows the current state of an animation (for example,
-  whether it's started, stopped, or moving forward or in reverse),
-  but doesn't know anything about what appears onscreen.
-* An AnimationController manages the Animation.
-* A CurvedAnimation defines progression as a non-linear curve.
-* A Tween interpolates between the range of data as used by the
-  object being animated. For example, a Tween might define an interpolation
-  from red to blue, or from 0 to 255.
-* Use Listeners and StatusListeners to monitor animation state changes.
-
-</div>
+  * The Animation object, a core class in Flutter's animation library,
+    interpolates the values used to guide an animation.
+  * The Animation object knows the current state of an animation (for example,
+    whether it's started, stopped, or moving forward or in reverse),
+    but doesn't know anything about what appears onscreen.
+  * An AnimationController manages the Animation.
+  * A CurvedAnimation defines progression as a non-linear curve.
+  * A Tween interpolates between the range of data as used by the
+    object being animated. For example, a Tween might define an interpolation
+    from red to blue, or from 0 to 255.
+  * Use Listeners and StatusListeners to monitor animation state changes.
+{{site.alert.end}}
 
 The animation system in Flutter is based on typed
 [`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
@@ -157,19 +139,18 @@ To use your custom State object as the `vsync`, include the
 `TickerProviderStateMixin` when defining the custom State class.
 {% endcomment %}
 
-<aside class="alert alert-success" markdown="1">
-**Note**:
-In some cases, a position might exceed the AnimationController's
-0.0-1.0 range. For example, the `fling()` function allows you to provide
-velocity, force, and position (via the Force object).
-The position can be anything and so can be outside of the 0.0 to 1.0 range.
+{{site.alert.note}}
+  In some cases, a position might exceed the AnimationController's
+  0.0-1.0 range. For example, the `fling()` function allows you to provide
+  velocity, force, and position (via the Force object).
+  The position can be anything and so can be outside of the 0.0 to 1.0 range.
 
-A CurvedAnimation can also exceed the 0.0 to 1.0 range,
-even if the AnimationController doesn't. Depending on the curve selected,
-the output of the CurvedAnimation can have a wider range than the input.
-For example, elastic curves such as Curves.elasticIn will significantly
-overshoot or undershoot the default range.
-</aside>
+  A CurvedAnimation can also exceed the 0.0 to 1.0 range,
+  even if the AnimationController doesn't. Depending on the curve selected,
+  the output of the CurvedAnimation can have a wider range than the input.
+  For example, elastic curves such as Curves.elasticIn will significantly
+  overshoot or undershoot the default range.
+{{site.alert.end}}
 
 ### Tween
 
@@ -614,7 +595,7 @@ The widget tree for the
 [animate5](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/animation/animate5/main.dart)
 example looks like this:
 
-<img src="/docs/development/ui/animations/tutorial/images/AnimatedBuilder-WidgetTree.png" alt="A widget tree with Container pointing to ContainerTransition, pointing to AnimatedBuilder, pointing to (AnonymousBuilder), pointing to LogoWidget.">
+{% asset 'ui/AnimatedBuilder-WidgetTree.png' alt="Widget tree" %}
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
