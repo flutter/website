@@ -51,7 +51,7 @@ downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 
 The `flutter-io.cn` server is a provisional mirror for Flutter
-dependencies and packages maintained by [GDG China](broken link).
+dependencies and packages maintained by [GDG China]().
 The Flutter team cannot guarantee long-term availability of this service.
 You’re free to use other mirrors if they become available. If you’re
 interested in setting up your own mirror in China, please contact
