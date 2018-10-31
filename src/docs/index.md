@@ -17,7 +17,7 @@ description: The landing page for Flutter documentation.
 
 ## What's new on flutter.io
 
-**November 4, 2018**
+**November 5, 2018**
 
 Welcome to the revamped Flutter website!
 
@@ -52,28 +52,28 @@ Once you've gone through [Get Started](/docs/get-started/install),
 including [Write Your First Flutter App,](/docs/get-started/codelab)
 here are some next steps.
 
-[Flutter for Android Developers](/docs/get-started/flutter-for/android-devs)
+[Flutter for Android developers](/docs/get-started/flutter-for/android-devs)
 : Review these tips if you have Android experience.
 
-[Flutter for iOS Developers](/docs/get-started/flutter-for/ios-devs)
+[Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
 : Review these tips if you have iOS experience.
 
-[Flutter for Web Devs](/docs/get-started/flutter-for/web-devs)
+[Flutter for Web devs](/docs/get-started/flutter-for/web-devs)
 : Review these HTML -> Flutter analogs if you have web experience.
 
-[Flutter for React Native Devs](/docs/get-started/flutter-for/react-native-devs)
+[Flutter for React Native devs](/docs/get-started/flutter-for/react-native-devs)
 : Review these tips if you have React Native experience.
 
-[Flutter for Xamarin.Forms Devs](/docs/get-started/flutter-for/xamarin-forms-devs)
+[Flutter for Xamarin.Forms devs](/docs/get-started/flutter-for/xamarin-forms-devs)
 : Review these tips if you have Xamarin Forms experience.
 
-[Building Layouts in Flutter](/docs/development/ui/layout)
+[Building layouts in Flutter](/docs/development/ui/layout)
 : Learn how to create layouts in Flutter, where everything is a widget.
 
-[Adding Interactivity to Your Flutter App](/docs/development/ui/interactive)
+[Adding interactivity to your Flutter app](/docs/development/ui/interactive)
 : Learn how to add a stateful widget to your app.
 
-[A Tour of the Flutter Widget Framework](/docs/development/ui/widgets-intro)
+[A tour of the Flutter widget framework](/docs/development/ui/widgets-intro)
 : Learn more about Flutter's react-style framework.
 
 ## Want to skill up?
@@ -83,17 +83,17 @@ Once you’ve mastered the basics, try these pages.
 [Cookbook](/docs/cookbook)
 : A (growing) collection of recipes that address common Flutter use cases.
 
-[Sample App Catalog](/docs/catalog/samples)
-: Simple apps that demonstrate how to implement features and widgets.
+[Sample apps on GitHub](https://github.com/flutter/samples/blob/master/INDEX.md)
+: A (growing) collection of sample apps that show Flutter best practices.
 
-[Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)
+[Adding assets and images in Flutter](/docs/development/ui/assets-and-images)
 : How to add resources to a Flutter app.
 
 [Animations in Flutter](/docs/development/ui/animations)
 : How to create standard, hero, or staggered animations, to
   name a few animations styles that Flutter supports.
 
-[Routing and Navigation](/docs/cookbook/navigation/navigation-basics)
+[Navigation and routing](/docs/development/ui/navigation)
 : How to create and navigate to a new screen (called a _route_ in Flutter).
 
 [Internationalization](/docs/development/accessibility-and-localization/internationalization)
@@ -106,18 +106,18 @@ Once you’ve mastered the basics, try these pages.
 
 Dive deeper into topics that interest you.
 
-[Flutter Widget Inspector](/docs/development/tools/inspector)
+[Flutter Widget inspector](/docs/development/tools/inspector)
 : How to use the widget inspector, a powerful tool that allows
   you to explore widget trees, disable the "DEBUG"
   banner, display the performance overlay, and much more.
 
-[Custom Fonts](/docs/cookbook/design/fonts)
+[Custom fonts](/docs/cookbook/design/fonts)
 : How to add new fonts to your app.
 
-[Text Input](/docs/cookbook/forms/text-input)
+[Text input](/docs/cookbook/forms/text-input)
 : How to set up basic text input.
 
-[Debugging Flutter Apps](/docs/testing/debugging)
+[Debugging Flutter apps](/docs/testing/debugging)
 : Tools and tips for debugging your app.
 
 This is not a complete list. Please use the left navigation,

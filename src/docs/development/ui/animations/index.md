@@ -1,5 +1,6 @@
 ---
-title: Animations
+title: Introduction to animations
+description: How to perform animations in Flutter
 ---
 
 Well-designed animations makes a UI feel more intuitive,

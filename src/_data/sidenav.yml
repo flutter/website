@@ -36,7 +36,6 @@
       permalink: /docs/codelabs
 
 - title: Development
-  permalink: /docs/development
   children:
     - title: User interface
       permalink: /docs/development/ui
@@ -51,40 +50,41 @@
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /docs/development/ui/navigation
-        # Commenting out the following entry per
-        # https://github.com/flutter/website/issues/1496#issuecomment-431455211
         # - title: Inspect an app's UI
         #   permalink: /docs/development/ui/inspector
         - title: Animations
-          permalink: /docs/development/ui/animations
           children:
+            - title: Introduction
+              permalink: /docs/development/ui/animations
             - title: Animations overview
-            - title: Implicitly animated widgets
-            - title: Transition widgets
-            - title: Explicit animation widgets
+              permalink: /docs/development/ui/animations/overview
+            - title: Animations tutorial
+              permalink: /docs/development/ui/animations/tutorial
             - title: Hero animations
+              permalink: /docs/development/ui/animations/hero-animations
             - title: Staggered animations
+              permalink: /docs/development/ui/animations/staggered-animations
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
+          #  - title: Focus handling system 
             - title: Slivers
               permalink: /docs/development/ui/advanced/slivers
             - title: Gestures
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
+      # - title: Platform-specific theming
         - title: Widget catalog
           permalink: /docs/development/ui/widget-catalog
     - title: Data & backend
       permalink: /docs/development/data-and-backend
       children:
-        - title: Architect app to manage data flow
+        - title: State management
+          permalink: /docs/development/data-and-backend/state-mgmt
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
+      # - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
-        - title: Run background processes
     - title: Accessibility & internationalization # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
@@ -134,7 +134,6 @@
           permalink: /docs/development/tools/inspector
 
 - title: Testing & optimization
-  permalink: /docs/testing
   children:
     - title: Debugging
       permalink: /docs/testing/debugging
@@ -147,8 +146,6 @@
       match-page-url-exactly: true
     - title: Performance profiling
       permalink: /docs/testing/ui-performance
-    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
-    # We don't have this page yet, so that's fine.
     # - title: Making your compiled app smaller
 
 - title: Deployment
