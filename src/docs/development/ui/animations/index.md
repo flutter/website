@@ -23,7 +23,7 @@ If you have a specific request, please
 [file an issue](https://github.com/flutter/website/issues).
 {% endcomment %}
 
-* [Tutorial: Animations in Flutter](/docs/development/ui/animations/tutorial)<br>
+* [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package
   (controllers, Animatable, curves, listeners, builders),
   as it guides you through a progression of tween animations using
