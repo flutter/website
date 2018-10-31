@@ -60,6 +60,7 @@
           children:
             - title: Introduction
               permalink: /docs/development/ui/animations
+              match-page-url-exactly: true
             - title: Animations overview
               permalink: /docs/development/ui/animations/overview
             - title: Animations tutorial
