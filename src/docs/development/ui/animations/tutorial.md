@@ -1,6 +1,7 @@
 ---
-title: "Tutorial: Animations in Flutter"
+title: Animations tutorial
 short-title: Tutorial
+description: A tutorial showing how to build explicit animations in Flutter.
 ---
 
 {{site.alert.secondary}}
@@ -11,11 +12,19 @@ short-title: Tutorial
   * When to use AnimatedWidget vs. AnimatedBuilder.
 {{site.alert.end}}
 
-This tutorial shows you how to build animations in Flutter.
+This tutorial shows you how to build explicit animations in Flutter.
 After introducing some of the essential concepts, classes, and methods
 in the animation library, it walks you through 5 animation examples.
 The examples build on each other,
 introducing you to different aspects of the animation library.
+
+The Flutter SDK also provides transition animations, such as
+[FadeTransition]({{site.api}}/flutter/widgets/FadeTransition-class.html),
+[SizeTransition]({{site.api}}/flutter/widgets/SizeTransition-class.html), and
+[SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html).
+These simple animations are triggered by setting a beginning and ending
+point. They are simpler to implement than explicit animations, which are
+described here.
 
 <a name="concepts"></a>
 ## Essential animation concepts and classes

@@ -58,12 +58,16 @@
         - title: Animations
           permalink: /docs/development/ui/animations
           children:
+            - title: Introduction
+              permalink: /docs/development/ui/animations
             - title: Animations overview
-            - title: Implicitly animated widgets
-            - title: Transition widgets
-            - title: Explicit animation widgets
+              permalink: /docs/development/ui/animations/overview
+            - title: Animations tutorial
+              permalink: /docs/development/ui/animations/tutorial
             - title: Hero animations
+              permalink: /docs/development/ui/animations/hero-animations
             - title: Staggered animations
+              permalink: /docs/development/ui/animations/staggered-animations
         - title: Advanced UI
           permalink: /docs/development/ui/advanced
           children:
