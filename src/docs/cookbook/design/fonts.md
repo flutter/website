@@ -1,5 +1,7 @@
 ---
 title: Using custom fonts
+short-title: Custom fonts
+description: How to use custom fonts.
 ---
 
 While Android and iOS offer high quality system fonts, one of the most common

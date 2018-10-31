@@ -1,5 +1,7 @@
 ---
 title: Using Themes to share colors and font styles
+short-title: Themes
+description: How to share colors and font styles throughout an app using Themes.
 ---
 
 In order to share colors and font styles throughout our app, we can take
@@ -15,10 +17,11 @@ colors and font styles for AppBars, Buttons, Checkboxes, and more.
 ## Creating an app theme
 
 In order to share a Theme containing colors and font styles across our entire
-app, we can provide [`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+app, we can provide
+[`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html)
 to the `MaterialApp` constructor.
 
-If no `theme` is provided, Flutter will create a fallback theme under the hood.
+If no `theme` is provided, Flutter creates a fallback theme under the hood.
 
 <!-- skip -->
 ```dart
@@ -87,7 +90,7 @@ Theme(
 Now that we've defined a theme, we can use it within our Widget `build` methods
 by using the `Theme.of(context)` function!
 
-`Theme.of(context)` will look up the Widget tree and return the nearest `Theme`
+`Theme.of(context)` looks up the Widget tree and return the nearest `Theme`
 in the tree. If we have a stand-alone `Theme` defined above our Widget, it
 returns that. If not, it returns the App theme.
 
