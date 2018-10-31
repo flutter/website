@@ -1,5 +1,5 @@
 ---
-title: Continuous Delivery using fastlane with Flutter
+title: Continuous deployment with fastlane
 description: How to use fastlane to automate continuous building and releasing of your Flutter app.
 ---
 
