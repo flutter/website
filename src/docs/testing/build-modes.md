@@ -56,7 +56,7 @@ icon overlayed with a small triangle on the project page.
 
 You can also compile to release mode with `flutter build`.
 For more information, see the docs on releasing
-[iOS](../deployment/ios-release) and [Android](../deployment/android-release) apps.
+[iOS](../deployment/ios) and [Android](../deployment/android) apps.
 
 ## Profile
 

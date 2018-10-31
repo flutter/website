@@ -162,9 +162,9 @@
     - title: Creating flavors for Flutter
       permalink:  /docs/deployment/flavors
     - title: Build and release for Android
-      permalink: /docs/deployment/android-release
+      permalink: /docs/deployment/android
     - title: Build and release for iOS
-      permalink: /docs/deployment/ios-release
+      permalink: /docs/deployment/ios
     - title: Continuous deployment with fastlane
       permalink: /docs/deployment/fastlane-cd
 

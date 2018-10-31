@@ -1,5 +1,6 @@
 ---
 title: Preparing an iOS App for Release
+short-title: iOS
 ---
 
 This guide provides a step-by-step walkthrough of releasing a Flutter app to
