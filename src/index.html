@@ -14,21 +14,28 @@ description: >
   {% include banner.html -%}
 </div>
 
-<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=3000>
-
-
+<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=8000 data-pause="false">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
+        <div class="carousel-item active homepage__hero__slide homepage__hero__slide--beautiful">
+            {% asset 'homepage/carousel/slide_1-bg.jpg' class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset 'homepage/carousel/slide_1-layer_1.png' class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset 'homepage/carousel/slide_1-layer_2.png' class='homepage__hero__image homepage__hero__image--layer-3' %}
             <h1 class="homepage__hero__text">Build <span class="color-white">Beautiful</span> Apps</h1>
+            {% asset 'homepage/carousel/phone_bezel.png' class='homepage__hero__phone-bezel' %}
         </div>
-        <div class="carousel-item">
-            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
-            <h1 class="homepage__hero__text">Viewing <span class="color-white">Second</span> Slide</h1>
+        <div class="carousel-item homepage__hero__slide homepage__hero__slide--beautiful">
+            {% asset 'homepage/carousel/slide_1-bg.jpg' class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset 'homepage/carousel/slide_1-layer_1.png' class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset 'homepage/carousel/slide_1-layer_2.png' class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text">Build <span class="color-white">Productive</span> Apps</h1>
+            {% asset 'homepage/carousel/phone_bezel.png' class='homepage__hero__phone-bezel' %}
         </div>
-        <div class="carousel-item">
-            {% asset 'homepage/hero-beautiful_apps.png' class='homepage__hero__image' %}
-            <h1 class="homepage__hero__text">Viewing <span class="color-white">Third</span> Slide</h1>
+        <div class="carousel-item homepage__hero__slide homepage__hero__slide--beautiful">
+            {% asset 'homepage/carousel/slide_1-bg.jpg' class='homepage__hero__image homepage__hero__image--layer-1' %}
+            {% asset 'homepage/carousel/slide_1-layer_1.png' class='homepage__hero__image homepage__hero__image--layer-2' %}
+            {% asset 'homepage/carousel/slide_1-layer_2.png' class='homepage__hero__image homepage__hero__image--layer-3' %}
+            <h1 class="homepage__hero__text">Build <span class="color-white">Powerful</span> Apps</h1>
+            {% asset 'homepage/carousel/phone_bezel.png' class='homepage__hero__phone-bezel' %}
         </div>
     </div>
 </section>
