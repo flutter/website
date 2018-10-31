@@ -13,7 +13,7 @@ contributed by the Flutter community:
 ## State management
 
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be), a video from Google I/O 2018. [Accompanying article on Medium]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
-* [Adding interactivity to your Flutter app](/docs/development/interactive)
+* [Adding interactivity to your Flutter app](/docs/development/ui/interactive)
 * [Basic state management in Google Flutter](https://medium.com/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d)
 * [Flutter by example: State management the Flutter way](https://flutterbyexample.com/state-management-the-flutter-way/)
 
