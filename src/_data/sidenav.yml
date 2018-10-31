@@ -78,7 +78,8 @@
     - title: Data & backend
       permalink: /docs/development/data-and-backend
       children:
-        - title: Architect app to manage data flow
+        - title: State management
+          permalink: /docs/development/data-and-backend/state-mgmt
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
