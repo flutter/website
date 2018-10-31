@@ -1,4 +1,4 @@
-# [Flutter][]'s website
+# [Flutter][]'s website <img src="https://flutter.io/images/flutter-mark-square-100.png" width="5%">
 
 [![Build Status SVG][]][Repo on Travis]
 
