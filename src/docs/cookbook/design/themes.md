@@ -1,7 +1,7 @@
 ---
 title: Using Themes to share colors and font styles
 short-title: Themes
-description: how to share colors and font styles throughout an app using Themes.
+description: How to share colors and font styles throughout an app using Themes.
 ---
 
 In order to share colors and font styles throughout our app, we can take
