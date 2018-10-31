@@ -1,5 +1,5 @@
 ---
-title: Flutter's Development Philosophy
+title: Flutter's Development philosophy
 ---
 
 Flutter is written based on some core principles that were mostly
