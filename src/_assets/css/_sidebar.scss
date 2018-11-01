@@ -1,6 +1,5 @@
 .site-sidebar {
-  padding-bottom: $site-content-top-padding;
-  padding-top: $site-content-top-padding;
+  padding: $site-content-top-padding $site-sidebar-side-padding;
 
   // Customization for sidebar in mobile nav
   &.site-sidebar--header {
@@ -22,7 +21,7 @@
   }
 
   .nav-link {
-    padding: 6px 0;
+    padding: bs-spacer(1) 0;
     position: relative;
     color: inherit;
     &.disabled { opacity: 0.5; }
@@ -49,10 +48,14 @@
   // Top-level nav item
   > .nav > .nav-item {
     font-family: $site-font-family-alt;
-    font-size: $font-size-lg;
+
+    &:first-child {
+      > .nav-link {
+        padding-top: 0;
+      }
+    }
 
     > .nav-link {
-      margin-bottom: bs-spacer(1);
       padding: bs-spacer(3) 0;
 
       @include collapsable();
