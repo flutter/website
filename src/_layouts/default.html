@@ -32,7 +32,7 @@ layout: base
         {% if page.toc and layout.toc != false -%}
           {% include toc.html kind="inline" %}
         {% endif -%}
-        {{ content | inject_anchors }}
+        {{ content | inject_anchor }}
         {% include next-prev-nav.html %}
       </div>
     </main>
