@@ -34,6 +34,10 @@ defaults:
     # `show_banner: true` to the page's frontmatter.
     show_banner: true
 - scope:
+    path: 'docs/cookbook'
+  values:
+    show_breadcrumbs: true
+- scope:
     path: 'docs/development'
   values:
     show_breadcrumbs: true

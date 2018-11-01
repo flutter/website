@@ -76,10 +76,9 @@ final snackBar = SnackBar(
 
 ## Complete example
 
-Note: In this example, the SnackBar displays when a user taps on a button.
-For more information on working with user input, please see the
-[Handling Gestures](/docs/cookbook/#handling-gestures) section
-of the Cookbook.
+Note: In this example, the SnackBar displays when a user taps on a button. For
+more information on working with user input, please see the
+[Gestures](/docs/cookbook/#gestures) section of the Cookbook.
 
 ```dart
 import 'package:flutter/material.dart';

@@ -766,12 +766,11 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 * [Switch](https://docs.flutter.io/flutter/material/Switch-class.html)
 * [TextField](https://docs.flutter.io/flutter/material/TextField-class.html)
 
-<a name="resources"></a>
 ## Resources
 
 The following resources may help when adding interactivity to your app.
 
-* [Handling gestures](https://flutter.io/widgets-intro/#handling-gestures),
+* [Gestures](https://flutter.io/widgets-intro/#gestures),
   a section in [A Tour of the Flutter Widget
   Framework](https://flutter.io/widgets-intro/)<br>
   How to create a button and make it respond to input.
