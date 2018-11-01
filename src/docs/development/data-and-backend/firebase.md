@@ -4,16 +4,19 @@ description: How to use Firebase and Firestore with Flutter.
 ---
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
-that you can use as a realtime database, for file storage, for
-authentication, and as a hosting service for your static files.
+That provides hosted backend services such as a realtime database,
+cloud storage, authentication, crash reporting, machine learning,
+remote configuration, and hosting for your static files.
 
-Firebase works seamlessly with Flutter. For more information, see:
+Firebase supports Flutter. For more information, see:
 
 * [Getting started with Firebase and
    Flutter](https://firebase.google.com/docs/flutter/setup)
    in the [Firebase docs](https://firebase.google.com/docs)
 * [Firebase for Flutter
    codelab](https://codelabs.developers.google.com/codelabs/flutter-firebase/#0)
+* [FlutterFiew
+  plugins](https://github.com/flutter/plugins/blob/master/FlutterFire.md)
 * [Using Firestore as a backend to your Flutter
    app](https://youtu.be/DqJ_KjFzL9I) (video)
 
