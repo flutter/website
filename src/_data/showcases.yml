@@ -11,7 +11,7 @@
 - name: Google Ads
   description: >
     The Google Ads app helps you keep your ad campaigns running smoothly — no matter where your business takes you.
-  logo_src: showcase/logo-google_adwords.png
+  logo_src: showcase/logo-ads.svg
   app_store_link: https://itunes.apple.com/us/app/google-ads/id1037457231?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.google.android.apps.adwords
 
