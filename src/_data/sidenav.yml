@@ -12,6 +12,7 @@
       permalink: /docs/get-started/learn-more
     - divider
     - title: From another platform?
+      expanded: true
       children:
         - title: Flutter for Android devs
           permalink: /docs/get-started/flutter-for/android-devs
@@ -36,6 +37,7 @@
       permalink: /docs/codelabs
 
 - title: Development
+  expanded: true
   permalink: /docs/development
   children:
     - title: User interface
@@ -119,6 +121,7 @@
       permalink: /docs/development/tools
       children:
         - title: IDEs
+          expanded: true
           permalink: /docs/development/tools/ide
           children:
             - title: Android Studio / IntelliJ
