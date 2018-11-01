@@ -78,6 +78,10 @@ dd {
   max-height: 60vh;
   max-width: 100%;
 
+  &.site-figure {
+    max-height: none;
+  }
+
   @include media-breakpoint-up(md) {
     float: right;
     margin: 0 0 bs-spacer(10) bs-spacer(10);
