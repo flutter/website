@@ -2,6 +2,7 @@
 {% assign page_url_path = page.url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
 
 {% assign active_entries = include.nav | active_nav_entry_index_array: page_url_path -%}
+{% assign show_entries_wo_pages = false -%}
 
 <ul class="nav flex-column">
   {%- for entry1 in include.nav -%}
