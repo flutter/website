@@ -10,12 +10,11 @@ Until we provide more docs/examples, learn more at the
 following links, some of which have been
 contributed by the Flutter community:
 
-## State management
+## setState
 
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be), a video from Google I/O 2018 [Accompanying article on Medium]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
 * [Adding interactivity to your Flutter app](/docs/development/ui/interactive), a Flutter tutorial
 * [Basic state management in Google Flutter](https://medium.com/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d), by Agung Surya
-* [State management the Flutter way](https://flutterbyexample.com/state-management-the-flutter-way/), a [Flutter by Example](https://flutterbyexample.com/) lesson
 
 ## Redux
 
