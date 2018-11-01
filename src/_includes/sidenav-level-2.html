@@ -11,7 +11,7 @@
 
   <div class="dropdown-divider"></div>
 
-{%- elsif entry2.children == nil -%}
+{%- elsif entry2.children == nil and entry2.permalink or show_entries_wo_pages -%}
 
   <li class="nav-item">
     <a class="{{class2}} {%- unless entry2.permalink %} disabled {%- endunless %}"
@@ -25,7 +25,7 @@
     </a>
   </li>
 
-{%- else -%}
+{%- elsif entry2.children -%}
 
   {% assign class2 = class2 | append: ' collapsable' -%}
 

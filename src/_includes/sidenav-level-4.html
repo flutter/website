@@ -1,4 +1,5 @@
 {% for entry4 in entry3.children -%}
+  {% if entry4.permalink or show_entries_wo_pages -%}
 
   {% assign class4 = 'nav-link' -%}
   {% assign isActive4 = false -%}
@@ -18,4 +19,5 @@
       {%- endif -%}
     </a>
   </li>
+  {% endif -%}
 {% endfor -%}
