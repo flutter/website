@@ -63,8 +63,8 @@ dd {
   @include media-breakpoint-up(md) {
     bottom: 0;
     overflow-y: auto;
-    position: fixed;
-    top: $site-header-height;
+    position: absolute; // position will be fixed once js has initialized
+    top: 0;
   }
 }
 

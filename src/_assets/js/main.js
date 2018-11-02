@@ -51,24 +51,41 @@ function adjustToc() {
 
 function initFixedColumns() {
   var fixedColumnsSelector = '[data-fixed-column]';
+  var bannerSelector = '.site-banner';
   var footerSelector = 'footer.site-footer';
-  var headerHeight = 66;
+  var headerSelector = '.site-header';
+  var fixedColumns = $(fixedColumnsSelector);
 
   function adjustFixedColumns() {
+    // only change values if the fixed col is visible
+    if ($(fixedColumnsSelector).css('display') == 'none') {
+      return;
+    }
+
+    var headerHeight = $(headerSelector).outerHeight();
+    var bannerHeight = $(bannerSelector).outerHeight();
+    var bannerOffset = $(bannerSelector).offset().top;
+    var bannerPosition = bannerOffset - $(window).scrollTop();
+    var bannerVisibleHeight = Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+    var topOffset = headerHeight + bannerVisibleHeight;
+
     var footerOffset = $(footerSelector).offset().top;
     var footerPosition = footerOffset - $(window).scrollTop();
-    var footerVisibleOffset = $(window).height() - footerPosition;
-    if (footerVisibleOffset > 0) {
-      var fixedColumnsMaxHeight = $(window).height() - headerHeight - footerVisibleOffset;
-      $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
-    } else {
-      $(fixedColumnsSelector).css('max-height', '');
-    }
+    var footerVisibleHeight = $(window).height() - footerPosition;
+
+    var fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
+
+    $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
+    $(fixedColumnsSelector).css('top', topOffset);
   }
 
-  // listen for scroll and execute once
-  $(window).scroll(adjustFixedColumns);
-  adjustFixedColumns();
+  if (fixedColumns.length) {
+    $(fixedColumnsSelector).css('position', 'fixed');
+
+    // listen for scroll and execute once
+    $(window).scroll(adjustFixedColumns);
+    adjustFixedColumns();
+  }
 }
 
 function getOS() {
