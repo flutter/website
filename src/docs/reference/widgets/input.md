@@ -1,4 +1,5 @@
 ---
-title: Input Widgets
+title: Input widgets
+short-title: Input
 ---
 {% include catalogpage.html category="Input" %}

@@ -1,5 +1,5 @@
 ---
-title: Introduction to Widgets
+title: Introduction to widgets
 ---
 
 {% comment %} This page needs more cleanup. API references should be accumulated
