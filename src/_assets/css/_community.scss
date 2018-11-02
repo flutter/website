@@ -1,0 +1,18 @@
+.community {
+  &__intro {
+    padding: 80px 0;
+
+    &__description {
+      font-size: $font-size-lg;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(lg) {
+        max-width: 70%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        max-width: 50%;
+      }
+    }
+  }
+}

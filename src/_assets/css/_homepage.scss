@@ -306,29 +306,6 @@
     }
   }
 
-  &__card-graphic {
-    margin-bottom: bs-spacer(5);
-    @include media-breakpoint-up(lg) {
-      margin-bottom: 0;
-    }
-
-    &--fill {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-
-      img {
-        max-width: 100%;
-      }
-    }
-
-    &__logo-row {
-      &:not(:last-child) {
-        margin-bottom: bs-spacer(12);
-      }
-    }
-  }
-
   &__beautiful-uis {
     .homepage__card-graphic {
       position: relative;

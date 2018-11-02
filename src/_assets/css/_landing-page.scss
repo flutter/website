@@ -14,9 +14,12 @@
 
   h3 {
     font-size: 1.25rem;
-    margin-top: 0;
     @include media-breakpoint-up(lg) {
       font-size: 1.75rem;
+    }
+
+    &:first-child {
+      margin-top: 0;
     }
   }
 
@@ -33,6 +36,53 @@
       }
       @include media-breakpoint-up(xl) {
         padding: 80px;
+      }
+    }
+  }
+
+  .card.card--case-study {
+    margin-bottom: bs-spacer(6);
+    padding: bs-spacer(8) bs-spacer(6);
+
+    .card-header {
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      display: flex;
+      margin-bottom: bs-spacer(8);
+      min-height: 46px;
+      padding: 0;
+    }
+
+    .card-body {
+      margin-bottom: bs-spacer(4);
+      padding: 0;
+    }
+
+    .card-footer {
+      padding: 0;
+    }
+  }
+
+  &__card-graphic {
+    margin-bottom: bs-spacer(5);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+
+    &--fill {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__logo-row {
+      &:not(:last-child) {
+        margin-bottom: bs-spacer(12);
       }
     }
   }
@@ -64,6 +114,27 @@
 
       .btn.btn-link {
         padding: 0;
+      }
+    }
+  }
+
+  &__case-studies {
+    &__logo {
+      max-width: 50%;
+      max-height: 40px;
+      height: auto;
+
+      img {
+        max-height: 40px;
+      }
+    }
+
+    .card-deck {
+      margin-top: bs-spacer(12);
+
+      .col-lg-4 {
+        padding-left: bs-spacer(3);
+        padding-right: bs-spacer(3);
       }
     }
   }
