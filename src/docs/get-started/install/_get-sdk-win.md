@@ -31,7 +31,7 @@ these steps to add Flutter to the `PATH` environment variable:
   * If the entry does not exist, create a new user variable named `Path` with
     the full path to `flutter\bin` as its value.
 
-Note that you will have to close and reopen any existing command prompt windows 
+Note that you will have to close and reopen any existing console windows 
 for these changes to take effect.  
 
 ### Run `flutter doctor`
