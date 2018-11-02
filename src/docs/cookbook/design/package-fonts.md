@@ -149,5 +149,5 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Package Fonts Demo](/images/cookbook/package-fonts.png)
+![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 

@@ -205,4 +205,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo](/images/cookbook/fade-in-out.gif)
+![Fade In and Out Demo](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}

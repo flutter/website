@@ -185,4 +185,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Web Sockets Demo](/images/cookbook/web-sockets.gif)
+![Web Sockets Demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}

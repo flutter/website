@@ -195,4 +195,4 @@ class SecondScreen extends StatelessWidget {
 }
 ```
 
-![Navigation Basics Demo](/images/cookbook/navigation-basics.gif)
+![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}

@@ -184,4 +184,4 @@ class MessageItem implements ListItem {
 }
 ```
 
-![Mixed List Demo](/images/cookbook/mixed-list.png)
+![Mixed List Demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}

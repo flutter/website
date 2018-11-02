@@ -182,4 +182,4 @@ class MyAppState extends State<MyApp> {
 }
 ```
 
-![Dismissible Demo](/images/cookbook/dismissible.gif)
+![Dismissible Demo](/images/cookbook/dismissible.gif){:.site-mobile-screenshot}

@@ -208,4 +208,4 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Form Validation Demo](/images/cookbook/form-validation.gif)
+![Form Validation Demo](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}

@@ -204,4 +204,4 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Custom Fonts Demo](/images/cookbook/fonts.png)
+![Custom Fonts Demo](/images/cookbook/fonts.png){:.site-mobile-screenshot}
