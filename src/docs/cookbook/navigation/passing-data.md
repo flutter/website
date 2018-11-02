@@ -219,4 +219,4 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Passing Data Demo](/images/cookbook/passing-data.gif)
+![Passing Data Demo](/images/cookbook/passing-data.gif){:.site-mobile-screenshot}

@@ -65,12 +65,13 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Fading In Image Demo](/images/cookbook/fading-in-images.gif)
+![Fading In Image Demo](/images/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
 
-### From Asset Bundle
+### From asset bundle
 
 You can also consider using local assets for placeholders. First, add the asset
-to the project’s _pubspec.yaml_ file:
+to the project’s `pubspec.yaml` file (for more details see
+[Assets and images](/docs/development/ui/assets-and-images)):
 
 <!-- skip -->
 ```diff
@@ -79,10 +80,7 @@ to the project’s _pubspec.yaml_ file:
 +    - assets/loading.gif
 ```
 
-(See [Assets and Images](/docs/development/ui/assets-and-images/)
-for a full guide to adding assets.)
-
-Then, use the [`FadeInImage.assetNetwork`](https://docs.flutter.io/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
+Then, use the [FadeInImage.assetNetwork()](https://docs.flutter.io/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
 constructor:
 
 <!-- skip -->
@@ -126,4 +124,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-<img alt="Demo of asset fading in" height="566" src="/images/cookbook/fading-in-asset-demo.gif" width="318" />
+![Asset fade-in](/images/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}

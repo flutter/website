@@ -118,4 +118,4 @@ class OrientationList extends StatelessWidget {
 }
 ```
 
-![Orientation Demo](/images/cookbook/orientation.gif)
+![Orientation Demo](/images/cookbook/orientation.gif){:.site-mobile-screenshot}

@@ -171,4 +171,4 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Retrieve Text Input Demo](/images/cookbook/retrieve-input.gif)
+![Retrieve Text Input Demo](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}

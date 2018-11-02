@@ -92,4 +92,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Horizontal List Demo](/images/cookbook/horizontal-list.gif)
+![Horizontal List Demo](/images/cookbook/horizontal-list.gif){:.site-mobile-screenshot}

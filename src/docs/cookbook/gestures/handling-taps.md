@@ -107,4 +107,4 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Handling Taps Demo](/images/cookbook/handling-taps.gif)
+![Handling Taps Demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}

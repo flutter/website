@@ -169,4 +169,4 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Themes Demo](/images/cookbook/themes.png)
+![Themes Demo](/images/cookbook/themes.png){:.site-mobile-screenshot}

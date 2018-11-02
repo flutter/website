@@ -241,4 +241,4 @@ class PhotosList extends StatelessWidget {
 }
 ```
 
-![Isolate Demo](/images/cookbook/isolate.gif)
+![Isolate Demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}

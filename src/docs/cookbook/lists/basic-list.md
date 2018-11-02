@@ -72,4 +72,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Basic List Demo](/images/cookbook/basic-list.png)
+![Basic List Demo](/images/cookbook/basic-list.png){:.site-mobile-screenshot}

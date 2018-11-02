@@ -120,4 +120,4 @@ class TabBarDemo extends StatelessWidget {
 }
 ```
 
-![Tabs Demo](/images/cookbook/tabs.gif)
+![Tabs Demo](/images/cookbook/tabs.gif){:.site-mobile-screenshot}

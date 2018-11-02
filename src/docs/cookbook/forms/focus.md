@@ -204,4 +204,4 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Text Field Focus Demo](/images/cookbook/focus.gif)
+![Text Field Focus Demo](/images/cookbook/focus.gif){:.site-mobile-screenshot}

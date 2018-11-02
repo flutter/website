@@ -174,4 +174,4 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Hero Demo](/images/cookbook/hero.gif)
+![Hero Demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}

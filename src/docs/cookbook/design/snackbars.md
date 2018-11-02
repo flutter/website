@@ -126,4 +126,4 @@ class SnackBarPage extends StatelessWidget {
 }
 ```
 
-![SnackBar Demo](/images/cookbook/snackbar.gif)
+![SnackBar Demo](/images/cookbook/snackbar.gif){:.site-mobile-screenshot}

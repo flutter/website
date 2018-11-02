@@ -72,6 +72,16 @@ dd {
   font: $site-font-icon;
 }
 
+.site-mobile-screenshot {
+  display: block;
+  margin: 0 auto;
+  max-height: none;
+  max-width: 100%;
+  @include media-breakpoint-up(xs) { max-width: breakpoint-min(xxs); }
+
+  &--border { border: 1px solid $site-color-light-grey; }
+}
+
 .site-image-right {
   display: block;
   margin: 0 auto;

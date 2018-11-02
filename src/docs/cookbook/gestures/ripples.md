@@ -85,4 +85,4 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Ripples Demo](/images/cookbook/ripples.gif)
+![Ripples Demo](/images/cookbook/ripples.gif){:.site-mobile-screenshot}

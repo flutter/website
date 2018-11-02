@@ -187,4 +187,4 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Drawer Demo](/images/cookbook/drawer.png)
+![Drawer Demo](/images/cookbook/drawer.png){:.site-mobile-screenshot}
