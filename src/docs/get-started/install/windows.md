@@ -31,4 +31,4 @@ To install and run Flutter, your development environment must meet these minimum
 [Next step: Configure Editor](/get-started/editor)
 
 [Git for Windows]: https://git-scm.com/download/win
-[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6
+[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
