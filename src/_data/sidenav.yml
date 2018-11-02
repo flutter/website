@@ -190,6 +190,7 @@
       permalink: /docs/resources/faq
 
 - title: Reference
+  expanded: true
   children:
     - title: Tutorials
       permalink: /docs/reference/tutorials
