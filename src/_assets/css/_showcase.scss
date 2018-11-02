@@ -1,34 +1,4 @@
 .showcase {
-  .card.card--app {
-    margin-bottom: bs-spacer(6);
-    padding: bs-spacer(8) bs-spacer(6);
-
-    .card-header {
-      align-items: center;
-      border: none;
-      background-color: transparent;
-      display: flex;
-      margin-bottom: bs-spacer(8);
-      min-height: 46px;
-      padding: 0;
-
-      .showcase__apps__logo {
-        max-width: 50%;
-        max-height: 46px;
-        height: auto;
-      }
-    }
-
-    .card-body {
-      margin-bottom: bs-spacer(4);
-      padding: 0;
-    }
-
-    .card-footer {
-      padding: 0;
-    }
-  }
-
   &__carousel {
     @include reset-carousel-animation;
 
@@ -41,17 +11,6 @@
       @include media-breakpoint-up(md) {
         min-height: 640px;
         padding: 80px 0;
-      }
-    }
-  }
-
-  &__apps {
-    &__cards {
-      margin-top: bs-spacer(12);
-
-      .col-lg-4 {
-        padding-left: bs-spacer(3);
-        padding-right: bs-spacer(3);
       }
     }
   }

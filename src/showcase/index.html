@@ -55,7 +55,7 @@ toc: false
     </div>
 </section>
 
-<section class="showcase__apps card text-center">
+<section class="landing-page__case-studies card text-center">
     <div class="card-body">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
@@ -70,12 +70,12 @@ toc: false
         {% for case in site.data.showcases %}
             {% capture modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
             {% if modulo3 == '0' %}
-                <div class="showcase__apps__cards text-left card-deck flex-column flex-lg-row">
+                <div class="text-left card-deck flex-column flex-lg-row">
             {% endif %}
-                    <div class="card card--app">
+                    <div class="card card--case-study">
                         <div class="card-header">
                             {% if case.logo_src %}
-                                {% asset '{{ case.logo_src }}' class='showcase__apps__logo' %}
+                                {% asset '{{ case.logo_src }}' class='landing-page__case-studies__logo' %}
                             {% endif %}
                         </div>
                         <div class="card-body">
