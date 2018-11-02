@@ -223,15 +223,14 @@
     margin-bottom: 40px;
   }
 
-  &__intro{
-    font-family: $site-font-family-alt;
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-    @include media-breakpoint-up(md) {
-      font-size: 1.75rem;
+  &__intro {
+
+    &.card .card-body {
+      padding: 40px;
     }
 
     &__partner {
+      font-family: $site-font-family-alt;
       font-size: 1.25rem;
       @include media-breakpoint-up(md) {
         font-size: 1.5rem;
@@ -239,21 +238,32 @@
     }
 
     &__statement {
-      margin: bs-spacer(8) 0;
+      font-family: $site-font-family-alt;
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      margin: bs-spacer(6) 0;
       @include media-breakpoint-up(md) {
-        margin: bs-spacer(12) 0;
+        font-size: 1.75rem;
+        margin: bs-spacer(8) 0;
       }
     }
 
     &__buttons {
       align-items: center;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: bs-spacer(8);
 
       a,
       button {
         &:not(:last-child) {
           margin-bottom: bs-spacer(4);
+
+          @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+            margin-right: bs-spacer(4);
+          }
         }
       }
     }
