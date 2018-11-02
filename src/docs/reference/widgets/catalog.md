@@ -11,11 +11,11 @@ you can also see all the widgets in the [Flutter widget index](/docs/reference/w
 {% for section in site.data.catalog.index %}
     <div class="card">
         <div class="card-body">
-            <a href="/docs/reference/widgets/{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+            <a href="widgets/{{section.id}}"><header class="card-title">{{section.name}}</header></a>
             <p class="card-text">{{section.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="/docs/reference/widgets/{{section.id}}">Visit</a>
+            <a href="widgets/{{section.id}}">Visit</a>
         </div>
     </div>
 {% endfor %}

@@ -6,7 +6,8 @@ show_breadcrumbs: false
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
 
-This is an alphabetical list of nearly every widget that is bundled with Flutter. You can also <a href="/docs/development/ui/widget-catalog">browse widgets by category.
+This is an alphabetical list of nearly every widget that is bundled with
+Flutter. You can also [browse widgets by category][catalog].
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
@@ -26,3 +27,5 @@ This is an alphabetical list of nearly every widget that is bundled with Flutter
     </div>
 {% endfor %}
 </div>
+
+[catalog]: /docs/development/ui/widgets/catalog

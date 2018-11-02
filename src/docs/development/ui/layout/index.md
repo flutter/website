@@ -454,7 +454,7 @@ it takes only a few steps to put text, an icon, or an image on the screen.
 <ol markdown="1">
 
 <li markdown="1"> Select a layout widget to hold the object.<br>
-    Choose from a variety of [layout widgets](/docs/development/ui/widget-catalog) based
+    Choose from a variety of [layout widgets](/docs/development/ui/widgets/catalog) based
     on how you want to align or constrain the visible widget,
     as these characteristics are typically passed on to the
     contained widget.
@@ -1045,7 +1045,7 @@ recommend the iPad Pro. You can change its orientation to landscape mode using
 Flutter has a rich library of layout widgets, but here a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget Overview](/docs/development/ui/widget-catalog),
+available widgets, refer to the [Widget Overview](/docs/development/ui/widgets/catalog),
 or use the Search box in the [API reference docs](https://docs.flutter.io/).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
@@ -1574,7 +1574,7 @@ Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 
 The following resources may help when writing layout code.
 
-* [Widget Overview](/docs/development/ui/widget-catalog)<br>
+* [Widget Overview](/docs/development/ui/widgets/catalog)<br>
   Describes many of the widgets available in Flutter.
 * [HTML/CSS Analogs in Flutter](/get-started/flutter-for/web-devs)<br>
   For those familiar with web programming, this page maps HTML/CSS functionality
