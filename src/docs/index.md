@@ -27,6 +27,7 @@ you are looking for. Some of the changes to the website include:
 
 * Revised [landing](/) page
 * Revised [showcase](/showcase) page
+* Revised [community](/community) page
 * Revised navigation in the left side bar
 * Table of contents on the right side of most pages
 
@@ -35,9 +36,10 @@ Some of the new content includes:
 * Deep dive on Flutter internals,
   [Inside Flutter](/docs/resources/inside-flutter)
 * [Technical videos](/docs/resources/videos) page
+* [State management](/docs/development/data-and-backend/state-mgmt) landing page
 * How to connect [a native debugger _and_
   a Dart debugger to your app](/docs/testing/oem-debuggers)
-  (iOS info in process)
+  (not yet complete)
 * [Background Dart
   processes](/docs/development/packages-and-plugins/background-processes)
   placeholder that links to an in-depth post on Medium.
