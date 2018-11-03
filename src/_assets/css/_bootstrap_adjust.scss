@@ -91,7 +91,8 @@ a.card {
   .carousel-item-prev {
     display: none;
   }
-  .carousel-item-left {
+  .carousel-item-left,
+  .carousel-item-right {
     transform: none;
   }
 }
