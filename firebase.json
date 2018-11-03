@@ -25,6 +25,7 @@
       { "source": "/docs/get-started", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/docs/development/tools/ide", "destination": "/docs/development/tools/ide/android-studio", "type": 301 },
       { "source": "/docs/development/tools/sdk", "destination": "/docs/development/tools/sdk/upgrading", "type": 301 },
+      { "source": "/docs/development/ui/widgets", "destination": "/docs/development/ui/widgets/catalog", "type": 301 },
 
 
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
@@ -81,7 +82,7 @@
       { "source": "/using-ide-vscode", "destination": "/docs/development/tools/ide/vs-code", "type": 301 },
       { "source": "/using-packages", "destination": "/docs/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/web-analogs", "destination": "/docs/get-started/flutter-for/web-devs", "type": 301 },
-      { "source": "/widgets", "destination": "/docs/reference/widgets", "type": 301 },
+      { "source": "/widgets", "destination": "/docs/reference/widgets/catalog", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/reference/widgets/:rest*", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 }
     ]

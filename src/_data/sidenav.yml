@@ -81,7 +81,7 @@
               permalink: /docs/development/ui/advanced/gestures
         - title: Platform-specific theming
         - title: Widget catalog
-          permalink: /docs/development/ui/widget-catalog
+          permalink: /docs/development/ui/widgets
     - title: Data & backend
       permalink: /docs/development/data-and-backend
       children:

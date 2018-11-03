@@ -42,6 +42,10 @@ defaults:
   values:
     show_breadcrumbs: true
 - scope:
+    path: 'docs/development/ui/widgets'
+  values:
+    toc: false
+- scope:
     path: 'docs/get-started'
   values:
     show_breadcrumbs: true
