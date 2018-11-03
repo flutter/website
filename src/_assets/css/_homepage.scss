@@ -193,7 +193,7 @@
     }
 
     &__text {
-      color: $site-color-primary;
+      color: $site-color-white;
       left: 50%;
       line-height: 1;
       position: absolute;
@@ -202,6 +202,9 @@
       transform: translate(-50%, -50%);
       width: 100vw;
       z-index: $hero-text-z;
+      @include media-breakpoint-up(xs) {
+        color: $site-color-primary;
+      }
       @include media-breakpoint-up(sm) {
         font-size: 64px;
       }
@@ -336,6 +339,10 @@
       padding: 20px;
       @include media-breakpoint-up(lg) {
         padding: 40px;
+      }
+
+      h3 {
+        margin-top: 0;
       }
     }
   }
