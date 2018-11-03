@@ -1,10 +1,11 @@
 - name: Alibaba
+  featured: true
   description: >
     Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and
     Android on their Xianyu app, which has 50M+ downloads.
   logo_src: showcase/logo-alibaba.png
-  learn_more_cta: Learn more
-  learn_more_link: https://www.youtube.com/watch?v=jtYk3gWRSw0
+  hero_src: showcase/hero-alibaba.jpg
+  video_id: jtYk3gWRSw0
   app_store_link: https://itunes.apple.com/cn/app/%E9%97%B2%E9%B1%BC-%E6%8C%82%E9%97%B2%E9%B1%BC-%E9%97%B2%E7%BD%AE%E8%83%BD%E6%8D%A2%E9%92%B1/id510909506?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.taobao.idlefish&e=-EnableAppDetailsPageRedesign
 
@@ -33,10 +34,13 @@
   play_store_link: https://play.google.com/store/apps/details?id=com.reflectlyApp&e=-EnableAppDetailsPageRedesign
 
 - name: Hamilton Musical
+  featured: true
   description: >
     Official app of the hit Broadway musical, Hamilton. Includes daily lotteries, exclusive news and videos, a trivia
     game, merchandise store, and more.
   logo_src: showcase/logo-hamilton.png
+  hero_src: showcase/hero-hamilton.jpg
+  video_id: kfd-oLypqFI
   learn_more_cta: Learn more
   learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
   app_store_link: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
@@ -49,10 +53,12 @@
   logo_src: showcase/logo-greentea.png
 
 - name: Abbey Road Studios
+  featured: true
   description: >
     Abbey Road’s Topline app helps artists record songs. You can share files, sing over imported tracks, add lyrics and
     more.
   logo_src: showcase/logo-abbey_road_studios.png
+  hero_src: showcase/hero-abbey-road.jpg
   learn_more_cta: Developer website
   learn_more_link: https://www.abbeyroad.com/apps
   app_store_link: https://itunes.apple.com/us/app/topline/id1270125833?mt=8

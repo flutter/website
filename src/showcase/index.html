@@ -5,53 +5,34 @@ body_class: landing-page showcase
 toc: false
 ---
 
-<section class="landing-page__hero showcase__carousel carousel slide" data-ride="carousel">
+<section class="landing-page__hero showcase__carousel carousel slide" data-interval=8000 data-ride="carousel" data-pause="false">
 
 
     <div class="carousel-inner">
-        <div class="showcase__carousel__slide carousel-item active" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
-                        <div class="card card--app">
-                            <div class="card-body">
-                                <h2 class="card-category">Featured</h2>
-                                <h3>Hamilton Musical</h3>
-                                <p>
-                                Official app of the hit Broadway musical, Hamilton. Includes daily lotteries, exclusive news and
-                                videos, a trivia game, merchandise store, and more.
-                                </p>
-                            </div>
-                            <div class="card-footer card-footer--transparent card-footer--links">
-                                <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
-                                <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="showcase__carousel__slide carousel-item" style="background-image: url('{% asset 'showcase/hero-hamilton.jpg' @path %}') ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
-                        <div class="card card--app">
-                            <div class="card-body">
-                                <h2 class="card-category">Featured</h2>
-                                <h3>Second featured app</h3>
-                                <p>
-                                Description for second featured app.
-                                </p>
-                            </div>
-                            <div class="card-footer card-footer--transparent card-footer--links">
-                                <a class="btn btn-link" href="https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1" target="_blank">Learn more</a>
-                                <button class="btn btn-link btn-icon d-inline-flex" type="button" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>
+        {% for case in site.data.showcases %}
+            {% if case.featured %}
+            <div class="showcase__carousel__slide carousel-item {% if forloop.first == true %}active{% endif %}">
+                <div class="showcase__carousel__slide__background" style="background-image: url('{% asset '{{ case.hero_src }}' @path %}') "></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-6 col-xl-4 offset-xl-7">
+                            <div class="card card--app">
+                                <div class="card-body">
+                                    <h2 class="card-category">Featured</h2>
+                                    <h3>{{ case.name }}</h3>
+                                    <p>{{ case.description }}</p>
+                                </div>
+                                <div class="card-footer card-footer--transparent card-footer--links">
+                                    {% if case.learn_more_link %}<a class="btn btn-link" href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
+                                    {% if case.video_id %}<button class="btn btn-link btn-icon d-inline-flex" type="button" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>{% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            {% endif %}
+        {% endfor %}
     </div>
 </section>
 
@@ -118,13 +99,12 @@ toc: false
     </div>
 </section>
 
-<!-- Featured App Modal -->
 <div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <div class="embedded-video-wrapper">
-            <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/kfd-oLypqFI?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>

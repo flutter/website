@@ -113,8 +113,11 @@ function initVideoModal() {
     };
   }
 
-  videoModalObject.on('shown.bs.modal', function (e) {
+  videoModalObject.on('shown.bs.modal', function (event) {
     if (window.videoPlayer) {
+      var videoId = event.relatedTarget.dataset.video;
+      console.log(videoId);
+      window.videoPlayer.loadVideoById(videoId);
       window.videoPlayer.playVideo();
     }
   });
