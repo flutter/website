@@ -134,6 +134,8 @@
   }
 
   &__sheet-bg {
+    cursor: pointer; // needed for iOS to recognize the div as clickable
+
     @include media-breakpoint-down(sm) {
       background: rgba(0, 0, 0, .4);
       bottom: 0;
