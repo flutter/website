@@ -5,9 +5,15 @@ body_class: landing-page showcase
 toc: false
 ---
 
-<section class="landing-page__hero showcase__carousel carousel slide" data-interval=8000 data-ride="carousel" data-pause="false">
-
-
+<section id="showcaseCarousel" class="landing-page__hero showcase__carousel carousel slide" data-interval=8000 data-ride="carousel" >
+    <ol class="carousel-indicators">
+        {% for case in site.data.showcases %}
+            {% if case.featured %}
+                {% capture loopCount %}{% increment counter %}{% endcapture %}
+                <li data-target="#showcaseCarousel" data-slide-to="{{ loopCount }}" {% if loopCount == '0' %}class="active"{% endif %}></li>
+            {% endif %}
+        {% endfor %}
+    </ol>
     <div class="carousel-inner">
         {% for case in site.data.showcases %}
             {% if case.featured %}
