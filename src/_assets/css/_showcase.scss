@@ -1,10 +1,13 @@
 .showcase {
   &__carousel {
+    $carousel-animation-in-duration: .8s;
+    $carousel-animation-out-duration: .6s;
+    $carousel-animation-ease: ease-in-out;
+    $carousel-animation-fill-mode: both;
+
     @include reset-carousel-animation;
 
     &__slide {
-      background-position: center center;
-      background-size: cover;
       min-height: 75vh;
       padding: 40px 0;
       position: relative;
@@ -12,6 +15,60 @@
         min-height: 640px;
         padding: 80px 0;
       }
+
+      .card {
+        h3 {
+          margin-top: 0;
+        }
+      }
+
+      &__background {
+        background-position: center center;
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      &.active:not(.transition-out) {
+        .showcase__carousel__slide__background {
+          animation: $carousel-animation-in-duration $carousel-animation-ease $carousel-animation-fill-mode carousel-background-in;
+        }
+        .card {
+          animation: $carousel-animation-in-duration $carousel-animation-ease $carousel-animation-fill-mode carousel-card-in;
+        }
+      }
+
+      &.active.transition-out {
+        .showcase__carousel__slide__background {
+          animation: $carousel-animation-in-duration $carousel-animation-ease $carousel-animation-fill-mode carousel-background-out;
+        }
+        .card {
+          animation: $carousel-animation-in-duration $carousel-animation-ease $carousel-animation-fill-mode carousel-card-out;
+        }
+      }
     }
   }
+}
+
+@keyframes carousel-card-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes carousel-card-out {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes carousel-background-in {
+  0% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes carousel-background-out{
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
