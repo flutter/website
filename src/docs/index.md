@@ -25,7 +25,7 @@ We've spent the last few months redesigning the website and how its
 information is organized. We hope you can more easily find the docs
 you are looking for. Some of the changes to the website include:
 
-* Revised [landing](/) page
+* Revised [front](/) page
 * Revised [showcase](/showcase) page
 * Revised [community](/community) page
 * Revised navigation in the left side bar
@@ -35,11 +35,10 @@ Some of the new content includes:
 
 * Deep dive on Flutter internals,
   [Inside Flutter](/docs/resources/inside-flutter)
-* [Technical videos](/docs/resources/videos) page
-* [State management](/docs/development/data-and-backend/state-mgmt) landing page
+* [Technical videos](/docs/resources/videos)
+* [State management](/docs/development/data-and-backend/state-mgmt)
 * [Background Dart
   processes](/docs/development/packages-and-plugins/background-processes)
-  placeholder that links to an in-depth post on Medium.
 * [Flutter's build modes](/docs/testing/build-modes)
 {% comment %}
 * How to connect [a native debugger _and_
