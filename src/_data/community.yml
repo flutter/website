@@ -67,7 +67,7 @@
   learn_more_cta: Learn more
   learn_more_link: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 
-- name: r/FlutterDevs
+- name: r/FlutterDev
   description: >
     Join the large community on Reddit with discussions around every aspect of Flutter.
   logo_src: community/logo-reddit.png
