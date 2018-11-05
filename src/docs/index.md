@@ -25,7 +25,7 @@ We've spent the last few months redesigning the website and how its
 information is organized. We hope you can more easily find the docs
 you are looking for. Some of the changes to the website include:
 
-* Revised [landing](/) page
+* Revised [front](/) page
 * Revised [showcase](/showcase) page
 * Revised [community](/community) page
 * Revised navigation in the left side bar
@@ -35,11 +35,10 @@ Some of the new content includes:
 
 * Deep dive on Flutter internals,
   [Inside Flutter](/docs/resources/inside-flutter)
-* [Technical videos](/docs/resources/videos) page
-* [State management](/docs/development/data-and-backend/state-mgmt) landing page
+* [Technical videos](/docs/resources/videos)
+* [State management](/docs/development/data-and-backend/state-mgmt)
 * [Background Dart
   processes](/docs/development/packages-and-plugins/background-processes)
-  placeholder that links to an in-depth post on Medium.
 * [Flutter's build modes](/docs/testing/build-modes)
 {% comment %}
 * How to connect [a native debugger _and_
@@ -62,13 +61,13 @@ here are some next steps.
 [Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
 : Review these tips if you have iOS experience.
 
-[Flutter for Web devs](/docs/get-started/flutter-for/web-devs)
+[Flutter for Web developers](/docs/get-started/flutter-for/web-devs)
 : Review these HTML -> Flutter analogs if you have web experience.
 
-[Flutter for React Native devs](/docs/get-started/flutter-for/react-native-devs)
+[Flutter for React Native developers](/docs/get-started/flutter-for/react-native-devs)
 : Review these tips if you have React Native experience.
 
-[Flutter for Xamarin.Forms devs](/docs/get-started/flutter-for/xamarin-forms-devs)
+[Flutter for Xamarin.Forms developers](/docs/get-started/flutter-for/xamarin-forms-devs)
 : Review these tips if you have Xamarin Forms experience.
 
 [Building layouts in Flutter](/docs/development/ui/layout)

@@ -37,7 +37,7 @@ Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 Each episode solves a different design challenge.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GFRfSM4yA9U?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Challenge playlist](https://www.youtube.com/watch?v=GFRfSM4yA9U&list=PLFqMllUBmHbjgLjAUA0_8Ca140rn-7WjZ)
+[Flutter Challenge playlist](https://www.youtube.com/playlist?list=PLkXouNW6n0A8ANZ16Fk49qsxpBbzxHGCn)
 
 
 ### Flutter Weekly Widgets by MTechViral
