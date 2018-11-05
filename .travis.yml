@@ -49,16 +49,7 @@ deploy:
       repo: flutter/website
       branch: master
       condition: $TASK == *build*
-  # TODO(chalin): drop the following entry once we're done with dash
-  - provider: script
-    # Note: for dash we deploy the default robots.txt:
-    script: ./tool/shared/deploy.sh dash # TODO: drop dash
-    skip_cleanup: true
-    on:
-      repo: flutter/website
-      branch: dash
-      condition: $TASK == *build*
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:
-  only: [master, dash, /^\d\.x$/, /^\d-dev$/, /travis-build/]
+  only: [master, /^\d\.x$/, /^\d-dev$/, /travis-build/]

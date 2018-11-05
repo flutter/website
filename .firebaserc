@@ -2,7 +2,7 @@
   "projects": {
     "default": "sweltering-fire-2088",
     "flutter-io": "sweltering-fire-2088",
-    "dash": "flutter-io-staging-1",
+    "staging-1": "flutter-io-staging-1",
     "staging-2": "flutter-io-staging-2",
     "pc2": "ng2-io",
     "sz" :  "sz-flutter",
