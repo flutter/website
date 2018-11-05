@@ -1,7 +1,7 @@
 // TODO(chalin): package archive.js as its own top-level js so that it can be loaded independently
 
 // Number of releases to show by default (rest will be behind a "show all" link).
-var releasesToShow = 5;
+var releasesToShow = 99999;
 
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 var fetchFlutterReleases = function (os, callback, errorCallback) {
@@ -11,12 +11,9 @@ var fetchFlutterReleases = function (os, callback, errorCallback) {
     type: "GET",
     url: url,
     dataType: "json",
-    success: function (data) {
-      callback(data, os);
-    },
+    success: function (data) { callback(data, os); },
     error: function (xhr, textStatus, errorThrown) {
-      if (errorCallback)
-        errorCallback(os);
+      if (errorCallback) errorCallback(os);
     }
   })
 }
@@ -58,7 +55,7 @@ function updateTable(releases, os) {
 
 function updateTableFailed(os) {
   var tab = $("#tab-os-" + os);
-  tab.find(".loading").text("Failed to load releases");
+  tab.find(".loading").text("Failed to load releases. Refresh page to try again.");
 }
 
 function updateDownloadLink(releases, os) {
@@ -98,7 +95,7 @@ function updateDownloadLinkFailed(os) {
 
 // Send requests to render the tables.
 $(function () {
-  if ($(".sdk-archives").length) {
+  if ($("#sdk-archives").length) {
     fetchFlutterReleases("windows", updateTable, updateTableFailed);
     fetchFlutterReleases("macos", updateTable, updateTableFailed);
     fetchFlutterReleases("linux", updateTable, updateTableFailed);

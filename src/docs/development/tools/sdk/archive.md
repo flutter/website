@@ -4,53 +4,49 @@ short-title: Archive
 toc: false
 ---
 
-The Beta channel contains the most stable Flutter builds. See [Flutter’s
-channels](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels)
-for details.
+<style>
+.scrollable-table {
+  overflow-y: scroll;
+  height: 20rem;
+}
+</style>
 
-<div id="tab-set-os" class="sdk-archives">
-	<ul class="tabs__top-bar">
-		<li class="tab-link current" data-tab="tab-os-windows">Windows</li>
-		<li class="tab-link" data-tab="tab-os-macos">macOS</li>
-		<li class="tab-link" data-tab="tab-os-linux">Linux</li>
-	</ul>
-	<div id="tab-os-windows" class="tabs__content current">
-		<h2>Beta channel, Windows</h2>
-		<table id="downloads-windows-beta">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<h2>Dev channel, Windows</h2>
-		<table id="downloads-windows-dev">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
-	</div>
-	<div id="tab-os-macos" class="tabs__content">
-		<h2>Beta channel, macOS</h2>
-		<table id="downloads-macos-beta">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<h2>Dev channel, macOS</h2>
-		<table id="downloads-macos-dev">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
-	</div>
-	<div id="tab-os-linux" class="tabs__content">
-		<h2>Beta channel, Linux</h2>
-		<table id="downloads-linux-beta">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<h2>Dev channel, Linux</h2>
-		<table id="downloads-linux-dev">
-			<thead><tr><th>Version</th><th>Ref</th><th class="date">Release Date</th></tr></thead>
-			<tr class="loading"><td colspan="3">Loading...</td></tr>
-		</table><br/>
-		<section id="categories" markdown="1">{% include_relative _sdk-archive-master.md %}</section>
-	</div>
+The Beta channel contains the most stable Flutter builds. See [Flutter’s
+channels][] for details.
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="editor-setup" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="windows-tab" href="#windows" role="tab" aria-controls="windows" aria-selected="true">Windows</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="macos-tab" href="#macos" role="tab" aria-controls="macos" aria-selected="false">macOS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="linux-tab" href="#linux" role="tab" aria-controls="linux" aria-selected="false">Linux</a>
+  </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div id="sdk-archives" class="tab-content">
+{% include_relative _os.md os="Windows" %}
+{% include_relative _os.md os="macOS" %}
+{% include_relative _os.md os="Linux" %}
 </div>
+
+## Master channel
+
+Installation bundles are not available for master. However, you can get the SDK
+directly from [GitHub repo]({{site.repo.flutter}}) by cloning the master channel,
+and then triggering a download of the SDK dependencies:
+
+```terminal
+$ git clone -b master https://github.com/flutter/flutter.git
+$ ./flutter/bin/flutter --version
+```
+
+For additional details on how our installation bundles are structured, see
+[Installation bundles][].
+
+[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
