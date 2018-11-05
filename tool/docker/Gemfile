@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'autoprefixer-rails'
 gem 'bootstrap'
 gem 'font-awesome-sass'
-gem 'jekyll'
+gem 'jekyll', '~> 3.8.4'
 gem 'jekyll-assets', group: :jekyll_plugins
 gem 'jekyll-toc',
   # :path => '~/git/dart/jekyll-toc'
