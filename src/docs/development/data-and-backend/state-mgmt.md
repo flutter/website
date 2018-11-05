@@ -29,7 +29,7 @@ contributed by the Flutter community:
 * [Using Flutter Inherited Widgets Effectively](https://ericwindmill.com/posts/inherited_widget/),
   by Eric Windmill
 * [You might not need Redux: The Flutter edition](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), by Ryan Edge
-* [Managing state with the scoped model pattern in Dart's Flutter framework](https://www.youtube.com/watch?v=-MCeWP3rgI0), a video by Tensorflow Programming
+* [Managing state with the scoped model pattern in Dart's Flutter framework](https://www.youtube.com/watch?v=-MCeWP3rgI0), a video by Tensor Programming
 * [Flutter: Inherited Widget and Scoped Model Explained, part 1](https://www.youtube.com/watch?v=j-27MZwRbFw),
   a video by MTechViral
 * [Flutter state management&mdash;scoped model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
@@ -43,7 +43,7 @@ contributed by the Flutter community:
 * [Flutter + Redux&mdash;How to make a shopping list app](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65),
   by Paulina Szklarska on Hackernoon
 * [Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1](https://www.youtube.com/watch?v=Wj216eSBBWs),
-  a video by Tensorflow Programming.
+  a video by Tensor Programming
 * [Flutter Redux Thunk, an example](https://medium.com/flutterpub/flutter-redux-thunk-27c2f2b80a3b),
   by Jack Wong
 * [Building a (large) Flutter app with Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/),
