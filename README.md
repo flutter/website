@@ -1,6 +1,6 @@
 # [Flutter][]'s website <img src="https://flutter.io/images/flutter-mark-square-100.png" width="5%">
 
-[![Build Status SVG][]][Repo on Travis]
+[![Build Status][]][Repo on Travis]
 
 ## Issues, bugs, and requests
 
@@ -243,7 +243,7 @@ If new sample apps have been added, update `_data/catalog/widget.json`. The entr
 
 The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
 
-[Build Status SVG]: https://travis-ci.org/flutter/website.svg?branch=dash
+[Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Dart install]: https://www.dartlang.org/install
 [Flutter install]: /get-started/install
