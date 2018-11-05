@@ -27,12 +27,15 @@ defaults:
     path: ''
   values:
     layout: default
-    toc: true
     show-nav-get-started-button: true
     # To hide banners from every page, comment out the `show_banner` setting
     # below. To selectively enable a banner (say, on the homepage) add
     # `show_banner: true` to the page's frontmatter.
     show_banner: true
+- scope:
+    path: 'docs'
+  values:
+    toc: true
 - scope:
     path: 'docs/cookbook'
   values:
