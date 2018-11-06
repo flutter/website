@@ -45,7 +45,7 @@ You are now ready to run Flutter commands!
 
 To update an existing version of Flutter, see [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
 
-### Run flutter doctor
+### Run `flutter doctor`
 
 Run the following command to see if there are any dependencies you need to
 install to complete the setup:
