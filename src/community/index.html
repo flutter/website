@@ -63,7 +63,7 @@ body_class: landing-page community
                 {% continue %}
             {% endif %}
 
-            {% capture loopCount %}{% increment counter %}{% endcapture %}
+            {% capture loopCount %}{% increment communityCounter %}{% endcapture %}
             {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture %}
             {% if modulo3 == '0' %}
                 <div class="text-left card-deck flex-column flex-lg-row">

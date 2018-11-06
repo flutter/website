@@ -8,7 +8,7 @@ body_class: landing-page showcase
     <ol class="carousel-indicators">
         {% for case in site.data.showcases %}
             {% if case.featured %}
-                {% capture loopCount %}{% increment counter %}{% endcapture %}
+                {% capture loopCount %}{% increment showcaseCounter %}{% endcapture %}
                 <li data-target="#showcaseCarousel" data-slide-to="{{ loopCount }}" {% if loopCount == '0' %}class="active"{% endif %}></li>
             {% endif %}
         {% endfor %}
