@@ -169,7 +169,7 @@ if (zero == 0) {
 ```
 
 Try it out in
-DartPad](https://dartpad.dartlang.org/c85038ad677963cb6dc943eb1a0b72e6).
+[DartPad](https://dartpad.dartlang.org/c85038ad677963cb6dc943eb1a0b72e6).
 
 ### Functions
 
