@@ -75,6 +75,10 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
   - `onHorizontalDragEnd` A pointer that was previously in contact with the
     screen and moving horizontally is no longer in contact with the screen and
     was moving at a specific velocity when it stopped contacting the screen.
+- Pan
+  - `onPanStart` A pointer has contacted the screen and might begin to move horizontally or vertically. This callback will cause a crash if `onHorizontalDragStart` or `onVerticalDragStart` is set.
+  - `onPanUpdate`A pointer that is in contact with the screen and is moving in the verticall or horizontal direction. This callback will cause a crash if `onHorizontalDragUpdate` or `onVerticalDragUpdate` is set.
+  - `onPanEnd` A pointer that was preiously in contact with screen screen is no longer in contact with the screen and was moving at a specific velocity when it stopped contacting the screen. This callback will cause a crash if `onHorizontalDragEnd` or `onVerticalDragEnd` is set.
 
 To listen to gestures from the widgets layer, use a
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
