@@ -72,10 +72,10 @@
   learn_more_link: https://now.qq.com/
   app_store_link: https://itunes.apple.com/cn/app/now%E7%9B%B4%E6%92%AD-%E8%85%BE%E8%AE%AF%E6%97%97%E4%B8%8B%E5%85%A8%E6%B0%91%E7%9B%B4%E6%92%AD%E5%B9%B3%E5%8F%B0/id1097492828?mt=8
 
-- name: JD.com
+- name: JD Finance
   description: >
     JD Finance is a leading digital technology company. The company covers fintech, digital enterprise services and urban computing.
   logo_src: showcase/logo-jd.png
   learn_more_cta: Developer website
   learn_more_link: https://jr.jd.com/
-  app_store_link: https://itunes.apple.com/cn/app/jing-dong-jin-rong-hui-li/id895682747?mt=8
+  app_store_link: https://m.jr.jd.com/spe/downloadApp/index.html?id=1024
