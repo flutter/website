@@ -66,7 +66,7 @@
       { "source": "/platform-plugins*", "destination": "/docs/development/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/reading-writing-files", "destination": "/docs/cookbook/persistence/reading-writing-files", "type": 301 },
       { "source": "/sdk-archive", "destination": "/docs/development/tools/sdk/archive", "type": 301 },
-      { "source": "/setup", "destination": "/get-started", "type": 301 },
+      { "source": "/setup", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/setup-:os*", "destination": "/docs/get-started/install/:os*", "type": 301 },
       { "source": "/support", "destination": "/community", "type": 301 },
       { "source": "/technical-overview", "destination": "/docs/resources/technical-overview", "type": 301 },
