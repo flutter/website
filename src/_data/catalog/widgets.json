@@ -458,7 +458,7 @@
   },
   {
     "name": "CupertinoActionSheet",
-    "description": "An iOS-style bottom action sheet.",
+    "description": "An iOS-style modal bottom action sheet to choose an option among many.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
@@ -497,6 +497,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
   },
   {
+    "name": "CupertinoDatePicker",
+    "description": "An iOS-style date or date and time picker.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDatePicker-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-date-picker.png'>"
+  },
+  {
     "name": "CupertinoDialog",
     "description": "An iOS-style dialog.",
     "categories": [
@@ -515,6 +525,46 @@
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoDialogAction-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-dialog-action.png'>"
+  },
+  {
+    "name": "CupertinoFullscreenDialogTransition",
+    "description": "An iOS-style transition used for summoning fullscreen dialogs.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
+  },
+  {
+    "name": "CupertinoPageScaffold",
+    "description": "Basic iOS style page layout structure. Positions a navigation bar and content on a background.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-scaffold.png'>"
+  },
+  {
+    "name": "CupertinoPageTransition",
+    "description": "Provides an iOS-style page transition animation.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageTransition-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-transition.png'>"
+  },
+  {
+    "name": "CupertinoPicker",
+    "description": "An iOS-style picker control. Used to select an item in a short list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
   },
   {
     "name": "CupertinoSegmentedControl",
@@ -547,36 +597,6 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-switch.png'>"
   },
   {
-    "name": "CupertinoPicker",
-    "description": "An iOS-style picker control. Used to select an item in a short list.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPicker-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
-  },
-  {
-    "name": "CupertinoPageTransition",
-    "description": "Provides an iOS-style page transition animation.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageTransition-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-transition.png'>"
-  },
-  {
-    "name": "CupertinoFullscreenDialogTransition",
-    "description": "An iOS-style transition used for summoning fullscreen dialogs.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
-  },
-  {
     "name": "CupertinoNavigationBar",
     "description": "An iOS-style top navigation bar. Typically used with CupertinoPageScaffold.",
     "categories": [
@@ -597,16 +617,6 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-bar.png'>"
   },
   {
-    "name": "CupertinoPageScaffold",
-    "description": "Basic iOS style page layout structure. Positions a navigation bar and content.",
-    "categories": [
-      "Cupertino (iOS-style widgets)"
-    ],
-    "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPageScaffold-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-page-scaffold.png'>"
-  },
-  {
     "name": "CupertinoTabScaffold",
     "description": "Tabbed iOS app structure. Positions a tab bar on top of tabs of content.",
     "categories": [
@@ -618,7 +628,17 @@
   },
   {
     "name": "CupertinoTabView",
-    "description": "Root content of a tab that supports parallel navigation between tabs. Typically used with CupertinoTabScaffold",
+    "description": "Root content of a tab that supports parallel navigation between tabs. Typically used with CupertinoTabScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTextField-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-textfield.png'>"
+  },
+  {
+    "name": "CupertinoTextField",
+    "description": "An iOS-style text field.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
