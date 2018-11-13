@@ -813,7 +813,7 @@ ListView.builder(
 <br>
 To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App,
-Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/#0)
+Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 codelab.
 
 ### How do I use a Canvas to draw or paint?

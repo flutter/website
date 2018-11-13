@@ -24,7 +24,7 @@ Other resources:
 
 * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 * [Flutter Cookbook](/docs/cookbook)
-* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart/#0) codelab
+* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart) codelab
 * [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!
