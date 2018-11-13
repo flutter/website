@@ -348,9 +348,9 @@ iOS, and Android:
 ### Android
 
 You can find the following debugging resources on
-[developer.android.com](https://developer.android.com/).
+[developer.android.com](https://developer.android.com).
 
-* [Debug your app](https://developer.android.com/studio/debug/)
+* [Debug your app](https://developer.android.com/studio/debug)
 * [Android Debug
   Bridge (adb)](https://developer.android.com/studio/command-line/adb)
 

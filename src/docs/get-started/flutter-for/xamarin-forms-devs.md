@@ -1949,9 +1949,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
+part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 
 ## Working with text
 

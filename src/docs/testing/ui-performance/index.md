@@ -155,7 +155,7 @@ your actions on the UI thread have performance consequences on other threads.
    For more information, see the
    [UIKit](https://developer.apple.com/documentation/uikit)
    documentation for iOS, or the
-   [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread.html)
+   [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread)
    documentation for Android.
    This thread is not shown in the performance overlay.
 

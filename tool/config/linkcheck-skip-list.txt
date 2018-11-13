@@ -8,6 +8,11 @@
 # The full link is:
 # https://groups.google.com/forum/#!forum/flutter-dev
 
+# Linkcheck can't see pub tab "anchors"
+https://pub.dartlang.org/packages/.*?\#-.*?-tab-$
+
+https://help.apple.com/.*?/\#/dev
+
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
