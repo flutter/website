@@ -16,6 +16,7 @@ is also similar to how you create a single UI, that is used on multiple platform
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
+{% include declarative.md %}
 
 ## Project Setup
 

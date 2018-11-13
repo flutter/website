@@ -29,6 +29,8 @@ The examples assume:
   );
   ```
 
+{% include declarative.md %}
+
 ## Performing basic layout operations
 
 The following examples show how to perform the most common UI layout tasks.
