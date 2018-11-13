@@ -301,7 +301,7 @@ class MyApp extends StatelessWidget {
 ### Problems?
 
 If you can't get your code to run, look in your IDE for possible errors.
-[Debugging Flutter Apps](https://flutter.io/debugging/) might help.
+[Debugging Flutter Apps](/docs/testing/debugging) might help.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
@@ -770,13 +770,13 @@ it's easiest to use one of the prefabricated widgets. Here's a partial list:
 
 The following resources may help when adding interactivity to your app.
 
-* [Gestures](https://flutter.io/widgets-intro/#gestures),
+* [Gestures](/docs/development/ui/widgets-intro#handling-gestures),
   a section in [A Tour of the Flutter Widget
-  Framework](https://flutter.io/widgets-intro/)<br>
+  Framework](/docs/development/ui/widgets-intro)<br>
   How to create a button and make it respond to input.
-* [Gestures in Flutter](https://flutter.io/gestures/)<br>
+* [Gestures in Flutter](/docs/development/ui/advanced/gestures)<br>
   A description of Flutter's gesture mechanism.
-* [Flutter API documentation](https://docs.flutter.io/)<br>
+* [Flutter API documentation](https://docs.flutter.io)<br>
   Reference documentation for all of the Flutter libraries.
 * [Flutter
   Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>

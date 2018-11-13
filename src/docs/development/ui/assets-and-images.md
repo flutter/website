@@ -231,7 +231,8 @@ you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {#from-packages}
 
-To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
+To load an image from a [package](/docs/development/packages-and-plugins/using-packages) dependency,
+the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 

@@ -190,7 +190,7 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in Flutter
 Buttons, progress bars, animation controllers are all widgets. When building a route, you create
 a widget tree.
 
-Flutter includes the [Material Components](https://flutter.io/widgets/material/)
+Flutter includes the [Material Components](/docs/reference/widgets/material)
 library. These are widgets that implement the
 [Material Design guidelines](https://material.io/design/). Material Design is a
 flexible design system [optimized for all
