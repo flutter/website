@@ -233,12 +233,12 @@ For detailed instructions on publishing the release version of an app to the
 Google Play Store, see the [Google Play publishing documentation][play].
 
 [manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
-[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element.html
-[appid]: https://developer.android.com/studio/build/application-id.html
-[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element.html
-[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element.html
+[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element
+[appid]: https://developer.android.com/studio/build/application-id
+[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element
+[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element
 [gradlebuild]: https://developer.android.com/studio/build/#module-level
-[versions]: https://developer.android.com/studio/publish/versioning.html
-[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html
-[configurationqualifiers]: https://developer.android.com/guide/practices/screens_support.html#qualifiers
-[play]: https://developer.android.com/distribute/googleplay/start.html
+[versions]: https://developer.android.com/studio/publish/versioning
+[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
+[configurationqualifiers]: https://developer.android.com/guide/practices/screens_support#qualifiers
+[play]: https://developer.android.com/distribute/googleplay/start

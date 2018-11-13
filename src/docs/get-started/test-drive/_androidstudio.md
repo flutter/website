@@ -35,6 +35,6 @@ In the project directory, the code for your app is in `lib/main.dart`.
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
-[Managing AVDs]: https://developer.android.com/studio/run/managing-avds.html
+[Managing AVDs]: https://developer.android.com/studio/run/managing-avds
 [Material Components]: https://material.io/guidelines
 </div>

@@ -815,7 +815,7 @@ For example:
 
 To perform custom performance traces and measure wall/CPU time of
 arbitrary segments of Dart code similar to what would be done on Android
-with [systrace](https://developer.android.com/studio/profile/systrace.html), use
+with [systrace](https://developer.android.com/studio/profile/systrace), use
 `dart:developer`'s [Timeline](https://api.dartlang.org/stable/dart-developer/Timeline-class.html)
 utilities to wrap the code you want to measure such as:
 

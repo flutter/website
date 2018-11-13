@@ -19,9 +19,9 @@ previous experience with Dart or mobile programming.
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
-on [Google Developers](https://codelabs.developers.google.com/).
+on [Google Developers](https://codelabs.developers.google.com).
 [Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
-can also be found on [Google Developers](https://codelabs.developers.google.com/).
+can also be found on [Google Developers](https://codelabs.developers.google.com).
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -564,7 +564,7 @@ In this codelab, you've:
 If you would like to extend this app, proceed to
 [part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 on the
-[Google Developers Codelabs](https://codelabs.developers.google.com/) site,
+[Google Developers Codelabs](https://codelabs.developers.google.com) site,
 where you add the following functionality:
 
 * Implement interactivity by adding a clickable heart icon to save
