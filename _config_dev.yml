@@ -1,5 +1,5 @@
 # Site settings for development mode
-url: https://flutter-io-staging-1.firebaseapp.com
-# url: http://localhost:4002
+url: http://localhost:4002
+# url: https://flutter-io-staging-1.firebaseapp.com
 
 # dartlang: "http://localhost:4000"

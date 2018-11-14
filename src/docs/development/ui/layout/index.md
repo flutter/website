@@ -1589,5 +1589,5 @@ The following resources may help when writing layout code.
 * [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)<br>
   Explains how to add images and other assets to your app's package.
 * [Zero to One with
-  Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354#.z86tsq4ld)<br>
+  Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354)<br>
   One person's experience writing his first Flutter app.
