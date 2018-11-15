@@ -99,7 +99,7 @@ a concrete value for the current frame of an animation, you also need an
 animation to determine the current state. There are two ways to combine a tween
 with an animation to get a concrete value:
 
-1. You can [`evaluate`](https://docs.flutter.io/flutter/animation/Tween/evaluate.html)
+1. You can [`evaluate`](https://docs.flutter.io/flutter/animation/Animatable/evaluate.html)
    the tween at the current value of an animation. This approach is most useful
    for widgets that are already listening to the animation and hence
    rebuilding whenever the animation changes value.
@@ -118,7 +118,7 @@ Animations are actually built from a number of core building blocks.
 ## Scheduler
 
 The
-[`SchedulerBinding`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding-class.html)
+[`SchedulerBinding`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding-mixin.html)
 is a singleton class that exposes the Flutter scheduling primitives.
 
 For this discussion, the key primitive is the frame callbacks. Each

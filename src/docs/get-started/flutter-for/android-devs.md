@@ -377,8 +377,9 @@ and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
-for-mobile-app-in-dart-flutter).
+[StackOverflow][].
+
+[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -1339,7 +1340,9 @@ The observable lifecycle events are:
   event to map to on iOS
 
 For more details on the meaning of these states, see the
-[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
+[`AppLifecycleStatus` documentation][].
+
+[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
 
 As you might have noticed, only a small minority of the Activity lifecycle events
 are available; while `FlutterActivity` does capture almost all the activity lifecycle
