@@ -59,7 +59,7 @@ more space than the screen supports.
 We will populate the `ListView` with a [`DrawerHeader`](https://docs.flutter.io/flutter/material/DrawerHeader-class.html)
 and two [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html)
 Widgets. For more information on working with Lists, please see the
-[list recipes](/docs/cookbook/#lists).
+[list recipes](/docs/cookbook#lists).
 
 <!-- skip -->
 ```dart

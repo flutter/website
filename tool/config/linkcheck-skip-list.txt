@@ -1,20 +1,25 @@
 # Enter regexp pattern, one per line.
 
-# The following pattern isn't working for external links
-# (https://github.com/filiph/linkcheck/issues/27):
-#
-# forum/flutter-dev # To avoid "missing anchor" error
-#
-# The full link is:
-# https://groups.google.com/forum/#!forum/flutter-dev
+# GitHub doesn't allow robots, and if we don't skip these links the generated output is too much for Travis
+https://github.com/
 
-# Linkcheck can't see pub tab "anchors"
+# -----------------------------------------------------------------------------
+# Links with "anchors" that aren't really anchors
+# (and so linkcheck reports the anchors as missing)
+
+https://codelabs.developers.google.com/codelabs/flutter/\#6
+https://groups.google.com/forum/\#!forum/flutter-dev
+https://guides.cocoapods.org/syntax/podspec.html\#dependency
+https://help.apple.com/.*?/\#/dev
 https://pub.dartlang.org/packages/.*?\#-.*?-tab-$
 
-https://help.apple.com/.*?/\#/dev
+# Links that get redirected, and the target page doesn't have the specified anchor:
+https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher\#size
+https://material.io/guidelines/motion/transforming-material.html\#transforming-material-radial-transformation
+
+# -----------------------------------------------------------------------------
+# Temporary skip rules below this point
 
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
-
-# Temporary skip rules below this point:

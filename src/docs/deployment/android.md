@@ -56,7 +56,7 @@ Alternatively, if you want to do it manually, here's how:
    design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
-   in folders named using [Configuration Qualifiers][configurationqualifiers].
+   in folders named using [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct naming convention.
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
@@ -240,5 +240,5 @@ Google Play Store, see the [Google Play publishing documentation][play].
 [gradlebuild]: https://developer.android.com/studio/build/#module-level
 [versions]: https://developer.android.com/studio/publish/versioning
 [launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
-[configurationqualifiers]: https://developer.android.com/guide/practices/screens_support#qualifiers
+[configuration qualifiers]: https://developer.android.com/guide/topics/resources/providing-resources#AlternativeResources
 [play]: https://developer.android.com/distribute/googleplay/start
