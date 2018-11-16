@@ -153,10 +153,11 @@
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
+    - title: Performance best practices
+      permalink: /docs/testing/best-practices
     - title: Performance profiling
       permalink: /docs/testing/ui-performance
-    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
-    # We don't have this page yet, so that's fine.
+    # We don't have this page yet.
     # - title: Making your compiled app smaller
 
 - title: Deployment
