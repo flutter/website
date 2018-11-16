@@ -393,15 +393,14 @@ automatically scrolls when its content exceeds the render box. Most
 developers using ListView don't want to manage ListView's
 scrolling behavior, so ListView itself manages its scroll offset.
 
-The _TapboxAState class:
+The `_TapboxAState` class:
 
-* Manages state for TapboxA.
+* Manages state for `TapboxA`.
 * Defines the `_active` boolean which determines the box's current color.
 * Defines the `_handleTap()` function, which updates `_active` when the box is
   tapped and calls the `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<!-- code/layout/lakes-interactive/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // TapboxA manages its own state.
@@ -464,9 +463,6 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-**Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-a/main.dart)
-
 <hr>
 
 <a name="parent-managed"></a>
@@ -495,7 +491,6 @@ The TapboxB class:
 * Extends StatelessWidget because all state is handled by its parent.
 * When a tap is detected, it notifies the parent.
 
-<!-- code/layout/tapbox-b/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 // ParentWidget manages the state for TapboxB.
@@ -561,9 +556,6 @@ class TapboxB extends StatelessWidget {
 }
 {% endprettify %}
 
-**Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-b/main.dart)
-
 <aside class="alert alert-success" markdown="1">
 <i class="fa fa-lightbulb-o"> </i> **Tip:**
 When creating API, consider using the `@required` annotation for
@@ -614,7 +606,6 @@ The _TapboxCState object:
   [widget](https://docs.flutter.io/flutter/widgets/State/widget.html)
   property.
 
-<!-- code/layout/tapbox-c/main.dart -->
 <!-- skip -->
 {% prettify dart %}
 //---------------------------- ParentWidget ----------------------------
@@ -718,9 +709,6 @@ but if you asked someone to use that tap box, they'd probably complain that
 it doesn't make much sense. The developer cares whether the box is active.
 The developer probably doesn't care how the highlighting is managed,
 and prefers that the tap box handles those details.
-
-**Dart code:**
-[`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/tapbox-c/main.dart)
 
 <hr>
 
