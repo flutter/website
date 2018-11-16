@@ -1,5 +1,7 @@
 ---
 title: Using OEM debuggers
+short-title: debuggers
+description: How to connect an OEM debugger, such as XCode, to your running Flutter app.
 ---
 
 {{site.alert.tip}}
