@@ -101,8 +101,6 @@ Also see:
 
 ###  Build and display frames in 16ms
 
-Well, sort of.
-
 A frame should be built and rendered in 16ms (1/60th of a second) _or less_
 for a 60Hz display.  Note that means built in 8ms or less,
 and rendered in 8ms or less, for a total of 16ms or less.
@@ -114,6 +112,8 @@ render a frame as fast as possible. Why?
 
 * Lowering the frame rate render time below 16ms may not make a visual
   difference, but it will **improve battery life** and thermal issues.
+* It may run fine on your device, but consider performance for the
+  lowest device you are targeting.
 * When 120fps devices become widely available, you’ll want to render frames
   in under 8ms (total) in order to provide the smoothest experience.
 
@@ -133,7 +133,7 @@ In the Flutter inspector, bring up the **Performance** tab and enable the
 frames are being rendered and displayed in more than 16ms.
 Where possible, the plugin provides a link to a relevant tip.
 
-[INSERT IMAGE after UI change lands]
+[PENDING: INSERT IMAGE after UI change lands]
 
 The following behaviors might negatively impact your app's performance.
 
