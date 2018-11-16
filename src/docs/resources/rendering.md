@@ -62,7 +62,7 @@ render tree:
    model).
 
  * Finally, subclasses of `RenderObject` can override the default, do-nothing
-   implemenations of `handleEvent` and `rotate` to respond to user input and
+   implementations of `handleEvent` and `rotate` to respond to user input and
    screen rotation, respectively.
 
 The base model also provides two mixins for common child models:
