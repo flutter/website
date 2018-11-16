@@ -17,6 +17,11 @@ these widget trees. It can be helpful when:
 
 ![IntelliJ Flutter inspector window]({% asset tools/android-studio/visual-debugging.png @path %})
 
+## Getting started with the inspector
+
+The inspector is currently available in [the Flutter
+plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
+
 To start click "Select widget" on the Flutter inspector toolbar, and then click
 on the device to select a widget. The selected widget is then highlighted
 on the device and in the widget tree.
@@ -35,11 +40,6 @@ and the sizes flow back up.
 
 For a more complete demonstration of the inspector, see the
 [DartConf 2018 talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
-
-## Get Started with the inspector
-
-The inspector is currently available in [the Flutter
-plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
 
 ## Feedback
 
