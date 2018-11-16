@@ -60,7 +60,7 @@ Some general rules when applying specific effects:
   in the Opacity API page for an example of applying opacity directly
   to an image, which is faster than using the Opacity widget.
 * **Clipping** doesn’t call `saveLayer()` (unless explicitly requested with
-  Clip.antiAliasWithSaveLayer()`) so these operations aren’t as expensive
+  `Clip.antiAliasWithSaveLayer()`) so these operations aren’t as expensive
   as Opacity, but clipping is still costly, so use with caution. By default,
   clipping is disabled (`Clip.none`), so you must explicitly enable it when
   needed. 
