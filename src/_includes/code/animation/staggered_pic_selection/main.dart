@@ -173,7 +173,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
       _select();
   }
 
-  Future<Null> _replace(Photo oldPhoto, Photo newPhoto) async {
+  Future<void> _replace(Photo oldPhoto, Photo newPhoto) async {
     try {
       setState(() {
         _oldPhoto = oldPhoto;

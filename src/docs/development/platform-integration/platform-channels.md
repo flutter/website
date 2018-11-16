@@ -143,7 +143,7 @@ inside `setState`.
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
 
-  Future<Null> _getBatteryLevel() async {
+  Future<void> _getBatteryLevel() async {
     String batteryLevel;
     try {
       final int result = await platform.invokeMethod('getBatteryLevel');

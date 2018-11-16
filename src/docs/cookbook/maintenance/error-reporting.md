@@ -89,7 +89,7 @@ errors when our app is in production mode.
 
 <!-- skip -->
 ```dart
-Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+Future<void> _reportError(dynamic error, dynamic stackTrace) async {
   // Print the exception to the console
   print('Caught error: $error');
   if (isInDebugMode) {
@@ -121,7 +121,7 @@ providing an `onError` callback.
 
 <!-- skip -->
 ```dart
-runZoned<Future<Null>>(() async {
+runZoned<Future<void>>(() async {
   runApp(CrashyApp());
 }, onError: (error, stackTrace) {
   // Whenever an error occurs, call the `_reportError` function. This will send

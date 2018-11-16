@@ -275,14 +275,14 @@ void main() {
 
           // Emulate a user's finger taking its time to go back to the original
           // position before the next scroll
-          await Future<Null>.delayed(Duration(milliseconds: 500));
+          await Future<void>.delayed(Duration(milliseconds: 500));
         }
 
         // Scroll up 5 times
         for (int i = 0; i < 5; i++) {
           await driver.scroll(
               userList, 0.0, 300.0, Duration(milliseconds: 300));
-          await Future<Null>.delayed(Duration(milliseconds: 500));
+          await Future<void>.delayed(Duration(milliseconds: 500));
         }
       });
 
