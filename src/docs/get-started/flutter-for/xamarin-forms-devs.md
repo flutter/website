@@ -540,8 +540,9 @@ and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
-for-mobile-app-in-dart-flutter).
+[StackOverflow][].
+
+[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -1378,9 +1379,10 @@ the user, is not responding to user input, but is running in the background.
 * `suspending` — The application is suspended momentarily. This event is Android
 only.
 
-For more details on the meaning of these states, see
-[`AppLifecycleStatus`
-documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
+For more details on the meaning of these states, see [`AppLifecycleStatus`
+documentation][].
+
+[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 

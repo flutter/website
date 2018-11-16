@@ -1744,8 +1744,8 @@ frame triggers, but they're most commonly used indirectly via an
 [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
 `AnimationControllers` need a `TickerProvider` to obtain their `Ticker`.
 If you are creating an AnimationController from a State, then you can use the
-[`TickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/TickerProviderStateMixin-class.html)
-or [`SingleTickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/SingleTickerProviderStateMixin-class.html)
+[`TickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/TickerProviderStateMixin-mixin.html)
+or [`SingleTickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/SingleTickerProviderStateMixin-mixin.html)
 classes to obtain a suitable `TickerProvider`.
 
 The [`Scaffold`](https://docs.flutter.io/flutter/material/Scaffold-class.html)
@@ -1969,11 +1969,9 @@ GestureDetector(
 );
 ```
 For more information, including a list of Flutter `GestureDetector` callbacks,
-see the
-[GestureDetector
-class](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
+see the [GestureDetector class][].
 
-
+[GestureDetector class]: https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#instance-properties
 
 |Android|iOS|
 |:---:|:--:|
