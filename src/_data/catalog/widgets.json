@@ -633,8 +633,8 @@
       "Cupertino (iOS-style widgets)"
     ],
     "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTextField-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-textfield.png'>"
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
   },
   {
     "name": "CupertinoTextField",
@@ -643,8 +643,8 @@
       "Cupertino (iOS-style widgets)"
     ],
     "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTextField-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-textfield.png'>"
   },
   {
     "name": "CupertinoTimerPicker",
