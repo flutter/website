@@ -441,6 +441,8 @@ as was used on the Flutter client side.
 
 ```objectivec
 #import <Flutter/Flutter.h>
+// Uncomment the following line if you are using pub sourced plugins.
+// #include "GeneratedPluginRegistrant.h"
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -454,6 +456,8 @@ as was used on the Flutter client side.
     // TODO
   }];
 
+  // Uncomment the following line if you are using pub sourced plugins.
+  [GeneratedPluginRegistrant registerWithRegistry:self];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 ```
@@ -548,7 +552,8 @@ a `FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Handle battery messages.
     })
-
+    // Uncomment the following line if you are using pub sourced plugins.
+    // GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
