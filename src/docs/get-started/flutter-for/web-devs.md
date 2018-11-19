@@ -29,7 +29,11 @@ The examples assume:
   );
   ```
 
-{% include declarative.md %}
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than imperative?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
 ## Performing basic layout operations
 

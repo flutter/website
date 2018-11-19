@@ -18,8 +18,6 @@ to use Flutter.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-{% include declarative.md %}
-
 ## Views
 
 ### What is the equivalent of a `UIView` in Flutter?
@@ -41,8 +39,8 @@ redraw until it is invalidated using `setNeedsDisplay()`.
 
 Furthermore, unlike `UIView`, Flutter’s widgets are lightweight, in part due
 to their immutability. Because they aren't views themselves, and aren't directly
-drawing anything, but rather are a description of the UI and its semantics that get
-"inflated" into actual view objects under the hood.
+drawing anything, but rather are a description of the UI and its semantics
+that get "inflated" into actual view objects under the hood.
 
 Flutter includes the [Material Components](https://material.io/develop/flutter/)
 library. These are widgets that implement the
@@ -55,6 +53,12 @@ But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
+
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than imperative?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
 ### How do I update `Widget`s?
 

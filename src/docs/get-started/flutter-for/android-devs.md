@@ -18,8 +18,6 @@ to use Flutter.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-{% include declarative.md %}
-
 ## Views
 
 ### What is the equivalent of a `View` in Flutter?
@@ -54,13 +52,19 @@ For example, on iOS, you can use the [Cupertino widgets](/docs/reference/widgets
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than imperative?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
+
 ### How do I update `Widget`s?
 
 In Android, you update your views by directly mutating them. However,
 in Flutter, `Widget`s are immutable and are not updated directly, instead
 you have to work with the widget's state.
 
-This is where the concept of Stateful vs Stateless widgets comes from. A
+This is where the concept of Stateful and Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
 information.
 
@@ -1291,12 +1295,12 @@ external dependencies to use in Flutter. A good place to find Flutter packages i
 
 ## Activities and fragments
 
-<aside class="alert alert-info" markdown="1">
-**Note:** You almost never want Android to restart the activity for a Flutter
-application. Especially since this goes directly against the advice of the Android
-documentation. So supporting split screen, for example, requires you to add
-`screenLayout` and probably `density` too.
-</aside>
+{{site.alert.note}}
+You almost never want Android to restart the activity for a Flutter
+application. Especially since this goes directly against the advice of
+the Android documentation. So supporting split screen, for example,
+requires you to add `screenLayout` and probably `density` too.
+{{site.alert.end}}
 
 ### What are the equivalent of activities and fragments in Flutter?
 
