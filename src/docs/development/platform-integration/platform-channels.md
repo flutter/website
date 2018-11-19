@@ -551,7 +551,7 @@ a `FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // Handle battery messages.
     })
-    
+
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
