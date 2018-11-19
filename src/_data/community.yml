@@ -73,6 +73,13 @@
   logo_src: community/logo-reddit.png
   learn_more_cta: Learn more
   learn_more_link: https://www.reddit.com/r/FlutterDev/
+  
+- name: Discord
+  description: >
+    Talk to other Flutter developers about everything Flutter-related, and share useful resources.
+  logo_src: community/logo-discord.png
+  learn_more_cta: Learn more
+  learn_more_link: https://discord.gg/N7Yshp4
 
 - name: UX Research
   description: >
