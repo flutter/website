@@ -143,7 +143,7 @@ inside `setState`.
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
 
-  Future<Null> _getBatteryLevel() async {
+  Future<void> _getBatteryLevel() async {
     String batteryLevel;
     try {
       final int result = await platform.invokeMethod('getBatteryLevel');
@@ -340,6 +340,7 @@ class MainActivity() : FlutterActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
+    GeneratedPluginRegistrant.registerWith(this)
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
       // TODO
     }
@@ -441,6 +442,7 @@ as was used on the Flutter client side.
 
 ```objectivec
 #import <Flutter/Flutter.h>
+#import "GeneratedPluginRegistrant.h"
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -454,6 +456,7 @@ as was used on the Flutter client side.
     // TODO
   }];
 
+  [GeneratedPluginRegistrant registerWithRegistry:self];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 ```
@@ -549,6 +552,7 @@ a `FlutterMethodChannel` tied to the channel name `samples.flutter.io/battery`:
       // Handle battery messages.
     })
 
+    GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

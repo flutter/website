@@ -15,7 +15,7 @@ from the internet.
 
 ## In-Memory
 
-In this example, we'll use the [transparent_image](https://pub.dartlang.org/packages/transparent_image)
+In this example, we'll use the [transparent_image]({{site.pub-pkg}}/transparent_image)
 package for a simple transparent placeholder.
 
 <!-- skip -->

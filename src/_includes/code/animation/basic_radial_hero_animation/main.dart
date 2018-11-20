@@ -110,7 +110,7 @@ class RadialExpansionDemo extends StatelessWidget {
             photo: imageName,
             onTap: () {
               Navigator.of(context).push(
-                PageRouteBuilder<Null>(
+                PageRouteBuilder<void>(
                   pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,

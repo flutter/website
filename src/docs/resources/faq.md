@@ -172,7 +172,7 @@ create your own widgets, or customize the existing widgets.
 Yes! The Flutter and Material teams collaborate closely,
 and Material Theming is fully supported. A number of
 examples of this are shown in the [MDC-103 Flutter: Material
-Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/)
+Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter)
 codelab.
 
 ### Does Flutter come with a testing framework?

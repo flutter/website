@@ -813,7 +813,7 @@ ListView.builder(
 <br>
 To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App,
-Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/#0)
+Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 codelab.
 
 ### How do I use a Canvas to draw or paint?
@@ -1744,8 +1744,8 @@ frame triggers, but they're most commonly used indirectly via an
 [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
 `AnimationControllers` need a `TickerProvider` to obtain their `Ticker`.
 If you are creating an AnimationController from a State, then you can use the
-[`TickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/TickerProviderStateMixin-class.html)
-or [`SingleTickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/SingleTickerProviderStateMixin-class.html)
+[`TickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/TickerProviderStateMixin-mixin.html)
+or [`SingleTickerProviderStateMixin`](https://docs.flutter.io/flutter/widgets/SingleTickerProviderStateMixin-mixin.html)
 classes to obtain a suitable `TickerProvider`.
 
 The [`Scaffold`](https://docs.flutter.io/flutter/material/Scaffold-class.html)
@@ -1969,11 +1969,9 @@ GestureDetector(
 );
 ```
 For more information, including a list of Flutter `GestureDetector` callbacks,
-see the
-[GestureDetector
-class](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#Properties).
+see the [GestureDetector class][].
 
-
+[GestureDetector class]: https://docs.flutter.io/flutter/widgets/GestureDetector-class.html#instance-properties
 
 |Android|iOS|
 |:---:|:--:|

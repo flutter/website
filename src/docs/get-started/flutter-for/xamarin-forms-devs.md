@@ -206,10 +206,9 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, animation controllers are all
 widgets. When building a route, you create a widget tree.
 
-Flutter includes the [Material
-Components](https://flutter.io/widgets/material/) library. These are
-widgets that implement the [Material Design
-guidelines](https://material.io/design/). Material Design is a
+Flutter includes the [Material Components](/docs/reference/widgets/material)
+library. These are widgets that implement the
+[Material Design guidelines](https://material.io/design/). Material Design is a
 flexible design system [optimized for all
 platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
@@ -557,8 +556,9 @@ and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
-for-mobile-app-in-dart-flutter).
+[StackOverflow][].
+
+[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -1395,9 +1395,10 @@ the user, is not responding to user input, but is running in the background.
 * `suspending` — The application is suspended momentarily. This event is Android
 only.
 
-For more details on the meaning of these states, see
-[`AppLifecycleStatus`
-documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
+For more details on the meaning of these states, see [`AppLifecycleStatus`
+documentation][].
+
+[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1966,9 +1967,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
+part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 
 ## Working with text
 

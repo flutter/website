@@ -16,7 +16,7 @@ class BasicHeroAnimation extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute<Null>(
+              MaterialPageRoute<void>(
                 builder: (BuildContext context) {
                   return Scaffold(
                     appBar: AppBar(
