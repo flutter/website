@@ -29,6 +29,13 @@ The examples assume:
   );
   ```
 
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
+
 ## Performing basic layout operations
 
 The following examples show how to perform the most common UI layout tasks.
