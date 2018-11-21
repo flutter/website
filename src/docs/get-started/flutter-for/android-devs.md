@@ -22,6 +22,13 @@ that are most relevant to your needs.
 
 ### What is the equivalent of a `View` in Flutter?
 
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
+
 In Android, the `View` is the foundation of everything that shows up on the
 screen. Buttons, toolbars, and inputs, everything is a View.
 In Flutter, the rough equivalent to a `View` is a `Widget`.
@@ -48,15 +55,10 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino
+widgets](/docs/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
-
-{{site.alert.secondary}}
-How is react-style, or _declarative_, programming different than imperative?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
-{{site.alert.end}}
 
 ### How do I update `Widget`s?
 
@@ -203,8 +205,8 @@ catalog](/docs/reference/widgets/layout).
 ### How do I add or remove a component from my layout?
 
 In Android, you call `addChild()` or `removeChild()` on a parent to dynamically
-add or remove child views. In Flutter, because widgets are immutable there is no direct
-equivalent to `addChild()`.
+add or remove child views. In Flutter, because widgets are immutable there is
+no direct equivalent to `addChild()`.
 Instead, you can pass a function to the parent that returns a widget, and
 control that child's creation with a boolean flag.
 
@@ -298,8 +300,8 @@ When building the widget tree you assign the `Animation` to an animated
 property of a widget, such as the opacity of a `FadeTransition`, and tell the
 controller to start the animation.
 
-The following example shows how to write a `FadeTransition` that fades the widget
-into a logo when you press the `FloatingActionButton`:
+The following example shows how to write a `FadeTransition` that fades the
+widget into a logo when you press the `FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -374,8 +376,8 @@ and the [Animations overview](/docs/development/ui/animations).
 
 In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
 to the screen. Flutter has a similar `Canvas` API as well, since it is based
-on the same low-level rendering engine, Skia. As a result, painting to a canvas in
-Flutter is a very familiar task for Android developers.
+on the same low-level rendering engine, Skia. As a result, painting to a
+canvas in Flutter is a very familiar task for Android developers.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
@@ -441,15 +443,15 @@ In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
 
 In Flutter, build a custom widget by
-[composing](/docs/resources/technical-overview#everythings-a-widget) smaller widgets
-(instead of extending them).
+[composing](/docs/resources/technical-overview#everythings-a-widget)
+smaller widgets (instead of extending them).
 It is somewhat similar to implementing a custom
 `ViewGroup` in Android, where all the building blocks are already existing, but
 you provide a different behavior&mdash;for example, custom layout logic.
 
 For example, how do you build a `CustomButton` that takes a label in
-the constructor? Create a CustomButton that composes a `RaisedButton` with a label,
-rather than by extending `RaisedButton`:
+the constructor? Create a CustomButton that composes a `RaisedButton` with
+a label, rather than by extending `RaisedButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -1295,13 +1297,6 @@ external dependencies to use in Flutter. A good place to find Flutter packages i
 [Pub](https://pub.dartlang.org/flutter/packages/).
 
 ## Activities and fragments
-
-{{site.alert.note}}
-You almost never want Android to restart the activity for a Flutter
-application. Especially since this goes directly against the advice of
-the Android documentation. So supporting split screen, for example,
-requires you to add `screenLayout` and probably `density` too.
-{{site.alert.end}}
 
 ### What are the equivalent of activities and fragments in Flutter?
 

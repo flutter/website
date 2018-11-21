@@ -13,7 +13,7 @@ many other UI frameworks._
 Frameworks from Win32 to web to Android and iOS typically use an imperative
 style of UI programming. This may be the style you’re most familiar
 with&mdash;where you manually construct a full-functioned UI entity,
-such as a UIView or equivalent, and later change it using methods and
+such as a UIView or equivalent, and later mutate it using methods and
 setters when the UI changes. 
 
 In order to lighten the burden on developers from having to program how to

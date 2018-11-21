@@ -187,15 +187,16 @@ can not change its state once it is built. You change fields in your
 This way of generating UI is different than Xamarin.Forms, but there are
 many benefits to this approach.
 
-{{site.alert.secondary}}
-How is react-style, or _declarative_, programming different than imperative?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
-{{site.alert.end}}
-
 ## Views
 
 ### What is the equivalent of a `Page` or `Element` in Flutter?
+
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
 A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
 could use in a Xamarin.Forms application. These pages would then hold

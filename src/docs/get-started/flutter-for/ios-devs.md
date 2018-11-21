@@ -12,8 +12,8 @@ Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
 capabilities and configurations. Flutter is a new way to build UIs for mobile,
 but it has a plugin system to communicate with iOS (and Android) for non-UI
-tasks. If you're an expert in iOS development, you don't have to relearn everything
-to use Flutter.
+tasks. If you're an expert in iOS development, you don't have to relearn
+everything to use Flutter.
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
@@ -21,6 +21,13 @@ that are most relevant to your needs.
 ## Views
 
 ### What is the equivalent of a `UIView` in Flutter?
+
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
 On iOS, most of what you create in the UI is done using view objects, which are
 instances of the `UIView` class. These can act as containers for other `UIView`
@@ -53,12 +60,6 @@ But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
-
-{{site.alert.secondary}}
-How is react-style, or _declarative_, programming different than imperative?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
-{{site.alert.end}}
 
 ### How do I update `Widget`s?
 
