@@ -1,0 +1,25 @@
+.snackbar {
+  align-items: center;
+  bottom: $site-snackbar-padding;
+  display: flex;
+  justify-content: center;
+  left: $site-snackbar-padding;
+  position: fixed;
+  right: $site-snackbar-padding;
+  z-index: $site-z-snackbar;
+
+  &__container {
+    align-items: center;
+    background-color: #323232;
+    color: $site-color-white;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: bs-spacer(2) bs-spacer(4);
+  }
+
+  &__action {
+    margin-left: bs-spacer(4);
+    position: relative;
+    top: 1px;
+  }
+}

@@ -1,6 +1,7 @@
 ---
 title: PreferredSize Sample Apps
 description: Examples that use PreferredSize.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter PreferredSize class

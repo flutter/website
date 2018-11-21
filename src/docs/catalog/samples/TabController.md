@@ -1,6 +1,7 @@
 ---
 title: TabController Sample Apps
 description: Examples that use TabController.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter TabController class

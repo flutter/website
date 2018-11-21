@@ -1,6 +1,7 @@
 ---
 title: PopupMenuButton Sample Apps
 description: Examples that use PopupMenuButtons.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter PopupMenuButton class

@@ -1,6 +1,7 @@
 ---
 title: ExpansionTile Sample Apps
 description: Examples that use Expansion Tiles.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter ExpansionTile class in
