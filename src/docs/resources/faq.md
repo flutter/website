@@ -145,7 +145,7 @@ Studio](https://developer.android.com/studio/),
 and [VS Code](https://code.visualstudio.com/).
 
 See [editor configuration](/get-started/editor) for setup details, and
-['Developing Flutter apps in an IDE'](/docs/development/tools/ide)
+['Developing Flutter apps in an IDE'](/docs/development/tools/android-studio)
 for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal

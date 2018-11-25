@@ -153,10 +153,8 @@ class MyApp extends StatelessWidget {
     become skewed. You can fix this in your Flutter editor
     using the [automatic reformatting support](/docs/development/tools/formatting).
   - For a faster development experience, try Flutter's [hot reload][] feature.
-    For more information, see [Hot reload vs. Full app restart][].
 
   [hot reload]: /docs/development/tools/hot-reload
-  [Hot reload vs. Full app restart]: /docs/development/tools/ide#hot-reload-vs-full-app-restart
 {{site.alert.end}}
 
 ### Step 3: Implement the button row {#step-3}

@@ -8,7 +8,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
     <a class="nav-link active" role="tab" aria-selected="true">Android Studio / IntelliJ</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/docs/development/tools/ide/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
+    <a class="nav-link" href="/docs/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>
   </li>
 </ul>
 
