@@ -110,7 +110,7 @@ running or debugging.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _hot reload_ feature. See
-[Using hot reload](../hot-reload) for details.
+[Using hot reload](hot-reload) for details.
 
 ## Advanced debugging
 
