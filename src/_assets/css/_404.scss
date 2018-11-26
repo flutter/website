@@ -1,0 +1,40 @@
+.not-found {
+  font-size: 20px;
+
+  h1 {
+    color: $flutter-color-dark-blue;
+    font-size: 80px;
+    margin-bottom: bs-spacer(3);
+  }
+
+  &__wrapper {
+    padding: bs-spacer(10) 0;
+    text-align: center;
+  }
+
+  &__illo {
+    margin-bottom: bs-spacer(4);
+    max-width: 600px;
+    width: 100%;
+  }
+
+  &__link-list {
+    list-style: none;
+    margin: bs-spacer(8) auto 0;
+    max-width: 680px;
+    padding: 0;
+    text-align: left;
+
+    @include media-breakpoint-up(xs) {
+      column-count: 2;
+    }
+
+    @include media-breakpoint-up(sm) {
+      column-count: 3;
+    }
+
+    li {
+      margin-bottom: bs-spacer(2);
+    }
+  }
+}
