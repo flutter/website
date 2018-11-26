@@ -6,7 +6,7 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="/docs/development/tools/ide/android-studio" role="tab" aria-selected="false">Android Studio / IntelliJ</a>
+    <a class="nav-link" href="/docs/development/tools/android-studio" role="tab" aria-selected="false">Android Studio / IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>
@@ -110,7 +110,7 @@ running or debugging.
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
 of your changes almost instantly with the _hot reload_ feature. See
-[Using hot reload](../hot-reload) for details.
+[Using hot reload](hot-reload) for details.
 
 ## Advanced debugging
 

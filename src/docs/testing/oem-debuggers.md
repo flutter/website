@@ -341,8 +341,8 @@ iOS, and Android:
 ### Flutter
 
 * [Debugging Flutter Apps](/docs/testing/debugging)
-* [Advanced debugging](/docs/development/tools/ide#advanced-debugging), a section in
-  [Developing Flutter Apps in an IDE](/docs/development/tools/ide).
+* [Advanced debugging](/docs/development/tools/android-studio#advanced-debugging), a section in
+  [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
 * [Performance Profiling](/docs/testing/ui-performance)
 
 ### Android
