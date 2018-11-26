@@ -1,6 +1,7 @@
 ---
 title: AppBar Sample Apps
 description: Examples that use AppBars.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter AppBar class in an

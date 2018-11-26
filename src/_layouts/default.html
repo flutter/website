@@ -20,6 +20,9 @@ layout: base
     {% endif -%}
     <main class="site-content {{main-col}}" role="main">
       <div class="container">
+        {% if page.deprecated %}
+          {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
+        {% endif %}
         {% include next-prev-nav.html %}
         <header class="site-content__title">
           {% include shared/page-github-links.html %}

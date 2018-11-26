@@ -1,6 +1,7 @@
 ---
 title: ExpansionTile
 description: An example that uses ExpansionTiles.
+deprecated: true
 ---
 
 ExpansionTiles can used to produce two-level or multi-level lists.

@@ -1,6 +1,7 @@
 ---
 title: AppBar Basics
 description: An example that implements a basic AppBar.
+deprecated: true
 ---
 
 A typical AppBar with a title, actions, and an overflow dropdown menu.

@@ -1,6 +1,7 @@
 ---
 title: TabBarView Sample Apps
 description: Examples that use TabBarView.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter TabBarView class in

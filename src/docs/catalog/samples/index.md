@@ -2,6 +2,7 @@
 title: Sample App Catalog
 description: A list of samples that demonstrate some common mobile design patterns.
 toc: false
+deprecated: true
 ---
 
 This catalog lists applications that demonstrate how to implement common
