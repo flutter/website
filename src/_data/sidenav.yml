@@ -120,9 +120,9 @@
       permalink: /docs/development/tools
       children:
         - title: Android Studio / IntelliJ
-          permalink: /docs/development/tools/ide/android-studio
+          permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
-          permalink: /docs/development/tools/ide/vs-code
+          permalink: /docs/development/tools/vs-code
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
