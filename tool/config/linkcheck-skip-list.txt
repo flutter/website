@@ -1,7 +1,16 @@
 # Enter regexp pattern, one per line.
 
-# GitHub doesn't allow robots, and if we don't skip these links the generated output is too much for Travis
-https://github.com/
+# -----------------------------------------------------------------------------
+# Sites that don't allow robots. Linkcheck won't bother those sites, but if we
+# don't skip them, linkcheck prints every link that didn't check. This list is
+# sometimes too long for Travis, so it is simpler just to skip all site links.
+
+https://github.com
+
+# -----------------------------------------------------------------------------
+# Valid external links that result in connetion failures too often:
+
+https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372
 
 # -----------------------------------------------------------------------------
 # Links with "anchors" that aren't really anchors
