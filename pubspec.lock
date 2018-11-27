@@ -225,10 +225,12 @@ packages:
   linkcheck:
     dependency: "direct dev"
     description:
-      name: linkcheck
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.5"
+      path: "."
+      ref: chalin-connection-failures-as-warnings-1120
+      resolved-ref: fa3d4a2642e0071b6fe73ab324d73294648bce70
+      url: "https://github.com/filiph/linkcheck.git"
+    source: git
+    version: "2.0.6"
   logging:
     dependency: transitive
     description:
