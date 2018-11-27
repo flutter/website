@@ -10,6 +10,7 @@ https://github.com
 # -----------------------------------------------------------------------------
 # Valid external links that result in connetion failures too often:
 
+https://developers.google.com/events/flutter-live
 https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372
 
 # -----------------------------------------------------------------------------
