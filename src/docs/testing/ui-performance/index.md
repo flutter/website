@@ -143,7 +143,7 @@ The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
 
 <center><img src="/docs/testing/ui-performance/images/performance-overlay-green.png" alt="screenshot of performance overlay showing zero jank"></center>
-<center>Performance overlay showing the GPU thread (top), and UI thread (bottom).
+<center>Performance overlay showing the UI thread (top), and GPU thread (bottom).
 	The vertical green bars represent the current frame.</center><br>
 
 Flutter uses several threads to do its work. All your Dart code runs on
