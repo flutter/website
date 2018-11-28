@@ -197,7 +197,7 @@ bool fn() {
 ```
 
 Try it out in
-DartPad](https://dartpad.dartlang.org/5454e8bfadf3000179d19b9bc6be9918).
+[DartPad](https://dartpad.dartlang.org/5454e8bfadf3000179d19b9bc6be9918).
 
 For more information, see the documentation on
 [functions](https://www.dartlang.org/guides/language/language-tour#functions).
