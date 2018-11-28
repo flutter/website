@@ -167,7 +167,7 @@ your actions on the UI thread have performance consequences on other threads.
    a _layer tree_, a lightweight object containing device-agnostic
    painting commands, and sends the layer tree to the GPU thread to
    be rendered on the device. _Don't block this thread!_
-   Shown in the top row of the performance overlay.
+   Shown in the bottom row of the performance overlay.
 
 1. GPU thread<br>
    The GPU thread takes the layer tree and displays it by talking
@@ -176,7 +176,7 @@ your actions on the UI thread have performance consequences on other threads.
    it's a result of something you've done in the Dart code.
    Skia, the graphics library, runs on this thread, which is sometimes
    called the _rasterizer_ thread.
-   Shown in the bottom row of the performance overlay.
+   Shown in the top row of the performance overlay.
 
 1. I/O thread<br>
    Performs expensive tasks (mostly I/O) that would otherwise block
