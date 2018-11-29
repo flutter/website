@@ -107,14 +107,12 @@ dd {
   .site-figure-container {
     flex: 0 1 auto;
 
-    img {
-      width: 100%;
-    }
+    img { width: 100%; }
 
     figcaption {
-    margin-top: bs-spacer(4);
-    text-align: center;
-  }
+      margin-top: bs-spacer(4);
+      text-align: center;
+    }
   }
 }
 
