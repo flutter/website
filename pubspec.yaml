@@ -16,9 +16,3 @@ dependency_overrides:
   code_excerpter:
     git: https://github.com/chalin/code_excerpter.git
     # path: ../code_excerpter
-
-  # FIXME: Temporary override until 2.0.6 is published.
-  linkcheck:
-    git:
-      url: https://github.com/filiph/linkcheck.git
-      ref: chalin-connection-failures-as-warnings-1120
