@@ -2325,7 +2325,7 @@ with an animation, call the `Tween` object's `animate` method and pass it the
 `Animation` object that you want to modify.
 
 For this example, a
-`FadeTransition`](https://docs.flutter.io/flutter/widgets/FadeTransition-class.html)
+[`FadeTransition`](https://docs.flutter.io/flutter/widgets/FadeTransition-class.html)
 widget is used and the `opacity` property is mapped to the `animation` object.
 
 To start the animation, use `controller.forward()`. Other operations can also be
