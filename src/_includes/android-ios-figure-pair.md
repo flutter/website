@@ -1,8 +1,4 @@
 {% comment %}
-TODO: Fernando, should we set all `figure-caption` to have centered text,
-      or locally use class="text-center"? I'd favor the former.
-      I've (chalin) temporarily used .text-center below.
-
 Sadly, Jekyll doesn't seem to supported nested includes, so the following won't work:
 
   {% include app-figure.md image="{{include.image}}" platform="Android" %}
