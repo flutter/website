@@ -12,7 +12,7 @@
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
-In the project directory, the code for your app is in `lib/main.dart`.
+{% include_relative _main-code-note.md  %}
 
 ## Run the app
 
