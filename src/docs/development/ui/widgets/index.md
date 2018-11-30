@@ -1,6 +1,5 @@
 ---
 title: Widget catalog
-short-title: Catalog
 toc: false
 ---
 
@@ -12,11 +11,11 @@ you can also see all the widgets in the [widget index](/docs/reference/widgets).
 {% for section in site.data.catalog.index %}
     <div class="card">
         <div class="card-body">
-            <a href="{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+            <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
             <p class="card-text">{{section.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="{{section.id}}">Visit</a>
+            <a href="{{page.url}}{{section.id}}">Visit</a>
         </div>
     </div>
 {% endfor %}
