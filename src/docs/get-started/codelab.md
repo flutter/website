@@ -124,7 +124,7 @@ where the Dart code lives.
     You should see either Android or iOS output, depending on your device.
 
     {% indent %}
-      {% include_relative _android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
@@ -255,7 +255,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     or when toggling the Platform in Flutter Inspector.
 
     {% indent %}
-      {% include_relative _android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
+      {% include android-ios-figure-pair.md image="step2.png" alt="App at completion of second step" %}
     {% endindent %}
 
 ### Problems?
@@ -531,7 +531,7 @@ lazily, on demand.
     no matter how far you scroll.
 
     {% indent %}
-      {% include_relative _android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
+      {% include android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
