@@ -208,7 +208,7 @@ create generic widgets that can be reused in a wide variety of ways. Finally,
 `MyScaffold` uses an [Expanded]({{api}}/widgets/Expanded-class.html) to fill
 the remaining space with its body, which consists of a centered message.
 
-More information: [Layouts](/docs/reference/widgets/layout)
+More information: [Layouts](/docs/development/ui/widgets/layout)
 
 ## Using Material Components
 
@@ -285,7 +285,7 @@ for the [leading]({{api}}/material/AppBar-class.html#leading) and the
 throughout the framework and is something you might consider when designing your
 own widgets.
 
-More information: [Material components](/docs/reference/widgets/material)
+More information: [Material components](/docs/development/ui/widgets/material)
 
 ## Handling gestures
 

@@ -207,7 +207,7 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, animation controllers are all
 widgets. When building a route, you create a widget tree.
 
-Flutter includes the [Material Components](/docs/reference/widgets/material)
+Flutter includes the [Material Components](/docs/development/ui/widgets/material)
 library. These are widgets that implement the
 [Material Design guidelines](https://material.io/design/). Material Design is a
 flexible design system [optimized for all
@@ -216,7 +216,7 @@ including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
 For example, on iOS, you can use the [Cupertino
-widgets](/docs/reference/widgets/cupertino)
+widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -362,7 +362,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/reference/widgets/layout).
+catalog](/docs/development/ui/widgets/layout).
 
 ### How do I add or remove an Element from my layout?
 
@@ -542,7 +542,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/docs/reference/widgets/animation),
+[Animation & Motion widgets](/docs/development/ui/widgets/animation),
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
