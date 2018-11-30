@@ -16,7 +16,7 @@ Learn more about the Flutter framework:
 * [Flutter for web developers](/get-started/flutter-for/web-devs)
 * [Building layouts in Flutter](/docs/development/ui/layout) tutorial
 * [Add interactivity](/docs/development/ui/interactive) tutorial
-* [A Tour of the Flutter Widget Framework](/docs/development/ui/widgets-intro)
+* [Introduction to widgets](/docs/development/ui/widgets-intro)
 * [Flutter API Docs](https://docs.flutter.io/)
 * [flutter.io (this website)](/)
 
