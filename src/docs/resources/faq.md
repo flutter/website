@@ -231,7 +231,7 @@ No. Instead, Flutter provides a set of widgets
 (including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
-[catalog of Flutter's widgets](/docs/development/ui/widgets/catalog).
+[catalog of Flutter's widgets](/docs/development/ui/widgets).
 
 We are hoping the end-result will be higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
@@ -849,7 +849,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /docs/development/ui/widgets/catalog
+[widgets]: /docs/development/ui/widgets
 
 ### What are Flutter's guiding principles?
 

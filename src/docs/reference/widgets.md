@@ -28,4 +28,4 @@ Flutter. You can also [browse widgets by category][catalog].
 {% endfor %}
 </div>
 
-[catalog]: /docs/development/ui/widgets/catalog
+[catalog]: /docs/development/ui/widgets
