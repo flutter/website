@@ -197,7 +197,7 @@ the child Container sizes itself to match the parent.
   background-color: #ef5350; /* red 400 */
   padding: 16px;
   color: #ffffff;
-[[highlight]]    width: 100%;
+[[highlight]]  width: 100%;
   max-width: 240px; [[/highlight]]
 }
 {% endprettify %}
