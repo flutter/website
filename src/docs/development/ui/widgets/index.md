@@ -1,6 +1,6 @@
 ---
 title: Widget catalog
-short-title: Catalog
+short-title: Widgets
 toc: false
 ---
 
