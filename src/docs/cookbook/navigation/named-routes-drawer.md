@@ -161,7 +161,7 @@ void main() {
   ));
 }
 
-class NavigationDrawer extends StatelessWidget  {
+class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
