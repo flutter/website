@@ -71,7 +71,7 @@ the top left, by default.
     child: Text(
       "Lorem ipsum",
       style: [[highlight]]TextStyle(
-        fontSize: 24.0
+        fontSize: 24.0,
         fontWeight: FontWeight.w900,
         fontFamily: "Georgia",
       ),[[/highlight]]
