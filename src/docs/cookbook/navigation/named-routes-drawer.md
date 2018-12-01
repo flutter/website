@@ -6,7 +6,7 @@ In the
 [Navigate with named routes](/docs/cookbook/navigation/named-routes/)
 recipe, we learned how to Navigate to the same screen in many parts of our apps
 via a "named route". In the
-[Add a Drawer to a screen](/docs/cookbook/navigation/design/drawer/) recipe, we
+[Add a Drawer to a screen](/docs/cookbook/design/drawer/) recipe, we
 learned how to user a drawer for Navigation.
 
 This example will replicate the functionality from the original two recipes,
