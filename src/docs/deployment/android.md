@@ -214,7 +214,7 @@ Using the command line:
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
 
 The release APK for your app is created at
-`<app dir>/build/app/outputs/apk/app-release.apk`.
+`<app dir>/build/app/outputs/apk/release/app-release.apk`.
 
 ## Installing a release APK on a device
 
