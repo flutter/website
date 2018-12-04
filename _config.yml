@@ -12,7 +12,7 @@ repo:
 branch: master
 
 sdk: # Flutter SDK
-  channel: beta
+  channel: stable # When changing this value also update it in src/_assets/js/archive.js
 
 social:
   twitter: https://twitter.com/flutterio

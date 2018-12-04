@@ -35,6 +35,5 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
 
-# FIXME(Temporary): API entry that no longer exists. It is referenced from
-# /docs/cookbook/networking/background-parsing
+# FIXME(Temporary): https://github.com/flutter/website/issues/1865
 https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html
