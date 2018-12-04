@@ -156,3 +156,7 @@ dd {
 }
 
 .fa-macos { @extend .fa-apple; }
+
+.table-wrapper {
+  overflow-x: auto;
+}
