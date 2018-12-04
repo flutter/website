@@ -30,8 +30,7 @@ dependencies:
 
 In this example, we'll fetch a sample post from the
 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the
-[`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html)
-method.
+[http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 <!-- skip -->
 ```dart
@@ -40,7 +39,7 @@ Future<http.Response> fetchPost() {
 }
 ```
 
-The `http.get` method returns a `Future` that contains a `Response`.
+The `http.get()` method returns a `Future` that contains a `Response`.
 
   * [`Future`](https://docs.flutter.io/flutter/dart-async/Future-class.html) is
   a core Dart class for working with async operations. It is used to represent a
