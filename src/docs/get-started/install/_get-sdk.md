@@ -8,7 +8,7 @@
 
 ## Get the Flutter SDK {#get-sdk}
 
- 1. Download the following installation bundle to get the latest beta release of the
+ 1. Download the following installation bundle to get the latest {{site.sdk.channel}} release of the
     Flutter SDK:
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
@@ -22,13 +22,13 @@
 
       {% prettify shell %}
       $ cd ~/development
-      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-beta{{file_ext}}[[/end]]
+      $ {{unzip}} ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}[[/end]]
       {% endprettify %}
     {% endcomment -%}
 
     ```terminal
     $ cd ~/development
-    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-beta{{file_ext}}
+    $ {{unzip}} ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}{{file_ext}}
     ```
 
  1. Add the `flutter` tool to your path:
