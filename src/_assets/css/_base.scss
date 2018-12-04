@@ -21,6 +21,12 @@ dd {
   margin-bottom: .75rem;
 }
 
+p {
+  img {
+    max-width: 100%;
+  }
+}
+
 .card-deck.card-deck--responsive {
   .card {
     flex: 0 0 calc((100% / 3) - #{bs-spacer(4)});
