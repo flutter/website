@@ -59,7 +59,7 @@ function updateTableFailed(os) {
 }
 
 function updateDownloadLink(releases, os) {
-  var channel = "beta";
+  var channel = "stable";
   var releasesForChannel = releases.releases.filter(function (release) {
     return release.channel == channel;
   });
