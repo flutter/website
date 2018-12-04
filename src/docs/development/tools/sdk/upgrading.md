@@ -1,16 +1,17 @@
 ---
 title: Upgrading Flutter
 short-title: Upgrading
+description: Upgrading Flutter
 ---
 
-We strongly recommend tracking the `beta` branch in the flutter repository,
+We strongly recommend tracking the `{{site.sdk.channel}}` branch in the flutter repository,
 which is where we push 'known good builds' of Flutter. If you need to
 view the very latest changes, you can track the `master` branch,
 but note this is where we do our daily development, so stability is much lower.
 
 To view your current branch, use `flutter channel`.
 
-To change branch, use `flutter channel beta` / `flutter channel master`.
+To change branch, use `flutter channel <branch-name>`.
 
 ## Specifying the Flutter SDK for your project
 

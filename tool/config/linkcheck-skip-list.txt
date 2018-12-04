@@ -34,3 +34,7 @@ https://material.io/guidelines/motion/transforming-material.html\#transforming-m
 # FIXME(Temporary): linkcheck seems to be intermittently failing when accessing main.css
 # https://github.com/dart-lang/site-www/issues/1107
 /assets/main(-[0-9a-f]+)?.css
+
+# FIXME(Temporary): API entry that no longer exists. It is referenced from
+# /docs/cookbook/networking/background-parsing
+https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html

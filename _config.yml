@@ -11,6 +11,9 @@ repo:
   flutter: https://github.com/flutter/flutter
 branch: master
 
+sdk: # Flutter SDK
+  channel: beta
+
 social:
   twitter: https://twitter.com/flutterio
   youtube: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
