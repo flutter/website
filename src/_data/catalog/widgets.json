@@ -237,7 +237,6 @@
   },
   {
     "name": "DropdownButton",
-    "sample": "DropdownButton",
     "description": "Shows the currently selected item and an arrow that opens a menu for selecting another item.",
     "categories": [],
     "subcategories": [
