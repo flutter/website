@@ -395,7 +395,7 @@ lazily, on demand.
 
  1. Add a `_suggestions` list to the `RandomWordsState`
     class for saving suggested word pairings.
-    Also, add a `biggerFont` variable for making the font size larger.
+    Also, add a `_biggerFont` variable for making the font size larger.
 
     {{site.alert.tip}}
       Prefixing an identifier with an underscore [enforces
