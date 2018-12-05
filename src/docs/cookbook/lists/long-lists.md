@@ -32,7 +32,7 @@ In order to display our List of Strings, we'll need to render each String as
 a Widget!
 
 This is where the `ListView.builder` will come into play. In our case, we'll
-display each String on it's own line.
+display each String on its own line.
 
 <!-- skip -->
 ```dart
