@@ -1630,6 +1630,17 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "Expanded",
+    "categories": [
+    ],
+    "subcategories": [
+      "Layout helpers"
+    ],
+    "description": "A widget that expands a child of a Row, Column, or Flex..",
+    "link": "https://docs.flutter.io/flutter/widgets/Expanded-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "PageView",
     "description": "A scrollable list that works page by page.",
     "categories": [
