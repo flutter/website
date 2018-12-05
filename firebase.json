@@ -34,7 +34,7 @@
       { "source": "/docs/development/tools/sdk", "destination": "/docs/development/tools/sdk/upgrading", "type": 301 },
       { "source": "/docs/development/ui/widgets/catalog", "destination": "/docs/development/ui/widgets", "type": 301 },
       { "source": "/docs/reference/widgets/widgetindex", "destination": "/docs/reference/widgets", "type": 301 },
-      { "source": "/docs/reference/widgets/:catalogpage*", "destination": "/docs/development/ui/widgets/:catalogpage*", "type": 301 },
+      { "source": "/docs/reference/widgets/:catalogpage+", "destination": "/docs/development/ui/widgets/:catalogpage+", "type": 301 },
 
 
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
