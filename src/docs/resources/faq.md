@@ -425,7 +425,7 @@ adaptations in our widgets.
 
 ### Does Flutter run on the web?
 
-Yes. We're working on an experimental project called [Hummingbird][]. It is a
+We're working on an experimental project called [Hummingbird][]. It is a
 web-based implementation of the Flutter runtime that takes advantage of the
 capability of the Dart platform to compile to JavaScript. This enables Flutter
 code to run on the standards-based web without change.
