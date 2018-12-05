@@ -236,6 +236,16 @@
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png'>"
   },
   {
+    "name": "DropdownButton",
+    "description": "Shows the currently selected item and an arrow that opens a menu for selecting another item.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/DropdownButton-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "PopupMenuButton",
     "sample": "PopupMenuButton",
     "description": "Displays a menu when pressed and calls onSelected when the menu is dismissed because an item was selected.",
