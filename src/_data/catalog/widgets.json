@@ -1628,5 +1628,16 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/AnimatedWidgetBaseState-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "PageView",
+    "description": "A scrollable list that works page by page.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/PageView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   }
 ]
