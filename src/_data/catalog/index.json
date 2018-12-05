@@ -46,9 +46,6 @@
       {
         "name": "Multi-child layout widgets",
         "description":"These widgets take multiple children and arrange them in different ways."
-      },
-      {
-        "name": "Layout helpers"
       }
     ],
     "id":"layout"

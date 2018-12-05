@@ -939,7 +939,7 @@
     "categories": [
     ],
     "subcategories": [
-      "Layout helpers"
+      "Multi-child layout widgets"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/LayoutBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
@@ -1634,9 +1634,9 @@
     "categories": [
     ],
     "subcategories": [
-      "Layout helpers"
+      "Multi-child layout widgets"
     ],
-    "description": "A widget that expands a child of a Row, Column, or Flex..",
+    "description": "A widget that expands a child of a Row, Column, or Flex.",
     "link": "https://docs.flutter.io/flutter/widgets/Expanded-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
