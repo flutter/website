@@ -59,11 +59,6 @@ defaults:
     path: 'docs/get-started/flutter-for'
   values:
     show_breadcrumbs: false
-- scope:
-    path: 'docs/reference/widgets'
-  values:
-    show_breadcrumbs: true
-    toc: false
 
 # Build settings
 
