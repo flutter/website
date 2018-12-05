@@ -36,7 +36,7 @@ below.
 JavaScript doesn't have a pre-defined entry function—you define the entry point.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 function startHere() {
   // Can be used as entry point
@@ -46,7 +46,7 @@ In Dart, every app must have a top-level `main()` function that serves as the
 entry point to the app.
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 main() {
 }
@@ -56,16 +56,16 @@ Try it out in [DartPad](https://dartpad.dartlang.org/0df636e00f348bdec2bc1c8ebc7
 
 ### Printing to the console
 
-To print to the console in Dart, use `print`.
+To print to the console in Dart, use `print()`.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 console.log("Hello world!");
 ```
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 print('Hello world!');
 ```
@@ -88,13 +88,13 @@ In [Dart](https://www.dartlang.org/dart-2), variables must either be explicitly
 typed or the type system must infer the proper type automatically.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 var name = "JavaScript";
 ```
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 String name = 'dart'; // Explicitly typed as a string.
 var otherName = 'Dart'; // Inferred string.
@@ -116,13 +116,13 @@ numbers are objects in Dart, even uninitialized variables with numeric types
 have the value `null`.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 var name; // == undefined
 ```
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 var name; // == null
 int x; // == null
@@ -139,7 +139,7 @@ For more information, see the documentation on
 In JavaScript, values of 1 or any non-null objects are treated as true.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 var myNull = null;
 if (!myNull) {
@@ -153,7 +153,7 @@ if (!zero) {
 In Dart, only the boolean value `true` is treated as true.
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 var myNull = null;
 if (myNull == null) {
@@ -174,7 +174,7 @@ Dart and JavaScript functions are generally similar. The primary difference is
 the declaration.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 function fn() {
   return true;
@@ -182,7 +182,7 @@ function fn() {
 ```
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 fn() {
   return true;
@@ -210,7 +210,7 @@ Dart uses [`Future`](https://www.dartlang.org/tutorials/language/futures)
 objects to handle this.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 _getIPAddress = () => {
   const url="https://httpbin.org/ip";
@@ -228,7 +228,7 @@ _getIPAddress = () => {
 
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 _getIPAddress() {
   final url = 'https://httpbin.org/ip';
@@ -252,7 +252,7 @@ In JavaScript, the `async` function returns a `Promise`. The `await` operator is
 used to wait for a `Promise`.
 
 <!-- skip -->
-```JavaScript
+```js
 // JavaScript
 async _getIPAddress() {
   const url="https://httpbin.org/ip";
@@ -268,7 +268,7 @@ scheduled for execution later. The `await` operator is used to wait for a
 `Future`.
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 _getIPAddress() async {
   final url = 'https://httpbin.org/ip';
@@ -330,7 +330,7 @@ For more information, see the Flutter [Getting Started](/get-started) documentat
 In React Native, you need to import each required component.
 
 <!-- skip -->
-```JavaScript
+```js
 //React Native
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -338,7 +338,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 In Flutter, to use widgets from the Material Design library, import the `material.dart` package. To use iOS style widgets, import the Cupertino library. To use a more basic widget set, import the Widgets library. Or, you can write your own widget library and import that.
 <!-- skip -->
-```Dart
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
@@ -355,7 +355,7 @@ In React Native, the `HelloWorldApp` class extends `React.Component` and
 implements the render method by returning a view component.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -383,7 +383,7 @@ const styles = StyleSheet.create({
 In Flutter, you can create an identical "Hello world!" app using the `Center` and `Text` widgets from the core widget library. The `Center` widget becomes the root of the widget tree and has one child, the `Text` widget.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 import 'package:flutter/material.dart';
 
@@ -431,7 +431,7 @@ Material library. In this example, the widget tree is nested inside the
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 import 'package:flutter/material.dart';
 
@@ -484,7 +484,7 @@ In the example below, the `CustomCard` class is defined and then used inside a
 parent class.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 class CustomCard extends React.Component {
   render() {
@@ -639,7 +639,7 @@ In React Native, you would add a static image by placing the image file in a
 source code directory and referencing it.
 
 <!-- skip -->
-```JavaScript
+```js
 <Image source={require("./my-icon.png")} />
 ```
 
@@ -647,7 +647,7 @@ In Flutter, add a static image to your app using the `AssetImage` class in a
 widget’s build method.
 
 <!-- skip -->
-```Dart
+```dart
 image: AssetImage('assets/background.png'),
 ```
 
@@ -662,7 +662,7 @@ component and also provide the size if needed.
 In Flutter, use the `Image.network` constructor to include an image from a URL.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 body: Image.network(
           'https://flutter.io/images/owl.jpg',
@@ -699,7 +699,7 @@ dependencies:
 3. Import the package into your app code as shown below:
 
 <!-- skip -->
-```Dart
+```dart
 import 'package:flutter/cupertino.dart';
 ```
 
@@ -763,7 +763,7 @@ In React Native, `FlatList` or `SectionList` are used to render simple or
 sectioned lists.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 <FlatList
   data={[ ... ]}
@@ -781,7 +781,7 @@ those children that are visible.
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 var data = [ ... ];
 ListView.builder(
@@ -806,7 +806,7 @@ codelab.
 In React Native, canvas components aren't present so third party libraries like `react-native-canvas` are used.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 handleCanvas = canvas => {
   const ctx = canvas.getContext("2d");
@@ -836,7 +836,7 @@ and passes it to CustomPaint's painter property. CustomPaint subclasses
 must implement the `paint` and `shouldRepaint` methods.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 class MyCanvasPainter extends CustomPainter {
 
@@ -880,7 +880,7 @@ components in a column, you would specify a prop such as:
 `flexDirection: “column”`.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 <View
   style={%raw%}{{
@@ -906,7 +906,7 @@ its child widgets.
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 Center(
   child: Column(
@@ -953,7 +953,7 @@ The `Stack` widget positions its children relative to the edges of its box.
 This class is useful if you simply want to overlap several children widgets.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 Stack(
   alignment: const Alignment(0.6, 0.6),
@@ -990,7 +990,7 @@ In React Native, inline styling and `stylesheets.create` are used to style
 components.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 <View style={styles.container}>
   <Text style={%raw%}{{ fontSize: 32, color: "cyan", fontWeight: "600" }}{%endraw%}>
@@ -1014,7 +1014,7 @@ If you want to use the same text style in multiple places, you can create a
 class and use it for multiple `Text` widgets.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 var textStyle = TextStyle(fontSize: 32.0, color: Colors.cyan, fontWeight:
    FontWeight.w600);
@@ -1047,7 +1047,7 @@ In Flutter, importing the Material library also pulls in the rich set of
 and [colors](https://docs.flutter.io/flutter/material/Colors-class.html).
 
 <!-- skip -->
-```Dart
+```dart
 Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
@@ -1110,7 +1110,7 @@ class and passing it to the theme property in the
 widget.
 
 <!-- skip -->
-```Dart
+```dart
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1129,7 +1129,7 @@ widget takes a `ThemeData` in its `data` parameter and applies the
 `ThemeData` to all of its children widgets.
 
 <!-- skip -->
-```Dart
+```dart
  @override
   Widget build(BuildContext context) {
     return Theme(
@@ -1173,7 +1173,7 @@ of stateless widgets which subclass
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 import 'package:flutter/material.dart';
 
@@ -1237,7 +1237,7 @@ method. This method creates the state object that manages the widget's state,
 `_MyStatefulWidgetState`.
 
 <!-- skip -->
-```Dart
+```dart
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key, this.title}) : super(key: key);
   final String title;
@@ -1253,7 +1253,7 @@ the button, `setState` is called with the new toggle value. This causes the
 framework to rebuild this widget in the UI.
 
 <!-- skip -->
-```Dart
+```dart
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool showtext=true;
   bool toggleState=true;
@@ -1347,7 +1347,7 @@ example, `createState()` creates an instance of `_MyStatefulWidgetState`, which
 is implemented in the next best practice.
 
 <!-- skip -->
-```Dart
+```dart
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key, this.title}) : super(key: key);
   final String title;
@@ -1370,7 +1370,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 Add your custom `StatefulWidget` to the widget tree in the app’s build method.
 
 <!-- skip -->
-```Dart
+```dart
 class MyStatelessWidget extends StatelessWidget {
   // This widget is the root of your application.
 
@@ -1396,7 +1396,7 @@ different parameters or properties, called `props`. These
 parameters can be used in a child component using `this.props`.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 class CustomCard extends React.Component {
   render() {
@@ -1436,7 +1436,7 @@ In Flutter, you assign a local variable or function marked `final` with the
  property received in the parameterized constructor.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 class CustomCard extends StatelessWidget {
 
@@ -1484,7 +1484,7 @@ In React Native, you use the `setItem` and `getItem` functions of the
 global to the app.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 await AsyncStorage.setItem( "counterkey", json.stringify(++this.state.counter));
 AsyncStorage.getItem("counterkey").then(value => {
@@ -1511,7 +1511,7 @@ dependencies:
 ```
 
 <!-- skip -->
-```Dart
+```dart
 // Dart
 import 'package:shared_preferences/shared_preferences.dart';
 ```
@@ -1525,7 +1525,7 @@ and `getString`.
 
 
 <!-- skip -->
-```Dart
+```dart
 SharedPreferences prefs = await SharedPreferences.getInstance();
 _counter = prefs.getInt('counter');
 prefs.setInt('counter', ++_counter);
@@ -1552,7 +1552,7 @@ In React Native, there are three main navigators: StackNavigator, TabNavigator,
 and DrawerNavigator. Each provides a way to configure and define the screens.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 const MyApp = TabNavigator(
   { Home: { screen: HomeScreen }, Notifications: { screen: tabNavScreen } },
@@ -1589,7 +1589,7 @@ widget, or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -1615,7 +1615,7 @@ The name of the route is passed to the `pushNamed` function to
 navigate to the specified route.
 
 <!-- skip -->
-```Dart
+```dart
 Navigator.of(context).pushNamed('/a');
 ```
 
@@ -1631,7 +1631,7 @@ transition. It takes a
 as a required parameter.
 
 <!-- skip -->
-```Dart
+```dart
 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)
  => UsualNavscreen()));
 ```
@@ -1649,7 +1649,7 @@ In React Native, `createBottomTabNavigator` and `TabNavigation`  are used to
 show tabs and for tab navigation.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 import { createBottomTabNavigator } from 'react-navigation';
 
@@ -1671,7 +1671,7 @@ Flutter provides several specialized widgets for drawer and tab navigation:
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 TabController controller=TabController(length: 2, vsync: this);
 
@@ -1713,7 +1713,7 @@ widget along with the same `TabController`.
 
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 
 class _NavigationHomePageState extends State<NavigationHomePage> with SingleTickerProviderStateMixin {
@@ -1749,7 +1749,7 @@ In React Native, import the needed react-navigation packages and then use
 `createDrawerNavigator` and `DrawerNavigation`.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 export default (MyApp1 = DrawerNavigator({
   Home: {
@@ -1778,7 +1778,7 @@ In the following example, the
 widget provides the navigation on tap.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 Drawer(
   child:ListTile(
@@ -1798,7 +1798,7 @@ available in the `Scaffold`. The `Scaffold` automatically handles the
 edge-swipe gesture to show the `Drawer`.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 @override
 Widget build(BuildContext context) {
@@ -1838,7 +1838,7 @@ In React Native, listeners are added to components using `PanResponder` or
 the `Touchable` components.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 <TouchableOpacity
   onPress={() => {
@@ -1857,7 +1857,7 @@ For more complex gestures and combining several touches into a single gesture,
 is used.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 class App extends Component {
 
@@ -1891,7 +1891,7 @@ to any widget by wrapping it in a
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 GestureDetector(
   child: Scaffold(
@@ -1939,7 +1939,7 @@ React Native provides the Fetch API for networking—you make a fetch request
 and then receive the response to get the data.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 _getIPAddress = () => {
   fetch("https://httpbin.org/ip")
@@ -1969,14 +1969,14 @@ Flutter uses the
 core HTTP support client. To create an HTTP Client, import `dart:io`.
 
 <!-- skip -->
-```Dart
+```dart
 import 'dart:io';
 ```
 
 The client supports the following HTTP operations: GET, POST, PUT, and DELETE.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 final url = Uri.https('httpbin.org', 'ip');
 final httpClient = HttpClient();
@@ -2007,7 +2007,7 @@ In React Native, to enter text you use a `TextInput` component to show a text
 input box and then use the callback to store the value in a variable.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 <TextInput
   placeholder="Enter your Password"
@@ -2026,7 +2026,7 @@ into the field. You can access the text in `TextField` by the `text` property of
 the controller.
 
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 final TextEditingController _controller = TextEditingController();
       ...
@@ -2074,7 +2074,7 @@ you can use  `Form.of` with a context whose ancestor is the Form, or pass a
 `GlobalKey` to the Form constructor and call `GlobalKey.currentState`.
 
 <!-- skip -->
-```Dart
+```dart
 final formKey = GlobalKey<FormState>();
 
 ...
@@ -2104,7 +2104,7 @@ The following example shows how `Form.save()` and `formKey` (which is a
 `GlobalKey`) are used to save the form on submit.
 
 <!-- skip -->
-```Dart
+```dart
 void _submit() {
   final form = formKey.currentState;
   if (form.validate()) {
@@ -2132,7 +2132,7 @@ implementation by declaring a specific platform.
 In React Native, the following implementation would be used:
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 if (Platform.OS === "ios") {
   return "iOS";
@@ -2144,7 +2144,7 @@ if (Platform.OS === "ios") {
 ```
 In Flutter, use the following implementation:
 <!-- skip -->
-```Dart
+```dart
 // Flutter
 if (Theme.of(context).platform == TargetPlatform.iOS) {
   return "iOS";
@@ -2274,7 +2274,7 @@ to the opacity of the Text component that we want to animate, and then,
 `start()` is called to start the animation.
 
 <!-- skip -->
-```JavaScript
+```js
 // React Native
 class FadeInView extends React.Component {
   state = {
@@ -2333,7 +2333,7 @@ example, the
 widget is used inside the `FadeTransition` widget.
 
 <!-- skip -->
-```Dart
+```dart
 
 // Flutter
 import 'package:flutter/material.dart';
@@ -2390,7 +2390,7 @@ In Flutter, to add a swipe animation, use the
 widget and nest the child widgets.
 
 <!-- skip -->
-```Dart
+```dart
 child: Dismissible(
   key: key,
   onDismissed: (DismissDirection dir) {
