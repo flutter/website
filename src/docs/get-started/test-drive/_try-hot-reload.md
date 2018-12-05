@@ -20,7 +20,7 @@ want to hot reload, and see the change in your simulator, emulator, or device.
     </code>.
 
     {{site.alert.important}}
-      Do _not_ press the **Stop** button; let your app run.
+      Do _not_ stop your app. Let your app run.
     {{site.alert.end}}
 
  1. Save your changes{{include.save_changes}}

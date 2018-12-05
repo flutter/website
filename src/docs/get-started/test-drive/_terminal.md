@@ -30,7 +30,12 @@ contains a simple demo app that uses
     $ flutter run
     ```
 
-{% include_relative _try-hot-reload.md %}
+{% capture save_changes -%}
+.
+1. Type <kbd>R</kbd> in the terminal window.
+{% endcapture %}
+
+{% include_relative _try-hot-reload.md save_changes=save_changes %}
 
 [Install]: /get-started/install
 </div>
