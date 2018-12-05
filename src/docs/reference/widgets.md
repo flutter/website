@@ -2,6 +2,7 @@
 title: Flutter widget index
 short-title: Widgets
 show_breadcrumbs: false
+toc: false
 ---
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
