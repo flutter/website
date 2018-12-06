@@ -90,6 +90,18 @@ if you already have the required packages installed.
 
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
+    
+> TIP:
+> Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
+> happen when you pull from master and lots of image files have moved.) To fix this,
+> stop the `serve.sh` script, remove the generated site files by hand, and then
+> restart the `serve.sh` script:
+> 
+> ```
+> ^C
+> $ rm -Rf ./_site/* ./.jekyll*
+> $ ./tool/serve.sh
+> ```
 
 ## Deploy to a staging site
 
