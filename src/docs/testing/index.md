@@ -10,7 +10,7 @@ velocity.
 Automated testing falls into a few categories:
 
 - A _unit test_ tests a single function, method, or class. External dependencies
-  of the unit under test are generally [mocked out](/cookbook/testing/mocking/).
+  of the unit under test are generally [mocked out](/cookbook/testing/mocking).
   Unit tests generally don't read from or write to disk, render to screen,
   or receive user actions from outside the process running the test. The goal
   of a unit test is to verify the correctness of a unit of logic under a
@@ -44,9 +44,11 @@ different kinds of tests:
 | **Execution speed**  | Quick  | Slower | Slowest     |
 {:.table.table-striped}
 
-**Tip**: A well-tested app has many unit and widget tests,
-tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),
-plus enough integration tests to cover all the important usage scenarios.
+{{site.alert.tip}}
+  A well-tested app has many unit and widget tests,
+  tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),
+  plus enough integration tests to cover all the important use cases.
+{{site.alert.end}}
 
 
 ## Unit testing
@@ -85,9 +87,11 @@ dev_dependencies:
     sdk: flutter
 ```
 
-**Note:** The dev dependency on `flutter_test` is required even if
-your test doesn't explicitly import `flutter_test`,
-because the test framework uses `flutter_test` behind the scenes.
+{{site.alert.note}}
+  The dev dependency on `flutter_test` is required even if
+  your test doesn't explicitly import `flutter_test`,
+  because the test framework uses `flutter_test` behind the scenes.
+{{site.alert.end}}
 
 To run the test, run `flutter test test/unit_test.dart` from your
 project directory (not from the `test` subdirectory).
@@ -95,7 +99,7 @@ project directory (not from the `test` subdirectory).
 To run all your tests, run `flutter test` from your project directory.
 
 For information on how to create mock services, see
-[Mock dependencies using Mockito](/cookbook/testing/mocking/).
+[Mock dependencies using Mockito](/cookbook/testing/mocking).
 
 
 ## Widget testing
