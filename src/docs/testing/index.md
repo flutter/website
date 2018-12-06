@@ -2,18 +2,17 @@
 title: Testing Flutter apps
 ---
 
-The more features your app has, the harder it is to test it manually. A
-good set of automated tests help you make sure your app performs
+The more features your app has, the harder it is to test manually.
+Automated tests help ensure that your app performs
 correctly before you publish it, while retaining your feature and bug fix
 velocity.
 
-There are many kinds of automated testing. These are summarized below:
+Automated testing falls into a few categories:
 
 - A _unit test_ tests a single function, method, or class. External dependencies
-  of the unit under test are generally mocked out using, for example,
-  [`package:mockito`](https://github.com/dart-lang/mockito).
-  Unit tests generally do not read from/write to disk, render to screen and do
-  not receive user actions from outside the process running the test. The goal
+  of the unit under test are generally [mocked out](/cookbook/testing/mocking).
+  Unit tests generally don't read from or write to disk, render to screen,
+  or receive user actions from outside the process running the test. The goal
   of a unit test is to verify the correctness of a unit of logic under a
   variety of conditions.
 - A _widget test_ (in other UI frameworks referred to as _component test_) tests
@@ -41,19 +40,20 @@ different kinds of tests:
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
 | **Maintenance cost** | Low    | Higher | Highest     |
-| **Dependencies**     | Few    | More   | Lots        |
+| **Dependencies**     | Few    | More   | Most        |
 | **Execution speed**  | Quick  | Slower | Slowest     |
 {:.table.table-striped}
 
-**Tip**: As a rule of thumb a well-tested app has a very high number of unit
-and widget tests, tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),
-and a good number of integration tests covering all the important usage
-scenarios.
+{{site.alert.tip}}
+  A well-tested app has many unit and widget tests,
+  tracked by [code coverage](https://en.wikipedia.org/wiki/Code_coverage),
+  plus enough integration tests to cover all the important use cases.
+{{site.alert.end}}
 
 
 ## Unit testing
 
-Some Flutter libraries, such as `dart:ui`, are not available in the standalone
+Some Flutter libraries, such as `dart:ui`, aren't available in the standalone
 Dart VM that ships with the default Dart SDK. The `flutter test` command lets
 you run your tests in a local Dart VM with a headless version of the Flutter
 Engine, which supplies these libraries. Using this command you can run any test,
@@ -87,14 +87,19 @@ dev_dependencies:
     sdk: flutter
 ```
 
-(This is needed even if your test does not itself explicitly import
-`flutter_test`, because the test framework itself uses it behind the
-scenes.)
+{{site.alert.note}}
+  The dev dependency on `flutter_test` is required even if
+  your test doesn't explicitly import `flutter_test`,
+  because the test framework uses `flutter_test` behind the scenes.
+{{site.alert.end}}
 
 To run the test, run `flutter test test/unit_test.dart` from your
 project directory (not from the `test` subdirectory).
 
 To run all your tests, run `flutter test` from your project directory.
+
+For information on how to create mock services, see
+[Mock dependencies using Mockito](/cookbook/testing/mocking).
 
 
 ## Widget testing
@@ -323,12 +328,11 @@ but for the `_test` suffix in it.
 
 ## Continuous integration and testing
 
-For information on continuous deployment and testing, see
+For information on continuous deployment and testing, see the following:
 
 * [Continuous Delivery using fastlane with Flutter](/docs/deployment/fastlane-cd/)
 * [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
-* Test Flutter apps with [GitLab
-  CI](https://docs.gitlab.com/ee/ci/README.html#doc-nav). You'll
-  need to create and configure a `.gitlab-ci.yml` file. You can [find an
+* [GitLab Continuous Integration (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
+  You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
   example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
   in the [flutter_redux library](https://github.com/brianegan/flutter_redux).
