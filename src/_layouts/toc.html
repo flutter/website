@@ -5,30 +5,27 @@ toc: false
 
 {% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
 {% assign path_parts = url | split: '/' -%}
-{% assign num_parts = path_parts | size -%}
+{% assign topics = site.data.sidenav -%}
 
-{% if num_parts == 2 -%}
+{% comment %}
+  - path_parts[0] == '' because page.url always starts with '/'
+  - (path_parts | size) > 2 since we don't use this layout at
+    the top level, nor at the second level (under our current IA)
+{% endcomment -%}
 
-  {% assign topics = site.data.sidenav -%}
-
-{% else -%}
-
-  {% assign path1 = '/' | append: path_parts[1] -%}
-
-  {% assign topics = site.data.sidenav | where: "permalink", path1 -%}
-
-  {% if num_parts > 3 -%}
-    {% assign path2 = path1 | append: '/' | append: path_parts[2] -%}
-    {% assign topics = topics[0].children | where: "permalink", path2 -%}
+{% for path_part in path_parts -%}
+  {% if forloop.first == true -%}
+    {% assign path = '' -%}
+  {% else -%}
+    {% assign path = path | append: '/' | append: path_part -%}
   {% endif -%}
-
-  {% assign topics = topics[0].children -%}
-
+  {% if forloop.index0 > 1 -%}
+    {% assign topics = topics | where: "permalink", path -%}
+    {% assign topics = topics[0].children -%}
   {% endif -%}
+{% endfor -%}
 
-{% assign topics = topics | where: "title", page.title -%}
-{% assign entries = topics[0].children -%}
-
+{% assign entries = topics -%}
 {% capture md %}{% include mini-toc.md %}{% endcapture %}
 {{ md | markdownify }}
 
