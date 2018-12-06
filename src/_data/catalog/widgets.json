@@ -577,6 +577,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
   },
   {
+    "name": "CupertinoPopupSurface",
+    "description": "Rounded rectangle surface that looks like an iOS popup surface, such as an alert dialog or action sheet.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoSegmentedControl",
     "description": "An iOS-style segmented control. Used to select mutually exclusive options in a horizontal list.",
     "categories": [
