@@ -545,9 +545,8 @@ at the following link to get back on track.
 ## Next steps
 {:.no_toc}
 
-{% include app-figure.md
-    class="site-image-right" img-class="border"
-    image="startup-namer.gif" caption="The app from part 2" %}
+{% include app-figure.md class="site-image-right" img-class="border"
+    image="get-started/startup-namer.gif" caption="The app from part 2" %}
 
 Congratulations!
 
