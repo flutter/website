@@ -327,6 +327,16 @@
     }
   }
 
+  &__headline-after-image {
+    margin-top: bs-spacer(6) !important;
+    margin-bottom: bs-spacer(2);
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      margin-bottom: bs-spacer(4);
+    }
+  }
+
   &__use-cases {
     .homepage__card-graphic {
       align-items: center;
