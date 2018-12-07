@@ -79,5 +79,6 @@
   logo_src: showcase/logo-jd.png
   learn_more_cta: Developer website
   learn_more_link: https://jr.jd.com/
-  app_store_link: https://itunes.apple.com/cn/app/id895682747
+  # FIXME(2018/12/06): link gives 404 - https://github.com/flutter/website/issues/1877
+  # app_store_link: https://itunes.apple.com/cn/app/id895682747
   play_store_link: https://m.jr.jd.com/spe/downloadApp/index.html?id=1024
