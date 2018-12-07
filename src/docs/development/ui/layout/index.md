@@ -62,14 +62,10 @@ The first step is to break the layout down to its basic elements:
 * Notice areas that require alignment, padding, or borders.
 
 First, identify the larger elements. In this example, four elements are
-arranged into a column:
-
-- An image
-- Two rows
-- A block of text
+arranged into a column: an image, two rows, and a block of text.
 
 {% include app-figure.md img-class="site-mobile-screenshot border"
-    image="ui/layout/lakes-column-elts.png" caption="Column elements (encircled in red)" %}
+    image="ui/layout/lakes-column-elts.png" caption="Column elements (circled in red)" %}
 
 Next, diagram each row. The first row, called the Title
 section, has 3 children: a column of text, a star icon,
@@ -154,7 +150,7 @@ class MyApp extends StatelessWidget {
     become skewed. You can fix this in your Flutter editor
     using the [automatic reformatting support](/docs/development/tools/formatting).
   - For a faster development experience, try Flutter's [hot reload][] feature.
-  - If you have problems, you can compare your code against [lib/main.dart][].
+  - If you have problems, compare your code to [lib/main.dart][].
 
   [hot reload]: /docs/development/tools/hot-reload
   [lib/main.dart]: {{code}}/layout/lakes/main.dart
@@ -377,7 +373,7 @@ But things you don't see are also widgets, such as the rows, columns,
 and grids that arrange, constrain, and align the visible widgets.
 
 You create a layout by composing widgets to build more complex widgets.
-For example, the first screenshot shows 3 icons with a label under each one:
+For example, the first screenshot below shows 3 icons with a label under each one:
 
 <div class="row mb-4">
   <div class="col-12 text-center">
@@ -668,17 +664,11 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-<div class="d-flex justify-content-center mb-4">
-  <div class="row">
-    <div class="col-7 align-self-center">
-      {% asset ui/layout/row-diagram.png class="mt-1 mw-100"
-          alt="Diagram showing the main axis and cross axis for a row" %}
-    </div>
-    <div class="col-5">
-      {% asset ui/layout/column-diagram.png class="mt-1 mw-100"
-          alt="Diagram showing the main axis and cross axis for a column" %}
-    </div>
-  </div>
+<div class="mb-2 text-center">
+  {% asset ui/layout/row-diagram.png class="mb-2 mw-100"
+      alt="Diagram showing the main axis and cross axis for a row" %}
+  {% asset ui/layout/column-diagram.png class="mb-2 mr-2 ml-2 mw-100"
+      alt="Diagram showing the main axis and cross axis for a column" %}
 </div>
 
 The [MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html)
