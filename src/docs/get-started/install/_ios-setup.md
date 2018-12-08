@@ -60,7 +60,6 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
  1. Follow the Xcode signing flow to provision your project:
 
      {: type="a"}
-
      1. Open the default Xcode workspace in your project by running `open
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
@@ -78,7 +77,8 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
           <br>
           Development and testing is supported for any Apple ID. Enrolling in the
           Apple Developer Program is required to distribute your app to the App
-          Store. View the [differences between Apple membership][].
+          Store. For details about membership types, see
+          [Choosing a Membership][].
 
         * The first time you use an attached physical device for iOS
           development, you will need to trust both your Mac and the Development
@@ -96,4 +96,4 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
 
  1. Start your app by running `flutter run`.
 
-[differences between Apple membership types]: https://developer.apple.com/support/compare-memberships
+[Choosing a Membership]: https://developer.apple.com/support/compare-memberships
