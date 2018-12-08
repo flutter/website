@@ -176,8 +176,6 @@
       permalink: /docs/resources/inside-flutter
     - title: Technical overview
       permalink: /docs/resources/technical-overview
-    - title: Development philosophy
-      permalink: /docs/resources/design-principles
     # - title: Flutter best practices # TODO
     - title: Technical videos for learning Flutter
       permalink: /docs/resources/videos
