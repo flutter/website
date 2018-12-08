@@ -8,7 +8,7 @@ toc: false
 <style>
 .scrollable-table {
   overflow-y: scroll;
-  height: 20rem;
+  max-height: 20rem;
 }
 </style>
 
