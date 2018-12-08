@@ -84,8 +84,7 @@ apps are in the works, or "inside the firewall".
 
 Teams outside of Google are also using Flutter.
 For example, the official app for the musical Hamilton
-([Android](https://play.google.com/store/apps/details?id=com.hamilton.app),
-[iOS](https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8))
+([Android][Hamilton for Android], [iOS][Hamilton for iOS])
 is built with Flutter.
 You can see many more examples in the Flutter [Showcase](/showcase).
 
@@ -884,11 +883,13 @@ We are focused on three things:
 ### Will Apple reject my Flutter app?
 
 We can't speak for Apple, but Apple's policies have changed over the
-years, and they have
-allowed apps built with systems like Flutter. We are aware of
-apps built with Flutter that have been reviewed and
-released via the App Store.
+years, and their App Store contains many apps built with technologies
+like Unity and Flutter.
+Apple has even featured Flutter apps such as [Hamilton.][Hamilton for iOS]
 
 Of course, Apple is ultimately in charge of their ecosystem, but our goal
-is to continue to do everything we can to ensure Flutter apps can be
+is to continue to do everything we can to ensure that Flutter apps can be
 deployed into Apple's App Store.
+
+[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
+[Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
