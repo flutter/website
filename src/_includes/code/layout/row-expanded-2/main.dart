@@ -45,13 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              child: Image.asset('images/pic1.jpg'),
+              child: Image.asset(
+                'images/pic1.jpg',
+                fit: BoxFit.fitWidth,
+              ),
             ),
             Expanded(
-              child: Image.asset('images/pic2.jpg'),
+              child: Image.asset(
+                'images/pic2.jpg',
+                fit: BoxFit.fitWidth,
+              ),
             ),
             Expanded(
-              child: Image.asset('images/pic3.jpg'),
+              child: Image.asset(
+                'images/pic3.jpg',
+                fit: BoxFit.fitWidth,
+              ),
             ),
           ],
         ),
