@@ -78,10 +78,13 @@ encoding, see
 
 The simple answer is no.
 
-Such a library would require using runtime reflection, which is disabled in
-Flutter. Runtime reflection interferes with _tree shaking_, which Dart has
+Such a library would require using runtime 
+[reflection](https://en.wikipedia.org/wiki/Reflection_(computer_programming)) 
+which is disabled in
+Flutter. Runtime reflection interferes with 
+[tree shaking](https://en.wikipedia.org/wiki/Tree_shaking), which Dart has
 supported for quite a long time. With tree shaking, you can “shake off” unused
-code from your release builds. This optimizes the app's size significantly.
+code from the release builds and this optimizes the app's size significantly.
 
 Since reflection makes all code implicitly used by default, it makes tree
 shaking difficult. The tools cannot know what parts are unused at runtime, so
@@ -127,13 +130,13 @@ with the JSON string as the method argument.
 
 <!-- skip -->
 ```dart
-Map<String, dynamic> user = json.decode(json);
+Map<String, dynamic> user = json.decode(user_data_str);
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
 ```
 
-Unfortunately, `json.decode()` merely returns a `Map<String, dynamic>`, meaning
+Unfortunately, `json.decode()` returns a `Map<String, dynamic>`, meaning
 that you do not know the types of the values until runtime. With this approach,
 you lose most of the statically typed language features: type safety,
 autocompletion and most importantly, compile-time exceptions. Your code will
@@ -151,6 +154,7 @@ class, called `User` in this example. Inside the `User` class, you'll find:
 * A `User.fromJson` constructor, for constructing a new `User` instance from a
   map structure.
 * A `toJson` method, which converts a `User` instance into a map.
+* Note: the `from*` `to*` naming is recommended but optional eg create a `fromMyFormat` etc
 
 With this approach, the _calling code_ can have type safety,
 autocompletion for the `name` and `email` fields, and compile-time exceptions.
@@ -167,9 +171,9 @@ class User {
 
   User(this.name, this.email);
 
-  User.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        email = json['email'];
+  User.fromJson(Map<String, dynamic> data_map)
+      : name = data_map['name'],
+        email = data_map['email'];
 
   Map<String, dynamic> toJson() =>
     {
@@ -184,7 +188,7 @@ itself. With this new approach, you can decode a user easily.
 
 <!-- skip -->
 ```dart
-Map userMap = json.decode(json);
+Map userMap = json.decode(string_with_json);
 var user = new User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
@@ -197,7 +201,7 @@ already does it for you.
 
 <!-- skip -->
 ```dart
-String json = json.encode(user);
+String data_string = json.encode(user);
 ```
 
 With this approach, the calling code doesn't have to worry about JSON
