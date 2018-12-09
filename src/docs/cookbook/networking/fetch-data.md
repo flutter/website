@@ -56,7 +56,7 @@ convert the `http.Response` into our own Dart object.
 ### Create a `Post` class
 
 First, we'll need to create a `Post` class that contains the data from our
-network request. It will also include a factory constructor that allows us to
+network request. It will also include a named constructor that allows us to
 create a `Post` from json.
 
 Converting JSON by hand is only one option. For more information, please see the
@@ -72,7 +72,7 @@ class Post {
 
   Post({this.userId, this.id, this.title, this.body});
 
-  factory Post.fromJson(Map<String, dynamic> json) {
+  Post.fromJson(Map<String, dynamic> json) {
     return Post(
       userId: json['userId'],
       id: json['id'],
@@ -91,7 +91,7 @@ we'll need to:
   1. Convert the response body into a json `Map` with the `dart:convert`
   package.
   2. If the server returns an "OK" response with a status code of 200, convert
-  the json `Map` into a `Post` using the `fromJson` factory.
+  the json `Map` into a `Post` using the `fromJson` constructor.
   3. If the server returns an unexpected response, throw an error
 
 <!-- skip -->
@@ -236,7 +236,7 @@ class Post {
 
   Post({this.userId, this.id, this.title, this.body});
 
-  factory Post.fromJson(Map<String, dynamic> json) {
+  Post.fromJson(Map<String, dynamic> json) {
     return Post(
       userId: json['userId'],
       id: json['id'],
