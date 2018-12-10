@@ -40,7 +40,7 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
 
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools and an Apple account. You'll also need to set up physical device deployment in Xcode.
 
- 1. Install [homebrew](http://brew.sh).
+ 1. Install [homebrew](https://brew.sh).
  1. Ensure that homebrew is up to date:
 
     ```terminal
@@ -59,7 +59,7 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
     ```
 
     {{site.alert.note}}
-      The first two steps are necessary as a temporary workaround until the next
+      The first two commands above are necessary as a temporary workaround until the next
       release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
       [Flutter issue #22595][].
 
