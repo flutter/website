@@ -153,7 +153,7 @@ reverse engineering.
 
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki](https://github.com/flutter/flutter/wiki/).
+in the [Flutter wiki](https://github.com/flutter/flutter/wiki).
 
 ### Step 1 - Configure Proguard
 
@@ -188,7 +188,7 @@ android {
 
         release {
 
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
 
             minifyEnabled true
             useProguard true
