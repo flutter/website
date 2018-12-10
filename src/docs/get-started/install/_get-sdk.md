@@ -51,7 +51,7 @@ You are now ready to run Flutter commands!
 ### Run flutter doctor
 
 Run the following command to see if there are any dependencies you need to
-install to complete the setup (for verbose output, use the `-v` flag):
+install to complete the setup (for verbose output, add the `-v` flag):
 
 ```terminal
 $ flutter doctor
