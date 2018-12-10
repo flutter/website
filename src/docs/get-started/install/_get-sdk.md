@@ -37,21 +37,24 @@
     $ export PATH=$PATH:`pwd`/flutter/bin
     ```
 
-The above command sets your `PATH` variable temporarily, for the current terminal
-window. To permanently add Flutter to your path, see [Update your
-path](#update-your-path).
+    This command sets your `PATH` variable for the _current_ terminal window only.
+    To permanently add Flutter to your path, see [Update your
+    path](#update-your-path).
 
 You are now ready to run Flutter commands!
 
-To update an existing version of Flutter, see [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+{{site.alert.note}}
+  To update an existing version of Flutter, see
+  [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+{{site.alert.end}}
 
 ### Run flutter doctor
 
 Run the following command to see if there are any dependencies you need to
-install to complete the setup:
+install to complete the setup (for verbose output, add the `-v` flag):
 
 ```terminal
-$ flutter doctor [-v]
+$ flutter doctor
 ```
 
 This command checks your environment and displays a report to the terminal
