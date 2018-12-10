@@ -702,7 +702,7 @@ are triggered by a similar callback mechanism. The
 class, which is used as the basis of the animation system, formalizes a
 subscription model for events with multiple listeners.
 
-* Class-based object-orientated programming: Most of the APIs of the framework
+* Class-based object-oriented programming: Most of the APIs of the framework
 are built using classes with inheritance. We use an approach whereby we define
 very high-level APIs in our base classes, then specialize them iteratively in
 subclasses. For example, our render objects have a base class
@@ -712,7 +712,7 @@ that is agnostic regarding the coordinate system, and then we have a subclass
 that introduces the opinion that the geometry should be based on the Cartesian
 coordinate system (x/width and y/height).
 
-* Prototype-based object-orientated programming: The
+* Prototype-based object-oriented programming: The
 [ScrollPhysics](https://docs.flutter.io/flutter/widgets/ScrollPhysics-class.html)
 class chains instances to compose the physics that apply to scrolling
 dynamically at runtime. This lets the system compose, for example, paging
