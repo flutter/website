@@ -35,8 +35,6 @@
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
-    - title: Sample app catalog (deprecated)
-      permalink: /docs/catalog/samples
 
 - title: Development
   expanded: true
