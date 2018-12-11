@@ -5,6 +5,7 @@
     An easy way to send feedback is to “thumbs up” issues important to you on GitHub
   logo_src: community/logo-github.png
   screen_src: community/screen-github.png
+  screen_class: border-top border-light p-3 shadow
   learn_more_cta: See the issue tracker
   learn_more_link: https://github.com/flutter/flutter/issues
 
@@ -73,7 +74,7 @@
   logo_src: community/logo-reddit.png
   learn_more_cta: Learn more
   learn_more_link: https://www.reddit.com/r/FlutterDev/
-  
+
 - name: Discord
   description: >
     Talk to other Flutter developers about everything Flutter-related, and share useful resources.
