@@ -16,35 +16,39 @@ body_class: landing-page community
 
 {% comment %}
     Featured services
-{% endcomment %}
-{% for case in site.data.community %}
-{% if case.featured %}
+{% endcomment -%}
+{% for case in site.data.community -%}
+{% if case.featured -%}
     <section class="card">
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-4">
-                    {% if case.logo_src %}
+                    {% if case.logo_src -%}
                         <div class="landing-page__case-studies__logo">
                             {% asset '{{ case.logo_src }}' %}
                         </div>
-                    {% endif %}
+                    {% endif -%}
                     <h3>{{ case.title }}</h3>
                     <p>{{ case.description }}</p>
                     {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
                 </div>
 
-                <div class="col-lg-8 landing-page__card-graphic--fill">
-                    {% asset '{{ case.screen_src }}' %}
+                <div class="col-lg-8 pt-6 pt-lg-0 landing-page__card-graphic--fill">
+                    {% if case.screen_class -%}
+                        {% asset '{{ case.screen_src }}' class="{{case.screen_class}}" %}
+                    {% else -%}
+                        {% asset '{{ case.screen_src }}' %}
+                    {% endif -%}
                 </div>
             </div>
         </div>
     </section>
-{% endif %}
-{% endfor %}
+{% endif -%}
+{% endfor -%}
 
 {% comment %}
     All other services
-{% endcomment %}
+{% endcomment -%}
 
 <section class="landing-page__case-studies card text-center">
     <div class="card-body">
@@ -58,44 +62,44 @@ body_class: landing-page community
             </div>
         </div>
 
-        {% for case in site.data.community %}
-            {% if case.featured %}
-                {% continue %}
-            {% endif %}
+        {% for case in site.data.community -%}
+            {% if case.featured -%}
+                {% continue -%}
+            {% endif -%}
 
-            {% capture loopCount %}{% increment communityCounter %}{% endcapture %}
-            {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture %}
-            {% if modulo3 == '0' %}
+            {% capture loopCount %}{% increment communityCounter %}{% endcapture -%}
+            {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture -%}
+            {% if modulo3 == '0' -%}
                 <div class="text-left card-deck flex-column flex-lg-row">
-            {% endif %}
+            {% endif -%}
                     <div class="card card--case-study">
                         <div class="card-header">
-                            {% if case.logo_src %}
-                                {% asset '{{ case.logo_src }}' class='landing-page__case-studies__logo' %}
-                            {% endif %}
+                            {% if case.logo_src -%}
+                                {% asset '{{ case.logo_src }}' class='landing-page__case-studies__logo' -%}
+                            {% endif -%}
                         </div>
                         <div class="card-body">
                             <h3>{{ case.name }}</h3>
                             <p>{{ case.description }}</p>
                         </div>
                         <div class="card-footer card-footer--transparent card-footer--links">
-                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
-                            {% if case.play_store_link or case.app_store_link %}
+                            {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif -%}
+                            {% if case.play_store_link or case.app_store_link -%}
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Download
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
-                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank">Android</a>{% endif %}
-                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank">iOS</a>{% endif %}
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank">Android</a>{% endif -%}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank">iOS</a>{% endif -%}
                                     </div>
                                 </span>
-                            {% endif %}
+                            {% endif -%}
                         </div>
                     </div>
-            {% if modulo3 == '2' or forloop.last %}
+            {% if modulo3 == '2' or forloop.last -%}
                 </div>
-            {% endif %}
-        {% endfor %}
+            {% endif -%}
+        {% endfor -%}
     </div>
 </section>
