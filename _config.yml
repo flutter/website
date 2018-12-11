@@ -85,18 +85,18 @@ os-list: [Windows, macOS, Linux]
 alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fa fa-warning"></i> **Important:**
+    <i class="fas fa-exclamation-circle"></i> **Important:**
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fa fa-info-circle"></i> **Note:**
+    <i class="fas fa-info-circle"></i> **Note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
     <i class="far fa-lightbulb"></i> **Tip:**
   warning: >-
-    <aside class="alert alert-danger" role="alert" markdown="1">
-    <i class="fa fa-exclamation-circle"></i> **Warning:**
+    <aside class="alert alert-warning" role="alert" markdown="1">
+    <i class="fas fa-exclamation-triangle"></i> **Warning:**
   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'
