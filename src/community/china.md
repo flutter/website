@@ -18,12 +18,12 @@ to speed it up. For example:
 * Mirrored URL:<br>
   [https://storage.flutter-io.cn/flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip](https://storage.flutter-io.cn/flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip)
 
-You  still need to set up two environment variables to upgrade Flutter
-and use the pub package repository in China. Instructions are given below.
+You must also set two environment variables to upgrade Flutter and use the pub
+package repository in China. Instructions are below.
 
 {{site.alert.important}}
   Use mirror sites only if you _trust_ the provider.
-  The Flutter team cannot verify their reliability nor security.
+  The Flutter team cannot verify their reliability or security.
 {{site.alert.end}}
 
 ## Configuring Flutter to use a mirror site
