@@ -21,6 +21,11 @@ to speed it up. For example:
 You  still need to set up two environment variables to upgrade Flutter
 and use the pub package repository in China. Instructions are given below.
 
+{{site.alert.important}}
+  Use mirror sites only if you _trust_ the provider.
+  The Flutter team cannot verify their reliability nor security.
+{{site.alert.end}}
+
 ## Configuring Flutter to use a mirror site
 
 If you’re installing or using Flutter in China, it may be helpful to use
@@ -66,11 +71,6 @@ for assistance.
 {{site.alert.end}}
 
 ## Community-run mirror sites
-
-{{site.alert.important}}
-  Use these mirror sites only if you _trust_ the provider.
-  The Flutter team cannot verify their reliability nor security.
-{{site.alert.end}}
 
 * Shanghai Jiaotong University Linux User Group
   * FLUTTER_STORAGE_BASE_URL: [https://mirrors.sjtug.sjtu.edu.cn/](https://mirrors.sjtug.sjtu.edu.cn/)
