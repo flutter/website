@@ -1,7 +1,10 @@
 ---
 title: Using Flutter in China
 description: Where to find a version of flutter.io that is localized to Mandarin.
+toc: true
 ---
+
+{% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
 The Flutter community has made a Mandarin version of the flutter.io
 website available at [https://flutter-io.cn](https://flutter-io.cn).
@@ -12,16 +15,20 @@ you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 
 * Original URL:<br>
-  [https://storage.googleapis.com/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip](https://storage.googleapis.com/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip)
+  [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
 
 * Mirrored URL:<br>
-  [https://storage.flutter-io.cn/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip](https://storage.flutter-io.cn/flutter_infra/releases/beta/windows/flutter_windows_v0.3.2-beta.zip)
+  [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
-You  still need to set up two environment variables to upgrade Flutter
-and use the pub package repository in China.
-Please follow the instructions below.
+You must also set two environment variables to upgrade Flutter and use the pub
+package repository in China. Instructions are below.
 
----
+{{site.alert.important}}
+  Use mirror sites only if you _trust_ the provider.
+  The Flutter team cannot verify their reliability or security.
+{{site.alert.end}}
+
+## Configuring Flutter to use a mirror site
 
 If you’re installing or using Flutter in China, it may be helpful to use
 a trustworthy local mirror site that hosts Flutter’s dependencies.
@@ -34,13 +41,13 @@ the setup process for using a mirror site. Run the following in a Bash
 shell from the directory where you wish to store your local Flutter clone:
 
 
-```sh
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-git clone -b dev https://github.com/flutter/flutter.git
-export PATH="$PWD/flutter/bin:$PATH"
-cd ./flutter
-flutter doctor
+```terminal
+$ export PUB_HOSTED_URL=https://pub.flutter-io.cn
+$ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+$ git clone -b dev https://github.com/flutter/flutter.git
+$ export PATH="$PWD/flutter/bin:$PATH"
+$ cd ./flutter
+$ flutter doctor
 ```
 
 After these steps, you should be able to continue
@@ -53,25 +60,20 @@ The `flutter-io.cn` server is a provisional mirror for Flutter
 dependencies and packages maintained by [GDG China]().
 The Flutter team cannot guarantee long-term availability of this service.
 You’re free to use other mirrors if they become available. If you’re
-interested in setting up your own mirror in China, please contact
+interested in setting up your own mirror in China, contact
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 
-Known issue:
-
-* Running the Flutter Gallery app from source requires assets hosted on
+{{site.alert.secondary}}
+  **Known issue:** Running the Flutter Gallery app from source requires assets hosted on
   a domain this workaround currently doesn't support. You can subscribe
   to [Issue #13763](https://github.com/flutter/flutter/issues/13763)
   to receive updates. In the meantime, you can check out Flutter Gallery
   from Google Play or third-party app stores you trust.
+{{site.alert.end}}
 
----
-
-Other community-run mirror sites:
+## Community-run mirror sites
 
 * Shanghai Jiaotong University Linux User Group
-  * FLUTTER_STORAGE_BASE_URL: [https://mirrors.sjtug.sjtu.edu.cn/](https://mirrors.sjtug.sjtu.edu.cn/)
-  * PUB_HOSTED_URL: [https://dart-pub.mirrors.sjtug.sjtu.edu.cn/](https://dart-pub.mirrors.sjtug.sjtu.edu.cn/)
-
-Please use these community mirror sites only if you _trust_ the provider.
-The Flutter team cannot verify their reliability nor security.
+  * `FLUTTER_STORAGE_BASE_URL`: [https://mirrors.sjtug.sjtu.edu.cn/](https://mirrors.sjtug.sjtu.edu.cn)
+  * `PUB_HOSTED_URL`: [https://dart-pub.mirrors.sjtug.sjtu.edu.cn/](https://dart-pub.mirrors.sjtug.sjtu.edu.cn)
