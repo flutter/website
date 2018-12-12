@@ -144,8 +144,7 @@ repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [fastlane CI documentation](/docs/deployment/fastlane-cd)
-    for CI specific setup.
+    * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
          * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
@@ -162,3 +161,5 @@ repository root.
 The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
 uses fastlane for continuous deployment. See the source for a working example of
 fastlane in action. The Flutter framework repository's Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
+
+[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
