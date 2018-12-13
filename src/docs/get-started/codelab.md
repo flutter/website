@@ -9,6 +9,8 @@ next:
   path: /get-started/learn-more
 ---
 
+{% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
+
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
 
 This is a guide to creating your first Flutter app. If you
@@ -264,8 +266,8 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
-* [pubspec.yaml]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/pubspec.yaml)
-* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/2_end_of_use_package/lib/main.dart)
+* [pubspec.yaml]({{code-url}}/startup_namer/2-use-package/pubspec.yaml)
+* [lib/main.dart]({{code-url}}/startup_namer/2-use-package/lib/main.dart)
 
 ## Step 3: Add a Stateful widget
 
@@ -383,7 +385,7 @@ a child inside the existing `MyApp` stateless widget.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/3-stateful-widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
 
@@ -540,7 +542,7 @@ lazily, on demand.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [lib/main.dart]({{site.codelab-code-url}}/startup_namer/4_end_of_infinite_list/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/4-infinite-list/lib/main.dart)
 
 ## Next steps
 {:.no_toc}
