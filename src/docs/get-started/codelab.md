@@ -190,7 +190,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     your project. You should see the following in the console:
 
     ```terminal
-    > flutter packages get
+    $ flutter packages get
     Running "flutter packages get" in startup_namer...
     Process finished with exit code 0
     ```
