@@ -83,16 +83,19 @@ The second row, called the Button section, also has
 
 {% include app-figure.md image="ui/layout/button-section-diagram.png" alt="Button section" %}
 
-Once the layout has been diagrammed, it's easiest to take a bottom-up
+Once the layout has been diagrammed, it's easy to take a bottom-up
 approach to implementing it. To minimize the visual
-confusion of deeply nested layout code, place some of the implementation
+confusion of deeply nested layout code, can place some of the implementation
 in variables and functions.
 
 ### Step 2: Implement the title row
 
-First, you'll build the left column in the title section. Putting Column
-inside an Expanded widget stretches the column to use all remaining free
-space in the row. Setting the `crossAxisAlignment` property to
+First part of example is to build the left column in the title section. 
+
+Putting `Column` inside an Expanded widget stretches the column to use all remaining free
+space in the row. 
+
+Setting the `crossAxisAlignment` property to
 `CrossAxisAlignment.start` positions the column to the beginning of the row.
 
 Putting the first row of text inside a Container enables adding padding.
@@ -223,8 +226,8 @@ class MyApp extends StatelessWidget {
 }
 {% endprettify %}
 
-The build function adds the icon directly to the column. Put
-text into a Container to add padding above the text,
+The `build()` function adds the `Icon` directly to the column. Put
+text into a `Container` to add padding above the text,
 separating it from the icon.
 
 Build the row containing these columns by calling the function and
@@ -369,13 +372,17 @@ shown in the screenshots. You can add interactivity to this layout by following
   * Compose simple widgets to build complex widgets.
 {{site.alert.end}}
 
-The core of Flutter's layout mechanism is widgets. In Flutter, almost
-everything is a widget&mdash;even layout models are widgets.
-The images, icons, and text that you see in a Flutter app  are all widgets.
+The core of Flutter's layout mechanism is widgets. 
+``<< please read above again for brain fart``
+
+In Flutter, almost everything is a widget; even layout models are widgets.
+
+The images, icons, and text seen on a Flutter app are all widgets.
 But things you don't see are also widgets, such as the rows, columns,
 and grids that arrange, constrain, and align the visible widgets.
 
-You create a layout by composing widgets to build more complex widgets.
+A layout is created by composing widgets to build more complex widgets.
+
 For example, the first screenshot below shows 3 icons with a label under each one:
 
 <div class="row mb-4">
