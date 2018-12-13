@@ -352,14 +352,14 @@ In December 2018, we measured the download size of a
 [minimal Flutter app](https://github.com/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and compressed as a release APK, to be
-approximately 4.06 MB.
+approximately 4.06 MB.
 
 For this simple app,
-the core engine is approximately 2.7 MB (compressed),
-the framework + app code is approximately 820.6 KB (compressed),
-the LICENSE file is 53.5 KB (compressed),
-necessary Java code (classes.dex) is 61.8 KB (compressed),
-and there is approximately 450.4 KB of (compressed) ICU data.
+the core engine is approximately 2.7 MB (compressed),
+the framework + app code is approximately 820.6 KB (compressed),
+the LICENSE file is 53.5 KB (compressed),
+necessary Java code (classes.dex) is 61.8 KB (compressed),
+and there is approximately 450.4 KB of (compressed) ICU data.
 
 These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
 which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
