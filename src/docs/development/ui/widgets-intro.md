@@ -2,18 +2,22 @@
 title: Introduction to widgets
 ---
 
-{% comment %} This page needs more cleanup. API references should be accumulated
-at the end of the page to avoid repeating links. {% endcomment -%}
+{% comment %} This page needs even(more) => cleanup. API references should be accumulated
+at the floating side of the page to avoid repeating links. {% endcomment -%}
 
 {% assign api = site.api | append: '/flutter' -%}
 
-Flutter widgets are built using a modern react-style framework, which takes
-inspiration from [React](http://facebook.github.io/react). The central idea is
-that you build your UI out of widgets. Widgets describe what their view
-should look like given their current configuration and state. When a widget's
-state changes, the widget rebuilds its description, which the framework diffs
-against the previous description in order to determine the minimal changes
+`Flutter` widgets are built using a modern reactive framework (MVC+), which takes
+inspiration from [React](http://facebook.github.io/react). 
+
+## central idea
+`build()` the UI out of widgets. Widgets describe what their view
+should look like given their current configuration and state. 
+
+When a widget's state changes, the widget rebuilds its description, 
+which the framework diffs against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
+
 
 <aside id="note" class="alert alert-info" markdown="1">
 **Note:** If you would like to become better acquainted with Flutter by diving
