@@ -362,7 +362,7 @@ necessary Java code (classes.dex) is 61.8 KB (compressed),
 and there is approximately 450.4 KB of (compressed) ICU data.
 
 These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
-which is also build into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
+which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
 
 Of course, YMMV, and we recommend that you measure your own app,
 by running `flutter build apk` and loading
