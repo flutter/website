@@ -108,5 +108,3 @@ alert:
 
   # hr_faded: '<hr class="faded"/>'
   # hr_shaded: '<hr class="shaded"/>'
-
-codelab-code-url: https://raw.githubusercontent.com/chalin/flutter-codelabs/master
