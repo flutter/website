@@ -176,13 +176,13 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     to the dependencies list.
     Add the highlighted line below:
 
-    <?code-excerpt "2-use-package/pubspec.yaml (dependencies)" indent-by="2" replace="/english_words.*/[[highlight]]$&[[\/highlight]]/g"?>
+    <?code-excerpt "2-use-package/pubspec.yaml (dependencies)" indent-by="2" replace="/english_words.*/[!$&!]/g"?>
     {% prettify yaml %}
       dependencies:
         flutter:
           sdk: flutter
         cupertino_icons: ^0.1.2
-        [[highlight]]english_words: ^3.1.0[[/highlight]]
+        [!english_words: ^3.1.0!]
     {% endprettify %}
 
  2. While viewing the pubspec in Android Studio's editor view,
@@ -202,10 +202,10 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
  3. In **lib/main.dart**, import the new package:
 
     <!-- skip -->
-    <?code-excerpt "2-use-package/lib/main.dart" retain="/^import/" replace="/import.*?english.*/[[highlight]]$&[[\/highlight]]/g" indent-by="2"?>
+    <?code-excerpt "2-use-package/lib/main.dart" retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     {% prettify dart %}
       import 'package:flutter/material.dart';
-      [[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
+      [!import 'package:english_words/english_words.dart';!]
     {% endprettify %}
 
     As you type, Android Studio gives you suggestions for libraries to
@@ -218,7 +218,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     Make the following changes:
 
     <!-- skip -->
-    <?code-excerpt "2-use-package/lib/main.dart" replace="/final wordPair.*|wordPair\.\w+/[[highlight]]$&[[\/highlight]]/g" indent-by="2"?>
+    <?code-excerpt "2-use-package/lib/main.dart" replace="/final wordPair.*|wordPair\.\w+/[!$&!]/g" indent-by="2"?>
     {% prettify dart %}
       import 'package:flutter/material.dart';
       import 'package:english_words/english_words.dart';
@@ -228,7 +228,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
       class MyApp extends StatelessWidget {
         @override
         Widget build(BuildContext context) {
-          [[highlight]]final wordPair = WordPair.random();[[/highlight]]
+          [!final wordPair = WordPair.random();!]
           return MaterialApp(
             title: 'Welcome to Flutter',
             home: Scaffold(
@@ -236,7 +236,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
                 title: Text('Welcome to Flutter'),
               ),
               body: Center(
-                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),
+                child: Text([!wordPair.asPascalCase!]),
               ),
             ),
           );
@@ -332,14 +332,14 @@ a child inside the existing `MyApp` stateless widget.
  3. Add the `build()` method to `RandomWordsState`:
 
     <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWordsState)" indent-by="2" replace="/(\n  )(.*)/$1[[highlight]]$2[[\/highlight]]/g"?>
+    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWordsState)" indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
     {% prettify dart %}
       class RandomWordsState extends State<RandomWords> {
-        [[highlight]]@override[[/highlight]]
-        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-        [[highlight]]  final wordPair = WordPair.random();[[/highlight]]
-        [[highlight]]  return Text(wordPair.asPascalCase);[[/highlight]]
-        [[highlight]]}[[/highlight]]
+        [!@override!]
+        [!Widget build(BuildContext context) {!]
+        [!  final wordPair = WordPair.random();!]
+        [!  return Text(wordPair.asPascalCase);!]
+        [!}!]
       }
     {% endprettify %}
 
@@ -417,12 +417,12 @@ lazily, on demand.
     {{site.alert.end}}
 
     <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-var)" indent-by="2" replace="/final .*/[[highlight]]$&[[\/highlight]]/g" plaster="..."?>
+    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-var)" indent-by="2" replace="/final .*/[!$&!]/g" plaster="..."?>
     {% prettify dart %}
       class RandomWordsState extends State<RandomWords> {
-        [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
+        [!final _suggestions = <WordPair>[];!]
 
-        [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
+        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
         ...
       }
     {% endprettify %}
@@ -519,16 +519,16 @@ lazily, on demand.
     Replace the original method with the highlighted method below:
 
     <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (MyApp)" replace="/(\n  )(.*)/$1[[highlight]]$2[[\/highlight]]/g" indent-by="2"?>
+    <?code-excerpt "4-infinite-list/lib/main.dart (MyApp)" replace="/(\n  )(.*)/$1[!$2!]/g" indent-by="2"?>
     {% prettify dart %}
       class MyApp extends StatelessWidget {
-        [[highlight]]@override[[/highlight]]
-        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-        [[highlight]]  return MaterialApp([[/highlight]]
-        [[highlight]]    title: 'Startup Name Generator',[[/highlight]]
-        [[highlight]]    home: RandomWords(),[[/highlight]]
-        [[highlight]]  );[[/highlight]]
-        [[highlight]]}[[/highlight]]
+        [!@override!]
+        [!Widget build(BuildContext context) {!]
+        [!  return MaterialApp(!]
+        [!    title: 'Startup Name Generator',!]
+        [!    home: RandomWords(),!]
+        [!  );!]
+        [!}!]
       }
     {% endprettify %}
 
