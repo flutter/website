@@ -11,28 +11,31 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">Flutter Essentials</h4>
 
   * How Flutter's layout mechanism works.
-  * How to lay out widgets vertically and horizontally.
-  * How to build a Flutter layout.
+  * How to lay out widgets vertically or horizontally.
+  * How to build a Flutter layout of widgets
+  * Always rember that even a padding is a widget (of widgets)
+  
 {{site.alert.end}}
 
-This is a guide to building layouts in Flutter.
-You'll build the layout for the following app:
+This is a starter guide to building layouts in Flutter.
+The layout for the following app:
 
 {% include app-figure.md img-class="site-mobile-screenshot border"
     image="ui/layout/lakes.jpg" caption="The finished app" %}
 
 This guide then takes a step back to explain Flutter's approach to layout,
 and shows how to place a single widget on the screen.
+
 After a discussion of how to lay widgets out horizontally and vertically,
 some of the most common layout widgets are covered.
 
 ## Building a layout
 
-If you want a "big picture" understanding of the layout mechanism,
-start with [Flutter's approach to layout](#flutters-approach-to-layout).
+Understanding the **"big picture"**  of the layout mechanism,
+starts with [Flutter's approach to layout](#flutters-approach-to-layout).
 
 ### Step 0: Set up
 
