@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# New infrastructure gems
+gem 'activesupport'
 gem 'autoprefixer-rails'
 gem 'bootstrap'
 gem 'font-awesome-sass'

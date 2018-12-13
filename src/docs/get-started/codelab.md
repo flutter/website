@@ -7,6 +7,7 @@ prev:
 next:
   title: Learn more
   path: /get-started/learn-more
+diff2html: true
 ---
 
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
@@ -445,12 +446,12 @@ lazily, on demand.
       Widget _buildSuggestions() {
         return ListView.builder(
             padding: const EdgeInsets.all(16.0),
-            itemBuilder: (context, i) { /*1*/
+            itemBuilder: /*1*/ (context, i) {
               if (i.isOdd) return Divider(); /*2*/
 
               final index = i ~/ 2; /*3*/
-              if (index >= _suggestions.length) { /*4*/
-                _suggestions.addAll(generateWordPairs().take(10));
+              if (index >= _suggestions.length) {
+                _suggestions.addAll(generateWordPairs().take(10)); /*4*/
               }
               return _buildRow(_suggestions[index]);
             });
