@@ -364,11 +364,19 @@ and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
 These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
 which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
 
-Of course, YMMV, and we recommend that you measure your own app,
-by running `flutter build apk` and loading
-`build/app/outputs/apk/release/app-release.apk` into Android Studio
-([instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
-detailed size report.
+On iOS, a release IPA of the same app has a download size of 10.8&nbsp;MB on an
+iPhone X, as reported by Apple's App Store Connect. The IPA is larger than the
+APK mainly because Apple encrypts binaries within the IPA, making the compression
+less efficient (see the [iOS App Store Specific Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS) section of Apple's
+[QA1795](https://developer.apple.com/library/archive/qa/qa1795/_index.html).
+
+Of course, YMMV, and we recommend that you measure your own app. To measure an
+Android app, run `flutter build apk` and load the APK
+(`build/app/outputs/apk/release/app-release.apk`) into Android Studio
+[instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
+detailed size report. To measure an iOS app, upload a release IPA to Apple's
+App Store Connect ([instructions](https://flutter.io/docs/deployment/ios)) and
+obtain the size report from there.
 
 ## Capabilities
 
