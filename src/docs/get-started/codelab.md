@@ -15,6 +15,11 @@ diff2html: true
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
 <?code-excerpt path-base="codelabs/startup_namer"?>
 
+{%- comment %}
+  Code highlights in this page are green, to match diff additions.
+{% endcomment -%}
+<style>pre .highlight {background-color: #dfd;}</style>
+
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
@@ -168,29 +173,34 @@ In this step, you’ll start using an open-source package named
 which contains a few thousand of the most used
 English words plus some utility functions.
 
-You can find the english_words package, as well as many other open source
-packages, on [the Package site](https://pub.dartlang.org/flutter/).
+You can find the `english_words` package, as well as many other open source
+packages, on [the Package site](https://pub.dartlang.org/flutter).
 
- 1. The pubspec file manages the assets and dependencies for a Flutter app.
-    In **pubspec.yaml**, add **english_words** (3.1.0 or higher)
-    to the dependencies list.
-    Add the highlighted line below:
+ 1. The pubspec file manages the assets and dependencies for a Flutter app. In
+    `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
+    list:
 
-    <?code-excerpt "2-use-package/pubspec.yaml (dependencies)" indent-by="2" replace="/english_words.*/[[highlight]]$&[[\/highlight]]/g"?>
-    {% prettify yaml %}
-      dependencies:
-        flutter:
-          sdk: flutter
-        cupertino_icons: ^0.1.2
-        [[highlight]]english_words: ^3.1.0[[/highlight]]
-    {% endprettify %}
+    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" from="dependencies" to="english"?>
+    ```diff
+    --- 1-base/pubspec.yaml
+    +++ 2-use-package/pubspec.yaml
+    @@ -2,10 +2,13 @@
+     description: A startup-namer app.
+     version: 1.0.0+1
+
+     dependencies:
+       flutter:
+         sdk: flutter
+       cupertino_icons: ^0.1.2
+    +  english_words: ^3.1.0
+    ```
 
  2. While viewing the pubspec in Android Studio's editor view,
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
     ```terminal
-    > flutter packages get
+    $ flutter packages get
     Running "flutter packages get" in startup_namer...
     Process finished with exit code 0
     ```
@@ -199,50 +209,49 @@ packages, on [the Package site](https://pub.dartlang.org/flutter/).
     file with a list of all packages pulled into the project and
     their version numbers.
 
- 3. In **lib/main.dart**, import the new package:
+ 3. In `lib/main.dart`, import the new package:
 
     <!-- skip -->
-    <?code-excerpt "2-use-package/lib/main.dart" retain="/^import/" replace="/import.*?english.*/[[highlight]]$&[[\/highlight]]/g" indent-by="2"?>
+    <?code-excerpt "2-use-package/lib/main.dart" retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     {% prettify dart %}
       import 'package:flutter/material.dart';
-      [[highlight]]import 'package:english_words/english_words.dart';[[/highlight]]
+      [!import 'package:english_words/english_words.dart';!]
     {% endprettify %}
 
-    As you type, Android Studio gives you suggestions for libraries to
-    import. It then renders the import string in gray, letting you
-    know that the imported library is unused (so far).
+    As you type, Android Studio gives you suggestions for libraries to import.
+    It then renders the import string in gray, letting you know that the
+    imported library is unused (so far).
 
  4. Use the English words package to generate the text instead of
-    using the string "Hello World".
+    using the string "Hello World":
 
-    Make the following changes:
+    <?code-excerpt "1-base/lib/main.dart" diff-with="2-use-package/lib/main.dart" from="class"?>
+    ```diff
+    --- 1-base/lib/main.dart
+    +++ 2-use-package/lib/main.dart
+    @@ -1,10 +1,12 @@
+     import 'package:flutter/material.dart';
+    +import 'package:english_words/english_words.dart';
 
-    <!-- skip -->
-    <?code-excerpt "2-use-package/lib/main.dart" replace="/final wordPair.*|wordPair\.\w+/[[highlight]]$&[[\/highlight]]/g" indent-by="2"?>
-    {% prettify dart %}
-      import 'package:flutter/material.dart';
-      import 'package:english_words/english_words.dart';
+     void main() => runApp(MyApp());
 
-      void main() => runApp(MyApp());
-
-      class MyApp extends StatelessWidget {
-        @override
-        Widget build(BuildContext context) {
-          [[highlight]]final wordPair = WordPair.random();[[/highlight]]
-          return MaterialApp(
-            title: 'Welcome to Flutter',
-            home: Scaffold(
-              appBar: AppBar(
-                title: Text('Welcome to Flutter'),
-              ),
-              body: Center(
-                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),
-              ),
-            ),
-          );
-        }
-      }
-    {% endprettify %}
+     class MyApp extends StatelessWidget {
+       @override
+       Widget build(BuildContext context) {
+    +    final wordPair = WordPair.random();
+         return MaterialApp(
+           title: 'Welcome to Flutter',
+           home: Scaffold(
+    @@ -12,7 +14,7 @@
+               title: Text('Welcome to Flutter'),
+             ),
+             body: Center(
+    -          child: Text('Hello World'),
+    +          child: Text(wordPair.asPascalCase),
+             ),
+           ),
+         );
+    ```
 
     {{site.alert.note}}
       "Pascal case" (also known as "upper camel case"),
@@ -293,10 +302,10 @@ a child inside the existing `MyApp` stateless widget.
     of `main.dart`:
 
     <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RWS-class-only)" plaster="// TODO Add build method" indent-by="2"?>
+    <?code-excerpt "3-stateful-widget/lib/main.dart (RWS-class-only)" plaster="// TODO Add build() method" indent-by="2"?>
     {% prettify dart %}
       class RandomWordsState extends State<RandomWords> {
-        // TODO Add build method
+        // TODO Add build() method
       }
     {% endprettify %}
 
@@ -332,21 +341,20 @@ a child inside the existing `MyApp` stateless widget.
  3. Add the `build()` method to `RandomWordsState`:
 
     <!-- skip -->
-    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWordsState)" indent-by="2" replace="/(\n  )(.*)/$1[[highlight]]$2[[\/highlight]]/g"?>
+    <?code-excerpt "3-stateful-widget/lib/main.dart (RandomWordsState)" indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
     {% prettify dart %}
       class RandomWordsState extends State<RandomWords> {
-        [[highlight]]@override[[/highlight]]
-        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-        [[highlight]]  final wordPair = WordPair.random();[[/highlight]]
-        [[highlight]]  return Text(wordPair.asPascalCase);[[/highlight]]
-        [[highlight]]}[[/highlight]]
+        [!@override!]
+        [!Widget build(BuildContext context) {!]
+        [!  final wordPair = WordPair.random();!]
+        [!  return Text(wordPair.asPascalCase);!]
+        [!}!]
       }
     {% endprettify %}
 
  4. Remove the word generation code from `MyApp` by making the changes shown in
     the following diff:
 
-    <!-- skip -->
     <?code-excerpt "2-use-package/lib/main.dart" diff-with="3-stateful-widget/lib/main.dart" to="}"?>
     ```diff
     --- 2-use-package/lib/main.dart
@@ -409,23 +417,22 @@ lazily, on demand.
     class for saving suggested word pairings.
     Also, add a `_biggerFont` variable for making the font size larger.
 
-    {{site.alert.tip}}
+    <!-- skip -->
+    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-var)" indent-by="2" replace="/final .*/[!$&!]/g"?>
+    {% prettify dart %}
+      class RandomWordsState extends State<RandomWords> {
+        [!final _suggestions = <WordPair>[];!]
+        [!final _biggerFont = const TextStyle(fontSize: 18.0);!]
+        // ···
+      }
+    {% endprettify %}
+
+    {{site.alert.note}}
       Prefixing an identifier with an underscore [enforces
       privacy](https://www.dartlang.org/guides/language/language-tour)
       in the Dart
       language.
     {{site.alert.end}}
-
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-var)" indent-by="2" replace="/final .*/[[highlight]]$&[[\/highlight]]/g" plaster="..."?>
-    {% prettify dart %}
-      class RandomWordsState extends State<RandomWords> {
-        [[highlight]]final _suggestions = <WordPair>[];[[/highlight]]
-
-        [[highlight]]final _biggerFont = const TextStyle(fontSize: 18.0);[[/highlight]]
-        ...
-      }
-    {% endprettify %}
 
     Next, you'll add a `_buildSuggestions()` function to the `RandomWordsState`
     class. This method builds the `ListView` that displays the suggested
@@ -491,49 +498,59 @@ lazily, on demand.
       }
     {% endprettify %}
 
- 4. Update the `build()` method for `RandomWordsState` to use
+ 4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
     generation library.
     ([Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
     implements the basic Material Design visual layout.)
-
-    Replace the method with the following code:
+    Replace the method body with the highlighted code:
 
     <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-build)" indent-by="2"?>
+    <?code-excerpt "4-infinite-list/lib/main.dart (RWS-build)" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
     {% prettify dart %}
       @override
       Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Startup Name Generator'),
-          ),
-          body: _buildSuggestions(),
-        );
+        [!return Scaffold(!]
+        [!  appBar: AppBar(!]
+        [!    title: Text('Startup Name Generator'),!]
+        [!  ),!]
+        [!  body: _buildSuggestions(),!]
+        [!);!]
       }
     {% endprettify %}
 
- 5. Update the `build()` method for `MyApp`, changing the title,
-    and changing the home to be a RandomWords widget.
+ 5. In the `MyApp` class, update the `build()` method by changing the title, and
+    changing the home to be a `RandomWords` widget:
 
-    Replace the original method with the highlighted method below:
+    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" from="class MyApp" to="}"?>
+    ```diff
+    --- 3-stateful-widget/lib/main.dart
+    +++ 4-infinite-list/lib/main.dart
+    @@ -3,36 +3,68 @@
 
-    <!-- skip -->
-    <?code-excerpt "4-infinite-list/lib/main.dart (MyApp)" replace="/(\n  )(.*)/$1[[highlight]]$2[[\/highlight]]/g" indent-by="2"?>
-    {% prettify dart %}
-      class MyApp extends StatelessWidget {
-        [[highlight]]@override[[/highlight]]
-        [[highlight]]Widget build(BuildContext context) {[[/highlight]]
-        [[highlight]]  return MaterialApp([[/highlight]]
-        [[highlight]]    title: 'Startup Name Generator',[[/highlight]]
-        [[highlight]]    home: RandomWords(),[[/highlight]]
-        [[highlight]]  );[[/highlight]]
-        [[highlight]]}[[/highlight]]
-      }
-    {% endprettify %}
+     void main() => runApp(MyApp());
 
- 6. Restart the app. You should see a list of word pairings
-    no matter how far you scroll.
+     class MyApp extends StatelessWidget {
+       @override
+       Widget build(BuildContext context) {
+         return MaterialApp(
+    -      title: 'Welcome to Flutter',
+    -      home: Scaffold(
+    -        appBar: AppBar(
+    -          title: Text('Welcome to Flutter'),
+    -        ),
+    -        body: Center(
+    -          child: RandomWords(),
+    -        ),
+    -      ),
+    +      title: 'Startup Name Generator',
+    +      home: RandomWords(),
+         );
+       }
+    ```
+
+ 6. Restart the app. You should see a list of word pairings no matter how far
+    you scroll.
 
     {% indent %}
       {% include android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
@@ -542,8 +559,8 @@ lazily, on demand.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, you can use the code at the following link
+to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/4-infinite-list/lib/main.dart)
 
