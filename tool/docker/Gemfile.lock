@@ -132,6 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   autoprefixer-rails
   bootstrap
   font-awesome-sass
