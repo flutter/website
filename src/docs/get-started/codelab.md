@@ -15,7 +15,9 @@ diff2html: true
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
 <?code-excerpt path-base="codelabs/startup_namer"?>
 
-{%- comment %}In this page, color highlights like diff additions (in green){% endcomment -%}
+{%- comment %}
+  Code highlights in this page are green, to match diff additions.
+{% endcomment -%}
 <style>pre .highlight {background-color: #dfd;}</style>
 
 This is a guide to creating your first Flutter app. If you
@@ -496,7 +498,7 @@ lazily, on demand.
       }
     {% endprettify %}
 
- 4. Update the `RandomWordsState.build()` method to use
+ 4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
     generation library.
     ([Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
@@ -517,8 +519,8 @@ lazily, on demand.
       }
     {% endprettify %}
 
- 5. Update the `MyApp.build()` method by changing the title,
-    and changing the home to be a RandomWords widget:
+ 5. In the `MyApp` class, update the `build()` method by changing the title, and
+    changing the home to be a `RandomWords` widget:
 
     <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" from="class MyApp" to="}"?>
     ```diff
