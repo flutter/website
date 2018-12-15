@@ -18,7 +18,7 @@ diff2html: true
 {%- comment %}
   Code highlights in this page are green, to match diff additions.
 {% endcomment -%}
-<style>pre .highlight {background-color: #dfd;}</style>
+<style>pre .highlight { background-color: #dfd; }</style>
 
 This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
@@ -181,7 +181,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     list:
 
     <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" from="dependencies" to="english"?>
-    ```diff
+    {% diff from="dependencies" %}
     --- 1-base/pubspec.yaml
     +++ 2-use-package/pubspec.yaml
     @@ -2,10 +2,13 @@
@@ -193,7 +193,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
          sdk: flutter
        cupertino_icons: ^0.1.2
     +  english_words: ^3.1.0
-    ```
+    {% enddiff %}
 
  2. While viewing the pubspec in Android Studio's editor view,
     click **Packages get**. This pulls the package into
@@ -226,7 +226,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     using the string "Hello World":
 
     <?code-excerpt "1-base/lib/main.dart" diff-with="2-use-package/lib/main.dart" from="class"?>
-    ```diff
+    {% diff from="class" %}
     --- 1-base/lib/main.dart
     +++ 2-use-package/lib/main.dart
     @@ -1,10 +1,12 @@
@@ -251,7 +251,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
              ),
            ),
          );
-    ```
+    {% enddiff %}
 
     {{site.alert.note}}
       "Pascal case" (also known as "upper camel case"),
@@ -356,7 +356,7 @@ a child inside the existing `MyApp` stateless widget.
     the following diff:
 
     <?code-excerpt "2-use-package/lib/main.dart" diff-with="3-stateful-widget/lib/main.dart" to="}"?>
-    ```diff
+    {% diff %}
     --- 2-use-package/lib/main.dart
     +++ 3-stateful-widget/lib/main.dart
     @@ -6,7 +6,6 @@
@@ -377,7 +377,7 @@ a child inside the existing `MyApp` stateless widget.
            ),
          );
        }
-    ```
+    {% enddiff %}
 
  5. Restart the app.
     The app should behave as before, displaying a word
@@ -523,7 +523,7 @@ lazily, on demand.
     changing the home to be a `RandomWords` widget:
 
     <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" from="class MyApp" to="}"?>
-    ```diff
+    {% diff %}
     --- 3-stateful-widget/lib/main.dart
     +++ 4-infinite-list/lib/main.dart
     @@ -3,36 +3,68 @@
@@ -547,7 +547,7 @@ lazily, on demand.
     +      home: RandomWords(),
          );
        }
-    ```
+    {% enddiff %}
 
  6. Restart the app. You should see a list of word pairings no matter how far
     you scroll.
