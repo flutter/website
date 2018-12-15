@@ -90,10 +90,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "6e4b0405f528a788146bf6b6e2cd7b0de9f2b8bc"
+      resolved-ref: cd401f6a308460f4ef5e4bb6c8f085f72f2f04a3
       url: "https://github.com/chalin/code_excerpt_updater.git"
     source: git
-    version: "0.11.0"
+    version: "0.12.0"
   code_excerpter:
     dependency: "direct dev"
     description:
