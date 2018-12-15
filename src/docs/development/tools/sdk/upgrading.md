@@ -54,22 +54,27 @@ If you want an even more recent version of the Flutter SDK,
 switch to a less stable Flutter channel
 and then run `flutter upgrade`.
 
-### Switching your Flutter channel
+## Switching Flutter channels
 
 Flutter has [four release channels][Flutter release channel]:
 **stable**, **beta**, **dev**, and **master**.
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
 
-To view your current channel, use `flutter channel`.
+To view your current channel, use the following command:
+
+```terminal
+$ flutter channel
+```
+
 To change to another channel, use `flutter channel <channel-name>`.
 Once you've changed your channel, use `flutter upgrade`
 to download the Flutter SDK and dependent packages.
+For example:
 
 ```terminal
-$ flutter channel     # Shows your current channel
-$ flutter channel dev # Changes your channel to the dev channel
-$ flutter upgrade     # Get the Flutter SDK and dependent packages
+$ flutter channel dev
+$ flutter upgrade
 ```
 
 {{site.alert.note}}
@@ -77,17 +82,17 @@ If you need a specific version of the Flutter SDK,
 you can download it from the [Flutter SDK archive][].
 {{site.alert.end}}
 
-## Upgrading only packages
+## Upgrading packages only
 
 If you've modified your `pubspec.yaml` file or you want to update
 only the packages that your app depends upon (instead of both the packages and
 Flutter itself), then use one of the `flutter packages` commands.
 
 To get all the dependencies listed in the `pubspec.yaml` file,
-use the `get` command:
+without unnecessary updates, use the `get` command:
 
 ```terminal
-$ flutter packages get # Gets all dependencies, without unnecessary updates
+$ flutter packages get
 ```
 
 To update to the _latest compatible versions_ of
@@ -95,7 +100,7 @@ all the dependencies listed in the `pubspec.yaml` file,
 use the `upgrade` command:
 
 ```terminal
-$ flutter packages upgrade # Gets the most recent versions that should work
+$ flutter packages upgrade
 ```
 
 
