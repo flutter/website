@@ -1,13 +1,18 @@
 ---
-title: Navigate to a new screen and back
+title: Navigatate to a new screen and back
 ---
 
-Most apps contain several screens for displaying different types of information.
-For example, we might have a screen that shows products. Our users could then
-tap on a product to get more information about it on a new screen.
 
-In Android terms, our screens would be new Activities. In iOS terms, new
-ViewControllers. In Flutter, screens are just Widgets!
+Most apps contain several screens for displaying different types of information.
+
+Hypothetical app, for example:
+ - A home screen/page that shows products
+ - Users can `onTap()` product to gain more info about `on a new screen`.
+
+# platfrom cases
+ - On Android,  the screens would be new Activities. 
+ - On iOS,  new ViewControllers. 
+ - With Flutter, screens are just Widgets! ;-)
 
 So how do we navigate to new screens? Using the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
 
@@ -68,7 +73,7 @@ class SecondScreen extends StatelessWidget {
 
 ## 2. Navigate to the second screen using `Navigator.push`
 
-In order to Navigate to a new screen, we'll need to use the
+To Navigate to a new screen, in this example we use the
 [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
 method. The `push` method will add a `Route` to the stack of routes managed by
 the Navigator!
