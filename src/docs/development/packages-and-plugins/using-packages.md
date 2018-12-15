@@ -1,47 +1,49 @@
 ---
 title: Using packages
-description: Learn how to use packages in your Flutter app.
+description: How to use packages in a Flutter app.
 ---
 
-Flutter supports using shared packages contributed by other developers
-to the Flutter and Dart ecosystems. This allows you to quickly build
-your app without having to develop everything from scratch.
+As `Flutter` is open source, even v1 (<2019) supports 'dart' shared packages, ie contributed by other developers
+to the Flutter and Dart ecosystems.  ;-))
 
-Existing packages enable many use cases, for example, making network requests
-([`http`](/docs/cookbook/networking/fetch-data)), custom navigation/route handling
-([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
-APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
-[`battery`](https://pub.dartlang.org/packages/battery)),
-and using third-party platform SDKs (like
-[Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
+This is handy to quickly build an app without having to develop everything from scratch.
 
-If you are looking to develop a new package, please see
+Existing packages are many, for example, 
+- making network requests ([`http`](/docs/cookbook/networking/fetch-data))
+- custom navigation/route handling ([`fluro`](https://pub.dartlang.org/packages/fluro))
+- integration with device APIs eg:
+  - [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) 
+  - [`battery`](https://pub.dartlang.org/packages/battery)
+- using third-party platform SDKs eg
+  - [Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)
+
+To create and develop a **new package**, please read
 [developing packages](/docs/development/packages-and-plugins/developing-packages).
 
-If you are looking to add assets, images, or fonts, whether stored in
-files or packages, please see [Assets & images](/docs/development/ui/assets-and-images).
+To add and use **asset** files such as images, csv, fonts, etc, whether stored in
+files or packages, please read [Assets & images](/docs/development/ui/assets-and-images).
 
 ## Using packages
 
 ### Searching for packages
 
-Packages are published to the *[Package](https://pub.dartlang.org)* site.
+'Dart' Packages are published to the **package** site at *[pub.dartlang.org](https://pub.dartlang.org)*.
 
 The [Flutter landing page](https://pub.dartlang.org/flutter/) on
-the Package site displays top packages that are compatible with Flutter
+the Package site displays the top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 
 ### Adding a package dependency to an app
 
-To add a package 'css_colors' to an app:
+To add a package, in this example `css_colors` to an app:
 
 1. Depend on it
-   * Open the `pubspec.yaml` file located inside your app folder, and add
+   * Open the `pubspec.yaml` file located inside the app folder, and add
      `css_colors:` under `dependencies`.
 
 1. Install it
-   * From the terminal: Run `flutter packages get`<br/>
+   * On the terminal: Run `flutter packages get`<br/>
    **OR**
    * From Android Studio/IntelliJ: Click 'Packages Get' in the action
      ribbon at the top of `pubspec.yaml`
@@ -50,6 +52,7 @@ To add a package 'css_colors' to an app:
 
 1. Import it
    * Add a corresponding `import` statement in your Dart code.
+   * `import 'css_colors';`
 
 1. Stop and restart the app, if necessary
    * If the package brings platform-specific code (Java/Kotlin for Android,
@@ -75,7 +78,7 @@ packages](/docs/development/packages-and-plugins/developing-packages).
 
 ### Package versions
 
-All packages have a version number, specified in their `pubspec.yaml` file.
+All packages MUST have a version number which is specified in the `pubspec.yaml` file.
 The current version of a package is displayed next to its name (for example,
 see the
 [url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
