@@ -77,15 +77,16 @@ The following table shows how Dart values are received on the platform side and 
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
 
 The following demonstrates how to call a platform-specific API to retrieve and
-display the current battery level. It uses the Android `BatteryManager` API, and
-the iOS `device.batteryLevel` API, via a single platform message,
-`getBatteryLevel`.
+display the current battery level. It uses the 
+Android [`BatteryManager`](https://developer.android.com/reference/android/os/BatteryManager) API, and
+the iOS [`device.batteryLevel`](https://developer.apple.com/documentation/uikit/uidevice/1620042-batterylevel) API, 
+via a single platform message, `getBatteryLevel`.
 
-The example adds the platform-specific code inside the main app itself. If you
-want to reuse the platform-specific code for multiple apps, the project creation
+The example adds the platform-specific code inside the main app itself. To reuse 
+the platform-specific code for multiple apps, the project creation
 step is slightly different (see [developing
 packages](/docs/development/packages-and-plugins/developing-packages#plugin)),
-but the platform channel code is still written in the same way.
+however the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
 [`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
@@ -94,27 +95,30 @@ for Android with Java and iOS with Objective-C. For iOS with Swift, see
 
 ### Step 1: Create a new app project {#example-project}
 
-Start by creating a new app:
+Start by creating a new app; on the terminal run
 
-* In a terminal run: `flutter create batterylevel`
+`flutter create batterylevel`
 
-By default our template supports writing Android code using Java, or iOS code
-using Objective-C. To use Kotlin or Swift, use the `-i` and/or `-a` flags:
+By default the template supports
+- Android code using Java
+- iOS code using Objective-C. 
+- To use Kotlin or Swift instead of defaults, use the `-i` and/or `-a` flags:
 
-* In a terminal run: `flutter create -i swift -a kotlin batterylevel`
+`flutter create -i swift -a kotlin batterylevel`
 
 ### Step 2: Create the Flutter platform client {#example-client}
 
 The app's `State` class holds the current app state. We need to extend that to
 hold the current battery state.
 
-First, we construct the channel. We use a `MethodChannel` with a single
-platform method that returns the battery level.
+First, construct a "channel" using a 
+[`MethodChannel`](https://docs.flutter.io/flutter/services/MethodChannel-class.html) with 
+a single platform method that returns the battery level.
 
-The client and host sides of a channel are connected through a channel name
-passed in the channel constructor. All channel names used in a single app must
-be unique; we recommend prefixing the channel name with a unique 'domain
-prefix', e.g. `samples.flutter.io/battery`.
+- The client/flutter and host/native sides of a channel are 
+  connected through a channel name passed in the channel constructor. 
+- All channel names used in a single app **must be unique** 
+- It is recommend prefixing the channel name with a unique 'domain prefix', e.g. `myflutter.example.com/battery`.
 
 <!-- skip -->
 ```dart
@@ -131,9 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 Next, invoke a method on the method channel, specifying the concrete method
-to call via the String identifier `getBatteryLevel`. The call may fail&mdash;for
-example if the platform does not support the platform API (such as when running
-in a simulator), so wrap the `invokeMethod` call in a try-catch statement.
+to call via the String identifier `getBatteryLevel`. The call may fail, for
+example if the platform does not support the platform 
+API (eg running in a simulator), so wrap 
+the `invokeMethod` call in a try-catch statement.
 
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
