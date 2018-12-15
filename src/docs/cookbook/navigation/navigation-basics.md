@@ -3,18 +3,19 @@ title: Navigate to a new screen and back
 ---
 
 
-Most apps contain several screens for displaying different types of information.
+Most apps contain several screens/pages for displaying different types of information. In Flutter their `Widgets`.
 
-Hypothetical app, for example:
- - A home screen/page that shows products
- - Users can `onTap()` a product to gain more info about on a new screen.
+A typical shopping app, for example:
+ - Presents a home screen/page `Widget` that shows products
+ - `onTap()` a product switches to a detail `Widget` screen
+ - order button presents another screen etc, etc
 
 # platform cases
- - On Android, the screens would be new [Activities](https://developer.android.com/reference/android/app/Activity) 
+ - On Android, screens/pages would be new [Activities](https://developer.android.com/reference/android/app/Activity) 
  - On iOS, new [ViewControllers](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/) 
  - With Flutter, screens are just widgets :-)
 
-To switch and navigate between screens, Flutter uses the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html) class.
+To switch and navigate between widgets, Flutter has the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html) class.
 
 ## Directions
 
