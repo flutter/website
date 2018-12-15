@@ -418,13 +418,23 @@
   },
   {
     "name": "LinearProgressIndicator",
-    "description": "Progress and activity indicators are visual indications of an app loading content. The LinearProgressIndicator widget implements this component. In addition you may also use the CircularProgressIndicator widget.",
+    "description": "A material design linear progress indicator, also known as a progress bar.",
     "categories": [],
     "subcategories": [
       "Information displays"
     ],
     "link": "https://docs.flutter.io/flutter/material/LinearProgressIndicator-class.html",
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png'>"
+  },
+  {
+    "name": "CircularProgressIndicator",
+    "description": "A material design circular progress indicator, which spins to indicate that the application is busy.",
+    "categories": [],
+    "subcategories": [
+      "Information displays"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/CircularProgressIndicator-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "GridView",
