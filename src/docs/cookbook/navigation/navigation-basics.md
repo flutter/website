@@ -1,5 +1,5 @@
 ---
-title: Navigatate to a new screen and back
+title: Navigate to a new screen and back
 ---
 
 
@@ -7,14 +7,14 @@ Most apps contain several screens for displaying different types of information.
 
 Hypothetical app, for example:
  - A home screen/page that shows products
- - Users can `onTap()` product to gain more info about `on a new screen`.
+ - Users can `onTap()` a product to gain more info about on a new screen.
 
-# platfrom cases
- - On Android,  the screens would be new Activities. 
- - On iOS,  new ViewControllers. 
- - With Flutter, screens are just Widgets! ;-)
+# platform cases
+ - On Android, the screens would be new [Activities](https://developer.android.com/reference/android/app/Activity) 
+ - On iOS, new [ViewControllers](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/) 
+ - With Flutter, screens are just widgets :-)
 
-So how do we navigate to new screens? Using the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
+To switch and navigate between screens, Flutter uses the [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html) class.
 
 ## Directions
 
@@ -24,12 +24,9 @@ So how do we navigate to new screens? Using the [`Navigator`](https://docs.flutt
 
 ## 1. Create two screens
 
-First, we'll need two screens to work with. Since this is a basic example, we'll
-create two screens, each containing a single button. Tapping the button on the
-first screen will navigate to the second screen. Tapping the button on the
-second screen will return our user back to the first!
-
-First, we'll set up the visual structure.
+In this basic example, there are two screens, each containing a single button. 
+- Tapping the button on the first screen will navigate to the second screen. 
+- Tapping the button on the second screen will return back to the first screen.
 
 ```dart
 class FirstScreen extends StatelessWidget {
@@ -37,11 +34,11 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: Text('The First Screen'),
       ),
       body: Center(
         child: RaisedButton(
-          child: Text('Launch screen'),
+          child: Text('Launch second screen'),
           onPressed: () {
             // Navigate to second screen when tapped!
           },
@@ -56,14 +53,14 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text("The Second Screen"),
       ),
       body: Center(
         child: RaisedButton(
           onPressed: () {
             // Navigate back to first screen when tapped!
           },
-          child: Text('Go back!'),
+          child: Text('Go back to first!'),
         ),
       ),
     );
@@ -73,18 +70,15 @@ class SecondScreen extends StatelessWidget {
 
 ## 2. Navigate to the second screen using `Navigator.push`
 
-To Navigate to a new screen, in this example we use the
-[`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
-method. The `push` method will add a `Route` to the stack of routes managed by
-the Navigator!
+The [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html) method 
+will **add** a `Route` to the stack of routes managed by the Navigator.
 
 The `push` method requires a `Route`, but where does the `Route` come from?
 We can create our own, or use the [`MaterialPageRoute`](https://docs.flutter.io/flutter/material/MaterialPageRoute-class.html)
 out of the box. The `MaterialPageRoute` is handy because it transitions to the
 new screen using a platform-specific animation.
 
-In the `build` method of our `FirstScreen` Widget, we'll update the `onPressed`
-callback:
+In the `build` method of our `FirstScreen` Widget, update the `onPressed` callback:
 
 <!-- skip -->
 ```dart
@@ -99,13 +93,8 @@ onPressed: () {
 
 ## 3. Return to the first screen using `Navigator.pop`
 
-Now that we're on our second screen, how do we close it out and return to the
-first? Using the [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
-method! The `pop` method will remove the current `Route` from the stack of
-routes managed by the navigator.
-
-For this part, we'll need to update the `onPressed` callback found in our
-`SecondScreen` Widget
+The [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
+method will remove the current `Route` from the stack of routes managed by the navigator.
 
 <!-- skip -->
 ```dart
