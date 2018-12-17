@@ -8,6 +8,7 @@
     "url": "https://github.com/dart-lang/site-www.git"
   },
   "devDependencies": {
+    "diff2html-cli": "^2.6.0",
     "firebase-tools": "^6.1.2",
     "superstatic": "^6.0.0"
   }

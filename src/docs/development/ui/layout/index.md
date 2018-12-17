@@ -1223,7 +1223,7 @@ it automatically scrolls.
   and 3 tiles wide in landscape mode. The titles are created by setting the
   `footer` property for each GridTile.
 
-  **Dart code:** [grid_list_demo.dart]({{demo}}/lib/demo/material/grid_list_demo.dart)
+  **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
@@ -1308,7 +1308,7 @@ its content is too long for its render box.
   the [Material Design palette](https://material.io/guidelines/style/color.html)
   for a particular color family.
 
-  **Dart code:** [colors_demo.dart]({{demo}}/lib/demo/colors_demo.dart) from the
+  **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
   [Flutter Gallery][]
 </div>
 </div>
@@ -1396,7 +1396,7 @@ The widgets can completely or partially overlap the base widget.
   Uses Stack to overlay a gradient to the top of the image. The gradient
   ensures that the toolbar's icons are distinct against the image.
 
-  **Dart code:** [contacts_demo.dart]({{demo}}/lib/demo/contacts_demo.dart)
+  **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
@@ -1491,7 +1491,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
   A Card containing an image and text.
 
-  **Dart code:** [cards_demo.dart]({{demo}}/lib/demo/material/cards_demo.dart)
+  **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
@@ -1573,7 +1573,7 @@ but can be used elsewhere.
   {:.text-center}
 
   Uses ListTile to list 3 drop down button types.<br>
-  **Dart code:** [buttons_demo.dart]({{demo}}/lib/demo/material/buttons_demo.dart)
+  **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
