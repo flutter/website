@@ -6,21 +6,25 @@ Working with tabs is a common pattern in apps following the Material Design
 guidelines. Flutter includes a convenient way to create tab layouts as part of
 the [material library](https://docs.flutter.io/flutter/material/material-library.html).
 
-## Directions
+## Steps
 
-  1. Create a `TabController`
-  2. Create the tabs
-  3. Create content for each tab
+  1. Create a [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html)
+  2. Create the [`TabBar`](https://docs.flutter.io/flutter/material/TabBar-class.html)
+     with [`Tab's`](https://docs.flutter.io/flutter/material/Tab-class.html) 
+  3. Create content for each tab in a [`TabBarView`](https://docs.flutter.io/flutter/material/TabBarView-class.html)
 
 ## 1. Create a `TabController`
 
-In order for tabs to work, we'll need to keep the selected tab and content
-sections in sync. This is the job of the [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html).
+The purpose of the [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html),
+is to keep the selected 'tab' and content 'view' in sync. 
 
-We can either manually create a `TabController` or use the
-[`DefaultTabController`](https://docs.flutter.io/flutter/material/DefaultTabController-class.html)
-Widget. Using the `DefaultTabController` is the simplest option, since it will
-create a `TabController` for us and make it available to all descendant Widgets.
+A `TabController` can be either:
+- manually created `TabController` or sublcassed
+- or using 
+  the [`DefaultTabController`](https://docs.flutter.io/flutter/material/DefaultTabController-class.html)
+  Widget. 
+- Using the `DefaultTabController` is the simplest option, as it will
+  create a `TabController` widget and make it available to all descendant Widgets.
 
 <!-- skip -->
 ```dart
@@ -31,12 +35,12 @@ DefaultTabController(
 );
 ```
 
-## 2. Create the tabs
+## 2. Create the `TabBar` and `Tab`s
 
-Now that we have a `TabController` to work with, we can create our tabs using
-the [`TabBar`](https://docs.flutter.io/flutter/material/TabController-class.html)
-Widget. In this example, we'll create a `TabBar` with 3 [`Tab`](https://docs.flutter.io/flutter/material/Tab-class.html)
-Widgets and place it within an [`AppBar`](https://docs.flutter.io/flutter/material/AppBar-class.html).
+The example below shows 
+- a [`TabBar`](https://docs.flutter.io/flutter/material/TabController-class.html) Widget
+- with three [`Tab`](https://docs.flutter.io/flutter/material/Tab-class.html) Widgets 
+- placed at the `bottom:` of the [`AppBar`](https://docs.flutter.io/flutter/material/AppBar-class.html).
 
 <!-- skip -->
 ```dart
@@ -46,36 +50,34 @@ DefaultTabController(
     appBar: AppBar(
       bottom: TabBar(
         tabs: [
-          Tab(icon: Icon(Icons.directions_car)),
-          Tab(icon: Icon(Icons.directions_transit)),
           Tab(icon: Icon(Icons.directions_bike)),
+          Tab(icon: Icon(Icons.directions_transit)),
+          Tab(icon: Icon(Icons.directions_car)),
         ],
       ),
     ),
   ),
 );
 ```
+The `TabBar` must have a **controller:**
+- by passing a  `TabController` specifically created as the **controller:** var
+- otherwise, the `TabBar` will look up the Widget tree for the nearest `DefaultTabController`
+- and if one not found then an error
 
-By default, the `TabBar` looks up the Widget tree for the nearest
-`DefaultTabController`. If you're manually creating a `TabController`, you'll
-need to pass it to the `TabBar`.
+## 3. Create content in a `TabBarView`
 
-## 3. Create content for each tab
+The [`TabBarView`](https://docs.flutter.io/flutter/material/TabBarView-class.html)
+is used to "switch" and display content when a tab is selected
 
-Now that we have tabs, we'll want to display content when a tab is selected.
-For this purpose, we'll employ the [`TabBarView`](https://docs.flutter.io/flutter/material/TabBarView-class.html)
-Widget.
-
-*Note:* Order is important and must correspond to the order of the tabs in the
-`TabBar`!
+*Note:* Order is important and must correspond to the order of the tabs in the `TabBar`!
 
 <!-- skip -->
 ```dart
 TabBarView(
   children: [
-    Icon(Icons.directions_car),
-    Icon(Icons.directions_transit),
-    Icon(Icons.directions_bike),
+    Tab(icon: Icon(Icons.directions_bike)),
+    Tab(icon: Icon(Icons.directions_transit)),
+    Tab(icon: Icon(Icons.directions_car)),
   ],
 );
 ```
@@ -99,9 +101,9 @@ class TabBarDemo extends StatelessWidget {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
                 Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.directions_car)),
               ],
             ),
             title: Text('Tabs Demo'),
