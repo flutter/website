@@ -2,7 +2,7 @@
 title: Install
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 toc: false
 ---
 

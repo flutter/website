@@ -4,7 +4,7 @@ short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}

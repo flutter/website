@@ -3,10 +3,10 @@ title: Write your first Flutter app, part 1
 short-title: Write your first app
 prev:
   title: Test drive
-  path: /get-started/test-drive
+  path: /docs/get-started/test-drive
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /docs/get-started/learn-more
 diff2html: true
 ---
 

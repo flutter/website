@@ -3,7 +3,7 @@ title: MacOS install
 short-title: MacOS
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'macos' -%}

@@ -2,10 +2,10 @@
 title: Set up an editor
 prev:
   title: Install
-  path: /get-started/install
+  path: /docs/get-started/install
 next:
   title: Test drive
-  path: /get-started/test-drive
+  path: /docs/get-started/test-drive
 toc: false
 ---
 

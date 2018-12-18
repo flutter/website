@@ -3,7 +3,7 @@ title: Learn more
 description: More resources to help you learn Flutter.
 prev:
   title: Write your first Flutter app
-  path: /get-started/codelab
+  path: /docs/get-started/codelab
 toc: false
 ---
 
