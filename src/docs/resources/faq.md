@@ -107,22 +107,13 @@ to approachability for the majority of the system.
 
 ### Should I build my next production app with Flutter?
 
-Flutter is still being developed and is not yet at
-1.0. But Flutter is used inside of Google and apps built
-with Flutter are deployed to users in production.
-A few sample apps are shown in the [showcase](/showcase).
+Flutter 1.0 was launched on Dec 4th, 2018. Thousands of apps
+have shipped with Flutter to hundreds of millions of devices.
+See some sample apps in the [showcase](/showcase).
 
-Some key features are not yet complete, however features that
-are completed are generally of high-quality and ready for use.
-
-Our APIs are stabilizing, and we continue to improve
-parts of the system based on user feedback.
-We email [{{site.email}}](mailto:{{site.email}})
-when we make a change that might impact our users.
-
-So really, it is up to you. The features you need may be
-available today. Please let us know if you released an app
-built with Flutter to users. We'd love to hear what you're building!
+For more information on the launch and subsequent releases,
+see [Flutter 1.0: Google's Portable UI
+Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html).
 
 ## What does Flutter provide?
 
