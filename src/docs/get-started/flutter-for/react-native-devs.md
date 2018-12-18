@@ -1508,7 +1508,7 @@ file then import the package in your Dart file.
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^0.3.0
+  shared_preferences: ^0.4.3
 ```
 
 <!-- skip -->
