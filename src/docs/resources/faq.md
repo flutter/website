@@ -113,7 +113,7 @@ See some sample apps in the [showcase](/showcase).
 
 For more information on the launch and subsequent releases,
 see [Flutter 1.0: Google's Portable UI
-Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html)
+Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html).
 
 ## What does Flutter provide?
 
