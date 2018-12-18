@@ -4,7 +4,7 @@ short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}
@@ -28,7 +28,7 @@ To install and run Flutter, your development environment must meet these minimum
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor)
+[Next step: Configure Editor](/docs/get-started/editor)
 
 [Git for Windows]: https://git-scm.com/download/win
 [Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell

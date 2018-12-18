@@ -15,7 +15,7 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 ## Installation and setup
 
-Follow the [Set up an editor](/get-started/editor?ide=vscode) instructions to
+Follow the [Set up an editor](/docs/get-started/editor?ide=vscode) instructions to
 install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}

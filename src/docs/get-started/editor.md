@@ -2,10 +2,10 @@
 title: Set up an editor
 prev:
   title: Install
-  path: /get-started/install
+  path: /docs/get-started/install
 next:
   title: Test drive
-  path: /get-started/test-drive
+  path: /docs/get-started/test-drive
 toc: false
 ---
 
@@ -16,7 +16,7 @@ highlighting, widget editing assists, run & debug support, and more.
 
 Follow the steps below to add an editor plugin for Android Studio, IntelliJ, or
 VS Code. If you want to use a different editor, that's OK, skip ahead to the
-[next step: Test drive](/get-started/test-drive).
+[next step: Test drive](/docs/get-started/test-drive).
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">

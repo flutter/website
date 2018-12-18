@@ -3,7 +3,7 @@ title: MacOS install
 short-title: MacOS
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'macos' -%}
@@ -33,4 +33,4 @@ first Flutter app.
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor)
+[Next step: Configure Editor](/docs/get-started/editor)

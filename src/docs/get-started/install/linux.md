@@ -4,7 +4,7 @@ short-title: Linux
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'linux' -%}
@@ -28,4 +28,4 @@ To install and run Flutter, your development environment must meet these minimum
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor)
+[Next step: Configure Editor](/docs/get-started/editor)
