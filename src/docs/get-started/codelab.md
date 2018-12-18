@@ -62,7 +62,7 @@ The animated GIF shows how the app works at the completion of part 1.
   <h4 class="no_toc">What you'll use</h4>
 
   You need two pieces of software to complete this lab: the
-  [Flutter SDK](/get-started/install) and [an editor](/get-started/editor).
+  [Flutter SDK](/docs/get-started/install) and [an editor](/docs/get-started/editor).
   This codelab assumes Android Studio, but you can use your preferred
   editor.
 
@@ -78,13 +78,13 @@ The animated GIF shows how the app works at the completion of part 1.
 ## Step 1: Create the starter Flutter app
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app.](/get-started/test-drive#create-app)
+[Getting Started with your first Flutter app.](/docs/get-started/test-drive#create-app)
 Name the project **startup_namer** (instead of _myapp_).
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE, make
   sure you have the [plugins installed for Flutter and
-  Dart](/get-started/editor).
+  Dart](/docs/get-started/editor).
 {{site.alert.end}}
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
@@ -129,7 +129,7 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. [Run the app](/get-started/test-drive#androidstudio) by clicking
+ 2. [Run the app](/docs/get-started/test-drive#androidstudio) by clicking
     the green arrow in the IDE.
     You should see either Android or iOS output, depending on your device.
 

@@ -14,7 +14,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
 
 ## Installation and setup
 
-Follow the [Set up an editor](/get-started/editor?ide=androidstudio)
+Follow the [Set up an editor](/docs/get-started/editor?ide=androidstudio)
 instructions to install the Dart and Flutter plugins.
 
 ### Updating the plugins<a name="updating"/>

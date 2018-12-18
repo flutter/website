@@ -33,4 +33,4 @@ first Flutter app.
 
 ## Next step
 
-[Next step: Configure Editor](/get-started/editor)
+[Next step: Configure Editor](/docs/get-started/editor)

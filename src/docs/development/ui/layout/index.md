@@ -38,8 +38,8 @@ start with [Flutter's approach to layout](#flutters-approach-to-layout).
 
 First, get the code:
 
-* Make sure you've [set up](/get-started/install) your environment.
-* [Create a basic Flutter app](/get-started/test-drive#create-app).
+* Make sure you've [set up](/docs/get-started/install) your environment.
+* [Create a basic Flutter app](/docs/get-started/test-drive#create-app).
 
 Next, add the image to the example:
 
@@ -1586,7 +1586,7 @@ The following resources may help when writing layout code.
 
 * [Widget Overview](/docs/development/ui/widgets)
 : Describes many of the widgets available in Flutter.
-* [HTML/CSS Analogs in Flutter](/get-started/flutter-for/web-devs)
+* [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)
 : For those familiar with web programming, this page maps HTML/CSS functionality
   to Flutter features.
 * [Flutter Gallery][]

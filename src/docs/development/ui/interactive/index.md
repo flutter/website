@@ -23,8 +23,8 @@ If you've already built the layout in
 [Building Layouts in Flutter](/docs/development/ui/layout),
 skip to the next section.
 
-* Make sure you've [set up](/get-started/install) your environment.
-* [Create a basic Flutter app.](/get-started/test-drive/#create-app)
+* Make sure you've [set up](/docs/get-started/install) your environment.
+* [Create a basic Flutter app.](/docs/get-started/test-drive/#create-app)
 * Replace the `lib/main.dart` file with
   [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
   from GitHub.
@@ -35,7 +35,7 @@ skip to the next section.
   [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
-simulator](/get-started/install/macos#set-up-the-ios-simulator)
+simulator](/docs/get-started/install/macos#set-up-the-ios-simulator)
 (part of the Flutter install),
 you are good to go!
 

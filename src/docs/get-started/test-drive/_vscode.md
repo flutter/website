@@ -35,7 +35,7 @@ contains a simple demo app that uses [Material Components][].
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 
-[Install]: /get-started/install
+[Install]: /docs/get-started/install
 [Material Components]: https://material.io/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}

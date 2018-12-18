@@ -144,7 +144,7 @@ Studio](https://developer.android.com/studio/),
 [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 and [VS Code](https://code.visualstudio.com/).
 
-See [editor configuration](/get-started/editor) for setup details, and
+See [editor configuration](/docs/get-started/editor) for setup details, and
 ['Developing Flutter apps in an IDE'](/docs/development/tools/android-studio)
 for tips on how to use the plugins.
 
