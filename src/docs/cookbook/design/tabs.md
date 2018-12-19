@@ -16,15 +16,15 @@ the [material library](https://docs.flutter.io/flutter/material/material-library
 ## 1. Create a `TabController`
 
 The purpose of the [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html),
-is to keep the selected 'tab' and content 'view' in sync. 
+is to coordinate the selected `Tab` in the `TabBar` and content in `TabBarView`. 
 
 A `TabController` can be either:
-- manually created `TabController` or sublcassed
+- manually created [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html) or sublcassed
 - or using 
   the [`DefaultTabController`](https://docs.flutter.io/flutter/material/DefaultTabController-class.html)
   Widget. 
 - Using the `DefaultTabController` is the simplest option, as it will
-  create a `TabController` widget and make it available to all descendant Widgets.
+  create a `TabController`  'wrapper' Widget and thereby available to all descendant Widgets.
 
 <!-- skip -->
 ```dart
