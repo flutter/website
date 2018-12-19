@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.34.0"
+    version: "0.34.1"
   args:
     dependency: transitive
     description:
@@ -90,10 +90,10 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: cd401f6a308460f4ef5e4bb6c8f085f72f2f04a3
+      resolved-ref: "5305683bb92431bddf5f9b682ffbf5927bfda6cf"
       url: "https://github.com/chalin/code_excerpt_updater.git"
     source: git
-    version: "0.12.0"
+    version: "0.15.0"
   code_excerpter:
     dependency: "direct dev"
     description:
@@ -123,7 +123,7 @@ packages:
       name: convert
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.1.1"
   crypto:
     dependency: transitive
     description:
@@ -158,7 +158,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.7"
+    version: "0.1.8"
   glob:
     dependency: transitive
     description:
@@ -221,7 +221,7 @@ packages:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.7"
+    version: "0.3.8"
   linkcheck:
     dependency: "direct dev"
     description:
@@ -319,7 +319,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.3+3"
+    version: "0.7.4"
   shelf_web_socket:
     dependency: transitive
     description:
