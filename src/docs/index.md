@@ -79,6 +79,10 @@ here are some next steps.
 [A tour of the Flutter widget framework](/docs/development/ui/widgets-intro)
 : Learn more about Flutter's react-style framework.
 
+[FAQ](/docs/resources/faq)
+: Get the answers to frequently asked questions.
+
+
 ## Want to skill up?
 
 Once you’ve mastered the basics, try these pages.

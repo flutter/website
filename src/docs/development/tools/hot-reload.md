@@ -12,7 +12,7 @@ of your changes.
 
 To hot reload a Flutter app:
 
- 1. Run the app from a supported [Flutter editor](/get-started/editor)
+ 1. Run the app from a supported [Flutter editor](/docs/get-started/editor)
     or a terminal window. Either a physical or virtual device can be the target.
     Only Flutter apps in debug mode can be hot reloaded.
  1. Modify one of the Dart files in your project. Most types of code changes can

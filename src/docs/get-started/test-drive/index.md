@@ -2,10 +2,10 @@
 title: Test drive
 prev:
   title: Set up an editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 next:
   title: Write your first Flutter app
-  path: /get-started/codelab
+  path: /docs/get-started/codelab
 toc: false
 ---
 

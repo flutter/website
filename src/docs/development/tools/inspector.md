@@ -20,7 +20,7 @@ these widget trees. It can be helpful when:
 ## Getting started with the inspector
 
 The inspector is currently available in [the Flutter
-plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
+plugin](/docs/get-started/editor) for Android Studio, or IntelliJ IDEA.
 
 To start click "Select widget" on the Flutter inspector toolbar, and then click
 on the device to select a widget. The selected widget is then highlighted

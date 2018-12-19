@@ -119,7 +119,7 @@ experience.
 #### Step 2a: Define the package API (.dart)
 
 The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in your favorite [Flutter editor](/get-started/editor). Locate the file
+folder in your favorite [Flutter editor](/docs/get-started/editor). Locate the file
 `lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)

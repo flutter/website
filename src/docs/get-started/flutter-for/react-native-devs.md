@@ -307,7 +307,7 @@ To create an app in Flutter, do one of the following:
 $ flutter create <projectname>
 {% endprettify%}
 
-For more information, see [Getting Started](/get-started), which
+For more information, see [Getting Started](/docs/get-started), which
 walks you through creating a button-click counter app. Creating a Flutter
 project builds all the files that you need to run a sample app on both Android
 and iOS devices.
@@ -324,7 +324,7 @@ In React Native, you would run `npm run` or `yarn run` from the project
 
  Your app runs on a connected device, the iOS emulator, or the Android simulator.
 
-For more information, see the Flutter [Getting Started](/get-started) documentation.
+For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
 
 ### How do I import widgets?
 
@@ -1508,7 +1508,7 @@ file then import the package in your Dart file.
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^0.3.0
+  shared_preferences: ^0.4.3
 ```
 
 <!-- skip -->
