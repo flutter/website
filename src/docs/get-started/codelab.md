@@ -180,14 +180,11 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
 
-    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" from="dependencies" to="english"?>
-    {% diff from="dependencies" %}
+    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+    {% diff %}
     --- 1-base/pubspec.yaml
     +++ 2-use-package/pubspec.yaml
-    @@ -2,10 +2,13 @@
-     description: A startup-namer app.
-     version: 1.0.0+1
-
+    @@ -5,8 +5,9 @@
      dependencies:
        flutter:
          sdk: flutter
@@ -367,7 +364,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,9 +13,27 @@
+    @@ -14,9 +13,22 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -522,14 +519,11 @@ lazily, on demand.
  5. In the `MyApp` class, update the `build()` method by changing the title, and
     changing the home to be a `RandomWords` widget:
 
-    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" from="class MyApp" to="}"?>
+    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     {% diff %}
     --- 3-stateful-widget/lib/main.dart
     +++ 4-infinite-list/lib/main.dart
-    @@ -3,36 +3,68 @@
-
-     void main() => runApp(MyApp());
-
+    @@ -6,26 +6,49 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
