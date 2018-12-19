@@ -322,7 +322,7 @@ In React Native, you would run `npm run` or `yarn run` from the project
  * Use `flutter run` from the project's root directory.
  * Use the "run" option in an IDE with the Flutter and Dart plugins.
 
- Your app runs on a connected device, the iOS emulator, or the Android simulator.
+ Your app runs on a connected device, the iOS simulator, or the Android emulator.
 
 For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
 
