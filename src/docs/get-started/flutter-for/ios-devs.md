@@ -442,7 +442,7 @@ wrap a widget in an Opacity widget to accomplish this.
 
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
-In Flutter, build a custom widget by
+Flutter, build a custom widget by
 [composing](/docs/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 
