@@ -1074,7 +1074,7 @@ Next, declare these images in the `pubspec.yaml` file:
 <!-- skip -->
 {% prettify yaml %}
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 {% endprettify %}
 
 You can now access your images using `AssetImage`:
