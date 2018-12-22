@@ -11,6 +11,10 @@ repo:
   flutter: https://github.com/flutter/flutter
 branch: master
 
+dart:
+  api: https://api.dartlang.org
+  sdk:
+    channel: stable
 sdk: # Flutter SDK
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 
@@ -86,6 +90,9 @@ alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
     <i class="fas fa-exclamation-circle"></i> **Important:**
+  info: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fas fa-info-circle"></i> **Note:**
