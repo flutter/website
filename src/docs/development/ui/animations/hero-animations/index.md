@@ -475,7 +475,7 @@ This guide describes the first example.<br><br>
 [radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
 : A radial hero animation as described in the Material motion spec.
 
-[basic_radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_radial_hero_transition)
+[basic_radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_radial_hero_animation)
 : The simplest example of a radial hero animation. The destination
   route has no Scaffold, Card, Column, or Text.
   This basic example, provided for your reference, isn't
