@@ -2,6 +2,7 @@
 title: Flutter SDK archive
 short-title: Archive
 description: Flutter SDK archive
+toc: false
 ---
 
 <style>

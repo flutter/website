@@ -6,6 +6,7 @@ prev:
 next:
   title: Test drive
   path: /docs/get-started/test-drive
+toc: false
 ---
 
 You can build apps with Flutter using any text editor combined with our
