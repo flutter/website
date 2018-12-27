@@ -111,11 +111,11 @@ with an animation to get a concrete value:
    another widget, which can then read the current value that incorporates
    the tween as well as listen for changes to the value.
 
-# Architecture
+## Architecture
 
 Animations are actually built from a number of core building blocks.
 
-## Scheduler
+### Scheduler
 
 The
 [`SchedulerBinding`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding-mixin.html)
@@ -132,7 +132,7 @@ callbacks have the same time, any animations triggered from these
 callbacks will appear to be exactly synchronised even if they take a
 few milliseconds to be executed.
 
-## Tickers
+### Tickers
 
 The
 [`Ticker`](https://docs.flutter.io/flutter/scheduler/Ticker-class.html)
@@ -152,7 +152,7 @@ start three ticks at different times between two frames, they will all
 nonetheless be synchronised with the same starting time, and will
 subsequently tick in lockstep.
 
-## Simulations
+### Simulations
 
 The
 [`Simulation`](https://docs.flutter.io/flutter/physics/Simulation-class.html)
@@ -168,7 +168,7 @@ change state irreversibly when queried.
 There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
 of the `Simulation` class for different effects.
 
-## Animatables
+### Animatables
 
 The
 [`Animatable`](https://docs.flutter.io/flutter/animation/Animatable-class.html)
@@ -176,7 +176,7 @@ abstract class maps a double to a value of a particular type.
 
 `Animatable` classes are stateless and immutable.
 
-### Tweens
+#### Tweens
 
 The
 [`Tween`](https://docs.flutter.io/flutter/animation/Tween-class.html)
@@ -191,13 +191,13 @@ the range 0.0-1.0).
 
 `Tween` classes are stateless and immutable.
 
-### Composing animatables
+#### Composing animatables
 
 Passing an `Animatable<double>` (the parent) to an `Animatable`'s
 `chain()` method creates a new `Animatable` subclass that applies the
 parent's mapping then the child's mapping.
 
-## Curves
+### Curves
 
 The
 [`Curve`](https://docs.flutter.io/flutter/animation/Curve-class.html)
@@ -206,7 +206,7 @@ nominally in the range 0.0-1.0.
 
 `Curve` classes are stateless and immutable.
 
-## Animations
+### Animations
 
 The
 [`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
@@ -229,7 +229,7 @@ subclasses of `Animation`.
 Some `Animation` subclasses are stateless, merely forwarding listeners
 to their parents. Some are very stateful.
 
-### Composable animations
+#### Composable animations
 
 Most `Animation` subclasses take an explicit "parent"
 `Animation<double>`. They are driven by that parent.
@@ -254,7 +254,7 @@ However, the parent is mutable.
 The `TrainHoppingAnimation` subclass takes two parents, and switches
 between them when their values cross.
 
-### Animation Controllers
+#### Animation Controllers
 
 The
 [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html)
@@ -294,7 +294,7 @@ These methods all return the future that the `Ticker` provides and
 which will resolve when the controller next stops or changes
 simulation.
 
-### Attaching animatables to animations
+#### Attaching animatables to animations
 
 Passing an `Animation<double>` (the new parent) to an `Animatable`'s
 `animate()` method creates a new `Animation` subclass that acts like
