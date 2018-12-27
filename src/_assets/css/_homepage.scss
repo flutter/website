@@ -319,11 +319,17 @@
       margin-bottom: bs-spacer(4);
 
       @include media-breakpoint-up(sm) {
-        bottom: 0;
+        font-size: smaller;
+        bottom: bs-spacer(8);
+        margin-right: 2rem;
+        left: 340px;
         position: absolute;
-        right: bs-spacer(6);
-        text-align: center;
+        text-align: left;
       }
+      @include media-breakpoint-up(md) { left: 430px; font-size: inherit; }
+      @include media-breakpoint-up(lg) { left: 380px; }
+      @include media-breakpoint-up(xl) { left: 450px; bottom: bs-spacer(10); }
+      @include media-breakpoint-up(xxl){ left: 530px; }
     }
   }
 
