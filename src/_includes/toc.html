@@ -13,15 +13,13 @@
   {% assign id-suffix = include.kind | prepend: '--' -%}
 {% endif -%}
 
-{% assign toc = content | toc_only | strip -%}
-{% assign toc_line_count = toc | split: "\n" | size -%}
+{% assign toc = content | toc_only -%}
 
 {% comment %}
-  An empty TOC consists of two non-blank lines: an opening and closing <ul> tag.
-  Only generate a TOC <div> if the TOC source is non-empty.
+  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
 {% endcomment -%}
 
-{% if toc_line_count > 2 -%}
+{% if toc contains "<li" -%}
 <div
   id="site-toc{{id-suffix}}"
   class="site-toc site-toc--{{include.kind}} {{include.class}}"
