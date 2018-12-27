@@ -27,7 +27,7 @@
     - title: "Dart language overview"
       permalink: https://www.dartlang.org/guides/language
 
-- title: Samples & codelabs
+- title: Samples & tutorials
   children:
     - title: Sample apps on GitHub
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
@@ -35,6 +35,8 @@
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
+    - title: Tutorials
+      permalink: /docs/reference/tutorials
 
 - title: Development
   expanded: true
@@ -185,8 +187,6 @@
 - title: Reference
   expanded: true
   children:
-    - title: Tutorials
-      permalink: /docs/reference/tutorials
     - title: Widget index
       permalink: /docs/reference/widgets
     - title: API reference
