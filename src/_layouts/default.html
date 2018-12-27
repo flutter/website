@@ -16,7 +16,7 @@ layout: base
       {% include sidenav.html nav=site.data.sidenav %}
     </div>
     {% if page.toc and layout.toc != false -%}
-      {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" %}
+      {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" -%}
     {% endif -%}
     <main class="site-content {{main-col}}" role="main">
       <div class="container">
@@ -32,7 +32,7 @@ layout: base
           {% endif -%}
         </header>
         {% if page.toc and layout.toc != false -%}
-          {% include toc.html kind="inline" %}
+          {% include toc.html kind="inline" -%}
         {% endif -%}
         {{ content | inject_anchors }}
         {% include next-prev-nav.html %}

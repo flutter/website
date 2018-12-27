@@ -3,7 +3,6 @@ title: Install
 next:
   title: Set up an editor
   path: /docs/get-started/editor
-toc: false
 ---
 
 Select the operating system on which you are installing Flutter:

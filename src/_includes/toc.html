@@ -12,6 +12,14 @@
 {% if include.kind -%}
   {% assign id-suffix = include.kind | prepend: '--' -%}
 {% endif -%}
+
+{% assign toc = content | toc_only -%}
+
+{% comment %}
+  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
+{% endcomment -%}
+
+{% if toc contains "<li" -%}
 <div
   id="site-toc{{id-suffix}}"
   class="site-toc site-toc--{{include.kind}} {{include.class}}"
@@ -23,5 +31,6 @@
       <button type="button" class="btn site-toc--button__page-top" aria-label="Page top"></button>
     {% endunless -%}
   </header>
-  {{ content | toc_only }}
+  {{ toc }}
 </div>
+{% endif -%}

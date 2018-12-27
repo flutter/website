@@ -1,6 +1,5 @@
 ---
 title: Tutorials
-toc: false
 ---
 
 The **Flutter Tutorials** teach you how to use the Flutter framework to
