@@ -1,10 +1,9 @@
 ---
 title: Sample App Catalog
 description: Samples to help you grow your Flutter skills.
-toc: false
 ---
 
 The Flutter team and community have written many
 sample apps, demos, and examples.
-To find some of the best, visit the 
+To find some of the best, visit the
 **[curated list of samples.](https://github.com/flutter/samples/blob/master/INDEX.md)**

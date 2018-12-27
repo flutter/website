@@ -6,7 +6,6 @@ prev:
 next:
   title: Write your first Flutter app
   path: /docs/get-started/codelab
-toc: false
 ---
 
 This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.

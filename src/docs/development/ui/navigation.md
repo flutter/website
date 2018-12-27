@@ -1,6 +1,5 @@
 ---
 title: Navigation & routing
-toc: false
 ---
 
 {% comment %}

@@ -1,6 +1,5 @@
 ---
 title: Bootstrap into Dart
-toc: false
 ---
 
 New to the [Dart](https://www.dartlang.org) language?
