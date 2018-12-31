@@ -184,7 +184,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     {% diff %}
     --- 1-base/pubspec.yaml
     +++ 2-use-package/pubspec.yaml
-    @@ -5,8 +5,9 @@
+    @@ -5,4 +5,5 @@
      dependencies:
        flutter:
          sdk: flutter
@@ -226,12 +226,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     {% diff from="class" %}
     --- 1-base/lib/main.dart
     +++ 2-use-package/lib/main.dart
-    @@ -1,10 +1,12 @@
-     import 'package:flutter/material.dart';
-    +import 'package:english_words/english_words.dart';
-
-     void main() => runApp(MyApp());
-
+    @@ -5,6 +6,7 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -364,7 +359,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,9 +13,22 @@
+    @@ -14,8 +13,8 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -523,7 +518,7 @@ lazily, on demand.
     {% diff %}
     --- 3-stateful-widget/lib/main.dart
     +++ 4-infinite-list/lib/main.dart
-    @@ -6,26 +6,49 @@
+    @@ -6,15 +6,8 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
