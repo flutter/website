@@ -8,7 +8,7 @@ contribute to the slick look and feel of a polished app,
 and improve the user experience. Flutter's animation support
 makes it easy to implement a variety of animation types.
 Many widgets, especially
-[Material Design widgets](/docs/reference/widgets/material),
+[Material Design widgets](/docs/development/ui/widgets/material),
 come with the standard motion effects defined in their design spec,
 but it's also possible to customize these effects.
 
@@ -35,9 +35,9 @@ If you have a specific request, please
   Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
-  Flutter](https://codelabs.developers.google.com/codelabs/flutter/index.html#0)<br>
+  Flutter](https://codelabs.developers.google.com/codelabs/flutter)<br>
   Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-  your app)](https://codelabs.developers.google.com/codelabs/flutter/index.html#6)
+  your app)](https://codelabs.developers.google.com/codelabs/flutter/#6)
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 
@@ -140,7 +140,7 @@ Learn more about Flutter animations at the following links:
 A look at some of the major classes in the animations library,
 and Flutter's animation architecture.
 
-* [Animation and Motion Widgets](/docs/reference/widgets/animation)<br>
+* [Animation and Motion Widgets](/docs/development/ui/widgets/animation)<br>
 A catalog of some of the animation widgets provided in the Flutter APIs.
 
 {% comment %}

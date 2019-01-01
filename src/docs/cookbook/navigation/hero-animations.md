@@ -24,8 +24,8 @@ on the image. For now, we'll create the visual structure, and handle animations
 in the next steps!
 
 *Note:* This example builds upon the
-[Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics/)
-and [Handling Taps](/docs/cookbook/gestures/handling-taps/) recipes.
+[Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
+and [Handling Taps](/docs/cookbook/gestures/handling-taps) recipes.
 
 ```dart
 class MainScreen extends StatelessWidget {

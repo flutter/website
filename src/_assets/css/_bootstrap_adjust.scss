@@ -51,7 +51,8 @@ a.card {
 .btn {
   font-family: $site-font-family-alt;
   font-weight: 500;
-  padding: bs-spacer(2) bs-spacer(10);
+  padding: bs-spacer(2);
+  white-space: normal;
 }
 
 .btn-link:hover,

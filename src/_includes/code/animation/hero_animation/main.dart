@@ -51,7 +51,7 @@ class HeroAnimation extends StatelessWidget {
           photo: 'images/flippers-alpha.png',
           width: 300.0,
           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute<Null>(
+            Navigator.of(context).push(MaterialPageRoute<void>(
               builder: (BuildContext context) {
                 return Scaffold(
                   appBar: AppBar(

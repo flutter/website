@@ -1,6 +1,8 @@
 After the app build completes, you'll see the starter app on your device.
 
-{% include app-figure.md img-class="site-mobile-screenshot border" image="starter-app.png" caption="Starter app" platform="iOS" %}
+{% include app-figure.md img-class="site-mobile-screenshot border"
+    path-prefix="get-started" platform="iOS" image="starter-app.png"
+    caption="Starter app" %}
 
 ## Try hot reload
 
@@ -20,7 +22,7 @@ want to hot reload, and see the change in your simulator, emulator, or device.
     </code>.
 
     {{site.alert.important}}
-      Do _not_ press the **Stop** button; let your app run.
+      Do _not_ stop your app. Let your app run.
     {{site.alert.end}}
 
  1. Save your changes{{include.save_changes}}

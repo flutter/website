@@ -1,6 +1,7 @@
 ---
 title: Tabbed AppBar
 description: An example that uses a TabBar for its AppBar.
+deprecated: true
 ---
 
 An AppBar with a TabBar as its bottom widget.

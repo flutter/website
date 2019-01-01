@@ -2,9 +2,9 @@ function setupTabs(container, storageName, defaultTab) {
   var tabs = $('li a', container);
   // console.log('>> #tabs', tabs.length, storageName);
 
-  // Return 'foo' from either '#foo' or '?ide=foo'
-  function getIde(query) {
-    var match = query.match(/(#|\bide=)(\w+)/);
+  // Return 'foo' from either '#foo' or '?tab=foo'
+  function getTabIdFromQuery(query) {
+    var match = query.match(/(#|\btab=)(\w+)/);
     return match ? match[2] : '';
   }
 
@@ -13,7 +13,7 @@ function setupTabs(container, storageName, defaultTab) {
     e.preventDefault();
     $(this).tab('show');
 
-    var id = getIde($(this).attr('href'));
+    var id = getTabIdFromQuery($(this).attr('href'));
 
     // Persist to local storage so we can pre-select around the site
     if (storageName && window.localStorage) {
@@ -21,7 +21,7 @@ function setupTabs(container, storageName, defaultTab) {
       window.localStorage.setItem(storageName, id);
     }
 
-    var l = location, query = '?ide=' + id;
+    var l = location, query = '?tab=' + id;
     if (id && l.search != query) {
       var url = l.protocol + '//' + l.host + l.pathname + query + l.hash;
       // console.log('>> history.replaceState of', url);
@@ -40,7 +40,7 @@ function setupTabs(container, storageName, defaultTab) {
   tabs.click(clickHandler);
 
   var selectedTab;
-  if (selectedTab = getIde(location.search)) {
+  if (selectedTab = getTabIdFromQuery(location.search)) {
     // console.log('>> setting tab from location:', selectedTab)
     selectTab(selectedTab);
   } else if (storageName && window.localStorage

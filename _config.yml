@@ -11,6 +11,13 @@ repo:
   flutter: https://github.com/flutter/flutter
 branch: master
 
+dart:
+  api: https://api.dartlang.org
+  sdk:
+    channel: stable
+sdk: # Flutter SDK
+  channel: stable # When changing this value also update it in src/_assets/js/archive.js
+
 social:
   twitter: https://twitter.com/flutterio
   youtube: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
@@ -56,11 +63,6 @@ defaults:
     path: 'docs/get-started/flutter-for'
   values:
     show_breadcrumbs: false
-- scope:
-    path: 'docs/reference/widgets'
-  values:
-    show_breadcrumbs: true
-    toc: false
 
 # Build settings
 
@@ -87,18 +89,21 @@ os-list: [Windows, macOS, Linux]
 alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fa fa-warning"></i> **Important:**
+    <i class="fas fa-exclamation-circle"></i> **Important:**
+  info: >-
+    <aside class="alert alert-info" role="alert" markdown="1">
+    <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fa fa-info-circle"></i> **Note:**
+    <i class="fas fa-info-circle"></i> **Note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
     <i class="far fa-lightbulb"></i> **Tip:**
   warning: >-
-    <aside class="alert alert-danger" role="alert" markdown="1">
-    <i class="fa fa-exclamation-circle"></i> **Warning:**
+    <aside class="alert alert-warning" role="alert" markdown="1">
+    <i class="fas fa-exclamation-triangle"></i> **Warning:**
   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'
@@ -110,5 +115,3 @@ alert:
 
   # hr_faded: '<hr class="faded"/>'
   # hr_shaded: '<hr class="shaded"/>'
-
-codelab-code-url: https://raw.githubusercontent.com/chalin/flutter-codelabs/master

@@ -12,8 +12,8 @@ Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
 capabilities and configurations. Flutter is a new way to build UIs for mobile,
 but it has a plugin system to communicate with iOS (and Android) for non-UI
-tasks. If you're an expert in iOS development, you don't have to relearn everything
-to use Flutter.
+tasks. If you're an expert in iOS development, you don't have to relearn
+everything to use Flutter.
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
@@ -21,6 +21,13 @@ that are most relevant to your needs.
 ## Views
 
 ### What is the equivalent of a `UIView` in Flutter?
+
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
 On iOS, most of what you create in the UI is done using view objects, which are
 instances of the `UIView` class. These can act as containers for other `UIView`
@@ -39,8 +46,8 @@ redraw until it is invalidated using `setNeedsDisplay()`.
 
 Furthermore, unlike `UIView`, Flutter’s widgets are lightweight, in part due
 to their immutability. Because they aren't views themselves, and aren't directly
-drawing anything, but rather are a description of the UI and its semantics that get
-"inflated" into actual view objects under the hood.
+drawing anything, but rather are a description of the UI and its semantics
+that get "inflated" into actual view objects under the hood.
 
 Flutter includes the [Material Components](https://material.io/develop/flutter/)
 library. These are widgets that implement the
@@ -50,7 +57,7 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-On iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
+On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
@@ -194,7 +201,7 @@ You can add padding to any widget, which mimics the functionality of
 constraints in iOS.
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/reference/widgets/layout).
+catalog](/docs/development/ui/widgets/layout).
 
 ### How do I add or remove a component from my layout?
 
@@ -364,7 +371,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/docs/reference/widgets/animation),
+[Animation & Motion widgets](/docs/development/ui/widgets/animation),
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
@@ -376,8 +383,9 @@ other classes that help you draw: `CustomPaint` and `CustomPainter`, the
 latter of which implements your algorithm to draw to the canvas.
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
-for-mobile-app-in-dart-flutter).
+[StackOverflow][].
+
+[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -434,7 +442,7 @@ wrap a widget in an Opacity widget to accomplish this.
 
 In iOS, you typically subclass `UIView`, or use a pre-existing view, to
 override and implement methods that achieve the desired behavior. In
-In Flutter, build a custom widget by
+Flutter, build a custom widget by
 [composing](/docs/resources/technical-overview#everythings-a-widget) smaller widgets
 (instead of extending them).
 
@@ -1066,7 +1074,7 @@ Next, declare these images in the `pubspec.yaml` file:
 <!-- skip -->
 {% prettify yaml %}
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 {% endprettify %}
 
 You can now access your images using `AssetImage`:
@@ -1225,8 +1233,9 @@ the user, is not responding to user input, but is running in the background.
 has no equivalent event.
 
 For more details on the meaning of these states, see
-[`AppLifecycleStatus` documentation](https://docs.flutter.io/flutter/dart-ui
-/AppLifecycleState-class.html).
+[`AppLifecycleStatus` documentation][].
+
+[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1552,7 +1561,7 @@ Widget build(BuildContext context) {
 {% endprettify %}
 
 For more detailed docs on how to lay out widgets in Flutter,
-see the [layout tutorial](/docs/reference/widgets/layout).
+see the [layout tutorial](/docs/development/ui/widgets/layout).
 
 ## Gesture detection and touch event handling
 
@@ -1703,7 +1712,7 @@ On iOS, you can use the
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
-[Cupertino widgets gallery](/docs/reference/widgets/cupertino).
+[Cupertino widgets gallery](/docs/development/ui/widgets/cupertino).
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.

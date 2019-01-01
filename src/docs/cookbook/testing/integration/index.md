@@ -1,5 +1,5 @@
 ---
-title: Introduction to Integration testing
+title: Introduction to integration testing
 ---
 
 Unit tests and Widget tests are handy for testing individual classes, functions,
@@ -158,7 +158,7 @@ Now, we can instrument the app. This will involve two steps:
   1. Enable the flutter driver extensions
   2. Run the app
 
-We will add this code inside the `flutter_driver/app.dart` file.
+We will add this code inside the `test_driver/app.dart` file.
 
 <!-- skip -->
 ```dart

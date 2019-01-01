@@ -35,8 +35,8 @@ dependencies:
 ## 2. Make a network request
 
 In this example, we'll fetch a JSON large document that contains a list of 5000
-photo objects from the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/)
-using the [`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html)
+photo objects from the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com)
+using the [http.get()]({{site.pub-api}}/http/latest/http/get.html)
 method.
 
 <!-- skip -->

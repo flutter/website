@@ -1,6 +1,7 @@
 ---
 title: AnimatedList
 description: An example that uses AnimatedList.
+deprecated: true
 ---
 
 An AnimatedList that displays a list of cards that stay in sync

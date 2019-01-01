@@ -56,7 +56,7 @@ Alternatively, if you want to do it manually, here's how:
    design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory, place your icon files
-   in folders named using [Configuration Qualifiers][configurationqualifiers].
+   in folders named using [configuration qualifiers][].
    The default `mipmap-` folders demonstrate the correct naming convention.
 
 1. In `AndroidManifest.xml`, update the [`application`][applicationtag] tag's
@@ -153,7 +153,7 @@ reverse engineering.
 
 For information on obfuscating Dart code, see [Obfuscating Dart
 Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki](https://github.com/flutter/flutter/wiki/).
+in the [Flutter wiki](https://github.com/flutter/flutter/wiki).
 
 ### Step 1 - Configure Proguard
 
@@ -188,7 +188,7 @@ android {
 
         release {
 
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
 
             minifyEnabled true
             useProguard true
@@ -214,7 +214,7 @@ Using the command line:
 1. Run `flutter build apk` (`flutter build` defaults to `--release`).
 
 The release APK for your app is created at
-`<app dir>/build/app/outputs/apk/app-release.apk`.
+`<app dir>/build/app/outputs/apk/release/app-release.apk`.
 
 ## Installing a release APK on a device
 
@@ -233,12 +233,12 @@ For detailed instructions on publishing the release version of an app to the
 Google Play Store, see the [Google Play publishing documentation][play].
 
 [manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
-[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element.html
-[appid]: https://developer.android.com/studio/build/application-id.html
-[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element.html
-[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element.html
+[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element
+[appid]: https://developer.android.com/studio/build/application-id
+[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element
+[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element
 [gradlebuild]: https://developer.android.com/studio/build/#module-level
-[versions]: https://developer.android.com/studio/publish/versioning.html
-[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html
-[configurationqualifiers]: https://developer.android.com/guide/practices/screens_support.html#qualifiers
-[play]: https://developer.android.com/distribute/googleplay/start.html
+[versions]: https://developer.android.com/studio/publish/versioning
+[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
+[configuration qualifiers]: https://developer.android.com/guide/topics/resources/providing-resources#AlternativeResources
+[play]: https://developer.android.com/distribute/googleplay/start

@@ -107,14 +107,12 @@ dd {
   .site-figure-container {
     flex: 0 1 auto;
 
-    img {
-      width: 100%;
-    }
+    img { width: 100%; }
 
     figcaption {
-    margin-top: bs-spacer(4);
-    text-align: center;
-  }
+      margin-top: bs-spacer(4);
+      text-align: center;
+    }
   }
 }
 
@@ -131,8 +129,11 @@ dd {
 .btn.btn-cta {
     font-size: 18px;
     font-weight: 500;
-    min-width: 250px;
     padding: bs-spacer(4) bs-spacer(6);
+
+    @include media-breakpoint-up(sm) {
+      min-width: 250px;
+    }
   }
 
 .embedded-video-wrapper {
@@ -155,3 +156,7 @@ dd {
 }
 
 .fa-macos { @extend .fa-apple; }
+
+.table-wrapper {
+  overflow-x: auto;
+}

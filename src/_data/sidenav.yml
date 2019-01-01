@@ -27,7 +27,7 @@
     - title: "Dart language overview"
       permalink: https://www.dartlang.org/guides/language
 
-- title: Samples & codelabs
+- title: Samples & tutorials
   children:
     - title: Sample apps on GitHub
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
@@ -35,6 +35,8 @@
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
+    - title: Tutorials
+      permalink: /docs/reference/tutorials
 
 - title: Development
   expanded: true
@@ -119,14 +121,10 @@
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
-        - title: IDEs
-          expanded: true
-          permalink: /docs/development/tools/ide
-          children:
-            - title: Android Studio / IntelliJ
-              permalink: /docs/development/tools/ide/android-studio
-            - title: Visual Studio Code
-              permalink: /docs/development/tools/ide/vs-code
+        - title: Android Studio / IntelliJ
+          permalink: /docs/development/tools/android-studio
+        - title: Visual Studio Code
+          permalink: /docs/development/tools/vs-code
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -178,8 +176,6 @@
       permalink: /docs/resources/inside-flutter
     - title: Technical overview
       permalink: /docs/resources/technical-overview
-    - title: Development philosophy
-      permalink: /docs/resources/design-principles
     # - title: Flutter best practices # TODO
     - title: Technical videos for learning Flutter
       permalink: /docs/resources/videos
@@ -191,8 +187,6 @@
 - title: Reference
   expanded: true
   children:
-    - title: Tutorials
-      permalink: /docs/reference/tutorials
     - title: Widget index
       permalink: /docs/reference/widgets
     - title: API reference

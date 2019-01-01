@@ -20,11 +20,34 @@
 @import '_material_colors';
 @import '_tabs';
 @import '_code_pre';
+@import '_snackbar';
 
 // page types
 @import '_landing-page';
 @import '_homepage';
 @import '_showcase';
 @import '_community';
+@import '_404';
 
 @import 'site_overrides';
+
+
+.numbered-code-notes {
+  list-style-type: none;
+  padding-left: 0;
+  display: table;
+  li {
+    counter-increment: code-note-counter;
+    display: table-row;
+    padding-left: 8px;
+    &:before {
+      font-family: $font-family-monospace;
+      content: '/*' counter(code-note-counter) '*/' ;
+      display: table-cell;
+      text-align: right;
+      color: $teal;
+      padding-right: $font-size-base / 2;
+      // background-color: lightyellow;
+    }
+  }
+}

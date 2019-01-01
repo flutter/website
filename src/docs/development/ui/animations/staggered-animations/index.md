@@ -309,7 +309,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
   // ...Boilerplate...
 
-  [[highlight]]Future<Null> _playAnimation() async[[/highlight]] {
+  [[highlight]]Future<void> _playAnimation() async[[/highlight]] {
     try {
       [[highlight]]await _controller.forward().orCancel;[[/highlight]]
       [[highlight]]await _controller.reverse().orCancel;[[/highlight]]

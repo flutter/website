@@ -1,6 +1,7 @@
 ---
 title: ExpansionTile
 description: An example that uses ExpansionTiles.
+deprecated: true
 ---
 
 ExpansionTiles can used to produce two-level or multi-level lists.
@@ -139,7 +140,6 @@ void main() {
 
 ## See also
 
-* The [expand/collapse](https://material.io/guidelines/components/lists-controls.html#lists-controls-types-of-list-controls)
-  part of the [Material Design](https://material.io) specification:
+* The Material [Lists](https://material.io/design/components/lists.html) component page.
 * The source code in
   [examples/catalog/lib/expansion_tile_sample.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/expansion_tile_sample.dart).

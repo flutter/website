@@ -119,7 +119,7 @@ experience.
 #### Step 2a: Define the package API (.dart)
 
 The API of the plugin package is defined in Dart code. Open the main `hello/`
-folder in your favorite [Flutter editor](/get-started/editor). Locate the file
+folder in your favorite [Flutter editor](/docs/get-started/editor). Locate the file
 `lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
@@ -293,10 +293,8 @@ dependencies:
 If `some_package` declares the dependencies above and `other_package`
 declares a compatible  `url_launcher` dependency like `'0.4.5'` or `^0.4.0`,
 `pub` is able to resolve the issue automatically. Similar
-remarks apply to plugin packages' platform-specific dependencies on [Gradle
-modules](https://docs.gradle.org/current/userguide/dependency_management.html#sub:dynamic_versions_and_changing_modules)
-and/or
-[CocoaPods](https://guides.cocoapods.org/syntax/podspec.html#dependency).
+remarks apply to plugin packages' platform-specific dependencies on
+[Gradle modules][] and/or [CocoaPods][].
 
 Even if `some_package` and `other_package` declare incompatible versions for
 `url_launcher`, it may still be that they actually use `url_launcher` in
@@ -329,3 +327,6 @@ configurations.all {
 ```
 
 CocoaPods does not currently offer dependency override functionality.
+
+[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
+[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html

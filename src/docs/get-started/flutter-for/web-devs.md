@@ -29,6 +29,13 @@ The examples assume:
   );
   ```
 
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
+
 ## Performing basic layout operations
 
 The following examples show how to perform the most common UI layout tasks.
@@ -64,7 +71,7 @@ the top left, by default.
     child: Text(
       "Lorem ipsum",
       style: [[highlight]]TextStyle(
-        fontSize: 24.0
+        fontSize: 24.0,
         fontWeight: FontWeight.w900,
         fontFamily: "Georgia",
       ),[[/highlight]]
@@ -190,7 +197,7 @@ the child Container sizes itself to match the parent.
   background-color: #ef5350; /* red 400 */
   padding: 16px;
   color: #ffffff;
-[[highlight]]    width: 100%;
+[[highlight]]  width: 100%;
   max-width: 240px; [[/highlight]]
 }
 {% endprettify %}

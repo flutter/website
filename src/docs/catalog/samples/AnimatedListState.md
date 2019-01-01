@@ -1,6 +1,7 @@
 ---
 title: AnimatedListState Sample Apps
 description: Examples that use AnimatedListState.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter AnimatedListState

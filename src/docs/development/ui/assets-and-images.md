@@ -231,7 +231,8 @@ you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {#from-packages}
 
-To load an image from a [package](https://flutter.io/using-packages/) dependency, the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
+To load an image from a [package](/docs/development/packages-and-plugins/using-packages) dependency,
+the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
@@ -280,8 +281,8 @@ Flutter assets are readily available to platform code via AssetManager on Androi
 
 ### Android
 
-On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager.html).
-The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager.html#openFd(java.lang.String)) is obtained from
+On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager).
+The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager#openFd(java.lang.String)) is obtained from
 `lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on
 [FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html).
 `PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an
@@ -350,7 +351,7 @@ In your Flutter project's root directory, navigate to `.../android/app/src/main/
 The various bitmap resource folders such as `mipmap-hdpi` already contain placeholder images named
 `ic_launcher.png`. Simply replace them with your desired assets respecting the recommended icon size
 per screen density as indicated by the [Android Developer
-Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size).
+Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher#size).
 
 ![Android icon location](/images/assets-and-images/android-icon-path.png)
 
@@ -385,7 +386,7 @@ Flutter also uses native platform mechanisms to draw transitional launch screens
 
 #### Android
 
-To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource.html) to achieve the intended effect.
+To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource) to achieve the intended effect.
 
 #### iOS
 

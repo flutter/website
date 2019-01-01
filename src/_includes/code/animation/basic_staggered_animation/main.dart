@@ -161,7 +161,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
     super.dispose();
   }
 
-  Future<Null> _playAnimation() async {
+  Future<void> _playAnimation() async {
     try {
       await _controller.forward().orCancel;
       await _controller.reverse().orCancel;

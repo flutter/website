@@ -25,8 +25,7 @@
         "name": "Information displays"
       },
       {
-        "name": "Layout",
-        "description": "See also Flutter's <a href=\"/widgets/catalog/layout/\">general layout widgets</a> (such as row, column, and more)."
+        "name": "Layout"
       }
     ],
     "id":"material"
@@ -47,9 +46,6 @@
       {
         "name": "Multi-child layout widgets",
         "description":"These widgets take multiple children and arrange them in different ways."
-      },
-      {
-        "name": "Layout helpers"
       }
     ],
     "id":"layout"
@@ -111,5 +107,5 @@
     "name": "Accessibility",
     "description": "Make your app accessible.",
     "id":"accessibility"
-  },
+  }
 ]

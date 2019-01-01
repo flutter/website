@@ -5,24 +5,24 @@ description: Learn how to apply Xamarin.Forms developer knowledge when building 
 
 This document is meant for Xamarin.Forms developers looking to apply their
 existing knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the Xamarin.Forms framework then you can use this document as a
-jump start to Flutter development.
+the fundamentals of the Xamarin.Forms framework then you can use this
+document as a jump start to Flutter development.
 
 Your Android and iOS knowledge and skill set are valuable when building with
-Flutter, because Flutter relies on the native operating system configurations, similar to
-how you would configure your native Xamarin.Forms projects. The Flutter Frameworks is
-is also similar to how you create a single UI, that is used on multiple platforms.
+Flutter, because Flutter relies on the native operating system configurations,
+similar to how you would configure your native Xamarin.Forms projects.
+The Flutter Frameworks is also similar to how you create a single UI,
+that is used on multiple platforms.
 
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
-
 
 ## Project Setup
 
 ### How does the app start?
 
-For each platform in Xamarin.Forms, you call the `LoadApplication` method, that
-creates a new Application and starts your app.
+For each platform in Xamarin.Forms, you call the `LoadApplication` method,
+which creates a new Application and starts your app.
 
 <!-- skip -->
 {% prettify csharp %}
@@ -38,7 +38,8 @@ void main() {
 }
 {% endprettify %}
 
-In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the `Application` class.
+In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
+`Application` class.
 
 <!-- skip -->
 {% prettify csharp %}
@@ -59,8 +60,8 @@ public class App: Application
 }
 {% endprettify %}
 
-In Flutter, "everything is a widget", even the application itself. The following example shows
-`MyApp`, a simple application `Widget`.
+In Flutter, "everything is a widget", even the application itself.
+The following example shows `MyApp`, a simple application `Widget`.
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -75,19 +76,24 @@ class MyApp extends StatelessWidget {
 
 ### How do you create a Page?
 
-Xamarin.Forms has many different types of pages; `ContentPage` is the most common.
+Xamarin.Forms has many different types of pages; `ContentPage` is the most
+common.
 
-In Flutter, you specify an application widget that holds your root page. You can use
-a [MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html) widget, which
-supports [Material Design](https://material.io/design/), or you can use the lower level
-[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html), which you can customize in any way
-you want.
+In Flutter, you specify an application widget that holds your root page.
+You can use a
+[MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+widget, which supports [Material
+Design](https://material.io/design/), or you can use the lower level
+[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html),
+which you can customize in any way you want.
 
-The following code defines the home page, a stateful widget. In Flutter, all widgets are immutable,
-but two types of widgets are supported: stateful and stateless. Examples of a stateless widget are titles,
+The following code defines the home page, a stateful widget. In Flutter,
+all widgets are immutable, but two types of widgets are supported:
+stateful and stateless. Examples of a stateless widget are titles,
 icons, or images.
 
-The following example uses MaterialApp, which holds its root page in the `home` property.
+The following example uses MaterialApp, which holds its root page in the
+`home` property.
 
 {% prettify dart %}
 class MyApp extends StatelessWidget {
@@ -107,8 +113,10 @@ class MyApp extends StatelessWidget {
 
 From here, your actual first page is another `Widget`, in which you create your state.
 
-A stateful widget, such as MyHomePage below, consists of two parts. The first part, which is itself immutable,
-creates a State object, which holds the state of the object. The State object persists over the life of the widget.
+A stateful widget, such as MyHomePage below, consists of two parts.
+The first part, which is itself immutable, creates a State object
+that holds the state of the object. The State object persists over
+the life of the widget.
 
 {% prettify dart %}
 class MyHomePage extends StatefulWidget {
@@ -123,8 +131,9 @@ class MyHomePage extends StatefulWidget {
 
 The `state` object implements the `build` method for the stateful widget.
 
-When the state of the widget tree changes, call `setState()`, which triggers a build of that portion of the UI.
-Make sure to call `setState()` only when necessary, and only on the part of the widget tree that has changed, or
+When the state of the widget tree changes, call `setState()`, which triggers
+a build of that portion of the UI.  Make sure to call `setState()` only
+when necessary, and only on the part of the widget tree that has changed, or
 it can result in poor UI performance.
 
 {% prettify dart %}
@@ -171,26 +180,34 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 {% endprettify %}
 
-The UI, also known as widget tree, in Flutter is immutable, meaning you can not change its
-state once it is built. You change fields in your `State` class, then call `setState` to
-rebuild the entire widget tree again.
+The UI, also known as widget tree, in Flutter is immutable, meaning you
+can not change its state once it is built. You change fields in your
+`State` class, then call `setState` to rebuild the entire widget tree again.
 
-This way of generating UI is different than Xamarin.Forms, but there are many benefits
-to this approach.
+This way of generating UI is different than Xamarin.Forms, but there are
+many benefits to this approach.
 
 ## Views
 
 ### What is the equivalent of a `Page` or `Element` in Flutter?
 
-A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you could
-use in a Xamarin.Forms application. These pages would then hold `Element`s to display
-the various controls. In Xamarin.Forms an `Entry` or `Button` are examples of an `Element`.
+{{site.alert.secondary}}
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative
+UI](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
 
-In Flutter, almost everything is a widget. A `Page`, called a `Route` in Flutter, is a widget.
-Buttons, progress bars, animation controllers are all widgets. When building a route, you create
-a widget tree.
+A `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
+could use in a Xamarin.Forms application. These pages would then hold
+`Element`s to display the various controls. In Xamarin.Forms an `Entry`
+or `Button` are examples of an `Element`.
 
-Flutter includes the [Material Components](https://flutter.io/widgets/material/)
+In Flutter, almost everything is a widget. A `Page`, called a `Route` in
+Flutter, is a widget.  Buttons, progress bars, animation controllers are all
+widgets. When building a route, you create a widget tree.
+
+Flutter includes the [Material Components](/docs/development/ui/widgets/material)
 library. These are widgets that implement the
 [Material Design guidelines](https://material.io/design/). Material Design is a
 flexible design system [optimized for all
@@ -198,18 +215,18 @@ platforms](https://material.io/design/platform-guidance/cross-platform-adaptatio
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino widgets](/docs/reference/widgets/cupertino)
+For example, on iOS, you can use the [Cupertino
+widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
 ### How do I update `Widget`s?
 
-In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has properties and
-methods. You update your `Element` by updating a property, and this is propagated down
-to the native control.
+In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
+properties and methods. You update your `Element` by updating a property, and this is propagated down to the native control.
 
-In Flutter, `Widget`s are immutable and you can not directly update them by changing a
-property, instead you have to work with the widget's state.
+In Flutter, `Widget`s are immutable and you can not directly update them
+by changing a property, instead you have to work with the widget's state.
 
 This is where the concept of Stateful vs Stateless widgets comes from. A
 `StatelessWidget` is just what it sounds like&mdash;a widget with no state
@@ -345,7 +362,7 @@ The following example shows how to display a simple widget with padding:
 {% endprettify %}
 
 You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/reference/widgets/layout).
+catalog](/docs/development/ui/widgets/layout).
 
 ### How do I add or remove an Element from my layout?
 
@@ -357,8 +374,8 @@ In Flutter, because widgets are immutable there is no direct equivalent.
 Instead, you can pass a function to the parent that returns a widget, and
 control that child's creation with a boolean flag.
 
-The following example shows how to toggle between two widgets when the user clicks
-the `FloatingActionButton`:
+The following example shows how to toggle between two widgets when the user
+clicks the `FloatingActionButton`:
 
 <!-- skip -->
 {% prettify dart %}
@@ -525,7 +542,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 For more information, see
-[Animation & Motion widgets](/docs/reference/widgets/animation),
+[Animation & Motion widgets](/docs/development/ui/widgets/animation),
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
@@ -540,8 +557,9 @@ and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-
-for-mobile-app-in-dart-flutter).
+[StackOverflow][].
+
+[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -1378,9 +1396,10 @@ the user, is not responding to user input, but is running in the background.
 * `suspending` — The application is suspended momentarily. This event is Android
 only.
 
-For more details on the meaning of these states, see
-[`AppLifecycleStatus`
-documentation](https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html).
+For more details on the meaning of these states, see [`AppLifecycleStatus`
+documentation][].
+
+[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1949,9 +1968,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/index.html?index=..%2F..%2Findex#0)
+part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/index.html?index=..%2F..%2Findex#0)
+part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
 
 ## Working with text
 

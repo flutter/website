@@ -32,7 +32,7 @@ locations:
   * *Temporary directory:* A temporary directory (cache) that the system can
   clear at any time. On iOS, this corresponds to the value that
   [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
-  returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context.html#getCacheDir())
+  returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context#getCacheDir())
   returns.
   * *Documents directory:* A directory for the app to store files that only
   it can access. The system clears the directory only when the app is deleted.

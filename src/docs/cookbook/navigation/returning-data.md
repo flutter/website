@@ -171,8 +171,11 @@ _navigateAndDisplaySelection(BuildContext context) async {
     MaterialPageRoute(builder: (context) => SelectionScreen()),
   );
 
-  // After the Selection Screen returns a result, show it in a Snackbar!
-  Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+  // After the Selection Screen returns a result, hide any previous snackbars
+  // and show the new result!
+  Scaffold.of(context)
+    ..removeCurrentSnackBar()
+    ..showSnackBar(SnackBar(content: Text("$result")));
 }
 ```
 
@@ -221,8 +224,11 @@ class SelectionButton extends StatelessWidget {
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
-    // After the Selection Screen returns a result, show it in a Snackbar!
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+    // After the Selection Screen returns a result, hide any previous snackbars
+    // and show the new result!
+    Scaffold.of(context)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text("$result")));
   }
 }
 

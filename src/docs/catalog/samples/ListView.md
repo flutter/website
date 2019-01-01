@@ -1,6 +1,7 @@
 ---
 title: ListView Sample Apps
 description: Examples of apps that use ListView.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter ListView class in an

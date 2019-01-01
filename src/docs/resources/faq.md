@@ -77,17 +77,9 @@ and the community.
 
 ### Who uses Flutter?
 
-Google uses Flutter to build business-critical apps for iOS and Android.
-For example, Google's mobile sales tool app is built with Flutter, along
-with a Store Manager app for Google Shopping Express. Other Flutter
-apps are in the works, or "inside the firewall".
-
-Teams outside of Google are also using Flutter.
-For example, the official app for the musical Hamilton
-([Android](https://play.google.com/store/apps/details?id=com.hamilton.app),
-[iOS](https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8))
-is built with Flutter.
-You can see many more examples in the Flutter [Showcase](/showcase).
+Developers inside and outside of Google use Flutter to build
+beautiful native apps for iOS and Android.
+To learn about some of these apps, visit the [showcase](/showcase).
 
 ### What makes Flutter unique?
 
@@ -107,22 +99,13 @@ to approachability for the majority of the system.
 
 ### Should I build my next production app with Flutter?
 
-Flutter is still being developed and is not yet at
-1.0. But Flutter is used inside of Google and apps built
-with Flutter are deployed to users in production.
-A few sample apps are shown in the [showcase](/showcase).
+Flutter 1.0 was launched on Dec 4th, 2018. Thousands of apps
+have shipped with Flutter to hundreds of millions of devices.
+See some sample apps in the [showcase](/showcase).
 
-Some key features are not yet complete, however features that
-are completed are generally of high-quality and ready for use.
-
-Our APIs are stabilizing, and we continue to improve
-parts of the system based on user feedback.
-We email [{{site.email}}](mailto:{{site.email}})
-when we make a change that might impact our users.
-
-So really, it is up to you. The features you need may be
-available today. Please let us know if you released an app
-built with Flutter to users. We'd love to hear what you're building!
+For more information on the launch and subsequent releases,
+see [Flutter 1.0: Google's Portable UI
+Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html).
 
 ## What does Flutter provide?
 
@@ -144,8 +127,8 @@ Studio](https://developer.android.com/studio/),
 [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 and [VS Code](https://code.visualstudio.com/).
 
-See [editor configuration](/get-started/editor) for setup details, and
-['Developing Flutter apps in an IDE'](/docs/development/tools/ide)
+See [editor configuration](/docs/get-started/editor) for setup details, and
+['Developing Flutter apps in an IDE'](/docs/development/tools/android-studio)
 for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
@@ -172,7 +155,7 @@ create your own widgets, or customize the existing widgets.
 Yes! The Flutter and Material teams collaborate closely,
 and Material Theming is fully supported. A number of
 examples of this are shown in the [MDC-103 Flutter: Material
-Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/)
+Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter)
 codelab.
 
 ### Does Flutter come with a testing framework?
@@ -231,7 +214,7 @@ No. Instead, Flutter provides a set of widgets
 (including Material Design and Cupertino (iOS-styled) widgets),
 managed and rendered by Flutter's framework and engine.
 You can browse a
-[catalog of Flutter's widgets](/docs/development/ui/widgets/catalog).
+[catalog of Flutter's widgets](/docs/development/ui/widgets).
 
 We are hoping the end-result will be higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
@@ -348,22 +331,35 @@ or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
-In October 2018, we measured the size of a
-[minimal Flutter app](https://github.com/flutter/flutter/tree/60d223c20c44424e3c8031d019270d22bab35df6/examples/hello_world)
+In December 2018, we measured the download size of a
+[minimal Flutter app](https://github.com/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and compressed as a release APK, to be
-approximately 4.28 MB.
+approximately 4.06&nbsp;MB.
 
 For this simple app,
-the core engine is approximately 2.86 MB (compressed),
-the framework + app code is approximately 818 KB (compressed),
-the LICENSE file is 54 KB (compressed),
-necessary Java code (classes.dex) is 62 KB (compressed),
-and there is approximately 449 KB of (compressed) ICU data.
+the core engine is approximately 2.7&nbsp;MB (compressed),
+the framework + app code is approximately 820.6&nbsp;KB (compressed),
+the LICENSE file is 53.5&nbsp;KB (compressed),
+necessary Java code (classes.dex) is 61.8&nbsp;KB (compressed),
+and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
 
-Of course, YMMV, and we recommend that you measure your own app,
-by running `flutter build apk` and looking at
-`build/app/outputs/apk/release/app-release.apk`.
+These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
+which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
+
+On iOS, a release IPA of the same app has a download size of 10.8&nbsp;MB on an
+iPhone X, as reported by Apple's App Store Connect. The IPA is larger than the
+APK mainly because Apple encrypts binaries within the IPA, making the compression
+less efficient (see the [iOS App Store Specific Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS) section of Apple's
+[QA1795](https://developer.apple.com/library/archive/qa/qa1795/_index.html)).
+
+Of course, YMMV, and we recommend that you measure your own app. To measure an
+Android app, run `flutter build apk` and load the APK
+(`build/app/outputs/apk/release/app-release.apk`) into Android Studio
+([instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
+detailed size report. To measure an iOS app, upload a release IPA to Apple's
+App Store Connect ([instructions](https://flutter.io/docs/deployment/ios)) and
+obtain the size report from there.
 
 ## Capabilities
 
@@ -425,7 +421,12 @@ adaptations in our widgets.
 
 ### Does Flutter run on the web?
 
-No. We are not working to provide a web version of Flutter.
+We're working on an experimental project called [Hummingbird][]. It is a
+web-based implementation of the Flutter runtime that takes advantage of the
+capability of the Dart platform to compile to JavaScript. This enables Flutter
+code to run on the standards-based web without change.
+
+[Hummingbird]: https://medium.com/flutter-io/hummingbird-building-flutter-for-the-web-e687c2a023a8
 
 ### Can I use Flutter to build desktop apps?
 
@@ -697,7 +698,7 @@ are triggered by a similar callback mechanism. The
 class, which is used as the basis of the animation system, formalizes a
 subscription model for events with multiple listeners.
 
-* Class-based object-orientated programming: Most of the APIs of the framework
+* Class-based object-oriented programming: Most of the APIs of the framework
 are built using classes with inheritance. We use an approach whereby we define
 very high-level APIs in our base classes, then specialize them iteratively in
 subclasses. For example, our render objects have a base class
@@ -707,7 +708,7 @@ that is agnostic regarding the coordinate system, and then we have a subclass
 that introduces the opinion that the geometry should be based on the Cartesian
 coordinate system (x/width and y/height).
 
-* Prototype-based object-orientated programming: The
+* Prototype-based object-oriented programming: The
 [ScrollPhysics](https://docs.flutter.io/flutter/widgets/ScrollPhysics-class.html)
 class chains instances to compose the physics that apply to scrolling
 dynamically at runtime. This lets the system compose, for example, paging
@@ -849,7 +850,7 @@ Flutter is an open source project. Currently, the bulk of the development is
 done by engineers at Google. If you're excited about Flutter, we encourage
 you to join the community and contribute to Flutter!
 
-[widgets]: /docs/development/ui/widgets/catalog
+[widgets]: /docs/development/ui/widgets
 
 ### What are Flutter's guiding principles?
 
@@ -879,11 +880,13 @@ We are focused on three things:
 ### Will Apple reject my Flutter app?
 
 We can't speak for Apple, but Apple's policies have changed over the
-years, and they have
-allowed apps built with systems like Flutter. We are aware of
-apps built with Flutter that have been reviewed and
-released via the App Store.
+years, and their App Store contains many apps built with technologies
+like Unity and Flutter.
+Apple has even featured Flutter apps such as [Hamilton.][Hamilton for iOS]
 
 Of course, Apple is ultimately in charge of their ecosystem, but our goal
-is to continue to do everything we can to ensure Flutter apps can be
-deployed into Apple's App Store.
+is to continue doing everything we can to ensure that Flutter apps can be
+deployed to Apple's App Store.
+
+[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
+[Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8

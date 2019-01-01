@@ -1,6 +1,7 @@
 ---
 title: AnimatedList Sample Apps
 description: Examples that use AnimatedList.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter AnimatedList class in

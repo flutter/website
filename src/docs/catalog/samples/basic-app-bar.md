@@ -1,6 +1,7 @@
 ---
 title: AppBar Basics
 description: An example that implements a basic AppBar.
+deprecated: true
 ---
 
 A typical AppBar with a title, actions, and an overflow dropdown menu.
@@ -143,7 +144,6 @@ void main() {
 
 ## See also
 
-* The [Layout-Structure](https://material.io/guidelines/layout/structure.html#structure-app-bar)
-  section of the [Material Design](https://material.io) specification:
+* The Material [App bars: top](https://material.io/design/components/app-bars-top.html) component page.
 * The source code in
   [examples/catalog/lib/basic_app_bar.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/basic_app_bar.dart).

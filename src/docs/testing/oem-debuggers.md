@@ -32,7 +32,7 @@ plugins installed and configured.
 ### Dart debugger
 
 * Open your project in Android Studio. If you don't have a project yet,
-  create one using the instructions in [Test drive](/get-started/test-drive).
+  create one using the instructions in [Test drive](/docs/get-started/test-drive).
 
 * Simultaneously bring up the Debug pane and run the app in the Console
   view by clicking the bug icon
@@ -193,9 +193,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<Null> _launched;
+  Future<void> _launched;
 
-  Future<Null> _launchInBrowser(String url) async {
+  Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
       await launch(url, forceSafariVC: false, forceWebView: false);
     } else {
@@ -203,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Future<Null> _launchInWebViewOrVC(String url) async {
+  Future<void> _launchInWebViewOrVC(String url) async {
     if (await canLaunch(url)) {
       await launch(url, forceSafariVC: true, forceWebView: true);
     } else {
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
     if (snapshot.hasError) {
       return Text('Error: ${snapshot.error}');
     } else {
@@ -248,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Launch in app'),
             ),
             Padding(padding: EdgeInsets.all(16.0)),
-            FutureBuilder<Null>(future: _launched, builder: _launchStatus),
+            FutureBuilder<void>(future: _launched, builder: _launchStatus),
           ],
         ),
       ),
@@ -341,16 +341,16 @@ iOS, and Android:
 ### Flutter
 
 * [Debugging Flutter Apps](/docs/testing/debugging)
-* [Advanced debugging](/docs/development/tools/ide#advanced-debugging), a section in
-  [Developing Flutter Apps in an IDE](/docs/development/tools/ide).
+* [Advanced debugging](/docs/development/tools/android-studio#advanced-debugging), a section in
+  [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
 * [Performance Profiling](/docs/testing/ui-performance)
 
 ### Android
 
 You can find the following debugging resources on
-[developer.android.com](https://developer.android.com/).
+[developer.android.com](https://developer.android.com).
 
-* [Debug your app](https://developer.android.com/studio/debug/)
+* [Debug your app](https://developer.android.com/studio/debug)
 * [Android Debug
   Bridge (adb)](https://developer.android.com/studio/command-line/adb)
 

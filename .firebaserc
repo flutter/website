@@ -5,7 +5,10 @@
     "staging-1": "flutter-io-staging-1",
     "staging-2": "flutter-io-staging-2",
     "pc2": "ng2-io",
-    "sz" :  "sz-flutter",
-    "sz2" : "sz-flutter-2"
+    "sz": "sz-flutter",
+    "sz2": "sz-flutter-2",
+    "kw": "kw-flutter-1",
+    "kw2": "kw-flutter-2",
+    "ft": "flutter-web-staging"
   }
 }

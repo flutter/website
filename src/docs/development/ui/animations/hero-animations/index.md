@@ -298,7 +298,7 @@ to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion
 spec.](https://material.io/guidelines/motion/movement.html)
 
-[Create a new Flutter example](/get-started/test-drive) and
+[Create a new Flutter example](/docs/get-started/test-drive) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/hero_animation/)
 
@@ -388,7 +388,7 @@ class HeroAnimation extends StatelessWidget {
           photo: 'images/flippers-alpha.png',
           width: 300.0,
           [[highlight]]onTap: ()[[/highlight]] {
-            [[highlight]]Navigator.of(context).push(MaterialPageRoute<Null>([[/highlight]]
+            [[highlight]]Navigator.of(context).push(MaterialPageRoute<void>([[/highlight]]
               [[highlight]]builder: (BuildContext context)[[/highlight]] {
                 return Scaffold(
                   appBar: AppBar(
@@ -475,7 +475,7 @@ This guide describes the first example.<br><br>
 [radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
 : A radial hero animation as described in the Material motion spec.
 
-[basic_radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_radial_hero_transition)
+[basic_radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_radial_hero_animation)
 : The simplest example of a radial hero animation. The destination
   route has no Scaffold, Card, Column, or Text.
   This basic example, provided for your reference, isn't
@@ -517,7 +517,7 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-[Create a new Flutter example](/get-started/test-drive) and
+[Create a new Flutter example](/docs/get-started/test-drive) and
 update it using the files from the
 [GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
 

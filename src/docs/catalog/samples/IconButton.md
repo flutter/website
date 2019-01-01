@@ -1,6 +1,7 @@
 ---
 title: IconButton Sample Apps
 description: Examples that use IconButtons.
+deprecated: true
 ---
 
 All of the sample apps listed here use the Flutter IconButton class in

@@ -1,0 +1,15 @@
+targets:
+  $default:
+    sources:
+      include:
+        - examples/**
+      exclude:
+        - '**/.*/**'
+        - '**/android/**'
+        - '**/build/**'
+        - '**/ios/**'
+        - '**/node_modules/**'
+        - '**/*.jar'
+    builders:
+      code_excerpter|code_excerpter:
+        enabled: true

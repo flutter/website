@@ -1,6 +1,7 @@
 ---
 title: AppBar with a custom bottom widget
 description: An example that uses an AppBar at the bottom of the page.
+deprecated: true
 ---
 
 Any widget with a PreferredSize can appear at the bottom of an AppBar.

@@ -15,6 +15,7 @@ $(function () {
   initFixedColumns();
   initVideoModal();
   initCarousel();
+  initSnackbar();
   prettyPrint();
 
   // New (dash) tabs
@@ -139,4 +140,17 @@ function initCarousel() {
   carousel.on('slid.bs.carousel', function (e) {
     carousel.find(CAROUSEL_ITEM_SELECTOR).eq(e.from).removeClass('transition-out');
   });
+}
+
+function initSnackbar() {
+  var SNACKBAR_SELECTOR ='.snackbar';
+  var SNACKBAR_ACTION_SELECTOR = '.snackbar__action';
+  var snackbars = $(SNACKBAR_SELECTOR);
+
+  snackbars.each(function () {
+    var snackbar = $(this);
+    snackbar.find(SNACKBAR_ACTION_SELECTOR).click(function () {
+      snackbar.fadeOut();
+    });
+  })
 }
