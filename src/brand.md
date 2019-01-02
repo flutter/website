@@ -105,15 +105,16 @@ below are specific exceptions to the rules described above:
    unaltered.  Such social media accounts should include a disclaimer that
    clarifies that it is not an official Google account.
 
-2. You may use the "Flutter" name as part of the name of a newsletter
-   or related community content (e.g., Flutter training courses) whose
-   purpose is to promote the use of the Flutter mobile app SDK by members
-   of the developer community.  Where the "Flutter" name is displayed on
-   a website as part of a community site name, you should use the trademark
-   symbol <sup>&trade;</sup> after the most prominent appearance of the
-   "Flutter" name and include the following text: "Flutter and the related
-   logo are trademarks of Google LLC. We are not endorsed by or affiliated
-   with Google LLC."  Where the "Flutter" name is displayed on a social
-   media account as part of a community site name, you should include a
-   disclaimer that clarifies that it is not an official Google account.
+2. You may use the Flutter trademarks as part of the name of a newsletter
+   or related community content (e.g., Flutter training courses,
+   Flutter community forums) whose purpose is to promote the use of the
+   Flutter mobile app SDK by members of the developer community.
+   Where the Flutter trademarks are displayed on a website as part of a
+   community site name, you should use the trademark symbol <sup>&trade;</sup>
+   after the most prominent appearance of the "Flutter" name and include
+   the following text: "Flutter and the related logo are trademarks of
+   Google LLC.  We are not endorsed by or affiliated with Google LLC."
+   Where the Flutter trademarks are displayed on a social media account
+   as part of a community site name, you should include a disclaimer that
+   clarifies that it is not an official Google account.
 
