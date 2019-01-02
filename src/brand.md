@@ -2,7 +2,7 @@
 title: Flutter Brand Guidelines
 ---
 
-The “Flutter” name and logo are trademarks owned by Google.
+The "Flutter" name and logo are trademarks owned by Google.
 These Brand Guidelines describe the appropriate uses of the Flutter
 trademarks by members of the developer community who have obtained our
 consent to use the trademarks pursuant to the [Flutter Terms of Service](/tos).
@@ -17,6 +17,9 @@ guidelines is prohibited absent written permission from Google.
 We reserve the right to revoke your right to use the Flutter trademarks
 by providing notice in any manner if we determine that your use of the
 trademarks does not conform to these guidelines.  
+
+The official Flutter logos can be found in the [assets
+doc](https://drive.google.com/corp/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT)
 
 ## General Rules That Govern the Use of the Flutter Trademarks
 
@@ -96,7 +99,7 @@ rules governing the proper use of the Flutter trademarks.
 To allow for the use of the Flutter trademarks by the Flutter community,
 below are specific exceptions to the rules described above:  
 
-1. Local user groups of Flutter fans may: (i) use the "Flutter" name
+1. Local Flutter user groups may: (i) use the "Flutter" name
    as part of their social media username in the following format:
    "Flutter + [name of country/city]" (e.g., "Flutter France"); and (ii)
    use the Flutter logo in the national colors of the country where the
