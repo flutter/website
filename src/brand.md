@@ -18,8 +18,8 @@ We reserve the right to revoke your right to use the Flutter trademarks
 by providing notice in any manner if we determine that your use of the
 trademarks does not conform to these guidelines.  
 
-The official Flutter logos can be found in the [assets
-doc](https://drive.google.com/corp/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT)
+The official Flutter logos can be found in the [Flutter and Dart logo
+assets](https://drive.google.com/corp/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_BcgmDDT).
 
 ## General Rules That Govern the Use of the Flutter Trademarks
 
