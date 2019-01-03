@@ -1,0 +1,2 @@
+analyzer:
+  exclude: [example.g, flutter, site-shared, src, tmp]
