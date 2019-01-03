@@ -8,3 +8,26 @@ visiting the Website, you consent to be bound by Google's general
 
 [tos]: http://www.google.com/accounts/TOS
 [pp]: http://www.google.com/intl/en/policies/privacy/
+
+The "Flutter" name and the Flutter logo
+<img src="/images/flutter-mark-square-100.png" width="70" alt="the Flutter logo">
+(the "Flutter Marks") are trademarks owned by Google and are not included
+within the assets licensed under the Creative Commons Attribution 4.0
+International License.  Google grants you a non-transferable,
+non-exclusive, royalty-free limited license to use the Flutter Marks
+subject to your compliance with the [Flutter Brand Guidelines](/brand).
+Except as set forth above, nothing herein grants or should be deemed
+to grant to you any right, title or interest in or to the Flutter Marks.
+
+As noted above, Google owns the Flutter trademarks, but we license them
+so they can be used by the developer community to support the Flutter
+SDK, including through training materials and other community content
+
+At the same time, it's important to make sure that people don't
+use the marks in ways that could cause confusion or otherwise misuse the marks,
+so our attorneys have prepared [brand guidelines](/brand) which describe the
+allowed uses of the marks. Our goal in protecting the Flutter trademarks
+is to benefit the entire community by ensuring that the marks are only used
+in ways that are consistent with Google's mission to provide a free and open
+source SDK.  
+
