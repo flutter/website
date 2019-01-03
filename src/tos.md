@@ -21,8 +21,9 @@ to grant to you any right, title or interest in or to the Flutter Marks.
 
 As noted above, Google owns the Flutter trademarks, but we license them
 so they can be used by the developer community to support the Flutter
-app SDK, including through training materials and other community
-content.  At the same time, it's important to make sure that people don't
+SDK, including through training materials and other community content
+
+At the same time, it's important to make sure that people don't
 use the marks in ways that could cause confusion or otherwise misuse the marks,
 so our attorneys have prepared [brand guidelines](/brand) which describe the
 allowed uses of the marks. Our goal in protecting the Flutter trademarks

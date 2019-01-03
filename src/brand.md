@@ -27,8 +27,8 @@ You are free to use the Flutter trademarks: (i) in connection with your
 download and use of the Flutter SDK to build and develop 
 apps, (ii) in training materials (e.g., video tutorials, online publications,
 etc.) that provide instructions or tips regarding how to use the Flutter
-app SDK to build and develop apps, and (iii) to show your
-support for the use of the Flutter SDK by members of the developer community.  
+SDK to build and develop apps, and (iii) to show your support for
+the use of the Flutter SDK by members of the developer community.  
 
 These guidelines do not restrict your right to use the "Flutter" name
 in connection with descriptions of the Flutter SDK that would be
@@ -61,9 +61,9 @@ rules governing the proper use of the Flutter trademarks.
 * Distinguish the "Flutter" name from the surrounding text in some way.
   Capitalize the first letter, capitalize or italicize the entire mark,
   place the mark in quotes, use a different type style or font for the mark.
-* Use the trademark symbol <sup>&trade;</sup> for the first or most prominent
+* Use the trademark symbol <sup>TM</sup> for the first or most prominent
   time the "Flutter" name appears in text on your website or blog.
-  Make sure to always use the <sup>&trade;</sup> symbol,
+  Make sure to always use the <sup>TM</sup> symbol,
   not the <sup>&reg;</sup> symbol.
 * Include the following text near the first or most prominent use of the
   Flutter marks on your website or blog: "Flutter and the related logo are
@@ -80,7 +80,7 @@ rules governing the proper use of the Flutter trademarks.
 * Don't combine the Google name with the "Flutter" name to form a unitary
   brand (e.g., don’t use the phrases "Google Flutter" or "Google’s Flutter").
   You may use the Google name in full text to accurately describe the
-  Flutter SDK (e.g., "Flutter is Google’s app SDK").
+  Flutter SDK (e.g., "Flutter is Google’s SDK").
 * Don't register the Flutter trademarks or any trademarks, logos,
   or domain names that are confusingly similar to them.
 * Don't incorporate the Flutter trademarks into your own product names,
@@ -111,7 +111,7 @@ below are specific exceptions to the rules described above:
    Flutter community forums) whose purpose is to promote the use of the
    Flutter SDK by members of the developer community.
    Where the Flutter trademarks are displayed on a website as part of a
-   community site name, you should use the trademark symbol <sup>&trade;</sup>
+   community site name, you should use the trademark symbol <sup>TM</sup>
    after the most prominent appearance of the "Flutter" name and include
    the following text: "Flutter and the related logo are trademarks of
    Google LLC.  We are not endorsed by or affiliated with Google LLC."
