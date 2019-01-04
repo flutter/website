@@ -23,7 +23,7 @@ module Jekyll
         content = super
 
         # Get the indentation before the closing tag.
-        indentation = content.split(/\n/).last.match(/^[ \t]*/)[0]
+        indentation = content.split(/\n/, -1).last.match(/^[ \t]*/)[0]
 
         diff = DartSite::Util.trim_min_leading_space(content)
         lines = _diff(diff, @args).split(/\n/)
