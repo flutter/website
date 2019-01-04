@@ -74,7 +74,7 @@ medium or a larger project. To see an example of code generation based JSON
 encoding, see
 [Serializing JSON using code generation libraries](#code-generation).
 
-## Is there a GSON/Jackson/Moshi equivalent in Flutter?
+## Is there a GSON/<wbr>Jackson/<wbr>Moshi equivalent in Flutter?
 
 The simple answer is no.
 
@@ -313,7 +313,7 @@ When creating `json_serializable` classes the first time, you'll get errors
 similar to what is shown in the image below.
 
 ![IDE warning when the generated code for a model class does not exist
-yet.](/images/json/ide_warning.png)
+yet.](/images/json/ide_warning.png){:.mw-100}
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code
