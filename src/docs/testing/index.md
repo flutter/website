@@ -203,6 +203,7 @@ To use `flutter_driver`, you must add the following block to your `pubspec.yaml`
 
 ```yaml
 dev_dependencies:
+  test:
   flutter_driver:
     sdk: flutter
 ```
