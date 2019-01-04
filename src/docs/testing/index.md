@@ -83,6 +83,7 @@ In addition, you must add the following block to your `pubspec.yaml`:
 
 ```yaml
 dev_dependencies:
+  test:
   flutter_test:
     sdk: flutter
 ```
