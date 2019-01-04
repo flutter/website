@@ -69,7 +69,7 @@ Example:
 Add this file to `test/unit_test.dart`:
 
 {% prettify dart %}
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('my first unit test', () {
