@@ -5,7 +5,7 @@
 require 'liquid/tag/parser' # https://github.com/envygeeks/liquid-tag-parser
 require 'nokogiri'
 require 'open3'
-require_relative 'dart_site_util'
+require_relative '../_shared/_plugins/dart_site_util'
 
 module Jekyll
 
@@ -23,7 +23,7 @@ module Jekyll
         content = super
 
         # Get the indentation before the closing tag.
-        indentation = content.split(/\n/, -1).last.match(/^[ \t]*/)[0]
+        indentation = DartSite::Util.get_indentation_string(content.split(/\n/, -1).last)
 
         diff = DartSite::Util.trim_min_leading_space(content)
         lines = _diff(diff, @args).split(/\n/)
