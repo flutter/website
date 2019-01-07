@@ -88,8 +88,8 @@ rules governing the proper use of the Flutter trademarks.
 * Don't display the Flutter trademarks in a manner that is misleading,
   unfair, defamatory, infringing, libelous, disparaging, obscene or
   otherwise objectionable to Google.
-* Don't use the Flutter trademarks on or in connection with any
-  non-software goods or services (e.g., merchandise such as clothing,
+* Don't use the Flutter trademarks on or in connection with the sale of
+  any non-software goods or services (e.g., merchandise such as clothing,
   pens, and stickers).
 
 ## Community Use Exceptions
