@@ -8,7 +8,7 @@ disabilities such as blindness or motor impairment.
 
 Flutter supports three components for accessibility support:
 
-* **[Large fonts](#large-fonts)**: Render text widgets with user-specified font
+* **[Large fonts](#large-fonts)**: Render text widgets with user-specified
   font sizes
 * **[Screen readers](#screen-reader)**: Communicate spoken feedback about UI
   contents
@@ -17,7 +17,7 @@ Flutter supports three components for accessibility support:
 
 ## Inspecting Accessibility support
 
-Details of these are discussed below. In additional to testing for these
+Details of these are discussed below. In addition to testing for these
 specific topics, we recommend using automated accessibility scanners:
 
   * For Android:
