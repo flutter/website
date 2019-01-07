@@ -930,18 +930,6 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "ListView",
-    "sample": "ListView",
-    "description": "A scrollable, linear list of widgets. ListView is the most commonly used scrolling widget. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.",
-    "categories": [
-    ],
-    "subcategories": [
-      "Multi-child layout widgets"
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
-    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
-  },
-  {
     "name": "CustomMultiChildLayout",
     "description": "A widget that uses a delegate to size and position multiple children.",
     "categories": [
@@ -1197,14 +1185,15 @@
   },
   {
     "name": "ListView",
+    "sample": "ListView",
     "description": "A scrollable, linear list of widgets. ListView is the most commonly used scrolling widget. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.",
     "categories": [
-      "Scrolling"
     ],
     "subcategories": [
+      "Multi-child layout widgets"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
   },
   {
     "name": "NestedScrollView",
