@@ -80,7 +80,7 @@ rules governing the proper use of the Flutter trademarks.
 * Don't combine the Google name with the "Flutter" name to form a unitary
   brand (e.g., don’t use the phrases "Google Flutter" or "Google’s Flutter").
   You may use the Google name in full text to accurately describe the
-  Flutter SDK (e.g., "Flutter is Google’s SDK").
+  Flutter SDK (e.g., "The Flutter SDK by Google").
 * Don't register the Flutter trademarks or any trademarks, logos,
   or domain names that are confusingly similar to them.
 * Don't incorporate the Flutter trademarks into your own product names,
