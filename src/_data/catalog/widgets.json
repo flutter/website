@@ -878,7 +878,9 @@
   {
     "name": "GridView",
     "description": "A grid list consists of a repeated pattern of cells arrayed in a vertical and horizontal layout. The GridView widget implements this component.",
-    "categories": ["Scrolling"],
+    "categories": [      
+      "Scrolling"
+    ],
     "subcategories": [
       "Information displays",
       "Multi-child layout widgets"
@@ -1188,7 +1190,9 @@
     "name": "ListView",
     "sample": "ListView",
     "description": "A scrollable, linear list of widgets. ListView is the most commonly used scrolling widget. It displays its children one after another in the scroll direction. In the cross axis, the children are required to fill the ListView.",
-    "categories": ["Scrolling"],
+    "categories": [
+      "Scrolling"
+    ],
     "subcategories": [
       "Multi-child layout widgets"
     ],
