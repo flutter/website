@@ -108,13 +108,12 @@ in variables and functions.
 
 ### Step 2: Implement the title row
 
-<?code-excerpt path-base="layout/lakes"?>
+<?code-excerpt path-base="layout/lakes/step2"?>
 
 First, you'll build the left column in the title section. Add the following code
 at the top of the `build()` method of the `MyApp` class:
 
-<?code-excerpt "step2/lib/main.dart (titleSection)"?>
-```dart
+{% code_excerpt "lib/main.dart (titleSection)" %}
 Widget titleSection = Container(
   padding: const EdgeInsets.all(32.0),
   child: Row(
@@ -152,7 +151,7 @@ Widget titleSection = Container(
     ],
   ),
 );
-```
+{% endcode_excerpt %}
 
 {:.numbered-code-notes}
  1. Putting a Column inside an Expanded widget stretches the column to use all
@@ -166,6 +165,7 @@ Widget titleSection = Container(
 
 Add the title section to the app body like this:
 
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "step0/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
 {% diff %}
 --- step0/lib/main.dart

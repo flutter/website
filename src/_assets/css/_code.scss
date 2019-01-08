@@ -1,0 +1,50 @@
+@import '_code_pre';
+
+.numbered-code-notes {
+  list-style-type: none;
+  padding-left: 0;
+  display: table;
+  li {
+    counter-increment: code-note-counter;
+    display: table-row;
+    padding-left: 8px;
+    &:before {
+      font-family: $font-family-monospace;
+      content: '/*' counter(code-note-counter) '*/' ;
+      display: table-cell;
+      text-align: right;
+      color: $teal;
+      padding-right: $font-size-base / 2;
+      // background-color: lightyellow;
+    }
+  }
+}
+
+.code-excerpt {
+  border: $border-width solid $border-color;
+  margin-bottom: bs-spacer(4);
+
+  &__code {
+    position: relative;
+
+    pre {
+      background-color: $gray-100;
+      margin-bottom: 0;
+    }
+  }
+
+  &__copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $code-color;
+    margin-top: bs-spacer(2);
+    position: absolute;
+    right: 0;
+  }
+
+  &__header {
+    background-color: $gray-200;
+    padding: bs-spacer(3);
+  }
+}
