@@ -19,3 +19,32 @@
     }
   }
 }
+
+.code-excerpt {
+  border: $border-width solid $border-color;
+  margin-bottom: bs-spacer(4);
+
+  &__code {
+    position: relative;
+
+    pre {
+      background-color: $gray-100;
+      margin-bottom: 0;
+    }
+  }
+
+  &__copy-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $code-color;
+    margin-top: bs-spacer(2);
+    position: absolute;
+    right: 0;
+  }
+
+  &__header {
+    background-color: $gray-200;
+    padding: bs-spacer(3);
+  }
+}
