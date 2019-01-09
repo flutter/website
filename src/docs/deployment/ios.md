@@ -19,16 +19,17 @@ In order to publish your app to the App Store, you'll need to enroll in the
 membership options in Apple's [Choosing a Membership][devprogram_membership]
 guide.
 
-## Register your app on iTunes Connect
+## Register your app on App Store Connect
 
-[iTunes Connect][itunesconnect] is where you'll manage your app's life cycle.
-You will define your app name and description, add screenshots, set pricing,
-and manage releases to the App Store and TestFlight.
+[App Store Connect][appstoreconnect] (formerly iTunes Connect) is where you'll
+manage your app's life cycle. You will define your app name and description,
+add screenshots, set pricing, and manage releases to the App Store
+and TestFlight.
 
 Registering your app involves two steps: registering a unique Bundle ID, and
-creating an application record on iTunes Connect.
+creating an application record on App Store Connect.
 
-For a detailed overview of iTunes Connect, see the [iTunes Connect][itunesconnect_guide]
+For a detailed overview of App Store Connect, see the [App Store Connect][appstoreconnect_guide]
 guide.
 
 ### Register a Bundle ID
@@ -44,12 +45,12 @@ steps:
 1. On the next page, confirm the details and click **Register** to register
    your Bundle ID.
 
-### Create an application record on iTunes Connect
+### Create an application record on App Store Connect
 
-Next, you'll register your app on iTunes Connect:
+Next, you'll register your app on App Store Connect:
 
-1. Open [iTunes Connect][itunesconnect_login] in your browser.
-1. On the iTunes Connect landing page, click **My Apps**.
+1. Open [App Store Connect][appstoreconnect_login] in your browser.
+1. On the App Store Connect landing page, click **My Apps**.
 1. Click **+** in the top-left corner of the My Apps page, then select
    **New App**.
 1. Fill in your app details in the form that appears. In the Platforms section,
@@ -60,7 +61,7 @@ Next, you'll register your app on iTunes Connect:
 1. In the General Information section, select the Bundle ID you registered in
    the preceding step.
 
-For a detailed overview, see [Add an app to your account][itunesconnect_guide_register].
+For a detailed overview, see [Add an app to your account][appstoreconnect_guide_register].
 
 ## Review Xcode project settings
 
@@ -82,7 +83,7 @@ In the Identity section:
 
   * `Display Name:` the name of the app to be displayed on the home screen and
     elsewhere.
-  * `Bundle Identifier:` the App ID you registered on iTunes Connect.
+  * `Bundle Identifier:` the App ID you registered on App Store Connect.
 
 In the Signing section:
 
@@ -119,7 +120,7 @@ step, you'll replace these placeholder icons with your app's icons:
 
 ## Create a build archive
 
-In this step, you'll create a build archive and upload your build to iTunes
+In this step, you'll create a build archive and upload your build to App Store
 Connect.
 
 During development, you've been building, debugging, and testing with *debug*
@@ -143,10 +144,10 @@ In Xcode, configure the app version and build:
 1. In the Identity section, update the **Version** to the user-facing
    version number you wish to publish.
 1. In the Identity section, update the **Build** identifier to a unique
-   build number used to track this build on iTunes Connect. Each upload requires a
+   build number used to track this build on App Store Connect. Each upload requires a
    unique build number.
 
-Finally, create a build archive and upload it to iTunes Connect:
+Finally, create a build archive and upload it to App Store Connect:
 
 1. Select **Product > Archive** to produce a build archive.
 1. In the sidebar of the Xcode Organizer window, select your iOS app, then
@@ -156,14 +157,14 @@ Finally, create a build archive and upload it to iTunes Connect:
    an archive.
 1. After the archive has been successfully validated, click **Upload to App
    Store...**. You can follow the status of your build in the Activities
-   tab of your app's details page on [iTunes Connect][itunesconnect_login].
+   tab of your app's details page on [App Store Connect][appstoreconnect_login].
 
 You should receive an email within 30 minutes notifying you that your build has
 been validated and is available to release to testers on TestFlight. At this
 point you can choose whether to release on TestFlight, or go ahead and release
 your app to the App Store.
 
-For more details, see [Upload an app to iTunes Connect][distributionguide_upload].
+For more details, see [Upload an app to App Store Connect][distributionguide_upload].
 
 ## Release your app on TestFlight
 
@@ -172,11 +173,11 @@ external testers. In this optional step, you'll release your build on
 TestFlight.
 
 1. Navigate to the TestFlight tab of your app's application details page on
-   [iTunes Connect][itunesconnect_login].
+   [App Store Connect][appstoreconnect_login].
 1. Select **Internal Testing** in the sidebar.
 1. Select the build to publish to testers, then click **Save**.
 1. Add the email addresses of any internal testers. You can add additional
-   internal users in the Users and Roles page of iTunes Connect, available from
+   internal users in the Users and Roles page of App Store Connect, available from
    the dropdown menu at the top of the page.
 
 For more details, see [Distribute an app using TestFlight]
@@ -188,7 +189,7 @@ When you're ready to release your app to the world, follow these steps to
 submit your app for review and release to the App Store:
 
 1. Select **Pricing and Availability** from the sidebar of your app's
-   application details page on [iTunes Connect][itunesconnect_login] and
+   application details page on [App Store Connect][appstoreconnect_login] and
    complete the required information.
 1. Select the status from the sidebar. If this is the first release of this
    app, its status will be **1.0 Prepare for Submission**. Complete all
@@ -220,8 +221,8 @@ the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[itunesconnect]: https://developer.apple.com/support/itunes-connect/
-[itunesconnect_guide]: https://developer.apple.com/support/itunes-connect/
-[itunesconnect_guide_register]: https://help.apple.com/itunes-connect/developer/#/dev2cd126805
-[itunesconnect_login]: https://itunesconnect.apple.com/
+[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
+[appstoreconnect_login]: https://appstoreconnect.apple.com/
 [testflight]: https://developer.apple.com/testflight/
