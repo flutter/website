@@ -23,14 +23,23 @@ Coding mistakes, solutions, and snazzy intro music included.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yr8F2S3Amas?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 Episode One: The Boring Flutter Show<br>
-[The Boring Flutter Show playlist](https://www.youtube.com/watch?v=yr8F2S3Amas&list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK)
+[The Boring Flutter Show playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK)
 
 ### Flutter Widget of the Week
 
 Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lkF0TQJO0bA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=lkF0TQJO0bA&list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
+[Flutter Widget of the Week playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
+
+### Flutter Widgets 101
+
+Five-to-ten minute videos on StatelessWidget, StatefulWidget, and
+other buiding-block widgets that every Flutter developer needs
+to know about.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter Widgets 101 playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd)
 
 ### Flutter Challenge series by Fluttery
 
@@ -45,16 +54,22 @@ Each episode solves a different design challenge.
 Weekly episodes, released on Sunday, feature Flutter widgets.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aVZ5rsA4Yx8?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Weekly Widgets playlist](https://www.youtube.com/watch?v=aVZ5rsA4Yx8&list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0)
+[Flutter Weekly Widgets playlist](https://www.youtube.com/playlist?list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0)
 
 ---
 
+{% comment %}
+Comment this out until we have a working Conference playlist link. 
+
 ## Conference talks
 
-Here are a few recent Flutter talks given at various conferences, listed by newist first.
+Here are a few recent Flutter talks given at various conferences,
+listed by newest first.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p4yLzYwy_4g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Conference Talks playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIKVFj6DCJHTwvSzUBa2R8Ec)
+[Conference Talks playlist]()
+
+{% endcomment %}
 
 ## Flutter DevBytes
 
