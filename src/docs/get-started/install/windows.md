@@ -17,7 +17,7 @@ To install and run Flutter, your development environment must meet these minimum
 - **Disk Space**: 400 MB (does not include disk space for IDE/tools).
 - **Tools**: Flutter depends on these tools being available in your environment.
   - [Windows PowerShell 5.0][] or newer (this is pre-installed with Windows 10)
-  - [Git for Windows][], with the **Use Git from the Windows Command Prompt** option.
+  - [Git for Windows][] 2.x, with the **Use Git from the Windows Command Prompt** option.
 
      If Git for Windows is already installed, make sure you can run `git` commands from the
      command prompt or PowerShell.
