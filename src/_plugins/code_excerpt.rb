@@ -2,29 +2,30 @@
 # for details. All rights reserved. Use of this source code is governed by a
 # BSD-style license that can be found in the LICENSE file.
 
-require 'cgi'
 require 'liquid/tag/parser' # https://github.com/envygeeks/liquid-tag-parser
-require_relative 'prettify'
+require_relative '../_shared/_plugins/prettify_core'
 
 module Jekyll
 
   module Tags
 
     # A Ruby plugin equivalent of the <?code-excerpt?> instruction.
-    class CodeExcerpt < Prettify
+    class CodeExcerpt < Liquid::Block
 
       def initialize(tag_name, string_of_args, tokens)
         super
         @args = Liquid::Tag::Parser.new(string_of_args).args
-        @argv1 = @args[:argv1]
-        @lang = 'dart' # TODO: set dynamically
       end
 
       def render(context)
+        helper = DartSite::PrettifyCore.new
+        lang = 'dart' # TODO: set dynamically
+        argv1 = @args[:argv1] # TODO: extract title and region
+
         # Don't add a copy button here since we're currently adding
         # it dynamically to all <pre> elements.
         #
-        # id = 'code-excerpt-1' # TODO: autogenerate id
+        # id = 'code-excerpt-1' # xTODO: autogenerate id
         #
         # Extra template code was:
         #
@@ -42,10 +43,10 @@ module Jekyll
         %(
 <div class="code-excerpt">
 <div class="code-excerpt__header">
-  #{CGI.escapeHTML(@argv1)}
+  #{CGI.escapeHTML(argv1)}
 </div>
 <div class="code-excerpt__code">
-#{super(context)}
+#{helper.code2html(super, lang: lang)}
 </div>
 </div>).strip
       end
