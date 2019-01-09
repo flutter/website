@@ -16,7 +16,8 @@ $(function () {
   initVideoModal();
   initCarousel();
   initSnackbar();
-  prettyPrint();
+
+  addCopyCodeButtonsEverywhere(); // Must be before tooltip activation.
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
@@ -25,6 +26,8 @@ $(function () {
   // Old tabs
   setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
   setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
+
+  prettyPrint();
 });
 
 // TODO(chalin): Copied (& tweaked) from site-www, consider moving into site-shared
@@ -189,4 +192,27 @@ function _changeTooltip(target, text) {
   if (!$(target).is(":hover")) {
     $(target).tooltip('hide'); // ... but hide it if it isn't being hovered over
   }
+}
+
+function addCopyCodeButtonsEverywhere() {
+  var elts = $('pre');
+  elts.wrap(function (i) {
+    return $(this).parent('div.code-excerpt__code').length === 0
+      ? '<div class="code-excerpt__code"></div>'
+      : '';
+  });
+  elts.wrap(function (i) {
+    return '<div id="code-excerpt-' + i + '"></div>'
+  });
+
+  elts.parent() // === div#code-excerpt-X
+    .parent() // === div.code-excerpt__code
+    .prepend(function (i) {
+      return '' +
+        '<button class="code-excerpt__copy-btn" type="button"' +
+        '    data-toggle="tooltip" title="Copy code"' +
+        '    data-clipboard-target="#code-excerpt-' + i + '">' +
+        '  <i class="material-icons">content_copy</i>' +
+        '</button>';
+    });
 }

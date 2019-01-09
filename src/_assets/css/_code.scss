@@ -37,8 +37,9 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    color: $code-color;
+    color: lighten($code-color, 20%); // Offers better contrast on dark bg
     margin-top: bs-spacer(2);
+    outline: none !important;
     position: absolute;
     right: 0;
   }

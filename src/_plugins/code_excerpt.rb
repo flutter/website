@@ -21,23 +21,31 @@ module Jekyll
       end
 
       def render(context)
-        # TODO: autogenerate id
+        # Don't add a copy button here since we're currently adding
+        # it dynamically to all <pre> elements.
+        #
+        # id = 'code-excerpt-1' # TODO: autogenerate id
+        #
+        # Extra template code was:
+        #
+        # <button class="code-excerpt__copy-btn" type="button"
+        #     data-toggle="tooltip" title="Copy code"
+        #     data-clipboard-target="##{id}">
+        #   <i class="material-icons">content_copy</i>
+        # </button>
+        # <div id="#{id}">
+        # #{super(context)}
+        # </div>
+
         # TODO: only add header if there is a title
-        id = 'code-excerpt-1'
+
         %(
 <div class="code-excerpt">
 <div class="code-excerpt__header">
   #{CGI.escapeHTML(@argv1)}
 </div>
 <div class="code-excerpt__code">
-<button class="code-excerpt__copy-btn" type="button"
-    data-toggle="tooltip" title="Copy code"
-    data-clipboard-target="##{id}">
-  <i class="material-icons">content_copy</i>
-</button>
-<div id="#{id}">
 #{super(context)}
-</div>
 </div>
 </div>).strip
       end
