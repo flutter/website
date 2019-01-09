@@ -68,7 +68,7 @@ Alternatively, if you want to do it manually, here's how:
 
 ## Signing the app
 
-To publish on the iTunes store, you need to give your app a digital
+To publish on the Play store, you need to give your app a digital
 signature. Use the following instructions to sign your app.
 
 ### Create a keystore

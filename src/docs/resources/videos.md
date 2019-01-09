@@ -34,7 +34,9 @@ Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
 
 ### Flutter Widgets 101
 
-Five-to-ten minute videos on how to use Flutter widgets.
+Five-to-ten minute videos on StatelessWidget, StatefulWidget, and
+other buiding-block widgets that every Flutter developer needs
+to know about.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter Widgets 101 playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd)
@@ -61,7 +63,8 @@ Comment this out until we have a working Conference playlist link.
 
 ## Conference talks
 
-Here are a few recent Flutter talks given at various conferences, listed by newist first.
+Here are a few recent Flutter talks given at various conferences,
+listed by newest first.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p4yLzYwy_4g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 [Conference Talks playlist]()
