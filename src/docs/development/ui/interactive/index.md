@@ -26,13 +26,13 @@ skip to the next section.
 * Make sure you've [set up](/docs/get-started/install) your environment.
 * [Create a basic Flutter app.](/docs/get-started/test-drive/#create-app)
 * Replace the `lib/main.dart` file with
-  [`main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/main.dart)
+  [main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes/main.dart)
   from GitHub.
 * Replace the `pubspec.yaml` file with
-  [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/pubspec.yaml)
+  [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes/pubspec.yaml)
   from GitHub.
 * Create an `images` directory in your project, and add
-  [`lake.jpg`.](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg)
+  [lake.jpg.](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes/images/lake.jpg)
 
 Once you have a connected and enabled device, or you've launched the [iOS
 simulator](/docs/get-started/install/macos#set-up-the-ios-simulator)
@@ -305,9 +305,9 @@ If you can't get your code to run, look in your IDE for possible errors.
 If you still can't find the problem,
 check your code against the interactive Lakes example on GitHub.
 
-* [`lib/main.dart`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes-interactive/main.dart)
-* [`pubspec.yaml`](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
-* [`lakes.jpg`](https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
+* [lib/main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/main.dart)
+* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
+* [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
 
 If you still have questions, refer to [Get support.](/community)
 

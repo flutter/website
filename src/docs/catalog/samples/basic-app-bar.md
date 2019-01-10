@@ -146,4 +146,4 @@ void main() {
 
 * The Material [App bars: top](https://material.io/design/components/app-bars-top.html) component page.
 * The source code in
-  [examples/catalog/lib/basic_app_bar.dart](https://raw.githubusercontent.com/flutter/flutter/master/examples/catalog/lib/basic_app_bar.dart).
+  [examples/catalog/lib/basic_app_bar.dart]({{site.repo.flutter}}/tree/{{site.branch}}/examples/catalog/lib/basic_app_bar.dart).
