@@ -194,7 +194,7 @@ The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected anywhere in the screen.
 
-[Full code for basic_staggered_animation's main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/animation/basic_staggered_animation/main.dart)
+[Full code for basic_staggered_animation's main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/basic_staggered_animation/main.dart)
 
 ### Stateless widget: StaggerAnimation
 

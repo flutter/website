@@ -11,11 +11,11 @@ diff2html: true
 {% endcomment -%}
 
 {% assign api = 'https://docs.flutter.io/flutter' -%}
-{% assign code = 'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code' -%}
-{% assign file = 'https://github.com/flutter/website/tree/master/src/_includes/code' -%}
-{% assign examples = 'https://github.com/flutter/website/tree/master/examples' -%}
-{% assign exFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
-{% assign demo = 'https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo' -%}
+
+{% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
+{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -341,7 +341,7 @@ Three of the four column elements are now complete, leaving only the image.
 Add the image file to the example:
 
 * Create an `images` directory at the top of the project.
-* Add [`lake.jpg`]({{exFile}}/layout/lakes/step5/images/lake.jpg).
+* Add [`lake.jpg`]({{rawExFile}}/layout/lakes/step5/images/lake.jpg).
 
   {{site.alert.info}}
     Note that `wget` doesn't work for saving this binary file. The original image
@@ -770,7 +770,7 @@ horizontal space evenly between, before, and after each image.
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
   **Dart code:** [main.dart]({{code}}/layout/row/main.dart)<br>
-  **Images:** [images]({{file}}/layout/row/images)<br>
+  **Images:** [images]({{code}}/layout/row/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/row/pubspec.yaml)
 </div>
 </div>
@@ -786,7 +786,7 @@ space evenly between, above, and below each image.
   {% include includelines filename="code/layout/column/main.dart" start=40 count=8 %}
 
   **Dart code:** [main.dart]({{code}}/layout/column/main.dart)<br>
-  **Images:** [images]({{file}}/layout/column/images)<br>
+  **Images:** [images]({{code}}/layout/column/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/column/pubspec.yaml)
 </div>
 <div class="col-lg-4 text-center">
@@ -829,7 +829,7 @@ as wide as the other two widgets, set the flex factor on the middle widget to 2:
       alt="Row of 3 images with the middle image twice as wide as the others" %}
 
   **Dart code:** [main.dart]({{code}}/layout/row-expanded/main.dart)<br>
-  **Images:** [images]({{file}}/layout/row-expanded/images)<br>
+  **Images:** [images]({{code}}/layout/row-expanded/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded/pubspec.yaml)
 </div>
 </div>
@@ -849,7 +849,7 @@ the row to each widget.
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
   **Dart code:** [main.dart]({{code}}/layout/row-expanded-2/main.dart)<br>
-  **Images:** [images]({{file}}/layout/row-expanded-2/images)<br>
+  **Images:** [images]({{code}}/layout/row-expanded-2/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded-2/pubspec.yaml)
 </div>
 </div>
@@ -1092,7 +1092,7 @@ body: Center(
 <div class="row">
 <div class="col-lg-3" markdown="1">
   **Dart code:** [main.dart]({{code}}/layout/pavlova/main.dart)<br>
-  **Images:** [images]({{file}}/layout/pavlova/images)<br>
+  **Images:** [images]({{code}}/layout/pavlova/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/pavlova/pubspec.yaml)
 </div>
 <div class="col-lg-9" markdown="1">
@@ -1180,7 +1180,7 @@ Gallery][].
   uses a Container to change the background color to a lighter grey.
 
   **Dart code:** [main.dart]({{code}}/layout/container/main.dart), snippet below<br>
-  **Images:** [images]({{file}}/layout/container/images)<br>
+  **Images:** [images]({{code}}/layout/container/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/container/pubspec.yaml)
 </div>
 <div class="col-lg-6 text-center">
@@ -1282,7 +1282,7 @@ it automatically scrolls.
   Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
 
   **Dart code:** [main.dart]({{code}}/layout/grid/main.dart), snippet below<br>
-  **Images:** [images]({{file}}/layout/grid/images)<br>
+  **Images:** [images]({{code}}/layout/grid/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/grid/pubspec.yaml)
 </div>
 <div class="col-lg-6" markdown="1">
@@ -1457,7 +1457,7 @@ The widgets can completely or partially overlap the base widget.
   Alignments.
 
   **Dart code:** [main.dart]({{code}}/layout/stack/main.dart), snippet below<br>
-  **Image:** [images]({{file}}/layout/stack/images)<br>
+  **Image:** [images]({{code}}/layout/stack/images)<br>
   **Pubspec:** [pubspec.yaml]({{code}}/layout/stack/pubspec.yaml)
 </div>
 <div class="col-lg-5" markdown="1">
