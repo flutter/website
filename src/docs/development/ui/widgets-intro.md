@@ -8,7 +8,7 @@ at the end of the page to avoid repeating links. {% endcomment -%}
 {% assign api = site.api | append: '/flutter' -%}
 
 Flutter widgets are built using a modern react-style framework, which takes
-inspiration from [React](http://facebook.github.io/react). The central idea is
+inspiration from [React](https://reactjs.org). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
 state changes, the widget rebuilds its description, which the framework diffs
