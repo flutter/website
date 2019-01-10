@@ -1,5 +1,5 @@
 ---
-title: Scrolling in integration tests
+title: Scrolling
 ---
 
 Many apps feature lists of content, from email clients to music apps and beyond.

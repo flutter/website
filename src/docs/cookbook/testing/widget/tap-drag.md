@@ -1,5 +1,5 @@
 ---
-title: Tapping, Dragging and Entering Text in Widget Tests
+title: Tapping, dragging and entering text
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
