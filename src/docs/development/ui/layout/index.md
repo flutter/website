@@ -52,7 +52,7 @@ then do the following:
  2. Change the app bar title and the app title as follows:
 
     <?code-excerpt "codelabs/startup_namer/1-base/lib/main.dart" diff-with="layout/lakes/step0/lib/main.dart"?>
-    {% diff %}
+    ```diff
     --- codelabs/startup_namer/1-base/lib/main.dart
     +++ layout/lakes/step0/lib/main.dart
     @@ -6,10 +6,10 @@
@@ -68,7 +68,7 @@ then do the following:
              ),
              body: Center(
                child: Text('Hello World'),
-    {% enddiff %}
+    ```
 
 [hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
 
@@ -167,7 +167,7 @@ Add the title section to the app body like this:
 
 <?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "step0/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
-{% diff %}
+```diff
 --- step0/lib/main.dart
 +++ step2/lib/main.dart
 @@ -8,11 +46,13 @@
@@ -186,7 +186,7 @@ Add the title section to the app body like this:
          ),
        ),
      );
-{% enddiff %}
+```
 
 {{site.alert.tip}}
   - When pasting code into your app, indentation can
@@ -270,7 +270,7 @@ Widget buttonSection = Container(
 Add the button section to the body:
 
 <?code-excerpt "step2/lib/main.dart" diff-with="step3/lib/main.dart" from="return MaterialApp" to="}"?>
-{% diff %}
+```diff
 --- step2/lib/main.dart
 +++ step3/lib/main.dart
 @@ -46,3 +59,3 @@
@@ -287,7 +287,7 @@ Add the button section to the body:
        ),
      );
    }
-{% enddiff %}
+```
 
 ### Step 4: Implement the text section
 
@@ -318,7 +318,7 @@ wrapping at a word boundary.
 Add the text section to the body:
 
 <?code-excerpt "step3/lib/main.dart" diff-with="step4/lib/main.dart" from="return MaterialApp"?>
-{% diff %}
+```diff
 --- step3/lib/main.dart
 +++ step4/lib/main.dart
 @@ -59,3 +72,3 @@
@@ -333,7 +333,7 @@ Add the text section to the body:
            ],
          ),
        ),
-{% enddiff %}
+```
 
 ### Step 5: Implement the image section
 
@@ -355,7 +355,7 @@ Add the image file to the example:
   image available to your code.
 
   <?code-excerpt "step4/pubspec.yaml" diff-with="step5/pubspec.yaml"?>
-  {% diff %}
+  ```diff
   --- step4/pubspec.yaml
   +++ step5/pubspec.yaml
   @@ -17,3 +17,5 @@
@@ -364,12 +364,12 @@ Add the image file to the example:
      uses-material-design: true
   +  assets:
   +    - images/lake.jpg
-  {% enddiff %}
+  ```
 
 Now you can reference the image from your code:
 
   <?code-excerpt "step4/lib/main.dart" diff-with="step5/lib/main.dart"?>
-  {% diff %}
+  ```diff
   --- step4/lib/main.dart
   +++ step5/lib/main.dart
   @@ -77,6 +77,12 @@
@@ -385,7 +385,7 @@ Now you can reference the image from your code:
                titleSection,
                buttonSection,
                textSection,
-  {% enddiff %}
+  ```
 
 `BoxFit.cover` tells the framework that the image should be as small as
 possible but cover its entire render box.
@@ -397,7 +397,7 @@ In this final step, arrange all of the elements in a `ListView`, rather than a
 on a small device.
 
 <?code-excerpt "step5/lib/main.dart" diff-with="step6/lib/main.dart" diff-u="6" from="return MaterialApp"?>
-{% diff %}
+```diff
 --- step5/lib/main.dart
 +++ step6/lib/main.dart
 @@ -72,13 +77,13 @@
@@ -415,7 +415,7 @@ on a small device.
                width: 600.0,
                height: 240.0,
                fit: BoxFit.cover,
-{% enddiff %}
+```
 
 **Dart code:** [main.dart]({{examples}}/layout/lakes/step6/lib/main.dart)<br>
 **Image:** [images]({{examples}}/layout/lakes/step6/images)<br>
