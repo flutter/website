@@ -1,5 +1,6 @@
 ---
 title: Mock dependencies using Mockito
+short-title: Mocking
 ---
 
 In certain cases, unit tests may depend on classes that fetch data from live

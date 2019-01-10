@@ -1,5 +1,5 @@
 ---
-title: Finding Widgets in a Widget Test
+title: Finding widgets
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
