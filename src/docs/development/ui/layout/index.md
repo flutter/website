@@ -113,7 +113,8 @@ in variables and functions.
 First, you'll build the left column in the title section. Add the following code
 at the top of the `build()` method of the `MyApp` class:
 
-{% code_excerpt "lib/main.dart (titleSection)" %}
+<?code-excerpt "lib/main.dart (titleSection)" title?>
+```dart
 Widget titleSection = Container(
   padding: const EdgeInsets.all(32.0),
   child: Row(
@@ -151,7 +152,7 @@ Widget titleSection = Container(
     ],
   ),
 );
-{% endcode_excerpt %}
+```
 
 {:.numbered-code-notes}
  1. Putting a Column inside an Expanded widget stretches the column to use all
@@ -201,6 +202,8 @@ Add the title section to the app body like this:
 
 ### Step 3: Implement the button row
 
+<?code-excerpt path-base="layout/lakes/step3"?>
+
 The button section contains 3 columns that use the same layout&mdash;an
 icon over a row of text. The columns in this row are evenly spaced,
 and the text and icons are painted with the primary color.
@@ -210,7 +213,7 @@ helper method named `buildButtonColumn()`, which takes a color, an Icon and
 Text, and returns a column with its widgets painted in the given color.
 
 <!-- skip -->
-<?code-excerpt "step3/lib/main.dart (_buildButtonColumn)"?>
+<?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
 ```dart
 class MyApp extends StatelessWidget {
   @override
@@ -251,7 +254,7 @@ between, and after each column. Add the following code just below the
 `titleSection` declaration inside the `build()` method:
 
 <!-- skip -->
-<?code-excerpt "step3/lib/main.dart (buttonSection)"?>
+<?code-excerpt "lib/main.dart (buttonSection)" title?>
 ```dart
 Color color = Theme.of(context).primaryColor;
 
@@ -269,6 +272,7 @@ Widget buttonSection = Container(
 
 Add the button section to the body:
 
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "step2/lib/main.dart" diff-with="step3/lib/main.dart" from="return MaterialApp" to="}"?>
 ```diff
 --- step2/lib/main.dart
@@ -291,12 +295,14 @@ Add the button section to the body:
 
 ### Step 4: Implement the text section
 
+<?code-excerpt path-base="layout/lakes/step4"?>
+
 Define the text section as a variable. Put the text in a Container and add
 padding along each edge. Add the following code just below the `buttonSection`
 declaration:
 
 <!-- skip -->
-<?code-excerpt "step4/lib/main.dart (textSection)"?>
+<?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
 Widget textSection = Container(
   padding: const EdgeInsets.all(32.0),
@@ -317,6 +323,7 @@ wrapping at a word boundary.
 
 Add the text section to the body:
 
+<?code-excerpt path-base="layout/lakes"?>
 <?code-excerpt "step3/lib/main.dart" diff-with="step4/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- step3/lib/main.dart
@@ -368,24 +375,24 @@ Add the image file to the example:
 
 Now you can reference the image from your code:
 
-  <?code-excerpt "step4/lib/main.dart" diff-with="step5/lib/main.dart"?>
-  ```diff
-  --- step4/lib/main.dart
-  +++ step5/lib/main.dart
-  @@ -77,6 +77,12 @@
-           ),
-           body: Column(
-             children: [
-  +            Image.asset(
-  +              'images/lake.jpg',
-  +              width: 600.0,
-  +              height: 240.0,
-  +              fit: BoxFit.cover,
-  +            ),
-               titleSection,
-               buttonSection,
-               textSection,
-  ```
+<?code-excerpt "step4/lib/main.dart" diff-with="step5/lib/main.dart"?>
+```diff
+--- step4/lib/main.dart
++++ step5/lib/main.dart
+@@ -77,6 +77,12 @@
+         ),
+         body: Column(
+           children: [
++            Image.asset(
++              'images/lake.jpg',
++              width: 600.0,
++              height: 240.0,
++              fit: BoxFit.cover,
++            ),
+             titleSection,
+             buttonSection,
+             textSection,
+```
 
 `BoxFit.cover` tells the framework that the image should be as small as
 possible but cover its entire render box.

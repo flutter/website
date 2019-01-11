@@ -46,6 +46,12 @@
 
   &__header {
     background-color: $gray-200;
-    padding: bs-spacer(3);
+    border-bottom: $border-width solid $border-color;
+    font-size: $site-spacer * .875;
+    font-weight: $font-weight-bold;
+    padding-top: bs-spacer(3);
+    padding-left: bs-spacer(4);
+    padding-right: bs-spacer(2);
+    padding-bottom: 0.67rem;
   }
 }

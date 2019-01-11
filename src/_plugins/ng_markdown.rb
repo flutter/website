@@ -1,1 +1,0 @@
-../_shared/_plugins/ng_markdown.rb
