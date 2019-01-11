@@ -419,7 +419,7 @@ lazily, on demand.
     Also, add a `_biggerFont` variable for making the font size larger.
 
     <!-- skip -->
-    <?code-excerpt "lib/main.dart (RandomWordsState var)" title region="RWS-var" indent-by="2" replace="/final .*/[!$&!]/g"?>
+    <?code-excerpt "lib/main.dart" title region="RWS-var" indent-by="2" replace="/final .*/[!$&!]/g"?>
     ```dart
       class RandomWordsState extends State<RandomWords> {
         [!final _suggestions = <WordPair>[];!]
