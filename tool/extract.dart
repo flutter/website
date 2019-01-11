@@ -57,9 +57,7 @@ int _processFile(File file) {
     } else if (lines[index].trim().startsWith('<!--')) {
       // Look for <!-- comment sections.
       int startIndex = index;
-      while (!lines[index].trim().endsWith('-->')) {
-        index++;
-      }
+      while (!lines[index].trim().endsWith('-->')) index++;
 
       lastComment = lines.sublist(startIndex, index + 1).join('\n').trim();
       lastComment = lastComment.substring(4);
@@ -68,6 +66,8 @@ int _processFile(File file) {
         lastComment = lastComment.substring(1);
       }
       lastComment = lastComment.substring(0, lastComment.length - 3);
+    } else if (lines[index].contains('<?code-') || lines[index].trim().isEmpty) {
+      // Carry on. In particular, don't reset lastComment.
     } else {
       lastComment = null;
     }
@@ -98,15 +98,11 @@ void _extractSnippet(
   print('  ${lines.length} line snippet ==> $path');
 }
 
-String _removeMarkup(String source) {
-  List<String> tags = ['strike', 'highlight', 'note', 'red'];
+final highlightRE = RegExp(r'\[\[/?(highlight|note|red|strike)\]\]');
+final abbreviatedHighlightRE = RegExp(r'\[!|!\]');
 
-  tags.forEach((String tag) {
-    source = source.replaceAll('\[\[$tag\]\]', '');
-    source = source.replaceAll('\[\[/$tag\]\]', '');
-  });
-  return source;
-}
+String _removeMarkup(String source) =>
+    source.replaceAll(highlightRE, '').replaceAll(abbreviatedHighlightRE, '');
 
 void clean() {
   var exampleDir = Directory(generatedExampleDirPath);
