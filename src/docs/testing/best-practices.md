@@ -4,7 +4,7 @@ short-title: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
-Generally Flutter applications are high performance by default,
+Generally, Flutter applications are performant by default,
 so you only need to avoid common pitfalls to get excellent performance
 instead of needing to micro-optimize with complicated profiling tools.
 These best recommendations will help you write the most performant
@@ -53,14 +53,12 @@ are particularly slow in older GPUs.
 Some general rules when applying specific effects:
 
 * Use the [**Opacity**]({{site.api}}/flutter/widgets/Opacity-class.html)
-  widget only when necessary, but if you must use it, add a
-  RepaintBoundary right below Opacity in the widget tree to prevent
-  unnecessary calls to `saveLayer()`.  See [Transparent
+  widget only when necessary. See [Transparent
   image]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)
   in the Opacity API page for an example of applying opacity directly
   to an image, which is faster than using the Opacity widget.
 * **Clipping** doesn’t call `saveLayer()` (unless explicitly requested with
-  `Clip.antiAliasWithSaveLayer()`) so these operations aren’t as expensive
+  `Clip.antiAliasWithSaveLayer`) so these operations aren’t as expensive
   as Opacity, but clipping is still costly, so use with caution. By default,
   clipping is disabled (`Clip.none`), so you must explicitly enable it when
   needed. 
@@ -101,16 +99,21 @@ Also see:
 
 ###  Build and display frames in 16ms
 
-A frame should be built and rendered in 16ms (1/60th of a second) _or less_
-for a 60Hz display.  Note that means built in 8ms or less,
+Since there are two separate threads for building and rendering, you
+have 16ms for building, and 16ms for rendering on a 60Hz display.
+If latency is a concern, build and display a frame in 16ms _or less_.
+Note that means built in 8ms or less,
 and rendered in 8ms or less, for a total of 16ms or less.
-If your frames are rendering in well under 16ms in a [profile
-build](/docs/testing/build-modes#profile)
+If missing frames (jankyness) is a concern, then 16ms for each of
+the build and render stages is OK.
+
+If your frames are rendering in well under 16ms total in a [profile
+build](/docs/testing/build-modes#profile),
 you likely don’t have to worry about performance even if some
 performance pitfalls apply, but you should still aim to build and
 render a frame as fast as possible. Why?
 
-* Lowering the frame rate render time below 16ms may not make a visual
+* Lowering the frame render time below 16ms may not make a visual
   difference, but it will **improve battery life** and thermal issues.
 * It may run fine on your device, but consider performance for the
   lowest device you are targeting.
@@ -122,12 +125,8 @@ see the video [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
 
 ## Pitfalls
 
-If you need to tune your app’s performance, perhaps the UI isn't as
+If you need to tune your app’s performance, or perhaps the UI isn't as
 smooth as you expect, the Flutter plugin for your IDE can help.
-{% comment %}
-(You need at least Android Studio 3.2 or IntelliJ 2018.2, Flutter 0.11.4,
-and the Flutter Plugin 23.2.)
-{% endcomment %}
 In the Flutter inspector, bring up the **Performance** tab and enable the
 **show widget rebuild** check box. This feature helps you detect when 
 frames are being rendered and displayed in more than 16ms.
@@ -138,7 +137,7 @@ Where possible, the plugin provides a link to a relevant tip.
 The following behaviors might negatively impact your app's performance.
 
 * Avoid using the Opacity widget, and particularly avoid it in an animation.
-  Use AnimatedOpacity or FadeInImage instead.
+  Use AnimatedOpacity or `FadeInImage` instead.
   For more information, see [Performance considerations for opacity
   animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation).
 
