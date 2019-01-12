@@ -5,23 +5,24 @@ description: How to navigate between routes
 
 Most apps contain several screens for displaying different types of information.
 For example, an app might have a screen that displays products. Users can then
-tap on the image of a product to get more detailed information on a new screen.
+tap the image of a product to get more detailed information on a new screen.
 
-{{site.alert.secondary}}
-**Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
-The remainder of this doc refers to routes.
+{{site.alert.info}}
+  **Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
+  The remainder of this doc refers to routes.
 {{site.alert.end}}
 
 In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
-In Flutter, a route is just a widget!
+In Flutter, a route is just a widget.
 
 How do you navigate to a new route? By using the
-[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
+[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html).
 
 ## Directions
 
-To demonstrate navigating between routes, follow these steps:
+The next few sections show how to navigate between two routes,
+using these steps:
 
   1. Create two routes
   2. Navigate to the second route using Navigator.push()
@@ -78,7 +79,7 @@ class SecondRoute extends StatelessWidget {
 
 ## 2. Navigate to the second route using Navigator.push()
 
-To Navigate to a new route, use the
+To switch to a new route, use the
 [`Navigator.push()`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
 method. The `push()` method adds a `Route` to the stack of routes managed by
 the Navigator. Where does the `Route` come from?
