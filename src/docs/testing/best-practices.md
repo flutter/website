@@ -24,9 +24,8 @@ when designing your app:
 * Localize the `setState()` call to the part of the subtree whose UI
   actually needs to change. Avoid calling calling setState() high up in
   the tree if the change is contained to a small part of the tree.
-* Re-use the same child widget instance when building stops that
-  child subtree from re-building when the parent rebuilds.
-  [PENDING: rephrase]
+* When a widget rebuilds, but the build stops a child from rebuilding,
+  reuse the same child widget.
 
 Also see:
 
@@ -78,7 +77,6 @@ Ways to avoid calls to `saveLayer()`:
   which applies a gradual opacity using the GPU’s fragment shader.
   For more information, see
   [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image).
-  ([PENDING] not released yet)
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
   by many of the widget classes.
@@ -127,17 +125,15 @@ see the video [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
 
 If you need to tune your app’s performance, or perhaps the UI isn't as
 smooth as you expect, the Flutter plugin for your IDE can help.
-In the Flutter inspector, bring up the **Performance** tab and enable the
-**show widget rebuild** check box. This feature helps you detect when 
+In the Flutter Performance window, enable the **Show widget rebuild
+information** check box. This feature helps you detect when 
 frames are being rendered and displayed in more than 16ms.
 Where possible, the plugin provides a link to a relevant tip.
 
-[PENDING: INSERT IMAGE after UI change lands]
-
 The following behaviors might negatively impact your app's performance.
 
-* Avoid using the Opacity widget, and particularly avoid it in an animation.
-  Use AnimatedOpacity or `FadeInImage` instead.
+* Avoid using the `Opacity` widget, and particularly avoid it in an animation.
+  Use `AnimatedOpacity` or `FadeInImage` instead.
   For more information, see [Performance considerations for opacity
   animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation).
 
