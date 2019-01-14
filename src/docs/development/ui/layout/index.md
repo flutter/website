@@ -1118,7 +1118,7 @@ body: Center(
 
 ## Common layout widgets
 
-Flutter has a rich library of layout widgets, but here a few of those most
+Flutter has a rich library of layout widgets. Here are a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
 available widgets, refer to the [Widget Overview](/docs/development/ui/widgets),
