@@ -14,4 +14,4 @@ if [[ $1 == --help || $1 == -h ]]; then
   exit 0
 fi
 
-exec ./tool/build_check_deploy.sh --no-build --no-check-links
+exec ./tool/build_check_deploy.sh --no-build --no-check-links $*

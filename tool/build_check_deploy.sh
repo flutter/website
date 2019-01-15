@@ -5,6 +5,9 @@
 # Fast fail the script on failures.
 set -e
 
+cd `dirname $0`/..
+ROOT=$(pwd)
+
 BUILD=1
 CHECK_CODE=1
 CHECK_LINKS=1
@@ -158,6 +161,31 @@ if [[ -n $CHECK_CODE ]]; then
 
   echo "DARTFMT check of extracted code snippets:"
   check_formatting example.g/*.dart
+
+  echo "ANALYZING and testing apps in examples/*"
+  for sample in examples/*/*/*; do
+    if [[ -d "$sample" ]]; then
+      pushd "$sample" > /dev/null
+      echo "Example: $sample"
+      # Don't recreate project for the codelab (yet)
+      if [[ "$sample" =~ \/codelabs\/ ]]; then
+        (
+          cd $ROOT;
+          "$flutter" create --no-overwrite $sample
+        )
+      else
+        echo "Skipping create for codelabs"
+      fi
+      (
+        set -x;
+        "$flutter" packages $PUB_CMD;
+        "$flutter" analyze .;
+        "$flutter" test
+      )
+      popd > /dev/null
+    fi
+  done
+
 else
   echo "SKIPPING: code checks"
 fi
