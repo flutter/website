@@ -5,6 +5,9 @@
 # Fast fail the script on failures.
 set -e
 
+cd `dirname $0`/..
+ROOT=$(pwd)
+
 BUILD=1
 CHECK_CODE=1
 CHECK_LINKS=1
@@ -158,6 +161,26 @@ if [[ -n $CHECK_CODE ]]; then
 
   echo "DARTFMT check of extracted code snippets:"
   check_formatting example.g/*.dart
+
+  echo "ANALYZING and testing apps in examples/*"
+  for sample in examples/*/*/*; do
+    if [[ -d "$sample" ]]; then
+      echo "Example: $sample"
+      (
+        set -x;
+        cd $ROOT;
+        "$flutter" create --no-overwrite $sample
+      )
+      (
+        set -x;
+        cd "$sample"
+        "$flutter" packages $PUB_CMD;
+        "$flutter" analyze .;
+        "$flutter" test
+      )
+    fi
+  done
+
 else
   echo "SKIPPING: code checks"
 fi
