@@ -22,7 +22,7 @@ when designing your app:
 * Avoid repetitive and costly work in `build()` methods since `build()`
   can be invoked frequently when ancestor Widgets rebuild.
 * Localize the `setState()` call to the part of the subtree whose UI
-  actually needs to change. Avoid calling calling setState() high up in
+  actually needs to change. Avoid calling setState() high up in
   the tree if the change is contained to a small part of the tree.
 * When a widget rebuilds, but the build stops a child from rebuilding,
   reuse the same child widget.
