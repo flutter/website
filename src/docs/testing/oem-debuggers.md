@@ -1,5 +1,7 @@
 ---
 title: Using OEM debuggers
+short-title: debuggers
+description: How to connect an OEM debugger, such as Xcode, to your running Flutter app.
 ---
 
 {{site.alert.tip}}
@@ -13,7 +15,7 @@ Only the first section of this guide, Debugging Dart code, is relevant for you.
 
 If you're writing a platform-specific plugin or using platform-specific
 libraries written in Swift, ObjectiveC, Java, or Kotlin, you can debug
-that portion of your code using XCode (for iOS) or Android Gradle (for Android).
+that portion of your code using Xcode (for iOS) or Android Gradle (for Android).
 This guide shows you how you can connect _two_ debuggers to your Dart app,
 one for Dart, and one for the OEM code.
 
@@ -327,11 +329,11 @@ In other words, DEBUG!
   Toggle between the debuggers by clicking the appropriate debugger in
    the Debug pane's banner.
 
-## Debugging with XCode (iOS)
+## Debugging with Xcode (iOS)
 
 In order to debug OEM iOS code, you need an app that contains OEM iOS code.
 In this section, you'll learn how to connect two debuggers to your app: 1) the
-Dart debugger and, 2) the XCode debugger.
+Dart debugger and, 2) the Xcode debugger.
 
 ## Resources
 
