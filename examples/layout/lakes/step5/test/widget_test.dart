@@ -7,11 +7,8 @@ import 'package:layout/main.dart';
 
 void main() {
   testWidgets('Codelab smoke test', (WidgetTester tester) async {
-    // We don't usually expect the Flutter framework to throw a FlutterError
-    // during a smoke test but exceptionally, the app under test here does. In
-    // this particular case, the error is expected because we know that the app
-    // represents an intermediate step towards the development of the final
-    // version.
+    // A FlutterError shouldn't normally occur during a smoke test, but it
+    // is expected for this not-quite-finished app.
     var exceptions = [];
     FlutterError.onError = (FlutterErrorDetails details) async {
       exceptions.add(details.exception);
