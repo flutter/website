@@ -33,9 +33,6 @@ Also see:
   part of the
   [StatefulWidget](https://master-docs-flutter-io.firebaseapp.com/flutter/widgets/StatefulWidget-class.html)
   API doc
-* [Improve your Flutter app performance: split your widgets
-  (with MVP)](https://medium.com/flutter-community/improve-your-flutter-app-performance-split-your-widgets-935f97e93f7d)
-  by Simon Lightfoot
 
 ### Apply effects only when needed
 
