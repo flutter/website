@@ -165,24 +165,19 @@ if [[ -n $CHECK_CODE ]]; then
   echo "ANALYZING and testing apps in examples/*"
   for sample in examples/*/*/*; do
     if [[ -d "$sample" ]]; then
-      pushd "$sample" > /dev/null
       echo "Example: $sample"
-      # Don't recreate project for the codelab (yet)
-      if [[ "$sample" =~ \/codelabs\/ ]]; then
-        (
-          cd $ROOT;
-          "$flutter" create --no-overwrite $sample
-        )
-      else
-        echo "Skipping create for codelabs"
-      fi
       (
         set -x;
+        cd $ROOT;
+        "$flutter" create --no-overwrite $sample
+      )
+      (
+        set -x;
+        cd "$sample"
         "$flutter" packages $PUB_CMD;
         "$flutter" analyze .;
         "$flutter" test
       )
-      popd > /dev/null
     fi
   done
 
