@@ -7,10 +7,14 @@ import 'package:layout/main.dart';
 
 void main() {
   testWidgets('Codelab smoke test', (WidgetTester tester) async {
-    var exception;
-
+    // We don't usually expect the Flutter framework to throw a FlutterError
+    // during a smoke test but exceptionally, the app under test here does. In
+    // this particular case, the error is expected because we know that the app
+    // represents an intermediate step towards the development of the final
+    // version.
+    var exceptions = [];
     FlutterError.onError = (FlutterErrorDetails details) async {
-      exception = details.exception;
+      exceptions.add(details.exception);
     };
 
     await tester.pumpWidget(new MyApp());
@@ -19,6 +23,6 @@ void main() {
     // FIXME: the following fails
     // expect(find.text('Oeschinen'), findsOneWidget);
 
-    expect(exception, contains('RenderFlex overflowed by 16 pixels'));
+    expect(exceptions, ['A RenderFlex overflowed by 16 pixels on the bottom.']);
   });
 }
