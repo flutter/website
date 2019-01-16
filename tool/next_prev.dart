@@ -5,6 +5,7 @@ import 'package:yaml/yaml.dart';
 
 const frontMatterMarker = '---';
 
+/// Update the frontmatter entries for next/prev page links of all cookbook pages.
 void main(List<String> args) {
   if (!File('pubspec.yaml').existsSync()) {
     _warn('This tool must be run from the project root.');
@@ -35,14 +36,12 @@ List<Page> _getPageList() {
   return pages.toList();
 }
 
-List<Page> _sortPageList(List<Page> pageList) {
-  final list = pageList
-    ..sort((a, b) {
-      var dirComp = a.dir.compareTo(b.dir);
-      return dirComp != 0 ? dirComp : a.title.compareTo(b.title);
-    });
-  return list.toList(); // .getRange(0, 3)
-}
+List<Page> _sortPageList(List<Page> pageList) => pageList
+  ..sort((a, b) {
+    var dirComp = a.dir.compareTo(b.dir);
+    return dirComp != 0 ? dirComp : a.title.compareTo(b.title);
+  })
+  ..toList(); // .getRange(0, 3)
 
 void _doublyLinkPages(List<Page> orderedPageList) {
   Page prev;
