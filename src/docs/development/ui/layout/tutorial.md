@@ -50,9 +50,9 @@ then do the following:
  1. [Create a basic "Hello World" Flutter app][hello-world].
  2. Change the app bar title and the app title as follows:
 
-    <?code-excerpt "codelabs/startup_namer/1-base/lib/main.dart" diff-with="layout/lakes/step0/lib/main.dart"?>
+    <?code-excerpt "codelabs/startup_namer/step1_base/lib/main.dart" diff-with="layout/lakes/step0/lib/main.dart"?>
     ```diff
-    --- codelabs/startup_namer/1-base/lib/main.dart
+    --- codelabs/startup_namer/step1_base/lib/main.dart
     +++ layout/lakes/step0/lib/main.dart
     @@ -6,10 +6,10 @@
        @override
