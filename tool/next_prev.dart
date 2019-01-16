@@ -5,7 +5,7 @@ import 'package:yaml/yaml.dart';
 
 const frontMatterMarker = '---';
 
-/// Update the frontmatter entries for next/prev page links of all cookbook pages.
+/// Update the front matter next/prev entries of all cookbook pages.
 void main(List<String> args) {
   if (!File('pubspec.yaml').existsSync()) {
     _warn('This tool must be run from the project root.');
@@ -41,7 +41,7 @@ List<Page> _sortPageList(List<Page> pageList) => pageList
     var dirComp = a.dir.compareTo(b.dir);
     return dirComp != 0 ? dirComp : a.title.compareTo(b.title);
   })
-  ..toList(); // .getRange(0, 3)
+  ..toList();
 
 void _doublyLinkPages(List<Page> orderedPageList) {
   Page prev;
@@ -55,8 +55,6 @@ void _doublyLinkPages(List<Page> orderedPageList) {
 }
 
 void _updatePageLinks(Page page) {
-  print('>> processing ${page.path}');
-
   yamlRemoveKey(page.frontMatter, 'prev');
   yamlRemoveKey(page.frontMatter, 'next');
 
@@ -80,8 +78,10 @@ void yamlRemoveKey(List<String> frontMatter, String key) {
 void yamlAppendKey(List<String> frontMatter, String key, Page page) {
   // Add the key
   var i = frontMatter.length;
+  var title = page.title;
+  if (title.contains('"')) title = '"' + title + '"';
   frontMatter.insert(i++, '$key:');
-  frontMatter.insert(i++, '  title: "${page.title}"');
+  frontMatter.insert(i++, '  title: $title');
   frontMatter.insert(i++, '  path: ${page.path}');
 }
 
@@ -98,7 +98,7 @@ class Page {
   Page(this.file) {
     dir = p.dirname(file.path);
     path = file.path.substring('src'.length); // Skip 'src' prefix
-    path = path.substring(0, path.length - '.md'.length);
+    path = path.substring(0, path.length - '.md'.length); // Drop '.md' suffix
     _readAndParsePage();
   }
 
