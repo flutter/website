@@ -552,7 +552,7 @@ lazily, on demand.
     you scroll.
 
     {% indent %}
-      {% include android-ios-figure-pair.md image="stepstep4_infinite_list.png" alt="App at completion of fourth step" %}
+      {% include android-ios-figure-pair.md image="step4-infinite-list.png" alt="App at completion of fourth step" %}
     {% endindent %}
 
 ### Problems?
