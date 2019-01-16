@@ -11,7 +11,7 @@ next:
 
 {% assign api = site.api | append: '/flutter' -%}
 
-In the [introduction to unit testing](/docs/cookbook/testing/unit) recipe, we
+In the [introduction to unit testing](/docs/cookbook/testing/unit/introduction) recipe, we
 learned how to test Dart classes using the `test` package. In order to test
 Widget classes, we'll need a few additional tools provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
