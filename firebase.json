@@ -21,7 +21,7 @@
       { "source": "/docs/cookbook/testing/integration-test-profiling", "destination": "/docs/cookbook/testing/integration/profiling", "type": 301 },
       { "source": "/docs/cookbook/testing/integration-test-scrolling", "destination": "/docs/cookbook/testing/integration/scrolling", "type": 301 },
       { "source": "/docs/cookbook/testing/mocking", "destination": "/docs/cookbook/testing/unit/mocking", "type": 301 },
-      { "source": "/docs/cookbook/testing/unit-test", "destination": "/docs/cookbook/testing/unit", "type": 301 },
+      { "source": "/docs/cookbook/testing/unit-test", "destination": "/docs/cookbook/testing/unit/introduction", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-finders", "destination": "/docs/cookbook/testing/widget/finders", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-introduction", "destination": "/docs/cookbook/testing/widget", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-tap-drag", "destination": "/docs/cookbook/testing/widget/tap-drag", "type": 301 },

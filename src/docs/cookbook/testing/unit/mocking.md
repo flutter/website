@@ -92,7 +92,7 @@ Future<Post> fetchPost(http.Client client) async {
 
 Next, we'll need to create our test file along with a `MockClient` class.
 Following the advice in the
-[Introduction to unit testing](/docs/cookbook/testing/unit/) recipe, we will
+[Introduction to unit testing](/docs/cookbook/testing/unit/introduction) recipe, we will
 create a file called `fetch_post_test.dart` file in the root `test` folder.
 
 The `MockClient` class will implement the `http.Client` class. This will allow
@@ -167,7 +167,7 @@ $ flutter test test/counter_test.dart
 
 You can also run tests inside your favorite editor by following the instructions
 in the
-[Introduction to unit testing](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode)
+[Introduction to unit testing](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode)
 recipe.
 
 ### Summary
