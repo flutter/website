@@ -48,7 +48,7 @@ class MainScreen extends StatelessWidget {
           }));
         },
         child: Image.network(
-          'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+          'https://picsum.photos/250?image=9',
         ),
       ),
     );
@@ -65,7 +65,7 @@ class DetailScreen extends StatelessWidget {
         },
         child: Center(
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+            'https://picsum.photos/250?image=9',
           ),
         ),
       ),
@@ -89,7 +89,7 @@ requires two arguments:
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+    'https://picsum.photos/250?image=9',
   ),
 );
 ```
@@ -108,7 +108,7 @@ screens will work!
 Hero(
   tag: 'imageHero',
   child: Image.network(
-    'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+    'https://picsum.photos/250?image=9',
   ),
 );
 ```
@@ -145,7 +145,7 @@ class MainScreen extends StatelessWidget {
         child: Hero(
           tag: 'imageHero',
           child: Image.network(
-            'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+            'https://picsum.photos/250?image=9',
           ),
         ),
         onTap: () {
@@ -167,7 +167,7 @@ class DetailScreen extends StatelessWidget {
           child: Hero(
             tag: 'imageHero',
             child: Image.network(
-              'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+              'https://picsum.photos/250?image=9',
             ),
           ),
         ),
