@@ -18,7 +18,7 @@ contains a simple demo app that uses [Material Components][].
 ## Run the app
 
  1. Locate the main Android Studio toolbar:<br>
-    ![Main IntelliJ toolbar][]
+    ![Main IntelliJ toolbar][]{:.mw-100}
  1. In the **target selector**, select an Android device for running the app.
     If none are listed as available, select **Tools> Android > AVD Manager** and
     create one there. For details, see [Managing AVDs][].
