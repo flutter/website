@@ -1,10 +1,10 @@
 ---
 title: Return data from a screen
 prev:
-  title: "Navigate with named routes"
+  title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
 next:
-  title: "Send data to a new screen"
+  title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Exporting fonts from a package
 prev:
-  title: "Displaying SnackBars"
+  title: Displaying SnackBars
   path: /docs/cookbook/design/snackbars
 next:
-  title: "Updating the UI based on orientation"
+  title: Updating the UI based on orientation
   path: /docs/cookbook/design/orientation
 ---
 

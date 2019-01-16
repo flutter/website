@@ -1,10 +1,10 @@
 ---
 title: Create and style a text field
 prev:
-  title: "Building a form with validation"
+  title: Building a form with validation
   path: /docs/cookbook/forms/validation
 next:
-  title: "Focus on a Text Field"
+  title: Focus on a Text Field
   path: /docs/cookbook/forms/focus
 ---
 

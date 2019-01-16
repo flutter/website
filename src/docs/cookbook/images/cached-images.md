@@ -1,10 +1,10 @@
 ---
 title: Working with cached images
 prev:
-  title: "Fade in images with a placeholder"
+  title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
 next:
-  title: "Basic List"
+  title: Basic List
   path: /docs/cookbook/lists/basic-list
 ---
 

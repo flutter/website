@@ -1,10 +1,10 @@
 ---
 title: Working with WebSockets
 prev:
-  title: "Parsing JSON in the background"
+  title: Parsing JSON in the background
   path: /docs/cookbook/networking/background-parsing
 next:
-  title: "Reading and Writing Files"
+  title: Reading and Writing Files
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 

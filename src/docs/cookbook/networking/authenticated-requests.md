@@ -1,10 +1,10 @@
 ---
 title: Making authenticated requests
 prev:
-  title: "Fetch data from the internet"
+  title: Fetch data from the internet
   path: /docs/cookbook/networking/fetch-data
 next:
-  title: "Parsing JSON in the background"
+  title: Parsing JSON in the background
   path: /docs/cookbook/networking/background-parsing
 ---
 

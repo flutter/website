@@ -1,10 +1,10 @@
 ---
 title: Retrieve the value of a text field
 prev:
-  title: "Handling changes to a text field"
+  title: Handling changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 next:
-  title: "Adding Material Touch Ripples"
+  title: Adding Material Touch Ripples
   path: /docs/cookbook/gestures/ripples
 ---
 

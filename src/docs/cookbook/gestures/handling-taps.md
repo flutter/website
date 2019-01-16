@@ -1,10 +1,10 @@
 ---
 title: Handling Taps
 prev:
-  title: "Adding Material Touch Ripples"
+  title: Adding Material Touch Ripples
   path: /docs/cookbook/gestures/ripples
 next:
-  title: "Implement Swipe to Dismiss"
+  title: Implement Swipe to Dismiss
   path: /docs/cookbook/gestures/dismissible
 ---
 

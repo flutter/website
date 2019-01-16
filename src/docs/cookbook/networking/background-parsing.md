@@ -1,10 +1,10 @@
 ---
 title: Parsing JSON in the background
 prev:
-  title: "Making authenticated requests"
+  title: Making authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: "Working with WebSockets"
+  title: Working with WebSockets
   path: /docs/cookbook/networking/web-sockets
 ---
 

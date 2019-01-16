@@ -1,10 +1,10 @@
 ---
 title: Working with long lists
 prev:
-  title: "Creating lists with different types of items"
+  title: Creating lists with different types of items
   path: /docs/cookbook/lists/mixed-list
 next:
-  title: "Report errors to a service"
+  title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
 ---
 

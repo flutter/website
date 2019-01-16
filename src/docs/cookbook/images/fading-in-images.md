@@ -1,10 +1,10 @@
 ---
 title: Fade in images with a placeholder
 prev:
-  title: "Display images from the internet"
+  title: Display images from the internet
   path: /docs/cookbook/images/network-image
 next:
-  title: "Working with cached images"
+  title: Working with cached images
   path: /docs/cookbook/images/cached-images
 ---
 

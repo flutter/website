@@ -1,7 +1,7 @@
 ---
 title: Fade a Widget in and out
 next:
-  title: "Add a Drawer to a screen"
+  title: Add a Drawer to a screen
   path: /docs/cookbook/design/drawer
 ---
 

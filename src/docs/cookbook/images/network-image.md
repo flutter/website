@@ -1,10 +1,10 @@
 ---
 title: Display images from the internet
 prev:
-  title: "Implement Swipe to Dismiss"
+  title: Implement Swipe to Dismiss
   path: /docs/cookbook/gestures/dismissible
 next:
-  title: "Fade in images with a placeholder"
+  title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
 ---
 

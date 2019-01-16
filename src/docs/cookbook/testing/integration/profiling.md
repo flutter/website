@@ -1,10 +1,10 @@
 ---
 title: Performance profiling
 prev:
-  title: "An introduction to integration testing"
+  title: An introduction to integration testing
   path: /docs/cookbook/testing/integration/introduction
 next:
-  title: "Scrolling"
+  title: Scrolling
   path: /docs/cookbook/testing/integration/scrolling
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Storing key-value data on disk
 prev:
-  title: "Reading and Writing Files"
+  title: Reading and Writing Files
   path: /docs/cookbook/persistence/reading-writing-files
 next:
-  title: "An introduction to integration testing"
+  title: An introduction to integration testing
   path: /docs/cookbook/testing/integration/introduction
 ---
 

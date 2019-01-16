@@ -1,10 +1,10 @@
 ---
 title: Creating lists with different types of items
 prev:
-  title: "Creating a Grid List"
+  title: Creating a Grid List
   path: /docs/cookbook/lists/grid-lists
 next:
-  title: "Working with long lists"
+  title: Working with long lists
   path: /docs/cookbook/lists/long-lists
 ---
 

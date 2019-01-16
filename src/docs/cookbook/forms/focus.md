@@ -1,10 +1,10 @@
 ---
 title: Focus on a Text Field
 prev:
-  title: "Create and style a text field"
+  title: Create and style a text field
   path: /docs/cookbook/forms/text-input
 next:
-  title: "Handling changes to a text field"
+  title: Handling changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 ---
 

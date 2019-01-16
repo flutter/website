@@ -1,10 +1,10 @@
 ---
 title: Report errors to a service
 prev:
-  title: "Working with long lists"
+  title: Working with long lists
   path: /docs/cookbook/lists/long-lists
 next:
-  title: "Animating a Widget across screens"
+  title: Animating a Widget across screens
   path: /docs/cookbook/navigation/hero-animations
 ---
 

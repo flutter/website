@@ -1,10 +1,10 @@
 ---
 title: Handling changes to a text field
 prev:
-  title: "Focus on a Text Field"
+  title: Focus on a Text Field
   path: /docs/cookbook/forms/focus
 next:
-  title: "Retrieve the value of a text field"
+  title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
 ---
 

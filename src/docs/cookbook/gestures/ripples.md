@@ -1,10 +1,10 @@
 ---
 title: Adding Material Touch Ripples
 prev:
-  title: "Retrieve the value of a text field"
+  title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
 next:
-  title: "Handling Taps"
+  title: Handling Taps
   path: /docs/cookbook/gestures/handling-taps
 ---
 

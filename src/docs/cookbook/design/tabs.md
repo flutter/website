@@ -1,10 +1,10 @@
 ---
 title: Working with Tabs
 prev:
-  title: "Using custom fonts"
+  title: Using custom fonts
   path: /docs/cookbook/design/fonts
 next:
-  title: "Building a form with validation"
+  title: Building a form with validation
   path: /docs/cookbook/forms/validation
 ---
 

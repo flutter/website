@@ -1,7 +1,7 @@
 ---
 title: Tapping, dragging and entering text
 prev:
-  title: "Finding widgets"
+  title: Finding widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 

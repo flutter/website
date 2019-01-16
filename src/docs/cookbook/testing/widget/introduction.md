@@ -2,10 +2,10 @@
 title: An introduction to widget testing
 short-title: Introduction
 prev:
-  title: "Mock dependencies using Mockito"
+  title: Mock dependencies using Mockito
   path: /docs/cookbook/testing/unit/mocking
 next:
-  title: "Finding widgets"
+  title: Finding widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 

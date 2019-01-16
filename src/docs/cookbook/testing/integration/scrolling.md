@@ -1,10 +1,10 @@
 ---
 title: Scrolling
 prev:
-  title: "Performance profiling"
+  title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
 next:
-  title: "An introduction to unit testing"
+  title: An introduction to unit testing
   path: /docs/cookbook/testing/unit/introduction
 ---
 

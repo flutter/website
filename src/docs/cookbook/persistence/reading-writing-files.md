@@ -1,10 +1,10 @@
 ---
 title: Reading and Writing Files
 prev:
-  title: "Working with WebSockets"
+  title: Working with WebSockets
   path: /docs/cookbook/networking/web-sockets
 next:
-  title: "Storing key-value data on disk"
+  title: Storing key-value data on disk
   path: /docs/cookbook/persistence/key-value
 ---
 

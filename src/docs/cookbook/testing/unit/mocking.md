@@ -2,10 +2,10 @@
 title: Mock dependencies using Mockito
 short-title: Mocking
 prev:
-  title: "An introduction to unit testing"
+  title: An introduction to unit testing
   path: /docs/cookbook/testing/unit/introduction
 next:
-  title: "An introduction to widget testing"
+  title: An introduction to widget testing
   path: /docs/cookbook/testing/widget/introduction
 ---
 

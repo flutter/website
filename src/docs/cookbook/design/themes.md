@@ -3,10 +3,10 @@ title: Using Themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 prev:
-  title: "Updating the UI based on orientation"
+  title: Updating the UI based on orientation
   path: /docs/cookbook/design/orientation
 next:
-  title: "Using custom fonts"
+  title: Using custom fonts
   path: /docs/cookbook/design/fonts
 ---
 

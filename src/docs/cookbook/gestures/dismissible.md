@@ -1,10 +1,10 @@
 ---
 title: Implement Swipe to Dismiss
 prev:
-  title: "Handling Taps"
+  title: Handling Taps
   path: /docs/cookbook/gestures/handling-taps
 next:
-  title: "Display images from the internet"
+  title: Display images from the internet
   path: /docs/cookbook/images/network-image
 ---
 

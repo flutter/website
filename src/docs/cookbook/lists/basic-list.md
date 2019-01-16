@@ -1,10 +1,10 @@
 ---
 title: Basic List
 prev:
-  title: "Working with cached images"
+  title: Working with cached images
   path: /docs/cookbook/images/cached-images
 next:
-  title: "Create a horizontal list"
+  title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
 ---
 

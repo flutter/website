@@ -2,10 +2,10 @@
 title: Navigate to a new screen and back
 description: How to navigate between routes
 prev:
-  title: "Animating a Widget across screens"
+  title: Animating a Widget across screens
   path: /docs/cookbook/navigation/hero-animations
 next:
-  title: "Navigate with named routes"
+  title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
 ---
 

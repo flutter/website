@@ -2,10 +2,10 @@
 title: An introduction to unit testing
 short-title: Introduction
 prev:
-  title: "Scrolling"
+  title: Scrolling
   path: /docs/cookbook/testing/integration/scrolling
 next:
-  title: "Mock dependencies using Mockito"
+  title: Mock dependencies using Mockito
   path: /docs/cookbook/testing/unit/mocking
 ---
 

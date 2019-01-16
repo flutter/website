@@ -1,10 +1,10 @@
 ---
 title: Animating a Widget across screens
 prev:
-  title: "Report errors to a service"
+  title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
 next:
-  title: "Navigate to a new screen and back"
+  title: Navigate to a new screen and back
   path: /docs/cookbook/navigation/navigation-basics
 ---
 

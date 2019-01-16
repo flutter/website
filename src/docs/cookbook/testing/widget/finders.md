@@ -1,10 +1,10 @@
 ---
 title: Finding widgets
 prev:
-  title: "An introduction to widget testing"
+  title: An introduction to widget testing
   path: /docs/cookbook/testing/widget/introduction
 next:
-  title: "Tapping, dragging and entering text"
+  title: Tapping, dragging and entering text
   path: /docs/cookbook/testing/widget/tap-drag
 ---
 
