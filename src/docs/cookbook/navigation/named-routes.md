@@ -1,5 +1,11 @@
 ---
 title: Navigate with named routes
+prev:
+  title: Navigate to a new screen and back
+  path: /docs/cookbook/navigation/navigation-basics
+next:
+  title: Return data from a screen
+  path: /docs/cookbook/navigation/returning-data
 ---
 
 In the

@@ -1,5 +1,11 @@
 ---
 title: Parsing JSON in the background
+prev:
+  title: Making authenticated requests
+  path: /docs/cookbook/networking/authenticated-requests
+next:
+  title: Working with WebSockets
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 By default, Dart apps do all of their work on a single thread. In many cases,

@@ -1,5 +1,11 @@
 ---
 title: Create a horizontal list
+prev:
+  title: Basic List
+  path: /docs/cookbook/lists/basic-list
+next:
+  title: Creating a Grid List
+  path: /docs/cookbook/lists/grid-lists
 ---
 
 At times, you may want to create a List that scrolls horizontally rather than

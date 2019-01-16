@@ -2,6 +2,12 @@
 title: Using custom fonts
 short-title: Custom fonts
 description: How to use custom fonts.
+prev:
+  title: Using Themes to share colors and font styles
+  path: /docs/cookbook/design/themes
+next:
+  title: Working with Tabs
+  path: /docs/cookbook/design/tabs
 ---
 
 While Android and iOS offer high quality system fonts, one of the most common

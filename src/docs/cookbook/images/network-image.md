@@ -1,5 +1,11 @@
 ---
 title: Display images from the internet
+prev:
+  title: Implement Swipe to Dismiss
+  path: /docs/cookbook/gestures/dismissible
+next:
+  title: Fade in images with a placeholder
+  path: /docs/cookbook/images/fading-in-images
 ---
 
 Displaying images is fundamental for most mobile apps. Flutter provides the

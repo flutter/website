@@ -1,5 +1,11 @@
 ---
 title: Working with Tabs
+prev:
+  title: Using custom fonts
+  path: /docs/cookbook/design/fonts
+next:
+  title: Building a form with validation
+  path: /docs/cookbook/forms/validation
 ---
 
 Working with tabs is a common pattern in apps following the Material Design

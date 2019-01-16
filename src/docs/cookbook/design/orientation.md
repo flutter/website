@@ -1,5 +1,11 @@
 ---
 title: Updating the UI based on orientation
+prev:
+  title: Exporting fonts from a package
+  path: /docs/cookbook/design/package-fonts
+next:
+  title: Using Themes to share colors and font styles
+  path: /docs/cookbook/design/themes
 ---
 
 In certain cases, it can be handy to update the design of an app when the user

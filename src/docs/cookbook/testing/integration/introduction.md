@@ -1,6 +1,12 @@
 ---
 title: An introduction to integration testing
 short-title: Introduction
+prev:
+  title: Storing key-value data on disk
+  path: /docs/cookbook/persistence/key-value
+next:
+  title: Performance profiling
+  path: /docs/cookbook/testing/integration/profiling
 ---
 
 Unit tests and Widget tests are handy for testing individual classes, functions,

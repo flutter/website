@@ -1,5 +1,11 @@
 ---
 title: Storing key-value data on disk
+prev:
+  title: Reading and Writing Files
+  path: /docs/cookbook/persistence/reading-writing-files
+next:
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/integration/introduction
 ---
 
 If we have a relatively small collection of key-values that we'd like to save,

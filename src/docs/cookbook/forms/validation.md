@@ -1,5 +1,11 @@
 ---
 title: Building a form with validation
+prev:
+  title: Working with Tabs
+  path: /docs/cookbook/design/tabs
+next:
+  title: Create and style a text field
+  path: /docs/cookbook/forms/text-input
 ---
 
 Apps often require users to enter information into a text field. For

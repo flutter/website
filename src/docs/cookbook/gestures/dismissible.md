@@ -1,5 +1,11 @@
 ---
 title: Implement Swipe to Dismiss
+prev:
+  title: Handling Taps
+  path: /docs/cookbook/gestures/handling-taps
+next:
+  title: Display images from the internet
+  path: /docs/cookbook/images/network-image
 ---
 
 The "Swipe to dismiss" pattern is common in many mobile apps. For example, if

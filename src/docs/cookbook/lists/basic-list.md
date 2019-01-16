@@ -1,5 +1,11 @@
 ---
 title: Basic List
+prev:
+  title: Working with cached images
+  path: /docs/cookbook/images/cached-images
+next:
+  title: Create a horizontal list
+  path: /docs/cookbook/lists/horizontal-list
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps. Flutter

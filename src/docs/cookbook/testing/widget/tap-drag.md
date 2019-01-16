@@ -1,5 +1,8 @@
 ---
 title: Tapping, dragging and entering text
+prev:
+  title: Finding widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

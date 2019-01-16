@@ -8,6 +8,7 @@ dev_dependencies:
   code_excerpt_updater: any
   code_excerpter: any
   linkcheck: ^2.0.6
+  yaml: ^2.1.15
 
 dependency_overrides:
   code_excerpt_updater:

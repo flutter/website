@@ -1,6 +1,12 @@
 ---
 title: An introduction to unit testing
 short-title: Introduction
+prev:
+  title: Scrolling
+  path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: Mock dependencies using Mockito
+  path: /docs/cookbook/testing/unit/mocking
 ---
 
 How can we ensure that our apps continue to work as we add more features or

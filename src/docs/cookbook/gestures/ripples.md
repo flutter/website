@@ -1,5 +1,11 @@
 ---
 title: Adding Material Touch Ripples
+prev:
+  title: Retrieve the value of a text field
+  path: /docs/cookbook/forms/retrieve-input
+next:
+  title: Handling Taps
+  path: /docs/cookbook/gestures/handling-taps
 ---
 
 While designing an app that should follow the Material Design Guidelines, we'll

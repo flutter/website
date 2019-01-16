@@ -1,5 +1,11 @@
 ---
 title: Making authenticated requests
+prev:
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
+next:
+  title: Parsing JSON in the background
+  path: /docs/cookbook/networking/background-parsing
 ---
 
 In order to fetch data from many web services, you need to provide

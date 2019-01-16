@@ -1,5 +1,11 @@
 ---
 title: Fade in images with a placeholder
+prev:
+  title: Display images from the internet
+  path: /docs/cookbook/images/network-image
+next:
+  title: Working with cached images
+  path: /docs/cookbook/images/cached-images
 ---
 
 When displaying images using the default `Image` widget, you might notice they

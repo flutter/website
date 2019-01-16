@@ -1,5 +1,11 @@
 ---
 title: Working with WebSockets
+prev:
+  title: Parsing JSON in the background
+  path: /docs/cookbook/networking/background-parsing
+next:
+  title: Reading and Writing Files
+  path: /docs/cookbook/persistence/reading-writing-files
 ---
 
 In addition to normal HTTP requests, we can connect to servers using WebSockets.

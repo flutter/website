@@ -1,5 +1,11 @@
 ---
 title: Add a Drawer to a screen
+prev:
+  title: Fade a Widget in and out
+  path: /docs/cookbook/animation/opacity-animation
+next:
+  title: Displaying SnackBars
+  path: /docs/cookbook/design/snackbars
 ---
 
 In apps that employ Material Design, there are two primary options for

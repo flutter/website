@@ -1,5 +1,11 @@
 ---
 title: Handling changes to a text field
+prev:
+  title: Focus on a Text Field
+  path: /docs/cookbook/forms/focus
+next:
+  title: Retrieve the value of a text field
+  path: /docs/cookbook/forms/retrieve-input
 ---
 
 In some cases, it can be handy to run a callback function every time the text

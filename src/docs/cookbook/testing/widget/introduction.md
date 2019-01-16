@@ -1,6 +1,12 @@
 ---
 title: An introduction to widget testing
 short-title: Introduction
+prev:
+  title: Mock dependencies using Mockito
+  path: /docs/cookbook/testing/unit/mocking
+next:
+  title: Finding widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

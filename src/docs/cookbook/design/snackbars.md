@@ -2,6 +2,12 @@
 title: Displaying SnackBars
 short-title: SnackBars
 description: How to implement a SnackBar to display messages.
+prev:
+  title: Add a Drawer to a screen
+  path: /docs/cookbook/design/drawer
+next:
+  title: Exporting fonts from a package
+  path: /docs/cookbook/design/package-fonts
 ---
 
 In some cases, it can be handy to briefly inform our users when certain actions

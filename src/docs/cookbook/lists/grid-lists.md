@@ -1,5 +1,11 @@
 ---
 title: Creating a Grid List
+prev:
+  title: Create a horizontal list
+  path: /docs/cookbook/lists/horizontal-list
+next:
+  title: Creating lists with different types of items
+  path: /docs/cookbook/lists/mixed-list
 ---
 
 In some cases, you might want to display your items as a Grid rather than

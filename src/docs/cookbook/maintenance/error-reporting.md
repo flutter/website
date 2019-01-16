@@ -1,5 +1,11 @@
 ---
 title: Report errors to a service
+prev:
+  title: Working with long lists
+  path: /docs/cookbook/lists/long-lists
+next:
+  title: Animating a Widget across screens
+  path: /docs/cookbook/navigation/hero-animations
 ---
 
 While we always do our best to create apps that are free of bugs, they're sure

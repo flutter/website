@@ -1,5 +1,11 @@
 ---
 title: Fetch data from the internet
+prev:
+  title: Send data to a new screen
+  path: /docs/cookbook/navigation/passing-data
+next:
+  title: Making authenticated requests
+  path: /docs/cookbook/networking/authenticated-requests
 ---
 
 Fetching data from the internet is necessary for most apps. Luckily, Dart and

@@ -1,5 +1,11 @@
 ---
 title: Exporting fonts from a package
+prev:
+  title: Displaying SnackBars
+  path: /docs/cookbook/design/snackbars
+next:
+  title: Updating the UI based on orientation
+  path: /docs/cookbook/design/orientation
 ---
 
 Rather than declaring a font as part of our app, we can declare a font as part

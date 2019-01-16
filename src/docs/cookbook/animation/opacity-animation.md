@@ -1,5 +1,8 @@
 ---
 title: Fade a Widget in and out
+next:
+  title: Add a Drawer to a screen
+  path: /docs/cookbook/design/drawer
 ---
 
 As UI developers, we often need to show and hide elements on screen. However,

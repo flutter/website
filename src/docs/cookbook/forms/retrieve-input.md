@@ -1,5 +1,11 @@
 ---
 title: Retrieve the value of a text field
+prev:
+  title: Handling changes to a text field
+  path: /docs/cookbook/forms/text-field-changes
+next:
+  title: Adding Material Touch Ripples
+  path: /docs/cookbook/gestures/ripples
 ---
 
 In this recipe, we'll see how to retrieve the text a user has typed into a text

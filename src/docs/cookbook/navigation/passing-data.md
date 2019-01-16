@@ -1,5 +1,11 @@
 ---
 title: Send data to a new screen
+prev:
+  title: Return data from a screen
+  path: /docs/cookbook/navigation/returning-data
+next:
+  title: Fetch data from the internet
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 Oftentimes, we not only want to navigate to a new screen, but also pass some

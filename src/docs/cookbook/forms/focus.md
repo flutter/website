@@ -1,5 +1,11 @@
 ---
 title: Focus on a Text Field
+prev:
+  title: Create and style a text field
+  path: /docs/cookbook/forms/text-input
+next:
+  title: Handling changes to a text field
+  path: /docs/cookbook/forms/text-field-changes
 ---
 
 When a text field is selected and accepting input, it is said to have "focus."

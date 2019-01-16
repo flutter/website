@@ -1,6 +1,12 @@
 ---
 title: Navigate to a new screen and back
 description: How to navigate between routes
+prev:
+  title: Animating a Widget across screens
+  path: /docs/cookbook/navigation/hero-animations
+next:
+  title: Navigate with named routes
+  path: /docs/cookbook/navigation/named-routes
 ---
 
 Most apps contain several screens for displaying different types of information.
@@ -30,7 +36,7 @@ using these steps:
 
 ## 1. Create two routes
 
-First, create two routes to work with. Since this is a basic example, 
+First, create two routes to work with. Since this is a basic example,
 each route contains only a single button. Tapping the button on the
 first route navigates to the second route. Tapping the button on the
 second route returns to the first route.
