@@ -76,7 +76,7 @@ The animated GIF shows how the app works at the completion of part 1.
 
 ## Step 1: Create the starter Flutter app
 
-<?code-excerpt path-base="codelabs/startup_namer/1-base"?>
+<?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
 [Getting Started with your first Flutter app.](/docs/get-started/test-drive#create-app)
@@ -182,10 +182,10 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     list:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "1-base/pubspec.yaml" diff-with="2-use-package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+    <?code-excerpt "step1_base/pubspec.yaml" diff-with="step2_use_package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
     ```diff
-    --- 1-base/pubspec.yaml
-    +++ 2-use-package/pubspec.yaml
+    --- step1_base/pubspec.yaml
+    +++ step2_use_package/pubspec.yaml
     @@ -5,4 +5,5 @@
      dependencies:
        flutter:
@@ -211,7 +211,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
  3. In `lib/main.dart`, import the new package:
 
     <!-- skip -->
-    <?code-excerpt path-base="codelabs/startup_namer/2-use-package"?>
+    <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
       import 'package:flutter/material.dart';
@@ -226,10 +226,10 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     using the string "Hello World":
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "1-base/lib/main.dart" diff-with="2-use-package/lib/main.dart" from="class"?>
+    <?code-excerpt "step1_base/lib/main.dart" diff-with="step2_use_package/lib/main.dart" from="class"?>
     ```diff
-    --- 1-base/lib/main.dart
-    +++ 2-use-package/lib/main.dart
+    --- step1_base/lib/main.dart
+    +++ step2_use_package/lib/main.dart
     @@ -5,6 +6,7 @@
      class MyApp extends StatelessWidget {
        @override
@@ -275,12 +275,12 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
 If your app is not running correctly, look for typos. If needed,
 use the code at the following links to get back on track.
 
-* [pubspec.yaml]({{code-url}}/startup_namer/2-use-package/pubspec.yaml)
-* [lib/main.dart]({{code-url}}/startup_namer/2-use-package/lib/main.dart)
+* [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
+* [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
 
 ## Step 3: Add a Stateful widget
 
-<?code-excerpt path-base="codelabs/startup_namer/3-stateful-widget"?>
+<?code-excerpt path-base="codelabs/startup_namer/step3_stateful_widget"?>
 
 State<em>less</em> widgets are immutable, meaning that their
 properties can’t change&mdash;all values are final.
@@ -354,10 +354,10 @@ a child inside the existing `MyApp` stateless widget.
     the following diff:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "2-use-package/lib/main.dart" diff-with="3-stateful-widget/lib/main.dart" to="}"?>
+    <?code-excerpt "step2_use_package/lib/main.dart" diff-with="step3_stateful_widget/lib/main.dart" to="}"?>
     ```diff
-    --- 2-use-package/lib/main.dart
-    +++ 3-stateful-widget/lib/main.dart
+    --- step2_use_package/lib/main.dart
+    +++ step3_stateful_widget/lib/main.dart
     @@ -6,7 +6,6 @@
      class MyApp extends StatelessWidget {
        @override
@@ -402,11 +402,11 @@ a child inside the existing `MyApp` stateless widget.
 If your app is not running correctly, you can use the code
 at the following link to get back on track.
 
-* [lib/main.dart]({{code-url}}/startup_namer/3-stateful-widget/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
 ## Step 4: Create an infinite scrolling ListView
 
-<?code-excerpt path-base="codelabs/startup_namer/4-infinite-list"?>
+<?code-excerpt path-base="codelabs/startup_namer/step4_infinite_list"?>
 
 In this step, you'll expand `RandomWordsState` to generate
 and display a list of word pairings. As the user scrolls, the list
@@ -524,10 +524,10 @@ lazily, on demand.
     changing the home to be a `RandomWords` widget:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "3-stateful-widget/lib/main.dart" diff-with="4-infinite-list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
+    <?code-excerpt "step3_stateful_widget/lib/main.dart" diff-with="step4_infinite_list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
-    --- 3-stateful-widget/lib/main.dart
-    +++ 4-infinite-list/lib/main.dart
+    --- step3_stateful_widget/lib/main.dart
+    +++ step4_infinite_list/lib/main.dart
     @@ -6,15 +6,8 @@
      class MyApp extends StatelessWidget {
        @override
@@ -561,7 +561,7 @@ lazily, on demand.
 If your app is not running correctly, you can use the code at the following link
 to get back on track.
 
-* [lib/main.dart]({{code-url}}/startup_namer/4-infinite-list/lib/main.dart)
+* [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
 ## Next steps
 {:.no_toc}
