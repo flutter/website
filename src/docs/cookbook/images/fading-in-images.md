@@ -59,8 +59,7 @@ class MyApp extends StatelessWidget {
             Center(
               child: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
-                image:
-                    'https://picsum.photos/250?image=9',
+                image: 'https://picsum.photos/250?image=9',
               ),
             ),
           ],
