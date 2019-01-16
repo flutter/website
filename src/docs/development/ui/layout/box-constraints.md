@@ -1,5 +1,5 @@
 ---
-title: Dealing with box constraints in Flutter
+title: Dealing with box constraints
 short-title: Box constraints
 ---
 

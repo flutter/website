@@ -49,6 +49,14 @@
           permalink: /docs/development/ui/widgets-intro
         - title: Building layouts
           permalink: /docs/development/ui/layout
+          children:
+            - title: Layouts in Flutter
+              permalink: /docs/development/ui/layout
+              match-page-url-exactly: true
+            - title: Tutorial
+              permalink: /docs/development/ui/layout/tutorial
+            - title: Box constraints
+              permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
