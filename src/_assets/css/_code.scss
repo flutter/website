@@ -1,5 +1,7 @@
 @import '_code_pre';
 
+pre > span.strike { text-decoration: line-through; }
+
 .numbered-code-notes {
   list-style-type: none;
   padding-left: 0;
