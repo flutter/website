@@ -119,8 +119,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: FadeInImage.assetNetwork(
             placeholder: 'assets/loading.gif',
-            image:
-                'https://picsum.photos/250?image=9',
+            image: 'https://picsum.photos/250?image=9',
           ),
         ),
       ),
