@@ -108,14 +108,14 @@ class Page {
 
     if (lines[0] != frontMatterMarker) {
       _warn('Jekyll frontmatter expected but none found: ${file.path}');
-      return null;
+      return;
     }
 
     final endOfFrontMatterIndex = lines.indexOf(frontMatterMarker, 1);
     if (endOfFrontMatterIndex < 0) {
       _warn(
           'Jekyll frontmatter has no ending "$frontMatterMarker" marker: ${file.path}');
-      return null;
+      return;
     }
 
     frontMatter = lines.getRange(1, endOfFrontMatterIndex).toList();
