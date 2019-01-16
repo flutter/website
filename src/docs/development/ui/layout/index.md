@@ -5,14 +5,7 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
-{% comment %}
-  TODO: address https://github.com/flutter/website/issues/2154 by adjusting the
-  definitions of the code and file Liquid variables below. Eventually consolidate
-  with examples and exFile.
-{% endcomment -%}
-
 {% assign api = 'https://docs.flutter.io/flutter' -%}
-
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}

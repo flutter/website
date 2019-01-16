@@ -8,7 +8,6 @@ short-title: Box constraints
   box constraints.
 {{site.alert.end}}
 
-
 In Flutter, widgets are rendered by their underlying [`RenderBox`](https://docs.flutter.io/flutter/rendering/RenderBox-class.html) objects. Render boxes are given
 constraints by their parent, and size themselves within those
 constraints. Constraints consist of minimum and maximum widths and
