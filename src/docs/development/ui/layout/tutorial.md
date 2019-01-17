@@ -204,7 +204,6 @@ Since the code for building each row is almost identical, create a private
 helper method named `buildButtonColumn()`, which takes a color, an Icon and
 Text, and returns a column with its widgets painted in the given color.
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
 ```dart
 class MyApp extends StatelessWidget {
@@ -245,7 +244,6 @@ using `MainAxisAlignment.spaceEvenly` to arrange the free space evenly before,
 between, and after each column. Add the following code just below the
 `titleSection` declaration inside the `build()` method:
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (buttonSection)" title?>
 ```dart
 Color color = Theme.of(context).primaryColor;
@@ -293,7 +291,6 @@ Define the text section as a variable. Put the text in a Container and add
 padding along each edge. Add the following code just below the `buttonSection`
 declaration:
 
-<!-- skip -->
 <?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
 Widget textSection = Container(
