@@ -75,10 +75,10 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Flutter Layout Demo',
+      title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Top Lakes'),
+          title: Text('Flutter layout demo'),
         ),
         body: ListView(
           children: [

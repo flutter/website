@@ -163,8 +163,8 @@ if [[ -n $CHECK_CODE ]]; then
   check_formatting example.g/*.dart
 
   echo "ANALYZING and testing apps in examples/*"
-  for sample in examples/*/*/*; do
-    if [[ -d "$sample" ]]; then
+  for sample in examples/*/*{,/*}; do
+    if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
       echo "Example: $sample"
       (
         set -x;

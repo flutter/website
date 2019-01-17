@@ -141,7 +141,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Top Lakes'),
+          title: Text('Flutter layout demo'),
         ),
         body: ListView(
           children: [

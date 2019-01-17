@@ -72,10 +72,10 @@ class MyApp extends StatelessWidget {
     // #enddocregion textSection
 
     return MaterialApp(
-      title: 'Flutter Layout Demo',
+      title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Top Lakes'),
+          title: Text('Flutter layout demo'),
         ),
         body: Column(
           children: [

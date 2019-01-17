@@ -43,20 +43,20 @@ then do the following:
  1. [Create a basic "Hello World" Flutter app][hello-world].
  2. Change the app bar title and the app title as follows:
 
-    <?code-excerpt "codelabs/startup_namer/step1_base/lib/main.dart" diff-with="layout/lakes/step0/lib/main.dart"?>
+    <?code-excerpt "codelabs/startup_namer/step1_base/lib/main.dart" diff-with="layout/base/lib/main.dart"?>
     ```diff
     --- codelabs/startup_namer/step1_base/lib/main.dart
-    +++ layout/lakes/step0/lib/main.dart
+    +++ layout/base/lib/main.dart
     @@ -6,10 +6,10 @@
        @override
        Widget build(BuildContext context) {
          return MaterialApp(
     -      title: 'Welcome to Flutter',
-    +      title: 'Flutter Layout Demo',
+    +      title: 'Flutter layout demo',
            home: Scaffold(
              appBar: AppBar(
     -          title: Text('Welcome to Flutter'),
-    +          title: Text('Top Lakes'),
+    +          title: Text('Flutter layout demo'),
              ),
              body: Center(
                child: Text('Hello World'),
@@ -159,16 +159,16 @@ Widget titleSection = Container(
 Add the title section to the app body like this:
 
 <?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "step0/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
+<?code-excerpt "../base/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
 ```diff
---- step0/lib/main.dart
+--- ../base/lib/main.dart
 +++ step2/lib/main.dart
 @@ -8,11 +46,13 @@
      return MaterialApp(
-       title: 'Flutter Layout Demo',
+       title: 'Flutter layout demo',
        home: Scaffold(
          appBar: AppBar(
-           title: Text('Top Lakes'),
+           title: Text('Flutter layout demo'),
          ),
 -        body: Center(
 -          child: Text('Hello World'),
@@ -271,7 +271,7 @@ Add the button section to the body:
 +++ step3/lib/main.dart
 @@ -46,3 +59,3 @@
      return MaterialApp(
-       title: 'Flutter Layout Demo',
+       title: 'Flutter layout demo',
        home: Scaffold(
 @@ -52,8 +65,9 @@
          body: Column(
@@ -322,7 +322,7 @@ Add the text section to the body:
 +++ step4/lib/main.dart
 @@ -59,3 +72,3 @@
      return MaterialApp(
-       title: 'Flutter Layout Demo',
+       title: 'Flutter layout demo',
        home: Scaffold(
 @@ -66,6 +79,7 @@
            children: [
@@ -401,10 +401,10 @@ on a small device.
 +++ step6/lib/main.dart
 @@ -72,13 +77,13 @@
      return MaterialApp(
-       title: 'Flutter Layout Demo',
+       title: 'Flutter layout demo',
        home: Scaffold(
          appBar: AppBar(
-           title: Text('Top Lakes'),
+           title: Text('Flutter layout demo'),
          ),
 -        body: Column(
 +        body: ListView(
