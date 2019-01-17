@@ -54,18 +54,19 @@ Here's a diagram of the widget tree for this UI:
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
-about the Containers (shown in pink). Container is a widget that allows
-you to customize its child widget. Use a Container when you want to
+about the containers (shown in pink). [Container][] is a widget class that allows
+you to customize its child widget. Use a `Container` when you want to
 add padding, margins, borders, or background color, to name some of its
 capabilities.
 
-In this example, each Text widget is placed in a Container to add margins.
-The entire Row is also placed in a Container to add padding around the row.
+In this example, each [Text][] widget is placed in a `Container` to add margins.
+The entire [Row][] is also placed in a `Container` to add padding around the
+row.
 
 The rest of the UI in this example is controlled by properties.
-Set an Icon's color using its `color` property.
-Use Text's `style` property to set the font, its color, weight, and so on.
-Columns and Rows have properties that allow you to specify how their
+Set an [Icon][]'s color using its `color` property.
+Use the `Text.style` property to set the font, its color, weight, and so on.
+Columns and rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
 the children should occupy.
 
@@ -100,151 +101,133 @@ the children should occupy.
 {{site.alert.end}}
 
 How do you layout a single widget in Flutter?
-This section shows how to create a simple widget and display it on screen.
+This section shows you how to create and display a simple widget.
 It also shows the entire code for a simple Hello World app.
 
 In Flutter,
 it takes only a few steps to put text, an icon, or an image on the screen.
 
-<ol markdown="1">
+ 1. Select a layout widget to hold the object.
 
-<li markdown="1"> Select a layout widget to hold the object.<br>
-    Choose from a variety of [layout widgets](/docs/development/ui/widgets) based
+    Choose from a variety of [layout widgets][] based
     on how you want to align or constrain the visible widget,
     as these characteristics are typically passed on to the
     contained widget.
-    This example uses Center which centers its content
+
+    This example uses [Center][] which centers its content
     horizontally and vertically.
-</li>
 
-<li markdown="1"> Create a widget to hold the visible object.<br>
+ 2. Create a widget to hold a visible object.
 
-{{site.alert.note}}
-  Flutter apps are written in the [Dart language](https://www.dartlang.org/).
-  If you know Java or similar object-oriented coding languages, Dart
-  will feel very familiar. If not, you might try
-  [DartPad](https://www.dartlang.org/tools/dartpad), an interactive Dart
-  playground you can use from any browser. The
-  [Language Tour](https://www.dartlang.org/guides/language/language-tour) provides an
-  overview of the features of the Dart Language.
-{{site.alert.end}}
+    For example, create a [Text][] widget:
 
-For example, create a Text widget:
+    <!-- skip -->
+    {% prettify dart %}
+    Text('Hello World', style: TextStyle(fontSize: 32.0))
+    {% endprettify %}
 
-<!-- skip -->
-{% prettify dart %}
-Text('Hello World', style: TextStyle(fontSize: 32.0))
-{% endprettify %}
+    Create an [Image][] widget:
 
-Create an Image widget:
+    <!-- skip -->
+    {% prettify dart %}
+    Image.asset('images/myPic.jpg', fit: BoxFit.cover)
+    {% endprettify %}
 
-<!-- skip -->
-{% prettify dart %}
-Image.asset('images/myPic.jpg', fit: BoxFit.cover)
-{% endprettify %}
+    Create an [Icon][] widget:
 
-Create an Icon widget:
+    <!-- skip -->
+    {% prettify dart %}
+    Icon(Icons.star, color: Colors.red[500])
+    {% endprettify %}
 
-<!-- skip -->
-{% prettify dart %}
-Icon(Icons.star, color: Colors.red[500])
-{% endprettify %}
+ 3. Add the visible widget to the layout widget.
 
-</li>
+    All layout widgets have either of the following:
 
-<li markdown="1"> Add the visible widget to the layout widget.<br>
-    All layout widgets have a `child` property if they take a single
-    child (for example, Center or Container),
-    or a `children` property if they take a list of widgets (for example,
-    Row, Column, ListView, or Stack).
+    - A `child` property if they take a single child -- for example, `Center` or
+      `Container`
+    - A `children` property if they take a list of widgets -- for example, `Row`,
+      `Column`, `ListView`, or `Stack`.
 
-Add the Text widget to the Center widget:
+    Add the `Text` widget to the `Center` widget:
 
-<!-- skip -->
-{% prettify dart %}
-Center(
-  child: Text('Hello World', style: TextStyle(fontSize: 32.0))
-{% endprettify %}
+    <!-- skip -->
+    {% prettify dart %}
+    Center(
+      child: Text('Hello World', style: TextStyle(fontSize: 32.0))
+    {% endprettify %}
 
-</li>
+ 4. Add the layout widget to the page.
 
-<li markdown="1"> Add the layout widget to the page.<br>
-   A Flutter app is, itself, a widget and most widgets have a
-   [build()]({{api}}/widgets/StatelessWidget/build.html)
-   method. Declaring the widget in the app's build method displays the widget
-   on the device.
+    A Flutter app is itself a widget, and most widgets have a [build()][]
+    method. Instantiating and returning a widget in the app's `build()` method
+    displays the widget.
 
-   For a Material app, you can add the Center widget directly to the
-  `body` property for the home page.
+    For a `Material` app, you can add the `Center` widget directly to the
+    `body` property for the home page.
 
-<!-- code/layout/hello-world/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Text('Hello World', style: TextStyle(fontSize: 32.0)),
-      ),
-    );
-  }
-}
-{% endprettify %}
+    <!-- code/layout/hello-world/main.dart -->
+    <!-- skip -->
+    {% prettify dart %}
+    class _MyHomePageState extends State<MyHomePage> {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(widget.title),
+          ),
+          body: Center(
+            child: Text('Hello World', style: TextStyle(fontSize: 32.0)),
+          ),
+        );
+      }
+    }
+    {% endprettify %}
 
-{{site.alert.note}}
-  The Material Components library implements widgets that follow
-  [Material Design principles](https://material.io/guidelines/).
-  When designing your UI, you can exclusively use widgets from the standard
-  [widgets library]({{api}}/widgets/widgets-library.html),
-  or you can use widgets from [Material Components]({{api}}/material/material-library.html).
-  You can mix widgets from both libraries,
-  you can customize existing widgets,
-  or you can build your own set of custom widgets.
-{{site.alert.end}}
+    {{site.alert.note}}
+      The [Material library][] implements widgets that follow [Material
+      Design][] principles. When designing your UI, you can exclusively use
+      widgets from the standard [widgets library][], or you can use widgets from
+      the Material library. You can mix widgets from both libraries, you can
+      customize existing widgets, or you can build your own set of custom
+      widgets.
+    {{site.alert.end}}
 
-For a non-Material app, you can add the Center widget to the app's `build()`
-method:
+    For a non-Material app, you can add the `Center` widget to the app's
+    `build()` method:
 
-<!-- code/layout/widgets-only/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-// This app doesn't use any Material Components, such as Scaffold.
-// Normally, an app that doesn't use Scaffold has a black background
-// and the default text color is black. This app changes its background
-// to white and its text color to dark grey to mimic a Material app.
-import 'package:flutter/material.dart';
+    <!-- code/layout/widgets-only/main.dart -->
+    <!-- skip -->
+    {% prettify dart %}
+    // This app doesn't use any Material Components, such as Scaffold.
+    // Normally, an app that doesn't use Scaffold has a black background
+    // and the default text color is black. This app changes its background
+    // to white and its text color to dark grey to mimic a Material app.
+    import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+    void main() {
+      runApp(MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Center(
-        child: Text('Hello World',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 40.0, color: Colors.black87)),
-      ),
-    );
-  }
-}
-{% endprettify %}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Container(
+          decoration: BoxDecoration(color: Colors.white),
+          child: Center(
+            child: Text('Hello World',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(fontSize: 40.0, color: Colors.black87)),
+          ),
+        );
+      }
+    }
+    {% endprettify %}
 
-Note that, by default, the non-Material app doesn't include an AppBar, title,
-or background color. If you want these features in a non-Material app,
-you have to build them yourself. This app changes the background color to
-white and the text to dark grey to mimic a Material app.
-
-</li>
-
-</ol>
+    Note that, by default, the non-Material app doesn't include an `AppBar`,
+    title, or background color. If you want these features in a non-Material
+    app, you have to build them yourself. This app changes the background color
+    to white and the text to dark grey to mimic a Material app.
 
 That's it! When you run the app, you should see:
 
@@ -1257,5 +1240,15 @@ The following resources may help when writing layout code.
 * [Zero to One with Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354)
 : One person's experience writing his first Flutter app.
 
-[Flutter Gallery]: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
+[build()]: {{api}}/widgets/StatelessWidget/build.html
+[Center]: {{api}}/widgets/Center-class.html
+[Container]: {{api}}/widgets/Container-class.html
+[Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [Icon]: {{api}}/material/Icons-class.html
+[Image]: {{api}}/widgets/Image-class.html
+[layout widgets]: /docs/development/ui/widgets/layout
+[Material Design]: https://material.io/design
+[Material library]: {{api}}/material/material-library.html
+[Row]: {{api}}/widgets/Row-class.html
+[Text]: {{api}}/widgets/Text-class.html
+[widgets library]: {{api}}/widgets/widgets-library.html
