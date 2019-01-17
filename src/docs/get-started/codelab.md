@@ -210,7 +210,6 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
 
  3. In `lib/main.dart`, import the new package:
 
-    <!-- skip -->
     <?code-excerpt path-base="codelabs/startup_namer/step2_use_package"?>
     <?code-excerpt "lib/main.dart" title retain="/^import/" replace="/import.*?english.*/[!$&!]/g" indent-by="2"?>
     ```dart
@@ -299,7 +298,6 @@ a child inside the existing `MyApp` stateless widget.
  1. Create a minimal state class. Add the following to the bottom
     of `main.dart`:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (RandomWordsState)" title region="RWS-class-only" plaster="// TODO Add build() method" indent-by="2"?>
     ```dart
       class RandomWordsState extends State<RandomWords> {
@@ -322,7 +320,6 @@ a child inside the existing `MyApp` stateless widget.
  2. Add the stateful `RandomWords` widget to `main.dart`.
     The `RandomWords` widget does little else beside creating its State class:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (RandomWords)" title indent-by="2"?>
     ```dart
       class RandomWords extends StatefulWidget {
@@ -338,7 +335,6 @@ a child inside the existing `MyApp` stateless widget.
 
  3. Add the `build()` method to `RandomWordsState`:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
     ```dart
       class RandomWordsState extends State<RandomWords> {
@@ -418,7 +414,6 @@ lazily, on demand.
     class for saving suggested word pairings.
     Also, add a `_biggerFont` variable for making the font size larger.
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart" title region="RWS-var" indent-by="2" replace="/final .*/[!$&!]/g"?>
     ```dart
       class RandomWordsState extends State<RandomWords> {
@@ -448,7 +443,6 @@ lazily, on demand.
 
  2. Add a `_buildSuggestions()` function to the `RandomWordsState` class:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (_buildSuggestions)" title indent-by="2"?>
     ```dart
       Widget _buildSuggestions() {
@@ -486,7 +480,6 @@ lazily, on demand.
 
  3. Add a `_buildRow()` function to `RandomWordsState`:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (_buildRow)" title indent-by="2"?>
     ```dart
       Widget _buildRow(WordPair pair) {
@@ -506,7 +499,6 @@ lazily, on demand.
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
-    <!-- skip -->
     <?code-excerpt "lib/main.dart (build)" title region="RWS-build" replace="/(\n  )(return.*|  .*|\);)/$1[!$2!]/g" indent-by="2"?>
     ```dart
       @override
