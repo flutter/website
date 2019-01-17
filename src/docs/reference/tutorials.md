@@ -7,7 +7,7 @@ build mobile applications for iOS and Android.
 
 Choose from the following:
 
-* [Building Layouts in Flutter](/docs/development/ui/layout)
+* [Building Layouts tutorial](/docs/development/ui/layout/tutorial)
 : How to build layouts using Flutter's layout mechanism. Once you've learned
   basic principles, you'll build the layout for a sample screenshot.
 
