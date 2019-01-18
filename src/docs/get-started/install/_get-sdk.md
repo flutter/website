@@ -34,7 +34,7 @@
  1. Add the `flutter` tool to your path:
 
     ```terminal
-    $ export PATH=$PATH:`pwd`/flutter/bin
+    $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
     This command sets your `PATH` variable for the _current_ terminal window only.
