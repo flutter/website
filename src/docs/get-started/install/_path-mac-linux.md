@@ -16,8 +16,9 @@ a new window. For example:
     the path where you cloned Flutter's git repo:
 
     ```terminal
-    $ export PATH=$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin
+    $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
     ```
+
  4. Run `source $HOME/.bash_profile` to refresh the current window.
  5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
