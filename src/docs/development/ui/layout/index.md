@@ -72,174 +72,164 @@ the children should occupy.
 
 ## Lay out a widget
 
-{{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+How do you layout a single widget in Flutter? This section shows you how to
+create and display a simple widget. It also shows the entire code for a simple
+Hello World app.
 
-  {% comment %}
-    * Create an [Image]({{api}}/widgets/Image-class.html),
-      [Icon]({{api}}/widgets/Icon-class.html),
-      or [Text]({{api}}/widgets/Text-class.html) widget.
-    * Add it to a layout widget, such as
-      [Center]({{api}}/widgets/Center-class.html),
-      [Align]({{api}}/widgets/Align-class.html),
-      [SizedBox]({{api}}/widgets/SizedBox-class.html),
-      or [ListView]({{api}}/widgets/ListView-class.html),
-      to name a few.
-    * Add the layout widget to the root of the widget tree.
-  {% endcomment -%}
+In Flutter, it takes only a few steps to put text, an icon, or an image on the
+screen.
 
-  * Even the app itself is a widget.
-  * It's easy to create a widget and add it to a layout widget.
-  * To display the widget on the device, add the layout widget to the app widget.
-  * It's easiest to use
-    [Scaffold]({{api}}/material/Scaffold-class.html),
-    a widget from the Material Components library, which provides a default banner,
-    background color, and has API for adding drawers, snack bars,
-    and bottom sheets.
-  * If you prefer, you can build an app that only uses standard widgets
-    from the widgets library.
+### 1. Select a layout widget
+
+Choose from a variety of [layout widgets][] based
+on how you want to align or constrain the visible widget,
+as these characteristics are typically passed on to the
+contained widget.
+
+This example uses [Center][] which centers its content
+horizontally and vertically.
+
+### 2. Create a visible widget
+
+For example, create a [Text][] widget:
+
+<?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
+```dart
+Text('Hello World'),
+```
+
+Create an [Image][] widget:
+
+<?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
+```dart
+Image.asset(
+  'images/lake.jpg',
+  fit: BoxFit.cover,
+),
+```
+
+Create an [Icon][] widget:
+
+<?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
+```dart
+Icon(
+  Icons.star,
+  color: Colors.red[500],
+),
+```
+
+### 3. Add the visible widget to the layout widget
+
+<?code-excerpt path-base="layout/base"?>
+
+All layout widgets have either of the following:
+
+- A `child` property if they take a single child -- for example, `Center` or
+  `Container`
+- A `children` property if they take a list of widgets -- for example, `Row`,
+  `Column`, `ListView`, or `Stack`.
+
+Add the `Text` widget to the `Center` widget:
+
+<?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
+```dart
+Center(
+  child: Text('Hello World'),
+),
+```
+
+### 4. Add the layout widget to the page
+
+A Flutter app is itself a widget, and most widgets have a [build()][]
+method. Instantiating and returning a widget in the app's `build()` method
+displays the widget.
+
+#### Material apps
+
+For a `Material` app, you can use a [Scaffold][] widget; it provides a default
+banner, background color, and has API for adding drawers, snack bars, and bottom
+sheets. Then you can add the `Center` widget directly to the `body` property for
+the home page.
+
+<?code-excerpt path-base="layout/base"?>
+<?code-excerpt "lib/main.dart (MyApp)" title?>
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter layout demo'),
+        ),
+        body: Center(
+          child: Text('Hello World'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+{{site.alert.note}}
+  The [Material library][] implements widgets that follow [Material
+  Design][] principles. When designing your UI, you can exclusively use
+  widgets from the standard [widgets library][], or you can use widgets from
+  the Material library. You can mix widgets from both libraries, you can
+  customize existing widgets, or you can build your own set of custom
+  widgets.
 {{site.alert.end}}
 
-How do you layout a single widget in Flutter?
-This section shows you how to create and display a simple widget.
-It also shows the entire code for a simple Hello World app.
+#### Non-Material apps
 
-In Flutter,
-it takes only a few steps to put text, an icon, or an image on the screen.
+For a non-Material app, you can add the `Center` widget to the app's
+`build()` method:
 
- 1. Select a layout widget to hold the object.
-
-    Choose from a variety of [layout widgets][] based
-    on how you want to align or constrain the visible widget,
-    as these characteristics are typically passed on to the
-    contained widget.
-
-    This example uses [Center][] which centers its content
-    horizontally and vertically.
-
- 2. Create a widget to hold a visible object.
-
-    For example, create a [Text][] widget:
-
-    <!-- skip -->
-    {% prettify dart %}
-    Text('Hello World', style: TextStyle(fontSize: 32.0))
-    {% endprettify %}
-
-    Create an [Image][] widget:
-
-    <!-- skip -->
-    {% prettify dart %}
-    Image.asset('images/myPic.jpg', fit: BoxFit.cover)
-    {% endprettify %}
-
-    Create an [Icon][] widget:
-
-    <!-- skip -->
-    {% prettify dart %}
-    Icon(Icons.star, color: Colors.red[500])
-    {% endprettify %}
-
- 3. Add the visible widget to the layout widget.
-
-    All layout widgets have either of the following:
-
-    - A `child` property if they take a single child -- for example, `Center` or
-      `Container`
-    - A `children` property if they take a list of widgets -- for example, `Row`,
-      `Column`, `ListView`, or `Stack`.
-
-    Add the `Text` widget to the `Center` widget:
-
-    <!-- skip -->
-    {% prettify dart %}
-    Center(
-      child: Text('Hello World', style: TextStyle(fontSize: 32.0))
-    {% endprettify %}
-
- 4. Add the layout widget to the page.
-
-    A Flutter app is itself a widget, and most widgets have a [build()][]
-    method. Instantiating and returning a widget in the app's `build()` method
-    displays the widget.
-
-    For a `Material` app, you can add the `Center` widget directly to the
-    `body` property for the home page.
-
-    <!-- code/layout/hello-world/main.dart -->
-    <!-- skip -->
-    {% prettify dart %}
-    class _MyHomePageState extends State<MyHomePage> {
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
+<?code-excerpt path-base="layout/non_material"?>
+<?code-excerpt "lib/main.dart (MyApp)" title?>
+```dart
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Center(
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 32.0,
+            color: Colors.black87,
           ),
-          body: Center(
-            child: Text('Hello World', style: TextStyle(fontSize: 32.0)),
-          ),
-        );
-      }
-    }
-    {% endprettify %}
+        ),
+      ),
+    );
+  }
+}
+```
 
-    {{site.alert.note}}
-      The [Material library][] implements widgets that follow [Material
-      Design][] principles. When designing your UI, you can exclusively use
-      widgets from the standard [widgets library][], or you can use widgets from
-      the Material library. You can mix widgets from both libraries, you can
-      customize existing widgets, or you can build your own set of custom
-      widgets.
-    {{site.alert.end}}
+By default a non-Material app doesn't include an `AppBar`, title, or background
+color. If you want these features in a non-Material app, you have to build them
+yourself. This app changes the background color to white and the text to dark
+grey to mimic a Material app.
 
-    For a non-Material app, you can add the `Center` widget to the app's
-    `build()` method:
+<div class="row">
+<div class="col-md-6" markdown="1">
+  That's it! When you run the app, you should see _Hello World_.
 
-    <!-- code/layout/widgets-only/main.dart -->
-    <!-- skip -->
-    {% prettify dart %}
-    // This app doesn't use any Material Components, such as Scaffold.
-    // Normally, an app that doesn't use Scaffold has a black background
-    // and the default text color is black. This app changes its background
-    // to white and its text color to dark grey to mimic a Material app.
-    import 'package:flutter/material.dart';
-
-    void main() {
-      runApp(MyApp());
-    }
-
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return Container(
-          decoration: BoxDecoration(color: Colors.white),
-          child: Center(
-            child: Text('Hello World',
-                textDirection: TextDirection.ltr,
-                style: TextStyle(fontSize: 40.0, color: Colors.black87)),
-          ),
-        );
-      }
-    }
-    {% endprettify %}
-
-    Note that, by default, the non-Material app doesn't include an `AppBar`,
-    title, or background color. If you want these features in a non-Material
-    app, you have to build them yourself. This app changes the background color
-    to white and the text to dark grey to mimic a Material app.
-
-That's it! When you run the app, you should see:
-
-{% include app-figure.md img-class="site-mobile-screenshot border w-75"
-    image="ui/layout/hello-world.png" alt="Hello World" %}
-
-**Dart code** (Material app): [main.dart]({{code}}/layout/hello-world/main.dart)<br>
-**Dart code** (widgets-only app): [main.dart]({{code}}/layout/widgets-only/main.dart)
+  App source code:
+  - [Material app]({{examples}}/layout/base)
+  - [Non-Material app]({{examples}}/layout/non_material)
+</div>
+<div class="col-md-6">
+  {% include app-figure.md img-class="site-mobile-screenshot border w-75"
+      image="ui/layout/hello-world.png" alt="Hello World" %}
+</div>
+</div>
 
 <hr>
 
-<a name="rows-and-columns"></a>
 ## Lay out multiple widgets vertically and horizontally
 
 One of the most common layout patterns is to arrange widgets vertically
@@ -1250,5 +1240,6 @@ The following resources may help when writing layout code.
 [Material Design]: https://material.io/design
 [Material library]: {{api}}/material/material-library.html
 [Row]: {{api}}/widgets/Row-class.html
+[Scaffold]: {{api}}/material/Scaffold-class.html
 [Text]: {{api}}/widgets/Text-class.html
 [widgets library]: {{api}}/widgets/widgets-library.html

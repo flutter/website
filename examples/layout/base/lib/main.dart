@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+// #docregion MyApp
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,9 +12,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter layout demo'),
         ),
+        // #docregion centered-text
         body: Center(
+          // #docregion text
           child: Text('Hello World'),
+          // #enddocregion text
         ),
+        // #enddocregion centered-text
       ),
     );
   }
