@@ -1,5 +1,10 @@
 @import '_code_pre';
 
+// Give code blocks the same margin-bottom as regular paragraphs.
+div.highlighter-rouge {
+  margin-bottom: bs-spacer(4);
+}
+
 pre > span.strike { text-decoration: line-through; }
 
 .numbered-code-notes {
@@ -22,11 +27,14 @@ pre > span.strike { text-decoration: line-through; }
   }
 }
 
-.code-excerpt {
-  border: $border-width solid $border-color;
-  margin-bottom: bs-spacer(4);
+@mixin code-excerpt-border($side: '') {
+  border#{$side}: $border-width solid $border-color;
+}
 
+.code-excerpt {
   &__code {
+    @include code-excerpt-border;
+    margin-bottom: bs-spacer(4);
     position: relative;
 
     pre {
@@ -48,7 +56,9 @@ pre > span.strike { text-decoration: line-through; }
 
   &__header {
     background-color: $gray-200;
-    border-bottom: $border-width solid $border-color;
+    @include code-excerpt-border('-top');
+    @include code-excerpt-border('-left');
+    @include code-excerpt-border('-right');
     font-size: $site-spacer * .875;
     font-weight: $font-weight-bold;
     padding-top: bs-spacer(3);

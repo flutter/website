@@ -13,16 +13,16 @@ want to hot reload, and see the change in your simulator, emulator, or device.
 
  1. Open `lib/main.dart`.
  1. Change the string
+
     {% prettify dart %}
       'You have [[strike]]pushed[[/strike]] the button this many times'
     {% endprettify %}
-    {:.mb-3}
 
     to
+
     {% prettify dart %}
       'You have [!clicked!] the button this many times'
     {% endprettify %}
-    {:.mb-2}
 
     {{site.alert.important}}
       Do _not_ stop your app. Let your app run.
