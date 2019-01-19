@@ -367,7 +367,7 @@ on your behalf. You can check whether your scene is using `saveLayer` with the
 switch.
 
 {% comment %}
-[TODO: Document disabling the graphs and checkerboardRasterCachedImages.
+[TODO: Document disabling the graphs and checkerboardRasterCacheImages.
 Flutter Inspector doesn't seem to support this?]
 {% endcomment %}
 
@@ -410,7 +410,7 @@ _Because raster cache entries are expensive to construct and take up loads
 of GPU memory, cache images only where absolutely necessary._
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCachedImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
+[PerformanceOverlayLayer.checkerboardRasterCacheImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
 switch.
 
 {% comment %}
