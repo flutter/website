@@ -410,7 +410,7 @@ _Because raster cache entries are expensive to construct and take up loads
 of GPU memory, cache images only where absolutely necessary._
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCacheImages](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/checkerboardRasterCacheImages.html)
+[PerformanceOverlayLayer.checkerboardRasterCacheImages](https://docs.flutter.io/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html)
 switch.
 
 {% comment %}
