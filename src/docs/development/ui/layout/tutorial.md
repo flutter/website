@@ -43,7 +43,7 @@ then do the following:
  1. [Create a basic "Hello World" Flutter app][hello-world].
  2. Change the app bar title and the app title as follows:
 
-    <?code-excerpt "codelabs/startup_namer/step1_base/lib/main.dart" diff-with="layout/base/lib/main.dart"?>
+    <?code-excerpt "{codelabs/startup_namer/step1_base,layout/base}/lib/main.dart"?>
     ```diff
     --- codelabs/startup_namer/step1_base/lib/main.dart
     +++ layout/base/lib/main.dart
@@ -159,7 +159,7 @@ Widget titleSection = Container(
 Add the title section to the app body like this:
 
 <?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "../base/lib/main.dart" diff-with="step2/lib/main.dart" from="return MaterialApp"?>
+<?code-excerpt "{../base,step2}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
@@ -263,7 +263,7 @@ Widget buttonSection = Container(
 Add the button section to the body:
 
 <?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "step2/lib/main.dart" diff-with="step3/lib/main.dart" from="return MaterialApp" to="}"?>
+<?code-excerpt "{step2,step3}/lib/main.dart" from="return MaterialApp" to="}"?>
 ```diff
 --- step2/lib/main.dart
 +++ step3/lib/main.dart
@@ -313,7 +313,7 @@ wrapping at a word boundary.
 Add the text section to the body:
 
 <?code-excerpt path-base="layout/lakes"?>
-<?code-excerpt "step3/lib/main.dart" diff-with="step4/lib/main.dart" from="return MaterialApp"?>
+<?code-excerpt "{step3,step4}/lib/main.dart" from="return MaterialApp"?>
 ```diff
 --- step3/lib/main.dart
 +++ step4/lib/main.dart
@@ -350,7 +350,7 @@ Add the image file to the example:
 * Update the `pubspec.yaml` file to include an `assets` tag. This makes the
   image available to your code.
 
-  <?code-excerpt "step4/pubspec.yaml" diff-with="step5/pubspec.yaml"?>
+  <?code-excerpt "{step4,step5}/pubspec.yaml"?>
   ```diff
   --- step4/pubspec.yaml
   +++ step5/pubspec.yaml
@@ -364,7 +364,7 @@ Add the image file to the example:
 
 Now you can reference the image from your code:
 
-<?code-excerpt "step4/lib/main.dart" diff-with="step5/lib/main.dart"?>
+<?code-excerpt "{step4,step5}/lib/main.dart"?>
 ```diff
 --- step4/lib/main.dart
 +++ step5/lib/main.dart
@@ -392,7 +392,7 @@ In this final step, arrange all of the elements in a `ListView`, rather than a
 `Column`, because a `ListView` supports app body scrolling when the app is run
 on a small device.
 
-<?code-excerpt "step5/lib/main.dart" diff-with="step6/lib/main.dart" diff-u="6" from="return MaterialApp"?>
+<?code-excerpt "{step5,step6}/lib/main.dart" diff-u="6" from="return MaterialApp"?>
 ```diff
 --- step5/lib/main.dart
 +++ step6/lib/main.dart
