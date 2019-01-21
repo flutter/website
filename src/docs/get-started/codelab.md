@@ -182,7 +182,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     list:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "step1_base/pubspec.yaml" diff-with="step2_use_package/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
+    <?code-excerpt "{step1_base,step2_use_package}/pubspec.yaml" diff-u="4" from="dependencies" to="english"?>
     ```diff
     --- step1_base/pubspec.yaml
     +++ step2_use_package/pubspec.yaml
@@ -225,7 +225,7 @@ packages, on [the Package site](https://pub.dartlang.org/flutter).
     using the string "Hello World":
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "step1_base/lib/main.dart" diff-with="step2_use_package/lib/main.dart" from="class"?>
+    <?code-excerpt "{step1_base,step2_use_package}/lib/main.dart" from="class"?>
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
@@ -350,7 +350,7 @@ a child inside the existing `MyApp` stateless widget.
     the following diff:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "step2_use_package/lib/main.dart" diff-with="step3_stateful_widget/lib/main.dart" to="}"?>
+    <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
     ```diff
     --- step2_use_package/lib/main.dart
     +++ step3_stateful_widget/lib/main.dart
@@ -516,7 +516,7 @@ lazily, on demand.
     changing the home to be a `RandomWords` widget:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
-    <?code-excerpt "step3_stateful_widget/lib/main.dart" diff-with="step4_infinite_list/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
+    <?code-excerpt "{step3_stateful_widget,step4_infinite_list}/lib/main.dart" diff-u="4" from="class MyApp" to="}"?>
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
