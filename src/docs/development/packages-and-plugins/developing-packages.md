@@ -43,9 +43,9 @@ Packages can contain several kinds of content:
 
 To create a Dart package, use the `--template=package` flag with `flutter create`:
 
-{% commandline %}
-flutter create --template=package hello
-{% endcommandline %}
+```terminal
+$ flutter create --template=package hello
+```
 
 This creates a package project in the `hello/` folder with the following
 specialized content:
@@ -86,9 +86,9 @@ Use the `--org` option to specify your organization, using reverse domain name
 notation. This value is used in various package and bundle identifiers in the
 generated Android and iOS code.
 
-{% commandline %}
-flutter create --org com.example --template=plugin hello
-{% endcommandline %}
+```terminal
+$ flutter create --org com.example --template=plugin hello
+```
 
 This creates a plugin project in the `hello/` folder with the following
 specialized content:
@@ -106,9 +106,9 @@ By default, the plugin project uses Objective-C for iOS code and
 Java for Android code. If you prefer Swift or Kotlin, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
 
-{% commandline %}
-flutter create --template=plugin -i swift -a kotlin hello
-{% endcommandline %}
+```terminal
+$ flutter create --template=plugin -i swift -a kotlin hello
+```
 
 ### Step 2: Implement the package {#edit-plugin-package}
 
@@ -216,14 +216,15 @@ Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 
 Next, run the dry-run command to see if everything passes analysis:
 
-{% commandline %}
-flutter packages pub publish --dry-run
-{% endcommandline %}
+```terminal
+$ flutter packages pub publish --dry-run
+```
 
 Finally, run the actual publish command:
-{% commandline %}
-flutter packages pub publish
-{% endcommandline %}
+
+```terminal
+$ flutter packages pub publish
+```
 
 For details on publishing, see the
 [publishing docs](https://www.dartlang.org/tools/pub/publishing).
