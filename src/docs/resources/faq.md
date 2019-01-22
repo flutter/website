@@ -406,7 +406,7 @@ Mobile hardware: iOS devices (iPhone 4S or newer) and ARM Android devices.
 
 Note Flutter currently does not support building for x86 Android
 (issue [#9253](https://github.com/flutter/flutter/issues/9253))
-directly, however apps built for ARMv7 or ARM64 run fine (via ARM emulation
+directly, however apps built for ARMv7 or ARM64 run fine (via ARM emulation)
 on many x86 Android devices.
 
 We support developing Flutter apps with Android and iOS devices, as
