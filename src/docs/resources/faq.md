@@ -47,7 +47,7 @@ Fundamentally, Flutter is for users that want beautiful apps,
 with delightful motion and animation, and UIs with character
 and an identity all their own.
 
-### How experienced of a programmer/developer do I have to be to use Flutter?
+### How experienced of a programmer/<wbr>developer do I have to be to use Flutter?
 
 Flutter is approachable to programmers familiar with object-oriented
 concepts (classes, methods, variables, etc) and imperative programming
@@ -531,7 +531,7 @@ and binary size is always a concern with mobile apps, we disabled
 dart:mirrors. We are curious what you might need reflection/mirrors
 for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
 
-### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
+### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
 Learn more about i18n and l10n in the
 [internationalization tutorial](/docs/development/accessibility-and-localization/internationalization).
@@ -556,7 +556,7 @@ For more information, see the Medium article
 [Executing Dart in the Background with Flutter Plugins and
 Geofencing](https://medium.com/flutter-io/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124).
 
-### Can I use JSON/XML/protobuffers/etc with Flutter?
+### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
 Absolutely. There are libraries on the
 [Package site](https://pub.dartlang.org) for JSON, XML,
