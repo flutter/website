@@ -1,4 +1,4 @@
-# [Flutter][]'s website <img src="https://flutter.io/images/flutter-mark-square-100.png" width="5%">
+# [Flutter][]'s website ![Flutter logo][]
 
 [![Build Status][]][Repo on Travis]
 
@@ -90,13 +90,13 @@ if you already have the required packages installed.
 
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
-    
+
 > TIP:
 > Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen when you pull from master and lots of image files have moved.) To fix this,
 > stop the `serve.sh` script, remove the generated site files by hand, and then
 > restart the `serve.sh` script:
-> 
+>
 > ```
 > ^C
 > $ rm -Rf ./_site/* ./.jekyll*
@@ -259,6 +259,7 @@ The `sample_page.dart` app will print a list of all of the `"sample"` properties
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Dart install]: https://www.dartlang.org/install
 [Flutter install]: /get-started/install
+[Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
 [first-timers]: https://www.firsttimersonly.com/
