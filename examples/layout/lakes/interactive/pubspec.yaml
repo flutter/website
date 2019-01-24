@@ -1,0 +1,21 @@
+name: interactive
+description: >
+  Sample app from "Adding interactivity", https://flutter.io/docs/development/ui/interactive.
+version: 1.0.0
+
+environment:
+  sdk: '>=2.0.0-dev.68.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/lake.jpg
