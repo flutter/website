@@ -1,6 +1,6 @@
 ---
-title: Adding Interactivity to Your Flutter App
-short-title: Adding Interactivity
+title: Adding interactivity to your Flutter app
+short-title: Adding interactivity
 ---
 
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -17,23 +17,6 @@ How do you modify your app to make it react to user input? In this tutorial,
 you'll add interactivity to an app that contains only non-interactive widgets.
 Specifically, you'll modify an icon to make it tappable by creating a custom
 stateful widget that manages two stateless widgets.
-
-## Getting ready
-
-If you've already built the app in [Layout tutorial][], skip to the next
-section.
-
- 1. Make sure you've [set up](/docs/get-started/install) your environment.
- 1. [Create a basic "Hello World" Flutter app][hello-world].
- 1. Replace the `lib/main.dart` file with
-    [main.dart]({{examples}}/layout/lakes/step6/lib/main.dart).
- 1. Replace the `pubspec.yaml` file with
-    [pubspec.yaml]({{examples}}/layout/lakes/step6/pubspec.yaml).
- 1. Create an `images` directory in your project, and add
-    [lake.jpg]({{examples}}/layout/lakes/step6/images/lake.jpg).
-
-Once you have a connected and enabled device, or you've launched the [iOS
-simulator][] (part of the Flutter install), you are good to go!
 
 [Layout tutorial][] showed you how to create the layout for the following
 screenshot.
@@ -62,29 +45,22 @@ skip to [Managing state](#managing-state).
 
 ## Stateful and stateless widgets
 
-{{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+A widget is either stateful or stateless. If a widget can change&mdash;when a
+user interacts with it, for example&mdash;it's stateful.
 
-  * Some widgets are stateful, and some are stateless.
-  * If a widget changes&mdash;the user interacts with it,
-    for example&mdash;it's _stateful_.
-  * A widget's state consists of values that can change, like a slider's
-    current value or whether a checkbox is checked.
-  * A widget's state is stored in a State object, separating the widget's
-    state from its appearance.
-  * When the widget's state changes, the state object calls
-    `setState()`, telling the framework to redraw the widget.
-{{site.alert.end}}
+A _stateless_ widget never changes. [Icon][], [IconButton][], and [Text][] are
+examples of stateless widgets. Stateless widgets subclass [StatelessWidget][].
 
-A _stateless_ widget has no internal state to manage. [Icon][], [IconButton][],
-and [Text][] are examples of stateless widgets, which subclass
-[StatelessWidget][].
+A _stateful_ widget is dynamic: for example, it can change its appearance in
+response to events triggered by user interactions or when it receives data.
+[Checkbox][], [Radio][], [Slider][], [InkWell][], [Form][], and [TextField][]
+are examples of stateful widgets. Stateful widgets subclass [StatefulWidget][].
 
-A _stateful_ widget is dynamic. The user can interact with a stateful widget (by
-typing into a form, or moving a slider, for example), or it changes over time
-(perhaps a data feed causes the UI to update). [Checkbox][], [Radio][],
-[Slider][], [InkWell][], [Form][], and [TextField][] are examples of stateful
-widgets, which subclass [StatefulWidget][].
+A widget's state is stored in a [State][] object, separating the widget's state
+from its appearance. The state consists of values that can change, like a
+slider's current value or whether a checkbox is checked. When the widget's state
+changes, the state object calls `setState()`, telling the framework to redraw
+the widget.
 
 ## Creating a stateful widget
 
@@ -102,23 +78,40 @@ widgets, which subclass [StatefulWidget][].
 In this section, you'll create a custom stateful widget. You'll replace two
 stateless widgets&mdash;the solid red star and the numeric count next to
 it&mdash;with a single custom stateful widget that manages a row with two
-children widgets: an IconButton and Text.
+children widgets: an `IconButton` and `Text`.
 
 Implementing a custom stateful widget requires creating two classes:
 
-* A subclass of StatefulWidget that defines the widget.
-* A subclass of State that contains the state for that widget and defines
-  the widget's `build()` method.
+* A subclass of `StatefulWidget` that defines the widget.
+* A subclass of `State` that contains the state for that widget and defines the
+  widget's `build()` method.
 
-This section shows how to build a StatefulWidget, called FavoriteWidget,
-for the Lakes app. The first step is choosing how FavoriteWidget's state
-is managed.
+This section shows how to build a `StatefulWidget`, called `FavoriteWidget`, for
+the lakes app. After setting up, your first step is choosing how state is
+managed for `FavoriteWidget`.
+
+### Step 0: Get ready
+
+If you've already built the app in [Layout tutorial][], skip to the next
+section.
+
+ 1. Make sure you've [set up](/docs/get-started/install) your environment.
+ 1. [Create a basic "Hello World" Flutter app][hello-world].
+ 1. Replace the `lib/main.dart` file with
+    [main.dart]({{examples}}/layout/lakes/step6/lib/main.dart).
+ 1. Replace the `pubspec.yaml` file with
+    [pubspec.yaml]({{examples}}/layout/lakes/step6/pubspec.yaml).
+ 1. Create an `images` directory in your project, and add
+    [lake.jpg]({{examples}}/layout/lakes/step6/images/lake.jpg).
+
+Once you have a connected and enabled device, or you've launched the [iOS
+simulator][] (part of the Flutter install), you are good to go!
 
 <a name="step-1"></a>
 ### Step 1: Decide which object manages the widget's state
 
 A widget's state can be managed in several ways, but in our example the widget
-itself, FavoriteWidget, will manage its own state. In this example, toggling the
+itself, `FavoriteWidget`, will manage its own state. In this example, toggling the
 star is an isolated action that doesn't affect the parent widget or the rest of
 the UI, so the widget can handle its state internally.
 
@@ -128,8 +121,8 @@ managed, in [Managing state](#managing-state).
 <a name="step-2"></a>
 ### Step 2: Subclass StatefulWidget
 
-The FavoriteWidget class manages its own state, so it overrides `createState()`
-to create the State object. The framework calls `createState()` when it wants to
+The `FavoriteWidget` class manages its own state, so it overrides `createState()`
+to create a `State` object. The framework calls `createState()` when it wants to
 build the widget. In this example, `createState()` creates an instance of
 _FavoriteWidgetState, which you'll implement in the next step.
 
@@ -154,11 +147,11 @@ class FavoriteWidget extends StatefulWidget {
 <a name="step-3"></a>
 ### Step 3: Subclass State
 
-The custom State class stores the mutable information&mdash;the logic and
-internal state that can change over the lifetime of the widget. When the app
-first launches, the UI displays a solid red star, indicating that the lake has
-"favorite" status, and has 41 “likes”. The state object stores this information
-in the `_isFavorited` and `_favoriteCount` variables.
+The custom `State` class stores the mutable data that can change over the
+lifetime of the widget. When the app first launches, the UI displays a solid red
+star, indicating that the lake has "favorite" status, and has 41 likes. The
+state object stores this information in the `_isFavorited` and `_favoriteCount`
+variables.
 
 The state object also defines the `build` method. This `build` method creates a
 row containing a red IconButton, and Text.  The widget uses [IconButton][],
@@ -756,6 +749,7 @@ The following resources may help when adding interactivity to your app.
 [Radio]: {{site.api}}/flutter/material/Radio-class.html
 [RaisedButton]: {{site.api}}/flutter/material/RaisedButton-class.html
 [Slider]: {{site.api}}/flutter/material/Slider-class.html
+[State]: {{site.api}}/flutter/widgets/State-class.html
 [StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [StatelessWidget]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [Switch]: {{site.api}}/flutter/material/Switch-class.html
