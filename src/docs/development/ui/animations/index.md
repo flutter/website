@@ -1,5 +1,6 @@
 ---
 title: Introduction to animations
+short-title: Animations
 description: How to perform animations in Flutter
 ---
 
@@ -77,8 +78,8 @@ the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
 
 * Also see the API documentation for
-[AnimationController.animateWith](https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html) and
-[SpringSimulation](https://docs.flutter.io/flutter/physics/SpringSimulation-class.html).
+  [AnimationController<wbr>.animateWith][AnimationController.animateWith] and
+  [SpringSimulation][].
 
 ## Common animation patterns
 
@@ -157,3 +158,5 @@ The animation API for the Flutter framework.
 If there is specific animation documentation you'd like to see, please
 [file an issue](https://github.com/flutter/website/issues).
 
+[AnimationController.animateWith]: https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html
+[SpringSimulation]: https://docs.flutter.io/flutter/physics/SpringSimulation-class.html

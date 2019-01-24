@@ -53,16 +53,15 @@ This guide shows how to build a staggered animation in Flutter.
     This staggered behavior is similar to what you might see in Google Photos.
 {{site.alert.end}}
 
-
-
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-<!--
-  Use this instead of the default YouTube embed code so that the embed
-  is responsive.
--->
-<div class="embed-container"><iframe src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="embedded-video-wrapper">
+  <iframe class="embedded-video-wrapper__frame"
+    src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0"
+    frameborder="0" allowfullscreen>
+  </iframe>
+</div>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -77,32 +76,31 @@ The square runs through changes in the following order:
 After running forward, the animation runs in reverse.
 
 <aside class="alert alert-info" markdown="1">
-**New to Flutter?**<br>
-This page assumes you know how to create a layout using Flutter’s
-widgets.  For more information, see [Building Layouts in
-Flutter](/docs/development/ui/layout).
+  **New to Flutter?**
+  This page assumes you know how to create a layout using Flutter’s
+  widgets.  For more information, see [Building Layouts in
+  Flutter](/docs/development/ui/layout).
 </aside>
 
 ## Basic structure of a staggered animation
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* All of the animations are driven by the same
-  [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
-* Regardless of how long the animation lasts in real time,
-  the controller's values must be between 0.0 and 1.0, inclusive.
-* Each animation has an
-  [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)
-  between 0.0 and 1.0, inclusive.
-* For each property that animates in an interval, create a
-  [Tween.](https://docs.flutter.io/flutter/animation/Tween-class.html)
-  The Tween specifies the start and end values for that property.
-* The Tween produces an
-  [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html)
-  object that is managed by the controller.
-</div>
+  * All of the animations are driven by the same
+    [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
+  * Regardless of how long the animation lasts in real time,
+    the controller's values must be between 0.0 and 1.0, inclusive.
+  * Each animation has an
+    [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)
+    between 0.0 and 1.0, inclusive.
+  * For each property that animates in an interval, create a
+    [Tween.](https://docs.flutter.io/flutter/animation/Tween-class.html)
+    The `Tween` specifies the start and end values for that property.
+  * The `Tween` produces an
+    [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html)
+    object that is managed by the controller.
+{{site.alert.end}}
 
 {% comment %}
 The app is essentially animating a Container whose decoration and size are
@@ -124,7 +122,9 @@ example. You might notice the following characteristics:
 * The padding and border radius changes occur during the same exact interval,
   but they don't have to.
 
-<img src="/docs/development/ui/animations/staggered-animations/images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
+{% asset ui/animations/StaggeredAnimationIntervals.png
+    alt="Diagram showing the interval specified for each motion"
+    class="mw-100" %}
 
 To set up the animation:
 
@@ -360,7 +360,7 @@ The following resources might help when writing animations:
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
 
-[Flutter API documentation](https://docs.flutter.io/)
+[Flutter API documentation](https://docs.flutter.io)
 : Reference documentation for all of the Flutter libraries.
   In particular, see the [animation
   library](https://docs.flutter.io/flutter/animation/animation-library.html)
