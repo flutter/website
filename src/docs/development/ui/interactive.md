@@ -1,6 +1,7 @@
 ---
 title: Adding interactivity to your Flutter app
 short-title: Adding interactivity
+diff2html: true
 ---
 
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -67,12 +68,12 @@ the widget.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * To create a custom stateful widget, subclass two classes:
-    StatefulWidget and State.
-  * The state object contains the widget's state and the widget's `build()`
-    method.
-  * When the widget's state changes, the state object calls
-    `setState()`, telling the framework to redraw the widget.
+  * A stateful widget is implemented by two classes: a subclass of
+    `StatefulWidget` and a subclass of `State`.
+  * The state class contains the widget's mutable state and the widget's
+    `build()` method.
+  * When the widget's state changes, the state object calls `setState()`,
+    telling the framework to redraw the widget.
 {{site.alert.end}}
 
 In this section, you'll create a custom stateful widget. You'll replace two
@@ -86,13 +87,13 @@ Implementing a custom stateful widget requires creating two classes:
 * A subclass of `State` that contains the state for that widget and defines the
   widget's `build()` method.
 
-This section shows how to build a `StatefulWidget`, called `FavoriteWidget`, for
-the lakes app. After setting up, your first step is choosing how state is
+This section shows you how to build a stateful widget, called `FavoriteWidget`,
+for the lakes app. After setting up, your first step is choosing how state is
 managed for `FavoriteWidget`.
 
 ### Step 0: Get ready
 
-If you've already built the app in [Layout tutorial][], skip to the next
+If you've already built the app in [Layout tutorial (step 6)][], skip to the next
 section.
 
  1. Make sure you've [set up](/docs/get-started/install) your environment.
@@ -121,22 +122,22 @@ managed, in [Managing state](#managing-state).
 <a name="step-2"></a>
 ### Step 2: Subclass StatefulWidget
 
-The `FavoriteWidget` class manages its own state, so it overrides `createState()`
-to create a `State` object. The framework calls `createState()` when it wants to
-build the widget. In this example, `createState()` creates an instance of
-_FavoriteWidgetState, which you'll implement in the next step.
+The `FavoriteWidget` class manages its own state, so it overrides
+`createState()` to create a `State` object. The framework calls `createState()`
+when it wants to build the widget. In this example, `createState()` returns an
+instance of `_FavoriteWidgetState`, which you'll implement in the next step.
 
-<!-- code/layout/lakes-interactive/main.dart -->
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt path-base="layout/lakes/interactive"?>
+<?code-excerpt "lib/main.dart (FavoriteWidget)" title?>
+```dart
 class FavoriteWidget extends StatefulWidget {
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
-{% endprettify %}
+```
 
 {{site.alert.note}}
-  Members or classes that start with an underscore (_) are private. For more
+  Members or classes that start with an underscore (`_`) are private. For more
   information, see [Libraries and visibility,][] a section in the [Dart language
   tour.][]
 
@@ -147,124 +148,120 @@ class FavoriteWidget extends StatefulWidget {
 <a name="step-3"></a>
 ### Step 3: Subclass State
 
-The custom `State` class stores the mutable data that can change over the
-lifetime of the widget. When the app first launches, the UI displays a solid red
-star, indicating that the lake has "favorite" status, and has 41 likes. The
-state object stores this information in the `_isFavorited` and `_favoriteCount`
-variables.
+The `_FavoriteWidgetState` class stores the mutable data that can change over
+the lifetime of the widget. When the app first launches, the UI displays a solid
+red star, indicating that the lake has "favorite" status, along with 41 likes.
+These values are stored in the `_isFavorited` and `_favoriteCount` fields:
 
-The state object also defines the `build` method. This `build` method creates a
-row containing a red IconButton, and Text.  The widget uses [IconButton][],
-(instead of Icon), because it has an `onPressed` property that defines the
-callback method for handling a tap. IconButton also has an `icon` property that
-holds the Icon.
-
-The `_toggleFavorite()` method, which is called when the IconButton is pressed,
-calls `setState()`. Calling `setState()` is critical, because this tells the
-framework that the widget’s state has changed and the widget should redraw. The
-`_toggleFavorite` function swaps the UI between
-1) a star icon and the number ‘41’, and
-2) a star_border icon and the number ‘40’.
-
-<!-- code/layout/lakes-interactive/main.dart -->
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g" title?>
+```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  [[highlight]]bool _isFavorited = true;[[/highlight]]
-  [[highlight]]int _favoriteCount = 41;[[/highlight]]
+  [!bool _isFavorited = true;!]
+  [!int _favoriteCount = 41;!]
+  // ···
+}
+```
 
-  [[highlight]]void _toggleFavorite()[[/highlight]] {
-    [[highlight]]setState(()[[/highlight]] {
-      // If the lake is currently favorited, unfavorite it.
-      if (_isFavorited) {
-        _favoriteCount -= 1;
-        _isFavorited = false;
-        // Otherwise, favorite it.
-      } else {
-        _favoriteCount += 1;
-        _isFavorited = true;
-      }
-    });
-  }
+The class also defines a `build()` method, which creates a row containing a red
+`IconButton`, and `Text`.  You use [IconButton][] (instead of `Icon`) because it
+has an `onPressed` property that defines the callback function
+(`_toggleFavorite`) for handling a tap. You'll define the callback function
+next.
 
+<?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g" title?>
+```dart
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  // ···
   @override
-  Widget build(BuildContext context) {
+  Widget [!build!](BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
           padding: EdgeInsets.all(0.0),
           child: IconButton(
-            [[highlight]]icon: (_isFavorited[[/highlight]]
-                [[highlight]]? Icon(Icons.star)[[/highlight]]
-                [[highlight]]: Icon(Icons.star_border)),[[/highlight]]
+            [!icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),!]
             color: Colors.red[500],
-            [[highlight]]onPressed: _toggleFavorite,[[/highlight]]
+            [!onPressed: _toggleFavorite,!]
           ),
         ),
         SizedBox(
           width: 18.0,
           child: Container(
-            [[highlight]]child: Text('$_favoriteCount'),[[/highlight]]
+            [!child: Text('$_favoriteCount'),!]
           ),
         ),
       ],
     );
   }
 }
-{% endprettify %}
+```
 
 {{site.alert.tip}}
-  Placing the Text in a SizedBox and setting its width prevents a discernible
-  "jump" when the text changes between the values of 40 and 41&mdash;this
-  would otherwise occur because those values have different widths.
+  Placing the `Text` in a [SizedBox][] and setting its width prevents a
+  discernible "jump" when the text changes between the values of 40 and 41
+  &mdash; a jump would otherwise occur because those values have different
+  widths.
 {{site.alert.end}}
+
+The `_toggleFavorite()` method, which is called when the `IconButton` is
+pressed, calls `setState()`. Calling `setState()` is critical, because this
+tells the framework that the widget’s state has changed and that the widget
+should be redraw. The function argument to `setState()` toggles the UI between
+these two states:
+
+- A `star` icon and the number 41
+- A `star_border` icon and the number 40
+
+<?code-excerpt "lib/main.dart (_toggleFavorite)"?>
+```dart
+void _toggleFavorite() {
+  setState(() {
+    if (_isFavorited) {
+      _favoriteCount -= 1;
+      _isFavorited = false;
+    } else {
+      _favoriteCount += 1;
+      _isFavorited = true;
+    }
+  });
+}
+```
 
 <a name="step-4"></a>
 ### Step 4: Plug the stateful widget into the widget tree
 
 Add your custom stateful widget to the widget tree in the app's `build()`
-method. First, locate the code that creates the Icon and Text, and delete it:
+method. First, locate the code that creates the `Icon` and `Text`, and delete
+it. In the same location, create the stateful widget:
 
-<!-- code/layout/lakes/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-// ...
-[[strike]]Icon([[/strike]]
-  [[strike]]Icons.star,[[/strike]]
-  [[strike]]color: Colors.red[500],[[/strike]]
-[[strike]]),[[/strike]]
-[[strike]]Text('41')[[/strike]]
-// ...
-{% endprettify %}
-
-In the same location, create the stateful widget:
-
-<!-- code/layout/lakes-interactive/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    Widget titleSection = Container(
-      // ...
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              // ...
-          ),
-          [[highlight]]FavoriteWidget()[[/highlight]],
-        ],
-      ),
-    );
-
-    return MaterialApp(
-      // ...
-    );
-  }
-}
-{% endprettify %}
+<?code-excerpt path-base=""?>
+<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" from="class MyApp" to="/^ }/"?>
+```diff
+--- layout/lakes/step6/lib/main.dart
++++ layout/lakes/interactive/lib/main.dart
+@@ -10,2 +5,2 @@
+ class MyApp extends StatelessWidget {
+   @override
+@@ -38,12 +33,7 @@
+               ],
+             ),
+           ),
+-          /*3*/
+-          Icon(
+-            Icons.star,
+-            color: Colors.red[500],
+-          ),
+-          Text('41'),
++          FavoriteWidget(),
+         ],
+       ),
+     );
+@@ -118,3 +108,3 @@
+     );
+   }
+ }
+```
 
 That's it! When you hot reload the app, the star icon should now respond to taps.
 
@@ -272,19 +269,24 @@ That's it! When you hot reload the app, the star icon should now respond to taps
 
 If you can't get your code to run, look in your IDE for possible errors.
 [Debugging Flutter Apps](/docs/testing/debugging) might help. If you still can't
-find the problem, check your code against the interactive Lakes example on
+find the problem, check your code against the interactive lakes example on
 GitHub.
 
-* [lib/main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/main.dart)
-* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/layout/lakes-interactive/pubspec.yaml)&mdash;no changes to this file
-* [lakes.jpg](https://github.com/flutter/website/tree/master/src/_includes/code/layout/lakes-interactive/images/lake.jpg)&mdash;no changes to this file
+{% comment %}
+TODO: replace the following links with tabbed code panes.
+{% endcomment -%}
 
-If you still have questions, refer to [Get support.](/community)
+* [lib/main.dart]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/lib/main.dart)
+* [pubspec.yaml]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/pubspec.yaml)
+* [lakes.jpg]({{site.repo.this}}/tree/{{site.branch}}/examples/layout/lakes/interactive/images/lake.jpg)
+
+If you still have questions, refer to any one of the developer
+[community](/community) channels.
 
 ---
 
-The rest of this page covers several ways a widget's state can be managed,
-and lists other available interactive widgets.
+The rest of this page covers several ways a widget's state can be managed, and
+lists other available interactive widgets.
 
 ## Managing state
 
@@ -715,7 +717,7 @@ The following resources may help when adding interactivity to your app.
   How to create a button and make it respond to input.
 * [Gestures in Flutter][]<br>
   A description of Flutter's gesture mechanism.
-* [Flutter API documentation]({{site.api}})<br>
+* [Flutter API documentation][]<br>
   Reference documentation for all of the Flutter libraries.
 * [Flutter Gallery][]<br>
   Demo app showcasing many Material Components and other Flutter features.
@@ -723,36 +725,39 @@ The following resources may help when adding interactivity to your app.
    This video includes information about state and stateless widgets.
    Presented by Google engineer, Ian Hickson.
 
-[Checkbox]: {{site.api}}/flutter/material/Checkbox-class.html
-[Cupertino]: {{site.api}}/flutter/cupertino/cupertino-library.html
-[DropdownButton]: {{site.api}}/flutter/material/DropdownButton-class.html
-[FlatButton]: {{site.api}}/flutter/material/FlatButton-class.html
-[FloatingActionButton]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[Checkbox]: https://docs.flutter.io/flutter/material/Checkbox-class.html
+[Cupertino]: https://docs.flutter.io/flutter/cupertino/cupertino-library.html
+[DropdownButton]: https://docs.flutter.io/flutter/material/DropdownButton-class.html
+[FlatButton]: https://docs.flutter.io/flutter/material/FlatButton-class.html
+[FloatingActionButton]: https://docs.flutter.io/flutter/material/FloatingActionButton-class.html
+[Flutter API documentation]: https://docs.flutter.io
 [Flutter Gallery]: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
-[FormField]: {{site.api}}/flutter/widgets/FormField-class.html
-[Form]: {{site.api}}/flutter/widgets/Form-class.html
-[foundation library]: {{site.api}}/flutter/foundation/foundation-library.html
-[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[FormField]: https://docs.flutter.io/flutter/widgets/FormField-class.html
+[Form]: https://docs.flutter.io/flutter/widgets/Form-class.html
+[foundation library]: https://docs.flutter.io/flutter/foundation/foundation-library.html
+[GestureDetector]: https://docs.flutter.io/flutter/widgets/GestureDetector-class.html
 [Gestures]: /docs/development/ui/widgets-intro#handling-gestures
 [Gestures in Flutter]: /docs/development/ui/advanced/gestures
 [hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
-[IconButton]: {{site.api}}/flutter/material/IconButton-class.html
-[Icon]: {{site.api}}/flutter/widgets/Icon-class.html
-[InkWell]: {{site.api}}/flutter/material/InkWell-class.html
+[IconButton]: https://docs.flutter.io/flutter/material/IconButton-class.html
+[Icon]: https://docs.flutter.io/flutter/widgets/Icon-class.html
+[InkWell]: https://docs.flutter.io/flutter/material/InkWell-class.html
 [Introduction to widgets]: /docs/development/ui/widgets-intro
 [iOS simulator]: /docs/get-started/install/macos#set-up-the-ios-simulator
 [Layout tutorial]: /docs/development/ui/layout/tutorial
-[ListView]: {{site.api}}/flutter/widgets/ListView-class.html
+[Layout tutorial (step 6)]: /docs/development/ui/layout/tutorial#step-6-final-touch
+[ListView]: https://docs.flutter.io/flutter/widgets/ListView-class.html
 [Material Design guidelines]: https://material.io/design/guidelines-overview
 [meta.dart]: https://pub.dartlang.org/packages/meta
-[Radio]: {{site.api}}/flutter/material/Radio-class.html
-[RaisedButton]: {{site.api}}/flutter/material/RaisedButton-class.html
-[Slider]: {{site.api}}/flutter/material/Slider-class.html
-[State]: {{site.api}}/flutter/widgets/State-class.html
-[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[StatelessWidget]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
-[Switch]: {{site.api}}/flutter/material/Switch-class.html
-[TextField]: {{site.api}}/flutter/material/TextField-class.html
-[Text]: {{site.api}}/flutter/widgets/Text-class.html
-[widget]: {{site.api}}/flutter/widgets/State/widget.html
+[Radio]: https://docs.flutter.io/flutter/material/Radio-class.html
+[RaisedButton]: https://docs.flutter.io/flutter/material/RaisedButton-class.html
+[SizedBox]: https://docs.flutter.io/flutter/widgets/SizedBox-class.html
+[Slider]: https://docs.flutter.io/flutter/material/Slider-class.html
+[State]: https://docs.flutter.io/flutter/widgets/State-class.html
+[StatefulWidget]: https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html
+[StatelessWidget]: https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html
+[Switch]: https://docs.flutter.io/flutter/material/Switch-class.html
+[TextField]: https://docs.flutter.io/flutter/material/TextField-class.html
+[Text]: https://docs.flutter.io/flutter/widgets/Text-class.html
+[widget]: https://docs.flutter.io/flutter/widgets/State/widget.html
