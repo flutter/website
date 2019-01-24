@@ -236,18 +236,17 @@ method. First, locate the code that creates the `Icon` and `Text`, and delete
 it. In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" from="class MyApp" to="/^ }/"?>
+<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^ }/"?>
 ```diff
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
 @@ -10,2 +5,2 @@
  class MyApp extends StatelessWidget {
    @override
-@@ -38,12 +33,7 @@
+@@ -38,11 +33,7 @@
                ],
              ),
            ),
--          /*3*/
 -          Icon(
 -            Icons.star,
 -            color: Colors.red[500],
@@ -257,7 +256,7 @@ it. In the same location, create the stateful widget:
          ],
        ),
      );
-@@ -118,3 +108,3 @@
+@@ -117,3 +108,3 @@
      );
    }
  }
