@@ -392,7 +392,7 @@ You can learn more about cascade notation in the
 [Dart Language Tour.](https://www.dartlang.org/guides/language/language-tour)
 </aside>
 
-###  Simplifying with AnimatedWidget
+###  Simplifying with Animated&shy;Widget
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
@@ -403,9 +403,9 @@ You can learn more about cascade notation in the
     To separate the transition from the widget, use an
     [AnimatedBuilder.](#refactoring-with-animatedbuilder)
   * Examples of AnimatedWidgets in the Flutter API: AnimatedBuilder,
-    AnimatedModalBarrier, DecoratedBoxTransition, FadeTransition,
-    PositionedTransition, RelativePositionedTransition, RotationTransition,
-    ScaleTransition, SizeTransition, SlideTransition.
+    AnimatedModal&shy;Barrier, DecoratedBox&shy;Transition, FadeTransition,
+    Positioned&shy;Transition, Relative&shy;Positioned&shy;Transition,
+    RotationTransition, ScaleTransition, SizeTransition, SlideTransition.
 {{site.alert.end}}
 
 The AnimatedWidget class allows you to separate out the widget code
