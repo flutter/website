@@ -41,16 +41,14 @@ and that you're not using an emulator. For best results, you might
 choose the slowest device that your users might use.
 
 {% comment %}
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* Profile your app on a physical device.
-* Profile your app in [profile mode](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
-* Check performance on the slowest device your users might use.
-* Start by enabling the performance overlay.
-
-</div>
+  * Profile your app on a physical device.
+  * Profile your app in [profile mode](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
+  * Check performance on the slowest device your users might use.
+  * Start by enabling the performance overlay.
+{{site.alert.end}}
 {% endcomment %}
 
 ### Connect to a physical device
@@ -92,33 +90,27 @@ Launch the app in profile mode as follows:
 Not yet available in VS Code.
 {% endcomment %}
 
-<ul markdown="1">
-<li markdown="1">In Android Studio and IntelliJ, use the
-    **Run > Flutter Run main.dart in Profile Mode** menu item.
-</li>
-<li markdown="1">In VS Code, open your `launch.json` file, and set the
-`flutterMode` property to `profile`
-(when done profiling, change it back to `release` or `debug`):
+- In Android Studio and IntelliJ, use the
+  **Run > Flutter Run main.dart in Profile Mode** menu item.
+- In VS Code, open your `launch.json` file, and set the
+  `flutterMode` property to `profile`
+  (when done profiling, change it back to `release` or `debug`):
 
-```
-"configurations": [
-	{
-		"name": "Flutter",
-		"request": "launch",
-		"type": "dart",
-		"flutterMode": "profile"
-	}
-]
-```
-</li>
-<li markdown="1">From the command line, use the `--profile`
-    flag:
+  ```json
+  "configurations": [
+    {
+      "name": "Flutter",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    }
+  ]
+  ```
+- From the command line, use the `--profile` flag:
 
-{% prettify sh %}
-$ flutter run --profile
-{% endprettify %}
-</li>
-</ul>
+  ```terminal
+  $ flutter run --profile
+  ```
 
 For more information on how the different modes work, see [Flutter's
 modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).

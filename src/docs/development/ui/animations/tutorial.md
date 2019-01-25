@@ -53,7 +53,7 @@ state changes or they can use the animations as the basis of more elaborate
 animations that they pass along to other widgets.
 
 <a name="animation-class"></a>
-### Animation&lt;double&gt;
+### Animation<wbr>\<double>
 
 In Flutter, an Animation object knows nothing about what is onscreen.
 An Animation is an abstract class that understands its current value
@@ -75,7 +75,7 @@ in the `.value` member.
 
 An Animation object knows nothing about rendering or `build()` functions.
 
-### CurvedAnimation
+### Curved&shy;Animation
 
 A CurvedAnimation defines the animation's progress as a non-linear curve.
 
@@ -107,7 +107,7 @@ are both of type Animation&lt;double&gt;, so you can pass them interchangeably.
 The CurvedAnimation wraps the object it’s modifying&mdash;you
 don’t subclass AnimationController to implement a curve.
 
-### AnimationController
+### Animation&shy;Controller
 
 AnimationController is a special Animation object that generates a new
 value whenever the hardware is ready for a new frame. By default,
@@ -244,20 +244,18 @@ Each section provides a link to the source code for that example.
 
 ### Rendering animations
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* How to add basic animation to a widget using `addListener()` and
-  `setState()`.
-* Every time the Animation generates a new number, the `addListener()`
-  function calls `setState()`.
-* How to define an AnimatedController with the required `vsync` parameter.
-* Understanding the "`..`" syntax in "`..addListener`", also known as Dart's
-  _cascade notation_.
-* To make a class private, start its name with an underscore (`_`).
-
-</div>
+  * How to add basic animation to a widget using `addListener()` and
+    `setState()`.
+  * Every time the Animation generates a new number, the `addListener()`
+    function calls `setState()`.
+  * How to define an AnimatedController with the required `vsync` parameter.
+  * Understanding the "`..`" syntax in "`..addListener`", also known as Dart's
+    _cascade notation_.
+  * To make a class private, start its name with an underscore (`_`).
+{{site.alert.end}}
 
 So far you've learned how to generate a sequence of numbers over time.
 Nothing has been rendered to the screen. To render with an
@@ -396,21 +394,19 @@ You can learn more about cascade notation in the
 
 ###  Simplifying with AnimatedWidget
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* How to use the AnimatedWidget helper class (instead of `addListener()`
-  and `setState()`) to create a widget that animates.
-* Use AnimatedWidget to create a widget that performs a reusable animation.
-  To separate the transition from the widget, use an
-  [AnimatedBuilder.](#refactoring-with-animatedbuilder)
-* Examples of AnimatedWidgets in the Flutter API: AnimatedBuilder,
-  AnimatedModalBarrier, DecoratedBoxTransition, FadeTransition,
-  PositionedTransition, RelativePositionedTransition, RotationTransition,
-  ScaleTransition, SizeTransition, SlideTransition.
-
-</div>
+  * How to use the AnimatedWidget helper class (instead of `addListener()`
+    and `setState()`) to create a widget that animates.
+  * Use AnimatedWidget to create a widget that performs a reusable animation.
+    To separate the transition from the widget, use an
+    [AnimatedBuilder.](#refactoring-with-animatedbuilder)
+  * Examples of AnimatedWidgets in the Flutter API: AnimatedBuilder,
+    AnimatedModalBarrier, DecoratedBoxTransition, FadeTransition,
+    PositionedTransition, RelativePositionedTransition, RotationTransition,
+    ScaleTransition, SizeTransition, SlideTransition.
+{{site.alert.end}}
 
 The AnimatedWidget class allows you to separate out the widget code
 from the animation code in the `setState()` call. AnimatedWidget
@@ -487,16 +483,14 @@ on GitHub.
 <a name="monitoring"></a>
 ### Monitoring the progress of the animation
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* Use addStatusListener for notifications of changes to the animation's
-  state, such as starting, stopping, or reversing direction.
-* Run an animation in an infinite loop by reversing direction when
-  the animation has either completed or returned to its starting state.
-
-</div>
+  * Use addStatusListener for notifications of changes to the animation's
+    state, such as starting, stopping, or reversing direction.
+  * Run an animation in an infinite loop by reversing direction when
+    the animation has either completed or returned to its starting state.
+{{site.alert.end}}
 
 It’s often helpful to know when an animation changes state,
 such as finishing, moving forward, or reversing.
@@ -566,21 +560,20 @@ on GitHub.
 
 ### Refactoring with AnimatedBuilder
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
+  * An AnimatedBuilder understands how to render the transition.
+  * An AnimatedBuilder doesn't know how to render the widget, nor does it
+    manage the Animation object.
+  * Use AnimatedBuilder to describe an animation as part of a build method
+    for another widget. If you simply want to define a widget with a reusable
+    animation, use [AnimatedWidget.](#simplifying-with-animatedwidget)
+  * Examples of AnimatedBuilders in the Flutter API: BottomSheet, ExpansionTile,
+    PopupMenu, ProgressIndicator, RefreshIndicator, Scaffold, SnackBar, TabBar,
+    TextField.
+{{site.alert.end}}
 
-* An AnimatedBuilder understands how to render the transition.
-* An AnimatedBuilder doesn't know how to render the widget, nor does it
-  manage the Animation object.
-* Use AnimatedBuilder to describe an animation as part of a build method
-  for another widget. If you simply want to define a widget with a reusable
-  animation, use [AnimatedWidget.](#simplifying-with-animatedwidget)
-* Examples of AnimatedBuilders in the Flutter API: BottomSheet, ExpansionTile,
-  PopupMenu, ProgressIndicator, RefreshIndicator, Scaffold, SnackBar, TabBar,
-  TextField.
-
-</div>
 
 One problem with the code in the
 [animate3]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/animate3/main.dart)
@@ -712,15 +705,13 @@ on GitHub.
 
 ### Simultaneous animations
 
-<div class="whats-the-point" markdown="1">
+{{site.alert.secondary}}
+  <h4 class="no_toc">What's the point?</h4>
 
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's the point?</b>
-
-* The [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
-  class defines an array of commonly used curves that you can use with a
-  [CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html).
-
-</div>
+  * The [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
+    class defines an array of commonly used curves that you can use with a
+    [CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html).
+{{site.alert.end}}
 
 In this section, you'll build on the example from [monitoring
 the progress of the animation](#monitoring)

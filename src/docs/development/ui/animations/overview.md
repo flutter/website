@@ -57,7 +57,7 @@ to 1.0 will be `dismissed` when their value is 0.0. An animation might then run
 0.0). Eventually, if the animation reaches the end of its range (e.g., 1.0), the
 animation reaches the `completed` status.
 
-## AnimationController
+## Animation&shy;Controller
 
 To create an animation, first create an
 [`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
