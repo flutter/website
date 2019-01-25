@@ -586,18 +586,18 @@ classes:
 * Define the Animation object
 * Render the transition
 
-You can accomplish this separation with the help of the
-AnimatedBuilder class. An AnimatedBuilder is a separate class in the
-render tree. Like AnimatedWidget, AnimatedBuilder automatically
-listens to notifications from the Animation object, and marks
-the widget tree dirty as necessary, so you don't need to call
+You can accomplish this separation with the help of the AnimatedBuilder class.
+An AnimatedBuilder is a separate class in the render tree. Like AnimatedWidget,
+AnimatedBuilder automatically listens to notifications from the Animation
+object, and marks the widget tree dirty as necessary, so you don't need to call
 `addListener()`.
 
 The widget tree for the
-[animate5]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/animate5/main.dart)
+[animate4]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/animate4/main.dart)
 example looks like this:
 
-{% asset 'ui/AnimatedBuilder-WidgetTree.png' alt="Widget tree" %}
+{% asset 'ui/AnimatedBuilder-WidgetTree.png'
+    alt="AnimatedBuilder widget tree" class="d-block mx-auto" width="160px" %}
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
