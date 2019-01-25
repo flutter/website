@@ -1641,5 +1641,16 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/PageView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverAppBar",
+    "description": "A material design app bar that integrates with a CustomScrollView.",
+    "categories": [
+    ],
+    "subcategories": [
+      "App structure and navigation"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/SliverAppBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VclpfSFpuelBGR1k/components_toolbars.png'>"
   }
 ]
