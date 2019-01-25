@@ -17,7 +17,7 @@ contains a simple demo app that uses [Material Components][].
 ## Run the app
 
  1. Locate the VS Code status bar (the blue bar at the bottom of the
-    window):<br> ![status bar][]{:width="450px"}
+    window):<br> ![status bar][]{:.mw-100}
  1. Select a device from the **Device Selector** area.
     For details, see [Quickly switching between Flutter devices][].
     - If no device is available and you want to use a device simulator,
