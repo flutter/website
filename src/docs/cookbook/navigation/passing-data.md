@@ -95,11 +95,11 @@ class DetailScreen extends StatelessWidget {
     // Use the Todo to create our UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }
@@ -214,11 +214,11 @@ class DetailScreen extends StatelessWidget {
     // Use the Todo to create our UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }
