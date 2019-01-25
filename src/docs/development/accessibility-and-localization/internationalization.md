@@ -1,5 +1,6 @@
 ---
-title: Internationalizing Flutter Apps
+title: Internation&shy;alizing Flutter apps
+short-title: i18n
 ---
 
 {{site.alert.secondary}}
@@ -36,9 +37,9 @@ can also be internationalized using the same classes and logic.
   * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
 </aside>
 
-## Setting up an internationalized app: the flutter_localizations package {#setting-up}
+## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
-By default Flutter only provides US English localizations. To add
+By default, Flutter only provides US English localizations. To add
 support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
 `flutter_localizations`.  As of May 2018, this package supports 24
@@ -168,7 +169,7 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 {% endprettify %}
 
 <a name="using-bundles">
-## Using the bundled LocalizationsDelegates
+## Using the bundled Localizations&shy;Delegates
 
 To keep things as small and uncomplicated as possible, the flutter
 package includes implementations of the MaterialLocalizations and
@@ -266,7 +267,7 @@ source code for classes that contain `Intl.message()` calls.
 In this case that would just be the DemoLocalizations class.
 
 <a name="specifying-supportedlocales"></a>
-## Specifying the app's supportedLocales parameter
+## Specifying the app's supported&shy;Locales parameter
 
 Although Flutter's Material Components library includes support for about 16
 languages, only English language translations are available by default.
@@ -385,35 +386,32 @@ which defines all of the localizable strings used by the app.
 
 Rebuilding `l10n/messages_all.dart` requires two steps.
 
-<ol markdown="1">
-<li markdown="1">With the app's root directory as the current directory, generate
-`l10n/intl_messages.arb` from `lib/main.dart`:
+ 1. With the app's root directory as the current directory, generate
+    `l10n/intl_messages.arb` from `lib/main.dart`:
 
-{% prettify sh %}
-$ flutter packages pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
-{% endprettify %}
+    ```terminal
+    $ flutter packages pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+    ```
 
-The `intl_messages.arb` file is a JSON format map with one entry for
-each `Intl.message()` function defined in `main.dart`. This
-file serves as a template for the English and Spanish translations,
-`intl_en.arb` and `intl_es.arb`. These translations are created by you,
-the developer.
-</li>
+    The `intl_messages.arb` file is a JSON format map with one entry for
+    each `Intl.message()` function defined in `main.dart`. This
+    file serves as a template for the English and Spanish translations,
+    `intl_en.arb` and `intl_es.arb`. These translations are created by you,
+    the developer.
 
-<li markdown="1">With the app's root directory as the current directory, generate
-`intl_messages_<locale>.dart` for each `intl_<locale>.arb` file and
-`intl_messages_all.dart`, which imports all of the messages files:
+ 2. With the app's root directory as the current directory, generate
+    `intl_messages_<locale>.dart` for each `intl_<locale>.arb` file and
+    `intl_messages_all.dart`, which imports all of the messages files:
 
-{% prettify sh %}
-$ flutter packages pub run intl_translation:generate_from_arb --output-dir=lib/l10n \
-   --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
-{% endprettify %}
+    ```terminal
+    $ flutter packages pub run intl_translation:generate_from_arb \
+        --output-dir=lib/l10n --no-use-deferred-loading \
+        lib/main.dart lib/l10n/intl_*.arb
+    ```
 
-The DemoLocalizations class uses the generated `initializeMessages()`
-function (defined in `intl_messages_all.dart`) to load the localized messages
-and `Intl.message()` to look them up.
-</li>
-</ol>
+    The DemoLocalizations class uses the generated `initializeMessages()`
+    function (defined in `intl_messages_all.dart`) to load the localized messages
+    and `Intl.message()` to look them up.
 
 <a name="ios-specifics"></a>
 ### Appendix: Updating the iOS app bundle
