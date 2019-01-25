@@ -35,10 +35,15 @@
 
 - name: Google Groups
   description: >
-    Ask questions and trouble shoot your builds with the support of the Google community.
+    Ask questions and trouble shoot your builds with the support of the Google
+    community. Or sign up for Flutter announcements.
   logo_src: community/logo-google.png
   learn_more_cta: Learn more
-  learn_more_link: https://groups.google.com/forum/#!forum/flutter-dev
+  learn_more_link:
+    - name: flutter-announce
+      url: https://groups.google.com/forum/#!forum/flutter-announce
+    - name: flutter-dev
+      url: https://groups.google.com/forum/#!forum/flutter-dev
 
 - name: "@flutter.io"
   description: >
