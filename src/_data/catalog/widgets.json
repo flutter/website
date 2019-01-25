@@ -846,6 +846,7 @@
     "name": "Transform",
     "description": "A widget that applies a transformation before painting its child.",
     "categories": [
+      "Painting and effects"
     ],
     "subcategories": [
       "Single-child layout widgets"
@@ -878,7 +879,7 @@
   {
     "name": "GridView",
     "description": "A grid list consists of a repeated pattern of cells arrayed in a vertical and horizontal layout. The GridView widget implements this component.",
-    "categories": [      
+    "categories": [
       "Scrolling"
     ],
     "subcategories": [
@@ -1298,17 +1299,6 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/Opacity-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
-  },
-  {
-    "name": "Transform",
-    "description": "A widget that applies a transformation before painting its child.",
-    "categories": [
-      "Painting and effects"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/Transform-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "DecoratedBox",
