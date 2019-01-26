@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
       flex-direction: row;
     }
   }
@@ -27,9 +27,23 @@
       font-size: 10px;
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm) {
       margin: 0 bs-spacer(5);
       flex-grow: 1;
+    }
+  }
+
+  &__link-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      &:not(:last-child):after {
+        content: '\2022'; // &bull;
+        padding-left: bs-spacer(1);
+      }
+      display: inline;
+      padding-right: bs-spacer(1);
     }
   }
 }
