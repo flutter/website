@@ -232,6 +232,8 @@ grey to mimic a Material app.
 
 ## Lay out multiple widgets vertically and horizontally
 
+<?code-excerpt path-base=""?>
+
 One of the most common layout patterns is to arrange widgets vertically
 or horizontally. You can use a Row widget to arrange widgets horizontally,
 and a Column widget to arrange widgets vertically.
@@ -321,26 +323,22 @@ horizontal space evenly between, before, and after each image.
 
 <div class="row">
 <div class="col-lg-8" markdown="1">
-  <?code-excerpt "layout/row/lib/main.dart (body)"?>
+  <?code-excerpt "layout/row_column/lib/main.dart (Row)" replace="/Row/[!$&!]/g"?>
   ```dart
-  body: Center(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Image.asset('images/pic1.jpg'),
-        Image.asset('images/pic2.jpg'),
-        Image.asset('images/pic3.jpg'),
-      ],
-    ),
-  ),
+  [!Row!](
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Image.asset('images/pic1.jpg'),
+      Image.asset('images/pic2.jpg'),
+      Image.asset('images/pic3.jpg'),
+    ],
+  );
   ```
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **Dart code:** [main.dart]({{examples}}/layout/row/lib/main.dart)<br>
-  **Images:** [images]({{examples}}/layout/row/images)<br>
-  **Pubspec:** [pubspec.yaml]({{examples}}/layout/row/pubspec.yaml)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 </div>
 
@@ -352,11 +350,19 @@ space evenly between, above, and below each image.
 
 <div class="row">
 <div class="col-lg-8" markdown="1">
-  {% include includelines filename="code/layout/column/main.dart" start=40 count=8 %}
+  <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
+  ```dart
+  [!Column!](
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      Image.asset('images/pic1.jpg'),
+      Image.asset('images/pic2.jpg'),
+      Image.asset('images/pic3.jpg'),
+    ],
+  );
+  ```
 
-  **Dart code:** [main.dart]({{code}}/layout/column/main.dart)<br>
-  **Images:** [images]({{code}}/layout/column/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/column/pubspec.yaml)
+  **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 <div class="col-lg-4 text-center">
   {% asset ui/layout/column-visual.png class="mb-4" height="250px"
