@@ -251,11 +251,9 @@ and a Column widget to arrange widgets vertically.
 {{site.alert.end}}
 
 To create a row or column in Flutter, you add a list of children widgets to a
-[Row]({{api}}/widgets/Row-class.html) or
-[Column]({{api}}/widgets/Column-class.html) widget.
-In turn, each child can itself be a row or column, and so on.
-The following example shows how it is possible to nest rows or columns inside
-of rows or columns.
+[Row][] or [Column][] widget. In turn, each child can itself be a row or column,
+and so on. The following example shows how it is possible to nest rows or
+columns inside of rows or columns.
 
 This layout is organized as a Row. The row contains two children:
 a column on the left, and an image on the right:
@@ -370,64 +368,82 @@ space evenly between, above, and below each image.
 </div>
 </div>
 
-{{site.alert.note}}
-  When a layout is too large to fit the device, a red strip appears along the
-  affected edge. For example, the row in the following screenshot is too
-  wide for the device's screen:
-
-  {% asset ui/layout/layout-too-large.png class="mb-4 mw-100" alt="Overly-wide image" %}
-  {:.text-center}
-
-  Widgets can be sized to fit within a row or column by using an Expanded widget,
-  which is described in the [Sizing widgets](#sizing-widgets) section below.
-{{site.alert.end}}
-
 ### Sizing widgets
 
-Perhaps you want a widget to occupy twice as much space as its siblings.
-You can place the child of a row or column in an
-[Expanded]({{api}}/widgets/Expanded-class.html)
-widget to control widget sizing along the main axis.
-The Expanded widget has a `flex` property, an integer that determines
-the flex factor for a widget. The default flex factor for an Expanded
-widget is 1.
+When a layout is too large to fit a device, a yellow and black striped pattern
+appears along the affected edge. Here is an [example][sizing] of a row that is
+too wide:
 
-For example, to create a row of three widgets where the middle widget is twice
-as wide as the other two widgets, set the flex factor on the middle widget to 2:
+{% asset ui/layout/layout-too-large.png class="mw-100" alt="Overly-wide row" %}
+{:.text-center}
 
-<div class="row">
-<div class="col-lg-8">
-  {% include includelines filename="code/layout/row-expanded/main.dart" start=40 count=15 %}
-</div>
-<div class="col-lg-4" markdown="1">
-  {% asset ui/layout/row-expanded-visual.png class="mw-100"
-      alt="Row of 3 images with the middle image twice as wide as the others" %}
-
-  **Dart code:** [main.dart]({{code}}/layout/row-expanded/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row-expanded/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded/pubspec.yaml)
-</div>
-</div>
-
-To fix the example in the previous section where the row of 3 images was
-too wide for its render box, and resulted in the red strip,
-wrap each widget with an Expanded widget.
-By default, each widget has a flex factor of 1, assigning one-third of
-the row to each widget.
+Widgets can be sized to fit within a row or column by using the [Expanded][]
+widget. To fix the previous example where the row of images is too wide for its
+render box, wrap each image with an `Expanded` widget.
 
 <div class="row">
 <div class="col-lg-8">
-  {% include includelines filename="code/layout/row-expanded-2/main.dart" start=40 count=14 %}
+  <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
+  ```dart
+  Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      [!Expanded!](
+        child: Image.asset('images/pic1.jpg'),
+      ),
+      [!Expanded!](
+        child: Image.asset('images/pic2.jpg'),
+      ),
+      [!Expanded!](
+        child: Image.asset('images/pic3.jpg'),
+      ),
+    ],
+  );
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-expanded-2-visual.png class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/row-expanded-2/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row-expanded-2/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row-expanded-2/pubspec.yaml)
+  **App source:** [sizing]({{examples}}/layout/sizing)
 </div>
 </div>
+
+Perhaps you want a widget to occupy twice as much space as its siblings. For
+this, use the `Expanded` widget `flex` property, an integer that determines the
+flex factor for a widget. The default flex factor is 1. The following code sets
+the flex factor of the middle image to 2:
+
+<div class="row">
+<div class="col-lg-8">
+  <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
+  ```dart
+  Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Expanded(
+        child: Image.asset('images/pic1.jpg'),
+      ),
+      Expanded(
+        [!flex: 2,!]
+        child: Image.asset('images/pic2.jpg'),
+      ),
+      Expanded(
+        child: Image.asset('images/pic3.jpg'),
+      ),
+    ],
+  );
+  ```
+</div>
+<div class="col-lg-4" markdown="1">
+  {% asset ui/layout/row-expanded-visual.png class="mw-100"
+      alt="Row of 3 images with the middle image twice as wide as the others" %}
+
+  **App source:** [sizing]({{examples}}/layout/sizing)
+</div>
+</div>
+
+[sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
 
@@ -1250,7 +1266,9 @@ The following resources may help when writing layout code.
 
 [build()]: {{api}}/widgets/StatelessWidget/build.html
 [Center]: {{api}}/widgets/Center-class.html
+[Column]: {{api}}/widgets/Column-class.html
 [Container]: {{api}}/widgets/Container-class.html
+[Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [Icon]: {{api}}/material/Icons-class.html
 [Image]: {{api}}/widgets/Image-class.html
