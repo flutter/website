@@ -142,7 +142,7 @@ class FavoriteWidget extends StatefulWidget {
   tour.][]
 
   [Dart language tour.]: https://www.dartlang.org/guides/language/language-tour
-  [Libraries and visibility,]: https://www.dartlang.org/guides/language/language-tour#libraries-and-visibility)
+  [Libraries and visibility,]: https://www.dartlang.org/guides/language/language-tour#libraries-and-visibility
 {{site.alert.end}}
 
 <a name="step-3"></a>
