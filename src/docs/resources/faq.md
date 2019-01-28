@@ -415,9 +415,9 @@ well as with Android emulators and the iOS simulator.
 We test on a variety of low-end to high-end phones
 but we don't yet have an official device compatibility guarantee.
 
-We do not test on tablets, so there may be issues with some
-widgets on tablets. We have not implemented tablet-specific
-adaptations in our widgets.
+We believe Flutter works well on tablets. We do not currently implement
+all of the tablet-specific adaptations recommended by Material Design,
+though we are planning further investment in this area.
 
 ### Does Flutter run on the web?
 
