@@ -21,6 +21,7 @@ https://now.qq.com
 
 https://codelabs.developers.google.com/codelabs/flutter/\#6
 https://groups.google.com/forum/\#!forum/flutter-dev
+https://groups.google.com/forum/\#!forum/flutter-announce
 https://guides.cocoapods.org/syntax/podspec.html\#dependency
 https://help.apple.com/.*?/\#/dev
 https://pub.dartlang.org/packages/.*?\#-.*?-tab-$
