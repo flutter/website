@@ -308,7 +308,7 @@ classes offer a variety of constants for controlling alignment.
   you need to update the pubspec file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
-  file]({{code}}/layout/row/pubspec.yaml),
+  file]({{examples}}/layout/row/pubspec.yaml),
   or [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
   You don't need to do this if you're referencing online images using
   `Image.network`.
@@ -320,15 +320,27 @@ so setting the main axis alignment to `spaceEvenly` divides the free
 horizontal space evenly between, before, and after each image.
 
 <div class="row">
-<div class="col-lg-8">
-  {% include includelines filename="code/layout/row/main.dart" start=40 count=8 %}
+<div class="col-lg-8" markdown="1">
+  <?code-excerpt "layout/row/lib/main.dart (body)"?>
+  ```dart
+  body: Center(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Image.asset('images/pic1.jpg'),
+        Image.asset('images/pic2.jpg'),
+        Image.asset('images/pic3.jpg'),
+      ],
+    ),
+  ),
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/row-spaceevenly-visual.png class="mw-100" alt="Row with 3 evenly spaced images" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/row/main.dart)<br>
-  **Images:** [images]({{code}}/layout/row/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/row/pubspec.yaml)
+  **Dart code:** [main.dart]({{examples}}/layout/row/lib/main.dart)<br>
+  **Images:** [images]({{examples}}/layout/row/images)<br>
+  **Pubspec:** [pubspec.yaml]({{examples}}/layout/row/pubspec.yaml)
 </div>
 </div>
 

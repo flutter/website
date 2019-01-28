@@ -15,5 +15,6 @@ void main() {
     await tester.pumpWidget(MyApp());
 
     expect(find.text('Flutter layout demo'), findsOneWidget);
+    // TODO: test more app features.
   });
 }

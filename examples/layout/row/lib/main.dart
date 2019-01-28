@@ -6,42 +6,27 @@ void main() {
   runApp(MyApp());
 }
 
-// #docregion MyApp
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter layout demo',
-      home: MyHomePage(title: 'Flutter layout demo'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset('images/pic1.jpg'),
-            Image.asset('images/pic2.jpg'),
-            Image.asset('images/pic3.jpg'),
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter layout demo'),
         ),
+        // #docregion body
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.asset('images/pic1.jpg'),
+              Image.asset('images/pic2.jpg'),
+              Image.asset('images/pic3.jpg'),
+            ],
+          ),
+        ),
+        // #enddocregion body
       ),
     );
   }
