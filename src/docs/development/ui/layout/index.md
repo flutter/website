@@ -454,34 +454,25 @@ uses this property to pack the star icons together.
 
 <div class="row">
 <div class="col-lg-8">
-  <!-- code/layout/packed/main.dart -->
-  <!-- skip -->
-  {% prettify dart %}
-  class _MyHomePageState extends State<MyHomePage> {
-    @override
-    Widget build(BuildContext context) {
-      var packedRow = Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.green[500]),
-          Icon(Icons.star, color: Colors.black),
-          Icon(Icons.star, color: Colors.black),
-        ],
-      );
-
-    // ...
-  }
-  {% endprettify %}
+  <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
+  ```dart
+  Row(
+    [!mainAxisSize: MainAxisSize.min,!]
+    children: [
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.green[500]),
+      Icon(Icons.star, color: Colors.black),
+      Icon(Icons.star, color: Colors.black),
+    ],
+  )
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   {% asset ui/layout/packed.png class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row" %}
 
-  **Dart code:** [main.dart]({{code}}/layout/packed/main.dart)<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/packed/pubspec.yaml)
+  **App source:** [pavlova]({{examples}}/layout/pavlova)
 </div>
 </div>
 
@@ -507,46 +498,39 @@ The widget tree for the ratings row:
 The `ratings` variable creates a row containing a smaller row of 5 star icons,
 and text:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    //...
+<?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
+```dart
+var stars = Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.green[500]),
+    Icon(Icons.star, color: Colors.black),
+    Icon(Icons.star, color: Colors.black),
+  ],
+);
 
-    var ratings = Container(
-      padding: EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-              Icon(Icons.star, color: Colors.black),
-            ],
-          ),
-          Text(
-            '170 Reviews',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Roboto',
-              letterSpacing: 0.5,
-              fontSize: 20.0,
-            ),
-          ),
-        ],
+final [!ratings!] = Container(
+  padding: EdgeInsets.all(20),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      stars,
+      Text(
+        '170 Reviews',
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w800,
+          fontFamily: 'Roboto',
+          letterSpacing: 0.5,
+          fontSize: 20,
+        ),
       ),
-    );
-    //...
-  }
-}
-{% endprettify %}
+    ],
+  ),
+);
+```
 
 {{site.alert.tip}}
   To minimize the visual confusion that can result from heavily nested layout
@@ -561,115 +545,94 @@ an icon and two lines of text, as you can see in its widget tree:
 
 The `iconList` variable defines the icons row:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    // ...
+<?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
+```dart
+final descTextStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w800,
+  fontFamily: 'Roboto',
+  letterSpacing: 0.5,
+  fontSize: 18,
+  height: 2,
+);
 
-    var descTextStyle = TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 18.0,
-      height: 2.0,
-    );
-
-    // DefaultTextStyle.merge allows you to create a default text
-    // style that is inherited by its child and all subsequent children.
-    var iconList = DefaultTextStyle.merge(
-      style: descTextStyle,
-      child: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+// DefaultTextStyle.merge() allows you to create a default text
+// style that is inherited by its child and all subsequent children.
+final [!iconList!] = DefaultTextStyle.merge(
+  style: descTextStyle,
+  child: Container(
+    padding: EdgeInsets.all(20),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
           children: [
-            Column(
-              children: [
-                Icon(Icons.kitchen, color: Colors.green[500]),
-                Text('PREP:'),
-                Text('25 min'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.timer, color: Colors.green[500]),
-                Text('COOK:'),
-                Text('1 hr'),
-              ],
-            ),
-            Column(
-              children: [
-                Icon(Icons.restaurant, color: Colors.green[500]),
-                Text('FEEDS:'),
-                Text('4-6'),
-              ],
-            ),
+            Icon(Icons.kitchen, color: Colors.green[500]),
+            Text('PREP:'),
+            Text('25 min'),
           ],
         ),
-      ),
-    );
-    // ...
-  }
-}
-{% endprettify %}
+        Column(
+          children: [
+            Icon(Icons.timer, color: Colors.green[500]),
+            Text('COOK:'),
+            Text('1 hr'),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(Icons.restaurant, color: Colors.green[500]),
+            Text('FEEDS:'),
+            Text('4-6'),
+          ],
+        ),
+      ],
+    ),
+  ),
+);
+```
 
-The `leftColumn` variable contains the ratings and icons rows, as well as
-the title and text that describes the Pavlova:
+The `leftColumn` variable contains the ratings and icons rows, as well as the
+title and text that describes the Pavlova:
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    //...
+<?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
+```dart
+final [!leftColumn!] = Container(
+  padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+  child: Column(
+    children: [
+      titleText,
+      subTitle,
+      ratings,
+      iconList,
+    ],
+  ),
+);
+```
 
-    var leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 20.0),
-      child: Column(
-        children: [
-          titleText,
-          subTitle,
-          ratings,
-          iconList,
-        ],
-      ),
-    );
-    //...
-  }
-}
-{% endprettify %}
-
-The left column is placed in a Container to constrain its width.
+The left column is placed in a `Container` to constrain its width.
 Finally, the UI is constructed with the entire row (containing the
-left column and the image) inside a Card.
+left column and the image) inside a `Card`.
 
-The Pavlova image is from
-[Pixabay](https://pixabay.com/en/photos/?q=pavlova&image_type=&cat=&min_width=&min_height=)
-and is available under the Creative Commons license.
-You can embed an image from the net using `Image.network` but,
+The [Pavlova image][] is from [Pixabay][].
+You can embed an image from the net using `Image.network()` but,
 for this example, the image is saved to an images directory in the project,
-added to the [pubspec file,]({{code}}/layout/pavlova/pubspec.yaml)
-and accessed using `Images.asset`. For more information, see
-[Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
+added to the [pubspec file,]({{examples}}/layout/pavlova/pubspec.yaml)
+and accessed using `Images.asset()`. For more information, see
+[Adding assets and images](/docs/development/ui/assets-and-images).
 
-<!-- code/layout/pavlova/main.dart -->
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
+```dart
 body: Center(
   child: Container(
-    margin: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 30.0),
-    height: 600.0,
+    margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+    height: 600,
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 440.0,
+            width: 440,
             child: leftColumn,
           ),
           mainImage,
@@ -678,25 +641,21 @@ body: Center(
     ),
   ),
 ),
-{% endprettify %}
+```
 
-<div class="row">
-<div class="col-lg-3" markdown="1">
-  **Dart code:** [main.dart]({{code}}/layout/pavlova/main.dart)<br>
-  **Images:** [images]({{code}}/layout/pavlova/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/pavlova/pubspec.yaml)
-</div>
-<div class="col-lg-9" markdown="1">
-  {{site.alert.tip}}
-    The Pavlova example runs best horizontally on a wide device, such as a tablet.
-    If you are running this example in the iOS simulator, you can select a
-    different device using the **Hardware > Device** menu. For this example, we
-    recommend the iPad Pro. You can change its orientation to landscape mode using
-    **Hardware > Rotate**. You can also change the size of the simulator window
-    (without changing the number of logical pixels) using **Window > Scale**.
-  {{site.alert.end}}
-</div>
-</div>
+{{site.alert.tip}}
+  The Pavlova example runs best horizontally on a wide device, such as a tablet.
+  If you are running this example in the iOS simulator, you can select a
+  different device using the **Hardware > Device** menu. For this example, we
+  recommend the iPad Pro. You can change its orientation to landscape mode using
+  **Hardware > Rotate**. You can also change the size of the simulator window
+  (without changing the number of logical pixels) using **Window > Scale**.
+{{site.alert.end}}
+
+**App source:** [pavlova]({{examples}}/layout/pavlova)
+
+[Pavlova image]: https://pixabay.com/en/photos/pavlova
+[Pixabay]: https://pixabay.com/en/photos/pavlova
 
 <hr>
 
