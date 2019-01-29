@@ -15,11 +15,10 @@ void main() {
     };
 
     await tester.pumpWidget(new MyApp());
-    expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
-    expect(find.text('ROUTE'), findsOneWidget);
-    // FIXME: the following fails
-    // expect(find.text('Oeschinen'), findsOneWidget);
+    expect(find.text('Strawberry Pavlova Recipe'), findsOneWidget);
+    // TODO: test more app features.
 
-    expect(exceptions, ['A RenderFlex overflowed by 16 pixels on the bottom.']);
+    expect(
+        exceptions, ['A RenderFlex overflowed by 209 pixels on the bottom.']);
   });
 }
