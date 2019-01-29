@@ -2,16 +2,16 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:layout/main.dart';
 
 void main() {
-  testWidgets('Codelab smoke test', (WidgetTester tester) async {
+  testWidgets('Example app smoke test', (WidgetTester tester) async {
     // A FlutterError shouldn't normally occur during a smoke test, but it
     // is expected for this not-quite-finished app.
     var exceptions = [];
     FlutterError.onError = (FlutterErrorDetails details) async {
       exceptions.add(details.exception);
+      // print('FlutterError.onError: $details'); // Uncomment for error details
     };
 
     await tester.pumpWidget(new MyApp());

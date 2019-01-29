@@ -2,11 +2,10 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-
 import 'package:interactive/main.dart';
 
 void main() {
-  testWidgets('Codelab smoke test', (WidgetTester tester) async {
+  testWidgets('Example app smoke test', (WidgetTester tester) async {
     await tester.pumpWidget(new MyApp());
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);

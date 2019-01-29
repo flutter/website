@@ -1,20 +1,24 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// Basic Flutter widget test. Learn more at https://flutter.io/docs/testing.
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:layout/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  testWidgets('Example app smoke test', (WidgetTester tester) async {
+    // A FlutterError shouldn't normally occur during a smoke test, but it
+    // is expected for this not-quite-finished app.
+    var exceptions = [];
+    FlutterError.onError = (FlutterErrorDetails details) async {
+      exceptions.add(details.exception);
+      // print('FlutterError.onError: $details'); // Uncomment for error details
+    };
 
+    await tester.pumpWidget(new MyApp());
     expect(find.text('Strawberry Pavlova Recipe'), findsOneWidget);
     // TODO: test more app features.
+
+    expect(
+        exceptions, ['A RenderFlex overflowed by 209 pixels on the bottom.']);
   });
 }
