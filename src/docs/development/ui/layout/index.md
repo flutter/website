@@ -664,17 +664,15 @@ body: Center(
 Flutter has a rich library of layout widgets. Here are a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget Overview](/docs/development/ui/widgets),
-or use the Search box in the [API reference docs](https://docs.flutter.io/).
+available widgets, refer to the [Widget catalog][],
+or use the Search box in the [API reference docs](https://docs.flutter.io).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
 The following widgets fall into two categories: standard widgets from the
-[widgets library,]({{api}}/widgets/widgets-library.html)
-and specialized widgets from the
-[Material Components library]({{api}}/material/material-library.html).
-Any app can use the widgets library but only Material apps can use the
-Material Components library.
+[widgets library][], and specialized widgets from the [Material library][]. Any
+app can use the widgets library but only Material apps can use the Material
+Components library.
 
 ### Standard widgets
 
@@ -684,7 +682,7 @@ Material Components library.
 * [ListView](#listview): Lays widgets out as a scrollable list.
 * [Stack](#stack): Overlaps a widget on top of another.
 
-### Material Components
+### Material widgets
 
 * [Card](#card): Organizes related info into a box with rounded corners and a
   drop shadow.
@@ -693,9 +691,9 @@ Material Components library.
 
 ### Container
 
-Many layouts make liberal use of Containers to separate widgets with padding,
+Many layouts make liberal use of [Container][]s to separate widgets using padding,
 or to add borders or margins. You can change the device's background by
-placing the entire layout into a Container and changing its background color
+placing the entire layout into a `Container` and changing its background color
 or image.
 
 <div class="row">
@@ -717,77 +715,60 @@ or image.
 #### Examples (Container)
 {:.no_toc}
 
-In addition to the example below,
-many examples in this tutorial use Container. You can also find more
-Container examples in the [Flutter
-Gallery][].
+This layout consists of a column with two rows, each containing 2 images. A
+[Container][] is used to change the background color of the column to a lighter
+grey.
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
-  This layout consists of a column of two rows, each containing 2 images.
-  Each image uses a Container to add a rounded grey border and margins.
-  The Column, which contains the rows of images,
-  uses a Container to change the background color to a lighter grey.
-
-  **Dart code:** [main.dart]({{code}}/layout/container/main.dart), snippet below<br>
-  **Images:** [images]({{code}}/layout/container/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/container/pubspec.yaml)
+<div class="col-lg-7" markdown="1">
+  <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
+  ```dart
+  Widget _buildImageColumn() => [!Container!](
+        decoration: BoxDecoration(
+          color: Colors.black26,
+        ),
+        child: Column(
+          children: [
+            _buildImageRow(1),
+            _buildImageRow(3),
+          ],
+        ),
+      );
+  ```
 </div>
-<div class="col-lg-6 text-center">
+<div class="col-lg-5 text-center">
   {% asset ui/layout/container.png class="mb-4 mw-100" width="230px"
       alt="Screenshot showing 2 rows, each containing 2 images" %}
 </div>
 </div>
 
-<!-- code/layout/container/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
+A `Container` is also used to add a rounded border and margins to each image:
 
-    var container = Container(
-      decoration: BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius:
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic1.jpg'),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 10.0, color: Colors.black38),
-                    borderRadius:
-                        const BorderRadius.all(const Radius.circular(8.0)),
-                  ),
-                  margin: const EdgeInsets.all(4.0),
-                  child: Image.asset('images/pic2.jpg'),
-                ),
-              ),
-            ],
-          ),
-          // ...
-          // [[highlight]]See the definition for the second row on GitHub:[[/highlight]]
-          // [[highlight]]{{code}}/layout/container/main.dart[[/highlight]]
-        ],
+<?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
+```dart
+Widget _buildDecoratedImage(int imageIndex) => Expanded(
+      child: [!Container!](
+        decoration: BoxDecoration(
+          border: Border.all(width: 10, color: Colors.black38),
+          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+        ),
+        margin: const EdgeInsets.all(4),
+        child: Image.asset('images/pic$imageIndex.jpg'),
       ),
     );
-    //...
-  }
-}
-{% endprettify %}
+
+Widget _buildImageRow(int imageIndex) => Row(
+      children: [
+        _buildDecoratedImage(imageIndex),
+        _buildDecoratedImage(imageIndex + 1),
+      ],
+    );
+```
+
+You can find more `Container` examples in the [tutorial][] and the [Flutter
+Gallery][].
+
+**App source:** [container]({{examples}}/layout/container)
 
 <hr>
 
@@ -1237,4 +1218,6 @@ The following resources may help when writing layout code.
 [Row]: {{api}}/widgets/Row-class.html
 [Scaffold]: {{api}}/material/Scaffold-class.html
 [Text]: {{api}}/widgets/Text-class.html
+[tutorial]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
+[Widget catalog]: /docs/development/ui/widgets
