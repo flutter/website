@@ -774,11 +774,10 @@ Gallery][].
 
 ### GridView
 
-Use [GridView]({{api}}/widgets/GridView-class.html)
-to lay widgets out as a two-dimensional list. GridView provides two
-pre-fabricated lists, or you can build your own custom grid.
-When a GridView detects that its contents are too long to fit the render box,
-it automatically scrolls.
+Use [GridView][] to lay widgets out as a two-dimensional list. `GridView`
+provides two pre-fabricated lists, or you can build your own custom grid. When a
+`GridView` detects that its contents are too long to fit the render box, it
+automatically scrolls.
 
 #### Summary (GridView)
 {:.no_toc}
@@ -812,9 +811,7 @@ it automatically scrolls.
 
   Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
 
-  **Dart code:** [main.dart]({{code}}/layout/grid/main.dart), snippet below<br>
-  **Images:** [images]({{code}}/layout/grid/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/grid/pubspec.yaml)
+  **App source:** [container]({{examples}}/layout/container)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/gridview-count-flutter-gallery.png class="mw-100"
@@ -823,51 +820,28 @@ it automatically scrolls.
 
   Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
   and 3 tiles wide in landscape mode. The titles are created by setting the
-  `footer` property for each GridTile.
+  `footer` property for each [GridTile][].
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
 
-<!-- code/layout/grid/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-// The images are saved with names pic1.jpg, pic2.jpg...pic30.jpg.
-// The List.generate constructor allows an easy way to create
+<?code-excerpt "layout/grid/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
+```dart
+Widget _buildGrid() => [!GridView!].extent(
+    maxCrossAxisExtent: 150,
+    padding: const EdgeInsets.all(4),
+    mainAxisSpacing: 4,
+    crossAxisSpacing: 4,
+    children: _buildGridTileList(30));
+
+// The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
+// The List.generate() constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-List<Container> _buildGridTileList(int count) {
-
-  return List<Container>.generate(
-      count,
-      (int index) =>
-          Container(child: Image.asset('images/pic${index+1}.jpg')));
-}
-
-Widget buildGrid() {
-  return GridView.extent(
-      maxCrossAxisExtent: 150.0,
-      padding: const EdgeInsets.all(4.0),
-      mainAxisSpacing: 4.0,
-      crossAxisSpacing: 4.0,
-      children: _buildGridTileList(30));
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: buildGrid(),
-      ),
-    );
-  }
-}
-{% endprettify %}
-
+List<Container> _buildGridTileList(int count) => List.generate(
+    count, (i) => Container(child: Image.asset('images/pic$i.jpg')));
+```
 
 <hr>
 
@@ -1210,6 +1184,8 @@ The following resources may help when writing layout code.
 [Container]: {{api}}/widgets/Container-class.html
 [Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
+[GridView]: {{api}}/widgets/GridView-class.html
+[GridTile]: {{api}}/material/GridTile-class.html
 [Icon]: {{api}}/material/Icons-class.html
 [Image]: {{api}}/widgets/Image-class.html
 [layout widgets]: /docs/development/ui/widgets/layout
