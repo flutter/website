@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(LogoApp());
 
-// #docregion AnimatedLogo
 class AnimatedLogo extends AnimatedWidget {
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
@@ -20,12 +19,12 @@ class AnimatedLogo extends AnimatedWidget {
     );
   }
 }
-// #enddocregion AnimatedLogo
 
 class LogoApp extends StatefulWidget {
   _LogoAppState createState() => _LogoAppState();
 }
 
+// #docregion print-state
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController controller;
@@ -35,9 +34,20 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     super.initState();
     controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
+    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
+      // #enddocregion print-state
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          controller.forward();
+        }
+      })
+      // #docregion print-state
+      ..addStatusListener((state) => print('$state'));
     controller.forward();
   }
+  // #enddocregion print-state
 
   @override
   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
@@ -47,4 +57,5 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+  // #docregion print-state
 }

@@ -416,7 +416,6 @@ class AnimatedLogo extends AnimatedWidget {
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
 
-
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return Center(
@@ -441,13 +440,31 @@ passes the `Animation` object to `AnimatedLogo`:
 ```diff
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
-@@ -10,34 +28,20 @@
- class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-   Animation<double> animation;
-   AnimationController controller;
+@@ -3,6 +3,23 @@
 
-   @override
-   void initState() {
+ void main() => runApp(LogoApp());
+
++class AnimatedLogo extends AnimatedWidget {
++  AnimatedLogo({Key key, Animation<double> animation})
++      : super(key: key, listenable: animation);
++
++  Widget build(BuildContext context) {
++    final Animation<double> animation = listenable;
++    return Center(
++      child: Container(
++        margin: EdgeInsets.symmetric(vertical: 10),
++        height: animation.value,
++        width: animation.value,
++        child: FlutterLogo(),
++      ),
++    );
++  }
++}
++
+ class LogoApp extends StatefulWidget {
+   _LogoAppState createState() => _LogoAppState();
+ }
+@@ -16,26 +33,12 @@
      super.initState();
      controller = AnimationController(
          duration: const Duration(milliseconds: 2000), vsync: this);
@@ -476,8 +493,6 @@ passes the `Animation` object to `AnimatedLogo`:
 
    @override
    void dispose() {
-     controller.dispose();
-     super.dispose();
 ```
 
 **App source:** [animate2]({{example}}/animation/animate2)
@@ -500,62 +515,58 @@ moving forward, or reversing. You can get notifications for this with
 it listens for a state change and prints an update. The highlighted line shows
 the change:
 
-<?code-excerpt "animate{2,3}/lib/main.dart" from="class _LogoAppState"?>
-```diff
-```
-
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate3/lib/main.dart (print state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
+```dart
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
   Animation<double> animation;
+  AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
     controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     animation = Tween(begin: 0.0, end: 300.0).animate(controller)
-      [[highlight]]..addStatusListener((state) => print("$state"));[[/highlight]]
+      [!..addStatusListener((state) => print('$state'));!]
     controller.forward();
   }
-  //...
+  // ...
 }
-{% endprettify %}
+```
 
-Running this code produces lines like the following:
+Running this code produces this output:
 
-```nocode
+```console
 AnimationStatus.forward
 AnimationStatus.completed
 ```
 
-Next, use `addStatusListener()` to reverse the animation at the
-beginning or the end. This creates a "breathing" effect:
+Next, use `addStatusListener()` to reverse the animation at the beginning or the
+end. This creates a "breathing" effect:
 
-<!-- skip -->
-{% prettify dart %}
-class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
 
-  initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
-    controller.forward();
-  }
-  //...
-}
-{% endprettify %}
+<?code-excerpt "animate{2,3}/lib/main.dart" to="/^   }/" diff-u="4"?>
+```diff
+--- animate2/lib/main.dart
++++ animate3/lib/main.dart
+@@ -32,7 +32,15 @@
+   void initState() {
+     super.initState();
+     controller = AnimationController(
+         duration: const Duration(milliseconds: 2000), vsync: this);
+-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
++    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
++      ..addStatusListener((status) {
++        if (status == AnimationStatus.completed) {
++          controller.reverse();
++        } else if (status == AnimationStatus.dismissed) {
++          controller.forward();
++        }
++      })
++      ..addStatusListener((state) => print('$state'));
+     controller.forward();
+   }
+```
 
 **App source:** [animate3]({{example}}/animation/animate3)
 
