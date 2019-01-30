@@ -4,25 +4,23 @@ short-title: Animations
 description: How to perform animations in Flutter
 ---
 
-Well-designed animations makes a UI feel more intuitive,
-contribute to the slick look and feel of a polished app,
-and improve the user experience. Flutter's animation support
-makes it easy to implement a variety of animation types.
-Many widgets, especially
-[Material Design widgets](/docs/development/ui/widgets/material),
-come with the standard motion effects defined in their design spec,
-but it's also possible to customize these effects.
+Well-designed animations makes a UI feel more intuitive, contribute to the slick
+look and feel of a polished app, and improve the user experience. Flutter's
+animation support makes it easy to implement a variety of animation types. Many
+widgets, especially [Material widgets][], come with the standard motion effects
+defined in their design spec, but it's also possible to customize these effects.
 
-The following resources are a good place to start learning the Flutter
-animation framework. Each of these documents shows, step by step, how
-to write animation code.
+The following resources are a good place to start learning the Flutter animation
+framework. Each of these documents shows, step by step, how to write animation
+code.
+
 {% comment %}
 More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
 If you have a specific request, please
 [file an issue](https://github.com/flutter/website/issues).
-{% endcomment %}
+{% endcomment -%}
 
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package
@@ -111,7 +109,7 @@ How to create two styles of Hero animations:
   * The hero's boundary changes shape, from a circle to a square,
     as its flies from one page to another.
 
-* [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+* [Flutter Gallery][]<br>
 You can build the Gallery app yourself, or download it from the Play Store.
 The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
 demo includes an example of a Hero animation.
@@ -129,9 +127,10 @@ The smaller animations may be sequential, or may partially or completely overlap
 
 * [Staggered Animations](/docs/development/ui/animations/staggered-animations)
 
-<!-- Save so I can remember how to add it back later.
-<img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
--->
+{% comment %}
+  Save so I can remember how to add it back later.
+  <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+{% endcomment -%}
 
 ## Other resources
 
@@ -155,8 +154,10 @@ The animation API for the Flutter framework.
 
 <hr>
 
-If there is specific animation documentation you'd like to see, please
+If there is specific animation documentation you'd like to see,
 [file an issue](https://github.com/flutter/website/issues).
 
 [AnimationController.animateWith]: https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html
+[Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
+[Material widgets]: /docs/development/ui/widgets/material
 [SpringSimulation]: https://docs.flutter.io/flutter/physics/SpringSimulation-class.html
