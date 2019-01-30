@@ -250,6 +250,29 @@ your debugging session:
 session) or Debug button (if in a debug session), or shift-click the 'hot
 reload' button.
 
+## Editing Android code in Android Studio with full IDE support {#android-ide}
+
+Opening the root directory of a Flutter project doesn't expose all the Android
+files to the IDE. Flutter apps contain a subdirectory named `android`. If you
+open this subdirectory as its own separate project in Android Studio, the IDE
+will be able to fully support editing all Android files (like Gradle scripts).
+
+To open the Android files for full editing:
+
+1. Click "Open an existing Android Studio Project" on the Welcome splash screen
+   or `File > Open` if Android Studio is already open.
+2. Open the `android` subdirectory immediately under the flutter app root. For
+   example if the project is called `flutter_app`, open `flutter_app/android`.
+
+It's fine to have both projects open at the same time. Android Studio gives you
+the option to use separate windows or to replace the existing window with the
+new project when opening a second project.
+
+If you haven't run your Flutter app yet you may see Android Studio report a
+build error when you open the `android` project. Run `flutter packages get` in
+the app's root directory and rebuild the project by selecting `Build > Make` to
+fix it.
+
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
