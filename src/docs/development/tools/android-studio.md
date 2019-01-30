@@ -255,18 +255,35 @@ reload' button.
 Opening the root directory of a Flutter project doesn't expose all the Android
 files to the IDE. Flutter apps contain a subdirectory named `android`. If you
 open this subdirectory as its own separate project in Android Studio, the IDE
-will be able to fully support editing all Android files (like Gradle scripts).
+will be able to fully support editing and refactoring all Android files (like
+Gradle scripts).
 
-To open the Android files for full editing:
+If you already have the entire project opened as a Flutter app in Android
+Studio, there's two equivalent ways to open the Android files on their own for
+editing in the IDE. Make sure that you're on the latest version of Android
+Studio and the Flutter plugins first before trying this.
 
-1. Click "Open an existing Android Studio Project" on the Welcome splash screen
+* In the ["project
+   view"](https://developer.android.com/studio/projects/#ProjectView), you
+   should see a subdirectory immediately under the root of your flutter app
+   named `android`. Right click on it, then select `Flutter > Open Android
+   module in Android Studio`.
+* OR, you can open any of the files under the `android` subdirectory for
+  editing. You should then see a "Flutter commands" banner at the top of the
+  editor with a link  labeled `Open for Editing in Android Studio`. Click that
+  link.
+
+For both options, Android Studio gives you the option to use separate windows or
+to replace the existing window with the new project when opening a second
+project. Either option is fine.
+
+If you don't already have the Flutter project opened in Android studio, you
+can open the Android files as their own project from the start:
+
+1. Click "Open an existing Android Studio Project" on the Welcome splash screen,
    or `File > Open` if Android Studio is already open.
 2. Open the `android` subdirectory immediately under the flutter app root. For
    example if the project is called `flutter_app`, open `flutter_app/android`.
-
-It's fine to have both projects open at the same time. Android Studio gives you
-the option to use separate windows or to replace the existing window with the
-new project when opening a second project.
 
 If you haven't run your Flutter app yet you may see Android Studio report a
 build error when you open the `android` project. Run `flutter packages get` in
