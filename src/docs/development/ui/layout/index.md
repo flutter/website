@@ -811,7 +811,7 @@ automatically scrolls.
 
   Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
 
-  **App source:** [container]({{examples}}/layout/container)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/gridview-count-flutter-gallery.png class="mw-100"
@@ -827,7 +827,7 @@ automatically scrolls.
 </div>
 </div>
 
-<?code-excerpt "layout/grid/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
+<?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
 ```dart
 Widget _buildGrid() => [!GridView!].extent(
     maxCrossAxisExtent: 150,
@@ -854,10 +854,10 @@ its content is too long for its render box.
 #### Summary (ListView)
 {:.no_toc}
 
-* A specialized Column for organizing a list of boxes
+* A specialized [Column][] for organizing a list of boxes
 * Can be laid out horizontally or vertically
 * Detects when its content won't fit and provides scrolling
-* Less configurable than Column, but easier to use and supports scrolling
+* Less configurable than `Column`, but easier to use and supports scrolling
 
 #### Examples (ListView)
 {:.no_toc}
@@ -868,19 +868,17 @@ its content is too long for its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses ListView to display a list of businesses using ListTiles. A Divider
+  Uses `ListView` to display a list of businesses using `ListTile`s. A `Divider`
   separates the theaters from the restaurants.
 
-  **Dart code:** [main.dart]({{code}}/layout/listview/main.dart), snippet below<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/listview/pubspec.yaml)
+  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listview-flutter-gallery.png class="border mw-100"
       alt="ListView containing shades of blue" %}
   {:.text-center}
 
-  Uses ListView to display the [Colors]({{api}}/material/Colors-class.html) from
+  Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
   the [Material Design palette](https://material.io/guidelines/style/color.html)
   for a particular color family.
 
@@ -889,47 +887,39 @@ its content is too long for its render box.
 </div>
 </div>
 
-<!-- code/layout/listview/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-List<Widget> list = <Widget>[
-  ListTile(
-    title: Text('CineArts at the Empire',
-        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('85 W Portal Ave'),
-    leading: Icon(
-      Icons.theaters,
-      color: Colors.blue[500],
-    ),
-  ),
-  ListTile(
-    title: Text('The Castro Theater',
-        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
-    subtitle: Text('429 Castro St'),
-    leading: Icon(
-      Icons.theaters,
-      color: Colors.blue[500],
-    ),
-  ),
-  // ...
-  // [[highlight]]See the rest of the column defined on GitHub:[[/highlight]]
-  // [[highlight]]{{code}}/layout/listview/main.dart[[/highlight]]
-];
+<?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
+```dart
+Widget _buildList() => [!ListView!](
+      children: [
+        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+            Icons.theaters),
+        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+        Divider(),
+        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+        _tile(
+            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+        _tile('La Ciccia', '291 30th St', Icons.restaurant),
+      ],
+    );
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // ...
-      body: Center(
-        child: ListView(
-          children: list,
-        ),
+ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
+      title: Text(title,
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 20.0,
+          )),
+      subtitle: Text(subtitle),
+      leading: Icon(
+        icon,
+        color: Colors.blue[500],
       ),
     );
-  }
-}
-{% endprettify %}
+```
 
 <hr>
 
