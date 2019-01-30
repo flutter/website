@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           'Hello World',
           textDirection: TextDirection.ltr,
           style: TextStyle(
-            fontSize: 32.0,
+            fontSize: 32,
             color: Colors.black87,
           ),
         ),
