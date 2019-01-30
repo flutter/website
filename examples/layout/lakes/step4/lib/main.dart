@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Row(
         children: [
           Expanded(
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
               children: [
                 /*2*/
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     'Oeschinen Lake Campground',
                     style: TextStyle(
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 
     // #docregion textSection
     Widget textSection = Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Text(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
             'Alps. Situated 1,578 meters above sea level, it is one of the '
@@ -95,11 +95,11 @@ class MyApp extends StatelessWidget {
       children: [
         Icon(icon, color: color),
         Container(
-          margin: const EdgeInsets.only(top: 8.0),
+          margin: const EdgeInsets.only(top: 8),
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 12.0,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
               color: color,
             ),

@@ -178,7 +178,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(0.0),
+          padding: EdgeInsets.all(0),
           child: IconButton(
             [!icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),!]
             color: Colors.red[500],
@@ -186,7 +186,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           ),
         ),
         SizedBox(
-          width: 18.0,
+          width: 18,
           child: Container(
             [!child: Text('$_favoriteCount'),!]
           ),

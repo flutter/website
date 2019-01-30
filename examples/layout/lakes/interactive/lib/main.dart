@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Row(
         children: [
           Expanded(
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
               children: [
                 /*2*/
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     'Oeschinen Lake Campground',
                     style: TextStyle(
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
     );
 
     Widget textSection = Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Text(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
             'Alps. Situated 1,578 meters above sea level, it is one of the '
@@ -74,8 +74,8 @@ class MyApp extends StatelessWidget {
           children: [
             Image.asset(
               'images/lake.jpg',
-              width: 600.0,
-              height: 240.0,
+              width: 600,
+              height: 240,
               fit: BoxFit.cover,
             ),
             titleSection,
@@ -94,11 +94,11 @@ class MyApp extends StatelessWidget {
       children: [
         Icon(icon, color: color),
         Container(
-          margin: const EdgeInsets.only(top: 8.0),
+          margin: const EdgeInsets.only(top: 8),
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 12.0,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
               color: color,
             ),
@@ -144,7 +144,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(0.0),
+          padding: EdgeInsets.all(0),
           child: IconButton(
             icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
             color: Colors.red[500],
@@ -152,7 +152,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           ),
         ),
         SizedBox(
-          width: 18.0,
+          width: 18,
           child: Container(
             child: Text('$_favoriteCount'),
           ),

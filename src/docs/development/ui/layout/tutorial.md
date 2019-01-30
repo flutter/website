@@ -107,7 +107,7 @@ at the top of the `build()` method of the `MyApp` class:
 <?code-excerpt "lib/main.dart (titleSection)" title?>
 ```dart
 Widget titleSection = Container(
-  padding: const EdgeInsets.all(32.0),
+  padding: const EdgeInsets.all(32),
   child: Row(
     children: [
       Expanded(
@@ -117,7 +117,7 @@ Widget titleSection = Container(
           children: [
             /*2*/
             Container(
-              padding: const EdgeInsets.only(bottom: 8.0),
+              padding: const EdgeInsets.only(bottom: 8),
               child: Text(
                 'Oeschinen Lake Campground',
                 style: TextStyle(
@@ -218,11 +218,11 @@ class MyApp extends StatelessWidget {
       children: [
         Icon(icon, color: color),
         Container(
-          margin: const EdgeInsets.only(top: 8.0),
+          margin: const EdgeInsets.only(top: 8),
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 12.0,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
               color: color,
             ),
@@ -293,7 +293,7 @@ declaration:
 <?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
 Widget textSection = Container(
-  padding: const EdgeInsets.all(32.0),
+  padding: const EdgeInsets.all(32),
   child: Text(
     'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
         'Alps. Situated 1,578 meters above sea level, it is one of the '
@@ -373,8 +373,8 @@ Now you can reference the image from your code:
            children: [
 +            Image.asset(
 +              'images/lake.jpg',
-+              width: 600.0,
-+              height: 240.0,
++              width: 600,
++              height: 240,
 +              fit: BoxFit.cover,
 +            ),
              titleSection,
@@ -407,8 +407,8 @@ on a small device.
            children: [
              Image.asset(
                'images/lake.jpg',
-               width: 600.0,
-               height: 240.0,
+               width: 600,
+               height: 240,
                fit: BoxFit.cover,
 ```
 

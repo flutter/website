@@ -199,7 +199,7 @@ class MyApp extends StatelessWidget {
           'Hello World',
           textDirection: TextDirection.ltr,
           style: TextStyle(
-            fontSize: 32.0,
+            fontSize: 32,
             color: Colors.black87,
           ),
         ),
@@ -911,7 +911,7 @@ ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
       title: Text(title,
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: 20.0,
+            fontSize: 20,
           )),
       subtitle: Text(subtitle),
       leading: Icon(
@@ -925,8 +925,7 @@ ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
 
 ### Stack
 
-Use [Stack]({{api}}/widgets/Stack-class.html)
-to arrange widgets on top of a base widget&mdash;often an image.
+Use [Stack][] to arrange widgets on top of a base widget&mdash;often an image.
 The widgets can completely or partially overlap the base widget.
 
 #### Summary (Stack)
@@ -935,7 +934,7 @@ The widgets can completely or partially overlap the base widget.
 * Use for widgets that overlap another widget
 * The first widget in the list of children is the base widget;
   subsequent children are overlaid on top of that base widget
-* A Stack's content can't scroll
+* A `Stack`'s content can't scroll
 * You can choose to clip children that exceed the render box
 
 #### Examples (Stack)
@@ -946,20 +945,18 @@ The widgets can completely or partially overlap the base widget.
   {% asset ui/layout/stack.png class="mw-100" width="200px" alt="Circular avatar image with a label" %}
   {:.text-center}
 
-  Uses Stack to overlay a Container (that displays its Text on a translucent
-  black background) on top of a Circle Avatar.
-  The Stack offsets the text using the `alignment` property and
-  Alignments.
+  Uses `Stack` to overlay a `Container` (that displays its `Text` on a translucent
+  black background) on top of a `CircleAvatar`.
+  The `Stack` offsets the text using the `alignment` property and
+  `Alignment`s.
 
-  **Dart code:** [main.dart]({{code}}/layout/stack/main.dart), snippet below<br>
-  **Image:** [images]({{code}}/layout/stack/images)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/stack/pubspec.yaml)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5" markdown="1">
   {% asset ui/layout/stack-flutter-gallery.png class="mw-100" alt="An image with a grey gradient across the top" %}
   {:.text-center}
 
-  Uses Stack to overlay a gradient to the top of the image. The gradient
+  Uses `Stack` to overlay a gradient to the top of the image. The gradient
   ensures that the toolbar's icons are distinct against the image.
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
@@ -967,74 +964,61 @@ The widgets can completely or partially overlap the base widget.
 </div>
 </div>
 
-<!-- code/layout/stack/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    var stack = Stack(
-      alignment: const Alignment(0.6, 0.6),
-      children: [
-        CircleAvatar(
-          backgroundImage: AssetImage('images/pic.jpg'),
-          radius: 100.0,
+<?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
+```dart
+Widget _buildStack() => [!Stack!](
+    alignment: const Alignment(0.6, 0.6),
+    children: [
+      CircleAvatar(
+        backgroundImage: AssetImage('images/pic.jpg'),
+        radius: 100,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black45,
         ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.black45,
-          ),
-          child: Text(
-            'Mia B',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+        child: Text(
+          'Mia B',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
-      ],
-    );
-    // ...
-  }
-}
-{% endprettify %}
+      ),
+    ],
+  );
+```
 
 <hr>
 
 ### Card
 
-A Card, from the Material Components library, contains related nuggets of information
-and can be composed from almost any widget, but is often used with ListTile.
-Card has a single child, but its child can be a column, row, list, grid,
-or other widget that supports multiple children. By default, a Card shrinks
-its size to 0 by 0 pixels. You can use
-[SizedBox]({{api}}/widgets/SizedBox-class.html) to
-constrain the size of a card.
+A [Card][], from the [Material library][], contains related nuggets of
+information and can be composed from almost any widget, but is often used with
+[ListTile][]. `Card` has a single child, but its child can be a column, row,
+list, grid, or other widget that supports multiple children. By default, a
+`Card` shrinks its size to 0 by 0 pixels. You can use [SizedBox][] to constrain
+the size of a card.
 
-In Flutter, a Card features slightly rounded corners
-and a drop shadow, giving it a 3D effect.
-Changing a Card's `elevation`
-property allows you to control the drop shadow effect.
-Setting the elevation to 24.0, for example, visually lifts the Card further
-from the surface and causes the shadow to become more dispersed.
-For a list of supported elevation values, see
-[Elevation and
-Shadows](https://material.io/guidelines/material-design/elevation-shadows.html)
-in the [Material guidelines](https://material.io/guidelines/).
-Specifying an unsupported value disables the drop shadow entirely.
+In Flutter, a `Card` features slightly rounded corners and a drop shadow, giving
+it a 3D effect. Changing a `Card`'s `elevation` property allows you to control
+the drop shadow effect. Setting the elevation to 24, for example, visually lifts
+the `Card` further from the surface and causes the shadow to become more
+dispersed. For a list of supported elevation values, see [Elevation][] in the
+[Material guidelines][Material Design]. Specifying an unsupported value disables
+the drop shadow entirely.
 
 #### Summary (Card)
 {:.no_toc}
 
-* Implements a [Material Design
-  card](https://material.io/guidelines/components/cards.html)
+* Implements a [Material card][]
 * Used for presenting related nuggets of information
-* Accepts a single child, but that child can be a Row, Column, or other
+* Accepts a single child, but that child can be a `Row`, `Column`, or other
   widget that holds a list of children
 * Displayed with rounded corners and a drop shadow
-* A Card's content can't scroll
-* From the Material Components library
+* A `Card`'s content can't scroll
+* From the [Material library][]
 
 #### Examples (Card)
 {:.no_toc}
@@ -1044,83 +1028,75 @@ Specifying an unsupported value disables the drop shadow entirely.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A Card containing 3 ListTiles and sized by wrapping it with a
-  SizedBox. A Divider separates the first and second ListTiles.
+  A `Card` containing 3 ListTiles and sized by wrapping it with a `SizedBox`. A
+  `Divider` separates the first and second `ListTiles`.
 
-  **Dart code:** [main.dart]({{code}}/layout/card/main.dart), snippet below<br>
-  **Icons:** [Icons class]({{api}}/material/Icons-class.html)<br>
-  **Pubspec:** [pubspec.yaml]({{code}}/layout/card/pubspec.yaml)
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
-  {% asset ui/layout/card-flutter-gallery.png class="mw-100" alt="Card containing an image, text and buttons" %}
+  {% asset ui/layout/card-flutter-gallery.png class="mw-100"
+      alt="Card containing an image, text and buttons" %}
   {:.text-center}
 
-  A Card containing an image and text.
+  A `Card` containing an image and text.
 
   **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
   from the [Flutter Gallery][]
 </div>
 </div>
 
-<!-- code/layout/card/main.dart -->
-<!-- skip -->
-{% prettify dart %}
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    var card = SizedBox(
-      height: 210.0,
-      child: Card(
-        child: Column(
-          children: [
-            ListTile(
-              title: Text('1625 Main Street',
-                  style: TextStyle(fontWeight: FontWeight.w500)),
-              subtitle: Text('My City, CA 99984'),
-              leading: Icon(
-                Icons.restaurant_menu,
-                color: Colors.blue[500],
-              ),
+<?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
+```dart
+Widget _buildCard() => SizedBox(
+    height: 210,
+    child: [!Card!](
+      child: Column(
+        children: [
+          ListTile(
+            title: Text('1625 Main Street',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            subtitle: Text('My City, CA 99984'),
+            leading: Icon(
+              Icons.restaurant_menu,
+              color: Colors.blue[500],
             ),
-            Divider(),
-            ListTile(
-              title: Text('(408) 555-1212',
-                  style: TextStyle(fontWeight: FontWeight.w500)),
-              leading: Icon(
-                Icons.contact_phone,
-                color: Colors.blue[500],
-              ),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('(408) 555-1212',
+                style: TextStyle(fontWeight: FontWeight.w500)),
+            leading: Icon(
+              Icons.contact_phone,
+              color: Colors.blue[500],
             ),
-            ListTile(
-              title: Text('costa@example.com'),
-              leading: Icon(
-                Icons.contact_mail,
-                color: Colors.blue[500],
-              ),
+          ),
+          ListTile(
+            title: Text('costa@example.com'),
+            leading: Icon(
+              Icons.contact_mail,
+              color: Colors.blue[500],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  //...
-}
-{% endprettify %}
-
+    ),
+  );
+```
 <hr>
 
 ### ListTile
 
-Use ListTile, a specialized row widget from the Material Components library, for
-an easy way to create a row containing up to 3 lines of text and optional
-leading and trailing icons. ListTile is most commonly used in Card or ListView,
-but can be used elsewhere.
+Use [ListTile][], a specialized row widget from the [Material library][], for an
+easy way to create a row containing up to 3 lines of text and optional leading
+and trailing icons. `ListTile` is most commonly used in [Card][] or
+[ListView][], but can be used elsewhere.
 
 #### Summary (ListTile)
 {:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and optional icons
-* Less configurable than Row, but easier to use
-* From the Material Components library
+* Less configurable than `Row`, but easier to use
+* From the [Material library][]
 
 #### Examples (ListTile)
 {:.no_toc}
@@ -1130,15 +1106,16 @@ but can be used elsewhere.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A Card containing 3 ListTiles.<br>
-  **Dart code:** See [Card examples](#examples-card).
+  A `Card` containing 3 `ListTiles`.
+
+  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6" markdown="1">
   {% asset ui/layout/listtile-flutter-gallery.png class="border mw-100" height="200px"
       alt="3 ListTiles, each containing a pull-down button" %}
   {:.text-center}
 
-  Uses ListTile to list 3 drop down button types.<br>
+  Uses `ListTile` to list 3 drop down button types.<br>
   **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
   from the [Flutter Gallery][]
 </div>
@@ -1169,9 +1146,11 @@ The following resources may help when writing layout code.
 : One person's experience writing his first Flutter app.
 
 [build()]: {{api}}/widgets/StatelessWidget/build.html
+[Card]: {{api}}/material/Card-class.html
 [Center]: {{api}}/widgets/Center-class.html
 [Column]: {{api}}/widgets/Column-class.html
 [Container]: {{api}}/widgets/Container-class.html
+[Elevation]: https://material.io/design/environment/elevation.html
 [Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [GridView]: {{api}}/widgets/GridView-class.html
@@ -1179,10 +1158,15 @@ The following resources may help when writing layout code.
 [Icon]: {{api}}/material/Icons-class.html
 [Image]: {{api}}/widgets/Image-class.html
 [layout widgets]: /docs/development/ui/widgets/layout
+[ListTile]: {{api}}/material/ListTile-class.html
+[ListView]: {{api}}/widgets/ListView-class.html
+[Material card]: https://material.io/design/components/cards.html
 [Material Design]: https://material.io/design
 [Material library]: {{api}}/material/material-library.html
 [Row]: {{api}}/widgets/Row-class.html
 [Scaffold]: {{api}}/material/Scaffold-class.html
+[SizedBox]: {{api}}/widgets/SizedBox-class.html
+[Stack]: {{api}}/widgets/Stack-class.html
 [Text]: {{api}}/widgets/Text-class.html
 [tutorial]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
