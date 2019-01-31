@@ -2,11 +2,13 @@
 title: Animations tutorial
 short-title: Tutorial
 description: A tutorial showing how to build explicit animations in Flutter.
+diff2html: true
 ---
 
 {% assign api = 'https://docs.flutter.io/flutter' -%}
-{% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+
+<?code-excerpt path-base="animation"?>
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn</h4>
@@ -78,28 +80,25 @@ An `Animation` object knows nothing about rendering or `build()` functions.
 
 A [CurvedAnimation][] defines the animation's progress as a non-linear curve.
 
-<!-- skip -->
-{% prettify dart %}
-final CurvedAnimation curve =
-    CurvedAnimation(parent: controller, curve: Curves.easeIn);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (CurvedAnimation)"?>
+```dart
+animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+```
 
-<aside class="alert alert-success" markdown="1">
-  **Note:**
-  The [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
-  class defines many commonly used curves, or you can create your own.
-  For example:
+{{site.alert.note}}
+  The [Curves][] class defines many commonly used curves, or you can create your
+  own. For example:
 
-  <!-- skip -->
-  {% prettify dart %}
+  <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
+  ```dart
+  import 'dart:math';
+
   class ShakeCurve extends Curve {
     @override
-    double transform(double t) {
-      return math.sin(t * math.PI * 2);
-    }
+    double transform(double t) => sin(t * pi * 2);
   }
-  {% endprettify %}
-</aside>
+  ```
+{{site.alert.end}}
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
 are both of type `Animation<double>`, so you can pass them interchangeably.
@@ -114,11 +113,11 @@ an `AnimationController` linearly produces the numbers from 0.0 to 1.0
 during a given duration. For example, this code creates an Animation object,
 but does not start it running:
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller = AnimationController(
-    duration: const Duration(milliseconds: 2000), vsync: this);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (AnimationController)"?>
+```dart
+controller =
+    AnimationController(duration: const Duration(seconds: 2), vsync: this);
+```
 
 `AnimationController` derives from `Animation<double>`, so it can be used
 wherever an `Animation` object is needed. However, the `AnimationController`
@@ -133,7 +132,7 @@ When creating an `AnimationController`, you pass it a `vsync` argument. The
 presence of `vsync` prevents offscreen animations from consuming unnecessary
 resources. You can use your stateful object as the vsync by adding
 `SingleTickerProviderStateMixin` to the class definition. You can see an example
-of this in [animate1]({{code}}/animation/animate1/main.dart) on GitHub.
+of this in [animate1]({{examples}}/animation/animate1/lib/main.dart) on GitHub.
 
 {% comment %}
 The `vsync` object ties the ticking of the animation controller to
@@ -165,10 +164,10 @@ a different range or a different data type, you can use a [Tween][] to configure
 an animation to interpolate to a different range or data type. For example, the
 following `Tween` goes from -200.0 to 0.0:
 
-<!-- skip -->
-{% prettify dart %}
-final Tween doubleTween = Tween<double>(begin: -200.0, end: 0.0);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (tween)"?>
+```dart
+tween = Tween<double>(begin: -200, end: 0);
+```
 
 A `Tween` is a stateless object that takes only `begin` and `end`. The sole job
 of a `Tween` is to define a mapping from an input range to an output range. The
@@ -178,11 +177,10 @@ A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`. An Animatable,
 like Animation, doesn't have to output double. For example, `ColorTween`
 specifies a progression between two colors.
 
-<!--- skip -->
-{% prettify dart %}
-final Tween colorTween =
-    ColorTween(begin: Colors.transparent, end: Colors.black54);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (colorTween)"?>
+```dart
+colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
+```
 
 A `Tween` object does not store any state. Instead, it provides the
 `evaluate(Animation<double> animation)` method that applies the mapping function
@@ -197,25 +195,27 @@ To use a `Tween` object, call `animate()` on the `Tween`, passing in the
 controller object. For example, the following code generates the
 integer values from 0 to 255 over the course of 500 ms.
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller = AnimationController(
+<?code-excerpt "animate5/lib/main.dart (IntTween)"?>
+```dart
+AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
-{% endprettify %}
+```
 
-Notice that `animate()` returns an Animation, not an Animatable.
+{{site.alert.note}}
+  The `animate()` method returns an [Animation][], not an [Animatable][].
+{{site.alert.end}}
 
 The following example shows a controller, a curve, and a `Tween`:
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller = AnimationController(
+<?code-excerpt "animate5/lib/main.dart (IntTween-curve)"?>
+```dart
+AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
 final Animation curve =
     CurvedAnimation(parent: controller, curve: Curves.easeOut);
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
-{% endprettify %}
+```
 
 ### Animation notifications
 
@@ -251,136 +251,136 @@ Each section provides a link to the source code for that example.
   * To make a class private, start its name with an underscore (`_`).
 {{site.alert.end}}
 
-So far you've learned how to generate a sequence of numbers over time.
-Nothing has been rendered to the screen. To render with an
-`Animation` object, store the `Animation` object as a
-member of your Widget, then use its value to decide how to draw.
+So far you've learned how to generate a sequence of numbers over time. Nothing
+has been rendered to the screen. To render with an `Animation` object, store the
+`Animation` object as a member of your widget, then use its value to decide how
+to draw.
 
-Consider the following application that draws the Flutter logo without
-animation:
+Consider the following app that draws the Flutter logo without animation:
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate0/lib/main.dart"?>
+```dart
 import 'package:flutter/material.dart';
+
+void main() => runApp(LogoApp());
 
 class LogoApp extends StatefulWidget {
   _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> {
+  @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
-        height: 300.0,
-        width: 300.0,
+        margin: EdgeInsets.symmetric(vertical: 10),
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );
   }
 }
+```
 
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
+**App source:** [animate0]({{examples}}/animation/animate0)
 
-The following shows the same code modified to animate the
-logo to grow from nothing to full size. When
-defining an `AnimationController`, you must pass in a `vsync` object.
-The `vsync` parameter is described in the
+The following shows the same code modified to animate the logo to grow from
+nothing to full size. When defining an `AnimationController`, you must pass in a
+`vsync` object. The `vsync` parameter is described in the
 [AnimationController](#animationcontroller) section.
 
 The changes from the non-animated example are highlighted:
 
-<!-- skip -->
-{% prettify dart %}
-[[highlight]]import 'package:flutter/animation.dart';[[/highlight]]
-import 'package:flutter/material.dart';
+<?code-excerpt "animate{0,1}/lib/main.dart"?>
+```diff
+--- animate0/lib/main.dart
++++ animate1/lib/main.dart
+@@ -1,3 +1,4 @@
++import 'package:flutter/animation.dart';
+ import 'package:flutter/material.dart';
 
-class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => _LogoAppState();
-}
+ void main() => runApp(LogoApp());
+@@ -6,16 +7,39 @@
+   _LogoAppState createState() => _LogoAppState();
+ }
 
-class _LogoAppState extends State<LogoApp> [[highlight]]with SingleTickerProviderStateMixin[[/highlight]] {
-  [[highlight]]Animation<double> animation;[[/highlight]]
-  [[highlight]]AnimationController controller;[[/highlight]]
+-class _LogoAppState extends State<LogoApp> {
++class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
++  Animation<double> animation;
++  AnimationController controller;
++
++  @override
++  void initState() {
++    super.initState();
++    controller =
++        AnimationController(duration: const Duration(seconds: 2), vsync: this);
++    animation = Tween<double>(begin: 0, end: 300).animate(controller)
++      ..addListener(() {
++        setState(() {
++          // The state that has changed here is the animation object’s value.
++        });
++      });
++    controller.forward();
++  }
++
+   @override
+   Widget build(BuildContext context) {
+     return Center(
+       child: Container(
+         margin: EdgeInsets.symmetric(vertical: 10),
+-        height: 300,
+-        width: 300,
++        height: animation.value,
++        width: animation.value,
+         child: FlutterLogo(),
+       ),
+     );
+   }
++
++  @override
++  void dispose() {
++    controller.dispose();
++    super.dispose();
++  }
+ }
+```
 
-  [[highlight]]initState() {[[/highlight]]
-    [[highlight]]super.initState();[[/highlight]]
-    [[highlight]]controller = AnimationController([[/highlight]]
-        [[highlight]]duration: const Duration(milliseconds: 2000), vsync: this);[[/highlight]]
-    [[highlight]]animation = Tween(begin: 0.0, end: 300.0).animate(controller)[[/highlight]]
-      [[highlight]]..addListener(() {[[/highlight]]
-        [[highlight]]setState(() {[[/highlight]]
-          [[highlight]]// the state that has changed here is the animation object’s value[[/highlight]]
-        [[highlight]]});[[/highlight]]
-      [[highlight]]});[[/highlight]]
-    [[highlight]]controller.forward();[[/highlight]]
-  [[highlight]]}[[/highlight]]
+**App source:** [animate1]({{examples}}/animation/animate1)
 
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
-        height: [[highlight]]animation.value,[[/highlight]]
-        width: [[highlight]]animation.value,[[/highlight]]
-        child: FlutterLogo(),
-      ),
-    );
-  }
-
-  [[highlight]]dispose() {[[/highlight]]
-    [[highlight]]controller.dispose();[[/highlight]]
-    [[highlight]]super.dispose();[[/highlight]]
-  }
-}
-
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
-
-The `addListener()` function calls `setState()`, so every time the
-Animation generates a new number, the current frame is marked dirty,
-which forces `build()` to be called again.
-In `build()`, the container changes size because its height and width
-now use `animation.value` instead of a hardcoded value.
-Dispose of the controller when the animation is finished to prevent
-memory leaks.
+The `addListener()` function calls `setState()`, so every time the `Animation`
+generates a new number, the current frame is marked dirty, which forces
+`build()` to be called again. In `build()`, the container changes size because
+its height and width now use `animation.value` instead of a hardcoded value.
+Dispose of the controller when the animation is finished to prevent memory
+leaks.
 
 With these few changes, you’ve created your first animation in Flutter!
-You can find the source for this example,
-[animate1.]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/animate1/main.dart)
 
 <aside class="alert alert-success" markdown="1">
-  **Dart language tricks**
+  **Dart language tricks:**
   You may not be familiar with Dart's cascade notation&mdash;the two
   dots in `..addListener()`. This syntax means that the `addListener()`
   method is called with the return value from `animate()`.
   Consider the following example:
 
-  <!-- skip -->
-  {% prettify dart %}
-  [[highlight]]animation = tween.animate(controller)[[/highlight]]
-            [[highlight]]..addListener(()[[/highlight]] {
-              setState(() {
-                // the animation object’s value is the changed state
-              });
-            });
-  {% endprettify %}
+  <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
+  ```dart
+  [!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
+    [!..addListener!](() {
+      // ···
+    });
+  ```
 
   This code is equivalent to:
 
-  <!-- skip -->
-  {% prettify dart %}
-  [[highlight]]animation = tween.animate(controller);[[/highlight]]
-  [[highlight]]animation.addListener(()[[/highlight]] {
-              setState(() {
-                // the animation object’s value is the changed state
-              });
-            });
-  {% endprettify %}
+  <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
+  ```dart
+  [!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
+  [!animation.addListener(() {!]
+      // ···
+    });
+  ```
 
   You can learn more about cascade notation in the
   [Dart Language Tour.](https://www.dartlang.org/guides/language/language-tour)
@@ -402,22 +402,13 @@ You can find the source for this example,
     RotationTransition, ScaleTransition, SizeTransition, SlideTransition.
 {{site.alert.end}}
 
-The `AnimatedWidget` class allows you to separate out the widget code from the
-animation code in the `setState()` call. `AnimatedWidget` doesn't need to
-maintain a State object to hold the animation.
+The `AnimatedWidget` base class allows you to separate out the core widget code
+from the animation code. `AnimatedWidget` doesn't need to maintain a `State`
+object to hold the animation. Add the following `AnimatedLogo` class:
 
-In the refactored example below, LogoApp now derives from `AnimatedWidget`
-instead of `StatefulWidget`. `AnimatedWidget` uses the current value of the
-animation when drawing itself. The LogoApp still manages the
-AnimationController and the Tween.
-
-<!-- skip -->
-{% prettify dart %}
-// Demonstrate a simple animation with AnimatedWidget
-
-import 'package:flutter/animation.dart';
-import 'package:flutter/material.dart';
-
+<?code-excerpt path-base="animation/animate2"?>
+<?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
+```dart
 class AnimatedLogo extends AnimatedWidget {
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
@@ -426,7 +417,7 @@ class AnimatedLogo extends AnimatedWidget {
     final Animation<double> animation = listenable;
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 10),
         height: animation.value,
         width: animation.value,
         child: FlutterLogo(),
@@ -434,44 +425,59 @@ class AnimatedLogo extends AnimatedWidget {
     );
   }
 }
+```
+<?code-excerpt path-base="animation"?>
 
-class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => _LogoAppState();
-}
+`AnimatedLogo` uses the current value of the `animation` when drawing itself.
 
-class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
+The `LogoApp` still manages the `AnimationController` and the `Tween`, and it
+passes the `Animation` object to `AnimatedLogo`:
 
-  initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
-    controller.forward();
-  }
+<?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
+```diff
+--- animate1/lib/main.dart
++++ animate2/lib/main.dart
+@@ -10,2 +27,2 @@
+ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+   Animation<double> animation;
+@@ -13,32 +30,18 @@
 
-  Widget build(BuildContext context) {
-    return AnimatedLogo(animation: animation);
-  }
+   @override
+   void initState() {
+     super.initState();
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween<double>(begin: 0, end: 300).animate(controller)
+-      ..addListener(() {
+-        setState(() {
+-          // The state that has changed here is the animation object’s value.
+-        });
+-      });
++    animation = Tween<double>(begin: 0, end: 300).animate(controller);
+     controller.forward();
+   }
 
-  dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-}
+   @override
+-  Widget build(BuildContext context) {
+-    return Center(
+-      child: Container(
+-        margin: EdgeInsets.symmetric(vertical: 10),
+-        height: animation.value,
+-        width: animation.value,
+-        child: FlutterLogo(),
+-      ),
+-    );
+-  }
++  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
+   @override
+   void dispose() {
+     controller.dispose();
+     super.dispose();
+   }
+```
 
-`LogoApp` passes the `Animation` object to the base class and uses
-`animation.value` to set the height and width of the container, so
-it works exactly the same as before.
-
-You can find the source for this example,
-[animate2,]({{code}}/animation/animate2/main.dart) on GitHub.
+**App source:** [animate2]({{examples}}/animation/animate2)
 
 <a name="monitoring"></a>
 ### Monitoring the progress of the animation
@@ -485,71 +491,64 @@ You can find the source for this example,
     the animation has either completed or returned to its starting state.
 {{site.alert.end}}
 
-It’s often helpful to know when an animation changes state,
-such as finishing, moving forward, or reversing.
-You can get notifications for this with `addStatusListener()`.
-The following code modifies the
-[animate1]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/animate1/main.dart)
-example so that it listens for a state change and prints an update.
-The highlighted line shows the change:
+It’s often helpful to know when an animation changes state, such as finishing,
+moving forward, or reversing. You can get notifications for this with
+`addStatusListener()`. The following code modifies the previous example so that
+it listens for a state change and prints an update. The highlighted line shows
+the change:
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate3/lib/main.dart (print state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
+```dart
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
   Animation<double> animation;
+  AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
-      [[highlight]]..addStatusListener((state) => print("$state"));[[/highlight]]
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
+      [!..addStatusListener((state) => print('$state'));!]
     controller.forward();
   }
-  //...
+  // ...
 }
-{% endprettify %}
+```
 
-Running this code produces lines like the following:
+Running this code produces this output:
 
-<!-- skip -->
-{% prettify sh %}
+```console
 AnimationStatus.forward
 AnimationStatus.completed
-{% endprettify %}
+```
+Next, use `addStatusListener()` to reverse the animation at the beginning or the
+end. This creates a "breathing" effect:
 
-Next, use `addStatusListener()` to reverse the animation at the
-beginning or the end. This creates a "breathing" effect:
+<?code-excerpt "animate{2,3}/lib/main.dart" to="/^   }/" diff-u="4"?>
+```diff
+--- animate2/lib/main.dart
++++ animate3/lib/main.dart
+@@ -32,7 +32,15 @@
+   void initState() {
+     super.initState();
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween<double>(begin: 0, end: 300).animate(controller);
++    animation = Tween<double>(begin: 0, end: 300).animate(controller)
++      ..addStatusListener((status) {
++        if (status == AnimationStatus.completed) {
++          controller.reverse();
++        } else if (status == AnimationStatus.dismissed) {
++          controller.forward();
++        }
++      })
++      ..addStatusListener((state) => print('$state'));
+     controller.forward();
+   }
+```
 
-<!-- skip -->
-{% prettify dart %}
-class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> animation;
-
-  initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
-    controller.forward();
-  }
-  //...
-}
-{% endprettify %}
-
-You can find the source for this example,
-[animate3,]({{code}}/animation/animate3/main.dart)
-on GitHub.
+**App source:** [animate3]({{examples}}/animation/animate3)
 
 ### Refactoring with AnimatedBuilder
 
@@ -567,9 +566,8 @@ on GitHub.
     `TextField`.
 {{site.alert.end}}
 
-
 One problem with the code in the
-[animate3]({{code}}/animation/animate3/main.dart) example, is that changing the
+[animate3]({{examples}}/animation/animate3/lib/main.dart) example, is that changing the
 animation required changing the widget that renders the logo. A better solution
 is to separate responsibilities into different classes:
 
@@ -578,12 +576,12 @@ is to separate responsibilities into different classes:
 * Render the transition
 
 You can accomplish this separation with the help of the `AnimatedBuilder` class.
-An `AnimatedBuilder` is a separate class in the render tree. Like AnimatedWidget,
+An `AnimatedBuilder` is a separate class in the render tree. Like `AnimatedWidget`,
 `AnimatedBuilder` automatically listens to notifications from the Animation
 object, and marks the widget tree dirty as necessary, so you don't need to call
 `addListener()`.
 
-The widget tree for the [animate4]({{code}}/animation/animate4/main.dart)
+The widget tree for the [animate4]({{examples}}/animation/animate4/lib/main.dart)
 example looks like this:
 
 {% asset 'ui/AnimatedBuilder-WidgetTree.png'
@@ -592,21 +590,19 @@ example looks like this:
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
+```dart
 class LogoWidget extends StatelessWidget {
   // Leave out the height and width so it fills the animating parent
-  build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      child: FlutterLogo(),
-    );
-  }
+  Widget build(BuildContext context) => Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        child: FlutterLogo(),
+      );
 }
-{% endprettify %}
+```
 
 The middle three blocks in the diagram are all created in the `build()` method
-in `GrowTransition`. The `GrowTransition` widget itself is stateless and holds
+in `GrowTransition`, shown below. The `GrowTransition` widget itself is stateless and holds
 the set of final variables necessary to define the transition animation. The
 build() function creates and returns the `AnimatedBuilder`, which takes the
 (`Anonymous` builder) method and the LogoWidget object as parameters. The work
@@ -620,74 +616,69 @@ twice. What's happening is that the outer reference of child is passed to
 that object as its child. The net result is that the `AnimatedBuilder` is
 inserted in between the two widgets in the render tree.
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
+```dart
 class GrowTransition extends StatelessWidget {
   GrowTransition({this.child, this.animation});
 
   final Widget child;
   final Animation<double> animation;
 
-  Widget build(BuildContext context) {
-    return Center(
-      child: AnimatedBuilder(
-          animation: animation,
-          builder: (BuildContext context, Widget child) {
-            return Container(
-                height: animation.value, width: animation.value, child: child);
-          },
-          child: child),
-    );
-  }
+  Widget build(BuildContext context) => Center(
+        child: AnimatedBuilder(
+            animation: animation,
+            builder: (context, child) => Container(
+                  height: animation.value,
+                  width: animation.value,
+                  child: child,
+                ),
+            child: child),
+      );
 }
-{% endprettify %}
+```
 
-Finally, the code to initialize the animation looks very similar to the first
-example, [animate1.]({{code}}/animation/animate1/main.dart) The `initState()`
-method creates an AnimationController and a Tween, then binds them with
+Finally, the code to initialize the animation looks very similar to the
+[animate2]({{examples}}/animation/animate2/lib/main.dart) example. The `initState()`
+method creates an `AnimationController` and a `Tween`, then binds them with
 `animate()`. The magic happens in the `build()` method, which returns a
-`GrowTransition` object with a LogoWidget as a child, and an animation object to
+`GrowTransition` object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed in the bullet points
 above.
 
+<?code-excerpt "animate{2,4}/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
+```diff
+--- animate2/lib/main.dart
++++ animate4/lib/main.dart
+@@ -27,22 +36,25 @@
+ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+   Animation<double> animation;
+   AnimationController controller;
 
-<!-- skip -->
-{% prettify dart %}
-class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => _LogoAppState();
-}
+   @override
+   void initState() {
+     super.initState();
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+     animation = Tween<double>(begin: 0, end: 300).animate(controller);
+     controller.forward();
+   }
 
-class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
-  Animation animation;
-  AnimationController controller;
+   @override
+-  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
++  Widget build(BuildContext context) => GrowTransition(
++        child: LogoWidget(),
++        animation: animation,
++      );
 
-  initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    final CurvedAnimation curve =
-        CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = Tween(begin: 0.0, end: 300.0).animate(curve);
-    controller.forward();
-  }
+   @override
+   void dispose() {
+     controller.dispose();
+     super.dispose();
+   }
+ }
+```
 
-  Widget build(BuildContext context) {
-    return GrowTransition(child: LogoWidget(), animation: animation);
-  }
-
-  dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-}
-
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
-
-You can find the source for this example,
-[animate4,]({{code}}/animation/animate4/main.dart) on GitHub.
+**App source:** [animate4]({{examples}}/animation/animate4)
 
 ### Simultaneous animations
 
@@ -699,8 +690,8 @@ You can find the source for this example,
 {{site.alert.end}}
 
 In this section, you'll build on the example from [monitoring the progress of
-the animation](#monitoring) ([animate3]({{code}}/animation/animate3/main.dart)),
-which used AnimatedWidget to animate in and out continuously. Consider the case
+the animation](#monitoring) ([animate3]({{examples}}/animation/animate3/lib/main.dart)),
+which used `AnimatedWidget` to animate in and out continuously. Consider the case
 where you want to animate in and out while the opacity animates from transparent
 to opaque.
 
@@ -714,37 +705,31 @@ to opaque.
 
 Each tween manages an aspect of the animation. For example:
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller =
-    AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-final Animation<double> sizeAnimation =
-    Tween(begin: 0.0, end: 300.0).animate(controller);
-final Animation<double> opacityAnimation =
-    Tween(begin: 0.1, end: 1.0).animate(controller);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
+```dart
+controller =
+    AnimationController(duration: const Duration(seconds: 2), vsync: this);
+sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
+opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
+```
 
 You can get the size with `sizeAnimation.value` and the opacity
 with `opacityAnimation.value`, but the constructor for `AnimatedWidget`
 only takes a single `Animation` object. To solve this problem,
-the example creates its own Tween objects and explicitly calculates the
+the example creates its own `Tween` objects and explicitly calculates the
 values.
 
-`LogoApp` widget was changed to encapsulate its own `Tween` objects.
-Its `build` method calls the Tween `.evaluate()` function on the parent's
-animation object to calculate the required size and opacity values.
+Change `AnimatedLogo` to encapsulate its own `Tween` objects, and its `build()`
+method calls `Tween.evaluate()` on the parent's animation object to calculate
+the required size and opacity values. The following code shows the changes with
+highlights:
 
-The following code shows the changes with highlights:
-
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/animation.dart';
-import 'package:flutter/material.dart';
-
+<?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
+```dart
 class AnimatedLogo extends AnimatedWidget {
-  // The Tweens are static because they don't change.
-  [[highlight]]static final _opacityTween = Tween<double>(begin: 0.1, end: 1.0);[[/highlight]]
-  [[highlight]]static final _sizeTween = Tween<double>(begin: 0.0, end: 300.0);[[/highlight]]
+  // Make the Tweens static because they don't change.
+  [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
+  [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
 
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
@@ -752,12 +737,12 @@ class AnimatedLogo extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return Center(
-      [[highlight]]child: Opacity([[/highlight]]
-        [[highlight]]opacity: _opacityTween.evaluate(animation),[[/highlight]]
+      [!child: Opacity(!]
+        [!opacity: _opacityTween.evaluate(animation),!]
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10.0),
-          height: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
-          width: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
+          margin: EdgeInsets.symmetric(vertical: 10),
+          height: [!_sizeTween.evaluate(animation),!]
+          width: [!_sizeTween.evaluate(animation),!]
           child: FlutterLogo(),
         ),
       ),
@@ -769,44 +754,38 @@ class LogoApp extends StatefulWidget {
   _LogoAppState createState() => _LogoAppState();
 }
 
-class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
-  AnimationController controller;
+class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   Animation<double> animation;
+  AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = [[highlight]]CurvedAnimation(parent: controller, curve: Curves.easeIn);[[/highlight]]
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
-
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          controller.forward();
+        }
+      });
     controller.forward();
   }
 
-  Widget build(BuildContext context) {
-    return AnimatedLogo(animation: animation);
-  }
+  @override
+  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 
-  dispose() {
+  @override
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
 }
+```
 
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
-
-You can find the source for this example,
-[animate5,]({{code}}/animation/animate5/main.dart) on GitHub.
+**App source:** [animate5]({{examples}}/animation/animate5)
 
 ## Next steps
 
@@ -819,6 +798,7 @@ page](/docs/development/ui/animations) for the latest available documents and
 examples.
 
 [AnimatedWidget]: https://docs.flutter.io/flutter/widgets/AnimatedWidget-class.html
+[Animatable]: https://docs.flutter.io/flutter/animation/Animatable-class.html
 [Animation]: https://docs.flutter.io/flutter/animation/Animation-class.html
 [AnimatedBuilder]: https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html
 [AnimationController]: https://docs.flutter.io/flutter/animation/AnimationController-class.html

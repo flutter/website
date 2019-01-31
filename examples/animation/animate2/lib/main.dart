@@ -1,12 +1,9 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// Demonstrates a simple animation with AnimatedWidget.
-
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
+void main() => runApp(LogoApp());
+
+// #docregion AnimatedLogo
 class AnimatedLogo extends AnimatedWidget {
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
@@ -15,7 +12,7 @@ class AnimatedLogo extends AnimatedWidget {
     final Animation<double> animation = listenable;
     return Center(
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 10),
         height: animation.value,
         width: animation.value,
         child: FlutterLogo(),
@@ -23,33 +20,31 @@ class AnimatedLogo extends AnimatedWidget {
     );
   }
 }
+// #enddocregion AnimatedLogo
 
 class LogoApp extends StatefulWidget {
   _LogoAppState createState() => _LogoAppState();
 }
 
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
-  AnimationController controller;
   Animation<double> animation;
+  AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween<double>(begin: 0, end: 300).animate(controller);
     controller.forward();
   }
 
-  Widget build(BuildContext context) {
-    return AnimatedLogo(animation: animation);
-  }
+  @override
+  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 
-  dispose() {
+  @override
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
-}
-
-void main() {
-  runApp(LogoApp());
 }
