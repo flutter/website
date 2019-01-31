@@ -327,9 +327,3 @@ dev_dependencies:
 ```
 
 Now you can `import 'package:scoped_model/scoped_model.dart';` and start building.
-
-
-
-
-
-
