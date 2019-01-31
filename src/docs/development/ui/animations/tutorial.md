@@ -81,28 +81,25 @@ An `Animation` object knows nothing about rendering or `build()` functions.
 
 A [CurvedAnimation][] defines the animation's progress as a non-linear curve.
 
-<!-- skip -->
-{% prettify dart %}
-final CurvedAnimation curve =
-    CurvedAnimation(parent: controller, curve: Curves.easeIn);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (CurvedAnimation)"?>
+```dart
+animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+```
 
-<aside class="alert alert-success" markdown="1">
-  **Note:**
-  The [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
-  class defines many commonly used curves, or you can create your own.
-  For example:
+{{site.alert.note}}
+  The [Curves][] class defines many commonly used curves, or you can create your
+  own. For example:
 
-  <!-- skip -->
-  {% prettify dart %}
+  <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
+  ```dart
+  import 'dart:math';
+
   class ShakeCurve extends Curve {
     @override
-    double transform(double t) {
-      return math.sin(t * math.PI * 2);
-    }
+    double transform(double t) => sin(t * pi * 2);
   }
-  {% endprettify %}
-</aside>
+  ```
+{{site.alert.end}}
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
 are both of type `Animation<double>`, so you can pass them interchangeably.
@@ -117,11 +114,11 @@ an `AnimationController` linearly produces the numbers from 0.0 to 1.0
 during a given duration. For example, this code creates an Animation object,
 but does not start it running:
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller = AnimationController(
+<?code-excerpt "animate5/lib/main.dart (AnimationController)" plaster="none"?>
+```dart
+controller = AnimationController(
     duration: const Duration(milliseconds: 2000), vsync: this);
-{% endprettify %}
+```
 
 `AnimationController` derives from `Animation<double>`, so it can be used
 wherever an `Animation` object is needed. However, the `AnimationController`
@@ -712,7 +709,7 @@ above.
 
 In this section, you'll build on the example from [monitoring the progress of
 the animation](#monitoring) ([animate3]({{example}}/animation/animate3/lib/main.dart)),
-which used AnimatedWidget to animate in and out continuously. Consider the case
+which used `AnimatedWidget` to animate in and out continuously. Consider the case
 where you want to animate in and out while the opacity animates from transparent
 to opaque.
 
@@ -726,37 +723,31 @@ to opaque.
 
 Each tween manages an aspect of the animation. For example:
 
-<!-- skip -->
-{% prettify dart %}
-final AnimationController controller =
-    AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
-final Animation<double> sizeAnimation =
-    Tween(begin: 0.0, end: 300.0).animate(controller);
-final Animation<double> opacityAnimation =
-    Tween(begin: 0.1, end: 1.0).animate(controller);
-{% endprettify %}
+<?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
+```dart
+controller = AnimationController(
+    duration: const Duration(milliseconds: 2000), vsync: this);
+sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
+opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
+```
 
 You can get the size with `sizeAnimation.value` and the opacity
 with `opacityAnimation.value`, but the constructor for `AnimatedWidget`
 only takes a single `Animation` object. To solve this problem,
-the example creates its own Tween objects and explicitly calculates the
+the example creates its own `Tween` objects and explicitly calculates the
 values.
 
-`LogoApp` widget was changed to encapsulate its own `Tween` objects.
-Its `build` method calls the Tween `.evaluate()` function on the parent's
-animation object to calculate the required size and opacity values.
+Change `AnimatedLogo` to encapsulate its own `Tween` objects, and its `build()`
+method calls `Tween.evaluate()` on the parent's animation object to calculate
+the required size and opacity values. The following code shows the changes with
+highlights:
 
-The following code shows the changes with highlights:
-
-<!-- skip -->
-{% prettify dart %}
-import 'package:flutter/animation.dart';
-import 'package:flutter/material.dart';
-
+<?code-excerpt "animate5/lib/main.dart (diff)" replace="/(static final|child: Opacity|opacity:|_sizeTween\.|CurvedAnimation).*/[!$&!]/g"?>
+```dart
 class AnimatedLogo extends AnimatedWidget {
-  // The Tweens are static because they don't change.
-  [[highlight]]static final _opacityTween = Tween<double>(begin: 0.1, end: 1.0);[[/highlight]]
-  [[highlight]]static final _sizeTween = Tween<double>(begin: 0.0, end: 300.0);[[/highlight]]
+  // Make the Tweens static because they don't change.
+  [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
+  [!static final _sizeTween = Tween<double>(begin: 0, end: 300);!]
 
   AnimatedLogo({Key key, Animation<double> animation})
       : super(key: key, listenable: animation);
@@ -764,12 +755,12 @@ class AnimatedLogo extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable;
     return Center(
-      [[highlight]]child: Opacity([[/highlight]]
-        [[highlight]]opacity: _opacityTween.evaluate(animation),[[/highlight]]
+      [!child: Opacity(!]
+        [!opacity: _opacityTween.evaluate(animation),!]
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10.0),
-          height: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
-          width: [[highlight]]_sizeTween.evaluate(animation)[[/highlight]],
+          margin: EdgeInsets.symmetric(vertical: 10),
+          height: [!_sizeTween.evaluate(animation),!]
+          width: [!_sizeTween.evaluate(animation),!]
           child: FlutterLogo(),
         ),
       ),
@@ -781,41 +772,36 @@ class LogoApp extends StatefulWidget {
   _LogoAppState createState() => _LogoAppState();
 }
 
-class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
-  AnimationController controller;
+class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   Animation<double> animation;
+  AnimationController controller;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
     controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = [[highlight]]CurvedAnimation(parent: controller, curve: Curves.easeIn);[[/highlight]]
-
-    animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        controller.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        controller.forward();
-      }
-    });
-
+    animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          controller.forward();
+        }
+      });
     controller.forward();
   }
 
-  Widget build(BuildContext context) {
-    return AnimatedLogo(animation: animation);
-  }
+  @override
+  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 
-  dispose() {
+  @override
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
 }
-
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
+```
 
 **App source:** [animate5]({{example}}/animation/animate5)
 
