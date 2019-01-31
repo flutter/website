@@ -659,7 +659,7 @@ class GrowTransition extends StatelessWidget {
 ```
 
 Finally, the code to initialize the animation looks very similar to the
-[animate2]({{example}}/animation/animate1/lib/main.dart) example. The `initState()`
+[animate2]({{example}}/animation/animate2/lib/main.dart) example. The `initState()`
 method creates an `AnimationController` and a `Tween`, then binds them with
 `animate()`. The magic happens in the `build()` method, which returns a
 `GrowTransition` object with a `LogoWidget` as a child, and an animation object to
@@ -670,7 +670,7 @@ above.
 ```diff
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
-@@ -27,22 +36,27 @@
+@@ -27,22 +36,25 @@
  class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
    Animation<double> animation;
    AnimationController controller;
@@ -680,8 +680,6 @@ above.
      super.initState();
      controller = AnimationController(
          duration: const Duration(milliseconds: 2000), vsync: this);
-+    final CurvedAnimation curve =
-+        CurvedAnimation(parent: controller, curve: Curves.easeIn);
      animation = Tween(begin: 0.0, end: 300.0).animate(controller);
      controller.forward();
    }

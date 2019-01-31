@@ -47,8 +47,6 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     super.initState();
     controller = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
-    final CurvedAnimation curve =
-        CurvedAnimation(parent: controller, curve: Curves.easeIn);
     animation = Tween(begin: 0.0, end: 300.0).animate(controller);
     controller.forward();
   }
