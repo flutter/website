@@ -6,7 +6,6 @@ diff2html: true
 ---
 
 {% assign api = 'https://docs.flutter.io/flutter' -%}
-{% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
@@ -314,9 +313,9 @@ The changes from the non-animated example are highlighted:
 +  @override
 +  void initState() {
 +    super.initState();
-+    controller = AnimationController(
-+        duration: const Duration(seconds: 2), vsync: this);
-+    animation = Tween(begin: 0.0, end: 300).animate(controller)
++    controller =
++        AnimationController(duration: const Duration(seconds: 2), vsync: this);
++    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +      ..addListener(() {
 +        setState(() {
 +          // The state that has changed here is the animation object’s value.
@@ -367,7 +366,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
   ```dart
-  [!animation = Tween(begin: 0.0, end: 300).animate(controller)!]
+  [!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
     [!..addListener!](() {
       // ···
     });
@@ -377,7 +376,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
   ```dart
-  [!animation = Tween(begin: 0.0, end: 300).animate(controller);!]
+  [!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
   [!animation.addListener(() {!]
       // ···
     });
@@ -434,45 +433,27 @@ class AnimatedLogo extends AnimatedWidget {
 The `LogoApp` still manages the `AnimationController` and the `Tween`, and it
 passes the `Animation` object to `AnimatedLogo`:
 
-<?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState"?>
+<?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
 ```diff
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
-@@ -3,6 +3,23 @@
+@@ -10,2 +27,2 @@
+ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+   Animation<double> animation;
+@@ -13,32 +30,18 @@
 
- void main() => runApp(LogoApp());
-
-+class AnimatedLogo extends AnimatedWidget {
-+  AnimatedLogo({Key key, Animation<double> animation})
-+      : super(key: key, listenable: animation);
-+
-+  Widget build(BuildContext context) {
-+    final Animation<double> animation = listenable;
-+    return Center(
-+      child: Container(
-+        margin: EdgeInsets.symmetric(vertical: 10),
-+        height: animation.value,
-+        width: animation.value,
-+        child: FlutterLogo(),
-+      ),
-+    );
-+  }
-+}
-+
- class LogoApp extends StatefulWidget {
-   _LogoAppState createState() => _LogoAppState();
- }
-@@ -16,26 +33,12 @@
+   @override
+   void initState() {
      super.initState();
-     controller = AnimationController(
-         duration: const Duration(seconds: 2), vsync: this);
--    animation = Tween(begin: 0.0, end: 300).animate(controller)
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 -      ..addListener(() {
 -        setState(() {
 -          // The state that has changed here is the animation object’s value.
 -        });
 -      });
-+    animation = Tween(begin: 0.0, end: 300).animate(controller);
++    animation = Tween<double>(begin: 0, end: 300).animate(controller);
      controller.forward();
    }
 
@@ -491,6 +472,9 @@ passes the `Animation` object to `AnimatedLogo`:
 
    @override
    void dispose() {
+     controller.dispose();
+     super.dispose();
+   }
 ```
 
 **App source:** [animate2]({{examples}}/animation/animate2)
@@ -522,9 +506,9 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
-        duration: const Duration(seconds: 2), vsync: this);
-    animation = Tween(begin: 0.0, end: 300).animate(controller)
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
       [!..addStatusListener((state) => print('$state'));!]
     controller.forward();
   }
@@ -548,10 +532,10 @@ end. This creates a "breathing" effect:
 @@ -32,7 +32,15 @@
    void initState() {
      super.initState();
-     controller = AnimationController(
-         duration: const Duration(seconds: 2), vsync: this);
--    animation = Tween(begin: 0.0, end: 300).animate(controller);
-+    animation = Tween(begin: 0.0, end: 300).animate(controller)
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween<double>(begin: 0, end: 300).animate(controller);
++    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +      ..addStatusListener((status) {
 +        if (status == AnimationStatus.completed) {
 +          controller.reverse();
@@ -673,9 +657,9 @@ above.
    @override
    void initState() {
      super.initState();
-     controller = AnimationController(
-         duration: const Duration(seconds: 2), vsync: this);
-     animation = Tween(begin: 0.0, end: 300).animate(controller);
+     controller =
+         AnimationController(duration: const Duration(seconds: 2), vsync: this);
+     animation = Tween<double>(begin: 0, end: 300).animate(controller);
      controller.forward();
    }
 
