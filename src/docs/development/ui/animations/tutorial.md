@@ -117,7 +117,7 @@ but does not start it running:
 <?code-excerpt "animate5/lib/main.dart (AnimationController)" plaster="none"?>
 ```dart
 controller = AnimationController(
-    duration: const Duration(milliseconds: 2000), vsync: this);
+    duration: const Duration(seconds: 2), vsync: this);
 ```
 
 `AnimationController` derives from `Animation<double>`, so it can be used
@@ -314,8 +314,8 @@ The changes from the non-animated example are highlighted:
 +  void initState() {
 +    super.initState();
 +    controller = AnimationController(
-+        duration: const Duration(milliseconds: 2000), vsync: this);
-+    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
++        duration: const Duration(seconds: 2), vsync: this);
++    animation = Tween(begin: 0.0, end: 300).animate(controller)
 +      ..addListener(() {
 +        setState(() {
 +          // The state that has changed here is the animation object’s value.
@@ -366,7 +366,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
   ```dart
-  [!animation = Tween(begin: 0.0, end: 300.0).animate(controller)!]
+  [!animation = Tween(begin: 0.0, end: 300).animate(controller)!]
     [!..addListener!](() {
       // ···
     });
@@ -376,7 +376,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
   ```dart
-  [!animation = Tween(begin: 0.0, end: 300.0).animate(controller);!]
+  [!animation = Tween(begin: 0.0, end: 300).animate(controller);!]
   [!animation.addListener(() {!]
       // ···
     });
@@ -464,14 +464,14 @@ passes the `Animation` object to `AnimatedLogo`:
 @@ -16,26 +33,12 @@
      super.initState();
      controller = AnimationController(
-         duration: const Duration(milliseconds: 2000), vsync: this);
--    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
+         duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween(begin: 0.0, end: 300).animate(controller)
 -      ..addListener(() {
 -        setState(() {
 -          // The state that has changed here is the animation object’s value.
 -        });
 -      });
-+    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
++    animation = Tween(begin: 0.0, end: 300).animate(controller);
      controller.forward();
    }
 
@@ -522,8 +522,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
+        duration: const Duration(seconds: 2), vsync: this);
+    animation = Tween(begin: 0.0, end: 300).animate(controller)
       [!..addStatusListener((state) => print('$state'));!]
     controller.forward();
   }
@@ -550,9 +550,9 @@ end. This creates a "breathing" effect:
    void initState() {
      super.initState();
      controller = AnimationController(
-         duration: const Duration(milliseconds: 2000), vsync: this);
--    animation = Tween(begin: 0.0, end: 300.0).animate(controller);
-+    animation = Tween(begin: 0.0, end: 300.0).animate(controller)
+         duration: const Duration(seconds: 2), vsync: this);
+-    animation = Tween(begin: 0.0, end: 300).animate(controller);
++    animation = Tween(begin: 0.0, end: 300).animate(controller)
 +      ..addStatusListener((status) {
 +        if (status == AnimationStatus.completed) {
 +          controller.reverse();
@@ -613,7 +613,7 @@ the logo is straightforward:
 class LogoWidget extends StatelessWidget {
   // Leave out the height and width so it fills the animating parent
   Widget build(BuildContext context) => Container(
-        margin: EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 10),
         child: FlutterLogo(),
       );
 }
@@ -676,8 +676,8 @@ above.
    void initState() {
      super.initState();
      controller = AnimationController(
-         duration: const Duration(milliseconds: 2000), vsync: this);
-     animation = Tween(begin: 0.0, end: 300.0).animate(controller);
+         duration: const Duration(seconds: 2), vsync: this);
+     animation = Tween(begin: 0.0, end: 300).animate(controller);
      controller.forward();
    }
 
@@ -726,7 +726,7 @@ Each tween manages an aspect of the animation. For example:
 <?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
 ```dart
 controller = AnimationController(
-    duration: const Duration(milliseconds: 2000), vsync: this);
+    duration: const Duration(seconds: 2), vsync: this);
 sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
 opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
 ```
@@ -780,7 +780,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+        duration: const Duration(seconds: 2), vsync: this);
     animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
