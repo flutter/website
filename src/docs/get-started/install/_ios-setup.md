@@ -34,7 +34,28 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
     in the simulator's **Hardware > Device** menu.
  3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
     may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
- 4. Start your app by running `flutter run`.
+
+### Create and run a simple Flutter app
+
+To create your first Flutter app and test your setup, follow these steps:
+
+ 1. Create a new Flutter app by running the following from the command line:
+ 
+    ```terminal
+    $ flutter create my_app
+    ```
+
+ 2. A `my_app` directory is created, containing Flutter's starter app. Enter this directory:
+ 
+    ```terminal
+    $ cd my_app
+    ```
+ 
+ 3. To launch the app in the Simulator, ensure that the Simulator is running and enter:
+
+    ```terminal
+    $ flutter run
+    ```
 
 ### Deploy to iOS devices
 
