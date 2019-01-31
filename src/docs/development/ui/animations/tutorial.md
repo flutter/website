@@ -597,7 +597,7 @@ is to separate responsibilities into different classes:
 * Render the transition
 
 You can accomplish this separation with the help of the `AnimatedBuilder` class.
-An `AnimatedBuilder` is a separate class in the render tree. Like AnimatedWidget,
+An `AnimatedBuilder` is a separate class in the render tree. Like `AnimatedWidget`,
 `AnimatedBuilder` automatically listens to notifications from the Animation
 object, and marks the widget tree dirty as necessary, so you don't need to call
 `addListener()`.
@@ -611,21 +611,19 @@ example looks like this:
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
+```dart
 class LogoWidget extends StatelessWidget {
   // Leave out the height and width so it fills the animating parent
-  build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0),
-      child: FlutterLogo(),
-    );
-  }
+  Widget build(BuildContext context) => Container(
+        margin: EdgeInsets.symmetric(vertical: 10.0),
+        child: FlutterLogo(),
+      );
 }
-{% endprettify %}
+```
 
 The middle three blocks in the diagram are all created in the `build()` method
-in `GrowTransition`. The `GrowTransition` widget itself is stateless and holds
+in `GrowTransition`, shown below. The `GrowTransition` widget itself is stateless and holds
 the set of final variables necessary to define the transition animation. The
 build() function creates and returns the `AnimatedBuilder`, which takes the
 (`Anonymous` builder) method and the LogoWidget object as parameters. The work
@@ -639,74 +637,71 @@ twice. What's happening is that the outer reference of child is passed to
 that object as its child. The net result is that the `AnimatedBuilder` is
 inserted in between the two widgets in the render tree.
 
-<!-- skip -->
-{% prettify dart %}
+<?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
+```dart
 class GrowTransition extends StatelessWidget {
   GrowTransition({this.child, this.animation});
 
   final Widget child;
   final Animation<double> animation;
 
-  Widget build(BuildContext context) {
-    return Center(
-      child: AnimatedBuilder(
-          animation: animation,
-          builder: (BuildContext context, Widget child) {
-            return Container(
-                height: animation.value, width: animation.value, child: child);
-          },
-          child: child),
-    );
-  }
+  Widget build(BuildContext context) => Center(
+        child: AnimatedBuilder(
+            animation: animation,
+            builder: (context, child) => Container(
+                  height: animation.value,
+                  width: animation.value,
+                  child: child,
+                ),
+            child: child),
+      );
 }
-{% endprettify %}
+```
 
-Finally, the code to initialize the animation looks very similar to the first
-example, [animate1.]({{example}}/animation/animate1/lib/main.dart) The `initState()`
-method creates an AnimationController and a Tween, then binds them with
+Finally, the code to initialize the animation looks very similar to the
+[animate2]({{example}}/animation/animate1/lib/main.dart) example. The `initState()`
+method creates an `AnimationController` and a `Tween`, then binds them with
 `animate()`. The magic happens in the `build()` method, which returns a
-`GrowTransition` object with a LogoWidget as a child, and an animation object to
+`GrowTransition` object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed in the bullet points
 above.
 
+<?code-excerpt "animate{2,4}/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
+```diff
+--- animate2/lib/main.dart
++++ animate4/lib/main.dart
+@@ -27,22 +36,27 @@
+ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
+   Animation<double> animation;
+   AnimationController controller;
 
-<!-- skip -->
-{% prettify dart %}
-class LogoApp extends StatefulWidget {
-  _LogoAppState createState() => _LogoAppState();
-}
+   @override
+   void initState() {
+     super.initState();
+     controller = AnimationController(
+         duration: const Duration(milliseconds: 2000), vsync: this);
++    final CurvedAnimation curve =
++        CurvedAnimation(parent: controller, curve: Curves.easeIn);
+     animation = Tween(begin: 0.0, end: 300.0).animate(controller);
+     controller.forward();
+   }
 
-class _LogoAppState extends State<LogoApp> with TickerProviderStateMixin {
-  Animation animation;
-  AnimationController controller;
+   @override
+-  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
++  Widget build(BuildContext context) => GrowTransition(
++        child: LogoWidget(),
++        animation: animation,
++      );
 
-  initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    final CurvedAnimation curve =
-        CurvedAnimation(parent: controller, curve: Curves.easeIn);
-    animation = Tween(begin: 0.0, end: 300.0).animate(curve);
-    controller.forward();
-  }
+   @override
+   void dispose() {
+     controller.dispose();
+     super.dispose();
+   }
+ }
+```
 
-  Widget build(BuildContext context) {
-    return GrowTransition(child: LogoWidget(), animation: animation);
-  }
-
-  dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-}
-
-void main() {
-  runApp(LogoApp());
-}
-{% endprettify %}
-
-You can find the source for this example,
-[animate4,]({{example}}/animation/animate4/lib/main.dart) on GitHub.
+**App source:** [animate4]({{example}}/animation/animate4)
 
 ### Simultaneous animations
 
@@ -824,8 +819,7 @@ void main() {
 }
 {% endprettify %}
 
-You can find the source for this example,
-[animate5,]({{example}}/animation/animate5/lib/main.dart) on GitHub.
+**App source:** [animate5]({{example}}/animation/animate5)
 
 ## Next steps
 
