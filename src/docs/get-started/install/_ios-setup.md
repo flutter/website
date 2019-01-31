@@ -34,20 +34,27 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
     in the simulator's **Hardware > Device** menu.
  3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
     may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
- 4. Start your app by running `flutter run`.
+ 4. Create a flutter project and cd to it using the following command:
+
+	```terminal
+	$ flutter create hello_flutter
+	$ cd hello_flutter
+	```
+
+ 5. Start your app by running `flutter run`.
 
 ### Deploy to iOS devices
 
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools and an Apple account. You'll also need to set up physical device deployment in Xcode.
 
  1. Install [homebrew](https://brew.sh).
- 1. Ensure that homebrew is up to date:
+ 2. Ensure that homebrew is up to date:
 
     ```terminal
     $ brew update
     ```
 
- 1. Install the tools for deploying Flutter apps to iOS devices by running the
+ 3. Install the tools for deploying Flutter apps to iOS devices by running the
     following commands:
 
     ```terminal
@@ -63,14 +70,21 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
       release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
       [Flutter issue #22595][].
 
-      [libusbmuxd issue #46]: https://github.com/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
-      [Flutter issue #22595]: https://github.com/flutter/flutter/issues/22595
+    [libusbmuxd issue #46]: https://github.com/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
+    [Flutter issue #22595]: https://github.com/flutter/flutter/issues/22595
     {{site.alert.end}}
 
     If any of these commands fail, run `brew doctor` and follow the instructions
     to resolve any issues.
 
- 1. Follow the Xcode signing flow to provision your project:
+ 4. Create a flutter project and cd to it using the following command:
+
+	```terminal
+	$ flutter create hello_flutter
+	$ cd hello_flutter
+	```
+
+ 5. Follow the Xcode signing flow to provision your project:
 
      {: type="a"}
      1. Open the default Xcode workspace in your project by running `open
