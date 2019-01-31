@@ -32,7 +32,7 @@ similar to:
 
 ```
 Performing hot reload...
-Reloaded 1 of 448 libraries in 2,777ms.
+Reloaded 1 of 448 libraries in 978ms.
 ```
 The app updates to reflect your change, and the current state of the
 app&mdash;the value of the counter variable in the above example&mdash;is
