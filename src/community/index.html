@@ -94,7 +94,7 @@ body_class: landing-page community
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
                                         {% for learnMoreCase in case.learn_more_link -%}
-                                            <a class="dropdown-item" href="{{learnMoreCase.url}}" target="_blank">{{learnMoreCase.name}}</a>
+                                            <a class="dropdown-item" href="{{learnMoreCase.url}}" target="_blank" rel="noopener">{{learnMoreCase.name}}</a>
                                         {% endfor -%}
                                     </div>
                                 </span>
@@ -107,8 +107,8 @@ body_class: landing-page community
                                         Download
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
-                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank">Android</a>{% endif -%}
-                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank">iOS</a>{% endif -%}
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif -%}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif -%}
                                     </div>
                                 </span>
                             {% endif -%}
