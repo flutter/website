@@ -18,5 +18,3 @@ and many questions to think about.
 
 In the following pages, you will learn the basics of dealing with state in 
 Flutter apps.
-
-{% comment %} <!-- TODO(filiph): decide if we want a list of pages here (duplicating left nav, and inviting people to skip ahead) --> {% endcomment %}
