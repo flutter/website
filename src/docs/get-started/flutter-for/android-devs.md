@@ -1798,7 +1798,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List widgets = <Widget>[];
 
   @override
   void initState() {
@@ -1871,7 +1871,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List widgets = <Widget>[];
 
   @override
   void initState() {
