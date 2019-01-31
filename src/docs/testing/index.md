@@ -69,7 +69,7 @@ Example:
 Add this file to `test/unit_test.dart`:
 
 {% prettify dart %}
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('my first unit test', () {
@@ -252,7 +252,7 @@ import 'dart:async';
 
 // Imports the Flutter Driver API
 import 'package:flutter_driver/flutter_driver.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('scrolling performance test', () {

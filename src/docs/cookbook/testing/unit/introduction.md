@@ -108,7 +108,7 @@ from the `test` package.
 <!-- skip -->
 ```dart
 // Import the test package and Counter class
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:counter_app/counter.dart';
 
 void main() {
@@ -129,7 +129,7 @@ to combine them using the `group` function provided by the `test` package.
 
 <!-- skip -->
 ```dart
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:counter_app/counter.dart';
 
 void main() {
