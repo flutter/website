@@ -44,8 +44,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     // #docregion AnimationController, tweens
-    controller = AnimationController(
-        duration: const Duration(seconds: 2), vsync: this);
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
     // #enddocregion AnimationController, tweens
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
@@ -74,7 +74,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 class UsedInTutorialTextOnly extends _LogoAppState {
   UsedInTutorialTextOnly() {
     // ignore: unused_local_variable
-    var animation, sizeAnimation, opacityAnimation;
+    var animation, sizeAnimation, opacityAnimation, tween, colorTween;
 
     // #docregion CurvedAnimation
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
@@ -84,6 +84,34 @@ class UsedInTutorialTextOnly extends _LogoAppState {
     sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
     opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
     // #enddocregion tweens
+
+    // #docregion tween
+    tween = Tween<double>(begin: -200, end: 0);
+    // #enddocregion tween
+
+    // #docregion colorTween
+    colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
+    // #enddocregion colorTween
+  }
+
+  usedInTutorialOnly1() {
+    // #docregion IntTween
+    AnimationController controller = AnimationController(
+        duration: const Duration(milliseconds: 500), vsync: this);
+    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
+    // #enddocregion IntTween
+    return alpha;
+  }
+
+  usedInTutorialOnly2() {
+    // #docregion IntTween-curve
+    AnimationController controller = AnimationController(
+        duration: const Duration(milliseconds: 500), vsync: this);
+    final Animation curve =
+        CurvedAnimation(parent: controller, curve: Curves.easeOut);
+    Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
+    // #enddocregion IntTween-curve
+    return alpha;
   }
 }
 
