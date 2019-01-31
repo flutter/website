@@ -90,14 +90,14 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   own. For example:
 
   <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
-  ```dart
+  {% prettify dart context="html" %}
   import 'dart:math';
 
   class ShakeCurve extends Curve {
     @override
     double transform(double t) => sin(t * pi * 2);
   }
-  ```
+  {% endprettify %}
 {{site.alert.end}}
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
@@ -365,22 +365,22 @@ With these few changes, you’ve created your first animation in Flutter!
   Consider the following example:
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
-  ```dart
+  {% prettify dart context="html" %}
   [!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
     [!..addListener!](() {
       // ···
     });
-  ```
+  {% endprettify %}
 
   This code is equivalent to:
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
-  ```dart
+  {% prettify dart context="html" %}
   [!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
   [!animation.addListener(() {!]
       // ···
     });
-  ```
+  {% endprettify %}
 
   You can learn more about cascade notation in the
   [Dart Language Tour.](https://www.dartlang.org/guides/language/language-tour)
