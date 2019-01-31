@@ -6,12 +6,12 @@ prev:
   path: /docs/get-started/codelab
 ---
 
-Learn more about the Flutter framework at the following links.
+Learn more about the Flutter framework from the following pages:
 
-## Build UI
+## Flutter basics
 
 * [Introduction to widgets](/docs/development/ui/widgets-intro)
-* [Building layouts in Flutter](/docs/development/ui/layout) tutorial
+* [Building layouts in Flutter](/docs/development/ui/layout/tutorial) tutorial
 * [Add interactivity](/docs/development/ui/interactive) tutorial
 
 ## Apply your existing knowledge
