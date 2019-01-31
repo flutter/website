@@ -6,25 +6,30 @@ prev:
   path: /docs/get-started/codelab
 ---
 
-Learn more about the Flutter framework:
+Learn more about the Flutter framework from the following pages:
+
+## Flutter basics
+
+* [Introduction to widgets](/docs/development/ui/widgets-intro)
+* [Building layouts in Flutter](/docs/development/ui/layout/tutorial) tutorial
+* [Add interactivity](/docs/development/ui/interactive) tutorial
+
+## Apply your existing knowledge
 
 * [Flutter for Android developers](/docs/get-started/flutter-for/android-devs)
+* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart) codelab
 * [Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
 * [Flutter for React Native developers](/docs/get-started/flutter-for/react-native-devs)
-* [Flutter for Xamarin.Forms developers](/docs/get-started/flutter-for/xamarin-forms-devs)
 * [Flutter for web developers](/docs/get-started/flutter-for/web-devs)
-* [Building layouts in Flutter](/docs/development/ui/layout) tutorial
-* [Add interactivity](/docs/development/ui/interactive) tutorial
-* [Introduction to widgets](/docs/development/ui/widgets-intro)
-* [Flutter API Docs](https://docs.flutter.io/)
-* [flutter.io (this website)](/)
+* [Flutter for Xamarin.Forms developers](/docs/get-started/flutter-for/xamarin-forms-devs)
 
-Other resources:
+## Other resources
 
-* [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
-* [Flutter Cookbook](/docs/cookbook)
-* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart) codelab
+* [Flutter samples](https://github.com/flutter/samples/blob/master/INDEX.md)
+* [Flutter cookbook](/docs/cookbook)
 * [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
+* [Flutter API Docs](https://docs.flutter.io/)
+* [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!
 
