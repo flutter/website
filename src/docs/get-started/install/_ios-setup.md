@@ -37,8 +37,8 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
  4. Create a flutter project and cd to it using the following command:
 
 	```terminal
-	$ flutter create hello_flutter
-	$ cd hello_flutter
+	$ flutter create your_flutter_project_name
+	$ cd your_flutter_project_name
 	```
 
  5. Start your app by running `flutter run`.
@@ -80,8 +80,8 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
  4. Create a flutter project and cd to it using the following command:
 
 	```terminal
-	$ flutter create hello_flutter
-	$ cd hello_flutter
+	$ flutter create your_flutter_project_name
+	$ cd your_flutter_project_name
 	```
 
  5. Follow the Xcode signing flow to provision your project:
