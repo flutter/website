@@ -45,13 +45,13 @@ To create your first Flutter app and test your setup, follow these steps:
     $ flutter create my_app
     ```
 
- 2. A `my_app` directory will be created, containing Flutter's starter app. Enter this directory:
+ 2. A `my_app` directory is created, containing Flutter's starter app. Enter this directory:
  
     ```terminal
     $ cd my_app
     ```
  
- 3. To launch the app in the Simulator, ensure that the Simulator is running and use:
+ 3. To launch the app in the Simulator, ensure that the Simulator is running and enter:
 
     ```terminal
     $ flutter run
