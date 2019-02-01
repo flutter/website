@@ -1,5 +1,5 @@
-name: l10n_example
-description: A minimal example of a localized Flutter app
+name: intl_example
+description: Example of a Flutter app using the intl library services.
 
 dependencies:
   flutter:
