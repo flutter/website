@@ -491,7 +491,7 @@ class CustomCard extends React.Component {
   render() {
     return (
       <View>
-        <Text > Card {this.props.index} </Text>
+        <Text> Card {this.props.index} </Text>
         <Button
           title="Press"
           onPress={() => this.props.onPress(this.props.index)}
