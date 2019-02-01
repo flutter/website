@@ -5,7 +5,7 @@ prev:
   path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 
-State management is a complex topic. If you feel that some of your questions haven't been answered, or that the approached described on these pages is not viable for your use cases, you are probably right.
+State management is a complex topic. If you feel that some of your questions haven't been answered, or that the approach described on these pages is not viable for your use cases, you are probably right.
 
 Learn more at the following links, many of which have been contributed by the Flutter community:
 

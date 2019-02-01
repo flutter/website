@@ -138,8 +138,6 @@ In `scoped_model`, the `Model` encapsulates your application state. For very sim
 
 In our shopping app example, we want to manage the state of the cart in a `Model`. We create a new class that extends Model. Like so:
 
-TODO: highlight the below
-
 ```dart
 class CartModel extends Model {
   /// Internal, private state of the cart.
