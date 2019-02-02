@@ -12,15 +12,18 @@ BUILD=1
 CHECK_CODE=1
 CHECK_LINKS=1
 PUB_CMD="get"
+TEST=1
 
 while [[ "$1" == -* ]]; do
   case "$1" in
+    --filter)   shift; FILTER="$1"; shift;;
     --no-build) BUILD=; shift;;
     --no-check-code)  CHECK_CODE=; shift;;
     --no-check-links) CHECK_LINKS=; shift;;
     --no-get)   PUB_CMD=""; shift;;
+    --no-test)  TEST=; shift;;
     --up*)      PUB_CMD="upgrade"; shift;;
-    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links]]";
+    -h|--help)  echo "Usage: $(basename $0) [-h|--help] [--no-get|--upgrade] [--no-[build|check-links|test]] [--filter=project-glob-pattern]";
                 exit 0;;
     *)          echo "ERROR: Unrecognized option: $1. Use --help for details."; exit 1;;
   esac
@@ -132,27 +135,13 @@ if [[ -n $PUB_CMD ]]; then
     mkdir -pv example.g
     cp example/* example.g/
   )
-
-  pushd example.g > /dev/null
-  "$flutter" packages $PUB_CMD
-
-  # Analyze the stand-alone sample code files
-  for sample in ../src/_includes/code/*/*; do
-    if [[ -d "${sample}" ]]; then
-      echo "Run flutter packages $PUB_CMD on ${sample}"
-      "$flutter" packages $PUB_CMD ${sample}
-    fi
-  done
-  popd > /dev/null
+  (
+    cd example.g;
+    "$flutter" packages $PUB_CMD
+  )
 fi
 
 if [[ -n $CHECK_CODE ]]; then
-  echo "ANALYZING _includes/code/*:"
-  (
-    cd example.g;
-    "$flutter" analyze --no-current-package ../src/_includes/code/*/
-  )
-
   echo "EXTRACTING code snippets from the markdown:"
   "$dart" tool/extract.dart
 
@@ -165,19 +154,36 @@ if [[ -n $CHECK_CODE ]]; then
   echo "ANALYZING and testing apps in examples/*"
   for sample in examples/*/*{,/*}; do
     if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
-      echo "Example: $sample"
-      (
-        set -x;
-        cd $ROOT;
-        "$flutter" create --no-overwrite $sample
-      )
+      if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
+        echo "Example: $sample - skipped because of filter"
+        continue;
+      else
+        echo "Example: $sample"
+      fi
+      if [[ -n $TEST && -d "$sample/test" ]]; then
+        # Only hydrate the sample if we're going to test it.
+        (
+          set -x;
+          cd $ROOT;
+          "$flutter" create --no-overwrite $sample
+        )
+      fi
       (
         set -x;
         cd "$sample"
         "$flutter" packages $PUB_CMD;
         "$flutter" analyze .;
-        "$flutter" test
       )
+      if [[ -n $TEST && -d "$sample/test" ]]; then
+        (
+          cd "$sample";
+          set -x;
+          "$flutter" test
+        )
+      elif [[ -n $TEST ]]; then
+        echo "Sample has no tests."
+      fi
+      echo
     fi
   done
 

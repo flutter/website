@@ -279,12 +279,12 @@ implement hero animations:
   Each of the following examples demonstrates flying an image from one
   route to another. This guide describes the first example.
 
-  [hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/hero_animation/)
+  [hero_animation](https://github.com/flutter/website/tree/master/examples/_animation/hero_animation/)
   : Encapsulates the hero code in a custom PhotoHero widget.
     Animates the hero's motion along a curved path,
     as described in the Material motion spec.
 
-  [basic_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_hero_animation/)
+  [basic_hero_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_hero_animation/)
   : Uses the hero widget directly.
     This more basic example, provided for your reference, isn't
     described in this guide.
@@ -300,7 +300,7 @@ spec.](https://material.io/guidelines/motion/movement.html)
 
 [Create a new Flutter example](/docs/get-started/test-drive) and
 update it using the files from the
-[GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/hero_animation/)
+[GitHub directory.](https://github.com/flutter/website/tree/master/examples/_animation/hero_animation/)
 
 To run the example:
 
@@ -468,16 +468,16 @@ provided example to your needs.** The heavy lifting is done for you.
   Each of the following examples demonstrates a radial hero animation.
   This guide describes the first example.
 
-  [radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
+  [radial_hero_animation](https://github.com/flutter/website/tree/master/examples/_animation/radial_hero_animation)
   : A radial hero animation as described in the Material motion spec.
 
-  [basic_radial_hero_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_radial_hero_animation)
+  [basic_radial_hero_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_radial_hero_animation)
   : The simplest example of a radial hero animation. The destination
     route has no Scaffold, Card, Column, or Text.
     This basic example, provided for your reference, isn't
     described in this guide.
 
-  [radial_hero_animation_animate<wbr>_rectclip](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation_animate_rectclip)
+  [radial_hero_animation_animate<wbr>_rectclip](https://github.com/flutter/website/tree/master/examples/_animation/radial_hero_animation_animate_rectclip)
   : Extends radial_hero_animaton by also animating the size of the
     rectangular clip. This more advanced example,
     provided for your reference, isn't described in this guide.
@@ -516,7 +516,7 @@ longer clipped.
 
 [Create a new Flutter example](/docs/get-started/test-drive) and
 update it using the files from the
-[GitHub directory.](https://github.com/flutter/website/tree/master/src/_includes/code/animation/radial_hero_animation)
+[GitHub directory.](https://github.com/flutter/website/tree/master/examples/_animation/radial_hero_animation)
 
 To run the example:
 

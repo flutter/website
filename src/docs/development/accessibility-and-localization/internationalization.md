@@ -33,8 +33,8 @@ can also be internationalized using the same classes and logic.
   provided by the [intl](https://pub.dartlang.org/packages/intl) package.
   If Dart's intl package is new to you, see [Using the Dart intl tools.](#dart-tools)
 
-  * [Minimal internationalization](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
-  * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
+  * [Minimal internationalization](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
+  * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/examples/internationalization/intl_example)
 </aside>
 
 ## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
@@ -219,13 +219,13 @@ Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized
 values. The example that follows is typical of such classes.
 
-[Complete source code](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
+[Complete source code](https://github.com/flutter/website/tree/master/examples/internationalization/intl_example)
 for this example app.
 
 This example is based on the APIs and tools provided by the
 [intl](https://pub.dartlang.org/packages/intl) package. [An alternative class
 for the app's localized resources](#alternative-class) describes
-[an example](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
+[an example](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
 that doesn't depend on the intl package.
 
 The DemoLocalizations class contains the app's strings (just one for the example)
@@ -317,7 +317,7 @@ package. Developers can choose their own approach for managing
 localized values for the sake of simplicity or perhaps to integrate
 with a different i18n framework.
 
-[Complete source code](https://github.com/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
+[Complete source code](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
 for this example app.
 
 In this version of DemoApp the class that contains the app's

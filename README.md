@@ -202,17 +202,6 @@ The `prettify` plugin will also unindent your code.
 If you want to see how this functionality was added to this site, refer to
 [this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
 
-## (Deprecated) Including a region of a file
-
-You can include a specific range of lines from a file:
-
-```ruby
-{% include includelines filename=PATH start=INT count=INT %}
-```
-
-`PATH` must be inside of `_include`. If you are including source code,
-place that code into `_include/code` to follow our convention.
-
 ## (Deprecated) Code snippet validation
 
 The code snippets in the markdown documentation are validated as part of the
