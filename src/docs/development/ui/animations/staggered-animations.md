@@ -34,12 +34,12 @@ This guide shows how to build a staggered animation in Flutter.
   This guide explains the basic_staggered_animation example. You can also
   refer to a more complex example, staggered_pic_selection.
 
-  [basic_staggered_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_staggered_animation)
+  [basic_staggered_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
   : Shows a series of sequential and overlapping animations of a single widget.
     Tapping the screen begins an animation that changes opacity, size,
     shape, color, and padding.
 
-  [staggered_pic_selection](https://github.com/flutter/website/tree/master/src/_includes/code/animation/staggered_pic_selection)
+  [staggered_pic_selection](https://github.com/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
   : Shows deleting an image from a list of images displayed in one of three sizes.
     This example uses two [animation
     controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
@@ -110,7 +110,7 @@ in and out.
 {% endcomment %}
 
 The following diagram shows the Intervals used in the
-[basic_staggered_animation](https://github.com/flutter/website/tree/master/src/_includes/code/animation/basic_staggered_animation)
+[basic_staggered_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
 example. You might notice the following characteristics:
 
 * The opacity changes during the first 10% of the timeline.
@@ -194,7 +194,7 @@ The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected anywhere in the screen.
 
-[Full code for basic_staggered_animation's main.dart]({{site.repo.this}}/tree/{{site.branch}}/src/_includes/code/animation/basic_staggered_animation/main.dart)
+[Full code for basic_staggered_animation's main.dart]({{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart)
 
 ### Stateless widget: StaggerAnimation
 
