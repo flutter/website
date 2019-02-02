@@ -6,7 +6,7 @@ description: How to structure an app to manage the state of the data flowing thr
 "How do I best manage the state of the UI controls in a medium-to-large
 Flutter app?" is a question we often hear.
 This is an complex topic with strong, and differing, opinions.
-Until we provide more docs/examples, learn more at the
+Until we provide more docs/examples, 더 알아보기 at the
 following links, some of which have been
 contributed by the Flutter community:
 

@@ -1,6 +1,6 @@
 ---
-title: Flutter Documentation
-short-title: Docs
+title: Flutter 문서
+short-title: 문서
 description: The landing page for Flutter documentation.
 ---
 
@@ -15,7 +15,7 @@ description: The landing page for Flutter documentation.
 {% endfor -%}
 </div>
 
-## What's new on flutter.io
+## flutter.io의 새로운 기능
 
 **November 5, 2018**
 
@@ -77,7 +77,7 @@ here are some next steps.
 : Learn how to add a stateful widget to your app.
 
 [A tour of the Flutter widget framework](/docs/development/ui/widgets-intro)
-: Learn more about Flutter's react-style framework.
+: 더 알아보기 about Flutter's react-style framework.
 
 [FAQ](/docs/resources/faq)
 : Get the answers to frequently asked questions.

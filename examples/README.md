@@ -10,7 +10,7 @@ the repo root (`$PROJECT` represents the app project path, such as
 1. `flutter test`
 1. `flutter run`
 
-To learn more about setting up Flutter and running apps, see
+To 더 알아보기 about setting up Flutter and running apps, see
 [flutter.io/get-started][].
 
 [flutter.io/get-started]: https://flutter.io/docs/get-started

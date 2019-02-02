@@ -69,7 +69,7 @@ body_class: landing-page community
             {% if case.featured -%}
                 {% continue -%}
             {% endif -%}
-            {% assign learnMoreCta = case.learn_more_cta | default: 'Learn more' -%}
+            {% assign learnMoreCta = case.learn_more_cta | default: '더 알아보기' -%}
 
             {% capture loopCount %}{% increment communityCounter %}{% endcapture -%}
             {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture -%}

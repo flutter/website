@@ -25,7 +25,7 @@ from the model, the corresponding card animates in or out of view.
         This app features the following classes: AnimatedList, AnimatedListState.
       </p>
       <p>
-        <a href="/docs/catalog/samples/animated-list">Learn more</a>.
+        <a href="/docs/catalog/samples/animated-list">더 알아보기</a>.
       </p>
     </div>
   </div>

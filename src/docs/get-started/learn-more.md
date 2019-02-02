@@ -1,12 +1,12 @@
 ---
-title: Learn more
+title: 더 알아보기
 description: More resources to help you learn Flutter.
 prev:
   title: Write your first Flutter app
   path: /docs/get-started/codelab
 ---
 
-Learn more about the Flutter framework from the following pages:
+더 알아보기 about the Flutter framework from the following pages:
 
 ## Flutter basics
 
@@ -27,7 +27,7 @@ Learn more about the Flutter framework from the following pages:
 
 * [Flutter samples](https://github.com/flutter/samples/blob/master/INDEX.md)
 * [Flutter cookbook](/docs/cookbook)
-* [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
+* [Bootstrap into Dart: 더 알아보기 about the language](/docs/resources/bootstrap-into-dart)
 * [Flutter API Docs](https://docs.flutter.io/)
 * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 

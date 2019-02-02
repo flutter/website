@@ -1307,7 +1307,7 @@ are a way to modularize your code, compose sophisticated user interfaces for
 larger screens, and help scale your application UI. In Flutter, both of these
 concepts fall under the umbrella of `Widget`s.
 
-To learn more about the UI for building Activities and Fragements, see
+To 더 알아보기 about the UI for building Activities and Fragements, see
 the community-contributed medium article,
 [Flutter For Android Developers : How to design an Activity UI in
 Flutter](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
@@ -1447,7 +1447,7 @@ children.
   }
 {% endprettify %}
 
-To learn more about building linear layouts, see the community contributed medium
+To 더 알아보기 about building linear layouts, see the community contributed medium
 article [Flutter For Android Developers : How to design LinearLayout in
 Flutter?](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
 

@@ -214,7 +214,7 @@ In Android Studio and IntelliJ IDEA:
     ![IntelliJ Flutter Inspector Window][]
 
 The Flutter Inspector is available in Android Studio and IntelliJ.
-Learn more about what the Inspector can do in the
+더 알아보기 about what the Inspector can do in the
 [Flutter Widget Inspector](/docs/development/tools/inspector) doc, as well as the
 [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
 presented at DartConf 2018.

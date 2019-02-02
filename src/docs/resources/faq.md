@@ -161,7 +161,7 @@ codelab.
 ### Does Flutter come with a testing framework?
 
 Yes, Flutter provides APIs for writing unit and integration
-tests. Learn more about
+tests. 더 알아보기 about
 [testing with Flutter](/docs/testing).
 
 We use our own testing capabilities to test our SDK. We measure our
@@ -517,7 +517,7 @@ This is enabled via a flexible message passing style where a Flutter app
 may send and receive messages to the mobile platform using a
 [`BasicMessageChannel`](https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html).
 
-Learn more about accessing platform and third-party services in Flutter with
+더 알아보기 about accessing platform and third-party services in Flutter with
 [platform channels](/docs/development/platform-integration/platform-channels).
 
 Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
@@ -533,10 +533,10 @@ for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
 
 ### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
-Learn more about i18n and l10n in the
+더 알아보기 about i18n and l10n in the
 [internationalization tutorial](/docs/development/accessibility-and-localization/internationalization).
 
-Learn more about a11y in the [accessibility documentation](/docs/development/accessibility-and-localization/accessibility).
+더 알아보기 about a11y in the [accessibility documentation](/docs/development/accessibility-and-localization/accessibility).
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -583,7 +583,7 @@ of your APK or IPA with the Flutter tools.
 A release build is usually _much_ smaller
 than a _debug build_.
 
-Learn more about creating a
+더 알아보기 about creating a
 [release build of your Android app](/docs/deployment/android),
 and creating a [release build of your iOS app](/docs/deployment/ios).
 

@@ -23,7 +23,7 @@ all of the sample apps.
         This app features the following classes: ExpansionTile, ListView.
       </p>
       <p>
-        <a href="/docs/catalog/samples/expansion-tile-sample">Learn more</a>.
+        <a href="/docs/catalog/samples/expansion-tile-sample">더 알아보기</a>.
       </p>
     </div>
   </div>

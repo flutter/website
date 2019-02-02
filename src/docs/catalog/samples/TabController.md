@@ -23,7 +23,7 @@ lists all of the sample apps.
         This app features the following classes: AppBar, PreferredSize, TabBarView, TabController.
       </p>
       <p>
-        <a href="/docs/catalog/samples/app-bar-bottom">Learn more</a>.
+        <a href="/docs/catalog/samples/app-bar-bottom">더 알아보기</a>.
       </p>
     </div>
   </div>

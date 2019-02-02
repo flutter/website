@@ -5,7 +5,7 @@ prev:
   title: Test drive
   path: /docs/get-started/test-drive
 next:
-  title: Learn more
+  title: 더 알아보기
   path: /docs/get-started/learn-more
 diff2html: true
 ---

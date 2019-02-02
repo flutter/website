@@ -28,7 +28,7 @@
   description: >
     A beautiful journal and mindfulness app driven by artificial intelligence.
   logo_src: showcase/logo-reflectly.png
-  learn_more_cta: Learn more
+  learn_more_cta: 더 알아보기
   learn_more_link: https://medium.com/reflectly-engineering/reflectly-from-react-native-to-flutter-2e3dffced2ea
   app_store_link: https://itunes.apple.com/us/app/reflectly-mindfulness-journal/id1241229134
   play_store_link: https://play.google.com/store/apps/details?id=com.reflectlyApp&e=-EnableAppDetailsPageRedesign
@@ -41,7 +41,7 @@
   logo_src: showcase/logo-hamilton.png
   hero_src: showcase/hero-hamilton.jpg
   video_id: kfd-oLypqFI
-  learn_more_cta: Learn more
+  learn_more_cta: 더 알아보기
   learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
   app_store_link: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.hamilton.app&e=-EnableAppDetailsPageRedesign

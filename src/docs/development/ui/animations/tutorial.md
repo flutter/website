@@ -382,7 +382,7 @@ With these few changes, you’ve created your first animation in Flutter!
     });
   {% endprettify %}
 
-  You can learn more about cascade notation in the
+  You can 더 알아보기 about cascade notation in the
   [Dart Language Tour.](https://www.dartlang.org/guides/language/language-tour)
 </aside>
 

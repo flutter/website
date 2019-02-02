@@ -44,7 +44,7 @@ If you have a specific request, please
 
 Animations fall into one of two categories: tween- or physics-based.
 The following sections explain what these terms mean, and points you to
-resources where you can learn more. In some cases,
+resources where you can 더 알아보기. In some cases,
 the best documentation we currently have is example code in the
 Flutter gallery.
 
@@ -83,7 +83,7 @@ gestures.
 
 Most UX or motion designers find that certain animation patterns are
 used repeatedly when designing a UI. This section lists some of the commonly
-used animation patterns, and tells you where you can learn more.
+used animation patterns, and tells you where you can 더 알아보기.
 
 ### Animated list or grid
 This pattern involves animating the addition or removal of elements from a
@@ -134,7 +134,7 @@ The smaller animations may be sequential, or may partially or completely overlap
 
 ## Other resources
 
-Learn more about Flutter animations at the following links:
+더 알아보기 about Flutter animations at the following links:
 
 * [Animations: Technical Overview](/docs/development/ui/animations/overview.html)<br>
 A look at some of the major classes in the animations library,
