@@ -160,7 +160,7 @@ if [[ -n $CHECK_CODE ]]; then
       else
         echo "Example: $sample"
       fi
-      if [[ -z $TEST || -d "$sample/test" ]]; then
+      if [[ -n $TEST && -d "$sample/test" ]]; then
         # Only hydrate the sample if we're going to test it.
         (
           set -x;
@@ -176,6 +176,7 @@ if [[ -n $CHECK_CODE ]]; then
       )
       if [[ -n $TEST && -d "$sample/test" ]]; then
         (
+          cd "$sample";
           set -x;
           "$flutter" test
         )
