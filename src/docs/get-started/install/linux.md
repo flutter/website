@@ -9,13 +9,13 @@ next:
 
 {% assign os = 'linux' -%}
 
-## System requirements
+## 시스템 요구 사항
 
-To install and run Flutter, your development environment must meet these minimum requirements:
+Flutter를 설치하고 실행하기 위해서는 개발 환경이 다음과 같은 최소 요구 사항을 충족해야 합니다:
 
-- **Operating Systems**: Linux (64-bit)
-- **Disk Space**: 600 MB (does not include disk space for IDE/tools).
-- **Tools**: Flutter depends on these command-line tools being available in your environment.
+- **운영 체제**: Linux (64-bit)
+- **저장 공간**: 600 MB (IDE나 개발 도구 용량은 별도).
+- **도구**: Flutter는 리눅스 환경에서 아래 커멘트 라인 도구가 필요합니다. 
   - `bash`
   - `curl`
   - `git` 2.x

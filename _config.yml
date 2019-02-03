@@ -89,13 +89,13 @@ os-list: [Windows, macOS, Linux]
 alert:
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-circle"></i> **Important:**
+    <i class="fas fa-exclamation-circle"></i> **중요:**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="fas fa-info-circle"></i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **Note:**
+    <i class="fas fa-info-circle"></i> **참고:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
@@ -103,7 +103,7 @@ alert:
     <i class="far fa-lightbulb"></i> **Tip:**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-triangle"></i> **Warning:**
+    <i class="fas fa-exclamation-triangle"></i> **경고:**
   end: </aside>
 
   # callout_danger: '<div class="bs-callout bs-callout-danger">'

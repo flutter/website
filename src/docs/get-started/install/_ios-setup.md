@@ -1,75 +1,73 @@
-## iOS setup
+## iOS 설정
 
-### Install Xcode
+### Xcode 설치
 
-To develop Flutter apps for iOS, you need a Mac with Xcode 9.0 or newer:
+iOS용 Flutter 앱을 개발하기 위해서는 Xcode 9.0 이상 버전이 설치된 맥이 필요합니다.
 
- 1. Install Xcode 9.0 or newer (via [web download](https://developer.apple.com/xcode/) or
-    the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835)).
- 1. Configure the Xcode command-line tools to use the newly-installed version of Xcode by
-    running the following from the command line:
+ 1. Xcode 9.0 이상을 설치하세요([웹에서 다운로드](https://developer.apple.com/xcode/) 혹은
+    [맥 앱스토어](https://itunes.apple.com/us/app/xcode/id497799835)에서).
+ 1. 아래 명령을 실행하여 새롭게 설치된 버전을 사용하도록 Xcode 커멘드라인 도구를 설정하세요
 
     ```terminal
     $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
     ```
 
-    This is the correct path for most cases, when you want to use the latest version of Xcode.
-    If you need to use a different version, specify that path instead.
- 1. Make sure the Xcode license agreement is signed by either opening Xcode once and confirming or
-    running `sudo xcodebuild -license` from the command line.
+    최신 버전 Xcode를 사용하고자 할 때, 보통은 이 경로가 올바른 경로입니다.
+    다른 버전을 사용하기를 원한다면, 다른 경로를 지정해주세요.
+ 1. Xcode를 한 번 열어 확인을 선택하거나 커멘트라인에서 `sudo xcodebuild -license`를 입력하여 
+    Xcode 라이센스 계약이 서명되었는지 확인하세요.  
 
-With Xcode, you’ll be able to run Flutter apps on an iOS device or on the simulator.
+Xcode를 사용하여 iOS 기기 또는 시뮬레이터에서 Flutter 앱을 실행할 수 있습니다.
 
-### Set up the iOS simulator
+### iOS 시뮬레이터 설정
 
-To prepare to run and test your Flutter app on the iOS simulator, follow these steps:
+iOS 시뮬레이터에서 Flutter 앱을 실행하고 테스트하기 위해서, 아래 단계를 수행하세요: 
 
- 1. On your Mac, find the Simulator via Spotlight or by using the following command:
+ 1. 맥에서 Spotlight를 통해 혹은 아래 명령을 입력하여 시뮬레이터를 찾으세요.
 
     ```terminal
     $ open -a Simulator
     ```
 
- 2. Make sure your simulator is using a 64-bit device (iPhone 5s or later) by checking the settings
-    in the simulator's **Hardware > Device** menu.
- 3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
-    may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
+ 2. 시뮬레이터의 **Hardware > Device**메뉴의 설정에서 시뮬레이터가 64비트 기기(iPhone 5s 이상)를 활용하고 있는지 확인하세요.
+ 3. 기기 화면 크기에 따라서, 시뮬레이터에서 높은 해상도의 iOS 기기가 화면을 초과할 수 있습니다.
+    시뮬레이터의 **Window > Scale** 메뉴에서 기기의 스케일을 설정하세요. 
 
-### Create and run a simple Flutter app
+### 간단한 Flutter 앱 만들고 실행하기
 
-To create your first Flutter app and test your setup, follow these steps:
+첫번째 Flutter 앱을 만들고 설정이 잘 되는지 확인하기 위해, 아래 단계를 수행하세요:
 
- 1. Create a new Flutter app by running the following from the command line:
+ 1. 커멘드라인에서 아래 명령을 실행하여 새로운 Flutter 앱을 만듭니다:
  
     ```terminal
     $ flutter create my_app
     ```
 
- 2. A `my_app` directory is created, containing Flutter's starter app. Enter this directory:
+ 2. Flutter's starter 앱이 들어있는 `my_app` 디렉토리가 생성됩니다. 해당 디렉토리로 이동하세요:
  
     ```terminal
     $ cd my_app
     ```
  
- 3. To launch the app in the Simulator, ensure that the Simulator is running and enter:
+ 3. 시뮬레이터에서 앱을 실행하기 위해, 시뮬레이터가 실행중인지 확인한 후 다음을 입력하세요:
 
     ```terminal
     $ flutter run
     ```
 
-### Deploy to iOS devices
+### iOS 기기에 배포
 
-To deploy your Flutter app to a physical iOS device, you’ll need some additional tools and an Apple account. You'll also need to set up physical device deployment in Xcode.
+Flutter 앱을 실제 iOS 기기에 배포하려면 몇 가지 추가적인 도구와 Apple 계정이 필요합니다.
+또한 실제 기기 배포 설정을 해야합니다.
 
- 1. Install [homebrew](https://brew.sh).
- 1. Ensure that homebrew is up to date:
+ 1. [homebrew](https://brew.sh)를 설치하세요.
+ 1. homebrew가 최신인지 확인하세요:
 
     ```terminal
     $ brew update
     ```
 
- 1. Install the tools for deploying Flutter apps to iOS devices by running the
-    following commands:
+ 1. 다음 명령을 입력하여 Flutter앱을 iOS 기기에 배포하기 위한 도구를 설치하세요:
 
     ```terminal
     $ brew install --HEAD usbmuxd
@@ -80,18 +78,16 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
     ```
 
     {{site.alert.note}}
-      The first two commands above are necessary as a temporary workaround until the next
-      release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
-      [Flutter issue #22595][].
+      위 명령 중 처음 두 명령은 libusbmuxd의 다음 릴리즈까지 일시적으로 문제를 해결하기 위해 필요합니다.
+      [libusbmuxd 이슈 #46][]과 [Flutter 이슈 #22595][] 참고.
 
-      [libusbmuxd issue #46]: https://github.com/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
-      [Flutter issue #22595]: https://github.com/flutter/flutter/issues/22595
+      [libusbmuxd 이슈 #46]: https://github.com/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
+      [Flutter 이슈 #22595]: https://github.com/flutter/flutter/issues/22595
     {{site.alert.end}}
 
-    If any of these commands fail, run `brew doctor` and follow the instructions
-    to resolve any issues.
+    명령이 실패하는 경우에는 `brew doctor`를 실행하고 지시에 따라 문제를 해결하세요.
 
- 1. Follow the Xcode signing flow to provision your project:
+ 1. Xcode 서명 흐름에 따라 프로젝트를 프로비저닝하세요:
 
      {: type="a"}
      1. Open the default Xcode workspace in your project by running `open
