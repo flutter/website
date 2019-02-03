@@ -42,6 +42,6 @@ $container-max-widths: (
   pa: $on-palm - 40px,
   md: 720px,
   lg: 960px,
-  la: $on-laptop, // Note: exceptionally la max-width == la breakpoint
+  la: $on-laptop, // 참고: exceptionally la max-width == la breakpoint
   xl: 1140px
 );

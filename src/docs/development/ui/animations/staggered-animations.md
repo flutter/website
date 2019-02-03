@@ -76,7 +76,7 @@ The square runs through changes in the following order:
 After running forward, the animation runs in reverse.
 
 <aside class="alert alert-info" markdown="1">
-  **플러터가 처음인가요?**
+  **Flutter가 처음인가요?**
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
   Flutter](/docs/development/ui/layout).

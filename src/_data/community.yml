@@ -34,7 +34,7 @@
 - name: Google Groups
   description: >
     질문해보세요 그리고 구글 커뮤니티의 도움을 받아 어려운 점을 해결해보세요.
-    또는 플러터 공지사항을 구독해보세요.
+    또는 Flutter 공지사항을 구독해보세요.
   logo_src: community/logo-google.png
   learn_more_link:
     - name: flutter-announce

@@ -50,7 +50,7 @@ description: The landing page for Flutter documentation.
 
 한글 사이트에 대한 [이슈도 등록해주세요](https://github.com/bro-jo/website/pulls).
 
-## 플러터가 처음인가요?
+## Flutter가 처음인가요?
 
 [시작하기](/docs/get-started/install)와
  [첫번째 앱을 작성해보세요](/docs/get-started/codelab)를 완료했다면, 
@@ -101,10 +101,10 @@ description: The landing page for Flutter documentation.
 : 기본 애니메이션과, hero 애니메이션, staggered 애니메이션 등 Flutter가 지원하는 애니메이션 생성 방법.
 
 [내비게이션 및 라우팅](/docs/development/ui/navigation)
-: 새로운 스크린을 만들고 새로운 스크린으로 이동하는 방법 (플러터에서는 _route_ 라고 부릅니다).
+: 새로운 스크린을 만들고 새로운 스크린으로 이동하는 방법 (Flutter에서는 _route_ 라고 부릅니다).
 
 [국제화](/docs/development/accessibility-and-localization/internationalization)
-: 글로벌화하세요! 플러터앱을 국제화하는 방법.
+: 글로벌화하세요! Flutter 앱을 국제화하는 방법.
 
 [Effective Dart](https://www.dartlang.org/guides/language/effective-dart)
 : 더 나은 다트 코드를 작성법 가이드.

@@ -31,6 +31,6 @@ Flutter를 설치할 운영 체제를 선택해주세요:
 </div>
 
 {{site.alert.important}}
-  중국에 있다면, 먼저 [중국에서 플러터 사용하기](/community/china)를 읽어보세요.
+  중국에 있다면, 먼저 [중국에서 Flutter 사용하기](/community/china)를 읽어보세요.
 {{site.alert.end}}
 

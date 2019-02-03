@@ -90,7 +90,7 @@ change using [`setState`](https://docs.flutter.io/flutter/widgets/State/setState
 which is a method on the `State` class. This will let Flutter know it needs to
 rebuild the Widget.
 
-Note: For more information on working with user input, please see the
+참고: For more information on working with user input, please see the
 [Gestures](/docs/cookbook#gestures) section of the Cookbook.
 
 <!-- skip -->

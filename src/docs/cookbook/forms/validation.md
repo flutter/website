@@ -53,7 +53,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that will uniquely identify the Form widget and allow
   // us to validate the form
   //
-  // Note: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>!
+  // 참고: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>!
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -174,7 +174,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   // Create a global key that will uniquely identify the Form widget and allow
   // us to validate the form
   //
-  // Note: This is a GlobalKey<FormState>, not a GlobalKey<MyCustomFormState>!
+  // 참고: This is a GlobalKey<FormState>, not a GlobalKey<MyCustomFormState>!
   final _formKey = GlobalKey<FormState>();
 
   @override

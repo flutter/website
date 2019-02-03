@@ -27,7 +27,7 @@ steps.
 Once a `TextEditingController` is supplied to a `TextField` or `TextFormField`,
 we can use it to retrieve the text a user has typed into that text field.
 
-Note: It is also important to `dispose` of the `TextEditingController` when we
+참고: It is also important to `dispose` of the `TextEditingController` when we
 are finished using it. This will ensure we discard any resources used by the
 object.
 

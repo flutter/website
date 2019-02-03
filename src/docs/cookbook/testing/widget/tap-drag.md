@@ -137,7 +137,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 });
 ```
 
-**Note:** This recipe builds upon previous Widget testing recipes. To learn the
+**참고:** This recipe builds upon previous Widget testing recipes. To learn the
 core concepts of Widget testing, see the following recipes:
 
   * [Introduction to Widget testing](.)

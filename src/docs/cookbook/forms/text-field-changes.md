@@ -94,7 +94,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-Note: Please remember to `dispose` the `TextEditingController` when it is no
+참고: Please remember to `dispose` the `TextEditingController` when it is no
 longer needed. This will ensure we discard any resources used by the object.
 
 ### Supply the `TextEditingController` to a `TextField`

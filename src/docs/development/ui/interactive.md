@@ -309,7 +309,7 @@ manage state:
 * [A mix-and-match approach](#mix-and-match)
 
 {% comment %}
-  NOTE: Commenting this out for now. The example needs some updates.
+  참고: Commenting this out for now. The example needs some updates.
 
   First, fix TapboxD, add it back to the repo, and then restore this note.
 

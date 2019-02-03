@@ -29,7 +29,7 @@ animate the image from the first screen to the second screen when the user taps
 on the image. For now, we'll create the visual structure, and handle animations
 in the next steps!
 
-*Note:* This example builds upon the
+*참고:* This example builds upon the
 [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
 and [Handling Taps](/docs/cookbook/gestures/handling-taps) recipes.
 
@@ -113,7 +113,7 @@ Hero(
 );
 ```
 
-Note: this code is identical to what we had on the first screen! In general, you
+참고: this code is identical to what we had on the first screen! In general, you
 could create a reusable Widget instead of repeating code, but for this example,
 we'll duplicate the code for demonstration purposes.
 

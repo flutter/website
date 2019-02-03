@@ -168,7 +168,7 @@
 
 - title: 개발
   children:
-    - title: 플러터 스타일로 만들기
+    - title: Flutter 스타일로 만들기
       permalink:  /docs/deployment/flavors
     - title: 안드로이드 빌드와 배포
       permalink: /docs/deployment/android
