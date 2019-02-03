@@ -3,7 +3,7 @@ title: Linux install
 short-title: Linux
 # js: [{defer: true, url: /assets/archive.js}]
 next:
-  title: Set up an editor
+  title: 에디터 설정
   path: /docs/get-started/editor
 ---
 

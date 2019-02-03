@@ -1,8 +1,8 @@
 - name: Github
   featured: true
-  title: Tell us what you want to see
+  title: 원하는 것을 이야기해주세요
   description: >
-    An easy way to send feedback is to “thumbs up” issues important to you on GitHub
+    피드백을 보내는 쉬운 방법은 깃허브에서 당신에게 중요한 이슈에 "thumbs up"을 누르는 것입니다.
   logo_src: community/logo-github.png
   screen_src: community/screen-github.png
   screen_class: border-top border-light p-3 shadow
@@ -11,9 +11,9 @@
 
 - name: Meetup
   featured: true
-  title: Meet others using Flutter in your area
+  title: 귀하의 지역에서 Flutter를 사용하는 다른 사람들을 만나보세요
   description: >
-    Learn from other developers and see what the community is building with Flutter by joining community events around the world
+    다른 개발자로부터 배우고, 전세계 커뮤니티 이벤트에 참여하여 커뮤니티가 Flutter를 통해 무엇을 하고 있는지 확인해보세요.
   logo_src: community/logo-meetup.svg
   screen_src: community/screen-meetup.png
   learn_more_cta: Find an event near you
@@ -21,20 +21,20 @@
 
 - name: Stack Overflow
   description: >
-    Ask questions and trouble shoot your app builds through the strong community message boards.
+    질문해보세요 그리고 강력한 커뮤니티 게시판을 통해 앱을 만들 때 어려운 점을 해결해보세요.
   logo_src: community/logo-stack-overflow.png
   learn_more_link: https://stackoverflow.com/tags/flutter
 
 - name: Gitter
   description: >
-    Join the conversation and stay connected with developers around the globe building with Flutter.
+    대화에 참여하고 전세계 Flutter 개발자와 연결된 상태를 유지하세요
   logo_src: community/logo-gitter.svg
   learn_more_link: https://gitter.im/flutter/flutter
 
 - name: Google Groups
   description: >
-    Ask questions and trouble shoot your builds with the support of the Google
-    community. Or sign up for Flutter announcements.
+    질문해보세요 그리고 구글 커뮤니티의 도움을 받아 어려운 점을 해결해보세요.
+    또는 플러터 공지사항을 구독해보세요.
   logo_src: community/logo-google.png
   learn_more_link:
     - name: flutter-announce
@@ -44,42 +44,42 @@
 
 - name: "@flutter.io"
   description: >
-    Follow the Flutter team in real-time with information on new features, upcoming events, and more.
+    Flutter 팀을 팔로우하여 새로운 기능, 다가오는 이벤트 등에 관한 정보를 실시간으로 받아보세요.
   logo_src: community/logo-twitter.png
   learn_more_link: https://twitter.com/flutterio
 
 - name: Medium
   description: >
-    Get the latest news and insights from a diverse group of users building with Flutter.
+    Flutter를 사용하는 다양한 사람들로부터 최신 소식과 인사이트를 받아보세요/
   logo_src: community/logo-medium.png
   learn_more_link: https://medium.com/flutter-io
 
 - name: Flutter Study Group
   description: >
-    Connect and work through problems with a group of knowledgeable Flutter team members.
+    Flutter를 잘 아는 팀 맴버와 함께 문제를 해결해보세요.
   logo_src: community/logo-slack.png
   learn_more_link: https://flutterstudygroup.slack.com/
 
 - name: Flutter YouTube
   description: >
-    Watch these videos to learn from Google and developers as you build with Flutter.
+    비디오를 보고 구글과 개발자들에게서 Flutter 개발을 배워보세요.
   logo_src: community/logo-youtube.png
   learn_more_link: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 
 - name: r/FlutterDev
   description: >
-    Join the large community on Reddit with discussions around every aspect of Flutter.
+    레딧에서 대규모 커뮤니티에 참여하여 Flutter의 모든 측면에 대해 논의해보세요.
   logo_src: community/logo-reddit.png
   learn_more_link: https://www.reddit.com/r/FlutterDev/
 
 - name: Discord
   description: >
-    Talk to other Flutter developers about everything Flutter-related, and share useful resources.
+    다른 Flutter 개발자와 Flutter에 관한 모든 사항을 상담하고 유용한 리소스를 공유해보세요.
   logo_src: community/logo-discord.png
   learn_more_link: https://discord.gg/N7Yshp4
 
 - name: UX Research
   description: >
-    Sign up to participate in the UX research plan and have a front row seat into the progression of Flutter.
+    UX research plan에 참여하고 Flutter 진보의 첫 자리를 차지하세요.
   logo_src: community/logo-google-forms.png
   learn_more_link: https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform

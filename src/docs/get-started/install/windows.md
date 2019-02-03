@@ -1,15 +1,15 @@
 ---
-title: Windows install
-short-title: Windows
+title: 윈도우에서 설치
+short-title: 윈도우
 # js: [{defer: true, url: /assets/archive.js}]
 next:
-  title: Set up an editor
+  title: 에디터 설정
   path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}
 
-## System requirements
+## 시스템 요구 사항
 
 To install and run Flutter, your development environment must meet these minimum requirements:
 

@@ -1,5 +1,5 @@
 ---
-title: FAQ
+title: 자주 묻는 질문
 description: Frequently asked questions and answers.
 ---
 

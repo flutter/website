@@ -1,5 +1,5 @@
 ---
-title: Showcase
+title: 쇼케이스
 layout: landing
 body_class: landing-page showcase
 ---
@@ -29,7 +29,7 @@ body_class: landing-page showcase
                                 </div>
                                 <div class="card-footer card-footer--transparent card-footer--links">
                                     {% if case.learn_more_link %}<a class="btn btn-link" href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
-                                    {% if case.video_id %}<button class="btn btn-link btn-icon d-inline-flex" type="button" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> Watch the video</button>{% endif %}
+                                    {% if case.video_id %}<button class="btn btn-link btn-icon d-inline-flex" type="button" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i> 비디오 보기</button>{% endif %}
                                 </div>
                             </div>
                         </div>
@@ -45,12 +45,11 @@ body_class: landing-page showcase
     <div class="card-body">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
-                <h2>Made with Flutter</h2>
+                <h2>플러터로 만든</h2>
                 <p>
-                Flutter is used by Google and developers and organizations around the world to deliver beautiful native apps on
-                iOS and Android. Here's a small selection of apps made with Flutter. Also see the
-                <a href="#" data-video="REJDzio_h7o"
-                    data-toggle="modal" data-target="#videoModal">Flutter App Highlight Reel</a>.
+                    Flutter는 구글과 개발자 그리고 전 세계 조직에서 아름다운 네이티브 iOS 및 안드로이드 앱을 만들기 위해 사용됩니다.
+                    다음은 Flutter로 만든 앱입니다.
+                <a href="#" data-video="REJDzio_h7o" data-toggle="modal" data-target="#videoModal">Flutter App Highlight Reel</a>도 참고해보세요.
                 </p>
             </div>
         </div>
@@ -75,10 +74,10 @@ body_class: landing-page showcase
                             {% if case.play_store_link or case.app_store_link %}
                                 <span class="dropdown">
                                     <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Download
+                                        다운로드
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
-                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif %}
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">안드로이드</a>{% endif %}
                                         {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif %}
                                     </div>
                                 </span>
@@ -92,7 +91,7 @@ body_class: landing-page showcase
 
         <div class="row">
             <div class="col-12 text-center">
-                <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/" target="_blank" rel="noopener">Explore more apps built with Flutter</a>
+                <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/" target="_blank" rel="noopener">Flutter로 만들어진 더 많은 앱 보기</a>
             </div>
         </div>
     </div>
@@ -100,9 +99,9 @@ body_class: landing-page showcase
 
 <section class="landing-page__cta card text-center">
     <div class="card-body">
-        <h2 class="landing-page__cta__headline">Try Flutter today.</h2>
-        <p class="landing-page__cta__body">It’s free and open source.</p>
-        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/docs/get-started/install">Get started</a>
+        <h2 class="landing-page__cta__headline">오늘 Flutter를 시작하세요.</h2>
+        <p class="landing-page__cta__body">무료이고 오픈소스입니다.</p>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/docs/get-started/install">시작하기</a>
     </div>
 </section>
 

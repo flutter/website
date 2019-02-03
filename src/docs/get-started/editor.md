@@ -1,5 +1,5 @@
 ---
-title: Set up an editor
+title: 에디터 설정
 prev:
   title: Install
   path: /docs/get-started/install
