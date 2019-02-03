@@ -1,204 +1,204 @@
-- title: Get started
+- title: 시작하기
   children:
-    - title: 1. Install
+    - title: 1. 설치
       permalink: /docs/get-started/install
-    - title: 2. Set up an editor
+    - title: 2. 에디터 설정
       permalink: /docs/get-started/editor
     - title: 3. Test drive
       permalink: /docs/get-started/test-drive
-    - title: 4. Write your first app
+    - title: 4. 첫번째 앱을 작성해보세요
       permalink: /docs/get-started/codelab
     - title: 5. 더 알아보기
       permalink: /docs/get-started/learn-more
     - divider
-    - title: From another platform?
+    - title: 다른 플랫폼 사용 경험이 있나요?
       expanded: true
       children:
-        - title: Flutter for Android devs
+        - title: 안드로이드 개발자를 위한 Flutter
           permalink: /docs/get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
+        - title: iOS 개발자를 위한 Flutter
           permalink: /docs/get-started/flutter-for/ios-devs
-        - title: Flutter for React Native devs
+        - title: 리액트 네이티브 개발자를 위한 Flutter
           permalink: /docs/get-started/flutter-for/react-native-devs
-        - title: Flutter for web devs
+        - title: 웹 개발자를 위한 Flutter
           permalink: /docs/get-started/flutter-for/web-devs
-        - title: Flutter for Xamarin.Forms devs
+        - title: 자마린.폼즈 개발자를 위한 Flutter
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
-    - title: "Dart language overview"
+    - title: "다트 언어 개요"
       permalink: https://www.dartlang.org/guides/language
 
-- title: Samples & tutorials
+- title: 예제 & 튜토리얼
   children:
-    - title: Sample apps on GitHub
+    - title: 깃허브에 있는 예제 앱
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
-    - title: Cookbook
+    - title: 해설(Cookbook)
       permalink: /docs/cookbook
-    - title: Codelabs
+    - title: 코드랩
       permalink: /docs/codelabs
-    - title: Tutorials
+    - title: 튜토리얼
       permalink: /docs/reference/tutorials
 
-- title: Development
+- title: 개발
   expanded: true
   permalink: /docs/development
   children:
-    - title: User interface
+    - title: 사용자 인터페이스(UI)
       permalink: /docs/development/ui
       children:
-        - title: Introduction to Widgets
+        - title: 위젯 소개
           permalink: /docs/development/ui/widgets-intro
-        - title: Building layouts
+        - title: 레이아웃 만들기
           permalink: /docs/development/ui/layout
           children:
-            - title: Layouts in Flutter
+            - title: Flutter에서 레이아웃
               permalink: /docs/development/ui/layout
               match-page-url-exactly: true
-            - title: Tutorial
+            - title: 튜토리얼
               permalink: /docs/development/ui/layout/tutorial
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
-        - title: Adding interactivity
+        - title: 상호작용 추가하기
           permalink: /docs/development/ui/interactive
-        - title: Assets and images
+        - title: 리소스, 이미지 파일
           permalink: /docs/development/ui/assets-and-images
-        - title: Navigation & routing
+        - title: 내비게이션 및 라우팅
           permalink: /docs/development/ui/navigation
         # Commenting out the following entry per
         # https://github.com/flutter/website/issues/1496#issuecomment-431455211
         # - title: Inspect an app's UI
         #   permalink: /docs/development/ui/inspector
-        - title: Animations
+        - title: 애니메이션
           permalink: /docs/development/ui/animations
           children:
-            - title: Introduction
+            - title: 소개
               permalink: /docs/development/ui/animations
               match-page-url-exactly: true
-            - title: Overview
+            - title: 개요
               permalink: /docs/development/ui/animations/overview
-            - title: Tutorial
+            - title: 튜토리얼
               permalink: /docs/development/ui/animations/tutorial
-            - title: Hero animations
+            - title: Hero 애니메이션
               permalink: /docs/development/ui/animations/hero-animations
-            - title: Staggered animations
+            - title: Staggered 애니메이션
               permalink: /docs/development/ui/animations/staggered-animations
-        - title: Advanced UI
+        - title: 고급 UI
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
+            - title: 포커스 처리 시스템 # Where did this go?
             - title: Slivers
               permalink: /docs/development/ui/advanced/slivers
-            - title: Gestures
+            - title: 제스처
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
-        - title: Widget catalog
+        - title: 플랫폼별 테마
+        - title: 위젯 카탈로그
           permalink: /docs/development/ui/widgets
-    - title: Data & backend
+    - title: 데이터 & 백엔드
       permalink: /docs/development/data-and-backend
       children:
-        - title: State management
+        - title: 상태 관리
           permalink: /docs/development/data-and-backend/state-mgmt
-        - title: JSON and serialization
+        - title: JSON 및 직렬화
           permalink: /docs/development/data-and-backend/json
-        - title: Back-end services
-        - title: Firebase
+        - title: 백엔드 서비스
+        - title: 파이어베이스
           permalink: /docs/development/data-and-backend/firebase
-    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
+    - title: 접근성 & 국제화 # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
-        - title: Accessibility
+        - title: 접근성
           permalink: /docs/development/accessibility-and-localization/accessibility
-        - title: Internationalization
+        - title: 국제화
           permalink: /docs/development/accessibility-and-localization/internationalization
-    - title: Platform integration
+    - title: 플랫폼 통합
       permalink: /docs/development/platform-integration
       children:
-        - title: Embedding Flutter views in non-Flutter apps
-        - title: Writing platform-specific code
+        - title: 다른 앱에 Flutter 뷰 집어넣기
+        - title: 플랫폼별 코드 작성
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Packages & plugins
+    - title: 패키지 & 플러그인
       permalink: /docs/development/packages-and-plugins
       children:
-        - title: Using packages
+        - title: 패키지 사용하기
           permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Developing packages & plugins
+        - title: 패키지 & 플러그인 개발
           permalink: /docs/development/packages-and-plugins/developing-packages
-        - title: Background processes
+        - title: 백그라운드 작업
           permalink: /docs/development/packages-and-plugins/background-processes
-        - title: Package site
+        - title: 패키지 사이트
           permalink: http://pub.dartlang.org/flutter
-    - title: Tools & techniques
+    - title: 도구 & 기법
       permalink: /docs/development/tools
       children:
-        - title: Android Studio / IntelliJ
+        - title: 안드로이드 스튜디오 / 인텔리제이
           permalink: /docs/development/tools/android-studio
-        - title: Visual Studio Code
+        - title: 비주얼 스튜디오 코드
           permalink: /docs/development/tools/vs-code
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
-            - title: Upgrading
+            - title: 업그레이드
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archive
+            - title: 아카이브
               permalink: /docs/development/tools/sdk/archive
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
-        - title: Code formatting
+        - title: 코드 정렬
           permalink: /docs/development/tools/formatting
-        - title: Widget inspector
+        - title: 위젯 검사 도구
           permalink: /docs/development/tools/inspector
 
-- title: Testing & optimization
+- title: 테스트 & 최적화
   permalink: /docs/testing
   children:
-    - title: Debugging
+    - title: 디버깅
       permalink: /docs/testing/debugging
-    - title: Using OEM debuggers
+    - title: OEM 디버거 사용하기
       permalink: /docs/testing/oem-debuggers
-    - title: Flutter's build modes
+    - title: Flutter 빌드 모드
       permalink: /docs/testing/build-modes
-    - title: Testing
+    - title: 테스트
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance best practices
+    - title: 성능 모범 사례
       permalink: /docs/testing/best-practices
-    - title: Performance profiling
+    - title: 성능 측정
       permalink: /docs/testing/ui-performance
     # We don't have this page yet.
     # - title: Making your compiled app smaller
 
-- title: Deployment
+- title: 개발
   children:
-    - title: Creating flavors for Flutter
+    - title: Flutter 스타일로 만들기
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: 안드로이드 빌드와 배포
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: iOS 빌드와 배포
       permalink: /docs/deployment/ios
     - title: Continuous deployment with fastlane
       permalink: /docs/deployment/fastlane-cd
 
-- title: Resources
+- title: 자료
   children:
-    - title: Dart resources
+    - title: 다트 자료
       permalink: /docs/resources/bootstrap-into-dart
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
-    - title: Technical overview
+    - title: 기술 개요
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO
-    - title: Technical videos for learning Flutter
+    - title: Flutter를 배우기 위한 기술 비디오
       permalink: /docs/resources/videos
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
-    - title: FAQ
+    - title: 자주 묻는 질문
       permalink: /docs/resources/faq
 
-- title: Reference
+- title: 참조
   expanded: true
   children:
-    - title: Widget index
+    - title: 위젯 색인
       permalink: /docs/reference/widgets
-    - title: API reference
+    - title: API 참조
       permalink: https://docs.flutter.io
-    - title: Package site
+    - title: 패키지 사이트
       permalink: https://pub.dartlang.org/flutter

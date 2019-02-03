@@ -1,34 +1,33 @@
 ---
-title: Windows install
-short-title: Windows
+title: 윈도우에서 설치
+short-title: 윈도우
 # js: [{defer: true, url: /assets/archive.js}]
 next:
-  title: Set up an editor
+  title: 에디터 설정
   path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}
 
-## System requirements
+## 시스템 요구 사항
 
-To install and run Flutter, your development environment must meet these minimum requirements:
+Flutter를 설치하고 실행하기 위해서는 개발 환경이 다음과 같은 최소 요구 사항을 충족해야 합니다:
 
-- **Operating Systems**: Windows 7 SP1 or later (64-bit)
-- **Disk Space**: 400 MB (does not include disk space for IDE/tools).
-- **Tools**: Flutter depends on these tools being available in your environment.
-  - [Windows PowerShell 5.0][] or newer (this is pre-installed with Windows 10)
+- **운영 체제**: 윈도우7 SP1 이상 (64-bit)
+- **저장 공간**: 400 MB (IDE나 개발 도구 용량은 별도).
+- **도구**: Flutter는 윈도우 환경에서 아래 도구가 필요합니다.
+  - [윈도우 파워셸 5.0][] 또는 그 이상 버전 (윈도우10에 내장되어 있음)
   - [Git for Windows][] 2.x, with the **Use Git from the Windows Command Prompt** option.
 
-     If Git for Windows is already installed, make sure you can run `git` commands from the
-     command prompt or PowerShell.
+     윈도우용 Git이 이미 설치되어 있다면, git 명령을 명령 프롬프트나 파워셸에서 실행되는지 확인하세요.
 
 {% include_relative _get-sdk-win.md %}
 
 {% include_relative _android-setup.md %}
 
-## Next step
+## 다음 단계
 
-[Next step: Configure Editor](/docs/get-started/editor)
+[다음 단계: 에디터 설정](/docs/get-started/editor)
 
 [Git for Windows]: https://git-scm.com/download/win
-[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
+[윈도우 파워셸 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell

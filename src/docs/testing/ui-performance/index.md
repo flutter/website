@@ -265,7 +265,7 @@ as well as enable checks for calls to `saveLayer` and the presence of
 cached images.
 
 <aside class="alert alert-info" markdown="1">
-**Note:** You can’t enable the performance overlay in the Flutter
+**참고:** You can’t enable the performance overlay in the Flutter
 Gallery app downloaded from the App Store. That version of the app
 is compiled to release mode (not profile mode), and doesn’t provide
 a menu for enabling or disabling the overlay.
@@ -306,7 +306,7 @@ Go to Flutter's timeline view in a browser as follows:
 #### Using Observatory's timeline
 
 <aside class="alert alert-info" markdown="1">
-**Note:** The Observatory UI and Flutter's custom timeline page are currently
+**참고:** The Observatory UI and Flutter's custom timeline page are currently
 evolving. For this reason, we aren't fully documenting the UI at this time.
 If you are comfortable experimenting with Observatory, and would like to give
 us feedback, please file [issues or feature
@@ -372,7 +372,7 @@ rather than a parent widget higher up in the widget tree. The same goes for
 other potentially expensive operations, such as clipping or shadows.
 
 <aside class="alert alert-info" markdown="1">
-**Note:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
+**참고:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
 However, applying them to the top of the widget tree might cause extra calls to
 `saveLayer`, and needless processing.
 </aside>

@@ -16,7 +16,7 @@ against the previous description in order to determine the minimal changes
 needed in the underlying render tree to transition from one state to the next.
 
 <aside id="note" class="alert alert-info" markdown="1">
-**Note:** If you would like to become better acquainted with Flutter by diving
+**참고:** If you would like to become better acquainted with Flutter by diving
 into some code, check out
 [Building Layouts in Flutter](/docs/development/ui/layout) and
 [Adding Interactivity to Your Flutter App](/docs/development/ui/interactive).

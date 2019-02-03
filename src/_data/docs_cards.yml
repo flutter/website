@@ -1,9 +1,9 @@
-- name: Get Started
-  description: Set up your environment and start building.
+- name: 시작하기
+  description: 환경설정을 하고 개발을 시작하세요.
   url: /docs/get-started/install
-- name: Widgets Catalog
-  description: Dip into the rich set of Flutter widgets available in the SDK.
+- name: 위젯 카탈로그
+  description: SDK에서 사용할 수있는 다양한 Flutter 위젯을 살펴보세요.
   url: /docs/development/ui/widgets/catalog
-- name: API Docs
-  description: Bookmark the API reference docs for the Flutter framework.
+- name: API 문서
+  description: Flutter 프레임워크 API 레퍼런스 문서를 북마크하세요.
   url: https://docs.flutter.io

@@ -322,7 +322,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    folder inside it. Click OK.
 
 1. Open the file `MainActivity.kt` located in the `kotlin` folder in the Project
-   view. (Note: If you are editing using Android Studio 2.3, note that the
+   view. (참고: If you are editing using Android Studio 2.3, note that the
    'kotlin' folder is shown as-if named 'java'.)
 
 Next, inside the `onCreate` method, create a `MethodChannel` and call

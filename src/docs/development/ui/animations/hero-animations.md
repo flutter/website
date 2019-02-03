@@ -35,7 +35,7 @@ during flight.
 </aside>
 
 <aside class="alert alert-info" markdown="1">
-  **New to Flutter?**
+  **Flutter가 처음인가요?**
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
   Flutter](/docs/development/ui/layout).

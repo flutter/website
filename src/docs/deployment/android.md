@@ -76,9 +76,9 @@ If you have an existing keystore, skip to the next step. If not, create one
 by running the following at the command line:
 `keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key`
 
-*Note:* Keep this file private; do not check it into public source control.
+*참고:* Keep this file private; do not check it into public source control.
 
-*Note:* `keytool` might not be in your path. It is part of the Java JDK,
+*참고:* `keytool` might not be in your path. It is part of the Java JDK,
 which is installed as part of Android Studio. For the concrete path,
 run `flutter doctor -v` and see the path printed after 'Java binary at:',
 and then use that fully qualified path replacing `java` with `keytool`.
@@ -95,7 +95,7 @@ keyAlias=key
 storeFile=<location of the key store file, e.g. /Users/<user name>/key.jks>
 ```
 
-*Note:* Keep this file private; do not check it into public source control.
+*참고:* Keep this file private; do not check it into public source control.
 
 ### Configure signing in gradle
 
@@ -203,7 +203,7 @@ android {
 }
 ```
 
-Note: Obfuscation and minification can considerably extend compile time
+참고: Obfuscation and minification can considerably extend compile time
 of the Android application.
 
 ## Building a release APK

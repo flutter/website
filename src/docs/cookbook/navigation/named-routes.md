@@ -101,7 +101,7 @@ MaterialApp(
 );
 ```
 
-Note: When using `initialRoute`, be sure you do not define a `home` property.
+참고: When using `initialRoute`, be sure you do not define a `home` property.
 
 ## 3. Navigate to the second screen
 

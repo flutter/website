@@ -94,7 +94,7 @@ class Counter {
 }
 ```
 
-**Note:** For simplicity, this tutorial does not follow the "Test Driven
+**참고:** For simplicity, this tutorial does not follow the "Test Driven
 Development" approach. If you're more comfortable with that style of
 development, you can always go that route!
 

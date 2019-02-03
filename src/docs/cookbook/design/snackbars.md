@@ -82,7 +82,7 @@ final snackBar = SnackBar(
 
 ## Complete example
 
-Note: In this example, the SnackBar displays when a user taps on a button. For
+참고: In this example, the SnackBar displays when a user taps on a button. For
 more information on working with user input, please see the
 [Gestures](/docs/cookbook#gestures) section of the Cookbook.
 

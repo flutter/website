@@ -1,8 +1,7 @@
 - name: Alibaba
   featured: true
   description: >
-    Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and
-    Android on their Xianyu app, which has 50M+ downloads.
+    세계 최대 온라인 커머스 업체 알리바바는 5천만 이상 다운로드를 보유한 시엔위(Xianyu) 앱에서 Flutter를 사용하여 iOS 및 안드로이드 아름다운 앱 경험을 만들었습니다.
   logo_src: showcase/logo-alibaba.png
   hero_src: showcase/hero-alibaba.jpg
   video_id: jtYk3gWRSw0
@@ -11,22 +10,22 @@
 
 - name: Google Ads
   description: >
-    The Google Ads app helps you keep your ad campaigns running smoothly — no matter where your business takes you.
+    비즈니스가 어떤 영역이든 구글 애즈 앱을 사용하여 광고 캠페인을 원활하게 운영할 수 있습니다.
   logo_src: showcase/logo-ads.svg
   app_store_link: https://itunes.apple.com/us/app/google-ads/id1037457231?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.google.android.apps.adwords
 
 - name: AppTree
   description: >
-    AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab
+    앱트리는 맥도날드, 스탠포트, 웨이페어, 페르미랩과 같은 브랜드를 위한 엔터프라이즈 앱 플랫폼을 제공합니다.
   logo_src: showcase/logo-app_tree.png
-  learn_more_cta: Developer website
+  learn_more_cta: 개발자 웹사이트
   learn_more_link: https://www.apptreerevolution.com/
   play_store_link: https://play.google.com/store/apps/details?id=com.apptreesoftware.revolution.enterpriseedition&hl=en_US&e=-EnableAppDetailsPageRedesign
 
 - name: Reflectly
   description: >
-    A beautiful journal and mindfulness app driven by artificial intelligence.
+    아름다운 일기 및 마음챙김 앱입니다. 인공지능으로 구동됩니다.
   logo_src: showcase/logo-reflectly.png
   learn_more_cta: 더 알아보기
   learn_more_link: https://medium.com/reflectly-engineering/reflectly-from-react-native-to-flutter-2e3dffced2ea
@@ -36,8 +35,7 @@
 - name: Hamilton Musical
   featured: true
   description: >
-    Official app of the hit Broadway musical, Hamilton. Includes daily lotteries, exclusive news and videos, a trivia
-    game, merchandise store, and more.
+    인기 브로드웨이 뮤지컬, 해밀턴 공식 앱입니다. 일일 복권, 독점 뉴스와 비디오, 퀴즈 게임, 상점 등을 포함합니다.
   logo_src: showcase/logo-hamilton.png
   hero_src: showcase/hero-hamilton.jpg
   video_id: kfd-oLypqFI
@@ -48,36 +46,36 @@
 
 - name: Google Greentea
   description: >
-    An internal customer management app used widely by Google sales that provides rich visualizations for tracking sales
-    targets.
+    판매 추적을 위한 다양한 시각화 기능을 제공하는 구글 영업에서 널리 사용하는 내부 고객 관리 앱입니다.
   logo_src: showcase/logo-greentea.png
 
 - name: Abbey Road Studios
   featured: true
   description: >
-    Abbey Road’s Topline app helps artists record songs. You can share files, sing over imported tracks, add lyrics and
-    more.
+    애비로드의 Topline 앱은 아티스트가 노래를 녹음하는 데 도움을 줍니다.
+    파일을 공유하고, 가져온 트랙을 노래하고, 가사를 추가하는 등의 작업을 할 수 있습니다.
   logo_src: showcase/logo-abbey_road_studios.png
   hero_src: showcase/hero-abbey-road.jpg
   video_id: _ACWeGGBP4E
-  learn_more_cta: Website
+  learn_more_cta: 웹사이트
   learn_more_link: https://www.abbeyroad.com/apps
   app_store_link: https://itunes.apple.com/us/app/topline/id1270125833?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.abbeyroadandroid&hl=en_US&e=-EnableAppDetailsPageRedesign
 
 - name: Tencent
   description: >
-    NOW Live is Tencent’s video streaming service with tens of millions of MAU.
+    NOW Live는 수천만 MAU를 보유한 텐센트의 비디오 스트리밍 서비스입니다.
   logo_src: showcase/logo-tencent.png
-  learn_more_cta: Developer website
+  learn_more_cta: 개발자 웹사이트
   learn_more_link: https://now.qq.com
   app_store_link: https://itunes.apple.com/cn/app/now%E7%9B%B4%E6%92%AD-%E8%85%BE%E8%AE%AF%E6%97%97%E4%B8%8B%E5%85%A8%E6%B0%91%E7%9B%B4%E6%92%AD%E5%B9%B3%E5%8F%B0/id1097492828?mt=8
 
 - name: JD Finance
   description: >
-    JD Finance is a leading digital technology company. The company covers fintech, digital enterprise services and urban computing.
+    JD Finance는 선도적 디지털 기술 회사입니다.
+    핀테크, 디지털 엔터프라이즈 서비스, 어반 컴퓨팅을 다룹니다.
   logo_src: showcase/logo-jd.png
-  learn_more_cta: Developer website
+  learn_more_cta: 개발자 웹사이트
   learn_more_link: https://jr.jd.com/
   app_store_link: https://itunes.apple.com/cn/app/id895682747
   play_store_link: https://m.jr.jd.com/spe/downloadApp/index.html?id=1024

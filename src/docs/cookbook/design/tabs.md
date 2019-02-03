@@ -72,7 +72,7 @@ Now that we have tabs, we'll want to display content when a tab is selected.
 For this purpose, we'll employ the [`TabBarView`](https://docs.flutter.io/flutter/material/TabBarView-class.html)
 Widget.
 
-*Note:* Order is important and must correspond to the order of the tabs in the
+*참고:* Order is important and must correspond to the order of the tabs in the
 `TabBar`!
 
 <!-- skip -->

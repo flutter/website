@@ -65,7 +65,7 @@ OrientationBuilder(
 );
 ```
 
-Note: If you're interested in the orientation of the screen, rather than
+참고: If you're interested in the orientation of the screen, rather than
 the amount of space available to the parent, please use
 `MediaQuery.of(context).orientation` instead of an `OrientationBuilder` Widget.
 

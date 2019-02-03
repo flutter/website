@@ -1,6 +1,6 @@
 ---
-title: Animations overview
-short-title: Overview
+title: 애니메이션 개요
+short-title: 개요
 description: An overview of animation concepts
 ---
 
