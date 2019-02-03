@@ -90,40 +90,41 @@ Flutter 앱을 실제 iOS 기기에 배포하려면 몇 가지 추가적인 도�
  1. Xcode 서명 흐름에 따라 프로젝트를 프로비저닝하세요:
 
      {: type="a"}
-     1. Open the default Xcode workspace in your project by running `open
-        ios/Runner.xcworkspace` in a terminal window from your Flutter project
-        directory.
-     1. In Xcode, select the `Runner` project in the left navigation panel.
-     1. In the `Runner` target settings page, make sure your Development Team is
-        selected under **General > Signing > Team**. When you select a team,
-        Xcode creates and downloads a Development Certificate, registers your
-        device with your account, and creates and downloads a provisioning
-        profile (if needed).
+     1. Flutter 프로젝트 디렉토리에서 
+        터미널로 `open ios/Runner.xcworkspace` 명령을 실행하여 
+        기본 Xcode 워크스페이스를 여세요.
+     1. Xcode 왼쪽 내비게이션 패널에서 `Runner` 프로젝트를 선택하세요  
+     1. `Runner` target 설정 페이지에서, **General > Signing > Team**에 개발 팀이 선택되어 있는지 확인하세요.
+        팀을 선택하면, 
+        Xcode는 개발 인증서를 생성 및 다운로드 하고, 
+        기기를 계정에 등록하고, 
+        프로비저닝 프로파일을 생성 및 다운로드합니다(필요한 경우에).
 
-        * To start your first iOS development project, you may need to sign into
-          Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
-          Development and testing is supported for any Apple ID. Enrolling in the
-          Apple Developer Program is required to distribute your app to the App
-          Store. For details about membership types, see
-          [Choosing a Membership][].
+        * 처음 iOS 개발 프로젝트를 시작하기 위해,
+          애플 ID로 Xcode에 로그인해야 할 수도 있습니다. 
+        
+          ![Xcode account add][]{:.mw-100}
+          
+          모든 애플 ID가 개발 및 테스트에 사용 가능합니다.
+          앱 스토어에 앱을 배포하려면 애플 개발자 프로그램에 등록해야 합니다.
+          맴버십 유형에 관한 자세한 내용은 [맴버십 선택][]을 참고하세요.
 
-        * The first time you use an attached physical device for iOS
-          development, you will need to trust both your Mac and the Development
-          Certificate on that device. Select `Trust` in the dialog prompt when
-          first connecting the iOS device to your Mac.
+        * iOS 개발을 위해 실제 기기를 처음 연결하면, 맥과 개발 인증서를 모두 신뢰해야 합니다.
+          iOS 기기를 맥에 처음 연결할 때 대화 상자에서 `Trust`를 선택하세요.  
 
           ![Trust Mac][]{:.mw-100}
 
-          Then, go to the Settings app on the iOS device, select **General >
-          Device Management** and trust your Certificate.
+          다음으로, iOS 기기의 설정으로 가서, 
+          **General > Device Management**로 이동하여 
+          인증서 신뢰하기를 선택하세요.  
 
-        * If automatic signing fails in Xcode, verify that the project's
-          **General > Identity > Bundle Identifier** value is unique.
+        * Xcode에서 자동 서명이 실패한다면, 
+          프로젝트의 **General > Identity > Bundle Identifier**가 고유한지 확인해보세요. 
           ![Check the app's Bundle ID][]{:.mw-100}
 
- 1. Start your app by running `flutter run`.
+ 1. `flutter run` 명령으로 앱을 시작하세요.
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
-[Choosing a Membership]: https://developer.apple.com/support/compare-memberships
+[맴버십 선택]: https://developer.apple.com/support/compare-memberships
 [Trust Mac]: /images/setup/trust-computer.png
 [Xcode account add]: /images/setup/xcode-account.png
