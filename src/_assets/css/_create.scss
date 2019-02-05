@@ -1,0 +1,31 @@
+.create {
+  &__row {
+    padding: bs-spacer(12) 0;
+  }
+
+  &__deadline {
+    color: $flutter-color-fuchsia;
+  }
+
+  &__criteria {
+    display: block;
+    list-style: none;
+    padding: 0;
+    @include media-breakpoint-up(sm) {
+      columns: 2;
+    }
+
+    li {
+      font-size: 1.25rem;
+      @include media-breakpoint-up(xl) {
+        font-size: 1.75rem;
+      }
+    }
+  }
+
+  &__text-columns {
+    @include media-breakpoint-up(sm) {
+      columns: 2;
+    }
+  }
+}
