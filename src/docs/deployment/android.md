@@ -48,7 +48,7 @@ especially:
 
 When a new Flutter app is created, it has a default Launcher icon. To
 customize this icon you might want to check out the [Flutter Launcher
-Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
 
 Alternatively, if you want to do it manually, here's how:
 

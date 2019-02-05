@@ -15,7 +15,7 @@ description: The landing page for Flutter documentation.
 {% endfor -%}
 </div>
 
-## What's new on flutter.io
+## What's new on the site
 
 **November 5, 2018**
 
@@ -106,7 +106,7 @@ Once you’ve mastered the basics, try these pages.
 [Internationalization](/docs/development/accessibility-and-localization/internationalization)
 : Go global! How to internationalize your Flutter app.
 
-[Effective Dart](https://www.dartlang.org/guides/language/effective-dart)
+[Effective Dart]({{site.dart-site}}/guides/language/effective-dart)
 : Guides on how to write better Dart code.
 
 ## Specialized topics

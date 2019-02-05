@@ -59,8 +59,8 @@ JSON serialization with code generation means having an external library
 generate the encoding boilerplate for you. After some initial setup,
 you run a file watcher that generates the code from your model classes.
 For example,
-[json_serializable](https://pub.dartlang.org/packages/json_serializable) and
-[built_value](https://pub.dartlang.org/packages/built_value)
+[json_serializable]({{site.pub}}/packages/json_serializable) and
+[built_value]({{site.pub}}/packages/built_value)
 are these kinds of libraries.
 
 This approach scales well for a larger project. No hand-written
@@ -90,7 +90,7 @@ when using reflection.
 
 {{site.alert.info}}
   **What about dartson?** The
-  [dartson](https://pub.dartlang.org/packages/dartson) library uses runtime
+  [dartson]({{site.pub}}/packages/dartson) library uses runtime
   [reflection][], which makes it incompatible with Flutter.
 {{site.alert.end}}
 
@@ -216,7 +216,7 @@ and decoding for you.  Luckily, there is!
 
 Although there are other libraries available, this guide uses the
 [json_serializable
-package](https://pub.dartlang.org/packages/json_serializable),
+package]({{site.pub}}/packages/json_serializable),
 an automated source code generator that generates the JSON serialization
 boilerplate for you.
 
@@ -370,7 +370,7 @@ For more information, see the following resources:
 
 * [dart:convert][] and [JsonCodec][] documentation
 * [The
-  json_serializable package in Pub](https://pub.dartlang.org/packages/json_serializable)
+  json_serializable package in Pub]({{site.pub}}/packages/json_serializable)
 * [json_serializable
   examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discussion

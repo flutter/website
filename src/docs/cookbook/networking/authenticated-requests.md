@@ -14,7 +14,7 @@ requires using the `Authorization` HTTP header.
 
 ## Add Authorization Headers
 
-The [`http`](https://pub.dartlang.org/packages/http) package provides a
+The [`http`]({{site.pub}}/packages/http) package provides a
 convenient way to add headers to your requests. You can also take advantage of
 the `dart:io` package for common `HttpHeaders`.
 

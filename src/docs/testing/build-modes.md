@@ -20,7 +20,7 @@ The following describes each mode and when to use it.
 In _debug mode_, the app is set up for debugging on the physical
 device, emulator, or simulator. Debug mode means that:
 
-* [Assertions](https://www.dartlang.org/guides/language/language-tour#assert)
+* [Assertions]({{site.dart-site}}/guides/language/language-tour#assert)
    are enabled.
 * [Observatory](https://dart-lang.github.io/observatory) is enabled,
    allowing you to use the dart debugger.

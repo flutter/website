@@ -20,12 +20,12 @@ Flutter provide tools for this type of work!
 
 ## 1. Add the `http` package
 
-The [`http`](https://pub.dartlang.org/packages/http) package provides the
+The [`http`]({{site.pub}}/packages/http) package provides the
 simplest way to fetch data from the internet.
 
 To install the `http` package, we need to add it to the dependencies section
 of our `pubspec.yaml`. We can [find the latest version of the http package on
-the pub website](https://pub.dartlang.org/packages/http#-installing-tab-).
+the Pub website]({{site.pub}}/packages/http#-installing-tab-).
 
 ```yaml
 dependencies:
@@ -47,7 +47,7 @@ Future<http.Response> fetchPost() {
 
 The `http.get()` method returns a `Future` that contains a `Response`.
 
-  * [`Future`](https://docs.flutter.io/flutter/dart-async/Future-class.html) is
+  * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
   a core Dart class for working with async operations. It is used to represent a
   potential value or error that will be available at some time in the future.
   * The `http.Response` class contains the data received from a successful http
@@ -122,7 +122,7 @@ internet!
 ## 4. Fetch and Display the data
 
 In order to fetch the data and display it on screen, we can use the
-[`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html)
+[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
 widget! The `FutureBuilder` Widget comes with Flutter and makes it easy to work
 with async data sources.
 
@@ -181,15 +181,15 @@ You can see a working example of this in the complete example below.
 ### Call it in the lifecycle of a `StatefulWidget`'s state
 
 If your widget is stateful, you can call the fetch method in either the
-[`initState`](https://docs.flutter.io/flutter/widgets/State/initState.html) or
-[`didChangeDependencies`](https://docs.flutter.io/flutter/widgets/State/didChangeDependencies.html)
+[`initState`]({{site.api}}/flutter/widgets/State/initState.html) or
+[`didChangeDependencies`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
 methods.
 
 `initState` is called exactly once and then never again. If you want to have the
 option of reloading the API in response to an
-[`InheritedWidget`](https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html)
+[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
 changing, put the call into the `didChangeDependencies` method.  See
-[`State`](https://docs.flutter.io/flutter/widgets/State-class.html) for more
+[`State`]({{site.api}}/flutter/widgets/State-class.html) for more
 details.
 
 <!-- skip -->

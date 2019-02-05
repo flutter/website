@@ -133,7 +133,7 @@ for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the `flutter` command in a terminal
 and one of the many editors that support [editing
-Dart](https://www.dartlang.org/tools).
+Dart]({{site.dart-site}}/tools).
 
 ### Does Flutter come with a framework?
 
@@ -358,7 +358,7 @@ Android app, run `flutter build apk` and load the APK
 (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
 ([instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
 detailed size report. To measure an iOS app, upload a release IPA to Apple's
-App Store Connect ([instructions](https://flutter.io/docs/deployment/ios)) and
+App Store Connect ([instructions](/docs/deployment/ios)) and
 obtain the size report from there.
 
 ## Capabilities
@@ -426,7 +426,7 @@ web-based implementation of the Flutter runtime that takes advantage of the
 capability of the Dart platform to compile to JavaScript. This enables Flutter
 code to run on the standards-based web without change.
 
-[Hummingbird]: https://medium.com/flutter-io/hummingbird-building-flutter-for-the-web-e687c2a023a8
+[Hummingbird]: {{site.flutter-medium}}/hummingbird-building-flutter-for-the-web-e687c2a023a8
 
 ### Can I use Flutter to build desktop apps?
 
@@ -454,7 +454,7 @@ services and APIs from the operating system. However, we want to avoid the
 intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
-packages](https://pub.dartlang.org/flutter/) available in the Package
+packages]({{site.pub}}/flutter/) available in the Package
 site. Using an existing package [is
 easy](/docs/development/packages-and-plugins/using-packages).
 
@@ -515,7 +515,7 @@ Yes, Flutter supports calling into the platform, including integrating with
 Java or Kotlin code on Android, and ObjectiveC or Swift code on iOS.
 This is enabled via a flexible message passing style where a Flutter app
 may send and receive messages to the mobile platform using a
-[`BasicMessageChannel`](https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html).
+[`BasicMessageChannel`]({{site.api}}/flutter/services/BasicMessageChannel-class.html).
 
 Learn more about accessing platform and third-party services in Flutter with
 [platform channels](/docs/development/platform-integration/platform-channels).
@@ -554,12 +554,12 @@ Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services
 Yes, you can run Dart code in a background process on both iOS and Android.
 For more information, see the Medium article
 [Executing Dart in the Background with Flutter Plugins and
-Geofencing](https://medium.com/flutter-io/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124).
+Geofencing]({{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124).
 
 ### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
 Absolutely. There are libraries on the
-[Package site](https://pub.dartlang.org) for JSON, XML,
+[Package site]({{site.pub}}) for JSON, XML,
 protobufs, and many other utilities and formats.
 
 For a detailed writeup on using JSON with Flutter, check out [the JSON
@@ -602,7 +602,7 @@ rather putting a `Widget build(BuildContext context, State state)`
 method on StatefulWidget gives developers more flexibility when
 subclassing StatefulWidget. You can read a more
 [detailed discussion on the API docs for
-State.build](https://docs.flutter.io/flutter/widgets/State/build.html).
+State.build]({{site.api}}/flutter/widgets/State/build.html).
 
 ### Where is Flutter's markup language? Why doesn't Flutter have a markup syntax?
 
@@ -651,50 +651,50 @@ no particular order:
 small objects with narrow scopes of behavior, composed together to
 obtain more complicated effects. Most widgets in the Flutter widget
 library are built in this way. For example, the Material
-[FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
+[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)
 class is built using a
-[MaterialButton](https://docs.flutter.io/flutter/material/MaterialButton-class.html)
+[MaterialButton]({{site.api}}/flutter/material/MaterialButton-class.html)
 class, which itself is built using
-an [IconTheme](https://docs.flutter.io/flutter/widgets/IconTheme-class.html),
-an [InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html),
-a [Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html),
-a [Center](https://docs.flutter.io/flutter/widgets/Center-class.html),
-a [Material](https://docs.flutter.io/flutter/material/Material-class.html),
-an [AnimatedDefaultTextStyle](https://docs.flutter.io/flutter/widgets/AnimatedDefaultTextStyle-class.html),
-and a [ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html).
-The [InkWell](https://docs.flutter.io/flutter/material/InkWell-class.html)
-is built using a [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
-The [Material](https://docs.flutter.io/flutter/material/Material-class.html)
-is built using an [AnimatedDefaultTextStyle](https://docs.flutter.io/flutter/widgets/AnimatedDefaultTextStyle-class.html),
-a [NotificationListener](https://docs.flutter.io/flutter/widgets/NotificationListener-class.html),
-and an [AnimatedPhysicalModel](https://docs.flutter.io/flutter/widgets/AnimatedPhysicalModel-class.html).
+an [IconTheme]({{site.api}}/flutter/widgets/IconTheme-class.html),
+an [InkWell]({{site.api}}/flutter/material/InkWell-class.html),
+a [Padding]({{site.api}}/flutter/widgets/Padding-class.html),
+a [Center]({{site.api}}/flutter/widgets/Center-class.html),
+a [Material]({{site.api}}/flutter/material/Material-class.html),
+an [AnimatedDefaultTextStyle]({{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html),
+and a [ConstrainedBox]({{site.api}}/flutter/widgets/ConstrainedBox-class.html).
+The [InkWell]({{site.api}}/flutter/material/InkWell-class.html)
+is built using a [GestureDetector]({{site.api}}/flutter/widgets/GestureDetector-class.html).
+The [Material]({{site.api}}/flutter/material/Material-class.html)
+is built using an [AnimatedDefaultTextStyle]({{site.api}}/flutter/widgets/AnimatedDefaultTextStyle-class.html),
+a [NotificationListener]({{site.api}}/flutter/widgets/NotificationListener-class.html),
+and an [AnimatedPhysicalModel]({{site.api}}/flutter/widgets/AnimatedPhysicalModel-class.html).
 And so on. It's widgets all the way down.
 
 * Functional programming: Entire applications can be built with only
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html)s,
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html)s,
 which are essentially functions that describe how arguments map to other
 functions, bottoming out in primitives that compute layouts or paint graphics.
 (Such applications can't easily have state, so are typically non-interactive.)
-For example, the [Icon](https://docs.flutter.io/flutter/widgets/Icon-class.html)
+For example, the [Icon]({{site.api}}/flutter/widgets/Icon-class.html)
 widget is essentially a function that maps its arguments
-([color](https://docs.flutter.io/flutter/widgets/Icon/color.html),
-[icon](https://docs.flutter.io/flutter/widgets/Icon/icon.html),
-[size](https://docs.flutter.io/flutter/widgets/Icon/size.html)) into layout
+([color]({{site.api}}/flutter/widgets/Icon/color.html),
+[icon]({{site.api}}/flutter/widgets/Icon/icon.html),
+[size]({{site.api}}/flutter/widgets/Icon/size.html)) into layout
 primitives. Additionally, heavy use is made of immutable data structures,
 including the entire
-[Widget](https://docs.flutter.io/flutter/widgets/Widget-class.html) class
+[Widget]({{site.api}}/flutter/widgets/Widget-class.html) class
 hierarchy as well as numerous supporting classes such as
-[Rect](https://docs.flutter.io/flutter/dart-ui/Rect-class.html) and
-[TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html). On a
+[Rect]({{site.api}}/flutter/dart-ui/Rect-class.html) and
+[TextStyle]({{site.api}}/flutter/painting/TextStyle-class.html). On a
 smaller scale, Dart's
-[Iterable](https://docs.flutter.io/flutter/dart-core/Iterable-class.html) API,
+[Iterable]({{site.api}}/flutter/dart-core/Iterable-class.html) API,
 which makes heavy use of the functional style (map, reduce, where, etc), is
 frequently used to process lists of values in the framework.
 
 * Event-driven programming: User interactions are represented by event objects
 that are dispatched to callbacks registered with event handlers. Screen updates
 are triggered by a similar callback mechanism. The
-[Listenable](https://docs.flutter.io/flutter/foundation/Listenable-class.html)
+[Listenable]({{site.api}}/flutter/foundation/Listenable-class.html)
 class, which is used as the basis of the animation system, formalizes a
 subscription model for events with multiple listeners.
 
@@ -702,14 +702,14 @@ subscription model for events with multiple listeners.
 are built using classes with inheritance. We use an approach whereby we define
 very high-level APIs in our base classes, then specialize them iteratively in
 subclasses. For example, our render objects have a base class
-([RenderObject](https://docs.flutter.io/flutter/rendering/RenderObject-class.html))
+([RenderObject]({{site.api}}/flutter/rendering/RenderObject-class.html))
 that is agnostic regarding the coordinate system, and then we have a subclass
-([RenderBox](https://docs.flutter.io/flutter/rendering/RenderBox-class.html))
+([RenderBox]({{site.api}}/flutter/rendering/RenderBox-class.html))
 that introduces the opinion that the geometry should be based on the Cartesian
 coordinate system (x/width and y/height).
 
 * Prototype-based object-oriented programming: The
-[ScrollPhysics](https://docs.flutter.io/flutter/widgets/ScrollPhysics-class.html)
+[ScrollPhysics]({{site.api}}/flutter/widgets/ScrollPhysics-class.html)
 class chains instances to compose the physics that apply to scrolling
 dynamically at runtime. This lets the system compose, for example, paging
 physics with platform-specific physics, without the platform having to be
@@ -731,18 +731,18 @@ imperative-reactive are present in the framework, depending on the needs of the
 widgets. Widgets with build methods that consist of just an expression
 describing how the widget reacts to changes in its configuration are functional
 reactive widgets (e.g., the Material
-[Divider](https://docs.flutter.io/flutter/material/Divider-class.html) class).
+[Divider]({{site.api}}/flutter/material/Divider-class.html) class).
 Widgets whose build methods construct a list of children over several
 statements, describing how the widget reacts to changes in its configuration,
 are imperative reactive widgets (e.g., the
-[Chip](https://docs.flutter.io/flutter/material/Chip-class.html) class).
+[Chip]({{site.api}}/flutter/material/Chip-class.html) class).
 
 * Declarative programming: The build methods of widgets are often a single
 expression with multiple levels of nested constructors, written using a strictly
 declarative subset of Dart. Such nested expressions could be mechanically
 transformed to or from any suitably expressive markup language. For example,
 the
-[UserAccountsDrawerHeader](https://docs.flutter.io/flutter/material/UserAccountsDrawerHeader-class.html)
+[UserAccountsDrawerHeader]({{site.api}}/flutter/material/UserAccountsDrawerHeader-class.html)
 widget has a long build method (20+ lines), consisting of a single nested
 expression. This can also be combined with the imperative style to build UIs
 that would be harder to describe in a pure-declarative approach.
@@ -750,24 +750,24 @@ that would be harder to describe in a pure-declarative approach.
 * Generic programming: Types can be used to help developers catch programming
 errors early. The Flutter framework uses generic programming to help in this
 regard. For example, the
-[State](https://docs.flutter.io/flutter/widgets/State-class.html) class is
+[State]({{site.api}}/flutter/widgets/State-class.html) class is
 parameterized in terms of the type of its associated widget, so that the Dart
 analyzer can catch mismatches of states and widgets. Similarly, the
-[GlobalKey](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html) class
+[GlobalKey]({{site.api}}/flutter/widgets/GlobalKey-class.html) class
 takes a type parameter so that it can access a remote widget's state in a
 type-safe manner (using runtime checking), the
-[Route](https://docs.flutter.io/flutter/widgets/Route-class.html) interface is
+[Route]({{site.api}}/flutter/widgets/Route-class.html) interface is
 parameterized with the type that it is expected to use when
-[popped](https://docs.flutter.io/flutter/widgets/Navigator/pop.html), and
+[popped]({{site.api}}/flutter/widgets/Navigator/pop.html), and
 collections such as
-[List](https://docs.flutter.io/flutter/dart-core/List-class.html)s,
-[Map](https://docs.flutter.io/flutter/dart-core/Map-class.html)s, and
-[Set](https://docs.flutter.io/flutter/dart-core/Set-class.html)s are all
+[List]({{site.api}}/flutter/dart-core/List-class.html)s,
+[Map]({{site.api}}/flutter/dart-core/Map-class.html)s, and
+[Set]({{site.api}}/flutter/dart-core/Set-class.html)s are all
 parameterized so that mismatched elements can be caught early either during
 analysis or at runtime during debugging.
 
 * Concurrent programming: Flutter makes heavy use of
-[Future](https://docs.flutter.io/flutter/dart-async/Future-class.html)s and
+[Future]({{site.api}}/flutter/dart-async/Future-class.html)s and
 other asynchronous APIs. For example, the animation system reports when an
 animation is finished by completing a future. The image loading system similarly
 uses futures to report when a load is complete.
@@ -832,17 +832,17 @@ In addition, any Dart packages you use may have their own license requirements.
 There's an API to find the list of licenses you need to show:
 
 * If your application has a
-  [Drawer](https://docs.flutter.io/flutter/material/Drawer-class.html),
+  [Drawer]({{site.api}}/flutter/material/Drawer-class.html),
   add an
-  [AboutListTile](https://docs.flutter.io/flutter/material/AboutListTile-class.html).
+  [AboutListTile]({{site.api}}/flutter/material/AboutListTile-class.html).
 
 * If your application doesn't have a Drawer but does use the Material Components
   library, call either
-  [showAboutDialog](https://docs.flutter.io/flutter/material/showAboutDialog.html)
-  or [showLicensePage](https://docs.flutter.io/flutter/material/showLicensePage.html).
+  [showAboutDialog]({{site.api}}/flutter/material/showAboutDialog.html)
+  or [showLicensePage]({{site.api}}/flutter/material/showLicensePage.html).
 
 * For a more custom approach, you can get the raw licenses from the
-  [LicenseRegistry](https://docs.flutter.io/flutter/foundation/LicenseRegistry-class.html).
+  [LicenseRegistry]({{site.api}}/flutter/foundation/LicenseRegistry-class.html).
 
 ### Who works on Flutter?
 

@@ -1,5 +1,6 @@
 ---
 title: Accessibility
+description: Information on Flutter's accessibility support.
 ---
 
 Flutter is committed to supporting developers who want to make their apps more
@@ -99,7 +100,7 @@ When specifying colors on widgets, make sure sufficient contrast is used between
 foreground and background color selections.
 
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
-[Semantics widget]: https://docs.flutter.io/flutter/widgets/Semantics-class.html
+[Semantics widget]: {{site.api}}/flutter/widgets/Semantics-class.html
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/

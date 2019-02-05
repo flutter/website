@@ -66,8 +66,8 @@ flutter:
 ### `pubspec.yaml` option definitions
 
 The `family` determines the name of the font, which we can use in the
-[`fontFamily`](https://docs.flutter.io/flutter/painting/TextStyle/fontFamily.html)
-property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+[`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html)
+property of a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 object.
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
@@ -79,16 +79,16 @@ and styles:
 
   * The `weight` property specifies the weight of the outlines in the file as an
     integer multiple of 100 between 100 and 900. These values correspond to the
-    [`FontWeight`](https://docs.flutter.io/flutter/dart-ui/FontWeight-class.html)
-    and can be used in the [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+    [`FontWeight`]({{site.api}}/flutter/dart-ui/FontWeight-class.html)
+    and can be used in the [`fontWeight`]({{site.api}}/flutter/painting/TextStyle/fontWeight.html)
+    property of a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
     object.
 
   * The `style` property specfies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
-    [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html)
-    and can be used in the [fontStyle](https://docs.flutter.io/flutter/painting/TextStyle/fontStyle.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+    [`FontStyle`]({{site.api}}/flutter/dart-ui/FontStyle-class.html)
+    and can be used in the [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html)
+    property of a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
     object.
 
 ## 3. Set a font as the default
@@ -116,7 +116,7 @@ and font styles"](/docs/cookbook/design/themes/) recipe.
 ## 4. Use the font in a specific Widget
 
 If we want to apply the font to a specific Widget, such as a `Text` Widget,
-we can provide a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+we can provide a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 to the Widget.
 
 In this example, we'll apply the RobotoMono font to a single `Text` Widget. Once
@@ -133,7 +133,7 @@ Text(
 
 ### TextStyle
 
-If a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+If a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 object specifies a weight or style for which is there is no exact font file, the
 engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.

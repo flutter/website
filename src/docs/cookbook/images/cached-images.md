@@ -10,7 +10,7 @@ next:
 
 In some cases, it can be handy to cache images as they're downloaded from the
 web so they can be used offline. For this purpose, we'll employ the
-[`cached_network_image`](https://pub.dartlang.org/packages/cached_network_image)
+[`cached_network_image`]({{site.pub}}/packages/cached_network_image)
 package.
 
 In addition to caching, the cached_image_network package also supports

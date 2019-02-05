@@ -42,7 +42,7 @@ This guide shows how to build a staggered animation in Flutter.
   [staggered_pic_selection](https://github.com/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
   : Shows deleting an image from a list of images displayed in one of three sizes.
     This example uses two [animation
-    controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
+    controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
     one for image selection/deselection, and one for image deletion.
     The selection/deselection animation is staggered. (To see this effect,
     you might need to increase the `timeDilation` value.)
@@ -88,17 +88,17 @@ After running forward, the animation runs in reverse.
   <h4 class="no_toc">What's the point?</h4>
 
   * All of the animations are driven by the same
-    [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
+    [AnimationController]({{site.api}}/flutter/animation/AnimationController-class.html).
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
   * Each animation has an
-    [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)
+    [Interval]({{site.api}}/flutter/animation/Interval-class.html)
     between 0.0 and 1.0, inclusive.
   * For each property that animates in an interval, create a
-    [Tween.](https://docs.flutter.io/flutter/animation/Tween-class.html)
+    [Tween.]({{site.api}}/flutter/animation/Tween-class.html)
     The `Tween` specifies the start and end values for that property.
   * The `Tween` produces an
-    [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html)
+    [Animation]({{site.api}}/flutter/animation/Animation-class.html)
     object that is managed by the controller.
 {{site.alert.end}}
 
@@ -140,9 +140,9 @@ value changes, triggering the UI to update.
 
 The following code creates a tween for the `width` property.
 It builds a
-[CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html),
+[CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html),
 specifying an eased curve.
-See [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html)
+See [Curves]({{site.api}}/flutter/animation/Curves-class.html)
 for other available pre-defined animation curves.
 
 <!-- skip -->
@@ -199,7 +199,7 @@ The animation begins when a tap is detected anywhere in the screen.
 ### Stateless widget: StaggerAnimation
 
 In the stateless widget, StaggerAnimation, the `build()` function instantiates an
-[AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html)&mdash;a
+[AnimatedBuilder]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)&mdash;a
 general purpose widget for building animations. The AnimatedBuilder
 builds a widget and configures it using the Tweens' current values.
 The example creates a function named `_buildAnimation()` (which performs
@@ -360,10 +360,10 @@ The following resources might help when writing animations:
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
 
-[Flutter API documentation](https://docs.flutter.io)
+[Flutter API documentation]({{site.api}})
 : Reference documentation for all of the Flutter libraries.
   In particular, see the [animation
-  library](https://docs.flutter.io/flutter/animation/animation-library.html)
+  library]({{site.api}}/flutter/animation/animation-library.html)
   documentation.
 
 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
@@ -381,6 +381,6 @@ Package not yet vetted.
 ## Other resources
 
 * For an alternate approach to sequence animation, see the
-[flutter_sequence_animation](https://pub.dartlang.org/packages/flutter_sequence_animation)
-package on [pub.dartlang.org](https://pub.dartlang.org/packages).
+[flutter_sequence_animation]({{site.pub}}/packages/flutter_sequence_animation)
+package on the [Pub site]({{site.pub}}/packages).
 {% endcomment %}

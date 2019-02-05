@@ -9,11 +9,12 @@ next:
 ---
 
 If we have a relatively small collection of key-values that we'd like to save,
-we can use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
+we can use the [shared_preferences]({{site.pub}}/packages/shared_preferences)
 plugin.
 
 Normally we would have to write native platform integrations for storing data on
-both platforms. Fortunately, the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
+both platforms. Fortunately, the
+[shared_preferences]({{site.pub}}/packages/shared_preferences)
 plugin can be used to persist key-value data on disk. The shared preferences
 plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
@@ -27,7 +28,8 @@ providing a persistent store for simple data.
 
 ## 1. Add the dependency
 
-Before we start, we need to add the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
+Before we start, we need to add the
+[shared_preferences]({{site.pub}}/packages/shared_preferences)
 plugin to our `pubspec.yaml` file:
 
 ```yaml

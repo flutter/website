@@ -10,7 +10,8 @@ quickly popping elements on and off the screen can feel jarring to end users.
 Instead, we can fade elements in and out with an opacity animation to create
 a smooth experience.
 
-In Flutter, we can achieve this task using the [`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html)
+In Flutter, we can achieve this task using the
+[`AnimatedOpacity`]({{site.api}}/flutter/widgets/AnimatedOpacity-class.html)
 Widget.
 
 ## Directions
@@ -38,7 +39,7 @@ Container(
 
 Now that we have a green box to animate, we'll need a way to know whether the
 box should be visible or invisible. To accomplish this, we can use a
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
+[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
 
 A `StatefulWidget` is a class that creates a `State` object. The `State` object
 holds some data about our app and provides a way to update that data. When we
@@ -86,7 +87,7 @@ visible, we want to hide it. If the box is hidden, we want to show it!
 
 To achieve this, we'll display a button. When a user presses the button, we'll
 flip the boolean from true to false, or false to true. We need to make this
-change using [`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html),
+change using [`setState`]({{site.api}}/flutter/widgets/State/setState.html),
 which is a method on the `State` class. This will let Flutter know it needs to
 rebuild the Widget.
 
@@ -112,7 +113,7 @@ FloatingActionButton(
 
 We've got a green box on screen. We've got a button to toggle the visibility
 to `true` or `false`. So how do we fade the box in and out? With an
-[`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html)
+[`AnimatedOpacity`]({{site.api}}/flutter/widgets/AnimatedOpacity-class.html)
 Widget!
 
 The `AnimatedOpacity` Widget requires three arguments:

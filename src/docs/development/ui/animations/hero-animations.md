@@ -111,7 +111,7 @@ how Flutter performs a hero animation.
   * Pushing a route on or popping a route from the Navigator’s stack
     triggers the animation.
   * The Flutter framework calculates a [rectangle
-    tween](https://docs.flutter.io/flutter/animation/RectTween-class.html)
+    tween]({{site.api}}/flutter/animation/RectTween-class.html)
     that defines the hero's boundary as it flies from the source to
     the destination route. During its flight, the hero is moved to
     an application overlay, so that it appears on top of both routes.
@@ -124,7 +124,7 @@ how Flutter performs a hero animation.
 </aside>
 
 Hero animations are implemented using two
-[Hero](https://docs.flutter.io/flutter/widgets/Hero-class.html)
+[Hero]({{site.api}}/flutter/widgets/Hero-class.html)
 widgets: one describing the widget in the source route,
 and another describing the widget in the destination route.
 From the user’s point of view, the hero appears to be shared, and
@@ -205,11 +205,11 @@ the following:
     class="mw-100" %}
 
 As the hero flies, its rectangular bounds are animated using
-[Tween&lt;Rect&gt;,](https://docs.flutter.io/flutter/animation/Tween-class.html)
+[Tween&lt;Rect&gt;,]({{site.api}}/flutter/animation/Tween-class.html)
 specified in Hero's
-[`createRectTween`](https://docs.flutter.io/flutter/widgets/CreateRectTween.html) property.
+[`createRectTween`]({{site.api}}/flutter/widgets/CreateRectTween.html) property.
 By default, Flutter uses an instance of
-[MaterialRectArcTween,](https://docs.flutter.io/flutter/material/MaterialRectArcTween-class.html)
+[MaterialRectArcTween,]({{site.api}}/flutter/material/MaterialRectArcTween-class.html)
 which animates the rectangle's opposing corners along a curved path.
 (See [Radial hero animations](#radial-hero-animations)
 for an example that uses a different Tween animation.)
@@ -239,22 +239,22 @@ and location in the source route.
 The examples in this guide use the following classes to
 implement hero animations:
 
-[Hero](https://docs.flutter.io/flutter/widgets/Hero-class.html)
+[Hero]({{site.api}}/flutter/widgets/Hero-class.html)
 : The widget that flies from the source to the destination route.
   Define one Hero for the source route and another for the
   destination route, and assign each the same tag.
   Flutter animates pairs of heroes with matching tags.
 
-[Inkwell](https://docs.flutter.io/flutter/material/InkWell-class.html)
+[Inkwell]({{site.api}}/flutter/material/InkWell-class.html)
 : Specifies what happens when tapping the hero.
   The InkWell's `onTap()` method builds the new route and pushes it
   to the Navigator's stack.
 
-[Navigator](https://docs.flutter.io/flutter/widgets/Navigator-class.html)
+[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)
 : The Navigator manages a stack of routes. Pushing a route on or
   popping a route from the Navigator's stack triggers the animation.
 
-[Route](https://docs.flutter.io/flutter/widgets/Route-class.html)
+[Route]({{site.api}}/flutter/widgets/Route-class.html)
 : Specifies a screen or page. Most apps, beyond the most basic,
   have multiple routes.
 
@@ -504,10 +504,10 @@ The following diagram shows the clipped image at the beginning
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
 the result of the intersection is a circular clip
-([ClipOval](https://docs.flutter.io/flutter/widgets/ClipOval-class.html)).
+([ClipOval]({{site.api}}/flutter/widgets/ClipOval-class.html)).
 During the transformation,
 the ClipOval scales from `minRadius` to `maxRadius` while the
-[ClipRect](https://docs.flutter.io/flutter/widgets/ClipRect-class.html)
+[ClipRect]({{site.api}}/flutter/widgets/ClipRect-class.html)
 maintains a constant size.
 At the end of the transition the intersection of the circular and
 rectangular clips yield a rectangle that's the same size as the hero
@@ -656,10 +656,10 @@ The following resources might help when writing animations:
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
 
-[Flutter API documentation](https://docs.flutter.io/)
+[Flutter API documentation]({{site.api}})
 : Reference documentation for all of the Flutter libraries.
   In particular, see the [animation
-  library](https://docs.flutter.io/flutter/animation/animation-library.html)
+  library]({{site.api}}/flutter/animation/animation-library.html)
   documentation.
 
 [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
@@ -671,5 +671,5 @@ The following resources might help when writing animations:
 [Material motion spec](https://material.io/guidelines/motion/)
 : Describes motion for Material design apps.
 
-[MaterialRectCenterArcTween]: https://docs.flutter.io/flutter/material/MaterialRectCenterArcTween-class.html
+[MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [Radial transformation]: https://material.io/guidelines/motion/transforming-material.html#transforming-material-radial-transformation

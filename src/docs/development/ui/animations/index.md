@@ -29,8 +29,8 @@ If you have a specific request, please
   different aspects of the animation APIs.
 
 * [Zero to One with Flutter, part
-  1](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
-  2](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  1]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
+  2]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
@@ -115,9 +115,9 @@ The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gal
 demo includes an example of a Hero animation.
 
 * Also see the API documentation for the
-[Hero,](https://docs.flutter.io/flutter/widgets/Hero-class.html)
-[Navigator,](https://docs.flutter.io/flutter/widgets/Navigator-class.html) and
-[PageRoute](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
+[Hero,]({{site.api}}/flutter/widgets/Hero-class.html)
+[Navigator,]({{site.api}}/flutter/widgets/Navigator-class.html) and
+[PageRoute]({{site.api}}/flutter/widgets/PageRoute-class.html)
 classes.
 
 ### Staggered animation
@@ -147,8 +147,8 @@ A catalog of some of the animation widgets provided in the Flutter APIs.
 Until the landing page for the animation library is reworked, leave this
 link out.
 * The [animation
-library](https://docs.flutter.io/flutter/animation/animation-library.html)
-in the [Flutter API documentation](https://docs.flutter.io/)<br>
+library]({{site.api}}/flutter/animation/animation-library.html)
+in the [Flutter API documentation]({{site.api}})<br>
 The animation API for the Flutter framework.
 {% endcomment %}
 
@@ -157,7 +157,7 @@ The animation API for the Flutter framework.
 If there is specific animation documentation you'd like to see,
 [file an issue](https://github.com/flutter/website/issues).
 
-[AnimationController.animateWith]: https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html
+[AnimationController.animateWith]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [Material widgets]: /docs/development/ui/widgets/material
-[SpringSimulation]: https://docs.flutter.io/flutter/physics/SpringSimulation-class.html
+[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html

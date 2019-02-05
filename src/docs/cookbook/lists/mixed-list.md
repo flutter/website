@@ -72,7 +72,7 @@ final items = List<ListItem>.generate(
 ## 2. Convert the data source into a List of Widgets
 
 In order to handle converting each item into a Widget, we'll employ the
-[`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html)
+[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
 In general, we'll want to provide a `builder` function that checks for what type

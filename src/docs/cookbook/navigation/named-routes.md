@@ -12,14 +12,14 @@ In the
 [Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics/)
 recipe, we learned how to Navigate to a new screen by creating a new route and
 pushing it to the
-[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html).
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
 However, if we need to navigate to the same screen in many parts of our apps,
 this can result in code duplication. In these cases, it can be handy to define
 a "named route," and use the named route for Navigation.
 
 To work with named routes, we can use the
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html)
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This example will replicate the functionality from the original
 recipe, demonstrating how to use named routes instead.
 
@@ -79,7 +79,7 @@ class SecondScreen extends StatelessWidget {
 ## 2. Define the routes
 
 Next, we'll need to define our routes by providing additional properties to the
-[`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 constructor: the `initialRoute` and the `routes` themselves.
 
 The `initialRoute` property defines which route our app should start with. The
@@ -107,7 +107,7 @@ Note: When using `initialRoute`, be sure you do not define a `home` property.
 
 With our Widgets and routes in place, we can begin navigating! In this case,
 we'll use the
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html)
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This tells Flutter to build the Widget defined in our `routes` table
 and launch the screen.
 
@@ -126,7 +126,7 @@ onPressed: () {
 ## 4. Return to the first screen
 
 In order to navigate back to the first page, we can use the
-[`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
+[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 function.
 
 <!-- skip -->

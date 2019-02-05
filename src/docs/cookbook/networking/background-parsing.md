@@ -18,7 +18,8 @@ users will experience jank.
 
 To avoid jank, we need to perform expensive computations like this in the
 background. On Android, this would mean scheduling work on a different thread.
-In Flutter, we can use a separate [Isolate](https://docs.flutter.io/flutter/dart-isolate/Isolate-class.html).
+In Flutter, we can use a separate
+[Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
 
 ## Directions
 
@@ -29,7 +30,7 @@ In Flutter, we can use a separate [Isolate](https://docs.flutter.io/flutter/dart
 
 ## 1. Add the `http` package
 
-First, we'll want to add the [`http`](https://pub.dartlang.org/packages/http)
+First, we'll want to add the [`http`]({{site.pub}}/packages/http)
 package to our project. The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
@@ -118,7 +119,7 @@ freezes for a brief moment as it parses and converts the json. This is jank,
 and we want to be rid of it!
 
 So how can we do that? By moving the parsing and conversion to a background
-isolate using the [`compute`](https://docs.flutter.io/flutter/foundation/compute.html)
+isolate using the [`compute`]({{site.api}}/flutter/foundation/compute.html)
 function provided by Flutter. The `compute` function will run expensive
 functions in a background isolate and return the result. In this case, we want
 to run the `parsePhotos` function in the background!

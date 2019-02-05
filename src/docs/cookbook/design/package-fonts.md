@@ -11,7 +11,7 @@ next:
 Rather than declaring a font as part of our app, we can declare a font as part
 of a separate package. This is a convenient way to share the same font across
 several different projects or for coders publishing their packages to the
-[pub website](https://pub.dartlang.org/).
+[pub website]({{site.pub}}).
 
 ## Directions
 
@@ -70,7 +70,7 @@ flutter:
 
 ## 3. Use the font
 
-We can use a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+We can use a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 to change the appearance of text. To use package fonts, we need to not only
 declare which font we'd like to use, we need to declare the `package` the font
 belongs to.

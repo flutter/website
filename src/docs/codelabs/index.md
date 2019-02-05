@@ -67,6 +67,6 @@ If the previous link doesn't work for you, try
 // Right now, there's only the Java->Dart lab, which is also in the
 // Flutter category, so this is (effectively) a dupe link.
 For Dart-specific codelabs, see the
-[codelabs](https://www.dartlang.org/codelabs) page on
-[dartlang.org](https://www.dartlang.org/).
+[codelabs]({{site.dart-site}}/codelabs) page on the
+[Dart site]({{site.dart-site}}).
 {% endcomment %}

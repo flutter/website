@@ -13,8 +13,8 @@ used to persist data across app launches or download data from the internet and
 save it for later offline use.
 
 In order to save files to disk, we'll need to combine the
-[`path_provider` plugin](https://pub.dartlang.org/packages/path_provider) with
-the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
+[`path_provider` plugin]({{site.pub}}/packages/path_provider) with
+the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
 ## Directions
@@ -30,7 +30,7 @@ In this example, we'll display a counter. When the counter changes, we'll want
 to write data on disk so we can read it again when the app loads. Therefore, we
 need to ask: Where should we store this data?
 
-The [`path_provider`](https://pub.dartlang.org/packages/path_provider) plugin
+The [`path_provider`]({{site.pub}}/packages/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's filesystem. The plugin currently supports access to two filesystem
 locations:
@@ -60,8 +60,9 @@ Future<String> get _localPath async {
 ## 2. Create a reference to the file location
 
 Once we know where to store the file, we'll need to create a reference to the
-file's full location. We can use the [`File`](https://docs.flutter.io/flutter/dart-io/File-class.html)
-class from the [dart:io](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
+file's full location. We can use the
+[`File`]({{site.api}}/flutter/dart-io/File-class.html)
+class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library to achieve this.
 
 <!-- skip -->

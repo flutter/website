@@ -176,4 +176,4 @@ In this example, we've learned how to use Mockito to test functions or classes
 that depend on web services or databases. This is only a short introduction to
 the Mockito library and the concept of mocking. For more information, please
 see the documentation provided by the
-[Mockito package](https://pub.dartlang.org/packages/mockito).
+[Mockito package]({{site.pub}}/packages/mockito).

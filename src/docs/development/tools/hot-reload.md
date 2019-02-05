@@ -208,7 +208,7 @@ get bar => foo;
 ```
 
 Read more about the [differences between the `const` and `final`
-keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart.
+keywords]({{site.news}}/2012/06/const-static-final-oh-my.html) in Dart.
 
 ## Recent UI change is excluded
 
@@ -325,4 +325,4 @@ re-executed.
 The hot reload mechanism then causes the Flutter framework to trigger a
 rebuild/re-layout/repaint of all existing widgets and render objects.
 
-[static fields are lazily initialized]: https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html
+[static fields are lazily initialized]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html

@@ -14,7 +14,7 @@ Widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
 How can we animate a Widget from one screen to the next with Flutter? Using the
-[`Hero`](https://docs.flutter.io/flutter/widgets/Hero-class.html) Widget!
+[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) Widget!
 
 ## Directions
 

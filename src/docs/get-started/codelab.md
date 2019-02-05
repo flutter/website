@@ -170,12 +170,12 @@ where the Dart code lives.
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
-[english_words](https://pub.dartlang.org/packages/english_words),
+[english_words]({{site.pub}}/packages/english_words),
 which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on [the Package site](https://pub.dartlang.org/flutter).
+packages, on the [Pub site]({{site.pub}}/flutter).
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
@@ -307,7 +307,7 @@ a child inside the existing `MyApp` stateless widget.
 
     Notice the declaration `State<RandomWords>`. This indicates that we're
     using the generic
-    [State](https://docs.flutter.io/flutter/widgets/State-class.html)
+    [State]({{site.api}}/flutter/widgets/State-class.html)
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
@@ -425,9 +425,8 @@ lazily, on demand.
 
     {{site.alert.note}}
       Prefixing an identifier with an underscore [enforces
-      privacy](https://www.dartlang.org/guides/language/language-tour)
-      in the Dart
-      language.
+      privacy]({{site.dart-site}}/guides/language/language-tour)
+      in the Dart language.
     {{site.alert.end}}
 
     Next, you'll add a `_buildSuggestions()` function to the `RandomWordsState`
@@ -495,7 +494,7 @@ lazily, on demand.
  4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
     generation library.
-    ([Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
+    ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 

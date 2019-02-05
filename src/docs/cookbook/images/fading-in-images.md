@@ -13,7 +13,8 @@ simply pop onto the screen as they're loaded. This might feel visually jarring
 to your users.
 
 Instead, wouldn't it be nice if you could display a placeholder at first, and
-images would fade in as they're loaded? We can use the [`FadeInImage`](https://docs.flutter.io/flutter/widgets/FadeInImage-class.html)
+images would fade in as they're loaded? We can use the
+[`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
 Widget packaged with Flutter for exactly this purpose!
 
 `FadeInImage` works with images of any type: in-memory, local assets, or images
@@ -85,7 +86,8 @@ to the project’s `pubspec.yaml` file (for more details see
 +    - assets/loading.gif
 ```
 
-Then, use the [FadeInImage.assetNetwork()](https://docs.flutter.io/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
+Then, use the
+[FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
 constructor:
 
 <!-- skip -->

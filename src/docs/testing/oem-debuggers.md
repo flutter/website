@@ -156,7 +156,7 @@ Dart debugger and, 2) the Android Gradle debugger.
 * Create a basic Flutter app.
 
 * Replace `lib/main.dart` with the following example code from the
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher)
+[`url_launcher`]({{site.pub}}/packages/url_launcher)
 package:
 
 {% prettify dart %}

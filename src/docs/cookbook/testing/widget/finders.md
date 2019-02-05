@@ -13,15 +13,15 @@ next:
 In order to locate Widgets in a test environment, we need to use `Finder`
 classes. While it's possible to write our own `Finder` classes, it's generally
 more convenient to locate Widgets using the tools provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
+[`flutter_test`]({{site.api}}/flutter_test/flutter_test-library.html)
 package.
 
 In this recipe, we'll look at the
-[`find`]({{api}}/flutter_test/find-constant.html)
+[`find`]({{site.api}}/flutter_test/find-constant.html)
 constant provided by the `flutter_test` package and demonstrate how to work with
 some of the `Finders` it provides. For a full list of available finders, please
 consult the
-[`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
+[`CommonFinders` documentation]({{site.api}}/flutter_driver/CommonFinders-class.html).
 
 If you're unfamiliar with Widget testing and the role of `Finder` classes,
 review the [Introduction to Widget testing](/docs/cookbook/testing/integration) recipe.
@@ -104,7 +104,7 @@ to locate Widgets in the test environment. This recipe demonstrated three of
 these methods, and several more methods exist for different purposes.
 
 If the above examples do not work for a particular use-case, please see the
-[`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html)
+[`CommonFinders` documentation]({{site.api}}/flutter_driver/CommonFinders-class.html)
 to review all available methods.
 
 ### Complete example

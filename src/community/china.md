@@ -1,13 +1,14 @@
 ---
 title: Using Flutter in China
-description: Where to find a version of flutter.io that is localized to Mandarin.
+description: Where to find a version of the Flutter site that is localized to Simplified Chinese.
 toc: true
 ---
 
 {% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
-The Flutter community has made a Mandarin version of the flutter.io
-website available at [https://flutter-io.cn](https://flutter-io.cn).
+The Flutter community has made a Simplified Chinese version of the the
+Flutter site website available at
+[https://flutter-io.cn](https://flutter-io.cn).
 
 If you’d like to install Flutter using an [installation
 bundle](/docs/development/tools/sdk/archive),

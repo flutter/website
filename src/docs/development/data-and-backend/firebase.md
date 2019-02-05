@@ -25,4 +25,4 @@ Also, the Flutter community has created docs that you might find useful:
 * [Authenticating users with Firebase and
    Flutter](https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f)
 * [Building chat app with Flutter and
-   Firebase](https://medium.com/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e)
+   Firebase]({{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e)

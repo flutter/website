@@ -5,7 +5,7 @@ description: An overview of animation concepts
 ---
 
 The animation system in Flutter is based on typed
-[`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
+[`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
 objects. Widgets can either incorporate these animations in their build
 functions directly by reading their current value and listening to their
 state changes or they can use the animations as the basis of more elaborate
@@ -14,7 +14,7 @@ animations that they pass along to other widgets.
 ## Animation
 
 The primary building block of the animation system is the
-[`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
+[`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
 class.  An animation represents a value of a specific type that can change
 over the lifetime of the animation. Most widgets that perform an animation
 receive an `Animation` object as a parameter, from which they read the current
@@ -24,21 +24,21 @@ value of the animation and to which they listen for changes to that value.
 
 Whenever the animation's value changes, the animation notifies all the
 listeners added with
-[`addListener`](https://docs.flutter.io/flutter/animation/Animation/addListener.html).
-Typically, a [`State`](https://docs.flutter.io/flutter/widgets/State-class.html)
+[`addListener`]({{site.api}}/flutter/animation/Animation/addListener.html).
+Typically, a [`State`]({{site.api}}/flutter/widgets/State-class.html)
 object that listens to an animation will call
-[`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html) on
+[`setState`]({{site.api}}/flutter/widgets/State/setState.html) on
 itself in its listener callback to notify the widget system that it needs to
 rebuild with the new value of the animation.
 
 This pattern is so common that there are two widgets that help widgets rebuild
 when animations change value:
-[`AnimatedWidget`](https://docs.flutter.io/flutter/widgets/AnimatedWidget-class.html)
+[`AnimatedWidget`]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
 and
-[`AnimatedBuilder`](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html).
+[`AnimatedBuilder`]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html).
 The first, `AnimatedWidget`, is most useful for stateless animated widgets.
 To use `AnimatedWidget`, simply subclass it and implement the
-[`build`](https://docs.flutter.io/flutter/widgets/AnimatedWidget/build.html)
+[`build`]({{site.api}}/flutter/widgets/AnimatedWidget/build.html)
 function. The second, `AnimatedBuilder`, is useful for more complex widgets
 that wish to include an animation as part of a larger build function. To use
 `AnimatedBuilder`, simply construct the widget and pass it a `builder` function.
@@ -46,10 +46,10 @@ that wish to include an animation as part of a larger build function. To use
 ### `addStatusListener`
 
 Animations also provide an
-[`AnimationStatus`](https://docs.flutter.io/flutter/animation/AnimationStatus-class.html),
+[`AnimationStatus`]({{site.api}}/flutter/animation/AnimationStatus-class.html),
 which indicates how the animation will evolve over time. Whenever the animation's
 status changes, the animation notifies all the listeners added with
-[`addStatusListener`](https://docs.flutter.io/flutter/animation/Animation/addStatusListener.html).
+[`addStatusListener`]({{site.api}}/flutter/animation/Animation/addStatusListener.html).
 Typically, animations start out in the `dismissed` status, which means they're
 at the beginning of their range. For example, animations that progress from 0.0
 to 1.0 will be `dismissed` when their value is 0.0. An animation might then run
@@ -60,38 +60,38 @@ animation reaches the `completed` status.
 ## Animation&shy;Controller
 
 To create an animation, first create an
-[`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
+[`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html).
 As well as being an animation itself, an `AnimationController` lets you control
 the animation. For example, you can tell the controller to play the animation
-[`forward`](https://docs.flutter.io/flutter/animation/AnimationController/forward.html)
-or [`stop`](https://docs.flutter.io/flutter/animation/AnimationController/stop.html)
-the animation. You can also [`fling`](https://docs.flutter.io/flutter/animation/AnimationController/fling.html)
+[`forward`]({{site.api}}/flutter/animation/AnimationController/forward.html)
+or [`stop`]({{site.api}}/flutter/animation/AnimationController/stop.html)
+the animation. You can also [`fling`]({{site.api}}/flutter/animation/AnimationController/fling.html)
 animations, which uses a physical simulation, such as a spring, to drive the
 animation.
 
 Once you've created an animation controller, you can start building other
 animations based on it. For example, you can create a
-[`ReverseAnimation`](https://docs.flutter.io/flutter/animation/ReverseAnimation-class.html)
+[`ReverseAnimation`]({{site.api}}/flutter/animation/ReverseAnimation-class.html)
 that mirrors the original animation but runs in the opposite direction (e.g.,
 from 1.0 to 0.0). Similarly, you can create a
-[`CurvedAnimation`](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html)
-whose value is adjusted by a [curve](https://docs.flutter.io/flutter/animation/Curves-class.html).
+[`CurvedAnimation`]({{site.api}}/flutter/animation/CurvedAnimation-class.html)
+whose value is adjusted by a [curve]({{site.api}}/flutter/animation/Curves-class.html).
 
 ## Tweens
 
 To animate beyond the 0.0 to 1.0 interval, you can use a
-[`Tween<T>`](https://docs.flutter.io/flutter/animation/Tween-class.html), which
+[`Tween<T>`]({{site.api}}/flutter/animation/Tween-class.html), which
 interpolates between its
-[`begin`](https://docs.flutter.io/flutter/animation/Tween/begin.html)
-and [`end`](https://docs.flutter.io/flutter/animation/Tween/end.html)
+[`begin`]({{site.api}}/flutter/animation/Tween/begin.html)
+and [`end`]({{site.api}}/flutter/animation/Tween/end.html)
 values. Many types have specific `Tween` subclasses that provide type-specific
 interpolation. For example,
-[`ColorTween`](https://docs.flutter.io/flutter/animation/ColorTween-class.html)
+[`ColorTween`]({{site.api}}/flutter/animation/ColorTween-class.html)
 interpolates between colors and
-[`RectTween`](https://docs.flutter.io/flutter/animation/RectTween-class.html)
+[`RectTween`]({{site.api}}/flutter/animation/RectTween-class.html)
 interpolates between rects. You can define your own interpolations by creating
 your own subclass of `Tween` and overriding its
-[`lerp`](https://docs.flutter.io/flutter/animation/Tween/lerp.html)
+[`lerp`]({{site.api}}/flutter/animation/Tween/lerp.html)
 function.
 
 By itself, a tween just defines how to interpolate between two values. To get
@@ -99,12 +99,12 @@ a concrete value for the current frame of an animation, you also need an
 animation to determine the current state. There are two ways to combine a tween
 with an animation to get a concrete value:
 
-1. You can [`evaluate`](https://docs.flutter.io/flutter/animation/Animatable/evaluate.html)
+1. You can [`evaluate`]({{site.api}}/flutter/animation/Animatable/evaluate.html)
    the tween at the current value of an animation. This approach is most useful
    for widgets that are already listening to the animation and hence
    rebuilding whenever the animation changes value.
 
-2. You can [`animate`](https://docs.flutter.io/flutter/animation/Animatable/animate.html)
+2. You can [`animate`]({{site.api}}/flutter/animation/Animatable/animate.html)
    the tween based on the animation. Rather than returning a single value, the
    animate function returns a new `Animation` that incorporates the tween. This
    approach is most useful when you want to give the newly created animation to
@@ -118,14 +118,14 @@ Animations are actually built from a number of core building blocks.
 ### Scheduler
 
 The
-[`SchedulerBinding`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding-mixin.html)
+[`SchedulerBinding`]({{site.api}}/flutter/scheduler/SchedulerBinding-mixin.html)
 is a singleton class that exposes the Flutter scheduling primitives.
 
 For this discussion, the key primitive is the frame callbacks. Each
 time a frame needs to be shown on the screen, Flutter's engine
 triggers a "begin frame" callback which the scheduler multiplexes to
 all the listeners registered using
-[`scheduleFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html).
+[`scheduleFrameCallback()`]({{site.api}}/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html).
 All these callbacks are given the official time stamp of the frame, in
 the form of a `Duration` from some arbitrary epoch. Since all the
 callbacks have the same time, any animations triggered from these
@@ -135,9 +135,9 @@ few milliseconds to be executed.
 ### Tickers
 
 The
-[`Ticker`](https://docs.flutter.io/flutter/scheduler/Ticker-class.html)
+[`Ticker`]({{site.api}}/flutter/scheduler/Ticker-class.html)
 class hooks into the scheduler's
-[`scheduleFrameCallback()`](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html)
+[`scheduleFrameCallback()`]({{site.api}}/flutter/scheduler/SchedulerBinding/scheduleFrameCallback.html)
 mechanism to invoke a callback every tick.
 
 A `Ticker` can be started and stopped. When started, it returns a
@@ -155,23 +155,23 @@ subsequently tick in lockstep.
 ### Simulations
 
 The
-[`Simulation`](https://docs.flutter.io/flutter/physics/Simulation-class.html)
+[`Simulation`]({{site.api}}/flutter/physics/Simulation-class.html)
 abstract class maps a relative time value (an elapsed time) to a
 double value, and has a notion of completion.
 
 In principle simulations are stateless but in practice some simulations
 (for example,
-[`BouncingScrollSimulation`](https://docs.flutter.io/flutter/widgets/BouncingScrollSimulation-class.html) and
-[`ClampingScrollSimulation`](https://docs.flutter.io/flutter/widgets/ClampingScrollSimulation-class.html))
+[`BouncingScrollSimulation`]({{site.api}}/flutter/widgets/BouncingScrollSimulation-class.html) and
+[`ClampingScrollSimulation`]({{site.api}}/flutter/widgets/ClampingScrollSimulation-class.html))
 change state irreversibly when queried.
 
-There are [various concrete implementations](https://docs.flutter.io/flutter/physics/physics-library.html)
+There are [various concrete implementations]({{site.api}}/flutter/physics/physics-library.html)
 of the `Simulation` class for different effects.
 
 ### Animatables
 
 The
-[`Animatable`](https://docs.flutter.io/flutter/animation/Animatable-class.html)
+[`Animatable`]({{site.api}}/flutter/animation/Animatable-class.html)
 abstract class maps a double to a value of a particular type.
 
 `Animatable` classes are stateless and immutable.
@@ -179,7 +179,7 @@ abstract class maps a double to a value of a particular type.
 #### Tweens
 
 The
-[`Tween`](https://docs.flutter.io/flutter/animation/Tween-class.html)
+[`Tween`]({{site.api}}/flutter/animation/Tween-class.html)
 abstract class maps a double value nominally in the range 0.0-1.0 to a
 typed value (e.g. a `Color`, or another double). It is an
 `Animatable`.
@@ -200,7 +200,7 @@ parent's mapping then the child's mapping.
 ### Curves
 
 The
-[`Curve`](https://docs.flutter.io/flutter/animation/Curve-class.html)
+[`Curve`]({{site.api}}/flutter/animation/Curve-class.html)
 abstract class maps doubles nominally in the range 0.0-1.0 to doubles
 nominally in the range 0.0-1.0.
 
@@ -209,15 +209,15 @@ nominally in the range 0.0-1.0.
 ### Animations
 
 The
-[`Animation`](https://docs.flutter.io/flutter/animation/Animation-class.html)
+[`Animation`]({{site.api}}/flutter/animation/Animation-class.html)
 abstract class provides a value of a given type, a concept of
 animation direction and animation status, and a listener interface to
 register callbacks that get invoked when the value or status change.
 
 Some subclasses of `Animation` have values that never change
-([`kAlwaysCompleteAnimation`](https://docs.flutter.io/flutter/animation/kAlwaysCompleteAnimation-constant.html),
-[`kAlwaysDismissedAnimation`](https://docs.flutter.io/flutter/animation/kAlwaysDismissedAnimation-constant.html),
-[`AlwaysStoppedAnimation`](https://docs.flutter.io/flutter/animation/AlwaysStoppedAnimation-class.html));
+([`kAlwaysCompleteAnimation`]({{site.api}}/flutter/animation/kAlwaysCompleteAnimation-constant.html),
+[`kAlwaysDismissedAnimation`]({{site.api}}/flutter/animation/kAlwaysDismissedAnimation-constant.html),
+[`AlwaysStoppedAnimation`]({{site.api}}/flutter/animation/AlwaysStoppedAnimation-class.html));
 registering callbacks on these has no effect as the callbacks are
 never called.
 
@@ -257,7 +257,7 @@ between them when their values cross.
 #### Animation Controllers
 
 The
-[`AnimationController`](https://docs.flutter.io/flutter/animation/AnimationController-class.html)
+[`AnimationController`]({{site.api}}/flutter/animation/AnimationController-class.html)
 is a stateful `Animation<double>` that uses a `Ticker` to give itself
 life. It can be started and stopped. Each tick, it takes the time
 elapsed since it was started and passes it to a `Simulation` to obtain

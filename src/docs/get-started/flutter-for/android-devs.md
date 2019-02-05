@@ -488,7 +488,7 @@ In Android, there are two main use cases for `Intent`s: navigating between
 Activities, and communicating with components. Flutter, on the other hand, does
 not have the concept of intents, although you can still start intents
 through native integrations
-(using [a plugin](https://pub.dartlang.org/packages/android_intent)).
+(using [a plugin]({{site.pub}}/packages/android_intent)).
 
 Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
@@ -533,7 +533,7 @@ Navigator.of(context).pushNamed('/b');
 
 The other popular use-case for `Intent`s is to call external components such
 as a Camera or File picker. For this, you would need to create a native platform
-integration (or use an [existing plugin](https://pub.dartlang.org/flutter/)).
+integration (or use an [existing plugin]({{site.pub}}/flutter/)).
 
 To learn how to build a native platform integration, see
 [Developing Packages and Plugins](/docs/development/packages-and-plugins/developing-packages).
@@ -1042,7 +1042,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### What is the equivalent of OkHttp on Flutter?
 
 Making a network call in Flutter is easy when you use the popular
-[`http` package](https://pub.dartlang.org/packages/http).
+[`http` package]({{site.pub}}/packages/http).
 
 While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
@@ -1188,7 +1188,7 @@ Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
 The so-called
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -1281,7 +1281,7 @@ Flutter has basic support for accessibility on Android, though this feature is
 a work in progress.
 
 Flutter developers are encouraged to use the [intl
-package](https://pub.dartlang.org/packages/intl) for internationalization and
+package]({{site.pub}}/packages/intl) for internationalization and
 localization.
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
@@ -1295,7 +1295,7 @@ While there are Gradle files under the `android` folder in your Flutter project,
 only use these if you are adding native dependencies needed for
 per-platform integration. In general, use `pubspec.yaml` to declare
 external dependencies to use in Flutter. A good place to find Flutter packages is
-[Pub](https://pub.dartlang.org/flutter/packages/).
+[Pub]({{site.pub}}/flutter/packages/).
 
 ## Activities and fragments
 
@@ -1310,7 +1310,7 @@ concepts fall under the umbrella of `Widget`s.
 To learn more about the UI for building Activities and Fragements, see
 the community-contributed medium article,
 [Flutter For Android Developers : How to design an Activity UI in
-Flutter](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
+Flutter]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
 
 As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
 section, screens in Flutter are represented by `Widget`s since everything is
@@ -1343,7 +1343,7 @@ The observable lifecycle events are:
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 
 As you might have noticed, only a small minority of the Activity lifecycle events
 are available; while `FlutterActivity` does capture almost all the activity lifecycle
@@ -1449,7 +1449,7 @@ children.
 
 To learn more about building linear layouts, see the community contributed medium
 article [Flutter For Android Developers : How to design LinearLayout in
-Flutter?](https://medium.com/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
+Flutter?]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
 
 ### What is the equivalent of a RelativeLayout?
 
@@ -2087,32 +2087,32 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I access the GPS sensor?
 
-Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
+Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
 
 ### How do I access the camera?
 
-The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
+The [`image_picker`]({{site.pub}}/packages/image_picker) plugin is popular
 for accessing the camera.
 
 ### How do I log in with Facebook?
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by
-[first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
- * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`](https://pub.dartlang.org/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
- * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) for Firebase Auth
+ * [`firebase_database`]({{site.pub}}/packages/firebase_database) for Firebase RTDB
+ * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) for Firebase Cloud Firestore
 
 You can also find some third-party Firebase plugins on Pub that cover areas
 not directly covered by the first-party plugins.
@@ -2189,7 +2189,7 @@ In Android, you can store a small collection of key-value pairs using
 the SharedPreferences API.
 
 In Flutter, access this functionality using the
-[Shared_Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+[Shared_Preferences plugin]({{site.pub}}/packages/shared_preferences).
 This plugin wraps the functionality of both Shared Preferences and
 NSUserDefaults (the iOS equivalent).
 
@@ -2228,7 +2228,7 @@ In Android, you use SQLite to store structured data that you can query
 using SQL.
 
 In Flutter, access this functionality using the
-[SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
+[SQFlite]({{site.pub}}/packages/sqflite) plugin.
 
 ## Notifications
 
@@ -2241,5 +2241,5 @@ In Flutter, access this functionality using the
 [Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
 plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
 plugin documentation.

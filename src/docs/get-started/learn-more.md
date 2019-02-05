@@ -28,7 +28,7 @@ Learn more about the Flutter framework from the following pages:
 * [Flutter samples](https://github.com/flutter/samples/blob/master/INDEX.md)
 * [Flutter cookbook](/docs/cookbook)
 * [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
-* [Flutter API Docs](https://docs.flutter.io/)
+* [Flutter API Docs]({{site.api}})
 * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!

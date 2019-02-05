@@ -12,4 +12,4 @@ These articles address flavors for both iOS and Android.
 Please see
 [Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)
 and
-[Flavoring Flutter](https://medium.com/@salvatoregiordanoo/flavoring-flutter-392aaa875f36).
+[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36).

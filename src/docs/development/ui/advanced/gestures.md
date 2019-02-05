@@ -16,13 +16,13 @@ which describe semantic actions that consist of one or more pointer movements.
 Pointers represent raw data about the user's interaction with the device's
 screen.  There are four types of pointer events:
 
-- [`PointerDownEvent`](https://docs.flutter.io/flutter/gestures/PointerDownEvent-class.html)
+- [`PointerDownEvent`]({{site.api}}/flutter/gestures/PointerDownEvent-class.html)
   The pointer has contacted the screen at a particular location.
-- [`PointerMoveEvent`](https://docs.flutter.io/flutter/gestures/PointerMoveEvent-class.html)
+- [`PointerMoveEvent`]({{site.api}}/flutter/gestures/PointerMoveEvent-class.html)
   The pointer has moved from one location on the screen to another.
-- [`PointerUpEvent`](https://docs.flutter.io/flutter/gestures/PointerUpEvent-class.html)
+- [`PointerUpEvent`]({{site.api}}/flutter/gestures/PointerUpEvent-class.html)
   The pointer has stopped contacting the screen.
-- [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
+- [`PointerCancelEvent`]({{site.api}}/flutter/gestures/PointerCancelEvent-class.html)
   Input from this pointer is no longer directed towards this app.
 
 On pointer down, the framework does a _hit test_ on your app to determine which
@@ -34,7 +34,7 @@ widget to the root of the tree. There is no mechanism for canceling or stopping
 pointer events from being dispatched further.
 
 To listen to pointer events directly from the widgets layer, use a
-[`Listener`](https://docs.flutter.io/flutter/widgets/Listener-class.html)
+[`Listener`]({{site.api}}/flutter/widgets/Listener-class.html)
 widget. However, generally, consider using gestures (as discussed
 below) instead.
 
@@ -88,26 +88,26 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
     `onHorizontalDragEnd` or `onVerticalDragEnd` is set.
 
 To listen to gestures from the widgets layer, use a
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
 
 If you're using Material Components, many of those widgets already respond
 to taps or gestures.
 For example,
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) and
-[FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html) and
+[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)
 respond to presses (taps), and
-[`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 responds to swipes to trigger scrolling.
 If you are not using those widgets, but you want the "ink splash" effect on a
 tap, you can use
-[`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
+[`InkWell`]({{site.api}}/flutter/material/InkWell-class.html).
 
 ### Gesture disambiguation
 
 At a given location on screen, there might be multiple gesture detectors. All
 of these gesture detectors listen to the stream of pointer events as they flow
 past and attempt to recognize specific gestures. The
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 widget decides which gestures to attempt to recognize based on which of its
 callbacks are non-null.
 

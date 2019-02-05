@@ -9,10 +9,11 @@ next:
 ---
 
 Displaying images is fundamental for most mobile apps. Flutter provides the
-[`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) Widget to
+[`Image`]({{site.api}}/flutter/widgets/Image-class.html) Widget to
 display different types of images.
 
-In order to work with images from a URL, use the [`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html)
+In order to work with images from a URL, use the
+[`Image.network`]({{site.api}}/flutter/widgets/Image/Image.network.html)
 constructor.
 
 <!-- skip -->

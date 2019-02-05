@@ -50,7 +50,7 @@ To get a DSN, please:
 ## 2. Import the Sentry package
 
 Next, we'll need to import the
-[`sentry`](https://pub.dartlang.org/packages/sentry) package into our app. The
+[`sentry`]({{site.pub}}/packages/sentry) package into our app. The
 sentry package will make it easier for us to send error reports to the Sentry
 error tracking service.
 
@@ -118,7 +118,7 @@ Now that we have a function to report errors depending on the environment, we
 need a way to capture Dart errors so we can report them!
 
 For this task, we will run our app inside a custom
-[`Zone`](https://docs.flutter.io/flutter/dart-async/Zone-class.html). Zones
+[`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html). Zones
 establish an execution context for our code. This provides a convenient way to
 capture all errors that occur within that context by providing an `onError`.
 
@@ -143,7 +143,7 @@ platform exceptions that occur when calling native code. We need to be sure to
 capture and report these types of errors as well!
 
 To capture Flutter errors, we can override the
-[`FlutterError.onError`](https://docs.flutter.io/flutter/foundation/FlutterError/onError.html)
+[`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html)
 property. In this case, if we're in debug mode, we'll use a convenience function
 from Flutter to properly format the error. If we're in production mode, we'll
 send the error to our `onError` callback defined in the previous step.
