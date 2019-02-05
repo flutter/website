@@ -8,18 +8,18 @@ _This introduction describes the conceptual difference between the
 declaractive style used by Flutter, and the imperative style used by
 many other UI frameworks._
 
-## Why a declarative UI? 
+## Why a declarative UI?
 
 Frameworks from Win32 to web to Android and iOS typically use an imperative
 style of UI programming. This may be the style you’re most familiar
 with&mdash;where you manually construct a full-functioned UI entity,
 such as a UIView or equivalent, and later mutate it using methods and
-setters when the UI changes. 
+setters when the UI changes.
 
 In order to lighten the burden on developers from having to program how to
 transition between various UI states, Flutter, by contrast,
 lets the developer describe the current UI state and leaves the
-transitioning to the framework. 
+transitioning to the framework.
 
 This, however, requires a slight shift in thinking for how to manipulate UI.
 
@@ -33,7 +33,6 @@ In the imperative style, you would typically go to ViewB’s owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,
 and invoke mutations on it (and implicitly invalidate it). For example:
 
-<!-- skip -->
 ```java
 // Imperative style
 b.setColor(red)
@@ -48,7 +47,7 @@ ViewB since the source of truth for the UI may outlive instance `b` itself.
 In the declarative style, view configurations (such as Flutter’s Widgets)
 are immutable and are only lightweight "blueprints". To change the UI,
 a Widget triggers a rebuild on itself (most commonly by calling `setState()`
-on StatefulWidgets in Flutter) and constructs a new Widget subtree. 
+on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 
 <!-- skip -->
 ```dart
@@ -64,6 +63,6 @@ Flutter constructs new Widget instances. The framework manages many of the
 responsibilities of a traditional UI object (such as maintaining the
 state of the layout) behind the scenes with RenderObjects.
 RenderObjects persist between frames and Flutter’s lightweight Widgets
-tell the framework to mutate the RenderObjects between states. 
+tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
 

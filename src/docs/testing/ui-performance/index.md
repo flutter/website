@@ -238,7 +238,6 @@ You can programmatically enable the PerformanceOverlay widget by
 setting the `showPerformanceOverlay` property to `true` on the MaterialApp
 or WidgetsApp constructor:
 
-<!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
   @override

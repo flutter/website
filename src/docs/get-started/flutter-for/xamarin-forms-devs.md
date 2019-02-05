@@ -24,7 +24,6 @@ that are most relevant to your needs.
 For each platform in Xamarin.Forms, you call the `LoadApplication` method,
 which creates a new Application and starts your app.
 
-<!-- skip -->
 {% prettify csharp %}
 LoadApplication(new App());
 {% endprettify %}
@@ -41,7 +40,6 @@ void main() {
 In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
 `Application` class.
 
-<!-- skip -->
 {% prettify csharp %}
 public class App: Application
 {
@@ -259,7 +257,6 @@ The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
-<!-- skip -->
 {% prettify dart %}
 new Text(
   'I like Flutter!',
@@ -278,7 +275,6 @@ update it when the user clicks the button.
 
 For example:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -342,7 +338,6 @@ In Flutter you write your layouts with a widget tree in code.
 
 The following example shows how to display a simple widget with padding:
 
-<!-- skip -->
 {% prettify dart %}
   @override
   Widget build(BuildContext context) {
@@ -377,7 +372,6 @@ control that child's creation with a boolean flag.
 The following example shows how to toggle between two widgets when the user
 clicks the `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -445,14 +439,12 @@ In Xamarin.Forms, you create simple animations using ViewExtensions that include
 methods such as `FadeTo` and `TranslateTo`. You would use these methods on a view
 to perform the required animations.
 
-<!-- skip -->
 {% prettify xml %}
 <Image Source="{Binding MyImage}" x:Name="myImage" />
 {% endprettify %}
 
 Then in code behind, or a behavior, this would fade in the image, over a 1 second period.
 
-<!-- skip -->
 {% prettify csharp %}
 myImage.FadeTo(0, 1000);
 {% endprettify %}
@@ -477,7 +469,6 @@ controller to start the animation.
 The following example shows how to write a `FadeTransition` that fades the widget
 into a logo when you press the `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -561,7 +552,6 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 
 [StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -631,7 +621,6 @@ For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with a label,
 rather than by extending `RaisedButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
@@ -647,7 +636,6 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -680,7 +668,6 @@ To navigate between pages, you have a couple options:
 
 The following example builds a Map.
 
-<!-- skip -->
 {% prettify dart %}
 void main() {
   runApp(new MaterialApp(
@@ -696,7 +683,6 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
@@ -711,7 +697,6 @@ in [Async UI](#async-ui).
 For example, to start a `location` route that lets the user select their
 location, you might do the following:
 
-<!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
@@ -719,7 +704,6 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your ‘location’ route, once the user has selected their
 location, `pop()` the stack with the result:
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
@@ -755,7 +739,6 @@ C# and should be very easy to use for any Xamarin.Forms developer.
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -771,7 +754,6 @@ which triggers a rebuild of the widget sub-tree and updates the data.
 
 The following example loads data asynchronously and displays it in a `ListView`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -860,7 +842,6 @@ move things to a different thread via `Task.Run()` in Xamarin.Forms.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -886,7 +867,6 @@ means you can’t access variables from the main thread, or update your UI by ca
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   ReceivePort receivePort = new ReceivePort();
@@ -1065,7 +1045,6 @@ making it simple to make network calls.
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   ...
@@ -1074,7 +1053,6 @@ dependencies:
 
 To make a network request, call `await` on the `async` function `http.get()`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1105,7 +1083,6 @@ functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
 then render the `ProgressIndicator`. Otherwise, render the
 `ListView` with the data returned from a network call.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1246,7 +1223,6 @@ images/3.0x/my_icon.png  // 3.0x image
 
 Next, you'll need to declare these images in your `pubspec.yaml` file:
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - images/my_icon.jpeg
@@ -1254,14 +1230,12 @@ assets:
 
 You can then access your images using `AssetImage`:
 
-<!-- skip -->
 {% prettify dart %}
 return new AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
 
 or directly in an `Image` widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1278,7 +1252,6 @@ Unlike .NET which has `resx` files, Flutter currently doesn't have a dedicated
 resources-like system for strings. At the moment, the best practice is to hold your
 copy text in a class as static fields and accessing them from there. For example:
 
-<!-- skip -->
 {% prettify dart %}
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1287,7 +1260,6 @@ class Strings {
 
 Then in your code, you can access your strings as such:
 
-<!-- skip -->
 {% prettify dart %}
 new Text(Strings.welcomeMessage)
 {% endprettify %}
@@ -1297,7 +1269,6 @@ add support for other languages, include the `flutter_localizations`
 package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
 package to use i10n machinery, such as date/time formatting.
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   # ...
@@ -1309,7 +1280,6 @@ dependencies:
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -1413,7 +1383,6 @@ If you notice the two code samples are identical with the exception of the
 exploited to develop rich layouts that can change overtime with the same
 children.
 
-<!-- skip -->
 {% prettify dart %}
   @override
   Widget build(BuildContext context) {
@@ -1429,7 +1398,6 @@ children.
   }
 {% endprettify %}
 
-<!-- skip -->
 {% prettify dart %}
   @override
   Widget build(BuildContext context) {
@@ -1451,7 +1419,6 @@ The closest equivalent of a `Grid` would be to use a `GridView`. This is much mo
 than what you are used to in Xamarin.Forms. A `GridView` provides automatic scrolling when the
 content exceeds the its viewable space.
 
-<!-- skip -->
 {% prettify dart %}
   GridView.count(
     // Create a grid with 2 columns. If you change the scrollDirection to
@@ -1474,7 +1441,6 @@ In Flutter, you accomplish this with the `Stack` widget.
 
 This sample creates two icons that overlap each other.
 
-<!-- skip -->
 {% prettify dart %}
   child: new Stack(
     children: <Widget>[
@@ -1495,7 +1461,6 @@ the device screen, it scrolls.
 In Flutter, the closest match is the `SingleChildScrollView` widget. You simply fill the
 Widget with the content that you want to be scrollable.
 
-<!-- skip -->
 {% prettify dart %}
   @override
   Widget build(BuildContext context) {
@@ -1509,7 +1474,6 @@ If you have many items you want to wrap in a scroll, even of different `Widget` 
 to use a `ListView`. This might seem like overkill, but in Flutter this is far more optimized
 and less intensive than a Xamarin.Forms `ListView` which is backing on to platform specific controls.
 
-<!-- skip -->
 {% prettify dart %}
   @override
   Widget build(BuildContext context) {
@@ -1630,7 +1594,6 @@ In Flutter, using the GestureDetector, you can listen to a wide range of Gesture
 The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
 
-<!-- skip -->
 {% prettify dart %}
 AnimationController controller;
 CurvedAnimation curve;
@@ -1680,7 +1643,6 @@ Due to Flutter's immutable widget pattern, you pass a List of
 Widgets to your `ListView`, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1738,7 +1700,6 @@ when `SelectedItem` or adding an `EventToCommand` behavior changes.
 
 In Flutter, use the touch handling provided by the passed-in widgets.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1813,7 +1774,6 @@ For a simple way to update your `ListView`, create a new `List` inside of
 While this approach is simple, it is not recommended for large data sets,
 as shown in the next example.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1886,7 +1846,6 @@ List or a List with very large amounts of data. This is essentially
 the equivalent of RecyclerView on Android, which automatically
 recycles list elements for you:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1983,7 +1942,6 @@ using `filename#fontname` and just `fontname` for iOS.
 In Flutter, place the font file in a folder and reference it in the
 `pubspec.yaml` file, similar to how you import images.
 
-<!-- skip -->
 {% prettify yaml %}
 fonts:
    - family: MyCustomFont
@@ -1994,7 +1952,6 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -2045,7 +2002,6 @@ than how you are used to. If you have a `TextField` or a `TextFormField`, you ca
 [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 
-<!-- skip -->
 {% prettify dart %}
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value.
@@ -2103,7 +2059,6 @@ from the [Flutter Cookbook](/docs/cookbook).
 In Xamarin.Forms, some `Elements` support a `Placeholder` property, you would
 assign a value to. e.g.
 
-<!-- skip -->
 {% prettify xml %}
   <Entry Placeholder="This is a hint">
 {% endprettify %}
@@ -2112,7 +2067,6 @@ In Flutter, you can easily show a "hint" or a placeholder text for your input by
 adding an InputDecoration object to the decoration constructor parameter for
 the Text Widget.
 
-<!-- skip -->
 {% prettify dart %}
 body: new Center(
   child: new TextField(
@@ -2134,7 +2088,6 @@ However, you don't want to start off by showing an error.
 Instead, when the user has entered invalid data,
 update the state, and pass a new `InputDecoration` object.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -2308,7 +2261,6 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   @override

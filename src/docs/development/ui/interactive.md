@@ -370,7 +370,6 @@ The `_TapboxAState` class:
   tapped and calls the `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<!-- skip -->
 {% prettify dart %}
 // TapboxA manages its own state.
 
@@ -458,7 +457,6 @@ The TapboxB class:
 * Extends StatelessWidget because all state is handled by its parent.
 * When a tap is detected, it notifies the parent.
 
-<!-- skip -->
 {% prettify dart %}
 // ParentWidget manages the state for TapboxB.
 
@@ -567,7 +565,6 @@ The `_TapboxCState` object:
 * On a tap event, passes that state change to the parent widget to take
   appropriate action using the [widget][] property.
 
-<!-- skip -->
 {% prettify dart %}
 //---------------------------- ParentWidget ----------------------------
 
