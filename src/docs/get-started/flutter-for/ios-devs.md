@@ -98,7 +98,6 @@ The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
-<!-- skip -->
 {% prettify dart %}
 Text(
   'I like Flutter!',
@@ -118,7 +117,6 @@ update it when the user clicks the button.
 
 For example:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -176,7 +174,6 @@ a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -214,7 +211,6 @@ control that child's creation with a boolean flag.
 The following example shows how to toggle between two widgets when the user clicks
 the `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -301,7 +297,6 @@ controller to start the animation.
 The following example shows how to write a `FadeTransition` that fades the widget
 into a logo when you press the `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -387,7 +382,6 @@ To learn how to implement a signature painter in Flutter, see Collin's answer on
 
 [StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
-<!-- skip -->
 {% prettify dart %}
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
@@ -450,7 +444,6 @@ For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with a label,
 rather than by extending `RaisedButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
@@ -466,7 +459,6 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -499,7 +491,6 @@ To navigate between pages, you have a couple options:
 
 The following example builds a Map.
 
-<!-- skip -->
 {% prettify dart %}
 void main() {
   runApp(MaterialApp(
@@ -515,7 +506,6 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
@@ -527,7 +517,6 @@ by `await`ing on the `Future` returned by `push()`.
 For example, to start a ‘location’ route that lets the user select their
 location, you might do the following:
 
-<!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
@@ -535,7 +524,6 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your ‘location’ route, once the user has selected their
 location, `pop()` the stack with the result:
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
@@ -582,7 +570,6 @@ use the asynchronous facilities that the Dart language provides, such as
 For example, you can run network code without causing the UI to hang by using
 `async`/`await` and letting Dart do the heavy lifting:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -598,7 +585,6 @@ which triggers a rebuild of the widget sub-tree and updates the data.
 
 The following example loads data asynchronously and displays it in a `ListView`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -684,7 +670,6 @@ you want to move it to an `Isolate` to avoid blocking the event loop.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -710,7 +695,6 @@ their name, and cannot share memory (in the form of static fields, for example).
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -888,7 +872,6 @@ making it simple to make network calls.
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   ...
@@ -897,7 +880,6 @@ dependencies:
 
 To make a network call, call `await` on the `async` function `http.get()`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -929,7 +911,6 @@ functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
 then render the `ProgressIndicator`. Otherwise, render the
 `ListView` with the data returned from a network call.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1030,7 +1011,6 @@ my-assets/data.json
 
 Declare the asset in the `pubspec.yaml` file:
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - my-assets/data.json
@@ -1039,7 +1019,6 @@ assets:
 And then access it from code using an
 [`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html):
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
@@ -1071,7 +1050,6 @@ images/3.0x/my_icon.png  // 3.0x image
 
 Next, declare these images in the `pubspec.yaml` file:
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - images/my_icon.png
@@ -1079,14 +1057,12 @@ assets:
 
 You can now access your images using `AssetImage`:
 
-<!-- skip -->
 {% prettify dart %}
 return AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
 
 or directly in an `Image` widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1104,7 +1080,6 @@ currently have a dedicated system for handling strings. At the moment, the
 best practice is to declare your copy text in a class as static fields and
 access them from there. For example:
 
-<!-- skip -->
 {% prettify dart %}
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1113,7 +1088,6 @@ class Strings {
 
 You can access your strings as such:
 
-<!-- skip -->
 {% prettify dart %}
 Text(Strings.welcomeMessage)
 {% endprettify %}
@@ -1123,7 +1097,6 @@ add support for other languages, include the `flutter_localizations`
 package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
 package to use i10n machinery, such as date/time formatting.
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   # ...
@@ -1135,7 +1108,6 @@ dependencies:
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -1251,7 +1223,6 @@ Due to Flutter’s immutable widget pattern, you pass a list of widgets to your
 `ListView`, and Flutter takes care of making sure that scrolling is fast
 and smooth.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1306,7 +1277,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
 In iOS, you implement the delegate method, `tableView:didSelectRowAtIndexPath:`.
 In Flutter, use the touch handling provided by the passed-in widgets.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1381,7 +1351,6 @@ For a simple way to update your `ListView`, create a new `List` inside of
 While this approach is simple, it is not recommended for large data sets,
 as shown in the next example.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1453,7 +1422,6 @@ The recommended, efficient, and effective way to build a list uses a
 `ListView.Builder`. This method is great when you have a dynamic
 list or a list with very large amounts of data.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1545,7 +1513,6 @@ In Flutter the easiest way to do this is using the `ListView` widget. This
 acts as both a `ScrollView` and an iOS `TableView`, as you can layout widgets
 in a vertical format.
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1657,7 +1624,6 @@ Using `GestureDetector` you can listen to a wide range of gestures such as:
 The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
 
-<!-- skip -->
 {% prettify dart %}
 AnimationController controller;
 CurvedAnimation curve;
@@ -1721,7 +1687,6 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the primary swatch is set to blue and text selection color is red.
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   @override
@@ -1745,7 +1710,6 @@ reference in the `info.plist` file. In Flutter, place the font file
 in a folder and reference it in the `pubspec.yaml` file, similar to how you
 import images.
 
-<!-- skip -->
 {% prettify yaml %}
 fonts:
    - family: MyCustomFont
@@ -1756,7 +1720,6 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1809,7 +1772,6 @@ widgets. If you have a `TextField` or a `TextFormField`, you can supply a
 [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 
-<!-- skip -->
 {% prettify dart %}
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value.
@@ -1868,7 +1830,6 @@ In Flutter you can easily show a "hint" or a placeholder text for your field by
 adding an `InputDecoration` object to the decoration constructor parameter for
 the `Text` widget:
 
-<!-- skip -->
 {% prettify dart %}
 body: Center(
   child: TextField(
@@ -1886,7 +1847,6 @@ However, you don't want to start off by showing an error.
 Instead, when the user has entered invalid data,
 update the state, and pass a new `InputDecoration` object.
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.

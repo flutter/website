@@ -325,7 +325,6 @@ widget tree:
 
 Here's the code:
 
-<!-- skip -->
 {% prettify dart %}
 class PhotoHero extends StatelessWidget {
   const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
@@ -377,7 +376,6 @@ PhotoHeroes, and sets up the transition.
 
 Here's the code:
 
-<!-- skip -->
 {% prettify dart %}
 class HeroAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -532,7 +530,6 @@ To run the example:
 
 The Photo class builds the widget tree that holds the image:
 
-<!-- skip -->
 {% prettify dart %}
 class Photo extends StatelessWidget {
   Photo({ Key key, this.photo, this.color, this.onTap }) : super(key: key);
@@ -589,7 +586,6 @@ To do this, it builds the following widget tree:
 
 Here's the code:
 
-<!-- skip -->
 {% prettify dart %}
 class RadialExpansion extends StatelessWidget {
   RadialExpansion({

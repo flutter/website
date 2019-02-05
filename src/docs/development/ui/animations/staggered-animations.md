@@ -209,7 +209,6 @@ marking the widget tree dirty as values change.
 For each tick of the animation, the values are updated,
 resulting in a call to `_buildAnimation()`.
 
-<!-- skip -->
 {% prettify dart %}
 [[highlight]]class StaggerAnimation extends StatelessWidget[[/highlight]] {
   StaggerAnimation({ Key key, this.controller }) :
@@ -287,7 +286,6 @@ the animation, and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected in the screen.
 The animation runs forward, then backward.
 
-<!-- skip -->
 {% prettify dart %}
 [[highlight]]class StaggerDemo extends StatefulWidget[[/highlight]] {
   @override

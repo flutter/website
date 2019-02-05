@@ -260,7 +260,6 @@ from the previous samples.
 
 **user.dart**
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:json_annotation/json_annotation.dart';
 
