@@ -10,7 +10,9 @@ next:
 
 Now that you know about [declarative UI programming](/docs/development/data-and-backend/state-mgmt/declarative) and the difference between [ephemeral and app state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app), you are ready to learn about simple app state management.
 
-This page describes an approach particularly appropriate to those new to Flutter, without a pre-existing preference for a particular state management approach. Developers with strong background in state management from other reactive frameworks, such as Redux or Rx, will find packages and tutorials listed on the [following page](/docs/development/data-and-backend/state-mgmt/options).
+On this page, we are going to be using the `scoped_model` package. If you are new to Flutter and you don't have a strong reason to choose another approach (Redux, Rx, hooks, etc.), this is probably the approach you should start with. `scoped_model` is easy to understand and it doesn't use much code. It also uses concepts that are applicable in every other approach.
+
+That said, if you have strong background in state management from other reactive frameworks, you will find packages and tutorials listed on the [following page](/docs/development/data-and-backend/state-mgmt/options).
 
 ## Our example
 
@@ -230,7 +232,7 @@ ScopedModelDescendant<CartModel>(
 
 We must specify the type of the model that we want to access. In this case, we want `CartModel`, so we write `ScopedModelDescendant<CartModel>`. If you don't specify the generic (`<CartModel>`), the `scoped_model` package won't be able to help you. As mentioned above, `scoped_model` is based on types, and without the type, it doesn't know what you want.
 
-The only required argument of the `ScopedModelDescendant` widget is the builder. Builder is a function that will be called whenever the model changes. (In other words, when you call `notifyListeners()` in your model, all the builder methods of all the corresponding `ScopedModelDescendant` widgets are called.)
+The only required argument of the `ScopedModelDescendant` widget is the builder. Builder is a function that is called whenever the model changes. (In other words, when you call `notifyListeners()` in your model, all the builder methods of all the corresponding `ScopedModelDescendant` widgets are called.)
 
 The builder is called with three attributes. The first one is `context`, which you also get in every build method. 
 
@@ -298,7 +300,7 @@ For this use case, we can use `ScopedModel.of`.
 ScopedModel.of<CartModel>(context).add(item);
 ```
 
-Using the above line in a build method will not lead to any rebuilding. 
+Using the above line in a build method will not cause this widget to rebuild when `notifyListeners` is called.
 
 Note: You can also use `ScopedModelDescendant<CartModel>(builder: myBuilder, rebuildOnChange: false)` but that's longer and requires you to define the builder function.
 
