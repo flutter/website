@@ -5,7 +5,7 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
-{% assign api = '{{site.api}}/flutter' -%}
+{% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
@@ -275,10 +275,10 @@ You'll implement some of Pavlova's layout code in
   customization. Flutter also offers specialized, higher level widgets
   that might be sufficient for your needs. For example, instead of Row
   you might prefer
-  [ListTile]({{site.api}}/material/ListTile-class.html),
+  [ListTile]({{api}}/material/ListTile-class.html),
   an easy-to-use widget with properties for leading and trailing icons,
   and up to 3 lines of text.  Instead of Column, you might prefer
-  [ListView]({{site.api}}/widgets/ListView-class.html),
+  [ListView]({{api}}/widgets/ListView-class.html),
   a column-like layout that automatically scrolls if its content is too long
   to fit the available space.  For more information,
   see [Common layout widgets](#common-layout-widgets).
@@ -299,8 +299,8 @@ axis runs horizontally.
       alt="Diagram showing the main axis and cross axis for a column" %}
 </div>
 
-The [MainAxisAlignment]({{site.api}}/rendering/MainAxisAlignment-class.html)
-and [CrossAxisAlignment]({{site.api}}/rendering/CrossAxisAlignment-class.html)
+The [MainAxisAlignment]({{api}}/rendering/MainAxisAlignment-class.html)
+and [CrossAxisAlignment]({{api}}/rendering/CrossAxisAlignment-class.html)
 classes offer a variety of constants for controlling alignment.
 
 {{site.alert.note}}
@@ -665,7 +665,7 @@ Flutter has a rich library of layout widgets. Here are a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
 available widgets, refer to the [Widget catalog][],
-or use the Search box in the [API reference docs]({{site.api}}).
+or use the Search box in the [API reference docs]({{api}}).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
@@ -691,10 +691,10 @@ Components library.
 
 ### Container
 
-Many layouts make liberal use of [Container][]s to separate widgets using padding,
-or to add borders or margins. You can change the device's background by
-placing the entire layout into a `Container` and changing its background color
-or image.
+Many layouts make liberal use of [Container][]s to separate widgets using
+padding, or to add borders or margins. You can change the device's background
+by placing the entire layout into a `Container` and changing its background
+color or image.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -797,8 +797,8 @@ automatically scrolls.
   When displaying a two-dimensional list where it's important which
   row and column a cell occupies (for example,
   it's the entry in the "calorie" column for the "avocado" row), use
-  [Table]({{site.api}}/widgets/Table-class.html) or
-  [DataTable]({{site.api}}/material/DataTable-class.html).
+  [Table]({{api}}/widgets/Table-class.html) or
+  [DataTable]({{api}}/material/DataTable-class.html).
 {{site.alert.end}}
 
 #### Examples (GridView)
@@ -847,7 +847,7 @@ List<Container> _buildGridTileList(int count) => List.generate(
 
 ### ListView
 
-[ListView]({{site.api}}/widgets/ListView-class.html),
+[ListView]({{api}}/widgets/ListView-class.html),
 a column-like widget, automatically provides scrolling when
 its content is too long for its render box.
 
@@ -878,7 +878,7 @@ its content is too long for its render box.
       alt="ListView containing shades of blue" %}
   {:.text-center}
 
-  Uses `ListView` to display the [Colors]({{site.api}}/material/Colors-class.html) from
+  Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
   the [Material Design palette](https://material.io/guidelines/style/color.html)
   for a particular color family.
 
@@ -1136,7 +1136,7 @@ The following resources may help when writing layout code.
   to Flutter features.
 * [Flutter Gallery][]
 : Demo app showcasing many Material Design widgets and other Flutter features.
-* [Flutter API documentation]({{site.api}})
+* [Flutter API documentation]({{api}})
 : Reference documentation for all of the Flutter libraries.
 * [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)
 : Discusses how widgets are constrained by their render boxes.
@@ -1145,29 +1145,29 @@ The following resources may help when writing layout code.
 * [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
 : One person's experience writing his first Flutter app.
 
-[build()]: {{site.api}}/widgets/StatelessWidget/build.html
-[Card]: {{site.api}}/material/Card-class.html
-[Center]: {{site.api}}/widgets/Center-class.html
-[Column]: {{site.api}}/widgets/Column-class.html
-[Container]: {{site.api}}/widgets/Container-class.html
+[build()]: {{api}}/widgets/StatelessWidget/build.html
+[Card]: {{api}}/material/Card-class.html
+[Center]: {{api}}/widgets/Center-class.html
+[Column]: {{api}}/widgets/Column-class.html
+[Container]: {{api}}/widgets/Container-class.html
 [Elevation]: https://material.io/design/environment/elevation.html
-[Expanded]: {{site.api}}/widgets/Expanded-class.html
+[Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
-[GridView]: {{site.api}}/widgets/GridView-class.html
-[GridTile]: {{site.api}}/material/GridTile-class.html
-[Icon]: {{site.api}}/material/Icons-class.html
-[Image]: {{site.api}}/widgets/Image-class.html
+[GridView]: {{api}}/widgets/GridView-class.html
+[GridTile]: {{api}}/material/GridTile-class.html
+[Icon]: {{api}}/material/Icons-class.html
+[Image]: {{api}}/widgets/Image-class.html
 [layout widgets]: /docs/development/ui/widgets/layout
-[ListTile]: {{site.api}}/material/ListTile-class.html
-[ListView]: {{site.api}}/widgets/ListView-class.html
+[ListTile]: {{api}}/material/ListTile-class.html
+[ListView]: {{api}}/widgets/ListView-class.html
 [Material card]: https://material.io/design/components/cards.html
 [Material Design]: https://material.io/design
-[Material library]: {{site.api}}/material/material-library.html
-[Row]: {{site.api}}/widgets/Row-class.html
-[Scaffold]: {{site.api}}/material/Scaffold-class.html
-[SizedBox]: {{site.api}}/widgets/SizedBox-class.html
-[Stack]: {{site.api}}/widgets/Stack-class.html
-[Text]: {{site.api}}/widgets/Text-class.html
+[Material library]: {{api}}/material/material-library.html
+[Row]: {{api}}/widgets/Row-class.html
+[Scaffold]: {{api}}/material/Scaffold-class.html
+[SizedBox]: {{api}}/widgets/SizedBox-class.html
+[Stack]: {{api}}/widgets/Stack-class.html
+[Text]: {{api}}/widgets/Text-class.html
 [tutorial]: /docs/development/ui/layout/tutorial
-[widgets library]: {{site.api}}/widgets/widgets-library.html
+[widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets

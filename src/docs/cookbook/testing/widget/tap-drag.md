@@ -10,27 +10,27 @@ prev:
 Many of the Widgets we build not only display information, but also respond to
 user interaction. This includes buttons that users can tap on, dragging items
 across the screen, or entering text into a
-[`TextField`]({{site.api}}/material/TextField-class.html).
+[`TextField`]({{api}}/material/TextField-class.html).
 
 In order to test these interactions, we need a way to simulate them in the test
 environment. To do so, we can use the
-[`WidgetTester`]({{site.api}}/flutter_test/WidgetTester-class.html)
+[`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)
 class provided by the
-[`flutter_test`]({{site.api}}/flutter_test/flutter_test-library.html)
+[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
 library.
 
 The `WidgetTester` provides methods for entering text, tapping, and dragging.
 
-  * [`enterText`]({{site.api}}/flutter_test/WidgetTester/enterText.html)
-  * [`tap`]({{site.api}}/flutter_test/WidgetController/tap.html)
-  * [`drag`]({{site.api}}/flutter_test/WidgetController/drag.html)
+  * [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html)
+  * [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
+  * [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
 
 In many cases, user interactions will update the state of our app. In the test
 environment, Flutter will not automatically rebuild widgets when the state
 changes. To ensure our Widget tree is rebuilt after we simulate a user
 interaction, we must call the
-[`pump`]({{site.api}}/flutter_test/WidgetTester/pump.html) or
-[`pumpAndSettle`]({{site.api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+[`pump`]({{api}}/flutter_test/WidgetTester/pump.html) or
+[`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
 methods provided by the `WidgetTester`.
 
 ### Directions
@@ -123,7 +123,7 @@ We can accomplish this task by:
 
   1. Building the Widget in the Test Environment
   2. Using the
-  [`enterText`]({{site.api}}/flutter_test/WidgetTester/enterText.html)
+  [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html)
   method from the `WidgetTester`
 
 <!-- skip -->
@@ -151,10 +151,10 @@ the `FloatingActionButton` adds the item to the list.
 This will involve three steps:
 
  1. Tap the add button using the
-    [`tap`]({{site.api}}/flutter_test/WidgetController/tap.html)
+    [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
     method
  2. Rebuild the Widget after the state has changed using the
-    [`pump`]({{site.api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
+    [`pump`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
     method
  3. Ensure the list item appears on screen
 
@@ -180,10 +180,10 @@ Finally, we can ensure that performing a swipe-to-dismiss action on the todo
 item will remove it from the list. This will involve three steps:
 
   1. Use the
-  [`drag`]({{site.api}}/flutter_test/WidgetController/drag.html)
+  [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
   method to perform a swipe-to-dismiss action.
   2. Use the
-  [`pumpAndSettle`]({{site.api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+  [`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
   method to continually rebuild our Widget tree until the dismiss animation is
   complete.
   3. Ensure the item no longer appears on screen.

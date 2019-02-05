@@ -42,23 +42,23 @@ void main() {
 ```
 
 The [runApp()][] function takes the given
-[Widget]({{site.api}}/widgets/Widget-class.html) and makes it the root of the
+[Widget]({{api}}/widgets/Widget-class.html) and makes it the root of the
 widget tree. In this example, the widget tree consists of two widgets, the
-[Center]({{site.api}}/widgets/Center-class.html) widget and its child, the
-[Text]({{site.api}}/widgets/Text-class.html) widget. The framework forces the root
+[Center]({{api}}/widgets/Center-class.html) widget and its child, the
+[Text]({{api}}/widgets/Text-class.html) widget. The framework forces the root
 widget to cover the screen, which means the text "Hello, world" ends up centered
 on screen. The text direction needs to be specified in this instance; when the
 MaterialApp widget is used, this is taken care of for you, as demonstrated
 later.
 
 When writing an app, you'll commonly author new widgets that are subclasses of
-either [StatelessWidget]({{site.api}}/widgets/StatelessWidget-class.html) or
-[StatefulWidget]({{site.api}}/widgets/StatefulWidget-class.html), depending on
+either [StatelessWidget]({{api}}/widgets/StatelessWidget-class.html) or
+[StatefulWidget]({{api}}/widgets/StatefulWidget-class.html), depending on
 whether your widget manages any state. A widget's main job is to implement a
-[build]({{site.api}}/widgets/StatelessWidget/build.html) function, which describes
+[build]({{api}}/widgets/StatelessWidget/build.html) function, which describes
 the widget in terms of other, lower-level widgets. The framework builds those
 widgets in turn until the process bottoms out in widgets that represent the
-underlying [RenderObject]({{site.api}}/rendering/RenderObject-class.html), which
+underlying [RenderObject]({{api}}/rendering/RenderObject-class.html), which
 computes and describes the geometry of the widget.
 
 ## Basic widgets
@@ -66,34 +66,34 @@ computes and describes the geometry of the widget.
 Flutter comes with a suite of powerful basic widgets, of which the following are
 very commonly used:
 
- * [Text]({{site.api}}/widgets/Text-class.html): The
-   [Text]({{site.api}}/widgets/Text-class.html) widget lets you create a run of
+ * [Text]({{api}}/widgets/Text-class.html): The
+   [Text]({{api}}/widgets/Text-class.html) widget lets you create a run of
    styled text within your application.
 
- * [Row]({{site.api}}/widgets/Row-class.html),
-   [Column]({{site.api}}/widgets/Column-class.html): These flex widgets let you
+ * [Row]({{api}}/widgets/Row-class.html),
+   [Column]({{api}}/widgets/Column-class.html): These flex widgets let you
    create flexible layouts in both the horizontal
-   ([Row]({{site.api}}/widgets/Row-class.html)) and vertical
-   ([Column]({{site.api}}/widgets/Column-class.html)) directions. Its design is
+   ([Row]({{api}}/widgets/Row-class.html)) and vertical
+   ([Column]({{api}}/widgets/Column-class.html)) directions. Its design is
    based on the web's flexbox layout model.
 
- * [Stack]({{site.api}}/widgets/Stack-class.html): Instead of being linearly
+ * [Stack]({{api}}/widgets/Stack-class.html): Instead of being linearly
    oriented (either horizontally or vertically), a
-   [Stack]({{site.api}}/widgets/Stack-class.html) widget lets you stack widgets on
+   [Stack]({{api}}/widgets/Stack-class.html) widget lets you stack widgets on
    top of each other in paint order. You can then use the
-   [Positioned]({{site.api}}/widgets/Positioned-class.html) widget on children of a
-   [Stack]({{site.api}}/widgets/Stack-class.html) to position them relative to the
+   [Positioned]({{api}}/widgets/Positioned-class.html) widget on children of a
+   [Stack]({{api}}/widgets/Stack-class.html) to position them relative to the
    top, right, bottom, or left edge of the stack. Stacks are based on the web's
    absolute positioning layout model.
 
- * [Container]({{site.api}}/widgets/Container-class.html): The
-   [Container]({{site.api}}/widgets/Container-class.html) widget lets you create a
+ * [Container]({{api}}/widgets/Container-class.html): The
+   [Container]({{api}}/widgets/Container-class.html) widget lets you create a
    rectangular visual element. A container can be decorated with a
-   [BoxDecoration]({{site.api}}/painting/BoxDecoration-class.html), such as a
+   [BoxDecoration]({{api}}/painting/BoxDecoration-class.html), such as a
    background, a border, or a shadow. A
-   [Container]({{site.api}}/widgets/Container-class.html) can also have margins,
+   [Container]({{api}}/widgets/Container-class.html) can also have margins,
    padding, and constraints applied to its size. In addition, a
-   [Container]({{site.api}}/widgets/Container-class.html) can be transformed in
+   [Container]({{api}}/widgets/Container-class.html) can be transformed in
    three dimensional space using a matrix.
 
 Below are some simple widgets that combine these and other widgets:
@@ -182,30 +182,30 @@ flutter:
 ```
 
 Many widgets need to be inside of a
-[MaterialApp]({{site.api}}/material/MaterialApp-class.html) to display properly, in
+[MaterialApp]({{api}}/material/MaterialApp-class.html) to display properly, in
 order to inherit theme data. Therefore, we run the application with a
-[MaterialApp]({{site.api}}/material/MaterialApp-class.html).
+[MaterialApp]({{api}}/material/MaterialApp-class.html).
 
 The `MyAppBar` widget creates a
-[Container]({{site.api}}/widgets/Container-class.html) with a height of 56
+[Container]({{api}}/widgets/Container-class.html) with a height of 56
 device-independent pixels with an internal padding of 8 pixels, both on the left
 and the right. Inside the container, `MyAppBar` uses a
-[Row]({{site.api}}/widgets/Row-class.html) layout to organize its children. The
+[Row]({{api}}/widgets/Row-class.html) layout to organize its children. The
 middle child, the `title` widget, is marked as
-[Expanded]({{site.api}}/widgets/Expanded-class.html), which means it expands to
+[Expanded]({{api}}/widgets/Expanded-class.html), which means it expands to
 fill any remaining available space that hasn't been consumed by the other
 children. You can have multiple
-[Expanded]({{site.api}}/widgets/Expanded-class.html) children and determine the
+[Expanded]({{api}}/widgets/Expanded-class.html) children and determine the
 ratio in which they consume the available space using the
-[flex]({{site.api}}/widgets/Expanded-class.html#flex) argument to
-[Expanded]({{site.api}}/widgets/Expanded-class.html).
+[flex]({{api}}/widgets/Expanded-class.html#flex) argument to
+[Expanded]({{api}}/widgets/Expanded-class.html).
 
 The `MyScaffold` widget organizes its children in a vertical column. At the top
 of the column it places an instance of `MyAppBar`, passing the app bar a
-[Text]({{site.api}}/widgets/Text-class.html) widget to use as its title. Passing
+[Text]({{api}}/widgets/Text-class.html) widget to use as its title. Passing
 widgets as arguments to other widgets is a powerful technique that lets you
 create generic widgets that can be reused in a wide variety of ways. Finally,
-`MyScaffold` uses an [Expanded]({{site.api}}/widgets/Expanded-class.html) to fill
+`MyScaffold` uses an [Expanded]({{api}}/widgets/Expanded-class.html) to fill
 the remaining space with its body, which consists of a centered message.
 
 More information: [Layouts](/docs/development/ui/widgets/layout)
@@ -214,13 +214,13 @@ More information: [Layouts](/docs/development/ui/widgets/layout)
 
 Flutter provides a number of widgets that help you build apps that follow
 Material Design. A Material app starts with the
-[MaterialApp]({{site.api}}/material/MaterialApp-class.html) widget, which builds a
+[MaterialApp]({{api}}/material/MaterialApp-class.html) widget, which builds a
 number of useful widgets at the root of your app, including a
-[Navigator]({{site.api}}/widgets/Navigator-class.html), which manages a stack of
+[Navigator]({{api}}/widgets/Navigator-class.html), which manages a stack of
 widgets identified by strings, also known as "routes". The
-[Navigator]({{site.api}}/widgets/Navigator-class.html) lets you transition smoothly
+[Navigator]({{api}}/widgets/Navigator-class.html) lets you transition smoothly
 between screens of your application. Using the
-[MaterialApp]({{site.api}}/material/MaterialApp-class.html) widget is entirely
+[MaterialApp]({{api}}/material/MaterialApp-class.html) widget is entirely
 optional but a good practice.
 
 ```dart
@@ -268,20 +268,20 @@ class TutorialHome extends StatelessWidget {
 ```
 
 Now that we've switched from `MyAppBar` and `MyScaffold` to the
-[AppBar]({{site.api}}/material/AppBar-class.html) and
-[Scaffold]({{site.api}}/material/Scaffold-class.html) widgets from `material.dart`,
+[AppBar]({{api}}/material/AppBar-class.html) and
+[Scaffold]({{api}}/material/Scaffold-class.html) widgets from `material.dart`,
 our app is starting to look at bit more Material. For example, the app bar has a
 shadow and the title text inherits the correct styling automatically. We've also
 added a floating action button for good measure.
 
 Notice that we're again passing widgets as arguments to other widgets. The
-[Scaffold]({{site.api}}/material/Scaffold-class.html) widget takes a number of
+[Scaffold]({{api}}/material/Scaffold-class.html) widget takes a number of
 different widgets as named arguments, each of which are placed in the Scaffold
 layout in the appropriate place. Similarly, the
-[AppBar]({{site.api}}/material/AppBar-class.html) widget lets us pass in widgets
-for the [leading]({{site.api}}/material/AppBar-class.html#leading) and the
-[actions]({{site.api}}/material/AppBar-class.html#actions) of the
-[title]({{site.api}}/material/AppBar-class.html#title) widget. This pattern recurs
+[AppBar]({{api}}/material/AppBar-class.html) widget lets us pass in widgets
+for the [leading]({{api}}/material/AppBar-class.html#leading) and the
+[actions]({{api}}/material/AppBar-class.html#actions) of the
+[title]({{api}}/material/AppBar-class.html#title) widget. This pattern recurs
 throughout the framework and is something you might consider when designing your
 own widgets.
 
@@ -318,23 +318,23 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-The [GestureDetector]({{site.api}}/widgets/GestureDetector-class.html) widget
+The [GestureDetector]({{api}}/widgets/GestureDetector-class.html) widget
 doesn't have a visual representation but instead detects gestures made by the
 user. When the user taps the
-[Container]({{site.api}}/widgets/Container-class.html), the
-[GestureDetector]({{site.api}}/widgets/GestureDetector-class.html) calls its
-[onTap]({{site.api}}/widgets/GestureDetector-class.html#onTap) callback, in this
+[Container]({{api}}/widgets/Container-class.html), the
+[GestureDetector]({{api}}/widgets/GestureDetector-class.html) calls its
+[onTap]({{api}}/widgets/GestureDetector-class.html#onTap) callback, in this
 case printing a message to the console. You can use
-[GestureDetector]({{site.api}}/widgets/GestureDetector-class.html) to detect a
+[GestureDetector]({{api}}/widgets/GestureDetector-class.html) to detect a
 variety of input gestures, including taps, drags, and scales.
 
 Many widgets use a
-[GestureDetector]({{site.api}}/widgets/GestureDetector-class.html) to provide
+[GestureDetector]({{api}}/widgets/GestureDetector-class.html) to provide
 optional callbacks for other widgets. For example, the
-[IconButton]({{site.api}}/material/IconButton-class.html),
-[RaisedButton]({{site.api}}/material/RaisedButton-class.html), and
-[FloatingActionButton]({{site.api}}/material/FloatingActionButton-class.html)
-widgets have [onPressed]({{site.api}}/material/RaisedButton-class.html#onPressed)
+[IconButton]({{api}}/material/IconButton-class.html),
+[RaisedButton]({{api}}/material/RaisedButton-class.html), and
+[FloatingActionButton]({{api}}/material/FloatingActionButton-class.html)
+widgets have [onPressed]({{api}}/material/RaisedButton-class.html#onPressed)
 callbacks that are triggered when the user taps the widget.
 
 More information: [Gestures in Flutter](/docs/development/ui/advanced/gestures)
@@ -345,7 +345,7 @@ Thus far, we've used only stateless widgets. Stateless widgets receive arguments
 from their parent widget, which they store in
 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables. When a widget is asked to
-[build]({{site.api}}/widgets/StatelessWidget/build.html), it uses these stored
+[build]({{api}}/widgets/StatelessWidget/build.html), it uses these stored
 values to derive new arguments for the widgets it creates.
 
 In order to build more complex experiences&mdash;for example, to react in more
@@ -353,7 +353,7 @@ interesting ways to user input&mdash;applications typically carry some state.
 Flutter uses StatefulWidgets to capture this idea. StatefulWidgets are special
 widgets that know how to generate State objects, which are then used to hold
 state. Consider this basic example, using the
-[RaisedButton]({{site.api}}/material/RaisedButton-class.html) mentioned earlier:
+[RaisedButton]({{api}}/material/RaisedButton-class.html) mentioned earlier:
 
 ```dart
 class Counter extends StatefulWidget {
@@ -405,7 +405,7 @@ You might wonder why StatefulWidget and State are separate objects. In Flutter,
 these two types of objects have different life cycles. Widgets are temporary
 objects, used to construct a presentation of the application in its current
 state. State objects on the other hand are persistent between calls to
-[build()]({{site.api}}/widgets/State/build.html), allowing them to remember
+[build()]({{api}}/widgets/State/build.html), allowing them to remember
 information.
 
 The example above accepts user input and directly uses the result in its
@@ -480,8 +480,8 @@ widgets, while maintaining simplicity in the parent.
 
 More information:
 
-- [StatefulWidget]({{site.api}}/widgets/StatefulWidget-class.html)
-- [State.setState]({{site.api}}/widgets/State/setState.html)
+- [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
+- [State.setState]({{api}}/widgets/State/setState.html)
 
 ## Bringing it all together
 
@@ -545,7 +545,7 @@ The `ShoppingListItem` widget follows a common pattern for stateless widgets. It
 stores the values it receives in its constructor in
 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables, which it then uses during its
-[build]({{site.api}}/widgets/StatelessWidget/build.html) function. For example, the
+[build]({{api}}/widgets/StatelessWidget/build.html) function. For example, the
 `inCart` boolean toggles between two visual appearances: one that uses the
 primary color from the current theme, and another that uses gray.
 
@@ -563,7 +563,7 @@ of `ShoppingListItem` with the new `inCart` value. Although the parent creates a
 new instance of `ShoppingListItem` when it rebuilds, that operation is cheap
 because the framework compares the newly built widgets with the previously built
 widgets and applies only the differences to the underlying
-[RenderObject]({{site.api}}/rendering/RenderObject-class.html).
+[RenderObject]({{api}}/rendering/RenderObject-class.html).
 
 Here's an example parent widget that stores mutable state:
 
@@ -645,41 +645,41 @@ void main() {
 ```
 
 The `ShoppingList` class extends
-[StatefulWidget]({{site.api}}/widgets/StatefulWidget-class.html), which means this
+[StatefulWidget]({{api}}/widgets/StatefulWidget-class.html), which means this
 widget stores mutable state. When the `ShoppingList` widget is first inserted
 into the tree, the framework calls the
-[createState]({{site.api}}/widgets/StatefulWidget-class.html#createState) function
+[createState]({{api}}/widgets/StatefulWidget-class.html#createState) function
 to create a fresh instance of `_ShoppingListState` to associate with that
 location in the tree. (Notice that subclasses of
-[State]({{site.api}}/widgets/State-class.html) are typically named with leading
+[State]({{api}}/widgets/State-class.html) are typically named with leading
 underscores to indicate that they are private implementation details.) When this
 widget's parent rebuilds, the parent creates a new instance of `ShoppingList`,
 but the framework reuses the `_ShoppingListState` instance that is already in
 the tree rather than calling
-[createState]({{site.api}}/widgets/StatefulWidget-class.html#createState) again.
+[createState]({{api}}/widgets/StatefulWidget-class.html#createState) again.
 
 To access properties of the current `ShoppingList`, the `_ShoppingListState` can
-use its [widget]({{site.api}}/widgets/State-class.html#widget) property. If the
+use its [widget]({{api}}/widgets/State-class.html#widget) property. If the
 parent rebuilds and creates a new `ShoppingList`, the `_ShoppingListState`
-rebuilds with the new [widget]({{site.api}}/widgets/State-class.html#widget) value.
+rebuilds with the new [widget]({{api}}/widgets/State-class.html#widget) value.
 If you wish to be notified when the
-[widget]({{site.api}}/widgets/State-class.html#widget) property changes, you can
+[widget]({{api}}/widgets/State-class.html#widget) property changes, you can
 override the
-[didUpdateWidget]({{site.api}}/widgets/State-class.html#didUpdateWidget) function,
+[didUpdateWidget]({{api}}/widgets/State-class.html#didUpdateWidget) function,
 which is passed `oldWidget` to let you compare the old widget with the current
-[widget]({{site.api}}/widgets/State-class.html#widget).
+[widget]({{api}}/widgets/State-class.html#widget).
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
 signal to the framework that it changed its internal state, it wraps those calls
-in a [setState]({{site.api}}/widgets/State-class.html#setState) call. Calling
-[setState]({{site.api}}/widgets/State-class.html#setState) marks this widget as
+in a [setState]({{api}}/widgets/State-class.html#setState) call. Calling
+[setState]({{api}}/widgets/State-class.html#setState) marks this widget as
 dirty and schedules it to be rebuilt the next time your app needs to update the
 screen. If you forget to call
-[setState]({{site.api}}/widgets/State-class.html#setState) when modifying the
+[setState]({{api}}/widgets/State-class.html#setState) when modifying the
 internal state of a widget, the framework won't know your widget is dirty and
 might not call the widget's
-[build]({{site.api}}/widgets/StatelessWidget/build.html) function, which means the
+[build]({{api}}/widgets/StatelessWidget/build.html) function, which means the
 user interface might not update to reflect the changed state.
 
 By managing state in this way, you don't need to write separate code for
@@ -689,37 +689,37 @@ function, which handles both situations.
 ## Responding to widget lifecycle events
 
 After calling
-[createState]({{site.api}}/widgets/StatefulWidget-class.html#createState) on the
+[createState]({{api}}/widgets/StatefulWidget-class.html#createState) on the
 StatefulWidget, the framework inserts the new state object into the tree and
-then calls [initState]({{site.api}}/widgets/State-class.html#initState) on the
-state object. A subclass of [State]({{site.api}}/widgets/State-class.html) can
-override [initState]({{site.api}}/widgets/State-class.html#initState) to do work
+then calls [initState]({{api}}/widgets/State-class.html#initState) on the
+state object. A subclass of [State]({{api}}/widgets/State-class.html) can
+override [initState]({{api}}/widgets/State-class.html#initState) to do work
 that needs to happen just once. For example, you can override
-[initState]({{site.api}}/widgets/State-class.html#initState) to configure
+[initState]({{api}}/widgets/State-class.html#initState) to configure
 animations or to subscribe to platform services. Implementations of
-[initState]({{site.api}}/widgets/State-class.html#initState) are required to start
-by calling [super.initState]({{site.api}}/widgets/State-class.html#initState).
+[initState]({{api}}/widgets/State-class.html#initState) are required to start
+by calling [super.initState]({{api}}/widgets/State-class.html#initState).
 
 When a state object is no longer needed, the framework calls
-[dispose]({{site.api}}/widgets/State-class.html#dispose) on the state object. You
-can override the [dispose]({{site.api}}/widgets/State-class.html#dispose) function
+[dispose]({{api}}/widgets/State-class.html#dispose) on the state object. You
+can override the [dispose]({{api}}/widgets/State-class.html#dispose) function
 to do cleanup work. For example, you can override
-[dispose]({{site.api}}/widgets/State-class.html#dispose) to cancel timers or to
+[dispose]({{api}}/widgets/State-class.html#dispose) to cancel timers or to
 unsubscribe from platform services. Implementations of
-[dispose]({{site.api}}/widgets/State-class.html#dispose) typically end by calling
-[super.dispose]({{site.api}}/widgets/State-class.html#dispose).
+[dispose]({{api}}/widgets/State-class.html#dispose) typically end by calling
+[super.dispose]({{api}}/widgets/State-class.html#dispose).
 
-More information: [State]({{site.api}}/widgets/State-class.html)
+More information: [State]({{api}}/widgets/State-class.html)
 
 ## Keys
 
 You can use keys to control which widgets the framework matches up with other
 widgets when a widget rebuilds. By default, the framework matches widgets in the
 current and previous build according to their
-[runtimeType]({{site.api}}/widgets/Widget-class.html#runtimeType) and the order in
+[runtimeType]({{api}}/widgets/Widget-class.html#runtimeType) and the order in
 which they appear. With keys, the framework requires that the two widgets have
-the same [key]({{site.api}}/widgets/Widget-class.html#key) as well as the same
-[runtimeType]({{site.api}}/widgets/Widget-class.html#runtimeType).
+the same [key]({{api}}/widgets/Widget-class.html#key) as well as the same
+[runtimeType]({{api}}/widgets/Widget-class.html#runtimeType).
 
 Keys are most useful in widgets that build many instances of the same type of
 widget. For example, the `ShoppingList` widget, which builds just enough
@@ -736,7 +736,7 @@ widget. For example, the `ShoppingList` widget, which builds just enough
    stateful child widgets remains attached to the same semantic entry rather
    than the entry in the same numerical position in the viewport.
 
-More information: [Key API]({{site.api}}/foundation/Key-class.html)
+More information: [Key API]({{api}}/foundation/Key-class.html)
 
 ## Global Keys
 
@@ -745,6 +745,6 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
-More information: [GlobalKey API]({{site.api}}/widgets/GlobalKey-class.html)
+More information: [GlobalKey API]({{api}}/widgets/GlobalKey-class.html)
 
-[runApp()]: {{site.api}}/widgets/runApp.html
+[runApp()]: {{api}}/widgets/runApp.html
