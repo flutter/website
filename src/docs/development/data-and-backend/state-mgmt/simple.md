@@ -14,11 +14,9 @@ On this page, we are going to be using the `scoped_model` package. If you are ne
 
 That said, if you have strong background in state management from other reactive frameworks, you will find packages and tutorials listed on the [following page](/docs/development/data-and-backend/state-mgmt/options).
 
-## Our example
+## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
 For illustration, let's consider the following simple app.
-
-{% asset development/data-and-backend/state-mgmt/model-shopper alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
 The app has three separate screens: a login prompt, a catalog, and a cart (represented by the `MyLoginScreen`, `MyCatalog` and `MyCart` widgets, respectively). It could be a shopping app, but you can imagine the same structure in a simple social networking app (replace catalog for "wall" and cart for "favorites").
 
