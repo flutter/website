@@ -231,9 +231,9 @@ Now that `CartModel` is provided to widgets in our app through the `ScopedModel<
 
 This is done through the `ScopedModelDescendant` widget.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (descendant)"?>
 ```dart
-ScopedModelDescendant<CartModel>(
+return ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) {
     return Text("Total price: ${cart.totalPrice}");
   },

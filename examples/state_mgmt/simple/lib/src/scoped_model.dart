@@ -38,7 +38,20 @@ class Item {
   String toString() => name;
 }
 
-class MyCart extends StatelessWidget {
+class MyCartTotalWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // #docregion descendant
+    return ScopedModelDescendant<CartModel>(
+      builder: (context, child, cart) {
+        return Text("Total price: ${cart.totalPrice}");
+      },
+    );
+    // #enddocregion descendant
+  }
+}
+
+class MyCartUsingWidget extends StatelessWidget {
   @override
   // #docregion build
   // GOOD
@@ -100,7 +113,8 @@ class MyHomepage extends StatelessWidget {
     return Column(
       children: [
         MyCatalog(),
-        MyCart(),
+        MyCartUsingWidget(),
+        MyCartTotalWidget(),
       ],
     );
   }
