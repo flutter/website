@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:state_mgmt/src/passing_callbacks.dart' as callbacks;
 import 'package:state_mgmt/src/scoped_model.dart' as scoped_model;
 import 'package:state_mgmt/src/set_state.dart' as set_state;
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
             children: [
               set_state.MyHomepage(),
               scoped_model.MyHomepage(),
+              callbacks.MyHomepage(),
             ],
           ),
         ),

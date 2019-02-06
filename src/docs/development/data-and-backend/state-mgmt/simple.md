@@ -111,16 +111,17 @@ When user clicks on one of the items in the catalog, it’s added to the cart. B
 
 A simple option is to provide a callback that `MyListItem` can call when it is clicked. Dart's functions are first class objects, so you can pass them around any way you want. So, inside `MyCatalog` you can have the following:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
-void onTapCallback(Item item) {
+void myTapCallback(Item item) {
   print('user tapped on $item');
 }
 
+@override
 Widget build(BuildContext context) {
   return SomeWidget(
     // Construct the widget, passing it a reference to the method above.
-    MyListItem(onTapCallback)
+    MyListItem(myTapCallback),
   );
 }
 ```

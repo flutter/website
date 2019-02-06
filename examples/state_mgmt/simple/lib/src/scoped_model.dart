@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:state_mgmt/src/common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
   return ScopedModel.of<CartModel>(context, rebuildOnChange: true);
@@ -88,16 +89,5 @@ class MyHomepage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class SomeWidget extends StatelessWidget {
-  final Widget child;
-
-  SomeWidget(this.child);
-
-  @override
-  Widget build(BuildContext context) {
-    return child;
   }
 }
