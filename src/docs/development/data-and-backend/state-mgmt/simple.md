@@ -117,7 +117,7 @@ void onTapCallback(Item item) {
   print('user tapped on $item');
 }
 
-build(context) {
+Widget build(BuildContext context) {
   return SomeWidget(
     // Construct the widget, passing it a reference to the method above.
     MyListItem(onTapCallback)
