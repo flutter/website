@@ -8,8 +8,7 @@ We compiled our favorite resources to
 help you quickly learn Dart.
 We looked at a lot of languages, and [we found Dart easy
 and fun to learn](/docs/resources/faq#why-did-flutter-choose-to-use-dart).
-We hope these resources make Dart
-easy for you to learn, too.
+We hope these resources make Dart easy for you to learn, too.
 
 [Language tour]({{site.dart-site}}/guides/language/language-tour)
 : Your best introduction to the Dart language. Learn about Dart's
@@ -20,7 +19,7 @@ easy for you to learn, too.
 : A good overview of Dart's powerful core libraries. Learn about
   Dart's support for collections, async, math, numbers, strings, JSON, and more.
 
-[Intro to Dart for Java Developers Codelab](https://codelabs.developers.google.com/codelabs/from-java-to-dart)
+[Intro to Dart for Java Developers Codelab]({{site.codelabs}}/from-java-to-dart)
 : Use your Java knowledge to get up and running quickly with Dart. Learn about
   classes, constructors, parameters, and interfaces with examples from the Java
   Tutorial.
@@ -32,7 +31,7 @@ easy for you to learn, too.
 : Learn how to use Futures, which are used extensively in the Dart core
   libraries.  Futures can be used instead of one-time callbacks.
 
-[Asynchronous Programming: Streams Tutorial]({{site.dart-site}}/docs/tutorials/streams/)
+[Asynchronous Programming: Streams Tutorial]({{site.dart-site}}/docs/tutorials/streams)
 : Learn how to use Streams, which are used extensively in the Dart core
   libraries. Streams can be used instead repeating callbacks.
   For example, the

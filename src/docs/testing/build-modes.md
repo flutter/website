@@ -75,5 +75,5 @@ Your IDE also supports these modes. Android Studio, for example,
 provides a **Run > Profile...** menu option.
 
 For more information on these modes, see
-[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes)
-in the [Flutter SDK wiki](https://github.com/flutter/flutter/wiki).
+[Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes)
+in the [Flutter SDK wiki]({{site.github}}/flutter/flutter/wiki).

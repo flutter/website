@@ -90,7 +90,7 @@ While it is easy and convenient to use key-value storage, it has limitations:
 - It's not designed to store a lot of data.
 
 For more information about Shared Preferences on Android, please visit
-[Shared preferences documentation](https://developer.android.com/guide/topics/data/data-storage#pref)
+[Shared preferences documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.
 
 ## Testing support

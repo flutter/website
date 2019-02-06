@@ -108,7 +108,7 @@ _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
 
 For more information, see
-[Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
+[Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
 
 ## Debugging application layers
 
@@ -692,7 +692,7 @@ I/flutter :  └SemanticsNode(3; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTapped; "Dump App")
 ```
 
-<!-- this tree is bad, see https://github.com/flutter/flutter/issues/2476 -->
+<!-- this tree is bad, see {{site.github}}/flutter/flutter/issues/2476 -->
 
 ### Scheduling
 
@@ -818,7 +818,7 @@ For example:
 
 To perform custom performance traces and measure wall/CPU time of
 arbitrary segments of Dart code similar to what would be done on Android
-with [systrace](https://developer.android.com/studio/profile/systrace), use
+with [systrace]({{site.android-dev}}/studio/profile/systrace), use
 `dart:developer`'s
 [Timeline]({{site.dart.api}}/stable/dart-developer/Timeline-class.html)
 utilities to wrap the code you want to measure such as:
@@ -870,9 +870,9 @@ are misleading.
 ## Material grid
 
 When developing applications that implement [Material
-Design](https://www.google.com/design/spec/material-design/introduction.html),
+Design]({{site.material}}/design/introduction),
 it can be helpful to overlay a [Material Design baseline
-grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
+grid]({{site.material}}/design/layout/metrics-keylines.html)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html)

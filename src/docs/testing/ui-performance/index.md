@@ -45,7 +45,8 @@ choose the slowest device that your users might use.
   <h4 class="no_toc">What's the point?</h4>
 
   * Profile your app on a physical device.
-  * Profile your app in [profile mode](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
+  * Profile your app in [profile
+    mode]({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes).
   * Check performance on the slowest device your users might use.
   * Start by enabling the performance overlay.
 {{site.alert.end}}
@@ -113,7 +114,7 @@ Not yet available in VS Code.
   ```
 
 For more information on how the different modes work, see [Flutter's
-modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
+modes]({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes).
 
 You'll begin by enabling the performance overlay, as discussed
 in the next section.
@@ -147,7 +148,7 @@ your actions on the UI thread have performance consequences on other threads.
    For more information, see the
    [UIKit](https://developer.apple.com/documentation/uikit)
    documentation for iOS, or the
-   [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread)
+   [MainThread]({{site.android-dev}}/reference/android/support/annotation/MainThread)
    documentation for Android.
    This thread is not shown in the performance overlay.
 
@@ -177,7 +178,7 @@ your actions on the UI thread have performance consequences on other threads.
 
 
 For more information on these threads, see
-[Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
+[Architecture notes.]({{site.github}}/flutter/engine/wiki#architecture-notes)
 
 Each frame should be created and displayed within 1/60th of a second
 (approximately 16ms). A frame exceeding this limit (in either graph)
@@ -257,7 +258,7 @@ class MyApp extends StatelessWidget {
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,
-use the copy in the [examples](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
+use the copy in the [examples]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
 directory that was installed with Flutter,
 and run the app in profile mode. The program is written
 so that the app menu allows you to dynamically toggle the overlay,
@@ -310,7 +311,7 @@ Go to Flutter's timeline view in a browser as follows:
 evolving. For this reason, we aren't fully documenting the UI at this time.
 If you are comfortable experimenting with Observatory, and would like to give
 us feedback, please file [issues or feature
-requests](https://github.com/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory)
+requests]({{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory)
 as you find them.
 </aside>
 

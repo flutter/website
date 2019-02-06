@@ -83,7 +83,7 @@ In Flutter, you specify an application widget that holds your root page.
 You can use a
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, which supports [Material
-Design](https://material.io/design/), or you can use the lower level
+Design]({{site.material}}/design), or you can use the lower level
 [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
 which you can customize in any way you want.
 
@@ -209,9 +209,9 @@ widgets. When building a route, you create a widget tree.
 
 Flutter includes the [Material Components](/docs/development/ui/widgets/material)
 library. These are widgets that implement the
-[Material Design guidelines](https://material.io/design/). Material Design is a
+[Material Design guidelines]({{site.material}}/design). Material Design is a
 flexible design system [optimized for all
-platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -559,7 +559,7 @@ the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -732,7 +732,7 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 To implement this functionality in Flutter, create a native platform integration,
 or use an [existing plugin]({{site.pub}}/flutter/), such as
 [`url_launcher`]({{site.pub}}/packages/url_launcher), available with
-many other packages on the [Package site]({{site.pub}}/flutter).
+many other packages on the [Pub site]({{site.pub}}/flutter).
 
 ## Async UI
 
@@ -1348,7 +1348,7 @@ To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
 Use the [`intl_translation`]({{site.pub}}/packages/intl_translation)
 package to extract translatable copy to
-[arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+[arb]({{site.github}}/google/i18n/app-resource-bundle)
 files for translating, and importing them back into the app for using them
 with `intl`.
 
@@ -1968,9 +1968,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
+part 1]({{site.codelabs}}/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+part 2]({{site.codelabs}}/first-flutter-app-pt2)
 
 ## Working with text
 
@@ -2352,7 +2352,7 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
+[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
 plugin.
 For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)

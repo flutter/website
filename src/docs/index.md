@@ -15,7 +15,7 @@ description: The landing page for Flutter documentation.
 {% endfor -%}
 </div>
 
-## What's new on the site
+## What's new on this site
 
 **November 5, 2018**
 
@@ -90,7 +90,7 @@ Once you’ve mastered the basics, try these pages.
 [Cookbook](/docs/cookbook)
 : A (growing) collection of recipes that address common Flutter use cases.
 
-[Sample apps on GitHub](https://github.com/flutter/samples/blob/master/INDEX.md)
+[Sample apps on GitHub]({{site.github}}/flutter/samples/blob/master/INDEX.md)
 : A (growing) collection of sample apps that show Flutter best practices.
 
 [Adding assets and images in Flutter](/docs/development/ui/assets-and-images)

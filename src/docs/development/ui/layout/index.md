@@ -879,7 +879,7 @@ its content is too long for its render box.
   {:.text-center}
 
   Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
-  the [Material Design palette](https://material.io/guidelines/style/color.html)
+  the [Material Design palette]({{site.material}}/guidelines/style/color.html)
   for a particular color family.
 
   **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
@@ -1150,7 +1150,7 @@ The following resources may help when writing layout code.
 [Center]: {{api}}/widgets/Center-class.html
 [Column]: {{api}}/widgets/Column-class.html
 [Container]: {{api}}/widgets/Container-class.html
-[Elevation]: https://material.io/design/environment/elevation.html
+[Elevation]: {{site.material}}/design/environment/elevation.html
 [Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [GridView]: {{api}}/widgets/GridView-class.html
@@ -1160,8 +1160,8 @@ The following resources may help when writing layout code.
 [layout widgets]: /docs/development/ui/widgets/layout
 [ListTile]: {{api}}/material/ListTile-class.html
 [ListView]: {{api}}/widgets/ListView-class.html
-[Material card]: https://material.io/design/components/cards.html
-[Material Design]: https://material.io/design
+[Material card]: {{site.material}}/design/components/cards.html
+[Material Design]: {{site.material}}/design
 [Material library]: {{api}}/material/material-library.html
 [Row]: {{api}}/widgets/Row-class.html
 [Scaffold]: {{api}}/material/Scaffold-class.html

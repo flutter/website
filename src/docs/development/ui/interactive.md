@@ -730,7 +730,7 @@ The following resources may help when adding interactivity to your app.
 [FlatButton]: {{site.api}}/flutter/material/FlatButton-class.html
 [FloatingActionButton]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter Gallery]: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
+[Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
 [FormField]: {{site.api}}/flutter/widgets/FormField-class.html
 [Form]: {{site.api}}/flutter/widgets/Form-class.html
@@ -747,7 +747,7 @@ The following resources may help when adding interactivity to your app.
 [Layout tutorial]: /docs/development/ui/layout/tutorial
 [Layout tutorial (step 6)]: /docs/development/ui/layout/tutorial#step-6-final-touch
 [ListView]: {{site.api}}/flutter/widgets/ListView-class.html
-[Material Design guidelines]: https://material.io/design/guidelines-overview
+[Material Design guidelines]: {{site.material}}/design/guidelines-overview
 [meta.dart]: {{site.pub}}/packages/meta
 [Radio]: {{site.api}}/flutter/material/Radio-class.html
 [RaisedButton]: {{site.api}}/flutter/material/RaisedButton-class.html

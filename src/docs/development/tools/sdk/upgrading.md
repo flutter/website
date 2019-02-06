@@ -111,5 +111,5 @@ We strongly recommend that you subscribe to get announcements from us.
 Plus, we'd love to hear from you!
 
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
-[Flutter release channel]: https://github.com/flutter/flutter/wiki/Flutter-build-release-channels
-[mailing list]: https://groups.google.com/forum/#!forum/flutter-dev
+[Flutter release channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[mailing list]: {{site.groups}}/forum/#!forum/flutter-dev

@@ -37,7 +37,7 @@ VS Code. If you want to use a different editor, that's OK, skip ahead to the
 
 Android Studio offers a complete, integrated IDE experience for Flutter.
 
-* [Android Studio](https://developer.android.com/studio), version 3.0 or later
+* [Android Studio]({{site.android-dev}}/studio), version 3.0 or later
 
 Alternatively, you can also use IntelliJ:
 

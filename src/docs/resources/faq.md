@@ -123,7 +123,7 @@ Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-u
 ### Does Flutter work with any editors or IDEs?
 
 We support plugins for [Android
-Studio](https://developer.android.com/studio/),
+Studio]({{site.android-dev}}/studio),
 [IntelliJ IDEA](https://www.jetbrains.com/idea/),
 and [VS Code](https://code.visualstudio.com/).
 
@@ -155,8 +155,7 @@ create your own widgets, or customize the existing widgets.
 Yes! The Flutter and Material teams collaborate closely,
 and Material Theming is fully supported. A number of
 examples of this are shown in the [MDC-103 Flutter: Material
-Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter)
-codelab.
+Theming]({{site.codelabs}}/mdc-103-flutter) codelab.
 
 ### Does Flutter come with a testing framework?
 
@@ -331,8 +330,8 @@ or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
-In December 2018, we measured the download size of a
-[minimal Flutter app](https://github.com/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)
+In December 2018, we measured the download size of a [minimal Flutter
+app]({{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
 `flutter build apk`), bundled and compressed as a release APK, to be
 approximately 4.06&nbsp;MB.
@@ -344,8 +343,10 @@ the LICENSE file is 53.5&nbsp;KB (compressed),
 necessary Java code (classes.dex) is 61.8&nbsp;KB (compressed),
 and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
 
-These numbers were measured using [apkanalyzer](https://developer.android.com/studio/command-line/apkanalyzer),
-which is also built into [Android Studio](https://developer.android.com/studio/build/apk-analyzer).
+These numbers were measured using
+[apkanalyzer]({{site.android-dev}}/studio/command-line/apkanalyzer),
+which is also built into [Android
+Studio]({{site.android-dev}}/studio/build/apk-analyzer).
 
 On iOS, a release IPA of the same app has a download size of 10.8&nbsp;MB on an
 iPhone X, as reported by Apple's App Store Connect. The IPA is larger than the
@@ -356,7 +357,7 @@ less efficient (see the [iOS App Store Specific Considerations](https://develope
 Of course, YMMV, and we recommend that you measure your own app. To measure an
 Android app, run `flutter build apk` and load the APK
 (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
-([instructions](https://developer.android.com/studio/build/apk-analyzer)) for a
+([instructions]({{site.android-dev}}/studio/build/apk-analyzer)) for a
 detailed size report. To measure an iOS app, upload a release IPA to Apple's
 App Store Connect ([instructions](/docs/deployment/ios)) and
 obtain the size report from there.
@@ -405,7 +406,7 @@ iOS 8 or newer.
 Mobile hardware: iOS devices (iPhone 4S or newer) and ARM Android devices.
 
 Note Flutter currently does not support building for x86 Android
-(issue [#9253](https://github.com/flutter/flutter/issues/9253))
+(issue [#9253]({{site.github}}/flutter/flutter/issues/9253))
 directly, however apps built for ARMv7 or ARM64 run fine (via ARM emulation)
 on many x86 Android devices.
 
@@ -437,14 +438,14 @@ encourage the community to use Flutter in a variety of interesting ways.
 
 Yes, you can embed a Flutter view in your existing Android or iOS app, however
 our tooling is currently not fully optimized for this use case (see
-[issue #14821](https://github.com/flutter/flutter/issues/14821) for details).
+[issue #14821]({{site.github}}/flutter/flutter/issues/14821) for details).
 
 Two current demonstrations of this are the
-[platform_view](https://github.com/flutter/flutter/tree/master/examples/platform_view)
-and [flutter_view](https://github.com/flutter/flutter/tree/master/examples/flutter_view)
+[platform_view]({{site.github}}/flutter/flutter/tree/master/examples/platform_view)
+and [flutter_view]({{site.github}}/flutter/flutter/tree/master/examples/flutter_view)
 examples. Some initial documentation is available in the wiki page
 [Add Flutter to existing
-apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps).
+apps]({{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps).
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -454,7 +455,7 @@ services and APIs from the operating system. However, we want to avoid the
 intend to build cross-platform APIs for all native services and APIs.
 
 A number of platform services and APIs have [ready-made
-packages]({{site.pub}}/flutter/) available in the Package
+packages]({{site.pub}}/flutter/) available in the Pub
 site. Using an existing package [is
 easy](/docs/development/packages-and-plugins/using-packages).
 
@@ -520,7 +521,8 @@ may send and receive messages to the mobile platform using a
 Learn more about accessing platform and third-party services in Flutter with
 [platform channels](/docs/development/platform-integration/platform-channels).
 
-Here is an [example project](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
+Here is an [example
+project]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel)
 that shows how to use a platform channel to access battery state information on
 iOS and Android.
 
@@ -547,7 +549,7 @@ currently have a shared-memory parallelism solution, although we are evaluating
 solutions for this.
 
 Check out an [example of using isolates with
-Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
+Flutter]({{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
 
 ### Can I run Dart code in the background of an Flutter app?
 
@@ -559,7 +561,7 @@ Geofencing]({{site.flutter-medium}}/executing-dart-in-the-background-with-flutte
 ### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
 Absolutely. There are libraries on the
-[Package site]({{site.pub}}) for JSON, XML,
+[Pub site]({{site.pub}}) for JSON, XML,
 protobufs, and many other utilities and formats.
 
 For a detailed writeup on using JSON with Flutter, check out [the JSON
@@ -591,7 +593,7 @@ and creating a [release build of your iOS app](/docs/deployment/ios).
 
 We have seen Flutter apps run on some Chromebooks.
 We are tracking [issues related to running Flutter on
-Chromebooks](https://github.com/flutter/flutter/labels/platform-arc).
+Chromebooks]({{site.github}}/flutter/flutter/labels/platform-arc).
 
 ## Framework
 
@@ -785,18 +787,17 @@ lay out an entire scene with a single pass.
 ### Where can I get support?
 
 If you think you've encountered a bug, please file it in our
-[issue tracker](https://github.com/flutter/flutter/issues). We
+[issue tracker]({{site.github}}/flutter/flutter/issues). We
 encourage you to use
-[Stack Overflow](https://stackoverflow.com/tags/flutter) for "HOWTO"
-type questions. For discussions,
-please join our mailing list at
+[Stack Overflow]({{site.so}}/tags/flutter) for "HOWTO" type questions.
+For discussions, please join our mailing list at
 [{{site.email}}](mailto:{{site.email}}).
 
 ### How do I get involved?
 
 Flutter is open source, and we encourage you to contribute. You can start by
 simply filing issues for feature requests and bugs in our
-[issue tracker](https://github.com/flutter/flutter/issues).
+[issue tracker]({{site.github}}/flutter/flutter/issues).
 
 We recommend that you join our mailing list at
 [{{site.email}}](mailto:{{site.email}}) and let us
@@ -805,14 +806,14 @@ know how you're using Flutter and what you'd like to do with it.
 If you're
 interested in contributing code, you can start by reading our
 [Contributing
-Guide](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md)
+Guide]({{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md)
 and check out our list of
-[easy starter issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22).
+[easy starter issues]({{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22).
 
 ### Is Flutter open source?
 
 Yes, Flutter is open source technology. You can find the project
-on [GitHub](https://github.com/flutter/flutter).
+on [GitHub]({{site.github}}/flutter/flutter).
 
 ### Which software license(s) apply to Flutter and its dependencies?
 
@@ -823,7 +824,7 @@ complete list in its [license
 file](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
 
 The framework is entirely self-contained and requires [only one
-license](https://github.com/flutter/flutter/blob/master/LICENSE).
+license]({{site.github}}/flutter/flutter/blob/master/LICENSE).
 
 In addition, any Dart packages you use may have their own license requirements.
 

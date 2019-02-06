@@ -38,7 +38,7 @@ contributed by the Flutter community:
 ## Redux
 
 * [Animation Management with Redux and Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), a video from DartConf 2018 [Accompanying article on Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
-* [Flutter Redux package]({{site.pub}}/packages/flutter_redux) on the [Package site]({{site.pub}})
+* [Flutter Redux package]({{site.pub}}/packages/flutter_redux) on the [Pub site]({{site.pub}})
 * [Introduction to Redux in Flutter](https://blog.novoda.com/introduction-to-redux-in-flutter/), by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65),
   by Paulina Szklarska on Hackernoon

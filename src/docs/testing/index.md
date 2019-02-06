@@ -61,7 +61,7 @@ whether it depends on Flutter libraries or not.
 
 Write a Flutter unit test as a normal `package:test` test. Writing unit tests
 using `package:test` is documented on the [Dart
-testing](https://github.com/dart-lang/test/blob/master/README.md)
+testing]({{site.github}}/dart-lang/test/blob/master/README.md)
 repo.
 
 Example:
@@ -339,5 +339,5 @@ For information on continuous deployment and testing, see the following:
 * [GitLab Continuous Integration (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
   example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library](https://github.com/brianegan/flutter_redux).
+  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)

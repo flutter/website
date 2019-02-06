@@ -13,7 +13,7 @@ Existing packages enable many use cases, for example, making network requests
 APIs (like [`url_launcher`]({{site.pub}}/packages/url_launcher) &
 [`battery`]({{site.pub}}/packages/battery)),
 and using third-party platform SDKs (like
-[Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
+[Firebase]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
 [developing packages](/docs/development/packages-and-plugins/developing-packages).
@@ -27,8 +27,8 @@ files or packages, please see [Assets & images](/docs/development/ui/assets-and-
 
 Packages are published to the *[Package]({{site.pub}})* site.
 
-The [Flutter landing page]({{site.pub}}/flutter/) on
-the Package site displays top packages that are compatible with Flutter
+The [Flutter landing page]({{site.pub}}/flutter) on
+the Pub site displays top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 

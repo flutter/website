@@ -88,9 +88,9 @@ packages](/docs/development/packages-and-plugins/developing-packages#plugin)),
 but the platform channel code is still written in the same way.
 
 *Note*: The full, runnable source-code for this example is available in
-[`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
+[`/examples/platform_channel/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel)
 for Android with Java and iOS with Objective-C. For iOS with Swift, see
-[`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
+[`/examples/platform_channel_swift/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift).
 
 ### Step 1: Create a new app project {#example-project}
 

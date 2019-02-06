@@ -232,7 +232,8 @@ are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
 The latest versions of these required dependencies can be seen by following
-[the pubspec file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
+[the pubspec
+file](https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml)
 in the JSON serializable example.
 
 **pubspec.yaml**
@@ -372,9 +373,9 @@ For more information, see the following resources:
 * [The
   json_serializable package in Pub]({{site.pub}}/packages/json_serializable)
 * [json_serializable
-  examples in GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+  examples in GitHub]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discussion
-  about dart:mirrors in Flutter](https://github.com/flutter/flutter/issues/1150)
+  about dart:mirrors in Flutter]({{site.github}}/flutter/flutter/issues/1150)
 
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html

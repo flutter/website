@@ -129,7 +129,8 @@ During a debug session, several additional debugging commands are added to the
 ### Debugging with Observatory
 
 Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory page](https://dart-lang.github.io/observatory/).
+html-based UI. For details see the [Observatory
+page](https://dart-lang.github.io/observatory/).
 
 To open Observatory:
 
@@ -214,7 +215,7 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 ### Known issues and feedback
 
 All known bugs are tracked in the issue tracker: [Dart and Flutter extensions GitHub issue
-tracker](https://github.com/Dart-Code/Dart-Code/issues).
+tracker]({{site.github}}/Dart-Code/Dart-Code/issues).
 
 We very much welcome feedback, both on bugs/issues and feature requests. Prior
 to filing new issues:

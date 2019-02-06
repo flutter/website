@@ -142,7 +142,8 @@ extrapolate outlines for the requested weight and style.
 
 ### Fonts
 
-The Raleway and RobotoMono fonts were downloaded from [Google Fonts](https://fonts.google.com/).
+The Raleway and RobotoMono fonts were downloaded from [Google
+Fonts](https://fonts.google.com/).
 
 ### `pubspec.yaml`
 

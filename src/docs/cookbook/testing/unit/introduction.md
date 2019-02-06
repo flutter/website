@@ -20,7 +20,7 @@ package provides additional utilities for testing Widgets.
 
 This recipe demonstrates the core features provided by the `test` package. For
 more information about the test package, please see the
-[test package documentation](https://github.com/dart-lang/test/blob/master/README.md).
+[test package documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
 
 ## Directions
 

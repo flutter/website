@@ -801,8 +801,7 @@ ListView.builder(
 
 To learn how to implement an infinite scrolling list, see the
 [Write Your First Flutter App,
-Part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
-codelab.
+Part 1]({{site.codelabs}}/first-flutter-app-pt1) codelab.
 
 ### How do I use a Canvas to draw or paint?
 
@@ -1077,7 +1076,7 @@ to specify default colors for various aspects of the theme. Set the theme
 property in `MaterialApp` to the `ThemeData` object. The
 [`Colors`]({{site.api}}/flutter/material/Colors-class.html)
 class provides colors from the Material Design [color
-palette](https://material.io/guidelines/style/color.html).
+palette]({{site.material}}/guidelines/style/color.html).
 
 The following example sets the primary swatch to `blue` and the text
 selection to `red`.
@@ -1497,7 +1496,7 @@ AsyncStorage.getItem("counterkey").then(value => {
 ```
 
 In Flutter, use the
-[`shared_preferences`](https://github.com/flutter/plugins/tree/master/packages/shared_preferences)
+[`shared_preferences`]({{site.github}}/flutter/plugins/tree/master/packages/shared_preferences)
 plugin to store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps `NSUserDefaults` on iOS
 and `SharedPreferences` on Android, providing a persistent store for simple data.
@@ -1767,7 +1766,7 @@ In Flutter, we can use the `Drawer` widget in combination with a `Scaffold` to
 create a layout with a Material Design drawer. To add a `Drawer` to an app,
 wrap it in a `Scaffold` widget. The `Scaffold` widget provides a consistent
 visual structure to apps that follow the
-[Material Design](https://material.io/design/) guidelines. It also supports
+[Material Design]({{site.material}}/design) guidelines. It also supports
 special Material Design components, such as `Drawers`, `AppBars`, and `SnackBars`.
 
 The `Drawer` widget is a Material Design panel that slides in horizontally from

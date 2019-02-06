@@ -47,11 +47,11 @@ Because they aren't views themselves, and aren't directly drawing anything,
 but rather are a description of the UI and its semantics that get "inflated"
 into actual view objects under the hood.
 
-Flutter includes the [Material Components](https://material.io/develop/flutter/)
+Flutter includes the [Material Components]({{site.material}}/develop/flutter)
 library. These are widgets that implement the
-[Material Design guidelines](https://material.io/design/). Material Design is a
+[Material Design guidelines]({{site.material}}/design). Material Design is a
 flexible design system [optimized for all
-platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -387,7 +387,7 @@ the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 <!-- skip -->
 {% prettify dart %}
@@ -1462,7 +1462,7 @@ constructors on how the children are laid out relative to the parent.
 
 For a good example of building a RelativeLayout in Flutter, see Collin's
 answer on
-[StackOverflow](https://stackoverflow.com/questions/44396075/equivalent-of-relativelayout-in-flutter).
+[StackOverflow]({{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter).
 
 ### What is the equivalent of a ScrollView?
 
@@ -2238,7 +2238,7 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
+[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
 plugin.
 For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)

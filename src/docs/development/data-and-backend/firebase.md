@@ -11,14 +11,13 @@ remote configuration, and hosting for your static files.
 Firebase supports Flutter. For more information, see:
 
 * [Getting started with Firebase and
-   Flutter](https://firebase.google.com/docs/flutter/setup)
-   in the [Firebase docs](https://firebase.google.com/docs)
-* [Firebase for Flutter
-   codelab](https://codelabs.developers.google.com/codelabs/flutter-firebase)
+   Flutter]({{site.firebase}}/docs/flutter/setup)
+   in the [Firebase docs]({{site.firebase}}/docs)
+* [Firebase for Flutter codelab]({{site.codelabs}}/flutter-firebase)
 * [FlutterFire
-  plugins](https://github.com/flutter/plugins/blob/master/FlutterFire.md)
+  plugins]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)
 * [Using Firestore as a backend to your Flutter
-   app](https://youtu.be/DqJ_KjFzL9I) (video)
+   app](https://youtube/DqJ_KjFzL9I) (video)
 
 Also, the Flutter community has created docs that you might find useful:
 

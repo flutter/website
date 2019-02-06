@@ -182,7 +182,7 @@ It is recommended practice to add the following documentation to all packages:
 
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the [device_info
-docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
+docs]({{site.pub-api}}/device_info/latest)
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
@@ -208,7 +208,7 @@ Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
 ## Publishing packages {#publish}
 
 Once you have implemented a package, you can publish it on the
-[Package site]({{site.pub}}), so that other developers can
+[Pub site]({{site.pub}}), so that other developers can
 easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
@@ -228,13 +228,14 @@ $ flutter packages pub publish
 
 For details on publishing, see the
 [publishing docs]({{site.dart-site}}/tools/pub/publishing).
-for the Package site.
+for the Pub site.
 
 ## Handling package interdependencies {#dependencies}
 
-If you are developing a package `hello` that depends on the Dart API exposed by another package,
-you need to add that package to the `dependencies` section of your `pubspec.yaml` file.
-The code below makes the Dart API of the `url_launcher` plugin available to `hello`:
+If you are developing a package `hello` that depends on the Dart API exposed
+by another package, you need to add that package to the `dependencies`
+section of your `pubspec.yaml` file.  The code below makes the Dart API
+of the `url_launcher` plugin available to `hello`:
 
 In `hello/pubspec.yaml`:
 ```yaml

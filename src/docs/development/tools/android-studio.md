@@ -264,7 +264,7 @@ editing in the IDE. Make sure that you're on the latest version of Android
 Studio and the Flutter plugins first before trying this.
 
 * In the ["project
-   view"](https://developer.android.com/studio/projects/#ProjectView), you
+   view"]({{site.android-dev}}/studio/projects/#ProjectView), you
    should see a subdirectory immediately under the root of your flutter app
    named `android`. Right click on it, then select `Flutter > Open Android
    module in Android Studio`.

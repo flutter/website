@@ -14,13 +14,13 @@ typography, icons, and more.
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the
-[Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+[Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter
 and setting up your environment. Shrine has high-quality scrolling images,
 interactive cards, buttons, dropdown lists, and a shopping cart page.
 To look at the single codebase for this and more examples,
 [visit our GitHub
-repository](https://github.com/flutter/flutter/tree/master/examples).
+repository]({{site.github}}/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
 in [Dart]({{site.dart-site}}), which looks familiar if you've used a
@@ -77,7 +77,8 @@ compares the new and old widgets and efficiently updates the user interface.
 #### Composition > inheritance
 
 Widgets are themselves often composed of many small, single-purpose widgets that
-combine to produce powerful effects.  For example, [Container](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
+combine to produce powerful effects.  For example,
+[Container]({{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
 a commonly-used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, Container is made up of
 [LimitedBox]({{site.api}}/flutter/widgets/LimitedBox-class.html),
@@ -175,8 +176,8 @@ and store their mutable state in a subclass of
 Whenever you mutate a State object (e.g., increment the counter), you must call
 [setState]({{site.api}}/flutter/widgets/State/setState.html)() to
 signal the framework to update the user interface by calling the State's build
-method again. For an example of managing state, see the
-[MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
+method again. For an example of managing state, see the [MyApp
+template]({{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
 that's created with each new Flutter project.
 
 Having separate state and widget objects lets other widgets treat stateless and
@@ -212,8 +213,8 @@ We're open source and would love to hear from you.
 - [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
 
 
-[issues]: https://github.com/flutter/flutter/issues
+[issues]: {{site.github}}/flutter/flutter/issues
 [apidocs]: {{site.api}}
-[so]: https://stackoverflow.com/tags/flutter
-[mailinglist]: https://groups.google.com/d/forum/flutter-dev
+[so]: {{site.so}}/tags/flutter
+[mailinglist]: {{site.groups}}/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter

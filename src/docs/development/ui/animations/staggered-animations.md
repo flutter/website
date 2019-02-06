@@ -34,12 +34,12 @@ This guide shows how to build a staggered animation in Flutter.
   This guide explains the basic_staggered_animation example. You can also
   refer to a more complex example, staggered_pic_selection.
 
-  [basic_staggered_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
+  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
   : Shows a series of sequential and overlapping animations of a single widget.
     Tapping the screen begins an animation that changes opacity, size,
     shape, color, and padding.
 
-  [staggered_pic_selection](https://github.com/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
+  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
   : Shows deleting an image from a list of images displayed in one of three sizes.
     This example uses two [animation
     controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
@@ -110,7 +110,7 @@ in and out.
 {% endcomment %}
 
 The following diagram shows the Intervals used in the
-[basic_staggered_animation](https://github.com/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
+[basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
 example. You might notice the following characteristics:
 
 * The opacity changes during the first 10% of the timeline.
@@ -366,13 +366,13 @@ The following resources might help when writing animations:
   library]({{site.api}}/flutter/animation/animation-library.html)
   documentation.
 
-[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
 : Demo app showcasing many Material Components and other Flutter
   features.  The [Shrine
-  demo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
+  demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   implements a hero animation.
 
-[Material motion spec](https://material.io/guidelines/motion/)
+[Material motion spec]({{site.material}}/guidelines/motion/)
 : Describes motion for Material apps.
 
 {% comment %}

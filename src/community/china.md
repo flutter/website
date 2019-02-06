@@ -6,7 +6,7 @@ toc: true
 
 {% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
-The Flutter community has made a Simplified Chinese version of the the
+The Flutter community has made a Simplified Chinese version of the
 Flutter site website available at
 [https://flutter-io.cn](https://flutter-io.cn).
 
@@ -45,7 +45,7 @@ shell from the directory where you wish to store your local Flutter clone:
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-$ git clone -b dev https://github.com/flutter/flutter.git
+$ git clone -b dev {{site.github}}/flutter/flutter.git
 $ export PATH="$PWD/flutter/bin:$PATH"
 $ cd ./flutter
 $ flutter doctor
@@ -68,7 +68,7 @@ for assistance.
 {{site.alert.secondary}}
   **Known issue:** Running the Flutter Gallery app from source requires assets hosted on
   a domain this workaround currently doesn't support. You can subscribe
-  to [Issue #13763](https://github.com/flutter/flutter/issues/13763)
+  to [Issue #13763]({{site.github}}/flutter/flutter/issues/13763)
   to receive updates. In the meantime, you can check out Flutter Gallery
   from Google Play or third-party app stores you trust.
 {{site.alert.end}}

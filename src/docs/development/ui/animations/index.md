@@ -19,7 +19,7 @@ More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
 If you have a specific request, please
-[file an issue](https://github.com/flutter/website/issues).
+[file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
@@ -34,9 +34,9 @@ If you have a specific request, please
   Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
-  Flutter](https://codelabs.developers.google.com/codelabs/flutter)<br>
+  Flutter]({{site.codelabs}}/flutter)<br>
   Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-  your app)](https://codelabs.developers.google.com/codelabs/flutter/#6)
+  your app)]({{site.codelabs}}/flutter/#6)
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 
@@ -68,9 +68,9 @@ depends on how fast it was tossed and how far it was from the ground.
 Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
-* [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+* [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 Under **Material Components**, the
-[Grid](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
+[Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
 demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
@@ -111,7 +111,8 @@ How to create two styles of Hero animations:
 
 * [Flutter Gallery][]<br>
 You can build the Gallery app yourself, or download it from the Play Store.
-The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
+The
+[Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
 demo includes an example of a Hero animation.
 
 * Also see the API documentation for the
@@ -155,7 +156,7 @@ The animation API for the Flutter framework.
 <hr>
 
 If there is specific animation documentation you'd like to see,
-[file an issue](https://github.com/flutter/website/issues).
+[file an issue]({{site.github}}/flutter/website/issues).
 
 [AnimationController.animateWith]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
