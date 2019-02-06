@@ -194,7 +194,7 @@ We already know where to put it: above the widgets that will need to access it. 
 
 You don't want to place `ScopedModel` higher than necessary (because you don't want to pollute the scope). But in our case, the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/main.dart (main)"?>
 ```dart
 void main() {
   final cart = CartModel();

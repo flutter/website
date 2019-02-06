@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:state_mgmt/src/passing_callbacks.dart' as callbacks;
-import 'package:state_mgmt/src/scoped_model.dart' as scoped_model;
+import 'package:state_mgmt/src/scoped_model.dart';
 import 'package:state_mgmt/src/set_state.dart' as set_state;
 
-void main() => runApp(MyApp());
+// #docregion main
+void main() {
+  final cart = CartModel();
+
+  // You could optionally connect [cart] with some database here.
+
+  runApp(
+    ScopedModel<CartModel>(
+      model: cart,
+      child: MyApp(),
+    ),
+  );
+}
+// #enddocregion main
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,7 +29,7 @@ class MyApp extends StatelessWidget {
           child: PageView(
             children: [
               set_state.MyHomepage(),
-              scoped_model.MyHomepage(),
+              MyHomepage(),
               callbacks.MyHomepage(),
             ],
           ),

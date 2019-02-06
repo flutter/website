@@ -97,17 +97,11 @@ class MyCatalogItem extends StatelessWidget {
 class MyHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(42),
-      child: ScopedModel(
-        model: CartModel(),
-        child: Column(
-          children: [
-            MyCatalog(),
-            MyCart(),
-          ],
-        ),
-      ),
+    return Column(
+      children: [
+        MyCatalog(),
+        MyCart(),
+      ],
     );
   }
 }
