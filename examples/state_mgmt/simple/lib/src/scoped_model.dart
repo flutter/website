@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:state_mgmt/src/common.dart';
@@ -6,16 +8,34 @@ CartModel somehowGetMyCartModel(BuildContext context) {
   return ScopedModel.of<CartModel>(context, rebuildOnChange: true);
 }
 
+// #docregion model
 class CartModel extends Model {
-  List<String> _items = [];
+  /// Internal, private state of the cart.
+  final List<Item> _items = [];
 
-  void add(String item) {
+  /// An unmodifiable view of the items in the cart.
+  UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
+
+  /// The current total price of all items (assuming all items cost $1).
+  int get totalPrice => _items.length;
+
+  /// Adds [item] to cart. This is the only way to modify the cart from outside.
+  void add(Item item) {
     _items.add(item);
+    // This call tells [Model] that it should rebuild the widgets that
+    // depend on it.
     notifyListeners();
   }
+}
+// #enddocregion model
+
+class Item {
+  final String name;
+
+  Item(this.name);
 
   @override
-  String toString() => '$_items';
+  String toString() => name;
 }
 
 class MyCart extends StatelessWidget {
@@ -27,7 +47,7 @@ class MyCart extends StatelessWidget {
     return SomeWidget(
       // Just construct the UI once, using the current state of the cart.
       // #enddocregion build
-      Text('Cart: $cartModel'),
+      Text('Cart: ${cartModel.items}'),
       // #docregion build
     );
   }
@@ -39,16 +59,16 @@ class MyCatalog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MyCatalogItem("A"),
-        MyCatalogItem("B"),
-        MyCatalogItem("C"),
+        MyCatalogItem(Item("A")),
+        MyCatalogItem(Item("B")),
+        MyCatalogItem(Item("C")),
       ],
     );
   }
 }
 
 class MyCatalogItem extends StatelessWidget {
-  final String item;
+  final Item item;
 
   MyCatalogItem(this.item);
 
@@ -56,10 +76,10 @@ class MyCatalogItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(item),
+        Text(item.name),
         FlatButton(
           onPressed: () => myTapHandler(context),
-          child: Text("Add"),
+          child: Text("Add ${item.name}"),
         ),
       ],
     );

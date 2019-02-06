@@ -145,7 +145,7 @@ In `scoped_model`, the `Model` encapsulates your application state. For very sim
 
 In our shopping app example, we want to manage the state of the cart in a `Model`. We create a new class that extends Model. Like so:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (model)"?>
 ```dart
 class CartModel extends Model {
   /// Internal, private state of the cart.
@@ -171,7 +171,7 @@ The only code that is specific to `Model` is the call to `notifyListeners()`. Ca
 
 Model doesn't depend on any high-level classes in Flutter, so it's easily testable (you don't even need to use [widget testing](https://flutter.io/docs/testing#widget-testing) for it). For example, here's a simple unit test of CartModel:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
 test('adding item increases total cost', () {
   final cart = CartModel();
@@ -179,7 +179,7 @@ test('adding item increases total cost', () {
   cart.addListener(() {
     expect(cart.totalPrice, greaterThan(startingPrice));
   });
-  cart.add(Item(42));
+  cart.add(Item('Dash'));
 });
 ```
 
