@@ -16,8 +16,13 @@ if [[ $1 == '-h' || $1 == '--help' ]]; then usage; fi
 [[ -z "$DART_SITE_ENV_DEFS" ]] && . $rootDir/tool/env-set.sh
 [[ -z "$DART_SITE_ENV_DEFS" ]] && exit 1; # env-set failed, abort.
 
+# Use the version of pub from the Flutter repository instead of whatever
+# version is in the PATH.
+pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
+
 ARGS=''
-FRAG="$rootDir/tmp/_fragments"
+TMP="$rootDir/tmp"
+FRAG="$TMP/_fragments"
 
 if [[ -e "$FRAG" ]]; then echo Deleting old "$FRAG"; rm -Rf "$FRAG"; fi
 
@@ -27,7 +32,7 @@ if [[ $1 == '--legacy' ]]; then
 else
   ARGS+='--yaml '
   if [[ ! -e "pubspec.lock" ]]; then pub get; fi
-  pub run build_runner build --delete-conflicting-outputs --config excerpt --output="$FRAG"
+  "$pub" run build_runner build --delete-conflicting-outputs --config excerpt --output="$FRAG"
   FRAG+=/examples
 fi
 
@@ -54,8 +59,8 @@ echo "Source:     $SRC"
 echo "Fragments:  $FRAG"
 echo "Other args: $ARGS"
 echo
-LOG_FILE=$TMP/refresh-code-excerpts-log.txt
-pub run code_excerpt_updater \
+LOG_FILE="$TMP/refresh-code-excerpts-log.txt"
+"$pub" run code_excerpt_updater \
   --fragment-dir-path "$FRAG" \
   --src-dir-path examples \
   $ARGS \
@@ -64,3 +69,6 @@ pub run code_excerpt_updater \
 LOG=$(cat $LOG_FILE)
 
 [[ $LOG == *" 0 out of"* && $LOG != *Error* ]]
+
+echo "Cleaning up .dart_tool/"
+rm -r "$rootDir/.dart_tool/"
