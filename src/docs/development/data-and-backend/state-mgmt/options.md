@@ -1,14 +1,13 @@
 ---
-title: State management
-description: How to structure an app to manage the state of the data flowing through it.
+title: List of state management approaches
+prev:
+  title: Simple app state management
+  path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 
-"How do I best manage the state of the UI controls in a medium-to-large
-Flutter app?" is a question we often hear.
-This is an complex topic with strong, and differing, opinions.
-Until we provide more docs/examples, learn more at the
-following links, some of which have been
-contributed by the Flutter community:
+State management is a complex topic. If you feel that some of your questions haven't been answered, or that the approach described on these pages is not viable for your use cases, you are probably right.
+
+Learn more at the following links, many of which have been contributed by the Flutter community:
 
 ## General overview
 

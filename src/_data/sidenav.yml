@@ -97,6 +97,17 @@
       children:
         - title: State management
           permalink: /docs/development/data-and-backend/state-mgmt
+          children:
+            - title: Introduction
+              permalink: /docs/development/data-and-backend/state-mgmt/intro
+            - title: Think declaratively
+              permalink: /docs/development/data-and-backend/state-mgmt/declarative
+            - title: Ephemeral vs app state
+              permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+            - title: Simple app state management
+              permalink: /docs/development/data-and-backend/state-mgmt/simple
+            - title: Options
+              permalink: /docs/development/data-and-backend/state-mgmt/options
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
