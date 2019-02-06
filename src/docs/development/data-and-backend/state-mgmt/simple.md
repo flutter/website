@@ -41,6 +41,7 @@ In Flutter, it makes sense to keep the state above the widgets that use it.
 
 Why? In declarative frameworks like Flutter, if you want to change the UI, you have to rebuild it. There is no easy way to have `MyCart.updateWith(somethingNew)`. In other words, it's hard to imperatively change a widget from outside, by calling a method on it. And even if you could make this work, you would be fighting the framework instead of letting it help you.
 
+<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 void onTapHandler() {
@@ -51,6 +52,7 @@ void onTapHandler() {
 
 Even if you get the above code to work, you will then have to deal with the following in the `MyCart` widget:
 
+<!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
 void build(BuildContext context) {
@@ -68,6 +70,7 @@ You would need to take into consideration the current state of the UI and apply 
 
 In Flutter, you construct a new widget every time its contents change. Instead of `MyCart.updateWith(somethingNew)` (a method call) you use `MyCart(contents)` (a constructor). Because you can only construct new widgets in the build methods of their parents, if you want to change `contents`, it needs to live in `MyCart`'s parent or above.
 
+<!-- skip -->
 ```dart
 // GOOD
 void onTapHandler() {
@@ -78,6 +81,7 @@ void onTapHandler() {
 
 Now `MyCart` has only one code path for building any version of the UI.
 
+<!-- skip -->
 ```dart
 // GOOD
 void build(BuildContext context) {
@@ -106,6 +110,7 @@ When user clicks on one of the items in the catalog, it’s added to the cart. B
 
 A simple option is to provide a callback that `MyListItem` can call when it is clicked. Dart's functions are first class objects, so you can pass them around any way you want. So, inside `MyCatalog` you can have the following:
 
+<!-- skip -->
 ```dart
 void onTapCallback(Item item) {
   print('user tapped on $item');
@@ -114,7 +119,7 @@ void onTapCallback(Item item) {
 build(context) {
   return SomeWidget(
     // Construct the widget, passing it a reference to the method above.
-    MyListItem(onTapCallback);
+    MyListItem(onTapCallback)
   );
 }
 ```
@@ -138,6 +143,7 @@ In `scoped_model`, the `Model` encapsulates your application state. For very sim
 
 In our shopping app example, we want to manage the state of the cart in a `Model`. We create a new class that extends Model. Like so:
 
+<!-- skip -->
 ```dart
 class CartModel extends Model {
   /// Internal, private state of the cart.
@@ -163,6 +169,7 @@ The only code that is specific to `Model` is the call to `notifyListeners()`. Ca
 
 Model doesn't depend on any high-level classes in Flutter, so it's easily testable (you don't even need to use [widget testing](https://flutter.io/docs/testing#widget-testing) for it). For example, here's a simple unit test of CartModel:
 
+<!-- skip -->
 ```dart
 test('adding item increases total cost', () {
   final cart = CartModel();
@@ -185,6 +192,7 @@ We already know where to put it: above the widgets that will need to access it. 
 
 You don't want to place `ScopedModel` higher than necessary (because you don't want to pollute the scope). But in our case, the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
+<!-- skip -->
 ```dart
 void main() {
   final cart = CartModel();
@@ -204,6 +212,7 @@ Note that we're creating `ScopedModel<CartModel>` (read: "ScopedModel of CartMod
 
 If you want to provide more than one model, you need to nest the ScopedModels:
 
+<!-- skip -->
 ```dart
 ScopedModel<SomeOtherModel>(
   model: myOtherModel,
@@ -220,6 +229,7 @@ Now that `CartModel` is provided to widgets in our app through the `ScopedModel<
 
 This is done through the `ScopedModelDescendant` widget.
 
+<!-- skip -->
 ```dart
 ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) {
@@ -236,6 +246,7 @@ The builder is called with three attributes. The first one is `context`, which y
 
 The second attribute is `child`, which is there for optimization. If you have a large widget subtree under your `ScopedModelDescendant` that _doesn't_ change when the model changes, you can construct it once and get it through the builder.
 
+<!-- skip -->
 ```dart
 ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) => Column(
@@ -254,6 +265,7 @@ The third argument of the builder function is the model. That's what we were ask
 
 It is best practice to put your `ScopedModelDescendant` widgets as deep in the tree as possible. You don't want to rebuild large portions of the UI just because some detail somewhere changed.
 
+<!-- skip -->
 ```dart
 // DON'T DO THIS
 ScopedModelDescendant<CartModel>(
@@ -271,6 +283,7 @@ ScopedModelDescendant<CartModel>(
 
 Instead:
 
+<!-- skip -->
 ```dart
 // DO THIS
 HumongousWidget(
@@ -294,6 +307,7 @@ We could use `ScopedModelDescendant<CartModel>` for this, but that would be wast
 
 For this use case, we can use `ScopedModel.of`. 
 
+<!-- skip -->
 ```dart
 ScopedModel.of<CartModel>(context).add(item);
 ```

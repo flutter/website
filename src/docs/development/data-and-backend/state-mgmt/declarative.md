@@ -25,7 +25,6 @@ reflect the current state of your app:
 Source drawing for the png above: : https://docs.google.com/drawings/d/1RDcR5LyFtzhpmiT5-UupXBeos2Ban5cUTU0-JujS3Os/edit?usp=sharing
 {% endcomment %}
 
-
 When the state of your app changes (for example, the user flips a switch in the 
 settings screen), you change the state, and that triggers a redraw of the user 
 interface. There is no imperative changing of the UI itself (like 
