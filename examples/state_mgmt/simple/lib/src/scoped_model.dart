@@ -1,54 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
+CartModel somehowGetMyCartModel(BuildContext context) {
+  return ScopedModel.of<CartModel>(context, rebuildOnChange: true);
+}
+
 class CartModel extends Model {
   List<String> _items = [];
 
-  void add(String item) => _items.add(item);
+  void add(String item) {
+    _items.add(item);
+    notifyListeners();
+  }
+
+  @override
+  String toString() => '$_items';
 }
 
-class MyHomepage extends StatelessWidget {
+class MyCart extends StatelessWidget {
   @override
+  // #docregion build
+  // GOOD
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(42),
-      child: ScopedModel(
-        model: CartModel(),
-        child: MyCatalog(),
-      ),
+    var cartModel = somehowGetMyCartModel(context);
+    return SomeWidget(
+      // Just construct the UI once, using the current state of the cart.
+      // #enddocregion build
+      Text('Cart: $cartModel'),
+      // #docregion build
     );
   }
+  // #enddocregion build
 }
 
 class MyCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
-        MyListItem("A"),
-        MyListItem("B"),
-        MyListItem("C"),
+        MyCatalogItem("A"),
+        MyCatalogItem("B"),
+        MyCatalogItem("C"),
       ],
     );
   }
 }
 
-class MyListItem extends StatelessWidget {
+class MyCatalogItem extends StatelessWidget {
   final String item;
 
-  MyListItem(this.item);
-
-  CartModel somehowGetMyCartModel(BuildContext context) {
-    return ScopedModel.of<CartModel>(context);
-  }
-
-  // #docregion myTapHandler
-  // GOOD
-  void myTapHandler(BuildContext context) {
-    var cartModel = somehowGetMyCartModel(context);
-    cartModel.add(item);
-  }
-  // #enddocregion myTapHandler
+  MyCatalogItem(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -61,5 +62,42 @@ class MyListItem extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  // #docregion myTapHandler
+  // GOOD
+  void myTapHandler(BuildContext context) {
+    var cartModel = somehowGetMyCartModel(context);
+    cartModel.add(item);
+  }
+  // #enddocregion myTapHandler
+}
+
+class MyHomepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(42),
+      child: ScopedModel(
+        model: CartModel(),
+        child: Column(
+          children: [
+            MyCatalog(),
+            MyCart(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SomeWidget extends StatelessWidget {
+  final Widget child;
+
+  SomeWidget(this.child);
+
+  @override
+  Widget build(BuildContext context) {
+    return child;
   }
 }

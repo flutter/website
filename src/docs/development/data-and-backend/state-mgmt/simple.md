@@ -44,7 +44,7 @@ Why? In declarative frameworks like Flutter, if you want to change the UI, you h
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
-void onTapHandler() {
+void myTapHandler() {
   var cartWidget = somehowGetMyCartWidget();
   cartWidget.updateWith(item);
 }
@@ -55,7 +55,7 @@ Even if you get the above code to work, you will then have to deal with the foll
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
-void build(BuildContext context) {
+Widget build(BuildContext context) {
   return SomeWidget(
     // The initial state of the cart.
   );
@@ -81,13 +81,14 @@ void myTapHandler(BuildContext context) {
 
 Now `MyCart` has only one code path for building any version of the UI.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (build)"?>
 ```dart
 // GOOD
-void build(BuildContext context) {
-  var cartModel = somehowGetMyCartModel();
+Widget build(BuildContext context) {
+  var cartModel = somehowGetMyCartModel(context);
   return SomeWidget(
     // Just construct the UI once, using the current state of the cart.
+    // ···
   );
 }
 ```
