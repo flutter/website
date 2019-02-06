@@ -12,6 +12,8 @@ dependencies:
 
   cupertino_icons: ^0.1.2
 
+  scoped_model: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
