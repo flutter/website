@@ -70,11 +70,11 @@ You would need to take into consideration the current state of the UI and apply 
 
 In Flutter, you construct a new widget every time its contents change. Instead of `MyCart.updateWith(somethingNew)` (a method call) you use `MyCart(contents)` (a constructor). Because you can only construct new widgets in the build methods of their parents, if you want to change `contents`, it needs to live in `MyCart`'s parent or above.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (myTapHandler)"?>
 ```dart
 // GOOD
-void onTapHandler() {
-  var cartModel = somehowGetMyCartModel();
+void myTapHandler(BuildContext context) {
+  var cartModel = somehowGetMyCartModel(context);
   cartModel.add(item);
 }
 ```
