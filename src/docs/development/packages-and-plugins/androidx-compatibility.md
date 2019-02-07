@@ -21,7 +21,7 @@ incompatible with each other. Gradle will crash when trying to build APKs that
 use both sets of libraries.
 
 Some Flutter plugins have been migrated to AndroidX after originally using the
-original suport libraries. Flutter apps that aren't compatible with AndroidX
+original support libraries. Flutter apps that aren't compatible with AndroidX
 will fail to compile when using the latest version of these plugins.
 
 # Fixing AndroidX crashes in a Flutter app
@@ -48,29 +48,31 @@ libraries.
   some plugins that are still on the previous old support library. If your app
   depends on plugins that are using the old `android.support` packages, you'll
   need to [avoid AndroidX](#avoiding-androidx) instead.
-{{site.alert.note}}
+{{site.alert.end}}
 
 First make sure that `compileSdkVersion` is at least `28` in `app/build.gradle`.
 This property controls the version of the Android SDK that Gradle uses to build
 your APK. It doesn't affect the minimum SDK version that your app can run on.
-[More info here.](https://developer.android.com/studio/build/#module-level)
+See the Android developer docs on ["The module-level build
+file"](https://developer.android.com/studio/build/#module-level) for more
+information.
 
 ### Recommended: Use Android Studio to migrate your app
 
 This requires the latest version of Android Studio.
 
-1. Follow the instructions on [this
-   page](https://flutter.io/docs/development/tools/android-studio#android-ide)
-   for importing a Flutter app into Android Studio so that the IDE can parse the
-   Android code.
-2. Follow the instructions on [this
-   page](https://developer.android.com/jetpack/androidx/migrate) for migrating
-   an app to AndroidX automatically using Android Studio.
+1. Import your Flutter app into Android Studio so that the IDE can parse the
+   Android code following the steps at ["Editing Android code in Android Studio
+   with full IDE
+   support"](https://flutter.io/docs/development/tools/android-studio#android-ide).
+2. Then follow the instructions on ["Migrating to
+   AndroidX"](https://developer.android.com/jetpack/androidx/migrate).
 
 ### Not recommended: Manually migrate your app
 
-See [this page](https://developer.android.com/jetpack/androidx/migrate) for
-detailed instructions on how to do this.
+See ["Migrating to
+AndroidX"](https://developer.android.com/jetpack/androidx/migrate) for detailed
+instructions on how to do this.
 
 ## Avoiding AndroidX
 
