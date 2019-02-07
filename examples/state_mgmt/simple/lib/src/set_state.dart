@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// This is here so we don't need to show Scaffold and AppBar in the snippet.
+/// We need Scaffold+AppBar so that the smoke test can get out of this page.
+class HelperScaffoldWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: MyHomepage(),
+    );
+  }
+}
+
 // #docregion Ephemeral
 class MyHomepage extends StatefulWidget {
   @override

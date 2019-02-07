@@ -111,17 +111,18 @@ When user clicks on one of the items in the catalog, it’s added to the cart. B
 
 A simple option is to provide a callback that `MyListItem` can call when it is clicked. Dart's functions are first class objects, so you can pass them around any way you want. So, inside `MyCatalog` you can have the following:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
-void onTapCallback(Item item) {
-  print('user tapped on $item');
-}
-
+@override
 Widget build(BuildContext context) {
   return SomeWidget(
     // Construct the widget, passing it a reference to the method above.
-    MyListItem(onTapCallback)
+    MyListItem(myTapCallback),
   );
+}
+
+void myTapCallback(Item item) {
+  print('user tapped on $item');
 }
 ```
 
@@ -144,7 +145,7 @@ In `scoped_model`, the `Model` encapsulates your application state. For very sim
 
 In our shopping app example, we want to manage the state of the cart in a `Model`. We create a new class that extends Model. Like so:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (model)"?>
 ```dart
 class CartModel extends Model {
   /// Internal, private state of the cart.
@@ -170,7 +171,7 @@ The only code that is specific to `Model` is the call to `notifyListeners()`. Ca
 
 Model doesn't depend on any high-level classes in Flutter, so it's easily testable (you don't even need to use [widget testing](https://flutter.io/docs/testing#widget-testing) for it). For example, here's a simple unit test of CartModel:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
 ```dart
 test('adding item increases total cost', () {
   final cart = CartModel();
@@ -178,7 +179,7 @@ test('adding item increases total cost', () {
   cart.addListener(() {
     expect(cart.totalPrice, greaterThan(startingPrice));
   });
-  cart.add(Item(42));
+  cart.add(Item('Dash'));
 });
 ```
 
@@ -193,7 +194,7 @@ We already know where to put it: above the widgets that will need to access it. 
 
 You don't want to place `ScopedModel` higher than necessary (because you don't want to pollute the scope). But in our case, the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/main.dart (main)"?>
 ```dart
 void main() {
   final cart = CartModel();
@@ -230,9 +231,9 @@ Now that `CartModel` is provided to widgets in our app through the `ScopedModel<
 
 This is done through the `ScopedModelDescendant` widget.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/scoped_model.dart (descendant)"?>
 ```dart
-ScopedModelDescendant<CartModel>(
+return ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) {
     return Text("Total price: ${cart.totalPrice}");
   },
@@ -247,16 +248,16 @@ The builder is called with three attributes. The first one is `context`, which y
 
 The second attribute is `child`, which is there for optimization. If you have a large widget subtree under your `ScopedModelDescendant` that _doesn't_ change when the model changes, you can construct it once and get it through the builder.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)"?>
 ```dart
-ScopedModelDescendant<CartModel>(
-  builder: (context, child, cart) => Column(
-       children: [
-         // Use SomeExpensiveWidget here, without rebuilding every time.
-         child,
-         Text("Total price: ${cart.totalPrice}"),
-       ],
-     ),
+return ScopedModelDescendant<CartModel>(
+  builder: (context, child, cart) => Stack(
+        children: [
+          // Use SomeExpensiveWidget here, without rebuilding every time.
+          child,
+          Text("Total price: ${cart.totalPrice}"),
+        ],
+      ),
   // Build the expensive widget here.
   child: SomeExpensiveWidget(),
 );
@@ -266,17 +267,17 @@ The third argument of the builder function is the model. That's what we were ask
 
 It is best practice to put your `ScopedModelDescendant` widgets as deep in the tree as possible. You don't want to rebuild large portions of the UI just because some detail somewhere changed.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
-ScopedModelDescendant<CartModel>(
+return ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) {
     return HumongousWidget(
       // ...
       child: AnotherMonstrousWidget(
         // ...
         child: Text('Total price: ${cart.totalPrice}'),
-      )
+      ),
     );
   },
 );
@@ -284,10 +285,10 @@ ScopedModelDescendant<CartModel>(
 
 Instead:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
 ```dart
 // DO THIS
-HumongousWidget(
+return HumongousWidget(
   // ...
   child: AnotherMonstrousWidget(
     // ...
@@ -308,7 +309,7 @@ We could use `ScopedModelDescendant<CartModel>` for this, but that would be wast
 
 For this use case, we can use `ScopedModel.of`. 
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)"?>
 ```dart
 ScopedModel.of<CartModel>(context).add(item);
 ```
