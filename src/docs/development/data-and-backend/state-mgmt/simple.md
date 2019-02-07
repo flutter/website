@@ -248,16 +248,16 @@ The builder is called with three attributes. The first one is `context`, which y
 
 The second attribute is `child`, which is there for optimization. If you have a large widget subtree under your `ScopedModelDescendant` that _doesn't_ change when the model changes, you can construct it once and get it through the builder.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (child)"?>
 ```dart
-ScopedModelDescendant<CartModel>(
-  builder: (context, child, cart) => Column(
-       children: [
-         // Use SomeExpensiveWidget here, without rebuilding every time.
-         child,
-         Text("Total price: ${cart.totalPrice}"),
-       ],
-     ),
+return ScopedModelDescendant<CartModel>(
+  builder: (context, child, cart) => Stack(
+        children: [
+          // Use SomeExpensiveWidget here, without rebuilding every time.
+          child,
+          Text("Total price: ${cart.totalPrice}"),
+        ],
+      ),
   // Build the expensive widget here.
   child: SomeExpensiveWidget(),
 );
@@ -267,17 +267,17 @@ The third argument of the builder function is the model. That's what we were ask
 
 It is best practice to put your `ScopedModelDescendant` widgets as deep in the tree as possible. You don't want to rebuild large portions of the UI just because some detail somewhere changed.
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonLeafDescendant)"?>
 ```dart
 // DON'T DO THIS
-ScopedModelDescendant<CartModel>(
+return ScopedModelDescendant<CartModel>(
   builder: (context, child, cart) {
     return HumongousWidget(
       // ...
       child: AnotherMonstrousWidget(
         // ...
         child: Text('Total price: ${cart.totalPrice}'),
-      )
+      ),
     );
   },
 );
@@ -285,10 +285,10 @@ ScopedModelDescendant<CartModel>(
 
 Instead:
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (leafDescendant)"?>
 ```dart
 // DO THIS
-HumongousWidget(
+return HumongousWidget(
   // ...
   child: AnotherMonstrousWidget(
     // ...
@@ -309,7 +309,7 @@ We could use `ScopedModelDescendant<CartModel>` for this, but that would be wast
 
 For this use case, we can use `ScopedModel.of`. 
 
-<!-- skip -->
+<?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)"?>
 ```dart
 ScopedModel.of<CartModel>(context).add(item);
 ```
