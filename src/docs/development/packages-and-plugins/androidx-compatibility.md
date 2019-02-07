@@ -48,7 +48,7 @@ libraries.
   some plugins that are still on the previous old support library. If your app
   depends on plugins that are using the old `android.support` packages, you'll
   need to [avoid AndroidX](#avoiding-androidx) instead.
-{{site.alert.note}}
+{{site.alert.end}}
 
 First make sure that `compileSdkVersion` is at least `28` in `app/build.gradle`.
 This property controls the version of the Android SDK that Gradle uses to build
