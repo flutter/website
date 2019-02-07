@@ -84,8 +84,8 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
       release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
       [Flutter issue #22595][].
 
-      [libusbmuxd issue #46]: https://github.com/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
-      [Flutter issue #22595]: https://github.com/flutter/flutter/issues/22595
+      [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
+      [Flutter issue #22595]: {{site.github}}/flutter/flutter/issues/22595
     {{site.alert.end}}
 
     If any of these commands fail, run `brew doctor` and follow the instructions

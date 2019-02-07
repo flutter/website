@@ -17,7 +17,7 @@ Learn more about the Flutter framework from the following pages:
 ## Apply your existing knowledge
 
 * [Flutter for Android developers](/docs/get-started/flutter-for/android-devs)
-* [From Java to Dart](https://codelabs.developers.google.com/codelabs/from-java-to-dart) codelab
+* [From Java to Dart]({{site.codelabs}}/codelabs/from-java-to-dart) codelab
 * [Flutter for iOS developers](/docs/get-started/flutter-for/ios-devs)
 * [Flutter for React Native developers](/docs/get-started/flutter-for/react-native-devs)
 * [Flutter for web developers](/docs/get-started/flutter-for/web-devs)
@@ -25,10 +25,10 @@ Learn more about the Flutter framework from the following pages:
 
 ## Other resources
 
-* [Flutter samples](https://github.com/flutter/samples/blob/master/INDEX.md)
+* [Flutter samples]({{site.github}}/flutter/samples/blob/master/INDEX.md)
 * [Flutter cookbook](/docs/cookbook)
 * [Bootstrap into Dart: learn more about the language](/docs/resources/bootstrap-into-dart)
-* [Flutter API Docs](https://docs.flutter.io/)
+* [Flutter API Docs]({{site.api}})
 * [Udacity online Flutter training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
 Reach out to us at our [mailing list][]. We'd love to hear from you!

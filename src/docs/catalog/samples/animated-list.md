@@ -248,7 +248,7 @@ void main() {
 ## See also
 
 * The
-  [Components-Lists: Controls](https://material.io/guidelines/components/lists-controls.html#)
-  section of the [Material Design](https://material.io) specification:
+  [Components-Lists: Controls]({{site.material}}/guidelines/components/lists-controls.html#)
+  section of the [Material Design]({{site.material}}) specification:
 * The source code in
   [examples/catalog/lib/animated_list.dart]({{site.repo.flutter}}/tree/{{site.branch}}/examples/catalog/lib/animated_list.dart).

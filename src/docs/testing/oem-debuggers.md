@@ -28,7 +28,7 @@ plugins installed and configured.
 {{site.alert.tip}}
   Connect to a physical device when debugging, rather than an emulator or
   simulator, which don't support profile mode. For more information, see
-  [Flutter's modes](https://github.com/flutter/flutter/wiki/Flutter's-modes).
+  [Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
 {{site.alert.end}}
 
 ### Dart debugger
@@ -156,7 +156,7 @@ Dart debugger and, 2) the Android Gradle debugger.
 * Create a basic Flutter app.
 
 * Replace `lib/main.dart` with the following example code from the
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher)
+[`url_launcher`]({{site.pub}}/packages/url_launcher)
 package:
 
 {% prettify dart %}
@@ -350,11 +350,11 @@ iOS, and Android:
 ### Android
 
 You can find the following debugging resources on
-[developer.android.com](https://developer.android.com).
+[developer.android.com]({{site.android-dev}}).
 
-* [Debug your app](https://developer.android.com/studio/debug)
+* [Debug your app]({{site.android-dev}}/studio/debug)
 * [Android Debug
-  Bridge (adb)](https://developer.android.com/studio/command-line/adb)
+  Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
 
 ### iOS
 

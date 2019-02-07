@@ -8,12 +8,13 @@ next:
   path: /docs/cookbook/testing/integration/introduction
 ---
 
-If we have a relatively small collection of key-values that we'd like to save,
-we can use the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
-plugin.
+If you have a relatively small collection of key-values that you'd like
+to save, you can use the
+[shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
 
-Normally we would have to write native platform integrations for storing data on
-both platforms. Fortunately, the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
+Normally you would have to write native platform integrations for storing
+data on both platforms. Fortunately, the
+[shared_preferences]({{site.pub-pkg}}/shared_preferences)
 plugin can be used to persist key-value data on disk. The shared preferences
 plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
@@ -27,8 +28,9 @@ providing a persistent store for simple data.
 
 ## 1. Add the dependency
 
-Before we start, we need to add the [shared_preferences](https://pub.dartlang.org/packages/shared_preferences)
-plugin to our `pubspec.yaml` file:
+Before starting, you need to add the
+[shared_preferences]({{site.pub-pkg}}/shared_preferences)
+plugin to the `pubspec.yaml` file:
 
 ```yaml
 dependencies:
@@ -39,7 +41,7 @@ dependencies:
 
 ## 2. Save data
 
-To persist data, we can use the setter methods provided by the
+To persist data, use the setter methods provided by the
 `SharedPreferences` class. Setter methods are available for various primitive
 types, such as `setInt`, `setBool`, and `setString`.
 
@@ -57,9 +59,9 @@ prefs.setInt('counter', counter);
 
 ## 3. Read data
 
-To read data, we can use the appropriate getter method provided by the
+To read data, use the appropriate getter method provided by the
 `SharedPreferences` class. For each setter there is a corresponding getter.
-For example, we can use the `getInt`, `getBool`, and `getString` methods.
+For example, you can use the `getInt`, `getBool`, and `getString` methods.
 
 <!-- skip -->
 ```dart
@@ -71,7 +73,7 @@ final counter = prefs.getInt('counter') ?? 0;
 
 ## 4. Remove data
 
-To delete data, we can use the `remove` method.
+To delete data, use the `remove` method.
 
 <!-- skip -->
 ```dart
@@ -84,21 +86,23 @@ prefs.remove('counter');
 
 While it is easy and convenient to use key-value storage, it has limitations:
 
-- Only primitive types can be used: `int`, `double`, `bool`, `string` and `stringList`
-- It's not designed to store a lot of data.
+* Only primitive types can be used: `int`, `double`, `bool`, `string` and
+  `stringList`
+* It's not designed to store a lot of data.
 
-For more information about Shared Preferences on Android, please visit
-[Shared preferences documentation](https://developer.android.com/guide/topics/data/data-storage#pref)
+For more information about Shared Preferences on Android, see
+[Shared preferences
+documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.
 
 ## Testing support
 
 It can be a good idea to test code that persists data using
-`shared_preferences`. To do so, we'll need to mock out the `MethodChannel` used
-by the `shared_preferences` library.
+`shared_preferences`. To do so, you'll need to mock out the
+`MethodChannel` used by the `shared_preferences` library.
 
-We can populate `SharedPreferences` with initial values in our tests by running
-the following code in a `setupAll` method in our test files:
+You can populate `SharedPreferences` with initial values in your tests
+by running the following code in a `setupAll` method in your test files:
 
 <!-- skip -->
 ```dart
@@ -120,7 +124,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of our application.
+  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

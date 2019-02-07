@@ -208,7 +208,7 @@ get bar => foo;
 ```
 
 Read more about the [differences between the `const` and `final`
-keywords](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) in Dart.
+keywords]({{site.news}}/2012/06/const-static-final-oh-my.html) in Dart.
 
 ## Recent UI change is excluded
 
@@ -316,7 +316,7 @@ last compilation. The following libraries are recompiled:
 * The libraries from the main library leading to affected libraries.
 
 In Dart 2, those libraries' Dart source code are turned into
-[kernel files](https://github.com/dart-lang/sdk/tree/master/pkg/kernel) and
+[kernel files]({{site.github}}/dart-lang/sdk/tree/master/pkg/kernel) and
 sent to the mobile device's Dart VM.
 
 The Dart VM re-loads all libraries from the new kernel file. So far no code is
@@ -325,4 +325,4 @@ re-executed.
 The hot reload mechanism then causes the Flutter framework to trigger a
 rebuild/re-layout/repaint of all existing widgets and render objects.
 
-[static fields are lazily initialized]: https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html
+[static fields are lazily initialized]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html

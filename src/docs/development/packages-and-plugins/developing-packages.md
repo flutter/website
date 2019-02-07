@@ -18,7 +18,7 @@ minimal package consists of:
 {{site.alert.note}}
   For a list of dos and don'ts when writing an effective plugin,
   see [Writing a good
-  plugin](https://medium.com/flutter-io/writing-a-good-flutter-plugin-1a561b986c9c)
+  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
   on Medium.
 {{site.alert.end}}
 
@@ -27,15 +27,15 @@ minimal package consists of:
 Packages can contain several kinds of content:
 
 * *Dart packages*: General packages written in Dart, for example the
-  [`path`](https://pub.dartlang.org/packages/path) package. Some of these may
+  [`path`]({{site.pub}}/packages/path) package. Some of these may
   contain Flutter specific functionality and thus have a dependency on the
   Flutter framework, restricting their use to Flutter only, for example the
-  [`fluro`](https://pub.dartlang.org/packages/fluro) package.
+  [`fluro`]({{site.pub}}/packages/fluro) package.
 
 * *Plugin packages*: A specialized Dart package which contain an API written in
   Dart code combined with a platform-specific implementation for Android (using
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
-  the [`battery`](https://pub.dartlang.org/packages/battery) plugin package.
+  the [`battery`]({{site.pub}}/packages/battery) plugin package.
 
 ## Developing Dart packages {#dart}
 
@@ -65,7 +65,7 @@ in a `test` directory.
 
 For additional details on how to organize the package contents, see the
 [Dart library
-package](https://www.dartlang.org/guides/libraries/create-library-packages)
+package]({{site.dart-site}}/guides/libraries/create-library-packages)
 documentation.
 
 ## Developing plugin packages {#plugin}
@@ -182,7 +182,7 @@ It is recommended practice to add the following documentation to all packages:
 
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the [device_info
-docs](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
+docs]({{site.pub-api}}/device_info/latest)
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
@@ -203,12 +203,12 @@ If you wish to generate API documentation locally on your developement machine, 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
 For tips on how to write API documentation, see [Effective Dart:
-Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
+Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
 
 ## Publishing packages {#publish}
 
 Once you have implemented a package, you can publish it on the
-[Package site](https://pub.dartlang.org/), so that other developers can
+[Pub site]({{site.pub}}), so that other developers can
 easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
@@ -227,14 +227,15 @@ $ flutter packages pub publish
 ```
 
 For details on publishing, see the
-[publishing docs](https://www.dartlang.org/tools/pub/publishing).
-for the Package site.
+[publishing docs]({{site.dart-site}}/tools/pub/publishing).
+for the Pub site.
 
 ## Handling package interdependencies {#dependencies}
 
-If you are developing a package `hello` that depends on the Dart API exposed by another package,
-you need to add that package to the `dependencies` section of your `pubspec.yaml` file.
-The code below makes the Dart API of the `url_launcher` plugin available to `hello`:
+If you are developing a package `hello` that depends on the Dart API exposed
+by another package, you need to add that package to the `dependencies`
+section of your `pubspec.yaml` file.  The code below makes the Dart API
+of the `url_launcher` plugin available to `hello`:
 
 In `hello/pubspec.yaml`:
 ```yaml
@@ -282,7 +283,7 @@ Suppose you want to use `some_package` and `other_package` in your package
 `hello`, and both of these depend on `url_launcher`, but in different
 versions. Then we have a potential conflict. The best way to avoid this
 is for package authors to use [version
-ranges](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
+ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
 rather than specific versions when specifying dependencies.
 
 ```yaml

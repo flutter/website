@@ -61,7 +61,7 @@ whether it depends on Flutter libraries or not.
 
 Write a Flutter unit test as a normal `package:test` test. Writing unit tests
 using `package:test` is documented on the [Dart
-testing](https://github.com/dart-lang/test/blob/master/README.md)
+testing]({{site.github}}/dart-lang/test/blob/master/README.md)
 repo.
 
 Example:
@@ -107,10 +107,10 @@ For information on how to create mock services, see
 
 You implement a widget test in a similar way as a unit test. To perform an
 interaction with a widget in your test, use the
-[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
+[`WidgetTester`]({{site.api}}/flutter/flutter_test/WidgetTester-class.html)
 utility that Flutter provides. For example, you can send tap and scroll
 gestures. You can also use
-[`WidgetTester`](https://docs.flutter.io/flutter/flutter_test/WidgetTester-class.html)
+[`WidgetTester`]({{site.api}}/flutter/flutter_test/WidgetTester-class.html)
 to find child widgets in the widget tree, read text, and verify that the values
 of widget properties are correct.
 
@@ -163,10 +163,10 @@ void main() {
 
 Run `flutter test test/widget_test.dart`.
 
-Check out [`package:flutter_test` API](https://docs.flutter.io/flutter/flutter_test/flutter_test-library.html)
+Check out [`package:flutter_test` API]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 for all the utilities available for widget testing.
 
-To help debug widget tests, you can use the [`debugDumpApp()`](https://docs.flutter.io/flutter/widgets/debugDumpApp.html) function to visualize the UI state of your test or simply `flutter run test/widget_test.dart` to see your test run in your preferred runtime environment such as a simulator or a device. During a `flutter run` session on a widget test, you can also interactively tap parts of the screen for the Flutter tool to print the suggested [`Finder`](https://docs.flutter.io/flutter/flutter_test/CommonFinders-class.html).
+To help debug widget tests, you can use the [`debugDumpApp()`]({{site.api}}/flutter/widgets/debugDumpApp.html) function to visualize the UI state of your test or simply `flutter run test/widget_test.dart` to see your test run in your preferred runtime environment such as a simulator or a device. During a `flutter run` session on a widget test, you can also interactively tap parts of the screen for the Flutter tool to print the suggested [`Finder`]({{site.api}}/flutter/flutter_test/CommonFinders-class.html).
 
 
 ## Integration testing
@@ -190,7 +190,7 @@ and APIs, collectively referred to as _Flutter Driver_, to do just that.
 Flutter Driver is:
 
 * a command-line tool `flutter drive`
-* a package `package:flutter_driver` ([API](https://docs.flutter.io/flutter/flutter_driver/FlutterDriver-class.html))
+* a package `package:flutter_driver` ([API]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html))
 
 Together, the two allow you to:
 
@@ -334,10 +334,14 @@ but for the `_test` suffix in it.
 
 For information on continuous deployment and testing, see the following:
 
-* [Continuous Delivery using fastlane with Flutter](/docs/deployment/fastlane-cd/)
-* [Test Flutter apps on Travis](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c)
-* [GitLab Continuous Integration (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
+* [Continuous Delivery using fastlane with
+  Flutter](/docs/deployment/fastlane-cd/)
+* [Test Flutter apps on
+  Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+* [GitLab Continuous Integration
+  (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
   example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library](https://github.com/brianegan/flutter_redux).
-* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
+* [Codemagic CI/CD for
+  Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)

@@ -14,16 +14,16 @@ typography, icons, and more.
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 This is a demo app from the
-[Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+[Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 a collection of Flutter sample apps you can run after installing Flutter
 and setting up your environment. Shrine has high-quality scrolling images,
 interactive cards, buttons, dropdown lists, and a shopping cart page.
 To look at the single codebase for this and more examples,
 [visit our GitHub
-repository](https://github.com/flutter/flutter/tree/master/examples).
+repository]({{site.github}}/flutter/flutter/tree/master/examples).
 
 No mobile development experience is required to get started. Apps are written
-in [Dart](https://www.dartlang.org), which looks familiar if you've used a
+in [Dart]({{site.dart-site}}), which looks familiar if you've used a
 language like Java or JavaScript. Experience with object-oriented languages
 is definitely helpful, but even non-programmers have made Flutter apps!
 
@@ -77,15 +77,16 @@ compares the new and old widgets and efficiently updates the user interface.
 #### Composition > inheritance
 
 Widgets are themselves often composed of many small, single-purpose widgets that
-combine to produce powerful effects.  For example, [Container](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
+combine to produce powerful effects.  For example,
+[Container]({{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
 a commonly-used widget, is made up of several widgets responsible for layout,
 painting, positioning, and sizing. Specifically, Container is made up of
-[LimitedBox](https://docs.flutter.io/flutter/widgets/LimitedBox-class.html),
-[ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html),
-[Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
-[Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html),
-[DecoratedBox](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html),
-and [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
+[LimitedBox]({{site.api}}/flutter/widgets/LimitedBox-class.html),
+[ConstrainedBox]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
+[Align]({{site.api}}/flutter/widgets/Align-class.html),
+[Padding]({{site.api}}/flutter/widgets/Padding-class.html),
+[DecoratedBox]({{site.api}}/flutter/widgets/DecoratedBox-class.html),
+and [Transform]({{site.api}}/flutter/widgets/Transform-class.html)
 widgets.  Rather than subclassing Container to produce a customized effect, you
 can compose these, and other, simple widgets in novel ways.
 
@@ -111,7 +112,7 @@ building upon the previous layer.
 The upper layers of the framework are used more frequently than the lower
 layers. For the complete set of libraries that make up
 the Flutter's layered framework, see our
-[API documentation](https://docs.flutter.io).
+[API documentation]({{site.api}}).
 
 The goal of this design is to help you do more with less code.  For example,
 the Material layer is built by composing basic widgets from the widgets layer,
@@ -131,17 +132,17 @@ wish into the lower layers.
 ### Building widgets
 
 You define the unique characteristics of a widget by implementing a
-[build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
+[build]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
 function that returns a tree (or hierarchy) of widgets. This tree represents
 the widget's part of the user interface in more concrete terms.
 For example, a toolbar widget might have a build function that returns
-a [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
-of some [text](https://docs.flutter.io/flutter/widgets/Text-class.html) and
-[various](https://docs.flutter.io/flutter/material/IconButton-class.html)
-[buttons](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
+a [horizontal layout]({{site.api}}/flutter/widgets/Row-class.html)
+of some [text]({{site.api}}/flutter/widgets/Text-class.html) and
+[various]({{site.api}}/flutter/material/IconButton-class.html)
+[buttons]({{site.api}}/flutter/material/PopupMenuButton-class.html).
 The framework then recursively asks each of these widgets to build until the
 process bottoms out in [fully concrete
-widgets](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
+widgets]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html),
 which the framework then stitches together into a tree.
 
 A widget's build function should be free of side effects.  Whenever it is asked
@@ -164,19 +165,19 @@ of the counter is the state for that widget. When that value changes, the widget
 needs to be rebuilt to update the UI.
 
 These widgets subclass
-[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 (rather than
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html))
 and store their mutable state in a subclass of
-[State](https://docs.flutter.io/flutter/widgets/State-class.html).
+[State]({{site.api}}/flutter/widgets/State-class.html).
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
 Whenever you mutate a State object (e.g., increment the counter), you must call
-[setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() to
+[setState]({{site.api}}/flutter/widgets/State/setState.html)() to
 signal the framework to update the user interface by calling the State's build
-method again. For an example of managing state, see the
-[MyApp template](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
+method again. For an example of managing state, see the [MyApp
+template]({{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
 that's created with each new Flutter project.
 
 Having separate state and widget objects lets other widgets treat stateless and
@@ -212,8 +213,8 @@ We're open source and would love to hear from you.
 - [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
 
 
-[issues]: https://github.com/flutter/flutter/issues
-[apidocs]: https://docs.flutter.io
-[so]: https://stackoverflow.com/tags/flutter
-[mailinglist]: https://groups.google.com/d/forum/flutter-dev
+[issues]: {{site.github}}/flutter/flutter/issues
+[apidocs]: {{site.api}}
+[so]: {{site.so}}/tags/flutter
+[mailinglist]: {{site.groups}}/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter

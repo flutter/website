@@ -343,7 +343,7 @@ More information: [Gestures in Flutter](/docs/development/ui/advanced/gestures)
 
 Thus far, we've used only stateless widgets. Stateless widgets receive arguments
 from their parent widget, which they store in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables. When a widget is asked to
 [build]({{api}}/widgets/StatelessWidget/build.html), it uses these stored
 values to derive new arguments for the widgets it creates.
@@ -543,7 +543,7 @@ class ShoppingListItem extends StatelessWidget {
 
 The `ShoppingListItem` widget follows a common pattern for stateless widgets. It
 stores the values it receives in its constructor in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables, which it then uses during its
 [build]({{api}}/widgets/StatelessWidget/build.html) function. For example, the
 `inCart` boolean toggles between two visual appearances: one that uses the

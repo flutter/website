@@ -112,9 +112,10 @@ With our `DetailScreen` in place, we're ready to perform the Navigation! In our
 case, we'll want to Navigate to the `DetailScreen` when a user taps on a Todo in
 our List. When we do so, we'll also want to pass the Todo to the `DetailScreen`.
 
-To achieve this, we'll write an [`onTap`](https://docs.flutter.io/flutter/material/ListTile/onTap.html)
+To achieve this, we'll write an
+[`onTap`]({{site.api}}/flutter/material/ListTile/onTap.html)
 callback for our `ListTile` Widget. Within our `onTap` callback, we'll once
-again employ the [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+again employ the [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.
 
 <!-- skip -->

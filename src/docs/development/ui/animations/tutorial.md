@@ -5,7 +5,7 @@ description: A tutorial showing how to build explicit animations in Flutter.
 diff2html: true
 ---
 
-{% assign api = 'https://docs.flutter.io/flutter' -%}
+{% assign api = '{{site.api}}/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
@@ -383,7 +383,7 @@ With these few changes, you’ve created your first animation in Flutter!
   {% endprettify %}
 
   You can learn more about cascade notation in the
-  [Dart Language Tour.](https://www.dartlang.org/guides/language/language-tour)
+  [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
 </aside>
 
 ###  Simplifying with Animated&shy;Widget
@@ -797,15 +797,15 @@ physics simulations and `fling()` methods. See the [animations landing
 page](/docs/development/ui/animations) for the latest available documents and
 examples.
 
-[AnimatedWidget]: https://docs.flutter.io/flutter/widgets/AnimatedWidget-class.html
-[Animatable]: https://docs.flutter.io/flutter/animation/Animatable-class.html
-[Animation]: https://docs.flutter.io/flutter/animation/Animation-class.html
-[AnimatedBuilder]: https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html
-[AnimationController]: https://docs.flutter.io/flutter/animation/AnimationController-class.html
-[Curves]: https://docs.flutter.io/flutter/animation/Curves-class.html
-[CurvedAnimation]: https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html
-[FadeTransition]: https://docs.flutter.io/flutter/widgets/FadeTransition-class.html
-[RepaintBoundary]: https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html
-[SlideTransition]: https://docs.flutter.io/flutter/widgets/SlideTransition-class.html
-[SizeTransition]: https://docs.flutter.io/flutter/widgets/SizeTransition-class.html
-[Tween]: https://docs.flutter.io/flutter/animation/Tween-class.html
+[AnimatedWidget]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
+[Animatable]: {{site.api}}/flutter/animation/Animatable-class.html
+[Animation]: {{site.api}}/flutter/animation/Animation-class.html
+[AnimatedBuilder]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
+[Curves]: {{site.api}}/flutter/animation/Curves-class.html
+[CurvedAnimation]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
+[FadeTransition]: {{site.api}}/flutter/widgets/FadeTransition-class.html
+[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[SlideTransition]: {{site.api}}/flutter/widgets/SlideTransition-class.html
+[SizeTransition]: {{site.api}}/flutter/widgets/SizeTransition-class.html
+[Tween]: {{site.api}}/flutter/animation/Tween-class.html

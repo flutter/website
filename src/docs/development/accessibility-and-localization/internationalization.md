@@ -1,6 +1,7 @@
 ---
 title: Internation&shy;alizing Flutter apps
 short-title: i18n
+description: How to internationalize your Flutter app.
 ---
 
 {{site.alert.secondary}}
@@ -30,11 +31,14 @@ can also be internationalized using the same classes and logic.
   If you'd like to start out by reading the code for an internationalized
   Flutter app, here are two small examples. The first one is intended to
   be as simple as possible, and the second one uses the APIs and tools
-  provided by the [intl](https://pub.dartlang.org/packages/intl) package.
-  If Dart's intl package is new to you, see [Using the Dart intl tools.](#dart-tools)
+  provided by the [intl]({{site.pub-pkg}}/intl) package.
+  If Dart's intl package is new to you, see [Using the Dart intl
+  tools.](#dart-tools)
 
-  * [Minimal internationalization](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
-  * [Internationaliation based on the `intl` package](https://github.com/flutter/website/tree/master/examples/internationalization/intl_example)
+  * [Minimal
+    internationalization]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+  * [Internationaliation based on the `intl`
+    package]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
 </aside>
 
 ## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
@@ -94,7 +98,7 @@ structured, can be found below.
 <a name="tracking-locale"></a>
 ## Tracking the locale: The Locale class and the Localizations widget
 
-The [`Locale`](https://docs.flutter.io/flutter/dart-ui/Locale-class.html)
+The [`Locale`]({{site.api}}/flutter/dart-ui/Locale-class.html)
 class is used to identify the user's language. Mobile devices support
 setting the locale for all applications, usually via a system settings
 menu. Internationalized apps respond by displaying values that are
@@ -103,10 +107,10 @@ from English to French then a Text widget that displayed "Hello World"
 would be rebuilt with "Bonjour le monde".
 
 The
-[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
 widget defines the locale for its child and the localized resources
 that the child depends on. The
-[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)
 widget creates a Localizations widget and rebuilds it if the system's locale changes.
 
 You can always lookup an app's current locale with `Localizations.localeOf()`:
@@ -120,11 +124,11 @@ Locale myLocale = Localizations.localeOf(context);
 
 The Localizations widget is used to load and lookup objects that
 contain collections of localized values. Apps refer to these objects with
-[`Localizations.of(context,type)`](https://docs.flutter.io/flutter/widgets/Localizations/of.html).
+[`Localizations.of(context,type)`]({{site.api}}/flutter/widgets/Localizations/of.html).
 If the device's locale changes, the Localizations widget automatically
 loads values for the new locale and then rebuilds widgets that used it.
 This happens because Localizations works like an
-[InheritedWidget](https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html).
+[InheritedWidget]({{site.api}}/flutter/widgets/InheritedWidget-class.html).
 When a build function refers to an inherited widget an implicit dependency
 on the inherited widget is created. When an inherited widget changes
 (when the Localizations widget's locale changes), its dependent
@@ -133,7 +137,7 @@ contexts are rebuilt.
 Localized values are loaded by the Localizations widget's list of
 [LocalizationsDelegate]({{site.api}}/flutter/widgets/LocalizationsDelegate-class.html)s.
 Each delegate must define an asynchronous
-[`load()`](https://docs.flutter.io/flutter/widgets/LocalizationsDelegate/load.html)
+[`load()`]({{site.api}}/flutter/widgets/LocalizationsDelegate/load.html)
 method that produces an object which encapsulates a collection of
 localized values. Typically these objects define one method per localized value.
 
@@ -143,11 +147,12 @@ table of objects, one per LocalizationsDelegate. To retrieve the
 object produced by one of the LocalizationsDelegate's `load` methods,
 you specify a BuildContext and the object's type.
 
-For example, the localized strings for the Material Components widgets are defined by the
-[MaterialLocalizations](https://docs.flutter.io/flutter/material/MaterialLocalizations-class.html)
+For example,
+the localized strings for the Material Components widgets are defined by the
+[MaterialLocalizations]({{site.api}}/flutter/material/MaterialLocalizations-class.html)
 class. Instances of this class are created by a LocalizationDelegate
 provided by the
-[MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 class. They can be retrieved with `Localizations.of`:
 
 {% prettify dart %}
@@ -181,10 +186,11 @@ different delegate of the same base type is specified with the app's
 `localizationsDelegates` parameter.
 
 The flutter_localizations package includes multi-language
-implementations of the localizations interfaces called GlobalMaterialLocalizations
-and GlobalWidgetsLocalizations. International apps must specify
-localization delegates for these classes as described in
-[Setting up an internationalized app.](#setting-up)
+implementations of the localizations interfaces called
+GlobalMaterialLocalizations and GlobalWidgetsLocalizations.
+International apps must specify localization delegates for
+these classes as described in [Setting up an internationalized
+app.](#setting-up)
 
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -210,7 +216,7 @@ of the corresponding classes. For example,
 that produces an instance of GlobalMaterialLocalizations.
 
 As of May 2018, the global localization classes support [about 24
-languages.](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
+languages.]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 <a name="defining-class"></a>
 ## Defining a class for the app's localized resources
@@ -219,20 +225,21 @@ Putting all of this together for an internationalized app usually
 starts with the class that encapsulates the app's localized
 values. The example that follows is typical of such classes.
 
-[Complete source code](https://github.com/flutter/website/tree/master/examples/internationalization/intl_example)
+[Complete source
+code]({{site.github}}/flutter/flutter/tree/master/examples/internationalization/intl_example)
 for this example app.
 
 This example is based on the APIs and tools provided by the
-[intl](https://pub.dartlang.org/packages/intl) package. [An alternative class
-for the app's localized resources](#alternative-class) describes
-[an example](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
+[intl]({{site.pub-pkg}}/intl) package. [An alternative class
+for the app's localized resources](#alternative-class) describes [an
+example]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
 that doesn't depend on the intl package.
 
-The DemoLocalizations class contains the app's strings (just one for the example)
-translated into the locales that the app supports. It uses the `initializeMessages()`
-function generated by Dart's [intl package](https://pub.dartlang.org/packages/intl)
-to load the translated strings, and
-[`Intl.message()`](https://www.dartdocs.org/documentation/intl/0.15.1/intl/Intl/message.html)
+The DemoLocalizations class contains the app's strings (just one for the
+example) translated into the locales that the app supports.
+It uses the `initializeMessages()` function generated by Dart's [intl
+package]({{site.pub-pkg}}/intl) to load the translated strings, and
+[`Intl.message()`]({{site.pub-api}}/intl/latest/intl/Intl/message.html)
 to look them up.
 
 {% prettify dart %}
@@ -260,9 +267,10 @@ class DemoLocalizations {
 }
 {% endprettify %}
 
-A class based on the `intl` package imports a generated message catalog that provides
-the `initializeMessages()` function and the per-locale backing store for `Intl.message()`.
-The message catalog is produced by an [`intl` tool](#dart-tools) that analyzes the
+A class based on the `intl` package imports a generated message catalog
+that provides the `initializeMessages()` function and the per-locale
+backing store for `Intl.message()`.  The message catalog is produced by an
+[`intl` tool](#dart-tools) that analyzes the
 source code for classes that contain `Intl.message()` calls.
 In this case that would just be the DemoLocalizations class.
 
@@ -276,13 +284,13 @@ to support, since it wouldn't make sense for the toolkit
 libraries to support a different set of locales than the app does.
 
 The MaterialApp
-[`supportedLocales`](https://docs.flutter.io/flutter/material/MaterialApp/supportedLocales.html)
+[`supportedLocales`]({{site.api}}/flutter/material/MaterialApp/supportedLocales.html)
 parameter limits locale changes. When the user changes the locale
 setting on their device, the app's `Localizations` widget only
 follows suit if the new locale is a member of the this list.
 If an exact match for the device locale isn't found, then the first
 supported locale with a matching
-[`languageCode`](https://docs.flutter.io/flutter/dart-ui/Locale/languageCode.html)
+[`languageCode`]({{site.api}}/flutter/dart-ui/Locale/languageCode.html)
 is used. If that fails, then the first element of the
 `supportedLocales` list is used.
 
@@ -291,7 +299,7 @@ US English or French Canadian locales, and it substitutes US
 English (the first locale in the list) for anything else.
 
 An app that wants to use a different "locale resolution" method can provide a
-[`localeResolutionCallback`.](https://docs.flutter.io/flutter/widgets/LocaleResolutionCallback.html)
+[`localeResolutionCallback`.]({{site.api}}/flutter/widgets/LocaleResolutionCallback.html)
 For example, to have your app unconditionally accept whatever locale the
 user selects:
 
@@ -317,7 +325,8 @@ package. Developers can choose their own approach for managing
 localized values for the sake of simplicity or perhaps to integrate
 with a different i18n framework.
 
-[Complete source code](https://github.com/flutter/website/tree/master/examples/internationalization/minimal)
+[Complete source
+code]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
 for this example app.
 
 In this version of DemoApp the class that contains the app's
@@ -352,7 +361,7 @@ class DemoLocalizations {
 
 In the minimal app the DemoLocalizationsDelegate is slightly
 different. Its `load` method returns a
-[SynchronousFuture](https://docs.flutter.io/flutter/foundation/SynchronousFuture-class.html)
+[SynchronousFuture]({{site.api}}/flutter/foundation/SynchronousFuture-class.html)
 because no asynchronous loading needs to take place.
 
 
@@ -377,8 +386,9 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 ## Appendix: Using the Dart intl tools
 
 Before building an API using the Dart
-[`intl`](https://pub.dartlang.org/packages/intl) package
-you'll want to review the `intl` package's documentation. Here's a summary of the process
+[`intl`]({{site.pub-pkg}}/intl) package
+you'll want to review the `intl` package's documentation.
+Here's a summary of the process
 for localizing an app that depends on the `intl` package.
 
 The demo app depends on a generated source file called `l10n/messages_all.dart`

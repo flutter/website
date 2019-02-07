@@ -117,7 +117,7 @@ void main() {
 
 ## See also
 
-* The [Components-Tabs](https://material.io/guidelines/components/tabs.html)
-  section of the [Material Design](https://material.io) specification:
+* The [Components-Tabs]({{site.material}}/guidelines/components/tabs.html)
+  section of the [Material Design]({{site.material}}) specification:
 * The source code in
-  [examples/catalog/lib/tabbed_app_bar.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/tabbed_app_bar.dart).
+  [examples/catalog/lib/tabbed_app_bar.dart]({{site.github}}/flutter/flutter/blob/master/examples/catalog/lib/tabbed_app_bar.dart).

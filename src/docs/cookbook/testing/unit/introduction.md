@@ -9,18 +9,19 @@ next:
   path: /docs/cookbook/testing/unit/mocking
 ---
 
-How can we ensure that our apps continue to work as we add more features or
-change existing functionality? By writing tests!
+How can you ensure that your app continues to work as you add more features or
+change existing functionality? By writing tests.
 
-Unit tests are handy for verifying the behavior of a single function, method, or
-class. The [`test`]({{site.pub-pkg}}/test) package provides the
+Unit tests are handy for verifying the behavior of a single function,
+method, or class. The [`test`]({{site.pub-pkg}}/test) package provides the
 core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 package provides additional utilities for testing Widgets.
 
-This recipe demonstrates the core features provided by the `test` package. For
-more information about the test package, please see the
-[test package documentation](https://github.com/dart-lang/test/blob/master/README.md).
+This recipe demonstrates the core features provided by the `test` package.
+For more information about the test package, see the
+[test package
+documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
 
 ## Directions
 
@@ -33,7 +34,7 @@ more information about the test package, please see the
 
 ## 1. Add the test dependency
 
-If we're working on a Dart package that does not depend on Flutter, we
+If you're working on a Dart package that does not depend on Flutter, you
 can import the `test` package. The test package provides the core functionality
 for writing tests in Dart. This is the best approach when writing packages that
 will be consumed by web, server, and Flutter apps.
@@ -43,9 +44,9 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-If we're working on a package that will only be used for Flutter apps, or if
-we need to write Widget tests, we can depend on the `flutter_test` package
-instead. It will also include everything from the `test` package, as well as
+If you're working on a package that will only be used for Flutter apps, or if
+we need to write Widget tests, depend on the `flutter_test` package instead.
+It includes everything from the `test` package, as well as
 additional utilities for testing Widgets.
 
 ```yaml
@@ -57,16 +58,16 @@ dev_dependencies:
 
 ## 2. Create a test file
 
-In this example, we'll create two files: `counter.dart` and `counter_test.dart`.
+In this example, create two files: `counter.dart` and `counter_test.dart`.
 
-The `counter.dart` file will contain a class we want to test and will reside in
-the `lib` folder. The `counter_test.dart` file will contain the tests
-themselves and will live inside the `test` folder!
+The `counter.dart` file will contain a class that you want to test and
+resides in the `lib` folder. The `counter_test.dart` file will contain
+the tests themselves and lives inside the `test` folder.
 
 In general, test files should reside inside a `test` folder located at the root
 of your Flutter application or package.
 
-When we're finished, our folder structure should look like this:
+When you're finished, the folder structure should look like this:
 
 ```
 counter_app/
@@ -78,10 +79,10 @@ counter_app/
 
 ## 3. Create a class to test
 
-Next, we'll need a "unit" to test. Remember: "unit" is a fancy name for a
-function, method or class. In this example, we'll create a `Counter` class
-inside the `lib/counter.dart` file. It will be responsible for incrementing and
-decrementing a `value` starting at `0`.
+Next, you need a "unit" to test. Remember: "unit" is a fancy name for a
+function, method, or class. In this example, create a `Counter` class
+inside the `lib/counter.dart` file. It will be responsible for incrementing
+and decrementing a `value` starting at `0`.
 
 <!-- skip -->
 ```dart
@@ -96,14 +97,14 @@ class Counter {
 
 **Note:** For simplicity, this tutorial does not follow the "Test Driven
 Development" approach. If you're more comfortable with that style of
-development, you can always go that route!
+development, you can always go that route.
 
 ## 4. Write a test for our class
 
-Inside the `counter_test.dart` file, we can write our first unit test! Tests are
-defined using the top-level `test` function, and we can check if the results are
-correct by using the top-level `expect` function. Both of these functions come
-from the `test` package.
+Inside the `counter_test.dart` file, write the first unit test. Tests are
+defined using the top-level `test` function, and you can check if the results
+are correct by using the top-level `expect` function.
+Both of these functions come from the `test` package.
 
 <!-- skip -->
 ```dart
@@ -124,8 +125,8 @@ void main() {
 
 ## 5. Combine multiple tests in a `group`
 
-If we have several tests which are related to one another, it can be handy
-to combine them using the `group` function provided by the `test` package.
+If you have several tests that are related to one another, 
+combine them using the `group` function provided by the `test` package.
 
 <!-- skip -->
 ```dart
@@ -159,28 +160,28 @@ void main() {
 
 ### 6. Run the tests
 
-Now that we have a `Counter` class with tests in place, we can run the tests!
+Now that you have a `Counter` class with tests in place, you can run the tests.
 
 #### Run tests using IntelliJ or VSCode
 
-The Flutter plugins for IntelliJ and VSCode support running tests. This is often
-the best option while writing tests because it provides the fastest feedback
-loop as well as the ability to set breakpoints.
+The Flutter plugins for IntelliJ and VSCode support running tests.
+This is often the best option while writing tests because it provides the
+fastest feedback loop as well as the ability to set breakpoints.
 
   * **IntelliJ**
     1. Open the `counter_test.dart` file
     2. Select the `Run` menu
     3. Click the `Run 'tests in counter_test.dart'` option
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform!*
+    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
   * **VSCode**
     1. Open the `counter_test.dart` file
     2. Select the `Debug` menu
     3. Click the `Start Debugging` option
-    4. *Alternatively, use the appropriate keyboard shortcut for your platform!*
+    4. *Alternatively, use the appropriate keyboard shortcut for your platform.*
 
 #### Run tests in a terminal
 
-We can also use a terminal to run our tests by executing the following
+You can also use a terminal to run the tests by executing the following
 command from the root of the project:
 
 ```

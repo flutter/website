@@ -22,12 +22,22 @@ social:
   twitter: https://twitter.com/flutterio
   youtube: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 
+dart-site: https://www.dartlang.org
+news: https://news.dartlang.org
 api: https://docs.flutter.io
 pub: https://pub.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
 pub-pkg: https://pub.dartlang.org/packages
 flutter-medium: https://medium.com/flutter-io
 medium: https://medium.com
+dartpad: https://dartpad.dartlang.org
+material: https://material.io
+so: https://stackoverflow.com
+github: https://github.com
+android-dev: https://developer.android.com
+codelabs: https://codelabs.developers.google.com
+groups: https://groups.google.com
+firebase: https://firebase.google.com
 
 defaults:
 - scope:

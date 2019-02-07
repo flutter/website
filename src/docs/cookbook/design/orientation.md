@@ -14,7 +14,7 @@ want to show one item after the next in portrait mode, yet put those same items
 side-by-side in landscape mode.
 
 In Flutter, we can build different layouts depending on a given
-[`Orientation`](https://docs.flutter.io/flutter/widgets/Orientation-class.html).
+[`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html).
 In this example, we'll build a list that displays 2 columns in portrait mode and
 3 columns in landscape mode.
 
@@ -44,7 +44,7 @@ To learn more about working with `GridViews`, please see the
 ## 2. Use an `OrientationBuilder` to change the number of columns
 
 In order to determine the current `Orientation`, we can use the
-[`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html)
+[`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html)
 Widget. The `OrientationBuilder` calculates the current `Orientation` by
 comparing the width and height available to the parent widget, and rebuilds
 when the size of the parent changes.

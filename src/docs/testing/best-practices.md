@@ -29,9 +29,10 @@ when designing your app:
 
 Also see:
 
-* [Performance considerations](https://master-docs-flutter-io.firebaseapp.com/flutter/widgets/StatefulWidget-class.html#performance-considerations),
+* [Performance
+  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations),
   part of the
-  [StatefulWidget](https://master-docs-flutter-io.firebaseapp.com/flutter/widgets/StatefulWidget-class.html)
+  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
   API doc
 
 ### Apply effects only when needed
@@ -88,7 +89,7 @@ Also see:
 * [Working with long lists](/cookbook/lists/long-lists) in the
   [Cookbook](/cookbook)
 * [Creating a ListView that loads one page at a
-  time](https://medium.com/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
+  time]({{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
   by AbdulRahman AlHamali
 * [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
 

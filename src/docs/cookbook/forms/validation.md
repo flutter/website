@@ -29,11 +29,12 @@ text field.
 
 ## 1. Create a `Form` with a `GlobalKey`
 
-First, we'll need a [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html)
+First, we'll need a [`Form`]({{site.api}}/flutter/widgets/Form-class.html)
 to work with. The `Form` Widget acts as a container to group and validate
 multiple form fields.
 
-When we create the form, we'll also need to provide a [`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html).
+When we create the form, we'll also need to provide a
+[`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html).
 This will uniquely identify the `Form` that we're working with, and will allow
 us to validate the form in a later step.
 
@@ -71,7 +72,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 We have our `Form` in place, but we haven't provided a way for our users to
 enter text! This is the job of a
-[`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html).
+[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 The `TextFormField` Widget renders a material design text input and knows how to
 display validation errors when they occur.
 
@@ -127,7 +128,7 @@ RaisedButton(
 
 In order to validate the form, we'll need to use the `_formKey` created in
 step 1. We can use the `_formKey.currentState` method to access the
-[`FormState`](https://docs.flutter.io/flutter/widgets/FormState-class.html),
+[`FormState`]({{site.api}}/flutter/widgets/FormState-class.html),
 which is automatically created by Flutter when we build a `Form`.
 
 The `FormState` class contains the `validate` method. When the `validate` method

@@ -7,7 +7,7 @@ This guide provides a step-by-step walkthrough of releasing a Flutter app to
 the [App Store][appstore] and [TestFlight][testflight].
 
 For information on obfuscating Dart code, see [Obfuscating Dart
-Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code).
+Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code).
 
 ## Preliminaries
 
