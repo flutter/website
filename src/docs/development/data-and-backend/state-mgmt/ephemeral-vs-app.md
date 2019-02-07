@@ -121,7 +121,7 @@ When asked about React's setState versus Redux's store, the author of Redux, Dan
 Abramov, replied:
 
 > "The rule of thumb is: [Do whatever is less 
-> awkward](https://github.com/reduxjs/redux/issues/1287#issuecomment-175351978)."
+> awkward]({{site.github}}/reduxjs/redux/issues/1287#issuecomment-175351978)."
 
 In summary, there are two conceptual types of state in any Flutter app. 
 Ephemeral state can be implemented using `State` and `setState()`, and is often 
