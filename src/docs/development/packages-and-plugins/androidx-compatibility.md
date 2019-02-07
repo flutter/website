@@ -66,8 +66,7 @@ This requires the latest version of Android Studio.
    with full IDE
    support"](https://flutter.io/docs/development/tools/android-studio#android-ide).
 2. Then follow the instructions on ["Migrating to
-   AndroidX"](https://developer.android.com/jetpack/androidx/migrate)
-   automatically using Android Studio.
+   AndroidX"](https://developer.android.com/jetpack/androidx/migrate).
 
 ### Not recommended: Manually migrate your app
 
