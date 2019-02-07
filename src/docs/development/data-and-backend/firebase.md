@@ -13,11 +13,11 @@ Firebase supports Flutter. For more information, see:
 * [Getting started with Firebase and
    Flutter]({{site.firebase}}/docs/flutter/setup)
    in the [Firebase docs]({{site.firebase}}/docs)
-* [Firebase for Flutter codelab]({{site.codelabs}}/flutter-firebase)
+* [Firebase for Flutter codelab]({{site.codelabs}}/codelabs/flutter-firebase)
 * [FlutterFire
   plugins]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)
 * [Using Firestore as a backend to your Flutter
-   app](https://youtube/DqJ_KjFzL9I) (video)
+   app](https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s) (video)
 
 Also, the Flutter community has created docs that you might find useful:
 

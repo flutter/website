@@ -107,8 +107,7 @@ debugger. An in-between mode that turns off all the debugging aids
 _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
 
-For more information, see
-[Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
+For more information, see [Flutter's modes](/testing/build-modes).
 
 ## Debugging application layers
 
@@ -818,8 +817,8 @@ For example:
 
 To perform custom performance traces and measure wall/CPU time of
 arbitrary segments of Dart code similar to what would be done on Android
-with [systrace]({{site.android-dev}}/studio/profile/systrace), use
-`dart:developer`'s
+with [systrace]({{site.android-dev}}/studio/profile/systrace),
+use `dart:developer`'s
 [Timeline]({{site.dart.api}}/stable/dart-developer/Timeline-class.html)
 utilities to wrap the code you want to measure such as:
 
@@ -872,7 +871,7 @@ are misleading.
 When developing applications that implement [Material
 Design]({{site.material}}/design/introduction),
 it can be helpful to overlay a [Material Design baseline
-grid]({{site.material}}/design/layout/metrics-keylines.html)
+grid]({{site.material}}/design/layout/spacing-methods.html#baseline)
 over the application to help verify alignments. To that end, the
 [`MaterialApp`
 constructor]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html)

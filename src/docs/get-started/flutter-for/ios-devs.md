@@ -59,7 +59,7 @@ including iOS.
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
-[Apple's iOS design language]({{site.android-dev}}/design/resources).
+[Apple's iOS design language](https://developer.apple.com/design/resources).
 
 ### How do I update `Widget`s?
 

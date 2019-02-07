@@ -28,26 +28,26 @@ library.
 
 In this example, you'll display a counter. When the counter changes, you'll
 write data on disk so you can read it again when the app loads.
-Therefore, you must ask: Where should I store this data?
+Therefore, you must wonder: Where should I store this data?
 
-The [`path_provider`]({{site.pub}}/packages/path_provider) plugin
+The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's filesystem. The plugin currently supports access to two filesystem
 locations:
 
   * *Temporary directory:* A temporary directory (cache) that the system can
-  clear at any time. On iOS, this corresponds to the value that
-  [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
-  returns. On Android, this is the value that
-  [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
-  returns.
+    clear at any time. On iOS, this corresponds to the value that
+    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
+    returns. On Android, this is the value that
+    [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
+    returns.
   * *Documents directory:* A directory for the app to store files that only
-  it can access. The system clears the directory only when the app is deleted.
-  On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
-  `AppData` directory.
+    it can access. The system clears the directory only when the app is deleted.
+    On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
+    `AppData` directory.
 
 In this case, you'll want to store information in the documents directory.
-You can find the path to the documents directory like so:
+You can find the path to the documents directory as follows:
 
 <!-- skip -->
 ```dart

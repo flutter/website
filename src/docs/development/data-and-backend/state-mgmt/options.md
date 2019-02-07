@@ -32,12 +32,12 @@ Learn more at the following links, many of which have been contributed by the Fl
 * [Flutter: Inherited Widget and Scoped Model Explained, part 1](https://www.youtube.com/watch?v=j-27MZwRbFw),
   a video by MTechViral
 * [Flutter state management&mdash;scoped model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
-* [Scoped model package]({{site.pub}}/packages/scoped_model)
+* [Scoped model package]({{site.pub-pkg}}/scoped_model)
 
 ## Redux
 
 * [Animation Management with Redux and Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), a video from DartConf 2018 [Accompanying article on Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
-* [Flutter Redux package]({{site.pub}}/packages/flutter_redux) on the [Pub site]({{site.pub}})
+* [Flutter Redux package]({{site.pub-pkg}}/flutter_redux) on the [Pub site]({{site.pub}})
 * [Introduction to Redux in Flutter](https://blog.novoda.com/introduction-to-redux-in-flutter/), by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65),
   by Paulina Szklarska on Hackernoon

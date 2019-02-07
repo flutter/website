@@ -19,8 +19,8 @@ occurs, create a report containing the error that occurred and the
 associated stacktrace. You can then send the report to an error tracking
 service, such as Sentry, Fabric, or Rollbar.
 
-The error tracking service then aggregates all of the crashes your users
-experience and group them together. This allows you to know how often your
+The error tracking service aggregates all of the crashes your users
+experience and groups them together. This allows you to know how often your
 app fails and where the users run into trouble.
 
 In this recipe, you'll see how to report errors to the
@@ -145,7 +145,7 @@ capture and report these types of errors as well.
 
 To capture Flutter errors, override the
 [`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html)
-property. In this case, if you're in debug mode, use a convenience function
+property. If you're in debug mode, use a convenience function
 from Flutter to properly format the error. If you're in production mode, 
 send the error to the `onError` callback defined in the previous step.
 

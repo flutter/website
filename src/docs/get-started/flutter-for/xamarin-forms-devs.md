@@ -1927,9 +1927,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1]({{site.codelabs}}/first-flutter-app-pt1)
+part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2]({{site.codelabs}}/first-flutter-app-pt2)
+part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 
 ## Working with text
 

@@ -34,9 +34,9 @@ If you have a specific request, please
   Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
-  Flutter]({{site.codelabs}}/flutter)<br>
+  Flutter]({{site.codelabs}}/codelabs/flutter)<br>
   Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-  your app)]({{site.codelabs}}/flutter/#6)
+  your app)]({{site.codelabs}}/codelabs/flutter/#6)
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 

@@ -14,7 +14,7 @@ without polling.
 
 In this example, you'll connect to a [test server provided by
 websocket.org](http://www.websocket.org/echo.html). The server simply sends
-back the same message we send to it.
+back the same message you send to it.
 
 ## Directions
 
@@ -31,7 +31,7 @@ package provides the tools you'll need to connect to a WebSocket server.
 The package provides a `WebSocketChannel` that allows you to both listen for
 messages from the server and push messages to the server.
 
-In Flutter, you can create a `WebSocketChannel` that connects to a server
+In Flutter, create a `WebSocketChannel` that connects to a server
 in one line:
 
 <!-- skip -->
@@ -98,7 +98,7 @@ data source.
 
 ## 4. Close the WebSocket connection
 
-After you're done using the WebSocket, you'll want to close the connection.
+After you're done using the WebSocket, close the connection.
 To do so, close the `sink`.
 
 <!-- skip -->

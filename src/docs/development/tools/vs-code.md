@@ -15,8 +15,8 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 ## Installation and setup
 
-Follow the [Set up an editor](/docs/get-started/editor?ide=vscode) instructions to
-install the Dart and Flutter extensions (also called plugins).
+Follow the [Set up an editor](/docs/get-started/editor?ide=vscode)
+instructions to install the Dart and Flutter extensions (also called plugins).
 
 ### Updating the extension {#updating}
 
@@ -26,8 +26,8 @@ VS Code automatically updates extensions when updates are available.
 To install updates manually:
 
  1. Click on the Extensions button in the Side Bar
- 1. If the Flutter extension is shown with an available update, click the update button and then
-    the reload button
+ 1. If the Flutter extension is shown with an available update,
+    click the update button and then the reload button
 
 ## Creating projects
 
@@ -54,8 +54,8 @@ The Flutter extension performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Go to Definition** or `F12`), and finding type
-  usages (**Find All References** or `Shift`+`F12`).
+* Navigating to type declarations (**Go to Definition** or `F12`),
+  and finding type usages (**Find All References** or `Shift`+`F12`).
 * Viewing all current source code problems
   (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
   Any analysis issues are shown in the Problems pane:<br>
@@ -63,8 +63,8 @@ The Flutter extension performs code analysis that enables:
 
 ## Running and Debugging
 
-Start debugging by clicking **Debug > Start Debugging** from the main IDE window or
-press `F5`.
+Start debugging by clicking **Debug > Start Debugging** from the main
+IDE window or press `F5`.
 
 ### Selecting a target device
 

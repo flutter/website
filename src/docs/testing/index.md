@@ -334,10 +334,14 @@ but for the `_test` suffix in it.
 
 For information on continuous deployment and testing, see the following:
 
-* [Continuous Delivery using fastlane with Flutter](/docs/deployment/fastlane-cd/)
-* [Test Flutter apps on Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
-* [GitLab Continuous Integration (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
+* [Continuous Delivery using fastlane with
+  Flutter](/docs/deployment/fastlane-cd/)
+* [Test Flutter apps on
+  Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+* [GitLab Continuous Integration
+  (GitLab CI/CD](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
   example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
   in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
-* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+* [Codemagic CI/CD for
+  Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)

@@ -155,7 +155,7 @@ create your own widgets, or customize the existing widgets.
 Yes! The Flutter and Material teams collaborate closely,
 and Material Theming is fully supported. A number of
 examples of this are shown in the [MDC-103 Flutter: Material
-Theming]({{site.codelabs}}/mdc-103-flutter) codelab.
+Theming]({{site.codelabs}}/codelabs/mdc-103-flutter) codelab.
 
 ### Does Flutter come with a testing framework?
 
@@ -350,8 +350,10 @@ Studio]({{site.android-dev}}/studio/build/apk-analyzer).
 
 On iOS, a release IPA of the same app has a download size of 10.8&nbsp;MB on an
 iPhone X, as reported by Apple's App Store Connect. The IPA is larger than the
-APK mainly because Apple encrypts binaries within the IPA, making the compression
-less efficient (see the [iOS App Store Specific Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS) section of Apple's
+APK mainly because Apple encrypts binaries within the IPA,
+making the compression less efficient (see the [iOS App Store Specific
+Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS)
+section of Apple's
 [QA1795](https://developer.apple.com/library/archive/qa/qa1795/_index.html)).
 
 Of course, YMMV, and we recommend that you measure your own app. To measure an

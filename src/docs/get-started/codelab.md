@@ -26,9 +26,9 @@ you can complete this tutorial. You don’t need
 previous experience with Dart or mobile programming.
 
 This guide is part 1 of a two-part codelab. You can find
-[part 2]({{site.codelabs}}/first-flutter-app-pt2)
+[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 on [Google Developers]({{site.codelabs}}).
-[Part 1]({{site.codelabs}}/first-flutter-app-pt1)
+[Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 can also be found on [Google Developers]({{site.codelabs}}).
 
 ## What you'll build in part 1
@@ -52,7 +52,7 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to implement a stateful widget.
   * How to create an infinite, lazily loaded list.
 
-  In [part 2]({{site.codelabs}}/first-flutter-app-pt2)
+  In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
   of this codelab, you'll add interactivity, modify the app's theme, and
   add the ability to navigate to a new screen (called a _route_ in Flutter).
 {{site.alert.end}}
@@ -312,7 +312,7 @@ a child inside the existing `MyApp` stateless widget.
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
     as the user scrolls, and favorite word pairs (in
-    [part 2]({{site.codelabs}}/first-flutter-app-pt2)),
+    [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)),
     as the user adds or removes them from the list by toggling the heart icon.
 
     `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
@@ -573,7 +573,7 @@ In this codelab, you've:
 * Created a lazily loaded, infinite scrolling list.
 
 If you would like to extend this app, proceed to
-[part 2]({{site.codelabs}}/first-flutter-app-pt2)
+[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 on the
 [Google Developers Codelabs]({{site.codelabs}}) site,
 where you add the following functionality:
