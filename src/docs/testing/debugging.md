@@ -107,7 +107,7 @@ debugger. An in-between mode that turns off all the debugging aids
 _except_ the Observatory, known as "profile mode", is available also,
 using `--profile` instead of `--release`.
 
-For more information, see [Flutter's modes](/testing/build-modes).
+For more information, see [Flutter's modes](/docs/testing/build-modes).
 
 ## Debugging application layers
 
