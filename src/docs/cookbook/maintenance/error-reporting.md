@@ -50,7 +50,7 @@ To get a DSN, use the following steps:
 ## 2. Import the Sentry package
 
 Import the
-[`sentry`]({{site.pub}}/packages/sentry) package into the app. The
+[`sentry`]({{site.pub-pkg}}/sentry) package into the app. The
 sentry package makes it easier to send error reports to the Sentry
 error tracking service.
 

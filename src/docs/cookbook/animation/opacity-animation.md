@@ -207,6 +207,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ![Fade In and Out Demo](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
 
-[AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[setState]: {{site.api}}/flutter/widgets/State/setState.html
+[`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`setState`]: {{site.api}}/flutter/widgets/State/setState.html
