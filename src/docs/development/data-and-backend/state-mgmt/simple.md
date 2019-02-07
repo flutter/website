@@ -113,16 +113,16 @@ A simple option is to provide a callback that `MyListItem` can call when it is c
 
 <?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
-void myTapCallback(Item item) {
-  print('user tapped on $item');
-}
-
 @override
 Widget build(BuildContext context) {
   return SomeWidget(
     // Construct the widget, passing it a reference to the method above.
     MyListItem(myTapCallback),
   );
+}
+
+void myTapCallback(Item item) {
+  print('user tapped on $item');
 }
 ```
 

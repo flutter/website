@@ -20,22 +20,37 @@ void main() {
 }
 // #enddocregion main
 
+Map<String, WidgetBuilder> _routes = {
+  '/setstate': (context) => set_state.HelperScaffoldWrapper(),
+  '/scoped': (context) => MyHomepage(),
+  '/callbacks': (context) => callbacks.MyHomepage(),
+  '/perf': (context) => performance.MyHomepage(),
+};
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter State Management Code Excerpts',
+      routes: _routes,
       home: Material(
-        child: SafeArea(
-          child: PageView(
-            children: [
-              set_state.MyHomepage(),
-              MyHomepage(),
-              callbacks.MyHomepage(),
-              performance.MyHomepage(),
-            ],
-          ),
-        ),
+        child: _Menu(),
+      ),
+    );
+  }
+}
+
+class _Menu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Simple state management')),
+      body: Wrap(
+        children: _routes.keys
+            .map((name) => FlatButton(
+                onPressed: () => Navigator.pushNamed(context, name),
+                child: Text(name)))
+            .toList(growable: false),
       ),
     );
   }

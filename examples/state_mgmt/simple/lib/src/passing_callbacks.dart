@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:state_mgmt/src/common.dart';
 
-class Item {
-  // Empty.
-}
-
-class MyHomepage extends StatelessWidget {
+class CallbackPasser extends StatelessWidget {
   // #docregion methods
-  void myTapCallback(Item item) {
-    print('user tapped on $item');
-  }
-
   @override
   Widget build(BuildContext context) {
     return SomeWidget(
@@ -18,7 +10,25 @@ class MyHomepage extends StatelessWidget {
       MyListItem(myTapCallback),
     );
   }
+
+  void myTapCallback(Item item) {
+    print('user tapped on $item');
+  }
   // #enddocregion methods
+}
+
+class Item {
+  // Empty.
+}
+
+class MyHomepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: CallbackPasser(),
+    );
+  }
 }
 
 class MyListItem extends StatelessWidget {

@@ -72,13 +72,16 @@ class HumongousWidget extends SomeExpensiveWidget {
 class MyHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ChildUsingDescendant(),
-        DescendantNotInLeafNode_Bad(),
-        DescendantInLeafNode_Good(),
-        NonRebuilding_Good(),
-      ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          ChildUsingDescendant(),
+          DescendantNotInLeafNode_Bad(),
+          DescendantInLeafNode_Good(),
+          NonRebuilding_Good(),
+        ],
+      ),
     );
   }
 }

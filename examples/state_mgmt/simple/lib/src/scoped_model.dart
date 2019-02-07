@@ -110,12 +110,15 @@ class MyCatalogItem extends StatelessWidget {
 class MyHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        MyCatalog(),
-        MyCartUsingWidget(),
-        MyCartTotalWidget(),
-      ],
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          MyCatalog(),
+          MyCartUsingWidget(),
+          MyCartTotalWidget(),
+        ],
+      ),
     );
   }
 }
