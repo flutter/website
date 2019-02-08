@@ -1,4 +1,8 @@
 .create {
+  h4 {
+    margin-bottom: bs-spacer(8);
+  }
+
   &__row {
     padding: bs-spacer(12) 0;
   }
@@ -26,6 +30,25 @@
   &__text-columns {
     @include media-breakpoint-up(sm) {
       columns: 2;
+    }
+  }
+
+  &__prizes {
+    &__image {
+      align-items: flex-end;
+      display: flex;
+      height: 226px;
+      margin-bottom: bs-spacer(4);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: bs-spacer(1);
+      margin-top: bs-spacer(4);
     }
   }
 }
