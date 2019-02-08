@@ -24,7 +24,7 @@ Some Flutter plugins have been migrated to AndroidX after originally using the
 original support libraries. Flutter apps that aren't compatible with AndroidX
 will fail to compile when using the latest version of these plugins.
 
-# Fixing AndroidX crashes in a Flutter app
+## Fixing AndroidX crashes in a Flutter app
 
 There's two main ways AndroidX can break a Flutter app at compile time.
 
@@ -41,7 +41,7 @@ Both of these problems need to be fixed by either manually migrating the code or
 downgrading to versions of the plugins that are still using the original support
 libraries.
 
-## How to migrate a Flutter app to AndroidX
+### How to migrate a Flutter app to AndroidX
 
 {{site.alert.note}}
   It's impossible to fully migrate your app to AndroidX if it's actively using
@@ -57,7 +57,7 @@ See the Android developer docs on ["The module-level build
 file"](https://developer.android.com/studio/build/#module-level) for more
 information.
 
-### Recommended: Use Android Studio to migrate your app
+#### Recommended: Use Android Studio to migrate your app
 
 This requires the latest version of Android Studio.
 
@@ -68,13 +68,13 @@ This requires the latest version of Android Studio.
 2. Then follow the instructions on ["Migrating to
    AndroidX"](https://developer.android.com/jetpack/androidx/migrate).
 
-### Not recommended: Manually migrate your app
+#### Not recommended: Manually migrate your app
 
 See ["Migrating to
 AndroidX"](https://developer.android.com/jetpack/androidx/migrate) for detailed
 instructions on how to do this.
 
-## Avoiding AndroidX
+### Avoiding AndroidX
 
 If you want or need to avoid migrating to AndroidX, you'll need to go through
 and pin your plugin dependencies in your `pubspec.yaml` to the last major
@@ -121,7 +121,7 @@ Note however that this list is not an exhaustive list of all the Flutter plugins
 that use AndroidX, and the AndroidX dependency in your app may be coming from
 another plugin besides these.
 
-# For plugin maintainers: Migrating a Flutter plugin to AndroidX
+## For plugin maintainers: Migrating a Flutter plugin to AndroidX
 
 Migrating a Flutter plugin to AndroidX follows basically the same process as
 [migrating a Flutter app](#How-to-migrate-a-Flutter-app-to-AndroidX), but with
