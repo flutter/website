@@ -94,7 +94,6 @@ are pre AndroidX:
 - `firebase_admob`: 0.7.0
 - `firebase_analytics`: 1.1.0
 - `firebase_auth`: 0.7.0
-- `firebase_auth`: 0.7.0
 - `firebase_core`: 0.2.5+1
 - `firebase_database`: 1.0.5
 - `firebase_dynamic_links`: 0.1.1
