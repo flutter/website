@@ -33,7 +33,7 @@ For more information, please see the
 
 ## Directions
 
-  1. Add the `mockito` dependency
+  1. Add the `mockito` & `test` dependencies
   2. Create a function to test
   3. Create a test file with a mock `http.Client`
   4. Write a test for each condition
@@ -52,8 +52,7 @@ dependency in the `dependencies` section.
 dependencies:
   http: <newest_version>
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: <newest_version>
   mockito: <newest_version>
 ```
 
@@ -163,7 +162,7 @@ Now that you have a `fetchPost` function with tests in place,
 run the tests.
 
 ```terminal
-$ flutter test test/counter_test.dart
+$ dart test/fetch_post_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the
