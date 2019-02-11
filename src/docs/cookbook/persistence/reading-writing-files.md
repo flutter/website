@@ -218,7 +218,7 @@ class _FlutterDemoState extends State<FlutterDemo> {
     });
   }
 
-  Future<File> _incrementCounter() async {
+  Future<File> _incrementCounter() {
     setState(() {
       _counter++;
     });
