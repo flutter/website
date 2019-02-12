@@ -123,10 +123,14 @@ Next, we'll need the `flutter_driver` package to write integration tests. We
 can add the `flutter_driver` dependency to the `dev_dependencies` section of
 our apps's `pubspec.yaml` file.
 
+We also add the `test` dependency in order to use actual test functions and
+assertions.
+
 ```yaml
 dev_dependencies:
   flutter_driver:
     sdk: flutter
+  test: any
 ```
 
 ### 3. Create the test files
