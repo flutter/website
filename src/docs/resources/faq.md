@@ -184,8 +184,8 @@ for a better picture of the main components.
 ### How does Flutter run my code on Android? {#run-android}
 
 The engine's C and C++ code are compiled with Android's NDK. The Dart code
-(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM
-library. That library is included in a "runner" Android project, and the whole
+(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM and x86
+libraries. Those libraries are included in a "runner" Android project, and the whole
 thing is built into an APK. When launched, the app loads the Flutter library.
 Any rendering, input or event handling, and so on, are delegated to the compiled
 Flutter and app code. This is similar to the way many game engines work.
