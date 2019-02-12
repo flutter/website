@@ -11,7 +11,7 @@ description: How to fix AndroidX incompatibilities that have been detected by th
 Android code often uses the
 [`android.support`]({{site.android-dev}}/topic/libraries/support-library/)
 libraries to ensure backwards compatibility. The `android.support`
-libraries were deprecated as of Android 9.0, and replaced with
+libraries are deprecated, and replaced with
 [AndroidX]({{site.android-dev}}/jetpack/androidx/).
 AndroidX has feature parity with the old libraries
 with some additional capabilities but, unfortunately, these two sets of
