@@ -226,7 +226,7 @@ starts with the class that encapsulates the app's localized
 values. The example that follows is typical of such classes.
 
 [Complete source
-code]({{site.github}}/flutter/flutter/tree/master/examples/internationalization/intl_example)
+code]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
 for this example app.
 
 This example is based on the APIs and tools provided by the
