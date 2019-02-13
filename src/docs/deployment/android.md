@@ -48,7 +48,7 @@ especially:
 
 When a new Flutter app is created, it has a default Launcher icon. To
 customize this icon you might want to check out the [Flutter Launcher
-Icons](https://pub.dartlang.org/packages/flutter_launcher_icons) package.
+Icons]({{site.pub}}/packages/flutter_launcher_icons) package.
 
 Alternatively, if you want to do it manually, here's how:
 
@@ -155,8 +155,8 @@ you may want to reduce the size of the APK or protect that code from
 reverse engineering.
 
 For information on obfuscating Dart code, see [Obfuscating Dart
-Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki](https://github.com/flutter/flutter/wiki).
+Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
+in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
 
 ### Step 1 - Configure Proguard
 
@@ -235,13 +235,13 @@ Using the command line:
 For detailed instructions on publishing the release version of an app to the
 Google Play Store, see the [Google Play publishing documentation][play].
 
-[manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
-[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element
-[appid]: https://developer.android.com/studio/build/application-id
-[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element
-[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element
-[gradlebuild]: https://developer.android.com/studio/build/#module-level
-[versions]: https://developer.android.com/studio/publish/versioning
-[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
-[configuration qualifiers]: https://developer.android.com/guide/topics/resources/providing-resources#AlternativeResources
-[play]: https://developer.android.com/distribute/googleplay/start
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[appid]: {{site.android-dev}}/studio/build/application-id
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+[versions]: {{site.android-dev}}/studio/publish/versioning
+[launchericons]: {{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[play]: {{site.android-dev}}/distribute/googleplay/start

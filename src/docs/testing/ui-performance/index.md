@@ -129,7 +129,7 @@ and only minimally impacts performance.
 Each graph represents the last 300 frames for that thread.
 
 This section describes how to enable the
-[PerformanceOverlay,](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html)
+[PerformanceOverlay,]({{site.api}}/flutter/widgets/PerformanceOverlay-class.html)
 and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
@@ -172,7 +172,7 @@ your actions on the UI thread have performance consequences on other threads.
 
 1. I/O thread<br>
    Performs expensive tasks (mostly I/O) that would otherwise block
-   either the UI or GPU threads.
+   either the UIor GPU threads.
    This thread is not shown in the performance overlay.
 
 
@@ -238,6 +238,7 @@ You can programmatically enable the PerformanceOverlay widget by
 setting the `showPerformanceOverlay` property to `true` on the MaterialApp
 or WidgetsApp constructor:
 
+<!-- skip -->
 {% prettify dart %}
 class MyApp extends StatelessWidget {
   @override
@@ -321,18 +322,18 @@ the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more difficult for
 the GPU.  They may involve unnecessary calls to
-[`saveLayer`](https://docs.flutter.io/flutter/dart-ui/Canvas/saveLayer.html),
+[`saveLayer`]({{site.api}}/flutter/dart-ui/Canvas/saveLayer.html),
 intersecting opacities with multiple objects, and clips or shadows in specific
 situations.
 
 If you suspect that the source of the slowness is during an animation, use the
-[timeDilation](https://docs.flutter.io/flutter/scheduler/timeDilation.html)
+[timeDilation]({{site.api}}/flutter/scheduler/timeDilation.html)
 property to greatly slow the animation down.
 
 You can also slow the animation speed using the Flutter Inspector.
 In the inspector's gear menu, select **Enable Slow Animations**.
 If you want more control of the animation speed, set the
-[timeDilation](https://docs.flutter.io/flutter/scheduler/timeDilation.html)
+[timeDilation]({{site.api}}/flutter/scheduler/timeDilation.html)
 property in your code.
 
 Is the slowness on the first frame, or on the whole animation?
@@ -342,19 +343,19 @@ alternative way of drawing the scene that doesn't use clipping. For example,
 overlay opaque corners onto a square instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise manipluated,
 maybe a
-[RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
+[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
 can help.
 
 #### Checking for offscreen layers
 
 The
-[`saveLayer`](https://docs.flutter.io/flutter/dart-ui/Canvas/saveLayer.html)
+[`saveLayer`]({{site.api}}/flutter/dart-ui/Canvas/saveLayer.html)
 method is one of the most expensive methods in the Flutter
 framework.  It’s useful when applying post-processing to the scene,
 but it can slow your app and should be avoided if you don’t need it.
 Even if you don’t call `saveLayer` explicitly, implicit calls may happen
 on your behalf. You can check whether your scene is using `saveLayer` with the
-[PerformanceOverlayLayer.checkerboardOffscreenLayers](https://docs.flutter.io/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html)
+[PerformanceOverlayLayer.checkerboardOffscreenLayers]({{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html)
 switch.
 
 {% comment %}
@@ -385,7 +386,7 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 #### Checking for non-cached images
 
 Caching an image with
-[RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
+[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
 is good, _when it makes sense_.
 
 One of the most expensive operations, from a resource perspective, is
@@ -401,7 +402,7 @@ _Because raster cache entries are expensive to construct and take up loads
 of GPU memory, cache images only where absolutely necessary._
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCacheImages](https://docs.flutter.io/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html)
+[PerformanceOverlayLayer.checkerboardRasterCacheImages]({{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html)
 switch.
 
 {% comment %}
@@ -417,7 +418,7 @@ flickering, which would indicate that the cached image is being re-cached.
 In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image isn't cached,
 you can cache it by placing it into a
-[RepaintBoundary](https://docs.flutter.io/flutter/widgets/RepaintBoundary-class.html)
+[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
 widget. Though the engine may still ignore a repaint boundary if it
 thinks the image isn't complex enough.
 
@@ -429,27 +430,27 @@ To use these features, you must compile in debug mode.
 The following list, while not complete,
 highlights some of the more useful flags (and one function)
 from the [rendering
-library](https://docs.flutter.io/flutter/rendering/rendering-library.html)
+library]({{site.api}}/flutter/rendering/rendering-library.html)
 for debugging performance issues.
 
-* [`debugDumpRenderTree()`](https://docs.flutter.io/flutter/rendering/debugDumpRenderTree.html)<br>
+* [`debugDumpRenderTree()`]({{site.api}}/flutter/rendering/debugDumpRenderTree.html)<br>
   Call this function when not in a layout or repaint phase to dump the
   rendering tree to the console.  (Pressing **t** from `flutter run`
   calls this command.) Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
-* [`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
-* [`debugRepaintRainbowEnabled`](https://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)<br>
+* [`debugPaintLayerBordersEnabled`]({{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html)
+* [`debugRepaintRainbowEnabled`]({{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html)<br>
   Enable this property and run your app to see if any parts of your UI
   that aren't changing (for example, a static header) are rotating
   through many colors in the output.
   Those areas are candidates for adding repaint boundaries.
-* [`debugPrintMarkNeedsLayoutStack`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)<br>
+* [`debugPrintMarkNeedsLayoutStack`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)<br>
   Enable this property if you're seeing more layouts than you expect
   (for example, on the timeline, on a profile, or from a "print" statement
   inside a layout method). Once enabled, the console is flooded with
   stack traces showing why each render object is being marked dirty for
   layout.
-* [`debugPrintMarkNeedsPaintStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)<br>
+* [`debugPrintMarkNeedsPaintStacks`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)<br>
   Similar to `debugPrintMarkNeedsLayoutStack`, but for excess painting.
 
 You can learn about other debug flags in
@@ -485,11 +486,12 @@ and debugging in Flutter:
 * [Why Flutter Uses
   Dart](https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf),
   an article on Hackernoon.
-* [Observatory: A Profiler for Dart Apps](https://dart-lang.github.io/observatory/)
-* [Flutter API](https://docs.flutter.io/index.html) docs, particularly the
-  [PerformanceOverlay](https://docs.flutter.io/flutter/widgets/PerformanceOverlay-class.html)
+* [Observatory: A Profiler for Dart
+  Apps](https://dart-lang.github.io/observatory/)
+* [Flutter API]({{site.api}}/index.html) docs, particularly the
+  [PerformanceOverlay]({{site.api}}/flutter/widgets/PerformanceOverlay-class.html)
   class, and the
-  [dart:developer](https://docs.flutter.io/flutter/dart-developer/dart-developer-library.html)
+  [dart:developer]({{site.api}}/flutter/dart-developer/dart-developer-library.html)
   package.
 
 [IntelliJ Flutter Inspector Window]: {% asset tools/android-studio/visual-debugging.png @path %}

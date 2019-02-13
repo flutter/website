@@ -12,6 +12,7 @@ node_modules
 .dart_tool
 # pubspec.lock
 example.g
+tmp/
 
 # We haven't had any issues due to npm (sub-)package version discrepancies,
 # so we'll ignore the npm lock file for now.

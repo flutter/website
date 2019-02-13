@@ -44,9 +44,9 @@ The following examples show how to perform the most common UI layout tasks.
 
 Font style, size, and other text attributes that CSS handles with the font and
 color properties are individual properties of a
-[TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+[TextStyle]({{site.api}}/flutter/painting/TextStyle-class.html)
 child of a
-[Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget.
+[Text]({{site.api}}/flutter/widgets/Text-class.html) widget.
 
 In both HTML and Flutter, child elements or widgets are anchored at
 the top left, by default.
@@ -86,7 +86,7 @@ the top left, by default.
 ### Setting background color
 
 In Flutter, you set the background color using a
-[Container](https://docs.flutter.io/flutter/widgets/Container-class.html)’s
+[Container]({{site.api}}/flutter/widgets/Container-class.html)’s
 `decoration` property.
 
 The CSS examples use the hex color equivalents to the Material color palette.
@@ -121,7 +121,7 @@ The CSS examples use the hex color equivalents to the Material color palette.
 
 ### Centering components
 
-A [Center](https://docs.flutter.io/flutter/widgets/Center-class.html) widget
+A [Center]({{site.api}}/flutter/widgets/Center-class.html) widget
 centers its child both horizontally and vertically.
 
 To accomplish a similar effect in CSS, the parent element uses either a flex
@@ -165,12 +165,12 @@ var container = Container( // grey box
 ### Setting container width
 
 To specify the width of a
-[Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
+[Container]({{site.api}}/flutter/widgets/Container-class.html)
 widget, use its `width` property. This is a fixed width, unlike the
 CSS max-width property that adjusts the container width up to a maximum value.
 To mimic that effect in Flutter, use the `constraints` property of the
 Container. Create a new
-[BoxConstraints](https://docs.flutter.io/flutter/rendering/BoxConstraints-class.html)
+[BoxConstraints]({{site.api}}/flutter/rendering/BoxConstraints-class.html)
 widget with a `minWidth` or `maxWidth`.
 
 For nested Containers, if the parent’s width is less than the child’s width,
@@ -236,9 +236,9 @@ position, size, and background.
 By default, widgets are positioned relative to their parent.
 
 To specify an absolute position for a widget as x-y coordinates, nest it in a
-[Positioned](https://docs.flutter.io/flutter/widgets/Positioned-class.html)
+[Positioned]({{site.api}}/flutter/widgets/Positioned-class.html)
 widget that is, in turn, nested in a
-[Stack](https://docs.flutter.io/flutter/widgets/Stack-class.html) widget.
+[Stack]({{site.api}}/flutter/widgets/Stack-class.html) widget.
 <div class="lefthighlight">
 {% prettify css %}
 <div class="greybox">
@@ -296,7 +296,7 @@ var container = Container( // grey box
 ### Rotating components
 
 To rotate a widget, nest it in a
-[Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
+[Transform]({{site.api}}/flutter/widgets/Transform-class.html)
 widget. Use the Transform widget’s `alignment` and `origin` properties to
 specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
@@ -360,13 +360,13 @@ var container = Container( // gray box
 ### Scaling components
 
 To scale a widget up or down, nest it in a
-[Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
+[Transform]({{site.api}}/flutter/widgets/Transform-class.html)
 widget. Use the Transform widget’s `alignment` and `origin`
 properties to specify the transform origin (fulcrum) in relative or
 absolute terms, respectively.
 
 For a simple scaling operation along the x-axis, create a new
-[Matrix4](https://docs.flutter.io/flutter/vector_math_64/Matrix4-class.html)
+[Matrix4]({{site.api}}/flutter/vector_math_64/Matrix4-class.html)
 identity object and use its scale() method to specify the scaling factor.
 
 When you scale a parent widget, its child widgets are scaled accordingly.
@@ -426,9 +426,9 @@ var container = Container( // gray box
 ### Applying a linear gradient
 
 To apply a linear gradient to a widget's background, nest it in a
-[Container](https://docs.flutter.io/flutter/widgets/Container-class.html)
+[Container]({{site.api}}/flutter/widgets/Container-class.html)
 widget.  Then use the Container widget’s `decoration` property to create a
-[BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html)
+[BoxDecoration]({{site.api}}/flutter/painting/BoxDecoration-class.html)
 object, and use BoxDecoration's `gradient` property to transform the
 background
 fill.
@@ -557,9 +557,9 @@ The following examples show how to make and customize shapes.
 
 To round the corners of a rectangular shape, use the `borderRadius` property
 of a
-[BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html)
+[BoxDecoration]({{site.api}}/flutter/painting/BoxDecoration-class.html)
 object. Create a new
-[BorderRadius](https://docs.flutter.io/flutter/painting/BorderRadius-class.html)
+[BorderRadius]({{site.api}}/flutter/painting/BorderRadius-class.html)
 object that specifies the radii for rounding each corner.
 <div class="lefthighlight">
 {% prettify css %}
@@ -622,7 +622,7 @@ with properties:
 
 In Flutter, each property and value is specified separately.
 Use the `boxShadow` property of BoxDecoration to create a list of
-[BoxShadow](https://docs.flutter.io/flutter/painting/BoxShadow-class.html)
+[BoxShadow]({{site.api}}/flutter/painting/BoxShadow-class.html)
 widgets. You can define one or multiple BoxShadow widgets, which can be stacked
 to customize the shadow depth, color, etc.
 
@@ -696,9 +696,9 @@ Making a circle in CSS requires a workaround of applying a border-radius of
 [basic shapes](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape).
 
 While this approach is supported with the `borderRadius` property of
-[BoxDecoration](https://docs.flutter.io/flutter/painting/BoxDecoration-class.html),
+[BoxDecoration]({{site.api}}/flutter/painting/BoxDecoration-class.html),
 Flutter provides a `shape` property with
-[BoxShape enum](https://docs.flutter.io/flutter/painting/BoxShape-class.html)
+[BoxShape enum]({{site.api}}/flutter/painting/BoxShape-class.html)
 for this purpose.
 
 <div class="lefthighlight">
@@ -770,7 +770,7 @@ respectively. The amount of space can be in px, pt, cm, em, etc.
 In Flutter, you specify white space as logical pixels
 (negative values are allowed)
 for the `letterSpacing` and `wordSpacing` properties of a
-[TextStyle](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+[TextStyle]({{site.api}}/flutter/painting/TextStyle-class.html)
 child of a Text widget.
 
 <div class="lefthighlight">
@@ -827,13 +827,13 @@ var container = Container( // grey box
 
 ### Making inline formatting changes
 
-A [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) widget lets
+A [Text]({{site.api}}/flutter/widgets/Text-class.html) widget lets
 you display text with the same formatting characteristics. To
 display text that uses multiple styles (in this example, a single word with
 emphasis), use a
-[RichText](https://docs.flutter.io/flutter/widgets/RichText-class.html)
+[RichText]({{site.api}}/flutter/widgets/RichText-class.html)
 widget instead. Its `text` property can specify one or more
-[TextSpan](https://docs.flutter.io/flutter/painting/TextSpan-class.html) widgets
+[TextSpan]({{site.api}}/flutter/painting/TextSpan-class.html) widgets
 that can be individually styled.
 
 In the following example, "Lorem" is in a TextSpan widget with the default
@@ -910,7 +910,7 @@ overflow text, often using an ellipsis. In HTML/CSS an excerpt can be no longer
 than one line. Truncating after multiple lines requires some JavaScript code.
 
 In Flutter, use the `maxLines` property of a
-[Text](https://docs.flutter.io/flutter/widgets/Text-class.html)
+[Text]({{site.api}}/flutter/widgets/Text-class.html)
 widget to specify the number of lines to include in the excerpt, and the
 `overflow` property for handling overflow text.
 

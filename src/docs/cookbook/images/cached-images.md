@@ -9,12 +9,11 @@ next:
 ---
 
 In some cases, it can be handy to cache images as they're downloaded from the
-web so they can be used offline. For this purpose, we'll employ the
-[`cached_network_image`](https://pub.dartlang.org/packages/cached_network_image)
-package.
+web so they can be used offline. For this purpose, you'll employ the
+[`cached_network_image`]({{site.pub-pkg}}/cached_network_image) package.
 
 In addition to caching, the cached_image_network package also supports
-placeholders and fading images in as they're loaded!
+placeholders and fading images in as they're loaded.
 
 <!-- skip -->
 ```dart
@@ -25,8 +24,8 @@ CachedNetworkImage(
 
 ## Adding a placeholder
 
-The `cached_network_image` package allows us to use any Widget as a placeholder!
-In this example, we'll display a spinner while the image loads.
+The `cached_network_image` package allows you to use any Widget as a
+placeholder. In this example, you'll display a spinner while the image loads.
 
 <!-- skip -->
 ```dart

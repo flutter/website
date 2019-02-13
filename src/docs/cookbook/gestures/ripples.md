@@ -11,7 +11,7 @@ next:
 While designing an app that should follow the Material Design Guidelines, we'll
 want to add the ripple animation to Widgets when tapped.
 
-Flutter provides the [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html)
+Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
 Widget to achieve this effect.
 
 ## Directions

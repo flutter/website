@@ -44,4 +44,4 @@ For a more complete demonstration of the inspector, see the
 ## Feedback
 
 If you have suggestions, or encounter issues, please
-[file an issue in our tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!
+[file an issue in our tracker]({{site.github}}/flutter/flutter-intellij/issues/new?labels=inspector)!

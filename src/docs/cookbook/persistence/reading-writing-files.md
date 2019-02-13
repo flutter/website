@@ -8,13 +8,13 @@ next:
   path: /docs/cookbook/persistence/key-value
 ---
 
-In some cases, it can be handy to read and write files to disk. This can be
-used to persist data across app launches or download data from the internet and
-save it for later offline use.
+In some cases, it can be handy to read and write files to disk.
+This can be used to persist data across app launches,
+or to download data from the internet and save it for later offline use.
 
-In order to save files to disk, we'll need to combine the
-[`path_provider` plugin](https://pub.dartlang.org/packages/path_provider) with
-the [`dart:io`](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
+In order to save files to disk, you'll need to combine the
+[`path_provider` plugin]({{site.pub-pkg}}/path_provider) with
+the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
 ## Directions
@@ -26,27 +26,28 @@ library.
 
 ## 1. Find the correct local path
 
-In this example, we'll display a counter. When the counter changes, we'll want
-to write data on disk so we can read it again when the app loads. Therefore, we
-need to ask: Where should we store this data?
+In this example, you'll display a counter. When the counter changes, you'll
+write data on disk so you can read it again when the app loads.
+Therefore, you must wonder: Where should I store this data?
 
-The [`path_provider`](https://pub.dartlang.org/packages/path_provider) plugin
+The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's filesystem. The plugin currently supports access to two filesystem
 locations:
 
   * *Temporary directory:* A temporary directory (cache) that the system can
-  clear at any time. On iOS, this corresponds to the value that
-  [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
-  returns. On Android, this is the value that [`getCacheDir()`](https://developer.android.com/reference/android/content/Context#getCacheDir())
-  returns.
+    clear at any time. On iOS, this corresponds to the value that
+    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
+    returns. On Android, this is the value that
+    [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
+    returns.
   * *Documents directory:* A directory for the app to store files that only
-  it can access. The system clears the directory only when the app is deleted.
-  On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
-  `AppData` directory.
+    it can access. The system clears the directory only when the app is deleted.
+    On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
+    `AppData` directory.
 
-In our case, we'll want to store information in the documents directory! We
-can find the path to the documents directory like so:
+In this case, you'll want to store information in the documents directory.
+You can find the path to the documents directory as follows:
 
 <!-- skip -->
 ```dart
@@ -59,9 +60,10 @@ Future<String> get _localPath async {
 
 ## 2. Create a reference to the file location
 
-Once we know where to store the file, we'll need to create a reference to the
-file's full location. We can use the [`File`](https://docs.flutter.io/flutter/dart-io/File-class.html)
-class from the [dart:io](https://docs.flutter.io/flutter/dart-io/dart-io-library.html)
+Once you know where to store the file, you'll need to create a reference to the
+file's full location. You can use the
+[`File`]({{site.api}}/flutter/dart-io/File-class.html)
+class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library to achieve this.
 
 <!-- skip -->
@@ -74,9 +76,9 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Now that we have a `File` to work with, we can use it to read and write data!
-First, we'll write some data to the file. Since we're working with a counter,
-we'll simply store the integer as a String.
+Now that you have a `File` to work with, use it to read and write data.
+First, write some data to the file. Since you're working with a counter,
+you'll simply store the integer as a String.
 
 <!-- skip -->
 ```dart
@@ -90,8 +92,8 @@ Future<File> writeCounter(int counter) async {
 
 ## 4. Read data from the file
 
-Now that we have some data on disk, we can read it! Once again, we'll use the
-`File` class to do so.
+Now that you have some data on disk, you can read it.
+Once again, use the `File` class.
 
 <!-- skip -->
 ```dart
@@ -104,7 +106,7 @@ Future<int> readCounter() async {
 
     return int.parse(contents);
   } catch (e) {
-    // If we encounter an error, return 0
+    // If encountering an error, return 0
     return 0;
   }
 }
@@ -112,15 +114,15 @@ Future<int> readCounter() async {
 
 ## Testing
 
-In order to test code that interacts with files, we'll need to Mock calls to
+In order to test code that interacts with files, you'll need to Mock calls to
 the `MethodChannel`. The `MethodChannel` is the class that Flutter uses to
 communicate with the host platform.
 
-In our tests, we can't interact with the filesystem on a device. We'll need to
-interact with our test environment's filesystem!
+In these tests, you can't interact with the filesystem on a device.
+You'll need to interact with the test environment's filesystem.
 
-To mock the method call, we can provide a `setupAll` function in our test file.
-This function will run before the tests are executed.
+To mock the method call, provide a `setupAll` function in the test file.
+This function runs before the tests are executed.
 
 <!-- skip -->
 ```dart
@@ -131,8 +133,8 @@ setUpAll(() async {
   // Mock out the MethodChannel for the path_provider plugin
   const MethodChannel('plugins.flutter.io/path_provider')
       .setMockMethodCallHandler((MethodCall methodCall) async {
-    // If we're getting the apps documents directory, return the path to the
-    // temp directory on our test environment instead.
+    // If you're getting the apps documents directory, return the path to the
+    // temp directory on the test environment instead.
     if (methodCall.method == 'getApplicationDocumentsDirectory') {
       return directory.path;
     }
@@ -181,7 +183,7 @@ class CounterStorage {
 
       return int.parse(contents);
     } catch (e) {
-      // If we encounter an error, return 0
+      // If encountering an error, return 0
       return 0;
     }
   }
@@ -216,12 +218,12 @@ class _FlutterDemoState extends State<FlutterDemo> {
     });
   }
 
-  Future<File> _incrementCounter() async {
+  Future<File> _incrementCounter() {
     setState(() {
       _counter++;
     });
 
-    // write the variable as a string to the file
+    // Write the variable as a string to the file.
     return widget.storage.writeCounter(_counter);
   }
 

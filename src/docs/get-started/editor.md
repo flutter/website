@@ -37,7 +37,7 @@ VS Code. If you want to use a different editor, that's OK, skip ahead to the
 
 Android Studio offers a complete, integrated IDE experience for Flutter.
 
-* [Android Studio](https://developer.android.com/studio), version 3.0 or later
+* [Android Studio]({{site.android-dev}}/studio), version 3.0 or later
 
 Alternatively, you can also use IntelliJ:
 
@@ -72,7 +72,6 @@ VS Code is a light-weight editor with Flutter app execution and debug support.
  1. Type "install", and select **Extensions: Install Extensions**.
  1. Type "flutter" in the extensions search field, select **Flutter** in the list,
     and click **Install**. This also installs the required Dart plugin.
- 1. Click **Reload to Activate** to reload VS Code.
 
 ## Validate your setup with the Flutter Doctor
 

@@ -23,7 +23,7 @@ In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
 How do you navigate to a new route? By using the
-[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html).
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
 ## Directions
 
@@ -86,11 +86,11 @@ class SecondRoute extends StatelessWidget {
 ## 2. Navigate to the second route using Navigator.push()
 
 To switch to a new route, use the
-[`Navigator.push()`](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method. The `push()` method adds a `Route` to the stack of routes managed by
 the Navigator. Where does the `Route` come from?
 You can create your own, or use a
-[`MaterialPageRoute`](https://docs.flutter.io/flutter/material/MaterialPageRoute-class.html),
+[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html),
 out of the box. `MaterialPageRoute` is handy because it transitions to the
 new route using a platform-specific animation.
 
@@ -111,7 +111,7 @@ onPressed: () {
 ## 3. Return to the first route using Navigator.pop()
 
 How do you close the second route and return to the first? By using the
-[`Navigator.pop()`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)
+[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 method. The `pop()` method removes the current `Route` from the stack of
 routes managed by the navigator.
 

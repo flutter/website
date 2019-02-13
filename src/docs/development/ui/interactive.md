@@ -141,8 +141,8 @@ class FavoriteWidget extends StatefulWidget {
   information, see [Libraries and visibility,][] a section in the [Dart language
   tour.][]
 
-  [Dart language tour.]: https://www.dartlang.org/guides/language/language-tour
-  [Libraries and visibility,]: https://www.dartlang.org/guides/language/language-tour#libraries-and-visibility
+  [Dart language tour.]: {{site.dart-site}}/guides/language/language-tour
+  [Libraries and visibility,]: {{site.dart-site}}/guides/language/language-tour#libraries-and-visibility
 {{site.alert.end}}
 
 <a name="step-3"></a>
@@ -721,39 +721,39 @@ The following resources may help when adding interactivity to your app.
    This video includes information about state and stateless widgets.
    Presented by Google engineer, Ian Hickson.
 
-[Checkbox]: https://docs.flutter.io/flutter/material/Checkbox-class.html
-[Cupertino]: https://docs.flutter.io/flutter/cupertino/cupertino-library.html
-[DropdownButton]: https://docs.flutter.io/flutter/material/DropdownButton-class.html
-[FlatButton]: https://docs.flutter.io/flutter/material/FlatButton-class.html
-[FloatingActionButton]: https://docs.flutter.io/flutter/material/FloatingActionButton-class.html
-[Flutter API documentation]: https://docs.flutter.io
-[Flutter Gallery]: https://github.com/flutter/flutter/tree/master/examples/flutter_gallery
+[Checkbox]: {{site.api}}/flutter/material/Checkbox-class.html
+[Cupertino]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[DropdownButton]: {{site.api}}/flutter/material/DropdownButton-class.html
+[FlatButton]: {{site.api}}/flutter/material/FlatButton-class.html
+[FloatingActionButton]: {{site.api}}/flutter/material/FloatingActionButton-class.html
+[Flutter API documentation]: {{site.api}}
+[Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter's Layered Design]: https://www.youtube.com/watch?v=dkyY9WCGMi0
-[FormField]: https://docs.flutter.io/flutter/widgets/FormField-class.html
-[Form]: https://docs.flutter.io/flutter/widgets/Form-class.html
-[foundation library]: https://docs.flutter.io/flutter/foundation/foundation-library.html
-[GestureDetector]: https://docs.flutter.io/flutter/widgets/GestureDetector-class.html
+[FormField]: {{site.api}}/flutter/widgets/FormField-class.html
+[Form]: {{site.api}}/flutter/widgets/Form-class.html
+[foundation library]: {{site.api}}/flutter/foundation/foundation-library.html
+[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Gestures]: /docs/development/ui/widgets-intro#handling-gestures
 [Gestures in Flutter]: /docs/development/ui/advanced/gestures
 [hello-world]: /docs/get-started/codelab#step-1-create-the-starter-flutter-app
-[IconButton]: https://docs.flutter.io/flutter/material/IconButton-class.html
-[Icon]: https://docs.flutter.io/flutter/widgets/Icon-class.html
-[InkWell]: https://docs.flutter.io/flutter/material/InkWell-class.html
+[IconButton]: {{site.api}}/flutter/material/IconButton-class.html
+[Icon]: {{site.api}}/flutter/widgets/Icon-class.html
+[InkWell]: {{site.api}}/flutter/material/InkWell-class.html
 [Introduction to widgets]: /docs/development/ui/widgets-intro
 [iOS simulator]: /docs/get-started/install/macos#set-up-the-ios-simulator
 [Layout tutorial]: /docs/development/ui/layout/tutorial
 [Layout tutorial (step 6)]: /docs/development/ui/layout/tutorial#step-6-final-touch
-[ListView]: https://docs.flutter.io/flutter/widgets/ListView-class.html
-[Material Design guidelines]: https://material.io/design/guidelines-overview
-[meta.dart]: https://pub.dartlang.org/packages/meta
-[Radio]: https://docs.flutter.io/flutter/material/Radio-class.html
-[RaisedButton]: https://docs.flutter.io/flutter/material/RaisedButton-class.html
-[SizedBox]: https://docs.flutter.io/flutter/widgets/SizedBox-class.html
-[Slider]: https://docs.flutter.io/flutter/material/Slider-class.html
-[State]: https://docs.flutter.io/flutter/widgets/State-class.html
-[StatefulWidget]: https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html
-[StatelessWidget]: https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html
-[Switch]: https://docs.flutter.io/flutter/material/Switch-class.html
-[TextField]: https://docs.flutter.io/flutter/material/TextField-class.html
-[Text]: https://docs.flutter.io/flutter/widgets/Text-class.html
-[widget]: https://docs.flutter.io/flutter/widgets/State/widget.html
+[ListView]: {{site.api}}/flutter/widgets/ListView-class.html
+[Material Design guidelines]: {{site.material}}/design/guidelines-overview
+[meta.dart]: {{site.pub}}/packages/meta
+[Radio]: {{site.api}}/flutter/material/Radio-class.html
+[RaisedButton]: {{site.api}}/flutter/material/RaisedButton-class.html
+[SizedBox]: {{site.api}}/flutter/widgets/SizedBox-class.html
+[Slider]: {{site.api}}/flutter/material/Slider-class.html
+[State]: {{site.api}}/flutter/widgets/State-class.html
+[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[StatelessWidget]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
+[Switch]: {{site.api}}/flutter/material/Switch-class.html
+[TextField]: {{site.api}}/flutter/material/TextField-class.html
+[Text]: {{site.api}}/flutter/widgets/Text-class.html
+[widget]: {{site.api}}/flutter/widgets/State/widget.html

@@ -10,7 +10,8 @@ next:
 
 We not only want to display information to our users, we want our users to
 interact with our apps! So how do we respond to fundamental actions such as
-tapping and dragging? We'll use the [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+tapping and dragging? We'll use the
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 Widget!
 
 Say we want to make a custom button that shows a snackbar when tapped. How would
@@ -48,9 +49,10 @@ GestureDetector(
   1. If you'd like to add the Material Ripple effect to your button, please
   see the "[Adding Material Touch ripples](/docs/cookbook/gestures/ripples/)" recipe.
   2. While we've created a custom button to demonstrate these concepts, Flutter
-  includes a handful of buttons out of the box: [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html),
-  [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html),
-  and [CupertinoButton](https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html)
+  includes a handful of buttons out of the box:
+  [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
+  [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html),
+  and [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html)
 
 
 ## Complete example

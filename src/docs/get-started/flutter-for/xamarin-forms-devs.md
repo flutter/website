@@ -79,10 +79,10 @@ common.
 
 In Flutter, you specify an application widget that holds your root page.
 You can use a
-[MaterialApp](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, which supports [Material
-Design](https://material.io/design/), or you can use the lower level
-[WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html),
+Design]({{site.material}}/design), or you can use the lower level
+[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
 which you can customize in any way you want.
 
 The following code defines the home page, a stateful widget. In Flutter,
@@ -207,9 +207,9 @@ widgets. When building a route, you create a widget tree.
 
 Flutter includes the [Material Components](/docs/development/ui/widgets/material)
 library. These are widgets that implement the
-[Material Design guidelines](https://material.io/design/). Material Design is a
+[Material Design guidelines]({{site.material}}/design). Material Design is a
 flexible design system [optimized for all
-platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
@@ -550,7 +550,7 @@ the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -603,7 +603,7 @@ class SignaturePainter extends CustomPainter {
 ### Where is the widget's opacity?
 
 On Xamarin.Forms, all `VisualElement`s have an Opacity. In Flutter, you need to
-wrap a widget in an [Opacity widget](https://docs.flutter.io/flutter/widgets/Opacity-class.html)
+wrap a widget in an [Opacity widget]({{site.api}}/flutter/widgets/Opacity-class.html)
 to accomplish this.
 
 ### How do I build custom widgets?
@@ -714,9 +714,9 @@ In Xamarin.Forms, to send the user to another application, you use a
 specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter, create a native platform integration,
-or use an [existing plugin](https://pub.dartlang.org/flutter/), such as
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher), available with
-many other packages on the [Package site](https://pub.dartlang.org/flutter).
+or use an [existing plugin]({{site.pub}}/flutter/), such as
+[`url_launcher`]({{site.pub}}/packages/url_launcher), available with
+many other packages on the [Pub site]({{site.pub}}/flutter).
 
 ## Async UI
 
@@ -1039,7 +1039,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
 is easy when you use the popular
-[`http` package](https://pub.dartlang.org/packages/http).
+[`http` package]({{site.pub}}/packages/http).
 This abstracts away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
@@ -1182,7 +1182,7 @@ Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
 The so-called
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -1266,7 +1266,7 @@ new Text(Strings.welcomeMessage)
 
 By default, Flutter only supports US English for its strings. If you need to
 add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
+package. You might also need to add Dart's [`intl`]({{site.pub}}/packages/intl)
 package to use i10n machinery, such as date/time formatting.
 
 {% prettify yaml %}
@@ -1308,17 +1308,17 @@ values, but you'll need to provide one or more delegates for your own app's
 localizable copy, if you want those to be localized too.
 
 When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
 widget for you, with the delegates you specify.
 The current locale for the device is always accessible from the `Localizations`
 widget from the current context (in the form of a `Locale` object), or using the
-[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+Use the [`intl_translation`]({{site.pub}}/packages/intl_translation)
 package to extract translatable copy to
-[arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+[arb]({{site.github}}/google/i18n/app-resource-bundle)
 files for translating, and importing them back into the app for using them
 with `intl`.
 
@@ -1345,8 +1345,8 @@ Flutter uses Dart's own build system, and the Pub package manager.
 The tools delegate the building of the native Android and iOS wrapper apps to the
 respective build systems.
 
-In general, use `pubspec.yaml` to declare external dependencies to use in Flutter. A good
-place to find Flutter packages is [Pub](https://pub.dartlang.org/flutter).
+In general, use `pubspec.yaml` to declare external dependencies to use in
+Flutter. A good place to find Flutter packages is [Pub]({{site.pub}}/flutter).
 
 ## Application Lifecycle
 
@@ -1369,7 +1369,7 @@ only.
 For more details on the meaning of these states, see [`AppLifecycleStatus`
 documentation][].
 
-[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1927,9 +1927,9 @@ doesn't recreate the list anymore, but instead `.add`s to it.
 
 For more information, please visit
 [Write your first Flutter app,
-part 1](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1)
+part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
-part 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
+part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
 
 ## Working with text
 
@@ -1999,7 +1999,7 @@ the state of any of its properties, or it is bound to a property in a `ViewModel
 
 Retrieving information in Flutter is handled by specialized widgets and is different
 than how you are used to. If you have a `TextField` or a `TextFormField`, you can supply a
-[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 
 {% prettify dart %}
@@ -2184,7 +2184,7 @@ In addition to directly using platform channels, you can use a variety of pre-ma
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
+write your own integration. Plugins are found [on Pub]({{site.pub}}),
 Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
@@ -2194,32 +2194,32 @@ and [publish it on Pub](/docs/development/packages-and-plugins/developing-packag
 
 ### How do I access the GPS sensor?
 
-Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
+Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
 
 ### How do I access the camera?
 
-The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
+The [`image_picker`]({{site.pub}}/packages/image_picker) plugin is popular
 for accessing the camera.
 
 ### How do I log in with Facebook?
 
 To Log in with Facebook, use the
-[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by
-[first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
- * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`](https://pub.dartlang.org/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
- * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) for Firebase Auth
+ * [`firebase_database`]({{site.pub}}/packages/firebase_database) for Firebase RTDB
+ * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
+ * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) for Firebase Cloud Firestore
 
 You can also find some third-party Firebase plugins on Pub that cover areas
 not directly covered by the first-party plugins.
@@ -2284,7 +2284,7 @@ class SampleApp extends StatelessWidget {
 Xamarin.Forms developers will likely be familar with the `Xam.Plugins.Settings` plugin.
 
 In Flutter, access equivalent functionality using the
-[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+[Shared Preferences plugin]({{site.pub}}/packages/shared_preferences).
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
@@ -2294,7 +2294,7 @@ In Xamarin.Forms most applications would use the `sqlite-net-pcl` plugin to acce
 SQLite databases.
 
 In Flutter, access this functionality using the
-[SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
+[SQFlite]({{site.pub}}/packages/sqflite) plugin.
 
 ## Notifications
 
@@ -2304,8 +2304,8 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging](https://github.com/flutter/plugins/tree/master/packages/firebase_messaging)
+[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
 plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
 plugin documentation.

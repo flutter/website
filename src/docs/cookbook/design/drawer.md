@@ -12,9 +12,9 @@ In apps that employ Material Design, there are two primary options for
 navigation: tabs and drawers. When there is insufficient space to support tabs,
 Drawers provide a handy alternative.
 
-In Flutter, we can use the [`Drawer`](https://docs.flutter.io/flutter/material/Drawer-class.html)
-Widget in combination with a [`Scaffold`](https://docs.flutter.io/flutter/material/Scaffold-class.html)
-to create a layout with a Material Design Drawer!
+In Flutter, we can use the [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html)
+Widget in combination with a [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
+to create a layout with a Material Design Drawer.
 
 ## Directions
 
@@ -25,7 +25,8 @@ to create a layout with a Material Design Drawer!
 
 ## 1. Create a `Scaffold`
 
-In order to add a Drawer to our app, we'll need to wrap it in a [Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
+In order to add a Drawer to our app, we'll need to wrap it in a
+[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
 Widget. The Scaffold Widget provides a consistent visual structure to apps that
 follow the Material Design Guidelines. It also supports special Material Design
 components, such as Drawers, AppBars, and SnackBars.
@@ -42,7 +43,8 @@ Scaffold(
 ## 2. Add a drawer
 
 We can now add a drawer to our `Scaffold`. A drawer could be any Widget, but
-it's often best to use the `Drawer` widget from the [material library](https://docs.flutter.io/flutter/material/material-library.html),
+it's often best to use the `Drawer` widget from the
+[material library]({{site.api}}/flutter/material/material-library.html),
 which adheres to the Material Design spec.
 
 <!-- skip -->
@@ -56,14 +58,15 @@ Scaffold(
 
 ## 3. Populate the drawer with items
 
-Now that we have a `Drawer` in place, we can add content to it! In this example,
-we will use a [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html).
+Now that we have a `Drawer` in place, we can add content to it. In this example,
+we will use a [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html).
 While we could use a `Column` Widget, `ListView` is handy in this situation
 because it will allow users to scroll through the drawer if the content takes up
 more space than the screen supports.
 
-We will populate the `ListView` with a [`DrawerHeader`](https://docs.flutter.io/flutter/material/DrawerHeader-class.html)
-and two [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html)
+We will populate the `ListView` with a
+[`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html)
+and two [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
 Widgets. For more information on working with Lists, please see the
 [list recipes](/docs/cookbook#lists).
 
@@ -105,9 +108,9 @@ Drawer(
 ## 4. Close the drawer programmatically
 
 After a user taps on an item, we often want to close the drawer. How can we
-achieve this? Using the [Navigator](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
+achieve this? Using the [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)!
 
-When a user opens the Drawer, Flutter will add the drawer to the navigation
+When a user opens the Drawer, Flutter adds the drawer to the navigation
 stack under the hood. Therefore, to close the drawer, we can call
 `Navigator.pop(context)`.
 

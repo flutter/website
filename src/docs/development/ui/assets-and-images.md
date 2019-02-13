@@ -12,7 +12,7 @@ images (JPEG, WebP, GIF, animated WebP/GIF, PNG, BMP, and WBMP).
 ## Specifying assets
 
 Flutter uses
-the [`pubspec.yaml`](https://www.dartlang.org/tools/pub/pubspec) file,
+the [`pubspec.yaml`]({{site.dart-site}}/tools/pub/pubspec) file,
 located at the root of your project, to identify assets required by an
 app.
 
@@ -100,7 +100,7 @@ etc.
 ## Loading assets
 
 Your app can access its assets through an
-[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html)
+[`AssetBundle`]({{site.api}}/flutter/services/AssetBundle-class.html)
 object.
 
 The two main methods on an asset bundle allow you to load a
@@ -111,14 +111,14 @@ to the asset specified in the `pubspec.yaml` file at build time.
 ### Loading text assets
 
 Each Flutter app has a
-[`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html)
+[`rootBundle`]({{site.api}}/flutter/services/rootBundle.html)
 object for easy access to the main asset bundle. It is possible to
 load assets directly using the `rootBundle` global static from
 `package:flutter/services.dart`.
 
 However, it's recommended to obtain the AssetBundle for the current
 BuildContext using
-[`DefaultAssetBundle`](https://docs.flutter.io/flutter/widgets/DefaultAssetBundle-class.html).
+[`DefaultAssetBundle`]({{site.api}}/flutter/widgets/DefaultAssetBundle-class.html).
 Rather than the default asset bundle that was built with the app, this
 approach enables a parent widget to substitute a different AssetBundle
 at run time, which can be useful for localization or testing
@@ -152,9 +152,9 @@ pixel ratio.
 
 #### Declaring resolution-aware image assets {#resolution-aware}
 
-[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html)
+[`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html)
 understands how to map a logical requested asset onto one that most
-closely matches the current [device pixel ratio](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html).
+closely matches the current [device pixel ratio]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html).
 In order for this mapping to
 work, assets should be arranged according to a particular directory structure:
 
@@ -199,7 +199,7 @@ be included in the `pubspec.yaml` manifest, however.
 #### Loading images
 
 To load an image, use the
-[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html)
+[`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html)
 class in a widget's `build` method.
 
 For example, your app can load the background image from the asset
@@ -224,15 +224,15 @@ Widget build(BuildContext context) {
 Anything using the default asset bundle will inherit resolution
 awareness when loading images. (If you work with some of the lower
 level classes, like
-[`ImageStream`](https://docs.flutter.io/flutter/painting/ImageStream-class.html)
+[`ImageStream`]({{site.api}}/flutter/painting/ImageStream-class.html)
 or
-[`ImageCache`](https://docs.flutter.io/flutter/painting/ImageCache-class.html),
+[`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html),
 you'll also notice parameters related to scale.)
 
 ### Asset images in package dependencies {#from-packages}
 
 To load an image from a [package](/docs/development/packages-and-plugins/using-packages) dependency,
-the `package` argument must be provided to [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
+the `package` argument must be provided to [`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html).
 
 For instance, suppose your application depends on a package called `my_icons`, which has the following directory structure:
 
@@ -281,10 +281,10 @@ Flutter assets are readily available to platform code via AssetManager on Androi
 
 ### Android
 
-On Android the assets are available via the [AssetManager API](https://developer.android.com/reference/android/content/res/AssetManager).
-The lookup key used in for instance [openFd](https://developer.android.com/reference/android/content/res/AssetManager#openFd(java.lang.String)) is obtained from
-`lookupKeyForAsset` on [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on
-[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html).
+On Android the assets are available via the [AssetManager API]({{site.android-dev}}/reference/android/content/res/AssetManager).
+The lookup key used in for instance [openFd]({{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)) is obtained from
+`lookupKeyForAsset` on [PluginRegistry.Registrar]({{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) or `getLookupKeyForAsset` on
+[FlutterView]({{site.api}}/javadoc/io/flutter/view/FlutterView.html).
 `PluginRegistry.Registrar` is available when developing a plugin while `FlutterView` would be the choice when developing an
 app including a platform view.
 
@@ -316,8 +316,8 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 On iOS the assets are available via the [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle).
 The lookup key used in for instance [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) is obtained from
-`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or
-`lookupKeyForAsset:fromPackage:` on [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html).
+`lookupKeyForAsset` or `lookupKeyForAsset:fromPackage:` on [FlutterPluginRegistrar]({{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html) or `lookupKeyForAsset:` or
+`lookupKeyForAsset:fromPackage:` on [FlutterViewController]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
 `FlutterPluginRegistrar` is available when developing
 a plugin while `FlutterViewController` would be the choice when developing an app including a platform view.
 
@@ -331,7 +331,7 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 ```
 
 For a more complete example see the implementation of the Flutter
-[video_player plugin](https://pub.dartlang.org/packages/video_player).
+[video_player plugin]({{site.pub}}/packages/video_player).
 
 ## Platform assets
 
@@ -351,7 +351,7 @@ In your Flutter project's root directory, navigate to `.../android/app/src/main/
 The various bitmap resource folders such as `mipmap-hdpi` already contain placeholder images named
 `ic_launcher.png`. Simply replace them with your desired assets respecting the recommended icon size
 per screen density as indicated by the [Android Developer
-Guide](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher#size).
+Guide]({{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher#size).
 
 ![Android icon location](/images/assets-and-images/android-icon-path.png)
 
@@ -376,17 +376,17 @@ Flutter also uses native platform mechanisms to draw transitional launch screens
 
 {{site.alert.note}}
   This implies that if you don't call
-  [runApp()](https://docs.flutter.io/flutter/widgets/runApp.html) in the
+  [runApp()]({{site.api}}/flutter/widgets/runApp.html) in the
   `main()` function of your app (or more specifically, if you don't call
-  [`window.render()`](https://docs.flutter.io/flutter/dart-ui/Window/render.html)
+  [`window.render()`]({{site.api}}/flutter/dart-ui/Window/render.html)
   in response to
-  [`window.onDrawFrame`](https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html)),
+  [`window.onDrawFrame`]({{site.api}}/flutter/dart-ui/Window/onDrawFrame.html)),
   the launch screen will persist forever.
 {{site.alert.end}}
 
 #### Android
 
-To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables](https://developer.android.com/guide/topics/resources/drawable-resource) to achieve the intended effect.
+To add a "splash screen" to your Flutter application, navigate to `.../android/app/src/main`. In `res/drawable/launch_background.xml`, You can use this [layer list drawable]({{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList) XML to customize the look of your launch screen. The existing template provides an example for adding a image to to the middle of a white splash screen in commented code. You can uncomment it or use other [drawables]({{site.android-dev}}/guide/topics/resources/drawable-resource) to achieve the intended effect.
 
 #### iOS
 

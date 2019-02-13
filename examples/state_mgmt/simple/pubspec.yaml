@@ -12,9 +12,13 @@ dependencies:
 
   cupertino_icons: ^0.1.2
 
+  scoped_model: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  test: ^1.5.1
 
 flutter:
   uses-material-design: true

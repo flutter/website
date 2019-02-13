@@ -49,17 +49,17 @@ to their immutability. Because they aren't views themselves, and aren't directly
 drawing anything, but rather are a description of the UI and its semantics
 that get "inflated" into actual view objects under the hood.
 
-Flutter includes the [Material Components](https://material.io/develop/flutter/)
+Flutter includes the [Material Components]({{site.material}}/develop/flutter/)
 library. These are widgets that implement the
-[Material Design guidelines](https://material.io/design/). Material Design is a
+[Material Design guidelines]({{site.material}}/design/). Material Design is a
 flexible design system [optimized for all
-platforms](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
+[Apple's iOS design language](https://developer.apple.com/design/resources).
 
 ### How do I update `Widget`s?
 
@@ -380,7 +380,7 @@ latter of which implements your algorithm to draw to the canvas.
 To learn how to implement a signature painter in Flutter, see Collin's answer on
 [StackOverflow][].
 
-[StackOverflow]: https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 {% prettify dart %}
 class SignaturePainter extends CustomPainter {
@@ -534,8 +534,8 @@ In iOS, to send the user to another application, you use a
 specific URL scheme. For the system level apps, the scheme
 depends on the app. To implement this functionality in Flutter,
 create a native platform integration, or use an
-[existing plugin](https://pub.dartlang.org/flutter/), such as
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+[existing plugin]({{site.pub}}/flutter), such as
+[`url_launcher`]({{site.pub-pkg}}/url_launcher).
 
 ### How do I pop back to the iOS native viewcontroller?
 
@@ -866,7 +866,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### How do I make network requests?
 
 Making a network call in Flutter is easy when you use the popular
-[`http` package](https://pub.dartlang.org/packages/http). This abstracts
+[`http` package]({{site.pub-pkg}}/http). This abstracts
 away a lot of the networking that you might normally implement yourself,
 making it simple to make network calls.
 
@@ -1017,7 +1017,7 @@ assets:
 {% endprettify %}
 
 And then access it from code using an
-[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html):
+[`AssetBundle`]({{site.api}}/flutter/services/AssetBundle-class.html):
 
 {% prettify dart %}
 import 'dart:async' show Future;
@@ -1030,7 +1030,7 @@ Future<String> loadAsset() async {
 
 For images, Flutter follows a simple density-based format like iOS. Image assets
 might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier. The so-called
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresses the ratio of physical pixels in a single logical pixel.
 
 Assets are located in any arbitrary folder&mdash;Flutter has no
@@ -1094,7 +1094,7 @@ Text(Strings.welcomeMessage)
 
 By default, Flutter only supports US English for its strings. If you need to
 add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's [`intl`](https://pub.dartlang.org/packages/intl)
+package. You might also need to add Dart's [`intl`]({{site.pub-pkg}}/intl)
 package to use i10n machinery, such as date/time formatting.
 
 {% prettify yaml %}
@@ -1136,17 +1136,17 @@ values, but you'll need to provide one or more delegates for your own app's
 localizable copy, if you want those to be localized too.
 
 When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
 widget for you, with the delegates you specify.
 The current locale for the device is always accessible from the `Localizations`
 widget from the current context (in the form of a `Locale` object), or using the
-[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+Use the [`intl_translation`]({{site.pub-pkg}}/intl_translation)
 package to extract translatable copy to
-[arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
+[arb]({{site.github}}/googlei18n/app-resource-bundle)
 files for translating, and importing them back into the app for using them
 with `intl`.
 
@@ -1168,9 +1168,9 @@ respective build systems.
 While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
 dependencies needed for per-platform integration. In general, use
-`pubspec.yaml` to declare external dependencies in Flutter. A good place to
-find great packages for Flutter is
-[Pub](https://pub.dartlang.org/flutter/packages/).
+`pubspec.yaml` to declare external dependencies in Flutter.
+A good place to find great packages for Flutter is the
+[Pub site]({{site.pub}}/flutter/packages).
 
 ## ViewControllers
 
@@ -1207,7 +1207,7 @@ has no equivalent event.
 For more details on the meaning of these states, see
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: https://docs.flutter.io/flutter/dart-ui/AppLifecycleState-class.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
 
 ## Layouts
 
@@ -1674,7 +1674,7 @@ specific functionality.
 
 But Flutter is flexible and expressive enough to implement any design language.
 On iOS, you can use the
-[Cupertino library](https://docs.flutter.io/flutter/cupertino/cupertino-library.html)
+[Cupertino library]({{site.api}}/flutter/cupertino/cupertino-library.html)
 to produce an interface that adheres to the [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 For the full set of these widgets, see the
@@ -1769,7 +1769,7 @@ user input, or action on it. How does that work in Flutter?
 
 In practice forms are handled, like everything in Flutter, by specialized
 widgets. If you have a `TextField` or a `TextFormField`, you can supply a
-[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 to retrieve user input:
 
 {% prettify dart %}
@@ -1935,7 +1935,7 @@ In addition to directly using platform channels, you can use a variety of pre-ma
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found [on Pub](https://pub.dartlang.org/),
+write your own integration. Plugins are found [on the Pub site]({{site.pub}}),
 Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
@@ -1945,35 +1945,35 @@ and [publish it on Pub](/docs/development/packages-and-plugins/developing-packag
 
 ### How do I access the GPS sensor?
 
-Use the [`geolocator`](https://pub.dartlang.org/packages/geolocator) community plugin.
+Use the [`geolocator`]({{site.pub-pkg}}/geolocator) community plugin.
 
 ### How do I access the camera?
 
-The [`image_picker`](https://pub.dartlang.org/packages/image_picker) plugin is popular
+The [`image_picker`]({{site.pub-pkg}}/image_picker) plugin is popular
 for accessing the camera.
 
 ### How do I log in with Facebook?
 
 To log in with Facebook, use the
-[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`]({{site.pub-pkg}}/flutter_facebook_login) community plugin.
 
 ### How do I use Firebase features?
 
 Most Firebase functions are covered by
-[first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) for Firebase Auth
- * [`firebase_core`](https://pub.dartlang.org/packages/firebase_core) for Firebase's Core package
- * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`]({{site.pub-pkg}}/firebase_admob) for Firebase AdMob
+ * [`firebase_analytics`]({{site.pub-pkg}}/firebase_analytics) for Firebase Analytics
+ * [`firebase_auth`]({{site.pub-pkg}}/firebase_auth) for Firebase Auth
+ * [`firebase_core`]({{site.pub-pkg}}/firebase_core) for Firebase's Core package
+ * [`firebase_database`]({{site.pub-pkg}}/firebase_database) for Firebase RTDB
+ * [`firebase_storage`]({{site.pub-pkg}}/firebase_storage) for Firebase Cloud Storage
+ * [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) for Firebase Messaging (FCM)
+ * [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on Pub that cover areas
-not directly covered by the first-party plugins.
+You can also find some third-party Firebase plugins on the Pub site that
+cover areas not directly covered by the first-party plugins.
 
 ### How do I build my own custom native integrations?
 
@@ -1994,7 +1994,7 @@ In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
 
 In Flutter, access equivalent functionality using the
-[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+[Shared Preferences plugin]({{site.pub-pkg}}/shared_preferences).
 This plugin wraps the functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
@@ -2005,7 +2005,7 @@ layer on top of an SQL database, making it easier to make queries that
 relate to your models.
 
 In Flutter, access this functionality using the
-[SQFlite](https://pub.dartlang.org/packages/sqflite) plugin.
+[SQFlite]({{site.pub-pkg}}/sqflite) plugin.
 
 ## Notifications
 
@@ -2018,5 +2018,5 @@ In Flutter, access this functionality using the
 `firebase_messaging` plugin.
 
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging)
+[`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging)
 plugin documentation.

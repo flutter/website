@@ -165,7 +165,7 @@ If you want to define a `RenderObject` that uses a new coordinate
 system, then you should inherit straight from `RenderObject`. Examples
 of doing this can be found in `RenderBox`, which deals in
 rectangles in cartesian space, and in the [sector_layout.dart
-example](https://github.com/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart), which
+example]({{site.github}}/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart), which
 implements a toy model based on polar coordinates. The `RenderView`
 class, which is used internally to adapt from the host system to this
 rendering framework, is another example.

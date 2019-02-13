@@ -11,11 +11,11 @@ next:
 ---
 
 While Android and iOS offer high quality system fonts, one of the most common
-requests from designers is to use custom fonts! For example, we may have a
-custom-built font from our designer or downloaded a font from
-[Google Fonts](https://fonts.google.com/).
+requests from designers is to use custom fonts. For example, you may have a
+custom-built font from a designer, or maybe you downloaded a font from
+[Google Fonts](https://fonts.google.com).
 
-Flutter works out of the box with custom fonts. We can apply fonts across an
+Flutter works out of the box with custom fonts. You can apply fonts across an
 entire app or to individual Widgets.
 
 ## Directions
@@ -27,12 +27,12 @@ entire app or to individual Widgets.
 
 ## 1. Import the font files
 
-In order to work with a font, we need to import the font files into the project.
-It is common practice to put font files in a `fonts` or `assets` folder at the
-root of a Flutter project.
+In order to work with a font, you need to import the font files into the
+project.  It is common practice to put font files in a `fonts` or `assets`
+folder at the root of a Flutter project.
 
-For example, if we want to import the Raleway and Roboto Mono font files into
-our project, the folder structure would look like this:
+For example, if you want to import the Raleway and Roboto Mono font files into
+a project, the folder structure would look like this:
 
 ```
 awesome_app/
@@ -45,8 +45,8 @@ awesome_app/
 
 ## 2. Declare the font in the `pubspec.yaml`
 
-Now that we have a font to work with, we need to tell Flutter where to find it.
-We can do so by including a font definition in the `pubspec.yaml`.
+Now that you have a font to work with, you need to tell Flutter where to
+find it. You can do so by including a font definition in the `pubspec.yaml`.
 
 ```yaml
 flutter:
@@ -65,39 +65,41 @@ flutter:
 
 ### `pubspec.yaml` option definitions
 
-The `family` determines the name of the font, which we can use in the
-[`fontFamily`](https://docs.flutter.io/flutter/painting/TextStyle/fontFamily.html)
-property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+The `family` determines the name of the font, which you use in the
+[`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html)
+property of a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 object.
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
-These files contain the outlines for the glyphs in the font. When building our
-app, these files are included in our app's asset bundle.
+These files contain the outlines for the glyphs in the font. When building the
+app, these files are included in the app's asset bundle.
 
 A single font can reference many different files with different outline weights
 and styles:
 
   * The `weight` property specifies the weight of the outlines in the file as an
-    integer multiple of 100 between 100 and 900. These values correspond to the
-    [`FontWeight`](https://docs.flutter.io/flutter/dart-ui/FontWeight-class.html)
-    and can be used in the [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-    object.
+    integer multiple of 100, between 100 and 900. These values correspond to the
+    [`FontWeight`]({{site.api}}/flutter/dart-ui/FontWeight-class.html)
+    and can be used in the
+    [`fontWeight`]({{site.api}}/flutter/painting/TextStyle/fontWeight.html)
+    property of a
+    [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
 
   * The `style` property specfies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
-    [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html)
-    and can be used in the [fontStyle](https://docs.flutter.io/flutter/painting/TextStyle/fontStyle.html)
-    property of a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-    object.
+    [`FontStyle`]({{site.api}}/flutter/dart-ui/FontStyle-class.html)
+    and can be used in the
+    [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html)
+    property of a
+    [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
 
 ## 3. Set a font as the default
 
-We have two options for how to apply fonts to text: as the default font or only
-within specific Widgets.
+You have two options for how to apply fonts to text: as the default font
+or only within specific Widgets.
 
-To use a font as the default, we can set the `fontFamily` property as part of
-the app's `theme`. The value we provide to `fontFamily` must match the `family`
+To use a font as the default, set the `fontFamily` property as part of
+the app's `theme`. The value provided to `fontFamily` must match the `family`
 name declared in the `pubspec.yaml`.
 
 <!-- skip -->
@@ -111,16 +113,16 @@ MaterialApp(
 ```
 
 For more information on themes, please view the ["Using Themes to share colors
-and font styles"](/docs/cookbook/design/themes/) recipe.
+and font styles"](/docs/cookbook/design/themes) recipe.
 
 ## 4. Use the font in a specific Widget
 
-If we want to apply the font to a specific Widget, such as a `Text` Widget,
-we can provide a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+If you want to apply the font to a specific Widget, such as a `Text` Widget,
+provide a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 to the Widget.
 
-In this example, we'll apply the RobotoMono font to a single `Text` Widget. Once
-again, the `fontFamily` must match the `family` name we declared in the
+In this example, you'll apply the RobotoMono font to a single `Text` Widget.
+Once again, the `fontFamily` must match the `family` name declared in the
 `pubspec.yaml`.
 
 <!-- skip -->
@@ -133,7 +135,7 @@ Text(
 
 ### TextStyle
 
-If a [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
+If a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
 object specifies a weight or style for which is there is no exact font file, the
 engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.
@@ -142,7 +144,8 @@ extrapolate outlines for the requested weight and style.
 
 ### Fonts
 
-The Raleway and RobotoMono fonts were downloaded from [Google Fonts](https://fonts.google.com/).
+The Raleway and RobotoMono fonts were downloaded from [Google
+Fonts](https://fonts.google.com).
 
 ### `pubspec.yaml`
 
@@ -196,10 +199,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // The AppBar will use the app-default Raleway font
+      // The AppBar uses the app-default Raleway font
       appBar: AppBar(title: Text('Custom Fonts')),
       body: Center(
-        // This Text Widget will use the RobotoMono font
+        // This Text Widget uses the RobotoMono font
         child: Text(
           'Roboto Mono sample',
           style: TextStyle(fontFamily: 'RobotoMono'),

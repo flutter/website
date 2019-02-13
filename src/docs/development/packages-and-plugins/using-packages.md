@@ -9,11 +9,11 @@ your app without having to develop everything from scratch.
 
 Existing packages enable many use cases, for example, making network requests
 ([`http`](/docs/cookbook/networking/fetch-data)), custom navigation/route handling
-([`fluro`](https://pub.dartlang.org/packages/fluro)), integration with device
-APIs (like [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
-[`battery`](https://pub.dartlang.org/packages/battery)),
+([`fluro`]({{site.pub-pkg}}/fluro)), integration with device
+APIs (like [`url_launcher`]({{site.pub-pkg}}/url_launcher) &
+[`battery`]({{site.pub-pkg}}/battery)),
 and using third-party platform SDKs (like
-[Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
+[Firebase]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)).
 
 If you are looking to develop a new package, please see
 [developing packages](/docs/development/packages-and-plugins/developing-packages).
@@ -25,10 +25,10 @@ files or packages, please see [Assets & images](/docs/development/ui/assets-and-
 
 ### Searching for packages
 
-Packages are published to the *[Package](https://pub.dartlang.org)* site.
+Packages are published to the [*Pub site*]({{site.pub}}).
 
-The [Flutter landing page](https://pub.dartlang.org/flutter/) on
-the Package site displays top packages that are compatible with Flutter
+The [Flutter landing page]({{site.pub}}/flutter) on
+the Pub site displays top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 
@@ -59,7 +59,7 @@ To add a package 'css_colors' to an app:
      errors like `MissingPluginException` when using the package.
 
 The
-['Installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
+['Installing']({{site.pub-pkg}}/css_colors#-installing-tab-)
 tab available on any package page on Pub is a handy reference for these
 steps.
 
@@ -78,9 +78,9 @@ packages](/docs/development/packages-and-plugins/developing-packages).
 All packages have a version number, specified in their `pubspec.yaml` file.
 The current version of a package is displayed next to its name (for example,
 see the
-[url_launcher](https://pub.dartlang.org/packages/url_launcher) package), as
+[url_launcher]({{site.pub-pkg}}/url_launcher) package), as
 well as a list of all prior versions ([url_launcher
-versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
+versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
 
 When a package is added to `pubspec.yaml` using the shorthand form `plugin1:`
 this is interpreted as `plugin1: any`, i.e. any version of the package may be
@@ -95,7 +95,7 @@ we recommend specifying a version range using one of the following formats:
   ```
 
 * Range constraint with [*caret
-  syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax)
+  syntax*]({{site.dart-site}}/tools/pub/dependencies#caret-syntax)
   is similar to regular range constraints:
 
   ```
@@ -104,14 +104,14 @@ we recommend specifying a version range using one of the following formats:
   ```
 
 For additional details, see the [Pub versioning
-guide](https://www.dartlang.org/tools/pub/versioning).
+guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Updating package dependencies
 
 When you run `flutter packages get` ('Packages Get' in IntelliJ) for
 the first time after adding a package, Flutter saves the concrete package
 version found in the `pubspec.lock`
-[lockfile](https://www.dartlang.org/tools/pub/glossary#lockfile).
+[lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
 This ensures that you get the same version again if you, or another
 developer on your team, run `flutter packages get`.
 
@@ -162,13 +162,13 @@ additional dependency options are avaialble:
 
   Finally, you can use the `ref` argument to pin the dependency to a
   specific git commit, branch, or tag. For more details, see
-  [Pub Dependencies](https://www.dartlang.org/tools/pub/dependencies).
+  [Pub Dependencies]({{site.dart-site}}/tools/pub/dependencies).
 
 ## Examples
 
 ### Example: Using the CSS Colors package {#css-example}
 
-The [`css_colors`](https://pub.dartlang.org/packages/css_colors) package
+The [`css_colors`]({{site.pub-pkg}}/css_colors) package
 defines color constants for the CSS colors, allowing you to use them
 wherever the Flutter framework expects the `Color` type.
 
@@ -227,7 +227,7 @@ class DemoPage extends StatelessWidget {
 
 ### Example: Using the URL Launcher package to launch the browser {#url-example}
 
-The [URL Launcher](https://pub.dartlang.org/packages/url_launcher) plugin
+The [URL Launcher]({{site.pub-pkg}}/url_launcher) plugin
 package enables you to open the default browser on the mobile platform to
 display a given URL. It demonstrates how packages may also contain
 platform-specific code (we call these packages 'plugins').

@@ -5,7 +5,7 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
-{% assign api = 'https://docs.flutter.io/flutter' -%}
+{% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = 'https://raw.githubusercontent.com/flutter/website/master/examples' -%}
@@ -665,7 +665,7 @@ Flutter has a rich library of layout widgets. Here are a few of those most
 commonly used. The intent is to get you up and running as quickly as possible,
 rather than overwhelm you with a complete list.  For information on other
 available widgets, refer to the [Widget catalog][],
-or use the Search box in the [API reference docs](https://docs.flutter.io).
+or use the Search box in the [API reference docs]({{api}}).
 Also, the widget pages in the API docs often make suggestions
 about similar widgets that might better suit your needs.
 
@@ -691,10 +691,10 @@ Components library.
 
 ### Container
 
-Many layouts make liberal use of [Container][]s to separate widgets using padding,
-or to add borders or margins. You can change the device's background by
-placing the entire layout into a `Container` and changing its background color
-or image.
+Many layouts make liberal use of [Container][]s to separate widgets using
+padding, or to add borders or margins. You can change the device's background
+by placing the entire layout into a `Container` and changing its background
+color or image.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -879,7 +879,7 @@ its content is too long for its render box.
   {:.text-center}
 
   Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
-  the [Material Design palette](https://material.io/guidelines/style/color.html)
+  the [Material Design palette]({{site.material}}/guidelines/style/color.html)
   for a particular color family.
 
   **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
@@ -1136,13 +1136,13 @@ The following resources may help when writing layout code.
   to Flutter features.
 * [Flutter Gallery][]
 : Demo app showcasing many Material Design widgets and other Flutter features.
-* [Flutter API documentation](https://docs.flutter.io/)
+* [Flutter API documentation]({{api}})
 : Reference documentation for all of the Flutter libraries.
 * [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)
 : Discusses how widgets are constrained by their render boxes.
 * [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)
 : Explains how to add images and other assets to your app's package.
-* [Zero to One with Flutter](https://medium.com/@mravn/zero-to-one-with-flutter-43b13fd7b354)
+* [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
 : One person's experience writing his first Flutter app.
 
 [build()]: {{api}}/widgets/StatelessWidget/build.html
@@ -1150,7 +1150,7 @@ The following resources may help when writing layout code.
 [Center]: {{api}}/widgets/Center-class.html
 [Column]: {{api}}/widgets/Column-class.html
 [Container]: {{api}}/widgets/Container-class.html
-[Elevation]: https://material.io/design/environment/elevation.html
+[Elevation]: {{site.material}}/design/environment/elevation.html
 [Expanded]: {{api}}/widgets/Expanded-class.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [GridView]: {{api}}/widgets/GridView-class.html
@@ -1160,8 +1160,8 @@ The following resources may help when writing layout code.
 [layout widgets]: /docs/development/ui/widgets/layout
 [ListTile]: {{api}}/material/ListTile-class.html
 [ListView]: {{api}}/widgets/ListView-class.html
-[Material card]: https://material.io/design/components/cards.html
-[Material Design]: https://material.io/design
+[Material card]: {{site.material}}/design/components/cards.html
+[Material Design]: {{site.material}}/design
 [Material library]: {{api}}/material/material-library.html
 [Row]: {{api}}/widgets/Row-class.html
 [Scaffold]: {{api}}/material/Scaffold-class.html

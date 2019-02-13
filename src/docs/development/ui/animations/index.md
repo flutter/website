@@ -19,7 +19,7 @@ More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
 If you have a specific request, please
-[file an issue](https://github.com/flutter/website/issues).
+[file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
@@ -29,14 +29,14 @@ If you have a specific request, please
   different aspects of the animation APIs.
 
 * [Zero to One with Flutter, part
-  1](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
-  2](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
+  1]({{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354) and [part
+  2]({{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb)<br>
   Medium articles showing how to create an animated chart using tweening.
 
 * [Building Beautiful UIs with
-  Flutter](https://codelabs.developers.google.com/codelabs/flutter)<br>
+  Flutter]({{site.codelabs}}/codelabs/flutter)<br>
   Codelab demonstrating how to build a simple chat app. [Step 7 (Animate
-  your app)](https://codelabs.developers.google.com/codelabs/flutter/#6)
+  your app)]({{site.codelabs}}/codelabs/flutter/#6)
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 
@@ -68,9 +68,9 @@ depends on how fast it was tossed and how far it was from the ground.
 Similarly, dropping a ball attached to a spring falls
 (and bounces) differently than dropping a ball attached to a string.
 
-* [Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)<br>
+* [Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)<br>
 Under **Material Components**, the
-[Grid](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
+[Grid]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/grid_list_demo.dart) example
 demonstrates a fling animation. Select one of the images from
 the grid and zoom in. You can pan the image with flinging or dragging
 gestures.
@@ -111,13 +111,14 @@ How to create two styles of Hero animations:
 
 * [Flutter Gallery][]<br>
 You can build the Gallery app yourself, or download it from the Play Store.
-The [Shrine](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
+The
+[Shrine]({{site.github}}/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/shrine_demo.dart)
 demo includes an example of a Hero animation.
 
 * Also see the API documentation for the
-[Hero,](https://docs.flutter.io/flutter/widgets/Hero-class.html)
-[Navigator,](https://docs.flutter.io/flutter/widgets/Navigator-class.html) and
-[PageRoute](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
+[Hero,]({{site.api}}/flutter/widgets/Hero-class.html)
+[Navigator,]({{site.api}}/flutter/widgets/Navigator-class.html) and
+[PageRoute]({{site.api}}/flutter/widgets/PageRoute-class.html)
 classes.
 
 ### Staggered animation
@@ -147,17 +148,17 @@ A catalog of some of the animation widgets provided in the Flutter APIs.
 Until the landing page for the animation library is reworked, leave this
 link out.
 * The [animation
-library](https://docs.flutter.io/flutter/animation/animation-library.html)
-in the [Flutter API documentation](https://docs.flutter.io/)<br>
+library]({{site.api}}/flutter/animation/animation-library.html)
+in the [Flutter API documentation]({{site.api}})<br>
 The animation API for the Flutter framework.
 {% endcomment %}
 
 <hr>
 
 If there is specific animation documentation you'd like to see,
-[file an issue](https://github.com/flutter/website/issues).
+[file an issue]({{site.github}}/flutter/website/issues).
 
-[AnimationController.animateWith]: https://docs.flutter.io/flutter/animation/AnimationController/animateWith.html
+[AnimationController.animateWith]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
 [Flutter Gallery]: {{site.repo.flutter}}/tree/master/examples/flutter_gallery
 [Material widgets]: /docs/development/ui/widgets/material
-[SpringSimulation]: https://docs.flutter.io/flutter/physics/SpringSimulation-class.html
+[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
