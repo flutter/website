@@ -343,5 +343,5 @@ For information on continuous deployment and testing, see the following:
   You'll need to create and configure a `.gitlab-ci.yml` file. You can [find an
   example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
   in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
-* [Codemagic CI/CD for
-  Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
+* [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
