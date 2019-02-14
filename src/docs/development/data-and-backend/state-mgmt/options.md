@@ -52,7 +52,6 @@ Learn more at the following links, many of which have been contributed by the Fl
 
 * [State Management Using BLoC pattern in Flutter](https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372), 
   by Saowen
-* [Architect your Flutter project using BLOC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
+* [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
-* [Example using BLoC pattern for state management](https://www.reddit.com/r/FlutterDev/comments/9b025j/example_using_bloc_pattern_for_state_management/),
-  by CodyLeet on reddit
+* [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
