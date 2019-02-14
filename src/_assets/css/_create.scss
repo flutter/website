@@ -7,6 +7,20 @@
     padding: bs-spacer(12) 0;
   }
 
+  &__cta {
+    $flutter-cta-color: #13B9FD;
+    $flutter-cta-color-hover: lighten($flutter-cta-color, 10%);
+
+    background-color: $flutter-cta-color;
+    border-color: $flutter-cta-color;
+    padding: bs-spacer(3) bs-spacer(10);
+
+    &:hover {
+      background-color: $flutter-cta-color-hover;
+      border-color: $flutter-cta-color-hover;
+    }
+  }
+
   &__deadline {
     color: $flutter-color-fuchsia;
   }
@@ -14,15 +28,22 @@
   &__criteria {
     display: block;
     list-style: none;
+    margin: 0;
     padding: 0;
     @include media-breakpoint-up(sm) {
       columns: 2;
     }
 
+    &__icon {
+      display: block;
+      margin-bottom: bs-spacer(2);
+    }
+
     li {
       font-size: 1.25rem;
+      margin-bottom: bs-spacer(8);
       @include media-breakpoint-up(xl) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
       }
     }
   }
