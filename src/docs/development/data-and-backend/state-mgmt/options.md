@@ -50,19 +50,8 @@ Learn more at the following links, many of which have been contributed by the Fl
 
 ## BLoC / Rx
 
-* [State Management Using BLoC pattern in Flutter](https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372), 
-  by Saowen
-* [Architect your Flutter project using BLOC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
+* [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
+* [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
 * [Example using BLoC pattern for state management](https://www.reddit.com/r/FlutterDev/comments/9b025j/example_using_bloc_pattern_for_state_management/),
   by CodyLeet on reddit
-* [Bloc Package]({{site.pub-pkg}}/bloc)
-* [Flutter Bloc Package]({{site.pub-pkg}}/flutter_bloc)
-* [Angular Bloc Package]({{site.pub-pkg}}/angular_bloc)
-* [Bloc Package Documentation](https://felangel.github.io/bloc)
-* [Bloc Package Introduction](https://medium.com/flutter-community/flutter-bloc-package-295b53e95c5c), by Felix Angelov
-* [Login Tutorial with Flutter Bloc Package](https://medium.com/flutter-community/flutter-login-tutorial-with-flutter-bloc-ea606ef701ad), by Felix Angelov
-* [Unit Testing with Bloc Package](https://medium.com/@felangelov/unit-testing-with-bloc-b94de9655d86), by Felix Angelov
-* [Infinite List Tutorial with Flutter Bloc Package](https://medium.com/flutter-community/flutter-infinite-list-tutorial-with-flutter-bloc-2fc7a272ec67), by Felix Angelov
-* [Code Sharing with Bloc Package](https://medium.com/flutter-community/code-sharing-with-bloc-b867302c18ef), by Felix Angelov
-* [Weather App Tutorial with Flutter Bloc Package](https://medium.com/flutter-community/weather-app-with-flutter-bloc-e24a7253340d), by Felix Angelov
