@@ -1,0 +1,208 @@
+---
+title: Create
+layout: landing
+body_class: landing-page create
+---
+
+<section class="create__row row">
+    <div class="col-md-6 align-self-center">
+        {% asset create/create-hero-illo.png class="mb-4 mb-md-0 mw-100" -%}
+    </div>
+    <div class="col-md-5 align-self-center">
+        <h2>Flutter Create</h2>
+        <p>
+            Flutter Create is a contest that challenges you to build something interesting, inspiring, and/or beautiful
+            with Flutter using 5K of less of Dart code. Whether you're an expert or a beginner with Flutter, we invite
+            you to join us and see what you can create. We also have over $10,000 in prizes for a few winners!
+        </p>
+        <a class="btn" target="_blank" rel="noopener nofollow" href="//twitter.com/intent/tweet?hashtags=FlutterCreate&url=https%3A%2F%2Fflutter.io%2Fcreate">
+            <i class="fab fa-twitter fa-lg"></i>&nbsp;&nbsp;&nbsp;Share #FlutterCreate with your community
+        </a>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row text-center">
+    <div class="col-md-8 offset-md-2">
+        <h6>What to make:</h6>
+        <h2 class="mt-0">Create a novel user experience with Flutter using 5KB or less of Dart&nbsp;code</h2>
+        <a class="create__cta btn btn-primary mb-8" href="https://docs.google.com/forms/d/1YrsnBlMFenKDrmGlcaPbKTbxbdWsua8_TMExoRwgyv4">Submit your app</a>
+        <p>All projects must be submitted by <span class="create__deadline">April 7, 11:59pm PST</span>.</p>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row">
+    <div class="col-lg-5 offset-lg-1 mb-8 mb-lg-0">
+        <h4>Judging:</h4>
+        <p>Each entry will be judged by a panel of Flutter experts against the following four criteria:</p>
+    </div>
+    <div class="col-lg-5">
+        <ul class="create__criteria">
+            <li>
+                {% asset create/icon-beauty.png class="create__criteria__icon" width="46" height="46" -%}
+                Visual beauty
+            </li>
+            <li>
+                {% asset create/icon-code.png class="create__criteria__icon" width="46" height="46" -%}
+                Code quality
+            </li>
+            <li>
+                {% asset create/icon-idea.png class="create__criteria__icon" width="46" height="46" -%}
+                Novelty of idea
+            </li>
+            <li>
+                {% asset create/icon-execution.png class="create__criteria__icon" width="46" height="46" -%}
+                Overall execution
+            </li>
+        </ul>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row">
+    <div class="col-12 col-md-10 offset-md-1">
+        <h4>Prizes:</h4>
+        <div class="row">
+            <div class="col-12 col-md-5 create__prizes">
+                <div class="create__prizes__image">
+                    {% asset create/prize-iMac.png style="max-width: 272px;" -%}
+                </div>
+                <h6 class="text-muted">Grand prize:</h6>
+                <h3>Customized Apple iMac Pro</h3>
+                <p>($10,000 value)</p>
+            </div>
+            <div class="col-12 col-md-4 create__prizes">
+                <div class="create__prizes__image">
+                    {% asset create/prize-home-max.png style="max-width: 242px; transform: translate(-10%);" -%}
+                </div>
+                <h6 class="text-muted">4 Winners:</h6>
+                <h3>Google Home Max</h3>
+            </div>
+            <div class="col-12 col-md-3 create__prizes">
+                <div class="create__prizes__image">
+                    {% asset create/prize-home-mini.png style="max-width: 224px; transform: translate(-27%);" -%}
+                </div>
+                <h6 class="text-muted">Up to 25 Winners:</h6>
+                <h3>Google Home Mini</h3>
+            </div>
+            <div class="col-12 mt-8">All submissions will receive a certification of completion</div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row">
+    <div class="col-12 col-md-10 offset-md-1">
+        <h4>Contest Guidelines:</h4>
+        <div class="create__text-columns">
+            <p>Your application must be submitted in the form of a ZIP file containing everything needed to run it on a target Android or iOS device.</p>
+            <p>You should include a README.md file that includes a brief description of the application and any special instructions on running it (for example, the application is designed to be run in landscape mode).</p>
+            <p>Code should be licensed with an open source license (we recommend BSD, MIT or Apache), so that we can judge it and others can benefit from your work.</p>
+            <p>We will run the application by unpacking the ZIP file and running the command <code>flutter run --release</code> to execute it on an attached Android or iOS device.</p>
+            <p>The ZIP file may contain other files and directories that are created using the flutter create command, such as <code>pubspec.yaml</code>; it may also include asset files (e.g. images, fonts) or data.</p>
+            <p>With the exception of packages (see below), all executable content must be included in the ZIP file.</p>
+            <p>All code needed to load and execute the application must be written in Dart, with the exception of any packages (as mentioned below).</p>
+            <p>Dart code must appear in a file that has a filename ending in .dart. The total size of all Dart files in the ZIP file, excluding unit tests that are not executed, must be no more than 5,120 bytes as (for example) measured by the command <code>find . -name "*.dart" | xargs cat | wc -c.</code></p>
+            <p>The application may use Flutter packages that are a) published on pub.dartlang.org; b) have broad applicability (e.g. not written solely for the purpose of circumventing the 5K file limit, in the opinion of the judges).</p>
+        </div>
+    </div>
+</section>
+
+<section class="create__row row">
+    <div class="col-12 col-md-10 offset-md-1">
+        <h4>Contest rules:</h4>
+        <div class="create__text-columns">
+            <p>Full details and rules in our <a href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">Official Rules</a>. But here’s a quick summary of some of the key points:</p>
+            <p>All work must be that of the contest entrant.</p>
+            <p>Only one submission per entrant.</p>
+            <p>Do not submit a project that already existed before the announcement of this contest.</p>
+            <p>Entries may not be submitted by any person who is a minor at the time of entry.</p>
+            <p>Google employees and contractors, contest judges, and members of their immediate families are not eligible to enter.</p>
+            <p>Persons from the following countries can submit but will not be considered eligible for the contest due to local rules, including exclusion from judging and prizes: Italy, Brazil, Quebec, and Mexico.</p>
+            <p>Submissions from the following embargoed countries will not be considered eligible for the contest, including exclusion from judging and prizes: Crimea, Cuba, Iran, Syria, North Korea, and Sudan.</p>
+            <p>Entries will be collected via the website using an online form.</p>
+            <p>Submissions must not be derogatory, offensive, threatening, defamatory, disparaging, libellous or contain any content that is inappropriate, indecent, sexual, profane, tortuous, slanderous, discriminatory in any way, or that promotes hatred or harm against any group or person, or otherwise does not comply with the theme and spirit of the contest.</p>
+            <p>They must not contain content, material or any element that is unlawful, or otherwise in violation of or contrary to all applicable federal, state, or local laws and regulation including the laws or regulations in any state where the doodle and supporting statement are created.</p>
+            <p>They must not contain any content, material or element that displays any third party advertising, slogan, logo, trademark, representation of characters indicating a sponsorship or endorsement by a third party, commercial entity or that is not within the spirit of the Contest, as determined by Sponsor, in its sole discretion.</p>
+            <p>They must be original, unpublished works that do not contain, incorporate or otherwise use any content, material or element that is owned by a third party or entity.</p>
+            <p>They cannot contain any content, element, or material that violates a third party's publicity, privacy or intellectual property rights.</p>
+            <p>The submission is not the subject of any actual or threatened litigation or claim.</p>
+            <p>The entrant does not include any disparaging remarks relating to the Sponsor or a third party.</p>
+            <p>For questions, contact <a href="mailto:flutter-create@google.com">flutter-create@google.com</a>.</p>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row">
+    <div class="col-12 col-md-10 offset-md-1">
+        <h4>FAQ:</h4>
+        <div class="create__text-columns">
+            <p>
+                <b>What is Flutter Create?</b><br>
+                Flutter Create is a contest where new and experienced developers can submit a project built using Flutter. It’s a fun way to learn Flutter, try building out interfaces, and possibly win prizes.
+            </p>
+            <p>
+                <b>What is the judging criteria?</b><br>
+                Each entry will be rated against the following rubric: visual beauty, code quality, novelty of idea, and overall execution.
+            </p>
+            <p>
+                <b>Who are the judges?</b><br>
+                Entries will be judged by members of the Flutter team and experienced developers from the Flutter community.
+            </p>
+            <p>
+                <b>What are the deadlines for the project?</b><br>
+                You need to have your project submitted by April 7th at 11:59pm PST.
+            </p>
+            <p>
+                <b>I submitted my project, can I make changes to it?</b><br>
+                Yes, as long as your change occurs before April 7th at 11:59pm PST.
+            </p>
+            <p>
+                <b>How will the winners be selected?</b><br>
+                Judges will evaluate based on four criteria: visual beauty, code quality, novelty of idea, and overall execution.
+            </p>
+            <p>
+                <b>When will winners be selected?</b><br>
+                Winners will be selected around April 25 and announced at Google I/O.
+            </p>
+            <p>
+                <b>What are the prizes?</b><br>
+                1 grand prize winner will get an <a href="https://www.apple.com/imac-pro/">iMac Pro 5K</a><br>
+                4 additional winners will get a Google Home Max<br>
+                Up to 25 others will win a Google Home Mini
+            </p>
+            <p>
+                <b>Can I submit more than one project?</b><br>
+                No, we limit one project per participant.
+            </p>
+            <p>
+                <b>I already have an approved app, can I submit that for the challenge?</b><br>
+                Unfortunately, no. Only new apps or UI’s can be submitted for approval
+            </p>
+            <p>
+                <b>Is there an age limit to participate?</b><br>
+                You must not be a minor (per your local law) to be eligible to win.
+            </p>
+            <p>
+                <b>If I have more questions, where should I go?</b><br>
+                Take a look through our <a href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">official rules</a>. You can also send us an email to <a href="mailto:flutter-create@google.com">flutter-create@google.com</a>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="create__row row text-center">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mt-0">Create a novel user experience with Flutter using 5KB or less of Dart&nbsp;code</h2>
+        <a class="create__cta btn btn-primary mb-8" href="https://docs.google.com/forms/d/1YrsnBlMFenKDrmGlcaPbKTbxbdWsua8_TMExoRwgyv4">Submit your app</a>
+    </div>
+</section>
