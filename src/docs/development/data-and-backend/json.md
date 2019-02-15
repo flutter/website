@@ -292,7 +292,7 @@ class User {
 {% endprettify %}
 
 With this setup, the source code generator generates code for encoding
-and encoding the `name` and `email` fields from JSON.
+and decoding the `name` and `email` fields from JSON.
 
 If needed, it is also easy to customize the naming strategy. For example, if the
 API returns objects with _snake\_case_, and you want to use
