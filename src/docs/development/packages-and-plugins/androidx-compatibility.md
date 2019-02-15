@@ -125,7 +125,7 @@ Migrating a Flutter plugin to AndroidX follows basically the same process as
 but with some additional concerns and some slight changes.
 
 1. Make sure to increment the [major
-   version]({{site.dart-site}}/pub/versioning#semantic-versions) of
+   version]({{site.dart-site}}/tools/pub/versioning#semantic-versions) of
    your plugin for this change and clearly document it in your plugin's
    changelog. This breaking change requires manual migration for
    users to fix. Pub treats digits differently depending on whether
