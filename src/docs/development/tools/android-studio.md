@@ -20,7 +20,7 @@ instructions to install the Dart and Flutter plugins.
 ### Updating the plugins<a name="updating"/>
 
 Updates to the plugins are shipped on a regular basis. You should get
-prompted in IntelliJ when an update is available.
+prompted in the IDE when an update is available.
 
 To check for updates manually:
 
@@ -62,7 +62,8 @@ files:
     **File > New > Project** from the main IDE window.
 
     {{site.alert.important}}
-      Do *not* use the **New > Project from existing sources** option for Flutter projects.
+      Do *not* use the **New > Project from existing sources** option for
+      Flutter projects.
     {{site.alert.end}}
  1. Select **Flutter** in the menu, and click **Next**.
  1. Under **Project location** enter, or browse to, the directory holding your
@@ -75,9 +76,10 @@ The Dart plugin performs code analysis that enables:
 
 * Syntax highlighting.
 * Code completions based on rich type analysis.
-* Navigating to type declarations (**Navigate > Declaration**), and finding type
-  usages (**Edit > Find > Find Usages**).
-* Viewing all current source code problems (**View > Tool Windows > Dart Analysis**).
+* Navigating to type declarations (**Navigate > Declaration**),
+  and finding type usages (**Edit > Find > Find Usages**).
+* Viewing all current source code problems
+  (**View > Tool Windows > Dart Analysis**).
   Any analysis issues are shown in the Dart Analysis pane:<br>
   ![Dart Analysis pane]({% asset tools/android-studio/dart-analysis.png @path %})
 
@@ -107,6 +109,7 @@ specific buttons on the right-hand side of the toolbar.
 
  1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
     The bottom **Run** pane shows logs output:<br>
+
     ![Log pane]({% asset tools/android-studio/log.png @path %})
 
 ### Run app with breakpoints
@@ -129,31 +132,56 @@ of your changes almost instantly with the _hot reload_ feature. See
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with **Debug**, and then open the Flutter
-inspector tool window using **View > Tool Windows > Flutter Inspector**.
+To debug a visual issue, start the app with **Debug**,
+and then open the Flutter inspector tool window using
+**View > Tool Windows > Flutter Inspector**.
 
 ![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 This offers many debugging tools; for details on these see
 [Debugging Flutter Apps](/docs/testing/debugging).
 
-* **Toggle Select Widget Mode**: Select a widget on the device to inspect it in the
-  [Flutter Inspector](/docs/development/tools/inspector).
-* **Toggle Debug Paint**: Add visual debugging hints to the rendering displaying
-   borders, padding, alignment, and spacers.
-* **Toggle Platform Mode**: Toggle between rendering for Android or iOS.
-* **Toggle Performance Overlay**: Show performance graphs for the GPU & CPU threads.
-* **Open Timeline View**: Analyze activity of the application as it runs.
-* **Open Observatory**: A profiler for Dart applications.
+* **Enable select widget mode**: Select a widget on the device to inspect
+  in the [Flutter Inspector](/docs/development/tools/inspector).
+* **Refresh widget info**: Redisplay the current widget info.
+* **Show/hide performance overlay**: Toggle display of performance graphs
+  for the GPU & CPU threads.
+* **Toggle platform mode**: Toggle between rendering for Android or iOS.
+* **Show debug paint**: Add visual debugging hints to the rendering
+  displaying borders, padding, alignment, and spacers.
+* **Show paint baselines**: Cause each RenderBox to paint a line at each
+  of its baselines.
+* **Enable slow animations**: Slow down animations to enable visual
+  inspection.
 
-Also available in the additional actions menu:
+Also available in the "more actions" menu:
 
-* **Show Paint Baselines**: Causes each RenderBox to paint a line at each of its
-  baselines.
-* **Enable Repaint Rainbow**: Shows rotating colors on layers when repainting.
-* **Enable Slow Animations**: Slows down animations to enable visual inspection.
-* **Hide Debug Banner**: Hides the debug banner even when running a debug build.
+* **Show Repaint Rainbow**: Shows rotating colors on layers when repainting.
+* **Hide Debug Mode Banner**: Hides the debug banner even when running a
+  debug build.
+* **Auto horizontal scroll**: XXX - TBD
+* **Highlight nodes displayed in both trees**: XXX - TBD
+* **Open Timeline View**: Analyzes activity of the application as it runs.
+* **Open Observatory**: Profiles Dart applications.
 
+### Show performance data
+
+To view the performance data, including the widget rebuild information,
+start the app with **Debug**, and then open the Performance tool window
+using **View > Tool Windows > Flutter Performance**.
+
+![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %})
+
+To see the stats about which widgets are being rebuilt, and how often,
+click **Show widget rebuild information** in the **Performance** pane.
+You can see how many times a widget was rebuilt in the last frame.
+For a high number of rebuilds, the exact count shows in the second column
+from the right, and a yellow spinning circle displays. 
+The column to the far right shows how many times a widget was rebuilt
+since entering the current screen. The app shown in this screenshot
+demonstrates poor performance.
+For widgets that weren't rebuilt, a solid grey circle displays.
+Otherwise, a grey spinning circle displays.
 
 ### Debugging with Observatory
 
@@ -224,13 +252,13 @@ On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
 
 On macOS (keymap _Mac OS X 10.5+ copy_) the keyboard shortcuts are
-`Command`+`Option`;` and `Command`+`Backslash`.
+`Command`+`Option` and `Command`+`Backslash`.
 
 Keyboard mappings can be changed in the IDE Preferences/Settings: Select
 *Keymap*, then enter _flutter_ into the search box in the upper right corner.
 Right click the binding you want to change and _Add Keyboard Shortcut_.
 
-![IntelliJ Settings Keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %})
+![IntelliJ settings keymap]({% asset tools/android-studio/keymap-settings-flutter-plugin.png @path %})
 
 ### Hot reload vs. Full app restart
 
@@ -295,11 +323,12 @@ fix it.
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:
 
- 1. In **Preferences > Plugins**, enable **Android Support** if you haven't already.
+ 1. In **Preferences > Plugins**, enable **Android Support** if you
+    haven't already.
  1. Right-click the **android** folder in the Project view, and select **Open
     Module Settings**.
- 1. In the **Sources** tab, locate the **Language level** field, and select level 8
-    or later.
+ 1. In the **Sources** tab, locate the **Language level** field, and
+    select level 8 or later.
  1. In the **Dependencies** tab, locate the **Module SDK** field, and select an
     Android SDK. If no SDK is listed, click **New** and specify the location of
     the Android SDK. Make sure to select an Android SDK matching the one used by
@@ -328,8 +357,8 @@ All known bugs are tracked in the issue trackers:
 * Dart plugin: [JetBrains
   YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
 
-We very much welcome feedback, both on bugs/issues and feature requests. Prior
-to filing new issues:
+We very much welcome feedback, both on bugs/issues and feature requests.
+Prior to filing new issues:
 
 * Do a quick search in the issue trackers to see if the issue is already
   tracked.
