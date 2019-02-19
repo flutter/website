@@ -1,8 +1,8 @@
 ---
 title: Reading and Writing Files
 prev:
-  title: Working with WebSockets
-  path: /docs/cookbook/networking/web-sockets
+  title: Persist data with SQLite
+  path: /docs/cookbook/persistence/sqlite
 next:
   title: Storing key-value data on disk
   path: /docs/cookbook/persistence/key-value
