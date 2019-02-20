@@ -52,7 +52,7 @@ method provided by the
 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class.
 
-This method runs the the provided function and records a
+This method runs the provided function and records a
 [`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
 with detailed information about the performance of the app. In this example, we
 provide a function that scrolls through the list of items, ensuring a specific
