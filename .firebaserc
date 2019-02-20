@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "sweltering-fire-2088",
+    "default": "flutter-dev-230821",
+    "flutter-dev": "flutter-dev-230821"
     "flutter-io": "sweltering-fire-2088",
     "staging-1": "flutter-io-staging-1",
     "staging-2": "flutter-io-staging-2",
