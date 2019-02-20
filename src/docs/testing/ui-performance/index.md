@@ -60,7 +60,7 @@ behavior of release mode builds. _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">**Why you should run on a real device:**</h4>
+  <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
 
 * Simulators and emulators don’t use the same hardware, so their
   performance characteristics are different&mdash;some operations are
@@ -273,9 +273,9 @@ and displaying code coverage. DevTool's _timeline_ view allows you
 to capture a snapshot of the stack at a moment in time.
 
 {{site.alert.note}}
-  Observatory is being replaced by [Dart DevTools][].
+  Observatory is being replaced by Dart DevTools.
   This browser-based tool is still in development,
-  but you can preview it now by downloading the repo.
+  but you can preview it now by downloading the [repo][].
   The [docs][] are being written, but DevTools
   provides similar CPU/GPU performance profiling
   and should be easier to use than Observatory.
@@ -440,7 +440,7 @@ and debugging in Flutter:
 * [Widget inspector][]
 * [Flutter Inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
-* [Observatory][]: A Profiler for Dart Apps
+* [Dart DevTools][]: A profiler for Dart apps
 * [Flutter API][] docs, particularly the [PerformanceOverlay][] class, and the
   [dart:developer][] package
 
@@ -480,3 +480,6 @@ and debugging in Flutter:
 [`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
 [Testing Flutter apps]: /docs/testing
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+[repo]: {{site.github}}/flutter/devtools
+[Dart DevTools]: {{site.github}}/flutter/devtools
+[docs]: https://flutter.github.io/devtools

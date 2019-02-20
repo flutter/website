@@ -30,6 +30,8 @@ To check for updates manually:
 
 ## Creating projects
 
+You can create a new project in one of several ways.
+
 ### Creating a new project
 
 To create a new Flutter project from the Flutter starter app template:
@@ -174,7 +176,7 @@ using **View > Tool Windows > Flutter Performance**.
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
-The exact count of the rebuilds for this frame shows in the second
+The exact count of the rebuilds for this frame displays in the second
 column from the right. For a high number of rebuilds, a yellow spinning
 circle displays. The column to the far right shows how many times a
 widget was rebuilt since entering the current screen.
@@ -193,10 +195,10 @@ This tool can help you detect at least four common performance issues:
 1. The whole screen (or large pieces of it) are built by a single
    StatefulWidget, causing unnecessary UI building.
 
-1. Offscreen items are being rebuilt. This can happen, for example,
+1. Offscreen widgets are being rebuilt. This can happen, for example,
    when a ListView is nested in a tall Column that extends offscreen.
    Or when the RepaintBoundary is not set for a list that extends
-   ofscreen, causing the whole list to be redrawn.
+   offscreen, causing the whole list to be redrawn.
 
 1. The `build()` function for an AnimatedBuilder draws a subtree that
    does not need to be animated, causing unnecessary rebuilds of static
@@ -213,12 +215,12 @@ the spinning icons also display in the code pane to help you
 visualize which rebuilds are happening.
 
 Note that numerous rebuilds doesn't necessarily indicate a problem.
-Typically you should only worry about excessive rebuilts if you have 
+Typically you should only worry about excessive rebuilds if you have 
 already run the app in profile mode and verified that the performance
 is not what you want.
 
-And remember, _the widget rebuilt information is only available in
-a debug build_. Test the performance on the real device in a profile
+And remember, _the widget rebuild information is only available in
+a debug build_. Test the app's performance on a real device in a profile
 build, but debug performance issues in a debug build.
 
 ### Debugging with Dart DevTools
@@ -233,7 +235,7 @@ CPU/GPU performance profiling and should be easier to use than Observatory.
 
 ## Editing tips for Flutter code
 
-If you have additional tips we should share, please let us know!
+If you have additional tips we should share, please [let us know][]!
 
 ### Assists & Quick Fixes
 
@@ -410,3 +412,4 @@ When filing new issues, include the output of [`flutter doctor`][].
 [Debugging Flutter apps]: /docs/testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
+[let us know]: {{site.github}}/flutter/website/issues/new
