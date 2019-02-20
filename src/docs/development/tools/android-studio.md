@@ -41,7 +41,7 @@ To create a new Flutter project from the Flutter starter app template:
  1. If you might publish this app, [set the company domain](#note).
  1. Click **Finish**.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   <h4 id="note" class="no_toc">Setting the company domain</h4>
 
   When creating a new app, some Flutter IDE plugins ask for an
@@ -51,7 +51,7 @@ To create a new Flutter project from the Flutter starter app template:
   when the app is released. If you think you might ever release this app,
   it is better to specify these now. They cannot be changed once the app
   is released. Your organization name should be unique.
-</aside>
+{{site.alert.end}}
 
 ### Creating a new project from existing source code
 
@@ -132,25 +132,25 @@ of your changes almost instantly with the _hot reload_ feature. See
 
 ### Debugging visual layout issues
 
-To debug a visual issue, start the app with **Debug**,
+To debug a visual issue, run the app in **Debug** mode,
 and then open the Flutter inspector tool window using
 **View > Tool Windows > Flutter Inspector**.
 
 ![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 This offers many debugging tools; for details on these see
-[Debugging Flutter Apps](/docs/testing/debugging).
+[Debugging Flutter apps][].
 
 * **Enable select widget mode**: Select a widget on the device to inspect
   in the [Flutter Inspector](/docs/development/tools/inspector).
-* **Refresh widget info**: Redisplay the current widget info.
+* **Refresh widget info**: Reload the current widget info.
 * **Show/hide performance overlay**: Toggle display of performance graphs
   for the GPU & CPU threads.
 * **Toggle platform mode**: Toggle between rendering for Android or iOS.
 * **Show debug paint**: Add visual debugging hints to the rendering
   displaying borders, padding, alignment, and spacers.
 * **Show paint baselines**: Cause each RenderBox to paint a line at each
-  of its baselines.
+  of its text baselines.
 * **Enable slow animations**: Slow down animations to enable visual
   inspection.
 
@@ -159,44 +159,81 @@ Also available in the "more actions" menu:
 * **Show Repaint Rainbow**: Shows rotating colors on layers when repainting.
 * **Hide Debug Mode Banner**: Hides the debug banner even when running a
   debug build.
-* **Auto horizontal scroll**: XXX - TBD
-* **Highlight nodes displayed in both trees**: XXX - TBD
+* **Highlight nodes displayed in both trees**: In the inspector, highlights
+  nodes shown in both the details and summary trees.
 * **Open Timeline View**: Analyzes activity of the application as it runs.
 * **Open Observatory**: Profiles Dart applications.
 
 ### Show performance data
 
 To view the performance data, including the widget rebuild information,
-start the app with **Debug**, and then open the Performance tool window
+start the app in **Debug** mode, and then open the Performance tool window
 using **View > Tool Windows > Flutter Performance**.
 
 ![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %})
 
 To see the stats about which widgets are being rebuilt, and how often,
 click **Show widget rebuild information** in the **Performance** pane.
-You can see how many times a widget was rebuilt in the last frame.
-For a high number of rebuilds, the exact count shows in the second column
-from the right, and a yellow spinning circle displays. 
-The column to the far right shows how many times a widget was rebuilt
-since entering the current screen. The app shown in this screenshot
-demonstrates poor performance.
-For widgets that weren't rebuilt, a solid grey circle displays.
+The exact count of the rebuilds for this frame shows in the second
+column from the right. For a high number of rebuilds, a yellow spinning
+circle displays. The column to the far right shows how many times a
+widget was rebuilt since entering the current screen.
+The app shown in this screenshot demonstrates poor performance.
+For widgets that aren't rebuilt, a solid grey circle displays.
 Otherwise, a grey spinning circle displays.
 
-### Debugging with Observatory
+The purpose of this tool is to make you aware when widgets are
+rebuilding&mdash;you might not realize that this is happening when just
+looking at the code. If widgets are rebuilding that you didn't expect,
+it's probably a sign that you should refactor your code by splitting
+up large build methods into multiple widgets.
 
-Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory
-page](https://dart-lang.github.io/observatory/).
+This tool can help you detect at least four common performance issues:
 
-To open Observatory:
+1. The whole screen (or large pieces of it) are built by a single
+   StatefulWidget, causing unnecessary UI building.
 
- 1. Run your app in debug mode.
- 1. Select the **Open Observatory** action from the Debug panel.
- 1. Click the **Stopwatch icon**:<br>
-    ![Debugging panel]({% asset tools/android-studio/debug-panel.png @path %}){:width="700px"}
+1. Offscreen items are being rebuilt. This can happen, for example,
+   when a ListView is nested in a tall Column that extends offscreen.
+   Or when the RepaintBoundary is not set for a list that extends
+   ofscreen, causing the whole list to be redrawn.
+
+1. The `build()` function for an AnimatedBuilder draws a subtree that
+   does not need to be animated, causing unnecessary rebuilds of static
+   objects.
+
+1. An Opacity widget is placed unnecessarily high in the widget tree.
+   Or, an Opacity animation is created by directly manipulating the
+   opacity property of the Opacity widget, causing the widget itself
+   and its subtree to rebuild.
+
+You can click on a line in the table to navigate to the line
+in the source where the widget is created. As the code runs,
+the spinning icons also display in the code pane to help you
+visualize which rebuilds are happening.
+
+Note that numerous rebuilds doesn't necessarily indicate a problem.
+Typically you should only worry about excessive rebuilts if you have 
+already run the app in profile mode and verified that the performance
+is not what you want.
+
+And remember, _the widget rebuilt information is only available in
+a debug build_. Test the performance on the real device in a profile
+build, but debug performance issues in a debug build.
+
+### Debugging with Dart DevTools
+
+Dart DevTools are a debugging and profiling tool presented
+with an html-based UI. DevTools is replacing the previous
+browser-based profiling tool, [Observatory][].
+DevTools is still in development, but you can preview it now by
+downloading the [repo][].
+The [docs][] are still being written, but DevTools provides similar
+CPU/GPU performance profiling and should be easier to use than Observatory.
 
 ## Editing tips for Flutter code
+
+If you have additional tips we should share, please let us know!
 
 ### Assists & Quick Fixes
 
@@ -223,12 +260,14 @@ Similar to the assist above, but for wrapping an existing list of widgets rather
 than an individual widget.
 
 #### Convert child to children assist
-Changes a child argument to a children argument, and wraps the argument value in a list.
+
+Changes a child argument to a children argument,
+and wraps the argument value in a list.
 
 ### Live templates
 
-Live templates can be used to speed up entering typical code structures. They
-are invoked by typing their prefix, and then selecting it in the code
+Live templates can be used to speed up entering typical code structures.
+They are invoked by typing their prefix, and then selecting it in the code
 completion window:
 
 ![IntelliJ live templates]({% asset tools/android-studio/templates.gif @path %})
@@ -236,17 +275,17 @@ completion window:
 The Flutter plugin includes the following templates:
 
 * Prefix `stless`: Create a new subclass of `StatelessWidget`.
-* Prefix `stful`: Create a new subclass of `StatefulWidget` and it's associated
- State subclass.
-* Prefix `stanim`: Create a new subclass of `StatefulWidget`, and it's
- associated State subclass including a field initialized with an
- `AnimationController`.
+* Prefix `stful`: Create a new subclass of `StatefulWidget` and
+  its associated State subclass.
+* Prefix `stanim`: Create a new subclass of `StatefulWidget` and its
+  associated State subclass, including a field initialized with an
+  `AnimationController`.
 
 You can also define custom templates in **Settings > Editor > Live Templates**.
 
 ### Keyboard shortcuts
 
-**Hot Reload**
+**Hot reload**
 
 On Linux (keymap _Default for XWin_) and Windows the keyboard shortcuts
 are `Controle`+`Alt`+`;` and `Control`+`Backslash`.
@@ -264,15 +303,15 @@ Right click the binding you want to change and _Add Keyboard Shortcut_.
 
 Hot Reload works by injecting updated source code files into the running Dart VM
 (Virtual Machine). This includes not only adding new classes, but also adding
-methods and fields to existing classes, and changing existing functions. A few
-types of code changes cannot be hot reloaded though:
+methods and fields to existing classes, and changing existing functions.
+A few types of code changes cannot be hot reloaded though:
 
-* Global variable initializers.
-* Static field initializers.
-* The `main()` method of the app.
+* Global variable initializers
+* Static field initializers
+* The `main()` method of the app
 
-For these changes you can fully restart your application, without having to end
-your debugging session:
+For these changes you can fully restart your application,
+without having to end your debugging session:
 
 1. Don't click the Stop button; simply re-click the Run button (if in a run
 session) or Debug button (if in a debug session), or shift-click the 'hot
@@ -287,36 +326,34 @@ will be able to fully support editing and refactoring all Android files (like
 Gradle scripts).
 
 If you already have the entire project opened as a Flutter app in Android
-Studio, there's two equivalent ways to open the Android files on their own for
-editing in the IDE. Make sure that you're on the latest version of Android
-Studio and the Flutter plugins first before trying this.
+Studio, there are two equivalent ways to open the Android files on their own
+for editing in the IDE. Before trying this, make sure that you're on the latest
+version of Android Studio and the Flutter plugins.
 
-* In the ["project
-   view"]({{site.android-dev}}/studio/projects/#ProjectView), you
-   should see a subdirectory immediately under the root of your flutter app
-   named `android`. Right click on it, then select `Flutter > Open Android
-   module in Android Studio`.
+* In the ["project view"][], you should see a subdirectory immediately under
+  the root of your flutter app named `android`. Right click on it,
+  then select **Flutter > Open Android module in Android Studio**.
 * OR, you can open any of the files under the `android` subdirectory for
   editing. You should then see a "Flutter commands" banner at the top of the
-  editor with a link  labeled `Open for Editing in Android Studio`. Click that
-  link.
+  editor with a link  labeled **Open for Editing in Android Studio**.
+  Click that link.
 
 For both options, Android Studio gives you the option to use separate windows or
 to replace the existing window with the new project when opening a second
 project. Either option is fine.
 
-If you don't already have the Flutter project opened in Android studio, you
-can open the Android files as their own project from the start:
+If you don't already have the Flutter project opened in Android studio,
+you can open the Android files as their own project from the start:
 
-1. Click "Open an existing Android Studio Project" on the Welcome splash screen,
-   or `File > Open` if Android Studio is already open.
+1. Click **Open an existing Android Studio Project** on the Welcome splash screen,
+   or **File > Open** if Android Studio is already open.
 2. Open the `android` subdirectory immediately under the flutter app root. For
    example if the project is called `flutter_app`, open `flutter_app/android`.
 
-If you haven't run your Flutter app yet you may see Android Studio report a
+If you haven't run your Flutter app yet, you may see Android Studio report a
 build error when you open the `android` project. Run `flutter packages get` in
-the app's root directory and rebuild the project by selecting `Build > Make` to
-fix it.
+the app's root directory and rebuild the project by selecting **Build > Make**
+to fix it.
 
 ## Editing Android code in IntelliJ IDEA {#edit-android-code}
 
@@ -337,27 +374,22 @@ location of the Android SDK:
 
 ## Tips and tricks
 
-* [Flutter IDE cheat sheet, MacOS
-  version](/docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-* [Flutter IDE cheat sheet, Windows & Linux
-  version](/docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+* [Flutter IDE cheat sheet, MacOS version][]
+* [Flutter IDE cheat sheet, Windows & Linux version][]
 
 ## Troubleshooting
 
 ### Known issues and feedback
 
-Important known issues that may impact your experience are documented in the
-[Flutter plugin
-README]({{site.repo.flutter}}-intellij/blob/master/README.md) file.
+Important known issues that may impact your experience are documented
+in the [Flutter plugin README][] file.
 
 All known bugs are tracked in the issue trackers:
 
-* Flutter plugin: [GitHub issue
-  tracker]({{site.repo.flutter}}-intellij/issues).
-* Dart plugin: [JetBrains
-  YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
+* Flutter plugin: [GitHub issue tracker][].
+* Dart plugin: [JetBrains YouTrack][].
 
-We very much welcome feedback, both on bugs/issues and feature requests.
+We welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:
 
 * Do a quick search in the issue trackers to see if the issue is already
@@ -365,5 +397,16 @@ Prior to filing new issues:
 * Make sure you have [updated](#updating) to the most recent version of the
   plugin.
 
-When filing new issues, include the output of [`flutter
-doctor`](/docs/resources/bug-reports#provide-some-flutter-diagnostics).
+When filing new issues, include the output of [`flutter doctor`][].
+
+[repo]: {{site.github}}/flutter/devtools
+[docs]: https://flutter.github.io/devtools
+[GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
+[JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
+[`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
+[Flutter IDE cheat sheet, MacOS version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
+[Flutter IDE cheat sheet, Windows & Linux version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
+[Observatory]: https://dart-lang.github.io/observatory/
+[Debugging Flutter apps]: /docs/testing/debugging
+[Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
+["project view"]: {{site.android-dev}}/studio/projects/#ProjectView

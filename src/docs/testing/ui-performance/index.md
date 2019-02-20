@@ -59,8 +59,8 @@ or emulators, is generally not indicative of the final
 behavior of release mode builds. _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-<aside class="alert alert-info" markdown="1">
-**Why you should run on a real device:**
+{{site.alert.secondary}}
+  <h4 class="no_toc">**Why you should run on a real device:**</h4>
 
 * Simulators and emulators don’t use the same hardware, so their
   performance characteristics are different&mdash;some operations are
@@ -73,7 +73,7 @@ on the slowest device that your users might reasonably use._
   instructions (also called “ahead of time”, or AOT) before the app is
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
-</aside>
+{{site.alert.end}}
 
 ### Run in profile mode
 
@@ -81,7 +81,7 @@ Flutter’s profile mode compiles and launches your application almost
 identically to release mode, but with just enough additional
 functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to
-[Observatory][] and other tools.
+profiling tools.
 
 Launch the app in profile mode as follows:
 
@@ -254,52 +254,32 @@ so that the app menu allows you to dynamically toggle the overlay,
 as well as enable checks for calls to `saveLayer` and the presence of
 cached images.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** You can’t enable the performance overlay in the Flutter
-Gallery app downloaded from the App Store. That version of the app
-is compiled to release mode (not profile mode), and doesn’t provide
-a menu for enabling or disabling the overlay.
-</aside>
+{{site.alert.note}}
+  You can’t enable the performance overlay in the Flutter
+  Gallery app downloaded from the App Store. That version of the app
+  is compiled to release mode (not profile mode), and doesn’t provide
+  a menu for enabling or disabling the overlay.
+{{site.alert.end}}
 
 ### Identifying problems in the UI graph
 
 If the performance overlay shows red in the UI graph, start by profiling
-the Dart VM, even if the GPU graph also shows red. To do this, use
-[Observatory][], Dart’s profiling tool.
+the Dart VM, even if the GPU graph also shows red.
 
-#### Displaying Observatory
+#### Displaying DevTools
 
-TBD: What to say about the Flutter timeline view? Do we still support that? The
-diagram below no longer has the linechart icon.
-
-Observatory provides features like profiling, examining the heap,
-and displaying code coverage. Observatory's _timeline_ view allows you
+Dart DevTools provides features like profiling, examining the heap,
+and displaying code coverage. DevTool's _timeline_ view allows you
 to capture a snapshot of the stack at a moment in time.
-When you open Observatorty's timeline from the Flutter Inspector,
-you'll be using a version that has been customized for Flutter apps.
 
-Go to Flutter's timeline view in a browser as follows:
-
- 1. To open the timeline view, use the line chart icon ![line-chart icon][].
-
-    (Instead, you could open Observatory using the stopwatch icon (![stopwatch
-    icon][]), but the "view <u>inspector</u>" link takes you to the standard
-    version of the timeline, not the version customized for Flutter.)
-
-    ![IntelliJ Flutter inspector window][]
-
- 1. In VS Code, bring up the command palette and enter "observatory".
-    Select **Flutter: Open Observatory Timeline** from the list that pops up.
-    If this command isn’t available, make sure that the app is running.
-
-#### Using Observatory's timeline
-
-<aside class="alert alert-info" markdown="1">
-  **Note:** The Observatory UI and Flutter's custom timeline page are currently
-  evolving. For this reason, we aren't fully documenting the UI at this time.
-  If you are comfortable experimenting with Observatory, and would like to give
-  us feedback, please file [issues or feature requests][] as you find them.
-</aside>
+{{site.alert.note}}
+  Observatory is being replaced by [Dart DevTools][].
+  This browser-based tool is still in development,
+  but you can preview it now by downloading the repo.
+  The [docs][] are being written, but DevTools
+  provides similar CPU/GPU performance profiling
+  and should be easier to use than Observatory.
+{{site.alert.end}}
 
 ### Identifying problems in the GPU graph
 
