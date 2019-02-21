@@ -103,7 +103,6 @@
       { "source": "/widgets", "destination": "/docs/development/ui/widgets/catalog", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 }
-      { "source": "/youtube", "destination": "youtube.com/flutterdev", "type": 301 }
     ]
   }
 }
