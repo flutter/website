@@ -47,7 +47,7 @@ determining font sizes.
 ### Tips for developers
 
 Font sizes are calculated automatically by Flutter based on the OS setting.
-However, as a developer you should make sure your all layout has enough room to
+However, as a developer you should make sure your layout has enough room to
 render all it's contents when the font sizes are increased. For example you can
 test all parts of your app on a small-screen device configured to use the
 largest font setting.
