@@ -126,18 +126,19 @@ During a debug session, several additional debugging commands are added to the
 * **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
   debug build.
 
-### Debugging with Observatory
+### Debugging with Dart DevTools
 
-Observatory is an additional debugging and profiling tool presented with an
-html-based UI. For details see the [Observatory
-page](https://dart-lang.github.io/observatory/).
-
-To open Observatory:
-
- 1. Run your app in debug mode.
- 1. Run the **Open Observatory** command from the [Command Palette][].
+Dart DevTools are a set of debugging and profiling tools presented
+with an html-based UI. DevTools replaces the previous
+browser-based profiling tool, Observatory.
+DevTools is still in development, but you can preview it now by
+downloading the [repo][].
+The [docs][] are still being written, but DevTools provides similar
+CPU/GPU performance profiling and should be easier to use than Observatory.
 
 ## Editing tips for Flutter code
+
+If you have additional tips we should share, please [let us know][]!
 
 ### Assists & Quick Fixes
 
@@ -214,11 +215,11 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 
 ### Known issues and feedback
 
-All known bugs are tracked in the issue tracker: [Dart and Flutter extensions GitHub issue
-tracker]({{site.github}}/Dart-Code/Dart-Code/issues).
+All known bugs are tracked in the issue tracker:
+[Dart and Flutter extensions GitHub issue tracker][].
 
-We very much welcome feedback, both on bugs/issues and feature requests. Prior
-to filing new issues:
+We very much welcome feedback, both on bugs/issues and feature requests.
+Prior to filing new issues:
 
 * Do a quick search in the issue trackers to see if the issue is already
   tracked.
@@ -229,3 +230,5 @@ When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [flutter doctor]: {{site.url}}/bug-reports/#provide-some-flutter-diagnostics
+[let us know]: {{site.github}}/flutter/website/issues/new
+[Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
