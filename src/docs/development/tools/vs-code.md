@@ -229,6 +229,6 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[flutter doctor]: {{site.url}}/bug-reports/#provide-some-flutter-diagnostics
+[flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
 [Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
