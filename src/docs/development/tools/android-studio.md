@@ -163,8 +163,6 @@ Also available in the "more actions" menu:
   debug build.
 * **Highlight nodes displayed in both trees**: In the inspector, highlights
   nodes shown in both the details and summary trees.
-* **Open Timeline View**: Analyzes activity of the application as it runs.
-* **Open Observatory**: Profiles Dart applications.
 
 ### Show performance data
 
@@ -180,20 +178,28 @@ The exact count of the rebuilds for this frame displays in the second
 column from the right. For a high number of rebuilds, a yellow spinning
 circle displays. The column to the far right shows how many times a
 widget was rebuilt since entering the current screen.
-The app shown in this screenshot demonstrates poor performance.
 For widgets that aren't rebuilt, a solid grey circle displays.
 Otherwise, a grey spinning circle displays.
 
-The purpose of this tool is to make you aware when widgets are
+{{site.alert.secondary}}
+  The app shown in this screenshot has been designed to deliver
+  poor performance, and the rebuild profiler gives you a clue
+  about what is happening in the frame that might cause poor
+  performance. The widget rebuild profiler is not a diagnostic
+  tool, by itself, about poor performance.
+{{site.alert.end}}
+
+The purpose of this feature is to make you aware when widgets are
 rebuilding&mdash;you might not realize that this is happening when just
 looking at the code. If widgets are rebuilding that you didn't expect,
 it's probably a sign that you should refactor your code by splitting
 up large build methods into multiple widgets.
 
-This tool can help you detect at least four common performance issues:
+This tool can help you debug at least four common performance issues:
 
 1. The whole screen (or large pieces of it) are built by a single
-   StatefulWidget, causing unnecessary UI building.
+   StatefulWidget, causing unnecessary UI building. Split up the
+   UI into smaller widgets with smaller `build()` functions.
 
 1. Offscreen widgets are being rebuilt. This can happen, for example,
    when a ListView is nested in a tall Column that extends offscreen.
@@ -227,7 +233,7 @@ build, but debug performance issues in a debug build.
 
 Dart DevTools are a set of debugging and profiling tools presented
 with an html-based UI. DevTools replaces the previous
-browser-based profiling tool, [Observatory][].
+browser-based profiling tool, Observatory.
 DevTools is still in development, but you can preview it now by
 downloading the [repo][].
 The [docs][] are still being written, but DevTools provides similar
@@ -408,7 +414,6 @@ When filing new issues, include the output of [`flutter doctor`][].
 [`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
 [Flutter IDE cheat sheet, MacOS version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
 [Flutter IDE cheat sheet, Windows & Linux version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
-[Observatory]: https://dart-lang.github.io/observatory/
 [Debugging Flutter apps]: /docs/testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView

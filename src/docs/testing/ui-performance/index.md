@@ -469,7 +469,6 @@ and debugging in Flutter:
 [Tracing any Dart code performance]: /docs/testing/debugging#tracing-any-dart-code-performance
 [Debugging Flutter apps]: /docs/testing/debugging
 [examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
-[Observatory]: https://dart-lang.github.io/observatory/
 [Flutter's build modes]: /docs/testing/build-modes
 [profile mode]: /docs/testing/build-modes#profile
 [PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
