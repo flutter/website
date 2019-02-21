@@ -209,7 +209,7 @@ fi
 # Deploy on all non-PR master branch builds.
 if [[ -z "$CIRRUS_PR" && "$CIRRUS_BRANCH" == "master" ]]; then
   echo "Deploying website to Firebase:"
-  deploy 5 sweltering-fire-2088
+  deploy 5 flutter-dev-230821
   echo "SUCCESS: Website deployed"
 fi
 
