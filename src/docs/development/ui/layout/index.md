@@ -347,7 +347,7 @@ setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
 <div class="row">
-<div class="col-lg-8">
+<div class="col-lg-8" markdown="1">
   <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
   {% prettify dart context="html" %}
   [!Column!](
