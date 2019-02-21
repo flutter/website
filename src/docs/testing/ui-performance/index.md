@@ -1,5 +1,5 @@
 ---
-title: Flutter Performance Profiling
+title: Flutter performance profiling
 subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
@@ -28,8 +28,7 @@ help.
     but you can use most of the same tools to diagnose other performance
     problems.
   - To perform tracing inside your Dart code, see [Tracing any Dart code
-    performance](/docs/testing/debugging#tracing-any-dart-code-performance) in the
-    [Debugging](/docs/testing/debugging) page.
+    performance][] in the [Debugging Flutter apps][] page.
 {{site.alert.end}}
 
 ## Diagnosing performance problems
@@ -45,7 +44,7 @@ choose the slowest device that your users might use.
   <h4 class="no_toc">What's the point?</h4>
 
   * Profile your app on a physical device.
-  * Profile your app in [profile mode](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
+  * Profile your app in [profile mode][].
   * Check performance on the slowest device your users might use.
   * Start by enabling the performance overlay.
 {{site.alert.end}}
@@ -60,8 +59,8 @@ or emulators, is generally not indicative of the final
 behavior of release mode builds. _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-<aside class="alert alert-info" markdown="1">
-**Why you should run on a real device:**
+{{site.alert.secondary}}
+  <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
 
 * Simulators and emulators don’t use the same hardware, so their
   performance characteristics are different&mdash;some operations are
@@ -74,7 +73,7 @@ on the slowest device that your users might reasonably use._
   instructions (also called “ahead of time”, or AOT) before the app is
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
-</aside>
+{{site.alert.end}}
 
 ### Run in profile mode
 
@@ -82,7 +81,7 @@ Flutter’s profile mode compiles and launches your application almost
 identically to release mode, but with just enough additional
 functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to
-[Observatory](https://dart-lang.github.io/observatory/) and other tools.
+profiling tools.
 
 Launch the app in profile mode as follows:
 
@@ -112,8 +111,8 @@ Not yet available in VS Code.
   $ flutter run --profile
   ```
 
-For more information on how the different modes work, see [Flutter's
-modes](https://github.com/flutter/flutter/wiki/Flutter%27s-modes).
+For more information on how the different modes work, see
+[Flutter's build modes][].
 
 You'll begin by enabling the performance overlay, as discussed
 in the next section.
@@ -128,8 +127,7 @@ like a normal widget&mdash;the Flutter engine itself paints the overlay
 and only minimally impacts performance.
 Each graph represents the last 300 frames for that thread.
 
-This section describes how to enable the
-[PerformanceOverlay,]({{site.api}}/flutter/widgets/PerformanceOverlay-class.html)
+This section describes how to enable the [PerformanceOverlay][],
 and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running on the Flutter
 Gallery example:
@@ -144,11 +142,8 @@ your actions on the UI thread have performance consequences on other threads.
 
 1. Platform thread<br>
    The platform's main thread. Plugin code runs here.
-   For more information, see the
-   [UIKit](https://developer.apple.com/documentation/uikit)
-   documentation for iOS, or the
-   [MainThread](https://developer.android.com/reference/android/support/annotation/MainThread)
-   documentation for Android.
+   For more information, see the [UIKit][] documentation for iOS,
+   or the [MainThread][] documentation for Android.
    This thread is not shown in the performance overlay.
 
 1. UI thread<br>
@@ -172,12 +167,11 @@ your actions on the UI thread have performance consequences on other threads.
 
 1. I/O thread<br>
    Performs expensive tasks (mostly I/O) that would otherwise block
-   either the UIor GPU threads.
+   either the UI or GPU threads.
    This thread is not shown in the performance overlay.
 
 
-For more information on these threads, see
-[Architecture notes.](https://github.com/flutter/engine/wiki#architecture-notes)
+For more information on these threads, see [Architecture notes][].
 
 Each frame should be created and displayed within 1/60th of a second
 (approximately 16ms). A frame exceeding this limit (in either graph)
@@ -198,10 +192,10 @@ You can toggle display of the performance overlay as follows:
 * From the command line
 * Programmatically
 
-#### From the Flutter Inspector
+#### From the Flutter inspector
 
-The easiest way to enable the PerformanceOverlay widget is by enabling it
-in the Flutter Inspector, which is available through the Flutter plugin
+The easiest way to enable the PerformanceOverlay widget is 
+in the Flutter inspector, which is available through the Flutter plugin
 for your IDE. The Inspector view opens by default when running an
 application. If the inspector isn't open, you can display it as follows.
 
@@ -211,22 +205,19 @@ In Android Studio and IntelliJ IDEA:
  1. In the toolbar, select the icon that looks like a bookshelf
     (![bookshelf-like icon][]).
 
-    ![IntelliJ Flutter Inspector Window][]
+    ![IntelliJ Flutter inspector window][]
 
 The Flutter Inspector is available in Android Studio and IntelliJ.
 Learn more about what the Inspector can do in the
-[Flutter Widget Inspector](/docs/development/tools/inspector) doc, as well as the
-[Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI)
-presented at DartConf 2018.
-
-[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
+[Widget inspector][] doc, as well as the
+[Flutter Inspector talk][] presented at DartConf 2018.
 
 #### In VS Code
 
 1. Select **View > Command Palette…** to bring up the command palette.
 1. In the text field, enter "performance" and select
    **Toggle Performance Overlay** from the list that pops up.
-   If this command isn’t available, make sure that that the app is running.
+   If this command isn’t available, make sure that the app is running.
 
 #### From the Command line
 
@@ -257,62 +248,38 @@ class MyApp extends StatelessWidget {
 
 You are probably familiar with the Flutter Gallery example app.
 To use the performance overlay with Flutter Gallery,
-use the copy in the [examples](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-directory that was installed with Flutter,
+use the copy in the [examples][] directory that was installed with Flutter,
 and run the app in profile mode. The program is written
 so that the app menu allows you to dynamically toggle the overlay,
 as well as enable checks for calls to `saveLayer` and the presence of
 cached images.
 
-<aside class="alert alert-info" markdown="1">
-**Note:** You can’t enable the performance overlay in the Flutter
-Gallery app downloaded from the App Store. That version of the app
-is compiled to release mode (not profile mode), and doesn’t provide
-a menu for enabling or disabling the overlay.
-</aside>
+{{site.alert.note}}
+  You can’t enable the performance overlay in the Flutter
+  Gallery app downloaded from the App Store. That version of the app
+  is compiled to release mode (not profile mode), and doesn’t provide
+  a menu for enabling or disabling the overlay.
+{{site.alert.end}}
 
 ### Identifying problems in the UI graph
 
 If the performance overlay shows red in the UI graph, start by profiling
-the Dart VM, even if the GPU graph also shows red. To do this, use
-[Observatory](https://dart-lang.github.io/observatory/), Dart’s profiling tool.
+the Dart VM, even if the GPU graph also shows red.
 
-#### Displaying Observatory
+#### Displaying DevTools
 
-Observatory provides features like profiling, examining the heap,
-and displaying code coverage. Observatory's _timeline_ view allows you
+Dart DevTools provides features like profiling, examining the heap,
+and displaying code coverage. DevTool's _timeline_ view allows you
 to capture a snapshot of the stack at a moment in time.
-When you open Observatorty's timeline from the Flutter Inspector,
-you'll be using a version that has been customized for Flutter apps.
 
-Go to Flutter's timeline view in a browser as follows:
-
- 1. To open the timeline view, use the line chart icon ![line-chart icon][].
-
-    (Instead, you could open Observatory using the stopwatch icon (![stopwatch
-    icon][]), but the "view <u>inspector</u>" link takes you to the standard
-    version of the timeline, not the version customized for Flutter.)
-
-    ![IntelliJ Flutter Inspector Window][]
-
-    [line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
-    [stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
-
- 1. In VS Code, bring up the command palette and enter "observatory".
-    Select **Flutter: Open Observatory Timeline** from the list that pops up.
-    If this command isn’t available, make sure that the app is running.
-
-
-#### Using Observatory's timeline
-
-<aside class="alert alert-info" markdown="1">
-**Note:** The Observatory UI and Flutter's custom timeline page are currently
-evolving. For this reason, we aren't fully documenting the UI at this time.
-If you are comfortable experimenting with Observatory, and would like to give
-us feedback, please file [issues or feature
-requests](https://github.com/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory)
-as you find them.
-</aside>
+{{site.alert.note}}
+  Observatory is being replaced by Dart DevTools.
+  This browser-based tool is still in development,
+  but you can preview it now by downloading the [repo][].
+  The [docs][] are being written, but DevTools
+  provides similar CPU/GPU performance profiling
+  and should be easier to use than Observatory.
+{{site.alert.end}}
 
 ### Identifying problems in the GPU graph
 
@@ -321,42 +288,34 @@ but expensive to render on the GPU thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more difficult for
-the GPU.  They may involve unnecessary calls to
-[`saveLayer`]({{site.api}}/flutter/dart-ui/Canvas/saveLayer.html),
+the GPU.  They may involve unnecessary calls to [`saveLayer`][],
 intersecting opacities with multiple objects, and clips or shadows in specific
 situations.
 
-If you suspect that the source of the slowness is during an animation, use the
-[timeDilation]({{site.api}}/flutter/scheduler/timeDilation.html)
-property to greatly slow the animation down.
+If you suspect that the source of the slowness is during an animation,
+use the [timeDilation][] property to greatly slow the animation down.
 
 You can also slow the animation speed using the Flutter Inspector.
 In the inspector's gear menu, select **Enable Slow Animations**.
 If you want more control of the animation speed, set the
-[timeDilation]({{site.api}}/flutter/scheduler/timeDilation.html)
-property in your code.
+[timeDilation][] property in your code.
 
 Is the slowness on the first frame, or on the whole animation?
 If it's the whole animation, is clipping causing the slow down?
-Maybe there's an
-alternative way of drawing the scene that doesn't use clipping. For example,
-overlay opaque corners onto a square instead of clipping to a rounded rectangle.
+Maybe there's an alternative way of drawing the scene that doesn't
+use clipping. For example, overlay opaque corners onto a square
+instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise manipluated,
-maybe a
-[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
-can help.
+maybe a [RepaintBoundary][] can help.
 
 #### Checking for offscreen layers
 
-The
-[`saveLayer`]({{site.api}}/flutter/dart-ui/Canvas/saveLayer.html)
-method is one of the most expensive methods in the Flutter
-framework.  It’s useful when applying post-processing to the scene,
+The [`saveLayer`][] method is one of the most expensive methods in
+the Flutter framework.  It’s useful when applying post-processing to the scene,
 but it can slow your app and should be avoided if you don’t need it.
 Even if you don’t call `saveLayer` explicitly, implicit calls may happen
 on your behalf. You can check whether your scene is using `saveLayer` with the
-[PerformanceOverlayLayer.checkerboardOffscreenLayers]({{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html)
-switch.
+[PerformanceOverlayLayer.checkerboardOffscreenLayers][] switch.
 
 {% comment %}
 [TODO: Document disabling the graphs and checkerboardRasterCacheImages.
@@ -372,9 +331,9 @@ rather than a parent widget higher up in the widget tree. The same goes for
 other potentially expensive operations, such as clipping or shadows.
 
 <aside class="alert alert-info" markdown="1">
-**Note:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
-However, applying them to the top of the widget tree might cause extra calls to
-`saveLayer`, and needless processing.
+  **Note:** Opacity, clipping, and shadows are not, in themselves, a bad idea.
+  However, applying them to the top of the widget tree might cause extra calls to
+  `saveLayer`, and needless processing.
 </aside>
 
 When you encounter calls to `saveLayer`, ask yourself these questions:
@@ -385,13 +344,11 @@ When you encounter calls to `saveLayer`, ask yourself these questions:
 
 #### Checking for non-cached images
 
-Caching an image with
-[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
-is good, _when it makes sense_.
+Caching an image with [RepaintBoundary][] is good, _when it makes sense_.
 
-One of the most expensive operations, from a resource perspective, is
-rendering a texture using an image file. First, the compressed image is
-fetched from persistent storage.
+One of the most expensive operations, from a resource perspective,
+is rendering a texture using an image file. First, the compressed image
+is fetched from persistent storage.
 The image is decompressed into host memory (GPU memory), and transferred
 to device memory (RAM).
 
@@ -402,8 +359,7 @@ _Because raster cache entries are expensive to construct and take up loads
 of GPU memory, cache images only where absolutely necessary._
 
 You can see which images are being cached by enabling the
-[PerformanceOverlayLayer.checkerboardRasterCacheImages]({{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html)
-switch.
+[PerformanceOverlayLayer.checkerboardRasterCacheImages][] switch.
 
 {% comment %}
 [TODO: Document how to do this, either via UI or programmatically.
@@ -412,15 +368,27 @@ At this point, disable the graphs and checkerboardOffScreenLayers.]
 
 Run the app and look for images rendered with a randomly colored checkerboard,
 indicating that the image is cached. As you interact with the scene,
-the checkerboarded images should remain constant—you don’t want to see
+the checkerboarded images should remain constant&mdash;you don’t want to see
 flickering, which would indicate that the cached image is being re-cached.
 
 In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image isn't cached,
-you can cache it by placing it into a
-[RepaintBoundary]({{site.api}}/flutter/widgets/RepaintBoundary-class.html)
+you can cache it by placing it into a [RepaintBoundary][]
 widget. Though the engine may still ignore a repaint boundary if it
 thinks the image isn't complex enough.
+
+### Viewing the widget rebuild profiler
+
+The Flutter framework is designed to make it hard to create
+applications that are not 60fps and smooth. Often, if you have jank,
+it's because there is a simple bug causing more of the UI to be
+rebuilt each frame than required. The Widget rebuild profiler
+helps you debug and fix performance problems due to these sorts
+of bugs.
+
+You can view the widget rebuilt counts for the current screen and
+frame in the widget inspector. For details on how to do this, see
+[Show performance data][] in the [Android Studio / IntelliJ][] page.
 
 ## Debug flags
 
@@ -429,32 +397,41 @@ debug your app at various points along the development cycle.
 To use these features, you must compile in debug mode.
 The following list, while not complete,
 highlights some of the more useful flags (and one function)
-from the [rendering
-library]({{site.api}}/flutter/rendering/rendering-library.html)
-for debugging performance issues.
+from the [rendering library][] for debugging performance issues.
 
-* [`debugDumpRenderTree()`]({{site.api}}/flutter/rendering/debugDumpRenderTree.html)<br>
-  Call this function when not in a layout or repaint phase to dump the
+You can set these flags either by editing the framework code, or
+by importing the module and setting the value in your `main()`
+method, following by a hot restart.
+
+{% comment %}
+Jacob asked that we remove this link to the API as it's easier to use the inspector.
+This dump takes a long time to generate and isn't particularly readable.
+  Call this functiod when not in a layout or repaint phase to dump the
   rendering tree to the console.  (Pressing **t** from `flutter run`
   calls this command.) Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
-* [`debugPaintLayerBordersEnabled`]({{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html)
-* [`debugRepaintRainbowEnabled`]({{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html)<br>
-  Enable this property and run your app to see if any parts of your UI
-  that aren't changing (for example, a static header) are rotating
-  through many colors in the output.
-  Those areas are candidates for adding repaint boundaries.
-* [`debugPrintMarkNeedsLayoutStack`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)<br>
-  Enable this property if you're seeing more layouts than you expect
-  (for example, on the timeline, on a profile, or from a "print" statement
+{% endcomment %}
+* `debugDumpRenderTree()`<br>
+  Rather than using this flag to dump the render tree to a file,
+  view the render tree in the widget inspector.
+  To do so, bring up the widget inspector and select the **Render Tree** tab.
+* [`debugPaintLayerBordersEnabled`][]
+* [`debugRepaintRainbowEnabled`][]<br>
+  You can enable this flag in the widget inspector by bringing up the
+  **More Actions** menu, and selecting **Show Repaint Rainbow**.
+  If any static widgets are rotating through the colors of the rainbow
+  (for example, a static header), those areas are candidates for adding
+  repaint boundaries.
+* [`debugPrintMarkNeedsLayoutStack`][]<br>
+  Enable this flag if you're seeing more layouts than you expect
+  (for example, on the timeline, on a profile, or from a `print` statement
   inside a layout method). Once enabled, the console is flooded with
   stack traces showing why each render object is being marked dirty for
   layout.
-* [`debugPrintMarkNeedsPaintStacks`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)<br>
+* [`debugPrintMarkNeedsPaintStacks`][]<br>
   Similar to `debugPrintMarkNeedsLayoutStack`, but for excess painting.
 
-You can learn about other debug flags in
-[Debugging Flutter Apps](/docs/testing/debugging).
+You can learn about other debug flags in [Debugging Flutter apps][].
 
 ## Benchmarking
 
@@ -470,28 +447,57 @@ integration test framework, you can generate metrics to track the following:
 Tracking these benchmarks allows you to be informed when a regression is
 introduced that adversely affects performance.
 
-For more information, see
-[Integration testing](/docs/testing#integration-testing),
-a section in [Testing Flutter Apps](/docs/testing).
+For more information, see [Integration testing][],
+a section in [Testing Flutter apps][].
 
 ## More information
 
 The following resources provide more information on using Flutter's tools
 and debugging in Flutter:
 
-* [Debugging Flutter Apps](/docs/testing/debugging)
-* [Flutter Widget Inspector](/docs/development/tools/inspector)
-* [Flutter Inspector talk](https://www.youtube.com/watch?v=JIcmJNT9DNI),
-  presented at DartConf 2018
-* [Why Flutter Uses
-  Dart](https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf),
-  an article on Hackernoon.
-* [Observatory: A Profiler for Dart
-  Apps](https://dart-lang.github.io/observatory/)
-* [Flutter API]({{site.api}}/index.html) docs, particularly the
-  [PerformanceOverlay]({{site.api}}/flutter/widgets/PerformanceOverlay-class.html)
-  class, and the
-  [dart:developer]({{site.api}}/flutter/dart-developer/dart-developer-library.html)
-  package.
+* [Debugging Flutter apps][]
+* [Widget inspector][]
+* [Flutter Inspector talk][], presented at DartConf 2018
+* [Why Flutter Uses Dart][], an article on Hackernoon
+* [Dart DevTools][]: A profiler for Dart apps
+* [Flutter API][] docs, particularly the [PerformanceOverlay][] class, and the
+  [dart:developer][] package
 
-[IntelliJ Flutter Inspector Window]: {% asset tools/android-studio/visual-debugging.png @path %}
+[IntelliJ Flutter inspector window]: {% asset tools/android-studio/visual-debugging.png @path %}
+
+[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[Tracing any Dart code performance]: /docs/testing/debugging#tracing-any-dart-code-performance
+[Debugging Flutter apps]: /docs/testing/debugging
+[examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[Flutter's build modes]: /docs/testing/build-modes
+[profile mode]: /docs/testing/build-modes#profile
+[PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+[PerformanceOverlayLayer.checkerboardRasterCacheImages]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
+[Flutter API]: {{site.api}}
+[UIKit]: https://developer.apple.com/documentation/uikit
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
+[Integration testing]: /docs/testing#integration-testing
+[Architecture notes]: {{site.github}}/flutter/engine/wiki#architecture-notes
+[Widget inspector]: /docs/development/tools/inspector
+[Flutter Inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
+[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
+[line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
+[stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
+[issues or feature requests]: {{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
+[timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
+[Show performance data]: /docs/development/tools/android-studio#show-performance-data
+[Android Studio / IntelliJ]: /docs/development/tools/android-studio
+[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
+[`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
+[`debugPaintLayerBordersEnabled`]: {{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html
+[`debugRepaintRainbowEnabled`]: {{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html
+[`debugPrintMarkNeedsLayoutStack`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
+[`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
+[Testing Flutter apps]: /docs/testing
+[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+[repo]: {{site.github}}/flutter/devtools
+[Dart DevTools]: {{site.github}}/flutter/devtools
+[docs]: https://flutter.github.io/devtools
