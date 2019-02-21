@@ -225,8 +225,8 @@ build, but debug performance issues in a debug build.
 
 ### Debugging with Dart DevTools
 
-Dart DevTools are a debugging and profiling tool presented
-with an html-based UI. DevTools is replacing the previous
+Dart DevTools are a set of debugging and profiling tools presented
+with an html-based UI. DevTools replaces the previous
 browser-based profiling tool, [Observatory][].
 DevTools is still in development, but you can preview it now by
 downloading the [repo][].

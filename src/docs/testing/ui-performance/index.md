@@ -379,6 +379,13 @@ thinks the image isn't complex enough.
 
 ### Viewing the widget rebuild profiler
 
+The Flutter framework is designed to make it hard to create
+applications that are not 60fps and smooth. Often, if you have jank,
+it's because there is a simple bug causing more of the UI to be
+rebuilt each frame than required. The Widget rebuild profiler
+helps you debug and fix performance problems due to these sorts
+of bugs.
+
 You can view the widget rebuilt counts for the current screen and
 frame in the widget inspector. For details on how to do this, see
 [Show performance data][] in the [Android Studio / IntelliJ][] page.
@@ -392,20 +399,32 @@ The following list, while not complete,
 highlights some of the more useful flags (and one function)
 from the [rendering library][] for debugging performance issues.
 
-* [`debugDumpRenderTree()`][]<br>
-  Call this function when not in a layout or repaint phase to dump the
+You can set these flags either by editing the framework code, or
+by importing the module and setting the value in your `main()`
+method, following by a hot restart.
+
+{% comment %}
+Jacob asked that we remove this link to the API as it's easier to use the inspector.
+This dump takes a long time to generate and isn't particularly readable.
+  Call this functiod when not in a layout or repaint phase to dump the
   rendering tree to the console.  (Pressing **t** from `flutter run`
   calls this command.) Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
+{% endcomment %}
+* `debugDumpRenderTree()`<br>
+  Rather than using this flag to dump the render tree to a file,
+  view the render tree in the widget inspector.
+  To do so, bring up the widget inspector and select the **Render Tree** tab.
 * [`debugPaintLayerBordersEnabled`][]
 * [`debugRepaintRainbowEnabled`][]<br>
-  Enable this property and run your app to see if any parts of your UI
-  that aren't changing (for example, a static header) are rotating
-  through many colors in the output.
-  Those areas are candidates for adding repaint boundaries.
+  You can enable this flag in the widget inspector by bringing up the
+  **More Actions** menu, and selecting **Show Repaint Rainbow**.
+  If any static widgets are rotating through the colors of the rainbow
+  (for example, a static header), those areas are candidates for adding
+  repaint boundaries.
 * [`debugPrintMarkNeedsLayoutStack`][]<br>
-  Enable this property if you're seeing more layouts than you expect
-  (for example, on the timeline, on a profile, or from a "print" statement
+  Enable this flag if you're seeing more layouts than you expect
+  (for example, on the timeline, on a profile, or from a `print` statement
   inside a layout method). Once enabled, the console is flooded with
   stack traces showing why each render object is being marked dirty for
   layout.
