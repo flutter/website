@@ -266,19 +266,17 @@ cached images.
 If the performance overlay shows red in the UI graph, start by profiling
 the Dart VM, even if the GPU graph also shows red.
 
-#### Displaying DevTools
+#### Performance profiling with Dart DevTools
 
 Dart DevTools provides features like profiling, examining the heap,
 and displaying code coverage. DevTool's _timeline_ view allows you
-to capture a snapshot of the stack at a moment in time.
+to investigate the UI performance of your application on a frame-by-frame
+basis.
 
 {{site.alert.note}}
   Observatory is being replaced by Dart DevTools.
-  This browser-based tool is still in development,
-  but you can preview it now by downloading the [repo][].
-  The [docs][] are being written, but DevTools
-  provides similar CPU/GPU performance profiling
-  and should be easier to use than Observatory.
+  This browser-based tool is still in development but is available to preview. For
+  installation and getting started instructions, see the [DevTools' docs][].
 {{site.alert.end}}
 
 ### Identifying problems in the GPU graph
@@ -459,7 +457,7 @@ and debugging in Flutter:
 * [Widget inspector][]
 * [Flutter Inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
-* [Dart DevTools][]: A profiler for Dart apps
+* [Dart DevTools][]: performance tooling for Dart and Flutter apps
 * [Flutter API][] docs, particularly the [PerformanceOverlay][] class, and the
   [dart:developer][] package
 
@@ -498,6 +496,5 @@ and debugging in Flutter:
 [`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
 [Testing Flutter apps]: /docs/testing
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
-[repo]: {{site.github}}/flutter/devtools
-[Dart DevTools]: {{site.github}}/flutter/devtools
-[docs]: https://flutter.github.io/devtools
+[Dart DevTools]: https://flutter.github.io/devtools
+[DevTools' docs]: https://flutter.github.io/devtools
