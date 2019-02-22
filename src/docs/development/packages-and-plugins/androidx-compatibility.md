@@ -24,8 +24,8 @@ of libraries._ This page explains how you can workaround this issue.
 
 AndroidX can break a Flutter app at compile time in two ways:
 
-1. The app uses an AndroidX plugin and its main `gradle.build` file has a
-   `compileSdk` below version 28.
+1. The app uses an AndroidX plugin and its main `build.gradle` file has a
+   `compileSdkVersion` below version 28.
 2. The app uses both deprecated and AndroidX code at the same time.
 
 The error messages from Gradle vary. Sometimes the messages mention
