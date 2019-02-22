@@ -126,11 +126,12 @@ During a debug session, several additional debugging commands are added to the
 * **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
   debug build.
 
-### Performance profiling with Dart DevTools
+### The Flutter Inspector, performance profiling, and Dart DevTools
 
 Dart DevTools are a set of debugging and profiling tools presented with
 an html-based UI. DevTools replaces the previous browser-based profiling
-tool, Observatory.
+tool, Observatory, and includes functionality previously only available to
+IntelliJ, like the Flutter Inspector.
 
 DevTools is still in development but is available to preview. For
 installation and getting started instructions, see the [DevTools' docs][].

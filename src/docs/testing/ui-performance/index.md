@@ -266,12 +266,12 @@ cached images.
 If the performance overlay shows red in the UI graph, start by profiling
 the Dart VM, even if the GPU graph also shows red.
 
-#### The Flutter Inspector, performance profiling, and Dart DevTools
+#### Performance profiling with Dart DevTools
 
-Dart DevTools provides features like the Flutter Inspector, profiling,
-examining the heap, and displaying code coverage. DevTool's _timeline_ view
-allows you to investigate the UI performance of your application on a
-frame-by-frame basis.
+Dart DevTools provides features like profiling, examining the heap,
+and displaying code coverage. DevTool's _timeline_ view allows you
+to investigate the UI performance of your application on a frame-by-frame
+basis.
 
 {{site.alert.note}}
   Observatory is being replaced by Dart DevTools.
