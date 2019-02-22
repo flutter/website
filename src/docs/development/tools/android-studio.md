@@ -231,13 +231,12 @@ build, but debug performance issues in a debug build.
 
 ### Debugging with Dart DevTools
 
-Dart DevTools are a set of debugging and profiling tools presented
-with an html-based UI. DevTools replaces the previous
-browser-based profiling tool, Observatory.
-DevTools is still in development, but you can preview it now by
-downloading the [repo][].
-The [docs][] are still being written, but DevTools provides similar
-CPU/GPU performance profiling and should be easier to use than Observatory.
+Dart DevTools are a set of debugging and profiling tools presented with
+an html-based UI. DevTools replaces the previous browser-based profiling
+tool, Observatory.
+
+DevTools is still in development but is available to preview. For
+installation and getting started instructions, see the [DevTools' docs][].
 
 ## Editing tips for Flutter code
 
@@ -407,8 +406,7 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][].
 
-[repo]: {{site.github}}/flutter/devtools
-[docs]: https://flutter.github.io/devtools
+[DevTools' docs]: https://flutter.github.io/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
 [`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
