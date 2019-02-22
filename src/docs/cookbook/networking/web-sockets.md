@@ -4,8 +4,8 @@ prev:
   title: Parsing JSON in the background
   path: /docs/cookbook/networking/background-parsing
 next:
-  title: Reading and Writing Files
-  path: /docs/cookbook/persistence/reading-writing-files
+  title: Persist data with SQLite
+  path: /docs/cookbook/persistence/sqlite
 ---
 
 In addition to normal HTTP requests, you can connect to servers using
