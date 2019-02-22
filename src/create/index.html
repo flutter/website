@@ -105,15 +105,40 @@ body_class: landing-page create
     <div class="col-12 col-md-10 offset-md-1">
         <h4>Submission guidelines:</h4>
         <div class="create__text-columns">
-            <p>Your application must be submitted in the form of a ZIP file containing everything needed to run it on a target Android or iOS device.</p>
-            <p>You should include a <code>README.md</code> file that includes a brief description of the application and any special instructions for running it (for example, if the application is designed for a specific platform target).</p>
-            <p>Code should be licensed with an open source license (we recommend BSD, MIT or Apache), so that we can judge it and others can benefit from your work.</p>
-            <p>We will run the application by unpacking the ZIP file and running the command <code>flutter run --release</code> to execute it on an attached Android or iOS device.</p>
-            <p>The ZIP file may contain other files and directories that are created using the flutter create command, such as <code>pubspec.yaml</code>; it may also include asset files (e.g. images, fonts) or data. We recommend running <code>flutter clean</code> before creating the ZIP file to strip out unnecessary binaries.</p>
-            <p>With the exception of packages (see below), all executable content must be included in the ZIP file.</p>
-            <p>All code needed to load and execute the application must be written in Dart, with the exception of any packages (as mentioned below).</p>
-            <p>Dart code must appear in a file that has a filename ending in <code>.dart</code>. The total size of all Dart files in the ZIP file, excluding unit tests that are not executed, must be no more than 5,120 bytes as (for example) measured by the command <code>find . -name "*.dart" | xargs cat | wc -c.</code></p>
-            <p>The application may use Flutter packages that are a) published on <a href="pub.dartlang.org">pub.dartlang.org</a>; b) have broad applicability (e.g. not written solely for the purpose of circumventing the 5KB file limit, in the opinion of the judges).</p>
+            <p>Your application must be submitted in the form of a ZIP file
+               containing everything needed to run it on a target Android or
+               iOS device.</p>
+            <p>You should include a <code>README.md</code> file that includes a
+               brief description of the application and any special instructions
+               for running it (for example, if the application is designed for a
+               specific platform target).</p>
+            <p>Code should be licensed with an open source license (we recommend
+               BSD, MIT or Apache), so that we can judge it and others can
+               benefit from your work.</p>
+            <p>We will run the application by unpacking the ZIP file and running
+               the command <code>flutter run --release</code> to execute it
+               on an attached Android or iOS device.</p>
+            <p>The ZIP file may contain other files and directories that are
+               created using the flutter create command, such as
+               <code>pubspec.yaml</code>; it may also include asset files
+               (e.g. images, fonts) or data. We recommend running
+               <code>flutter clean</code> before creating the ZIP file to
+               strip out unnecessary binaries.</p>
+            <p>With the exception of packages (see below), all executable content
+               must be included in the ZIP file.</p>
+            <p>All code needed to load and execute the application must be
+               written in Dart, with the exception of any packages
+               (as mentioned below).</p>
+            <p>Dart code must appear in a file that has a filename ending in
+               <code>.dart</code>. The total size of all Dart files in the ZIP
+               file, excluding unit tests that are not executed, must be no
+               more than 5,120 bytes as (for example) measured by the
+               command <code>find . -name "*.dart" | xargs cat | wc -c.</code></p>
+            <p>The application may use Flutter packages that are a) published
+               on <a href="https:/pub.dartlang.org">pub.dartlang.org</a>;
+               b) have broad applicability (e.g. not written solely for the
+               purpose of circumventing the 5KB file limit, in the opinion
+               of the judges).</p>
         </div>
     </div>
 </section>
