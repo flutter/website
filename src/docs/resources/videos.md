@@ -13,48 +13,56 @@ we like, but there are many others.
 
 ## Series
 
-The following list of series features the first episode in the series,
+The following list of series features the introduction to the series,
 with a link to the complete playlist.
+
+### Flutter in Focus
+
+Five-to-ten minute tutorials (more or less) on using Flutter.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing Widget of the Week<br>
+[Flutter in Focus playlist][]
+
+### Flutter Widget of the Week
+
+Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing Widget of the Week<br>
+[Flutter Widget of the Week playlist][]
 
 ### The Boring Flutter Show
 
 This series features Flutter programmers live coding in real time.
 Coding mistakes, solutions, and snazzy intro music included.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yr8F2S3Amas?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-Episode One: The Boring Flutter Show<br>
-[The Boring Flutter Show playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing the Boring Flutter Show<br>
+[The Boring Flutter Show playlist][]
 
-### Flutter Widget of the Week
+### Flutter Live '18
 
-Do you have 60 seconds? Each one-minute video highlights a Flutter widget.
+Catch the content from Flutter Live '18, where Flutter 1.0 was officially launched.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lkF0TQJO0bA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIL0pH0zWe_ZOHgGhZ7UasUE)
-
-### Flutter Widgets 101
-
-Five-to-ten minute videos on StatelessWidget, StatefulWidget, and
-other buiding-block widgets that every Flutter developer needs
-to know about.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widgets 101 playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIJyiwUPCou_OVTpRIn_8UMd)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D-o4BqJxmJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Flutter Live Keynote Recap<br>
+[Flutter Live '18 playlist][]
 
 ### Flutter Challenge series by Fluttery
 
 Each episode solves a different design challenge.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GFRfSM4yA9U?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Challenge playlist](https://www.youtube.com/playlist?list=PLkXouNW6n0A8ANZ16Fk49qsxpBbzxHGCn)
-
+[Flutter Challenge playlist][]
 
 ### Flutter Weekly Widgets by MTechViral
 
 Weekly episodes, released on Sunday, feature Flutter widgets.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aVZ5rsA4Yx8?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Weekly Widgets playlist](https://www.youtube.com/playlist?list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0)
+Episode 1: Sized Box<br>
+[Flutter Weekly Widgets playlist][]
 
 ---
 
@@ -71,12 +79,14 @@ listed by newest first.
 
 {% endcomment %}
 
-## Flutter DevBytes
+## Flutter Developer Stories
 
-These 10-minute (more or less) tutorials teach core Flutter concepts.
+Videos showing how various customers, such as Abbey Road Studio, Hamilton,
+and Alibaba, have used Flutter to create beautiful compelling apps with
+millions of downloads.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W1pNjxmNHNQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[DevBytes playlist](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK_ZeW1fh49iu5-j2D99O-P)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_ACWeGGBP4E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter Developer Stories playlist][]
 
 ---
 
@@ -85,3 +95,13 @@ These 10-minute (more or less) tutorials teach core Flutter concepts.
 Learn how to build Flutter apps from this free Udacity course:
 
 * [Build Native Mobile Apps with Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
+
+
+[The Boring Flutter Show playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
+[Flutter Widget of the Week playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
+[Flutter Challenge playlist]: https://www.youtube.com/playlist?list=PLkXouNW6n0A8ANZ16Fk49qsxpBbzxHGCn
+[Flutter Weekly Widgets playlist]: https://www.youtube.com/playlist?list=PLR2qQy0Zxs_Wot7YfLeeKdMlJ9838C_w0
+[Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter Live '18 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU38by1vmaw_BHHsy7emEXl-
+[Flutter Developer Stories playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
+
