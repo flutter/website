@@ -9,7 +9,7 @@ description: How to internationalize your Flutter app.
 
   * How to track the device's locale (the user's preferred language).
   * How to manage locale-specific app values.
-  * How define the locales an app supports.
+  * How to define the locales an app supports.
 {{site.alert.end}}
 
 If your app might be deployed to users who speak another language then
