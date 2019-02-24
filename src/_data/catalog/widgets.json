@@ -1202,7 +1202,7 @@
   },
   {
     "name": "NestedScrollView",
-    "description": "",
+    "description": "A scrolling view inside of which can be nested other scrolling views, with their scroll positions being intrinsically linked.",
     "categories": [
       "Scrolling"
     ],
