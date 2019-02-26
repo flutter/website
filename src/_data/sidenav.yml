@@ -63,10 +63,6 @@
           permalink: /docs/development/ui/assets-and-images
         - title: Navigation & routing
           permalink: /docs/development/ui/navigation
-        # Commenting out the following entry per
-        # https://github.com/flutter/website/issues/1496#issuecomment-431455211
-        # - title: Inspect an app's UI
-        #   permalink: /docs/development/ui/inspector
         - title: Animations
           permalink: /docs/development/ui/animations
           children:
@@ -144,6 +140,8 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
+        - title: Dart DevTools
+          permalink: https://flutter.github.io/devtools/
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -155,8 +153,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
-        - title: Widget inspector
-          permalink: /docs/development/tools/inspector
+        - title: Flutter inspector
+          permalink: https://flutter.github.io/devtools/inspector
 
 - title: Testing & optimization
   permalink: /docs/testing
