@@ -1,10 +1,17 @@
 ---
-title: Widget inspector
+title: Flutter inspector
 description: A brief overview of Flutter's widget inspector.
 ---
 
-The Flutter widget inspector is powerful tool for visualizing and exploring
+The Flutter widget inspector is a powerful tool for visualizing and exploring
 Flutter widget trees.
+
+{{site.alert.note}}
+  While you can still access the Flutter inspector from Android Studio, it
+  is now part of the new [Dart DevTools](https://flutter.github.io/devtools).
+  You can find more up-to-date docs on the 
+  [DevTools wiki](https://flutter.github.io/devtools/inspector)
+{{site.alert.end}}
 
 The Flutter framework uses widgets as [the core building
 block](/docs/development/ui/widgets-intro) for anything from controls (text,
