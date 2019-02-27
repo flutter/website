@@ -1,12 +1,15 @@
 ---
-title: Storing key-value data on disk
+title: Take a picture using the Camera
 prev:
-  title: Reading and Writing Files
-  path: /docs/cookbook/persistence/reading-writing-files
+  title: Storing key-value data on disk
+  path: /docs/cookbook/persistence/key-value
 next:
-  title: Take a picture using the Camera
-  path: /docs/cookbook/plugins/picture-with-camera
+  title: An introduction to integration testing
+  path: /docs/cookbook/testing/integration/introduction
 ---
+
+
+
 
 If you have a relatively small collection of key-values that you'd like
 to save, you can use the
