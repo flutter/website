@@ -137,7 +137,7 @@ what to show for any given `contents`. When that changes, the old
   Source drawing for the png above: https://docs.google.com/drawings/d/1ErMyaX4fwfbIW9ABuPAlHELLGMsU6cdxPDFz_elsS9k/edit?zx=j42inp8903pt
 {% endcomment %}
 
-This is what we means when we say that widgets are immutable.
+This is what we mean when we say that widgets are immutable.
 They don't change&mdash;they get replaced.
 
 Now that we know where to put the state of the cart, let's see how
