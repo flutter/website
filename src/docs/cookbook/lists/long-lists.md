@@ -1,8 +1,8 @@
 ---
 title: Working with long lists
 prev:
-  title: Creating lists with different types of items
-  path: /docs/cookbook/lists/mixed-list
+  title: Place a floating app bar above a list
+  path: /docs/cookbook/lists/floating-app-bar
 next:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
