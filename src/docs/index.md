@@ -41,12 +41,14 @@ In addition, here are some new docs we've released:
   for profiling and debugging Dart and Flutter apps. You can find the docs on the
   [DevTools wiki](https://flutter.github.io/devtools/).
   In particular, check out the DevTool's [Flutter widget
-  inspector](https://flutter.github.io/devtools/inspector), and the [timeline
+  inspector](https://flutter.github.io/devtools/inspector) for debugging
+  your UI, or the [timeline
   view](https://flutter.github.io/devtools/timeline) for profiling your Flutter
-  applications. Try them out and let us know what you think!
+  application. Try them out and let us know what you think!
 * An update to the [Performance profiling](/docs/testing/ui-performance)
   page that incorporates the new Dart DevTools UI.
-* Updates to the [Android Studio/IntelliJ](/docs/development/tools/android-studio)
+* Updates to the [Android
+  Studio/IntelliJ](/docs/development/tools/android-studio)
   and [VS Code](/docs/development/tools/vs-code) pages incorporating info from
   the new Dart DevTools UI.
 
