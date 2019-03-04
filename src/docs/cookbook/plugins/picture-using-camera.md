@@ -1,8 +1,8 @@
 ---
 title: Take a picture using the Camera
 prev:
-  title: Storing key-value data on disk
-  path: /docs/cookbook/persistence/key-value
+  title: Play and pause a video
+  path: /docs/cookbook/plugins/play-video
 next:
   title: An introduction to integration testing
   path: /docs/cookbook/testing/integration/introduction

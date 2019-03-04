@@ -4,8 +4,8 @@ prev:
   title: Reading and Writing Files
   path: /docs/cookbook/persistence/reading-writing-files
 next:
-  title: Take a picture using the Camera
-  path: /docs/cookbook/plugins/picture-using-camera
+  title: Play and pause a video
+  path: /docs/cookbook/plugins/play-video
 ---
 
 If you have a relatively small collection of key-values that you'd like

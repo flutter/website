@@ -16,3 +16,4 @@ dev_dependencies:
   web_socket_channel: 1.0.9
   sqflite: ^1.1.0
   camera: ^0.4.0+3
+  video_player: ^0.10.0+2
