@@ -13,14 +13,13 @@ app bar as the user scrolls down the list. This is especially true if your app
 displays a "tall" app bar that occupies a lot of vertical space.
 
 Traditionally, you create an app bar by providing an `appBar` property to the
-`Scaffold` Widget. This will create a fixed app bar that always remains above
+`Scaffold` Widget. This creates a fixed app bar that always remains above
 the `body` of the `Scaffold`.
 
-If you'd like to create a floating app bar scrolls offscreen as the user scrolls
-through a list, you need to move the app bar from the Scaffold into a
-[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html).
-This allows you to create an app bar that scrolls offscreen as you scroll
-through a list of items contained inside the `CustomScrollView`!
+Moving the app bar from a `Scaffold` Widget into a
+[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html)
+allows you to create an app bar that scrolls offscreen as you scroll through a
+list of items contained inside the `CustomScrollView`.
 
 This recipe demonstrates how to use a `CustomScrollView` to display a list of 
 items with an app bar on top that scrolls offscreen as the user scrolls down the
@@ -67,18 +66,18 @@ Next, add an app bar to the
 [`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html).
 Flutter provides the
 [`SliverAppBar`](https://docs.flutter.io/flutter/material/SliverAppBar-class.html)
-Widget out of the box!  Much like the normal `AppBar` widget, you can use the
+Widget out of the box.  Much like the normal `AppBar` widget, you can use the
 `SliverAppBar` to display a title, tabs, images and more.
 
 However, the `SliverAppBar` also gives you the ability to create a "floating"
 app bar that scrolls offscreen as the user scrolls down the list. Furthermore,
-you can configure the `SliverAppBar` to shrink and expand as the user scrolls!
+you can configure the `SliverAppBar` to shrink and expand as the user scrolls.
 
 To achieve this effect:
 
   1. Start with an app bar that displays only a title 
   2. Set the `floating` property to `true`. This allows users to quickly reveal
-  the app bar when they being scrolling up the list!
+  the app bar when they being scrolling up the list.
   3. Add a `flexibleSpace` widget that will fill the available `expandedHeight`.
 
 <!-- skip -->
@@ -103,27 +102,27 @@ CustomScrollView(
 Play around with the [various properties you can pass to the `SliverAppBar`
 Widget](https://docs.flutter.io/flutter/material/SliverAppBar/SliverAppBar.html)
 and use hot reload to see the results. For example, you can use an `Image`
-Widget for the `flexibleSpace` to create a background image that shrinks in size
-as it's scrolled offscreen!
+Widget for the `flexibleSpace` property to create a background image that
+shrinks in size as it's scrolled offscreen.
 {{site.alert.end}}
 
 
 ### 3. Add a list of items using a `SliverList`
 
 Now that you have the app bar in place, add a list of items to the
-`CustomScrollView`! You have two options: a
+`CustomScrollView`. You have two options: a
 [`SliverList`](https://docs.flutter.io/flutter/widgets/SliverList-class.html) or
 a [`SliverGrid`](https://docs.flutter.io/flutter/widgets/SliverGrid-class.html).
 If you need to display a list of items one after the other, use the `SliverList`
-Widget. If you need to display a grid list, use the `SliverGrid` Widget!
+Widget. If you need to display a grid list, use the `SliverGrid` Widget.
 
 The `SliverList` and `SliverGrid` Widgets take one required parameter: a
 [`SliverChildDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildDelegate-class.html).
 While this sounds fancy, the delegate is simply used to provide a list Widgets
-to to `SliverList` or `SliverGrid`! For example, the
+to `SliverList` or `SliverGrid`. For example, the
 [`SliverChildBuilderDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildBuilderDelegate-class.html)
-allows you to create a list of items that are built lazily as your scroll, just
-like the the `ListView.builder` Widget!
+allows you to create a list of items that are built lazily as you scroll, just
+like the the `ListView.builder` Widget.
 
 <!-- skip -->
 ```dart
@@ -159,7 +158,7 @@ class MyApp extends StatelessWidget {
       title: title,
       home: Scaffold(
         // No appbar provided to the Scaffold, only a body with a
-        // CustomScrollView!
+        // CustomScrollView
         body: CustomScrollView(
           slivers: <Widget>[
             // Add the app bar to the CustomScrollView
