@@ -217,6 +217,7 @@ Therefore, you must provide a `File` to the `Image.file` constructor. You
 can create an instance of the `File` class by passing in the path you created in
 the previous step.
 
+<!-- skip -->
 ```dart
 Image.file(File('path/to/my/picture.png'))
 ```
