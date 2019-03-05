@@ -3,7 +3,7 @@ title: An introduction to integration testing
 short-title: Introduction
 prev:
   title: Take a picture using the Camera
-  path: /docs/cookbook/plugins/picture-with-camera
+  path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
