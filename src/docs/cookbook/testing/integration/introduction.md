@@ -2,8 +2,8 @@
 title: An introduction to integration testing
 short-title: Introduction
 prev:
-  title: Storing key-value data on disk
-  path: /docs/cookbook/persistence/key-value
+  title: Take a picture using the Camera
+  path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
