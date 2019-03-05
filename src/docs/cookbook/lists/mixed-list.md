@@ -4,8 +4,8 @@ prev:
   title: Creating a Grid List
   path: /docs/cookbook/lists/grid-lists
 next:
-  title: Working with long lists
-  path: /docs/cookbook/lists/long-lists
+  title: Place a floating app bar above a list
+  path: /docs/cookbook/lists/floating-app-bar
 ---
 
 We often need to create lists that display different types of content. For
