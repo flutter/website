@@ -105,7 +105,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       ResolutionPreset.medium,
     );
 
-    // Next, you need to initialize the controller. This will return a Future
+    // Next, you need to initialize the controller. This returns a Future
     _initializeControllerFuture = _controller.initialize();
   }
 
@@ -124,8 +124,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 ```
 
 {{site.alert.warning}}
-If you do not initialize the `CameraController`, you will *not* be able to work with
-the camera.
+If you do not initialize the `CameraController`, you *cannot* use the camera
+to display a preview and take pictures.
 {{site.alert.end}}
 
 ## 4. Use a `CameraPreview` to display the camera's feed
@@ -210,7 +210,7 @@ FloatingActionButton(
 ## 6. Display the picture with an `Image` Widget
 
 If you take the picture successfully, you can then display the saved picture
-using an `Image` widget. In this case, the picture will be stored as a file on
+using an `Image` widget. In this case, the picture is stored as a file on
 the device.
 
 Therefore, you must provide a `File` to the `Image.file` constructor. You
@@ -280,7 +280,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       ResolutionPreset.medium,
     );
 
-    // Next, you need to initialize the controller. This will return a Future!
+    // Next, you need to initialize the controller. This returns a Future
     _initializeControllerFuture = _controller.initialize();
   }
 
@@ -294,10 +294,10 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Take a picture!')),
+      appBar: AppBar(title: Text('Take a picture')),
       // You must wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner until
-      // the controller has finished initializing!
+      // the controller has finished initializing
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {

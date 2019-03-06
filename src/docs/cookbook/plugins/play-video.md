@@ -90,8 +90,8 @@ permissions, you need to create a `VideoPlayerController`. The
 `VideoPlayerController` class allows you to connect to different types of
 videos and control playback.
 
-Before you can play videos, you must also `initialize` the controller. This will
-establish the connection to the video and prepare the controller for playback.
+Before you can play videos, you must also `initialize` the controller. This
+establishes the connection to the video and prepare the controller for playback.
 
 To create an initialize the `VideoPlayerController`, please:
 
@@ -149,7 +149,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 Now, it's time to display the video. The `video_player` plugin provides the
 [`VideoPlayer`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayer-class.html)
 Widget to display the video initialized by the `VideoPlayerController`. By
-default, the `VideoPlayer` Widget will take up as much space as possible. This
+default, the `VideoPlayer` Widget takes up as much space as possible. This
 often isn't ideal for videos because they are meant to be displayed in a
 specific aspect ratio, such as 16x9 or 4x3.
 
@@ -188,7 +188,7 @@ FutureBuilder(
 
 ## 5. Play and pause the video
 
-By default, the video will be displayed in a paused state. To start playback,
+By default, the video starts in a paused state. To begin playback,
 call the
 [`play`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/play.html)
 method provided by the `VideoPlayerController`. To pause playback, call the
@@ -203,8 +203,8 @@ the video if it's currently paused, or pause the video if it's playing.
 ```dart
 FloatingActionButton(
   onPressed: () {
-    // Wrap the play or pause in a call to `setState`. This will ensure 
-    // the correct icon is shown
+    // Wrap the play or pause in a call to `setState`. This ensures the correct 
+    // icon is shown
     setState(() {
       // If the video is playing, pause it.
       if (_controller.value.isPlaying) {
@@ -307,14 +307,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Wrap the play or pause in a call to `setState`. This will ensure
-          // the correct icon is shown!
+          // Wrap the play or pause in a call to `setState`. This ensures the
+          // correct icon is shown
           setState(() {
             // If the video is playing, pause it.
             if (_controller.value.isPlaying) {
               _controller.pause();
             } else {
-              // If the video is paused, play it!
+              // If the video is paused, play it
               _controller.play();
             }
           });
