@@ -28,10 +28,10 @@ delivery from a local machine.
     run `fastlane init`.
 1. Edit the `Appfile`s to ensure they have adequate metadata for your app.
     * ![Android](/images/fastlane-cd/android.png) Check that `package_name` in
-    `[project]/android/Appfile` matches your package in pubspec.yaml.
+    `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
     * ![iOS](/images/fastlane-cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches. Fill in `apple_id`, `itc_team_id`,
-    `team_id` with your respective account info.
+    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
+    `apple_id`, `itc_team_id`, `team_id` with your respective account info.
 1. Set up your local login credentials for the stores.
     * ![Android](/images/fastlane-cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
     and ensure that `fastlane supply init` successfully syncs data from your
