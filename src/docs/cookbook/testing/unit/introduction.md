@@ -44,10 +44,8 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-If you're working on a package that will only be used for Flutter apps, or if
-we need to write Widget tests, depend on the `flutter_test` package instead.
-It includes everything from the `test` package, as well as
-additional utilities for testing Widgets.
+If you need to write Widget tests, depend on the `flutter_test` package as well.
+It includes additional utilities for testing Widgets.
 
 ```yaml
 dev_dependencies:
