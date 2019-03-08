@@ -55,3 +55,8 @@ Learn more at the following links, many of which have been contributed by the Fl
 * [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
 * [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
+
+## Mobx
+
+* [Mobx.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
+* [Getting started with mobx.dart](https://mobx.pub/getting-started)
