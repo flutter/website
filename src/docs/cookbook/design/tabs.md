@@ -110,14 +110,14 @@ class TabBarDemo extends StatelessWidget {
           appBar: AppBar(
             title: Text('Tabs Demo'),
             bottom: PreferredSize(
-            preferredSize: Size(200,50),
-              child: TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],
-          )),
+                preferredSize: Size(200, 50),
+                child: TabBar(
+                  tabs: [
+                    Tab(icon: Icon(Icons.directions_car)),
+                    Tab(icon: Icon(Icons.directions_transit)),
+                    Tab(icon: Icon(Icons.directions_bike)),
+                  ],
+                )),
           ),
           body: TabBarView(
             children: [
