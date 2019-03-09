@@ -108,6 +108,7 @@ class TabBarDemo extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+            title: Text('Tabs Demo'),
             bottom: PreferredSize(
             preferredSize: Size(double.infinity,50),
               child: TabBar(
@@ -117,6 +118,7 @@ class TabBarDemo extends StatelessWidget {
               Tab(icon: Icon(Icons.directions_bike)),
             ],
           )),
+          ),
           body: TabBarView(
             children: [
               Icon(Icons.directions_car),
