@@ -53,13 +53,15 @@ DefaultTabController(
   length: 3,
   child: Scaffold(
     appBar: AppBar(
-      bottom: TabBar(
-        tabs: [
-          Tab(icon: Icon(Icons.directions_car)),
-          Tab(icon: Icon(Icons.directions_transit)),
-          Tab(icon: Icon(Icons.directions_bike)),
-        ],
-      ),
+      bottom: PreferredSize(
+            preferredSize: Size(double.infinity,50),
+              child: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+         ],
+      )),
     ),
   ),
 );
@@ -67,7 +69,7 @@ DefaultTabController(
 
 By default, the `TabBar` looks up the Widget tree for the nearest
 `DefaultTabController`. If you're manually creating a `TabController`, you'll
-need to pass it to the `TabBar`.
+need to pass it to the `TabBar` into `PreferredSize`.
 
 ## 3. Create content for each tab
 
@@ -106,15 +108,15 @@ class TabBarDemo extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
-              ],
-            ),
-            title: Text('Tabs Demo'),
-          ),
+            bottom: PreferredSize(
+            preferredSize: Size(double.infinity,50),
+              child: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          )),
           body: TabBarView(
             children: [
               Icon(Icons.directions_car),
