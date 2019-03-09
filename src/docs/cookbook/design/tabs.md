@@ -69,8 +69,7 @@ DefaultTabController(
 
 By default, the `TabBar` looks up the Widget tree for the nearest
 `DefaultTabController`. If you're manually creating a `TabController`, you'll
-need to pass it to the `TabBar` into `PreferredSize`.
-
+need to pass it to the `TabBar`. also you will need to wrap `TabBar` with `PreferredSize`
 ## 3. Create content for each tab
 
 Now that we have tabs, we'll want to display content when a tab is selected.
