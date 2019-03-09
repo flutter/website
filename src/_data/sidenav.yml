@@ -132,7 +132,7 @@
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package site
-          permalink: http://pub.dartlang.org/flutter
+          permalink: https://pub.dartlang.org/flutter
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
