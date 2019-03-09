@@ -56,7 +56,7 @@ Learn more at the following links, many of which have been contributed by the Fl
   by Sagar Suri
 * [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
 
-## Mobx
+## MobX
 
-* [Mobx.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
-* [Getting started with mobx.dart](https://mobx.pub/getting-started)
+* [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
+* [Getting started with MobX.dart](https://mobx.pub/getting-started)
