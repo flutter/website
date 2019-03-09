@@ -54,7 +54,7 @@ DefaultTabController(
   child: Scaffold(
     appBar: AppBar(
       bottom: PreferredSize(
-            preferredSize: Size(double.infinity,50),
+            preferredSize: Size(200,50),
               child: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_car)),
@@ -64,7 +64,7 @@ DefaultTabController(
       )),
     ),
   ),
-);
+)
 ```
 
 By default, the `TabBar` looks up the Widget tree for the nearest
@@ -110,7 +110,7 @@ class TabBarDemo extends StatelessWidget {
           appBar: AppBar(
             title: Text('Tabs Demo'),
             bottom: PreferredSize(
-            preferredSize: Size(double.infinity,50),
+            preferredSize: Size(200,50),
               child: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.directions_car)),
