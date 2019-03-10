@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: CachedNetworkImage(
-            placeholder: CircularProgressIndicator(),
+            placeholder: (context, url) => new CircularProgressIndicator(),
             imageUrl:
                 'https://picsum.photos/250?image=9',
           ),
