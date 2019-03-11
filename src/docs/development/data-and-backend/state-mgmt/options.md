@@ -55,3 +55,4 @@ Learn more at the following links, many of which have been contributed by the Fl
 * [Architect your Flutter project using BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1),
   by Sagar Suri
 * [Bloc Library](https://felangel.github.io/bloc), by Felix Angelov
+* [Reactive Programming - Streams - BLoC - Practical Use Cases] (https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/), by Didier Boelens 
