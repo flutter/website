@@ -20,7 +20,7 @@
                 {%- if page_url_path == '/docs' or page_url_path contains '/docs/' %} active {%- endif -%}" href="/docs">Docs</a>
           </li>
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include sidenav.html nav=site.data.sidenav %}
+            {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
           </div>
 
           <li class="nav-item">
