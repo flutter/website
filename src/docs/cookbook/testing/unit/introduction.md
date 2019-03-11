@@ -44,18 +44,6 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-If you're working on a package that will only be used for Flutter apps, or if
-we need to write Widget tests, depend on the `flutter_test` package instead.
-It includes everything from the `test` package, as well as
-additional utilities for testing Widgets.
-
-```yaml
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-```
-
-
 ## 2. Create a test file
 
 In this example, create two files: `counter.dart` and `counter_test.dart`.
