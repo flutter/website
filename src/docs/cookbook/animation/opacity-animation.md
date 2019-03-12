@@ -1,5 +1,8 @@
 ---
 title: Fade a Widget in and out
+prev:
+  title: Animate the properties of a Container
+  path: /docs/cookbook/animation/animated-container
 next:
   title: Add a Drawer to a screen
   path: /docs/cookbook/design/drawer
