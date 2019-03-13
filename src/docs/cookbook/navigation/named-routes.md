@@ -4,8 +4,8 @@ prev:
   title: Navigate to a new screen and back
   path: /docs/cookbook/navigation/navigation-basics
 next:
-  title: Return data from a screen
-  path: /docs/cookbook/navigation/returning-data
+  title: Pass arguments to a named route
+  path: /docs/cookbook/navigation/navigate-with-arguments
 ---
 
 In the

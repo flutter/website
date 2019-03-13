@@ -4,8 +4,8 @@ prev:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
 next:
-  title: Navigate to a named route with arguments
-  path: /docs/cookbook/navigation/navigate-with-arguments
+  title: Navigate to a new screen and back
+  path: /docs/cookbook/navigation/navigation-basics
 ---
 
 It's often helpful to guide users through our apps as they navigate from screen

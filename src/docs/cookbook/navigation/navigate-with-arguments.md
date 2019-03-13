@@ -1,11 +1,11 @@
 ---
-title: Navigate to a named route with arguments
+title: Pass arguments to a named route
 prev:
-  title: Animating a Widget across screens
-  path: /docs/cookbook/navigation/hero-animations
+  title: Navigate with named routes
+  path: /docs/cookbook/navigation/named-routes
 next:
-  title: Navigate to a new screen and back
-  path: /docs/cookbook/navigation/navigation-basics
+  title: Return data from a screen
+  path: /docs/cookbook/navigation/returning-data
 ---
  
 The [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)
