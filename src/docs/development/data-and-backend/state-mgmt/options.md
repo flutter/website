@@ -48,6 +48,8 @@ Learn more at the following links, many of which have been contributed by the Fl
   by Jack Wong
 * [Building a (large) Flutter app with Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/),
   by Hillel Coren
+* [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
+  by Alibaba
 
 ## BLoC / Rx
 
