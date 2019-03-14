@@ -54,11 +54,11 @@
   logo_src: community/logo-medium.png
   learn_more_link: https://medium.com/flutter-io
 
-- name: Flutter Study Group
+- name: Flutter Community Slack
   description: >
     Connect and work through problems with a group of knowledgeable Flutter people.
   logo_src: community/logo-slack.png
-  learn_more_link: https://flutterstudygroup.com/
+  learn_more_link: https://fluttercommunity.dev/joinslack
 
 - name: Flutter YouTube
   description: >
