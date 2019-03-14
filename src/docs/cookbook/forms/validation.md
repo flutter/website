@@ -68,6 +68,13 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
+{{site.alert.tip}}
+Using a `GlobalKey` is the recommended way to access a form. However, if you
+have a more complex widget tree, you can use the
+[`Form.of`](https://docs.flutter.io/flutter/widgets/Form/of.html) method to
+access the form within nested widgets.
+{{site.alert.end}}
+
 ## 2. Add a `TextFormField` with validation logic
 
 We have our `Form` in place, but we haven't provided a way for our users to
