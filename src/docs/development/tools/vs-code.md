@@ -125,6 +125,12 @@ During a debug session, several additional debugging commands are added to the
 * **Toggle Slow Animations**: Slow down animations to enable visual inspection.
 * **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
   debug build.
+  
+### Debugging external libraries 
+
+By default, debug an external library is disabled in Flutter extension. To enable:
+1. **Settings > Extensions > Dart Configuration **
+2. Check option `Debug External Libraries`
 
 ### The Flutter Inspector, performance profiling, and Dart DevTools
 
