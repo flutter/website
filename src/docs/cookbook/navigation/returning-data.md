@@ -1,8 +1,8 @@
 ---
 title: Return data from a screen
 prev:
-  title: Navigate with named routes
-  path: /docs/cookbook/navigation/named-routes
+  title: Pass arguments to a named route
+  path: /docs/cookbook/navigation/navigate-with-arguments
 next:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
