@@ -57,7 +57,7 @@ We will use the `FocusNode` to identify a specific `TextField` in Flutter's
 "focus tree." This will allow us to focus the `TextField` in the next steps.
 
 Since focus nodes are long-lived objects, we need to manage the lifecycle
-using a `State`class. To do so, create the `FocusNode` instance inside the
+using a `State` class. To do so, create the `FocusNode` instance inside the
 `initState` method of a `State` class, and clean them up inside the `dispose`
 method.
 
