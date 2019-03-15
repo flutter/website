@@ -1,7 +1,7 @@
 ---
-title: Flutter SDK archive
+title: Flutter SDK releases
 short-title: Archive
-description: Flutter SDK archive
+description: Flutter SDK releases
 toc: false
 ---
 
@@ -12,8 +12,8 @@ toc: false
 }
 </style>
 
-The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter’s
-channels][] for details.
+The {{site.sdk.channel | capitalize }} channel contains the most stable
+Flutter builds. See [Flutter’s channels][] for details.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">

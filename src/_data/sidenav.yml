@@ -147,8 +147,8 @@
           children:
             - title: Upgrading
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archive
-              permalink: /docs/development/tools/sdk/archive
+            - title: Releases
+              permalink: /releases
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting

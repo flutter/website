@@ -78,8 +78,8 @@ $ flutter upgrade
 ```
 
 {{site.alert.note}}
-If you need a specific version of the Flutter SDK,
-you can download it from the [Flutter SDK archive][].
+  If you need a specific version of the Flutter SDK,
+  you can download it from the [Flutter SDK releases][].
 {{site.alert.end}}
 
 ## Upgrading packages only
@@ -110,6 +110,6 @@ We publish breaking change announcements to our [mailing list][].
 We strongly recommend that you subscribe to get announcements from us.
 Plus, we'd love to hear from you!
 
-[Flutter SDK archive]: /docs/development/tools/sdk/archive
+[Flutter SDK releases]: /releases
 [Flutter release channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [mailing list]: {{site.groups}}/forum/#!forum/flutter-dev

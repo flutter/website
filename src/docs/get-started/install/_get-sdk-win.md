@@ -6,7 +6,7 @@
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
     For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    releases](/releases) page.
  1. Extract the zip file and place the contained `flutter` in the desired
     installation location for the Flutter SDK (eg. `C:\src\flutter`; do not
     install Flutter in a directory like `C:\Program Files\` that requires

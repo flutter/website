@@ -10,8 +10,7 @@ The Flutter community has made a Simplified Chinese version of the
 Flutter site website available at
 [https://flutter-io.cn](https://flutter-io.cn).
 
-If you’d like to install Flutter using an [installation
-bundle](/docs/development/tools/sdk/archive),
+If you’d like to install Flutter using an [installation bundle](/releases),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
 
