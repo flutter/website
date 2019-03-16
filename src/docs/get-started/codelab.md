@@ -130,7 +130,7 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. Run the app [in the way of your IDE](/docs/get-started/test-drive).
+ 2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
     You should see either Android or iOS output, depending on your device.
 
     {% indent %}
