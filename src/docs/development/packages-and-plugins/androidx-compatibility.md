@@ -103,7 +103,9 @@ android.useAndroidX=true
 
 Under `android {`, make sure `compileSdkVersion` and `targetSdkVersion` are at least 28.
 
-Also, replace
+5. Replace all deprecated libraries with the AndroidX equivalents. For instance, if you're using the default `.gradle` files make the following changes:
+
+In `android/app/build.gradle`
 
 `testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"`
 
