@@ -12,7 +12,7 @@ We hope these resources make Dart easy for you to learn, too.
 
 [Language tour]({{site.dart-site}}/guides/language/language-tour)
 : Your best introduction to the Dart language. Learn about Dart's
-  features such as _optional types_, _closures_, _libraries_, _lexical scoping_,
+  features such as _strong types_, _closures_, _libraries_, _lexical scoping_,
   _top-level functions_, _named parameters_, _async / await_, and lots more.
 
 [Library tour]({{site.dart-site}}/guides/libraries/library-tour)
