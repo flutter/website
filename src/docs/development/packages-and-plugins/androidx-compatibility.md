@@ -68,6 +68,10 @@ Use the following instructions:
 
 #### Not recommended: Manually migrate your app
 
+See [Migrating to
+AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) for more detailed
+instructions on how to do this. Below are some steps that you'll likely need to go through as part of this process, listed here for reference. However the specific things you need to do will depend on your build configuration and could differ from the example changes suggested here.
+
 1. In `android/gradle/wrapper/gradle-wrapper.properties` change the line starting with `distributionUrl` like this:
 
 `distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip`
@@ -120,10 +124,6 @@ by
 androidTestImplementation 'androidx.test.runner:1.1.1'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 ```
-
-See [Migrating to
-AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) for more detailed
-instructions on how to do this.
 
 ### Avoiding AndroidX
 
