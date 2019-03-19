@@ -21,7 +21,8 @@ description: The landing page for Flutter documentation.
 
 Flutter released [version
 1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
-at Mobile World Congress (MWC) in Barcelona!
+at Mobile World Congress (MWC) in Barcelona. For more information, see the
+[release notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1).
 
 In addition, here are some recent new docs:
 
