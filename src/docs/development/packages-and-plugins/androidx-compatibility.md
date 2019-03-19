@@ -101,7 +101,7 @@ android.useAndroidX=true
 
 4. In `android/app/build.gradle`:
 
-Replace version `27` by `28` (`compileSdkVersion` and `targetSdkVersion` under `android {`).
+Under `android {`, make sure `compileSdkVersion` and `targetSdkVersion` are at least 28.
 
 Also, replace
 
