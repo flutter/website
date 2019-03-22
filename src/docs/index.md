@@ -5,7 +5,9 @@ description: The landing page for Flutter documentation.
 ---
 
 {% for card in site.data.docs_cards -%}
-  {% if forloop.counter0 | divisibleby: 3 or forloop.first %}
+  {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
+  {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
+  {% if indexModulo3 == '0' %}
   <div class="card-deck">
   {% endif %}
     <a class="card" href="{{card.url}}">
@@ -14,7 +16,7 @@ description: The landing page for Flutter documentation.
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if forloop.counter | divisibleby: 3 or forloop.last %}
+  {% if index0Modulo3 == '0' %}
   </div>
   {% endif %}
 {% endfor -%}
