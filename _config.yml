@@ -19,7 +19,7 @@ sdk: # Flutter SDK
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 
 social:
-  twitter: https://twitter.com/flutterio
+  twitter: https://twitter.com/flutterdev
   youtube: https://www.youtube.com/flutterdev
 
 dart-site: https://www.dartlang.org
