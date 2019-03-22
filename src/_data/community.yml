@@ -42,11 +42,11 @@
     - name: flutter-dev
       url: https://groups.google.com/forum/#!forum/flutter-dev
 
-- name: "@flutter.io"
+- name: "@flutter.dev"
   description: >
     Follow the Flutter team in real-time with information on new features, upcoming events, and more.
   logo_src: community/logo-twitter.png
-  learn_more_link: https://twitter.com/flutterio
+  learn_more_link: https://twitter.com/flutterdev
 
 - name: Medium
   description: >
