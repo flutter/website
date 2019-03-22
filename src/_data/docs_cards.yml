@@ -6,4 +6,13 @@
   url: /docs/development/ui/widgets/catalog
 - name: API Docs
   description: Bookmark the API reference docs for the Flutter framework.
-  url: https://docs.flutter.io
+  url: https://api.flutter.dev/
+- name: Cookbook
+  description: Browse the cookbook for many easy Flutter recipes.
+  url: /docs/cookbook
+- name: Samples
+  description: Check out the Flutter examples.
+  url: https://github.com/flutter/samples/blob/master/INDEX.md
+- name: Videos
+  description: View the many videos on the Flutter Youtube channel.
+  url: https://www.youtube.com/flutterdev

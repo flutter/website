@@ -9,6 +9,14 @@ show_breadcrumbs: false
 This is an alphabetical list of nearly every widget that is bundled with
 Flutter. You can also [browse widgets by category][catalog].
 
+You might also want to check out our Widget of the Week video series
+on the [Flutter YouTube channel]({{site.social.youtube}}). Each short
+episode features a different Flutter widget. For more video series, see
+our [videos](/docs/resources/videos) page.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
     <div class="card">

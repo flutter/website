@@ -8,6 +8,11 @@ knowledge to build mobile apps with Flutter. If you understand the
 fundamentals of the iOS framework then you can use this document as a
 way to get started learning Flutter development.
 
+Before diving into this doc, you may want to watch a 15-minute video from
+the [Flutter Youtube channel](https://www.youtube.com/flutterdev) about
+the Cupertino package.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Your iOS knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
 capabilities and configurations. Flutter is a new way to build UIs for mobile,

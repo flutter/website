@@ -147,7 +147,7 @@
           children:
             - title: Upgrading
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archive
+            - title: Releases
               permalink: /docs/development/tools/sdk/archive
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload

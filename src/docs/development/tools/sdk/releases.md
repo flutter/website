@@ -1,7 +1,7 @@
 ---
-title: Flutter SDK archive
-short-title: Archive
-description: Flutter SDK archive
+title: Flutter SDK releases
+short-title: Releases
+description: All current Flutter SDK releases, both stable and developer.
 toc: false
 ---
 
