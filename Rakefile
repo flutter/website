@@ -22,7 +22,7 @@ task :checklinks do
     # Replace canonical link with local links.
     # Details: http://tongueroo.com/articles/getting-html-proofer-to-work-with-canonical-url-for-google-seo/
     :url_swap => {
-      'https://flutter.io' => ''
+      'https://flutter.dev' => ''
     }
   }
   HTMLProofer.check_directory("./_site", options).run

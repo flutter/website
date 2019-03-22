@@ -143,7 +143,7 @@ need to manually deploy, use the deploy script and the `default` project:
 ./tool/shared/deploy.sh --local --robots ok default
 ```
 
-## Writing for flutter.io
+## Writing for flutter.dev
 
 (Eventually, this section should be expanded to its own page.)
 
@@ -217,7 +217,7 @@ its own file and checked for analysis issues. Some ways to tweak that:
   automatically added to it
 - We ignore special formatting tags like `[[highlight]]`.
 
-[Flutter]: https://flutter.io
+[Flutter]: https://flutter.dev
 
 ## (Deprecated) Updating the Sample Catalog
 
