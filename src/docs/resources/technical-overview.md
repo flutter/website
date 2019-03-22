@@ -210,7 +210,7 @@ We're open source and would love to hear from you.
 - [Live chat with Flutter engineers and users][gitter]
 - [Discuss Flutter, best practices, app design, and more on our mailing list][mailinglist]
 - [Report bugs, request features and docs][issues]
-- [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
+- [Follow us on Twitter: @flutterdev](https://twitter.com/flutterdev/)
 
 
 [issues]: {{site.github}}/flutter/flutter/issues
