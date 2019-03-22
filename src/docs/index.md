@@ -8,7 +8,7 @@ description: The landing page for Flutter documentation.
   {% capture index0Modulo3 %}{{ forloop.index0 | modulo:3 }}{% endcapture %}
   {% capture indexModulo3 %}{{ forloop.index | modulo:3 }}{% endcapture %}
   {% if index0Modulo3 == '0' %}
-  <div class="card-deck">
+  <div class="card-deck mb-4">
   {% endif %}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
