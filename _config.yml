@@ -24,7 +24,7 @@ social:
 
 dart-site: https://www.dartlang.org
 news: https://news.dartlang.org
-api: https://docs.flutter.io
+api: https://api.flutter.dev/
 pub: https://pub.dartlang.org
 pub-api: https://pub.dartlang.org/documentation
 pub-pkg: https://pub.dartlang.org/packages

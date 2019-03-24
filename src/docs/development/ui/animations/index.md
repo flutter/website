@@ -40,6 +40,26 @@ If you have a specific request, please
   shows how to animate the new message&mdash;sliding it from the input area up
   to the message list.
 
+We also have some videos that discuss aspects of Flutter animation.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yI-8QHpGIP4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+AnimatedContainer
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9hltevOHQBw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Opacity, including the implicit AnimatedOpacity widget
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pK738Pg9cxc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+FadeInImage
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Hero
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9z_YNlRlWfA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Transform
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N-RiyZlv8v8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+AnimatedBuilder
+
 ## Animation types
 
 Animations fall into one of two categories: tween- or physics-based.

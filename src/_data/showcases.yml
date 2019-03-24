@@ -18,7 +18,7 @@
 
 - name: AppTree
   description: >
-    AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab
+    AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab.
   logo_src: showcase/logo-app_tree.png
   learn_more_cta: Developer website
   learn_more_link: https://www.apptreerevolution.com/

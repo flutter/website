@@ -22,6 +22,9 @@ a new screen, containing more details and a "Buy" button. Flying an image from
 one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
+You may want to watch this one-minute video introducing the Hero widget:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
 during flight.
