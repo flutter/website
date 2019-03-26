@@ -155,6 +155,8 @@
           permalink: /docs/development/tools/formatting
         - title: Flutter inspector
           permalink: https://flutter.github.io/devtools/inspector
+        - title: Flutter Debugger (Based on Flipper)
+          permalink: https://github.com/blankapp/flutter-debugger
 
 - title: Testing & optimization
   permalink: /docs/testing
