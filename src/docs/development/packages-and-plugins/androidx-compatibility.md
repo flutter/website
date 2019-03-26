@@ -74,7 +74,9 @@ instructions on how to do this. Below are some steps that you'll likely need to 
 
 1. In `android/gradle/wrapper/gradle-wrapper.properties` change the line starting with `distributionUrl` like this:
 
-   `distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip`
+   ```
+   distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip
+   ```
 
 2. In `android/build.gradle`, replace:
 
@@ -107,11 +109,15 @@ instructions on how to do this. Below are some steps that you'll likely need to 
 
    In `android/app/build.gradle`
    
-   `testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"`
+   ```gradle
+   testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+   ```
    
    by
    
-   `testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"`
+   ```gradle
+   testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+   ```
    
    Finally, under `dependencies {`, replace
    
