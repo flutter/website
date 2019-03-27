@@ -10,6 +10,5 @@ The community has written some articles you may find useful.
 These articles address flavors for both iOS and Android.
 
 Please see
-[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/)
-and
-[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36).
+[Creating flavors of a Flutter app](https://cogitas.net/creating-flavors-of-a-flutter-app/),
+[Flavoring Flutter]({{site.medium}}/@salvatoregiordanoo/flavoring-flutter-392aaa875f36) and [Flutter Ready to Go]({{site.medium}}/flutter-community/flutter-ready-to-go-e59873f9d7de).
