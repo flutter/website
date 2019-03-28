@@ -129,7 +129,7 @@ instructions on how to do this. Below are some steps that you'll likely need to 
    by
    
    ```gradle
-   androidTestImplementation 'androidx.test.runner:1.1.1'
+   androidTestImplementation 'androidx.test:runner:1.1.1'
    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
    ```
 
