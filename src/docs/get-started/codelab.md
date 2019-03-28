@@ -467,7 +467,7 @@ lazily, on demand.
         that the divider may be difficult to see on smaller devices.
      2. Add a one-pixel-high divider widget before each row in the `ListView`.
      3. The expression `i ~/ 2` divides `i` by 2 and returns an integer result.
-        For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2. This calculates the
+        For example: 1, 2, 3, 4, 5 becomes 1, 0, 1, 0, 1. This calculates the
         actual number of word pairings in the `ListView`, minus the divider
         widgets.
      4. If you've reached the end of the available word pairings, then generate
