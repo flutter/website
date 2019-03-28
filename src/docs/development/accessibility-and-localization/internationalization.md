@@ -37,7 +37,7 @@ can also be internationalized using the same classes and logic.
 
   * [Minimal
     internationalization]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
-  * [Internationaliation based on the `intl`
+  * [Internationalization based on the `intl`
     package]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
 </aside>
 
