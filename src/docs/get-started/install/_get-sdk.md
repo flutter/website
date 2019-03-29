@@ -41,6 +41,19 @@
     To permanently add Flutter to your path, see [Update your
     path](#update-your-path).
 
+ 1. Optionally, pre-download development binaries:
+
+    The `flutter` tool downloads platform-specific development binaries as
+    needed. For scenarios where pre-downloading these artifacts is preferable
+    (e.g., hermetic build environments, intermittent network availability), iOS
+    and Android binaries can be downloaded ahead of time by running:
+
+    ```
+    $ flutter precache
+    ```
+
+    For additional download options, see `flutter help precache`.
+
 You are now ready to run Flutter commands!
 
 {{site.alert.note}}
@@ -79,3 +92,4 @@ Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you’ve set everything up correctly.
 
 {% include_relative _analytics.md %}
+
