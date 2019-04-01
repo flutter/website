@@ -37,8 +37,8 @@ increasing the count.
 {:.text-center}
 
 To accomplish this, you'll create a single custom widget that includes both the
-star and the count, which are themselves widgets. Because tapping the star
-changes state for both widgets, so the same widget should manage both.
+star and the count, which are themselves widgets. Tapping the star changes state
+for both widgets, so the same widget should manage both.
 
 You can get right to touching the code in [Step 2: Subclass
 StatefulWidget](#step-2). If you want to try different ways of managing state,
