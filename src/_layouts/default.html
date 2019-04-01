@@ -16,7 +16,7 @@ layout: base
       {% include shared/sidenav-level-1.html nav=site.data.sidenav %}
     </div>
     {% if page.toc and layout.toc != false -%}
-      {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" -%}
+      {% include toc.html kind="side" class="fixed-col col-xl-2 order-3" extendToc=true -%}
     {% endif -%}
     <main class="site-content {{main-col}}" role="main">
       <div class="container">

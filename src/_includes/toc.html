@@ -14,6 +14,12 @@
 {% endif -%}
 
 {% assign toc = content | toc_only -%}
+{% if include.extendToc -%}
+  {% assign toc = toc | replace: '<ul>', '<ul class="nav">' %}
+  {% assign toc = toc | replace: '<ul class="section-nav">', '<ul class="section-nav nav">' %}
+  {% assign toc = toc | replace: 'class="toc-entry', 'class="toc-entry nav-item' %}
+  {% assign toc = toc | replace: '<a href="#', '<a class="nav-link" href="#' %}
+{% endif -%}
 
 {% comment %}
   A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
