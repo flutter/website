@@ -74,58 +74,64 @@ instructions on how to do this. Below are some steps that you'll likely need to 
 
 1. In `android/gradle/wrapper/gradle-wrapper.properties` change the line starting with `distributionUrl` like this:
 
-`distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip`
+   ```
+   distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip
+   ```
 
 2. In `android/build.gradle`, replace:
 
-```gradle
-dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.1'
-}
-```
-
-by
-
-```gradle
-dependencies {
-    classpath 'com.android.tools.build:gradle:3.3.0'
-}
-```
+   ```gradle
+   dependencies {
+       classpath 'com.android.tools.build:gradle:3.2.1'
+   }
+   ```
+   
+   by
+   
+   ```gradle
+   dependencies {
+       classpath 'com.android.tools.build:gradle:3.3.0'
+   }
+   ```
 
 3. In `android/gradle.properties`, append
 
-```
-android.enableJetifier=true
-android.useAndroidX=true
-```
+   ```
+   android.enableJetifier=true
+   android.useAndroidX=true
+   ```
 
 4. In `android/app/build.gradle`:
 
-Under `android {`, make sure `compileSdkVersion` and `targetSdkVersion` are at least 28.
+   Under `android {`, make sure `compileSdkVersion` and `targetSdkVersion` are at least 28.
 
 5. Replace all deprecated libraries with the AndroidX equivalents. For instance, if you're using the default `.gradle` files make the following changes:
 
-In `android/app/build.gradle`
-
-`testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"`
-
-by
-
-`testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"`
-
-Finally, under `dependencies {`, replace
-
-```gradle
-androidTestImplementation 'com.android.support.test:runner:1.0.2'
-androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-```
-
-by
-
-```gradle
-androidTestImplementation 'androidx.test:runner:1.1.1'
-androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-```
+   In `android/app/build.gradle`
+   
+   ```gradle
+   testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+   ```
+   
+   by
+   
+   ```gradle
+   testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+   ```
+   
+   Finally, under `dependencies {`, replace
+   
+   ```gradle
+   androidTestImplementation 'com.android.support.test:runner:1.0.2'
+   androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+   ```
+   
+   by
+   
+   ```gradle
+   androidTestImplementation 'androidx.test:runner:1.1.1'
+   androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+   ```
 
 ### Avoiding AndroidX
 
