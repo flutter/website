@@ -10,7 +10,7 @@ effort in sending us as much feedback as possible.
 ## Create an Issue on GitHub
 
 * A new issue may be created in the [Flutter
-  repo]({{site.github}}/flutter/flutter/issues/new) on GitHub.
+  repo]({{site.github}}/flutter/flutter/issues/new/choose) on GitHub.
 
 ## Provide some Flutter Diagnostics
 
