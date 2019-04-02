@@ -44,7 +44,7 @@ Other ways you can contribute:
 * [Submit PRs to the Flutter SDK][PRs]
 * [Request docs for flutter.dev][doc-issues]
 * [Submit PRs to flutter.dev][doc-PRs]
-* [Follow us on Twitter: @flutterio](https://twitter.com/flutterio/)
+* [Follow us on Twitter: @flutterdev](https://twitter.com/flutterdev/)
 * [Read the Flutter Publication on Medium](https://medium.com/flutter-io)
 * [Sign up to Future UX Studies on Flutter](/research-signup)
 * [Join the subreddit to keep up with the latest in the Flutter
