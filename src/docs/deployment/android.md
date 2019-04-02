@@ -235,6 +235,52 @@ Using the command line:
 For detailed instructions on publishing the release version of an app to the
 Google Play Store, see the [Google Play publishing documentation][play].
 
+## Building a release app bundle
+
+This section describes how to build a release app bundle. If you completed
+the signing steps in the previous section, the release bundle will be signed.
+
+From the command line:
+
+1. Enter `cd <app dir>`. (Replace `<app, dir>` with your application's directory.)
+1. Run `flutter build appbundle`. (Running `flutter build` defaults to a release build.)
+1. To generate a different variant of bundle, you can enter
+   <nobr>`flutter build appbundle --release --target-platform=android-arm`.</nobr>
+   This generates a bundle for android-arm.
+
+The release bundle for your app is created at
+`<app dir>/build/app/outputs/bundle/release/app.aab`.
+
+{{site.alert.note}}
+  As of this writing, the app bundle command only generates **armeabi-v7a**
+  compatible libs. Follow [Issue 18494]() for more information.
+{{site.alert.end}} 
+
+## Testing an app Bundle
+
+An app bundle can be tested in multiple ways. This section describes a couple
+ways in which to test an app bundle.
+
+### Offline using the bundle tool
+
+1. If you have done done so already, download `bundletool` from the
+[GitHub repository](https://github.com/google/bundletool).
+1. [Generate a set of
+APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
+from your app bundle.
+1. [Deploy the
+APKs](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)
+to connected devices.
+
+### Online using Google Play
+
+1. Upload your bundle to Google Play to test it. You can use the internal
+test track, or the alpha or beta channels to test the bundle before releasing
+it in production.
+2. Follow [these steps to upload your
+bundle](https://developer.android.com/studio/publish/upload-bundle)
+to the Play Store.
+
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [appid]: {{site.android-dev}}/studio/build/application-id
@@ -245,3 +291,4 @@ Google Play Store, see the [Google Play publishing documentation][play].
 [launchericons]: {{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[Issue 18494]: https://github.com/flutter/flutter/issues/18494
