@@ -431,8 +431,9 @@ This is not currently available.
 
 ### Can I use Flutter to build desktop apps?
 
-We are focused on mobile-first use cases. However, Flutter is open source and we
-encourage the community to use Flutter in a variety of interesting ways.
+Yes, but right now it's not very well supported.
+We're working on making this a first class experience.
+Our current progress is documented [on our wiki](https://github.com/flutter/flutter/wiki/Desktop-shells).
 
 ### Can I use Flutter inside of my existing native app?
 
