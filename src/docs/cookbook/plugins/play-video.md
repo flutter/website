@@ -10,7 +10,7 @@ next:
 
 Playing videos is a common task in app development, and Flutter apps are no
 exception. In order to play videos, the Flutter team provides the
-[`video_player`](https://pub.dartlang.org/packages/video_player) plugin. You can
+[`video_player`]({{site.pub-pkg}}/video_player) plugin. You can
 use the `video_player` plugin to play videos stored on the file system, as an
 asset, or from the internet.
 
@@ -147,14 +147,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 ## 4. Display the video player
 
 Now, it's time to display the video. The `video_player` plugin provides the
-[`VideoPlayer`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayer-class.html)
+[`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html)
 Widget to display the video initialized by the `VideoPlayerController`. By
 default, the `VideoPlayer` Widget takes up as much space as possible. This
 often isn't ideal for videos because they are meant to be displayed in a
 specific aspect ratio, such as 16x9 or 4x3.
 
 Therefore, you can wrap the `VideoPlayer` widget in an
-[`AspectRatio`](https://docs.flutter.io/flutter/widgets/AspectRatio-class.html)
+[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
 widget to ensure the video is the correct proportions.
 
 Furthermore, you must display the `VideoPlayer` widget after the
@@ -190,9 +190,9 @@ FutureBuilder(
 
 By default, the video starts in a paused state. To begin playback,
 call the
-[`play`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/play.html)
+[`play`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
 method provided by the `VideoPlayerController`. To pause playback, call the
-[`pause`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/pause.html)
+[`pause`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
 method.
 
 For this example, add a `FloatingActionButton` to your app that displays a play

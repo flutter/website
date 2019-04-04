@@ -9,7 +9,7 @@ next:
 ---
 
 Many apps require working with the device's cameras to take photos and videos.
-Flutter provides the [`camera`](https://pub.dartlang.org/packages/camera) plugin
+Flutter provides the [`camera`]({{site.pub-pkg}}/camera) plugin
 for this purpose. The `camera` plugin provides tools to get a list of the
 available cameras, display a preview coming from a specific camera, and take
 photos or videos.
@@ -30,9 +30,9 @@ take a photo, and display it.
 
 To complete this recipe, you need to add three dependencies to your app:
 
-  - [`camera`](https://pub.dartlang.org/packages/camera) - Provides tools to work with the cameras on device
-  - [`path_provider`](https://pub.dartlang.org/packages/path_provider) - Finds the correct paths to store images
-  - [`path`](https://pub.dartlang.org/packages/path) - Creates paths that work on any platform
+  - [`camera`]({{site.pub-pkg}}/camera) - Provides tools to work with the cameras on device
+  - [`path_provider`]({{site.pub-pkg}}/path_provider) - Finds the correct paths to store images
+  - [`path`]({{site.pub-pkg}}/path) - Creates paths that work on any platform
 
 ```yaml
 dependencies:
@@ -139,7 +139,7 @@ working with the camera. Therefore, you must wait for the
 showing a `CameraPreview`.
 
 You can use a
-[`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html)
+[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
 for exactly this purpose.
 
 <!-- skip -->
@@ -164,7 +164,7 @@ FutureBuilder<void>(
 ## 5. Take a picture with the `CameraController`
 
 You can also use the `CameraController` to take pictures using the
-[`takePicture`](https://pub.dartlang.org/documentation/camera/latest/camera/CameraController/takePicture.html)
+[`takePicture`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html)
 method. In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 

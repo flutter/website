@@ -14,7 +14,7 @@ store. In general, databases provide faster inserts, updates, and queries
 compared to other local persistence solutions.
 
 Flutter apps can make use of the SQLite databases via the
-[`sqflite`](https://pub.dartlang.org/packages/sqflite) plugin available on pub.
+[`sqflite`]({{site.pub-pkg}}/sqflite) plugin available on pub.
 This recipe demonstrates the basics of using `sqflite` to insert, read, update,
 and remove data about various Dogs!
 
@@ -134,7 +134,7 @@ First, insert a `Dog` into the `dogs` table. This involves two steps:
 
   1. Convert the `Dog` into a `Map`
   2. Use the
-  [`insert`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
+  [`insert`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
   method to store the `Map` in the `dogs` table
 
 <!-- skip -->
@@ -220,7 +220,7 @@ print(await dogs()); // Prints a list that include Fido
 
 After you've inserted some information into the database, you may want to update
 that information at a later time. To do so, use the
-[`update`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/update.html)
+[`update`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html)
 method from the `sqflite` library.
 
 This involves two steps:
@@ -268,7 +268,7 @@ Do not use string interpolation, such as `where: "id = ${dog.id}"`!
 
 In addition to inserting and updating information about Dogs, you can also
 remove dogs from the database. To delete data, use the
-[`delete`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
+[`delete`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
 method from the `sqflite` library. 
 
 In this portion, create a function that takes in an id and deletes the dog with
