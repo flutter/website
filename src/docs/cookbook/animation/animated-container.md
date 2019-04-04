@@ -5,7 +5,7 @@ next:
   path: /docs/cookbook/animation/opacity-animation
 ---
 
-The [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html)
+The [`Container`]({{site.api}}/flutter/widgets/Container-class.html)
 class provides a convenient way to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
@@ -14,7 +14,7 @@ For example, you may want to animate the background color from grey to green to
 indicate that an item has been selected by the user.
 
 To animate these properties, Flutter provides the
-[`AnimatedContainer`](https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html)
+[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
 widget. Like the `Container` Widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
@@ -33,8 +33,8 @@ background color, and border radius when the user taps a button.
 ## 1. Create a StatefulWidget with default properties
 
 To start, create
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
-and [`State`](https://docs.flutter.io/flutter/widgets/State-class.html) classes.
+[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
+and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
 Use the custom State class to define the properties you need to change over
 time. In this example, that includes the width, height, color, and border
 radius. In addition, you can also define the default value of each property.
@@ -91,7 +91,7 @@ AnimatedContainer(
 
 Finally, start the animation by rebuilding the `AnimatedContainer` with
 new properties. How to trigger a rebuild? When it comes to `StatefulWidgets`,
-[`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html) is the
+[`setState`]({{site.api}}/flutter/widgets/State/setState.html) is the
 solution. 
 
 For this example, add a button to the app. When the user taps the button, update

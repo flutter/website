@@ -8,7 +8,7 @@ next:
   path: /docs/cookbook/navigation/returning-data
 ---
  
-The [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)
+The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
 provides the ability to navigate to a named route from any part of an app using
 a common identifier. In some cases, you may also need to pass arguments to a
 named route. For example, you may wish to navigate to the `/user` route and
@@ -16,15 +16,15 @@ pass information about the user to that route.
 
 In Flutter, you can accomplish this task by providing additional `arguments` to
 the
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html)
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 method. You can extract the arguments using the
-[`ModalRoute.of`](https://docs.flutter.io/flutter/widgets/ModalRoute/of.html)
+[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method or inside an
-[`onGenerateRoute`](https://docs.flutter.io/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function provided to the
-[`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 or
-[`CupertinoApp`](https://docs.flutter.io/flutter/cupertino/CupertinoApp-class.html)
+[`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
 constructor.
 
 This recipe demonstrates how to pass arguments to a named route and read the
@@ -60,7 +60,7 @@ class ScreenArguments {
 
 Next, create a widget that extracts and displays the `title` and `message` from
 the `ScreenArguments`. To access the `ScreenArguments`, use the
-[`ModalRoute.of`](https://docs.flutter.io/flutter/widgets/ModalRoute/of.html)
+[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method. This method returns the current route with the arguments.
 
 <!-- skip -->
@@ -106,7 +106,7 @@ MaterialApp(
 
 Finally, navigate to the `ExtractArgumentsScreen` when a user taps a button
 using
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html).
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
 Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
@@ -136,7 +136,7 @@ RaisedButton(
 
 Instead of extracting the arguments directly inside the widget, you can also
 extract the arguments inside an
-[`onGenerateRoute`](https://docs.flutter.io/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function and pass them to a widget.
 
 The `onGenerateRoute` function creates the correct route based on the given

@@ -17,7 +17,7 @@ Traditionally, you create an app bar by providing an `appBar` property to the
 the `body` of the `Scaffold`.
 
 Moving the app bar from a `Scaffold` Widget into a
-[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html)
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html)
 allows you to create an app bar that scrolls offscreen as you scroll through a
 list of items contained inside the `CustomScrollView`.
 
@@ -63,9 +63,9 @@ Scaffold(
 ### 2. Use `SliverAppBar` to add a floating app bar
 
 Next, add an app bar to the
-[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html).
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html).
 Flutter provides the
-[`SliverAppBar`](https://docs.flutter.io/flutter/material/SliverAppBar-class.html)
+[`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html)
 Widget out of the box.  Much like the normal `AppBar` widget, you can use the
 `SliverAppBar` to display a title, tabs, images and more.
 
@@ -100,7 +100,7 @@ CustomScrollView(
 
 {{site.alert.tip}}
 Play around with the [various properties you can pass to the `SliverAppBar`
-Widget](https://docs.flutter.io/flutter/material/SliverAppBar/SliverAppBar.html)
+Widget]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html)
 and use hot reload to see the results. For example, you can use an `Image`
 Widget for the `flexibleSpace` property to create a background image that
 shrinks in size as it's scrolled offscreen.
@@ -111,16 +111,16 @@ shrinks in size as it's scrolled offscreen.
 
 Now that you have the app bar in place, add a list of items to the
 `CustomScrollView`. You have two options: a
-[`SliverList`](https://docs.flutter.io/flutter/widgets/SliverList-class.html) or
-a [`SliverGrid`](https://docs.flutter.io/flutter/widgets/SliverGrid-class.html).
+[`SliverList`]({{site.api}}/flutter/widgets/SliverList-class.html) or
+a [`SliverGrid`]({{site.api}}/flutter/widgets/SliverGrid-class.html).
 If you need to display a list of items one after the other, use the `SliverList`
 Widget. If you need to display a grid list, use the `SliverGrid` Widget.
 
 The `SliverList` and `SliverGrid` Widgets take one required parameter: a
-[`SliverChildDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildDelegate-class.html).
+[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html).
 While this sounds fancy, the delegate is simply used to provide a list Widgets
 to `SliverList` or `SliverGrid`. For example, the
-[`SliverChildBuilderDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildBuilderDelegate-class.html)
+[`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html)
 allows you to create a list of items that are built lazily as you scroll, just
 like the the `ListView.builder` Widget.
 

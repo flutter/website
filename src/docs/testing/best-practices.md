@@ -33,7 +33,7 @@ when designing your app:
     of the child widget as the previous frame is re-encountered. This 
     technique is heavily used in inside the framework for optimizing 
     animations where the animation doesn't affect the child subtree. See
-    the [TransitionBuilder](https://docs.flutter.io/flutter/widgets/TransitionBuilder.html)
+    the [TransitionBuilder]({{site.api}}/flutter/widgets/TransitionBuilder.html)
     pattern and the [SlideTransition](https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229)
     which uses this principle to avoid rebuilding its descendents when 
     animating.

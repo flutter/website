@@ -154,7 +154,7 @@ often isn't ideal for videos because they are meant to be displayed in a
 specific aspect ratio, such as 16x9 or 4x3.
 
 Therefore, you can wrap the `VideoPlayer` widget in an
-[`AspectRatio`](https://docs.flutter.io/flutter/widgets/AspectRatio-class.html)
+[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
 widget to ensure the video is the correct proportions.
 
 Furthermore, you must display the `VideoPlayer` widget after the

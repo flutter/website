@@ -139,7 +139,7 @@ working with the camera. Therefore, you must wait for the
 showing a `CameraPreview`.
 
 You can use a
-[`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html)
+[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
 for exactly this purpose.
 
 <!-- skip -->
