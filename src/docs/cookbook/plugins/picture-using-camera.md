@@ -164,7 +164,7 @@ FutureBuilder<void>(
 ## 5. Take a picture with the `CameraController`
 
 You can also use the `CameraController` to take pictures using the
-[`takePicture`](https://pub.dartlang.org/documentation/camera/latest/camera/CameraController/takePicture.html)
+[`takePicture`]({{pub-api}}/camera/latest/camera/CameraController/takePicture.html)
 method. In this example, create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 

@@ -147,7 +147,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 ## 4. Display the video player
 
 Now, it's time to display the video. The `video_player` plugin provides the
-[`VideoPlayer`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayer-class.html)
+[`VideoPlayer`]({{pub-api}}/video_player/latest/video_player/VideoPlayer-class.html)
 Widget to display the video initialized by the `VideoPlayerController`. By
 default, the `VideoPlayer` Widget takes up as much space as possible. This
 often isn't ideal for videos because they are meant to be displayed in a
@@ -190,9 +190,9 @@ FutureBuilder(
 
 By default, the video starts in a paused state. To begin playback,
 call the
-[`play`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/play.html)
+[`play`]({{pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
 method provided by the `VideoPlayerController`. To pause playback, call the
-[`pause`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/pause.html)
+[`pause`]({{pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
 method.
 
 For this example, add a `FloatingActionButton` to your app that displays a play
