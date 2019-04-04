@@ -9,7 +9,7 @@ next:
 ---
 
 Many apps require working with the device's cameras to take photos and videos.
-Flutter provides the [`camera`](https://pub.dartlang.org/packages/camera) plugin
+Flutter provides the [`camera`]({{pub-pkg}}/camera) plugin
 for this purpose. The `camera` plugin provides tools to get a list of the
 available cameras, display a preview coming from a specific camera, and take
 photos or videos.
@@ -30,9 +30,9 @@ take a photo, and display it.
 
 To complete this recipe, you need to add three dependencies to your app:
 
-  - [`camera`](https://pub.dartlang.org/packages/camera) - Provides tools to work with the cameras on device
-  - [`path_provider`](https://pub.dartlang.org/packages/path_provider) - Finds the correct paths to store images
-  - [`path`](https://pub.dartlang.org/packages/path) - Creates paths that work on any platform
+  - [`camera`]({{pub-pkg}}/camera) - Provides tools to work with the cameras on device
+  - [`path_provider`]({{pub-pkg}}/path_provider) - Finds the correct paths to store images
+  - [`path`]({{pub-pkg}}/path) - Creates paths that work on any platform
 
 ```yaml
 dependencies:

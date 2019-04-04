@@ -10,7 +10,7 @@ next:
 
 Playing videos is a common task in app development, and Flutter apps are no
 exception. In order to play videos, the Flutter team provides the
-[`video_player`](https://pub.dartlang.org/packages/video_player) plugin. You can
+[`video_player`]({{pub-pkg}}/video_player) plugin. You can
 use the `video_player` plugin to play videos stored on the file system, as an
 asset, or from the internet.
 

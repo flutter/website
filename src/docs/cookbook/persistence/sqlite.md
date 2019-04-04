@@ -14,7 +14,7 @@ store. In general, databases provide faster inserts, updates, and queries
 compared to other local persistence solutions.
 
 Flutter apps can make use of the SQLite databases via the
-[`sqflite`](https://pub.dartlang.org/packages/sqflite) plugin available on pub.
+[`sqflite`]({{pub-pkg}}/sqflite) plugin available on pub.
 This recipe demonstrates the basics of using `sqflite` to insert, read, update,
 and remove data about various Dogs!
 
