@@ -4,7 +4,7 @@ title: Platform Specific Behaviors and Adaptations
 
 ## Adaptation Philosophy
 
-There are generally 3 categories platform adaptiveness:
+There are generally 3 categories of platform adaptiveness:
 
 1. Things that are behaviors of the OS environment (such as text editing and
 scrolling) and that would be 'wrong' a different behavior took place.
@@ -16,26 +16,46 @@ status bar color theme etc. and to import notch metrics, locale settings etc.
 This article mainly covers the automatic adaptations provided by Flutter
 in case 1 on Android and iOS.
 
-For a discussion on case 2, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023).
+For case 2, Flutter bundles the means to produce the appropriate effects of
+the platform conventions but does not adapt automatically when app design
+choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023).
 
 ## Page Navigation
 
 ### Navigation Transitions
 
-### Transition Types
+On Android, the default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+transition is modeled after [startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))
+which generally has one bottom-up animation variant.
 
-On Android, the transition is modeled after [startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))
-which generally has one animation variant. On iOS,
+On iOS, the default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+API produces an iOS Show/Push style transition which animates from end to start
+depending on the locale's RTL setting. The page behind the new route also
+parallax-slides in the same direction like in iOS.
 
-### Platform-Specific Transition Animations Details
+A separate bottom-up transition style
+exists when pushing a page route where [PageRoute.fullscreenDialog](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
+is true. This represents iOS's Present/Modal style transition and is typically
+used on fullscreen modal pages.
+
+### Platform-Specific Transition Details
 
 On Android, 2 page transition animation styles exist depending on your OS
-version.
+version. Pre API 28 uses a bottom-up animation that slides up and fades in. On
+API 28 and later, the bottom-up animation slides and clip-reveals up.
 
 On iOS, Flutter's bundled CupertinoNavigationBar and CupertinoSliverNavigationBar
-will automatically each of its subcomponent to its corresponding subcomponent
-on the next or previous page's CupertinoNavigationBar or CupertinoSliverNavigationBar
-when the push style transition is used.
+will automatically animate each of its subcomponent to its corresponding
+subcomponent on the next or previous page's CupertinoNavigationBar or
+CupertinoSliverNavigationBar when the push style transition is used.
+
+### Back Navigation
+
+On Android, the OS back button, by default, is sent to Flutter and pops the top
+route of the [WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)'s
+Navigator.
+
+On iOS, an edge swipe gesture can be used to pop the top route.
 
 ## Scrolling
 
