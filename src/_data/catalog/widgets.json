@@ -587,6 +587,16 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
+    "name": "CupertinoScrollbar",
+    "description": "An iOS-style scrollbar that appears while scrolling lists",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoScrollbar-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-scrollbar.png'>"
+  },
+  {
     "name": "CupertinoSegmentedControl",
     "description": "An iOS-style segmented control. Used to select mutually exclusive options in a horizontal list.",
     "categories": [
