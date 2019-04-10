@@ -38,6 +38,35 @@ exists when pushing a page route where [PageRoute.fullscreenDialog](https://docs
 is true. This represents iOS's Present/Modal style transition and is typically
 used on fullscreen modal pages.
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid rounded" alt="An animation of the bottom-up page transition on Android" />
+        <figcaption class="figure-caption">
+          Android
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid rounded" alt="An animation of the end-start style push page transition on iOS" />
+        <figcaption class="figure-caption">
+          iOS push
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid rounded" alt="An animation of the bottom-up style present page transition on iOS" />
+        <figcaption class="figure-caption">
+          iOS present
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
 ### Platform-Specific Transition Details
 
 On Android, 2 page transition animation styles exist depending on your OS
@@ -48,6 +77,35 @@ On iOS, Flutter's bundled CupertinoNavigationBar and CupertinoSliverNavigationBa
 will automatically animate each of its subcomponent to its corresponding
 subcomponent on the next or previous page's CupertinoNavigationBar or
 CupertinoSliverNavigationBar when the push style transition is used.
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid rounded" alt="An animation of the page transition on Android pre-Android P" />
+        <figcaption class="figure-caption">
+          Android Pre-P
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid rounded" alt="An animation of the page transition on Android on Android P" />
+        <figcaption class="figure-caption">
+          Android Post-P
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/navigation-ios-nav-bar.gif" class="figure-img img-fluid rounded" alt="An animation of the nav bar transitions during a page transition on iOS" />
+        <figcaption class="figure-caption">
+          iOS Nav Bar
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
 ### Back Navigation
 
