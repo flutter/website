@@ -588,7 +588,7 @@
   },
   {
     "name": "CupertinoScrollbar",
-    "description": "An iOS-style scrollbar that appears while scrolling lists",
+    "description": "An iOS-style scrollbar that indicates which portion of a scrollable widget is currently visible.",
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
