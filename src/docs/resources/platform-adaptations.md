@@ -9,7 +9,8 @@ There are generally 3 categories of platform adaptiveness:
 1. Things that are behaviors of the OS environment (such as text editing and
 scrolling) and that would be 'wrong' a different behavior took place.
 2. Things that are conventionally implemented in apps using the OEM's SDKs
-(such as using parallel tabs on iOS).
+(such as using parallel tabs on iOS or showing an [android.app.AlertDialog](https://developer.android.com/reference/android/app/AlertDialog.html)
+on Android).
 3. Correct usage of corresponding platform APIs to export to TalkBack/VoiceOver,
 status bar color theme etc. and to import notch metrics, locale settings etc.
 
@@ -20,20 +21,23 @@ For case 2, Flutter bundles the means to produce the appropriate effects of
 the platform conventions but does not adapt automatically when app design
 choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023).
 
+Flutter should transparently work for scenario 3. 
+
 ## Page Navigation
 
 ### Navigation Transitions
 
-On Android, the default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+On **Android**, the default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
 transition is modeled after [startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))
 which generally has one bottom-up animation variant.
 
-On iOS, the default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
+On **iOS**:
+
+* The default [Navigator.push](https://docs.flutter.io/flutter/widgets/Navigator/push.html)
 API produces an iOS Show/Push style transition which animates from end to start
 depending on the locale's RTL setting. The page behind the new route also
 parallax-slides in the same direction like in iOS.
-
-A separate bottom-up transition style
+* A separate bottom-up transition style
 exists when pushing a page route where [PageRoute.fullscreenDialog](https://docs.flutter.io/flutter/widgets/PageRoute-class.html)
 is true. This represents iOS's Present/Modal style transition and is typically
 used on fullscreen modal pages.
@@ -44,7 +48,7 @@ used on fullscreen modal pages.
       <figure class="figure">
         <img src="../../images/platform-adaptations/navigation-android.gif" class="figure-img img-fluid rounded" alt="An animation of the bottom-up page transition on Android" />
         <figcaption class="figure-caption">
-          Android
+          Android page transition
         </figcaption>
       </figure>
     </div>
@@ -52,7 +56,7 @@ used on fullscreen modal pages.
       <figure class="figure">
         <img src="../../images/platform-adaptations/navigation-ios.gif" class="figure-img img-fluid rounded" alt="An animation of the end-start style push page transition on iOS" />
         <figcaption class="figure-caption">
-          iOS push
+          iOS push transition
         </figcaption>
       </figure>
     </div>
@@ -60,7 +64,7 @@ used on fullscreen modal pages.
       <figure class="figure">
         <img src="../../images/platform-adaptations/navigation-ios-modal.gif" class="figure-img img-fluid rounded" alt="An animation of the bottom-up style present page transition on iOS" />
         <figcaption class="figure-caption">
-          iOS present
+          iOS present transition
         </figcaption>
       </figure>
     </div>
@@ -69,11 +73,14 @@ used on fullscreen modal pages.
 
 ### Platform-Specific Transition Details
 
-On Android, 2 page transition animation styles exist depending on your OS
-version. Pre API 28 uses a bottom-up animation that slides up and fades in. On
-API 28 and later, the bottom-up animation slides and clip-reveals up.
+On **Android**, 2 page transition animation styles exist depending on your OS
+version:
 
-On iOS, Flutter's bundled CupertinoNavigationBar and CupertinoSliverNavigationBar
+* Pre API 28 uses a bottom-up animation that [slides up and fades in](https://docs.flutter.io/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html). 
+* On API 28 and later, the bottom-up animation [slides and clip-reveals up](https://docs.flutter.io/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
+
+On **iOS**, Flutter's bundled [CupertinoNavigationBar](https://docs.flutter.io/flutter/cupertino/CupertinoNavigationBar-class.html)
+and [CupertinoSliverNavigationBar](https://docs.flutter.io/flutter/cupertino/CupertinoSliverNavigationBar-class.html)
 will automatically animate each of its subcomponent to its corresponding
 subcomponent on the next or previous page's CupertinoNavigationBar or
 CupertinoSliverNavigationBar when the push style transition is used.
@@ -109,17 +116,24 @@ CupertinoSliverNavigationBar when the push style transition is used.
 
 ### Back Navigation
 
-On Android, the OS back button, by default, is sent to Flutter and pops the top
+On **Android**, the OS back button, by default, is sent to Flutter and pops the top
 route of the [WidgetsApp](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)'s
 Navigator.
 
-On iOS, an edge swipe gesture can be used to pop the top route.
+On **iOS**, an edge swipe gesture can be used to pop the top route.
 
 ## Scrolling
 
 ### Physics Simulation
 
 ### Overscroll Behavior
+
+On **Android**, scrolling past the edge of a scrollable shows an [overscroll 
+glow indicator](https://docs.flutter.io/flutter/widgets/GlowingOverscrollIndicator-class.html)
+(based on the color of the current Material theme).
+
+On **iOS**, scrolling past the edge of a scrollable [overscrolls](https://docs.flutter.io/flutter/widgets/BouncingScrollPhysics-class.html)
+with increasing resistance and snaps back. 
 
 ## Typography
 
@@ -157,19 +171,48 @@ no feedback on Android.
 
 ### Keyboard Gesture Navigation
 
+On **Android**, horizontal swipes can be made on the soft keyboard's spacebar
+to move the cursor in Material and Cupertino text fields.
+
+On **iOS** devices with 3D Touch capabilities, a force-press-drag gesture
+could be made on the soft keyboard to move the cursor in 2D via a floating
+cursor. This works on both Material and Cupertino text fields.
+
 ### Text Selection Toolbar
+
+With **Material on Android**, the Android style selection toolbar is shown when
+a text selection is made in a text field.
+
+With **Material on iOS** or when using **Cupertino**, the iOS style selection
+toolbar is shown whe a text selection is made in a text field.
 
 ### Single Tap Gesture
 
+With **Material on Android**, a single tap in a text field puts the cursor at
+the location of the tap.
+
+With **Material on iOS** or when using **Cupertino**, a single tap in a text
+field puts the cursor at the nearest edge of the word tapped. 
+
 ### Long-Press Gesture
+
+With **Material on Android**, a long press selects the word under the long
+press. The selection toolbar is shown upon release.
+
+With **Material on iOS** or when using **Cupertino**, a long press places the
+cursor at the location of the long pres. The selection toolbar is shown upon
+release.
 
 ### Long-Press-Drag Gesture
 
+With **Material on Android**, dragging while holding the long press expands
+the words selected.
+
+With **Material on iOS** or when using **Cupertino**, dragging while holding
+the long press moves the cursor.
+
 ### Double Tap Gesture
 
+On both Android and iOS, a double tap selects the word double tapped and shows
+the selection toolbar.
 
-[issues]: {{site.github}}/flutter/flutter/issues
-[apidocs]: {{site.api}}
-[so]: {{site.so}}/tags/flutter
-[mailinglist]: {{site.groups}}/d/forum/flutter-dev
-[gitter]: https://gitter.im/flutter/flutter
