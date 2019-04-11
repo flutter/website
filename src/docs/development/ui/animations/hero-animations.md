@@ -570,7 +570,7 @@ Key information:
   even for images with transparency.
 * The Photo class does not include the Hero in its widget tree.
   For the animation to work, the hero
-  wraps the `RadialExpansion` widget, which wraps the hero.
+  wraps the `RadialExpansion` widget.
 
 ### RadialExpansion class
 
