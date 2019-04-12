@@ -74,7 +74,7 @@ if you already have the required packages installed.
  1. Create a branch.
  1. Make your changes.
  1. Test your changes by serving the site locally. Run either **one** of these commands:
-    - `./tool/serve.sh`
+    - `./tool/serve.sh` (can also run via `npm run clean`)
 
     or
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
@@ -82,19 +82,29 @@ if you already have the required packages installed.
       **Note**: Unless you're editing files under `site-shared`, you can safely
       ignore `ERROR: directory is already being watched` messages.
       For details, see [#1363](https://github.com/flutter/website/issues/1363).
+      
+      **Note**: The first time you run either one of these commands, jekyll will 
+      take anywhere between 10 - 20 seconds to generate static content inside
+      the `_sites` directory. If you try to verify the site locally but aren't 
+      able to see the content right away, wait 20 seconds before stopping the 
+      server or concluding that something is wrong. 
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
 
 > TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen, for example, when you pull from master and lots of files have moved.)
-> To fix Jekyll, stop the `serve.sh` script, remove the generated site files by
+> To fix Jekyll, stop the `serve.sh` script and remove the generated site files:
 > hand, and then restart the `serve.sh` script:
->
-> ```
-> ^C
-> $ rm -Rf ./_site/* ./.jekyll*
-> $ ./tool/serve.sh
-> ```
+
+> `npm run clean` 
+> OR
+> `rm -Rf ./_site/* ./.jekyll*`
+
+> Next, restart the `serve.sh` script: 
+
+> `npm run start`
+> OR 
+> `./tool/serve.sh`
 
 ## Deploy to a staging site
 
