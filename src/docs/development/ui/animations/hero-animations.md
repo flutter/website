@@ -603,7 +603,7 @@ class RadialExpansion extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {[[/highlight]]
+  Widget build(BuildContext context) 
     return [[highlight]]ClipOval([[/highlight]]
       child: [[highlight]]Center([[/highlight]]
         child: [[highlight]]SizedBox([[/highlight]]
