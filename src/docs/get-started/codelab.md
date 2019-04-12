@@ -130,8 +130,7 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. [Run the app](/docs/get-started/test-drive#androidstudio) by clicking
-    the green arrow in the IDE.
+ 2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
     You should see either Android or iOS output, depending on your device.
 
     {% indent %}
@@ -255,8 +254,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
       "UpperCamelCase".
     {{site.alert.end}}
 
- 5. If the app is running, use the hot reload button
-    <i class="material-icons align-bottom">offline_bolt</i>
+ 5. If the app is running, [hot reload](/docs/get-started/test-drive)
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
@@ -436,9 +434,10 @@ lazily, on demand.
     The `ListView` class provides a builder property, `itemBuilder`, that's a
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
-    and the row iterator, `i`. The iterator begins at 0 and increments
-    each time the function is called, once for every suggested word pairing.
-    This model allows the suggested list to grow infinitely as the user scrolls.
+    and the row iterator, `i`. The iterator begins at 0 and increments each
+    time the function is called. It increments twice for every suggested word pairing: 
+    once for the ListTile, and once for the Divider. This model allows the suggested
+    list to grow infinitely as the user scrolls.
 
  2. Add a `_buildSuggestions()` function to the `RandomWordsState` class:
 
