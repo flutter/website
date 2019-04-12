@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "description": "www.dartlang.org",
+  "scripts": {
+    "start": "./tool/serve.sh",
+    "clean": "rm -Rf ./_site/* ./.jekyll*"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dart-lang/site-www.git"
