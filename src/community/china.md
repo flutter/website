@@ -65,14 +65,6 @@ interested in setting up your own mirror in China, contact
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 
-{{site.alert.secondary}}
-  **Known issue:** Running the Flutter Gallery app from source requires assets hosted on
-  a domain this workaround currently doesn't support. You can subscribe
-  to [Issue #13763]({{site.github}}/flutter/flutter/issues/13763)
-  to receive updates. In the meantime, you can check out Flutter Gallery
-  from Google Play or third-party app stores you trust.
-{{site.alert.end}}
-
 ## Community-run mirror sites
 
 * Shanghai Jiaotong University Linux User Group
