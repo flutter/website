@@ -93,7 +93,7 @@ if you already have the required packages installed.
 
 > TIP: Sometimes Jekyll gets confused and seems to be out-of-sync. (This might
 > happen, for example, when you pull from master and lots of files have moved.)
-> To fix Jekyll, stop the `serve.sh` script, remove the generated site files:
+> To fix Jekyll, stop the `serve.sh` script and remove the generated site files:
 > hand, and then restart the `serve.sh` script:
 
 > `npm run clean` 
