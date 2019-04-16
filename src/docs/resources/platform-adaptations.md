@@ -128,7 +128,39 @@ automatically adjusts the scrolling behavior to match the current platform.
 
 ### Physics simulation
 
-\[WIP\]
+Android and iOS both have complex scrolling physics simulations that are
+difficult to describe verbally. Generally, iOS's scrollable has more weight and
+dynamic friction but Android has more static friction. Therefore iOS gains high
+speed more gradually but stops less abruptly and is slipperier at slow speeds.
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/scroll-soft.gif" class="figure-img img-fluid rounded" alt="A soft fling where the iOS scrollable slid longer at lower speed than Android" />
+        <figcaption class="figure-caption">
+          Soft fling comparison
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/scroll-medium.gif" class="figure-img img-fluid rounded" alt="A medium force fling where the Android scrollable reached speed faster and stopped more abruptly after reaching a longer distance" />
+        <figcaption class="figure-caption">
+          Medium fling comparison
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/scroll-strong.gif" class="figure-img img-fluid rounded" alt="A strong fling where the Android scrollable reach speed faster and reached significantly more distance" />
+        <figcaption class="figure-caption">
+          Strong fling comparison
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
 ### Overscroll behavior
 
@@ -137,6 +169,46 @@ On **Android**, scrolling past the edge of a scrollable shows an [overscroll glo
 
 On **iOS**, scrolling past the edge of a scrollable [overscrolls]({{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html)
 with increasing resistance and snaps back.
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/scroll-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" />
+        <figcaption class="figure-caption">
+          Dynamic overscroll comparison
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/scroll-static-overscroll.gif" class="figure-img img-fluid rounded" alt="Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" />
+        <figcaption class="figure-caption">
+          Static overscroll comparison
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+### Overscroll behavior
+
+On **iOS**, repeated flings in the same direction will stack momentum and
+build more speed with each successive fling. No equivalent behavior is on
+*Android*.
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/scroll-momentum-ios.gif" class="figure-img img-fluid rounded" alt="Repeated scroll flings building momentum on iOS" />
+        <figcaption class="figure-caption">
+          iOS scroll momentum
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
 ### Return to top
 
