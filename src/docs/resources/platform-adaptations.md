@@ -366,13 +366,39 @@ a text selection is made in a text field.
 With **Material on iOS** or when using **Cupertino**, the iOS style selection
 toolbar is shown whe a text selection is made in a text field.
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/text-toolbar-android.png" class="figure-img img-fluid rounded" alt="Android appropriate text toolbar" />
+        <figcaption class="figure-caption">
+          Android text selection toolbar
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/text-toolbar-ios.png" class="figure-img img-fluid rounded" alt="iOS appropriate text toolbar" />
+        <figcaption class="figure-caption">
+          iOS text selection toolbar
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
 ### Single tap gesture
 
 With **Material on Android**, a single tap in a text field puts the cursor at
 the location of the tap.
 
+A collapsed text selection also shows a draggable handle to subsequently move
+the cursor.
+
 With **Material on iOS** or when using **Cupertino**, a single tap in a text
 field puts the cursor at the nearest edge of the word tapped.
+
+Collapsed text selections don't have draggable handles on iOS.
 
 <div class="container">
   <div class="row">
