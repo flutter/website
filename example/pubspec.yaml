@@ -10,10 +10,10 @@ dev_dependencies:
   test: '>= 0.12.37 <2.0.0'
   url_launcher: ^3.0.3
   path_provider: ^0.4.1
-  shared_preferences: 0.4.1
-  transparent_image: 0.1.0
-  css_colors: 1.0.2
-  web_socket_channel: 1.0.9
+  shared_preferences: ^0.4.1
+  transparent_image: ^0.1.0
+  css_colors: ^1.0.2
+  web_socket_channel: ^1.0.9
   sqflite: ^1.1.0
   camera: ^0.4.0+3
   video_player: ^0.10.0+2
