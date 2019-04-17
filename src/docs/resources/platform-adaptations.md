@@ -7,10 +7,11 @@ title: Platform specific behaviors and adaptations
 There are generally 2 cases of platform adaptiveness:
 
 1. Things that are behaviors of the OS environment (such as text editing and
-scrolling) and that would be 'wrong' if a different behavior took place.
+   scrolling) and that would be 'wrong' if a different behavior took place.
 2. Things that are conventionally implemented in apps using the OEM's SDKs
-(such as using parallel tabs on iOS or showing an [android.app.AlertDialog](https://developer.android.com/reference/android/app/AlertDialog.html)
-on Android).
+   (such as using parallel tabs on iOS or showing an
+   [android.app.AlertDialog](https://developer.android.com/reference/android/app/AlertDialog.html)
+   on Android).
 
 This article mainly covers the automatic adaptations provided by Flutter
 in case 1 on Android and iOS.
@@ -26,20 +27,23 @@ automatically adapts the navigation animation to the current platform.
 
 ### Navigation transitions
 
-On **Android**, the default [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
-transition is modeled after [startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent))
+On **Android**, the default
+[Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
+transition is modeled after
+[startActivity()](https://developer.android.com/reference/android/app/Activity.html#startActivity(android.content.Intent)),
 which generally has one bottom-up animation variant.
 
 On **iOS**:
 
-* The default [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
-API produces an iOS Show/Push style transition which animates from end to start
-depending on the locale's RTL setting. The page behind the new route also
-parallax-slides in the same direction like in iOS.
-* A separate bottom-up transition style
-exists when pushing a page route where [PageRoute.fullscreenDialog]({{site.api}}/flutter/widgets/PageRoute-class.html)
-is true. This represents iOS's Present/Modal style transition and is typically
-used on fullscreen modal pages.
+* The default
+  [Navigator.push]({{site.api}}/flutter/widgets/Navigator/push.html)
+  API produces an iOS Show/Push style transition which animates from
+  end-to-start depending on the locale's RTL setting. The page behind the new
+  route also parallax-slides in the same direction as in iOS.
+* A separate bottom-up transition style exists when pushing a page route where
+ [PageRoute.fullscreenDialog]({{site.api}}/flutter/widgets/PageRoute-class.html)
+  is true. This represents iOS's Present/Modal style transition and is
+  typically used on fullscreen modal pages.
 
 <div class="container">
   <div class="row">
@@ -75,14 +79,17 @@ used on fullscreen modal pages.
 On **Android**, 2 page transition animation styles exist depending on your OS
 version:
 
-* Pre API 28 uses a bottom-up animation that [slides up and fades in]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html).
-* On API 28 and later, the bottom-up animation [slides and clip-reveals up]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
+* Pre API 28 uses a bottom-up animation that [slides up and fades
+  in]({{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html).
+* On API 28 and later, the bottom-up animation [slides and clip-reveals
+  up]({{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html).
 
-On **iOS**, Flutter's bundled [CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html)
+On **iOS** when the push style transition is used, Flutter's bundled
+[CupertinoNavigationBar]({{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html)
 and [CupertinoSliverNavigationBar]({{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html)
-will automatically animates each of its subcomponent to its corresponding
+nav bars automatically animate each subcomponent to its corresponding
 subcomponent on the next or previous page's CupertinoNavigationBar or
-CupertinoSliverNavigationBar when the push style transition is used.
+CupertinoSliverNavigationBar.
 
 <div class="container">
   <div class="row">
@@ -115,8 +122,9 @@ CupertinoSliverNavigationBar when the push style transition is used.
 
 ### Back navigation
 
-On **Android**, the OS back button, by default, is sent to Flutter and pops the top
-route of the [WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)'s
+On **Android**, the OS back button, by default, is sent to Flutter and pops the 
+top route of the
+[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html)'s
 Navigator.
 
 On **iOS**, an edge swipe gesture can be used to pop the top route.
@@ -144,7 +152,7 @@ On **iOS**, an edge swipe gesture can be used to pop the top route.
 
 ## Scrolling
 
-Scrolling is an important part of the platform's look and feel and Flutter
+Scrolling is an important part of the platform's look and feel, and Flutter
 automatically adjusts the scrolling behavior to match the current platform.
 
 ### Physics simulation
@@ -152,7 +160,8 @@ automatically adjusts the scrolling behavior to match the current platform.
 Android and iOS both have complex scrolling physics simulations that are
 difficult to describe verbally. Generally, iOS's scrollable has more weight and
 dynamic friction but Android has more static friction. Therefore iOS gains high
-speed more gradually but stops less abruptly and is slipperier at slow speeds.
+speed more gradually but stops less abruptly and is more slippery at
+slow speeds.
 
 <div class="container">
   <div class="row">
@@ -185,10 +194,12 @@ speed more gradually but stops less abruptly and is slipperier at slow speeds.
 
 ### Overscroll behavior
 
-On **Android**, scrolling past the edge of a scrollable shows an [overscroll glow indicator]({{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html)
+On **Android**, scrolling past the edge of a scrollable shows an
+[overscroll glow indicator]({{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html)
 (based on the color of the current Material theme).
 
-On **iOS**, scrolling past the edge of a scrollable [overscrolls]({{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html)
+On **iOS**, scrolling past the edge of a scrollable
+[overscrolls]({{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html)
 with increasing resistance and snaps back.
 
 <div class="container">
@@ -214,9 +225,9 @@ with increasing resistance and snaps back.
 
 ### Momentum
 
-On **iOS**, repeated flings in the same direction will stack momentum and
-build more speed with each successive fling. No equivalent behavior is on
-*Android*.
+On **iOS**, repeated flings in the same direction stacks momentum and
+builds more speed with each successive fling. There is not equivalent
+behavior on *Android*.
 
 <div class="container">
   <div class="row">
@@ -233,8 +244,8 @@ build more speed with each successive fling. No equivalent behavior is on
 
 ### Return to top
 
-On **iOS**, tapping the OS status bar will scroll the primary scroll controller
-to the top position. No equivalent behavior is on **Android**.
+On **iOS**, tapping the OS status bar scrolls the primary scroll controller
+to the top position. There is no equivalent behavior on **Android**.
 
 <div class="container">
   <div class="row">
@@ -251,15 +262,16 @@ to the top position. No equivalent behavior is on **Android**.
 
 ## Typography
 
-When using the Material package, the typography automatically default to the
+When using the Material package, the typography automatically defaults to the
 font family appropriate for the platform. On Android, the Roboto font is used.
 On iOS, the OS's San Francisco font family is used.
 
-When using the Cupertino package, the [default theme](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)
+When using the Cupertino package, the [default
+theme](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart)
 always uses the San Francisco font.
 
 The San Francisco font license limits its usage to software running on iOS,
-macOS or tvOS only. Therefore a fallback font is used when running on Android
+macOS, or tvOS only. Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the default Cupertino theme is
 used.
 
@@ -333,7 +345,7 @@ fields to match the current platform.
 On **Android**, horizontal swipes can be made on the soft keyboard's spacebar
 to move the cursor in Material and Cupertino text fields.
 
-On **iOS** devices with 3D Touch capabilities, a force-press-drag gesture
+On **iOS** devices with 3D Touch capabilities, a force-press-drag gesture,
 could be made on the soft keyboard to move the cursor in 2D via a floating
 cursor. This works on both Material and Cupertino text fields.
 
@@ -364,7 +376,7 @@ With **Material on Android**, the Android style selection toolbar is shown when
 a text selection is made in a text field.
 
 With **Material on iOS** or when using **Cupertino**, the iOS style selection
-toolbar is shown whe a text selection is made in a text field.
+toolbar is shown when a text selection is made in a text field.
 
 <div class="container">
   <div class="row">
@@ -482,8 +494,8 @@ the long press moves the cursor.
 
 ### Double tap gesture
 
-On both Android and iOS, a double tap selects the word double tapped and shows
-the selection toolbar.
+On both Android and iOS, a double tap selects the word receiving the
+double tap and shows the selection toolbar.
 
 <div class="container">
   <div class="row">
