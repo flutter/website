@@ -226,7 +226,7 @@ with increasing resistance and snaps back.
 ### Momentum
 
 On **iOS**, repeated flings in the same direction stacks momentum and
-builds more speed with each successive fling. There is not equivalent
+builds more speed with each successive fling. There is no equivalent
 behavior on *Android*.
 
 <div class="container">

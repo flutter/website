@@ -181,7 +181,7 @@ flutter:
   uses-material-design: true
 ```
 
-Many widgets need to be inside of a
+Many Material Design widgets need to be inside of a
 [MaterialApp]({{api}}/material/MaterialApp-class.html) to display properly, in
 order to inherit theme data. Therefore, we run the application with a
 [MaterialApp]({{api}}/material/MaterialApp-class.html).
@@ -286,6 +286,14 @@ throughout the framework and is something you might consider when designing your
 own widgets.
 
 More information: [Material components](/docs/development/ui/widgets/material)
+
+<aside id="note" class="alert alert-info" markdown="1">
+**Note:** Material is one of the 2 bundled designs included with Flutter. For a 
+more iOS-centric design, see [Cupertino components](/docs/development/ui/widgets/cupertino)
+which has its own set of [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html), 
+[CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html) etc.
+</aside>
+
 
 ## Handling gestures
 
