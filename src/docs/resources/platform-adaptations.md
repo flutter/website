@@ -121,6 +121,27 @@ Navigator.
 
 On **iOS**, an edge swipe gesture can be used to pop the top route.
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/navigation-android-back.gif" class="figure-img img-fluid rounded" alt="A page transition triggered by the Android back button" />
+        <figcaption class="figure-caption">
+          Android back button
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid rounded" alt="A page transition triggered by an iOS back swipe gesture" />
+        <figcaption class="figure-caption">
+          iOS back swipe gesture
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
 ## Scrolling
 
 Scrolling is an important part of the platform's look and feel and Flutter
@@ -260,6 +281,27 @@ to move the cursor in Material and Cupertino text fields.
 On **iOS** devices with 3D Touch capabilities, a force-press-drag gesture
 could be made on the soft keyboard to move the cursor in 2D via a floating
 cursor. This works on both Material and Cupertino text fields.
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="../../images/platform-adaptations/text-keyboard-move-android.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via the space key on Android" />
+        <figcaption class="figure-caption">
+          Android space key cursor move
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="../../images/platform-adaptations/navigation-ios-back.gif" class="figure-img img-fluid rounded" alt="Moving the cursor via 3D Touch drag on the keyboard on iOS" />
+        <figcaption class="figure-caption">
+          iOS 3D Touch drag cursor move
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
 ### Text selection toolbar
 
