@@ -46,8 +46,8 @@ can also be internationalized using the same classes and logic.
 By default, Flutter only provides US English localizations. To add
 support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
-`flutter_localizations`.  As of May 2018, this package supports 24
-languages.
+`flutter_localizations`.  As of April 2019, this package supports about
+52 languages.
 
 To use flutter_localizations, add the package as a dependency to your
 `pubspec.yaml` file:
@@ -73,8 +73,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('he', 'IL'), // Hebrew
+    const Locale('en'), // English
+    const Locale('he'), // Hebrew
+    const Locale('zh'), // Chinese
     // ... other locales the app supports
   ],
   // ...
@@ -187,7 +188,9 @@ different delegate of the same base type is specified with the app's
 
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called
-GlobalMaterialLocalizations and GlobalWidgetsLocalizations.
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+and 
+[GlobalWidgetsLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html).
 International apps must specify localization delegates for
 these classes as described in [Setting up an internationalized
 app.](#setting-up)
@@ -202,8 +205,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('he', 'IL'), // Hebrew
+    const Locale('en'), // English
+    const Locale('he'), // Hebrew
+    const Locale('zh'), // Chinese
     // ... other locales the app supports
   ],
   // ...
@@ -215,7 +219,7 @@ of the corresponding classes. For example,
 `GlobalMaterialLocalizations.delegate` is a LocalizationsDelegate
 that produces an instance of GlobalMaterialLocalizations.
 
-As of May 2018, the global localization classes support [about 24
+As of April 2019, the global localization classes support [about 52
 languages.]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 <a name="defining-class"></a>
@@ -277,7 +281,7 @@ In this case that would just be the DemoLocalizations class.
 <a name="specifying-supportedlocales"></a>
 ## Specifying the app's supported&shy;Locales parameter
 
-Although Flutter's Material Components library includes support for about 16
+Although Flutter's flutter_localizations library includes support for about 52
 languages, only English language translations are available by default.
 It's up to the developer to decide exactly which languages
 to support, since it wouldn't make sense for the toolkit
