@@ -400,8 +400,9 @@ must create a LocalizationsDelegate subclass that essentially just
 constructs an instance of the new GlobalMaterialLocalizations
 subclass.
 
-There's a complete example, less actual Belarusan translations, here:
-LINK for https://github.com/flutter/website/pull/2602 TBD.
+Here's [the source code for a complete example](
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language), 
+less the actual Belarusan translations, of an app that includes support for a new language.
 
 The locale-specific GlobalMaterialLocalizations subclass is called
 `BeMaterialLocalizations` and the LocalizationsDelegate subclass is
