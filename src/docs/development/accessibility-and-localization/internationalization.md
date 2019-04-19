@@ -74,8 +74,12 @@ MaterialApp(
  ],
  supportedLocales: [
     const Locale('en'), // English
-    const Locale('he'), // Hebrew
-    const Locale('zh'), // Chinese
+    const Locale('fr', 'CA'), // French, Canada
+    const Locale.fromSubtags(
+      languageCode: 'zh',
+      scriptCode: 'Hans',
+      countryCode: 'CN',
+    ), // Chinese, simplified, China
     // ... other locales the app supports
   ],
   // ...
