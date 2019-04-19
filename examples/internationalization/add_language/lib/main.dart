@@ -248,6 +248,10 @@ class Home extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
+            // This would fail if localizations were not provided for the
+            // app's locale. Although only a few Material widgets display
+            // localized strings, many expect to be able to find localized
+            // values for tooltips and other strings related to accessibility.
             showDialog(
               context: context,
               builder: (BuildContext context) => Dialog(child: Center(child: Text('Hello World'))),
