@@ -387,32 +387,31 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 
 An app that needs to support a language that's not included in
 [GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
-will have to do some extra work. It's not difficult, however to
-do the complete job one must provide about 70 translations
+has to do some extra work: it must provide about 70 translations
 ("localizations") for words or phrases.
 
 As an example, we'll show how to add support for the Belarusan
 language.
 
-A new GlobalMaterialLocalizations subclass will define the
-localizations that the Material library depends on. Additionally one
-must create a LocalizationsDelegate subclass that essentially just
-constructs an instance of the new GlobalMaterialLocalizations
-subclass.
+A new GlobalMaterialLocalizations subclass defines the
+localizations that the Material library depends on.
+A new LocalizationsDelegate subclass, which serves
+as factory for the GlobalMaterialLocalizations subclass, 
+must also be defined.
 
 Here's [the source code for a complete example](
 {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language), 
 less the actual Belarusan translations, of an app that includes support for a new language.
 
 The locale-specific GlobalMaterialLocalizations subclass is called
-`BeMaterialLocalizations` and the LocalizationsDelegate subclass is
+`BeMaterialLocalizations`, and the LocalizationsDelegate subclass is
 `_BeMaterialLocalizationsDelegate`. The value of
 `BeMaterialLocalizations.delegate` is an instance of the delegate, and
 it's all that's needed by an app that uses these localizations.
 
 The delegate class includes basic date and number format
 localizations. All of the other localizations are defined by String
-valued property getters in BeMaterialLocalizations. Like this:
+valued property getters in BeMaterialLocalizations, like this:
 
 {% prettify dart %}
 @override
@@ -427,12 +426,14 @@ String get closeButtonLabel => r'CLOSE';
 // etc..
 {% endprettify %}
 
-These are the English translations of course. To complete the job one must change the return value of each getter to an appropriate Belarusan string.
+These are the English translations of course. To complete the job you 
+need to change the return value of each getter to an appropriate 
+Belarusan string.
 
 The getters return "raw" Dart strings that have an r prefix, like
 `r'About $applicationName'`, because sometimes the strings contain
-`$variables` that are expanded by methods with parameters, like
-`aboutListTileTitle(String applicationName)`:
+`variables` with a `$` prefix. The variables are expanded by parameterized 
+localization methods: 
 {% prettify dart %}
 @override
 String get aboutListTileTitleRaw => r'About $applicationName';
@@ -444,15 +445,13 @@ String aboutListTileTitle(String applicationName) {
 }
 {% endprettify %}
 
-More information about the localization strings can be found in the
-flutter_localizations package's
-[README]({{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md)
-file.
+For more information about localization strings, see the 
+[flutter_localizations README](
+{{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
 
-The example app adds support for Belarusan by including it in the
-app's `supportedLocales` list and by adding the new
-`BeMaterialLocalizations` delegate to the app's
-`localizationsDelegetes` list:
+Finally, add Belarusan to the app's `supportedLocales` list, and
+add the `BeMaterialLocalizations` delegate instance to the app's
+`localizationsDelegates` list:
 
 {% prettify dart %}
 MaterialApp(
