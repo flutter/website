@@ -400,7 +400,7 @@ as factory for the GlobalMaterialLocalizations subclass,
 must also be defined.
 
 Here's [the source code for a complete example](
-{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language), 
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
 less the actual Belarusan translations, of an app that includes support for a new language.
 
 The locale-specific GlobalMaterialLocalizations subclass is called
@@ -432,7 +432,7 @@ Belarusan string.
 
 The getters return "raw" Dart strings that have an r prefix, like
 `r'About $applicationName'`, because sometimes the strings contain
-`variables` with a `$` prefix. The variables are expanded by parameterized 
+variables with a `$` prefix. The variables are expanded by parameterized 
 localization methods: 
 {% prettify dart %}
 @override
@@ -449,9 +449,12 @@ For more information about localization strings, see the
 [flutter_localizations README](
 {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
 
-Finally, add Belarusan to the app's `supportedLocales` list, and
-add the `BeMaterialLocalizations` delegate instance to the app's
-`localizationsDelegates` list:
+Once you've implemented your language-specific subclasses of 
+GlobalMaterialLocalizations and LocalizationsDelegate, you just 
+need to add the language and a delegate instance to your app. 
+Here's some code that sets the app's language to Belarusan and 
+adds theBeMaterialLocalizations delegate instance to the app's
+localizationsDelegates list:
 
 {% prettify dart %}
 MaterialApp(
