@@ -453,7 +453,7 @@ Once you've implemented your language-specific subclasses of
 GlobalMaterialLocalizations and LocalizationsDelegate, you just 
 need to add the language and a delegate instance to your app. 
 Here's some code that sets the app's language to Belarusan and 
-adds theBeMaterialLocalizations delegate instance to the app's
+adds the BeMaterialLocalizations delegate instance to the app's
 localizationsDelegates list:
 
 {% prettify dart %}
