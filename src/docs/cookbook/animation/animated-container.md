@@ -80,7 +80,7 @@ AnimatedContainer(
     color: _color,
     borderRadius: _borderRadius,
   ),
-  // Define how long the animation. 
+  // Define how long the animation should take.
   duration: Duration(seconds: 1),
   // Provide an optional curve to make the animation feel smoother. 
   curve: Curves.fastOutSlowIn,
