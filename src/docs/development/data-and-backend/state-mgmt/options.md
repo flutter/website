@@ -25,15 +25,22 @@ Learn more at the following links, many of which have been contributed by the Fl
 
 ## InheritedWidget &amp; Scoped model
 
-* [Using Flutter Inherited Widgets Effectively](https://ericwindmill.com/posts/inherited_widget/),
+* [Using Flutter Inherited Widgets
+  Effectively](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/),
   by Eric Windmill
 * [You might not need Redux: The Flutter edition](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), by Ryan Edge
-* [Managing state with the scoped model pattern in Dart's Flutter framework](https://www.youtube.com/watch?v=-MCeWP3rgI0), a video by Tensor Programming
-* [Flutter: Inherited Widget and Scoped Model Explained, part 1](https://www.youtube.com/watch?v=j-27MZwRbFw),
+* [Managing state with the scoped model pattern in Dart's Flutter
+  framework](https://www.youtube.com/watch?v=-MCeWP3rgI0),
+  a video by Tensor Programming
+* [Flutter: Inherited Widget and Scoped Model Explained,
+  part 1](https://www.youtube.com/watch?v=j-27MZwRbFw),
   a video by MTechViral
-* [Flutter state management&mdash;scoped model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
+* [Flutter state management&mdash;scoped
+  model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 * [Scoped model package]({{site.pub-pkg}}/scoped_model)
-* [Widget - State - Context - InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/), by Didier Bolelens
+* [Widget - State - Context -
+  InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
+  by Didier Bolelens
 
 ## Redux
 
