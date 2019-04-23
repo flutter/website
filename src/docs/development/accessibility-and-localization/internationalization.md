@@ -386,6 +386,94 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
 }
 {% endprettify %}
 
+<a name="adding-language"></a>
+## Adding support for a new language
+
+An app that needs to support a language that's not included in
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+has to do some extra work: it must provide about 70 translations
+("localizations") for words or phrases.
+
+As an example, we'll show how to add support for the Belarusan
+language.
+
+A new GlobalMaterialLocalizations subclass defines the
+localizations that the Material library depends on.
+A new LocalizationsDelegate subclass, which serves
+as factory for the GlobalMaterialLocalizations subclass, 
+must also be defined.
+
+Here's [the source code for a complete example](
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
+less the actual Belarusan translations, of an app that includes support for a new language.
+
+The locale-specific GlobalMaterialLocalizations subclass is called
+`BeMaterialLocalizations`, and the LocalizationsDelegate subclass is
+`_BeMaterialLocalizationsDelegate`. The value of
+`BeMaterialLocalizations.delegate` is an instance of the delegate, and
+it's all that's needed by an app that uses these localizations.
+
+The delegate class includes basic date and number format
+localizations. All of the other localizations are defined by String
+valued property getters in BeMaterialLocalizations, like this:
+
+{% prettify dart %}
+@override
+String get backButtonTooltip => r'Back';
+
+@override
+String get cancelButtonLabel => r'CANCEL';
+
+@override
+String get closeButtonLabel => r'CLOSE';
+
+// etc..
+{% endprettify %}
+
+These are the English translations of course. To complete the job you 
+need to change the return value of each getter to an appropriate 
+Belarusan string.
+
+The getters return "raw" Dart strings that have an r prefix, like
+`r'About $applicationName'`, because sometimes the strings contain
+variables with a `$` prefix. The variables are expanded by parameterized 
+localization methods: 
+{% prettify dart %}
+@override
+String get aboutListTileTitleRaw => r'About $applicationName';
+
+@override
+String aboutListTileTitle(String applicationName) {
+  final String text = aboutListTileTitleRaw;
+  return text.replaceFirst(r'$applicationName', applicationName);
+}
+{% endprettify %}
+
+For more information about localization strings, see the 
+[flutter_localizations README](
+{{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
+
+Once you've implemented your language-specific subclasses of 
+GlobalMaterialLocalizations and LocalizationsDelegate, you just 
+need to add the language and a delegate instance to your app. 
+Here's some code that sets the app's language to Belarusan and 
+adds the BeMaterialLocalizations delegate instance to the app's
+localizationsDelegates list:
+
+{% prettify dart %}
+MaterialApp(
+  localizationsDelegates: [
+    GlobalWidgetsLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+    BeMaterialLocalizations.delegate,
+  ],
+  supportedLocales: [
+    const Locale('be', 'BY')
+  ],
+  home: ...
+)
+{% endprettify %}
+
 <a name="dart-tools"></a>
 ## Appendix: Using the Dart intl tools
 
