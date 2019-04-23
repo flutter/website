@@ -35,7 +35,11 @@ contains a simple demo app that uses
 1. Type <kbd>r</kbd> in the terminal window.
 {% endcapture %}
 
+{% capture ide_profile -%}
+{% endcapture %}
+
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
+{% include_relative _try-profile.md ide_profile=ide_profile %}
 
 [Install]: /docs/get-started/install
 </div>
