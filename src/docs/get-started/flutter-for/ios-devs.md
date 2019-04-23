@@ -20,6 +20,9 @@ but it has a plugin system to communicate with iOS (and Android) for non-UI
 tasks. If you're an expert in iOS development, you don't have to relearn
 everything to use Flutter.
 
+Flutter also already makes a number of adaptations in the framework for you 
+when running on iOS. For a list, see [Platform adaptations](/docs/resources/platform-adaptations).
+
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
@@ -491,14 +494,14 @@ on whether you want to navigate to, or back from, a view.
 
 To navigate between pages, you have a couple options:
 
-* Specify a `Map` of route names. (MaterialApp)
-* Directly navigate to a route. (WidgetApp)
+* Specify a `Map` of route names.
+* Directly navigate to a route.
 
 The following example builds a Map.
 
 {% prettify dart %}
 void main() {
-  runApp(MaterialApp(
+  runApp(CupertinoApp(
     home: MyAppHome(), // becomes the route named '/'
     routes: <String, WidgetBuilder> {
       '/a': (BuildContext context) => MyPage(title: 'page A'),

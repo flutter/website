@@ -24,6 +24,8 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
+        - title: Introduction to declarative UI
+          permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://www.dartlang.org/guides/language
 

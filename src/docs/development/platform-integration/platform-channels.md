@@ -8,7 +8,7 @@ platform-specific functionality is available through existing packages;
 please see [using packages](/docs/development/packages-and-plugins/using-packages).
 
 Flutter uses a flexible system that allows you to call platform-specific APIs
-whether available in Java or Kotlin code on Android, or in ObjectiveC or Swift
+whether available in Java or Kotlin code on Android, or in Objective-C or Swift
 code on iOS.
 
 Flutter's platform-specific API support does not rely on code generation, but
@@ -21,6 +21,16 @@ rather on a flexible message passing style:
  calls into any number of platform-specific APIs&mdash;using the native
  programming language&mdash;and sends back a response to the *client*, the Flutter
  portion of your app.
+ 
+ <aside id="note" class="alert alert-info" markdown="1">
+**Note:** This guide addresses using the platform channel mechanism if you need 
+to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift. But
+you can also write platform-specific Dart code in your Flutter app by inspecting
+the [defaultTargetPlatform]({{site.api}}/flutter/foundation/defaultTargetPlatform.html)
+property. [Platform adaptations](/docs/resources/platform-adaptations) lists some 
+platform-specific adaptations Flutter automatically does for you in the 
+framework.
+</aside>
 
 ## Architectural overview: platform channels {#architecture}
 
