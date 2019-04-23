@@ -1,4 +1,4 @@
-## Try profile
+## Profile run
 
 {{site.alert.important}}
   Do _not_ test the performance of your app with debug and hot reload enabled.

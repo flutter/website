@@ -33,11 +33,8 @@ contains a simple demo app that uses [Material Components][].
   or click **Hot Reload** (the green circular arrow button).
 {% endcapture %}
 
-{% capture ide_profile -%}
-{% endcapture %}
-
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
-{% include_relative _try-profile.md ide_profile=ide_profile %}
+{% include run-profile.md %}
 
 [Install]: /docs/get-started/install
 [Material Components]: {{site.material}}/guidelines

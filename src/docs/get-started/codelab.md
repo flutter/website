@@ -436,7 +436,7 @@ lazily, on demand.
     factory builder and callback function specified as an anonymous function.
     Two parameters are passed to the function&mdash;the `BuildContext`,
     and the row iterator, `i`. The iterator begins at 0 and increments each
-    time the function is called. It increments twice for every suggested word pairing: 
+    time the function is called. It increments twice for every suggested word pairing:
     once for the ListTile, and once for the Divider. This model allows the suggested
     list to grow infinitely as the user scrolls.
 
@@ -553,6 +553,8 @@ If your app is not running correctly, you can use the code at the following link
 to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
+
+{% include run-profile.md %}
 
 ## Next steps
 {:.no_toc}
