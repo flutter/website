@@ -17,7 +17,7 @@ you can prioritize the bugs with the highest impact and work to fix them.
 How can you determine how often your users experiences bugs? Whenever an error
 occurs, create a report containing the error that occurred and the
 associated stacktrace. You can then send the report to an error tracking
-service, such as Sentry, Fabric, or Rollbar.
+service, such as Sentry, Fabric, or [Rollbar](https://rollbar.com/).
 
 The error tracking service aggregates all of the crashes your users
 experience and groups them together. This allows you to know how often your
