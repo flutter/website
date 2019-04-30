@@ -263,7 +263,7 @@ ways in which to test an app bundle.
 
 ### Offline using the bundle tool
 
-1. If you have done done so already, download `bundletool` from the
+1. If you have done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
