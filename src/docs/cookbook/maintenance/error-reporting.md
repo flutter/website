@@ -73,7 +73,7 @@ final SentryClient _sentry = SentryClient(dsn: "App DSN goes Here");
 
 With Sentry set up, you can begin to report errors. Since you don't want to
 report errors to Sentry during development, first create a function that
-let's you know whether you're in debug or production mode.
+lets you know whether you're in debug or production mode.
 
 <!-- skip -->
 ```dart
