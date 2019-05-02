@@ -7,7 +7,7 @@ next:
   path: /docs/get-started/editor
 ---
 
-{% assign os = 'chrome' -%}
+{% assign os = 'linux' -%}
 
 ## System requirements
 

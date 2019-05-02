@@ -1,9 +1,6 @@
 {% if os == 'linux' -%}
   {% assign unzip = 'tar xf' -%}
   {% assign file_ext = '.tar.xz' -%}
-{% else if os == 'chrome' -%}
-  {% assign unzip = 'tar xf' -%}
-  {% assign file_ext = '.tar.xz' -%}
 {% else -%}
   {% assign unzip = 'unzip' -%}
   {% assign file_ext = '.zip' -%}
