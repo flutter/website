@@ -9,6 +9,11 @@ next:
 
 {% assign os = 'linux' -%}
 
+## Are you on Chrome OS?
+
+If so head to the official [Chrome OS Flutter installation
+docs!](/docs/get-started/install/chromeos)
+
 ## System requirements
 
 To install and run Flutter, your development environment must meet these minimum requirements:
