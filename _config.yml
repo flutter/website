@@ -94,7 +94,7 @@ toc:
 
 ## Site-wide shorthands
 
-os-list: [Windows, macOS, Linux, chrome]
+os-list: [Windows, macOS, Linux]
 
 alert:
   important: >-
