@@ -196,33 +196,32 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
-```dart
-import 'package:css_colors/css_colors.dart';
-import 'package:flutter/material.dart';
+    ```dart
+    import 'package:css_colors/css_colors.dart';
+    import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+    void main() {
+      runApp(MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DemoPage(),
-    );
-  }
-}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: DemoPage(),
+        );
+      }
+    }
 
-class DemoPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Container(color: CSSColors.orange));
-  }
-}
-```
+    class DemoPage extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(body: Container(color: CSSColors.orange));
+      }
+    }
+    ```
 
-1. Run the app. When you click the 'Show Flutter homepage' you should see the
-   phone's default browser open, and the Flutter homepage appear.
+1. Run the app. You can see app's background color is orange.
 
 
 ### Example: Using the URL Launcher package to launch the browser {#url-example}
@@ -257,41 +256,41 @@ To use this plugin:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
-```dart
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+    ```dart
+    import 'package:flutter/material.dart';
+    import 'package:url_launcher/url_launcher.dart';
 
-void main() {
-  runApp(MyApp());
-}
+    void main() {
+      runApp(MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DemoPage(),
-    );
-  }
-}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: DemoPage(),
+        );
+      }
+    }
 
-class DemoPage extends StatelessWidget {
-  launchURL() {
-    launch('https://flutter.io');
-  }
+    class DemoPage extends StatelessWidget {
+      launchURL() {
+        launch('https://flutter.io');
+      }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: launchURL,
-          child: Text('Show Flutter homepage'),
-        ),
-      ),
-    );
-  }
-}
-```
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: RaisedButton(
+              onPressed: launchURL,
+              child: Text('Show Flutter homepage'),
+            ),
+          ),
+        );
+      }
+    }
+    ```
 
 1. Run the app (or stop and restart it, if you already had it running
    before adding the plugin). When you click the 'Show Flutter homepage'
