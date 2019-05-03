@@ -1,5 +1,5 @@
 ---
-title: Layout basics codelab
+title: Codelab: Basic Flutter layout
 description: "A codelab that uses DartPad2 to teach Flutter layout concepts."
 ---
 
