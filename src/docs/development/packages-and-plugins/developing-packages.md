@@ -225,7 +225,7 @@ package_1
 <some license text>
 
 --------------------------------------------------------------------------------
-packge_2
+package_2
 
 <some license text>
 ```
