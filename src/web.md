@@ -58,7 +58,7 @@ Before you get started, here are a few notes:
   fast iterations while keeping the core Flutter repo stable.
 
 * We have already started work to merge the web code into the core
-  repository. Eventually, we'll have a singke SDK/Framework with one set
+  repository. Eventually, we'll have a single SDK/Framework with one set
   of widgets that works across all platforms.
 
 * The Flutter widget APIs are identical to the mobile widget APIs, but
