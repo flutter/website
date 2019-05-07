@@ -67,11 +67,8 @@ Before you get started, here are a few notes:
   there are some caveats while we're still in preview. Check out the 
   [instructions](https://github.com/flutter/flutter_web#) for more details.
 
-Go to the [flutter web](https://github.com/flutter/flutter_web#)
+Go to the [flutter web](https://github.com/flutter/flutter_web)
 repository to get started. Thank you for
-[filing any issues]() you find.
+[filing any issues](https://goo.gle/flutter_web_issue) you find.
 You can also chat and ask questions on our
-[Gitter channel]().
-
-
-
+[Gitter channel](https://gitter.im/flutter/flutter_web).
