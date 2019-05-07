@@ -40,7 +40,7 @@ valuable in many scenarios. For example:
   for creating rich, data-centric components that can be easily hosted
   within an existing web page. Whether for data visualization, an online
   tool like a car configurator, or an embedded chart, Flutter can provide
-  a productive development approach for embedded web content. 
+  a productive development approach for embedded web content.
 
 * **Embedding dynamic content in a Flutter mobile app.** An established way
   to provide dynamic content updates within an existing mobile application
@@ -65,7 +65,7 @@ Before you get started, here are a few notes:
   are temporarily packaged separately.
 
 * You can repackage existing Flutter code to work on the web preview, but
-  there are some caveats while we're still in preview. Check out the 
+  there are some caveats while we're still in preview. Check out the
   [instructions](https://github.com/flutter/flutter_web#) for more details.
 
 Go to the [flutter web](https://github.com/flutter/flutter_web)
