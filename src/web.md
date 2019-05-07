@@ -1,5 +1,6 @@
 ---
 title: Flutter for web
+description: "Announcing the preview release of Flutter for web."
 ---
 
 Flutter for web is a code-compatible implementation of Flutter that is
@@ -25,8 +26,8 @@ layer completely in Dart and used Dart's optimized JavaScript compiler
 to compile the Flutter core and framework along with your application
 into a single, minified source file that can be deployed to any web server.
 
-In this early stage of development, we envisage Flutter for web being
-valuable for many scenarios. For example:
+In this early stage of development, we envision Flutter for web being
+valuable in many scenarios. For example:
 
 * **A connected [Progressive Web
   Application](https://developers.google.com/web/progressive-web-apps/)
@@ -52,20 +53,19 @@ valuable for many scenarios. For example:
 The Flutter for web technical preview is your opportunity to try out our work.
 Before you get started, here are a few notes:
 
-* While we develop Flutter for web, we are working in a fork of the Flutter
-  repo to enable fast iterations while keeping the core Flutter repo stable.
+* We are developing Flutter for web in a fork of the Flutter repo. This enables
+  fast iterations while keeping the core Flutter repo stable.
 
 * We have already started work to merge the web code into the core
   repository. Eventually, we'll have a singke SDK/Framework with one set
-  of widgets that work across all platforms.
+  of widgets that works across all platforms.
 
 * The Flutter widget APIs are identical to the mobile widget APIs, but
   are temporarily packaged separately.
 
 * You can repackage existing Flutter code to work on the web preview, but
   there are some caveats while we're still in preview. Check out the 
-  [instructions](https://github.com/flutter/flutter_web#)
-  for more details.
+  [instructions](https://github.com/flutter/flutter_web#) for more details.
 
 Go to the [flutter web](https://github.com/flutter/flutter_web#)
 repository to get started. Thank you for
