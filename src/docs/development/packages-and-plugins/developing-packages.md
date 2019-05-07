@@ -175,7 +175,7 @@ It is recommended practice to add the following documentation to all packages:
 
 1. A `README.md` file that introduces the package
 1. A `CHANGELOG.md` file that documents changes in each version
-1. A `LICENSE` file containing the terms under which the package is licensed
+1. A [`LICENSE`](#adding-licenses-to-the-license-file) file containing the terms under which the package is licensed
 1. API documentation for all public APIs (see below for details)
 
 ### API documentation
@@ -204,6 +204,61 @@ If you wish to generate API documentation locally on your developement machine, 
 
 For tips on how to write API documentation, see [Effective Dart:
 Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
+
+### Adding licenses to the LICENSE file
+
+Individual licenses inside each LICENSE file should be separated by 80
+hyphens on their own on a line.
+
+If a LICENSE file contains more than one component license, then each
+component license must start with the names of the packages to which the
+component license applies, with each package name on its own line, and the
+list of package names separated from the actual license text by a blank
+line. (The packages need not match the names of the pub package. For
+example, a package might itself contain code from multiple third-party
+sources, and might need to include a license for each one.)
+
+Good:
+```
+package_1
+
+<some license text>
+
+--------------------------------------------------------------------------------
+package_2
+
+<some license text>
+```
+
+Also good:
+```
+package_1
+
+<some license text>
+
+--------------------------------------------------------------------------------
+package_1
+package_2
+
+<some license text>
+```
+
+Bad:
+```
+<some license text>
+
+--------------------------------------------------------------------------------
+<some license text>
+```
+
+Also bad:
+```
+package_1
+
+<some license text>
+--------------------------------------------------------------------------------
+<some license text>
+```
 
 ## Publishing packages {#publish}
 
