@@ -48,7 +48,7 @@
     (e.g., hermetic build environments, intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
 
-    ```
+    ```terminal
     $ flutter precache
     ```
 
