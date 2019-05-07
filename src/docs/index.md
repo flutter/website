@@ -32,7 +32,7 @@ For more information on updates, see the
 [release notes]()
 or [download the release](/docs/development/tools/sdk/archive).
 
-[What's new archive](/docs/whats-new-archive).
+[What's new archive](/docs/whats-new-archive)
 
 ## New to Flutter?
 
