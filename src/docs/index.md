@@ -25,11 +25,10 @@ description: The landing page for Flutter documentation.
 
 **May 7, 2019, Google I/O Edition**
 
-[Flutter 1.5]() (add link)
-is live!
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) is live!
 
-For more information on updates, see the
-[release notes]()
+For more information on updates, see the [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 or [download the release](/docs/development/tools/sdk/archive).
 
 [What's new archive](/docs/whats-new-archive)
