@@ -10,7 +10,7 @@ Dart into a client experience that can be embedded in the browser and
 deployed to any web server. You can use all the features of Flutter,
 and you don’t need a browser plug-in.
 
-Flutter for web is currentlky available as a technical preview.
+Flutter for web is currently available as a technical preview.
 
 Check out the [repository](https://github.com/flutter/flutter_web)
 for instructions on how to get started.
