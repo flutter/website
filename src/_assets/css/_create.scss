@@ -54,7 +54,19 @@
   }
 
   &__video {
-      margin-top: bs-spacer(6);
+    margin-top: bs-spacer(6);
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+
+  &__video iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
   }
 
   &__category-winner {
