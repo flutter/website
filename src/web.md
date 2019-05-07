@@ -16,7 +16,8 @@ Check out the [repository](https://github.com/flutter/flutter_web)
 for instructions on how to get started.
 
 <img src="/images/Dart-framework-v-browser-framework.png"
-     alt="showing Flutter architecture for C++ vs Flutter for web">
+     alt="showing Flutter architecture for C++ vs Flutter for web"
+     width="100%">
 
 Adding web support involves implementing Flutter's core drawing layer on
 top of standard browser APIs. Using a combination of DOM, Canvas,
