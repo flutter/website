@@ -219,6 +219,7 @@ flexible size, the available space is allotted to them according to their
 `flex` factors. Each child gets space in proportion to their flex
 factor divided by the total of all the flex factors of all children:
 
+<!-- skip -->
 ```dart
 remainingSpace * (flex / totalOfAllFlexValues)
 ```
@@ -321,6 +322,7 @@ Every business card needs a name and a title, so start with that.
   * The first should be a name (a short one is easier to
     fit into the small window) and use the `headline` style:
 
+<!-- skip -->
 ```dart
 style: Theme.of(context).textTheme.headline<br>
 ```
@@ -340,6 +342,7 @@ Business cards often have an icon or logo in the top-left corner,
 so the next step is to add one to yours. Start by wrapping the
 `Column` you just created with a `Row` widget:
 
+<!-- skip -->
 ```dart
 Row(
   children: [
@@ -364,6 +367,7 @@ Your first `Row` is now complete! There are two more to go, though,
 and you need a `Column` to put them in.
 Wrap your `Row` with a `Column` widget so that it looks like this:
 
+<!-- skip -->
 ```dart
  Column(
    children: [
