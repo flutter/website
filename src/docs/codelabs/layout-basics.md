@@ -17,7 +17,7 @@ description: "A codelab that uses DartPad2 to teach Flutter layout concepts."
   with Chrome. There may be (in the short term) features that
   work in some browsers and not others. If you encounter
   any, please feel free to 
-  [file a bug on GitHub](https://github.com/flutter/flutter/issues/new),
+  [file a bug on GitHub](https://goo.gle/flutter_web_issue),
   labelling the issue with `platform-web`.
 {{site.alert.end}}
 
