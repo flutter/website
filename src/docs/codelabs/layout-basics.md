@@ -16,7 +16,9 @@ description: "A codelab that uses DartPad2 to teach Flutter layout concepts."
   This codelab is currently being developed and tested
   with Chrome. There may be (in the short term) features that
   work in some browsers and not others. If you encounter
-  any, please feel free to file bugs using the link above.
+  any, please feel free to 
+  [file a bug on GitHub](https://github.com/flutter/flutter/issues/new),
+  labelling the issue with `platform-web`.
 {{site.alert.end}}
 
 `Row` and `Column` are two very important widgets in the Flutter universe.
