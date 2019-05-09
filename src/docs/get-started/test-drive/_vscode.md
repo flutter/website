@@ -29,8 +29,11 @@ contains a simple demo app that uses [Material Components][].
     in the **Debug Console** view.
 
 {% capture save_changes -%}
-  : invoke **File > Save All**,
-  or click **Hot Reload** (the green circular arrow button).
+  : invoke **Save All**, or click **Hot Reload**
+  <i class="material-icons align-bottom">offline_bolt</i>.
+  {% comment %} Or, as an alternative:
+    {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
+  {% endcomment -%}
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
