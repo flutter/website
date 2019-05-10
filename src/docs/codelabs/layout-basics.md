@@ -330,7 +330,7 @@ Every business card needs a name and a title, so start with that.
 style: Theme.of(context).textTheme.headline<br>
 ```
 
-  * The second text widget should say 'Experienced App Developer`
+  * The second text widget should say `Experienced App Developer`
     and use the default style (leave the `style` property out entirely).
 
 * Set the `Column`'s `crossAxisAlignment` to start, so
