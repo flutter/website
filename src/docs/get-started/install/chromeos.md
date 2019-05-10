@@ -32,7 +32,7 @@ available in your environment.
 
 For the best experience right now, you should put your Chrome OS Device into
 developer mode (this is necessary to push apps on the Chrome OS Device). For
-more information, see [how to enable developer mode on you Chromebook](https://www.androidcentral.com/how-enable-developer-mode-chrome-os)
+more information, see [how to enable developer mode on you Chromebook](https://www.androidcentral.com/how-enable-developer-mode-chrome-os).
 
 {% include_relative _get-sdk.md %}
 
@@ -46,7 +46,9 @@ more information, see [how to enable developer mode on you Chromebook](https://w
 
 ## Flutter & Chrome OS Tips & Tricks
 
-Wondering how to run your app? On Chrome OS, you can either connect your phone (currently on Dev channel only) or push directly to the Android container on device. To do that you must enable Developer mode on your machine, and then connect to the local container with ADB
+Wondering how to run your app? On Chrome OS, you can either connect your phone 
+(currently on Dev channel only) or push directly to the Android container on device. 
+To do that you must enable Developer mode on your machine, and then connect to the local container with ADB:
 
 ```terminal
 $ adb connect 100.115.92.2:555
@@ -62,7 +64,7 @@ $ flutter run
 ```
 
 Wondering how to access your favorite F-Key shortcuts on the Chrome OS keyboard?
-* Press the search key along with 1 through = to access F1–F12
+* Press the search key along with 1 through = to access F1–F12.
 
 For the current versions of Chrome OS, only certain ports from Crostini are 
 exposed to the rest of the environments. Here’s an example of how to launch 

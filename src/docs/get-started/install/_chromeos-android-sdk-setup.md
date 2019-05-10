@@ -15,9 +15,9 @@ select the “Command Line Tools only” option.
 
 Drag and drop the downloaded zip into your Linux Files folder through the 
 Chrome OS Files app. This moves it to the home directory, notated as $TOOLS_PATH 
-going forward (`~/`)
+going forward (`~/`).
 
-Unzip the tools and then add it to your path
+Unzip the tools and then add it to your path.
 
 ```terminal
 $ unzip ~/sdk-tools-linux*
@@ -34,7 +34,7 @@ $ sdkmanager "build-tools;28.0.3" "emulator" "tools" "platform-tools"
 ```
 
 Add the Android platform tools to your path (you should find this where you 
-ran the sdkmanager command: $PLATFORM_PATH`)
+ran the sdkmanager command: $PLATFORM_PATH):
 
 ```terminal
 $ export PATH="$PATH:$PLATFORM_PATH/platform-tools
