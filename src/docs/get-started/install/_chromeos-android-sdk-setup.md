@@ -24,7 +24,7 @@ $ unzip ~/sdk-tools-linux*
 $ export PATH="$PATH:$TOOLS_PATH/tools/bin"
 ```
 
-Download the SDK packages using the sdkmanager tool (version numbers here are 
+Navigate to where you'd like to keep the SDK packages ($PLATFORM_PATH in these snippets) and download the SDK packages using the sdkmanager tool (version numbers here are 
 the latest at time of publishing):
 
 ```terminal
@@ -34,10 +34,10 @@ $ sdkmanager "build-tools;28.0.3" "emulator" "tools" "platform-tools"
 ```
 
 Add the Android platform tools to your path (you should find this where you 
-ran the sdkmanager command: probably `~/`)
+ran the sdkmanager command: $PLATFORM_PATH`)
 
 ```terminal
-$ export PATH="$PATH:[/path/to/platform/tools]/platform-tools
+$ export PATH="$PATH:$PLATFORM_PATH/platform-tools
 ```
 
 Set the ANDROID_HOME variable to where you unzipped sdk-tools before (aka 

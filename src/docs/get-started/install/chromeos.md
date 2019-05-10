@@ -79,7 +79,7 @@ Then, navigate to http://localhost:8000/?port=8080 in your Chrome browser.
 #### Flutter Chrome OS Lint Analysis
 
 The Flutter team is adding Chrome OS specific Lint Analysis checks that are 
-available to make sure that the app that your building is going to work well 
+available to make sure that the app that you're building is going to work well 
 on Chrome OS. It looks for things like required hardware in your Android 
 Manifest that aren’t available on Chrome OS devices, permissions that will 
 imply requests for unsupported hardware, as well as other properties or code 
@@ -87,6 +87,9 @@ that would bring a lesser experience on these devices.
 
 To activate these, you will create a new/update your analysis_options.yaml 
 file to include these options:
+
+To activate these, you will create a new analysis_options.yaml file to include these options.
+(If you have an existing analysis_options.yaml file, you can update it)
 
 ```yaml
 include: package:flutter/analysis_options_user.yaml
