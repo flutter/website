@@ -10,7 +10,7 @@ $ sudo apt install default-jdk
 
 ### Install the Android SDK's
 
-Download the [Android SDK tools]({{site.android-dev}})/studio/#downloads and 
+Download the [Android SDK tools]({{site.android-dev}}/studio/#downloads) and 
 select the “Command Line Tools only” option.
 
 Drag and drop the downloaded zip into your Linux Files folder through the 
@@ -41,7 +41,7 @@ $ export PATH="$PATH:[/path/to/platform/tools]/platform-tools
 ```
 
 Set the ANDROID_HOME variable to where you unzipped sdk-tools before (aka 
-you’re $TOOLS_PATH):
+your $TOOLS_PATH):
 
 ```terminal
 $ export ANDROID_HOME="$TOOLS_PATH"

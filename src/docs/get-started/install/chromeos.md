@@ -46,6 +46,12 @@ more information, see [how to enable developer mode on you Chromebook](https://w
 
 ## Flutter & Chrome OS Tips & Tricks
 
+Wondering how to run your app? On Chrome OS, you can either connect your phone (currently on Dev channel only) or push directly to the Android container on device. To do that you must enable Developer mode on your machine, and then connect to the local container with ADB
+
+```terminal
+$ adb connect 100.115.92.2:555
+```
+
 Want to build your first app optimized for Chrome OS? Clone the flutter-samples 
 repo and build our specific Chrome OS Best Practices example:
 
@@ -72,14 +78,14 @@ Then, navigate to http://localhost:8000/?port=8080 in your Chrome browser.
 
 #### Flutter Chrome OS Lint Analysis
 
-The Flutter team has added Chrome OS specific Lint Analysis checks that are 
+The Flutter team is adding Chrome OS specific Lint Analysis checks that are 
 available to make sure that the app that your building is going to work well 
 on Chrome OS. It looks for things like required hardware in your Android 
 Manifest that aren’t available on Chrome OS devices, permissions that will 
 imply requests for unsupported hardware, as well as other properties or code 
 that would bring a lesser experience on these devices.
 
-To activate these, you have to create a new/update your analysis_options.yaml 
+To activate these, you will create a new/update your analysis_options.yaml 
 file to include these options:
 
 ```yaml
@@ -104,5 +110,5 @@ android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware
 ```
 
 
-The analysis results also show in the Dart Analysis tab in your IDE (VSCode or Android Studio).
+This functionality is still under development, but check back here for instructions on how you can make this functionality work with you Chrome OS targeted Flutter app soon.
 
