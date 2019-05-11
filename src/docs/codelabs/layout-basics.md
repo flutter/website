@@ -327,7 +327,7 @@ Every business card needs a name and a title, so start with that.
 
 <!-- skip -->
 ```dart
-style: Theme.of(context).textTheme.headline<br>
+style: Theme.of(context).textTheme.headline
 ```
 
   * The second text widget should say `Experienced App Developer`
