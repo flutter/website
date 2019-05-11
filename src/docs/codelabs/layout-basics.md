@@ -390,9 +390,9 @@ Then, finish up your new `Column` with these steps:
 * Add more widgets below your `Row` in the `Column`'s
   list of children:
   * A `SizedBox` with a height of 8
-    * An empty `Row` (no children or other properties)
-    * A `SizedBox` with a height of 16
-    * Another empty `Row`
+  * An empty `Row` (no children or other properties)
+  * A `SizedBox` with a height of 16
+  * Another empty `Row`
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
 
