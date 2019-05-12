@@ -51,7 +51,7 @@ Wondering how to run your app? On Chrome OS, you can either connect your phone
 To do that you must enable Developer mode on your machine, and then connect to the local container with ADB:
 
 ```terminal
-$ adb connect 100.115.92.2:555
+$ adb connect 100.115.92.2:5555
 ```
 
 Want to build your first app optimized for Chrome OS? Clone the flutter-samples 
