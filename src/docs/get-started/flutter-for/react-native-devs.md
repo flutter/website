@@ -245,11 +245,11 @@ used to wait for a `Promise`.
 
 ```js
 // JavaScript
-async _getIPAddress() {
+async function _getIPAddress() {
   const url="https://httpbin.org/ip";
   const response = await fetch(url);
   const json = await response.json();
-  const data = await json.origin;
+  const data = json.origin;
   console.log(data);
 }
 ```
