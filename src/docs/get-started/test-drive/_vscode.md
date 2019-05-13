@@ -37,6 +37,7 @@ contains a simple demo app that uses [Material Components][].
 {% endcapture %}
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
+{% include run-profile.md %}
 
 [Install]: /docs/get-started/install
 [Material Components]: {{site.material}}/guidelines

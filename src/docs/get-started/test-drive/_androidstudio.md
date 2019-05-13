@@ -32,7 +32,12 @@ contains a simple demo app that uses [Material Components][].
   {% endcomment -%}
 {% endcapture %}
 
+{% capture ide_profile -%}
+  to invoke the menu item **Run > Profile** in the IDE, or
+{% endcapture %}
+
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
+{% include run-profile.md ide_profile=ide_profile %}
 
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
 [Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
