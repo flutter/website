@@ -9,6 +9,9 @@ dev_dependencies:
   code_excerpter: any
   linkcheck: ^2.0.6
   yaml: ^2.1.15
+  path: ^1.6.2
+  github: ^4.1.0
+  firebase: ^5.0.3
 
 dependency_overrides:
   code_excerpt_updater:

@@ -152,6 +152,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.7"
+  firebase:
+    dependency: "direct dev"
+    description:
+      name: firebase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.3"
   fixnum:
     dependency: transitive
     description:
@@ -166,6 +173,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.17"
+  github:
+    dependency: "direct dev"
+    description:
+      name: github
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
   glob:
     dependency: transitive
     description:
@@ -286,7 +300,7 @@ packages:
     source: hosted
     version: "1.0.10"
   path:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: path
       url: "https://pub.dartlang.org"
