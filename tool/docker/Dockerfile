@@ -90,10 +90,9 @@ ENV PATH="$GRADLE_ROOT/bin:$PATH"
 ENV PATH="/usr/bin:${PATH}"
 RUN dpkg-query -L nodejs && \
     # Install Firebase tools.
-    npm i -g firebase-tools@4.0.3
-
-# Set locale to en_US.UTF-8
-RUN dpkg-reconfigure locales && \
+    npm i -g firebase-tools@4.0.3 && \
+    # Set locale to en_US.UTF-8
+    dpkg-reconfigure locales && \
     locale-gen "en_US" "en_US.UTF-8" "C.UTF-8" && /usr/sbin/update-locale LANG="C.UTF-8" && \
     echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LC_ALL="C.UTF-8"
