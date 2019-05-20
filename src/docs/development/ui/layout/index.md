@@ -308,7 +308,7 @@ classes offer a variety of constants for controlling alignment.
   you need to update the pubspec file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
-  file]({{examples}}/layout/row/pubspec.yaml),
+  file]({{examples}}/layout/row_column/pubspec.yaml),
   or [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images).
   You don't need to do this if you're referencing online images using
   `Image.network`.
