@@ -93,7 +93,7 @@ videos and control playback.
 Before you can play videos, you must also `initialize` the controller. This
 establishes the connection to the video and prepare the controller for playback.
 
-To create an initialize the `VideoPlayerController`, please:
+To create and initialize the `VideoPlayerController`, please:
 
   1. Create a `StatefulWidget` with a companion `State` class 
   2. Add a variable to the `State` class to store the `VideoPlayerController`
