@@ -272,13 +272,13 @@ Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 Next, run the dry-run command to see if everything passes analysis:
 
 ```terminal
-$ flutter packages pub publish --dry-run
+$ flutter pub publish --dry-run
 ```
 
 Finally, run the actual publish command:
 
 ```terminal
-$ flutter packages pub publish
+$ flutter pub publish
 ```
 
 For details on publishing, see the
