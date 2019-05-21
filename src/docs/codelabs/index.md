@@ -3,6 +3,29 @@ title: Codelabs
 description: "Codelabs to help you quickly get started programming Flutter."
 ---
 
+
+#### [Write Your First Flutter App, part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
+
+Create a simple mobile app that generates proposed names for a startup
+company. In part one, you'll use a package that returns pairs of words
+at random and inserts them into an infinitely scrolling list.
+
+
+#### [Write Your First Flutter App, part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
+
+Create a simple mobile app that generates proposed names for a startup
+company. In part two, you'll extend the example from part 1 to allow
+the user to select favorite word pairs, and add a second "Saved Favorites"
+page where users can view the selected names.
+Finally, you'll change the app's theme color.
+
+
+#### [Building Beautiful UIs with Flutter]({{site.codelabs}}/codelabs/flutter)
+
+A deeper "first dive" than "Write Your First Flutter App." In this codelab
+you'll create a chat app that includes a simple animation, and customizes
+the UI for iOS and Android.
+
 #### [Adding Google Maps to a Flutter App]({{site.codelabs}}/codelabs/google-maps-in-flutter)
 
 Display a Google map in an app, retrieve data from a web service,
@@ -13,13 +36,6 @@ and display the data as markers on the map.
 
 Build a field trip app that allows you and other members of the trip
 to share photos.
-
-
-#### [Building Beautiful UIs with Flutter]({{site.codelabs}}/codelabs/flutter)
-
-A deeper "first dive" than "Write Your First Flutter App." In this codelab
-you'll create a chat app that includes a simple animation, and customizes
-the UI for iOS and Android.
 
 
 #### [Building a Cupertino app with Flutter]({{site.codelabs}}/codelabs/flutter-cupertino)
@@ -64,23 +80,6 @@ building your e-commerce app by adding a home screen that displays products.
 Improve your design and learn to use our advanced component backdrop menu.
 Finish your e-commerce app by adding a backdrop with a menu that filters
 products by the selected category.
-
-
-#### [Write Your First Flutter App, part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-
-Create a simple mobile app that generates proposed names for a startup
-company. In part one, you'll use a package that returns pairs of words
-at random and inserts them into an infinitely scrolling list.
-
-
-#### [Write Your First Flutter App, part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-
-Create a simple mobile app that generates proposed names for a startup
-company. In part two, you'll extend the example from part 1 to allow
-the user to select favorite word pairs, and add a second "Saved Favorites"
-page where users can view the selected names.
-Finally, you'll change the app's theme color.
-
 
 ---
 
