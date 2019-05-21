@@ -358,7 +358,7 @@ you can open the Android files as their own project from the start:
    example if the project is called `flutter_app`, open `flutter_app/android`.
 
 If you haven't run your Flutter app yet, you may see Android Studio report a
-build error when you open the `android` project. Run `flutter packages get` in
+build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
 

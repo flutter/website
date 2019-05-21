@@ -249,7 +249,7 @@ dev_dependencies:
   json_serializable: ^2.0.0
 ```
 
-Run `flutter packages get` inside your project root folder (or click
+Run `flutter pub get` inside your project root folder (or click
 **Packages Get** in your editor) to make these new dependencies available
 in your project.
 

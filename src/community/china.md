@@ -53,7 +53,7 @@ $ flutter doctor
 
 After these steps, you should be able to continue
 [setting up Flutter](/docs/get-started/editor) normally.
-From here on, packages fetched by `flutter packages get` are
+From here on, packages fetched by `flutter pub get` are
 downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 

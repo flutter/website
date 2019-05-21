@@ -678,8 +678,8 @@ dependencies:
   google_sign_in: ^3.0.3
 ```
 
-2. Install the package from the command line by using `flutter packages get`.
-   If using an IDE, it often runs `flutter packages get` for you, or it might
+2. Install the package from the command line by using `flutter pub get`.
+   If using an IDE, it often runs `flutter pub get` for you, or it might
    prompt you to do so.
 3. Import the package into your app code as shown below:
 
