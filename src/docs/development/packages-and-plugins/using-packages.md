@@ -41,7 +41,7 @@ To add a package 'css_colors' to an app:
      `css_colors:` under `dependencies`.
 
 1. Install it
-   * From the terminal: Run `flutter packages get`<br/>
+   * From the terminal: Run `flutter pub get`<br/>
    **OR**
    * From Android Studio/IntelliJ: Click 'Packages Get' in the action
      ribbon at the top of `pubspec.yaml`
@@ -108,16 +108,16 @@ guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Updating package dependencies
 
-When you run `flutter packages get` ('Packages Get' in IntelliJ) for
+When you run `flutter pub get` ('Packages Get' in IntelliJ) for
 the first time after adding a package, Flutter saves the concrete package
 version found in the `pubspec.lock`
 [lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
 This ensures that you get the same version again if you, or another
-developer on your team, run `flutter packages get`.
+developer on your team, run `flutter pub get`.
 
 If you want to upgrade to a new version of the package,
 for example to use new features in that package, run
-`flutter packages upgrade` ('Upgrade dependencies'
+`flutter pub upgrade` ('Upgrade dependencies'
 in IntelliJ). This retrieves the highest available version of the package
 that is allowed by the version constraint you have specified in
 `pubspec.yaml`.
@@ -191,7 +191,7 @@ To use this package:
      css_colors: ^1.0.0
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+1. Run `flutter pub get` in the terminal, or click 'Packages get' in
    IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
@@ -252,7 +252,7 @@ To use this plugin:
      url_launcher: ^0.4.1
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+1. Run `flutter pub get` in the terminal, or click 'Packages get' in
    IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:

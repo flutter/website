@@ -492,7 +492,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     `l10n/intl_messages.arb` from `lib/main.dart`:
 
     ```terminal
-    $ flutter packages pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+    $ flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
     ```
 
     The `intl_messages.arb` file is a JSON format map with one entry for
@@ -506,7 +506,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     `intl_messages_all.dart`, which imports all of the messages files:
 
     ```terminal
-    $ flutter packages pub run intl_translation:generate_from_arb \
+    $ flutter pub run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart lib/l10n/intl_*.arb
     ```

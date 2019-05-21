@@ -71,7 +71,7 @@ exposed to the rest of the environments. Here’s an example of how to launch
 Flutter DevTools for an Android app with ports that will work:
 
 ```terminal
-$ flutter packages pub global run devtools -p 8000
+$ flutter pub global run devtools -p 8000
 $ cd path/to/your/app
 $ flutter run --observatory-port=8080
 ```

@@ -260,7 +260,7 @@ class _MyHomePageState extends State<MyHomePage> {
 {% endprettify %}
 
 * Add the `url_launcher` dependency to the pubspec file,
-  and run flutter packages get:
+  and run flutter pub get:
 
 {% prettify yaml %}
 name: flutter_app
