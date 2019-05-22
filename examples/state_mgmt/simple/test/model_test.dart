@@ -1,4 +1,4 @@
-import 'package:state_mgmt/src/scoped_model.dart';
+import 'package:state_mgmt/src/provider.dart';
 import 'package:test/test.dart';
 
 void main() {

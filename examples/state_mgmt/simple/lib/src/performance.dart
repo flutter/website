@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:state_mgmt/src/scoped_model.dart';
+import 'package:provider/provider.dart';
+import 'package:state_mgmt/src/provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
   AnotherMonstrousWidget({Widget child}) : super(child: child);
@@ -10,8 +10,8 @@ class ChildUsingDescendant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion child
-    return ScopedModelDescendant<CartModel>(
-      builder: (context, child, cart) => Stack(
+    return Consumer<CartModel>(
+      builder: (context, cart, child) => Stack(
             children: [
               // Use SomeExpensiveWidget here, without rebuilding every time.
               child,
@@ -34,8 +34,8 @@ class DescendantInLeafNode_Good extends StatelessWidget {
       // ...
       child: AnotherMonstrousWidget(
         // ...
-        child: ScopedModelDescendant<CartModel>(
-          builder: (context, child, cart) {
+        child: Consumer<CartModel>(
+          builder: (context, cart, child) {
             return Text('Total price: ${cart.totalPrice}');
           },
         ),
@@ -50,8 +50,8 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion nonLeafDescendant
     // DON'T DO THIS
-    return ScopedModelDescendant<CartModel>(
-      builder: (context, child, cart) {
+    return Consumer<CartModel>(
+      builder: (context, cart, child) {
         return HumongousWidget(
           // ...
           child: AnotherMonstrousWidget(
@@ -98,7 +98,7 @@ class NonRebuilding_Good extends StatelessWidget {
   void _onPressed(BuildContext context) {
     var item = Item('Dash');
     // #docregion nonRebuilding
-    ScopedModel.of<CartModel>(context).add(item);
+    Provider.of<CartModel>(context, listen: false).add(item);
     // #enddocregion nonRebuilding
   }
 }

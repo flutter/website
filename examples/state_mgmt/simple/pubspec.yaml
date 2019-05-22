@@ -4,7 +4,7 @@ description: Sample state management code.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -12,7 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
 
-  scoped_model: ^1.0.0
+  provider: ^2.0.0
 
 dev_dependencies:
   flutter_test:
