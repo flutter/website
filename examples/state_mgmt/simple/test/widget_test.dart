@@ -15,7 +15,7 @@ void main() {
     );
 
     await _visitPage(tester, '/setstate');
-    await _visitPage(tester, '/scoped');
+    await _visitPage(tester, '/provider');
     await _visitPage(tester, '/callbacks');
     await _visitPage(tester, '/perf');
 
