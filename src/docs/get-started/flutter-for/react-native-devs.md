@@ -206,7 +206,7 @@ objects to handle this.
 
 ```js
 // JavaScript
-const example = {
+class Example {
   _getIPAddress() {
     const url = "https://httpbin.org/ip";
     return fetch(url)
@@ -249,7 +249,7 @@ used to wait for a `Promise`.
 
 ```js
 // JavaScript
-const example = {
+class Example {
   async _getIPAddress() {
     const url = "https://httpbin.org/ip";
     const response = await fetch(url);
