@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
 import 'package:state_mgmt/main.dart';
-import 'package:state_mgmt/src/scoped_model.dart';
+import 'package:state_mgmt/src/provider.dart';
 
 void main() {
   testWidgets('smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      ScopedModel<CartModel>(
-        model: CartModel(),
+      Provider(
+        builder: (context) => CartModel(),
         child: MyApp(),
       ),
     );
 
     await _visitPage(tester, '/setstate');
-    await _visitPage(tester, '/scoped');
+    await _visitPage(tester, '/provider');
     await _visitPage(tester, '/callbacks');
     await _visitPage(tester, '/perf');
 

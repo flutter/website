@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
 import 'package:state_mgmt/src/passing_callbacks.dart' as callbacks;
 import 'package:state_mgmt/src/performance.dart' as performance;
-import 'package:state_mgmt/src/scoped_model.dart';
+import 'package:state_mgmt/src/provider.dart';
 import 'package:state_mgmt/src/set_state.dart' as set_state;
 
 // #docregion main
 void main() {
-  final cart = CartModel();
-
-  // You could optionally connect [cart] with some database here.
-
   runApp(
-    ScopedModel<CartModel>(
-      model: cart,
+    ChangeNotifierProvider(
+      builder: (context) => CartModel(),
       child: MyApp(),
     ),
   );
@@ -22,10 +18,24 @@ void main() {
 
 Map<String, WidgetBuilder> _routes = {
   '/setstate': (context) => set_state.HelperScaffoldWrapper(),
-  '/scoped': (context) => MyHomepage(),
+  '/provider': (context) => MyHomepage(),
   '/callbacks': (context) => callbacks.MyHomepage(),
   '/perf': (context) => performance.MyHomepage(),
 };
+
+// #docregion multi-provider-main
+void multiProviderMain() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(builder: (context) => CartModel()),
+        Provider(builder: (context) => SomeOtherClass()),
+      ],
+      child: MyApp(),
+    ),
+  );
+}
+// #enddocregion multi-provider-main
 
 class MyApp extends StatelessWidget {
   @override
@@ -39,6 +49,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class SomeOtherClass {}
 
 class _Menu extends StatelessWidget {
   @override

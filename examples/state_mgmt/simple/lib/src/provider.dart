@@ -1,15 +1,15 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
 import 'package:state_mgmt/src/common.dart';
 
 CartModel somehowGetMyCartModel(BuildContext context) {
-  return ScopedModel.of<CartModel>(context, rebuildOnChange: true);
+  return Provider.of<CartModel>(context);
 }
 
 // #docregion model
-class CartModel extends Model {
+class CartModel extends ChangeNotifier {
   /// Internal, private state of the cart.
   final List<Item> _items = [];
 
@@ -42,8 +42,8 @@ class MyCartTotalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion descendant
-    return ScopedModelDescendant<CartModel>(
-      builder: (context, child, cart) {
+    return Consumer<CartModel>(
+      builder: (context, cart, child) {
         return Text("Total price: ${cart.totalPrice}");
       },
     );
