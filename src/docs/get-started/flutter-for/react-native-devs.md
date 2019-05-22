@@ -224,11 +224,13 @@ const example = {
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() {
-  final url = 'https://httpbin.org/ip';
-  HttpRequest.request(url).then((value) {
-      print(json.decode(value.responseText)['origin']);
-  }).catchError((error) => print(error));
+class Example {
+  _getIPAddress() {
+    final url = 'https://httpbin.org/ip';
+    HttpRequest.request(url).then((value) {
+        print(json.decode(value.responseText)['origin']);
+    }).catchError((error) => print(error));
+  }
 }
 ```
 
@@ -265,11 +267,13 @@ scheduled for execution later. The `await` operator is used to wait for a
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() async {
-  final url = 'https://httpbin.org/ip';
-  var request = await HttpRequest.request(url);
-  String ip = json.decode(request.responseText)['origin'];
-  print(ip);
+class Example {
+  _getIPAddress() async {
+    final url = 'https://httpbin.org/ip';
+    var request = await HttpRequest.request(url);
+    String ip = json.decode(request.responseText)['origin'];
+    print(ip);
+  }
 }
 ```
 
