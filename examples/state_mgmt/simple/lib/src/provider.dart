@@ -16,14 +16,13 @@ class CartModel extends ChangeNotifier {
   /// An unmodifiable view of the items in the cart.
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
 
-  /// The current total price of all items (assuming all items cost $1).
-  int get totalPrice => _items.length;
+  /// The current total price of all items (assuming all items cost $42).
+  int get totalPrice => _items.length * 42;
 
   /// Adds [item] to cart. This is the only way to modify the cart from outside.
   void add(Item item) {
     _items.add(item);
-    // This call tells [Model] that it should rebuild the widgets that
-    // depend on it.
+    // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
   }
 }
