@@ -423,7 +423,7 @@ You can [check out the
 example]({{site.github}}/filiph/samples/tree/scoped-model-shopper/model_shopper)
 covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
-scoped_model](https://github.com/flutter/samples/tree/master/scoped_model_counter).
+scoped_model](https://github.com/flutter/samples/tree/212860838640a5d4f7109732ba4d084b24a17aad/scoped_model_counter).
 
 When you're ready to play around with `scoped_model` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.

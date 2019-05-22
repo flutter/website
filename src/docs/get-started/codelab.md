@@ -199,8 +199,8 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     your project. You should see the following in the console:
 
     ```terminal
-    $ flutter packages get
-    Running "flutter packages get" in startup_namer...
+    $ flutter pub get
+    Running "flutter pub get" in startup_namer...
     Process finished with exit code 0
     ```
 
