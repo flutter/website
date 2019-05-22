@@ -48,7 +48,7 @@ submodule-cloning techniques:
 > NOTE: At any time during development you can use the submodule command to
 > refresh submodules:<br>
 > ```
-> pull; git submodule update --init --remote`
+> git pull; git submodule update --init --remote
 > ```
 
 ### 3. Run installation scripts
