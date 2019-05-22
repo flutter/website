@@ -25,7 +25,7 @@ MaterialApp class, since most applications are written that way.
 Applications written in terms of the lower level WidgetsApp class
 can also be internationalized using the same classes and logic.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   <h4 class="no_toc">Sample internationalized apps</h4>
 
   If you'd like to start out by reading the code for an internationalized
@@ -39,7 +39,7 @@ can also be internationalized using the same classes and logic.
     internationalization]({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
   * [Internationalization based on the `intl`
     package]({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
-</aside>
+{{site.alert.end}}
 
 ## Setting up an internation&shy;alized app: the flutter<wbr>_localizations package {#setting-up}
 
