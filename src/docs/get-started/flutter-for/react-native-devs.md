@@ -206,17 +206,19 @@ objects to handle this.
 
 ```js
 // JavaScript
-_getIPAddress() {
-  const url = "https://httpbin.org/ip";
-  return fetch(url)
-    .then(response => response.json())
-    .then(responseJson => {
-      console.log(responseJson.origin);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-};
+const example = {
+  _getIPAddress() {
+    const url = "https://httpbin.org/ip";
+    return fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
+        console.log(responseJson.origin);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+}
 ```
 
 <!-- skip -->
@@ -245,12 +247,14 @@ used to wait for a `Promise`.
 
 ```js
 // JavaScript
-async _getIPAddress() {
-  const url = "https://httpbin.org/ip";
-  const response = await fetch(url);
-  const responseJson = await response.json();
-  const ip = responseJson.origin;
-  console.log(ip);
+const example = {
+  async _getIPAddress() {
+    const url = "https://httpbin.org/ip";
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    const ip = responseJson.origin;
+    console.log(ip);
+  }
 }
 ```
 
