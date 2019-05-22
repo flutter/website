@@ -249,7 +249,7 @@ The `sample_page.dart` app will print a list of all of the `"sample"` properties
 
 [Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
-[Dart install]: https://www.dartlang.org/install
+[Dart install]: https://dart.dev/get-dart
 [Flutter install]: /get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/

@@ -41,6 +41,11 @@ Coding mistakes, solutions, and snazzy intro music included.
 Introducing the Boring Flutter Show<br>
 [The Boring Flutter Show playlist][]
 
+### Flutter and Dart at Google I/O 2019
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YSULAJf6R6M?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Flutter and Dart at Google I/O 2019 playlist][]
+
 ### Flutter Live '18
 
 Catch the content from Flutter Live '18, where Flutter 1.0 was officially launched.
@@ -106,4 +111,4 @@ Learn how to build Flutter apps with these free video courses:
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter Live '18 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU38by1vmaw_BHHsy7emEXl-
 [Flutter Developer Stories playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
-
+[Flutter and Dart at Google I/O 2019 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2no7yROrcQSVtwbYyxAGZV

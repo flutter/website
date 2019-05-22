@@ -223,7 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    String toLaunch = 'https://flutter.io';
+    String toLaunch = 'https://flutter.dev';
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -286,10 +286,10 @@ dev_dependencies:
   indicate **Connected**.
   (This can take a minute the first time but is faster for subsequent
    launches.) The app contains two buttons: 1) **Launch in browser**
-   opens flutter.io in your phone's default browser and 2) **Launch
-   in app** opens flutter.io within your app.
+   opens flutter.dev in your phone's default browser and 2) **Launch
+   in app** opens flutter.dev within your app.
 
-  {% asset 'testing/debugging/oem/launch-flutter-io.png' alt='screenshot containing two buttons for opening flutter.io' %}
+  {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='screenshot containing two buttons for opening flutter.dev' %}
 
 * Click the **Attach debugger to Android process** button (
   {% asset 'testing/debugging/oem/attach-process-button.png' alt='looks like a rectangle superimposed with a tiny green bug' %} )
@@ -308,7 +308,7 @@ dev_dependencies:
    (or <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.io' %}
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}
 
 *  In the debug pane, you should now see a tab for **Android Debugger**.
 

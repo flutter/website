@@ -1,14 +1,20 @@
 ---
 title: Codelabs
-description: "Codelabs to help you quickly get started programming Flutter."
+description: "Codelabs help you quickly get started programming Flutter."
 ---
+
+
+#### [Basic Flutter layout](/docs/codelabs/layout-basics)
+
+Use DartPad in a browser (no need to download Flutter or Dart!)
+to learn the basics of creating a Flutter layout.
 
 
 #### [Write Your First Flutter App, part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 
 Create a simple mobile app that generates proposed names for a startup
 company. In part one, you'll use a package that returns pairs of words
-at random and inserts them into an infinitely scrolling list.
+at random and inserts them into an infinite scrolling list.
 
 
 #### [Write Your First Flutter App, part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
@@ -25,6 +31,7 @@ Finally, you'll change the app's theme color.
 A deeper "first dive" than "Write Your First Flutter App." In this codelab
 you'll create a chat app that includes a simple animation, and customizes
 the UI for iOS and Android.
+
 
 #### [Adding Google Maps to a Flutter App]({{site.codelabs}}/codelabs/google-maps-in-flutter)
 
@@ -86,13 +93,9 @@ products by the selected category.
 For a full list of available Flutter codelabs, see the
 [Flutter category]({{site.codelabs}}/?cat=Flutter)
 on [Google Developers]({{site.codelabs}}).
-If the previous link doesn't work for you, try
-[this mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
+If the previous link doesn't work, try [this
+mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
 
-{% comment %}
-// Right now, there's only the Java->Dart lab, which is also in the
-// Flutter category, so this is (effectively) a dupe link.
 For Dart-specific codelabs, see the
 [codelabs]({{site.dart-site}}/codelabs) page on the
 [Dart site]({{site.dart-site}}).
-{% endcomment %}
