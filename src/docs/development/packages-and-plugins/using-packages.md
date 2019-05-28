@@ -67,7 +67,7 @@ For a complete example, see [CSS Colors example](#css-example) below.
 
 ### Conflict resolution
 
-Suppose you want to use `some_package` and `other_package` in your app
+Suppose you want to use `some_package` and `other_package` in your app `counter`
 (or your own package), and both of these depend on `url_launcher`, but
 in different versions. Then we have a potential conflict. The best way to avoid this
 is for package authors to use [version
@@ -89,10 +89,10 @@ remarks apply to plugin packages' platform-specific dependencies on
 Even if `some_package` and `other_package` declare incompatible versions for
 `url_launcher`, it may still be that they actually use `url_launcher` in
 compatible ways. Then the conflict can be dealt with by adding
-a dependency override declaration to the `pubspec.yaml` file in `hello`,
+a dependency override declaration to the `pubspec.yaml` file in `counter`,
 forcing the use of a particular version.
 
-Forcing the use of `url_launcher` version `0.4.3` in `hello/pubspec.yaml`:
+Forcing the use of `url_launcher` version `0.4.3` in `counter/pubspec.yaml`:
 
 ```yaml
 dependencies:
@@ -106,7 +106,7 @@ If the conflicting dependency is not itself a package,
 but an Android-specific library like `guava`, the dependency override
 declaration must be added to Gradle build logic instead.
 
-Forcing the use of `guava` version `23.0` in `hello/android/build.gradle`:
+Forcing the use of `guava` version `23.0` in `counter/android/build.gradle`:
 
 ```groovy
 configurations.all {
