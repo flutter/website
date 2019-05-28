@@ -81,4 +81,9 @@
 
     &:hover > .anchor > .octicon-link { opacity: 1 }
   }
+
+  // Embedded DartPad
+  iframe {
+    border: 1px solid #ccc;
+  }
 }
