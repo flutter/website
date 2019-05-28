@@ -75,7 +75,7 @@ MaterialApp(
  supportedLocales: [
     const Locale('en'), // English
     const Locale('he'), // Hebrew
-    const Locale('zh'), // Chinese
+    const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
     // ... other locales the app supports
   ],
   // ...
@@ -84,6 +84,9 @@ MaterialApp(
 
 Apps based on WidgetsApp are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
+
+The full `Locale.fromSubtags` constructor is preferred as it supports scriptCode,
+though the `Locale` default constructor is still fully valid.
 
 The elements of the `localizationsDelegates` list are factories that produce
 collections of localized values. `GlobalMaterialLocalizations.delegate`
@@ -95,6 +98,44 @@ library.
 More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, can be found below.
+
+<a name="advanced-locale"></a>
+## Advanced locale definition
+
+Some languages with multiple variants require more than just a language code to
+properly differentiate.
+
+For example, fully differentiating all variants of Chinese requires specifying
+the language code, script code, and country code. This is due to the existence
+of simplified and traditional script, as well as regional differences in the way
+characters are written within the same script type.
+
+In order to fully express every variant of Chinese for the country codes `CN`,
+`TW`, and `HK`, the list of supported locales should include:
+
+{% prettify dart %}
+// Full Chinese support for CN, TW, and HK
+supportedLocales: [
+  const Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // generic simplified Chinese 'zh_Hans'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // generic traditional Chinese 'zh_Hant'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: ), // 'zh_Hans_CN'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: ), // 'zh_Hant_TW'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: ), // 'zh_Hant_HK'
+],
+{% endprettify %}
+
+This explicit full definition will ensure your app can distinguish between and provide
+the fully nuanced localized content to all combinations of these country codes. If a
+user's preferred locale is not specified, then the closest match will be used instead,
+which will likely contain differences to what the user expects. Flutter will only resolve
+to locales defined in `supportedLocales`. Flutter provides scriptCode-differentiated
+localized content for commonly used languages. See
+[`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html) for
+how the supported locales and the preferred locales are resolved.
+
+Although Chinese is a primary example, other languages like French (FR_fr, FR_ca, etc)
+should also be fully differentiated for more nuanced localization.
 
 <a name="tracking-locale"></a>
 ## Tracking the locale: The Locale class and the Localizations widget
