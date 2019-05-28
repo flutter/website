@@ -85,7 +85,7 @@ MaterialApp(
 Apps based on WidgetsApp are similar except that the
 `GlobalMaterialLocalizations.delegate` isn't needed.
 
-We prefer the full `Locale.fromSubtags` constructor as it supports scriptCode,
+The full `Locale.fromSubtags` constructor is preferred as it supports scriptCode,
 though the `Locale` default constructor is still fully valid.
 
 The elements of the `localizationsDelegates` list are factories that produce
@@ -102,7 +102,7 @@ structured, can be found below.
 <a name="advanced-locale"></a>
 ## Advanced locale definition
 
-Some languages with different variants require more than just a language code to
+Some languages with multiple variants require more than just a language code to
 properly differentiate.
 
 For example, fully differentiating all variants of Chinese requires specifying
@@ -111,7 +111,7 @@ of simplified and traditional script, as well as regional differences in the way
 characters are written within the same script type.
 
 In order to fully express every variant of Chinese for the country codes `CN`,
-`TW`, and `HK`, the list of locales should include:
+`TW`, and `HK`, the list of supported locales should include:
 
 {% prettify dart %}
 // Full Chinese support for CN, TW, and HK
@@ -126,7 +126,11 @@ supportedLocales: [
 {% endprettify %}
 
 This explicit full definition will ensure your app can distinguish between and provide
-the fully nuanced localized content to all combinations of these country codes.
+the fully nuanced localized content to all combinations of these country codes. If a
+user's preferred locale is not specified, then the closest match will be used instead,
+which will likely contain differences to what the user expects. See
+[`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html) for
+how the supported locales and the preferred locales are resolved.
 
 Although Chinese is a primary example, other languages like French (FR_fr, FR_ca, etc)
 should also be fully differentiated for more nuanced localization.
