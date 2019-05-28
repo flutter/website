@@ -73,8 +73,8 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale.fromSubtags(languageCode: 'en'), // English
-    const Locale.fromSubtags(languageCode: 'he'), // Hebrew
+    const Locale('en'), // English
+    const Locale('he'), // Hebrew
     const Locale.fromSubtags(languageCode: 'zh'), // Chinese *See Advanced Locales below*
     // ... other locales the app supports
   ],
@@ -128,7 +128,9 @@ supportedLocales: [
 This explicit full definition will ensure your app can distinguish between and provide
 the fully nuanced localized content to all combinations of these country codes. If a
 user's preferred locale is not specified, then the closest match will be used instead,
-which will likely contain differences to what the user expects. See
+which will likely contain differences to what the user expects. Flutter will only resolve
+to locales defined in `supportedLocales`. Flutter provides scriptCode-differentiated
+localized content for commonly used languages. See
 [`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html) for
 how the supported locales and the preferred locales are resolved.
 
