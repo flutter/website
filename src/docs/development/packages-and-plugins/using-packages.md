@@ -282,8 +282,7 @@ class DemoPage extends StatelessWidget {
 }
 ```
 
-1. Run the app. Click **Show Flutter homepage**. You should see the
-   default browser open on the device, displaying the Flutter homepage.
+1. Run the app. The app's background should now be orange.
 
 
 ### Example: Using the URL Launcher package to launch the browser {#url-example}
@@ -300,7 +299,7 @@ To use this plugin:
 
 1. Open `pubspec.yaml`, and add the `url_launcher` dependency:
 
-   ```
+   ```yaml
    dependencies:
      flutter:
        sdk: flutter
