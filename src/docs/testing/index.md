@@ -64,7 +64,7 @@ simpler than a full-blown UI system.
 
 An _integration test_ tests a complete app or a large part of an app. The goal
 of an integration test is to verify that all the widgets and services being
-tested work together other as expected. Furthermore, you can use integration
+tested work together as expected. Furthermore, you can use integration
 tests to verify your app's performance.
 
 Generally, an _integration test_ runs on a real device or an OS emulator, such
