@@ -69,3 +69,8 @@ Learn more at the following links, many of which have been contributed by the Fl
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
 * [Getting started with MobX.dart](https://mobx.pub/getting-started)
+* [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/)
+
+## Provider
+
+* [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/)
