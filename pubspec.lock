@@ -42,7 +42,7 @@ packages:
       name: build_daemon
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.1"
+    version: "0.5.0"
   build_resolvers:
     dependency: transitive
     description:
@@ -56,7 +56,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "1.3.4"
   build_runner_core:
     dependency: transitive
     description:
@@ -144,7 +144,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.6"
+    version: "0.16.0"
   dart_style:
     dependency: transitive
     description:
@@ -200,7 +200,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.4+2"
+    version: "0.14.0+2"
   http:
     dependency: transitive
     description:
@@ -256,7 +256,7 @@ packages:
       name: linkcheck
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.6"
+    version: "2.0.8"
   logging:
     dependency: transitive
     description:
@@ -375,7 +375,7 @@ packages:
       name: stream_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "2.0.0"
   stream_transform:
     dependency: transitive
     description:
@@ -411,13 +411,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
-  utf:
-    dependency: transitive
-    description:
-      name: utf
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.9.0+5"
   vector_math:
     dependency: transitive
     description:
@@ -438,7 +431,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.12"
+    version: "1.0.13"
   yaml:
     dependency: "direct dev"
     description:
@@ -447,4 +440,4 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.3.0-dev.0.1 <3.0.0"
+  dart: ">=2.2.0 <3.0.0"
