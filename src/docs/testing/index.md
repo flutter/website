@@ -2,16 +2,16 @@
 title: Testing Flutter apps
 ---
 
-The more features your app has, the harder it is to test manually. Automated
-tests help ensure that your app performs correctly before you publish it, while
-retaining your feature and bug fix velocity.
+The more features your app has, the harder it is to test manually.
+Automated tests help ensure that your app performs correctly before
+you publish it, while retaining your feature and bug fix velocity.
 
 Automated testing falls into a few categories:
 
-- A [_unit test_](#unit-tests) tests a single function, method, or class. 
-- A [_widget test_](#widget-tests) (in other UI frameworks referred to as _component test_) tests
-  a single widget. 
-- An [_integration test_](#integration-tests)
+* A [_unit test_](#unit-tests) tests a single function, method, or class. 
+* A [_widget test_](#widget-tests) (in other UI frameworks referred to
+  as _component test_) tests a single widget. 
+* An [_integration test_](#integration-tests)
   tests a complete app or a large part of an app.
   
 Generally speaking, a well-tested app has many unit and widget tests, tracked by
@@ -44,17 +44,17 @@ running the test.
 
 ## Widget tests
 
-A _widget test_ (in other UI frameworks referred to as _component test_) tests a
-single widget. The goal of a widget test is to verify that the widget's UI looks
-and interacts as expected. Testing a widget involves multiple classes and
-requires a test environment that provides the appropriate widget lifecycle
-context. 
+A _widget test_ (in other UI frameworks referred to as _component test_)
+tests a single widget. The goal of a widget test is to verify that the
+widget's UI looks and interacts as expected. Testing a widget involves
+multiple classes and requires a test environment that provides the
+appropriate widget lifecycle context.
 
 For example, the Widget being tested should be able to receive and 
 respond to user actions and events, perform layout, and instantiate child 
-widgets. A widget test is therefore more comprehensive than a unit test. However, like a
-unit test, a widget test's environment is replaced with an implementation much
-simpler than a full-blown UI system.
+widgets. A widget test is therefore more comprehensive than a unit test.
+However, like a unit test, a widget test's environment is replaced with
+an implementation much simpler than a full-blown UI system.
 
 ### Recipes
 
