@@ -476,7 +476,7 @@ and debugging in Flutter:
 [Flutter API]: {{site.api}}
 [UIKit]: https://developer.apple.com/documentation/uikit
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Integration testing]: /docs/testing#integration-testing
+[Integration testing]: /docs/testing#integration-tests
 [Architecture notes]: {{site.github}}/flutter/engine/wiki#architecture-notes
 [Widget inspector]: /docs/development/tools/inspector
 [Flutter Inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
