@@ -9,8 +9,8 @@ Please file a request in our
 [issue tracker](https://github.com/flutter/website/issues/new)
 and we'll take a look.
 
-For simple changes (such as to CSS and text), you probably don't need to build this site.
-Often you can make changes using the GitHub UI.
+For simple changes (such as to CSS and text), you probably don't need to
+build this site.  Often you can make changes using the GitHub UI.
 
 If you want/need to build, read on.
 
@@ -46,7 +46,10 @@ submodule-cloning techniques:
   `git submodule update --init --remote`
 
 > NOTE: At any time during development you can use the submodule command to
-> refresh submodules: &nbsp;`git pull; git submodule update --init --remote`
+> refresh submodules:<br>
+> ```
+> git pull; git submodule update --init --remote
+> ```
 
 ### 3. Run installation scripts
 
@@ -73,7 +76,8 @@ if you already have the required packages installed.
 
  1. Create a branch.
  1. Make your changes.
- 1. Test your changes by serving the site locally. Run either **one** of these commands:
+ 1. Test your changes by serving the site locally.
+    Run either **one** of these commands:
     - `./tool/serve.sh` (can also run via `npm run clean`)
 
     or
@@ -83,10 +87,11 @@ if you already have the required packages installed.
       ignore `ERROR: directory is already being watched` messages.
       For details, see [#1363](https://github.com/flutter/website/issues/1363).
       
-      **Note**: The first time you run either one of these commands, jekyll will 
-      take anywhere between 10 - 20 seconds to generate static content inside
-      the `_sites` directory. If you try to verify the site locally but aren't 
-      able to see the content right away, wait 20 seconds before stopping the 
+      **Note**: The first time you run either one of these commands,
+      jekyll takes anywhere between 10 - 20 seconds to generate static
+      content inside the `_sites` directory. If you try to verify the
+      site locally but aren't able to see the content right away,
+      wait 20 seconds before stopping the 
       server or concluding that something is wrong. 
  1. Prior to submitting, validate site links:<br>
     `./tool/shared/check-links.sh`
@@ -108,7 +113,8 @@ if you already have the required packages installed.
 
 ## Deploy to a staging site
 
-You can deploy your local edits to a personal staging site as follows (steps 1 and 2 need to be done only once):
+You can deploy your local edits to a personal staging site as follows
+(steps 1 and 2 need to be done only once):
 
  1. In the [Firebase Console](https://console.firebase.google.com),
     create your own Firebase project (e.g. 'mit-flutter-staging')
@@ -155,102 +161,33 @@ need to manually deploy, use the deploy script and the `default` project:
 
 ## Writing for flutter.dev
 
-(Eventually, this section should be expanded to its own page.)
 
-## Syntax highlighting
+The [site-shared](https://github.com/dart-lang/site-shared) repo
+contains infrastructure shared by most of our Dart and Flutter websites.
+As a result, we've moved some of content of this README to the
+[docs](https://github.com/dart-lang/site-shared/docs)
+directory in the shared repo.
 
-The easiest way to syntax highlight a block of code is to wrap
-it with triple backticks followed by the language.
+For more information on using/writing for this repo,
+refer to the following docs:
 
-Here's an example:
+* [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
+* [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
+* [Examples (and code excerpts)](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
+* [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
 
-```dart
-class ExampleWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-```
+Also check out the site-shared
+[wiki](https://github.com/dart-lang/site-shared/wiki):
 
-## (Deprecated) Advanced stylization of code blocks
-
-Do you want to highlight (make the background yellow)
-code inside a code block? Do you want to strike-through
-code inside a code block? We got that!
-
-For syntax highlighting, plus yellow highlighting
-and strike-through formatting, use the `prettify` tag
-with additional custom inline markup.
-
-If you want to highlight a specific bit of code, use the
-`[[highlight]]highlight this text[[/highlight]]` syntax
-with the `prettify` tag.
-
-For example:
-
-    {% prettify dart %}
-    void main() {
-      print([[highlight]]'Hello World'[[/highlight]]);
-    }
-    {% endprettify %}
-
-If you want to strike-through a specific bit of code, use the
-`[[strike]]highlight this text[[/strike]]` syntax
-with the `prettify` tag.
-
-For example:
-
-    {% prettify dart %}
-    void main() {
-      print([[strike]]'Hello World'[[/strike]]);
-    }
-    {% endprettify %}
-
-The `prettify` plugin will also unindent your code.
-
-If you want to see how this functionality was added to this site, refer to
-[this commit](https://github.com/flutter/website/commit/ea15f52fe47d3a7b6313ac58d07c66f3b29fe74d).
-
-## (Deprecated) Code snippet validation
-
-The code snippets in the markdown documentation are validated as part of the
-build process. Anything within a '\`\`\`dart' code fence will be extracted into
-its own file and checked for analysis issues. Some ways to tweak that:
-
-- If a code snippet should not be analyzed, immediately proceed it with
-  a `<!-- skip -->` comment
-- To include code to be analyzed, but not displayed, add that in a comment
-  immediately proceeding the snippet (e.g., `<!-- someCodeHere(); -->`)
-- A snippet without any import statements will have an import
-  (`'package:flutter/material.dart'`)
-  automatically added to it
-- We ignore special formatting tags like `[[highlight]]`.
+* [Images](https://github.com/dart-lang/site-shared/wiki/Images)
+* [Mobile friendly pages: tips & tricks](https://github.com/dart-lang/site-shared/wiki/Mobile-friendly-pages:-tips-&-tricks)
+* [Writing for Dart and Flutter websites](https://github.com/dart-lang/site-shared/wiki/Writing-for-Dart-and-Flutter-websites)
 
 [Flutter]: https://flutter.dev
-
-## (Deprecated) Updating the Sample Catalog
-
-The sample catalog's markdown files are generated by running [sample_page.dart](https://github.com/flutter/flutter/blob/master/examples/catalog/bin/sample_page.dart) from the Flutter github repo. Starting from the root of the Flutter repo:
-```
-cd examples/catalog
-dart bin/sample_page.dart '<commit hashcode here>'
-cp examples/catalog/.generated/*.md <your website repo>/catalog/samples
-```
-
-The generated markdown files will contain cloud storage links for sample app screenshots. Screenshots for each sample app are automatically generated for each Flutter repo commit. Choose a recent commit hashcode and confirm that the screenshots look OK.
-
-If new sample apps have been added, update `_data/catalog/widget.json`. The entry for each widget class that's featured in a sample app should contain `"sample"` line like:
-```
-"sample": "ListView_index",
-```
-
-The `sample_page.dart` app will print a list of all of the `"sample"` properties that should appear in the `widget.json` file.
-
 [Build Status]: https://travis-ci.org/flutter/website.svg?branch=master
 [Cloning a repository]: https://help.github.com/articles/cloning-a-repository
 [Dart install]: https://dart.dev/get-dart
-[Flutter install]: /get-started/install
+[Flutter install]: /docs/get-started/install
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/master/src/_assets/image/flutter/icon/64.png?raw=1
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
