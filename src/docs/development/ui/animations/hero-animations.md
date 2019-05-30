@@ -671,4 +671,4 @@ The following resources might help when writing animations:
 : Describes motion for Material design apps.
 
 [MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
-[Radial transformation]: {{site.material}}/guidelines/motion/transforming-material.html#transforming-material-radial-transformation
+[Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
