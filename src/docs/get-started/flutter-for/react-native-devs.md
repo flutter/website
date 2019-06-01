@@ -219,6 +219,9 @@ class Example {
       });
   };
 }
+
+const example = new Example();
+example._getIPAddress();
 ```
 
 <!-- skip -->
@@ -232,6 +235,9 @@ class Example {
     }).catchError((error) => print(error));
   }
 }
+
+final example = new Example();
+example._getIPAddress();
 ```
 
 Try it out in
@@ -258,6 +264,9 @@ class Example {
     console.log(ip);
   }
 }
+
+const example = new Example();
+example._getIPAddress();
 ```
 
 In Dart, an `async` function returns a `Future`, and the body of the function is
@@ -275,6 +284,9 @@ class Example {
     print(ip);
   }
 }
+
+final example = new Example();
+example._getIPAddress();
 ```
 
 Try it out in
