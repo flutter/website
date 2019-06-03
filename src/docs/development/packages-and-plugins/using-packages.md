@@ -46,7 +46,7 @@ To add the package, `css_colors`, to an app:
 1. Install it
    * From the terminal: Run `flutter pub get`.<br/>
    **OR**
-   * From Android Studio/IntelliJ: Click **Packages Get** in the action
+   * From Android Studio/IntelliJ: Click **Packages get** in the action
      ribbon at the top of `pubspec.yaml`.
    * From VS Code: Click **Get Packages** located in right side of the action
      ribbon at the top of `pubspec.yaml`.
@@ -171,7 +171,7 @@ guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Updating package dependencies
 
-When running `flutter pub get` (**Packages Get** in IntelliJ)
+When running `flutter pub get` (**Packages get** in IntelliJ)
 for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
 [lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
@@ -258,41 +258,41 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
-```dart
-import 'package:css_colors/css_colors.dart';
-import 'package:flutter/material.dart';
+    ```dart
+    import 'package:css_colors/css_colors.dart';
+    import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+    void main() {
+      runApp(MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DemoPage(),
-    );
-  }
-}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: DemoPage(),
+        );
+      }
+    }
 
-class DemoPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(body: Container(color: CSSColors.orange));
-  }
-}
-```
+    class DemoPage extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(body: Container(color: CSSColors.orange));
+      }
+    }
+    ```
 
 1. Run the app. The app's background should now be orange.
 
 
-### Example: Using the URL Launcher package to launch the browser {#url-example}
+### Example: Using the url_launcher package to launch the browser {#url-example}
 
-The [URL Launcher]({{site.pub-pkg}}/url_launcher) plugin
+The [url_launcher]({{site.pub-pkg}}/url_launcher) plugin
 package enables opening the default browser on the mobile platform to
 display a given URL, and is supported on both Android and iOS.
-It demonstrates how packages might also contain
-platform-specific code&mdash;these packages are often called _plugins_.
+The package demonstrates that packages can contain
+platform-specific code&mdash;these are often called _plugins_.
 
 To use this plugin:
 
@@ -310,43 +310,44 @@ To use this plugin:
 1. Run `flutter pub get` in the terminal, or click **Packages get** in
    IntelliJ.
 
-1. Open `lib/main.dart` and replace its full contents with:
+1. Open `lib/main.dart` and replace its full contents with the
+   following:
 
-```dart
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+    ```dart
+    import 'package:flutter/material.dart';
+    import 'package:url_launcher/url_launcher.dart';
 
-void main() {
-  runApp(MyApp());
-}
+    void main() {
+      runApp(MyApp());
+    }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DemoPage(),
-    );
-  }
-}
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: DemoPage(),
+        );
+      }
+    }
 
-class DemoPage extends StatelessWidget {
-  launchURL() {
-    launch('https://flutter.dev');
-  }
+    class DemoPage extends StatelessWidget {
+      launchURL() {
+        launch('https://flutter.dev');
+      }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: launchURL,
-          child: Text('Show Flutter homepage'),
-        ),
-      ),
-    );
-  }
-}
-```
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: Center(
+            child: RaisedButton(
+              onPressed: launchURL,
+              child: Text('Show Flutter homepage'),
+            ),
+          ),
+        );
+      }
+    }
+    ```
 
 1. Run the app (or stop and restart it, if it was already running
    before adding the plugin). Click **Show Flutter homepage**.
