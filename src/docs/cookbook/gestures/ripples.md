@@ -1,29 +1,31 @@
 ---
-title: Adding Material Touch Ripples
+title: Adding Material touch ripples
 prev:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handling Taps
+  title: Handling taps
   path: /docs/cookbook/gestures/handling-taps
 ---
 
-While designing an app that should follow the Material Design Guidelines, we'll
-want to add the ripple animation to Widgets when tapped.
+When designing an app that follows the Material Design Guidelines,
+you'll want to add the ripple animation to widgets when tapped.
 
-Flutter provides the [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
-Widget to achieve this effect.
+Flutter provides the
+[`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
+widget to achieve this effect.
 
 ## Directions
 
-  1. Create a Widget we want to tap
-  2. Wrap it in an `InkWell` Widget to manage tap callbacks and ripple animations
+  1. Create a widget that supports tap
+  2. Wrap it in an `InkWell` widget to manage tap callbacks and
+     ripple animations
 
 <!-- skip -->
 ```dart
-// The InkWell Wraps our custom flat button Widget
+// The InkWell wraps the custom flat button widget.
 InkWell(
-  // When the user taps the button, show a snackbar
+  // When the user taps the button, show a snackbar.
   onTap: () {
     Scaffold.of(context).showSnackBar(SnackBar(
       content: Text('Tap'),
@@ -74,9 +76,9 @@ class MyHomePage extends StatelessWidget {
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // The InkWell Wraps our custom flat button Widget
+    // The InkWell wraps the custom flat button widget.
     return InkWell(
-      // When the user taps the button, show a snackbar
+      // When the user taps the button, show a snackbar.
       onTap: () {
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text('Tap'),

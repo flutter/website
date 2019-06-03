@@ -8,13 +8,13 @@ next:
   path: /docs/cookbook/navigation/passing-data
 ---
 
-In some cases, we might want to return data from a new screen. For example, say
-we push a new screen that presents two options to a user. When the user taps on
-an option, we'll want to inform our first screen of the user's selection so it
-can act on that information!
+In some cases, you might want to return data from a new screen.
+For example, say you push a new screen that presents two options to a user.
+When the user taps an option, you want to inform the first screen
+of the user's selection so it can act on that information.
 
-How can we achieve this? Using
-[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)!
+How to achieve this? By using
+[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html).
 
 ## Directions
 
@@ -26,8 +26,8 @@ How can we achieve this? Using
 
 ## 1. Define the home screen
 
-The home screen will display a button. When tapped, it will launch the selection
-screen!
+The home screen displays a button. When tapped, it launches the selection
+screen.
 
 <!-- skip -->
 ```dart
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Returning Data Demo'),
       ),
-      // We'll create the SelectionButton Widget in the next step
+      // Create the SelectionButton widget in the next step.
       body: Center(child: SelectionButton()),
     );
   }
@@ -47,10 +47,10 @@ class HomeScreen extends StatelessWidget {
 
 ## 2. Add a button that launches the selection screen
 
-Now, we'll create our SelectionButton. Our selection button will:
+Now, create the SelectionButton. The selection button:
 
-  1. Launch the SelectionScreen when it's tapped
-  2. Wait for the SelectionScreen to return a result
+  1. Launches the SelectionScreen when it's tapped
+  2. Waits for the SelectionScreen to return a result
 
 <!-- skip -->
 ```dart
@@ -68,11 +68,11 @@ class SelectionButton extends StatelessWidget {
   // A method that launches the SelectionScreen and awaits the result from
   // Navigator.pop
   _navigateAndDisplaySelection(BuildContext context) async {
-    // Navigator.push returns a Future that will complete after we call
-    // Navigator.pop on the Selection Screen!
+    // Navigator.push returns a Future that completes after calling
+    // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      // We'll create the SelectionScreen in the next step!
+      // Create the SelectionScreen in the next step.
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
   }
@@ -81,11 +81,11 @@ class SelectionButton extends StatelessWidget {
 
 ## 3. Show the selection screen with two buttons
 
-Now, we'll need to build a selection screen! It will contain two buttons. When
-a user taps on a button, it should close the selection screen and let the home
-screen know which button was tapped!
+Now, build a selection screen. It contains two buttons. When
+a user taps a button, it closes the selection screen and lets the home
+screen know which button was tapped.
 
-For now, we'll define the UI, and figure out how to return data in the next
+For now, define the UI, and figure out how to return data in the next
 step.
 
 ```dart
@@ -128,13 +128,13 @@ class SelectionScreen extends StatelessWidget {
 
 ## 4. When a button is tapped, close the selection screen
 
-Now, we'll want to update the `onPressed` callback for both of our buttons! In
-order to return data to the first screen, we'll need to use the
-[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)
+Now, update the `onPressed()` callback for both of our buttons. In
+order to return data to the first screen, use the
+[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 method.
 
-`Navigator.pop` accepts an optional second argument called `result`. If we
-provide a result, it will be returned to the `Future` in our SelectionButton!
+`Navigator.pop()` accepts an optional second argument called `result`.
+If providing a result, it's returned to the `Future` in the SelectionButton.
 
 ### Yep button
 
@@ -142,7 +142,7 @@ provide a result, it will be returned to the `Future` in our SelectionButton!
 ```dart
 RaisedButton(
   onPressed: () {
-    // Our Yep button will return "Yep!" as the result
+    // The Yep button returns "Yep!" as the result.
     Navigator.pop(context, 'Yep!');
   },
   child: Text('Yep!'),
@@ -155,7 +155,7 @@ RaisedButton(
 ```dart
 RaisedButton(
   onPressed: () {
-    // Our Nope button will return "Nope!" as the result
+    // The Nope button returns "Nope!" as the result.
     Navigator.pop(context, 'Nope!');
   },
   child: Text('Nope!'),
@@ -164,11 +164,11 @@ RaisedButton(
 
 ## 5. Show a snackbar on the home screen with the selection
 
-Now that we're launching a selection screen and awaiting the result, we'll want
-to do something with the information that's returned!
+Now that you're launching a selection screen and awaiting the result,
+you'll want to do something with the information that's returned.
 
-In this case, we'll show a Snackbar displaying the result. To do so, we'll
-update the `_navigateAndDisplaySelection` method in our `SelectionButton`.
+In this case, show a Snackbar displaying the result. To do so,
+update the `_navigateAndDisplaySelection()` method in `SelectionButton`.
 
 <!-- skip -->
 ```dart
@@ -179,7 +179,7 @@ _navigateAndDisplaySelection(BuildContext context) async {
   );
 
   // After the Selection Screen returns a result, hide any previous snackbars
-  // and show the new result!
+  // and show the new result.
   Scaffold.of(context)
     ..removeCurrentSnackBar()
     ..showSnackBar(SnackBar(content: Text("$result")));
@@ -222,17 +222,17 @@ class SelectionButton extends StatelessWidget {
   }
 
   // A method that launches the SelectionScreen and awaits the result from
-  // Navigator.pop!
+  // Navigator.pop.
   _navigateAndDisplaySelection(BuildContext context) async {
-    // Navigator.push returns a Future that will complete after we call
-    // Navigator.pop on the Selection Screen!
+    // Navigator.push returns a Future that completes after calling
+    // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
     // After the Selection Screen returns a result, hide any previous snackbars
-    // and show the new result!
+    // and show the new result.
     Scaffold.of(context)
       ..removeCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text("$result")));
@@ -254,7 +254,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
                 onPressed: () {
-                  // Close the screen and return "Yep!" as the result
+                  // Close the screen and return "Yep!" as the result.
                   Navigator.pop(context, 'Yep!');
                 },
                 child: Text('Yep!'),
@@ -264,7 +264,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
                 onPressed: () {
-                  // Close the screen and return "Nope!" as the result
+                  // Close the screen and return "Nope!" as the result.
                   Navigator.pop(context, 'Nope.');
                 },
                 child: Text('Nope.'),

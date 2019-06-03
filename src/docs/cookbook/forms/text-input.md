@@ -4,13 +4,14 @@ prev:
   title: Building a form with validation
   path: /docs/cookbook/forms/validation
 next:
-  title: Focus on a Text Field
+  title: Focus on a text field
   path: /docs/cookbook/forms/focus
 ---
 
-Text fields allow users to type text into our apps. Text fields can be used to
-build forms, messaging apps, search experiences, and more! In this recipe,
-we'll explore how to create and style text fields.
+Text fields allow users to type text into an app.
+Text fields are used to build forms,
+send messages, create search experiences, and more.
+In this recipe, explore how to create and style text fields.
 
 Flutter provides two text fields out of the box:
 [`TextField`]({{site.api}}/flutter/material/TextField-class.html)
@@ -21,20 +22,19 @@ and [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 [`TextField`]({{site.api}}/flutter/material/TextField-class.html)
 is the most commonly used text input widget.
 
-By default, a `TextField` is decorated with an underline. We can add a label,
-an icon, inline hint text, and error text by supplying an
+By default, a `TextField` is decorated with an underline.
+You can add a label, icon, inline hint text, and error text by supplying an
 [`InputDecoration`]({{site.api}}/flutter/material/InputDecoration-class.html)
 as the [`decoration`]({{site.api}}/flutter/material/TextField/decoration.html)
 property of the `TextField`. To remove the decoration entirely (including the
-underline and the space reserved for the label), set the `decoration` to null
-explicitly.
+underline and the space reserved for the label), set the `decoration` to null.
 
 <!-- skip -->
 ```dart
 TextField(
   decoration: InputDecoration(
     border: InputBorder.none,
-    hintText: 'Please enter a search term'
+    hintText: 'Enter a search term'
   ),
 );
 ```
@@ -57,5 +57,5 @@ TextFormField(
 );
 ```
 
-For more information on input validation, please see the
+For more information on input validation, see the
 [Building a form with validation](/docs/cookbook/forms/validation/) recipe.

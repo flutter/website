@@ -169,7 +169,7 @@ on every commit.
 
 ### Does Flutter come with a dependency injection framework or solution?
 
-Not at this time. Please share your ideas at
+Not at this time. Share your ideas at
 [{{site.email}}](mailto:{{site.email}}).
 
 ## Technology
@@ -184,28 +184,31 @@ for a better picture of the main components.
 ### How does Flutter run my code on Android? {#run-android}
 
 The engine's C and C++ code are compiled with Android's NDK. The Dart code
-(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM and x86
-libraries. Those libraries are included in a "runner" Android project, and the whole
-thing is built into an APK. When launched, the app loads the Flutter library.
-Any rendering, input or event handling, and so on, are delegated to the compiled
-Flutter and app code. This is similar to the way many game engines work.
+(both the SDK's and yours) are ahead-of-time (AOT) compiled into a native,
+ARM and x86 libraries. Those libraries are included in a "runner" Android
+project, and the whole thing is built into an APK. When launched,
+the app loads the Flutter library.
+Any rendering, input or event handling, and so on, is delegated to the
+compiled Flutter and app code. This is similar to the way many game engines
+work.
 
-Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
-banner they show to remind people that they're slightly slower) in order to
-enable stateful hot reload.
+Debug mode builds use a virtual machine (VM) to run Dart code
+(hence the "debug" banner they show to remind people that they're
+slightly slower) in order to enable stateful hot reload.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
 The engine's C and C++ code are compiled with LLVM. The Dart code (both the
 SDK's and yours) are ahead-of-time (AOT) compiled into a native, ARM library.
-That library is included in a "runner" iOS project, and the whole thing is built
-into an `.ipa`. When launched, the app loads the Flutter library. Any rendering,
-input or event handling, and so on, are delegated to the compiled Flutter and
-app code. This is similar to the way many game engines work.
+That library is included in a "runner" iOS project, and the whole thing is
+built into an `.ipa`. When launched, the app loads the Flutter library.
+Any rendering, input or event handling, and so on, are delegated to the
+compiled Flutter and app code. This is similar to the way many game engines
+work.
 
-Debug mode builds use a virtual machine (VM) to run Dart code (hence the "debug"
-banner they show to remind people that they're slightly slower) in order to
-enable stateful hot reload.
+Debug mode builds use a virtual machine (VM) to run Dart code (hence the
+"debug" banner they show to remind people that they're slightly slower)
+in order to enable stateful hot reload.
 
 ### Does Flutter use my system's OEM widgets?
 
@@ -215,7 +218,7 @@ managed and rendered by Flutter's framework and engine.
 You can browse a
 [catalog of Flutter's widgets](/docs/development/ui/widgets).
 
-We are hoping the end-result will be higher quality apps. If we reused
+We hope that the end-result is higher quality apps. If we reused
 the OEM widgets, the quality and performance of Flutter apps would be
 limited by the quality of those widgets.
 
@@ -244,7 +247,7 @@ help lower app development and maintenance costs.
 
 The Flutter team watches the adoption and demand for new mobile
 widgets from iOS and Android, and aims to work with the community
-to build support for new widgets. This work may come in the form
+to build support for new widgets. This work might come in the form
 of lower-level framework features, new composable widgets, or new
 widget implementations.
 
@@ -294,8 +297,8 @@ important for Flutter’s workload.
 Dart scores highly for us on the following primary criteria:
 
 * _Developer productivity_. One of Flutter's main value propositions is that it
-  saves engineering resources by letting developers create apps for both iOS and
-  Android with the same codebase. Using a highly productive language
+  saves engineering resources by letting developers create apps for both
+  iOS and Android with the same codebase. Using a highly productive language
   accelerates developers further and makes Flutter more attractive.
   This was very important to both our framework team as well as our developers.
   The majority of Flutter is built in the same language we give to our users, so
@@ -325,8 +328,8 @@ Dart scores highly for us on the following primary criteria:
 
 ### Can Flutter run any Dart code?
 
-Flutter should be able to run most Dart code that does not import (transitively,
-or directly) dart:mirrors or dart:html.
+Flutter should be able to run most Dart code that does not import
+(transitively, or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
@@ -513,7 +516,7 @@ across mobile platforms.
 Yes, Flutter supports calling into the platform, including integrating with
 Java or Kotlin code on Android, and ObjectiveC or Swift code on iOS.
 This is enabled via a flexible message passing style where a Flutter app
-may send and receive messages to the mobile platform using a
+might send and receive messages to the mobile platform using a
 [`BasicMessageChannel`]({{site.api}}/flutter/services/BasicMessageChannel-class.html).
 
 Learn more about accessing platform and third-party services in Flutter with
@@ -529,7 +532,7 @@ iOS and Android.
 Not at this time. Because Flutter apps are pre-compiled for production,
 and binary size is always a concern with mobile apps, we disabled
 dart:mirrors. We are curious what you might need reflection/mirrors
-for&mdash;please let us know at [{{site.email}}](mailto:{{site.email}}).
+for&mdash;let us know at [{{site.email}}](mailto:{{site.email}}).
 
 ### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
@@ -784,11 +787,11 @@ lay out an entire scene with a single pass.
 
 ### Where can I get support?
 
-If you think you've encountered a bug, please file it in our
-[issue tracker]({{site.github}}/flutter/flutter/issues). We
-encourage you to use
+If you think you've encountered a bug, file it in our
+[issue tracker]({{site.github}}/flutter/flutter/issues).
+You might also use
 [Stack Overflow]({{site.so}}/tags/flutter) for "HOWTO" type questions.
-For discussions, please join our mailing list at
+For discussions, join our mailing list at
 [{{site.email}}](mailto:{{site.email}}).
 
 ### How do I get involved?
@@ -824,7 +827,8 @@ file](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_e
 The framework is entirely self-contained and requires [only one
 license]({{site.github}}/flutter/flutter/blob/master/LICENSE).
 
-In addition, any Dart packages you use may have their own license requirements.
+In addition, any Dart packages you use might have their own license
+requirements.
 
 ### How can I determine the licenses my Flutter application needs to show?
 

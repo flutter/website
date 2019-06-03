@@ -2091,9 +2091,9 @@ void _submit() {
 ## Platform-specific code
 
 When building a cross-platform app, you want to re-use as much code as
-possible across platforms. However, scenarios may arise where it makes sense for
-the code to be different depending on the OS. This requires a separate
-implementation by declaring a specific platform.
+possible across platforms. However, scenarios might arise where it
+makes sense for the code to be different depending on the OS.
+This requires a separate implementation by declaring a specific platform.
 
 In React Native, the following implementation would be used:
 

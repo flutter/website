@@ -37,5 +37,5 @@ The declarative style of UI programming has many benefits. Remarkably, there is
 only one code path for any state of the UI. You describe what the UI should look 
 like for any given state, once — and that is it.
 
-At first, this style of programming may not seem as intuitive as the imperative 
-style. This is why this section is here. Read on.
+At first, this style of programming might not seem as intuitive as the
+imperative style. This is why this section is here. Read on.

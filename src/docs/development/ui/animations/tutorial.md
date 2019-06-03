@@ -63,7 +63,7 @@ animation types is `Animation<double>`.
 
 An `Animation` object sequentially generates
 interpolated numbers between two values over a certain duration.
-The output of an `Animation` object may be linear, a curve, a step function,
+The output of an `Animation` object might be linear, a curve, a step function,
 or any other mapping you can devise. Depending on how the `Animation` object
 is controlled, it could run in reverse, or even switch directions in the
 middle.
@@ -359,7 +359,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
 <aside class="alert alert-success" markdown="1">
   **Dart language tricks:**
-  You may not be familiar with Dart's cascade notation&mdash;the two
+  You might not be familiar with Dart's cascade notation&mdash;the two
   dots in `..addListener()`. This syntax means that the `addListener()`
   method is called with the return value from `animate()`.
   Consider the following example:

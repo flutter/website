@@ -4,7 +4,7 @@ prev:
   title: Working with long lists
   path: /docs/cookbook/lists/long-lists
 next:
-  title: Animating a Widget across screens
+  title: Animating a widget across screens
   path: /docs/cookbook/navigation/hero-animations
 ---
 
@@ -23,7 +23,7 @@ The error tracking service aggregates all of the crashes your users
 experience and groups them together. This allows you to know how often your
 app fails and where the users run into trouble.
 
-In this recipe, you'll see how to report errors to the
+In this recipe, learn how to report errors to the
 [Sentry](https://sentry.io/welcome/) crash reporting service.
 
 ## Directions
@@ -37,7 +37,7 @@ In this recipe, you'll see how to report errors to the
 
 ## 1. Get a DSN from Sentry
 
-Before reporting errors to Sentry, you'll need a "DSN" to uniquely identify
+Before reporting errors to Sentry, you need a "DSN" to uniquely identify
 your app with the Sentry.io service.
 
 To get a DSN, use the following steps:
@@ -61,7 +61,7 @@ dependencies:
 
 ## 3. Create a `SentryClient`
 
-Create a `SentryClient`. You'll use the `SentryClient` to send
+Create a `SentryClient`. Use the `SentryClient` to send
 error reports to the sentry service.
 
 <!-- skip -->
@@ -78,7 +78,7 @@ lets you know whether you're in debug or production mode.
 <!-- skip -->
 ```dart
 bool get isInDebugMode {
-  // Assume you're in production mode
+  // Assume you're in production mode.
   bool inDebugMode = false;
 
   // Assert expressions are only evaluated during development. They are ignored
@@ -96,14 +96,14 @@ errors when the app is in production mode.
 <!-- skip -->
 ```dart
 Future<void> _reportError(dynamic error, dynamic stackTrace) async {
-  // Print the exception to the console
+  // Print the exception to the console.
   print('Caught error: $error');
   if (isInDebugMode) {
-    // Print the full stacktrace in debug mode
+    // Print the full stacktrace in debug mode.
     print(stackTrace);
     return;
   } else {
-    // Send the Exception and Stacktrace to Sentry in Production mode
+    // Send the Exception and Stacktrace to Sentry in Production mode.
     _sentry.captureException(
       exception: error,
       stackTrace: stackTrace,
@@ -120,11 +120,11 @@ you need a way to capture Dart errors.
 For this task, run your app inside a custom
 [`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html). Zones
 establish an execution context for the code. This provides a convenient way to
-capture all errors that occur within that context by providing an `onError`
+capture all errors that occur within that context by providing an `onError()`
 function.
 
-In this case, you'll run the app in a new `Zone` and capture all errors by
-providing an `onError` callback.
+In this case, run the app in a new `Zone` and capture all errors by
+providing an `onError()` callback.
 
 <!-- skip -->
 ```dart
@@ -140,7 +140,7 @@ runZoned<Future<void>>(() async {
 ## 6. Catch and report Flutter errors
 
 In addition to Dart errors, Flutter can throw additional errors, such as
-platform exceptions that occur when calling native code. You need to be sure to
+platform exceptions that occur when calling native code. Be sure to
 capture and report these types of errors as well.
 
 To capture Flutter errors, override the

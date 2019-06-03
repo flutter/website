@@ -1436,8 +1436,9 @@ content exceeds the its viewable space.
   );
 {% endprettify %}
 
-You may have used a `Grid` in Xamarin.Forms to implement widgets that overlay other widgets.
-In Flutter, you accomplish this with the `Stack` widget.
+You might have used a `Grid` in Xamarin.Forms to implement widgets
+that overlay other widgets.
+In Flutter, you accomplish this with the `Stack` widget
 
 This sample creates two icons that overlap each other.
 
@@ -1501,9 +1502,10 @@ android:configChanges="orientation|screenSize"
 
 ### How do I add GestureRecognizers to a widget in Flutter?
 
-In Xamarin.Forms, `Element`s may contain a Click event you can attach to. Many elements
-also contain a `Command` that is tied to this event. Alternatively you would use the
-`TapGestureRecognizer`. In Flutter there are two very similar ways:
+In Xamarin.Forms, `Element`s might contain a Click event you can attach to.
+Many elements also contain a `Command` that is tied to this event.
+Alternatively you would use the `TapGestureRecognizer`.
+In Flutter there are two very similar ways:
 
  1. If the Widget supports event detection, pass a function to it and handle it
     in the function. For example, the RaisedButton has an `onPressed` parameter:
@@ -1695,8 +1697,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ### How do I know which list item is clicked on?
 
 In Xamarin.Forms, the ListView has a method to find out which item was clicked
-`ItemTapped`. There are many other techniques you may have used such as checking
-when `SelectedItem` or adding an `EventToCommand` behavior changes.
+`ItemTapped`. There are many other techniques you might have used such
+as checking when `SelectedItem` or adding an `EventToCommand` behavior changes.
 
 In Flutter, use the touch handling provided by the passed-in widgets.
 
@@ -1925,7 +1927,7 @@ that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
-For more information, please visit
+For more information, visit
 [Write your first Flutter app,
 part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,

@@ -8,8 +8,8 @@ next:
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
-Fetching data from the internet is necessary for most apps. Luckily, Dart and
-Flutter provide tools for this type of work.
+Fetching data from the internet is necessary for most apps.
+Luckily, Dart and Flutter provide tools for this type of work.
 
 ## Directions
 
@@ -23,7 +23,7 @@ Flutter provide tools for this type of work.
 The [`http`]({{site.pub-pkg}}/http) package provides the
 simplest way to fetch data from the internet.
 
-To install the `http` package, you must add it to the dependencies section
+To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can [find the latest version of the http package on
 the Pub site]({{site.pub}}/packages/http#-installing-tab-).
 
@@ -34,7 +34,7 @@ dependencies:
 
 ## 2. Make a network request
 
-In this example, you'll fetch a sample post from the
+In this example, fetch a sample post from the
 [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the
 [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
@@ -49,8 +49,8 @@ The `http.get()` method returns a `Future` that contains a `Response`.
 
   * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
     a core Dart class for working with async operations.
-    It is used to represent a potential value or error that will
-    be available at some time in the future.
+    It is used to represent a potential value or error that is
+    available at some time in the future.
   * The `http.Response` class contains the data received from a successful
     http call.
 
@@ -63,11 +63,11 @@ convert the `http.Response` into a Dart object.
 ### Create a `Post` class
 
 First, create a `Post` class that contains the data from the
-network request. It will include a factory constructor that 
+network request. It includes` a factory constructor that 
 creates a `Post` from json.
 
 Converting JSON by hand is only one option. For more information,
-please see the full article on [JSON and
+see the full article on [JSON and
 serialization](/docs/development/data-and-backend/json).
 
 <!-- skip -->
@@ -93,14 +93,14 @@ class Post {
 
 ### Convert the `http.Response` to a `Post`
 
-Now, update the `fetchPost` function to return a `Future<Post>`. To do so,
-you'll need to:
+Now, update the `fetchPost()` function to return a `Future<Post>`.
+To do so, you need to:
 
   1. Convert the response body into a json `Map` with the `dart:convert`
      package.
   2. If the server returns an "OK" response with a status code of 200, convert
-     the json `Map` into a `Post` using the `fromJson` factory method.
-  3. If the server returns an unexpected response, throw an error
+     the json `Map` into a `Post` using the `fromJson()` factory method.
+  3. If the server returns an unexpected response, throw an error.
 
 <!-- skip -->
 ```dart
@@ -109,7 +109,7 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON
+    // If server returns an OK response, parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that response was not OK, throw an error.
@@ -118,14 +118,14 @@ Future<Post> fetchPost() async {
 }
 ```
 
-Hooray! Now you've got a function that we can call to fetch a Post from the
+Hooray! Now you've got a function that fetches a Post from the
 internet.
 
-## 4. Fetch and Display the data
+## 4. Fetch and display the data
 
-In order to fetch the data and display it on screen, you can use the
+To fetch the data and display it on screen, use the
 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-widget. The `FutureBuilder` Widget comes with Flutter and makes it easy
+widget. The `FutureBuilder` widget comes with Flutter and makes it easy
 to work with async data sources.
 
 You must provide two parameters:
@@ -146,7 +146,7 @@ FutureBuilder<Post>(
       return Text("${snapshot.error}");
     }
 
-    // By default, show a loading spinner
+    // By default, show a loading spinner.
     return CircularProgressIndicator();
   },
 );
@@ -158,11 +158,11 @@ Although it's convenient, it's not recommended to put a call to an API in a
 `build()` method.
 
 Flutter calls the `build()` method every time it wants to change anything
-in the view, and this happens surprisingly often.  If you leave the fetch
+in the view, and this happens surprisingly often. If you leave the fetch
 call in your `build()` method, you'll flood the API with unnecessary calls
 and slow down your app.
 
-Here are some better options so it'll only hit the API when the page is
+Here are some better options so it only hits the API when the page is
 initially loaded.
 
 ### Pass it into a `StatelessWidget`
@@ -182,15 +182,15 @@ You can see a working example of this in the complete example below.
 
 ### Call it in the lifecycle of a `StatefulWidget`'s state
 
-If your widget is stateful, you can call the fetch method in either the
-[`initState`]({{site.api}}/flutter/widgets/State/initState.html) or
-[`didChangeDependencies`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+If your widget is stateful, call the fetch method in either the
+[`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
+[`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
 methods.
 
-`initState` is called exactly once and then never again.
+The `initState` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
-changing, put the call into the `didChangeDependencies` method.  See
+changing, put the call into the `didChangeDependencies()` method.  See
 [`State`]({{site.api}}/flutter/widgets/State-class.html) for more
 details.
 
@@ -209,7 +209,7 @@ class _MyAppState extends State<MyApp> {
 ## Testing
 
 For information on how to test this functionality,
-please see the following recipes:
+see the following recipes:
 
   * [Introduction to unit testing](/docs/cookbook/testing/unit/introduction)
   * [Mock dependencies using Mockito](/docs/cookbook/testing/unit/mocking)
@@ -228,7 +228,7 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON
+    // If the call to the server was successful, parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that call was not successful, throw an error.
@@ -282,7 +282,7 @@ class MyApp extends StatelessWidget {
                 return Text("${snapshot.error}");
               }
 
-              // By default, show a loading spinner
+              // By default, show a loading spinner.
               return CircularProgressIndicator();
             },
           ),

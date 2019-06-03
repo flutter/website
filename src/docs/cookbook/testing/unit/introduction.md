@@ -16,7 +16,7 @@ Unit tests are handy for verifying the behavior of a single function,
 method, or class. The [`test`]({{site.pub-pkg}}/test) package provides the
 core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
-package provides additional utilities for testing Widgets.
+package provides additional utilities for testing widgets.
 
 This recipe demonstrates the core features provided by the `test` package.
 For more information about the test package, see the
@@ -34,10 +34,10 @@ documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
 
 ## 1. Add the test dependency
 
-If you're working on a Dart package that does not depend on Flutter, you
-can import the `test` package. The test package provides the core functionality
-for writing tests in Dart. This is the best approach when writing packages that
-will be consumed by web, server, and Flutter apps.
+If you're working on a Dart package that does not depend on Flutter,
+you can import the `test` package. The test package provides the core
+functionality for writing tests in Dart. This is the best approach when
+writing packages consumed by web, server, and Flutter apps.
 
 ```yaml
 dev_dependencies:
@@ -48,8 +48,8 @@ dev_dependencies:
 
 In this example, create two files: `counter.dart` and `counter_test.dart`.
 
-The `counter.dart` file will contain a class that you want to test and
-resides in the `lib` folder. The `counter_test.dart` file will contain
+The `counter.dart` file contains a class that you want to test and
+resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
 In general, test files should reside inside a `test` folder located at the root
@@ -68,8 +68,8 @@ counter_app/
 ## 3. Create a class to test
 
 Next, you need a "unit" to test. Remember: "unit" is a fancy name for a
-function, method, or class. In this example, create a `Counter` class
-inside the `lib/counter.dart` file. It will be responsible for incrementing
+function, method, or class. For this example, create a `Counter` class
+inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.
 
 <!-- skip -->

@@ -74,7 +74,7 @@ The **5: Debug** button toggles display of the debug pane.
 
 ### Flutter inspector
 
-There are two other features provided by the Flutter plugin that you may
+There are two other features provided by the Flutter plugin that you might
 find useful.  The Flutter inspector is a tool for visualizing and exploring
 the Flutter widget tree and helps you:
 
@@ -89,7 +89,7 @@ right of the Android Studio window.
 ### Flutter outline
 
 The Flutter Outline displays the build method in visual form.
-Note that this may be different than the widget tree for the
+Note that this might be different than the widget tree for the
 build method. Toggle display of the outline using the vertical
 button to the right of the AS window.
 

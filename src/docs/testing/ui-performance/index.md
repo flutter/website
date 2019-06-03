@@ -286,7 +286,7 @@ but expensive to render on the GPU thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
 In this case, you’ll need to figure out what your code is doing that is causing
 rendering code to be slow. Specific kinds of workloads are more difficult for
-the GPU.  They may involve unnecessary calls to [`saveLayer`][],
+the GPU.  They might involve unnecessary calls to [`saveLayer`][],
 intersecting opacities with multiple objects, and clips or shadows in specific
 situations.
 
@@ -303,15 +303,15 @@ If it's the whole animation, is clipping causing the slow down?
 Maybe there's an alternative way of drawing the scene that doesn't
 use clipping. For example, overlay opaque corners onto a square
 instead of clipping to a rounded rectangle.
-If it's a static scene that's being faded, rotated, or otherwise manipluated,
-maybe a [RepaintBoundary][] can help.
+If it's a static scene that's being faded, rotated, or otherwise manipulated,
+a [RepaintBoundary][] might help.
 
 #### Checking for offscreen layers
 
 The [`saveLayer`][] method is one of the most expensive methods in
 the Flutter framework.  It’s useful when applying post-processing to the scene,
 but it can slow your app and should be avoided if you don’t need it.
-Even if you don’t call `saveLayer` explicitly, implicit calls may happen
+Even if you don’t call `saveLayer` explicitly, implicit calls might happen
 on your behalf. You can check whether your scene is using `saveLayer` with the
 [PerformanceOverlayLayer.checkerboardOffscreenLayers][] switch.
 
@@ -372,7 +372,7 @@ flickering, which would indicate that the cached image is being re-cached.
 In most cases, you want to see checkerboards on static images,
 but not on non-static images.  If a static image isn't cached,
 you can cache it by placing it into a [RepaintBoundary][]
-widget. Though the engine may still ignore a repaint boundary if it
+widget. Though the engine might still ignore a repaint boundary if it
 thinks the image isn't complex enough.
 
 ### Viewing the widget rebuild profiler

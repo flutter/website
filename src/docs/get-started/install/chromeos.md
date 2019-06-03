@@ -106,7 +106,7 @@ To run these from the command line:
 $ flutter analyze
 ```
 
-Sample output for these may look like:
+Sample output for these might look like:
 
 ```terminal
 Analyzing ...                                                      

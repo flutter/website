@@ -8,7 +8,7 @@ next:
   path: /docs/cookbook/networking/background-parsing
 ---
 
-In order to fetch data from many web services, you need to provide
+To fetch data from many web services, you need to provide
 authorization. There are many ways to do this, but perhaps the most common
 uses the `Authorization` HTTP header.
 
@@ -23,7 +23,7 @@ the `dart:io` package for common `HttpHeaders`.
 Future<http.Response> fetchPost() {
   return http.get(
     'https://jsonplaceholder.typicode.com/posts/1',
-    // Send authorization headers to the backend
+    // Send authorization headers to the backend.
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
 }
@@ -32,7 +32,7 @@ Future<http.Response> fetchPost() {
 ## Complete example
 
 This example builds upon the [Fetching Data from the
-Internet](/docs/cookbook/networking/fetch-data/) recipe.
+internet](/docs/cookbook/networking/fetch-data/) recipe.
 
 ```dart
 import 'dart:async';

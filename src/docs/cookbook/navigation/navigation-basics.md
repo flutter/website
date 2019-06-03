@@ -2,18 +2,20 @@
 title: Navigate to a new screen and back
 description: How to navigate between routes
 prev:
-  title: Animating a Widget across screens
+  title: Animating a widget across screens
   path: /docs/cookbook/navigation/hero-animations
 next:
   title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
 ---
 
-Most apps contain several screens for displaying different types of information.
-For example, an app might have a screen that displays products. Users can then
-tap the image of a product to get more detailed information on a new screen.
+Most apps contain several screens for displaying different types of
+information.
+For example, an app might have a screen that displays products.
+Users can then tap the image of a product to get more detailed
+information on a new screen.
 
-{{site.alert.info}}
+{{site.alert.secondary}}
   **Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
   The remainder of this doc refers to routes.
 {{site.alert.end}}
@@ -91,11 +93,11 @@ method. The `push()` method adds a `Route` to the stack of routes managed by
 the Navigator. Where does the `Route` come from?
 You can create your own, or use a
 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html),
-out of the box. `MaterialPageRoute` is handy because it transitions to the
+out of the box. `MaterialPageRoute` is useful because it transitions to the
 new route using a platform-specific animation.
 
-In the `build()` method of the `FirstRoute` widget, update the `onPressed()`
-callback:
+In the `build()` method of the `FirstRoute` widget,
+update the `onPressed()` callback:
 
 <!-- skip -->
 ```dart

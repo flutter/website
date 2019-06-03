@@ -4,8 +4,8 @@ short-title: Box constraints
 ---
 
 {{site.alert.note}}
-  You may be directed to this page if the framework detects a problem involving
-  box constraints.
+  You might be directed to this page if the framework detects a problem
+  involving box constraints.
 {{site.alert.end}}
 
 In Flutter, widgets are rendered by their underlying

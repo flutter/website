@@ -595,7 +595,7 @@ widgets on demand when they become visible.
 ---
 **Footnotes:**
 
-<sup><a name="a1">1</a></sup> For layout, at least. It may be revisited
+<sup><a name="a1">1</a></sup> For layout, at least. It might be revisited
   for painting, for building the accessibility tree if necessary,
   and for hit testing if necessary.
 

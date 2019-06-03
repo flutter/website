@@ -707,7 +707,7 @@ widgets. Here's a partial list:
 
 ## Resources
 
-The following resources may help when adding interactivity to your app.
+The following resources might help when adding interactivity to your app.
 
 * [Gestures][], a section in [Introduction to widgets][]<br>
   How to create a button and make it respond to input.
