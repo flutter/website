@@ -261,6 +261,9 @@ re-executed, and the widget tree is rebuilt with the unchanged instance of
 You might also encounter the rare cases where hot reload is not supported at
 all. These include:
 
+* Changes on `initState()` are not reflected by hot reload. A hot restart is 
+  required.
+
 * Enumerated types are changed to regular classes or regular classes are changed
   to enumerated types. For example, if you change:
 
