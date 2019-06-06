@@ -30,7 +30,7 @@ placeholder. In this example, you'll display a spinner while the image loads.
 <!-- skip -->
 ```dart
 CachedNetworkImage(
-  placeholder: CircularProgressIndicator(),
+  placeholder: (context, url) => CircularProgressIndicator(),
   imageUrl: 'https://picsum.photos/250?image=9',
 );
 ```
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: CachedNetworkImage(
-            placeholder: CircularProgressIndicator(),
+            placeholder: (context, url) => CircularProgressIndicator(),
             imageUrl:
                 'https://picsum.photos/250?image=9',
           ),
