@@ -34,7 +34,7 @@ by the Flutter community:
 * [Inheriting Widgets](https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1),
   by Mehmet Fidanboylu
 * [Using Flutter Inherited Widgets
-  Effectively](https://ericwindmill.com/posts/using-flutter-inherited-widgets-effectively/),
+  Effectively](https://ericwindmill.com/articles/inherited_widget/),
   by Eric Windmill
 * [Widget - State - Context -
   InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
