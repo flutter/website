@@ -188,7 +188,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(accentColor: Colors.yellow),
+        data: Theme.of(context).copyWith(
+          colorScheme:
+              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
+        ),
         child: FloatingActionButton(
           onPressed: null,
           child: Icon(Icons.add),
