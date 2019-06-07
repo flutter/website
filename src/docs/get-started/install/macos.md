@@ -22,6 +22,7 @@ To install and run Flutter, your development environment must meet these minimum
   - `rm`
   - `unzip`
   - `which`
+- **Device Simulator**: [Android Studio]( https://developer.android.com/studio) or Xcode this requried to can run the mobile app on an mobile device. 
 
 {% include_relative _get-sdk.md %}
 
