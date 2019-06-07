@@ -78,7 +78,7 @@ if you already have the required packages installed.
  1. Make your changes.
  1. Test your changes by serving the site locally.
     Run either **one** of these commands:
-    - `./tool/serve.sh` (can also run via `npm run clean`)
+    - `./tool/serve.sh` (can also run via `npm run start`)
 
     or
     - `bundle exec jekyll serve --incremental --watch --livereload --port 4002`
