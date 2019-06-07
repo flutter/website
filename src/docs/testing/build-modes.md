@@ -30,8 +30,8 @@ device, emulator, or simulator. Debug mode means that:
 
 By default, `flutter run` compiles to debug mode.
 Your IDE also supports these modes. Android Studio,
-for example, provides a **Run > Debug...** menu option, as well
-as an triangular green run button icon on the project page.
+for example, provides a **Run > Debug...** menu option, as well as a green bug
+icon overlayed with a small triangle on the project page.
 (The menu item shows a pic of the corresponding icon.)
 The emulator and simulator execute _only_ in debug mode.
 
@@ -50,8 +50,8 @@ supported on the simulator or emulator, means that:
 
 The command `flutter run --release` compiles to release mode.
 Your IDE also supports these modes.  Android Studio, for example,
-provides a **Run > Run...** menu option, as well as a green bug
-icon overlayed with a small triangle on the project page.
+provides a **Run > Run...** menu option, as well as a triangular 
+green run button icon on the project page.
 (The menu item shows a pic of the corresponding icon.)
 
 You can also compile to release mode with `flutter build`.
