@@ -1,10 +1,10 @@
 ---
 title: Report errors to a service
 prev:
-  title: Working with long lists
+  title: Work with long lists
   path: /docs/cookbook/lists/long-lists
 next:
-  title: Animating a widget across screens
+  title: Animate a widget across screens
   path: /docs/cookbook/navigation/hero-animations
 ---
 
@@ -24,16 +24,15 @@ experience and groups them together. This allows you to know how often your
 app fails and where the users run into trouble.
 
 In this recipe, learn how to report errors to the
-[Sentry](https://sentry.io/welcome/) crash reporting service.
+[Sentry](https://sentry.io/welcome/) crash reporting service using
+the following steps:
 
-## Directions
-
-  1. Get a DSN from Sentry
-  2. Import the Sentry package
-  3. Create a `SentryClient`
-  4. Create a function to report errors
-  5. Catch and report Dart errors
-  6. Catch and report Flutter errors
+  1. Get a DSN from Sentry.
+  2. Import the Sentry package.
+  3. Create a `SentryClient`.
+  4. Create a function to report errors.
+  5. Catch and report Dart errors.
+  6. Catch and report Flutter errors.
 
 ## 1. Get a DSN from Sentry
 
@@ -42,10 +41,10 @@ your app with the Sentry.io service.
 
 To get a DSN, use the following steps:
 
-  1. [Create an account with Sentry](https://sentry.io/signup/)
-  2. Log in to the account
-  3. Create a new app
-  4. Copy the DSN
+  1. [Create an account with Sentry](https://sentry.io/signup/).
+  2. Log in to the account.
+  3. Create a new app.
+  4. Copy the DSN.
 
 ## 2. Import the Sentry package
 
@@ -139,7 +138,7 @@ runZoned<Future<void>>(() async {
 
 ## 6. Catch and report Flutter errors
 
-In addition to Dart errors, Flutter can throw additional errors, such as
+In addition to Dart errors, Flutter can throw errors such as
 platform exceptions that occur when calling native code. Be sure to
 capture and report these types of errors as well.
 

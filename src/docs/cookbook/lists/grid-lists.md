@@ -1,16 +1,15 @@
 ---
-title: Creating a grid list
+title: Create a grid list
 prev:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
 next:
-  title: Creating lists with different types of items
+  title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
 ---
 
 In some cases, you might want to display your items as a grid rather than
-a normal list of items that come one after the next.
-For this task, use
+a normal list of items that come one after the next. For this task, use
 the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) widget.
 
 The simplest way to get started using grids is by using the
@@ -18,8 +17,8 @@ The simplest way to get started using grids is by using the
 constructor,
 because it allows you to specify how many rows or columns you'd like.
 
-In this example, generate a list of 100 widgets that display their
-index in the list. This helps visualize how `GridView`  works.
+To visualize how `GridView` works, 
+generate a list of 100 widgets that display their index in the list.
 
 <!-- skip -->
 ```dart

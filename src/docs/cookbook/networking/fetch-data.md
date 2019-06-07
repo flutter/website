@@ -4,19 +4,20 @@ prev:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
 next:
-  title: Making authenticated requests
+  title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 ---
 
 Fetching data from the internet is necessary for most apps.
-Luckily, Dart and Flutter provide tools for this type of work.
+Luckily, Dart and Flutter provide tools, such as the
+`http` package, for this type of work.
 
-## Directions
+This recipe uses the following steps:
 
-  1. Add the `http` package
-  2. Make a network request using the `http` package
-  3. Convert the response into a custom Dart object
-  4. Fetch and Display the data with Flutter
+  1. Add the `http` package.
+  2. Make a network request using the `http` package.
+  3. Convert the response into a custom Dart object.
+  4. Fetch and display the data with Flutter.
 
 ## 1. Add the `http` package
 
@@ -24,8 +25,8 @@ The [`http`]({{site.pub-pkg}}/http) package provides the
 simplest way to fetch data from the internet.
 
 To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can [find the latest version of the http package on
-the Pub site]({{site.pub}}/packages/http#-installing-tab-).
+of the `pubspec.yaml`. You can [find the latest version of the
+http package on the Pub site]({{site.pub}}/packages/http#-installing-tab-).
 
 ```yaml
 dependencies:
@@ -64,7 +65,7 @@ convert the `http.Response` into a Dart object.
 
 First, create a `Post` class that contains the data from the
 network request. It includes` a factory constructor that 
-creates a `Post` from json.
+creates a `Post` from JSON.
 
 Converting JSON by hand is only one option. For more information,
 see the full article on [JSON and
@@ -96,10 +97,10 @@ class Post {
 Now, update the `fetchPost()` function to return a `Future<Post>`.
 To do so, you need to:
 
-  1. Convert the response body into a json `Map` with the `dart:convert`
+  1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.
   2. If the server returns an "OK" response with a status code of 200, convert
-     the json `Map` into a `Post` using the `fromJson()` factory method.
+     the JSON `Map` into a `Post` using the `fromJson()` factory method.
   3. If the server returns an unexpected response, throw an error.
 
 <!-- skip -->
@@ -118,7 +119,7 @@ Future<Post> fetchPost() async {
 }
 ```
 
-Hooray! Now you've got a function that fetches a Post from the
+Hooray! Now you've got a function that fetches a post from the
 internet.
 
 ## 4. Fetch and display the data
@@ -187,7 +188,7 @@ If your widget is stateful, call the fetch method in either the
 [`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
 methods.
 
-The `initState` method is called exactly once and then never again.
+The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
 [`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
 changing, put the call into the `didChangeDependencies()` method.  See

@@ -1,10 +1,10 @@
 ---
-title: Making authenticated requests
+title: Make authenticated requests
 prev:
   title: Fetch data from the internet
   path: /docs/cookbook/networking/fetch-data
 next:
-  title: Parsing JSON in the background
+  title: Parse JSON in the background
   path: /docs/cookbook/networking/background-parsing
 ---
 
@@ -12,11 +12,11 @@ To fetch data from many web services, you need to provide
 authorization. There are many ways to do this, but perhaps the most common
 uses the `Authorization` HTTP header.
 
-## Add Authorization Headers
+## Add authorization headers
 
 The [`http`]({{site.pub-pkg}}/http) package provides a
-convenient way to add headers to your requests. You can also take advantage of
-the `dart:io` package for common `HttpHeaders`.
+convenient way to add headers to your requests.
+You can also use the `dart:io` package for common `HttpHeaders`.
 
 <!-- skip -->
 ```dart
@@ -31,8 +31,8 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-This example builds upon the [Fetching Data from the
-internet](/docs/cookbook/networking/fetch-data/) recipe.
+This example builds upon the [Fetching data from the
+internet](/docs/cookbook/networking/fetch-data) recipe.
 
 ```dart
 import 'dart:async';

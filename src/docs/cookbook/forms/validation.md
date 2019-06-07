@@ -1,7 +1,7 @@
 ---
-title: Building a form with validation
+title: Build a form with validation
 prev:
-  title: Working with tabs
+  title: Work with tabs
   path: /docs/cookbook/design/tabs
 next:
   title: Create and style a text field
@@ -18,14 +18,12 @@ out the form, process the information. If the user submits incorrect
 information, display a friendly error message letting them know what went
 wrong.
 
-In this example, learn how to add validation to a form with
-a single text field.
+In this example, learn how to add validation to a form that has
+a single text field using the following steps:
 
-## Directions
-
-  1. Create a `Form` with a `GlobalKey`
-  2. Add a `TextFormField` with validation logic
-  3. Create a button to validate and submit the form
+  1. Create a `Form` with a `GlobalKey`.
+  2. Add a `TextFormField` with validation logic.
+  3. Create a button to validate and submit the form.
 
 ## 1. Create a `Form` with a `GlobalKey`
 
@@ -79,20 +77,22 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 ## 2. Add a `TextFormField` with validation logic
 
-You have the `Form` in place,
-but you haven't provided a way for users to enter text.
-This is the job of a
+Although the `Form` is in place,
+it doesn't have a way for users to enter text.
+That's the job of a
 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 The `TextFormField` widget renders a material design text field
-and knows how to display validation errors when they occur.
+and can display validation errors when they occur.
 
-How to validate the input? By providing a `validator()` function to the
-`TextFormField`. If there is an error with the information the user has
-provided, the `validator` function returns a `String` containing
-an error message. If there are no errors, the function returns nothing.
+Validate the input by providing a `validator()` function to the
+`TextFormField`. If the user's input isn't valid,
+the `validator` function returns a `String` containing
+an error message.
+If there are no errors, the validator must return null.
 
-For this example, create a `validator` that ensures the `TextFormField`
-isn't empty. If it is empty, return a friendly error message.
+For this example, create a `validator` that ensures the
+`TextFormField` isn't empty. If it is empty,
+return a friendly error message.
 
 <!-- skip -->
 ```dart
@@ -112,8 +112,8 @@ Now that you have a form with a text field,
 provide a button that the user can tap to submit the information.
 
 When the user attempts to submit the form, check if the form is valid.
-If it is, show a success message. If the text field has no content,
-display the error message.
+If it is, display a success message.
+If it isn't (the text field has no content) display the error message.
 
 <!-- skip -->
 ```dart
@@ -143,9 +143,9 @@ which is automatically created by Flutter when building a `Form`.
 The `FormState` class contains the `validate()` method.
 When the `validate()` method is called, it runs the `validator()`
 function for each text field in the form.
-If everything looks good, the method returns `true`.
-If any text field contains errors, it displays the error message
-for each invalid text field and returns `false`.
+If everything looks good, the `validate()` method returns `true`.
+If any text field contains errors, the `validate()` method
+rebuilds the form to display any error messages and returns `false`.
 
 ## Complete example
 
@@ -211,7 +211,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 // Validate returns true if the form is valid, or false
                 // otherwise.
                 if (_formKey.currentState.validate()) {
-                  // If the form is valid, show a Snackbar.
+                  // If the form is valid, display a Snackbar.
                   Scaffold.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }

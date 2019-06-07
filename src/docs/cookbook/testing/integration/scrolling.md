@@ -1,5 +1,5 @@
 ---
-title: Scrolling
+title: Handle scrolling
 prev:
   title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
@@ -20,24 +20,24 @@ class, which is included in the
 [`flutter_driver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
 package:
 
-In this recipe, you learn how to scroll through a list of items to
+In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
 read through the [Introduction to integration
 testing](/docs/cookbook/testing/integration) recipe.
 
-### Directions
+This recipe uses the following steps:
 
-  1. Create an app with a list of items
-  2. Instrument the app
-  3. Write a test that scrolls through the list
-  4. Run the test
+  1. Create an app with a list of items.
+  2. Instrument the app.
+  3. Write a test that scrolls through the list.
+  4. Run the test.
 
 ### 1. Create an app with a list of items
 
 This recipe builds an app that shows a long list of items.
 To keep this recipe focused on testing, use the app created in the
-[Working with long lists](/docs/cookbook/lists/long-lists) recipe.
+[Work with long lists](/docs/cookbook/lists/long-lists) recipe.
 If you're unsure of how to work with long lists,
 see that recipe for an introduction.
 

@@ -1,10 +1,10 @@
 ---
-title: Working with tabs
+title: Work with tabs
 prev:
-  title: Using custom fonts
+  title: Use custom fonts
   path: /docs/cookbook/design/fonts
 next:
-  title: Building a form with validation
+  title: Build a form with validation
   path: /docs/cookbook/forms/validation
 ---
 
@@ -15,23 +15,23 @@ the [material library]({{site.api}}/flutter/material/material-library.html).
 {{site.alert.note}}
   To create tabs in a Cupertino app, see the
   [Building a Cupertino app with
-  Flutter](https://codelabs.developers.google.com/codelabs/flutter-cupertino/index.html?index=..%2F..index#0)
+  Flutter](https://codelabs.developers.google.com/codelabs/flutter-cupertino)
   codelab.
 {{site.alert.end}}
 
-## Directions
+This recipe creates a tabbed example using the following steps;
 
-  1. Create a `TabController`
-  2. Create the tabs
-  3. Create content for each tab
+  1. Create a `TabController`.
+  2. Create the tabs.
+  3. Create content for each tab.
 
 ## 1. Create a `TabController`
 
-In order for tabs to work, you need to keep the selected tab and content
+For tabs to work, you need to keep the selected tab and content
 sections in sync. This is the job of the
 [`TabController`]({{site.api}}/flutter/material/TabController-class.html).
 
-A TabController can be created manually, or automatically by using a
+Either create a TabController manually, or automatically by using a
 [DefaultTabController]({{site.api}}/flutter/material/DefaultTabController-class.html)
 widget.
 
@@ -49,8 +49,9 @@ DefaultTabController(
 
 ## 2. Create the tabs
 
-Now that you have a `TabController`, create the tabs using
-the [`TabBar`]({{site.api}}/flutter/material/TabController-class.html)
+When a tab is selected, it needs to display content.
+You can create tabs using the
+[`TabBar`]({{site.api}}/flutter/material/TabController-class.html)
 widget. In this example, create a `TabBar` with three
 [`Tab`]({{site.api}}/flutter/material/Tab-class.html)
 widgets and place it within an

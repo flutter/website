@@ -1,28 +1,27 @@
 ---
-title: Updating the UI based on orientation
+title: Update the UI based on orientation
 prev:
-  title: Exporting fonts from a package
+  title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
 next:
-  title: Using Themes to share colors and font styles
+  title: Use themes to share colors and font styles
   path: /docs/cookbook/design/themes
 ---
 
 In some situations,
-it important to update the display of an app when the user
-rotates their screen from portrait mode to landscape mode. For example,
+you want to update the display of an app when the user
+rotates the screen from portrait mode to landscape mode. For example,
 the app might show one item after the next in portrait mode,
 yet put those same items side-by-side in landscape mode.
 
-In Flutter, build different layouts depending on a given
+In Flutter, you can build different layouts depending on a given
 [`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html).
 In this example, build a list that displays two columns in
-portrait mode and three columns in landscape mode.
+portrait mode and three columns in landscape mode using the
+following steps:
 
-## Directions
-
-  1. Build a `GridView` with two columns
-  2. Use an `OrientationBuilder` to change the number of columns
+  1. Build a `GridView` with two columns.
+  2. Use an `OrientationBuilder` to change the number of columns.
 
 ## 1. Build a `GridView` with two columns
 
@@ -41,7 +40,7 @@ GridView.count(
 ```
 
 To learn more about working with `GridViews`, see the
-[Creating a grid list](/docs/cookbook/lists/grid-lists/) recipe.
+[Creating a grid list](/docs/cookbook/lists/grid-lists) recipe.
 
 ## 2. Use an `OrientationBuilder` to change the number of columns
 

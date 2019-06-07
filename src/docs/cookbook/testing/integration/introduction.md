@@ -25,18 +25,18 @@ To create this test pair, use the
 package. It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
-In this recipe, you learn how to test a counter app. It demonstrates
+In this recipe, learn how to test a counter app. It demonstrates
 how to setup integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
-### Directions
+This recipe uses the following steps:
 
-  1. Create an app to test
-  2. Add the `flutter_driver` dependency
-  3. Create the test files
-  4. Instrument the app
-  5. Write the integration tests
-  6. Run the integration test
+  1. Create an app to test.
+  2. Add the `flutter_driver` dependency.
+  3. Create the test files.
+  4. Instrument the app.
+  5. Write the integration tests.
+  6. Run the integration test.
 
 ### 1. Create an app to test
 

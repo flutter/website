@@ -1,35 +1,31 @@
 ---
 title: Retrieve the value of a text field
 prev:
-  title: Handling changes to a text field
+  title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 next:
-  title: Adding Material touch ripples
+  title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples
 ---
 
 In this recipe,
-learn how to retrieve the text a user has entered into a text field.
+learn how to retrieve the text a user has entered into a text field
+using the following steps:
 
-## Directions
-
-  1. Create a `TextEditingController`
-  2. Supply the `TextEditingController` to a `TextField`
-  3. Display the current value of the text field
+  1. Create a `TextEditingController`.
+  2. Supply the `TextEditingController` to a `TextField`.
+  3. Display the current value of the text field.
 
 ## 1. Create a `TextEditingController`
 
 To retrieve the text a user has entered into a text field, create a
 [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
-and supply it to a `TextField` in the next steps.
+and supply it to a `TextField` or `TextFormField`.
 
-Once a `TextEditingController` is supplied to a `TextField` or `TextFormField`,
-use it to retrieve the text a user has entered into that text field.
-
-{{site.alert.note}}
-  It is important to `dispose` of the `TextEditingController` when
-  finished using it. This ensures that you discard any resources used
-  by the object.
+{{site.alert.secondary}}
+  **Important:** Call `dispose` of the `TextEditingController` when
+  you've finished using it. This ensures that you discard any resources
+  used by the object.
 {{site.alert.end}}
 
 <!-- skip -->
@@ -64,8 +60,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ## 2. Supply the `TextEditingController` to a `TextField`
 
 Now that you have a `TextEditingController`, wire it up
-to a specific text field. To do this, supply the `TextEditingController`
-to a `TextField` or `TextFormField` widget as the `controller` property.
+to a text field using the `controller` property:
 
 <!-- skip -->
 ```dart
@@ -82,8 +77,8 @@ begin reading values. Use the
 method provided by the `TextEditingController` to retrieve the
 String that the user has entered into the text field.
 
-In this example, display an alert dialog with the current value of
-the text field when the user taps a floating action button.
+The following code displays an alert dialog with the current
+value of the text field when the user taps a floating action button.
 
 <!-- skip -->
 ```dart

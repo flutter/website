@@ -1,30 +1,29 @@
 ---
-title: Using custom fonts
-short-title: Custom fonts
+title: Use a custom font
 description: How to use custom fonts.
 prev:
-  title: Using Themes to share colors and font styles
+  title: Use themes to share colors and font styles
   path: /docs/cookbook/design/themes
 next:
-  title: Working with tabs
+  title: Work with tabs
   path: /docs/cookbook/design/tabs
 ---
 
-While Android and iOS offer high quality system fonts,
+Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
 or perhaps you downloaded a font from
 [Google Fonts](https://fonts.google.com).
 
-Flutter works out of the box with custom fonts.
-You can apply fonts across an entire app or to individual widgets.
+Flutter works with custom fonts and you can apply a custom
+font across an entire app or to individual widgets.
+This recipe creates an app that uses custom fonts with
+the following steps:
 
-## Directions
-
-  1. Import the font files
-  2. Declare the font in the `pubspec.yaml` file
-  3. Set a font as the default
-  4. Use a font in a specific widget
+  1. Import the font files.
+  2. Declare the font in the pubspec.
+  3. Set a font as the default.
+  4. Use a font in a specific widget.
 
 ## 1. Import the font files
 
@@ -44,10 +43,10 @@ awesome_app/
     RobotoMono-Bold.ttf
 ```
 
-## 2. Declare the font in the `pubspec.yaml` file
+## 2. Declare the font in the pubspec
 
 Once you've identified a font, tell Flutter where to find it.
-You can do this by including a font definition in the `pubspec.yaml`.
+You can do this by including a font definition in the `pubspec.yaml` file.
 
 ```yaml
 flutter:

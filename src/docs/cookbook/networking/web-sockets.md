@@ -1,7 +1,7 @@
 ---
-title: Working with WebSockets
+title: Work with WebSockets
 prev:
-  title: Parsing JSON in the background
+  title: Parse JSON in the background
   path: /docs/cookbook/networking/background-parsing
 next:
   title: Persist data with SQLite
@@ -15,12 +15,11 @@ without polling.
 In this example, connect to a [test server provided by
 websocket.org](http://www.websocket.org/echo.html). The server sends
 back the same message you send to it.
-
-## Directions
+This recipe uses the following steps:
 
   1. Connect to a WebSocket server
   2. Listen for messages from the server
-  3. Send Data to the Server
+  3. Send data to the server
   4. Close the WebSocket connection
 
 ## 1. Connect to a WebSocket server
@@ -44,9 +43,9 @@ final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
 Now that you've established a connection, listen to messages from the
 server.
 
-After you send a message to the test server, it sends the same message back.
+After sending a message to the test server, it sends the same message back.
 
-How to listen for messages and display them? In this example, use
+In this example, use
 a [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
 widget to listen for new messages, and a
 [`Text`]({{site.api}}/flutter/widgets/Text-class.html)
@@ -62,7 +61,7 @@ StreamBuilder(
 );
 ```
 
-### How does this work?
+### How this works
 
 The `WebSocketChannel` provides a
 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
@@ -75,9 +74,9 @@ events over time.
 
 The [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
 widget connects to a `Stream` and asks Flutter to rebuild every time it
-receives an event using the given `builder` function.
+receives an event using the given `builder()` function.
 
-## 3. Send Data to the Server
+## 3. Send data to the server
 
 To send data to the server, `add()` messages to the `sink` provided
 by the `WebSocketChannel`.
@@ -195,4 +194,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Web Sockets Demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+![Web sockets demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}

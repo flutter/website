@@ -1,19 +1,19 @@
 ---
-title: Using Themes to share colors and font styles
+title: Use themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 prev:
-  title: Updating the UI based on orientation
+  title: Update the UI based on orientation
   path: /docs/cookbook/design/orientation
 next:
-  title: Using custom fonts
+  title: Use custom fonts
   path: /docs/cookbook/design/fonts
 ---
 
-To share colors and font styles throughout an app, take
-advantage of themes. There are two ways to define themes:
-App-wide or using `Theme` widgets that define the colors and
-font styles for a particular part of the application. In fact,
+To share colors and font styles throughout an app, use themes.
+You can either define app-wide themes, or use `Theme` widgets
+that define the colors and font styles for a particular part
+of the application. In fact,
 app-wide themes are just `Theme` widgets created at
 the root of an apps by the `MaterialApp`.
 
@@ -27,8 +27,7 @@ To share a Theme across an entire app, provide a
 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
 to the `MaterialApp` constructor.
 
-If no `theme` is provided,
-Flutter creates a default theme behind the scenes.
+If no `theme` is provided, Flutter creates a default theme for you.
 
 <!-- skip -->
 ```dart
@@ -87,7 +86,7 @@ Theme(
 ### Extending the parent theme
 
 Rather than overriding everything, it often makes sense to extend the parent
-theme. You can achieve this by using the
+theme. You can handle this by using the
 [`copyWith()`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
 method.
 
@@ -107,12 +106,12 @@ Theme(
 ## Using a Theme
 
 Now that you've defined a theme, use it within the widgets' `build()`
-methods by using the `Theme.of(context)` function.
+methods by using the `Theme.of(context)` method.
 
 The `Theme.of(context)` method looks up the widget tree and returns
-the nearest `Theme` in the tree. If you have a stand-alone
-`Theme` defined above your widget, it returns that.
-If not, it returns the app's theme.
+the nearest `Theme` in the tree. If you have a standalone
+`Theme` defined above your widget, that's returned.
+If not, the app's theme is returned.
 
 In fact, the `FloatingActionButton` uses this technique to find the
 `accentColor`.

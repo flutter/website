@@ -1,10 +1,10 @@
 ---
-title: Parsing JSON in the background
+title: Parse JSON in the background
 prev:
-  title: Making authenticated requests
+  title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Working with WebSockets
+  title: Work with WebSockets
   path: /docs/cookbook/networking/web-sockets
 ---
 
@@ -20,13 +20,12 @@ To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate
 [Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
+This recipe uses the following steps:
 
-## Directions
-
-  1. Add the `http` package
-  2. Make a network request using the `http` package
-  3. Convert the response into a list of Photos
-  4. Move this work to a separate isolate
+  1. Add the `http` package.
+  2. Make a network request using the `http` package.
+  3. Convert the response into a list of Photos.
+  4. Move this work to a separate isolate.
 
 ## 1. Add the `http` package
 
@@ -43,7 +42,7 @@ dependencies:
 
 In this example, fetch a JSON large document that contains a list of
 5000 photo objects from the [JSONPlaceholder REST
-API](https://jsonplaceholder.typicode.com)
+API](https://jsonplaceholder.typicode.com),
 using the [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 <!-- skip -->
@@ -58,7 +57,7 @@ Future<http.Response> fetchPhotos(http.Client client) async {
   This makes the function easier to test and use in different environments.
 {{site.alert.end}}
 
-## 3. Parse and Convert the json into a list of Photos
+## 3. Parse and convert the JSON into a list of photos
 
 Next, following the guidance from the [Fetch data from the
 internet](/docs/cookbook/networking/fetch-data)
@@ -69,7 +68,7 @@ This makes the data easier to work with in the future.
 
 First, create a `Photo` class that contains data about a photo.
 Include a `fromJson()` factory method to make it easy to create a
-`Photo` starting with a json object.
+`Photo` starting with a JSON object.
 
 <!-- skip -->
 ```dart
@@ -90,14 +89,14 @@ class Photo {
 }
 ```
 
-### Convert the response into a list of Photos
+### Convert the response into a list of photos
 
-Now, update the `fetchPhotos()` function so it returns a
+Now, update the `fetchPhotos()` function so that it returns a
 `Future<List<Photo>>`. To do so, you need to:
 
-  1. Create a `parsePhotos` that converts the response body into a
-     `List<Photo>`
-  2. Use the `parsePhotos` function in the `fetchPhotos` function
+  1. Create a `parsePhotos()` function that converts the response
+     body into a `List<Photo>`.
+  2. Use the `parsePhotos()` function in the `fetchPhotos()` function.
 
 <!-- skip -->
 ```dart
@@ -120,13 +119,13 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 If you run the `fetchPhotos()` function on a slower device,
 you might notice the app freezes for a brief moment as it parses and
-converts the json. This is jank, and you want to be rid of it.
+converts the JSON. This is jank, and you want to be rid of it.
 
-So how to do that? By moving the parsing and conversion to a background
+You can remove the jank by moving the parsing and conversion to a background
 isolate using the [`compute()`]({{site.api}}/flutter/foundation/compute.html)
 function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
-run the `parsePhotos` function in the background.
+run the `parsePhotos()` function in the background.
 
 <!-- skip -->
 ```dart
@@ -139,7 +138,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 }
 ```
 
-## Notes on working with Isolates
+## Notes on working with isolates
 
 Isolates communicate by passing messages back and forth. These messages can
 be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or
@@ -252,4 +251,4 @@ class PhotosList extends StatelessWidget {
 }
 ```
 
-![Isolate Demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}

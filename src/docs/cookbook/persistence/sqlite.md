@@ -1,10 +1,10 @@
 ---
 title: Persist data with SQLite
 prev:
-  title: Working with WebSockets
+  title: Work with WebSockets
   path: /docs/cookbook/networking/web-sockets
 next:
-  title: Reading and writing files
+  title: Read and write files
   path: /docs/cookbook/persistence/reading-writing-files
 ---
 
@@ -22,16 +22,16 @@ If you are new to SQLite and SQL statements, review the [SQLite
 Tutorial](http://www.sqlitetutorial.net/) to learn the basics before
 completing this recipe.
 
-## Directions
+This recipe uses the following steps:
 
-  1. Add the dependencies
-  2. Define the `Dog` data model
-  3. Open the database
-  4. Create the `dogs` table
-  5. Insert a `Dog` into the database
-  6. Retrieve the list of Dogs
-  7. Update a `Dog` in the database
-  7. Delete a `Dog` from the database
+  1. Add the dependencies.
+  2. Define the `Dog` data model.
+  3. Open the database.
+  4. Create the `dogs` table.
+  5. Insert a `Dog` into the database.
+  6. Retrieve the list of dogs.
+  7. Update a `Dog` in the database.
+  7. Delete a `Dog` from the database.
 
 ## 1. Add the dependencies
 

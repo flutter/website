@@ -1,7 +1,7 @@
 ---
-title: Creating lists with different types of items
+title: Create lists with different types of items
 prev:
-  title: Creating a grid list
+  title: Create a grid list
   path: /docs/cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
@@ -13,16 +13,14 @@ For example, you might be working on a list that shows a heading
 followed by a few items related to the heading, followed by another heading,
 and so on.
 
-How to create such a structure with Flutter?
+Here's how you can create such a structure with Flutter:
 
-## Directions
-
-  1. Create a data source with different types of items
-  2. Convert the data source into a list of widgets
+  1. Create a data source with different types of items.
+  2. Convert the data source into a list of widgets.
 
 ## 1. Create a data source with different types of item
 
-### Types of Items
+### Types of items
 
 To represent different types of items in a list, define
 a class for each type of item.
@@ -33,7 +31,7 @@ and `MessageItem`.
 
 <!-- skip -->
 ```dart
-// The base class for the different types of items the List can contain.
+// The base class for the different types of items the list can contain.
 abstract class ListItem {}
 
 // A ListItem that contains data to display a heading.
@@ -58,7 +56,8 @@ Most of the time, you would fetch data from the internet or a local
 database and convert that data into a list of items.
 
 For this example, generate a list of items to work with. The list
-contains a header followed by five messages. And so on.
+contains a header followed by five messages. Each message has one
+of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
 <!-- skip -->
 ```dart
@@ -76,7 +75,7 @@ To convert each item into a widget, use the
 [`ListView.builder()`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
-In general, provide a `builder` function that checks for what type
+In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
@@ -88,7 +87,7 @@ you prefer another pattern.
 <!-- skip -->
 ```dart
 ListView.builder(
-  // Let the ListView know how many items it needs to build
+  // Let the ListView know how many items it needs to build.
   itemCount: items.length,
   // Provide a builder function. This is where the magic happens.
   // Convert each item into a widget based on the type of item it is.
@@ -172,7 +171,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// The base class for the different types of items the List can contain.
+// The base class for the different types of items the list can contain.
 abstract class ListItem {}
 
 // A ListItem that contains data to display a heading.
@@ -191,4 +190,4 @@ class MessageItem implements ListItem {
 }
 ```
 
-![Mixed List Demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
+![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}

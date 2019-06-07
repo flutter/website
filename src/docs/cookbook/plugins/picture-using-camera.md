@@ -15,16 +15,14 @@ available cameras, display a preview coming from a specific camera, and take
 photos or videos.
 
 This recipe demonstrates how to use the `camera` plugin to display a preview, 
-take a photo, and display it.
+take a photo, and display it using the following steps:
 
-## Directions
-
-  1. Add the required dependencies
-  2. Get a list of the available cameras
-  3. Create and initialize the `CameraController`
-  4. Use a `CameraPreview` to display the camera's feed
-  5. Take a picture with the `CameraController`
-  6. Display the picture with an `Image` widget
+  1. Add the required dependencies.
+  2. Get a list of the available cameras.
+  3. Create and initialize the `CameraController`.
+  4. Use a `CameraPreview` to display the camera's feed.
+  5. Take a picture with the `CameraController`.
+  6. Display the picture with an `Image` widget.
 
 ## 1. Add the required dependencies
 
@@ -63,14 +61,14 @@ Once you have a camera, you need to create and initialize a
 the device's camera that allows you to control the camera
 and display a preview of the camera's feed.
 
-To achieve this, do the following:
+To do this, use the following steps:
 
-  1. Create a `StatefulWidget` with a companion `State` class 
-  2. Add a variable to the `State` class to store the `CameraController`
-  3. Add a variable to the `State` class to store the `Future` returned from
-  `CameraController.initialize`
-  4. Create and initialize the controller in the `initState` method
-  5. Dispose of the controller in the `dispose` method
+  1. Create a `StatefulWidget` with a companion `State` class.
+  2. Add a variable to the `State` class to store the `CameraController`.
+  3. Add a variable to the `State` class to store the `Future`
+     returned from `CameraController.initialize()`.
+  4. Create and initialize the controller in the `initState()` method.
+  5. Dispose of the controller in the `dispose()` method.
   
 <!-- skip -->
 ```dart
@@ -133,10 +131,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 Next, use the `CameraPreview` widget from the `camera` package to
 display a preview of the camera's feed.
 
-Remember: You must wait until the controller has finished initializing
-before working with the camera. Therefore, you must wait for the
-`_initializeControllerFuture()` created in the previous step to
-complete before showing a `CameraPreview`.
+{{site.alert.secondary}}
+  **Remember** You must wait until the controller has finished
+  initializing before working with the camera. Therefore,
+  you must wait for the `_initializeControllerFuture()` created
+  in the previous step to complete before showing a `CameraPreview`.
+{{site.alert.end}}
 
 Use a
 [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)

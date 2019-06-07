@@ -1,10 +1,10 @@
 ---
-title: Finding widgets
+title: Find widgets
 prev:
   title: An introduction to widget testing
   path: /docs/cookbook/testing/widget/introduction
 next:
-  title: Tapping, dragging and entering text
+  title: Tap, drag, and enter text
   path: /docs/cookbook/testing/widget/tap-drag
 ---
 
@@ -28,11 +28,11 @@ If you're unfamiliar with widget testing and the role of `Finder` classes,
 review the [Introduction to widget
 testing](/docs/cookbook/testing/widget/introduction) recipe.
 
-### Directions
+This recipe uses the following steps:
 
-  1. Find a `Text` widget
-  2. Find a widget with a specific `Key`
-  3. Find a specific widget instance
+  1. Find a `Text` widget.
+  2. Find a widget with a specific `Key`.
+  3. Find a specific widget instance.
 
 ### 1. Find a `Text` widget
 

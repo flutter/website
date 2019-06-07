@@ -1,5 +1,5 @@
 ---
-title: Working with long lists
+title: Work with long lists
 prev:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar
@@ -14,9 +14,9 @@ a large number of items, it's best to use the
 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
-Where the default `ListView` constructor requires creation of all items at
-once, the `ListView.builder` constructor creates items as they are scrolled
-onto the screen.
+In contrast to the default `ListView` constructor, which requires
+creating all items at once, the `ListView.builder()` constructor
+creates items as they're scrolled onto the screen.
 
 ## 1. Create a data source
 
@@ -24,7 +24,7 @@ First, you need a data source. For example, your data source
 might be a list of messages, search results, or products in a store.
 Most of the time, this data comes from the internet or a database.
 
-For this example, generate a list of 10000 Strings using the
+For this example, generate a list of 10,000 Strings using the
 [`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html)
 constructor.
 

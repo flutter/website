@@ -4,7 +4,7 @@ prev:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
 next:
-  title: Displaying SnackBars
+  title: Display a snackbar
   path: /docs/cookbook/design/snackbars
 ---
 
@@ -18,13 +18,12 @@ In Flutter, use the
 widget in combination with a
 [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html)
 to create a layout with a Material Design drawer.
+This recipe uses the following steps:
 
-## Directions
-
-  1. Create a `Scaffold`
-  2. Add a drawer
-  3. Populate the drawer with items
-  4. Close the drawer programmatically
+  1. Create a `Scaffold`.
+  2. Add a drawer.
+  3. Populate the drawer with items.
+  4. Close the drawer programmatically.
 
 ## 1. Create a `Scaffold`
 
@@ -113,12 +112,11 @@ Drawer(
 ## 4. Close the drawer programmatically
 
 After a user taps an item, you might want to close the drawer.
-How to achieve this? By using the
+You can do this by using the
 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html).
 
 When a user opens the drawer, Flutter adds the drawer to the navigation
-stack behind the scenes. Therefore, to close the drawer, call
-`Navigator.pop(context)`.
+stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 
 <!-- skip -->
 ```dart

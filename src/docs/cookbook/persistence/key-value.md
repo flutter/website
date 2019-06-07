@@ -1,7 +1,7 @@
 ---
-title: Storing key-value data on disk
+title: Store key-value data on disk
 prev:
-  title: Reading and writing files
+  title: Read and write files
   path: /docs/cookbook/persistence/reading-writing-files
 next:
   title: Play and pause a video
@@ -20,12 +20,12 @@ plugin can be used to persist key-value data on disk. The shared preferences
 plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
 
-## Directions
+This recipe uses the following steps:
 
-  1. Add the dependency
-  2. Save data
-  3. Read data
-  4. Remove data
+  1. Add the dependency.
+  2. Save data.
+  3. Read data.
+  4. Remove data.
 
 ## 1. Add the dependency
 
@@ -91,7 +91,7 @@ While it's easy and convenient to use key-value storage, it has limitations:
   `stringList`.
 * It's not designed to store a lot of data.
 
-For more information about Shared Preferences on Android, see
+For more information about shared preferences on Android, see
 [Shared preferences
 documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.

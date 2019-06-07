@@ -1,5 +1,5 @@
 ---
-title: Animate the properties of a Container
+title: Animate the properties of a container
 next:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
@@ -23,13 +23,12 @@ animates between the old and new values. In Flutter, these types of
 animations are known as "implicit animations."
 
 This recipe describes how to use an `AnimatedContainer` to animate the size,
-background color, and border radius when the user taps a button.
+background color, and border radius when the user taps a button
+using the following steps:
 
-## Directions
-
-  1. Create a StatefulWidget with default properties
-  2. Build an `AnimatedContainer` using the properties
-  3. Start the animation by rebuilding with new properties
+  1. Create a StatefulWidget with default properties.
+  2. Build an `AnimatedContainer` using the properties.
+  3. Start the animation by rebuilding with new properties.
 
 ## 1. Create a StatefulWidget with default properties
 
@@ -38,7 +37,7 @@ To start, create
 and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
 Use the custom State class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
-radius. In addition, also define the default value of each property.
+radius. You can also define the default value of each property.
 
 These properties belong to a custom `State` class so they
 can be updated when the user taps a button.

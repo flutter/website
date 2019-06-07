@@ -1,7 +1,7 @@
 ---
 title: Implement swipe to dismiss
 prev:
-  title: Handling taps
+  title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
 next:
   title: Display images from the internet
@@ -9,24 +9,22 @@ next:
 ---
 
 The "swipe to dismiss" pattern is common in many mobile apps.  For example,
-if writing an email app, you might want to allow a user to swipe away
-email messages to delete them from a list. When a list item is swiped,
-move the message from the Inbox to the Trash.
+when writing an email app, you might want to allow a user to swipe away
+email messages to delete them from a list.
 
 Flutter makes this task easy by providing the
 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) widget.
+Learn how to implement swipe to dismiss with the following steps:
 
-## Directions
+  1. Create a list of items.
+  2. Wrap each item in a `Dismissible` widget.
+  3. Provide "leave behind" indicators.
 
-  1. Create list of items
-  2. Wrap each item in a `Dismissible` widget
-  3. Provide "leave behind" indicators
+## 1. Create a list of items
 
-## 1. Create list of items
-
-First, create a list of items. For more detailed
+First, create a list of items. For detailed
 instructions on how to create a list, follow the [Working with long
-lists](/docs/cookbook/lists/long-lists/) recipe.
+lists](/docs/cookbook/lists/long-lists) recipe.
 
 ### Create a data source
 
@@ -56,18 +54,17 @@ ListView.builder(
 
 ## 2. Wrap each item in a Dismissible widget
 
-Now that you have a list of items,
-give users the ability to swipe each item off the list.
+In this step,
+give users the ability to swipe an item off the list by using the
+[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
+widget.
 
-After the user has swiped away the item, remove
-the item from the list and display a Snackbar.
+After the user has swiped away the item,
+remove the item from the list and display a snackbar.
 In a real app, you might need to perform more complex logic,
 such as removing the item from a web service or database.
 
-This is where the
-[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
-widget comes into play. Update the `itemBuilder` function
-to return a `Dismissible` widget.
+Update the `itemBuilder()` function to return a `Dismissible` widget:
 
 <!-- skip -->
 ```dart
@@ -99,9 +96,11 @@ the app allows users to swipe items off the list, but it doesn't
 give a visual indication of what happens when they do.
 To provide a cue that items are removed,
 display a "leave behind" indicator as they
-swipe the item off the screen. In this case, a red background.
+swipe the item off the screen. In this case,
+the indicator is a red background.
 
-Provide a `background` parameter to the `Dismissible`.
+To add the indicator,
+provide a `background` parameter to the `Dismissible`.
 
 <!-- skip -->
 ```dart

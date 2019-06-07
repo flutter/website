@@ -1,7 +1,7 @@
 ---
 title: Play and pause a video
 prev:
-  title: Storing key-value data on disk
+  title: Store key-value data on disk
   path: /docs/cookbook/persistence/key-value
 next:
   title: Take a picture using the camera
@@ -20,15 +20,14 @@ handle playback. On Android, it uses
 [`ExoPlayer`](https://google.github.io/ExoPlayer/).
 
 This recipe demonstrates how to use the `video_player` package to stream a
-video from the internet with basic play and pause controls.
+video from the internet with basic play and pause controls using
+the following steps:
 
-## Directions
-
-  1. Add the `video_player` dependency
-  2. Add permissions to your app
-  3. Create and initialize a `VideoPlayerController`
-  4. Display the video player
-  5. Play and pause the video
+  1. Add the `video_player` dependency.
+  2. Add permissions to your app.
+  3. Create and initialize a `VideoPlayerController`.
+  4. Display the video player.
+  5. Play and pause the video.
 
 ## 1. Add the `video_player` dependency
 

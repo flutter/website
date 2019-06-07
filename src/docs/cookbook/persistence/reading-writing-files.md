@@ -1,10 +1,10 @@
 ---
-title: Reading and writing files
+title: Read and write files
 prev:
   title: Persist data with SQLite
   path: /docs/cookbook/persistence/sqlite
 next:
-  title: Storing key-value data on disk
+  title: Store key-value data on disk
   path: /docs/cookbook/persistence/key-value
 ---
 
@@ -17,12 +17,12 @@ To save files to disk, combine the
 the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
-## Directions
+This recipe uses the following steps:
 
-  1. Find the correct local path
-  2. Create a reference to the file location
-  3. Write data to the file
-  4. Read data from the file
+  1. Find the correct local path.
+  2. Create a reference to the file location.
+  3. Write data to the file.
+  4. Read data from the file.
 
 ## 1. Find the correct local path
 
@@ -65,7 +65,7 @@ Once you know where to store the file, create a reference to the
 file's full location. You can use the
 [`File`]({{site.api}}/flutter/dart-io/File-class.html)
 class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library to achieve this.
+library to handle this.
 
 <!-- skip -->
 ```dart

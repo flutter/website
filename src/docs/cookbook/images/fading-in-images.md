@@ -4,7 +4,7 @@ prev:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
 next:
-  title: Working with cached images
+  title: Work with cached images
   path: /docs/cookbook/images/cached-images
 ---
 
@@ -15,7 +15,7 @@ to your users.
 Instead, wouldn't it be nice to display a placeholder at first,
 and images would fade in as they're loaded? Use the
 [`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
-widget packaged with Flutter for exactly this purpose.
+widget for exactly this purpose.
 
 `FadeInImage` works with images of any type: in-memory, local assets,
 or images from the internet.

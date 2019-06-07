@@ -1,10 +1,10 @@
 ---
 title: Place a floating app bar above a list 
 prev:
-  title: Creating lists with different types of items
+  title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
 next:
-  title: Working with long lists
+  title: Work with long lists
   path: /docs/cookbook/lists/long-lists
 ---
 
@@ -12,7 +12,7 @@ To make it easier for users to view a list of items, you might want to hide the
 app bar as the user scrolls down the list. This is especially true if your app
 displays a "tall" app bar that occupies a lot of vertical space.
 
-Traditionally, you create an app bar by providing an `appBar` property to the
+Typically, you create an app bar by providing an `appBar` property to the
 `Scaffold` widget. This creates a fixed app bar that always remains above
 the `body` of the `Scaffold`.
 
@@ -23,13 +23,11 @@ list of items contained inside the `CustomScrollView`.
 
 This recipe demonstrates how to use a `CustomScrollView` to display a list of 
 items with an app bar on top that scrolls offscreen as the user scrolls
-down the list.
+down the list using the following steps:
 
-### Directions
-
-  1. Create a `CustomScrollView`
-  2. Use `SliverAppBar` to add a floating app bar
-  3. Add a list of items using a `SliverList`
+  1. Create a `CustomScrollView`.
+  2. Use `SliverAppBar` to add a floating app bar.
+  3. Add a list of items using a `SliverList`.
 
 ## 1. Create a `CustomScrollView`
 
@@ -40,15 +38,15 @@ You might think of the `CustomScrollView` widget as a `ListView`
 that allows you to mix and match different types of scrollable lists
 and widgets together.
 
-The scrollable lists and widgets provided to the the
-`CustomScrollView` are known as _slivers_. There are several types of Slivers,
-such as a `SliverList`, `SliverGridList`, and `SliverAppBar`.
+The scrollable lists and widgets provided to the
+`CustomScrollView` are known as _slivers_. There are several types
+of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
-`SliverGrid` widgets behind the scenes.
+`SliverGrid` widgets to implement scrolling.
 
 For this example, create a `CustomScrollView` that contains a 
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars
-you might be providing to the `Scaffold` widget.
+that you provide to the `Scaffold` widget.
 
 <!-- skip -->
 ```dart
@@ -67,20 +65,22 @@ Next, add an app bar to the
 [`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html).
 Flutter provides the
 [`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html)
-widget out of the box.  Much like the normal `AppBar` widget, use the
+widget which, much like the normal `AppBar` widget, uses the
 `SliverAppBar` to display a title, tabs, images and more.
 
 However, the `SliverAppBar` also gives you the ability to create a "floating"
-app bar that scrolls offscreen as the user scrolls down the list. Furthermore,
-you can configure the `SliverAppBar` to shrink and expand as the user scrolls.
+app bar that scrolls offscreen as the user scrolls down the list.
+Furthermore, you can configure the `SliverAppBar` to shrink and
+expand as the user scrolls.
 
-To achieve this effect:
+To create this effect:
 
-  1. Start with an app bar that displays only a title 
+  1. Start with an app bar that displays only a title.
   2. Set the `floating` property to `true`.
-  This allows users to quickly reveal the app bar when they being
-  scrolling up the list.
-  3. Add a `flexibleSpace` widget that fills the available `expandedHeight`.
+     This allows users to quickly reveal the app bar when
+     they scroll up the list.
+  3. Add a `flexibleSpace` widget that fills the available
+     `expandedHeight`.
 
 <!-- skip -->
 ```dart
@@ -102,7 +102,7 @@ CustomScrollView(
 
 {{site.alert.tip}}
   Play around with the [various properties you can pass to the `SliverAppBar`
-  widget]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html)
+  widget]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html),
   and use hot reload to see the results. For example, use an `Image`
   widget for the `flexibleSpace` property to create a background image that
   shrinks in size as it's scrolled offscreen.
@@ -120,12 +120,12 @@ use the `SliverList` widget. If you need to display a grid list,
 use the `SliverGrid` widget.
 
 The `SliverList` and `SliverGrid` widgets take one required parameter: a
-[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html).
-While this sounds fancy, the delegate is simply used to provide
-a list widgets to `SliverList` or `SliverGrid`. For example, the
+[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html),
+which provides a list of widgets to `SliverList` or `SliverGrid`.
+For example, the
 [`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html)
-allows you to create a list of items that are built lazily as you scroll, just
-like the the `ListView.builder` widget.
+allows you to create a list of items that are built lazily as you scroll,
+just like the `ListView.builder` widget.
 
 <!-- skip -->
 ```dart
@@ -195,4 +195,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Basic List Demo](/images/cookbook/floating-app-bar.gif){:.site-mobile-screenshot}
+![Use list demo](/images/cookbook/floating-app-bar.gif){:.site-mobile-screenshot}

@@ -1,7 +1,7 @@
 ---
-title: Tapping, dragging and entering text
+title: Tap, drag, and enter text
 prev:
-  title: Finding widgets
+  title: Find widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 
@@ -32,22 +32,21 @@ interaction, call the
 [`pump()`]({{api}}/flutter_test/WidgetTester/pump.html) or
 [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
 methods provided by the `WidgetTester`.
+This recipe uses the following steps:
 
-### Directions
-
-  1. Create a widget to test
-  2. Enter text in the text field
-  3. Ensure tapping a button adds the todo
-  4. Ensure swipe-to-dismiss removes the todo
+  1. Create a widget to test.
+  2. Enter text in the text field.
+  3. Ensure tapping a button adds the todo.
+  4. Ensure swipe-to-dismiss removes the todo.
 
 ### 1. Create a widget to test
 
 For this example,
 create a basic todo app that tests three features:
 
-  1. Entering text into a `TextField`
-  2. Tapping a `FloatingActionButton` to add the text to a list of todos
-  3. Swiping-to-dismiss toe remove the item from the list
+  1. Entering text into a `TextField`.
+  2. Tapping a `FloatingActionButton` to add the text to a list of todos.
+  3. Swiping-to-dismiss toe remove the item from the list.
 
 To keep the focus on testing,
 this recipe won't provide a detailed guide on how to build the todo app.
@@ -55,7 +54,7 @@ To learn more about how this app is built,
 see the relevant recipes: 
 
   * [Create and style a text field](/docs/cookbook/forms/text-input)
-  * [Handling taps](/docs/cookbook/gestures/handling-taps)
+  * [Handle taps](/docs/cookbook/gestures/handling-taps)
   * [Create a basic list](/docs/cookbook/lists/basic-list)
   * [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
 
@@ -122,10 +121,10 @@ Start by entering text into the `TextField`.
 
 Accomplish this task by:
 
-  1. Building the widget in the test environment
+  1. Building the widget in the test environment.
   2. Using the
      [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html)
-     method from the `WidgetTester`
+     method from the `WidgetTester`.
 
 <!-- skip -->
 ```dart
@@ -156,11 +155,11 @@ This involves three steps:
 
  1. Tap the add button using the
     [`tap()`]({{api}}/flutter_test/WidgetController/tap.html)
-    method
+    method.
  2. Rebuild the widget after the state has changed using the
     [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
-    method
- 3. Ensure that the list item appears on screen
+    method.
+ 3. Ensure that the list item appears on screen.
 
 <!-- skip -->
 ```dart

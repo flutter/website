@@ -8,7 +8,8 @@ next:
   path: /docs/cookbook/images/fading-in-images
 ---
 
-Displaying images is fundamental for most mobile apps. Flutter provides the
+Displaying images is fundamental for most mobile apps.
+Flutter provides the
 [`Image`]({{site.api}}/flutter/widgets/Image-class.html) widget to
 display different types of images.
 
@@ -23,10 +24,10 @@ Image.network(
 )
 ```
 
-## Bonus: Animated Gifs
+## Bonus: animated gifs
 
 One useful thing about the `Image` widget:
-It also supports animated gifs out of the box.
+It supports animated gifs.
 
 <!-- skip -->
 ```dart
@@ -39,11 +40,12 @@ Image.network(
 
 The default `Image.network` constructor doesn't handle more advanced
 functionality, such as fading images in after loading, or caching images
-to the device after they're downloaded. To achieve these tasks, see
+to the device after they're downloaded. To accomplish these tasks, see
 the following recipes:
 
-  * [Fade in images with a placeholder](/docs/cookbook/images/fading-in-images/)
-  * [Working with cached images](/docs/cookbook/images/cached-images/)
+  * [Fade in images with a
+    placeholder](/docs/cookbook/images/fading-in-images)
+  * [Working with cached images](/docs/cookbook/images/cached-images)
 
 ## Complete example
 
@@ -72,4 +74,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Network Image Demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}
+![Network image demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}

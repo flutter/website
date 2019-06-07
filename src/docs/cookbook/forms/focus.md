@@ -1,14 +1,15 @@
 ---
-title: Focus on a text field
+title: Focus and text fields
 prev:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input
 next:
-  title: Handling changes to a text field
+  title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 ---
 
-When a text field is selected and accepting input, it is said to have "focus."
+When a text field is selected and accepting input,
+it is said to have "focus."
 Generally, users shift focus to a text field by tapping,
 and developers shift focus to a text field programmatically by
 using the tools described in this recipe.
@@ -16,16 +17,17 @@ using the tools described in this recipe.
 Managing focus is a fundamental tool for creating forms with an intuitive
 flow. For example, say you have a search screen with a text field.
 When the user navigates to the search screen,
-you can focus on the search term text field.
+you can set the focus to the text field for the search term.
 This allows the user to start typing as soon as the screen
 is visible, without needing to manually tap the text field.
 
-In this recipe, learn how to focus on a text field as soon as it's visible,
-as well as how to focus on a text field when a button is tapped.
+In this recipe, learn how to give the focus to a text field as soon
+as it's visible,
+as well as how to give focus to a text field when a button is tapped.
 
 ## Focus a text field as soon as it's visible
 
-To focus on a text field as soon as it's visible,
+To give focus to a text field as soon as it's visible,
 use the `autofocus` property.
 
 <!-- skip -->
@@ -40,30 +42,29 @@ see the [Forms](/docs/cookbook#forms) section of the cookbook.
 
 ## Focus a text field when a button is tapped
 
-Rather than immediately focusing on a specific text field,
-you might need to focus on a text field at a later point in time.
-In this example, focus on a
-text field after the user presses a button.
-In the real world, you might also need to focus on a specific
+Rather than immediately shifting focus to a specific text field,
+you might need to give focus to a text field at a later point in time.
+In the real world, you might also need to give focus to a specific
 text field in response to an API call or a validation error.
+In this example, give focus to a text field after the user
+presses a button using the following steps:
 
-### Directions
-
-  1. Create a `FocusNode`
-  2. Pass the `FocusNode` to a `TextField`
-  3. Focus the `TextField` when a button is tapped
+  1. Create a `FocusNode`.
+  2. Pass the `FocusNode` to a `TextField`.
+  3. Give focus to the `TextField` when a button is tapped.
 
 ### 1. Create a `FocusNode`
 
 First, create a
 [`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
 Use the `FocusNode` to identify a specific `TextField` in Flutter's
-"focus tree." This allows you to focus the `TextField` in the next steps.
+"focus tree." This allows you to give focus to the `TextField`
+in the next steps.
 
 Since focus nodes are long-lived objects, manage the lifecycle
 using a `State` object. To do so, create the `FocusNode` instance
 inside the `initState()` method of a `State` class,
-and clean it up inside the `dispose()` method.
+and clean it up in the `dispose()` method.
 
 <!-- skip -->
 ```dart
@@ -121,17 +122,17 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-### 3. Focus the `TextField` when a button is tapped
+### 3. Give focus to the `TextField` when a button is tapped
 
 Finally, focus the text field when the user taps a floating
 action button. Use the
 [`requestFocus()`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html)
-method to achieve this task.
+method to perform this task.
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
-  // When the button is pressed, focus on the text field using
+  // When the button is pressed, give focus to the text field using
   // myFocusNode.
   onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
 );
@@ -206,7 +207,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
       ),
       floatingActionButton: FloatingActionButton(
         // When the button is pressed,
-        // focus on the text field using myFocusNode.
+        // give focus to the text field using myFocusNode.
         onPressed: () => FocusScope.of(context).requestFocus(myFocusNode),
         tooltip: 'Focus Second Text Field',
         child: Icon(Icons.edit),

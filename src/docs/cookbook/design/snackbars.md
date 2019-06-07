@@ -1,12 +1,11 @@
 ---
-title: Displaying SnackBars
-short-title: SnackBars
-description: How to implement a SnackBar to display messages.
+title: Display a snackbars
+description: How to implement a snackbar to display messages.
 prev:
-  title: Add a Drawer to a screen
+  title: Add a drawer to a screen
   path: /docs/cookbook/design/drawer
 next:
-  title: Exporting fonts from a package
+  title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
 ---
 
@@ -17,12 +16,11 @@ You might even want to give them an option to undo the action.
 
 In Material Design, this is the job of a
 [SnackBar]({{site.api}}/flutter/material/SnackBar-class.html).
+This recipe implements a snackbar using the following steps:
 
-## Directions
-
-  1. Create a `Scaffold`
-  2. Display a `SnackBar`
-  3. Provide an optional action
+  1. Create a `Scaffold`.
+  2. Display a `SnackBar`.
+  3. Provide an optional action.
 
 ## 1. Create a `Scaffold`
 
@@ -65,11 +63,12 @@ Scaffold.of(context).showSnackBar(snackBar);
 
 You might want to provide an action to the user when
 the SnackBar is displayed.
-For example, the user accidentally deletes a message,
-but can use an action to undo that change.
+For example, if the user accidentally deletes a message,
+they might use an optional action in the SnackBar to recover
+the message.
 
-To achieve this,
-provide an additional `action` to the `SnackBar` widget.
+Here's an example of providing
+an additional `action` to the `SnackBar` widget:
 
 ```dart
 final snackBar = SnackBar(
@@ -88,7 +87,7 @@ final snackBar = SnackBar(
 {{site.alert.note}}
   In this example, the SnackBar displays when a user taps a button.
   For more information on working with user input, see the
-  [Gestures](/docs/cookbook#gestures) section of the Cookbook.
+  [Gestures](/docs/cookbook#gestures) section of the cookbook.
 {{site.alert.end}}
 
 ```dart

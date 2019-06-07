@@ -1,23 +1,24 @@
 ---
-title: Basic list
+title: Use lists
 prev:
-  title: Working with cached images
+  title: Work with cached images
   path: /docs/cookbook/images/cached-images
 next:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
 ---
 
-Displaying lists of data is a fundamental pattern for mobile apps. Flutter
-includes the [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
+Displaying lists of data is a fundamental pattern for mobile apps.
+Flutter includes the
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 widget to make working with lists a breeze.
 
 ## Create a ListView
 
 Using the standard `ListView` constructor is perfect for lists that
-contain only a few items. Use the built-in
+contain only a few items. The built-in
 [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
-widget to give items a visual structure.
+widget is a way to give items a visual structure.
 
 <!-- skip -->
 ```dart

@@ -1,7 +1,7 @@
 ---
-title: Handling taps
+title: Handle taps
 prev:
-  title: Adding Material touch ripples
+  title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples
 next:
   title: Implement swipe to dismiss
@@ -13,13 +13,11 @@ you want users to interact with your app. Use the
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 widget to respond to fundamental actions, such as tapping and dragging.
 
-Say you want to make a custom button that shows a snackbar when tapped.
-How to do this?
+This recipe shows how to make a custom button that shows
+a snackbar when tapped with the following steps:
 
-## Directions
-
-  1. Create the button
-  2. Wrap it in a `GestureDetector` with an `onTap()` callback
+  1. Create the button.
+  2. Wrap it in a `GestureDetector` that an `onTap()` callback.
 
 <!-- skip -->
 ```dart
@@ -45,13 +43,14 @@ GestureDetector(
 
 ## Notes
 
-  1. To add the Material ripple effect to your button, see the
-     [Adding Material touch ripples](/docs/cookbook/gestures/ripples/) recipe.
-  2. While this example creates a custom button to demonstrate these concepts,
-     Flutter includes a handful of buttons out of the box:
+  1. For information on adding the Material ripple effect to your
+     button, see the [Add Material touch
+     ripples](/docs/cookbook/gestures/ripples) recipe.
+  2. Although this example creates a custom button,
+     Flutter includes a handful of button implementations, such as:
      [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
      [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html), and
-     [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html)
+     [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html).
 
 ## Complete example
 
@@ -113,4 +112,4 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Handling Taps Demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}
+![Handle taps demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}

@@ -1,19 +1,19 @@
 ---
 title: Create and style a text field
 prev:
-  title: Building a form with validation
+  title: Build a form with validation
   path: /docs/cookbook/forms/validation
 next:
-  title: Focus on a text field
+  title: Focus and text fields
   path: /docs/cookbook/forms/focus
 ---
 
 Text fields allow users to type text into an app.
-Text fields are used to build forms,
+They are used to build forms,
 send messages, create search experiences, and more.
 In this recipe, explore how to create and style text fields.
 
-Flutter provides two text fields out of the box:
+Flutter provides two text fields:
 [`TextField`]({{site.api}}/flutter/material/TextField-class.html)
 and [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 

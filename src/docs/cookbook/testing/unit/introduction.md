@@ -2,7 +2,7 @@
 title: An introduction to unit testing
 short-title: Introduction
 prev:
-  title: Scrolling
+  title: Perform scrolling
   path: /docs/cookbook/testing/integration/scrolling
 next:
   title: Mock dependencies using Mockito
@@ -18,19 +18,19 @@ core framework for writing unit tests, and the
 [`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
 package provides additional utilities for testing widgets.
 
-This recipe demonstrates the core features provided by the `test` package.
+This recipe demonstrates the core features provided by the `test` package
+using the following steps:
+
+  1. Add the `test` or `flutter_test` dependency.
+  2. Create a test file.
+  3. Create a class to test.
+  4. Write a `test` for our class.
+  5. Combine multiple tests in a `group`.
+  6. Run the tests.
+
 For more information about the test package, see the
 [test package
 documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
-
-## Directions
-
-  1. Add the `test` or `flutter_test` dependency
-  2. Create a test file
-  3. Create a class to test
-  4. Write a `test` for our class
-  5. Combine multiple tests in a `group`
-  6. Run the tests
 
 ## 1. Add the test dependency
 
@@ -67,7 +67,7 @@ counter_app/
 
 ## 3. Create a class to test
 
-Next, you need a "unit" to test. Remember: "unit" is a fancy name for a
+Next, you need a "unit" to test. Remember: "unit" is another name for a
 function, method, or class. For this example, create a `Counter` class
 inside the `lib/counter.dart` file. It is responsible for incrementing
 and decrementing a `value` starting at `0`.

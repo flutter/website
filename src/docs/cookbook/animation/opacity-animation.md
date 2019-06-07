@@ -1,26 +1,26 @@
 ---
 title: Fade a widget in and out
 prev:
-  title: Animate the properties of a Container
+  title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container
 next:
-  title: Add a Drawer to a screen
+  title: Add a drawer to a screen
   path: /docs/cookbook/design/drawer
 ---
 
-UI developers often need to show and hide elements on screen. However,
-quickly popping elements on and off the screen can feel jarring to end users.
-Instead, fade elements in and out with an opacity animation to create
+UI developers often need to show and hide elements on screen.
+However, quickly popping elements on and off the screen can
+feel jarring to end users. Instead,
+fade elements in and out with an opacity animation to create
 a smooth experience.
 
-In Flutter, achieve by using the [`AnimatedOpacity`][] widget.
+The [`AnimatedOpacity`][] widget makes it easy to perform opacity
+animations. This recipe uses the following steps:
 
-## Directions
-
-  1. Create a box to fade in and out
-  2. Define a `StatefulWidget`
-  3. Display a button that toggles the visibility
-  4. Fade the box in and out
+  1. Create a box to fade in and out.
+  2. Define a `StatefulWidget`.
+  3. Display a button that toggles the visibility.
+  4. Fade the box in and out.
 
 ## 1. Create a box to fade in and out
 
@@ -88,14 +88,14 @@ should be visible, you need a way update that data.
 In this example, if the box is visible, hide it.
 If the box is hidden, show it.
 
-To achieve this, display a button. When a user presses the button,
+To handle this, display a button. When a user presses the button,
 flip the boolean from true to false, or false to true.
 Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
 For more information on working with user input, see the
-[Gestures](/docs/cookbook#gestures) section of the Cookbook.
+[Gestures](/docs/cookbook#gestures) section of the cookbook.
 
 <!-- skip -->
 ```dart
@@ -114,8 +114,8 @@ FloatingActionButton(
 
 ## 4. Fade the box in and out
 
-You've got a green box on screen. You've got a button to toggle the visibility
-to `true` or `false`. So how to fade the box in and out? With an
+You have a green box on screen and a button to toggle the visibility
+to `true` or `false`. How to fade the box in and out? With an
 [`AnimatedOpacity`][] widget.
 
 The `AnimatedOpacity` widget requires three arguments:

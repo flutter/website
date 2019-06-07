@@ -5,7 +5,7 @@ prev:
   title: Mock dependencies using Mockito
   path: /docs/cookbook/testing/unit/mocking
 next:
-  title: Finding widgets
+  title: Find widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 
@@ -34,16 +34,14 @@ The `flutter_test` package provides the following tools for testing widgets:
     multiple widgets in the test environment.
 
 If this sounds overwhelming, don't worry. Learn how all of these pieces fit
-together throughout this recipe.
+together throughout this recipe, which uses the following steps:
 
-### Directions
-
-  1. Add the `flutter_test` dependency
-  2. Create a widget to test
-  3. Create a `testWidgets` test
-  4. Build the widget using the `WidgetTester`
-  5. Search for the widget using a `Finder`
-  6. Verify that the widget uses a `Matcher`
+  1. Add the `flutter_test` dependency.
+  2. Create a widget to test.
+  3. Create a `testWidgets` test.
+  4. Build the widget using the `WidgetTester`.
+  5. Search for the widget using a `Finder`.
+  6. Verify that the widget uses a `Matcher`.
 
 ### 1. Add the `flutter_test` dependency
 

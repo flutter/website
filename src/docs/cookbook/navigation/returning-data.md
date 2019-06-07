@@ -11,12 +11,11 @@ next:
 In some cases, you might want to return data from a new screen.
 For example, say you push a new screen that presents two options to a user.
 When the user taps an option, you want to inform the first screen
-of the user's selection so it can act on that information.
+of the user's selection so that it can act on that information.
 
-How to achieve this? By using
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html).
-
-## Directions
+You can do this with the
+[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
+method using the following steps:
 
   1. Define the home screen
   2. Add a button that launches the selection screen
@@ -26,8 +25,8 @@ How to achieve this? By using
 
 ## 1. Define the home screen
 
-The home screen displays a button. When tapped, it launches the selection
-screen.
+The home screen displays a button. When tapped,
+it launches the selection screen.
 
 <!-- skip -->
 ```dart
@@ -49,8 +48,8 @@ class HomeScreen extends StatelessWidget {
 
 Now, create the SelectionButton. The selection button:
 
-  1. Launches the SelectionScreen when it's tapped
-  2. Waits for the SelectionScreen to return a result
+  1. Launches the SelectionScreen when it's tapped.
+  2. Waits for the SelectionScreen to return a result.
 
 <!-- skip -->
 ```dart
@@ -65,8 +64,8 @@ class SelectionButton extends StatelessWidget {
     );
   }
 
-  // A method that launches the SelectionScreen and awaits the result from
-  // Navigator.pop
+  // A method that launches the SelectionScreen and awaits the
+  // result from Navigator.pop.
   _navigateAndDisplaySelection(BuildContext context) async {
     // Navigator.push returns a Future that completes after calling
     // Navigator.pop on the Selection Screen.

@@ -13,21 +13,20 @@ but also pass data to the screen as well.
 For example, you might want to pass information about
 the item that's been tapped.
 
-Remember: Screens are Just Widgets&trade;.
-In this example, create a List of Todos.
+Remember: Screens are Just Widgets.
+In this example, create a list of todos.
 When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.
+This recipe uses the following steps:
 
-## Directions
+  1. Define a todo class.
+  2. Display a list of todos.
+  3. Create a detail screen that can display information about a todo.
+  4. Navigate and pass data to the detail screen.
 
-  1. Define a Todo class
-  2. Display a list of Todos
-  3. Create a detail screen that can display information about a todo
-  4. Navigate and pass data to the detail screen
+## 1. Define a todo class
 
-## 1. Define a Todo class
-
-First, you need a simple way to represent Todos. For this example,
+First, you need a simple way to represent todos. For this example,
 create a class that contains two pieces of data: the title and description.
 
 <!-- skip -->
@@ -40,14 +39,14 @@ class Todo {
 }
 ```
 
-## 2. Create a list of Todos
+## 2. Create a list of todos
 
-Second, display a list of Todos. In this example, generate
+Second, display a list of todos. In this example, generate
 20 todos and show them using a ListView.
 For more information on working with lists, see the
-[Basic List](/docs/cookbook/lists/basic-list/) recipe.
+[Use lists](/docs/cookbook/lists/basic-list) recipe.
 
-### Generate the list of Todos
+### Generate the list of todos
 
 <!-- skip -->
 ```dart
@@ -60,7 +59,7 @@ final todos = List<Todo>.generate(
 );
 ```
 
-### Display the list of Todos using a ListView
+### Display the list of todos using a ListView
 
 <!-- skip -->
 ```dart
@@ -75,15 +74,16 @@ ListView.builder(
 ```
 
 So far, so good.
-This generates 20 Todos and displays them in a ListView.
+This generates 20 todos and displays them in a ListView.
 
 ## 3. Create a detail screen to display information about a todo
 
 Now, create the second screen. The title of the screen contains the
 title of the todo, and the body of the screen shows the description.
 
-Since it's a normal `StatelessWidget`, require that the user
-enters a `Todo` in the UI. Then, build the UI using the given Todo.
+Since the detail screen is a normal `StatelessWidget`,
+require the user to enter a `Todo` in the UI.
+Then, build the UI using the given todo.
 
 <!-- skip -->
 ```dart
@@ -114,13 +114,14 @@ class DetailScreen extends StatelessWidget {
 
 With a `DetailScreen` in place,
 you're ready to perform the Navigation.
-In this example, navigate to the `DetailScreen` when a user taps a Todo in
-the list. When doing so, pass the Todo to the `DetailScreen`.
+In this example, navigate to the `DetailScreen` when a user
+taps a todo in the list. Pass the todo to the `DetailScreen`.
 
-To achieve this, write an
+To capture the user's tap, write an
 [`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
 callback for the `ListTile` widget. Within the `onTap()` callback, 
-use the [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
+use the
+[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.
 
 <!-- skip -->

@@ -1,7 +1,7 @@
 ---
-title: Handling changes to a text field
+title: Handle changes to a text field
 prev:
-  title: Focus on a Text Field
+  title: Focus and text fields
   path: /docs/cookbook/forms/focus
 next:
   title: Retrieve the value of a text field
@@ -9,15 +9,15 @@ next:
 ---
 
 In some cases, it's useful to run a callback function every time the text
-in a text field changes. For example, you might want to build a search screen
-with autocomplete functionality, and you want to update the
+in a text field changes. For example, you might want to build a search
+screen with autocomplete functionality where you want to update the
 results as the user types.
 
-How to run a callback function every time the text changes?
+How do you run a callback function every time the text changes?
 With Flutter, you have two options:
 
-  1. Supply an `onChanged()` callback to a `TextField`
-  2. Use a `TextEditingController`
+  1. Supply an `onChanged()` callback to a `TextField`.
+  2. Use a `TextEditingController`.
 
 ## 1. Supply an `onChanged()` callback to a `TextField`
 
@@ -50,21 +50,16 @@ property of the `TextField` or a `TextFormField`.
 
 To be notified when the text changes, listen to the controller using the
 [`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method.
+method using the following steps:
 
-### Directions
-
-  - Create a `TextEditingController`
-  - Supply the `TextEditingController` to a `TextField`
-  - Create a function to print the latest value
-  - Listen to the controller for changes
+  1. Create a `TextEditingController`.
+  2. Connect the `TextEditingController` to a text field.
+  3. Create a function to print the latest value.
+  4. Listen to the controller for changes.
 
 ### Create a `TextEditingController`
 
-First, create a `TextEditingController`. In later steps,
-you supply the `TextEditingController` to a `TextField`.
-Once wiring these two classes together,
-you can listen for changes to the text field.
+Create a `TextEditingController`:
 
 <!-- skip -->
 ```dart
@@ -77,13 +72,14 @@ class MyCustomForm extends StatefulWidget {
 // Define a corresponding State class.
 // This class holds data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
+  // Create a text controller. Later, use it to retrieve the
+  // current value of the TextField.
   final myController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is removed from the widget tree.
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
     myController.dispose();
     super.dispose();
   }
@@ -96,15 +92,15 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 {{site.alert.note}}
-  Remember to `dispose()` of the `TextEditingController` when it's no
-  longer needed.
-  This ensures that you discard any resources used by the object.
+  Remember to dispose of the `TextEditingController` when it's no
+  longer needed. This ensures that you discard any resources used
+  by the object.
 {{site.alert.end}}
 
-### Supply the `TextEditingController` to a `TextField`
+### Connect the `TextEditingController` to a text field
 
-For this to work, the `TextEditingController` must be supplied
-to either a `TextField` or a `TextFormField`. Once it's wired up,
+Supply the `TextEditingController` to either a `TextField`
+or a `TextFormField`. Once you wire these two classes together,
 you can begin listening for changes to the text field.
 
 <!-- skip -->
@@ -116,10 +112,9 @@ TextField(
 
 ### Create a function to print the latest value
 
-Now, you need a function to run every time the text changes.
-Create a method that prints out the current value of the text field.
-
-This method lives inside the `_MyCustomFormState` class.
+You need a function to run every time the text changes.
+Create a method in the `_MyCustomFormState` class that prints
+out the current value of the text field.
 
 <!-- skip -->
 ```dart
@@ -130,14 +125,14 @@ _printLatestValue() {
 
 ### Listen to the controller for changes
 
-Finally, listen to the `TextEditingController` and run the
+Finally, listen to the `TextEditingController` and call the
 `_printLatestValue()` method when the text changes. Use the
 [`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method to achieve this task.
+method for this purpose.
 
 Begin listening for changes when the
-`_MyCustomFormState` class is initialized, and stop listening when the
-`_MyCustomFormState` is disposed.
+`_MyCustomFormState` class is initialized,
+and stop listening when the `_MyCustomFormState` is disposed.
 
 <!-- skip -->
 ```dart

@@ -4,7 +4,7 @@ prev:
   title: An introduction to integration testing
   path: /docs/cookbook/testing/integration/introduction
 next:
-  title: Scrolling
+  title: Handle scrolling
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
@@ -24,13 +24,13 @@ In this recipe, learn how to write a test that records a performance
 timeline while performing a specific task and saves a summary of the
 results to a local file.
 
-### Directions
+This recipe uses the following steps:
 
-  1. Write a test that scrolls through a list of items
-  2. Record the performance of the app
-  3. Save the results to disk
-  4. Run the test
-  5. Review the results
+  1. Write a test that scrolls through a list of items.
+  2. Record the performance of the app.
+  3. Save the results to disk.
+  4. Run the test.
+  5. Review the results.
 
 ### 1. Write a test that scrolls through a list of items
 
@@ -46,7 +46,7 @@ app, and write a test to verify that everything works as expected.
 ### 2. Record the performance of the app
 
 Next, record the performance of the app as it scrolls through the
-list. To achieve this task, use the
+list. Perform this task using the
 [`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
 method provided by the
 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)

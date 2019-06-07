@@ -14,8 +14,7 @@ a common identifier. In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
-In Flutter,
-you can accomplish this task by providing additional `arguments` to the
+You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 method. Extract the arguments using the
 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
@@ -28,14 +27,13 @@ or
 constructor.
 
 This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModelRoute.of()` and `onGenerateRoute()`.
+arguments using `ModelRoute.of()` and `onGenerateRoute()` using the
+following steps:
 
-## Directions
-
-  1. Define the arguments you need to pass
-  2. Create a widget that extracts the arguments
-  3. Register the widget in the `routes` table 
-  4. Navigate to the widget
+  1. Define the arguments you need to pass.
+  2. Create a widget that extracts the arguments.
+  3. Register the widget in the `routes` table.
+  4. Navigate to the widget.
 
 ## 1. Define the arguments you need to pass
 
@@ -48,7 +46,7 @@ To pass both pieces of data, create a class that stores this information.
 <!-- skip -->
 ```dart
 // You can pass any object to the arguments parameter.
-// In this example, create a class that contains both a customizable
+// In this example, create a class that contains a customizable
 // title and message.
 class ScreenArguments {
   final String title;
@@ -149,7 +147,7 @@ The `onGenerateRoute()` function creates the correct route based on the given
 MaterialApp(
   // Provide a function to handle named routes. Use this function to
   // identify the named route being pushed, and create the correct
-  // Screen.
+  // screen.
   onGenerateRoute: (settings) {
     // If you push the PassArguments route
     if (settings.name == PassArgumentsScreen.routeName) {

@@ -1,25 +1,24 @@
 ---
-title: Adding Material touch ripples
+title: Add Material touch ripples
 prev:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handling taps
+  title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
 ---
 
-When designing an app that follows the Material Design Guidelines,
-you'll want to add the ripple animation to widgets when tapped.
+Widgets that follow the Material Design guidelines display
+a ripple animation when tapped.
 
 Flutter provides the
 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html)
-widget to achieve this effect.
+widget to perform this effect. Create a ripple effect using
+the following steps:
 
-## Directions
-
-  1. Create a widget that supports tap
+  1. Create a widget that supports tap.
   2. Wrap it in an `InkWell` widget to manage tap callbacks and
-     ripple animations
+     ripple animations.
 
 <!-- skip -->
 ```dart

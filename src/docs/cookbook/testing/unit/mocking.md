@@ -15,7 +15,7 @@ web services or databases. This is inconvenient for a few reasons:
   * Calling live services or databases slows down test execution.
   * A passing test might start failing if a web service or database returns
     unexpected results. This is known as a "flaky test."
-  * It is difficult to test all possible success & failure scenarios
+  * It is difficult to test all possible success and failure scenarios
     by using a live web service or database.
 
 Therefore, rather than relying on a live web service or database,
@@ -28,17 +28,17 @@ implementation of a class. Write these alternative implementations by
 hand or make use of the
 [Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
 
-This recipe demonstrates the basics of mocking using the Mockito package.
+This recipe demonstrates the basics of mocking with the
+Mockito package using the following steps:
+
+  1. Add the package dependencies.
+  2. Create a function to test.
+  3. Create a test file with a mock `http.Client`.
+  4. Write a test for each condition.
+  5. Run the tests.
+
 For more information, see the
 [Mockito]({{site.pub-pkg}}/mockito) package documentation.
-
-## Directions
-
-  1. Add the package dependencies
-  2. Create a function to test
-  3. Create a test file with a mock `http.Client`
-  4. Write a test for each condition
-  5. Run the tests
 
 ## 1. Add the package dependencies
 
@@ -60,7 +60,8 @@ dev_dependencies:
 ## 2. Create a function to test
 
 In this example, unit test the `fetchPost` function from the
-[Fetch data from the internet](/docs/cookbook/networking/fetch-data/) recipe.
+[Fetch data from the
+internet](/docs/cookbook/networking/fetch-data) recipe.
 To test this function, make two changes:
 
   1. Provide an `http.Client` to the function. This allows providing the
@@ -122,7 +123,7 @@ Therefore, you want to test these two conditions.
 Use the `MockClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
 
-To achieve this, use the `when` function provided by Mockito.
+To do this, use the `when()` function provided by Mockito.
 
 <!-- skip -->
 ```dart

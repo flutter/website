@@ -1,25 +1,25 @@
 ---
-title: Exporting fonts from a package
+title: Export fonts from a package
 prev:
-  title: Displaying SnackBars
+  title: Display a snackbars
   path: /docs/cookbook/design/snackbars
 next:
-  title: Updating the UI based on orientation
+  title: Update the UI based on orientation
   path: /docs/cookbook/design/orientation
 ---
 
-Rather than declaring a font as part of an app, you can declare a font as part
-of a separate package. This is a convenient way to share the same font across
-several different projects, or for coders publishing their packages to the
-[Pub site][].
+Rather than declaring a font as part of an app,
+you can declare a font as part of a separate package.
+This is a convenient way to share the same font across
+several different projects,
+or for coders publishing their packages to the [Pub site][].
+This recipe uses the following steps:
 
-## Directions
+  1. Add a font to a package.
+  2. Add the package and font to the app.
+  3. Use the font.
 
-  1. Add a font to a package
-  2. Add the package and font to the app
-  3. Use the font
-
-## 1. Add fonts to a package
+## 1. Add a font to a package
 
 To export a font from a package, you need to import the font files into the
 `lib` folder of the package project. You can place font files directly in the
@@ -39,10 +39,10 @@ awesome_package/
 
 ## 2. Add the package and fonts to the app
 
-Adding the fonts to a package
-involves updating the `pubspec.yaml` in the *app's* root directory.
+Now you can use the fonts in the package by
+updating the `pubspec.yaml` in the *app's* root directory.
 
-### Add the package to the project
+### Add the package to the app
 
 ```yaml
 dependencies:
@@ -73,7 +73,7 @@ flutter:
 
 Use a [`TextStyle`][] to change the appearance of text.
 To use package fonts, declare which font you'd like to use and
-which the `package` the font belongs to.
+which package the font belongs to.
 
 <!-- skip -->
 ```dart
