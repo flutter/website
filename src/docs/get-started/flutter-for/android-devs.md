@@ -708,7 +708,7 @@ Dart's single-threaded model doesn't mean you need to run everything as a
 blocking operation that causes the UI to freeze. Unlike Android, which
 requires you to keep the main thread free at all times, in Flutter,
 use the asynchronous facilities that the Dart language provides, such as
-`async`/`await`, to perform asynchronous work. You may be familiar with
+`async`/`await`, to perform asynchronous work. You might be familiar with
 the `async`/`await` paradigm if you've used it in C#, Javascript, or if you
 have used Kotlin's coroutines.
 
@@ -807,7 +807,7 @@ background, and how Flutter differs from Android.
 
 In Android, when you want to access a network resource you would typically
 move to a background thread and do the work, as to not block the main thread,
-and avoid ANRs. For example, you may be using an `AsyncTask`, a `LiveData`,
+and avoid ANRs. For example, you might be using an `AsyncTask`, a `LiveData`,
 an `IntentService`, a `JobScheduler` job, or an RxJava pipeline with a
 scheduler that works on background threads.
 
