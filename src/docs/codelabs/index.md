@@ -99,3 +99,8 @@ mirror of the Flutter codelabs](https://codelabs.flutter-io.cn/).
 For Dart-specific codelabs, see the
 [codelabs]({{site.dart-site}}/codelabs) page on the
 [Dart site]({{site.dart-site}}).
+
+### Other resources
+
+* [The Complete Flutter Development Bootcamp Using
+  Dart](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)
