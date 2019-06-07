@@ -120,10 +120,10 @@ fi
 # dependency) in another location and somehow getting into the PATH ahead of the
 # one in FLUTTER_ROOT, or against a corrupt install of the SDK. It's unlikely,
 # but we want to fail to find these if it happens.
-# dart="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart"
-# dartfmt="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt"
-# pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
-# flutter="$FLUTTER_ROOT/bin/flutter"
+dart="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart"
+dartfmt="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/dartfmt"
+pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
+flutter="$FLUTTER_ROOT/bin/flutter"
 
 echo "Using Dart SDK: $dart"
 "$dart" --version
