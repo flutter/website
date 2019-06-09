@@ -275,7 +275,7 @@ Next, run the dry-run command to see if everything passes analysis:
 $ flutter pub pub publish --dry-run
 ```
 
-(Note the redundant `pub pub`, which is needed until [issue #33302)(https://github.com/flutter/flutter/issues/33302) is resolved).
+(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 
