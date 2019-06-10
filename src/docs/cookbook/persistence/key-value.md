@@ -85,25 +85,27 @@ prefs.remove('counter');
 
 ## Supported types
 
-While it's easy and convenient to use key-value storage, it has limitations:
+Although key-value storage is easy and convenient to use,
+it has limitations:
 
-* Only primitive types can be used: `int`, `double`, `bool`, `string` and
-  `stringList`.
+* Only primitive types can be used: `int`, `double`, `bool`, `string`,
+  and `stringList`.
 * It's not designed to store a lot of data.
 
-For more information about shared preferences on Android, see
-[Shared preferences
+For more information about shared preferences on Android, see the
+[shared preferences
 documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
 on the Android developers website.
 
 ## Testing support
 
 It's a good idea to test code that persists data using
-`shared_preferences`. To do so, you need to mock out the
+`shared_preferences`. You can do this by mocking out the
 `MethodChannel` used by the `shared_preferences` library.
 
 Populate `SharedPreferences` with initial values in your tests
-by running the following code in a `setupAll()` method in your test files:
+by running the following code in a `setupAll()` method in
+your test files:
 
 <!-- skip -->
 ```dart

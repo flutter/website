@@ -97,8 +97,7 @@ events to a data source.
 
 ## 4. Close the WebSocket connection
 
-After you're done using the WebSocket, close the connection.
-To do so, close the `sink`.
+After you're done using the WebSocket, close the connection:
 
 <!-- skip -->
 ```dart

@@ -114,10 +114,9 @@ void main() {
 
 ### 4. Build the widget using the `WidgetTester`
 
-Next, build `MyWidget` inside the test environment. To do so,
-use the
+Next, build `MyWidget` inside the test environment by using the
 [`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html)
-method provided by the `WidgetTester`. The `pumpWidget` method builds and
+method provided by `WidgetTester`. The `pumpWidget` method builds and
 renders the provided widget.
 
 Create a `MyWidget` instance that displays "T" as the title

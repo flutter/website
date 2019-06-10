@@ -24,7 +24,7 @@ This recipe uses the following steps:
 
   1. Add the `http` package.
   2. Make a network request using the `http` package.
-  3. Convert the response into a list of Photos.
+  3. Convert the response into a list of photos.
   4. Move this work to a separate isolate.
 
 ## 1. Add the `http` package
@@ -91,8 +91,9 @@ class Photo {
 
 ### Convert the response into a list of photos
 
-Now, update the `fetchPhotos()` function so that it returns a
-`Future<List<Photo>>`. To do so, you need to:
+Now, use the following instructions to update the
+`fetchPhotos()` function so that it returns a
+`Future<List<Photo>>`:
 
   1. Create a `parsePhotos()` function that converts the response
      body into a `List<Photo>`.

@@ -220,7 +220,7 @@ print(await dogs()); // Prints a list that include Fido.
 
 After inserting information into the database,
 you might want to update that information at a later time.
-To do so, use the
+You can do this by using the
 [`update()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html)
 method from the `sqflite` library.
 

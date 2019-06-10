@@ -9,7 +9,7 @@ next:
 ---
 
 In some cases, you need to read and write files to disk.
-For example, to persist data across app launches,
+For example, you may need to persist data across app launches,
 or download data from the internet and save it for later offline use.
 
 To save files to disk, combine the
@@ -28,12 +28,12 @@ This recipe uses the following steps:
 
 This example displays a counter. When the counter changes,
 write data on disk so you can read it again when the app loads.
-Therefore, you might wonder: Where should I store this data?
+Where should you store this data?
 
 The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
-device's filesystem. The plugin currently supports access to two filesystem
-locations:
+device's file system. The plugin currently supports access to
+two file system locations:
 
   * *Temporary directory:* A temporary directory (cache) that the system can
     clear at any time. On iOS, this corresponds to the value that
@@ -65,7 +65,7 @@ Once you know where to store the file, create a reference to the
 file's full location. You can use the
 [`File`]({{site.api}}/flutter/dart-io/File-class.html)
 class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library to handle this.
+library to achieve this.
 
 <!-- skip -->
 ```dart
@@ -77,9 +77,11 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Use the `File` to read and write data.
-First, write some data to the file. Since you're working with a counter,
-store the integer as a String.
+Now that you have a File to work with,
+use it to read and write data.
+First, write some data to the file.
+The counter is an integer, but is written to the
+file as a string using the `'$counter'` syntax.
 
 <!-- skip -->
 ```dart
@@ -118,8 +120,8 @@ Future<int> readCounter() async {
 To test code that interacts with files, you need to mock calls to
 the `MethodChannel`&mdash;the class that 
 communicates with the host platform. For security reasons,
-you can't directly interact with the filesystem on a device,
-so you interact with the test environment's filesystem.
+you can't directly interact with the file system on a device,
+so you interact with the test environment's file system.
 
 To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.

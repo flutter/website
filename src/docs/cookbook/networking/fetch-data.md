@@ -25,8 +25,9 @@ The [`http`]({{site.pub-pkg}}/http) package provides the
 simplest way to fetch data from the internet.
 
 To install the `http` package, add it to the dependencies section
-of the `pubspec.yaml`. You can [find the latest version of the
-http package on the Pub site]({{site.pub}}/packages/http#-installing-tab-).
+of the `pubspec.yaml`. You can find the latest version of the
+[http package]({{site.pub}}/packages/http#-installing-tab-)
+on the Pub site.
 
 ```yaml
 dependencies:
@@ -36,7 +37,7 @@ dependencies:
 ## 2. Make a network request
 
 In this example, fetch a sample post from the
-[JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) using the
+[JSONPlaceholder](https://jsonplaceholder.typicode.com/) using the
 [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 <!-- skip -->
@@ -50,7 +51,7 @@ The `http.get()` method returns a `Future` that contains a `Response`.
 
   * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
     a core Dart class for working with async operations.
-    It is used to represent a potential value or error that is
+    A Future object represents a potential value or error that will be
     available at some time in the future.
   * The `http.Response` class contains the data received from a successful
     http call.
@@ -64,7 +65,7 @@ convert the `http.Response` into a Dart object.
 ### Create a `Post` class
 
 First, create a `Post` class that contains the data from the
-network request. It includes` a factory constructor that 
+network request. It includes a factory constructor that 
 creates a `Post` from JSON.
 
 Converting JSON by hand is only one option. For more information,
@@ -94,8 +95,8 @@ class Post {
 
 ### Convert the `http.Response` to a `Post`
 
-Now, update the `fetchPost()` function to return a `Future<Post>`.
-To do so, you need to:
+Now, use the following steps to update the `fetchPost()`
+function to return a `Future<Post>`:
 
   1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.

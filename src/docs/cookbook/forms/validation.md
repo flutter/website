@@ -102,6 +102,7 @@ TextFormField(
     if (value.isEmpty) {
       return 'Enter some text';
     }
+    return null;
   },
 );
 ```
@@ -202,6 +203,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               if (value.isEmpty) {
                 return 'Enter some text';
               }
+              return null;
             },
           ),
           Padding(

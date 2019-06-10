@@ -236,7 +236,7 @@ model itself and its business logic.
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
 any higher-level classes in Flutter. It's easily testable (you don't even need
-to use [widget testing](/docs/testing#widget-testing) for it). For example,
+to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>

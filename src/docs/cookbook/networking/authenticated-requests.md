@@ -16,7 +16,9 @@ uses the `Authorization` HTTP header.
 
 The [`http`]({{site.pub-pkg}}/http) package provides a
 convenient way to add headers to your requests.
-You can also use the `dart:io` package for common `HttpHeaders`.
+Alternatively, use the
+[HttpHeaders]({{site.dart.api}}/stable/dart-io/HttpHeaders-class.html)
+class from the `dart:io` library.
 
 <!-- skip -->
 ```dart

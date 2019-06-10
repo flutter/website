@@ -62,9 +62,9 @@ Use the `FocusNode` to identify a specific `TextField` in Flutter's
 in the next steps.
 
 Since focus nodes are long-lived objects, manage the lifecycle
-using a `State` object. To do so, create the `FocusNode` instance
-inside the `initState()` method of a `State` class,
-and clean it up in the `dispose()` method.
+using a `State` object. Use the following instructions to create
+a `FocusNode` instance inside the `initState()` method of a
+`State` class, and clean it up in the `dispose()` method:
 
 <!-- skip -->
 ```dart

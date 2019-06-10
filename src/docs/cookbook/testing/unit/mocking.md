@@ -122,8 +122,8 @@ The `fetchPost()` function does one of two things:
 Therefore, you want to test these two conditions.
 Use the `MockClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
-
-To do this, use the `when()` function provided by Mockito.
+Test these conditions using the `when()` function provided by
+Mockito:
 
 <!-- skip -->
 ```dart

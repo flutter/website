@@ -46,10 +46,10 @@ class HomeScreen extends StatelessWidget {
 
 ## 2. Add a button that launches the selection screen
 
-Now, create the SelectionButton. The selection button:
+Now, create the SelectionButton, which does the following:
 
-  1. Launches the SelectionScreen when it's tapped.
-  2. Waits for the SelectionScreen to return a result.
+  * Launches the SelectionScreen when it's tapped.
+  * Waits for the SelectionScreen to return a result.
 
 <!-- skip -->
 ```dart
@@ -80,12 +80,13 @@ class SelectionButton extends StatelessWidget {
 
 ## 3. Show the selection screen with two buttons
 
-Now, build a selection screen. It contains two buttons. When
-a user taps a button, it closes the selection screen and lets the home
+Now, build a selection screen that contains two buttons.
+When a user taps a button,
+that app closes the selection screen and lets the home
 screen know which button was tapped.
 
-For now, define the UI, and figure out how to return data in the next
-step.
+This step defines the UI.
+The next step adds code to return data.
 
 ```dart
 class SelectionScreen extends StatelessWidget {
@@ -127,13 +128,11 @@ class SelectionScreen extends StatelessWidget {
 
 ## 4. When a button is tapped, close the selection screen
 
-Now, update the `onPressed()` callback for both of our buttons. In
-order to return data to the first screen, use the
+Now, update the `onPressed()` callback for both of the buttons.
+To return data to the first screen, use the
 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-method.
-
-`Navigator.pop()` accepts an optional second argument called `result`.
-If providing a result, it's returned to the `Future` in the SelectionButton.
+method, which accepts an optional second argument called `result`.
+Any result is returned to the `Future` in the SelectionButton.
 
 ### Yep button
 
@@ -166,8 +165,8 @@ RaisedButton(
 Now that you're launching a selection screen and awaiting the result,
 you'll want to do something with the information that's returned.
 
-In this case, show a Snackbar displaying the result. To do so,
-update the `_navigateAndDisplaySelection()` method in `SelectionButton`.
+In this case, show a snackbar displaying the result by using the
+`_navigateAndDisplaySelection()` method in `SelectionButton`:
 
 <!-- skip -->
 ```dart
@@ -277,4 +276,4 @@ class SelectionScreen extends StatelessWidget {
 }
 ```
 
-![Returning Data Demo](/images/cookbook/returning-data.gif){:.site-mobile-screenshot}
+![Returning data demo](/images/cookbook/returning-data.gif){:.site-mobile-screenshot}

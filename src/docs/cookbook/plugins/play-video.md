@@ -43,8 +43,9 @@ dependencies:
 
 ## 2. Add permissions to your app
 
-Next, you need to ensure your app has the correct permissions to stream videos
-from the internet. To do so, update your `android` and `ios` configurations.
+Next, update your `android` and `ios` configurations to ensure
+that your app has the correct permissions to stream videos
+from the internet.
 
 ### Android
 

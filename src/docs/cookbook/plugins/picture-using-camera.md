@@ -56,12 +56,11 @@ final firstCamera = cameras.first;
 
 ## 3. Create and initialize the `CameraController`
 
-Once you have a camera, you need to create and initialize a
-`CameraController`. This process establishes a connection to
+Once you have a camera, use the following steps to
+create and initialize a `CameraController`.
+This process establishes a connection to
 the device's camera that allows you to control the camera
 and display a preview of the camera's feed.
-
-To do this, use the following steps:
 
   1. Create a `StatefulWidget` with a companion `State` class.
   2. Add a variable to the `State` class to store the `CameraController`.
