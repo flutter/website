@@ -469,7 +469,7 @@ as was used on the Flutter client side.
   FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
-                                          methodChannelWithName:@"samples.flutter.de/battery"
+                                          methodChannelWithName:@"samples.flutter.dev/battery"
                                           binaryMessenger:controller];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
