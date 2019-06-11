@@ -2,7 +2,7 @@
 
 ## Create the app {#create-app}
 
- 1. Open the idea select **Start a new Flutter project**.
+ 1. Open the IDE and select **Start a new Flutter project**.
  1. Select **Flutter Application** as the project type. Then click **Next**.
  1. Verify the Flutter SDK path specifies the SDK’s location (select **Install SDK...** if the text field is blank).
  1. Enter a project name (e.g., `myapp`). Then click **Next**.
