@@ -316,7 +316,7 @@ dev_dependencies:
   <strong><em>app_name</em> > android > app > src > main > java > io.flutter plugins</strong>.
   Double click **GeneratedProjectRegistrant** to open the Java code in the edit pane.
 
-Both the Dart and OEM debuggers are interacting with the the same process.
+Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
 In other words, DEBUG!
 
