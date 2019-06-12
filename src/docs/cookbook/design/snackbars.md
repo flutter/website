@@ -1,5 +1,5 @@
 ---
-title: Display a snackbars
+title: Display a snackbar
 description: How to implement a snackbar to display messages.
 prev:
   title: Add a drawer to a screen
