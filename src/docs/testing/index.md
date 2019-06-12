@@ -84,7 +84,7 @@ changes work as expected and do not introduce bugs.
 For information on running tests on various continuous integration services,
 see the following: 
 
-* [Continuous Delivery using fastlane with
+* [Continuous delivery using fastlane with
   Flutter](/docs/deployment/cd#fastlane)
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)

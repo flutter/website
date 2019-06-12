@@ -1,5 +1,5 @@
 ---
-title: Continuous Delivery with Flutter
+title: Continuous delivery with Flutter
 description: How to automate continuous building and releasing of your Flutter app.
 ---
 
@@ -171,7 +171,7 @@ of fastlane in action. Also see the Flutter framework repository's
 
 ## Other services
 
-The following are some other options available to help automate the delivery of your application
+The following are some other options available to help automate the delivery of your application.
 
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
