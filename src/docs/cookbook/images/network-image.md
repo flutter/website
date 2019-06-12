@@ -1,19 +1,20 @@
 ---
 title: Display images from the internet
 prev:
-  title: Implement Swipe to Dismiss
+  title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible
 next:
   title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
 ---
 
-Displaying images is fundamental for most mobile apps. Flutter provides the
-[`Image`]({{site.api}}/flutter/widgets/Image-class.html) Widget to
+Displaying images is fundamental for most mobile apps.
+Flutter provides the
+[`Image`]({{site.api}}/flutter/widgets/Image-class.html) widget to
 display different types of images.
 
-In order to work with images from a URL, use the
-[`Image.network`]({{site.api}}/flutter/widgets/Image/Image.network.html)
+To work with images from a URL, use the
+[`Image.network()`]({{site.api}}/flutter/widgets/Image/Image.network.html)
 constructor.
 
 <!-- skip -->
@@ -23,10 +24,10 @@ Image.network(
 )
 ```
 
-## Bonus: Animated Gifs
+## Bonus: animated gifs
 
-One amazing thing about the `Image` Widget: It also supports animated gifs out
-of the box!
+One useful thing about the `Image` widget:
+It supports animated gifs.
 
 <!-- skip -->
 ```dart
@@ -35,15 +36,16 @@ Image.network(
 );
 ```
 
-## Placeholders and Caching
+## Placeholders and caching
 
-The default `Image.network` constructor does not handle more advanced
-functionality, such as fading images in after loading or caching images
-to the device after they're downloaded. To achieve these tasks, please see
+The default `Image.network` constructor doesn't handle more advanced
+functionality, such as fading images in after loading, or caching images
+to the device after they're downloaded. To accomplish these tasks, see
 the following recipes:
 
-  * [Fade in images with a placeholder](/docs/cookbook/images/fading-in-images/)
-  * [Working with cached images](/docs/cookbook/images/cached-images/)
+  * [Fade in images with a
+    placeholder](/docs/cookbook/images/fading-in-images)
+  * [Working with cached images](/docs/cookbook/images/cached-images)
 
 ## Complete example
 
@@ -72,4 +74,4 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Network Image Demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}
+![Network image demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}

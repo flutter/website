@@ -5,21 +5,19 @@ toc: false
 ---
 
 {{site.alert.note}}
-  This codelab is being used to test out some new features of
-  DartPad! You may encounter bugs,
-  malapropisms, annoyances, and other general weirdness.
-  If that happens, please take a moment to
-  [file a bug on GitHub](https://github.com/dart-lang/dart-pad/issues/new).
-  Feature requests and suggestions are also greatly appreciated.
+  The embedded editors use an experimental version of DartPad.
+  If you find a DartPad bug or have suggestions for DartPad,
+  please [create a DartPad
+  issue](https://github.com/dart-lang/dart-pad/issues/new)
+  by clicking the bug icon at the top right of this page.
 {{site.alert.end}}
 
 {{site.alert.note}}
   This codelab is currently being developed and tested
-  with Chrome. There may be (in the short term) features that
-  work in some browsers and not others. If you encounter
-  any, please feel free to 
-  [file a bug on GitHub](https://goo.gle/flutter_web_issue),
-  labelling the issue with `platform-web`.
+  with Chrome. There might be (in the short term) features that
+  work in some browsers and not others. If you encounter any, please
+  [create a DartPad issue](https://goo.gle/flutter_web_issue),
+  labeling the issue with `platform-web`.
 {{site.alert.end}}
 
 `Row` and `Column` are two very important widgets in the Flutter universe.
@@ -75,7 +73,7 @@ Here's the example you just finished. Try setting the `Row`'s
 
 If you've set the `mainAxisSize` of a `Row` to the minimum,
 there won't be any extra room beyond what the children use.
-If you've set it to `max`, though, the `Row` may have some
+If you've set it to `max`, though, the `Row` might have some
 additional space lying around.  You can use the `mainAxisAlignment`
 property to control how the `Row` aligns its children within that space.
 

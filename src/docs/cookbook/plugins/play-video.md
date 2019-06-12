@@ -1,18 +1,18 @@
 ---
 title: Play and pause a video
 prev:
-  title: Storing key-value data on disk
+  title: Store key-value data on disk
   path: /docs/cookbook/persistence/key-value
 next:
-  title: Take a picture using the Camera
+  title: Take a picture using the camera
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
 Playing videos is a common task in app development, and Flutter apps are no
-exception. In order to play videos, the Flutter team provides the
+exception. To play videos, the Flutter team provides the
 [`video_player`]({{site.pub-pkg}}/video_player) plugin. You can
-use the `video_player` plugin to play videos stored on the file system, as an
-asset, or from the internet.
+use the `video_player` plugin to play videos stored on the file system,
+as an asset, or from the internet.
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) to
@@ -20,15 +20,14 @@ handle playback. On Android, it uses
 [`ExoPlayer`](https://google.github.io/ExoPlayer/).
 
 This recipe demonstrates how to use the `video_player` package to stream a
-video from the internet with basic play and pause controls.
+video from the internet with basic play and pause controls using
+the following steps:
 
-## Directions
-
-  1. Add the `video_player` dependency
-  2. Add permissions to your app
-  3. Create and initialize a `VideoPlayerController`
-  4. Display the video player
-  5. Play and pause the video
+  1. Add the `video_player` dependency.
+  2. Add permissions to your app.
+  3. Create and initialize a `VideoPlayerController`.
+  4. Display the video player.
+  5. Play and pause the video.
 
 ## 1. Add the `video_player` dependency
 
@@ -44,14 +43,15 @@ dependencies:
 
 ## 2. Add permissions to your app
 
-Next, you need to ensure your app has the correct permissions to stream videos
-from the internet. To do so, update your `android` and `ios` configurations.
+Next, update your `android` and `ios` configurations to ensure
+that your app has the correct permissions to stream videos
+from the internet.
 
 ### Android
 
-Add the following permission to the `AndroidManifest.xml` just after the
-`<application>` definition. The `AndroidManifest.xml` can be found at `<project
-root>/android/app/src/main/AndroidManifest.xml`
+Add the following permission to the `AndroidManifest.xml` file just after the
+`<application>` definition. The `AndroidManifest.xml` file is found at
+`<project root>/android/app/src/main/AndroidManifest.xml`.
 
 <!-- skip -->
 ```xml
@@ -66,7 +66,7 @@ root>/android/app/src/main/AndroidManifest.xml`
 
 ### iOS
 
-For iOS, you need to add the following to your `Info.plist` file found at 
+For iOS, add the following to the `Info.plist` file found at 
 `<project root>/ios/Runner/Info.plist`. 
 
 <!-- skip -->
@@ -79,21 +79,22 @@ For iOS, you need to add the following to your `Info.plist` file found at
 ```
 
 {{site.alert.warning}}
-The `video_player` plugin does not work on iOS simulators. You must test videos 
-on real iOS devices.
+  The `video_player` plugin doesn't work on iOS simulators.
+  You must test videos on real iOS devices.
 {{site.alert.end}}
 
 ## 3. Create and initialize a `VideoPlayerController`
 
 Now that you have the `video_player` plugin installed with the correct
-permissions, you need to create a `VideoPlayerController`. The
+permissions, create a `VideoPlayerController`. The
 `VideoPlayerController` class allows you to connect to different types of
 videos and control playback.
 
-Before you can play videos, you must also `initialize` the controller. This
-establishes the connection to the video and prepare the controller for playback.
+Before you can play videos, you must also `initialize` the controller.
+This establishes the connection to the video and prepare the
+controller for playback.
 
-To create and initialize the `VideoPlayerController`, please:
+To create and initialize the `VideoPlayerController` do the following:
 
   1. Create a `StatefulWidget` with a companion `State` class 
   2. Add a variable to the `State` class to store the `VideoPlayerController`
@@ -131,7 +132,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void dispose() {
-    // Ensure you dispose the VideoPlayerController to free up resources
+    // Ensure disposing of the VideoPlayerController to free up resources.
     _controller.dispose();
 
     super.dispose();
@@ -139,47 +140,47 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Show the video in the next step
+    // Complete the code in the next step.
   }
 }
 ```
 
 ## 4. Display the video player
 
-Now, it's time to display the video. The `video_player` plugin provides the
+Now, display the video. The `video_player` plugin provides the
 [`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html)
-Widget to display the video initialized by the `VideoPlayerController`. By
-default, the `VideoPlayer` Widget takes up as much space as possible. This
-often isn't ideal for videos because they are meant to be displayed in a
+widget to display the video initialized by the `VideoPlayerController`.
+By default, the `VideoPlayer` widget takes up as much space as possible.
+This often isn't ideal for videos because they are meant to be displayed in a
 specific aspect ratio, such as 16x9 or 4x3.
 
-Therefore, you can wrap the `VideoPlayer` widget in an
+Therefore, wrap the `VideoPlayer` widget in an
 [`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
-widget to ensure the video is the correct proportions.
+widget to ensure that the video has the correct proportions.
 
 Furthermore, you must display the `VideoPlayer` widget after the
-`_initializeVideoPlayerFuture` completes. You can use a `FutureBuilder` to
-display a loading spinner until finishes initializing. Note: initializing the
-controller does not begin playback.
+`_initializeVideoPlayerFuture()` completes. Use `FutureBuilder` to
+display a loading spinner until the controller finishes initializing.
+Note: initializing the controller does not begin playback.
 
 <!-- skip -->
 ```dart
-// Use a FutureBuilder to display a loading spinner while you wait for the
+// Use a FutureBuilder to display a loading spinner while waiting for the
 // VideoPlayerController to finish initializing.
 FutureBuilder(
   future: _initializeVideoPlayerFuture,
   builder: (context, snapshot) {
     if (snapshot.connectionState == ConnectionState.done) {
       // If the VideoPlayerController has finished initialization, use
-      // the data it provides to limit the Aspect Ratio of the VideoPlayer
+      // the data it provides to limit the aspect ratio of the VideoPlayer.
       return AspectRatio(
         aspectRatio: _controller.value.aspectRatio,
-        // Use the VideoPlayer widget to display the video
+        // Use the VideoPlayer widget to display the video.
         child: VideoPlayer(_controller),
       );
     } else {
       // If the VideoPlayerController is still initializing, show a
-      // loading spinner
+      // loading spinner.
       return Center(child: CircularProgressIndicator());
     }
   },
@@ -190,27 +191,27 @@ FutureBuilder(
 
 By default, the video starts in a paused state. To begin playback,
 call the
-[`play`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
+[`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
 method provided by the `VideoPlayerController`. To pause playback, call the
-[`pause`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
+[`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
 method.
 
 For this example, add a `FloatingActionButton` to your app that displays a play
-or pause icon depending on the situation. When the user taps the button, play
-the video if it's currently paused, or pause the video if it's playing.
+or pause icon depending on the situation. When the user taps the button,
+play the video if it's currently paused, or pause the video if it's playing.
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
   onPressed: () {
-    // Wrap the play or pause in a call to `setState`. This ensures the correct 
-    // icon is shown
+    // Wrap the play or pause in a call to `setState`. This ensures the
+    // correct icon is shown
     setState(() {
       // If the video is playing, pause it.
       if (_controller.value.isPlaying) {
         _controller.pause();
       } else {
-        // If the video is paused, play it
+        // If the video is paused, play it.
         _controller.play();
       }
     });
@@ -222,7 +223,7 @@ FloatingActionButton(
 )
 ``` 
  
-## Complete Example
+## Complete example
 
 ```dart
 import 'dart:async';
@@ -262,10 +263,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
     );
 
-    // Initialize the controller and store the Future for later use
+    // Initielize the controller and store the Future for later use.
     _initializeVideoPlayerFuture = _controller.initialize();
 
-    // Use the controller to loop the video
+    // Use the controller to loop the video.
     _controller.setLooping(true);
 
     super.initState();
@@ -273,7 +274,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
   @override
   void dispose() {
-    // Ensure you dispose the VideoPlayerController to free up resources
+    // Ensure disposing of the VideoPlayerController to free up resources.
     _controller.dispose();
 
     super.dispose();
@@ -285,22 +286,22 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       appBar: AppBar(
         title: Text('Butterfly Video'),
       ),
-      // Use a FutureBuilder to display a loading spinner while you wait for the
+      // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
       body: FutureBuilder(
         future: _initializeVideoPlayerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the VideoPlayerController has finished initialization, use
-            // the data it provides to limit the Aspect Ratio of the Video
+            // the data it provides to limit the aspect ratio of the video.
             return AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
-              // Use the VideoPlayer widget to display the video
+              // Use the VideoPlayer widget to display the video.
               child: VideoPlayer(_controller),
             );
           } else {
             // If the VideoPlayerController is still initializing, show a
-            // loading spinner
+            // loading spinner.
             return Center(child: CircularProgressIndicator());
           }
         },
@@ -308,13 +309,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Wrap the play or pause in a call to `setState`. This ensures the
-          // correct icon is shown
+          // correct icon is shown.
           setState(() {
             // If the video is playing, pause it.
             if (_controller.value.isPlaying) {
               _controller.pause();
             } else {
-              // If the video is paused, play it
+              // If the video is paused, play it.
               _controller.play();
             }
           });

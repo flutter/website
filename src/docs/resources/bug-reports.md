@@ -9,7 +9,7 @@ effort in sending us as much feedback as possible.
 
 ## Create an Issue on GitHub
 
-* A new issue may be created in the [Flutter
+* A new issue might be created in the [Flutter
   repo]({{site.github}}/flutter/flutter/issues/new/choose) on GitHub.
 
 ## Provide some Flutter Diagnostics
@@ -39,15 +39,20 @@ effort in sending us as much feedback as possible.
 
 Follow these steps only if your issue is related to the `flutter` tool.
 
-* All Flutter commands accept the `--verbose` flag. If attached to the issue, the output from this command may aid in diagnosing the issue.
+* All Flutter commands accept the `--verbose` flag. If attached to the issue,
+  the output from this command might aid in diagnosing the issue.
 * Attach the results of the command to the GitHub issue.
 ![flutter verbose](/images/verbose_flag.png)
 
 ## Provide the Most Recent Logs
 
-* Logs for the currently connected device may be accessed via `flutter logs`
-* If the crash is reproducible, clear the logs (⌘ + k on Mac), reproduce the crash and copy the newly generated logs into a file attached to the bug report.
-* If you are getting exceptions thrown by the framework, include all the output between and including the dashed lines of the first such exception.
+* Logs for the currently connected device are accessed via `flutter logs`.
+* If the crash is reproducible, clear the logs (⌘ + k on Mac),
+  reproduce the crash and copy the newly generated logs into a file
+  attached to the bug report.
+* If you are getting exceptions thrown by the framework,
+  include all the output between and including the dashed lines of the
+  first such exception.
 ![flutter logs](/images/logs.png)
 
 ## Provide the Crash Report

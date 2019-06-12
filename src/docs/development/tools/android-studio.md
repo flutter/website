@@ -240,7 +240,7 @@ installation and getting started instructions, see the [DevTools' docs][].
 
 ## Editing tips for Flutter code
 
-If you have additional tips we should share, please [let us know][]!
+If you have additional tips we should share, [let us know][]!
 
 ### Assists & Quick Fixes
 
@@ -357,7 +357,7 @@ you can open the Android files as their own project from the start:
 2. Open the `android` subdirectory immediately under the flutter app root. For
    example if the project is called `flutter_app`, open `flutter_app/android`.
 
-If you haven't run your Flutter app yet, you may see Android Studio report a
+If you haven't run your Flutter app yet, you might see Android Studio report a
 build error when you open the `android` project. Run `flutter pub get` in
 the app's root directory and rebuild the project by selecting **Build > Make**
 to fix it.
@@ -388,7 +388,7 @@ location of the Android SDK:
 
 ### Known issues and feedback
 
-Important known issues that may impact your experience are documented
+Important known issues that might impact your experience are documented
 in the [Flutter plugin README][] file.
 
 All known bugs are tracked in the issue trackers:

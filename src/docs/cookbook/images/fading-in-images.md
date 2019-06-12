@@ -4,7 +4,7 @@ prev:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
 next:
-  title: Working with cached images
+  title: Work with cached images
   path: /docs/cookbook/images/cached-images
 ---
 
@@ -12,17 +12,17 @@ When displaying images using the default `Image` widget, you might notice they
 simply pop onto the screen as they're loaded. This might feel visually jarring
 to your users.
 
-Instead, wouldn't it be nice if you could display a placeholder at first,
-and images would fade in as they're loaded? You can use the
+Instead, wouldn't it be nice to display a placeholder at first,
+and images would fade in as they're loaded? Use the
 [`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
-Widget packaged with Flutter for exactly this purpose.
+widget for exactly this purpose.
 
-`FadeInImage` works with images of any type: in-memory, local assets, or images
-from the internet.
+`FadeInImage` works with images of any type: in-memory, local assets,
+or images from the internet.
 
 ## In-Memory
 
-In this example, you'll use the
+In this example, use the
 [transparent_image]({{site.pub-pkg}}/transparent_image)
 package for a simple transparent placeholder.
 
@@ -76,9 +76,10 @@ class MyApp extends StatelessWidget {
 
 ### From asset bundle
 
-You can also consider using local assets for placeholders. First, add the asset
-to the project’s `pubspec.yaml` file (for more details see
-[Assets and images](/docs/development/ui/assets-and-images)):
+You can also consider using local assets for placeholders.
+First, add the asset to the project’s `pubspec.yaml` file
+(for more details, see
+[Adding assets and images](/docs/development/ui/assets-and-images)):
 
 <!-- skip -->
 ```diff

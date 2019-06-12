@@ -1,47 +1,46 @@
 ---
-title: Implement Swipe to Dismiss
+title: Implement swipe to dismiss
 prev:
-  title: Handling Taps
+  title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
 next:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
 ---
 
-The "Swipe to dismiss" pattern is common in many mobile apps. For example, if
-we're writing an email app, we might want to allow our users to swipe away email
-messages in a list. When they do, we'll want to move the item from the Inbox to
-the Trash.
+The "swipe to dismiss" pattern is common in many mobile apps.  For example,
+when writing an email app, you might want to allow a user to swipe away
+email messages to delete them from a list.
 
 Flutter makes this task easy by providing the
-[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) Widget.
+[`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html) widget.
+Learn how to implement swipe to dismiss with the following steps:
 
-## Directions
+  1. Create a list of items.
+  2. Wrap each item in a `Dismissible` widget.
+  3. Provide "leave behind" indicators.
 
-  1. Create List of Items
-  2. Wrap each item in a `Dismissible` Widget
-  3. Provide "Leave Behind" indicators
+## 1. Create a list of items
 
-## 1. Create List of Items
+First, create a list of items. For detailed
+instructions on how to create a list, follow the [Working with long
+lists](/docs/cookbook/lists/long-lists) recipe.
 
-First, we'll create a list of items we can swipe away. For more detailed
-instructions on how to create a list, please follow the [Working with long
-lists](/docs/cookbook/lists/long-lists/) recipe.
+### Create a data source
 
-### Create a Data Source
-
-In our example, we'll want 20 sample items to work with. To keep it simple,
-we'll generate a List of Strings.
+In this example,
+you want 20 sample items to work with.
+To keep it simple, generate a list of strings.
 
 <!-- skip -->
 ```dart
 final items = List<String>.generate(20, (i) => "Item ${i + 1}");
 ```
 
-### Convert the data source into a List
+### Convert the data source into a list
 
-At first, we'll simply display each item in the List on screen. Users will
-not be able to swipe away with these items just yet!
+Display each item in the list on screen. Users won't
+be able to swipe these items away just yet.
 
 <!-- skip -->
 ```dart
@@ -53,36 +52,35 @@ ListView.builder(
 );
 ```
 
-## 2. Wrap each item in a Dismissible Widget
+## 2. Wrap each item in a Dismissible widget
 
-Now that we're displaying a list of items, we'll want to give our users the
-ability to swipe each item off the list!
-
-After the user has swiped away the item, we'll need to run some code to remove
-the item from the list and display a Snackbar. In a real app, you might need to
-perform more complex logic, such as removing the item from a web service or
-database.
-
-This is where the
+In this step,
+give users the ability to swipe an item off the list by using the
 [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)
-Widget comes into play! In our example, we'll update our `itemBuilder` function
-to return a `Dismissible` Widget.
+widget.
+
+After the user has swiped away the item,
+remove the item from the list and display a snackbar.
+In a real app, you might need to perform more complex logic,
+such as removing the item from a web service or database.
+
+Update the `itemBuilder()` function to return a `Dismissible` widget:
 
 <!-- skip -->
 ```dart
 Dismissible(
   // Each Dismissible must contain a Key. Keys allow Flutter to
-  // uniquely identify Widgets.
+  // uniquely identify widgets.
   key: Key(item),
-  // We also need to provide a function that will tell our app
+  // Provide a function that tells the app
   // what to do after an item has been swiped away.
   onDismissed: (direction) {
-    // Remove the item from our data source.
+    // Remove the item from the data source.
     setState(() {
       items.removeAt(index);
     });
 
-    // Show a snackbar! This snackbar could also contain "Undo" actions.
+    // Show a snackbar. This snackbar could also contain "Undo" actions.
     Scaffold
         .of(context)
         .showSnackBar(SnackBar(content: Text("$item dismissed")));
@@ -91,19 +89,23 @@ Dismissible(
 );
 ```
 
-## 3. Provide "Leave Behind" indicators
+## 3. Provide "leave behind" indicators
 
-As it stands, our app allows users to swipe items off the List, but it might
-not give them a visual indication of what happens when they do. To provide a cue
-that we're removing items, we'll display a "Leave Behind" indicator as they
-swipe the item off the screen. In this case, a red background!
+As it stands,
+the app allows users to swipe items off the list, but it doesn't
+give a visual indication of what happens when they do.
+To provide a cue that items are removed,
+display a "leave behind" indicator as they
+swipe the item off the screen. In this case,
+the indicator is a red background.
 
-For this purpose, we'll provide a `background` parameter to the `Dismissible`.
+To add the indicator,
+provide a `background` parameter to the `Dismissible`.
 
 <!-- skip -->
 ```dart
 Dismissible(
-  // Show a red background as the item is swiped away
+  // Show a red background as the item is swiped away.
   background: Container(color: Colors.red),
   key: Key(item),
   onDismissed: (direction) {
@@ -129,8 +131,8 @@ void main() {
   runApp(MyApp());
 }
 
-// MyApp is a StatefulWidget. This allows us to update the state of the
-// Widget whenever an item is removed.
+// MyApp is a StatefulWidget. This allows updating the state of the
+// widget when an item is removed.
 class MyApp extends StatefulWidget {
   MyApp({Key key}) : super(key: key);
 
@@ -163,21 +165,21 @@ class MyAppState extends State<MyApp> {
 
             return Dismissible(
               // Each Dismissible must contain a Key. Keys allow Flutter to
-              // uniquely identify Widgets.
+              // uniquely identify widgets.
               key: Key(item),
-              // We also need to provide a function that tells our app
+              // Provide a function that tells the app
               // what to do after an item has been swiped away.
               onDismissed: (direction) {
-                // Remove the item from our data source.
+                // Remove the item from the data source.
                 setState(() {
                   items.removeAt(index);
                 });
 
-                // Then show a snackbar!
+                // Then show a snackbar.
                 Scaffold.of(context)
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
-              // Show a red background as the item is swiped away
+              // Show a red background as the item is swiped away.
               background: Container(color: Colors.red),
               child: ListTile(title: Text('$item')),
             );

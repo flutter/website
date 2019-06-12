@@ -66,7 +66,7 @@ are these kinds of libraries.
 This approach scales well for a larger project. No hand-written
 boilerplate is needed, and typos when accessing JSON fields are caught at
 compile-time. The downside with code generation is that it requires some
-initial setup. Also, the generated source files may produce visual clutter
+initial setup. Also, the generated source files might produce visual clutter
 in your project navigator.
 
 You might want to use generated code for JSON serialization when you have a

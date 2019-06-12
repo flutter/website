@@ -4,7 +4,7 @@ description: How to fix AndroidX incompatibilities that have been detected by th
 ---
 
 {{site.alert.note}}
-  You may be directed to this page if the framework detects a problem in your
+  You might be directed to this page if the framework detects a problem in your
   Flutter app involving AndroidX incompatibilities.
 {{site.alert.end}}
 
@@ -176,7 +176,7 @@ packages that are pre AndroidX:
 - `webview_flutter`: 0.2.0
 
 Note that this is not an exhaustive list of all Flutter plugins
-that use AndroidX, and the AndroidX dependency in your app may be
+that use AndroidX, and the AndroidX dependency in your app might be
 coming from another plugin besides these.
 
 ## For plugin maintainers: Migrating a Flutter plugin to AndroidX

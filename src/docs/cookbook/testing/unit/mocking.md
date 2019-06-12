@@ -9,44 +9,45 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
-In certain cases, unit tests may depend on classes that fetch data from live
+Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
 
   * Calling live services or databases slows down test execution.
-  * A passing test may start failing if a web service or database returns
+  * A passing test might start failing if a web service or database returns
     unexpected results. This is known as a "flaky test."
-  * It is difficult to test all possible success & failure scenarios using a
-    live web service or database.
+  * It is difficult to test all possible success and failure scenarios
+    by using a live web service or database.
 
 Therefore, rather than relying on a live web service or database,
-you can "mock" these dependencies. Mocks allow us to emulate a live
-web service or database and return specific results depending on the situation.
+you can "mock" these dependencies. Mocks allow emulating a live
+web service or database and return specific results depending
+on the situation.
 
 Generally speaking, you can mock dependencies by creating an alternative
-implementation of a class. You can write these alternative implementations by
+implementation of a class. Write these alternative implementations by
 hand or make use of the
 [Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
 
-This recipe demonstrates the basics of mocking using the Mockito package.
-For more information, please see the
-[Mockito package documentation]({{site.pub-pkg}}/mockito).
+This recipe demonstrates the basics of mocking with the
+Mockito package using the following steps:
 
-## Directions
+  1. Add the package dependencies.
+  2. Create a function to test.
+  3. Create a test file with a mock `http.Client`.
+  4. Write a test for each condition.
+  5. Run the tests.
 
-  1. Add the `mockito` & `test` dependencies
-  2. Create a function to test
-  3. Create a test file with a mock `http.Client`
-  4. Write a test for each condition
-  5. Run the tests
+For more information, see the
+[Mockito]({{site.pub-pkg}}/mockito) package documentation.
 
-## 1. Add the `mockito` dependency
+## 1. Add the package dependencies
 
-In order to use the `mockito` package, you first need to add it to the
+To use the `mockito` package, add it to the
 `pubspec.yaml` file along with the `flutter_test` dependency in the
 `dev_dependencies` section.
 
-You'll also be using the `http` package in this example, and will define that
-dependency in the `dependencies` section.
+This example also uses the `http` package,
+so define that dependency in the `dependencies` section.
 
 ```yaml
 dependencies:
@@ -58,17 +59,18 @@ dev_dependencies:
 
 ## 2. Create a function to test
 
-In this example, you'll want to unit test the `fetchPost` function from the
-[Fetch data from the internet](/docs/cookbook/networking/fetch-data/) recipe.
-In order to test this function, you need to make two changes:
+In this example, unit test the `fetchPost` function from the
+[Fetch data from the
+internet](/docs/cookbook/networking/fetch-data) recipe.
+To test this function, make two changes:
 
-  1. Provide an `http.Client` to the function. This allows you to provide the
+  1. Provide an `http.Client` to the function. This allows providing the
      correct `http.Client` depending on the situation.
-     For Flutter and server-side projects, you can provide an `http.IOClient`.
-     For Browser apps, you can provide an `http.BrowserClient`.
-     For tests, you provide a mock `http.Client`.
+     For Flutter and server-side projects, provide an `http.IOClient`.
+     For Browser apps, provide an `http.BrowserClient`.
+     For tests, provide a mock `http.Client`.
   2. Use the provided `client` to fetch data from the internet,
-     rather than the static `http.get` method, which is difficult to mock.
+     rather than the static `http.get()` method, which is difficult to mock.
 
 The function should now look like this:
 
@@ -79,7 +81,7 @@ Future<Post> fetchPost(http.Client client) async {
       await client.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON
+    // If the call to the server was successful, parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
     // If that call was not successful, throw an error.
@@ -97,7 +99,7 @@ create a file called `fetch_post_test.dart` in the root `test` folder.
 
 The `MockClient` class implements the `http.Client` class. This allows
 you to pass the `MockClient` to the `fetchPost` function,
-and allow you to return different http responses in each test.
+and return different http responses in each test.
 
 <!-- skip -->
 ```dart
@@ -112,16 +114,16 @@ main() {
 
 ## 4. Write a test for each condition
 
-If you think about the `fetchPost` function, it will do one of two things:
+The `fetchPost()` function does one of two things:
 
-  1. Return a `Post` if the http call succeeds
-  2. Throw an `Exception` if the http call fails
+  1. Returns a `Post` if the http call succeeds
+  2. Throws an `Exception` if the http call fails
 
-Therefore, you'll want to test these two conditions.
-You can use the `MockClient` class to return an "Ok" response
+Therefore, you want to test these two conditions.
+Use the `MockClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
-
-To achieve this, use the `when` function provided by Mockito.
+Test these conditions using the `when()` function provided by
+Mockito:
 
 <!-- skip -->
 ```dart
@@ -158,7 +160,7 @@ main() {
 
 ### 5. Run the tests
 
-Now that you have a `fetchPost` function with tests in place,
+Now that you have a `fetchPost()` function with tests in place,
 run the tests.
 
 ```terminal

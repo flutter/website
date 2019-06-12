@@ -1,19 +1,19 @@
 ---
-title: Tapping, dragging and entering text
+title: Tap, drag, and enter text
 prev:
-  title: Finding widgets
+  title: Find widgets
   path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
 
-Many of the Widgets we build not only display information, but also respond to
-user interaction. This includes buttons that users can tap on, dragging items
-across the screen, or entering text into a
-[`TextField`]({{api}}/material/TextField-class.html).
+Many widgets not only display information, but also respond
+to user interaction. This includes buttons that can be tapped,
+and [`TextField`]({{api}}/material/TextField-class.html)
+for entering text.
 
-In order to test these interactions, we need a way to simulate them in the test
-environment. To do so, we can use the
+To test these interactions, you need a way to simulate them
+in the test environment. For this purpose, use the
 [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)
 class provided by the
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
@@ -25,38 +25,38 @@ The `WidgetTester` provides methods for entering text, tapping, and dragging.
   * [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
   * [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
 
-In many cases, user interactions will update the state of our app. In the test
-environment, Flutter will not automatically rebuild widgets when the state
-changes. To ensure our Widget tree is rebuilt after we simulate a user
-interaction, we must call the
-[`pump`]({{api}}/flutter_test/WidgetTester/pump.html) or
-[`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+In many cases, user interactions update the state of the app. In the test
+environment, Flutter doesn't automatically rebuild widgets when the state
+changes. To ensure that the widget tree is rebuilt after simulating a user
+interaction, call the
+[`pump()`]({{api}}/flutter_test/WidgetTester/pump.html) or
+[`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
 methods provided by the `WidgetTester`.
+This recipe uses the following steps:
 
-### Directions
+  1. Create a widget to test.
+  2. Enter text in the text field.
+  3. Ensure tapping a button adds the todo.
+  4. Ensure swipe-to-dismiss removes the todo.
 
-  1. Create a Widget to test
-  2. Enter text in the text field
-  3. Ensure tapping a button adds the todo
-  4. Ensure swipe-to-dismiss removes the todo
+### 1. Create a widget to test
 
-### 1. Create a Widget to test
+For this example,
+create a basic todo app that tests three features:
 
-For this example, we'll create a basic todo app. It will have three main
-features that we'll want to test:
+  1. Entering text into a `TextField`.
+  2. Tapping a `FloatingActionButton` to add the text to a list of todos.
+  3. Swiping-to-dismiss toe remove the item from the list.
 
-  1. Enter text into a `TextField`
-  2. Tapping a `FloatingActionButton` adds the text to a list of todos
-  3. Swipe-to-dismiss removes the item from the list
+To keep the focus on testing,
+this recipe won't provide a detailed guide on how to build the todo app.
+To learn more about how this app is built,
+see the relevant recipes: 
 
-To keep the focus on testing, this recipe will not provide a detailed guide on
-how to build the todo app. To learn more about how this app is built, please see
-the relevant recipes:
-
-  * [Create and style a text field](/docs/cookbook/forms/text-input/)
-  * [Handling Taps](/docs/cookbook/gestures/handling-taps/)
-  * [Create a basic list](/docs/cookbook/lists/basic-list/)
-  * [Implement Swipe to Dismiss](/docs/cookbook/gestures/dismissible/)
+  * [Create and style a text field](/docs/cookbook/forms/text-input)
+  * [Handle taps](/docs/cookbook/gestures/handling-taps)
+  * [Create a basic list](/docs/cookbook/lists/basic-list)
+  * [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
 
 ```dart
 class TodoList extends StatefulWidget {
@@ -116,98 +116,98 @@ class _TodoListState extends State<TodoList> {
 
 ### 2. Enter text in the text field
 
-Now that we have a todo app, we can begin writing our test! In this case, we'll
-start by entering text into the `TextField`.
+Now that you have a todo app, begin writing the test.
+Start by entering text into the `TextField`.
 
-We can accomplish this task by:
+Accomplish this task by:
 
-  1. Building the Widget in the Test Environment
+  1. Building the widget in the test environment.
   2. Using the
-  [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html)
-  method from the `WidgetTester`
+     [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html)
+     method from the `WidgetTester`.
 
 <!-- skip -->
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
-  // Build the Widget
+  // Build the widget
   await tester.pumpWidget(TodoList());
 
-  // Enter 'hi' into the TextField
+  // Enter 'hi' into the TextField.
   await tester.enterText(find.byType(TextField), 'hi');
 });
 ```
 
-**Note:** This recipe builds upon previous Widget testing recipes. To learn the
-core concepts of Widget testing, see the following recipes:
+{{site.alert.note}}
+  This recipe builds upon previous widget testing recipes.
+  To learn the core concepts of widget testing,
+  see the following recipes:
 
-  * [Introduction to Widget testing](.)
-  * [Finding Widgets in a Widget Test](finders)
+  * [Introduction to widget testing](.)
+  * [Finding widgets in a widget test](finders)
+{{site.alert.end}}
 
 ### 3. Ensure tapping a button adds the todo
 
-After we've entered text into the `TextField`, we'll want to ensure that tapping
+After entering text into the `TextField`, ensure that tapping
 the `FloatingActionButton` adds the item to the list.
 
-This will involve three steps:
+This involves three steps:
 
  1. Tap the add button using the
-    [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
-    method
- 2. Rebuild the Widget after the state has changed using the
-    [`pump`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
-    method
- 3. Ensure the list item appears on screen
+    [`tap()`]({{api}}/flutter_test/WidgetController/tap.html)
+    method.
+ 2. Rebuild the widget after the state has changed using the
+    [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
+    method.
+ 3. Ensure that the list item appears on screen.
 
 <!-- skip -->
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text code...
 
-  // Tap the add button
+  // Tap the add button.
   await tester.tap(find.byType(FloatingActionButton));
 
-  // Rebuild the Widget after the state has changed
+  // Rebuild the widget after the state has changed.
   await tester.pump();
 
-  // Expect to find the item on screen
+  // Expect to find the item on screen.
   expect(find.text('hi'), findsOneWidget);
 });
 ```
 
 ### 4. Ensure swipe-to-dismiss removes the todo
 
-Finally, we can ensure that performing a swipe-to-dismiss action on the todo
-item will remove it from the list. This will involve three steps:
+Finally, ensure that performing a swipe-to-dismiss action on the todo
+item removes it from the list. This involves three steps:
 
   1. Use the
-  [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
-  method to perform a swipe-to-dismiss action.
+     [`drag()`]({{api}}/flutter_test/WidgetController/drag.html)
+     method to perform a swipe-to-dismiss action.
   2. Use the
-  [`pumpAndSettle`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
-  method to continually rebuild our Widget tree until the dismiss animation is
-  complete.
-  3. Ensure the item no longer appears on screen.
+     [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+     method to continually rebuild the widget tree until the dismiss
+     animation is complete.
+  3. Ensure that the item no longer appears on screen.
 
 <!-- skip -->
 ```dart
 testWidgets('Add and remove a todo', (WidgetTester tester) async {
   // Enter text and add the item...
 
-  // Swipe the item to dismiss it
+  // Swipe the item to dismiss it.
   await tester.drag(find.byType(Dismissible), Offset(500.0, 0.0));
 
-  // Build the Widget until the dismiss animation ends
+  // Build the widget until the dismiss animation ends.
   await tester.pumpAndSettle();
 
-  // Ensure the item is no longer on screen
+  // Ensure that the item is no longer on screen.
   expect(find.text('hi'), findsNothing);
 });
 ```
 
 ### Complete example
-
-Once we've completed these steps, we should have a working app with a test to
-ensure it works correctly!
 
 ```dart
 import 'package:flutter/material.dart';
@@ -215,28 +215,28 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('Add and remove a todo', (WidgetTester tester) async {
-    // Build the Widget
+    // Build the widget.
     await tester.pumpWidget(TodoList());
 
-    // Enter 'hi' into the TextField
+    // Enter 'hi' into the TextField.
     await tester.enterText(find.byType(TextField), 'hi');
 
-    // Tap the add button
+    // Tap the add button.
     await tester.tap(find.byType(FloatingActionButton));
 
-    // Rebuild the Widget with the new item
+    // Rebuild the widget with the new item.
     await tester.pump();
 
-    // Expect to find the item on screen
+    // Expect to find the item on screen.
     expect(find.text('hi'), findsOneWidget);
 
-    // Swipe the item to dismiss it
+    // Swipe the item to dismiss it.
     await tester.drag(find.byType(Dismissible), Offset(500.0, 0.0));
 
-    // Build the Widget until the dismiss animation ends
+    // Build the widget until the dismiss animation ends.
     await tester.pumpAndSettle();
 
-    // Ensure the item is no longer on screen
+    // Ensure that the item is no longer on screen.
     expect(find.text('hi'), findsNothing);
   });
 }

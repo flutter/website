@@ -1,34 +1,34 @@
 ---
-title: Handling changes to a text field
+title: Handle changes to a text field
 prev:
-  title: Focus on a Text Field
+  title: Focus and text fields
   path: /docs/cookbook/forms/focus
 next:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
 ---
 
-In some cases, it can be handy to run a callback function every time the text
-in a text field changes. For example, we might want to build a search screen
-with autocomplete functionality. In this case, we would want to update the
+In some cases, it's useful to run a callback function every time the text
+in a text field changes. For example, you might want to build a search
+screen with autocomplete functionality where you want to update the
 results as the user types.
 
-How can we run a callback function every time the text changes? With Flutter,
-we have two options:
+How do you run a callback function every time the text changes?
+With Flutter, you have two options:
 
-  1. Supply an `onChanged` callback to a `TextField`
-  2. Use a `TextEditingController`
+  1. Supply an `onChanged()` callback to a `TextField`.
+  2. Use a `TextEditingController`.
 
-## 1. Supply an `onChanged` callback to a `TextField`
+## 1. Supply an `onChanged()` callback to a `TextField`
 
 The simplest approach is to supply an
-[`onChanged`]({{site.api}}/flutter/material/TextField/onChanged.html)
+[`onChanged()`]({{site.api}}/flutter/material/TextField/onChanged.html)
 callback to a
 [`TextField`]({{site.api}}/flutter/material/TextField-class.html).
-Whenever the text changes, the callback will be invoked. One downside to this
-approach is it does not work with `TextFormField` Widgets.
+Whenever the text changes, the callback is invoked. One downside to this
+approach is that it doesn't work with `TextFormField` widgets.
 
-In this example, we will print the current value of the text field to the
+In this example, print the current value of the text field to the
 console every time the text changes.
 
 <!-- skip -->
@@ -48,60 +48,60 @@ as the
 [`controller`]({{site.api}}/flutter/material/TextField/controller.html)
 property of the `TextField` or a `TextFormField`.
 
-To be notified when the text changes, we can listen to the controller using its
-[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method.
+To be notified when the text changes, listen to the controller using the
+[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
+method using the following steps:
 
-### Directions
-
-  - Create a `TextEditingController`
-  - Supply the `TextEditingController` to a `TextField`
-  - Create a function to print the latest value
-  - Listen to the controller for changes
+  1. Create a `TextEditingController`.
+  2. Connect the `TextEditingController` to a text field.
+  3. Create a function to print the latest value.
+  4. Listen to the controller for changes.
 
 ### Create a `TextEditingController`
 
-First, we'll need to create a `TextEditingController`. In the subsequent steps,
-we will supply the `TextEditingController` to a `TextField`. Once we've wired
-these two classes together, we can listen for changes to the text field!
+Create a `TextEditingController`:
 
 <!-- skip -->
 ```dart
-// Define a Custom Form Widget
+// Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
 
-// Define a corresponding State class. This class will hold the data related to
-// our Form.
+// Define a corresponding State class.
+// This class holds data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller. We will use it to retrieve the current value
-  // of the TextField!
+  // Create a text controller. Later, use it to retrieve the
+  // current value of the TextField.
   final myController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controller when the Widget is removed from the Widget tree
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
     myController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // We will fill this out in the next step!
+    // Fill this out in the next step.
   }
 }
 ```
 
-Note: Please remember to `dispose` the `TextEditingController` when it is no
-longer needed. This will ensure we discard any resources used by the object.
+{{site.alert.note}}
+  Remember to dispose of the `TextEditingController` when it's no
+  longer needed. This ensures that you discard any resources used
+  by the object.
+{{site.alert.end}}
 
-### Supply the `TextEditingController` to a `TextField`
+### Connect the `TextEditingController` to a text field
 
-In order to work, the `TextEditingController` must be supplied to either a
-`TextField` or a `TextFormField`. Once it's wired up, we can begin listening
-for changes to the text field.
+Supply the `TextEditingController` to either a `TextField`
+or a `TextFormField`. Once you wire these two classes together,
+you can begin listening for changes to the text field.
 
 <!-- skip -->
 ```dart
@@ -112,11 +112,9 @@ TextField(
 
 ### Create a function to print the latest value
 
-Now, we'll need a function that should run every time the text changes! In this
-example, we'll create a method that prints out the current value of the text
-field.
-
-This method will live inside our `_MyCustomFormState` class.
+You need a function to run every time the text changes.
+Create a method in the `_MyCustomFormState` class that prints
+out the current value of the text field.
 
 <!-- skip -->
 ```dart
@@ -127,14 +125,14 @@ _printLatestValue() {
 
 ### Listen to the controller for changes
 
-Finally, we need to listen to the `TextEditingController` and run the
-`_printLatestValue` method whenever the text changes. We will use the
-[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method to achieve this task.
+Finally, listen to the `TextEditingController` and call the
+`_printLatestValue()` method when the text changes. Use the
+[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
+method for this purpose.
 
-In this example, we will begin listening for changes when the
-`_MyCustomFormState` class is initialized, and stop listening when the
-`_MyCustomFormState` is disposed.
+Begin listening for changes when the
+`_MyCustomFormState` class is initialized,
+and stop listening when the `_MyCustomFormState` is disposed.
 
 <!-- skip -->
 ```dart
@@ -143,7 +141,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   void initState() {
     super.initState();
 
-    // Start listening to changes
+    // Start listening to changes.
     myController.addListener(_printLatestValue);
   }
 }
@@ -166,17 +164,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Define a Custom Form Widget
+// Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
 
-// Define a corresponding State class. This class will hold the data related to
-// our Form.
+// Define a corresponding State class.
+// This class holds data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller. We will use it to retrieve the current value
-  // of the TextField!
+  // Create a text controller and use it to retrieve the current value
+  // of the TextField.
   final myController = TextEditingController();
 
   @override
@@ -188,8 +186,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
   @override
   void dispose() {
-    // Clean up the controller when the Widget is removed from the Widget tree
-    // This also removes the _printLatestValue listener
+    // Clean up the controller when the widget is removed from the widget tree.
+    // This also removes the _printLatestValue listener.
     myController.dispose();
     super.dispose();
   }

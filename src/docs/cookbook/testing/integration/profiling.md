@@ -4,64 +4,64 @@ prev:
   title: An introduction to integration testing
   path: /docs/cookbook/testing/integration/introduction
 next:
-  title: Scrolling
+  title: Handle scrolling
   path: /docs/cookbook/testing/integration/scrolling
 ---
 
-When it comes to mobile apps, performance is critical to user experience. Users
-expect apps to have smooth scrolling and meaningful animations free of
-stuttering or skipped frames, known as "jank." How can we ensure our apps are
-free of jank on a wide variety of devices?
+When it comes to mobile apps, performance is critical to user experience.
+Users expect apps to have smooth scrolling and meaningful animations free of
+stuttering or skipped frames, known as "jank." How to ensure that your app
+is free of jank on a wide variety of devices?
 
-There are two options: first, we could manually test the app on different
-devices. While that approach might work for a smaller app, it will become more
-cumbersome as an app grows in size. Alternatively, we can run an integration
-test that performs a specific task and record a performance timeline. Then, we
-can examine the results to determine whether or not a specific section of our
-app needs to be improved.
+There are two options: first, manually test the app on different devices.
+While that approach might work for a smaller app, it becomes more
+cumbersome as an app grows in size. Alternatively, run an integration
+test that performs a specific task and records a performance timeline.
+Then, examine the results to determine whether a specific section of 
+the app needs to be improved.
 
-In this recipe, we'll learn how to write a test that records a performance
-timeline while performing a specific task and saves a summary of the results to
-a local file.
+In this recipe, learn how to write a test that records a performance
+timeline while performing a specific task and saves a summary of the
+results to a local file.
 
-### Directions
+This recipe uses the following steps:
 
-  1. Write a test that scrolls through a list of items
-  2. Record the performance of the app
-  3. Save the results to disk
-  4. Run the test
-  5. Review the results
+  1. Write a test that scrolls through a list of items.
+  2. Record the performance of the app.
+  3. Save the results to disk.
+  4. Run the test.
+  5. Review the results.
 
 ### 1. Write a test that scrolls through a list of items
 
-In this recipe, we'll record the performance of an app as it scrolls through a
-list of items. In order to focus on performance profiling, this recipe builds
-upon the
-[Scrolling in integration tests](/docs/cookbook/testing/integration/scrolling)
-recipe.
+In this recipe, record the performance of an app as it scrolls through a
+list of items. To focus on performance profiling, this recipe builds
+on the
+[Scrolling](/docs/cookbook/testing/integration/scrolling) recipe
+in integration tests.
 
-Please follow the instructions in that recipe to create an app, instrument the
-app, and write a test to verify everything works as expected.
+Follow the instructions in that recipe to create an app, instrument the
+app, and write a test to verify that everything works as expected.
 
 ### 2. Record the performance of the app
 
-Next, we need to record the performance of the app as it scrolls through the
-list. To achieve this task, we can use the
-[`traceAction`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
+Next, record the performance of the app as it scrolls through the
+list. Perform this task using the
+[`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
 method provided by the
 [`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
 class.
 
 This method runs the provided function and records a
 [`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
-with detailed information about the performance of the app. In this example, we
-provide a function that scrolls through the list of items, ensuring a specific
-item is displayed. When the function completes, the `traceAction` method returns
-a `Timeline`.
+with detailed information about the performance of the app. This example
+provides a function that scrolls through the list of items,
+ensuring that a specific item is displayed. When the function completes,
+the `traceAction()` method returns a `Timeline`.
 
 <!-- skip -->
 ```dart
-// Record a performance timeline as we scroll through the list of items
+// Record a performance timeline as the app scrolls through the list of items.
 final timeline = await driver.traceAction(() async {
   await driver.scrollUntilVisible(
     listFinder,
@@ -75,21 +75,21 @@ final timeline = await driver.traceAction(() async {
 
 ### 3. Save the results to disk
 
-Now that we've captured a performance timeline, we need a way to review it!
-The `Timeline` object provides detailed information about all of the events that
-took place, but it does not provide a convenient way to review the results.
+Now that you've captured a performance timeline, you need a way to review it.
+The `Timeline` object provides detailed information about all of the events
+that took place, but it doesn't provide a convenient way to review the results.
 
-Therefore, we can convert the `Timeline` into a
+Therefore, convert the `Timeline` into a
 [`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html).
 The `TimelineSummary` can perform two tasks that make it easier to review the
 results:
 
-  1. It can write a json document on disk that summarizes the data contained
-  within the `Timeline`. This summary includes information about the number of
-  skipped frames, slowest build times, and more.
-  2. It can save the complete `Timeline` as a json file on disk. This file can
-  be opened with the Chrome browser's tracing tools found at
-  [chrome://tracing](chrome://tracing).
+  1. Writing a json document on disk that summarizes the data contained
+     within the `Timeline`. This summary includes information about the
+     number of skipped frames, slowest build times, and more.
+  2. Saving the complete `Timeline` as a json file on disk. This file can
+     be opened with the Chrome browser's tracing tools found at
+     [chrome://tracing](chrome://tracing).
 
 <!-- skip -->
 ```dart
@@ -97,7 +97,7 @@ results:
 // understand.
 final summary = new TimelineSummary.summarize(timeline);
 
-// Then, save the summary to disk
+// Then, save the summary to disk.
 summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
 // Optionally, write the entire timeline to disk in a json format. This
@@ -108,8 +108,8 @@ summary.writeTimelineToFile('scrolling_timeline', pretty: true);
 
 ### 4. Run the test
 
-After we've configured our test to capture a performance `Timeline` and save a
-summary of the results to disk, we can run the test with the following command:
+After configuring the test to capture a performance `Timeline` and save a
+summary of the results to disk, run the test with the following command:
 
 ```
 flutter drive --target=test_driver/app.dart
@@ -121,16 +121,16 @@ After the test completes successfully, the `build` directory at the root of
 the project contains two files:
 
   1. `scrolling_summary.timeline_summary.json` contains the summary. Open
-  the file with any text editor to review the information contained within.
-  With a more advanced setup, we could save a summary every time the test
-  runs and create a graph of the results.
+     Open the file with any text editor to review the information contained
+     within.  With a more advanced setup, you could save a summary every
+     time the test runs and create a graph of the results.
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
-  Open the file using the Chrome browser's tracing tools found at
-  [chrome://tracing](chrome://tracing). The tracing tools provide a
-  convenient interface for inspecting the timeline data in order to discover
-  the source of a performance issue.
+     Open the file using the Chrome browser's tracing tools found at
+     [chrome://tracing](chrome://tracing). The tracing tools provide a
+     convenient interface for inspecting the timeline data to discover
+     the source of a performance issue.
 
-#### Summary Example
+#### Summary example
 
 ```json
 {
@@ -178,7 +178,8 @@ void main() {
       final listFinder = find.byValueKey('long_list');
       final itemFinder = find.byValueKey('item_50_text');
 
-      // Record a performance profile as we scroll through the list of items
+      // Record a performance profile as the app scrolls through
+      // the list of items.
       final timeline = await driver.traceAction(() async {
         await driver.scrollUntilVisible(
           listFinder,
@@ -189,16 +190,16 @@ void main() {
         expect(await driver.getText(itemFinder), 'Item 50');
       });
 
-      // Convert the Timeline into a TimelineSummary that's easier to read and
-      // understand.
+      // Convert the Timeline into a TimelineSummary that's easier to
+      // read and understand.
       final summary = new TimelineSummary.summarize(timeline);
 
-      // Then, save the summary to disk
+      // Then, save the summary to disk.
       summary.writeSummaryToFile('scrolling_summary', pretty: true);
 
-      // Optionally, write the entire timeline to disk in a json format. This
-      // file can be opened in the Chrome browser's tracing tools found by
-      // navigating to chrome://tracing.
+      // Optionally, write the entire timeline to disk in a json format.
+      // This file can be opened in the Chrome browser's tracing tools
+      // found by navigating to chrome://tracing.
       summary.writeTimelineToFile('scrolling_timeline', pretty: true);
     });
   });

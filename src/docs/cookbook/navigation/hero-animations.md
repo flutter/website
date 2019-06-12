@@ -1,5 +1,5 @@
 ---
-title: Animating a Widget across screens
+title: Animate a widget across screens
 prev:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
@@ -8,30 +8,33 @@ next:
   path: /docs/cookbook/navigation/navigation-basics
 ---
 
-It's often helpful to guide users through our apps as they navigate from screen
+It's often helpful to guide users through an app as they navigate from screen
 to screen. A common technique to lead users through an app is to animate a
-Widget from one screen to the next. This creates a visual anchor connecting
+widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
-How can we animate a Widget from one screen to the next with Flutter? Using the
-[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) Widget!
+Use the
+[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) widget
+to animate a widget from one screen to the next.
+This recipe uses the following steps:
 
-## Directions
-
-  1. Create two screens showing the same image
-  2. Add a `Hero` Widget to the first screen
-  3. Add a `Hero` Widget to the second screen
+  1. Create two screens showing the same image.
+  2. Add a `Hero` widget to the first screen.
+  3. Add a `Hero` widget to the second screen.
 
 ## 1. Create two screens showing the same image
 
-In this example, we'll display the same image on both screens. We'll want to
-animate the image from the first screen to the second screen when the user taps
-on the image. For now, we'll create the visual structure, and handle animations
-in the next steps!
+In this example, display the same image on both screens.
+Animate the image from the first screen to the second screen when
+the user taps the image. For now, create the visual structure;
+handle animations in the next steps.
 
-*Note:* This example builds upon the
-[Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics)
-and [Handling Taps](/docs/cookbook/gestures/handling-taps) recipes.
+{{site.alert.note}}
+  This example builds upon the
+  [Navigate to a new screen and
+  back](/docs/cookbook/navigation/navigation-basics)
+  and [Handle taps](/docs/cookbook/gestures/handling-taps) recipes.
+{{site.alert.end}}
 
 ```dart
 class MainScreen extends StatelessWidget {
@@ -74,34 +77,19 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-## 2. Add a `Hero` Widget to the first screen
+## 2. Add a `Hero` widget to the first screen
 
-In order to connect the two screens together with an animation, we need to wrap
-the `Image` Widget on both screens in a `Hero` Widget. The `Hero` Widget
-requires two arguments:
+To connect the two screens together with an animation, wrap
+the `Image` widget on both screens in a `Hero` widget.
+The `Hero` widget requires two arguments:
 
-  1. `tag`: An object that identifies the `Hero`. It must be the same on both
-  screens.
-  2. `child`: The Widget we want to animate across screens.
-
-<!-- skip -->
-```dart
-Hero(
-  tag: 'imageHero',
-  child: Image.network(
-    'https://picsum.photos/250?image=9',
-  ),
-);
-```
-
-## 3. Add a `Hero` Widget to the second screen
-
-To complete the connection with the first screen, we need to wrap the `Image`
-on the second screen with a `Hero` Widget as well! It must use the same `tag`
-as the first screen.
-
-After you apply the `Hero` Widget to the second screen, the animation between
-screens will work!
+<dl>
+  <dt>`tag`</dt>
+  <dd>An object that identifies the `Hero`.
+      It must be the same on both screens.</dd>
+  <dt>`child`</dt>
+  <dd>The widget to animate across screens.</dd>
+</dl>
 
 <!-- skip -->
 ```dart
@@ -113,9 +101,31 @@ Hero(
 );
 ```
 
-Note: this code is identical to what we had on the first screen! In general, you
-could create a reusable Widget instead of repeating code, but for this example,
-we'll duplicate the code for demonstration purposes.
+## 3. Add a `Hero` widget to the second screen
+
+To complete the connection with the first screen,
+wrap the `Image` on the second screen with a `Hero`
+widget that has the same `tag` as the `Hero` in the first screen.
+
+After applying the `Hero` widget to the second screen,
+the animation between screens just works.
+
+<!-- skip -->
+```dart
+Hero(
+  tag: 'imageHero',
+  child: Image.network(
+    'https://picsum.photos/250?image=9',
+  ),
+);
+```
+
+{{site.alert.note}}
+  This code is identical to what you have on the first screen.
+  As a best practice, create a reusable widget instead of
+  repeating code. This example uses identical code for both
+  widgets, for simplicity.
+{{site.alert.end}}
 
 ## Complete example
 
@@ -180,4 +190,4 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Hero Demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}

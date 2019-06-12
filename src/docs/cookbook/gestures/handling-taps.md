@@ -1,38 +1,35 @@
 ---
-title: Handling Taps
+title: Handle taps
 prev:
-  title: Adding Material Touch Ripples
+  title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples
 next:
-  title: Implement Swipe to Dismiss
+  title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible
 ---
 
-We not only want to display information to our users, we want our users to
-interact with our apps! So how do we respond to fundamental actions such as
-tapping and dragging? We'll use the
+You not only want to display information to users,
+you want users to interact with your app. Use the
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
-Widget!
+widget to respond to fundamental actions, such as tapping and dragging.
 
-Say we want to make a custom button that shows a snackbar when tapped. How would
-we approach this?
+This recipe shows how to make a custom button that shows
+a snackbar when tapped with the following steps:
 
-## Directions
-
-  1. Create the button
-  2. Wrap it in a `GestureDetector` with an `onTap` callback
+  1. Create the button.
+  2. Wrap it in a `GestureDetector` that an `onTap()` callback.
 
 <!-- skip -->
 ```dart
-// Our GestureDetector wraps our button
+// The GestureDetector wraps the button.
 GestureDetector(
-  // When the child is tapped, show a snackbar
+  // When the child is tapped, show a snackbar.
   onTap: () {
     final snackBar = SnackBar(content: Text("Tap"));
 
     Scaffold.of(context).showSnackBar(snackBar);
   },
-  // Our Custom Button!
+  // The custom button
   child: Container(
     padding: EdgeInsets.all(12.0),
     decoration: BoxDecoration(
@@ -46,14 +43,14 @@ GestureDetector(
 
 ## Notes
 
-  1. If you'd like to add the Material Ripple effect to your button, please
-  see the "[Adding Material Touch ripples](/docs/cookbook/gestures/ripples/)" recipe.
-  2. While we've created a custom button to demonstrate these concepts, Flutter
-  includes a handful of buttons out of the box:
-  [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
-  [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html),
-  and [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html)
-
+  1. For information on adding the Material ripple effect to your
+     button, see the [Add Material touch
+     ripples](/docs/cookbook/gestures/ripples) recipe.
+  2. Although this example creates a custom button,
+     Flutter includes a handful of button implementations, such as:
+     [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
+     [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html), and
+     [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html).
 
 ## Complete example
 
@@ -93,15 +90,15 @@ class MyHomePage extends StatelessWidget {
 class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Our GestureDetector wraps our button
+    // The GestureDetector wraps the button.
     return GestureDetector(
-      // When the child is tapped, show a snackbar
+      // When the child is tapped, show a snackbar.
       onTap: () {
         final snackBar = SnackBar(content: Text("Tap"));
 
         Scaffold.of(context).showSnackBar(snackBar);
       },
-      // Our Custom Button!
+      // The custom button
       child: Container(
         padding: EdgeInsets.all(12.0),
         decoration: BoxDecoration(
@@ -115,4 +112,4 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Handling Taps Demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}
+![Handle taps demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}

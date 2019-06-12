@@ -8,24 +8,25 @@ next:
   path: /docs/cookbook/networking/fetch-data
 ---
 
-Oftentimes, we not only want to navigate to a new screen, but also pass some
-data to the screen as well. For example, we often want to pass information about
-the item we tapped on.
+Often, you not only want to navigate to a new screen,
+but also pass data to the screen as well.
+For example, you might want to pass information about
+the item that's been tapped.
 
-Remember: Screens are Just Widgets&trade;. In this example, we'll create a List
-of Todos. When a todo is tapped on, we'll navigate to a new screen (Widget) that
+Remember: Screens are Just Widgets.
+In this example, create a list of todos.
+When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.
+This recipe uses the following steps:
 
-## Directions
+  1. Define a todo class.
+  2. Display a list of todos.
+  3. Create a detail screen that can display information about a todo.
+  4. Navigate and pass data to the detail screen.
 
-  1. Define a Todo class
-  2. Display a List of Todos
-  3. Create a Detail Screen that can display information about a todo
-  4. Navigate and pass data to the Detail Screen
+## 1. Define a todo class
 
-## 1. Define a Todo class
-
-First, we'll need a simple way to represent Todos. For this example, we'll
+First, you need a simple way to represent todos. For this example,
 create a class that contains two pieces of data: the title and description.
 
 <!-- skip -->
@@ -38,13 +39,14 @@ class Todo {
 }
 ```
 
-## 2. Create a List of Todos
+## 2. Create a list of todos
 
-Second, we'll want to display a list of Todos. In this example, we'll generate
-20 todos and show them using a ListView. For more information on working with
-Lists, please see the [`Basic List`](/docs/cookbook/lists/basic-list/) recipe.
+Second, display a list of todos. In this example, generate
+20 todos and show them using a ListView.
+For more information on working with lists, see the
+[Use lists](/docs/cookbook/lists/basic-list) recipe.
 
-### Generate the List of Todos
+### Generate the list of todos
 
 <!-- skip -->
 ```dart
@@ -57,7 +59,7 @@ final todos = List<Todo>.generate(
 );
 ```
 
-### Display the List of Todos using a ListView
+### Display the list of todos using a ListView
 
 <!-- skip -->
 ```dart
@@ -71,28 +73,30 @@ ListView.builder(
 );
 ```
 
-So far, so good. We'll generate 20 Todos and display them in a ListView!
+So far, so good.
+This generates 20 todos and displays them in a ListView.
 
-## 3. Create a Detail Screen that can display information about a todo
+## 3. Create a detail screen to display information about a todo
 
-Now, we'll create our second screen. The title of the screen will contain the
-title of the todo, and the body of the screen will show the description.
+Now, create the second screen. The title of the screen contains the
+title of the todo, and the body of the screen shows the description.
 
-Since it's a normal `StatelessWidget`, we'll simply require that users creating
-the Screen pass through a `Todo`! Then, we'll build a UI using the given Todo.
+Since the detail screen is a normal `StatelessWidget`,
+require the user to enter a `Todo` in the UI.
+Then, build the UI using the given todo.
 
 <!-- skip -->
 ```dart
 class DetailScreen extends StatelessWidget {
-  // Declare a field that holds the Todo
+  // Declare a field that holds the Todo.
   final Todo todo;
 
-  // In the constructor, require a Todo
+  // In the constructor, require a Todo.
   DetailScreen({Key key, @required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Use the Todo to create our UI
+    // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),
@@ -106,16 +110,18 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-## 4. Navigate and pass data to the Detail Screen
+## 4. Navigate and pass data to the detail screen
 
-With our `DetailScreen` in place, we're ready to perform the Navigation! In our
-case, we'll want to Navigate to the `DetailScreen` when a user taps on a Todo in
-our List. When we do so, we'll also want to pass the Todo to the `DetailScreen`.
+With a `DetailScreen` in place,
+you're ready to perform the Navigation.
+In this example, navigate to the `DetailScreen` when a user
+taps a todo in the list. Pass the todo to the `DetailScreen`.
 
-To achieve this, we'll write an
-[`onTap`]({{site.api}}/flutter/material/ListTile/onTap.html)
-callback for our `ListTile` Widget. Within our `onTap` callback, we'll once
-again employ the [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html)
+To capture the user's tap, write an
+[`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
+callback for the `ListTile` widget. Within the `onTap()` callback, 
+use the
+[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.
 
 <!-- skip -->
@@ -125,9 +131,9 @@ ListView.builder(
   itemBuilder: (context, index) {
     return ListTile(
       title: Text(todos[index].title),
-      // When a user taps on the ListTile, navigate to the DetailScreen.
-      // Notice that we're not only creating a DetailScreen, we're
-      // also passing the current todo to it!
+      // When a user taps the ListTile, navigate to the DetailScreen.
+      // Notice that you're not only creating a DetailScreen, you're
+      // also passing the current todo to it.
       onTap: () {
         Navigator.push(
           context,
@@ -185,9 +191,9 @@ class TodosScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(todos[index].title),
-            // When a user taps on the ListTile, navigate to the DetailScreen.
-            // Notice that we're not only creating a DetailScreen, we're
-            // also passing the current todo through to it!
+            // When a user taps the ListTile, navigate to the DetailScreen.
+            // Notice that you're not only creating a DetailScreen, you're
+            // also passing the current todo through to it.
             onTap: () {
               Navigator.push(
                 context,
@@ -204,15 +210,15 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
-  // Declare a field that holds the Todo
+  // Declare a field that holds the Todo.
   final Todo todo;
 
-  // In the constructor, require a Todo
+  // In the constructor, require a Todo.
   DetailScreen({Key key, @required this.todo}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Use the Todo to create our UI
+    // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),

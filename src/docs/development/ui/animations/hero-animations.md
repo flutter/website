@@ -22,7 +22,7 @@ a new screen, containing more details and a "Buy" button. Flying an image from
 one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
-You may want to watch this one-minute video introducing the Hero widget:
+You might want to watch this one-minute video introducing the Hero widget:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
@@ -122,7 +122,7 @@ how Flutter performs a hero animation.
 
 <aside class="alert alert-info" markdown="1">
   **Terminology:**
-  If the concept of tweens or tweening is new to you, please see the
+  If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
 </aside>
 

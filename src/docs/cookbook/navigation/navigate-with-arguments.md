@@ -10,17 +10,16 @@ next:
  
 The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
 provides the ability to navigate to a named route from any part of an app using
-a common identifier. In some cases, you may also need to pass arguments to a
-named route. For example, you may wish to navigate to the `/user` route and
+a common identifier. In some cases, you might also need to pass arguments to a
+named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
-In Flutter, you can accomplish this task by providing additional `arguments` to
-the
-[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-method. You can extract the arguments using the
+You can accomplish this task using the `arguments` parameter of the
+[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
+method. Extract the arguments using the
 [`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method or inside an
-[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function provided to the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 or
@@ -28,26 +27,27 @@ or
 constructor.
 
 This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModelRoute.of` and `onGenerateRoute`.
+arguments using `ModelRoute.of()` and `onGenerateRoute()` using the
+following steps:
 
-## Directions
-
-  1. Define the arguments you need to pass
-  2. Create a widget that extracts the arguments
-  3. Register the widget in the `routes` table 
-  4. Navigate to the widget
+  1. Define the arguments you need to pass.
+  2. Create a widget that extracts the arguments.
+  3. Register the widget in the `routes` table.
+  4. Navigate to the widget.
 
 ## 1. Define the arguments you need to pass
 
-First, define the arguments you need to pass to the new route. In this example,
-pass two pieces of data: The `title` of the screen and a `message`.
+First, define the arguments you need to pass to the new route.
+In this example, pass two pieces of data:
+The `title` of the screen and a `message`.
 
 To pass both pieces of data, create a class that stores this information.
 
 <!-- skip -->
 ```dart
-// You can pass any object to the arguments parameter. In this example, create a
-// class that contains both a customizable title and message.
+// You can pass any object to the arguments parameter.
+// In this example, create a class that contains a customizable
+// title and message.
 class ScreenArguments {
   final String title;
   final String message;
@@ -60,12 +60,12 @@ class ScreenArguments {
 
 Next, create a widget that extracts and displays the `title` and `message` from
 the `ScreenArguments`. To access the `ScreenArguments`, use the
-[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
+[`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 method. This method returns the current route with the arguments.
 
 <!-- skip -->
 ```dart
-// A Widget that extracts the necessary arguments from the ModalRoute.
+// A widget that extracts the necessary arguments from the ModalRoute.
 class ExtractArgumentsScreen extends StatelessWidget {
   static const routeName = '/extractArguments';
 
@@ -89,7 +89,7 @@ class ExtractArgumentsScreen extends StatelessWidget {
 
 ## 3. Register the widget in the `routes` table
 
-Next, add an entry to the `routes` provided to the `MaterialApp` Widget. The
+Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 `routes` define which widget should be created based on the name of the route.  
 
 <!-- skip -->
@@ -106,19 +106,19 @@ MaterialApp(
 
 Finally, navigate to the `ExtractArgumentsScreen` when a user taps a button
 using
-[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
+[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
 Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
 
 <!-- skip -->
 ```dart
-// A button that navigates to a named route that. The named route
+// A button that navigates to a named route. The named route
 // extracts the arguments by itself.
 RaisedButton(
   child: Text("Navigate to screen that extracts arguments"),
   onPressed: () {
-    // When the user taps the button, navigate to the specific rout
+    // When the user taps the button, navigate to the specific route
     // and provide the arguments as part of the RouteSettings.
     Navigator.pushNamed(
       context,
@@ -136,18 +136,18 @@ RaisedButton(
 
 Instead of extracting the arguments directly inside the widget, you can also
 extract the arguments inside an
-[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 function and pass them to a widget.
 
-The `onGenerateRoute` function creates the correct route based on the given
+The `onGenerateRoute()` function creates the correct route based on the given
 `RouteSettings`.
 
 <!-- skip -->
 ```dart
 MaterialApp(
   // Provide a function to handle named routes. Use this function to
-  // identify the named route being pushed and create the correct
-  // Screen.
+  // identify the named route being pushed, and create the correct
+  // screen.
   onGenerateRoute: (settings) {
     // If you push the PassArguments route
     if (settings.name == PassArgumentsScreen.routeName) {
@@ -181,7 +181,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Provide a function to handle named routes. Use this function to
-      // identify the named route being pushed and create the correct
+      // identify the named route being pushed, and create the correct
       // Screen.
       onGenerateRoute: (settings) {
         // If you push the PassArguments route
@@ -319,8 +319,8 @@ class PassArgumentsScreen extends StatelessWidget {
   }
 }
 
-// You can pass any object to the arguments parameter. In this example, create a
-// class that contains both a customizable title and message.
+// You can pass any object to the arguments parameter. In this example,
+// create a class that contains both a customizable title and message.
 class ScreenArguments {
   final String title;
   final String message;

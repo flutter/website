@@ -75,12 +75,14 @@ device name (or the message **No Devices**).
 ![Flutter device]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
 
 {{site.alert.note}}
-  - If you do not see a Flutter version number or device info your project may
-    not have been detected as a Flutter project. Please ensure the folder that
-    contains your `pubspec.yaml` is inside a VS Code **Workspace Folder**
+  - If you do not see a Flutter version number or device info your project
+    might not have been detected as a Flutter project. Ensure the
+    folder that contains your `pubspec.yaml` is inside a VS Code
+    **Workspace Folder**.
   - If the status bar reads **No Devices** Flutter has not been
     able to discover any connected iOS or Android devices or simulators.
-    You need to connect a device, or start a simulator, to proceed.
+    You need to connect a device, or start a simulator or emulator,
+    to proceed.
 {{site.alert.end}}
 
 The Flutter extension automatically selects the last device connected.
@@ -144,15 +146,15 @@ installation and getting started instructions, see the [DevTools' docs][].
 
 ## Editing tips for Flutter code
 
-If you have additional tips we should share, please [let us know][]!
+If you have additional tips we should share, [let us know][]!
 
 ### Assists & Quick Fixes
 
-Assists are code changes related to a certain code identifier. A number of these
-are available when the cursor is placed on a Flutter widget identifier, as
-indicated by the yellow lightbulb icon. The assist can be invoked by clicking
-the lightbulb, or by using the keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as
-illustrated here:
+Assists are code changes related to a certain code identifier.
+A number of these are available when the cursor is placed on a
+Flutter widget identifier, as indicated by the yellow lightbulb icon.
+The assist can be invoked by clicking the lightbulb, or by using the
+keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 
 ![Code Assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
 

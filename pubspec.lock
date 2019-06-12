@@ -256,7 +256,7 @@ packages:
       name: linkcheck
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.6"
+    version: "1.7.0"
   logging:
     dependency: transitive
     description:
@@ -375,7 +375,7 @@ packages:
       name: stream_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "2.0.0"
   stream_transform:
     dependency: transitive
     description:

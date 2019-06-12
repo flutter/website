@@ -1,45 +1,45 @@
 ---
-title: Using Themes to share colors and font styles
+title: Use themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 prev:
-  title: Updating the UI based on orientation
+  title: Update the UI based on orientation
   path: /docs/cookbook/design/orientation
 next:
-  title: Using custom fonts
+  title: Use custom fonts
   path: /docs/cookbook/design/fonts
 ---
 
-In order to share colors and font styles throughout our app, we can take
-advantage of themes. There are two ways to define themes: App-wide or using
-`Theme` Widgets that define the colors and font styles for a particular part of
-our application. In fact, app-wide themes are just `Theme` Widgets created at
-the root of our apps by the `MaterialApp`!
+To share colors and font styles throughout an app, use themes.
+You can either define app-wide themes, or use `Theme` widgets
+that define the colors and font styles for a particular part
+of the application. In fact,
+app-wide themes are just `Theme` widgets created at
+the root of an apps by the `MaterialApp`.
 
-After we define a Theme, we can use it within our own Widgets. In addition, the
-Material Widgets provided by Flutter will use our Theme to set the background
+After defining a Theme, use it within your own widgets. Flutter's
+Material widgets also use your Theme to set the background
 colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 ## Creating an app theme
 
-In order to share a Theme containing colors and font styles across our entire
-app, we can provide
+To share a Theme across an entire app, provide a
 [`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
 to the `MaterialApp` constructor.
 
-If no `theme` is provided, Flutter creates a fallback theme under the hood.
+If no `theme` is provided, Flutter creates a default theme for you.
 
 <!-- skip -->
 ```dart
 MaterialApp(
   title: title,
   theme: ThemeData(
-    // Define the default Brightness and Colors
+    // Define the default brightness and colors.
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
     accentColor: Colors.cyan[600],
     
-    // Define the default Font Family
+    // Define the default font family.
     fontFamily: 'Montserrat',
     
     // Define the default TextTheme. Use this to specify the default
@@ -53,21 +53,21 @@ MaterialApp(
 );
 ```
 
-Please see the [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
+See the [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
 documentation to see all of the colors and fonts you can define.
 
 ## Themes for part of an application
 
-If we want to override the app-wide theme in part of our application, we can
-wrap a section of our app in a `Theme` Widget.
+To override the app-wide theme in part of an application,
+wrap a section of the app in a `Theme` widget.
 
-There are two ways to approach this: creating unique `ThemeData`, or
-extending the parent theme.
+There are two ways to approach this: creating a unique `ThemeData`,
+or extending the parent theme.
 
 ### Creating unique `ThemeData`
 
-If we don't want to inherit any application colors or font styles, we can create
-a `ThemeData()` instance and pass that to the `Theme` Widget.
+If you don't want to inherit any application colors or font styles,
+create a `ThemeData()` instance and pass that to the `Theme` widget.
 
 <!-- skip -->
 ```dart
@@ -86,14 +86,14 @@ Theme(
 ### Extending the parent theme
 
 Rather than overriding everything, it often makes sense to extend the parent
-theme. We can achieve this by using the
-[`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
+theme. You can handle this by using the
+[`copyWith()`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
 method.
 
 <!-- skip -->
 ```dart
 Theme(
-  // Find and Extend the parent theme using "copyWith". Please see the next
+  // Find and extend the parent theme using "copyWith". See the next
   // section for more info on `Theme.of`.
   data: Theme.of(context).copyWith(accentColor: Colors.yellow),
   child: FloatingActionButton(
@@ -105,15 +105,16 @@ Theme(
 
 ## Using a Theme
 
-Now that we've defined a theme, we can use it within our Widget `build` methods
-by using the `Theme.of(context)` function!
+Now that you've defined a theme, use it within the widgets' `build()`
+methods by using the `Theme.of(context)` method.
 
-`Theme.of(context)` looks up the Widget tree and return the nearest `Theme`
-in the tree. If we have a stand-alone `Theme` defined above our Widget, it
-returns that. If not, it returns the App theme.
+The `Theme.of(context)` method looks up the widget tree and returns
+the nearest `Theme` in the tree. If you have a standalone
+`Theme` defined above your widget, that's returned.
+If not, the app's theme is returned.
 
-In fact, the `FloatingActionButton` uses this exact technique to find the
-`accentColor`!
+In fact, the `FloatingActionButton` uses this technique to find the
+`accentColor`.
 
 <!-- skip -->
 ```dart
@@ -144,12 +145,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-        // Define the default Brightness and Colors
+        // Define the default brightness and colors.
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
         accentColor: Colors.cyan[600],
 
-        // Define the default Font Family
+        // Define the default font family.
         fontFamily: 'Montserrat',
 
         // Define the default TextTheme. Use this to specify the default

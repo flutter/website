@@ -93,7 +93,7 @@ flutter:
 ... then `graphics/my_icon.png`, `graphics/background.png` and `graphics/dark/background.png` will be included.
 
 Flutter uses asset variants when choosing resolution appropriate
-images; see below. In the future, this mechanism may be extended to
+images; see below. In the future, this mechanism might be extended to
 include variants for different locales or regions, reading directions,
 etc.
 

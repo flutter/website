@@ -51,11 +51,11 @@ Also see:
 Use effects carefully, as they can be expensive. Some of them invoke
 `saveLayer()` behind the scenes, which can be an expensive operation.
 
-{{site.alert.note}}
-**Why is savelayer expensive?**<br>
-Calling `saveLayer()` allocates an offscreen buffer. Drawing content
-into the offscreen buffer may trigger render target switches that
-are particularly slow in older GPUs.
+{{site.alert.secondary}}
+  <h4>Why is savelayer expensive?</h4>
+  Calling `saveLayer()` allocates an offscreen buffer. Drawing content
+  into the offscreen buffer might trigger render target switches that
+  are particularly slow in older GPUs.
 {{site.alert.end}}
 
 Some general rules when applying specific effects:
@@ -71,13 +71,13 @@ Some general rules when applying specific effects:
   clipping is disabled (`Clip.none`), so you must explicitly enable it when
   needed. 
 
-Other widgets that may trigger `saveLayer()` and are potentially costly:
+Other widgets that might trigger `saveLayer()` and are potentially costly:
 
 * [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
 * [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
-* [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;may
+* [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;might
   cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
-* [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;may
+* [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;might
   cause call to `saveLayer()` if there's an `overflowShader`
 
 Ways to avoid calls to `saveLayer()`:
@@ -120,9 +120,9 @@ you likely don’t have to worry about performance even if some
 performance pitfalls apply, but you should still aim to build and
 render a frame as fast as possible. Why?
 
-* Lowering the frame render time below 16ms may not make a visual
-  difference, but it will **improve battery life** and thermal issues.
-* It may run fine on your device, but consider performance for the
+* Lowering the frame render time below 16ms might not make a visual
+  difference, but it **improves battery life** and thermal issues.
+* It might run fine on your device, but consider performance for the
   lowest device you are targeting.
 * When 120fps devices become widely available, you’ll want to render frames
   in under 8ms (total) in order to provide the smoothest experience.

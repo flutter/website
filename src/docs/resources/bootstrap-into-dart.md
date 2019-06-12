@@ -38,5 +38,5 @@ We hope these resources make Dart easy for you to learn, too.
   [File class]({{site.api}}/flutter/dart-io/File-class.html)
   uses Streams to read bytes from a file.
 
-Want to learn more and maybe contribute? Check out the
+Want to learn more and perhaps contribute? Check out the
 [Dart community]({{site.dart-site}}/community).

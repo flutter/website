@@ -1,7 +1,7 @@
 ---
-title: Working with WebSockets
+title: Work with WebSockets
 prev:
-  title: Parsing JSON in the background
+  title: Parse JSON in the background
   path: /docs/cookbook/networking/background-parsing
 next:
   title: Persist data with SQLite
@@ -12,21 +12,20 @@ In addition to normal HTTP requests, you can connect to servers using
 WebSockets.  WebSockets allow for two-way communication with a server
 without polling.
 
-In this example, you'll connect to a [test server provided by
-websocket.org](http://www.websocket.org/echo.html). The server simply sends
+In this example, connect to a [test server provided by
+websocket.org](http://www.websocket.org/echo.html). The server sends
 back the same message you send to it.
-
-## Directions
+This recipe uses the following steps:
 
   1. Connect to a WebSocket server
   2. Listen for messages from the server
-  3. Send Data to the Server
+  3. Send data to the server
   4. Close the WebSocket connection
 
 ## 1. Connect to a WebSocket server
 
 The [web_socket_channel]({{site.pub-pkg}}/web_socket_channel)
-package provides the tools you'll need to connect to a WebSocket server.
+package provides the tools you need to connect to a WebSocket server.
 
 The package provides a `WebSocketChannel` that allows you to both listen for
 messages from the server and push messages to the server.
@@ -41,16 +40,16 @@ final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
 
 ## 2. Listen for messages from the server
 
-Now that you've established a connection, you can listen to messages from the
+Now that you've established a connection, listen to messages from the
 server.
 
-After you send a message to the test server, it sends the same message back.
+After sending a message to the test server, it sends the same message back.
 
-How to listen for messages and display them? In this example, you'll use
+In this example, use
 a [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
-Widget to listen for new messages and a
+widget to listen for new messages, and a
 [`Text`]({{site.api}}/flutter/widgets/Text-class.html)
-Widget to display them.
+widget to display them.
 
 <!-- skip -->
 ```dart
@@ -62,7 +61,7 @@ StreamBuilder(
 );
 ```
 
-### How does this work?
+### How this works
 
 The `WebSocketChannel` provides a
 [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
@@ -74,12 +73,12 @@ which returns a single async response, the `Stream` class can deliver many
 events over time.
 
 The [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
-Widget connects to a `Stream` and asks Flutter to rebuild every time it
-receives an event using the given `builder` function.
+widget connects to a `Stream` and asks Flutter to rebuild every time it
+receives an event using the given `builder()` function.
 
-## 3. Send Data to the Server
+## 3. Send data to the server
 
-In order to send data to the server, `add` messages to the `sink` provided
+To send data to the server, `add()` messages to the `sink` provided
 by the `WebSocketChannel`.
 
 <!-- skip -->
@@ -87,19 +86,18 @@ by the `WebSocketChannel`.
 channel.sink.add('Hello!');
 ```
 
-### How does this work
+### How this works
 
 The `WebSocketChannel` provides a
 [`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html)
 to push messages to the server.
 
-The `StreamSink` class provides a general way to add sync or async events to a
-data source.
+The `StreamSink` class provides a general way to add sync or async
+events to a data source.
 
 ## 4. Close the WebSocket connection
 
-After you're done using the WebSocket, close the connection.
-To do so, close the `sink`.
+After you're done using the WebSocket, close the connection:
 
 <!-- skip -->
 ```dart
@@ -195,4 +193,4 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Web Sockets Demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+![Web sockets demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}

@@ -1,50 +1,60 @@
 ---
-title: Working with Tabs
+title: Work with tabs
 prev:
-  title: Using custom fonts
+  title: Use custom fonts
   path: /docs/cookbook/design/fonts
 next:
-  title: Building a form with validation
+  title: Build a form with validation
   path: /docs/cookbook/forms/validation
 ---
 
-Working with tabs is a common pattern in apps following the Material Design
+Working with tabs is a common pattern in apps that follow the Material Design
 guidelines. Flutter includes a convenient way to create tab layouts as part of
 the [material library]({{site.api}}/flutter/material/material-library.html).
 
-## Directions
+{{site.alert.note}}
+  To create tabs in a Cupertino app, see the
+  [Building a Cupertino app with
+  Flutter](https://codelabs.developers.google.com/codelabs/flutter-cupertino)
+  codelab.
+{{site.alert.end}}
 
-  1. Create a `TabController`
-  2. Create the tabs
-  3. Create content for each tab
+This recipe creates a tabbed example using the following steps;
+
+  1. Create a `TabController`.
+  2. Create the tabs.
+  3. Create content for each tab.
 
 ## 1. Create a `TabController`
 
-In order for tabs to work, we'll need to keep the selected tab and content
+For tabs to work, you need to keep the selected tab and content
 sections in sync. This is the job of the
 [`TabController`]({{site.api}}/flutter/material/TabController-class.html).
 
-We can either manually create a `TabController` or use the
-[`DefaultTabController`]({{site.api}}/flutter/material/DefaultTabController-class.html)
-Widget. Using the `DefaultTabController` is the simplest option, since it will
-create a `TabController` for us and make it available to all descendant Widgets.
+Either create a TabController manually, or automatically by using a
+[DefaultTabController]({{site.api}}/flutter/material/DefaultTabController-class.html)
+widget.
+
+Using `DefaultTabController` is the simplest option, since it
+creates a `TabController` and makes it available to all descendant widgets.
 
 <!-- skip -->
 ```dart
 DefaultTabController(
-  // The number of tabs / content sections we need to display
+  // The number of tabs / content sections to display.
   length: 3,
-  child: // See the next step!
+  child: // Complete this code in the next step.
 );
 ```
 
 ## 2. Create the tabs
 
-Now that we have a `TabController` to work with, we can create our tabs using
-the [`TabBar`]({{site.api}}/flutter/material/TabController-class.html)
-Widget. In this example, we'll create a `TabBar` with 3
+When a tab is selected, it needs to display content.
+You can create tabs using the
+[`TabBar`]({{site.api}}/flutter/material/TabController-class.html)
+widget. In this example, create a `TabBar` with three
 [`Tab`]({{site.api}}/flutter/material/Tab-class.html)
-Widgets and place it within an
+widgets and place it within an
 [`AppBar`]({{site.api}}/flutter/material/AppBar-class.html).
 
 <!-- skip -->
@@ -65,18 +75,20 @@ DefaultTabController(
 );
 ```
 
-By default, the `TabBar` looks up the Widget tree for the nearest
-`DefaultTabController`. If you're manually creating a `TabController`, you'll
-need to pass it to the `TabBar`.
+By default, the `TabBar` looks up the widget tree for the nearest
+`DefaultTabController`. If you're manually creating a `TabController`,
+pass it to the `TabBar`.
 
 ## 3. Create content for each tab
 
-Now that we have tabs, we'll want to display content when a tab is selected.
-For this purpose, we'll employ the
-[`TabBarView`]({{site.api}}/flutter/material/TabBarView-class.html) Widget.
+Now that you have tabs, display content when a tab is selected.
+For this purpose, use the
+[`TabBarView`]({{site.api}}/flutter/material/TabBarView-class.html) widget.
 
-*Note:* Order is important and must correspond to the order of the tabs in the
-`TabBar`!
+{{site.alert.note}}
+  Order is important and must correspond to the order of the tabs in the
+  `TabBar`.
+{{site.alert.end}}
 
 <!-- skip -->
 ```dart

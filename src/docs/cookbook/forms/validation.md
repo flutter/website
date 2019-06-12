@@ -1,46 +1,45 @@
 ---
-title: Building a form with validation
+title: Build a form with validation
 prev:
-  title: Working with Tabs
+  title: Work with tabs
   path: /docs/cookbook/design/tabs
 next:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input
 ---
 
-Apps often require users to enter information into a text field. For
-example, we might be working on an app that requires our users to log in with an
-email address and password combination.
+Apps often require users to enter information into a text field.
+For example, you might require users to log in with an email address
+and password combination.
 
-In order to make our apps secure and easy to use, we can check whether the
+To make apps secure and easy to use, check whether the
 information the user has provided is valid. If the user has correctly filled
-out the form, we can process the information. If the user submits incorrect
-information, we can display a friendly error message letting them know what went
+out the form, process the information. If the user submits incorrect
+information, display a friendly error message letting them know what went
 wrong.
 
-In this example, we'll see how to add validation to a form with a single
-text field.
+In this example, learn how to add validation to a form that has
+a single text field using the following steps:
 
-## Directions
-
-  1. Create a `Form` with a `GlobalKey`
-  2. Add a `TextFormField` with validation logic
-  3. Create a button to validate and submit the form
+  1. Create a `Form` with a `GlobalKey`.
+  2. Add a `TextFormField` with validation logic.
+  3. Create a button to validate and submit the form.
 
 ## 1. Create a `Form` with a `GlobalKey`
 
-First, we'll need a [`Form`]({{site.api}}/flutter/widgets/Form-class.html)
-to work with. The `Form` Widget acts as a container to group and validate
-multiple form fields.
+First, create a
+[`Form`]({{site.api}}/flutter/widgets/Form-class.html).
+The `Form` widget acts as a container for grouping
+and validating multiple form fields.
 
-When we create the form, we'll also need to provide a
+When creating the form, provide a
 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html).
-This will uniquely identify the `Form` that we're working with, and will allow
-us to validate the form in a later step.
+This uniquely identifies the `Form`,
+and allows validation of the form in a later step.
 
 <!-- skip -->
 ```dart
-// Define a Custom Form Widget
+// Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   MyCustomFormState createState() {
@@ -48,57 +47,60 @@ class MyCustomForm extends StatefulWidget {
   }
 }
 
-// Define a corresponding State class. This class will hold the data related to
-// the form.
+// Define a corresponding State class.
+// This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
-  // Create a global key that will uniquely identify the Form widget and allow
-  // us to validate the form
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
   //
-  // Note: This is a `GlobalKey<FormState>`, not a GlobalKey<MyCustomFormState>!
+  // Note: This is a `GlobalKey<FormState>`,
+  // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey we created above
+    // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: // We'll build this out in the next steps!
+      child: // Build this out in the next steps.
     );
   }
 }
 ```
 
 {{site.alert.tip}}
-Using a `GlobalKey` is the recommended way to access a form. However, if you
-have a more complex widget tree, you can use the
-[`Form.of`]({{site.api}}/flutter/widgets/Form/of.html) method to
-access the form within nested widgets.
+  Using a `GlobalKey` is the recommended way to access a form.
+  However, if you have a more complex widget tree, you can use the
+  [`Form.of()`]({{site.api}}/flutter/widgets/Form/of.html) method to
+  access the form within nested widgets.
 {{site.alert.end}}
 
 ## 2. Add a `TextFormField` with validation logic
 
-We have our `Form` in place, but we haven't provided a way for our users to
-enter text! This is the job of a
+Although the `Form` is in place,
+it doesn't have a way for users to enter text.
+That's the job of a
 [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
-The `TextFormField` Widget renders a material design text input and knows how to
-display validation errors when they occur.
+The `TextFormField` widget renders a material design text field
+and can display validation errors when they occur.
 
-How can we validate the input? By providing a `validator` function to the
-`TextFormField`. If there is an error with the information the user has
-provided, the `validator` function must return a `String` containing
-an error message. If there are no errors, the function should not return
-anything.
+Validate the input by providing a `validator()` function to the
+`TextFormField`. If the user's input isn't valid,
+the `validator` function returns a `String` containing
+an error message.
+If there are no errors, the validator must return null.
 
-In this example, we will create a `validator` that ensures the `TextFormField`
-isn't empty. If it is empty, we will return a friendly error message!
+For this example, create a `validator` that ensures the
+`TextFormField` isn't empty. If it is empty,
+return a friendly error message.
 
 <!-- skip -->
 ```dart
 TextFormField(
-  // The validator receives the text the user has typed in
+  // The validator receives the text that the user has entered.
   validator: (value) {
     if (value.isEmpty) {
-      return 'Please enter some text';
+      return 'Enter some text';
     }
     return null;
   },
@@ -107,22 +109,22 @@ TextFormField(
 
 ## 3. Create a button to validate and submit the form
 
-Now that we have a form with a text field, we'll need to provide a button the
-user can tap to submit the information.
+Now that you have a form with a text field,
+provide a button that the user can tap to submit the information.
 
-When the user attempts to submit the form, we'll need to check if the form is
-valid. If it is, we will show a success message. If the text field has no
-content, we'll want to display the error message.
+When the user attempts to submit the form, check if the form is valid.
+If it is, display a success message.
+If it isn't (the text field has no content) display the error message.
 
 <!-- skip -->
 ```dart
 RaisedButton(
   onPressed: () {
-    // Validate will return true if the form is valid, or false if
-    // the form is invalid.
+    // Validate returns true if the form is valid, otherwise false.
     if (_formKey.currentState.validate()) {
-      // If the form is valid, display a snackbar. In the real world, you'd
-      // often want to call a server or save the information in a database
+      // If the form is valid, display a snackbar. In the real world,
+      // you'd often call a server or save the information in a database.
+
       Scaffold
           .of(context)
           .showSnackBar(SnackBar(content: Text('Processing Data')));
@@ -134,16 +136,17 @@ RaisedButton(
 
 ### How does this work?
 
-In order to validate the form, we'll need to use the `_formKey` created in
-step 1. We can use the `_formKey.currentState` method to access the
+To validate the form, use the `_formKey` created in
+step 1. You can use the `_formKey.currentState()` method to access the
 [`FormState`]({{site.api}}/flutter/widgets/FormState-class.html),
-which is automatically created by Flutter when we build a `Form`.
+which is automatically created by Flutter when building a `Form`.
 
-The `FormState` class contains the `validate` method. When the `validate` method
-is called, it will run the `validator` function for each text field in the form.
-If everything looks good, the method returns `true`. If any text field contains
-errors, it will display the error message for each invalid text field and return
-`false`.
+The `FormState` class contains the `validate()` method.
+When the `validate()` method is called, it runs the `validator()`
+function for each text field in the form.
+If everything looks good, the `validate()` method returns `true`.
+If any text field contains errors, the `validate()` method
+rebuilds the form to display any error messages and returns `false`.
 
 ## Complete example
 
@@ -169,7 +172,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Create a Form Widget
+// Create a Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   MyCustomFormState createState() {
@@ -177,18 +180,19 @@ class MyCustomForm extends StatefulWidget {
   }
 }
 
-// Create a corresponding State class. This class will hold the data related to
-// the form.
+// Create a corresponding State class.
+// This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
-  // Create a global key that will uniquely identify the Form widget and allow
-  // us to validate the form
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
   //
-  // Note: This is a GlobalKey<FormState>, not a GlobalKey<MyCustomFormState>!
+  // Note: This is a GlobalKey<FormState>,
+  // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey we created above
+    // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
       child: Column(
@@ -197,7 +201,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           TextFormField(
             validator: (value) {
               if (value.isEmpty) {
-                return 'Please enter some text';
+                return 'Enter some text';
               }
               return null;
             },
@@ -206,10 +210,10 @@ class MyCustomFormState extends State<MyCustomForm> {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: RaisedButton(
               onPressed: () {
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
+                // Validate returns true if the form is valid, or false
+                // otherwise.
                 if (_formKey.currentState.validate()) {
-                  // If the form is valid, we want to show a Snackbar
+                  // If the form is valid, display a Snackbar.
                   Scaffold.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
                 }

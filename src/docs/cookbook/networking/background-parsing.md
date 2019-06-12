@@ -1,10 +1,10 @@
 ---
-title: Parsing JSON in the background
+title: Parse JSON in the background
 prev:
-  title: Making authenticated requests
+  title: Make authenticated requests
   path: /docs/cookbook/networking/authenticated-requests
 next:
-  title: Working with WebSockets
+  title: Work with WebSockets
   path: /docs/cookbook/networking/web-sockets
 ---
 
@@ -12,21 +12,20 @@ By default, Dart apps do all of their work on a single thread. In many cases,
 this model simplifies coding and is fast enough that it does not result in
 poor app performance or stuttering animations, often called "jank."
 
-However, you may need to perform an expensive computation, such as parsing a
-very large JSON document. If this work takes more than 16 milliseconds, your
-users will experience jank.
+However, you might need to perform an expensive computation, such as parsing a
+very large JSON document. If this work takes more than 16 milliseconds,
+your users experience jank.
 
 To avoid jank, you need to perform expensive computations like this in the
-background. On Android, this would mean scheduling work on a different thread.
+background. On Android, this means scheduling work on a different thread.
 In Flutter, you can use a separate
 [Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
+This recipe uses the following steps:
 
-## Directions
-
-  1. Add the `http` package
-  2. Make a network request using the `http` package
-  3. Convert the response into a List of Photos
-  4. Move this work to a separate isolate
+  1. Add the `http` package.
+  2. Make a network request using the `http` package.
+  3. Convert the response into a list of photos.
+  4. Move this work to a separate isolate.
 
 ## 1. Add the `http` package
 
@@ -41,9 +40,9 @@ dependencies:
 
 ## 2. Make a network request
 
-In this example, you'll fetch a JSON large document that contains a list of
+In this example, fetch a JSON large document that contains a list of
 5000 photo objects from the [JSONPlaceholder REST
-API](https://jsonplaceholder.typicode.com)
+API](https://jsonplaceholder.typicode.com),
 using the [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
 
 <!-- skip -->
@@ -53,21 +52,23 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 }
 ```
 
-Note: You're providing an `http.Client` to the function in this example.
-This makes the function easier to test and use in different environments.
+{{site.alert.note}}
+  You're providing an `http.Client` to the function in this example.
+  This makes the function easier to test and use in different environments.
+{{site.alert.end}}
 
-## 3. Parse and Convert the json into a List of Photos
+## 3. Parse and convert the JSON into a list of photos
 
 Next, following the guidance from the [Fetch data from the
 internet](/docs/cookbook/networking/fetch-data)
-recipe, you'll want to convert the `http.Response` into a list of Dart objects.
+recipe, convert the `http.Response` into a list of Dart objects.
 This makes the data easier to work with in the future.
 
 ### Create a `Photo` class
 
 First, create a `Photo` class that contains data about a photo.
-You will include a `fromJson` factory method to make it easy to create a
-`Photo` starting with a json object.
+Include a `fromJson()` factory method to make it easy to create a
+`Photo` starting with a JSON object.
 
 <!-- skip -->
 ```dart
@@ -88,17 +89,19 @@ class Photo {
 }
 ```
 
-### Convert the response into a List of Photos
+### Convert the response into a list of photos
 
-Now, update the `fetchPhotos` function so it can return a
-`Future<List<Photo>>`. To do so, you'll need to:
+Now, use the following instructions to update the
+`fetchPhotos()` function so that it returns a
+`Future<List<Photo>>`:
 
-  1. Create a `parsePhotos` that converts the response body into a `List<Photo>`
-  2. Use the `parsePhotos` function in the `fetchPhotos` function
+  1. Create a `parsePhotos()` function that converts the response
+     body into a `List<Photo>`.
+  2. Use the `parsePhotos()` function in the `fetchPhotos()` function.
 
 <!-- skip -->
 ```dart
-// A function that converts a response body into a List<Photo>
+// A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
@@ -115,15 +118,15 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 ## 4. Move this work to a separate isolate
 
-If you run the `fetchPhotos` function on a slower phone, you may notice the app
-freezes for a brief moment as it parses and converts the json. This is jank,
-and we want to be rid of it.
+If you run the `fetchPhotos()` function on a slower device,
+you might notice the app freezes for a brief moment as it parses and
+converts the JSON. This is jank, and you want to be rid of it.
 
-So how can we do that? By moving the parsing and conversion to a background
-isolate using the [`compute`]({{site.api}}/flutter/foundation/compute.html)
-function provided by Flutter. The `compute` function runs expensive
+You can remove the jank by moving the parsing and conversion to a background
+isolate using the [`compute()`]({{site.api}}/flutter/foundation/compute.html)
+function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
-we want to run the `parsePhotos` function in the background.
+run the `parsePhotos()` function in the background.
 
 <!-- skip -->
 ```dart
@@ -131,18 +134,18 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
 
-  // Use the compute function to run parsePhotos in a separate isolate
+  // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
 }
 ```
 
-## Notes on working with Isolates
+## Notes on working with isolates
 
 Isolates communicate by passing messages back and forth. These messages can
 be primitive values, such as `null`, `num`, `bool`, `double`, or `String`, or
 simple objects such as the `List<Photo>` in this example.
 
-You may experience errors if you try to pass more complex objects, such as
+You might experience errors if you try to pass more complex objects, such as
 a `Future` or `http.Response` between isolates.
 
 ## Complete example
@@ -159,11 +162,11 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/photos');
 
-  // Use the compute function to run parsePhotos in a separate isolate
+  // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
 }
 
-// A function that converts a response body into a List<Photo>
+// A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
@@ -249,4 +252,4 @@ class PhotosList extends StatelessWidget {
 }
 ```
 
-![Isolate Demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}

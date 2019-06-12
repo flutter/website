@@ -1,39 +1,39 @@
 ---
-title: Reading and Writing Files
+title: Read and write files
 prev:
   title: Persist data with SQLite
   path: /docs/cookbook/persistence/sqlite
 next:
-  title: Storing key-value data on disk
+  title: Store key-value data on disk
   path: /docs/cookbook/persistence/key-value
 ---
 
-In some cases, it can be handy to read and write files to disk.
-This can be used to persist data across app launches,
-or to download data from the internet and save it for later offline use.
+In some cases, you need to read and write files to disk.
+For example, you may need to persist data across app launches,
+or download data from the internet and save it for later offline use.
 
-In order to save files to disk, you'll need to combine the
-[`path_provider` plugin]({{site.pub-pkg}}/path_provider) with
+To save files to disk, combine the
+[`path_provider`]({{site.pub-pkg}}/path_provider) plugin with
 the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
 library.
 
-## Directions
+This recipe uses the following steps:
 
-  1. Find the correct local path
-  2. Create a reference to the file location
-  3. Write data to the file
-  4. Read data from the file
+  1. Find the correct local path.
+  2. Create a reference to the file location.
+  3. Write data to the file.
+  4. Read data from the file.
 
 ## 1. Find the correct local path
 
-In this example, you'll display a counter. When the counter changes, you'll
+This example displays a counter. When the counter changes,
 write data on disk so you can read it again when the app loads.
-Therefore, you must wonder: Where should I store this data?
+Where should you store this data?
 
 The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
 provides a platform-agnostic way to access commonly used locations on the
-device's filesystem. The plugin currently supports access to two filesystem
-locations:
+device's file system. The plugin currently supports access to
+two file system locations:
 
   * *Temporary directory:* A temporary directory (cache) that the system can
     clear at any time. On iOS, this corresponds to the value that
@@ -42,11 +42,12 @@ locations:
     [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
     returns.
   * *Documents directory:* A directory for the app to store files that only
-    it can access. The system clears the directory only when the app is deleted.
-    On iOS, this corresponds to `NSDocumentDirectory`. On Android, this is the
-    `AppData` directory.
+    it can access. The system clears the directory only when the app
+    is deleted.
+    On iOS, this corresponds to the `NSDocumentDirectory`.
+    On Android, this is the `AppData` directory.
 
-In this case, you'll want to store information in the documents directory.
+This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
 
 <!-- skip -->
@@ -60,7 +61,7 @@ Future<String> get _localPath async {
 
 ## 2. Create a reference to the file location
 
-Once you know where to store the file, you'll need to create a reference to the
+Once you know where to store the file, create a reference to the
 file's full location. You can use the
 [`File`]({{site.api}}/flutter/dart-io/File-class.html)
 class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
@@ -76,16 +77,18 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Now that you have a `File` to work with, use it to read and write data.
-First, write some data to the file. Since you're working with a counter,
-you'll simply store the integer as a String.
+Now that you have a File to work with,
+use it to read and write data.
+First, write some data to the file.
+The counter is an integer, but is written to the
+file as a string using the `'$counter'` syntax.
 
 <!-- skip -->
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
 
-  // Write the file
+  // Write the file.
   return file.writeAsString('$counter');
 }
 ```
@@ -101,12 +104,12 @@ Future<int> readCounter() async {
   try {
     final file = await _localFile;
 
-    // Read the file
+    // Read the file.
     String contents = await file.readAsString();
 
     return int.parse(contents);
   } catch (e) {
-    // If encountering an error, return 0
+    // If encountering an error, return 0.
     return 0;
   }
 }
@@ -114,23 +117,22 @@ Future<int> readCounter() async {
 
 ## Testing
 
-In order to test code that interacts with files, you'll need to Mock calls to
-the `MethodChannel`. The `MethodChannel` is the class that Flutter uses to
-communicate with the host platform.
+To test code that interacts with files, you need to mock calls to
+the `MethodChannel`&mdash;the class that 
+communicates with the host platform. For security reasons,
+you can't directly interact with the file system on a device,
+so you interact with the test environment's file system.
 
-In these tests, you can't interact with the filesystem on a device.
-You'll need to interact with the test environment's filesystem.
-
-To mock the method call, provide a `setupAll` function in the test file.
+To mock the method call, provide a `setupAll()` function in the test file.
 This function runs before the tests are executed.
 
 <!-- skip -->
 ```dart
 setUpAll(() async {
-  // Create a temporary directory to work with
+  // Create a temporary directory.
   final directory = await Directory.systemTemp.createTemp();
 
-  // Mock out the MethodChannel for the path_provider plugin
+  // Mock out the MethodChannel for the path_provider plugin.
   const MethodChannel('plugins.flutter.io/path_provider')
       .setMockMethodCallHandler((MethodCall methodCall) async {
     // If you're getting the apps documents directory, return the path to the

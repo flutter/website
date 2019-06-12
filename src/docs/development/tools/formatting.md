@@ -4,14 +4,14 @@ description: Flutter's code formatter formats your code along recommended style 
 ---
 
 
-While your code may follow any preferred style&mdash;in our
-experience&mdash;teams of developers may find it more productive to:
+While your code might follow any preferred style&mdash;in our
+experience&mdash;teams of developers might find it more productive to:
 
 * Have a single, shared style, and
 * Enforce this style through automatic formatting.
 
-The alternative is often tiring formatting debates during code reviews, where
-time may be better spent on code behavior rather than code style.
+The alternative is often tiring formatting debates during code reviews,
+where time might be better spent on code behavior rather than code style.
 
 ## Automatically formatting code in Android Studio and IntelliJ
 

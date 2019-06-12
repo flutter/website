@@ -1,71 +1,66 @@
 ---
 title: Retrieve the value of a text field
 prev:
-  title: Handling changes to a text field
+  title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 next:
-  title: Adding Material Touch Ripples
+  title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples
 ---
 
-In this recipe, we'll see how to retrieve the text a user has typed into a text
-field.
+In this recipe,
+learn how to retrieve the text a user has entered into a text field
+using the following steps:
 
-## Directions
-
-  1. Create a `TextEditingController`
-  2. Supply the `TextEditingController` to a `TextField`
-  3. Display the current value of the text field
+  1. Create a `TextEditingController`.
+  2. Supply the `TextEditingController` to a `TextField`.
+  3. Display the current value of the text field.
 
 ## 1. Create a `TextEditingController`
 
-In order to retrieve the text a user has typed into a text field, we need to
-create a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html).
-We will then supply the `TextEditingController` to a `TextField` in the next
-steps.
+To retrieve the text a user has entered into a text field, create a
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
+and supply it to a `TextField` or `TextFormField`.
 
-Once a `TextEditingController` is supplied to a `TextField` or `TextFormField`,
-we can use it to retrieve the text a user has typed into that text field.
-
-Note: It is also important to `dispose` of the `TextEditingController` when we
-are finished using it. This will ensure we discard any resources used by the
-object.
+{{site.alert.secondary}}
+  **Important:** Call `dispose` of the `TextEditingController` when
+  you've finished using it. This ensures that you discard any resources
+  used by the object.
+{{site.alert.end}}
 
 <!-- skip -->
 ```dart
-// Define a Custom Form Widget
+// Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
 
-// Define a corresponding State class. This class will hold the data related to
-// our Form.
+// Define a corresponding State class.
+// This class holds the data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller. We will use it to retrieve the current value
-  // of the TextField!
+  // Create a text controller and use it to retrieve the current value
+  // of the TextField.
   final myController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controller when the Widget is disposed
+    // Clean up the controller when the widget is disposed.
     myController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // We will fill this out in the next step!
+    // Fill this out in the next step.
   }
 }
 ```
 
 ## 2. Supply the `TextEditingController` to a `TextField`
 
-Now that we have a `TextEditingController` to work with, we need to wire it up
-to a specific text field. To do this, we'll supply the `TextEditingController`
-to a `TextField` or `TextFormField` Widget as the `controller` property.
+Now that you have a `TextEditingController`, wire it up
+to a text field using the `controller` property:
 
 <!-- skip -->
 ```dart
@@ -76,27 +71,27 @@ TextField(
 
 ## 3. Display the current value of the text field
 
-After we've supplied the `TextEditingController` to our text field, we can begin
-reading values! We will use the
-[`text`]({{site.api}}/flutter/widgets/TextEditingController/text.html)
-method provided by the `TextEditingController` to retrieve the String of text
-the user has typed into the text field.
+After supplying the `TextEditingController` to the text field,
+begin reading values. Use the
+[`text()`]({{site.api}}/flutter/widgets/TextEditingController/text.html)
+method provided by the `TextEditingController` to retrieve the
+String that the user has entered into the text field.
 
-In this example, we will display an alert dialog with the current value of
-the text field when the user taps on a floating action button.
+The following code displays an alert dialog with the current
+value of the text field when the user taps a floating action button.
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
-  // When the user presses the button, show an alert dialog with the
-  // text the user has typed into our text field.
+  // When the user presses the button, show an alert dialog containing the
+  // text that the user has entered into the text field.
   onPressed: () {
     return showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          // Retrieve the text the user has typed in using our
-          // TextEditingController
+          // Retrieve the text the user has entered by using the
+          // TextEditingController.
           content: Text(myController.text),
         );
       },
@@ -124,22 +119,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Define a Custom Form Widget
+// Define a custom Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
   _MyCustomFormState createState() => _MyCustomFormState();
 }
 
-// Define a corresponding State class. This class will hold the data related to
-// our Form.
+// Define a corresponding State class.
+// This class holds the data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Create a text controller. We will use it to retrieve the current value
-  // of the TextField!
+  // Create a text controller and use it to retrieve the current value
+  // of the TextField.
   final myController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controller when the Widget is disposed
+    // Clean up the controller when the widget is disposed.
     myController.dispose();
     super.dispose();
   }
@@ -157,15 +152,15 @@ class _MyCustomFormState extends State<MyCustomForm> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        // When the user presses the button, show an alert dialog with the
-        // text the user has typed into our text field.
+        // When the user presses the button, show an alert dialog containing
+        // the text that the user has entered into the text field.
         onPressed: () {
           return showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                // Retrieve the text the user has typed in using our
-                // TextEditingController
+                // Retrieve the text the that user has entered by using the
+                // TextEditingController.
                 content: Text(myController.text),
               );
             },

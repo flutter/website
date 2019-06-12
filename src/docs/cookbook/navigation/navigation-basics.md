@@ -2,37 +2,38 @@
 title: Navigate to a new screen and back
 description: How to navigate between routes
 prev:
-  title: Animating a Widget across screens
+  title: Animate a widget across screens
   path: /docs/cookbook/navigation/hero-animations
 next:
   title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
 ---
 
-Most apps contain several screens for displaying different types of information.
-For example, an app might have a screen that displays products. Users can then
-tap the image of a product to get more detailed information on a new screen.
+Most apps contain several screens for displaying different types of
+information.
+For example, an app might have a screen that displays products.
+When the user taps the image of a product, a new screen displays
+details about the product.
 
-{{site.alert.info}}
+{{site.alert.secondary}}
   **Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
-  The remainder of this doc refers to routes.
+  The remainder of this recipe refers to routes.
 {{site.alert.end}}
 
 In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
-How do you navigate to a new route? By using the
+Navigate to a new route using the
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
-
-## Directions
+This recipe uses the following steps:
 
 The next few sections show how to navigate between two routes,
 using these steps:
 
-  1. Create two routes
-  2. Navigate to the second route using Navigator.push()
-  3. Return to the first route using Navigator.pop()
+  1. Create two routes.
+  2. Navigate to the second route using Navigator.push().
+  3. Return to the first route using Navigator.pop().
 
 ## 1. Create two routes
 
@@ -91,11 +92,11 @@ method. The `push()` method adds a `Route` to the stack of routes managed by
 the Navigator. Where does the `Route` come from?
 You can create your own, or use a
 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html),
-out of the box. `MaterialPageRoute` is handy because it transitions to the
+which is useful because it transitions to the
 new route using a platform-specific animation.
 
-In the `build()` method of the `FirstRoute` widget, update the `onPressed()`
-callback:
+In the `build()` method of the `FirstRoute` widget,
+update the `onPressed()` callback:
 
 <!-- skip -->
 ```dart

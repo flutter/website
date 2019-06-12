@@ -44,9 +44,10 @@ need to complete the setup:
 C:\src\flutter>flutter doctor
 ```
 
-This command checks your environment and displays a report of the status of your
-Flutter installation. Check the output carefully for other software you may need
-to install or further tasks to perform (shown in **bold** text).
+This command checks your environment and displays a report of the status
+of your Flutter installation. Check the output carefully for other
+software you might need to install or further tasks to perform
+(shown in **bold** text).
 
 For example:
 

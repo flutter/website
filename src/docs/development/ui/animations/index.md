@@ -4,21 +4,22 @@ short-title: Animations
 description: How to perform animations in Flutter
 ---
 
-Well-designed animations makes a UI feel more intuitive, contribute to the slick
-look and feel of a polished app, and improve the user experience. Flutter's
-animation support makes it easy to implement a variety of animation types. Many
-widgets, especially [Material widgets][], come with the standard motion effects
-defined in their design spec, but it's also possible to customize these effects.
+Well-designed animations makes a UI feel more intuitive, contribute to
+the slick look and feel of a polished app, and improve the user experience.
+Flutter's animation support makes it easy to implement a variety of
+animation types. Many widgets, especially [Material widgets][],
+come with the standard motion effects defined in their design spec,
+but it's also possible to customize these effects.
 
-The following resources are a good place to start learning the Flutter animation
-framework. Each of these documents shows, step by step, how to write animation
-code.
+The following resources are a good place to start learning the Flutter
+animation framework. Each of these documents shows, step by step,
+how to write animation code.
 
 {% comment %}
 More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
-If you have a specific request, please
+If you have a specific request, 
 [file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 
@@ -143,8 +144,9 @@ classes.
 
 ### Staggered animation
 
-Animations that are broken into smaller motions, where some of the motion is delayed.
-The smaller animations may be sequential, or may partially or completely overlap.
+Animations that are broken into smaller motions, where some of the motion
+is delayed.  The smaller animations might be sequential,
+or might partially or completely overlap.
 
 * [Staggered Animations](/docs/development/ui/animations/staggered-animations)
 

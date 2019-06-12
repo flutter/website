@@ -37,7 +37,7 @@ on the device and in the widget tree.
 
 You can then browse around the interactive widget tree in the IDE to view
 nearby widgets and see their field values. If you are trying to debug a layout
-issue, then the Widget layer’s tree may be insufficiently detailed. In that
+issue, then the Widget layer’s tree might be insufficiently detailed. In that
 case, click the Render Tree tab to view the render tree corresponding to the
 same location in the tree. When debugging layout issues, the key fields to look
 at are the `size` and `constraints` fields. The constraints flow down the tree,
@@ -50,5 +50,5 @@ For a more complete demonstration of the inspector, see the
 
 ## Feedback
 
-If you have suggestions, or encounter issues, please
+If you have suggestions, or encounter issues,
 [file an issue in our tracker]({{site.github}}/flutter/flutter-intellij/issues/new?labels=inspector)!

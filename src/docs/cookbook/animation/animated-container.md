@@ -1,7 +1,7 @@
 ---
-title: Animate the properties of a Container
+title: Animate the properties of a container
 next:
-  title: Fade a Widget in and out
+  title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
 ---
 
@@ -10,37 +10,37 @@ class provides a convenient way to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
 Simple animations often involve changing these properties over time.
-For example, you may want to animate the background color from grey to green to
+For example,
+you might want to animate the background color from grey to green to
 indicate that an item has been selected by the user.
 
 To animate these properties, Flutter provides the
 [`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
-widget. Like the `Container` Widget, `AnimatedContainer` allows you to define
+widget. Like the `Container` widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
 animates between the old and new values. In Flutter, these types of
 animations are known as "implicit animations."
 
 This recipe describes how to use an `AnimatedContainer` to animate the size,
-background color, and border radius when the user taps a button.
+background color, and border radius when the user taps a button
+using the following steps:
 
-## Directions
-
-  1. Create a StatefulWidget with default properties
-  2. Build an `AnimatedContainer` using the properties
-  3. Start the animation by rebuilding with new properties
+  1. Create a StatefulWidget with default properties.
+  2. Build an `AnimatedContainer` using the properties.
+  3. Start the animation by rebuilding with new properties.
 
 ## 1. Create a StatefulWidget with default properties
 
 To start, create
 [`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
-Use the custom State class to define the properties you need to change over
+Use the custom State class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
-radius. In addition, you can also define the default value of each property.
+radius. You can also define the default value of each property.
 
-These properties must belong to a custom `State` class so they can be updated
-when the user taps a button.
+These properties belong to a custom `State` class so they
+can be updated when the user taps a button.
 
 <!-- skip -->
 ```dart
@@ -59,15 +59,15 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
   @override
   Widget build(BuildContext context) {
-    // Fill this out in the next steps
+    // Fill this out in the next steps.
   }
 }
 ```
 
 ## 2. Build an `AnimatedContainer` using the properties
 
-Next, you can build the `AnimatedContainer` using the properties defined in the
-previous step. Furthermore, you must provide a `duration` that defines how long
+Next, build the `AnimatedContainer` using the properties defined in the
+previous step. Furthermore, provide a `duration` that defines how long
 the animation should run. 
 
 <!-- skip -->
@@ -90,17 +90,17 @@ AnimatedContainer(
 ## 3. Start the animation by rebuilding with new properties
 
 Finally, start the animation by rebuilding the `AnimatedContainer` with
-new properties. How to trigger a rebuild? When it comes to `StatefulWidgets`,
-[`setState`]({{site.api}}/flutter/widgets/State/setState.html) is the
-solution. 
+the new properties. How to trigger a rebuild? Use the
+[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
+method. 
 
-For this example, add a button to the app. When the user taps the button, update
+Add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius 
-inside a call to `setState`.
+inside a call to `setState()`.
 
-In a real app, you most often transition between fixed values (for example, from
-a grey to a green background). For this app, generate new values each time the
-user taps the button.
+A real app typically transitions between fixed values (for example,
+from a grey to a green background). For this app,
+generate new values each time the user taps the button.
 
 <!-- skip -->
 ```dart

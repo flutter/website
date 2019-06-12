@@ -1,48 +1,47 @@
 ---
-title: Creating lists with different types of items
+title: Create lists with different types of items
 prev:
-  title: Creating a Grid List
+  title: Create a grid list
   path: /docs/cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar
 ---
 
-We often need to create lists that display different types of content. For
-example, we might be working on a List that shows a heading followed by a few
-items related to the heading, followed by another heading, and so on.
+You might need to create lists that display different types of content.
+For example, you might be working on a list that shows a heading
+followed by a few items related to the heading, followed by another heading,
+and so on.
 
-How would we create such a structure with Flutter?
+Here's how you can create such a structure with Flutter:
 
-## Directions
-
-  1. Create a data source with different types of items
-  2. Convert the data source into a List of Widgets
+  1. Create a data source with different types of items.
+  2. Convert the data source into a list of widgets.
 
 ## 1. Create a data source with different types of item
 
-### Types of Items
+### Types of items
 
-In order to represent different types of items in a List, we'll need to define
+To represent different types of items in a list, define
 a class for each type of item.
 
-In this example, we'll work on an app that shows a header followed by five
-messages. Therefore, we'll create three classes: `ListItem`, `HeadingItem`,
+In this example, create an app that shows a header followed by five
+messages. Therefore, create three classes: `ListItem`, `HeadingItem`,
 and `MessageItem`.
 
 <!-- skip -->
 ```dart
-// The base class for the different types of items the List can contain
+// The base class for the different types of items the list can contain.
 abstract class ListItem {}
 
-// A ListItem that contains data to display a heading
+// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
 }
 
-// A ListItem that contains data to display a message
+// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
@@ -51,13 +50,14 @@ class MessageItem implements ListItem {
 }
 ```
 
-### Create a List of Items
+### Create a list of items
 
-Most of the time, we'd fetch data from the internet or a local database and
-convert that data into a list of items.
+Most of the time, you would fetch data from the internet or a local
+database and convert that data into a list of items.
 
-For this example, we'll generate a list of items to work with. The list will
-contain a header followed by five messages. Rinse, repeat.
+For this example, generate a list of items to work with. The list
+contains a header followed by five messages. Each message has one
+of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
 <!-- skip -->
 ```dart
@@ -69,28 +69,28 @@ final items = List<ListItem>.generate(
 );
 ```
 
-## 2. Convert the data source into a List of Widgets
+## 2. Convert the data source into a list of widgets
 
-In order to handle converting each item into a Widget, we'll employ the
-[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
+To convert each item into a widget, use the
+[`ListView.builder()`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
 constructor.
 
-In general, we'll want to provide a `builder` function that checks for what type
-of item we're dealing with, and returns the appropriate Widget for that type of
-item.
+In general, provide a builder function that checks for what type
+of item you're dealing with, and returns the appropriate widget
+for that type of item.
 
-In this example, using the `is` keyword to check the type of item we're dealing
-with can be handy. It's fast, and will automatically cast each item to the
-appropriate type. However, there are different ways to approach this problem if
-you prefer another pattern!
+This example uses the `is` keyword to check the type of item.
+It's fast, and automatically casts each item to the appropriate type.
+However, there are different ways to approach this problem if
+you prefer another pattern.
 
 <!-- skip -->
 ```dart
 ListView.builder(
-  // Let the ListView know how many items it needs to build
+  // Let the ListView know how many items it needs to build.
   itemCount: items.length,
-  // Provide a builder function. This is where the magic happens! We'll
-  // convert each item into a Widget based on the type of item it is.
+  // Provide a builder function. This is where the magic happens.
+  // Convert each item into a widget based on the type of item it is.
   itemBuilder: (context, index) {
     final item = items[index];
 
@@ -144,10 +144,10 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: ListView.builder(
-          // Let the ListView know how many items it needs to build
+          // Let the ListView know how many items it needs to build.
           itemCount: items.length,
-          // Provide a builder function. This is where the magic happens! We'll
-          // convert each item into a Widget based on the type of item it is.
+          // Provide a builder function. This is where the magic happens.
+          // Convert each item into a widget based on the type of item it is.
           itemBuilder: (context, index) {
             final item = items[index];
 
@@ -171,17 +171,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// The base class for the different types of items the List can contain
+// The base class for the different types of items the list can contain.
 abstract class ListItem {}
 
-// A ListItem that contains data to display a heading
+// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
 }
 
-// A ListItem that contains data to display a message
+// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
@@ -190,4 +190,4 @@ class MessageItem implements ListItem {
 }
 ```
 
-![Mixed List Demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
+![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}

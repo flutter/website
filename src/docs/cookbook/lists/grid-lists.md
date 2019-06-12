@@ -1,31 +1,32 @@
 ---
-title: Creating a Grid List
+title: Create a grid list
 prev:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
 next:
-  title: Creating lists with different types of items
+  title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
 ---
 
-In some cases, you might want to display your items as a Grid rather than
-a normal list of items that come one after the next. For this task, we'll employ
-the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) Widget.
+In some cases, you might want to display your items as a grid rather than
+a normal list of items that come one after the next. For this task, use
+the [`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) widget.
 
 The simplest way to get started using grids is by using the
-[`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
-constructor, because it allow us to specify how many rows or columns we'd like.
+[`GridView.count()`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
+constructor,
+because it allows you to specify how many rows or columns you'd like.
 
-In this example, we'll generate a List of 100 Widgets that display their
-index in the list. This will help us visualize how `GridView`  works.
+To visualize how `GridView` works, 
+generate a list of 100 widgets that display their index in the list.
 
 <!-- skip -->
 ```dart
 GridView.count(
   // Create a grid with 2 columns. If you change the scrollDirection to
-  // horizontal, this would produce 2 rows.
+  // horizontal, this produces 2 rows.
   crossAxisCount: 2,
-  // Generate 100 Widgets that display their index in the List
+  // Generate 100 widgets that display their index in the List.
   children: List.generate(100, (index) {
     return Center(
       child: Text(
@@ -59,9 +60,9 @@ class MyApp extends StatelessWidget {
         ),
         body: GridView.count(
           // Create a grid with 2 columns. If you change the scrollDirection to
-          // horizontal, this would produce 2 rows.
+          // horizontal, this produces 2 rows.
           crossAxisCount: 2,
-          // Generate 100 Widgets that display their index in the List
+          // Generate 100 widgets that display their index in the List.
           children: List.generate(100, (index) {
             return Center(
               child: Text(

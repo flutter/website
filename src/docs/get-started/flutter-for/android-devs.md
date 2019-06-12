@@ -1287,7 +1287,7 @@ Flutter]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-d
 
 As mentioned in the [Intents](#what-is-the-equivalent-of-an-intent-in-flutter)
 section, screens in Flutter are represented by `Widget`s since everything is
-a widget in Flutter. You use a `Navigator` to move between different `Route`s
+a widget in Flutter. Use a `Navigator` to move between different `Route`s
 that represent different screens or pages, or maybe just different states or
 renderings of the same data.
 

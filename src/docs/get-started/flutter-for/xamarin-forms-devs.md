@@ -1484,9 +1484,9 @@ content exceeds its viewable space.
   );
 {% endprettify %}
 
-You might have used a `Grid` in Xamarin.Forms to implement widgets that
-overlay other widgets.  In Flutter, you accomplish this with the
-`Stack` widget.
+You might have used a `Grid` in Xamarin.Forms to implement widgets
+that overlay other widgets.
+In Flutter, you accomplish this with the `Stack` widget
 
 This sample creates two icons that overlap each other.
 
@@ -2012,7 +2012,8 @@ and returns the row you want rendered at that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead adds to it.
 
-For more information, see [Write your first Flutter app,
+For more information, see
+[Write your first Flutter app,
 part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 and [Write your first Flutter app,
 part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)

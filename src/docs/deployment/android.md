@@ -151,7 +151,7 @@ Release builds of your app will now be signed automatically.
 
 By default, Flutter does not obfuscate or minify the Android host.
 If you intend to use third-party Java or Android libraries,
-you may want to reduce the size of the APK or protect that code from
+you might want to reduce the size of the APK or protect that code from
 reverse engineering.
 
 For information on obfuscating Dart code, see [Obfuscating Dart

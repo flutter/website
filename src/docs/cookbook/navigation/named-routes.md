@@ -8,32 +8,31 @@ next:
   path: /docs/cookbook/navigation/navigate-with-arguments
 ---
 
-In the
-[Navigate to a new screen and back](/docs/cookbook/navigation/navigation-basics/)
-recipe, we learned how to Navigate to a new screen by creating a new route and
+In the [Navigate to a new screen and
+back](/docs/cookbook/navigation/navigation-basics) recipe,
+you learned how to navigate to a new screen by creating a new route and
 pushing it to the
 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
 
-However, if we need to navigate to the same screen in many parts of our apps,
-this can result in code duplication. In these cases, it can be handy to define
-a "named route," and use the named route for Navigation.
+However, if you need to navigate to the same screen in many parts
+of your app, this approach can result in code duplication.
+The solution is to define a _named route_,
+and use the named route for navigation.
 
-To work with named routes, we can use the
-[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-function. This example will replicate the functionality from the original
-recipe, demonstrating how to use named routes instead.
+To work with named routes, use the
+[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
+function. This example replicates the functionality from the original
+recipe, demonstrating how to use named routes using the following steps: 
 
-## Directions
-
-  1. Create two screens
-  2. Define the routes
-  3. Navigate to the second screen using `Navigator.pushNamed`
-  4. Return to the first screen using `Navigator.pop`
+  1. Create two screens.
+  2. Define the routes.
+  3. Navigate to the second screen using `Navigator.pushNamed()`.
+  4. Return to the first screen using `Navigator.pop()`.
 
 ## 1. Create two screens
 
-First, we'll need two screens to work with. The first screen will contain a
-button that navigates to the second screen. The second screen will contain a
+First, create two screens to work with. The first screen contains a
+button that navigates to the second screen. The second screen contains a
 button that navigates back to the first.
 
 ```dart
@@ -48,7 +47,7 @@ class FirstScreen extends StatelessWidget {
         child: RaisedButton(
           child: Text('Launch screen'),
           onPressed: () {
-            // Navigate to second screen when tapped!
+            // Navigate to the second screen when tapped.
           },
         ),
       ),
@@ -66,7 +65,7 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            // Navigate back to first screen when tapped!
+            // Navigate back to first screen when tapped.
           },
           child: Text('Go back!'),
         ),
@@ -78,63 +77,64 @@ class SecondScreen extends StatelessWidget {
 
 ## 2. Define the routes
 
-Next, we'll need to define our routes by providing additional properties to the
+Next, define the routes by providing additional properties to the
 [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 constructor: the `initialRoute` and the `routes` themselves.
 
-The `initialRoute` property defines which route our app should start with. The
-`routes` property defines the available named routes and the Widgets that should
-be built when we navigate to those routes.
+The `initialRoute` property defines which route the app should start with.
+The `routes` property defines the available named routes and the widgets
+to build when navigating to those routes.
 
 <!-- skip -->
 ```dart
 MaterialApp(
-  // Start the app with the "/" named route. In our case, the app will start
-  // on the FirstScreen Widget
+  // Start the app with the "/" named route. In this case, the app starts
+  // on the FirstScreen widget.
   initialRoute: '/',
   routes: {
-    // When we navigate to the "/" route, build the FirstScreen Widget
+    // When navigating to the "/" route, build the FirstScreen widget.
     '/': (context) => FirstScreen(),
-    // When we navigate to the "/second" route, build the SecondScreen Widget
+    // When navigating to the "/second" route, build the SecondScreen widget.
     '/second': (context) => SecondScreen(),
   },
 );
 ```
 
-Note: When using `initialRoute`, be sure you do not define a `home` property.
+{{site.alert.warning}}
+  When using `initialRoute`, **don't** define a `home` property.
+{{site.alert.end}}
 
 ## 3. Navigate to the second screen
 
-With our Widgets and routes in place, we can begin navigating! In this case,
-we'll use the
-[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-function. This tells Flutter to build the Widget defined in our `routes` table
-and launch the screen.
+With the widgets and routes in place, trigger navigation by using the
+[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
+method. This tells Flutter to build the widget defined in the
+`routes` table and launch the screen.
 
-In the `build` method of our `FirstScreen` Widget, we'll update the `onPressed`
+In the `build()` method of the `FirstScreen` widget, update the `onPressed()`
 callback:
 
 <!-- skip -->
 ```dart
-// Within the `FirstScreen` Widget
+// Within the `FirstScreen` widget
 onPressed: () {
-  // Navigate to the second screen using a named route
+  // Navigate to the second screen using a named route.
   Navigator.pushNamed(context, '/second');
 }
 ```
 
 ## 4. Return to the first screen
 
-In order to navigate back to the first page, we can use the
-[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)
+To navigate back to the first screen, use the
+[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 function.
 
 <!-- skip -->
 ```dart
-// Within the SecondScreen Widget
+// Within the SecondScreen widget
 onPressed: () {
   // Navigate back to the first screen by popping the current route
-  // off the stack
+  // off the stack.
   Navigator.pop(context);
 }
 ```
@@ -147,13 +147,13 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Named Routes Demo',
-    // Start the app with the "/" named route. In our case, the app will start
-    // on the FirstScreen Widget
+    // Start the app with the "/" named route. In this case, the app starts
+    // on the FirstScreen widget.
     initialRoute: '/',
     routes: {
-      // When we navigate to the "/" route, build the FirstScreen Widget
+      // When navigating to the "/" route, build the FirstScreen widget.
       '/': (context) => FirstScreen(),
-      // When we navigate to the "/second" route, build the SecondScreen Widget
+      // When navigating to the "/second" route, build the SecondScreen widget.
       '/second': (context) => SecondScreen(),
     },
   ));
@@ -170,7 +170,7 @@ class FirstScreen extends StatelessWidget {
         child: RaisedButton(
           child: Text('Launch screen'),
           onPressed: () {
-            // Navigate to the second screen using a named route
+            // Navigate to the second screen using a named route.
             Navigator.pushNamed(context, '/second');
           },
         ),
@@ -190,7 +190,7 @@ class SecondScreen extends StatelessWidget {
         child: RaisedButton(
           onPressed: () {
             // Navigate back to the first screen by popping the current route
-            // off the stack
+            // off the stack.
             Navigator.pop(context);
           },
           child: Text('Go back!'),

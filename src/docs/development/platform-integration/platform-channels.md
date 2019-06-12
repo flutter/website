@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, invoke a method on the method channel, specifying the concrete method
 to call via the String identifier `getBatteryLevel`.
-The call may fail&mdash;for example if the platform does not support the
+The call might fail&mdash;for example if the platform does not support the
 platform API (such as when running in a simulator), so wrap the
 `invokeMethod` call in a try-catch statement.
 
