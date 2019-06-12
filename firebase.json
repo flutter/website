@@ -62,7 +62,7 @@
       { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
       { "source": "/developing-packages", "destination": "/docs/development/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/faq", "destination": "/docs/resources/faq", "type": 301 },
-      { "source": "/fastlane-cd", "destination": "/docs/deployment/fastlane-cd", "type": 301 },
+      { "source": "/cd", "destination": "/docs/deployment/cd", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/docs/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/docs/development/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/docs/development/ui/advanced/gestures", "type": 301 },

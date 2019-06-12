@@ -185,8 +185,8 @@
       permalink: /docs/deployment/android
     - title: Build and release for iOS
       permalink: /docs/deployment/ios
-    - title: Continuous deployment with fastlane
-      permalink: /docs/deployment/fastlane-cd
+    - title: Continuous deployment
+      permalink: /docs/deployment/cd
 
 - title: Resources
   children:
