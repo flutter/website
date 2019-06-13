@@ -6,11 +6,11 @@ short-title: Android
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**
-buttons in your IDE. By default,
+options in your IDE. By default,
 Flutter builds a _debug_ version of your app.
 
 When you're ready to prepare a _release_ version of your app,
-for example to [publish to the Google Play store][play],
+for example to [publish to the Google Play Store][play],
 this page can help. Before publishing,
 you might want to put some finishing touches on your app.
 This page covers the following topics:
@@ -21,7 +21,7 @@ This page covers the following topics:
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
-* [Publishing to the Google Play store](#publishing-to-the-google-play-store)
+* [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
 * [Android release FAQ](#android-release-faq)
 
 ## Adding a launcher icon
@@ -50,7 +50,7 @@ Alternatively, you can do it manually using the following steps:
 
 ## Signing the app
 
-To publish on the Play store, you need to give your app a digital
+To publish on the Play Store, you need to give your app a digital
 signature. Use the following instructions to sign your app.
 
 ### Create a keystore
@@ -253,13 +253,13 @@ especially:
 ## Building the app for release
 
 You have two possible release formats when publishing to
-the Play store.
+the Play Store.
 
 * App bundle (preferred)
 * APK
 
 {{site.alert.note}}
-  The Google Play store prefers the app bundle format.
+  The Google Play Store prefers the app bundle format.
   For more information, see [Android App Bundle][bundle] and
   [About Android App Bundles][bundle2].
 {{site.alert.end}}
@@ -273,7 +273,7 @@ the app bundle will be signed.
 From the command line:
 
 1. Enter `cd <app dir>`<br>
-   (Replace `<app, dir>` with your application's directory.)
+   (Replace `<app dir>` with your application's directory.)
 1. Run `flutter build appbundle`<br>
    (Running `flutter build` defaults to a release build.)
 
@@ -302,7 +302,7 @@ describes two.
    or the alpha or beta channels to test the bundle before
    releasing it in production.
 2. Follow [these steps to upload your bundle][upload-bundle]
-   to the Play store.
+   to the Play Store.
 
 ### Build an APK
 
@@ -340,9 +340,9 @@ From the command line:
 1. Enter `cd <app dir>` where `<app dir>` is your application directory.
 1. Run `flutter install`.
 
-## Publishing to the Google Play store
+## Publishing to the Google Play Store
 
-For detailed instructions on publishing your app to the Google Play store,
+For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
 
 ## Android release FAQ
@@ -352,10 +352,10 @@ Android apps.
 
 ### When should I build app bundles versus APKs?
 
-The Google Play store recommends that you deploy app bundles
+The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
 application to your users. However, if you’re distributing
-your application by mens other than the Play store,
+your application by means other than the Play Store,
 an APK may be your only option.
 
 ### What is a fat APK?
@@ -415,7 +415,7 @@ The resulting app bundle or APK files are located in
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[GitHub repository]: {{site.github}}/flutter/flutter/issues/18494
+[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
