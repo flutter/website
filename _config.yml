@@ -12,7 +12,7 @@ repo:
 branch: master
 
 dart:
-  api: https://api.dartlang.org
+  api: https://api.dart.dev
   sdk:
     channel: stable
 sdk: # Flutter SDK
