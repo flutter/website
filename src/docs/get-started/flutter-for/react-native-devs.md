@@ -227,6 +227,9 @@ example._getIPAddress();
 <!-- skip -->
 ```dart
 // Dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class Example {
   _getIPAddress() {
     final url = 'https://httpbin.org/ip';
@@ -276,6 +279,9 @@ scheduled for execution later. The `await` operator is used to wait for a
 <!-- skip -->
 ```dart
 // Dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 class Example {
   _getIPAddress() async {
     final url = 'https://httpbin.org/ip';
