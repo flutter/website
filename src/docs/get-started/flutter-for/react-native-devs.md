@@ -212,17 +212,18 @@ class Example {
     return fetch(url)
       .then(response => response.json())
       .then(responseJson => {
-        console.log(responseJson.origin);
+        const ip = responseJson.origin;
+        return ip;
       })
       .catch(error => {
         console.error(error);
       });
-  };
+  }
 }
 
 function main() {
   const example = new Example();
-  example._getIPAddress();
+  example._getIPAddress().then(ip => console.log(ip));
 }
 
 main();
@@ -235,17 +236,18 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class Example {
-  _getIPAddress() {
+  Future<String> _getIPAddress() {
     final url = 'https://httpbin.org/ip';
-    http.get(url).then((response) {
-      print(jsonDecode(response.body)['origin']);
+    return http.get(url).then((response) {
+      String ip = jsonDecode(response.body)['origin'];
+      return ip;
     }).catchError((error) => print(error));
   }
 }
 
 main() {
   final example = new Example();
-  example._getIPAddress();
+  example._getIPAddress().then((ip) => print(ip));
 }
 ```
 
@@ -271,7 +273,7 @@ class Example {
       const response = await fetch(url);
       const responseJson = await response.json();
       const ip = responseJson.origin;
-      console.log(ip);
+      return ip;
     } catch (error) {
       console.error(error);
     }
@@ -280,7 +282,8 @@ class Example {
 
 async function main() {
   const example = new Example();
-  await example._getIPAddress();
+  const ip = await example._getIPAddress();
+  console.log(ip);
 }
 
 main();
@@ -297,21 +300,23 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class Example {
-  _getIPAddress() async {
+  Future<String> _getIPAddress() async {
     final url = 'https://httpbin.org/ip';
     try {
       final response = await http.get(url);
       String ip = jsonDecode(response.body)['origin'];
-      print(ip);
+      return ip;
     } catch (error) {
       print(error);
+      return "";
     }
   }
 }
 
 main() async {
   final example = new Example();
-  await example._getIPAddress();
+  final ip = await example._getIPAddress();
+  print(ip);
 }
 ```
 
