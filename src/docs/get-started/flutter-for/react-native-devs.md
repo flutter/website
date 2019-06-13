@@ -214,16 +214,16 @@ class Example {
       .then(responseJson => {
         const ip = responseJson.origin;
         return ip;
-      })
-      .catch(error => {
-        console.error(error);
       });
   }
 }
 
 function main() {
   const example = new Example();
-  example._getIPAddress().then(ip => console.log(ip));
+  example
+    ._getIPAddress()
+    .then(ip => console.log(ip))
+    .catch(error => console.error(error));
 }
 
 main();
@@ -241,13 +241,16 @@ class Example {
     return http.get(url).then((response) {
       String ip = jsonDecode(response.body)['origin'];
       return ip;
-    }).catchError((error) => print(error));
+    });
   }
 }
 
 main() {
   final example = new Example();
-  example._getIPAddress().then((ip) => print(ip));
+  example
+      ._getIPAddress()
+      .then((ip) => print(ip))
+      .catchError((error) => print(error));
 }
 ```
 
@@ -269,21 +272,21 @@ used to wait for a `Promise`.
 class Example {
   async _getIPAddress() {
     const url = 'https://httpbin.org/ip';
-    try {
-      const response = await fetch(url);
-      const responseJson = await response.json();
-      const ip = responseJson.origin;
-      return ip;
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    const ip = responseJson.origin;
+    return ip;
   }
 }
 
 async function main() {
   const example = new Example();
-  const ip = await example._getIPAddress();
-  console.log(ip);
+  try {
+    const ip = await example._getIPAddress();
+    console.log(ip);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 main();
@@ -302,21 +305,20 @@ import 'package:http/http.dart' as http;
 class Example {
   Future<String> _getIPAddress() async {
     final url = 'https://httpbin.org/ip';
-    try {
-      final response = await http.get(url);
-      String ip = jsonDecode(response.body)['origin'];
-      return ip;
-    } catch (error) {
-      print(error);
-      return "";
-    }
+    final response = await http.get(url);
+    String ip = jsonDecode(response.body)['origin'];
+    return ip;
   }
 }
 
 main() async {
   final example = new Example();
-  final ip = await example._getIPAddress();
-  print(ip);
+  try {
+    final ip = await example._getIPAddress();
+    print(ip);
+  } catch (error) {
+    print(error);
+  }
 }
 ```
 
