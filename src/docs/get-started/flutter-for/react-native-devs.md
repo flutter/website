@@ -238,7 +238,7 @@ class Example {
   _getIPAddress() {
     final url = 'https://httpbin.org/ip';
     http.get(url).then((response) {
-      print(json.decode(response.body)['origin']);
+      print(jsonDecode(response.body)['origin']);
     }).catchError((error) => print(error));
   }
 }
@@ -301,7 +301,7 @@ class Example {
     final url = 'https://httpbin.org/ip';
     try {
       final response = await http.get(url);
-      String ip = json.decode(response.body)['origin'];
+      String ip = jsonDecode(response.body)['origin'];
       print(ip);
     } catch (error) {
       print(error);
@@ -1997,7 +1997,7 @@ _getIPAddress() async {
   var request = await httpClient.getUrl(url);
   var response = await request.close();
   var responseBody = await response.transform(utf8.decoder).join();
-  String ip = json.decode(responseBody)['origin'];
+  String ip = jsonDecode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
