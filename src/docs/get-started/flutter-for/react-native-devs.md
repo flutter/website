@@ -239,8 +239,10 @@ class Example {
   }
 }
 
-final example = new Example();
-example._getIPAddress();
+main() {
+  final example = new Example();
+  example._getIPAddress();
+}
 ```
 
 Try it out in
@@ -299,8 +301,10 @@ class Example {
   }
 }
 
-final example = new Example();
-example._getIPAddress();
+main() async {
+  final example = new Example();
+  await example._getIPAddress();
+}
 ```
 
 Try it out in
