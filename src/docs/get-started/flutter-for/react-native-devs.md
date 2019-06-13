@@ -261,10 +261,14 @@ used to wait for a `Promise`.
 class Example {
   async _getIPAddress() {
     const url = "https://httpbin.org/ip";
-    const response = await fetch(url);
-    const responseJson = await response.json();
-    const ip = responseJson.origin;
-    console.log(ip);
+    try {
+      const response = await fetch(url);
+      const responseJson = await response.json();
+      const ip = responseJson.origin;
+      console.log(ip);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
@@ -285,9 +289,13 @@ import 'package:http/http.dart' as http;
 class Example {
   _getIPAddress() async {
     final url = 'https://httpbin.org/ip';
-    final response = await http.get(url);
-    String ip = json.decode(response.body)['origin'];
-    print(ip);
+    try {
+      final response = await http.get(url);
+      String ip = json.decode(response.body)['origin'];
+      print(ip);
+    } catch (error) {
+      print(error);
+    }
   }
 }
 
