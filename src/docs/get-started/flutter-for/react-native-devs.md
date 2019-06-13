@@ -220,8 +220,12 @@ class Example {
   };
 }
 
-const example = new Example();
-example._getIPAddress();
+function main() {
+  const example = new Example();
+  example._getIPAddress();
+}
+
+main();
 ```
 
 <!-- skip -->
@@ -274,8 +278,12 @@ class Example {
   }
 }
 
-const example = new Example();
-example._getIPAddress();
+async function main() {
+  const example = new Example();
+  await example._getIPAddress();
+}
+
+main();
 ```
 
 In Dart, an `async` function returns a `Future`, and the body of the function is
