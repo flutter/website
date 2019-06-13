@@ -230,8 +230,8 @@ example._getIPAddress();
 class Example {
   _getIPAddress() {
     final url = 'https://httpbin.org/ip';
-    HttpRequest.request(url).then((value) {
-        print(json.decode(value.responseText)['origin']);
+    http.get(url).then((response) {
+      print(json.decode(response.body)['origin']);
     }).catchError((error) => print(error));
   }
 }
@@ -279,8 +279,8 @@ scheduled for execution later. The `await` operator is used to wait for a
 class Example {
   _getIPAddress() async {
     final url = 'https://httpbin.org/ip';
-    var request = await HttpRequest.request(url);
-    String ip = json.decode(request.responseText)['origin'];
+    final response = await http.get(url);
+    String ip = json.decode(response.body)['origin'];
     print(ip);
   }
 }
