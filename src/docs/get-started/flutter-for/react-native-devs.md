@@ -254,9 +254,6 @@ main() {
 }
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e).
-
 For more information, see the documentation on
 [Futures]({{site.dart-site}}/tutorials/language/futures).
 
@@ -321,9 +318,6 @@ main() async {
   }
 }
 ```
-
-Try it out in
-[DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918).
 
 For more information, see the documentation for [`async` and
 `await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support).
