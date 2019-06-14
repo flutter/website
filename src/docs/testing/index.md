@@ -88,6 +88,7 @@ see the following:
   Flutter](/docs/deployment/cd#fastlane)
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+* [Test Flutter apps on Cirrus](https://cirrus-ci.org/examples/#flutter)
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can 
