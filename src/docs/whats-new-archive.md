@@ -6,12 +6,17 @@ description: An archive of what's new on the site.
 This archive contains current and previous announcements of what's new on the
 site.
 
+To stay on top of Flutter announcements, including breaking changes, join the
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
+Google group.
+
 ## **February 26, 2019**
 
 Flutter released [version
 1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
-at Mobile World Congress (MWC) in Barcelona. For more information, see the
-[release notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
+at Mobile World Congress (MWC) in Barcelona. For more information,
+see the [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
 or [download the release](/docs/development/tools/sdk/archive).
 
 In addition, here are some recent new docs:
@@ -20,16 +25,20 @@ In addition, here are some recent new docs:
   advice](/docs/development/data-and-backend/state-mgmt/intro).
   New pages include an
   [introduction](/docs/development/data-and-backend/state-mgmt/intro),
-  [thinking declaratively](/docs/development/data-and-backend/state-mgmt/declarative),
-  [ephemeral vs app state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
-  [simple app state management](/docs/development/data-and-backend/state-mgmt/simple),
+  [thinking
+  declaratively](/docs/development/data-and-backend/state-mgmt/declarative),
+  [ephemeral vs app
+  state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
+  [simple app state
+  management](/docs/development/data-and-backend/state-mgmt/simple),
   and [different state management
   options](/docs/development/data-and-backend/state-mgmt/options).
-  Documenting state management is a tricky thing, as there is no one-size-fits-all
-  approach. We'd love your feedback on these new docs!
+  Documenting state management is a tricky thing, as there is no
+  one-size-fits-all approach. We'd love your feedback on these new docs!
 * A new page on [Performance best practices](/docs/testing/best-practices).
 * Also at MWC, we announced a preview version of the new Dart DevTools
-  for profiling and debugging Dart and Flutter apps. You can find the docs on the
+  for profiling and debugging Dart and Flutter apps.
+  You can find the docs on the
   [DevTools wiki](https://flutter.github.io/devtools/).
   In particular, check out the DevTool's [Flutter widget
   inspector](https://flutter.github.io/devtools/inspector) for debugging
