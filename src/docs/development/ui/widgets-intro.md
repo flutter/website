@@ -547,7 +547,7 @@ class ShoppingListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        onCartChanged(product, !inCart);
+        onCartChanged(product, inCart);
       },
       leading: CircleAvatar(
         backgroundColor: _getColor(context),
