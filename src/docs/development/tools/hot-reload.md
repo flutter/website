@@ -69,7 +69,7 @@ Dart code to keep using hot reload.
 
 ## Previous state is combined with new code
 
-Flutter's hot reload feature, sometimes described as _stateful hot reload_,
+Flutter's hot reload feature, sometimes described as _Stateful Hot Reload_,
 preserves the state of your app. This design enables you to view
 the effect of the most recent change only, without throwing away the
 current state. For example, if your app requires a user to log in, you can

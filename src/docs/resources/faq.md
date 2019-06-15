@@ -194,7 +194,7 @@ work.
 
 Debug mode builds use a virtual machine (VM) to run Dart code
 (hence the "debug" banner they show to remind people that they're
-slightly slower) in order to enable stateful hot reload.
+slightly slower) in order to enable Stateful Hot Reload.
 
 ### How does Flutter run my code on iOS? {#run-ios}
 
@@ -208,7 +208,7 @@ work.
 
 Debug mode builds use a virtual machine (VM) to run Dart code (hence the
 "debug" banner they show to remind people that they're slightly slower)
-in order to enable stateful hot reload.
+in order to enable Stateful Hot Reload.
 
 ### Does Flutter use my system's OEM widgets?
 
@@ -281,7 +281,7 @@ and met all our requirements and criteria.
 
 Dart runtimes and compilers support the combination of two critical features for
 Flutter: a JIT-based fast development cycle that allows for shape changing and
-stateful hot reloads in a language with types, plus an Ahead-of-Time compiler
+Stateful Hot Reloads in a language with types, plus an Ahead-of-Time compiler
 that emits efficient ARM code for fast startup and predictable performance of
 production deployments.
 
