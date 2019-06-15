@@ -21,7 +21,7 @@ with a link to the complete playlist.
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Introducing Widget of the Week<br>
+Introducing Flutter in Focus<br>
 [Flutter in Focus playlist][]
 
 ### Flutter Widget of the Week
