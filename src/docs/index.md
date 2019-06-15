@@ -23,13 +23,22 @@ description: The landing page for Flutter documentation.
 
 ## What's new on the site
 
+To stay on top of Flutter announcements, including breaking changes, join the
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
+Google group.
+
 **May 7, 2019, Google I/O Edition**
 
-[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) is live!
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html)
+is live!
 
 For more information on updates, see the [release
 notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 or [download the release](/docs/development/tools/sdk/archive).
+
+We are updating DartPad to work with Flutter. Try our new
+[Basic Flutter layout codelab](/docs/codelabs/layout-basics)
+and tell us what you think!
 
 [What's new archive](/docs/whats-new-archive)
 
