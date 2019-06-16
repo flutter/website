@@ -327,7 +327,7 @@ is the builder. Builder is a function that is called whenever the
 in your model, all the builder methods of all the corresponding
 `Consumer` widgets are called.)
 
-The builder is called with three attributes. The first one is `context`,
+The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
 
 The second argument of the builder function is the instance of 
@@ -335,7 +335,7 @@ the `ChangeNotifier`. It's what we were asking for in the first place. You can
 use the data in the model to define what the UI should look like 
 at any given point.
 
-The third attribute is `child`, which is there for optimization.
+The third argument is `child`, which is there for optimization.
 If you have a large widget subtree under your `Consumer`
 that _doesn't_ change when the model changes, you can construct it
 once and get it through the builder.
