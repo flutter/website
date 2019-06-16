@@ -2203,7 +2203,7 @@ in the terminal window, or type the following shortcuts:
 
 ### How do I perform a hot reload?
 
-Flutter’s hot reload feature helps you quickly and easily experiment, build UIs,
+Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment, build UIs,
 add features, and fix bugs. Instead of recompiling your app every time you make
 a change, you can hot reload your app instantly. The app is updated to reflect
 your change, and the current state of the app is preserved.

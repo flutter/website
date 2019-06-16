@@ -111,7 +111,7 @@ running or debugging.
 ## Fast edit and refresh development cycle
 
 Flutter offers a best-in-class developer cycle enabling you to see the effect
-of your changes almost instantly with the _hot reload_ feature. See
+of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 [Using hot reload](hot-reload) for details.
 
 ## Advanced debugging
