@@ -6,7 +6,7 @@ After the app build completes, you'll see the starter app on your device.
 
 ## Try hot reload
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
+Flutter offers a fast development cycle with _Stateful Hot Reload_, the ability to reload
 the code of a live running app without restarting or losing app state.
 Make a change to app source, tell your IDE or command-line tool that you
 want to hot reload, and see the change in your simulator, emulator, or device.
