@@ -37,8 +37,8 @@ To automatically format code whenever you save a file, set the
 
 ## Automatically formatting code with the 'flutter' command
 
-You can also automatically format code in the command line interface (CLI) using
-the `flutter format` command:
+You can also automatically format code in the command line interface
+(CLI) using the `flutter format` command:
 
 ```terminal
 $ flutter format path1 path2 ...
@@ -47,11 +47,13 @@ $ flutter format path1 path2 ...
 ## Using trailing commas
 
 Flutter code often involves building fairly deep tree-shaped data structures,
-for example in a `build` method. To get good automatic formatting, we recommend
-you adopt the optional *trailing commas*. The guideline for adding a trailing
-comma is simple: Always add a trailing comma at the end of a parameter list in
-functions, methods, and constructors where you care about keeping the formatting
-you crafted. This helps the automatic formatter to insert an appropriate
+for example in a `build` method. To get good automatic formatting,
+we recommend you adopt the optional *trailing commas*.
+The guideline for adding a trailing comma is simple: Always
+add a trailing comma at the end of a parameter list in
+functions, methods, and constructors where you care about
+keeping the formatting you crafted.
+This helps the automatic formatter to insert an appropriate
 amount of line breaks for Flutter-style code.
 
 Here is an example of automatically formatted code *with* trailing commas:
