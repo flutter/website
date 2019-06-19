@@ -27,7 +27,7 @@ or
 constructor.
 
 This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModelRoute.of()` and `onGenerateRoute()` using the
+arguments using `ModalRoute.of()` and `onGenerateRoute()` using the
 following steps:
 
   1. Define the arguments you need to pass.
