@@ -238,7 +238,8 @@ packages, on the [Pub site]({{site.pub}}/flutter).
            title: 'Welcome to Flutter',
            home: Scaffold(
     @@ -12,7 +14,7 @@
-               title: Text('Welcome to Flutter'),
+               appBar: AppBar(
+                title: Text('Welcome to Flutter')
              ),
              body: Center(
     -          child: Text('Hello World'),
