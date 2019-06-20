@@ -154,7 +154,7 @@ which is particularly useful while testing.
 
 With a widget in the test environment, search
 through the widget tree for the `title` and `message`
-Text widgets using a `Finder`. This allow verifification that
+Text widgets using a `Finder`. This allow verification that
 the widgets are displaying correctly.
 
 For this purpose, use the top-level
