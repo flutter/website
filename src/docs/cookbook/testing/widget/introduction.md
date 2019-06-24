@@ -154,8 +154,8 @@ which is particularly useful while testing.
 
 With a widget in the test environment, search
 through the widget tree for the `title` and `message`
-Text widgets using a `Finder`. This allow verification that
-the widgets are displaying correctly.
+Text widgets using a `Finder`. This allows verification that
+the widgets are being displayed correctly.
 
 For this purpose, use the top-level
 [`find()`]({{api}}/flutter_test/find-constant.html)
