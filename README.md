@@ -134,6 +134,14 @@ You can deploy your local edits to a personal staging site as follows
     $ npx firebase use my-foo
     Now using alias staging (<your project name>)
     ```
+ 
+ 1. Tell Firebase to execute deployment of your project:
+ 
+   ```console
+   $ npx firebase deploy
+   ```
+   
+   Your personal version of the Flutter website is now deployed to Firebase.
 
 Alternatively, you can skip the previous steps and just use the deploy script:
 
