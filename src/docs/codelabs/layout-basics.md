@@ -117,7 +117,7 @@ but there are five options in total:
 * `CrossAxisAlignment.start`<br>
   Children are aligned at the start of the `Row`'s vertical space
   (by default, the top is considered to be the start,
-  though you can change that via the `verticalDirection` propert).
+  though you can change that via the `verticalDirection` property).
 
 * `CrossAxisAlignment.end`<br>
   Children are aligned at the end of the `Row`'s
@@ -188,7 +188,7 @@ their children:
    flexible children according to their flex factors.
    The flexible children can use some or all of the space
    they're offered.
-1. At that point, the `Row knows how big all of its
+1. At that point, the `Row` knows how big all of its
    children are, and can align them using the same axis
    size and alignment properties you've seen so far.
 
@@ -302,7 +302,7 @@ applies to `Column`s as well!
 
 Here's a `Column` with some children of various sizes and its most important
 properties set. Try fiddling around with them and you'll see that the
-`Column` works like a vertical `Row.
+`Column` works like a vertical `Row`.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
 
@@ -360,7 +360,7 @@ Now you can add the `Icon`:
   * For the child of the `Padding` widget, use an `Icon`.
     * You can use any icon resource you want, though `Icons.account_circle`
       works nicely.
-    * Set the `Icon`'s `size`.
+    * Set the `Icon`'s `size` to 50.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
@@ -379,7 +379,7 @@ Wrap your `Row` with a `Column` widget so that it looks like this:
 
 Then, finish up your new `Column` with these steps:
 
-* Set the `Column`'s mainAxisSize to min
+* Set the `Column`'s `mainAxisSize` to min
   * Otherwise it'll expand to fill the screen!
 
 * Set the `Column`'s `crossAxisAlignment` to stretch
