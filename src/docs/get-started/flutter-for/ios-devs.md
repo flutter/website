@@ -28,7 +28,7 @@ that are most relevant to your needs.
 
 ## Views
 
-### What is the equivalent of a `UIView` in Flutter?
+### What is the equivalent of a UIView in Flutter?
 
 {{site.alert.secondary}}
 How is react-style, or _declarative_, programming different than the
@@ -69,15 +69,15 @@ On iOS, you can use the [Cupertino widgets](/docs/development/ui/widgets/cuperti
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources).
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
-To update your views on iOS, you directly mutate them. In Flutter, widgets are
-immutable and not updated directly. Instead, you have to manipulate the
-widget’s state.
+To update your views on iOS, you directly mutate them.
+In Flutter, widgets are immutable and not updated directly.
+Instead, you have to manipulate the widget’s state.
 
 This is where the concept of Stateful vs Stateless widgets
-comes in. A `StatelessWidget` is just what it sounds like&mdash;a widget with no
-state attached.
+comes in. A `StatelessWidget` is just what it sounds
+like&mdash;a widget with no state attached.
 
 `StatelessWidgets` are useful when the part of the user interface you are
 describing does not depend on anything other than the initial configuration
@@ -117,8 +117,8 @@ If you look at the code above, you might notice that the `Text` widget
 carries no explicit state with it. It renders what is passed in its
 constructors and nothing more.
 
-But, what if you want to make "I Like Flutter" change dynamically, for example
-when clicking a `FloatingActionButton`?
+But, what if you want to make "I Like Flutter" change dynamically,
+for example when clicking a `FloatingActionButton`?
 
 To achieve this, wrap the `Text` widget in a `StatefulWidget` and
 update it when the user clicks the button.
@@ -216,8 +216,8 @@ widgets are immutable there is no direct equivalent to `addSubview()`.
 Instead, you can pass a function to the parent that returns a widget, and
 control that child's creation with a boolean flag.
 
-The following example shows how to toggle between two widgets when the user clicks
-the `FloatingActionButton`:
+The following example shows how to toggle between two widgets when the
+user clicks the `FloatingActionButton`:
 
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
@@ -280,7 +280,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### How do I animate a Widget?
+### How do I animate a widget?
 
 In iOS, you create an animation by calling the
 `animate(withDuration:animations:)` method on a view. In Flutter,
@@ -302,8 +302,8 @@ When building the widget tree you assign the `Animation` to an animated
 property of a widget, such as the opacity of a `FadeTransition`, and tell the
 controller to start the animation.
 
-The following example shows how to write a `FadeTransition` that fades the widget
-into a logo when you press the `FloatingActionButton`:
+The following example shows how to write a `FadeTransition` that
+fades the widget into a logo when you press the `FloatingActionButton`:
 
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
@@ -437,7 +437,8 @@ class SignatureState extends State<Signature> {
 
 ### Where is the widget's opacity?
 
-On iOS, everything has .opacity or .alpha. In Flutter, most of the time you need to
+On iOS, everything has .opacity or .alpha.
+In Flutter, most of the time you need to
 wrap a widget in an Opacity widget to accomplish this.
 
 ### How do I build custom widgets?
@@ -1182,7 +1183,7 @@ A good place to find great packages for Flutter is the
 
 ## ViewControllers
 
-### What is the equivalent to `ViewController`s in Flutter?
+### What is the equivalent to ViewController in Flutter?
 
 In iOS, a `ViewController` represents a portion of user interface, most
 commonly used for a screen or section. These are composed together to build
@@ -1219,7 +1220,7 @@ For more details on the meaning of these states, see
 
 ## Layouts
 
-### What is the equivalent of a `UITableView` or `UICollectionView` in Flutter?
+### What is the equivalent of UITableView or UICollectionView in Flutter?
 
 In iOS, you might show a list in either a `UITableView` or a
 `UICollectionView`. In Flutter, you have a similar implementation using a
@@ -1342,7 +1343,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### How do I dynamically update a `ListView`s?
+### How do I dynamically update a ListView?
 
 In iOS, you update the data for the list view, and notify the table or
 collection view using the `reloadData` method.
@@ -1512,7 +1513,7 @@ cell you want rendered at that position.
 Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead `.add`s to it.
 
-### What is the equivalent of a `ScrollView` in Flutter?
+### What is the equivalent of a ScrollView in Flutter?
 
 In iOS, you wrap your views in a `ScrollView` that allows a user to scroll
 your content if needed.
@@ -1711,7 +1712,7 @@ class SampleApp extends StatelessWidget {
 }
 {% endprettify %}
 
-### How do I set custom fonts on my `Text` widgets?
+### How do I set custom fonts on my Text widgets?
 
 In iOS, you import any `ttf` font files into your project and create a
 reference in the `info.plist` file. In Flutter, place the font file
@@ -1745,7 +1746,7 @@ Widget build(BuildContext context) {
 }
 {% endprettify %}
 
-### How do I style my `Text` widgets?
+### How do I style my Text widgets?
 
 Along with fonts, you can customize other styling elements on a `Text` widget.
 The style parameter of a `Text` widget takes a `TextStyle` object, where you can
@@ -1996,7 +1997,7 @@ on Android or iOS.
 
 ## Databases and local storage
 
-### How do I access `UserDefaults` in Flutter?
+### How do I access UserDefault in Flutter?
 
 In iOS, you can store a collection of key-value pairs using a property list,
 known as the `UserDefaults`.
@@ -2015,6 +2016,18 @@ relate to your models.
 In Flutter, access this functionality using the
 [SQFlite]({{site.pub-pkg}}/sqflite) plugin.
 
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
 ## Notifications
 
 ### How do I set up push notifications?
@@ -2028,3 +2041,6 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging)
 plugin documentation.
+
+
+[DevTools]: /docs/development/tools/devtools

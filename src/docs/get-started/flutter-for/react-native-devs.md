@@ -33,7 +33,8 @@ below.
 
 ### Entry point
 
-JavaScript doesn't have a pre-defined entry function—you define the entry point.
+JavaScript doesn't have a pre-defined entry
+function&mdash;you define the entry point.
 
 ```js
 // JavaScript
@@ -73,9 +74,10 @@ Try it out in
 
 ### Variables
 
-Dart is type safe—it uses a combination of static type checking and runtime
-checks to ensure that a variable’s value always matches the variable’s static
-type. Although types are mandatory, some type annotations are optional because
+Dart is type safe&mdash;it uses a combination of static type checking
+and runtime checks to ensure that a variable’s value always matches
+the variable’s static type. Although types are mandatory,
+some type annotations are optional because
 Dart performs type inference.
 
 #### Creating and assigning variables
@@ -108,9 +110,9 @@ System]({{site.dart-site}}/guides/language/sound-dart).
 
 In JavaScript, uninitialized variables are `undefined`.
 
-In Dart, uninitialized variables have an initial value of `null`. Because
-numbers are objects in Dart, even uninitialized variables with numeric types
-have the value `null`.
+In Dart, uninitialized variables have an initial value of `null`.
+Because numbers are objects in Dart, even uninitialized variables with
+numeric types have the value `null`.
 
 ```js
 // JavaScript
@@ -165,8 +167,8 @@ Try it out in
 
 ### Functions
 
-Dart and JavaScript functions are generally similar. The primary difference is
-the declaration.
+Dart and JavaScript functions are generally similar.
+The primary difference is the declaration.
 
 ```js
 // JavaScript
@@ -261,8 +263,8 @@ For more information, see the documentation on
 
 The `async` function declaration defines an asynchronous function.
 
-In JavaScript, the `async` function returns a `Promise`. The `await` operator is
-used to wait for a `Promise`.
+In JavaScript, the `async` function returns a `Promise`.
+The `await` operator is used to wait for a `Promise`.
 
 ```js
 // JavaScript
@@ -289,9 +291,9 @@ async function main() {
 main();
 ```
 
-In Dart, an `async` function returns a `Future`, and the body of the function is
-scheduled for execution later. The `await` operator is used to wait for a
-`Future`.
+In Dart, an `async` function returns a `Future`,
+and the body of the function is scheduled for execution later.
+The `await` operator is used to wait for a `Future`.
 
 <!-- skip -->
 ```dart
@@ -319,14 +321,14 @@ main() async {
 }
 ```
 
-For more information, see the documentation for [`async` and
-`await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support).
+For more information, see the documentation for [async and await][].
 
 ## The basics
+
 ### How do I create a Flutter app?
 
-To create an app using React Native, you would run `create-react-native-app`
-from the command line.
+To create an app using React Native,
+you would run `create-react-native-app` from the command line.
 
 {% prettify %}
 $ create-react-native-app <projectname>
@@ -334,9 +336,9 @@ $ create-react-native-app <projectname>
 
 To create an app in Flutter, do one of the following:
 
+* Use an IDE with the Flutter and Dart plugins installed.
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
-* Use an IDE with the Flutter and Dart plugins installed.
 
 {% prettify %}
 $ flutter create <projectname>
@@ -350,16 +352,18 @@ and iOS devices.
 ### How do I run my app?
 
 In React Native, you would run `npm run` or `yarn run` from the project
- directory.
+directory.
 
- You can run Flutter apps in a couple of ways:
+You can run Flutter apps in a couple of ways:
 
- * Use `flutter run` from the project's root directory.
- * Use the "run" option in an IDE with the Flutter and Dart plugins.
+* Use the "run" option in an IDE with the Flutter and Dart plugins.
+* Use `flutter run` from the project's root directory.
 
- Your app runs on a connected device, the iOS simulator, or the Android emulator.
+Your app runs on a connected device, the iOS simulator,
+or the Android emulator.
 
-For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
+For more information, see the Flutter [Getting Started](/docs/get-started)
+documentation.
 
 ### How do I import widgets?
 
@@ -371,7 +375,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 ```
 
-In Flutter, to use widgets from the Material Design library, import the `material.dart` package. To use iOS style widgets, import the Cupertino library. To use a more basic widget set, import the Widgets library. Or, you can write your own widget library and import that.
+In Flutter, to use widgets from the Material Design library,
+import the `material.dart` package. To use iOS style widgets,
+import the Cupertino library. To use a more basic widget set,
+import the Widgets library.
+Or, you can write your own widget library and import that.
 
 <!-- skip -->
 ```dart
@@ -415,7 +423,10 @@ const styles = StyleSheet.create({
 });
 ```
 
-In Flutter, you can create an identical "Hello world!" app using the `Center` and `Text` widgets from the core widget library. The `Center` widget becomes the root of the widget tree and has one child, the `Text` widget.
+In Flutter, you can create an identical "Hello world!" app using the
+`Center` and `Text` widgets from the core widget library.
+The `Center` widget becomes the root of the widget tree and has one child,
+the `Text` widget.
 
 <!-- skip -->
 ```dart
@@ -492,14 +503,15 @@ class MyApp extends StatelessWidget {
 ```
 
 
-The following images show "Hello world!" built from Material Design widgets. You get more functionality for free than in the basic "Hello world!" app.
+The following images show "Hello world!" built from Material Design widgets.
+You get more functionality for free than in the basic "Hello world!" app.
 
 {% include android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) or
  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
-A StatelessWidget is just what it sounds like—a
+A StatelessWidget is just what it sounds like&mdash;a
  widget with no state. A StatelessWidget is created once, and never changes its
   appearance. A StatefulWidget dynamically changes state based on data
    received, or user input.
@@ -515,7 +527,8 @@ and widgets allows you to reuse the components within the app.
 
 ### How do I create reusable components?
 
-In React Native, you would define a class to create a reusable component and then use
+In React Native,
+you would define a class to create a reusable component and then use
 `props` methods to set or return properties and values of the selected elements.
 In the example below, the `CustomCard` class is defined and then used inside a
 parent class.
@@ -637,9 +650,10 @@ When you create a new Flutter project, it builds the following directory structu
 
 ### Where do I put my resources and assets and how do I use them?
 
-A Flutter resource or asset is a file that is bundled and deployed with your app
-and is accessible at runtime. Flutter apps can include the following asset
-types:
+A Flutter resource or asset is a file that is bundled and deployed
+with your app and is accessible at runtime.
+Flutter apps can include the following asset types:
+
 * Static data such as JSON files
 * Configuration files
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
@@ -1170,13 +1184,16 @@ widget takes a `ThemeData` in its `data` parameter and applies the
   }
 ```
 
-## State Management
+## State management
 
 State is information that can be read synchronously when a widget is built
 or information that might change during the lifetime of a widget.
 To manage app state in Flutter, use a
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 paired with a State object.
+
+For more information on ways to approach managing state in Flutter,
+see [State management][].
 
 ### The StatelessWidget
 
@@ -1219,8 +1236,8 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-In the previous example, you used the constructor of the `MyStatelessWidget` class
-to pass the `text`, which is marked as `final`. This class extends
+In the previous example, you used the constructor of the `MyStatelessWidget`
+class to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`&mdash;it contains immutable data.
 
 The `build` method of a stateless widget is typically called in only three
@@ -2171,10 +2188,38 @@ if (Theme.of(context).platform == TargetPlatform.iOS) {
 
 ## Debugging
 
-Before running your applications, verify your code with `flutter analyze`. The
-Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
-your code and helps identify possible issues. If you’re using a Flutter-enabled
-IDE, this occurs automatically.
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+If you're using an IDE,
+you can debug your application using the IDE's debugger.
+
+### How do I perform a hot reload?
+
+Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment,
+build UIs, add features, and fix bugs. Instead of recompiling your app
+every time you make a change, you can hot reload your app instantly.
+The app is updated to reflect your change,
+and the current state of the app is preserved.
+
+In React Native,
+the shortcut is ⌘R for the iOS Simulator and tapping R twice on
+Android emulators.
+
+In Flutter, If you are using IntelliJ IDE or Android Studio,
+you can select Save All (⌘s/ctrl-s), or you can click the
+Hot Reload button on the toolbar. If you
+are running the app at the command line using `flutter run`,
+type `r` in the Terminal window.
+You can also perform a full restart by typing `R` in the
+Terminal window.
 
 ### How do I access the in-app developer menu?
 
@@ -2200,61 +2245,6 @@ in the terminal window, or type the following shortcuts:
 | To quit| `q` ||
 {:.table.table-striped}
 </div>
-
-### How do I perform a hot reload?
-
-Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment, build UIs,
-add features, and fix bugs. Instead of recompiling your app every time you make
-a change, you can hot reload your app instantly. The app is updated to reflect
-your change, and the current state of the app is preserved.
-
-In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on
-Android emulators.
-
-In Flutter, If you are using IntelliJ IDE or Android Studio, you can select Save
-All (⌘s/ctrl-s), or you can click the Hot Reload button on the toolbar. If you
-are running the app at the command line using `flutter run`, type `r` in the
-Terminal window. You can also perform a full restart by typing `R` in the
-Terminal window.
-
-### What tools can I use to debug my app in Flutter?
-
-There are several options and tools you can use when you need to debug your
-Flutter app.
-
-In addition to the Flutter analyzer, the
-[`Dart Observatory`](https://dart-lang.github.io/observatory/) is a tool used to
-profile and debug your Dart applications. If you started your application using
-`flutter run` in Terminal, you can open the web page at the Observatory URL
-printed to the terminal window, for example:  `http://127.0.0.1:8100/`.
-
-The Observatory includes support for profiling, examining the heap, observing
-executed lines of code, debugging memory leaks and memory fragmentation. For
-more information, see the
-[Observatory documentation](https://dart-lang.github.io/observatory/).
-Observatory is included for free when you download and install the Dart SDK.
-
-If you're using an IDE, you can debug your application using the IDE debugger.
-
-If you're using IntelliJ and Android Studio, you can use the Flutter Inspector.
- The Flutter Inspector makes it much easier to understand why your application
-  is rendering the way it does. It allows you to:
-* View the UI structure of your app as a tree of widgets
-* Select a point on your device or simulator and find the corresponding widget
- that rendered those pixels
-* View properties for individual widgets
-* Quickly identify layout issues and determine their cause
-
-The Flutter Inspector view can be opened from View > Tool Windows > Flutter
-Inspector. Content is shown only when an app is running.
-
-To inspect a specific widget, select the **Toggle inspect mode** action in the
-toolbar, then click on the desired widget on an attached phone or simulator. The
-widget is highlighted in your app’s UI. You’ll see the widget in the widget
-hierarchy in IntelliJ and the individual properties for that widget.
-
-For more information, see
-[Debugging Flutter Apps](/docs/testing/debugging).
 
 ## Animation
 
@@ -2415,7 +2405,7 @@ child: Dismissible(
 
 {% include android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
 
-## React Native and Flutter Widget equivalent components
+## React Native and Flutter widget equivalent components
 
 The following table lists commonly-used React Native components mapped to the
 corresponding Flutter widget and common widget properties.
@@ -2492,3 +2482,8 @@ corresponding Flutter widget and common widget properties.
 |                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
 {:.table.table-striped}
 </div>
+
+
+[DevTools]: /docs/development/tools/devtools
+[State management]: /docs/development/data-and-backend/state-mgmt
+[async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support

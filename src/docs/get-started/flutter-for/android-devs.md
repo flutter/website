@@ -4,9 +4,9 @@ description: Learn how to apply Android developer knowledge when building Flutte
 ---
 
 This document is meant for Android developers looking to apply their
-existing Android knowledge to build mobile apps with Flutter. If you understand
-the fundamentals of the Android framework then you can use this document as a
-jump start to Flutter development.
+existing Android knowledge to build mobile apps with Flutter.
+If you understand the fundamentals of the Android framework then you
+can use this document as a jump start to Flutter development.
 
 Your Android knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -20,13 +20,12 @@ that are most relevant to your needs.
 
 ## Views
 
-### What is the equivalent of a `View` in Flutter?
+### What is the equivalent of a View in Flutter?
 
 {{site.alert.secondary}}
-How is react-style, or _declarative_, programming different than the
-traditional imperative style?
-For a comparison, see [Introduction to declarative
-UI](/docs/get-started/flutter-for/declarative).
+  How is react-style, or _declarative_, programming different than the
+  traditional imperative style?
+  For a comparison, see [Introduction to declarative UI][].
 {{site.alert.end}}
 
 In Android, the `View` is the foundation of everything that shows up on the
@@ -47,20 +46,17 @@ Because they aren't views themselves, and aren't directly drawing anything,
 but rather are a description of the UI and its semantics that get "inflated"
 into actual view objects under the hood.
 
-Flutter includes the [Material Components]({{site.material}}/develop/flutter)
-library. These are widgets that implement the
-[Material Design guidelines]({{site.material}}/design). Material Design is a
-flexible design system [optimized for all
-platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+Flutter includes the [Material Components][] library.
+These are widgets that implement the
+[Material Design guidelines][]. Material Design is a
+flexible design system [optimized for all platforms][],
 including iOS.
 
 But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino
-widgets](/docs/development/ui/widgets/cupertino)
-to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
+For example, on iOS, you can use the [Cupertino widgets][]
+to produce an interface that looks like [Apple's iOS design language][].
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
 In Android, you update your views by directly mutating them. However,
 in Flutter, `Widget`s are immutable and are not updated directly, instead
@@ -75,13 +71,13 @@ you are describing does not depend on anything other than the configuration
 information in the object.
 
 For example, in Android, this is similar to placing an `ImageView`
-with your logo. The logo is not going to change during runtime, so
-use a `StatelessWidget` in Flutter.
+with your logo. The logo is not going to change during runtime,
+so use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with `StatefulWidget` and tell the Flutter framework that the widget’s `State`
-has been updated so it can update that widget.
+with `StatefulWidget` and tell the Flutter framework that the widget’s
+`State` has been updated so it can update that widget.
 
 The important thing to note here is at the core both stateless and stateful
 widgets behave the same. They rebuild every frame, the difference is the
@@ -95,7 +91,7 @@ still be stateless if it doesn't itself react to change.
 
 The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
-the `Text` widget you'll find it subclasses `StatelessWidget`.
+the `Text` widget you'll find that it subclasses `StatelessWidget`.
 
 {% prettify dart %}
 Text(
@@ -368,7 +364,7 @@ For more information, see
 the [Animations tutorial](/docs/development/ui/animations/tutorial),
 and the [Animations overview](/docs/development/ui/animations).
 
-### How do I use a `Canvas` to draw/paint?
+### How do I use a Canvas to draw/paint?
 
 In Android, you would use the `Canvas` and `Drawable`s to draw images and shapes
 to the screen. Flutter has a similar `Canvas` API as well, since it is based
@@ -379,10 +375,8 @@ Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
-To learn how to implement a signature painter in Flutter, see Collin's answer on
-[StackOverflow][].
-
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+To learn how to implement a signature painter in Flutter,
+see Collin's answer on [StackOverflow][].
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -437,12 +431,12 @@ class SignaturePainter extends CustomPainter {
 In Android, you typically subclass `View`, or use a pre-existing view,
 to override and implement methods that achieve the desired behavior.
 
-In Flutter, build a custom widget by
-[composing](/docs/resources/technical-overview#everythings-a-widget)
+In Flutter, build a custom widget by [composing][]
 smaller widgets (instead of extending them).
-It is somewhat similar to implementing a custom
-`ViewGroup` in Android, where all the building blocks are already existing, but
-you provide a different behavior&mdash;for example, custom layout logic.
+It is somewhat similar to implementing a custom `ViewGroup`
+in Android, where all the building blocks are already existing,
+but you provide a different behavior&mdash;for example,
+custom layout logic.
 
 For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton` with
@@ -474,11 +468,11 @@ Widget build(BuildContext context) {
 
 ## Intents
 
-### What is the equivalent of an `Intent` in Flutter?
+### What is the equivalent of an Intent in Flutter?
 
 In Android, there are two main use cases for `Intent`s: navigating between
-Activities, and communicating with components. Flutter, on the other hand, does
-not have the concept of intents, although you can still start intents
+Activities, and communicating with components. Flutter, on the other hand,
+does not have the concept of intents, although you can still start intents
 through native integrations
 (using [a plugin]({{site.pub}}/packages/android_intent)).
 
@@ -525,8 +519,8 @@ The other popular use-case for `Intent`s is to call external components such
 as a Camera or File picker. For this, you would need to create a native platform
 integration (or use an [existing plugin]({{site.pub}}/flutter/)).
 
-To learn how to build a native platform integration, see
-[Developing Packages and Plugins](/docs/development/packages-and-plugins/developing-packages).
+To learn how to build a native platform integration,
+see [Developing packages and plugins][].
 
 ### How do I handle incoming intents from external applications in Flutter?
 
@@ -673,11 +667,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-### What is the equivalent of `startActivityForResult()`?
+### What is the equivalent of startActivityForResult()?
 
 The `Navigator` class handles routing in Flutter and is used to get
-a result back from a route that you have pushed on the stack. This is done
-by `await`ing on the `Future` returned by `push()`.
+a result back from a route that you have pushed on the stack.
+This is done by `await`ing on the `Future` returned by `push()`.
 
 For example, to start a location route that lets the user select
 their location, you could do the following:
@@ -695,7 +689,7 @@ Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 
 ## Async UI
 
-### What is the equivalent of `runOnUiThread()` in Flutter?
+### What is the equivalent of runOnUiThread() in Flutter?
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -846,9 +840,10 @@ multiple CPU cores to do long-running or computationally intensive tasks.
 
 Isolates are separate execution threads that do not share any memory
 with the main execution memory heap. This means you can’t access variables from
-the main thread, or update your UI by calling `setState()`. Unlike Android threads,
-Isolates are true to their name, and cannot share memory (in the form of static fields,
-for example).
+the main thread, or update your UI by calling `setState()`.
+Unlike Android threads,
+Isolates are true to their name, and cannot share memory
+(in the form of static fields, for example).
 
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
@@ -858,7 +853,7 @@ loadData() async {
   ReceivePort receivePort = ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
-  // The 'echo' isolate sends its SendPort as the first message
+  // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first;
 
   List msg = await sendReceive(sendPort, "https://jsonplaceholder.typicode.com/posts");
@@ -868,7 +863,7 @@ loadData() async {
   });
 }
 
-// The entry point for the isolate
+// The entry point for the isolate.
 static dataLoader(SendPort sendPort) async {
   // Open the ReceivePort for incoming messages.
   ReceivePort port = ReceivePort();
@@ -894,9 +889,11 @@ Future sendReceive(SendPort port, msg) {
 }
 {% endprettify %}
 
-Here, `dataLoader()` is the `Isolate` that runs in its own separate execution thread.
-In the isolate you can perform more CPU intensive processing (parsing a big JSON, for
-example), or perform computationally intensive math, such as encryption or signal processing.
+Here, `dataLoader()` is the `Isolate` that runs in its own separate
+execution thread.  In the isolate you can perform more CPU intensive
+processing (parsing a big JSON, for example),
+or perform computationally intensive math,
+such as encryption or signal processing.
 
 You can run the full example below:
 
@@ -1159,15 +1156,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### Where do I store my resolution-dependent image files?
 
-While Android treats resources and assets as distinct items, Flutter apps have
-only assets. All resources that would live in the `res/drawable-*`
-folders on Android, are placed in an assets folder for Flutter.
+While Android treats resources and assets as distinct items,
+Flutter apps have only assets. All resources that would live
+in the `res/drawable-*` folders on Android,
+are placed in an assets folder for Flutter.
 
 Flutter follows a simple density-based format like iOS. Assets might be `1.0x`,
 `2.0x`, `3.0x`, or any other multiplier. Flutter doesn't have `dp`s but there
 are logical pixels, which are basically the same as device-independent pixels.
-The so-called
-[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
+The so-called [devicePixelRatio][]
 expresses the ratio of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -1196,13 +1193,14 @@ and are accessed on the native side using Android's `AssetManager`:
 val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_asset.png")
 {% endprettify %}
 
-As of Flutter beta 2, Flutter still cannot access native resources, nor it can
-access native assets.
+As of Flutter beta 2, Flutter still cannot access native resources,
+nor it can access native assets.
 
-To add a new image asset called `my_icon.png` to our Flutter project, for example,
-and deciding that it should live in a folder we arbitrarily called `images`, you
-would put the base image (1.0x) in the `images` folder, and all the other
-variants in sub-folders called with the appropriate ratio multiplier:
+To add a new image asset called `my_icon.png` to our Flutter project,
+for example, and deciding that it should live in a folder we
+arbitrarily called `images`, you would put the base image (1.0x)
+in the `images` folder, and all the other variants in sub-folders
+called with the appropriate ratio multiplier:
 
 ```
 images/my_icon.png       // Base: 1.0x image
@@ -1250,8 +1248,8 @@ Then in your code, you can access your strings as such:
 Text(Strings.welcomeMessage)
 {% endprettify %}
 
-Flutter has basic support for accessibility on Android, though this feature is
-a work in progress.
+Flutter has basic support for accessibility on Android,
+though this feature is a work in progress.
 
 Flutter developers are encouraged to use the [intl
 package]({{site.pub}}/packages/intl) for internationalization and
@@ -1259,29 +1257,30 @@ localization.
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
 
-In Android, you add dependencies by adding to your Gradle build script. Flutter
-uses Dart's own build system, and the Pub package manager.
-The tools delegate the building of the native Android and iOS wrapper apps to the
-respective build systems.
+In Android, you add dependencies by adding to your Gradle build script.
+Flutter uses Dart's own build system, and the Pub package manager.
+The tools delegate the building of the native Android and iOS
+wrapper apps to the respective build systems.
 
 While there are Gradle files under the `android` folder in your Flutter project,
 only use these if you are adding native dependencies needed for
 per-platform integration. In general, use `pubspec.yaml` to declare
-external dependencies to use in Flutter. A good place to find Flutter packages is
+external dependencies to use in Flutter.
+A good place to find Flutter packages is
 [Pub]({{site.pub}}/flutter/packages/).
 
 ## Activities and fragments
 
 ### What are the equivalent of activities and fragments in Flutter?
 
-In Android, an `Activity` represents a single focused thing the user can do. A
-`Fragment` represents a behavior or a portion of user interface. Fragments
-are a way to modularize your code, compose sophisticated user interfaces for
-larger screens, and help scale your application UI. In Flutter, both of these
-concepts fall under the umbrella of `Widget`s.
+In Android, an `Activity` represents a single focused thing the user can do.
+A `Fragment` represents a behavior or a portion of user interface.
+Fragments are a way to modularize your code, compose sophisticated
+user interfaces for larger screens, and help scale your application UI.
+In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 
-To learn more about the UI for building Activities and Fragements, see
-the community-contributed medium article,
+To learn more about the UI for building Activities and Fragements,
+see the community-contributed medium article,
 [Flutter For Android Developers : How to design an Activity UI in
 Flutter]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48).
 
@@ -1303,30 +1302,33 @@ The observable lifecycle events are:
 
 * `inactive` — The application is in an inactive state and is not receiving user
   input. This event only works on iOS, as there is no equivalent event to map to
-  on Android
-* `paused` — The application is not currently visible to the user, not responding
-  to user input, and running in the background. This is equivalent to `onPause()`
-  in Android
-* `resumed` — The application is visible and responding to user input. This is
-  equivalent to `onPostResume()` in Android
-* `suspending` — The application is suspended momentarily. This is equivalent
-  to `onStop` in Android; it is not triggered on iOS as there is no equivalent
-  event to map to on iOS
+  on Android.
+* `paused` — The application is not currently visible to the user,
+  not responding to user input, and running in the background.
+  This is equivalent to `onPause()` in Android.
+* `resumed` — The application is visible and responding to user input.
+  This is equivalent to `onPostResume()` in Android.
+* `suspending` — The application is suspended momentarily.
+  This is equivalent to `onStop` in Android;
+  it is not triggered on iOS as there is no equivalent
+  event to map to on iOS.
 
 For more details on the meaning of these states, see the
 [`AppLifecycleStatus` documentation][].
 
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+As you might have noticed, only a small minority of the Activity
+lifecycle events are available; while `FlutterActivity` does
+capture almost all the activity lifecycle events internally and
+send them over to the Flutter engine, they're mostly shielded
+away from you. Flutter takes care of starting and stopping the
+engine for you, and there is little reason for needing to
+observe the activity lifecycle on the Flutter side in most cases.
+If you need to observe the lifecycle to acquire or release any
+native resources, you should likely be doing it from the native side,
+at any rate.
 
-As you might have noticed, only a small minority of the Activity lifecycle events
-are available; while `FlutterActivity` does capture almost all the activity lifecycle
-events internally and send them over to the Flutter engine, they're mostly shielded
-away from you. Flutter takes care of starting and stopping the engine for you, and
-there is little reason for needing to observe the activity lifecycle on the Flutter
-side in most cases. If you need to observe the lifecycle to acquire or release any
-native resources, you should likely be doing it from the native side, at any rate.
-
-Here's an example of how to observe the lifecycle status of the containing activity:
+Here's an example of how to observe the lifecycle status of the
+containing activity:
 
 {% prettify dart %}
 import 'package:flutter/widgets.dart';
@@ -1379,8 +1381,8 @@ void main() {
 
 In Android, a LinearLayout is used to lay your widgets out
 linearly&mdash;either horizontally or vertically.
-In Flutter, use the Row widget or Column
-widget to achieve the same result.
+In Flutter, use the Row or Column
+widgets to achieve the same result.
 
 If you notice the two code samples are identical with the exception of the
 "Row" and "Column" widget. The children are the same and this feature can be
@@ -1417,9 +1419,9 @@ children.
   }
 {% endprettify %}
 
-To learn more about building linear layouts, see the community contributed medium
-article [Flutter For Android Developers : How to design LinearLayout in
-Flutter?]({{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a).
+To learn more about building linear layouts,
+see the community contributed medium article
+[Flutter For Android Developers : How to design LinearLayout in Flutter?][].
 
 ### What is the equivalent of a RelativeLayout?
 
@@ -1430,17 +1432,17 @@ You can achieve the result of a RelativeLayout by using a combination of
 Column, Row, and Stack widgets. You can specify rules for the widgets
 constructors on how the children are laid out relative to the parent.
 
-For a good example of building a RelativeLayout in Flutter, see Collin's
-answer on
-[StackOverflow]({{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter).
+For a good example of building a RelativeLayout in Flutter,
+see Collin's answer on [StackOverflow][].
 
 ### What is the equivalent of a ScrollView?
 
 In Android, use a ScrollView to lay out your widgets&mdash;if the user's
 device has a smaller screen than your content, it scrolls.
 
-In Flutter, the easiest way to do this is using the ListView widget. This might
-seem like overkill coming from Android, but in Flutter a ListView widget is
+In Flutter, the easiest way to do this is using the ListView widget.
+This might seem like overkill coming from Android,
+but in Flutter a ListView widget is
 both a ScrollView and an Android ListView.
 
 {% prettify dart %}
@@ -1533,13 +1535,13 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
 
 * Long press
 
-  * `onLongPress` - A pointer has remained in contact with the screen at the same
-    location for a long period of time.
+  * `onLongPress` - A pointer has remained in contact with the screen at
+    the same location for a long period of time.
 
 * Vertical drag
 
-  * `onVerticalDragStart` - A pointer has contacted the screen and might begin to
-    move vertically.
+  * `onVerticalDragStart` - A pointer has contacted the screen and
+    might begin to move vertically.
   * `onVerticalDragUpdate` - A pointer in contact with the screen
     has moved further in the vertical direction.
   * `onVerticalDragEnd` - A pointer that was previously in contact with the
@@ -1553,8 +1555,9 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
   * `onHorizontalDragUpdate` - A pointer in contact with the screen
     has moved further in the horizontal direction.
   * `onHorizontalDragEnd` - A pointer that was previously in contact with the
-    screen and moving horizontally is no longer in contact with the screen and was
-    moving at a specific velocity when it stopped contacting the screen.
+    screen and moving horizontally is no longer in contact with the
+    screen and was moving at a specific velocity when it stopped
+    contacting the screen.
 
 The following example shows a `GestureDetector` that rotates the Flutter logo
 on a double tap:
@@ -1604,8 +1607,8 @@ ListView, which renders each row with what your adapter returns. However, you
 have to make sure you recycle your rows, otherwise, you get all sorts of crazy
 visual glitches and memory issues.
 
-Due to Flutter's immutable widget pattern, you pass a List of
-Widgets to your ListView, and Flutter takes care of making sure
+Due to Flutter's immutable widget pattern, you pass a list of
+widgets to your ListView, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
 {% prettify dart %}
@@ -1659,7 +1662,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 ### How do I know which list item is clicked on?
 
-In Android, the ListView has a method to find out which item was clicked
+In Android, the ListView has a method to find out which item was clicked,
 'onItemClickListener'.
 In Flutter, use the touch handling provided by the passed-in widgets.
 
@@ -1727,8 +1730,8 @@ In Flutter, if you were to update the list of widgets inside a `setState()`,
 you would quickly see that your data did not change visually.
 This is because when `setState()` is called, the Flutter rendering engine
 looks at the widget tree to see if anything has changed. When it gets to your
-`ListView`, it performs a `==` check, and determines that the two `ListView`s are the
-same. Nothing has changed, so no update is required.
+`ListView`, it performs a `==` check, and determines that the two
+`ListView`s are the same. Nothing has changed, so no update is required.
 
 For a simple way to update your `ListView`, create a new `List` inside of
 `setState()`, and copy the data from the old list to the new list.
@@ -2113,8 +2116,8 @@ in the top level widget.
 To take full advantage of Material Components in your app, you can declare a top
 level widget `MaterialApp` as the entry point to your application. MaterialApp
 is a convenience widget that wraps a number of widgets that are commonly
-required for applications implementing Material Design. It builds upon a WidgetsApp by
-adding Material specific functionality.
+required for applications implementing Material Design.
+It builds upon a WidgetsApp by adding Material specific functionality.
 
 You can also use a `WidgetApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
@@ -2188,6 +2191,18 @@ using SQL.
 In Flutter, access this functionality using the
 [SQFlite]({{site.pub}}/packages/sqflite) plugin.
 
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
 ## Notifications
 
 ### How do I set up push notifications?
@@ -2196,8 +2211,23 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
-plugin.
-For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
-plugin documentation.
+[Firebase Messaging][] plugin.
+For more information on using the Firebase Cloud Messaging API,
+see the [`firebase_messaging`][] plugin documentation.
+
+[DevTools]: /docs/development/tools/devtools
+[Firebase Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[firebase_messaging]: {{site.pub}}/packages/firebase_messaging
+[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[Material Components]: {{site.material}}/develop/flutter
+[Material Design guidelines]: {{site.material}}/design
+[Cupertino widgets]: /docs/development/ui/widgets/cupertino
+[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[composing]: /docs/resources/technical-overview#everythings-a-widget
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[Flutter For Android Developers : How to design LinearLayout in Flutter?]: {{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
+[StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter

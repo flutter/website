@@ -17,7 +17,7 @@ that is used on multiple platforms.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-## Project Setup
+## Project setup
 
 ### How does the app start?
 
@@ -74,10 +74,9 @@ class MyApp extends StatelessWidget {
 
 ### How do you create a page?
 
-Xamarin.Forms has many different types of pages; `ContentPage` is the most
-common.
-
-In Flutter, you specify an application widget that holds your root page.
+Xamarin.Forms has many different types of pages;
+`ContentPage` is the most common.  In Flutter,
+you specify an application widget that holds your root page.
 You can use a
 [MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
 widget, which supports [Material
@@ -193,7 +192,7 @@ but there are many benefits to this approach.
 
 ## Views
 
-### What is the equivalent of a `Page` or `Element` in Flutter?
+### What is the equivalent of a Page or Element in Flutter?
 
 {{site.alert.secondary}}
   How is react-style, or _declarative_, programming different than the
@@ -225,7 +224,7 @@ widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
@@ -738,7 +737,7 @@ many other packages on the [Pub site]({{site.pub}}/flutter).
 
 ## Async UI
 
-### What is the equivalent of `Device.BeginOnMainThread()` in Flutter?
+### What is the equivalent of Device.BeginOnMainThread() in Flutter?
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -2144,7 +2143,7 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
 from the [Flutter cookbook](/docs/cookbook).
 
-### What is the equivalent of a "Placeholder" on an Entry?
+### What is the equivalent of a Placeholder on an Entry?
 
 In Xamarin.Forms, some `Elements` support a `Placeholder` property
 that you can assign a value to. For example:
@@ -2402,6 +2401,18 @@ plugin to access SQLite databases.
 
 In Flutter, access this functionality using the
 [sqflite]({{site.pub}}/packages/sqflite) plugin.
+
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
 
 ## Notifications
 

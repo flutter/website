@@ -10,11 +10,13 @@ next:
 
 ## System requirements
 
-To install and run Flutter, your development environment must meet these minimum requirements:
+To install and run Flutter,
+your development environment must meet these minimum requirements:
 
 - **Operating Systems**: macOS (64-bit)
 - **Disk Space**: 700 MB (does not include disk space for IDE/tools).
-- **Tools**: Flutter depends on these command-line tools being available in your environment.
+- **Tools**: Flutter depends on these command-line tools being available
+  in your environment.
   - `bash`
   - `curl`
   - `git` 2.x
@@ -39,4 +41,4 @@ first Flutter app.
 
 ## Next step
 
-[Next step: Configure Editor](/docs/get-started/editor)
+Set up your preferred editor.

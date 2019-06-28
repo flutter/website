@@ -48,9 +48,9 @@ rebuild. Only code involved in the rebuilding of the widgets are automatically
 re-executed.
 
 The next sections describe common situations where the
-modified code will _not_ run again after hot reload. In some cases,
-small changes to the Dart code will enable you to continue using hot reload
-for your app.
+modified code _won't_ run again after hot reload. In some cases,
+small changes to the Dart code enable you to continue using hot
+reload for your app.
 
 ## Compilation errors
 

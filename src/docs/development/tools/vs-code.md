@@ -33,6 +33,8 @@ To install updates manually:
 
 ## Creating projects
 
+There are a couple ways to create a new project.
+
 ### Creating a new project
 
 To create a new Flutter project from the Flutter starter app template:
@@ -53,21 +55,38 @@ To open an existing Flutter project:
 
 ## Editing code and viewing issues
 
-The Flutter extension performs code analysis that enables:
+The Flutter extension performs code analysis that enables the following:
 
 * Syntax highlighting
 * Code completions based on rich type analysis
 * Navigating to type declarations (**Go to Definition** or `F12`),
   and finding type usages (**Find All References** or `Shift`+`F12`)
 * Viewing all current source code problems
-  (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS))
+  (**View > Problems** or `Ctrl`+`Shift`+`M`
+  (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="660px"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="90%"}
 
-## Running and Debugging
+## Running and debugging
 
-Start debugging by clicking **Debug > Start Debugging** from the main
-IDE window, or press `F5`.
+{{site.alert.note}}
+  You can debug your app in a couple of ways.
+
+  * Using [DevTools][], a suite of debugging and profiling
+    tools that run in a browser. DevTools replaces the previous
+    browser-based profiling tool, Observatory, and includes
+    functionality previously only available to Android Studio
+    and IntelliJ, such as the Flutter inspector.
+  * Using VS Code's built-in debugging features,
+    such as setting breakpoints.
+
+  The instructions below describe features available in VS Code.
+  For information on using launching DevTools, see
+  [Running DevTools from VS Code][] in the [DevTools][] docs.
+{{site.alert.end}}
+
+Start debugging by clicking **Debug > Start Debugging**
+from the main IDE window, or press `F5`.
 
 ### Selecting a target device
 
@@ -97,10 +116,10 @@ running or debugging.
 
 ### Run app without breakpoints
 
- 1. Click **Debug > Start Without Debugging** in the main IDE window, or
-    press `Ctrl`+`F5`.
+ 1. Click **Debug > Start Without Debugging** in the main IDE window,
+    or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug Console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
 
 ### Run app with breakpoints
 
@@ -143,17 +162,6 @@ To enable:
 1. Select **Settings > Extensions > Dart Configuration**.
 2. Check the `Debug External Libraries` option.
 
-### The Flutter Inspector, performance profiling, and Dart DevTools
-
-Dart DevTools are a set of debugging and profiling tools presented with
-an html-based UI. DevTools replaces the previous browser-based profiling
-tool, Observatory, and includes functionality previously only available
-to IntelliJ, like the Flutter Inspector.  
-
-DevTools is still in development but is available to preview.
-For installation and getting started instructions,
-see the [DevTools' docs][].
-
 ## Editing tips for Flutter code
 
 If you have additional tips we should share, [let us know][]!
@@ -166,7 +174,7 @@ Flutter widget identifier, as indicated by the yellow lightbulb icon.
 The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 
-![Code Assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
+![Code assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they
@@ -205,16 +213,14 @@ You can also define custom snippets by executing
 ### Keyboard shortcuts
 
 **Hot reload**
-: During a debug session, clicking the **Restart** button on the **Debug
-  Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
+: During a debug session, clicking the **Restart** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
   (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
 
   Keyboard mappings can be changed by executing the
   **Open Keyboard Shortcuts** command from the [Command Palette][].
 
-**Hot restart**
-
-### Hot reloads vs. hot restarts
+### Hot reload vs. hot restart
 
 Hot reload works by injecting updated source code files into the
 running Dart VM (Virtual Machine). This includes not only
@@ -235,7 +241,7 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 ### Known issues and feedback
 
 All known bugs are tracked in the issue tracker:
-[Dart and Flutter extensions GitHub issue tracker][issue-tracker].
+[Dart and Flutter extensions GitHub issue tracker][issue tracker].
 
 We very much welcome feedback,
 both on bugs/issues and feature requests.
@@ -249,7 +255,8 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[DevTools' docs]: https://flutter.github.io/devtools
+[DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
