@@ -121,6 +121,11 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
+        - title: Adding Flutter to an Android app
+          permalink: /docs/development/platform-integration/add-to-app-android
+          children:
+            - title: Add a single Flutter screen
+              permalink: /docs/development/platform-integration/add-to-app-android/add-flutter-screen
         - title: Embedding Flutter views in non-Flutter apps
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
