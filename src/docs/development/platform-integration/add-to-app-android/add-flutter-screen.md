@@ -76,7 +76,9 @@ Replace `MyApplication` with your `Application` subclass name.
 
 If you'd like to control precisely where and when Flutter is initialized, you
 can initialize Flutter manually. This must occur before you attempt to display
-any Flutter content, or execute any Dart code.
+any Flutter content, or execute any Dart code. Initialization only needs to
+happen once within the application process - it does not need to be repeated
+for every Flutter experience.
 
 To manually initialize Flutter, execute the following code at the desired
 location:
