@@ -180,6 +180,8 @@
   children:
     - title: Debugging
       permalink: /docs/testing/debugging
+    - title: Debugging apps programmatically
+      permalink: /docs/testing/code-debugging
     - title: Using an OEM debugger
       permalink: /docs/testing/oem-debuggers
     - title: Flutter's build modes

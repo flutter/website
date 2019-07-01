@@ -33,13 +33,13 @@ when designing your app:
     of the child widget as the previous frame is re-encountered. This 
     technique is heavily used in inside the framework for optimizing 
     animations where the animation doesn't affect the child subtree. See
-    the [TransitionBuilder][] pattern and the [SlideTransition][],
+    the [`TransitionBuilder`][] pattern and the [`SlideTransition`][],
     which uses this principle to avoid rebuilding its descendents when 
     animating.
 
 Also see:
 
-* [Performance considerations][], part of the [StatefulWidget][] API doc
+* [Performance considerations][], part of the [`StatefulWidget`][] API doc
 
 ### Apply effects only when needed
 
@@ -55,30 +55,32 @@ Use effects carefully, as they can be expensive. Some of them invoke
 
 Some general rules when applying specific effects:
 
-* Use the [Opacity][] widget only when necessary.
-  See [Transparent image][] in the Opacity API page for an
-  example of applying opacity directly to an image,
-  which is faster than using the Opacity widget.
-* **Clipping** doesn’t call `saveLayer()` (unless explicitly requested with
-  `Clip.antiAliasWithSaveLayer`) so these operations aren’t as expensive
-  as Opacity, but clipping is still costly, so use with caution. By default,
-  clipping is disabled (`Clip.none`), so you must explicitly enable it when
-  needed. 
+* Use the [`Opacity`][] widget only when necessary.
+  See the [Transparent image][] section in the Opacity
+  API page for an example of applying opacity directly
+  to an image, which is faster than using the Opacity
+  widget.
+* **Clipping** doesn’t call `saveLayer()` (unless
+  explicitly requested with `Clip.antiAliasWithSaveLayer`)
+  so these operations aren’t as expensive as Opacity,
+  but clipping is still costly, so use with caution.
+  By default, clipping is disabled (`Clip.none`),
+  so you must explicitly enable it when needed. 
 
 Other widgets that might trigger `saveLayer()` and are potentially costly:
 
-* [ShaderMask][]
-* [ColorFilter][]
-* [Chip][]&mdash;might cause call to `saveLayer()` if
+* [`ShaderMask`][]
+* [`ColorFilter`][]
+* [`Chip`][]&mdash;might cause call to `saveLayer()` if
   `disabledColorAlpha != 0xff`
-* [Text][]&mdash;might cause call to `saveLayer()`
+* [`Text`][]&mdash;might cause call to `saveLayer()`
   if there's an `overflowShader`
 
 Ways to avoid calls to `saveLayer()`:
 
 * To implement fading in an image, consider using the FadeInImage widget,
   which applies a gradual opacity using the GPU’s fragment shader.
-  For more information, see the [Opacity docs][].
+  For more information, see the [`Opacity`][] docs.
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
   by many of the widget classes.
@@ -93,7 +95,7 @@ Also see:
 * [Working with long lists][] in the [Cookbook][]
 * [Creating a ListView that loads one page at a time][]
   a community article by AbdulRahman AlHamali
-* [Listview.builder][] API
+* [`Listview.builder`][] API
 
 ###  Build and display frames in 16ms
 
@@ -158,7 +160,7 @@ For more performance info, see the following resources:
 * [Performance considerations for opacity animation][] in the Opacity API page
 * [Child elements' lifecycle][] and how to load them efficiently,
   in the ListView API page
-* [Performance considerations][] of a StatefulWidget
+* [Performance considerations][] of a `StatefulWidget`
 
 
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
@@ -170,15 +172,14 @@ For more performance info, see the following resources:
 [Working with long lists]: /cookbook/lists/long-lists
 [Cookbook]: /cookbook
 [Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
-[Listview.builder]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[TransitionBuilder]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
-[SlideTransition]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
-[Opacity]: {{site.api}}/flutter/widgets/Opacity-class.html
-[Opacity docs]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
+[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
+[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
 [Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
-[ShaderMask]: {{site.api}}/flutter/widgets/ShaderMask-class.html
-[ColorFilter]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
-[Chip]: {{site.api}}/flutter/material/Chip-class.html
-[Text]: {{site.api}}/flutter/widgets/Text-class.html
+[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
+[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [profile mode]: /docs/testing/build-modes#profile

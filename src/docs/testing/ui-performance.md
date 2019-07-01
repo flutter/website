@@ -10,17 +10,17 @@ description: Diagnosing UI performance issues in Flutter.
   * Flutter aims to provide 60 frames per second (fps) performance,
     or 120 fps performance on devices capable of 120Hz updates.
   * For 60fps, frames need to render approximately every 16ms.
-  * Jank occurs when the UI doesn't render smoothly. For example, every so
-    often, a frame takes 10 times longer to render, so it gets dropped, and
-    the animation visibly jerks.
+  * Jank occurs when the UI doesn't render smoothly. For example,
+    every so often, a frame takes 10 times longer to render,
+    so it gets dropped, and the animation visibly jerks.
 {{site.alert.end}}
 
 It's been said that "a _fast_ app is great,
 but a _smooth_ app is even better."
 If your app isn't rendering smoothly,
 how do you fix it? Where do you begin?
-This guide shows you where to start, steps to take,
-and tools that can help.
+This guide shows you where to start,
+steps to take, and tools that can help.
 
 {{site.alert.note}}
   * An app's performance is determined by more than one measure.
@@ -30,7 +30,7 @@ and tools that can help.
     second type of performance (UI smoothness), but you can use most
     of the same tools to diagnose other performance problems.
   * To perform tracing inside your Dart code, see [Tracing Dart code][]
-    in the [Debugging Flutter apps][] page.
+    in the [Debugging][] page.
 {{site.alert.end}}
 
 ## Diagnosing performance problems
@@ -46,7 +46,7 @@ your users might use.
 
 Almost all performance debugging for Flutter applications
 should be conducted on a physical Android or iOS device,
-with your Flutter application running in [profile mode].
+with your Flutter application running in [profile mode][].
 Using debug mode, or running apps on simulators
 or emulators, is generally not indicative of the final
 behavior of release mode builds.
@@ -112,11 +112,11 @@ the performance overlay, as discussed in the next section.
 DevTools provides features like profiling, examining the heap,
 displaying code coverage, enabling the performance overlay,
 and a step-by-step debugger.
-DevTool's [Timeline view][] allows you to investigate the
+DevTools' [Timeline view][] allows you to investigate the
 UI performance of your application on a frame-by-frame basis.
 
 Once your app is running in profile mode,
-[launch DevTools][devtools].
+[launch DevTools][].
 
 ## The performance overlay
 
@@ -134,9 +134,9 @@ The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
 ![Screenshot of overlay showing zero jank]({% asset tools/devtools/performance-overlay-green.png @path %})
-<br><center>Performance overlay showing the GPU thread (top),
-and UI thread (bottom).<br> The vertical green bars
-represent the current frame.</center>
+<br>Performance overlay showing the GPU thread (top),
+and UI thread (bottom).<br>The vertical green bars
+represent the current frame.
 
 ## Interpreting the graphs
 
@@ -164,9 +164,9 @@ expensive  If a red vertical bar appears in the GPU graph,
 the scene is too complicated to render quickly.
 
 ![Screenshot of performance overlay showing jank with red bars]({% asset tools/devtools/performance-overlay-jank.png @path %})
-<br><center>The vertical red bars indicate that the current frame is
+<br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
-have red, start by diagnosing the UI thread (Dart VM).</center>
+display red, start by diagnosing the UI thread (Dart VM).
 
 ## Flutter's threads
 
@@ -178,13 +178,13 @@ your actions on the UI thread have performance consequences
 on other threads.
 
 <dl markdown="1">
-<dt markdown="1">Platform thread</dt>
+<dt markdown="1">**Platform thread**</dt>
 <dd markdown="1">The platform's main thread. Plugin code runs here.
     For more information, see the [UIKit][] documentation for iOS,
     or the [MainThread][] documentation for Android.
-    This thread is not shown in the performance overlay.</dd>
+    This thread is not shown in the performance overlay.
 
-<dt markdown="1">UI thread</dt>
+<dt markdown="1">**UI thread**</dt>
 <dd markdown="1">The UI thread executes Dart code in the Dart VM.
     This thread includes code that you wrote, and code executed by
     Flutter's framework on your app's behalf.
@@ -192,24 +192,26 @@ on other threads.
     a _layer tree_, a lightweight object containing device-agnostic
     painting commands, and sends the layer tree to the GPU thread to
     be rendered on the device. _Don't block this thread!_
-    Shown in the bottom row of the performance overlay.</dd>
+    Shown in the bottom row of the performance overlay.
 
-<dt markdown="1">GPU thread</dt>
+<dt markdown="1">**GPU thread**</dt>
 <dd markdown="1">The GPU thread takes the layer tree and displays
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the GPU thread or its data but,
     if this thread is slow, it's a result of something you've done
     in the Dart code.  Skia, the graphics library, runs on this thread,
     which is sometimes called the _rasterizer_ thread.
-    Shown in the top row of the performance overlay.<dd>
+    Shown in the top row of the performance overlay.
 
-<dt markdown="1">I/O thread</dt>
+<dt markdown="1">**I/O** thread</dt>
 <dd markdown="1">Performs expensive tasks (mostly I/O) that would
     otherwise block either the UI or GPU threads.
-    This thread is not shown in the performance overlay.</dd>
-<dl>
+    This thread is not shown in the performance overlay.
 
-For more information on these threads, see [Architecture notes][].
+For links to more information and videos,
+see [The Framework architecture][] on the
+[GitHub wiki][], and the community article,
+[The Layer Cake][].
 
 ### Displaying the performance overlay
 
@@ -254,13 +256,16 @@ cached images.
   a menu for enabling or disabling the overlay.
 {{site.alert.end}}
 
-### Identifying problems in the UI graph
+## Identifying problems in the UI graph
 
 If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
 also shows red.
 
-### Identifying problems in the GPU graph
+PENDING: Other than saying "debug with DevTools", what
+can be said here?
+
+## Identifying problems in the GPU graph
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the GPU thread. When this happens,
@@ -391,12 +396,12 @@ regression is introduced that adversely affects performance.
 For more information, see [Integration testing][],
 a section in [Testing Flutter apps][].
 
-## More information
+## Other resources
 
 The following resources provide more information on using
 Flutter's tools and debugging in Flutter:
 
-* [Debugging Flutter apps][]
+* [Debugging][]
 * [Flutter inspector][]
 * [Flutter inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
@@ -404,14 +409,14 @@ Flutter's tools and debugging in Flutter:
 * [Flutter API][] docs, particularly the [PerformanceOverlay][] class,
   and the [dart:developer][] package
 
-![IntelliJ Flutter inspector window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 [RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
-[Debugging Flutter apps]: /docs/testing/debugging
+[Debugging]: /docs/testing/debugging
 [examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
 [Flutter's build modes]: /docs/testing/build-modes
 [profile mode]: /docs/testing/build-modes#profile
+[debug mode]: /docs/testing/build-modes#debug
 [PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
 [PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
@@ -420,7 +425,6 @@ Flutter's tools and debugging in Flutter:
 [UIKit]: https://developer.apple.com/documentation/uikit
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 [Integration testing]: /docs/testing#integration-tests
-[Architecture notes]: {{site.github}}/flutter/engine/wiki#architecture-notes
 [Flutter inspector]: /docs/development/tools/devtools/inspector
 [Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
 [bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
@@ -440,3 +444,7 @@ Flutter's tools and debugging in Flutter:
 [programmatically]: /docs/testing/code-debugging#debugging-animations
 [Performance overlay]: /docs/testing/code-debugging#performance-overlay
 [Debugging Flutter apps programmatically]: /docs/testing/code-debugging
+[launch DevTools]: /docs/development/tools/devtools
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
+[The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
