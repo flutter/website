@@ -128,6 +128,8 @@
               permalink: /docs/development/platform-integration/add-to-app-android/add-flutter-screen
             - title: Add a Splash Screen
               permalink: /docs/development/platform-integration/add-to-app-android/add-splash-screen
+            - title: Add a Flutter Fragment
+              permalink: /docs/development/platform-integration/add-to-app-android/add-flutter-fragment
         - title: Embedding Flutter views in non-Flutter apps
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
