@@ -26,7 +26,7 @@ tab on the DevTools toolbar.
 
 {{site.alert.note}}
   You can still access the Flutter inspector directly from
-  Android Studio and IntelliJ, but you might prefer the
+  Android Studio/IntelliJ, but you might prefer the
   more spacious view when running it from DevTools
   in a browser. Also note that the UI for the inspector
   varies slightly between these environments. This page
@@ -36,31 +36,37 @@ tab on the DevTools toolbar.
 ### Debugging layout issues visually
 
 The following is a guide to the features available in the
-inspector's toolbar:
+inspector's toolbar. When space is limited, the icon is
+used as the visual version of the label.
 
-* **Select widget mode**: Enable this button in order to select
-  a widget on the device to inspect it. For more information,
-  see [Inspecting a widget](#inspecting-a-widget).
-* **Refresh tree**: Reload the current widget info.
-* **Performance Overlay**: Toggle display of performance graphs
-  for the GPU & CPU threads. For more information on interpreting
-  these graphs, see [The performance overlay][] in
-  [Flutter performance profiling][].
-* **iOS**: Toggle rendering and gesture behaviors
-  between Android and iOS.
-* **Debug Paint**: Add visual debugging hints to the rendering
-  that display borders, padding, alignment, and spacers.
-* **Paint Baselines**: Cause each RenderBox to paint a line at each
-  of its text baselines.
-* **Slow Animations**: Slow down animations to enable visual
-  inspection.
-* **Repaint Rainbow**: Shows rotating colors on layers when repainting.
-* **Debug Banner**: Toggles display of the debug banner even when
-  running a debug build.
-{% comment %} feature seems to be gone
-* **Highlight nodes displayed in both trees**: In the inspector, highlights
-  nodes shown in both the details and summary trees.
-{% endcomment %}
+<dl markdown="1">
+<dt markdown="1">**Select widget mode** ![Select widget mode icon]({% asset tools/devtools/select-widget-mode-icon.png @path %}){:width="20px"}</dt>
+<dd markdown="1">Enable this button in order to select
+    a widget on the device to inspect it. For more information,
+    see [Inspecting a widget](#inspecting-a-widget).
+<dt markdown="1">**Refresh tree** ![Refresh tree icon]({% asset tools/devtools/refresh-tree-icon.png @path %}){:width="20px"}</dt>
+<dd>Reload the current widget info.</dd>
+<dt markdown="1">**Performance Overlay** ![Performance overlay icon]({% asset tools/devtools/performance-overlay-icon.png @path %}){:width="20px"}</dt>
+<dd markdown="1">Toggle display of performance graphs for the
+    GPU & CPU threads. For more information on interpreting
+    these graphs, see [The performance overlay][] in
+    [Flutter performance profiling][].
+<dt markdown="1">**iOS** ![Toggle platform icon]({% asset tools/devtools/toggle-platform-icon.png @path %}){:width="20px"}</dt>
+<dd>Toggle rendering and gesture behaviors between Android
+    and iOS.</dd>
+<dt markdown="1">**Debug Paint** ![Debug paint mode icon]({% asset tools/devtools/debug-paint-mode-icon.png @path %}){:width="20px"}</dt>
+<dd>Add visual debugging hints to the rendering
+    that display borders, padding, alignment, and spacers.</dd>
+<dt markdown="1">**Paint Baselines** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
+<dd>Cause each RenderBox to paint a line at each
+    of its text baselines.</dd>
+<dt markdown="1">**Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd>Slow down animations to enable visual inspection.</dd>
+<dt markdown="1">**Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
+<dd>Shows rotating colors on layers when repainting.</dd>
+<dt markdown="1">**Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
+<dd>Toggles display of the debug banner even when
+    running a debug build.</dd>
 
 ## Inspecting a widget
 

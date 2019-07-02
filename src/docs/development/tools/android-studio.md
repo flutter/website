@@ -150,9 +150,8 @@ See [Hot reload](hot-reload) for details.
 ### Show performance data
 
 {{site.alert.note}}
-  The Performance pane is not yet available in DevTools,
-  but can be accessed through the Android Studio/IntelliJ
-  plugin for Flutter.
+  To examine performance issues in Flutter, see the
+  [Timeline view][].
 {{site.alert.end}}
 
 To view the performance data, including the widget rebuild
@@ -400,3 +399,4 @@ When filing new issues, include the output of [`flutter doctor`][].
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
 [let us know]: {{site.github}}/flutter/website/issues/new
 [Running DevTools from Android Studio]: /docs/development/tools/devtools/android-studio
+[Timeline view]: /docs/development/tools/devtools/timeline

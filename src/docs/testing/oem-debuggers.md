@@ -341,8 +341,8 @@ iOS, and Android:
 ### Flutter
 
 * [Debugging Flutter apps](/docs/testing/debugging)
-* [Advanced debugging][], a section in
-  [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
+* [Flutter inspector][], as well as the general
+  [DevTools][] docs.
 * [Performance Profiling](/docs/testing/ui-performance)
 
 ### Android
@@ -363,10 +363,11 @@ You can find the following debugging resources on
 
 
 [Flutter's modes]: /docs/testing/build-modes
-[Advanced debugging]: /docs/development/tools/android-studio#advanced-debugging
 [developer.android.com]: {{site.android-dev}}
 [Debug your app]: {{site.android-dev}}/studio/debug
 [Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
 [developer.apple.com]: https://developer.apple.com
 [Debugging]: https://developer.apple.com/support/debugging/
 [Instruments Help]: https://help.apple.com/instruments/mac/current/
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[DevTools]: /docs/development/tools/devtools

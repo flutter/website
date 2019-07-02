@@ -1,5 +1,5 @@
 ---
-title: Running DevTools from the command line
+title: Install and run DevTools from the command line
 Description: Learn how to install and use DevTools from the command line.
 ---
 

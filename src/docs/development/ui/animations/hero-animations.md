@@ -489,8 +489,7 @@ provided example to your needs.** The heavy lifting is done for you.
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
-  Flutter's [visual debugging mode](/docs/testing/debugging#visual-debugging)
-  during development.
+  the [`debugPaintSizedEnabled`][] flag during development.
 {{site.alert.end}}
 
 ### What's going on?
@@ -672,3 +671,4 @@ The following resources might help when writing animations:
 
 [MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+[`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout

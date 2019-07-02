@@ -14,21 +14,27 @@ but is under active development.
 
 ## What can I do with DevTools?
 
-DevTools supports inspecting the UI layout and state of
-a Flutter app, diagnosing UI jank performance issues in
-a Flutter app, source-level debugging of a Flutter or
-Dart command-line app, and viewing general log and
-diagnostics information about a running app.
+Here are some of the things you can do with DevTools:
 
-We expect developers to use DevTools in conjunction with
-their existing IDE or command-line based development workflow.
+* Inspect the UI layout and state of a Flutter app.
+* Diagnose UI jank performance issues in a Flutter app.
+* Source-level debugging of a Flutter or Dart
+  command-line app.
+* Debug memory issues in a Flutter or Dart
+  command-line app.
+* View general log and diagnostics information
+  about a running Flutter or Dart
+  command-line app.
+
+We expect you to use DevTools in conjunction with
+your existing IDE or command-line based development workflow.
 
 ![GIF showing DevTools features]({% asset tools/devtools/inspector.gif @path %}){:width="100%"}
 <br><center>DevTools in action</center>
 
 ## How do I install DevTools?
 
-See the [Android Studio][], [VS Code][], or
+See the [Android Studio/IntelliJ][], [VS Code][], or
 [command line][] pages for installation instructions.
 
 ## Providing feedback
@@ -42,7 +48,7 @@ For more information on debugging and profiling
 Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
-[Android Studio]: /docs/development/tools/devtools/android-studio
+[Android Studio/IntelliJ]: /docs/development/tools/devtools/android-studio
 [VS Code]: /docs/development/tools/devtools/vscode
 [command line]: /docs/development/tools/devtools/cli
 [DevTools issue tracker]: {{site.github}}/flutter/devtools/issues

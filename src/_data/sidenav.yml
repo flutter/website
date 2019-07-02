@@ -147,11 +147,11 @@
           children:
             - title: Overview
               permalink: /docs/development/tools/devtools/overview
-            - title: From Android Studio
+            - title: Install from Android Studio
               permalink: /docs/development/tools/devtools/android-studio
-            - title: From VS Code
+            - title: Install from VS Code
               permalink: /docs/development/tools/devtools/vscode
-            - title: From command line
+            - title: Install from command line
               permalink: /docs/development/tools/devtools/cli
             - title: Flutter inspector
               permalink: /docs/development/tools/devtools/inspector

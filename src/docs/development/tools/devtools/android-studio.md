@@ -1,5 +1,5 @@
 ---
-title: Running DevTools from Android Studio
+title: Install and run DevTools from Android Studio
 description: Learn how to install and use DevTools from Android Studio.
 ---
 

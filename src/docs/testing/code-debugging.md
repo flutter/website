@@ -704,8 +704,7 @@ You can also obtain a dump of the Semantics tree
 (the tree presented to the system accessibility APIs) using
 [`debugDumpSemanticsTree()`][].  To use this,
 you have to have first enable accessibility, for example, by
-enabling a system accessibility tool or the `SemanticsDebugger`
-(as discussed in the [Semantics](#semantics) section).
+enabling a system accessibility tool or the `SemanticsDebugger`.
 
 For the previous example, it would output the following:
 
@@ -955,8 +954,8 @@ effect by using a [`GridPaper`][] widget directly.
 [`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [Material Design baseline grid]: {{site.material}}/design/layout/spacing-methods.html#baseline
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.htm)
-[`CupertinoApp`]: {{site.api}}/flutter/widgets/CupertinoApp-class.htm)
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html)
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html)
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
 [tracing tool]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 [systrace]: {{site.android-dev}}/studio/profile/systrace
@@ -999,7 +998,7 @@ effect by using a [`GridPaper`][] widget directly.
 [Logging view]: /docs/development/tools/devtools/logging
 [Flutter enabled IDE/editor]: /docs/get-started/editor
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[Timeline view]: /docs/developement/tools/devtools/timeline
+[Timeline view]: /docs/development/tools/devtools/timeline
 [Debugger]: /docs/development/tools/devtools/debugger
 [Inspector view]: /docs/development/tools/devtools/inspector
 [The performance overlay]: /docs/testing/ui-performance#the-performance-overlay

@@ -243,7 +243,7 @@ You might find the following docs useful:
 [Debug flags: application layers]: /docs/testing/code-debugging#debug-flags-application-layers
 [Debug flags: performance]: /docs/testing/code-debugging#debug-flags-performance
 [slow the animations programmatically]: /docs/testing/code-debugging#debugging-animations
-[breakpoints]: /docs/testing/code-debugging#debugger-statement
+[breakpoints]: /docs/testing/code-debugging#setting-breakpoints
 [logging]: /docs/testing/code-debugging#logging
 [Flutter's modes]: /docs/testing/build-modes
 [Flutter performance profiling]: /docs/testing/ui-performance

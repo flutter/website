@@ -144,15 +144,20 @@ of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 
 During a debug session,
 several additional debugging commands are added to the
-[Command Palette][], including:
+[Command Palette][] and to the [Flutter inspector][].
+When space is limited, the icon is used as the visual
+version of the label.
 
-* **Toggle Baseline Painting**: Causes each RenderBox to paint a line
-  at each of its baselines.
-* **Toggle Repaint Rainbow**: Shows rotating colors on layers when repainting.
-* **Toggle Slow Animations**: Slows down animations to enable visual
-  inspection.
-* **Toggle Slow-Mode Banner**: Hides the slow mode banner even when running a
-  debug build.
+<dl markdown="1">
+<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
+<dd>Causes each RenderBox to paint a line at each of its baselines.</dd>
+<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
+<dd>Shows rotating colors on layers when repainting.</dd>
+<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd>Slows down animations to enable visual inspection.</dd>
+<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
+<dd>Hides the debug mode banner even when running a debug build.</dd>
+</dl>
   
 ### Debugging external libraries 
 
@@ -260,3 +265,4 @@ When filing new issues, include [flutter doctor][] output.
 [let us know]: {{site.github}}/flutter/website/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
+[Flutter inspector]: /docs/development/tools/devtools/inspector

@@ -1,5 +1,5 @@
 ---
-title: Running DevTools from VS Code
+title: Install and run DevTools from VS Code
 description: Learn how to install and use DevTools from VS Code.
 ---
 
