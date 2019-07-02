@@ -194,6 +194,17 @@ public class MyApplication extends Application {
 }
 ```
 
+{{site.alert.note}} 
+  To warm up a `FlutterEngine`, you must execute a Dart
+  entrypoint. Keep in mind that the moment `executeDartEntrypoint()` is invoked,
+  your Dart entrypoint method will begin executing. If your Dart entrypoint
+  invokes `runApp()` to run a Flutter app, your Flutter app will behave as if it
+  is running in a window of zero size until this `FlutterEngine` is attached to a
+  `FlutterActivity`, `FlutterFragment`, or `FlutterView`. Make sure that your app
+  behaves appropriately between the time you warm it up and the time you display
+  Flutter content.
+{{site.alert.end}}
+
 With a pre-warmed `FlutterEngine`, you now need to instruct your
 `FlutterActivity` to use the pre-warmed `FlutterEngine` instead of creating a
 new one. To accomplish this, subclass `FlutterActivity` and override the
@@ -212,15 +223,19 @@ public class MyFlutterActivity extends FlutterActivity {
 Now, when you launch `MyFlutterActivity`, there is significantly less delay in
 the display of Flutter content.
 
-{{site.alert.note}} When re-using a cached engine, you assume responsibility for
+{{site.alert.note}} 
+  When re-using a cached engine, you assume responsibility for
   showing the desired content for the given `Activity` that's using the
   `FlutterEngine`. Strategies for switching content in a shared `FlutterEngine`
   are beyond the scope of this guide. TODO(mattcarroll): link to
-  resource.{{site.alert.end}}
+  resource.
+{{site.alert.end}}
 
-{{site.alert.note}} Flutter's debug/release builds have drastically different
-performance characteristics. To evaluate the performance of Flutter, use a
-release build.{{site.alert.end}}
+{{site.alert.note}} 
+  Flutter's debug/release builds have drastically different
+  performance characteristics. To evaluate the performance of Flutter, use a
+  release build.
+{{site.alert.end}}
 
 ## Add a translucent Flutter screen
 
