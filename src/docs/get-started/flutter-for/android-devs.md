@@ -1218,7 +1218,7 @@ assets:
 You can then access your images using `AssetImage`:
 
 {% prettify dart %}
-return AssetImage("images/a_dot_burr.jpeg");
+return AssetImage("images/my_icon.jpeg");
 {% endprettify %}
 
 or directly in an `Image` widget:

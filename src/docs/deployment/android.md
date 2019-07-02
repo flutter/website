@@ -231,10 +231,11 @@ are correct, especially:
 * `application`: Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect the final name of the app.
 
-* `uses-permission`: Remove the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code does not need
-  Internet access. The standard template includes this tag to enable
-  communication between Flutter tools and a running app.
+* `uses-permission`: Add the `android.permission.INTERNET`
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template does not include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
 
 ## Reviewing the build configuration
 
