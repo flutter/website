@@ -30,13 +30,13 @@ Flutter experience within the `Fragment`:
  * Initial Flutter route
  * Dart entrypoint to execute
  * Opaque vs translucent background
- * Whether or not `FlutterFragment` should control its surrounding `Activity`
+ * Whether `FlutterFragment` should control its surrounding `Activity`
 
 `FlutterFragment` also comes with a number of calls that must be forwarded from
 its surrounding `Activity`. These calls allow Flutter to react appropriately to
 OS events.
 
-All varieties of `FlutterFragment`, and its requirements are described in this
+All varieties of `FlutterFragment`, and its requirements, are described in this
 guide.
 
 ## Add a `FlutterFragment` to an `Activity`
@@ -63,12 +63,12 @@ public class MyActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         // Inflate a layout that has a container for your FlutterFragment. For
-        // this example we will assume that a FrameLayout exists with an ID
-        // of R.id.fragment_container.
+        // this example, assume that a FrameLayout exists with an ID of 
+        // R.id.fragment_container.
         setContentView(R.layout.my_activity_layout);
 
-        // Get a reference to the Activity's FragmentManager so we can add a
-        // new FlutterFragment, or find an existing one.
+        // Get a reference to the Activity's FragmentManager to add a new 
+        // FlutterFragment, or find an existing one.
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         // Attempt to find an existing FlutterFragment, in case this is not the
@@ -273,8 +273,8 @@ For this reason, Flutter supports translucency in a `FlutterFragment`.
   is acceptable to render your Flutter experience on top of all other content,
   then `FlutterFragment`'s default `RenderMode` of `surface` is the `RenderMode`
   that you should use. However, if you need to display Android `View`s both
-  below and above your Flutter experience, then you must specificy a
-  `RenderMode` of `texture`. See the section above titled "Control
+  below and above your Flutter experience, then you must specify a
+  `RenderMode` of `texture`. See the previous section titled "Control
   `FlutterFragment`'s render mode" for information on controlling the
   `RenderMode`. 
 {{site.alert.end}}
@@ -288,7 +288,7 @@ FlutterFragment flutterFragment = new FlutterFragment.Builder()
     .build();
 ```
 
-## The relationships beween `FlutterFragment` and its `Activity`
+## The relationship beween `FlutterFragment` and its `Activity`
 
 Some apps choose to use `Fragment`s as entire Android screens. In these apps, it
 would be reasonable for a `Fragment` to control system chrome like Android's
