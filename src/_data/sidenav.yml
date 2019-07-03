@@ -147,7 +147,7 @@
           children:
             - title: Overview
               permalink: /docs/development/tools/devtools/overview
-            - title: Install from Android Studio
+            - title: Install from Android Studio / IntelliJ
               permalink: /docs/development/tools/devtools/android-studio
             - title: Install from VS Code
               permalink: /docs/development/tools/devtools/vscode

@@ -954,8 +954,8 @@ effect by using a [`GridPaper`][] widget directly.
 [`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [Material Design baseline grid]: {{site.material}}/design/layout/spacing-methods.html#baseline
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html)
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html)
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
 [tracing tool]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 [systrace]: {{site.android-dev}}/studio/profile/systrace
