@@ -10,12 +10,12 @@ next:
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
-[PageRouteBuilder](https://api.flutter.dev/flutter/widgets/PageRouteBuilder-class.html)
+[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
 provides an
-[Animation](https://api.flutter.dev/flutter/animation/Animation-class.html)
+[Animation]({{site.api}}/flutter/animation/Animation-class.html)
 object. This `Animation` can be used with
-[Tween](https://api.flutter.dev/flutter/animation/Tween-class.html) and
-[Curve](https://api.flutter.dev/flutter/animation/Curve-class.html) objects to
+[Tween]({{site.api}}/flutter/animation/Tween-class.html) and
+[Curve]({{site.api}}/flutter/animation/Curve-class.html) objects to
 customize the transition animation. This recipe shows how to transition between
 routes by animating the new route into view from the bottom of the screen.
 
@@ -30,8 +30,8 @@ To create a custom page route transition, this recipe uses the following steps:
 # 1. Set up a PageRouteBuilder
 
 To start, use a
-[PageRouteBuilder](https://api.flutter.dev/flutter/widgets/PageRouteBuilder-class.html)
-to create a [Route](https://api.flutter.dev/flutter/widgets/Route-class.html).
+[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
+to create a [Route]({{site.api}}/flutter/widgets/Route-class.html).
 `PageRouteBuilder` has two callbacks, one to build the content of the route
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
@@ -98,7 +98,7 @@ class Page2 extends StatelessWidget {
 To make the new page animate in from the bottom, it should animate from
 `Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
 constructor). In this case, the Offset is a 2D vector for the
-[FractionalTranslation](https://api.flutter.dev/flutter/widgets/FractionalTranslation-class.html)
+[FractionalTranslation]({{site.api}}/flutter/widgets/FractionalTranslation-class.html)
 widget. Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
@@ -119,13 +119,13 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 # 3. Use an AnimatedWidget
 
 Flutter has a set of widgets extending
-[AnimatedWidget](https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html)
+[AnimatedWidget]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
 that rebuild themselves when the value of the animation changes. For instance,
 SlideTransition takes an `Animation<Offset>` and translates its child (using a
 FractionalTranslation widget) whenever the value of the animation changes.
 
 AnimatedWidget Return a
-[SlideTransition](https://api.flutter.dev/flutter/widgets/SlideTransition-class.html)
+[SlideTransition]({{site.api}}/flutter/widgets/SlideTransition-class.html)
 with the `Animation<Offset>` and the child widget:
 
 ```dart
@@ -146,12 +146,12 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 Flutter provides a selection of easing curves that adjust the rate of the
 animation over time. The
-[Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) class
+[Curves]({{site.api}}/flutter/animation/Curves-class.html) class
 provides a predefined set of commonly used curves. For example, `Curves.easeOut`
 will make the animation start quickly and end slowly.
 
 To use a Curve, create a new
-[CurveTween](https://api.flutter.dev/flutter/animation/CurveTween-class.html)
+[CurveTween]({{site.api}}/flutter/animation/CurveTween-class.html)
 and pass it a Curve:
 
 ```dart
@@ -165,7 +165,7 @@ combined the `Tween<Offset>` from step 2.
 # 5. Combine the two Tweens
 
 To combine the tweens, use
-[chain()](https://api.flutter.dev/flutter/animation/Animatable/chain.html):
+[chain()]({{site.api}}/flutter/animation/Animatable/chain.html):
 
 ```dart
 var begin = Offset(0.0, 1.0);
