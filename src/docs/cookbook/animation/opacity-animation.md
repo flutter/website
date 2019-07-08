@@ -4,8 +4,8 @@ prev:
   title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container
 next:
-  title: Animate a page route transition
-  path: /docs/cookbook/animation/page-route-animation
+  title: Add a drawer to a screen
+  path: /docs/cookbook/design/drawer
 ---
 
 UI developers often need to show and hide elements on screen.

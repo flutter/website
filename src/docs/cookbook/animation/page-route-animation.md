@@ -1,11 +1,8 @@
 ---
 title: Animate a page route transition
-prev:
-  title: Fade a widget in and out
-  path: /docs/cookbook/animation/opacity-animation
 next:
-  title: Add a drawer to a screen
-  path: /docs/cookbook/design/drawer
+  title: Animate the properties of a container
+  path: /docs/cookbook/animation/animated-container
 ---
 
 # Animate a page route transition
