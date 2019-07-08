@@ -36,12 +36,10 @@ to create a [Route]({{site.api}}/flutter/widgets/Route-class.html).
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
 {{site.alert.note}}
-
-Note: The `child` parameter in transitionsBuilder is the widget returned from
+The `child` parameter in transitionsBuilder is the widget returned from
 pageBuilder. The `pageBuilder` function is only called the first time the route
 is built. The framework can avoid extra work because `child` stays the same
 throughout the transition.
-
 {{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and
