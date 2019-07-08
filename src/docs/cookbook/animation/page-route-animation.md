@@ -50,7 +50,7 @@ throughout the transition.
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 main() {
@@ -109,7 +109,7 @@ The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
 Animation<double> into an Animation<Offset> using a Tween:
 
-```
+```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
   var end = Offset.zero;
@@ -131,7 +131,7 @@ AnimatedWidget Return a
 [SlideTransition](https://api.flutter.dev/flutter/widgets/SlideTransition-class.html)
 with the `Animation<Offset>` and the child widget:
 
-```
+```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
   var end = Offset.zero;
@@ -157,7 +157,7 @@ To use a Curve, create a new
 [CurveTween](https://api.flutter.dev/flutter/animation/CurveTween-class.html)
 and pass it a Curve:
 
-```
+```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
 ```
@@ -170,7 +170,7 @@ combined the `Tween<Offset>` from step 2.
 To combine the tweens, use
 [chain()](https://api.flutter.dev/flutter/animation/Animatable/chain.html):
 
-```
+```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
 var curve = Curves.ease;
@@ -181,7 +181,7 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-```
+```dart
 return SlideTransition(
   position: animation.drive(tween),
   child: child,
@@ -201,7 +201,7 @@ values are computed in this order:
 Another way to create an `Animation<Offset>` with an easing curve is to use a
 `CurvedAnimation`:
 
-```
+```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0); 
   var end = Offset.zero;
@@ -222,7 +222,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 # Complete Example
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 main() {
