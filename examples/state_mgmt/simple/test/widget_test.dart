@@ -8,7 +8,7 @@ void main() {
   testWidgets('smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      Provider(
+      ChangeNotifierProvider(
         builder: (context) => CartModel(),
         child: MyApp(),
       ),
