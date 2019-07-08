@@ -1,12 +1,8 @@
 ---
-title: Using OEM debuggers
+title: Using an OEM debugger
 short-title: debuggers
-description: How to connect an OEM debugger, such as Xcode, to your running Flutter app.
+description: How to connect an OEM debugger to your running Flutter app.
 ---
-
-{{site.alert.tip}}
-  This doc is not yet complete. The iOS instructions are in process.
-{{site.alert.end}}
 
 If you are exclusively writing Flutter apps with Dart code and not using
 platform-specific libraries, or otherwise accessing platform-specific
@@ -28,7 +24,7 @@ plugins installed and configured.
 {{site.alert.tip}}
   Connect to a physical device when debugging, rather than an emulator or
   simulator, which don't support profile mode. For more information, see
-  [Flutter's modes]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
+  [Flutter's modes][].
 {{site.alert.end}}
 
 ### Dart debugger
@@ -44,7 +40,7 @@ plugins installed and configured.
   You should see the Debug pane appear at the bottom of the window that
   looks something like the following:
 
-  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}
+  {% asset 'testing/debugging/oem/debug-pane.png' alt='Debug pane' %}{:width="100%"}
 
   You can configure where the debug pane appears, or even tear it off to its own
   window using the gear to the right in the Debug pane bar.
@@ -66,7 +62,7 @@ Not needed for breakpoints to work.
   * State of the app in the debug pane, when paused at the breakpoint.
   * `this` variable expanded to display its values.
 
-  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}
+  {% asset 'testing/debugging/oem/debug-pane-action.png' alt='App status when hitting the set breakpoint' %}{:width="100%"}
 
 You can step in, out, and over Dart statements, hot reload or resume the app,
 and use the debugger in the same way you'd use any debugger.
@@ -93,7 +89,7 @@ Note that this might be different than the widget tree for the
 build method. Toggle display of the outline using the vertical
 button to the right of the AS window.
 
-{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}
+{% asset 'testing/debugging/oem/flutter-outline.png' alt='screenshot showing the Flutter inspector' %}{:width="100%"}
 
 {% comment %}
 TODO: Android Tips - How to assign a keyboard shortcut on the Mac?
@@ -130,11 +126,11 @@ Considere moving the info below to a new page.
     The plugin simultaneously brings up the Find panel and shows a hint for
     performing this same operation on all three platforms.
 
-    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}
-    Presentation assistant's Find panel
+    {% asset 'testing/debugging/oem/presentation-assistant-find-pane.png' alt='Find panel' %}{:width="100%"}
+    <center>Presentation assistant's Find panel</center>
 
-    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}
-    Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux
+    {% asset 'testing/debugging/oem/presentation-assistant-teaches.png' alt='Find pane' %}{:width="100%"}
+    <center>Presentation assistant's action hint for opening its Find panel on Mac, Windows and Linux</center>
 
   * Enter _attach_ to see the following:
 
@@ -308,7 +304,7 @@ dev_dependencies:
    (or <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='screenshot containing two buttons for opening flutter.dev' %}{:width="100%"}
 
 *  In the debug pane, you should now see a tab for **Android Debugger**.
 
@@ -318,22 +314,24 @@ dev_dependencies:
 
 Both the Dart and OEM debuggers are interacting with the same process.
 User either, or both, to set breakpoints, examine stack, resume execution...
-In other words, DEBUG!
+In other words, debug!
 
-  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}
-  The Dart debug pane with two breakpoints set in `lib/main.dart`.
+  {% asset 'testing/debugging/oem/dart-debugger.png' alt='screenshot of Android Studio in the Dart debug pane.' %}{:width="100%"}
+  <br><center>The Dart debug pane with two breakpoints set in `lib/main.dart`</center>
 
-  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}
-  The Android debug pane with one breakpoint set in
+  {% asset 'testing/debugging/oem/android-debugger.png' alt='screenshot of Android Studio in the Android debug pane.' %}{:width="100%"}
+  <br><center>The Android debug pane with one breakpoint set in
    `GeneratedPluginRegistrant.java`.
   Toggle between the debuggers by clicking the appropriate debugger in
-   the Debug pane's banner.
+   the Debug pane's banner.</center>
 
 ## Debugging with Xcode (iOS)
 
 In order to debug OEM iOS code, you need an app that contains OEM iOS code.
 In this section, you'll learn how to connect two debuggers to your app: 1) the
 Dart debugger and, 2) the Xcode debugger.
+
+[PENDING]
 
 ## Resources
 
@@ -342,24 +340,34 @@ iOS, and Android:
 
 ### Flutter
 
-* [Debugging Flutter Apps](/docs/testing/debugging)
-* [Advanced debugging](/docs/development/tools/android-studio#advanced-debugging), a section in
-  [Developing Flutter Apps in an IDE](/docs/development/tools/android-studio).
+* [Debugging Flutter apps](/docs/testing/debugging)
+* [Flutter inspector][], as well as the general
+  [DevTools][] docs.
 * [Performance Profiling](/docs/testing/ui-performance)
 
 ### Android
 
 You can find the following debugging resources on
-[developer.android.com]({{site.android-dev}}).
+[developer.android.com][].
 
-* [Debug your app]({{site.android-dev}}/studio/debug)
-* [Android Debug
-  Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
+* [Debug your app][]
+* [Android Debug Bridge (adb)][]
 
 ### iOS
 
 You can find the following debugging resources on
-[developer.apple.com](https://developer.apple.com).
+[developer.apple.com][].
 
-* [Debugging](https://developer.apple.com/support/debugging/)
-* [Instruments Help](https://help.apple.com/instruments/mac/current/)
+* [Debugging][]
+* [Instruments Help][]
+
+
+[Flutter's modes]: /docs/testing/build-modes
+[developer.android.com]: {{site.android-dev}}
+[Debug your app]: {{site.android-dev}}/studio/debug
+[Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
+[developer.apple.com]: https://developer.apple.com
+[Debugging]: https://developer.apple.com/support/debugging/
+[Instruments Help]: https://help.apple.com/instruments/mac/current/
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[DevTools]: /docs/development/tools/devtools

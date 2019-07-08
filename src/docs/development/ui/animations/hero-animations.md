@@ -29,26 +29,26 @@ This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
 during flight.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
 
   * [Standard hero animation code](#standard-hero-animation-code)
   * [Radial hero animation code](#radial-hero-animation-code)
-</aside>
+{{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
   Flutter](/docs/development/ui/layout).
-</aside>
+{{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Terminology:**
   A [_Route_](/docs/cookbook/navigation/navigation-basics) describes a page or screen
   in a Flutter app.
-</aside>
+{{site.alert.end}}
 
 You can create this animation in Flutter with Hero widgets. As the hero animates
 from the source to the destination route, the destination route (minus the hero)
@@ -120,11 +120,11 @@ how Flutter performs a hero animation.
     an application overlay, so that it appears on top of both routes.
 {{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
-</aside>
+{{site.alert.end}}
 
 Hero animations are implemented using two
 [Hero]({{site.api}}/flutter/widgets/Hero-class.html)
@@ -133,7 +133,7 @@ and another describing the widget in the destination route.
 From the user’s point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Note about dialogs:**
   Heroes fly from one PageRoute to another. Dialogs
   (displayed with `showDialog()`, for example), use PopupRoutes,
@@ -141,7 +141,7 @@ only the programmer needs to understand this implementation detail.
   you can't animate a hero to a Dialog.
   For further developments (and a possible workaround), [watch this
   issue.]({{site.github}}/flutter/flutter/issues/10667)
-</aside>
+{{site.alert.end}}
 
 Hero animation code has the following structure:
 
@@ -276,7 +276,7 @@ implement hero animations:
 {{site.alert.end}}
 
 <a name="standard-hero-animation-code"></a>
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Standard hero animation code**
 
   Each of the following examples demonstrates flying an image from one
@@ -291,7 +291,7 @@ implement hero animations:
   : Uses the hero widget directly.
     This more basic example, provided for your reference, isn't
     described in this guide.
-</aside>
+{{site.alert.end}}
 
 ### What's going on?
 
@@ -463,7 +463,7 @@ This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
 <a name="radial-hero-animation-code"></a>
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Radial hero animation code**
 
   Each of the following examples demonstrates a radial hero animation.
@@ -482,16 +482,15 @@ provided example to your needs.** The heavy lifting is done for you.
   : Extends radial_hero_animaton by also animating the size of the
     rectangular clip. This more advanced example,
     provided for your reference, isn't described in this guide.
-</aside>
+{{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Pro tip:**
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
-  Flutter's [visual debugging mode](/docs/testing/debugging#visual-debugging)
-  during development.
-</aside>
+  the [`debugPaintSizedEnabled`][] flag during development.
+{{site.alert.end}}
 
 ### What's going on?
 
@@ -672,3 +671,4 @@ The following resources might help when writing animations:
 
 [MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+[`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout

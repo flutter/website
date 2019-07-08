@@ -142,8 +142,27 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart DevTools
-          permalink: https://flutter.github.io/devtools/
+        - title: DevTools
+          permalink: /docs/development/tools/devtools
+          children:
+            - title: Overview
+              permalink: /docs/development/tools/devtools/overview
+            - title: Install from Android Studio / IntelliJ
+              permalink: /docs/development/tools/devtools/android-studio
+            - title: Install from VS Code
+              permalink: /docs/development/tools/devtools/vscode
+            - title: Install from command line
+              permalink: /docs/development/tools/devtools/cli
+            - title: Flutter inspector
+              permalink: /docs/development/tools/devtools/inspector
+            - title: Timeline view
+              permalink: /docs/development/tools/devtools/timeline
+            - title: Memory view
+              permalink: /docs/development/tools/devtools/memory
+            - title: Debugger
+              permalink: /docs/development/tools/devtools/debugger
+            - title: Logging view
+              permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -155,15 +174,15 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
-        - title: Flutter inspector
-          permalink: https://flutter.github.io/devtools/inspector
 
 - title: Testing & optimization
   permalink: /docs/testing
   children:
     - title: Debugging
       permalink: /docs/testing/debugging
-    - title: Using OEM debuggers
+    - title: Debugging apps programmatically
+      permalink: /docs/testing/code-debugging
+    - title: Using an OEM debugger
       permalink: /docs/testing/oem-debuggers
     - title: Flutter's build modes
       permalink: /docs/testing/build-modes

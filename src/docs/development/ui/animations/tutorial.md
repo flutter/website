@@ -357,7 +357,7 @@ leaks.
 
 With these few changes, you’ve created your first animation in Flutter!
 
-<aside class="alert alert-success" markdown="1">
+{{site.alert.secondary}}
   **Dart language tricks:**
   You might not be familiar with Dart's cascade notation&mdash;the two
   dots in `..addListener()`. This syntax means that the `addListener()`
@@ -384,7 +384,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   You can learn more about cascade notation in the
   [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
-</aside>
+{{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
 

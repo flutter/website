@@ -14,11 +14,11 @@ short-title: Staggered
   * For each property being animated, create a Tween.
 {{site.alert.end}}
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
   [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
-</aside>
+{{site.alert.end}}
 
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.
@@ -75,12 +75,12 @@ The square runs through changes in the following order:
 
 After running forward, the animation runs in reverse.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
   widgets.  For more information, see [Building Layouts in
   Flutter](/docs/development/ui/layout).
-</aside>
+{{site.alert.end}}
 
 ## Basic structure of a staggered animation
 

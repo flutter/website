@@ -270,8 +270,10 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following links to get back on track.
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
 * [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
@@ -394,8 +396,10 @@ a child inside the existing `MyApp` stateless widget.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
@@ -549,8 +553,10 @@ lazily, on demand.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code at the following link
-to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
@@ -585,3 +591,7 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
+
+
+
+[DevTools]: /docs/development/tools/devtools

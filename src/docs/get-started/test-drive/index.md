@@ -9,7 +9,8 @@ next:
 toc: false
 ---
 
-This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.
+This page describes how to create a new Flutter app from templates, run it,
+and experience "hot reload" after you make changes to the app.
 
 Select your development tool of choice for writing, building, and running
 Flutter apps.
