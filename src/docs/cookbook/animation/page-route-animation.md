@@ -15,12 +15,12 @@ transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
 [PageRouteBuilder](https://api.flutter.dev/flutter/widgets/PageRouteBuilder-class.html)
 provides an
-[Animation](https://api.flutter.dev/flutter/animation/Animation-class.html) that
-can be used with
+[Animation](https://api.flutter.dev/flutter/animation/Animation-class.html)
+object. This `Animation` can be used with
 [Tween](https://api.flutter.dev/flutter/animation/Tween-class.html) and
-[Curve](https://api.flutter.dev/flutter/animation/Curve-class.html) to customize
-the transition animation. This recipe shows how to transition between routes by
-animating the new route into view from the bottom of the screen.
+[Curve](https://api.flutter.dev/flutter/animation/Curve-class.html) objects to
+customize the transition animation. This recipe shows how to transition between
+routes by animating the new route into view from the bottom of the screen.
 
 To create a custom page route transition, this recipe uses the following steps:
 
