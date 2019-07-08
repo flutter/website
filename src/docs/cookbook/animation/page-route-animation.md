@@ -3,11 +3,14 @@
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
 transition between screens can make an app more unique. To help,
-`PageRouteBuilder` provides an `Animation` that can be used with `Tween` and
-`Curve` to customize the transition animation. This recipe shows how to
-transition between routes by animating the new route into view from the bottom
-of the screen.
-
+[PageRouteBuilder](https://api.flutter.dev/flutter/widgets/PageRouteBuilder-class.html)
+provides an
+[Animation](https://api.flutter.dev/flutter/animation/Animation-class.html) that
+can be used with
+[Tween](https://api.flutter.dev/flutter/animation/Tween-class.html) and
+[Curve](https://api.flutter.dev/flutter/animation/Curve-class.html) to customize
+the transition animation. This recipe shows how to transition between routes by
+animating the new route into view from the bottom of the screen.
 
 To create a custom page route transition, this recipe uses the following steps:
 
@@ -19,14 +22,20 @@ To create a custom page route transition, this recipe uses the following steps:
 
 # 1. Set up a PageRouteBuilder
 
-To start, use a `PageRouteBuilder` to create a `Route. PageRouteBuilder` has two
-callbacks, one to build the content of the route (`pageBuilder`), and one to
-build the route's transition (`transitionsBuilder`). 
+To start, use a
+[PageRouteBuilder](https://api.flutter.dev/flutter/widgets/PageRouteBuilder-class.html)
+to create a [Route](https://api.flutter.dev/flutter/widgets/Route-class.html).
+`PageRouteBuilder` has two callbacks, one to build the content of the route
+(`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
+
+{{site.alert.note}}
 
 Note: The `child` parameter in transitionsBuilder is the widget returned from
-pageBuilder. The `pageBuilder `function is only called the first time the route
-is built. The framework can avoid extra work because  `child` stays the same
+pageBuilder. The `pageBuilder` function is only called the first time the route
+is built. The framework can avoid extra work because `child` stays the same
 throughout the transition.
+
+{{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
@@ -102,13 +111,15 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 # 3. Use an AnimatedWidget
 
-Flutter has a set of widgets extending `AnimatedWidget` that rebuild themselves
-when the value of the animation changes. For instance, SlideTransition takes an
-`Animation<Offset>` and translates its child (using a FractionalTranslation
-widget) whenever the value of the animation changes.
+Flutter has a set of widgets extending
+[AnimatedWidget](https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html)
+that rebuild themselves when the value of the animation changes. For instance,
+SlideTransition takes an `Animation<Offset>` and translates its child (using a
+FractionalTranslation widget) whenever the value of the animation changes.
 
-AnimatedWidget Return a SlideTransition with the `Animation<Offset>` and the
-child widget:
+AnimatedWidget Return a
+[SlideTransition](https://api.flutter.dev/flutter/widgets/SlideTransition-class.html)
+with the `Animation<Offset>` and the child widget:
 
 ```
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -126,25 +137,28 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 # 4. Use a CurveTween
 
-Flutter provides a selection of different
-[curves](https://api.flutter.dev/flutter/animation/Curves-class.html) that
-adjust the rate of the animation over time. The `Curves` class provides a
-predefined set of commonly used curves. For example, `Curves.easeOut` will make
-the animation start quickly and end slowly. 
+Flutter provides a selection of easing curves that adjust the rate of the
+animation over time. The
+[Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) class
+provides a predefined set of commonly used curves. For example, `Curves.easeOut`
+will make the animation start quickly and end slowly.
 
-To use a Curve, create a new `CurveTween` and pass it a Curve:
+To use a Curve, create a new
+[CurveTween](https://api.flutter.dev/flutter/animation/CurveTween-class.html)
+and pass it a Curve:
 
 ```
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
 ```
 
-This new Tween still produces values from 0 to 1. The next step is to combine
-this tween with the `Tween<Offset>`.
+This new Tween still produces values from 0 to 1. In the next step, it will be
+combined the `Tween<Offset>` from step 2.
 
 # 5. Combine the two Tweens
 
-To combine the tweens, use `chain()`:
+To combine the tweens, use
+[chain()](https://api.flutter.dev/flutter/animation/Animatable/chain.html):
 
 ```
 var begin = Offset(0.0, 1.0);
@@ -174,7 +188,8 @@ values are computed in this order:
    curve.
 3. The `Tween<Offset>` maps the `double` values to `Offset` values.
 
-Another way to create an `Animation<Offset>` with an easing curve is to use a `CurvedAnimation`:
+Another way to create an `Animation<Offset>` with an easing curve is to use a
+`CurvedAnimation`:
 
 ```
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
