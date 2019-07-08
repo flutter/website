@@ -277,3 +277,4 @@ class Page2 extends StatelessWidget {
 }
 ```
 
+![Demo showing a custom page route transition animating up from the bottom of the screen](/images/cookbook/page-route-animation.gif){:.site-mobile-screenshot}
