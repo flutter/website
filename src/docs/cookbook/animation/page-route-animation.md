@@ -212,8 +212,6 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 
 # Complete Example
 
-[video](https://drive.google.com/open?id=1x8r4Mf6C5wf8cXOm-Ml5Ybls9qtNtzNX)
-
 ```
 import 'package:flutter/material.dart';
 
