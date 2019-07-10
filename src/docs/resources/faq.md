@@ -907,7 +907,7 @@ deployed to Apple's App Store.
 [Flutter 1.0: Google's Portable UI Toolkit]: https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html
 [editing Dart]: {{site.dart-site}}/tools
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[VS Code][]: /docs/development/tools/vs-code
+[VS Code]: /docs/development/tools/vs-code
 [widgets]: /docs/development/ui/widgets
 [MDC-103 Flutter: Material Theming]: {{site.codelabs}}/codelabs/mdc-103-flutter
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
