@@ -44,6 +44,12 @@ channels as illustrated in this diagram:
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
 
+{{site.alert.note}} 
+  Even though Flutter sends messages to and from Dart asynchronously,
+  whenever you invoke a channel method, you must invoke that method on the
+  platform's main thread.
+{{site.alert.end}}
+
 On the client side, `MethodChannel` ([API][MethodChannel]) enables sending
 messages that correspond to method calls. On the platform side, `MethodChannel`
 on Android ([API][MethodChannelAndroid]) and `FlutterMethodChannel` on iOS
@@ -240,6 +246,7 @@ public class MainActivity extends FlutterActivity {
                 new MethodCallHandler() {
                     @Override
                     public void onMethodCall(MethodCall call, Result result) {
+                        // Note: this method is invoked on the main thread.
                         // TODO
                     }
                 });
@@ -304,6 +311,7 @@ And replace with the following:
 ```java
 @Override
 public void onMethodCall(MethodCall call, Result result) {
+    // Note: this method is invoked on the main thread.
     if (call.method.equals("getBatteryLevel")) {
         int batteryLevel = getBatteryLevel();
 
@@ -360,6 +368,7 @@ class MainActivity() : FlutterActivity() {
 
     GeneratedPluginRegistrant.registerWith(this)
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // Note: this method is invoked on the main thread.
       // TODO
     }
   }
@@ -419,6 +428,7 @@ And replace with the following:
 
 ```kotlin
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+      // Note: this method is invoked on the main thread.
       if (call.method == "getBatteryLevel") {
         val batteryLevel = getBatteryLevel()
 
@@ -473,6 +483,7 @@ as was used on the Flutter client side.
                                           binaryMessenger:controller];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+    // Note: this method is invoked on the UI thread.
     // TODO
   }];
 
@@ -509,6 +520,7 @@ the `result` argument. If an unknown method is called, report that instead.
 ```objectivec
 __weak typeof(self) weakSelf = self
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
+  // Note: this method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {
     int batteryLevel = [weakSelf getBatteryLevel];
 
@@ -569,6 +581,7 @@ a `FlutterMethodChannel` tied to the channel name
                                               binaryMessenger: controller)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: FlutterResult) -> Void in
+      // Note: this method is invoked on the UI thread.
       // Handle battery messages.
     })
 
@@ -607,6 +620,7 @@ is called, report that instead.
 ```swift
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+  // Note: this method is invoked on the UI thread.
   guard call.method == "getBatteryLevel" else {
     result(FlutterMethodNotImplemented)
     return
