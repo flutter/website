@@ -27,18 +27,52 @@ To stay on top of Flutter announcements, including breaking changes, join the
 [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 Google group.
 
-**May 7, 2019, Google I/O Edition**
+**July 9, 2019**
 
-[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html)
-is live!
+Flutter 1.7 is live!
 
-For more information on updates, see the [release
-notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
-or [download the release](/docs/development/tools/sdk/archive).
+For more information, see [Announcing Futter
+1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
+on the [Flutter Medium Publication]({{site.flutter-medium}}).
+{% comment %} Not ready yet
+and the [1.7 release notes]()
+on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
+{% endcomment %}
 
-We are updating DartPad to work with Flutter. Try our new
-[Basic Flutter layout codelab](/docs/codelabs/layout-basics)
-and tell us what you think!
+New and updated docs on the site include:
+
+* The [Preparing an Android app for release](/docs/deployment/android)
+  page is updated to discuss how to build an Android release
+  using an app bundle, as well as how to create separate APK
+  files for both 32-bit and 64-bit devices.
+* The [DevTools](/docs/development/tools/devtools) docs are migrated
+  to flutter.dev. If you haven't tried this browser-based suite
+  of debugging, performance, memory, and inspection tools that
+  work with both Flutter and Dart apps and can be launched from
+  Android Studio/IntelliJ _and_ VS Code, please check it out!
+* The [Simple app state
+  management](/docs/development/data-and-backend/state-mgmt/simple)
+  page is updated. The example code in the page now uses the 3.0
+  release of the Provider package.
+* A new animation recipe, [Animate a page route
+  transition](/docs/cookbook/animation/page-route-animation)
+  has been added to the [Cookbook](/docs/cookbook).
+* The [Debugging](/docs/testing/debugging), 
+  [Flutter's build modes](/docs/testing/build-modes),
+  [Performance best practices](/docs/testing/best-practices), and
+  [Performance profiling](/docs/testing/ui-performance)
+  pages are updated to reflect DevTools. A
+  [Debugging apps programmatically](/docs/testing/code-debugging)
+  page has also been added.
+
+The Flutter 1.7 release includes the new
+[RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
+component, which allows the user to select both the upper and lower
+endpoints in a range of values. Look for an article later this week
+on the [Flutter Medium Publication]({{site.flutter-medium}})
+about this new component and how to customize it.
+
+Happy Fluttering!
 
 [What's new archive](/docs/whats-new-archive)
 
