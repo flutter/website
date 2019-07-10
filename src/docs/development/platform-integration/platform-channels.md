@@ -664,19 +664,20 @@ classes, or create your own codec.
 
 ## Channels and Platform Threading
 
-When writing code on the platform side, which is the Android/iOS side using
-Java/Kotlin/Objective-C/Swift, all channel methods must be invoked on the
-platform's main thread. Please see official documentation about [the main
-thread on Android] and [the main thread on iOS].
+Invoke all channel methods on the platform's main thread when writing code on
+the platform side. On Android, this thread is sometimes called the "main
+thread", but it is technically defined as [the UI thread]. Annotate methods that
+need to be run on the UI thread with `@UiThread`. On iOS, this thread is
+officially referred to as [the main thread].
 
-[the main thread on Android]: https://developer.android.com/guide/components/processes-and-threads#Threads
-[the main thread on iOS]: https://developer.apple.com/documentation/uikit?language=objc
+[the UI thread]: https://developer.android.com/guide/components/processes-and-threads#Threads
+[the main thread]: https://developer.apple.com/documentation/uikit?language=objc
 
-### Jumping to the main thread in Android
+### Jumping to the UI thread in Android
 
-To comply with channels' main thread requirement, you may need to jump from a
-background thread to Android's main thread to execute a channel method. In
-Android this is accomplished by `post()`ing a `Runnable` to Android's main
+To comply with channels' UI thread requirement, you may need to jump from a
+background thread to Android's UI thread to execute a channel method. In
+Android this is accomplished by `post()`ing a `Runnable` to Android's UI
 thread `Looper`, which will cause the `Runnable` to execute on the main thread
 at the next opportunity.
 
