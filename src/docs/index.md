@@ -68,7 +68,9 @@ New and updated docs on the site include:
 The Flutter 1.7 release includes the new
 [RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
 component, which allows the user to select both the upper and lower
-endpoints in a range of values. Look for an article later this week
+endpoints in a range of values. For more information, see
+[Material RangeSlider in
+Flutter]({{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d)
 on the [Flutter Medium Publication]({{site.flutter-medium}})
 about this new component and how to customize it.
 
