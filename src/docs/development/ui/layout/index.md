@@ -44,8 +44,8 @@ The second screenshot displays the visual layout, showing a row of
   Most of the screenshots in this tutorial are displayed with
   `debugPaintSizeEnabled` set to true so you can see the visual layout.
   For more information, see
-  [Visual debugging](/docs/testing/debugging#visual-debugging), a section in
-  [Debugging Flutter apps](/docs/testing/debugging).
+  [Debugging layout issues visually][], a section in
+  [Using the Flutter inspector][].
 {{site.alert.end}}
 
 Here's a diagram of the widget tree for this UI:
@@ -54,10 +54,10 @@ Here's a diagram of the widget tree for this UI:
 {:.text-center}
 
 Most of this should look as you might expect, but you might be wondering
-about the containers (shown in pink). [Container][] is a widget class that allows
-you to customize its child widget. Use a `Container` when you want to
-add padding, margins, borders, or background color, to name some of its
-capabilities.
+about the containers (shown in pink). [Container][] is a widget class
+that allows you to customize its child widget. Use a `Container` when
+you want to add padding, margins, borders, or background color,
+to name some of its capabilities.
 
 In this example, each [Text][] widget is placed in a `Container` to add margins.
 The entire [Row][] is also placed in a `Container` to add padding around the
@@ -1189,3 +1189,5 @@ The following resources might help when writing layout code.
 [tutorial]: /docs/development/ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /docs/development/ui/widgets
+[Debugging layout issues visually]: /docs/development/tools/devtools/inspector#debugging-layout-issues-visually
+[Using the Flutter inspector]: /docs/development/tools/devtools/inspector
