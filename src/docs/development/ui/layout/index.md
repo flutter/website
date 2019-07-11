@@ -56,7 +56,7 @@ Here's a diagram of the widget tree for this UI:
 Most of this should look as you might expect, but you might be wondering
 about the containers (shown in pink). [Container][] is a widget class
 that allows you to customize its child widget. Use a `Container` when
-you want to,add padding, margins, borders, or background color,
+you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
 In this example, each [Text][] widget is placed in a `Container` to add margins.
