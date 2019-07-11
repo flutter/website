@@ -4,11 +4,6 @@ description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---
 
-{{site.alert.warning}}
-  This page describes the Android release process as of the
-  1.7.4 release of the Flutter SDK.
-{{site.alert.end}}
-
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**
