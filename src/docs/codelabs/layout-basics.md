@@ -77,7 +77,7 @@ If you've set it to `max`, though, the `Row` might have some
 additional space lying around.  You can use the `mainAxisAlignment`
 property to control how the `Row` aligns its children within that space.
 
-There are six different values available in the `MainAxisAlignment` enum:
+There are six different values available in the `MainAxisAlignment` menu:
 
 * `MainAxisAligment.start`<br>
    Place all children as close to the start of the `Row` as possible
