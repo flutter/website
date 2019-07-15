@@ -67,7 +67,7 @@ rules governing the proper use of the Flutter trademarks.
   trademarks of Google LLC. We are not endorsed by or affiliated with
   Google LLC."
 * Keep some distance between the Flutter trademarks and any other trademarks,
-  logos, or icons that are displayed on the webpage.
+  logos, or icons that are displayed on the webpage.  
 
 **DON'T:**
 
@@ -115,4 +115,9 @@ below are specific exceptions to the rules described above:
    Where the Flutter trademarks are displayed on a social media account
    as part of a community site name, you should include a disclaimer that
    clarifies that it is not an official Google account.
+   
+3. <b>[Unofficial Flutter Events]</b> You may use the Flutter trademarks as part of the name 
+   of a community event (e.g. conference), but please make sure to include the following disclaimer 
+   on the event website in a prominent and easy-to-see spot:  "Flutter and the related logo are trademarks of Google LLC.
+   [Title of event] is not affiliated with or otherwise sponsored by Google LLC."  
 

@@ -125,9 +125,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ### 3. Give focus to the `TextField` when a button is tapped
 
 Finally, focus the text field when the user taps a floating
-action button. Use the
-[`requestFocus()`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html)
-method to perform this task.
+action button. Use the [`requestFocus()`][] method to perform
+this task.
 
 <!-- skip -->
 ```dart
@@ -218,3 +217,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 ![Text Field Focus Demo](/images/cookbook/focus.gif){:.site-mobile-screenshot}
+
+
+
+[`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html
