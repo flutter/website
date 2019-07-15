@@ -370,8 +370,9 @@ making the compression less efficient
 section of Apple's [QA1795][]).
 
 Of course, YMMV, and we recommend that you measure your own app.
-To measure an Android app, run `flutter build apk` and load the APK
-(`build/app/outputs/apk/release/app-release.apk`) into Android Studio
+To measure an Android app, run `flutter build apk` (using the new
+`--split-per-abi` option in version 1.7.8+hotfix.3 and later) and load the
+APK (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
 ([instructions][instructions-android]) for a detailed size report.
 To measure an iOS app, upload a release IPA to Apple's App Store Connect
 ([instructions][instructions-ios]) and obtain the size report from there.
