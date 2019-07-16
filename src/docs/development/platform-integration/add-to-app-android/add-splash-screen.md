@@ -27,7 +27,7 @@ Every Android app requires initialization time while the operating system sets
 up the app's Process. Android provides the concept of a [launch screen] to
 display a `Drawable` while the app is initializing.
 
-[launch screen]: https://developer.android.com/topic/performance/vitals/launch-time#themed
+[launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 
 Flutter provides support for displaying an Android launch screen before showing
 a `FlutterActivity`. Here are instructions to display an Android launch screen:
@@ -46,7 +46,7 @@ In `styles.xml`, define a theme whose `windowBackground` is set to the
 ### Define a normal theme
 
 In `styles.xml`, define a normal theme to be applied to `FlutterActivity` after
-the launch screen is gone. The normal theme background will only show for a very
+the launch screen is gone. The normal theme background only shows for a very
 brief moment after the splash screen disappears, and during orientation change
 and `Activity` restoration. Therefore, it is recommended that the normal theme
 use a solid background color that looks similar to the primary background color
@@ -109,7 +109,7 @@ the following meta-data to the associated `FlutterActivity` in
 
 ```xml
 <meta-data
-    android:name="io.flutter.embedding.android.DrawableSplashScreen"
+    android:name="io.flutter.embedding.android.SplashScreenDrawable"
     android:resource="@drawable/my_splash"
     />
 ```
