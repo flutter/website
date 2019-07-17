@@ -15,7 +15,7 @@ The performance view allows you to record and profile a session from your Dart a
 
 ## CPU Profiler
 Start recording a CPU profile by clicking Record. When you are done recording, click Stop. At this
-point, CPU profiling data will be pulled from the VM and displayed in the profiler views (Call Tree,
+point, CPU profiling data is pulled from the VM and displayed in the profiler views (Call Tree,
 Bottom Up, and Flame Chart). 
 
 ### Flame chart
