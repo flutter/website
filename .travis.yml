@@ -40,7 +40,7 @@ script: $TASK
 
 after_script:
   - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh || travis_terminate 1; fi
-  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external fi
+  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external; fi
 
 deploy:
   - provider: script
