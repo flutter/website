@@ -27,21 +27,20 @@ This rate can be modified via the selector at the top of the page. The sampling 
 for low, medium, and high granularity are 1 / 50 μs, 1 / 250 μs, and 1 / 1000 μs,
 respectively. It is important to know the trade-offs of modifying this setting.
 
-A **higher granularity** profile will have a higher sampling rate, and therefore
-a finer-grained CPU profile with more samples. This may also have a performance
-impact on your app since the VM is being interrupted more often to collect samples.
-This will also cause the VM's CPU sample buffer to overflow more quickly. The VM has
-limited space with which it can store CPU sample information. At a higher sampling
-rate, this space will fill up and begin to overflow sooner than it would have if a
+A **higher granularity** profile has a higher sampling rate, and therefore yields
+a fine-grained CPU profile with more samples. This may also impact performance of
+your app since the VM is being interrupted more often to collect samples.
+This also causes the VM's CPU sample buffer to overflow more quickly. The VM has
+limited space where it can store CPU sample information. At a higher sampling
+rate, the space fills up and begins to overflow sooner than it would have if a
 lower sampling rate was used. This means that you may not have access to CPU samples
 from the beginning of the recorded profile.
 
-A **lower granularity** profile will have a lower sampling rate, and therefore will
-yield a coarse-grained CPU profile with fewer samples. However, this comes with a
-lighter performance impact on your app. The VM's sample buffer will also fill less
-quickly, so you will be able to see CPU samples for a longer period of app run time.
-This means you will have a better chance of viewing CPU samples from the beginning
-of the recorded profile.
+A **lower granularity** profile has a lower sampling rate, and therefore
+yields a coarse-grained CPU profile with fewer samples. However, this impacts your
+app's performance less. The VM's sample buffer also fills more slowly, so you can see
+CPU samples for a longer period of app run time. This means that you have a better
+chance of viewing CPU samples from the beginning of the recorded profile.
 
 
 ### Flame chart
@@ -96,7 +95,7 @@ In this table, a method can be expanded to show its _callers_.
     method spent executing only its own code. For sub nodes
     (the callers in the CPU profile), this is the self time
     of the callee when being called by the caller.
-    Using the following example, the self time of the caller
+    In the following example, the self time of the caller
     `Element.updateSlotForChild.visit()` is equal to the self time of
     the callee `[Stub] OneArgCheckInLineCache` when being called by
     the caller.
