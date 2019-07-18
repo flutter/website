@@ -33,11 +33,10 @@ Flutter 1.7 is live!
 
 For more information, see [Announcing Futter
 1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
-on the [Flutter Medium Publication]({{site.flutter-medium}}).
-{% comment %} Not ready yet
-and the [1.7 release notes]()
+on the [Flutter Medium Publication]({{site.flutter-medium}}),
+and the [1.7.8 release
+notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
 on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
-{% endcomment %}
 
 New and updated docs on the site include:
 
@@ -68,9 +67,9 @@ New and updated docs on the site include:
 The Flutter 1.7 release includes the new
 [RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
 component, which allows the user to select both the upper and lower
-endpoints in a range of values. Look for an article later this week
-on the [Flutter Medium Publication]({{site.flutter-medium}})
-about this new component and how to customize it.
+endpoints in a range of values. For information about this
+component and how to customize it, see [Material RangeSlider in
+Flutter]({{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d).
 
 Happy Fluttering!
 
