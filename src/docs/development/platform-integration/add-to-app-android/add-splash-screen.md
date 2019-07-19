@@ -43,6 +43,11 @@ In `styles.xml`, define a theme whose `windowBackground` is set to the
 </style>
 ```
 
+{{site.alert.note}} 
+  The default Flutter project template includes a definition of a launch theme
+  and a launch background.
+{{site.alert.end}} 
+
 ### Define a normal theme
 
 In `styles.xml`, define a normal theme to be applied to `FlutterActivity` after
@@ -87,9 +92,10 @@ initializes.
 ## Flutter Splash Screen
 
 Each Flutter experience in an app requires a few moments to initialize the Dart
-isolate that runs the code. This means a user momentarily sees a blank screen.
-Flutter supports an improved user experience by displaying an Android `View` as 
-a splash screen while Flutter initializes.
+isolate that runs the code. This means a user momentarily sees a blank screen
+until Flutter renders its first frame. Flutter supports an improved user
+experience by displaying an Android `View` as a splash screen while Flutter
+initializes.
 
 Flutter supports two options for a splash screen. Developers can choose to
 display a `Drawable` of their choice, which then fades out once initialization
@@ -113,6 +119,10 @@ the following meta-data to the associated `FlutterActivity` in
     android:resource="@drawable/my_splash"
     />
 ```
+
+To display a splash screen with the exact same visual as a launch screen,
+reference the same `@drawable/launch_background` in the
+`io.flutter.embedding.android.SplashScreenDrawable` `meta-data`.
 
 #### In a FlutterFragment
 
@@ -143,7 +153,7 @@ Splash screens are a great branding opportunity. As such, many teams choose to
 implement unique, highly-customized splash experiences. To facilitate this,
 Flutter allows developers to display an arbitrary Android `View` as a splash
 screen, and even allows developers to control how that `View` transitions to
-Flutter.
+Flutter once Flutter has rendered its first frame.
 
 #### Implement a custom splash View
 
