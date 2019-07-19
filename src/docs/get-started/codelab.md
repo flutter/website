@@ -596,6 +596,6 @@ where you add the following functionality:
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
 
-
+https://ci.appveyor.com/api/github/webhook?id=dtkdksp9o48k979d
 
 [DevTools]: /docs/development/tools/devtools
