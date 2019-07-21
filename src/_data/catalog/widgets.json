@@ -701,8 +701,7 @@
   {
     "name": "Center",
     "description": "A widget that centers its child within itself.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -712,8 +711,7 @@
   {
     "name": "Align",
     "description": "A widget that aligns its child within itself and optionally sizes itself based on the child's size.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -723,8 +721,7 @@
   {
     "name": "FittedBox",
     "description": "Scales and positions its child within itself according to fit.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -734,8 +731,7 @@
   {
     "name": "AspectRatio",
     "description": "A widget that attempts to size the child to a specific aspect ratio.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -745,8 +741,7 @@
   {
     "name": "ConstrainedBox",
     "description": "A widget that imposes additional constraints on its child.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -756,8 +751,7 @@
   {
     "name": "Baseline",
     "description": "A widget that positions its child according to the child's baseline.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -767,8 +761,7 @@
   {
     "name": "FractionallySizedBox",
     "description": "A widget that sizes its child to a fraction of the total available space. For more details about the layout algorithm, see RenderFractionallySizedOverflowBox.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -778,8 +771,7 @@
   {
     "name": "IntrinsicHeight",
     "description": "A widget that sizes its child to the child's intrinsic height.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -789,8 +781,7 @@
   {
     "name": "IntrinsicWidth",
     "description": "A widget that sizes its child to the child's intrinsic width.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -800,8 +791,7 @@
   {
     "name": "LimitedBox",
     "description": "A box that limits its size only when it's unconstrained.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -811,8 +801,7 @@
   {
     "name": "Offstage",
     "description": "A widget that lays the child out as if it was in the tree, but without painting anything, without making the child available for hit testing, and without taking any room in the parent.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -822,8 +811,7 @@
   {
     "name": "OverflowBox",
     "description": "A widget that imposes different constraints on its child than it gets from its parent, possibly allowing the child to overflow the parent.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -833,8 +821,7 @@
   {
     "name": "SizedBox",
     "description": "A box with a specified size. If given a child, this widget forces its child to have a specific width and/or height (assuming values are permitted by this widget's parent). If either the width or height is null, this widget will size itself to match the child's size in that dimension.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -844,8 +831,7 @@
   {
     "name": "SizedOverflowBox",
     "description": "A widget that is a specific size but passes its original constraints through to its child, which will probably overflow.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -867,8 +853,7 @@
   {
     "name": "CustomSingleChildLayout",
     "description": "A widget that defers the layout of its single child to a delegate.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Single-child layout widgets"
     ],
@@ -878,8 +863,7 @@
   {
     "name": "IndexedStack",
     "description": "A Stack that shows a single child from a list of children.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -902,8 +886,7 @@
   {
     "name": "Flow",
     "description": "A widget that implements the flow layout algorithm.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -913,8 +896,7 @@
   {
     "name": "Table",
     "description": "A widget that uses the table layout algorithm for its children.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -924,8 +906,7 @@
   {
     "name": "Wrap",
     "description": "A widget that displays its children in multiple horizontal or vertical runs.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -935,8 +916,7 @@
   {
     "name": "ListBody",
     "description": "A widget that arranges its children sequentially along a given axis, forcing them to the dimension of the parent in the other axis.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -946,8 +926,7 @@
   {
     "name": "CustomMultiChildLayout",
     "description": "A widget that uses a delegate to size and position multiple children.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -957,8 +936,7 @@
   {
     "name": "LayoutBuilder",
     "description": "Builds a widget tree that can depend on the parent widget's size.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -971,8 +949,7 @@
     "categories": [
       "Text"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RichText-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -982,8 +959,7 @@
     "categories": [
       "Text"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -993,8 +969,7 @@
     "categories": [
       "Assets, Images, and Icons"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RawImage-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1004,8 +979,7 @@
     "categories": [
       "Assets, Images, and Icons"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/services/AssetBundle-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1015,8 +989,7 @@
     "categories": [
       "Input"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Form-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1026,8 +999,7 @@
     "categories": [
       "Input"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FormField-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1037,8 +1009,7 @@
     "categories": [
       "Input"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RawKeyboardListener-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1048,8 +1019,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1059,8 +1029,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedCrossFade-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1082,16 +1051,14 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Draggable",
     "description": "A widget that can be dragged from to a DragTarget. When a draggable widget recognizes the start of a drag gesture, it displays a feedback widget that tracks the user's finger across the screen. If the user lifts their finger while on top of a DragTarget, that target is given the opportunity to accept the data carried by the draggable.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1101,8 +1068,7 @@
   {
     "name": "LongPressDraggable",
     "description": "Makes its child draggable starting from long press.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1112,8 +1078,7 @@
   {
     "name": "GestureDetector",
     "description": "A widget that detects gestures. Attempts to recognize gestures that correspond to its non-null callbacks. If this widget has a child, it defers to that child for its sizing behavior. If it does not have a child, it grows to fit the parent instead.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1123,8 +1088,7 @@
   {
     "name": "DragTarget",
     "description": "A widget that receives data when a Draggable widget is dropped. When a draggable is dragged on top of a drag target, the drag target is asked whether it will accept the data the draggable is carrying. If the user does drop the draggable on top of the drag target (and the drag target has indicated that it will accept the draggable's data), then the drag target is asked to accept the draggable's data.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1134,8 +1098,7 @@
   {
     "name": "Dismissible",
     "description": "A widget that can be dismissed by dragging in the indicated direction. Dragging or flinging this widget in the DismissDirection causes the child to slide out of view. Following the slide animation, if resizeDuration is non-null, the Dismissible widget animates its height (or width, whichever is perpendicular to the dismiss direction) to zero over the resizeDuration.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1145,8 +1108,7 @@
   {
     "name": "IgnorePointer",
     "description": "A widget that is invisible during hit testing. When ignoring is true, this widget (and its subtree) is invisible to hit testing. It still consumes space during layout and paints its child as usual. It just cannot be the target of located events, because it returns false from RenderBox.hitTest.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1156,8 +1118,7 @@
   {
     "name": "AbsorbPointer",
     "description": "A widget that absorbs pointers during hit testing. When absorbing is true, this widget prevents its subtree from receiving pointer events by terminating hit testing at itself. It still consumes space during layout and paints its child as usual. It just prevents its children from being the target of located events, because it returns true from RenderBox.hitTest.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Touch interactions"
     ],
@@ -1167,8 +1128,7 @@
   {
     "name": "Navigator",
     "description": "A widget that manages a set of child widgets with a stack discipline. Many apps have a navigator near the top of their widget hierarchy in order to display their logical history using an Overlay with the most recently visited pages visually on top of the older pages. Using this pattern lets the navigator visually transition from one page to another by moving the widgets around in the overlay. Similarly, the navigator can be used to show a dialog by positioning the dialog widget above the current page.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Routing"
     ],
@@ -1181,8 +1141,7 @@
     "categories": [
       "Styling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Theme-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1192,8 +1151,7 @@
     "categories": [
       "Styling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/MediaQuery-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1216,8 +1174,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/NestedScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1227,8 +1184,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SingleChildScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1250,8 +1206,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/Scrollbar-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1261,8 +1216,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1272,8 +1226,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/NotificationListener-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1283,8 +1236,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ScrollConfiguration-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1294,8 +1246,7 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/material/RefreshIndicator-class.html",
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png'>"
   },
@@ -1305,8 +1256,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Opacity-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
   },
@@ -1316,8 +1266,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/DecoratedBox-class.html",
     "image": "<svg viewBox='0 0 100 100'><defs><filter id='shadow-decorated-box' x='-50%' y='-50%' width='200%' height='200%'><feGaussianBlur stdDeviation='4'/></filter><linearGradient id='gradient-decorated-box' x1='0' y1='0' x2='0.5' y2='1'><stop offset='50%' stop-color='#ffffff'/><stop offset='100%' stop-color='#f50057'/></linearGradient></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='25' y='25' width='50' height='50' rx='10' ry='10' fill='#000000' filter='url(#shadow-decorated-box)'/><rect x='25' y='25' width='50' height='50' rx='10' ry='10' fill='url(#gradient-decorated-box)' stroke-width='5' stroke='#4dd0e1'/></svg>"
   },
@@ -1327,8 +1276,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FractionalTranslation-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1338,8 +1286,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RotatedBox-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1349,8 +1296,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ClipOval-class.html",
     "image": "<svg viewBox='0 0 100 100'><defs><clipPath id='clip-oval'><circle cx='40' cy='50' r='30'/></clipPath></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' opacity='0.05'/><circle cx='40' cy='50' r='30' fill='#ffffff'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' clip-path='url(#clip-oval)'/></svg>"
   },
@@ -1360,8 +1306,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ClipPath-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1371,8 +1316,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ClipRect-class.html",
     "image": "<svg viewBox='0 0 100 100'><defs><clipPath id='clip-rect'><rect x='10' y='20' width='60' height='60'/></clipPath></defs><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' opacity='0.05'/><rect x='10' y='20' width='60' height='60' fill='#ffffff'/><rect x='30' y='10' width='60' height='50' fill='#4dd0e1' clip-path='url(#clip-rect)'/></svg>"
   },
@@ -1382,8 +1326,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/CustomPaint-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='20' y='20' width='60' height='60' fill='#ffffff'/><ellipse cx='40' cy='35' rx='10' ry='10' stroke-width='5' stroke='#4dd0e1' fill='transparent'/><ellipse cx='20' cy='71' rx='15' ry='20' stroke-width='5' stroke='#4dd0e1' fill='transparent' transform='rotate(-25)'/></svg>"
   },
@@ -1393,8 +1336,7 @@
     "categories": [
       "Painting and effects"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/BackdropFilter-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1404,8 +1346,7 @@
     "categories": [
       "Accessibility"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Semantics-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1415,8 +1356,7 @@
     "categories": [
       "Accessibility"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/MergeSemantics-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1426,8 +1366,7 @@
     "categories": [
       "Accessibility"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ExcludeSemantics-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1437,8 +1376,7 @@
     "categories": [
       "Async"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1448,8 +1386,7 @@
     "categories": [
       "Async"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1459,8 +1396,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/DecoratedBoxTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1470,8 +1406,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/FadeTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1481,8 +1416,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/PositionedTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1492,8 +1426,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/RotationTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1503,8 +1436,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/ScaleTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1514,8 +1446,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SizeTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1525,8 +1456,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/SlideTransition-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1536,8 +1466,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedDefaultTextStyle-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1548,8 +1477,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedListState-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1559,8 +1487,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedModalBarrier-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1570,8 +1497,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedOpacity-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1581,8 +1507,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedPhysicalModel-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1592,8 +1517,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1603,8 +1527,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedSize-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1614,8 +1537,7 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
@@ -1625,15 +1547,13 @@
     "categories": [
       "Animation and Motion"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/AnimatedWidgetBaseState-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "Expanded",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "Multi-child layout widgets"
     ],
@@ -1647,16 +1567,14 @@
     "categories": [
       "Scrolling"
     ],
-    "subcategories": [
-    ],
+    "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/PageView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "SliverAppBar",
     "description": "A material design app bar that integrates with a CustomScrollView.",
-    "categories": [
-    ],
+    "categories": [],
     "subcategories": [
       "App structure and navigation"
     ],
