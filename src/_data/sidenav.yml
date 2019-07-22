@@ -159,6 +159,8 @@
               permalink: /docs/development/tools/devtools/timeline
             - title: Memory view
               permalink: /docs/development/tools/devtools/memory
+            - title: Performance view
+              permalink: /docs/development/tools/devtools/performance
             - title: Debugger
               permalink: /docs/development/tools/devtools/debugger
             - title: Logging view

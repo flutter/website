@@ -4,7 +4,7 @@ short-title: Animations
 description: How to perform animations in Flutter
 ---
 
-Well-designed animations makes a UI feel more intuitive, contribute to
+Well-designed animations make a UI feel more intuitive, contribute to
 the slick look and feel of a polished app, and improve the user experience.
 Flutter's animation support makes it easy to implement a variety of
 animation types. Many widgets, especially [Material widgets][],
@@ -64,7 +64,7 @@ AnimatedBuilder
 ## Animation types
 
 Animations fall into one of two categories: tween- or physics-based.
-The following sections explain what these terms mean, and points you to
+The following sections explain what these terms mean, and point you to
 resources where you can learn more. In some cases,
 the best documentation we currently have is example code in the
 Flutter gallery.
