@@ -270,11 +270,11 @@ The `await` operator is used to wait for a `Promise`.
 // JavaScript
 class Example {
   async function _getIPAddress() {
-    const url="https://httpbin.org/ip";
+    const url = 'https://httpbin.org/ip';
     const response = await fetch(url);
     const json = await response.json();
     const data = await json.origin;
-  console.log(data);
+    console.log(data);
   }
 }
 

@@ -63,7 +63,6 @@ On Mac/Linux, use the following command:
 ```
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
-c:/Users/USER_NAME
 On Windows, use the following command:
 ```
 keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
@@ -82,7 +81,7 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 204
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
   If your path includes space-separated names,
-  such as Program Files, place quotes around the space-separated
+  such as `Program Files`, place quotes around the space-separated
   names. For example: `/"Program Files"/`
 {{site.alert.end}}
 
