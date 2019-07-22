@@ -73,7 +73,7 @@ camera, geolocation, network, storage, 3rd-party SDKs, and more.
 
 ### Who makes Flutter?
 
-
+Flutter is an open source project, with contributions from Google
 and the community.
 
 ### Who uses Flutter?
@@ -345,37 +345,44 @@ Flutter should be able to run most Dart code that does not import
 
 ### How big is the Flutter engine?
 
-In December 2018, we measured the download size of a
+In July 2019, we measured the download size of a
 [minimal Flutter app][] (no Material Components,
 just a single `Center` widget, built with
-`flutter build apk`), bundled and compressed as a
-release APK, to be approximately 4.06&nbsp;MB.
+`flutter build apk --split-per-abi`),
+bundled and compressed as a release APK,
+to be approximately 4.3 MB for ARM,
+and 4.6 MB for ARM 64.
 
-For this simple app,
-the core engine is approximately 2.7&nbsp;MB (compressed),
-the framework + app code is approximately 820.6&nbsp;KB (compressed),
-the LICENSE file is 53.5&nbsp;KB (compressed),
-necessary Java code (classes.dex) is 61.8&nbsp;KB (compressed),
-and there is approximately 450.4&nbsp;KB of (compressed) ICU data.
+In ARM, the core engine is approximately 3.2 MB (compressed),
+the framework + app code is approximately 920.6 KB (compressed),
+the LICENSE file is 54.3 KB (compressed), necessary Java code
+(classes.dex) is 113.6 KB (compressed).
+
+In ARM64, the core engine is approximately 3.5 MB (compressed),
+the framework + app code is approximately 872 KB (compressed),
+the LICENSE file is 54.3 KB (compressed), necessary Java code
+(classes.dex) is 113.6 KB (compressed).
 
 These numbers were measured using [apkanalyzer][],
-which is also built into [Android Studio][].
+which is also [built into Android Studio][].
 
-On iOS, a release IPA of the same app has a download
-size of 10.8&nbsp;MB on an iPhone X, as reported by Apple's
-App Store Connect. The IPA is larger than the APK
-mainly because Apple encrypts binaries within the IPA,
-making the compression less efficient
+On iOS, a release IPA of the same app has a download size of
+10.8 MB on an iPhone X, as reported by Apple’s App Store Connect.
+The IPA is larger than the APK mainly because Apple encrypts
+binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
-section of Apple's [QA1795][]).
+section of Apple’s [QA1795][]).
 
 Of course, YMMV, and we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
-`--split-per-abi` option in version 1.7.8+hotfix.3 and later) and load the
-APK (`build/app/outputs/apk/release/app-release.apk`) into Android Studio
-([instructions][instructions-android]) for a detailed size report.
+`--split-per-abi` option in version 1.7.8+hotfix.3 and later)
+and load the APK
+(build/app/outputs/apk/release/app-armeabi-v7a-release.apk
+or build/app/outputs/apk/release/app-arm64-v8a-release.apk)
+into Android Studio
+([Android Studio instructions][]) for a detailed size report.
 To measure an iOS app, upload a release IPA to Apple's App Store Connect
-([instructions][instructions-ios]) and obtain the size report from there.
+([iOS instructions][]) and obtain the size report from there.
 
 ## Capabilities
 
@@ -444,7 +451,7 @@ This enables fast iterations while keeping the core Flutter
 repo stable. You can repackage existing Flutter code to
 work on the web preview, but there are some caveats
 while we’re still in preview. Check out the
-[instructions][instructions-web] for more details.
+[web instructions][] for more details.
 
 ### Can I use Flutter to build desktop apps?
 
@@ -917,14 +924,10 @@ deployed to Apple's App Store.
 [gesture system]: /docs/development/ui/advanced/gestures
 [minimal Flutter app]: {{site.github}}/flutter/flutter/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
-[Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
-[instructions-android]: {{site.android-dev}}/studio/build/apk-analyzer
-[instructions-ios]: /docs/deployment/ios
 [Hot reload]: /docs/development/tools/hot-reload
 [technical preview]: {{site.url}}/web
-[instructions-web]: {{site.github}}/flutter/flutter-web
 [issue #14821]: {{site.github}}/flutter/flutter/issues/14821
 [ready-made packages]: {{site.pub}}/flutter/
 [is easy]: /docs/development/packages-and-plugins/using-packages
@@ -947,3 +950,10 @@ deployed to Apple's App Store.
 [GitHub]: {{site.github}}/flutter/flutter
 [license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
 [only one license]: {{site.github}}/flutter/flutter/blob/master/LICENSE
+[apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
+[iOS App Store Specific Considerations]: https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
+[QA1795]: https://developer.apple.com/library/archive/qa/qa1795/_index.html
+[built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
+[Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
+[iOS instructions]: /docs/deployment/ios
+[web instructions]: {{site.github}}/flutter/flutter-web
