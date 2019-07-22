@@ -103,10 +103,10 @@ In the Deployment Info section:
 
 The General tab of your project settings should resemble the following:
 
-![Xcode Project Settings](/images/releaseguide/xcode_settings.png)
+![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
-For a detailed overview of app signing, see [Create, export, and delete signing
-certificates][appsigning].
+For a detailed overview of app signing, see [Create, export,
+and delete signing certificates][appsigning].
 
 ## Add an App Icon
 
