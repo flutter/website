@@ -182,7 +182,7 @@ coming from another plugin besides these.
 ## For plugin maintainers: Migrating a Flutter plugin to AndroidX
 
 Migrating a Flutter plugin to AndroidX follows basically the same process as
-[migrating a Flutter app](#How-to-migrate-a-Flutter-app-to-AndroidX),
+[migrating a Flutter app](#how-to-migrate-a-flutter-app-to-androidx),
 but with some additional concerns and some slight changes.
 
 1. Make sure to increment the [major
