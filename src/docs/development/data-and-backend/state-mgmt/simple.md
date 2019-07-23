@@ -420,7 +420,7 @@ rebuild when `notifyListeners` is called.
 ## Putting it all together
 
 You can [check out the
-example]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)
+example]({{site.github}}/flutter/samples/tree/master/provider_shopper)
 covered in this article. If you want something simpler,
 you can see how the simple Counter app looks like when [built with
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
