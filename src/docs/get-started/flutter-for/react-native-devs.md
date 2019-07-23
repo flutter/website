@@ -269,12 +269,12 @@ The `await` operator is used to wait for a `Promise`.
 ```js
 // JavaScript
 class Example {
-  async _getIPAddress() {
+  async function _getIPAddress() {
     const url = 'https://httpbin.org/ip';
     const response = await fetch(url);
-    const responseJson = await response.json();
-    const ip = responseJson.origin;
-    return ip;
+    const json = await response.json();
+    const data = await json.origin;
+    console.log(data);
   }
 }
 
