@@ -30,16 +30,14 @@ packages using the sdkmanager tool (version numbers here are
 the latest at time of publishing):
 
 ```terminal
-$ sdkmanager "build-tools;28.0.3" "emulator" "tools" "platform-tools" 
-"platforms;android-28" "extras;google;google_play_services" 
-"extras;google;webdriver" "system-images;android-28;google_apis_playstore;x86_64"
+$ sdkmanager "build-tools;28.0.3" "emulator" "tools" "platform-tools" "platforms;android-28" "extras;google;google_play_services" "extras;google;webdriver" "system-images;android-28;google_apis_playstore;x86_64"
 ```
 
 Add the Android platform tools to your path (you should find this where you 
 ran the sdkmanager command: $PLATFORM_PATH):
 
 ```terminal
-$ export PATH="$PATH:$PLATFORM_PATH/platform-tools
+$ export PATH="$PATH:$PLATFORM_PATH/platform-tools"
 ```
 
 Set the ANDROID_HOME variable to where you unzipped sdk-tools before (aka 
