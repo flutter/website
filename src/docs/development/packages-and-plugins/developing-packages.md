@@ -280,7 +280,7 @@ $ flutter pub pub publish --dry-run
 Finally, run the actual publish command:
 
 ```terminal
-$ flutter pub publish
+$ flutter pub pub publish
 ```
 
 For details on publishing, see the
