@@ -367,7 +367,7 @@ These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
 
 On iOS, a release IPA of the same app has a download size of
-10.8 MB on an iPhone X, as reported by Apple’s App Store Connect.
+10.9 MB on an iPhone X, as reported by Apple’s App Store Connect.
 The IPA is larger than the APK mainly because Apple encrypts
 binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
