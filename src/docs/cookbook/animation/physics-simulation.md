@@ -25,13 +25,12 @@ This recipe uses these steps:
 
 3. Animate the widget
 
-4. Calculate the velocity to simulate a spring
+4. Calculate the velocity to simulate a springing motion
 
 
 # Step 1: Set up an animation controller
 
-Start with a stateful widget called `DraggableCard` that aligns itself in the
-center of a `Stack` widget:
+Start with a stateful widget called `DraggableCard`:
 
 
 ```
@@ -247,7 +246,7 @@ onPanEnd: (details) {
 
 
 
-# Step 4: Calculate the velocity to simulate a spring
+# Step 4: Calculate the velocity to simulate a springing motion
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
