@@ -1,8 +1,8 @@
 ---
 title: Animate a page route transition
 next:
-  title: Animate the properties of a container
-  path: /docs/cookbook/animation/animated-container
+  title: Animate a widget using a physics simulation
+  path: /docs/cookbook/animation/physics-simulation
 ---
 
 # Animate a page route transition
