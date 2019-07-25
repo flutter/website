@@ -8,8 +8,6 @@ next:
   path: /docs/cookbook/animation/animated-container
 ---
 
-# Animate a widget using a physics simulation
-
 Physics simulations can make app interactions feel realistic and interactive.
 For example, you might want to animate a widget to act as if it were attached to
 a spring or falling with gravity.
@@ -20,20 +18,16 @@ center using a spring simulation.
 This recipe uses these steps:
 
 1. Set up an animation controller
-
 2. Move the widget using gestures
-
 3. Animate the widget
-
 4. Calculate the velocity to simulate a springing motion
 
 
-# Step 1: Set up an animation controller
+## Step 1: Set up an animation controller
 
 Start with a stateful widget called `DraggableCard`:
 
-
-```
+```dart
 import 'package:flutter/material.dart';
 
 main() {
@@ -84,19 +78,18 @@ class _DraggableCardState extends State<DraggableCard> {
 }
 ```
 
-
 Make the `_DraggableCardState` class extend from
 `SingleTickerProviderStateMixin`.  Then construct an `AnimationController` in
 `initState` and set `vsync` to `this`.
 
 {{site.alert.note}}
-Extending `SingleTickerProviderStateMixin` allows the state object to
-*be a `TickerProvider` for the `AnimationController`. For more information, see
-*the documentation for
-*[TickerProvider](https://api.flutter.dev/flutter/scheduler/TickerProvider-class.html).
+Extending `SingleTickerProviderStateMixin` allows the state object to be a
+`TickerProvider` for the `AnimationController`. For more information, see the
+documentation for
+[TickerProvider](https://api.flutter.dev/flutter/scheduler/TickerProvider-class.html).
 {{site.alert.end}}
 
-```
+```dart
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
@@ -117,18 +110,14 @@ class _DraggableCardState extends State<DraggableCard>
 
 ```
 
-
-
-# Step 2: Move the widget using gestures
+## Step 2: Move the widget using gestures
 
 Make the widget move when it's dragged, and add an `Alignment` field to the
 `_DraggableCardState` class:
 
-
+```dart
+Alignment _dragAlignment = Alignment.center;
 ```
-  Alignment _dragAlignment = Alignment.center;
-```
-
 
 Add a `GestureDetector` that handles the `onPanDown`, `onPanUpdate`, and
 `onPanEnd` callbacks. To adjust the alignment, use a `MediaQuery` to get the
@@ -137,34 +126,31 @@ coordinates that
 [Align](https://api.flutter.dev/flutter/widgets/Align-class.html) uses.) Then,
 set the `Align` widget's `alignment` to `_dragAlignment`:
 
-
-```
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return GestureDetector(
-      onPanDown: (details) {},
-      onPanUpdate: (details) {
-        setState(() {
-          _dragAlignment += Alignment(
-            details.delta.dx / (size.width / 2),
-            details.delta.dy / (size.height / 2),
-          );
-        });
-      },
-      onPanEnd: (details) {},
-      child: Align(
-        child: Card(
-          child: widget.child,
-        ),
+```dart
+@override
+Widget build(BuildContext context) {
+  var size = MediaQuery.of(context).size;
+  return GestureDetector(
+    onPanDown: (details) {},
+    onPanUpdate: (details) {
+      setState(() {
+        _dragAlignment += Alignment(
+          details.delta.dx / (size.width / 2),
+          details.delta.dy / (size.height / 2),
+        );
+      });
+    },
+    onPanEnd: (details) {},
+    child: Align(
+      child: Card(
+        child: widget.child,
       ),
-    );
-  }
+    ),
+  );
+}
 ```
 
-
-
-# Step 3: Animate the widget
+## Step 3: Animate the widget
 
 When the widget is released, it should spring back to the center.
 
@@ -172,8 +158,7 @@ Add an `Animation<Alignment>` field and an `_updateAnimation()` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center .
 
-
-```
+```dart
 Animation<Alignment> _animation;
 
 void _updateAnimation() {
@@ -186,13 +171,11 @@ void _updateAnimation() {
 }
 ```
 
-
 Call `_updateAnimation` in `initState`. This gives `_animation` an initial
 value. Then update `_dragAlignment` when the `AnimationController` produces a
 value:
 
-
-```
+```dart
 @override
 void initState() {
   _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
@@ -208,11 +191,9 @@ void initState() {
 
 ```
 
-
 Next, make the `Align` widget use the `_dragAlignment` field:
 
-
-```
+```dart
 child: Align(
   alignment: _dragAlignment,
   child: Card(
@@ -225,7 +206,7 @@ child: Align(
 Finally, update the `GestureDetector` to manage the animation controller:
 
 
-```
+```dart
 onPanDown: (details) {
  _controller.stop();
 },
@@ -244,9 +225,7 @@ onPanEnd: (details) {
 },
 ```
 
-
-
-# Step 4: Calculate the velocity to simulate a springing motion
+## Step 4: Calculate the velocity to simulate a springing motion
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
@@ -263,8 +242,7 @@ in this range.
 Finally, `AnimationController` has an `animateWith()` method that can be given a
 `SpringSimulation`:
 
-
-```
+```dart
 onPanEnd: (details) {
   _updateAnimation();
   // Calculate the velocity relative to the unit interval, [0,1],
@@ -286,11 +264,14 @@ onPanEnd: (details) {
 },
 ```
 
+{{site.alert.note}}
+Now that the animation controller uses a simulation it's `duration` argument is
+no longer required.
+{{site.alert.end}}
 
+## Complete Example
 
-# Complete Example
-
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
@@ -346,8 +327,7 @@ class _DraggableCardState extends State<DraggableCard>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+    _controller = AnimationController(vsync: this);
 
     _controller.addListener(() {
       setState(() {
@@ -409,5 +389,5 @@ class _DraggableCardState extends State<DraggableCard>
 }
 
 ```
-![Demo showing a widget being dragged and snapped back to the center](/images/cookbook/animation-physics-card-drag.gif){:.site-mobile-screenshot}
 
+![Demo showing a widget being dragged and snapped back to the center](/images/cookbook/animation-physics-card-drag.gif){:.site-mobile-screenshot}
