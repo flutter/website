@@ -150,7 +150,7 @@ expected. You have now added a `FlutterFragment` to your existing Android app.
 
 By default, a `FlutterFragment` creates its own instance of a `FlutterEngine`,
 which requires non-trivial warmup time. This means your user sees a blank
-`Fragment` for a second or two. You can mitigate most of this warmup time by
+`Fragment` for a brief moment. You can mitigate most of this warmup time by
 using an existing, pre-warmed instance of `FlutterEngine`.
 
 Please see the [instructions for instantiating and starting a `FlutterEngine`].
@@ -192,7 +192,7 @@ this brief waiting period, Flutter supports the display of a splash screen until
 Flutter renders its first frame. For instructions about showing a splash screen,
 please see the [Android splash screen guide].
 
-[Android splash screen guide]: /docs/development/platform-integration/add-to-app-android/splash-screens
+[Android splash screen guide]: /docs/development/platform-integration/add-to-app-android/add-splash-screen
 
 ## Run Flutter with a specified initial route
 
@@ -294,7 +294,9 @@ Some apps choose to use `Fragment`s as entire Android screens. In these apps, it
 would be reasonable for a `Fragment` to control system chrome like Android's
 status bar, navigation bar, and orientation.
 
-TODO: insert illustration of system chrome
+{% asset
+development/platform-integration/add-to-app-android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
+class="mw-100" alt="Fullscreen Flutter" %}
 
 In other apps, `Fragment`s are used to represent only a portion of a UI. A
 `FlutterFragment` might be used to implement the inside of a drawer, or a video
@@ -302,10 +304,30 @@ player, or a single card. In these situations, it would be inappropriate for the
 `FlutterFragment` to affect Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-TODO: insert illustration of partial UI FlutterFragments.
+{% asset
+development/platform-integration/add-to-app-android/add-flutter-fragment/add-flutter-fragment_partial-ui.png
+class="mw-100" alt="Flutter as Partial UI" %}
 
 `FlutterFragment` comes with a concept that helps differentiate between the case
 where a `FlutterFragment` should be able to control its host `Activity`, and the
-cases where a `FlutterFragment` should only affect its own behavior.
+cases where a `FlutterFragment` should only affect its own behavior. To prevent
+a `FlutterFragment` from exposing its `Activity` to Flutter plugins, and to 
+prevent Flutter from controlling the `Activity`'s system UI, use the
+`shouldAttachEngineToActivity()` method in `FlutterFragment`'s `Builder` as
+shown below.
 
-TODO: is "attaching to the activity" the right concept here? it was intended for plugins, but chrome is core embedding...
+```java
+FlutterFragment flutterFragment = new FlutterFragment.Builder()
+    .shouldAttachEngineToActivity(false)
+    .build();
+```
+
+Passing `false` to the `shouldAttachEngineToActivity()` `Builder` method
+prevents Flutter from interacting with the surrounding `Activity`. The default
+value is `true`, which allows Flutter and Flutter plugins to interact with
+surrounding `Activity`.
+
+{{site.alert.note}} 
+  Some plugins may expect or require an `Activity` reference. Ensure that none 
+  of your plugins require an `Activity` before disabling access.
+{{site.alert.end}}
