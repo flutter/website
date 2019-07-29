@@ -1,11 +1,9 @@
 ---
 title: Animate a page route transition
 next:
-  title: Animate the properties of a container
-  path: /docs/cookbook/animation/animated-container
+  title: Animate a widget using a physics simulation
+  path: /docs/cookbook/animation/physics-simulation
 ---
-
-# Animate a page route transition
 
 A design language, such as Material, defines standard behaviors when
 transitioning between routes (or screens). Sometimes, though, a custom
@@ -27,7 +25,7 @@ To create a custom page route transition, this recipe uses the following steps:
 4. Use a `CurveTween`
 5. Combine the two `Tween`s
 
-# 1. Set up a PageRouteBuilder
+## 1. Set up a PageRouteBuilder
 
 To start, use a
 [PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
@@ -36,10 +34,10 @@ to create a [Route]({{site.api}}/flutter/widgets/Route-class.html).
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
 {{site.alert.note}}
-The `child` parameter in transitionsBuilder is the widget returned from
-pageBuilder. The `pageBuilder` function is only called the first time the route
-is built. The framework can avoid extra work because `child` stays the same
-throughout the transition.
+  The `child` parameter in transitionsBuilder is the widget returned from
+  pageBuilder. The `pageBuilder` function is only called the first time the
+  route is built. The framework can avoid extra work because `child` stays the
+  same throughout the transition.
 {{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and
@@ -91,7 +89,7 @@ class Page2 extends StatelessWidget {
 }
 ```
 
-# 2. Create a Tween
+## 2. Create a Tween
 
 To make the new page animate in from the bottom, it should animate from
 `Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
@@ -114,7 +112,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 },
 ```
 
-# 3. Use an AnimatedWidget
+## 3. Use an AnimatedWidget
 
 Flutter has a set of widgets extending
 [AnimatedWidget]({{site.api}}/flutter/widgets/AnimatedWidget-class.html)
@@ -140,7 +138,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 },
 ```
 
-# 4. Use a CurveTween
+## 4. Use a CurveTween
 
 Flutter provides a selection of easing curves that adjust the rate of the
 animation over time. The
@@ -160,7 +158,7 @@ var curveTween = CurveTween(curve: curve);
 This new Tween still produces values from 0 to 1. In the next step, it will be
 combined the `Tween<Offset>` from step 2.
 
-# 5. Combine the two Tweens
+## 5. Combine the two Tweens
 
 To combine the tweens, use
 [chain()]({{site.api}}/flutter/animation/Animatable/chain.html):
@@ -215,7 +213,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 }
 ```
 
-# Complete Example
+## Complete Example
 
 ```dart
 import 'package:flutter/material.dart';
