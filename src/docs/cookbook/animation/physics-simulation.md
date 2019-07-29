@@ -79,14 +79,13 @@ class _DraggableCardState extends State<DraggableCard> {
 ```
 
 Make the `_DraggableCardState` class extend from
-`SingleTickerProviderStateMixin`.  Then construct an `AnimationController` in
+[SingleTickerProviderStateMixin][].  Then construct an [AnimationController][] in
 `initState` and set `vsync` to `this`.
 
 {{site.alert.note}}
-Extending `SingleTickerProviderStateMixin` allows the state object to be a
-`TickerProvider` for the `AnimationController`. For more information, see the
-documentation for
-[TickerProvider](https://api.flutter.dev/flutter/scheduler/TickerProvider-class.html).
+  Extending `SingleTickerProviderStateMixin` allows the state object to be a
+  `TickerProvider` for the `AnimationController`. For more information, see the
+  documentation for [TickerProvider][].
 {{site.alert.end}}
 
 ```dart
@@ -107,24 +106,24 @@ class _DraggableCardState extends State<DraggableCard>
     _controller.dispose();
     super.dispose();
   }
+}
 
 ```
 
 ## Step 2: Move the widget using gestures
 
-Make the widget move when it's dragged, and add an `Alignment` field to the
+Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
 ```dart
 Alignment _dragAlignment = Alignment.center;
 ```
 
-Add a `GestureDetector` that handles the `onPanDown`, `onPanUpdate`, and
-`onPanEnd` callbacks. To adjust the alignment, use a `MediaQuery` to get the
+Add a [GestureDetector][] that handles the `onPanDown`, `onPanUpdate`, and
+`onPanEnd` callbacks. To adjust the alignment, use a [MediaQuery][] to get the
 size of the widget, and divide by 2. (This converts units of "pixels dragged" to
-coordinates that
-[Align](https://api.flutter.dev/flutter/widgets/Align-class.html) uses.) Then,
-set the `Align` widget's `alignment` to `_dragAlignment`:
+coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
+`_dragAlignment`:
 
 ```dart
 @override
@@ -156,7 +155,7 @@ When the widget is released, it should spring back to the center.
 
 Add an `Animation<Alignment>` field and an `_updateAnimation()` method. This
 method defines a `Tween` that interpolates between the point the widget was
-dragged to, to the point in the center .
+dragged to, to the point in the center.
 
 ```dart
 Animation<Alignment> _animation;
@@ -229,18 +228,19 @@ onPanEnd: (details) {
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
-continues at that speed before being snapped back. ( `_updateAnimation()`
-already sets the direction  by setting the animation's start and end alignment.)
+continues at that speed before being snapped back. (The `_updateAnimation()`
+method already sets the direction  by setting the animation's start and end
+alignment.)
 
-The `onPanEnd` callback provides a `DragEndDetails` object with the same
-velocity that the user was dragging their finger at. This value is in pixels per
-second, but the `Align` widget doesn't use pixels. It uses coordinate values
-between [-1.0, -1.0] and [1.0, 1.0] , where [0.0, 0.0] represents the center.
-The `size` calculated in step 2 is used to convert pixels to coordinate values
-in this range.
+The `onPanEnd` callback provides a [DragEndDetails][] object. This object
+provides the velocity of the pointer when it stopped contacting the screen. The
+velocity is in pixels per second, but the `Align` widget doesn't use pixels. It
+uses coordinate values between [-1.0, -1.0] and [1.0, 1.0], where [0.0, 0.0]
+represents the center. The `size` calculated in step 2 is used to convert pixels
+to coordinate values in this range.
 
 Finally, `AnimationController` has an `animateWith()` method that can be given a
-`SpringSimulation`:
+[SpringSimulation][]:
 
 ```dart
 onPanEnd: (details) {
@@ -265,8 +265,8 @@ onPanEnd: (details) {
 ```
 
 {{site.alert.note}}
-Now that the animation controller uses a simulation it's `duration` argument is
-no longer required.
+  Now that the animation controller uses a simulation it's `duration` argument
+  is no longer required.
 {{site.alert.end}}
 
 ## Complete Example
@@ -303,8 +303,7 @@ class DraggableCard extends StatefulWidget {
   _DraggableCardState createState() => _DraggableCardState();
 }
 
-/// A draggable card that moves back to [Alignment.center] when it's
-/// released.
+/// Holds the state for the [DraggableCard] widget
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
@@ -391,3 +390,13 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 ![Demo showing a widget being dragged and snapped back to the center](/images/cookbook/animation-physics-card-drag.gif){:.site-mobile-screenshot}
+
+[Align]: {{site.api}}/flutter/widgets/Align-class.html
+[Alignment]: {{site.api}}/flutter/painting/Alignment-class.html
+[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
+[GestureDetector]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[SingleTickerProviderStateMixin]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
+[TickerProvider]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
+[MediaQuery]: {{site.api}}/flutter/widgets/MediaQuery-class.html
+[DragEndDetails]: {{site.api}}/flutter/gestures/DragEndDetails-class.html
+[SpringSimulation]: {{site.api}}/flutter/physics/SpringSimulation-class.html
