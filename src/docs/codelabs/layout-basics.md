@@ -79,24 +79,24 @@ property to control how the `Row` aligns its children within that space.
 
 There are six different values available in the `MainAxisAlignment` enum:
 
-* `MainAxisAligment.start`<br>
+* `MainAxisAlignment.start`<br>
    Place all children as close to the start of the `Row` as possible
    (for left-to-right rows, this is the left side).
 
-* `MainAxisAligment.end`<br>
+* `MainAxisAlignment.end`<br>
   Place all children as close to the end of the `Row` as possible.
 
-* `MainAxisAligment.center`<br>
+* `MainAxisAlignment.center`<br>
   Group the children together in the center of the `Row`.
 
-* `MainAxisAligment.spaceBetween`<br>
+* `MainAxisAlignment.spaceBetween`<br>
   Any extra space is divided evenly and used to make gaps between the children.
 
-* `MainAxisAligment.spaceEvenly`<br>
+* `MainAxisAlignment.spaceEvenly`<br>
   Just like `spaceBetween`, except the spots before the first child
   and after the last one also count as gaps.
 
-* `MainAxisAligment.spaceAround`<br>
+* `MainAxisAlignment.spaceAround`<br>
   Just like `spaceEvenly`, only the first and last gaps get 50% of the
   amount used between children.
 
