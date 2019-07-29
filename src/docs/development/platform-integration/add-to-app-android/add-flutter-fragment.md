@@ -208,8 +208,12 @@ FlutterFragment flutterFragment = new FlutterFragment.Builder()
     .build();
 ```
 
-TODO: Likely reader question: what if I'm using the same FlutterEngine across
-FlutterFragments?
+{{site.alert.note}} 
+  `FlutterFragment`'s initial route property has no effect when a pre-warmed
+  `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
+  chosen an initial route. The initial route can be chosen explicitly when
+  pre-warming a `FlutterEngine`.
+{{site.alert.end}}
 
 ## Run Flutter from a specified entrypoint
 
@@ -234,15 +238,25 @@ The above `FlutterFragment` configuration results in the execution of a Dart
 entrypoint called `mySpecialEntrypoint()`. Notice that the parentheses `()` are
 not included in the `dartEntrypoint` `String` name.
 
+{{site.alert.note}} 
+  `FlutterFragment`'s Dart entrypoint property has no effect when a pre-warmed
+  `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
+  executed a Dart entrypoint. The Dart entrypoint can be chosen explicitly when
+  pre-warming a `FlutterEngine`.
+{{site.alert.end}}
+
 ## Control `FlutterFragment`'s render mode
 
 `FlutterFragment` can either use a `SurfaceView` to render its Flutter content,
 or it can use a `TextureView`. The default is `SurfaceView`, which is
 significantly better for performance than `TextureView`. However, `SurfaceView`
-cannot be used for Android platform animations, nor can it be interleaved in the
-middle of an Android `View` hierarchy. If either of these use-cases are
-requirements for your app, you need to use `TextureView` instead of
-`SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
+cannot be interleaved in the middle of an Android `View` hierarchy. A
+`SurfaceView` must either be the bottom-most `View` in the hierarchy, or the
+top-most `View` in the hierarchy. Additionally, on Android versions before
+Android N, `SurfaceView`s cannot be animated becuase their layout and rendering
+are not synchronized with the rest of the `View` hierarchy. If either of these
+use-cases are requirements for your app, you need to use `TextureView` instead
+of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
 ```java
