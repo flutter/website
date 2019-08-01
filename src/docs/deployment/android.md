@@ -4,11 +4,6 @@ description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---
 
-{{site.alert.warning}}
-  This page describes the Android release process as of the
-  1.7.4 release of the Flutter SDK.
-{{site.alert.end}}
-
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**
@@ -64,8 +59,13 @@ signature. Use the following instructions to sign your app.
 If you have an existing keystore, skip to the next step.
 If not, create one by running the following at the command line:
 
+On Mac/Linux, use the following command:
 ```
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+```
+On Windows, use the following command:
+```
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
 {{site.alert.note}}
@@ -80,6 +80,9 @@ keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000
   run `flutter doctor -v` and locate the path printed after
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the space-separated
+  names. For example: `/"Program Files"/`
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -231,10 +234,11 @@ are correct, especially:
 * `application`: Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect the final name of the app.
 
-* `uses-permission`: Remove the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code does not need
-  Internet access. The standard template includes this tag to enable
-  communication between Flutter tools and a running app.
+* `uses-permission`: Add the `android.permission.INTERNET`
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template does not include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
 
 ## Reviewing the build configuration
 

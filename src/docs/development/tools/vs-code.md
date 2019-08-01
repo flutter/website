@@ -16,26 +16,31 @@ description: How to develop Flutter apps in Visual Studio Code.
 ## Installation and setup
 
 Follow the [Set up an editor](/docs/get-started/editor?tab=vscode)
-instructions to install the Dart and Flutter extensions (also called plugins).
+instructions to install the Dart and Flutter extensions
+(also called plugins).
 
 ### Updating the extension {#updating}
 
-Updates to the extensions are shipped on a regular basis. By default,
-VS Code automatically updates extensions when updates are available.
+Updates to the extensions are shipped on a regular basis.
+By default, VS Code automatically updates extensions when
+updates are available.
 
 To install updates manually:
 
- 1. Click on the Extensions button in the Side Bar
+ 1. Click the Extensions button in the Side Bar.
  1. If the Flutter extension is shown with an available update,
-    click the update button and then the reload button
+    click the update button and then the reload button.
 
 ## Creating projects
+
+There are a couple ways to create a new project.
 
 ### Creating a new project
 
 To create a new Flutter project from the Flutter starter app template:
 
- 1. Open the Command Palette (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
+ 1. Open the Command Palette 
+    (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
  1. Select the **Flutter: New Project** command and press `Enter`.
  1. Enter your desired **Project name**.
  1. Select a **Project location**.
@@ -50,36 +55,54 @@ To open an existing Flutter project:
 
 ## Editing code and viewing issues
 
-The Flutter extension performs code analysis that enables:
+The Flutter extension performs code analysis that enables the following:
 
-* Syntax highlighting.
-* Code completions based on rich type analysis.
+* Syntax highlighting
+* Code completions based on rich type analysis
 * Navigating to type declarations (**Go to Definition** or `F12`),
-  and finding type usages (**Find All References** or `Shift`+`F12`).
+  and finding type usages (**Find All References** or `Shift`+`F12`)
 * Viewing all current source code problems
-  (**View > Problems** or `Ctrl`+`Shift`+`M` (`Cmd`+`Shift`+`M` on macOS)).
+  (**View > Problems** or `Ctrl`+`Shift`+`M`
+  (`Cmd`+`Shift`+`M` on macOS))
   Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="660px"}
+  ![Problems pane]({% asset tools/vs-code/problems.png @path %}){:width="90%"}
 
-## Running and Debugging
+## Running and debugging
 
-Start debugging by clicking **Debug > Start Debugging** from the main
-IDE window or press `F5`.
+{{site.alert.note}}
+  You can debug your app in a couple of ways.
+
+  * Using [DevTools][], a suite of debugging and profiling
+    tools that run in a browser. DevTools replaces the previous
+    browser-based profiling tool, Observatory, and includes
+    functionality previously only available to Android Studio
+    and IntelliJ, such as the Flutter inspector.
+  * Using VS Code's built-in debugging features,
+    such as setting breakpoints.
+
+  The instructions below describe features available in VS Code.
+  For information on using launching DevTools, see
+  [Running DevTools from VS Code][] in the [DevTools][] docs.
+{{site.alert.end}}
+
+Start debugging by clicking **Debug > Start Debugging**
+from the main IDE window, or press `F5`.
 
 ### Selecting a target device
 
-When a Flutter project is open in VS Code, you should see a set of Flutter
-specific entries in the status bar, including a Flutter SDK version and a
+When a Flutter project is open in VS Code,
+you should see a set of Flutter specific entries in the status bar,
+including a Flutter SDK version and a
 device name (or the message **No Devices**).
 
 ![Flutter device]({% asset tools/vs-code/device_status_bar.png @path %}){:width="450px"}
 
 {{site.alert.note}}
-  - If you do not see a Flutter version number or device info your project
-    might not have been detected as a Flutter project. Ensure the
-    folder that contains your `pubspec.yaml` is inside a VS Code
-    **Workspace Folder**.
-  - If the status bar reads **No Devices** Flutter has not been
+  * If you do not see a Flutter version number or device info,
+    your project might not have been detected as a Flutter project.
+    Ensure that the folder that contains your `pubspec.yaml` is
+    inside a VS Code **Workspace Folder**.
+  * If the status bar reads **No Devices**, Flutter has not been
     able to discover any connected iOS or Android devices or simulators.
     You need to connect a device, or start a simulator or emulator,
     to proceed.
@@ -93,10 +116,10 @@ running or debugging.
 
 ### Run app without breakpoints
 
- 1. Click **Debug > Start Without Debugging** in the main IDE window, or
-    press `Ctrl`+`F5`.
+ 1. Click **Debug > Start Without Debugging** in the main IDE window,
+    or press `Ctrl`+`F5`.
     The status bar turns orange to show you are in a debug session.<br>
-    ![Debug Console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
+    ![Debug console]({% asset tools/vs-code/debug_console.png @path %}){:width="490px"}
 
 ### Run app with breakpoints
 
@@ -104,9 +127,10 @@ running or debugging.
  1. Click **Debug > Start Debugging** in the main IDE window, or press `F5`.
     * The left **Debug Sidebar** shows stack frames and variables.
     * The bottom **Debug Console** pane shows detailed logging output.
-    * Debugging is based on a default launch configuration. To customize,
-      click the cog at the top of the **Debug Sidebar** to create a `launch.json`
-      file. You can then modify the values.
+    * Debugging is based on a default launch configuration.
+      To customize, click the cog at the top of the
+      **Debug Sidebar** to create a `launch.json` file.
+      You can then modify the values.
 
 ## Fast edit and refresh development cycle
 
@@ -118,37 +142,36 @@ of your changes almost instantly with the _Stateful Hot Reload_ feature. See
 
 ### Debugging visual layout issues
 
-During a debug session, several additional debugging commands are added to the
-[Command Palette][], including:
+During a debug session,
+several additional debugging commands are added to the
+[Command Palette][] and to the [Flutter inspector][].
+When space is limited, the icon is used as the visual
+version of the label.
 
-* **Toggle Baseline Painting**: Causes each RenderBox to paint a line at each of its
-  baselines.
-* **Toggle Repaint Rainbow**: Show rotating colors on layers when repainting.
-* **Toggle Slow Animations**: Slow down animations to enable visual inspection.
-* **Toggle Slow-Mode Banner**: Hide the slow mode banner even when running a
-  debug build.
+<dl markdown="1">
+<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon]({% asset tools/devtools/paint-baselines-icon.png @path %}){:width="20px"}</dt>
+<dd>Causes each RenderBox to paint a line at each of its baselines.</dd>
+<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon]({% asset tools/devtools/repaint-rainbow-icon.png @path %}){:width="20px"}</dt>
+<dd>Shows rotating colors on layers when repainting.</dd>
+<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon]({% asset tools/devtools/slow-animations-icon.png @path %}){:width="20px"}</dt>
+<dd>Slows down animations to enable visual inspection.</dd>
+<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
+<dd>Hides the debug mode banner even when running a debug build.</dd>
+</dl>
   
 ### Debugging external libraries 
 
-By default, debug an external library is disabled in Flutter extension. To enable:
-1. **Settings > Extensions > Dart Configuration **
-2. Check option `Debug External Libraries`
+By default, debug an external library is disabled in Flutter extension.
+To enable:
 
-### The Flutter Inspector, performance profiling, and Dart DevTools
-
-Dart DevTools are a set of debugging and profiling tools presented with
-an html-based UI. DevTools replaces the previous browser-based profiling
-tool, Observatory, and includes functionality previously only available to
-IntelliJ, like the Flutter Inspector.
-
-DevTools is still in development but is available to preview. For
-installation and getting started instructions, see the [DevTools' docs][].
+1. Select **Settings > Extensions > Dart Configuration**.
+2. Check the `Debug External Libraries` option.
 
 ## Editing tips for Flutter code
 
 If you have additional tips we should share, [let us know][]!
 
-### Assists & Quick Fixes
+### Assists & quick fixes
 
 Assists are code changes related to a certain code identifier.
 A number of these are available when the cursor is placed on a
@@ -156,64 +179,63 @@ Flutter widget identifier, as indicated by the yellow lightbulb icon.
 The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut `Ctrl`+`.` (`Cmd`+`.` on Mac), as illustrated here:
 
-![Code Assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
+![Code assists]({% asset tools/vs-code/assists.png @path %}){:width="467px"}
 
-Quick Fixes are similar, only they are shown with a piece of code has an error and they
+Quick fixes are similar,
+only they are shown with a piece of code has an error and they
 can assist in correcting it.
 
 **Wrap with new widget assist**
-: This can be used when you have a widget that you want to wrap in a surrounding widget,
-  for example if you want to wrap a widget in a `Row` or `Column`.
+: This can be used when you have a widget that you want to wrap
+  in a surrounding widget, for example if you want to wrap a
+  widget in a `Row` or `Column`.
 
 **Wrap widget list with new widget assist**
-: Similar to the assist above, but for wrapping an existing list of widgets rather than an
-individual widget.
+: Similar to the assist above, but for wrapping an existing
+  list of widgets rather than an individual widget.
 
 **Convert child to children assist**
-: Changes a child argument to a children argument, and wraps the argument value in a list.
+: Changes a child argument to a children argument,
+  and wraps the argument value in a list.
 
 ### Snippets
 
-Snippets can be used to speed up entering typical code structures. They
-are invoked by typing their prefix, and then selecting from the code
-completion window:
-
-![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="700px"}
+Snippets can be used to speed up entering typical code structures.
+They are invoked by typing their prefix, and then selecting from the code completion window: ![Snippets]({% asset tools/vs-code/snippets.png @path %}){:width="700px"}
 
 The Flutter extension includes the following snippets:
 
 * Prefix `stless`: Create a new subclass of `StatelessWidget`.
-* Prefix `stful`: Create a new subclass of `StatefulWidget` and it's associated
-  State subclass.
-* Prefix `stanim`: Create a new subclass of `StatefulWidget`, and it's
-  associated State subclass including a field initialized with an
-  `AnimationController`.
+* Prefix `stful`: Create a new subclass of `StatefulWidget`
+  and its associated State subclass.
+* Prefix `stanim`: Create a new subclass of `StatefulWidget`,
+  and its associated State subclass including a field initialized
+  with an `AnimationController`.
 
-You can also define custom snippets by executing **Configure User Snippets** from
-the [Command Palette][].
+You can also define custom snippets by executing
+**Configure User Snippets** from the [Command Palette][].
 
-### Keyboard Shortcuts
+### Keyboard shortcuts
 
-**Hot Reload**
-: During a debug session, clicking the **Restart** button on the **Debug
-  Toolbar**, or pressing `Ctrl`+`Shift`+`F5` (`Cmd`+`Shift`+`F5` on macOS)
-  performs a hot reload.
+**Hot reload**
+: During a debug session, clicking the **Restart** button on the
+  **Debug Toolbar**, or pressing `Ctrl`+`Shift`+`F5`
+  (`Cmd`+`Shift`+`F5` on macOS) performs a hot reload.
 
-  Keyboard mappings can be changed by executing the **Open Keyboard Shortcuts**
-  command from the [Command Palette][].
+  Keyboard mappings can be changed by executing the
+  **Open Keyboard Shortcuts** command from the [Command Palette][].
 
-**Hot Restart**
+### Hot reload vs. hot restart
 
-### Hot reloads vs. Hot restarts
+Hot reload works by injecting updated source code files into the
+running Dart VM (Virtual Machine). This includes not only
+adding new classes, but also adding methods and fields to
+existing classes, and changing existing functions.
+A few types of code changes cannot be hot reloaded though:
 
-Hot Reload works by injecting updated source code files into the running Dart VM
-(Virtual Machine). This includes not only adding new classes, but also adding
-methods and fields to existing classes, and changing existing functions. A few
-types of code changes cannot be hot reloaded though:
-
-* Global variable initializers.
-* Static field initializers.
-* The `main()` method of the app.
+* Global variable initializers
+* Static field initializers
+* The `main()` method of the app
 
 For these changes, fully restart your application without having to end your
 debugging session. To perform a hot restart, run the **Flutter: Hot Restart**
@@ -224,20 +246,23 @@ command from the [Command Palette][], or press `Ctrl`+`F5`.
 ### Known issues and feedback
 
 All known bugs are tracked in the issue tracker:
-[Dart and Flutter extensions GitHub issue tracker][].
+[Dart and Flutter extensions GitHub issue tracker][issue tracker].
 
-We very much welcome feedback, both on bugs/issues and feature requests.
+We very much welcome feedback,
+both on bugs/issues and feature requests.
 Prior to filing new issues:
 
 * Do a quick search in the issue trackers to see if the issue is already
   tracked.
-* Make sure you have [updated](#updating) to the most recent version of the
-  plugin.
+* Make sure you are [up to date](#updating) with the most recent
+  version of the plugin.
 
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[DevTools' docs]: https://flutter.github.io/devtools
+[DevTools]: /docs/development/tools/devtools
 [flutter doctor]: /docs/resources/bug-reports/#provide-some-flutter-diagnostics
 [let us know]: {{site.github}}/flutter/website/issues/new
-[Dart and Flutter extensions GitHub issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+[Running DevTools from VS Code]: /docs/development/tools/devtools/vscode
+[Flutter inspector]: /docs/development/tools/devtools/inspector

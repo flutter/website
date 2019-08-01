@@ -33,18 +33,13 @@ when designing your app:
     of the child widget as the previous frame is re-encountered. This 
     technique is heavily used in inside the framework for optimizing 
     animations where the animation doesn't affect the child subtree. See
-    the [TransitionBuilder]({{site.api}}/flutter/widgets/TransitionBuilder.html)
-    pattern and the [SlideTransition](https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229)
+    the [`TransitionBuilder`][] pattern and the [`SlideTransition`][],
     which uses this principle to avoid rebuilding its descendents when 
     animating.
 
 Also see:
 
-* [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations),
-  part of the
-  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
-  API doc
+* [Performance considerations][], part of the [`StatefulWidget`][] API doc
 
 ### Apply effects only when needed
 
@@ -60,32 +55,32 @@ Use effects carefully, as they can be expensive. Some of them invoke
 
 Some general rules when applying specific effects:
 
-* Use the [**Opacity**]({{site.api}}/flutter/widgets/Opacity-class.html)
-  widget only when necessary. See [Transparent
-  image]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image)
-  in the Opacity API page for an example of applying opacity directly
-  to an image, which is faster than using the Opacity widget.
-* **Clipping** doesn’t call `saveLayer()` (unless explicitly requested with
-  `Clip.antiAliasWithSaveLayer`) so these operations aren’t as expensive
-  as Opacity, but clipping is still costly, so use with caution. By default,
-  clipping is disabled (`Clip.none`), so you must explicitly enable it when
-  needed. 
+* Use the [`Opacity`][] widget only when necessary.
+  See the [Transparent image][] section in the Opacity
+  API page for an example of applying opacity directly
+  to an image, which is faster than using the Opacity
+  widget.
+* **Clipping** doesn’t call `saveLayer()` (unless
+  explicitly requested with `Clip.antiAliasWithSaveLayer`)
+  so these operations aren’t as expensive as Opacity,
+  but clipping is still costly, so use with caution.
+  By default, clipping is disabled (`Clip.none`),
+  so you must explicitly enable it when needed. 
 
 Other widgets that might trigger `saveLayer()` and are potentially costly:
 
-* [ShaderMask]({{site.api}}/flutter/widgets/ShaderMask-class.html)
-* [ColorFilter]({{site.api}}/flutter/dart-ui/ColorFilter-class.html)
-* [Chip]({{site.api}}/flutter/material/Chip-class.html)&mdash;might
-  cause call to `saveLayer()` if `disabledColorAlpha != 0xff`
-* [Text]({{site.api}}/flutter/widgets/Text-class.html)&mdash;might
-  cause call to `saveLayer()` if there's an `overflowShader`
+* [`ShaderMask`][]
+* [`ColorFilter`][]
+* [`Chip`][]&mdash;might cause call to `saveLayer()` if
+  `disabledColorAlpha != 0xff`
+* [`Text`][]&mdash;might cause call to `saveLayer()`
+  if there's an `overflowShader`
 
 Ways to avoid calls to `saveLayer()`:
 
 * To implement fading in an image, consider using the FadeInImage widget,
   which applies a gradual opacity using the GPU’s fragment shader.
-  For more information, see
-  [Opacity]({{site.api}}/flutter/widgets/Opacity-class.html#transparent-image).
+  For more information, see the [`Opacity`][] docs.
 * To create a rectangle with rounded corners, instead of applying a
   clipping rectangle, consider using the `borderRadius` property offered
   by many of the widget classes.
@@ -97,12 +92,10 @@ That way only the visible portion of the screen is built at startup time.
 
 Also see:
 
-* [Working with long lists](/cookbook/lists/long-lists) in the
-  [Cookbook](/cookbook)
-* [Creating a ListView that loads one page at a
-  time]({{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3)
-  by AbdulRahman AlHamali
-* [Listview.builder]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) API
+* [Working with long lists][] in the [Cookbook][]
+* [Creating a ListView that loads one page at a time][]
+  a community article by AbdulRahman AlHamali
+* [`Listview.builder`][] API
 
 ###  Build and display frames in 16ms
 
@@ -114,8 +107,8 @@ and rendered in 8ms or less, for a total of 16ms or less.
 If missing frames (jankyness) is a concern, then 16ms for each of
 the build and render stages is OK.
 
-If your frames are rendering in well under 16ms total in a [profile
-build](/docs/testing/build-modes#profile),
+If your frames are rendering in well under 16ms total in
+[profile mode][],
 you likely don’t have to worry about performance even if some
 performance pitfalls apply, but you should still aim to build and
 render a frame as fast as possible. Why?
@@ -128,7 +121,7 @@ render a frame as fast as possible. Why?
   in under 8ms (total) in order to provide the smoothest experience.
 
 If you are wondering why 60fps leads to a smooth visual experience,
-see the video [Why 60fps?](https://www.youtube.com/watch?v=CaMTIgxCSqU)
+see the video [Why 60fps?][]
 
 ## Pitfalls
 
@@ -143,15 +136,14 @@ The following behaviors might negatively impact your app's performance.
 
 * Avoid using the `Opacity` widget, and particularly avoid it in an animation.
   Use `AnimatedOpacity` or `FadeInImage` instead.
-  For more information, see [Performance considerations for opacity
-  animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation).
+  For more information,
+  see [Performance considerations for opacity animation][].
 
 * When using an AnimatedBuilder, avoid putting a subtree in the builder
   function that builds widgets that don’t depend on the animation.
   This subtree is rebuilt for every tick of the animation.
   Instead, build that part of the subtree once and pass it as a child to
-  the AnimatedBuilder. For more information, see [Performance
-  optimizations]({{site.api}}//flutter/widgets/AnimatedBuilder-class.html#performance-optimizations).
+  the AnimatedBuilder. For more information, see [Performance optimizations][].
 
 * Avoid clipping in an animation. If possible, pre-clip the image before
   animating it.
@@ -164,15 +156,30 @@ The following behaviors might negatively impact your app's performance.
 
 For more performance info, see the following resources:
 
-* [Performance
-  optimizations]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations)
-  in the AnimatedBuilder API page
-* [Performance considerations for opacity
-  animation]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation)
-  in the Opacity API page
-* [Child elements'
-  lifecycle]({{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle)
-  and how to load them efficiently, in the ListView API page
-* [Performance
-  considerations]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations)
-  of a StatefulWidget
+* [Performance optimizations][] in the AnimatedBuilder API page
+* [Performance considerations for opacity animation][] in the Opacity API page
+* [Child elements' lifecycle][] and how to load them efficiently,
+  in the ListView API page
+* [Performance considerations][] of a `StatefulWidget`
+
+
+[Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
+[Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
+[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
+[Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
+[Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
+[Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
+[Working with long lists]: /cookbook/lists/long-lists
+[Cookbook]: /cookbook
+[Creating a ListView that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
+[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
+[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
+[`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
+[`ColorFilter`]: {{site.api}}/flutter/dart-ui/ColorFilter-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[profile mode]: /docs/testing/build-modes#profile

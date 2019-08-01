@@ -41,7 +41,7 @@ together throughout this recipe, which uses the following steps:
   3. Create a `testWidgets` test.
   4. Build the widget using the `WidgetTester`.
   5. Search for the widget using a `Finder`.
-  6. Verify that the widget uses a `Matcher`.
+  6. Verify the widget using a `Matcher`.
 
 ### 1. Add the `flutter_test` dependency
 
@@ -154,8 +154,8 @@ which is particularly useful while testing.
 
 With a widget in the test environment, search
 through the widget tree for the `title` and `message`
-Text widgets using a `Finder`. This allow verification that
-the widgets are displaying correctly.
+Text widgets using a `Finder`. This allows verification that
+the widgets are being displayed correctly.
 
 For this purpose, use the top-level
 [`find()`]({{api}}/flutter_test/find-constant.html)
@@ -181,7 +181,7 @@ void main() {
 }
 ```
 
-### 6. Verify that the widget uses a `Matcher`
+### 6. Verify the widget using a `Matcher`
 
 Finally, verify the title and message `Text` widgets appear on screen
 using the `Matcher` constants provided by `flutter_test`.

@@ -40,7 +40,7 @@ import 'package:intl/intl.dart';
 //
 // The second command generates intl_messages.arb and the third generates
 // messages_all.dart. There's more about this process in
-// https://pub.dartlang.org/packages/intl.
+// https://pub.dev/packages/intl.
 import 'l10n/messages_all.dart';
 
 class DemoLocalizations {

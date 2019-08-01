@@ -46,7 +46,7 @@ ViewB since the source of truth for the UI might outlive instance `b` itself.
 
 In the declarative style, view configurations (such as Flutter’s Widgets)
 are immutable and are only lightweight "blueprints". To change the UI,
-a Widget triggers a rebuild on itself (most commonly by calling `setState()`
+a widget triggers a rebuild on itself (most commonly by calling `setState()`
 on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 
 <!-- skip -->
