@@ -19,7 +19,7 @@ that describes a specific part of a UI. You also learn that, while widgets are s
 widgets can be complex in their structures. Widgets can be built around and inside of other widgets,
 and widgets can have interconnected and ordered relationships with one another. At the end of this codelab,
 you apply what you learn and build a simple interface using basic Fluter layout concepts. 
-## Row class and Column class
+## Row and Column classes
 `Row` and `Column` are classes that contain widgets. When `Row` and `Column` contain widgets, the widgets
 become "children," and `Row` and `Column` become "parents." Moreover, when `Row` and `Column` contain widgets,
 `Row` and `Column` lay them out. `Row` lays out its widgets horizontally. `Column` lays out its widgets vertically. 
