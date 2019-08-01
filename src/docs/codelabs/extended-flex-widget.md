@@ -13,9 +13,16 @@ toc: true
   Flutter supports devices that maintain right-to-left language settings. 
 {{site.alert.end}}
 ## Introduction
-In this codelab, you interact with and build Flutter layouts in a code editor called DartPad2. As you progress through this codelab, you learn that widgets build everything in flutter. A widget is an immutable object that describes a specific part of a UI. You also learn that, while widgets are simple in their functions, widgets can be complex in their structures. Widgets can be built around and inside of other widgets, and widgets can have interconnected and ordered relationships with one another. At the end of this codelab, you apply what you learn and build a simple interface using basic Fluter layout concepts. 
+In this codelab, you interact with and build Flutter layouts in a code editor called DartPad2. As you progress
+through this codelab, you learn that widgets build everything in flutter. A widget is an immutable object
+that describes a specific part of a UI. You also learn that, while widgets are simple in their functions,
+widgets can be complex in their structures. Widgets can be built around and inside of other widgets,
+and widgets can have interconnected and ordered relationships with one another. At the end of this codelab,
+you apply what you learn and build a simple interface using basic Fluter layout concepts. 
 ## Row class and Column class
-`Row` and `Column` are classes that contain widgets. When `Row` and `Column` contain widgets, the widgets become "children," and `Row` and `Column` become "parents." Moreover, when `Row` and `Column` contain widgets, `Row` and `Column` lay them out. `Row` lays out its widgets horizontally. `Column` lays out its widgets vertically. 
+`Row` and `Column` are classes that contain widgets. When `Row` and `Column` contain widgets, the widgets
+become "children," and `Row` and `Column` become "parents." Moreover, when `Row` and `Column` contain widgets,
+`Row` and `Column` lay them out. `Row` lays out its widgets horizontally. `Column` lays out its widgets vertically. 
 #### Code example: Row
 {:.no_toc}
 {{site.alert.secondary}}
@@ -51,7 +58,8 @@ In this codelab, you interact with and build Flutter layouts in a code editor ca
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=db96dc75c3283227bc849ba31d213783&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 
 ## mainAxisSize property
-`Row` and `Column` occupy different main axes. `Row`\'s main axis is horizontal. `Column`\'s main axis is vertical. `mainAxisSize` is a property that determines how much space `Row` and `Column` can occupy on their main axes. `mainAxisSize` has two `MainAxisSize` enums: 
+`Row` and `Column` occupy different main axes. `Row`\'s main axis is horizontal. `Column`\'s main axis is vertical. `mainAxisSize` is a property that determines how much space `Row` and `Column` can occupy on their main axes.
+`mainAxisSize` has two `MainAxisSize` enums: 
 
 * `MainAxisSize.max`
 <br/>
@@ -61,7 +69,8 @@ Increases the amount of space `Row` and `Column` can occupy on their main axes.
 Decreases the amount of space `Row` and `Column` can occupy on their main axes.  
 
 {{site.alert.tip}}
-  `MainAxisSize.max` is a default enum. When  building Flutter layouts, `Row` and `Column` automatically occupy all of the space on their main axes.  
+  `MainAxisSize.max` is a default enum. When  building Flutter layouts, `Row` and `Column` automatically occupy
+  all of the space on their main axes.  
 {{site.alert.end}}
 
 #### Code example: MainAxisSize.max
@@ -72,9 +81,11 @@ Decreases the amount of space `Row` and `Column` can occupy on their main axes.
 
   `Row` contains three `BlueBox` widgets. Notice how `mainAxisSize` is set to `MainAxisSize.max`. 
 
-  When `mainAxisSize` is set to `MainAxisSize.max`, `Row` and `Column` occupy all of the space on their main axes. As a result, `Row` and `Column` may have extra space on their main axes.
+ When `mainAxisSize` is set to `MainAxisSize.max`, `Row` and `Column` occupy all of the space on their main axes.
+ As a result, `Row` and `Column` may have extra space on their main axes.
 
-  In this code example, the code displays three blue squares, but notice how the grey, rectangular box has extra space. 
+  In this code example, the code displays three blue squares, but notice how the grey, rectangular box 
+  has extra space. 
 
   ***Run the code.***
 {{site.alert.end}}
@@ -91,9 +102,11 @@ Decreases the amount of space `Row` and `Column` can occupy on their main axes.
 
   `Row` contains three `BlueBox` widgets. Notice how `mainAxisSize` is set to `MainAxisSize.min`. 
 
-  When `mainAxisSize` is set to `MainAxisSize.min`, `Row` and `Column` only occupy enough space on their main axes for their children. As a result, `Row` and `Column` don't have any extra space on their main axes.
+  When `mainAxisSize` is set to `MainAxisSize.min`, `Row` and `Column` only occupy enough space on their main axes
+  for their children. As a result, `Row` and `Column` don't have any extra space on their main axes.
 
-  In this code example, the code displays three blue squares, but notice how the grey, rectangular box doesn't have extra space. 
+  In this code example, the code displays three blue squares, but notice how the grey, rectangular box
+  doesn't have extra space. 
 
   ***Run the code.***
 {{site.alert.end}}
@@ -103,7 +116,9 @@ Decreases the amount of space `Row` and `Column` can occupy on their main axes.
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=d852e4f07d6c87600fe8e0f186c7a31b&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 
 ## mainAxisAlignment property
-When `mainAxisSize` is set to `MainAxisSize.max`, `Row` and `Column` may have extra space on their main axes. `mainAxisAlignment` is a property that determines how `Row` and `Column` can position their children horizontally in extra space. `mainAxisAlignment` has six `MainAxisAlignment` enums: 
+When `mainAxisSize` is set to `MainAxisSize.max`, `Row` and `Column` may have extra space
+on their main axes. `mainAxisAlignment` is a property that determines how `Row` and `Column` can position
+their children horizontally in extra space. `mainAxisAlignment` has six `MainAxisAlignment` enums: 
 
 * `MainAxisAlignment.start`<br>
   Positions children near the beginning of the main axis. (Left for `Row`, top for `Column`)
@@ -138,7 +153,11 @@ When `mainAxisSize` is set to `MainAxisSize.max`, `Row` and `Column` may have ex
 {{site.alert.end}}
 
 ## crossAxisAlignment property
-Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property that determines how `Row` and `Column` can position their children in extra space. However, the `crossAxisAlignment` property determines how `Row` and `Column` can position their children vertically in extra space. As a result, most of the `crossAxisAlignment` property's enums only function inside of `Row`. The `crossAxisAlignment` property has five `CrossAxisAlignment` enums:
+Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property
+that determines how `Row` and `Column` can position their children in extra space. However,
+the `crossAxisAlignment` property determines how `Row` and `Column` can position their children vertically 
+in extra space. As a result, most of the `crossAxisAlignment` property's enums only function inside of `Row`. 
+The `crossAxisAlignment` property has five `CrossAxisAlignment` enums:
 
 * `CrossAxisAlignment.start`<br>
   Positions children near the top of the cross axis. (`Row`)
@@ -174,9 +193,13 @@ Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property 
 {{site.alert.end}}
 ## Flexible class
 
-`mainAxisAlignment` and `crossAxisAlignment` are properties that determine how `Row` and `Column` can position widgets in extra space. When `Row` and `Column` lay out widgets, they lay out widgets of a fixed size first. Widgets of a fixed size are considered "inflexible" because they can't resize themselves after `Row` and `Column` lay them out. 
+`mainAxisAlignment` and `crossAxisAlignment` are properties that determine how `Row` and `Column` can position widgets
+in extra space. When `Row` and `Column` lay out widgets, they lay out widgets of a fixed size first. Widgets
+of a fixed size are considered "inflexible" because they can't resize themselves after `Row` and `Column` lay them out. 
 
-`Flexible` is a class that wraps around a widget, takes the widget as its child, and then resizes the widget. When the `Flexible` class wraps around a widget, the widget is considered "flexible" because the widget can resize itself. `Row` and `Column` lay out flexible widgets after they lay out inflexible widgets. Flexible widgets can resize themselves according to their `flex` and `fit` properties:
+`Flexible` is a class that wraps around a widget, takes the widget as its child, and then resizes the widget.
+When the `Flexible` class wraps around a widget, the widget is considered "flexible" because the widget can resize 
+itself. `Row` and `Column` lay out flexible widgets after they lay out inflexible widgets. Flexible widgets can resize themselves according to their `flex` and `fit` properties:
 
 * `flex`
 <br>
@@ -191,11 +214,15 @@ Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property 
 {{site.alert.secondary}}
   *Check out Dart.* 
 
-  `Row` contains one `BlueBox` widget and two `Flexible` classes. Notice how the `Flexible` classes wrap around two `BlueBox` widgets. Also, notice that the `Flexible` classes contain `flex` properties with `flex` values set to 1. 
+  `Row` contains one `BlueBox` widget and two `Flexible` classes. Notice how the `Flexible` classes wrap
+  around two `BlueBox` widgets. Also, notice that the `Flexible` classes contain `flex` properties
+  with `flex` values set to 1. 
 
-  When `flex` properties compare themselves against one another, they add up their `flex` values, and the sum of the `flex` values determines what fraction of the total extra space each flexible widget receives. 
+  When `flex` properties compare themselves against one another, they add up their `flex` values, and the sum
+  of the `flex` values determines what fraction of the total extra space each flexible widget receives. 
   
-  In this code example, the sum of both `flex` values (2) determines that each flexible widget receives half of the extra space. 
+  In this code example, the sum of both `flex` values (2) determines that each flexible widget receives half 
+  of the extra space. 
 
   ***Run the code.***
 {{site.alert.end}}
@@ -209,7 +236,10 @@ Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property 
 {{site.alert.secondary}}
   *Check out Dart.*
   
-  `Row` contains two `Flexible` classes that both wrap around `BlueBox` widgets. Notice that the `Flexible` classes contain `flex` properties with `flex` values set to 1. Also, notice that the `Flexible` classes contain `fit` properties with `fit` values set to `FlexFit.loose`. The `fit` property has two `fit` values that help determine whether a flexible widget can occupy all of its extra space:
+  `Row` contains two `Flexible` classes that both wrap around `BlueBox` widgets. Notice that
+  the `Flexible` classes contain `flex` properties with `flex` values set to 1. Also, notice that
+  the `Flexible` classes contain `fit` properties with `fit` values set to `FlexFit.loose`. The `fit` property has 
+  two `fit` values that help determine whether a flexible widget can occupy all of its extra space:
 
   * `FlexFit.loose`
   <br>
@@ -226,7 +256,9 @@ Similar to the `mainAxisAlignment` property, `crossAxisAlignment` is a property 
 
 ## Expanded class
 
-Similar to the `Flexible` class, `Expanded` is a class that can wrap around a widget, take the widget as its child, and then resize the widget. However, the `Expanded` class doesn't utilize `flex` and `fit` properties to resize its child. Insetad, the `Expanded` class forces its child to fill extra space. 
+Similar to the `Flexible` class, `Expanded` is a class that can wrap around a widget, take the widget as its child,
+and then resize the widget. However, the `Expanded` class doesn't utilize `flex` and `fit` properties to resize
+its child. Insetad, the `Expanded` class forces its child to fill extra space. 
 
 #### Code example: Expanded class
 {:.no_toc}
@@ -235,7 +267,8 @@ Similar to the `Flexible` class, `Expanded` is a class that can wrap around a wi
 
   `Row` contains two `BlueBox` widgets and one `Expanded` class. Notice how the `Expanded` class wraps around another `BlueBox` widget. 
 
-  In this code example, the code displays three blue squares, and the middle square fills all of the extra space inside the grey, rectangular box.  
+  In this code example, the code displays three blue squares, and the middle square fills all of the extra space 
+  inside the grey, rectangular box.  
 
   ***Run the code.*** 
 {{site.alert.end}}
@@ -243,14 +276,17 @@ Similar to the `Flexible` class, `Expanded` is a class that can wrap around a wi
 
 ## SizedBox class
 
-Similar to the `Flexible` and `Expanded` classes, `SizedBox` is a class that can wrap around a widget, take the widget as its child, and then resize the widget. However, the `SizedBox` class also can create space between widgets. Instead of utilizing `flex` and `fit` properties, the `SizedBox` class utilizes `width` and `height` properties.
+Similar to the `Flexible` and `Expanded` classes, `SizedBox` is a class that can wrap around a widget, take the widget
+as its child, and then resize the widget. However, the `SizedBox` class also can create space between widgets.
+Instead of utilizing `flex` and `fit` properties, the `SizedBox` class utilizes `width` and `height` properties.
 
 #### Code example: SizedBox with a child
 {:.no_toc}
 {{site.alert.secondary}}
 *Check out Dart.* 
 
-`Row` contains two `BlueBox` widgets and one `SizedBox` class. Notice how the `SizedBox` class wraps around another `BlueBox` widget and contains a `width` property equal to 100. 
+`Row` contains two `BlueBox` widgets and one `SizedBox` class. Notice how the `SizedBox` class wraps
+around another `BlueBox` widget and contains a `width` property equal to 100. 
 
 In this code example, try adding a height property equal to 100 inside the `SizedBox` class. 
 
@@ -266,11 +302,16 @@ In this code example, try adding a height property equal to 100 inside the `Size
 {{site.alert.secondary}}
 *Check out Dart.* 
 
-`Row` contains three `BlueBox` widgets and one `SizedBox` class. Notice how the `SizedBox` class separates the first and second `BlueBox` widgets. Also, notice how the `SizedBox` class doesn't wrap around a widget and only contains a `width` property. 
+`Row` contains three `BlueBox` widgets and one `SizedBox` class. Notice how the `SizedBox` class separates
+the first and second `BlueBox` widgets. Also, notice how the `SizedBox` class doesn't wrap around a widget
+and only contains a `width` property. 
 
-When the `SizedBox` class creates space between widgets, the `SizedBox` class doesn't take a child widget. Also, when `Row` contains a `SizedBox` class, the `SizedBox` class only utilizes a `width` property. Likewise, when `Column` contains a `SizedBox` class, the `SizedBox` class only utilizes a `height` property.
+When the `SizedBox` class creates space between widgets, the `SizedBox` class doesn't take a child widget. Also,
+when `Row` contains a `SizedBox` class, the `SizedBox` class only utilizes a `width` property. Likewise,
+when `Column` contains a `SizedBox` class, the `SizedBox` class only utilizes a `height` property.
 
-In this code example, try adding another `SizedBox` class between the second and third `BlueBox` widgets. Then add a `width` property equal to 25 inside the `SizedBox` class.
+In this code example, try adding another `SizedBox` class between the second and third `BlueBox` widgets. Then add
+a `width` property equal to 25 inside the `SizedBox` class.
 
 ***Run the code.*** 
 {{site.alert.end}}
@@ -281,16 +322,20 @@ In this code example, try adding another `SizedBox` class between the second and
 
 ## Spacer class
 
-Similar to the `SizedBox` class, `Spacer` is a class that creates space between widgets. However, the `Spacer` class can't take child widgets and doesn't create space at exact dimensions. Instead, the `Spacer` class creates space utilizing `flex` properties.
+Similar to the `SizedBox` class, `Spacer` is a class that creates space between widgets. However, the `Spacer` class
+can't take child widgets and doesn't create space at exact dimensions. Instead, the `Spacer` class creates space
+utilizing `flex` properties.
 
 #### Code example: Spacer class
 {:.no_toc}
 {{site.alert.secondary}}
 *Check out Dart.* 
 
-`Row` contains three `BlueBox` widgets and one `Spacer` class with a `flex` property equal to 1. Notice how the `Spacer` class separates the first and second `BlueBox` widgets. 
+`Row` contains three `BlueBox` widgets and one `Spacer` class with a `flex` property equal to 1.
+Notice how the `Spacer` class separates the first and second `BlueBox` widgets. 
 
-In this code example, try adding another `Spacer` class between the second and third `BlueBox` widgets. Then add another `flex` property equal to 1 inside the `Spacer` class. 
+In this code example, try adding another `Spacer` class between the second and third `BlueBox` widgets. 
+Then add another `flex` property equal to 1 inside the `Spacer` class. 
 
 ***Run the code.*** 
 {{site.alert.end}}
@@ -301,16 +346,20 @@ In this code example, try adding another `Spacer` class between the second and t
 
 ## Text class
 
-`Text` is a class that displays a string of text. The `Text` class can display text at different font sizes and in various fonts and colors. 
+`Text` is a class that displays a string of text. The `Text` class can display text at different font sizes and
+in various fonts and colors. 
 
 #### Code example: Text class
 {:.no_toc}
 {{site.alert.secondary}}
 *Check out Dart.*
 
-  `Row` contains three `Text` classes, which all display "Hey!" in the same font, but at different font sizes and in different colors. Notice how `Row` also contains the `crossAxisAlignment` property and the `textBaseline` property. 
+  `Row` contains three `Text` classes, which all display "Hey!" in the same font, but at different font sizes and 
+  in different colors. Notice how `Row` also contains the `crossAxisAlignment` property and the `textBaseline` property. 
 
-  Earlier in this codelab, you learn about the `crossAxisAlignment` property and its `CrossAxisAlignment` enum `CrossAxisAlignment.baseline`. When `Row` and `Column` contain `Text` classes, the `crossAxisAlignment` property set to `CrossAxisAlignment.baseline` can align the `Text` classes along their character baselines. However, the `crossAxisAlignment` property requires the `textBaseline` property set to `TextBaseline.alphabetic`. 
+  Earlier in this codelab, you learn about the `crossAxisAlignment` property and its `CrossAxisAlignment` enum `CrossAxisAlignment.baseline`. When `Row` and `Column` contain `Text` classes, 
+  the `crossAxisAlignment` property set to `CrossAxisAlignment.baseline` can align the `Text` classes 
+  along their character baselines. However, the `crossAxisAlignment` property requires the `textBaseline` property set to `TextBaseline.alphabetic`. 
 
   In this code example, try resetting the `crossAxisAlignment` property to `CrossAxisAlignment.baseline`.  
 
@@ -323,14 +372,16 @@ In this code example, try adding another `Spacer` class between the second and t
 
 ## Icon class
 
-`Icon` is a class that displays glyphs. Flutter is preloaded with multiple icon packages for Android and iOS applications. 
+`Icon` is a class that displays glyphs. Flutter is preloaded with multiple icon packages
+for Android and iOS applications. 
 
 #### Code example: Icon class
 {:.no_toc}
 {{site.alert.secondary}}
   *Check out Dart.* 
 
-  `Row` contains three `Icon` classes, which all display widget icons in the same size. Notice how the first and second `Icon` classes contain `color` properties.
+  `Row` contains three `Icon` classes, which all display widget icons in the same size.
+  Notice how the first and second `Icon` classes contain `color` properties.
 
   In this code example, try adding a `color` property set to `Colors.amber` inside the third `Icon` class.   
 
@@ -343,14 +394,17 @@ In this code example, try adding another `Spacer` class between the second and t
 
 ## Image class 
 
-`Image` is a class that links to and displays an image. Unlike the widgets previously covered in this codelab, the `Image` class references its data, which is stored remotely.
+`Image` is a class that links to and displays an image. Unlike the widgets previously covered in this codelab,
+the `Image` class references its data, which is stored remotely.
 
 #### Code example: Image class
 {:.no_toc}
 {{site.alert.secondary}}
   *Check out Dart* 
 
-  `Row` contains an `Image` class. Notice how the `Image` class references its image. The `Image` class initiates that it's linking to an image with `.Network` followed by parentheses. Then, inside the parentheses, the `Image` class links to its image.
+  `Row` contains an `Image` class. Notice how the `Image` class references its image. The `Image` class initiates that
+  it's linking to an image with `.Network` followed by parentheses. Then, inside the parentheses, the `Image` class 
+  links to its image.
 
   In this code example, the code displays an image that's stored remotely on [GitHub](https://github.com/flutter/website/tree/master/examples/layout/sizing/images).
 
