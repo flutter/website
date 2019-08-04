@@ -83,4 +83,4 @@ by the Flutter community:
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
 * [Getting started with MobX.dart](https://mobx.pub/getting-started)
-* [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
+* [Flutter: State Management with Mobx](https://www.youtube.com/watch?v=p-MUBLOEkCs), a video by Paul Halliday
