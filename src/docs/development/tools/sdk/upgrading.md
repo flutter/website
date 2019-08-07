@@ -4,10 +4,9 @@ short-title: Upgrading
 description: Upgrading Flutter
 ---
 
-No matter which [Flutter release channel][release-channel]
+No matter which one of the Flutter [release channels][]
 you follow, you can use the `flutter` command to upgrade your
 Flutter SDK and the packages that your app depends on.
-
 
 ## One-time setup
 
@@ -56,7 +55,7 @@ and then run `flutter upgrade`.
 
 ## Switching Flutter channels
 
-Flutter has [four release channels][Flutter release channel]:
+Flutter has four [release channels][]:
 **stable**, **beta**, **dev**, and **master**.
 We recommend using the **{{site.sdk.channel}}** channel
 unless you need a more recent release.
@@ -114,7 +113,7 @@ Aside from subscribing to receive announcements,
 we'd love to hear from you!
 
 [Flutter SDK archive]: /docs/development/tools/sdk/archive
-[release-channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[release channels]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [flutter-dev]: {{site.groups}}/forum/#!forum/flutter-dev
 

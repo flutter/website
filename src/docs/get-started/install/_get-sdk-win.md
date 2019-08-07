@@ -1,5 +1,12 @@
 ## Get the Flutter SDK
 
+{% comment %} 
+sz: For now, don't use these instructions. As Tim S reported:
+I did a bit of digging, and it seems as if what's going on is that
+7-Zip does not unpack hidden directories by default,
+which leaves the Flutter install in a broken state.
+Eventually, we'll have an Installer for windows, but for now
+use "git clone".
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -12,25 +19,52 @@
     (for example, `C:\src\flutter`; do not
     install Flutter in a directory like `C:\Program Files\` that requires
     elevated privileges).
- 1. Locate the file `flutter_console.bat` inside the `flutter` directory.
-    Start it by double-clicking.
+{% endcomment %}
+
+<ol markdown="1">
+<li markdown="1">At the command line,
+    go to the desired installation location
+    for the Flutter SDK (for example, `C:\src\flutter`; 
+    do not install Flutter in a directory like `C:\Program Files\`
+    that requires elevated privileges).
+</li>
+<li markdown="1">Clone the repo using `git clone`.
+    The following example clones the stable channel:
+
+```sh
+git clone -b stable https://github.com/flutter/flutter.git
+```
+</li>
+<li markdown="1">In the Finder, navigate to the `flutter`
+    directory and locate the `flutter_console.bat` file.
+    Double-click the file to start it.
+</li>
+</ol>
 
 You are now ready to run Flutter commands in the Flutter Console!
 
-To update an existing version of Flutter,
-see [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+{{site.alert.warning}}
+  Installing the Flutter SDK using the 7-Zip bundle
+  can cause problems because 7-Zip doesn't unpack
+  hidden directories by default. Therefore, we
+  recommend installing on Windows using `git clone`.
+{{site.alert.end}}
+
+To update an existing version of Flutter, or to learn more 
+about Flutter's release channels, see [Upgrading Flutter][].
 
 ### Update your path
 
 If you wish to run Flutter commands in the regular Windows console,
 take these steps to add Flutter to the `PATH` environment variable:
 
-* From the Start search bar, type 'env' and select **Edit environment
-  variables for your account**.
+* From the Start search bar, enter 'env'
+  and select **Edit environment variables for your account**.
 * Under **User variables** check if there is an entry called **Path**:
-  * If the entry does exist, append the full path to `flutter\bin` using `;` as
-    a separator from existing values.
-  * If the entry does not exist, create a new user variable named `Path` with
+  * If the entry exists, append the full path to `flutter\bin` using
+    `;` as a separator from existing values.
+  * If the entry doesn't exist,
+    create a new user variable named `Path` with
     the full path to `flutter\bin` as its value.
 
 Note that you have to close and reopen any existing console windows
@@ -67,3 +101,6 @@ dependencies, you can run the `flutter doctor` command again to
 verify that you’ve set everything up correctly.
 
 {% include_relative _analytics.md %}
+
+
+[Upgrading Flutter]: /docs/development/tools/sdk/upgrading
