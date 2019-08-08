@@ -223,7 +223,7 @@ onPanEnd: (details) {
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
-continues at that speed before being snapped back. (The `_runAnimation()` method
+continues at that speed before being snapped back. (The `_runAnimation` method
 already sets the direction by setting the animation's start and end alignment.)
 
 First, import the `physics` package:
