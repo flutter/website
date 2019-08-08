@@ -152,7 +152,7 @@ Widget build(BuildContext context) {
 
 When the widget is released, it should spring back to the center.
 
-Add an `Animation<Alignment>` field and an `_runAnimation()` method. This
+Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
