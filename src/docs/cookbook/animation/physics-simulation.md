@@ -106,8 +106,7 @@ class _DraggableCardState extends State<DraggableCard>
     _controller.dispose();
     super.dispose();
   }
-}
-
+  //...
 ```
 
 ## Step 2: Move the widget using gestures
@@ -153,41 +152,39 @@ Widget build(BuildContext context) {
 
 When the widget is released, it should spring back to the center.
 
-Add an `Animation<Alignment>` field and an `_updateAnimation()` method. This
+Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
 ```dart
-Animation<Alignment> _animation;
+  Animation<Alignment> _animation;
 
-void _updateAnimation() {
- _animation = _controller.drive(
-   AlignmentTween(
-     begin: _dragAlignment,
-     end: Alignment.center,
-   ),
- );
-}
+  void _runAnimation() {
+    _animation = _controller.drive(
+      AlignmentTween(
+        begin: _dragAlignment,
+        end: Alignment.center,
+      ),
+    );
+   _controller.reset();
+   _controller.forward();
+  }
 ```
 
-Call `_updateAnimation` in `initState`. This gives `_animation` an initial
-value. Then update `_dragAlignment` when the `AnimationController` produces a
+Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
 ```dart
 @override
 void initState() {
+  super.initState();
   _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
   _controller.addListener(() {
     setState(() {
       _dragAlignment = _animation.value;
     });
   });
-
-  _updateAnimation();
-  super.initState();
 }
-
 ```
 
 Next, make the `Align` widget use the `_dragAlignment` field:
@@ -218,9 +215,7 @@ onPanUpdate: (details) {
  });
 },
 onPanEnd: (details) {
- _updateAnimation();
- _controller.reset();
- _controller.forward();
+ _runAnimation();
 },
 ```
 
@@ -228,9 +223,14 @@ onPanEnd: (details) {
 
 The last step is to do a little math, to calculate the velocity of the widget
 after it's finished being dragged. This is so that the widget realistically
-continues at that speed before being snapped back. (The `_updateAnimation()`
-method already sets the direction  by setting the animation's start and end
-alignment.)
+continues at that speed before being snapped back. (The `_runAnimation` method
+already sets the direction by setting the animation's start and end alignment.)
+
+First, import the `physics` package:
+
+```dart
+import 'package:flutter/physics.dart';
+```
 
 The `onPanEnd` callback provides a [DragEndDetails][] object. This object
 provides the velocity of the pointer when it stopped contacting the screen. The
@@ -243,24 +243,37 @@ Finally, `AnimationController` has an `animateWith()` method that can be given a
 [SpringSimulation][]:
 
 ```dart
-onPanEnd: (details) {
-  _updateAnimation();
+void _runAnimation(Offset pixelsPerSecond, Size size) {
+  _animation = _controller.drive(
+    AlignmentTween(
+      begin: _dragAlignment,
+      end: Alignment.center,
+    ),
+  );
   // Calculate the velocity relative to the unit interval, [0,1],
   // used by the animation controller.
-  var pxPerSecond = details.velocity.pixelsPerSecond;
-  var unitsPerSecondX = pxPerSecond.dx / size.width;
-  var unitsPerSecondY = pxPerSecond.dy / size.height;
-  var unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
-  var unitVelocity = unitsPerSecond.distance;
+  final unitsPerSecondX = pixelsPerSecond.dx / size.width;
+  final unitsPerSecondY = pixelsPerSecond.dy / size.height;
+  final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
+  final unitVelocity = unitsPerSecond.distance;
 
-  var spring = SpringDescription(
+  const spring = SpringDescription(
     mass: 30,
     stiffness: 1,
     damping: 1,
   );
-  var simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
+
+  final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
   _controller.animateWith(simulation);
+}
+```
+
+Don't forget to call `_runAnimation()`  with the velocity and size:
+
+```dart
+onPanEnd: (details) {
+  _runAnimation(details.velocity.pixelsPerSecond, size);
 },
 ```
 
@@ -303,29 +316,48 @@ class DraggableCard extends StatefulWidget {
   _DraggableCardState createState() => _DraggableCardState();
 }
 
-/// Holds the state for the [DraggableCard] widget
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
-  /// The position the user has dragged the card to. Represented as an
-  /// [Alignment].
+
+  /// The alignment of the card as it is dragged or being animated.
+  ///
+  /// While the card is being dragged, this value is set to the values computed
+  /// in the GestureDetector onPanUpdate callback. If the animation is running,
+  /// this value is set to the value of the [_animation].
   Alignment _dragAlignment = Alignment.center;
 
   Animation<Alignment> _animation;
 
-  /// Update the animation so that it runs from the dragged point back to the
-  /// center.
-  void _updateAnimation() {
+  /// Calculates and runs a [SpringSimulation].
+  void _runAnimation(Offset pixelsPerSecond, Size size) {
     _animation = _controller.drive(
       AlignmentTween(
         begin: _dragAlignment,
         end: Alignment.center,
       ),
     );
+    // Calculate the velocity relative to the unit interval, [0,1],
+    // used by the animation controller.
+    final unitsPerSecondX = pixelsPerSecond.dx / size.width;
+    final unitsPerSecondY = pixelsPerSecond.dy / size.height;
+    final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
+    final unitVelocity = unitsPerSecond.distance;
+
+    const spring = SpringDescription(
+      mass: 30,
+      stiffness: 1,
+      damping: 1,
+    );
+
+    final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
+
+    _controller.animateWith(simulation);
   }
 
   @override
   void initState() {
+    super.initState();
     _controller = AnimationController(vsync: this);
 
     _controller.addListener(() {
@@ -333,8 +365,6 @@ class _DraggableCardState extends State<DraggableCard>
         _dragAlignment = _animation.value;
       });
     });
-    _updateAnimation();
-    super.initState();
   }
 
   @override
@@ -345,7 +375,7 @@ class _DraggableCardState extends State<DraggableCard>
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onPanDown: (details) {
         _controller.stop();
@@ -359,23 +389,7 @@ class _DraggableCardState extends State<DraggableCard>
         });
       },
       onPanEnd: (details) {
-        _updateAnimation();
-        // Calculate the velocity relative to the unit interval, [0,1],
-        // used by the animation controller.
-        var pxPerSecond = details.velocity.pixelsPerSecond;
-        var unitsPerSecondX = pxPerSecond.dx / size.width;
-        var unitsPerSecondY = pxPerSecond.dy / size.height;
-        var unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
-        var unitVelocity = unitsPerSecond.distance;
-
-        var spring = SpringDescription(
-          mass: 30,
-          stiffness: 1,
-          damping: 1,
-        );
-        var simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
-
-        _controller.animateWith(simulation);
+        _runAnimation(details.velocity.pixelsPerSecond, size);
       },
       child: Align(
         alignment: _dragAlignment,
@@ -386,7 +400,6 @@ class _DraggableCardState extends State<DraggableCard>
     );
   }
 }
-
 ```
 
 ![Demo showing a widget being dragged and snapped back to the center](/images/cookbook/animation-physics-card-drag.gif){:.site-mobile-screenshot}
