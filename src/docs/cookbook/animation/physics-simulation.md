@@ -177,16 +177,14 @@ value:
 ```dart
 @override
 void initState() {
+  super.initState();
   _controller = AnimationController(vsync: this, duration: Duration(seconds: 1));
   _controller.addListener(() {
     setState(() {
       _dragAlignment = _animation.value;
     });
   });
-
-  super.initState();
 }
-
 ```
 
 Next, make the `Align` widget use the `_dragAlignment` field:
