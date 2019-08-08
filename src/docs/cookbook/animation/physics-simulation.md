@@ -157,18 +157,18 @@ method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
 ```dart
-Animation<Alignment> _animation;
+  Animation<Alignment> _animation;
 
-void _runAnimation() {
-  _animation = _controller.drive(
-    AlignmentTween(
-      begin: _dragAlignment,
-      end: Alignment.center,
-    ),
-  );
- _controller.reset();
- _controller.forward();
-}
+  void _runAnimation() {
+    _animation = _controller.drive(
+      AlignmentTween(
+        begin: _dragAlignment,
+        end: Alignment.center,
+      ),
+    );
+   _controller.reset();
+   _controller.forward();
+  }
 ```
 
 Next, update `_dragAlignment` when the `AnimationController` produces a
