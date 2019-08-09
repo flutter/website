@@ -2,11 +2,10 @@
 
 {% comment %} 
 sz: For now, don't use these instructions. As Tim S reported:
-I did a bit of digging, and it seems as if what's going on is that
-7-Zip does not unpack hidden directories by default,
+7-Zip doesn't unpack hidden directories by default,
 which leaves the Flutter install in a broken state.
-Eventually, we'll have an Installer for windows, but for now
-use "git clone".
+Eventually, we'll have an Installer for windows,
+but for now use "git clone".
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -29,29 +28,21 @@ use "git clone".
     that requires elevated privileges).
 </li>
 <li markdown="1">Clone the repo using `git clone`.
-    The following example clones the stable channel:
+    The following example clones the stable channel.
+    (To see Flutter's other release channels,
+    see [upgrading Flutter][].)
 
 ```sh
 git clone -b stable https://github.com/flutter/flutter.git
 ```
 </li>
-<li markdown="1">In the Finder, navigate to the `flutter`
+<li markdown="1">In Windows Explorer, navigate to the `flutter`
     directory and locate the `flutter_console.bat` file.
     Double-click the file to start it.
 </li>
 </ol>
 
 You are now ready to run Flutter commands in the Flutter Console!
-
-{{site.alert.warning}}
-  Installing the Flutter SDK using the 7-Zip bundle
-  can cause problems because 7-Zip doesn't unpack
-  hidden directories by default. Therefore, we
-  recommend installing on Windows using `git clone`.
-{{site.alert.end}}
-
-To update an existing version of Flutter, or to learn more 
-about Flutter's release channels, see [Upgrading Flutter][].
 
 ### Update your path
 
@@ -103,4 +94,4 @@ verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 
-[Upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[upgrading Flutter]: /docs/development/tools/sdk/upgrading
