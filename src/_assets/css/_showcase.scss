@@ -1,4 +1,33 @@
 .showcase {
+  &__static-banner {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    height: 350px;
+    justify-content: center;
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__company-logos {
+    align-items: center;
+    background-color: lightgray;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__company-cases {
+    background-color: white;
+    justify-content: center;
+  }
+
   &__carousel {
     $carousel-animation-in-duration: .8s;
     $carousel-animation-out-duration: .6s;

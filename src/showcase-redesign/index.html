@@ -1,0 +1,65 @@
+---
+title: Showcase
+layout: landing
+body_class: landing-page showcase
+---
+
+<section id="showcaseCarousel" class="landing-page__hero showcase__static-banner" data-interval=8000 data-ride="carousel" data-pause="false">
+    <header>
+        <h1>Apps take flight with Flutter</h1>
+        <p>See how developers have used Flutter beautiful cross-platform apps.</p>
+    </header>
+</section>
+
+<section class="landing-page__hero showcase__company-logos">
+    {% for logo in site.data.company_logos %}
+        <img src="{{logo.src}}" alt="{{logo.alt_text}}">
+    {% endfor %}
+</section>
+
+<section class="landing-page__hero showcase__company-cases">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Placeholder for showcases</h2>
+                <ul>
+                    <li>showcase #1</li>
+                    <li>showcase #2</li>
+                    <li>showcase #3</li>
+                    <li>showcase #4</li>
+                    <li>showcase #5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="landing-page__hero showcase__company-logos">
+   <p>
+       "Lorem ipsum dolor sit amet"
+   </p>
+</section>
+
+<section class="landing-page__hero showcase__company-cases">
+    <div class="card-body">
+        Devices section
+    </div>
+</section>
+
+<section class="landing-page__hero showcase__company-logos">
+    <p>
+        More info / Learn more
+    </p>
+</section>
+
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="embedded-video-wrapper">
+            <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto" src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

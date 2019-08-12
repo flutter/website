@@ -1,0 +1,23 @@
+- name: Alibaba
+  src: showcase/logo-alibaba.png
+  alt_text: Alibaba logo
+
+- name: Apple
+  logo_src: showcase/logo-alibaba.png
+  alt_text: Apple logo
+
+- name: Google
+  logo_src: showcase/logo-alibaba.png
+  alt_text: Google logo
+
+- name: Amazon
+  logo_src: showcase/logo-alibaba.png
+  alt_text: Amazon logo
+
+- name: Android
+  logo_src: showcase/logo-alibaba.png
+  alt_text: Android logo
+
+- name: Music
+  logo_src: showcase/logo-alibaba.png
+  alt_text: Music logo
