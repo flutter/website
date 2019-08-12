@@ -364,6 +364,108 @@ to write automated tests to ensure that the serialization works&mdash;it's
 now _the library's responsibility_ to make sure the serialization works
 appropriately.
 
+## Generating code for nested classes
+You might have code that has nested classes within a class.
+If that is the case, and you have tried to pass the class in JSON format
+as an argument to a service (such as Firebase, for example),
+you might have experienced an`Invalid argument` error.
+
+Consider the following `Adress` class:
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+part 'address.g.dart';
+
+@JsonSerializable()
+class Address {
+  String street;
+  String city;
+  
+  Address(this.street, this.city);
+  
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  Map<String, dynamic> toJson() => _$AddressToJson(this); 
+}
+```
+
+The Address class is nested inside the `User` class:
+
+```dart
+import 'address.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'user.g.dart';
+
+@JsonSerializable()
+class User {
+  String firstName;  
+  Address address;
+  
+  User(this.firstName, this.address);
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
+```
+
+Running `flutter pub run build_runner build` in the terminal creates
+the `*.g.dart` file, but the private `_$UserToJson()` function
+looks something like the following:
+
+```dart
+(
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{      
+  'firstName': instance.firstName,
+  'address': instance.address,      
+};
+```
+
+All looks fine right now, but if you do a print() on our user object:
+
+```dart
+Address address = Address("My st.", "New York");
+User user = User("John", address);
+print(user.toJson());
+```
+
+The result is: 
+
+```json
+{name: John, address: Instance of 'address'}
+```
+
+When what you probably want is output like the following:
+
+```json
+{name: John, adress: {street: My st., city: New York}}
+```
+
+To make this work, pass `explicitToJson: true` in the `@JsonSerializable()`
+annotation over the class declaration. The `User` class now looks as follows:
+
+``` dart
+import 'address.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'user.g.dart';
+
+@JsonSerializable(explicitToJson: true)
+class User {
+  String firstName;  
+  Address address;
+  
+  User(this.firstName, this.address);
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
+}
+```
+
+For more information, see [explicitToJson][] in the 
+[JsonSerializable][] class for the [json_annotation][] package.
+
+[explicitToJson]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+[JsonSerializable]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
+[json_annotation]: {{site.pub}}/packages/json_annotation
+
 ## Further references
 
 For more information, see the following resources:
