@@ -81,13 +81,13 @@ with the following in the `MyCart` widget:
 <!-- skip -->
 ```dart
 // BAD: DO NOT DO THIS
-Widget build(BuildContext context) {
-  return SomeWidget(
+Widget build(BuildContext context) { // MyCart widget-builder
+  return SomeWidget( 
     // The initial state of the cart.
   );
 }
 
-void updateWith(Item item) {
+void updateWith(Item item) { // MyCart items-list update
   // Somehow you need to change the UI from here.
 }
 ```
@@ -116,10 +116,10 @@ Now `MyCart` has only one code path for building any version of the UI.
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (build)"?>
 ```dart
 // GOOD
-Widget build(BuildContext context) {
+Widget build(BuildContext context) { // MyCart widget-builder
   var cartModel = somehowGetMyCartModel(context);
-  return SomeWidget(
-    // Just construct the UI once, using the current state of the cart.
+  return SomeWidget( 
+    // Just construct the UI once, using cartModel that has the current state of the cart.
     // ···
   );
 }
