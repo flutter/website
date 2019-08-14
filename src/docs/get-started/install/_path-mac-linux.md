@@ -18,9 +18,10 @@ whenever you open a new window. For example:
     so edit `$HOME/.bashrc`.
     Mac OS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
-    The file path and filename might be even
-    different on your machine.
- 3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
+    If you are using a different shell, the file path
+    and filename will be different on your machine.
+ 3. Add the following line and change
+    `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
     the path where you cloned Flutter's git repo:
 
     ```terminal
@@ -29,11 +30,18 @@ whenever you open a new window. For example:
 
  4. Run `source $HOME/.<rc file>`
     to refresh the current window,
-    or open a new terminal window.
- 5. Verify that the `flutter/bin` directory is now in your PATH by running:
+    or open a new terminal window to
+    automatically source the file.
+ 5. Verify that the `flutter/bin` directory
+    is now in your PATH by running:
 
     ```terminal
     $ echo $PATH
+    ```
+    Verify that the `flutter` command is available by running:
+
+    ```terminal
+    $ which flutter
     ```
 
 For more details on setting the path in Bash,

@@ -112,7 +112,9 @@ You'll also need to set up physical device deployment in Xcode.
      1. Open the default Xcode workspace in your project by running `open
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
-     1. In Xcode, select the `Runner` project in the left navigation panel.
+     1. Select the device you intend to deploy to in the device drop-down
+        menu next to the run button.
+     1. Select the `Runner` project in the left navigation panel.
      1. In the `Runner` target settings page,
         make sure your Development Team is selected.
         The UI varies depending on your version of Xcode.
@@ -130,8 +132,8 @@ You'll also need to set up physical device deployment in Xcode.
           Development and testing is supported for any Apple ID.
           Enrolling in the Apple Developer Program is required to
           distribute your app to the App Store.
-          For details about membership types, see
-          [Choosing a Membership][].
+          For details about membership types,
+          see [Choosing a Membership][].
 
         * The first time you use an attached physical device for iOS
           development, you need to trust both your Mac and the Development
