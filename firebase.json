@@ -13,7 +13,6 @@
       { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
       { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 },
 
-
       { "source": "/docs/catalog", "destination": "/docs/catalog/samples", "type": 301 },
       { "source": "/docs/cookbook/networking", "destination": "/docs/cookbook#networking", "type": 301 },
       { "source": "/docs/cookbook/networking/named-routes", "destination": "/docs/cookbook/navigation/named-routes", "type": 301 },
@@ -37,7 +36,6 @@
       { "source": "/docs/reference/widgets/widgetindex", "destination": "/docs/reference/widgets", "type": 301 },
       { "source": "/docs/reference/widgets/:catalogpage+", "destination": "/docs/development/ui/widgets/:catalogpage+", "type": 301 },
       { "source": "/docs/resources/design-principles", "destination": "https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo", "type": 301 },
-
 
       { "source": "/accessibility", "destination": "/docs/development/accessibility-and-localization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/docs/resources/platform-adaptations", "type": 301 },
@@ -112,7 +110,9 @@
       { "source": "/widgets/:rest*", "destination": "/docs/development/ui/widgets/:rest*", "type": 301 },
       { "source": "/widgets-intro", "destination": "/docs/development/ui/widgets-intro", "type": 301 },
       { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
-      { "source": "/desktop", "destination": "https://github.com/flutter/flutter/wiki/Desktop-shells", "type": 302 }
+      { "source": "/desktop", "destination": "https://github.com/flutter/flutter/wiki/Desktop-shells", "type": 302 },
+
+      { "source": "/go/template", "destination": "https://docs.google.com/document/d/1euRhJ_1DNydYhqT9maLbDdDmYBilur4vahBTMKwo-NQ/edit#", "type": 301 }
     ]
   }
 }
