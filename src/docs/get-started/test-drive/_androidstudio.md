@@ -2,9 +2,12 @@
 
 ## Create the app {#create-app}
 
+WEB TODO: Am assuming that the tools will automatically create a web version of the app, too.
+
  1. Open the IDE and select **Start a new Flutter project**.
  1. Select **Flutter Application** as the project type. Then click **Next**.
- 1. Verify the Flutter SDK path specifies the SDK’s location (select **Install SDK...** if the text field is blank).
+ 1. Verify the Flutter SDK path specifies the SDK’s location
+    (select **Install SDK...** if the text field is blank).
  1. Enter a project name (for example, `myapp`). Then click **Next**.
  1. Click **Finish**.
  1. Wait for Android Studio to install the SDK and create the project.
