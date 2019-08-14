@@ -12,7 +12,13 @@ a new window. For example:
 
  1. Determine the directory where you placed the Flutter SDK.
     You will need this in Step 3.
- 2. Open (or create) `$HOME/.bash_profile`. The file path and filename might be
+ 2. Open (or create) the `rc` file for your shell.
+    For example, Linux and Mac OS Mojave (and earlier)
+    use the Bash shell by default,
+    so edit `$HOME/.bashrc`.
+    Mac OS Catalina (and later) use the Z shell by default,
+    so edit `$HOME/.zshrc`.
+    The file path and filename might be
     different on your machine.
  3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
     the path where you cloned Flutter's git repo:
@@ -21,12 +27,18 @@ a new window. For example:
     $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
     ```
 
- 4. Run `source $HOME/.bash_profile` to refresh the current window.
+ 4. Run `source $HOME/.<rc file>` to refresh the current window.
  5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
     ```terminal
     $ echo $PATH
     ```
 
-For more details, see
-[this StackExchange question](https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path).
+For more details on setting the path in Bash,
+see [this StackExchange question][].
+For more information on setting the path in Z shell,
+see [this StackOverflow question][].
+
+
+[this StackExchange question]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
+[this StackOverflow question]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh

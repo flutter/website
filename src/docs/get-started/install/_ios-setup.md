@@ -113,11 +113,16 @@ You'll also need to set up physical device deployment in Xcode.
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
      1. In Xcode, select the `Runner` project in the left navigation panel.
-     1. In the `Runner` target settings page, make sure your Development Team is
-        selected under **General > Signing > Team**. When you select a team,
-        Xcode creates and downloads a Development Certificate, registers your
-        device with your account, and creates and downloads a provisioning
-        profile (if needed).
+     1. In the `Runner` target settings page,
+        make sure your Development Team is selected.
+        The UI varies depending on your version of Xcode.
+        * Xcode 9 & 10: Look under **General > Signing > Team**
+        * Xcode 11 and newer: Look under **Signing & Capabilities > Team**
+
+        When you select a team,
+        Xcode creates and downloads a Development Certificate,
+        registers your device with your account,
+        and creates and downloads a provisioning profile (if needed).
 
         * To start your first iOS development project,
           you might need to sign into
@@ -129,7 +134,7 @@ You'll also need to set up physical device deployment in Xcode.
           [Choosing a Membership][].
 
         * The first time you use an attached physical device for iOS
-          development, you will need to trust both your Mac and the Development
+          development, you need to trust both your Mac and the Development
           Certificate on that device. Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
 
