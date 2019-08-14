@@ -5,10 +5,10 @@ the command line, as shown in [Get the Flutter SDK](#get-sdk).
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
-The steps for modifying this variable permanently for all terminal
-sessions are machine-specific.
-Typically you add a line to a file that is executed whenever you open
-a new window. For example:
+The steps for modifying this variable permanently for
+all terminal sessions are machine-specific.
+Typically you add a line to a file that is executed
+whenever you open a new window. For example:
 
  1. Determine the directory where you placed the Flutter SDK.
     You will need this in Step 3.
@@ -16,9 +16,9 @@ a new window. For example:
     For example, Linux and Mac OS Mojave (and earlier)
     use the Bash shell by default,
     so edit `$HOME/.bashrc`.
-    Mac OS Catalina (and later) use the Z shell by default,
+    Mac OS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
-    The file path and filename might be
+    The file path and filename might be even
     different on your machine.
  3. Add the following line and change `[PATH_TO_FLUTTER_GIT_DIRECTORY]` to be
     the path where you cloned Flutter's git repo:
@@ -27,7 +27,9 @@ a new window. For example:
     $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
     ```
 
- 4. Run `source $HOME/.<rc file>` to refresh the current window.
+ 4. Run `source $HOME/.<rc file>`
+    to refresh the current window,
+    or open a new terminal window.
  5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
     ```terminal
