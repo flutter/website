@@ -255,6 +255,32 @@ the major algorithms discussed above.
 Taken together and summed over the large trees created by aggressive
 composition, these optimizations have a substantial effect on performance.
 
+### Separation of the Element and RenderObject trees
+
+The RenderObject and Element (Widget) trees in Flutter are isomorphic
+(strictly speaking, the RenderObject tree is a subset of the Element
+tree). An obvious simplification would be to combine these trees into
+one tree. However, in practice there are a number of benefits to having
+these trees be separate:
+
+* **Performance.** When the layout changes, only the relevant parts of
+  the layout tree need to be walked. Due to composition, the element
+  tree frequently has many additional nodes that would have to be skipped.
+  
+* **Clarity.** The clearer separation of concerns allows the widget
+  protocol and the render object protocol to each be specialized to 
+  their specific needs, simplifying the API surface and thus lowering 
+  the risk of bugs and the testing burden.
+  
+* **Type safety.** The render object tree can be more type safe since it 
+  can guarantee at runtime that children will be of the appropriate type
+  (each coordinate system, e.g. has its own type of render object).
+  Composition widgets can be agnostic about the coordinate system used
+  during layout (for example, the same widget exposing a part of the app
+  model could be used in both a box layout and a sliver layout), and thus
+  in the element tree, verifying the type of render objects would require
+  a tree walk.
+
 ## Infinite scrolling
 
 Infinite scrolling lists are notoriously difficult for toolkits.

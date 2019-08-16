@@ -169,7 +169,7 @@ void myTapCallback(Item item) {
 }
 ```
 
-This works okay, but for app state that you need to modify from
+This works okay, but for an app state that you need to modify from
 many different places, you'd have to pass around a lot of
 callbacks&mdash;which gets old pretty quickly.
 

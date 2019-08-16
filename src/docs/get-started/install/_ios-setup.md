@@ -112,12 +112,19 @@ You'll also need to set up physical device deployment in Xcode.
      1. Open the default Xcode workspace in your project by running `open
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
-     1. In Xcode, select the `Runner` project in the left navigation panel.
-     1. In the `Runner` target settings page, make sure your Development Team is
-        selected under **General > Signing > Team**. When you select a team,
-        Xcode creates and downloads a Development Certificate, registers your
-        device with your account, and creates and downloads a provisioning
-        profile (if needed).
+     1. Select the device you intend to deploy to in the device drop-down
+        menu next to the run button.
+     1. Select the `Runner` project in the left navigation panel.
+     1. In the `Runner` target settings page,
+        make sure your Development Team is selected.
+        The UI varies depending on your version of Xcode.
+        * For Xcode 9 & 10, look under **General > Signing > Team**.
+        * For Xcode 11 and newer, look under **Signing & Capabilities > Team**.
+
+        When you select a team,
+        Xcode creates and downloads a Development Certificate,
+        registers your device with your account,
+        and creates and downloads a provisioning profile (if needed).
 
         * To start your first iOS development project,
           you might need to sign into
@@ -125,11 +132,11 @@ You'll also need to set up physical device deployment in Xcode.
           Development and testing is supported for any Apple ID.
           Enrolling in the Apple Developer Program is required to
           distribute your app to the App Store.
-          For details about membership types, see
-          [Choosing a Membership][].
+          For details about membership types,
+          see [Choosing a Membership][].
 
         * The first time you use an attached physical device for iOS
-          development, you will need to trust both your Mac and the Development
+          development, you need to trust both your Mac and the Development
           Certificate on that device. Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
 
