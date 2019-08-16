@@ -1,26 +1,26 @@
 ---
 title: "Basic Flutter layout concepts"
-description: "A codelab that teaches basic Flutter layout concepts through DartPad2 code examples."
+description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 toc: true
 --- 
+Welcome to the Flutter layout codelab, 
+where you learn how to lay out a Flutter UI without downloading or installing Flutter and Dart!
+
 {{site.alert.important}}
   This codelab covers basic Flutter layout concepts using a code editor called DartPad. 
   DartPad is in an experimental stage and hasn't been fully tested on all browsers. If you encounter any difficulties while using DartPad on a specific browser, 
   please create a [DartPad issue](https://github.com/dart-lang/dart-pad/issues/new) and specify which browser you're using in the issue title.
 {{site.alert.end}}
 
-Welcome to the Flutter layout codelab, 
-where you learn to lay out a Flutter UI without downloading or installing Flutter and Dart!
-
 Flutter is different from other frameworks because its UI is built in code, 
-not (for example) in an XML file or similar. 
-Widgets are the basic building blocks of a Flutter UI. 
-As you progress through this codelab, 
-you'll learn that almost everything in Flutter is a widget. 
-A widget is an immutable object that describes a specific part of a UI. 
-You'll also learn that Flutter widgets are composable, meaning, 
-that you can combine existing widgets to make more sophisticated widgets.  
-At the end of this codelab, 
+not (for example) in an XML file or similar.
+Widgets are the basic building blocks of a Flutter UI.
+As you progress through this codelab,
+you'll learn that almost everything in Flutter is a widget.
+A widget is an immutable object that describes a specific part of a UI.
+You'll also learn that Flutter widgets are composable, meaning,
+that you can combine existing widgets to make more sophisticated widgets.
+At the end of this codelab,
 you'll apply what you've learned into building a Flutter UI that displays a business card.
 
 **Estimated time to complete this codelab: 45-60 minutes.**
@@ -49,9 +49,9 @@ and `Column` lays out its widgets vertically.
 
 ## Axis size and alignment
 
-So far, the blue boxes widgets have been squished together 
+So far, the `BlueBox` widgets have been squished together 
 (either to the left or at the top of the UI Output).
-You can change how the blue boxes widgets are spaced using the size and alignment properties.
+You can change how the `BlueBox` widgets are spaced out using the `mainAxisSize` and `CrossAxisAlignment` properties.
 
 ### mainAxisSize property
 
@@ -72,12 +72,12 @@ the children are laid out with extra space.
 `Row` and `Column`'s children are laid out without extra space. 
 
 {{site.alert.tip}}
-  `MainAxisSize.max` is the default value for the `mainAxisSize` property. 
+  `MainAxisSize.max` is the `mainAxisSize` property's default. 
   If you don't specify another value, 
   the default value is used, 
   as shown in the previous example. 
 {{site.alert.end}}
-#### Example: Modify axis size
+#### Example: Modifying axis size
 {:.no_toc}
 {{site.alert.secondary}}
 {:.no_toc}
@@ -86,7 +86,7 @@ the children are laid out with extra space.
 
   **1.** Click the **Run** button. 
 
-  **2.** Change the `mainAxisSize` property to `MainAxisSize.min`, and run again. 
+  **2.** Change the `MainAxisSize.max` to `MainAxisSize.min`, and run again. 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
@@ -139,7 +139,7 @@ to half of the width between the children.
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=cb8abed13f90a6a0c7a0ada6f15a09c9&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
-  Before moving to the next section, change `MainAxisAlignment.end` to one of the other values.
+  Before moving to the next section, change `MainAxisAlignment.end` to another value.
 {{site.alert.end}}
 
 ### crossAxisAlignment property
@@ -185,7 +185,7 @@ Most of the `crossAxisAlignment` property's values only work with `Row`.
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
-  Before moving to the next section, change `CrossAxisAlignment.start` to one of the other values. 
+  Before moving to the next section, change `CrossAxisAlignment.start` to another value. 
 {{site.alert.end}}
 
 ## Flexible widget
@@ -225,6 +225,8 @@ what fraction of the total extra space each `Flexible` widget receives.
   The fixed-width widget remains the same size.
 
   **1.** Click the **Run** button. 
+
+  **2.** Change the width of the UI by dragging the divider between the code and the UI.
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
@@ -367,12 +369,9 @@ for different fonts, sizes, and colors.
 #### Example: Aligning text
 {:.no_toc}
 {{site.alert.secondary}}
-  The following example displays "Hey!" three times in one row,
+  The following example displays "Hey!" three times,
   but at different font sizes and in different colors.
-  `Row` specifies the `crossAxisAlignment` and `textBaseline` properties.
-
-  As mentioned previously, to align `Text` widgets along their character baselines,
-  set the `textBaseline` property to `TextBaseline.alphabetic`.  
+  `Row` specifies the `crossAxisAlignment` and `textBaseline` properties. 
 
   **1.** Click the **Run** button. 
 
@@ -385,8 +384,8 @@ for different fonts, sizes, and colors.
 
 ## Icon widget
 
-The `Icon` widget displays a graphical symbol, 
-which represents an aspect of the UI. 
+The `Icon` widget displays a graphical symbol 
+that represents an aspect of the UI. 
 Flutter is preloaded with icon packages for 
 [Material](https://api.flutter.dev/flutter/material/MaterialApp-class.html) and 
 [Cupertino](https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html) applications.
@@ -426,8 +425,13 @@ the following example uses an image from the network.
 
   This example displays an image that's stored remotely on [GitHub](https://github.com/flutter/website/tree/master/examples/layout/sizing/images).
 
-  **1.** Click the **Run** button.  
+  **1.** Click the **Run** button.
+
+  **2.** Change the width of the UI by dragging the divider between the code and the UI.
 {{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=b6f3084800bd139cdb522b8858bb58b7&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Putting it all together 
@@ -437,21 +441,22 @@ Why not test your knowledge by applying the techniques
 you've learned to build a UI that displays a business card!
 
 You'll break down the layout into parts, which is how you'd
-create a UI in the real world. This exercise can be broken
-into three parts. In part 1,
-you'll implement a `Column` containing a name, title, and icon. 
+create a UI in the real world. In part 1,
+you'll implement a `Column` that contains a name, title, and icon. 
+
 In part 2, you'll wrap the `Column` in a `Row`, tweak the layout to look nice, 
-and add contact information. In part 3,
-you'll add another `Row` containing an address.  
+and add contact information. 
+
+In part 3,
+you'll add another `Row` containing four icons.  
 
 ### Part 1
 {:.no_toc}
 
 This part contains two examples. 
-In the first example, you'll build a `Column`,
-which contains a name and title. 
-In the second example, you'll wrap your `Column` in a `Row`, 
-which contains an icon.
+In the first example, you'll build a `Column`
+that contains a name and title. 
+In the second example, you'll wrap your `Column` in a `Row` that contains an icon.
 By the end of Part 1, 
 your code displays a name, business title, and business icon. 
 
@@ -463,22 +468,19 @@ your code displays a name, business title, and business icon.
 
 <ul markdown="1">
   <li markdown="1">
-  One Text widget that contains the name "Flutter McFlutter" and
+  One Text widget that contains the name `Flutter McFlutter` and
   the `style` property set to `Theme.of(context).textTheme.headline`.  
   </li>
   <li markdown="1">
-  A second `Text` widget that contains the business title "Experienced Developer."
-
-  For your Column, set the:
-  </li>
- 
-  <li markdown="1">`mainAxisSize` property to `MainAxisSize.min`
-  </li>
-  <li markdown="1">`crossAxisAlignment` property to `CrossAxisAlignment.start`.
+  A second `Text` widget that contains the business title `Experienced Developer`.
   </li>
 </ul>
-    
+ 
+  For your `Column`, set the `mainAxisSize` property to `MainAxisSize.min` and `crossAxisAlignment` property to `CrossAxisAlignment.start`.   
 {{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/30ccbe0fcf31cc10eafba3aea8ff0697
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=30ccbe0fcf31cc10eafba3aea8ff0697&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Exercise: Wrap the Column in a Row
@@ -507,6 +509,9 @@ your code displays a name, business title, and business icon.
             child: Icon(Icons.account_circle, size: 50)),
   ```
 {{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/95dcc1451aea8412669c41eb8a1a5f23
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=95dcc1451aea8412669c41eb8a1a5f23&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 2
@@ -522,76 +527,83 @@ At the end of Part 2, your code will contain a `Column` within a `Row` within a 
 {:.no_toc}
 {{site.alert.secondary}}
   
-  Wrap your `Row` inside a `Column` that contains the following widgets:
+  Wrap your `Row` inside a `Column` that has a `mainAxisSize` property set to `MainAxisSize.min`
+  and a `crossAxisAlignment` property set to `CrossAxisAlignment.stretch`. 
+  Your `Column` also should contain the following widgets:
 
-<ul markdown="1">
-  <li markdown="1"> 
-  A `mainAxisSize` property set to `MainAxisSize.min`. 
-  </li>
-  <li markdown="1">
-  A `crossAxisAlignment` property set to `CrossAxisAlignment.stretch`.
-  </li>
-  <li markdown="1">
-  A `SizedBox` widget with a height of 8.
-  </li>
-  <li markdown="1">
-  An empty `Row` class where you'll add your contact information. 
-  </li>
-  <li markdown="1">
-  A second `SizedBox` widget with a height of 16.
-  </li>
-  <li markdown="1">
-  A second empty `Row` class where you'll add different icons (covered in [Part 3](#part-3)). 
-  </li>
-</ul>
+  * A `SizedBox` widget with a height of 8.
 
-  Your `SizedBox` widgets and empty `Row` classes should be formatted like this: 
+  * An empty `Row` where you'll add contact information. 
+
+  * A second `SizedBox` widget with a height of 16.
+
+  * A second empty `Row` where you'll add different icons (covered in [Part 3](#part-3)).
+
+  Your `SizedBox` widgets and empty `Row`s should be formatted like this: 
 
   ```dart
 
      ],
     ),
     SizedBox(),
-    Row(), // First empty Row class.
+    Row(), // First empty Row.
     SizedBox(),
-    Row(), // Second empty Row class.
+    Row(), // Second empty Row.
    ],
   );
 
   ```
-{{site.alert.end}}
 
+{{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/c3ac34ed8952724a0ecb0af1445c2af8
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Example: Enter contact information 
 {:.no_toc}
 {{site.alert.secondary}}
-  Enter the following widgets inside the first empty `Row` class: 
+  Enter two `Text` widgets inside the first empty `Row` : 
 
 <ul markdown="1">
   <li markdown="1">  
-  A `Text` widget that contains the address "123 Main Street." 
+  The first `Text` widget contains the address `123 Main Street`. 
   </li>
   <li markdown="1">
-  A second `Text` widget that contains the phone number "123-456-7890."
-  </li>
-  <li markdown="1"> 
-  A `mainAxisAlignment` property set to `mainAxisAlignment.SpaceBetween`.
+  The second `Text` widget contains the phone number `(415) 555-0198`.
   </li>
 </ul>
+
+ For the first empty `Row`, 
+ set the `mainAxisAlignment` property to `MainAxisAlignment.SpaceBetween`.
+
 {{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/c5be61116652927c5d92262fce1b5360
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c5be61116652927c5d92262fce1b5360&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 3
 {:.no_toc}
-This part contains one example where you finish your business card display. You'll add four `Icon` widgets to the second empty `Row` class that you built in Part 2. 
+This part contains one example,
+where you'll finish your business card display. 
+You'll add four `Icon` widgets to the second empty `Row` 
+that you built in Part 2. 
 
 {{site.alert.secondary}}
-  Enter the following `Icon` widgets in the second empty `Row` class.
+  Enter the following `Icon` widgets in the second empty `Row`:
+
   * `Icons.accessibility` 
   * `Icons.timer`
   * `Icons.phone_android`
   * `Icons.phone_iphone`
-{{site.alert.end}}
 
+  For the second empty `Row`, 
+  set the `mainAxisAlignment` property to `MainAxisAlignment.spaceAround`.
+{{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/datafoya/dae36611fc9af04c4b9d0fbc3429275e
+{% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+Congratulations! You finished the Flutter layout codelab. 
