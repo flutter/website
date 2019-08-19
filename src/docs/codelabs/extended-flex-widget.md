@@ -4,12 +4,14 @@ description: "A codelab that teaches basic Flutter layout concepts through DartP
 toc: true
 --- 
 Welcome to the Flutter layout codelab, 
-where you learn how to lay out a Flutter UI without downloading or installing Flutter and Dart!
+where you learn how to build a Flutter UI without downloading and installing Flutter or Dart!
 
 {{site.alert.important}}
-  This codelab covers basic Flutter layout concepts using a code editor called DartPad. 
-  DartPad is in an experimental stage and hasn't been fully tested on all browsers. If you encounter any difficulties while using DartPad on a specific browser, 
-  please create a [DartPad issue](https://github.com/dart-lang/dart-pad/issues/new) and specify which browser you're using in the issue title.
+  This codelab covers basic Flutter layout concepts using an experimental code editor called DartPad. 
+  DartPad hasn't been fully tested on all browsers. 
+  If you experience any difficulties while using DartPad on a specific browser, 
+  please create a [DartPad issue](https://github.com/dart-lang/dart-pad/issues/new) 
+  and specify which browser you're using in the issue title.
 {{site.alert.end}}
 
 Flutter is different from other frameworks because its UI is built in code, 
@@ -21,7 +23,8 @@ A widget is an immutable object that describes a specific part of a UI.
 You'll also learn that Flutter widgets are composable, meaning,
 that you can combine existing widgets to make more sophisticated widgets.
 At the end of this codelab,
-you'll apply what you've learned into building a Flutter UI that displays a business card.
+you'll get to apply what you've learned 
+into building a Flutter UI that displays a business card.
 
 **Estimated time to complete this codelab: 45-60 minutes.**
 
@@ -51,28 +54,29 @@ and `Column` lays out its widgets vertically.
 
 So far, the `BlueBox` widgets have been squished together 
 (either to the left or at the top of the UI Output).
-You can change how the `BlueBox` widgets are spaced out using the `mainAxisSize` and `CrossAxisAlignment` properties.
+You can change how the `BlueBox` widgets are spaced out using the axis size and alignment properties.
 
 ### mainAxisSize property
 
 `Row` and `Column` occupy different main axes. 
-`Row`'s main axis is horizontal, 
-and `Column`'s main axis is vertical. 
-The `mainAxisSize` property determines how much space `Row` and `Column` can occupy on their main axes.
+A `Row`'s main axis is horizontal, 
+and a `Column`'s main axis is vertical. 
+The `mainAxisSize` property determines how much space a `Row` and `Column` can occupy on their main axes.
 `mainAxisSize` has two possible values: 
 
 `MainAxisSize.max`
-: Increases the amount of space `Row` and `Column` can occupy on their main axes.
-If the combined width of `Row` and `Column`'s child widgets is 
-less than the total space on `Row` and `Column`'s main axes, 
-the children are laid out with extra space.
+: `Row` and `Column` occupy all of the space on their main axes.
+If the combined width of their children is 
+less than the total space on their main axes, 
+their children are laid out with extra space.
 
 `MainAxisSize.min`
-: Decreases the amount of space `Row` and `Column` can occupy on their main axes.
-`Row` and `Column`'s children are laid out without extra space. 
+: `Row` and `Column` only occupy enough space on their main axes
+for their children. Their children are laid out without extra space
+and at the middle of their main axes. 
 
 {{site.alert.tip}}
-  `MainAxisSize.max` is the `mainAxisSize` property's default. 
+  `MainAxisSize.max` is the `mainAxisSize` property's default value. 
   If you don't specify another value, 
   the default value is used, 
   as shown in the previous example. 
@@ -86,7 +90,7 @@ the children are laid out with extra space.
 
   **1.** Click the **Run** button. 
 
-  **2.** Change the `MainAxisSize.max` to `MainAxisSize.min`, and run again. 
+  **2.** Change `MainAxisSize.max` to `MainAxisSize.min`, and run again. 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
@@ -123,11 +127,11 @@ can position their children in that extra space.
 but reduces half of the space before the first child and after the last child 
 to half of the width between the children. 
 
-#### Example: Modify main axis alignment
+#### Example: Modifying main axis alignment
 {:.no_toc}
 {{site.alert.secondary}}
 
-  The following example explicitly sets the `mainAxisAlignment` property to its default value, 
+  The following example explicitly sets `mainAxisAlignment` to its default value, 
   `MainAxisAlignment.start`.
 
   **1.** Click the **Run** button.
@@ -147,7 +151,7 @@ to half of the width between the children.
 The `crossAxisAlignment` property determines 
 how `Row` and `Column` can position their children on their cross axes. 
 A `Row`'s cross axis is vertical, and a `Column`'s cross axis is horizontal. 
-Most of the `crossAxisAlignment` property's values only work with `Row`. 
+Most of the `crossAxisAlignment` property's values only work with the `Row` class. 
 `crossAxisAlignment` has five possible values:
 
 `CrossAxisAlignment.start`
@@ -166,15 +170,15 @@ Most of the `crossAxisAlignment` property's values only work with `Row`.
 `CrossAxisAlignment.baseline`
 : Aligns children by their character baselines. (`Text` class only, and requires that the `textBaseline` property is set to `TextBaseline.alphabetic`. See the [Text class](#text-class) section for an example.)
 
-#### Example: Modify cross axis alignment
+#### Example: Modifying cross axis alignment
 {:.no_toc}
 {{site.alert.secondary}}
-  The following example explicitly sets the `crossAxisAlignment` property to its default value,
+  The following example explicitly sets `crossAxisAlignment` to its default value,
   `CrossAxisAlignment.center`. 
 
-  To demonstrate cross axis alignment, `Row` now contains a `BiggerBlueBox` widget
-  that is taller than the other widgets, and `mainAxisAlignment` is set to
- `MainAxisAlignment.spaceAround`. 
+  To demonstrate cross axis alignment, `mainAxisAlignment` is set to
+ `MainAxisAlignment.spaceAround`, and `Row` now contains a `BiggerBlueBox` widget
+  that is taller than the `BlueBox` widgets. 
 
   **1.** Click the **Run** button.
 
@@ -200,47 +204,19 @@ The `Flexible` widget wraps a widget, so the widget becomes resizable.
 When the `Flexible` widget wraps a widget, the widget becomes the `Flexible` widget's child 
 and is considered *flexible*. 
 After inflexible widgets are laid out,
-flexible widgets are resized according to their `flex` and `fit` properties.:
+the widgets are resized according to their `flex` and `fit` properties.:
 
 `flex`
 : Compares itself against other `flex` properties before determining 
-what fraction of the total extra space each `Flexible` widget receives.
+what fraction of the total remaining space each `Flexible` widget receives.
 
 `fit` 
 : Determines whether a `Flexible` widget fills all of its extra space.
 
-#### Example: Testing flex values
-{:.no_toc}
-{{site.alert.secondary}}
-  In the following example, two `Flexible` widgets wrap two `BlueBox` widgets. 
-  The `Flexible` widgets contain `flex` properties with values set to 1 (the default value).
-
-  When `flex` properties are compared, 
-  the ratio between the values determines 
-  what fraction of the total extra space each `Flexible` widget receives.
-
-  In this example, the sum of the `flex` values (2),
-  determines that each `Flexible` widget increases
-  by half of the free space. 
-  The fixed-width widget remains the same size.
-
-  **1.** Click the **Run** button. 
-
-  **2.** Change the width of the UI by dragging the divider between the code and the UI.
-{{site.alert.end}}
-{% comment %}
-  Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
-{% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
-{{site.alert.tip}}
-  Before moving to the next code example, change the `flex` properties to other values, 
-  such as 2 and 1.
-{{site.alert.end}}
-
-#### Example: Testing fit properties
+#### Example: Changing fit properties
 {:.no_toc}  
 {{site.alert.secondary}}
-  The following example displays the `fit` property,
+  The following example demonstrates the `fit` property,
   which can have one of two values:
 
   `FlexFit.loose`
@@ -249,12 +225,12 @@ what fraction of the total extra space each `Flexible` widget receives.
   `FlexFit.tight`
   : Forces the widget to fill all of its extra space. 
 
-  In this example, modify the `fit` properties to
-  make the `Flexible` widgets fill the free space.
+  In this example, change the `fit` properties to
+  make the `Flexible` widgets fill the extra space.
 
   **1.** Click the **Run** button. 
 
-  **2.** Change the `fit` values to `FlexFit.tight`, 
+  **2.** Change both `fit` values to `FlexFit.tight`, 
   and run again.   
 {{site.alert.end}}
 {% comment %}
@@ -262,17 +238,46 @@ what fraction of the total extra space each `Flexible` widget receives.
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=ba0f40356d1023066d960f6de2be1a4b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
+#### Example: Testing flex values
+{:.no_toc}
+{{site.alert.secondary}}
+  In the following example, `Row` contains one `BlueBox` widget 
+  and two `Flexible` widgets that wrap two `BlueBox` widgets. 
+  The `Flexible` widgets contain `flex` properties with `flex` values set to 1 (the default value).
+
+  When `flex` properties are compared against one another, 
+  the ratio between their `flex` values determines 
+  what fraction of the total remaining space each `Flexible` widget receives.
+
+  ```dart
+  remainingSpace * (flex / totalOfAllFlexValues)
+  ```
+
+  In this example, the sum of the `flex` values (2),
+  determines that both `Flexible` widgets receive
+  half of the total remaining space. 
+  The `BlueBox` widget (or fixed-size widget) remains the same size.
+{{site.alert.end}}
+{% comment %}
+  Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
+{% endcomment %}
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+{{site.alert.tip}}
+  Before moving to the next example, try changing the `flex` properties to other values, 
+  such as 2 and 1.
+{{site.alert.end}}
+
 ## Expanded widget
 
-Similar to the `Flexible` widget, the `Expanded` widget can wrap a widget and force the widget to fill extra space. 
+Similar to `Flexible`, the `Expanded` widget can wrap a widget and force the widget to fill extra space. 
 
 {{site.alert.tip}}
   **What's the difference between Flexible and Expanded?**
-    Use `Flexible` to resize widgets in a `Row` or `Column`,
-    so you can adjust child widgets' spacing while keeping the
-    relation with their parent widget.
-    `Expanded` changes the constraints of the child widgets
-    to fill any empty space.
+    Use `Flexible` to resize widgets in a `Row` or `Column`. 
+    That way, you can adjust a child widget's spacing
+    while keeping its size in relation to its parent widget.
+    `Expanded` changes the constraints of a child widget,
+    so it fills any empty space.
 {{site.alert.end}} 
 
 #### Example: Filling extra space
@@ -299,7 +304,7 @@ Similar to the `Flexible` widget, the `Expanded` widget can wrap a widget and fo
 
 ## SizedBox widget
 
-The `SizedBox` widget can be used in one of two ways.
+The `SizedBox` widget can be used in one of two ways when creating exact dimensions.
 When `SizedBox` wraps a widget, 
 it resizes the widget using the `height` and `width` properties.
 When it doesn't wrap a widget, 
@@ -336,7 +341,7 @@ it uses the `height` and `width` properties to create empty space.
 
 ## Spacer widget
 
-Similar to the `SizedBox` widget, the `Spacer` widget also can create space between widgets.
+Similar to `SizedBox`, the `Spacer` widget also can create space between widgets.
 
 {{site.alert.tip}}
   **What's the difference between SizedBox and Spacer?**
@@ -390,19 +395,19 @@ Flutter is preloaded with icon packages for
 [Material](https://api.flutter.dev/flutter/material/MaterialApp-class.html) and 
 [Cupertino](https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html) applications.
 
-#### Example: Create an Icon widget
+#### Example: Creating an Icon
 {:.no_toc}
 {{site.alert.secondary}}
-  The following example displays the widget icon from the
+  The following example displays the widget `Icons.widget` from the
   [Material Icon library](https://api.flutter.dev/flutter/material/Icons-class.html) in red and blue.
 
   **1.** Click the **Run** button. 
 
-  **2.** Add another `Icon` widget from the 
+  **2.** Add another `Icon` from the 
   [Material Icon library](https://api.flutter.dev/flutter/material/Icons-class.html)
   with a size of 50. 
 
-  **3.** Give the icon a color of `Color.amber` from the 
+  **3.** Give the `Icon` a color of `Color.amber` from the 
   [Material Color palette](https://api.flutter.dev/flutter/material/Colors-class.html), 
   and run again.  
 {{site.alert.end}}
@@ -417,17 +422,11 @@ The `Image` widget displays an image. You either can reference images using a UR
 or you can include images inside your app package. Since DartPad can't package an image,
 the following example uses an image from the network.
 
-#### Example: Image widget
+#### Example: Displaying an image
 {:.no_toc}
 {{site.alert.secondary}}
-  The following example displays an image using `Image`. 
+  The following example displays an image that's stored remotely on [GitHub](https://github.com/flutter/website/tree/master/examples/layout/sizing/images). 
   The `Image.network` method takes a string parameter that contains the image's URL.
-
-  This example displays an image that's stored remotely on [GitHub](https://github.com/flutter/website/tree/master/examples/layout/sizing/images).
-
-  **1.** Click the **Run** button.
-
-  **2.** Change the width of the UI by dragging the divider between the code and the UI.
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
@@ -436,47 +435,66 @@ the following example uses an image from the network.
 
 ## Putting it all together 
 
-You've almost reached the end of this codelab.
-Why not test your knowledge by applying the techniques
-you've learned to build a UI that displays a business card!
+You're almost at the end of this codelab. 
+If you'd like to test your knowledge of the techniques that you've learned, 
+why not apply those skills into building a Flutter UI that displays a business card!
 
-You'll break down the layout into parts, which is how you'd
-create a UI in the real world. In part 1,
-you'll implement a `Column` that contains a name, title, and icon. 
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay0.png
+ @path %}){:width="325px"}{:.text-center}
 
-In part 2, you'll wrap the `Column` in a `Row`, tweak the layout to look nice, 
-and add contact information. 
+You'll break down Flutter's layout into parts, which is how you'd
+create a Flutter UI in the real world. 
 
-In part 3,
-you'll add another `Row` containing four icons.  
+In [Part 1](#part-1), 
+you'll implement a `Column` that contains the name and title. 
+Then you'll wrap the `Column` in a `Row` that contains the icon, 
+which is positioned to the left of the name and title. 
+
+
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay2.png
+ @path %}){:width="275px"}{:.text-center}
+
+
+In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
+so the code contains a `Column` within a `Row` within a `Column`.
+Then you'll tweak the outermost `Column`'s layout,
+so it looks nice.
+Finally, you'll add the contact information 
+to the outermost `Column`'s list of children, 
+so it's displayed below the name, title, and icon. 
+
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay4.png
+ @path %}){:width="275px"}{:.text-center}
+
+In [Part 3](#part-3),
+you'll finish building the business card display by adding four more icons, 
+which are positioned below the contact information.  
+
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay5.png
+ @path %}){:width="300px"}{:.text-center}
 
 ### Part 1
 {:.no_toc}
 
-This part contains two examples. 
-In the first example, you'll build a `Column`
-that contains a name and title. 
-In the second example, you'll wrap your `Column` in a `Row` that contains an icon.
-By the end of Part 1, 
-your code displays a name, business title, and business icon. 
-
-#### Example: Create the name and title
+#### Exercise: Create the name and title
 {:.no_toc}
 {{site.alert.secondary}}
 
-  Build a `Column` that contains the following widgets: 
+  Implement a `Column` that contains two text widgets: 
 
 <ul markdown="1">
   <li markdown="1">
-  One Text widget that contains the name `Flutter McFlutter` and
+  The first `Text` widget contains the name `Flutter McFlutter` and
   the `style` property set to `Theme.of(context).textTheme.headline`.  
   </li>
   <li markdown="1">
-  A second `Text` widget that contains the business title `Experienced Developer`.
+  The second `Text` widget contains the title `Experienced Developer`.
   </li>
 </ul>
  
-  For your `Column`, set the `mainAxisSize` property to `MainAxisSize.min` and `crossAxisAlignment` property to `CrossAxisAlignment.start`.   
+  For the `Column`, 
+  set `mainAxisSize` to `MainAxisSize.min` 
+  and `crossAxisAlignment` to `CrossAxisAlignment.start`.   
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/datafoya/30ccbe0fcf31cc10eafba3aea8ff0697
@@ -486,27 +504,33 @@ your code displays a name, business title, and business icon.
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
 {{site.alert.secondary}}
-  
 
-  Wrap your `Column` in a `Row` that contains the following widgets:
+  Wrap the `Column` you implemented in a `Row` that contains the following widgets:
 
 <ul markdown="1">
   <li markdown="1">
-  An `Icon` widget set to `Icons.account_circle` with a size of 50 pixels.
+  An `Icon` widget set to `Icons.account_circle` and with a size of 50 pixels.
+
   </li>
   <li markdown="1">
   A `Padding` widget that creates a space of 8 pixels around the `Icon` widget. 
 
-  To do this, you can specify `const EdgeInsets.all(8.0)` for the padding property.
+  To do this, you can specify `const EdgeInsets.all(8.0)` for the `padding` property.
 
-  For example: 
+  The `Row` should look like this: 
   </li>
 </ul>
 
   ```dart
-  Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(Icons.account_circle, size: 50)),
+     Row( 
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(Icons.account_circle, size: 50),
+        ),
+     Column( ... ), // <--- The Column you first implemented
+      ],
+     );   
   ```
 {{site.alert.end}}
 {% comment %}
@@ -517,40 +541,35 @@ your code displays a name, business title, and business icon.
 ### Part 2
 {:.no_toc}
 
-This part also contains two examples, both focusing on contact information. 
-In the first example, you'll wrap the `Row` you built in a `Column`, 
-so you can create space for the contact information. 
-In the second example, you'll enter the contact information. 
-At the end of Part 2, your code will contain a `Column` within a `Row` within a `Column`.
-
 #### Exercise: Tweak the layout
 {:.no_toc}
 {{site.alert.secondary}}
   
-  Wrap your `Row` inside a `Column` that has a `mainAxisSize` property set to `MainAxisSize.min`
+  Wrap the `Row` in a `Column` that has a `mainAxisSize` property set to `MainAxisSize.min`
   and a `crossAxisAlignment` property set to `CrossAxisAlignment.stretch`. 
-  Your `Column` also should contain the following widgets:
+  The `Column` contains the following widgets:
 
   * A `SizedBox` widget with a height of 8.
 
-  * An empty `Row` where you'll add contact information. 
+  * An empty `Row` where you'll add the contact information. 
 
   * A second `SizedBox` widget with a height of 16.
 
-  * A second empty `Row` where you'll add different icons (covered in [Part 3](#part-3)).
+  * A second empty `Row` where you'll add different the four icons (Part 3).
 
-  Your `SizedBox` widgets and empty `Row`s should be formatted like this: 
+  The `Column`'s list of widgets should be formatted like this, 
+  so the contact information and icons are displayed below the name and title: 
 
   ```dart
 
      ],
-    ),
+    ), // <--- Closing parentheses for the Row
     SizedBox(),
-    Row(), // First empty Row.
+    Row(), // First empty Row
     SizedBox(),
-    Row(), // Second empty Row.
-   ],
-  );
+    Row(), // Second empty Row
+   ], 
+  ); // <--- Closing parentheses for the Column that wraps the Row
 
   ```
 
@@ -560,7 +579,7 @@ At the end of Part 2, your code will contain a `Column` within a `Row` within a 
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-#### Example: Enter contact information 
+#### Exercise: Enter contact information 
 {:.no_toc}
 {{site.alert.secondary}}
   Enter two `Text` widgets inside the first empty `Row` : 
@@ -585,13 +604,10 @@ At the end of Part 2, your code will contain a `Column` within a `Row` within a 
 
 ### Part 3
 {:.no_toc}
-This part contains one example,
-where you'll finish your business card display. 
-You'll add four `Icon` widgets to the second empty `Row` 
-that you built in Part 2. 
-
+#### Exercise: Add four icons
+{:.no_toc}
 {{site.alert.secondary}}
-  Enter the following `Icon` widgets in the second empty `Row`:
+  Enter the following `Icon` widgets inside the second empty `Row`:
 
   * `Icons.accessibility` 
   * `Icons.timer`
@@ -606,4 +622,16 @@ that you built in Part 2.
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
-Congratulations! You finished the Flutter layout codelab. 
+## What's next? 
+
+Congratulations, you finished this codelab! If you'd like to learn more about Flutter, here are couple of suggestions for resources worth exploring: 
+
+* Check this [list of sample apps](https://github.com/flutter/samples/blob/master/INDEX.md) 
+that were created using Flutter.  
+* Visit [Flutter's YouTube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw), 
+where you can watch videos that focus on individual widgets 
+and see how developers all over the world are using Flutter. 
+
+You also can download Flutter by visiting the [Get started](https://flutter.dev/docs/get-started/install) page. 
+
+<iframe src="https://google.qualtrics.com/jfe/form/SV_5z1y0FziMqwMBZX" height="1025px" width="100%" style="margin-top: 10px;border: 0px;"></iframe>
