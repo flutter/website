@@ -267,7 +267,10 @@ Once you have implemented a package, you can publish it on the
 easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
-`CHANGELOG.md` files to make sure their content is complete and correct.
+`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
+* Diverse code usage examples
+* Screenshots, animated gifs, or videos
+* A link to the corresponding code repository
 
 Next, run the dry-run command to see if everything passes analysis:
 
@@ -284,7 +287,7 @@ $ flutter pub pub publish
 ```
 
 For details on publishing, see the
-[publishing docs]({{site.dart-site}}/tools/pub/publishing).
+[publishing docs]({{site.dart-site}}/tools/pub/publishing)
 for the Pub site.
 
 ## Handling package interdependencies {#dependencies}
