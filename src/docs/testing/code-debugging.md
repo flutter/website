@@ -75,42 +75,6 @@ If viewing the logging output in DevTool's logging view,
 the JSON encoded error param is interpreted as a data object
 and rendered in the details view for that log entry.
 
-## Showing network traffic
-
-{% comment %}
-I asked Phil Q if he has any imminent plans to finish
-this and move to pub.dev. He doesn't plan to work on
-it in the next few months.  sz 7/1/2019
-{% endcomment %}
-
-You can use a preview version of a package to show
-your application's network traffic in the logging view.
-To use it, create a pubspec dependency on the `logs` package:
-
-<!-- skip -->
-```yaml
-dependencies:
-  logs:
-    git: https://github.com/pq/logs
-```
-
-Then, set up logging in your application code:
-
-<!-- skip -->
-```dart
-import 'package:logs/logs.dart';
-
-final Log httpLog = Log('http');
-
-void main() {
-  httpLog.enabled = true;
-  // ...
-```
-
-Once http logging is enabled, you should see http calls
-(those that ultimately go through `dart:io`'s `HttpClient`
-class), displayed in the logging view.
-
 ## Setting breakpoints
 
 {{site.alert.note}}
