@@ -19,7 +19,7 @@ notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 or [download the release](/docs/development/tools/sdk/archive).
 
 We are updating DartPad to work with Flutter. Try our new
-[Basic Flutter layout codelab](/docs/codelabs/extended-flex-widget)
+[Basic Flutter layout codelab](/docs/codelabs/layout-basics)
 and tell us what you think!
 
 ## **February 26, 2019**
