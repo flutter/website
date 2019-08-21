@@ -407,7 +407,7 @@ Flutter is preloaded with icon packages for
   [Material Icon library](https://api.flutter.dev/flutter/material/Icons-class.html)
   with a size of 50. 
 
-  **3.** Give the `Icon` a color of `Color.amber` from the 
+  **3.** Give the `Icon` a color of `Colors.amber` from the 
   [Material Color palette](https://api.flutter.dev/flutter/material/Colors-class.html), 
   and run again.  
 {{site.alert.end}}
@@ -434,7 +434,7 @@ the following example uses an image from the network.
 
   **2.** Change the short Url to the actual Url: 
 
-  https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true
+  `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
 
   **3.** Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
   and run again. 
@@ -442,7 +442,7 @@ the following example uses an image from the network.
 {% comment %}
   Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=b6f3084800bd139cdb522b8858bb58b7&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Putting it all together 
 
@@ -450,8 +450,8 @@ You're almost at the end of this codelab.
 If you'd like to test your knowledge of the techniques that you've learned, 
 why not apply those skills into building a Flutter UI that displays a business card!
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay0.png
- @path %}){:width="325px"}{:.text-center}
+ ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay1.png
+ @path%}){:width="400px"}{:.text-center} 
 
 You'll break down Flutter's layout into parts, which is how you'd
 create a Flutter UI in the real world. 
@@ -461,10 +461,8 @@ you'll implement a `Column` that contains the name and title.
 Then you'll wrap the `Column` in a `Row` that contains the icon, 
 which is positioned to the left of the name and title. 
 
-
- ![Completed business card]({% asset codelab/layout/businesscarddisplay2.png
- @path %}){:width="275px"}{:.text-center}
-
+ ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay2.png
+ @path%}){:width="400px"}{:.text-center} 
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
 so the code contains a `Column` within a `Row` within a `Column`.
@@ -474,15 +472,15 @@ Finally, you'll add the contact information
 to the outermost `Column`'s list of children, 
 so it's displayed below the name, title, and icon. 
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay4.png
- @path %}){:width="275px"}{:.text-center}
+ ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay3.png
+ @path%}){:width="400px"}{:.text-center} 
 
 In [Part 3](#part-3),
 you'll finish building the business card display by adding four more icons, 
 which are positioned below the contact information.  
 
- ![Completed business card]({% asset codelab/layout/businesscarddisplay5.png
- @path %}){:width="300px"}{:.text-center}
+ ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay4.png
+ @path %}){:width="400px"}{:.text-center}
 
 ### Part 1
 {:.no_toc}
@@ -495,7 +493,7 @@ which are positioned below the contact information.
 
 <ul markdown="1">
   <li markdown="1">
-  The first `Text` widget contains the name `Flutter McFlutter` and
+  The first `Text` widget has the name `Flutter McFlutter` and
   the `style` property set to `Theme.of(context).textTheme.headline`.  
   </li>
   <li markdown="1">
@@ -534,12 +532,12 @@ which are positioned below the contact information.
 
   ```dart
      Row( 
-      children: [
+       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Icon(Icons.account_circle, size: 50),
         ),
-     Column( ... ), // <--- The Column you first implemented
+        Column( ... ), // <--- The Column you first implemented
       ],
      );   
   ```
@@ -574,13 +572,13 @@ which are positioned below the contact information.
   ```dart
 
      ],
-    ), // <--- Closing parentheses for the Row
+    ), // <--- Closing parenthesis for the Row
     SizedBox(),
     Row(), // First empty Row
     SizedBox(),
     Row(), // Second empty Row
    ], 
-  ); // <--- Closing parentheses for the Column that wraps the Row
+  ); // <--- Closing parenthesis for the Column that wraps the Row
 
   ```
 
@@ -605,7 +603,7 @@ which are positioned below the contact information.
 </ul>
 
  For the first empty `Row`, 
- set the `mainAxisAlignment` property to `MainAxisAlignment.SpaceBetween`.
+ set the `mainAxisAlignment` property to `MainAxisAlignment.spaceBetween`.
 
 {{site.alert.end}}
 {% comment %}
@@ -635,12 +633,14 @@ which are positioned below the contact information.
 
 ## What's next? 
 
-Congratulations, you finished this codelab! If you'd like to learn more about Flutter, here are couple of suggestions for resources worth exploring: 
+Congratulations, you've finished this codelab! If you'd like to know more about Flutter, here are a few suggestions for resources worth exploring: 
 
-* Check this [list of sample apps](https://github.com/flutter/samples/blob/master/INDEX.md) 
-that were created using Flutter.  
+* Learn more about layouts in Flutter by visiting the 
+[Building layouts](https://flutter.dev/docs/development/ui/layout) page. 
+* Check out this [list of sample apps](https://github.com/flutter/samples/blob/master/INDEX.md) 
+that were created using Flutter.
 * Visit [Flutter's YouTube channel](https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw), 
 where you can watch videos that focus on individual widgets 
-and see how developers all over the world are using Flutter. 
+and see how developers all over the world are using Flutter.
 
 You also can download Flutter by visiting the [Get started](https://flutter.dev/docs/get-started/install) page. 
