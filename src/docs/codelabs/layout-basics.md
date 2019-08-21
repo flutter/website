@@ -428,11 +428,11 @@ the following example uses an image from the network.
   The following example displays an image that's stored remotely on [GitHub](https://github.com/flutter/website/tree/master/examples/layout/sizing/images). 
   The `Image.network` method takes a string parameter that contains the image's URL.
 
-  In this example, `Image.network` contains a short Url. 
+  In this example, `Image.network` contains a short URL. 
 
   **1.** Click the **Run** button. 
 
-  **2.** Change the short Url to the actual Url: 
+  **2.** Change the short Url to the actual URL: 
 
   `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
 
