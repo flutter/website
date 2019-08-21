@@ -100,4 +100,4 @@ For more information on the build modes, see
 [Android]: /docs/deployment/android
 [hot reload]: /docs/development/tools/hot-reload
 [DevTools]: /docs/development/tools/devtools
-[Flutter's build modes]: ({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes)
+[Flutter's build modes]: {{site.github}}/flutter/flutter/wiki/Flutter%27s-modes

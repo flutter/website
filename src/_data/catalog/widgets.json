@@ -17,7 +17,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/AlertDialog-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0Bzhp5Z4wHba3TzFHYVlrbWF2bnM/components_alerts_1.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-alert-dialog.png'>"
   },
   {
     "name": "Align",
@@ -161,7 +161,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/AppBar-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VclpfSFpuelBGR1k/components_toolbars.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
   },
   {
     "name": "AspectRatio",
@@ -211,7 +211,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWG5nei0wWXpoczA/components_bottom_navigation.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-bottom-navigation-bar.png'>"
   },
   {
     "name": "BottomSheet",
@@ -221,7 +221,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/BottomSheet-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVWZzZ1FIN09XWGc/components_bottom_sheets.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-bottom-sheets.png'>"
   },
   {
     "name": "ButtonBar",
@@ -231,7 +231,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/ButtonBar-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-button-bar.png'>"
   },
   {
     "name": "Card",
@@ -241,7 +241,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VR0ptbC1RV1NLNlk/components_cards.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-card.png'>"
   },
   {
     "name": "Center",
@@ -261,7 +261,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7T2xGbGo0cUlPVG8/components_switches_check1.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-checkbox.png'>"
   },
   {
     "name": "Chip",
@@ -271,7 +271,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VM1VORGxxWUx5U0E/components_chips.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-chip.png'>"
   },
   {
     "name": "CircularProgressIndicator",
@@ -281,7 +281,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-circular-progress-indicator.png'>"
   },
   {
     "name": "ClipOval",
@@ -615,7 +615,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/DataTable-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWTJHMmJZdWZ5LU0/components_data_tables.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-data-table.png'>"
   },
   {
     "name": "Date & Time Pickers",
@@ -675,7 +675,7 @@
       "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VUVlmbHM1Q013RU0/components_dividers.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-divider.png'>"
   },
   {
     "name": "DragTarget",
@@ -705,7 +705,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/Drawer-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaDhWUXJTTng4ZGs/patterns_navigation_drawer.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-drawer.png'>"
   },
   {
     "name": "DropdownButton",
@@ -715,7 +715,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/DropdownButton-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png'>"
   },
   {
     "name": "ExcludeSemantics",
@@ -785,7 +785,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VN20tOXJoUjVxQjg/components_buttons_fab.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-floating-action-button.png'>"
   },
   {
     "name": "Flow",
@@ -997,7 +997,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-linear-progress-indicator.png'>"
   },
   {
     "name": "ListBody",
@@ -1017,7 +1017,7 @@
       "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/ListTile-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7UUw0bzVwU2lMUHc/components_lists_keylines_single10.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-list-tile.png'>"
   },
   {
     "name": "ListView",
@@ -1030,7 +1030,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/ListView-class.html",
-    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
+    "image": "<img alt='' src='/images/widget-catalog/material-list-tile.png'>"
   },
   {
     "name": "LongPressDraggable",
@@ -1173,7 +1173,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/PopupMenuButton-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-popup-menu-button.png'>"
   },
   {
     "name": "PositionedTransition",
@@ -1193,7 +1193,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7Z1NaaXh2ZkpDRkE/components_switches_radio1.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-radio.png'>"
   },
   {
     "name": "RaisedButton",
@@ -1205,7 +1205,7 @@
       "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/RaisedButton-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VbDh6YmNiYVc3SHM/components_buttons_usage2.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-raised-button.png'>"
   },
   {
     "name": "RawImage",
@@ -1412,7 +1412,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTmJrQUYzajFIclE/components_sliders.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-slider.png'>"
   },
   {
     "name": "SliverAppBar",
@@ -1422,7 +1422,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/SliverAppBar-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VclpfSFpuelBGR1k/components_toolbars.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-app-bar.png'>"
   },
   {
     "name": "SnackBar",
@@ -1432,7 +1432,7 @@
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VSjZkendtc19iZ2M/components_snackbars.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-snack-bar.png'>"
   },
   {
     "name": "Stack",
@@ -1474,7 +1474,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_9/0Bx4BSt6jniD7NDg4aGIzVXYxVEE/components_switches_switch1.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-switch.png'>"
   },
   {
     "name": "TabBar",
@@ -1485,7 +1485,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBar-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VaWdBdnhMT3ViXzQ/components_tabs.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "TabBarView",
@@ -1496,7 +1496,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBarView-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VaWdBdnhMT3ViXzQ/components_tabs.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "Table",
@@ -1527,7 +1527,7 @@
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VbURLNTM0N0R6eUE/components_text_fields.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-text-field.png'>"
   },
   {
     "name": "Theme",
@@ -1547,7 +1547,7 @@
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Tooltip-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VZ1JKMzJFcmhOWkk/components_tooltips.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-tooltip.png'>"
   },
   {
     "name": "Transform",
@@ -1569,7 +1569,7 @@
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/WidgetsApp-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/material-widgets-app.png'>"
   },
   {
     "name": "Wrap",
