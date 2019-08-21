@@ -432,7 +432,7 @@ the following example uses an image from the network.
 
   **1.** Click the **Run** button. 
 
-  **2.** Change the short Url to the actual URL: 
+  **2.** Change the short URL to the actual URL: 
 
   `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
 
@@ -450,7 +450,7 @@ You're almost at the end of this codelab.
 If you'd like to test your knowledge of the techniques that you've learned, 
 why not apply those skills into building a Flutter UI that displays a business card!
 
- ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay1.png
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay1.png
  @path%}){:width="400px"}{:.text-center} 
 
 You'll break down Flutter's layout into parts, which is how you'd
@@ -461,7 +461,7 @@ you'll implement a `Column` that contains the name and title.
 Then you'll wrap the `Column` in a `Row` that contains the icon, 
 which is positioned to the left of the name and title. 
 
- ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay2.png
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay2.png
  @path%}){:width="400px"}{:.text-center} 
 
 In [Part 2](#part-2), you'll wrap the `Row` in a `Column`,
@@ -472,14 +472,14 @@ Finally, you'll add the contact information
 to the outermost `Column`'s list of children, 
 so it's displayed below the name, title, and icon. 
 
- ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay3.png
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay3.png
  @path%}){:width="400px"}{:.text-center} 
 
 In [Part 3](#part-3),
 you'll finish building the business card display by adding four more icons, 
 which are positioned below the contact information.  
 
- ![Completed business card]({% asset codelab/layout/Completedbusinesscarddisplay4.png
+ ![Completed business card]({% asset codelab/layout/businesscarddisplay4.png
  @path %}){:width="400px"}{:.text-center}
 
 ### Part 1
