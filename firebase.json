@@ -112,7 +112,8 @@
       { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
       { "source": "/desktop", "destination": "https://github.com/flutter/flutter/wiki/Desktop-shells", "type": 302 },
 
-      { "source": "/go/template", "destination": "https://docs.google.com/document/d/1euRhJ_1DNydYhqT9maLbDdDmYBilur4vahBTMKwo-NQ/edit#", "type": 301 }
+      { "source": "/go/template", "destination": "https://docs.google.com/document/d/1euRhJ_1DNydYhqT9maLbDdDmYBilur4vahBTMKwo-NQ/edit#", "type": 301 },
+      { "source": "/go/everything-builds-from-a-module", "destination": "https://docs.google.com/document/d/1fkUpos4hbJF0NYSwjNLWct2UGDg-AfhxzlR6p2g0w9M", "type": 301 }
     ]
   }
 }
