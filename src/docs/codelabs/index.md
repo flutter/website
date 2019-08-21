@@ -4,7 +4,7 @@ description: "Codelabs help you quickly get started programming Flutter."
 ---
 
 
-#### [Basic Flutter layout](/docs/codelabs/layout-basics)
+#### [Basic Flutter layout concepts](/docs/codelabs/layout-basics)
 
 Use DartPad in a browser (no need to download Flutter or Dart!)
 to learn the basics of creating a Flutter layout.

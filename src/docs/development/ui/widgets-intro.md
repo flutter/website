@@ -17,7 +17,7 @@ needed in the underlying render tree to transition from one state to the next.
 
 {{site.alert.note}}
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out [Basic layout
+  into some code, check out [Basic Flutter layout
   codelab](/docs/codelabs/layout-basics), [Building Layouts in
   Flutter](/docs/development/ui/layout), and [Adding Interactivity
   to Your Flutter App](/docs/development/ui/interactive).
