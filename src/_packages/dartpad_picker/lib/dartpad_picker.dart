@@ -48,7 +48,7 @@ class DartPadPicker {
 
   void _initDartPad() {
     _iFrameElement = IFrameElement()
-      ..src = iFrameSrc(theme: 'dark', mode: 'dart');
+      ..src = iFrameSrc(theme: '', mode: 'flutter');
     iFrameHost.children.add(_iFrameElement);
     window.addEventListener('message', (dynamic e) {
       if (e.data['type'] == 'ready') {
