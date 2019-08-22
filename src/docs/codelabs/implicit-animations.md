@@ -1,9 +1,17 @@
 ---
 title: "Codelab: Implicit Animations"
 description: "A codelab that uses DartPad to teach Animations concepts."
-toc: false
+toc: true
 ---
 # Welcome
+
+## Example 0: Counter (no animation)
+
+<iframe 
+  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=e7f05290e2adf6864571cecbcb10429e"
+  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
+  frameborder="no" height="2000" width="100%"
+></iframe>
 
 ## Example 1: AnimatedOpacity
 
