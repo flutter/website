@@ -44,4 +44,8 @@ contains a simple demo app that uses [Material Components][].
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [status bar]: {% asset tools/vs-code/device_status_bar.png @path %}
 
+
+## Troubleshooting
+
+If you get a ```adb: error: failed to copy...``` go to the Android Studio ADV Device manager, select the device, and clear the cache by selecting the small arror on the right and choosing "Clear cache". 
 </div>
