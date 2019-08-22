@@ -47,5 +47,6 @@ contains a simple demo app that uses [Material Components][].
 
 ## Troubleshooting
 
-If you get a ```adb: error: failed to copy...``` go to the Android Studio ADV Device manager, select the device, and clear the cache by selecting the small arror on the right and choosing "Clear cache". 
+If you get a ```adb: error: failed to copy...``` go to the Android Studio ADV Device manager, select the device, and clear the cache by selecting the dropdown on the right and choosing "Wipe data". 
+
 </div>
