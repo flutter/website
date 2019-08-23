@@ -1,6 +1,8 @@
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-## Create the app
+## Create the app {#create-app}
+
+{% include_relative _web-app.md  %}
 
   1. Invoke **View > Command Palette**.
   1. Type "flutter", and select the **Flutter: New Project**.
@@ -11,6 +13,8 @@
 
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
+
+{% include_relative _package-name.md  %}
 
 {% include_relative _main-code-note.md  %}
 

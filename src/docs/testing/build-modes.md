@@ -33,7 +33,12 @@ device, emulator, or simulator. Debug mode means that:
 * Debugging is enabled, and tools supporting source level debugging
   (such as [DevTools][]) can connect to the process.
 
-By default, `flutter run` compiles to debug mode.
+{{site.alert.note}}
+  Debug mode doesn't exist for web support. By default,
+  `flutter run` compiles to profile mode.
+{{site.alert.end}}
+
+By default, `flutter run` compiles to debug mode for mobile.
 Your IDE supports this mode. Android Studio,
 for example, provides a **Run > Debug...** menu option,
 as well as a green bug icon overlayed with a small triangle

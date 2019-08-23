@@ -57,6 +57,8 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
+            - title: Creating responsive apps
+              permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity

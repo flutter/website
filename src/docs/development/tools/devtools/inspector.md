@@ -3,6 +3,10 @@ title: Using the Flutter inspector
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
 ---
 
+{{site.alert.note}}
+  The inspector works with Flutter mobile and web applications.
+{{site.alert.end}}
+
 ## What is it?
 
 The Flutter widget inspector is a powerful tool for visualizing and
