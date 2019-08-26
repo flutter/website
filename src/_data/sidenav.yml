@@ -47,7 +47,7 @@
     - title: User interface
       permalink: /docs/development/ui
       children:
-        - title: Introduction to Widgets
+        - title: Introduction to widgets
           permalink: /docs/development/ui/widgets-intro
         - title: Building layouts
           permalink: /docs/development/ui/layout
