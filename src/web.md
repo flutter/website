@@ -95,7 +95,7 @@ The following resources can help you get started:
 [Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
 [main Flutter repo]: {{site.github}}/flutter/flutter
 [web FAQ]: /docs/development/platform-integration/web
-[Building a web application with Flutter]: /docs/get-started/test-drive
+[Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
 [web samples for Flutter]: https://flutter.github.io/samples/
 [Preparing an app for web release]: /docs/deployment/web

@@ -3,6 +3,12 @@ title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
 ---
 
+{% comment %}
+  TODO: Once published, remove this page on the GitHub wiki:
+  (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)
+  and forward to this page.
+{% endcomment %}
+
 As of 1.9, Flutter has early support for running web
 applications. There are still missing features and known
 performance issues,
@@ -91,11 +97,24 @@ flutter create --web .
 ## Create a new app with web support
 
 To create a new app that includes web support
-(in addition to mobile support), run the following:
+(in addition to mobile support), run the following,
+substituting `myapp` with the name of your project:
 
 ```terminal
-flutter create --web &lt;myapp&gt;
+flutter create --web myapp
 ```
+
+## Run the web app
+
+To run the app on the web, enter the following
+from the top of the package:
+
+```terminal
+flutter run -d chrome
+```
+
+If there aren't any other connected devices,
+the `-d chrome` is optional.
 
 ## Generate a release build
 
