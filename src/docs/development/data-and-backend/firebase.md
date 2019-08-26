@@ -10,7 +10,7 @@ remote configuration, and hosting for your static files.
 
 {{site.alert.note}}
   Some Flutterfire plugins are in development and have not yet
-  reached 1.0. For more info, see the [https://github.com/FirebaseExtended/flutterfire][FlutterFire] page.
+  reached 1.0. For more info, see the [Flutterfire plugins][FlutterFire] page.
 {{site.alert.end}}
 
 Firebase supports Flutter. For more information, see:
@@ -26,7 +26,7 @@ Also, the Flutter community has created docs that you might find useful:
 * [Authenticating users with Firebase and Flutter][authenticating]
 * [Building chat app with Flutter and Firebase][chat app]
 
-[Flutterfire plugins]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[Flutterfire plugins]: {{site.github}}/FirebaseExtended/flutterfire
 [Firebase docs]: {{site.firebase}}/docs
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [started]: {{site.firebase}}/docs/flutter/setup
