@@ -31,7 +31,7 @@ Google group.
 
 Flutter 1.7 is live!
 
-For more information, see [Announcing Futter
+For more information, see [Announcing Flutter
 1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
 on the [Flutter Medium Publication]({{site.flutter-medium}}),
 and the [1.7.8 release
