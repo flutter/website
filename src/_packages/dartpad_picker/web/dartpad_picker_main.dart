@@ -16,8 +16,8 @@ void main() {
 
   var snippets = [
     Snippet('Counter', counter),
-    // Snippet('Functions', functions),
-    // Snippet('Control flow', controlFlow),
+    Snippet('Square', square),
+    Snippet('Todos', todos),
     // Snippet('Strings', strings),
     // Snippet('Collection literals', collectionLiterals),
     // Snippet('Classes', classes),
@@ -104,59 +104,123 @@ Future<void> main() async {
 
 '''
     .trim();
-var functions = r'''
-// A function declaration.
-int timesTwo(int x) {
-  return x * 2;
+var square = r'''
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
+
+class SpinningSquare extends StatefulWidget {
+  @override
+  _SpinningSquareState createState() => new _SpinningSquareState();
 }
 
-// Arrow syntax is shorthand for `{ return expr; }`.
-int timesFour(int x) => timesTwo(timesTwo(x));
+class _SpinningSquareState extends State<SpinningSquare>
+    with SingleTickerProviderStateMixin {
+  AnimationController _animation;
 
-// Functions are objects.
-int runTwice(int x, Function f) {
-  for (var i = 0; i < 2; i++) {
-    x = f(x);
+  @override
+  void initState() {
+    super.initState();
+    // We use 3600 milliseconds instead of 1800 milliseconds because 0.0 -> 1.0
+    // represents an entire turn of the square whereas in the other examples
+    // we used 0.0 -> math.pi, which is only half a turn.
+    _animation = new AnimationController(
+      duration: const Duration(milliseconds: 3600),
+      vsync: this,
+    )..repeat();
   }
-  return x;
+
+  @override
+  Widget build(BuildContext context) {
+    return new RotationTransition(
+        turns: _animation,
+        child: new Container(
+          width: 150.0,
+          height: 150.0,
+          color: const Color(0xFF00FF00),
+        ));
+  }
+
+  @override
+  void dispose() {
+    _animation.dispose();
+    super.dispose();
+  }
 }
 
-main() {
-  print("4 times two is ${timesTwo(4)}");
-  print("4 times four is ${timesFour(4)}");
-  print("2 x 2 x 2 is ${runTwice(2, timesTwo)}");
+void main() async {
+  await ui.webOnlyInitializePlatform();
+  runApp(new Center(child: new SpinningSquare()));
 }
 
 '''
     .trim();
 
-var controlFlow = r'''
-isEven(int x) {
-  // An if-else statement.
-  if (x % 2 == 0) {
-    return true;
-  } else {
-    return false;
+var todos = r'''
+// import 'package:flutter_web/widgets.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter_web/material.dart';
+
+class IconTodo extends StatelessWidget {
+  final IconData icon;
+  final String hintText;
+  final String labelText;
+
+  IconTodo(this.icon, this.hintText, this.labelText);
+
+  Widget build(BuildContext context) {
+    return Container(
+        height: 50,
+        width: 400,
+        margin: const EdgeInsets.all(20.0),
+        child: TextField(
+          obscureText: false,
+          decoration: InputDecoration(
+              icon: Icon(icon),
+              border: OutlineInputBorder(),
+              labelText: labelText,
+              hintText: hintText),
+        ));
   }
 }
 
+class ThreeThings extends StatelessWidget {
+  final myIcons = <String, IconData>{
+    'accessibility': Icons.accessibility_new,
+    'phone': Icons.perm_phone_msg,
+    'sun': Icons.brightness_low,
+  };
 
-List<int> getEvenNumbers(Iterable<int> numbers) {
-  var evenNumbers = <int>[];
-
-  // A for-in loop.
-  for (var i in numbers) {
-    // A single line if statement.
-    if (isEven(i)) evenNumbers.add(i);
+  Widget build(BuildContext context) {
+    return Column(children: <Widget>[
+      IconTodo(myIcons['accessibility'], 'Schedule exercise', '1'),
+      IconTodo(myIcons['phone'], 'Pick a friend to call', '2'),
+      IconTodo(myIcons['sun'], 'Do something outside', '3'),
+    ]);
   }
-
-  return evenNumbers;
 }
 
-main() {
-  var numbers = List.generate(10, (i) => i);
-  print(getEvenNumbers(numbers));
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'hi',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Todos For My Health'),
+        ),
+        body: Container(
+          child: ThreeThings(),
+        ),
+      ),
+    );
+  }
 }
+
+Future<void> main() async {
+  await ui.webOnlyInitializePlatform();
+  runApp(MyApp());
+}
+
 '''
     .trim();
 
