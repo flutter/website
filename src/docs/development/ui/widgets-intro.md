@@ -15,10 +15,9 @@ tree to transition from one state to the next.
 
 {{site.alert.note}}
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out the [Basic Flutter layout
-  codelab](/docs/codelabs/layout-basics), [Building layouts in
-  Flutter](/docs/development/ui/layout), and [Adding interactivity
-  to your Flutter app](/docs/development/ui/interactive).
+  into some code, check out the [basic layout codelab][],
+  [building layouts][],
+  and [adding interactivity to your Flutter app][].
 {{site.alert.end}}
 
 ## Hello world
@@ -272,7 +271,7 @@ layout in the appropriate place. Similarly, the
 This pattern recurs throughout the framework and is something you
 might consider when designing your own widgets.
 
-For more information, see [Material components][].
+For more information, see [Material Components widgets][].
 
 {{site.alert.note}}
   Material is one of the 2 bundled designs included with Flutter.
@@ -399,7 +398,7 @@ hand, are persistent between calls to
 `build()`, allowing them to remember information.
 
 The example above accepts user input and directly uses the result in its
-`build` method.  In more complex applications, different parts of the widget
+`build()` method.  In more complex applications, different parts of the widget
 hierarchy might be responsible for different concerns; for example, one
 widget might present a complex user interface with the goal of gathering
 specific information, such as a date or location, while another widget might
@@ -472,7 +471,7 @@ while maintaining simplicity in the parent.
 For more information, see:
 
 * [`StatefulWidget`][]
-* [`State.setState()`][]
+* [`setState()`][]
 
 ## Bringing it all together
 
@@ -730,9 +729,12 @@ For more information, see the
 
 
 [`actions`]: {{api}}/material/AppBar-class.html#actions
+[adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [`AppBar`]: {{api}}/material/AppBar-class.html
+[basic layout codelab]: /docs/codelabs/layout-basics
 [`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
+[building layouts]: /docs/development/ui/layout
 [`Center`]: {{api}}/widgets/Center-class.html
 [`Column`]: {{api}}/widgets/Column-class.html
 [`Container`]: {{api}}/widgets/Container-class.html
@@ -755,7 +757,7 @@ For more information, see the
 [`Key`]: {{api}}/foundation/Key-class.html
 [Layouts]: /docs/development/ui/widgets/layout
 [`leading`]: {{api}}/material/AppBar-class.html#leading
-[Material components]: /docs/development/ui/widgets/material
+[Material Components widgets]: /docs/development/ui/widgets/material
 [Material icons]: https://design.google.com/icons/
 [`MaterialApp`]: {{api}}/material/MaterialApp-class.html
 [`Navigator`]: {{api}}/widgets/Navigator-class.html
@@ -772,7 +774,6 @@ For more information, see the
 [`setState()`]: {{api}}/widgets/State/setState.html
 [`Stack`]: {{api}}/widgets/Stack-class.html
 [`State`]: {{api}}/widgets/State-class.html
-[`State.setState()`]: {{api}}/widgets/State/setState.html
 [`StatefulWidget`]: {{api}}/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{api}}/widgets/StatelessWidget-class.html
 [`Text`]: {{api}}/widgets/Text-class.html

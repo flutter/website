@@ -90,7 +90,7 @@ Coming from another platform? Check out:
 [React Native](/docs/get-started/flutter-for/react-native-devs),
 [Xamarin.Forms](/docs/get-started/flutter-for/xamarin-forms-devs)
 
-[Building layouts in Flutter](/docs/development/ui/layout)
+[Building layouts](/docs/development/ui/layout)
 : Learn how to create layouts in Flutter, where everything is a widget.
 
 [Adding interactivity to your Flutter app](/docs/development/ui/interactive)
