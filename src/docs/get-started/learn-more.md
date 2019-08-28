@@ -11,7 +11,7 @@ Learn more about the Flutter framework from the following pages:
 ## Flutter basics
 
 * [Introduction to widgets](/docs/development/ui/widgets-intro)
-* [Building layouts in Flutter](/docs/development/ui/layout/tutorial) tutorial
+* [Building layouts](/docs/development/ui/layout/tutorial) tutorial
 * [Add interactivity](/docs/development/ui/interactive) tutorial
 
 ## Apply your existing knowledge
