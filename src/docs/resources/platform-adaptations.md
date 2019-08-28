@@ -19,10 +19,10 @@ in case 1 on Android and iOS.
 For case 2, Flutter bundles the means to produce the appropriate effects of
 the platform conventions but does not adapt automatically when app design
 choices are needed. For a discussion, see [#8410](https://github.com/flutter/flutter/issues/8410#issuecomment-468034023)
-and http://bit.ly/flutter-adaptive-widget-problem.
+and [http://bit.ly/flutter-adaptive-widget-problem](http://bit.ly/flutter-adaptive-widget-problem).
 
 For an example of an app using different information architecture structures on
-Android and iOS but sharing the same content code, see https://github.com/flutter/samples/tree/master/platform_design.
+Android and iOS but sharing the same content code, see [https://github.com/flutter/samples/tree/master/platform_design](https://github.com/flutter/samples/tree/master/platform_design).
 
 ## Page navigation
 
