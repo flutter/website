@@ -5,8 +5,8 @@ title: Technical overview
 ## What is Flutter?
 
 Flutter is an app SDK for building high-performance,
-high-fidelity, apps for iOS, Android, and web
-([early access][]), from a single codebase.
+high-fidelity apps for iOS, Android, and web
+([early access][]) from a single codebase.
 
 The goal is to enable developers to deliver high-performance
 apps that feel natural on different platforms.
@@ -206,14 +206,13 @@ Next steps:
 
 1. Try the [layout codelab][].
    (It doesn't require downloading Flutter or Dart!)
-1. Follow the Flutter [Get started guide][].
+1. [Install Flutter][].
 1. Check out the Flutter [cookbook][].
 1. Check out the Flutter [examples][].
-1. Try one of the Flutter [codelabs][].
-1. Try the [building layouts][] and
-   [adding interactivity to your Flutter app][] tutorials.
-1. Follow a detailed example in
-   [Tour of the widget framework][].
+1. Try another of the Flutter [codelabs][].
+1. Try the [Flutter tutorials][].
+1. Follow a detailed example in the
+   [tour of the widget framework][].
 1. Check out Flutter's [technical videos][].
 
 ## Get support
@@ -224,20 +223,19 @@ Flutter's [code of conduct][].
 
 * Ask how-to questions that can be answered with specific solutions
   on [Stack Overflow][].
-* Live chat with Flutter engineers and users on [Discord][](preferred)
+* Live chat with Flutter engineers and users on [Discord][] (preferred)
   or [gitter][].
 * Discuss Flutter, best practices, app design,
-  and more on the [mailing list][] (and subscribe to
-  the flutter-announce mailing list to be notified of changes).
+  and more on the [flutter-dev][] mailing list.
+* Subscribe to the [flutter-announce][] mailing list
+  to be notified of changes to the framework.
 * Report bugs, request features and docs on [GitHub][].
 * Follow us on Twitter [@flutterdev][].
 
 
-[adding interactivity to your Flutter app]: /docs/development/ui/interactive
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [API documentation]: {{site.api}}
 [`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
-[building layouts]: /docs/development/ui/layout/tutorial
 [buttons]: {{site.api}}/flutter/material/PopupMenuButton-class.html
 [code of conduct]: {{site.github}}/flutter/blob/master/CODE_OF_CONDUCT
 [codelabs]: /docs/codelabs
@@ -249,17 +247,19 @@ Flutter's [code of conduct][].
 [Discord]: https://discord.gg/N7Yshp4
 [early access]: /web
 [examples]: {{site.github}}/flutter/samples/blob/master/INDEX.md
-[Get started guide]: /docs/get-started
 [@flutterdev]: https://twitter.com/flutterdev
 [fully concrete widgets]: {{site.api}}/flutter/widgets/RenderObjectWidget-class.html
+[Flutter tutorials]: /docs/reference/tutorials
 [Flutter Gallery]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[flutter-dev]: {{site.groups}}/d/forum/flutter-dev
 [GitHub]: {{site.github}}/flutter/flutter/issues
 [gitter]: https://gitter.im/flutter/flutter
 [horizontal layout]: {{site.api}}/flutter/widgets/Row-class.html
+[Install Flutter]: /docs/get-started/install
 [layout codelab]: /docs/codelabs/layout-basics
 [`LimitedBox`]: {{site.api}}/flutter/widgets/LimitedBox-class.html
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[mailing list]: {{site.groups}}/d/forum/flutter-dev
 [MyApp template]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [Stack Overflow]: {{site.so}}/tags/flutter
@@ -268,8 +268,7 @@ Flutter's [code of conduct][].
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [technical videos]: /docs/resources/videos
 [text]: {{site.api}}/flutter/widgets/Text-class.html
-[Tour of the widget framework]: /docs/development/ui/widgets-intro
+[tour of the widget framework]: /docs/development/ui/widgets-intro
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
 [various]: {{site.api}}/flutter/material/IconButton-class.html
 [visit our GitHub repository]: {{site.github}}/flutter/flutter/tree/master/examples
-

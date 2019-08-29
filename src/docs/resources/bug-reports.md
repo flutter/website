@@ -1,5 +1,6 @@
 ---
 title: Creating useful bug reports
+description: Where to file bug reports and enhancement requests for flutter and the website.
 ---
 
 The instructions in this document detail the current steps
@@ -10,7 +11,10 @@ We appreciate your effort in sending us as much feedback as possible.
 
 ## Create an issue on GitHub
 
-* A new issue might be created in the [Flutter repo][] on GitHub.
+* To report a Flutter crash or bug,
+  [create an issue in the flutter/flutter project][Flutter issue].
+* To report a problem with the website,
+  [create an issue in the flutter/website project][Website issue].
 
 ## Provide some Flutter diagnostics
 
@@ -61,13 +65,14 @@ Follow these steps only if your issue is related to the
 
 ## Provide the crash report
 
-* In case the iOS simulator crashes,
+* When the iOS simulator crashes,
   a crash report is generated in `~/Library/Logs/DiagnosticReports/`.
-* In case the iOS device crashes,
+* When an iOS device crashes,
   a crash report is generated in `~/Library/Logs/CrashReporter/MobileDevice`.
 * Find the report corresponding to the crash (usually the latest)
   and attach it to the GitHub issue.
 ![crash report](/images/crash_reports.png)
 
 
-[Flutter repo]: {{site.github}}/flutter/flutter/issues/new/choose
+[Flutter issue]: {{site.github}}/flutter/flutter/issues/new/choose
+[Website issue]: {{site.github}}/flutter/website/issues/new/choose

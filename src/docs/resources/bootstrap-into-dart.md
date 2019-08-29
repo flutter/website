@@ -32,17 +32,13 @@ you to learn, too.
 : Guides for style, authoring documentation, usage,
   and more.
 
-[Asynchronous programming][] codelab
-: Learn how to use Futures,
-  which are used extensively in the Dart core libraries.
-  Futures can be used instead of one-time callbacks.
+[Asynchronous programming: futures, async, await][] codelab
+: Learn how to write asynchronous code using
+  futures and the `async` and `await` keywords.
 
 [Asynchronous programming: streams][]
-: Learn how to use `Streams`, which are used extensively
-  in the Dart core libraries.
-  `Streams` can be used instead repeating callbacks.
-  For example, the [`File`][] class
-  uses `Streams` to read bytes from a file.
+: Learn how to use streams to perform asynchronous
+  I/O and event handling.
 
 Want to learn more and perhaps contribute?
 Check out the [Dart community][].
