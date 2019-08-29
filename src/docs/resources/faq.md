@@ -956,4 +956,4 @@ deployed to Apple's App Store.
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
 [iOS instructions]: /docs/deployment/ios
-[web instructions]: {{site.github}}/flutter/flutter-web
+[web instructions]: {{site.github}}/flutter/flutter_web
