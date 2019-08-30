@@ -28,8 +28,6 @@ including breaking changes, join the
 [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 Google group.
 
-**Sept 10, 2019**
-
 Flutter 1.9 is live!
 
 For more information, see [Announcing Flutter
