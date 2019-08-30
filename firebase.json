@@ -117,8 +117,8 @@
       { "source": "/go/remove-include-flutter-groovy", "destination": "https://docs.google.com/document/d/1OulURfRSWgJnnFA_cSup4ev7wrJwnZ7Siao_FGbLN9I", "type": 301 },
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
       { "source": "/go/add-to-app-samples", "destination": "https://docs.google.com/document/d/1M_GsAL8C1NxbsmzI35w2Th1wvX1KMoPHY5yeeNbzjY0", "type": 301 },
-      { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 }
-
+      { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
+      { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 }
     ]
   }
 }
