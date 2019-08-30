@@ -112,7 +112,7 @@
       { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
       { "source": "/desktop", "destination": "https://github.com/flutter/flutter/wiki/Desktop-shells", "type": 302 },
 
-      { "source": "/go/template", "destination": "https://docs.google.com/document/d/1euRhJ_1DNydYhqT9maLbDdDmYBilur4vahBTMKwo-NQ/edit#", "type": 301 },
+      { "source": "/go/template", "destination": "https://docs.google.com/document/d/1SFRO8U2toOlAaZ38dsuEU7Wm5fn41wvBCWKiwADqfmw/edit?usp=sharing", "type": 301 },
       { "source": "/go/everything-builds-from-a-module", "destination": "https://docs.google.com/document/d/1fkUpos4hbJF0NYSwjNLWct2UGDg-AfhxzlR6p2g0w9M", "type": 301 },
       { "source": "/go/remove-include-flutter-groovy", "destination": "https://docs.google.com/document/d/1OulURfRSWgJnnFA_cSup4ev7wrJwnZ7Siao_FGbLN9I", "type": 301 },
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
