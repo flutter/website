@@ -47,19 +47,20 @@ whenever you open a new window. For example:
 ### Update directly (Linux)
 
 In most cases, your distribution may not acquire the path you pass
-through the terminal for future sessions. To maintain permanently, in
-some cases, you will need to change the environment variables file
-directly. Remember that it requires administrator privileges.
+through the terminal for future sessions. When this occurs, you need 
+to change the environment variables file directly. 
+This requires administrator privileges.
 For example:
 
    1. Determine the directory where you placed the Flutter SDK.
 
-   2. Locate the `etc` directory at root of the system and open `profile` file with privileges.
+   2. Locate the `etc` directory at the root of the system, and open 
+   the `profile` file with root privileges.
 
         ```terminal
         $ sudo nano /etc/profile
         ```
-   3. Update the PATH string including the location of your Flutter SDK directory.
+   3. Update the PATH string with the location of your Flutter SDK directory.
 
       ```shell
       if [ "`id -u`" -eq 0 ]; then
