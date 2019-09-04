@@ -181,7 +181,7 @@ and store their mutable state in a subclass of [`State`][].
 
 Whenever you mutate a `State` object
 (for example, by incrementing the counter), you must call
-[`setState()`] to signal the framework to update the user
+[`setState()`][] to signal the framework to update the user
 interface by calling the `State`'s build method again.
 For an example of managing state, see the [MyApp template][]
 that's created with each new Flutter project.
