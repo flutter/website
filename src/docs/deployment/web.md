@@ -7,7 +7,7 @@ short-title: Web
 During a typical development cycle,
 you test an app using `flutter run -d chrome`
 (for example) at the command line.
-This builds a _profile_ version of your app.
+This builds a _debug_ version of your app.
 
 This page helps you prepare a _release_ version
 of your app.
@@ -15,7 +15,7 @@ of your app.
 This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
-* [Signing the app ??](#signing-the-app)
+* [Obfuscation and minification](#obfuscation-and-minification)
 * [Building the app for release](#building-the-app-for-release)
 * [Deploying to the web](#deploying-to-the-web)
 
@@ -23,12 +23,19 @@ This page covers the following topics:
 
 TBD
 
-## Signing the app
+## Obfuscation and minification
 
-Is signing an available option for web apps?
+Obfuscation and minification  is handled for you when you
+create a release build.
 
-What about obfuscation and minification?
-Are web apps automatically obfuscated and minified?
+A debug build of a web app is not minified and
+tree shaking has not been performed.
+
+A profile build is not minified and tree shaking
+has been performed.
+
+A release build is both minified and tree shaking
+has been performed.
 
 ## Building the app for release
 
@@ -39,15 +46,37 @@ and places the files into the `/build/web`
 directory of the project.
 
 Launch a web server (for example,
-`python -m SimpleHTTPServer 8000`)
+`python -m SimpleHTTPServer 8000`,
+or by using the [dhttpd][] package),
 and open the /build/web directory. Navigate to
-`localhost:8000` in your browser to view the release
-version of your app.
+`localhost:8000` in your browser
+(given the python example)
+to view the release version of your app.
 
 ## Deploying to the web
+
+The release build of a simple app has the following structure:
+
+```none
+/build/web
+  assets
+    AssetManifest.json
+    FontManifest.json
+    LICENSE
+    fonts
+      MaterialIcons-Regular.ttf
+      <other font files>
+    <image files>
+  index.html
+  main.dart.js
+  main.dart.js.map
+```
 
 When you are ready to deploy your app,
 upload the release bundle
 to Firebase, the cloud, or a similar service.
-(Anything else to say here?)
 
+In future, we plan to generate PWA configuration files
+to support Progressive Web Apps.
+
+[dhttpd]: {{site.pub}}/packages/dhttpd

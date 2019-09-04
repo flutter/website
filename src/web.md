@@ -1,6 +1,6 @@
 ---
 title: Adding web support to a Flutter app
-description: "Announcing the preview release of Flutter for web."
+description: "Announcing the tech preview release of Flutter for web."
 ---
 
 Web support is a code-compatible implementation of Flutter that is
@@ -11,8 +11,8 @@ deployed to any web server. You can use all the features of Flutter,
 and you don’t need a browser plug-in.
 
 {{site.alert.warning}}
-  **As of 1.9, web support is currently available as early release.**
-  As web support hasn't yet reached beta,
+  **As of 1.9, web support is available as a tech preview.**
+  As web support hasn't yet reached alpha,
   you can expect to experience crashes and missing features.
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
@@ -25,15 +25,16 @@ and you don’t need a browser plug-in.
 Adding web support to Flutter involved implementing Flutter's
 core drawing layer on top of standard browser APIs.
 Using a combination of DOM, Canvas, and CSS,
-web support provides a portable, high-quality, and performant
-user experience across modern browsers.
+web support aims to provide a portable, high-quality,
+and performant user experience across modern browsers.
 We implemented this core drawing layer completely in Dart
 and used Dart's optimized JavaScript compiler to compile the
 Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-In this early stage of development, we envision the web version of Flutter 
+In this early stage of development,
+we envision the web version of Flutter 
 being valuable in many scenarios. For example:
 
 **A connected [Progressive Web Application][] built with Flutter**
@@ -57,15 +58,13 @@ being valuable in many scenarios. For example:
   web and mobile content enables you to deploy content online
   or embedded in an app without rewriting.
 
-## Notes on early web support in 1.9
+## Notes on web support in 1.9
 
-The early version of web support is your opportunity to
+This preview version of web support is your opportunity to
 try it out. Before you get started, here are a few notes:
 
-* Web support for Flutter has been "unforked" into the
-  [main Flutter repo][].
-  It is missing features and has known performance issues,
-  so we don't recommend it for production.
+* This release is missing features and has known performance
+  issues, so we don't recommend it for production.
 
 * You can update existing Flutter code to work on the web,
   but there are some caveats as web support hasn't

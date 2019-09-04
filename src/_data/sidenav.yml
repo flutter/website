@@ -207,11 +207,11 @@
   children:
     - title: Creating flavors for Flutter
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: Build and release an Android app
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: Build and release an iOS app
       permalink: /docs/deployment/ios
-    - title: Build and release for web
+    - title: Build and release a web app
       permalink: /docs/deployment/web
     - title: Continuous deployment
       permalink: /docs/deployment/cd

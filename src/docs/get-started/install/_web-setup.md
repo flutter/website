@@ -1,7 +1,7 @@
 ## Web setup
 
 {{site.alert.warning}}
-  Flutter on the web is currently available as an early release.
+  Flutter on the web is currently available as a technical preview.
   When trying Flutter apps on the web, you can expect to experience
   crashes and missing features.
   If this happens, please [file an issue][].

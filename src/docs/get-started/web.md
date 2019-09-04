@@ -11,8 +11,8 @@ description: Instructions for creating a Flutter app for the web.
 
 As of 1.9, Flutter has early support for running web
 applications. There are still missing features and known
-performance issues,
-so it **isn't recommended for production use.**
+performance issues, so it
+**isn't recommended for production use.**
 
 {{site.alert.note}}
   Currently, web support requires the Chrome browser.
@@ -32,7 +32,7 @@ top of the project package:
 flutter channel master
 flutter upgrade
 flutter config --enable-web
-flutter create --web .
+flutter create .
 flutter run -d chrome
 ```
 
@@ -75,8 +75,8 @@ $ flutter devices
 Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
 ```
 
-**After enabling web support, restart Android Studio or IntelliJ.**
-You should now see **Chrome** in the device pulldown.
+**After enabling web support, restart the IDE.**
+You should now see **Chrome (web)** in the device pulldown.
 
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.
@@ -91,7 +91,7 @@ run the following command in a terminal
 from the top of the project package:
 
 ```terminal
-flutter create --web .
+flutter create .
 ```
 
 ## Create a new app with web support
@@ -101,7 +101,7 @@ To create a new app that includes web support
 substituting `myapp` with the name of your project:
 
 ```terminal
-flutter create --web myapp
+flutter create myapp
 ```
 
 ## Run the web app

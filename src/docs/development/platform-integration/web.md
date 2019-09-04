@@ -6,7 +6,7 @@ description: Some gotchas and differences when writing or running web apps in Fl
 ### Is the web version of Flutter ready for production?
 
 As of the 1.9 release, the web version of Flutter is available as
-an early release on the master/(dev by Sept?) channel.
+a technical preview on the master/(dev by Sept?) channel.
 Web support has been added to the main Flutter repo,
 but is missing features and has known performance issues.
 **We don't recommend deploying a web app to production.**
@@ -18,13 +18,13 @@ Flutter](/docs/get-started/web).
 
 ### Does hot reload work with a web app?
 
-Not yet.
+No.
 
 ### Can I use Flutter plugins?
 
 Not yet.
 
-### How do I file an issue against web support?
+### How do I file an issue about web support?
 
 You can [file an issue](https://goo.gle/flutter_web_issue)
 on the main Flutter repo. Make sure that "web" is
@@ -36,10 +36,12 @@ Using the browser's refresh button doesn't work,
 but you can enter "R" in the console where
 "flutter run -d chrome" is running.
 
+(Still true?)
+
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
 You can select **Chrome** as the target device in
-Android Studio and IntelliJ if you are using the
+Android Studio/IntelliJ and VS Code if you are using the
 master channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
 
@@ -49,8 +51,8 @@ flutter config --enable-web
 
 You need only run this once.
 
-If Android Studio or IntelliJ is already running, restart
-it. The device pulldown should now include the **Chrome**
+If the IDE is already running, restart it.
+The device pulldown should now include the **Chrome (web)**
 option.
 
 ### How do I build a responsive app for the web?
@@ -60,58 +62,57 @@ apps](/docs/development/ui/layout/responsive).
 
 ## Can I use the `dart:io` package with a web app?
 
-No. You'll use the
-[`http`](https://pub.dev/packages/http)
-package, though security works somewhat
-differently because the browser controls the
-headers on an HTTP request.
+No. The file system is not accessible from the browser.
+For network functionality, use the [`http`][]
+package. Note that security works somewhat
+differently because the browser (and not the app)
+controls the headers on an HTTP request.
 
 ## How are forward and backward buttons presented in the web UI?
 
-TBD
+The browser's back button is supported for web apps.
+The forward button is not yet enabled.
+For more information, see [Issue 32248][].
 
 ## How do copy/paste work?
 
-TBD
+Copy/paste works on mobile. If you encounter problems,
+please [file an issue][].
+
+## How do I embed a web app in a web page?
+
+IDK.
 
 ## Implementing CORS
 
-I don't know, but the browser controls the headers on
-HTTP requests.
+HTTP requests work on mobile, but not on the web.
+Web applications have special security restrictions.
+If you experience problems,
+check that the web server you are accessing is setting
+CORS headers that accept requests from the domain
+hosting your Flutter app.
+
+## How do I avoid JS lockout with CORS?
+
+IDK
 
 ### How do I debug a web app?
 
-Use [Flutter DevTools](/docs/development/tools/devtools/overview)
-for the following tasks:
+Use [Flutter DevTools][] for the following tasks:
 
-* [Debugging](/docs/development/tools/devtools/debugger)
-* [Logging](/docs/development/tools/devtools/logging)
-* [Running Flutter inspector](/docs/development/tools/devtools/inspector)
+* [Debugging][]
+* [Logging][]
+* [Running Flutter inspector][]
 
-Use [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-for the following tasks:
+Use [Chrome DevTools][] for the following tasks:
 
-* [Generating event
-  timeline](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference)
-* [Analyzing
-  performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
+* [Generating event timeline][]
+* [Analyzing performance][]&mdash;make sure to use a
+  profile build
 
 ### How do I test a web app?
 
-Unit tests can be run on the web with the argument
-`--platform=chrome`. This compiles the tests to
-JavaScript and runs them in a headless Chrome browser.
-Note that there are compatibility issues with many
-flutter tests and bugs with the test bootstrap itself
-that need to be resolved.
-
-```terminal
-$ flutter test --platform=chrome
-> Downloading Web SDK...                       1.1s
-> Running "flutter pub get" in flutter...      0.4s
->                                                                        
-> Compiling test/scheduler/debug_test.dart for the Web...   
-```
+Use the normal [widget tests][].
 
 Driver tests are not yet supported.
 
@@ -123,3 +124,16 @@ TBD
 
 See [Preparing a web app for
 release](/docs/deployment/web).
+
+
+[Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
+[Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
+[Debugging]: /docs/development/tools/devtools/debugger
+[file an issue]: https://goo.gle/flutter_web_issue
+[Flutter DevTools]: /docs/development/tools/devtools/overview
+[Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[`http`]: https://pub.dev/packages/http
+[Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
+[Logging]: /docs/development/tools/devtools/logging
+[Running Flutter inspector]: /docs/development/tools/devtools/inspector
+[widget tests]: /docs/testing#widget-tests
