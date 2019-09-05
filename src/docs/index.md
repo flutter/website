@@ -30,12 +30,15 @@ Google group.
 
 Flutter 1.9 is live!
 
+{% comment %} 
+UNTIL WE HAVE PROPER LINKS:
 For more information, see [Announcing Flutter
 1.9](xxx)
 on the [Flutter Medium Publication]({{site.flutter-medium}}),
 and the [1.9.x release
 notes]({{site.github}}/flutter/flutter/wiki/xxx)
 on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
+{% endcomment %}
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
