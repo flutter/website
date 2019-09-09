@@ -83,7 +83,7 @@ and Dart plugins.
 See [Creating responsive
 apps](/docs/development/ui/layout/responsive).
 
-## Can I use the `dart:io` package with a web app?
+### Can I use the `dart:io` package with a web app?
 
 No. The file system is not accessible from the browser.
 For network functionality, use the [`http`][]
@@ -91,18 +91,18 @@ package. Note that security works somewhat
 differently because the browser (and not the app)
 controls the headers on an HTTP request.
 
-## How are forward and backward buttons presented in the web UI?
+### How are forward and backward buttons presented in the web UI?
 
 The browser's back button is supported for web apps.
 The forward button is not yet enabled.
 For more information, see [Issue 32248][].
 
-## How do copy/paste work?
+### How do copy/paste work?
 
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
 
-## How do I embed a Flutter web app in a web page?
+### How do I embed a Flutter web app in a web page?
 
 You can embed a Flutter web app,
 as you would embed other content,
@@ -115,7 +115,7 @@ with the name of your app:
 <iframe src="http:_URL_/_appName_>"></iframe>
 ```
 
-## Implementing CORS
+### Implementing CORS
 
 HTTP requests work on mobile, but not on the web.
 Web applications have special security restrictions.
@@ -124,7 +124,7 @@ check that the web server you are accessing is setting
 CORS headers that accept requests from the domain
 hosting your Flutter app.
 
-## How do I avoid JavaScript lockout with CORS?
+### How do I avoid JavaScript lockout with CORS?
 
 TBD
 
@@ -152,16 +152,16 @@ Driver tests are not yet supported.
 
 TBD
 
-## How do I deploy a web app?
+### How do I deploy a web app?
 
 See [Preparing a web app for
 release](/docs/deployment/web).
 
-## Does `Platform.is` work on the web?
+### Does `Platform.is` work on the web?
 
 Not currently. 
 
-## How can I compare notes others who are playing with this feature?
+### How can I compare notes others who are playing with this feature?
 
 Check out the **#web** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
