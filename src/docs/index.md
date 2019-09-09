@@ -73,6 +73,13 @@ New and updated docs on the site include:
 * A new [web FAQ](/docs/development/platform-integration/web).
 * The [Flutter for web](/web) page is updated.
 
+Other relevant docs:
+
+* Error messages have been improved in SDK 1.9.
+  For more information, read [Improving Flutter's
+  Error Messages](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)
+  on the [Flutter Medium publication](https://medium.com/flutter).
+
 Happy Fluttering!
 
 [What's new archive](/docs/whats-new-archive)

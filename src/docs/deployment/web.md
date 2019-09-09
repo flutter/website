@@ -45,17 +45,8 @@ This generates the app, including the assets,
 and places the files into the `/build/web`
 directory of the project.
 
-Launch a web server (for example,
-`python -m SimpleHTTPServer 8000`,
-or by using the [dhttpd][] package),
-and open the /build/web directory. Navigate to
-`localhost:8000` in your browser
-(given the python example)
-to view the release version of your app.
-
-## Deploying to the web
-
-The release build of a simple app has the following structure:
+The release build of a simple app has the
+following structure:
 
 ```none
 /build/web
@@ -72,11 +63,43 @@ The release build of a simple app has the following structure:
   main.dart.js.map
 ```
 
+Launch a web server (for example,
+`python -m SimpleHTTPServer 8000`,
+or by using the [dhttpd][] package),
+and open the /build/web directory. Navigate to
+`localhost:8000` in your browser
+(given the python SimpleHTTPServer example)
+to view the release version of your app.
+
+## Embedding a Flutter app into an HTML page
+
+You can embed a Flutter web app,
+as you would embed other content,
+in an [`iframe`][] tag of an HTML file.
+In the following example, replace _URL_
+with your web host, and _appName_
+with the name of your app:
+
+```html
+<iframe src="http:_URL_/_appName_>"></iframe>
+```
+
+## Deploying to the web
+
 When you are ready to deploy your app,
 upload the release bundle
 to Firebase, the cloud, or a similar service.
+Here are a few possibilities, but there are
+many others:
+
+* [Firebase Hosting][]
+* [Github Pages][]
+* [Google Cloud Hosting][]
 
 In future, we plan to generate PWA configuration files
 to support Progressive Web Apps.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
+[Firebase Hosting]: https://firebase.google.com/docs/hosting
+[GitHub Pages]: https://pages.github.com/
+[Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/

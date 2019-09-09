@@ -1,5 +1,6 @@
 ---
 title: Creating responsive apps
+description: It's important to create apps, whether for mobile or web, so that they are responsive to size and orientation changes.
 short-title: Responsive
 ---
 
@@ -45,7 +46,7 @@ apps with responsive design:
   widget. Again, if you use this, then your build function automatically
   runs if the user somehow changes the app's size.
 
-Other useful widgets for creating a responsive UI:
+Other useful widgets and classes for creating a responsive UI:
 
 * [`AspectRatio`][]
 * [`CustomSingleChildLayout`][]
@@ -59,31 +60,32 @@ Other useful widgets for creating a responsive UI:
 For more information, here are a few resources,
 including contributions from the Flutter community:
 
-* [MediaQuery (Flutter Widget of the Week video)](https://www.youtube.com/watch?v=A3WrA4zAaPw)
+* [MediaQuery (Flutter Widget of the Week video)][]
 * [Developing for Multiple Screen Sizes and Orientations in
-  Flutter]({{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434)
-  by Deven Joshi
-* [Build Responsive UIs in
-  Flutter](https://medium.com/flutter-community/build-responsive-uis-in-flutter-fd450bd59158)
-  by Raouf Rahiche
-* [Making Cross-platform Flutter Landing Page
-  Responsive]({{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970)
+  Flutter][] by Deven Joshi
+* [Build Responsive UIs in Flutter][] by Raouf Rahiche
+* [Making Cross-platform Flutter Landing Page Responsive][]
   by Priyanka Tyagi
 * [How to make flutter app responsive according to different screen
-  size?](https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size),
-  a question on StackOverflow
+  size?][], a question on StackOverflow
+
 
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
+[Build Responsive UIs in Flutter]: {{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158
+[`builder`]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
 [`CustomMultiChildLayout`]: {{site.api}}/flutter/widgets/CustomMultiChildLayout-class.html
 [`CustomSingleChildLayout`]: {{site.api}}/flutter/widgets/CustomSingleChildLayout-class.html
+[Developing for Multiple Screen Sizes and Orientations in Flutter]: {{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434
 [`FittedBox`]: {{site.api}}/flutter/widgets/FittedBox-class.html
+[How to make flutter app responsive according to different screen size?]: https://stackoverflow.com/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
+[Making Cross-platform Flutter Landing Page Responsive]: {{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970
+[`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
+[MediaQuery (Flutter Widget of the Week video)]: https://www.youtube.com/watch?v=A3WrA4zAaPw
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
 [`MediaQueryData`]: {{site.api}}/flutter/widgets/MediaQueryData-class.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 
-[`builder`]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
-[`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html
