@@ -71,40 +71,16 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ### Deploy to iOS devices
 
-To deploy your Flutter app to a physical iOS device,
-you’ll need some additional tools and an Apple account.
-You'll also need to set up physical device deployment in Xcode.
+To deploy your Flutter app to a physical iOS device you need the third-party
+CocoaPods dependency manager and an Apple Developer account. You'll also need
+to set up physical device deployment in Xcode.
 
- 1. Install [homebrew](https://brew.sh).
- 1. Ensure that homebrew is up to date:
-
-    ```terminal
-    $ brew update
-    ```
-
- 1. Install the tools for deploying Flutter apps to iOS devices by running the
-    following commands:
+ 1. Install and set up CocoaPods by running the following commands:
 
     ```terminal
-    $ brew install --HEAD usbmuxd
-    $ brew link usbmuxd
-    $ brew install --HEAD libimobiledevice
-    $ brew install ideviceinstaller ios-deploy cocoapods
+    $ sudo gem install cocoapods
     $ pod setup
     ```
-
-    {{site.alert.note}}
-      The first two commands above are necessary as a temporary
-      workaround until the next release of libusbmuxd,
-      as explained in [libusbmuxd issue #46][] and
-      [Flutter issue #22595][].
-
-      [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
-      [Flutter issue #22595]: {{site.github}}/flutter/flutter/issues/22595
-    {{site.alert.end}}
-
-    If any of these commands fail, run `brew doctor` and follow the instructions
-    to resolve any issues.
 
  1. Follow the Xcode signing flow to provision your project:
 
