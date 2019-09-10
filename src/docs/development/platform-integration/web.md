@@ -37,13 +37,9 @@ included in the title.
 
 ### How do I refresh the app running in the browser?
 
-Using the browser's refresh button doesn't work,
-but you can enter "R" in the console where
+You can either use the browser's refresh button,
+or you can enter "R" in the console where
 "flutter run -d chrome" is running.
-
-If you enter "r" by mistake, you get
-"Try again after fixing the above error(s)"
-but no errors are listed.
 
 ### Can I build, run, and deploy web apps in any of the IDEs?
 
@@ -107,17 +103,15 @@ please [file an issue][].
 You can embed a Flutter web app,
 as you would embed other content,
 in an [`iframe`][] tag of an HTML file.
-In the following example, replace _URL_
-with your web host, and _appName_
-with the name of your app:
+In the following example, replace "URL"
+with the location of your hosted HTML page:
 
 ```html
-<iframe src="http:_URL_/_appName_>"></iframe>
+<iframe src="URL"></iframe>
 ```
 
 ### Implementing CORS
 
-HTTP requests work on mobile, but not on the web.
 Web applications have special security restrictions.
 If you experience problems,
 check that the web server you are accessing is setting

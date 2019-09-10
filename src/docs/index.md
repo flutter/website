@@ -28,17 +28,14 @@ including breaking changes, join the
 [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 Google group.
 
+**Sept 10, 2019**
+
 Flutter 1.9 is live!
 
-{% comment %} 
-UNTIL WE HAVE PROPER LINKS:
-For more information, see [Announcing Flutter
-1.9](xxx)
-on the [Flutter Medium Publication]({{site.flutter-medium}}),
-and the [1.9.x release
-notes]({{site.github}}/flutter/flutter/wiki/xxx)
-on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
-{% endcomment %}
+For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
+1.9](https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1)
+and the [1.9.1 release
+notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.

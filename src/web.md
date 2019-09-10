@@ -86,8 +86,7 @@ The following resources can help you get started:
   [Preparing an app for web release][].
 * [File an issue][] on the main Flutter repo.
 * You can chat and ask web-related questions on the
-  [Discord group][].
-  TODO: Replace hackers link with the web Discord group once they have migrated.
+  **#news** discussion board on the [Discord group][].
 
 
 

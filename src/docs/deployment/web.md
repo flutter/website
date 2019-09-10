@@ -25,7 +25,7 @@ TBD
 
 ## Obfuscation and minification
 
-Obfuscation and minification  is handled for you when you
+Obfuscation and minification is handled for you when you
 create a release build.
 
 A debug build of a web app is not minified and
@@ -76,12 +76,11 @@ to view the release version of your app.
 You can embed a Flutter web app,
 as you would embed other content,
 in an [`iframe`][] tag of an HTML file.
-In the following example, replace _URL_
-with your web host, and _appName_
-with the name of your app:
+In the following example, replace "URL"
+with the location of your HTML page:
 
 ```html
-<iframe src="http:_URL_/_appName_>"></iframe>
+<iframe src="URL"></iframe>
 ```
 
 ## Deploying to the web
@@ -103,3 +102,5 @@ to support Progressive Web Apps.
 [Firebase Hosting]: https://firebase.google.com/docs/hosting
 [GitHub Pages]: https://pages.github.com/
 [Google Cloud Hosting]: https://cloud.google.com/solutions/smb/web-hosting/
+[`iframe`]: https://html.com/tags/iframe/
+
