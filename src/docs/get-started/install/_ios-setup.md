@@ -71,9 +71,9 @@ To create your first Flutter app and test your setup, follow these steps:
 
 ### Deploy to iOS devices
 
-To deploy your Flutter app to a physical iOS device you will need the
-third-party CocoaPods dependency manager and an Apple Developer account.
-You'll also need to set up physical device deployment in Xcode.
+To deploy your Flutter app to a physical iOS device you need the third-party
+CocoaPods dependency manager and an Apple Developer account. You'll also need
+to set up physical device deployment in Xcode.
 
  1. Install and set up CocoaPods by running the following commands:
 
