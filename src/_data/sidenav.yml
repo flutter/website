@@ -28,6 +28,8 @@
           permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://www.dart.dev/guides/language
+    - title: "Building a web app"
+      permalink: /docs/get-started/web
 
 - title: Samples & tutorials
   children:
@@ -57,6 +59,8 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
+            - title: Creating responsive apps
+              permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity
@@ -121,7 +125,8 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
-        - title: Embedding Flutter views in non-Flutter apps
+        - title: Web FAQ
+          permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
     - title: Packages & plugins
@@ -202,10 +207,12 @@
   children:
     - title: Creating flavors for Flutter
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: Build and release an Android app
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a web app
+      permalink: /docs/deployment/web
     - title: Continuous deployment
       permalink: /docs/deployment/cd
 

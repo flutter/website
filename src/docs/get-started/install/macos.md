@@ -31,13 +31,16 @@ your development environment must meet these minimum requirements:
 
 ## Platform setup
 
-MacOS supports developing Flutter apps for both iOS and Android. Complete at
-least one of the two platform setup steps now, to be able to build and run your
-first Flutter app.
+MacOS supports developing Flutter apps in iOS, Android,
+and the web (technical preview release).
+Complete at least one of the platform setup steps now,
+to be able to build and run your first Flutter app.
 
 {% include_relative _ios-setup.md %}
 
 {% include_relative _android-setup.md %}
+
+{% include_relative _web-setup.md %}
 
 ## Next step
 

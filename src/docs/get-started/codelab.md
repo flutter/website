@@ -23,7 +23,7 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart or mobile programming.
+previous experience with Dart, mobile, or web programming.
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
@@ -34,8 +34,8 @@ can also be found on [Google Developers]({{site.codelabs}}).
 ## What you'll build in part 1
 {:.no_toc}
 
-You’ll implement a simple mobile app that generates proposed names for a
-startup company. The user can select and unselect names,
+You’ll implement a simple mobile app that generates proposed
+names for a startup company. The user can select and unselect names,
 saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
@@ -45,7 +45,8 @@ The animated GIF shows how the app works at the completion of part 1.
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
-  * How to write a Flutter app that looks natural on both iOS and Android.
+  * How to write a Flutter app that looks natural on iOS, Android,
+    and the web.
   * Basic structure of a Flutter app.
   * Finding and using packages to extend functionality.
   * Using hot reload for a quicker development cycle.
@@ -53,8 +54,9 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to create an infinite, lazily loaded list.
 
   In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-  of this codelab, you'll add interactivity, modify the app's theme, and
-  add the ability to navigate to a new screen (called a _route_ in Flutter).
+  of this codelab, you'll add interactivity, modify the app's theme,
+  and add the ability to navigate to a new screen
+  (called a _route_ in Flutter).
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -72,6 +74,7 @@ The animated GIF shows how the app works at the completion of part 1.
     computer and set to developer mode.
   * The [iOS simulator](install/macos#set-up-the-ios-simulator).
   * The [Android emulator](install/macos#set-up-the-android-emulator).
+  * A browser (currently Chrome is preferred).
 {{site.alert.end}}
 
 ## Step 1: Create the starter Flutter app

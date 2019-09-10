@@ -14,7 +14,7 @@ A quick summary for when to use which mode is as follows:
 * Use [debug](#debug) mode during development,
   when you want to use [hot reload][].
 * Use [profile](#profile) mode when you want to analyze
-  performance using [DevTools][].
+  performance.
 * Use [release](#release) mode when you are ready to release
   your app.
 
@@ -24,7 +24,9 @@ For information on headless testing, see the [Flutter wiki][].
 ## Debug
 
 In _debug mode_, the app is set up for debugging on the physical
-device, emulator, or simulator. Debug mode means that:
+device, emulator, or simulator.
+
+Debug mode for mobile apps mean that:
 
 * [Assertions][] are enabled.
 * Service extensions are enabled.
@@ -32,6 +34,13 @@ device, emulator, or simulator. Debug mode means that:
   (but not for execution speed, binary size, or deployment).
 * Debugging is enabled, and tools supporting source level debugging
   (such as [DevTools][]) can connect to the process.
+
+Debug mode for a web app means that:
+
+* The build is _not_ minified and tree shaking has _not_ been 
+  performed.
+* The app is compiled with the [dartdevc][] compiler for
+  easier debugging.
 
 By default, `flutter run` compiles to debug mode.
 Your IDE supports this mode. Android Studio,
@@ -50,8 +59,8 @@ on the project page.
 ## Release
 
 Use _release mode_ for deploying the app, when you want maximum
-optimization and minimal footprint size. Release mode,
-which is not supported on the simulator or emulator, means that:
+optimization and minimal footprint size. For mobile, release mode
+(which is not supported on the simulator or emulator), means that:
 
 * Assertions are disabled.
 * Debugging information is stripped out.
@@ -60,11 +69,17 @@ which is not supported on the simulator or emulator, means that:
   and small package sizes.
 * Service extensions are disabled.
 
+Release mode for a web app means that:
+
+* The build is minified and tree shaking has been performed.
+* The app is compiled with the [dart2js][] compiler for
+  best performance.
+
 The command `flutter run --release` compiles to release mode.
 Your IDE supports this mode.  Android Studio, for example,
 provides a **Run > Run...** menu option, as well as a triangular 
 green run button icon on the project page.
-You can also compile to release mode with `flutter build`.
+You can also compile to release mode with `flutter build --release`.
 
 For more information, see the docs on releasing
 [iOS][] and [Android][] apps.
@@ -74,13 +89,18 @@ For more information, see the docs on releasing
 In _profile mode_, some debugging ability is maintained&mdash;enough
 to profile your app's performance. Profile mode is disabled on
 the emulator and simulator, because their behavior is not representative
-of real performance. Profile mode is similar to release mode,
+of real performance. On mobile, profile mode is similar to release mode,
 with the following differences:
 
 * Some service extensions, such as the one that enables the performance
   overlay, are enabled.
 * Tracing is enabled, and tools supporting source-level debugging
   (such as [DevTools][]) can connect to the process.
+
+Profile mode for a web app means that:
+
+* The build is _not_ minified but tree shaking has been performed.
+* The app is compiled with the [dart2js][] compiler.
 
 Your IDE supports this mode. Android Studio, for example,
 provides a **Run > Profile...** menu option.
@@ -94,10 +114,12 @@ For more information on the build modes, see
 [Flutter's build modes][].
 
 
-[Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Flutter's-modes
-[Assertions]: {{site.dart-site}}/guides/language/language-tour#assert
-[iOS]:  /docs/deployment/ios
 [Android]: /docs/deployment/android
-[hot reload]: /docs/development/tools/hot-reload
+[Assertions]: {{site.dart-site}}/guides/language/language-tour#assert
+[dart2js]: {{site.dart-site}}/tools/dart2js
+[dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: /docs/development/tools/devtools
+[Flutter wiki]: {{site.github}}/flutter/flutter/wiki/Flutter's-modes
 [Flutter's build modes]: {{site.github}}/flutter/flutter/wiki/Flutter%27s-modes
+[hot reload]: /docs/development/tools/hot-reload
+[iOS]:  /docs/deployment/ios

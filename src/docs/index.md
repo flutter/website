@@ -23,53 +23,59 @@ description: The landing page for Flutter documentation.
 
 ## What's new on the site
 
-To stay on top of Flutter announcements, including breaking changes, join the
+To stay on top of Flutter announcements,
+including breaking changes, join the
 [flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 Google group.
 
-**July 9, 2019**
+**Sept 10, 2019**
 
-Flutter 1.7 is live!
+Flutter 1.9 is live!
 
-For more information, see [Announcing Flutter
-1.7]({{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf)
-on the [Flutter Medium Publication]({{site.flutter-medium}}),
-and the [1.7.8 release
-notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.7.8)
-on the [Flutter wiki]({{site.github}}//flutter/flutter/wiki).
+For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
+1.9](https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1)
+and the [1.9.1 release
+notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
+
+For the 1.9 release, Flutter's web support has been
+merged ("unforked") into the main repo.
+**Web support hasn't reached beta, and is not ready
+to be used in production.**
+Web and desktop support (which is also coming), will
+impact the website, which was originally written
+exclusively for developing Flutter mobile apps.
+Some website updates are available now (and listed below),
+but more will be coming.
 
 New and updated docs on the site include:
 
-* The [Preparing an Android app for release](/docs/deployment/android)
-  page is updated to discuss how to build an Android release
-  using an app bundle, as well as how to create separate APK
-  files for both 32-bit and 64-bit devices.
-* The [DevTools](/docs/development/tools/devtools) docs are migrated
-  to flutter.dev. If you haven't tried this browser-based suite
-  of debugging, performance, memory, and inspection tools that
-  work with both Flutter and Dart apps and can be launched from
-  Android Studio/IntelliJ _and_ VS Code, please check it out!
-* The [Simple app state
-  management](/docs/development/data-and-backend/state-mgmt/simple)
-  page is updated. The example code in the page now uses the 3.0
-  release of the Provider package.
-* A new animation recipe, [Animate a page route
-  transition](/docs/cookbook/animation/page-route-animation)
-  has been added to the [Cookbook](/docs/cookbook).
-* The [Debugging](/docs/testing/debugging), 
-  [Flutter's build modes](/docs/testing/build-modes),
-  [Performance best practices](/docs/testing/best-practices), and
-  [Performance profiling](/docs/testing/ui-performance)
-  pages are updated to reflect DevTools. A
-  [Debugging apps programmatically](/docs/testing/code-debugging)
-  page has also been added.
+* The Flutter layout codelab has been rewritten and
+  uses the updated DartPad, the browser-based tool for running
+  Dart code. DartPad now supports Flutter!
+  [Try it out](/docs/codelabs/layout-basics)
+  and let us know what you think.
+* The Performance view tool, which allows you to record
+  and profile a session from your Dart/Flutter application,
+  has been enabled in DevTools. For more information,
+  see the [Performance
+  view](/docs/development/tools/devtools/performance)
+  page.
+* A new page on
+  [building a web application](/docs/get-started/web).
+* A new page on [creating responsive
+  apps](/docs/development/ui/layout/responsive)
+  in Flutter.
+* A new page on
+  [preparing a web app for release](/docs/deployment/web).
+* A new [web FAQ](/docs/development/platform-integration/web).
+* The [Flutter for web](/web) page is updated.
 
-The Flutter 1.7 release includes the new
-[RangeSlider]({{site.api}}/flutter/material/RangeSlider-class.html)
-component, which allows the user to select both the upper and lower
-endpoints in a range of values. For information about this
-component and how to customize it, see [Material RangeSlider in
-Flutter]({{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d).
+Other relevant docs:
+
+* Error messages have been improved in SDK 1.9.
+  For more information, read [Improving Flutter's
+  Error Messages](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)
+  on the [Flutter Medium publication](https://medium.com/flutter).
 
 Happy Fluttering!
 

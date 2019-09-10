@@ -12,12 +12,12 @@ downloading and installing Flutter or Dart!
   experimental code editor called DartPad. 
   DartPad hasn't been fully tested on all browsers. 
   If you experience any difficulties while using DartPad
-  on a specific browser, please create a [DartPad issue][] 
+  on a specific browser, please create a [DartPad issue][]
   and specify which browser you're using in the issue title.
 {{site.alert.end}}
 
-Flutter is different from other frameworks because its UI is built in code, 
-not (for example) in an XML file or similar.
+Flutter is different from other frameworks because its UI
+is built in code, not (for example) in an XML file or similar.
 Widgets are the basic building blocks of a Flutter UI.
 As you progress through this codelab,
 you'll learn that almost everything in Flutter is a widget.
@@ -41,8 +41,8 @@ and `Column` lays out its widgets vertically.
 {:.no_toc}
 {{site.alert.secondary}}
 {:.no_toc}  
-  The following example displays the differences between a
-  `Row` and `Column`. 
+  The following example displays the differences between
+  a `Row` and `Column`. 
 
   **1.** Click the **Run** button.
 
@@ -57,17 +57,17 @@ and `Column` lays out its widgets vertically.
 
 So far, the `BlueBox` widgets have been squished together 
 (either to the left or at the top of the UI Output).
-You can change how the `BlueBox` widgets are spaced out
-using the axis size and alignment properties.
+You can change how the `BlueBox` widgets are spaced
+out using the axis size and alignment properties.
 
 ### mainAxisSize property
 
 `Row` and `Column` occupy different main axes. 
 A `Row`'s main axis is horizontal, 
 and a `Column`'s main axis is vertical. 
-The `mainAxisSize` property determines how much space
-a `Row` and `Column` can occupy on their main axes.
-`mainAxisSize` has two possible values: 
+The `mainAxisSize` property determines how much
+space a `Row` and `Column` can occupy on their main axes.
+The `mainAxisSize` property has two possible values: 
 
 `MainAxisSize.max`
 : `Row` and `Column` occupy all of the space on their main axes.
@@ -91,12 +91,14 @@ a `Row` and `Column` can occupy on their main axes.
 {:.no_toc}
 {{site.alert.secondary}}
 {:.no_toc}
+
   The following example explicitly sets `mainAxisSize`
   to its default value, `MainAxisSize.max`.
 
   **1.** Click the **Run** button. 
 
-  **2.** Change `MainAxisSize.max` to `MainAxisSize.min`, and run again. 
+  **2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
+         and run again. 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
@@ -109,7 +111,7 @@ When `mainAxisSize` is set to `MainAxisSize.max`,
 `Row` and `Column` might lay out their children with extra space. 
 The `mainAxisAlignment` property determines how `Row` and `Column` 
 can position their children in that extra space. 
- `mainAxisAlignment` has six possible values: 
+`mainAxisAlignment` has six possible values: 
 
 `MainAxisAlignment.start`
 : Positions children near the beginning of the main axis. 
@@ -126,14 +128,14 @@ can position their children in that extra space.
 : Divides the extra space evenly between children.
 
 `MainAxisAlignment.spaceEvenly`
-: Divides the extra space evenly between children and before
-  and after the children.
+: Divides the extra space evenly between children
+  and before and after the children.
 
 `MainAxisAlignment.spaceAround`
 : Similar to `MainAxisAlignment.spaceEvenly`,
-  but reduces half of the space before the first child
-  and after the last child to half of the width
-  between the children. 
+  but reduces half of the space before the first
+  child and after the last child 
+  to half of the width between the children. 
 
 #### Example: Modifying main axis alignment
 {:.no_toc}
@@ -159,12 +161,13 @@ can position their children in that extra space.
 ### crossAxisAlignment property
 
 The `crossAxisAlignment` property determines 
-how `Row` and `Column` can position their children on their cross axes. 
+how `Row` and `Column` can position their children
+on their cross axes. 
 A `Row`'s cross axis is vertical,
 and a `Column`'s cross axis is horizontal. 
-Most of the `crossAxisAlignment` property's
-values only work with the `Row` class. 
-`crossAxisAlignment` has five possible values:
+Most of the `crossAxisAlignment` property's values
+only work with the `Row` class. 
+The `crossAxisAlignment` property has five possible values:
 
 `CrossAxisAlignment.start`
 : Positions children near the top of the cross axis. (`Row` only)
@@ -192,7 +195,8 @@ values only work with the `Row` class.
   The following example explicitly sets `crossAxisAlignment`
   to its default value, `CrossAxisAlignment.center`. 
 
-  To demonstrate cross axis alignment, `mainAxisAlignment` is set to
+  To demonstrate cross axis alignment,
+  `mainAxisAlignment` is set to
  `MainAxisAlignment.spaceAround`,
   and `Row` now contains a `BiggerBlueBox` widget
   that is taller than the `BlueBox` widgets. 
@@ -207,8 +211,8 @@ values only work with the `Row` class.
 {% endcomment %}
 <iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
-  Before moving to the next section, change
-  `CrossAxisAlignment.start` to another value. 
+  Before moving to the next section,
+  change `CrossAxisAlignment.start` to another value. 
 {{site.alert.end}}
 
 ## Flexible widget
@@ -316,7 +320,8 @@ wrap a widget and force the widget to fill extra space.
 {:.no_toc}
 {{site.alert.secondary}}
   The following example demonstrates how the
-  `Expanded` widget forces its child widget to fill extra space.
+  `Expanded` widget forces its child widget to
+  fill extra space.
 
   **1.** Click the **Run** button. 
 
@@ -396,8 +401,9 @@ can create space between widgets.
 #### Example: Creating more space
 {:.no_toc}
 {{site.alert.secondary}}
-  The following example separates the first two `BlueBox` widgets using
-  a `Spacer` widget with a `flex` value of 1.
+  The following example separates the first two
+  `BlueBox` widgets using a `Spacer` widget with
+  a `flex` value of 1.
 
   **1.** Click the **Run** button.
 
@@ -448,9 +454,10 @@ Flutter is preloaded with icon packages for
   **1.** Click the **Run** button. 
 
   **2.** Add another `Icon` from the 
-         [Material Icon library][] with a size of 50. 
+         [Material Icon library][]
+         with a size of 50. 
 
-  **3.** Give the `Icon` the `Colors.amber` color from the 
+  **3.** Give the `Icon` a color of `Colors.amber` from the 
          [Material Color palette][], and run again.  
 {{site.alert.end}}
 {% comment %}
@@ -460,9 +467,9 @@ Flutter is preloaded with icon packages for
 
 ## Image widget 
 
-The `Image` widget displays an image. You can reference
-images using a URL, or you can include images inside your
-app package and reference them locally.
+The `Image` widget displays an image.
+You either can reference images using a URL,
+or you can include images inside your app package.
 Since DartPad can't package an image,
 the following example uses an image from the network.
 
@@ -493,9 +500,10 @@ the following example uses an image from the network.
 ## Putting it all together 
 
 You're almost at the end of this codelab. 
-If you'd like to test your knowledge of the techniques
-that you've learned, why not apply those skills into
-building a Flutter UI that displays a business card!
+If you'd like to test your knowledge of the
+techniques that you've learned, why not apply
+those skills into building a Flutter UI that
+displays a business card!
 
  ![Completed business card]({% asset codelab/layout/businesscarddisplay1.png
  @path%}){:width="400px"}{:.text-center} 
@@ -522,8 +530,8 @@ so it's displayed below the name, title, and icon.
  ![Completed business card]({% asset codelab/layout/businesscarddisplay3.png
  @path%}){:width="400px"}{:.text-center} 
 
-In [Part 3](#part-3),
-you'll finish building the business card display by adding four more icons, 
+In [Part 3](#part-3), you'll finish building
+the business card display by adding four more icons, 
 which are positioned below the contact information.  
 
  ![Completed business card]({% asset codelab/layout/businesscarddisplay4.png
@@ -560,6 +568,7 @@ which are positioned below the contact information.
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
 {{site.alert.secondary}}
+
   Wrap the `Column` you implemented in a
   `Row` that contains the following widgets:
 
@@ -692,26 +701,26 @@ Congratulations, you've finished this codelab!
 If you'd like to know more about Flutter,
 here are a few suggestions for resources worth exploring: 
 
-* Learn more about layouts in Flutter by visiting the 
-  [Building layouts][] page. 
+* Learn more about layouts in Flutter by
+  visiting the [Building layouts][] page. 
 * Check out the [sample apps][].
 * Visit [Flutter's YouTube channel][], 
   where you can watch a variety videos from
   videos that focus on individual widgets 
-  to videos of developers buiding apps.
+  to videos of developers building apps.
 
-You can download Flutter at the [install][] page. 
+You can download Flutter from the [install][] page. 
 
 <iframe src="https://google.qualtrics.com/jfe/form/SV_eyMRS8J1nfLj8ZT" height="1480px" width="100%" style="margin-top: 10px;border: 0px;"></iframe>
 
 
-[Building layouts]: https://flutter.dev/docs/development/ui/layout
+[Building layouts]: /docs/development/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new 
 [Flutter's YouTube channel]: https://www.youtube.com/channel/UCwXdFgeE9KYzlDdR7TG9cMw 
 [GitHub]: {{site.github}}/flutter/website/tree/master/examples/layout/sizing/images 
-[install]: https://flutter.dev/docs/get-started/install 
+[install]: /docs/get-started/install 
 [Material]: {{site.api}}/flutter/material/MaterialApp-class.html
 [Material Color palette]: {{site.api}}/flutter/material/Colors-class.html 
 [Material Icon library]: {{site.api}}/flutter/material/Icons-class.html
-[sample apps]: https://github.com/flutter/samples/blob/master/INDEX.md 
+[sample apps]: {{site.github}}/flutter/samples/blob/master/INDEX.md 

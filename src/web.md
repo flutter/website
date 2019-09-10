@@ -1,82 +1,102 @@
 ---
-title: Flutter for web
-description: "Announcing the preview release of Flutter for web."
+title: Adding web support to a Flutter app
+description: "Announcing the tech preview release of Flutter for web."
 ---
 
-Flutter for web is a code-compatible implementation of Flutter that is
+Web support is a code-compatible implementation of Flutter that is
 rendered using standards-based web technologies: HTML, CSS and JavaScript.
-With Flutter for web, you can compile existing Flutter code written in
+With web support, you can compile existing Flutter code written in
 Dart into a client experience that can be embedded in the browser and
 deployed to any web server. You can use all the features of Flutter,
 and you don’t need a browser plug-in.
 
 {{site.alert.warning}}
-  Flutter for web is currently available as a technical preview.
-  When trying Flutter for web, you can expect to experience crashes
-  and missing features. For more information, see the [Flutter for
-  web README]({{site.github}}/flutter/flutter_web/blob/master/README.md).
+  **As of 1.9, web support is available as a tech preview.**
+  As web support hasn't yet reached alpha,
+  you can expect to experience crashes and missing features.
+  If you experience a problem that hasn't yet been reported, please
+  [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}
-
-Check out the [repository](https://github.com/flutter/flutter_web)
-for instructions on how to get started.
 
 <img src="/images/Dart-framework-v-browser-framework.png"
      alt="showing Flutter architecture for C++ vs Flutter for web"
      width="100%">
 
-Adding web support involves implementing Flutter's core drawing layer on
-top of standard browser APIs. Using a combination of DOM, Canvas,
-and CSS, we're able to provide a portable, high-quality, and performant
-user experience across modern browsers. We implemented this core drawing
-layer completely in Dart and used Dart's optimized JavaScript compiler
-to compile the Flutter core and framework along with your application
-into a single, minified source file that can be deployed to any web server.
+Adding web support to Flutter involved implementing Flutter's
+core drawing layer on top of standard browser APIs.
+Using a combination of DOM, Canvas, and CSS,
+web support aims to provide a portable, high-quality,
+and performant user experience across modern browsers.
+We implemented this core drawing layer completely in Dart
+and used Dart's optimized JavaScript compiler to compile the
+Flutter core and framework along with your application
+into a single, minified source file that can be deployed to
+any web server.
 
-In this early stage of development, we envision Flutter for web being
-valuable in many scenarios. For example:
+In this early stage of development,
+we envision the web version of Flutter 
+being valuable in many scenarios. For example:
 
-* **A connected [Progressive Web
-  Application](https://developers.google.com/web/progressive-web-apps/)
-  built with Flutter.** Web support for Flutter enables existing mobile-based
-  applications to be packaged as a PWA for reach to a broader variety of
-  devices, or to provide a companion web experience to an existing app.
+**A connected [Progressive Web Application][] built with Flutter**
+: Web support for Flutter enables existing mobile-based applications
+  to be packaged as a PWA for reach to a broader variety of devices,
+  or to provide a companion web experience to an existing app.
 
-* **Embedded interactive content.** Flutter provides a powerful environment
-  for creating rich, data-centric components that can be easily hosted
-  within an existing web page. Whether for data visualization, an online
-  tool like a car configurator, or an embedded chart, Flutter can provide
-  a productive development approach for embedded web content.
+**Embedded interactive content**
+: Flutter provides a powerful environment for creating rich,
+  data-centric components that can be easily hosted within
+  an existing web page. Whether for data visualization, an online
+  tool like a car configurator, or an embedded chart,
+  Flutter can provide a productive development approach for
+  embedded web content.
 
-* **Embedding dynamic content in a Flutter mobile app.** An established way
-  to provide dynamic content updates within an existing mobile application
-  is the use of a web view control, which can load and display
-  information dynamically. The support Flutter now offers for a
-  unified environment for web and mobile content enables you to deploy
-  content online or embedded in an app without rewriting.
+**Embedding dynamic content in a Flutter mobile app**
+: An established way to provide dynamic content updates within
+  an existing mobile application is the use of a web view control,
+  which can load and display information dynamically.
+  The support Flutter now offers for a unified environment for
+  web and mobile content enables you to deploy content online
+  or embedded in an app without rewriting.
 
-## Notes on the technical preview
+## Notes on web support in 1.9
 
-The Flutter for web technical preview is your opportunity to try out our work.
-Before you get started, here are a few notes:
+This preview version of web support is your opportunity to
+try it out. Before you get started, here are a few notes:
 
-* We are developing Flutter for web in a fork of the Flutter repo. This enables
-  fast iterations while keeping the core Flutter repo stable.
+* This release is missing features and has known performance
+  issues, so we don't recommend it for production.
 
-* We have already started work to merge the web code into the core
-  repository. Eventually, we'll have a single SDK/Framework with one set
-  of widgets that works across all platforms.
+* You can update existing Flutter code to work on the web,
+  but there are some caveats as web support hasn't
+  yet reached beta. For more information, see the
+  [web FAQ][].
 
-* The Flutter widget APIs are identical to the mobile widget APIs, but
-  are temporarily packaged separately.
+The following resources can help you get started:
 
-* You can repackage existing Flutter code to work on the web preview, but
-  there are some caveats while we're still in preview. Check out the
-  [instructions](https://github.com/flutter/flutter_web#) for more details.
+* To add web support to an existing app, or to create a
+  new app that includes web support, see 
+  [Building a web application with Flutter][].
+* To learn how to create a responsive Flutter
+  app, see [Creating responsive apps][].
+* To view commonly asked questions and answers, see the
+  [web FAQ][].
+* To see code examples,
+  check out the [web samples for Flutter][].
+* To learn about deploying a web app, see
+  [Preparing an app for web release][].
+* [File an issue][] on the main Flutter repo.
+* You can chat and ask web-related questions on the
+  **#news** discussion board on the [Discord group][].
 
-Go to the [flutter web](https://github.com/flutter/flutter_web)
-repository to get started. Check out the
-[Flutter for web samples](https://flutter.github.io/samples/).
-Thank you for
-[filing any issues](https://goo.gle/flutter_web_issue) you find.
-You can also chat and ask questions on our
-[Gitter channel](https://gitter.im/flutter/flutter_web).
+
+
+[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
+[main Flutter repo]: {{site.github}}/flutter/flutter
+[web FAQ]: /docs/development/platform-integration/web
+[Building a web application with Flutter]: /docs/get-started/web
+[Creating responsive apps]: /docs/development/ui/layout/responsive
+[web samples for Flutter]: https://flutter.github.io/samples/
+[Preparing an app for web release]: /docs/deployment/web
+[File an issue]: https://goo.gle/flutter_web_issue
+[Discord group]: https://discordapp.com/invite/yeZ6s7k
+[file an issue]: https://goo.gle/flutter_web_issue
