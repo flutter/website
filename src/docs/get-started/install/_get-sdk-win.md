@@ -1,11 +1,5 @@
 ## Get the Flutter SDK
 
-{% comment %} 
-sz: For now, don't use these instructions. As Tim S reported:
-7-Zip doesn't unpack hidden directories by default,
-which leaves the Flutter install in a broken state.
-Eventually, we'll have an Installer for windows,
-but for now use "git clone".
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -13,34 +7,11 @@ but for now use "git clone".
 
     For other release channels, and older builds, see the [SDK
     archive](/docs/development/tools/sdk/archive) page.
- 1. Extract the zip file and place the contained `flutter` in the desired
-    installation location for the Flutter SDK
-    (for example, `C:\src\flutter`; do not
-    install Flutter in a directory like `C:\Program Files\` that requires
-    elevated privileges).
-{% endcomment %}
-
-<ol markdown="1">
-<li markdown="1">At the command line,
-    go to the desired installation location
-    for the Flutter SDK (for example, `C:\src\flutter`; 
-    do not install Flutter in a directory like `C:\Program Files\`
-    that requires elevated privileges).
-</li>
-<li markdown="1">Clone the repo using `git clone`.
-    The following example clones the stable channel.
-    (To see Flutter's other release channels,
-    see [upgrading Flutter][].)
-
-```sh
-git clone -b stable https://github.com/flutter/flutter.git
-```
-</li>
-<li markdown="1">In Windows Explorer, navigate to the `flutter`
-    directory and locate the `flutter_console.bat` file.
-    Double-click the file to start it.
-</li>
-</ol>
+ 1. Extract the zip file and place the contained `flutter`
+    in the desired installation location for the Flutter SDK
+    (for example, `C:\src\flutter`;
+    do not install Flutter in a directory like
+    `C:\Program Files\` that requires elevated privileges).
 
 You are now ready to run Flutter commands in the Flutter Console!
 
@@ -63,9 +34,9 @@ for these changes to take effect.
 
 ### Run `flutter doctor`
 
-From a console window that has the Flutter directory in the path (see above),
-run the following command to see if there are any platform dependencies you
-need to complete the setup:
+From a console window that has the Flutter directory in the
+path (see above), run the following command to see if there
+are any platform dependencies you need to complete the setup:
 
 ```console
 C:\src\flutter>flutter doctor
