@@ -79,7 +79,7 @@ Other relevant docs:
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
   [Upgrading from package:flutter_web to the Flutter
-  SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK)
+  SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
 
 Happy Fluttering!
 
