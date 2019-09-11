@@ -120,7 +120,8 @@
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
-      { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 }
+      { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
+      { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 }
     ]
   }
 }
