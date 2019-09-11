@@ -25,8 +25,7 @@ description: The landing page for Flutter documentation.
 
 To stay on top of Flutter announcements,
 including breaking changes, join the
-[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
-Google group.
+[flutter-announce][] Google group.
 
 **Sept 10, 2019**
 
@@ -76,71 +75,99 @@ Other relevant docs:
   For more information, read [Improving Flutter's
   Error Messages](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)
   on the [Flutter Medium publication](https://medium.com/flutter).
+* If you already have a web app that depends on the
+  flutter_web package, the following instructions tell
+  you how to migrate to the flutter package:
+  [Upgrading from package:flutter_web to the Flutter
+  SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
 
 Happy Fluttering!
 
-[What's new archive](/docs/whats-new-archive)
+[What's new archive][]
 
 ## New to Flutter?
 
-Once you've gone through [Get Started](/docs/get-started/install),
-including [Write Your First Flutter App,](/docs/get-started/codelab)
+Once you've gone through [Get Started][],
+including [Write Your First Flutter App,][]
 here are some next steps.
 
 ### Docs
 
 Coming from another platform? Check out: 
-[Android](/docs/get-started/flutter-for/android-devs),
-[iOS](/docs/get-started/flutter-for/ios-devs),
-[Web](/docs/get-started/flutter-for/web-devs),
-[React Native](/docs/get-started/flutter-for/react-native-devs),
-[Xamarin.Forms](/docs/get-started/flutter-for/xamarin-forms-devs)
+[Android][], [iOS][], [Web][], [React Native][],
+[Xamarin.Forms][]
 
-[Building layouts](/docs/development/ui/layout)
-: Learn how to create layouts in Flutter, where everything is a widget.
+[Building layouts][]
+: Learn how to create layouts in Flutter,
+  where everything is a widget.
 
-[Adding interactivity to your Flutter app](/docs/development/ui/interactive)
+[Adding interactivity to your Flutter app][]
 : Learn how to add a stateful widget to your app.
 
-[A tour of the Flutter widget framework](/docs/development/ui/widgets-intro)
+[A tour of the Flutter widget framework][]
 : Learn more about Flutter's react-style framework.
 
-[FAQ](/docs/resources/faq)
+[FAQ][]
 : Get the answers to frequently asked questions.
 
 ### Videos
 
-We also have some helpful videos on our [Flutter Youtube
-channel]({{site.social.youtube}})!  In particular, check
-out the Flutter in Focus series, and learn about other
-series on our [videos](/docs/resources/videos) page.
+We also have some helpful videos on our
+[Flutter Youtube channel][]! In particular, check
+out the Flutter in Focus series,
+and learn about other series on our [videos][] page.
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>
-[Flutter in Focus playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+[Flutter in Focus playlist][]
 
-In Flutter, "everything is a widget"! If you want to better understand the
-two kinds of widgets, Stateless and Stateful, see the following videos,
-part of the [Flutter in
-Focus](https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2) series.
+In Flutter, "everything is a widget"! If you want to better
+understand the two kinds of widgets, Stateless and Stateful,
+see the following videos,
+part of the [Flutter in Focus][] series.
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wE7khGHVkYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="https://www.youtube.com/embed/AqCMFXEmf3w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Want to skill up?
 
-If you learn best by watching engineers write code, make mistakes, and fix them,
-check out the [Boring Flutter
-Show](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
-video series:
+If you learn best by watching engineers write code,
+make mistakes, and fix them,
+check out the [Boring Flutter Show][] video series:
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Boring Flutter Show playlist](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
+[Boring Flutter Show playlist][]
 
 You might also find these docs useful:
 
-* [Using packages](/docs/development/packages-and-plugins/using-packages)
-* [Adding assets and images](/docs/development/ui/assets-and-images)
-* [Navigation and routing](/docs/development/ui/navigation)
-* [State management](/docs/development/data-and-backend/state-mgmt/intro)
-* [Animations](/docs/development/ui/animations)
+* [Using packages][]
+* [Adding assets and images][]
+* [Navigation and routing][]
+* [State management][]
+* [Animations][]
+
+
+[A tour of the Flutter widget framework]: /docs/development/ui/widgets-intro
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[Adding interactivity to your Flutter app]: /docs/development/ui/interactive
+[Android]: /docs/get-started/flutter-for/android-devs
+[Animations]: /docs/development/ui/animations
+[Boring Flutter Show]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Boring Flutter Show playlist]: https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s
+[Building layouts]: /docs/development/ui/layout
+[FAQ]: /docs/resources/faq
+[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
+[Flutter in Focus]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter Youtube channel]: {{site.social.youtube}}
+[Get Started]: /docs/get-started/install
+[iOS]: /docs/get-started/flutter-for/ios-devs
+[Navigation and routing]: /docs/development/ui/navigation
+[React Native]: /docs/get-started/flutter-for/react-native-devs
+[State management]: /docs/development/data-and-backend/state-mgmt/intro
+[Using packages]: /docs/development/packages-and-plugins/using-packages
+[videos]: /docs/resources/videos
+[Web]: /docs/get-started/flutter-for/web-devs
+[What's new archive]: /docs/whats-new-archive
+[Write Your First Flutter App,]: /docs/get-started/codelab
+[Xamarin.Forms]: /docs/get-started/flutter-for/xamarin-forms-devs
 
