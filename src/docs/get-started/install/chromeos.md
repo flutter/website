@@ -34,7 +34,7 @@ must meet these minimum requirements:
 For the best experience right now, you should put your
 Chrome OS Device into developer mode (this is necessary
 to push apps on the Chrome OS Device).  For more information,
-see [how to enable developer mode on you Chromebook][].
+see [how to enable developer mode on your Chromebook][].
 
 {% include_relative _get-sdk.md %}
 
@@ -133,5 +133,5 @@ this functionality work with your Chrome OS
 targeted Flutter app.
 
 
-[how to enable developer mode on you Chromebook]: https://www.androidcentral.com/how-enable-developer-mode-chrome-os
+[how to enable developer mode on your Chromebook]: https://www.androidcentral.com/how-enable-developer-mode-chrome-os
 
