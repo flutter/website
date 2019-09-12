@@ -13,10 +13,10 @@ whenever you open a new window. For example:
  1. Determine the directory where you placed the Flutter SDK.
     You will need this in Step 3.
  2. Open (or create) the `rc` file for your shell.
-    For example, Linux and Mac OS Mojave (and earlier)
+    For example, Linux and macOS Mojave (and earlier)
     use the Bash shell by default,
     so edit `$HOME/.bashrc`.
-    Mac OS Catalina uses the Z shell by default,
+    macOS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
     If you are using a different shell, the file path
     and filename will be different on your machine.
