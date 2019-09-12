@@ -44,6 +44,41 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
+### Update directly (Linux)
+
+In most cases, your distribution may not acquire the path you pass
+through the terminal for future sessions. When this occurs, you need 
+to change the environment variables file directly. 
+This requires administrator privileges.
+For example:
+
+   1. Determine the directory where you placed the Flutter SDK.
+
+   2. Locate the `etc` directory at the root of the system, and open 
+   the `profile` file with root privileges.
+
+        ```terminal
+        $ sudo nano /etc/profile
+        ```
+   3. Update the PATH string with the location of your Flutter SDK directory.
+
+      ```shell
+      if [ "`id -u`" -eq 0 ]; then
+         PATH="..."
+      else
+         PATH="/usr/local/bin:...:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+      fi
+      export PATH
+      ```
+
+   4. End the current session or reboot your system.
+   5. Once you start a new session, verify that the
+    `flutter` command is available by running:
+
+      ```terminal
+      $ which flutter
+      ```
+
 For more details on setting the path in Bash,
 see [this StackExchange question][].
 For more information on setting the path in Z shell,
