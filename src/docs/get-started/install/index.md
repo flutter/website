@@ -9,6 +9,17 @@ js:
   defer: true
 ---
 
+<section class="landing-page__cta card text-center">
+    <div class="dash-dartpad">
+        <a name="try-dart"></a>
+        <h2>Try Flutter in your browser</h2>
+        {% include dartpad_warning.md %}
+        <select id="dartpad-select"></select>
+        <div id="dartpad-host"></div>
+        <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
+    </div>
+</section><br>
+
 Select the operating system on which you are installing Flutter:
 
 <div class="card-deck mb-8">
@@ -33,14 +44,3 @@ Select the operating system on which you are installing Flutter:
 {{site.alert.important}}
   If you're in China, first read [Using Flutter in China](/community/china).
 {{site.alert.end}}
-
-<section class="landing-page__cta card text-center">
-    <div class="dash-dartpad">
-        <a name="try-dart"></a>
-        <h2>Try Flutter in your browser</h2>
-        <select id="dartpad-select"></select>
-        <div id="dartpad-host"></div>
-        <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
-    </div>
-</section><br>
-
