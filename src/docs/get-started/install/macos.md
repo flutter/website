@@ -1,6 +1,6 @@
 ---
-title: MacOS install
-short-title: MacOS
+title: macOS install
+short-title: macOS
 next:
   title: Set up an editor
   path: /docs/get-started/editor
@@ -27,11 +27,11 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _get-sdk.md %}
 
-{% include_relative _path-mac-linux.md %}
+{% include_relative _path-mac.md %}
 
 ## Platform setup
 
-MacOS supports developing Flutter apps in iOS, Android,
+macOS supports developing Flutter apps in iOS, Android,
 and the web (technical preview release).
 Complete at least one of the platform setup steps now,
 to be able to build and run your first Flutter app.

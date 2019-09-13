@@ -1,6 +1,6 @@
 ### Update your path
 
-You can update your PATH variable for the current session only at
+You can update your PATH variable for the current session at
 the command line, as shown in [Get the Flutter SDK](#get-sdk).
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
@@ -11,12 +11,12 @@ Typically you add a line to a file that is executed
 whenever you open a new window. For example:
 
  1. Determine the directory where you placed the Flutter SDK.
-    You will need this in Step 3.
+    You need this in Step 3.
  2. Open (or create) the `rc` file for your shell.
-    For example, Linux and Mac OS Mojave (and earlier)
-    use the Bash shell by default,
+    For example, macOS Mojave (and earlier)
+    uses the Bash shell by default,
     so edit `$HOME/.bashrc`.
-    Mac OS Catalina uses the Z shell by default,
+    macOS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
     If you are using a different shell, the file path
     and filename will be different on your machine.
@@ -44,11 +44,3 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
-For more details on setting the path in Bash,
-see [this StackExchange question][].
-For more information on setting the path in Z shell,
-see [this StackOverflow question][].
-
-
-[this StackExchange question]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
-[this StackOverflow question]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
