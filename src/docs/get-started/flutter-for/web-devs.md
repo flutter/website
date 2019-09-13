@@ -24,7 +24,7 @@ The examples assume:
   ```dart
   TextStyle bold24Roboto = TextStyle(
     color: Colors.white,
-    fontSize: 24.0,
+    fontSize: 24,
     fontWeight: FontWeight.w900,
   );
   ```
@@ -71,13 +71,13 @@ the top left, by default.
     child: Text(
       "Lorem ipsum",
       style: [[highlight]]TextStyle(
-        fontSize: 24.0,
+        fontSize: 24,
         fontWeight: FontWeight.w900,
         fontFamily: "Georgia",
       ),[[/highlight]]
     ),
-    width: 320.0,
-    height: 240.0,
+    width: 320,
+    height: 240,
     color: Colors.grey[300],
   );
 {% endprettify %}
@@ -112,8 +112,8 @@ The CSS examples use the hex color equivalents to the Material color palette.
       "Lorem ipsum",
       style: bold24Roboto,
     ),
-    width: 320.0,
-    height: 240.0,
+    width: 320,
+    height: 240,
     [[highlight]]decoration: BoxDecoration(
       color: Colors.grey[300],
     ),[[/highlight]]
@@ -157,8 +157,8 @@ var container = Container( // grey box
       style: bold24Roboto,
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -217,12 +217,12 @@ var container = Container( // grey box
       decoration: BoxDecoration(
         color: Colors.red[400],
       ),
-      padding: EdgeInsets.all(16.0),
-[[highlight]]      width: 240.0, [[/highlight]]//max-width is 240.0
+      padding: EdgeInsets.all(16),
+[[highlight]]      width: 240, [[/highlight]]//max-width is 240
     ),
   ),
-[[highlight]]  width: 320.0, [[/highlight]]
-  height: 240.0,
+[[highlight]]  width: 320, [[/highlight]]
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -281,15 +281,15 @@ var container = Container( // grey box
           decoration: BoxDecoration(
             color: Colors.red[400],
           ),
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16),
         ),
-[[highlight]]        left: 24.0,
-        top: 24.0,
+[[highlight]]        left: 24,
+        top: 24,
       ),
     ],
   ), [[/highlight]]
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -345,15 +345,15 @@ var container = Container( // gray box
         decoration: BoxDecoration(
           color: Colors.red[400],
         ),
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16),
       ),
 [[highlight]]      alignment: Alignment.center,
       transform: Matrix4.identity()
         ..rotateZ(15 * 3.1415927 / 180),
     ), [[/highlight]]
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -412,14 +412,14 @@ var container = Container( // gray box
         decoration: BoxDecoration(
           color: Colors.red[400],
         ),
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16),
       ),
 [[highlight]]      alignment: Alignment.center,
       transform: Matrix4.identity()
         ..scale(1.5),
      ), [[/highlight]]
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -487,11 +487,11 @@ var container = Container( // grey box
           ],
         ),
       ), [[/highlight]]
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -542,11 +542,11 @@ var container = Container( // grey box
           ],
         ),
       ), [[/highlight]]
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -601,14 +601,14 @@ var container = Container( // grey box
       decoration: BoxDecoration(
         color: Colors.red[400],
 [[highlight]]        borderRadius: BorderRadius.all(
-          const Radius.circular(8.0),
+          const Radius.circular(8),
         ), [[/highlight]]
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -666,28 +666,28 @@ var container = Container( // grey box
       ),
       decoration: BoxDecoration(
         color: Colors.red[400],
-[[highlight]]        boxShadow: <BoxShadow>[
+[[highlight]]        boxShadow: [
           BoxShadow (
             color: const Color(0xcc000000),
-            offset: Offset(0.0, 2.0),
-            blurRadius: 4.0,
+            offset: Offset(0, 2),
+            blurRadius: 4,
           ),
           BoxShadow (
             color: const Color(0x80000000),
-            offset: Offset(0.0, 6.0),
-            blurRadius: 20.0,
+            offset: Offset(0, 6),
+            blurRadius: 20,
           ),
         ], [[/highlight]]
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   decoration: BoxDecoration(
     color: Colors.grey[300],
   ),
-  margin: EdgeInsets.only(bottom: 16.0),
+  margin: EdgeInsets.only(bottom: 16),
 );
 {% endprettify %}
 </div>
@@ -746,13 +746,13 @@ var container = Container( // grey box
         color: Colors.red[400],
 [[highlight]]        shape: BoxShape.circle, [[/highlight]]
       ),
-      padding: EdgeInsets.all(16.0),
-[[highlight]]      width: 160.0,
-      height: 160.0, [[/highlight]]
+      padding: EdgeInsets.all(16),
+[[highlight]]      width: 160,
+      height: 160, [[/highlight]]
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -810,19 +810,19 @@ var container = Container( // grey box
         "Lorem ipsum",
         style: TextStyle(
           color: Colors.white,
-          fontSize: 24.0,
+          fontSize: 24,
           fontWeight: FontWeight.w900,
-[[highlight]]          letterSpacing: 4.0, [[/highlight]]
+[[highlight]]          letterSpacing: 4, [[/highlight]]
         ),
       ),
       decoration: BoxDecoration(
         color: Colors.red[400],
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -887,7 +887,7 @@ var container = Container( // grey box
               style: TextStyle(
                 fontWeight: FontWeight.w300,
                 fontStyle: FontStyle.italic,
-                fontSize: 48.0,
+                fontSize: 48,
               ),
             ),
           ],
@@ -896,11 +896,11 @@ var container = Container( // grey box
       decoration: BoxDecoration(
         backgroundColor: Colors.red[400],
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
@@ -958,11 +958,11 @@ var container = Container( // grey box
       decoration: BoxDecoration(
         backgroundColor: Colors.red[400],
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16),
     ),
   ),
-  width: 320.0,
-  height: 240.0,
+  width: 320,
+  height: 240,
   color: Colors.grey[300],
 );
 {% endprettify %}
