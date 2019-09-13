@@ -92,7 +92,7 @@ the application binary of any downstream app.
 ### Closed-source third-party library
 
 Add a `vendored_frameworks` field to the `.podspec`
-of the Flutter plugin. See the [CocoaPods Example][].
+of the Flutter plugin. See the [CocoaPods example][].
 
 Note that binary code should not be uploaded to
 Pub directly but rather downloaded from a trusted
@@ -138,11 +138,11 @@ not included in your Flutter package.
 
 [Add C and C++ code to your project]: {{site.android-dev}}/studio/projects/add-native-code
 [Android NDK Native APIs]: {{site.android-dev}}/ndk/guides/stable_apis
-[CocoaPods Example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
-[Dart API reference documentation]: {{site.dart-api}}/dev/
-[`DynamicLibrary.executable`]: {{site.dart-api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart-api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart-api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
+[Dart API reference documentation]: {{site.dart.api}}/dev/
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 [ffi issue]: {{site.github}}/dart-lang/sdk/issues/34452
 [Upgrading Flutter]: /docs/development/tools/sdk/upgrading
