@@ -27,7 +27,7 @@ your development environment must meet these minimum requirements:
 
 {% include_relative _get-sdk.md %}
 
-{% include_relative _path-mac-linux.md %}
+{% include_relative _path-mac.md %}
 
 ## Platform setup
 

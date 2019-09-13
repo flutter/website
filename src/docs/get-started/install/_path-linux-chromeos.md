@@ -1,6 +1,6 @@
 ### Update your path
 
-You can update your PATH variable for the current session only at
+You can update your PATH variable for the current session at
 the command line, as shown in [Get the Flutter SDK](#get-sdk).
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
@@ -11,13 +11,10 @@ Typically you add a line to a file that is executed
 whenever you open a new window. For example:
 
  1. Determine the directory where you placed the Flutter SDK.
-    You will need this in Step 3.
+    You need this in Step 3.
  2. Open (or create) the `rc` file for your shell.
-    For example, Linux and macOS Mojave (and earlier)
-    use the Bash shell by default,
+    For example, Linux uses the Bash shell by default,
     so edit `$HOME/.bashrc`.
-    macOS Catalina uses the Z shell by default,
-    so edit `$HOME/.zshrc`.
     If you are using a different shell, the file path
     and filename will be different on your machine.
  3. Add the following line and change
@@ -44,23 +41,23 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
-### Update directly (Linux)
+### Update path directly
 
-In most cases, your distribution may not acquire the path you pass
-through the terminal for future sessions. When this occurs, you need 
-to change the environment variables file directly. 
-This requires administrator privileges.
-For example:
+In some cases, your distribution may not permanently acquire
+the path when using the above directions. When this occurs,
+you can change the environment variables file directly. 
+These instructions require administrator privileges:
 
    1. Determine the directory where you placed the Flutter SDK.
 
-   2. Locate the `etc` directory at the root of the system, and open 
-   the `profile` file with root privileges.
+   2. Locate the `etc` directory at the root of the system,
+      and open the `profile` file with root privileges.
 
         ```terminal
         $ sudo nano /etc/profile
         ```
-   3. Update the PATH string with the location of your Flutter SDK directory.
+   3. Update the PATH string with the location of your
+      Flutter SDK directory.
 
       ```shell
       if [ "`id -u`" -eq 0 ]; then
@@ -73,7 +70,7 @@ For example:
 
    4. End the current session or reboot your system.
    5. Once you start a new session, verify that the
-    `flutter` command is available by running:
+      `flutter` command is available by running:
 
       ```terminal
       $ which flutter
@@ -81,7 +78,7 @@ For example:
 
 For more details on setting the path in Bash,
 see [this StackExchange question][].
-For more information on setting the path in Z shell,
+For information on setting the path in Z shell,
 see [this StackOverflow question][].
 
 

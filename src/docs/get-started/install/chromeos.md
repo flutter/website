@@ -38,7 +38,7 @@ see [how to enable developer mode on your Chromebook][].
 
 {% include_relative _get-sdk.md %}
 
-{% include_relative _path-mac-linux.md %}
+{% include_relative _path-linux-chromeos.md %}
 
 {% include_relative _chromeos-android-sdk-setup.md %}
 
