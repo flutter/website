@@ -63,11 +63,11 @@ public class MyActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         // Inflate a layout that has a container for your FlutterFragment. For
-        // this example, assume that a FrameLayout exists with an ID of 
+        // this example, assume that a FrameLayout exists with an ID of
         // R.id.fragment_container.
         setContentView(R.layout.my_activity_layout);
 
-        // Get a reference to the Activity's FragmentManager to add a new 
+        // Get a reference to the Activity's FragmentManager to add a new
         // FlutterFragment, or find an existing one.
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -79,12 +79,12 @@ public class MyActivity extends FragmentActivity {
         // Create and attach a FlutterFragment if one does not yet exist.
         if (flutterFragment == null) {
             flutterFragment = new FlutterFragment.Builder().build();
-            
+
             fragmentManager
                 .beginTransaction()
                 .add(
-                    R.id.fragment_container, 
-                    flutterFragment, 
+                    R.id.fragment_container,
+                    flutterFragment,
                     TAG_FLUTTER_FRAGMENT
                 )
                 .commit();
@@ -119,13 +119,13 @@ public class MyActivity extends FragmentActivity {
 
     @Override
     public void onRequestPermissionsResult(
-        int requestCode, 
-        @NonNull String[] permissions, 
+        int requestCode,
+        @NonNull String[] permissions,
         @NonNull int[] grantResults
     ) {
         flutterFragment.onRequestPermissionsResult(
-            requestCode, 
-            permissions, 
+            requestCode,
+            permissions,
             grantResults
         );
     }
@@ -208,7 +208,7 @@ FlutterFragment flutterFragment = new FlutterFragment.Builder()
     .build();
 ```
 
-{{site.alert.note}} 
+{{site.alert.note}}
   `FlutterFragment`'s initial route property has no effect when a pre-warmed
   `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
   chosen an initial route. The initial route can be chosen explicitly when
@@ -238,7 +238,7 @@ The above `FlutterFragment` configuration results in the execution of a Dart
 entrypoint called `mySpecialEntrypoint()`. Notice that the parentheses `()` are
 not included in the `dartEntrypoint` `String` name.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   `FlutterFragment`'s Dart entrypoint property has no effect when a pre-warmed
   `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
   executed a Dart entrypoint. The Dart entrypoint can be chosen explicitly when
@@ -279,7 +279,7 @@ impacts performance. However, there are many designs that require transparent
 pixels in the Flutter experience that show through to the underlying Android UI.
 For this reason, Flutter supports translucency in a `FlutterFragment`.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   Both `SurfaceView` and `TextureView` support transparency. However, when a
   `SurfaceView` is instructed to render with transparency, it positions itself
   at a higher z-index than all other Android `View`s, which means it appears
@@ -290,7 +290,7 @@ For this reason, Flutter supports translucency in a `FlutterFragment`.
   below and above your Flutter experience, then you must specify a
   `RenderMode` of `texture`. See the previous section titled "Control
   `FlutterFragment`'s render mode" for information on controlling the
-  `RenderMode`. 
+  `RenderMode`.
 {{site.alert.end}}
 
 To enable transparency for a `FlutterFragment`, build it with the following
@@ -308,9 +308,8 @@ Some apps choose to use `Fragment`s as entire Android screens. In these apps, it
 would be reasonable for a `Fragment` to control system chrome like Android's
 status bar, navigation bar, and orientation.
 
-{% asset
-development/platform-integration/add-to-app-android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
-class="mw-100" alt="Fullscreen Flutter" %}
+<!-- TODO(mattcarroll): to add back. -->
+<!-- add-flutter-fragment_fullscreen was here-->
 
 In other apps, `Fragment`s are used to represent only a portion of a UI. A
 `FlutterFragment` might be used to implement the inside of a drawer, or a video
@@ -318,14 +317,13 @@ player, or a single card. In these situations, it would be inappropriate for the
 `FlutterFragment` to affect Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-{% asset
-development/platform-integration/add-to-app-android/add-flutter-fragment/add-flutter-fragment_partial-ui.png
-class="mw-100" alt="Flutter as Partial UI" %}
+<!-- TODO(mattcarroll): to add back. -->
+<!-- add-flutter-fragment_partial-ui was here-->
 
 `FlutterFragment` comes with a concept that helps differentiate between the case
 where a `FlutterFragment` should be able to control its host `Activity`, and the
 cases where a `FlutterFragment` should only affect its own behavior. To prevent
-a `FlutterFragment` from exposing its `Activity` to Flutter plugins, and to 
+a `FlutterFragment` from exposing its `Activity` to Flutter plugins, and to
 prevent Flutter from controlling the `Activity`'s system UI, use the
 `shouldAttachEngineToActivity()` method in `FlutterFragment`'s `Builder` as
 shown below.
@@ -341,7 +339,7 @@ prevents Flutter from interacting with the surrounding `Activity`. The default
 value is `true`, which allows Flutter and Flutter plugins to interact with
 surrounding `Activity`.
 
-{{site.alert.note}} 
-  Some plugins may expect or require an `Activity` reference. Ensure that none 
+{{site.alert.note}}
+  Some plugins may expect or require an `Activity` reference. Ensure that none
   of your plugins require an `Activity` before disabling access.
 {{site.alert.end}}
