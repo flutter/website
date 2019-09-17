@@ -21,13 +21,13 @@ description: The landing page for Flutter documentation.
   {% endif %}
 {% endfor -%}
 
+<a name="latest-release"></a>
 ## What's new on the site
 
 To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
 
-<a name="latest-release"></a>
 **Sept 10, 2019**
 
 Flutter 1.9 is live!
