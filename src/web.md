@@ -1,5 +1,5 @@
 ---
-title: Adding web support to a Flutter app
+title: Web support for Flutter
 description: "Announcing the tech preview release of Flutter for web."
 ---
 
@@ -58,18 +58,21 @@ being valuable in many scenarios. For example:
   web and mobile content enables you to deploy content online
   or embedded in an app without rewriting.
 
+<a name="web"></a>
 ## Notes on web support in 1.9
 
 This preview version of web support is your opportunity to
 try it out. Before you get started, here are a few notes:
 
-* This release is missing features and has known performance
-  issues, so we don't recommend it for production.
+{{site.alert.note}}
+  * This release is missing features and has known performance
+    issues, so we don't recommend it for production.
 
-* You can update existing Flutter code to work on the web,
-  but there are some caveats as web support hasn't
-  yet reached beta. For more information, see the
-  [web FAQ][].
+  * You can update existing Flutter code to work on the web,
+    but there are some caveats as web support hasn't
+    yet reached beta. For more information, see the
+    [web FAQ][].
+{{site.alert.end}}
 
 The following resources can help you get started:
 

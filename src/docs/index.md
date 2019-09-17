@@ -27,6 +27,7 @@ To stay on top of Flutter announcements,
 including breaking changes, join the
 [flutter-announce][] Google group.
 
+<a name="latest-release"></a>
 **Sept 10, 2019**
 
 Flutter 1.9 is live!
