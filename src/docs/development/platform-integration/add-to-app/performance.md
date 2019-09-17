@@ -163,8 +163,12 @@ physical pixel size).
 pixel size).
 
 Memory-wise, the cost is primarily the graphical memory buffer used for
-rendering.
+rendering and dependent on the screen size.
 
 Latency-wise, the cost is primarily waiting for the OS callback to provide
 Flutter with a rendering surface, and compiling the remaining shader programs
 that are not pre-emptively predictable. This is a one-time cost.
+
+When the Flutter UI component is released, the UI related memory is freed.
+This doesn't affect the Flutter state which lives in the `FlutterEngine`
+(unless the `FlutterEngine` is also released).
