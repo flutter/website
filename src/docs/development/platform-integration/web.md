@@ -79,7 +79,7 @@ and Dart plugins.
 See [Creating responsive
 apps](/docs/development/ui/layout/responsive).
 
-### Can I use the `dart:io` package with a web app?
+### Can I use `dart:io` with a web app?
 
 No. The file system is not accessible from the browser.
 For network functionality, use the [`http`][]
