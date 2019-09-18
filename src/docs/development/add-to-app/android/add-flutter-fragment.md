@@ -5,7 +5,7 @@ description: Learn how to add a Flutter Fragment to your existing Android app.
 ---
 
 {% asset
-development/platform-integration/add-to-app-android/add-flutter-fragment/add-flutter-fragment_header.png
+development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png
 class="mw-100" alt="Add Flutter Fragment Header" %}
 
 This guide describes how to add a Flutter `Fragment` to an existing Android app.

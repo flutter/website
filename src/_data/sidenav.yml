@@ -125,20 +125,6 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
-        - title: Add Flutter to existing app
-          permalink: /docs/development/platform-integration/add-to-app
-          children:
-          - title: Adding to an Android app
-            permalink: /docs/development/platform-integration/add-to-app/android
-            children:
-              - title: Add a single Flutter screen
-                permalink: /docs/development/platform-integration/add-to-app/android/add-flutter-screen
-              - title: Add a Flutter Fragment
-                permalink: /docs/development/platform-integration/add-to-app/android/add-flutter-fragment
-              - title: Add a Splash Screen
-                permalink: /docs/development/platform-integration/add-to-app/android/add-splash-screen
-          - title: Loading sequence and performance
-            permalink: /docs/development/platform-integration/add-to-app/performance
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
@@ -154,6 +140,20 @@
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package site
           permalink: https://pub.dev/flutter
+    - title: Add Flutter to existing app
+      permalink: /docs/development/add-to-app
+      children:
+      - title: Adding to an Android app
+        permalink: /docs/development/add-to-app/android
+        children:
+          - title: Add a single Flutter screen
+            permalink: /docs/development/add-to-app/android/add-flutter-screen
+          - title: Add a Flutter Fragment
+            permalink: /docs/development/add-to-app/android/add-flutter-fragment
+          - title: Add a Splash Screen
+            permalink: /docs/development/add-to-app/android/add-splash-screen
+      - title: Loading sequence and performance
+        permalink: /docs/development/add-to-app/performance
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:

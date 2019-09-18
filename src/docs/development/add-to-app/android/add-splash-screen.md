@@ -5,7 +5,7 @@ description: Learn how to add a splash screen and launch screen to your Android 
 ---
 
 {% asset
-development/platform-integration/add-to-app-android/add-splash-screen/splash-screens_header.png
+development/add-to-app/android/add-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
 The beginning of a Flutter experience requires a brief wait while Dart
@@ -15,11 +15,11 @@ while your Android app initializes, and also supports the display of a "splash
 screen" while your Flutter experience initializes. This guide teaches you how to
 use launch screens and splash screens in an Android app with Flutter.
 
-{{site.alert.note}} 
-  Strategies are available to minimize wait time related to Flutter 
-  initialization. Consider [pre-warming a FlutterEngine](), and 
+{{site.alert.note}}
+  Strategies are available to minimize wait time related to Flutter
+  initialization. Consider [pre-warming a FlutterEngine](), and
   [re-using a FlutterEngine throughout your app](), to avoid most wait time.
-{{site.alert.end}} 
+{{site.alert.end}}
 
 ## Android Launch Screen
 
@@ -43,10 +43,10 @@ In `styles.xml`, define a theme whose `windowBackground` is set to the
 </style>
 ```
 
-{{site.alert.note}} 
+{{site.alert.note}}
   The default Flutter project template includes a definition of a launch theme
   and a launch background.
-{{site.alert.end}} 
+{{site.alert.end}}
 
 ### Define a normal theme
 
@@ -175,7 +175,7 @@ public class SimpleSplashScreen implements SplashScreen {
     @Override
     @Nullable
     public View createSplashView(
-      @NonNull Context context, 
+      @NonNull Context context,
       @Nullable Bundle savedInstanceState
     ) {
         // Return a new MySplashView without saving a reference, because it
@@ -207,7 +207,7 @@ public class SplashScreenWithTransition implements SplashScreen {
     @Override
     @Nullable
     public View createSplashView(
-      @NonNull Context context, 
+      @NonNull Context context,
       @Nullable Bundle savedInstanceState
     ) {
         // A reference to the MySplashView is retained so that it can be told

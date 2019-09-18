@@ -117,12 +117,12 @@ by starting the Flutter engine ahead of time.
 
 The most relevant choice for users in add-to-app scenarios is to decide
 when to pre-load a `FlutterEngine` (that is, to load the Flutter library,
-start the Dart VM and run entrypoint in an Isolate) and the memory and latency
-cost of that pre-warm. And how it affects the memory and latency cost of
-rendering a first Flutter frame when UI is subsequently attached to that
-`FlutterEngine`.
+start the Dart VM, and run entrypoint in an isolate) and the memory and latency
+cost of that pre-warm. Also, how it affects the memory and latency cost of
+rendering a first Flutter frame when the UI component is subsequently attached
+to that `FlutterEngine`.
 
-As of September of 2019, testing on a low-end 2015 class device in release-AOT
+As of Flutter v1.10.3, and testing on a low-end 2015 class device in release-AOT
 mode, pre-warming the `FlutterEngine` costs:
 
 - 42MB and 1530ms to prewarm on **Android**. 330ms of it is a blocking call on
@@ -171,5 +171,5 @@ Flutter with a rendering surface, and compiling the remaining shader programs
 that are not pre-emptively predictable. This is a one-time cost.
 
 When the Flutter UI component is released, the UI related memory is freed.
-This doesn't affect the Flutter state which lives in the `FlutterEngine`
+This doesn't affect the Flutter state, which lives in the `FlutterEngine`
 (unless the `FlutterEngine` is also released).
