@@ -93,7 +93,7 @@ The browser's back button is supported for web apps.
 The forward button is not yet enabled.
 For more information, see [Issue 32248][].
 
-### How do copy/paste work?
+### How does copy/paste work?
 
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
