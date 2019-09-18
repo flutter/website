@@ -92,18 +92,7 @@ class DemoApp extends StatelessWidget {
         title: Text(DemoLocalizations.of(context).title),
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Text(DemoLocalizations.of(context).title),
-            Text(MaterialLocalizations.of(context).alertDialogLabel),
-            RaisedButton(
-              onPressed: () {
-                showLicensePage(context: context);
-              },
-              child: Text('License'),
-            )
-          ],
-        ),
+        child: Text(DemoLocalizations.of(context).title),
       ),
     );
   }
