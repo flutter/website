@@ -9,9 +9,9 @@ at which stage and the latency and memory costs of those operations.
 
 ## Loading Flutter
 
-Both Android/iOS (the 2 supported platforms for integrating into existing
-apps) and full-Flutter apps and add-to-app patterns have a similar sequence
-of conceptual loading steps when showing Flutter UI.
+Android and iOS apps (the two supported platforms for integrating into existing
+apps), full Flutter apps, and add-to-app patterns have a similar sequence of
+conceptual loading steps when displaying Flutter UI.
 
 ### Finding the Flutter resources
 
@@ -31,11 +31,11 @@ Once found, the engine's shared libraries are memory loaded once per process.
 On **Android**, this happens also when the [`FlutterEngine`]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)
 is constructed since the JNI connectors need to reference the Flutter C++
 library. On **iOS**, this happens when the [`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html)
-is first run, such as via [`runWithEntrypoint:`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:).
+is first run, such as by running [`runWithEntrypoint:`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:).
 
 ### Starting the Dart VM
 
-The Dart runtime is responsible for managing Dart memory, concurrency etc. for
+The Dart runtime is responsible for managing Dart memory and concurrency for
 your Dart code. In JIT mode, it's additionally responsible for compiling
 the Dart source code into machine code during runtime.
 
@@ -58,12 +58,13 @@ The Dart VM never shuts down once started.
 Once the Dart runtime is initialized, the Flutter engine's usage of the Dart
 runtime is the next step.
 
-This is done by starting a Dart Isolate in the Dart runtime. The Isolate is
-Dart's container for memory and thread. A number of [auxiliary threads](https://github.com/flutter/flutter/wiki/The-Engine-architecture#threading)
-on the host platform is also created at this point to support the Dart Isolate,
-such as offloading GPU handling and image decoding off of the Dart Isolate.
+This is done by starting a [Dart Isolate](https://api.dartlang.org/stable/dart-isolate/Isolate-class.html)
+in the Dart runtime. The isolate is Dart's container for memory and thread. A
+number of [auxiliary threads](https://github.com/flutter/flutter/wiki/The-Engine-architecture#threading)
+on the host platform are also created at this point to support the isolate, such
+as a thread for offloading GPU handling and another for image decoding.
 
-One Dart Isolate exists per `FlutterEngine` instance and multiple Dart Isolates
+One isolate exists per `FlutterEngine` instance and multiple isolates
 can be hosted by the same Dart VM.
 
 On **Android**, this happens when you call [`DartExecutor.executeDartEntrypoint()`]({{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-)
@@ -75,9 +76,9 @@ on a `FlutterEngine`.
 At this point, your Dart code's selected entrypoint (the `main()` function of
 your Dart library's main.dart file by default) is executed. If you called the
 Flutter function [runApp()]({{site.api}}/flutter/widgets/runApp.html) in your
-`main()` function, your Flutter app or library's widget tree will also be
-created and built. If you need to gate certain functionalities from executing
-in your Flutter code, the `AppLifecycleState.detached` enum value will indicate
+`main()` function, your Flutter app or library's widget tree are also created
+and built. If you need to prevent certain functionalities from executing
+in your Flutter code, the `AppLifecycleState.detached` enum value indicates
 that the `FlutterEngine` is not yet attached to any UI components such as a
 `FlutterViewController` on iOS or a `FlutterActivity` on Android.
 
@@ -89,24 +90,24 @@ launched.
 In an add-to-app scenario, this happens when you attach a `FlutterEngine`
 to a UI component such as by calling [`startActivity()`](https://developer.android.com/reference/android/content/Context.html#startActivity(android.content.Intent))
 with an [`Intent`](https://developer.android.com/reference/android/content/Intent.html)
-built via [`FlutterActivity.withCachedEngine()`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-)
+built using [`FlutterActivity.withCachedEngine()`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-)
 on **Android**. Or by presenting a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html)
-initialized via [`initWithEngine: nibName: bundle:`]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:)
+initialized by using [`initWithEngine: nibName: bundle:`]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:)
 on **iOS**.
 
 This would also the case if a Flutter UI component was launched without
-pre-warming a `FlutterEngine` such as via [`FlutterActivity.createDefaultIntent()`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-)
-on **Android** or via [`FlutterViewController initWithProject: nibName: bundle:`]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithProject:nibName:bundle:)
-on **iOS**. An implicit `FlutterEngine` is created in these cases. ;
+pre-warming a `FlutterEngine` such as with [`FlutterActivity.createDefaultIntent()`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-)
+on **Android** or with [`FlutterViewController initWithProject: nibName: bundle:`]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithProject:nibName:bundle:)
+on **iOS**. An implicit `FlutterEngine` is created in these cases.
 
-Behind the scene, both platform's UI components serves to provide the
+Behind the scene, both platform's UI components serve to provide the
 `FlutterEngine` with a rendering surface such as a [Surface](https://developer.android.com/reference/android/view/Surface)
 on **Android** or a [CAEAGLLayer](https://developer.apple.com/documentation/quartzcore/caeagllayer)
 or [CAMetalLayer](https://developer.apple.com/documentation/quartzcore/cametallayer)
 on **iOS**.
 
 At this point, the [Layer]({{site.api}}/flutter/rendering/Layer-class.html)
-tree generated by your Flutter program per frame will be converted into
+tree generated by your Flutter program per frame is converted into
 OpenGL (or Vulkan or Metal) GPU instructions.
 
 ## Memory and latency
