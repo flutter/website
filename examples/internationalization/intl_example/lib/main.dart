@@ -44,13 +44,14 @@ import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 
 class DemoLocalizations {
+  DemoLocalizations(this.localeName);
+
   static Future<DemoLocalizations> load(Locale locale) {
     final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
-      Intl.defaultLocale = localeName;
-      return DemoLocalizations();
+      return DemoLocalizations(localeName);
     });
   }
 
@@ -58,11 +59,14 @@ class DemoLocalizations {
     return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
   }
 
+  final String localeName;
+
   String get title {
     return Intl.message(
       'Hello World',
       name: 'title',
       desc: 'Title for the Demo application',
+      locale: localeName,
     );
   }
 }
