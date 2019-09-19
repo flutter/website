@@ -117,7 +117,7 @@ We also have some helpful videos on our
 out the Flutter in Focus series,
 and learn about other series on our [videos][] page.
 
-First up, why use Flutter? What make it different than other
+First up, why use Flutter? What makes it different than other
 app frameworks?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
