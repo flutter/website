@@ -80,18 +80,18 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
 
 {{site.alert.note}}
   * The `keytool` command might not be in your path&mdash;it's
-    part of the Java JDK, which is installed as part of
+    part of Java, which is installed as part of
     Android Studio.  For the concrete path,
     run `flutter doctor -v` and locate the path printed after
     'Java binary at:'. Then use that fully qualified path
     replacing `java` (at the end) with `keytool`.
     If your path includes space-separated names,
-    such as `Program Files`, place quotes around the space-separated
-    names. For example: `/"Program Files"/`
+    such as `Program Files`, place quotes around the
+    space-separated names. For example: `/"Program Files"/`
 
   * The `-storetype JKS` tag is only required for Java 9
-    or newer. As of this release, the keystore type defaults
-    to PKS12.
+    or newer. As of the Java 9 release,
+    the keystore type defaults to PKS12.
 {{site.alert.end}}
 
 ### Reference the keystore from the app
