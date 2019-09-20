@@ -194,6 +194,7 @@ add the rules listed below.
 -keep class io.flutter.view.**  { *; }
 -keep class io.flutter.**  { *; }
 -keep class io.flutter.plugins.**  { *; }
+-dontwarn io.flutter.embedding.**
 ```
 
 This configuration only protects Flutter engine libraries.

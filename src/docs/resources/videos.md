@@ -46,20 +46,9 @@ Introducing the Boring Flutter Show<br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YSULAJf6R6M?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Flutter and Dart at Google I/O 2019 playlist][]
 
-### Flutter Live '18
+### What's new in Flutter 1.9
 
-Catch the content from Flutter Live '18, where Flutter 1.0 was officially launched.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D-o4BqJxmJE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-Flutter Live Keynote Recap<br>
-[Flutter Live '18 playlist][]
-
-### Flutter Challenge series by Fluttery
-
-Each episode solves a different design challenge.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GFRfSM4yA9U?rel=0" frameborder="1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-[Flutter Challenge playlist][]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wzNd3yyLcaU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Flutter Weekly Widgets by MTechViral
 

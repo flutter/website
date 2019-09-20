@@ -79,7 +79,7 @@ and Dart plugins.
 See [Creating responsive
 apps](/docs/development/ui/layout/responsive).
 
-### Can I use the `dart:io` package with a web app?
+### Can I use `dart:io` with a web app?
 
 No. The file system is not accessible from the browser.
 For network functionality, use the [`http`][]
@@ -93,7 +93,7 @@ The browser's back button is supported for web apps.
 The forward button is not yet enabled.
 For more information, see [Issue 32248][].
 
-### How do copy/paste work?
+### How does copy/paste work?
 
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
