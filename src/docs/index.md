@@ -21,7 +21,8 @@ description: The landing page for Flutter documentation.
   {% endif %}
 {% endfor -%}
 
-## What's new on the site
+<a name="latest-release"></a>
+## What's new on this site
 
 To stay on top of Flutter announcements,
 including breaking changes, join the
