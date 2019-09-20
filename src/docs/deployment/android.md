@@ -29,8 +29,7 @@ This page covers the following topics:
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
-[flutter_launcher_icons]({{site.pub}}/packages/flutter_launcher_icons)
-package.
+[flutter_launcher_icons][] package.
 
 Alternatively, you can do it manually using the following steps:
 
@@ -38,11 +37,14 @@ Alternatively, you can do it manually using the following steps:
    icons][launchericons] guidelines for icon design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory,
-   place your icon files in folders named using [configuration qualifiers][].
-   The default `mipmap-` folders demonstrate the correct naming convention.
+   place your icon files in folders named using
+   [configuration qualifiers][].
+   The default `mipmap-` folders demonstrate the correct
+   naming convention.
 
-1. In `AndroidManifest.xml`, update the [`application`][applicationtag]
-   tag's `android:icon` attribute to reference icons from the previous
+1. In `AndroidManifest.xml`, update the
+   [`application`][applicationtag] tag's `android:icon`
+   attribute to reference icons from the previous
    step (for example,
    `<application android:icon="@mipmap/ic_launcher" ...`).
 
@@ -60,29 +62,36 @@ If you have an existing keystore, skip to the next step.
 If not, create one by running the following at the command line:
 
 On Mac/Linux, use the following command:
-```
+
+```terminal
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
+
 On Windows, use the following command:
-```
-keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+```terminal
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
-{{site.alert.note}}
+{{site.alert.warning}}
   Keep the `keystore` file private;
   do not check it into public source control.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  The `keytool` command might not be in your path&mdash;it's
-  part of the Java JDK, which is installed as part of Android Studio.
-  For the concrete path,
-  run `flutter doctor -v` and locate the path printed after
-  'Java binary at:'. Then use that fully qualified path
-  replacing `java` (at the end) with `keytool`.
-  If your path includes space-separated names,
-  such as `Program Files`, place quotes around the space-separated
-  names. For example: `/"Program Files"/`
+  * The `keytool` command might not be in your path&mdash;it's
+    part of Java, which is installed as part of
+    Android Studio.  For the concrete path,
+    run `flutter doctor -v` and locate the path printed after
+    'Java binary at:'. Then use that fully qualified path
+    replacing `java` (at the end) with `keytool`.
+    If your path includes space-separated names,
+    such as `Program Files`, place quotes around the
+    space-separated names. For example: `/"Program Files"/`
+
+  * The `-storetype JKS` tag is only required for Java 9
+    or newer. As of the Java 9 release,
+    the keystore type defaults to PKS12.
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -97,7 +106,7 @@ keyAlias=key
 storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 ```
 
-{{site.alert.note}}
+{{site.alert.warning}}
   Keep the `key.properties` file private;
   do not check it into public source control.
 {{site.alert.end}}
@@ -169,9 +178,8 @@ If you intend to use third-party Java, Kotlin, or Android libraries,
 you might want to reduce the size of the APK or protect that code from
 reverse engineering.
 
-For information on obfuscating Dart code, see [Obfuscating Dart
-Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
+For information on obfuscating Dart code, see
+[Obfuscating Dart Code][] in the [Flutter wiki][].
 
 ### Step 1 - Configure Proguard
 
@@ -228,12 +236,14 @@ android {
 
 ## Reviewing the app manifest
 
-Review the default [App Manifest][manifest] file, `AndroidManifest.xml`,
+Review the default [App Manifest][manifest] file,
+`AndroidManifest.xml`,
 located in `<app dir>/android/app/src/main` and verify that the values
 are correct, especially:
 
 * `application`: Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect the final name of the app.
+  [`application`][applicationtag] tag to reflect
+  the final name of the app.
 
 * `uses-permission`: Add the `android.permission.INTERNET`
   [permission][permissiontag] if your application code needs Internet
@@ -243,9 +253,9 @@ are correct, especially:
 
 ## Reviewing the build configuration
 
-Review the default [Gradle build file][gradlebuild] file, `build.gradle`,
-located in `<app dir>/android/app` and verify the values are correct,
-especially:
+Review the default [Gradle build file][gradlebuild] file,
+`build.gradle`, located in `<app dir>/android/app` and
+verify the values are correct, especially:
 
 * `defaultConfig`:
 
@@ -413,24 +423,28 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
-[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[appid]: {{site.android-dev}}/studio/build/application-id
-[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.material}}/design/iconography/
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[play]: {{site.android-dev}}/distribute/googleplay/start
-[bundle]: {{site.android-dev}}/platform/technology/app-bundle
-[bundle2]: {{site.android-dev}}/guide/app-bundle
-[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
-[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[appid]: {{site.android-dev}}/studio/build/application-id
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
+[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[bundle]: {{site.android-dev}}/platform/technology/app-bundle
+[bundle2]: {{site.android-dev}}/guide/app-bundle
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
+[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[launchericons]: {{site.material}}/design/iconography/
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[play]: {{site.android-dev}}/distribute/googleplay/start
+[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+[versions]: {{site.android-dev}}/studio/publish/versioning
+
