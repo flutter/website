@@ -15,9 +15,9 @@ void main() {
   var select = querySelector('#dartpad-select');
 
   var snippets = [
+    Snippet('Spinning flutter', spinning_logo),
+    Snippet('Fibonacci', fibonacci),
     Snippet('Counter', counter),
-    Snippet('Square', square),
-    Snippet('Todos', todos),
   ];
 
   DartPadPicker(dartPadHost, select, snippets);
@@ -100,124 +100,143 @@ Future<void> main() async {
 
 '''
     .trim();
-var square = r'''
+var spinning_logo = r'''
+import 'dart:math';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_ui/ui.dart' as ui;
 
-class SpinningSquare extends StatefulWidget {
-  @override
-  _SpinningSquareState createState() => _SpinningSquareState();
+void main() async {
+  await ui.webOnlyInitializePlatform();
+
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: MyApp(),
+      ),
+    ),
+  );
 }
 
-class _SpinningSquareState extends State<SpinningSquare>
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp>
     with SingleTickerProviderStateMixin {
-  AnimationController _animation;
+  AnimationController controller;
+  Animation<double> animation;
 
   @override
   void initState() {
     super.initState();
-    // We use 3600 milliseconds instead of 1800 milliseconds because 0.0 -> 1.0
-    // represents an entire turn of the square whereas in the other examples
-    // we used 0.0 -> math.pi, which is only half a turn.
-    _animation = AnimationController(
-      duration: const Duration(milliseconds: 3600),
+    controller = AnimationController(
+      duration: Duration(seconds: 1),
       vsync: this,
-    )..repeat();
+    );
+    animation = Tween(begin: 0.0, end: 4 * pi)
+      .animate(CurvedAnimation(
+        curve: Curves.easeInOut,
+        parent: controller,
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
-    return RotationTransition(
-      turns: _animation,
-      child: Container(
-        width: 150.0,
-        height: 150.0,
-        color: const Color(0xFF00FF00),
+    return GestureDetector(
+      onTap: () => setState(() {
+        controller
+          ..reset()
+          ..forward();
+      }),
+      child: SizedBox.expand(
+        child: AnimatedBuilder(
+          animation: animation,
+          builder: (context, child) {
+            return Transform.rotate(
+              angle: animation.value,
+              child: child,
+            );
+          },
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: FlutterLogo(),
+              ),
+              Center(
+                child: Text(
+                  'Click me!',
+                  style: TextStyle(
+                    fontSize: 60.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
-
-
-  @override
-  void dispose() {
-    _animation.dispose();
-    super.dispose();
-  }
 }
-
-void main() async {
-  await ui.webOnlyInitializePlatform();
-  runApp(Center(child: SpinningSquare()));
-}
-
 '''
     .trim();
 
-var todos = r'''
-// import 'package:flutter_web/widgets.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+var fibonacci = r'''
 import 'package:flutter_web/material.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
 
-class IconTodo extends StatelessWidget {
-  final IconData icon;
-  final String hintText;
-  final String labelText;
+void main() async {
+  await ui.webOnlyInitializePlatform();
+  final numbers = FibonacciNumbers();
 
-  IconTodo(this.icon, this.hintText, this.labelText);
-
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 400,
-      margin: const EdgeInsets.all(20.0),
-      child: TextField(
-        obscureText: false,
-        decoration: InputDecoration(
-            icon: Icon(icon),
-            border: OutlineInputBorder(),
-            labelText: labelText,
-            hintText: hintText),
-      ),
-    );
-  }
-}
-
-class ThreeThings extends StatelessWidget {
-  final myIcons = <String, IconData>{
-    'accessibility': Icons.accessibility_new,
-    'phone': Icons.perm_phone_msg,
-    'sun': Icons.brightness_low,
-  };
-
-  Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      IconTodo(myIcons['accessibility'], 'Schedule exercise', '1'),
-      IconTodo(myIcons['phone'], 'Pick a friend to call', '2'),
-      IconTodo(myIcons['sun'], 'Do something outside', '3'),
-    ]);
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'hi',
+  runApp(
+    MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Todos For My Health'),
+          title: Text('Fibonacci List'),
         ),
-        body: Container(
-          child: ThreeThings(),
-        ),
+        body: FibonacciListView(numbers),
       ),
-    );
+    ),
+  );
+}
+
+class FibonacciNumbers {
+  final cache = {0: 1, 1: 1};
+
+  int get(int i) {
+    if (!cache.containsKey(i)) {
+      cache[i] = get(i - 1) + get(i - 2);
+    }
+    return cache[i];
   }
 }
 
-Future<void> main() async {
-  await ui.webOnlyInitializePlatform();
-  runApp(MyApp());
+class FibonacciListView extends StatelessWidget {
+  final FibonacciNumbers numbers;
+
+  FibonacciListView(this.numbers);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 80,
+      itemBuilder: (context, i) {
+        return ListTile(
+          title: Text('${numbers.get(i)}'),
+          onTap: () {
+            final snack = SnackBar(
+              content: Text('${numbers.get(i)} is '
+                  '#$i in the Fibonacci sequence!'),
+            );
+            Scaffold.of(context).showSnackBar(snack);
+          },
+        );
+      },
+    );
+  }
 }
 
 '''

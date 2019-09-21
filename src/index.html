@@ -10,6 +10,8 @@ description: >
   is used by developers and organizations around the world,
   and is free and open source.
 js:
+- url: /assets/dash/js/detect_safari.js
+  defer: true
 - url: /assets/dash/js/dartpad_picker_main.dart.js
   defer: true
 
@@ -289,7 +291,8 @@ js:
 
 
 <!-- Modal -->
-<section class="landing-page__cta card text-center">
+<!-- Do not show DartPad on Safari -->
+<section id="dartpad-landing-page" class="landing-page__cta card text-center">
     <div class="dash-dartpad">
         <a name="try-dart"></a>
         <h2>Try Flutter in your browser</h2>
