@@ -39,7 +39,6 @@ codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
 
-
 defaults:
 - scope:
     path: ''

@@ -20,7 +20,7 @@ js:
   </div>
 </div>
 
-<h2 class="text-center">Install</h2>
+<h2 class="text-center">Install Flutter now</h2>
 <div>
     <h4>Select the operating system on which you are installing Flutter:</h4><br>
       <div class="card-deck mb-8">
