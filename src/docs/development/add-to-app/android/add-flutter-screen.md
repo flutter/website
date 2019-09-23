@@ -11,7 +11,7 @@ see-through, translucent screen. Both options are described in this guide.
 ## Add a normal Flutter screen
 
 {% asset
-development/platform-integration/add-to-app-android/add-flutter-screen/add-single-flutter-screen_header.png
+development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png
 class="mw-100" alt="Add Flutter Screen Header" %}
 
 ### Step 1: Add Gradle dependencies
@@ -22,7 +22,7 @@ multiple maven artifacts.
 ### Step 2: Initialize Flutter
 
 Flutter requires that it be initialized before attempting to display any Flutter
-content. This can be done in one of three ways: 
+content. This can be done in one of three ways:
 
  * Use `FlutterApplication` as your app's `Application` class.
 
@@ -194,7 +194,7 @@ public class MyApplication extends Application {
 }
 ```
 
-{{site.alert.note}} 
+{{site.alert.note}}
   To warm up a `FlutterEngine`, you must execute a Dart
   entrypoint. Keep in mind that the moment `executeDartEntrypoint()` is invoked,
   your Dart entrypoint method will begin executing. If your Dart entrypoint
@@ -223,7 +223,7 @@ public class MyFlutterActivity extends FlutterActivity {
 Now, when you launch `MyFlutterActivity`, there is significantly less delay in
 the display of Flutter content.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   When re-using a cached engine, you assume responsibility for
   showing the desired content for the given `Activity` that's using the
   `FlutterEngine`. Strategies for switching content in a shared `FlutterEngine`
@@ -231,7 +231,7 @@ the display of Flutter content.
   resource.
 {{site.alert.end}}
 
-{{site.alert.note}} 
+{{site.alert.note}}
   Flutter's debug/release builds have drastically different
   performance characteristics. To evaluate the performance of Flutter, use a
   release build.
@@ -240,7 +240,7 @@ the display of Flutter content.
 ## Add a translucent Flutter screen
 
 {% asset
-development/platform-integration/add-to-app-android/add-flutter-screen/add-single-flutter-screen-transparent_header.png
+development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png
 class="mw-100" alt="Add Flutter Screen With Translucency Header" %}
 
 Most fullscreen Flutter experiences are opaque. However, some apps would like to
