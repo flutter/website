@@ -126,7 +126,8 @@
       { "source": "/go/android-embedding-move", "destination": "https://docs.google.com/document/d/1nQujwZfEe3QOHTyZn160eImpoJOYioADP09DtumcLcc/edit?ts=5d8041db#", "type": 301 },
       { "source": "/go/android-migration-summary", "destination": "https://docs.google.com/document/d/1wKspwf6LQu6uo32uQ9NcukfiKhLL4ButV9cwpjeb8QI", "type": 301 },
       { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
-      { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit?usp=sharing", "type": 301 }
+      { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit?usp=sharing", "type": 301 },
+      { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 }
     ]
   }
 }
