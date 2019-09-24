@@ -1256,7 +1256,7 @@ r.display="none"
 return}r=document
 u=r.querySelector("#dartpad-host")
 t=r.querySelector("#dartpad-select")
-s=H.ad([new Y.a6("Spinning flutter",$.ek()),new Y.a6("Fibonacci",$.ej()),new Y.a6("Counter",$.ei())],[Y.a6])
+s=H.ad([new Y.a6("Spinning Flutter",$.ek()),new Y.a6("Fibonacci",$.ej()),new Y.a6("Counter",$.ei())],[Y.a6])
 r=new Y.bn(u,H.j(t,"$iaw"),s)
 r.am()
 r.al()}}
