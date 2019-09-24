@@ -15,7 +15,6 @@ js:
     <a name="try-dart"></a>
     <select id="dartpad-select"></select>
     <div id="dartpad-host"></div><br>
-    {% include dartpad_warning.md %}
     <h4>Want more practice? <a href="/codelabs">Try a codelab</a>.</h4>
   </div>
 </div>
