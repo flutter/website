@@ -19,17 +19,22 @@ Firebase supports Flutter. For more information, see:
    in the [Firebase docs][]
 * [Firebase for Flutter codelab][codelab]
 * [FlutterFire plugins][]
-* [Using Firestore as a backend to your Flutter app][video] (video)
 
-Also, the Flutter community has created docs that you might find useful:
+Also, the Flutter community has created docs and
+videos that you might find useful:
 
-* [Authenticating users with Firebase and Flutter][authenticating]
 * [Building chat app with Flutter and Firebase][chat app]
+* [Using Firestore as a backend to your Flutter app][video] (video)
+* [Live Coding Firebase Authentication with Flutter][video2] (video)
+* [Flutter & Firebase Auth 01][video3] (video)
+* [Flutter: Firebase Tutorial Part 1 | Auth and Sign in][video4] (video)
 
 [Flutterfire plugins]: {{site.github}}/FirebaseExtended/flutterfire
 [Firebase docs]: {{site.firebase}}/docs
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [started]: {{site.firebase}}/docs/flutter/setup
 [video]: https://www.youtube.com/watch?v=DqJ_KjFzL9I&t=38s
-[authenticating]: https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f
+[video2]: https://www.youtube.com/watch?v=OlcYP6UXlm8
+[video3]: https://www.youtube.com/watch?v=u_Lyx8KJWpg
+[video4]: https://www.youtube.com/watch?v=13-jNF984C0
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
