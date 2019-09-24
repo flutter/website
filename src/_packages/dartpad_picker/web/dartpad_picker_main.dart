@@ -15,7 +15,7 @@ void main() {
   var select = querySelector('#dartpad-select');
 
   var snippets = [
-    Snippet('Spinning flutter', spinning_logo),
+    Snippet('Spinning Flutter', spinning_logo),
     Snippet('Fibonacci', fibonacci),
     Snippet('Counter', counter),
   ];
