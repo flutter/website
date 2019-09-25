@@ -3,12 +3,6 @@ title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
 ---
 
-{% comment %}
-  TODO: Once published, remove this page on the GitHub wiki:
-  (https://github.com/flutter/flutter/wiki/Building-a-web-application-with-Flutter)
-  and forward to this page.
-{% endcomment %}
-
 As of 1.9, Flutter has early support for running web
 applications. There are still missing features and known
 performance issues, so it
