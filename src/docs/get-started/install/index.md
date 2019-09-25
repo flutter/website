@@ -10,16 +10,15 @@ js:
 ---
 
 <div>
-<h2 class="install text-center">Try Flutter in your browser</h2>
+<h2 class="install">Try Flutter in your browser</h2>
   <div class="dash-dartpad">
     <a name="try-dart"></a>
     <select id="dartpad-select"></select>
     <div id="dartpad-host"></div><br>
-    <h4>Want more practice? <a href="/codelabs">Try a codelab</a>.</h4>
   </div>
 </div>
 
-<h2 class="text-center">Install Flutter now</h2>
+<h2>Install Flutter now</h2>
 <h4>Select the operating system on which you are installing Flutter:</h4><br>
 <div class="card-deck mb-8">
   {% for os in site.os-list %}
