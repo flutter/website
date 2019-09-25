@@ -21,7 +21,8 @@ description: The landing page for Flutter documentation.
   {% endif %}
 {% endfor -%}
 
-## What's new on the site
+<a name="latest-release"></a>
+## What's new on this site
 
 To stay on top of Flutter announcements,
 including breaking changes, join the
@@ -129,6 +130,12 @@ We also have some helpful videos on our
 [Flutter Youtube channel][]! In particular, check
 out the Flutter in Focus series,
 and learn about other series on our [videos][] page.
+
+First up, why use Flutter? What makes it different than other
+app frameworks?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+How is Flutter different for app development?
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>

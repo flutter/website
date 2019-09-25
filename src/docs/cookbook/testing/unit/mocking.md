@@ -141,7 +141,7 @@ main() {
       when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
           .thenAnswer((_) async => http.Response('{"title": "Test"}', 200));
 
-      expect(await fetchPost(client), isInstanceOf<Post>());
+      expect(await fetchPost(client), const TypeMatcher<Post>());
     });
 
     test('throws an exception if the http call completes with an error', () {
