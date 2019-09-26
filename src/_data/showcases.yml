@@ -19,7 +19,7 @@
   video_frame_image: showcase/video-frames/tencent@.jpg
   quote_testimonial: true
   quote: >
-    When using Flutter, 90% of the code became multi-platform and only needed to
+    When using Flutter, 90% of the code became multi-platform and only needed to be
     updated once.
   quote_writer: Fei Song, Senior Software Engineer
   logo_has_name: true
@@ -29,8 +29,8 @@
 - name: The New York Times
   featured: true
   description: >
-    Flutter helped bring the popular Ken Ken puzzle to life on Android, iOS,
-    Mac, Windows, and the Web.
+    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
+    Mac, Windows, and the web.
   logo_src: showcase/cards/tnyt-logo.png
   logo_has_name: true
   learn_more_cta: Try it now
@@ -40,7 +40,7 @@
 - name: Square
   featured: true
   description: >
-    The Flutter plugin for Square Reader SDK enables developers to build apps
+    The Flutter plugin for our Square Reader SDK enables developers to build apps
     for merchants that take in-person payments.
   logo_src: showcase/cards/square-logo.png
   logo_has_name: true
@@ -54,6 +54,8 @@
     Flutter helps power an ever-growing number of Google Assistant apps.
   logo_src: showcase/cards/g_assistant-logo.png
   logo_has_name: false
+  learn_more_cta: Learn more
+  learn_more_link: https://developers.googleblog.com/2019/05/Flutter-io19.html
   card_image: showcase/cards/g_assistant-top@.png
 
 - name: Reflectly
