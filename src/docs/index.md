@@ -49,6 +49,7 @@ but more will be coming.
 
 New and updated docs on the site include:
 
+* We've revamped the [Showcase](/showcase) page.
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
