@@ -579,7 +579,7 @@ a `FlutterMethodChannel` tied to the channel name
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.bynaryMessenger)
+                                              binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
       // Note: this method is invoked on the UI thread.
