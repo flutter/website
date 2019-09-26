@@ -166,7 +166,9 @@ the auto-generated "example" app (`example/lib/main.dart`):
         ),
 ```
 
-## iOS and macOS
+## Other use cases
+
+### iOS and macOS
 
 Dynamically linked libraries are automatically loaded by
 the dynamic linker when the app starts. Their constituent
@@ -180,7 +182,7 @@ Symbols statically linked into the application binary
 can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-### Platform library
+#### Platform library
 
 To link against a platform library,
 use the following instructions:
@@ -191,14 +193,14 @@ use the following instructions:
    section.
 1. Select the system library to link against.
 
-### First-party library
+#### First-party library
 
 A first-party native library can be included either
 as source or as a (signed) `.framework` file.
 It's probably possible to include statically linked
 archives as well, but it requires testing.
 
-### Source code
+#### Source code
 
 To link directly to source code,
 use the following instructions:
@@ -227,7 +229,7 @@ extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute(
 </li>
 </ol>
 
-### Compiled (dynamic) library
+#### Compiled (dynamic) library
 
 To link to a compiled dynamic library,
 use the following instructions:
@@ -239,7 +241,7 @@ use the following instructions:
 1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
 
-### Open-source third-party library
+#### Open-source third-party library
 
 To create a Flutter plugin that includes both
 C/C++/Objective-C _and_ Dart code,
@@ -254,7 +256,7 @@ The native code is then statically linked into
 the application binary of any app that uses
 this plugin.
 
-### Closed-source third-party library
+#### Closed-source third-party library
 
 To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
@@ -271,9 +273,9 @@ to Pub. Instead, this plugin should be downloaded
 from a trusted third-party,
 as shown in the CocoaPods example.
 
-## Android
+### Android
 
-### Platform library
+#### Platform library
 
 To link against a platform library,
 use the following instructions:
@@ -294,20 +296,20 @@ You might need to update the Android manifest
 file of the app or plugin if indicated by
 the documentation.
 
-### First-party library
+#### First-party library
 
 The process for including native code in source
 code or binary form is the same for an app or
 plugin.
 
-### Open-source third-party
+#### Open-source third-party
 
 Follow the [Add C and C++ code to your project][]
 instructions in the Android docs to
 add native code and support for the native
 code toolchain (either CMake or `ndk-build`).
 
-### Closed-source third-party library
+#### Closed-source third-party library
 
 To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
@@ -321,7 +323,7 @@ in binary form, use the following instructions:
    downloaded from a repository, such as
    JCenter.
 
-## Web
+### Web
 
 Plugins are not yet supported for web apps.
 
