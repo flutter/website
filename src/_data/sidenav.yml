@@ -125,6 +125,8 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
+        - title: C and C++ interop
+          permalink: /docs/development/platform-integration/c-interop
         - title: Web FAQ
           permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
