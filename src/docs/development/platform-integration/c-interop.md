@@ -4,10 +4,16 @@ description: "To use C code in your Flutter program, use the dart:ffi library (c
 ---
 
 Flutter mobile can use the [dart:ffi][] library
-to call native C APIs. The _ffi_ acronym stands for
+to call native C APIs. _FFI_ stands for
 [_foreign function interface._][FFI]
 Other terms for similar functionality include
 _native interface_ and _language bindings._
+
+Before your library or program can use the FFI library
+to bind to native code, you must ensure that the
+native code is loaded and its symbols are visible to Dart.
+This page focuses on compiling, packaging,
+and loading native code within a Flutter plugin or app.
 
 This tutorial demonstrates how to bundle C/C++
 sources in a Flutter plugin and bind to them using
@@ -32,6 +38,27 @@ exposes it through a Dart plugin named "native_add".
   For more information on Flutter's channels,
   see [Upgrading Flutter][].
 {{ site.alert.end }}
+
+### Dynamic vs static linking
+
+A native library can be linked into an app either
+dynamically or statically. A statically linked library
+is embedded into the app's executable image,
+and is loaded when the app starts.
+
+Symbols from a statically linked library can be
+loaded using `DynamicLibrary.executable` or
+`DynamicLibrary.process`.
+
+A dynamically linked library, by contrast, is distributed
+in a separate file or folder within the app,
+and loaded on-demand. On Android, a dynamically
+linked library is distributed as a set of `.so` (ELF)
+files, one for each architecture. On iOS,
+it's distributed as a `.framework` folder.
+
+A dynamically linked library can be loaded into
+Dart via `DynamicLibrary.open`.
 
 API documentation is available from the Dart dev channel:
 [Dart API reference documentation][].
@@ -60,19 +87,22 @@ above the podspec file, but Gradle allows you to point
 to the `ios` folder. It's not required to use the same
 sources for both iOS and Android;
 you may, of course, add Android-specific sources
-to the `android` folder and modify the `CMakeLists.txt`
-file appropriately.
+to the `android` folder and modify `CMakeLists.txt`
+appropriately.
 
 The FFI library can only bind against C symbols,
-so in C++ these symbols must be marked "extern C".
+so in C++ these symbols must be marked `extern C`.
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
-to prevent a linker from discarding the symbols
+to prevent the linker from discarding the symbols
 during link-time optimization.
 
-For example:
+For example,
+to create a C++ file named `ios/Classes/native_add.cpp`,
+use the following instructions. Start from the root
+directory of your project:
 
-```
+```bash
 cat > ios/Classes/native_add.cpp << EOF
 #include <stdint.h>
 
@@ -89,9 +119,10 @@ compiled within the Xcode build system.
 
 On Android, you need to create a `CMakeLists.txt` file
 to define how the sources should be compiled and point
-Gradle to it.
+Gradle to it. From the root of your project directory,
+use the following instructions
 
-```
+```bash
 cat > android/CMakeLists.txt << EOF
 cmake_minimum_required(VERSION 3.4.1)  # for example
 
@@ -142,7 +173,7 @@ final DynamicLibrary nativeAddLib =
 ```
 
 Note that on Android the native library is named
-in the `CMakeLists.txt` file (see above),
+in `CMakeLists.txt` (see above),
 but on iOS it takes the plugin's name.
 
 With a handle to the enclosing library,
