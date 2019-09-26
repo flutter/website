@@ -54,6 +54,8 @@
     Flutter helps power an ever-growing number of Google Assistant apps.
   logo_src: showcase/cards/g_assistant-logo.png
   logo_has_name: false
+  learn_more_cta: Learn more
+  learn_more_link: https://developers.googleblog.com/2019/05/Flutter-io19.html
   card_image: showcase/cards/g_assistant-top@.png
 
 - name: Reflectly
