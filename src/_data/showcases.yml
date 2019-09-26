@@ -29,7 +29,7 @@
 - name: The New York Times
   featured: true
   description: >
-    Flutter helped bring the popular Ken Ken puzzle to life on Android, iOS,
+    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
     Mac, Windows, and the web.
   logo_src: showcase/cards/tnyt-logo.png
   logo_has_name: true
