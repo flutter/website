@@ -9,6 +9,13 @@ to call native C APIs. The _ffi_ acronym stands for
 Other terms for similar functionality include
 _native interface_ and _language bindings._
 
+This tutorial demonstrates how to bundle C/C++
+sources in a Flutter plugin and bind to them using
+the Dart FFI library on both Android and iOS.
+In this walkthrough, you'll create a C function
+that implements 32-bit addition and then
+exposes it through a Dart plugin named "native_add".
+
 {{ site.alert.note }}
   The dart:ffi library is [in active development][ffi issue]
   and isn't complete yet. Note that the API is likely to have
@@ -29,6 +36,136 @@ _native interface_ and _language bindings._
 API documentation is available from the Dart dev channel:
 [Dart API reference documentation][].
 
+## Step 1: Create a plugin
+
+If you already have a plugin, skip this step.
+
+To create a plugin called "native_add",
+do the following:
+
+```dart
+$ flutter create --template=plugin native_add
+$ cd native_add
+```
+
+## Step 2: Add C/C++ sources
+
+You need to inform both the Android and iOS build
+systems about the native code so the code can be compiled
+and linked appropriately into the final application.
+
+You add the sources to the `ios` folder,
+because CocoaPods doesn't allow including sources
+above the podspec file, but Gradle allows you to point
+to the `ios` folder. It's not required to use the same
+sources for both iOS and Android;
+you may, of course, add Android-specific sources
+to the `android` folder and modify the `CMakeLists.txt`
+file appropriately.
+
+The FFI library can only bind against C symbols,
+so in C++ these symbols must be marked "extern C".
+You should also add attributes to indicate that the
+symbols are referenced from Dart,
+to prevent a linker from discarding the symbols
+during link-time optimization.
+
+For example:
+
+```
+cat > ios/Classes/native_add.cpp << EOF
+#include <stdint.h>
+
+extern "C" __attribute__((visibility("default"))) __attribute((used))
+int32_t native_add(int32_t x, int32_t y) {
+    return x + y;
+}
+EOF
+```
+
+The podspec fle (`ios/native_add.podspec`) automatically
+includes all C/C++ files in `ios/Classes`, and they are
+compiled within the Xcode build system.
+
+On Android, you need to create a `CMakeLists.txt` file
+to define how the sources should be compiled and point
+Gradle to it.
+
+```
+cat > android/CMakeLists.txt << EOF
+cmake_minimum_required(VERSION 3.4.1)  # for example
+
+add_library( native_add
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             ../ios/Classes/native_add.cpp )
+EOF
+```
+
+Finally, add an `externalNativeBuild` section to
+`android/build.gradle`. For example:
+
+```
+android {
+  // ...
+  externalNativeBuild {
+    // Encapsulates your CMake build configurations.
+    cmake {
+      // Provides a relative path to your CMake build script.
+      path "CMakeLists.txt"
+    }
+  }
+  // ...
+}
+```
+
+## Step 3: Load the code using the FFI library
+
+In this example, you can add the following code to
+`lib/native_add.dart`. However the location of the
+Dart binding code is not important.
+
+First, you must create a `DynamicLibrary` handle to
+the native code. This step varies between iOS and Android:
+
+```dart
+import 'dart:ffi';  // For FFI
+import 'dart:io';   // For Platform.isX
+
+final DynamicLibrary nativeAddLib =
+  Platform.isAndroid
+    ? DynamicLibrary.open("libnative_add.so")
+    : DynamicLibrary.open("native_add.framework/native_add");
+```
+
+Note that on Android the native library is named
+in the `CMakeLists.txt` file (see above),
+but on iOS it takes the plugin's name.
+
+With a handle to the enclosing library,
+you can resolve the `native_add` symbol:
+
+
+```dart
+final int Function(int x, int y) nativeAdd =
+  nativeAddLib
+    .lookup<NativeFunction<Int32 Function(Int32, Int32)>>("native_add")
+    .asFunction();
+```
+
+Finally, you can call it. To demonstrate this within
+the auto-generated "example" app (`example/lib/main.dart`):
+
+```
+// Inside of _MyAppState.build:
+        body: Center(
+          child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
+        ),
+```
+
 ## iOS and macOS
 
 Dynamically linked libraries are automatically loaded by
@@ -38,17 +175,14 @@ You can also get a handle to the library with
 [`DynamicLibrary.open`][] to restrict the scope of
 symbol resolution, but it's unclear how Apple's
 review process handles this.
-(**Question: I find this, and the next paragraph, to be
- confusing. Why does the developer care about this?
- Can we find a better/more compelling way to word it?**)
 
 Symbols statically linked into the application binary
 can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
-### Link to a system library shipped with a target device
+### Platform library
 
-To link against a platform's system library,
+To link against a platform library,
 use the following instructions:
 
 1. In Xcode, open `Runner.xcodeproj`.
@@ -57,7 +191,14 @@ use the following instructions:
    section.
 1. Select the system library to link against.
 
-### Link directly to source code
+### First-party library
+
+A first-party native library can be included either
+as source or as a (signed) `.framework` file.
+It's probably possible to include statically linked
+archives as well, but it requires testing.
+
+### Source code
 
 To link directly to source code,
 use the following instructions:
@@ -67,13 +208,10 @@ use the following instructions:
 </li>
 <li markdown="1">Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
-    (**Question: Is this added to Runner.xcodeproj?
-     I'm assuming so. Also, do we have an example?**)
 </li>
 <li markdown="1">Add the following prefix to the
     exported symbol declarations to ensure they
     are visible to Dart:
-    (**Question: Is "exported symbol declarations" in the same file?**)
 
 **C/C++/Objective-C**
 
@@ -89,21 +227,19 @@ extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute(
 </li>
 </ol>
 
-### Link to a compiled library
+### Compiled (dynamic) library
 
 To link to a compiled dynamic library,
 use the following instructions:
 
 1. If a properly signed `Framework` file is present,
-   open `Runner.xcodeproj` and add it to
-   it to the **Embedded Binaries** section.
+   open `Runner.xcodeproj`.
+1. Add the framework file to to the **Embedded Binaries**
+   section.
 1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
 
-(**Question: If no Framework file is present, or if it IS
- present, but not properly signed, what then?**)
-
-### Create a plugin containing Dart and native code
+### Open-source third-party library
 
 To create a Flutter plugin that includes both
 C/C++/Objective-C _and_ Dart code,
@@ -118,7 +254,7 @@ The native code is then statically linked into
 the application binary of any app that uses
 this plugin.
 
-### Create a plugin distributed in binary form
+### Closed-source third-party library
 
 To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
@@ -137,17 +273,15 @@ as shown in the CocoaPods example.
 
 ## Android
 
-### Link to a system library shipped with a target device
+### Platform library
 
-To link against a platform's system library,
+To link against a platform library,
 use the following instructions:
 
 1. Find the desired library in the
    [Android NDK Native APIs][]
    list in the Android docs.
    This lists stable native APIs.
-   (**Question: What if it's not in the list?
-   Are you then unable to make it work?**)
 1. Load the library using
    [`DynamicLibrary.open`][].
    For example, to load OpenGL ES (v3):
@@ -160,16 +294,20 @@ You might need to update the Android manifest
 file of the app or plugin if indicated by
 the documentation.
 
-### Create a plugin containing Dart and native code
+### First-party library
+
+The process for including native code in source
+code or binary form is the same for an app or
+plugin.
+
+### Open-source third-party
 
 Follow the [Add C and C++ code to your project][]
 instructions in the Android docs to
 add native code and support for the native
 code toolchain (either CMake or `ndk-build`).
-(**Comment: Wow, the instructions on that page are
- long and complex. It's rather intimidating.**)
 
-### Create a plugin distributed in binary form
+### Closed-source third-party library
 
 To create a Flutter plugin that includes Dart
 source code, but distribute the C/C++ library
