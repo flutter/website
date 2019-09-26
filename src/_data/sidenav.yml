@@ -1,6 +1,6 @@
 - title: Get started
   children:
-    - title: 1. Try & Install
+    - title: 1. Install
       permalink: /docs/get-started/install
     - title: 2. Set up an editor
       permalink: /docs/get-started/editor
