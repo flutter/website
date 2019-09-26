@@ -1,36 +1,29 @@
 ---
-title: Try & Install
+title: Install
 next:
   title: Set up an editor
   path: /docs/get-started/editor
-
-js:
-- url: /assets/dash/js/dartpad_picker_main.dart.js
-  defer: true
 ---
 
-<div>
-<h2 class="install">Try Flutter in your browser</h2>
-  <div class="dash-dartpad">
-    <a name="try-dart"></a>
-    <select id="dartpad-select"></select>
-    <div id="dartpad-host"></div><br>
-  </div>
-</div>
+Select the operating system on which you are installing Flutter:
 
-<h2>Install Flutter now</h2>
-<h4>Select the operating system on which you are installing Flutter:</h4><br>
+{{site.alert.note}}
+  **Are you on Chrome OS?**
+
+  If so, see the official [Chrome OS Flutter installation docs!](/docs/get-started/install/chromeos)
+{{site.alert.end}}
+
 <div class="card-deck mb-8">
-  {% for os in site.os-list %}
-    <a class="card" href="/docs/get-started/install/{{os | downcase | remove: ' ' }}">
-      <div class="card-body">
-        <header class="card-title text-center m-0">
-          {{os}}
-          <i class="fab fa-{{os | downcase}}"></i>
-        </header>
-      </div>
-    </a>
-  {% endfor %}
+{% for os in site.os-list %}
+  <a class="card" href="/docs/get-started/install/{{os | downcase}}">
+    <div class="card-body">
+      <header class="card-title text-center m-0">
+        {{os}}
+        <i class="fab fa-{{os | downcase}}"></i>
+      </header>
+    </div>
+  </a>
+{% endfor %}
 </div>
 
 {{site.alert.important}}
