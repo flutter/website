@@ -42,15 +42,15 @@ apps with responsive design:
 
 Other useful widgets and classes for creating a responsive UI:
 
-* [`AspectRatio`][] API
-* [`CustomSingleChildLayout`][] API
-* [`CustomMultiChildLayout`][] API
-* [`FittedBox`][] API
-* [`FractionallySizedBox`][] API
-* [`LayoutBuilder`][] API and
-* [`MediaQuery`][] API and
-* [`MediaQueryData`][] API
-* [`OrientationBuilder`][] API
+* [`AspectRatio`][]
+* [`CustomSingleChildLayout`][]
+* [`CustomMultiChildLayout`][]
+* [`FittedBox`][]
+* [`FractionallySizedBox`][]
+* [`LayoutBuilder`][]
+* [`MediaQuery`][]
+* [`MediaQueryData`][]
+* [`OrientationBuilder`][]
 
 For more information, here are a few resources,
 including contributions from the Flutter community:
