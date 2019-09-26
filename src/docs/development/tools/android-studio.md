@@ -60,15 +60,17 @@ To create a new Flutter project from the Flutter starter app template:
 To create a new Flutter project containing existing Flutter source code
 files:
 
- 1. In the IDE, click **Create New Project** from the **Welcome** window or
-    **File > New > Project** from the main IDE window.
+ 1. In the IDE, click **Create New Project** from the
+    **Welcome** window or **File > New > Project**
+    from the main IDE window.
 
     {{site.alert.important}}
-      Do *not* use the **New > Project from existing sources** option for
-      Flutter projects.
+      Do *not* use the **New > Project from existing sources**
+      option for Flutter projects.
     {{site.alert.end}}
  1. Select **Flutter** in the menu, and click **Next**.
- 1. Under **Project location** enter, or browse to, the directory holding your
+ 1. Under **Project location** enter, or browse to,
+    the directory holding your
     existing Flutter source code files.
  1. Click **Finish**.
 
@@ -117,14 +119,23 @@ Flutter-specific buttons on the right-hand side of the toolbar.
 
 {{site.alert.note}}
   If the Run and Debug buttons are disabled, and no targets are listed,
-  Flutter has not been able to discover any connected iOS or Android devices or
-  simulators.  You need to connect a device, or start a simulator, to proceed.
+  Flutter has not been able to discover any connected iOS or
+  Android devices or simulators.
+  You need to connect a device, or start a simulator, to proceed.
 {{site.alert.end}}
 
  1. Locate the **Flutter Target Selector** drop-down button.
     This shows a list of available targets.
  2. Select the target you want your app to be started on.
-    When you connect devices, or start simulators, additional entries appear.
+    When you connect devices, or start simulators,
+    additional entries appear.
+
+{{site.alert.note}}
+  If you want to try running your app on the web,
+  but the **Chrome (web)** target doesn't appear in the
+  list of targets, make sure you've enabled web, as
+  described in [Building a web application][].
+{{site.alert.end}}
 
 ### Run app without breakpoints
 
@@ -388,6 +399,7 @@ Prior to filing new issues:
 
 When filing new issues, include the output of [`flutter doctor`][].
 
+[Building a web application]: /docs/get-started/web
 [DevTools]: /docs/development/tools/devtools
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved

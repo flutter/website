@@ -3,6 +3,10 @@ title: Using the Logging view
 description: Learn how to use the DevTools logging view.
 ---
 
+{{site.alert.note}}
+  The logging view works with Flutter mobile and web applications.
+{{site.alert.end}}
+
 ## What is it?
 
 The logging view displays events from the Dart runtime,
@@ -23,9 +27,9 @@ By default, the logging view shows:
 ## Logging from your application
 
 To implement logging in your code,
-see the [Logging][] and
-[Showing network traffic][] sections in the
-[Debugging Flutter apps programmatically][] page.
+see the [Logging][] section in the
+[Debugging Flutter apps programmatically][]
+page.
 
 ## Clearing logs
 
@@ -34,4 +38,3 @@ click the **Clear logs** button.
 
 [Logging]: /docs/testing/code-debugging#logging
 [Debugging Flutter apps programmatically]: /docs/testing/code-debugging
-[Showing network traffic]: /docs/testing/code-debugging#showing-network-traffic

@@ -6,9 +6,9 @@ title: Rendering in Flutter
 
 The Flutter render tree is a low-level layout and painting system based on a
 retained tree of objects that inherit from `RenderObject`. Most developers
-using Flutter will not need to interact directly with the rendering tree.
+using Flutter won't need to interact directly with the rendering tree.
 Instead, most developers should use
-[widgets](/widgets-intro), which are built using the render tree.
+[widgets][], which are built using the render tree.
 
 ### Base Model
 
@@ -19,14 +19,15 @@ concrete layout models that can co-exist in the same tree. For example, the base
 model does not commit to a fixed number of dimensions or even a cartesian
 coordinate system. In this way, a single render tree can contain render objects
 operating in three-dimensional space together with other render objects
-operating in two-dimensional space, e.g., on the face of a cube in the three-
-dimensional space. Moreover, the two-dimensional layout might be partially
+operating in two-dimensional space, for example,
+on the face of a cube in the three-dimensional space.
+Moreover, the two-dimensional layout might be partially
 computed in cartesian coordinates and partially computed in polar coordinates.
 These distinct models can interact during layout, for example determining the
 size of the cube by the height of a block of text on the cube's face.
 
-Not entirely free-wheeling, the base model does impose some structure on the
-render tree:
+Not entirely free-wheeling,
+the base model does impose some structure on the render tree:
 
  * Subclasses of `RenderObject` must implement a `performLayout` function that
    takes as input a `constraints` object provided by its parent. `RenderObject`
@@ -58,8 +59,8 @@ render tree:
    type signature on `hitTest`, but most implementations will take an argument
    of type `HitTestResult` (or, more likely, a model-specific subclass of
    `HitTestResult`) as well as an object that describes the location at which
-   the user provided input (e.g., a `Point` for a two-dimensional cartesian
-   model).
+   the user provided input (for example,
+   a `Point` for a two-dimensional cartesian model).
 
  * Finally, subclasses of `RenderObject` can override the default, do-nothing
    implementations of `handleEvent` and `rotate` to respond to user input and
@@ -164,9 +165,8 @@ Writing new subclasses
 If you want to define a `RenderObject` that uses a new coordinate
 system, then you should inherit straight from `RenderObject`. Examples
 of doing this can be found in `RenderBox`, which deals in
-rectangles in cartesian space, and in the [sector_layout.dart
-example]({{site.github}}/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart), which
-implements a toy model based on polar coordinates. The `RenderView`
+rectangles in cartesian space, and in the [sector_layout.dart example][],
+which implements a toy model based on polar coordinates. The `RenderView`
 class, which is used internally to adapt from the host system to this
 rendering framework, is another example.
 
@@ -176,7 +176,7 @@ A subclass of `RenderObject` must fulfill the following contract:
   dealing with children. Using `RenderObjectWithChildMixin` or
   `ContainerRenderObjectMixin` can make this easier.
 
-* Information about the child managed by the parent, e.g. typically
+* Information about the child managed by the parent, for example, typically
   position information and configuration for the parent's layout,
   should be stored on the `parentData` member; to this effect, a
   ParentData subclass should be defined and the `setupParentData()`
@@ -236,7 +236,7 @@ A `RenderBox` subclass is required to implement the following contract:
   BoxParentData subclass and override setupParentData() to initialize
   the child's parent data appropriately, as in the following example.
   (If the subclass has an opinion about what type its children must
-  be, e.g. the way that `RenderBlock` wants its children to be
+  be, for example, the way that `RenderBlock` wants its children to be
   `RenderBox` nodes, then change the `setupParentData()` signature
   accordingly, to catch misuse of the method.)
 
@@ -375,9 +375,9 @@ A `RenderBox` subclass is required to implement the following contract:
 Performance rules of thumb
 --------------------------
 
-* Avoid using transforms where mere maths would be sufficient (e.g.
-  draw your rectangle at x,y rather than translating by x,y and
-  drawing it at 0,0).
+* Avoid using transforms where mere math would be sufficient
+  (for example, draw your rectangle at x,y rather than
+  translating by x,y and drawing it at 0,0).
 
 * Avoid using save/restore on canvases.
 
@@ -400,3 +400,7 @@ void main() {
   // ...
 }
 ```
+
+
+[sector_layout.dart example]: {{site.github}}/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart
+[widgets]: /docs/development/ui/widgets-intro

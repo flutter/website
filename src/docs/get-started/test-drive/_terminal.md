@@ -1,6 +1,8 @@
 <div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab" markdown="1">
 
-## Create the app
+## Create the app  {#create-app}
+
+{% include_relative _web-app.md  %}
 
 Use the `flutter create` command to create a new project:
 

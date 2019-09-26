@@ -34,6 +34,9 @@ dependencies:
   http: <latest_version>
 ```
 
+Import the http package.
+```import 'package:http/http.dart' as http;```
+
 ## 2. Make a network request
 
 In this example, fetch a sample post from the

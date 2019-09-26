@@ -1,5 +1,5 @@
 ---
-title: Layout tutorial
+title: Building layouts
 short-title: Tutorial
 description: Learn how to build a layout.
 diff2html: true
