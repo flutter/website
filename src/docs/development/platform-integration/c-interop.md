@@ -237,7 +237,7 @@ To link directly to source code,
 use the following instructions:
 
 <ol markdown="1">
-<li markdown="1">In Xcode, open `Runner.xcodeprof`.
+<li markdown="1">In Xcode, open `Runner.xcodeproj`.
 </li>
 <li markdown="1">Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
