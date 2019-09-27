@@ -82,9 +82,10 @@ to set up physical device deployment in Xcode.
  1. Install and set up CocoaPods by running the following commands:
 
     ```terminal
-    $ sudo gem install cocoapods
+    $ sudo gem install cocoapods -v 1.7.5
     $ pod setup
     ```
+    {{site.alert.warning}} Versions of CocoaPods greater than 1.7.5 are not compatible with the most recent stable version of Flutter. See [this issue](https://github.com/flutter/flutter/issues/41253) for details and a forthcoming fix. {{site.alert.end}}
 
  1. Follow the Xcode signing flow to provision your project:
 
