@@ -1,0 +1,3 @@
+---
+title: Jank no more
+---
