@@ -82,9 +82,13 @@ to set up physical device deployment in Xcode.
  1. Install and set up CocoaPods by running the following commands:
 
     ```terminal
-    $ sudo gem install cocoapods
+    $ sudo gem install cocoapods -v 1.7.5
     $ pod setup
     ```
+    {{site.alert.note}}
+      The `pod setup` command fails for versions of CocoaPods greater
+      than 1.7.5.   For more information, see [issue 41252][].
+    {{site.alert.end}}
 
  1. Follow the Xcode signing flow to provision your project:
 
