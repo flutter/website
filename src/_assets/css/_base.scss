@@ -1,3 +1,47 @@
+$dash-dartpad-border: lightgray;
+$dash-callout: #121a26;
+$dash-off-white: #f8f9fa;
+$site-color-card-link: #40C4FF;
+
+.dash-dartpad {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $site-color-white;
+
+  h2 {
+    font-size: 43px;
+    margin: 1.5em 0 0.5em 0;
+    line-height: 1.2;
+    color: $site-color-black;
+  }
+
+  h3 {
+    color: $site-color-black;
+  }
+
+  select {
+    margin: 8px 0 8px 0;
+  }
+
+  a {
+    color: $site-color-primary;
+  }
+
+  #dartpad-host {
+    height: 512px;
+    width: 100%;
+    max-width: 896px;
+    display: flex;
+
+    iframe {
+      flex: 1;
+      border: 1px solid $dash-dartpad-border;
+    }
+  }
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
