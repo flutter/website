@@ -9,6 +9,11 @@ description: >
   single codebase.  Flutter works with existing code,
   is used by developers and organizations around the world,
   and is free and open source.
+js:
+- url: /assets/dash/js/detect_safari.js
+  defer: true
+- url: /assets/dash/js/dartpad_picker_main.dart.js
+  defer: true
 
 ---
 
@@ -39,7 +44,7 @@ description: >
             {% asset homepage/carousel/slide_4-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
             {% asset homepage/carousel/slide_4-layer_2.png class='homepage__hero__image homepage__hero__image--layer-2' %}
             {% asset homepage/carousel/slide_4-layer_1.png class='homepage__hero__image homepage__hero__image--layer-3' %}
-            <h1 class="homepage__hero__text">Publish <span class="color-white">mobile, web, & desktop</span> apps</h1>
+            <h1 class="homepage__hero__text">Target <span class="color-white">mobile, web, & desktop</span> apps</h1>
             {% asset homepage/carousel/phone_bezel.png class='homepage__hero__phone-bezel' %}
         </div>
     </div>
@@ -267,11 +272,11 @@ description: >
 
 <div class="homepage__news card-deck">
     <div class="card">
-        {% asset homepage/news-1.png alt='A news item image' class="card-img-top" %}
+        {% asset homepage/news-1.jpg alt='A news item image' class="card-img-top" %}
         <div class="card-body">
             <p class="card-text"><small class="text-muted">News</small></p>
-            <h3>Announcing Flutter 1.7</h3>
-            <a href="https://medium.com/flutter/announcing-flutter-1-7-9cab4f34eacf">Read More</a>
+            <h3>Announcing Flutter 1.9</h3>
+            <a href="https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1">Read More</a>
         </div>
     </div>
     <div class="card">
@@ -284,9 +289,23 @@ description: >
     </div>
 </div>
 
+
+<!-- Do not show DartPad on Safari -->
+<section id="dartpad-landing-page" class="landing-page__cta card text-center">
+    <div class="card-body">
+        <div class="dash-dartpad">
+            <a name="try-dart"></a>
+            <h2>Try Flutter in your browser</h2>
+            <select id="dartpad-select"></select>
+            <div id="dartpad-host"></div>
+            <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
+        </div>
+    </div>
+</section>
+
 <section class="landing-page__cta card text-center">
     <div class="card-body">
-        <h2 class="landing-page__cta__headline">Try Flutter today.</h2>
+        <h2 class="landing-page__cta__headline">Install Flutter today.</h2>
         <p class="landing-page__cta__body">It’s free and open source.</p>
         <a class="landing-page__cta__button btn btn-primary btn-cta" href="/docs/get-started/install">Get started</a>
     </div>
