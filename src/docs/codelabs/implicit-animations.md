@@ -1,17 +1,17 @@
 ---
-title: "Codelab: Implicit Animations"
-description: "A codelab that uses DartPad to teach Animations concepts."
+title: "Implicit Animations"
+description: "A codelab that uses interactive examples and exercises to teach concepts and use of Flutter's implicitly animated widgets."
 toc: true
 ---
-# Welcome
 
-## Example 0: Counter (no animation)
+Welcome to the implicit animations codelab, where to learn how to use Flutter widgets that make it easy to 
+create animations for specific properties. 
 
-<iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=e7f05290e2adf6864571cecbcb10429e"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
-  frameborder="no" height="2000" width="100%"
-></iframe>
+To get the most out of this codelab, you should have the following:
+- Basic knowledge about how to make a Flutter app
+
+This codelab covers the following material:
+- 
 
 ## Example 1: AnimatedOpacity
 
