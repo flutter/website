@@ -410,7 +410,7 @@ set to `false`.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
-Provider.of<CartModel>(context, [!listen: false!]).add(item);
+Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```
 
 Using the above line in a build method will not cause this widget to
