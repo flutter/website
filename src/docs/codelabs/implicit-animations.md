@@ -2,7 +2,11 @@
 title: "Implicit Animations"
 description: "A codelab that uses interactive examples and exercises to teach concepts and use of Flutter's implicitly animated widgets."
 toc: true
+diff2html: true
 ---
+
+
+<?code-excerpt path-base="animation/implicit"?>
 
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
@@ -74,7 +78,59 @@ class _FadeInDemoState extends State<FadeInDemo> {!]
     return Column(children: <Widget>[
 {% endprettify %}
 
+<?code-excerpt "opacity{0,1}/lib/main.dart"?>
+```diff
+--- opacity0/lib/main.dart
++++ opacity1/lib/main.dart
+@@ -1,9 +1,17 @@
+ import 'package:flutter_web/material.dart';
+ import 'package:flutter_web_test/flutter_web_test.dart';
+ import 'package:flutter_web_ui/ui.dart' as ui;
+-const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
+-class FadeInDemo extends StatelessWidget {
++const owl_url =
++    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
++
++class FadeInDemo extends StatefulWidget {
++  _FadeInDemoState createState() => _FadeInDemoState();
++}
++
++class _FadeInDemoState extends State<FadeInDemo> {
++  double opacityLevel = 0.0;
++
+   Widget build(BuildContext context) {
+     return Column(children: <Widget>[
+       Image.network(owl_url),
+@@ -12,15 +20,19 @@
+             'Show Details',
+             style: TextStyle(color: Colors.blueAccent),
+           ),
+-          onPressed: () => null),
+-      Container(
++          onPressed: () => setState(() {
++                opacityLevel = 1.0;
++              })),
++      AnimatedOpacity(
++          duration: Duration(seconds: 3),
++          opacity: opacityLevel,
+           child: Column(
+-        children: <Widget>[
+-          Text('Type: Owl'),
+-          Text('Age: 39'),
+-          Text('Employment: None'),
+-        ],
+-      ))
++            children: <Widget>[
++              Text('Type: Owl'),
++              Text('Age: 39'),
++              Text('Employment: None'),
++            ],
++          ))
+     ]);
+   }
+ }
+```
 
 **2.** Second, change the `Container` widget to an `AnimatedOpacity` widget:
 
