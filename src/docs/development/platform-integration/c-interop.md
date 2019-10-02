@@ -106,7 +106,7 @@ directory of your project:
 cat > ios/Classes/native_add.cpp << EOF
 #include <stdint.h>
 
-extern "C" __attribute__((visibility("default"))) __attribute((used))
+extern "C" __attribute__((visibility("default"))) __attribute__((used))
 int32_t native_add(int32_t x, int32_t y) {
     return x + y;
 }
@@ -249,7 +249,7 @@ use the following instructions:
 **C/C++/Objective-C**
 
 ```objective-c
-extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute((used))
+extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
 ```
 
 **Swift**
