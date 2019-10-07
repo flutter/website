@@ -184,7 +184,7 @@
         - title: Code formatting
           permalink: /docs/development/tools/formatting
 
-- title: Testing & optimization
+- title: Testing & debugging
   permalink: /docs/testing
   children:
     - title: Debugging
@@ -199,9 +199,11 @@
       permalink: /docs/testing
       match-page-url-exactly: true
 
-- title: Performance
+- title: Performance & optimization
   permalink: /docs/perf
   children:
+    - title: Overview
+      permalink: /docs/perf
     - title: App size
       permalink: /docs/perf/app-size
     - title: Memory
@@ -213,6 +215,7 @@
       children:
       - title: Overview
         permalink: /docs/perf/rendering
+        match-page-url-exactly: true
       - title: Performance best practices
         permalink: /docs/perf/rendering/best-practices
       - title: Performance profiling
