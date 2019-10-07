@@ -1,9 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_test/flutter_web_test.dart';
 import 'package:flutter_web_ui/ui.dart' as ui;
-
-const owl_url =
-    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 class FadeInDemo extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -17,12 +15,12 @@ class FadeInDemo extends StatelessWidget {
           onPressed: () => null),
       Container(
           child: Column(
-            children: <Widget>[
-              Text('Type: Owl'),
-              Text('Age: 39'),
-              Text('Employment: None'),
-            ],
-          ))
+        children: <Widget>[
+          Text('Type: Owl'),
+          Text('Age: 39'),
+          Text('Employment: None'),
+        ],
+      ))
     ]);
   }
 }

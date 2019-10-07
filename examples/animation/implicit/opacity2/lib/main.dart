@@ -5,7 +5,11 @@ import 'package:flutter_web_ui/ui.dart' as ui;
 const owl_url =
     'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
-class FadeInDemo extends StatelessWidget {
+class FadeInDemo extends StatefulWidget {
+  _FadeInDemoState createState() => _FadeInDemoState();
+}
+
+class _FadeInDemoState extends State<FadeInDemo> {
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Image.network(owl_url),
@@ -15,7 +19,7 @@ class FadeInDemo extends StatelessWidget {
             style: TextStyle(color: Colors.blueAccent),
           ),
           onPressed: () => null),
-      Container(
+      AnimatedOpacity(
           child: Column(
             children: <Widget>[
               Text('Type: Owl'),
