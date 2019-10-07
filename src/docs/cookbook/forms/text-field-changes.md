@@ -1,8 +1,8 @@
 ---
 title: Handle changes to a text field
 prev:
-  title: Focus and text fields
-  path: /docs/cookbook/forms/focus
+  title: Create and style a text field
+  path: /docs/cookbook/forms/text-input
 next:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
