@@ -129,7 +129,8 @@
       { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit?usp=sharing", "type": 301 },
       { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
-      { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 }
+      { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 },
+      { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 }
     ]
   }
 }
