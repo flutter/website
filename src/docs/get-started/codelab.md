@@ -182,7 +182,7 @@ which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on the [Pub site]({{site.pub}}/flutter).
+packages, on the [pub.dev site]({{site.pub}}/flutter).
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies

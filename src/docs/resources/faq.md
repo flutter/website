@@ -582,7 +582,7 @@ For more information, see the Medium article
 ### Can I use JSON/XML/<wbr>protobuffers, etc. with Flutter?
 
 Absolutely. There are libraries on the
-[Pub site]({{site.pub}}) for JSON, XML,
+[pub.dev site]({{site.pub}}) for JSON, XML,
 protobufs, and many other utilities and formats.
 
 For a detailed writeup on using JSON with Flutter,

@@ -756,7 +756,7 @@ Plugins](/docs/development/packages-and-plugins/developing-packages).
 
 You can find many packages shared by Flutter developers in the [Flutter
 Packages]({{site.pub}}/flutter/) section of
-the [Pub site]({{site.pub}}).
+the [pub.dev site]({{site.pub}}).
 
 ## Flutter widgets
 

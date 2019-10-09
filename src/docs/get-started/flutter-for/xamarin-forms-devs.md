@@ -733,7 +733,7 @@ To implement this functionality in Flutter,
 create a native platform integration,
 or use an [existing plugin]({{site.pub}}/flutter/), such as
 [`url_launcher`]({{site.pub}}/packages/url_launcher), available with
-many other packages on the [Pub site]({{site.pub}}/flutter).
+many other packages on the [pub.dev]({{site.pub}}/flutter) site.
 
 ## Async UI
 
@@ -2280,7 +2280,7 @@ that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
 without having to write your own integration.
-Plugins are found on the [Pub site]({{site.pub}}),
+Plugins are found on the [pub.dev site]({{site.pub}}),
 Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
