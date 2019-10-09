@@ -49,11 +49,16 @@ but more will be coming.
 
 New and updated docs on the site include:
 
+* We've revamped the [Showcase](/showcase) page.
 * The Flutter layout codelab has been rewritten and
-  uses the updated DartPad, the browser-based tool for running
-  Dart code. DartPad now supports Flutter!
+  uses the updated DartPad, the browser-based tool for
+  running Dart code. DartPad now supports Flutter!
   [Try it out](/docs/codelabs/layout-basics)
   and let us know what you think.
+* A new page on [using the dart:ffi
+  library](/docs/development/platform-integration/c-interop)
+  to bind your app to native code (a feature currently under
+  development).
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
@@ -81,6 +86,15 @@ Other relevant docs:
   you how to migrate to the flutter package:
   [Upgrading from package:flutter_web to the Flutter
   SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
+* A new [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html)
+  widget, described in the API docs.
+  [ToggleButtons demo]({{site.github}}/csells/flutter_toggle_buttons)
+* A new [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
+  widget, also described in the API docs.
+  [ColorFiltered demo]({{site.github}}/csells/flutter_color_filter)
+* New behavior for the
+  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html)
+  widget.
 
 Happy Fluttering!
 

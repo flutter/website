@@ -76,10 +76,12 @@ Release mode for a web app means that:
   best performance.
 
 The command `flutter run --release` compiles to release mode.
-Your IDE supports this mode.  Android Studio, for example,
+Your IDE supports this mode. Android Studio, for example,
 provides a **Run > Run...** menu option, as well as a triangular 
 green run button icon on the project page.
-You can also compile to release mode with `flutter build --release`.
+You can compile to release mode for a specific target
+with `flutter build <target>`. For a list of supported targets,
+use `flutter help build`.
 
 For more information, see the docs on releasing
 [iOS][] and [Android][] apps.

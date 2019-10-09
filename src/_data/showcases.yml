@@ -19,7 +19,7 @@
   video_frame_image: showcase/video-frames/tencent@.jpg
   quote_testimonial: true
   quote: >
-    When using Flutter, 90% of the code became multi-platform and only needed to
+    When using Flutter, 90% of the code became multi-platform and only needed to be
     updated once.
   quote_writer: Fei Song, Senior Software Engineer
   logo_has_name: true
@@ -29,8 +29,8 @@
 - name: The New York Times
   featured: true
   description: >
-    Flutter helped bring the popular Ken Ken puzzle to life on Android, iOS,
-    Mac, Windows, and the Web.
+    Flutter helps bring the popular Ken Ken puzzle to life on Android, iOS,
+    Mac, Windows, and the web.
   logo_src: showcase/cards/tnyt-logo.png
   logo_has_name: true
   learn_more_cta: Try it now
@@ -40,7 +40,7 @@
 - name: Square
   featured: true
   description: >
-    The Flutter plugin for Square Reader SDK enables developers to build apps
+    The Flutter plugin for our Square Reader SDK enables developers to build apps
     for merchants that take in-person payments.
   logo_src: showcase/cards/square-logo.png
   logo_has_name: true
@@ -54,6 +54,8 @@
     Flutter helps power an ever-growing number of Google Assistant apps.
   logo_src: showcase/cards/g_assistant-logo.png
   logo_has_name: false
+  learn_more_cta: Learn more
+  learn_more_link: https://developers.googleblog.com/2019/05/Flutter-io19.html
   card_image: showcase/cards/g_assistant-top@.png
 
 - name: Reflectly
@@ -170,7 +172,7 @@
 
 - name: Byte Dance
   description: >
-    Today's Headlines, Xigua Video, Helo, Topbuzz, Watermelon Video, and many
+    Toutiao, Xigua Video, Helo, Topbuzz, and many
     other apps used by hundreds of millions of users have been developed with
     Flutter.
   logo_src: showcase/cards/byte_dance-logo.png
@@ -214,9 +216,10 @@
 
 - name: Groupon
   description: >
-    Groupon used Flutter to build new functionality, like voucher redemption and
-    detailed payment viewing into an existing app used by its merchants.
+    Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance, 
+    manage customer satisfaction, and get efficient support.
   logo_src: showcase/cards/groupon-logo.png
+  play_store_link: https://play.google.com/store/apps/details?id=com.groupon.redemption
   logo_has_name: true
   card_image: showcase/cards/groupon-top@.jpg
 
@@ -234,6 +237,8 @@
     Flutter helped Nubank in its mission to end the complexity of traditional
     banks and put financial control back in the hands of the user.
   logo_src: showcase/cards/nubank-logo.png
+  learn_more_cta: Learn more
+  learn_more_link: https://medium.com/building-nubank/https-medium-com-freire-why-nubank-chose-flutter-61b80b568772
   logo_has_name: true
   card_image: showcase/cards/nubank-top@.jpg
 
