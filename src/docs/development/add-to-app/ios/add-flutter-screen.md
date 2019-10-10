@@ -199,10 +199,11 @@ Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, e.g
 The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDelegate`:
 
 ```objective-c
+@interface AppDelegate ()
+@property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
+@end
+
 @implementation AppDelegate
-{
-    FlutterPluginAppLifeCycleDelegate *_lifeCycleDelegate;
-}
 
 - (instancetype)init {
     if (self = [super init]) {
