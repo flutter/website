@@ -51,7 +51,6 @@ you can download the latest version from
 Finally, if you migrated a plugin, publish the new AndroidX version to pub and update 
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.
 
-
 ### How do I migrate my existing module project to AndroidX?
 
 If your project is a module and contains a `.android` directory, add the following
