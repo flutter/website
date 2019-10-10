@@ -71,7 +71,7 @@ steps in previous section.
 ### How do I know if my project is using AndroidX?
 
 * **Apps and Modules**
-  Your project uses AndroidX, if the file `android/gradle.properties` or 
+  Your project uses AndroidX if the file `android/gradle.properties` or 
   `.android/gradle.properties`contains:
 
   ```
