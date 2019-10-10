@@ -67,12 +67,6 @@ Integrating the Flutter framework requires use of the CocoaPods dependency manag
 This is because the Flutter framework needs to be available also to any Flutter plugins
 that you might include in my_flutter.
 
-If you added Flutter to your existing iOS application prior to July 30, 2019 or
-`flutter --version` is less than `Flutter 1.8.4-pre.21`, you may need to
-[upgrade your environment](https://github.com/flutter/flutter/wiki/Upgrading-Flutter-added-to-existing-iOS-Xcode-project).  Ensure you are on the
-[master channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) and run
-`flutter upgrade` before following the migration instructions.
-
 Please refer to [cocoapods.org](https://cocoapods.org/) for how to install CocoaPods
 on your development machine, if needed.
 
@@ -100,7 +94,7 @@ following to integrate with your `my_flutter` app:
 3. Run `pod install`.
 
 Whenever you change the Flutter plugin dependencies in `some/path/my_flutter/pubspec.yaml`,
-you need to run `flutter packages get` from `some/path/my_flutter` to refresh the list
+you need to run `flutter pub get` from `some/path/my_flutter` to refresh the list
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 `some/path/MyApp`.
 
@@ -114,7 +108,7 @@ You should now be able to build the project using `⌘B`.
 If you have some reason to do this manually or debug why these steps aren't working, here's what's going on under the hood:
 
 1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type
-(debug/profile/release) as well as the architecture for your app (arm*, i386, x86_64, etc.).  CocoaPods pulls this in as a vendored
+(debug/profile/release) as well as the architecture for your app (arm*, x86_64, etc.).  CocoaPods pulls this in as a vendored
 framework and makes sure it gets embedded into your native app.
 2. `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and
 makes sure it gets embedded into your native app.
@@ -128,7 +122,7 @@ release type of `Flutter.framework` and `App.framework`.
 
 The proper place to do this will be specific to your host app. Here is an
 example that makes sense for the blank screen of the host app generated
-by Xcode 10.0.
+by Xcode.
 
 First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then define a FlutterEngine property, which help you to register a plugin without a FlutterViewController instance.
 
@@ -149,7 +143,7 @@ needs to override other methods here:
 ```objective-c
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 
-#include "AppDelegate.h"
+#import "AppDelegate.h"
 
 @implementation AppDelegate
 
