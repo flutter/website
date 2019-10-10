@@ -24,6 +24,7 @@
       { "source": "/docs/cookbook/testing/widget-test-finders", "destination": "/docs/cookbook/testing/widget/finders", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-introduction", "destination": "/docs/cookbook/testing/widget", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-tap-drag", "destination": "/docs/cookbook/testing/widget/tap-drag", "type": 301 },
+      { "source": "/docs/development/packages-and-plugins/androidx-compatibility", "destination": "/docs/development/androidx-migration", "type": 301 },
       { "source": "/docs/get-started", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/docs/get-started/flutter-for", "destination": "/docs/get-started/flutter-for/android-devs", "type": 301 },
       { "source": "/docs/get-started/install/null", "destination": "/docs/get-started/install", "type": 301 },
