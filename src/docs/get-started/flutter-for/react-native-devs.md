@@ -2487,4 +2487,4 @@ corresponding Flutter widget and common widget properties.
 [Flutter packages]: {{site.pub}}/flutter/
 [pub.dev]: {{site.pub}}
 [State management]: /docs/development/data-and-backend/state-mgmt
-[Using Packages]: (/docs/development/packages-and-plugins/using-packages
+[Using Packages]: /docs/development/packages-and-plugins/using-packages
