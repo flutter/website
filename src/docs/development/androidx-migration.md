@@ -20,7 +20,8 @@ than the Android platform.
 ### How do I migrate my existing app, plugin or host-editable module project to AndroidX?
 
 _You will need Android Studio 3.2 or higher. If you don’t have it installed, 
-you can download the latest version from [developer.android.com/studio](developer.android.com/studio)_.
+you can download the latest version from 
+[developer.android.com/studio](https://developer.android.com/studio)_.
 
 1. Open Android Studio.
 2. Select Open an **existing Android Studio Project**.
@@ -53,8 +54,8 @@ your `CHANGELOG.md` to indicate that this new version is compatible with Android
 
 ### How do I migrate my existing module project to AndroidX?
 
-If your project is a module and contains a `.android` directory. Then,
-add the following line to `pubspec.yaml`:
+If your project is a module and contains a `.android` directory, add the following
+line to `pubspec.yml`:
 
 ```yaml
  module:
