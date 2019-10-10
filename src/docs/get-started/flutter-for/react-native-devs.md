@@ -749,14 +749,11 @@ dependencies:
 import 'package:flutter/cupertino.dart';
 ```
 
-For more information, see [Using
-Packages](/docs/development/packages-and-plugins/using-packages) and
-[Developing Packages &
-Plugins](/docs/development/packages-and-plugins/developing-packages).
+For more information, see [Using Packages][] and
+[Developing Packages & Plugins][].
 
-You can find many packages shared by Flutter developers in the [Flutter
-Packages]({{site.pub}}/flutter/) section of
-the [Pub site]({{site.pub}}).
+You can find many packages shared by Flutter developers in the
+[Flutter packages][] section of [pub.dev][].
 
 ## Flutter widgets
 
@@ -2484,6 +2481,10 @@ corresponding Flutter widget and common widget properties.
 </div>
 
 
-[DevTools]: /docs/development/tools/devtools
-[State management]: /docs/development/data-and-backend/state-mgmt
 [async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support
+[Developing Packages & Plugins]: /docs/development/packages-and-plugins/developing-packages
+[DevTools]: /docs/development/tools/devtools
+[Flutter packages]: {{site.pub}}/flutter/
+[pub.dev]: {{site.pub}}
+[State management]: /docs/development/data-and-backend/state-mgmt
+[Using Packages]: /docs/development/packages-and-plugins/using-packages

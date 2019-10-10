@@ -169,7 +169,7 @@ Flutter engineers routinely read and respond on Discord.
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[`http`]: https://pub.dev/packages/http
+[`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
 [Logging]: /docs/development/tools/devtools/logging

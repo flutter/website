@@ -1178,8 +1178,8 @@ While there is a Podfile in the iOS folder in your
 Flutter project, only use this if you are adding native
 dependencies needed for per-platform integration. In general, use
 `pubspec.yaml` to declare external dependencies in Flutter.
-A good place to find great packages for Flutter is the
-[Pub site]({{site.pub}}/flutter/packages).
+A good place to find great packages for Flutter is on the
+[pub.dev]({{site.pub}}/flutter/packages) site.
 
 ## ViewControllers
 
@@ -1944,7 +1944,8 @@ In addition to directly using platform channels, you can use a variety of pre-ma
 the native and
 Dart code for a specific goal. For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter, without having to
-write your own integration. Plugins are found [on the Pub site]({{site.pub}}),
+write your own integration. Plugins are found on the
+[pub.dev]({{site.pub}}) site,
 Dart and Flutter's open source package repository. Some packages might
 support native integrations on iOS, or Android, or both.
 
@@ -1981,7 +1982,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
  * [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) for Firebase Messaging (FCM)
  * [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on the Pub site that
+You can also find some third-party Firebase plugins on pub.dev that
 cover areas not directly covered by the first-party plugins.
 
 ### How do I build my own custom native integrations?

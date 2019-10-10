@@ -187,7 +187,7 @@ The `crossAxisAlignment` property has five possible values:
   (`Text` class only, and requires that the
   `textBaseline` property is set to
   `TextBaseline.alphabetic`.  See the
-  [Text class](#text-class) section for an example.)
+  [Text widget](#text-widget) section for an example.)
 
 #### Example: Modifying cross axis alignment
 {:.no_toc}
