@@ -1982,7 +1982,7 @@ These plugins are first-party integrations, maintained by the Flutter team:
  * [`firebase_messaging`]({{site.pub-pkg}}/firebase_messaging) for Firebase Messaging (FCM)
  * [`cloud_firestore`]({{site.pub-pkg}}/cloud_firestore) for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on the pub.dev site that
+You can also find some third-party Firebase plugins on pub.dev that
 cover areas not directly covered by the first-party plugins.
 
 ### How do I build my own custom native integrations?

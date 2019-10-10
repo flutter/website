@@ -26,9 +26,9 @@ The following section describes how to use existing published packages.
 
 ### Searching for packages
 
-Packages are published to the [pub.dev][] site.
+Packages are published to [pub.dev][].
 
-The [Flutter landing page][] on the pub.dev site displays
+The [Flutter landing page][] on pub.dev displays
 top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
@@ -176,7 +176,7 @@ that is allowed by the version constraint specified in
 
 ### Dependencies on unpublished packages
 
-Packages can be used even when not published on the pub.dev site.
+Packages can be used even when not published on pub.dev.
 For private plugins, or for packages not ready for publishing,
 additional dependency options are available:
 

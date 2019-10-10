@@ -199,8 +199,8 @@ If you wish to generate API documentation locally on your developement machine, 
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
-For tips on how to write API documentation, see the
-[Effective Dart Documentation][].
+For tips on how to write API documentation, see
+[Effective Dart: Documentation][].
 
 ### Adding licenses to the LICENSE file
 
@@ -259,8 +259,8 @@ package_1
 
 ## Publishing packages {#publish}
 
-Once you have implemented a package, you can publish it on the
-[pub.dev][] site, so that other developers can easily use it.
+Once you have implemented a package, you can publish it on
+[pub.dev][], so that other developers can easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 `CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
@@ -284,7 +284,7 @@ $ flutter pub pub publish
 ```
 
 For details on publishing, see the
-[publishing docs][] for the pub.dev site.
+[publishing docs][] for pub.dev.
 
 ## Handling package interdependencies {#dependencies}
 

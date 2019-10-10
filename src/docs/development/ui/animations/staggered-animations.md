@@ -368,9 +368,9 @@ Package not yet vetted.
 
 ## Other resources
 
-* For an alternate approach to sequence animation, see the
-  [flutter_sequence_animation][]
-  package on the [pub.dev site][].
+* For an alternate approach to sequence animation,
+  see the [flutter_sequence_animation][]
+  package on [pub.dev][].
 {% endcomment %}
 
 
@@ -392,6 +392,6 @@ Package not yet vetted.
 [Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
 [Interval]: {{site.api}}/flutter/animation/Interval-class.html
 [Material motion spec]: {{site.material}}/guidelines/motion/
-[pub.dev site]: {{site.pub}}/packages
+[pub.dev]: {{site.pub}}/packages
 [Shrine demo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine
 [Tween]: {{site.api}}/flutter/animation/Tween-class.html
