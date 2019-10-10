@@ -10,7 +10,7 @@ class FadeInDemo extends StatefulWidget {
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
-  double opacityLevel = 0.0;
+  double opacity = 0.0;
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Image.network(owl_url),
@@ -20,11 +20,11 @@ class _FadeInDemoState extends State<FadeInDemo> {
             style: TextStyle(color: Colors.blueAccent),
           ),
           onPressed: () => setState((){
-            opacityLevel = 1;
+            opacity = 1;
           })),
       AnimatedOpacity(
           duration: Duration(seconds: 2),
-          opacity: opacityLevel,
+          opacity: opacity,
           child: Column(
             children: <Widget>[
               Text('Type: Owl'),

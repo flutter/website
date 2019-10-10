@@ -15,11 +15,11 @@ To get the most out of this codelab, you should have basic knowledge about
 how to [make a Flutter app][].
 
 This codelab covers the following material:
-- `AnimatedOpacity`
-- `AnimatedContainer`
-- `AnimatedIcon`
+- Using `AnimatedOpacity` to create a fade-in effect
+- Using `AnimatedContainer` to animate transitions in size, color, and margin
+- General patterns that are shared across implicit animations
 
-**Estimated time to complete this codelab: 20-30 minutes.**
+**Estimated time to complete this codelab: 15-30 minutes.**
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad] to display examples and exercises.
@@ -29,14 +29,14 @@ This codelab covers the following material:
 
 ## What are implicit animations?
 
-With Flutter's animation library, you can create motion and visual effects for
-widgets in your UI. One part of the library is a collection of widgets that manage
-animations for you – these widgets are collectively referred to as _implicit
+With Flutter's animation library, you can add motion and create visual effects 
+for the widgets in your UI. One part of the library is a collection of widgets 
+that manage animations for you. These widgets are collectively referred to as _implicit
 animations_, or _implicitly animated widgets_, deriving their name from the
 [ImplicitlyAnimatedWidget] class that they implement. Implicit animations trade
-control for convenience: they implement animation effects so that you don't have to. 
+control for convenience – they manage animation effects so that you don't have to. 
 
-### Example: AnimatedOpacity
+## Example: AnimatedOpacity
 
 The following example demonstrates how to add a fade-in effect to existing UI
 using an implicitly animated widget called [AnimatedOpacity]. **The example begins
@@ -48,11 +48,11 @@ with no animation code** – it consists of a [Material App] home screen contai
 Run the example to render the following code:
 
 <!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
-<!-- <iframe 
+<iframe 
   src="https://dartpad.dev/experimental/embed-new-flutter.html?id=d7b09149ffee2f0535bb0c04d96987f5"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="500" width="100%"
-></iframe> -->
+></iframe>
 
 Using the `AnimatedOpacity` widget, you can add the following functionality to this 
 example:
@@ -102,7 +102,7 @@ and add an accompanying `_FadeInDemoState` widget.
 
 **3.** Create a state variable for the property that `AnimatedOpacity` is
 on. As the name implies, `AnimatedOpacity` listens for changes in the `opacity`
-property, and since you want the text to be hidden until clicked, you can set
+property. To hide the text before it is clicked, you can set
 the starting opacity value to zero:
 
 <?code-excerpt "opacity{2,3}/lib/main.dart"?>
@@ -113,7 +113,7 @@ the starting opacity value to zero:
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
-+  double opacityLevel = 0.0;
++  double opacity = 0.0;
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
        Image.network(owl_url),
@@ -127,8 +127,8 @@ the starting opacity value to zero:
                Text('Type: Owl'),
 ```
 
-**4.** In addition to an opacity parameter, `AnimatedOpacity` requires a
-duration to use for its animation. For this example, you can start with 2 seconds:
+**4.** In addition to an `opacity` parameter, `AnimatedOpacity` requires a
+`duration` to use for its animation. For this example, you can start with 2 seconds:
 
 <?code-excerpt "opacity{3,4}/lib/main.dart"?>
 ```diff
@@ -145,44 +145,42 @@ duration to use for its animation. For this example, you can start with 2 second
 ```
 
 **5.** Finally, you can set the animation to trigger when the user clicks the 
-"show details" button. To do this, trigger a state change in opacity within  
+"show details" button. To do this, trigger a state change in opacity within
 the button's `onPressed` handler:
 
 <?code-excerpt "opacity{4,5}/lib/main.dart"?>
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -19,10 +19,12 @@
+@@ -19,7 +19,9 @@
              'Show Details',
              style: TextStyle(color: Colors.blueAccent),
            ),
 -          onPressed: () => null),
 +          onPressed: () => setState((){
-+            opacityLevel = 1;
++            opacity = 1;
 +          })),
        AnimatedOpacity(
            duration: Duration(seconds: 2),
--          opacity: opacity,
-+          opacity: opacityLevel,
-           child: Column(
-             children: <Widget>[
-               Text('Type: Owl'),
+           opacity: opacity,
 ```
 
-Notice that you only need to set the beginning and ending value of `opacity`.
-The `AnimatedOpacity` widget takes care of everything in between.
+{{site.alert.secondary}}
+You only need to set the beginning and ending value of `opacity`.
+The `AnimatedOpacity` widget manages everything in between.
+{{site.alert.end}}
 
 Here's the example with the completed changes you've just made -- run this 
 example and click on the "Show Details" button to trigger the animation.
 
 <!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
-<!-- <iframe 
+<iframe 
   src="https://dartpad.dev/experimental/embed-new-flutter.html?id=4207fea3975b2d329e81d9c9ba84d271"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="500" width="100%"
-></iframe> -->
+></iframe>
 
-<?code-excerpt "opacity{9,10}/lib/main.dart"?>
+<!-- <?code-excerpt "opacity{9,10}/lib/main.dart"?>
 ```diff
 --- opacity9/lib/main.dart
 +++ opacity10/lib/main.dart
@@ -232,14 +230,22 @@ example and click on the "Show Details" button to trigger the animation.
      ]);
    }
  }
-```
+``` -->
 
 <!-- AnimatedOpacity: https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
-<!-- <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=4207fea3975b2d329e81d9c9ba84d271"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
-  frameborder="no" height="500" width="100%"
-></iframe> -->
+
+### Putting it all together
+
+The previous example demonstrates a common workflow for using implicit animations: 
+- First, you pick the widget property to animate that fits your use case.
+- Next, you choose the implicitly animated widget that can animate that property.
+- Set the starting and ending values that define the animation.
+- Set the duration of the animation.
+- Configure the animation to trigger.
+
+Notice that `AnimatedOpacity` animates a single property: `opacity`. 
+Some implicitly animated widgets can animate several properties, as the following
+example demonstrates.
 
 ## Example: AnimatedContainer
 
@@ -256,11 +262,11 @@ home screen containing:
 Run the example to render the following code:
 
 <!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
-<!-- <iframe 
+<iframe 
   src="https://dartpad.dev/experimental/embed-new-flutter.html?id=8501583cb789504d75317a5ba1ca6930"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="800" width="100%"
-></iframe> -->
+></iframe>
 
 Using the `AnimatedContainer` widget, you can add the following functionality to this 
 example:
@@ -391,16 +397,15 @@ between the old values and the new ones:
 Here’s the example with the completed changes you’ve just made – run the code
 and click on the “change” button to trigger the animation.
 
-
 <!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
-<!-- <iframe 
+<iframe 
   src="https://dartpad.dev/experimental/embed-new-flutter.html?id=ddfbc68ec9dc28a48703d29248f5366f"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="800" width="100%"
-></iframe> -->
+></iframe>
 
 
-<?code-excerpt "container{9,10}/lib/main.dart"?>
+<!-- <?code-excerpt "container{9,10}/lib/main.dart"?>
 ```diff
 --- container9/lib/main.dart
 +++ container10/lib/main.dart
@@ -471,7 +476,7 @@ and click on the “change” button to trigger the animation.
              ),
            ],
          ),
-```
+``` -->
 
 <!-- ## Example: AnimatedIcon -->
 
