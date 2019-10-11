@@ -50,7 +50,7 @@ to share photos.
 Build a version of the Shrine shopping app (used in the Material Design
 codelabs) using the Cupertino package to create an iOS style look and feel.
 Create multiple tabs and navigate between them.
-Use the [provider](https://pub.dev/packages/provider) package to manage
+Use the [provider]({{site.pub}}/packages/provider) package to manage
 state between screens.
 
 

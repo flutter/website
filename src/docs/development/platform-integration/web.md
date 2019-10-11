@@ -79,7 +79,7 @@ and Dart plugins.
 See [Creating responsive
 apps](/docs/development/ui/layout/responsive).
 
-### Can I use the `dart:io` package with a web app?
+### Can I use `dart:io` with a web app?
 
 No. The file system is not accessible from the browser.
 For network functionality, use the [`http`][]
@@ -93,7 +93,7 @@ The browser's back button is supported for web apps.
 The forward button is not yet enabled.
 For more information, see [Issue 32248][].
 
-### How do copy/paste work?
+### How does copy/paste work?
 
 Copy/paste works on mobile. If you encounter problems,
 please [file an issue][].
@@ -169,7 +169,7 @@ Flutter engineers routinely read and respond on Discord.
 [file an issue]: https://goo.gle/flutter_web_issue
 [Flutter DevTools]: /docs/development/tools/devtools/overview
 [Generating event timeline]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[`http`]: https://pub.dev/packages/http
+[`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
 [Issue 32248]: {{site.github}}/flutter/flutter/issues/32248
 [Logging]: /docs/development/tools/devtools/logging

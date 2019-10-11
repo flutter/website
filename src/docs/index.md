@@ -21,7 +21,8 @@ description: The landing page for Flutter documentation.
   {% endif %}
 {% endfor -%}
 
-## What's new on the site
+<a name="latest-release"></a>
+## What's new on this site
 
 To stay on top of Flutter announcements,
 including breaking changes, join the
@@ -48,11 +49,16 @@ but more will be coming.
 
 New and updated docs on the site include:
 
+* We've revamped the [Showcase](/showcase) page.
 * The Flutter layout codelab has been rewritten and
-  uses the updated DartPad, the browser-based tool for running
-  Dart code. DartPad now supports Flutter!
+  uses the updated DartPad, the browser-based tool for
+  running Dart code. DartPad now supports Flutter!
   [Try it out](/docs/codelabs/layout-basics)
   and let us know what you think.
+* A new page on [using the dart:ffi
+  library](/docs/development/platform-integration/c-interop)
+  to bind your app to native code (a feature currently under
+  development).
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
@@ -80,6 +86,15 @@ Other relevant docs:
   you how to migrate to the flutter package:
   [Upgrading from package:flutter_web to the Flutter
   SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
+* A new [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html)
+  widget, described in the API docs.
+  [ToggleButtons demo]({{site.github}}/csells/flutter_toggle_buttons)
+* A new [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
+  widget, also described in the API docs.
+  [ColorFiltered demo]({{site.github}}/csells/flutter_color_filter)
+* New behavior for the
+  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html)
+  widget.
 
 Happy Fluttering!
 
@@ -116,6 +131,12 @@ We also have some helpful videos on our
 [Flutter Youtube channel][]! In particular, check
 out the Flutter in Focus series,
 and learn about other series on our [videos][] page.
+
+First up, why use Flutter? What makes it different than other
+app frameworks?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l-YO9CmaSUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+How is Flutter different for app development?
 
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/wgTBLj7rMPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Flutter in Focus: Learn Flutter features in 10 minutes or less.<br>

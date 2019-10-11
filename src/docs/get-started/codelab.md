@@ -177,12 +177,11 @@ where the Dart code lives.
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
-[english_words]({{site.pub}}/packages/english_words),
-which contains a few thousand of the most used
+[english_words][], which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on the [Pub site]({{site.pub}}/flutter).
+packages, on [pub.dev][].
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
@@ -602,3 +601,5 @@ where you add the following functionality:
 
 
 [DevTools]: /docs/development/tools/devtools
+[english_words]: {{site.pub}}/packages/english_words
+[pub.dev]: {{site.pub}}

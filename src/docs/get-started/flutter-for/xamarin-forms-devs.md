@@ -77,15 +77,10 @@ class MyApp extends StatelessWidget {
 Xamarin.Forms has many different types of pages;
 `ContentPage` is the most common.  In Flutter,
 you specify an application widget that holds your root page.
-You can use a
-[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
-widget, which supports [Material
-Design]({{site.material}}/design),
-or you can use a
-[CupertinoApp]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
-widget, which supports an iOS-style app,
-or you can use the lower level
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
+You can use a [MaterialApp][] widget,
+which supports [Material Design][], or you can use a
+[CupertinoApp][] widget, which supports an iOS-style app,
+or you can use the lower level [WidgetsApp][],
 which you can customize in any way you want.
 
 The following code defines the home page, a stateful widget. In Flutter,
@@ -731,9 +726,9 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter,
 create a native platform integration,
-or use an [existing plugin]({{site.pub}}/flutter/), such as
-[`url_launcher`]({{site.pub}}/packages/url_launcher), available with
-many other packages on the [Pub site]({{site.pub}}/flutter).
+or use an [existing plugin][], such as
+[`url_launcher`][], available with
+many other packages on [pub.dev][].
 
 ## Async UI
 
@@ -2280,7 +2275,7 @@ that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
 without having to write your own integration.
-Plugins are found on the [Pub site]({{site.pub}}),
+Plugins are found on [pub.dev][],
 Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
@@ -2422,9 +2417,18 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
-plugin.
+[Firebase_Messaging][] plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
-plugin documentation.
+[`firebase_messaging`][] plugin documentation.
 
+
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[DevTools]: /docs/development/tools/devtools/overview
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[existing plugin]: {{site.pub}}/flutter
+[Material Design]: {{site.material}}/design
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
+[WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

@@ -575,11 +575,11 @@ a `FlutterMethodChannel` tied to the channel name
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.bynaryMessenger)
+                                              binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
       // Note: this method is invoked on the UI thread.
@@ -602,7 +602,7 @@ Add the following as a new method at the bottom of `AppDelegate.swift`:
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
   device.isBatteryMonitoringEnabled = true
-  if device.batteryState == UIDeviceBatteryState.unknown {
+  if device.batteryState == UIDevice.BatteryState.unknown {
     result(FlutterError(code: "UNAVAILABLE",
                         message: "Battery info unavailable",
                         details: nil))

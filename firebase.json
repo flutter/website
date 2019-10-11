@@ -24,6 +24,7 @@
       { "source": "/docs/cookbook/testing/widget-test-finders", "destination": "/docs/cookbook/testing/widget/finders", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-introduction", "destination": "/docs/cookbook/testing/widget", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-tap-drag", "destination": "/docs/cookbook/testing/widget/tap-drag", "type": 301 },
+      { "source": "/docs/development/packages-and-plugins/androidx-compatibility", "destination": "/docs/development/androidx-migration", "type": 301 },
       { "source": "/docs/get-started", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/docs/get-started/flutter-for", "destination": "/docs/get-started/flutter-for/android-devs", "type": 301 },
       { "source": "/docs/get-started/install/null", "destination": "/docs/get-started/install", "type": 301 },
@@ -121,7 +122,16 @@
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
       { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
-      { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 }
+      { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 },
+      { "source": "/go/federated-plugins", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit?usp=sharing", "type": 301 },
+      { "source": "/go/android-embedding-move", "destination": "https://docs.google.com/document/d/1nQujwZfEe3QOHTyZn160eImpoJOYioADP09DtumcLcc/edit?ts=5d8041db#", "type": 301 },
+      { "source": "/go/android-migration-summary", "destination": "https://docs.google.com/document/d/1wKspwf6LQu6uo32uQ9NcukfiKhLL4ButV9cwpjeb8QI", "type": 301 },
+      { "source": "/go/hot-ui-early-prototype-demos", "destination": "https://docs.google.com/document/d/1ZaHqKnON8-WEhke3Y6FpHeuB5BNlxDQj1cCYB1SoI_g", "type": 301 },
+      { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit?usp=sharing", "type": 301 },
+      { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
+      { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
+      { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 },
+      { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 }
     ]
   }
 }

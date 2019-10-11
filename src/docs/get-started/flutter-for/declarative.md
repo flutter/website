@@ -5,7 +5,7 @@ description: Explains the difference between a declarative and imperative progra
 ---
 
 _This introduction describes the conceptual difference between the
-declaractive style used by Flutter, and the imperative style used by
+declarative style used by Flutter, and the imperative style used by
 many other UI frameworks._
 
 ## Why a declarative UI?

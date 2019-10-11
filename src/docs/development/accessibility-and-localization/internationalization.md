@@ -48,7 +48,7 @@ support for other languages, an application must specify additional
 MaterialApp properties, and include a separate package called
 `flutter_localizations`.  As of April 2019, this package supports about
 52 languages.
-If you want your app to work smoothly on iOS then you have to add the 
+If you want your app to work smoothly on iOS then you have to add the
 package 'flutter_cupertino_localizations' as well.
 
 To use flutter_localizations, add the package as a dependency to your
@@ -235,7 +235,7 @@ different delegate of the same base type is specified with the app's
 The flutter_localizations package includes multi-language
 implementations of the localizations interfaces called
 [GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
-and 
+and
 [GlobalWidgetsLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html).
 International apps must specify localization delegates for
 these classes as described in [Setting up an internationalized
@@ -294,12 +294,13 @@ to look them up.
 
 {% prettify dart %}
 class DemoLocalizations {
+  DemoLocalizations(this.localeName);
+
   static Future<DemoLocalizations> load(Locale locale) {
     final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
-      Intl.defaultLocale = localeName;
-      return DemoLocalizations();
+      return DemoLocalizations(localeName);
     });
   }
 
@@ -307,11 +308,14 @@ class DemoLocalizations {
     return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
   }
 
+  final String localeName;
+
   String get title {
     return Intl.message(
       'Hello World',
       name: 'title',
       desc: 'Title for the Demo application',
+      locale: localeName,
     );
   }
 }
@@ -446,11 +450,11 @@ language.
 A new GlobalMaterialLocalizations subclass defines the
 localizations that the Material library depends on.
 A new LocalizationsDelegate subclass, which serves
-as factory for the GlobalMaterialLocalizations subclass, 
+as factory for the GlobalMaterialLocalizations subclass,
 must also be defined.
 
 Here's [the source code for a complete example](
-{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart),
 less the actual Belarusan translations, of an app that includes support for a new language.
 
 The locale-specific GlobalMaterialLocalizations subclass is called
@@ -476,14 +480,14 @@ String get closeButtonLabel => r'CLOSE';
 // etc..
 {% endprettify %}
 
-These are the English translations of course. To complete the job you 
-need to change the return value of each getter to an appropriate 
+These are the English translations of course. To complete the job you
+need to change the return value of each getter to an appropriate
 Belarusan string.
 
 The getters return "raw" Dart strings that have an r prefix, like
 `r'About $applicationName'`, because sometimes the strings contain
-variables with a `$` prefix. The variables are expanded by parameterized 
-localization methods: 
+variables with a `$` prefix. The variables are expanded by parameterized
+localization methods:
 {% prettify dart %}
 @override
 String get aboutListTileTitleRaw => r'About $applicationName';
@@ -495,14 +499,14 @@ String aboutListTileTitle(String applicationName) {
 }
 {% endprettify %}
 
-For more information about localization strings, see the 
+For more information about localization strings, see the
 [flutter_localizations README](
 {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
 
-Once you've implemented your language-specific subclasses of 
-GlobalMaterialLocalizations and LocalizationsDelegate, you just 
-need to add the language and a delegate instance to your app. 
-Here's some code that sets the app's language to Belarusan and 
+Once you've implemented your language-specific subclasses of
+GlobalMaterialLocalizations and LocalizationsDelegate, you just
+need to add the language and a delegate instance to your app.
+Here's some code that sets the app's language to Belarusan and
 adds the BeMaterialLocalizations delegate instance to the app's
 localizationsDelegates list:
 

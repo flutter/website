@@ -27,12 +27,15 @@ simplest way to fetch data from the internet.
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
 [http package]({{site.pub}}/packages/http#-installing-tab-)
-on the Pub site.
+the pub.dev.
 
 ```yaml
 dependencies:
   http: <latest_version>
 ```
+
+Import the http package.
+```import 'package:http/http.dart' as http;```
 
 ## 2. Make a network request
 

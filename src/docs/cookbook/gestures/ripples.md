@@ -1,8 +1,8 @@
 ---
 title: Add Material touch ripples
 prev:
-  title: Retrieve the value of a text field
-  path: /docs/cookbook/forms/retrieve-input
+  title: Focus and text fields
+  path: /docs/cookbook/forms/focus
 next:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
