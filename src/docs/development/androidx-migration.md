@@ -24,7 +24,7 @@ you can download the latest version from
 [developer.android.com/studio](https://developer.android.com/studio)_.
 
 1. Open Android Studio.
-2. Select Open an **existing Android Studio Project**.
+2. Select **Open an existing Android Studio Project**.
 3. Open the `android` directory within your app.
 4. Wait until the project has been synced successfully. 
   (This happens automatically once you open the project, but if it doesn’t,
