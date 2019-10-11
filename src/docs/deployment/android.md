@@ -291,6 +291,17 @@ This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
 
+{{site.alert.warning}}
+  Recently, the Flutter team has received several reports
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0 when building
+  an app bundle.
+  While the Android team is working to identify a feasible
+  solution, you might try splitting the APK as a temporary
+  workaround. For more information, see
+  [Issue 36822]({{site.github}}/flutter/flutter/issues/36822).
+{{site.alert.end}}
+
 From the command line:
 
 1. Enter `cd <app dir>`<br>

@@ -1,11 +1,11 @@
 ---
 title: Focus and text fields
 prev:
-  title: Create and style a text field
-  path: /docs/cookbook/forms/text-input
+  title: Retrieve the value of a text field
+  path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
+  title: Add Material touch ripples
+  path: /docs/cookbook/gestures/ripples
 ---
 
 When a text field is selected and accepting input,

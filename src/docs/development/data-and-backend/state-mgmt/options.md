@@ -71,7 +71,7 @@ by the Flutter community:
   by Hillel Coren
 * [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
   by Alibaba
-* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers](https://pub.dev/packages/async_redux/),
+* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers]({{site.pub}}/packages/async_redux/),
   by Marcelo Glasberg
 
 ## BLoC / Rx

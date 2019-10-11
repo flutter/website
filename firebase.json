@@ -24,6 +24,7 @@
       { "source": "/docs/cookbook/testing/widget-test-finders", "destination": "/docs/cookbook/testing/widget/finders", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-introduction", "destination": "/docs/cookbook/testing/widget", "type": 301 },
       { "source": "/docs/cookbook/testing/widget-test-tap-drag", "destination": "/docs/cookbook/testing/widget/tap-drag", "type": 301 },
+      { "source": "/docs/development/packages-and-plugins/androidx-compatibility", "destination": "/docs/development/androidx-migration", "type": 301 },
       { "source": "/docs/get-started", "destination": "/docs/get-started/install", "type": 301 },
       { "source": "/docs/get-started/flutter-for", "destination": "/docs/get-started/flutter-for/android-devs", "type": 301 },
       { "source": "/docs/get-started/install/null", "destination": "/docs/get-started/install", "type": 301 },
@@ -129,7 +130,8 @@
       { "source": "/go/android-embedding-dependencies", "destination": "https://docs.google.com/document/d/1vITp2mUZRa-cmll0sPH0zjNgPlyvOMx7awxPNRAPyic/edit?usp=sharing", "type": 301 },
       { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
-      { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 }
+      { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 },
+      { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 }
     ]
   }
 }

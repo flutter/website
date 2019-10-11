@@ -4,8 +4,8 @@ prev:
   title: Build a form with validation
   path: /docs/cookbook/forms/validation
 next:
-  title: Focus and text fields
-  path: /docs/cookbook/forms/focus
+  title: Handle changes to a text field
+  path: /docs/cookbook/forms/text-field-changes
 ---
 
 Text fields allow users to type text into an app.
@@ -38,6 +38,9 @@ TextField(
   ),
 );
 ```
+
+To retrieve the value when it changes, see the [Handle changes to a text
+field](/docs/cookbook/forms/text-field-changes/) recipe.
 
 ## `TextFormField`
 

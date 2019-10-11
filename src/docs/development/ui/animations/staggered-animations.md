@@ -17,7 +17,7 @@ short-title: Staggered
 {{site.alert.secondary}}
   **Terminology:**
   If the concept of tweens or tweening is new to you, see the
-  [Animations in Flutter tutorial.](/docs/development/ui/animations/tutorial)
+  [Animations in Flutter tutorial][].
 {{site.alert.end}}
 
 Staggered animations are a straightforward concept: visual changes
@@ -34,15 +34,14 @@ This guide shows how to build a staggered animation in Flutter.
   This guide explains the basic_staggered_animation example. You can also
   refer to a more complex example, staggered_pic_selection.
 
-  [basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
+  [basic_staggered_animation][]
   : Shows a series of sequential and overlapping animations of a single widget.
     Tapping the screen begins an animation that changes opacity, size,
     shape, color, and padding.
 
-  [staggered_pic_selection]({{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection)
+  [staggered_pic_selection][]
   : Shows deleting an image from a list of images displayed in one of three sizes.
-    This example uses two [animation
-    controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
+    This example uses two [animation controllers][]:
     one for image selection/deselection, and one for image deletion.
     The selection/deselection animation is staggered. (To see this effect,
     you might need to increase the `timeDilation` value.)
@@ -78,8 +77,7 @@ After running forward, the animation runs in reverse.
 {{site.alert.secondary}}
   **New to Flutter?**
   This page assumes you know how to create a layout using Flutter’s
-  widgets.  For more information, see [Building Layouts in
-  Flutter](/docs/development/ui/layout).
+  widgets.  For more information, see [Building Layouts in Flutter][].
 {{site.alert.end}}
 
 ## Basic structure of a staggered animation
@@ -88,17 +86,15 @@ After running forward, the animation runs in reverse.
   <h4 class="no_toc">What's the point?</h4>
 
   * All of the animations are driven by the same
-    [AnimationController]({{site.api}}/flutter/animation/AnimationController-class.html).
+    [AnimationController][].
   * Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
-  * Each animation has an
-    [Interval]({{site.api}}/flutter/animation/Interval-class.html)
+  * Each animation has an [Interval][]
     between 0.0 and 1.0, inclusive.
   * For each property that animates in an interval, create a
-    [Tween.]({{site.api}}/flutter/animation/Tween-class.html)
+    [Tween][].
     The `Tween` specifies the start and end values for that property.
-  * The `Tween` produces an
-    [Animation]({{site.api}}/flutter/animation/Animation-class.html)
+  * The `Tween` produces an [Animation][]
     object that is managed by the controller.
 {{site.alert.end}}
 
@@ -110,8 +106,8 @@ in and out.
 {% endcomment %}
 
 The following diagram shows the Intervals used in the
-[basic_staggered_animation]({{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation)
-example. You might notice the following characteristics:
+[basic_staggered_animation][] example.
+You might notice the following characteristics:
 
 * The opacity changes during the first 10% of the timeline.
 * A tiny gap occurs between the change in opacity, and the change in width.
@@ -139,11 +135,9 @@ When the controlling animation's value changes, the new animation's
 value changes, triggering the UI to update.
 
 The following code creates a tween for the `width` property.
-It builds a
-[CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html),
+It builds a [CurvedAnimation][],
 specifying an eased curve.
-See [Curves]({{site.api}}/flutter/animation/Curves-class.html)
-for other available pre-defined animation curves.
+See [Curves][] for other available pre-defined animation curves.
 
 <!-- skip -->
 {% prettify dart %}
@@ -194,13 +188,13 @@ The stateful widget creates the controller, plays the animation,
 and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected anywhere in the screen.
 
-[Full code for basic_staggered_animation's main.dart]({{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart)
+[Full code for basic_staggered_animation's main.dart][]
 
 ### Stateless widget: StaggerAnimation
 
 In the stateless widget, StaggerAnimation, the `build()` function instantiates an
-[AnimatedBuilder]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)&mdash;a
-general purpose widget for building animations. The AnimatedBuilder
+[AnimatedBuilder][]&mdash;a general purpose widget for building
+animations. The AnimatedBuilder
 builds a widget and configures it using the Tweens' current values.
 The example creates a function named `_buildAnimation()` (which performs
 the actual UI updates), and assigns it to its `builder` property.
@@ -353,24 +347,20 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
 The following resources might help when writing animations:
 
-[Animations landing page](/docs/development/ui/animations)
+[Animations landing page][]
 : Lists the available documentation for Flutter animations.
   If tweens are new to you, check out the
   [Animations tutorial](/docs/development/ui/animations/tutorial).
 
-[Flutter API documentation]({{site.api}})
+[Flutter API documentation][]
 : Reference documentation for all of the Flutter libraries.
-  In particular, see the [animation
-  library]({{site.api}}/flutter/animation/animation-library.html)
-  documentation.
+  In particular, see the [animation library][] documentation.
 
-[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+[Flutter Gallery][]
 : Demo app showcasing many Material Components and other Flutter
-  features.  The [Shrine
-  demo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
-  implements a hero animation.
+  features. The [Shrine demo][] implements a hero animation.
 
-[Material motion spec]({{site.material}}/guidelines/motion/)
+[Material motion spec][]
 : Describes motion for Material apps.
 
 {% comment %}
@@ -378,7 +368,30 @@ Package not yet vetted.
 
 ## Other resources
 
-* For an alternate approach to sequence animation, see the
-[flutter_sequence_animation]({{site.pub}}/packages/flutter_sequence_animation)
-package on the [Pub site]({{site.pub}}/packages).
+* For an alternate approach to sequence animation,
+  see the [flutter_sequence_animation][]
+  package on [pub.dev][].
 {% endcomment %}
+
+
+[Animation]: {{site.api}}/flutter/animation/Animation-class.html
+[animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
+[animation library]: {{site.api}}/flutter/animation/animation-library.html
+[Animations landing page]: /docs/development/ui/animations
+[AnimationController]: {{site.api}}/flutter/animation/AnimationController-class.html
+[AnimatedBuilder]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
+[Animations in Flutter tutorial]: /docs/development/ui/animations/tutorial
+[basic_staggered_animation]: {{site.github}}/flutter/website/tree/master/examples/_animation/basic_staggered_animation
+[Building Layouts in Flutter]: /docs/development/ui/layout
+[staggered_pic_selection]: {{site.github}}/flutter/website/tree/master/examples/_animation/staggered_pic_selection
+[CurvedAnimation]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
+[Curves]: {{site.api}}/flutter/animation/Curves-class.html
+[Flutter API documentation]: {{site.api}}
+[Flutter Gallery]: ({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
+[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
+[Interval]: {{site.api}}/flutter/animation/Interval-class.html
+[Material motion spec]: {{site.material}}/guidelines/motion/
+[pub.dev]: {{site.pub}}/packages
+[Shrine demo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine
+[Tween]: {{site.api}}/flutter/animation/Tween-class.html

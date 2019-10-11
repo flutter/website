@@ -12,7 +12,7 @@ Rather than declaring a font as part of an app,
 you can declare a font as part of a separate package.
 This is a convenient way to share the same font across
 several different projects,
-or for coders publishing their packages to the [Pub site][].
+or for coders publishing their packages to [pub.dev][].
 This recipe uses the following steps:
 
   1. Add a font to a package.
@@ -158,5 +158,5 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
-[Pub site]: {{site.pub}} 
+[pub.dev]: {{site.pub}} 
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
