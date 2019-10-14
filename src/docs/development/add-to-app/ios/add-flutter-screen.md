@@ -6,28 +6,39 @@ description: Learn how to add a single Flutter screen to your existing iOS app.
 
 This guide describes how to add a single Flutter screen to an existing iOS app.
 
-## Integration Steps
+## Integration steps
 
- 1. [Create Flutter Module](#create-a-flutter-module) - This creates the Flutter project which will be hosted in the existing app.
- 1. [Add Module Dependency in Existing App](#make-the-host-app-depend-on-the-flutter-module) - This sets up XCode to include your Flutter project into the build of your existing app.
- 1. [Add FlutterViewController to Existing App](#write-code-to-use-flutterviewcontroller-from-your-host-app) - This steps introduces the code that will conjure the instance of Flutter into your existing app.
- 1. (optional) [Attach Flutter Tool](#building-and-running-your-app) - This step allows you to attach to Flutter's debugger and enables you do use hot reload / restart.
+To integrate a Flutter module into your app, use the following steps:
+
+ 1. [Create Flutter Module](#create-a-flutter-module)  
+    Creates the Flutter project which is hosted in the existing app.
+ 1. [Add Module Dependency in Existing
+    App](#make-the-host-app-depend-on-the-flutter-module)  
+    Sets up XCode to include your Flutter project into the build of your
+    existing app.
+ 1. [Add FlutterViewController to Existing
+    App](#write-code-to-use-flutterviewcontroller-from-your-host-app)  
+    Introduces the code that conjures the instance of Flutter into your existing
+    app.
+ 1. (Optional) [Attach Flutter Tool](#building-and-running-your-app)  
+    Allows you to attach to Flutter's debugger and enables you do use hot reload
+    / restart.
 
 ## Create a Flutter module
 
-Flutter projects created using `flutter create xxx` include very simple host
-apps for your Flutter/Dart code (a single-ViewController iOS host). You can
-modify these host apps to suit your needs and build from there.
+Flutter projects created using `flutter create xxx` include simple host apps for
+your Flutter/Dart code (a single-ViewController iOS host). You can modify these
+host apps to suit your needs and build from there.
 
-But if you're starting off with an *existing* host app for either platform,
-you'll likely want to include your Flutter project in that app as some form of
-library instead.
+If you're starting off with an *existing* host app for either platform, you'll
+likely want to include your Flutter project in that app as some form of library
+instead.
 
-This is what the Flutter module template provides. Executing
-`flutter create -t module xxx` produces a Flutter project containing a CocoaPods
-pod designed for consumption by your existing host app.
+In order to embed Flutter like a library, use the Flutter module template.
+Executing `flutter create -t module xxx` produces a Flutter project containing a
+CocoaPods pod designed for consumption by your existing host app.
 
-Let's assume you have an existing iOS app at `some/path/MyApp`, and that you
+Assume you have an existing iOS app at `some/path/MyApp`, and that you
 want your Flutter project as a sibling:
 
 ```bash
@@ -36,16 +47,16 @@ flutter create -t module my_flutter
 ```
 
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
-code to get you started and a `.ios/` hidden subfolder that wraps up the
-module project that contains some Cocoapods and a helper Ruby script.
+code to get you started and a `.ios/` hidden subfolder. The `.ios/` folder wraps
+up the module project that contains some Cocoapods and a helper Ruby script.
 
 ## Make the host app depend on the Flutter module
 
 The description below assumes that your existing iOS app has a structure similar
 to what you get by asking Xcode version 10.0 to generate a new "Single View App"
 project using Objective-C. If your existing app has a different folder structure
-and/or existing `.xcconfig` files, you can reuse those, but probably need to adjust
-some of the relative paths mentioned below accordingly.
+and/or existing `.xcconfig` files, you can reuse those, but you'll probably need
+to adjust some of the relative paths mentioned below accordingly.
 
 The assumed folder structure is as follows:
 
@@ -63,12 +74,12 @@ some/path/
 
 ### Add your Flutter app to your Podfile
 
-Integrating the Flutter framework requires use of the CocoaPods dependency manager.
-This is because the Flutter framework needs to be available also to any Flutter plugins
-that you might include in my_flutter.
+Integrating the Flutter framework requires using the CocoaPods dependency
+manager. This is because the Flutter framework needs to be available to any
+Flutter plugins that you might include in `my_flutter`.
 
-Please refer to [cocoapods.org](https://cocoapods.org/) for how to install CocoaPods
-on your development machine, if needed.
+For information on how to install CocoaPods on your development machine, see
+[cocoapods.org](https://cocoapods.org/).
 
 If your host application (`MyApp`) is already using CocoaPods, you only have to do the
 following to integrate with your `my_flutter` app:
@@ -86,9 +97,6 @@ following to integrate with your `my_flutter` app:
   target 'MyApp' do
     install_all_flutter_pods(flutter_application_path)
   end
-  target 'MyAppTests' do
-    install_all_flutter_pods(flutter_application_path)
-  end
 ```
 
 3. Run `pod install`.
@@ -98,33 +106,33 @@ you need to run `flutter pub get` from `some/path/my_flutter` to refresh the lis
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 `some/path/MyApp`.
 
-The `podhelper.rb` script will ensure that your plugins, the Flutter.framework, and the App.framework
-are embedded in your project.
+The `podhelper.rb` script ensures that your plugins, the Flutter.framework, and
+the App.framework are embedded in your project.
 
 You should now be able to build the project using `⌘B`.
 
 ### Under the hood
 
-If you have some reason to do this manually or debug why these steps aren't working, here's what's going on under the hood:
+If you have some reason to do this manually or debug why these steps aren't
+working, here's what's going on under the hood:
 
-1. `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type
+- `Flutter.framework` (the Engine library) is getting embedded into your app for you.  This has to match up with the release type
 (debug/profile/release) as well as the architecture for your app (arm*, x86_64, etc.).  CocoaPods pulls this in as a vendored
 framework and makes sure it gets embedded into your native app.
-2. `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and
+- `App.framework` (your Flutter application binary) is embedded into your app.  CocoaPods also pulls this in as a vendored framework and
 makes sure it gets embedded into your native app.
-3. Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
+- Any plugins are added as CocoaPod pods.  In theory, it should be possible to manually merge those in as well, but those instructions
 vary on the pod dependencies of each plugin.
-4. A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date
+- A build script is added to the Podfile targets that call `install_all_flutter_pods` to ensure that the binaries you build stay up to date
 with the Dart code that's actually in the folder.  It also uses your Xcode build configuration (Debug, Profile, Release) to embed the matching
 release type of `Flutter.framework` and `App.framework`.
 
 ## Write code to use FlutterViewController from your host app
 
-The proper place to do this will be specific to your host app. Here is an
-example that makes sense for the blank screen of the host app generated
-by Xcode.
+The proper place to do this is specific to your host app. Here is an example
+that makes sense for the blank screen of the host app generated by Xcode.
 
-First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then define a FlutterEngine property, which help you to register a plugin without a FlutterViewController instance.
+First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then define a FlutterEngine property, which helps you to register a plugin without a FlutterViewController instance.
 
 In `AppDelegate.h`:
 
@@ -137,8 +145,8 @@ In `AppDelegate.h`:
 @end
 ```
 
-This allows `AppDelegate.m` to be really simple, unless your host app
-needs to override other methods here:
+This allows `AppDelegate.m` to be simple, unless your host app needs to override
+other methods here:
 
 ```objective-c
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
@@ -183,7 +191,8 @@ class AppDelegate: FlutterAppDelegate {
 <details>
 <summary>What to do if the app delegate already inherits from somewhere else.</summary>
 
-Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, e.g.:
+Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, for
+example:
 
 ```objective-c
 @import Flutter;
@@ -485,4 +494,6 @@ Connected view:
   debug isolate (isolates/642101161)
 ```
 
-You can check out [`93573de`](https://github.com/flutter/flutter/commit/93573de2165c750fdeefcd2d620e2b8bd494fed6) for a more detailed example.
+You can check out
+[`commit 93573de`](https://github.com/flutter/flutter/commit/93573de2165c750fdeefcd2d620e2b8bd494fed6)
+for a more detailed example.
