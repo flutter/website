@@ -70,7 +70,7 @@ If you already have a plugin, skip this step.
 To create a plugin called "native_add",
 do the following:
 
-```dart
+```terminal
 $ flutter create --template=plugin native_add
 $ cd native_add
 ```
@@ -139,7 +139,7 @@ EOF
 Finally, add an `externalNativeBuild` section to
 `android/build.gradle`. For example:
 
-```
+```nocode
 android {
   // ...
   externalNativeBuild {
@@ -179,7 +179,7 @@ but on iOS it takes the plugin's name.
 With a handle to the enclosing library,
 you can resolve the `native_add` symbol:
 
-
+<!-- skip -->
 ```dart
 final int Function(int x, int y) nativeAdd =
   nativeAddLib
@@ -190,7 +190,7 @@ final int Function(int x, int y) nativeAdd =
 Finally, you can call it. To demonstrate this within
 the auto-generated "example" app (`example/lib/main.dart`):
 
-```
+```nocode
 // Inside of _MyAppState.build:
         body: Center(
           child: Text('1 + 2 == ${nativeAdd(1, 2)}'),
@@ -236,29 +236,24 @@ archives as well, but it requires testing.
 To link directly to source code,
 use the following instructions:
 
-<ol markdown="1">
-<li markdown="1">In Xcode, open `Runner.xcodeproj`.
-</li>
-<li markdown="1">Add the C/C++/Objective-C/Swift
+ 1. In Xcode, open `Runner.xcodeproj`.
+ 2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
-</li>
-<li markdown="1">Add the following prefix to the
+ 3. Add the following prefix to the
     exported symbol declarations to ensure they
     are visible to Dart:
 
-**C/C++/Objective-C**
+    **C/C++/Objective-C**
 
-```objective-c
-extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
-```
+    ```objective-c
+    extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
+    ```
 
-**Swift**
+    **Swift**
 
-```swift
-@_cdecl("myFunctionName")
-```
-</li>
-</ol>
+    ```swift
+    @_cdecl("myFunctionName")
+    ```
 
 #### Compiled (dynamic) library
 
@@ -311,17 +306,14 @@ as shown in the CocoaPods example.
 To link against a platform library,
 use the following instructions:
 
-1. Find the desired library in the
-   [Android NDK Native APIs][]
-   list in the Android docs.
-   This lists stable native APIs.
-1. Load the library using
-   [`DynamicLibrary.open`][].
-   For example, to load OpenGL ES (v3):
-
-   ```dart
-   DynamicLibrary.open('libGLES_v3.so');
-   ```
+ 1. Find the desired library in the [Android NDK Native APIs][]
+    list in the Android docs. This lists stable native APIs.
+ 1. Load the library using [`DynamicLibrary.open`][].
+    For example, to load OpenGL ES (v3):
+    <!-- skip -->
+    ```dart
+    DynamicLibrary.open('libGLES_v3.so');
+    ```
 
 You might need to update the Android manifest
 file of the app or plugin if indicated by

@@ -20,7 +20,7 @@ class DartPadPicker {
   int _selected = 0;
 
   DartPadPicker(this.iFrameHost, this.selectElement, this.snippets,
-      {this.dartPadUrl = 'https://dartpad.dev/experimental/'}) {
+      {this.dartPadUrl = 'https://dartpad.dev/'}) {
     _initSelectElement();
     _initDartPad();
   }
@@ -62,6 +62,6 @@ class DartPadPicker {
   }
 
   String iFrameSrc({String theme, String mode}) {
-    return '${dartPadUrl}embed-new-$mode.html?theme=$theme';
+    return '${dartPadUrl}embed-$mode.html?theme=$theme';
   }
 }
