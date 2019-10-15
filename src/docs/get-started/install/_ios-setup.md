@@ -12,6 +12,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode.
 
     ```terminal
     $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    $ sudo xcodebuild -runFirstLaunch
     ```
 
     This is the correct path for most cases,
