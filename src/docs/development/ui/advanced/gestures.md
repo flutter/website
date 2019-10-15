@@ -87,6 +87,7 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
     when it stopped contacting the screen. This callback causes a crash if 
     `onHorizontalDragEnd` or `onVerticalDragEnd` is set.
 
+### Adding gesture detection to widgets
 To listen to gestures from the widgets layer, use a
 [`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
 

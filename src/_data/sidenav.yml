@@ -183,6 +183,8 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
+    - title: AndroidX migration
+      permalink: /docs/development/androidx-migration
 
 - title: Testing & optimization
   permalink: /docs/testing

@@ -4,8 +4,8 @@ prev:
   title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes
 next:
-  title: Add Material touch ripples
-  path: /docs/cookbook/gestures/ripples
+  title: Focus and text fields
+  path: /docs/cookbook/forms/focus
 ---
 
 In this recipe,

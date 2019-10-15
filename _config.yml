@@ -123,7 +123,7 @@ custom:
     embed-inline-prefix: https://dartpad.dev/embed-inline.html
   dartpadx:
     embed-dart-prefix: https://dartpad.dev/experimental/embed-new-dart.html
-    embed-flutter-prefix: https://dartpad.dev/experimental/embed-new-flutter.html
+    embed-flutter-prefix: https://dartpad.dev/embed-flutter.html
     embed-html-prefix: https://dartpad.dev/experimental/embed-new-html.html
     embed-inline-prefix: https://dartpad.dev/experimental/embed-new-inline.html
 

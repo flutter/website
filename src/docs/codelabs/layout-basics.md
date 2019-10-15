@@ -51,7 +51,7 @@ and `Column` lays out its widgets vertically.
 {% comment %}
   Gist: https://gist.github.com/4e11c4a7ec824685f963f25d7c30ba0b
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> 
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> 
 
 ## Axis size and alignment
 
@@ -103,7 +103,7 @@ The `mainAxisSize` property has two possible values:
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=d852e4f07d6c87600fe8e0f186c7a31b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d852e4f07d6c87600fe8e0f186c7a31b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### mainAxisAlignment property
 
@@ -152,7 +152,7 @@ can position their children in that extra space.
 {% comment %}
   Gist: https://gist.github.com/cb8abed13f90a6a0c7a0ada6f15a09c9
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=cb8abed13f90a6a0c7a0ada6f15a09c9&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=cb8abed13f90a6a0c7a0ada6f15a09c9&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next section,
   change `MainAxisAlignment.end` to another value.
@@ -187,7 +187,7 @@ The `crossAxisAlignment` property has five possible values:
   (`Text` class only, and requires that the
   `textBaseline` property is set to
   `TextBaseline.alphabetic`.  See the
-  [Text class](#text-class) section for an example.)
+  [Text widget](#text-widget) section for an example.)
 
 #### Example: Modifying cross axis alignment
 {:.no_toc}
@@ -209,7 +209,7 @@ The `crossAxisAlignment` property has five possible values:
 {% comment %}
   Gist: https://gist.github.com/70a6eb88f13019eec349a57bc4fd5fe0
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next section,
   change `CrossAxisAlignment.start` to another value. 
@@ -265,7 +265,7 @@ the widgets are resized according to their
 {% comment %}
   Gist: https://gist.github.com/ba0f40356d1023066d960f6de2be1a4b
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=ba0f40356d1023066d960f6de2be1a4b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ba0f40356d1023066d960f6de2be1a4b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Example: Testing flex values
 {:.no_toc}
@@ -295,7 +295,7 @@ the widgets are resized according to their
 {% comment %}
   Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next example,
   try changing the `flex` properties to other values, 
@@ -338,7 +338,7 @@ wrap a widget and force the widget to fill extra space.
 {% comment %}
   Gist: https://gist.github.com/77021d2ed15f9ece850de15e73c47526
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=77021d2ed15f9ece850de15e73c47526&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=77021d2ed15f9ece850de15e73c47526&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## SizedBox widget
 
@@ -364,7 +364,7 @@ create empty space.
 {% comment %}
   Gist: https://gist.github.com/6582851e85b57180ff5321f814fabb81
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=6582851e85b57180ff5321f814fabb81&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=6582851e85b57180ff5321f814fabb81&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Example: Creating space 
 {:.no_toc}
@@ -384,7 +384,7 @@ create empty space.
 {% comment %}
   Gist: https://gist.github.com/datafoya/19ead147ab5c7668d7d32e1cfed90097
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=19ead147ab5c7668d7d32e1cfed90097&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=19ead147ab5c7668d7d32e1cfed90097&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Spacer widget
 
@@ -413,7 +413,7 @@ can create space between widgets.
 {% comment %}
   Gist: https://gist.github.com/datafoya/bfc367aefde35e02ea5283efdbf58e60
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=bfc367aefde35e02ea5283efdbf58e60&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=bfc367aefde35e02ea5283efdbf58e60&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Text widget
 
@@ -436,7 +436,7 @@ for different fonts, sizes, and colors.
 {% comment %}
   Gist: https://gist.github.com/datafoya/0ff109090b99ef1873d9fad501b2bc86
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=0ff109090b99ef1873d9fad501b2bc86&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=0ff109090b99ef1873d9fad501b2bc86&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Icon widget
 
@@ -463,7 +463,7 @@ Flutter is preloaded with icon packages for
 {% comment %}
   Gist: https://gist.github.com/datafoya/01688fca8c13f85d93078054af2e858b
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=01688fca8c13f85d93078054af2e858b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=01688fca8c13f85d93078054af2e858b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Image widget 
 
@@ -495,7 +495,7 @@ the following example uses an image from the network.
 {% comment %}
   Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Putting it all together 
 
@@ -563,7 +563,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/30ccbe0fcf31cc10eafba3aea8ff0697
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=30ccbe0fcf31cc10eafba3aea8ff0697&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=30ccbe0fcf31cc10eafba3aea8ff0697&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
@@ -604,7 +604,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/95dcc1451aea8412669c41eb8a1a5f23
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=95dcc1451aea8412669c41eb8a1a5f23&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=95dcc1451aea8412669c41eb8a1a5f23&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 2
 {:.no_toc}
@@ -649,7 +649,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/c3ac34ed8952724a0ecb0af1445c2af8
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Exercise: Enter contact information 
 {:.no_toc}
@@ -672,7 +672,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/c5be61116652927c5d92262fce1b5360
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c5be61116652927c5d92262fce1b5360&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c5be61116652927c5d92262fce1b5360&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 3
 {:.no_toc}
@@ -693,7 +693,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/dae36611fc9af04c4b9d0fbc3429275e
 {% endcomment %}
-<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## What's next? 
 
