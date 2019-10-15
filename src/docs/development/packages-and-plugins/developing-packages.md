@@ -91,19 +91,19 @@ specialized content:
 
 * `lib/hello.dart`:
    - The Dart API for the plugin.
-* <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.java</code>:
+* <code>android/src/main/java/com/example/&#8203;hello/HelloPlugin.kt</code>:
    - The Android platform specific implementation of the plugin API.
 * `ios/Classes/HelloPlugin.m`:
    - The iOS platform specific implementation of the plugin API.
 * `example/`:
    - A Flutter app that depends on the plugin, and illustrates how to use it.
 
-By default, the plugin project uses Objective-C for iOS code and
-Java for Android code. If you prefer Swift or Kotlin, you can specify the
+By default, the plugin project uses Swift for iOS code and
+Kotlin for Android code. If you prefer Objective-C or Java, you can specify the
 iOS language using `-i` and/or the Android language using `-a`. For example:
 
 ```terminal
-$ flutter create --template=plugin -i swift -a kotlin hello
+$ flutter create --template=plugin -i objc -a java hello
 ```
 
 ### Step 2: Implement the package {#edit-plugin-package}
