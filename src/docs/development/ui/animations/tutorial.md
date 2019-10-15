@@ -414,7 +414,7 @@ class AnimatedLogo extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
+    final animation = listenable as Animation<double>;
     return Center(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),
@@ -735,7 +735,7 @@ class AnimatedLogo extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
+    final animation = listenable as Animation<double>;
     return Center(
       [!child: Opacity(!]
         [!opacity: _opacityTween.evaluate(animation),!]
