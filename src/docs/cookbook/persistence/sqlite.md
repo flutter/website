@@ -298,7 +298,7 @@ Future<void> deleteDog(int id) async {
 To run the example:
 
   1. Create a new Flutter project.
-  2. Add the `sqfite` and `path` packages to your `pubspec.yaml`.
+  2. Add the `sqflite` and `path` packages to your `pubspec.yaml`.
   3. Paste the following code into a new file called `lib/db_test.dart`.
   4. Run the code with `flutter run lib/db_test.dart`.
 
