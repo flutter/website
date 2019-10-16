@@ -15,9 +15,9 @@ To get the most out of this codelab, you should have basic knowledge about
 how to [make a Flutter app][].
 
 This codelab covers the following material:
-- Using `AnimatedOpacity` to create a fade-in effect
-- Using `AnimatedContainer` to animate transitions in size, color, and margin
-- General patterns that are shared across implicit animations
+- Using `AnimatedOpacity` to create a fade-in effect.
+- Using `AnimatedContainer` to animate transitions in size, color, and margin.
+- Overview of implicit animations and techniques for using them.
 
 **Estimated time to complete this codelab: 15-30 minutes.**
 
@@ -30,7 +30,7 @@ This codelab covers the following material:
 ## What are implicit animations?
 
 With Flutter's animation library, you can add motion and create visual effects 
-for the widgets in your UI. One part of the library is a collection of widgets 
+for the widgets in your UI. One part of the library is an assortment of widgets
 that manage animations for you. These widgets are collectively referred to as _implicit
 animations_, or _implicitly animated widgets_, deriving their name from the
 [ImplicitlyAnimatedWidget] class that they implement. Implicit animations trade
@@ -41,26 +41,26 @@ control for convenience – they manage animation effects so that you don't have
 The following example demonstrates how to add a fade-in effect to existing UI
 using an implicitly animated widget called [AnimatedOpacity]. **The example begins
 with no animation code** – it consists of a [Material App] home screen containing:
-- a photograph of an owl.
-- one "show details" button that does nothing when clicked.
-- description text of the owl in the photograph.
+- A photograph of an owl.
+- One "Show Details" button that does nothing when clicked.
+- Description text of the owl in the photograph.
 
 Run the example to render the following code:
 
 <!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
 <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=d7b09149ffee2f0535bb0c04d96987f5"
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="500" width="100%"
 ></iframe>
 
 Using the `AnimatedOpacity` widget, you can add the following functionality to this 
 example:
-- the owl's description text is hidden until the user clicks the
-"show details"button.
-- when the user clicks the "show details" button, the description text fades in.
+- The owl's description text is hidden until the user clicks the
+"Show Details"button.
+- When the user clicks the "Show Details" button, the owl's description text fades in.
 
-**1.** First, refactor the `FadeIn` widget from a `StatelessWidget` to a `StatefulWidget`, 
+**1.** First, refactor the `FadeInDemo` widget from a `StatelessWidget` to a `StatefulWidget`, 
 and add an accompanying `_FadeInDemoState` widget. 
 
 <?code-excerpt "opacity{0,1}/lib/main.dart"?>
@@ -100,10 +100,10 @@ and add an accompanying `_FadeInDemoState` widget.
                Text('Type: Owl'),
 ```
 
-**3.** Create a state variable for the property that `AnimatedOpacity` is
+**3.** Create a state variable for the property that `AnimatedOpacity` listens
 on. As the name implies, `AnimatedOpacity` listens for changes in the `opacity`
-property. To hide the text before it is clicked, you can set
-the starting opacity value to zero:
+property. To hide the text before it is clicked, set
+the starting `opacity` value to zero: 
 
 <?code-excerpt "opacity{2,3}/lib/main.dart"?>
 ```diff
@@ -146,7 +146,9 @@ the starting opacity value to zero:
 
 **5.** Finally, you can set the animation to trigger when the user clicks the 
 "show details" button. To do this, trigger a state change in opacity within
-the button's `onPressed` handler:
+the button's `onPressed` handler. To make the `FadeInDemo` widget become fully
+visible when the user clicks the "show deatils" button, you must set `opacity`
+to 1:
 
 <?code-excerpt "opacity{4,5}/lib/main.dart"?>
 ```diff
@@ -166,7 +168,7 @@ the button's `onPressed` handler:
 ```
 
 {{site.alert.secondary}}
-You only need to set the beginning and ending value of `opacity`.
+Notice that you only need to set the beginning and ending values of `opacity`.
 The `AnimatedOpacity` widget manages everything in between.
 {{site.alert.end}}
 
@@ -175,7 +177,7 @@ example and click on the "Show Details" button to trigger the animation.
 
 <!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
 <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=4207fea3975b2d329e81d9c9ba84d271"
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4207fea3975b2d329e81d9c9ba84d271"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -236,45 +238,56 @@ example and click on the "Show Details" button to trigger the animation.
 
 ### Putting it all together
 
-The previous example demonstrates a common workflow for using implicit animations: 
-- First, you pick the widget property to animate that fits your use case.
-- Next, you choose the implicitly animated widget that can animate that property.
-- Set the starting and ending values that define the animation.
-- Set the duration of the animation.
-- Configure the animation to trigger.
+The previous example demonstrates useful features of `AnimatedOpacity`:
+- `AnimatedOpacity` listens for state changes in its `opacity` property.
+- Whenever `opacity` changes, `AnimatedOpacity` automatically animates the 
+widget's transition to the new value for `opacity`.
+- `AnimatedOpacity` requires a `duration` parameter to define the time it takes
+to animate the transition between an old `opacity` value and a new one.
 
+The previous example also demonstrates a common workflow for using implicit animations: 
+- First, pick the widget property to animate that fits your use case.
+- Next, choose the implicitly animated widget that can animate that property.
+- Set the start and end values that define the animation.
+- Set the duration of the animation.
+- Trigger the animation – set the conditions for a state change
+in the property or properties that the implicit animation listens on.
+
+{{site.alert.secondary}}
 Notice that `AnimatedOpacity` animates a single property: `opacity`. 
 Some implicitly animated widgets can animate several properties, as the following
 example demonstrates.
+{{site.alert.end}}
 
 ## Example: AnimatedContainer
 
 The preceding example uses two `double`s (0 and 1) to mark the start and 
 end points of an animation for a single property (`opacity`). The following example 
 demonstrates how to add animations to a container using randomly-generated
-values on multiple properties of different types using the `AnimatedContainer`
-widget. **The example begins with no animation code** - it consists of a Material App
+values on multiple properties for values of different types using the `AnimatedContainer`
+widget. **The example begins with no animation code** - it consists of a [Material App]
 home screen containing: 
 
-- A shape.
-- A "change" button.
+- A shape whose size, margin, and color are different each time you run the example.
+- A "change" button that does nothing when clicked.
 
 Run the example to render the following code:
 
 <!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
 <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=8501583cb789504d75317a5ba1ca6930"
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=8501583cb789504d75317a5ba1ca6930"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="800" width="100%"
 ></iframe>
 
-Using the `AnimatedContainer` widget, you can add the following functionality to this 
-example:
+In the preceding example, each property in the `Container` widget (`color`, 
+`borderRadius`, and `margin`) has an associated function that 
+returns a randomly generated value for that property (`randomColor`, `randomBorderRadius`, 
+and `randomMargin` respectively). By using an `AniamtedContainer` widget, you can 
+quickly refactor this code to:
 
-- Clicking the "change" button sets new values for the shape's border radius,
-color, and margin.
-- Once the shape recieves new values for its border radius, color, and margin, 
-an animation gradually transitions the shape's the old values to the new ones. 
+- Generate new values for `color`, `borderRadius`, and `margin` whenever the user clicks the "change button".
+- Animate the transition to the new values whenever they are set.
 
 **1.** First, refactor the `AnimatedContainerDemo` widget from a `StatelessWidget`
 to a `StatefulWidget`, and add an accompanying `_AnimatedContainerDemoState` widget.
@@ -399,7 +412,7 @@ and click on the “change” button to trigger the animation.
 
 <!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
 <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=ddfbc68ec9dc28a48703d29248f5366f"
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ddfbc68ec9dc28a48703d29248f5366f"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="800" width="100%"
 ></iframe>
@@ -482,7 +495,7 @@ and click on the “change” button to trigger the animation.
 
 <!-- https://gist.github.com/be69484e17c26ab9298aecdfa51b11eb -->
 <!-- <iframe 
-  src="https://dartpad.dev/experimental/embed-new-flutter.html?id=be69484e17c26ab9298aecdfa51b11eb"
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=be69484e17c26ab9298aecdfa51b11eb"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px" 
   frameborder="no" height="2000" width="100%"
 ></iframe> -->
