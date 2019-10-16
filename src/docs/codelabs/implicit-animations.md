@@ -54,6 +54,8 @@ Run the example to render the following code:
   frameborder="no" height="500" width="100%"
 ></iframe>
 
+### Animating a single property
+
 Using the `AnimatedOpacity` widget, you can add the following functionality to this 
 example:
 - The owl's description text is hidden until the user clicks the
@@ -182,60 +184,6 @@ example and click on the "Show Details" button to trigger the animation.
   frameborder="no" height="500" width="100%"
 ></iframe>
 
-<!-- <?code-excerpt "opacity{9,10}/lib/main.dart"?>
-```diff
---- opacity9/lib/main.dart
-+++ opacity10/lib/main.dart
-@@ -1,9 +1,16 @@
- import 'package:flutter_web/material.dart';
- import 'package:flutter_web_test/flutter_web_test.dart';
- import 'package:flutter_web_ui/ui.dart' as ui;
-+
- const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
-
--class FadeInDemo extends StatelessWidget {
-+class FadeInDemo extends StatefulWidget {
-+  _FadeInDemoState createState() => _FadeInDemoState();
-+}
-+
-+class _FadeInDemoState extends State<FadeInDemo> {
-+  double opacityLevel = 0.0;
-+
-   Widget build(BuildContext context) {
-     return Column(children: <Widget>[
-       Image.network(owl_url),
-@@ -12,15 +19,19 @@
-             'Show Details',
-             style: TextStyle(color: Colors.blueAccent),
-           ),
--          onPressed: () => null),
--      Container(
-+          onPressed: () => setState(() {
-+                opacityLevel = 1.0;
-+              })),
-+      AnimatedOpacity(
-+          duration: Duration(seconds: 3),
-+          opacity: opacityLevel,
-           child: Column(
--        children: <Widget>[
--          Text('Type: Owl'),
--          Text('Age: 39'),
--          Text('Employment: None'),
--        ],
--      ))
-+            children: <Widget>[
-+              Text('Type: Owl'),
-+              Text('Age: 39'),
-+              Text('Employment: None'),
-+            ],
-+          ))
-     ]);
-   }
- }
-``` -->
-
-<!-- AnimatedOpacity: https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
-
 ### Putting it all together
 
 The previous example demonstrates useful features of `AnimatedOpacity`:
@@ -261,10 +209,11 @@ example demonstrates.
 
 ## Example: AnimatedContainer
 
-The preceding example uses two `double`s (0 and 1) to mark the start and 
+The preceding example uses a `double` to mark the start and 
 end points of an animation for a single property (`opacity`). The following example 
-demonstrates how to add animations to a container using randomly-generated
-values on multiple properties for values of different types using the `AnimatedContainer`
+demonstrates how to add animations that use randomly-generated
+values on multiple properties (`margin`, `borderRadius`, and `color`) for values
+of different types (`double` and `Color`) using the [AnimatedContainer]
 widget. **The example begins with no animation code** - it consists of a [Material App]
 home screen containing: 
 
@@ -280,10 +229,12 @@ Run the example to render the following code:
   frameborder="no" height="800" width="100%"
 ></iframe>
 
+### Animating multiple properties
+
 In the preceding example, each property in the `Container` widget (`color`, 
-`borderRadius`, and `margin`) has an associated function that 
-returns a randomly generated value for that property (`randomColor`, `randomBorderRadius`, 
-and `randomMargin` respectively). By using an `AniamtedContainer` widget, you can 
+`borderRadius`, and `margin`) has an associated function (`randomColor`,
+`randomBorderRadius`, and `randomMargin` respectively) that returns a randomly
+generated value for that property. By using an `AniamtedContainer` widget, you can 
 quickly refactor this code to:
 
 - Generate new values for `color`, `borderRadius`, and `margin` whenever the user clicks the "change button".
@@ -292,7 +243,7 @@ quickly refactor this code to:
 **1.** First, refactor the `AnimatedContainerDemo` widget from a `StatelessWidget`
 to a `StatefulWidget`, and add an accompanying `_AnimatedContainerDemoState` widget.
 As part of the refactor, you can move initialization of `color`, `borderRadius`, 
-and `margin` into an `initState()` method. 
+and `margin` into the `State<AnimatedContainer>` widget's `initState()` method. 
 
 <?code-excerpt "container{0,1}/lib/main.dart"?>
 ```diff
@@ -340,10 +291,11 @@ an `AnimatedContainer` widget:
                    color: color,
 ```
 
-**3.** Create a `change()` method that can contain the behavior triggered
-when the "change" button is clicked. Nows that `color`, `borderRadius`, and 
-`margin` are state variables, the `change()` method must call `setState()`
-to update them:
+**3.** `AnimatedContainer` automatically animates between old and new values of 
+its properties when they change. Create a `change()` method that defines the
+behavior triggered when the user clicks the "change" button. The change method
+can use `setState()` to set new values for the `color`, `borderRadius`, and 
+`margin` state variables: 
 
 <?code-excerpt "container{2,3}/lib/main.dart"?>
 ```diff
@@ -366,7 +318,7 @@ to update them:
        body: Center(
 ```
 
-**4.** Now invoke the `change()` method in the `onPressed()` callback:
+**4.** Now invoke the `change()` method in the `onPressed()` handler:
 
 <?code-excerpt "container{3,4}/lib/main.dart"?>
 ```diff
@@ -417,79 +369,36 @@ and click on the “change” button to trigger the animation.
   frameborder="no" height="800" width="100%"
 ></iframe>
 
+### Changing an animation curve
 
-<!-- <?code-excerpt "container{9,10}/lib/main.dart"?>
+The preceding example demonstrates animated transitions between values for 
+the container's `margin`, `borderRadius`, and `color` properties. However, 
+`AnimatedContainer` animates changes in all of its properties, including ones
+we didn't use such as `padding`, `transform`, and even `child` and `alignment`!
+
+Additionally, all implicit animations allow you to pass a [curve] parameter
+used to control how an animation changes its value over the course of the
+specified duration. In the preceding examples so far, you did not specify a 
+curve for any of the implicit animations, so the implicit animations applied a 
+[linear animation curve] by default.
+
+However, watch how the animation changes in the preceding example
+when you pass a `fastOutSlowIn` curve:
+
+<?code-excerpt "container{5,6}/lib/main.dart"?>
 ```diff
---- container9/lib/main.dart
-+++ container10/lib/main.dart
-@@ -3,6 +3,8 @@
- import 'package:flutter_web_ui/ui.dart' as ui;
- import 'dart:math';
-
-+const _duration = Duration(milliseconds: 400);
-+
- double randomBorderRadius() {
-   return Random().nextDouble() * 64;
- }
-@@ -15,10 +17,29 @@
-   return Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
- }
-
--class AnimatedContainerDemo extends StatelessWidget {
--    final color = randomColor();
--    final borderRadius = randomBorderRadius();
--    final margin = randomMargin();
-+class AnimatedContainerDemo extends StatefulWidget {
-+  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
-+}
-+
-+class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-+  Color color;
-+  double borderRadius;
-+  double margin;
-+
-+  void initState() {
-+    super.initState();
-+    color = Colors.deepPurple;
-+    borderRadius = randomBorderRadius();
-+    margin = randomMargin();
-+  }
-+
-+  void change() {
-+    setState(() {
-+      color = randomColor();
-+      borderRadius = randomBorderRadius();
-+      margin = randomMargin();
-+    });
-+  }
-
-   Widget build(BuildContext context) {
-     return Scaffold(
-@@ -28,12 +49,13 @@
-             SizedBox(
-               width: 128,
-               height: 128,
--              child: Container(
-+              child: AnimatedContainer(
-                 margin: EdgeInsets.all(margin),
-                 decoration: BoxDecoration(
-                   color: color,
-                   borderRadius: BorderRadius.circular(borderRadius),
+--- container5/lib/main.dart
++++ container6/lib/main.dart
+@@ -55,6 +55,7 @@
                  ),
-+                duration: _duration,
                ),
+               duration: _duration,
++              curve: Curves.fastOutSlowIn,
              ),
              MaterialButton(
-@@ -42,7 +64,7 @@
-                 'change',
-                 style: TextStyle(color: Colors.white),
-               ),
--              onPressed: () => null,
-+              onPressed: () => change(),
-             ),
-           ],
-         ),
-``` -->
+               color: Theme.of(context).primaryColor,
+```
+
 
 <!-- ## Example: AnimatedIcon -->
 
@@ -500,11 +409,24 @@ and click on the “change” button to trigger the animation.
   frameborder="no" height="2000" width="100%"
 ></iframe> -->
 
+### Putting it all together
+
+The preceding example uses `AnimatedContainer` to demonstrate more useful features of 
+implicit animations:
+- Some implicit animations (for example, `AnimatedOpacity`) only animate a single
+property, while others (like `AnimatedContainer`) can animate many properties.
+- Implicit animations automatically animate between the old and new values of
+properties when they change using the provided curve and duration.
+- If no curve is specified, implicit animations default to a linear curve.
+
 
 [DartPad]: {{site.dartpad}}
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
 [codelab]: {{site.codelabs}}/codelabs/flutter-firebase
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[curve]: {{site.api}}/flutter/animation/Curve-class.html
+[linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
