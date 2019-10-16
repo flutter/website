@@ -10,6 +10,7 @@ node_modules
 .flutter-plugins
 .packages
 .dart_tool
+pubspec.lock
 example.g
 tmp/
 

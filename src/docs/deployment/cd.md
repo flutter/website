@@ -180,3 +180,6 @@ The following are some other options available to help automate the delivery of 
   in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
 * [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
+* [Github Actions- CI/CD on Github] (https://github.com/features/actions) Get
+  [Example Project](https://github.com/nabilnalakath/flutter-githubaction)
+

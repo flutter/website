@@ -68,7 +68,7 @@ LOG_FILE="$TMP/refresh-code-excerpts-log.txt"
   "$SRC" 2>&1 | tee $LOG_FILE
 LOG=$(cat $LOG_FILE)
 
-[[ $LOG == *" 0 out of"* && $LOG != *Error* ]]
-
 echo "Cleaning up .dart_tool/"
 rm -r "$rootDir/.dart_tool/"
+
+[[ $LOG == *" 0 out of"* && $LOG != *Error* ]]
