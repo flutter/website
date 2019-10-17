@@ -126,68 +126,8 @@ Future<Post> fetchPost() async {
 Hooray! Now you've got a function that fetches a post from the
 internet.
 
-## 4. Fetch and display the data
-
-To fetch the data and display it on screen, use the
-[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-widget. The `FutureBuilder` widget comes with Flutter and makes it easy
-to work with async data sources.
-
-You must provide two parameters:
-
-  1. The `Future` you want to work with. In this case, call the
-     `fetchPost()` function.
-  2. A `builder` function that tells Flutter what to render, depending on the
-     state of the `Future`: loading, success, or error.
-
-<!-- skip -->
-```dart
-FutureBuilder<Post>(
-  future: fetchPost(),
-  builder: (context, snapshot) {
-    if (snapshot.hasData) {
-      return Text(snapshot.data.title);
-    } else if (snapshot.hasError) {
-      return Text("${snapshot.error}");
-    }
-
-    // By default, show a loading spinner.
-    return CircularProgressIndicator();
-  },
-);
-```
-
-## 5. Moving the fetch call out of the `build()` method
-
-Although it's convenient, it's not recommended to put a call to an API in a
-`build()` method.
-
-Flutter calls the `build()` method every time it wants to change anything
-in the view, and this happens surprisingly often. If you leave the fetch
-call in your `build()` method, you'll flood the API with unnecessary calls
-and slow down your app.
-
-Here are some better options so it only hits the API when the page is
-initially loaded.
-
-### Pass it into a `StatelessWidget`
-
-With this strategy, the parent widget is responsible for calling the fetch
-method, storing its result, and then passing it to your widget.
-
-<!-- skip -->
-```dart
-class MyApp extends StatelessWidget {
-  final Future<Post> post;
-
-  MyApp({Key key, this.post}) : super(key: key);
-```
-
-You can see a working example of this in the complete example below.
-
-### Call it in the lifecycle of a `StatefulWidget`'s state
-
-If your widget is stateful, call the fetch method in either the
+## 4. Fetch the data
+Call the fetch method in either the
 [`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
 [`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
 methods.
@@ -210,6 +150,48 @@ class _MyAppState extends State<MyApp> {
     post = fetchPost();
   }
 ```
+
+This Future will be used in the next step.
+
+## 5. Display the data
+To to display the data on screen, use the
+[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
+widget. The `FutureBuilder` widget comes with Flutter and makes it easy
+to work with async data sources.
+
+You must provide two parameters:
+
+  1. The `Future` you want to work with. In this case, the future returned from
+  the `fetchPost()` function.
+  2. A `builder` function that tells Flutter what to render, depending on the
+  state of the `Future`: loading, success, or error.
+
+<!-- skip -->
+```dart
+FutureBuilder<Post>(
+  future: post,
+  builder: (context, snapshot) {
+    if (snapshot.hasData) {
+      return Text(snapshot.data.title);
+    } else if (snapshot.hasError) {
+      return Text("${snapshot.error}");
+    }
+
+    // By default, show a loading spinner.
+    return CircularProgressIndicator();
+  },
+);
+```
+
+## Why is fetchPost() called in initState()?
+
+Although it's convenient, it's not recommended to put an API call in a
+`build()` method.
+
+Flutter calls the `build()` method every time it wants to change anything
+in the view, and this happens surprisingly often. If you leave the fetch
+call in your `build()` method, you'll flood the API with unnecessary calls
+and slow down your app.
 
 ## Testing
 
@@ -259,12 +241,23 @@ class Post {
   }
 }
 
-void main() => runApp(MyApp(post: fetchPost()));
+void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  final Future<Post> post;
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
 
-  MyApp({Key key, this.post}) : super(key: key);
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+Future<Post> post;
+
+  @override
+  void initState() {
+    super.initState();
+    post = fetchPost();
+  }
 
   @override
   Widget build(BuildContext context) {
