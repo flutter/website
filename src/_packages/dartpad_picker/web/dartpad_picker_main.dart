@@ -7,7 +7,8 @@ import 'package:dartpad_picker/dartpad_picker.dart';
 
 void main() {
   if (isMobile()) {
-    querySelector('.dash-dartpad').style.display = 'none';
+    // querySelector('.dash-dartpad').style.display = 'none';
+    querySelector('#dartpad-landing-page').style.display = 'none';
     return;
   }
 
