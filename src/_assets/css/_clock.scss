@@ -37,5 +37,9 @@
     @include media-breakpoint-up(lg) {
       font-size: 160px;
     }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 200px;
+    }
   }
 }
