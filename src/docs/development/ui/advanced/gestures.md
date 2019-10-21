@@ -50,7 +50,8 @@ lifecycle of the gesture (e.g., drag start, drag update, and drag end):
     particular location.
   - `onTapUp` A pointer that will trigger a tap has stopped contacting the screen
     at a particular location.
-  - `onTap` A tap has occurred.
+  - `onTap` The pointer that previously triggered the `onTapDown` has also 
+    triggered `onTapUp` will end up causing a tap.
   - `onTapCancel` The pointer that previously triggered the `onTapDown` will not
     end up causing a tap.
 - Double tap
