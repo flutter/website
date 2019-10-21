@@ -1,18 +1,23 @@
 .clock {
+  background-color: $flutter-color-dark-blue;
+  font-family: $site-font-family-alt;
+
   .countdown-container {
     margin: 60px auto 234px;
+    padding: 0;
     text-align: center;
   }
 
   .heading {
-    font-size: 20px;
-    margin: 60px 0 100px;
+    color: $site-color-white;
+    font-size: 18px;
+    margin: 152px 0 40px;
     text-align: center;
   }
 
   .time-number {
     color: $site-color-primary;
-    font-size: 86px;
+    font-size: 58px;
     margin: 0;
   }
 }
