@@ -13,11 +13,29 @@
     font-size: 18px;
     margin: 152px 0 40px;
     text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: 32px;
+      margin: 304px 0 56px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 40px;
+      margin: 192px 0 88px;
+    }
   }
 
   .time-number {
     color: $site-color-primary;
     font-size: 58px;
     margin: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 110px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 160px;
+    }
   }
 }
