@@ -40,6 +40,9 @@
   {% for js in page.js -%}
     <script {% if js.defer %}defer{% endif %} src="{{js.url | default: js}}"></script>
   {% endfor -%}
+  {% if page.title == "Challenge" %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  {% endif %}
 
   {% include head-diff2html.html -%}
 
