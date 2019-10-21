@@ -1,14 +1,14 @@
 (function () {
     const timeNumber = document.querySelector('.time-number');
-    const eventTime = moment('21-10-2019 17:30:00', 'DD-MM-YYYY HH:mm:ss');
+    const eventTime = moment('23-10-2019 17:30:00', 'DD-MM-YYYY HH:mm:ss');
+
+    function digitsHandler(number) {
+        return number > 9 ? number : `0${number}`;
+    }
 
     setInterval(function() {
         const currentTime = moment();
         const diffTime = eventTime - currentTime;
-
-        function digitsHandler(number) {
-            return number > 9 ? number : `0${number}`;
-        }
 
         if (diffTime > 0) {
             // Duration left to the event
@@ -28,7 +28,7 @@
 
             timeNumber.innerText = `${days}:${hours}:${minutes}:${seconds}`;
         } else {
-            time.innerText = "The event is right now";
+            time.innerText = "";
             clearInterval();
         }
     }, 1000);
