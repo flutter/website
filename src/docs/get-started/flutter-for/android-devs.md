@@ -376,7 +376,7 @@ and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
 {% prettify dart %}
 import 'package:flutter/material.dart';
@@ -2224,7 +2224,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
 [Apple's iOS design language]: https://developer.apple.com/design/resources/
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [composing]: /docs/resources/technical-overview#everythings-a-widget
 [Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
