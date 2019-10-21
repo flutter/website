@@ -39,7 +39,11 @@
     }
 
     @include media-breakpoint-up(xl) {
-      font-size: 200px;
+       font-size: 200px;
+     }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 230px;
     }
   }
 }
