@@ -57,11 +57,12 @@ Click the **Run** button to run the example:
   frameborder="no" height="500" width="100%"
 ></iframe>
 
-### Animating the opacity property using the AnimatedOpacity widget
+### Animate opacity with AnimatedOpacity widget
 
 {{site.alert.secondary}}
   This section contains a list of steps you can use to add an implicit animation to the
-  preceding example. The steps outline how to use the `AnimatedOpacity`
+  preceding example code. After the steps, you can also run an example with the
+  the changes already made. The steps outline how to use the `AnimatedOpacity`
   widget to add the following animation feature:
   - The owl's description text remains hidden until the user clicks the
   **Show details** button.
@@ -233,6 +234,11 @@ Click the **Run** button to run the example:
 ></iframe>
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
+{{site.alert.secondary}}
+  This section contains a list of steps you can use to add an implicit animation to the
+  preceding example code. After the steps, you can also run an example with the
+  the changes already made.
+{{site.alert.end}}
 
 In the preceding example, each property in the `Container` widget (`color`,
 `borderRadius`, and `margin`) is assigned a value by an associated function (`randomColor()`,
@@ -378,7 +384,7 @@ for `margin`, `borderRadius`, and `color`.
 ### Using animation curves
 
 The preceding examples show how implicit animations allow you to set start and
-end values for an animated property, as well as how the `duration` parameter
+end values for multiple animated properties, and how the `duration` parameter
 allows you to set the amount of time the animation takes to complete. Implicit
 animations also allow you to change __the rate__ of an animation within the
 specified `duration`. The parameter you use to define this change in rate is [curve].
@@ -420,22 +426,22 @@ animation_1_play_button_.style.display = 'block';
 
 The `easeInOutBack` constant is only one of many that you can pass for the
 `curve` parameter. Explore the [list of curve constants] to discover more ways
-to use `curve` to modify the look and feel of your implicit animations.
+to use `curve` to modify the look and feel of your animations.
 
 ### Putting it all together
 
-The preceding example uses animated transitions between values for
+The preceding example animates transitions between values for
 the container's `margin`, `borderRadius`, and `color` properties. Note that
 `AnimatedContainer` animates changes to any of its properties, including those
 you didn't use such as `padding`, `transform`, and even `child` and `alignment`!
+The example builds upon the one before it by introducing some new
+capabilities of implicit animations:
 
-The preceding example uses `AnimatedContainer` to demonstrate useful features of
-implicit animations:
 - Some implicit animations (for example, `AnimatedOpacity`) only animate a single
 property, while others (like `AnimatedContainer`) can animate many properties.
 - Implicit animations automatically animate between the old and new values of
-properties when they change using the provided curve and duration.
-- If you do not specify a curve, implicit animations default to a linear curve.
+properties when they change using the provided `curve` and `duration`.
+- If you do not specify a `curve`, implicit animations default to a [linear curve].
 
 ## What's Next?
 
@@ -448,6 +454,7 @@ here are some suggestions for where to go next:
 
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
+[linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [animations api docs]: {{site.master-api}}/flutter/animation/animation-library.html
 [stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
 [easeInOutBack]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
