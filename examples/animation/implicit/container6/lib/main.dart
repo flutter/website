@@ -55,7 +55,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
                 ),
               ),
               duration: _duration,
-              curve: Curves.fastOutSlowIn,
+              curve: Curves.easeInOutBack,
             ),
             MaterialButton(
               color: Theme.of(context).primaryColor,
