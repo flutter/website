@@ -95,7 +95,7 @@
   }
 
   .heading {
-    animation: slide-in 1s;
+    animation: slide-in 1s 0.8s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 18px;
@@ -137,7 +137,6 @@
     margin: 0;
     position: absolute;
     text-align: center;
-    top: 0;
     width: 100%;
     z-index: 2;
 
@@ -175,6 +174,7 @@
     position: fixed;
     top: 0;
     width: 1px;
+    z-index: -1;
 
     &--first {
       animation-delay: 0s;
