@@ -387,6 +387,22 @@ Get your campaign running in a few steps
 
 <a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none"> Get $75 app advertising credit when you spend $25 </a>
 
+## Updating the version of the app
+
+The default version number of the app is `1.0.0`. To update it, navigate to the `pubspec.yaml` file and update the following line:
+`version: 1.0.0+1`
+
+The version number is three numbers separated by dots, like `1.0.0` in the example above, followed by an optional build number such as `1` in the example above, separated by a `+`.
+
+Both the version and the builder number may be overridden in flutter
+build by specifying --build-name and --build-number, respectively.
+
+In Android, build-name is used as versionName while build-number used as versionCode.
+Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+
+In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+Read more about iOS versioning at
+https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 
 ## Android release FAQ
 

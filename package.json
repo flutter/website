@@ -1,15 +1,15 @@
 {
-  "name": "www.dartlang.org",
+  "name": "flutter.dev",
   "version": "0.0.0",
   "private": true,
-  "description": "www.dartlang.org",
+  "description": "flutter.dev",
   "scripts": {
     "start": "./tool/serve.sh",
     "clean": "rm -Rf ./_site/* ./.jekyll*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dart-lang/site-www.git"
+    "url": "https://github.com/flutter/website.git"
   },
   "devDependencies": {
     "canonical-path": "^1.0.0",

@@ -131,7 +131,9 @@
       { "source": "/go/web-plugins-layout", "destination": "https://docs.google.com/document/d/1PeS-QSAFydHXhjZrqkub-GRPMs83roh8VwhbUScWuGQ", "type": 301 },
       { "source": "/go/desktop-resize", "destination": "https://docs.google.com/document/d/1OTy-qCGdP7tYfrEKCNX9A24sgnx5vshfK6FupfniyxA", "type": 301 },
       { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit?usp=sharing", "type": 301 },
-      { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 }
+      { "source": "/go/navigator-with-router", "destination": "https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit", "type": 301 },
+      { "source": "/go/android-assets-in-flutter", "destination": "https://docs.google.com/document/d/1jymgQYxRTe5rdprt74ERh7Jsa0lfnRuMnkOmJusLWsE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/faster-cocoon", "destination": "https://docs.google.com/document/d/1NXP0_9TJ1qz674iYyOGVLEHWVpmbXr5yjhBrdoU_x5g/edit", "type": 301 }
     ]
   }
 }

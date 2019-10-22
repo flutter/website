@@ -203,6 +203,17 @@ Release** section.
 For more details, see [Distribute an app through the App Store]
 [distributionguide_submit].
 
+Now that you’ve created your app, attract more users with Google Ads. App campaigns use machine learning to drive more installs and make the most of your budget. 
+
+Get your campaign running in a few steps
+1. Create your ad - we’ll help create your ad from your app information
+2. Choose your budget - set your target cost-per-install (tCPI) and daily budget cap 
+3. Select your location - let us know where you’d like your ads to run
+4. Decide what action you want users to take - choose installs, in-app actions, or target return on ad spend (ROAS) 
+
+<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none">Get $75 app advertising credit when you spend $25</a>
+
+
 ## Troubleshooting
 
 The [Distribute your app][distributionguide] guide provides a detailed overview of
