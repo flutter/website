@@ -21,11 +21,14 @@ There are four types of pointer events:
 
 [`PointerDownEvent`][]
 : The pointer has contacted the screen at a particular location.
-* [`PointerMoveEvent`][]
+
+[`PointerMoveEvent`][]
 : The pointer has moved from one location on the screen to another.
-* [`PointerUpEvent`][]
+
+[`PointerUpEvent`][]
 : The pointer has stopped contacting the screen.
-* [`PointerCancelEvent`][]
+
+[`PointerCancelEvent`][]
 : Input from this pointer is no longer directed towards this app.
 
 On pointer down, the framework does a _hit test_ on your app
@@ -56,12 +59,15 @@ drag update, and drag end):
 `onTapDown`
 : A pointer that might cause a tap has contacted
   the screen at a particular location.
+
 `onTapUp`
 : A pointer that will trigger a tap has stopped contacting
   the screen at a particular location.
+
 `onTap`
 : The pointer that previously triggered the `onTapDown`
   has also triggered `onTapUp` which ends up causing a tap.
+
 `onTapCancel`
 : The pointer that previously triggered the `onTapDown`
   will not end up causing a tap.
@@ -83,9 +89,11 @@ drag update, and drag end):
 `onVerticalDragStart`
 : A pointer has contacted the screen and might begin to
   move vertically.
+
 `onVerticalDragUpdate`
 : A pointer that is in contact with the screen and
     moving vertically has moved in the vertical direction.
+
 `onVerticalDragEnd`
 : A pointer that was previously in contact with the screen
     and moving vertically is no longer in contact with the
@@ -97,9 +105,11 @@ drag update, and drag end):
 `onHorizontalDragStart`
 : A pointer has contacted the screen and might begin to
   move horizontally.
+
 `onHorizontalDragUpdate`
 : A pointer that is in contact with the screen and
   moving horizontally has moved in the horizontal direction.
+
 `onHorizontalDragEnd`
 : A pointer that was previously in contact with the
   screen and moving horizontally is no longer in contact
@@ -112,11 +122,13 @@ drag update, and drag end):
 : A pointer has contacted the screen and might begin to move 
   horizontally or vertically. This callback causes a crash if 
   `onHorizontalDragStart` or `onVerticalDragStart` is set.
+
 `onPanUpdate`
 : A pointer that is in contact with the screen and is moving 
   in the vertical or horizontal direction. This callback causes
   a crash if `onHorizontalDragUpdate` or `onVerticalDragUpdate`
   is set.
+
 `onPanEnd`
 : A pointer that was previously in contact with screen 
   is no longer in contact with the screen and is moving
@@ -180,9 +192,9 @@ further gesture disambiguation.
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
-* [`PointerCancelEvent`]: {{site.api}}/flutter/gestures/PointerCancelEvent-class.html
+[`PointerCancelEvent`]: {{site.api}}/flutter/gestures/PointerCancelEvent-class.html
 [`PointerDownEvent`]: {{site.api}}/flutter/gestures/PointerDownEvent-class.html
-* [`PointerMoveEvent`]: {{site.api}}/flutter/gestures/PointerMoveEvent-class.html
-* [`PointerUpEvent`]: {{site.api}}/flutter/gestures/PointerUpEvent-class.html
+[`PointerMoveEvent`]: {{site.api}}/flutter/gestures/PointerMoveEvent-class.html
+[`PointerUpEvent`]: {{site.api}}/flutter/gestures/PointerUpEvent-class.html

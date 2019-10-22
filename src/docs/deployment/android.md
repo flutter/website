@@ -258,9 +258,8 @@ are correct, especially the following:
 
 Review the default [Gradle build file][gradlebuild] file,
 `build.gradle`, located in `<app dir>/android/app` and
-verify the values are correct, especially the following:
-
-**`defaultConfig`**
+verify the values are correct, especially the following
+values in the `defaultConfig` block:
 
 `applicationId`
 : Specify the final, unique (Application Id)[appid]
@@ -487,7 +486,7 @@ The resulting app bundle or APK files are located in
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none"
+[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
