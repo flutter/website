@@ -1202,7 +1202,7 @@ _.f=0},bo:function bo(a){this.a=a},bn:function bn(a){this.a=a}},F={
 e_:function(){var u,t,s,r=$.eg(),q=window.navigator.userAgent
 r=r.b
 if(typeof q!=="string")H.P(H.b5(q))
-if(r.test(q)){r=document.querySelector(".dash-dartpad").style
+if(r.test(q)){r=document.querySelector("#dartpad-landing-page").style
 r.display="none"
 return}r=document
 u=r.querySelector("#dartpad-host")
