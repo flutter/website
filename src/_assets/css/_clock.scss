@@ -153,6 +153,27 @@
     }
   }
 
+  .digits_container {
+    display: inline-block;
+    width: 74px;
+
+    @include media-breakpoint-up(md) {
+      width: 142px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 200px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 248px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 294px;
+    }
+  }
+
   .animations {
     height: calc(100% - 66px);
     overflow: hidden;

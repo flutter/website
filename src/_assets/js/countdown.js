@@ -1,5 +1,8 @@
 (function () {
-    const timeNumber = document.querySelector('.time-number');
+    const daysContainer = document.querySelector('.days-digits_container');
+    const hoursContainer = document.querySelector('.hours-digits_container');
+    const minutesContainer = document.querySelector('.minutes-digits_container');
+    const secondsContainer = document.querySelector('.seconds-digits_container');
     const eventTime = moment('21-12-2019 17:30:00', 'DD-MM-YYYY HH:mm:ss');
 
     function setTimer() {
@@ -26,9 +29,12 @@
             //Get seconds
             const seconds = digitsHandler(duration.seconds());
 
-            timeNumber.innerText = `${days}:${hours}:${minutes}:${seconds}`;
+            daysContainer.innerText = `${days}`;
+            hoursContainer.innerText = `${hours}`;
+            minutesContainer.innerText = `${minutes}`;
+            secondsContainer.innerText = `${seconds}`;
         } else {
-            timeNumber.innerText = "The event is right now";
+            console.log('The event is now');
             clearInterval();
         }
     }
