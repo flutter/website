@@ -76,19 +76,19 @@
   }
 
   .heading-container {
-    height: 40px;
+    height: 24px;
     margin: 0 0 40px;
     position: relative;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
-      height: 52px;
+      height: 36px;
       margin-bottom: 56px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
-      height: 60px;
+      height: 48px;
       margin-bottom: 88px;
     }
   }
@@ -99,7 +99,6 @@
     color: $site-color-white;
     font-size: 18px;
     margin: 0;
-    position: absolute;
     text-align: center;
     width: 100%;
 
@@ -133,7 +132,6 @@
     color: $site-color-primary;
     font-size: 58px;
     margin: 0;
-    position: absolute;
     text-align: center;
     width: 100%;
     z-index: 2;
