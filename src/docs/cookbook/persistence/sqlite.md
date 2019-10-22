@@ -50,6 +50,16 @@ dependencies:
   path:
 ```
 
+Make sure to import the packages in the file you'll be working in.
+
+<!-- skip -->
+```dart
+import 'dart:async';
+
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+```
+
 ## 2. Define the Dog data model
 
 Before creating the table to store information on Dogs, take a few moments to
