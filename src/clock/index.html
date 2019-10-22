@@ -1,14 +1,35 @@
 ---
 title: Clock
-layout: landing
+layout: base
 show_banner: False
 body_class: clock
 ---
 
-<section class="">
-    <h1 class="heading">Timing is everything. Stay tuned.</h1>
-    <div class="container countdown-container">
-        <p class="time-number"></p>
+<section>
+    <div class="center">
+        <div class="heading-container">
+            <h1 class="heading">Time is everything. Stay tuned.</h1>
+        </div>
+        <div class="countdown-container">
+            <div class="time-unit-container d-inline-block">
+                <p class="time-number"></p>
+            </div>
+        </div>
+    </div>
+    <div class="animations">
+        {% asset clock/Left_Rectangle_L.svg class='svg-animated svg-animated--left svg-animated--large' %}
+        {% asset clock/Right_Rectangle_L.svg class='svg-animated svg-animated--right svg-animated--large' %}
+        {% asset clock/Oval_L.svg class='svg-animated svg-animated--oval svg-animated--large' %}
+        {% asset clock/Left_Rectangle_M.svg class='svg-animated svg-animated--left svg-animated--medium' %}
+        {% asset clock/Right_Rectangle_M.svg class='svg-animated svg-animated--right svg-animated--medium' %}
+        {% asset clock/Oval_M.svg class='svg-animated svg-animated--oval svg-animated--medium' %}
+        {% asset clock/Left_Rectangle_S.svg class='svg-animated svg-animated--left svg-animated--small' %}
+        {% asset clock/Right_Rectangle_S.svg class='svg-animated svg-animated--right svg-animated--small' %}
+        {% asset clock/Oval_S.svg class='svg-animated svg-animated--oval svg-animated--small' %}
+        <div class="vertical-line vertical-line--first"></div>
+        <div class="vertical-line vertical-line--second"></div>
+        <div class="vertical-line vertical-line--thrid"></div>
+        <div class="vertical-line vertical-line--fourth"></div>
     </div>
 </section>
 

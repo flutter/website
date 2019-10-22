@@ -1,34 +1,145 @@
+@keyframes right-slide-in {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes left-slide-in {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes oval-slide-in-small {
+  from {
+    left: -650px;
+    bottom: -350px;
+  }
+  to {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+
+@keyframes oval-slide-in {
+  from {
+    left: -650px;
+    bottom: -350px;
+  }
+  to {
+    left: 0;
+    bottom: -10%;
+  }
+}
+
+@keyframes vertical-lines {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 .clock {
   background-color: $flutter-color-dark-blue;
   font-family: $site-font-family-alt;
 
+  .center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
   .countdown-container {
-    margin: 60px auto 234px;
+    margin: 60px auto 100px;
     padding: 0;
     text-align: center;
   }
 
-  .heading {
-    color: $site-color-white;
-    font-size: 18px;
+  .heading-container {
+    height: 40px;
     margin: 152px 0 40px;
-    text-align: center;
+    position: relative;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
+      height: 52px;
       margin: 304px 0 56px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
+      height: 60px;
       margin: 192px 0 88px;
     }
   }
 
+  .heading {
+    animation: slide-in 1s;
+    animation-fill-mode: both;
+    color: $site-color-white;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      font-size: 32px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 40px;
+    }
+  }
+
+  .time-unit-container {
+    display: inline-block;
+    height: 87px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      height: 165px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 260px;
+    }
+  }
+
   .time-number {
+    animation: slide-in 0.8s;
+    animation-fill-mode: both;
     color: $site-color-primary;
     font-size: 58px;
     margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
     @include media-breakpoint-up(md) {
       font-size: 110px;
@@ -39,11 +150,128 @@
     }
 
     @include media-breakpoint-up(xl) {
-       font-size: 200px;
-     }
+      font-size: 200px;
+    }
 
     @include media-breakpoint-up(xxl) {
       font-size: 230px;
+    }
+  }
+
+  .animations {
+    height: 92.6%;
+    overflow: hidden;
+    position: absolute;
+    top: 66px;
+    width: 100%;
+  }
+
+  .vertical-line {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: vertical-lines;
+    animation-timing-function: ease;
+    background-color: #384753;
+    position: fixed;
+    top: 0;
+    width: 1px;
+
+    &--first {
+      animation-delay: 0s;
+      left: 4%;
+    }
+
+    &--second {
+      animation-delay: 0.2s;
+      left: 27%;
+    }
+
+    &--thrid {
+      animation-delay: 0.4s;
+      left: 50%;
+    }
+
+    &--fourth {
+      animation-delay: 0.6s;
+      left: 73%;
+    }
+
+    &--first, &--thrid {
+      display: none;
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+  }
+
+  .svg-animated {
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.87, 1.15, 1, 0.99);
+    position: absolute;
+
+    &--left {
+      animation-name: left-slide-in;
+      bottom: 130px;
+      left: 0;
+
+      @include media-breakpoint-up(md) {
+        bottom: unset;
+        top: 100px;
+      }
+    }
+
+    &--right {
+      animation-name: right-slide-in;
+      right: 0;
+      top: 0;
+    }
+
+    &--oval {
+      animation-name: oval-slide-in-small;
+      bottom: 0;
+      left: 0;
+
+      @include media-breakpoint-up(md) {
+        animation-name: oval-slide-in;
+      }
+    }
+
+    &--large {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+
+    &--medium {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+
+    &--small {
+      display: block;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
     }
   }
 }
