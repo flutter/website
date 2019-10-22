@@ -18,24 +18,24 @@
 
 @keyframes oval-slide-in-small {
   from {
-    left: -650px;
     bottom: -350px;
+    left: -650px;
   }
   to {
-    left: 0;
     bottom: 0;
+    left: 0;
   }
 }
 
 
 @keyframes oval-slide-in {
   from {
-    left: -650px;
     bottom: -350px;
+    left: -650px;
   }
   to {
-    left: 0;
     bottom: -10%;
+    left: 0;
   }
 }
 
@@ -115,7 +115,6 @@
   .time-unit-container {
     display: inline-block;
     height: 87px;
-    overflow: hidden;
     position: relative;
     width: 100%;
 
