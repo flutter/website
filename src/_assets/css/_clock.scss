@@ -71,26 +71,25 @@
   }
 
   .countdown-container {
-    margin: 60px auto 100px;
     padding: 0;
     text-align: center;
   }
 
   .heading-container {
     height: 40px;
-    margin: 152px 0 40px;
+    margin: 0 0 40px;
     position: relative;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
       height: 52px;
-      margin: 304px 0 56px;
+      margin-bottom: 56px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
       height: 60px;
-      margin: 192px 0 88px;
+      margin-bottom: 88px;
     }
   }
 
@@ -158,7 +157,7 @@
   }
 
   .animations {
-    height: 92.6%;
+    height: calc(100% - 66px);
     overflow: hidden;
     position: absolute;
     top: 66px;
@@ -215,10 +214,16 @@
       animation-name: left-slide-in;
       bottom: 130px;
       left: 0;
+      transform: scaleX(1.5);
 
       @include media-breakpoint-up(md) {
         bottom: unset;
+        transform: unset;
         top: 100px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        transform: translateX(-30px);
       }
     }
 
