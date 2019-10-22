@@ -50,11 +50,11 @@
 
 @keyframes slide-in {
   from {
-    bottom: -50px;
+    transform: translateY(50px);
     opacity: 0;
   }
   to {
-    bottom: 0;
+    transform: none;
     opacity: 1;
   }
 }
