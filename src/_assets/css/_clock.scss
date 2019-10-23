@@ -31,7 +31,7 @@
   }
 
   .heading {
-    animation: slide-in 1s 0.8s;
+    animation: slide-in 1s .8s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 18px;
@@ -64,7 +64,7 @@
   }
 
   .time-number {
-    animation: slide-in 0.8s;
+    animation: slide-in .8s;
     animation-fill-mode: both;
     color: $site-color-primary;
     font-size: 58px;
@@ -131,22 +131,21 @@
     z-index: -1;
 
     &--first {
-      animation-delay: 0s;
       left: 4%;
     }
 
     &--second {
-      animation-delay: 0.2s;
+      animation-delay: .2s;
       left: 27%;
     }
 
     &--thrid {
-      animation-delay: 0.4s;
+      animation-delay: .4s;
       left: 50%;
     }
 
     &--fourth {
-      animation-delay: 0.6s;
+      animation-delay: .6s;
       left: 73%;
     }
 
@@ -162,7 +161,7 @@
   .svg-animated {
     animation-duration: 1.2s;
     animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(0.87, 1.15, 1, 0.99);
+    animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
     position: absolute;
 
     &--left {
@@ -201,10 +200,6 @@
     &--large {
       display: none;
 
-      @include media-breakpoint-up(md) {
-        display: none;
-      }
-
       @include media-breakpoint-up(lg) {
         display: block;
       }
@@ -226,10 +221,6 @@
       display: block;
 
       @include media-breakpoint-up(md) {
-        display: none;
-      }
-
-      @include media-breakpoint-up(lg) {
         display: none;
       }
     }
