@@ -92,7 +92,7 @@ Here are a few possibilities, but there are
 many others:
 
 * [Firebase Hosting][]
-* [Github Pages][]
+* [GitHub Pages][]
 * [Google Cloud Hosting][]
 
 In future, we plan to generate PWA configuration files
