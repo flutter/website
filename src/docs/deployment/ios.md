@@ -60,8 +60,10 @@ Next, you'll register your app on App Store Connect:
 1. Navigate to the application details for your app and select **App
    Information** from the sidebar.
 1. In the General Information section, select the Bundle ID
-   you registered in the preceding step. For a detailed overview,
-   see [Add an app to your account][appstoreconnect_guide_register].
+   you registered in the preceding step.
+
+For a detailed overview,
+see [Add an app to your account][appstoreconnect_guide_register].
 
 ## Review Xcode project settings
 
@@ -77,7 +79,7 @@ Navigate to your target's settings in Xcode:
    target.
 1. Select the **General** tab.
 
-Next, you'll verify the most important settings:
+Next, you'll verify the most important settings.
 
 In the **Identity** section:
 
@@ -94,6 +96,7 @@ In the **Signing** section:
   and provisioning.  This is set `true` by default, which should
   be sufficient for most apps. For more complex scenarios,
   see the [Code Signing Guide][codesigning_guide].
+
 `Team`
 : Select the team associated with your registered Apple Developer
   account. If required, select **Add Account...**,
@@ -107,7 +110,8 @@ In the **Deployment Info** section:
   Objective-C or Swift code that makes use of APIs that
   were unavailable in iOS 8, update this setting appropriately.
 
-The General tab of your project settings should resemble the following:
+The **General** tab of your project settings should resemble
+the following:
 
 ![Xcode Project Settings](/images/releaseguide/xcode_settings.png){:width="100%"}
 
