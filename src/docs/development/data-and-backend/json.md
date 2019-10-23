@@ -146,7 +146,7 @@ JSON lives in a map structure.
 Combat the previously mentioned problems by introducing a plain model
 class, called `User` in this example. Inside the `User` class, you'll find:
 
-* A `User.fromJson()` constructor, for constructing a new `User` instance from a
+* A `User.fromMappedJson()` constructor, for constructing a new `User` instance from a
   map structure.
 * A `toJson()` method, which converts a `User` instance into a map.
 
@@ -165,7 +165,7 @@ class User {
 
   User(this.name, this.email);
 
-  User.fromJson(Map<String, dynamic> json)
+  User.fromMappedJson(Map<String, dynamic> json)
       : name = json['name'],
         email = json['email'];
 
@@ -183,7 +183,7 @@ itself. With this new approach, you can decode a user easily.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+var user = User.fromMappedJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -201,7 +201,7 @@ String json = jsonEncode(user);
 With this approach, the calling code doesn't have to worry about JSON
 serialization at all. However, the model class still definitely has to.
 In a production app, you would want to ensure that the serialization
-works properly. In practice, the `User.fromJson()` and `User.toJson()`
+works properly. In practice, the `User.fromMappedJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
 However, real-world scenarios are not usually that simple.
@@ -278,9 +278,9 @@ class User {
   String email;
 
   /// A necessary factory constructor for creating a new User instance
-  /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
+  /// from a map. Pass the map to the generated `_$UserFromMappedJson()` constructor.
   /// The constructor is named after the source class, in this case, User.
-  factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromMappedJson(json);
 
   /// `toJson` is the convention for a class to declare support for serialization
   /// to JSON. The implementation simply calls the private, generated
@@ -346,7 +346,7 @@ you do not have actually to make any changes to our previous code.
 <!-- skip -->
 ```dart
 Map userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+var user = User.fromMappedJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
@@ -382,7 +382,7 @@ class Address {
   
   Address(this.street, this.city);
   
-  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
+  factory Address.fromMappedJson(Map<String, dynamic> json) => _$AddressFromMappedJson(json);
   Map<String, dynamic> toJson() => _$AddressToJson(this); 
 }
 ```
@@ -401,7 +401,7 @@ class User {
   
   User(this.firstName, this.address);
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
@@ -453,7 +453,7 @@ class User {
   
   User(this.firstName, this.address);
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
 ```
