@@ -1,64 +1,3 @@
-@keyframes right-slide-in {
-  from {
-    right: -500px;
-  }
-  to {
-    right: 0;
-  }
-}
-
-@keyframes left-slide-in {
-  from {
-    left: -300px;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes oval-slide-in-small {
-  from {
-    bottom: -350px;
-    left: -650px;
-  }
-  to {
-    bottom: 0;
-    left: 0;
-  }
-}
-
-
-@keyframes oval-slide-in {
-  from {
-    bottom: -350px;
-    left: -650px;
-  }
-  to {
-    bottom: -10%;
-    left: 0;
-  }
-}
-
-@keyframes vertical-lines {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
-
 .clock {
   background-color: $flutter-color-dark-blue;
   font-family: $site-font-family-alt;
@@ -77,19 +16,17 @@
 
   .heading-container {
     height: 24px;
-    margin: 0 0 40px;
+    margin: 0;
     position: relative;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
       height: 36px;
-      margin-bottom: 56px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
       height: 48px;
-      margin-bottom: 88px;
     }
   }
 
@@ -296,5 +233,68 @@
         display: none;
       }
     }
+  }
+}
+
+// animations
+
+@keyframes right-slide-in {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes left-slide-in {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes oval-slide-in-small {
+  from {
+    bottom: -350px;
+    left: -650px;
+  }
+  to {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+@keyframes oval-slide-in {
+  from {
+    bottom: -350px;
+    left: -650px;
+  }
+  to {
+    bottom: -10%;
+    left: 0;
+  }
+}
+
+@keyframes vertical-lines {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
   }
 }
