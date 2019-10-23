@@ -1,5 +1,5 @@
 .clock {
-  background-color: $flutter-color-dark-blue;
+  background-color: $flutter-dark-blue-texture;
   font-family: $site-font-family-alt;
 
   .center {
@@ -7,6 +7,7 @@
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+    z-index: 99;
   }
 
   .countdown-container {
@@ -112,11 +113,29 @@
   }
 
   .animations {
+    animation-name: geometric-small-background;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
+    background-image: asset_url('clock/left_rectangle.svg'), asset_url('clock/right_rectangle.svg'), asset_url('clock/oval.svg');
+    background-position: bottom 90px left, top right, bottom left;
+    background-repeat: no-repeat;
+    background-size: 181px 247px, 140px 121px, 280px 163px;
     height: calc(100% - 66px);
     overflow: hidden;
     position: absolute;
     top: 66px;
     width: 100%;
+
+    @include media-breakpoint-up(md) {
+      animation-name: geometric-medium-background;
+      background-size: 400px 556px, 317px 258px, auto;
+      background-position: top 150px left, top right, bottom left;
+    }
+
+    @include media-breakpoint-up(lg) {
+      background-size: auto;
+    }
   }
 
   .vertical-line {
@@ -157,119 +176,9 @@
       }
     }
   }
-
-  .svg-animated {
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
-    position: absolute;
-
-    &--left {
-      animation-name: left-slide-in;
-      bottom: 130px;
-      left: 0;
-      transform: scaleX(1.5);
-
-      @include media-breakpoint-up(md) {
-        bottom: unset;
-        transform: unset;
-        top: 100px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        transform: translateX(-30px);
-      }
-    }
-
-    &--right {
-      animation-name: right-slide-in;
-      right: 0;
-      top: 0;
-    }
-
-    &--oval {
-      animation-name: oval-slide-in-small;
-      bottom: 0;
-      left: 0;
-
-      @include media-breakpoint-up(md) {
-        animation-name: oval-slide-in;
-      }
-    }
-
-    &--large {
-      display: none;
-
-      @include media-breakpoint-up(lg) {
-        display: block;
-      }
-    }
-
-    &--medium {
-      display: none;
-
-      @include media-breakpoint-up(md) {
-        display: block;
-      }
-
-      @include media-breakpoint-up(lg) {
-        display: none;
-      }
-    }
-
-    &--small {
-      display: block;
-
-      @include media-breakpoint-up(md) {
-        display: none;
-      }
-    }
-  }
 }
 
 // animations
-
-@keyframes right-slide-in {
-  from {
-    right: -500px;
-  }
-  to {
-    right: 0;
-  }
-}
-
-@keyframes left-slide-in {
-  from {
-    left: -300px;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes oval-slide-in-small {
-  from {
-    bottom: -350px;
-    left: -650px;
-  }
-  to {
-    bottom: 0;
-    left: 0;
-  }
-}
-
-
-@keyframes oval-slide-in {
-  from {
-    bottom: -350px;
-    left: -650px;
-  }
-  to {
-    bottom: -10%;
-    left: 0;
-  }
-}
-
 @keyframes vertical-lines {
   from {
     height: 0;
@@ -287,5 +196,23 @@
   to {
     transform: none;
     opacity: 1;
+  }
+}
+
+@keyframes geometric-medium-background {
+  from {
+    background-position: top 150px left -270px, top right -488px, bottom -348px left -140px;
+  }
+  to {
+    background-position: top 150px left, top right, bottom left;
+  }
+}
+
+@keyframes geometric-small-background {
+  from {
+    background-position: bottom 90px left -144px, top right -140px, bottom -164px left -100px;
+  }
+  to {
+    background-position: bottom 90px left, top right, bottom left;
   }
 }
