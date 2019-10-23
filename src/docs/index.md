@@ -91,7 +91,7 @@ Happy Fluttering!
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
 [creating responsive apps]: /docs/development/ui/layout/responsive
 [Flutter Medium publication]: https://medium.com/flutter
-[Flutter for web]: (/web)
+[Flutter for web]: /web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
 [Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
 [Performance view]: /docs/development/tools/devtools/performance
