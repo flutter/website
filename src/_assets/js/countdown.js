@@ -3,31 +3,44 @@
     const hoursContainer = document.querySelector('.hours-digits_container');
     const minutesContainer = document.querySelector('.minutes-digits_container');
     const secondsContainer = document.querySelector('.seconds-digits_container');
-    const eventTime = moment('21-12-2019 17:30:00', 'DD-MM-YYYY HH:mm:ss');
+    const eventTime = 'December 21 2019 17:30:00'; // TODO: Actual event day TBD
+
+    // Returns remaining time in days, hours, minutes and seconds.
+    function getTimeRemaining() {
+        const t = Date.parse(eventTime) - Date.parse(new Date());
+        const seconds = Math.floor( (t/1000) % 60 );
+        const minutes = Math.floor( (t/1000/60) % 60 );
+        const hours = Math.floor( (t/(1000*60*60)) % 24 );
+        const days = Math.floor( t/(1000*60*60*24) );
+        return  {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
+        };
+    }
+
+    // Adds a number if there's just one digit
+    function digitsHandler(number) {
+        return number > 9 ? number : `0${number}`;
+    }
 
     function setTimer() {
-        const currentTime = moment();
-        const diffTime = eventTime - currentTime;
+        const remainingTime = getTimeRemaining();
 
-        function digitsHandler(number) {
-            return number > 9 ? number : `0${number}`;
-        }
-
-        if (diffTime > 0) {
-            // Duration left to the event
-            const duration = moment.duration(eventTime.diff(currentTime));
-
+        if (remainingTime.total > 0) {
             //Get Days
-            const days = digitsHandler(duration.days());
+            const days = digitsHandler(remainingTime.days);
 
             //Get hours
-            const hours = digitsHandler(duration.hours());
+            const hours = digitsHandler(remainingTime.hours);
 
             //Get Minutes
-            const minutes = digitsHandler(duration.minutes());
+            const minutes = digitsHandler(remainingTime.minutes);
 
             //Get seconds
-            const seconds = digitsHandler(duration.seconds());
+            const seconds = digitsHandler(remainingTime.seconds);
 
             daysContainer.innerText = `${days}`;
             hoursContainer.innerText = `${hours}`;
