@@ -385,9 +385,10 @@ class ViewController: UIViewController {
   }
 
   @objc func handleButtonAction() {
-    let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine;
-    let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)!;
-    self.present(flutterViewController, animated: false, completion: nil)
+    if let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine {
+      let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+      self.present(flutterViewController, animated: false, completion: nil)
+    }
   }
 }
 ```
