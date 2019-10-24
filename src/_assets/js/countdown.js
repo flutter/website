@@ -21,7 +21,7 @@
         };
     }
 
-    // Adds a number if there's just one digit
+    // Adds a zero number if there's just one digit
     function digitsHandler(number) {
         return number > 9 ? number : `0${number}`;
     }
@@ -30,16 +30,9 @@
         const remainingTime = getTimeRemaining();
 
         if (remainingTime.total > 0) {
-            //Get Days
             const days = digitsHandler(remainingTime.days);
-
-            //Get hours
             const hours = digitsHandler(remainingTime.hours);
-
-            //Get Minutes
             const minutes = digitsHandler(remainingTime.minutes);
-
-            //Get seconds
             const seconds = digitsHandler(remainingTime.seconds);
 
             daysContainer.innerText = `${days}`;

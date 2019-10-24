@@ -1,6 +1,7 @@
 .clock {
   background-color: $flutter-dark-blue-texture;
   font-family: $site-font-family-alt;
+  $vertical-line-color: #384753;
 
   .center {
     position: absolute;
@@ -105,7 +106,7 @@
     animation-fill-mode: both;
     animation-name: vertical-lines;
     animation-timing-function: ease;
-    background-color: #384753;
+    background-color: $vertical-line-color;
     position: fixed;
     top: 0;
     width: 1px;
