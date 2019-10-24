@@ -32,7 +32,7 @@
     animation: slide-in .8s;
     animation-fill-mode: both;
     color: $site-color-primary;
-    font-size: 58px;
+    font-size: 52px;
     margin: 0;
     text-align: center;
     width: 100%;
@@ -57,7 +57,7 @@
 
   .digits_container {
     display: inline-block;
-    width: 74px;
+    width: 68px;
 
     @include media-breakpoint-up(md) {
       width: 142px;

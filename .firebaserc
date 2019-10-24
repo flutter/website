@@ -13,6 +13,8 @@
     "ft": "flutter-web-staging",
     "filip": "flutter-website-filiph-staging",
     "brianegan": "brianegan-flutter-staging",
-    "xster-staging": "flutter-website-staging-6f2ad"
+    "xster-staging": "flutter-website-staging-6f2ad",
+    "huge-qa": "huge-flutter-dev-qa",
+    "huge-staging": "huge-flutter-dev-staging"
   }
 }
