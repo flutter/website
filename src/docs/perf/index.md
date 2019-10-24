@@ -1,5 +1,6 @@
 ---
 title: Performance
+description: Evaluating the performance of your app from several angles..
 ---
 
 There are different ways to evaluate performance.
@@ -8,12 +9,10 @@ where performance can be evaluated and improved.
 
 ## App size
 
-How to make your app's size as small as possible.
-This helps ensure quicker downloading and start up
-times.
+How to measure your app's size. The smaller the size,
+the quicker it is to download.
 
-[Making your compiled app smaller](/docs/perf/app-size)
-
+[Measuring your app's size][]
 
 ## Memory
 
@@ -32,3 +31,6 @@ Are you animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
 [Jank no more!](/docs/perf/rendering)
+
+
+[Measuring your app's size]: /docs/perf/app-size
