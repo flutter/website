@@ -15,7 +15,7 @@ widgets that make it easy to create animations for a specific set of properties.
 
 To get the most out of this codelab, you should have basic knowledge about:
 - How to [make a Flutter app].
-- How to use stateful widgets.
+- How to use [stateful widgets].
 
 This codelab covers the following material:
 - Using `AnimatedOpacity` to create a fade-in effect.
@@ -24,20 +24,17 @@ This codelab covers the following material:
 
 **Estimated time to complete this codelab: 15-30 minutes.**
 
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad] to display examples and exercises.
-  If you see empty boxes instead of DartPads, go to the
-  [DartPad troubleshooting page].
-{{site.alert.end}}
-
 ## What are implicit animations?
 
 With Flutter's animation library, you can add motion and create visual effects
 for the widgets in your UI. One part of the library is an assortment of widgets
 that manage animations for you. These widgets are collectively referred to as _implicit
 animations_, or _implicitly animated widgets_, deriving their name from the
-[ImplicitlyAnimatedWidget] class that they implement. Implicit animations trade
-control for convenience&mdash;they manage animation effects so that you don't have to.
+[ImplicitlyAnimatedWidget] class that they implement. With implicit animations,
+you can animate a widget property by setting a target value; whenever that target
+value changes, the widget animates the property from the old value to the new one.
+In this way, implicit animations trade control for convenience&mdash;they
+manage animation effects so that you don't have to.
 
 ## Example: Add a fade-in effect to text
 
@@ -56,6 +53,11 @@ Click the **Run** button to run the example:
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
+{{site.alert.important}}
+  This page uses an embedded version of [DartPad] to display examples and exercises.
+  If you see empty boxes instead of DartPads, go to the
+  [DartPad troubleshooting page].
+{{site.alert.end}}
 
 ### Animate opacity with AnimatedOpacity widget
 
@@ -192,7 +194,7 @@ example and click the **Show details** button to trigger the animation.
 
 ### Putting it all together
 
-The previous example demonstrates useful features of `AnimatedOpacity`:
+The previous example demonstrates the following features of `AnimatedOpacity`:
 - `AnimatedOpacity` listens for state changes in its `opacity` property.
 - Whenever `opacity` changes, `AnimatedOpacity` automatically animates the
 widget's transition to the new value for `opacity`.
@@ -202,7 +204,7 @@ to animate the transition between an old `opacity` value and a new one.
 The previous example also uses a common workflow for using implicit animations:
 - First, pick a widget property to animate.
 - Next, choose an implicit animation that can animate that property.
-- Set the start and end values for the property that you're animating.
+- Choose the start and end values for the property that you're animating.
 - Set the `duration` of the animation.
 - Trigger the animation by creating a state change in the animated property.
 
@@ -237,7 +239,7 @@ Click the **Run** button to run the example:
 {{site.alert.secondary}}
   This section contains a list of steps you can use to add an implicit animation to the
   preceding example code. After the steps, you can also run an example with the
-  the changes already made.
+  changes already made.
 {{site.alert.end}}
 
 In the preceding example, each property in the `Container` widget (`color`,

@@ -1,7 +1,12 @@
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
+import 'dart:math';
+
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_test/flutter_web_test.dart';
 import 'package:flutter_web_ui/ui.dart' as ui;
-import 'dart:math';
 
 double randomBorderRadius() {
   return Random().nextDouble() * 64;
@@ -16,7 +21,7 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatefulWidget {
-    _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
@@ -24,10 +29,11 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   double borderRadius;
   double margin;
 
+  @override
   initState() {
-    final color = randomColor();
-    final borderRadius = randomBorderRadius();
-    final margin = randomMargin();
+    color = randomColor();
+    borderRadius = randomBorderRadius();
+    margin = randomMargin();
   }
 
   void change() {
@@ -38,6 +44,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -81,5 +88,7 @@ class MyApp extends StatelessWidget {
 
 Future<void> main() async {
   await ui.webOnlyInitializePlatform();
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }

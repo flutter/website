@@ -1,7 +1,12 @@
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
+import 'dart:math';
+
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_test/flutter_web_test.dart';
 import 'package:flutter_web_ui/ui.dart' as ui;
-import 'dart:math';
 
 const _duration = Duration(milliseconds: 400);
 
@@ -26,6 +31,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   double borderRadius;
   double margin;
 
+  @override
   void initState() {
     super.initState();
     color = Colors.deepPurple;
@@ -41,6 +47,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -85,5 +92,7 @@ class MyApp extends StatelessWidget {
 
 Future<void> main() async {
   await ui.webOnlyInitializePlatform();
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
