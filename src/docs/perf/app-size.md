@@ -3,13 +3,22 @@ title: Measuring your app's size
 description: How to measure app size for iOS and Android.
 ---
 
-By default, launching you app with  `flutter run`,
-or by clicking the play button in your IDE
+Many developers are concerned with the size of their
+compiled apps. As the APK, app bundle, or IPA version
+of a Flutter app is self contained, and holds all the
+code and assets needed to run the app, its size
+can be a concern. The larger an app, the more space
+it requires on a device, and the longer it takes to
+download.
+
+By default, launching your app with `flutter run`,
+or by clicking the **Play** button in your IDE
 (as used in [Test drive][] and
 [Write your first Flutter app][]),
-generates a debug build of the Flutter app.
-The app size is large due to the debugging
-overhead.
+generates a _debug_ build of the Flutter app.
+The app size of a debug build is large due to
+the debugging overhead that allows for hot reload
+and step level debugging.
 
 To get a better sense of what an end-user actually
 has to download for a Flutter app, try the following.
@@ -30,7 +39,7 @@ flutter build apk --target-platform=android-arm64
 ```
 
 As of Flutter 1.9, you can run the following to get 2 APKs,
-one for 32-bit and one for 64-bit.
+one for 32-bit and one for 64-bit:
 
 ```shell
 flutter build apk --split-per-abi
@@ -58,6 +67,17 @@ and obtain the size report from there.
 IPAs are commonly larger than APKs as explained
 in [How big is the Flutter engine?][], a
 section in the Flutter [FAQ][].
+
+## Reducing app size
+
+Some of the obvious things you can do to make your app smaller
+are:
+
+* Remove unused resources
+* Minimize resource imported from libraries
+* Support a limited number of screen densities
+* Compress PNG, JPEG, and PNG files..
+
 
 [FAQ]: /docs/resources/faq
 [How big is the Flutter engine?]: /docs/resources/faq#how-big-is-the-flutter-engine
