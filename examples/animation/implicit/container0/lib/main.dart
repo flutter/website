@@ -21,9 +21,9 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatelessWidget {
-  color = randomColor();
-  borderRadius = randomBorderRadius();
-  margin = randomMargin();
+  Color color = randomColor();
+  double borderRadius = randomBorderRadius();
+  double margin = randomMargin();
 
   @override
   Widget build(BuildContext context) {

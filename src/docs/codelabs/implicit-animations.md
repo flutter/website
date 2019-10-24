@@ -78,9 +78,9 @@ and add an accompanying `_FadeInDemoState` widget.
 ```diff
 --- opacity0/lib/main.dart
 +++ opacity1/lib/main.dart
-@@ -5,7 +5,11 @@
- const owl_url =
-     'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+@@ -8,7 +8,11 @@
+
+ const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
 -class FadeInDemo extends StatelessWidget {
 +class FadeInDemo extends StatefulWidget {
@@ -88,9 +88,9 @@ and add an accompanying `_FadeInDemoState` widget.
 +}
 +
 +class _FadeInDemoState extends State<FadeInDemo> {
+   @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-       Image.network(owl_url),
 ```
 
 **2.** Change the `Container` widget to an `AnimatedOpacity` widget:
@@ -99,15 +99,15 @@ and add an accompanying `_FadeInDemoState` widget.
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -19,7 +19,7 @@
+@@ -23,7 +23,7 @@
              style: TextStyle(color: Colors.blueAccent),
            ),
            onPressed: () => null),
 -      Container(
 +      AnimatedOpacity(
-           child: Column(
-             children: <Widget>[
-               Text('Type: Owl'),
+         child: Column(
+           children: <Widget>[
+             Text('Type: Owl'),
 ```
 
 **3.** Create a state variable for the property that `AnimatedOpacity` listens
@@ -119,22 +119,23 @@ the starting `opacity` value to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -10,6 +10,7 @@
+@@ -13,6 +13,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
 +  double opacity = 0.0;
++
+   @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-       Image.network(owl_url),
-@@ -20,6 +21,7 @@
+@@ -24,6 +26,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
-+          opacity: opacity,
-           child: Column(
-             children: <Widget>[
-               Text('Type: Owl'),
++        opacity: opacity,
+         child: Column(
+           children: <Widget>[
+             Text('Type: Owl'),
 ```
 
 **4.** In addition to an `opacity` parameter, `AnimatedOpacity` requires a
@@ -144,14 +145,14 @@ the starting `opacity` value to zero:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -21,6 +21,7 @@
+@@ -26,6 +26,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
-+          duration: Duration(seconds: 2),
-           opacity: opacity,
-           child: Column(
-             children: <Widget>[
++        duration: Duration(seconds: 2),
+         opacity: opacity,
+         child: Column(
+           children: <Widget>[
 ```
 
 **5.** Finally, configure the animation to trigger when the user clicks the
@@ -164,17 +165,26 @@ to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -19,7 +19,9 @@
-             'Show Details',
-             style: TextStyle(color: Colors.blueAccent),
-           ),
+@@ -20,11 +20,14 @@
+     return Column(children: <Widget>[
+       Image.network(owl_url),
+       MaterialButton(
+-          child: Text(
+-            'Show Details',
+-            style: TextStyle(color: Colors.blueAccent),
+-          ),
 -          onPressed: () => null),
-+          onPressed: () => setState((){
-+            opacity = 1;
-+          })),
++        child: Text(
++          'Show Details',
++          style: TextStyle(color: Colors.blueAccent),
++        ),
++        onPressed: () => setState(() {
++          opacity = 1;
++        }),
++      ),
        AnimatedOpacity(
-           duration: Duration(seconds: 2),
-           opacity: opacity,
+         duration: Duration(seconds: 2),
+         opacity: opacity,
 ```
 
 {{site.alert.secondary}}
@@ -261,13 +271,16 @@ and `margin` into the `State<AnimatedContainer>` widget's `initState()` method.
 ```diff
 --- container0/lib/main.dart
 +++ container1/lib/main.dart
-@@ -15,10 +15,20 @@
+@@ -20,10 +20,21 @@
    return Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
  }
 
 -class AnimatedContainerDemo extends StatelessWidget {
+-  Color color = randomColor();
+-  double borderRadius = randomBorderRadius();
+-  double margin = randomMargin();
 +class AnimatedContainerDemo extends StatefulWidget {
-+    _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
++  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
 +}
 +
 +class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
@@ -275,14 +288,15 @@ and `margin` into the `State<AnimatedContainer>` widget's `initState()` method.
 +  double borderRadius;
 +  double margin;
 +
++  @override
 +  initState() {
-     final color = randomColor();
-     final borderRadius = randomBorderRadius();
-     final margin = randomMargin();
++    color = randomColor();
++    borderRadius = randomBorderRadius();
++    margin = randomMargin();
 +  }
 
+   @override
    Widget build(BuildContext context) {
-     return Scaffold(
 ```
 
 **2.** Introduce an implicit animation by changing the `Container` widget to
@@ -292,7 +306,7 @@ an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -38,7 +38,7 @@
+@@ -45,7 +45,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -313,8 +327,8 @@ can use `setState()` to set new values for the `color`, `borderRadius`, and
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -30,6 +30,14 @@
-     final margin = randomMargin();
+@@ -36,6 +36,14 @@
+     margin = randomMargin();
    }
 
 +  void change() {
@@ -325,9 +339,9 @@ can use `setState()` to set new values for the `color`, `borderRadius`, and
 +    });
 +  }
 +
+   @override
    Widget build(BuildContext context) {
      return Scaffold(
-       body: Center(
 ```
 
 **4.** Now invoke the `change()` method in the `onPressed()` handler:
@@ -336,7 +350,7 @@ can use `setState()` to set new values for the `color`, `borderRadius`, and
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -60,7 +60,7 @@
+@@ -67,7 +67,7 @@
                  'change',
                  style: TextStyle(color: Colors.white),
                ),
@@ -353,15 +367,16 @@ between the old and new values:
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -2,6 +2,7 @@
+@@ -8,6 +8,8 @@
  import 'package:flutter_web_test/flutter_web_test.dart';
  import 'package:flutter_web_ui/ui.dart' as ui;
- import 'dart:math';
-+const _duration = Duration(milliseconds: 400);
 
++const _duration = Duration(milliseconds: 400);
++
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
-@@ -53,6 +54,7 @@
+ }
+@@ -60,6 +62,7 @@
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
                ),
@@ -400,7 +415,7 @@ preceding example and watch how the animation changes when you pass the
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -55,6 +55,7 @@
+@@ -63,6 +63,7 @@
                  ),
                ),
                duration: _duration,
