@@ -47,7 +47,7 @@
     }
 
     @include media-breakpoint-up(xl) {
-      font-size: 200px;
+      font-size: 180px;
     }
 
     @include media-breakpoint-up(xxl) {
@@ -82,7 +82,6 @@
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
     background-image: asset_url('clock/left_rectangle.svg'), asset_url('clock/right_rectangle.svg'), asset_url('clock/oval.svg');
-    background-position: bottom 90px left, top right, bottom left;
     background-repeat: no-repeat;
     background-size: 181px 247px, 140px 121px, 280px 163px;
     height: calc(100% - 66px);
@@ -94,7 +93,6 @@
     @include media-breakpoint-up(md) {
       animation-name: geometric-medium-background;
       background-size: 400px 556px, 317px 258px, auto;
-      background-position: top 150px left, top right, bottom left;
     }
 
     @include media-breakpoint-up(lg) {
