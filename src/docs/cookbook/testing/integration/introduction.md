@@ -196,7 +196,7 @@ Now that you have an instrumented app, you can write tests for it.
 This involves four steps:
 
   1. Create
-  [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
+  [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
      to locate specific widgets
   2. Connect to the app before our tests run in the `setUpAll()` function
   3. Test the important scenarios

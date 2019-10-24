@@ -50,6 +50,16 @@ dependencies:
   path:
 ```
 
+Make sure to import the packages in the file you'll be working in.
+
+<!-- skip -->
+```dart
+import 'dart:async';
+
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+```
+
 ## 2. Define the Dog data model
 
 Before creating the table to store information on Dogs, take a few moments to
@@ -298,7 +308,7 @@ Future<void> deleteDog(int id) async {
 To run the example:
 
   1. Create a new Flutter project.
-  2. Add the `sqfite` and `path` packages to your `pubspec.yaml`.
+  2. Add the `sqflite` and `path` packages to your `pubspec.yaml`.
   3. Paste the following code into a new file called `lib/db_test.dart`.
   4. Run the code with `flutter run lib/db_test.dart`.
 

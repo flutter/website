@@ -12,6 +12,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode.
 
     ```terminal
     $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    $ sudo xcodebuild -runFirstLaunch
     ```
 
     This is the correct path for most cases,
@@ -87,13 +88,9 @@ to set up physical device deployment in Xcode.
  1. Install and set up CocoaPods by running the following commands:
 
     ```terminal
-    $ sudo gem install cocoapods -v 1.7.5
+    $ sudo gem install cocoapods
     $ pod setup
     ```
-    {{site.alert.note}}
-      The `pod setup` command fails for versions of CocoaPods greater
-      than 1.7.5.   For more information, see [issue 41253][].
-    {{site.alert.end}}
 
  1. Follow the Xcode signing flow to provision your project:
 
@@ -145,7 +142,6 @@ to set up physical device deployment in Xcode.
 
 [Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: https://developer.apple.com/support/compare-memberships
-[issue 41253]: {{site.github}}/flutter/flutter/issues/41253
 [Mac App Store]: https://itunes.apple.com/us/app/xcode/id497799835
 [Trust Mac]: /images/setup/trust-computer.png
 [web download]: https://developer.apple.com/xcode/

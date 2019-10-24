@@ -2,6 +2,8 @@
 
 set -e # Fast fail the script on failures.
 
+readonly rootDir="$(cd "$(dirname "$0")/.." && pwd)"
+
 [[ -z "$DART_SITE_ENV_DEFS" ]] && . ./tool/env-set.sh
 
 if [[ $1 == --clean ]]; then
@@ -15,4 +17,21 @@ if [[ $1 == --help || $1 == -h ]]; then
   exit 0
 fi
 
-exec ./tool/build_check_deploy.sh --no-build --no-check-links $*
+errorMessage="
+Error: some code excerpts need to be refreshed. You'll need to
+rerun '$rootDir/tool/refresh-code-excerpts.sh' locally, and re-commit.
+"
+
+travis_fold start refresh_code_excerpts
+  (
+    set -x;
+    $rootDir/tool/refresh-code-excerpts.sh --keep-dart-tool
+  ) || (
+    printf "$errorMessage" && git diff &&
+    exit 1
+  )
+travis_fold end refresh_code_excerpts
+
+travis_fold start check_code
+  ./tool/build_check_deploy.sh --no-build --no-check-links $*
+travis_fold end check_code
