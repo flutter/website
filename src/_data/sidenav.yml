@@ -233,6 +233,8 @@
     # - title: Flutter best practices # TODO
     - title: Technical videos
       permalink: /docs/resources/videos
+    - title: Books
+      permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: FAQ
