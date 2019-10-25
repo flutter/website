@@ -208,10 +208,10 @@
       permalink: /docs/perf
     - title: App size
       permalink: /docs/perf/app-size
-    - title: Memory
-      permalink: /docs/perf/memory
-    - title: Power usage
-      permalink: /docs/perf/power
+#    - title: Memory
+#      permalink: /docs/perf/memory
+#    - title: Power usage
+#      permalink: /docs/perf/power
     - title: Rendering performance
       permalink: /docs/perf/rendering
       children:

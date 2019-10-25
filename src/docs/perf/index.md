@@ -14,6 +14,8 @@ the quicker it is to download.
 
 [Measuring your app's size][]
 
+{% comment %}
+
 ## Memory
 
 [Using memory wisely](/docs/perf/memory)
@@ -25,12 +27,14 @@ your app.
 
 [Preserving your battery](/docs/perf/power)
 
+{% endcomment %}
+
 ## Rendering performance
 
 Are you animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
-[Jank no more!](/docs/perf/rendering)
+[Improving rendering performance](/docs/perf/rendering)
 
 
 [Measuring your app's size]: /docs/perf/app-size

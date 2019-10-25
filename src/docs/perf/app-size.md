@@ -9,7 +9,8 @@ of a Flutter app is self contained, and holds all the
 code and assets needed to run the app, its size
 can be a concern. The larger an app, the more space
 it requires on a device, and the longer it takes to
-download.
+download, and it may break the limit of useful features
+like Android instant apps.
 
 By default, launching your app with `flutter run`,
 or by clicking the **Play** button in your IDE
@@ -32,10 +33,22 @@ to get the size of APK for 32-bit Android devices:
 flutter build apk --target-platform=android-arm
 ```
 
+The output should look something like the following:
+
+```shell
+Built build/app/outputs/apk/release/app-release.apk (4.2MB).
+```
+
 For 64-bit Android devices, run the following:
 
 ```shell
 flutter build apk --target-platform=android-arm64
+```
+
+Here is an example output:
+
+```shell
+Built build/app/outputs/apk/release/app-release.apk (4.6MB).
 ```
 
 As of Flutter 1.9, you can run the following to get 2 APKs,
@@ -58,6 +71,12 @@ run the following:
 
 ```shell
 flutter build ios && tar -zcf build/app.ipa build/ios/iphoneos/Runner.app && ls -lh build/app.ipa
+```
+
+The resulting IPA file for this example is 8.3 MB.
+
+```shell
+-rw-r--r--  1 userName  primarygroup   8.3M Oct 25 13:47 build/app.ipa
 ```
 
 To measure an iOS app exactly,

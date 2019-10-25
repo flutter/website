@@ -1,5 +1,5 @@
 ---
-title: Jank no more!
+title: Improving rendering performance
 description: How to measure and evaluate your app's rendering performance.
 ---
 
