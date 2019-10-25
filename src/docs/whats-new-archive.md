@@ -57,8 +57,8 @@ component and how to customize it, see
 [Flutter wiki]: {{site.github}}//flutter/flutter/wiki
 [Flutter's build modes]: /docs/testing/build-modes
 [Material RangeSlider in Flutter]: {{site.flutter-medium}}/material-range-slider-in-flutter-a285c6e3447d
-[Performance best practices]: /docs/testing/best-practices
-[Performance profiling]: /docs/testing/ui-performance
+[Performance best practices]: /docs/perf/rendering/best-practices
+[Performance profiling]: /docs/perf/rendering/ui-performance
 [Preparing an Android app for release]: /docs/deployment/android
 [RangeSlider]: {{site.api}}/flutter/material/RangeSlider-class.html
 [Simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
@@ -116,7 +116,7 @@ If you have questions or comments about any of these docs,
 [ephemeral vs app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
 [file an issue]: {{site.repo.this}}/issues
 [introduction]: /docs/development/data-and-backend/state-mgmt/intro
-[Performance profiling]: /docs/testing/ui-performance
+[Performance profiling]: /docs/perf/rendering/ui-performance
 [release notes]: https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1
 [simple app state management]: /docs/development/data-and-backend/state-mgmt/simple
 [state management advice]: /docs/development/data-and-backend/state-mgmt/intro
