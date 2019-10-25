@@ -139,6 +139,18 @@
       }
     }
   }
+
+  .share-twitter__paragraph {
+    color: $site-color-white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .learn-more__button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+  }
 }
 
 // animations
