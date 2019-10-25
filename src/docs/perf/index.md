@@ -4,8 +4,9 @@ description: Evaluating the performance of your app from several angles..
 ---
 
 There are different ways to evaluate performance.
-These docs deal with the following four areas
+These docs deal with the following areas
 where performance can be evaluated and improved.
+(Note that these docs are in process of being expanded.)
 
 ## App size
 
