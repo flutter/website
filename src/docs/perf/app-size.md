@@ -19,10 +19,11 @@ or by clicking the **Play** button in your IDE
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
 the debugging overhead that allows for hot reload
-and step level debugging.
+and source level debugging.
 
 To get a better sense of what an end-user actually
-has to download for a Flutter app, try the following.
+has to download for a Flutter app, use the
+following instructions.
 
 ## Android
 
