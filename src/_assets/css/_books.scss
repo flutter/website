@@ -1,0 +1,19 @@
+.item-with-pic {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    img {
+      margin:0;
+      max-width: none;
+    }
+    .details {
+      margin-left: 20px;
+      .title {
+        margin: 0;
+      }
+      .authors {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }

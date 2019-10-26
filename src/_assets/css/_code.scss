@@ -1,4 +1,17 @@
-@import '_code_pre';
+@mixin pre-defaults {
+  background-color: $site-color-codeblock-bg;
+  padding: bs-spacer(3) bs-spacer(4);
+}
+
+@import '_code_shared';
+
+code {
+  color: #008f83;
+}
+
+pre {
+  @include pre-defaults;
+}
 
 // Give code blocks the same margin-bottom as regular paragraphs.
 div.highlighter-rouge {
@@ -47,7 +60,7 @@ pre > span.strike { text-decoration: line-through; }
     background: transparent;
     border: none;
     cursor: pointer;
-    color: lighten($code-color, 20%); // Offers better contrast on dark bg
+    color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
     margin-top: bs-spacer(2);
     outline: none !important;
     position: absolute;
