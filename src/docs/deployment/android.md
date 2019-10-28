@@ -303,8 +303,7 @@ the app bundle will be signed.
   an app bundle.
   While the Android team is working to identify a feasible
   solution, you might try splitting the APK as a temporary
-  workaround. For more information, see
-  [Issue 36822]({{site.github}}/flutter/flutter/issues/36822).
+  workaround. For more information, see [Issue 36822][].
 {{site.alert.end}}
 
 From the command line:
@@ -491,6 +490,7 @@ The resulting app bundle or APK files are located in
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
