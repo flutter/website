@@ -9,8 +9,7 @@ Thanks in part to Flutter's Skia engine and its ability
 to quickly create and dispose of widgets, 
 Flutter applications are performant by default,
 so you only need to avoid common pitfalls to achieve
-excellent performance instead of needing to micro-optimize
-with complicated profiling tools.
+excellent performance.
 
 If you _are_ seeing janky (non smooth) animations, make
 **sure** that you are profiling performance with an
