@@ -154,7 +154,7 @@ which the framework then stitches together into a tree.
 A widget's build function should be free of side effects.
 Whenever it is asked to build, the widget should return a
 new tree of widgets regardless of what the widget previously
-returned. The framework does the heavily lifting of comparing
+returned. The framework does the heavy lifting of comparing
 the previous build with the current build and determining
 what modifications need to be made to the user interface.
 

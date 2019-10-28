@@ -89,7 +89,7 @@ class SecondRoute extends StatelessWidget {
 To switch to a new route, use the
 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method. The `push()` method adds a `Route` to the stack of routes managed by
-the Navigator. Where does the `Route` come from?
+the `Navigator`. Where does the `Route` come from?
 You can create your own, or use a
 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html),
 which is useful because it transitions to the
@@ -114,7 +114,7 @@ onPressed: () {
 How do you close the second route and return to the first? By using the
 [`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
 method. The `pop()` method removes the current `Route` from the stack of
-routes managed by the navigator.
+routes managed by the `Navigator`.
 
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
