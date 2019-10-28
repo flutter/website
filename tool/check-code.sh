@@ -18,14 +18,20 @@ if [[ $1 == --help || $1 == -h ]]; then
 fi
 
 errorMessage="
-Error: some code excerpts need to be refreshed.
-Rerun '$rootDir/tool/refresh-code-excerpts.sh' locally.
+Error: some code excerpts need to be refreshed. You'll need to
+rerun '$rootDir/tool/refresh-code-excerpts.sh' locally, and re-commit.
 "
 
 travis_fold start refresh_code_excerpts
-(set -x; $rootDir/tool/refresh-code-excerpts.sh) || (printf "$errorMessage" && exit 1)
+  (
+    set -x;
+    $rootDir/tool/refresh-code-excerpts.sh --keep-dart-tool
+  ) || (
+    printf "$errorMessage" && git diff &&
+    exit 1
+  )
 travis_fold end refresh_code_excerpts
 
 travis_fold start check_code
-./tool/build_check_deploy.sh --no-build --no-check-links $*
+  ./tool/build_check_deploy.sh --no-build --no-check-links $*
 travis_fold end check_code

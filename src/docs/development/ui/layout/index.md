@@ -479,8 +479,8 @@ uses this property to pack the star icons together.
 ### Nesting rows and columns
 
 The layout framework allows you to nest rows and columns inside of rows
-and columns as deeply as you need. Let's look the code for the outlined section
-of the following layout:
+and columns as deeply as you need. Let's look at the code for the outlined
+section of the following layout:
 
 {% asset ui/layout/pavlova-large-annotated.png class="border mw-100"
     alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red" %}

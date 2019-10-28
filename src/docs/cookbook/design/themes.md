@@ -15,7 +15,7 @@ You can either define app-wide themes, or use `Theme` widgets
 that define the colors and font styles for a particular part
 of the application. In fact,
 app-wide themes are just `Theme` widgets created at
-the root of an apps by the `MaterialApp`.
+the root of an app by the `MaterialApp`.
 
 After defining a Theme, use it within your own widgets. Flutter's
 Material widgets also use your Theme to set the background

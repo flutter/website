@@ -14,6 +14,8 @@ by the Flutter community:
 
 ## General overview
 
+* [This very section](/docs/development/data-and-backend/state-mgmt/intro), for those of you who arrived
+  directly to this _Options_ page and missed the previous pages
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be),
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)

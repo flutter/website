@@ -83,10 +83,6 @@ a.card {
   border-color: $site-color-primary;
 }
 
-@mixin pre-defaults {
-  padding: bs-spacer(3) bs-spacer(4);
-}
-
 @mixin reset-carousel-animation {
   .carousel-item-next,
   .carousel-item-prev {
@@ -95,19 +91,5 @@ a.card {
   .carousel-item-left,
   .carousel-item-right {
     transform: none;
-  }
-}
-
-code {
-  color: #008f83;
-}
-
-pre {
-  @include pre-defaults;
-  background-color: $site-color-codeblock-bg;
-
-  code {
-    background-color: transparent;
-    padding: 0;
   }
 }

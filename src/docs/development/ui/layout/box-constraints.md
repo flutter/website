@@ -86,7 +86,7 @@ since the outer one is scrollable in that direction.
 ## Flex
 
 Flex boxes themselves ([`Row`][] and [`Column`][])
-behave differently based on whether they are in a
+behave differently based on whether they are in
 bounded constraints or unbounded constraints in
 their given direction.
 

@@ -6,12 +6,21 @@ readonly rootDir="$(cd "$(dirname "$0")/.." && pwd)"
 
 function usage() {
   echo $1; echo
-  echo "Usage: $(basename $0) [--help] [--legacy] [path-to-src-file-or-folder]"
+  echo "Usage: $(basename $0) [--help] [-k|--keep-dart-tool] [--legacy] [path-to-src-file-or-folder]"
   echo
   exit 1;
 }
 
-if [[ $1 == '-h' || $1 == '--help' ]]; then usage; fi
+ARGS=''
+
+while [[ "$1" == -* ]]; do
+  case "$1" in
+    --log-fine) ARGS+='--log-fine '; shift;;
+    -k|--keep-dart-tool) KEEP_CACHE=1; shift;;
+    --legacy)   LEGACY=get; shift;;
+    -h|--help)  usage;;
+  esac
+done
 
 [[ -z "$DART_SITE_ENV_DEFS" ]] && . $rootDir/tool/env-set.sh
 [[ -z "$DART_SITE_ENV_DEFS" ]] && exit 1; # env-set failed, abort.
@@ -20,19 +29,18 @@ if [[ $1 == '-h' || $1 == '--help' ]]; then usage; fi
 # version is in the PATH.
 pub="$FLUTTER_ROOT/bin/cache/dart-sdk/bin/pub"
 
-ARGS=''
 TMP="$rootDir/tmp"
 FRAG="$TMP/_fragments"
 
 if [[ -e "$FRAG" ]]; then echo Deleting old "$FRAG"; rm -Rf "$FRAG"; fi
 
-if [[ $1 == '--legacy' ]]; then
+if [[ -n "$LEGACY" ]]; then
   shift
   npx code-excerpter examples "$FRAG"
 else
   ARGS+='--yaml '
   if [[ ! -e "pubspec.lock" ]]; then pub get; fi
-  "$pub" run build_runner build --delete-conflicting-outputs --config excerpt --output="$FRAG"
+  $pub run build_runner build --delete-conflicting-outputs --config excerpt --output="$FRAG"
   FRAG+=/examples
 fi
 
@@ -60,7 +68,7 @@ echo "Fragments:  $FRAG"
 echo "Other args: $ARGS"
 echo
 LOG_FILE="$TMP/refresh-code-excerpts-log.txt"
-"$pub" run code_excerpt_updater \
+$pub run code_excerpt_updater \
   --fragment-dir-path "$FRAG" \
   --src-dir-path examples \
   $ARGS \
@@ -68,7 +76,8 @@ LOG_FILE="$TMP/refresh-code-excerpts-log.txt"
   "$SRC" 2>&1 | tee $LOG_FILE
 LOG=$(cat $LOG_FILE)
 
-echo "Cleaning up .dart_tool/"
-rm -r "$rootDir/.dart_tool/"
+if [[ -z "$KEEP_CACHE" ]]; then
+  (set -x; rm -r "$rootDir/.dart_tool/")
+fi
 
 [[ $LOG == *" 0 out of"* && $LOG != *Error* ]]

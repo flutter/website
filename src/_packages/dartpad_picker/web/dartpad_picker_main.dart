@@ -7,7 +7,7 @@ import 'package:dartpad_picker/dartpad_picker.dart';
 
 void main() {
   if (isMobile()) {
-    querySelector('.dash-dartpad').style.display = 'none';
+    querySelector('#dartpad-landing-page').style.display = 'none';
     return;
   }
 
@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp>
     );
     animation = Tween(begin: 0.0, end: 4 * pi)
       .animate(CurvedAnimation(
-        curve: Curves.easeInOut,
+        curve: Curves.easeInOutCubic,
         parent: controller,
     ));
   }
