@@ -74,7 +74,8 @@ run the following:
 flutter build ios && tar -zcf build/app.ipa build/ios/iphoneos/Runner.app && ls -lh build/app.ipa
 ```
 
-The resulting IPA file for this example is 8.3 MB.
+The resulting IPA file for the `example/helloworld` app
+(as of this writing) is 8.3 MB.
 
 ```shell
 -rw-r--r--  1 userName  primarygroup   8.3M Oct 25 13:47 build/app.ipa
