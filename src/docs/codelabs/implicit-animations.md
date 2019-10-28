@@ -71,29 +71,9 @@ Click the **Run** button to run the example:
   - When the user clicks the **Show details** button, the owl's description text fades in.
 {{site.alert.end}}
 
-**1.** First, refactor the `FadeInDemo` widget from a `StatelessWidget` to a `StatefulWidget`,
-and add an accompanying `_FadeInDemoState` widget.
-
-<?code-excerpt "opacity{0,1}/lib/main.dart"?>
-```diff
---- opacity0/lib/main.dart
-+++ opacity1/lib/main.dart
-@@ -8,7 +8,11 @@
-
- const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
-
--class FadeInDemo extends StatelessWidget {
-+class FadeInDemo extends StatefulWidget {
-+  _FadeInDemoState createState() => _FadeInDemoState();
-+}
-+
-+class _FadeInDemoState extends State<FadeInDemo> {
-   @override
-   Widget build(BuildContext context) {
-     return Column(children: <Widget>[
-```
-
-**2.** Change the `Container` widget to an `AnimatedOpacity` widget:
+**1.** First, pick the right widget for the job. The goal in this example is to
+create a fade-in effect, and the `AnimatedOpacity` widget animates the `opacity`
+property, so change the `Container` widget to an `AnimatedOpacity` widget:
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
 ```diff
@@ -110,10 +90,10 @@ and add an accompanying `_FadeInDemoState` widget.
              Text('Type: Owl'),
 ```
 
-**3.** Create a state variable for the property that `AnimatedOpacity` listens
+**2.** Create a state variable for the property that `AnimatedOpacity` listens
 on. As the name implies, `AnimatedOpacity` listens for changes in the `opacity`
 property. To hide the text before the user clicks **Show details**, set
-the starting `opacity` value to zero:
+the starting value for `opacity` to zero:
 
 <?code-excerpt "opacity{2,3}/lib/main.dart"?>
 ```diff
@@ -138,24 +118,7 @@ the starting `opacity` value to zero:
              Text('Type: Owl'),
 ```
 
-**4.** In addition to an `opacity` parameter, `AnimatedOpacity` requires a
-`duration` to use for its animation. For this example, you can start with 2 seconds:
-
-<?code-excerpt "opacity{3,4}/lib/main.dart"?>
-```diff
---- opacity3/lib/main.dart
-+++ opacity4/lib/main.dart
-@@ -26,6 +26,7 @@
-           ),
-           onPressed: () => null),
-       AnimatedOpacity(
-+        duration: Duration(seconds: 2),
-         opacity: opacity,
-         child: Column(
-           children: <Widget>[
-```
-
-**5.** Finally, configure the animation to trigger when the user clicks the
+**3.** Configure the animation to trigger when the user clicks the
 **Show details** button. To do this, change `opacity` state using
 the `onPressed()` handler for `MaterialButton`. To make the `FadeInDemo` widget become fully
 visible when the user clicks the **Show details** button, set `opacity`
@@ -192,6 +155,23 @@ to 1:
   The `AnimatedOpacity` widget manages everything in between.
 {{site.alert.end}}
 
+**4.** Now In addition to an `opacity` parameter, `AnimatedOpacity` requires a
+`duration` to use for its animation. For this example, you can start with 2 seconds:
+
+<?code-excerpt "opacity{3,4}/lib/main.dart"?>
+```diff
+--- opacity3/lib/main.dart
++++ opacity4/lib/main.dart
+@@ -26,6 +26,7 @@
+           ),
+           onPressed: () => null),
+       AnimatedOpacity(
++        duration: Duration(seconds: 2),
+         opacity: opacity,
+         child: Column(
+           children: <Widget>[
+```
+
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
@@ -211,15 +191,24 @@ widget's transition to the new value for `opacity`.
 - `AnimatedOpacity` requires a `duration` parameter to define the time it takes
 to animate the transition between an old `opacity` value and a new one.
 
-The previous example also uses a common workflow for using implicit animations:
+The previous example also shows a common workflow for using implicit animations:
 - First, pick a widget property to animate.
-- Next, choose an implicit animation that can animate that property.
-- Choose the start and end values for the property that you're animating.
+- Next, choose an implicit animation that can animate that property. Remember,
+an implicit animation is a subtype of `ImplicitlyAnimatedWidget`, and you can
+browse the [list of common implicitly animated widgets] that ship with Flutter.
+- Create a state variable for the property you're animating, and assign it a
+  start value.
+- Choose an end value for the property you're animating, and trigger the
+animation by creating a state change in the animated property from its initial
+value to the final value that you've chosen.
 - Set the `duration` of the animation.
-- Trigger the animation by creating a state change in the animated property.
 
 {{site.alert.secondary}}
-  Notice that `AnimatedOpacity` animates a single property: `opacity`.
+  Note that Implicit animations can only animate properties of a parent
+  `StatefulWidget`, so this example begins with the `FadeInDemo` widget that
+  extends `StatefulWidget`.
+
+  Notice also that `AnimatedOpacity` animates a single property: `opacity`.
   Some implicitly animated widgets can animate many properties, as the following
   example illustrates.
 {{site.alert.end}}
@@ -262,44 +251,7 @@ user clicks the **Change** button.
 - Animate the transition to the new values for `color`, `borderRadius`, and
 `margin` whenever they are set.
 
-**1.** First, refactor the `AnimatedContainerDemo` widget from a `StatelessWidget`
-to a `StatefulWidget`, and add an accompanying `_AnimatedContainerDemoState` widget.
-As part of the refactor, you can move assigning values for `color`, `borderRadius`,
-and `margin` into the `State<AnimatedContainer>` widget's `initState()` method.
-
-<?code-excerpt "container{0,1}/lib/main.dart"?>
-```diff
---- container0/lib/main.dart
-+++ container1/lib/main.dart
-@@ -20,10 +20,21 @@
-   return Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
- }
-
--class AnimatedContainerDemo extends StatelessWidget {
--  Color color = randomColor();
--  double borderRadius = randomBorderRadius();
--  double margin = randomMargin();
-+class AnimatedContainerDemo extends StatefulWidget {
-+  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
-+}
-+
-+class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-+  Color color;
-+  double borderRadius;
-+  double margin;
-+
-+  @override
-+  initState() {
-+    color = randomColor();
-+    borderRadius = randomBorderRadius();
-+    margin = randomMargin();
-+  }
-
-   @override
-   Widget build(BuildContext context) {
-```
-
-**2.** Introduce an implicit animation by changing the `Container` widget to
+**1.** Introduce an implicit animation by changing the `Container` widget to
 an `AnimatedContainer` widget:
 
 <?code-excerpt "container{1,2}/lib/main.dart"?>
@@ -317,7 +269,7 @@ an `AnimatedContainer` widget:
                    color: color,
 ```
 
-**3.** `AnimatedContainer` automatically animates between old and new values of
+**2.** `AnimatedContainer` automatically animates between old and new values of
 its properties when they change. Create a `change()` method that defines the
 behavior triggered when the user clicks the **Change** button. The `change()` method
 can use `setState()` to set new values for the `color`, `borderRadius`, and
@@ -344,7 +296,7 @@ can use `setState()` to set new values for the `color`, `borderRadius`, and
      return Scaffold(
 ```
 
-**4.** Now invoke the `change()` method in the `onPressed()` handler:
+**3.** Invoke the `change()` method in the `onPressed()` handler:
 
 <?code-excerpt "container{3,4}/lib/main.dart"?>
 ```diff
@@ -361,7 +313,7 @@ can use `setState()` to set new values for the `color`, `borderRadius`, and
          ),
 ```
 
-**5.** Finally, set the duration of the animation that powers the transition
+**4.** Finally, set the duration of the animation that powers the transition
 between the old and new values:
 <?code-excerpt "container{4,5}/lib/main.dart"?>
 ```diff
@@ -469,6 +421,7 @@ here are some suggestions for where to go next:
 - Checkout the [animations api docs]
 - Try another [codelab]
 
+[list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
