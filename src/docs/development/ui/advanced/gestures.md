@@ -160,7 +160,7 @@ callbacks are non-null.
 
 When there is more than one gesture recognizer for a given
 pointer on the screen, the framework disambiguates which 
-esture the user intends by having each recognizer join
+gesture the user intends by having each recognizer join
 the _gesture arena_. The gesture arena determines which
 gesture wins using the following rules:
 
