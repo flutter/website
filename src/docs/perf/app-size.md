@@ -59,6 +59,13 @@ one for 32-bit and one for 64-bit:
 flutter build apk --split-per-abi
 ```
 
+Here's some sample output:
+
+```shell
+Built build/app/outputs/apk/release/app-armeabi-v7a-release.apk (4.2MB).
+Built build/app/outputs/apk/release/app-arm64-v8a-release.apk (4.6MB).
+```
+
 {{site.alert.warning}}
   Do not run `flutter build apk` directly in Flutter 1.9
   (and later), because it generates a fat APK with both
