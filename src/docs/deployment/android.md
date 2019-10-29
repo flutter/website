@@ -23,6 +23,7 @@ This page covers the following topics:
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
+* [Updating the app's version number](#updating-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
 ## Adding a launcher icon
@@ -79,19 +80,19 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
 {{site.alert.end}}
 
 {{site.alert.note}}
-  * The `keytool` command might not be in your path&mdash;it's
-    part of Java, which is installed as part of
-    Android Studio.  For the concrete path,
-    run `flutter doctor -v` and locate the path printed after
-    'Java binary at:'. Then use that fully qualified path
-    replacing `java` (at the end) with `keytool`.
-    If your path includes space-separated names,
-    such as `Program Files`, place quotes around the
-    space-separated names. For example: `/"Program Files"/`
+* The `keytool` command might not be in your path&mdash;it's
+  part of Java, which is installed as part of
+  Android Studio.  For the concrete path,
+  run `flutter doctor -v` and locate the path printed after
+  'Java binary at:'. Then use that fully qualified path
+  replacing `java` (at the end) with `keytool`.
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the
+  space-separated names. For example: `/"Program Files"/`
 
-  * The `-storetype JKS` tag is only required for Java 9
-    or newer. As of the Java 9 release,
-    the keystore type defaults to PKS12.
+* The `-storetype JKS` tag is only required for Java 9
+  or newer. As of the Java 9 release,
+  the keystore type defaults to PKS12.
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -239,13 +240,15 @@ android {
 Review the default [App Manifest][manifest] file,
 `AndroidManifest.xml`,
 located in `<app dir>/android/app/src/main` and verify that the values
-are correct, especially:
+are correct, especially the following:
 
-* `application`: Edit the `android:label` in the
+`application`
+: Edit the `android:label` in the
   [`application`][applicationtag] tag to reflect
   the final name of the app.
 
-* `uses-permission`: Add the `android.permission.INTERNET`
+`uses-permission`
+: Add the `android.permission.INTERNET`
   [permission][permissiontag] if your application code needs Internet
   access. The standard template does not include this tag but allows
   Internet access during development to enable communication between
@@ -255,21 +258,23 @@ are correct, especially:
 
 Review the default [Gradle build file][gradlebuild] file,
 `build.gradle`, located in `<app dir>/android/app` and
-verify the values are correct, especially:
+verify the values are correct, especially the following
+values in the `defaultConfig` block:
 
-* `defaultConfig`:
+`applicationId`
+: Specify the final, unique (Application Id)[appid]
 
-  * `applicationId`: Specify the final, unique (Application Id)[appid]
+`versionCode` & `versionName`
+: Specify the internal app version number,
+  and the version number display string. You can do this by setting
+  the `version` property in the pubspec.yaml file. Consult the version
+  information guidance in the [versions documentation][versions].
 
-  * `versionCode` & `versionName`: Specify the internal app version number,
-     and the version number display string. You can do this by setting
-     the `version` property in the pubspec.yaml file. Consult the version
-     information guidance in the [versions documentation][versions].
-
-  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
-     and the API level on which the app is designed to run.
-     Consult the API level section in the [versions documentation][versions]
-     for details.
+`minSdkVersion` & `targetSdkVersion`
+: Specify the minimum API level,
+  and the API level on which the app is designed to run.
+  Consult the API level section in the [versions documentation][versions]
+  for details.
 
 ## Building the app for release
 
@@ -298,8 +303,7 @@ the app bundle will be signed.
   an app bundle.
   While the Android team is working to identify a feasible
   solution, you might try splitting the APK as a temporary
-  workaround. For more information, see
-  [Issue 36822]({{site.github}}/flutter/flutter/issues/36822).
+  workaround. For more information, see [Issue 36822][].
 {{site.alert.end}}
 
 From the command line:
@@ -377,32 +381,40 @@ From the command line:
 For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
 
-Now that you’ve created your app, attract more users with Google Ads. App campaigns use machine learning to drive more installs and make the most of your budget. 
+Now that you’ve created your app, attract more users with Google Ads.
+App campaigns use machine learning to drive more installs and
+make the most of your budget. 
 
-Get your campaign running in a few steps
-1. Create your ad - we’ll help create your ad from your app information
-2. Choose your budget - set your target cost-per-install (tCPI) and daily budget cap 
-3. Select your location - let us know where you’d like your ads to run
-4. Decide what action you want users to take - choose installs, in-app actions, or target return on ad spend (ROAS) 
+Get your campaign running in a few steps:
 
-<a href = "https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none"> Get $75 app advertising credit when you spend $25 </a>
+1. Create your ad&mdash;we’ll help create your ad from your app
+   information
+1. Choose your budget&mdash;set your target cost-per-install (tCPI)
+   and daily budget cap 
+1. Select your location&mdash;let us know where you’d like your ads to run
+1. Decide what action you want users to take&mdash;choose installs,
+   in-app actions, or target return on ad spend (ROAS) 
 
-## Updating the version of the app
+[Get $75 app advertising credit when you spend $25.][]
 
-The default version number of the app is `1.0.0`. To update it, navigate to the `pubspec.yaml` file and update the following line:
+## Updating the app's version number
+
+The default version number of the app is `1.0.0`.
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
+
 `version: 1.0.0+1`
 
-The version number is three numbers separated by dots, like `1.0.0` in the example above, followed by an optional build number such as `1` in the example above, separated by a `+`.
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
 
-Both the version and the builder number may be overridden in flutter
-build by specifying --build-name and --build-number, respectively.
+Both the version and the build number may be overridden in Flutter's
+build by specifying `--build-name` and `--build-number`, respectively.
 
-In Android, build-name is used as versionName while build-number used as versionCode.
-Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-
-In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-Read more about iOS versioning at
-https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+In Android, `build-name` is used as `versionName` while
+`build-number` used as `versionCode`. For more information,
+see [Version your app][] in the Android documentation.
 
 ## Android release FAQ
 
@@ -473,10 +485,12 @@ The resulting app bundle or APK files are located in
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
 [Flutter wiki]: {{site.github}}/flutter/flutter/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
@@ -484,5 +498,5 @@ The resulting app bundle or APK files are located in
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning
-

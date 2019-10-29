@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp>
     );
     animation = Tween(begin: 0.0, end: 4 * pi)
       .animate(CurvedAnimation(
-        curve: Curves.easeInOut,
+        curve: Curves.easeInOutCubic,
         parent: controller,
     ));
   }

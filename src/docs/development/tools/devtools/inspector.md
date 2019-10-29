@@ -135,6 +135,6 @@ of the Flutter inspector.
 [DartConf 2018 talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
 [core building block]: /docs/development/ui/widgets-intro
 [Debugging Flutter apps]: /docs/testing/debugging
-[The performance overlay]:/docs/testing/ui-performance#the-performance-overlay
-[Flutter performance profiling]: /docs/testing/ui-performance
+[The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
+[Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [debug mode]: /docs/testing/build-modes#debug
