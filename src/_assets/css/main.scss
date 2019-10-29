@@ -2,18 +2,18 @@
 @import '_variables';
 
 // configs
-@import '_bootstrap_config';
+@import '_bootstrap_config_shared';
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
 // components
 @import '_base';
-@import '_header';
+@import '_header_shared';
 @import '_banner';
 @import '_next-prev-nav';
-@import '_sidebar';
-@import '_toc';
+@import '_sidebar_shared';
+@import '_toc_shared';
 @import '_content';
 @import '_footer';
 @import '_bootstrap_adjust';
@@ -21,6 +21,7 @@
 @import '_tabs';
 @import '_code';
 @import '_snackbar';
+@import '_animations';
 
 // page types
 @import '_landing-page';
@@ -28,6 +29,7 @@
 @import '_showcase';
 @import '_community';
 @import '_create';
+@import '_books';
 @import '_404';
 
-@import 'site_overrides';
+@import '_site_overrides';

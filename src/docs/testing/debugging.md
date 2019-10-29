@@ -246,8 +246,8 @@ You might find the following docs useful:
 [breakpoints]: /docs/testing/code-debugging#setting-breakpoints
 [logging]: /docs/testing/code-debugging#logging
 [Flutter's modes]: /docs/testing/build-modes
-[Flutter performance profiling]: /docs/testing/ui-performance
-[Performance best practices]: /docs/testing/best-practices
+[Flutter performance profiling]: /docs/perf/rendering/ui-performance
+[Performance best practices]: /docs/perf/rendering/best-practices
 [Using an OEM debugger]: /docs/testing/oem-debuggers
 
 [The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
@@ -263,8 +263,8 @@ You might find the following docs useful:
 [DevTools debugger]: /docs/development/tools/devtools/debugger
 [logging view]: /docs/development/tools/devtools/logging
 [Timeline view]: /docs/development/tools/devtools/timeline
-[The performance overlay]: /docs/testing/ui-performance#the-performance-overlay
-[Flutter performance profiling]: /docs/testing/ui-performance
+[The performance overlay]: /docs/perf/rendering/ui-performance#the-performance-overlay
+[Flutter performance profiling]: /docs/perf/rendering/ui-performance
 [overlay]: /docs/testing/code-debugging#performance-overlay
 [debug mode]: /docs/testing/build-modes#debug
 [profile mode]: /docs/testing/build-modes#profile

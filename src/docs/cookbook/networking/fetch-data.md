@@ -35,7 +35,11 @@ dependencies:
 ```
 
 Import the http package.
-```import 'package:http/http.dart' as http;```
+
+<!-- skip -->
+```dart
+import 'package:http/http.dart' as http;
+```
 
 ## 2. Make a network request
 

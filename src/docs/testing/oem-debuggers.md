@@ -343,7 +343,7 @@ iOS, and Android:
 * [Debugging Flutter apps](/docs/testing/debugging)
 * [Flutter inspector][], as well as the general
   [DevTools][] docs.
-* [Performance Profiling](/docs/testing/ui-performance)
+* [Performance Profiling](/docs/perf/rendering/ui-performance)
 
 ### Android
 

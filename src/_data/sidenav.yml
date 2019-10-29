@@ -186,7 +186,7 @@
     - title: AndroidX migration
       permalink: /docs/development/androidx-migration
 
-- title: Testing & optimization
+- title: Testing & debugging
   permalink: /docs/testing
   children:
     - title: Debugging
@@ -200,12 +200,28 @@
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance best practices
-      permalink: /docs/testing/best-practices
-    - title: Performance profiling
-      permalink: /docs/testing/ui-performance
-    # We don't have this page yet.
-    # - title: Making your compiled app smaller
+
+- title: Performance & optimization
+  permalink: /docs/perf
+  children:
+    - title: Overview
+      permalink: /docs/perf
+    - title: App size
+      permalink: /docs/perf/app-size
+#    - title: Memory
+#      permalink: /docs/perf/memory
+#    - title: Power usage
+#      permalink: /docs/perf/power
+    - title: Rendering performance
+      permalink: /docs/perf/rendering
+      children:
+      - title: Overview
+        permalink: /docs/perf/rendering
+        match-page-url-exactly: true
+      - title: Performance best practices
+        permalink: /docs/perf/rendering/best-practices
+      - title: Performance profiling
+        permalink: /docs/perf/rendering/ui-performance
 
 - title: Deployment
   children:
@@ -233,6 +249,8 @@
     # - title: Flutter best practices # TODO
     - title: Technical videos
       permalink: /docs/resources/videos
+    - title: Books
+      permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: FAQ
