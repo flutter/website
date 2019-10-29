@@ -111,6 +111,37 @@ if you already have the required packages installed.
 > OR 
 > `./tool/serve.sh`
 
+## Creating and/or editing DartPad example code
+
+At the time of writing this (10/22/19) most of the code used to create DartPad examples is hosted on GitHub. However, this repo also contains some `.dart` files responsible for DartPad example code.
+
+### DartPad example code in GitHub gists
+A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's markdown file:
+
+```markdown
+<iframe
+  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
+  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
+  frameborder="no" height="500" width="100%"
+></iframe>
+```
+
+This `iframe` depends on the following GitHub gist url:
+
+`https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5`
+
+For detailed instructions on how to use this approach to DartPad examples, see the [DartPad embedding guide].
+
+### DartPad example code in this repo - `src/_packages/dartpad_picker`
+Some DartPad example code remains in `.dart` files in this repo, and must be compiled via `src/_packages/dartpad_picker/compile.sh`. For an example, consult `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`. 
+
+In order to create or change example code using `dartpad_picker`, you must regenerate the JavaScript:
+
+```sh
+  cd src/_packages/dartpad_picker
+  ./compile.sh
+```
+
 ## Deploy to a staging site
 
 You can deploy your local edits to a personal staging site as follows
@@ -200,6 +231,7 @@ Also check out the site-shared
 [Firebase]: https://firebase.google.com/
 [first-timers SVG]: https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square
 [first-timers]: https://www.firsttimersonly.com/
+[DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 [Jekyll]: https://jekyllrb.com/
 [nvm]: https://github.com/creationix/nvm#installation
 [Repo on Travis]: https://travis-ci.org/flutter/website

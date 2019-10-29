@@ -9,7 +9,7 @@ echo "Refreshing Flutter repo and running doctor:"
 (
   set -x;
   cd flutter;
-  git checkout beta;
+  git checkout stable;
   git pull;
   bin/flutter doctor;
 )

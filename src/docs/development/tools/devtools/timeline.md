@@ -203,5 +203,5 @@ state. To import a timeline snapshot, you can drag and drop the
 snapshot into DevTools from any page. **Note the DevTools only
 supports importing files that were originally exported from DevTools.**
 
-[GPU thread]: /docs/testing/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: /docs/testing/ui-performance
+[GPU thread]: /docs/perf/rendering/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: /docs/perf/rendering/ui-performance

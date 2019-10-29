@@ -32,10 +32,9 @@ including breaking changes, join the
 
 Flutter 1.9 is live!
 
-For more information, see [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter
-1.9](https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1)
-and the [1.9.1 release
-notes]({{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1).
+For more information, see [Flutter news from GDD China:
+uniting Flutter on web and mobile, and introducing Flutter 1.9][]
+and the [1.9.1 release notes][].
 
 For the 1.9 release, Flutter's web support has been
 merged ("unforked") into the main repo.
@@ -49,54 +48,62 @@ but more will be coming.
 
 New and updated docs on the site include:
 
-* We've revamped the [Showcase](/showcase) page.
+* We've revamped the [Showcase][] page.
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
-  [Try it out](/docs/codelabs/layout-basics)
-  and let us know what you think.
-* A new page on [using the dart:ffi
-  library](/docs/development/platform-integration/c-interop)
+  [Try it out][] and let us know what you think.
+* A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
 * The Performance view tool, which allows you to record
   and profile a session from your Dart/Flutter application,
   has been enabled in DevTools. For more information,
-  see the [Performance
-  view](/docs/development/tools/devtools/performance)
-  page.
+  see the [Performance view][] page.
 * A new page on
-  [building a web application](/docs/get-started/web).
-* A new page on [creating responsive
-  apps](/docs/development/ui/layout/responsive)
-  in Flutter.
-* A new page on
-  [preparing a web app for release](/docs/deployment/web).
-* A new [web FAQ](/docs/development/platform-integration/web).
-* The [Flutter for web](/web) page is updated.
+  [building a web application][].
+* A new page on [creating responsive apps][] in Flutter.
+* A new page on [preparing a web app for release][].
+* A new [web FAQ][].
+* The [Flutter for web][] page is updated.
 
 Other relevant docs:
 
 * Error messages have been improved in SDK 1.9.
-  For more information, read [Improving Flutter's
-  Error Messages](https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9)
-  on the [Flutter Medium publication](https://medium.com/flutter).
+  For more information, read
+  [Improving Flutter's Error Messages][]
+  on the [Flutter Medium publication][].
 * If you already have a web app that depends on the
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
-  [Upgrading from package:flutter_web to the Flutter
-  SDK](https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK).
-* A new [ToggleButtons]({{site.api}}/flutter/material/ToggleButtons-class.html)
-  widget, described in the API docs.
-  [ToggleButtons demo]({{site.github}}/csells/flutter_toggle_buttons)
-* A new [ColorFiltered]({{site.api}}/flutter/widgets/ColorFiltered-class.html)
-  widget, also described in the API docs.
-  [ColorFiltered demo]({{site.github}}/csells/flutter_color_filter)
-* New behavior for the
-  [SelectableText]({{site.api}}/flutter/material/SelectableText-class.html)
-  widget.
+  [Upgrading from package:flutter_web to the Flutter SDK][].
+* A new [ToggleButtons][] widget, described in the API docs.
+  [ToggleButtons demo][]
+* A new [ColorFiltered][] widget, also described in the API docs.
+  [ColorFiltered demo][]
+* New behavior for the [SelectableText][] widget.
 
 Happy Fluttering!
+
+[1.9.1 release notes]: {{site.github}}/flutter/flutter/wiki/Release-Notes-Flutter-1.9.1
+[building a web application]: /docs/get-started/web
+[ColorFiltered]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
+[ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
+[creating responsive apps]: /docs/development/ui/layout/responsive
+[Flutter Medium publication]: https://medium.com/flutter
+[Flutter for web]: /web
+[Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
+[Improving Flutter's Error Messages]: https://medium.com/flutter/improving-flutters-error-messages-e098513cecf9
+[Performance view]: /docs/development/tools/devtools/performance
+[preparing a web app for release]: /docs/deployment/web
+[SelectableText]: {{site.api}}/flutter/material/SelectableText-class.html
+[Showcase]: /showcase
+[ToggleButtons]: {{site.api}}/flutter/material/ToggleButtons-class.html
+[ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
+[Try it out]: /docs/codelabs/layout-basics
+[Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
+[using the dart:ffi library]: /docs/development/platform-integration/c-interop
+[web FAQ]: /docs/development/platform-integration/web
 
 [What's new archive][]
 

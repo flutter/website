@@ -9,7 +9,7 @@ without resorting to manual workflows.
 
 ## fastlane
 
-This guide shows how to integrate [fastlane](https://docs.fastlane.tools), an
+This guide shows how to integrate [fastlane][], an
 open-source tool suite, with your existing testing and continuous integration
 (CI) workflows (for example, Travis or Cirrus).
 
@@ -35,7 +35,7 @@ delivery from a local machine.
     `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
     `apple_id`, `itc_team_id`, `team_id` with your respective account info.
 1. Set up your local login credentials for the stores.
-    * ![Android](/images/cd/android.png) Follow the [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply)
+    * ![Android](/images/cd/android.png) Follow the [Supply setup steps][]
     and ensure that `fastlane supply init` successfully syncs data from your
     Play Store console. _Treat the .json file like your password and do not check
     it into any public source control repositories._
@@ -45,35 +45,39 @@ delivery from a local machine.
     prompted when uploading to iTunes/TestFlight.
 1. Set up code signing.
     * ![Android](/images/cd/android.png) On Android, there are two
-    signing keys: deployment and upload. The end-users download the .apk signed
-    with the 'deployment key'. An 'upload key' is used to authenticate the .apk
-    uploaded by developers onto the Play Store and is re-signed with the
-    deployment key once in the Play Store.
+      signing keys: deployment and upload. The end-users download the .apk signed
+      with the 'deployment key'. An 'upload key' is used to authenticate the .apk
+      uploaded by developers onto the Play Store and is re-signed with the
+      deployment key once in the Play Store.
         * It's highly recommended to use the automatic cloud managed signing for
-        the deployment key. For more information, see the [official Play Store documentation](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
+          the deployment key. For more information,
+          see the [official Play Store documentation][].
         * Follow the [key generation
           steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
-        to create your upload key.
+          to create your upload key.
         * Configure gradle to use your upload key when building your app in
-        release mode by editing `android.buildTypes.release` in
-        `[project]/android/app/build.gradle`.
+          release mode by editing `android.buildTypes.release` in
+          `[project]/android/app/build.gradle`.
     * ![iOS](/images/cd/ios.png) On iOS, create and sign using a
-    distribution certificate instead of a development certificate when you're
-    ready to test and deploy using TestFlight or App Store.
-        * Create and download a distribution certificate in your [Apple Developer Account console](https://developer.apple.com/account/ios/certificate/).
+      distribution certificate instead of a development certificate when you're
+      ready to test and deploy using TestFlight or App Store.
+        * Create and download a distribution certificate in your
+          [Apple Developer Account console][].
         * `open [project]/ios/Runner.xcworkspace/` and select the distribution
-        certificate in your target's settings pane.
+          certificate in your target's settings pane.
 1. Create a `Fastfile` script for each platform.
     * ![Android](/images/cd/android.png) On Android, follow the
-    [fastlane Android beta deployment guide](https://docs.fastlane.tools/getting-started/android/beta-deployment/).
-    Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
-    Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
-    to use the apk `flutter build` already built.
-    * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide](https://docs.fastlane.tools/getting-started/ios/beta-deployment/).
-    Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-    `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-    build is required since `flutter build` builds an .app rather than archiving
-    .ipas for release.
+      [fastlane Android beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls
+      `upload_to_play_store`.
+      Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
+      to use the apk `flutter build` already built.
+    * ![iOS](/images/cd/ios.png) On iOS, follow the
+      [fastlane iOS beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
+      `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
+      build is required since `flutter build` builds an .app rather than archiving
+      .ipas for release.
 
 You're now ready to perform deployments locally or migrate the deployment
 process to a continuous integration (CI) system.
@@ -99,8 +103,7 @@ The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
-Continuous Integration (CI) systems, such as
-[Cirrus](https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables)
+Continuous Integration (CI) systems, such as [Cirrus][]
 generally support encrypted environment variables to store private data.
 
 **Take precaution not to re-echo those variable values back onto the console in
@@ -112,74 +115,92 @@ secrets in pull requests that you accept and merge.
 1. Make login credentials ephemeral.
     * ![Android](/images/cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
-        content of the JSON in your CI system's encrypted variable. Use the
-        `json_key_data` argument in `upload_to_play_store` to read the
-        environment variable directly in your `Fastfile`.
+          content of the JSON in your CI system's encrypted variable. Use the
+          `json_key_data` argument in `upload_to_play_store` to read the
+          environment variable directly in your `Fastfile`.
         * Serialize your upload key (for example, using base64) and save it as
-        an encrypted environment variable. You can deserialize it on your CI
-        system during the install phase with
-        ```bash
-        echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/cirrus/[directory # and filename specified in your gradle].keystore
-        ```
+          an encrypted environment variable. You can deserialize it on your CI
+          system during the install phase with
+          ```bash
+          echo "$PLAY_STORE_UPLOAD_KEY" | base64 --decode > /home/cirrus/[directory # and filename specified in your gradle].keystore
+          ```
     * ![iOS](/images/cd/ios.png) On iOS:
         * Move the local environment variable `FASTLANE_PASSWORD` to use
-        encrypted environment variables on the CI system.
-        * The CI system needs access to your distribution certificate. fastlane's
-        [Match](https://docs.fastlane.tools/actions/match/) system is
-        recommended to synchronize your certificates across machines.
+          encrypted environment variables on the CI system.
+        * The CI system needs access to your distribution certificate.
+          fastlane's [Match][] system is
+          recommended to synchronize your certificates across machines.
 
 2. It's recommended to use a Gemfile instead of using an indeterministic
-`gem install fastlane` on the CI system each time to ensure the fastlane
-dependencies are stable and reproducible between local and cloud machines. However, this step is optional.
+   `gem install fastlane` on the CI system each time to ensure the fastlane
+   dependencies are stable and reproducible between local and cloud machines.
+   However, this step is optional.
     * In both your `[project]/android` and `[project]/ios` folders, create a
-    `Gemfile` containing the following content:
-      ```
-      source "https://rubygems.org"
+      `Gemfile` containing the following content:
+        ```
+        source "https://rubygems.org"
 
-      gem "fastlane"
-      ```
+        gem "fastlane"
+        ```
     * In both directories, run `bundle update` and check both `Gemfile` and
-    `Gemfile.lock` into source control.
+      `Gemfile.lock` into source control.
     * When running locally, use `bundle exec fastlane` instead of `fastlane`.
 
 3. Create the CI test script such as `.travis.yml` or `.cirrus.yml` in your
-repository root.
+   repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
-    `osx_image: xcode9.2`).
+      `osx_image: xcode9.2`).
     * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
          * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
-         path is set.
+           path is set.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
     * In the script phase of the CI task:
-         * Run `flutter build apk --release` or `flutter build ios --release --no-codesign` depending on the platform.
-         * `cd android` or `cd ios`.
-         * `bundle exec fastlane [name of the lane]`.
+         * Run `flutter build apk --release` or
+           `flutter build ios --release --no-codesign`,
+           depending on the platform.
+         * `cd android` or `cd ios`
+         * `bundle exec fastlane [name of the lane]`
 
 ### Reference
 
-The [Flutter Gallery in the Flutter
-repo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
-uses fastlane for continuous deployment. See the source for a working example
-of fastlane in action. Also see the Flutter framework repository's
-[Cirrus script]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml).
-
-[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
+The [Flutter Gallery in the Flutter repo][]
+uses fastlane for continuous deployment.
+See the source for a working example of fastlane in action.
+Also see the Flutter framework repository's [Cirrus script][].
 
 ## Other services
 
-The following are some other options available to help automate the delivery of your application.
+The following are some other options available to help automate
+the delivery of your application.
 
-* [GitLab Continuous Integration
-  (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can 
-  [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
-* [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
-* [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
-* [Github Actions- CI/CD on GitHub](https://github.com/features/actions) Get
-  [Example Project](https://github.com/nabilnalakath/flutter-githubaction)
+* [GitLab Continuous Integration (GitLab CI/CD)][].
+  You'll need to create and configure a `.gitlab-ci.yml` file.
+  You can [find an example][] in the [flutter_redux library][].
+* [Codemagic CI/CD for Flutter][]
+* [Flutter CI/CD with Bitrise][]
+* [GitHub Actions- CI/CD on GitHub][]
+  Get an [Example Project][]
 
+
+[Apple Developer Account console]: https://developer.apple.com/account/ios/certificate/
+[Cirrus]: https://cirrus-ci.org/guide/writing-tasks/#encrypted-variables
+[Cirrus script]: {{site.github}}/flutter/flutter/blob/master/.cirrus.yml
+[Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Example Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[fastlane]: https://docs.fastlane.tools
+[fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
+[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
+[fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
+[find an example]: https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml
+[Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
+[Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[flutter_redux library]: {{site.github}}/brianegan/flutter_redux
+[GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
+[GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
+[Match]: https://docs.fastlane.tools/actions/match/
+[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
+[Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
