@@ -1,7 +1,8 @@
 .clock {
+  $vertical-line-color: #384753;
+  
   background-color: $flutter-dark-blue-texture;
   font-family: $site-font-family-alt;
-  $vertical-line-color: #384753;
 
   .center {
     position: absolute;
@@ -35,7 +36,9 @@
     animation: slide-in .8s;
     animation-fill-mode: both;
     color: $site-color-primary;
+    display: flex;
     font-size: 52px;
+    justify-content: center;
     margin: 0;
     text-align: center;
     width: 100%;
