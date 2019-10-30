@@ -22,10 +22,12 @@
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
+      margin-bottom: 60px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
+      margin-bottom: 40px;
     }
   }
 
@@ -141,9 +143,24 @@
   }
 
   .share-twitter__paragraph {
+    animation: slide-in 1s 1.8s;
+    animation-fill-mode: both;
     color: $site-color-white;
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 32px;
+    padding: 0 37px;
     text-align: center;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      margin-top: 48px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 20px;
+      margin-top: 64px;
+    }
   }
 
   .learn-more__button {
