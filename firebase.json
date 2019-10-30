@@ -138,7 +138,8 @@
       { "source": "/go/faster-cocoon", "destination": "https://docs.google.com/document/d/1NXP0_9TJ1qz674iYyOGVLEHWVpmbXr5yjhBrdoU_x5g/edit", "type": 301 },
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit?usp=sharing", "type": 301 },
-      { "source": "/go/automatic-android-plugin-registration", "destination": "https://docs.google.com/document/d/1xNkBmcdVL1yEXqtZ65KzTwfr5UXDD05VVKYXIXGX7p8/edit?usp=sharing", "type": 301 }
+      { "source": "/go/automatic-android-plugin-registration", "destination": "https://docs.google.com/document/d/1xNkBmcdVL1yEXqtZ65KzTwfr5UXDD05VVKYXIXGX7p8/edit?usp=sharing", "type": 301 }, 
+      { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 }
     ]
   }
 }
