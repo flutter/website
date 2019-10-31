@@ -6,7 +6,7 @@
 
   .center {
     position: absolute;
-    top: 50%;
+    top: 53%;
     transform: translateY(-50%);
     width: 100%;
     z-index: 99;
@@ -17,18 +17,18 @@
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 18px;
-    margin: 0 0 50px 0;
+    margin: 0 0 24px 0;
     text-align: center;
     width: 100%;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
-      margin-bottom: 60px;
+      margin-bottom: 22px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   }
 
@@ -150,19 +150,20 @@
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 14px;
-    margin-top: 32px;
+    margin-bottom: 0px;
+    margin-top: 20px;
     padding: 0 37px;
     text-align: center;
     width: 100%;
 
     @include media-breakpoint-up(md) {
       font-size: 16px;
-      margin-top: 48px;
+      margin-top: 22px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 20px;
-      margin-top: 64px;
+      margin-top: 24px;
     }
   }
 

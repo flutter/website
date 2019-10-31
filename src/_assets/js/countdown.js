@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const hoursContainer = document.querySelector('.hours-digits_container');
     const minutesContainer = document.querySelector('.minutes-digits_container');
     const secondsContainer = document.querySelector('.seconds-digits_container');
-    const eventTime = 'November 18 2019 09:00:00'; // TODO: Actual event day TBD
+    const eventTime = new Date(Date.UTC(2019, 10, 18, 17, 0, 0));
+
+    let interval;
 
     // Returns remaining time in days, hours, minutes and seconds.
     function getTimeRemaining() {
@@ -41,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
             secondsContainer.innerText = `${seconds}`;
         } else {
             console.log('The event is now');
-            clearInterval();
+            clearInterval(interval);
         }
     }
 
     setTimer();
-    setInterval(setTimer, 1000);
+    interval = setInterval(setTimer, 1000);
 });
