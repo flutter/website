@@ -102,7 +102,6 @@ Future<void> main() async {
 '''
     .trim();
 var spinning_logo = r'''
-import 'dart:math';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_ui/ui.dart' as ui;
 
@@ -132,50 +131,49 @@ class _MyAppState extends State<MyApp>
   @override
   void initState() {
     super.initState();
+
     controller = AnimationController(
       duration: Duration(seconds: 1),
       vsync: this,
     );
-    animation = Tween(begin: 0.0, end: 4 * pi)
-      .animate(CurvedAnimation(
-        curve: Curves.easeInOutCubic,
-        parent: controller,
-    ));
+
+    animation = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeInOutCubic,
+    ).drive(Tween(begin: 0, end: 2));
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => setState(() {
+      onTap: () {
         controller
           ..reset()
           ..forward();
-      }),
-      child: SizedBox.expand(
-        child: AnimatedBuilder(
-          animation: animation,
-          builder: (context, child) {
-            return Transform.rotate(
-              angle: animation.value,
-              child: child,
-            );
-          },
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: FlutterLogo(),
-              ),
-              Center(
-                child: Text(
-                  'Click me!',
-                  style: TextStyle(
-                    fontSize: 60.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+      },
+      child: RotationTransition(
+        turns: animation,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: FlutterLogo(),
+            ),
+            Center(
+              child: Text(
+                'Click me!',
+                style: TextStyle(
+                  fontSize: 60.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
