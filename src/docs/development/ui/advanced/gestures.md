@@ -119,18 +119,18 @@ drag update, and drag end):
 **Pan**
 
 `onPanStart`
-: A pointer has contacted the screen and might begin to move 
-  horizontally or vertically. This callback causes a crash if 
+: A pointer has contacted the screen and might begin to move
+  horizontally or vertically. This callback causes a crash if
   `onHorizontalDragStart` or `onVerticalDragStart` is set.
 
 `onPanUpdate`
-: A pointer that is in contact with the screen and is moving 
+: A pointer that is in contact with the screen and is moving
   in the vertical or horizontal direction. This callback causes
   a crash if `onHorizontalDragUpdate` or `onVerticalDragUpdate`
   is set.
 
 `onPanEnd`
-: A pointer that was previously in contact with screen 
+: A pointer that was previously in contact with screen
   is no longer in contact with the screen and is moving
   at a specific velocity when it stopped contacting the screen.
   This callback causes a crash if `onHorizontalDragEnd` or
@@ -159,7 +159,7 @@ which gestures to attempt to recognize based on which of its
 callbacks are non-null.
 
 When there is more than one gesture recognizer for a given
-pointer on the screen, the framework disambiguates which 
+pointer on the screen, the framework disambiguates which
 gesture the user intends by having each recognizer join
 the _gesture arena_. The gesture arena determines which
 gesture wins using the following rules:
@@ -172,7 +172,7 @@ gesture wins using the following rules:
   it to win and all the remaining recognizers to lose.
 
 For example, when disambiguating horizontal and vertical dragging,
-both recognizers enter the arena when they receive the pointer 
+both recognizers enter the arena when they receive the pointer
 down event.  The recognizers observe the pointer move events.
 If the user moves the pointer more than a certain number of
 logical pixels horizontally, the horizontal recognizer
@@ -187,7 +187,7 @@ immediately, which means the first pixel of horizontal movement
 can be treated as a drag and the user won't need to wait for
 further gesture disambiguation.
 
-   
+
 [`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html

@@ -72,7 +72,7 @@ convert the `http.Response` into a Dart object.
 ### Create a `Post` class
 
 First, create a `Post` class that contains the data from the
-network request. It includes a factory constructor that 
+network request. It includes a factory constructor that
 creates a `Post` from JSON.
 
 Converting JSON by hand is only one option. For more information,

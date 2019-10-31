@@ -153,7 +153,7 @@ release](/docs/deployment/web).
 
 ### Does `Platform.is` work on the web?
 
-Not currently. 
+Not currently.
 
 ### How can I compare notes others who are playing with this feature?
 

@@ -379,11 +379,11 @@ part 'address.g.dart';
 class Address {
   String street;
   String city;
-  
+
   Address(this.street, this.city);
-  
+
   factory Address.fromMappedJson(Map<String, dynamic> json) => _$AddressFromMappedJson(json);
-  Map<String, dynamic> toJson() => _$AddressToJson(this); 
+  Map<String, dynamic> toJson() => _$AddressToJson(this);
 }
 ```
 
@@ -396,9 +396,9 @@ part 'user.g.dart';
 
 @JsonSerializable()
 class User {
-  String firstName;  
+  String firstName;
   Address address;
-  
+
   User(this.firstName, this.address);
 
   factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
@@ -412,9 +412,9 @@ looks something like the following:
 
 ```dart
 (
-Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{      
+Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
   'firstName': instance.firstName,
-  'address': instance.address,      
+  'address': instance.address,
 };
 ```
 
@@ -426,7 +426,7 @@ User user = User("John", address);
 print(user.toJson());
 ```
 
-The result is: 
+The result is:
 
 ```json
 {name: John, address: Instance of 'address'}
@@ -448,9 +448,9 @@ part 'user.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class User {
-  String firstName;  
+  String firstName;
   Address address;
-  
+
   User(this.firstName, this.address);
 
   factory User.fromMappedJson(Map<String, dynamic> json) => _$UserFromMappedJson(json);
@@ -458,7 +458,7 @@ class User {
 }
 ```
 
-For more information, see [explicitToJson][] in the 
+For more information, see [explicitToJson][] in the
 [JsonSerializable][] class for the [json_annotation][] package.
 
 [explicitToJson]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html

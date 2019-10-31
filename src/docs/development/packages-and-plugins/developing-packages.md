@@ -263,7 +263,7 @@ Once you have implemented a package, you can publish it on
 [pub.dev][], so that other developers can easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
-`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
+`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below.
 * Diverse code usage examples
 * Screenshots, animated gifs, or videos
 * A link to the corresponding code repository

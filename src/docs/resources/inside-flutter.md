@@ -266,13 +266,13 @@ these trees be separate:
 * **Performance.** When the layout changes, only the relevant parts of
   the layout tree need to be walked. Due to composition, the element
   tree frequently has many additional nodes that would have to be skipped.
-  
+
 * **Clarity.** The clearer separation of concerns allows the widget
-  protocol and the render object protocol to each be specialized to 
-  their specific needs, simplifying the API surface and thus lowering 
+  protocol and the render object protocol to each be specialized to
+  their specific needs, simplifying the API surface and thus lowering
   the risk of bugs and the testing burden.
-  
-* **Type safety.** The render object tree can be more type safe since it 
+
+* **Type safety.** The render object tree can be more type safe since it
   can guarantee at runtime that children will be of the appropriate type
   (each coordinate system, e.g. has its own type of render object).
   Composition widgets can be agnostic about the coordinate system used

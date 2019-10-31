@@ -21,20 +21,20 @@ when designing your app:
 
 * Avoid repetitive and costly work in `build()` methods since `build()`
   can be invoked frequently when ancestor Widgets rebuild.
-* Avoid overly large single Widgets with a large `build()` function. 
+* Avoid overly large single Widgets with a large `build()` function.
   Split them into different Widgets based on encapsulation but also on how
-  they change: 
-  * When `setState()` is called on a State, all descendent widgets will 
-    rebuild. Therefore, localize the `setState()` call to the part of 
-    the subtree whose UI actually needs to change. Avoid calling 
-    setState() high up in the tree if the change is contained to a small 
+  they change:
+  * When `setState()` is called on a State, all descendent widgets will
+    rebuild. Therefore, localize the `setState()` call to the part of
+    the subtree whose UI actually needs to change. Avoid calling
+    setState() high up in the tree if the change is contained to a small
     part of the tree.
   * The traversal to rebuild all descendents stops when the same instance
-    of the child widget as the previous frame is re-encountered. This 
-    technique is heavily used in inside the framework for optimizing 
+    of the child widget as the previous frame is re-encountered. This
+    technique is heavily used in inside the framework for optimizing
     animations where the animation doesn't affect the child subtree. See
     the [`TransitionBuilder`][] pattern and the [`SlideTransition`][],
-    which uses this principle to avoid rebuilding its descendents when 
+    which uses this principle to avoid rebuilding its descendents when
     animating.
 
 Also see:
@@ -65,7 +65,7 @@ Some general rules when applying specific effects:
   so these operations aren’t as expensive as Opacity,
   but clipping is still costly, so use with caution.
   By default, clipping is disabled (`Clip.none`),
-  so you must explicitly enable it when needed. 
+  so you must explicitly enable it when needed.
 
 Other widgets that might trigger `saveLayer()` and are potentially costly:
 
@@ -128,7 +128,7 @@ see the video [Why 60fps?][]
 If you need to tune your app’s performance, or perhaps the UI isn't as
 smooth as you expect, the Flutter plugin for your IDE can help.
 In the Flutter Performance window, enable the **Show widget rebuild
-information** check box. This feature helps you detect when 
+information** check box. This feature helps you detect when
 frames are being rendered and displayed in more than 16ms.
 Where possible, the plugin provides a link to a relevant tip.
 

@@ -665,7 +665,7 @@ the next time your app needs to update the screen.
 If you forget to call `setState` when modifying the internal state of a widget,
 the framework won't know your widget is dirty and might not call the widget's
 [`build()`][] function, which means the user interface might not
-update to reflect the changed state.  
+update to reflect the changed state.
 By managing state in this way, you don't need to write separate code for
 creating and updating child widgets. Instead, you simply implement the `build`
 function, which handles both situations.

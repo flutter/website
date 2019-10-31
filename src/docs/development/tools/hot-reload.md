@@ -23,7 +23,7 @@ To hot reload a Flutter app:
     [Limitations](#limitations).
  1. If you're working in an IDE/editor that supports Flutter's IDE tools,
     select **Save All** (`cmd-s`/`ctrl-s`), or click the Hot Reload
-    button on the toolbar: 
+    button on the toolbar:
 
     ![Hot reload]({% asset tools/android-studio/hot-reload.gif @path %}){:width="735px"}
 
@@ -55,7 +55,7 @@ reload for your app.
 ## Compilation errors
 
 When a code change introduces a compilation error,
-hot reload always generates an error message similar to: 
+hot reload always generates an error message similar to:
 
 ```nocode
 Hot reload was rejected:
@@ -75,9 +75,9 @@ Dart code to keep using hot reload.
 Flutter's Stateful Hot Reload preserves the state of your app.
 This design enables you to view the effect of the most recent change only,
 without throwing away the current state. For example, if your app requires a
-user to log in, you can modify and hot reload a page several levels down in 
+user to log in, you can modify and hot reload a page several levels down in
 the navigation hierarchy, without re-entering your login credentials.
-State is kept, which is usually the desired behavior.  
+State is kept, which is usually the desired behavior.
 
 If code changes affect the state of your app (or its dependencies),
 the data your app has to work with might not be fully consistent with
@@ -317,7 +317,7 @@ committing any changes.
 ## How it works
 
 When hot reload is invoked, the host machine looks at the edited
-code since the last compilation. The following libraries are recompiled: 
+code since the last compilation. The following libraries are recompiled:
 
 * Any libraries with changed code
 * The application's main library

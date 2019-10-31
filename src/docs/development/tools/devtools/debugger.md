@@ -33,7 +33,7 @@ again removes the breakpoint.
 ## The call stack and variable areas
 
 When your application encounters a breakpoint, it pauses there,
-and the DevTools debugger shows the paused execution location 
+and the DevTools debugger shows the paused execution location
 in the source area. In addition, the `Call stack` and `Variables`
 areas populate with the current call stack for the paused isolate,
 and the local variables for the selected frame. Selecting other
@@ -60,7 +60,7 @@ execution of the application.
 
 ## Console output
 
-Console output for the running app (stdout and stderr) is 
+Console output for the running app (stdout and stderr) is
 displayed in the console, below the source code area.
 You can also see the output in the [Logging view][].
 
@@ -72,7 +72,7 @@ checkboxes in the upper right of the debugger view.
 
 Breaking on unhandled excepts only pauses execution if the
 breakpoint is considered uncaught by the application code.
-Breaking on all exceptions causes the debugger to pause 
+Breaking on all exceptions causes the debugger to pause
 whether or not the breakpoint was caught by application code.
 
 ## Known issues
