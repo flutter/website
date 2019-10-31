@@ -33,6 +33,11 @@ you'll create a chat app that includes a simple animation, and customizes
 the UI for iOS and Android.
 
 
+#### [Implicit Animations](/docs/codelabs/implicit-animations)
+
+Use DartPad to learn how to use implicit animations to add motion and create
+visual effects for the widgets in your UI.
+
 #### [Adding Google Maps to a Flutter App]({{site.codelabs}}/codelabs/google-maps-in-flutter)
 
 Display a Google map in an app, retrieve data from a web service,
