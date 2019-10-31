@@ -13,7 +13,7 @@
   }
 
   .heading {
-    animation: slide-in 1s .8s;
+    animation: slide-in 1s .3s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 18px;
@@ -33,7 +33,7 @@
   }
 
   .time-number {
-    animation: slide-in .8s;
+    animation: slide-in 1s;
     animation-fill-mode: both;
     color: $site-color-primary;
     display: flex;
@@ -146,7 +146,7 @@
   }
 
   .share-twitter__paragraph {
-    animation: slide-in 1s 1.8s;
+    animation: slide-in 1s .6s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 14px;
