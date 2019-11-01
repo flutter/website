@@ -5,35 +5,36 @@
   font-family: $site-font-family-alt;
 
   .center {
-    position: absolute;
-    top: 53%;
-    transform: translateY(-50%);
-    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 66px);
+    justify-content: center;
     z-index: 99;
   }
 
   .heading {
-    animation: slide-in 1s .3s;
+    animation: clock-slide-in 1s .3s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 18px;
-    margin: 0 0 24px 0;
+    margin: 0 0 24px;
     text-align: center;
     width: 100%;
 
     @include media-breakpoint-up(md) {
       font-size: 32px;
-      margin-bottom: 22px;
+      margin: 0 0 22px;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 40px;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
   }
 
   .time-number {
-    animation: slide-in 1s;
+    animation: clock-slide-in 1s;
     animation-fill-mode: both;
     color: $site-color-primary;
     display: flex;
@@ -83,7 +84,7 @@
   }
 
   .animations {
-    animation-name: geometric-small-background;
+    animation-name: clock-geometric-small-background;
     animation-duration: 1.2s;
     animation-fill-mode: both;
     animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
@@ -97,7 +98,7 @@
     width: 100%;
 
     @include media-breakpoint-up(md) {
-      animation-name: geometric-medium-background;
+      animation-name: clock-geometric-medium-background;
       background-size: 400px 556px, 317px 258px, auto;
     }
 
@@ -109,7 +110,7 @@
   .vertical-line {
     animation-duration: 1s;
     animation-fill-mode: both;
-    animation-name: vertical-lines;
+    animation-name: clock-vertical-lines;
     animation-timing-function: ease;
     background-color: $vertical-line-color;
     position: fixed;
@@ -146,24 +147,23 @@
   }
 
   .share-twitter__paragraph {
-    animation: slide-in 1s .6s;
+    animation: clock-slide-in 1s .6s;
     animation-fill-mode: both;
     color: $site-color-white;
     font-size: 14px;
-    margin-bottom: 0px;
-    margin-top: 20px;
+    margin: 20px 0 0;
     padding: 0 37px;
     text-align: center;
     width: 100%;
 
     @include media-breakpoint-up(md) {
       font-size: 16px;
-      margin-top: 22px;
+      margin: 22px 0 0;
     }
 
     @include media-breakpoint-up(lg) {
       font-size: 20px;
-      margin-top: 24px;
+      margin: 24px 0 0;
     }
   }
 
@@ -175,7 +175,7 @@
 }
 
 // animations
-@keyframes vertical-lines {
+@keyframes clock-vertical-lines {
   from {
     height: 0;
   }
@@ -184,7 +184,7 @@
   }
 }
 
-@keyframes slide-in {
+@keyframes clock-slide-in {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -195,7 +195,7 @@
   }
 }
 
-@keyframes geometric-medium-background {
+@keyframes clock-geometric-medium-background {
   from {
     background-position: top 150px left -270px, top right -488px, bottom -348px left -140px;
   }
@@ -204,7 +204,7 @@
   }
 }
 
-@keyframes geometric-small-background {
+@keyframes clock-geometric-small-background {
   from {
     background-position: bottom 90px left -144px, top right -140px, bottom -164px left -100px;
   }
