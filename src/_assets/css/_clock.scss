@@ -10,7 +10,6 @@
     flex-direction: column;
     height: calc(100vh - 66px);
     justify-content: center;
-    z-index: 99;
   }
 
   .heading {
@@ -96,6 +95,7 @@
     position: absolute;
     top: 66px;
     width: 100%;
+    z-index: -1;
 
     @include media-breakpoint-up(md) {
       animation-name: clock-geometric-medium-background;
