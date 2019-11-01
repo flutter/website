@@ -1,20 +1,16 @@
 source 'https://rubygems.org'
-
-gem 'activesupport'
-gem 'autoprefixer-rails'
 gem 'bootstrap'
 gem 'font-awesome-sass'
-gem 'jekyll', '~> 3.8.4'
-gem 'jekyll-assets', group: :jekyll_plugins
-gem 'jekyll-toc',
-  # :path => '~/git/dart/jekyll-toc'
-  :git => 'https://github.com/chalin/jekyll-toc.git',
-  :branch => 'master'
+# Jekyll-assets isn't yet compatible with Jekyll 4. Pin jekyll version.
+# https://github.com/envygeeks/jekyll-assets/issues/613
+gem 'jekyll', '~> 3'
+gem 'jekyll-assets', '~> 3', group: :jekyll_plugins
+gem 'jekyll-toc'
 gem 'liquid-tag-parser'
-gem 'sass'
-gem 'sprockets', '~> 4.0.beta' , { require: false }
+gem 'sassc'
+# Sprockets > 4.0.beta8 breaks jekyll-assets
+# https://github.com/envygeeks/jekyll-assets/issues/589
+# So pin the version until the issue is fixed.
+# Track progress at https://github.com/envygeeks/jekyll-assets/pull/620
+gem 'sprockets', '4.0.beta8'
 gem 'uglifier'
-
-# Remaining old infrastructure gems
-gem 'html-proofer' # TODO: drop
-gem 'rake' # TODO: drop (this seems to be needed only for support of html-proofer)
