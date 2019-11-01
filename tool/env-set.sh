@@ -1,6 +1,8 @@
 # This bash file is meant to be source'd from the repo root, not executed.
 
-_DART_SITE_NODE_VERS=12
+# Set to override site-shared defaults, or unset to use defaults:
+unset _DART_SITE_NODE_VERS
+unset _DART_SITE_RUBY_VERS
 
 source tool/shared/env-set.sh
 
