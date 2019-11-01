@@ -1,6 +1,6 @@
 .showcase {
   background-color: $site-color-codeblock-bg;
-  font-family: "Google Sans", "Roboto", sans-serif;
+  font-family: $site-font-family-alt;
   $site-color-paragraph: #555;
   $site-color-title: #212C34;
 
@@ -221,13 +221,12 @@
     $image_height_lg: 350px;
     $image_height_md: 280px;
     $image_height_sm: 200px;
-    $texture-bg-color: #232C33;
     $author-copy-color: #5bc8f8;
     color: $site-color-white;
     position: relative;
 
     &__texture {
-      background: $texture-bg-color none no-repeat center;
+      background: $flutter-dark-blue-texture none no-repeat center;
       height: 100%;
       margin-left: calc(50% - 50vw);
       position: absolute;
