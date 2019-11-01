@@ -42,7 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
             minutesContainer.innerText = `${minutes}`;
             secondsContainer.innerText = `${seconds}`;
         } else {
-            console.log('The event is now');
+            daysContainer.innerText = '00';
+            hoursContainer.innerText = '00';
+            minutesContainer.innerText = '00';
+            secondsContainer.innerText = '00';
             clearInterval(interval);
         }
     }
