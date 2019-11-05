@@ -1,8 +1,8 @@
 ---
-title: Desktop support for Flutter description: "Announcing the alpha release of Flutter for desktop."
+title: Desktop support for Flutter
+description: Announcing the alpha release of Flutter for desktop.
+toc: true
 ---
-# Desktop support for Flutter
-
 With desktop support, you can compile Flutter code to a native macOS Desktop
 app, complete with all of Flutter's features and editor tooling. You can also
 use some existing plugins, as well as create your own. As of 1.12, desktop
@@ -47,7 +47,7 @@ libraries to need to be updated and recompiled after any Flutter update.
 ### IDE Support
 You can create, run, and debug a Flutter desktop project using the existing
 tools provided by the Flutter extension for [Android Studio / IntelliJ] as well
-as [Visual Studio Code]. Follow the [Set up an editor] instructions to install
+as [Visual Studio Code]. Follow the instructions to [set up an editor] and install
 the Dart and Flutter extensions (also called plugins).
 
 #### VS Code - Running and debugging
@@ -55,8 +55,7 @@ the Dart and Flutter extensions (also called plugins).
 Running a Flutter Desktop project from VS Code is no different than [running and
 debugging in VS Code] for a Flutter project with other target platforms:
  1. Select **macOS** as a target device from the VS Code status bar.
- 2. Click the **Debug > Start Without Debugging** or press item from the navbar
-    menu.
+ 2. Click the **Debug > Start Without Debugging** or press <kbd>F5</kbd>.
 
 ![Desktop VS Code](/images/desktop/desktop_vscode.gif){:width="70%"}
 
@@ -74,18 +73,65 @@ Flutter project with other target platforms:
 Flutter Desktop supports both creating and using plugins.
 
 ### Using plugins
-To use a plugin with macOS support, follow the steps for using in plugins in
-[Using packages]: add it to pubspec.yaml, and Flutter will automatically add the
-necessary native code to your project, as with iOS or Android.
+To use a plugin with macOS support, follow the steps for plugins in
+[using packages]:
+1. Add the plugin to `pubspec.yaml`.
+2. Run `flutter pub get`
+3. Run `flutter run`. Flutter will automatically add the necessary native code
+   to your project, as with iOS or Android.
 
-There are a limited number of plugins available:
-- path_provider
+#### flutter_plugins
+The following plugins are available in the [flutter-desktop-embedding] repo within
+the [plugins/flutter_plugins] directory:
+- connectivity_fde
+- path_provider_fde
+- shared_preferences_fde
+- url_launcher_fde
+
+Each of these plugins has a corresponding plugin with the same name, without the
+`_fde` suffix, within the [flutter/plugins] github repo. The `_fde`
+implementations exist only as a temporary solution while the plugin APIs on each
+desktop platform stabilize;  they will eventually move to an official location
+and be distributed as normal Flutter plugins.
+
+For these plugins, the Dart code comes from the official plugin, so you must
+include both the official plugin as well as the `_fde` plugin in your
+`pubspec.yaml`. To include the `_fde` plugin, you can use a [git reference] to
+the [flutter-desktop-embedding] path for the plugin. For instance, to use
+`url_launcher` on desktop, you would include:
+
+```yaml
+dependencies:
+  ...
+  url_launcher: ^5.0.0
+  url_launcher_fde:
+    git:
+      url: git://github.com/google/flutter-desktop-embedding.git
+      path: plugins/flutter_plugins/url_launcher_fde
+```
+
+Since the Dart code comes from the official plugin, you must import the official
+plugin in your Dart files to use the plugin:
+
+```dart
+import 'package:url_launcher/url_launcher.dart';
+
+void _launchURL() async {
+  const url = 'https://github.com/google/flutter-desktop-embedding';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+```
+
+#### Other plugins
+
+The remaining plugins available with desktop support include:
 - video_player
-- url_launcher
-- shared_preferences
 - color_panel
 - file_chooser
-- connectivity
 
 ### Creating plugins
 The process for creating a desktop plugin follows the steps listed in
@@ -118,7 +164,7 @@ preview. Check the [Desktop shells wiki] for more information and ongoing update
 - [ ] Right click? Hover? Do we have any desktop-specific features we can showoff?
 - [ ] Be more descriptive about *this doc highlights the differences...* in IDE
   section
-- [ ] Center and/or re-size the gifs; add top/bottom margin
+- [ ] Center and/or re-size the gifs; add top/bottom margin a la /docs/testing/debugging
 - [ ] Find Gallery/TreeView links
 - [ ] Choose feedback link (create new issue?)
 - [ ] Desktop plugins how-to-use: do we have any plugin in pub.dev?
@@ -133,7 +179,7 @@ preview. Check the [Desktop shells wiki] for more information and ongoing update
 
 [Android Studio / IntelliJ]: /docs/development/tools/android-studio
 [Visual Studio Code]: /docs/development/tools/vs-code
-[Set up an editor]: /docs/get-started/editor
+[set up an editor]: /docs/get-started/editor
 
 [Running and debugging in VS Code]: /docs/development/tools/vs-code#running-and-debugging
 [Running and debugging in Android Studio / IntelliJ]: /docs/development/tools/android-studio#running-and-debugging
@@ -141,3 +187,6 @@ preview. Check the [Desktop shells wiki] for more information and ongoing update
 [Using packages]: /docs/development/packages-and-plugins/using-packages
 [Desktop shells wiki]: {{site.repo.flutter}}/wiki/Desktop-shells
 [flutter-desktop-embedding]: https://github.com/google/flutter-desktop-embedding/tree/master/plugins#dart
+[flutter/plugins]: {{site.repo.organization}}/plugins
+[plugins/flutter_plugins]: https://github.com/google/flutter-desktop-embedding/tree/master/plugins/flutter_plugins
+[git reference]: {{site.dart-site}}/tools/pub/dependencies#git-packages
