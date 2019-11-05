@@ -5,7 +5,7 @@ toc: true
 ---
 With desktop support, you can compile Flutter source code to a native macOS
 Desktop app. Flutter desktop support also extends to plugins&mdash;you can
-install existing plugins that use the macOS platform channel, or you can create
+install existing plugins that support the macOS platform, or you can create
 your own. **This page covers desktop support for macOS which is available as an
 alpha release as of 1.12.** This page does not cover Windows and Linux
 platforms, which are in technical preview.
@@ -77,8 +77,10 @@ Flutter Desktop supports both using and creating plugins.
 To use a plugin that supports macOS, follow the steps for plugins in [using
 packages]:
 1. Add the plugin to `pubspec.yaml`.
-2. Run `flutter pub get`
-3. Run `flutter run`. Flutter will automatically add the necessary native code
+2. Run `flutter pub get`.
+3. Run `flutter run`.
+
+Flutter will automatically add the necessary native code
    to your project, as with iOS or Android.
 
 #### flutter_plugins
