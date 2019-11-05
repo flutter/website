@@ -262,7 +262,7 @@ use the following instructions:
 
 1. If a properly signed `Framework` file is present,
    open `Runner.xcodeproj`.
-1. Add the framework file to to the **Embedded Binaries**
+1. Add the framework file to the **Embedded Binaries**
    section.
 1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.

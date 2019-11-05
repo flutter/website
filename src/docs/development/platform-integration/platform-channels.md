@@ -519,7 +519,7 @@ and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
 ```objectivec
-__weak typeof(self) weakSelf = self
+__weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   // Note: this method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {

@@ -25,7 +25,7 @@ below.
 | **Confidence**       | Low    | Higher | Highest     |
 | **Maintenance cost** | Low    | Higher | Highest     |
 | **Dependencies**     | Few    | More   | Most        |
-| **Execution speed**  | Quick  | Slower | Slowest     |
+| **Execution speed**  | Quick  | Quick  | Slow        |
 {:.table.table-striped}
 
 

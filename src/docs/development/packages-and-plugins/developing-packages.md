@@ -30,7 +30,7 @@ Packages can contain several kinds of content:
   Flutter framework, restricting their use to Flutter only,
   for example the [`fluro`][] package.
 
-* *Plugin packages*: A specialized Dart package which contain an API written in
+* *Plugin packages*: A specialized Dart package which contains an API written in
   Dart code combined with a platform-specific implementation for Android (using
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
   the [`battery`][] plugin package.
@@ -181,7 +181,7 @@ It is recommended practice to add the following documentation to all packages:
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the [device_info docs][].
 
-If you wish to generate API documentation locally on your developement machine, use the following commands:
+If you wish to generate API documentation locally on your development machine, use the following commands:
 
 1. Change directory to the location of your package:
 
