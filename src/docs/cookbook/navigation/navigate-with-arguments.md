@@ -120,16 +120,23 @@ RaisedButton(
   onPressed: () {
     // When the user taps the button, navigate to the specific route
     // and provide the arguments as part of the RouteSettings.
-    Navigator.pushNamed(
+    Navigator.push(
       context,
-      ExtractArgumentsScreen.routeName,
-      arguments: ScreenArguments(
-        'Extract Arguments Screen',
-        'This message is extracted in the build method.',
+      MaterialPageRoute(
+        builder: (context) => ExtractArgumentsScreen(),
+        // Pass the arguments as part of the RouteSettings. The
+        // ExtractArgumentScreen reads the arguments from these
+        // settings.
+        settings: RouteSettings(
+          arguments: ScreenArguments(
+            'Extract Arguments Screen',
+            'This message is extracted in the build method.',
+          ),
+        ),
       ),
     );
   },
-);
+)
 ```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
