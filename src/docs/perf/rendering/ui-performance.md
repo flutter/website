@@ -223,7 +223,7 @@ You can toggle display of the performance overlay as follows:
 
 #### Using the Flutter inspector
 
-The easiest way to enable the PerformanceOverlay widget is 
+The easiest way to enable the PerformanceOverlay widget is
 from the Flutter inspector, which is available in the
 [Inspector view][] in [DevTools][]. Simply click the
 **Performance Overlay** button to toggle the overlay

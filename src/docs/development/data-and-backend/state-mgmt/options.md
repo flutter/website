@@ -28,7 +28,7 @@ by the Flutter community:
 * [Basic state management in Google Flutter]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d),
   by Agung Surya
 
-## InheritedWidget &amp; InheritedModel 
+## InheritedWidget &amp; InheritedModel
 
 * [InheritedWidget docs](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
 * [Managing Flutter Application State With InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1),

@@ -37,7 +37,7 @@ Debug mode for mobile apps mean that:
 
 Debug mode for a web app means that:
 
-* The build is _not_ minified and tree shaking has _not_ been 
+* The build is _not_ minified and tree shaking has _not_ been
   performed.
 * The app is compiled with the [dartdevc][] compiler for
   easier debugging.
@@ -77,7 +77,7 @@ Release mode for a web app means that:
 
 The command `flutter run --release` compiles to release mode.
 Your IDE supports this mode. Android Studio, for example,
-provides a **Run > Run...** menu option, as well as a triangular 
+provides a **Run > Run...** menu option, as well as a triangular
 green run button icon on the project page.
 You can compile to release mode for a specific target
 with `flutter build <target>`. For a list of supported targets,

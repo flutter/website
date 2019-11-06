@@ -48,7 +48,7 @@ $ ./flutter/bin/flutter --version
 ```
 
 For additional details on how our installation bundles are structured,
-see [Installation bundles][].  
+see [Installation bundles][].
 
 [Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

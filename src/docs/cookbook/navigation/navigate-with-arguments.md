@@ -7,7 +7,7 @@ next:
   title: Return data from a screen
   path: /docs/cookbook/navigation/returning-data
 ---
- 
+
 The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
 provides the ability to navigate to a named route from any part of an app using
 a common identifier. In some cases, you might also need to pass arguments to a
@@ -85,19 +85,19 @@ class ExtractArgumentsScreen extends StatelessWidget {
     );
   }
 }
-``` 
+```
 
 ## 3. Register the widget in the `routes` table
 
 Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
-`routes` define which widget should be created based on the name of the route.  
+`routes` define which widget should be created based on the name of the route.
 
 <!-- skip -->
 ```dart
 MaterialApp(
   routes: {
     ExtractArgumentsScreen.routeName: (context) => ExtractArgumentsScreen(),
-  },     
+  },
 );
 ```
 
@@ -130,7 +130,7 @@ RaisedButton(
     );
   },
 );
-```  
+```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
 

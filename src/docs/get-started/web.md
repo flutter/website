@@ -18,7 +18,7 @@ For more information, see the [web FAQ][].
 
 {{site.alert.warning}}
   If you don't yet have the `flutter` tool installed,
-  do a [regular install for your platform][], and then 
+  do a [regular install for your platform][], and then
   return to these instructions.
 {{site.alert.end}}
 

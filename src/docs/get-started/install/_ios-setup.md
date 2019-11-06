@@ -23,7 +23,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode.
  1. Make sure the Xcode license agreement is signed by
     either opening Xcode once and confirming or running
     `sudo xcodebuild -license` from the command line.
-    
+
 Versions older than the latest stable version may still work,
 but are not recommended for Flutter development.
 Using old versions of Xcode to target bitcode is not
@@ -59,18 +59,18 @@ follow these steps:
 
  1. Create a new Flutter app by running the following from the
     command line:
- 
+
     ```terminal
     $ flutter create my_app
     ```
 
  2. A `my_app` directory is created, containing Flutter's starter app.
     Enter this directory:
- 
+
     ```terminal
     $ cd my_app
     ```
- 
+
  3. To launch the app in the Simulator,
     ensure that the Simulator is running and enter:
 

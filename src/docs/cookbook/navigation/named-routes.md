@@ -22,7 +22,7 @@ and use the named route for navigation.
 To work with named routes, use the
 [`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 function. This example replicates the functionality from the original
-recipe, demonstrating how to use named routes using the following steps: 
+recipe, demonstrating how to use named routes using the following steps:
 
   1. Create two screens.
   2. Define the routes.

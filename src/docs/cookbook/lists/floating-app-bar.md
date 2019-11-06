@@ -1,5 +1,5 @@
 ---
-title: Place a floating app bar above a list 
+title: Place a floating app bar above a list
 prev:
   title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
@@ -21,7 +21,7 @@ Moving the app bar from a `Scaffold` widget into a
 allows you to create an app bar that scrolls offscreen as you scroll through a
 list of items contained inside the `CustomScrollView`.
 
-This recipe demonstrates how to use a `CustomScrollView` to display a list of 
+This recipe demonstrates how to use a `CustomScrollView` to display a list of
 items with an app bar on top that scrolls offscreen as the user scrolls
 down the list using the following steps:
 
@@ -44,7 +44,7 @@ of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 
-For this example, create a `CustomScrollView` that contains a 
+For this example, create a `CustomScrollView` that contains a
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars
 that you provide to the `Scaffold` widget.
 
@@ -131,7 +131,7 @@ just like the `ListView.builder` widget.
 ```dart
 // Create a SliverList.
 SliverList(
-  // Use a delegate to build items as they're scrolled on screen. 
+  // Use a delegate to build items as they're scrolled on screen.
   delegate: SliverChildBuilderDelegate(
     // The builder function returns a ListTile with a title that
     // displays the index of the current item.

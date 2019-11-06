@@ -34,7 +34,7 @@ in granularity:
   This isolate won't exist in release mode. Absolute memory used might
   also be higher in debug versus release mode. In release mode,
   work can be computed and optimized ahead of time, while in debug
-  mode that same work might have to be computed at runtime, 
+  mode that same work might have to be computed at runtime,
   requiring more information.
 {{site.alert.end}}
 
@@ -54,7 +54,7 @@ collection, and resident set size.
     Clicking a legend name hides or shows that data.</dd>
 <dt markdown="1">**Range selector**</dt>
 <dd>All memory data collected (timeseries).
-    The left-most or first time/data (memory information), 
+    The left-most or first time/data (memory information),
     in the selector is when the application was launched.
     The right-most or last time/data is the continual memory
     information being received (live) until the application is
@@ -179,7 +179,7 @@ the last reset.
 
 <dl markdown="1">
 <dt markdown="1">**Size**</dt>
-<dd>Total amount of memory used by current objects 
+<dd>Total amount of memory used by current objects
     in the heap.</dd>
 <dt markdown="1">**Count**</dt>
 <dd>Total number of current objects in the heap.</dd>
