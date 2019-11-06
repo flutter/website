@@ -31,7 +31,7 @@ run the following commands in a terminal from the
 top of the project package:
 
 ```terminal
-$ flutter channel master
+$ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-web
 $ cd <into project directory>
@@ -50,13 +50,13 @@ into individual steps.
 
 ## Download the Flutter SDK
 
-Currently, you need the master channel of the Flutter SDK
+Currently, you need either the master or dev channel of the Flutter SDK
 for web support. Assuming that you already have the
 `flutter` tool installed, run the following commands
-to install the latest version from master:
+to install the latest version from dev:
 
 ```terminal
-$ flutter channel master
+$ flutter channel dev
 $ flutter upgrade
 ```
 
