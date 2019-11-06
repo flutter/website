@@ -2,11 +2,156 @@
 title: Clock
 layout: base
 show_banner: False
-show_footer: False
 body_class: clock
 ---
 
-<div class="center">
+<section class="clock__hero">
+    <h1>Flutter Clock</h1>
+    <p>
+        Flutter Clock is a contest that challenges you to build a clock face that<br />is beautiful and innovative with Flutter.
+    </p>
+    <a href="https://twitter.com/intent/tweet?text=Clock%20Contest&amp;hashtags=Clock%20Contest" target="_blank">
+        <i class="fab fa-twitter"></i> Share this with friends
+    </a>
+</section>
+
+<section class="clock__wtm">
+    <div style="display: inline-block; width: 49%; height: 320px;">
+
+    </div>
+    <div class="clock__wtm-copy">
+        <span>What to make</span>
+        <h2>
+            Create a beautiful clock face UI with Flutter.
+        </h2>
+        <p>
+            Entries will be judged by a panel of Google experts against the following four criteria:
+        </p>
+        <ul>
+            <li>
+                Visual beauty
+            </li>
+            <li>
+                Novelty of idea
+            </li>
+            <li>
+                Code quality
+            </li>
+            <li>
+                Overall execution
+            </li>
+        </ul>
+        <p>
+            All projects must be submitted by January 20, 11:59PM PST (GMT-8).
+        </p>
+    </div>
+</section>
+
+<section class="clock__prizes">
+    <h2>
+        Prizes
+    </h2>
+    <div class="clock__prizes-columns">
+        <div>
+            <h4>
+                Grand prize
+            </h4>
+            <p>
+                A Loaded <strong>Apple iMac Pro</strong> valued at approximately $10,000.*
+            </p>
+        </div>
+        <div>
+            <h4>
+                4 winners
+            </h4>
+            <p>
+                <strong>Lenovo Smart Display</strong> with the Google Assistant - 10” (~$249.00 USD value)
+            </p>
+        </div>
+        <div>
+            <h4>
+                Up to 25 winners
+            </h4>
+            <p>
+                Quantity up to 25 - <strong>Lenovo Smart Clock</strong> with the Google Assistant (~$79.00 USD value)
+            </p>
+        </div>
+    </div>
+    <hr>
+    <p>
+        In addition, all submissions will receive a digital certificate of completion. Also, there is a chance that some of the clock<br /> submissions will be considered to be integrated into the Lenovo Smart Clock's lineup of clock faces.<br /> *(detailed specifications may vary based on availability and local country import law).
+    </p>
+</section>
+
+<section class="clock__getting">
+    <h4>
+        Getting started
+    </h4>
+    <h6>
+        Make sure to familiarize yourself with the submission guidelines and contest rules.
+    </h6>
+    <div class="clock__getting-cards">
+        {% for card in site.data.clock_cards %}
+            <div class="card col-sm-4 col-md-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ forloop.index }}</h5>
+                    <h6 class="card-subtitle mb-2">{{ card.title }}</h6>
+                    {% if card.redirect %}
+                        <a href="{{ card.redirect }}" class="card-link" target="_blank">
+                            <i class="fas fa-arrow-up"></i>
+                        </a>
+                    {% endif %}
+                    {% if card.links %}
+                        {% for link in card.links %}
+                            <a href="{{ link.link }}" target="_blank">{{ link.text }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <p>
+        All projects must be submitted by January 20, 11:59PM PST (GMT-8).
+    </p>
+</section>
+
+<section class="clock__submit">
+    <div>
+        <h2>
+            Create a novel user experience with<br />Flutter using 5KB or less of Dart code
+        </h2>
+        <button class="btn btn-primary">
+            Submit your app
+        </button>
+    </div>
+</section>
+
+<section class="clock__faqs">
+    <div class="clock__faqs-container">
+        <h2>
+            FAQs
+        </h2>
+        <div id="accordion">
+            {% for faq in site.data.faqs %}
+                <div class="card">
+                    <div class="card-header" id="heading{{forloop.index}}">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{forloop.index}}" aria-expanded="true" aria-controls="collapse{{forloop.index}}">
+                            {{ faq.title }}
+                            <i class="fas fa-chevron-down fa-xs"></i>
+                        </button>
+                    </div>                
+                    <div id="collapse{{forloop.index}}" class="collapse" aria-labelledby="heading{{forloop.index}}" data-parent="#accordion">
+                        <div class="card-body">
+                            {{ faq.content }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- <div class="center">
     <h1 class="heading">Timing is everything. Stay tuned.</h1>
     <div class="time-number">
         <span class="digits_container days-digits_container">00</span>
@@ -28,4 +173,4 @@ body_class: clock
     <div class="vertical-line vertical-line--fourth"></div>
 </div>
 
-{% asset countdown %}
+{% asset countdown %} -->

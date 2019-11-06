@@ -1,214 +1,236 @@
 .clock {
-  $vertical-line-color: #384753;
-  
-  background-color: $flutter-dark-blue-texture;
+  $clock-color-dark: #212c34;
+  $clock-color-white: #fff;
+  $clock-color-blue: #01579b;
+  $clock-color-light-blue: #aecbfa;
+  $clock-color-light-grey: #f8f9fa;
+  $clock-color-grey: #555;
+
   font-family: $site-font-family-alt;
 
-  .center {
-    align-items: center;
+  // Styles for section clock__hero
+  &__hero {
+    align-content: center;
+    background-color: $clock-color-dark;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 66px);
     justify-content: center;
-  }
-
-  .heading {
-    animation: clock-slide-in 1s .3s;
-    animation-fill-mode: both;
-    color: $site-color-white;
-    font-size: 18px;
-    margin: 0 0 24px;
+    padding: 8em;
     text-align: center;
-    width: 100%;
+    color: $clock-color-white;
 
-    @include media-breakpoint-up(md) {
-      font-size: 32px;
-      margin: 0 0 22px;
+    h1 {
+      margin-bottom: 21px;
     }
 
-    @include media-breakpoint-up(lg) {
-      font-size: 40px;
-      margin: 0 0 20px;
-    }
-  }
-
-  .time-number {
-    animation: clock-slide-in 1s;
-    animation-fill-mode: both;
-    color: $site-color-primary;
-    display: flex;
-    font-size: 52px;
-    justify-content: center;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    z-index: 2;
-
-    @include media-breakpoint-up(md) {
-      font-size: 110px;
+    p {
+      margin-bottom: 0;
     }
 
-    @include media-breakpoint-up(lg) {
-      font-size: 160px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      font-size: 180px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      font-size: 230px;
+    a {
+      margin-top: 40px;
     }
   }
 
-  .digits_container {
+  // Styles for section clock__wtm (What to make)
+  // Styles for wtm container
+  &__wtm {
+    padding: 8em;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  // Styles for wtm copy
+  &__wtm-copy {
+    color: $clock-color-dark;
     display: inline-block;
-    width: 68px;
+    width: 50%;
 
-    @include media-breakpoint-up(md) {
-      width: 142px;
+    h2 {
+      margin: 24px 0 32px;
     }
 
-    @include media-breakpoint-up(lg) {
-      width: 200px;
-    }
+    ul {
+      font-weight: bold;
+      padding-left: 20px;
 
-    @include media-breakpoint-up(xl) {
-      width: 248px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      width: 294px;
-    }
-  }
-
-  .animations {
-    animation-name: clock-geometric-small-background;
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
-    background-image: asset_url('clock/left_rectangle.svg'), asset_url('clock/right_rectangle.svg'), asset_url('clock/oval.svg');
-    background-repeat: no-repeat;
-    background-size: 181px 247px, 140px 121px, 280px 163px;
-    height: calc(100% - 66px);
-    overflow: hidden;
-    position: absolute;
-    top: 66px;
-    width: 100%;
-    z-index: -1;
-
-    @include media-breakpoint-up(md) {
-      animation-name: clock-geometric-medium-background;
-      background-size: 400px 556px, 317px 258px, auto;
-    }
-
-    @include media-breakpoint-up(lg) {
-      background-size: auto;
-    }
-  }
-
-  .vertical-line {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: clock-vertical-lines;
-    animation-timing-function: ease;
-    background-color: $vertical-line-color;
-    position: fixed;
-    top: 0;
-    width: 1px;
-    z-index: -1;
-
-    &--first {
-      left: 4%;
-    }
-
-    &--second {
-      animation-delay: .2s;
-      left: 27%;
-    }
-
-    &--thrid {
-      animation-delay: .4s;
-      left: 50%;
-    }
-
-    &--fourth {
-      animation-delay: .6s;
-      left: 73%;
-    }
-
-    &--first, &--thrid {
-      display: none;
-
-      @include media-breakpoint-up(lg) {
-        display: block;
+      li {
+        margin-top: 12px;
+        margin-bottom: 12px;
       }
     }
   }
 
-  .share-twitter__paragraph {
-    animation: clock-slide-in 1s .6s;
-    animation-fill-mode: both;
-    color: $site-color-white;
-    font-size: 14px;
-    margin: 20px 0 0;
-    padding: 0 37px;
+  // Styles for section clock__prizes
+  // Styles for prizes container
+  &__prizes {
+    background-color: $clock-color-blue;
+    color: $clock-color-white;
     text-align: center;
-    width: 100%;
+    padding: 160px 80px;
 
-    @include media-breakpoint-up(md) {
-      font-size: 16px;
-      margin: 22px 0 0;
+    h2 {
+      margin: 0 0 80px;
     }
 
-    @include media-breakpoint-up(lg) {
-      font-size: 20px;
-      margin: 24px 0 0;
+    hr {
+      background-color: $clock-color-light-blue;
+      margin: 56px 0 32px;
+      width: 100%;
+    }
+
+    > p {
+      font-size: 18px;
     }
   }
 
-  .learn-more__button {
-    display: block;
-    margin: 0 auto;
-    width: 120px;
-  }
-}
+  // Styles for prizes columns
+  &__prizes-columns {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+    > div {
+      width: 30%;
+    }
 
-// animations
-@keyframes clock-vertical-lines {
-  from {
-    height: 0;
+    h4 {
+      font-size: 40px;
+      margin: 0 0 40px;
+    }
   }
-  to {
-    height: 100%;
-  }
-}
 
-@keyframes clock-slide-in {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
-}
+  // Styles for section clock__getting (Getting Started)
+  &__getting {
+    background-color: $clock-color-light-grey;
+    color: $clock-color-dark;
+    padding: 80px;
+    text-align: center;
 
-@keyframes clock-geometric-medium-background {
-  from {
-    background-position: top 150px left -270px, top right -488px, bottom -348px left -140px;
-  }
-  to {
-    background-position: top 150px left, top right, bottom left;
-  }
-}
+    h4 {
+      font-size: 32px;
+      margin: 0 0 24px;
+    }
 
-@keyframes clock-geometric-small-background {
-  from {
-    background-position: bottom 90px left -144px, top right -140px, bottom -164px left -100px;
+    h6 {
+      color: $clock-color-grey;
+      font-size: 18px;
+      margin: 0 0 56px;
+    }
+
+    p {
+      margin: 80px 0 0;
+    }
   }
-  to {
-    background-position: bottom 90px left, top right, bottom left;
+
+  &__getting-cards {
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 56px;
+
+    // Bootstrap styles override
+    .card {
+      border: none;
+      height: 300px;
+      text-align: left;
+      padding: 0;
+      margin-right: 28px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .card-title {
+      align-items: center;
+      background-color: #e6f8fe;
+      border-radius: 50%;
+      color: #1389fd;
+      display: flex;
+      font-size: 32px;
+      height: 48px;
+      justify-content: center;
+      margin-bottom: 40px;
+      text-align: center;
+      width: 48px;
+    }
+
+    .card-link {
+      bottom: 24px;
+      transform: rotate(45deg);
+      position: absolute;
+    }
+  }
+
+  // Styles for section clock__submit
+  &__submit {
+    background-color: $clock-color-light-grey;
+    color: $clock-color-dark;
+    margin: 80px;
+    padding: 80px;
+    text-align: center;
+
+    h2 {      
+      font-size: 48px;
+    }
+
+    button {
+      font-size: 18px;
+      margin-top: 32px;
+      padding: 0.5rem 1em;
+    }
+  }
+
+  // Styles for section clock__faqs
+  // Styles for general container
+  &__faqs {
+    background-color: $clock-color-light-grey;
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+  }
+
+  // Styles for content and copy
+  &__faqs-container {
+    width: 844px;
+
+    // Bootstrap styles override
+    .btn {
+      align-items: center;
+      color: $clock-color-dark;
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    .card {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+
+      &:last-of-type {
+        .card-header {
+          border-bottom: 1px solid rgba(85, 85, 85, 0.2);
+        }
+      }
+    }
+
+    .card-header {
+      background-color: transparent;
+      border-bottom: 0;
+      border-top: 1px solid rgba(85, 85, 85, 0.2);
+      border-radius: 0;
+      padding: 17px 0;
+    }
   }
 }

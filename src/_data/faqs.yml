@@ -1,0 +1,35 @@
+- title: What is Flutter Clock?
+  content: Flutter Clock is a contest where new and experienced developers can submit a project built using Flutter. It’s a fun way to learn Flutter, try building out interfaces, and possibly win prizes.
+
+- title: What is the judging criteria?
+  content: 'Each entry will be rated against the following rubric: visual beauty, code quality, novelty of idea, and overall execution.'
+
+- title: Who are the judges?
+  content: Entries will be judged by members of the Flutter team and experienced developers from the Flutter community.
+
+- title: What are the deadlines for the project?
+  content: You need to have your project submitted by April 7th at 11:59pm PST.
+
+- title: I submitted my project, can I make changes to it?
+  content: Yes, as long as your change occurs before April 7th at 11:59pm PST.
+
+- title: How will the winners be selected?
+  content: 'Judges will evaluate based on four criteria: visual beauty, code quality, novelty of idea, and overall execution.'
+
+- title: When will winners be selected?
+  content: Winners will be selected around April 25 and announced at Google I/O.
+
+- title: What are the prizes?
+  content: 1 grand prize winner will get an <a href="https://www.apple.com/imac-pro/">iMac Pro 5K</a><br> 4 additional winners will get a Google Home Max<br> Up to 25 others will win a Google Home Mini
+
+- title: Can I submit more than one project?
+  content: No, we limit one project per participant.
+
+- title: I already have an approved app, can I submit that for the challenge?
+  content: Unfortunately, no. Only new apps or UI’s can be submitted for approval
+
+- title: Is there an age limit to participate?
+  content: You must not be a minor (per your local law) to be eligible to win.
+
+- title: If I have more questions, where should I go?
+  content: Take a look through our <a href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">official rules</a>. You can also send us an email to <a href="mailto:flutter-create@google.com">flutter-create@google.com</a>.
