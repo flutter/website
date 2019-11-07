@@ -381,7 +381,7 @@ For details on how to do this, see [Show performance data][]
 ## Benchmarking
 
 You can measure and track your app’s performance by writing
-benchmark tests  The Flutter Driver library provides support
+benchmark tests. The Flutter Driver library provides support
 for benchmarking. Using this integration test framework,
 you can generate metrics to track the following:
 
