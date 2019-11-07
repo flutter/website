@@ -170,13 +170,13 @@ only work with the `Row` class.
 The `crossAxisAlignment` property has five possible values:
 
 `CrossAxisAlignment.start`
-: Positions children near the top of the cross axis. (`Row` only)
+: Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.end`
-: Positions children near the bottom of the cross axis. (`Row` only)
+: Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.center`
-: Positions children at the middle of the cross axis. (`Row` only)
+: Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.stretch`
 : Stretches children across the cross axis.
