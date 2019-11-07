@@ -136,7 +136,7 @@ RaisedButton(
       ),
     );
   },
-)
+),
 ```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
