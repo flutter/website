@@ -40,6 +40,9 @@ dependencies:
   path_provider:
   path:
 ```
+{{site.alert.tip}}
+  - For android, You must have to update `minSdkVersion` to 21 (or higher).
+{{site.alert.end}}
 
 ## 2. Get a list of the available cameras
 
