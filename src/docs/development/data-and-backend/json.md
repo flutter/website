@@ -102,7 +102,7 @@ libraries](#code-generation) section.
 <a name="manual-encoding"></a>
 ## Serializing JSON manually using dart:convert
 
-Basic JSON encoding in Flutter is very simple. Flutter has a built-in
+Basic JSON serialization in Flutter is very simple. Flutter has a built-in
 `dart:convert` library that includes a straightforward JSON encoder and
 decoder.
 
@@ -115,7 +115,7 @@ Here is an example JSON for a simple user model.
 }
 ```
 
-With `dart:convert`, you can encode this JSON model in two ways.
+With `dart:convert`, you can serialize this JSON model in two ways.
 
 ### Serializing JSON inline
 
