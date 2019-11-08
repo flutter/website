@@ -711,7 +711,7 @@ here are a few suggestions for resources worth exploring:
 
 You can download Flutter from the [install][] page.
 
-<iframe src="https://google.qualtrics.com/jfe/form/SV_eyMRS8J1nfLj8ZT" height="1480px" width="100%" style="margin-top: 10px;border: 0px;"></iframe>
+
 
 
 [Building layouts]: /docs/development/ui/layout
