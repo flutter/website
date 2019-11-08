@@ -1,6 +1,264 @@
 .clock {
+  $clock-color-dark: #212c34;
+  $clock-color-white: #fff;
+  $clock-color-blue: #01579b;
+  $clock-color-light-blue: #aecbfa;
+  $clock-color-light-grey: #f8f9fa;
+  $clock-color-grey: #555;
+  font-family: $site-font-family-alt;
+
+  &__texture {
+    height: 100%;
+    margin-left: calc(50% - 50vw);
+    position: absolute;
+    width: 100vw;
+  }
+
+  // Common styles for clock sections
+  &__section {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  // Styles for section clock__hero
+  &__hero {
+    background-color: $flutter-dark-blue-texture;
+    color: $site-color-white;
+    position: relative;
+    text-align: center;
+
+    .heading {
+      margin: 100px auto 30px;
+      max-width: 344px;
+    }
+
+    .twitter-link {
+      display: block;
+      margin-bottom: 100px;
+    }
+
+    &__texture {
+      background-color: $flutter-dark-blue-texture;
+    }
+  }
+
+  // Styles for section clock__wtm (What to make)
+  &__wtm {
+    position: relative;
+
+    &__texture {
+      background-color: #FFF;
+    }
+
+    &_container {
+      margin: 100px 0;
+    }
+  }
+
+  &__wtm-text {
+    font-size: 12px;
+  }
+
+  // Styles for wtm copy
+  &__wtm-copy {
+    color: $clock-color-dark;
+
+    .subheading {
+      margin: 20px 0;
+      font-size: 30px;
+    }
+
+    .paragraph {
+      font-size: 14px;
+    }
+  }
+
+  &__wtm-entries {
+    margin-top: 80px;
+
+    &_container {
+      margin: 60px 0;
+    }
+
+    .heading {
+      font-size: 26px;
+      margin: 0 auto;
+      max-width: 630px;
+      text-align: center;
+    }
+
+    .paragraph {
+      text-align: center;
+    }
+
+    .entries__card {
+      height: 100%;
+    }
+
+    .entries__card-body {
+      background-color: lightgray;
+
+      .paragraph {
+        text-align: left;
+        margin-bottom: 50px;
+        max-width: 86px;
+      }
+    }
+  }
+
+  // Styles for section clock__prizes
+  // Styles for prizes container
+  &__prizes {
+    background-color: $clock-color-blue;
+    color: $clock-color-white;
+    position: relative;
+
+    &_container {
+      margin: 100px 0;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    hr {
+      background-color: $clock-color-light-blue;
+      margin: 56px 0;
+      width: 100%;
+    }
+
+    .subheading {
+      font-size: 26px;
+      margin: 16px 0;
+    }
+
+    .paragraph {
+      font-size: 14px;
+    }
+
+    .info-paragraph {
+      font-size: 12px;
+    }
+
+    &__texture {
+      background-color: $clock-color-blue;
+    }
+  }
+
+  // Styles for section clock__getting (Getting Started)
+  &__getting {
+    color: $clock-color-dark;
+
+    ul {
+      padding-left: 16px;
+    }
+
+    li {
+      padding: 8px 0;
+    }
+
+    &_container {
+      margin: 100px 0;
+    }
+
+    .subheading {
+      font-size: 32px;
+      margin: 0 0 16px 0;
+    }
+
+    .paragraph {
+      margin-bottom: 40px;
+    }
+  }
+
+  // Styles for section clock__submit
+  &__submit {
+    background-color: $clock-color-light-grey;
+    color: $clock-color-dark;
+    text-align: center;
+
+    &_container {
+      padding: 60px;
+    }
+
+    .subheading {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .submit-app__button {
+      font-size: 18px;
+      margin-top: 32px;
+      padding: 0.5rem 1em;
+    }
+  }
+
+  // Styles for section clock__faqs
+  // Styles for general container
+  &__faqs {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+
+    &__texture {
+      background-color: $clock-color-light-grey;
+    }
+
+    &_container {
+      .faqs_button {
+        align-items: center;
+        color: $clock-color-dark;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+      }
+
+      .faqs_card {
+        &:last-of-type {
+          .card-header {
+            border-bottom: 1px solid rgba(85, 85, 85, 0.2);
+          }
+        }
+      }
+
+      .faqs_card-header {
+        background-color: transparent;
+        border-bottom: 0;
+        border-top: 1px solid rgba(85, 85, 85, 0.2);
+        border-radius: 0;
+        padding: 17px 0;
+      }
+    }
+  }
+
+  //dropdown button
+  .dropdown__button {
+    box-shadow: none;
+    outline: none;
+  }
+  /*
+    .dropdown__button[aria-expanded="false"]::after {
+      content: " >";
+    }
+
+    .dropdown__button[aria-expanded="true"]::after {
+      content: " <";
+    }*/
+}
+
+
+
+/*
+.clock {
   $vertical-line-color: #384753;
-  
+
   background-color: $flutter-dark-blue-texture;
   font-family: $site-font-family-alt;
 
@@ -212,3 +470,4 @@
     background-position: bottom 90px left, top right, bottom left;
   }
 }
+*/
