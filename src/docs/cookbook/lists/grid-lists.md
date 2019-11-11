@@ -77,3 +77,4 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+![Grid List Demo](/images/cookbook/grid-list.gif){:.site-mobile-screenshot}
