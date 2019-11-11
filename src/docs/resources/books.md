@@ -5,7 +5,7 @@ description: Extra, extra! Here's a collection of books about Flutter.
 
 Here's a collection of books about Flutter.
 If you find another one that we should add,
-[let us know.](https://github.com/flutter/website/issues)
+[let us know.](https://github.com/flutter/website/issues){:.help-instruction}
 
 {% for book in site.data.books %}
 <div class="book-img-with-details row">
