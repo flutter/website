@@ -31,6 +31,7 @@ Flutter experience within the `Fragment`:
  * Dart entrypoint to execute
  * Opaque vs translucent background
  * Whether `FlutterFragment` should control its surrounding `Activity`
+ * Whether a new `FlutterEngine` or a cached `FlutterEngine` should be used
 
 `FlutterFragment` also comes with a number of calls that must be forwarded from
 its surrounding `Activity`. These calls allow Flutter to react appropriately to
@@ -39,7 +40,7 @@ OS events.
 All varieties of `FlutterFragment`, and its requirements, are described in this
 guide.
 
-## Add a `FlutterFragment` to an `Activity`
+## Add a `FlutterFragment` to an `Activity` with a new `FlutterEngine`
 
 The first thing to do to use a `FlutterFragment` is to add it to a host
 `Activity`.
@@ -63,11 +64,11 @@ public class MyActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         // Inflate a layout that has a container for your FlutterFragment. For
-        // this example, assume that a FrameLayout exists with an ID of
+        // this example, assume that a FrameLayout exists with an ID of 
         // R.id.fragment_container.
         setContentView(R.layout.my_activity_layout);
 
-        // Get a reference to the Activity's FragmentManager to add a new
+        // Get a reference to the Activity's FragmentManager to add a new 
         // FlutterFragment, or find an existing one.
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -78,13 +79,13 @@ public class MyActivity extends FragmentActivity {
 
         // Create and attach a FlutterFragment if one does not yet exist.
         if (flutterFragment == null) {
-            flutterFragment = new FlutterFragment.Builder().build();
-
+            flutterFragment = FlutterFragment.createDefault();
+            
             fragmentManager
                 .beginTransaction()
                 .add(
-                    R.id.fragment_container,
-                    flutterFragment,
+                    R.id.fragment_container, 
+                    flutterFragment, 
                     TAG_FLUTTER_FRAGMENT
                 )
                 .commit();
@@ -94,10 +95,11 @@ public class MyActivity extends FragmentActivity {
 ```
 
 The above code is sufficient to render a Flutter UI that begins with a call to
-your `main()` Dart entrypoint and an initial Flutter route of `/`. However, this
-code is not sufficient to achieve all expected Flutter behavior. Flutter depends
-on various OS signals that need to be forwarded from your host `Activity` to
-`FlutterFragment`. These calls are shown below:
+your `main()` Dart entrypoint, an initial Flutter route of `/`, and a new
+`FlutterEngine`. However, this code is not sufficient to achieve all expected 
+Flutter behavior. Flutter depends on various OS signals that need to be 
+forwarded from your host `Activity` to `FlutterFragment`. These calls are shown 
+below:
 
 ```java
 public class MyActivity extends FragmentActivity {
@@ -119,13 +121,13 @@ public class MyActivity extends FragmentActivity {
 
     @Override
     public void onRequestPermissionsResult(
-        int requestCode,
-        @NonNull String[] permissions,
+        int requestCode, 
+        @NonNull String[] permissions, 
         @NonNull int[] grantResults
     ) {
         flutterFragment.onRequestPermissionsResult(
-            requestCode,
-            permissions,
+            requestCode, 
+            permissions, 
             grantResults
         );
     }
@@ -146,6 +148,11 @@ public class MyActivity extends FragmentActivity {
 With the above OS signals forwarded to Flutter, your `FlutterFragment` works as
 expected. You have now added a `FlutterFragment` to your existing Android app.
 
+The simplest integration path uses a new `FlutterEngine`, which comes with a
+non-trivial initialization time, leading to a blank UI until Flutter is
+initialized and rendered the first time. Most of this time overhead can be
+avoided by using a cached, pre-warmed `FlutterEngine`, which is discussed next.
+
 ## Using a pre-warmed `FlutterEngine`
 
 By default, a `FlutterFragment` creates its own instance of a `FlutterEngine`,
@@ -157,29 +164,31 @@ Please see the [instructions for instantiating and starting a `FlutterEngine`].
 
 [instructions for instantiating and starting a `FlutterEngine`]: /docs/development/platform-integrations/add-to-app-android/flutter-engine
 
-To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, subclass
-`FlutterFragment` and override `provideFlutterEngine()` as shown below:
+To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
+`FlutterFragment` with the `withCachedEngine()` factory method.
 
 ```java
-public class MyFlutterFragment extends FlutterFragment {
-    @Override
-    protected FlutterEngine provideFlutterEngine(@NonNull Context context) {
-        // Obtain a reference to, and return, your pre-warmed FlutterEngine.
-        // For example:
-        return ((MyApplication) context.getApplication())
-            .getPreWarmedFlutterEngine();
-    }
+// Somewhere in your app before your FlutterFragment is needed...
+// Instantiate a FlutterEngine.
+FlutterEngine flutterEngine = new FlutterEngine(context);
 
-    // When providing a pre-warmed engine within a FlutterFragment subclass,
-    // be sure to override this method and return "true" so that this
-    // FlutterFragment does not destroy your FlutterEngine when the Fragment
-    // is destroyed.
-    @Override
-    protected boolean retainFlutterEngineAfterFragmentDestruction() {
-        return true;
-    }
-}
+// Start executing Dart code in the FlutterEngine.
+flutterEngine.getDartExecutor().executeDartEntrypoint(
+    DartEntrypoint.default()
+);
+
+// Cache the pre-warmed FlutterEngine to be used later by FlutterFragment.
+FlutterEngineCache
+  .getInstance()
+  .put("my_engine_id", flutterEngine);
+
+//....sometime later...
+
+// In your Activity.
+flutterFragment.withCachedEngine("my_engine_id").build();
 ```
+`FlutterFragment` internally knows about `FlutterEngineCache` and retrieves the
+pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
 
 By providing a pre-warmed `FlutterEngine` as shown above, your app renders the
 first Flutter frame as quickly as possible.
@@ -203,7 +212,8 @@ initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 `Builder` allows you to specify a desired initial route, as shown below:
 
 ```java
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
+// With a new FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build();
 ```
@@ -229,7 +239,7 @@ execute for the given Flutter experience. To specify an entrypoint, build
 `FlutterFragment` as follows:
 
 ```java
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
@@ -260,7 +270,13 @@ of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
 ```java
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
+// With a new FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+    .renderMode(FlutterView.RenderMode.texture)
+    .build();
+
+// With a cached FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 ```
@@ -290,14 +306,20 @@ For this reason, Flutter supports translucency in a `FlutterFragment`.
   below and above your Flutter experience, then you must specify a
   `RenderMode` of `texture`. See the previous section titled "Control
   `FlutterFragment`'s render mode" for information on controlling the
-  `RenderMode`.
+  `RenderMode`. 
 {{site.alert.end}}
 
 To enable transparency for a `FlutterFragment`, build it with the following
 configuration:
 
 ```java
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
+// Using a new FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+    .transparencyMode(FlutterView.TransparencyMode.transparent)
+    .build();
+
+// Using a cached FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 ```
@@ -308,8 +330,9 @@ Some apps choose to use `Fragment`s as entire Android screens. In these apps, it
 would be reasonable for a `Fragment` to control system chrome like Android's
 status bar, navigation bar, and orientation.
 
-<!-- TODO(mattcarroll): to add back. -->
-<!-- add-flutter-fragment_fullscreen was here-->
+{% asset
+development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
+class="mw-100" alt="Fullscreen Flutter" %}
 
 In other apps, `Fragment`s are used to represent only a portion of a UI. A
 `FlutterFragment` might be used to implement the inside of a drawer, or a video
@@ -317,29 +340,36 @@ player, or a single card. In these situations, it would be inappropriate for the
 `FlutterFragment` to affect Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-<!-- TODO(mattcarroll): to add back. -->
-<!-- add-flutter-fragment_partial-ui was here-->
+{% asset
+development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png
+class="mw-100" alt="Flutter as Partial UI" %}
 
 `FlutterFragment` comes with a concept that helps differentiate between the case
 where a `FlutterFragment` should be able to control its host `Activity`, and the
 cases where a `FlutterFragment` should only affect its own behavior. To prevent
-a `FlutterFragment` from exposing its `Activity` to Flutter plugins, and to
+a `FlutterFragment` from exposing its `Activity` to Flutter plugins, and to 
 prevent Flutter from controlling the `Activity`'s system UI, use the
 `shouldAttachEngineToActivity()` method in `FlutterFragment`'s `Builder` as
 shown below.
 
 ```java
-FlutterFragment flutterFragment = new FlutterFragment.Builder()
+// Using a new FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+    .shouldAttachEngineToActivity(false)
+    .build();
+
+// Using a cached FlutterEngine.
+FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .shouldAttachEngineToActivity(false)
     .build();
 ```
 
 Passing `false` to the `shouldAttachEngineToActivity()` `Builder` method
 prevents Flutter from interacting with the surrounding `Activity`. The default
-value is `true`, which allows Flutter and Flutter plugins to interact with
+value is `true`, which allows Flutter and Flutter plugins to interact with the
 surrounding `Activity`.
 
 {{site.alert.note}}
-  Some plugins may expect or require an `Activity` reference. Ensure that none
+  Some plugins may expect or require an `Activity` reference. Ensure that none 
   of your plugins require an `Activity` before disabling access.
 {{site.alert.end}}
