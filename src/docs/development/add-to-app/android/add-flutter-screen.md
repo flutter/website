@@ -33,8 +33,9 @@ registered in your `AndroidManifest.xml`. Add the following XML to your
 
 The reference to `@style/LaunchTheme` can be replaced by any Android theme that
 you'd like to apply to your `FlutterActivity`. The choice of theme dictates the
-colors of system chrome and the background color of the `FlutterActivity` just
-before the Flutter UI renders itself for the first time.
+colors applied to Android's system chrome, like Android's navigation bar, and 
+the background color of the `FlutterActivity` just before the Flutter UI renders 
+itself for the first time.
 
 ### Step 2: Launch FlutterActivity
 
@@ -76,8 +77,8 @@ myButton.addOnClickListener(new OnClickListener() {
 Replace `"/my_route"` with your desired initial route.
 
 The use of the `withNewEngine()` factory method configures a `FlutterActivity`
-that will internally create its own `FlutterEngine` instance. This comes with
-a non-trivial initialization time. The alternative approach is to instruct
+that internally create its own `FlutterEngine` instance. This comes with a 
+non-trivial initialization time. The alternative approach is to instruct
 `FlutterActivity` to use a pre-warmed, cached `FlutterEngine`, which minimizes
 Flutter's initialization time. That approach is discussed next.
 
@@ -91,7 +92,7 @@ experience becomes visible. To minimize this delay, you can warm-up a
 your pre-warmed `FlutterEngine` instead.
 
 To pre-warm a `FlutterEngine`, find a reasonable location in your app to
-instantiate a `FlutterEngine`. For a simplistic app, pre-warming a
+instantiate a `FlutterEngine`. For a small app or a prototype, pre-warming a
 `FlutterEngine` in the `Application` class might be a reasonable option:
 
 ```java
