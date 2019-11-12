@@ -11,7 +11,9 @@ This page covers the following steps for getting started with web support:
 
 ## Requirements
 - [Install Chrome]. Currently, debugging a web app requires the Chrome browser.
-- [Install flutter on your platform]. If you don't yet have the `flutter` tool installed, follow the instructions to install flutter on your platform, and return to this page.
+- [Install flutter on your platform]. If you don't yet have the `flutter` tool
+  installed, follow the instructions to install flutter on your platform, and
+  return to this page.
 
 For more information, see the [web FAQ][].
 
@@ -23,10 +25,12 @@ for production use.**
 
 ## Summary
 
-The following steps **add web support to an existing project**.
+You can use the following steps both to **add web support to an existing
+project** and to **create a new project with web support**.
 
 Assuming that you have the `flutter` tool installed, run the following commands
-in a terminal from the root project directory:
+in a terminal from the root project directory. If you are creating a new project,
+create an empty project directory for use with these steps:
 
 ```terminal
 $ cd <project directory>
@@ -43,25 +47,24 @@ To generate a release build:
 $ flutter build web
 ```
 
-The rest of this page breaks this process down
-into individual steps.
+## Explanation
 
-## Download the Flutter SDK
+The remaining sections of this page explain each of these steps in detail.
 
-Currently, you need either the master or dev channel of the Flutter SDK
-for web support. Assuming that you already have the
-`flutter` tool installed, run the following commands
-to install the latest version from the dev channel:
+### Download the Flutter SDK
+
+Currently, you need either the master or dev channel of the Flutter SDK for web
+support. Assuming that you already have the `flutter` tool installed, run the
+following commands to install the latest version from the dev channel:
 
 ```terminal
 $ flutter channel dev
 $ flutter upgrade
 ```
 
-The `flutter upgrade` command silently fails
-when "origin" points to a personal fork.
-To validate that "origin" points to the
-"flutter/flutter" repo, enter the following:
+The `flutter upgrade` command silently fails when `origin` points to a personal
+fork. To validate that `origin` points to the "flutter/flutter" repo, run the
+following commands in the root directory of your local copy of the "flutter/flutter" repo:
 
 ```terminal
 $ cd <inside local copy of the flutter/flutter repo>
@@ -69,7 +72,7 @@ $ git remote get-url origin
 ssh://git@github.com/flutter/flutter.git
 ```
 
-## Enable web support
+### Enable web support
 
 Use the config command to enable web support:
 
@@ -88,8 +91,7 @@ with the following:
 }
 ```
 
-Once web is enabled,
-`flutter devices` outputs a device named `Chrome`.
+Once web is enabled, the `flutter devices` command outputs a device named `Chrome`:
 
 ```terminal
 $ flutter devices
@@ -101,13 +103,12 @@ Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
 **After enabling web support, restart the IDE.**
 You should now see **Chrome (web)** in the device pulldown.
 
-The `flutter run` command launches the application using the
-[development compiler][] in a Chrome browser.
-The name of the web device is currently `chrome`,
-but this doesn't need to be specified
-if there are no other devices attached.
+The `flutter run` command launches the application using the [development
+compiler][] in a Chrome browser. The name of the web device is currently
+`chrome`, but this doesn't need to be specified if there are no other devices
+attached.
 
-## Add web support to an existing app
+### Add web support to an existing app
 
 To add web support to an existing project, run the following command in a
 terminal from the root project directory:
@@ -116,42 +117,38 @@ terminal from the root project directory:
 $ flutter create .
 ```
 
-## Create a new app with web support
+### Create a new app with web support
 
-To create a new app that includes web support
-(in addition to mobile support), run the following,
-substituting `myapp` with the name of your project:
+To create a new app that includes web support (in addition to mobile support),
+run the following, substituting `myapp` with the name of your project:
 
 ```terminal
 $ flutter create myapp
 ```
 
-## Run the web app
+### Run the web app
 
-To run the app on the web, enter the following
-from the top of the package:
+To serve your app from `localhost` in Chrome, enter the following from the top of the package:
 
 ```terminal
 $ flutter run -d chrome
 ```
 
-If there aren't any other connected devices,
-the `-d chrome` is optional.
+If there aren't any other connected devices, the `-d chrome` is optional.
 
-## Generate a release build
+### Generate a release build
 
-Run the following, from the top of the project:
+Run the following command from the root project directory:
 
 ```terminal
 $ flutter build web
 ```
 
-A release build uses [dart2js][] (instead of
-the [development compiler][]) to produce a single
-JavaScript file.  This can be run with the release flag
-or built using `flutter build web`. This outputs files at
-`build/web`, including the assets, which need to be served together.
-
+A release build uses [dart2js][] (instead of the [development compiler][]) to
+produce a single JavaScript file `main.dart.js`.  You can create a release build
+using release mode (`flutter run --release`) or by using `flutter build web`.
+This populates a `build/web` directory with built files, including an `assets`
+directory, which need to be served together.
 
 
 [dart2js]: https://dart.dev/tools/dart2js
