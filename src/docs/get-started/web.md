@@ -3,38 +3,36 @@ title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
 ---
 
-As of 1.9, Flutter has early support for running web
-applications. There are still missing features and known
-performance issues, so it
-**isn't recommended for production use.**
+This page covers the following steps for getting started with web support:
+- Configure the `flutter` tool for web support.
+- Add web support to an existing project and/or create a new project with web
+  support.
+- Run and build an app with web support.
 
-{{site.alert.note}}
-  Currently, debugging a web app requires the
-  Chrome browser. If you haven't already,
-  [install Chrome][].
-{{site.alert.end}}
+## Requirements
+- [Install Chrome]. Currently, debugging a web app requires the Chrome browser.
+- [Install flutter on your platform]. If you don't yet have the `flutter` tool installed, follow the instructions to install flutter on your platform, and return to this page.
 
 For more information, see the [web FAQ][].
 
-{{site.alert.warning}}
-  If you don't yet have the `flutter` tool installed,
-  do a [regular install for your platform][], and then
-  return to these instructions.
-{{site.alert.end}}
+{{ site.alert.warning }}
+As of 1.9, Flutter has early support for running web applications. There are
+still missing features and known performance issues, so it **isn't recommended
+for production use.**
+{{ site.alert.end }}
 
 ## Summary
 
-Here are the short and sweet instructions to get started.
-To **add support to an existing project** and
-**assuming that you have the `flutter` tool installed**,
-run the following commands in a terminal from the
-top of the project package:
+The following steps **add web support to an existing project**.
+
+Assuming that you have the `flutter` tool installed, run the following commands
+in a terminal from the root project directory:
 
 ```terminal
+$ cd <project directory>
 $ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-web
-$ cd <into project directory>
 $ flutter create .
 $ flutter run -d chrome
 ```
@@ -53,7 +51,7 @@ into individual steps.
 Currently, you need either the master or dev channel of the Flutter SDK
 for web support. Assuming that you already have the
 `flutter` tool installed, run the following commands
-to install the latest version from dev:
+to install the latest version from the dev channel:
 
 ```terminal
 $ flutter channel dev
@@ -111,9 +109,8 @@ if there are no other devices attached.
 
 ## Add web support to an existing app
 
-To add web support to an existing project,
-run the following command in a terminal
-from the top of the project package:
+To add web support to an existing project, run the following command in a
+terminal from the root project directory:
 
 ```terminal
 $ flutter create .
@@ -161,4 +158,4 @@ or built using `flutter build web`. This outputs files at
 [development compiler]: https://dart.dev/tools/dartdevc
 [web FAQ]: /docs/development/platform-integration/web
 [install Chrome]: https://www.google.com/chrome/
-[regular install for your platform]: https://flutter.dev/docs/get-started/install
+[install flutter on your platform]: https://flutter.dev/docs/get-started/install
