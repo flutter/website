@@ -14,94 +14,16 @@ see-through, translucent screen. Both options are described in this guide.
 development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png
 class="mw-100" alt="Add Flutter Screen Header" %}
 
-### Step 1: Add Gradle dependencies
-
-TODO: update this with gradle instructions when the embedding is broken into
-multiple maven artifacts.
-
-### Step 2: Initialize Flutter
-
-Flutter requires that it be initialized before attempting to display any Flutter
-content. This can be done in one of three ways:
-
- * Use `FlutterApplication` as your app's `Application` class.
-
- * Extend `FlutterApplication` with your own `Application` class.
-
- * Manually initialize Flutter.
-
-#### Option 1: Use FlutterApplication
-
-To use `FlutterApplication` directly, simply declare it as the `Application`
-class in the `AndroidManifest.xml` file:
-
-```xml
-<application
-  android:name="io.flutter.app.FlutterApplication"
-  // other properties omitted
-  >
-  <!-- content omitted -->
-</application>
-```
-
-Now, as soon as your application is created, Flutter initializes.
-
-#### Option 2: Extend FlutterApplication
-
-Extending `FlutterApplication` automatically initializes Flutter when
-Android creates your application. First, create an `Application` class that
-extends `FlutterApplication`:
-
-```java
-public class MyApplication extends FlutterApplication {
-  // no implementation is necessary.
-}
-```
-
-Second, register your custom `Application` subclass in the
-`AndroidManifest.xml` file:
-
-```xml
-<application
-  android:name=".MyApplication"
-  // other properties omitted
-  >
-  <!-- content omitted -->
-</application>
-```
-
-Replace `MyApplication` with your `Application` subclass name.
-
-#### Option 3: Manually initialize Flutter
-
-If you'd like to control precisely where and when Flutter is initialized, you
-can initialize Flutter manually. This must occur before you attempt to display
-any Flutter content, or execute any Dart code. Initialization only needs to
-happen once within the application process - it does not need to be repeated
-for every Flutter experience.
-
-To manually initialize Flutter, execute the following code at the desired
-location:
-
-```java
-FlutterMain.startInitialization(appContext);
-FlutterMain.ensureInitializationComplete(appContext, null);
-```
-
-The call to `ensureInitializationComplete()` is a blocking call. Make sure you
-invoke it at a place and time that can afford a brief processing pause.
-
-### Step 3: Add FlutterActivity to AndroidManifest.xml
+### Step 1: Add FlutterActivity to AndroidManifest.xml
 
 Flutter provides `FlutterActivity` to display a Flutter experience within an
-Android `Activity`. Like any other `Activity`, `FlutterActivity` must be
+Android app. Like any other `Activity`, `FlutterActivity` must be
 registered in your `AndroidManifest.xml`. Add the following XML to your
 `AndroidManifestxml` file under your `application` tag:
 
 ```xml
 <activity
-  android:name=".YourFlutterActivityName"
-  android:launchMode="singleTop"
+  android:name="io.flutter.embedding.android.FlutterActivity"
   android:theme="@style/LaunchTheme"
   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
   android:hardwareAccelerated="true"
@@ -109,9 +31,13 @@ registered in your `AndroidManifest.xml`. Add the following XML to your
   />
 ```
 
-Replace `YourFlutterActivityName` with the name of your Flutter `Activity`.
+The reference to `@style/LaunchTheme` can be replaced by any Android theme that
+you'd like to apply to your `FlutterActivity`. The choice of theme dictates the
+colors applied to Android's system chrome, like Android's navigation bar, and 
+the background color of the `FlutterActivity` just before the Flutter UI renders 
+itself for the first time.
 
-### Step 4: Launch FlutterActivity
+### Step 2: Launch FlutterActivity
 
 With `FlutterActivity` registered in your manifest file, add code to launch
 `FlutterActivity` from whatever point in your app that you'd like. The following
@@ -122,15 +48,17 @@ myButton.addOnClickListener(new OnClickListener() {
   @Override
   public void onClick(View v) {
     startActivity(
-      FlutterActivity.createBuilder().build(currentActivity)
+      FlutterActivity.createDefaultIntent(currentActivity)
     );
   }
 });
 ```
 
 The above example assumes that your Dart entrypoint is called `main()`, and your
-initial Flutter route is '/'. If you'd like to change either property, use the
-`IntentBuilder` to provide your desired properties:
+initial Flutter route is '/'. The Dart entrypoint cannot be changed via `Intent`,
+but the initial route can be changed via `Intent`. The following example
+demonstrates how to launch a `FlutterActivity` that initially renders a custom
+route in Flutter.
 
 ```java
 myButton.addOnClickListener(new OnClickListener() {
@@ -138,8 +66,7 @@ myButton.addOnClickListener(new OnClickListener() {
   public void onClick(View v) {
     startActivity(
       FlutterActivity
-        .createBuilder()
-        .dartEntrypoint("mySpecialEntrypoint")
+        .withNewEngine()
         .initialRoute("/my_route")
         .build(currentActivity)
       );
@@ -147,52 +74,52 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-Replace `"mySpecialEntrypoint"` with the name of your desired Dart entrypoint,
-and replace `"/my_route"` with your desired initial route.
+Replace `"/my_route"` with your desired initial route.
 
-### Step 5: (Optional) Use a cached FlutterEngine
+The use of the `withNewEngine()` factory method configures a `FlutterActivity`
+that internally create its own `FlutterEngine` instance. This comes with a 
+non-trivial initialization time. The alternative approach is to instruct
+`FlutterActivity` to use a pre-warmed, cached `FlutterEngine`, which minimizes
+Flutter's initialization time. That approach is discussed next.
+
+### Step 3: (Optional) Use a cached FlutterEngine
 
 Every `FlutterActivity` creates its own `FlutterEngine` by default. Each
 `FlutterEngine` has a non-trivial "warm-up" time. This means that launching a
 standard `FlutterActivity` comes with a brief delay before your Flutter
-experience becomes visible. To avoid this delay, you can warm-up a
+experience becomes visible. To minimize this delay, you can warm-up a
 `FlutterEngine` before arriving at your `FlutterActivity` and then you can use
 your pre-warmed `FlutterEngine` instead.
 
 To pre-warm a `FlutterEngine`, find a reasonable location in your app to
-instantiate and hold a `FlutterEngine`. For a simplistic app, storing a
+instantiate a `FlutterEngine`. For a small app or a prototype, pre-warming a
 `FlutterEngine` in the `Application` class might be a reasonable option:
 
 ```java
 public class MyApplication extends Application {
-  private FlutterEngine flutterEngine;
-
   @Override
   public void onCreate() {
     super.onCreate();
-
-    // Initialize Flutter.
-    FlutterMain.startInitialization(this);
-    FlutterMain.ensureInitializationComplete(this, null);
-
-    // Create and warm-up a FlutterEngine.
+    // Instantiate a FlutterEngine.
     flutterEngine = new FlutterEngine(this);
 
-    DartExecutor.DartEntrypoint entrypoint = new DartExecutor.DartEntrypoint(
-      getResources().getAssets(),
-      FlutterMain.findAppBundlePath(this),
-      "main"
+    // Start executing Dart code to pre-warm the FlutterEngine.
+    flutterEngine.getDartExecutor().executeDartEntrypoint(
+      DartEntrypoint.getDefault()
     );
 
-    flutterEngine.getDartExecutor().executeDartEntrypoint(entrypoint);
-  }
-
-  @NonNull
-  public FlutterEngine getFlutterEngine() {
-    return flutterEngine;
+    // Cache the FlutterEngine to be used by FlutterActivity.
+    FlutterEngineCache
+      .getInstance()
+      .put("my_engine_id", flutterEngine);
   }
 }
 ```
+
+The ID passed to the `FlutterEngineCache` can be whatever you'd like. Make sure
+that you pass the exact same ID to any `FlutterActiity` or `FlutterFragment`
+that should use the cached `FlutterEngine`. Using `FlutterActivity` with a
+cached `FlutterEngine` is discussed next.
 
 {{site.alert.note}}
   To warm up a `FlutterEngine`, you must execute a Dart
@@ -205,30 +132,35 @@ public class MyApplication extends Application {
   Flutter content.
 {{site.alert.end}}
 
-With a pre-warmed `FlutterEngine`, you now need to instruct your
-`FlutterActivity` to use the pre-warmed `FlutterEngine` instead of creating a
-new one. To accomplish this, subclass `FlutterActivity` and override the
-`provideFlutterEngine()` method:
+With a pre-warmed, cached `FlutterEngine`, you now need to instruct your
+`FlutterActivity` to use the cached `FlutterEngine` instead of creating a
+new one. To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
+builder:
 
 ```java
-public class MyFlutterActivity extends FlutterActivity {
+myButton.addOnClickListener(new OnClickListener() {
   @Override
-  @NonNull
-  protected FlutterEngine provideFlutterEngine(@NonNull Context context) {
-    return ((MyApplication) context.getApplicationContext()).getFlutterEngine();
+  public void onClick(View v) {
+    startActivity(
+      FlutterActivity
+        .withCachedEngine("my_engine_id")
+        .build(currentActivity)
+      );
   }
-}
+});
 ```
 
-Now, when you launch `MyFlutterActivity`, there is significantly less delay in
+When using the `withCachedEngine()` factory method, pass the same ID that you
+used when caching the desired `FlutterEngine`.
+
+Now, when you launch `FlutterActivity`, there is significantly less delay in
 the display of Flutter content.
 
 {{site.alert.note}}
-  When re-using a cached engine, you assume responsibility for
-  showing the desired content for the given `Activity` that's using the
-  `FlutterEngine`. Strategies for switching content in a shared `FlutterEngine`
-  are beyond the scope of this guide. TODO(mattcarroll): link to
-  resource.
+  When re-using a cached engine across multiple `FlutterActivity` instances, you 
+  assume responsibility for showing the desired content for the given `Activity`.
+   Strategies for switching content in a shared `FlutterEngine` are beyond the 
+   scope of this guide. TODO(mattcarroll): link to resource.
 {{site.alert.end}}
 
 {{site.alert.note}}
@@ -267,7 +199,6 @@ Then, apply the translucent theme to your desired `FlutterActivity`.
 ```xml
 <activity
   android:name="io.flutter.embedding.android.FlutterActivity"
-  android:launchMode="singleTop"
   android:theme="@style/MyTheme"
   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
   android:hardwareAccelerated="true"
@@ -284,9 +215,18 @@ To launch your `FlutterActivity` with a transparent background, pass the
 appropriate `BackgroundMode` to the `IntentBuilder`:
 
 ```java
+// Using a new FlutterEngine.
 startActivity(
   FlutterActivity
-    .createBuilder()
+    .withNewEngine()
+    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .build(context)
+);
+
+// Using a cached FlutterEngine.
+startActivity(
+  FlutterActivity
+    .withCachedEngine("my_engine_id")
     .backgroundMode(FlutterActivity.BackgroundMode.transparent)
     .build(context)
 );
