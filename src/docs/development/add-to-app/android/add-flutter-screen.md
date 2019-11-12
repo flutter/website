@@ -36,7 +36,7 @@ you'd like to apply to your `FlutterActivity`. The choice of theme dictates the
 colors of system chrome and the background color of the `FlutterActivity` just
 before the Flutter UI renders itself for the first time.
 
-### Step 4: Launch FlutterActivity
+### Step 2: Launch FlutterActivity
 
 With `FlutterActivity` registered in your manifest file, add code to launch
 `FlutterActivity` from whatever point in your app that you'd like. The following
@@ -81,7 +81,7 @@ a non-trivial initialization time. The alternative approach is to instruct
 `FlutterActivity` to use a pre-warmed, cached `FlutterEngine`, which minimizes
 Flutter's initialization time. That approach is discussed next.
 
-### Step 5: (Optional) Use a cached FlutterEngine
+### Step 3: (Optional) Use a cached FlutterEngine
 
 Every `FlutterActivity` creates its own `FlutterEngine` by default. Each
 `FlutterEngine` has a non-trivial "warm-up" time. This means that launching a
