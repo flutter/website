@@ -188,7 +188,7 @@ FlutterEngineCache
 flutterFragment.withCachedEngine("my_engine_id").build();
 ```
 `FlutterFragment` internally knows about `FlutterEngineCache` and retrieves the
-pre-wared `FlutterEngine` based on the ID given to `withCachedEngine()`.
+pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
 
 By providing a pre-warmed `FlutterEngine` as shown above, your app renders the
 first Flutter frame as quickly as possible.
@@ -218,7 +218,7 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{{site.alert.note}} 
+{{site.alert.note}}
   `FlutterFragment`'s initial route property has no effect when a pre-warmed
   `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
   chosen an initial route. The initial route can be chosen explicitly when
@@ -248,7 +248,7 @@ The above `FlutterFragment` configuration results in the execution of a Dart
 entrypoint called `mySpecialEntrypoint()`. Notice that the parentheses `()` are
 not included in the `dartEntrypoint` `String` name.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   `FlutterFragment`'s Dart entrypoint property has no effect when a pre-warmed
   `FlutterEngine` is used because the pre-warmed `FlutterEngine` has already
   executed a Dart entrypoint. The Dart entrypoint can be chosen explicitly when
@@ -295,7 +295,7 @@ impacts performance. However, there are many designs that require transparent
 pixels in the Flutter experience that show through to the underlying Android UI.
 For this reason, Flutter supports translucency in a `FlutterFragment`.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   Both `SurfaceView` and `TextureView` support transparency. However, when a
   `SurfaceView` is instructed to render with transparency, it positions itself
   at a higher z-index than all other Android `View`s, which means it appears
@@ -369,7 +369,7 @@ prevents Flutter from interacting with the surrounding `Activity`. The default
 value is `true`, which allows Flutter and Flutter plugins to interact with the
 surrounding `Activity`.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   Some plugins may expect or require an `Activity` reference. Ensure that none 
   of your plugins require an `Activity` before disabling access.
 {{site.alert.end}}
