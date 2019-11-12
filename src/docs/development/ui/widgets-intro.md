@@ -198,8 +198,7 @@ variety of ways. Finally, `MyScaffold` uses an
 [`Expanded`][] to fill the remaining space with its body,
 which consists of a centered message.
 
-For more information,
-see [Layouts](/docs/development/ui/widgets/layout).
+For more information, see [Layouts][].
 
 ## Using Material Components
 
@@ -723,8 +722,7 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
-For more information, see the
-[`GlobalKey`]({{api}}/widgets/GlobalKey-class.html) API.
+For more information, see the [`GlobalKey`][] API.
 
 
 
