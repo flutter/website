@@ -28,7 +28,7 @@ videos that you might find useful:
 * [Using Firestore as a backend to your Flutter app][video] (video)
 * [Live Coding Firebase Authentication with Flutter][video2] (video)
 * [Flutter & Firebase Auth 01][video3] (video)
-* [Flutter: Firebase Tutorial Part 1 | Auth and Sign in][video4] (video)
+* [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4] (video)
 
 [article]: {{site.medium}}/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e

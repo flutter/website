@@ -467,9 +467,9 @@ For more information, see [explicitToJson][] in the
 For more information, see the following resources:
 
 * The [dart:convert][] and [JsonCodec][] documentation
-* The [json_serializable][] package on pub.dev.
-* The [json_serializable examples][] on GitHub.
-* The [Discussion about dart:mirrors in Flutter][]
+* The [json_serializable][] package on pub.dev
+* The [json_serializable examples][] on GitHub
+* The [discussion about dart:mirrors in Flutter][]
 
 
 
