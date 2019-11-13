@@ -87,9 +87,9 @@ body_class: clock
         <div class="col-12">
             <hr>
             <p class="info-paragraph">
-                In addition, all submissions will receive a digital certificate of completion. Also, there is a change
-                that some of the clock submissions will be considered to be integrated into the Lenovo Smart clock's
-                lineup of clock faces.
+                All complete and valid submissions will receive a digital certificate of completion. In addition, some
+                of the clock contest submissions might be integrated into the Lenovo Smart Clock's lineup of clock
+                faces, or used as inspiration for future clock faces!
             </p>
         </div>
     </div>
@@ -99,8 +99,7 @@ body_class: clock
     <div class="clock__getting_container row justify-content-center">
         <div class="col-10">
             <h2 class="subheading">Getting started</h2>
-            <p class="paragraph">Make sure to familiarize yourself with the <a href="">submission guidelines</a> and <a
-                    href="">contest rules</a>.</p>
+            <p class="paragraph">Use the following instructions to get started:</p>
             <ol type="1">
                 {% for item in site.data.clock.getting_started_items %}
                 <li>
@@ -108,7 +107,7 @@ body_class: clock
                     {% if item.subItems %}
                         <ol type="a">
                             {% for subItem in item.subItems %}
-                            <li class="sub-item">
+                            <li class="sub-item {% if item.noListItemStyle == true %}no-list-style{% endif %}">
                                 {{subItem.text}}
                                 {% if subItem.subItems %}
                                     <ol type="i">
