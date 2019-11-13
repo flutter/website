@@ -1,31 +1,58 @@
-- title: Git clone this repo
-  link_text: github.com/flutter/flutter_clock
-  link: '#'
+- title: >
+    Download the <a href="github.com/flutter/flutter_clock">Flutter Clock GitHub</a> repo using git clone.
 
-- title: How do you want to build your clock?
+- title: >
+    Choose a sample clock and enter that folder using: <em>cd <path-to-repo>/flutter-clock/<name>_clock</em>
   subItems:
-  - text: 'Sample clock 1: Basic analog clock'
-    link_text: github.com/flutter/flutter_clock/analog_clock
-    link: '#'
-  - text: 'Sample clock 2: A slightly decorative digital clock that changes UI based on the API:'
-    link_text: github.com/flutter/flutter_clock/digital_clock
-    link: '#'
-  - text: 'Make your own clock package using'
-    link_text: flutter create -template=package <your_clock_name>
-    link: '#'
+  - text: >
+     <a href="https://github.com/flutter/flutter_clock/analog_clock">Sample clock 1</a>: Basic analog clock.
+  - text: >
+      <a href="https://github.com/flutter/flutter_clock/digital_clock">Sample clock 2</a>: Basic digital clock.
 
-- title: Run your clock package using this clock customizer app
-  is_dropdown: true
-  content: content 1
+- title: Run the clock app in your IDE, or by using flutter run at the command line.
 
-- title: Run your clock using the clock customizer app
-  is_dropdown: true
-  content: content 2
+- title: >
+    Build your clock inside a folder called <name>_clock. You can build upon the existing code, or you can start from
+    scratch. Either use flutter create . from the project root of an existing folder, or flutter create <my-app> to
+    start a new project. If you are new to Flutter, check out the
+    <a href="https://flutter.dev/docs/get-started/codelab">Write your first Flutter</a> app codelab.
 
-- title: Develop your clock UI
-  is_dropdown: true
-  content: content 3
+- title: >
+    Prepare your clock for submission:
+  subItems:
+    - text: >
+        <a href="https://flutter.dev/docs/development/tools/formatting">Format the Dart code.</a>
+    - text: >
+        Verify that your clock builds and runs on
+        <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable">
+        the latest Flutter stable channel</a>.
+    - text: >
+        In your <name>_clock directory, reduce the clock’s size:
+      subItems:
+          - text: >
+              Delete the <name>_clock/ios, <name>_clock/android, and <name>_clock/web (if present) folders.
+          - text: >
+              Run flutter clean.
+    - text: >
+        In your <path-to-repo>/flutter-clock folder, zip these two folders:
+      subItems:
+          - text: >
+              Delete the <name>_clock/ios, <name>_clock/android, and <name>_clock/web (if present) folders.
+          - text: >
+              Run flutter clean.
 
-- title: Submit your final project
-  text: Submit your final project using this form. See submission guidelines for eligibility requirements
-  redirect: '#'
+- title: >
+    Verify that your <project>.zip file works, using the following steps:
+  subItems:
+    - text: >
+        <em>flutter channel stable</em>
+    - text: >
+        <em>flutter upgrade</em>
+    - text: >
+        <em>unzip <project>.zip</em>
+    - text: >
+        <em>cd <name>_clock</em>
+    - text: >
+        <em>flutter create</em>
+    - text: >
+        <em>flutter run (on Android or iOS in landscape)</em>

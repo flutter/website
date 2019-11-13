@@ -24,21 +24,41 @@
   &__hero {
     background-color: $flutter-dark-blue-texture;
     color: $site-color-white;
+    padding-bottom: 104px;
     position: relative;
     text-align: center;
 
     .heading {
-      margin: 100px auto 30px;
-      max-width: 344px;
+
+    }
+
+    .youtube-link, .twitter-link {
+      color: $twitter-color;
+      font-size: 18px;
+
+      i {
+        margin-right: 5px;
+      }
     }
 
     .twitter-link {
-      display: block;
-      margin-bottom: 100px;
+      display: inline-block;
+      margin-bottom: 8px;
     }
 
     &__texture {
       background-color: $flutter-dark-blue-texture;
+      background-image: asset_url('clock/hero-pattern__background.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include media-breakpoint-up(lg) {
+      .heading {
+        font-size: 72px;
+        margin: 120px auto 40px;
+        max-width: 642px;
+      }
     }
   }
 
@@ -48,6 +68,9 @@
 
     &__texture {
       background-color: #FFF;
+      background-image: asset_url('clock/wtm__background-bottom.svg'), asset_url('clock/wtm__background-top.svg');
+      background-position: right bottom -20px, left top 100px;
+      background-repeat: no-repeat;
     }
 
     &_container {
@@ -55,44 +78,47 @@
     }
   }
 
-  &__wtm-text {
-    font-size: 12px;
-  }
-
   // Styles for wtm copy
   &__wtm-copy {
-    color: $clock-color-dark;
+    color: $clock-color-dark; //TODO: Change for a variable
 
     .subheading {
-      margin: 20px 0;
-      font-size: 30px;
+      margin: 0 0 24px;
+      font-size: 56px;
     }
 
     .paragraph {
+      font-size: 20px;
+    }
+
+    .paragraph-conditions {
+      font-family: $site-font-family-base;
       font-size: 14px;
+      margin: 0;
     }
   }
 
   &__wtm-entries {
-    margin-top: 80px;
+    margin-top: 72px;
 
     &_container {
-      margin: 60px 0;
+      margin-bottom: 80px;
     }
 
     .heading {
-      font-size: 26px;
-      margin: 0 auto;
+      font-size: 32px;
+      margin: 0 auto 88px;
       max-width: 630px;
       text-align: center;
     }
 
-    .paragraph {
-      text-align: center;
-    }
-
     .entries__card {
-      height: 100%;
+      padding: 0 14px;
+
+      .card {
+        height: 190px;
+        max-width: 190px;
+      }
     }
 
     .entries__card-body {
@@ -106,16 +132,16 @@
     }
   }
 
+  &__wtm-logos {
+
+  }
+
   // Styles for section clock__prizes
   // Styles for prizes container
   &__prizes {
     background-color: $clock-color-blue;
     color: $clock-color-white;
     position: relative;
-
-    &_container {
-      margin: 100px 0;
-    }
 
     ul {
       padding: 0;
@@ -132,21 +158,34 @@
       width: 100%;
     }
 
+    &_container {
+      margin: 160px 0;
+    }
+
+    .prizes-text {
+      display: inline-block;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
     .subheading {
-      font-size: 26px;
-      margin: 16px 0;
+      font-size: 40px;
+      margin: 24px 0;
     }
 
     .paragraph {
-      font-size: 14px;
+      font-size: 20px;
     }
 
     .info-paragraph {
-      font-size: 12px;
+      font-size: 18px;
     }
 
     &__texture {
       background-color: $clock-color-blue;
+      background-image: asset_url('clock/prizes__background.svg');
+      background-position: right 50px top 150px;
+      background-repeat: no-repeat;
     }
   }
 
@@ -154,25 +193,42 @@
   &__getting {
     color: $clock-color-dark;
 
-    ul {
+    ol {
       padding-left: 16px;
     }
 
     li {
-      padding: 8px 0;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 16px 0;
     }
 
     &_container {
-      margin: 100px 0;
+      margin: 80px 0;
     }
 
     .subheading {
-      font-size: 32px;
+      font-size: 56px;
       margin: 0 0 16px 0;
     }
 
     .paragraph {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
+    }
+
+    .sub-item {
+      font-family: $site-font-family-base;
+      font-size: 18px;
+      font-weight: normal;
+      padding: 8px 0;
+
+      .sub-item {
+        list-style: none;
+      }
+    }
+
+    .sub-item:last-child {
+      padding-bottom: 16px;
     }
   }
 
@@ -183,18 +239,19 @@
     text-align: center;
 
     &_container {
-      padding: 60px;
+      padding: 80px;
     }
 
     .subheading {
-      font-size: 40px;
-      margin: 0;
+      font-size: 48px;
+      margin: 0 auto 32px;
+      max-width: 626px;
+      text-align: center;
     }
 
     .submit-app__button {
       font-size: 18px;
-      margin-top: 32px;
-      padding: 0.5rem 1em;
+      padding: 16px 24px;
     }
   }
 
@@ -202,7 +259,6 @@
   // Styles for general container
   &__faqs {
     margin-top: 100px;
-    padding-bottom: 100px;
     position: relative;
 
     &__texture {
@@ -210,6 +266,8 @@
     }
 
     &_container {
+      padding: 80px 0;
+
       .faqs_button {
         align-items: center;
         color: $clock-color-dark;
@@ -236,6 +294,14 @@
         padding: 17px 0;
       }
     }
+
+    .subheading {
+      font-size: 56px;
+    }
+
+    .faq__card-body {
+      padding: 0 24px 24px 0;
+    }
   }
 
   //dropdown button
@@ -243,14 +309,13 @@
     box-shadow: none;
     outline: none;
   }
-  /*
-    .dropdown__button[aria-expanded="false"]::after {
-      content: " >";
-    }
 
-    .dropdown__button[aria-expanded="true"]::after {
-      content: " <";
-    }*/
+
+  .dropdown__button[aria-expanded="true"] {
+    i {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 
