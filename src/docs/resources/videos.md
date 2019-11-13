@@ -61,7 +61,7 @@ Episode 1: Sized Box<br>
 ---
 
 {% comment %}
-Comment this out until we have a working Conference playlist link. 
+Comment this out until we have a working Conference playlist link.
 
 ## Conference talks
 

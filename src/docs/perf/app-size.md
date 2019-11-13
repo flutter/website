@@ -104,7 +104,7 @@ are:
 * Remove unused resources
 * Minimize resource imported from libraries
 * Support a limited number of screen densities
-* Compress PNG, JPEG, and PNG files..
+* Compress PNG and JPEG files
 
 
 [FAQ]: /docs/resources/faq

@@ -139,7 +139,10 @@
       { "source": "/go/platform-interface-breaking-changes", "destination": "https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit#heading=h.xabf9lffxrkb", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit?usp=sharing", "type": 301 },
       { "source": "/go/automatic-android-plugin-registration", "destination": "https://docs.google.com/document/d/1xNkBmcdVL1yEXqtZ65KzTwfr5UXDD05VVKYXIXGX7p8/edit?usp=sharing", "type": 301 }, 
-      { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 }
+      { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 },
+      { "source": "/go/sliver-flex-and-friends", "destination": "https://docs.google.com/document/d/1W4_5oD5z7JHhUjuQYwS_NJRAv27Ih7IazcMm739O5JU/edit?usp=sharing", "type": 301 },
+      { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/android-plugin-migration", "destination": "https://github.com/flutter/flutter/wiki/Experimental:-Create-Flutter-Plugin", "type": 301 }
     ]
   }
 }

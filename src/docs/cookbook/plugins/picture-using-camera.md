@@ -14,7 +14,7 @@ for this purpose. The `camera` plugin provides tools to get a list of the
 available cameras, display a preview coming from a specific camera, and take
 photos or videos.
 
-This recipe demonstrates how to use the `camera` plugin to display a preview, 
+This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
 
   1. Add the required dependencies.
@@ -40,6 +40,9 @@ dependencies:
   path_provider:
   path:
 ```
+{{site.alert.tip}}
+  - For android, You must have to update `minSdkVersion` to 21 (or higher).
+{{site.alert.end}}
 
 ## 2. Get a list of the available cameras
 
@@ -51,7 +54,7 @@ Next, get a list of available cameras using the `camera` plugin.
 final cameras = await availableCameras();
 
 // Get a specific camera from the list of available cameras.
-final firstCamera = cameras.first; 
+final firstCamera = cameras.first;
 ```
 
 ## 3. Create and initialize the `CameraController`
@@ -68,7 +71,7 @@ and display a preview of the camera's feed.
      returned from `CameraController.initialize()`.
   4. Create and initialize the controller in the `initState()` method.
   5. Dispose of the controller in the `dispose()` method.
-  
+
 <!-- skip -->
 ```dart
 // A screen that takes in a list of cameras and the Directory to store images.
@@ -172,7 +175,7 @@ Saving a picture requires 3 steps:
   1. Ensure the camera is initialized
   2. Construct a path that defines where the picture should be saved
   3. Use the controller to take a picture and save the result to the path
-  
+
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
 
@@ -319,7 +322,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            // Construct the path where the image should be saved using the 
+            // Construct the path where the image should be saved using the
             // pattern package.
             final path = join(
               // Store the picture in the temp directory.

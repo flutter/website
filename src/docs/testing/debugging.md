@@ -1,5 +1,5 @@
 ---
-title: Debugging Flutter apps 
+title: Debugging Flutter apps
 description: How to debug your app using the DevTools suite.
 ---
 
@@ -82,7 +82,7 @@ For more information, see [Using the Dart analyzer][].
 
 ## Logging
 
-Another useful debugging tool is logging. 
+Another useful debugging tool is logging.
 You set logging up [programmatically][logging]
 then view the output in the DevTools
 [logging view][], or in the console.

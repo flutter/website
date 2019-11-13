@@ -51,7 +51,7 @@ create a basic todo app that tests three features:
 To keep the focus on testing,
 this recipe won't provide a detailed guide on how to build the todo app.
 To learn more about how this app is built,
-see the relevant recipes: 
+see the relevant recipes:
 
   * [Create and style a text field](/docs/cookbook/forms/text-input)
   * [Handle taps](/docs/cookbook/gestures/handling-taps)

@@ -115,7 +115,7 @@ here are some next steps.
 
 ### Docs
 
-Coming from another platform? Check out: 
+Coming from another platform? Check out:
 [Android][], [iOS][], [Web][], [React Native][],
 [Xamarin.Forms][]
 

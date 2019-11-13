@@ -45,7 +45,7 @@ whenever you open a new window. For example:
 
 In some cases, your distribution may not permanently acquire
 the path when using the above directions. When this occurs,
-you can change the environment variables file directly. 
+you can change the environment variables file directly.
 These instructions require administrator privileges:
 
    1. Determine the directory where you placed the Flutter SDK.

@@ -22,9 +22,9 @@ but rather on a flexible message passing style:
   It then calls into any number of platform-specific APIs&mdash;using
   the native programming language&mdash;and sends a response back to the
   *client*, the Flutter portion of the app.
- 
+
 {{site.alert.note}}
-  This guide addresses using the platform channel mechanism if you need 
+  This guide addresses using the platform channel mechanism if you need
   to use the platform's APIs or libraries in Java/Kotlin/Objective-C or Swift.
   But you can also write platform-specific Dart code in your Flutter app
   by inspecting the
@@ -44,10 +44,10 @@ channels as illustrated in this diagram:
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
 
-{{site.alert.note}} 
+{{site.alert.note}}
   Even though Flutter sends messages to and from Dart asynchronously,
   whenever you invoke a channel method, you must invoke that method on the
-  platform's main thread. See the 
+  platform's main thread. See the
   [section on threading](#channels-and-platform-threading) for more information.
 {{site.alert.end}}
 
@@ -519,7 +519,7 @@ and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
 ```objectivec
-__weak typeof(self) weakSelf = self
+__weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   // Note: this method is invoked on the UI thread.
   if ([@"getBatteryLevel" isEqualToString:call.method]) {

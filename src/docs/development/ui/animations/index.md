@@ -19,7 +19,7 @@ how to write animation code.
 More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
-If you have a specific request, 
+If you have a specific request,
 [file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 

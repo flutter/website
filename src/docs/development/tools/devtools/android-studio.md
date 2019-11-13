@@ -12,7 +12,7 @@ you can search the marketplace for the Flutter plugin.
 
 ## Start an app to debug
 
-To open DevTools, you first need to run a Flutter app. 
+To open DevTools, you first need to run a Flutter app.
 This can be accomplished by opening a Flutter project,
 ensuring that you have a device connected,
 and clicking the **Run** or **Debug** toolbar buttons.

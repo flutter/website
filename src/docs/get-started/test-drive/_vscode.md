@@ -27,8 +27,8 @@ contains a simple demo app that uses [Material Components][].
     - If no device is available and you want to use a device simulator,
       click **No Devices** and launch a simulator.
     - To setup a real device, follow the device-specific instructions on the
-      [Install][] page for your OS.    
- 1. Press the **Settings button** - a cog icon <i class="material-icons align-bottom">gear</i> on the top right (now marked with a red or orange indicator) next to the DEBUG text box that reads No Configuration. Select flutter. And choose the debug configuration: To create your emulator if it is closed or to run the emulator or device that is now connected.    
+      [Install][] page for your OS.
+ 1. Press the **Settings button** - a cog icon <i class="material-icons align-bottom">gear</i> on the top right (now marked with a red or orange indicator) next to the DEBUG text box that reads No Configuration. Select flutter. And choose the debug configuration: To create your emulator if it is closed or to run the emulator or device that is now connected.
  1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.

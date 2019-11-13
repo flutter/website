@@ -128,7 +128,7 @@ We support plugins for [Android Studio][],
 [IntelliJ IDEA][], and [VS Code][vs-code].
 
 See [editor configuration][] for setup details,
-and [Android Studio/IntelliJ][] and [VS Code][] 
+and [Android Studio/IntelliJ][] and [VS Code][]
 for tips on how to use the plugins.
 
 Alternatively, you can use a combination of the
@@ -419,7 +419,7 @@ See [Hot reload][] for additional details.
 
 You can compile and deploy your Flutter app to iOS and Android.
 
-### How can I find the more users for my app?  
+### How can I find the more users for my app?
 
 App Campaigns connect you with the right user, at the right time.
 * Reach more users by promoting your app across Google Search, Play,

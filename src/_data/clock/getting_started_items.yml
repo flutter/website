@@ -1,0 +1,31 @@
+- title: Git clone this repo
+  link_text: github.com/flutter/flutter_clock
+  link: '#'
+
+- title: How do you want to build your clock?
+  subItems:
+  - text: 'Sample clock 1: Basic analog clock'
+    link_text: github.com/flutter/flutter_clock/analog_clock
+    link: '#'
+  - text: 'Sample clock 2: A slightly decorative digital clock that changes UI based on the API:'
+    link_text: github.com/flutter/flutter_clock/digital_clock
+    link: '#'
+  - text: 'Make your own clock package using'
+    link_text: flutter create -template=package <your_clock_name>
+    link: '#'
+
+- title: Run your clock package using this clock customizer app
+  is_dropdown: true
+  content: content 1
+
+- title: Run your clock using the clock customizer app
+  is_dropdown: true
+  content: content 2
+
+- title: Develop your clock UI
+  is_dropdown: true
+  content: content 3
+
+- title: Submit your final project
+  text: Submit your final project using this form. See submission guidelines for eligibility requirements
+  redirect: '#'

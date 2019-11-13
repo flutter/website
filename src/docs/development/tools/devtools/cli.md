@@ -65,7 +65,7 @@ DevTools.
 
 ## Open DevTools and connect to the target app
 
-Once it's set up, using DevTools is as simple as opening a 
+Once it's set up, using DevTools is as simple as opening a
 Chrome browser window and navigating to `http://localhost:9100`.
 
 Once DevTools opens, you should see a connect dialog:

@@ -57,7 +57,7 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application ...>
-        
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -66,8 +66,8 @@ Add the following permission to the `AndroidManifest.xml` file just after the
 
 ### iOS
 
-For iOS, add the following to the `Info.plist` file found at 
-`<project root>/ios/Runner/Info.plist`. 
+For iOS, add the following to the `Info.plist` file found at
+`<project root>/ios/Runner/Info.plist`.
 
 <!-- skip -->
 ```xml
@@ -96,13 +96,13 @@ controller for playback.
 
 To create and initialize the `VideoPlayerController` do the following:
 
-  1. Create a `StatefulWidget` with a companion `State` class 
+  1. Create a `StatefulWidget` with a companion `State` class
   2. Add a variable to the `State` class to store the `VideoPlayerController`
   3. Add a variable to the `State` class to store the `Future` returned from
   `VideoPlayerController.initialize`
   4. Create and initialize the controller in the `initState` method
   5. Dispose of the controller in the `dispose` method
-  
+
 <!-- skip -->
 ```dart
 class VideoPlayerScreen extends StatefulWidget {
@@ -221,8 +221,8 @@ FloatingActionButton(
     _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
   ),
 )
-``` 
- 
+```
+
 ## Complete example
 
 ```dart

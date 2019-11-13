@@ -383,17 +383,17 @@ see the [Google Play launch][play] documentation.
 
 Now that you’ve created your app, attract more users with Google Ads.
 App campaigns use machine learning to drive more installs and
-make the most of your budget. 
+make the most of your budget.
 
 Get your campaign running in a few steps:
 
 1. Create your ad&mdash;we’ll help create your ad from your app
    information
 1. Choose your budget&mdash;set your target cost-per-install (tCPI)
-   and daily budget cap 
+   and daily budget cap
 1. Select your location&mdash;let us know where you’d like your ads to run
 1. Decide what action you want users to take&mdash;choose installs,
-   in-app actions, or target return on ad spend (ROAS) 
+   in-app actions, or target return on ad spend (ROAS)
 
 [Get $75 app advertising credit when you spend $25.][]
 

@@ -50,7 +50,7 @@ component and how to customize it, see
 [Animate a page route transition]: /docs/cookbook/animation/page-route-animation
 [Announcing Flutter 1.7]: {{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf
 [Cookbook]: /docs/cookbook
-[Debugging]: /docs/testing/debugging 
+[Debugging]: /docs/testing/debugging
 [Debugging apps programmatically]: /docs/testing/code-debugging
 [DevTools]: /docs/development/tools/devtools
 [Flutter Medium Publication]: {{site.flutter-medium}}

@@ -145,7 +145,7 @@ capture and report these types of errors as well.
 To capture Flutter errors, override the
 [`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html)
 property. If you're in debug mode, use a convenience function
-from Flutter to properly format the error. If you're in production mode, 
+from Flutter to properly format the error. If you're in production mode,
 send the error to the `onError` callback defined in the previous step.
 
 <!-- skip -->
