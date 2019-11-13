@@ -22,7 +22,7 @@ body_class: clock
                 </a>
             </p>
             <p>
-                <a class="youtube-link" href="https://twitter.com/intent/tweet?text=Clock%20Contest&amp;hashtags=Clock%20Contest" target="_blank">
+                <a class="youtube-link" href="#" data-video="DVGIBU109nI" data-toggle="modal" data-target="#videoModal">
                     <i class="fas fa-play-circle"></i> Watch video
                 </a>
             </p>
@@ -53,22 +53,22 @@ body_class: clock
             <h3 class="heading">Entries will be judged by a panel of Google experts against the following criteria:</h3>
             <div class="row clock__wtm-entries_container">
                 {% for entry in site.data.clock.entries %}
-                    <div class="col-3 entries__card">
-                        <div class="card">
-                            <div class="card-body entries__card-body">
-                                <p class="paragraph">{{entry.title}}</p>
-                                <i class="fas {{entry.logo}}"></i>
-                            </div>
+                    <div class="card">
+                        <div class="card-body entries__card-body">
+                            <p class="paragraph">{{entry.title}}</p>
+                            {% asset {{entry.logo}} class="fas" %}
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
         <div class="clock__wtm-logos col-10 row justify-content-center">
-            <p class="text-center col-lg-12">Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo!</p>
-            <div class="col-lg-4 text-center">Flutter</div>
-            <div class="col-lg-4 text-center">Google Assistant</div>
-            <div class="col-lg-4 text-center">Lenovo</div>
+            <p class="text-center col-lg-12 logos-heading">Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo!</p>
+            <div class="col-12 logos-container">
+                {% asset clock/Flutter-logo.svg alt='Flutter Logo' %}
+                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' %}
+                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' %}
+            </div>
         </div>
     </div>
 </section>
@@ -87,8 +87,8 @@ body_class: clock
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-6">
-            {% asset homepage/news-1.jpg alt='A news item image' class="card-img-top" %}
+        <div class="col-6 clock__prizes_image">
+            {% asset clock/iMac.png class="card-img-top" %}
         </div>
         <div class="col-12">
             <hr>
@@ -154,16 +154,17 @@ body_class: clock
             <h2 class="subheading">FAQ</h2>
             <div id="accordion">
                 {% for faq in site.data.clock.faqs %}
-                <div class="faqs_card">
-                    <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
-                        <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
-                            {{ faq.title }}
-                            <i class="fas fa-chevron-down fa-xs"></i>
-                        </button>
-                    </div>
-                    <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion">
-                        <div class="card-body faq__card-body">
-                            {{ faq.content }}
+                    <div class="faqs_card">
+                        <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
+                            <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
+                                {{ faq.title }}
+                                <i class="fas fa-chevron-down fa-xs"></i>
+                            </button>
+                        </div>
+                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion">
+                            <div class="card-body faq__card-body">
+                                {{ faq.content }}
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
@@ -171,3 +172,17 @@ body_class: clock
         </div>
     </div>
 </section>
+
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embedded-video-wrapper">
+                    <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto"
+                            src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
