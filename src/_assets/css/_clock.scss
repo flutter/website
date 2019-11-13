@@ -267,9 +267,16 @@
     }
   }
 
-  &__submissions {
+  // Style for submissions
+  &__submissions, &__contest {
+    padding: 48px 0;
+
     li {
       padding: 8px 0;
+    }
+
+    hr {
+      margin: 40px 0 0;
     }
 
     .subheading {
@@ -288,9 +295,13 @@
     }
   }
 
+  // Style for contest
+  &__contest {
+    padding: 0 0 80px;
+  }
+
   // Styles for section clock__faqs
   &__faqs {
-    margin-top: 100px;
     position: relative;
 
     &__texture {
@@ -329,6 +340,7 @@
 
     .subheading {
       font-size: 56px;
+      margin: 0 0 56px;
     }
 
     .faq__card-body {
