@@ -146,6 +146,31 @@ body_class: clock
     </div>
 </section>
 
+<section class="clock__submissions">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <h2 class="subheading">
+                Submission Requirements
+            </h2>
+            <p >
+                Here are the requirements, including some guidelines, for contest submissions. See the contest’s
+                Official Rules for full details.
+            </p>
+
+            {% for item in site.data.clock.submission_requirements %}
+                <h3 class="title">{{item.title}}</h3>
+                <ul>
+                    {% for subItem in item.subItems %}
+                        <li class="no-list-style">
+                            - {{subItem.text}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <section class="clock__faqs">
     <div class="clock__texture clock__faqs__texture"></div>
     <div class="clock__faqs_container row justify-content-center">

@@ -265,6 +265,7 @@
   &__submit {
     background-color: $clock-color-light-grey;
     color: $clock-color-dark;
+    margin-bottom: 80px;
     text-align: center;
 
     &_container {
@@ -284,8 +285,28 @@
     }
   }
 
+  &__submissions {
+    li {
+      padding: 8px 0;
+    }
+
+    .subheading {
+      font-size: 32px;
+      margin: 0 0 16px;
+    }
+
+    .paragraph {
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+
   // Styles for section clock__faqs
-  // Styles for general container
   &__faqs {
     margin-top: 100px;
     position: relative;
