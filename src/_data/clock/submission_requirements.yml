@@ -1,0 +1,42 @@
+- title: >
+    Design and data notes:
+  subItems:
+    - text: >
+       The ClockModel API with mock data is provided to you. Using this API is optional, but it provides system
+        information such as the brightness mode, weather, and time format.
+    - text: >
+        The clock design should use landscape mode, with a 5:3 aspect ratio.
+    - text: >
+        You may use Material Design icons.
+    - text: >
+        All other assets, fonts, icons, images, and so on should be your own, or licensed under a BSD-3, or OFL license
+        (for fonts).
+    - text: >
+        Your clock should not:
+      subItems:
+        - text: >
+            Have user interaction (such as tapping, gestures, dragging, mouse, keyboard, and so on).
+        - text: >
+            Play audio, including an alarm.
+        - text: >
+            Make network requests.
+        - text: >
+            Collect data in violation of applicable laws (including privacy laws).
+        - text: >
+            Contain copyrighted or trademarked content.
+
+- title: >
+    Submissions:
+  subItems:
+    - text: >
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWVdnocPZFH-xafvHddPY0o1SZj8EW4E5vVvJp1VfW5Ed1YQ/viewform">
+        Submit your final clock</a> by January 20th, 11:59pm PST (GMT-8).
+    - text: >
+        Your clock must be made public on <a href="https://github.com">GitHub</a> under a BSD-3 license (with assets
+        under a BSD-3 or OFL license, as appropriate) before February 5th, 2020. Your repo can be private during the
+        contest period.
+    - text: >
+        Specify on the submission form which platform (Android or iOS) you would like the judges to use when evaluating
+        your submission. Judges will not be testing on web.
+    - text: >
+        Please also submit an MP4 video (of less than 30 seconds) of your clock and a screenshot via the form.
