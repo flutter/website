@@ -5,6 +5,7 @@
   $clock-color-light-blue: #aecbfa;
   $clock-color-light-grey: #f8f9fa;
   $clock-color-grey: #555;
+  $color-code-block: #252525;
   font-family: $site-font-family-alt;
 
   &__texture {
@@ -229,12 +230,18 @@
       margin: 80px 0;
     }
 
+    .code-font {
+      color: $color-code-block;
+      font-family: $site-font-family-courier;
+    }
+
     .subheading {
       font-size: 56px;
       margin: 0 0 16px 0;
     }
 
     .paragraph {
+      font-size: 18px;
       margin-bottom: 24px;
     }
 
@@ -250,7 +257,7 @@
     }
 
     .sub-item:last-child {
-      padding-bottom: 16px;
+      padding-bottom: 0;
     }
   }
 
@@ -337,5 +344,10 @@
     i {
       transform: rotate(180deg);
     }
+  }
+
+  .no-list-style {
+    list-style: none;
+    margin-left: -16px;
   }
 }

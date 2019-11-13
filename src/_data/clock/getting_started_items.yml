@@ -1,21 +1,28 @@
 - title: >
-    Download the <a href="github.com/flutter/flutter_clock">Flutter Clock GitHub</a> repo using git clone.
+    Download the <a href="github.com/flutter/flutter_clock">Flutter Clock GitHub</a> repo using
+    <span class="code-font">git clone<span>.
 
 - title: >
-    Choose a sample clock and enter that folder using: <em>cd <path-to-repo>/flutter-clock/<name>_clock</em>
+    Choose a sample clock and enter that folder using: <span class="code-font">
+    cd <path-to-repo>/flutter-clock/&#60;name&#62;_clock</span>
   subItems:
   - text: >
      <a href="https://github.com/flutter/flutter_clock/analog_clock">Sample clock 1</a>: Basic analog clock.
   - text: >
       <a href="https://github.com/flutter/flutter_clock/digital_clock">Sample clock 2</a>: Basic digital clock.
 
-- title: Run the clock app in your IDE, or by using flutter run at the command line.
+- title: >
+    Run the clock app in your IDE, or by using <span class="code-font">flutter</span> run at the command line.
 
 - title: >
-    Build your clock inside a folder called <name>_clock. You can build upon the existing code, or you can start from
-    scratch. Either use flutter create . from the project root of an existing folder, or flutter create <my-app> to
-    start a new project. If you are new to Flutter, check out the
-    <a href="https://flutter.dev/docs/get-started/codelab">Write your first Flutter</a> app codelab.
+    Build your clock inside a folder called <span class="code-font">&#60;name&#62;_clock</span>.
+  noListItemStyle: true
+  subItems:
+  - text: >
+      You can build upon the existing code (<span class="code-font">analog_clock</span> or <span class="code-font">
+      digital_clock</span>), or you can start from scratch (<span class="code-font">create &#60;name&#62;_clock</span>). If you
+      are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab">Write your first Flutter
+      </a> app codelab.
 
 - title: >
     Prepare your clock for submission:
@@ -27,32 +34,38 @@
         <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable">
         the latest Flutter stable channel</a>.
     - text: >
-        In your <name>_clock directory, reduce the clock’s size:
+        In your <span class="code-font">&#60;name&#62;_clock</span> directory, reduce the clock’s size:
       subItems:
           - text: >
-              Delete the <name>_clock/ios, <name>_clock/android, and <name>_clock/web (if present) folders.
+              Delete the <span class="code-font">&#60;name&#62;_clock/ios</span>,
+              <span class="code-font">&#60;name&#62;_clock/android</span>, and
+              <span class="code-font">&#60;name&#62;_clock/web</span> (if present) folders.
           - text: >
-              Run flutter clean.
+              <span class="code-font">Run flutter clean</span>.
     - text: >
-        In your <path-to-repo>/flutter-clock folder, zip these two folders:
+        In your <span class="code-font"><path-to-repo>/flutter-clock</span> folder, zip these two folders:
       subItems:
           - text: >
-              Delete the <name>_clock/ios, <name>_clock/android, and <name>_clock/web (if present) folders.
+              <span class="code-font">flutter_clock_helper</span> (unedited)
           - text: >
-              Run flutter clean.
+              <span class="code-font">&#60;name&#62;_clock</span> (your clock)
 
 - title: >
-    Verify that your <project>.zip file works, using the following steps:
+    Verify that your <span class="code-font"><project>.zip</span> file works, using the following steps:
+  noListItemStyle: true
   subItems:
     - text: >
-        <em>flutter channel stable</em>
+        <span class="code-font">flutter channel stable</span>
     - text: >
-        <em>flutter upgrade</em>
+        <span class="code-font">flutter upgrade</span>
     - text: >
-        <em>unzip <project>.zip</em>
+        <span class="code-font">unzip <project>.zip</span>
     - text: >
-        <em>cd <name>_clock</em>
+        <span class="code-font">cd &#60;name&#62;_clock</span>
     - text: >
-        <em>flutter create</em>
+        <span class="code-font">flutter create</span>
     - text: >
-        <em>flutter run (on Android or iOS in landscape)</em>
+        <span class="code-font">flutter run</span> (on Android or iOS in landscape)
+- title: >
+   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWVdnocPZFH-xafvHddPY0o1SZj8EW4E5vVvJp1VfW5Ed1YQ/viewform">
+    Submit your clock</a>.
