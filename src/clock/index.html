@@ -16,7 +16,7 @@ body_class: clock
                 </a>
             </p>
             <p>
-                <a class="youtube-link" href="https://twitter.com/intent/tweet?text=Clock%20Contest&amp;hashtags=Clock%20Contest" target="_blank">
+                <a class="youtube-link" href="#" data-video="DVGIBU109nI" data-toggle="modal" data-target="#videoModal">
                     <i class="fas fa-play-circle"></i> Watch video
                 </a>
             </p>
@@ -167,62 +167,16 @@ body_class: clock
     </div>
 </section>
 
-<!-- <div class="center">
-    <h1 class="heading">Timing is everything. Stay tuned.</h1>
-    <div class="time-number">
-        <span class="digits_container days-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container hours-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container minutes-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container seconds-digits_container">00</span>
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embedded-video-wrapper">
+                    <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto"
+                            src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
-    <p class="share-twitter__paragraph">
-        While you wait, <a href="https://g.co/FlutterInteract" target="_blank">click here</a> to learn about our worldwide event: Flutter&nbsp;Interact.
-    </p>
 </div>
-<div class="animations">
-    <div class="vertical-line vertical-line--first"></div>
-    <div class="vertical-line vertical-line--second"></div>
-    <div class="vertical-line vertical-line--thrid"></div>
-    <div class="vertical-line vertical-line--fourth"></div>
-</div>
-
-                <li>
-                    {% if item.is_dropdown %}
-                    <div>
-                        <div id="getting-started-heading{{forloop.index}}">
-                            <button class="dropdown__button btn" data-toggle="collapse" data-target="#getting-started-collapse{{forloop.index}}" aria-expanded="false" aria-controls="getting-started-collapse{{forloop.index}}">
-                                <span class="tales">{{ item.title }}</span>
-                                <i class="fas fa-chevron-down fa-xs"></i>
-                            </button>
-                        </div>
-                        <div id="getting-started-collapse{{forloop.index}}" class="collapse" aria-labelledby="getting-started-heading{{forloop.index}}" data-parent="#accordion">
-                            <div class="card-body">
-                                {{ item.content }}
-                            </div>
-                        </div>
-                    </div>
-                    {% else %}
-                    {{item.title}}
-                    {% if item.link %}
-                    <a href="{{item.link}}">{{item.link_text}}</a>
-                    {% endif %}
-                    {% if item.subItems %}
-                    <ol type="a">
-                        {% for subItem in item.subItems %}
-                        <li>
-                            {{subItem.text}}
-                            {% if subItem.link %}
-                            <a href="{{subItem.link}}">{{subItem.link_text}}</a>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ol>
-                    {% endif %}
-                    {% endif %}
-                </li>
-
-
-{% asset countdown %} -->
