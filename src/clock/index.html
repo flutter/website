@@ -162,13 +162,13 @@ body_class: clock
             <h3 class="title">{{item.title}}</h3>
             <ul>
                 {% for subItem in item.subItems %}
-                <li class="no-list-style">
-                    - {{subItem.text}}
+                <li>
+                    {{subItem.text}}
                     {% if subItem.subItems %}
                         <ul>
                         {% for subItemSecondLevel in subItem.subItems %}
-                            <li class="no-list-style">
-                                - {{subItemSecondLevel.text}}
+                            <li>
+                                {{subItemSecondLevel.text}}
                             </li>
                         {% endfor %}
                         </ul>
@@ -195,8 +195,8 @@ body_class: clock
             </p>
             <ul>
                 {% for item in site.data.clock.contest_rules %}
-                    <li class="no-list-style">
-                        - {{item.title}}
+                    <li>
+                        {{item.title}}
                     </li>
                 {% endfor %}
             </ul>

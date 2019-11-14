@@ -80,7 +80,7 @@
     &_container {
       margin: 80px 0;
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       &_container {
@@ -202,7 +202,7 @@
         font-size: 20px;
         margin-bottom: 50px;
       }
-      
+
       .fas {
         bottom: 24px;
         left: 24px;
@@ -381,7 +381,7 @@
     .sub-item:last-child {
       padding-bottom: 0;
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       .subheading {
@@ -449,9 +449,9 @@
     font-family: $site-font-family-base;
 
     ul {
-      padding-left: 16px;
+      padding-left: 18px;
     }
-    
+
     li {
       font-size: 14px;
       padding: 8px 0;
