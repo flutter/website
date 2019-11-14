@@ -1,6 +1,5 @@
 .clock {
   $clock-color-dark: #212c34;
-  $clock-color-white: #fff;
   $clock-color-blue: #01579b;
   $clock-color-light-blue: #aecbfa;
   $clock-color-light-grey: #f8f9fa;
@@ -9,6 +8,7 @@
 
   color: $clock-color-grey;
   font-family: $site-font-family-alt;
+  font-size: 18px;
 
   &__texture {
     height: 100%;
@@ -37,7 +37,6 @@
 
     .youtube-link, .twitter-link {
       color: $twitter-color;
-      font-size: 18px;
 
       i {
         margin-right: 5px;
@@ -70,7 +69,7 @@
     position: relative;
 
     &__texture {
-      background-color: #FFF;
+      background-color: $site-color-white;;
       background-image: asset_url('clock/wtm__background-bottom.svg'), asset_url('clock/wtm__background-top.svg');
       background-position: right bottom -20px, left top 100px;
       background-repeat: no-repeat;
@@ -143,7 +142,8 @@
   // Styles for prizes container
   &__prizes {
     background-color: $clock-color-blue;
-    color: $clock-color-white;
+    color: $site-color-white;
+    font-family: $site-font-family-base;
     position: relative;
 
     ul {
@@ -181,12 +181,7 @@
     }
 
     .paragraph {
-      font-family: $site-font-family-base;
       font-size: 20px;
-    }
-
-    .info-paragraph {
-      font-size: 18px;
     }
 
     &__texture {
@@ -199,8 +194,6 @@
 
   // Styles for section clock__getting (Getting Started)
   &__getting {
-    color: $clock-color-grey;
-
     ol {
       padding-left: 16px;
     }
@@ -223,7 +216,6 @@
 
     .paragraph {
       font-family: $site-font-family-base;
-      font-size: 18px;
       margin-bottom: 24px;
     }
 
@@ -270,8 +262,11 @@
   // Style for submissions
   &__submissions, &__contest {
     font-family: $site-font-family-base;
-    font-size: 18px;
     padding: 48px 0;
+
+    ul {
+      padding-left: 16px;
+    }
 
     li {
       padding: 8px 0;
@@ -282,13 +277,12 @@
     }
 
     .subheading {
-      font-family: $site-font-family-alt;
       font-size: 32px;
       margin: 0 0 16px;
     }
 
     .paragraph {
-      font-size: 18px;
+      margin-bottom: 40px;
     }
 
     .title {
