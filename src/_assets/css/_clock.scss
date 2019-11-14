@@ -340,6 +340,7 @@
       font-size: 16px;
       font-weight: 500;
       padding: 16px 0;
+      word-break: break-word;
     }
 
     &_container {
@@ -438,10 +439,15 @@
     }
   }
 
-  &__submissions {
+  // Style for submissions
+  &__submissions, &__contest {
     li {
       font-size: 14px;
       padding: 8px 0;
+    }
+
+    hr {
+      margin: 40px 0 0;
     }
 
     .subheading {
@@ -483,6 +489,11 @@
         margin: 0;
       }
     }
+  }
+
+  // Style for contest
+  &__contest {
+    padding-top: 48px;
   }
 
   // Styles for section clock__faqs

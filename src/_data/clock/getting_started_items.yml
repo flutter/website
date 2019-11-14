@@ -4,12 +4,12 @@
 
 - title: >
     Choose a sample clock and enter that folder using: <span class="code-font">
-    cd <path-to-repo>/flutter-clock/&#60;name&#62;_clock</span>
+    cd &#60;path-to-repo&#62;/flutter_clock/&#60;name&#62;_clock</span>
   subItems:
   - text: >
-     <a href="https://github.com/flutter/flutter_clock/analog_clock">Sample clock 1</a>: Basic analog clock.
+     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/analog_clock">Basic analog clock</a>.
   - text: >
-      <a href="https://github.com/flutter/flutter_clock/digital_clock">Sample clock 2</a>: Basic digital clock.
+      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/digital_clock">Basic digital clock</a>.
 
 - title: >
     Run the clock app in your IDE, or by using <span class="code-font">flutter</span> run at the command line.
@@ -20,9 +20,9 @@
   subItems:
   - text: >
       You can build upon the existing code (<span class="code-font">analog_clock</span> or <span class="code-font">
-      digital_clock</span>), or you can start from scratch (<span class="code-font">create &#60;name&#62;_clock</span>). If you
-      are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab">Write your first Flutter
-      </a> app codelab.
+      digital_clock</span>), or you can start from scratch (<span class="code-font">flutter create &#60;name&#62;_clock</span>).
+      If you are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab">
+      Write your first Flutter app</a> codelab.
 
 - title: >
     Prepare your clock for submission:
@@ -43,7 +43,7 @@
           - text: >
               <span class="code-font">Run flutter clean</span>.
     - text: >
-        In your <span class="code-font"><path-to-repo>/flutter-clock</span> folder, zip these two folders:
+        In your <span class="code-font">&#60;path-to-repo&#62;/flutter_clock</span> folder, zip these two folders:
       subItems:
           - text: >
               <span class="code-font">flutter_clock_helper</span> (unedited)
@@ -51,7 +51,7 @@
               <span class="code-font">&#60;name&#62;_clock</span> (your clock)
 
 - title: >
-    Verify that your <span class="code-font"><project>.zip</span> file works, using the following steps:
+    Verify that your <span class="code-font">&#60;project&#62;.zip</span> file works, using the following steps:
   noListItemStyle: true
   subItems:
     - text: >
@@ -59,7 +59,7 @@
     - text: >
         <span class="code-font">flutter upgrade</span>
     - text: >
-        <span class="code-font">unzip <project>.zip</span>
+        <span class="code-font">unzip &#60;project&#62;.zip</span>
     - text: >
         <span class="code-font">cd &#60;name&#62;_clock</span>
     - text: >

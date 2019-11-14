@@ -154,19 +154,52 @@ body_class: clock
             </h2>
             <p class="paragraph">
                 Here are the requirements, including some guidelines, for contest submissions. See the contest’s
-                Official Rules for full details.
+                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit">
+                Official Rules</a> for full details.
             </p>
 
             {% for item in site.data.clock.submission_requirements %}
-                <h3 class="title">{{item.title}}</h3>
-                <ul>
-                    {% for subItem in item.subItems %}
-                        <li class="no-list-style">
-                            - {{subItem.text}}
-                        </li>
-                    {% endfor %}
-                </ul>
+            <h3 class="title">{{item.title}}</h3>
+            <ul>
+                {% for subItem in item.subItems %}
+                <li class="no-list-style">
+                    - {{subItem.text}}
+                    {% if subItem.subItems %}
+                        <ul>
+                        {% for subItemSecondLevel in subItem.subItems %}
+                            <li class="no-list-style">
+                                - {{subItemSecondLevel.text}}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
             {% endfor %}
+            <hr>
+        </div>
+    </div>
+</section>
+
+<section class="clock__contest">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h2 class="subheading">
+                Contest Rules
+            </h2>
+            <p >
+                Full details and rules are provided in our
+                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing">
+                Official Rules</a>. Here’s a summary of some of the key points:
+            </p>
+            <ul>
+                {% for item in site.data.clock.contest_rules %}
+                    <li class="no-list-style">
+                        - {{item.title}}
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </section>
