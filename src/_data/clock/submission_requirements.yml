@@ -2,8 +2,8 @@
     Design and data notes:
   subItems:
     - text: >
-       The ClockModel API with mock data is provided to you. Using this API is optional, but it provides system
-        information such as the brightness mode, weather, and time format.
+       The <span class="code-font">ClockModel</span> API with mock data is provided to you. Using this API is optional,
+        but it provides system information such as the brightness mode, weather, and time format.
     - text: >
         The clock design should use landscape mode, with a 5:3 aspect ratio.
     - text: >

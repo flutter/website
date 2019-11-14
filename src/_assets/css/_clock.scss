@@ -6,6 +6,8 @@
   $clock-color-light-grey: #f8f9fa;
   $clock-color-grey: #555;
   $color-code-block: #252525;
+
+  color: $clock-color-grey;
   font-family: $site-font-family-alt;
 
   &__texture {
@@ -179,6 +181,7 @@
     }
 
     .paragraph {
+      font-family: $site-font-family-base;
       font-size: 20px;
     }
 
@@ -196,7 +199,7 @@
 
   // Styles for section clock__getting (Getting Started)
   &__getting {
-    color: $clock-color-dark;
+    color: $clock-color-grey;
 
     ol {
       padding-left: 16px;
@@ -212,17 +215,14 @@
       margin: 80px 0;
     }
 
-    .code-font {
-      color: $color-code-block;
-      font-family: $site-font-family-courier;
-    }
-
     .subheading {
+      color: $clock-color-dark;
       font-size: 56px;
       margin: 0 0 16px 0;
     }
 
     .paragraph {
+      font-family: $site-font-family-base;
       font-size: 18px;
       margin-bottom: 24px;
     }
@@ -269,6 +269,8 @@
 
   // Style for submissions
   &__submissions, &__contest {
+    font-family: $site-font-family-base;
+    font-size: 18px;
     padding: 48px 0;
 
     li {
@@ -280,6 +282,7 @@
     }
 
     .subheading {
+      font-family: $site-font-family-alt;
       font-size: 32px;
       margin: 0 0 16px;
     }
@@ -289,6 +292,7 @@
     }
 
     .title {
+      font-family: $site-font-family-base;
       font-size: 18px;
       font-weight: 500;
       margin: 0;
@@ -313,7 +317,7 @@
 
       .faqs_button {
         align-items: center;
-        color: $clock-color-dark;
+        color: $clock-color-grey;
         display: flex;
         justify-content: space-between;
         padding: 0;
@@ -339,12 +343,14 @@
     }
 
     .subheading {
+      color: $clock-color-dark;
       font-size: 56px;
       margin: 0 0 56px;
     }
 
     .faq__card-body {
-      padding: 0 24px 24px 0;
+      font-family: $site-font-family-base;
+      padding: 0 40px 24px 0;
     }
   }
 
@@ -354,6 +360,10 @@
     outline: none;
   }
 
+  .code-font {
+    color: $color-code-block;
+    font-family: $site-font-family-courier;
+  }
 
   .dropdown__button[aria-expanded="true"] {
     i {
