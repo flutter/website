@@ -5,7 +5,7 @@ short-title: Widgets
 
 Create beautiful apps faster with Flutter's collection of visual, structural,
 platform, and interactive widgets. In addition to browsing widgets by category,
-you can also see all the widgets in the [widget index](/docs/reference/widgets).
+you can also see all the widgets in the [widget index][].
 
 <div class="card-deck card-deck--responsive">
 {% assign categories = site.data.catalog.index | sort: 'name' -%}
@@ -21,3 +21,6 @@ you can also see all the widgets in the [widget index](/docs/reference/widgets).
     </div>
 {% endfor %}
 </div>
+
+
+[widget index]: /docs/reference/widgets

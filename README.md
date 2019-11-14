@@ -212,7 +212,7 @@ refer to the following docs:
 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
-* [Examples (and code excerpts)](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
+* [Examples](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
 * [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
 
 Also check out the site-shared

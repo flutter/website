@@ -29,8 +29,8 @@ reactive frameworks, you will find packages and tutorials listed on the
 
 For illustration, consider the following simple app.
 
-The app has three separate screens: a login prompt, a catalog,
-and a cart (represented by the `MyLoginScreen`, `MyCatalog`,
+The app has two separate screens: a catalog,
+and a cart (represented by the `MyCatalog`,
 and `MyCart` widgets, respectively). It could be a shopping app,
 but you can imagine the same structure in a simple social networking
 app (replace catalog for "wall" and cart for "favorites").
@@ -40,7 +40,7 @@ and a scrolling view of many list items (`MyListItems`).
 
 Here's the app visualized as a widget tree.
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and  MyCatalog and MyCart below it. MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
