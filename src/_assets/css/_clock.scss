@@ -10,6 +10,7 @@
   font-family: $site-font-family-alt;
   font-size: 18px;
 
+  // Background texture shared by all sections
   &__texture {
     height: 100%;
     margin-left: calc(50% - 50vw);
@@ -69,7 +70,7 @@
     position: relative;
 
     &__texture {
-      background-color: $site-color-white;;
+      background-color: $site-color-white;
       background-image: asset_url('clock/wtm__background-bottom.svg'), asset_url('clock/wtm__background-top.svg');
       background-position: right bottom -20px, left top 100px;
       background-repeat: no-repeat;
@@ -99,6 +100,7 @@
     }
   }
 
+  // Styles for wtm entries
   &__wtm-entries {
     margin-top: 72px;
 
@@ -139,7 +141,6 @@
   }
 
   // Styles for section clock__prizes
-  // Styles for prizes container
   &__prizes {
     background-color: $clock-color-blue;
     color: $site-color-white;
@@ -169,6 +170,13 @@
       padding-top: 126px;
     }
 
+    &__texture {
+      background-color: $clock-color-blue;
+      background-image: asset_url('clock/prizes__background.svg');
+      background-position: right 50px top 150px;
+      background-repeat: no-repeat;
+    }
+
     .prizes-text {
       display: inline-block;
       font-size: 20px;
@@ -184,11 +192,9 @@
       font-size: 20px;
     }
 
-    &__texture {
-      background-color: $clock-color-blue;
-      background-image: asset_url('clock/prizes__background.svg');
-      background-position: right 50px top 150px;
-      background-repeat: no-repeat;
+    .prize-link {
+      color: $site-color-white;
+      text-decoration: underline;
     }
   }
 
