@@ -83,11 +83,10 @@
 
   // Styles for wtm copy
   &__wtm-copy {
-    color: $clock-color-dark; //TODO: Change for a variable
-
     .subheading {
-      margin: 0 0 24px;
+      color: $clock-color-dark;
       font-size: 56px;
+      margin: 0 0 24px;
     }
 
     .paragraph {
@@ -109,6 +108,7 @@
     }
 
     .heading {
+      color: $clock-color-dark;
       font-size: 32px;
       margin: 0 auto 88px;
       max-width: 630px;
