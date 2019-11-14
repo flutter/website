@@ -177,7 +177,6 @@
     Once you <a href="https://flutter.dev/docs/get-started/web">enable web support</a>, test your app by selecting
     Chrome as the target device in your IDE, or at the command line with <em>flutter run -d chrome</em>. Build a web
     version of your app for deployment using <em>flutter build web</em>. Then, you can host it using
-    <a href="https://pages.github.com/">GitHub Pages</a>,
-    <a href="https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469">Firebase
-    </a>, or any other web hosting solution. If you share a link to your app on social media, be sure to include the
+    <a href="https://pages.github.com/">GitHub Pages</a>, <a href="https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469">Firebase</a>,
+    or any other web hosting solution. If you share a link to your app on social media, be sure to include the
     #FlutterClock hashtag!
