@@ -565,7 +565,7 @@
 
     .code-font {
       color: $color-code-block;
-      font-family: $site-font-family-courier;
+      // font-family: $site-font-family-courier;
     }
 
     @include media-breakpoint-up(sm) {
@@ -677,7 +677,7 @@
 
   .code-font {
     color: $color-code-block;
-    font-family: $site-font-family-courier;
+    // font-family: $site-font-family-courier;
   }
 
   .dropdown__button[aria-expanded="true"] {
