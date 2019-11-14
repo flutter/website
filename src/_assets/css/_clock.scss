@@ -206,9 +206,11 @@
         width: 190px;
       }
 
-      .paragraph {
-        font-size: 20px;
-        margin-bottom: 50px;
+      .entries__card-body {
+        .paragraph {
+          font-size: 20px;
+          margin-bottom: 50px;
+        }
       }
       
       .fas {
