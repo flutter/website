@@ -62,7 +62,9 @@ body_class: clock
             </div>
         </div>
         <div class="clock__wtm-logos col-12 col-lg-10 justify-content-center">
-            <p class="text-center logos-heading">Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo!</p>
+            <p class="text-center logos-heading">
+                Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
+            </p>
             <div class="logos-container">
                 {% asset clock/Flutter-logo.svg alt='Flutter Logo' %}
                 {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' %}
@@ -104,7 +106,7 @@ body_class: clock
 <section class="clock__getting">
     <div class="clock__getting_container row justify-content-center no-gutters">
         <div class="col-lg-10">
-            <h2 class="subheading">Getting started</h2>
+            <h2 class="subheading">Getting Started</h2>
             <p class="paragraph">Use the following instructions to get started:</p>
             <ol type="1">
                 {% for item in site.data.clock.getting_started_items %}
@@ -162,13 +164,13 @@ body_class: clock
             <h3 class="title">{{item.title}}</h3>
             <ul>
                 {% for subItem in item.subItems %}
-                <li class="no-list-style">
-                    - {{subItem.text}}
+                <li>
+                    {{subItem.text}}
                     {% if subItem.subItems %}
                         <ul>
                         {% for subItemSecondLevel in subItem.subItems %}
-                            <li class="no-list-style">
-                                - {{subItemSecondLevel.text}}
+                            <li>
+                                {{subItemSecondLevel.text}}
                             </li>
                         {% endfor %}
                         </ul>
@@ -195,8 +197,8 @@ body_class: clock
             </p>
             <ul>
                 {% for item in site.data.clock.contest_rules %}
-                    <li class="no-list-style">
-                        - {{item.title}}
+                    <li>
+                        {{item.title}}
                     </li>
                 {% endfor %}
             </ul>

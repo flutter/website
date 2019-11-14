@@ -117,8 +117,6 @@
 
   // Styles for wtm copy
   &__wtm-copy {
-    color: $clock-color-dark;
-
     .subheading {
       color: $clock-color-dark;
       font-size: 24px;
@@ -243,7 +241,7 @@
           margin-bottom: 50px;
         }
       }
-      
+
       .fas {
         bottom: 24px;
         left: 24px;
@@ -350,7 +348,7 @@
       background-repeat: no-repeat;
       background-size: 90%, 100%;
     }
-    
+
     .prize-link {
       color: $site-color-white;
       text-decoration: underline;
@@ -536,9 +534,9 @@
     font-family: $site-font-family-base;
 
     ul {
-      padding-left: 16px;
+      padding-left: 18px;
     }
-    
+
     li {
       font-size: 14px;
       padding: 8px 0;
