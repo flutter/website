@@ -34,7 +34,7 @@ into a single, minified source file that can be deployed to
 any web server.
 
 In this early stage of development,
-we envision the web version of Flutter 
+we envision the web version of Flutter
 being valuable in many scenarios. For example:
 
 **A connected [Progressive Web Application][] built with Flutter**
@@ -77,7 +77,7 @@ try it out. Before you get started, here are a few notes:
 The following resources can help you get started:
 
 * To add web support to an existing app, or to create a
-  new app that includes web support, see 
+  new app that includes web support, see
   [Building a web application with Flutter][].
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].

@@ -35,10 +35,10 @@ This recipe uses the following steps:
 
 ## 1. Add the dependencies
 
-To work with SQLite databases, import the `sqflite` and `path` packages. 
+To work with SQLite databases, import the `sqflite` and `path` packages.
 
   * The `sqflite` package provides classes and functions to
-    interact with a SQLite database. 
+    interact with a SQLite database.
   * The `path` package provides functions to
     define the location for storing the database on disk.
 
@@ -76,11 +76,11 @@ class Dog {
 
   Dog({this.id, this.name, this.age});
 }
-``` 
+```
 
 ## 3. Open the database
 
-Before reading and writing data to the database, open a connection 
+Before reading and writing data to the database, open a connection
 to the database. This involves two steps:
 
   1. Define the path to the database file using `getDatabasesPath()` from the
@@ -120,7 +120,7 @@ documentation](https://www.sqlite.org/datatype3.html).
 <!-- skip -->
 ```dart
 final Future<Database> database = openDatabase(
-  // Set the path to the database. 
+  // Set the path to the database.
   join(await getDatabasesPath(), 'doggie_database.db'),
   // When the database is first created, create a table to store dogs.
   onCreate: (db, version) {
@@ -133,11 +133,11 @@ final Future<Database> database = openDatabase(
   // path to perform database upgrades and downgrades.
   version: 1,
 );
-``` 
+```
 
 ## 5. Insert a Dog into the database
 
-Now that you have a database with a table suitable for storing information 
+Now that you have a database with a table suitable for storing information
 about various dogs, it's time to read and write data.
 
 First, insert a `Dog` into the `dogs` table. This involves two steps:
@@ -157,7 +157,7 @@ class Dog {
 
   Dog({this.id, this.name, this.age});
 
-  // Convert a Dog into a Map. The keys must correspond to the names of the 
+  // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, dynamic> toMap() {
     return {
@@ -173,9 +173,9 @@ Future<void> insertDog(Dog dog) async {
   // Get a reference to the database.
   final Database db = await database;
 
-  // Insert the Dog into the correct table. You might also specify the 
-  // `conflictAlgorithm` to use in case the same dog is inserted twice. 
-  // 
+  // Insert the Dog into the correct table. You might also specify the
+  // `conflictAlgorithm` to use in case the same dog is inserted twice.
+  //
   // In this case, replace any previous data.
   await db.insert(
     'dogs',
@@ -186,8 +186,8 @@ Future<void> insertDog(Dog dog) async {
 
 // Create a Dog and add it to the dogs table.
 final fido = Dog(
-  id: 0, 
-  name: 'Fido', 
+  id: 0,
+  name: 'Fido',
   age: 35,
 );
 
@@ -201,7 +201,7 @@ for a specific dog or a list of all dogs. This involves two steps:
 
   1. Run a `query` against the `dogs` table. This returns a `List<Map>`.
   2. Convert the `List<Map>` into a `List<Dog>`.
-  
+
 <!-- skip -->
 ```dart
 // A method that retrieves all the dogs from the dogs table.
@@ -258,8 +258,8 @@ Future<void> updateDog(Dog dog) async {
 
 // Update Fido's age.
 await updateDog(Dog(
-  id: 0, 
-  name: 'Fido', 
+  id: 0,
+  name: 'Fido',
   age: 42,
 ));
 
@@ -269,7 +269,7 @@ print(await dogs()); // Prints Fido with age 42.
 
 {{site.alert.warning}}
   Always use `whereArgs` to pass arguments to a `where` statement.
-  This helps safeguard against SQL injection attacks. 
+  This helps safeguard against SQL injection attacks.
 
   Do not use string interpolation, such as `where: "id = ${dog.id}"`!
 {{site.alert.end}}
@@ -280,7 +280,7 @@ print(await dogs()); // Prints Fido with age 42.
 In addition to inserting and updating information about Dogs,
 you can also remove dogs from the database. To delete data, use the
 [`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
-method from the `sqflite` library. 
+method from the `sqflite` library.
 
 In this section, create a function that takes an id and deletes the dog with
 a matching id from the database. To make this work, you must provide a `where`

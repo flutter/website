@@ -223,7 +223,7 @@ You can toggle display of the performance overlay as follows:
 
 #### Using the Flutter inspector
 
-The easiest way to enable the PerformanceOverlay widget is 
+The easiest way to enable the PerformanceOverlay widget is
 from the Flutter inspector, which is available in the
 [Inspector view][] in [DevTools][]. Simply click the
 **Performance Overlay** button to toggle the overlay
@@ -381,7 +381,7 @@ For details on how to do this, see [Show performance data][]
 ## Benchmarking
 
 You can measure and track your app’s performance by writing
-benchmark tests  The Flutter Driver library provides support
+benchmark tests. The Flutter Driver library provides support
 for benchmarking. Using this integration test framework,
 you can generate metrics to track the following:
 

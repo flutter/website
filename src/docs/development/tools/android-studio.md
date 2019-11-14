@@ -221,7 +221,7 @@ the spinning icons also display in the code pane to help you
 visualize which rebuilds are happening.
 
 Note that numerous rebuilds doesn't necessarily indicate a problem.
-Typically you should only worry about excessive rebuilds if you have 
+Typically you should only worry about excessive rebuilds if you have
 already run the app in profile mode and verified that the performance
 is not what you want.
 

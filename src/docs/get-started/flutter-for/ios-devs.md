@@ -20,7 +20,7 @@ but it has a plugin system to communicate with iOS (and Android) for non-UI
 tasks. If you're an expert in iOS development, you don't have to relearn
 everything to use Flutter.
 
-Flutter also already makes a number of adaptations in the framework for you 
+Flutter also already makes a number of adaptations in the framework for you
 when running on iOS. For a list, see [Platform adaptations](/docs/resources/platform-adaptations).
 
 This document can be used as a cookbook by jumping around and finding questions

@@ -29,8 +29,8 @@ reactive frameworks, you will find packages and tutorials listed on the
 
 For illustration, consider the following simple app.
 
-The app has three separate screens: a login prompt, a catalog,
-and a cart (represented by the `MyLoginScreen`, `MyCatalog`,
+The app has two separate screens: a catalog,
+and a cart (represented by the `MyCatalog`,
 and `MyCart` widgets, respectively). It could be a shopping app,
 but you can imagine the same structure in a simple social networking
 app (replace catalog for "wall" and cart for "favorites").
@@ -40,7 +40,7 @@ and a scrolling view of many list items (`MyListItems`).
 
 Here's the app visualized as a widget tree.
 
-{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and MyLoginScreen, MyCatalog and MyCart below it. MyLoginScreen and MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
+{% asset development/data-and-backend/state-mgmt/simple-widget-tree alt="A widget tree with MyApp at the top, and  MyCatalog and MyCart below it. MyCart area leaf nodes, but MyCatalog have two children: MyAppBar and a list of MyListItems." %}
 
 {% comment %}
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
@@ -52,7 +52,7 @@ access to state that "belongs" elsewhere. For example, each
 to see if the item that it's displaying is already in the cart.
 
 This takes us to our first question: where should we put the current
-state of the cart? 
+state of the cart?
 
 
 ## Lifting state up
@@ -195,13 +195,13 @@ With `provider`, you don't need to worry about callbacks or
 ## ChangeNotifier
 
 `ChangeNotifier` is a simple class included in the Flutter SDK which provides
-change notification to its listeners. In other words, if something is 
-a `ChangeNotifier`, you can subscribe to its changes. (It is a form of 
+change notification to its listeners. In other words, if something is
+a `ChangeNotifier`, you can subscribe to its changes. (It is a form of
 Observable, for those familiar with the term.)
 
-In `provider`, `ChangeNotifier` is one way to encapsulate your application 
-state. For very simple apps, you get by with a single `ChangeNotifier`. 
-In complex ones, you'll have several models, and therefore several 
+In `provider`, `ChangeNotifier` is one way to encapsulate your application
+state. For very simple apps, you get by with a single `ChangeNotifier`.
+In complex ones, you'll have several models, and therefore several
 `ChangeNotifiers`. (You don't need to use `ChangeNotifier` with `provider`
 at all, but it's an easy class to work with.)
 
@@ -229,12 +229,12 @@ class CartModel extends [!ChangeNotifier!] {
 }
 ```
 
-The only code that is specific to `ChangeNotifier` is the call 
-to `notifyListeners()`. Call this method any time the model changes in a way 
-that might change your app's UI. Everything else in `CartModel` is the 
+The only code that is specific to `ChangeNotifier` is the call
+to `notifyListeners()`. Call this method any time the model changes in a way
+that might change your app's UI. Everything else in `CartModel` is the
 model itself and its business logic.
 
-`ChangeNotifier` is part of `flutter:foundation` and doesn't depend on 
+`ChangeNotifier` is part of `flutter:foundation` and doesn't depend on
 any higher-level classes in Flutter. It's easily testable (you don't even need
 to use [widget testing](/docs/testing#widget-tests) for it). For example,
 here's a simple unit test of `CartModel`:
@@ -254,11 +254,11 @@ test('adding item increases total cost', () {
 
 ## ChangeNotifierProvider
 
-`ChangeNotifierProvider` is the widget that provides an instance of 
+`ChangeNotifierProvider` is the widget that provides an instance of
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
-will need to access it. In the case of `CartModel`, that means somewhere 
+will need to access it. In the case of `CartModel`, that means somewhere
 above both `MyCart` and `MyCatalog`.
 
 You don't want to place `ChangeNotifierProvider` higher than necessary
@@ -280,7 +280,7 @@ void main() {
 Note that we're defining a builder which will create a new instance
 of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
 `CartModel` unless absolutely necessary. It will also automatically call
-`dispose()` on `CartModel` when the instance is no longer needed.  
+`dispose()` on `CartModel` when the instance is no longer needed.
 
 If you want to provide more than one class, you can use `MultiProvider`:
 
@@ -330,9 +330,9 @@ in your model, all the builder methods of all the corresponding
 The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
 
-The second argument of the builder function is the instance of 
+The second argument of the builder function is the instance of
 the `ChangeNotifier`. It's what we were asking for in the first place. You can
-use the data in the model to define what the UI should look like 
+use the data in the model to define what the UI should look like
 at any given point.
 
 The third argument is `child`, which is there for optimization.
@@ -406,7 +406,7 @@ but that would be wasteful. We'd be asking the framework to
 rebuild a widget that doesn't need to be rebuilt.
 
 For this use case, we can use `Provider.of`, with the `listen` parameter
-set to `false`. 
+set to `false`.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
