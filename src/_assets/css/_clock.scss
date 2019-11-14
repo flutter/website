@@ -52,7 +52,7 @@
 
     &__texture {
       background-color: $flutter-dark-blue-texture;
-      background-image: asset_url('clock/hero-pattern__background.svg');
+      background-image: asset_url('clock/hero-pattern__background-mobile.svg');
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -62,6 +62,13 @@
         font-size: 72px;
         margin: 120px auto 40px;
         max-width: 642px;
+      }
+
+      &__texture {
+        background-color: $flutter-dark-blue-texture;
+        background-image: asset_url('clock/hero-pattern__background.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
   }
@@ -73,8 +80,9 @@
     &__texture {
       background-color: $site-color-white;
       background-image: asset_url('clock/wtm__background-bottom.svg'), asset_url('clock/wtm__background-top.svg');
-      background-position: right bottom 72vh, left top 100px;
+      background-position: right top 200px, left top 50px;
       background-repeat: no-repeat;
+      background-size: 25%, 35%;
     }
 
     &_container {
@@ -89,6 +97,7 @@
 
       &__texture {
         background-position: right bottom 50vh, left top 100px;
+        background-size: initial;
       }
     }
   }
@@ -96,7 +105,6 @@
   // Styles for wtm copy
   &__wtm-copy {
     color: $clock-color-dark;
-    margin-bottom: 96px;
 
     .subheading {
       color: $clock-color-dark;
@@ -299,6 +307,14 @@
       margin-bottom: 0;
     }
 
+    &__texture {
+      background-color: $clock-color-blue;
+      background-image: asset_url('clock/prizes__background.svg');
+      background-position: right 20px top 25px;
+      background-repeat: no-repeat;
+      background-size: 90%, 100%;
+    }
+    
     .prize-link {
       color: $site-color-white;
       text-decoration: underline;
@@ -312,6 +328,11 @@
 
       &_image {
         padding-top: 126px;
+      }
+
+      &__texture {
+        background-position: right 50px top 150px;
+        background-size: inherit;
       }
 
       .prizes-text {
