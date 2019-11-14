@@ -11,10 +11,10 @@ TODO(jmagman): add the pre-built framework alternative and review.
 To integrate a Flutter module into your app, use the following steps:
 
  1. [Create Flutter Module](#create-a-flutter-module)
-    Creates the Flutter project which is hosted in the existing app.
+   f Creates the Flutter project that is hosted in the existing app.
  1. [Add Module Dependency in Existing
     App](#make-the-host-app-depend-on-the-flutter-module)
-    Sets up XCode to include your Flutter project into the build of your
+    Sets up Xcode to include your Flutter project into the build of your
     existing app.
 
 ## Create a Flutter module
@@ -27,8 +27,8 @@ If you're starting off with an *existing* host app for either platform, you'll
 likely want to include your Flutter project in that app as some form of library
 instead.
 
-In order to embed Flutter like a library, use the Flutter module template.
-Executing `flutter create -t module xxx` produces a Flutter project containing a
+In order to embed Flutter as a library, use the Flutter module template.
+Executing `flutter create -t module xxx` produces a Flutter project with a
 CocoaPods pod designed for consumption by your existing host app.
 
 Assume you have an existing iOS app at `some/path/MyApp`, and that you
@@ -40,14 +40,14 @@ flutter create -t module my_flutter
 ```
 
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
-code to get you started and a `.ios/` hidden subfolder. The `.ios/` folder wraps
-up the module project that contains some Cocoapods and a helper Ruby script.
+code to get you started, and a `.ios/` hidden subfolder. The `.ios/` folder wraps
+the module project that contains some CocoaPods and a helper Ruby script.
 
 ## Make the host app depend on the Flutter module
 
 The description below assumes that your existing iOS app has a structure similar
-to what you get by asking Xcode version 10.0 to generate a new "Single View App"
-project using Objective-C. If your existing app has a different folder structure
+to what you get by asking Xcode to generate a new "Single View App" project
+using Objective-C. If your existing app has a different folder structure
 and/or existing `.xcconfig` files, you can reuse those, but you'll probably need
 to adjust some of the relative paths mentioned below accordingly.
 
