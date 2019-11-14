@@ -92,8 +92,8 @@ experience becomes visible. To minimize this delay, you can warm-up a
 your pre-warmed `FlutterEngine` instead.
 
 To pre-warm a `FlutterEngine`, find a reasonable location in your app to
-instantiate a `FlutterEngine`. For a small app or a prototype, pre-warming a
-`FlutterEngine` in the `Application` class might be a reasonable option:
+instantiate a `FlutterEngine`. As an arbitrary location, the following example
+pre-warms a `FlutterEngine` in the `Application` class:
 
 ```java
 public class MyApplication extends Application {
@@ -157,10 +157,24 @@ Now, when you launch `FlutterActivity`, there is significantly less delay in
 the display of Flutter content.
 
 {{site.alert.note}}
-  When re-using a cached engine across multiple `FlutterActivity` instances, you 
-  assume responsibility for showing the desired content for the given `Activity`.
-   Strategies for switching content in a shared `FlutterEngine` are beyond the 
-   scope of this guide. TODO(mattcarroll): link to resource.
+  When using a cached `FlutterEngine`, that `FlutterEngine` outlives any
+  `FlutterActivity` or `FlutterFragment` that displays it. You should keep in
+  mind that Dart code begins executing as soon as you pre-warm the 
+  `FlutterEngine`, and continues executing after the destruction of your
+  `FlutterActivity`/`FlutterFragment`. To stop executing and clear resources,
+  obtain your `FlutterEngine` from the `FlutterEngineCache` and destroy the
+  `FlutterEngine` with `FlutterEngine.destroy()`.
+{{site.alert.end}}
+
+{{site.alert.note}}
+  Runtime performance is not the only reason that one might pre-warm and cache
+  a `FlutterEngine`. A pre-warmed `FlutterEngine` executes Dart code independent
+  from a `FlutterActivity`, which allows such a `FlutterEngine` to be used to
+  execute arbitrary Dart code at any moment in time. Non-UI application logic
+  can be executed in a `FlutterEngine`, like networking and data caching, as 
+  well as background behavior within a `Service` or elsewhere. When using a
+  `FlutterEngine` to execute behavior in the background, be sure to accomodate
+  all Android restrictions on background execution.
 {{site.alert.end}}
 
 {{site.alert.note}}
