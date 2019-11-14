@@ -11,12 +11,18 @@ body_class: clock
         <div class="col-12 col-md-10">
             <h1 class="heading">Take the Flutter Clock challenge</h1>
             <p>
-                <a class="twitter-link" href="https://twitter.com/intent/tweet?text=Clock%20Contest&amp;hashtags=Clock%20Contest" target="_blank">
+                <a
+                    class="twitter-link"
+                    href="https://twitter.com/intent/tweet?hashtags=FlutterClock&amp;url=https%3A%2F%2Fflutter.dev/clock"
+                    title="Share to Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                     <i class="fab fa-twitter"></i> Share #FlutterClock with friends
                 </a>
             </p>
             <p>
-                <a class="youtube-link" href="#" data-video="DVGIBU109nI" data-toggle="modal" data-target="#videoModal">
+                <a class="youtube-link" href="#" data-video="rxs69_szCkE" data-toggle="modal" data-target="#videoModal">
                     <i class="fas fa-play-circle"></i> Watch video
                 </a>
             </p>
@@ -26,11 +32,11 @@ body_class: clock
 
 <section class="clock__wtm row">
     <div class="clock__texture clock__wtm__texture"></div>
-    <div class="clock__wtm_container row justify-content-center">
-        <div class="col-6">
-            {% asset homepage/news-1.jpg alt='A news item image' class="card-img-top" %}
+    <div class="clock__wtm_container justify-content-center col-12 row no-gutters">
+        <div class="col-lg-6 p-lg-5">
+            {% asset clock/Lenovo-WTM.png alt='Lenovo Clock' class="card-img-top" %}
         </div>
-        <div class="col-6 clock__wtm-copy">
+        <div class="col-lg-6 p-lg-5 clock__wtm-copy">
             <h2 class="subheading">
                 Create a beautiful clock face UI
             </h2>
@@ -43,26 +49,26 @@ body_class: clock
             </p>
             <p class="paragraph-conditions">(GMT-8).</p>
         </div>
-        <div class="clock__wtm-entries col-10">
+        <div class="clock__wtm-entries col-12 col-lg-10 no-gutters">
             <h3 class="heading">Entries will be judged by a panel of Google experts against the following criteria:</h3>
-            <div class="row clock__wtm-entries_container">
+            <div class="clock__wtm-entries_container">
                 {% for entry in site.data.clock.entries %}
-                <div class="col-3 entries__card">
                     <div class="card">
                         <div class="card-body entries__card-body">
                             <p class="paragraph">{{entry.title}}</p>
-                            <i class="fas {{entry.logo}}"></i>
+                            {% asset {{entry.logo}} class="fas" %}
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>
-        <div class="clock__wtm-logos col-10 row justify-content-center">
-            <p class="text-center col-lg-12">Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo</p>
-            <div class="col-lg-4 text-center">Flutter</div>
-            <div class="col-lg-4 text-center">Google Assistant</div>
-            <div class="col-lg-4 text-center">Lenovo</div>
+        <div class="clock__wtm-logos col-12 col-lg-10 justify-content-center">
+            <p class="text-center logos-heading">Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo!</p>
+            <div class="logos-container">
+                {% asset clock/Flutter-logo.svg alt='Flutter Logo' %}
+                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' %}
+                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' %}
+            </div>
         </div>
     </div>
 </section>
@@ -70,7 +76,7 @@ body_class: clock
 <section class="clock__prizes row">
     <div class="clock__texture clock__prizes__texture"></div>
     <div class="clock__prizes_container row justify-content-center">
-        <div class="col-6">
+        <div class="col-lg-6 order-2 order-md-1">
             <span class="prizes-text">Prizes</span>
             <ul>
                 {% for prize in site.data.clock.prizes %}
@@ -81,10 +87,10 @@ body_class: clock
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-6 clock__prizes_image">
+        <div class="col-lg-6 order-1 order-md-2 clock__prizes_image">
             {% asset clock/iMac.png class="card-img-top" %}
         </div>
-        <div class="col-12">
+        <div class="col-12 order-3">
             <hr>
             <p class="info-paragraph">
                 All complete and valid submissions will receive a digital certificate of completion. In addition, some
@@ -96,8 +102,8 @@ body_class: clock
 </section>
 
 <section class="clock__getting">
-    <div class="clock__getting_container row justify-content-center">
-        <div class="col-10">
+    <div class="clock__getting_container row justify-content-center no-gutters">
+        <div class="col-lg-10">
             <h2 class="subheading">Getting started</h2>
             <p class="paragraph">Use the following instructions to get started:</p>
             <ol type="1">
@@ -128,7 +134,7 @@ body_class: clock
 </section>
 
 <section class="clock__submit">
-    <div class="clock__submit_container row justify-content-center">
+    <div class="clock__submit_container justify-content-center">
         <div class="col-12">
             <h2 class="subheading">
                 Enter your clock face for a chance to win
@@ -141,8 +147,8 @@ body_class: clock
 </section>
 
 <section class="clock__submissions">
-    <div class="row justify-content-center">
-        <div class="col-10">
+    <div class="no-gutters row justify-content-center">
+        <div class="col-lg-10">
             <h2 class="subheading">
                 Submission Requirements
             </h2>
@@ -178,7 +184,7 @@ body_class: clock
 
 <section class="clock__contest">
     <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-lg-10">
             <h2 class="subheading">
                 Contest Rules
             </h2>
@@ -198,26 +204,26 @@ body_class: clock
     </div>
 </section>
 
-<section class="clock__faqs">
+<section class="clock__faqs no-gutters">
     <div class="clock__texture clock__faqs__texture"></div>
     <div class="clock__faqs_container row justify-content-center">
-        <div class="col-10">
+        <div class="col-lg-10">
             <h2 class="subheading">FAQ</h2>
             <div id="accordion">
                 {% for faq in site.data.clock.faqs %}
-                <div class="faqs_card">
-                    <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
-                        <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
-                            {{ faq.title }}
-                            <i class="fas fa-chevron-down fa-xs"></i>
-                        </button>
-                    </div>
-                    <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion">
-                        <div class="card-body faq__card-body">
-                            {{ faq.content }}
+                    <div class="faqs_card">
+                        <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
+                            <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
+                                {{ faq.title }}
+                                <i class="fas fa-chevron-down fa-xs"></i>
+                            </button>
+                        </div>
+                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion">
+                            <div class="card-body faq__card-body">
+                                {{ faq.content }}
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </div>

@@ -9,15 +9,18 @@
   learn_more_cta: See the issue tracker
   learn_more_link: https://github.com/flutter/flutter/issues
 
-- name: Meetup
+- name: Google Groups
   featured: true
-  title: Meet others using Flutter in your area
+  title: Meet others using Google Groups
   description: >
-    Learn from other developers and see what the community is building with Flutter by joining community events around the world
-  logo_src: community/logo-meetup.svg
-  screen_src: community/screen-meetup.png
-  learn_more_cta: Find an event near you
-  learn_more_link: https://www.meetup.com/find/?allMeetups=false&keywords=flutter&radius=Infinity&userFreeform=Santa+Clara%2C+CA&mcId=z95054&mcName=Santa+Clara%2C+CA&sort=recommended&eventFilter=mysugg
+    Google Groups is a great way to engage with the Flutter community.
+  logo_src: community/logo-google.png
+  screen_src: community/screen-google.png
+  screen_class: border-top border-light p-3 shadow
+  learn_more_cta_1: Ask questions and trouble shoot your builds with the support of the Google community.
+  learn_more_link_1: https://groups.google.com/forum/#!forum/flutter-dev
+  learn_more_cta_2: You can also sign up for Flutter announcements.
+  learn_more_link_2: https://groups.google.com/forum/#!forum/flutter-announce
 
 - name: Stack Overflow
   description: >
@@ -31,16 +34,11 @@
   logo_src: community/logo-gitter.svg
   learn_more_link: https://gitter.im/flutter/flutter
 
-- name: Google Groups
+- name: Meetup
   description: >
-    Ask questions and trouble shoot your builds with the support of the Google
-    community. Or sign up for Flutter announcements.
-  logo_src: community/logo-google.png
-  learn_more_link:
-    - name: flutter-announce
-      url: https://groups.google.com/forum/#!forum/flutter-announce
-    - name: flutter-dev
-      url: https://groups.google.com/forum/#!forum/flutter-dev
+    Learn from other developers and see what the community is building with Flutter by joining community events around the world
+  logo_src: community/logo-meetup.svg
+  learn_more_link: https://www.meetup.com/find/?allMeetups=false&keywords=flutter&radius=Infinity&userFreeform=Santa+Clara%2C+CA&mcId=z95054&mcName=Santa+Clara%2C+CA&sort=recommended&eventFilter=mysugg
 
 - name: "@flutter.dev"
   description: >

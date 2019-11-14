@@ -165,8 +165,6 @@ how `Row` and `Column` can position their children
 on their cross axes.
 A `Row`'s cross axis is vertical,
 and a `Column`'s cross axis is horizontal.
-Most of the `crossAxisAlignment` property's values
-only work with the `Row` class.
 The `crossAxisAlignment` property has five possible values:
 
 `CrossAxisAlignment.start`

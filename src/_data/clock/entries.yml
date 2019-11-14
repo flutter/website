@@ -1,12 +1,12 @@
-- title: Visual beauty
-  logo: 'fa-play-circle'
+- title: 'Visual<br/>beauty'
+  logo: 'clock/card-beauty.png'
 
-- title: Novelty of idea
-  logo: 'fa-play-circle'
+- title: 'Novelty of<br/>idea'
+  logo: 'clock/card-novelty.png'
 
-- title: Code quality
-  logo: 'fa-play-circle'
+- title: 'Code<br/>quality'
+  logo: 'clock/card-code-quality.png'
 
 - title: Overall execution
-  logo: 'fa-play-circle'
+  logo: 'clock/card-execution.png'
 

@@ -48,6 +48,9 @@ For more information on debugging and profiling
 Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
+For more information on using DevTools with Dart command-line apps, see the 
+[DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
+
 [Android Studio/IntelliJ]: /docs/development/tools/devtools/android-studio
 [VS Code]: /docs/development/tools/devtools/vscode
 [command line]: /docs/development/tools/devtools/cli
