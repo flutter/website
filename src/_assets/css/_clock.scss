@@ -30,7 +30,8 @@
     text-align: center;
 
     .heading {
-
+      font-size: 32px;
+      margin: 120px 27px 40px 27px;
     }
 
     .youtube-link, .twitter-link {
@@ -75,21 +76,33 @@
     }
 
     &_container {
-      margin: 100px 0;
+      margin: 80px 0;
+    }
+    
+    @include media-breakpoint-up(lg) {
+
+      &_container {
+        margin: 100px 0;
+      }
+
+      &__texture {
+        background-position: right bottom 50vh, left top 100px;
+      }
     }
   }
 
   // Styles for wtm copy
   &__wtm-copy {
-    color: $clock-color-dark; //TODO: Change for a variable
+    color: $clock-color-dark;
+    margin-bottom: 96px;
 
     .subheading {
-      margin: 0 0 24px;
-      font-size: 56px;
+      font-size: 24px;
+      margin: 40px 0 24px;
     }
 
     .paragraph {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     .paragraph-conditions {
@@ -97,20 +110,37 @@
       font-size: 14px;
       margin: 0;
     }
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 0;
+
+      .subheading {
+        font-size: 56px;
+        margin: 0 0 24px;
+      }
+
+      .paragraph {
+        font-size: 20px;
+      }
+    }
   }
 
   &__wtm-entries {
-    margin-top: 72px;
+    margin-top: 80px;
 
     &_container {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 80px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
     }
 
     .heading {
-      font-size: 32px;
-      margin: 0 auto 88px;
+      font-size: 20px;
+      margin: 0 auto 40px;
       max-width: 630px;
       text-align: center;
     }
@@ -119,19 +149,55 @@
       background-color: #F8F9FA;
       border: none;
       border-radius: 8px;
-      height: 190px;
-      width: 190px;
+      height: 40vw;
+      margin-bottom: 16px;
+      width: 48%;
+
+      &:nth-of-type(4), &:nth-of-type(3) {
+        margin-bottom: 0;
+      }
     }
 
     .entries__card-body {
       position: relative;
 
       .paragraph {
-        font-size: 20px;
+        font-size: 16px;
+        line-height: 20px;
         text-align: left;
-        margin-bottom: 50px;
       }
 
+      .fas {
+        bottom: 16px;
+        left: 16px;
+        position: absolute;
+        width: 34px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 72px;
+
+      &_container {
+        margin-bottom: 80px;
+      }
+
+      .heading {
+        font-size: 32px;
+        margin: 0 auto 88px;
+      }
+
+      .card {
+        height: 190px;
+        margin-bottom: 0;
+        width: 190px;
+      }
+
+      .paragraph {
+        font-size: 20px;
+        margin-bottom: 50px;
+      }
+      
       .fas {
         bottom: 24px;
         left: 24px;
@@ -144,14 +210,29 @@
   &__wtm-logos {
 
     .logos-heading {
-      font-size: 20px;
-      margin-bottom: 40px;
+      font-size: 16px;
+      margin-bottom: 24px;
     }
 
     .logos-container {
       align-items: center;
       display: flex;
+      flex-direction: column;
+      height: 250px;
       justify-content: space-evenly;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+      .logos-heading {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+
+      .logos-container {
+        flex-direction: row;
+        height: auto;
+      }
     }
   }
 
@@ -173,35 +254,37 @@
 
     hr {
       background-color: $clock-color-light-blue;
-      margin: 56px 0;
+      margin: 40px 0;
       width: 100%;
     }
 
     &_container {
-      margin: 160px 0;
+      margin: 80px 0;
     }
 
     &_image {
-      padding-top: 126px;
+      margin-bottom: 40px;
     }
 
     .prizes-text {
       display: inline-block;
-      font-size: 20px;
+      font-size: 16px;
       margin-bottom: 16px;
     }
 
     .subheading {
-      font-size: 40px;
-      margin: 24px 0;
+      font-size: 20px;
+      margin: 8px 0;
     }
 
     .paragraph {
-      font-size: 20px;
+      font-size: 14px;
+      margin-bottom: 24px;
     }
 
     .info-paragraph {
-      font-size: 18px;
+      font-size: 14px;
+      margin-bottom: 0;
     }
 
     &__texture {
@@ -209,6 +292,39 @@
       background-image: asset_url('clock/prizes__background.svg');
       background-position: right 50px top 150px;
       background-repeat: no-repeat;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+      &_container {
+        margin: 160px 0;
+      }
+
+      &_image {
+        padding-top: 126px;
+      }
+
+      .prizes-text {
+        font-size: 20px;
+      }
+
+      .subheading {
+        font-size: 40px;
+        margin: 24px 0;
+      }
+
+      .paragraph {
+        font-size: 20px;
+        margin-bottom: inherit;
+      }
+
+      .info-paragraph {
+        font-size: 18px;
+      }
+
+      hr {
+        margin: 56px 0;
+      }
     }
   }
 
@@ -221,7 +337,7 @@
     }
 
     li {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 500;
       padding: 16px 0;
     }
@@ -236,18 +352,18 @@
     }
 
     .subheading {
-      font-size: 56px;
+      font-size: 24px;
       margin: 0 0 16px 0;
     }
 
     .paragraph {
-      font-size: 18px;
+      font-size: 14px;
       margin-bottom: 24px;
     }
 
     .sub-item {
       font-family: $site-font-family-base;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: normal;
       padding: 8px 0;
 
@@ -259,56 +375,119 @@
     .sub-item:last-child {
       padding-bottom: 0;
     }
+    
+    @include media-breakpoint-up(lg) {
+
+      .subheading {
+        font-size: 56px;
+      }
+
+      .paragraph {
+        font-size: 18px;
+      }
+
+      li {
+        font-size: 20px;
+      }
+
+      .sub-item {
+        font-size: 18px;
+      }
+    }
   }
 
   // Styles for section clock__submit
   &__submit {
     background-color: $clock-color-light-grey;
     color: $clock-color-dark;
-    margin-bottom: 80px;
+    margin: 0 -25px 80px -25px;
+    padding-left: 0;
+    padding-right: 0;
     text-align: center;
 
     &_container {
-      padding: 80px;
+      padding: 80px 16px;
     }
 
     .subheading {
-      font-size: 48px;
+      font-size: 24px;
       margin: 0 auto 32px;
-      max-width: 626px;
       text-align: center;
     }
 
     .submit-app__button {
-      font-size: 18px;
+      font-size: 14px;
       padding: 16px 24px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 0 80px 0;
+
+      &_container {
+        padding: 80px;
+      }
+
+      .subheading {
+        font-size: 48px;
+        max-width: 626px;
+      }
+
+      .submit-app__button {
+        font-size: 18px;
+      }
     }
   }
 
   &__submissions {
     li {
+      font-size: 14px;
       padding: 8px 0;
     }
 
     .subheading {
-      font-size: 32px;
+      font-size: 20px;
       margin: 0 0 16px;
     }
 
     .paragraph {
-      font-size: 18px;
+      font-size: 14px;
+      margin-bottom: 0;
     }
 
     .title {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 40px 0 16px;
+    }
+
+    .code-font {
+      color: $color-code-block;
+      font-family: $site-font-family-courier;
+    }
+
+    @include media-breakpoint-up(lg) {
+      li {
+        font-size: 18px;
+      }
+
+      .subheading {
+        font-size: 32px;
+      }
+
+      .paragraph {
+        font-size: 18px;
+      }
+
+      .title {
+        font-size: 18px;
+        margin: 0;
+      }
     }
   }
 
   // Styles for section clock__faqs
   &__faqs {
-    margin-top: 100px;
+    margin-top: 80px;
     position: relative;
 
     &__texture {
@@ -346,11 +525,25 @@
     }
 
     .subheading {
-      font-size: 56px;
+      font-size: 24px;
+      margin: 0 0 40px;
     }
 
     .faq__card-body {
+      font-size: 14px;
       padding: 0 24px 24px 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 100px;
+
+      .subheading {
+        font-size: 56px;
+      }
+
+      .faq__card-body {
+        font-size: 18px;
+      }
     }
   }
 
