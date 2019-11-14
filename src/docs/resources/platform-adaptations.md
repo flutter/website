@@ -315,7 +315,7 @@ When using the Material package,
 certain icons automatically show different
 graphics depending on the platform.
 For instance, the overflow button's three dots
-are vertical on iOS and horizontal on Android.
+are horizontal on iOS and vertical on Android.
 The back button is a simple chevron on iOS and
 has a stem/shaft on Android.
 

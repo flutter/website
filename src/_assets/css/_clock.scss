@@ -1,0 +1,214 @@
+.clock {
+  $vertical-line-color: #384753;
+  
+  background-color: $flutter-dark-blue-texture;
+  font-family: $site-font-family-alt;
+
+  .center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 66px);
+    justify-content: center;
+  }
+
+  .heading {
+    animation: clock-slide-in 1s .3s;
+    animation-fill-mode: both;
+    color: $site-color-white;
+    font-size: 18px;
+    margin: 0 0 24px;
+    text-align: center;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      font-size: 32px;
+      margin: 0 0 22px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 40px;
+      margin: 0 0 20px;
+    }
+  }
+
+  .time-number {
+    animation: clock-slide-in 1s;
+    animation-fill-mode: both;
+    color: $site-color-primary;
+    display: flex;
+    font-size: 52px;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+
+    @include media-breakpoint-up(md) {
+      font-size: 110px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 160px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 180px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 230px;
+    }
+  }
+
+  .digits_container {
+    display: inline-block;
+    width: 68px;
+
+    @include media-breakpoint-up(md) {
+      width: 142px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 200px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 248px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 294px;
+    }
+  }
+
+  .animations {
+    animation-name: clock-geometric-small-background;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(.87, 1.15, 1, .99);
+    background-image: asset_url('clock/left_rectangle.svg'), asset_url('clock/right_rectangle.svg'), asset_url('clock/oval.svg');
+    background-repeat: no-repeat;
+    background-size: 181px 247px, 140px 121px, 280px 163px;
+    height: calc(100% - 66px);
+    overflow: hidden;
+    position: absolute;
+    top: 66px;
+    width: 100%;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      animation-name: clock-geometric-medium-background;
+      background-size: 400px 556px, 317px 258px, auto;
+    }
+
+    @include media-breakpoint-up(lg) {
+      background-size: auto;
+    }
+  }
+
+  .vertical-line {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: clock-vertical-lines;
+    animation-timing-function: ease;
+    background-color: $vertical-line-color;
+    position: fixed;
+    top: 0;
+    width: 1px;
+    z-index: -1;
+
+    &--first {
+      left: 4%;
+    }
+
+    &--second {
+      animation-delay: .2s;
+      left: 27%;
+    }
+
+    &--thrid {
+      animation-delay: .4s;
+      left: 50%;
+    }
+
+    &--fourth {
+      animation-delay: .6s;
+      left: 73%;
+    }
+
+    &--first, &--thrid {
+      display: none;
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+    }
+  }
+
+  .share-twitter__paragraph {
+    animation: clock-slide-in 1s .6s;
+    animation-fill-mode: both;
+    color: $site-color-white;
+    font-size: 14px;
+    margin: 20px 0 0;
+    padding: 0 37px;
+    text-align: center;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      margin: 22px 0 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 20px;
+      margin: 24px 0 0;
+    }
+  }
+
+  .learn-more__button {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+  }
+}
+
+// animations
+@keyframes clock-vertical-lines {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes clock-slide-in {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes clock-geometric-medium-background {
+  from {
+    background-position: top 150px left -270px, top right -488px, bottom -348px left -140px;
+  }
+  to {
+    background-position: top 150px left, top right, bottom left;
+  }
+}
+
+@keyframes clock-geometric-small-background {
+  from {
+    background-position: bottom 90px left -144px, top right -140px, bottom -164px left -100px;
+  }
+  to {
+    background-position: bottom 90px left, top right, bottom left;
+  }
+}
