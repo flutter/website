@@ -104,8 +104,6 @@
 
   // Styles for wtm copy
   &__wtm-copy {
-    color: $clock-color-dark;
-
     .subheading {
       color: $clock-color-dark;
       font-size: 24px;
@@ -314,7 +312,7 @@
       background-repeat: no-repeat;
       background-size: 90%, 100%;
     }
-    
+
     .prize-link {
       color: $site-color-white;
       text-decoration: underline;
