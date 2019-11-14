@@ -57,11 +57,9 @@
       background-size: cover;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(sm) {
       .heading {
-        font-size: 72px;
-        margin: 120px auto 40px;
-        max-width: 642px;
+        font-size: 38px;
       }
 
       &__texture {
@@ -69,6 +67,14 @@
         background-image: asset_url('clock/hero-pattern__background.svg');
         background-repeat: no-repeat;
         background-size: cover;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .heading {
+        font-size: 72px;
+        margin: 120px auto 40px;
+        max-width: 642px;
       }
     }
   }
@@ -87,6 +93,13 @@
 
     &_container {
       margin: 80px 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      &__texture {
+        background-position: right top 450px, left top 50px;
+        background-size: 15%, 25%;
+      }
     }
     
     @include media-breakpoint-up(lg) {
@@ -120,6 +133,12 @@
       font-family: $site-font-family-base;
       font-size: 14px;
       margin: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .subheading {
+        font-size: 32px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -188,10 +207,22 @@
       }
     }
 
+    @include media-breakpoint-up(sm) {
+      .heading {
+        font-size: 24px;
+      }
+
+      .card {
+        height: 20vw;
+        width: 24%;
+      }
+    }
+
     @include media-breakpoint-up(lg) {
       margin-top: 72px;
 
       &_container {
+        flex-wrap: initial;
         margin-bottom: 80px;
       }
 
@@ -201,9 +232,9 @@
       }
 
       .card {
-        height: 190px;
+        height: 185px;
         margin-bottom: 0;
-        width: 190px;
+        width: 185px;
       }
 
       .entries__card-body {
@@ -237,16 +268,19 @@
       justify-content: space-evenly;
     }
 
+    @include media-breakpoint-up(sm) {
+
+      .logos-container {
+        flex-direction: row;
+        height: auto;
+      }      
+    }
+
     @include media-breakpoint-up(lg) {
 
       .logos-heading {
         font-size: 20px;
         margin-bottom: 40px;
-      }
-
-      .logos-container {
-        flex-direction: row;
-        height: auto;
       }
     }
   }
@@ -320,6 +354,20 @@
     .prize-link {
       color: $site-color-white;
       text-decoration: underline;
+    }
+
+    @include media-breakpoint-up(sm) {
+      &_container {
+        margin: 160px 0 80px;
+      }
+
+      .prizes-text {
+        font-size: 20px;
+      }
+
+      .subheading {
+        font-size: 24px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -404,6 +452,16 @@
     .sub-item:last-child {
       padding-bottom: 0;
     }
+
+    @include media-breakpoint-up(sm) {
+      .subheading {
+        font-size: 32px;
+      }
+
+      .sub-item {
+        font-size: 16px;
+      }
+    }
     
     @include media-breakpoint-up(lg) {
 
@@ -429,7 +487,7 @@
   &__submit {
     background-color: $clock-color-light-grey;
     color: $clock-color-dark;
-    margin: 0 -25px 80px -25px;
+    margin: 0 calc(50% - 50vw) 80px calc(50% - 50vw);
     padding-left: 0;
     padding-right: 0;
     text-align: center;
@@ -447,6 +505,12 @@
     .submit-app__button {
       font-size: 14px;
       padding: 16px 24px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .subheading {
+        font-size: 32px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -504,6 +568,12 @@
     .code-font {
       color: $color-code-block;
       font-family: $site-font-family-courier;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .subheading {
+        font-size: 24px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -580,6 +650,12 @@
       font-family: $site-font-family-base;
       font-size: 14px;
       padding: 0 24px 24px 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+      .subheading {
+        font-size: 32px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
