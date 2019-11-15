@@ -192,6 +192,7 @@
     .heading {
       color: $clock-color-dark;
       font-size: 20px;
+      line-height: 32px;
       margin: 0 auto 40px;
       max-width: 630px;
       text-align: center;
@@ -230,7 +231,6 @@
     @include media-breakpoint-up(sm) {
       .heading {
         font-size: 24px;
-        line-height: 32px;
       }
 
       .card {
