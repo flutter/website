@@ -7,20 +7,16 @@ Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
-Existing packages enable many use cases for example, making network requests
-([`http`](/docs/cookbook/networking/fetch-data)),
-custom navigation/route handling ([`fluro`]({{site.pub-pkg}}/fluro)),
-integration with device APIs
-([`url_launcher`]({{site.pub-pkg}}/url_launcher) and
-[`battery`]({{site.pub-pkg}}/battery)),
-and using third-party platform SDKs like Firebase
-([FlutterFire]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)).
+Existing packages enable many use cases for example,
+making network requests ([`http`][]),
+custom navigation/route handling ([`fluro`][]),
+integration with device APIs ([`url_launcher`][] and [`battery`][]),
+and using third-party platform SDKs like Firebase ([FlutterFire][]).
 
-To develop a new package, see [developing
-packages](/docs/development/packages-and-plugins/developing-packages).
+To develop a new package, see [developing packages][].
 To add assets, images or fonts,
-whether stored in files or packages
-see [Adding assets and images](/docs/development/ui/assets-and-images).
+whether stored in files or packages,
+see [Adding assets and images][].
 
 ## Using packages
 
@@ -28,10 +24,10 @@ The following section describes how to use existing published packages.
 
 ### Searching for packages
 
-Packages are published to the [*Pub site*]({{site.pub}}).
+Packages are published to [*pub.dev*][].
 
-The [Flutter landing page]({{site.pub}}/flutter) on
-the Pub site displays top packages that are compatible with Flutter
+The [Flutter landing page][] on pub.dev
+top packages that are compatible with Flutter
 (those that declare dependencies generally compatible with Flutter),
 and supports searching among all published packages.
 
@@ -61,20 +57,19 @@ To add the package, `css_colors`, to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-The [Installing]({{site.pub-pkg}}/css_colors#-installing-tab-)
-tab available on any package page on Pub is a handy reference for these
-steps.
+The [Installing][] tab available on any package page on
+pub.dev is a handy reference for these steps.
 
-For a complete example, see the [css_colors example](#css-example) below.
+For a complete example, see the [css_colors example][] below.
 
 ### Conflict resolution
 
 Suppose you want to use `some_package` and `another_package` in an app,
 and both of these depend on `url_launcher`, but in different versions.
 That causes a potential conflict.
-The best way to avoid this is for package authors to use [version
-ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
-rather than specific versions when specifying dependencies.
+The best way to avoid this is for package authors to use
+[version ranges][] rather than specific versions when
+specifying dependencies.
 
 ```yaml
 dependencies:
@@ -84,9 +79,9 @@ dependencies:
 
 If `some_package` declares the dependencies above and `another_package`
 declares a compatible `url_launcher` dependency like `'0.4.5'` or
-`^0.4.0`, Pub resolves the issue automatically.
-Platform-specific dependencies on [Gradle modules][] and/or [CocoaPods][]
-are solved in a similar way.
+`^0.4.0`, pub resolves the issue automatically.
+Platform-specific dependencies on [Gradle modules][]
+and/or [CocoaPods][] are solved in a similar way.
 
 Even if `some_package` and `another_package` declare incompatible versions
 for `url_launcher`, they might actually use `url_launcher` in
@@ -128,8 +123,7 @@ CocoaPods does not currently offer dependency override functionality.
 ## Developing new packages
 
 If no package exists for your specific use case, you can
-[develop new custom
-packages](/docs/development/packages-and-plugins/developing-packages).
+[develop new custom packages][].
 
 ## Managing package dependencies and versions
 
@@ -141,9 +135,8 @@ specify a version range in the pubspec file.
 All packages have a version number, specified in the
 package's `pubspec.yaml` file. The current version of a package
 is displayed next to its name (for example,
-see the [url_launcher]({{site.pub-pkg}}/url_launcher) package), as
-well as a list of all prior versions ([url_launcher
-versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
+see the [`url_launcher`][] package), as
+well as a list of all prior versions ([url_launcher versions][]).
 
 When a package is added to `pubspec.yaml`, the shorthand form `plugin1:`
 means that any version of the plugin1 package can be used.
@@ -157,8 +150,7 @@ specify a version range using one of the following formats:
     url_launcher: '>=0.1.2 <0.2.0'
   ```
 
-* Range constraints with [*caret
-  syntax*]({{site.dart-site}}/tools/pub/dependencies#caret-syntax)
+* Range constraints with [*caret syntax*][]
   are similar to regular range constraints:
 
   ```yaml
@@ -166,15 +158,14 @@ specify a version range using one of the following formats:
     collection: '^0.1.2'
   ```
 
-For additional details, see the [package versioning
-guide]({{site.dart-site}}/tools/pub/versioning).
+For additional details, see the [package versioning guide][].
 
 ### Updating package dependencies
 
 When running `flutter pub get` (**Packages get** in IntelliJ)
 for the first time after adding a package,
-Flutter saves the concrete package version found in the `pubspec.lock`
-[lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
+Flutter saves the concrete package version found in the
+`pubspec.lock` [lockfile][].
 This ensures that you get the same version again if you, or another
 developer on your team, run `flutter pub get`.
 
@@ -187,7 +178,7 @@ that is allowed by the version constraint specified in
 
 ### Dependencies on unpublished packages
 
-Packages can be used even when not published on the Pub site.
+Packages can be used even when not published on pub.dev.
 For private plugins, or for packages not ready for publishing,
 additional dependency options are available:
 
@@ -213,7 +204,7 @@ additional dependency options are available:
         url: git://github.com/flutter/plugin1.git
   ```
 
-* **Git** dependency on a package in a folder: Pub assumes the
+* **Git** dependency on a package in a folder: pub assumes the
   package is located in the root of the Git repository; if that is not the
   case, specify the location with the `path` argument. For example:
 
@@ -227,7 +218,7 @@ additional dependency options are available:
 
   Finally, use the `ref` argument to pin the dependency to a
   specific git commit, branch, or tag. For more details, see
-  [Package dependencies]({{site.dart-site}}/tools/pub/dependencies).
+  [Package dependencies][].
 
 ## Examples
 
@@ -236,7 +227,7 @@ using packages.
 
 ### Example: Using the css_colors package {#css-example}
 
-The [`css_colors`]({{site.pub-pkg}}/css_colors) package
+The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants
 wherever the Flutter framework expects the `Color` type.
 
@@ -288,7 +279,7 @@ To use this package:
 
 ### Example: Using the url_launcher package to launch the browser {#url-example}
 
-The [url_launcher]({{site.pub-pkg}}/url_launcher) plugin
+The [`url_launcher`][] plugin
 package enables opening the default browser on the mobile platform to
 display a given URL, and is supported on both Android and iOS.
 The package demonstrates that packages can contain
@@ -354,3 +345,23 @@ To use this plugin:
    You should see the default browser open on the device,
    displaying the Flutter homepage.
 
+
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[`battery`]: {{site.pub-pkg}}/battery
+[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[`css_colors`]: {{site.pub-pkg}}/css_colors
+[css_colors example]: #css-example
+[develop new custom packages]: /docs/development/packages-and-plugins/developing-packages
+[developing packages]: /docs/development/packages-and-plugins/developing-packages
+[`fluro`]: {{site.pub-pkg}}/fluro
+[Flutter landing page]: {{site.pub}}/flutter
+[FlutterFire]: {{site.github}}/flutter/plugins/blob/master/FlutterFire.md
+[`http`]: /docs/cookbook/networking/fetch-data
+[Installing]: {{site.pub-pkg}}/css_colors#-installing-tab-
+[lockfile]: {{site.dart-site}}/tools/pub/glossary#lockfile
+[Package dependencies]: {{site.dart-site}}/tools/pub/dependencies
+[package versioning guide]: {{site.dart-site}}/tools/pub/versioning
+[*pub.dev*]: {{site.pub}}
+[`url_launcher`]: {{site.pub-pkg}}/url_launcher
+[url_launcher versions]: {{site.pub-pkg}}/url_launcher#-versions-tab-
+[version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
