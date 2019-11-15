@@ -7,9 +7,11 @@
     cd &#60;path-to-repo&#62;/flutter_clock/&#60;name&#62;_clock</span>
   subItems:
   - text: >
-     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/analog_clock" target="_blank" rel="noopener noreferrer">Basic analog clock</a>.
+     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/tree/default/analog_clock" target="_blank" rel="noopener noreferrer">
+      Basic analog clock</a>.
   - text: >
-      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/digital_clock" target="_blank" rel="noopener noreferrer">Basic digital clock</a>.
+      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/tree/default/digital_clock" target="_blank"  rel="noopener noreferrer">
+      Basic digital clock</a>.
 
 - title: >
     Run the clock app in your IDE, or by using <span class="code-font">flutter</span> run at the command line.
