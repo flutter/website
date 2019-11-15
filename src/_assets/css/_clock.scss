@@ -101,7 +101,7 @@
         background-size: 15%, 25%;
       }
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       &_container {
@@ -271,7 +271,7 @@
       .logos-container {
         flex-direction: row;
         height: auto;
-      }      
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -443,7 +443,7 @@
       padding: 8px 0;
 
       .sub-item {
-        list-style: none;
+        list-style-type: circle;
       }
     }
 
@@ -460,7 +460,7 @@
         font-size: 16px;
       }
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       .subheading {
