@@ -237,6 +237,12 @@
         height: 20vw;
         width: 24%;
       }
+
+      .entries__card-body {
+        .fas {
+          width: 41px;
+        }
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -264,13 +270,13 @@
           font-size: 20px;
           margin-bottom: 50px;
         }
-      }
 
-      .fas {
-        bottom: 24px;
-        left: 24px;
-        position: absolute;
-        width: 48px;
+        .fas {
+          bottom: 24px;
+          left: 24px;
+          position: absolute;
+          width: 48px;
+        }
       }
     }
   }
