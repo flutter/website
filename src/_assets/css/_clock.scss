@@ -51,7 +51,7 @@
     }
 
     &__texture {
-      background-color: $flutter-dark-blue-texture;
+      background-color: $clock-color-dark;
       background-image: asset_url('clock/hero/hero-circle.svg'),
                         asset_url('clock/hero/hero-clock.svg'),
                         asset_url('clock/hero/hero-diamond.svg'),
