@@ -1,5 +1,5 @@
 - title: >
-    Download the <a href="https://github.com/flutter/flutter_clock">Flutter Clock GitHub repo</a> using
+    Download the <a href="https://github.com/flutter/flutter_clock" target="_blank" rel="noopener noreferrer">Flutter Clock GitHub repo</a> using
     <span class="code-font">git clone<span>.
 
 - title: >
@@ -7,9 +7,9 @@
     cd &#60;path-to-repo&#62;/flutter_clock/&#60;name&#62;_clock</span>
   subItems:
   - text: >
-     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/analog_clock">Basic analog clock</a>.
+     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/analog_clock" target="_blank" rel="noopener noreferrer">Basic analog clock</a>.
   - text: >
-      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/digital_clock">Basic digital clock</a>.
+      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/digital_clock" target="_blank" rel="noopener noreferrer">Basic digital clock</a>.
 
 - title: >
     Run the clock app in your IDE, or by using <span class="code-font">flutter</span> run at the command line.
@@ -31,7 +31,7 @@
         <a href="https://flutter.dev/docs/development/tools/formatting">Format the Dart code.</a>
     - text: >
         Verify that your clock builds and runs on
-        <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable">
+        <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable" target="_blank" rel="noopener noreferrer">
         the latest Flutter stable channel</a>.
     - text: >
         In your <span class="code-font">&#60;name&#62;_clock</span> directory, reduce the clock’s size:
@@ -67,5 +67,5 @@
     - text: >
         <span class="code-font">flutter run</span> (on Android or iOS in landscape)
 - title: >
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWVdnocPZFH-xafvHddPY0o1SZj8EW4E5vVvJp1VfW5Ed1YQ/viewform">
+   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWVdnocPZFH-xafvHddPY0o1SZj8EW4E5vVvJp1VfW5Ed1YQ/viewform" target="_blank" rel="noopener noreferrer">
     Submit your clock</a>.
