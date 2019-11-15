@@ -117,7 +117,7 @@
         background-size: 15%, 25%;
       }
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       &_container {
@@ -467,7 +467,7 @@
       padding: 8px 0;
 
       .sub-item {
-        list-style: none;
+        list-style-type: circle;
       }
     }
 
@@ -484,7 +484,7 @@
         font-size: 16px;
       }
     }
-    
+
     @include media-breakpoint-up(lg) {
 
       .subheading {
