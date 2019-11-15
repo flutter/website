@@ -52,21 +52,26 @@
 
     &__texture {
       background-color: $flutter-dark-blue-texture;
-      background-image: asset_url('clock/hero-pattern__background-mobile.svg');
+      background-image: asset_url('clock/hero/hero-circle.svg'),
+                        asset_url('clock/hero/hero-clock.svg'),
+                        asset_url('clock/hero/hero-diamond.svg'),
+                        asset_url('clock/hero/hero-dots.svg'),
+                        asset_url('clock/hero/hero-oval.svg');
       background-repeat: no-repeat;
-      background-size: cover;
+      background-position: top 61px right -220px, bottom -50px right -80px, bottom -50px left -200px, top -30px center,top 100px left -250px;
+      background-size: 320px, 280px, 270px, 90px, 310px;
     }
 
     @include media-breakpoint-up(sm) {
       .heading {
         font-size: 38px;
       }
+    }
 
+    @include media-breakpoint-up(md) {
       &__texture {
-        background-color: $flutter-dark-blue-texture;
-        background-image: asset_url('clock/hero-pattern__background.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-position: top 43px right -70%, bottom 20px right -20px, bottom -30% left 30px, top -40px center,top 30px left -60%;
+        background-size: 55%, 30%, 25%, 14%, 50%;
       }
     }
 
@@ -75,6 +80,17 @@
         font-size: 72px;
         margin: 120px auto 40px;
         max-width: 642px;
+      }
+
+      &__texture {
+        background-position: top 43px right -20px, bottom 74px right -20px, bottom -10px left 231px, top -40px center,top 30px left -20px;
+        background-size: 30%, 20%, 12%, 8%, 20%;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      &__texture {
+        background-size: 20%, 15%, 10%, 5%, 15%;
       }
     }
   }
@@ -271,7 +287,11 @@
       .logos-container {
         flex-direction: row;
         height: auto;
-      }      
+      }
+
+      .wtm-logo {
+        max-height: 35px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -279,6 +299,10 @@
       .logos-heading {
         font-size: 20px;
         margin-bottom: 40px;
+      }
+
+      .wtm-logo {
+        max-height: initial;
       }
     }
   }
@@ -619,6 +643,7 @@
         justify-content: space-between;
         padding: 0;
         text-align: left;
+        user-select: text;
         width: 100%;
       }
 

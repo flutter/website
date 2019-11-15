@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="319px" height="161px" viewBox="0 0 319 161" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Clock 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.879676159 319 0.879676159 319 160.601898 0 160.601898"></polygon>
+    </defs>
+    <g id="Graphics" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Clock-2">
+            <g id="Clock-hands">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-2)">
+                    <g transform="translate(88.185065, -47.277778)">
+                        <line x1="67.2965375" y1="43.2168238" x2="226.614167" y2="148.569061" id="Minute-hand" stroke="#AECBFA" stroke-width="2" fill="none" stroke-linecap="square" transform="translate(146.955352, 95.892943) rotate(-56.000000) translate(-146.955352, -95.892943) "></line>
+                        <path d="M2.49765568,112.230486 L79.0168919,112.260397 C80.6728297,112.26339 82.0150714,113.605632 82.0180632,115.26157 L82.0192039,118.182566 C82.0221942,119.839419 80.6795731,121.183089 79.022719,121.183736 C79.0219376,121.183736 79.0211561,121.183736 79.0203756,121.181393 L2.50113941,121.151481 C0.845201612,121.148489 -0.49704008,119.806247 -0.500031884,118.150309 L-0.50117256,115.229313 C-0.504162889,113.57246 0.838458249,112.22879 2.49531237,112.228143 C2.49609378,112.228142 2.49687519,112.228142 2.49765568,112.230486 Z" id="Hour-hand" stroke="none" fill="#01579B" fill-rule="evenodd" transform="translate(40.759016, 116.705939) rotate(19.000000) translate(-40.759016, -116.705939) "></path>
+                    </g>
+                </g>
+                <path d="M1,1.87967616 L1,159.601898 L318,159.601898 L318,1.87967616 L1,1.87967616 Z" id="Rectangle-12" stroke="#01579B" stroke-width="2" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

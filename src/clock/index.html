@@ -66,9 +66,9 @@ body_class: clock
                 Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
             </p>
             <div class="logos-container">
-                {% asset clock/Flutter-logo.svg alt='Flutter Logo' %}
-                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' %}
-                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' %}
+                {% asset clock/Flutter-logo.svg alt='Flutter Logo' class='wtm-logo' %}
+                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' class='wtm-logo' %}
+                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' class='wtm-logo' %}
             </div>
         </div>
     </div>
@@ -210,8 +210,8 @@ body_class: clock
     <div class="clock__faqs_container row justify-content-center">
         <div class="col-lg-10">
             <h2 class="subheading">FAQ</h2>
-            <div id="accordion">
-                {% for faq in site.data.clock.faqs %}
+            {% for faq in site.data.clock.faqs %}
+                <div id="accordion{{forloop.index}}">
                     <div class="faqs_card">
                         <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
                             <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
@@ -219,14 +219,14 @@ body_class: clock
                                 <i class="fas fa-chevron-down fa-xs"></i>
                             </button>
                         </div>
-                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion">
+                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion{{forloop.index}}">
                             <div class="card-body faq__card-body">
                                 {{ faq.content }}
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
