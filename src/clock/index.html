@@ -4,6 +4,10 @@ layout: landing
 show_banner: False
 body_class: clock
 ---
+{% assign url_links = "&url=https://flutter.dev/clock" %}
+{% assign hashtags = "hashtags=FlutterClock" %}
+{% assign twitter_url = "https://twitter.com/intent/tweet?" | append: hashtags | append: url_links  %}
+{% assign window_options = "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600" %}
 
 <section class="clock__hero">
     <div class="clock__texture clock__hero__texture"></div>
@@ -13,11 +17,9 @@ body_class: clock
             <p>
                 <a
                     class="twitter-link"
-                    href="https://twitter.com/intent/tweet?hashtags=FlutterClock&amp;url=https%3A%2F%2Fflutter.dev/clock"
+                    href="#"
                     title="Share to Twitter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                    onclick="javascript:window.open(encodeURI('{{ twitter_url }}'), '', '{{ window_options }}');">
                     <i class="fab fa-twitter"></i> Share #FlutterClock with friends
                 </a>
             </p>
