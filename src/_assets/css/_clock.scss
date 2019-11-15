@@ -26,7 +26,7 @@
 
   // Styles for section clock__hero
   &__hero {
-    background-color: $flutter-dark-blue-texture;
+    background-color: $clock-color-dark;
     color: $site-color-white;
     padding-bottom: 104px;
     position: relative;
@@ -125,7 +125,7 @@
       }
 
       &__texture {
-        background-position: right bottom 50vh, left top 100px;
+        background-position: right bottom 586px, left top 100px;
         background-size: initial;
       }
     }
