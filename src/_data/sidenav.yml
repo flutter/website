@@ -145,6 +145,8 @@
     - title: Add Flutter to existing app
       permalink: /docs/development/add-to-app
       children:
+      - title: Introduction
+        permalink: /docs/development/add-to-app/index
       - title: Adding to an Android app
         permalink: /docs/development/add-to-app/android
         children:
