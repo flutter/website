@@ -2,6 +2,7 @@
 title: "Basic Flutter layout concepts"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 toc: true
+js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
 ---
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
@@ -51,7 +52,7 @@ and `Column` lays out its widgets vertically.
 {% comment %}
   Gist: https://gist.github.com/4e11c4a7ec824685f963f25d7c30ba0b
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4e11c4a7ec824685f963f25d7c30ba0b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Axis size and alignment
 
@@ -103,7 +104,7 @@ The `mainAxisSize` property has two possible values:
 {% comment %}
   Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d852e4f07d6c87600fe8e0f186c7a31b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d852e4f07d6c87600fe8e0f186c7a31b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ### mainAxisAlignment property
 
@@ -152,7 +153,7 @@ can position their children in that extra space.
 {% comment %}
   Gist: https://gist.github.com/cb8abed13f90a6a0c7a0ada6f15a09c9
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=cb8abed13f90a6a0c7a0ada6f15a09c9&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=cb8abed13f90a6a0c7a0ada6f15a09c9&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 {{site.alert.tip}}
   Before moving to the next section,
   change `MainAxisAlignment.end` to another value.
@@ -207,7 +208,7 @@ The `crossAxisAlignment` property has five possible values:
 {% comment %}
   Gist: https://gist.github.com/70a6eb88f13019eec349a57bc4fd5fe0
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=70a6eb88f13019eec349a57bc4fd5fe0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 {{site.alert.tip}}
   Before moving to the next section,
   change `CrossAxisAlignment.start` to another value.
@@ -263,7 +264,7 @@ the widgets are resized according to their
 {% comment %}
   Gist: https://gist.github.com/ba0f40356d1023066d960f6de2be1a4b
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ba0f40356d1023066d960f6de2be1a4b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ba0f40356d1023066d960f6de2be1a4b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 #### Example: Testing flex values
 {:.no_toc}
@@ -293,7 +294,7 @@ the widgets are resized according to their
 {% comment %}
   Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=82e4dd24028034ae03ba0ddc71bf59e5&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe> -->
 {{site.alert.tip}}
   Before moving to the next example,
   try changing the `flex` properties to other values,
@@ -336,7 +337,7 @@ wrap a widget and force the widget to fill extra space.
 {% comment %}
   Gist: https://gist.github.com/77021d2ed15f9ece850de15e73c47526
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=77021d2ed15f9ece850de15e73c47526&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=77021d2ed15f9ece850de15e73c47526&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## SizedBox widget
 
@@ -362,7 +363,7 @@ create empty space.
 {% comment %}
   Gist: https://gist.github.com/6582851e85b57180ff5321f814fabb81
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=6582851e85b57180ff5321f814fabb81&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=6582851e85b57180ff5321f814fabb81&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 #### Example: Creating space
 {:.no_toc}
@@ -382,7 +383,7 @@ create empty space.
 {% comment %}
   Gist: https://gist.github.com/datafoya/19ead147ab5c7668d7d32e1cfed90097
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=19ead147ab5c7668d7d32e1cfed90097&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=19ead147ab5c7668d7d32e1cfed90097&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Spacer widget
 
@@ -411,7 +412,7 @@ can create space between widgets.
 {% comment %}
   Gist: https://gist.github.com/datafoya/bfc367aefde35e02ea5283efdbf58e60
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=bfc367aefde35e02ea5283efdbf58e60&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=bfc367aefde35e02ea5283efdbf58e60&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Text widget
 
@@ -434,7 +435,7 @@ for different fonts, sizes, and colors.
 {% comment %}
   Gist: https://gist.github.com/datafoya/0ff109090b99ef1873d9fad501b2bc86
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=0ff109090b99ef1873d9fad501b2bc86&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=0ff109090b99ef1873d9fad501b2bc86&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Icon widget
 
@@ -461,7 +462,7 @@ Flutter is preloaded with icon packages for
 {% comment %}
   Gist: https://gist.github.com/datafoya/01688fca8c13f85d93078054af2e858b
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=01688fca8c13f85d93078054af2e858b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=01688fca8c13f85d93078054af2e858b&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Image widget
 
@@ -493,7 +494,7 @@ the following example uses an image from the network.
 {% comment %}
   Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b6f3084800bd139cdb522b8858bb58b7&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## Putting it all together
 
@@ -561,7 +562,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/30ccbe0fcf31cc10eafba3aea8ff0697
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=30ccbe0fcf31cc10eafba3aea8ff0697&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=30ccbe0fcf31cc10eafba3aea8ff0697&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
@@ -602,7 +603,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/95dcc1451aea8412669c41eb8a1a5f23
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=95dcc1451aea8412669c41eb8a1a5f23&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=95dcc1451aea8412669c41eb8a1a5f23&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ### Part 2
 {:.no_toc}
@@ -647,7 +648,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/c3ac34ed8952724a0ecb0af1445c2af8
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c3ac34ed8952724a0ecb0af1445c2af8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 #### Exercise: Enter contact information
 {:.no_toc}
@@ -667,10 +668,325 @@ which are positioned below the contact information.
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
+
 {% comment %}
   Gist: https://gist.github.com/datafoya/c5be61116652927c5d92262fce1b5360
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c5be61116652927c5d92262fce1b5360&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+
+<!-- <pre>
+    <code class="language-run-dartpad:theme-dark:mode-flutter:run-true:split-60:width-100%:height-400px"> -->
+
+```run-dartpad:theme-dark:mode-flutter:run-true:split-60:width-100%:height-400px
+<!-- ```run-dartpad:theme-light:mode-flutter:run-true -->
+{$ begin main.dart $}
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web_test/flutter_web_test.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.account_circle, size: 50)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Flutter McFlutter',
+                    style: Theme.of(context).textTheme.headline),
+                Text('Experienced App Developer'),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(children: [],),
+        SizedBox(height: 16),
+        Row(children: [],),
+      ],
+    );
+  }
+}
+{$ end main.dart $}
+
+{$ begin solution.dart $}
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web_test/flutter_web_test.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.account_circle, size: 50),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Flutter McFlutter',
+                  style: Theme.of(context).textTheme.headline,
+                ),
+                Text(
+                  'Experienced App Developer',
+                )
+              ],
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '123 Main Street',
+            ),
+            Text(
+              '(415) 555-0198',
+            ),
+          ],
+        ),
+        SizedBox(height: 16),
+        Row(),
+      ],
+    );
+  }
+}
+{$ end solution.dart $}
+
+{$ begin test.dart $}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffeeeeee),
+        textTheme: TextTheme(
+          body1: TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      ),
+      home: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xffffffff),
+                border: Border.all(),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Color(0x80000000),
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(8.0),
+              child: MyWidget(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> main() async {
+  await ui.webOnlyInitializePlatform();
+  
+  runApp(MyApp());
+
+  final controller = LiveWidgetController(WidgetsBinding.instance);
+
+  // Check MyWidget starts with one Column
+
+  final myWidgetElement = controller.element(find.byType(MyWidget));
+
+  final myWidgetChildElements = <Element>[];
+  myWidgetElement.visitChildElements((e) => myWidgetChildElements.add(e));
+
+  if (myWidgetChildElements.length != 1 ||
+      myWidgetChildElements[0].widget is! Column) {
+    _result(false, ['The root widget in MyWidget\'s build method should be a Column.']);
+    return;
+  }
+
+  // Check outermost Column has 5 correct children.
+
+  final outerColumnElement = myWidgetChildElements[0];
+  final outerColumnChildWidgets =
+      (outerColumnElement.widget as Column).children;
+  final outerColumnChildElements = <Element>[];
+  outerColumnElement.visitChildElements((e) => outerColumnChildElements.add(e));
+
+  if (outerColumnChildWidgets.length != 5 ||
+      outerColumnChildWidgets[0] is! Row ||
+      outerColumnChildWidgets[1] is! SizedBox ||
+      outerColumnChildWidgets[2] is! Row ||
+      outerColumnChildWidgets[3] is! SizedBox ||
+      outerColumnChildWidgets[4] is! Row) {
+    _result(false, ['The children of the outermost Column should be [Row, SizedBox, Row, SizedBox, Row] in that order.']);
+    return;
+  }
+
+  // Check outermost Column's properties
+
+  if ((outerColumnElement.widget as Column).mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The outermost Column should use MainAxisSize.min for its mainAxisSize.']);
+    return;
+  }
+
+  if ((outerColumnElement.widget as Column).crossAxisAlignment !=
+      CrossAxisAlignment.stretch) {
+    _result(false, ['The outermost Column should use CrossAxisAlignment.stretch for its crossAxisAlignment.']);
+    return;
+  }
+
+  // Check first Row has two children: Padding and Column
+
+  final firstRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[0]);
+
+  final firstRowChildElements = <Element>[];
+  firstRowElement.visitChildElements((e) => firstRowChildElements.add(e));
+
+  if (firstRowChildElements.length != 2 ||
+      firstRowChildElements[0].widget is! Padding ||
+      firstRowChildElements[1].widget is! Column) {
+    _result(false, ['The first Row should have two children: first a Padding, and then a Column.']);
+    return;
+  }
+
+  // Check Padding has correct padding
+
+  final paddingElement = firstRowChildElements[0];
+
+  if ((paddingElement.widget as Padding).padding != const EdgeInsets.all(8)) {
+    _result(false, ['The Padding widget in the first Row should have a padding of 8.']);
+    return;
+  }
+
+  // Check Padding has an Icon as its child
+
+  final paddingChildren = <Element>[];
+  paddingElement.visitChildElements((e) => paddingChildren.add(e));
+
+  if (paddingChildren.length != 1 || paddingChildren[0].widget is! Icon) {
+    _result(false, ['The Padding widget in the first Row should have an Icon as its child.']);
+    return;
+  }
+
+  // Check icon has a size of 50
+
+  if ((paddingChildren[0].widget as Icon).size != 50) {
+    _result(false, ['The Icon in the top-left corner should have a size of 50.']);
+    return;
+  }
+
+  // Check inner Column has correct properties
+
+  final innerColumnElement = firstRowChildElements[1];
+  final innerColumnWidget = innerColumnElement.widget as Column;
+
+  if (innerColumnWidget.crossAxisAlignment != CrossAxisAlignment.start) {
+    _result(false, ['The Column for the name and title should use CrossAxisAlignment.start as its crosAxisAlignment.']);
+    return;
+  }
+
+  if (innerColumnWidget.mainAxisSize != MainAxisSize.min) {
+    _result(false, ['The Column for the name and title should use MainAxisSize.min as its mainAxisSize.']);
+    return;
+  }
+
+  // Check inner Column has two Text children
+
+  if (innerColumnWidget.children.any((w) => w is! Text)) {
+    _result(false, ['The Column for the name and title should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check first Text has headline style
+
+  final nameText = innerColumnWidget.children[0] as Text;
+
+  if (nameText?.style?.fontSize != 24) {
+    _result(false, ['The Text widget for the name should use the "headline" textStyle.']);
+    return;
+  }
+
+  // Check first SizedBox has correct properties
+
+  final firstSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[1]);
+
+  if ((firstSizedBoxElement.widget as SizedBox).height != 8) {
+    _result(false, ['The SizedBox before the first empty Row widget should have a height of 8.']);
+    return;
+  }
+
+  // Check second Row has two Text children
+
+  final secondRowElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[2]);
+
+  final secondRowChildElements = <Element>[];
+  secondRowElement.visitChildElements((e) => secondRowChildElements.add(e));
+
+  if (secondRowChildElements.length != 2 ||
+      secondRowChildElements.any((e) => e.widget is! Text)) {
+    _result(false, ['The first empty Row widget should have two children, both Text widgets.']);
+    return;
+  }
+
+  // Check second Row has correct properties
+
+  if ((secondRowElement.widget as Row).mainAxisAlignment !=
+      MainAxisAlignment.spaceBetween) {
+    _result(false, ['The first empty Row widget should use MainAxisAlignment.spaceBetween as its MainAxisAlignment value.']);
+    return;
+  }
+
+  // Check second SizedBox has correct properties
+
+  final secondSizedBoxElement = outerColumnChildElements
+      .firstWhere((e) => e.widget == outerColumnChildWidgets[3]);
+
+  if ((secondSizedBoxElement.widget as SizedBox).height != 16) {
+    _result(false, ['The SizedBox between the first and second empty Row widgets should have a height of 16.']);
+    return;
+  }
+
+  _result(true);
+}
+{$ end test.dart $}
+```
+
+  <!-- </code>
+</pre> -->
+
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c5be61116652927c5d92262fce1b5360&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
+
+
+
+
+
 
 ### Part 3
 {:.no_toc}
@@ -691,7 +1007,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/datafoya/dae36611fc9af04c4b9d0fbc3429275e
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<!-- <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=dae36611fc9af04c4b9d0fbc3429275e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe> -->
 
 ## What's next?
 
