@@ -1,2 +1,0 @@
-Here's the link to the inject script: https://dartpad.dev/experimental/inject_embed.dart.js
-Here's the inject guide on the wiki: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide#converting-code-blocks-to-dartpad
