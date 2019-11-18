@@ -213,6 +213,7 @@
 
     .entries__card-body {
       position: relative;
+      padding: 24px 16px;
 
       .paragraph {
         font-size: 16px;
@@ -251,21 +252,29 @@
       &_container {
         flex-wrap: initial;
         margin-bottom: 80px;
+        justify-content: center;
       }
 
       .heading {
         font-size: 32px;
-        line-height: initial;
+        line-height: 40px;
         margin: 0 auto 88px;
       }
 
       .card {
-        height: 185px;
+        height: 190px;
         margin-bottom: 0;
-        width: 185px;
+        width: 190px;
+        margin-right: 28px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
 
       .entries__card-body {
+        padding: 24px;
+
         .paragraph {
           font-size: 20px;
           margin-bottom: 50px;

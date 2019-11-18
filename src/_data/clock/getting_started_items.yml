@@ -7,10 +7,10 @@
     cd &#60;path-to-repo&#62;/flutter_clock/&#60;name&#62;_clock</span>
   subItems:
   - text: >
-     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/tree/default/analog_clock" target="_blank" rel="noopener noreferrer">
+     Sample clock 1: <a href="https://github.com/flutter/flutter_clock/tree/master/analog_clock" target="_blank" rel="noopener noreferrer">
       Basic analog clock</a>.
   - text: >
-      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/tree/default/digital_clock" target="_blank"  rel="noopener noreferrer">
+      Sample clock 2: <a href="https://github.com/flutter/flutter_clock/tree/master/digital_clock" target="_blank"  rel="noopener noreferrer">
       Basic digital clock</a>.
 
 - title: >
