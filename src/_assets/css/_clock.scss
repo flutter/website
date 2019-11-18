@@ -235,8 +235,8 @@
       }
 
       .card {
-        height: 20vw;
-        width: 24%;
+        height: 135px;
+        width: 22%;
       }
 
       .entries__card-body {
@@ -319,6 +319,14 @@
 
       .wtm-logo {
         max-width: 30%;
+
+        &:first-of-type {
+          max-height: 30px;
+        }
+
+        &:last-of-type {
+          max-height: 20px;
+        }
       }
     }
 
@@ -331,6 +339,14 @@
 
       .wtm-logo {
         max-height: initial;
+
+        &:first-of-type {
+          max-height: 40px;
+        }
+  
+        &:last-of-type {
+          max-height: initial;
+        }
       }
     }
   }
