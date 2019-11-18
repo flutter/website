@@ -1,4 +1,4 @@
-```run-dartpad:theme-dark:mode-flutter:run-true:split-60:width-100%:height-400px
+```run-dartpad:theme-dark:mode-flutter:split-60:width-100%:height-400px
 {$ begin main.dart $}
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_test/flutter_web_test.dart';
