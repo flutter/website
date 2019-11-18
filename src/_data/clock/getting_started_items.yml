@@ -43,7 +43,7 @@
               <span class="code-font">&#60;name&#62;_clock/android</span>, and
               <span class="code-font">&#60;name&#62;_clock/web</span> (if present) folders.
           - text: >
-              <span class="code-font">Run flutter clean</span>.
+              Run <span class="code-font">flutter clean</span>.
     - text: >
         In your <span class="code-font">&#60;path-to-repo&#62;/flutter_clock</span> folder, zip these two folders:
       subItems:
@@ -65,7 +65,7 @@
     - text: >
         <span class="code-font">cd &#60;name&#62;_clock</span>
     - text: >
-        <span class="code-font">flutter create</span>
+        <span class="code-font">flutter create .</span>
     - text: >
         <span class="code-font">flutter run</span> (on Android or iOS in landscape)
 - title: >
