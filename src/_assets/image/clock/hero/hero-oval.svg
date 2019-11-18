@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="377px" height="201px" viewBox="0 0 377 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
-    <title>Clock 1</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Graphics" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Clock-1" transform="translate(195.000000, 102.000000) rotate(-2.000000) translate(-195.000000, -102.000000) translate(0.000000, -30.000000)">
-            <path d="M336.669486,235.978649 C308.420941,257.715821 267.632774,252.787025 245.566565,224.969874 L156.530628,118.218744 C134.464418,90.4015937 139.476191,50.2298777 167.724736,28.4927056 C195.973281,6.75553349 236.761448,11.68433 258.827657,39.5014808 L347.863595,146.25261 C369.929804,174.069761 364.918031,214.241477 336.669486,235.978649 Z" id="Hour" stroke="#01579B" transform="translate(252.197111, 132.235677) rotate(-78.000000) translate(-252.197111, -132.235677) "></path>
-            <ellipse id="Minute" stroke="#1389FD" transform="translate(61.584869, 101.504577) rotate(-92.000000) translate(-61.584869, -101.504577) " cx="61.584869" cy="101.504577" rx="59.2940862" ry="59.2683061"></ellipse>
-        </g>
-    </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg width="377" height="201" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-2 -664.34942446 117)" fill="none" fill-rule="evenodd"><path d="M371.23584447 71.17860278c15.38895988 32.1506587 2.08753313 71.02275208-29.7095692 86.82325058l-122.92997389 64.89548022c-31.79710185 15.80049961-70.04896328 2.54607648-85.43792326-29.60458224-15.38896-32.15065872-2.08753275-71.022752 29.7095694-86.82325053l122.9299733-64.89548137c31.79710234-15.80049849 70.04896376-2.54607536 85.43792365 29.60458334z" stroke="#01579B"/><ellipse stroke="#1389FD" transform="rotate(-92 61.584869 101.504577)" cx="61.584869" cy="101.504577" rx="59.2940862" ry="59.2683061"/></g></svg>

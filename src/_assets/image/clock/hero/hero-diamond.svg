@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="178px" height="178px" viewBox="0 0 178 178" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
-    <title>4</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Graphics" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="4" transform="translate(2.000000, 2.000000)" stroke="#01579B" stroke-width="2">
-            <polygon id="Rectangle-12" points="87 8.43349633e-12 174 87 87 174 -5.88114256e-11 87"></polygon>
-        </g>
-    </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?><svg width="178" height="178" xmlns="http://www.w3.org/2000/svg"><path d="M89 2l87 87-87 87L2 89z" stroke="#01579B" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
