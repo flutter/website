@@ -189,7 +189,7 @@
 - title: Testing & debugging
   permalink: /docs/testing
   children:
-    - title: Debugging
+    - title: Debugging tools
       permalink: /docs/testing/debugging
     - title: Debugging apps programmatically
       permalink: /docs/testing/code-debugging
@@ -197,6 +197,8 @@
       permalink: /docs/testing/oem-debuggers
     - title: Flutter's build modes
       permalink: /docs/testing/build-modes
+    - title: Handling errors
+      permalink: /docs/testing/errors
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
