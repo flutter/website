@@ -51,7 +51,12 @@ class DartPadPicker {
       ..src = iFrameSrc(theme: '', mode: 'flutter');
     iFrameHost.children.add(_iFrameElement);
     window.addEventListener('message', (dynamic e) {
-      if (e.data['type'] == 'ready') {
+      // Don't handle events from other iframe elements
+      if (e.data != null &&
+          e.data is Map &&
+          e.data.containsKey('type') &&
+          e.data['type'] is String &&
+          e.data['type'] == 'ready') {
         _sendSourceCode();
       }
     });
