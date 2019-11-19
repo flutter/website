@@ -216,12 +216,12 @@
 
 - name: Groupon
   description: >
-    Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance, 
+    Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance,
     manage customer satisfaction, and get efficient support.
   logo_src: showcase/cards/groupon-logo.png
   play_store_link: https://play.google.com/store/apps/details?id=com.groupon.redemption
   logo_has_name: true
-  card_image: showcase/cards/groupon-top@.jpg
+  card_image: showcase/cards/groupon-top@.png
 
 - name: JD
   description: >
