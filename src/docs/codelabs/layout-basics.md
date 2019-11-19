@@ -293,7 +293,7 @@ the widgets are resized according to their
 {% comment %}
   Gist: https://gist.github.com/ae6a86bbb9a34c9ff76c88f64df23987
 {% endcomment %}
-<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ae6a86bbb9a34c9ff76c88f64df23987&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ae6a86bbb9a34c9ff76c88f64df23987&amp;theme=dark&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next example,
   try changing the `flex` properties to other values,
