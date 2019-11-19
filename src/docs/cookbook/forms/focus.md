@@ -1,11 +1,11 @@
 ---
 title: Focus and text fields
 prev:
-  title: Create and style a text field
-  path: /docs/cookbook/forms/text-input
+  title: Retrieve the value of a text field
+  path: /docs/cookbook/forms/retrieve-input
 next:
-  title: Handle changes to a text field
-  path: /docs/cookbook/forms/text-field-changes
+  title: Add Material touch ripples
+  path: /docs/cookbook/gestures/ripples
 ---
 
 When a text field is selected and accepting input,
@@ -125,9 +125,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ### 3. Give focus to the `TextField` when a button is tapped
 
 Finally, focus the text field when the user taps a floating
-action button. Use the
-[`requestFocus()`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html)
-method to perform this task.
+action button. Use the [`requestFocus()`][] method to perform
+this task.
 
 <!-- skip -->
 ```dart
@@ -218,3 +217,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 ![Text Field Focus Demo](/images/cookbook/focus.gif){:.site-mobile-screenshot}
+
+
+
+[`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

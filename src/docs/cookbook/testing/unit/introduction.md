@@ -113,7 +113,7 @@ void main() {
 
 ## 5. Combine multiple tests in a `group`
 
-If you have several tests that are related to one another, 
+If you have several tests that are related to one another,
 combine them using the `group` function provided by the `test` package.
 
 <!-- skip -->

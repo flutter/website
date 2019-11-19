@@ -28,6 +28,10 @@ env:
     - TASK="./tool/check-code.sh"
     - TASK="bundle exec jekyll build"
 
+matrix:
+  allow_failures:
+    - env: TASK="./tool/check-code.sh"
+
 before_install:
   - source ./tool/env-set.sh
   - ./tool/before-install.sh
@@ -39,7 +43,7 @@ install:
 script: $TASK
 
 after_script:
-  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh --external || travis_terminate 1; fi
+  - if [[ $TASK == *build* ]]; then ./tool/shared/check-links.sh || travis_terminate 1; fi
 
 deploy:
   - provider: script
@@ -48,7 +52,7 @@ deploy:
     on:
       repo: flutter/website
       branch: master
-      condition: $TASK == *build*
+      condition: $TASK == *build* && $TRAVIS_EVENT_TYPE == push
 
 # Only run Travis jobs for named branches (to avoid double builds for each PR)
 branches:

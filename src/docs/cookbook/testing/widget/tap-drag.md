@@ -46,12 +46,12 @@ create a basic todo app that tests three features:
 
   1. Entering text into a `TextField`.
   2. Tapping a `FloatingActionButton` to add the text to a list of todos.
-  3. Swiping-to-dismiss toe remove the item from the list.
+  3. Swiping-to-dismiss to remove the item from the list.
 
 To keep the focus on testing,
 this recipe won't provide a detailed guide on how to build the todo app.
 To learn more about how this app is built,
-see the relevant recipes: 
+see the relevant recipes:
 
   * [Create and style a text field](/docs/cookbook/forms/text-input)
   * [Handle taps](/docs/cookbook/gestures/handling-taps)

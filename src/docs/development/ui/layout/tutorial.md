@@ -1,5 +1,5 @@
 ---
-title: Layout tutorial
+title: Building layouts
 short-title: Tutorial
 description: Learn how to build a layout.
 diff2html: true
@@ -46,7 +46,7 @@ then do the following:
     ```diff
     --- codelabs/startup_namer/step1_base/lib/main.dart
     +++ layout/base/lib/main.dart
-    @@ -6,10 +6,10 @@
+    @@ -10,10 +10,10 @@
        @override
        Widget build(BuildContext context) {
          return MaterialApp(
@@ -162,7 +162,7 @@ Add the title section to the app body like this:
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -8,11 +46,13 @@
+@@ -12,11 +46,13 @@
      return MaterialApp(
        title: 'Flutter layout demo',
        home: Scaffold(
@@ -360,6 +360,10 @@ Add the image file to the example:
   +  assets:
   +    - images/lake.jpg
   ```
+  {{site.alert.tip}}
+    - Note that `pubspec.yaml` is case sensitive. So, you should write `assets: ` and
+      `image address` as above shown format.
+    - For `image address` proper indentation must be there.
 
 Now you can reference the image from your code:
 

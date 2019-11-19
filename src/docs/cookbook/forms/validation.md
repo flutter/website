@@ -100,7 +100,7 @@ TextFormField(
   // The validator receives the text that the user has entered.
   validator: (value) {
     if (value.isEmpty) {
-      return 'Enter some text';
+      return 'Please enter some text';
     }
     return null;
   },
@@ -201,7 +201,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           TextFormField(
             validator: (value) {
               if (value.isEmpty) {
-                return 'Enter some text';
+                return 'Please enter some text';
               }
               return null;
             },

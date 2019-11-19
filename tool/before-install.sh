@@ -2,14 +2,14 @@
 
 source tool/shared/before-install.sh
 
-# Site-specific settings here: currently, none.
+# Site-specific settings below this point.
 
 travis_fold start before_install.flutter
 echo "Refreshing Flutter repo and running doctor:"
 (
   set -x;
   cd flutter;
-  git checkout beta;
+  git checkout stable;
   git pull;
   bin/flutter doctor;
 )

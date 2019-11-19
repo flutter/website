@@ -1,10 +1,21 @@
-<aside class="alert alert-warning" role="alert" markdown="1">
-  The `flutter` tool uses Google Analytics to anonymously report feature usage statistics
-  and basic crash reports. This data is used to help improve Flutter tools over time.
-  Analytics is not sent on the very first run or for any runs involving `flutter config`,
-  so you can opt out of analytics before any data is sent. To disable reporting,
-  type `flutter config --no-analytics` and to display the current setting, type
-  `flutter config`. See Google's [Privacy Policy].
+{{site.alert.warning}}
+  The `flutter` tool uses Google Analytics to anonymously report
+  feature usage statistics and basic [crash reports][]. This data is
+  used to help improve Flutter tools over time.
+
+  Flutter tool analytics are not sent on the very first run. To disable
+  reporting, type `flutter config --no-analytics`. To display the current
+  setting, type `flutter config`. If you opt out of analytics, an opt-out
+  event will be sent, and then no further information will be sent by the
+  Flutter tool.
+
+  By downloading the Flutter SDK, you agree to the Google Terms of Service.
+  Note: The Google [Privacy Policy][] describes how data is handled in this
+  service.
+
+  Moreover, Flutter includes the Dart SDK, which may send usage metrics and
+  crash reports to Google.
 
   [Privacy Policy]: https://policies.google.com/privacy
-</aside>
+  [crash reports]: https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting
+{{site.alert.end}}

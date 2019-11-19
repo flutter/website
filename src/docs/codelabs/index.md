@@ -4,7 +4,7 @@ description: "Codelabs help you quickly get started programming Flutter."
 ---
 
 
-#### [Basic Flutter layout](/docs/codelabs/layout-basics)
+#### [Basic Flutter layout concepts](/docs/codelabs/layout-basics)
 
 Use DartPad in a browser (no need to download Flutter or Dart!)
 to learn the basics of creating a Flutter layout.
@@ -33,6 +33,11 @@ you'll create a chat app that includes a simple animation, and customizes
 the UI for iOS and Android.
 
 
+#### [Implicit Animations](/docs/codelabs/implicit-animations)
+
+Use DartPad to learn how to use implicit animations to add motion and create
+visual effects for the widgets in your UI.
+
 #### [Adding Google Maps to a Flutter App]({{site.codelabs}}/codelabs/google-maps-in-flutter)
 
 Display a Google map in an app, retrieve data from a web service,
@@ -50,7 +55,7 @@ to share photos.
 Build a version of the Shrine shopping app (used in the Material Design
 codelabs) using the Cupertino package to create an iOS style look and feel.
 Create multiple tabs and navigate between them.
-Use the [provider](https://pub.dev/packages/provider) package to manage
+Use the [provider]({{site.pub}}/packages/provider) package to manage
 state between screens.
 
 

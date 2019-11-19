@@ -1,8 +1,8 @@
 ---
 title: Handle changes to a text field
 prev:
-  title: Focus and text fields
-  path: /docs/cookbook/forms/focus
+  title: Create and style a text field
+  path: /docs/cookbook/forms/text-input
 next:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
@@ -16,17 +16,16 @@ results as the user types.
 How do you run a callback function every time the text changes?
 With Flutter, you have two options:
 
-  1. Supply an `onChanged()` callback to a `TextField`.
+  1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`.
   2. Use a `TextEditingController`.
 
-## 1. Supply an `onChanged()` callback to a `TextField`
+## 1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`
 
 The simplest approach is to supply an
 [`onChanged()`]({{site.api}}/flutter/material/TextField/onChanged.html)
 callback to a
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html).
-Whenever the text changes, the callback is invoked. One downside to this
-approach is that it doesn't work with `TextFormField` widgets.
+[`TextField`]({{site.api}}/flutter/material/TextField-class.html) or a [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+Whenever the text changes, the callback is invoked.
 
 In this example, print the current value of the text field to the
 console every time the text changes.

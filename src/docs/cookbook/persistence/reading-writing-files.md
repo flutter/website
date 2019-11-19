@@ -36,9 +36,8 @@ device's file system. The plugin currently supports access to
 two file system locations:
 
   * *Temporary directory:* A temporary directory (cache) that the system can
-    clear at any time. On iOS, this corresponds to the value that
-    [`NSTemporaryDirectory()`](https://developer.apple.com/reference/foundation/1409211-nstemporarydirectory)
-    returns. On Android, this is the value that
+    clear at any time. On iOS, this corresponds to the
+    [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory). On Android, this is the value that
     [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
     returns.
   * *Documents directory:* A directory for the app to store files that only
@@ -118,7 +117,7 @@ Future<int> readCounter() async {
 ## Testing
 
 To test code that interacts with files, you need to mock calls to
-the `MethodChannel`&mdash;the class that 
+the `MethodChannel`&mdash;the class that
 communicates with the host platform. For security reasons,
 you can't directly interact with the file system on a device,
 so you interact with the test environment's file system.

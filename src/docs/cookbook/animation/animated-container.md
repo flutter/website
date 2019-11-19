@@ -1,5 +1,8 @@
 ---
 title: Animate the properties of a container
+prev:
+  title: Animate a widget using a physics simulation
+  path: /docs/cookbook/animation/physics-simulation
 next:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
@@ -68,12 +71,12 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
 Next, build the `AnimatedContainer` using the properties defined in the
 previous step. Furthermore, provide a `duration` that defines how long
-the animation should run. 
+the animation should run.
 
 <!-- skip -->
 ```dart
 AnimatedContainer(
-  // Use the properties stored in the State class. 
+  // Use the properties stored in the State class.
   width: _width,
   height: _height,
   decoration: BoxDecoration(
@@ -82,7 +85,7 @@ AnimatedContainer(
   ),
   // Define how long the animation should take.
   duration: Duration(seconds: 1),
-  // Provide an optional curve to make the animation feel smoother. 
+  // Provide an optional curve to make the animation feel smoother.
   curve: Curves.fastOutSlowIn,
 );
 ```
@@ -92,10 +95,10 @@ AnimatedContainer(
 Finally, start the animation by rebuilding the `AnimatedContainer` with
 the new properties. How to trigger a rebuild? Use the
 [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-method. 
+method.
 
 Add a button to the app. When the user taps the button, update
-the properties with a new width, height, background color and border radius 
+the properties with a new width, height, background color and border radius
 inside a call to `setState()`.
 
 A real app typically transitions between fixed values (for example,

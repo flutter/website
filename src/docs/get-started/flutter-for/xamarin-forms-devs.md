@@ -17,7 +17,7 @@ that is used on multiple platforms.
 This document can be used as a cookbook by jumping around and finding questions
 that are most relevant to your needs.
 
-## Project Setup
+## Project setup
 
 ### How does the app start?
 
@@ -74,19 +74,13 @@ class MyApp extends StatelessWidget {
 
 ### How do you create a page?
 
-Xamarin.Forms has many different types of pages; `ContentPage` is the most
-common.
-
-In Flutter, you specify an application widget that holds your root page.
-You can use a
-[MaterialApp]({{site.api}}/flutter/material/MaterialApp-class.html)
-widget, which supports [Material
-Design]({{site.material}}/design),
-or you can use a
-[CupertinoApp]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
-widget, which supports an iOS-style app,
-or you can use the lower level
-[WidgetsApp]({{site.api}}/flutter/widgets/WidgetsApp-class.html),
+Xamarin.Forms has many different types of pages;
+`ContentPage` is the most common.  In Flutter,
+you specify an application widget that holds your root page.
+You can use a [MaterialApp][] widget,
+which supports [Material Design][], or you can use a
+[CupertinoApp][] widget, which supports an iOS-style app,
+or you can use the lower level [WidgetsApp][],
 which you can customize in any way you want.
 
 The following code defines the home page, a stateful widget. In Flutter,
@@ -193,7 +187,7 @@ but there are many benefits to this approach.
 
 ## Views
 
-### What is the equivalent of a `Page` or `Element` in Flutter?
+### What is the equivalent of a Page or Element in Flutter?
 
 {{site.alert.secondary}}
   How is react-style, or _declarative_, programming different than the
@@ -225,7 +219,7 @@ widgets](/docs/development/ui/widgets/cupertino)
 to produce an interface that looks like
 [Apple's iOS design language](https://developer.apple.com/design/resources/).
 
-### How do I update `Widget`s?
+### How do I update widgets?
 
 In Xamarin.Forms, each `Page` or `Element` is a stateful class, that has
 properties and methods. You update your `Element` by updating a property,
@@ -732,13 +726,13 @@ specific URI scheme, using `Device.OpenUrl("mailto://")`
 
 To implement this functionality in Flutter,
 create a native platform integration,
-or use an [existing plugin]({{site.pub}}/flutter/), such as
-[`url_launcher`]({{site.pub}}/packages/url_launcher), available with
-many other packages on the [Pub site]({{site.pub}}/flutter).
+or use an [existing plugin][], such as
+[`url_launcher`][], available with
+many other packages on [pub.dev][].
 
 ## Async UI
 
-### What is the equivalent of `Device.BeginOnMainThread()` in Flutter?
+### What is the equivalent of Device.BeginOnMainThread() in Flutter?
 
 Dart has a single-threaded execution model, with support for `Isolate`s
 (a way to run Dart code on another thread), an event loop, and
@@ -2144,7 +2138,7 @@ You can find more information and the full code listing in
 [Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
 from the [Flutter cookbook](/docs/cookbook).
 
-### What is the equivalent of a "Placeholder" on an Entry?
+### What is the equivalent of a Placeholder on an Entry?
 
 In Xamarin.Forms, some `Elements` support a `Placeholder` property
 that you can assign a value to. For example:
@@ -2281,7 +2275,7 @@ that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
 without having to write your own integration.
-Plugins are found on the [Pub site]({{site.pub}}),
+Plugins are found on [pub.dev][],
 Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
@@ -2403,6 +2397,18 @@ plugin to access SQLite databases.
 In Flutter, access this functionality using the
 [sqflite]({{site.pub}}/packages/sqflite) plugin.
 
+## Debugging
+
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
 ## Notifications
 
 ### How do I set up push notifications?
@@ -2411,9 +2417,18 @@ In Android, you use Firebase Cloud Messaging to setup push
 notifications for your app.
 
 In Flutter, access this functionality using the
-[Firebase_Messaging]({{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging)
-plugin.
+[Firebase_Messaging][] plugin.
 For more information on using the Firebase Cloud Messaging API, see the
-[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging)
-plugin documentation.
+[`firebase_messaging`][] plugin documentation.
 
+
+[CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[DevTools]: /docs/development/tools/devtools/overview
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[existing plugin]: {{site.pub}}/flutter
+[Material Design]: {{site.material}}/design
+[MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[pub.dev]: {{site.pub}}
+[`url_launcher`]: {{site.pub}}/packages/url_launcher
+[WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html

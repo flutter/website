@@ -1,20 +1,20 @@
 {
-  "name": "www.dartlang.org",
+  "name": "flutter.dev",
   "version": "0.0.0",
   "private": true,
-  "description": "www.dartlang.org",
+  "description": "flutter.dev",
   "scripts": {
     "start": "./tool/serve.sh",
     "clean": "rm -Rf ./_site/* ./.jekyll*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dart-lang/site-www.git"
+    "url": "https://github.com/flutter/website.git"
   },
   "devDependencies": {
     "canonical-path": "^1.0.0",
     "diff2html-cli": "^2.7.0",
-    "firebase-tools": "^6.8.0",
+    "firebase-tools": "^7.6.2",
     "fs-extra": "^7.0.1",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",

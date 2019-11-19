@@ -119,7 +119,7 @@ taps a todo in the list. Pass the todo to the `DetailScreen`.
 
 To capture the user's tap, write an
 [`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
-callback for the `ListTile` widget. Within the `onTap()` callback, 
+callback for the `ListTile` widget. Within the `onTap()` callback,
 use the
 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
 method.

@@ -14,6 +14,8 @@ by the Flutter community:
 
 ## General overview
 
+* [This very section](/docs/development/data-and-backend/state-mgmt/intro), for those of you who arrived
+  directly to this _Options_ page and missed the previous pages
 * [Build reactive mobile apps with Flutter](https://www.youtube.com/watch?v=RS36gBEp8OI&feature=youtu.be),
   a video from Google I/O 2018, and an
   [accompanying article]({{site.flutter-medium}}/build-reactive-mobile-apps-in-flutter-companion-article-13950959e381)
@@ -26,7 +28,7 @@ by the Flutter community:
 * [Basic state management in Google Flutter]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d),
   by Agung Surya
 
-## InheritedWidget &amp; InheritedModel 
+## InheritedWidget &amp; InheritedModel
 
 * [InheritedWidget docs](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
 * [Managing Flutter Application State With InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1),
@@ -55,11 +57,12 @@ by the Flutter community:
   a video by MTechViral
 * [Flutter state management&mdash;scoped
   model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
+* [Making sense of all those Flutter Providers](https://medium.com/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd)
 
 ## Redux
 
 * [Animation Management with Redux and Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), a video from DartConf 2018 [Accompanying article on Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
-* [Flutter Redux package]({{site.pub-pkg}}/flutter_redux) on the [Pub site]({{site.pub}})
+* [Flutter Redux package]({{site.pub-pkg}}/flutter_redux)
 * [Introduction to Redux in Flutter](https://blog.novoda.com/introduction-to-redux-in-flutter/), by Xavi Rigau
 * [Flutter + Redux&mdash;How to make a shopping list app](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65),
   by Paulina Szklarska on Hackernoon
@@ -71,6 +74,8 @@ by the Flutter community:
   by Hillel Coren
 * [Fish-Redux - An assembled flutter application framework based on Redux](https://github.com/alibaba/fish-redux/),
   by Alibaba
+* [Async Redux - Redux without boilerplate. Allows for both sync and async reducers]({{site.pub}}/packages/async_redux/),
+  by Marcelo Glasberg
 
 ## BLoC / Rx
 
@@ -83,8 +88,4 @@ by the Flutter community:
 
 * [MobX.dart, Hassle free state-management for your Dart and Flutter apps](https://github.com/mobxjs/mobx.dart)
 * [Getting started with MobX.dart](https://mobx.pub/getting-started)
-* [Flutter: State Management with Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) by Paul Halliday
-
-## Provider
-
-* [Getting Started with Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) by Paul Halliday
+* [Flutter: State Management with Mobx](https://www.youtube.com/watch?v=p-MUBLOEkCs), a video by Paul Halliday

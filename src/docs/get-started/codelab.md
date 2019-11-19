@@ -23,7 +23,7 @@ This is a guide to creating your first Flutter app. If you
 are familiar with object-oriented code and basic programming
 concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
-previous experience with Dart or mobile programming.
+previous experience with Dart, mobile, or web programming.
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
@@ -34,8 +34,8 @@ can also be found on [Google Developers]({{site.codelabs}}).
 ## What you'll build in part 1
 {:.no_toc}
 
-You’ll implement a simple mobile app that generates proposed names for a
-startup company. The user can select and unselect names,
+You’ll implement a simple mobile app that generates proposed
+names for a startup company. The user can select and unselect names,
 saving the best ones. The code lazily generates names.
 As the user scrolls, more names are generated.
 There is no limit to how far a user can scroll.
@@ -45,7 +45,8 @@ The animated GIF shows how the app works at the completion of part 1.
 {{site.alert.secondary}}
   <h4 class="no_toc">What you’ll learn in part 1</h4>
 
-  * How to write a Flutter app that looks natural on both iOS and Android.
+  * How to write a Flutter app that looks natural on iOS, Android,
+    and the web.
   * Basic structure of a Flutter app.
   * Finding and using packages to extend functionality.
   * Using hot reload for a quicker development cycle.
@@ -53,8 +54,9 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to create an infinite, lazily loaded list.
 
   In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-  of this codelab, you'll add interactivity, modify the app's theme, and
-  add the ability to navigate to a new screen (called a _route_ in Flutter).
+  of this codelab, you'll add interactivity, modify the app's theme,
+  and add the ability to navigate to a new screen
+  (called a _route_ in Flutter).
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -72,6 +74,7 @@ The animated GIF shows how the app works at the completion of part 1.
     computer and set to developer mode.
   * The [iOS simulator](install/macos#set-up-the-ios-simulator).
   * The [Android emulator](install/macos#set-up-the-android-emulator).
+  * A browser (currently Chrome is preferred).
 {{site.alert.end}}
 
 ## Step 1: Create the starter Flutter app
@@ -99,6 +102,10 @@ where the Dart code lives.
 
     <?code-excerpt "lib/main.dart" title?>
     ```dart
+    // Copyright 2018 The Flutter team. All rights reserved.
+    // Use of this source code is governed by a BSD-style license that can be
+    // found in the LICENSE file.
+
     import 'package:flutter/material.dart';
 
     void main() => runApp(MyApp());
@@ -170,12 +177,11 @@ where the Dart code lives.
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
-[english_words]({{site.pub}}/packages/english_words),
-which contains a few thousand of the most used
+[english_words][], which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on the [Pub site]({{site.pub}}/flutter).
+packages, on [pub.dev][].
 
  1. The pubspec file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
@@ -229,7 +235,7 @@ packages, on the [Pub site]({{site.pub}}/flutter).
     ```diff
     --- step1_base/lib/main.dart
     +++ step2_use_package/lib/main.dart
-    @@ -5,6 +6,7 @@
+    @@ -9,6 +10,7 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -237,7 +243,6 @@ packages, on the [Pub site]({{site.pub}}/flutter).
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -12,7 +14,7 @@
                appBar: AppBar(
                 title: Text('Welcome to Flutter')
              ),
@@ -271,8 +276,10 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following links to get back on track.
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
 * [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
@@ -354,7 +361,7 @@ a child inside the existing `MyApp` stateless widget.
     ```diff
     --- step2_use_package/lib/main.dart
     +++ step3_stateful_widget/lib/main.dart
-    @@ -6,7 +6,6 @@
+    @@ -10,7 +10,6 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -362,7 +369,7 @@ a child inside the existing `MyApp` stateless widget.
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -14,8 +13,8 @@
+    @@ -18,8 +17,8 @@
                title: Text('Welcome to Flutter'),
              ),
              body: Center(
@@ -395,8 +402,10 @@ a child inside the existing `MyApp` stateless widget.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
@@ -520,7 +529,7 @@ lazily, on demand.
     ```diff
     --- step3_stateful_widget/lib/main.dart
     +++ step4_infinite_list/lib/main.dart
-    @@ -6,15 +6,8 @@
+    @@ -10,15 +10,8 @@
      class MyApp extends StatelessWidget {
        @override
        Widget build(BuildContext context) {
@@ -550,8 +559,10 @@ lazily, on demand.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code at the following link
-to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
@@ -586,3 +597,9 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
+
+
+
+[DevTools]: /docs/development/tools/devtools
+[english_words]: {{site.pub}}/packages/english_words
+[pub.dev]: {{site.pub}}

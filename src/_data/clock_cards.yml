@@ -1,0 +1,21 @@
+- title: Git clone this repo
+  redirect: '#'
+
+- title: How do you want to build your clock?
+  links:
+
+  - text: 'Sample clock 1: Basic analog clock'
+    link: '#'
+
+  - text: 'Sample clock 2: Decorative clock'
+    link: '#'
+
+  - text: 'Create your own clock package'
+    link: '#'
+
+- title: Run your clock package using this clock customizer app
+  redirect: '#'
+
+- title: Run your clock using the clock customizer app
+  redirect: '#'
+  

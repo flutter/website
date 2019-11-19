@@ -4,11 +4,6 @@ description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---
 
-{{site.alert.warning}}
-  This page describes the Android release process as of the
-  1.7.4 release of the Flutter SDK.
-{{site.alert.end}}
-
 During a typical development cycle,
 you test an app using `flutter run` at the command line,
 or by using the **Run** and **Debug**
@@ -28,14 +23,14 @@ This page covers the following topics:
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
 * [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
+* [Updating the app's version number](#updating-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
 ## Adding a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
-[flutter_launcher_icons]({{site.pub}}/packages/flutter_launcher_icons)
-package.
+[flutter_launcher_icons][] package.
 
 Alternatively, you can do it manually using the following steps:
 
@@ -43,11 +38,14 @@ Alternatively, you can do it manually using the following steps:
    icons][launchericons] guidelines for icon design.
 
 1. In the `<app dir>/android/app/src/main/res/` directory,
-   place your icon files in folders named using [configuration qualifiers][].
-   The default `mipmap-` folders demonstrate the correct naming convention.
+   place your icon files in folders named using
+   [configuration qualifiers][].
+   The default `mipmap-` folders demonstrate the correct
+   naming convention.
 
-1. In `AndroidManifest.xml`, update the [`application`][applicationtag]
-   tag's `android:icon` attribute to reference icons from the previous
+1. In `AndroidManifest.xml`, update the
+   [`application`][applicationtag] tag's `android:icon`
+   attribute to reference icons from the previous
    step (for example,
    `<application android:icon="@mipmap/ic_launcher" ...`).
 
@@ -64,22 +62,37 @@ signature. Use the following instructions to sign your app.
 If you have an existing keystore, skip to the next step.
 If not, create one by running the following at the command line:
 
-```
+On Mac/Linux, use the following command:
+
+```terminal
 keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
-{{site.alert.note}}
+On Windows, use the following command:
+
+```terminal
+keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+```
+
+{{site.alert.warning}}
   Keep the `keystore` file private;
   do not check it into public source control.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  The `keytool` command might not be in your path&mdash;it's
-  part of the Java JDK, which is installed as part of Android Studio.
-  For the concrete path,
+* The `keytool` command might not be in your path&mdash;it's
+  part of Java, which is installed as part of
+  Android Studio.  For the concrete path,
   run `flutter doctor -v` and locate the path printed after
   'Java binary at:'. Then use that fully qualified path
   replacing `java` (at the end) with `keytool`.
+  If your path includes space-separated names,
+  such as `Program Files`, place quotes around the
+  space-separated names. For example: `/"Program Files"/`
+
+* The `-storetype JKS` tag is only required for Java 9
+  or newer. As of the Java 9 release,
+  the keystore type defaults to PKS12.
 {{site.alert.end}}
 
 ### Reference the keystore from the app
@@ -94,7 +107,7 @@ keyAlias=key
 storeFile=<location of the key store file, such as /Users/<user name>/key.jks>
 ```
 
-{{site.alert.note}}
+{{site.alert.warning}}
   Keep the `key.properties` file private;
   do not check it into public source control.
 {{site.alert.end}}
@@ -166,9 +179,8 @@ If you intend to use third-party Java, Kotlin, or Android libraries,
 you might want to reduce the size of the APK or protect that code from
 reverse engineering.
 
-For information on obfuscating Dart code, see [Obfuscating Dart
-Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
-in the [Flutter wiki]({{site.github}}/flutter/flutter/wiki).
+For information on obfuscating Dart code, see
+[Obfuscating Dart Code][] in the [Flutter wiki][].
 
 ### Step 1 - Configure Proguard
 
@@ -183,6 +195,7 @@ add the rules listed below.
 -keep class io.flutter.view.**  { *; }
 -keep class io.flutter.**  { *; }
 -keep class io.flutter.plugins.**  { *; }
+-dontwarn io.flutter.embedding.**
 ```
 
 This configuration only protects Flutter engine libraries.
@@ -224,37 +237,44 @@ android {
 
 ## Reviewing the app manifest
 
-Review the default [App Manifest][manifest] file, `AndroidManifest.xml`,
+Review the default [App Manifest][manifest] file,
+`AndroidManifest.xml`,
 located in `<app dir>/android/app/src/main` and verify that the values
-are correct, especially:
+are correct, especially the following:
 
-* `application`: Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect the final name of the app.
+`application`
+: Edit the `android:label` in the
+  [`application`][applicationtag] tag to reflect
+  the final name of the app.
 
-* `uses-permission`: Remove the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code does not need
-  Internet access. The standard template includes this tag to enable
-  communication between Flutter tools and a running app.
+`uses-permission`
+: Add the `android.permission.INTERNET`
+  [permission][permissiontag] if your application code needs Internet
+  access. The standard template does not include this tag but allows
+  Internet access during development to enable communication between
+  Flutter tools and a running app.
 
 ## Reviewing the build configuration
 
-Review the default [Gradle build file][gradlebuild] file, `build.gradle`,
-located in `<app dir>/android/app` and verify the values are correct,
-especially:
+Review the default [Gradle build file][gradlebuild] file,
+`build.gradle`, located in `<app dir>/android/app` and
+verify the values are correct, especially the following
+values in the `defaultConfig` block:
 
-* `defaultConfig`:
+`applicationId`
+: Specify the final, unique (Application Id)[appid]
 
-  * `applicationId`: Specify the final, unique (Application Id)[appid]
+`versionCode` & `versionName`
+: Specify the internal app version number,
+  and the version number display string. You can do this by setting
+  the `version` property in the pubspec.yaml file. Consult the version
+  information guidance in the [versions documentation][versions].
 
-  * `versionCode` & `versionName`: Specify the internal app version number,
-     and the version number display string. You can do this by setting
-     the `version` property in the pubspec.yaml file. Consult the version
-     information guidance in the [versions documentation][versions].
-
-  * `minSdkVersion` & `targetSdkVersion`: Specify the minimum API level,
-     and the API level on which the app is designed to run.
-     Consult the API level section in the [versions documentation][versions]
-     for details.
+`minSdkVersion` & `targetSdkVersion`
+: Specify the minimum API level,
+  and the API level on which the app is designed to run.
+  Consult the API level section in the [versions documentation][versions]
+  for details.
 
 ## Building the app for release
 
@@ -275,6 +295,16 @@ the Play Store.
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
+
+{{site.alert.warning}}
+  Recently, the Flutter team has received several reports
+  from developers indicating they are experiencing app
+  crashes on certain devices on Android 6.0 when building
+  an app bundle.
+  While the Android team is working to identify a feasible
+  solution, you might try splitting the APK as a temporary
+  workaround. For more information, see [Issue 36822][].
+{{site.alert.end}}
 
 From the command line:
 
@@ -351,6 +381,41 @@ From the command line:
 For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
 
+Now that you’ve created your app, attract more users with Google Ads.
+App campaigns use machine learning to drive more installs and
+make the most of your budget.
+
+Get your campaign running in a few steps:
+
+1. Create your ad&mdash;we’ll help create your ad from your app
+   information
+1. Choose your budget&mdash;set your target cost-per-install (tCPI)
+   and daily budget cap
+1. Select your location&mdash;let us know where you’d like your ads to run
+1. Decide what action you want users to take&mdash;choose installs,
+   in-app actions, or target return on ad spend (ROAS)
+
+[Get $75 app advertising credit when you spend $25.][]
+
+## Updating the app's version number
+
+The default version number of the app is `1.0.0`.
+To update it, navigate to the `pubspec.yaml` file
+and update the following line:
+
+`version: 1.0.0+1`
+
+The version number is three numbers separated by dots,
+such as `1.0.0` in the example above, followed by an optional
+build number such as `1` in the example above, separated by a `+`.
+
+Both the version and the build number may be overridden in Flutter's
+build by specifying `--build-name` and `--build-number`, respectively.
+
+In Android, `build-name` is used as `versionName` while
+`build-number` used as `versionCode`. For more information,
+see [Version your app][] in the Android documentation.
+
 ## Android release FAQ
 
 Here are some commonly asked questions about deployment for
@@ -408,24 +473,30 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
-[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
-[appid]: {{site.android-dev}}/studio/build/application-id
-[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.material}}/design/iconography/
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[play]: {{site.android-dev}}/distribute/googleplay/start
-[bundle]: {{site.android-dev}}/platform/technology/app-bundle
-[bundle2]: {{site.android-dev}}/guide/app-bundle
-[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
-[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[appid]: {{site.android-dev}}/studio/build/application-id
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
+[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[bundle]: {{site.android-dev}}/platform/technology/app-bundle
+[bundle2]: {{site.android-dev}}/guide/app-bundle
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
+[Flutter wiki]: {{site.github}}/flutter/flutter/wiki
+[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
+[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 [Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
+[launchericons]: {{site.material}}/design/iconography/
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[play]: {{site.android-dev}}/distribute/googleplay/start
+[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
+[versions]: {{site.android-dev}}/studio/publish/versioning

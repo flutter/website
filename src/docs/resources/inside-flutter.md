@@ -66,10 +66,10 @@ are a min and max width and a min and max height. During layout,
 the child determines its geometry by choosing a size within these bounds.
 After the child returns from layout, the parent decides the child's
 position in the parent's coordinate system<sup><a href="#a3">3</a></sup>.
-Notice that the child's layout cannot depend on the child's position
-because the child's position is not determined until after the child
-returns from layout. As a result, the parent is free to reposition
-the child without needing to recompute the child's layout.
+Note that the child's layout cannot depend on its position,
+as the position is not determined until after the child
+returns from the layout. As a result, the parent is free to reposition
+the child without needing to recompute its layout.
 
 More generally, during layout, the _only_ information that flows from
 parent to child are the constraints and the _only_ information that
@@ -254,6 +254,32 @@ the major algorithms discussed above.
 
 Taken together and summed over the large trees created by aggressive
 composition, these optimizations have a substantial effect on performance.
+
+### Separation of the Element and RenderObject trees
+
+The RenderObject and Element (Widget) trees in Flutter are isomorphic
+(strictly speaking, the RenderObject tree is a subset of the Element
+tree). An obvious simplification would be to combine these trees into
+one tree. However, in practice there are a number of benefits to having
+these trees be separate:
+
+* **Performance.** When the layout changes, only the relevant parts of
+  the layout tree need to be walked. Due to composition, the element
+  tree frequently has many additional nodes that would have to be skipped.
+
+* **Clarity.** The clearer separation of concerns allows the widget
+  protocol and the render object protocol to each be specialized to
+  their specific needs, simplifying the API surface and thus lowering
+  the risk of bugs and the testing burden.
+
+* **Type safety.** The render object tree can be more type safe since it
+  can guarantee at runtime that children will be of the appropriate type
+  (each coordinate system, e.g. has its own type of render object).
+  Composition widgets can be agnostic about the coordinate system used
+  during layout (for example, the same widget exposing a part of the app
+  model could be used in both a box layout and a sliver layout), and thus
+  in the element tree, verifying the type of render objects would require
+  a tree walk.
 
 ## Infinite scrolling
 

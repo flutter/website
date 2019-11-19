@@ -357,7 +357,7 @@ leaks.
 
 With these few changes, you’ve created your first animation in Flutter!
 
-<aside class="alert alert-success" markdown="1">
+{{site.alert.secondary}}
   **Dart language tricks:**
   You might not be familiar with Dart's cascade notation&mdash;the two
   dots in `..addListener()`. This syntax means that the `addListener()`
@@ -384,7 +384,7 @@ With these few changes, you’ve created your first animation in Flutter!
 
   You can learn more about cascade notation in the
   [Dart Language Tour.]({{site.dart-site}}/guides/language/language-tour)
-</aside>
+{{site.alert.end}}
 
 ###  Simplifying with Animated&shy;Widget
 
@@ -414,7 +414,7 @@ class AnimatedLogo extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
+    final animation = listenable as Animation<double>;
     return Center(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),
@@ -735,7 +735,7 @@ class AnimatedLogo extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
+    final animation = listenable as Animation<double>;
     return Center(
       [!child: Opacity(!]
         [!opacity: _opacityTween.evaluate(animation),!]

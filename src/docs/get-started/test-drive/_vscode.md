@@ -1,6 +1,8 @@
 <div class="tab-pane" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-## Create the app
+## Create the app {#create-app}
+
+{% include_relative _web-app.md  %}
 
   1. Invoke **View > Command Palette**.
   1. Type "flutter", and select the **Flutter: New Project**.
@@ -11,6 +13,8 @@
 
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
+
+{% include_relative _package-name.md  %}
 
 {% include_relative _main-code-note.md  %}
 
@@ -24,6 +28,7 @@ contains a simple demo app that uses [Material Components][].
       click **No Devices** and launch a simulator.
     - To setup a real device, follow the device-specific instructions on the
       [Install][] page for your OS.
+ 1. Press the **Settings button** - a cog icon <i class="material-icons align-bottom">gear</i> on the top right (now marked with a red or orange indicator) next to the DEBUG text box that reads No Configuration. Select flutter. And choose the debug configuration: To create your emulator if it is closed or to run the emulator or device that is now connected.
  1. Invoke **Debug > Start Debugging** or press <kbd>F5</kbd>.
  1. Wait for the app to launch &mdash; progress is printed
     in the **Debug Console** view.

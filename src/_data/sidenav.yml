@@ -27,7 +27,9 @@
         - title: Introduction to declarative UI
           permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart language overview"
-      permalink: https://www.dartlang.org/guides/language
+      permalink: https://www.dart.dev/guides/language
+    - title: "Building a web app"
+      permalink: /docs/get-started/web
 
 - title: Samples & tutorials
   children:
@@ -47,7 +49,7 @@
     - title: User interface
       permalink: /docs/development/ui
       children:
-        - title: Introduction to Widgets
+        - title: Introduction to widgets
           permalink: /docs/development/ui/widgets-intro
         - title: Building layouts
           permalink: /docs/development/ui/layout
@@ -57,6 +59,8 @@
               match-page-url-exactly: true
             - title: Tutorial
               permalink: /docs/development/ui/layout/tutorial
+            - title: Creating responsive apps
+              permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
         - title: Adding interactivity
@@ -121,7 +125,10 @@
     - title: Platform integration
       permalink: /docs/development/platform-integration
       children:
-        - title: Embedding Flutter views in non-Flutter apps
+        - title: C and C++ interop
+          permalink: /docs/development/platform-integration/c-interop
+        - title: Web FAQ
+          permalink: /docs/development/platform-integration/web
         - title: Writing platform-specific code
           permalink: /docs/development/platform-integration/platform-channels
     - title: Packages & plugins
@@ -142,8 +149,29 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart DevTools
-          permalink: https://flutter.github.io/devtools/
+        - title: DevTools
+          permalink: /docs/development/tools/devtools
+          children:
+            - title: Overview
+              permalink: /docs/development/tools/devtools/overview
+            - title: Install from Android Studio / IntelliJ
+              permalink: /docs/development/tools/devtools/android-studio
+            - title: Install from VS Code
+              permalink: /docs/development/tools/devtools/vscode
+            - title: Install from command line
+              permalink: /docs/development/tools/devtools/cli
+            - title: Flutter inspector
+              permalink: /docs/development/tools/devtools/inspector
+            - title: Timeline view
+              permalink: /docs/development/tools/devtools/timeline
+            - title: Memory view
+              permalink: /docs/development/tools/devtools/memory
+            - title: Performance view
+              permalink: /docs/development/tools/devtools/performance
+            - title: Debugger
+              permalink: /docs/development/tools/devtools/debugger
+            - title: Logging view
+              permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -155,36 +183,58 @@
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
           permalink: /docs/development/tools/formatting
-        - title: Flutter inspector
-          permalink: https://flutter.github.io/devtools/inspector
+    - title: AndroidX migration
+      permalink: /docs/development/androidx-migration
 
-- title: Testing & optimization
+- title: Testing & debugging
   permalink: /docs/testing
   children:
-    - title: Debugging
+    - title: Debugging tools
       permalink: /docs/testing/debugging
-    - title: Using OEM debuggers
+    - title: Debugging apps programmatically
+      permalink: /docs/testing/code-debugging
+    - title: Using an OEM debugger
       permalink: /docs/testing/oem-debuggers
     - title: Flutter's build modes
       permalink: /docs/testing/build-modes
+    - title: Handling errors
+      permalink: /docs/testing/errors
     - title: Testing
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance best practices
-      permalink: /docs/testing/best-practices
-    - title: Performance profiling
-      permalink: /docs/testing/ui-performance
-    # We don't have this page yet.
-    # - title: Making your compiled app smaller
+
+- title: Performance & optimization
+  permalink: /docs/perf
+  children:
+    - title: Overview
+      permalink: /docs/perf
+    - title: App size
+      permalink: /docs/perf/app-size
+#    - title: Memory
+#      permalink: /docs/perf/memory
+#    - title: Power usage
+#      permalink: /docs/perf/power
+    - title: Rendering performance
+      permalink: /docs/perf/rendering
+      children:
+      - title: Overview
+        permalink: /docs/perf/rendering
+        match-page-url-exactly: true
+      - title: Performance best practices
+        permalink: /docs/perf/rendering/best-practices
+      - title: Performance profiling
+        permalink: /docs/perf/rendering/ui-performance
 
 - title: Deployment
   children:
     - title: Creating flavors for Flutter
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: Build and release an Android app
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: Build and release an iOS app
       permalink: /docs/deployment/ios
+    - title: Build and release a web app
+      permalink: /docs/deployment/web
     - title: Continuous deployment
       permalink: /docs/deployment/cd
 
@@ -201,6 +251,8 @@
     # - title: Flutter best practices # TODO
     - title: Technical videos
       permalink: /docs/resources/videos
+    - title: Books
+      permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: FAQ
