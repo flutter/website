@@ -380,7 +380,7 @@ create empty space.
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/1c690c529316fbe7af0b4c9edb8da512
+  Gist: https://gist.github.com/1c690c529316fbe7af0b4c9edb8da512
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=1c690c529316fbe7af0b4c9edb8da512&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -409,7 +409,7 @@ can create space between widgets.
          between the second and third `BlueBox` widgets.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/5a2f539d258eaab33f6f0b19a0ab21c8
+  Gist: https://gist.github.com/5a2f539d258eaab33f6f0b19a0ab21c8
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=5a2f539d258eaab33f6f0b19a0ab21c8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -432,7 +432,7 @@ for different fonts, sizes, and colors.
          `CrossAxisAlignment.baseline`, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/05d920fd86eb3c253c2a6a8be0fabb01
+  Gist: https://gist.github.com/05d920fd86eb3c253c2a6a8be0fabb01
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=05d920fd86eb3c253c2a6a8be0fabb01&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -459,7 +459,7 @@ Flutter is preloaded with icon packages for
          [Material Color palette][], and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/54fa77a90f160c74382f1517d6167fda
+  Gist: https://gist.github.com/54fa77a90f160c74382f1517d6167fda
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=54fa77a90f160c74382f1517d6167fda&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -491,7 +491,7 @@ the following example uses an image from the network.
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/b42464ac4e9bff23ab567721581183aa
+  Gist: https://gist.github.com/b42464ac4e9bff23ab567721581183aa
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -559,7 +559,7 @@ which are positioned below the contact information.
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/c46f9a9f6c99c2c00497df5dbc0b4593
+  Gist: https://gist.github.com/c46f9a9f6c99c2c00497df5dbc0b4593
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=c46f9a9f6c99c2c00497df5dbc0b4593&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -600,7 +600,7 @@ which are positioned below the contact information.
   ```
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/ecf35ee39daf06266363be8fe5aa1d6f
+  Gist: https://gist.github.com/ecf35ee39daf06266363be8fe5aa1d6f
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ecf35ee39daf06266363be8fe5aa1d6f&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -645,7 +645,7 @@ which are positioned below the contact information.
 
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/9863fbf7fe192e95b93cfdfb517ac6f5
+  Gist: https://gist.github.com/9863fbf7fe192e95b93cfdfb517ac6f5
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=9863fbf7fe192e95b93cfdfb517ac6f5&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -668,7 +668,7 @@ which are positioned below the contact information.
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/73baebd1bc2e5414921b63d9b0823db0
+  Gist: https://gist.github.com/73baebd1bc2e5414921b63d9b0823db0
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=73baebd1bc2e5414921b63d9b0823db0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
@@ -689,7 +689,7 @@ which are positioned below the contact information.
   `MainAxisAlignment.spaceAround`.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/a24370419412b11e261fea95e8a18774
+  Gist: https://gist.github.com/a24370419412b11e261fea95e8a18774
 {% endcomment %}
 <iframe src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=a24370419412b11e261fea95e8a18774&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
