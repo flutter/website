@@ -6,8 +6,8 @@ description: How to write packages and plugins for Flutter.
 
 ## Package introduction
 
-Packages enable the creation of modular code that can be shared easily. A
-minimal package consists of:
+Packages enable the creation of modular code that can be shared easily.
+A minimal package consists of:
 
 * A `pubspec.yaml` file: A metadata file that declares the package name,
   version, author, etc.

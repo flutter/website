@@ -81,9 +81,9 @@ dependencies:
 
 If `some_package` declares the dependencies above and `another_package`
 declares a compatible `url_launcher` dependency like `'0.4.5'` or
-`^0.4.0`, Pub resolves the issue automatically.
-Platform-specific dependencies on [Gradle modules][] and/or [CocoaPods][]
-are solved in a similar way.
+`^0.4.0`, pub resolves the issue automatically.
+Platform-specific dependencies on [Gradle modules][]
+and/or [CocoaPods][] are solved in a similar way.
 
 Even if `some_package` and `another_package` declare incompatible versions
 for `url_launcher`, they might actually use `url_launcher` in
@@ -202,7 +202,7 @@ additional dependency options are available:
         url: git://github.com/flutter/plugin1.git
   ```
 
-* **Git** dependency on a package in a folder: Pub assumes the
+* **Git** dependency on a package in a folder: pub assumes the
   package is located in the root of the Git repository; if that is not the
   case, specify the location with the `path` argument. For example:
 
