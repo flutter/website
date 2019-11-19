@@ -330,8 +330,9 @@ Some apps choose to use `Fragment`s as entire Android screens. In these apps, it
 would be reasonable for a `Fragment` to control system chrome like Android's
 status bar, navigation bar, and orientation.
 
-TODO(mattcarroll): Add this asset to git.
-<!-- add-flutter-fragment_fullscreen -->
+{% asset
+ development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png
+ class="mw-100" alt="Fullscreen Flutter" %}
 
 In other apps, `Fragment`s are used to represent only a portion of a UI. A
 `FlutterFragment` might be used to implement the inside of a drawer, or a video
@@ -339,8 +340,9 @@ player, or a single card. In these situations, it would be inappropriate for the
 `FlutterFragment` to affect Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-TODO(mattcarroll): Add this asset to git.
-<!-- add-flutter-fragment_partial-ui -->
+{% asset
+ development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png
+ class="mw-100" alt="Flutter as Partial UI" %}
 
 `FlutterFragment` comes with a concept that helps differentiate between the case
 where a `FlutterFragment` should be able to control its host `Activity`, and the
