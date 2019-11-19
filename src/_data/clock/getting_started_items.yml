@@ -14,7 +14,7 @@
       Basic digital clock</a>.
 
 - title: >
-    Run the clock app in your IDE, or by using <span class="code-font">flutter</span> run at the command line.
+    Run the clock app in your IDE, or by using <span class="code-font">flutter run</span> at the command line.
 
 - title: >
     Build your clock inside a folder called <span class="code-font">&#60;name&#62;_clock</span>.
