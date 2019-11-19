@@ -3,7 +3,7 @@ title: Add Flutter to existing app
 description: Adding Flutter as a library to an existing Android or iOS app.
 ---
 
-## Adding Flutter to an existing app (add-to-app)
+## Add-to-app
 
 It's sometimes not practical to rewrite your entire application in Flutter all
 at once. For those situations, Flutter can be integrated into your existing
@@ -27,17 +27,21 @@ Flutter libraries into an application is not currently supported
 
 ## Supported features
 
-- Add to Android applications
-  - Auto-build and import the Flutter module by adding a Flutter SDK hook to
+### Add to Android applications
+
+- Auto-build and import the Flutter module by adding a Flutter SDK hook to
   your Gradle script; or
-  - Build your Flutter module into a generic [Android AAR](https://developer.android.com/studio/projects/android-library)
-  - Android Studio Android/Flutter co-editing and module creation/import wizard
-  - Java and Kotlin host apps supported
-- Add to iOS applications
-  - Auto-build and import the Flutter module by adding a Flutter SDK hook to
-  your CocoaPods and to your Xcode build phase; or
-  - Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
-  - Objective-C and Swift host apps supported
+- Build your Flutter module into a generic [Android AAR](https://developer.android.com/studio/projects/android-library)
+- Android Studio Android/Flutter co-editing and module creation/import wizard
+- Java and Kotlin host apps supported
+
+### Add to iOS applications
+- Auto-build and import the Flutter module by adding a Flutter SDK hook to
+ your CocoaPods and to your Xcode build phase; or
+- Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
+- Objective-C and Swift host apps supported
+
+### Android and iOS
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
   with the platform
 - Flutter modules support Stateful Hot Reload by using `flutter attach` from
