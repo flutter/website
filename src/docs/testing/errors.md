@@ -7,17 +7,14 @@ The Flutter framework catches errors that occur during callbacks
 triggered by the framework itself, including during build, layout, and
 paint.
 
-All these errors are routed to the
-[FlutterError.onError][https://api.flutter.dev/flutter/foundation/FlutterError/onError.html]
-handler. By default, this calls
-[FlutterError.dumpErrorToConsole][https://api.flutter.dev/flutter/foundation/FlutterError/dumpErrorToConsole.html],
+All these errors are routed to the [FlutterError.onError][] handler. 
+By default, this calls [FlutterError.dumpErrorToConsole][],
 which, as you might guess, dumps the error to the device logs. When
 running from an IDE, the inspector overrides this so that errors can
 also be routed to the IDE's console, allowing you to inspect the
 objects mentioned in the message.
 
-When an error occurs during the build phase, the
-[ErrorWidget.builder][https://api.flutter.dev/flutter/widgets/ErrorWidget/builder.html]
+When an error occurs during the build phase, the [ErrorWidget.builder][]
 callback is invoked to build the widget that is used instead of the
 one that failed. By default, in debug mode this shows an error message
 in red, and in release mode this shows a gray background.
@@ -47,5 +44,11 @@ void main() {
 ```
 
 This handler can also be used to report errors to a logging service.
-For more details, see our cookbook chapter for [reporting errors to a
-service][https://flutter.dev/docs/cookbook/maintenance/error-reporting].
+For more details, see our cookbook chapter for 
+[reporting errors to a service][].
+
+
+[FlutterError.onError]: {{site.api}}/flutter/foundation/FlutterError/onError.html
+[FlutterError.dumpErrorToConsole]: {{site.api}}/flutter/foundation/FlutterError/dumpErrorToConsole.html
+[ErrorWidget.builder]: {{site.api}}/flutter/widgets/ErrorWidget/builder.html
+[reporting errors to a service]: /docs/cookbook/maintenance/error-reporting
