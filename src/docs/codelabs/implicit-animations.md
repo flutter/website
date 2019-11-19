@@ -51,7 +51,7 @@ Click the **Run** button to run the example:
 
 <!-- Vanilla AnimatedOpacity https://gist.github.com/e2800d378eb7720d0b076073f72eabc1 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -190,7 +190,7 @@ example and click the **Show details** button to trigger the animation.
 
 <!-- AnimatedOpacity https://gist.github.com/36bb91f24db7122ec3def0153683edb7 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -232,7 +232,7 @@ Click the **Run** button to run the example:
 
 <!-- Vanilla Animated Container: https://gist.github.com/b8c7618317d04833dc8941df27f0529d -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -355,7 +355,7 @@ for `margin`, `borderRadius`, and `color`.
 
 <!-- Animated Container: https://gist.github.com/8d8f71cac9095009df770eb1db2c8256 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
