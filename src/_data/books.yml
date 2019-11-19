@@ -5,3 +5,11 @@
   cover: beginning-flutter.png
   link: "https://www.wiley.com/en-us/Beginning+Flutter%3A+A+Hands+On+Guide+to+App+Development-p-9781119550822"
   desc: "Build your first app in Flutter–no experience necessary!"
+
+- title: 'Flutter Succinctly'
+  authors:
+    - Ed Freitas
+  publisher: Syncfusion
+  cover: flutter-succinctly.png
+  link: 'https://www.syncfusion.com/ebooks/flutter-succinctly'
+  desc: 'App UI in flutter - Zero to Hero'
