@@ -20,7 +20,7 @@ class DartPadPicker {
   int _selected = 0;
 
   DartPadPicker(this.iFrameHost, this.selectElement, this.snippets,
-      {this.dartPadUrl = 'https://dartpad.dev/'}) {
+      {this.dartPadUrl = 'https://unforked-dot-dart-pad.appspot.com/'}) {
     _initSelectElement();
     _initDartPad();
   }
