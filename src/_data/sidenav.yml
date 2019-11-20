@@ -146,7 +146,7 @@
       permalink: /docs/development/add-to-app
       children:
       - title: Introduction
-        permalink: /docs/development/add-to-app/index
+        permalink: /docs/development/add-to-app
       - title: Adding to an Android app
         permalink: /docs/development/add-to-app/android
         children:
