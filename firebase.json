@@ -142,7 +142,8 @@
       { "source": "/go/android-project-migration", "destination": "https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects", "type": 301 },
       { "source": "/go/sliver-flex-and-friends", "destination": "https://docs.google.com/document/d/1W4_5oD5z7JHhUjuQYwS_NJRAv27Ih7IazcMm739O5JU/edit?usp=sharing", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit?usp=sharing", "type": 301 },
-      { "source": "/go/android-plugin-migration", "destination": "https://github.com/flutter/flutter/wiki/Experimental:-Create-Flutter-Plugin", "type": 301 }
+      { "source": "/go/android-plugin-migration", "destination": "https://github.com/flutter/flutter/wiki/Experimental:-Create-Flutter-Plugin", "type": 301 },
+      { "source": "/go/simple-flutter-tool-memory-benchmarks", "destination": "https://docs.google.com/document/d/1vlARGxdABMeZoj4HF0p075-81q7G9gv_GnDYgoF7e3I", "type": 301 }
     ]
   }
 }
