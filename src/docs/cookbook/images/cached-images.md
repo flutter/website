@@ -9,8 +9,8 @@ next:
 ---
 
 In some cases, it's handy to cache images as they're downloaded from the
-web, so they can be used offline. For this purpose, use the
-[`cached_network_image`]({{site.pub-pkg}}/cached_network_image) package.
+web, so they can be used offline. For this purpose,
+use the [`cached_network_image`][] package.
 
 In addition to caching, the cached_image_network package also supports
 placeholders and fading images in as they're loaded.
@@ -69,3 +69,6 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+
+[`cached_network_image`]: {{site.pub-pkg}}/cached_network_image

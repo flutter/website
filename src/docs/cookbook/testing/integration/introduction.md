@@ -20,9 +20,8 @@ to a real device or emulator and then "drive" the application from a
 separate test suite, checking to make sure everything is correct along
 the way.
 
-To create this test pair, use the
-[flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
-package. It provides tools to create instrumented apps and drive those apps
+To create this test pair, use the [flutter_driver][] package.
+It provides tools to create instrumented apps and drive those apps
 from a test suite.
 
 In this recipe, learn how to test a counter app. It demonstrates
@@ -44,10 +43,10 @@ First, create an app for testing. In this example, test the
 counter app produced by the `flutter create` command. This app allows
 a user to tap on a button to increase a counter.
 
-Furthermore, provide a
-[`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) to
-the `Text` and `FloatingActionButton` widgets. This allows identifying
-and interacting with these specific widgets inside the test suite.
+Furthermore, provide a [`ValueKey`][] to
+the `Text` and `FloatingActionButton` widgets.
+This allows identifying and interacting with these
+specific widgets inside the test suite.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -195,8 +194,7 @@ void main() {
 Now that you have an instrumented app, you can write tests for it.
 This involves four steps:
 
-  1. Create
-  [`SerializableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
+  1. Create [`SerializableFinders`][]
      to locate specific widgets
   2. Connect to the app before our tests run in the `setUpAll()` function
   3. Test the important scenarios
@@ -263,3 +261,8 @@ This command:
   1. Builds the `--target` app and installs it on the emulator / device.
   2. Launches the app.
   3. Runs the `app_test.dart` test suite located in `test_driver/` folder.
+
+
+[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
+[`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html
