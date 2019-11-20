@@ -35,7 +35,6 @@ FRAG="$TMP/_fragments"
 if [[ -e "$FRAG" ]]; then echo Deleting old "$FRAG"; rm -Rf "$FRAG"; fi
 
 if [[ -n "$LEGACY" ]]; then
-  shift
   npx code-excerpter examples "$FRAG"
 else
   ARGS+='--yaml '
