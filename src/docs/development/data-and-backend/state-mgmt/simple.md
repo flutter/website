@@ -119,7 +119,7 @@ Now `MyCart` has only one code path for building any version of the UI.
 Widget build(BuildContext context) {
   var cartModel = somehowGetMyCartModel(context);
   return SomeWidget(
-    // Just construct the UI once, using the current state of the cart.
+    // Just construct the UI once, using cartModel that has the current state of the cart.
     // ···
   );
 }
