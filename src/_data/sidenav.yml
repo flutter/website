@@ -179,6 +179,8 @@
               permalink: /docs/development/tools/sdk/upgrading
             - title: Releases
               permalink: /docs/development/tools/sdk/archive
+            - title: Breaking changes
+              permalink: /docs/release/breaking-changes
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting
@@ -242,6 +244,8 @@
   children:
     - title: Dart resources
       permalink: /docs/resources/bootstrap-into-dart
+    - title: Compatibility policy
+      permalink: /docs/resources/compatibility
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
     - title: Platform adaptations
