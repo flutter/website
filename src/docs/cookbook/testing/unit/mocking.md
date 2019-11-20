@@ -76,6 +76,11 @@ The function should now look like this:
 
 <!-- skip -->
 ```dart
+class Post {
+  dynamic data;
+  Post.fromJson(this.data);
+}
+
 Future<Post> fetchPost(http.Client client) async {
   final response =
       await client.get('https://jsonplaceholder.typicode.com/posts/1');
