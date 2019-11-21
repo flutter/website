@@ -43,8 +43,9 @@ With `FlutterActivity` registered in your manifest file, add code to launch
 `FlutterActivity` from whatever point in your app that you'd like. The following
 example shows `FlutterActivity` being launched from an `OnClickListener`.
 
+Java:
 ```java
-myButton.addOnClickListener(new OnClickListener() {
+myButton.setOnClickListener(new OnClickListener() {
   @Override
   public void onClick(View v) {
     startActivity(
@@ -54,12 +55,22 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
+Kotlin:
+```kotlin
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity.createDefaultIntent(currentActivity)
+  )
+}
+```
+
 The above example assumes that your Dart entrypoint is called `main()`, and your
 initial Flutter route is '/'. The Dart entrypoint cannot be changed via `Intent`,
 but the initial route can be changed via `Intent`. The following example
 demonstrates how to launch a `FlutterActivity` that initially renders a custom
 route in Flutter.
 
+Java:
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -72,6 +83,18 @@ myButton.addOnClickListener(new OnClickListener() {
       );
   }
 });
+```
+
+Kotlin:
+```kotlin
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity
+      .withNewEngine()
+      .initialRoute("/my_route")
+      .build(currentActivity)
+  )
+}
 ```
 
 Replace `"/my_route"` with your desired initial route.
@@ -95,6 +118,7 @@ To pre-warm a `FlutterEngine`, find a reasonable location in your app to
 instantiate a `FlutterEngine`. As an arbitrary location, the following example
 pre-warms a `FlutterEngine` in the `Application` class:
 
+Java:
 ```java
 public class MyApplication extends Application {
   @Override
@@ -105,13 +129,37 @@ public class MyApplication extends Application {
 
     // Start executing Dart code to pre-warm the FlutterEngine.
     flutterEngine.getDartExecutor().executeDartEntrypoint(
-      DartEntrypoint.getDefault()
+      DartEntrypoint.createDefault()
     );
 
     // Cache the FlutterEngine to be used by FlutterActivity.
     FlutterEngineCache
       .getInstance()
       .put("my_engine_id", flutterEngine);
+  }
+}
+```
+
+Kotlin:
+```kotlin
+class MyApplication : Application() {
+  lateinit var flutterEngine : FlutterEngine
+
+  override fun onCreate() {
+    super.onCreate()
+
+    // Instantiate a FlutterEngine.
+    flutterEngine = FlutterEngine(this)
+
+    // Start executing Dart code to pre-warm the FlutterEngine.
+    flutterEngine.dartExecutor.executeDartEntrypoint(
+      DartExecutor.DartEntrypoint.createDefault()
+    )
+
+    // Cache the FlutterEngine to be used by FlutterActivity.
+    FlutterEngineCache
+      .getInstance()
+      .put("my_engine_id", flutterEngine)
   }
 }
 ```
@@ -137,6 +185,7 @@ With a pre-warmed, cached `FlutterEngine`, you now need to instruct your
 new one. To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
+Java:
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -148,6 +197,17 @@ myButton.addOnClickListener(new OnClickListener() {
       );
   }
 });
+```
+
+Kotlin:
+```kotlin
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity
+      .withCachedEngine("my_engine_id")
+      .build(currentActivity)
+  )
+}
 ```
 
 When using the `withCachedEngine()` factory method, pass the same ID that you
@@ -228,7 +288,27 @@ Your `FlutterActivity` now supports translucency. Next, you need to launch your
 To launch your `FlutterActivity` with a transparent background, pass the
 appropriate `BackgroundMode` to the `IntentBuilder`:
 
+Java:
 ```java
+// Using a new FlutterEngine.
+startActivity(
+  FlutterActivity
+    .withNewEngine()
+    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .build(context)
+);
+
+// Using a cached FlutterEngine.
+startActivity(
+  FlutterActivity
+    .withCachedEngine("my_engine_id")
+    .backgroundMode(FlutterActivity.BackgroundMode.transparent)
+    .build(context)
+);
+```
+
+Kotlin:
+```kotlin
 // Using a new FlutterEngine.
 startActivity(
   FlutterActivity
