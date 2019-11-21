@@ -4,17 +4,18 @@ description: How to fix AndroidX incompatibilities that have been detected by th
 ---
 
 {{site.alert.note}}
-  You might be directed to this page if the framework detects a
-  problem in your Flutter app involving AndroidX incompatibilities.
+  You might be directed to this page if the framework detects a problem in your
+  Flutter app involving AndroidX incompatibilities.
 {{site.alert.end}}
 
-Android code often uses the [`android.support`][]
-libraries to ensure backwards compatibility.
-The `android.support` libraries are deprecated,
-and replaced with [AndroidX][].
+Android code often uses the
+[`android.support`]({{site.android-dev}}/topic/libraries/support-library/)
+libraries to ensure backwards compatibility. The `android.support`
+libraries are deprecated, and replaced with
+[AndroidX]({{site.android-dev}}/jetpack/androidx/).
 AndroidX has feature parity with the old libraries
-with some additional capabilities but, unfortunately,
-these two sets of libraries are incompatible.
+with some additional capabilities but, unfortunately, these two sets of
+libraries are incompatible.
 
 _Gradle crashes when trying to build an APK that relies on both sets
 of libraries._ This page explains how you can workaround this issue.
@@ -28,10 +29,9 @@ AndroidX can break a Flutter app at compile time in two ways:
 2. The app uses both deprecated and AndroidX code at the same time.
 
 The error messages from Gradle vary. Sometimes the messages mention
-"package androidx" or "package android.support" directly.
-However, often the Gradle error messages aren't obvious,
-and instead talk about "AAPT," "AAPT2,"
-or otherwise mention failing at "parsing resources."
+"package androidx" or "package android.support" directly. However, often the
+Gradle error messages aren't obvious, and instead talk about
+"AAPT," "AAPT2," or otherwise mention failing at "parsing resources."
 
 These problems must be fixed by either manually migrating the
 code to the same library, or downgrading to versions of the plugins
@@ -43,14 +43,16 @@ that still use the original support libraries.
   It's impossible to fully migrate your app to AndroidX if it's
   actively using any plugins that rely on the old support library.
   If your app depends on plugins that use the old `android.support`
-  packages, you'll need to [avoid using AndroidX][].
+  packages, you'll need to [avoid using AndroidX](#avoiding-androidx).
 {{site.alert.end}}
 
 First make sure that `compileSdkVersion` is at least `28` in
 `app/build.gradle`.  This property controls the version of the
 Android SDK that Gradle uses to build your APK. It doesn't affect
 the minimum SDK version that your app can run on. See the Android
-developer docs on the [module-level build file][] for more information.
+developer docs on [the module-level build
+file]({{site.android-dev}}/studio/build/#module-level)
+for more information.
 
 #### Recommended: Use Android Studio to migrate your app
 
@@ -59,20 +61,18 @@ Use the following instructions:
 
 1. Import your Flutter app into Android Studio so that the IDE can
    parse the Android code following the steps in
-   [Editing Android code in Android Studio with full IDE support][].
-2. Follow the instructions for [Migrating to AndroidX][].
+   [Editing Android code in Android Studio with full IDE
+   support](/docs/development/tools/android-studio#android-ide).
+2. Follow the instructions for [Migrating to
+   AndroidX]({{site.android-dev}}/jetpack/androidx/migrate).
 
 #### Not recommended: Manually migrate your app
 
-See [Migrating to AndroidX][] for more detailed instructions
-on how to do this. Below are some steps that you'll likely
-need to go through as part of this process,
-listed here for reference. However the specific things
-you need to do will depend on your build configuration
-and could differ from the example changes suggested here.
+See [Migrating to
+AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) for more detailed
+instructions on how to do this. Below are some steps that you'll likely need to go through as part of this process, listed here for reference. However the specific things you need to do will depend on your build configuration and could differ from the example changes suggested here.
 
-1. In `android/gradle/wrapper/gradle-wrapper.properties`,
-   change the line starting with `distributionUrl` like this:
+1. In `android/gradle/wrapper/gradle-wrapper.properties` change the line starting with `distributionUrl` like this:
 
    ```
    distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip
@@ -94,7 +94,7 @@ and could differ from the example changes suggested here.
    }
    ```
 
-3. In `android/gradle.properties`, append the following:
+3. In `android/gradle.properties`, append
 
    ```
    android.enableJetifier=true
@@ -103,12 +103,9 @@ and could differ from the example changes suggested here.
 
 4. In `android/app/build.gradle`:
 
-   Under `android {`, make sure `compileSdkVersion` and
-   `targetSdkVersion` are at least 28.
+   Under `android {`, make sure `compileSdkVersion` and `targetSdkVersion` are at least 28.
 
-5. Replace all deprecated libraries with the AndroidX equivalents.
-   For instance, if you're using the default `.gradle` files
-   make the following changes:
+5. Replace all deprecated libraries with the AndroidX equivalents. For instance, if you're using the default `.gradle` files make the following changes:
 
    In `android/app/build.gradle`
    
@@ -184,11 +181,12 @@ coming from another plugin besides these.
 
 ## For plugin maintainers: Migrating a Flutter plugin to AndroidX
 
-Migrating a Flutter plugin to AndroidX follows basically
-the same process as [migrating a Flutter app][],
+Migrating a Flutter plugin to AndroidX follows basically the same process as
+[migrating a Flutter app](#how-to-migrate-a-flutter-app-to-androidx),
 but with some additional concerns and some slight changes.
 
-1. Make sure to increment the [major version][] of
+1. Make sure to increment the [major
+   version]({{site.dart-site}}/tools/pub/versioning#semantic-versions) of
    your plugin for this change and clearly document it in your plugin's
    changelog. This breaking change requires manual migration for
    users to fix. Pub treats digits differently depending on whether
@@ -200,12 +198,3 @@ but with some additional concerns and some slight changes.
    IDE as if it's a regular Flutter app. Android Studio also imports and
    parses the plugin's Android code.
 
-
-[`android.support`]: {{site.android-dev}}/topic/libraries/support-library/
-[AndroidX]: {{site.android-dev}}/jetpack/androidx/
-[avoid using AndroidX]: #avoiding-androidx
-[Editing Android code in Android Studio with full IDE support]: /docs/development/tools/android-studio#android-ide
-[major version]: {{site.dart-site}}/tools/pub/versioning#semantic-versions
-[Migrating to AndroidX]: {{site.android-dev}}/jetpack/androidx/migrate
-[module-level build file]: {{site.android-dev}}/studio/build/#module-level
-[migrating a Flutter app]: #how-to-migrate-a-flutter-app-to-androidx

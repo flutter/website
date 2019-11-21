@@ -6,8 +6,8 @@ description: How to write packages and plugins for Flutter.
 
 ## Package introduction
 
-Packages enable the creation of modular code that can be shared easily.
-A minimal package consists of:
+Packages enable the creation of modular code that can be shared easily. A
+minimal package consists of:
 
 * A `pubspec.yaml` file: A metadata file that declares the package name,
   version, author, etc.
@@ -17,24 +17,25 @@ A minimal package consists of:
 
 {{site.alert.note}}
   For a list of dos and don'ts when writing an effective plugin,
-  see [Writing a good plugin][] on Medium.
+  see [Writing a good
+  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
+  on Medium.
 {{site.alert.end}}
 
 ### Package types {#types}
 
 Packages can contain several kinds of content:
 
-* *Dart packages*: General packages written in Dart,
-  for example the [`path`][] package. Some of these might
+* *Dart packages*: General packages written in Dart, for example the
+  [`path`]({{site.pub}}/packages/path) package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
-  Flutter framework, restricting their use to Flutter only,
-  for example the [`fluro`][] package.
+  Flutter framework, restricting their use to Flutter only, for example the
+  [`fluro`]({{site.pub}}/packages/fluro) package.
 
-* *Plugin packages*: A specialized Dart package that contains
-  an API written in Dart code combined with a platform-specific
-  implementation for Android (using Java or Kotlin),
-  and/or for iOS (using ObjC or Swift).
-  A concrete example is the [`battery`][] plugin package.
+* *Plugin packages*: A specialized Dart package which contain an API written in
+  Dart code combined with a platform-specific implementation for Android (using
+  Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
+  the [`battery`]({{site.pub}}/packages/battery) plugin package.
 
 ## Developing Dart packages {#dart}
 
@@ -49,31 +50,33 @@ $ flutter create --template=package hello
 This creates a package project in the `hello/` folder with the following
 specialized content:
 
-**`lib/hello.dart`**
-: The Dart code for the package.
-**`test/hello_test.dart`**
-: The [unit tests][] for the package.
+* `lib/hello.dart`:
+   - The Dart code for the package.
+* `test/hello_test.dart`:
+   - The [unit tests](/docs/testing#unit-tests) for the package.
 
 ### Step 2: Implement the package
 
 For pure Dart packages, simply add the functionality inside the main
 `lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-To test the package, add [unit tests][]
+To test the package, add [unit tests](/docs/testing#unit-tests)
 in a `test` directory.
 
-For additional details on how to organize the package contents,
-see the [Dart library package][] documentation.
+For additional details on how to organize the package contents, see the
+[Dart library
+package]({{site.dart-site}}/guides/libraries/create-library-packages)
+documentation.
 
 ## Developing plugin packages {#plugin}
 
-If you want to develop a package that calls into platform-specific APIs,
-you need to develop a plugin package. A plugin package is a specialized
-version of a Dart package, that in addition to the content described
-above also contains platform-specific implementations written for
-Android (Java or Kotlin code), for iOS (Objective-C or Swift code),
-or for both. The API is connected to the
-platform-specific implementation(s) using [platform channels][].
+If you want to develop a package that calls into platform-specific APIs, you
+need to develop a plugin package. A plugin package is a specialized version of a
+Dart package, that in addition to the content described above also contains
+platform-specific implementations written for Android (Java or Kotlin code), for
+iOS (Objective-C or Swift code), or for both. The API is connected to the
+platform-specific implementation(s) using [platform
+channels](/docs/development/platform-integration/platform-channels).
 
 ### Step 1: Create the package
 
@@ -115,9 +118,9 @@ experience.
 
 #### Step 2a: Define the package API (.dart)
 
-The API of the plugin package is defined in Dart code.
-Open the main `hello/` folder in your favorite [Flutter editor][].
-Locate the file `lib/hello.dart`.
+The API of the plugin package is defined in Dart code. Open the main `hello/`
+folder in your favorite [Flutter editor](/docs/get-started/editor). Locate the file
+`lib/hello.dart`.
 
 #### Step 2b: Add Android platform code (.java/.kt)
 
@@ -162,9 +165,9 @@ You can run the example app by pressing the &#9654; button.
 
 #### Step 2d: Connect the API and the platform code
 
-Finally, you need to connect the API written in Dart code
-with the platform-specific implementations.
-This is done using [platform channels][].
+Finally, you need to connect the API written in Dart code with the platform-specific
+implementations. This is done using [platform
+channels](/docs/development/platform-integration/platform-channels).
 
 ## Adding documentation
 
@@ -172,14 +175,14 @@ It is recommended practice to add the following documentation to all packages:
 
 1. A `README.md` file that introduces the package
 1. A `CHANGELOG.md` file that documents changes in each version
-1. A [`LICENSE`][] file containing the terms under which the
-   package is licensed
+1. A [`LICENSE`](#adding-licenses-to-the-license-file) file containing the terms under which the package is licensed
 1. API documentation for all public APIs (see below for details)
 
 ### API documentation
 
 When you publish a package, API documentation is automatically generated and
-published to pub.dev, see for example the [device_info docs][].
+published to dartdocs.org, see for example the [device_info
+docs]({{site.pub-api}}/device_info/latest)
 
 If you wish to generate API documentation locally on your developement machine, use the following commands:
 
@@ -199,8 +202,8 @@ If you wish to generate API documentation locally on your developement machine, 
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (on Windows)
 
-For tips on how to write API documentation,
-see [Effective Dart: Documentation][].
+For tips on how to write API documentation, see [Effective Dart:
+Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
 
 ### Adding licenses to the LICENSE file
 
@@ -260,13 +263,11 @@ package_1
 ## Publishing packages {#publish}
 
 Once you have implemented a package, you can publish it on the
-[pub.dev][], so that other developers can easily use it.
+[Pub site]({{site.pub}}), so that other developers can
+easily use it.
 
-Prior to publishing, make sure to review the `pubspec.yaml`,
-`README.md`, and `CHANGELOG.md` files to make sure their content
-is complete and correct. Also, to improve the quality and
-usability of your package, consider including the items below. 
-
+Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
+`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
 * Diverse code usage examples
 * Screenshots, animated gifs, or videos
 * A link to the corresponding code repository
@@ -274,8 +275,10 @@ usability of your package, consider including the items below.
 Next, run the dry-run command to see if everything passes analysis:
 
 ```terminal
-$ flutter pub publish --dry-run
+$ flutter pub pub publish --dry-run
 ```
+
+(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 
@@ -284,7 +287,8 @@ $ flutter pub pub publish
 ```
 
 For details on publishing, see the
-[publishing docs][] for the pub.dev.
+[publishing docs]({{site.dart-site}}/tools/pub/publishing)
+for the Pub site.
 
 ## Handling package interdependencies {#dependencies}
 
@@ -332,18 +336,3 @@ Pod::Spec.new do |s|
 ```
 You can now `#import "UrlLauncherPlugin.h"` and access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
-
-
-[`battery`]: {{site.pub}}/packages/battery
-[Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
-[device_info docs]: {{site.pub-api}}/packages/device_info
-[Effective Dart: Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
-[`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]: /docs/get-started/editor
-[`LICENSE`]: #adding-licenses-to-the-license-file
-[`path`]: {{site.pub}}/packages/path
-[platform channels]: /docs/development/platform-integration/platform-channels
-[pub.dev]: {{site.pub}}
-[publishing docs]: {{site.dart-site}}/tools/pub/publishing
-[unit tests]: /docs/testing#unit-tests
-[Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
