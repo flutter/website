@@ -62,7 +62,7 @@ To add the package, `css_colors`, to an app:
 The [Installing tab][], available on any package page on pub.dev,
 is a handy reference for these steps.
 
-For a complete example, see the [css_colors example][] below.
+For a complete example, see the [css_colors example](#css-example) below.
 
 ### Conflict resolution
 
@@ -81,9 +81,9 @@ dependencies:
 
 If `some_package` declares the dependencies above and `another_package`
 declares a compatible `url_launcher` dependency like `'0.4.5'` or
-`^0.4.0`, pub resolves the issue automatically.
-Platform-specific dependencies on [Gradle modules][]
-and/or [CocoaPods][] are solved in a similar way.
+`^0.4.0`, Pub resolves the issue automatically.
+Platform-specific dependencies on [Gradle modules][] and/or [CocoaPods][]
+are solved in a similar way.
 
 Even if `some_package` and `another_package` declare incompatible versions
 for `url_launcher`, they might actually use `url_launcher` in
@@ -134,8 +134,9 @@ specify a version range in the pubspec file.
 All packages have a version number, specified in the
 package's `pubspec.yaml` file. The current version of a package
 is displayed next to its name (for example,
-see the [`url_launcher`][] package), as
-well as a list of all prior versions ([url_launcher versions][]).
+see the [url_launcher]({{site.pub-pkg}}/url_launcher) package), as
+well as a list of all prior versions ([url_launcher
+versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
 
 When a package is added to `pubspec.yaml`, the shorthand form `plugin1:`
 means that any version of the plugin1 package can be used.
@@ -149,7 +150,8 @@ specify a version range using one of the following formats:
     url_launcher: '>=0.1.2 <0.2.0'
   ```
 
-* Range constraints with [*caret syntax*][]
+* Range constraints with [*caret
+  syntax*]({{site.dart-site}}/tools/pub/dependencies#caret-syntax)
   are similar to regular range constraints:
 
   ```yaml
@@ -157,7 +159,8 @@ specify a version range using one of the following formats:
     collection: '^0.1.2'
   ```
 
-For additional details, see the [package versioning guide][].
+For additional details, see the [package versioning
+guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Updating package dependencies
 
@@ -176,7 +179,7 @@ that is allowed by the version constraint specified in
 
 ### Dependencies on unpublished packages
 
-Packages can be used even when not published on pub.dev.
+Packages can be used even when not published on the Pub site.
 For private plugins, or for packages not ready for publishing,
 additional dependency options are available:
 
@@ -202,7 +205,7 @@ additional dependency options are available:
         url: git://github.com/flutter/plugin1.git
   ```
 
-* **Git** dependency on a package in a folder: pub assumes the
+* **Git** dependency on a package in a folder: Pub assumes the
   package is located in the root of the Git repository; if that is not the
   case, specify the location with the `path` argument. For example:
 
@@ -216,7 +219,7 @@ additional dependency options are available:
 
   Finally, use the `ref` argument to pin the dependency to a
   specific git commit, branch, or tag. For more details, see
-  [Package dependencies][].
+  [Package dependencies]({{site.dart-site}}/tools/pub/dependencies).
 
 ## Examples
 
@@ -225,7 +228,7 @@ using packages.
 
 ### Example: Using the css_colors package {#css-example}
 
-The [`css_colors`][] package
+The [`css_colors`]({{site.pub-pkg}}/css_colors) package
 defines color constants for CSS colors, so use the constants
 wherever the Flutter framework expects the `Color` type.
 
