@@ -17,20 +17,18 @@ minimal package consists of:
 
 {{site.alert.note}}
   For a list of dos and don'ts when writing an effective plugin,
-  see [Writing a good
-  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
-  on Medium.
+  see [Writing a good plugin][] on Medium.
 {{site.alert.end}}
 
 ### Package types {#types}
 
 Packages can contain several kinds of content:
 
-* *Dart packages*: General packages written in Dart, for example the
-  [`path`]({{site.pub}}/packages/path) package. Some of these might
+* *Dart packages*: General packages written in Dart,
+  for example the [`path`][] package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
-  Flutter framework, restricting their use to Flutter only, for example the
-  [`fluro`]({{site.pub}}/packages/fluro) package.
+  Flutter framework, restricting their use to Flutter only,
+  for example the [`fluro`][] package.
 
 * *Plugin packages*: A specialized Dart package which contains an API written in
   Dart code combined with a platform-specific implementation for Android (using
@@ -60,7 +58,7 @@ specialized content:
 For pure Dart packages, simply add the functionality inside the main
 `lib/<package name>.dart` file, or in several files in the `lib` directory.
 
-To test the package, add [unit tests](/docs/testing#unit-tests)
+To test the package, add [unit tests][]
 in a `test` directory.
 
 For additional details on how to organize the package contents, see the
@@ -273,10 +271,8 @@ Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
 Next, run the dry-run command to see if everything passes analysis:
 
 ```terminal
-$ flutter pub pub publish --dry-run
+$ flutter pub publish --dry-run
 ```
-
-(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 
