@@ -17,7 +17,7 @@ and (b) provide fixes for the code so that the tests continue to pass.
 
 If you would like to provide tests as part of this program, please
 submit a PR to the [flutter/tests
-repository][https://github.com/flutter/tests]. The README.md file on
+repository](https://github.com/flutter/tests). The README.md file on
 that repository describes the process in detail.
 
 
@@ -26,11 +26,11 @@ that repository describes the process in detail.
 If we do make a breaking change (defined as a change that caused one
 or more of these submitted tests to require changes), we will announce
 the change on our
-[flutter-announce][https://groups.google.com/forum/#!forum/flutter-announce]
+[flutter-announce](https://groups.google.com/forum/#!forum/flutter-announce)
 mailing list as well as in our release notes.
 
 We provide a list of [guides for migrating
-code][https://flutter.dev/docs/release/breaking-changes/] affected by
+code](https://flutter.dev/docs/release/breaking-changes/) affected by
 breaking changes.
 
 
@@ -46,7 +46,7 @@ be (if it breaks any of the submitted tests).
 
 The Dart language itself has a separate breaking-change policy,
 [documented on the Dart
-wiki][https://github.com/dart-lang/sdk/blob/master/docs/process/breaking-changes.md].
+wiki](https://github.com/dart-lang/sdk/blob/master/docs/process/breaking-changes.md).
 
 In general, the Flutter team does not currently have any commitment
 regarding breaking changes for other dependencies. For example, it is
