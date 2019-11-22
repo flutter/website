@@ -144,10 +144,22 @@ body_class: showcase
                     </div>
                     <p class="card-text">{{ case.description | truncate: 160 }}</p>
                 </div>
-                {% if case.play_store_link or case.app_store_link or case.learn_more_link or case.card_video %}
+                {% if case.play_store_link or case.app_store_link or case.learn_more_link or case.card_video or case.learn_more_dropdown %}
                     <div class="card-footer card-footer--transparent card-footer--links">
                         {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}" class="link" target="_blank" rel="noopener">{{ case.learn_more_cta }}<i class="fas fa-external-link-alt"></i></a>{% endif %}
                         {% if case.card_video %}<a href="#" class="video-link" data-video="{{ case.card_video }}" data-toggle="modal" data-target="#videoModal"><i class="fas fa-play-circle"></i>&nbsp;Watch video</a>{% endif %}
+                        {% if case.learn_more_dropdown %}
+                            <span class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="showcasesLearnMoreDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Learn more
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="showcasesLearnMoreDropdownMenuButton{{ forloop.index }}">
+                                    {% for learnMoreItem in case.learn_more_links %}
+                                        <a class="dropdown-item" href="{{learnMoreItem.link}}" target="_blank" rel="noopener">{{learnMoreItem.link_text}}</a>
+                                    {% endfor %}
+                                </div>
+                            </span>
+                        {% endif %}
                         {% if case.play_store_link or case.app_store_link %}
                             <span class="dropdown">
                                 <a href="#" class="dropdown-toggle" id="showcasesDropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

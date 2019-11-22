@@ -35,6 +35,8 @@ body_class: landing-page community
                     <h3>{{ case.title }}</h3>
                     <p>{{ case.description }}</p>
                     {% if case.learn_more_link %}<a href="{{ case.learn_more_link }}">{{ case.learn_more_cta }}</a>{% endif %}
+                    {% if case.learn_more_link_1 %}<div><a href="{{ case.learn_more_link_1 }}">{{ case.learn_more_cta_1 }}</a></div><br>{% endif %}
+                    {% if case.learn_more_link_2 %}<div><a href="{{ case.learn_more_link_2 }}">{{ case.learn_more_cta_2 }}</a></div>{% endif %}
                 </div>
 
                 <div class="col-lg-8 pt-6 pt-lg-0 landing-page__card-graphic--fill">

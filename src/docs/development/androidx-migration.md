@@ -51,7 +51,7 @@ you can download the latest version from
 Finally, if you migrated a plugin, publish the new AndroidX version to pub and update
 your `CHANGELOG.md` to indicate that this new version is compatible with AndroidX.
 
-### What about if I can't use Android Studio
+### What about if I can't use Android Studio?
 
 You can create a new project using the Flutter tool and then move the Dart code and
 assets to the new project.
@@ -62,10 +62,10 @@ To create a new project run:
 flutter create --androidx -t <project-type> <new-project-path>
 ```
 
-### How do I migrate my existing module project to AndroidX?
+### Add to App
 
-If your project is a module and contains a `.android` directory, add the following
-line to `pubspec.yml`:
+If your Flutter project is a module type for adding to an existing Android app, and 
+contains a `.android` directory, add the following line to `pubspec.yml`:
 
 ```yaml
  module:
@@ -82,7 +82,7 @@ steps in previous section.
 
 * **Apps and Modules**
   Your project uses AndroidX if the file `android/gradle.properties` or
-  `.android/gradle.properties`contains:
+  `.android/gradle.properties` contains:
 
   ```
   android.useAndroidX=true

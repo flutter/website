@@ -1,31 +1,250 @@
 ---
 title: Clock
-layout: base
+layout: landing
 show_banner: False
-show_footer: False
 body_class: clock
 ---
+{% assign url_links = "&url=https://flutter.dev/clock" %}
+{% assign hashtags = "hashtags=FlutterClock" %}
+{% assign twitter_url = "https://twitter.com/intent/tweet?" | append: hashtags | append: url_links  %}
+{% assign window_options = "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600" %}
 
-<div class="center">
-    <h1 class="heading">Timing is everything. Stay tuned.</h1>
-    <div class="time-number">
-        <span class="digits_container days-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container hours-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container minutes-digits_container">00</span>
-        <span>:</span>
-        <span class="digits_container seconds-digits_container">00</span>
+<section class="clock__hero">
+    <div class="clock__texture clock__hero__texture"></div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <h1 class="heading">Take the Flutter Clock challenge</h1>
+            <p>
+                <a
+                    class="twitter-link"
+                    href="#"
+                    title="Share to Twitter"
+                    onclick="javascript:window.open(encodeURI('{{ twitter_url }}'), '', '{{ window_options }}');">
+                    <i class="fab fa-twitter"></i> Share #FlutterClock with friends
+                </a>
+            </p>
+            <p>
+                <a class="youtube-link" href="#" data-video="rxs69_szCkE" data-toggle="modal" data-target="#videoModal">
+                    <i class="fas fa-play-circle"></i> Watch video
+                </a>
+            </p>
+        </div>
     </div>
-    <p class="share-twitter__paragraph">
-        While you wait, <a href="https://g.co/FlutterInteract" target="_blank">click here</a> to learn about our worldwide event: Flutter&nbsp;Interact.
-    </p>
-</div>
-<div class="animations">
-    <div class="vertical-line vertical-line--first"></div>
-    <div class="vertical-line vertical-line--second"></div>
-    <div class="vertical-line vertical-line--thrid"></div>
-    <div class="vertical-line vertical-line--fourth"></div>
-</div>
+</section>
 
-{% asset countdown %}
+<section class="clock__wtm row">
+    <div class="clock__texture clock__wtm__texture"></div>
+    <div class="clock__wtm_container justify-content-center col-12 row no-gutters">
+        <div class="col-lg-6 p-md-5">
+            {% asset clock/Lenovo-WTM.png alt='Lenovo Clock' class="card-img-top" %}
+        </div>
+        <div class="col-lg-6 p-md-5 clock__wtm-copy">
+            <h2 class="subheading">
+                Create a beautiful clock face UI
+            </h2>
+            <p class="paragraph">
+                Build a beautiful clock face UI with Flutter for the Lenovo Smart Clock for a chance to win an iMac Pro,
+                Lenovo Smart Display, or Lenovo Smart Clock.
+            </p>
+            <p class="paragraph-conditions">
+                All projects must be submitted by January 20, 2020, 11:59PM PST (GMT-8).
+            </p>
+        </div>
+        <div class="clock__wtm-entries col-12 col-lg-10 no-gutters">
+            <h3 class="heading">Entries will be judged by a panel of Google experts against the following criteria:</h3>
+            <div class="clock__wtm-entries_container">
+                {% for entry in site.data.clock.entries %}
+                    <div class="card">
+                        <div class="card-body entries__card-body">
+                            <p class="paragraph">{{entry.title}}</p>
+                            {% asset {{entry.logo}} class="fas" %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clock__wtm-logos col-12 col-lg-10 justify-content-center">
+            <p class="text-center logos-heading">
+                Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
+            </p>
+            <div class="logos-container">
+                {% asset clock/Flutter-logo.svg alt='Flutter Logo' class='wtm-logo' %}
+                {% asset clock/G-Assistant-logo.svg alt='Google Assistant Logo' class='wtm-logo' %}
+                {% asset clock/Lenovo-logo.svg alt='Lenovo Logo' class='wtm-logo' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="clock__prizes row">
+    <div class="clock__texture clock__prizes__texture"></div>
+    <div class="clock__prizes_container row justify-content-center">
+        <div class="col-lg-6 order-2 order-lg-1">
+            <span class="prizes-text">Prizes</span>
+            <ul>
+                {% for prize in site.data.clock.prizes %}
+                <li>
+                    <h2 class="subheading">{{prize.title}}</h2>
+                    <p class="paragraph">{{prize.paragraph}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-10 col-12 order-1 order-lg-2 clock__prizes_image m-md-5 m-lg-0">
+            {% asset clock/iMac.png class="card-img-top" %}
+        </div>
+        <div class="col-12 order-3">
+            <hr>
+            <p class="info-paragraph">
+                All complete and valid submissions will receive a digital certificate of completion. Some of the clock
+                contest submissions might be integrated into the Lenovo Smart Clock's lineup of clock faces, or used as
+                inspiration for future clock faces!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="clock__getting">
+    <div class="clock__getting_container row justify-content-center no-gutters">
+        <div class="col-lg-10">
+            <h2 class="subheading">Getting Started</h2>
+            <p class="paragraph">
+                Use the following instructions to get started. Also, make sure to familiarize yourself with the submission requirements and contest rules.
+            </p>
+            <ol type="1">
+                {% for item in site.data.clock.getting_started_items %}
+                <li>
+                    {{item.title}}
+                    {% if item.subItems %}
+                        <ol type="a">
+                            {% for subItem in item.subItems %}
+                            <li class="sub-item {% if item.noListItemStyle == true %}no-list-style{% endif %}">
+                                {{subItem.text}}
+                                {% if subItem.subItems %}
+                                    <ul>
+                                    {% for subItemSecondLevel in subItem.subItems%}
+                                        <li class="sub-item">{{subItemSecondLevel.text}}</li>
+                                    {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="clock__submit">
+    <div class="clock__submit_container justify-content-center">
+        <div class="col-12">
+            <h2 class="subheading">
+                Enter your clock face for a chance to win
+            </h2>
+            <a href="https://forms.gle/STgU9QMTJLtFjQZE7" class="submit-app__button btn btn-primary" target="_blank">
+                Submit your project
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="clock__submissions">
+    <div class="no-gutters row justify-content-center">
+        <div class="col-lg-10">
+            <h2 class="subheading">
+                Submission Requirements
+            </h2>
+            <p class="paragraph">
+                Here are the requirements, including some guidelines, for contest submissions. See the contest’s
+                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit" target="_blank" rel="noopener noreferrer">
+                Official Rules</a> for full details.
+            </p>
+
+            {% for item in site.data.clock.submission_requirements %}
+            <h3 class="title">{{item.title}}</h3>
+            <ul>
+                {% for subItem in item.subItems %}
+                <li>
+                    {{subItem.text}}
+                    {% if subItem.subItems %}
+                        <ul>
+                        {% for subItemSecondLevel in subItem.subItems %}
+                            <li>
+                                {{subItemSecondLevel.text}}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+            <hr>
+        </div>
+    </div>
+</section>
+
+<section class="clock__contest">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h2 class="subheading">
+                Contest Rules
+            </h2>
+            <p class="paragraph">
+                Full details and rules are provided in our
+                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+                Official Rules</a>. Here’s a summary of some of the key points:
+            </p>
+            <ul>
+                {% for item in site.data.clock.contest_rules %}
+                    <li>
+                        {{item.title}}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="clock__faqs no-gutters">
+    <div class="clock__texture clock__faqs__texture"></div>
+    <div class="clock__faqs_container row justify-content-center">
+        <div class="col-lg-10">
+            <h2 class="subheading">FAQ</h2>
+            {% for faq in site.data.clock.faqs %}
+                <div id="accordion{{forloop.index}}">
+                    <div class="faqs_card">
+                        <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
+                            <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
+                                {{ faq.title }}
+                                <i class="fas fa-chevron-down fa-xs"></i>
+                            </button>
+                        </div>
+                        <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion{{forloop.index}}">
+                            <div class="card-body faq__card-body">
+                                {{ faq.content }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" data-video-modal id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="embedded-video-wrapper">
+                    <iframe id="video-player-iframe" class="embedded-video-wrapper__frame" width="auto" height="auto"
+                            src="https://www.youtube.com/embed/jtYk3gWRSw0?cc_lang_pref=en&cc_load_policy=1&enablejsapi=1"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
