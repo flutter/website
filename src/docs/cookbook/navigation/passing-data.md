@@ -13,9 +13,9 @@ but also pass data to the screen as well.
 For example, you might want to pass information about
 the item that's been tapped.
 
-Remember: Screens are Just Widgets.
-In this example, create a list of todos.
-When a todo is tapped, navigate to a new screen (widget) that
+Remember: Screens are just Widgets.
+In this example, let's create a list of todos.
+When a todo is tapped the app will navigate to a new screen (widget) that
 displays information about the todo.
 This recipe uses the following steps:
 
@@ -26,7 +26,7 @@ This recipe uses the following steps:
 
 ## 1. Define a todo class
 
-First, you need a simple way to represent todos. For this example,
+First, you need a simple way to represent todos. Let's
 create a class that contains two pieces of data: the title and description.
 
 <!-- skip -->
@@ -41,7 +41,7 @@ class Todo {
 
 ## 2. Create a list of todos
 
-Second, display a list of todos. In this example, generate
+We'll generate
 20 todos and show them using a ListView.
 For more information on working with lists, see the
 [Use lists](/docs/cookbook/lists/basic-list) recipe.
@@ -78,12 +78,10 @@ This generates 20 todos and displays them in a ListView.
 
 ## 3. Create a detail screen to display information about a todo
 
-Now, create the second screen. The title of the screen contains the
+Now, let's create the details screen. The title of the screen will be the
 title of the todo, and the body of the screen shows the description.
 
-Since the detail screen is a normal `StatelessWidget`,
-require the user to enter a `Todo` in the UI.
-Then, build the UI using the given todo.
+Since the detail screen is a `StatelessWidget`, it requires a `Todo` to display it's contents.
 
 <!-- skip -->
 ```dart
@@ -112,10 +110,10 @@ class DetailScreen extends StatelessWidget {
 
 ## 4. Navigate and pass data to the detail screen
 
-With a `DetailScreen` in place,
-you're ready to perform the Navigation.
-In this example, navigate to the `DetailScreen` when a user
-taps a todo in the list. Pass the todo to the `DetailScreen`.
+With the `DetailScreen` in place,
+you're ready to perform the navigation.
+In this example, let's navigate to the `DetailScreen` when a user
+taps a todo in the list.
 
 To capture the user's tap, write an
 [`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
