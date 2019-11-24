@@ -2,8 +2,8 @@
 title: Use a custom font
 description: How to use custom fonts.
 prev:
-  title: Use themes to share colors and font styles
-  path: /docs/cookbook/design/themes
+  title: Update the UI based on orientation
+  path: /docs/cookbook/design/orientation
 next:
   title: Work with tabs
   path: /docs/cookbook/design/tabs
