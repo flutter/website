@@ -198,30 +198,14 @@
   logo_has_name: true
   card_image: showcase/cards/dream11-top@.jpg
 
-- name: Emaar
-  description: >
-    Global property developer, Emaar built a new app designed for mobile-first
-    interaction with unique blockchain-based features.
-  logo_src: showcase/cards/emaar-logo.png
-  logo_has_name: true
-  card_image: showcase/cards/emaar-top@.jpg
-
-- name: Green Tea
-  description: >
-    An internal customer management app used widely by Google sales that
-    provides rich visualizations for tracking sales targets.
-  logo_src: showcase/cards/green_tea-logo.png
-  logo_has_name: true
-  card_image: showcase/cards/green_tea-top@.jpg
-
 - name: Groupon
   description: >
-    Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance, 
+    Groupon uses Flutter to help hundreds of thousands of merchants track campaign performance,
     manage customer satisfaction, and get efficient support.
   logo_src: showcase/cards/groupon-logo.png
   play_store_link: https://play.google.com/store/apps/details?id=com.groupon.redemption
   logo_has_name: true
-  card_image: showcase/cards/groupon-top@.jpg
+  card_image: showcase/cards/groupon-top@.png
 
 - name: JD
   description: >
@@ -244,7 +228,32 @@
 
 - name: Philips Hue
   description: >
-    Flutter helped bring intuitive controls to the Philips Hue smart lights app.
-  logo_src: showcase/cards/hue_philips-logo.png
+    Flutter brought intuitive controls to Philips Hue apps, allowing users to set the mood and sync their smart lights
+    to their media quickly and easily.
+  logo_src: showcase/cards/philips_hue-logo.png
   logo_has_name: true
+  learn_more_dropdown: true
+  learn_more_links:
+    - link_item:
+      link: https://www2.meethue.com/en-us/entertainment/sync-with-tv#get-the-app
+      link_text: Hue Sync app
+    - link_item:
+      link: https://www2.meethue.com/en-us/app/bluetooth#download-bluetooth-app
+      link_text: Hue Bluetooth app
   card_image: showcase/cards/philips_hue-top@.jpg
+
+- name: Emaar
+  description: >
+    Global property developer, Emaar built a new app designed for mobile-first
+    interaction with unique blockchain-based features.
+  logo_src: showcase/cards/emaar-logo.png
+  logo_has_name: true
+  card_image: showcase/cards/emaar-top@.jpg
+
+- name: Green Tea
+  description: >
+    An internal customer management app used widely by Google sales that
+    provides rich visualizations for tracking sales targets.
+  logo_src: showcase/cards/green_tea-logo.png
+  logo_has_name: true
+  card_image: showcase/cards/green_tea-top@.jpg

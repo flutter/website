@@ -49,9 +49,9 @@ with no animation code**&mdash;it consists of a [Material App] home screen conta
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
+<!-- Vanilla AnimatedOpacity https://gist.github.com/e2800d378eb7720d0b076073f72eabc1 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -188,9 +188,9 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
+<!-- AnimatedOpacity https://gist.github.com/36bb91f24db7122ec3def0153683edb7 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4207fea3975b2d329e81d9c9ba84d271"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -230,9 +230,9 @@ different each time you run the example.
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
+<!-- Vanilla Animated Container: https://gist.github.com/b8c7618317d04833dc8941df27f0529d -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=8501583cb789504d75317a5ba1ca6930"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -353,9 +353,9 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
+<!-- Animated Container: https://gist.github.com/8d8f71cac9095009df770eb1db2c8256 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ddfbc68ec9dc28a48703d29248f5366f"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
