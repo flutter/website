@@ -125,7 +125,7 @@ see [Flutter 1.0: Google's Portable UI Toolkit][].
 ### Does Flutter work with any editors or IDEs?
 
 We support plugins for [Android Studio][],
-[IntelliJ IDEA][], and [VS Code][vs-code].
+[IntelliJ IDEA][], and [VS Code][].
 
 See [editor configuration][] for setup details,
 and [Android Studio/IntelliJ][] and [VS Code][]

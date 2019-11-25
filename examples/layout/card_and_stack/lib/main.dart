@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  static final showCard = true; // Set to false to show ListView
+  static final showCard = true; // Set to false to show Stack
 
   @override
   Widget build(BuildContext context) {
