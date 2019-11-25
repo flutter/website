@@ -159,6 +159,12 @@
     Official Rules</a> for submissions, and participants must either create or have permission to use (e.g. via a license) and
     submit all parts of their submission.
 
+- title: Do you retain copyright ownership if you submit app to Flutter clock challenge?
+  content: >
+    By submitting, you are agreeing to release the app under an open source license, and are giving Google a license to
+    the app. Please see the <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for more details.
+
 - title: My clock looks or behaves differently on web! What do I do?
   content: >
     We will not be judging your clock on web. Web is currently in technical preview and is missing some features, but is
