@@ -207,14 +207,14 @@
   logo_has_name: true
   card_image: showcase/cards/groupon-top@.png
 
-- name: JD
+- name: Stadia
   description: >
-    JD Finance is JD.com’s finance and investment mobile app with hundreds of
-    millions of users.
-  logo_src: showcase/cards/jd-logo.png
-  app_store_link: https://itunes.apple.com/cn/app/jing-dong-jin-rong-hui-li/id895682747?mt=8
-  logo_has_name: false
-  card_image: showcase/cards/jd-top@.jpg
+    Google's Stadia app is built using Flutter for both iOS and Android.
+  logo_src: showcase/cards/stadia-logo.png
+  app_store_link: https://apps.apple.com/us/app/google-stadia/id1471900213
+  play_store_link: https://play.google.com/store/apps/details?id=com.google.stadia.android&hl=en_US
+  logo_has_name: true
+  card_image: showcase/cards/stadia-top@.jpg
 
 - name: Nubank
   description: >
