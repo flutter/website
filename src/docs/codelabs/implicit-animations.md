@@ -428,6 +428,11 @@ here are some suggestions for where to go next:
 - Checkout the [animation library].
 - Try another [codelab].
 
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
+{% comment %} This page {% endcomment %}
+
 [Fade-in text effect]: /docs/codelabs/implicit-animations#example-fade-in-text-effect
 [fade-in starter code]: /docs/codelabs/implicit-animations#fade-in-starter-code
 [fade-in complete]: /docs/codelabs/implicit-animations#fade-in-finished-code
@@ -436,11 +441,15 @@ here are some suggestions for where to go next:
 [shape-shifting starter code]: /docs/codelabs/implicit-animations#shape-shifting-starter-code
 [shape-shifting complete]: /docs/codelabs/implicit-animations#shape-shifting-finished-code
 
+{% comment %} Flutter.dev {% endcomment %}
+
 [stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
 [staggered animations]: /docs/development/ui/animations/staggered-animations
 [hero animations]: /docs/development/ui/animations/hero-animations
 [animations tutorial]: /docs/development/ui/animations/tutorial
 [codelab]: /docs/codelabs
+
+{% comment %} External {% endcomment %}
 
 [list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
@@ -457,5 +466,3 @@ here are some suggestions for where to go next:
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [curve]: {{site.api}}/flutter/animation/Curve-class.html
 [DartPad]: {{site.dartpad}}
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
