@@ -600,6 +600,7 @@
   // Style for submissions
   &__submissions, &__contest {
     font-family: $site-font-family-base;
+    position: relative;
 
     ul {
       padding-left: 18px;
@@ -759,5 +760,14 @@
   .no-list-style {
     list-style: none;
     margin-left: -16px;
+  }
+
+  .jump-hook {
+    position: absolute;
+    top: -80px;
+
+    &#contest {
+      top: -40px;
+    }
   }
 }
