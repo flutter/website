@@ -22,13 +22,13 @@ The `FlutterEngine` may have the same lifespan as your `FlutterViewController`
 or outlive your `FlutterViewController`.
 
 {{site.alert.tip}}
-It's generally recommended pre-warm a long-lived `FlutterEngine` for your
+It's generally recommended to pre-warm a long-lived `FlutterEngine` for your
 application. This way,
 
 - Flutter screens will render their first frames faster.
 - Your Flutter and Dart state could outlive one `FlutterViewController`.
-- You and your plugins can interact with Flutter and your Dart logic before
-  showing UI.
+- Your application and your plugins can interact with Flutter and your Dart
+  logic before showing UI.
 {{site.alert.end}}
 
 See [Loading sequence and performance](/docs/development/add-to-app/performance)
@@ -282,9 +282,12 @@ The `FlutterAppDelegate` performs functions such as
 - Forwarding status bar taps (which can only be detected in the AppDelegate) to
   Flutter for scroll-to-top behavior.
 
-If your app delegate cannot directly subclass `FlutterAppDelegate`, you can
+If your app delegate cannot directly subclass `FlutterAppDelegate`, you should
 make your app delegate implement the `FlutterAppLifeCycleProvider` protocol in
-order to make sure your plugins receive the necessary callbacks. For instance:
+order to make sure your plugins receive the necessary callbacks. Otherwise,
+plugins depending on these events may have undefined behavior.
+
+For instance:
 
 <?code-excerpt "AppDelegate.h" title?>
 ```objectivec
@@ -521,15 +524,15 @@ flutterEngine.run()
 will set your `dart:ui`'s [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
 to `"/onboarding"` instead of `"/"`.
 
-{{site.alert.note}}
+{{site.alert.warning}}
 `"setInitialRoute"` on the `navigationChannel` must be called before running your
 `FlutterEngine` in order for Flutter's very first frame to use the desired
-route.
+route. Setting the initial route after running the engine will have no effect.
 {{site.alert.end}}
 
 {{site.alert.tip}}
-In order to change your Flutter route after the `FlutterEngine` is already
-running, use [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
+In order to imperatively change your current Flutter route from the platform
+side after the `FlutterEngine` is already running, use [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
 or [popRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute)
 on the `FlutterViewController`.
 
