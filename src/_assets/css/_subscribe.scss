@@ -1,0 +1,162 @@
+.subscribe {
+  $required-input-color: #c53929;
+  $form-background-color: #e1eaf2;
+  $submit-button-disabled-background: #c6c6c5;
+  color: $site-color-paragraph;
+
+  &-container {
+    margin: 0 auto;
+    padding-top: 60px;
+
+    .heading {
+      color: $site-color-title;
+      font-size: 32px;
+      letter-spacing: -.4px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .subheading {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-top: 80px;
+
+      .heading {
+        font-size: 48px;
+        letter-spacing: -.6px;
+      }
+
+      .subheading {
+        margin-bottom: 60px;
+      }
+    }
+
+    &__form {
+      background-color: $form-background-color;
+      border-radius: 4px;
+      margin: 0 -25px;
+      padding: 40px 25px 120px;
+
+      .subscribe-input {
+        height: 48px;
+      }
+
+      .subscribe-select {
+        display: block;
+        font-size: 14px;
+        height: 36px;
+        margin-bottom: 20px;
+        max-width: 242px;
+        padding: 8px;
+        text-transform: uppercase;
+      }
+
+      .subscribe-checkbox {
+        margin-right: 5px;
+      }
+
+      .subscribe-input, .subscribe-select {
+        border-color: $site-color-light-grey;
+        color: $site-color-paragraph;
+      }
+
+      .field-required {
+        color: $required-input-color;
+      }
+
+      .subscribe-form-group {
+        margin-bottom: 32px;
+      }
+
+      .form-label {
+        font-family: "Google Sans", "Roboto", sans-serif;
+        margin-bottom: 12px;
+      }
+
+      .form-label-tos {
+        margin-bottom: 20px;
+      }
+
+      .tos-paragraph {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .form-submit-button {
+        height: 45px;
+        width: 190px;
+      }
+
+      .form-submit-button__disabled {
+        background-color: $submit-button-disabled-background;
+        border: none;
+        color: $site-color-white;
+      }
+
+      .error-message {
+        color: $required-input-color;
+        display: none;
+        margin-top: 20px;
+      }
+
+      @include media-breakpoint-up(md) {
+        background-image: asset_url('subscribe/bg_geo.svg');
+        background-position: bottom right, top 50px right 70px;
+        background-repeat: no-repeat;
+        background-size: auto, 156px;
+        margin: 0 0 120px;
+        padding: 60px 40px 165px;
+
+        .subscribe-form-group {
+          margin-bottom: 40px;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        background-image: asset_url('subscribe/bg_geo.svg'), asset_url('subscribe/flutter_logo.svg');
+        padding-bottom: 160px;
+      }
+    }
+  }
+  // Success message section
+  .success-message {
+    display: none;
+    height: calc(100vh - 369px);
+    margin-top: 40px;
+    min-height: 500px;
+
+    &__heading {
+      color: $site-color-title;
+      font-size: 28px;
+      letter-spacing: .3px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    &__flutter-logo {
+      display: block;
+      height: 66px;
+      margin: 0 auto 28px;
+      width: 54px;
+    }
+
+    .back-to-home__link {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      height: calc(100vh - 246px);
+    }
+  }
+}
