@@ -536,6 +536,8 @@ on the `FlutterViewController`.
 To pop the iOS route from the Flutter side, call [`SystemNavigator.pop()`]({{site.api}}/flutter/services/SystemNavigator/pop.html)
 {{site.alert.end}}
 
+See the [Navigation and routing](/docs/development/ui/navigation) section for more on Flutter's routes.
+
 ### Other
 
 The above only illustrates a few examples of ways to customize how a Flutter
