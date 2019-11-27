@@ -280,7 +280,7 @@ Kotlin:
 ```kotlin
 // Somewhere in your app before your FlutterFragment is needed...
 // Instantiate a FlutterEngine.
-var flutterEngine = new FlutterEngine(context)
+val flutterEngine = FlutterEngine(context)
 
 // Start executing Dart code in the FlutterEngine.
 flutterEngine.getDartExecutor().executeDartEntrypoint(
@@ -325,7 +325,7 @@ initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 Java:
 ```java
 // With a new FlutterEngine.
-FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build();
 ```
@@ -333,7 +333,7 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
 Kotlin:
 ```kotlin
 // With a new FlutterEngine.
-var flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build()
 ```
@@ -367,7 +367,7 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
 
 Kotlin:
 ```kotlin
-var flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build()
 ```
@@ -413,12 +413,12 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 Kotlin:
 ```java
 // With a new FlutterEngine.
-var flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 
 // With a cached FlutterEngine.
-var flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
+val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 ```
@@ -470,12 +470,12 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 Kotlin:
 ```java
 // Using a new FlutterEngine.
-var flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 
 // Using a cached FlutterEngine.
-var flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
+val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 ```
@@ -524,12 +524,12 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 Kotlin:
 ```kotlin
 // Using a new FlutterEngine.
-var flutterFragment = FlutterFragment.withNewEngine()
+val flutterFragment = FlutterFragment.withNewEngine()
     .shouldAttachEngineToActivity(false)
     .build();
 
 // Using a cached FlutterEngine.
-var flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
+val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .shouldAttachEngineToActivity(false)
     .build();
 ```
