@@ -59,7 +59,7 @@ Kotlin:
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
-    FlutterActivity.createDefaultIntent(currentActivity)
+    FlutterActivity.createDefaultIntent(this)
   )
 }
 ```
@@ -92,7 +92,7 @@ myButton.setOnClickListener {
     FlutterActivity
       .withNewEngine()
       .initialRoute("/my_route")
-      .build(currentActivity)
+      .build(this)
   )
 }
 ```
@@ -205,7 +205,7 @@ myButton.setOnClickListener {
   startActivity(
     FlutterActivity
       .withCachedEngine("my_engine_id")
-      .build(currentActivity)
+      .build(this)
   )
 }
 ```
@@ -314,7 +314,7 @@ startActivity(
   FlutterActivity
     .withNewEngine()
     .backgroundMode(FlutterActivity.BackgroundMode.transparent)
-    .build(context)
+    .build(this)
 );
 
 // Using a cached FlutterEngine.
@@ -322,7 +322,7 @@ startActivity(
   FlutterActivity
     .withCachedEngine("my_engine_id")
     .backgroundMode(FlutterActivity.BackgroundMode.transparent)
-    .build(context)
+    .build(this)
 );
 ```
 
