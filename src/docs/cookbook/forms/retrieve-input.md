@@ -6,6 +6,7 @@ prev:
 next:
   title: Focus and text fields
   path: /docs/cookbook/forms/focus
+js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
 ---
 
 In this recipe,
@@ -101,9 +102,9 @@ FloatingActionButton(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -173,7 +174,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Retrieve Text Input Demo](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/retrieve-input.gif" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
