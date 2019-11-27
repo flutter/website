@@ -9,8 +9,8 @@ This guide describes how to add a single Flutter screen to an existing iOS app.
 ## Start a FlutterEngine and FlutterViewController
 
 Launching a Flutter screen from an existing iOS comprises of starting a
-[`FlutterEngine`](https://api.flutter.dev/objcdoc/Classes/FlutterEngine.html)
-and a [`FlutterViewController`](https://api.flutter.dev/objcdoc/Classes/FlutterViewController.html).
+[`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html)
+and a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
 
 {{site.alert.secondary}}
   The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime
@@ -21,6 +21,7 @@ and a [`FlutterViewController`](https://api.flutter.dev/objcdoc/Classes/FlutterV
 The `FlutterEngine` may have the same lifespan as your `FlutterViewController`
 or outlive your `FlutterViewController`.
 
+{{site.alert.tip}}
 It's generally recommended pre-warm a long-lived `FlutterEngine` for your
 application. This way,
 
@@ -28,25 +29,29 @@ application. This way,
 - Your Flutter and Dart state could outlive one `FlutterViewController`.
 - You and your plugins can interact with Flutter and your Dart logic before
   showing UI.
+{{site.alert.end}}
+
+See [Loading sequence and performance](/docs/development/add-to-app/performance)
+for more analysis on the latency and memory trade-offs of pre-warming an engine.
 
 ### Create a FlutterEngine
 
 The proper place to do this is specific to your host app. As an example, we will
-demonstrate creating a `FlutterEngine`, exposed as a property, created on app
-startup in the app delegate.
+demonstrate creating a `FlutterEngine`, exposed as a property, on app startup in
+the app delegate.
 
 <ul class="nav nav-tabs" id="engine-language" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="engine-objc" href="#engine-objc" role="tab" aria-controls="engine-objc" aria-selected="true">Objective-C</a>
+    <a class="nav-link active" id="engine-objc" href="#engine-objc-tab" role="tab" aria-controls="engine-objc" aria-selected="true">Objective-C</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="engine-swift" href="#engine-swift" role="tab" aria-controls="engine-swift" aria-selected="false">Swift</a>
+    <a class="nav-link" id="engine-swift" href="#engine-swift-tab" role="tab" aria-controls="engine-swift" aria-selected="false">Swift</a>
   </li>
 </ul>
 
 <div class="tab-content"> {% comment %} FlutterEngine language tab start {% endcomment -%}
 
-<div class="tab-pane active" id="engine-objc" role="tabpanel" aria-labelledby="engine-objc-tab" markdown="1">
+<div class="tab-pane active" id="engine-objc-tab" role="tabpanel" aria-labelledby="engine-objc-tab" markdown="1">
 
 **In `AppDelegate.h`:**
 
@@ -84,7 +89,7 @@ startup in the app delegate.
 
 </div>
 
-<div class="tab-pane" id="engine-swift" role="tabpanel" aria-labelledby="engine-swift-tab" markdown="1">
+<div class="tab-pane" id="engine-swift-tab" role="tabpanel" aria-labelledby="engine-swift-tab" markdown="1">
 
 **In `AppDelegate.swift`:**
 
@@ -111,18 +116,181 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate below.
 
 </div>{% comment %} FlutterEngine language tab end {% endcomment -%}
 
+### Show a FlutterViewController with your FlutterEngine
 
-<details>
+The following example shows a generic ViewController with a UIButton hooked to
+present a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
+The `FlutterViewController` uses the `FlutterEngine` instance created in the
+`AppDelegate`.
 
-<summary>What to do if the app delegate already inherits from somewhere else.</summary>
+<ul class="nav nav-tabs" id="vc-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="vc-objc" href="#vc-objc-tab" role="tab" aria-controls="vc-objc" aria-selected="true">Objective-C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="vc-swift" href="#vc-swift-tab" role="tab" aria-controls="vc-swift" aria-selected="false">Swift</a>
+  </li>
+</ul>
 
-Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, for
-example:
+<div class="tab-content"> {% comment %} FlutterViewController language tab start {% endcomment -%}
 
-```objective-c
+<div class="tab-pane active" id="vc-objc-tab" role="tabpanel" aria-labelledby="vc-objc-tab" markdown="1">
+
+<?code-excerpt "ViewController.m" title?>
+```objectivec
+@import Flutter;
+#import "AppDelegate.h"
+#import "ViewController.h"
+
+@implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // Make a button to call the showFlutter function below when pressed.
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self
+               action:@selector(showFlutter)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"Show Flutter!" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor blueColor]];
+    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    [self.view addSubview:button];
+}
+
+- (void)showFlutter {
+    FlutterEngine *flutterEngine =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
+    FlutterViewController *flutterViewController =
+        [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
+    [self presentViewController:flutterViewController animated:YES completion:nil];
+}
+@end
+```
+
+</div>
+
+<div class="tab-pane" id="vc-swift-tab" role="tabpanel" aria-labelledby="vc-swift-tab" markdown="1">
+
+<?code-excerpt "ViewController.swift" title?>
+```swift
+import UIKit
+import Flutter
+
+class ViewController: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Make a button to call the showFlutter function below when pressed.
+    let button = UIButton(type:UIButton.ButtonType.custom)
+    button.addTarget(self, action: #selector(showFlutter), for: .touchUpInside)
+    button.setTitle("Show Flutter!", for: UIControl.State.normal)
+    button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
+    button.backgroundColor = UIColor.blue
+    self.view.addSubview(button)
+  }
+
+  @objc func showFlutter() {
+    let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
+    let flutterViewController =
+        FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+    present(flutterViewController, animated: true, completion: nil)
+  }
+}
+```
+
+</div>
+
+</div>{% comment %} FlutterViewController language tab end {% endcomment -%}
+
+Now you have a Flutter screen embedded in your iOS app.
+
+{{site.alert.note}}
+Using the example above, the default `main()` entrypoint function of your
+default Dart library would have been run when calling `run` on the
+`FlutterEngine` created in the `AppDelegate`.
+{{site.alert.end}}
+
+### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
+
+As an alternative to the above example, you can also let the
+`FlutterViewController` implicitly create its own `FlutterEngine` without
+pre-warming one ahead of time.
+
+This is not recommended since creating a `FlutterEngine` on-demand could
+introduce a noticeable latency between when the `FlutterViewController` is
+presented and when it will render its first frame. This could, however, be
+sometimes useful if the Flutter screen is rarely shown and there are no good
+heuristics to determine when the Dart VM should be started.
+
+To let the `FlutterViewController` present without an existing `FlutterEngine`
+simply omit the `FlutterEngine` construction and create the
+`FlutterViewController` without an engine reference.
+
+<ul class="nav nav-tabs" id="no-engine-vc-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="no-engine-vc-objc" href="#no-engine-vc-objc-tab" role="tab" aria-controls="no-engine-vc-objc" aria-selected="true">Objective-C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="no-engine-vc-swift" href="#no-engine-vc-swift-tab" role="tab" aria-controls="no-engine-vc-swift" aria-selected="false">Swift</a>
+  </li>
+</ul>
+
+<div class="tab-content"> {% comment %} No engine FlutterViewController language tab start {% endcomment -%}
+
+<div class="tab-pane active" id="no-engine-vc-objc-tab" role="tabpanel" aria-labelledby="no-engine-vc-objc-tab" markdown="1">
+
+<?code-excerpt "ViewController.m" title?>
+```objectivec
+// Existing code omitted.
+- (void)showFlutter {
+  FlutterViewController *flutterViewController =
+      [[FlutterViewController alloc] initWithProject:nil nibName:nil bundle:nil];
+  [self presentViewController:flutterViewController animated:YES completion:nil];
+}
+@end
+```
+
+</div>
+
+<div class="tab-pane" id="no-engine-vc-swift-tab" role="tabpanel" aria-labelledby="no-engine-vc-swift-tab" markdown="1">
+
+<?code-excerpt "ViewController.swift" title?>
+```swift
+// Existing code omitted.
+func showFlutter() {
+  let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+  present(flutterViewController, animated: true, completion: nil)
+}
+```
+
+</div>
+
+</div>{% comment %} No engine FlutterViewController language tab end {% endcomment -%}
+
+See [Loading sequence and performance](/docs/development/add-to-app/performance)
+for more explorations on latency and memory usage.
+
+## Using the FlutterAppDelegate
+
+Letting your application's `UIApplicationDelegate` subclass `FlutterAppDelegate`
+is recommended but not required.
+
+The `FlutterAppDelegate` performs functions such as
+
+- Forwarding application callbacks such as [`openURL`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application)
+  to plugins such as [local_auth](https://pub.dev/packages/local_auth).
+- Forwarding status bar taps (which can only be detected in the AppDelegate) to
+  Flutter for scroll-to-top behavior.
+
+If your app delegate cannot directly subclass `FlutterAppDelegate`, you can
+make your app delegate implement the `FlutterAppLifeCycleProvider` protocol in
+order to make sure your plugins receive the necessary callbacks. For instance:
+
+<?code-excerpt "AppDelegate.h" title?>
+```objectivec
 @import Flutter;
 @import UIKit;
-@import FlutterPluginRegistrant; // Only if you have Flutter Plugins
+@import FlutterPluginRegistrant;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, FlutterAppLifeCycleProvider>
 @property (strong, nonatomic) UIWindow *window;
@@ -132,7 +300,8 @@ example:
 
 The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDelegate`:
 
-```objective-c
+<?code-excerpt "AppDelegate.m" title?>
+```objectivec
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
 @end
@@ -150,7 +319,7 @@ The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDe
 didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     [self.flutterEngine runWithEntrypoint:nil];
-    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine]; // Only if you are using Flutter plugins.
+    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
     return [_lifeCycleDelegate application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -260,129 +429,188 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 @end
 ```
 
-</details>
+## Launch options
 
-`ViewController.m`:
+The examples demonstrate running Flutter using the default launch settings.
 
-```objective-c
-@import Flutter;
-#import "AppDelegate.h"
-#import "ViewController.h"
+In order to customize your Flutter runtime, you can also specify the below.
 
-@implementation ViewController
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self
-               action:@selector(handleButtonAction)
-     forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"Press me" forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor blueColor]];
-    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
-    [self.view addSubview:button];
-}
+### Dart entrypoint
 
-- (void)handleButtonAction {
-    FlutterEngine *flutterEngine = [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
-    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
-    [self presentViewController:flutterViewController animated:false completion:nil];
-}
+Calling `run` on a `FlutterEngine` by default runs the `main()` Dart function
+of your `lib/main.dart` file.
+
+You can also run a different entrypoint function by using [`runWithEntrypoint`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)
+with an `NSString` specifying a different Dart function.
+
+{{site.alert.note}}
+Dart entrypoint functions other than `main()` need to be annotated with
+
+<?code-excerpt "main.dart" title?>
+```dart
+@pragma('vm:entry-point')
+void myOtherEntrypoint() { ... };
+```
+
+in order to not be tree-shaken away when compiling.
+{{site.alert.end}}
+
+### Dart library
+
+In addition to specifying a Dart function, you can also specify an entrypoint
+function in a specific file.
+
+For instance,
+
+<?code-excerpt "Objective-C" title?>
+```objectivec
+[flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
+```
+
+or
+
+<?code-excerpt "Swift" title?>
+```swift
+flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
+```
+
+will run `myOtherEntrypoint()` in `lib/other_file.dart` instead of `main()` in
+`lib/main.dart`.
+
+### Route
+
+An initial route can be set for your Flutter [`WidgetsApp`]({{site.api}}/flutter/widgets/WidgetsApp-class.html)
+when constructing the engine.
+
+<ul class="nav nav-tabs" id="initial-route-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="initial-route-objc" href="#initial-route-objc-tab" role="tab" aria-controls="initial-route-objc" aria-selected="true">Objective-C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="initial-route-swift" href="#initial-route-swift-tab" role="tab" aria-controls="initial-route-swift" aria-selected="false">Swift</a>
+  </li>
+</ul>
+
+<div class="tab-content"> {% comment %} Initial route language tab start {% endcomment -%}
+
+<div class="tab-pane active" id="initial-route-objc-tab" role="tabpanel" aria-labelledby="initial-route-objc-tab" markdown="1">
+
+<?code-excerpt "Creating engine" title?>
+```objectivec
+FlutterEngine *flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+[[flutterEngine navigationChannel] invokeMethod:@"setInitialRoute" arguments:@"/onboarding"];
+[flutterEngine run];
 @end
 ```
 
-Or, using Swift:
+</div>
 
-`ViewController.swift`:
+<div class="tab-pane" id="initial-route-swift-tab" role="tabpanel" aria-labelledby="initial-route-swift-tab" markdown="1">
 
+<?code-excerpt "Creating engine" title?>
 ```swift
-import UIKit
-import Flutter
-
-class ViewController: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    let button = UIButton(type:UIButton.ButtonType.custom)
-    button.addTarget(self, action: #selector(handleButtonAction), for: .touchUpInside)
-    button.setTitle("Press me", for: UIControl.State.normal)
-    button.frame = CGRect(x: 80.0, y: 210.0, width: 160.0, height: 40.0)
-    button.backgroundColor = UIColor.blue
-    self.view.addSubview(button)
-  }
-
-  @objc func handleButtonAction() {
-    if let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine {
-      let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-      self.present(flutterViewController, animated: false, completion: nil)
-    }
-  }
-}
+let flutterEngine = FlutterEngine(name: "my flutter engine")
+flutterEngine.navigationChannel.invokeMethod("setInitialRoute", arguments:"/onboarding")
+flutterEngine.run()
 ```
 
-You should now be able to build and launch MyApp on the Simulator or on a device.
-Pressing the button should bring up a full-screen Flutter view with the standard
-Flutter Demo counting app. You can use routes to show different widgets at different
-places in your app, as described in the Android section above. To set the route, call
+</div>
 
-- Objective-C:
+</div>{% comment %} Initial route language tab end {% endcomment -%}
 
-```objective-c
-[flutterViewController setInitialRoute:@"route1"];
-```
+will set your `dart:ui`'s [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
+to `"/onboarding"` instead of `"/"`.
 
-- Swift:
+{{site.alert.note}}
+`"setInitialRoute"` on the `navigationChannel` must be called before running your
+`FlutterEngine` in order for Flutter's very first frame to use the desired
+route.
+{{site.alert.end}}
 
-```swift
-flutterViewController.setInitialRoute("route1")
-```
+{{site.alert.tip}}
+In order to change your Flutter route after the `FlutterEngine` is already
+running, use [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
+or [popRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute)
+on the `FlutterViewController`.
 
-immediately after construction of the `FlutterViewController` (and before presenting
-it).
+To pop the iOS route from the Flutter side, call [`SystemNavigator.pop()`]({{site.api}}/flutter/services/SystemNavigator/pop.html)
+{{site.alert.end}}
 
-You can have the Flutter app dismiss itself by calling `SystemNavigator.pop()`
-in the Dart code.
+### Other
 
-## Building and running your app
+The above only illustrates a few examples of ways to customize how a Flutter
+instance is initiated. Using [platform channels](/docs/development/platform-integration/platform-channels),
+you're free to push data or prepare your Flutter environment in any way you'd
+like before presenting the Flutter UI via a `FlutterViewController`.
 
-You build and run MyApp using Xcode in exactly the same way that you did before you
-added the Flutter module dependency. The same goes for editing, debugging, and
-profiling your iOS code.
+## Running, debugging and hot reload
 
-## Hot restart/reload and debugging Dart code
+You can build and run your iOS app in the same way you run any iOS apps.
+Except now, Flutter is powering the UI in places where you're showing a
+`FlutterViewController`.
 
-Connect a device or launch a Simulator. Then make Flutter CLI tooling listen
-for your app to come up:
+You can continue to debug Flutter using your standard Flutter tools by using the
+**`flutter attach`** mechanism.
 
-```bash
-$ cd some/path/my_flutter
-$ flutter attach
-Waiting for a connection from Flutter on iPhone X...
-```
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        {% asset development/add-to-app/ios/add-flutter-screen/cli-attach.png %}
+        <figcaption class="figure-caption">
+          flutter attach via terminal
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
-Launch `MyApp` in debug mode from Xcode. Navigate to an area of the app that uses
-Flutter. Then turn back to the terminal, and you should see output similar to the
-following:
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        {% asset development/add-to-app/ios/add-flutter-screen/vscode-attach.png %}
+        <figcaption class="figure-caption">
+          flutter attach via VSCode
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
-```text
-Done.
-Syncing files to device iPhone X...                          4.7s
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        {% asset development/add-to-app/ios/add-flutter-screen/intellij-attach.png %}
+        <figcaption class="figure-caption">
+          flutter attach via IntelliJ
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
-🔥  To hot reload changes while running, press "r". To hot restart (and rebuild state), press "R".
-An Observatory debugger and profiler on iPhone X is available at: http://127.0.0.1:54741/
-For a more detailed help message, press "h". To quit, press "q".
-```
+Once attached, you can use your standard suite of debugging tools for Flutter
+such as [DevTools](/docs/development/tools/devtools/overview), stateful hot
+reload, setting breakpoints, turning on debug paint etc.
 
-You can now edit the Dart code in `my_flutter`, and the changes can be hot
-reloaded by pressing `r` in the terminal. You can also paste the URL above into
-your browser to use the Dart Observatory for setting breakpoints, analyzing
-memory retention and other debugging tasks.
+`flutter attach` can connect as soon as you run your `FlutterEngine` and will
+remain attached until your `FlutterEngine` is disposed.
 
 ### Debugging specific instances of Flutter
 
-It's possible to add multiple instances of Flutter (`root isolates`) to an app. `flutter attach` connects to all of the available isolates by default. Any commands sent from the attached CLI are then forwarded to each of the attached isolates.
+It's possible to add multiple instances of Flutter (`root isolates`) to an app.
+`flutter attach` connects to all of the available isolates by default. Any
+commands sent from the attached CLI are then forwarded to each of the attached
+isolates.
 
-List all attached isolates by typing `l` from an attached `flutter` CLI tool. If unspecified, isolate names are automatically generated from the dart entry point file and function name.
+List all attached isolates by typing `l` from an attached `flutter` CLI tool. If
+unspecified, isolate names are automatically generated from the dart entry point
+file and function name.
 
-Example `l` output for an application that's displaying two Flutter isolates simultaneously:
+Example `l` output for an application that's displaying two Flutter isolates
+simultaneously:
 
 ```text
 Connected views:
@@ -392,7 +620,7 @@ Connected views:
 
 Attach to specific isolates instead in two steps:
 
-1. Name the Flutter root isolate of interest in its Dart source.
+1- Name the Flutter root isolate of interest in its Dart source.
 
 ```dart
 // main.dart
@@ -404,7 +632,7 @@ void main() {
 }
 ```
 
-2. Run `flutter attach` with the `--isolate-filter` option.
+2- Run `flutter attach` with the `--isolate-filter` option.
 
 ```bash
 $ flutter attach --isolate-filter='debug'
@@ -419,7 +647,3 @@ For a more detailed help message, press "h". To detach, press "d"; to quit, pres
 Connected view:
   debug isolate (isolates/642101161)
 ```
-
-You can check out
-[`commit 93573de`](https://github.com/flutter/flutter/commit/93573de2165c750fdeefcd2d620e2b8bd494fed6)
-for a more detailed example.
