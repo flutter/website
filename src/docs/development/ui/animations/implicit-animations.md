@@ -11,24 +11,44 @@ that manage animations for you.
 These widgets are collectively referred to as _implicit animations_,
 or _implicitly animated widgets_, deriving their name from the
 [ImplicitlyAnimatedWidget] class that they implement.
-To learn more about implicit animations,
-you can browse through the following set of resources.
+The following set of resources provide many ways to learn
+about implicit animations in Flutter.
 
 ## Documentation
-- [Implicit animations codelab] - Jump right into the code! This codelab uses
-interactive examples and step-by-step instructions
+- [Implicit animations codelab] - Jump right into the code!
+This codelab uses interactive examples and step-by-step instructions
 to teach you how to use implicit animations.
+- [AnimatedContainer sample] - this entry from the [Flutter cookbook] contains a
+step-by-step guide for using the [AnimatedContainer] implicitly animated widget.
 - [ImplicitlyAnimatedWidget documentation][ImplicitlyAnimatedWidget] - All implicit animations
 extend the `ImplicitlyAnimatedWidget` class.
 
-## Flutter in Focus Videos
+## Flutter in Focus videos
+Flutter in Focus videos feature 5-10 minute tutorials
+with real code that cover techniques
+that every Flutter dev needs to know from top to bottom.
+The following videos cover topics
+that are relevant to implicit animations.
 
-{% comment %} Implicit Animations {% endcomment %}
+{% comment %} Animation Basics with Implicit Animations {% endcomment %}
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated {% endcomment %}
+{% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Widget of the Week Videos
+## The Boring Show
+
+Watch to Boring Show to follow Google Engineers build apps from scratch in Flutter.
+The following episode covers using implicit animations in a news aggregator app.
+
+{% comment %} Implicitly animating the Hacker News app {% endcomment %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Widget of the Week videos
+A weekly series of short animated videos each showing the important features of one particular widget.
+In about 60 seconds, you'll see real code for each widget with a demo about how it works.
+The following Widget of the Week videos cover implicitly animated widgets:
 
 {% comment %} Animated Opacity {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -39,6 +59,10 @@ extend the `ImplicitlyAnimatedWidget` class.
 {% comment %} Animated switcher {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
-[ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [Implicit animations codelab]: /docs/codelabs/implicit-animations
+[AnimatedContainer sample]: /docs/cookbook/animation/animated-container
+[Flutter cookbook]: /docs/cookbook
+
+[ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[animation library]: {{site.api}}/flutter/animation/animation-library.html

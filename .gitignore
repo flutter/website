@@ -8,6 +8,7 @@ node_modules
 
 # Dart and Flutter
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 .dart_tool
 pubspec.lock
