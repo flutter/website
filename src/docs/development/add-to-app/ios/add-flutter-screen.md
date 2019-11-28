@@ -25,8 +25,8 @@ or outlive your `FlutterViewController`.
 It's generally recommended to pre-warm a long-lived `FlutterEngine` for your
 application. This way,
 
-- Flutter screens will render their first frames faster.
-- Your Flutter and Dart state could outlive one `FlutterViewController`.
+- The first frame will appear faster when showing the `FlutterViewController`.
+- Your Flutter and Dart state will outlive one `FlutterViewController`.
 - Your application and your plugins can interact with Flutter and your Dart
   logic before showing UI.
 {{site.alert.end}}
@@ -76,7 +76,7 @@ the app delegate.
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
   // Runs the default Dart entrypoint with a default Flutter route.
   [self.flutterEngine run];
@@ -152,14 +152,14 @@ The `FlutterViewController` uses the `FlutterEngine` instance created in the
                action:@selector(showFlutter)
      forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Show Flutter!" forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor blueColor]];
+    button.backgroundColor = UIColor.blueColor;
     button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
     [self.view addSubview:button];
 }
 
 - (void)showFlutter {
     FlutterEngine *flutterEngine =
-        [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
+        ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
     FlutterViewController *flutterViewController =
         [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
     [self presentViewController:flutterViewController animated:YES completion:nil];
@@ -219,8 +219,9 @@ pre-warming one ahead of time.
 This is not recommended since creating a `FlutterEngine` on-demand could
 introduce a noticeable latency between when the `FlutterViewController` is
 presented and when it will render its first frame. This could, however, be
-sometimes useful if the Flutter screen is rarely shown and there are no good
-heuristics to determine when the Dart VM should be started.
+sometimes useful if the Flutter screen is rarely shown, when there are no good
+heuristics to determine when the Dart VM should be started, and when Flutter
+does not need to persist state between view controllers.
 
 To let the `FlutterViewController` present without an existing `FlutterEngine`
 simply omit the `FlutterEngine` construction and create the
@@ -319,7 +320,7 @@ The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDe
 }
 
 - (BOOL)application:(UIApplication*)application
-didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id>*))launchOptions {
     self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     [self.flutterEngine runWithEntrypoint:nil];
     [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
@@ -465,17 +466,37 @@ function in a specific file.
 
 For instance,
 
+<ul class="nav nav-tabs" id="entrypoint-library-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="entrypoint-library-objc" href="#entrypoint-library-objc-tab" role="tab" aria-controls="entrypoint-library-objc" aria-selected="true">Objective-C</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="entrypoint-library-swift" href="#entrypoint-library-swift-tab" role="tab" aria-controls="entrypoint-library-swift" aria-selected="false">Swift</a>
+  </li>
+</ul>
+
+<div class="tab-content"> {% comment %} Entrypoint language language tab start {% endcomment -%}
+
+<div class="tab-pane active" id="entrypoint-library-objc-tab" role="tabpanel" aria-labelledby="entrypoint-library-objc-tab" markdown="1">
+
 <?code-excerpt "Objective-C" title?>
 ```objectivec
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 
-or
+</div>
+
+<div class="tab-pane" id="entrypoint-library-swift-tab" role="tabpanel" aria-labelledby="entrypoint-library-swift-tab" markdown="1">
 
 <?code-excerpt "Swift" title?>
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
+
+</div>
+
+</div>{% comment %} Entrypoint language language tab end {% endcomment -%}
+
 
 will run `myOtherEntrypoint()` in `lib/other_file.dart` instead of `main()` in
 `lib/main.dart`.
@@ -527,7 +548,15 @@ to `"/onboarding"` instead of `"/"`.
 {{site.alert.warning}}
 `"setInitialRoute"` on the `navigationChannel` must be called before running your
 `FlutterEngine` in order for Flutter's very first frame to use the desired
-route. Setting the initial route after running the engine will have no effect.
+route.
+
+Specifically, this must be called before running the Dart entrypoint which may
+run [`runApp`]({{site.api}}/flutter/widgets/runApp.html) which
+may build a Material/Cupertino/WidgetsApp which may implicitly create a
+[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) which
+may read `window.defaultRouteName` when the [`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) is first initialized.
+
+Setting the initial route after running the engine will have no effect.
 {{site.alert.end}}
 
 {{site.alert.tip}}
@@ -617,7 +646,7 @@ file and function name.
 Example `l` output for an application that's displaying two Flutter isolates
 simultaneously:
 
-```text
+```terminal
 Connected views:
   main.dart$main-517591213 (isolates/517591213)
   main.dart$main-332962855 (isolates/332962855)
@@ -625,7 +654,7 @@ Connected views:
 
 Attach to specific isolates instead in two steps:
 
-1- Name the Flutter root isolate of interest in its Dart source.
+**1-** Name the Flutter root isolate of interest in its Dart source.
 
 ```dart
 // main.dart
@@ -637,9 +666,9 @@ void main() {
 }
 ```
 
-2- Run `flutter attach` with the `--isolate-filter` option.
+**2-** Run `flutter attach` with the `--isolate-filter` option.
 
-```bash
+```terminal
 $ flutter attach --isolate-filter='debug'
 Waiting for a connection from Flutter...
 Done.
