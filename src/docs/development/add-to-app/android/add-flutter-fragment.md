@@ -411,16 +411,16 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 ```
 
 Kotlin:
-```java
+```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
     .renderMode(FlutterView.RenderMode.texture)
-    .build();
+    .build()
 
 // With a cached FlutterEngine.
 val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .renderMode(FlutterView.RenderMode.texture)
-    .build();
+    .build()
 ```
 
 Using the configuration above, the resulting `FlutterFragment` renders its UI to
@@ -468,16 +468,16 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
 ```
 
 Kotlin:
-```java
+```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
     .transparencyMode(FlutterView.TransparencyMode.transparent)
-    .build();
+    .build()
 
 // Using a cached FlutterEngine.
 val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .transparencyMode(FlutterView.TransparencyMode.transparent)
-    .build();
+    .build()
 ```
 
 ## The relationship beween `FlutterFragment` and its `Activity`
@@ -526,12 +526,12 @@ Kotlin:
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
     .shouldAttachEngineToActivity(false)
-    .build();
+    .build()
 
 // Using a cached FlutterEngine.
 val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .shouldAttachEngineToActivity(false)
-    .build();
+    .build()
 ```
 
 Passing `false` to the `shouldAttachEngineToActivity()` `Builder` method
