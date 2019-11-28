@@ -115,8 +115,8 @@ experience becomes visible. To minimize this delay, you can warm-up a
 your pre-warmed `FlutterEngine` instead.
 
 To pre-warm a `FlutterEngine`, find a reasonable location in your app to
-instantiate a `FlutterEngine`. As an arbitrary location, the following example
-pre-warms a `FlutterEngine` in the `Application` class:
+instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a 
+`FlutterEngine` in the `Application` class:
 
 Java:
 ```java
@@ -233,8 +233,8 @@ the display of Flutter content.
   execute arbitrary Dart code at any moment in time. Non-UI application logic
   can be executed in a `FlutterEngine`, like networking and data caching, as 
   well as background behavior within a `Service` or elsewhere. When using a
-  `FlutterEngine` to execute behavior in the background, be sure to accomodate
-  all Android restrictions on background execution.
+  `FlutterEngine` to execute behavior in the background, be sure to honor all 
+  Android restrictions on background execution.
 {{site.alert.end}}
 
 {{site.alert.note}}
