@@ -149,6 +149,7 @@
       children:
       - title: Introduction
         permalink: /docs/development/add-to-app
+        match-page-url-exactly: true
       - title: Adding to an Android app
         permalink: /docs/development/add-to-app/android
         children:
