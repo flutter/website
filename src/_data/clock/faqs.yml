@@ -92,7 +92,7 @@
 - title: What language(s) should the clock use?
   content: >
     Any. If you have words in your clock, consider
-    <a href="https://flutter.dev/docs/development/accessibility-and-localization/internationalization"> internationalizing
+    <a href="https://flutter.dev/docs/development/accessibility-and-localization/internationalization" target="_blank" rel="noopener noreferrer"> internationalizing
     them<a/>. Note that written parts of your submission must be in English to be eligible for judging, and your submission must, at a minimum,  support English language
     evaluation. However, we will not judge your clock face for language inclusion. Please ensure that your clock face’s
     text does not include profanity in any language, and is built and submitted in accordance with the
@@ -102,7 +102,7 @@
 - title: What accessibility requirements should I add?
   content: >
     Google values accessibility, and it will be a consideration in your submission as part of the “overall execution”
-    criteria. Check the <a href="https://flutter.dev/docs/development/accessibility-and-localization/accessibility">
+    criteria. Check the <a href="https://flutter.dev/docs/development/accessibility-and-localization/accessibility" target="_blank" rel="noopener noreferrer">
     Flutter accessibility</a> page for details.
 
 - title: >
@@ -116,10 +116,10 @@
 
 - title: What tips do you have to check the performance of my clock?
   content: >
-    Take a look at <a href="https://flutter.dev/docs/perf/rendering/ui-performance">Flutter performance profiling</a>,
-    and enable the <a href="https://flutter.dev/docs/perf/rendering/ui-performance#the-performance-overlay">performance
+    Take a look at <a href="https://flutter.dev/docs/perf/rendering/ui-performance" target="_blank" rel="noopener noreferrer">Flutter performance profiling</a>,
+    and enable the <a href="https://flutter.dev/docs/perf/rendering/ui-performance#the-performance-overlay" target="_blank" rel="noopener noreferrer">performance
     overlay<a/> feature in the
-    <a href="https://flutter.dev/docs/development/tools/devtools/inspector#debugging-layout-issues-visually">Flutter
+    <a href="https://flutter.dev/docs/development/tools/devtools/inspector#debugging-layout-issues-visually" target="_blank" rel="noopener noreferrer">Flutter
     Inspector</a> to see whether frames are being drawn redundantly.
 
 - title: Is there an age limit to participate?
@@ -138,7 +138,7 @@
 - title: Do contest submissions have to be formatted by the Dart formatter?
   content: >
     Yes. This ensures more consistent and readable code.
-    <a href="https://flutter.dev/docs/development/tools/formatting">You can do this from your IDE or at the command
+    <a href="https://flutter.dev/docs/development/tools/formatting" target="_blank" rel="noopener noreferrer">You can do this from your IDE or at the command
     line</a>.
 
 - title: Speaking of code formatting, what are some good coding practices for Flutter?
@@ -159,6 +159,12 @@
     Official Rules</a> for submissions, and participants must either create or have permission to use (e.g. via a license) and
     submit all parts of their submission.
 
+- title: Do you retain copyright ownership if you submit app to Flutter clock challenge?
+  content: >
+    By submitting, you are agreeing to release the app under an open source license, and are giving Google a license to
+    the app. Please see the <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit" target="_blank" rel="noopener noreferrer">
+    Official Rules</a> for more details.
+
 - title: My clock looks or behaves differently on web! What do I do?
   content: >
     We will not be judging your clock on web. Web is currently in technical preview and is missing some features, but is
@@ -174,7 +180,7 @@
 - title: How can I share my clock face online?
   content: >
     We’re glad you asked! Flutter’s web support is in technical preview and you can use to share your clock face online.
-    Once you <a href="https://flutter.dev/docs/get-started/web">enable web support</a>, test your app by selecting
+    Once you <a href="https://flutter.dev/docs/get-started/web" target="_blank" rel="noopener noreferrer">enable web support</a>, test your app by selecting
     Chrome as the target device in your IDE, or at the command line with <em>flutter run -d chrome</em>. Build a web
     version of your app for deployment using <em>flutter build web</em>. Then, you can host it using
     <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, <a href="https://medium.com/flutter/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469" target="_blank" rel="noopener noreferrer">Firebase</a>,
