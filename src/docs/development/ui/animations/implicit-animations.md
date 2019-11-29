@@ -59,10 +59,10 @@ The following Widget of the Week videos cover implicitly animated widgets:
 {% comment %} Animated switcher {% endcomment %}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Implicit animations codelab]: /docs/codelabs/implicit-animations
-[AnimatedContainer sample]: /docs/cookbook/animation/animated-container
-[Flutter cookbook]: /docs/cookbook
 
-[ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[AnimatedContainer sample]: /docs/cookbook/animation/animated-container
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
+[Flutter cookbook]: /docs/cookbook
+[Implicit animations codelab]: /docs/codelabs/implicit-animations
+[ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

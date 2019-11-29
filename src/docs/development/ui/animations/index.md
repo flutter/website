@@ -24,7 +24,7 @@ If you have a specific request,
 {% endcomment -%}
 
 * [Implicit animations codelab](/docs/codelabs/implicit-animations)<br>
-  This codelab covers how to use implicit animations
+  Covers how to use implicit animations
   using step-by-step instructions and interactive examples.
 
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
