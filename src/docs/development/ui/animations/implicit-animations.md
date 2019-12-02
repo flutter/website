@@ -15,13 +15,17 @@ The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
 ## Documentation
-- [Implicit animations codelab] - Jump right into the code!
-This codelab uses interactive examples and step-by-step instructions
-to teach you how to use implicit animations.
-- [AnimatedContainer sample] - this entry from the [Flutter cookbook] contains a
-step-by-step guide for using the [AnimatedContainer] implicitly animated widget.
-- [ImplicitlyAnimatedWidget documentation][ImplicitlyAnimatedWidget] - All implicit animations
-extend the `ImplicitlyAnimatedWidget` class.
+[Implicit animations codelab]
+: Jump right into the code!
+This codelab uses interactive examples
+and step-by-step instructions to teach you how to use implicit animations.
+
+[AnimatedContainer sample]
+: A step-by-step recipe from the [Flutter cookbook]
+for using the [AnimatedContainer] implicitly animated widget.
+
+[ImplicitlyAnimatedWidget documentation][ImplicitlyAnimatedWidget]
+: All implicit animations extend the `ImplicitlyAnimatedWidget` class.
 
 ## Flutter in Focus videos
 Flutter in Focus videos feature 5-10 minute tutorials
