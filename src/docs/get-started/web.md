@@ -5,9 +5,10 @@ description: Instructions for creating a Flutter app for the web.
 
 This page covers the following steps for getting started with web support:
 - Configure the `flutter` tool for web support.
-- Add web support to an existing project and/or create a new project with web
-  support.
-- Run and build an app with web support.
+- Create a new project with web support.
+- Run a new project with web support.
+- Build an app with web support.
+- Add web support to an existing project.
 
 ## Requirements
 - [Install the Flutter SDK on your platform][Install Flutter].
@@ -25,11 +26,10 @@ so it **isn't recommended for production use.**
 
 You can use the following steps
 to create a new project with web support.
-
 Assuming that you have the `flutter` tool installed,
 run the following commands in a terminal from the root project directory.
 
-### Configure
+### Set up
 Currently, you need either the master or dev channel of the Flutter SDK
 for web support. Assuming that you already have the
 `flutter` tool installed, run the following commands
@@ -37,7 +37,6 @@ to install the latest version from the beta channel
 and enable web support:
 
 ```terminal
-$ cd <project directory>
 $ flutter channel beta
 $ flutter upgrade
 $ flutter config --enable-web
@@ -56,19 +55,19 @@ $ git remote get-url origin
 ssh://git@github.com/flutter/flutter.git
 ```
 {{site.alert.end}}
-
-**After enabling web support, restart your IDE.**
-You should now see **Chrome (web)** in the device pulldown.
-
 Once web is enabled,
 the `flutter devices` command outputs a device named `Chrome`:
 
 ```terminal
 $ flutter devices
-1 connected device:
+2 connected device:
 
-Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
+Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
+Web Server • web-server • web-javascript • Flutter Tools
 ```
+
+**After enabling web support, restart your IDE.**
+You should now see **Chrome (web)** in the device pulldown.
 
 {{site.alert.note}}
 You should only need to execute these configure steps once. You can always
@@ -83,6 +82,7 @@ substituting `myapp` with the name of your project:
 
 ```terminal
 $ flutter create myapp
+$ cd myapp
 ```
 
 To serve your app from `localhost` in Chrome,
@@ -117,6 +117,8 @@ or by using `flutter build web`. This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
+{%comment%} add link to deploy / build doc {%endcomment%}
+
 ### Add web support to an existing app
 
 To add web support to an existing project,
@@ -126,20 +128,11 @@ terminal from the root project directory:
 ```terminal
 $ flutter create .
 ```
-
-### Create a new app with web support
+To serve your app from `localhost` in Chrome,
+enter the following from the top of the package:
 
 ```terminal
 $ flutter run -d chrome
-```
-
-
-### Generate a release build
-
-Run the following command from the root project directory:
-
-```terminal
-$ flutter build web
 ```
 
 [dart2js]: https://dart.dev/tools/dart2js
