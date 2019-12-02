@@ -18,7 +18,7 @@ code and your Flutter code in the same project. You can also continue to use
 your normal IntelliJ Flutter plugin functionalities such as Dart code completion,
 hot reload, widget inspector etc.
 
-Add-to-app flows with Android Studio is only supported on Android Studio 3.6+
+Add-to-app flows with Android Studio is only supported on Android Studio 3.6
 and only supports integrating via source code sub-project. See below for more
 details on the distinction.
 
