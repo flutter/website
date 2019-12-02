@@ -894,7 +894,7 @@ var container = Container( // grey box
         ),
       ), [[/highlight]]
       decoration: BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: EdgeInsets.all(16),
     ),
@@ -956,7 +956,7 @@ var container = Container( // grey box
         maxLines: 1, [[/highlight]]
       ),
       decoration: BoxDecoration(
-        backgroundColor: Colors.red[400],
+        color: Colors.red[400],
       ),
       padding: EdgeInsets.all(16),
     ),

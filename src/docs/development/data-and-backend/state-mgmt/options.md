@@ -57,7 +57,7 @@ by the Flutter community:
   a video by MTechViral
 * [Flutter state management&mdash;scoped
   model](https://www.youtube.com/watch?v=Oql5bU-Uvso)
-* [Making sense all of those Flutter Providers](https://medium.com/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd)
+* [Making sense of all those Flutter Providers](https://medium.com/flutter-community/making-sense-all-of-those-flutter-providers-e842e18f45dd)
 
 ## Redux
 

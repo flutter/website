@@ -243,8 +243,9 @@ packages, on [pub.dev][].
          return MaterialApp(
            title: 'Welcome to Flutter',
            home: Scaffold(
-    @@ -16,7 +18,7 @@
-               title: Text('Welcome to Flutter'),
+    @@ -12,7 +14,7 @@
+             appBar: AppBar(
+               title: Text('Welcome to Flutter')
              ),
              body: Center(
     -          child: Text('Hello World'),

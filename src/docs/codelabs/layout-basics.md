@@ -2,7 +2,6 @@
 title: "Basic Flutter layout concepts"
 description: "A codelab that teaches basic Flutter layout concepts through DartPad examples and exercises."
 toc: true
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
 ---
 Welcome to the Flutter layout codelab,
 where you learn how to build a Flutter UI without
@@ -50,10 +49,9 @@ and `Column` lays out its widgets vertically.
   **2.** In the code, change the `Row` to a `Column`, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/4e11c4a7ec824685f963f25d7c30ba0b
+  Gist: https://gist.github.com/009a77697460e7ec6a3c142f0dfb1b5e
 {% endcomment %}
-
-{% include layout-basics/creating-a-column.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=009a77697460e7ec6a3c142f0dfb1b5e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Axis size and alignment
 
@@ -103,10 +101,9 @@ The `mainAxisSize` property has two possible values:
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/d852e4f07d6c87600fe8e0f186c7a31b
+  Gist: https://gist.github.com/928d699ea0869e75d072e6e9c4e63397
 {% endcomment %}
-
-{% include layout-basics/modifying-axis-size.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=928d699ea0869e75d072e6e9c4e63397&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### mainAxisAlignment property
 
@@ -153,11 +150,9 @@ can position their children in that extra space.
          `MainAxisAlignment.end`, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/cb8abed13f90a6a0c7a0ada6f15a09c9
+  Gist: https://gist.github.com/6b00f558718e9f23de5c61503aa1bfe4
 {% endcomment %}
-
-{% include layout-basics/modifying-main-axis-alignment.md %}
-
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=6b00f558718e9f23de5c61503aa1bfe4&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next section,
   change `MainAxisAlignment.end` to another value.
@@ -210,11 +205,9 @@ The `crossAxisAlignment` property has five possible values:
          `CrossAxisAlignment.start`, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/70a6eb88f13019eec349a57bc4fd5fe0
+  Gist: https://gist.github.com/d160e264a865479586ec7940f45cf8b2
 {% endcomment %}
-
-{% include layout-basics/modifying-cross-axis-alignment.md %}
-
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d160e264a865479586ec7940f45cf8b2&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next section,
   change `CrossAxisAlignment.start` to another value.
@@ -268,10 +261,9 @@ the widgets are resized according to their
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/ba0f40356d1023066d960f6de2be1a4b
+  Gist: https://gist.github.com/817baa1ba2123f15abda92598c4343cc
 {% endcomment %}
-
-{% include layout-basics/changing-fit-properties.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=817baa1ba2123f15abda92598c4343cc&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Example: Testing flex values
 {:.no_toc}
@@ -299,11 +291,9 @@ the widgets are resized according to their
   remains the same size.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/82e4dd24028034ae03ba0ddc71bf59e5
+  Gist: https://gist.github.com/ae6a86bbb9a34c9ff76c88f64df23987
 {% endcomment %}
-
-{% include layout-basics/testing-flex-values.md %}
-
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ae6a86bbb9a34c9ff76c88f64df23987&amp;theme=dark&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
   Before moving to the next example,
   try changing the `flex` properties to other values,
@@ -344,10 +334,9 @@ wrap a widget and force the widget to fill extra space.
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/77021d2ed15f9ece850de15e73c47526
+  Gist: https://gist.github.com/c4dfa9058f803dea1cff4fca2532977a
 {% endcomment %}
-
-{% include layout-basics/filling-extra-space.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c4dfa9058f803dea1cff4fca2532977a&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## SizedBox widget
 
@@ -371,10 +360,9 @@ create empty space.
          inside the `SizedBox` widget, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/6582851e85b57180ff5321f814fabb81
+  Gist: https://gist.github.com/716612f4ae2d979cc5a2868e06c14e58
 {% endcomment %}
-
-{% include layout-basics/resizing-a-widget.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=716612f4ae2d979cc5a2868e06c14e58&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Example: Creating space
 {:.no_toc}
@@ -392,10 +380,9 @@ create empty space.
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/19ead147ab5c7668d7d32e1cfed90097
+  Gist: https://gist.github.com/1c690c529316fbe7af0b4c9edb8da512
 {% endcomment %}
-
-{% include layout-basics/creating-space.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=1c690c529316fbe7af0b4c9edb8da512&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Spacer widget
 
@@ -422,10 +409,9 @@ can create space between widgets.
          between the second and third `BlueBox` widgets.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/bfc367aefde35e02ea5283efdbf58e60
+  Gist: https://gist.github.com/5a2f539d258eaab33f6f0b19a0ab21c8
 {% endcomment %}
-
-{% include layout-basics/creating-more-space.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=5a2f539d258eaab33f6f0b19a0ab21c8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Text widget
 
@@ -446,10 +432,9 @@ for different fonts, sizes, and colors.
          `CrossAxisAlignment.baseline`, and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/0ff109090b99ef1873d9fad501b2bc86
+  Gist: https://gist.github.com/05d920fd86eb3c253c2a6a8be0fabb01
 {% endcomment %}
-
-{% include layout-basics/aligning-text.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=05d920fd86eb3c253c2a6a8be0fabb01&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Icon widget
 
@@ -474,10 +459,9 @@ Flutter is preloaded with icon packages for
          [Material Color palette][], and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/01688fca8c13f85d93078054af2e858b
+  Gist: https://gist.github.com/54fa77a90f160c74382f1517d6167fda
 {% endcomment %}
-
-{% include layout-basics/creating-an-icon.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=54fa77a90f160c74382f1517d6167fda&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Image widget
 
@@ -507,10 +491,9 @@ the following example uses an image from the network.
          and run again.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/b6f3084800bd139cdb522b8858bb58b7
+  Gist: https://gist.github.com/b42464ac4e9bff23ab567721581183aa
 {% endcomment %}
-
-{% include layout-basics/displaying-an-image.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## Putting it all together
 
@@ -576,10 +559,9 @@ which are positioned below the contact information.
   and `crossAxisAlignment` to `CrossAxisAlignment.start`.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/30ccbe0fcf31cc10eafba3aea8ff0697
+  Gist: https://gist.github.com/c46f9a9f6c99c2c00497df5dbc0b4593
 {% endcomment %}
-
-{% include layout-basics/create-the-name-and-title.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c46f9a9f6c99c2c00497df5dbc0b4593&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
@@ -617,12 +599,10 @@ which are positioned below the contact information.
      );
   ```
 {{site.alert.end}}
-
 {% comment %}
-  Gist: https://gist.github.com/datafoya/95dcc1451aea8412669c41eb8a1a5f23
+  Gist: https://gist.github.com/ecf35ee39daf06266363be8fe5aa1d6f
 {% endcomment %}
-
-{% include layout-basics/wrap-the-column-in-a-row.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ecf35ee39daf06266363be8fe5aa1d6f&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 2
 {:.no_toc}
@@ -665,10 +645,9 @@ which are positioned below the contact information.
 
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/c3ac34ed8952724a0ecb0af1445c2af8
+  Gist: https://gist.github.com/9863fbf7fe192e95b93cfdfb517ac6f5
 {% endcomment %}
-
-{% include layout-basics/tweak-the-layout.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=9863fbf7fe192e95b93cfdfb517ac6f5&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 #### Exercise: Enter contact information
 {:.no_toc}
@@ -688,12 +667,10 @@ which are positioned below the contact information.
   set the `mainAxisAlignment` property to
   `MainAxisAlignment.spaceBetween`.
 {{site.alert.end}}
-
 {% comment %}
-  Gist: https://gist.github.com/datafoya/c5be61116652927c5d92262fce1b5360
+  Gist: https://gist.github.com/73baebd1bc2e5414921b63d9b0823db0
 {% endcomment %}
-
-{% include layout-basics/enter-contact-information.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=73baebd1bc2e5414921b63d9b0823db0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ### Part 3
 {:.no_toc}
@@ -712,10 +689,9 @@ which are positioned below the contact information.
   `MainAxisAlignment.spaceAround`.
 {{site.alert.end}}
 {% comment %}
-  Gist: https://gist.github.com/datafoya/dae36611fc9af04c4b9d0fbc3429275e
+  Gist: https://gist.github.com/a24370419412b11e261fea95e8a18774
 {% endcomment %}
-
-{% include layout-basics/add-four-icons.md %}
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=a24370419412b11e261fea95e8a18774&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
 
 ## What's next?
 

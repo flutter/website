@@ -66,6 +66,8 @@ For additional details on how to organize the package contents, see the
 
 ## Developing plugin packages {#plugin}
 
+*For information about the `flutter.plugin.platforms` key see: [Specifying a plugin's supported platforms](#plugin-platforms).*
+
 If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package. A plugin package is a specialized version of a
 Dart package, that in addition to the content described above also contains
@@ -165,6 +167,52 @@ You can run the example app by pressing the &#9654; button.
 Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
 This is done using [platform channels][].
+
+### Specifying a plugin's supported platforms {#plugin-platforms}
+
+Starting Flutter version 1.10 plugins specify their supported platforms by adding keys to the
+`platforms` map in the `pubspec.yaml` file. For example the following showd the `flutter:` map for the "hello" plugin:
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
+
+When adding plugin implementations for more platforms, the platforms map should be updated accordignly, e.g
+this is what the map looks like for the hello plugin that supports Android, iOS, macOS, and Flutter Web:
+
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      macos:
+        pluginClass: HelloPlugin
+      web:
+        pluginClass: HelloPlugin
+        fileName: hello_web.dart
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
 
 ## Adding documentation
 
