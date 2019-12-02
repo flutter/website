@@ -15,9 +15,9 @@ Your existing Android app may currently support architectures such as `mips`
 or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
 building AOT libraries for `armeabi-v7a` and `arm64-v8a`.
 
-Consider using the [`splits`](https://developer.android.com/studio/build/configure-apk-splits)
-Android Gradle Plugin API to specify the included architectures in your APK to
-avoid a runtime crash.
+Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html)
+Android Gradle Plugin API to limit the supported architectures in your APK to
+avoid a missing `libflutter.so` runtime crash.
 
 The Flutter engine has an `x86` version so non-AOT Flutter builds such as
 debug mode can still run on `x86` devices such as the emulator.
