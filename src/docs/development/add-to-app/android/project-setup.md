@@ -10,6 +10,21 @@ fashion as a source code sub-project or as AARs.
 The integration flow can be done via the Android Studio IDE with the
 [Flutter plugin](https://plugins.jetbrains.com/plugin/9212-flutter) or manually.
 
+{{site.alert.warning}}
+Your existing Android app may currently support architectures such as `mips`
+or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
+building AOT libraries for `armeabi-v7a` and `arm64-v8a`.
+
+Consider using the [`splits`](https://developer.android.com/studio/build/configure-apk-splits)
+Android Gradle Plugin API to specify the included architectures in your APK to
+avoid a runtime crash.
+
+The Flutter engine has an `x86` version so non-AOT Flutter builds such as
+debug mode can still run on `x86` devices such as the emulator.
+
+TODO(blasten): revise whether this is right.
+{{site.alert.end}}
+
 ## Using Android Studio
 
 The Android Studio IDE offers a convenient way of integrating your Flutter
