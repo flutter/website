@@ -7,6 +7,10 @@ description: Learn how to integrate a Flutter module into your existing iOS proj
 Flutter can be incrementaly added into your existing iOS application as embedded
 frameworks.
 
+## System requirements
+Your development environment must meet the [macOS system requirements for Flutter][]
+with [Xcode installed][]. Flutter supports iOS 8.0 and later.
+
 ## Create a Flutter module
 
 To embed Flutter into your existing application, first create a Flutter module.
@@ -87,6 +91,7 @@ If your existing application (`MyApp`) does not already have a Podfile,  follow 
 
 1. Add the following lines to your `Podfile`:
 
+<?code-excerpt "MyApp/Podfile" title?>
 ```ruby
   flutter_application_path = '../my_flutter'
   load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
@@ -95,6 +100,7 @@ If your existing application (`MyApp`) does not already have a Podfile,  follow 
 2. For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
+<?code-excerpt "MyApp/Podfile" title?>
 ```ruby
   target 'MyApp' do
     install_all_flutter_pods(flutter_application_path)
@@ -104,10 +110,10 @@ embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 3. Run `pod install`.
 
 {{site.alert.note}}
-Whenever you change the Flutter plugin dependencies in `some/path/my_flutter/pubspec.yaml`,
-run `flutter pub get` from `some/path/my_flutter` to refresh the list
+When you change the Flutter plugin dependencies in `my_flutter/pubspec.yaml`,
+run `flutter pub get` in your Flutter module directory to refresh the list
 of plugins read by the `podhelper.rb` script. Then run `pod install` again from
-`some/path/MyApp`.
+in your application at`some/path/MyApp`.
 {{site.alert.end}}
 
 The `podhelper.rb` script embeds your plugins, `Flutter.framework`, and
@@ -118,7 +124,9 @@ You should now be able to build the project using `⌘B`.
 ### Embed frameworks in Xcode
 
 Alternatively, you can generate the necessary frameworks and embed them in your application
-by manually editing your existing Xcode project.
+by manually editing your existing Xcode project. You may choose to do this if members of your
+team cannot locally install Flutter SDK and CocoaPods, or if you do not wish to use CocoaPods
+as a dependency manager in your existing applications.
 
 If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-CocoaPods-and-Flutter-tools)
 method, you can skip these instructions.
@@ -185,10 +193,12 @@ You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)` to your Framework Se
 ## Development
 You can now [add a Flutter screen][] to your existing application.
 
+[macOS system requirements for Flutter]: /docs/get-started/install/macos
+[Xcode installed]: /docs/get-started/install/macos#install-xcode
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio#run-app-with-breakpoints
 [VS Code]: /docs/development/tools/vs-code#run-app-with-breakpoints
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
-[add a Flutter screen]: docs/development/add-to-app/ios/add-flutter-screen
+[add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
