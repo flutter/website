@@ -17,7 +17,7 @@ This page covers the following steps for getting started with web support:
 For more information, see the [web FAQ][].
 
 {{ site.alert.warning }}
-As of 1.9, Flutter has early support for running web applications.
+As of 1.12, Flutter has early support for running web applications.
 There are still missing features and known performance issues,
 so it **isn't recommended for production use.**
 {{ site.alert.end }}
