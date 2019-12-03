@@ -1,0 +1,78 @@
+---
+title: Subscribe
+layout: landing
+show_banner: False
+body_class: subscribe
+---
+
+<section class="subscribe-container">
+    <h1 class="heading">Subscribe to developer updates</h1>
+    <p class="subheading">Stay in the loop on important Flutter updates and announcements.</p>
+    <form aria-label="update form" class="subscribe-container__form" action="https://services.google.com/fb/submissions/flutter-updates/">
+        <div class="form-row">
+            <div class="subscribe-form-group form-group col-md-6 col-lg-4 pr-md-2">
+                <label class="form-label" for="firstName">First name</label>
+                <input class="form-control subscribe-input" name="firstName" type="text" id="firstName">
+            </div>
+            <div class="subscribe-form-group form-group col-md-6 col-lg-4 pl-md-2">
+                <label class="form-label" for="lastName">Last name</label>
+                <input class="form-control subscribe-input" name="lastName" type="text" id="lastName">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="subscribe-form-group form-group col-md-12 col-lg-8">
+                <label class="form-label" for="email">Your e-mail address <span class="field-required">*</span></label>
+                <input class="form-control subscribe-input" name="email" type="email" id="email" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="subscribe-form-group form-group col-md-6 col-lg-4">
+                <label class="form-label" for="language">Language <span class="field-required">*</span></label>
+                <select class="custom-select mr-sm-2 subscribe-select" id="language" name="language" required>
+                    <option value="en" selected>English</option>
+                    <option value="zh-CN">Chinese</option>
+                    <option value="es">Spanish</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="de">German</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+            <div class="subscribe-form-group form-group col-md-6 col-lg-4">
+                <label class="form-label" for="country">Country</label>
+                <select class="custom-select mr-sm-2 subscribe-select subscribe-country_select" id="country" name="country" required>
+                    {% include countries.html -%}
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="subscribe-form-group form-group col-md-10 col-lg-8">
+                <label class="form-label form-label-tos" for="signMeUp">
+                    <input class="subscribe-checkbox" name="signMeUp" type="checkbox" id="signMeUp" required>
+                    Sign me up for the latest Flutter developer product news <span class="field-required">*</span>
+                </label>
+                <p class="tos-paragraph">
+                    <em>
+                        By using this service, you agree to be bound by our <a href="https://policies.google.com/terms">Google Terms of Service</a>.
+                        I acknowledge that the information provided in this form will be subjected to
+                        <a href="https://www.google.com/policies/privacy/">Google's Privacy Policy</a>.
+                    </em>
+                </p>
+            </div>
+        </div>
+        <button type="button" class="btn form-submit-button form-submit-button__disabled" disabled>Subscribe</button>
+        <p class="error-message">Failed to submit, please try again.</p>
+    </form>
+</section>
+<section class="success-message">
+    {% asset 'subscribe/flutter_logo.svg' class="success-message__flutter-logo" %}
+    <h1 class="success-message__heading">You're in!</h1>
+    <p class="success-message__paragraph">You have successfully signed up for the latest Flutter updates and announcements.</p>
+    <a href="/" class="back-to-home__link btn btn-primary">Back to home</a>
+</section>
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+<script>
+    new gweb.analytics.AutoTrack({
+        profile: 'UA-5436354-2'
+    });
+</script>
+{% asset subscribe_form.js %}
