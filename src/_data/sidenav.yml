@@ -138,6 +138,8 @@
           permalink: /docs/development/packages-and-plugins/using-packages
         - title: Developing packages & plugins
           permalink: /docs/development/packages-and-plugins/developing-packages
+        - title: Flutter Favorite program
+          permalink: /docs/development/packages-and-plugins/favorites
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package site
