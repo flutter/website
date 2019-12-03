@@ -88,11 +88,6 @@ shaking difficult. The tools cannot know what parts are unused at runtime, so
 the redundant code is hard to strip away. App sizes cannot be easily optimized
 when using reflection.
 
-{{site.alert.info}}
-  **What about dartson?** The [dartson][] library uses runtime
-  [reflection][], which makes it incompatible with Flutter.
-{{site.alert.end}}
-
 Although you cannot use runtime reflection with Flutter, some libraries give
 you similarly easy-to-use APIs but are based on code generation instead. This
 approach is covered in more detail in the [code generation
@@ -203,9 +198,18 @@ In a production app, you would want to ensure that the serialization
 works properly. In practice, the `User.fromJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
-However, real-world scenarios are not usually that simple.
-It's unlikely that you would use such small JSON responses.
-Nested JSON objects are also commonly used.
+{{site.alert.info}}
+  The cookbook contains [a more comprehensive worked example of using
+  JSON model classes][json background parsing], using an isolate to parse
+  the JSON file on a background thread. This approach is ideal if you
+  need your app to remain responsive while the JSON file is being
+  decoded.
+{{site.alert.end}}
+
+However, real-world scenarios are not always that simple.
+Sometimes JSON API responses are more complex, for example since they 
+contain nested JSON objects that must be parsed through their own model
+class.
 
 It would be nice if there were something that handled the JSON encoding
 and decoding for you.  Luckily, there is!
@@ -213,7 +217,7 @@ and decoding for you.  Luckily, there is!
 <a name="code-generation"></a>
 ## Serializing JSON using code generation libraries
 
-Although there are other libraries available, this guide uses the
+Although there are other libraries available, this guide uses
 [json_serializable][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
@@ -469,17 +473,14 @@ For more information, see the following resources:
 * The [dart:convert][] and [JsonCodec][] documentation
 * The [json_serializable][] package on pub.dev
 * The [json_serializable examples][] on GitHub
-* The [discussion about dart:mirrors in Flutter][]
-
 
 
 [built_value]: {{site.pub}}/packages/built_value
 [dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
-[dartson]: {{site.pub}}/packages/dartson
-[Discussion about dart:mirrors in Flutter]: {{site.github}}/flutter/flutter/issues/1150
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
 [json_serializable]: {{site.pub}}/packages/json_serializable
 [json_serializable examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
+[json background parsing]: https://flutter.dev/docs/cookbook/networking/background-parsing
 [pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
