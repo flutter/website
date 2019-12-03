@@ -30,8 +30,7 @@ Assuming that you have the `flutter` tool installed,
 run the following commands in a terminal from the root project directory.
 
 ### Set up
-Currently, you need either the master or dev channel of the Flutter SDK
-for web support. Assuming that you already have the
+Assuming that you already have the
 `flutter` tool installed, run the following commands
 to install the latest version from the beta channel
 and enable web support:
