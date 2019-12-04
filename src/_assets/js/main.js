@@ -22,12 +22,7 @@ $(function () {
   setupClipboardJS();
 
   // New (dash) tabs
-  setupTabs($('#editor-setup'), 'io.flutter.tool-id');
-  setupTabs($('#engine-language'), 'io.flutter.tool-id');
-  setupTabs($('#vc-language'), 'io.flutter.tool-id');
-  setupTabs($('#no-engine-vc-language'), 'io.flutter.tool-id');
-  setupTabs($('#entrypoint-library-language'), 'io.flutter.tool-id');
-  setupTabs($('#initial-route-language'), 'io.flutter.tool-id');
+  setupTabs($('.nav-tabs'), 'io.flutter.tool-id');
   // Old tabs
   setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
   setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
