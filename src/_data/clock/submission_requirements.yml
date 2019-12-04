@@ -9,9 +9,9 @@
     - text: >
         You may use <a href="https://material.io/resources/icons" target="_blank" rel="noopener noreferrer">Material Design icons</a>.
     - text: >
-        All other assets, fonts, icons, images, and so on should be your own, or licensed under a
-        <a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank" rel="noopener noreferrer">BSD-3</a>, or
-        <a href="https://opensource.org/licenses/OFL-1.1" target="_blank" rel="noopener noreferrer">OFL</a> license (for fonts).
+        Your Submission’s code must be licensed under an appropriate open source license (for code, BSD aka University
+        of California license, MIT license or Apache 2.0 license are recommended; for assets, CC BY 4.0 license or
+        Apache 2.0 license are recommended; for fonts, OFL license is recommended).
     - text: >
         Your clock should not:
       subItems:
@@ -25,7 +25,6 @@
             Collect data in violation of applicable laws (including privacy laws).
         - text: >
             Contain copyrighted or trademarked content.
-
 - title: >
     Submissions:
   subItems:
@@ -33,10 +32,11 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWVdnocPZFH-xafvHddPY0o1SZj8EW4E5vVvJp1VfW5Ed1YQ/viewform" target="_blank" rel="noopener noreferrer">
         Submit your final clock</a> by January 20th, 11:59pm PST (GMT-8).
     - text: >
-        Your clock must be made public on <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a> under a
-        <a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank" rel="noopener noreferrer">BSD-3</a> license (with assets under a BSD-3 or
-        <a href="https://opensource.org/licenses/OFL-1.1" target="_blank" rel="noopener noreferrer">OFL</a> license, as appropriate) before February 5th, 2020.
-        Your repo can be private during the contest period.
+        Your clock must be made public on <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        before February 5th, 2020, but can be private during the contest period. Your Submission’s code must be licensed
+        under an appropriate open source license (for code, BSD aka University of California license, MIT license or
+        Apache 2.0 license are recommended; for assets, CC BY 4.0 license or Apache 2.0 license are recommended;
+        for fonts, OFL license is recommended).
     - text: >
         Specify on the submission form which platform (Android or iOS) you would like the judges to use when evaluating
         your submission. Judges will not be testing on web.
