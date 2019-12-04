@@ -88,7 +88,7 @@ some/path/
     Podfile
 ```
 
-If your existing application (`MyApp`) does not already have a Podfile,  follow the
+If your existing application (`MyApp`) does not already have a Podfile, follow the
 [CocoaPods getting started guide][] to add a `Podfile` to your project.
 
 1. Add the following lines to your `Podfile`:
@@ -121,7 +121,7 @@ in your application at`some/path/MyApp`.
 The `podhelper.rb` script embeds your plugins, `Flutter.framework`, and
 `App.framework` into your project.
 
-You should now be able to build the project using `⌘B`.
+Open `MyApp.xcworkspace` in Xcode. You can now build the project using `⌘B`.
 
 ### Embed frameworks in Xcode
 
