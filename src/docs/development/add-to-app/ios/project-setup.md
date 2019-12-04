@@ -73,7 +73,9 @@ Manually embed the frameworks and update your existing application's build setti
 ### Embed with CocoaPods and the Flutter SDK
 
 This method requires every developer working on your project to have a locally installed
-version of the Flutter SDK.
+version of the Flutter SDK. Simply build your application in Xcode to automatically run the script to
+embed your Dart and plugin code. This allows for rapid iteration with the most up-to-date
+version of your Flutter module without running additional commands outside of Xcode.
 
 The following example assumes that your existing application and the Flutter module are in sibling directories.
 If you have a different directory organization, you may need to adjust the relative paths.
@@ -126,7 +128,8 @@ You should now be able to build the project using `⌘B`.
 Alternatively, you can generate the necessary frameworks and embed them in your application
 by manually editing your existing Xcode project. You may choose to do this if members of your
 team cannot locally install Flutter SDK and CocoaPods, or if you do not wish to use CocoaPods
-as a dependency manager in your existing applications.
+as a dependency manager in your existing applications. You must run `flutter build ios-framework` 
+every time you make code changes in your Flutter module.
 
 If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-CocoaPods-and-Flutter-tools)
 method, you can skip these instructions.
@@ -163,8 +166,9 @@ With Xcode 11 installed you can generate [XCFrameworks][] instead of universal f
 the flags `--xcframework --no-universal`.
 {{site.alert.end}}
 
-Open your existing project in Xcode and drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
-into your targets's build settings > General > Frameworks, Libraries, and Embedded Content. Select
+Embed the generated frameworks into your existing application in Xcode. For example, you can
+drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
+into your targets's build settings > General > Frameworks, Libraries, and Embedded Content. Then, select
 "Embed & Sign" from the drop-down.
 <div class="container">
   <div class="row">
@@ -178,6 +182,8 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
     </div>
   </div>
 </div>
+
+There are multiple ways to embed frameworks into a Xcode project—use the method that is best for your project.
 
 You should now be able to build the project using `⌘B`.
 
