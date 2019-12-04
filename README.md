@@ -120,7 +120,7 @@ A typical DartPad example takes the form of an `iframe`, e.g. within a codelab's
 
 ```markdown
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -212,7 +212,7 @@ refer to the following docs:
 
 * [Infrastructure](https://github.com/dart-lang/site-shared/blob/master/doc/infrastructure.md)
 * [Markdown](https://github.com/dart-lang/site-shared/blob/master/doc/markdown.md)
-* [Examples (and code excerpts)](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
+* [Examples](https://github.com/dart-lang/site-shared/blob/master/doc/examples.md)
 * [Code excerpts](https://github.com/dart-lang/site-shared/blob/master/doc/code-excerpts.md)
 
 Also check out the site-shared

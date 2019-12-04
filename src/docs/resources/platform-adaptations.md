@@ -2,6 +2,10 @@
 title: Platform specific behaviors and adaptations
 ---
 
+ {{site.alert.note}}
+  Do you build Flutter apps with platform-specific look & feel for both iOS and Android? We'd like to talk to you! **Participate in our user study and receive a gift code.** More info: <a href="https://forms.gle/i7uWQohBdGh2nanWA" target="_blank">https://forms.gle/i7uWQohBdGh2nanWA</a>
+{{site.alert.end}}
+
 ## Adaptation philosophy
 
 There are generally two cases of platform adaptiveness:
@@ -315,7 +319,7 @@ When using the Material package,
 certain icons automatically show different
 graphics depending on the platform.
 For instance, the overflow button's three dots
-are vertical on iOS and horizontal on Android.
+are horizontal on iOS and vertical on Android.
 The back button is a simple chevron on iOS and
 has a stem/shaft on Android.
 

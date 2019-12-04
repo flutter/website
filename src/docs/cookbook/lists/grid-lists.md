@@ -17,7 +17,7 @@ The simplest way to get started using grids is by using the
 constructor,
 because it allows you to specify how many rows or columns you'd like.
 
-To visualize how `GridView` works, 
+To visualize how `GridView` works,
 generate a list of 100 widgets that display their index in the list.
 
 <!-- skip -->
@@ -77,3 +77,4 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+![Grid List Demo](/images/cookbook/grid-list.gif){:.site-mobile-screenshot}

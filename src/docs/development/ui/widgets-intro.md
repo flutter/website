@@ -198,8 +198,7 @@ variety of ways. Finally, `MyScaffold` uses an
 [`Expanded`][] to fill the remaining space with its body,
 which consists of a centered message.
 
-For more information,
-see [Layouts](/docs/development/ui/widgets/layout).
+For more information, see [Layouts][].
 
 ## Using Material Components
 
@@ -665,7 +664,7 @@ the next time your app needs to update the screen.
 If you forget to call `setState` when modifying the internal state of a widget,
 the framework won't know your widget is dirty and might not call the widget's
 [`build()`][] function, which means the user interface might not
-update to reflect the changed state.  
+update to reflect the changed state.
 By managing state in this way, you don't need to write separate code for
 creating and updating child widgets. Instead, you simply implement the `build`
 function, which handles both situations.
@@ -723,8 +722,7 @@ globally unique across the entire widget hierarchy, unlike local keys which need
 only be unique among siblings. Because they are globally unique, a global key
 can be used to retrieve the state associated with a widget.
 
-For more information, see the
-[`GlobalKey`]({{api}}/widgets/GlobalKey-class.html) API.
+For more information, see the [`GlobalKey`][] API.
 
 
 

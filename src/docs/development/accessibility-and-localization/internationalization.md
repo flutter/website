@@ -139,7 +139,7 @@ localized content for commonly used languages. See
 [`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html) for
 how the supported locales and the preferred locales are resolved.
 
-Although Chinese is a primary example, other languages like French (FR_fr, FR_ca, etc)
+Although Chinese is a primary example, other languages like French (fr_FR, fr_CA, etc)
 should also be fully differentiated for more nuanced localization.
 
 <a name="tracking-locale"></a>

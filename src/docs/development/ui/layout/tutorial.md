@@ -360,6 +360,10 @@ Add the image file to the example:
   +  assets:
   +    - images/lake.jpg
   ```
+  {{site.alert.tip}}
+    - Note that `pubspec.yaml` is case sensitive. So, you should write `assets: ` and
+      `image address` as above shown format.
+    - For `image address` proper indentation must be there.
 
 Now you can reference the image from your code:
 

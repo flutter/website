@@ -117,7 +117,7 @@ Future<int> readCounter() async {
 ## Testing
 
 To test code that interacts with files, you need to mock calls to
-the `MethodChannel`&mdash;the class that 
+the `MethodChannel`&mdash;the class that
 communicates with the host platform. For security reasons,
 you can't directly interact with the file system on a device,
 so you interact with the test environment's file system.

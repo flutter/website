@@ -22,14 +22,14 @@ First, you don't even manage some state (like textures).
 The framework handles those for you. So a more useful definition of
 state is "whatever data you need in order to rebuild your UI at any
 moment in time". Second, the state that you _do_ manage yourself can
-be separated into two conceptual types: ephemeral state and app state. 
+be separated into two conceptual types: ephemeral state and app state.
 
 ## Ephemeral state
 
-Ephemeral state (sometimes called _UI state_ or _local state_) is the state you 
+Ephemeral state (sometimes called _UI state_ or _local state_) is the state you
 can neatly contain in a single widget.
 
-This is, intentionally, a vague definition, so here are a few examples. 
+This is, intentionally, a vague definition, so here are a few examples.
 
 * current page in a [`PageView`][]
 * current progress of a complex animation
@@ -38,12 +38,12 @@ This is, intentionally, a vague definition, so here are a few examples.
 Other parts of the widget tree seldom need to access this kind of state.
 There is no need to serialize it, and it doesn't change in complex ways.
 
-In other words, there is no need to use state management techniques 
-(ScopedModel, Redux, etc.) on this kind of state. All you need is a 
+In other words, there is no need to use state management techniques
+(ScopedModel, Redux, etc.) on this kind of state. All you need is a
 `StatefulWidget`.
 
-Below, you see how the currently selected item in a bottom navigation bar is 
-held in the `_index` field of the `_MyHomepageState` class. In this example, 
+Below, you see how the currently selected item in a bottom navigation bar is
+held in the `_index` field of the `_MyHomepageState` class. In this example,
 `_index` is ephemeral state.
 
 <?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
@@ -79,8 +79,8 @@ And, if the user closes and restarts the app, you don't mind that
 
 ## App state
 
-State that is not ephemeral, that you want to share across many parts of your 
-app, and that you want to keep between user sessions, is what we call 
+State that is not ephemeral, that you want to share across many parts of your
+app, and that you want to keep between user sessions, is what we call
 application state (sometimes also called shared state).
 
 Examples of application state:
@@ -91,8 +91,8 @@ Examples of application state:
 * The shopping cart in an e-commerce app
 * Read/unread state of articles in a news app
 
-For managing app state, you'll want to research your options. Your choice 
-depends on the complexity and nature of your app, your team's previous 
+For managing app state, you'll want to research your options. Your choice
+depends on the complexity and nature of your app, your team's previous
 experience, and many other aspects. Read on.
 
 ## There is no clear-cut rule
@@ -108,9 +108,9 @@ navigation bar is _not_ ephemeral state. You might need to change it
 from outside the class, keep it between sessions, and so on.
 In that case, the `_index` variable is app state.
 
-There is no clear-cut, universal rule to distinguish whether a particular 
-variable is ephemeral or app state. Sometimes, you'll have to refactor one into 
-another. For example, you'll start with some clearly ephemeral state, but as 
+There is no clear-cut, universal rule to distinguish whether a particular
+variable is ephemeral or app state. Sometimes, you'll have to refactor one into
+another. For example, you'll start with some clearly ephemeral state, but as
 your application grows in features, it will need to be moved to app state.
 
 For that reason, take the following diagram with a large grain of salt:
@@ -126,7 +126,7 @@ Dan Abramov, replied:
 
 > "The rule of thumb is: [Do whatever is less awkward][]."
 
-In summary, there are two conceptual types of state in any Flutter app. 
+In summary, there are two conceptual types of state in any Flutter app.
 Ephemeral state can be implemented using `State` and `setState()`,
 and is often local to a single widget. The rest is your app state.
 Both types have their place in any Flutter app, and the split between

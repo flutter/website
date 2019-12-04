@@ -41,7 +41,7 @@ There are a couple ways to create a new project.
 To create a new Flutter project from the Flutter
 starter app template:
 
- 1. Open the Command Palette 
+ 1. Open the Command Palette
     (`Ctrl`+`Shift`+`P` (`Cmd`+`Shift`+`P` on macOS)).
  1. Select the **Flutter: New Project** command and press `Enter`.
  1. Enter your desired **Project name**.
@@ -174,8 +174,8 @@ version of the label.
 <dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon]({% asset tools/devtools/debug-mode-banner-icon.png @path %}){:width="20px"}</dt>
 <dd>Hides the debug mode banner even when running a debug build.</dd>
 </dl>
-  
-### Debugging external libraries 
+
+### Debugging external libraries
 
 By default, debugging an external library is disabled
 in the Flutter extension. To enable:
@@ -277,7 +277,7 @@ Prior to filing new issues:
   version of the plugin.
 
 When filing new issues, include [flutter doctor][] output.
- 
+
 [Building a web application]: /docs/get-started/web
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [DevTools]: /docs/development/tools/devtools

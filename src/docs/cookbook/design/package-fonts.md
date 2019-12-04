@@ -158,5 +158,5 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
-[pub.dev]: {{site.pub}} 
+[pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

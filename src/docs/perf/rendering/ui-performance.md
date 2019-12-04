@@ -223,7 +223,7 @@ You can toggle display of the performance overlay as follows:
 
 #### Using the Flutter inspector
 
-The easiest way to enable the PerformanceOverlay widget is 
+The easiest way to enable the PerformanceOverlay widget is
 from the Flutter inspector, which is available in the
 [Inspector view][] in [DevTools][]. Simply click the
 **Performance Overlay** button to toggle the overlay
@@ -381,7 +381,7 @@ For details on how to do this, see [Show performance data][]
 ## Benchmarking
 
 You can measure and track your app’s performance by writing
-benchmark tests  The Flutter Driver library provides support
+benchmark tests. The Flutter Driver library provides support
 for benchmarking. Using this integration test framework,
 you can generate metrics to track the following:
 
@@ -405,46 +405,48 @@ Flutter's tools and debugging in Flutter:
 * [Flutter inspector][]
 * [Flutter inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
+* [Why Flutter uses Dart][video], a video on the Flutter channel
 * [DevTools][devtools]: performance tooling for Dart and Flutter apps
 * [Flutter API][] docs, particularly the [PerformanceOverlay][] class,
   and the [dart:developer][] package
 
 
-[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
-[Debugging]: /docs/testing/debugging
-[examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
-[Flutter's build modes]: /docs/testing/build-modes
-[profile mode]: /docs/testing/build-modes#profile
-[debug mode]: /docs/testing/build-modes#debug
-[PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
-[PerformanceOverlayLayer.checkerboardRasterCacheImages]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
-[Flutter API]: {{site.api}}
-[UIKit]: https://developer.apple.com/documentation/uikit
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Integration testing]: /docs/testing#integration-tests
-[Flutter inspector]: /docs/development/tools/devtools/inspector
-[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
-[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
-[line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
-[stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
-[issues or feature requests]: {{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-[timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
-[Show performance data]: /docs/development/tools/android-studio#show-performance-data
 [Android Studio/IntelliJ]: /docs/development/tools/android-studio
-[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
-[Testing Flutter apps]: /docs/testing
-[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
-[devtools]: /docs/development/tools/devtools
-[Inspector view]: /docs/development/tools/devtools/inspector
-[Timeline view]: /docs/development/tools/devtools/timeline
-[programmatically]: /docs/testing/code-debugging#debugging-animations
-[Performance overlay]: /docs/testing/code-debugging#performance-overlay
+[bookshelf-like icon]: /docs/testing/ui-performance/images/performance-overlay-icon.png
+[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[debug mode]: /docs/testing/build-modes#debug
+[Debugging]: /docs/testing/debugging
 [Debugging Flutter apps programmatically]: /docs/testing/code-debugging
 [launch DevTools]: /docs/development/tools/devtools
-[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[devtools]: /docs/development/tools/devtools
+[examples]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
+[Flutter API]: {{site.api}}
+[Flutter inspector]: /docs/development/tools/devtools/inspector
+[Flutter inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
+[Flutter's build modes]: /docs/testing/build-modes
 [GitHub wiki]: {{site.github}}/flutter/flutter/wiki/
+[Inspector view]: /docs/development/tools/devtools/inspector
+[Integration testing]: /docs/testing#integration-tests
+[issues or feature requests]: {{site.github}}/dart-lang/sdk/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-observatory
+[line-chart icon]: /docs/testing/ui-performance/images/observatory-timeline-icon.png
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
+[Performance overlay]: /docs/testing/code-debugging#performance-overlay
+[PerformanceOverlay]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[PerformanceOverlayLayer.checkerboardOffscreenLayers]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+[PerformanceOverlayLayer.checkerboardRasterCacheImages]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
+[profile mode]: /docs/testing/build-modes#profile
+[programmatically]: /docs/testing/code-debugging#debugging-animations
+[rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
+[RepaintBoundary]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
+[Show performance data]: /docs/development/tools/android-studio#show-performance-data
+[stopwatch icon]: /docs/testing/ui-performance/images/observatory-icon.png
+[The Layer Cake]: https://medium.com/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [The Framework architecture]: {{site.github}}/flutter/flutter/wiki/The-Framework-architecture
+[timeDilation]: {{site.api}}/flutter/scheduler/timeDilation.html
+[Tracing Dart code]: /docs/testing/debugging#tracing-dart-code
+[Testing Flutter apps]: /docs/testing
+[Timeline view]: /docs/development/tools/devtools/timeline
+[UIKit]: https://developer.apple.com/documentation/uikit
+[Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+[video]: https://youtu.be/5F-6n_2XWR8

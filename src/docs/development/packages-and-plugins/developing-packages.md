@@ -30,7 +30,7 @@ Packages can contain several kinds of content:
   Flutter framework, restricting their use to Flutter only,
   for example the [`fluro`][] package.
 
-* *Plugin packages*: A specialized Dart package which contain an API written in
+* *Plugin packages*: A specialized Dart package which contains an API written in
   Dart code combined with a platform-specific implementation for Android (using
   Java or Kotlin), and/or for iOS (using ObjC or Swift). A concrete example is
   the [`battery`][] plugin package.
@@ -65,6 +65,8 @@ For additional details on how to organize the package contents, see the
 [Dart library package][] documentation.
 
 ## Developing plugin packages {#plugin}
+
+*For information about the `flutter.plugin.platforms` key see: [Specifying a plugin's supported platforms](#plugin-platforms).*
 
 If you want to develop a package that calls into platform-specific APIs, you
 need to develop a plugin package. A plugin package is a specialized version of a
@@ -166,6 +168,52 @@ Finally, you need to connect the API written in Dart code with
 the platform-specific implementations.
 This is done using [platform channels][].
 
+### Specifying a plugin's supported platforms {#plugin-platforms}
+
+Starting Flutter version 1.10 plugins specify their supported platforms by adding keys to the
+`platforms` map in the `pubspec.yaml` file. For example the following showd the `flutter:` map for the "hello" plugin:
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
+
+When adding plugin implementations for more platforms, the platforms map should be updated accordignly, e.g
+this is what the map looks like for the hello plugin that supports Android, iOS, macOS, and Flutter Web:
+
+
+```
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.hello
+        pluginClass: HelloPlugin
+      ios:
+        pluginClass: HelloPlugin
+      macos:
+        pluginClass: HelloPlugin
+      web:
+        pluginClass: HelloPlugin
+        fileName: hello_web.dart
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
+```
+
 ## Adding documentation
 
 It is recommended practice to add the following documentation to all packages:
@@ -181,7 +229,7 @@ It is recommended practice to add the following documentation to all packages:
 When you publish a package, API documentation is automatically generated and
 published to dartdocs.org, see for example the [device_info docs][].
 
-If you wish to generate API documentation locally on your developement machine, use the following commands:
+If you wish to generate API documentation locally on your development machine, use the following commands:
 
 1. Change directory to the location of your package:
 
@@ -263,7 +311,7 @@ Once you have implemented a package, you can publish it on
 [pub.dev][], so that other developers can easily use it.
 
 Prior to publishing, make sure to review the `pubspec.yaml`, `README.md`, and
-`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below. 
+`CHANGELOG.md` files to make sure their content is complete and correct. Also, to improve the quality and usability of your package, consider including the items below.
 * Diverse code usage examples
 * Screenshots, animated gifs, or videos
 * A link to the corresponding code repository

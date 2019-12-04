@@ -36,4 +36,4 @@ your development environment must meet these minimum requirements:
 Set up your preferred editor.
 
 [Git for Windows]: https://git-scm.com/download/win
-[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
+[Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-windows-powershell

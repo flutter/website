@@ -19,9 +19,13 @@ how to write animation code.
 More documentation is in the works on how to implement common design
 patterns, such as shared element transitions,
 and physics-based animations.
-If you have a specific request, 
+If you have a specific request,
 [file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
+
+* [Implicit animations codelab](/docs/codelabs/implicit-animations)<br>
+  Covers how to use implicit animations
+  using step-by-step instructions and interactive examples.
 
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package

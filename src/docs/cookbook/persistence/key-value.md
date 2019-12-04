@@ -8,7 +8,7 @@ next:
   path: /docs/cookbook/plugins/play-video
 ---
 
-If you have a relatively small collection of key-values 
+If you have a relatively small collection of key-values
 to save, you can use the
 [shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
 

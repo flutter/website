@@ -34,9 +34,7 @@ bool isMobile() {
 // Snippets
 
 var counter = r'''
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_test/flutter_web_test.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 class Counter extends StatefulWidget {
   _CounterState createState() => _CounterState();
@@ -95,19 +93,15 @@ class MyApp extends StatelessWidget {
 }
 
 Future<void> main() async {
-  await ui.webOnlyInitializePlatform();
   runApp(MyApp());
 }
 
 '''
     .trim();
 var spinning_logo = r'''
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 void main() async {
-  await ui.webOnlyInitializePlatform();
-
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -183,11 +177,9 @@ class _MyAppState extends State<MyApp>
     .trim();
 
 var fibonacci = r'''
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 void main() async {
-  await ui.webOnlyInitializePlatform();
   final numbers = FibonacciNumbers();
 
   runApp(

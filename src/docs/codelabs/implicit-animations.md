@@ -26,13 +26,17 @@ This codelab covers the following material:
 
 ## What are implicit animations?
 
-With Flutter's [animation library], you can add motion and create visual effects
-for the widgets in your UI. One part of the library is an assortment of widgets
-that manage animations for you. These widgets are collectively referred to as _implicit
-animations_, or _implicitly animated widgets_, deriving their name from the
-[ImplicitlyAnimatedWidget] class that they implement. With implicit animations,
-you can animate a widget property by setting a target value; whenever that target
-value changes, the widget animates the property from the old value to the new one.
+With Flutter's [animation library],
+you can add motion and create visual effects
+for the widgets in your UI.
+One widget set in the library manages animations for you.
+These widgets are collectively referred to as _implicit animations_,
+or _implicitly animated widgets_, deriving their name from the
+[ImplicitlyAnimatedWidget] class that they implement.
+With implicit animations,
+you can animate a widget property by setting a target value;
+whenever that target value changes,
+the widget animates the property from the old value to the new one.
 In this way, implicit animations trade control for convenience&mdash;they
 manage animation effects so that you don't have to.
 
@@ -49,9 +53,9 @@ with no animation code**&mdash;it consists of a [Material App] home screen conta
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
+<!-- Vanilla AnimatedOpacity https://gist.github.com/e2800d378eb7720d0b076073f72eabc1 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=d7b09149ffee2f0535bb0c04d96987f5"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -188,9 +192,9 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
+<!-- AnimatedOpacity https://gist.github.com/36bb91f24db7122ec3def0153683edb7 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=4207fea3975b2d329e81d9c9ba84d271"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -230,9 +234,9 @@ different each time you run the example.
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
+<!-- Vanilla Animated Container: https://gist.github.com/b8c7618317d04833dc8941df27f0529d -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=8501583cb789504d75317a5ba1ca6930"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -353,9 +357,9 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
+<!-- Animated Container: https://gist.github.com/8d8f71cac9095009df770eb1db2c8256 -->
 <iframe
-  src="{{site.custom.dartpadx.embed-flutter-prefix}}?id=ddfbc68ec9dc28a48703d29248f5366f"
+  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
   style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
   frameborder="no" height="500" width="100%"
 ></iframe>
@@ -428,34 +432,31 @@ here are some suggestions for where to go next:
 - Checkout the [animation library].
 - Try another [codelab].
 
-[Fade-in text effect]: /docs/codelabs/implicit-animations#example-fade-in-text-effect
-[fade-in starter code]: /docs/codelabs/implicit-animations#fade-in-starter-code
-[fade-in complete]: /docs/codelabs/implicit-animations#fade-in-finished-code
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-[Shape-shifting effect]: /docs/codelabs/implicit-animations#example-shape-shifting-effect
-[shape-shifting starter code]: /docs/codelabs/implicit-animations#shape-shifting-starter-code
-[shape-shifting complete]: /docs/codelabs/implicit-animations#shape-shifting-finished-code
-
-[stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
-[staggered animations]: /docs/development/ui/animations/staggered-animations
-[hero animations]: /docs/development/ui/animations/hero-animations
+[AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: /docs/development/ui/animations/tutorial
 [codelab]: /docs/codelabs
-
-[list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[curve]: {{site.api}}/flutter/animation/Curve-class.html
+[DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
+[DartPad]: {{site.dartpad}}
+[duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
+[easeInOutBack]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
+[fade-in complete]: /docs/codelabs/implicit-animations#fade-in-finished-code
+[fade-in starter code]: /docs/codelabs/implicit-animations#fade-in-starter-code
+[Fade-in text effect]: /docs/codelabs/implicit-animations#example-fade-in-text-effect
+[hero animations]: /docs/development/ui/animations/hero-animations
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
-[easeInOutBack]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
-[duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
-[AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
-[list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
-[AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[list of common implicitly animated widgets]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
+[list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
 [make a Flutter app]: {{site.codelabs}}/codelabs/first-flutter-app-pt1/
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
-[curve]: {{site.api}}/flutter/animation/Curve-class.html
-[DartPad]: {{site.dartpad}}
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="640" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+[shape-shifting complete]: /docs/codelabs/implicit-animations#shape-shifting-finished-code
+[Shape-shifting effect]: /docs/codelabs/implicit-animations#example-shape-shifting-effect
+[shape-shifting starter code]: /docs/codelabs/implicit-animations#shape-shifting-starter-code
+[staggered animations]: /docs/development/ui/animations/staggered-animations
+[stateful widgets]: /docs/development/ui/interactive#stateful-and-stateless-widgets
