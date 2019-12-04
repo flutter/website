@@ -14,16 +14,36 @@ render a part of your app's UI in Flutter. Or just to run shared Dart logic.
 In a few steps, you can also bring the productivity and the expressiveness of
 Flutter into your own app.
 
-TODO(xster): add steps overview videos.
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/images/add-to-app/android-overview.gif" class="figure-img img-fluid" alt="Add-to-app on Android" />
+        <figcaption class="figure-caption">
+          Android
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/images/add-to-app/ios-overview.gif" class="figure-img img-fluid" alt="Add-to-app on iOS" />
+        <figcaption class="figure-caption">
+          iOS
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
 
-As of Flutter release v1.12, add-to-app is supported for basic scenarios with
+As of Flutter release v1.12, add-to-app is supported for the basic scenario of
+integrating one fullscreen Flutter instance at a time per app. It presently has
 the _**following limitations**_:
 
-- One fullscreen Flutter instance at a time. Running multiple Flutter instances
-or in partial screen views may have undefined behaviors.
+- Running multiple Flutter instances or in partial screen views may have
+  undefined behaviors.
 - Using Flutter in background mode is still WIP.
 - Packing a Flutter library into another sharable library or packing multiple
-Flutter libraries into an application is not currently supported
+  Flutter libraries into an application is not currently supported.
 
 ## Supported features
 
@@ -31,21 +51,24 @@ Flutter libraries into an application is not currently supported
 
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
   your Gradle script; or
-- Build your Flutter module into a generic [Android AAR](https://developer.android.com/studio/projects/android-library)
-- Android Studio Android/Flutter co-editing and module creation/import wizard
-- Java and Kotlin host apps supported
+- Build your Flutter module into a generic [Android AAR](https://developer.android.com/studio/projects/android-library).
+- Android Studio Android/Flutter co-editing and module creation/import wizard.
+- Java and Kotlin host apps supported.
+- Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
+  with the platform. Android plugins should be [migrated to the V2 plugins APIs](/docs/development/packages-and-plugins/plugin-api-migration)
+  for best add-to-app correctness.
+- Support for Flutter debugging and Stateful Hot Reload by using `flutter attach`
+  from IDEs or the command line to connect to an app containing Flutter
 
 ### Add to iOS applications
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
  your CocoaPods and to your Xcode build phase; or
-- Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
-- Objective-C and Swift host apps supported
-
-### Android and iOS
+- Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html).
+- Objective-C and Swift host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
-  with the platform
-- Flutter modules support Stateful Hot Reload by using `flutter attach` from
-  IDEs or the command line to connect to an app containing Flutter
+  with the platform.
+- Support for Flutter debugging and Stateful Hot Reload by using `flutter attach`
+  from IDEs or the command line to connect to an app containing Flutter
 
 See our [add-to-app GitHub Samples repository](https://github.com/flutter/samples/tree/master/experimental/add_to_app)
 for sample projects in Android and iOS that import a Flutter module for UI.
