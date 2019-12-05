@@ -123,6 +123,11 @@ in your application at`some/path/MyApp`.
 The `podhelper.rb` script embeds your plugins, `Flutter.framework`, and
 `App.framework` into your project.
 
+{{site.alert.tip}}
+`Flutter.framework` is the library for the Flutter engine and `App.framework` is
+the compiled Dart code for this project.
+{{site.alert.end}}
+
 Open `MyApp.xcworkspace` in Xcode. You can now build the project using `⌘B`.
 
 ### Option B - Embed frameworks in Xcode
