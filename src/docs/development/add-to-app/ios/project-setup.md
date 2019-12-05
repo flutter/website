@@ -18,7 +18,7 @@ To embed Flutter into your existing application, first create a Flutter module.
 
 From the command line, run:
 
-```terminal
+```sh
 cd some/path/
 flutter create --template module my_flutter
 ```
