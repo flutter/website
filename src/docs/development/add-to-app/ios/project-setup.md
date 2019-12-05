@@ -8,6 +8,7 @@ Flutter can be incrementaly added into your existing iOS application as embedded
 frameworks.
 
 ## System requirements
+
 Your development environment must meet the [macOS system requirements for Flutter][]
 with [Xcode installed][]. Flutter supports iOS 8.0 and later.
 
@@ -17,7 +18,7 @@ To embed Flutter into your existing application, first create a Flutter module.
 
 From the command line, run:
 
-```terminal
+```sh
 cd some/path/
 flutter create --template module my_flutter
 ```
@@ -32,18 +33,19 @@ embedded in your existing application, which is useful for incrementally
 testing the Flutter-only parts of your code.
 
 ### Module organization
+
 The `my_flutter` module directory structure is similar to a normal Flutter
 application:
 
 ```text
 my_flutter/
-  .ios/
-    Runner.xcworkspace
-    Flutter/podhelper.rb
-  lib/
-    main.dart
-  test/
-  pubspec.yaml
+├─.ios/
+│ ├─Runner.xcworkspace
+│ └─Flutter/podhelper.rb
+├─lib/
+│ └─main.dart
+├─test/
+└─pubspec.yaml
 ```
 
 Add your Dart code to the `lib/` directory.
@@ -66,9 +68,11 @@ Regenerate the directory by running `flutter clean` or `flutter pub get` in the
 ## Embed the Flutter module in your existing application
 
 There are two ways to embed Flutter in your existing application.
+
 1. Use the CocoaPods dependency manager and installed Flutter SDK. Recommended.
-1. Create frameworks for the Flutter engine, your compiled Dart code, and all Flutter plugins.
-Manually embed the frameworks and update your existing application's build settings in Xcode.
+1. Create frameworks for the Flutter engine, your compiled Dart code, and all
+   Flutter plugins. Manually embed the frameworks and update your existing
+   application's build settings in Xcode.
 
 ### Option A - Embed with CocoaPods and the Flutter SDK
 
@@ -81,10 +85,10 @@ The following example assumes that your existing application and the Flutter mod
 If you have a different directory organization, you may need to adjust the relative paths.
 
 ```text
-some/path
-├── my_flutter
-│   └── .ios
-│       └── Flutter
+some/path/
+├── my_flutter/
+│   └── .ios/
+│       └── Flutter/
 │         └── podhelper.rb
 └── MyApp/
     └── Podfile
@@ -143,29 +147,28 @@ method, you can skip these instructions.
 
 The following example assumes you want to generate the frameworks to `some/path/MyApp/Flutter/`.
 
-```terminal
-$ flutter build ios-framework --output=some/path/MyApp/Flutter/
+```sh
+flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
-some/path
-├── MyApp
-└── Flutter
-    ├── Debug
+some/path/MyApp/
+└── Flutter/
+    ├── Debug/
     │   ├── Flutter.framework
     │   ├── App.framework
     │   ├── FlutterPluginRegistrant.framework
     │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
-    ├── Profile
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
-    └── Release
-        ├── Flutter.framework
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+      ├── Profile/
+      │   ├── Flutter.framework
+      │   ├── App.framework
+      │   ├── FlutterPluginRegistrant.framework
+      │   └── example_plugin.framework
+      └── Release/
+          ├── Flutter.framework
+          ├── App.framework
+          ├── FlutterPluginRegistrant.framework
+          └── example_plugin.framework
 ```
 
 {{site.alert.tip}}
@@ -182,7 +185,7 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
 
 There are multiple ways to embed frameworks into a Xcode project—use the method that is best for your project.
 
-You should now be able to build the project using `⌘B`.
+You should now be able to build the project in Xcode using `⌘B`.
 
 {{site.alert.tip}}
 To embed the Debug version of the Flutter frameworks in your Debug build configuration
@@ -194,6 +197,7 @@ You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)` to your Framework Se
 {{site.alert.end}}
 
 ## Development
+
 You can now [add a Flutter screen][] to your existing application.
 
 [macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
