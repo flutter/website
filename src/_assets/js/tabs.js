@@ -4,7 +4,7 @@ function setupTabs(container, storageName, defaultTab) {
 
   // Return 'foo' from either '#foo' or '?tab=foo'
   function getTabIdFromQuery(query) {
-    var match = query.match(/(#|\btab=)(\w+)/);
+    var match = query.match(/(#|\btab=)([\w-]+)/);
     return match ? match[2] : '';
   }
 

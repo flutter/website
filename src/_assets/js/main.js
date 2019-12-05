@@ -22,7 +22,7 @@ $(function () {
   setupClipboardJS();
 
   // New (dash) tabs
-  setupTabs($('#editor-setup'), 'io.flutter.tool-id');
+  setupTabs($('.nav-tabs'), 'io.flutter.tool-id');
   // Old tabs
   setupToolsTabs($('#tab-set-install'), 'tab-install-', 'io.flutter.tool-id');
   setupToolsTabs($('#tab-set-os'), 'tab-os-', null, getOS());
