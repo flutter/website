@@ -51,14 +51,14 @@ the _**following limitations**_:
 
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
   your Gradle script; or
-- Build your Flutter module into a generic [Android AAR](https://developer.android.com/studio/projects/android-library).
+- Build your Flutter module into a generic [Android Archive (AAR)](https://developer.android.com/studio/projects/android-library).
 - Android Studio Android/Flutter co-editing and module creation/import wizard.
 - Java and Kotlin host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
   with the platform. Android plugins should be [migrated to the V2 plugins APIs](/docs/development/packages-and-plugins/plugin-api-migration)
   for best add-to-app correctness.
-- Support for Flutter debugging and Stateful Hot Reload by using `flutter attach`
-  from IDEs or the command line to connect to an app containing Flutter
+- Support for Flutter debugging and stateful hot reload by using `flutter attach`
+  from IDEs or the command line to connect to an app containing Flutter.
 
 ### Add to iOS applications
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
@@ -67,8 +67,8 @@ the _**following limitations**_:
 - Objective-C and Swift host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
   with the platform.
-- Support for Flutter debugging and Stateful Hot Reload by using `flutter attach`
-  from IDEs or the command line to connect to an app containing Flutter
+- Support for Flutter debugging and stateful hot reload by using `flutter attach`
+  from IDEs or the command line to connect to an app containing Flutter.
 
 See our [add-to-app GitHub Samples repository](https://github.com/flutter/samples/tree/master/experimental/add_to_app)
 for sample projects in Android and iOS that import a Flutter module for UI.
