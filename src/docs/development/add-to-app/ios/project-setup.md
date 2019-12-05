@@ -81,11 +81,13 @@ The following example assumes that your existing application and the Flutter mod
 If you have a different directory organization, you may need to adjust the relative paths.
 
 ```text
-some/path/
-  my_flutter/
-    .ios/Flutter/podhelper.rb
-  MyApp/
-    Podfile
+some/path
+├── my_flutter
+│   └── .ios
+│       └── Flutter
+│         └── podhelper.rb
+└── MyApp/
+    └── Podfile
 ```
 
 If your existing application (`MyApp`) does not already have a Podfile, follow the
@@ -141,24 +143,24 @@ $ flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
-some/path/
-  MyApp/
-    Flutter/
-      Debug/
-        Flutter.framework
-        App.framework
-        FlutterPluginRegistrant.framework
-        example_plugin.framework (each plugin with iOS platform code is a separate framework)
-      Profile/
-        Flutter.framework
-        App.framework
-        FlutterPluginRegistrant.framework
-        example_plugin.framework
-      Release/
-        Flutter.framework
-        App.framework
-        FlutterPluginRegistrant.framework
-        example_plugin.framework
+some/path
+├── MyApp
+└── Flutter
+    ├── Debug
+    │   ├── Flutter.framework
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    ├── Profile
+    │   ├── Flutter.framework
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework
+    └── Release
+        ├── Flutter.framework
+        ├── App.framework
+        ├── FlutterPluginRegistrant.framework
+        └── example_plugin.framework
 ```
 
 {{site.alert.tip}}
@@ -170,15 +172,8 @@ Embed the generated frameworks into your existing application in Xcode. For exam
 drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
 into your targets's build settings > General > Frameworks, Libraries, and Embedded Content. Then, select
 "Embed & Sign" from the drop-down.
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        {% asset development/add-to-app/ios/project-setup/embed-xcode.png class="mw-100" alt="Embed frameworks in Xcode" %}
-      </figure>
-    </div>
-  </div>
-</div>
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
 There are multiple ways to embed frameworks into a Xcode project—use the method that is best for your project.
 
