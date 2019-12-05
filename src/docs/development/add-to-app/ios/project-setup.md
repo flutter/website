@@ -138,7 +138,7 @@ team cannot locally install Flutter SDK and CocoaPods, or if you do not wish to 
 as a dependency manager in your existing applications. You must run `flutter build ios-framework`
 every time you make code changes in your Flutter module.
 
-If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-cocoapods-and-the-flutter-sdk)
+If you are using the above [Embed with CocoaPods and Flutter tools](#option-a---embed-with-cocoapods-and-the-flutter-sdk)
 method, you can skip these instructions.
 
 The following example assumes you want to generate the frameworks to `some/path/MyApp/Flutter/`.
