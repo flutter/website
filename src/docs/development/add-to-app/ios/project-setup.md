@@ -131,10 +131,14 @@ team cannot locally install Flutter SDK and CocoaPods, or if you do not wish to 
 as a dependency manager in your existing applications. You must run `flutter build ios-framework`
 every time you make code changes in your Flutter module.
 
-If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-CocoaPods-and-Flutter-tools)
+If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-cocoapods-and-the-flutter-sdk)
 method, you can skip these instructions.
 
 The following example assumes you want to generate the frameworks to `some/path/MyApp/Flutter/`.
+
+```terminal
+$ flutter build ios-framework --output=some/path/MyApp/Flutter/
+```
 
 ```text
 some/path/
@@ -157,10 +161,6 @@ some/path/
         example_plugin.framework
 ```
 
-```terminal
-$ flutter build ios-framework --output=some/path/MyApp/Flutter/
-```
-
 {{site.alert.tip}}
 With Xcode 11 installed you can generate [XCFrameworks][] instead of universal frameworks by adding
 the flags `--xcframework --no-universal`.
@@ -174,10 +174,7 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
   <div class="row">
     <div class="col-sm text-center">
       <figure class="figure">
-        {% asset development/add-to-app/ios/project-setup/embed-xcode.png %}
-        <figcaption class="figure-caption">
-          Embed frameworks in Xcode
-        </figcaption>
+        {% asset development/add-to-app/ios/project-setup/embed-xcode.png class="mw-100" alt="Embed frameworks in Xcode" %}
       </figure>
     </div>
   </div>
@@ -199,10 +196,10 @@ You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)` to your Framework Se
 ## Development
 You can now [add a Flutter screen][] to your existing application.
 
-[macOS system requirements for Flutter]: /docs/get-started/install/macos
+[macOS system requirements for Flutter]: /docs/get-started/install/macos#system-requirements
 [Xcode installed]: /docs/get-started/install/macos#install-xcode
-[Android Studio/IntelliJ]: /docs/development/tools/android-studio#run-app-with-breakpoints
-[VS Code]: /docs/development/tools/vs-code#run-app-with-breakpoints
+[Android Studio/IntelliJ]: /docs/development/tools/android-studio
+[VS Code]: /docs/development/tools/vs-code
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
