@@ -346,26 +346,6 @@ didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id>*)
     }
 }
 
-- (void)applicationDidEnterBackground:(UIApplication*)application {
-    [_lifeCycleDelegate applicationDidEnterBackground:application];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillEnterForeground:application];
-}
-
-- (void)applicationWillResignActive:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillResignActive:application];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication*)application {
-    [_lifeCycleDelegate applicationDidBecomeActive:application];
-}
-
-- (void)applicationWillTerminate:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillTerminate:application];
-}
-
 - (void)application:(UIApplication*)application
 didRegisterUserNotificationSettings:(UIUserNotificationSettings*)notificationSettings {
     [_lifeCycleDelegate application:application
@@ -456,7 +436,7 @@ Dart entrypoint functions other than `main()` need to be annotated with
 void myOtherEntrypoint() { ... };
 ```
 
-in order to not be tree-shaken away when compiling.
+in order to not be [tree-shaken](https://en.wikipedia.org/wiki/Tree_shaking) away when compiling.
 {{site.alert.end}}
 
 ### Dart library
@@ -521,10 +501,11 @@ when constructing the engine.
 
 <?code-excerpt "Creating engine" title?>
 ```objectivec
-FlutterEngine *flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
-[[flutterEngine navigationChannel] invokeMethod:@"setInitialRoute" arguments:@"/onboarding"];
+FlutterEngine *flutterEngine =
+    [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+[[flutterEngine navigationChannel] invokeMethod:@"setInitialRoute"
+                                      arguments:@"/onboarding"];
 [flutterEngine run];
-@end
 ```
 
 </div>
@@ -652,7 +633,7 @@ Connected views:
   main.dart$main-332962855 (isolates/332962855)
 ```
 
-Attach to specific isolates instead in two steps:
+In order to attach to specific isolates instead, do the following:
 
 **1-** Name the Flutter root isolate of interest in its Dart source.
 
