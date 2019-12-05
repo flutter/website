@@ -39,13 +39,13 @@ application:
 
 ```text
 my_flutter/
-  .ios/
-    Runner.xcworkspace
-    Flutter/podhelper.rb
-  lib/
-    main.dart
-  test/
-  pubspec.yaml
+├─.ios/
+│ ├─Runner.xcworkspace
+│ └─Flutter/podhelper.rb
+├─lib/
+│ └─main.dart
+├─test/
+└─pubspec.yaml
 ```
 
 Add your Dart code to the `lib/` directory.
@@ -85,10 +85,10 @@ The following example assumes that your existing application and the Flutter mod
 If you have a different directory organization, you may need to adjust the relative paths.
 
 ```text
-some/path
-├── my_flutter
-│   └── .ios
-│       └── Flutter
+some/path/
+├── my_flutter/
+│   └── .ios/
+│       └── Flutter/
 │         └── podhelper.rb
 └── MyApp/
     └── Podfile
@@ -147,24 +147,23 @@ flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
 ```text
-some/path
-├── MyApp
-└── Flutter
-    ├── Debug
+some/path/MyApp/
+└── Flutter/
+    ├── Debug/
     │   ├── Flutter.framework
     │   ├── App.framework
     │   ├── FlutterPluginRegistrant.framework
     │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
-    ├── Profile
-    │   ├── Flutter.framework
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
-    └── Release
-        ├── Flutter.framework
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
+      ├── Profile/
+      │   ├── Flutter.framework
+      │   ├── App.framework
+      │   ├── FlutterPluginRegistrant.framework
+      │   └── example_plugin.framework
+      └── Release/
+          ├── Flutter.framework
+          ├── App.framework
+          ├── FlutterPluginRegistrant.framework
+          └── example_plugin.framework
 ```
 
 {{site.alert.tip}}
@@ -181,7 +180,7 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
 
 There are multiple ways to embed frameworks into a Xcode project—use the method that is best for your project.
 
-You should now be able to build the project using `⌘B`.
+You should now be able to build the project in Xcode using `⌘B`.
 
 {{site.alert.tip}}
 To embed the Debug version of the Flutter frameworks in your Debug build configuration
