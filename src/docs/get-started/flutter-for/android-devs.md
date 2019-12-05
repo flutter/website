@@ -2215,19 +2215,19 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API,
 see the [firebase_messaging][] plugin documentation.
 
+[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
+[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[composing]: /docs/resources/technical-overview#everythings-a-widget
+[Cupertino widgets]: /docs/development/ui/widgets/cupertino
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
+[devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
 [DevTools]: /docs/development/tools/devtools
 [Firebase Messaging]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages/firebase_messaging
 [firebase_messaging]: {{site.pub}}/packages/firebase_messaging
+[Flutter For Android Developers : How to design LinearLayout in Flutter?]: {{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/design
-[Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Apple's iOS design language]: https://developer.apple.com/design/resources/
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
-[composing]: /docs/resources/technical-overview#everythings-a-widget
-[Developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
-[devicePixelRatio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
-[`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState-class.html
-[Flutter For Android Developers : How to design LinearLayout in Flutter?]: {{site.medium}}/@burhanrashid52/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter

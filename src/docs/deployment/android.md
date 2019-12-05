@@ -473,8 +473,8 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
-[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
+[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [appid]: {{site.android-dev}}/studio/build/application-id
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
@@ -488,9 +488,9 @@ The resulting app bundle or APK files are located in
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o1#?modal_active=none
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
 [Issue 36822]: {{site.github}}/flutter/flutter/issues/36822
+[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
 [launchericons]: {{site.material}}/design/iconography/
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element

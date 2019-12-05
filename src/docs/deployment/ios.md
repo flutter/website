@@ -268,20 +268,20 @@ detailed overview of the process of releasing an app to the App Store.
 [appreview]: https://developer.apple.com/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: https://developer.apple.com/app-store/submissions/
-[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
 [appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
-[appstoreconnect_login]: https://appstoreconnect.apple.com/
 [appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_login]: https://appstoreconnect.apple.com/
+[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
 [codesigning_guide]: https://developer.apple.com/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 [devportal_appids]: https://developer.apple.com/account/ios/identifier/bundle
-[devprogram]: https://developer.apple.com/programs/
 [devprogram_membership]: https://developer.apple.com/support/compare-memberships/
-[distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
+[devprogram]: https://developer.apple.com/programs/
 [distributionguide_config]: https://help.apple.com/xcode/mac/current/#/dev91fe7130a
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
+[distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none
 [Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [testflight]: https://developer.apple.com/testflight/
