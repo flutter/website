@@ -36,7 +36,7 @@ instead.
 
 In order to embed Flutter like a library, use the Flutter module template.
 Executing `flutter create -t module xxx` produces a Flutter project containing a
-CocoaPods pod designed for consumption by your existing host app.
+CocoaPods *pod* designed for consumption by your existing host app.
 
 Assume you have an existing iOS app at `some/path/MyApp`, and that you
 want your Flutter project as a sibling:
@@ -78,10 +78,11 @@ Integrating the Flutter framework requires using the CocoaPods dependency
 manager. This is because the Flutter framework needs to be available to any
 Flutter plugins that you might include in `my_flutter`.
 
-For information on how to install CocoaPods on your development machine, see
+For information on how to install CocoaPods on your development machine and set
+it up for your application, see
 [cocoapods.org](https://cocoapods.org/).
 
-If your host application (`MyApp`) is already using CocoaPods, you only have to do the
+When your host application (`MyApp`) is setup with CocoaPods, you only have to do the
 following to integrate with your `my_flutter` app:
 
 1. Add the following lines to your `Podfile`:
@@ -109,7 +110,7 @@ of plugins read by the `podhelper.rb` script. Then run `pod install` again from
 The `podhelper.rb` script ensures that your plugins, the Flutter.framework, and
 the App.framework are embedded in your project.
 
-You should now be able to build the project using `⌘B`.
+You should now be able to build the project in Xcode using `⌘B`.
 
 ### Under the hood
 
@@ -136,19 +137,19 @@ First declare your app delegate to be a subclass of `FlutterAppDelegate`. Then d
 
 In `AppDelegate.h`:
 
-```objective-c
+```objc
 @import UIKit;
 @import Flutter;
 
 @interface AppDelegate : FlutterAppDelegate
-@property (nonatomic,strong) FlutterEngine *flutterEngine;
+@property (nonatomic, strong) FlutterEngine *flutterEngine;
 @end
 ```
 
 This allows `AppDelegate.m` to be simple, unless your host app needs to override
 other methods here:
 
-```objective-c
+```objc
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 
 #import "AppDelegate.h"
@@ -194,7 +195,7 @@ class AppDelegate: FlutterAppDelegate {
 Make your app delegate implement the `FlutterAppLifeCycleProvider` protocol, for
 example:
 
-```objective-c
+```objc
 @import Flutter;
 @import UIKit;
 @import FlutterPluginRegistrant; // Only if you have Flutter Plugins
@@ -207,7 +208,7 @@ example:
 
 The implementation should mostly just delegate to a `FlutterPluginAppLifeCycleDelegate`:
 
-```objective-c
+```objc
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
 @end
@@ -246,26 +247,6 @@ didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
     if (self.rootFlutterViewController != nil) {
         [self.rootFlutterViewController handleStatusBarTouches:event];
     }
-}
-
-- (void)applicationDidEnterBackground:(UIApplication*)application {
-    [_lifeCycleDelegate applicationDidEnterBackground:application];
-}
-
-- (void)applicationWillEnterForeground:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillEnterForeground:application];
-}
-
-- (void)applicationWillResignActive:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillResignActive:application];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication*)application {
-    [_lifeCycleDelegate applicationDidBecomeActive:application];
-}
-
-- (void)applicationWillTerminate:(UIApplication*)application {
-    [_lifeCycleDelegate applicationWillTerminate:application];
 }
 
 - (void)application:(UIApplication*)application
@@ -339,7 +320,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 `ViewController.m`:
 
-```objective-c
+```objc
 @import Flutter;
 #import "AppDelegate.h"
 #import "ViewController.h"
@@ -358,9 +339,15 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 }
 
 - (void)handleButtonAction {
-    FlutterEngine *flutterEngine = [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
-    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
-    [self presentViewController:flutterViewController animated:false completion:nil];
+    FlutterEngine *flutterEngine =
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] flutterEngine];
+    FlutterViewController *flutterViewController =
+        [[FlutterViewController alloc] initWithEngine:flutterEngine
+                                              nibName:nil
+                                               bundle:nil];
+    [self presentViewController:flutterViewController
+                       animated:false
+                     completion:nil];
 }
 @end
 ```
@@ -392,14 +379,15 @@ class ViewController: UIViewController {
 }
 ```
 
-You should now be able to build and launch MyApp on the Simulator or on a device.
-Pressing the button should bring up a full-screen Flutter view with the standard
-Flutter Demo counting app. You can use routes to show different widgets at different
-places in your app, as described in the Android section above. To set the route, call
+You should now be able to build and launch MyApp on the Simulator or on a
+device. Pressing the "Press me" button should bring up a full-screen Flutter
+view with the standard Flutter Demo counting app. You can use routes to show
+different widgets at different places in your app, as described in the [Android
+documentation](../android). To set the route, call
 
 - Objective-C:
 
-```objective-c
+```objc
 [flutterViewController setInitialRoute:@"route1"];
 ```
 
@@ -417,7 +405,7 @@ in the Dart code.
 
 ## Building and running your app
 
-You build and run MyApp using Xcode in exactly the same way that you did before you
+You build and run `MyApp` using Xcode in exactly the same way that you did before you
 added the Flutter module dependency. The same goes for editing, debugging, and
 profiling your iOS code.
 
@@ -464,7 +452,7 @@ Connected views:
   main.dart$main-332962855 (isolates/332962855)
 ```
 
-Attach to specific isolates instead in two steps:
+In order to attach to specific isolates instead, do the following steps:
 
 1. Name the Flutter root isolate of interest in its Dart source.
 
