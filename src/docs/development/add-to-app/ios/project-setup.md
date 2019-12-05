@@ -93,21 +93,21 @@ If your existing application (`MyApp`) does not already have a Podfile, follow t
 
 1. Add the following lines to your `Podfile`:
 
-<?code-excerpt "MyApp/Podfile" title?>
-```ruby
-  flutter_application_path = '../my_flutter'
-  load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
-```
+    <?code-excerpt "MyApp/Podfile" title?>
+    ```ruby
+      flutter_application_path = '../my_flutter'
+      load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+    ```
 
 2. For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
-<?code-excerpt "MyApp/Podfile" title?>
-```ruby
-  target 'MyApp' do
-    install_all_flutter_pods(flutter_application_path)
-  end
-```
+    <?code-excerpt "MyApp/Podfile" title?>
+    ```ruby
+      target 'MyApp' do
+        install_all_flutter_pods(flutter_application_path)
+      end
+    ```
 
 3. Run `pod install`.
 
