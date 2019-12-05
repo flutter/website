@@ -5,7 +5,7 @@ description: Learn how to integrate a Flutter module into your existing Android 
 ---
 
 Flutter can be embedded into your existing Android application in a piecemeal
-fashion as a source code sub-project or as AARs.
+fashion as a source code Gradle sub-project or as AARs.
 
 The integration flow can be done via the Android Studio IDE with the
 [Flutter plugin](https://plugins.jetbrains.com/plugin/9212-flutter) or manually.
@@ -16,11 +16,24 @@ or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-de
 building ahead-of-time (AOT) compiled libraries for `armeabi-v7a` and `arm64-v8a`.
 
 Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html)
-Android Gradle Plugin API to limit the supported architectures in your APK to
-avoid a missing `libflutter.so` runtime crash.
+Android Gradle Plugin API to limit the supported architectures in your APK. This
+will avoid a missing `libflutter.so` runtime crash. For instance:
 
-The Flutter engine has an `x86` version so non-AOT Flutter builds such as
-debug mode can still run on `x86` devices such as the emulator.
+<?code-excerpt "MyApp/app/build.gradle" title?>
+```gradle
+android {
+  //...
+  defaultConfig {
+    ndk {
+      // Filter for architectures supported by Flutter.
+      abiFilters 'armeabi-v7a', 'arm64-v8a'
+    }
+  }
+}
+```
+
+The Flutter engine has an `x86` and `x86_64` version. When using an emulator
+in debug Just-In-Time (JIT) mode, the Flutter module will still run correctly.
 
 TODO(blasten): revise whether this is right.
 {{site.alert.end}}
@@ -33,7 +46,7 @@ code and your Flutter code in the same project. You can also continue to use
 your normal IntelliJ Flutter plugin functionalities such as Dart code completion,
 hot reload, widget inspector etc.
 
-Add-to-app flows with Android Studio is only supported on Android Studio 3.6
+Add-to-app flows with Android Studio are only supported on Android Studio 3.6
 and only supports integrating via source code Gradle sub-project rather than
 via AARs. See below for more details on the distinction.
 
@@ -58,18 +71,20 @@ the above steps. A local diff will show the changes.
 {{site.alert.end}}
 
 {{site.alert.tip}}
-Your Project pane might be showing the 'Android' view where you can't see
-your Flutter file. The 'Project Files' view works well for showing both your
-Android files and your Flutter files.
+By default, your project's Project pane is likely showing the 'Android' view. If
+you are unable to see your new Flutter files in the Project pane, ensure that
+your Project pane is set to display 'Project Files', which shows all files
+without filtering.
 {{site.alert.end}}
 
-You can jump to the [API usage documentations](/docs/development/add-to-app/android/add-flutter-screen)
+Your app now includes the Flutter module as a dependency. You can jump to the
+[API usage documentations](/docs/development/add-to-app/android/add-flutter-screen)
 to follow the next steps.
 
 ## Manual integration
 
-You can also follow the steps below to manually integrate Flutter into your
-Android project.
+To integrate a Flutter module with an existing Android app manually without
+using Flutter's Android Studio plugin, follow the steps below.
 
 ### Create a Flutter module
 
@@ -105,6 +120,7 @@ android {
 
 ### Add the Flutter module as a dependency
 
+Next, we add the Flutter module as a dependency of your existing app in Gradle.
 There are two ways to achieve this. The AAR mechanism creates generic Android
 AARs as intermediaries that packages your Flutter module. This is good when your
 downstream app builders don't want to have the Flutter SDK installed. But
@@ -114,7 +130,7 @@ The source code sub-project mechanism offers a convenient one-click build
 process but requires the Flutter SDK. This is the mechanism used by the
 Android Studio IDE plugin.
 
-#### 1. Depend on the Android Archive (AAR)
+#### Option A - Depend on the Android Archive (AAR)
 
 This packages your Flutter library as a generic local Maven repository comprised
 of AARs and POMs artifacts. This allows your team to build the host app without
@@ -193,9 +209,10 @@ the `Build > Flutter > Build AAR` menu.
 {% include app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
 {{site.alert.end}}
 
-You can follow the next steps in the [API usage documentations](/docs/development/add-to-app/android/add-flutter-screen).
+Your app now includes the Flutter module as a dependency. You can follow the
+next steps in the [API usage documentations](/docs/development/add-to-app/android/add-flutter-screen).
 
-#### 2. Depend on the module's source code
+#### Option B - Depend on the module's source code
 
 This enables a one-step build for both your Android project and Flutter project.
 This is convenient when working on both parts simultaneously and rapidly
@@ -227,4 +244,5 @@ dependencies {
 }
 ```
 
-You can follow the next steps in the [API usage documentations](/docs/development/add-to-app/android/add-flutter-screen).
+Your app now includes the Flutter module as a dependency. You can follow the
+next steps in the [API usage documentations](/docs/development/add-to-app/android/add-flutter-screen).
