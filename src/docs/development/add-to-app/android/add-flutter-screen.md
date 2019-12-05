@@ -44,7 +44,7 @@ With `FlutterActivity` registered in your manifest file, add code to launch
 example shows `FlutterActivity` being launched from an `OnClickListener`.
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="default-activity-launch-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="default-activity-launch-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="default-activity-launch-java" href="#default-activity-launch-java-tab" role="tab" aria-controls="default-activity-launch-java" aria-selected="true">Java</a>
   </li>
@@ -89,7 +89,7 @@ demonstrates how to launch a `FlutterActivity` that initially renders a custom
 route in Flutter.
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="custom-activity-launch-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="custom-activity-launch-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="custom-activity-launch-java" href="#custom-activity-launch-java-tab" role="tab" aria-controls="custom-activity-launch-java-tab" aria-selected="true">Java</a>
   </li>
@@ -155,7 +155,7 @@ instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="prewarm-engine-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="prewarm-engine-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="prewarm-engine-java" href="#prewarm-engine-java-tab" role="tab" aria-controls="prewarm-engine-java" aria-selected="true">Java</a>
   </li>
@@ -240,7 +240,7 @@ new one. To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="cached-engine-activity-launch-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="cached-engine-activity-launch-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="cached-engine-activity-launch-java" href="#cached-engine-activity-launch-java-tab" role="tab" aria-controls="cached-engine-activity-launch-java" aria-selected="true">Java</a>
   </li>
@@ -361,7 +361,7 @@ To launch your `FlutterActivity` with a transparent background, pass the
 appropriate `BackgroundMode` to the `IntentBuilder`:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="transparent-activity-launch-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="transparent-activity-launch-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="transparent-activity-launch-java" href="#transparent-activity-launch-java-tab" role="tab" aria-controls="transparent-activity-launch-java" aria-selected="true">Java</a>
   </li>

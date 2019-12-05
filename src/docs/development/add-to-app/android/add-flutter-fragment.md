@@ -50,7 +50,7 @@ attaching an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at some other time that works for your app:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="add-fragment-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="add-fragment-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="add-fragment-java" href="#add-fragment-java-tab" role="tab" aria-controls="add-fragment-java" aria-selected="true">Java</a>
   </li>
@@ -168,7 +168,7 @@ forwarded from your host `Activity` to `FlutterFragment`. These calls are shown
 below:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="forward-activity-calls-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="forward-activity-calls-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="forward-activity-calls-java" href="#forward-activity-calls-java-tab" role="tab" aria-controls="forward-activity-calls-java" aria-selected="true">Java</a>
   </li>
@@ -284,15 +284,11 @@ which requires non-trivial warmup time. This means your user sees a blank
 `Fragment` for a brief moment. You can mitigate most of this warmup time by
 using an existing, pre-warmed instance of `FlutterEngine`.
 
-Please see the [instructions for instantiating and starting a `FlutterEngine`].
-
-[instructions for instantiating and starting a `FlutterEngine`]: /docs/development/platform-integrations/add-to-app-android/flutter-engine
-
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
 `FlutterFragment` with the `withCachedEngine()` factory method.
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="use-prewarmed-engine-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="use-prewarmed-engine-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="use-prewarmed-engine-java" href="#use-prewarmed-engine-java-tab" role="tab" aria-controls="use-prewarmed-engine-java" aria-selected="true">Java</a>
   </li>
@@ -306,7 +302,8 @@ To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
 <div class="tab-pane active" id="use-prewarmed-engine-java-tab" role="tabpanel" aria-labelledby="use-prewarmed-engine-java-tab" markdown="1">
 <?code-excerpt "MyApplication.java" title?>
 ```java
-// Somewhere in your app before your FlutterFragment is needed...
+// Somewhere in your app before your FlutterFragment is needed, like the
+// Application class...
 // Instantiate a FlutterEngine.
 FlutterEngine flutterEngine = new FlutterEngine(context);
 
@@ -378,7 +375,7 @@ initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 `Builder` allows you to specify a desired initial route, as shown below:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="launch-with-initial-route-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-initial-route-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="launch-with-initial-route-java" href="#launch-with-initial-route-java-tab" role="tab" aria-controls="launch-with-initial-route-java" aria-selected="true">Java</a>
   </li>
@@ -432,7 +429,7 @@ execute for the given Flutter experience. To specify an entrypoint, build
 `FlutterFragment` as follows:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="launch-with-custom-entrypoint-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-custom-entrypoint-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="launch-with-custom-entrypoint-java" href="#launch-with-custom-entrypoint-java-tab" role="tab" aria-controls="launch-with-custom-entrypoint-java" aria-selected="true">Java</a>
   </li>
@@ -489,7 +486,7 @@ of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="launch-with-rendermode-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-rendermode-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="launch-with-rendermode-java" href="#launch-with-rendermode-java-tab" role="tab" aria-controls="launch-with-rendermode-java" aria-selected="true">Java</a>
   </li>
@@ -564,7 +561,7 @@ To enable transparency for a `FlutterFragment`, build it with the following
 configuration:
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="launch-with-transparency-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-transparency-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="launch-with-transparency-java" href="#launch-with-transparency-java-tab" role="tab" aria-controls="launch-with-transparency-java" aria-selected="true">Java</a>
   </li>
@@ -636,7 +633,7 @@ prevent Flutter from controlling the `Activity`'s system UI, use the
 shown below.
 
 <!-- Start code sample -->
-<ul class="nav nav-tabs" id="attach-to-activity-language" role="tablist">
+<ul class="nav nav-tabs sample-code-tabs" id="attach-to-activity-language" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="attach-to-activity-java" href="#attach-to-activity-java-tab" role="tab" aria-controls="attach-to-activity-java" aria-selected="true">Java</a>
   </li>
