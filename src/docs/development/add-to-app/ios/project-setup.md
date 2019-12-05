@@ -22,7 +22,7 @@ cd some/path/
 flutter create --template module my_flutter
 ```
 
-A Flutter module project will be created at `some/path/my_flutter/`. From that 
+A Flutter module project will be created at `some/path/my_flutter/`. From that
 directory, you can run the same `flutter` commands you would
 in any other Flutter project, like `flutter run --debug` or `flutter build ios`.
 You can also run the module in [Android Studio/IntelliJ][] or [VS Code][] with
@@ -51,7 +51,7 @@ Add your Dart code to the `lib/` directory.
 Add Flutter dependencies to `my_flutter/pubspec.yaml`, including Flutter packages
 and plugins.
 
-The `.ios/` hidden subfolder contains a Xcode workspace where you can 
+The `.ios/` hidden subfolder contains a Xcode workspace where you can
 run a stand-alone version of your module, and is a wrapper project to bootstrap
 your Flutter code. It contains helper scripts to build frameworks or
 embed the module into your existing application with [CocoaPods][].
@@ -70,7 +70,7 @@ There are two ways to embed Flutter in your existing application.
 1. Create frameworks for the Flutter engine, your compiled Dart code, and all Flutter plugins.
 Manually embed the frameworks and update your existing application's build settings in Xcode.
 
-### Embed with CocoaPods and the Flutter SDK
+### Option A - Embed with CocoaPods and the Flutter SDK
 
 This method requires every developer working on your project to have a locally installed
 version of the Flutter SDK. Simply build your application in Xcode to automatically run the script to
@@ -123,12 +123,12 @@ The `podhelper.rb` script embeds your plugins, `Flutter.framework`, and
 
 Open `MyApp.xcworkspace` in Xcode. You can now build the project using `⌘B`.
 
-### Embed frameworks in Xcode
+### Option B - Embed frameworks in Xcode
 
 Alternatively, you can generate the necessary frameworks and embed them in your application
 by manually editing your existing Xcode project. You may choose to do this if members of your
 team cannot locally install Flutter SDK and CocoaPods, or if you do not wish to use CocoaPods
-as a dependency manager in your existing applications. You must run `flutter build ios-framework` 
+as a dependency manager in your existing applications. You must run `flutter build ios-framework`
 every time you make code changes in your Flutter module.
 
 If you are using the above [Embed with CocoaPods and Flutter tools](#embed-with-CocoaPods-and-Flutter-tools)
