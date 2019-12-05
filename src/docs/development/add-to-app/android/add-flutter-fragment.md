@@ -49,7 +49,20 @@ To add a `FlutterFragment` to a host `Activity`, start by instantiating and
 attaching an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at some other time that works for your app:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="add-fragment-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="add-fragment-java" href="#add-fragment-java-tab" role="tab" aria-controls="add-fragment-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="add-fragment-kotlin" href="#add-fragment-kotlin-tab" role="tab" aria-controls="add-fragment-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="add-fragment-java-tab" role="tabpanel" aria-labelledby="add-fragment-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     // Define a tag String to represent the FlutterFragment within this
@@ -94,8 +107,10 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="add-fragment-kotlin-tab" role="tabpanel" aria-labelledby="add-fragment-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   companion object {
@@ -141,6 +156,9 @@ class MyActivity : FragmentActivity() {
   }
 }
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 The above code is sufficient to render a Flutter UI that begins with a call to
 your `main()` Dart entrypoint, an initial Flutter route of `/`, and a new
@@ -149,7 +167,20 @@ Flutter behavior. Flutter depends on various OS signals that need to be
 forwarded from your host `Activity` to `FlutterFragment`. These calls are shown
 below:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="forward-activity-calls-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="forward-activity-calls-java" href="#forward-activity-calls-java-tab" role="tab" aria-controls="forward-activity-calls-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="forward-activity-calls-kotlin" href="#forward-activity-calls-kotlin-tab" role="tab" aria-controls="forward-activity-calls-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="forward-activity-calls-java-tab" role="tabpanel" aria-labelledby="forward-activity-calls-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     @Override
@@ -193,8 +224,10 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="forward-activity-calls-kotlin-tab" role="tabpanel" aria-labelledby="forward-activity-calls-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   override fun onPostResume() {
@@ -232,6 +265,9 @@ class MyActivity : FragmentActivity() {
   }
 }
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 With the above OS signals forwarded to Flutter, your `FlutterFragment` works as
 expected. You have now added a `FlutterFragment` to your existing Android app.
@@ -248,15 +284,26 @@ which requires non-trivial warmup time. This means your user sees a blank
 `Fragment` for a brief moment. You can mitigate most of this warmup time by
 using an existing, pre-warmed instance of `FlutterEngine`.
 
-Please see the [instructions for instantiating and starting a `FlutterEngine`].
-
-[instructions for instantiating and starting a `FlutterEngine`]: /docs/development/platform-integrations/add-to-app-android/flutter-engine
-
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
 `FlutterFragment` with the `withCachedEngine()` factory method.
 
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="use-prewarmed-engine-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="use-prewarmed-engine-java" href="#use-prewarmed-engine-java-tab" role="tab" aria-controls="use-prewarmed-engine-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="use-prewarmed-engine-kotlin" href="#use-prewarmed-engine-kotlin-tab" role="tab" aria-controls="use-prewarmed-engine-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="use-prewarmed-engine-java-tab" role="tabpanel" aria-labelledby="use-prewarmed-engine-java-tab" markdown="1">
+<?code-excerpt "MyApplication.java" title?>
 ```java
-// Somewhere in your app before your FlutterFragment is needed...
+// Somewhere in your app before your FlutterFragment is needed, like the
+// Application class...
 // Instantiate a FlutterEngine.
 FlutterEngine flutterEngine = new FlutterEngine(context);
 
@@ -275,8 +322,10 @@ FlutterEngineCache
 // In your Activity.
 flutterFragment.withCachedEngine("my_engine_id").build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="use-prewarmed-engine-kotlin-tab" role="tabpanel" aria-labelledby="use-prewarmed-engine-kotlin-tab" markdown="1">
+<?code-excerpt "MyApplication.kt" title?>
 ```kotlin
 // Somewhere in your app before your FlutterFragment is needed...
 // Instantiate a FlutterEngine.
@@ -297,6 +346,9 @@ FlutterEngineCache
 // In your Activity.
 flutterFragment.withCachedEngine("my_engine_id").build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 `FlutterFragment` internally knows about `FlutterEngineCache` and retrieves the
 pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
@@ -322,21 +374,39 @@ scenarios, it is common for each Flutter experience to begin with different
 initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 `Builder` allows you to specify a desired initial route, as shown below:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-initial-route-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="launch-with-initial-route-java" href="#launch-with-initial-route-java-tab" role="tab" aria-controls="launch-with-initial-route-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="launch-with-initial-route-kotlin" href="#launch-with-initial-route-kotlin-tab" role="tab" aria-controls="launch-with-initial-route-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="launch-with-initial-route-java-tab" role="tabpanel" aria-labelledby="launch-with-initial-route-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
-val flutterFragment = FlutterFragment.withNewEngine()
+FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="launch-with-initial-route-kotlin-tab" role="tabpanel" aria-labelledby="launch-with-initial-route-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 {{site.alert.note}}
   `FlutterFragment`'s initial route property has no effect when a pre-warmed
@@ -358,19 +428,37 @@ Dart entrypoints] for instructions on defining such entrypoints.
 execute for the given Flutter experience. To specify an entrypoint, build
 `FlutterFragment` as follows:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-custom-entrypoint-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="launch-with-custom-entrypoint-java" href="#launch-with-custom-entrypoint-java-tab" role="tab" aria-controls="launch-with-custom-entrypoint-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="launch-with-custom-entrypoint-kotlin" href="#launch-with-custom-entrypoint-kotlin-tab" role="tab" aria-controls="launch-with-custom-entrypoint-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="launch-with-custom-entrypoint-java-tab" role="tabpanel" aria-labelledby="launch-with-custom-entrypoint-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="launch-with-custom-entrypoint-kotlin-tab" role="tabpanel" aria-labelledby="launch-with-custom-entrypoint-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 val flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 The above `FlutterFragment` configuration results in the execution of a Dart
 entrypoint called `mySpecialEntrypoint()`. Notice that the parentheses `()` are
@@ -397,7 +485,20 @@ use-cases are requirements for your app, you need to use `TextureView` instead
 of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-rendermode-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="launch-with-rendermode-java" href="#launch-with-rendermode-java-tab" role="tab" aria-controls="launch-with-rendermode-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="launch-with-rendermode-kotlin" href="#launch-with-rendermode-kotlin-tab" role="tab" aria-controls="launch-with-rendermode-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="launch-with-rendermode-java-tab" role="tabpanel" aria-labelledby="launch-with-rendermode-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -409,8 +510,10 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="launch-with-rendermode-kotlin-tab" role="tabpanel" aria-labelledby="launch-with-rendermode-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -422,6 +525,9 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .renderMode(FlutterView.RenderMode.texture)
     .build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 Using the configuration above, the resulting `FlutterFragment` renders its UI to
 a `TextureView`.
@@ -454,7 +560,20 @@ For this reason, Flutter supports translucency in a `FlutterFragment`.
 To enable transparency for a `FlutterFragment`, build it with the following
 configuration:
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="launch-with-transparency-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="launch-with-transparency-java" href="#launch-with-transparency-java-tab" role="tab" aria-controls="launch-with-transparency-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="launch-with-transparency-kotlin" href="#launch-with-transparency-kotlin-tab" role="tab" aria-controls="launch-with-transparency-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="launch-with-transparency-java-tab" role="tabpanel" aria-labelledby="launch-with-transparency-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -466,8 +585,10 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="launch-with-transparency-kotlin-tab" role="tabpanel" aria-labelledby="launch-with-transparency-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -479,6 +600,9 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 ## The relationship beween `FlutterFragment` and its `Activity`
 
@@ -508,7 +632,20 @@ prevent Flutter from controlling the `Activity`'s system UI, use the
 `shouldAttachEngineToActivity()` method in `FlutterFragment`'s `Builder` as
 shown below.
 
-Java:
+<!-- Start code sample -->
+<ul class="nav nav-tabs sample-code-tabs" id="attach-to-activity-language" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="attach-to-activity-java" href="#attach-to-activity-java-tab" role="tab" aria-controls="attach-to-activity-java" aria-selected="true">Java</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="attach-to-activity-kotlin" href="#attach-to-activity-kotlin-tab" role="tab" aria-controls="attach-to-activity-kotlin" aria-selected="false">Kotlin</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane active" id="attach-to-activity-java-tab" role="tabpanel" aria-labelledby="attach-to-activity-java-tab" markdown="1">
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -520,8 +657,10 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .shouldAttachEngineToActivity(false)
     .build();
 ```
+</div>
 
-Kotlin:
+<div class="tab-pane" id="attach-to-activity-kotlin-tab" role="tabpanel" aria-labelledby="attach-to-activity-kotlin-tab" markdown="1">
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -533,6 +672,9 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .shouldAttachEngineToActivity(false)
     .build()
 ```
+</div>
+</div>
+<!-- End code sample -->
 
 Passing `false` to the `shouldAttachEngineToActivity()` `Builder` method
 prevents Flutter from interacting with the surrounding `Activity`. The default
