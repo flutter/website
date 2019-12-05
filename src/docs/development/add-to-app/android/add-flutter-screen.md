@@ -43,20 +43,8 @@ With `FlutterActivity` registered in your manifest file, add code to launch
 `FlutterActivity` from whatever point in your app that you'd like. The following
 example shows `FlutterActivity` being launched from an `OnClickListener`.
 
-<!-- Start code sample -->
-<ul class="nav nav-tabs sample-code-tabs" id="default-activity-launch-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="default-activity-launch-java" href="#default-activity-launch-java-tab" role="tab" aria-controls="default-activity-launch-java" aria-selected="true">Java</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="default-activity-launch-kotlin" href="#default-activity-launch-kotlin-tab" role="tab" aria-controls="default-activity-launch-kotlin" aria-selected="false">Kotlin</a>
-  </li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="default-activity-launch-java-tab" role="tabpanel" aria-labelledby="default-activity-launch-java-tab" markdown="1">
-<?code-excerpt "ExistingActivity.java" title?>
+{% samplecode default-activity-launch %}
+{% sample Java,ExistingActivity.java %}
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -67,10 +55,7 @@ myButton.setOnClickListener(new OnClickListener() {
   }
 });
 ```
-</div>
-
-<div class="tab-pane" id="default-activity-launch-kotlin-tab" role="tabpanel" aria-labelledby="default-activity-launch-kotlin-tab" markdown="1">
-<?code-excerpt "ExistingActivity.kt" title?>
+{% sample Kotlin,ExistingActivity.kt %}
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -78,9 +63,7 @@ myButton.setOnClickListener {
   )
 }
 ```
-</div>
-</div>
-<!-- End code sample -->
+{% endsamplecode %}
 
 The above example assumes that your Dart entrypoint is called `main()`, and your
 initial Flutter route is '/'. The Dart entrypoint cannot be changed via `Intent`,
@@ -88,20 +71,8 @@ but the initial route can be changed via `Intent`. The following example
 demonstrates how to launch a `FlutterActivity` that initially renders a custom
 route in Flutter.
 
-<!-- Start code sample -->
-<ul class="nav nav-tabs sample-code-tabs" id="custom-activity-launch-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="custom-activity-launch-java" href="#custom-activity-launch-java-tab" role="tab" aria-controls="custom-activity-launch-java-tab" aria-selected="true">Java</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="custom-activity-launch-kotlin" href="#custom-activity-launch-kotlin-tab" role="tab" aria-controls="custom-activity-launch-kotlin-tab" aria-selected="false">Kotlin</a>
-  </li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="custom-activity-launch-java-tab" role="tabpanel" aria-labelledby="custom-activity-launch-java-tab" markdown="1">
-<?code-excerpt "ExistingActivity.java" title?>
+{% samplecode custom-activity-launch %}
+{% sample Java,ExistingActivity.java %}
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -115,10 +86,7 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
-</div>
-
-<div class="tab-pane" id="custom-activity-launch-kotlin-tab" role="tabpanel" aria-labelledby="custom-activity-launch-kotlin-tab" markdown="1">
-<?code-excerpt "ExistingActivity.kt" title?>
+{% sample Kotlin,ExistingActivity.kt %}
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -129,9 +97,7 @@ myButton.setOnClickListener {
   )
 }
 ```
-</div>
-</div>
-<!-- End code sample -->
+{% endsamplecode %}
 
 Replace `"/my_route"` with your desired initial route.
 
@@ -154,20 +120,8 @@ To pre-warm a `FlutterEngine`, find a reasonable location in your app to
 instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a 
 `FlutterEngine` in the `Application` class:
 
-<!-- Start code sample -->
-<ul class="nav nav-tabs sample-code-tabs" id="prewarm-engine-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="prewarm-engine-java" href="#prewarm-engine-java-tab" role="tab" aria-controls="prewarm-engine-java" aria-selected="true">Java</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="prewarm-engine-kotlin" href="#prewarm-engine-kotlin-tab" role="tab" aria-controls="prewarm-engine-kotlin" aria-selected="false">Kotlin</a>
-  </li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="prewarm-engine-java-tab" role="tabpanel" aria-labelledby="prewarm-engine-java-tab" markdown="1">
-<?code-excerpt "MyApplication.java" title?>
+{% samplecode prewarm-engine %}
+{% sample Java,MyApplication.java %}
 ```java
 public class MyApplication extends Application {
   @Override
@@ -188,10 +142,7 @@ public class MyApplication extends Application {
   }
 }
 ```
-</div>
-
-<div class="tab-pane" id="prewarm-engine-kotlin-tab" role="tabpanel" aria-labelledby="prewarm-engine-kotlin-tab" markdown="1">
-<?code-excerpt "MyApplication.kt" title?>
+{% sample Kotlin,MyApplication.kt %}
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -214,9 +165,7 @@ class MyApplication : Application() {
   }
 }
 ```
-</div>
-</div>
-<!-- End code sample -->
+{% endsamplecode %}
 
 The ID passed to the `FlutterEngineCache` can be whatever you'd like. Make sure
 that you pass the exact same ID to any `FlutterActiity` or `FlutterFragment`
@@ -239,20 +188,8 @@ With a pre-warmed, cached `FlutterEngine`, you now need to instruct your
 new one. To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
-<!-- Start code sample -->
-<ul class="nav nav-tabs sample-code-tabs" id="cached-engine-activity-launch-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="cached-engine-activity-launch-java" href="#cached-engine-activity-launch-java-tab" role="tab" aria-controls="cached-engine-activity-launch-java" aria-selected="true">Java</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="cached-engine-activity-launch-kotlin" href="#cached-engine-activity-launch-kotlin-tab" role="tab" aria-controls="cached-engine-activity-launch-kotlin" aria-selected="false">Kotlin</a>
-  </li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="cached-engine-activity-launch-java-tab" role="tabpanel" aria-labelledby="cached-engine-activity-launch-java-tab" markdown="1">
-<?code-excerpt "ExistingActivity.java" title?>
+{% samplecode cached-engine-activity-launch %}
+{% sample Java,ExistingActivity.java %}
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -265,10 +202,7 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
-</div>
-
-<div class="tab-pane" id="cached-engine-activity-launch-kotlin-tab" role="tabpanel" aria-labelledby="cached-engine-activity-launch-kotlin-tab" markdown="1">
-<?code-excerpt "ExistingActivity.kt" title?>
+{% sample Kotlin,ExistingActivity.kt %}
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -278,9 +212,7 @@ myButton.setOnClickListener {
   )
 }
 ```
-</div>
-</div>
-<!-- End code sample -->
+{% endsamplecode %}
 
 When using the `withCachedEngine()` factory method, pass the same ID that you
 used when caching the desired `FlutterEngine`.
@@ -360,20 +292,8 @@ Your `FlutterActivity` now supports translucency. Next, you need to launch your
 To launch your `FlutterActivity` with a transparent background, pass the
 appropriate `BackgroundMode` to the `IntentBuilder`:
 
-<!-- Start code sample -->
-<ul class="nav nav-tabs sample-code-tabs" id="transparent-activity-launch-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="transparent-activity-launch-java" href="#transparent-activity-launch-java-tab" role="tab" aria-controls="transparent-activity-launch-java" aria-selected="true">Java</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="transparent-activity-launch-kotlin" href="#transparent-activity-launch-kotlin-tab" role="tab" aria-controls="transparent-activity-launch-kotlin" aria-selected="false">Kotlin</a>
-  </li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane active" id="transparent-activity-launch-java-tab" role="tabpanel" aria-labelledby="transparent-activity-launch-java-tab" markdown="1">
-<?code-excerpt "ExistingActivity.java" title?>
+{% samplecode transparent-activity-launch %}
+{% sample Java,ExistingActivity.java %}
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -391,10 +311,7 @@ startActivity(
     .build(context)
 );
 ```
-</div>
-
-<div class="tab-pane" id="transparent-activity-launch-kotlin-tab" role="tabpanel" aria-labelledby="transparent-activity-launch-kotlin-tab" markdown="1">
-<?code-excerpt "ExistingActivity.kt" title?>
+{% sample Kotlin,ExistingActivity.kt %}
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(
@@ -412,9 +329,7 @@ startActivity(
     .build(this)
 );
 ```
-</div>
-</div>
-<!-- End code sample -->
+{% endsamplecode %}
 
 You now have a `FlutterActivity` with a transparent background.
 
