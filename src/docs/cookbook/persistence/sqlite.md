@@ -114,7 +114,7 @@ Therefore, these are represented as three columns in the `dogs` table.
      Datatype.
 
 For more information about the available Datatypes that can be stored in a
-SQLite database, see [the official SQLite Datatypes documentation][].
+SQLite database, see the [official SQLite Datatypes documentation][].
 
 <!-- skip -->
 ```dart

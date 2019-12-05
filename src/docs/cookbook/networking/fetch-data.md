@@ -301,6 +301,6 @@ Future<Post> post;
 [Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
-serialization]: /docs/development/data-and-backend/json
+[JSON and serialization]: /docs/development/data-and-backend/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 

@@ -62,7 +62,7 @@ Future<String> get _localPath async {
 
 Once you know where to store the file, create a reference to the
 file's full location. You can use the [`File`][]
-class from the [dart:io][] library to achieve this.
+class from the [`dart:io`][] library to achieve this.
 
 <!-- skip -->
 ```dart
@@ -74,7 +74,7 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Now that you have a File to work with,
+Now that you have a `File` to work with,
 use it to read and write data.
 First, write some data to the file.
 The counter is an integer, but is written to the
