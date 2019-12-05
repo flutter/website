@@ -96,7 +96,6 @@ The following resources can help you get started:
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
 [Discord group]: https://discordapp.com/invite/yeZ6s7k
-[File an issue]: https://goo.gle/flutter_web_issue
 [file an issue]: https://goo.gle/flutter_web_issue
 [main Flutter repo]: {{site.github}}/flutter/flutter
 [Preparing an app for web release]: /docs/deployment/web
