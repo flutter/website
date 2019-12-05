@@ -13,7 +13,7 @@ The integration flow can be done via the Android Studio IDE with the
 {{site.alert.warning}}
 Your existing Android app may currently support architectures such as `mips`
 or `x86`/`x86_64`. Flutter currently [only supports](/docs/resources/faq#what-devices-and-os-versions-does-flutter-run-on)
-building AOT libraries for `armeabi-v7a` and `arm64-v8a`.
+building ahead-of-time (AOT) compiled libraries for `armeabi-v7a` and `arm64-v8a`.
 
 Consider using the [`abiFilters`](http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html)
 Android Gradle Plugin API to limit the supported architectures in your APK to
@@ -34,8 +34,8 @@ your normal IntelliJ Flutter plugin functionalities such as Dart code completion
 hot reload, widget inspector etc.
 
 Add-to-app flows with Android Studio is only supported on Android Studio 3.6
-and only supports integrating via source code sub-project. See below for more
-details on the distinction.
+and only supports integrating via source code Gradle sub-project rather than
+via AARs. See below for more details on the distinction.
 
 Via the `File > New > New Module...` menu in Android Studio in your existing
 Android project, you can either create a new Flutter module to integrate or
@@ -48,12 +48,13 @@ select the module name, location etc.
 
 {% include app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
 
-The Android Studio project will automatically configure your Android project
+The Android Studio plugin will automatically configure your Android project
 to add your Flutter module as a dependency and your app is ready to build.
 
 {{site.alert.note}}
-You may want to source control your Android project before this step if you
-want to double-check the steps the plugin performs on your Android project.
+The see the exact changes automatically made to your Android project by the
+IDE plugin, consider source controlling your Android project before executing
+the above steps. A local diff will show the changes.
 {{site.alert.end}}
 
 {{site.alert.tip}}
