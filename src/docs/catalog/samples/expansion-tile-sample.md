@@ -4,7 +4,7 @@ description: An example that uses ExpansionTiles.
 deprecated: true
 ---
 
-ExpansionTiles can used to produce two-level or multi-level lists.
+ExpansionTiles can be used to produce two-level or multi-level lists.
 
 <p>
   <div class="container-fluid">

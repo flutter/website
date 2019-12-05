@@ -11,4 +11,8 @@ For information on implementing slivers in Flutter, including
 [SliverAppBar]({{site.api}}/flutter/material/SliverAppBar-class.html),
 see [Slivers,
 DeMystified]({{site.flutter-medium}}/slivers-demystified-6ff68ab0296f),
-an article on Medium's [Flutter Publication]({{site.flutter-medium}}).
+an article on Medium's [Flutter Publication]({{site.flutter-medium}}), or
+watch the [Slivers episode](https://www.youtube.com/watch?v=Mz3kHQxBjGg) of the
+[Boring Show](https://www.youtube.com/results?search_query=%23BoringShow):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mz3kHQxBjGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

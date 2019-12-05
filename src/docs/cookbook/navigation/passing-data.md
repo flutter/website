@@ -13,7 +13,7 @@ but also pass data to the screen as well.
 For example, you might want to pass information about
 the item that's been tapped.
 
-Remember: Screens are Just Widgets.
+Remember: Screens are just widgets.
 In this example, create a list of todos.
 When a todo is tapped, navigate to a new screen (widget) that
 displays information about the todo.

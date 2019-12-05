@@ -2213,10 +2213,10 @@ notifications for your app.
 In Flutter, access this functionality using the
 [Firebase Messaging][] plugin.
 For more information on using the Firebase Cloud Messaging API,
-see the [`firebase_messaging`][] plugin documentation.
+see the [firebase_messaging][] plugin documentation.
 
 [DevTools]: /docs/development/tools/devtools
-[Firebase Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[Firebase Messaging]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages/firebase_messaging
 [firebase_messaging]: {{site.pub}}/packages/firebase_messaging
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter

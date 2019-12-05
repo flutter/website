@@ -104,7 +104,7 @@ to set up physical device deployment in Xcode.
      1. In the `Runner` target settings page,
         make sure your Development Team is selected.
         The UI varies depending on your version of Xcode.
-        * For Xcode 9 & 10, look under **General > Signing > Team**.
+        * For Xcode 10, look under **General > Signing > Team**.
         * For Xcode 11 and newer, look under
         **Signing & Capabilities > Team**.
 
