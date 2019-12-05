@@ -375,7 +375,6 @@ class DisplayPictureScreen extends StatelessWidget {
 
 [`camera`]: {{site.pub-pkg}}/camera
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
-for exactly this purpose.
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [`takePicture()`]: {{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html

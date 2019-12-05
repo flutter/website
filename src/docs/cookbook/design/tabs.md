@@ -29,8 +29,8 @@ For tabs to work, you need to keep the selected tab and content
 sections in sync.
 This is the job of the [`TabController`][].
 
-Either create a TabController manually, or automatically by using a
-[`DefaultTabController`][] widget.
+Either create a `TabController` manually,
+or automatically by using a [`DefaultTabController`][] widget.
 
 Using `DefaultTabController` is the simplest option, since it
 creates a `TabController` and makes it available to all descendant widgets.
@@ -143,5 +143,5 @@ class TabBarDemo extends StatelessWidget {
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Tab`]: {{site.api}}/flutter/material/Tab-class.html
 [`TabBar`]: {{site.api}}/flutter/material/TabController-class.html
-[`TabBarView`]z: {{site.api}}/flutter/material/TabBarView-class.html
+[`TabBarView`]: {{site.api}}/flutter/material/TabBarView-class.html
 [`TabController`]: {{site.api}}/flutter/material/TabController-class.html

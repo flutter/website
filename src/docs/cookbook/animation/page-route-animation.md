@@ -141,7 +141,7 @@ provides a predefined set of commonly used curves.
 For example, `Curves.easeOut`
 makes the animation start quickly and end slowly.
 
-To use a Curve, create a new [CurveTween][]
+To use a Curve, create a new [`CurveTween`][]
 and pass it a Curve:
 
 ```dart

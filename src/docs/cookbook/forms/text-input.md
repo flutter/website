@@ -67,6 +67,6 @@ For more information on input validation, see the
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [Handle changes to a text field]: /docs/cookbook/forms/text-field-changes/
-[`InputDecoration`]z: {{site.api}}/flutter/material/InputDecoration-class.html
+[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

@@ -18,9 +18,9 @@ in the test environment. For this purpose, use the
 The `WidgetTester` provides methods for entering text,
 tapping, and dragging.
 
-* [`enterText`][]
-* [`tap`][]
-* [`drag`][]
+* [`enterText()`][]
+* [`tap()`][]
+* [`drag()`][]
 
 In many cases, user interactions update the state of the app. In the test
 environment, Flutter doesn't automatically rebuild widgets when the state
@@ -287,15 +287,15 @@ class _TodoListState extends State<TodoList> {
 
 [Create a basic list]: /docs/cookbook/lists/basic-list
 [Create and style a text field]: /docs/cookbook/forms/text-input
-[`drag`]: {{api}}/flutter_test/WidgetController/drag.html
-[`enterText`]: {{api}}/flutter_test/WidgetTester/enterText.html
+[`drag()`]: {{api}}/flutter_test/WidgetController/drag.html
+[`enterText()`]: {{api}}/flutter_test/WidgetTester/enterText.html
 [Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
 [Handle taps]: /docs/cookbook/gestures/handling-taps
 [Implement swipe to dismiss]: /docs/cookbook/gestures/dismissible
 [Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
 [`pump()`]: {{api}}/flutter_test/WidgetTester/pump.html
 [`pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
-[`tap`]: {{api}}/flutter_test/WidgetController/tap.html
+[`tap()`]: {{api}}/flutter_test/WidgetController/tap.html
 [`TextField`]: {{api}}/material/TextField-class.html
 [`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html
 

@@ -24,8 +24,8 @@ This recipe uses the following steps:
 
 ## 1. Create a `Scaffold`
 
-To add a drawer to the app, wrap it in a [Scaffold][] widget.
-The Scaffold widget provides a consistent visual structure to apps that
+To add a drawer to the app, wrap it in a [`Scaffold`][] widget.
+The `Scaffold` widget provides a consistent visual structure to apps that
 follow the Material Design Guidelines.
 It also supports special Material Design
 components, such as Drawers, AppBars, and SnackBars.

@@ -36,7 +36,7 @@ Mockito package using the following steps:
   4. Write a test for each condition.
   5. Run the tests.
 
-For more information, see the [Mockito][] package documentation.
+For more information, see the [Mockito package][] documentation.
 
 ## 1. Add the package dependencies
 
