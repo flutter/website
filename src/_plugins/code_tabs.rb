@@ -2,16 +2,37 @@
 #
 # This custom tag was written by the Flutter team for the Flutter website.
 #
-# Example usage:
+# Example Android usage:
 #
 #   {% samplecode sample-title %}
-#   {% sample Java, SomeFile.java %}
+#   {% sample Java %}
+#   <?code-excerpt "MyActivity.java" title?>
 #   ```java
 #   // Java code here
 #   ```
-#   {% sample Kotlin, SomeFile.kt %}
+#   {% sample Kotlin %}
+#   <?code-excerpt "MyActivity.kt" title?>
 #   ```kotlin
 #   // Kotlin code here
+#   ```
+#   {% endsamplecode %}
+#
+# Example iOS usage:
+#
+#   {% samplecode sample-title %}
+#   {% sample Objective-C %}
+#   <?code-excerpt "MyVC.h" title?>
+#   ```objectivec
+#   // Header file code
+#   ```
+#   <?code-excerpt "MyVC.c" title?>
+#   ```objectivec
+#   // Implementation file code
+#   ```
+#   {% sample Swift %}
+#   <?code-excerpt "MyVC.swift" title?>
+#   ```swift
+#   // Swift code here
 #   ```
 #   {% endsamplecode %}
 #
@@ -20,8 +41,8 @@
 # differentiate itself from other code samples. The "samplecode" tag is a block tag and therefore
 # must be closed with a "endsamplecode" tag.
 #
-# The "sample" tag accepts two parameters: the name of the language as it should appear to
-# the reader, and the name of the file where the given codd resides, separated by a comma.
+# The "sample" tag accepts one parameter: the name of the language as it should appear to
+# the reader.
 #
 # Code samples are placed directly beneath their associated "sample" tag.
 #
@@ -73,10 +94,16 @@ module Jekyll
 
         def initialize(tag_name, params, tokens)
             super
+            # Title that differentiates this code sample from others on the page.
             @title = params.strip
+
+            # Info needed to render the HTML for the language tabs above the sample.
             @tabs = CodeTabsBlock.new(@title)
+
+            # Info needed to render each per-language code sample.
             @codeBlocks = []
 
+            # List of BlockBody's to facilitate the standard parsing process.
             @blocks = []
             @blocks << @tabs
         end
@@ -104,10 +131,8 @@ module Jekyll
         # finds additional Liquid tags.
         def unknown_tag(name, params, tokens)
             if name == "sample"
-                parsedParams = params.split(",").map{ |p| p.strip }
-                language = parsedParams[0]
-                code_file = parsedParams[1]
-                codeBlock = CodeBlock.new(@title, language, code_file)
+                language = params.strip
+                codeBlock = CodeBlock.new(@title, language)
 
                 @tabs.addLanguage(language)
                 @codeBlocks << codeBlock
@@ -174,14 +199,12 @@ module Jekyll
 
     class CodeBlock < Liquid::BlockBody
         attr_reader :language_name
-        attr_reader :code_file
         attr_accessor :is_active
 
-        def initialize(title, language_name, code_file)
+        def initialize(title, language_name)
             super()
             @title = title
             @language_name = language_name
-            @code_file = code_file
             @is_active = false
         end
 
@@ -190,7 +213,6 @@ module Jekyll
             language_name_lower = @language_name.downcase
             %Q(
 <div class="tab-pane #{@is_active ? "active" : ""}" id="#{@title}-#{language_name_lower}-tab" role="tabpanel" aria-labelledby="#{@title}-#{language_name_lower}-tab" markdown="1">
-<?code-excerpt "#{code_file}" title?>
 #{code}
 </div>
 )

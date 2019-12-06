@@ -50,7 +50,8 @@ attaching an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at some other time that works for your app:
 
 {% samplecode add-fragment %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     // Define a tag String to represent the FlutterFragment within this
@@ -95,7 +96,8 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   companion object {
@@ -151,7 +153,8 @@ forwarded from your host `Activity` to `FlutterFragment`. These calls are shown
 below:
 
 {% samplecode forward-activity-calls %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 public class MyActivity extends FragmentActivity {
     @Override
@@ -195,7 +198,8 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 class MyActivity : FragmentActivity() {
   override fun onPostResume() {
@@ -254,7 +258,8 @@ To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
 `FlutterFragment` with the `withCachedEngine()` factory method.
 
 {% samplecode use-prewarmed-engine %}
-{% sample Java,MyApplication.java %}
+{% sample Java %}
+<?code-excerpt "MyApplication.java" title?>
 ```java
 // Somewhere in your app before your FlutterFragment is needed, like the
 // Application class...
@@ -270,15 +275,17 @@ flutterEngine.getDartExecutor().executeDartEntrypoint(
 FlutterEngineCache
   .getInstance()
   .put("my_engine_id", flutterEngine);
+```
 
-//....sometime later...
-
-// In your Activity.
+<?code-excerpt "MyActivity.java" title?>
+```java
 flutterFragment.withCachedEngine("my_engine_id").build();
 ```
-{% sample Kotlin,MyApplication.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyApplication.kt" title?>
 ```kotlin
-// Somewhere in your app before your FlutterFragment is needed...
+// Somewhere in your app before your FlutterFragment is needed, like the
+// Application class...
 // Instantiate a FlutterEngine.
 val flutterEngine = FlutterEngine(context)
 
@@ -291,10 +298,10 @@ flutterEngine.getDartExecutor().executeDartEntrypoint(
 FlutterEngineCache
   .getInstance()
   .put("my_engine_id", flutterEngine)
+```
 
-//....sometime later...
-
-// In your Activity.
+<?code-excerpt "MyActivity.kt" title?>
+```kotlin
 flutterFragment.withCachedEngine("my_engine_id").build()
 ```
 {% endsamplecode %}
@@ -324,14 +331,16 @@ initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 `Builder` allows you to specify a desired initial route, as shown below:
 
 {% samplecode launch-with-initial-route %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build();
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -361,13 +370,15 @@ execute for the given Flutter experience. To specify an entrypoint, build
 `FlutterFragment` as follows:
 
 {% samplecode launch-with-custom-entrypoint %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 val flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
@@ -401,7 +412,8 @@ of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
 {% samplecode launch-with-rendermode %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -413,7 +425,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -459,7 +472,8 @@ To enable transparency for a `FlutterFragment`, build it with the following
 configuration:
 
 {% samplecode launch-with-transparency %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -471,7 +485,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -514,7 +529,8 @@ prevent Flutter from controlling the `Activity`'s system UI, use the
 shown below. 9
 
 {% samplecode attach-to-activity %}
-{% sample Java,MyActivity.java %}
+{% sample Java %}
+<?code-excerpt "MyActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -526,7 +542,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .shouldAttachEngineToActivity(false)
     .build();
 ```
-{% sample Kotlin,MyActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()

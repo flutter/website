@@ -44,7 +44,8 @@ With `FlutterActivity` registered in your manifest file, add code to launch
 example shows `FlutterActivity` being launched from an `OnClickListener`.
 
 {% samplecode default-activity-launch %}
-{% sample Java,ExistingActivity.java %}
+{% sample Java %}
+<?code-excerpt "ExistingActivity.java" title?>
 ```java
 myButton.setOnClickListener(new OnClickListener() {
   @Override
@@ -55,7 +56,8 @@ myButton.setOnClickListener(new OnClickListener() {
   }
 });
 ```
-{% sample Kotlin,ExistingActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "ExistingActivity.kt" title?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -72,7 +74,8 @@ demonstrates how to launch a `FlutterActivity` that initially renders a custom
 route in Flutter.
 
 {% samplecode custom-activity-launch %}
-{% sample Java,ExistingActivity.java %}
+{% sample Java %}
+<?code-excerpt "ExistingActivity.java" title?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -86,7 +89,8 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
-{% sample Kotlin,ExistingActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "ExistingActivity.kt" title?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -121,7 +125,8 @@ instantiate a `FlutterEngine`. The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
 {% samplecode prewarm-engine %}
-{% sample Java,MyApplication.java %}
+{% sample Java %}
+<?code-excerpt "MyApplication.java" title?>
 ```java
 public class MyApplication extends Application {
   @Override
@@ -142,7 +147,8 @@ public class MyApplication extends Application {
   }
 }
 ```
-{% sample Kotlin,MyApplication.kt %}
+{% sample Kotlin %}
+<?code-excerpt "MyApplication.kt" title?>
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
@@ -189,7 +195,8 @@ new one. To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
 {% samplecode cached-engine-activity-launch %}
-{% sample Java,ExistingActivity.java %}
+{% sample Java %}
+<?code-excerpt "ExistingActivity.java" title?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
   @Override
@@ -203,6 +210,7 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 {% sample Kotlin,ExistingActivity.kt %}
+<?code-excerpt "ExistingActivity.kt" title?>
 ```kotlin
 myButton.setOnClickListener {
   startActivity(
@@ -293,7 +301,8 @@ To launch your `FlutterActivity` with a transparent background, pass the
 appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
-{% sample Java,ExistingActivity.java %}
+{% sample Java %}
+<?code-excerpt "ExistingActivity.java" title?>
 ```java
 // Using a new FlutterEngine.
 startActivity(
@@ -311,7 +320,8 @@ startActivity(
     .build(context)
 );
 ```
-{% sample Kotlin,ExistingActivity.kt %}
+{% sample Kotlin %}
+<?code-excerpt "ExistingActivity.kt" title?>
 ```kotlin
 // Using a new FlutterEngine.
 startActivity(
