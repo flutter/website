@@ -1,5 +1,5 @@
 ---
-title: Load sequence, performance and memory
+title: Load sequence, performance, and memory
 ---
 
 This page describes the breakdown of the steps involved
