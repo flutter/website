@@ -90,9 +90,11 @@ The resulting IPA file for the `example/helloworld` app
 
 A closer result can be obtained by creating a release archive as described in
 the [iOS create build archive instructions][]. If bitcode is enabled on your
-project, you will also have the option to rebuild from bitcode. You can also
-select app thinning for a specific phone architecture, which should be very
-close to the final IPA size from the store for that device.
+project, you will also have the option to rebuild from bitcode. This option
+should be selected if it is available, to more closely match what the App Store
+will produce for your application. You can also select app thinning for a
+specific phone architecture, which should be very close to the final IPA size
+from the store for that device.
 
 To measure an iOS app exactly,
 you have to upload a release IPA to Apple’s
