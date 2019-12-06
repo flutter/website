@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ## 3. Display a button that toggles the visibility
 
 Now that you have some data to determine whether the green box
-should be visible, you need a way update that data.
+should be visible, you need a way to update that data.
 In this example, if the box is visible, hide it.
 If the box is hidden, show it.
 
