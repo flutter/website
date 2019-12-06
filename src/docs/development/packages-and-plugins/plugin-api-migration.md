@@ -1,5 +1,5 @@
 ---
-title: Migrating your plugin to the new APIs
+title: Migrating your plugin to the new Android APIs
 description: How to migrate a plugin using the old APIs to the new APIs.
 ---
 
@@ -11,7 +11,7 @@ and redirect to this file.
 
 {{site.alert.note}}
   You might be directed to this page if the framework detects that
-  your app uses a plugin based on the old APIs. 
+  your app uses a plugin based on the old Android APIs.
 {{site.alert.end}}
 
 If you don't write or maintain a Flutter plugin,
@@ -33,29 +33,25 @@ a plugin that uses the new APIs, see the
 The following instructions outline the steps for migration:
 
 1. Update the main plugin class (`*Plugin.java`) to implement
-   [`FlutterPlugin`][]. For more complex plugins,
-   you can separate the `FlutterPlugin` and `MethodCallHandler`
-   into two classes. See the next section, [Basic plugin][],
-   for more details on accessing app resources with the
-   latest version (v2) of embedding.
-
-  Also, note that the plugin should still contain the static
-  `registerWith()` method to remain compatible with apps that
-  don't use the v2 embedding. The easiest thing to do
-  (if possible) is move the logic from `registerWith()`
-  into a private method that both `registerWith()` and
-  `onAttachedToEngine()` can call. Either `registerWith()`
-  or `onAttachToEngine()` will be called, not both.
-
-  If you are creating channels in your `onAttachToEngine()`,
-  there is no need to cleanup those creations in
-  `onDetachFromEngine()`, and creating them again the second
-  time `onAttachToEngine()` is called is fine.
-
-  In addition, you should document all non-overridden public
-  members within the plugin. In an add-to-app scenario,
-  these classes will be accessible to a developer and
-  require documentation.
+   [`FlutterPlugin`][]. For more complex plugins, you can separate the
+   `FlutterPlugin` and `MethodCallHandler` into two classes. See the next
+   section, [Basic plugin][], for more details on accessing app resources with
+   the latest version (v2) of embedding.
+   <br><br>
+   Also, note that the plugin should still contain the static `registerWith()`
+   method to remain compatible with apps that don't use the v2 embedding. The
+   easiest thing to do (if possible) is move the logic from `registerWith()`
+   into a private method that both `registerWith()` and `onAttachedToEngine()`
+   can call. Either `registerWith()` or `onAttachToEngine()` will be called, not
+   both.
+   <br><br>
+   If you are creating channels in your `onAttachToEngine()`, there is no need
+   to cleanup those creations in `onDetachFromEngine()`, and creating them again
+   the second time `onAttachToEngine()` is called is fine.
+   <br><br>
+   In addition, you should document all non-overridden public members within the
+   plugin. In an add-to-app scenario, these classes will be accessible to a
+   developer and require documentation.
 
 2. (Optional) If your plugin needs an `Activity` reference,
    also implement `ActivityAware`.
@@ -69,7 +65,7 @@ The following instructions outline the steps for migration:
    public constructor for you plugin class if one didn't
    exist already. For example:
 
-```
+```java
 package io.flutter.plugins.firebasecoreexample;
 
 import io.flutter.embedding.android.FlutterActivity;
@@ -90,7 +86,7 @@ public class MainActivity extends FlutterActivity {
 5. (Optional) Use ShimPluginRegistry to add plugins that don’t yet
    support the v2 embedding. For example:
 
-```
+```java
 ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
 PathProviderPlugin.registerWith(
         shimPluginRegistry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
@@ -101,7 +97,7 @@ VideoPlayerPlugin.registerWith(
 6. Create an `EmbeddingV1Activity.java` file that uses the v1
    embedding in the same folder as `MainActivity`. For example:
 
-```
+```java
 package io.flutter.plugins.firebasecoreexample;
 
 import android.os.Bundle;
@@ -121,7 +117,7 @@ public class EmbeddingV1Activity extends FlutterActivity {
    <plugin_name>/example/android/app/src/main/AndroidManifest.xml.
    For example:
 
-```
+```xml
 <activity
     android:name=".EmbeddingV1Activity"
     android:theme="@style/LaunchTheme"
@@ -134,7 +130,7 @@ public class EmbeddingV1Activity extends FlutterActivity {
 8. To have the plugin support Flutter on branches master and stable,
     include this gradle script in <plugin_name>/android/build.gradle.
 
-```
+```groovy
 // TODO(<github-username>): Remove this hack once androidx
 // lifecycle is included on stable.
 // https://github.com/flutter/flutter/issues/42348
@@ -173,7 +169,7 @@ but aren't required.
 1. Update `<plugin_name>/example/android/app/build.gradle`
    to replace references to `android.support.test` with `androidx.test`:
 
-```
+```groovy
 defaultConfig {
    ...
   testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -181,7 +177,7 @@ defaultConfig {
 }
 ```
 
-```
+```groovy
 dependencies {
 ...
 androidTestImplementation 'androidx.test:runner:1.2.0'
@@ -195,7 +191,7 @@ androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
    in `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/`.
    You will need to create these directories. For example:
 
-```
+```java
 package io.flutter.plugins.firebase.core;
 
 import androidx.test.rule.ActivityTestRule;
@@ -210,7 +206,7 @@ public class MainActivityTest {
 }
 ```
 
-```
+```java
 package io.flutter.plugins.firebase.core;
 
 import androidx.test.rule.ActivityTestRule;
@@ -231,7 +227,7 @@ public class EmbeddingV1ActivityTest {
    `<plugin_name>/pubspec.yaml` and
    `<plugin_name>/example/pubspec.yaml`.
 
-```
+```yaml
 e2e: ^0.2.1
 flutter_driver:
   sdk: flutter
@@ -240,7 +236,7 @@ flutter_driver:
 4. Manually register the E2E plugin in `MainActivity.java`
    alongside any other plugins used by the example app.
 
-```
+```java
 package io.flutter.plugins.packageinfoexample;
 
 import dev.flutter.plugins.e2e.E2EPlugin;
@@ -266,7 +262,7 @@ public class MainActivity extends FlutterActivity {
    which is the minimum version for which we can guarantee support.
    For example:
 
-```
+```yaml
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
   flutter: ">=1.9.1+hotfix.4 <2.0.0"
@@ -279,7 +275,7 @@ environment:
    This is a smoke test to ensure that the plugin properly registers
    with the new embedder. For example:
 
-```
+```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:battery/battery.dart';
 import 'package:e2e/e2e.dart';
@@ -298,7 +294,7 @@ void main() {
 6. Test run the e2e tests locally. In a terminal,
    do the following:
 
-```
+```sh
 cd <plugin_name>/example
 flutter build apk
 cd android
@@ -311,7 +307,7 @@ cd android
 To get started with a Flutter Android plugin in code,
 start by implementing `FlutterPlugin`.
 
-```
+```java
 public class MyPlugin implements FlutterPlugin {
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
@@ -354,7 +350,7 @@ such as requesting permissions, or altering Android UI chrome,
 then you need to take additional steps to define your plugin.
 You must implement the ActivityAware interface.
 
-```
+```java
 public class MyPlugin implements FlutterPlugin, ActivityAware {
   //...normal plugin behavior is hidden...
 
