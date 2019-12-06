@@ -1,5 +1,5 @@
 ---
-title: Migrating your plugin to the new APIs
+title: Migrating your plugin to the new Android APIs
 description: How to migrate a plugin using the old APIs to the new APIs.
 ---
 
@@ -11,7 +11,7 @@ and redirect to this file.
 
 {{site.alert.note}}
   You might be directed to this page if the framework detects that
-  your app uses a plugin based on the old APIs.
+  your app uses a plugin based on the old Android APIs.
 {{site.alert.end}}
 
 If you don't write or maintain a Flutter plugin,
