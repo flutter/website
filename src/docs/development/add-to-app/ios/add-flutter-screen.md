@@ -40,19 +40,8 @@ The proper place to do this is specific to your host app. As an example, we will
 demonstrate creating a `FlutterEngine`, exposed as a property, on app startup in
 the app delegate.
 
-<ul class="nav nav-tabs" id="engine-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="engine-objc" href="#engine-objc-tab" role="tab" aria-controls="engine-objc" aria-selected="true">Objective-C</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="engine-swift" href="#engine-swift-tab" role="tab" aria-controls="engine-swift" aria-selected="false">Swift</a>
-  </li>
-</ul>
-
-<div class="tab-content"> {% comment %} FlutterEngine language tab start {% endcomment -%}
-
-<div class="tab-pane active" id="engine-objc-tab" role="tabpanel" aria-labelledby="engine-objc-tab" markdown="1">
-
+{% samplecode engine %}
+{% sample Objective-C %}
 **In `AppDelegate.h`:**
 
 <?code-excerpt "AppDelegate.h" title?>
@@ -86,11 +75,7 @@ the app delegate.
 
 @end
 ```
-
-</div>
-
-<div class="tab-pane" id="engine-swift-tab" role="tabpanel" aria-labelledby="engine-swift-tab" markdown="1">
-
+{% sample Swift %}
 **In `AppDelegate.swift`:**
 
 <?code-excerpt "AppDelegate.swift" title?>
@@ -111,10 +96,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate below.
   }
 }
 ```
-
-</div>
-
-</div>{% comment %} FlutterEngine language tab end {% endcomment -%}
+{% endsamplecode %}
 
 ### Show a FlutterViewController with your FlutterEngine
 
@@ -123,19 +105,8 @@ present a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewCont
 The `FlutterViewController` uses the `FlutterEngine` instance created in the
 `AppDelegate`.
 
-<ul class="nav nav-tabs" id="vc-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vc-objc" href="#vc-objc-tab" role="tab" aria-controls="vc-objc" aria-selected="true">Objective-C</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="vc-swift" href="#vc-swift-tab" role="tab" aria-controls="vc-swift" aria-selected="false">Swift</a>
-  </li>
-</ul>
-
-<div class="tab-content"> {% comment %} FlutterViewController language tab start {% endcomment -%}
-
-<div class="tab-pane active" id="vc-objc-tab" role="tabpanel" aria-labelledby="vc-objc-tab" markdown="1">
-
+{% samplecode vc %}
+{% sample Objective-C %}
 <?code-excerpt "ViewController.m" title?>
 ```objectivec
 @import Flutter;
@@ -166,11 +137,7 @@ The `FlutterViewController` uses the `FlutterEngine` instance created in the
 }
 @end
 ```
-
-</div>
-
-<div class="tab-pane" id="vc-swift-tab" role="tabpanel" aria-labelledby="vc-swift-tab" markdown="1">
-
+{% sample Swift %}
 <?code-excerpt "ViewController.swift" title?>
 ```swift
 import UIKit
@@ -197,10 +164,7 @@ class ViewController: UIViewController {
   }
 }
 ```
-
-</div>
-
-</div>{% comment %} FlutterViewController language tab end {% endcomment -%}
+{% endsamplecode %}
 
 Now you have a Flutter screen embedded in your iOS app.
 
@@ -227,19 +191,8 @@ To let the `FlutterViewController` present without an existing `FlutterEngine`
 simply omit the `FlutterEngine` construction and create the
 `FlutterViewController` without an engine reference.
 
-<ul class="nav nav-tabs" id="no-engine-vc-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="no-engine-vc-objc" href="#no-engine-vc-objc-tab" role="tab" aria-controls="no-engine-vc-objc" aria-selected="true">Objective-C</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="no-engine-vc-swift" href="#no-engine-vc-swift-tab" role="tab" aria-controls="no-engine-vc-swift" aria-selected="false">Swift</a>
-  </li>
-</ul>
-
-<div class="tab-content"> {% comment %} No engine FlutterViewController language tab start {% endcomment -%}
-
-<div class="tab-pane active" id="no-engine-vc-objc-tab" role="tabpanel" aria-labelledby="no-engine-vc-objc-tab" markdown="1">
-
+{% samplecode no-engine-vc %}
+{% sample Objective-C %}
 <?code-excerpt "ViewController.m" title?>
 ```objectivec
 // Existing code omitted.
@@ -250,11 +203,7 @@ simply omit the `FlutterEngine` construction and create the
 }
 @end
 ```
-
-</div>
-
-<div class="tab-pane" id="no-engine-vc-swift-tab" role="tabpanel" aria-labelledby="no-engine-vc-swift-tab" markdown="1">
-
+{% sample Swift %}
 <?code-excerpt "ViewController.swift" title?>
 ```swift
 // Existing code omitted.
@@ -263,10 +212,7 @@ func showFlutter() {
   present(flutterViewController, animated: true, completion: nil)
 }
 ```
-
-</div>
-
-</div>{% comment %} No engine FlutterViewController language tab end {% endcomment -%}
+{% endsamplecode %}
 
 See [Loading sequence and performance](/docs/development/add-to-app/performance)
 for more explorations on latency and memory usage.
@@ -446,37 +392,18 @@ function in a specific file.
 
 For instance,
 
-<ul class="nav nav-tabs" id="entrypoint-library-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="entrypoint-library-objc" href="#entrypoint-library-objc-tab" role="tab" aria-controls="entrypoint-library-objc" aria-selected="true">Objective-C</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="entrypoint-library-swift" href="#entrypoint-library-swift-tab" role="tab" aria-controls="entrypoint-library-swift" aria-selected="false">Swift</a>
-  </li>
-</ul>
-
-<div class="tab-content"> {% comment %} Entrypoint language language tab start {% endcomment -%}
-
-<div class="tab-pane active" id="entrypoint-library-objc-tab" role="tabpanel" aria-labelledby="entrypoint-library-objc-tab" markdown="1">
-
+{% samplecode entrypoint-library %}
+{% sample Objective-C %}
 <?code-excerpt "Objective-C" title?>
 ```objectivec
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
-
-</div>
-
-<div class="tab-pane" id="entrypoint-library-swift-tab" role="tabpanel" aria-labelledby="entrypoint-library-swift-tab" markdown="1">
-
+{% sample Swift %}
 <?code-excerpt "Swift" title?>
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
-
-</div>
-
-</div>{% comment %} Entrypoint language language tab end {% endcomment -%}
-
+{% endsamplecode %}
 
 will run `myOtherEntrypoint()` in `lib/other_file.dart` instead of `main()` in
 `lib/main.dart`.
@@ -486,19 +413,8 @@ will run `myOtherEntrypoint()` in `lib/other_file.dart` instead of `main()` in
 An initial route can be set for your Flutter [`WidgetsApp`]({{site.api}}/flutter/widgets/WidgetsApp-class.html)
 when constructing the engine.
 
-<ul class="nav nav-tabs" id="initial-route-language" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="initial-route-objc" href="#initial-route-objc-tab" role="tab" aria-controls="initial-route-objc" aria-selected="true">Objective-C</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="initial-route-swift" href="#initial-route-swift-tab" role="tab" aria-controls="initial-route-swift" aria-selected="false">Swift</a>
-  </li>
-</ul>
-
-<div class="tab-content"> {% comment %} Initial route language tab start {% endcomment -%}
-
-<div class="tab-pane active" id="initial-route-objc-tab" role="tabpanel" aria-labelledby="initial-route-objc-tab" markdown="1">
-
+{% samplecode initial-route %}
+{% sample Objective-C %}
 <?code-excerpt "Creating engine" title?>
 ```objectivec
 FlutterEngine *flutterEngine =
@@ -507,21 +423,14 @@ FlutterEngine *flutterEngine =
                                       arguments:@"/onboarding"];
 [flutterEngine run];
 ```
-
-</div>
-
-<div class="tab-pane" id="initial-route-swift-tab" role="tabpanel" aria-labelledby="initial-route-swift-tab" markdown="1">
-
+{% sample Swift %}
 <?code-excerpt "Creating engine" title?>
 ```swift
 let flutterEngine = FlutterEngine(name: "my flutter engine")
 flutterEngine.navigationChannel.invokeMethod("setInitialRoute", arguments:"/onboarding")
 flutterEngine.run()
 ```
-
-</div>
-
-</div>{% comment %} Initial route language tab end {% endcomment -%}
+{% endsamplecode %}
 
 will set your `dart:ui`'s [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
 to `"/onboarding"` instead of `"/"`.
