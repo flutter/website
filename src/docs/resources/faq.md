@@ -371,6 +371,16 @@ binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
+Since Flutter has started bundling bitcode, the size of the release
+Flutter.framework has vastly increased. This is because the release binary now
+contains a large blob of LLVM IR (bitcode). This is used by later process in
+Xcode and Apple's App Store to produce a final binary with the latest compiler
+optimizations and features. The profile and debug frameworks contain only
+"bitcode marker", and are more representative of the engine's actual binary
+size. Whether you ship with bitcode or not, the increased size of the release
+framework is stripped out during the final steps of the build. These steps
+happen after archiving your app and shipping it to the store.
+
 Of course, YMMV, and we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
 `--split-per-abi` option in version 1.7.8+hotfix.3 and later)
