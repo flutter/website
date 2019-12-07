@@ -440,11 +440,14 @@ to `"/onboarding"` instead of `"/"`.
 `FlutterEngine` in order for Flutter's very first frame to use the desired
 route.
 
-Specifically, this must be called before running the Dart entrypoint which may
-run [`runApp`]({{site.api}}/flutter/widgets/runApp.html) which
-may build a Material/Cupertino/WidgetsApp which may implicitly create a
+Specifically, this must be called before running the Dart entrypoint.  The
+entrypoint may lead to a series of events where
+[`runApp`]({{site.api}}/flutter/widgets/runApp.html) builds a
+Material/Cupertino/WidgetsApp which implicitly creates a
 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) which
-may read `window.defaultRouteName` when the [`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) is first initialized.
+may read `window.defaultRouteName` when the
+[`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) is
+first initialized.
 
 Setting the initial route after running the engine will have no effect.
 {{site.alert.end}}
