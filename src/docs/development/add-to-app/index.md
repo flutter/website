@@ -51,7 +51,12 @@ the _**following limitations**_:
 
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
   your Gradle script; or
-- Build your Flutter module into a generic [Android Archive (AAR)](https://developer.android.com/studio/projects/android-library).
+- Build your Flutter module into a generic [Android Archive (AAR)](https://developer.android.com/studio/projects/android-library)
+  for integration into your own build system and for better Jetifier interoperability
+  with AndroidX.
+- [FlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)
+  API for starting and persisting your Flutter environment independently of
+  attaching a [FlutterActivity]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html)/[FlutterFragment]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html) etc.
 - Android Studio Android/Flutter co-editing and module creation/import wizard.
 - Java and Kotlin host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
@@ -63,7 +68,11 @@ the _**following limitations**_:
 ### Add to iOS applications
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
  your CocoaPods and to your Xcode build phase; or
-- Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html).
+- Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
+  for integration into your own build system.
+- [FlutterEngine]({{site.api}}/objcdoc/Classes/FlutterEngine.html) API for
+  starting and persisting your Flutter environment independently of attaching a
+  [FlutterViewController]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
 - Objective-C and Swift host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
   with the platform.
