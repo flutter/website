@@ -98,8 +98,9 @@ during link-time optimization.
 
 For example,
 to create a C++ file named `ios/Classes/native_add.cpp`,
-use the following instructions. Start from the root
-directory of your project:
+use the following instructions. (Note that the template
+has already created this file for you.) Start from the
+root directory of your project:
 
 ```bash
 cat > ios/Classes/native_add.cpp << EOF
@@ -112,9 +113,11 @@ int32_t native_add(int32_t x, int32_t y) {
 EOF
 ```
 
-The podspec fle (`ios/native_add.podspec`) automatically
-includes all C/C++ files in `ios/Classes`, and they are
-compiled within the Xcode build system.
+On iOS, you need to tell xcode to statically link the file:
+
+ 1. In Xcode, open `Runner.xcodeproj`.
+ 2. Add the C/C++/Objective-C/Swift
+    source files to the Xcode project.
 
 On Android, you need to create a `CMakeLists.txt` file
 to define how the sources should be compiled and point
@@ -168,7 +171,7 @@ import 'dart:io';   // For Platform.isX
 final DynamicLibrary nativeAddLib =
   Platform.isAndroid
     ? DynamicLibrary.open("libnative_add.so")
-    : DynamicLibrary.open("native_add.framework/native_add");
+    : DynamicLibrary.process();
 ```
 
 Note that on Android the native library is named

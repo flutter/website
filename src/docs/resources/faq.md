@@ -371,7 +371,16 @@ binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-Of course, YMMV, and we recommend that you measure your own app.
+As of Flutter SDK 1.12, the release engine binary now includes LLVM IR
+(bitcode). Xcode uses this bitcode to produce a final binary for the App Store
+containing the latest compiler optimizations and features.
+The profile and debug frameworks contain only a _bitcode marker_,
+and are more representative of the engine's actual binary size.
+Whether you ship with bitcode or not, the increased size of the release
+framework is stripped out during the final steps of the build.
+These steps happen after archiving your app and shipping it to the store.
+
+Of course, we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
 `--split-per-abi` option in version 1.7.8+hotfix.3 and later)
 and load the APK
