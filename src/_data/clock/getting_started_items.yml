@@ -23,14 +23,14 @@
   - text: >
       You can build upon the existing code (<span class="code-font">analog_clock</span> or <span class="code-font">
       digital_clock</span>), or you can start from scratch (<span class="code-font">flutter create &#60;name&#62;_clock</span>).
-      If you are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab">
+      If you are new to Flutter, check out the <a href="https://flutter.dev/docs/get-started/codelab" target="_blank" rel="noopener noreferrer">
       Write your first Flutter app</a> codelab.
 
 - title: >
     Prepare your clock for submission:
   subItems:
     - text: >
-        <a href="https://flutter.dev/docs/development/tools/formatting">Format the Dart code.</a>
+        <a href="https://flutter.dev/docs/development/tools/formatting" target="_blank" rel="noopener noreferrer">Format the Dart code.</a>
     - text: >
         Verify that your clock builds and runs on
         <a href="https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#stable" target="_blank" rel="noopener noreferrer">
