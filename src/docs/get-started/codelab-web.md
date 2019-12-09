@@ -11,7 +11,7 @@ short-title: Write your first web app
   iOS tooling, the completed app just works on all of these devices!**
 {{site.alert.end}}
 
-{% asset image="get-started/sign-in.gif" alt="The web app that you'll be building" class='site-image-right' %}
+{% asset get-started/sign-in alt="The web app that you'll be building" class='site-image-right' %}
 
 {% comment %}
 {% endcomment %}
