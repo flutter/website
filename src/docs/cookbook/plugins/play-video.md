@@ -8,16 +8,15 @@ next:
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
-Playing videos is a common task in app development, and Flutter apps are no
-exception. To play videos, the Flutter team provides the
-[`video_player`]({{site.pub-pkg}}/video_player) plugin. You can
-use the `video_player` plugin to play videos stored on the file system,
-as an asset, or from the internet.
+Playing videos is a common task in app development,
+and Flutter apps are no exception. To play videos,
+the Flutter team provides the [`video_player`][] plugin.
+You can use the `video_player` plugin to play videos
+stored on the file system, as an asset, or from the internet.
 
 On iOS, the `video_player` plugin makes use of
-[`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) to
-handle playback. On Android, it uses
-[`ExoPlayer`](https://google.github.io/ExoPlayer/).
+[`AVPlayer`][] to handle playback. On Android,
+it uses [`ExoPlayer`][].
 
 This recipe demonstrates how to use the `video_player` package to stream a
 video from the internet with basic play and pause controls using
@@ -148,14 +147,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 ## 4. Display the video player
 
 Now, display the video. The `video_player` plugin provides the
-[`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html)
-widget to display the video initialized by the `VideoPlayerController`.
+[`VideoPlayer`][] widget to display the video initialized by
+the `VideoPlayerController`.
 By default, the `VideoPlayer` widget takes up as much space as possible.
-This often isn't ideal for videos because they are meant to be displayed in a
-specific aspect ratio, such as 16x9 or 4x3.
+This often isn't ideal for videos because they are meant
+to be displayed in a specific aspect ratio, such as 16x9 or 4x3.
 
-Therefore, wrap the `VideoPlayer` widget in an
-[`AspectRatio`]({{site.api}}/flutter/widgets/AspectRatio-class.html)
+Therefore, wrap the `VideoPlayer` widget in an [`AspectRatio`][]
 widget to ensure that the video has the correct proportions.
 
 Furthermore, you must display the `VideoPlayer` widget after the
@@ -190,15 +188,15 @@ FutureBuilder(
 ## 5. Play and pause the video
 
 By default, the video starts in a paused state. To begin playback,
-call the
-[`play()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html)
-method provided by the `VideoPlayerController`. To pause playback, call the
-[`pause()`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html)
-method.
+call the [`play()`][] method provided by the `VideoPlayerController`.
+To pause playback, call the [`pause()`][] method.
 
-For this example, add a `FloatingActionButton` to your app that displays a play
-or pause icon depending on the situation. When the user taps the button,
-play the video if it's currently paused, or pause the video if it's playing.
+For this example,
+add a `FloatingActionButton` to your app that displays a play
+or pause icon depending on the situation.
+When the user taps the button,
+play the video if it's currently paused,
+or pause the video if it's playing.
 
 <!-- skip -->
 ```dart
@@ -329,3 +327,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   }
 }
 ```
+
+
+[`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
+[`AVPlayer`]: https://developer.apple.com/documentation/avfoundation/avplayer
+[`ExoPlayer`]: https://google.github.io/ExoPlayer/
+[`pause()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html
+[`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
+[`video_player`]: {{site.pub-pkg}}/video_player
+[`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html

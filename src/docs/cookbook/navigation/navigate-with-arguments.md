@@ -8,27 +8,22 @@ next:
   path: /docs/cookbook/navigation/returning-data
 ---
 
-The [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
-provides the ability to navigate to a named route from any part of an app using
-a common identifier. In some cases, you might also need to pass arguments to a
+The [`Navigator`][] provides the ability to navigate
+to a named route from any part of an app using
+a common identifier.
+In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
 You can accomplish this task using the `arguments` parameter of the
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
-method. Extract the arguments using the
-[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
-method or inside an
-[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
-function provided to the
-[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
-or
-[`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html)
+[`Navigator.pushNamed()`][] method. Extract the arguments using the
+[`ModalRoute.of()`][] method or inside an [`onGenerateRoute()`][]
+function provided to the [`MaterialApp`][] or [`CupertinoApp`][]
 constructor.
 
-This recipe demonstrates how to pass arguments to a named route and read the
-arguments using `ModalRoute.of()` and `onGenerateRoute()` using the
-following steps:
+This recipe demonstrates how to pass arguments to a named
+route and read the arguments using `ModalRoute.of()`
+and `onGenerateRoute()` using the following steps:
 
   1. Define the arguments you need to pass.
   2. Create a widget that extracts the arguments.
@@ -58,10 +53,11 @@ class ScreenArguments {
 
 ## 2. Create a widget that extracts the arguments
 
-Next, create a widget that extracts and displays the `title` and `message` from
-the `ScreenArguments`. To access the `ScreenArguments`, use the
-[`ModalRoute.of()`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
-method. This method returns the current route with the arguments.
+Next, create a widget that extracts and displays the
+`title` and `message` from the `ScreenArguments`.
+To access the `ScreenArguments`,
+use the [`ModalRoute.of()`][] method.
+This method returns the current route with the arguments.
 
 <!-- skip -->
 ```dart
@@ -104,9 +100,8 @@ MaterialApp(
 
 ## 4. Navigate to the widget
 
-Finally, navigate to the `ExtractArgumentsScreen` when a user taps a button
-using
-[`Navigator.pushNamed()`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
+Finally, navigate to the `ExtractArgumentsScreen`
+when a user taps a button using [`Navigator.pushNamed()`][].
 Provide the arguments to the route via the `arguments` property. The
 `ExtractArgumentsScreen` extracts the `title` and `message` from these
 arguments.
@@ -115,35 +110,27 @@ arguments.
 ```dart
 // A button that navigates to a named route. The named route
 // extracts the arguments by itself.
-RaisedButton(
-  child: Text("Navigate to screen that extracts arguments"),
-  onPressed: () {
-    // When the user taps the button, navigate to the specific route
-    // and provide the arguments as part of the RouteSettings.
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ExtractArgumentsScreen(),
-        // Pass the arguments as part of the RouteSettings. The
-        // ExtractArgumentScreen reads the arguments from these
-        // settings.
-        settings: RouteSettings(
-          arguments: ScreenArguments(
-            'Extract Arguments Screen',
-            'This message is extracted in the build method.',
-          ),
-        ),
-      ),
-    );
-  },
-),
+RaisedButton(                                                   
+  child: Text("Navigate to screen that extracts arguments"),    
+  onPressed: () {                                               
+    // When the user taps the button, navigate to a named route 
+    // and provide the arguments as an optional parameter.      
+    Navigator.pushNamed(                                        
+      context,                                                  
+      ExtractArgumentsScreen.routeName,                         
+      arguments: ScreenArguments(                               
+        'Extract Arguments Screen',                              
+        'This message is extracted in the build method.',       
+      ),                                                                                                                 
+    );                                                          
+  },                                                            
+),                                                                                                                           
 ```
 
 ## Alternatively, extract the arguments using `onGenerateRoute`
 
 Instead of extracting the arguments directly inside the widget, you can also
-extract the arguments inside an
-[`onGenerateRoute()`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+extract the arguments inside an [`onGenerateRoute()`][]
 function and pass them to a widget.
 
 The `onGenerateRoute()` function creates the correct route based on the given
@@ -187,30 +174,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Provide a function to handle named routes. Use this function to
-      // identify the named route being pushed, and create the correct
-      // Screen.
-      onGenerateRoute: (settings) {
-        // If you push the PassArguments route
-        if (settings.name == PassArgumentsScreen.routeName) {
-          // Cast the arguments to the correct type: ScreenArguments.
-          final ScreenArguments args = settings.arguments;
+        // Provide a function to handle named routes. Use this function to
+        // identify the named route being pushed, and create the correct
+        // Screen.
+        onGenerateRoute: (settings) {
+          // If you push the PassArguments route
+          if (settings.name == PassArgumentsScreen.routeName) {
+            // Cast the arguments to the correct type: ScreenArguments.
+            final ScreenArguments args = settings.arguments;
 
-          // Then, extract the required data from the arguments and
-          // pass the data to the correct screen.
-          return MaterialPageRoute(
-            builder: (context) {
-              return PassArgumentsScreen(
-                title: args.title,
-                message: args.message,
-              );
-            },
-          );
-        }
-      },
-      title: 'Navigation with Arguments',
-      home: HomeScreen(),
-    );
+            // Then, extract the required data from the arguments and
+            // pass the data to the correct screen.
+            return MaterialPageRoute(
+              builder: (context) {
+                return PassArgumentsScreen(
+                  title: args.title,
+                  message: args.message,
+                );
+              },
+            );
+          }
+        },
+        title: 'Navigation with Arguments',
+        home: HomeScreen(),
+        routes: {
+          ExtractArgumentsScreen.routeName: (context) =>
+              ExtractArgumentsScreen(),
+        });
   }
 }
 
@@ -230,21 +220,14 @@ class HomeScreen extends StatelessWidget {
             RaisedButton(
               child: Text("Navigate to screen that extracts arguments"),
               onPressed: () {
-                // When the user taps the button, navigate to the specific route
-                // and provide the arguments as part of the RouteSettings.
-                Navigator.push(
+                // When the user taps the button, navigate to a named route
+                // and provide the arguments as an optional parameter.
+                Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => ExtractArgumentsScreen(),
-                    // Pass the arguments as part of the RouteSettings. The
-                    // ExtractArgumentScreen reads the arguments from these
-                    // settings.
-                    settings: RouteSettings(
-                      arguments: ScreenArguments(
-                        'Extract Arguments Screen',
-                        'This message is extracted in the build method.',
-                      ),
-                    ),
+                  ExtractArgumentsScreen.routeName,
+                  arguments: ScreenArguments(
+                    'Extract Arguments Screen',
+                    'This message is extracted in the build method.',
                   ),
                 );
               },
@@ -337,3 +320,11 @@ class ScreenArguments {
 ```
 
 ![Demonstrates navigating to different routes with arguments](/images/cookbook/navigate-with-arguments.gif){:.site-mobile-screenshot}
+
+
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`ModalRoute.of()`]: {{site.api}}/flutter/widgets/ModalRoute/of.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html
+[`onGenerateRoute()`]: {{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html

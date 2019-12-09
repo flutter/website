@@ -23,6 +23,10 @@ If you have a specific request,
 [file an issue]({{site.github}}/flutter/website/issues).
 {% endcomment -%}
 
+* [Implicit animations codelab](/docs/codelabs/implicit-animations)<br>
+  Covers how to use implicit animations
+  using step-by-step instructions and interactive examples.
+
 * [Animations tutorial](/docs/development/ui/animations/tutorial)<br>
   Explains the fundamental classes in the Flutter animation package
   (controllers, Animatable, curves, listeners, builders),
