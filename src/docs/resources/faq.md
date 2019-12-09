@@ -478,14 +478,10 @@ The current progress is documented [on the Flutter wiki][].
 
 ### Can I use Flutter inside of my existing native app?
 
-Yes, you can embed a Flutter view in your existing Android
-for this use case (see [issue #14821][] for details).
+Yes, one fullscreen Flutter instance can be integrated per app on Android and
+iOS.
 
-Two current demonstrations of this are the
-[platform_view][] and [flutter_view][]
-examples. Some initial documentation is
-available in the wiki page
-[Add Flutter to existing apps][].
+See our integration documentation in the [add-to-app section][] of our website.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -936,7 +932,7 @@ that Flutter apps can be deployed to Apple's App Store.
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: /docs/development/accessibility-and-localization/accessibility
-[Add Flutter to existing apps]: {{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps
+[add-to-app section]: /docs/development/add-to-app
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
