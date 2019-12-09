@@ -8,10 +8,9 @@ next:
   path: /docs/cookbook/lists/grid-lists
 ---
 
-You might want to create a list that scrolls horizontally rather than
-vertically. The
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
-widget supports horizontal lists.
+You might want to create a list that scrolls
+horizontally rather than vertically.
+The [`ListView`][] widget supports horizontal lists.
 
 Use the standard `ListView` constructor, passing in a horizontal
 `scrollDirection`, which overrides the default vertical direction.
@@ -100,3 +99,6 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Horizontal List Demo](/images/cookbook/horizontal-list.gif){:.site-mobile-screenshot}
+
+
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

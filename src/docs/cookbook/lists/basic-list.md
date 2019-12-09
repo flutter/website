@@ -9,15 +9,14 @@ next:
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps.
-Flutter includes the
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
+Flutter includes the [`ListView`][]
 widget to make working with lists a breeze.
 
 ## Create a ListView
 
-Using the standard `ListView` constructor is perfect for lists that
-contain only a few items. The built-in
-[`ListTile`]({{site.api}}/flutter/material/ListTile-class.html)
+Using the standard `ListView` constructor is
+perfect for lists that contain only a few items.
+The built-in [`ListTile`][]
 widget is a way to give items a visual structure.
 
 <!-- skip -->
@@ -81,3 +80,7 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Basic List Demo](/images/cookbook/basic-list.png){:.site-mobile-screenshot}
+
+
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

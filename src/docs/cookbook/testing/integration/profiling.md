@@ -36,9 +36,7 @@ This recipe uses the following steps:
 
 In this recipe, record the performance of an app as it scrolls through a
 list of items. To focus on performance profiling, this recipe builds
-on the
-[Scrolling](/docs/cookbook/testing/integration/scrolling) recipe
-in integration tests.
+on the [Scrolling][] recipe in integration tests.
 
 Follow the instructions in that recipe to create an app, instrument the
 app, and write a test to verify that everything works as expected.
@@ -46,14 +44,10 @@ app, and write a test to verify that everything works as expected.
 ### 2. Record the performance of the app
 
 Next, record the performance of the app as it scrolls through the
-list. Perform this task using the
-[`traceAction()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html)
-method provided by the
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class.
+list. Perform this task using the [`traceAction()`][]
+method provided by the [`FlutterDriver`][] class.
 
-This method runs the provided function and records a
-[`Timeline`]({{site.api}}/flutter/flutter_driver/Timeline-class.html)
+This method runs the provided function and records a [`Timeline`][]
 with detailed information about the performance of the app. This example
 provides a function that scrolls through the list of items,
 ensuring that a specific item is displayed. When the function completes,
@@ -79,17 +73,16 @@ Now that you've captured a performance timeline, you need a way to review it.
 The `Timeline` object provides detailed information about all of the events
 that took place, but it doesn't provide a convenient way to review the results.
 
-Therefore, convert the `Timeline` into a
-[`TimelineSummary`]({{site.api}}/flutter/flutter_driver/TimelineSummary-class.html).
-The `TimelineSummary` can perform two tasks that make it easier to review the
-results:
+Therefore, convert the `Timeline` into a [`TimelineSummary`][].
+The `TimelineSummary` can perform two tasks that make it easier
+to review the results:
 
   1. Writing a json document on disk that summarizes the data contained
      within the `Timeline`. This summary includes information about the
      number of skipped frames, slowest build times, and more.
-  2. Saving the complete `Timeline` as a json file on disk. This file can
-     be opened with the Chrome browser's tracing tools found at
-     [chrome://tracing](chrome://tracing).
+  2. Saving the complete `Timeline` as a json file on disk.
+     This file can be opened with the Chrome browser's
+     tracing tools found at [chrome://tracing][].
 
 <!-- skip -->
 ```dart
@@ -126,7 +119,7 @@ the project contains two files:
      time the test runs and create a graph of the results.
   2. `scrolling_timeline.timeline.json` contains the complete timeline data.
      Open the file using the Chrome browser's tracing tools found at
-     [chrome://tracing](chrome://tracing). The tracing tools provide a
+     [chrome://tracing][]. The tracing tools provide a
      convenient interface for inspecting the timeline data to discover
      the source of a performance issue.
 
@@ -205,3 +198,11 @@ void main() {
   });
 }
 ```
+
+
+[chrome://tracing]: chrome://tracing
+[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[Scrolling]: /docs/cookbook/testing/integration/scrolling
+[`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
+[`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
+[`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html

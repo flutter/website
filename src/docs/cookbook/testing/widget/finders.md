@@ -13,20 +13,17 @@ next:
 To locate widgets in a test environment, use the `Finder`
 classes. While it's possible to write your own `Finder` classes,
 it's generally more convenient to locate widgets using the tools
-provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-package.
+provided by the [`flutter_test`][] package.
 
-This recipe looks at the
-[`find`]({{api}}/flutter_test/find-constant.html)
-constant provided by the `flutter_test` package, and demonstrates how
-to work with some of the `Finders` it provides. For a full list of
-available finders, see the
-[`CommonFinders` documentation]({{api}}/flutter_driver/CommonFinders-class.html).
+This recipe looks at the [`find`][] constant provided by
+the `flutter_test` package, and demonstrates how
+to work with some of the `Finders` it provides.
+For a full list of available finders,
+see the [`CommonFinders` documentation][].
 
-If you're unfamiliar with widget testing and the role of `Finder` classes,
-review the [Introduction to widget
-testing](/docs/cookbook/testing/widget/introduction) recipe.
+If you're unfamiliar with widget testing and the role of
+`Finder` classes,
+review the [Introduction to widget testing][] recipe.
 
 This recipe uses the following steps:
 
@@ -106,9 +103,8 @@ several ways to locate widgets in the test environment. This recipe
 demonstrated three of these methods, and several more methods exist
 for different purposes.
 
-If the above examples do not work for a particular use-case, see the
-[`CommonFinders`
-documentation]({{api}}/flutter_driver/CommonFinders-class.html)
+If the above examples do not work for a particular use-case,
+see the [`CommonFinders` documentation][]
 to review all available methods.
 
 ### Complete example
@@ -152,3 +148,9 @@ void main() {
   });
 }
 ```
+
+
+[`CommonFinders` documentation]: {{api}}/flutter_driver/CommonFinders-class.html
+[`find`]: {{api}}/flutter_test/find-constant.html
+[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
