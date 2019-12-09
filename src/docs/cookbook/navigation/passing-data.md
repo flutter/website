@@ -147,7 +147,7 @@ ListView.builder(
 );
 ```
 
-## Complete example
+### Complete example
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -218,6 +218,151 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Use the Todo to create the UI.
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(todo.title),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text(todo.description),
+      ),
+    );
+  }
+}
+```
+
+## Alternatively, pass the arguments using RouteSettings
+
+Repeat the first two steps.
+
+### Create a detail screen to extract the arguments
+
+Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the `ModalRoute.of()` method. This method returns the current route with the arguments.
+
+```
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Todo todo = ModalRoute.of(context).settings.arguments;
+
+    // Use the Todo to create the UI.
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(todo.title),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text(todo.description),
+      ),
+    );
+  }
+}
+```
+
+### Navigate and pass the arguments to the detail screen
+
+Finally, navigate to the `DetailScreen` when a user taps a `ListTile` widget using `Navigator.push()`. Pass the arguments as part of the `RouteSettings`. The `DetailScreen` extracts these arguments.
+
+```
+ListView.builder(                                                    
+  itemCount: todos.length,                                           
+  itemBuilder: (context, index) {                                    
+    return ListTile(                                                 
+      title: Text(todos[index].title),                               
+      // When a user taps the ListTile, navigate to the DetailScreen.
+      // Notice that you're not only creating a DetailScreen, you're 
+      // also passing the current todo through to it.                
+      onTap: () {                                                    
+        Navigator.push(                                              
+          context,                                                   
+          MaterialPageRoute(                                         
+            builder: (context) => DetailScreen(),                    
+            // Pass the arguments as part of the RouteSettings. The  
+            // DetailScreen reads the arguments from these settings. 
+            settings: RouteSettings(                                 
+              arguments: todos[index],                               
+            ),                                                        
+          ),                                                          
+        );                                                           
+      },                                                             
+    );                                                                
+  },                                                                 
+),                                                                                                                           
+```
+
+### Complete example
+
+```
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+class Todo {
+  final String title;
+  final String description;
+
+  Todo(this.title, this.description);
+}
+
+void main() {
+  runApp(MaterialApp(
+    title: 'Passing Data',
+    home: TodosScreen(
+      todos: List.generate(
+        20,
+        (i) => Todo(
+          'Todo $i',
+          'A description of what needs to be done for Todo $i',
+        ),
+      ),
+    ),
+  ));
+}
+
+class TodosScreen extends StatelessWidget {
+  final List<Todo> todos;
+
+  TodosScreen({Key key, @required this.todos}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todos'),
+      ),
+      body: ListView.builder(
+        itemCount: todos.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(todos[index].title),
+            // When a user taps the ListTile, navigate to the DetailScreen.
+            // Notice that you're not only creating a DetailScreen, you're
+            // also passing the current todo through to it.
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(),
+                  // Pass the arguments as part of the RouteSettings. The
+                  // DetailScreen reads the arguments from these settings.
+                  settings: RouteSettings(
+                    arguments: todos[index],
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Todo todo = ModalRoute.of(context).settings.arguments;
+
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(

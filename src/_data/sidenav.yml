@@ -142,8 +142,36 @@
           permalink: /docs/development/packages-and-plugins/developing-packages
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
+        # - title: Plugin migration
+        #   permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: Package site
           permalink: https://pub.dev/flutter
+    # - title: Add Flutter to existing app
+    #   permalink: /docs/development/add-to-app
+    #   children:
+    #   - title: Introduction
+    #     permalink: /docs/development/add-to-app
+    #     match-page-url-exactly: true
+    #   - title: Adding to an Android app
+    #     permalink: /docs/development/add-to-app/android
+    #     children:
+    #       - title: Project setup
+    #         permalink: /docs/development/add-to-app/android/project-setup
+    #       - title: Add a single Flutter screen
+    #         permalink: /docs/development/add-to-app/android/add-flutter-screen
+    #       - title: Add a Flutter Fragment
+    #         permalink: /docs/development/add-to-app/android/add-flutter-fragment
+    #       - title: Add a Splash Screen
+    #         permalink: /docs/development/add-to-app/android/add-splash-screen
+    #   - title: Adding to an iOS app
+    #     permalink: /docs/development/add-to-app/ios
+    #     children:
+    #       - title: Project setup
+    #         permalink: /docs/development/add-to-app/ios/project-setup
+    #       - title: Add a single Flutter screen
+    #         permalink: /docs/development/add-to-app/ios/add-flutter-screen
+    #   - title: Loading sequence and performance
+    #     permalink: /docs/development/add-to-app/performance
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
