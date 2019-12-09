@@ -23,13 +23,13 @@ using the following metrics:
   Apache, Artistic, BSD, CC BY, MIT, MS-PL and W3C
 * GitHub **version tag** matches the current version from
   pub.dev, so you can see exactly what source is in the package
-* Feature **completeness**&mdash and not marked as incomplete
+* Feature **completeness**&mdash;and not marked as incomplete
   (for example, with labels like “beta” or “under construction”)
 * [Verified publisher][]
 * General **usability** when it comes to the overview,
   docs, sample/example code, and API quality
 * Good **runtime behavior** in terms of CPU and memory usage
-* High quality **dependencies**.
+* High quality **dependencies**
 
 ## Flutter Ecosystem  Committee
 
