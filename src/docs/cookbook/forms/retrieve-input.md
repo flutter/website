@@ -18,8 +18,8 @@ using the following steps:
 
 ## 1. Create a `TextEditingController`
 
-To retrieve the text a user has entered into a text field, create a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
+To retrieve the text a user has entered into a text field,
+create a [`TextEditingController`][]
 and supply it to a `TextField` or `TextFormField`.
 
 {{site.alert.secondary}}
@@ -72,8 +72,7 @@ TextField(
 ## 3. Display the current value of the text field
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the
-[`text()`]({{site.api}}/flutter/widgets/TextEditingController/text.html)
+begin reading values. Use the [`text()`][]
 method provided by the `TextEditingController` to retrieve the
 String that the user has entered into the text field.
 
@@ -175,3 +174,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 ![Retrieve Text Input Demo](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
+
+
+[`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html

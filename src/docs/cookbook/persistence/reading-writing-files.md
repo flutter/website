@@ -12,10 +12,8 @@ In some cases, you need to read and write files to disk.
 For example, you may need to persist data across app launches,
 or download data from the internet and save it for later offline use.
 
-To save files to disk, combine the
-[`path_provider`]({{site.pub-pkg}}/path_provider) plugin with
-the [`dart:io`]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library.
+To save files to disk, combine the [`path_provider`][]
+plugin with the [`dart:io`][] library.
 
 This recipe uses the following steps:
 
@@ -30,21 +28,23 @@ This example displays a counter. When the counter changes,
 write data on disk so you can read it again when the app loads.
 Where should you store this data?
 
-The [`path_provider`]({{site.pub-pkg}}/path_provider) plugin
+The [`path_provider`][] plugin
 provides a platform-agnostic way to access commonly used locations on the
 device's file system. The plugin currently supports access to
 two file system locations:
 
-  * *Temporary directory:* A temporary directory (cache) that the system can
-    clear at any time. On iOS, this corresponds to the
-    [`NSCachesDirectory`](https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory). On Android, this is the value that
-    [`getCacheDir()`]({{site.android-dev}}/reference/android/content/Context#getCacheDir())
-    returns.
-  * *Documents directory:* A directory for the app to store files that only
-    it can access. The system clears the directory only when the app
-    is deleted.
-    On iOS, this corresponds to the `NSDocumentDirectory`.
-    On Android, this is the `AppData` directory.
+*Temporary directory*
+: A temporary directory (cache) that the system can
+  clear at any time. On iOS, this corresponds to the
+  [`NSCachesDirectory`][]. On Android, this is the value that
+  [`getCacheDir()`][]) returns.
+
+*Documents directory*
+: A directory for the app to store files that only
+  it can access. The system clears the directory only when the app
+  is deleted.
+  On iOS, this corresponds to the `NSDocumentDirectory`.
+  On Android, this is the `AppData` directory.
 
 This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
@@ -61,10 +61,8 @@ Future<String> get _localPath async {
 ## 2. Create a reference to the file location
 
 Once you know where to store the file, create a reference to the
-file's full location. You can use the
-[`File`]({{site.api}}/flutter/dart-io/File-class.html)
-class from the [dart:io]({{site.api}}/flutter/dart-io/dart-io-library.html)
-library to achieve this.
+file's full location. You can use the [`File`][]
+class from the [`dart:io`][] library to achieve this.
 
 <!-- skip -->
 ```dart
@@ -76,7 +74,7 @@ Future<File> get _localFile async {
 
 ## 3. Write data to the file
 
-Now that you have a File to work with,
+Now that you have a `File` to work with,
 use it to read and write data.
 First, write some data to the file.
 The counter is an integer, but is written to the
@@ -246,3 +244,9 @@ class _FlutterDemoState extends State<FlutterDemo> {
   }
 }
 ```
+
+[`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
+[`File`]: {{site.api}}/flutter/dart-io/File-class.html
+[`getCacheDir()`]: {{site.android-dev}}/reference/android/content/Context#getCacheDir()
+[`NSCachesDirectory`]: https://developer.apple.com/documentation/foundation/nssearchpathdirectory/nscachesdirectory
+[`path_provider`]: {{site.pub-pkg}}/path_provider

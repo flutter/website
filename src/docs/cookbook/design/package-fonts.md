@@ -91,7 +91,7 @@ Text(
 ### Fonts
 
 The Raleway and RobotoMono fonts were downloaded from
-[Google Fonts](https://fonts.google.com).
+[Google Fonts][].
 
 ### `pubspec.yaml`
 
@@ -158,5 +158,6 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
+[Google Fonts]: https://fonts.google.com
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

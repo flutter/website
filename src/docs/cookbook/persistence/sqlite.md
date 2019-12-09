@@ -14,12 +14,12 @@ key-value store. In general, databases provide faster inserts, updates,
 and queries, compared to other local persistence solutions.
 
 Flutter apps can make use of the SQLite databases via the
-[`sqflite`]({{site.pub-pkg}}/sqflite) plugin available on pub.
-This recipe demonstrates the basics of using `sqflite` to insert, read, update,
-and remove data about various Dogs.
+[`sqflite`][] plugin available on pub.
+This recipe demonstrates the basics of using `sqflite`
+to insert, read, update, and remove data about various Dogs.
 
-If you are new to SQLite and SQL statements, review the [SQLite
-Tutorial](http://www.sqlitetutorial.net/) to learn the basics before
+If you are new to SQLite and SQL statements, review the
+[SQLite Tutorial][] to learn the basics before
 completing this recipe.
 
 This recipe uses the following steps:
@@ -114,8 +114,7 @@ Therefore, these are represented as three columns in the `dogs` table.
      Datatype.
 
 For more information about the available Datatypes that can be stored in a
-SQLite database, see [the official SQLite Datatypes
-documentation](https://www.sqlite.org/datatype3.html).
+SQLite database, see the [official SQLite Datatypes documentation][].
 
 <!-- skip -->
 ```dart
@@ -142,10 +141,9 @@ about various dogs, it's time to read and write data.
 
 First, insert a `Dog` into the `dogs` table. This involves two steps:
 
-  1. Convert the `Dog` into a `Map`
-  2. Use the
-  [`insert()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html)
-  method to store the `Map` in the `dogs` table.
+1. Convert the `Dog` into a `Map`
+2. Use the [`insert()`][] method to store the
+   `Map` in the `dogs` table.
 
 <!-- skip -->
 ```dart
@@ -230,8 +228,7 @@ print(await dogs()); // Prints a list that include Fido.
 
 After inserting information into the database,
 you might want to update that information at a later time.
-You can do this by using the
-[`update()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html)
+You can do this by using the [`update()`][]
 method from the `sqflite` library.
 
 This involves two steps:
@@ -278,9 +275,8 @@ print(await dogs()); // Prints Fido with age 42.
 ## 8. Delete a `Dog` from the database
 
 In addition to inserting and updating information about Dogs,
-you can also remove dogs from the database. To delete data, use the
-[`delete()`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html)
-method from the `sqflite` library.
+you can also remove dogs from the database. To delete data,
+use the [`delete()`][] method from the `sqflite` library.
 
 In this section, create a function that takes an id and deletes the dog with
 a matching id from the database. To make this work, you must provide a `where`
@@ -449,3 +445,10 @@ class Dog {
 }
 ```
 
+
+[`delete()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html'
+[`insert()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html
+[`sqflite`]: {{site.pub-pkg}}/sqflite
+[SQLite Tutorial]: http://www.sqlitetutorial.net/
+[official SQLite Datatypes documentation]: https://www.sqlite.org/datatype3.html
+[`update()`]: {{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html

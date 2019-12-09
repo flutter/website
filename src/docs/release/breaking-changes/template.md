@@ -8,17 +8,27 @@ description: [Brief description similar to the "context" section below.]
 
 ## Context
 
-[High-level description of what API changed and why. Should be clear enough to be understandable to someone who has no context about this breaking change, e.g. doesn't know the underlying API. This section should also answer the question "what is the problem that led to considering making a breaking change?"]
+[High-level description of what API changed and why.
+Should be clear enough to be understandable to someone
+who has no context about this breaking change,
+such as someone who doesn't know the underlying API.
+This section should also answer the question
+"what is the problem that led to considering making
+a breaking change?"]
 
 
 ## Description of change
 
-[A dry technical description of the actual change, with code samples.]
+[A dry technical description of the actual change,
+with code samples.]
 
 
 ## Migration guide
 
-[A description of how to make the change. If there is a tool, this is where it should be discussed. Even if there is a tool, a description of how to make the change manually must be provided.]
+[A description of how to make the change.
+If a migration tool is available,
+discuss it here. Even if there is a tool,
+a description of how to make the change manually must be provided.]
 
 ### Before
 
@@ -35,7 +45,9 @@ description: [Brief description similar to the "context" section below.]
 
 ## Timeline
 
-[Details regarding when the change was made. If there is a deprecation window, the date to which we guarantee to maintain the old API.]
+[Details regarding when the change was made.
+If there is a deprecation window,
+the date to which we guarantee to maintain the old API.]
 
 
 ## References
