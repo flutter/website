@@ -24,8 +24,7 @@ In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
 In Flutter, a route is just a widget.
 
-Navigate to a new route using the
-[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html).
+Navigate to a new route using the [`Navigator`][].
 This recipe uses the following steps:
 
 The next few sections show how to navigate between two routes,
@@ -86,12 +85,10 @@ class SecondRoute extends StatelessWidget {
 
 ## 2. Navigate to the second route using Navigator.push()
 
-To switch to a new route, use the
-[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
+To switch to a new route, use the [`Navigator.push()`][]
 method. The `push()` method adds a `Route` to the stack of routes managed by
 the `Navigator`. Where does the `Route` come from?
-You can create your own, or use a
-[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html),
+You can create your own, or use a [`MaterialPageRoute`][],
 which is useful because it transitions to the
 new route using a platform-specific animation.
 
@@ -111,9 +108,9 @@ onPressed: () {
 
 ## 3. Return to the first route using Navigator.pop()
 
-How do you close the second route and return to the first? By using the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-method. The `pop()` method removes the current `Route` from the stack of
+How do you close the second route and return to the first?
+By using the [`Navigator.pop()`][] method.
+The `pop()` method removes the current `Route` from the stack of
 routes managed by the `Navigator`.
 
 To implement a return to the original route, update the `onPressed()`
@@ -186,3 +183,9 @@ We need a new GIF that shows "Route" instead of "Screen".
 {% endcomment %}
 
 ![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}
+
+
+[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html

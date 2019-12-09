@@ -94,8 +94,8 @@ Make this change using [`setState()`][],
 which is a method on the `State` class.
 This tells Flutter to rebuild the widget.
 
-For more information on working with user input, see the
-[Gestures](/docs/cookbook#gestures) section of the cookbook.
+For more information on working with user input,
+see the [Gestures][] section of the cookbook.
 
 <!-- skip -->
 ```dart
@@ -211,8 +211,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+![Fade In and Out Demo ](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[Gestures]: /docs/cookbook#gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
