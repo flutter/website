@@ -11,8 +11,9 @@ short-title: Write your first web app
   iOS tooling, the completed app just works on all of these devices!**
 {{site.alert.end}}
 
-{% comment %}
 {% asset image="get-started/sign-in.gif" alt="The web app that you'll be building" class='site-image-right' %}
+
+{% comment %}
 {% endcomment %}
 
 This is a guide to creating your first Flutter **web** app.
@@ -148,15 +149,111 @@ and the web server when you want to test on other browsers.
   If you see empty boxes instead of DartPads,
   go to the [DartPad troubleshooting page][].
 {{site.alert.end}}
+</li>
 
+<li markdown="1">Run the example.<br>
+Click the Run button to run the example.
+Note that you can type into the text fields,
+but the Sign up button is disabled.
+</li>
 
+<li markdown="1">Copy the code.<br>
+Click the clipboard icon in the upper right of the
+code pane to copy the Dart code to your clipboard.
+</li>
+
+<li markdown="1">Create a new Flutter project.<br>
+From your IDE, editor, or at the command line,
+[create a new Flutter project][] and name it signin_example.
+</li>
+
+<li markdown="1">Replace the contents of `lib/main.dart`
+                 with the contents of the clipboard.<br>
 </li>
 </ol>
 
+### Observations
+{:.no_toc}
+
+* The entire code for this example lives in the
+  `lib/main.dart` file.
+* If you know Java, the Dart language should feel very familiar.
+* All of the app's UI is created in Dart code.
+  For more information, see [Introduction to declarative UI][].
+* The app’s UI adheres [Material Design][],
+  a visual design language that runs on any device or platform.
+  You can customize the Material Design widgets,
+  but if you prefer something else,
+  Flutter also offers the Cupertino widget library,
+  which implements the current iOS design language.
+  Or you can create your own custom widget library.
+* In Flutter, most everything is a [Widget][].
+  Even the app itself is a widget.
+  The app’s UI can be described as a widget tree.
+
+## Step 1: Enable the Welcome screen
+
+It’s time to play with code! You may have noticed some comments
+in the source code labeled `Step 1`, `Step 2`, and `Step 3`.
+This lab leads you through the necessary changes, step by step. 
+
+The `SignUpForm` class is a stateful widget.
+This simply means that the widget stores information that can change,
+such as user input, or data from a feed.
+Since widgets themselves are immutable (can’t be modified once created),
+Flutter stores state information in a companion class,
+called the `State` class.
+All of your edits will be made to the private `_SignUpFormState` class.
+
+{{site.alert.secondary}}
+  <h4 class="no_toc">Fun fact</h4>
+The Dart compiler enforces privacy for any identifier
+prefixed with an underscore. For more information,
+see the [Effective Dart Style Guide][].
+{{site.alert.end}}
+
+The Welcome screen has already been created for you in the starter app.
+Search in the code for `WelcomeScreen`&mdash;it’s
+at the bottom of the file. For this step,
+you enable the button to display the screen and create a method to display it.
+
+<ol markdown="1">
+<li markdown="1">Open the `lib/main.dart` file.
+</li>
+
+<li markdown="1">Locate the `_signUpFormState` class.<br>
+Search for `Step 1` in the file.
+You will find it inside the `build()` method for the `_SignUpFormState` class.
+This is the part of the code that builds the SignUp button.
+Notice how the button is defined:
+It’s a FlatButton with a blue background,
+white text that says *Sign up* and, when pressed,
+does nothing.
+</li>
+
+<li markdown="1">Update the `onPressed` property.<br>
+Change the `onPressed` property to call the (non-existent)
+method that will display the welcome screen. 
+
+Change `onPressed: null` to the following:
+
+<!-- skip -->
+```dart
+onPressed: _showWelcomeScreen,
+
+```
+
+
+
 [Building a web application with Flutter]: /docs/get-started/web
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
-[DartPad]: https://dartpad.dev/
+[create a new Flutter project]: /docs/get-started/test-drive
+[DartPad]: https://dartpad.dev
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
-[Flutter SDK]: /docs/get-started/install
 [editor]: /docs/get-started/editor
+[Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
+[Flutter SDK]: /docs/get-started/install
+[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[Material Design]: https://material.io/design/introduction/#
+[Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [writing your first Flutter app on mobile]: /docs/get-started/codelab
