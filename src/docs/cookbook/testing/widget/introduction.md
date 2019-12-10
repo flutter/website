@@ -11,26 +11,23 @@ next:
 
 {% assign api = site.api | append: '/flutter' -%}
 
-In the [introduction to unit
-testing](/docs/cookbook/testing/unit/introduction) recipe, you
-learned how to test Dart classes using the `test` package. To test
-widget classes, you need a few additional tools provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-package, which ships with the Flutter SDK.
+In the [introduction to unit testing][] recipe,
+you learned how to test Dart classes using the `test` package.
+To test widget classes, you need a few additional tools provided by the
+[`flutter_test`][] package, which ships with the Flutter SDK.
 
-The `flutter_test` package provides the following tools for testing widgets:
+The `flutter_test` package provides the following tools for
+testing widgets:
 
-  * The [`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html),
-    which allows building and interacting with widgets in a test
-    environment.
-  * The [`testWidgets()`]({{api}}/flutter_test/testWidgets.html)
-    function, which automatically creates a new `WidgetTester` for
-    each test case, and is used in place of the normal `test()` function.
-  * The [`Finder`]({{api}}/flutter_test/Finder-class.html)
-    classes, which allow searching for widgets in the test environment.
-  * Widget-specific
-    [`Matcher`]({{api}}/package-matcher_matcher/Matcher-class.html)
-    constants, which help verify whether a `Finder` locates a widget or
+  * The [`WidgetTester`][] allows building and interacting
+    with widgets in a test environment.
+  * The [`testWidgets()`][] function automatically
+    creates a new `WidgetTester` for each test case,
+    and is used in place of the normal `test()` function.
+  * The [`Finder`][] classes allow searching for widgets
+    in the test environment.
+  * Widget-specific [`Matcher`][] constants help verify
+   whether a `Finder` locates a widget or
     multiple widgets in the test environment.
 
 If this sounds overwhelming, don't worry. Learn how all of these pieces fit
@@ -92,11 +89,10 @@ class MyWidget extends StatelessWidget {
 ### 3. Create a `testWidgets` test
 
 With a widget to test, begin by writing your first test.
-Use the
-[`testWidgets()`]({{api}}/flutter_test/testWidgets.html)
-function provided by the `flutter_test` package to define a test.
-The `testWidgets` function allows you to define a widget test and creates a
-`WidgetTester` to work with.
+Use the [`testWidgets()`][] function provided by the
+`flutter_test` package to define a test.
+The `testWidgets` function allows you to define a
+widget test and creates a `WidgetTester` to work with.
 
 This test verifies that `MyWidget` displays a given title and message.
 
@@ -115,9 +111,8 @@ void main() {
 ### 4. Build the widget using the `WidgetTester`
 
 Next, build `MyWidget` inside the test environment by using the
-[`pumpWidget()`]({{api}}/flutter_test/WidgetTester/pumpWidget.html)
-method provided by `WidgetTester`. The `pumpWidget` method builds and
-renders the provided widget.
+[`pumpWidget()`][] method provided by `WidgetTester`.
+The `pumpWidget` method builds and renders the provided widget.
 
 Create a `MyWidget` instance that displays "T" as the title
 and "M" as the message.
@@ -142,10 +137,13 @@ For example, tapping a button calls `setState()`, but Flutter won't
 automatically rebuild your widget in the test environment.
 Use one of the following methods to ask Flutter to rebuild the widget.
 
-  - [tester.pump()]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
-  : Triggers a rebuild of the widget after a given duration.
-  - [tester.pumpAndSettle()]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
-  : Repeatedly calls pump with the given duration until there are no longer any frames scheduled. This essentially waits for all animations to complete.
+[`tester.pump()`][]
+: Triggers a rebuild of the widget after a given duration.
+
+[`tester.pumpAndSettle()`][]
+: Repeatedly calls pump with the given duration until
+  there are no longer any frames scheduled.
+  This essentially waits for all animations to complete.
 
 These methods provide fine-grained control over the build lifecycle,
 which is particularly useful while testing.
@@ -157,16 +155,13 @@ through the widget tree for the `title` and `message`
 Text widgets using a `Finder`. This allows verification that
 the widgets are being displayed correctly.
 
-For this purpose, use the top-level
-[`find()`]({{api}}/flutter_test/find-constant.html)
+For this purpose, use the top-level [`find()`][]
 method provided by the `flutter_test` package to create the `Finders`.
 Since you know you're looking for `Text` widgets, use the
-[`find.text()`]({{api}}/flutter_test/CommonFinders-class.html)
-method.
+[`find.text()`][] method.
 
 For more information about `Finder` classes, see the
-[Finding widgets in a widget test](/docs/cookbook/testing/widget/finders)
-recipe.
+[Finding widgets in a widget test][] recipe.
 
 <!-- skip -->
 ```dart
@@ -190,9 +185,7 @@ and provide a common way to verify a given
 value meets expectations.
 
 Ensure that the widgets appear on screen exactly one time.
-For this purpose, use the
-[`findsOneWidget`]({{api}}/flutter_test/findsOneWidget-constant.html)
-`Matcher`.
+For this purpose, use the [`findsOneWidget`][] `Matcher`.
 
 <!-- skip -->
 ```dart
@@ -215,12 +208,14 @@ void main() {
 In addition to `findsOneWidget`, `flutter_test` provides additional
 matchers for common cases.
 
-  * [findsNothing]({{api}}/flutter_test/findsNothing-constant.html)
-  : verifies that no widgets are found
-  * [findsWidgets]({{api}}/flutter_test/findsWidgets-constant.html)
-  : verifies that one or more widgets are found
-  * [findsNWidgets]({{api}}/flutter_test/findsNWidgets.html)
-  : verifies that a specific number of widgets are found
+[`findsNothing`][]
+: Verifies that no widgets are found.
+
+[`findsWidgets`][]
+: Verifies that one or more widgets are found.
+
+[`findsNWidgets`][]
+: Verifies that a specific number of widgets are found.
 
 ### Complete example
 
@@ -273,3 +268,21 @@ class MyWidget extends StatelessWidget {
   }
 }
 ```
+
+
+[`find()`]: {{api}}/flutter_test/find-constant.html
+[`find.text()`]: {{api}}/flutter_test/CommonFinders-class.html
+[`findsNothing`]: {{api}}/flutter_test/findsNothing-constant.html
+[`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
+[`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html
+[`findsWidgets`]: {{api}}/flutter_test/findsWidgets-constant.html
+[`Finder`]: {{api}}/flutter_test/Finder-class.html
+[Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
+[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
+[`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
+[`tester.pump()`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
+[`tester.pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
+[`testWidgets()`]: {{api}}/flutter_test/testWidgets.html
+[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html

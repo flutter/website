@@ -12,8 +12,7 @@ next:
 Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
-or perhaps you downloaded a font from
-[Google Fonts](https://fonts.google.com).
+or perhaps you downloaded a font from [Google Fonts][].
 
 Flutter works with custom fonts and you can apply a custom
 font across an entire app or to individual widgets.
@@ -66,10 +65,7 @@ flutter:
 ### `pubspec.yaml` option definitions
 
 The `family` determines the name of the font, which you use in the
-[`fontFamily`]({{site.api}}/flutter/painting/TextStyle/fontFamily.html)
-property of a
-[`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
-object.
+[`fontFamily`][] property of a [`TextStyle`][] object.
 
 The `asset` is a path to the font file, relative to the `pubspec.yaml` file.
 These files contain the outlines for the glyphs in the font.
@@ -80,20 +76,14 @@ outline weights and styles:
 
   * The `weight` property specifies the weight of the outlines in
     the file as an integer multiple of 100, between 100 and 900.
-    These values correspond to the
-    [`FontWeight`]({{site.api}}/flutter/dart-ui/FontWeight-class.html)
-    and can be used in the
-    [`fontWeight`]({{site.api}}/flutter/painting/TextStyle/fontWeight.html)
-    property of a
-    [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
+    These values correspond to the [`FontWeight`][]
+    and can be used in the [`fontWeight`][] property of a
+    [`TextStyle`][] object.
 
   * The `style` property specifies whether the outlines in the file are
     `italic` or `normal`. These values correspond to the
-    [`FontStyle`]({{site.api}}/flutter/dart-ui/FontStyle-class.html)
-    and can be used in the
-    [fontStyle]({{site.api}}/flutter/painting/TextStyle/fontStyle.html)
-    property of a
-    [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html) object.
+    [`FontStyle`][] and can be used in the [`fontStyle`][] property of a
+    [`TextStyle`][] object.
 
 ## 3. Set a font as the default
 
@@ -114,14 +104,14 @@ MaterialApp(
 );
 ```
 
-For more information on themes, see the [Using Themes to share colors
-and font styles](/docs/cookbook/design/themes) recipe.
+For more information on themes,
+see the [Using Themes to share colors and font styles][] recipe.
 
 ## 4. Use the font in a specific widget
 
-If you want to apply the font to a specific widget, such as a `Text` widget,
-provide a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
-to the widget.
+If you want to apply the font to a specific widget,
+such as a `Text` widget,
+provide a [`TextStyle`][] to the widget.
 
 In this example, apply the RobotoMono font to a single `Text` widget.
 Once again, the `fontFamily` must match the `family` name declared in the
@@ -137,8 +127,8 @@ Text(
 
 ### TextStyle
 
-If a [`TextStyle`]({{site.api}}/flutter/painting/TextStyle-class.html)
-object specifies a weight or style for which is there is no exact font file,
+If a [`TextStyle`][] object specifies a weight
+or style for which is there is no exact font file,
 the engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.
 
@@ -146,8 +136,8 @@ extrapolate outlines for the requested weight and style.
 
 ### Fonts
 
-The Raleway and RobotoMono fonts were downloaded from [Google
-Fonts](https://fonts.google.com).
+The Raleway and RobotoMono fonts were downloaded from
+[Google Fonts][].
 
 ### `pubspec.yaml`
 
@@ -216,3 +206,13 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Custom Fonts Demo](/images/cookbook/fonts.png){:.site-mobile-screenshot}
+
+
+[`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
+[`fontStyle`]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
+[`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
+[`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
+[Google Fonts]: https://fonts.google.com
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
+[Using Themes to share colors and font styles]: /docs/cookbook/design/themes

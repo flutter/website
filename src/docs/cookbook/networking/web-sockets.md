@@ -12,9 +12,9 @@ In addition to normal HTTP requests, you can connect to servers using
 WebSockets.  WebSockets allow for two-way communication with a server
 without polling.
 
-In this example, connect to a [test server provided by
-websocket.org](http://www.websocket.org/echo.html). The server sends
-back the same message you send to it.
+In this example, connect to a
+[test server provided by websocket.org][].
+The server sends back the same message you send to it.
 This recipe uses the following steps:
 
   1. Connect to a WebSocket server
@@ -24,8 +24,8 @@ This recipe uses the following steps:
 
 ## 1. Connect to a WebSocket server
 
-The [web_socket_channel]({{site.pub-pkg}}/web_socket_channel)
-package provides the tools you need to connect to a WebSocket server.
+The [web_socket_channel][] package provides the
+tools you need to connect to a WebSocket server.
 
 The package provides a `WebSocketChannel` that allows you to both listen for
 messages from the server and push messages to the server.
@@ -45,11 +45,9 @@ server.
 
 After sending a message to the test server, it sends the same message back.
 
-In this example, use
-a [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
+In this example, use a [`StreamBuilder`][]
 widget to listen for new messages, and a
-[`Text`]({{site.api}}/flutter/widgets/Text-class.html)
-widget to display them.
+[`Text`][] widget to display them.
 
 <!-- skip -->
 ```dart
@@ -64,16 +62,15 @@ StreamBuilder(
 ### How this works
 
 The `WebSocketChannel` provides a
-[`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html)
-of messages from the server.
+[`Stream`][] of messages from the server.
 
 The `Stream` class is a fundamental part of the `dart:async` package. It
 provides a way to listen to async events from a data source. Unlike `Future`,
 which returns a single async response, the `Stream` class can deliver many
 events over time.
 
-The [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html)
-widget connects to a `Stream` and asks Flutter to rebuild every time it
+The [`StreamBuilder`][] widget connects to a `Stream`
+and asks Flutter to rebuild every time it
 receives an event using the given `builder()` function.
 
 ## 3. Send data to the server
@@ -89,8 +86,7 @@ channel.sink.add('Hello!');
 ### How this works
 
 The `WebSocketChannel` provides a
-[`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html)
-to push messages to the server.
+[`StreamSink`][] to push messages to the server.
 
 The `StreamSink` class provides a general way to add sync or async
 events to a data source.
@@ -192,5 +188,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-
 ![Web sockets demo](/images/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+
+
+[`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
+[`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
+[`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
+[test server provided by websocket.org]: http://www.websocket.org/echo.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[web_socket_channel]: {{site.pub-pkg}}/web_socket_channel
