@@ -144,10 +144,12 @@
           permalink: /docs/development/packages-and-plugins/favorites
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
+        # TODO(xster): uncomment on 12/11.
         # - title: Plugin migration
         #   permalink: /docs/development/packages-and-plugins/plugin-api-migration
         - title: Package site
           permalink: https://pub.dev/flutter
+    # TODO(xster): uncomment on 12/11.
     # - title: Add Flutter to existing app
     #   permalink: /docs/development/add-to-app
     #   children:
@@ -172,6 +174,8 @@
     #         permalink: /docs/development/add-to-app/ios/project-setup
     #       - title: Add a single Flutter screen
     #         permalink: /docs/development/add-to-app/ios/add-flutter-screen
+    #   - title: Running, debugging & hot reload
+    #     permalink: /docs/development/add-to-app/debugging
     #   - title: Loading sequence and performance
     #     permalink: /docs/development/add-to-app/performance
     - title: Tools & techniques
