@@ -54,6 +54,10 @@ Docs added and updated since the last announcement include:
   For more information, see [Desktop support for Flutter][].
 * The iOS section of the [app size][] page is updated to reflect
   the inclusion of bitcode.
+* An alpha release of Flutter Layout Explorer, a new feature
+  (part of the Flutter inspector) that allows you to
+  view a visual representation of your layout is available.
+  For more information, see the [Flutter Layout Explorer][] docs.
 
 Happy Fluttering!
 
@@ -61,6 +65,7 @@ Happy Fluttering!
 [app size]: /docs/perf/app-size#ios
 [building a web app with Flutter]: /docs/get-started/web
 [Desktop support for Flutter]: /desktop
+[Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: https://medium.com/flutter
 [Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [implicit animations]: /docs/codelabs/implicit-animation

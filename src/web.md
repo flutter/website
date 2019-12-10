@@ -12,7 +12,6 @@ and you don’t need a browser plug-in.
 
 {{site.alert.warning}}
   **As of 1.12, web support is available on the beta channel.**
-  It is not yet considered production ready.
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}

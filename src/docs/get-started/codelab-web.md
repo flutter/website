@@ -152,7 +152,7 @@ and the web server when you want to test on other browsers.
 </li>
 
 <li markdown="1">Run the example.<br>
-Click the Run button to run the example.
+Click the **Run** button to run the example.
 Note that you can type into the text fields,
 but the Sign up button is disabled.
 </li>
@@ -164,7 +164,7 @@ code pane to copy the Dart code to your clipboard.
 
 <li markdown="1">Create a new Flutter project.<br>
 From your IDE, editor, or at the command line,
-[create a new Flutter project][] and name it signin_example.
+[create a new Flutter project][] and name it `signin_example`.
 </li>
 
 <li markdown="1">Replace the contents of `lib/main.dart`
@@ -202,8 +202,8 @@ This simply means that the widget stores information that can change,
 such as user input, or data from a feed.
 Since widgets themselves are immutable (can’t be modified once created),
 Flutter stores state information in a companion class,
-called the `State` class.
-All of your edits will be made to the private `_SignUpFormState` class.
+called the `State` class. In this lab,
+all of your edits will be made to the private `_SignUpFormState` class.
 
 {{site.alert.secondary}}
   <h4 class="no_toc">Fun fact</h4>
@@ -226,8 +226,8 @@ Search for `Step 1` in the file.
 You will find it inside the `build()` method for the `_SignUpFormState` class.
 This is the part of the code that builds the SignUp button.
 Notice how the button is defined:
-It’s a FlatButton with a blue background,
-white text that says *Sign up* and, when pressed,
+It’s a `FlatButton` with a blue background,
+white text that says **Sign up** and, when pressed,
 does nothing.
 </li>
 
@@ -240,20 +240,257 @@ Change `onPressed: null` to the following:
 <!-- skip -->
 ```dart
 onPressed: _showWelcomeScreen,
+```
+</li>
 
+<li markdown="1">Add the `_showWelcomeScreen` method.<br>
+Fix the error reported by the analyzer that `_showWelcomeScreen`
+is not defined. Directly above the `build()` method,
+add the following function:
+
+<!-- skip -->
+```dart
+void _showWelcomeScreen() {
+   Navigator.of(context)
+       .push(MaterialPageRoute(builder: (context) => WelcomeScreen()));
+}
+```
+</li>
+
+<li markdown="1">Run the app.<br>
+The **Sign up** button should now be enabled.
+Click it to bring up the welcome screen.
+Note how it animates in from the bottom.
+You get that behavior for free.
+</li>
+</ol>
+
+### Problems?
+{:.no_toc}
+
+If your app is not running correctly, look for typos.
+If needed, use the code at the following link to get back on track.
+
+* [lib/main.dart](https://gist.github.com/sfshaza2/25ba0bec444b5a4b71edf78d569f124c)
+
+### Observations
+{:.no_toc}
+
+* The `_showWelcomeScreen()` function is used in the `build()`
+  method as a callback function. Callback functions are often
+  used in Dart code and, in this case, this means
+  “call this method when the button is pressed”.
+* Flutter has only one `Navigator` object.
+  This widget manages Flutter’s screens
+  (also called _routes_ or _pages_) inside a stack.
+  The screen at the top of the stack is the view that
+  is currently displayed. Pushing a new screen to this
+  stack switches the display to that new screen.
+  This is why the `_showWelcomeScreen` function pushes
+  the `WelcomeScreen` onto the Navigator’s stack.
+  The user clicks the button and, voila, the welcome screen appears.
+  Likewise, calling `pop()` on the `Navigator` returns to the previous screen.
+  Because Flutter’s navigation is integrated into the browser’s navigation,
+  this happens implicitly when clicking the browser’s back arrow button.
+
+## Step 2: Enable sign in progress tracking
+
+This sign in screen has three fields.
+Next, you will enable the ability to track the
+user’s progress on filling in the form fields,
+and update the app’s UI when the form is complete.
+
+{{site.alert.note}}
+  This example does **not** validate the accuracy of the user input.
+  That is something you can add later, if you like.
+{{site.alert.end}}
+
+<ol markdown="1">
+<li markdown="1">Add a `_formCompleted` field.<br>
+At the top of the `_SignUpFormState` class, add a boolean
+field that you'll set to true when all three fields contain text.
+
+<!-- skip -->
+```dart
+class _SignUpFormState extends State<SignUpForm>
+   with SingleTickerProviderStateMixin {
+ <b>bool _formCompleted = false;     // NEW</b>
+...
 ```
 
+<li markdown="1">Add a call to `setState()`.<br>
+Search for `Step 2` in the code.
+Once again, it’s in the `build()` method of the `_SignUpFormState` class.
+Modify the `_SignUpFormBody` widget, which contains the form’s text fields.
+Add code to tell Flutter to call the `setState()`
+method when all three of the text fields are filled in.
+Replace the `Step 2` comment with the code below marked as **NEW**:
+
+<!-- skip -->
+```dart
+       ...
+       SignUpFormBody(
+         onProgressChanged: (progress) {
+           **setState(() {**                        // NEW
+             **_formCompleted = progress == 1;**    // NEW
+           **});**                                  // NEW
+         },
+       ),
+       ...
+```
+</li>
+
+<li markdown="1">Update the `onPressed` property (again).<br>
+In `step 1`, you modified the `onPressed` property for the
+**Sign up** button to display the welcome screen.
+Now, update that button to display the welcome
+screen only when the form is completely filled in:
+
+<!-- skip -->
+```dart
+...
+       Container(
+         height: 40,
+         width: double.infinity,
+         margin: EdgeInsets.all(12),
+         child: FlatButton(
+           color: Colors.blue,
+           textColor: Colors.white,
+           **onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED**
+           child: Text('Sign up'),
+         ),
+...
+
+```
+</li>
+
+<li markdown="1">Run the app.<br>
+The **Sign up** button is initially disabled,
+but becomes enabled when all three text fields contain (any) text.
+</li>
+</ol>
+
+### Problems?
+{:.no_toc}
+
+If your app is not running correctly, look for typos.
+If needed, use the code at the following link to get back on track.
+
+* [lib/main.dart](https://gist.github.com/sfshaza2/0ce13ec7bc16e1307cabfe18e4f40cb8)
+
+### Observations
+{:.no_toc}
+
+* Calling a widget’s `setState()` method tells Flutter that the
+  widget needs to be updated on screen.
+  The framework then disposes of the previous immutable widget
+  (and its children), creates a new one
+  (with its accompanying child widget tree),
+  and renders it to screen. For this to work seamlessly,
+  Flutter needs to be fast.
+  The new widget tree must be created and rendered to screen
+  in less than 1/60th of a second to create a smooth visual
+  transition—especially for an animation.
+  Luckily Flutter *is* fast.
+* The `progress` field is defined as a floating value,
+  and is updated in the `_formProgress` getter method.
+  When all three fields are filled in, `progress` is set to 1.0.
+  When `progress` is set to 1.0, `_formCompleted` is set to true.
+* Notice that the function passed as an argument to `setState()`
+  isn’t  bound to an identifier. This is called an anonymous
+  function and has the following syntax:
+  <!-- skip -->
+  ```dart
+  methodName(() {...});
+  ```
+  Where `methodName` is a named function that takes an anonymous
+  callback function as an argument.
+* The Dart syntax in the last step that displays the
+  welcome screen is:
+  <!-- skip -->
+  ```dart
+  onPressed: _formCompleted ? _showWelcomeScreen : null
+  ```
+  This is a Dart conditional assignment and has the syntax: 
+  `condition ? expression1 : expression2`. 
+  If `_formCompleted` is true, Dart performs the first expression
+  and displays the welcome screen, otherwise,
+  it performs the second expression (null) and does nothing.
+
+## Step 2.5: Launch Dart DevTools
+
+How do you debug a Flutter web app?
+It’s not too different from debugging any Flutter app.
+You want to use [Dart DevTools][]!
+(Not to be confused with Chrome DevTools.)
+
+Our app currently has no bugs, but let’s check it out anyway.
+The following instructions for launching DevTools applies to any work flow,
+but there is a short cut if you’re using IntelliJ.
+See the tip at the end of this section for more information.
+
+<ol markdown="1">
+<li markdown="1">Run the app.<br>
+If your app isn’t currently running, launch it.
+From the command line, use `flutter run -d chrome`,
+or select the **Chrome** device from the pull down
+and launch it from your IDE.
+</li>
+
+<li markdown="1">Get the web socket info for DevTools.<br>
+At the command line, or in the IDE,
+you should see a message stating something like the following:
+
+```terminal
+Launching lib/main.dart on Chrome in debug mode...
+Building application for the web...                                11.7s
+Attempting to connect to browser instance..
+Debug service listening on **ws://127.0.0.1:54998/pJqWWxNv92s=**
+```
+Copy the address of the debug service, shown in bold.
+You will need that to launch DevTools.
+</li>
+
+<li markdown="1">Ensure that DevTools is installed.<br>
+Do you have [DevTools installed][]?
+If you are using an IDE,
+make sure you have the Flutter and Dart plugins set up,
+as described in the [VS Code][] and [Android Studio / IntelliJ][] pages.
+If you are working at the command line,
+launch the DevTools server as explained in the
+[DevTools command line][] page.
+</li>
+
+<li markdown="1">Connect to DevTools.<br>
+When DevTools launches, you should see something like the following:
+
+```terminal
+Serving DevTools at http://127.0.0.1:9100
+```
+Go to this URL in a Chrome browser. You should see the DevTools
+launch screen. It should look like the following:
+
+[INSERT IMAGE xxx]
+</li>
+
+</ol>
 
 
+
+[Android Studio / IntelliJ]: /docs/development/tools/devtools/android-studio
 [Building a web application with Flutter]: /docs/get-started/web
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: /docs/get-started/test-drive
+[Dart DevTools]: /docs/development/tools/devtools/overview
 [DartPad]: https://dartpad.dev
+[DevTools command line]: /docs/development/tools/devtools/cli
+[DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [editor]: /docs/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
 [Flutter SDK]: /docs/get-started/install
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Design]: https://material.io/design/introduction/#
+[VS Code]: /docs/development/tools/devtools/vscode
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [writing your first Flutter app on mobile]: /docs/get-started/codelab
