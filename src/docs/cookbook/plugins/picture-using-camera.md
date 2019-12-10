@@ -8,11 +8,11 @@ next:
   path: /docs/cookbook/testing/integration/introduction
 ---
 
-Many apps require working with the device's cameras to take photos and videos.
-Flutter provides the [`camera`]({{site.pub-pkg}}/camera) plugin
+Many apps require working with the device's cameras to
+take photos and videos.  Flutter provides the [`camera`][] plugin
 for this purpose. The `camera` plugin provides tools to get a list of the
-available cameras, display a preview coming from a specific camera, and take
-photos or videos.
+available cameras, display a preview coming from a specific camera,
+and take photos or videos.
 
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
@@ -28,9 +28,14 @@ take a photo, and display it using the following steps:
 
 To complete this recipe, you need to add three dependencies to your app:
 
-  - [`camera`]({{site.pub-pkg}}/camera) - Provides tools to work with the cameras on device
-  - [`path_provider`]({{site.pub-pkg}}/path_provider) - Finds the correct paths to store images
-  - [`path`]({{site.pub-pkg}}/path) - Creates paths that work on any platform
+[`camera`][]
+: Provides tools to work with the cameras on the device.
+
+[`path_provider`][]
+: Finds the correct paths to store images.
+
+[`path`][]
+: Creates paths that work on any platform.
 
 ```yaml
 dependencies:
@@ -140,9 +145,7 @@ display a preview of the camera's feed.
   in the previous step to complete before showing a `CameraPreview`.
 {{site.alert.end}}
 
-Use a
-[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-for exactly this purpose.
+Use a [`FutureBuilder`][] for exactly this purpose.
 
 <!-- skip -->
 ```dart
@@ -166,8 +169,8 @@ FutureBuilder<void>(
 ## 5. Take a picture with the `CameraController`
 
 You can use the `CameraController` to take pictures using the
-[`takePicture()`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html)
-method. In this example, create a `FloatingActionButton` that takes a picture
+[`takePicture()`][] method. In this example,
+create a `FloatingActionButton` that takes a picture
 using the `CameraController` when a user taps on the button.
 
 Saving a picture requires 3 steps:
@@ -368,3 +371,10 @@ class DisplayPictureScreen extends StatelessWidget {
   }
 }
 ```
+
+
+[`camera`]: {{site.pub-pkg}}/camera
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[`path`]: {{site.pub-pkg}}/path
+[`path_provider`]: {{site.pub-pkg}}/path_provider
+[`takePicture()`]: {{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html

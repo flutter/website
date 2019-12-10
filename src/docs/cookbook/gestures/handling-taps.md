@@ -9,9 +9,9 @@ next:
 ---
 
 You not only want to display information to users,
-you want users to interact with your app. Use the
-[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
-widget to respond to fundamental actions, such as tapping and dragging.
+you want users to interact with your app.
+Use the [`GestureDetector`][] widget to respond
+to fundamental actions, such as tapping and dragging.
 
 This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:
@@ -44,13 +44,11 @@ GestureDetector(
 ## Notes
 
   1. For information on adding the Material ripple effect to your
-     button, see the [Add Material touch
-     ripples](/docs/cookbook/gestures/ripples) recipe.
+     button, see the [Add Material touch ripples][] recipe.
   2. Although this example creates a custom button,
      Flutter includes a handful of button implementations, such as:
-     [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html),
-     [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html), and
-     [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html).
+     [`RaisedButton`][], [`FlatButton`][], and
+     [`CupertinoButton`][].
 
 ## Complete example
 
@@ -113,3 +111,10 @@ class MyButton extends StatelessWidget {
 ```
 
 ![Handle taps demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}
+
+
+[Add Material touch ripples]: /docs/cookbook/gestures/ripples
+[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
+[`FlatButton`]: {{site.api}}/flutter/material/FlatButton-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`RaisedButton`]: {{site.api}}/flutter/material/RaisedButton-class.html

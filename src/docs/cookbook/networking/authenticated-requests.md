@@ -14,10 +14,9 @@ uses the `Authorization` HTTP header.
 
 ## Add authorization headers
 
-The [`http`]({{site.pub-pkg}}/http) package provides a
+The [`http`][] package provides a
 convenient way to add headers to your requests.
-Alternatively, use the
-[HttpHeaders]({{site.dart.api}}/stable/dart-io/HttpHeaders-class.html)
+Alternatively, use the [HttpHeaders][]
 class from the `dart:io` library.
 
 <!-- skip -->
@@ -33,8 +32,8 @@ Future<http.Response> fetchPost() {
 
 ## Complete example
 
-This example builds upon the [Fetching data from the
-internet](/docs/cookbook/networking/fetch-data) recipe.
+This example builds upon the
+[Fetching data from the internet][] recipe.
 
 ```dart
 import 'dart:async';
@@ -71,3 +70,8 @@ class Post {
   }
 }
 ```
+
+
+[Fetching data from the internet]: /docs/cookbook/networking/fetch-data
+[`http`]: {{site.pub-pkg}}/http
+[HttpHeaders]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

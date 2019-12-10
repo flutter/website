@@ -89,6 +89,85 @@ When debugging layout issues, the key fields to look at are the
 `size` and `constraints` fields. The constraints flow down the tree,
 and the sizes flow back up.
 
+## Flutter Layout Explorer
+{{site.alert.note}}
+  This feature is only available in the alpha version of 
+  [DevTools written in Flutter](https://flutter.dev/docs/development/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter).
+{{site.alert.end}}
+
+The Flutter Layout Explorer helps you to better understand Flutter layouts. Currently, the Layout Explorer only supports
+exploration of [flex layouts](https://api.flutter.dev/flutter/widgets/Flex-class.html), but it may be extended to other
+types of layouts in the future.
+
+### Using the Layout Explorer
+From the Flutter Inspector, select a flex widget (e.g., [Row](https://api.flutter.dev/flutter/widgets/Row-class.html),
+[Column](https://api.flutter.dev/flutter/widgets/Column-class.html), 
+[Flex](https://api.flutter.dev/flutter/widgets/Flex-class.html), etc.) or direct child of a flex widget. If you are
+using Flutter 1.12.16 or later, you will see an additional tab “Layout Explorer” next to “Details Tree”. Selecting this
+tab will display the new Layout Explorer feature.
+
+![The Layout Explorer tab]({% asset tools/devtools/layout_explorer_tab.png @path %})
+
+The Layout Explorer visualizes how [Flex](https://api.flutter.dev/flutter/widgets/Flex-class.html) widgets and their
+children are laid out. The explorer identifies the main axis and cross axis, as well as the current alignment for each
+(e.g., start, end, spaceBetween, etc.). It also shows details like flex factor and layout constraints.
+
+Additionally, the explorer shows layout constraint violations and render overflow errors. Violated layout constraints
+are colored red, and overflow errors are presented in the standard  “yellow-tape” pattern, as you would see on a running
+device. These visualizations aim to improve understanding of why overflow errors occur as well as how to fix them.
+
+![The Layout Explorer showing errors and device inspector]({% asset tools/devtools/layout_explorer_errors_and_device.gif @path %}){:width="100%"}
+
+Clicking on a widget in the layout explorer will mirror the selection on the on-device inspector. “Select Widget Mode”
+needs to be enabled for this. To enable it, click on the “Select Widget Mode” button in the inspector.
+
+![The Select Widget Mode button in the inspector]({% asset tools/devtools/select_widget_mode_devtools_alpha.png @path %})
+
+For some properties, like flex factor and alignment, you can modify the value via dropdown lists in the explorer. When
+modifying a widget property, you will see the new value reflected not only in the Layout Explorer, but also on the
+device running your Flutter app. The explorer animates on property changes so that the effect of the change is clear.
+Widget property changes made from the layout explorer do not modify your source code and are reverted on hot reload.
+
+### Interactive Properties
+Layout Explorer supports modifying 
+[mainAxisAlignment](https://api.flutter.dev/flutter/widgets/Flex/mainAxisAlignment.html),
+[crossAxisAlignment](https://api.flutter.dev/flutter/widgets/Flex/crossAxisAlignment.html), and
+[FlexParentData.flex](https://api.flutter.dev/flutter/rendering/FlexParentData/flex.html). In the future, we may add
+support for additional properties such as [mainAxisSize](https://api.flutter.dev/flutter/widgets/Flex/mainAxisSize.html),
+[textDirection](https://api.flutter.dev/flutter/widgets/Flex/textDirection.html), and
+[FlexParentData.fit](https://api.flutter.dev/flutter/rendering/FlexParentData/fit.html).
+
+#### mainAxisAlignment
+
+![The Layout Explorer changing main axis alignment]({% asset tools/devtools/layout_explorer_main_axis_alignment.gif @path %}){:width="100%"}
+
+Supported values:
+* MainAxisAlignment.start
+* MainAxisAlignment.end
+* MainAxisAlignment.center
+* MainAxisAlignment.spaceBetween
+* MainAxisAlignment.spaceAround
+* MainAxisAlignment.spaceEvenly
+
+
+#### crossAxisAlignment
+
+![The Layout Explorer changing cross axis alignment]({% asset tools/devtools/layout_explorer_cross_axis_alignment.gif @path %}){:width="100%"}
+
+Supported values:
+* CrossAxisAlignment.start
+* CrossAxisAlignment.center
+* CrossAxisAlignment.end
+* CrossAxisAlignment.stretch
+
+
+#### FlexParentData.flex
+
+![The Layout Explorer changing flex factor]({% asset tools/devtools/layout_explorer_flex.gif @path %}){:width="100%"}
+
+Layout Explorer supports 7 flex options in the UI (null, 0, 1, 2, 3, 4, 5), but technically the flex factor of a flex 
+widget’s child can be any int.
+
 ## Track widget creation
 
 Part of the functionality of the Flutter inspector is based on

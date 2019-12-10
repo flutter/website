@@ -13,8 +13,7 @@ to screen. A common technique to lead users through an app is to animate a
 widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
-Use the
-[`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) widget
+Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
 This recipe uses the following steps:
 
@@ -31,9 +30,8 @@ handle animations in the next steps.
 
 {{site.alert.note}}
   This example builds upon the
-  [Navigate to a new screen and
-  back](/docs/cookbook/navigation/navigation-basics)
-  and [Handle taps](/docs/cookbook/gestures/handling-taps) recipes.
+  [Navigate to a new screen and back][]
+  and [Handle taps][] recipes.
 {{site.alert.end}}
 
 ```dart
@@ -191,3 +189,8 @@ class DetailScreen extends StatelessWidget {
 ```
 
 ![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+
+
+[Handle taps]: /docs/cookbook/gestures/handling-taps
+[`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
+[Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics

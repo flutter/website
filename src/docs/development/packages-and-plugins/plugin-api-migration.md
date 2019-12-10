@@ -1,6 +1,6 @@
 ---
-title: Migrating your plugin to the new Android APIs
-description: How to migrate a plugin using the old APIs to the new APIs.
+title: Supporting the new Android plugins APIs
+description: How to update a plugin using the old APIs to support the new APIs.
 ---
 
 {% comment %}
@@ -28,9 +28,9 @@ been migrated already. (Learn how to become a
 a plugin that uses the new APIs, see the
 [battery package][].
 
-## Migration steps
+## Upgrade steps
 
-The following instructions outline the steps for migration:
+The following instructions outline the steps for supporting the new API:
 
 1. Update the main plugin class (`*Plugin.java`) to implement
    [`FlutterPlugin`][]. For more complex plugins, you can separate the

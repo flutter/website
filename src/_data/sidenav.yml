@@ -140,6 +140,8 @@
           permalink: /docs/development/packages-and-plugins/using-packages
         - title: Developing packages & plugins
           permalink: /docs/development/packages-and-plugins/developing-packages
+        - title: Flutter Favorites program
+          permalink: /docs/development/packages-and-plugins/favorites
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
         # - title: Plugin migration
@@ -211,6 +213,17 @@
               permalink: /docs/development/tools/sdk/archive
             - title: Breaking changes
               permalink: /docs/release/breaking-changes
+            - title: Release notes
+              permalink: /docs/development/tools/sdk/release-notes
+              children:
+                - title: 1.9.1
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.9.1.md
+                - title: 1.7.8
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.7.8.md
+                - title: 1.5.4
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.5.4.md
+                - title: 1.2.1
+                  permalink: /docs/development/tools/sdk/release-notes/release-notes-1.2.1.md
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
         - title: Code formatting

@@ -14,8 +14,8 @@ rotates the screen from portrait mode to landscape mode. For example,
 the app might show one item after the next in portrait mode,
 yet put those same items side-by-side in landscape mode.
 
-In Flutter, you can build different layouts depending on a given
-[`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html).
+In Flutter, you can build different layouts depending
+on a given [`Orientation`][].
 In this example, build a list that displays two columns in
 portrait mode and three columns in landscape mode using the
 following steps:
@@ -39,14 +39,14 @@ GridView.count(
 );
 ```
 
-To learn more about working with `GridViews`, see the
-[Creating a grid list](/docs/cookbook/lists/grid-lists) recipe.
+To learn more about working with `GridViews`,
+see the [Creating a grid list][] recipe.
 
 ## 2. Use an `OrientationBuilder` to change the number of columns
 
 To determine the app's current `Orientation`, use the
-[`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html)
-widget. The `OrientationBuilder` calculates the current `Orientation` by
+[`OrientationBuilder`][] widget.
+The `OrientationBuilder` calculates the current `Orientation` by
 comparing the width and height available to the parent widget,
 and rebuilds when the size of the parent changes.
 
@@ -129,3 +129,8 @@ class OrientationList extends StatelessWidget {
 ```
 
 ![Orientation Demo](/images/cookbook/orientation.gif){:.site-mobile-screenshot}
+
+
+[Creating a grid list]: /docs/cookbook/lists/grid-lists
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation-class.html
+[`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
