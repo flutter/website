@@ -14,27 +14,6 @@ render a part of your app's UI in Flutter. Or just to run shared Dart logic.
 In a few steps, you can also bring the productivity and the expressiveness of
 Flutter into your own app.
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/images/add-to-app/android-overview.gif" class="figure-img img-fluid" alt="Add-to-app on Android" />
-        <figcaption class="figure-caption">
-          Android
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/images/add-to-app/ios-overview.gif" class="figure-img img-fluid" alt="Add-to-app on iOS" />
-        <figcaption class="figure-caption">
-          iOS
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</div>
-
 As of Flutter release v1.12, add-to-app is supported for the basic scenario of
 integrating one fullscreen Flutter instance at a time per app. It presently has
 the _**following limitations**_:
@@ -48,6 +27,8 @@ the _**following limitations**_:
 ## Supported features
 
 ### Add to Android applications
+
+{% include app-figure.md image="development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
 
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
   your Gradle script; or
@@ -69,6 +50,9 @@ the _**following limitations**_:
   from IDEs or the command line to connect to an app containing Flutter.
 
 ### Add to iOS applications
+
+{% include app-figure.md image="development/add-to-app/ios-overview.gif" alt="Add-to-app steps on iOS" %}
+
 - Auto-build and import the Flutter module by adding a Flutter SDK hook to
  your CocoaPods and to your Xcode build phase; or
 - Build your Flutter module into a generic [iOS Framework](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)
