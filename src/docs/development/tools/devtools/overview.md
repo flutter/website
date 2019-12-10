@@ -37,6 +37,13 @@ your existing IDE or command-line based development workflow.
 See the [Android Studio/IntelliJ][], [VS Code][], or
 [command line][] pages for installation instructions.
 
+## How do I try DevTools written in Flutter?
+To test the alpha version of DevTools written in Flutter, click the “beaker” icon in the upper-right corner of DevTools.
+This will launch DevTools running on Flutter web. This version is in early preview with only the inspector tab feature
+complete. It is under active development.
+
+![Screenshot of DevTools alpha entry point]({% asset tools/devtools/devtools_alpha_entrypoint.png @path %}){:width="100%"}
+
 ## Providing feedback
 
 Please give DevTools a try, provide feedback, and file issues
