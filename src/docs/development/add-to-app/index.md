@@ -61,7 +61,10 @@ the _**following limitations**_:
 - Java and Kotlin host apps supported.
 - Flutter modules can use [Flutter plugins](https://pub.dev/flutter) to interact
   with the platform. Android plugins should be [migrated to the V2 plugins APIs](/docs/development/packages-and-plugins/plugin-api-migration)
-  for best add-to-app correctness.
+  for best add-to-app correctness. As of Flutter v1.12, most of the plugins
+  [maintained by the Flutter team](https://github.com/flutter/plugins/tree/master/packages)
+  as well as [FlutterFire](https://github.com/FirebaseExtended/flutterfire/tree/master/packages)
+  have been migrated.
 - Support for Flutter debugging and stateful hot reload by using `flutter attach`
   from IDEs or the command line to connect to an app containing Flutter.
 
