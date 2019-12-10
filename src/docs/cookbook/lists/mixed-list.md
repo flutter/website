@@ -71,9 +71,8 @@ final items = List<ListItem>.generate(
 
 ## 2. Convert the data source into a list of widgets
 
-To convert each item into a widget, use the
-[`ListView.builder()`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html)
-constructor.
+To convert each item into a widget,
+use the [`ListView.builder()`][] constructor.
 
 In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
@@ -191,3 +190,6 @@ class MessageItem implements ListItem {
 ```
 
 ![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
+ 
+
+[`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

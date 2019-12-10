@@ -18,8 +18,7 @@ your users experience jank.
 
 To avoid jank, you need to perform expensive computations like this in the
 background. On Android, this means scheduling work on a different thread.
-In Flutter, you can use a separate
-[Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html).
+In Flutter, you can use a separate [Isolate][].
 This recipe uses the following steps:
 
   1. Add the `http` package.
@@ -29,7 +28,7 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-First, add the [`http`]({{site.pub-pkg}}/http) package to your project.
+First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
@@ -41,9 +40,8 @@ dependencies:
 ## 2. Make a network request
 
 In this example, fetch a JSON large document that contains a list of
-5000 photo objects from the [JSONPlaceholder REST
-API](https://jsonplaceholder.typicode.com),
-using the [http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
+5000 photo objects from the [JSONPlaceholder REST API][],
+using the [http.get()][] method.
 
 <!-- skip -->
 ```dart
@@ -59,9 +57,9 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 
 ## 3. Parse and convert the JSON into a list of photos
 
-Next, following the guidance from the [Fetch data from the
-internet](/docs/cookbook/networking/fetch-data)
-recipe, convert the `http.Response` into a list of Dart objects.
+Next, following the guidance from the
+[Fetch data from the internet][] recipe,
+convert the `http.Response` into a list of Dart objects.
 This makes the data easier to work with in the future.
 
 ### Create a `Photo` class
@@ -122,8 +120,8 @@ If you run the `fetchPhotos()` function on a slower device,
 you might notice the app freezes for a brief moment as it parses and
 converts the JSON. This is jank, and you want to be rid of it.
 
-You can remove the jank by moving the parsing and conversion to a background
-isolate using the [`compute()`]({{site.api}}/flutter/foundation/compute.html)
+You can remove the jank by moving the parsing and conversion
+to a background isolate using the [`compute()`][]
 function provided by Flutter. The `compute()` function runs expensive
 functions in a background isolate and returns the result. In this case,
 run the `parsePhotos()` function in the background.
@@ -253,3 +251,10 @@ class PhotosList extends StatelessWidget {
 ```
 
 ![Isolate demo](/images/cookbook/isolate.gif){:.site-mobile-screenshot}
+
+[`compute()`]: {{site.api}}/flutter/foundation/compute.html
+[Fetch data from the internet]: /docs/cookbook/networking/fetch-data
+[`http`]: {{site.pub-pkg}}/http
+[http.get()]: {{site.pub-api}}/http/latest/http/get.html
+[Isolate]: {{site.api}}/flutter/dart-isolate/Isolate-class.html
+[JSONPlaceholder REST API]: https://jsonplaceholder.typicode.com

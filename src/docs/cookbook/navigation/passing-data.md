@@ -43,8 +43,8 @@ class Todo {
 
 Second, display a list of todos. In this example, generate
 20 todos and show them using a ListView.
-For more information on working with lists, see the
-[Use lists](/docs/cookbook/lists/basic-list) recipe.
+For more information on working with lists,
+see the [Use lists][] recipe.
 
 ### Generate the list of todos
 
@@ -117,12 +117,9 @@ you're ready to perform the Navigation.
 In this example, navigate to the `DetailScreen` when a user
 taps a todo in the list. Pass the todo to the `DetailScreen`.
 
-To capture the user's tap, write an
-[`onTap()`]({{site.api}}/flutter/material/ListTile/onTap.html)
+To capture the user's tap, write an [`onTap()`][]
 callback for the `ListTile` widget. Within the `onTap()` callback,
-use the
-[`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)
-method.
+use the [`Navigator.push()`][] method.
 
 <!-- skip -->
 ```dart
@@ -378,3 +375,8 @@ class DetailScreen extends StatelessWidget {
 ```
 
 ![Passing Data Demo](/images/cookbook/passing-data.gif){:.site-mobile-screenshot}
+
+
+[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`onTap()`]: {{site.api}}/flutter/material/ListTile/onTap.html
+[Use lists]: /docs/cookbook/lists/basic-list
