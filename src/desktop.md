@@ -18,16 +18,13 @@ which are in technical preview. You can try Windows and Linux platform support
 by reading the [Desktop shells page] in the [Flutter wiki].
 
 ## Requirements
-Desktop support requires the following:
-- [Install the Flutter SDK on your platform][install flutter].
-- Optional: Install [Android Studio], [IntelliJ IDEA], or [Visual Studio Code]
+To create a Flutter app with desktop support, you need the following software:
+* Flutter SDK. See the [Flutter SDK installation instructions][install flutter].
+* Optional: An IDE that supports Flutter.
+You can install [Android Studio], [IntelliJ IDEA], or [Visual Studio Code]
 and [install the Flutter and Dart plugins] to enable language support and
 tools for refactoring, running, debugging, and reloading your desktop app
 within an editor. See the [IDE support] section for more details.
-
-## Create a new project with desktop support
-Use the following commands to create and run a new Flutter project
-with desktop support.
 
 ### Set up
 You must be on the master [flutter build release channel]
@@ -53,7 +50,7 @@ use the following commands to create and run the [Flutter starter app]
 as a new desktop project:
 
 ```terminal
-$ flutter create --macos .
+$ flutter create .
 $ flutter run -d macOS
 ```
 ![Desktop Hello World](/images/desktop/desktop_hello_world.gif){:width="70%"}
@@ -69,12 +66,12 @@ To generate a release build run the following command:
 $ flutter build macos
 ```
 
-## Add desktop support to an existing project
+## Add desktop support to an existing Flutter project
 To add desktop support to an existing project,
 run the following command in a terminal from the root project directory:
 
 ```terminal
-$ flutter create --macos .
+$ flutter create .
 ```
 To run your project as a desktop app, use the following command:
 
@@ -88,12 +85,9 @@ using the existing Dart and Flutter extensions for [Android Studio / IntelliJ] a
 as [Visual Studio Code]. Follow the instructions to [set up an editor] and install
 the Dart and Flutter extensions (also referred to as editor plugins).
 
-### VS Code - Create a new project with desktop support
+### VS Code: Create and run a new project with desktop support
 Creating a new project with desktop support is no different than
 [creating a new Flutter project][flutter starter app] for other platforms.
-
-### VS Code - Running and debugging
-
 Running a Flutter desktop app is no different than
 [running and debugging in VS Code] for other target platforms:
  1. Select **macOS** as a target device from the VS Code status bar.
@@ -103,16 +97,14 @@ Running a Flutter desktop app is no different than
 
 {{site.alert.note}}
   Is `macOS` not listed as one of your available devices?
-  Make sure to first run `flutter create --macos`
+  Make sure to first run `flutter create`
   to create the `macos` directory in your project root.
 {{site.alert.end}}
 
-### Android Studio / IntelliJ IDEA - Create a new project with desktop support
+### Android Studio and IntelliJ IDEA: Create and run a new project with desktop support
 Creating a new project with desktop support is no different than
 [creating a new Flutter project][flutter starter app] for other platforms.
-
-### Android Studio / IntelliJ IDEA - Running and debugging
-Running a Flutter Desktop project uses the same
+To run a Flutter project with desktop support, use the same
 process for [running and debugging Flutter projects in Android Studio / IntelliJ] with other
 target platforms:
 1. Select **macOS (desktop)** from the **target selector** dropdown menu in the
@@ -124,79 +116,36 @@ target platforms:
 ## Plugin support
 Flutter Desktop supports both using and creating plugins.
 
-### Using plugins
 To use a plugin that supports macOS, follow the steps for plugins in [using
-packages]:
-1. Add the plugin to `pubspec.yaml`.
-2. Run `flutter pub get`.
-3. Run `flutter run`.
-
+packages].
 Flutter automatically adds the necessary native code
 to your project, as with iOS or Android.
 
-#### flutter_plugins
-The following plugins are available in the [flutter-desktop-embedding] GitHub
-repository within the [plugins/flutter_plugins] directory:
-- connectivity_fde
-- path_provider_fde
-- shared_preferences_fde
-- url_launcher_fde
+1. Add the latest version of the plugin to `pubspec.yaml`.
+2. Run `flutter pub get`.
+3. Run `flutter run`.
 
-For each of these plugins there is a corresponding plugin with the same name,
-without the `_fde` suffix, within the [flutter/plugins] GitHub repository.
-The `_fde` implementations exist only as a temporary solution
-while the plugin APIs on each desktop platform stabilize;
-they will eventually move to an official location and be distributed as Flutter plugins.
+The following plugins have macos desktop support:
 
-The Dart code for these `_fde` plugins comes from the official plugin,
-so you must include both the official plugin as well as the `_fde` plugin in your
-`pubspec.yaml`. To include the `_fde` plugin,
-you can use the steps for adding [dependencies on unpublished packages]
-by providing a [git reference] to the [flutter-desktop-embedding]
-path for the plugin. For instance,
-to use `url_launcher` with desktop support,
-you must include both `url_launcher` and `url_launcher_fde`
-in your `pubspec.yaml` file:
+* [url_launcher]
+* [shared_preferences]
+* [connectivity]
+* [path_provider]
+
+[url_launcher] and [shared_preferences] are fully supported as normal plugins.
+To use [connectivity] and [path_provider] you need to declare an
+extra dependency in your pubspec.yaml with a `_macos` suffix
+(you don't need to add any additional imports):
 
 ```yaml
-dependencies:
-  ...
-  url_launcher: ^5.0.0
-  url_launcher_fde:
-    git:
-      url: git://github.com/google/flutter-desktop-embedding.git
-      path: plugins/flutter_plugins/url_launcher_fde
+connectivity: ^0.4.6
+connectivity_macos: ^0.0.1
 ```
-
-Since the Dart code for `flutter_plugins` in [flutter-desktop-embedding] comes
-from the official plugin, you must import the official plugin in your Dart files
-to use the plugin:
-
-```dart
-import 'package:url_launcher/url_launcher.dart';
-
-void _launchURL() async {
-  const url = 'https://github.com/google/flutter-desktop-embedding';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-```
-
-#### Other plugins
-
-The remaining plugins available with desktop support include:
-- [color_panel]
-- [file_chooser]
 
 ### Creating plugins
-The process for creating a desktop plugin follows the steps listed in the
-[Developing plugin packages] page, with only one difference:
-- To create a plugin, pass the `--macos` flag when you `flutter create` your
-   plugin.
-- Use the [Federated Plugin Spec].
+To create a plugin with desktop support you should use the following resources:
+* [Developing plugin packages]
+* [Federated Plugin Spec]
 
 ## Samples
 You can run the following samples as desktop apps,
@@ -210,52 +159,54 @@ implemented with Flutter.
 You can clone the project and run Gallery as a desktop app
 by following the provided instructions in the README.
 
-[Unsplash Search app]
+[Photo Search app]
 : A sample app built as a desktop application that uses
 the following desktop-specific plugins:
-- file_chooser
-- menubar
-- url_launcher_fde
-
+* file_chooser
+* menubar
+* url_launcher
 
 ## What's next
 Stay tuned for updates on desktop support!
 We will continue to develop desktop support for Mac, Windows, and Linux.
-- Watch the [Desktop shells page] on the [Flutter wiki] for more
+* Watch the [Desktop shells page] on the [Flutter wiki] for more
 information and ongoing updates.
-- Learn more about desktop support for plugins at the [flutter-desktop-embedding]
+* Learn more about desktop support for plugins at the [flutter-desktop-embedding]
 GitHub repository.
 
-[flutter wiki]: {{site.repo.flutter}}/wiki/
-[install flutter]: /docs/get-started/install
-[Desktop shells page]: {{site.repo.flutter}}/wiki/Desktop-shells
-[flutter build release channel]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
-[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages
-[Unsplash Search app]: https://user.git.corp.google.com/brettmorgan/flutter_desktop_app/?pli=1
-[file_chooser]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
-[color_panel]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/color_panel
-[install the Flutter and Dart plugins]: /docs/get-started/editor
-[IDE support]: /desktop#ide-support
-[flutter starter app]: /docs/get-started/test-drive
-
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[Android Studio]: {{site.android-dev}}/studio/install
 [Android Studio / IntelliJ]: /docs/development/tools/android-studio
-[Desktop shells page]: {{site.repo.flutter}}/wiki/Desktop-shells
-[Flutter Gallery]: {{site.github}}/material-components/material-components-flutter-gallery
-[Running and debugging Flutter projects in Android Studio / IntelliJ]: /docs/development/tools/android-studio#running-and-debugging
-[Running and debugging in VS Code]: /docs/development/tools/vs-code#running-and-debugging
-[Using packages]: /docs/development/packages-and-plugins/using-packages
-[Visual Studio Code]: /docs/development/tools/vs-code
+[Android Studio]: {{site.android-dev}}/studio/install
+[color_panel]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/color_panel
+[connectivity]: {{site.pub}}/packages/connectivity
 [debug mode]: /docs/testing/build-modes#debug
 [dependencies on unpublished packages]: /docs/development/packages-and-plugins/using-packages#dependencies-on-unpublished-packages
+[Desktop shells page]: {{site.repo.flutter}}/wiki/Desktop-shells
+[Desktop shells page]: {{site.repo.flutter}}/wiki/Desktop-shells
+[Developing plugin packages]: /docs/development/packages-and-plugins/developing-packages
 [federated plugin spec]: https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit?pli=1#heading=h.pub7jnop54q0
+[file_chooser]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
+[flutter build release channel]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter Gallery]: {{site.github}}/material-components/material-components-flutter-gallery
+[flutter starter app]: /docs/get-started/test-drive
+[flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
 [flutter/plugins]: {{site.repo.organization}}/plugins
 [git reference]: {{site.dart-site}}/tools/pub/dependencies#git-packages
 [hot reload]: /docs/development/tools/hot-reload
+[IDE support]: /desktop#ide-support
+[install flutter]: /docs/get-started/install
+[install the Flutter and Dart plugins]: /docs/get-started/editor
+[IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
+[path_provider]: {{site.pub}}/packages/path_provider
+[Photo Search app]: {{site.repo.organization}}/samples/tree/master/experimental/desktop_photo_search
 [plugins/flutter_plugins]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/flutter_plugins
 [profile mode]: /docs/testing/build-modes#profile
 [release mode]: /docs/testing/build-modes#release
+[Run and debug in Android Studio and IntelliJ]: /docs/development/tools/android-studio#running-and-debugging
+[Running and debugging in VS Code]: /docs/development/tools/vs-code#running-and-debugging
 [set up an editor]: /docs/get-started/editor
+[shared_preferences]: {{site.pub}}/packages/shared_preferences
 [steps to install Flutter]: /docs/get-started/install/macos
+[url_launcher]: {{site.pub}}/packages/url_launcher
+[Using packages]: /docs/development/packages-and-plugins/using-packages
+[Visual Studio Code]: /docs/development/tools/vs-code
