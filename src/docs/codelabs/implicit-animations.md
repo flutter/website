@@ -389,7 +389,7 @@ for `margin`, `borderRadius`, and `color`.
 
 The preceding examples show how implicit animations allow you to animate
 changes in values for specific widget properties, and how the
-`duration` paramete allows you to set the amount of time an
+`duration` parameter allows you to set the amount of time an
 animation takes to complete. Implicit animations also allow you to
 control changes to __the rate__ of an animation within the `duration`.
 The parameter you use to define this change in rate is [curve].
