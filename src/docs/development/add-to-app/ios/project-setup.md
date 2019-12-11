@@ -54,8 +54,8 @@ Add Flutter dependencies to `my_flutter/pubspec.yaml`, including Flutter package
 and plugins.
 
 The `.ios/` hidden subfolder contains an Xcode workspace where you can
-run a standalone version of your module, and contains a wrapper project to bootstrap
-your Flutter code. It contains helper scripts to build frameworks,   or you can 
+run a standalone version of your module. It is a wrapper project to bootstrap your Flutter code.
+It contains helper scripts to build frameworks, or you can
 embed the module into your existing application with [CocoaPods][].
 
 {{site.alert.note}}
@@ -70,7 +70,7 @@ Regenerate the directory by running `flutter clean` or `flutter pub get` in the
 There are two ways to embed Flutter in your existing application.
 
 1. Use the CocoaPods dependency manager and installed Flutter SDK. (Recommended.)
-2. Create frameworks for the Flutter engine, your compiled Dart code, and all
+1. Create frameworks for the Flutter engine, your compiled Dart code, and all
    Flutter plugins. Manually embed the frameworks, and update your existing
    application's build settings in Xcode.
 
@@ -222,7 +222,7 @@ You can now [add a Flutter screen][] to your existing application.
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[increase your app size]: https://flutter.dev/docs/resources/faq#how-big-is-the-flutter-engine
-[build modes of Flutter]: https://flutter.dev/docs/testing/build-modes
+[increase your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
+[build modes of Flutter]: /docs/testing/build-modes
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
