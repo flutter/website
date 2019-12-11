@@ -16,10 +16,10 @@ This page covers the following steps for getting started with web support:
 
 For more information, see the [web FAQ][].
 
-{{ site.alert.warning }}
-As of 1.12, Flutter has early support for running web applications.
-There are still missing features and known performance issues,
-so it **isn't recommended for production use.**
+{{ site.alert.note }}
+  As of 1.12, Flutter has early support for running web applications.
+  If you experience a problem that hasn’t yet been reported,
+  please [file an issue][] and make sure that “web” appears in the title.
 {{ site.alert.end }}
 
 ## Create a new project with web support
@@ -131,6 +131,7 @@ $ flutter run -d chrome
 
 [dart2js]: https://dart.dev/tools/dart2js
 [development compiler]: https://dart.dev/tools/dartdevc
+[file an issue]: https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [web FAQ]: /docs/development/platform-integration/web
 [install Chrome]: https://www.google.com/chrome/
 [Install Flutter]: https://flutter.dev/docs/get-started/install
