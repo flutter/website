@@ -11,13 +11,13 @@ description: How to update a plugin using the old APIs to support the new APIs.
 _If you don't write or maintain an Android Flutter plugin, you can skip this page._
 
 As of the 1.12 release, new plugin APIs are available for the Android platform.
-The old APIs based on [PluginRegistry.Registrar][] won't be immediately
+The old APIs based on [`PluginRegistry.Registrar`][] won't be immediately
 deprecated, but we encourage you to migrate to the new APIs based on
-[FlutterPlugin][].
+[`FlutterPlugin`][].
 
 The new API has the advantage of providing a cleaner set of accessors for
 lifecycle dependent components compared to the old APIs. For instance
-[PluginRegistry.Registrar.activity()][] could return null if Flutter isn't
+[`PluginRegistry.Registrar.activity()`][] could return null if Flutter isn't
 attached to any activities.
 
 In other words, plugins using the old API may produce undefined behaviors when
@@ -338,14 +338,13 @@ Finally, in `onDetachedFromActivity()` your plugin should clean
 up all references related to `Activity` behavior and return to
 a non-UI configuration.
 
-[PluginRegistry.Registrar.activity()]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
-[PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
-[FlutterPlugin]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
+[`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
+[`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [flutter.dev/go/android-project-migration]: /go/android-project-migration
 [`ActivityAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/activity/ActivityAware.html
 [`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
 [Basic plugin]: #basic-plugin
 [battery package]: {{site.github}}/flutter/plugins/tree/master/packages/battery
 [flutter.dev]: {{site.pub}}/flutter.dev/packages
-[`FlutterPlugin`]: {{site.github}}/flutter/engine/blob/master/shell/platform/android/io/flutter/embedding/engine/plugins/FlutterPlugin.java
 [verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers
