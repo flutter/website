@@ -56,9 +56,7 @@ $ flutter run -d macOS
 ![Desktop Hello World](/images/desktop/desktop_hello_world.gif){:width="70%"}
 
 Flutter's desktop support includes the `create` and `build` commands as well as the `run`
-command with [debug mode] and [hot reload]. Desktop support does not currently
-include [profile mode] or [release mode].
-
+command with [debug mode], [release mode], [profile mode], and [hot reload].
 
 ### Build
 To generate a release build run the following command:
