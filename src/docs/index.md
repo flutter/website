@@ -32,7 +32,10 @@ including breaking changes, join the
 
 Flutter 1.12 is live!
 
-For more information, see xxx
+For more information, see
+[Flutter: the first UI platform designed for ambient computing][],
+[Announcing Flutter 1.12: What a year!][] and
+the [Flutter 1.12.13][] release notes.
 
 Docs added and updated since the last announcement include:
 
@@ -43,8 +46,9 @@ Docs added and updated since the last announcement include:
   new plugin APIs for Android. For more information, see
   [Migrating your plugin to the new Android APIs][].
 * Web support has moved to the beta channel. For more information,
-  see [Web support for Flutter][]. Also,
-  the [building a web app with Flutter][] page is updated.
+  see [Web support for Flutter][] and
+  [Web support for Flutter goes beta][] on the Medium publication.
+  Also, the [building a web app with Flutter][] page is updated.
 * A new [write your first Flutter app on the web][] codelab
   is added to the [Get started][] docs, and includes
   instructions on setting breakpoints in DevTools!
@@ -66,20 +70,23 @@ Other newness:
 * A brand new version of [Flutter Gallery][]. There's a 
   link to the runnable sample in the side nav under
   **Samples & Tutorials**.
-* A new 
 
 Happy Fluttering!
 
 [add Flutter to an existing app]: /docs/development/add-to-app
+[Announcing Flutter 1.12: What a year!]: https://medium.com/flutter/announcing-flutter-1-12-what-a-year-22c256ba525d
 [app size]: /docs/perf/app-size#ios
 [building a web app with Flutter]: /docs/get-started/web
 [Desktop support for Flutter]: /desktop
+[Flutter: the first UI platform designed for ambient computing]: https://developers.googleblog.com/2019/12/flutter-ui-ambient-computing.html?m=1
+[Flutter 1.12.13]: /docs/development/tools/sdk/release-notes/release-notes-1.12.13
 [Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: https://medium.com/flutter
 [Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
 [implicit animations]: /docs/codelabs/implicit-animation
 [Web support for Flutter]: /web
+[Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
 [write your first Flutter app on the web]: /docs/get-started/codelab-web
 [Get started]: /docs/get-started/install
 
