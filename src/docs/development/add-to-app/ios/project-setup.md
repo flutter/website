@@ -74,6 +74,13 @@ There are two ways to embed Flutter in your existing application.
    Flutter plugins. Manually embed the frameworks, and update your existing
    application's build settings in Xcode.
 
+{{site.alert.note}}
+Your app will not run on a simulator with Flutter's Release framework. You can run
+with the Debug framework on a simulator or a real device, and Release on a real device.
+{{site.alert.end}}
+
+Using Flutter will [increase your app size][].
+
 ### Option A - Embed with CocoaPods and the Flutter SDK
 
 This method requires every developer working on your project to have a locally installed
@@ -127,8 +134,12 @@ in your application at`some/path/MyApp`.
 The `podhelper.rb` script embeds your plugins, `Flutter.framework`, and
 `App.framework` into your project.
 
+Your app's Debug and Release build configurations will embed the Debug or
+Release [build modes of Flutter][], respectively. Add a Profile build configuration
+to your app to test in profile mode.
+
 {{site.alert.tip}}
-`Flutter.framework` is the library for the Flutter engine, and `App.framework` is
+`Flutter.framework` is the bundle for the Flutter engine, and `App.framework` is
 the compiled Dart code for this project.
 {{site.alert.end}}
 
@@ -183,6 +194,10 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
+In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to your Framework Search Paths.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
+
 There are multiple ways to embed frameworks into an Xcode project—use the method that is best for your project.
 
 You should now be able to build the project in Xcode using `⌘B`.
@@ -207,5 +222,7 @@ You can now [add a Flutter screen][] to your existing application.
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
+[increase your app size]: https://flutter.dev/docs/resources/faq#how-big-is-the-flutter-engine
+[build modes of Flutter]: https://flutter.dev/docs/testing/build-modes
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
