@@ -84,7 +84,7 @@ Happy Fluttering!
 [Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: https://medium.com/flutter
 [Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
-[implicit animations]: /docs/codelabs/implicit-animation
+[implicit animations]: /docs/codelabs/implicit-animations
 [Web support for Flutter]: /web
 [Web support for Flutter goes beta]: https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0
 [write your first Flutter app on the web]: /docs/get-started/codelab-web
