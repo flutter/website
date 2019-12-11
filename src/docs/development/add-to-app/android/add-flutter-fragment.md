@@ -22,7 +22,7 @@ If an `Activity` is equally applicable for your application needs, consider
 [using a `FlutterActivity`] instead of a `FlutterFragment`, which is quicker and
 easier to use.
 
-[using a `FlutterActivity`]: /docs/development/platform-integration/add-to-app-android/add-flutter-screen
+[using a `FlutterActivity`]: /docs/development/add-to-app/android/add-flutter-screen
 
 `FlutterFragment` allows developers to control the following details of the
 Flutter experience within the `Fragment`:
@@ -126,7 +126,7 @@ class MyActivity : FragmentActivity() {
     // first time that onCreate() was run.
     flutterFragment = fragmentManager
       .findFragmentByTag(TAG_FLUTTER_FRAGMENT) as FlutterFragment?
-    
+
     // Create and attach a FlutterFragment if one does not exist.
     if (flutterFragment == null) {
       var newFlutterFragment = FlutterFragment.createDefault()
@@ -319,7 +319,7 @@ this brief waiting period, Flutter supports the display of a splash screen until
 Flutter renders its first frame. For instructions about how to show a splash screen,
 see the [Android splash screen guide].
 
-[Android splash screen guide]: /docs/development/platform-integration/add-to-app-android/add-splash-screen
+[Android splash screen guide]: /docs/development/add-to-app/android/add-splash-screen
 
 ## Run Flutter with a specified initial route
 
@@ -359,10 +359,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
 
 Similar to varying initial routes, different `FlutterFragments` may want to
 execute different Dart entrypoints. In a typical Flutter app, there is only one
-Dart entrypoint: `main()`, but you can define other entrypoints. See [defining
-Dart entrypoints] for instructions about defining such entrypoints.
-
-[defining Dart entrypoints]: /docs/development/platform-integration/add-to-app-android/custom-dart-entrypoints
+Dart entrypoint: `main()`, but you can define other entrypoints.
 
 `FlutterFragment` supports specification of the desired Dart entrypoint to
 execute for the given Flutter experience. To specify an entrypoint, build
