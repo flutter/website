@@ -20,5 +20,6 @@ tmp/
 package-lock.json
 
 .idea/
+.vscode/
 .firebase/
 firebase-debug.log

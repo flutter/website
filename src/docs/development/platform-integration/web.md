@@ -5,10 +5,8 @@ description: Some gotchas and differences when writing or running web apps in Fl
 
 ### Is the web version of Flutter ready for production?
 
-As of the 1.9 release, the web version of Flutter
-is available as a technical preview on the master channel.
-Web support has been added to the main Flutter repo,
-but is missing features and has known performance issues.
+As of the 1.12 release, web support for Flutter
+is available on the beta channel.
 **We don't recommend deploying a web app to production.**
 
 ### How do I migrate a web app built using the flutter_web repo to the flutter repo?
@@ -45,7 +43,7 @@ or you can enter "R" in the console where
 
 You can select **Chrome** as the target device in
 Android Studio/IntelliJ and VS Code if you are using the
-latest master channel of Flutter and have enabled web support.
+latest beta channel of Flutter and have enabled web support.
 To enable support, run the following in the terminal:
 
 ```terminal
