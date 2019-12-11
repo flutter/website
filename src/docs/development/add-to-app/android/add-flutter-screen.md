@@ -209,7 +209,7 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
-{% sample Kotlin,ExistingActivity.kt %}
+{% sample Kotlin %}
 <?code-excerpt "ExistingActivity.kt" title?>
 ```kotlin
 myButton.setOnClickListener {
