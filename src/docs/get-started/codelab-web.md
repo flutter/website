@@ -13,9 +13,6 @@ short-title: Write your first web app
 
 {% asset get-started/sign-in alt="The web app that you'll be building" class='site-image-right' %}
 
-{% comment %}
-{% endcomment %}
-
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
 and concepts such as variables, loops, and conditionals,
@@ -76,7 +73,7 @@ At the command line, perform the following commands to
 make sure that you have the latest web support and that
 it is enabled. You only need to run `flutter config` once
 to enable Flutter support for web.
-If you see “flutter: command not found”,
+If you see "flutter: command not found",
 then make sure that you have installed the
 [Flutter SDK][] and that it’s in your path.
 
@@ -331,9 +328,9 @@ Replace the `Step 2` comment with the code below marked as **NEW**:
        ...
        SignUpFormBody(
          onProgressChanged: (progress) {
-           **setState(() {**                        // NEW
-             **_formCompleted = progress == 1;**    // NEW
-           **});**                                  // NEW
+           <b>setState(() {                          // NEW</b>
+             <b>_formCompleted = progress == 1;**    // NEW</b>
+           <b>});                                    // NEW</b>
          },
        ),
        ...
@@ -356,7 +353,7 @@ screen only when the form is completely filled in:
          child: FlatButton(
            color: Colors.blue,
            textColor: Colors.white,
-           **onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED**
+           <b>onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED</b>
            child: Text('Sign up'),
          ),
 ...
@@ -425,7 +422,7 @@ You want to use [Dart DevTools][]!
 (Not to be confused with Chrome DevTools.)
 
 Our app currently has no bugs, but let’s check it out anyway.
-The following instructions for launching DevTools applies to any work flow,
+The following instructions for launching DevTools applies to any workflow,
 but there is a short cut if you’re using IntelliJ.
 See the tip at the end of this section for more information.
 
@@ -470,27 +467,318 @@ Serving DevTools at http://127.0.0.1:9100
 Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
-[INSERT IMAGE xxx]
+{% indent %}
+  ![Screenshot of the DevTools launch screen]({% asset get-started/devtools-launch-screen.png @path %}){:width="100%"}
+{% endindent %}
 </li>
 
+<li markdown="1">Connect to running app.<br>
+Under **Connect to a running site**,
+paste the ws location that you copied in step 2,
+and click Connect. You should now see Dart DevTools
+running successfully in your Chrome browser:
+
+{% indent %}
+  ![Screenshot of DevTools running screen]({% asset get-started/devtools-running.png @path %}){:width="100%"}
+{% endindent %}
+
+Congratulations, you are now running Dart DevTools!
+</li>
+</ol>
+
+{{site.alert.note}}
+  This is not the only way to launch DevTools.
+  If you are using IntelliJ,
+  you can open DevTools by going to
+  **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
+
+  {% indent %}
+  ![Screenshot of Flutter inspector with DevTools menu]({% asset get-started/intellij-devtools.png @path %}){:width="100%"}
+  {% endindent %}
+{{site.alert.end}}
+
+<ol markdown="1">
+<li markdown="1">Set a breakpoint.<br>
+Now that you have DevTools running,
+select the **Debugger** tab in the blue bar along the top.
+The debugger pane appears and, in the lower left,
+see a list of libraries used in the example.
+Select `signin/main.dart` to display your Dart code
+in the center pane.
+
+{% indent %}
+  ![Screenshot of the DevTools debugger]({% asset get-started/devtools-debugging.png @path %}){:width="100%"}
+  [todo: replace screenshot]
+{% endindent %}
+</li>
+
+<li markdown="1">Set a breakpoint.<br>
+In the Dart code,
+scroll down to line 61, where `_formCompleted` is updated:
+
+<!-- skip -->
+```dart
+  _formCompleted = progress == 1;
+```
+Place a breakpoint on this line by clicking to the
+left of the line number. The breakpoint now appears
+in the **Breakpoints** section to the left of the window.
+</li>
+
+<li markdown="1">Trigger the breakpoint.<br>
+In the running app, click one of the text fields to gain focus.
+The app hits the breakpoint and pauses.
+In the DevTools screen, you can see on the left
+the value of `progress`, which is 0. This is to be expected,
+since none of the fields are filled in.
+Click the downward arrow to the left of the `this _SignUpFormState`.
+You can see the value of `_formCompleted` is false, as expected.
+</li>
+
+<li markdown="1">Resume the app.<br>
+Resume the app by clicking the green **Resume**
+button in the DevTools window.
+</li>
+
+<li markdown="1">Delete the breakpoint.<br>
+Delete the breakpoint by clicking it again, and resume the app.
+</li>
+</ol>
+
+This gives you a tiny glimpse of what is possible using DevTools,
+but there is lots more! For more information,
+see the [DevTools documentation][].
+
+## Step 3: Add animation for sign in progres
+
+It’s time to add animation! In this final step,
+you’ll create the animation for the top of the sign in area.
+The animation has the following behavior:
+
+* When the app starts,
+  a tiny red bar appears across the top of the sign in area.
+* When one text field contains text,
+  the red bar turns orange and animates one-third
+  of the way across the sign in area.
+* When two text fields contain text,
+  the orange bar turns yellow and animates two-thirds
+  of the way across the sign in area.
+* When all three text fields contain text,
+  the orange bar turns green and animates all the
+  way across the sign in area.
+  Also, the **Sign up** button becomes enabled.
+
+<ol markdown="1">
+<li markdown="1">Add fields to track the animation.<br>
+In the `_SignupFormState` class, search for `Step 3`&mdash;you'll
+find it at the top of the class. Add a field for the `AnimationController`,
+and another for the color animation:
+
+<!--skip-->
+```dart
+...
+class _SignUpFormState extends State<SignUpForm>
+   with SingleTickerProviderStateMixin {
+ <b>AnimationController animationController;  // NEW</b>
+ <b>Animation<Color> colorAnimation;          // NEW</b>
+ bool _formCompleted = false;
+...
+```
+</li>
+
+<li markdown="1">Initialize the `AnimationController`:
+Define the AnimationController in `initState()`:
+
+<!--skip-->
+```dart
+class _SignUpFormState extends State<SignUpForm>
+   with SingleTickerProviderStateMixin {
+ AnimationController animationController;
+ Animation<Color> colorAnimation;
+ bool _formCompleted = false;
+
+ @override
+ void initState() {
+   super.initState();
+
+   <b>animationController = AnimationController(                      //NEW</b>
+       <b>vsync: this, duration: const Duration(milliseconds: 1200)); //NEW</b>
+...
+```
+</li>
+
+<li markdown="1">Create a `Tween` sequence.<br>
+Also in `initState()`, define a `Tween` sequence consisting
+of three color tweens, one for each color of the animation
+(red-to-orange, orange-to-yellow, yellow-to-green).
+
+<!--skip-->
+```dart
+...
+   animationController = AnimationController(
+       vsync: this, duration: const Duration(milliseconds: 1200));
+
+   <b>var colorTween = TweenSequence([</b>
+     <b>TweenSequenceItem(</b>
+       <b>tween: ColorTween(begin: Colors.red, end: Colors.orange),</b>
+       <b>weight: 1,</b>
+     <b>),</b>
+     <b>TweenSequenceItem(</b>
+       <b>tween: ColorTween(begin: Colors.orange, end: Colors.yellow),</b>
+       <b>weight: 1,</b>
+     <b>),</b>
+     <b>TweenSequenceItem(</b>
+       <b>tween: ColorTween(begin: Colors.yellow, end: Colors.green),</b>
+       <b>weight: 1,</b>
+     <b>),</b>
+   <b>]);</b>
+...
+```
+</li>
+
+<li markdown="1">Attach the tween sequence to the `AnimationController`.<br>
+For the final edit in `initState()`,
+define colorAnimation by chaining the `Tween` sequence to
+the animation controller using the `drive()` method.
+
+<!--skip-->
+```dart
+   animationController = AnimationController(
+       vsync: this, duration: const Duration(milliseconds: 1200));
+
+   var colorTween = TweenSequence([
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.red, end: Colors.orange),
+       weight: 1,
+     ),
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+       weight: 1,
+     ),
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+       weight: 1,
+     ),
+   ]);
+
+   <b>colorAnimation = animationController.drive(colorTween); //NEW</b>
+ }
+```
+</li>
+
+<li markdown="1">Set up the animation trigger.<br>
+In the definition for the body of the form,
+update the `onProgressChanged` property:
+When the value of `progress` changes, trigger the animation:
+
+<!--skip-->
+```dart
+       SignUpFormBody(
+         onProgressChanged: (progress) {
+           <b>if (!animationController.isAnimating) {     // NEW</b>
+             <b>animationController.animateTo(progress);  // NEW</b>
+           <b>}                                           // NEW</b>
+           setState(() {
+             <b>_formCompleted = progress == 1;  // UPDATED</b>
+           });
+         },
+       ),
+...
+```
+</li>
+
+<li markdown="1">Set up an `AnimationBuilder`.<br>
+To display the animation,
+add an `AnimatedBuilder` that creates a
+`LinearProgressIndicator` to the column.
+The `LinearProgressIndicator` is implemented as
+another anonymous function on the `builder` field:
+
+<!--skip-->
+```dart
+ @override
+ Widget build(BuildContext context) {
+   return Column(
+     mainAxisSize: MainAxisSize.min,
+     children: [
+       <b>AnimatedBuilder(                         // NEW</b>
+         <b>animation: animationController,        // NEW</b>
+         <b>builder: (context, child) {            // NEW</b>
+           <b>return LinearProgressIndicator(      // NEW</b>
+             <b>value: animationController.value,  // NEW</b>
+             <b>valueColor: colorAnimation,        // NEW</b>
+             <b>backgroundColor: colorAnimation.value.withOpacity(0.4),          // NEW</b>
+           <b>);                                   // NEW</b>
+         },
+       ),
+...
+```
+</li>
+
+<li markdown="1">Run the app.<br>
+Type anything into the three fields to verify that the animation works,
+and that clicking the **Sign up** button brings up the Welcome screen.
+</li>
 </ol>
 
 
+### Problems?
+{:.no_toc}
+
+If your app is not running correctly, look for typos.
+If needed, use the code at the following link to get back on track.
+
+* [lib/main.dart](https://gist.github.com/sfshaza2/9a7e10e9141b775a70a94a14bf2200b4)
+
+### Observations
+{:.no_toc}
+
+* You can use an `AnimationController` to run any animation.
+* `AnimatedBuilder` rebuilds the widget tree when the value
+  of an `Animation` changes.
+* Using a `Tween`, you can interpolate between almost any value,
+  in this case, `Color`.
+
+## What next?
+
+Congratulations!
+You have created your first web app using Flutter!
+
+If you’d like to continue playing with this example,
+perhaps you could add form validation.
+For advice on how to do this,
+see the [Building a form with validation][]
+recipe in the [Flutter cookbook][].
+
+For more information on Flutter web apps,
+Dart DevTools, or Flutter animations, see the following:
+
+* [Animation docs][]
+* [Dart DevTools][]
+* [Implicit animations][] codelab
+* [Web samples][]
+
 
 [Android Studio / IntelliJ]: /docs/development/tools/devtools/android-studio
+[Animation docs]: /docs/development/ui/animations
+[Building a form with validation]: /docs/cookbook/forms/validation
 [Building a web application with Flutter]: /docs/get-started/web
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: /docs/get-started/test-drive
 [Dart DevTools]: /docs/development/tools/devtools/overview
 [DartPad]: https://dartpad.dev
 [DevTools command line]: /docs/development/tools/devtools/cli
+[DevTools documentation]: /docs/development/tools/devtools
 [DevTools installed]: /docs/development/tools/devtools/overview#how-do-i-install-devtools
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [editor]: /docs/get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
+[Flutter cookbook]: /docs/cookbook
 [Flutter SDK]: /docs/get-started/install
+[Implicit animations]: /docs/codelabs/implicit-animations
 [Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
 [Material Design]: https://material.io/design/introduction/#
 [VS Code]: /docs/development/tools/devtools/vscode
+[Web samples]: {{site.github}}/flutter/samples/tree/master/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [writing your first Flutter app on mobile]: /docs/get-started/codelab

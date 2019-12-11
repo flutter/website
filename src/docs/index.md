@@ -46,18 +46,27 @@ Docs added and updated since the last announcement include:
   see [Web support for Flutter][]. Also,
   the [building a web app with Flutter][] page is updated.
 * A new [write your first Flutter app on the web][] codelab
-  is added to the [Get started][] docs.
+  is added to the [Get started][] docs, and includes
+  instructions on setting breakpoints in DevTools!
 * A new [implicit animations][] codelab is available
-  featuring DartPad. (You don't need to download any software!)
+  featuring DartPad.
+  (To run it, you don't need to download any software!)
 * Alpha support for MacOS (desktop) is now available in
   release 1.13 on the master and dev channels.
   For more information, see [Desktop support for Flutter][].
 * The iOS section of the [app size][] page is updated to reflect
   the inclusion of bitcode.
 * An alpha release of Flutter Layout Explorer, a new feature
-  (part of the Flutter inspector) that allows you to
-  view a visual representation of your layout is available.
+  (and part of the Flutter inspector) that allows you to
+  explore a visual representation of your layout is available.
   For more information, see the [Flutter Layout Explorer][] docs.
+
+Other newness:
+
+* A brand new version of [Flutter Gallery][]. There's a 
+  link to the runnable sample in the side nav under
+  **Samples & Tutorials**.
+* A new 
 
 Happy Fluttering!
 
@@ -65,6 +74,7 @@ Happy Fluttering!
 [app size]: /docs/perf/app-size#ios
 [building a web app with Flutter]: /docs/get-started/web
 [Desktop support for Flutter]: /desktop
+[Flutter Gallery]: https://flutter.github.io/samples/#/
 [Flutter Layout Explorer]: https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: https://medium.com/flutter
 [Migrating your plugin to the new Android APIs]: /docs/development/packages-and-plugins/plugin-api-migration
