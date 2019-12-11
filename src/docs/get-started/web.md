@@ -26,14 +26,10 @@ so it **isn't recommended for production use.**
 
 You can use the following steps
 to create a new project with web support.
-Assuming that you have the `flutter` tool installed,
-run the following commands in a terminal from the root project directory.
 
 ### Set up
-Assuming that you already have the
-`flutter` tool installed, run the following commands
-to install the latest version from the beta channel
-and enable web support:
+Run the following commands to use the latest version of the Flutter SDK
+from the beta channel and enable web support:
 
 ```terminal
 $ flutter channel beta
@@ -44,18 +40,20 @@ $ flutter config --enable-web
 {{site.alert.note}}
 The `flutter upgrade` command silently fails
 when `origin` points to a personal fork.
-To validate that `origin` points to the "flutter/flutter" repo,
+To validate that `origin` points to `{{site.repo.flutter}}.git`,
 run the following commands in the root directory
-of your local copy of the "flutter/flutter" repository:
+of your local copy of the `{{site.repo.flutter}}` repository:
 
 ```
 $ cd <inside local copy of the flutter/flutter repo>
 $ git remote get-url origin
-ssh://git@github.com/flutter/flutter.git
+https://github.com/flutter/flutter.git
 ```
 {{site.alert.end}}
 Once web is enabled,
-the `flutter devices` command outputs a device named `Chrome`:
+the `flutter devices` command outputs a `Chrome` device that opens the
+Chrome browser with your app running, and a `Web Server` that provides the URL
+serving the app.
 
 ```terminal
 $ flutter devices
@@ -75,8 +73,8 @@ check the status of your configuration using the `flutter config` command.
 
 ### Create and run
 
-To create a new app that includes web support
-(in addition to mobile support), run the following,
+To create a new app for use with web support
+(in addition to mobile support), run the following commands,
 substituting `myapp` with the name of your project:
 
 ```terminal
@@ -97,9 +95,6 @@ the `-d chrome` is optional.
 
 The `flutter run` command launches the application using the
 [development compiler][] in a Chrome browser.
-The name of the web device is currently `chrome`,
-but this doesn't need to be specified
-if there are no other devices attached.
 
 ### Build
 
