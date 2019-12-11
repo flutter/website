@@ -14,20 +14,19 @@ send messages, create search experiences, and more.
 In this recipe, explore how to create and style text fields.
 
 Flutter provides two text fields:
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html)
-and [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+[`TextField`][] and [`TextFormField`][].
 
 ## `TextField`
 
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html)
-is the most commonly used text input widget.
+[`TextField`][] is the most commonly used text input widget.
 
 By default, a `TextField` is decorated with an underline.
 You can add a label, icon, inline hint text, and error text by supplying an
-[`InputDecoration`]({{site.api}}/flutter/material/InputDecoration-class.html)
-as the [`decoration`]({{site.api}}/flutter/material/TextField/decoration.html)
-property of the `TextField`. To remove the decoration entirely (including the
-underline and the space reserved for the label), set the `decoration` to null.
+[`InputDecoration`][] as the [`decoration`][]
+property of the `TextField`.
+To remove the decoration entirely (including the
+underline and the space reserved for the label),
+set the `decoration` to null.
 
 <!-- skip -->
 ```dart
@@ -39,17 +38,16 @@ TextField(
 );
 ```
 
-To retrieve the value when it changes, see the [Handle changes to a text
-field](/docs/cookbook/forms/text-field-changes/) recipe.
+To retrieve the value when it changes,
+see the [Handle changes to a text field][] recipe.
 
 ## `TextFormField`
 
-[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html)
-wraps a `TextField` and integrates it with the enclosing
-[`Form`]({{site.api}}/flutter/widgets/Form-class.html). This provides
-additional functionality, such as validation and integration with other
-[`FormField`]({{site.api}}/flutter/widgets/FormField-class.html)
-widgets.
+[`TextFormField`][] wraps a `TextField` and integrates it
+with the enclosing [`Form`][].
+This provides additional functionality,
+such as validation and integration with other
+[`FormField`][] widgets.
 
 <!-- skip -->
 ```dart
@@ -61,4 +59,14 @@ TextFormField(
 ```
 
 For more information on input validation, see the
-[Building a form with validation](/docs/cookbook/forms/validation/) recipe.
+[Building a form with validation][] recipe.
+
+
+[Building a form with validation]: /docs/cookbook/forms/validation/
+[`decoration`]: {{site.api}}/flutter/material/TextField/decoration.html
+[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
+[`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
+[Handle changes to a text field]: /docs/cookbook/forms/text-field-changes/
+[`InputDecoration`]: {{site.api}}/flutter/material/InputDecoration-class.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

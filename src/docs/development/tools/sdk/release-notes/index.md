@@ -1,6 +1,6 @@
 ---
 title: Flutter release notes
-short-title: Release notes
+short-title: release notes
 description: Release notes for Flutter for prior releases. 
 ---
 

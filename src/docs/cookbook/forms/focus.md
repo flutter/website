@@ -38,7 +38,7 @@ TextField(
 ```
 
 For more information on handling input and creating text fields,
-see the [Forms](/docs/cookbook#forms) section of the cookbook.
+see the [Forms][] section of the cookbook.
 
 ## Focus a text field when a button is tapped
 
@@ -55,8 +55,7 @@ presses a button using the following steps:
 
 ### 1. Create a `FocusNode`
 
-First, create a
-[`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
+First, create a [`FocusNode`][].
 Use the `FocusNode` to identify a specific `TextField` in Flutter's
 "focus tree." This allows you to give focus to the `TextField`
 in the next steps.
@@ -220,4 +219,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 
 
+[`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
+[Forms]: /docs/cookbook#forms
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

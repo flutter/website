@@ -9,15 +9,14 @@ next:
 ---
 
 If you have a relatively small collection of key-values
-to save, you can use the
-[shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
+to save, you can use the [shared_preferences][] plugin.
 
 Normally,
 you would have to write native platform integrations for storing
-data on both iOS and Android. Fortunately, the
-[shared_preferences]({{site.pub-pkg}}/shared_preferences)
-plugin can be used to persist key-value data on disk. The shared preferences
-plugin wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
+data on both iOS and Android. Fortunately,
+the [shared_preferences][] plugin can be used to persist
+key-value data on disk. The shared preferences plugin
+wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
 
 This recipe uses the following steps:
@@ -29,8 +28,7 @@ This recipe uses the following steps:
 
 ## 1. Add the dependency
 
-Before starting, add the
-[shared_preferences]({{site.pub-pkg}}/shared_preferences)
+Before starting, add the [shared_preferences][]
 plugin to the `pubspec.yaml` file:
 
 ```yaml
@@ -92,9 +90,8 @@ it has limitations:
   and `stringList`.
 * It's not designed to store a lot of data.
 
-For more information about shared preferences on Android, see the
-[shared preferences
-documentation]({{site.android-dev}}/guide/topics/data/data-storage#pref)
+For more information about shared preferences on Android,
+see the [shared preferences documentation][]
 on the Android developers website.
 
 ## Testing support
@@ -203,3 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
+
+[shared_preferences]: {{site.pub}}/packages/shared_preferences
+[shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref

@@ -25,8 +25,7 @@ on the situation.
 
 Generally speaking, you can mock dependencies by creating an alternative
 implementation of a class. Write these alternative implementations by
-hand or make use of the
-[Mockito package]({{site.pub-pkg}}/mockito) as a shortcut.
+hand or make use of the [Mockito package][] as a shortcut.
 
 This recipe demonstrates the basics of mocking with the
 Mockito package using the following steps:
@@ -37,8 +36,7 @@ Mockito package using the following steps:
   4. Write a test for each condition.
   5. Run the tests.
 
-For more information, see the
-[Mockito]({{site.pub-pkg}}/mockito) package documentation.
+For more information, see the [Mockito package][] documentation.
 
 ## 1. Add the package dependencies
 
@@ -60,8 +58,7 @@ dev_dependencies:
 ## 2. Create a function to test
 
 In this example, unit test the `fetchPost` function from the
-[Fetch data from the
-internet](/docs/cookbook/networking/fetch-data) recipe.
+[Fetch data from the internet][] recipe.
 To test this function, make two changes:
 
   1. Provide an `http.Client` to the function. This allows providing the
@@ -98,8 +95,7 @@ Future<Post> fetchPost(http.Client client) async {
 ## 3. Create a test file with a mock `http.Client`
 
 Next, create a test file along with a `MockClient` class.
-Following the advice in the [Introduction to unit
-testing](/docs/cookbook/testing/unit/introduction) recipe,
+Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_post_test.dart` in the root `test` folder.
 
 The `MockClient` class implements the `http.Client` class. This allows
@@ -173,14 +169,16 @@ $ dart test/fetch_post_test.dart
 ```
 
 You can also run tests inside your favorite editor by following the
-instructions in the [Introduction to unit
-testing](/docs/cookbook/testing/unit/introduction#run-tests-using-intellij-or-vscode)
-recipe.
+instructions in the [Introduction to unit testing][] recipe.
 
 ### Summary
 
 In this example, you've learned how to use Mockito to test functions or classes
 that depend on web services or databases. This is only a short introduction to
 the Mockito library and the concept of mocking. For more information,
-see the documentation provided by the
-[Mockito package]({{site.pub-pkg}}/mockito).
+see the documentation provided by the [Mockito package][].
+
+
+[Fetch data from the internet]: /docs/cookbook/networking/fetch-data
+[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[Mockito package]: {{site.pub-pkg}}/mockito

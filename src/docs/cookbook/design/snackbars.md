@@ -14,8 +14,7 @@ take place. For example, when a user swipes away a message in a list,
 you might want to inform them that the message has been deleted.
 You might even want to give them an option to undo the action.
 
-In Material Design, this is the job of a
-[SnackBar]({{site.api}}/flutter/material/SnackBar-class.html).
+In Material Design, this is the job of a [`SnackBar`][].
 This recipe implements a snackbar using the following steps:
 
   1. Create a `Scaffold`.
@@ -30,9 +29,7 @@ In this example, display the `SnackBar` at the bottom of the screen,
 without overlapping other important
 widgets, such as the `FloatingActionButton`.
 
-The [Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
-widget, from the
-[material library]({{site.api}}/flutter/material/material-library.html),
+The [`Scaffold`][] widget, from the [material library][],
 creates this visual structure and ensures that important
 widgets don't overlap.
 
@@ -86,8 +83,8 @@ final snackBar = SnackBar(
 
 {{site.alert.note}}
   In this example, the SnackBar displays when a user taps a button.
-  For more information on working with user input, see the
-  [Gestures](/docs/cookbook#gestures) section of the cookbook.
+  For more information on working with user input,
+  see the [Gestures][] section of the cookbook.
 {{site.alert.end}}
 
 ```dart
@@ -138,3 +135,9 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 ![SnackBar Demo](/images/cookbook/snackbar.gif){:.site-mobile-screenshot}
+
+
+[Gestures]: /docs/cookbook#gestures
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
+[material library]: {{site.api}}/flutter/material/material-library.html

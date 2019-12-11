@@ -89,42 +89,6 @@ When debugging layout issues, the key fields to look at are the
 `size` and `constraints` fields. The constraints flow down the tree,
 and the sizes flow back up.
 
-## Track widget creation
-
-Part of the functionality of the Flutter inspector is based on
-instrumenting the application code in order to better understand
-the source locations where widgets are created. The source
-instrumentation allows the Flutter inspector to present the
-widget tree in a manner similar to how the UI was defined
-in your source code. Without it, the tree of nodes in the
-widget tree are much deeper, and it can be more difficult to
-understand how the runtime widget hierarchy corresponds to
-your application's UI.
-
-When launching an application from an IDE, the source
-instrumentation happens by default. For command line launches,
-you need to opt-in to the source instrumentation. To do this,
-run the app with the `--track-widget-creation` flag:
-
-```
-flutter run --track-widget-creation
-```
-
-If you launch without the flag, you can still use the
-inspector&mdash;you'll see an inline, dismissable reminder
-message about using the source instrumentation flag.
-
-Here are examples of what your widget tree might look like
-with and without track widget creation enabled.
-
-Track widget creation enabled (**recommended**):
-
-![The widget tree with track widget creation enabled]({% asset tools/devtools/track_widget_creation_enabled.png @path %})
-
-Track widget creation disabled (**not** recommended):
-
-![The widget tree with track widget creation disabled]({% asset tools/devtools/track_widget_creation_disabled.png @path %})
-
 ## Other resources
 
 For a demonstration of what's generally possible with the inspector,

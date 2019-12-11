@@ -9,28 +9,23 @@ prev:
 
 Many widgets not only display information, but also respond
 to user interaction. This includes buttons that can be tapped,
-and [`TextField`]({{api}}/material/TextField-class.html)
-for entering text.
+and [`TextField`][] for entering text.
 
 To test these interactions, you need a way to simulate them
 in the test environment. For this purpose, use the
-[`WidgetTester`]({{api}}/flutter_test/WidgetTester-class.html)
-class provided by the
-[`flutter_test`]({{api}}/flutter_test/flutter_test-library.html)
-library.
+[`WidgetTester`][] library.
 
-The `WidgetTester` provides methods for entering text, tapping, and dragging.
+The `WidgetTester` provides methods for entering text,
+tapping, and dragging.
 
-  * [`enterText`]({{api}}/flutter_test/WidgetTester/enterText.html)
-  * [`tap`]({{api}}/flutter_test/WidgetController/tap.html)
-  * [`drag`]({{api}}/flutter_test/WidgetController/drag.html)
+* [`enterText()`][]
+* [`tap()`][]
+* [`drag()`][]
 
 In many cases, user interactions update the state of the app. In the test
 environment, Flutter doesn't automatically rebuild widgets when the state
 changes. To ensure that the widget tree is rebuilt after simulating a user
-interaction, call the
-[`pump()`]({{api}}/flutter_test/WidgetTester/pump.html) or
-[`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+interaction, call the [`pump()`][] or [`pumpAndSettle()`][]
 methods provided by the `WidgetTester`.
 This recipe uses the following steps:
 
@@ -53,10 +48,10 @@ this recipe won't provide a detailed guide on how to build the todo app.
 To learn more about how this app is built,
 see the relevant recipes:
 
-  * [Create and style a text field](/docs/cookbook/forms/text-input)
-  * [Handle taps](/docs/cookbook/gestures/handling-taps)
-  * [Create a basic list](/docs/cookbook/lists/basic-list)
-  * [Implement swipe to dismiss](/docs/cookbook/gestures/dismissible)
+* [Create and style a text field][]
+* [Handle taps][]
+* [Create a basic list][]
+* [Implement swipe to dismiss][]
 
 ```dart
 class TodoList extends StatefulWidget {
@@ -122,8 +117,7 @@ Start by entering text into the `TextField`.
 Accomplish this task by:
 
   1. Building the widget in the test environment.
-  2. Using the
-     [`enterText()`]({{api}}/flutter_test/WidgetTester/enterText.html)
+  2. Using the [`enterText()`][]
      method from the `WidgetTester`.
 
 <!-- skip -->
@@ -142,8 +136,8 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
   To learn the core concepts of widget testing,
   see the following recipes:
 
-  * [Introduction to widget testing](.)
-  * [Finding widgets in a widget test](finders)
+* [Introduction to widget testing][]
+* [Finding widgets in a widget test][]
 {{site.alert.end}}
 
 ### 3. Ensure tapping a button adds the todo
@@ -153,12 +147,9 @@ the `FloatingActionButton` adds the item to the list.
 
 This involves three steps:
 
- 1. Tap the add button using the
-    [`tap()`]({{api}}/flutter_test/WidgetController/tap.html)
-    method.
+ 1. Tap the add button using the [`tap()`][] method.
  2. Rebuild the widget after the state has changed using the
-    [`pump()`]({{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html)
-    method.
+    [`pump()`][] method.
  3. Ensure that the list item appears on screen.
 
 <!-- skip -->
@@ -182,11 +173,9 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 Finally, ensure that performing a swipe-to-dismiss action on the todo
 item removes it from the list. This involves three steps:
 
-  1. Use the
-     [`drag()`]({{api}}/flutter_test/WidgetController/drag.html)
+  1. Use the [`drag()`][]
      method to perform a swipe-to-dismiss action.
-  2. Use the
-     [`pumpAndSettle()`]({{api}}/flutter_test/WidgetTester/pumpAndSettle.html)
+  2. Use the [`pumpAndSettle()`][]
      method to continually rebuild the widget tree until the dismiss
      animation is complete.
   3. Ensure that the item no longer appears on screen.
@@ -295,3 +284,18 @@ class _TodoListState extends State<TodoList> {
   }
 }
 ```
+
+[Create a basic list]: /docs/cookbook/lists/basic-list
+[Create and style a text field]: /docs/cookbook/forms/text-input
+[`drag()`]: {{api}}/flutter_test/WidgetController/drag.html
+[`enterText()`]: {{api}}/flutter_test/WidgetTester/enterText.html
+[Finding widgets in a widget test]: /docs/cookbook/testing/widget/finders
+[Handle taps]: /docs/cookbook/gestures/handling-taps
+[Implement swipe to dismiss]: /docs/cookbook/gestures/dismissible
+[Introduction to widget testing]: /docs/cookbook/testing/widget/introduction
+[`pump()`]: {{api}}/flutter_test/WidgetTester/pump.html
+[`pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
+[`tap()`]: {{api}}/flutter_test/WidgetController/tap.html
+[`TextField`]: {{api}}/material/TextField-class.html
+[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html
+
