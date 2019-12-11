@@ -15,12 +15,12 @@ The old APIs based on [PluginRegistry.Registrar][] won't be immediately
 deprecated, but we encourage you to migrate to the new APIs based on
 [FlutterPlugin][].
 
-The new APIs has the advantage of providing a cleaner set of accessors for
+The new API has the advantage of providing a cleaner set of accessors for
 lifecycle dependent components compared to the old APIs. For instance
 [PluginRegistry.Registrar.activity()][] could return null if Flutter isn't
 attached to any activities.
 
-In other words, plugins using the old APIs may produce undefined behaviors when
+In other words, plugins using the old API may produce undefined behaviors when
 embedding Flutter into an Android app.
 Most of the Flutter plugins provided by [flutter.dev][] have
 been migrated already. (Learn how to become a
@@ -75,8 +75,8 @@ The following instructions outline the steps for supporting the new API:
     ```
 
 1. (Optional) Create an `EmbeddingV1Activity.java` file that uses the v1
-   embedding in the same folder as `MainActivity` in the example project to keep
-   testing the v1 embedding compatibility with your plugin. For example:
+   embedding for the example project in the same folder as `MainActivity` to
+   keep testing the v1 embedding's compatibility with your plugin. For example:
 
 ```java
 package io.flutter.plugins.firebasecoreexample;
@@ -94,7 +94,8 @@ public class EmbeddingV1Activity extends FlutterActivity {
 }
 ```
 
-7. (Optional) Add the `EmbeddingV1Activity` to the
+1. (Optional) If you created an `EmbeddingV1Activity` in the step above, add the
+   `EmbeddingV1Activity` to the
    <plugin_name>/example/android/app/src/main/AndroidManifest.xml.
    For example:
 
