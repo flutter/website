@@ -54,9 +54,9 @@ Add Flutter dependencies to `my_flutter/pubspec.yaml`, including Flutter package
 and plugins.
 
 The `.ios/` hidden subfolder contains an Xcode workspace where you can
-run a standalone version of your module. It is a wrapper project to bootstrap your Flutter code.
-It contains helper scripts to build frameworks, or you can
-embed the module into your existing application with [CocoaPods][].
+run a standalone version of your module. It is a wrapper project to bootstrap your Flutter code,
+and contains helper scripts to facilitate building frameworks or
+embedding the module into your existing application with [CocoaPods][].
 
 {{site.alert.note}}
 Add custom iOS code to your existing application or a plugin, not to
@@ -75,8 +75,9 @@ There are two ways to embed Flutter in your existing application.
    application's build settings in Xcode.
 
 {{site.alert.note}}
-Your app will not run on a simulator with Flutter's Release framework. You can run
-with the Debug framework on a simulator or a real device, and Release on a real device.
+Your app will not run on a simulator in Release mode because Flutter does
+not yet support output x86 ahead-of-time (AOT) binaries for your Dart code. You can run
+in Debug mode on a simulator or a real device, and Release on a real device.
 {{site.alert.end}}
 
 Using Flutter will [increase your app size][].
@@ -194,7 +195,7 @@ into your targets's build settings > General > Frameworks, Libraries, and Embedd
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
-In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to your Framework Search Paths.
+In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to your Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`).
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
