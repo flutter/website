@@ -14,17 +14,13 @@ To verify that lists contain the expected content using integration
 tests, you need a way to scroll through lists to search for particular items.
 
 To scroll through lists via integration tests, use the methods
-provided by the
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class, which is included in the
-[`flutter_driver`]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html)
-package:
+provided by the [`FlutterDriver`][] class,
+which is included in the [`flutter_driver`][] package:
 
 In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed, and discuss the pros on cons of
 different approaches. If you're just getting started with integration testing,
-read through the [Introduction to integration
-testing](/docs/cookbook/testing/integration) recipe.
+read through the [Introduction to integration testing][] recipe.
 
 This recipe uses the following steps:
 
@@ -37,13 +33,13 @@ This recipe uses the following steps:
 
 This recipe builds an app that shows a long list of items.
 To keep this recipe focused on testing, use the app created in the
-[Work with long lists](/docs/cookbook/lists/long-lists) recipe.
+[Work with long lists][] recipe.
 If you're unsure of how to work with long lists,
 see that recipe for an introduction.
 
-As you did in the [Introduction to integration
-testing](/docs/cookbook/testing/integration) recipe, add keys to the
-widgets you want to interact with inside the integration tests.
+As you did in the [Introduction to integration testing][] recipe,
+add keys to the widgets you want to interact with
+inside the integration tests.
 
 ```dart
 import 'package:flutter/foundation.dart';
@@ -116,22 +112,19 @@ void main() {
 ### 3. Write a test that scrolls through the list
 
 Now, you can write a test. In this example, scroll through the list
-of items and verify that a particular item exists in the list. The
-[`FlutterDriver`]({{site.api}}/flutter/flutter_driver/FlutterDriver-class.html)
-class provides three methods for scrolling through lists:
+of items and verify that a particular item exists in the list.
+The [`FlutterDriver`][] class provides three methods for
+scrolling through lists:
 
-  - The
-  [`scroll()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html)
-  method scrolls through a specific list by a given amount.
-  - The
-  [`scrollIntoView()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html)
-  method finds a specific widget that's already been rendered, and scrolls
-  it completely into view. Some widgets, such as
-  [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html),
+* The [`scroll()`][] method scrolls through
+  a specific list by a given amount.
+* The [`scrollIntoView()`][] method finds a
+  specific widget that's already been rendered,
+  and scrolls it completely into view.
+  Some widgets, such as [`ListView.builder`][],
   render items on-demand.
-  - The
-  [`scrollUntilVisible()`]({{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html)
-  method scrolls through a list until a specific widget is visible.
+* The [`scrollUntilVisible()`][] method scrolls
+  through a list until a specific widget is visible.
 
 While all three methods work for specific use-cases,
 `scrollUntilVisible` is oftentimes the most robust option. Why?
@@ -214,3 +207,13 @@ Run the test using the following command from the root of the project:
 ```
 flutter drive --target=test_driver/app.dart
 ```
+
+
+[`flutter_driver`]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[`FlutterDriver`]: {{site.api}}/flutter/flutter_driver/FlutterDriver-class.html
+[Introduction to integration testing]: /docs/cookbook/testing/integration
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`scroll()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scroll.html
+[`scrollIntoView()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scrollIntoView.html
+[`scrollUntilVisible()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/scrollUntilVisible.html
+[Work with long lists]: /docs/cookbook/lists/long-lists

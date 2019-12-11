@@ -14,16 +14,14 @@ to your users.
 
 Instead, wouldn't it be nice to display a placeholder at first,
 and images would fade in as they're loaded? Use the
-[`FadeInImage`]({{site.api}}/flutter/widgets/FadeInImage-class.html)
-widget for exactly this purpose.
+[`FadeInImage`][] widget for exactly this purpose.
 
 `FadeInImage` works with images of any type: in-memory, local assets,
 or images from the internet.
 
 ## In-Memory
 
-In this example, use the
-[transparent_image]({{site.pub-pkg}}/transparent_image)
+In this example, use the [transparent_image][]
 package for a simple transparent placeholder.
 
 <!-- skip -->
@@ -78,8 +76,7 @@ class MyApp extends StatelessWidget {
 
 You can also consider using local assets for placeholders.
 First, add the asset to the project’s `pubspec.yaml` file
-(for more details, see
-[Adding assets and images](/docs/development/ui/assets-and-images)):
+(for more details, see [Adding assets and images][]):
 
 <!-- skip -->
 ```diff
@@ -88,9 +85,7 @@ First, add the asset to the project’s `pubspec.yaml` file
 +    - assets/loading.gif
 ```
 
-Then, use the
-[FadeInImage.assetNetwork()]({{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html)
-constructor:
+Then, use the [`FadeInImage.assetNetwork()`][] constructor:
 
 <!-- skip -->
 ```dart
@@ -133,3 +128,9 @@ class MyApp extends StatelessWidget {
 ```
 
 ![Asset fade-in](/images/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
+
+
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
+[`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
+[transparent_image]: {{site.pub-pkg}}/transparent_image

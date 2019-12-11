@@ -21,10 +21,8 @@ With Flutter, you have two options:
 
 ## 1. Supply an `onChanged()` callback to a `TextField` or a `TextFormField`
 
-The simplest approach is to supply an
-[`onChanged()`]({{site.api}}/flutter/material/TextField/onChanged.html)
-callback to a
-[`TextField`]({{site.api}}/flutter/material/TextField-class.html) or a [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
+The simplest approach is to supply an [`onChanged()`][] callback to a
+[`TextField`][] or a [`TextFormField`][].
 Whenever the text changes, the callback is invoked.
 
 In this example, print the current value of the text field to the
@@ -42,14 +40,11 @@ TextField(
 ## 2. Use a `TextEditingController`
 
 A more powerful, but more elaborate approach, is to supply a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
-as the
-[`controller`]({{site.api}}/flutter/material/TextField/controller.html)
+[`TextEditingController`][] as the [`controller`][]
 property of the `TextField` or a `TextFormField`.
 
-To be notified when the text changes, listen to the controller using the
-[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method using the following steps:
+To be notified when the text changes, listen to the controller
+using the [`addListener()`][] method using the following steps:
 
   1. Create a `TextEditingController`.
   2. Connect the `TextEditingController` to a text field.
@@ -126,8 +121,7 @@ _printLatestValue() {
 
 Finally, listen to the `TextEditingController` and call the
 `_printLatestValue()` method when the text changes. Use the
-[`addListener()`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)
-method for this purpose.
+[`addListener()`][] method for this purpose.
 
 Begin listening for changes when the
 `_MyCustomFormState` class is initialized,
@@ -220,3 +214,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 }
 ```
+
+
+[`addListener()`]: {{site.api}}/flutter/foundation/ChangeNotifier/addListener.html
+[`controller`]: {{site.api}}/flutter/material/TextField/controller.html
+[`onChanged()`]: {{site.api}}/flutter/material/TextField/onChanged.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
+[`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html

@@ -371,7 +371,16 @@ binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-Of course, YMMV, and we recommend that you measure your own app.
+As of Flutter SDK 1.12, the release engine binary now includes LLVM IR
+(bitcode). Xcode uses this bitcode to produce a final binary for the App Store
+containing the latest compiler optimizations and features.
+The profile and debug frameworks contain only a _bitcode marker_,
+and are more representative of the engine's actual binary size.
+Whether you ship with bitcode or not, the increased size of the release
+framework is stripped out during the final steps of the build.
+These steps happen after archiving your app and shipping it to the store.
+
+Of course, we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
 `--split-per-abi` option in version 1.7.8+hotfix.3 and later)
 and load the APK
@@ -469,14 +478,10 @@ The current progress is documented [on the Flutter wiki][].
 
 ### Can I use Flutter inside of my existing native app?
 
-Yes, you can embed a Flutter view in your existing Android
-for this use case (see [issue #14821][] for details).
+Yes, one fullscreen Flutter instance can be integrated per app on Android and
+iOS.
 
-Two current demonstrations of this are the
-[platform_view][] and [flutter_view][]
-examples. Some initial documentation is
-available in the wiki page
-[Add Flutter to existing apps][].
+See our integration documentation in the [add-to-app section][] of our website.
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -927,7 +932,7 @@ that Flutter apps can be deployed to Apple's App Store.
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: /docs/development/accessibility-and-localization/accessibility
-[Add Flutter to existing apps]: {{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps
+[add-to-app section]: /docs/development/add-to-app
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer

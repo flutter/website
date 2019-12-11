@@ -13,8 +13,7 @@ For example, say you push a new screen that presents two options to a user.
 When the user taps an option, you want to inform the first screen
 of the user's selection so that it can act on that information.
 
-You can do this with the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
+You can do this with the [`Navigator.pop()`][]
 method using the following steps:
 
   1. Define the home screen
@@ -129,9 +128,9 @@ class SelectionScreen extends StatelessWidget {
 ## 4. When a button is tapped, close the selection screen
 
 Now, update the `onPressed()` callback for both of the buttons.
-To return data to the first screen, use the
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-method, which accepts an optional second argument called `result`.
+To return data to the first screen,
+use the [`Navigator.pop()`][] method,
+which accepts an optional second argument called `result`.
 Any result is returned to the `Future` in the SelectionButton.
 
 ### Yep button
@@ -277,3 +276,6 @@ class SelectionScreen extends StatelessWidget {
 ```
 
 ![Returning data demo](/images/cookbook/returning-data.gif){:.site-mobile-screenshot}
+
+
+[`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html

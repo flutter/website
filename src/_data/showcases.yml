@@ -98,25 +98,14 @@
   logo_has_name: false
   card_image: showcase/cards/insight_timer-top@.jpg
 
-- name: Hamilton
+- name: Stadia
   description: >
-    Official app of the hit Broadway musical serves up daily lotteries,
-    exclusive news, a trivia game a merchandise store, and more.
-  logo_src: showcase/cards/hamilton-logo.png
-  video_id: kfd-oLypqFI
-  learn_more_cta: Learn more
-  learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
-  app_store_link: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
-  play_store_link: https://play.google.com/store/apps/details?id=com.hamilton.app&e=-EnableAppDetailsPageRedesign
-  quote_testimonial: true
-  quote: >
-    We knew that this app needed to be rock solid both in terms of performance
-    and visual fidelity, and really represent the amazing experience that the
-    Hamilton show itself provides.
-  quote_writer: Jessica Wagner, Manager, Posse
-  video_frame_image: showcase/video-frames/hamilton@.jpg
-  logo_has_name: false
-  card_image: showcase/cards/hamilton-top@.jpg
+    Google's Stadia app is built using Flutter for both iOS and Android.
+  logo_src: showcase/cards/stadia-logo.png
+  app_store_link: https://apps.apple.com/us/app/google-stadia/id1471900213
+  play_store_link: https://play.google.com/store/apps/details?id=com.google.stadia.android&hl=en_US
+  logo_has_name: true
+  card_image: showcase/cards/stadia-top@.jpg
 
 - name: Grab
   description: >
@@ -207,14 +196,25 @@
   logo_has_name: true
   card_image: showcase/cards/groupon-top@.png
 
-- name: JD
+- name: Hamilton
   description: >
-    JD Finance is JD.com’s finance and investment mobile app with hundreds of
-    millions of users.
-  logo_src: showcase/cards/jd-logo.png
-  app_store_link: https://itunes.apple.com/cn/app/jing-dong-jin-rong-hui-li/id895682747?mt=8
+    Official app of the hit Broadway musical serves up daily lotteries,
+    exclusive news, a trivia game a merchandise store, and more.
+  logo_src: showcase/cards/hamilton-logo.png
+  video_id: kfd-oLypqFI
+  learn_more_cta: Learn more
+  learn_more_link: https://blog.goposse.com/rise-up-the-story-of-how-the-hamilton-app-uses-flutter-to-do-more-for-its-fans-1d9cd76f95f1
+  app_store_link: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
+  play_store_link: https://play.google.com/store/apps/details?id=com.hamilton.app&e=-EnableAppDetailsPageRedesign
+  quote_testimonial: true
+  quote: >
+    We knew that this app needed to be rock solid both in terms of performance
+    and visual fidelity, and really represent the amazing experience that the
+    Hamilton show itself provides.
+  quote_writer: Jessica Wagner, Manager, Posse
+  video_frame_image: showcase/video-frames/hamilton@.jpg
   logo_has_name: false
-  card_image: showcase/cards/jd-top@.jpg
+  card_image: showcase/cards/hamilton-top@.jpg
 
 - name: Nubank
   description: >

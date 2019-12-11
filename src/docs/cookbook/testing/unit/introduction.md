@@ -13,9 +13,8 @@ How can you ensure that your app continues to work as you add more features or
 change existing functionality? By writing tests.
 
 Unit tests are handy for verifying the behavior of a single function,
-method, or class. The [`test`]({{site.pub-pkg}}/test) package provides the
-core framework for writing unit tests, and the
-[`flutter_test`]({{site.api}}/flutter/flutter_test/flutter_test-library.html)
+method, or class. The [`test`][] package provides the
+core framework for writing unit tests, and the [`flutter_test`][]
 package provides additional utilities for testing widgets.
 
 This recipe demonstrates the core features provided by the `test` package
@@ -28,9 +27,8 @@ using the following steps:
   5. Combine multiple tests in a `group`.
   6. Run the tests.
 
-For more information about the test package, see the
-[test package
-documentation]({{site.github}}/dart-lang/test/blob/master/README.md).
+For more information about the test package,
+see the [test package documentation][].
 
 ## 1. Add the test dependency
 
@@ -175,3 +173,8 @@ command from the root of the project:
 ```
 flutter test test/counter_test.dart
 ```
+
+
+[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
+[`test`]: {{site.pub-pkg}}/test
+[test package documentation]: {{site.github}}/dart-lang/test/blob/master/README.md
