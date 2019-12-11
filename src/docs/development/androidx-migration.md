@@ -65,7 +65,7 @@ flutter create --androidx -t <project-type> <new-project-path>
 ### Add to App
 
 If your Flutter project is a module type for adding to an existing Android app, and 
-contains a `.android` directory, add the following line to `pubspec.yml`:
+contains a `.android` directory, add the following line to `pubspec.yaml`:
 
 ```yaml
  module:

@@ -19,6 +19,11 @@ This recipe uses the following steps:
   2. Add the package and font to the app.
   3. Use the font.
 
+{{site.alert.note}}
+  Check out the [google_fonts][] package for direct access
+  to almost 1000 open-sourced font families.
+{{site.alert.end}}
+
 ## 1. Add a font to a package
 
 To export a font from a package, you need to import the font files into the
@@ -159,5 +164,6 @@ class MyHomePage extends StatelessWidget {
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
 [Google Fonts]: https://fonts.google.com
+[google_fonts]: {{site.pub}}/packages/google_fonts
 [pub.dev]: {{site.pub}}
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
