@@ -33,8 +33,6 @@ android {
 
 The Flutter engine has an `x86` and `x86_64` version. When using an emulator
 in debug Just-In-Time (JIT) mode, the Flutter module still runs correctly.
-
-TODO(blasten): revise whether this is right.
 {{site.alert.end}}
 
 ## Using Android Studio
@@ -45,7 +43,7 @@ code and your Flutter code in the same project. You can also continue to use
 your normal IntelliJ Flutter plugin functionalities such as Dart code completion,
 hot reload, and widget inspector.
 
-Add-to-app flows with Android Studio are only supported on Android Studio 3.6, 
+Add-to-app flows with Android Studio are only supported on Android Studio 3.6,
 and only supports integrating using a source code Gradle subproject, rather than
 using AARs. See below for more details on the distinction.
 
@@ -65,7 +63,7 @@ to add your Flutter module as a dependency, and your app is ready to build.
 
 {{site.alert.note}}
 To see the changes that were automatically made to your Android project by the
-IDE plugin, consider using source control for your Android project before performing 
+IDE plugin, consider using source control for your Android project before performing
 any steps. A local diff shows the changes.
 {{site.alert.end}}
 
@@ -122,7 +120,7 @@ android {
 Next, add the Flutter module as a dependency of your existing app in Gradle.
 There are two ways to achieve this. The AAR mechanism creates generic Android
 AARs as intermediaries that packages your Flutter module. This is good when your
-downstream app builders don't want to have the Flutter SDK installed. But, 
+downstream app builders don't want to have the Flutter SDK installed. But,
 it adds one more build step if you build frequently.
 
 The source code subproject mechanism is a convenient one-click build
@@ -131,7 +129,7 @@ Android Studio IDE plugin.
 
 #### Option A - Depend on the Android Archive (AAR)
 
-This option packages your Flutter library as a generic local Maven repository composed 
+This option packages your Flutter library as a generic local Maven repository composed
 of AARs and POMs artifacts. This option allows your team to build the host app without
 installing the Flutter SDK. You can then distribute the artifacts from
 a local or remote repository.
@@ -202,7 +200,7 @@ dependencies {
 ```
 
 {{site.alert.tip}}
-You can also build an AAR for your Flutter module in Android Studio using 
+You can also build an AAR for your Flutter module in Android Studio using
 the `Build > Flutter > Build AAR` menu.
 
 {% include app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
