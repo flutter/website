@@ -33,6 +33,8 @@
 
 - title: Samples & tutorials
   children:
+    - title: Flutter Gallery [NEW]
+      permalink: https://flutter.github.io/samples/#/
     - title: Sample apps on GitHub
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
     - title: Cookbook
@@ -293,11 +295,12 @@
       permalink: /docs/resources/compatibility
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
+    - title: Google Fonts package
+      permalink: https://pub.dev/packages/google_fonts
     - title: Platform adaptations
       permalink: /docs/resources/platform-adaptations
     - title: Technical overview
       permalink: /docs/resources/technical-overview
-    # - title: Flutter best practices # TODO
     - title: Technical videos
       permalink: /docs/resources/videos
     - title: Books
