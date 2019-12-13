@@ -1100,7 +1100,7 @@ For animation, we released the [TweenAnimationBuilder](https://master-api.flutte
 
 ## Web
 
-We increased our support for web, moving it from the dev channel to the beta channel. For more details, please check [web support blog post](https://docs.google.com/document/d/1cM50TfAJ8O6tS5LQ2_sFuqoY6jg6dyQ7vZIlGBafYiE/edit#heading=h.q2gs8pjlvvhv).
+We increased our support for web, moving it from the dev channel to the beta channel. For more details, please check [web support blog post](https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0).
 
 [37819](https://github.com/flutter/flutter/pull/37819) Add HtmlElementView (the Flutter Web platform view)
 
