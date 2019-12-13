@@ -367,7 +367,7 @@ as indicated by the [Android Developer Guide][].
 
 {{site.alert.note}}
   If you rename the .png files, you must also update the
-  correspondingname in your `AndroidManifest.xml`'s
+  corresponding name in your `AndroidManifest.xml`'s
   `<application>` tag's `android:icon` attribute.
 {{site.alert.end}}
 
@@ -434,28 +434,28 @@ customization using the Interface Builder in
 ![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
 
 
-[`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
+
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
-[AssetManager API]: {{site.android-dev}}/reference/android/content/res/AssetManager
+[`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html
+[`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
+[`ImageStream`]: {{site.api}}/flutter/painting/ImageStream-class.html
+[`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
+[`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html
+[`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
+[`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
+[Android Developer Guide]: {{site.android-dev}}/training/multiscreen/screendensities
+[AssetManager API]: {{site.android-dev}}/reference/android/content/res/AssetManager
+[device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
 [FlutterPluginRegistrar]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [FlutterView]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [FlutterViewController]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
-[`ImageStream`]: {{site.api}}/flutter/painting/ImageStream-class.html
-[PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
-
-[device pixel ratio]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
-[package]: /docs/development/packages-and-plugins/using-packages
-[openFd]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
-[mainBundle]: https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle
-[pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
-[video_player plugin]: {{site.pub}}/packages/video_player
-[Android Developer Guide]: {{site.android-dev}}/training/multiscreen/screendensities
 [Human Interface Guidelines]: https://developer.apple.com/ios/human-interface-guidelines/graphics/app-icon
-[`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
-[`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
-[drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
-[`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec
-[`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html
+[mainBundle]: https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle
+[openFd]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String
+[package]: /docs/development/packages-and-plugins/using-packages
+[pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
+[PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[video_player plugin]: {{site.pub}}/packages/video_player

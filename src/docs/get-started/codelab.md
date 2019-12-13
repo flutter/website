@@ -191,7 +191,7 @@ English words plus some utility functions.
 You can find the `english_words` package, as well as many other open source
 packages, on [pub.dev][].
 
- 1. The pubspec file manages the assets and dependencies for a Flutter app. In
+ 1. The `pubspec.yaml` file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
 
@@ -208,7 +208,7 @@ packages, on [pub.dev][].
     +  english_words: ^3.1.0
     ```
 
- 2. While viewing the pubspec in Android Studio's editor view,
+ 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 

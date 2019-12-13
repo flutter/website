@@ -7,7 +7,7 @@ toc: true
 {% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
 The Flutter community has made a Simplified Chinese version of the
-Flutter site website available at
+Flutter website available at
 [https://flutter-io.cn](https://flutter-io.cn).
 
 If you’d like to install Flutter using an [installation
