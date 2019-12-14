@@ -184,7 +184,7 @@ GitHub repository.
 [federated plugin spec]: https://docs.google.com/document/d/1LD7QjmzJZLCopUrFAAE98wOUQpjmguyGTN2wd_89Srs/edit?pli=1#heading=h.pub7jnop54q0
 [file_chooser]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/file_chooser
 [flutter build release channel]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
-[Flutter Gallery]: {{site.github}}/material-components/material-components-flutter-gallery
+[Flutter Gallery]: {{site.repo.samples}}/tree/master/gallery/gallery
 [flutter starter app]: /docs/get-started/test-drive
 [flutter wiki]: {{site.repo.flutter}}/wiki/
 [flutter-desktop-embedding]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins#dart
