@@ -305,7 +305,7 @@ classes offer a variety of constants for controlling alignment.
 
 {{site.alert.note}}
   When you add images to your project,
-  you need to update the pubspec file to access them&mdash;this
+  you need to update the `pubspec.yaml` file to access them&mdash;this
   example uses `Image.asset` to display the images.  For more information,
   see this example's [pubspec.yaml
   file]({{examples}}/layout/row_column/pubspec.yaml),

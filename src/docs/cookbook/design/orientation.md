@@ -4,8 +4,8 @@ prev:
   title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
 next:
-  title: Use themes to share colors and font styles
-  path: /docs/cookbook/design/themes
+  title: Use custom fonts
+  path: /docs/cookbook/design/fonts
 ---
 
 In some situations,

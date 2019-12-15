@@ -240,12 +240,12 @@ following the [pubspec file][] in the JSON serializable example.
 ```yaml
 dependencies:
   # Your other regular dependencies here
-  json_annotation: ^2.0.0
+  json_annotation: <latest_version>
 
 dev_dependencies:
   # Your other dev_dependencies here
-  build_runner: ^1.0.0
-  json_serializable: ^2.0.0
+  build_runner: <latest_version>
+  json_serializable: <latest_version>
 ```
 
 Run `flutter pub get` inside your project root folder (or click

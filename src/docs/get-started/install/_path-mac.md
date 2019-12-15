@@ -15,7 +15,7 @@ whenever you open a new window. For example:
  2. Open (or create) the `rc` file for your shell.
     For example, macOS Mojave (and earlier)
     uses the Bash shell by default,
-    so edit `$HOME/.bashrc`.
+    so edit `$HOME/.bash_profile` or `$HOME/.bashrc`.
     macOS Catalina uses the Z shell by default,
     so edit `$HOME/.zshrc`.
     If you are using a different shell, the file path
