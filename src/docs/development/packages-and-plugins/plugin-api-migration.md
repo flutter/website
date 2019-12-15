@@ -407,4 +407,4 @@ TODO
 [battery package]: {{site.github}}/flutter/plugins/tree/master/packages/battery
 [flutter.dev]: {{site.pub}}/flutter.dev/packages
 [`FlutterPlugin`]: {{site.github}}/flutter/engine/blob/master/shell/platform/android/io/flutter/embedding/engine/plugins/FlutterPlugin.java
-[verified publisher]: {{site.dart}}/tools/pub/verified-publishers
+[verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers
