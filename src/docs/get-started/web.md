@@ -3,162 +3,135 @@ title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
 ---
 
-As of 1.9, Flutter has early support for running web
-applications. There are still missing features and known
-performance issues, so it
-**isn't recommended for production use.**
+This page covers the following steps for getting started with web support:
+- Configure the `flutter` tool for web support.
+- Create a new project with web support.
+- Run a new project with web support.
+- Build an app with web support.
+- Add web support to an existing project.
 
-{{site.alert.note}}
-  Currently, debugging a web app requires the
-  Chrome browser. If you haven't already,
-  [install Chrome][].
-{{site.alert.end}}
+## Requirements
+- [Install the Flutter SDK on your platform][Install Flutter].
+- [Install Chrome]. Currently, debugging a web app requires the Chrome browser.
 
 For more information, see the [web FAQ][].
 
-{{site.alert.warning}}
-  If you don't yet have the `flutter` tool installed,
-  do a [regular install for your platform][], and then
-  return to these instructions.
-{{site.alert.end}}
+{{ site.alert.note }}
+  As of 1.12, Flutter has early support for running web applications.
+  If you experience a problem that hasn’t yet been reported,
+  please [file an issue][] and make sure that “web” appears in the title.
+{{ site.alert.end }}
 
-## Summary
+## Create a new project with web support
 
-Here are the short and sweet instructions to get started.
-To **add support to an existing project** and
-**assuming that you have the `flutter` tool installed**,
-run the following commands in a terminal from the
-top of the project package:
+You can use the following steps
+to create a new project with web support.
+
+### Set up
+Run the following commands to use the latest version of the Flutter SDK
+from the beta channel and enable web support:
 
 ```terminal
-$ flutter channel dev
+$ flutter channel beta
 $ flutter upgrade
 $ flutter config --enable-web
-$ cd <into project directory>
-$ flutter create .
-$ flutter run -d chrome
 ```
 
-To generate a release build:
-
-```terminal
-$ flutter build web
-```
-
-The rest of this page breaks this process down
-into individual steps.
-
-## Download the Flutter SDK
-
-Currently, you need either the master or dev channel of the Flutter SDK
-for web support. Assuming that you already have the
-`flutter` tool installed, run the following commands
-to install the latest version from dev:
-
-```terminal
-$ flutter channel dev
-$ flutter upgrade
-```
-
+{{site.alert.note}}
 The `flutter upgrade` command silently fails
-when "origin" points to a personal fork.
-To validate that "origin" points to the
-"flutter/flutter" repo, enter the following:
+when `origin` points to a personal fork.
+To validate that `origin` points to `{{site.repo.flutter}}.git`,
+run the following commands in the root directory
+of your local copy of the `{{site.repo.flutter}}` repository:
 
-```terminal
+```
 $ cd <inside local copy of the flutter/flutter repo>
 $ git remote get-url origin
-ssh://git@github.com/flutter/flutter.git
+https://github.com/flutter/flutter.git
 ```
-
-## Enable web support
-
-Use the config command to enable web support:
-
-```terminal
-$ flutter config --enable-web
-```
-
-You need only run this once.
-This command modifies (or creates) the
-`~/.flutter_settings` file (on Mac/Linux)
-with the following:
-
-```shell
-{
-  "enable-web": true
-}
-```
-
+{{site.alert.end}}
 Once web is enabled,
-`flutter devices` outputs a device named `Chrome`.
+the `flutter devices` command outputs a `Chrome` device that opens the
+Chrome browser with your app running, and a `Web Server` that provides the URL
+serving the app.
 
 ```terminal
 $ flutter devices
-1 connected device:
+2 connected device:
 
-Chrome • chrome • web-javascript • Google Chrome 76.0.3809.100
+Chrome     • chrome     • web-javascript • Google Chrome 78.0.3904.108
+Web Server • web-server • web-javascript • Flutter Tools
 ```
 
-**After enabling web support, restart the IDE.**
+**After enabling web support, restart your IDE.**
 You should now see **Chrome (web)** in the device pulldown.
 
-The `flutter run` command launches the application using the
-[development compiler][] in a Chrome browser.
-The name of the web device is currently `chrome`,
-but this doesn't need to be specified
-if there are no other devices attached.
+{{site.alert.note}}
+You should only need to execute these configure steps once. You can always
+check the status of your configuration using the `flutter config` command.
+{{site.alert.end}}
 
-## Add web support to an existing app
+### Create and run
 
-To add web support to an existing project,
-run the following command in a terminal
-from the top of the project package:
-
-```terminal
-$ flutter create .
-```
-
-## Create a new app with web support
-
-To create a new app that includes web support
-(in addition to mobile support), run the following,
+To create a new app for use with web support
+(in addition to mobile support), run the following commands,
 substituting `myapp` with the name of your project:
 
 ```terminal
 $ flutter create myapp
+$ cd myapp
 ```
 
-## Run the web app
-
-To run the app on the web, enter the following
-from the top of the package:
+To serve your app from `localhost` in Chrome,
+enter the following from the top of the package:
 
 ```terminal
 $ flutter run -d chrome
 ```
-
+{{site.alert.note}}
 If there aren't any other connected devices,
 the `-d chrome` is optional.
+{{site.alert.end}}
 
-## Generate a release build
+The `flutter run` command launches the application using the
+[development compiler][] in a Chrome browser.
 
-Run the following, from the top of the project:
+### Build
+
+Run the following command to generate a release build:
 
 ```terminal
 $ flutter build web
 ```
 
-A release build uses [dart2js][] (instead of
-the [development compiler][]) to produce a single
-JavaScript file.  This can be run with the release flag
-or built using `flutter build web`. This outputs files at
-`build/web`, including the assets, which need to be served together.
+A release build uses [dart2js][] (instead of the [development compiler][])
+to produce a single JavaScript file `main.dart.js`.
+You can create a release build using release mode (`flutter run --release`)
+or by using `flutter build web`. This populates a `build/web` directory
+with built files, including an `assets` directory,
+which need to be served together.
 
+{%comment%} add link to deploy / build doc {%endcomment%}
 
+### Add web support to an existing app
+
+To add web support to an existing project,
+run the following command in a
+terminal from the root project directory:
+
+```terminal
+$ flutter create .
+```
+To serve your app from `localhost` in Chrome,
+enter the following from the top of the package:
+
+```terminal
+$ flutter run -d chrome
+```
 
 [dart2js]: https://dart.dev/tools/dart2js
 [development compiler]: https://dart.dev/tools/dartdevc
+[file an issue]: https://github.com/flutter/flutter/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [web FAQ]: /docs/development/platform-integration/web
 [install Chrome]: https://www.google.com/chrome/
-[regular install for your platform]: https://flutter.dev/docs/get-started/install
+[Install Flutter]: https://flutter.dev/docs/get-started/install

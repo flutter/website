@@ -52,7 +52,7 @@ Here is an example output:
 Built build/app/outputs/apk/release/app-release.apk (4.6MB).
 ```
 
-As of Flutter 1.9, you can run the following to get 2 APKs,
+You can run the following to get 2 APKs,
 one for 32-bit and one for 64-bit:
 
 ```shell

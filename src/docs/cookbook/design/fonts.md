@@ -2,17 +2,22 @@
 title: Use a custom font
 description: How to use custom fonts.
 prev:
+  title: Update the UI based on orientation
+  path: /docs/cookbook/design/orientation
+next:
   title: Use themes to share colors and font styles
   path: /docs/cookbook/design/themes
-next:
-  title: Work with tabs
-  path: /docs/cookbook/design/tabs
 ---
 
 Although Android and iOS offer high quality system fonts,
 one of the most common requests from designers is for custom fonts.
 For example, you might have a custom-built font from a designer,
 or perhaps you downloaded a font from [Google Fonts][].
+
+{{site.alert.note}}
+  Check out the [google_fonts][] package for direct access
+  to almost 1000 open-sourced font families.
+{{site.alert.end}}
 
 Flutter works with custom fonts and you can apply a custom
 font across an entire app or to individual widgets.
@@ -128,7 +133,7 @@ Text(
 ### TextStyle
 
 If a [`TextStyle`][] object specifies a weight
-or style for which is there is no exact font file,
+or style for which there is no exact font file,
 the engine uses one of the more generic files for the font and attempts to
 extrapolate outlines for the requested weight and style.
 
@@ -214,5 +219,6 @@ class MyHomePage extends StatelessWidget {
 [`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
+[google_fonts]: {{site.pub}}/packages/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [Using Themes to share colors and font styles]: /docs/cookbook/design/themes

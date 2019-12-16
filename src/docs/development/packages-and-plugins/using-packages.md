@@ -127,7 +127,7 @@ you can [develop new custom packages][].
 ## Managing package dependencies and versions
 
 To minimize the risk of version collisions,
-specify a version range in the pubspec file.
+specify a version range in the `pubspec.yaml` file.
 
 ### Package versions
 
@@ -142,7 +142,7 @@ means that any version of the plugin1 package can be used.
 To ensure that the app doesn't break when a package is updated,
 specify a version range using one of the following formats:
 
-* Range constraints: Specify a minimum and maximim version. For example:
+* Range constraints: Specify a minimum and maximum version. For example:
 
   ```yaml
   dependencies:

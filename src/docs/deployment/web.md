@@ -14,14 +14,10 @@ of your app.
 
 This page covers the following topics:
 
-* [Adding a launcher icon](#adding-a-launcher-icon)
 * [Obfuscation and minification](#obfuscation-and-minification)
 * [Building the app for release](#building-the-app-for-release)
 * [Deploying to the web](#deploying-to-the-web)
 
-## Adding a launcher icon
-
-TBD
 
 ## Obfuscation and minification
 

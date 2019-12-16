@@ -1,8 +1,8 @@
 ---
 title: Work with tabs
 prev:
-  title: Use custom fonts
-  path: /docs/cookbook/design/fonts
+  title: Use themes to share colors and font styles
+  path: /docs/cookbook/design/themes
 next:
   title: Build a form with validation
   path: /docs/cookbook/forms/validation
