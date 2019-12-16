@@ -1,8 +1,3 @@
----
-title: Scrollable AlertDialog
-description: AlertDialog should scroll automatically when it overflows.
----
-
 # Scrollable AlertDialog
 
 ## Context
@@ -97,6 +92,8 @@ Any semantics golden updates that reflect the scrolling container addition
 is expected and these diffs should be safe to accept.
 
 Sample resulting Semantics tree:
+
+```
 flutter:        ├─SemanticsNode#30 <-- SingleChildScrollView
 flutter:          │ flags: hasImplicitScrolling
 flutter:          │ scrollExtentMin: 0.0
@@ -109,7 +106,7 @@ flutter:          │   label: "Hello"
 flutter:          │
 flutter:          └─SemanticsNode#32 <-- contents
 flutter:              label: "Huge content"
-
+```
 
 2. This change may result in layout changes because of the scroll view.
 
