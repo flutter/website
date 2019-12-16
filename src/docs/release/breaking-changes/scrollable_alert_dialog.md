@@ -146,7 +146,7 @@ Early January 2020 - Remove scrollable parameter, Flutter devs have to remove
 ## References
 
 Design doc:
-* [Scrollable AlertDialog](flutter.dev/go/scrollable-alert-dialog)
+* [Scrollable AlertDialog](/go/scrollable-alert-dialog)
 
 API documentation:
 * [AlertDialog API doc](https://api.flutter.dev/flutter/material/AlertDialog-class.html)
