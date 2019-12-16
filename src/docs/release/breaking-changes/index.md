@@ -2,16 +2,13 @@
 title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 ---
-title: Scrollable AlertDialog
-description: AlertDialog should scroll automatically when it overflows.
----
 
 As described in our [breaking change policy][],
 on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
- * _No guides have yet been published._
+ * [Scrollable AlertDialog](scrollable_alert_dialog.md)
 
 
 [breaking change policy]: /docs/resources/compatibility

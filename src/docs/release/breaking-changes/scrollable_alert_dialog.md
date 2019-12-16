@@ -1,3 +1,8 @@
+---
+title: Scrollable AlertDialog
+description: AlertDialog should scroll automatically when it overflows.
+---
+
 # Scrollable AlertDialog
 
 ## Context
