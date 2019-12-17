@@ -731,7 +731,7 @@
     "name": "Expanded",
     "categories": [],
     "subcategories": [
-      "Multi-child layout widgets"
+      "Single-child layout widgets"
     ],
     "description": "A widget that expands a child of a Row, Column, or Flex.",
     "link": "https://api.flutter.dev/flutter/widgets/Expanded-class.html",

@@ -3,11 +3,11 @@ title: Use themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 prev:
-  title: Update the UI based on orientation
-  path: /docs/cookbook/design/orientation
-next:
   title: Use custom fonts
   path: /docs/cookbook/design/fonts
+next:
+  title: Work with tabs
+  path: /docs/cookbook/design/tabs
 ---
 
 To share colors and font styles throughout an app, use themes.
@@ -24,8 +24,7 @@ colors and font styles for AppBars, Buttons, Checkboxes, and more.
 ## Creating an app theme
 
 To share a Theme across an entire app, provide a
-[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
-to the `MaterialApp` constructor.
+[`ThemeData`][] to the `MaterialApp` constructor.
 
 If no `theme` is provided, Flutter creates a default theme for you.
 
@@ -53,8 +52,8 @@ MaterialApp(
 );
 ```
 
-See the [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
-documentation to see all of the colors and fonts you can define.
+See the [`ThemeData`][] documentation to see all of
+the colors and fonts you can define.
 
 ## Themes for part of an application
 
@@ -86,9 +85,7 @@ Theme(
 ### Extending the parent theme
 
 Rather than overriding everything, it often makes sense to extend the parent
-theme. You can handle this by using the
-[`copyWith()`]({{site.api}}/flutter/material/ThemeData/copyWith.html)
-method.
+theme. You can handle this by using the [`copyWith()`][] method.
 
 <!-- skip -->
 ```dart
@@ -204,3 +201,7 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Themes Demo](/images/cookbook/themes.png){:.site-mobile-screenshot}
+
+
+[`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
+[`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html

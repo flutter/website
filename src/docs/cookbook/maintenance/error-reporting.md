@@ -8,23 +8,26 @@ next:
   path: /docs/cookbook/navigation/hero-animations
 ---
 
-While one always tries to create apps that are free of bugs, they're sure
-to crop up from time to time. Since buggy apps lead to unhappy
-users and customers, it's important to understand how often your users
-experience bugs and where those bugs occur. That way,
-you can prioritize the bugs with the highest impact and work to fix them.
+While one always tries to create apps that are free of bugs,
+they're sure to crop up from time to time.
+Since buggy apps lead to unhappy users and customers,
+it's important to understand how often your users
+experience bugs and where those bugs occur.
+That way, you can prioritize the bugs with the
+highest impact and work to fix them.
 
-How can you determine how often your users experiences bugs? Whenever an error
-occurs, create a report containing the error that occurred and the
-associated stacktrace. You can then send the report to an error tracking
-service, such as Sentry, Fabric, or [Rollbar](https://rollbar.com/).
+How can you determine how often your users experiences bugs?
+Whenever an error occurs, create a report containing the
+error that occurred and the associated stacktrace.
+You can then send the report to an error tracking
+service, such as Sentry, Fabric, or [Rollbar][].
 
 The error tracking service aggregates all of the crashes your users
 experience and groups them together. This allows you to know how often your
 app fails and where the users run into trouble.
 
 In this recipe, learn how to report errors to the
-[Sentry](https://sentry.io/welcome/) crash reporting service using
+[Sentry][] crash reporting service using
 the following steps:
 
   1. Get a DSN from Sentry.
@@ -41,17 +44,16 @@ your app with the Sentry.io service.
 
 To get a DSN, use the following steps:
 
-  1. [Create an account with Sentry](https://sentry.io/signup/).
+  1. [Create an account with Sentry][].
   2. Log in to the account.
   3. Create a new app.
   4. Copy the DSN.
 
 ## 2. Import the Sentry package
 
-Import the
-[`sentry`]({{site.pub-pkg}}/sentry) package into the app. The
-sentry package makes it easier to send error reports to the Sentry
-error tracking service.
+Import the [`sentry`][] package into the app.
+The sentry package makes it easier to send
+error reports to the Sentry error tracking service.
 
 ```yaml
 dependencies:
@@ -116,10 +118,10 @@ Future<void> _reportError(dynamic error, dynamic stackTrace) async {
 Now that you have a function to report errors depending on the environment,
 you need a way to capture Dart errors.
 
-For this task, run your app inside a custom
-[`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html). Zones
-establish an execution context for the code. This provides a convenient way to
-capture all errors that occur within that context by providing an `onError()`
+For this task, run your app inside a custom [`Zone`][].
+Zones establish an execution context for the code.
+This provides a convenient way to capture all errors
+that occur within that context by providing an `onError()`
 function.
 
 In this case, run the app in a new `Zone` and capture all errors by
@@ -142,11 +144,12 @@ In addition to Dart errors, Flutter can throw errors such as
 platform exceptions that occur when calling native code. Be sure to
 capture and report these types of errors as well.
 
-To capture Flutter errors, override the
-[`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html)
-property. If you're in debug mode, use a convenience function
-from Flutter to properly format the error. If you're in production mode,
-send the error to the `onError` callback defined in the previous step.
+To capture Flutter errors,
+override the [`FlutterError.onError`][] property.
+If you're in debug mode, use a convenience function
+from Flutter to properly format the error.
+If you're in production mode, send the error to the
+`onError` callback defined in the previous step.
 
 <!-- skip -->
 ```dart
@@ -165,5 +168,14 @@ FlutterError.onError = (FlutterErrorDetails details) {
 
 ## Complete example
 
-To view a working example, see the
-[Crashy]({{site.github}}/flutter/crashy) example app.
+To view a working example,
+see the [Crashy][] example app.
+
+
+[Crashy]: {{site.github}}/flutter/crashy
+[Create an account with Sentry]: https://sentry.io/signup/
+[`FlutterError.onError`]: {{site.api}}/flutter/foundation/FlutterError/onError.html
+[Rollbar]: https://rollbar.com/
+[Sentry]: https://sentry.io/welcome/
+[`sentry`]: {{site.pub-pkg}}/sentry
+[`Zone`]: {{site.api}}/flutter/dart-async/Zone-class.html

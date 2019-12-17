@@ -10,6 +10,14 @@ next:
 diff2html: true
 ---
 
+{{site.alert.tip}}
+  This codelab walks you through writing your first Flutter
+  app on mobile. You might prefer to try
+  [writing your first Flutter app on the web][].
+  **Note that if you have [enabled web][],
+  the completed app just works on all of these devices!**
+{{site.alert.end}}
+
 {% assign code-url = 'https://raw.githubusercontent.com/flutter/codelabs/master' -%}
 
 {% asset get-started/startup-namer-part-1 alt="The app that you'll be building" class='site-image-right' %}
@@ -27,7 +35,7 @@ previous experience with Dart, mobile, or web programming.
 
 This guide is part 1 of a two-part codelab. You can find
 [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-on [Google Developers]({{site.codelabs}}).
+on the [Google Developers]({{site.codelabs}}) site.
 [Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
 can also be found on [Google Developers]({{site.codelabs}}).
 
@@ -183,7 +191,7 @@ English words plus some utility functions.
 You can find the `english_words` package, as well as many other open source
 packages, on [pub.dev][].
 
- 1. The pubspec file manages the assets and dependencies for a Flutter app. In
+ 1. The `pubspec.yaml` file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
     list:
 
@@ -200,7 +208,7 @@ packages, on [pub.dev][].
     +  english_words: ^3.1.0
     ```
 
- 2. While viewing the pubspec in Android Studio's editor view,
+ 2. While viewing the `pubspec.yaml` file in Android Studio's editor view,
     click **Packages get**. This pulls the package into
     your project. You should see the following in the console:
 
@@ -602,5 +610,7 @@ where you add the following functionality:
 
 
 [DevTools]: /docs/development/tools/devtools
+[enabled web]: /docs/get-started/web
 [english_words]: {{site.pub}}/packages/english_words
 [pub.dev]: {{site.pub}}
+[writing your first Flutter app on the web]: /docs/get-started/codelab-web

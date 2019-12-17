@@ -98,6 +98,9 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
     double transform(double t) => sin(t * pi * 2);
   }
   {% endprettify %}
+
+  Browse the [Curves] documentation for a complete listing
+  (with visual previews) of the `Curves` constants that ship with Flutter.
 {{site.alert.end}}
 
 `CurvedAnimation` and `AnimationController` (described in the next section)

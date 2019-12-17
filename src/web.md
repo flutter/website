@@ -11,9 +11,7 @@ deployed to any web server. You can use all the features of Flutter,
 and you don’t need a browser plug-in.
 
 {{site.alert.warning}}
-  **As of 1.9, web support is available as a tech preview.**
-  As web support hasn't yet reached alpha,
-  you can expect to experience crashes and missing features.
+  **As of 1.12, web support is available on the beta channel.**
   If you experience a problem that hasn't yet been reported, please
   [file an issue][] and make sure that "web" appears in the title.
 {{site.alert.end}}
@@ -59,20 +57,7 @@ being valuable in many scenarios. For example:
   or embedded in an app without rewriting.
 
 <a name="web"></a>
-## Notes on web support in 1.9
-
-This preview version of web support is your opportunity to
-try it out. Before you get started, here are a few notes:
-
-{{site.alert.note}}
-  * This release is missing features and has known performance
-    issues, so we don't recommend it for production.
-
-  * You can update existing Flutter code to work on the web,
-    but there are some caveats as web support hasn't
-    yet reached beta. For more information, see the
-    [web FAQ][].
-{{site.alert.end}}
+## Notes on web support
 
 The following resources can help you get started:
 
@@ -93,13 +78,12 @@ The following resources can help you get started:
 
 
 
-[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
-[main Flutter repo]: {{site.github}}/flutter/flutter
-[web FAQ]: /docs/development/platform-integration/web
 [Building a web application with Flutter]: /docs/get-started/web
 [Creating responsive apps]: /docs/development/ui/layout/responsive
-[web samples for Flutter]: https://flutter.github.io/samples/
-[Preparing an app for web release]: /docs/deployment/web
-[File an issue]: https://goo.gle/flutter_web_issue
 [Discord group]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
+[main Flutter repo]: {{site.github}}/flutter/flutter
+[Preparing an app for web release]: /docs/deployment/web
+[Progressive Web Application]: https://developers.google.com/web/progressive-web-apps/
+[web FAQ]: /docs/development/platform-integration/web
+[web samples for Flutter]: https://flutter.github.io/samples/

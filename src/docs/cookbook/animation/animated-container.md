@@ -8,8 +8,8 @@ next:
   path: /docs/cookbook/animation/opacity-animation
 ---
 
-The [`Container`]({{site.api}}/flutter/widgets/Container-class.html)
-class provides a convenient way to create a widget with specific properties:
+The [`Container`][] class provides a convenient way
+to create a widget with specific properties:
 width, height, background color, padding, borders, and more.
 
 Simple animations often involve changing these properties over time.
@@ -17,9 +17,9 @@ For example,
 you might want to animate the background color from grey to green to
 indicate that an item has been selected by the user.
 
-To animate these properties, Flutter provides the
-[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html)
-widget. Like the `Container` widget, `AnimatedContainer` allows you to define
+To animate these properties,
+Flutter provides the [`AnimatedContainer`][] widget.
+Like the `Container` widget, `AnimatedContainer` allows you to define
 the width, height, background colors, and more. However, when the
 `AnimatedContainer` is rebuilt with new properties, it automatically
 animates between the old and new values. In Flutter, these types of
@@ -35,9 +35,7 @@ using the following steps:
 
 ## 1. Create a StatefulWidget with default properties
 
-To start, create
-[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
-and [`State`]({{site.api}}/flutter/widgets/State-class.html) classes.
+To start, create [`StatefulWidget`][] and [`State`][] classes.
 Use the custom State class to define the properties that change over
 time. In this example, that includes the width, height, color, and border
 radius. You can also define the default value of each property.
@@ -92,10 +90,10 @@ AnimatedContainer(
 
 ## 3. Start the animation by rebuilding with new properties
 
-Finally, start the animation by rebuilding the `AnimatedContainer` with
-the new properties. How to trigger a rebuild? Use the
-[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-method.
+Finally, start the animation by rebuilding the
+`AnimatedContainer` with the new properties.
+How to trigger a rebuild?
+Use the [`setState()`][] method.
 
 Add a button to the app. When the user taps the button, update
 the properties with a new width, height, background color and border radius
@@ -214,3 +212,10 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 ```
 
 ![AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
+
+
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html

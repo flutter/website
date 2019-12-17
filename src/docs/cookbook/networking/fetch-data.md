@@ -21,13 +21,12 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-The [`http`]({{site.pub-pkg}}/http) package provides the
+The [`http`][] package provides the
 simplest way to fetch data from the internet.
 
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
-[http package]({{site.pub}}/packages/http#-installing-tab-)
-the pub.dev.
+[http package][] the pub.dev.
 
 ```yaml
 dependencies:
@@ -44,8 +43,7 @@ import 'package:http/http.dart' as http;
 ## 2. Make a network request
 
 In this example, fetch a sample post from the
-[JSONPlaceholder](https://jsonplaceholder.typicode.com/) using the
-[http.get()]({{site.pub-api}}/http/latest/http/get.html) method.
+[JSONPlaceholder][] using the [http.get()][] method.
 
 <!-- skip -->
 ```dart
@@ -56,12 +54,11 @@ Future<http.Response> fetchPost() {
 
 The `http.get()` method returns a `Future` that contains a `Response`.
 
-  * [`Future`]({{site.api}}/flutter/dart-async/Future-class.html) is
-    a core Dart class for working with async operations.
-    A Future object represents a potential value or error that will be
-    available at some time in the future.
-  * The `http.Response` class contains the data received from a successful
-    http call.
+* [`Future`][] is a core Dart class for working with
+  async operations. A Future object represents a potential
+  value or error that will be available at some time in the future.
+* The `http.Response` class contains the data received from a successful
+  http call.
 
 ## 3. Convert the response into a custom Dart object
 
@@ -75,9 +72,9 @@ First, create a `Post` class that contains the data from the
 network request. It includes a factory constructor that
 creates a `Post` from JSON.
 
-Converting JSON by hand is only one option. For more information,
-see the full article on [JSON and
-serialization](/docs/development/data-and-backend/json).
+Converting JSON by hand is only one option.
+For more information, see the full article on
+[JSON and serialization][].
 
 <!-- skip -->
 ```dart
@@ -131,18 +128,15 @@ Hooray! Now you've got a function that fetches a post from the
 internet.
 
 ## 4. Fetch the data
+
 Call the fetch method in either the
-[`initState()`]({{site.api}}/flutter/widgets/State/initState.html) or
-[`didChangeDependencies()`]({{site.api}}/flutter/widgets/State/didChangeDependencies.html)
+[`initState()`][] or [`didChangeDependencies()`][]
 methods.
 
 The `initState()` method is called exactly once and then never again.
 If you want to have the option of reloading the API in response to an
-[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
-changing, put the call into the `didChangeDependencies()` method.  See
-[`State`]({{site.api}}/flutter/widgets/State-class.html) for more
-details.
-
+[`InheritedWidget`][] changing, put the call into the
+`didChangeDependencies()` method. See [`State`][] for more details.  
 <!-- skip -->
 ```dart
 class _MyAppState extends State<MyApp> {
@@ -159,9 +153,9 @@ This Future will be used in the next step.
 
 ## 5. Display the data
 To to display the data on screen, use the
-[`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html)
-widget. The `FutureBuilder` widget comes with Flutter and makes it easy
-to work with async data sources.
+[`FutureBuilder`][] widget.
+The `FutureBuilder` widget comes with Flutter and
+makes it easy to work with async data sources.
 
 You must provide two parameters:
 
@@ -202,8 +196,8 @@ and slow down your app.
 For information on how to test this functionality,
 see the following recipes:
 
-  * [Introduction to unit testing](/docs/cookbook/testing/unit/introduction)
-  * [Mock dependencies using Mockito](/docs/cookbook/testing/unit/mocking)
+  * [Introduction to unit testing][]
+  * [Mock dependencies using Mockito][]
 
 ## Complete example
 
@@ -294,3 +288,19 @@ Future<Post> post;
   }
 }
 ```
+
+
+[`didChangeDependencies()`]: {{site.api}}/flutter/widgets/State/didChangeDependencies.html
+[`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
+[`http`]: {{site.pub-pkg}}/http
+[http.get()]: {{site.pub-api}}/http/latest/http/get.html
+[http package]: {{site.pub}}/packages/http#-installing-tab-
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[Introduction to unit testing]: /docs/cookbook/testing/unit/introduction
+[`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
+[Mock dependencies using Mockito]: /docs/cookbook/testing/unit/mocking
+[JSON and serialization]: /docs/development/data-and-backend/json
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+
