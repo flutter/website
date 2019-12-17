@@ -39,8 +39,8 @@ before this change because:
 
 ## Migration guide
 
-Tests that relied on the dirty state will have to be updated. For example, this
-test:
+Tests that relied on dirty state from a previously run testwill have to be
+updated. For example, this test:
 
 ```dart
     expect(tester.testTextInput.editingState['text'], isEmpty);
