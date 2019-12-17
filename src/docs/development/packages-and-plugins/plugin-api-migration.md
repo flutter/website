@@ -181,29 +181,6 @@ but aren't required.
       sdk: flutter
     ```
 
-1. Manually register the E2E plugin in `MainActivity.java`
-   alongside any other plugins used by the example app.
-
-    ```java
-    package io.flutter.plugins.packageinfoexample;
-
-    import dev.flutter.plugins.e2e.E2EPlugin;
-    import io.flutter.embedding.android.FlutterActivity;
-    import io.flutter.embedding.engine.FlutterEngine;
-    import io.flutter.plugins.packageinfo.PackageInfoPlugin;
-
-    public class MainActivity extends FlutterActivity {
-      // TODO(jackson): Remove this once v2 of GeneratedPluginRegistrant
-      // rolls to stable.
-      // https://github.com/flutter/flutter/issues/42694
-      @Override
-      public void configureFlutterEngine(FlutterEngine flutterEngine) {
-        flutterEngine.getPlugins().add(new PackageInfoPlugin());
-        flutterEngine.getPlugins().add(new E2EPlugin());
-      }
-    }
-    ```
-
 1. Update minimum Flutter version of environment in
    `<plugin_name>/pubspec.yaml`. All plugins moving
    forward will set the minimum version to 1.9.1+hotfix.4
@@ -213,7 +190,7 @@ but aren't required.
     ```yaml
     environment:
       sdk: ">=2.0.0-dev.28.0 <3.0.0"
-      flutter: ">=1.9.1+hotfix.4 <2.0.0"
+      flutter: ">=1.12.13+hotfix.6 <2.0.0"
 
     ```
 
