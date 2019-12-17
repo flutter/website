@@ -1,6 +1,6 @@
 ---
-title: [Title of breaking change]
-description: [Brief description similar to the "context" section below.]
+title: TestTextInput and setEditingState updates
+description: TestTextInput will have its state reset between tests, and setEditingState will be sent at times where it previously was missed.
 ---
 
 # Send `setEditingState` when text changes

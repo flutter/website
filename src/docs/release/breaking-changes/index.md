@@ -8,6 +8,6 @@ on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
-* [TestTextInput](test_text_input.md)
+* [TestTextInput](test-text-input)
 
 [breaking change policy]: /docs/resources/compatibility
