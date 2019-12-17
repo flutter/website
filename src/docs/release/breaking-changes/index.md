@@ -8,4 +8,4 @@ policy][../../resources/compatibility], on occasion we publish guides
 for migrating code across a breaking change. The following guides are
 currently available:
 
- * _No guides have yet been published._
+* [TestTextInput](test_text_input.md)
