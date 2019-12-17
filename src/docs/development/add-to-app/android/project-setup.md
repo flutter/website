@@ -145,7 +145,7 @@ Then, follow the on-screen instructions to integrate.
 {% include app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates (by default all debug/profile/release
-modes) a [local repository](https://docs.gradle.org/current/userguide/repository_types.html#sub:maven_local), with the following files:
+modes) a [local repository](https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local), with the following files:
 
 ```text
 build/host/outputs/repo
