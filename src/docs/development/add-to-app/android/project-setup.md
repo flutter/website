@@ -145,7 +145,7 @@ Then, follow the on-screen instructions to integrate.
 {% include app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates (by default all debug/profile/release
-modes) a [local repository](https://docs.gradle.org/current/userguide/repository_types.html#sub:maven_local), with the following files:
+modes) a [local repository](https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local), with the following files:
 
 ```text
 build/host/outputs/repo
@@ -193,9 +193,9 @@ repositories {
 
 dependencies {
   // ...
-  debugImplementation 'com.example.flutter_module:flutter_debug:1.0
-  profileImplementation 'com.example.flutter_module:flutter_profile:1.0
-  releaseImplementation 'com.example.flutter_module:flutter_release:1.0
+  debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
+  profileImplementation 'com.example.flutter_module:flutter_profile:1.0'
+  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
 }
 ```
 
