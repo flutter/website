@@ -16,9 +16,9 @@ actual text content of the text field in this scenario](https://github.com/flutt
 ## Description of change
 
 The Flutter framework tracks when the editing state of an `EditableText` widget
-changes. It keeps synchronizes this value to the engine, but only if the value
-has changed. The state of this value is tracked by the `TextInputClient`, and
-logic exists to prevent sending duplicative values to the engine side.
+changes. It synchronizes this value to the engine, but only if the value has
+changed. The state of this value is tracked by the `TextInputClient`, and
+logic exists to prevent sending duplicate values to the engine side.
 
 A line of code currently prevents the `TextInputClient` from ever seeing changes
 to this value. On Android applications in particular, this causes problems if
