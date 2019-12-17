@@ -8,7 +8,7 @@ on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
- * _No guides have yet been published._
+ * [Scrollable AlertDialog](/docs/release/breaking-changes/scrollable_alert_dialog)
 
 
 [breaking change policy]: /docs/resources/compatibility
