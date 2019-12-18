@@ -1,5 +1,5 @@
 ---
-title: Android Studio / IntelliJ
+title: Android Studio and IntelliJ
 description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 ---
 
