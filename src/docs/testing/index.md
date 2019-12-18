@@ -89,10 +89,5 @@ see the following:
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
 * [Test Flutter apps on Cirrus](https://cirrus-ci.org/examples/#flutter)
-* [GitLab Continuous Integration
-  (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can
-  [find an example](https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml)
-  in the [flutter_redux library]({{site.github}}/brianegan/flutter_redux).
 * [Codemagic CI/CD for Flutter](https://blog.codemagic.io/getting-started-with-codemagic/)
 * [Flutter CI/CD with Bitrise](https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/)
