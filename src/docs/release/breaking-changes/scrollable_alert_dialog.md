@@ -149,11 +149,7 @@ AlertDialog(
 
 ## Timeline
 
-Late December 2019 - Add scrollable parameter, allow devs to migrate to setting
-`scrollable` to true.
-
-Early January 2020 - Remove scrollable parameter, Flutter devs have to remove
-`scrollable` parameter and have alert dialogs be scrollable by default.
+TBA - The version number since the change was introduced.
 
 ## References
 
