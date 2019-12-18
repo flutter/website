@@ -97,6 +97,13 @@ This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.android/` hidden subfolder that wraps up the
 module project in an Android library.
 
+{{site.alert.note}}
+Add custom Android code to your existing application or a plugin, not to
+the module in `.android/`. Changes made in `.android/` aren't embedded in your existing application.
+Regenerate the directory by running `flutter clean` or `flutter pub get` in the
+`my_flutter` directory.
+{{site.alert.end}}
+
 ### Java 8 requirement
 
 The Flutter Android engine uses Java 8 features.
