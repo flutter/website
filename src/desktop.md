@@ -79,7 +79,7 @@ $ flutter run -d macOS
 
 ## IDE Support
 You can create, run, and debug a Flutter project with desktop support
-using the existing Dart and Flutter extensions for [Android Studio / IntelliJ] as well
+using the existing Dart and Flutter extensions for [Android Studio and IntelliJ] as well
 as [Visual Studio Code]. Follow the instructions to [set up an editor] and install
 the Dart and Flutter extensions (also referred to as editor plugins).
 
@@ -103,7 +103,7 @@ Running a Flutter desktop app is no different than
 Creating a new project with desktop support is no different than
 [creating a new Flutter project][flutter starter app] for other platforms.
 To run a Flutter project with desktop support, use the same
-process for [running and debugging Flutter projects in Android Studio / IntelliJ] with other
+process for [running and debugging Flutter projects in Android Studio and IntelliJ] with other
 target platforms:
 1. Select **macOS (desktop)** from the **target selector** dropdown menu in the
    Flutter extension toolbar.
@@ -172,7 +172,7 @@ information and ongoing updates.
 * Learn more about desktop support for plugins at the [flutter-desktop-embedding]
 GitHub repository.
 
-[Android Studio / IntelliJ]: /docs/development/tools/android-studio
+[Android Studio and IntelliJ]: /docs/development/tools/android-studio
 [Android Studio]: {{site.android-dev}}/studio/install
 [color_panel]: {{site.github}}/google/flutter-desktop-embedding/tree/master/plugins/color_panel
 [connectivity]: {{site.pub}}/packages/connectivity

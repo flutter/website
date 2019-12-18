@@ -8,7 +8,9 @@ on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
- * _No guides have yet been published._
-
+* [TestTextInput]
+* [Scrollable AlertDialog]
 
 [breaking change policy]: /docs/resources/compatibility
+[Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable_alert_dialog
+[TestTextInput]: /docs/release/breaking-changes/test-text-input

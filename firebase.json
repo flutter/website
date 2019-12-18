@@ -119,6 +119,7 @@
       { "source": "/go/remove-include-flutter-groovy", "destination": "https://docs.google.com/document/d/1OulURfRSWgJnnFA_cSup4ev7wrJwnZ7Siao_FGbLN9I", "type": 301 },
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
       { "source": "/go/add-to-app-samples", "destination": "https://docs.google.com/document/d/1M_GsAL8C1NxbsmzI35w2Th1wvX1KMoPHY5yeeNbzjY0", "type": 301 },
+      { "source": "/go/build-aar", "destination": "/docs/development/add-to-app/android/project-setup#option-a---depend-on-the-android-archive-aar", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
       { "source": "/go/plugin-binding-review", "destination": "https://docs.google.com/document/d/1-9Si_ocFYh-Wa1qKV4PV2ocywKDYdiR_1yO3twPvrfM", "type": 301 },
@@ -147,7 +148,9 @@
       { "source": "/go/scrollable-alert-dialog", "destination": "https://docs.google.com/document/d/1qtVfjoKXE8BtkNbraKk9IzfRcks5btkKcyE4iGVwkbg/edit?usp=sharing", "type": 301 },
       { "source": "/go/localizing-datetime", "destination": "https://docs.google.com/document/d/1QR3qLXWdroTVLbnAQ8mq-Ia6tsZ8NY3lmi7gySQAstU/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit?usp=sharing", "type": 301 },
-      { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit?usp=sharing", "type": 301 }
+      { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/nshc", "destination": "https://docs.google.com/document/d/1uwHQ3ZEGN2cH6bFwa3CCXTTXCeDfOWw-kUa_B6oTMuA/edit?usp=sharing", "type": 301 },
+      { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit?usp=sharing", "type": 301 }
     ]
   }
 }
