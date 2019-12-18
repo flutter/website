@@ -61,6 +61,7 @@ The following instructions outline the steps for supporting the new API:
    for details. You may have to make a public constructor for you plugin class
    if one didn't exist already. For example:
 
+   <?code-excerpt "MainActivity.java" title?>
    ```java
     package io.flutter.plugins.firebasecoreexample;
 
@@ -78,6 +79,7 @@ The following instructions outline the steps for supporting the new API:
    embedding for the example project in the same folder as `MainActivity` to
    keep testing the v1 embedding's compatibility with your plugin. For example:
 
+    <?code-excerpt "EmbeddingV1Activity.java" title?>
     ```java
     package io.flutter.plugins.firebasecoreexample;
 
@@ -86,19 +88,19 @@ The following instructions outline the steps for supporting the new API:
     import io.flutter.plugins.GeneratedPluginRegistrant;
 
     public class EmbeddingV1Activity extends FlutterActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      GeneratedPluginRegistrant.registerWith(this);
-    }
+      @Override
+      protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GeneratedPluginRegistrant.registerWith(this);
+      }
     }
     ```
 
 1. (Optional) If you created an `EmbeddingV1Activity` in the step above, add the
-   `EmbeddingV1Activity` to the
-   <plugin_name>/example/android/app/src/main/AndroidManifest.xml.
+   `EmbeddingV1Activity` to the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
    For example:
 
+    <?code-excerpt "AndroidManifest.xml" title?>
     ```xml
     <activity
         android:name=".EmbeddingV1Activity"
@@ -109,6 +111,7 @@ The following instructions outline the steps for supporting the new API:
     </activity>
     ```
 
+
 ## Testing your plugin
 
 The remaining steps address testing your plugin, which we encourage,
@@ -117,6 +120,7 @@ but aren't required.
 1. Update `<plugin_name>/example/android/app/build.gradle`
    to replace references to `android.support.test` with `androidx.test`:
 
+    <?code-excerpt "build.gradle" title?>
     ```groovy
     defaultConfig {
       ...
@@ -125,6 +129,7 @@ but aren't required.
     }
     ```
 
+    <?code-excerpt "build.gradle" title?>
     ```groovy
     dependencies {
     ...
@@ -139,6 +144,7 @@ but aren't required.
    in `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/`.
    You will need to create these directories. For example:
 
+    <?code-excerpt "MainActivityTest.java" title?>
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -154,6 +160,7 @@ but aren't required.
     }
     ```
 
+    <?code-excerpt "EmbeddingV1ActivityTest.java" title?>
     ```java
     package io.flutter.plugins.firebase.core;
 
@@ -175,6 +182,7 @@ but aren't required.
    `<plugin_name>/pubspec.yaml` and
    `<plugin_name>/example/pubspec.yaml`.
 
+    <?code-excerpt "pubspec.yaml" title?>
     ```yaml
     e2e: ^0.2.1
     flutter_driver:
@@ -183,10 +191,11 @@ but aren't required.
 
 1. Update minimum Flutter version of environment in
    `<plugin_name>/pubspec.yaml`. All plugins moving
-   forward will set the minimum version to 1.9.1+hotfix.4
+   forward will set the minimum version to 1.12.13+hotfix.6
    which is the minimum version for which we can guarantee support.
    For example:
 
+    <?code-excerpt "pubspec.yaml" title?>
     ```yaml
     environment:
       sdk: ">=2.0.0-dev.28.0 <3.0.0"
