@@ -3,11 +3,11 @@
 If your PR involves adding or updating writing content,
 please check the following items before submitting your PR for review:
 
-- [ ] Links use [kramdown link definition] syntax.
-- [ ] If needed, links also use [kramdown reference link] syntax.
-- [ ] Never link on the "here", "click here", or "this document".
+- [ ] Use [kramdown link definition] syntax for all links.
+- [ ] If needed, also use [kramdown reference link] syntax.
+- [ ] Never link on the words "here", "click here", or "this document".
 Instead, use a phrase that describes what the reader will see.
-See the google developer [style guide page on links] for more info.
+See the google developer [style guide page on links] for more information.
 - [ ] Use the present tense, and [avoid the future tense].
 
 [kramdown link definition]: https://kramdown.gettalong.org/syntax.html#link-definitions
