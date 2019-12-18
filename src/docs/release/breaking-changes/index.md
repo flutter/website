@@ -11,7 +11,6 @@ currently available:
 * [TestTextInput]
 * [Scrollable AlertDialog]
 
-
 [breaking change policy]: /docs/resources/compatibility
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable_alert_dialog
 [TestTextInput]: /docs/release/breaking-changes/test-text-input
