@@ -2559,7 +2559,7 @@ We upgraded the Webview Flutter plugin to the [new plugin API](https://github.co
 
 Flutter tooling is another big investment in this release. We launched a new version of [DartPad](http://dartpad.dev) that allows you to play with Flutter directly in your browser without installing anything, released a new feature “Hot UI” (in preview) that allows you to interact with widgets directly in the IDE, enhanced Dart DevTools with a new visual layout view, enabled simultaneous multi-device debugging in Visual Studio Code, and added support for “golden” image testing.
 
-In addition to the PRs listed below, please also check out the following releases for the IntelliJ / Android Studio Flutter plugin, the VS Code Flutter plugin and Dart DevTools:
+In addition to the PRs listed below, please also check out the following releases for the IntelliJ and Android Studio Flutter plugin, the VS Code Flutter plugin and Dart DevTools:
 
 
 ### VS Code
