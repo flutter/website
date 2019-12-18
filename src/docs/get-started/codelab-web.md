@@ -452,7 +452,7 @@ You will need that to launch DevTools.
 Do you have [DevTools installed][]?
 If you are using an IDE,
 make sure you have the Flutter and Dart plugins set up,
-as described in the [VS Code][] and [Android Studio / IntelliJ][] pages.
+as described in the [VS Code][] and [Android Studio and IntelliJ][] pages.
 If you are working at the command line,
 launch the DevTools server as explained in the
 [DevTools command line][] page.
@@ -759,7 +759,7 @@ Dart DevTools, or Flutter animations, see the following:
 * [Web samples][]
 
 
-[Android Studio / IntelliJ]: /docs/development/tools/devtools/android-studio
+[Android Studio and IntelliJ]: /docs/development/tools/devtools/android-studio
 [Animation docs]: /docs/development/ui/animations
 [Building a form with validation]: /docs/cookbook/forms/validation
 [Building a web application with Flutter]: /docs/get-started/web

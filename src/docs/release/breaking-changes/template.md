@@ -45,9 +45,12 @@ a description of how to make the change manually must be provided.]
 
 ## Timeline
 
-[Details regarding when the change was made.
-If there is a deprecation window,
-the date to which we guarantee to maintain the old API.]
+[Details regarding when the change was made, in terms of a version number.
+If there is a deprecation window, the date to which we guarantee to maintain the old API.]
+
+[This text should be backwards looking. People are reading this months from now, not today.
+Don't say "in a month" or talk about your plan to do something next week. You've done it,
+they're looking back to figure out how to migrate their code.]
 
 
 ## References
