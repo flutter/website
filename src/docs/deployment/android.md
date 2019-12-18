@@ -1,5 +1,5 @@
 ---
-title: Preparing an Android app for release
+title: Build and release an Android app
 description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---

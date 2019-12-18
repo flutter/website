@@ -140,6 +140,7 @@ Widget build(BuildContext context) {
     },
     onPanEnd: (details) {},
     child: Align(
+      alignment: _dragAlignment,
       child: Card(
         child: widget.child,
       ),
