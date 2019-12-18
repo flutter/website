@@ -229,9 +229,11 @@ generates the JSON serialization boilerplate for you.
   on pub.dev that generate JSON serialization code,
   [`json_serializable`][] and [`built_value`][].
   How do you choose between these packages?
-  The `json_serializable` package is focused specifically
-  on serialization, and the `built_value` package also supports
-  immutable types.
+  The `json_serializable` package allows you to make regular
+  classes serializable by using annotations, 
+  whereas the `built_value` package provides a higher-level way
+  of defining immutable value classes that can also be
+  serialized to JSON.
 {{site.alert.end}}
 
 Since the serialization code is not handwritten or maintained manually
