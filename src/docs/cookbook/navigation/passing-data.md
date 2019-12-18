@@ -237,7 +237,7 @@ Repeat the first two steps.
 
 Next, create a detail screen that extracts and displays the title and description from the `Todo`. To access the `Todo`, use the `ModalRoute.of()` method. This method returns the current route with the arguments.
 
-```
+```dart
 class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -261,7 +261,7 @@ class DetailScreen extends StatelessWidget {
 
 Finally, navigate to the `DetailScreen` when a user taps a `ListTile` widget using `Navigator.push()`. Pass the arguments as part of the `RouteSettings`. The `DetailScreen` extracts these arguments.
 
-```
+```dart
 ListView.builder(                                                    
   itemCount: todos.length,                                           
   itemBuilder: (context, index) {                                    
@@ -290,7 +290,7 @@ ListView.builder(
 
 ### Complete example
 
-```
+```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
