@@ -13,8 +13,8 @@
     do not install Flutter in a directory like
     `C:\Program Files\` that requires elevated privileges).
 
-Steps 1 and 2 can be replaced. If you don't want to install a fixed version of installation bundle.
-Flutter SDK is free and open source, so we can get the source code from [GitHub](https://github.com/flutter/flutter),
+Steps 1 and 2 can be replaced. If you don't want to install a fixed version of the installation bundle.
+The Flutter SDK is free and open source, so you can get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
 and change branches or tags as needed.
 
 ```terminal
