@@ -13,6 +13,14 @@
     do not install Flutter in a directory like
     `C:\Program Files\` that requires elevated privileges).
 
+Steps 1 and 2 can be replaced. If you don't want to install a fixed version of the installation bundle.
+The Flutter SDK is free and open source, so you can get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
+and change branches or tags as needed.
+
+```terminal
+$ git clone https://github.com/flutter/flutter.git
+```
+
 You are now ready to run Flutter commands in the Flutter Console!
 
 ### Update your path
