@@ -1,16 +1,20 @@
-## Writing Checklist
+## PR Writing Checklist
 
 If your PR involves adding or updating writing content,
 please check the following items before submitting your PR for review:
 
-- [ ] Avoid [inline links]. Instead, use [reference links] with a list of [link reference definitions] at the bottom of your page.
+- [ ] **Avoid [inline links].
+  Instead, use [reference links] with a list of
+  [link reference definitions] at the bottom of your page.**
 
 ### Example:
 
 Not recommended:
 
 ```md
-For more information, consult [reference links](https://github.github.com/gfm#reference-links) for [GitHub Flavored Markdown](https://github.github.com/gfm).
+For more information, consult
+[reference links](https://github.github.com/gfm#reference-links)
+for [GitHub Flavored Markdown](https://github.github.com/gfm).
 
 ```
 
@@ -25,8 +29,8 @@ For more information, consult [reference links] for [GitHub Flavored Markdown].
 [GitHub Flavored Markdown]: https://github.github.com/gfm/
 ```
 
-- [ ] Avoid duplicating a referenced link definition by using
-    [link labels] after [reference links].
+- [ ] **Avoid duplicating a referenced link definition by using
+  [link labels] after [reference links].**
 
 ### Example:
 
@@ -45,16 +49,16 @@ Recommended:
 [google]: https://google.com
 ```
 
-- [ ] Never link on the words "here", "click here", or "this document".
-    Instead, use a phrase that describes what the reader will see.
-    For more information, see the Google Developer Style Guide pages on
-    [link text] and [cross references].
+- [ ] **Never link on the words "here", "click here", or "this document".
+  Instead, use a phrase that describes what the reader will see.
+  For more information, see the Google Developer Style Guide pages on
+  [link text] and [cross references].**
 
-- [ ] Use the present tense, and [avoid future tense].
-    One way to check for future tense in your docs
-    is to search for "will" and remove it wherever possible.
+- [ ] **Use present tense, and [avoid future tense].**
+  One way to check for future tense in your docs
+  is to search for "will" and remove it wherever possible.
 
-- [ ] Where possible, use [active voice].
+- [ ] **Where possible, use [active voice].**
 
 #### Example
 
@@ -72,9 +76,9 @@ Recommended (active):
 
 One way to help identify passive voice
 is to search for "there is" or "there are" or other versions of "to be".
-- [ ] Avoid writing in first person.
-    If needed, use [second person].
-    Better yet, rewrite to avoid either.
+- [ ] **Avoid writing in first person.
+  If needed, use [second person].
+  Better yet, rewrite to avoid either.**
 
 #### Example
 
@@ -86,7 +90,7 @@ Not recommended (first person):
 
 Better (second person):
 
-```md`
+```md
 "In this section, you'll..."
 ```
 
@@ -97,8 +101,8 @@ Even better (imperative with implied subject):
 ```
 When translated to other languages, even second person can be problematic.
 
-- [ ] [Validate site links] prior to submitting your PR
-    by running`./tool/shared/check-links.sh` from the project root directory.
+- [ ] **[Validate site links] prior to submitting your PR
+  by running`./tool/shared/check-links.sh` from the project root directory.**
 
 [second person]: https://developers.google.com/style/person
 [active voice]: https://developers.google.com/style/voice
