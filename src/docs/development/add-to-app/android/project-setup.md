@@ -43,9 +43,11 @@ code and your Flutter code in the same project. You can also continue to use
 your normal IntelliJ Flutter plugin functionalities such as Dart code completion,
 hot reload, and widget inspector.
 
-Add-to-app flows with Android Studio are only supported on Android Studio 3.6,
-and only supports integrating using a source code Gradle subproject, rather than
-using AARs. See below for more details on the distinction.
+Add-to-app flows with Android Studio are only supported on Android Studio 3.6
+with version 42+ of the [Flutter IntelliJ plugin](https://plugins.jetbrains.com/plugin/9212-flutter).
+The Android Studio integration also only supports integrating using a source
+code Gradle subproject, rather than using AARs. See below for more details on
+the distinction.
 
 Using the `File > New > New Module...` menu in Android Studio in your existing
 Android project, you can either create a new Flutter module to integrate, or
@@ -94,6 +96,13 @@ $ flutter create -t module --org com.example my_flutter
 This creates a `some/path/my_flutter/` Flutter module project with some Dart
 code to get you started and a `.android/` hidden subfolder that wraps up the
 module project in an Android library.
+
+{{site.alert.note}}
+Add custom Android code to your existing application or a plugin, not to
+the module in `.android/`. Changes made in `.android/` aren't embedded in your existing application.
+Regenerate the directory by running `flutter clean` or `flutter pub get` in the
+`my_flutter` directory.
+{{site.alert.end}}
 
 ### Java 8 requirement
 

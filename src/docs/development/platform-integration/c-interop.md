@@ -115,7 +115,7 @@ EOF
 
 On iOS, you need to tell xcode to statically link the file:
 
- 1. In Xcode, open `Runner.xcodeproj`.
+ 1. In Xcode, open `Runner.xcworkspace`.
  2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
 
@@ -220,7 +220,7 @@ can be resolved using [`DynamicLibrary.executable`][] or
 To link against a platform library,
 use the following instructions:
 
-1. In Xcode, open `Runner.xcodeproj`.
+1. In Xcode, open `Runner.xcworkspace`.
 1. Select the target platform.
 1. Click **+** in the **Linked Frameworks and Libraries**
    section.
@@ -238,7 +238,7 @@ archives as well, but it requires testing.
 To link directly to source code,
 use the following instructions:
 
- 1. In Xcode, open `Runner.xcodeproj`.
+ 1. In Xcode, open `Runner.xcworkspace`.
  2. Add the C/C++/Objective-C/Swift
     source files to the Xcode project.
  3. Add the following prefix to the
@@ -263,7 +263,7 @@ To link to a compiled dynamic library,
 use the following instructions:
 
 1. If a properly signed `Framework` file is present,
-   open `Runner.xcodeproj`.
+   open `Runner.xcworkspace`.
 1. Add the framework file to the **Embedded Binaries**
    section.
 1. Also add it to the **Linked Frameworks & Libraries**

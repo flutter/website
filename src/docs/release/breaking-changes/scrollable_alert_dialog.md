@@ -3,8 +3,6 @@ title: Scrollable AlertDialog
 description: AlertDialog should scroll automatically when it overflows.
 ---
 
-# Scrollable AlertDialog
-
 ## Context
 
 Currently, when an AlertDialog widget’s contents are too tall, they can end up
@@ -81,9 +79,7 @@ Column(
 
 ## Migration guide
 
-### Potential breaking changes
-
-1. Semantics tests may fail because of the addition of a SingleChildScrollView.
+### Semantics tests may fail because of the addition of a SingleChildScrollView.
 
 Upon manually testing Talkback and VoiceOver, they still behave correctly and
 the same.
@@ -113,35 +109,47 @@ flutter:          └─SemanticsNode#32 <-- contents
 flutter:              label: "Huge content"
 ```
 
-2. This change may result in layout changes because of the scroll view.
+### This change may result in layout changes because of the scroll view.
 
 If the dialog was already overflowing, this change would correct the problem
 and this layout change is expected.
 
 A nested SingleChildScrollView in `AlertDialog.content` seems to still work
 properly if left in, but it should probably be removed if unintended since
-it might cause confusion.
+it might cause confusion:
 
-### Two-phase update:
+Original code:
+```dart
+AlertDialog(
+  title: Text(
+    'Very, very large title that is also scrollable',
+    textScaleFactor: 5,
+  ),
+  content: SingleChildScrollView( // will not be scrollable
+    child: Text('Scrollable content', textScaleFactor: 5),
+  ),
+  actions: <Widget>[
+    FlatButton(child: Text('Button 1'), onPressed: () {}),
+    FlatButton(child: Text('Button 2'), onPressed: () {}),
+  ],
+)
+```
 
-This change will be conducted in two phases.
-
-1. The first phase introduces a new parameter to AlertDialog called
-`scrollable`. It will default to `false`, so this new parameter will need
-to be set to `true` to reflect the latest changes. Any expected breaking tests
-described above should be fixed.
-
-2. The second phase would remove the `scrollable` parameter and have the
-AlertDialog widget be scrollable by default. This will require all AlertDialogs
-to be modified and have their `scrollable` parameters removed.
+Migrate to:
+```dart
+AlertDialog(
+  title: Text('Very, very large title', textScaleFactor: 5),
+  content: Text('Very, very large content', textScaleFactor: 5),
+  actions: <Widget>[
+    FlatButton(child: Text('Button 1'), onPressed: () {}),
+    FlatButton(child: Text('Button 2'), onPressed: () {}),
+  ],
+)
+```
 
 ## Timeline
 
-Late December 2019 - Add scrollable parameter, allow devs to migrate to setting
-`scrollable` to true.
-
-Early January 2020 - Remove scrollable parameter, Flutter devs have to remove
-`scrollable` parameter and have alert dialogs be scrollable by default.
+TBA - The version number since the change was introduced.
 
 ## References
 

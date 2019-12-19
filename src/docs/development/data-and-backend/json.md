@@ -8,8 +8,8 @@ web server or easily store structured data at some point. When making
 network-connected apps, the chances are that it needs to consume some good old
 JSON, sooner or later.
 
-This guide looks into ways of using JSON with Flutter. It covers which
-JSON solution to use in different scenarios, and why.
+This guide looks into ways of using JSON with Flutter.
+It covers which JSON solution to use in different scenarios, and why.
 
 {{site.alert.info}}
   **Terminology:** _Encoding_ and _serialization_ are the same
@@ -31,18 +31,20 @@ This article covers two general strategies for working with JSON:
 * Manual serialization
 * Automated serialization using code generation
 
-Different projects come with different complexities and use cases. For smaller
-proof-of-concept projects or quick prototypes, using code generators might be
-overkill. For apps with several JSON models with more complexity, encoding
-by hand can quickly become tedious, repetitive, and lend itself to many
-small errors.
+Different projects come with different complexities and use cases.
+For smaller proof-of-concept projects or quick prototypes,
+using code generators might be overkill.
+For apps with several JSON models with more complexity,
+encoding by hand can quickly become tedious, repetitive,
+and lend itself to many small errors.
 
 ### Use manual serialization for smaller projects
 
 Manual JSON decoding refers to using the built-in JSON decoder in
 `dart:convert`. It involves passing the raw JSON string to the `jsonDecode()`
 function, and then looking up the values you need in the resulting
-`Map<String, dynamic>`. It has no external dependencies or particular setup process,
+`Map<String, dynamic>`.
+It has no external dependencies or particular setup process,
 and it's good for a quick proof of concept.
 
 Manual decoding does not perform well when your project becomes bigger.
@@ -53,14 +55,14 @@ field, your code throws an error during runtime.
 If you do not have many JSON models in your project and are looking to test a
 concept quickly, manual serialization might be the way you want to start.
 For an example of manual encoding, see
-[Serializing JSON manually using dart:convert](#manual-encoding).
+[Serializing JSON manually using dart:convert][].
 
 ### Use code generation for medium to large projects
 
 JSON serialization with code generation means having an external library
 generate the encoding boilerplate for you. After some initial setup,
 you run a file watcher that generates the code from your model classes.
-For example, [json_serializable][] and [built_value][] are these
+For example, [`json_serializable`][] and [`built_value`][] are these
 kinds of libraries.
 
 This approach scales well for a larger project. No hand-written
@@ -71,8 +73,7 @@ in your project navigator.
 
 You might want to use generated code for JSON serialization when you have a
 medium or a larger project. To see an example of code generation based JSON
-encoding, see
-[Serializing JSON using code generation libraries](#code-generation).
+encoding, see [Serializing JSON using code generation libraries][].
 
 ## Is there a GSON/<wbr>Jackson/<wbr>Moshi equivalent in Flutter?
 
@@ -100,7 +101,7 @@ Basic JSON serialization in Flutter is very simple. Flutter has a built-in
 `dart:convert` library that includes a straightforward JSON encoder and
 decoder.
 
-Here is an example JSON for a simple user model.
+The following sample JSON implements a simple user model.
 
 ```json
 {
@@ -109,11 +110,12 @@ Here is an example JSON for a simple user model.
 }
 ```
 
-With `dart:convert`, you can serialize this JSON model in two ways.
+With `dart:convert`,
+you can serialize this JSON model in two ways.
 
 ### Serializing JSON inline
 
-By looking at the [dart:convert][] documentation,
+By looking at the [`dart:convert`][] documentation,
 you'll see that you can decode the JSON by calling the
 `jsonDecode()` function, with the JSON string as the method argument.
 
@@ -218,8 +220,21 @@ and decoding for you.  Luckily, there is!
 ## Serializing JSON using code generation libraries
 
 Although there are other libraries available, this guide uses
-[json_serializable][], an automated source code generator that
+[`json_serializable`][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
+
+{{site.alert.info}}
+  **Choosing a library:**
+  You might have noticed two [Flutter Favorite][] packages
+  on pub.dev that generate JSON serialization code,
+  [`json_serializable`][] and [`built_value`][].
+  How do you choose between these packages?
+  The `json_serializable` package allows you to make regular
+  classes serializable by using annotations, 
+  whereas the `built_value` package provides a higher-level way
+  of defining immutable value classes that can also be
+  serialized to JSON.
+{{site.alert.end}}
 
 Since the serialization code is not handwritten or maintained manually
 anymore, you minimize the risk of having JSON serialization exceptions at
@@ -248,14 +263,15 @@ dev_dependencies:
   json_serializable: <latest_version>
 ```
 
-Run `flutter pub get` inside your project root folder (or click
-**Packages Get** in your editor) to make these new dependencies available
-in your project.
+Run `flutter pub get` inside your project root folder
+(or click **Packages get** in your editor)
+to make these new dependencies available in your project.
 
 ### Creating model classes the json_serializable way
 
-The following shows how to convert the `User` class to a `json_serializable`
-one. For the sake of simplicity, this code uses the simplified JSON model
+The following shows how to convert the `User` class to a
+`json_serializable` class. For the sake of simplicity,
+this code uses the simplified JSON model
 from the previous samples.
 
 **user.dart**
@@ -293,9 +309,9 @@ class User {
 With this setup, the source code generator generates code for encoding
 and decoding the `name` and `email` fields from JSON.
 
-If needed, it is also easy to customize the naming strategy. For example, if the
-API returns objects with _snake\_case_, and you want to use
-_lowerCamelCase_ in your models,
+If needed, it is also easy to customize the naming strategy.
+For example, if the API returns objects with _snake\_case_,
+and you want to use _lowerCamelCase_ in your models,
 you can use the `@JsonKey` annotation with a name parameter:
 
 <!-- skip -->
@@ -308,8 +324,8 @@ final int registrationDateMillis;
 
 ### Running the code generation utility
 
-When creating `json_serializable` classes the first time, you'll get errors
-similar to what is shown in the image below.
+When creating `json_serializable` classes the first time,
+you'll get errors similar to what is shown in the image below.
 
 ![IDE warning when the generated code for a model class does not exist
 yet.](/images/json/ide_warning.png){:.mw-100}
@@ -356,11 +372,13 @@ The same goes for encoding. The calling API is the same as before.
 String json = jsonEncode(user);
 ```
 
-With `json_serializable`, you can forget any manual JSON serialization in the
-`User` class. The source code generator creates a file called `user.g.dart`,
-that has all the necessary serialization logic. You no longer have
-to write automated tests to ensure that the serialization works&mdash;it's
-now _the library's responsibility_ to make sure the serialization works
+With `json_serializable`,
+you can forget any manual JSON serialization in the `User` class.
+The source code generator creates a file called `user.g.dart`,
+that has all the necessary serialization logic.
+You no longer have to write automated tests to ensure
+that the serialization works&mdash;it's now
+_the library's responsibility_ to make sure the serialization works
 appropriately.
 
 ## Generating code for nested classes
@@ -388,7 +406,7 @@ class Address {
 }
 ```
 
-The Address class is nested inside the `User` class:
+The `Address` class is nested inside the `User` class:
 
 ```dart
 import 'address.dart';
@@ -459,28 +477,30 @@ class User {
 }
 ```
 
-For more information, see [explicitToJson][] in the
-[JsonSerializable][] class for the [json_annotation][] package.
-
-[explicitToJson]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
-[JsonSerializable]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
-[json_annotation]: {{site.pub}}/packages/json_annotation
+For more information, see [`explicitToJson`][] in the
+[`JsonSerializable`][] class for the [`json_annotation`][] package.
 
 ## Further references
 
 For more information, see the following resources:
 
-* The [dart:convert][] and [JsonCodec][] documentation
-* The [json_serializable][] package on pub.dev
-* The [json_serializable examples][] on GitHub
+* The [`dart:convert`][] and [`JsonCodec`][] documentation
+* The [`json_serializable`][] package on pub.dev
+* The [`json_serializable` examples][] on GitHub
 
 
-[built_value]: {{site.pub}}/packages/built_value
-[dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
-[JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
-[json_serializable]: {{site.pub}}/packages/json_serializable
-[json_serializable examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
+[`built_value`]: {{site.pub}}/packages/built_value
+[`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
+[Flutter Favorite]: /docs/development/packages-and-plugins/favorites
 [json background parsing]: https://flutter.dev/docs/cookbook/networking/background-parsing
+[`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
+[`json_annotation`]: {{site.pub}}/packages/json_annotation
+[`json_serializable`]: {{site.pub}}/packages/json_serializable
+[`json_serializable` examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
 [pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
+[Serializing JSON manually using dart:convert]: #manual-encoding
+[Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
