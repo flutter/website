@@ -181,7 +181,7 @@
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
-        - title: Android Studio / IntelliJ
+        - title: Android Studio & IntelliJ
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
@@ -190,7 +190,7 @@
           children:
             - title: Overview
               permalink: /docs/development/tools/devtools/overview
-            - title: Install from Android Studio / IntelliJ
+            - title: Install from Android Studio & IntelliJ
               permalink: /docs/development/tools/devtools/android-studio
             - title: Install from VS Code
               permalink: /docs/development/tools/devtools/vscode
