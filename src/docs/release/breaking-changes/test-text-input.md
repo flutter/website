@@ -1,41 +1,23 @@
 ---
-title: TestTextInput and setEditingState updates
-description: TestTextInput will have its state reset between tests, and setEditingState will be sent at times where it previously was missed.
+title: TestTextInput state reset
+description: TestTextInput will have its state reset between tests.
 ---
 
-# Send `setEditingState` when text changes
+# TestTextInput state will be reset between tests
 
 ## Context
 
-The Flutter engine and framework have to keep state about text fields in sync.
-Sometimes, the engine can lose this state - such as when the application is
-backgrounded on Android. In this case, the engine asks the framework to re-send
-text field related state. [Currently, the framework is failing to send the
-actual text content of the text field in this scenario](https://github.com/flutter/flutter/issues/47137).
+The Flutter test framework uses a class called `TestTextInput` to track and
+manipulate editing state in a widgets test. Individual tests can make calls
+that modify the internal state of this object, sometimes indirectly (such as
+by setting their own handlers on `SystemChannels.textInput`). Subsequent tests
+may then check the state of `WidgetTester.testTextInput` and get unexpected
+values.
 
 ## Description of change
 
-The Flutter framework tracks when the editing state of an `EditableText` widget
-changes. It synchronizes this value to the engine, but only if the value has
-changed. The state of this value is tracked by the `TextInputClient`, and
-logic exists to prevent sending duplicate values to the engine side.
-
-A line of code currently prevents the `TextInputClient` from ever seeing changes
-to this value. On Android applications in particular, this causes problems if
-the Flutter engine is detached (e.g. when the app is backgrounded) and needs to
-get the current state of any `EditableText` fields.
-
-In addition, the testing framework was allowing global state to persist between
-tests, and failed to have a helper class (`TestTextInput`) regain control of
-the `SystemChannels.textInput` if a test grabbed it away (e.g. by calling
-`SystemChannels.textInput.setMockMethodCallHandler(...)`).
-
-Tests that inspect the `TestTextInput.editingState` may have been able to pass
-before this change because:
-
-- There was dirty state from a previous test.
-- The framework did not call `setEditingState` on the `SystemChannels.textInput`
-  channel where it now does.
+Reset the state of `WidgetTester.testTextInput` before running a `testWidgets`
+test.
 
 ## Migration guide
 
@@ -77,12 +59,11 @@ This change is being proposed for December of 2019.
 ## References
 
 API documentation:
-* https://api.flutter.dev/flutter/widgets/EditableText-class.html
-* https://api.flutter.dev/flutter/services/TextInput-class.html
-* https://api.flutter.dev/flutter/services/TextInputClient-class.html
+* [TestTextInput](https://api.flutter.dev/flutter/flutter_test/TestTextInput-class.html)
+* [WidgetTester](https://api.flutter.dev/flutter/flutter_test/WidgetTester-class.html)
 
 Relevant issues:
-* https://github.com/flutter/flutter/issues/47137
+* [Randomize test order to avoid global state](https://github.com/flutter/flutter/issues/47233)
 
 Relevant PRs:
-* https://github.com/flutter/flutter/pull/47177
+* [Reset state between tests](https://github.com/flutter/flutter/pull/47464)
