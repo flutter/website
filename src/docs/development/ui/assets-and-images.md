@@ -344,8 +344,8 @@ Flutter [video_player plugin][].
 
 If you are implementing Flutter as
 [Add-to-app](/docs/development/add-to-app/ios/), you may have images hosted in
-iOS which you want to use in the Flutter.  For accomplishing that there is a
-plugin available on *pub* called [ios_platform_images][].
+iOS which you want to use in Flutter.  For accomplishing that there is a plugin
+available on *pub* called [ios_platform_images][].
 
 ## Platform assets
 
