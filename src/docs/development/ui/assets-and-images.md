@@ -280,7 +280,7 @@ The `lib/` is implied, so it should not be included in the asset path.
 Flutter assets are readily available to platform code via
 AssetManager on Android and NSBundle on iOS.
 
-### Android
+### Loading Flutter assets in Android
 
 On Android the assets are available via the [AssetManager API][].
 The lookup key used in, for instance [openFd][], is obtained from
@@ -316,7 +316,7 @@ String key = registrar.lookupKeyForAsset("icons/heart.png");
 AssetFileDescriptor fd = assetManager.openFd(key);
 ```
 
-### iOS
+### Loading Flutter assets in iOS
 
 On iOS the assets are available via the [mainBundle][].
 The lookup key used in, for instance [pathForResource:ofType:][],
@@ -339,6 +339,26 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 
 For a more complete example, see the implementation of the
 Flutter [video_player plugin][].
+
+The plugin [ios_platform_images][] on pub.dev wraps up this logic in a
+convenient category.  It allows writing:
+
+**Objective-C:**
+```objective-c
+[UIImage flutterImageWithName:@"icons/heart.png"];
+```
+
+**Swift:**
+```swift
+UIImage.flutterImageNamed("icons/heart.png")
+```
+
+### Loading iOS images in Flutter
+
+When implementing Flutter as
+[Add-to-app](/docs/development/add-to-app/ios/), you might have images hosted in
+iOS which you want to use in Flutter.  For accomplishing that there is a plugin
+available on pub.dev called [ios_platform_images][].
 
 ## Platform assets
 
@@ -459,3 +479,4 @@ customization using the Interface Builder in
 [pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
 [PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [video_player plugin]: {{site.pub}}/packages/video_player
+[ios_platform_images]: {{site.pub}}/packages/ios_platform_images
