@@ -340,6 +340,13 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 For a more complete example, see the implementation of the
 Flutter [video_player plugin][].
 
+The plugin [ios_platform_images][] on pub.dev wraps up this logic in a
+convenient category.  It allows writing:
+
+```objective-c
+[UIImage flutterImageWithName:@"icons/heart.png"];
+```
+
 ### Loading iOS images in Flutter
 
 When implementing Flutter as
