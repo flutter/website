@@ -280,7 +280,7 @@ The `lib/` is implied, so it should not be included in the asset path.
 Flutter assets are readily available to platform code via
 AssetManager on Android and NSBundle on iOS.
 
-### Android
+### Loading Flutter Assets in Android
 
 On Android the assets are available via the [AssetManager API][].
 The lookup key used in, for instance [openFd][], is obtained from
@@ -316,7 +316,7 @@ String key = registrar.lookupKeyForAsset("icons/heart.png");
 AssetFileDescriptor fd = assetManager.openFd(key);
 ```
 
-### iOS
+### Loading Flutter Assets in iOS
 
 On iOS the assets are available via the [mainBundle][].
 The lookup key used in, for instance [pathForResource:ofType:][],
@@ -339,6 +339,13 @@ NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
 
 For a more complete example, see the implementation of the
 Flutter [video_player plugin][].
+
+### Loading iOS Images in Flutter
+
+If you are implementing Flutter as
+[Add-to-app](/docs/development/add-to-app/ios/), you may have images hosted in
+iOS which you want to use in the Flutter.  For accomplishing that there is a
+plugin available on *pub* called [ios_platform_images][].
 
 ## Platform assets
 
@@ -459,3 +466,4 @@ customization using the Interface Builder in
 [pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
 [PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [video_player plugin]: {{site.pub}}/packages/video_player
+[ios_platform_images]: {{site.pub}}/packages/ios_platform_images
