@@ -343,8 +343,14 @@ Flutter [video_player plugin][].
 The plugin [ios_platform_images][] on pub.dev wraps up this logic in a
 convenient category.  It allows writing:
 
+**Objective-C:**
 ```objective-c
 [UIImage flutterImageWithName:@"icons/heart.png"];
+```
+
+**Swift:**
+```swift
+UIImage.flutterImageNamed("icons/heart.png")
 ```
 
 ### Loading iOS images in Flutter
