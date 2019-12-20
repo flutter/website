@@ -3,7 +3,11 @@ title: "Implicit animations"
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
 toc: true
 diff2html: true
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}, {defer: true, url: /assets/codelabs/js/animations_examples.js}]
+js: 
+  - defer: true
+    url: https://dartpad.dev/experimental/inject_embed.dart.js
+  - defer: true
+    url: /assets/codelabs/js/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
