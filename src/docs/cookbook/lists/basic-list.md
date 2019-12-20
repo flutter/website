@@ -6,7 +6,9 @@ prev:
 next:
   title: Create a horizontal list
   path: /docs/cookbook/lists/horizontal-list
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Displaying lists of data is a fundamental pattern for mobile apps.

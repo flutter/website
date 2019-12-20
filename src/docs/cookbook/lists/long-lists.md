@@ -6,7 +6,9 @@ prev:
 next:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The standard [`ListView`][] constructor works well

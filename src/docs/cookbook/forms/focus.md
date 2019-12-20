@@ -6,7 +6,9 @@ prev:
 next:
   title: Add Material touch ripples
   path: /docs/cookbook/gestures/ripples
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 When a text field is selected and accepting input,

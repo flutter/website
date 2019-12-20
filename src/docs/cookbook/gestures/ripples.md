@@ -6,7 +6,9 @@ prev:
 next:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Widgets that follow the Material Design guidelines display

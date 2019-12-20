@@ -6,7 +6,9 @@ prev:
 next:
   title: Work with long lists
   path: /docs/cookbook/lists/long-lists
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 To make it easier for users to view a list of items, you might want to hide the

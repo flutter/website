@@ -6,7 +6,9 @@ prev:
 next:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The [`Container`][] class provides a convenient way

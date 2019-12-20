@@ -6,7 +6,9 @@ prev:
 next:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some cases, you might want to return data from a new screen.

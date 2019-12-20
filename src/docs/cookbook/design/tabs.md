@@ -6,7 +6,9 @@ prev:
 next:
   title: Build a form with validation
   path: /docs/cookbook/forms/validation
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Working with tabs is a common pattern in apps that follow the Material Design

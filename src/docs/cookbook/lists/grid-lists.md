@@ -6,7 +6,9 @@ prev:
 next:
   title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some cases, you might want to display your items as a grid rather than

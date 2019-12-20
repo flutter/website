@@ -6,7 +6,9 @@ prev:
 next:
   title: Pass arguments to a named route
   path: /docs/cookbook/navigation/navigate-with-arguments
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In the [Navigate to a new screen and back][] recipe,

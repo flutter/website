@@ -3,7 +3,9 @@ title: Animate a page route transition
 next:
   title: Animate a widget using a physics simulation
   path: /docs/cookbook/animation/physics-simulation
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 A design language, such as Material, defines standard behaviors when

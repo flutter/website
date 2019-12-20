@@ -6,7 +6,9 @@ prev:
 next:
   title: Create a grid list
   path: /docs/cookbook/lists/grid-lists
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 You might want to create a list that scrolls

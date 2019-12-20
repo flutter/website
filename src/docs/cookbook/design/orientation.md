@@ -6,7 +6,9 @@ prev:
 next:
   title: Use custom fonts
   path: /docs/cookbook/design/fonts
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some situations,

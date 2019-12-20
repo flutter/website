@@ -6,7 +6,9 @@ prev:
 next:
   title: Return data from a screen
   path: /docs/cookbook/navigation/returning-data
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The [`Navigator`][] provides the ability to navigate
