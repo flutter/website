@@ -6,6 +6,7 @@ prev:
 next:
   title: Fetch data from the internet
   path: /docs/cookbook/networking/fetch-data
+js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
 ---
 
 Often, you not only want to navigate to a new screen,
@@ -144,9 +145,9 @@ ListView.builder(
 );
 ```
 
-### Complete example
+### Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -374,7 +375,9 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Passing Data Demo](/images/cookbook/passing-data.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
