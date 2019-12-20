@@ -1,7 +1,6 @@
 ---
 title: Chrome OS install
 short-title: Chrome OS
-# js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
   path: /docs/get-started/editor

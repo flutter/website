@@ -6,7 +6,9 @@ prev:
 next:
   title: Navigate to a new screen and back
   path: /docs/cookbook/navigation/navigation-basics
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 It's often helpful to guide users through an app as they navigate from screen

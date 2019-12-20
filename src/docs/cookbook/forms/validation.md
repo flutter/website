@@ -6,7 +6,9 @@ prev:
 next:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Apps often require users to enter information into a text field.

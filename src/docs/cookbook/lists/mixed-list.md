@@ -6,7 +6,9 @@ prev:
 next:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 You might need to create lists that display different types of content.

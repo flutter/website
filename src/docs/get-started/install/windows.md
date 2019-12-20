@@ -1,7 +1,6 @@
 ---
 title: Windows install
 short-title: Windows
-# js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
   path: /docs/get-started/editor

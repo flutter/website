@@ -7,7 +7,9 @@ prev:
 next:
   title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Most apps contain several screens for displaying different types of

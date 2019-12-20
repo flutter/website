@@ -6,7 +6,9 @@ prev:
 next:
   title: Add a drawer to a screen
   path: /docs/cookbook/design/drawer
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 UI developers often need to show and hide elements on screen.

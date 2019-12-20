@@ -6,7 +6,9 @@ prev:
 next:
   title: Fetch data from the internet
   path: /docs/cookbook/networking/fetch-data
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Often, you not only want to navigate to a new screen,

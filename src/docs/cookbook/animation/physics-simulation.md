@@ -6,7 +6,9 @@ prev:
 next:
   title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Physics simulations can make app interactions feel realistic and interactive.

@@ -6,7 +6,9 @@ prev:
 next:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The "swipe to dismiss" pattern is common in many mobile apps.  For example,

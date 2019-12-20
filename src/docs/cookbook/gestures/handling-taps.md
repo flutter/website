@@ -6,7 +6,9 @@ prev:
 next:
   title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 You not only want to display information to users,

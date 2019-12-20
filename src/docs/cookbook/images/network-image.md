@@ -6,7 +6,9 @@ prev:
 next:
   title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Displaying images is fundamental for most mobile apps.

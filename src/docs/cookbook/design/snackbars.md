@@ -7,7 +7,9 @@ prev:
 next:
   title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 It can be useful to briefly inform your users when certain actions

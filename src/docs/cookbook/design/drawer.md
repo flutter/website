@@ -6,7 +6,9 @@ prev:
 next:
   title: Display a snackbar
   path: /docs/cookbook/design/snackbars
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In apps that use Material Design,

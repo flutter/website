@@ -6,7 +6,9 @@ prev:
 next:
   title: Focus and text fields
   path: /docs/cookbook/forms/focus
-js: [{defer: true, url: https://dartpad.dev/experimental/inject_embed.dart.js}]
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In this recipe,
