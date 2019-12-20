@@ -355,7 +355,7 @@ The `addListener()` function calls `setState()`, so every time the `Animation`
 generates a new number, the current frame is marked dirty, which forces
 `build()` to be called again. In `build()`, the container changes size because
 its height and width now use `animation.value` instead of a hardcoded value.
-Dispose of the controller when the animation is finished to prevent memory
+Dispose of the controller when the `State` object is discarded to prevent memory
 leaks.
 
 With these few changes, you’ve created your first animation in Flutter!
