@@ -24,7 +24,7 @@ void onLoadImage(Image image) {
     _cache.maxByteSize = image.byteSize + 1000;
   }
   _cache.add(image);
-  while (_cache.count > _cache.maxCount 
+  while (_cache.count > _cache.maxCount
       || _cache.byteSize > _cache.maxByteSize) {
     _cache.discardOldestImage();
   }
@@ -36,7 +36,7 @@ void onLoadImage(Image image) {
 void onLoadImage(Image image) {
   if (image.byteSize < _cache.maxByteSize) {
     _cache.add(image);
-    while (_cache.count > _cache.maxCount 
+    while (_cache.count > _cache.maxCount
         || _cache.byteSize > cache.maxByteSize) {
       cache.discardOldestImage();
     }
@@ -55,7 +55,8 @@ following:
   1) Adjust your image loading logic to guarantee that the images will fit
      nicely into the ImageCache.maxByteSize of your choosing.
   1) Subclass ImageCache, implement your desired logic, create a new bindings
-     that will serve up your subclass of ImageCache.
+     that will serve up your subclass of ImageCache (see also
+     [ImageCache docs](https://github.com/flutter/flutter/blob/72a3d914ee5db0033332711224e728b8a5281d89/packages/flutter/lib/src/painting/image_cache.dart#L34)).
 
 ## Timeline
 
