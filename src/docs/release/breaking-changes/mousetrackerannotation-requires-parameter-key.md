@@ -11,23 +11,29 @@ description: [Brief description similar to the "context" section below.]
 Mouse events, such as when a mouse pointer has entered a region, exited, or
 is hovering a region, are detected with the help of
 `MouseTrackerAnnotation`s that are placed on interested regions during the
-render phase. Upon each new frame or new event, `MouseTracker` compares the
-annotations hovered by the mouse pointer before and after the change, then
-dispatches callbacks accordingly. `MouseTracker` also tracks which
-annotations are on the screen by requring the annotation's owners to attach
-or detach the annotation promptly.
+render phase. Upon each update (a new frame or a new event), `MouseTracker`
+compares the annotations hovered by the mouse pointer before and after the
+update, then dispatches callbacks accordingly. `MouseTracker` also tracks
+which annotations are on the screen by requring the annotation's owners to
+attach or detach the annotation promptly.
 
-However, since the `MouseTrackerAnnotation` is a constant class, its properties
-can't be changed without replacing the annotation as a whole, which triggers
-the exit and enter callback if it's hovered by a mouse pointer.
+`MouseTracker` used to compare annotations based on identity, i.e. by
+checking if the _exact_ annotation is hovered before and after the update.
+Since the `MouseTrackerAnnotation` is a constant class, this means you
+couldn't change an annotation's properties without replacing the annotation
+as a whole, which would trigger the exit and enter callback.
 
-This issue is a blocker to the plan of supporting mouse cursor, since it’s
-very likely that the cursor assigned to a region needs to be changed.
+This issue blocked the support for mouse cursor, since it’s very likely that
+the cursor assigned to a region needs to be changed.
+
+This change fixes this issue by adding a key to `MouseTrackerAnnotation`,
+and making the comparison algorithm of `MouseTracker` based on the key.
 
 
 ## Description of change
 
-Class `MouseTrackerAnnotation` now requires a new parameter `key`:
+The `MouseTrackerAnnotation` class now has a new property `LocalKey key`,
+which is a required parameter in the constructor:
 
 ```diff
  class MouseTrackerAnnotation extends Diagnosticable {
@@ -45,10 +51,10 @@ Class `MouseTrackerAnnotation` now requires a new parameter `key`:
  }
 ```
 
-Three of class `MouseTracker`'s methods, `attachAnnotation`,
-`detachAnnotation`, and `isAnnotationAttached`, instead of taking a
-single parameter of `MouseTrackerAnnotation`, will now take a
-single parameter `LocalKey`:
+Three of `MouseTracker`'s methods, `attachAnnotation`, `detachAnnotation`,
+and `isAnnotationAttached`, which used to take a single parameter
+`MouseTrackerAnnotation annotation`, will now take a single parameter
+`LocalKey annotationKey`:
 
 ```diff
  class MouseTracker extends ChangeNotifier {
@@ -68,9 +74,9 @@ single parameter `LocalKey`:
 
 ## Migration guide
 
-There are 2 ways of migrating affected code. The first way requires little
-work, while the second is much simpler when the annotation's properties
-might change.
+There are 2 ways of migrating affected code. The first way requires less
+work to migrate existing code, while the second is simpler to implement when the
+annotation's properties might change.
 
 ### The straightforward way
 The most straightforward way is by providing
