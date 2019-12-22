@@ -143,10 +143,6 @@ public class MyFlutterFragment extends FlutterFragment {
 }
 ```
 
-#### With a FlutterView
-
-TODO(mattcarroll)
-
 ### Creating a custom SplashScreen
 
 Splash screens are a great branding opportunity. Because of that, many teams 
