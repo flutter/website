@@ -6,6 +6,9 @@ prev:
 next:
   title: Use custom fonts
   path: /docs/cookbook/design/fonts
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some situations,
@@ -73,9 +76,9 @@ OrientationBuilder(
   `OrientationBuilder` widget.
 {{site.alert.end}}
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -128,7 +131,9 @@ class OrientationList extends StatelessWidget {
 }
 ```
 
-![Orientation Demo](/images/cookbook/orientation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/orientation.gif" alt="Orientation Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Creating a grid list]: /docs/cookbook/lists/grid-lists

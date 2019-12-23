@@ -7,6 +7,9 @@ prev:
 next:
   title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Most apps contain several screens for displaying different types of
@@ -124,9 +127,9 @@ onPressed: () {
 }
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -178,11 +181,9 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
-{% comment %}
-We need a new GIF that shows "Route" instead of "Screen".
-{% endcomment %}
-
-![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

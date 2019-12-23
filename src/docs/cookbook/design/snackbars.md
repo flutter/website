@@ -7,6 +7,9 @@ prev:
 next:
   title: Export fonts from a package
   path: /docs/cookbook/design/package-fonts
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 It can be useful to briefly inform your users when certain actions
@@ -79,7 +82,7 @@ final snackBar = SnackBar(
 );
 ```
 
-## Complete example
+## Interactive example
 
 {{site.alert.note}}
   In this example, the SnackBar displays when a user taps a button.
@@ -87,7 +90,7 @@ final snackBar = SnackBar(
   see the [Gestures][] section of the cookbook.
 {{site.alert.end}}
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(SnackBarDemo());
@@ -134,7 +137,9 @@ class SnackBarPage extends StatelessWidget {
 }
 ```
 
-![SnackBar Demo](/images/cookbook/snackbar.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/snackbar.gif" alt="SnackBar Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Gestures]: /docs/cookbook#gestures

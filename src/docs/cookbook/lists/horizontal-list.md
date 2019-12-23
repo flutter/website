@@ -6,6 +6,9 @@ prev:
 next:
   title: Create a grid list
   path: /docs/cookbook/lists/grid-lists
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 You might want to create a list that scrolls
@@ -45,9 +48,9 @@ ListView(
 )
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -98,7 +101,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Horizontal List Demo](/images/cookbook/horizontal-list.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/horizontal-list.gif" alt="Horizontal List Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

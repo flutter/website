@@ -6,6 +6,9 @@ prev:
 next:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some cases, it's useful to run a callback function every time the text
@@ -140,9 +143,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

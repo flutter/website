@@ -1,11 +1,11 @@
 ---
-title: Android Studio / IntelliJ
+title: Android Studio and IntelliJ
 description: How to develop Flutter apps in Android Studio or other IntelliJ products.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" role="tab" aria-selected="true">Android Studio / IntelliJ</a>
+    <a class="nav-link active" role="tab" aria-selected="true">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/docs/development/tools/vs-code" role="tab" aria-selected="false">Visual Studio Code</a>

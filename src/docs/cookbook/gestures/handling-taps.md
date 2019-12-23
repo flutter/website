@@ -6,6 +6,9 @@ prev:
 next:
   title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 You not only want to display information to users,
@@ -50,9 +53,9 @@ GestureDetector(
      [`RaisedButton`][], [`FlatButton`][], and
      [`CupertinoButton`][].
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -110,7 +113,9 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Handle taps demo](/images/cookbook/handling-taps.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Add Material touch ripples]: /docs/cookbook/gestures/ripples

@@ -6,6 +6,9 @@ prev:
 next:
   title: Navigate to a new screen and back
   path: /docs/cookbook/navigation/navigation-basics
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 It's often helpful to guide users through an app as they navigate from screen
@@ -125,9 +128,9 @@ Hero(
   widgets, for simplicity.
 {{site.alert.end}}
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(HeroApp());
@@ -188,7 +191,9 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Handle taps]: /docs/cookbook/gestures/handling-taps

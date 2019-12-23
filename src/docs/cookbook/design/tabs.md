@@ -6,6 +6,9 @@ prev:
 next:
   title: Build a form with validation
   path: /docs/cookbook/forms/validation
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Working with tabs is a common pattern in apps that follow the Material Design
@@ -94,9 +97,9 @@ TabBarView(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -134,7 +137,9 @@ class TabBarDemo extends StatelessWidget {
 }
 ```
 
-![Tabs Demo](/images/cookbook/tabs.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/tabs.gif" alt="Tabs Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html

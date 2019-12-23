@@ -6,6 +6,9 @@ prev:
 next:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Widgets that follow the Material Design guidelines display
@@ -36,9 +39,9 @@ InkWell(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -91,7 +94,9 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Ripples Demo](/images/cookbook/ripples.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/ripples.gif" alt="Ripples Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

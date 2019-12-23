@@ -6,6 +6,9 @@ prev:
 next:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Apps often require users to enter information into a text field.
@@ -145,9 +148,9 @@ If everything looks good, the `validate()` method returns `true`.
 If any text field contains errors, the `validate()` method
 rebuilds the form to display any error messages and returns `false`.
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -225,7 +228,9 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Form Validation Demo](/images/cookbook/form-validation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/form-validation.gif" alt="Form Validation Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html

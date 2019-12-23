@@ -6,6 +6,9 @@ prev:
 next:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The [`Container`][] class provides a convenient way
@@ -134,9 +137,9 @@ FloatingActionButton(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -211,7 +214,9 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 }
 ```
 
-![AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/animated-container.gif" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html

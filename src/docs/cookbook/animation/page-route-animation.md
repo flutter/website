@@ -3,6 +3,9 @@ title: Animate a page route transition
 next:
   title: Animate a widget using a physics simulation
   path: /docs/cookbook/animation/physics-simulation
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 A design language, such as Material, defines standard behaviors when
@@ -207,9 +210,9 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 }
 ```
 
-## Complete Example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 main() {
@@ -263,8 +266,9 @@ class Page2 extends StatelessWidget {
   }
 }
 ```
-
-![Demo showing a custom page route transition animating up from the bottom of the screen](/images/cookbook/page-route-animation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/page-route-animation.gif" alt="Demo showing a custom page route transition animating up from the bottom of the screen" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html

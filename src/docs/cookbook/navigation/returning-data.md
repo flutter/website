@@ -6,6 +6,9 @@ prev:
 next:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 In some cases, you might want to return data from a new screen.
@@ -183,9 +186,9 @@ _navigateAndDisplaySelection(BuildContext context) async {
 }
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() {
@@ -275,7 +278,9 @@ class SelectionScreen extends StatelessWidget {
 }
 ```
 
-![Returning data demo](/images/cookbook/returning-data.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/returning-data.gif" alt="Returning data demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html

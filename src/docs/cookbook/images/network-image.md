@@ -6,6 +6,9 @@ prev:
 next:
   title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Displaying images is fundamental for most mobile apps.
@@ -44,9 +47,9 @@ the following recipes:
 * [Fade in images with a placeholder][]
 * [Working with cached images][]
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -71,7 +74,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Network image demo](/images/cookbook/network-image.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/network-image.png" alt="Network image demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images

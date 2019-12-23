@@ -1,5 +1,5 @@
 ---
-title: Preparing a web app for release
+title: Build and release a web app
 description: How to prepare for and release a web app.
 short-title: Web
 ---

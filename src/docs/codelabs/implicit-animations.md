@@ -3,9 +3,11 @@ title: "Implicit animations"
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
 toc: true
 diff2html: true
-js:
-- url: /assets/codelabs/js/animations_examples.js
-  defer: true
+js: 
+  - defer: true
+    url: https://dartpad.dev/experimental/inject_embed.dart.js
+  - defer: true
+    url: /assets/codelabs/js/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -57,12 +59,8 @@ consists of a [Material App] home screen containing:
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/e2800d378eb7720d0b076073f72eabc1 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
+{% include implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad] to display
@@ -203,12 +201,8 @@ you can start with 2 seconds:
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/36bb91f24db7122ec3def0153683edb7 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
+{% include implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -247,12 +241,9 @@ different types (`double` and `Color`).
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/b8c7618317d04833dc8941df27f0529d -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
+{% include implicit-animations/shape-shifting-starter-code.md %}
+
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -378,12 +369,8 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/8d8f71cac9095009df770eb1db2c8256 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
+{% include implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves
 
@@ -418,8 +405,6 @@ Now that you have passed `easeInOutBack` as the value for `curve` to
 `AnimatedContainer`, notice that the rates of change for `margin`,
 `borderRadius`, and `color` follow the curve defined by the
 `easeInOutBack` curve:
-
-<!-- ![PlayButton](/images/play_button.svg){:#animation_1_play_button_} -->
 
 <div id="animation_1_play_button_"></div>
 <video id="animation_1" style="width:464px; height:192px;" loop="">

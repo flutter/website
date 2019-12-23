@@ -140,7 +140,7 @@ where the Dart code lives.
       When pasting code into your app, indentation can become skewed.
       You can fix this automatically with the Flutter tools:
 
-      * Android Studio / IntelliJ IDEA: Right-click the code and
+      * Android Studio and IntelliJ IDEA: Right-click the code and
         select **Reformat Code with dartfmt**.
       * VS Code: Right-click and select **Format Document**.
       * Terminal: Run `flutter format <filename>`.

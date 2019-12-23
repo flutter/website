@@ -43,8 +43,9 @@ int _processFile(File file) {
   String lastComment;
 
   while (index < lines.length) {
+    final trimmed = lines[index].trim();
     // Look for ```dart sections.
-    if (lines[index].trim().startsWith('```dart') &&
+    if ((trimmed.startsWith('```dart') || trimmed.startsWith('```run-dartpad')) &&
         lastComment?.trim() != 'skip') {
       int startIndex = index + 1;
       index++;

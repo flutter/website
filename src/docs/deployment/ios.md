@@ -1,5 +1,5 @@
 ---
-title: Preparing an iOS app for release
+title: Build and release an iOS app
 short-title: iOS
 ---
 

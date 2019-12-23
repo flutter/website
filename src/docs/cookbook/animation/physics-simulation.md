@@ -6,6 +6,9 @@ prev:
 next:
   title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 Physics simulations can make app interactions feel realistic and interactive.
@@ -140,6 +143,7 @@ Widget build(BuildContext context) {
     },
     onPanEnd: (details) {},
     child: Align(
+      alignment: _dragAlignment,
       child: Card(
         child: widget.child,
       ),
@@ -282,9 +286,9 @@ onPanEnd: (details) {
   is no longer required.
 {{site.alert.end}}
 
-## Complete Example
+## Interactive Example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
@@ -402,7 +406,9 @@ class _DraggableCardState extends State<DraggableCard>
 }
 ```
 
-![Demo showing a widget being dragged and snapped back to the center](/images/cookbook/animation-physics-card-drag.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/animation-physics-card-drag.gif" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
+</noscript>
 
 [Align]: {{site.api}}/flutter/widgets/Align-class.html
 [Alignment]: {{site.api}}/flutter/painting/Alignment-class.html

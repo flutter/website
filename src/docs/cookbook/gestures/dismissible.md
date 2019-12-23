@@ -6,6 +6,9 @@ prev:
 next:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 The "swipe to dismiss" pattern is common in many mobile apps.  For example,
@@ -120,9 +123,9 @@ Dismissible(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -190,7 +193,9 @@ class MyAppState extends State<MyApp> {
 }
 ```
 
-![Dismissible Demo](/images/cookbook/dismissible.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/dismissible.gif" alt="Dismissible Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html

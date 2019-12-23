@@ -6,6 +6,9 @@ prev:
 next:
   title: Add a drawer to a screen
   path: /docs/cookbook/design/drawer
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 UI developers often need to show and hide elements on screen.
@@ -140,9 +143,9 @@ AnimatedOpacity(
 );
 ```
 
-## Complete example
+## Interactive example
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -211,7 +214,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo ](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/fade-in-out.gif" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
+</noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [Gestures]: /docs/cookbook#gestures
