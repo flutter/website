@@ -78,7 +78,6 @@ messages happens automatically when you send and receive values.
 
 The following table shows how Dart values are received on the platform side and vice versa:
 
-
 | Dart                       | Java                | Kotlin      | OC                                             | Swift                                   |
 | -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
 | null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
