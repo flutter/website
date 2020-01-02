@@ -260,7 +260,7 @@ understand how your application uses memory.
 <dt markdown="1">**Memory leak**</dt>
 <dd>A memory leak occurs when an object is live
     (meaning that another object points to it), but it is not being
-    used (so it shouldn't have amy references from other objects).
+    used (so it shouldn't have any references from other objects).
     Such an object can't be garbage collected, so it takes up space
     in the heap and contributes to memory fragmentation.
     Memory leaks put unnecessary pressure on the VM and can be
