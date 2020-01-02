@@ -3,7 +3,7 @@ title: "Implicit animations"
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
 toc: true
 diff2html: true
-js: 
+js:
   - defer: true
     url: https://dartpad.dev/experimental/inject_embed.dart.js
   - defer: true
@@ -344,8 +344,8 @@ between the old and new values:
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
 @@ -8,6 +8,8 @@
- import 'package:flutter_web_test/flutter_web_test.dart';
- import 'package:flutter_web_ui/ui.dart' as ui;
+ import 'package:flutter_test/flutter_web_test.dart';
+ import 'package:flutter_ui/ui.dart' as ui;
 
 +const _duration = Duration(milliseconds: 400);
 +
