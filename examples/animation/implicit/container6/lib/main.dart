@@ -4,9 +4,7 @@
 
 import 'dart:math';
 
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_test/flutter_web_test.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 const _duration = Duration(milliseconds: 400);
 
@@ -91,7 +89,6 @@ class MyApp extends StatelessWidget {
 }
 
 Future<void> main() async {
-  await ui.webOnlyInitializePlatform();
   runApp(
     MyApp(),
   );
