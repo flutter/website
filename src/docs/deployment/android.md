@@ -174,7 +174,7 @@ Release builds of your app will now be signed automatically.
 
 ## R8
 
-[R8]() is the new code shrinker from Google, and it's enabled by default
+[R8][] is the new code shrinker from Google, and it's enabled by default
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
 flag to `flutter build apk` or `flutter build appbundle`.
 
@@ -266,7 +266,7 @@ The release bundle for your app is created at
 
 By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
-(ARM 64-bit) and [x86-64][] (x86 64-bit).
+(ARM 64-bit), and [x86-64][] (x86 64-bit).
 
 ### Test the app bundle
 
@@ -395,7 +395,7 @@ as described in [build an APK](#build-an-apk) using the
 
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
-[arm64-v8a][] (ARM 64-bit) and [x86-64][] (x86 64-bit).
+[arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
 Flutter does not currently support building for x86 Android
 (See [Issue 9253][]).
 
