@@ -1123,6 +1123,16 @@
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
   },
   {
+    "name": "OutlineButton",
+    "description": "A medium-emphasis button for secondary actions that are important but are not the primary action in an app.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/OutlineButton-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-outline-button.png'>"
+  },
+  {
     "name": "OverflowBox",
     "description": "A widget that imposes different constraints on its child than it gets from its parent, possibly allowing the child to overflow the parent.",
     "categories": [],
