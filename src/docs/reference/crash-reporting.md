@@ -24,7 +24,7 @@ Google handles all data reported by this tool in accordance with the
 ## Disabling analytics reporting
 
 You can opt out of anonymous crash reporting and feature usage statistics from
-Flutter by running the following command.
+Flutter by running the following command:
 
 ```terminal
 $ flutter config --no-analytics
