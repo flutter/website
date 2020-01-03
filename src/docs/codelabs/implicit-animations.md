@@ -3,7 +3,7 @@ title: "Implicit animations"
 description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
 toc: true
 diff2html: true
-js: 
+js:
   - defer: true
     url: https://dartpad.dev/experimental/inject_embed.dart.js
   - defer: true
@@ -93,7 +93,7 @@ To create a fade-in effect, you can animate the `opacity` property using the
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -23,7 +23,7 @@
+@@ -21,7 +21,7 @@
              style: TextStyle(color: Colors.blueAccent),
            ),
            onPressed: () => null),
@@ -118,7 +118,7 @@ the starting value for `opacity` to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -13,6 +13,8 @@
+@@ -11,6 +11,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
@@ -127,7 +127,7 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -24,6 +26,7 @@
+@@ -22,6 +24,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
@@ -149,7 +149,7 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -20,11 +20,14 @@
+@@ -18,11 +18,14 @@
      return Column(children: <Widget>[
        Image.network(owl_url),
        MaterialButton(
@@ -186,7 +186,7 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -26,6 +26,7 @@
+@@ -24,6 +24,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
@@ -273,7 +273,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -45,7 +45,7 @@
+@@ -43,7 +43,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -300,7 +300,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -36,6 +36,14 @@
+@@ -34,6 +34,14 @@
      margin = randomMargin();
    }
 
@@ -325,7 +325,7 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -67,7 +67,7 @@
+@@ -65,7 +65,7 @@
                  'change',
                  style: TextStyle(color: Colors.white),
                ),
@@ -343,16 +343,16 @@ between the old and new values:
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -8,6 +8,8 @@
- import 'package:flutter_web_test/flutter_web_test.dart';
- import 'package:flutter_web_ui/ui.dart' as ui;
+@@ -6,6 +6,8 @@
+
+ import 'package:flutter/material.dart';
 
 +const _duration = Duration(milliseconds: 400);
 +
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
  }
-@@ -60,6 +62,7 @@
+@@ -58,6 +60,7 @@
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
                ),
@@ -391,7 +391,7 @@ and watch how the animation changes when you pass the
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -63,6 +63,7 @@
+@@ -61,6 +61,7 @@
                  ),
                ),
                duration: _duration,

@@ -107,37 +107,42 @@ at the top of the `build()` method of the `MyApp` class:
 <?code-excerpt "lib/main.dart (titleSection)" title?>
 ```dart
 Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    'Oeschinen Lake Campground',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+  padding: const EdgeInsets.all(32),
+  child: Row(
+    children: [
+      Expanded(
+        /*1*/
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /*2*/
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(
+                'Oeschinen Lake Campground',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  'Kandersteg, Switzerland',
-                  style: TextStyle(color: Colors.grey[500]),
-                )
-              ],
+              ),
             ),
-          ),
-          Column(children: <Widget>[Icon(Icons.star, color: Colors.red[500])]),
-          Column(children: <Widget>[
             Text(
-              '41',
-              style: TextStyle(fontSize: 20.0),
-            )
-          ]),
-        ],
+              'Kandersteg, Switzerland',
+              style: TextStyle(
+                color: Colors.grey[500],
+              ),
+            ),
+          ],
+        ),
       ),
-    );
+      /*3*/
+      Icon(
+        Icons.star,
+        color: Colors.red[500],
+      ),
+      Text('41'),
+    ],
+  ),
+);
 ```
 
 {:.numbered-code-notes}

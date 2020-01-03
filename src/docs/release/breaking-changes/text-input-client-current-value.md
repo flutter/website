@@ -1,7 +1,6 @@
 ---
 title: New field on TextInputClient - currentTextEditingValue
-description: Add a new field to the TextInputClient interface to get the current
-TextEditingValue from a client.
+description: Add a new field to the TextInputClient interface to get the current TextEditingValue from a client.
 ---
 
 # Add `currentTextEditingValue` to `TextInputClient`
