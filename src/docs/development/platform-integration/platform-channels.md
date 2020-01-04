@@ -225,7 +225,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    Project view.
 
 Next, create a `MethodChannel` and set a `MethodCallHandler` inside the
-`onCreate()` method. Make sure to use the same channel name as was used on the
+`configureFlutterEngine()` method. Make sure to use the same channel name as was used on the
 Flutter client side.
 
 <?code-excerpt "MainActivity.java" title?>
