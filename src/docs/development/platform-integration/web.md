@@ -157,7 +157,7 @@ Not currently.
 
 Check out the **#web** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
-
+Have fun!
 
 
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
