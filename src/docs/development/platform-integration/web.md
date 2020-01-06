@@ -175,4 +175,4 @@ Flutter engineers routinely read and respond on Discord.
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
-[pub.dev]: https://pub.dev/
+[pub.dev]: https://pub.dev/dart/packages?runtime=web
