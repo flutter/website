@@ -86,6 +86,7 @@ In the **Identity** section:
 `Display Name`
 : The name of the app to be displayed on the home screen and
   elsewhere.
+  
 `Bundle Identifier`
 : The App ID you registered on App Store Connect.
 
