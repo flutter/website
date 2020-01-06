@@ -33,10 +33,12 @@ This codelab covers the following material:
 
 
 ## What are explicit animations?
-
-Explicit animations make use of
-the basic buildings blocks of Flutter's animation library,
-enabling you to create effects that you can't achieve using [implicit animations](https://flutter.dev/docs/development/ui/animations/implicit-animations).
+Explicit animations provide a set of controls for telling
+Flutter how to rapidly rebuild a widget tree to create the
+illusion of motion. Explicit animations make use of
+the basic buildings blocks of Flutter's animation library to
+enable you to create effects that you can't achieve using
+[implicit animations](https://flutter.dev/docs/development/ui/animations/implicit-animations).
 
 
 ## Animations Concepts
@@ -45,7 +47,7 @@ Learning to create explicit animations can be conceptually daunting
 if you are new to animation in general.
 The following sections help you understand explicit animations
 by introducing you to foundational animation concepts,
-and relating those concepts to the corresponding tools
+and ultimately relate those concepts to the corresponding tools
 of explicit animations.
 
 ### Frames
@@ -73,7 +75,7 @@ so the animation looks pretty choppy;
 You might even mistake the animation for a glitch.
 To describe the problem with this example in animations terms,
 you would say that the animation
-*only has two frames:*
+*only has two frames:*<sup><a href="#a1">1</a></sup>
 
 <div class="table-wrapper" markdown="1">
 | frame # | position        | movement direction        |
@@ -110,6 +112,20 @@ Given what you've learned so far,
 can you think of a way to improve the bouncing ball effect
 in the preceding example?
 Try to come up with an answer before diving into the next section.
+
+{{site.alert.secondary}}
+**Quick review:**
+* A frame is a single still image that can be used
+  within a sequence of other still images
+  to create the illusion of motion. 
+* An animation is a rapid sequence of frames that
+  create the illusion of motion.
+* In Flutter, you can think of a single frame as
+  a static configuration of a widget tree.
+  You can create an animation by telling Flutter
+  to rapidly rebuild a widget tree, gradually
+  changing a widget property on each iteration.
+{{site.alert.end}}
 
 ### Frame rate
 
@@ -152,11 +168,11 @@ motion of the ball,
 so you only need to count it once
 for the purpose of determining the frame rate.
 
-```
-framerate =  # of frames / second 
+{{site.alert.secondary}}
+frame rate =  # of frames / second 
 
 (In this case, 4 fps)
-```
+{{site.alert.end}}
 
 Now that you have calculated the updated frame rate
 for this animation,
@@ -169,14 +185,13 @@ somewhere between 0 and 100,
 each frame will either increase or decrease
 the ball's top margin value by 25.
 
-```
+{{site.alert.secondary}}
 change in margin value between each frame = total change / # of frames
 
 (In this case, the top margin changes by 100
 over 4 frames, so each frame
 changes the top margin value by 25.)
-
-```
+{{site.alert.end}}
 
 That's it! With the updated frame rate
 and the top margin values needed for each frame,
@@ -192,31 +207,128 @@ to try out your solution.
 When you're ready, run the next example to
 view the updated animation:
 
+{{site.alert.secondary}}
+**Quick Review:**
+* Frame rate is measured as the number of frames per second (fps).
+* Flutter uses 60 fps.<sup><a href="#a2">2</a></sup>
+{{site.alert.end}}
+
 ### Example: Bouncing Ball (Starter Code 2)
 
 {% include explicit-animations/bouncing-ball-starter-code-2.md %}
 
 ### Interpolation
+Have you ever wondered how computer graphics animators
+draw each and every frame of your favorite CGI movies?
+Well, they don't! To make their lives easier,
+animators use key frames:
+to animate an object, they set its beginning position,
+and its ending position,
+and rely on software to generate the images in between.
+**The process of computing animation values between
+a starting and ending position is called interpolation.**
 
-The preceding example improved upon the bouncing ball animation
-by increasing the framerate of the animation,
-but there is one final improvement you can make to this example
-to help you understand how explicit animations work in Flutter!
+As a developer, interpolation vastly simplifies how you
+create and reason about your animations.
+Instead of thinking of an animation
+in terms of hundreds (or thousands) of frames,
+you can reason about an animation
+as a starting value and an ending value,
+and let interpolation to take care of the rest!
 
-1. Create a declarative API using start and end values
-2. Increase the frame rate from 4fps to 60fps
+The preceding example uses an imperative approach to
+calculating the values to use for each frame
+that makes up the animation: you provide values for
+the frame rate as well as the value needed to increment
+the top margin property for each frame.
+Can you think of a way to refactor this example
+to use interpolation so that
+you only need to provide the starting and ending
+values for top margin?
 
+Here's a few hints:
+* To start out, don't worry about animating the ball
+  up and down. Just focus on the first downward motion
+  of the ball (from a top margin of 0 to top margin of 100).
+* Remember from the preceding frame rate section that
+  Flutter uses a fixed frame rate (60 fps). You can
+  do the same.
+* For any starting or ending position of the ball,
+  you can express the amount to increment top margin
+  between each frame as the difference between the margin's
+  starting and ending values divided by the total number of frames.
 
 ### Example: Bouncing Ball (Starter Code 3)
 {% include explicit-animations/bouncing-ball-starter-code-3.md %}
 
-As you can see, doubling the framerate greatly enhanced
-the effect of the animation.  
+At 60 fps, this final version of the bouncing ball animation
+looks smoother than in all prior examples. 
+
+Wouldn't it be nice to have a declarative interface
+for controlling how our animation proceeds across the sequence of frames? 
+This way, we could easily represent when to start the animation,
+pause it, play forward, play backward, stop it, or repeat it indefinitely?
+
+## The Animation Object
+
+
 
 ## AnimationController 
+
+This section builds upon the prior sections by providing
+an introduction to using `AnimationController`
+and how its capabilities encompass
+the fundamental animations concepts
+covered in the previous sections.
+
+Take a look at how using the animation controller simplifies
+the bouncing ball example you used in the Animations Concepts section:
+
+{% include explicit-animations/bouncing-ball-starter-code-4.md %}
+
+
+
 - Creating interpolated values.
 - Using animation controls (start, stop, repeat).
 
 
 ## Tween
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+**Footnotes:**
+
+<sup><a name="a1">1</a></sup> 
+  In this example, you are creating an animation effect
+  that *only looks* like it is running at two frames per second.
+  In reality, Flutter is running this example at ~60 frames per second. 
+
+<sup><a name="a2">2</a></sup> Flutter aims to provide
+  60 frames per second (fps) performance,
+  or 120 fps performance on devices capable of 120Hz updates.
+  For 60fps, frames need to render approximately every 16ms.
+  See [performance profiling] page for more information.
+
+
+[performance profiling]: /docs/perf/rendering/ui-performance
+
+
+
+
+
+---
+Todo:
+1. Create diffs w/ explanations of each diff
+2. 
