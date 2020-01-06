@@ -8,48 +8,34 @@ class BouncingBallDemo extends StatefulWidget {
 }
 
 class _BouncingBallDemoState extends State<BouncingBallDemo> {
-  String direction;
   double marginTop;
-  double increment;
   double start;
   double end;
-  Duration duration;
+  double increment;
+
+  void bounce(Timer t) async {
+    if (marginTop < end ) {
+      setState(() {
+        marginTop += increment;
+      });
+    } else {
+        t.cancel();
+    }
+  }
+
+  void interpolate(double start, double end) {
+      setState((){
+        increment = (end - start) / 60;
+      });
+  }
 
   void initState() {
     super.initState();
     marginTop = 0;
-    direction = "down";
-    increment = 25;
     start = 0;
     end = 100;
-    duration = Duration(milliseconds: 250);
-
-    new Timer.periodic(duration, bounce);
-  }
-
-  void setDirection() {
-    if (marginTop == end) {
-      setState((){
-        direction = "up";
-      });
-    }
-
-    if (marginTop == start) {
-      setState((){
-        direction = "down";
-      });
-    }
-  }
-
-  void bounce(Timer t) {
-    setDirection();
-    setState((){
-      if (direction == "down") {
-        marginTop += increment;
-      } else {
-        marginTop -= increment;
-      }
-    });
+    interpolate(start, end);
+    new Timer.periodic(const Duration(milliseconds: 16), bounce);
   }
 
   @override
