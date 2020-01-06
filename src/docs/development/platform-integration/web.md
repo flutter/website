@@ -25,7 +25,7 @@ No.
 
 ### Can I use Flutter plugins?
 
-Not yet.
+Yes, you can now create your own.
 
 ### How do I file an issue about web support?
 
