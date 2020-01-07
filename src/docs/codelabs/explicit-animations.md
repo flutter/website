@@ -278,24 +278,52 @@ covered in the previous sections.
 
 ### What is an AnimationController?
 
-Creating animation
-* Generate interpolated values (Tweens, or from: param)
-* Use declarative controls for triggering animations (forward, reverse,..)
-
-Configuration
-* Sets up vsync
-* Listens for `Ticker` events
+`AnimationController` is the central class 
+for building explicit animations. `AnimationController`'s
+capabilities fall into three broad categories:
+* **Define an animation with start and end values**: `AnimationController`
+  abstracts away the the work of interpolation,
+  allowing you to reason about and create an animation
+  in terms of its beginning and an ending value.
+* **Trigger & sequence controls**:
+  `AnimationController` provides the
+  `forward()`, `repeat()`, `reverse()`, and `stop()` methods
+  for triggering, halting, and controlling the sequence of an animation.
+* **Frame syncing**: With just a little bit of boilerplate,
+  `AnimationController` manages syncing your animation frames
+  to the target device at 60 fps.
+ 
+The following sections cover each of these capabilities in greater detail.
 
 ### Generating interpolated values
+
+The following example provides an easy way to see how
+`AnimationController` interpolates values for you:
+
+
+{% include explicit-animations/bouncing-ball-starter-code-4.md %}
+
+
 
 
 
 ### Controlling animation frames
 
+
+{{site.alert.secondary}}
+Creating animations
+* Generates interpolated values (Tweens, or from: param)
+* Provides controls for triggering animations (forward, reverse,..)
+
+Configuration
+* Sets up vsync
+* Listens for `Ticker` events
+{{site.alert.end}}
+
 Take a look at how using the animation controller simplifies
 the bouncing ball example you used in the Animations Concepts section:
 
-{% include explicit-animations/bouncing-ball-starter-code-4.md %}
+{% include explicit-animations/bouncing-ball-starter-code-5.md %}
 
 
 

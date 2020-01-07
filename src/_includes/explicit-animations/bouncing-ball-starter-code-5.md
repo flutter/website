@@ -13,13 +13,12 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
 
   void initState() {
     super.initState();
-    controller = AnimationController( vsync: this, duration: Duration(seconds: 3));
-    animation = Tween( begin: 0.0, end: 1.0, ).animate(controller)
+    controller = AnimationController( vsync: this, duration: Duration(seconds: 1));
+    animation = Tween( begin: 0.0, end: 100.0, ).animate(controller)
       ..addListener((){
-          print("value:${animation.value}");
           setState((){
           });
-      });
+      })
     controller.forward(from: 0.0);
   }
 
@@ -28,6 +27,10 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
     return Container(
       margin: EdgeInsets.only(top: animation.value),
         child: Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.green,
+      ),
       width: 40.0,
       height: 40.0,
     ));
