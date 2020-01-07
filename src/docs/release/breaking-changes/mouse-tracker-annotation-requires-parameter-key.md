@@ -1,6 +1,6 @@
 ---
 title: MouseTrackerAnnotation requires parameter "key"
-description: [Brief description similar to the "context" section below.]
+description: MouseTrackerAnnotation now requires a new parameter "key", and several methods of MouseTracker are changed to take this key as the argument.
 ---
 
 # MouseTrackerAnnotation requires parameter "key"
@@ -26,9 +26,9 @@ as a whole, which would trigger the exit and enter callback.
 This issue blocked the support for mouse cursor, since it’s very likely that
 the cursor assigned to a region needs to be changed.
 
-This change fixes this issue by adding a key to `MouseTrackerAnnotation`,
-and making the comparison algorithm of `MouseTracker` based on the key.
-
+In order to fix this issue, we had to introduce this breaking change, which
+added a key to `MouseTrackerAnnotation`, allowing the `MouseTracker` to
+compare based on this key.
 
 ## Description of change
 
@@ -168,7 +168,11 @@ the fly. For example,
 
 ## Timeline
 
-This change was made at v1.13.4.
+This change was made at v1.13.6.
+
+The API related to `MouseTrackerAnnotation` was not stable at the time of
+writing, since a large change was in plan. It's recommended to refer to
+later migration guides for up-to-date information.
 
 ## References
 
