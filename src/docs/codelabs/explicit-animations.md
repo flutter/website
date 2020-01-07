@@ -26,10 +26,8 @@ you should have basic knowledge of the following:
 This codelab covers the following material:
 
 * Animations concepts.
-* How to use AnimationController, Ticker, AnimatedBuilder,
-  and AnimatedWidget to implement explicit animations.
+* How to use AnimationController to implement explicit animations.
 * How to choose between implicit and explicit animations.
-* How to choose between AnimatedBuilder and AnimatedWidget.
 
 
 ## What are explicit animations?
@@ -123,7 +121,7 @@ Try to come up with an answer before diving into the next section.
 * In Flutter, you can think of a single frame as
   a static configuration of a widget tree.
   You can create an animation by telling Flutter
-  to rapidly rebuild a widget tree, gradually
+  to rapidly rebuild a widget tree while gradually
   changing a widget property on each iteration.
 {{site.alert.end}}
 
@@ -269,17 +267,30 @@ for controlling how our animation proceeds across the sequence of frames?
 This way, we could easily represent when to start the animation,
 pause it, play forward, play backward, stop it, or repeat it indefinitely?
 
-## The Animation Object
-
-
 
 ## AnimationController 
 
 This section builds upon the prior sections by providing
 an introduction to using `AnimationController`
-and how its capabilities encompass
+with explanations about how its capabilities encompass
 the fundamental animations concepts
 covered in the previous sections.
+
+### What is an AnimationController?
+
+Creating animation
+* Generate interpolated values (Tweens, or from: param)
+* Use declarative controls for triggering animations (forward, reverse,..)
+
+Configuration
+* Sets up vsync
+* Listens for `Ticker` events
+
+### Generating interpolated values
+
+
+
+### Controlling animation frames
 
 Take a look at how using the animation controller simplifies
 the bouncing ball example you used in the Animations Concepts section:
@@ -331,4 +342,5 @@ the bouncing ball example you used in the Animations Concepts section:
 ---
 Todo:
 1. Create diffs w/ explanations of each diff
-2. 
+2. AnimatedWidget and AnimatedBuilder?
+3. How to choose between AnimatedBuilder and AnimatedWidget.

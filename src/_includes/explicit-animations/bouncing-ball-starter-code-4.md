@@ -18,7 +18,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
       ..addListener((){
           setState((){
           });
-      });
+      })
     controller.forward(from: 0.0);
   }
 
