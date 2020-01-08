@@ -55,6 +55,10 @@ Next, get a list of available cameras using the `camera` plugin.
 
 <!-- skip -->
 ```dart
+// Ensure that plugin services are initialized so that `availableCameras()`
+// can be called before `runApp()`
+WidgetsFlutterBinding.ensureInitialized();
+
 // Obtain a list of the available cameras on the device.
 final cameras = await availableCameras();
 
@@ -239,6 +243,10 @@ import 'package:path/path.dart' show join;
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
+  // Ensure that plugin services are initialized so that `availableCameras()`
+  // can be called before `runApp()`
+  WidgetsFlutterBinding.ensureInitialized();
+
   // Obtain a list of the available cameras on the device.
   final cameras = await availableCameras();
 

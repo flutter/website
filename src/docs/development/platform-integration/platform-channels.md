@@ -78,20 +78,20 @@ messages happens automatically when you send and receive values.
 
 The following table shows how Dart values are received on the platform side and vice versa:
 
-| Dart        | Android             | iOS
-|-------------|---------------------|----
-| null        | null                | nil (NSNull when nested)
-| bool        | java.lang.Boolean   | NSNumber numberWithBool:
-| int         | java.lang.Integer   | NSNumber numberWithInt:
-| int, if 32 bits not enough | java.lang.Long | NSNumber numberWithLong:
-| double      | java.lang.Double    | NSNumber numberWithDouble:
-| String      | java.lang.String    | NSString
-| Uint8List   | byte[]   | FlutterStandardTypedData typedDataWithBytes:
-| Int32List   | int[]    | FlutterStandardTypedData typedDataWithInt32:
-| Int64List   | long[]   | FlutterStandardTypedData typedDataWithInt64:
-| Float64List | double[] | FlutterStandardTypedData typedDataWithFloat64:
-| List        | java.util.ArrayList | NSArray
-| Map         | java.util.HashMap   | NSDictionary
+| Dart                       | Java                | Kotlin      | OC                                             | Swift                                   |
+| -------------------------- | ------------------- | ----------- | ---------------------------------------------- | --------------------------------------- |
+| null                       | null                | null        | nil (NSNull when nested)                       | nil                                     |
+| bool                       | java.lang.Boolean   | Boolean     | NSNumber numberWithBool:                       | NSNumber(value: Bool)                   |
+| int                        | java.lang.Integer   | Int         | NSNumber numberWithInt:                        | NSNumber(value: Int32)                  |
+| int, if 32 bits not enough | java.lang.Long      | Long        | NSNumber numberWithLong:                       | NSNumber(value: Int)                    |
+| double                     | java.lang.Double    | Double      | NSNumber numberWithDouble:                     | NSNumber(value: Double)                 |
+| String                     | java.lang.String    | String      | NSString                                       | String                                  |
+| Uint8List                  | byte[]              | ByteArray   | FlutterStandardTypedData typedDataWithBytes:   | FlutterStandardTypedData(bytes: Data)   |
+| Int32List                  | int[]               | IntArray    | FlutterStandardTypedData typedDataWithInt32:   | FlutterStandardTypedData(int32: Data)   |
+| Int64List                  | long[]              | LongArray   | FlutterStandardTypedData typedDataWithInt64:   | FlutterStandardTypedData(int64: Data)   |
+| Float64List                | double[]            | DoubleArray | FlutterStandardTypedData typedDataWithFloat64: | FlutterStandardTypedData(float64: Data) |
+| List                       | java.util.ArrayList | List        | NSArray                                        | Array                                   |
+| Map                        | java.util.HashMap   | HashMap     | NSDictionary                                   | Dictionary                              |
 
 <br>
 ## Example: Calling platform-specific iOS and Android code using platform channels {#example}
