@@ -48,7 +48,7 @@ by introducing you to foundational animation concepts,
 and ultimately relate those concepts to the corresponding tools
 of explicit animations.
 
-### Frames
+### Frames and animation
 
 Suppose you want to create your own Flutter animation
 without using the animations library.
@@ -123,6 +123,9 @@ Try to come up with an answer before diving into the next section.
   You can create an animation by telling Flutter
   to rapidly rebuild a widget tree while gradually
   changing a widget property on each iteration.
+* In this way, an animation in Flutter is value
+  that changes between frames to create the illusion
+  of motion.
 {{site.alert.end}}
 
 ### Frame rate
@@ -276,26 +279,61 @@ with explanations about how its capabilities encompass
 the fundamental animations concepts
 covered in the previous sections.
 
-### What is an AnimationController?
+### Introduction: What is an AnimationController?
 
 `AnimationController` is the central class 
-for building explicit animations. `AnimationController`'s
-capabilities fall into three broad categories:
-* **Define an animation with start and end values**: `AnimationController`
+for building explicit animations.
+`AnimationController`'s capabilities fall into four broad categories:
+* **Animation definitions**
+
+  `AnimationController`
   abstracts away the the work of interpolation,
   allowing you to reason about and create an animation
-  in terms of its beginning and an ending value.
-* **Trigger & sequence controls**:
+  in terms of its duration and the value you are animating: 
+  ```dart
+  controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
+  print(controller.value);
+  ```
+* **Trigger & sequence controls**
+
   `AnimationController` provides the
   `forward()`, `repeat()`, `reverse()`, and `stop()` methods
-  for triggering, halting, and controlling the sequence of an animation.
-* **Frame syncing**: With just a little bit of boilerplate,
-  `AnimationController` manages syncing your animation frames
+  for triggering, halting, and controlling the sequence of an animation:
+  ```dart
+  controller.forward(from: 0.0);
+  ```
+* **Listenable**
+
+  `AnimationController` allows you to listen for changes
+  in the value you are animating.
+  ```dart
+    controller.addListener(() {
+      print("value:${controller.value}");
+      setState((){});
+    });
+  ```
+* **Frame syncing**
+
+  With a little bit of boilerplate,
+  `AnimationController` syncs your animation frames
   to the target device at 60 fps.
+  ```dart
+  class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
+  AnimationController controller;
+
+  void initState() {
+    super.initState();
+    controller = AnimationController( vsync: this, duration: Duration(seconds: 3));
+    
+    ...
+
+  }
+  ```
+
  
 The following sections cover each of these capabilities in greater detail.
 
-### Generating interpolated values
+### Creating an animation with AnimationController (interpolation)
 
 The following example provides an easy way to see how
 `AnimationController` interpolates values for you:
@@ -354,8 +392,8 @@ the bouncing ball example you used in the Animations Concepts section:
   that *only looks* like it is running at two frames per second.
   In reality, Flutter is running this example at ~60 frames per second. 
 
-<sup><a name="a2">2</a></sup> Flutter aims to provide
-  60 frames per second (fps) performance,
+<sup><a name="a2">2</a></sup>
+  Flutter aims to provide 60 fps performance,
   or 120 fps performance on devices capable of 120Hz updates.
   For 60fps, frames need to render approximately every 16ms.
   See [performance profiling] page for more information.

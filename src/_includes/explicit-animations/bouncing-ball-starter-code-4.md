@@ -9,24 +9,23 @@ class BouncingBallDemo extends StatefulWidget {
 
 class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
   AnimationController controller;
-  Animation<double> animation;
 
   void initState() {
     super.initState();
     controller = AnimationController( vsync: this, duration: Duration(seconds: 3));
-    animation = Tween( begin: 0.0, end: 1.0, ).animate(controller)
-      ..addListener((){
-          print("value:${animation.value}");
-          setState((){
-          });
-      });
+
+    controller.addListener(() {
+      print("value:${controller.value}");
+      setState((){});
+    });
+
     controller.forward(from: 0.0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: animation.value),
+      margin: EdgeInsets.only(top: controller.value),
         child: Container(
       width: 40.0,
       height: 40.0,
