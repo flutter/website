@@ -1,5 +1,3 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
-{$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
 
@@ -61,5 +59,3 @@ Future<void> main() async {
     MyApp(),
   );
 }
-{$ end main.dart $}
-```

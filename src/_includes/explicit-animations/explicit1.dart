@@ -1,5 +1,3 @@
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
-{$ begin main.dart $}
 import 'dart:async';
 import 'package:flutter/material.dart';
 
@@ -7,29 +5,16 @@ class BouncingBallDemo extends StatefulWidget {
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
-  AnimationController controller;
+class _BouncingBallDemoState extends State<BouncingBallDemo> {
 
   void initState() {
     super.initState();
-    controller = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-      lowerBound: 0,
-      upperBound: 100,
-    );
-
-    controller.addListener(() {
-      setState((){});
-    });
-
-    controller.repeat(reverse: true);
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: controller.value),
+      margin: EdgeInsets.only(top: 0),
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -61,5 +46,3 @@ Future<void> main() async {
     MyApp(),
   );
 }
-{$ end main.dart $}
-```

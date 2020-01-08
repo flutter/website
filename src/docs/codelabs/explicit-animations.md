@@ -31,12 +31,13 @@ This codelab covers the following material:
 
 
 ## What are explicit animations?
-Explicit animations provide a set of controls for telling
-Flutter how to rapidly rebuild a widget tree to create the
-illusion of motion. Explicit animations make use of
-the basic buildings blocks of Flutter's animation library to
-enable you to create effects that you can't achieve using
+Explicit animations provide controls for leveraging the
+buildings blocks of Flutter's animation library to enable you to
+create effects that you can't achieve using
 [implicit animations](https://flutter.dev/docs/development/ui/animations/implicit-animations).
+Explicit animations provide a set of controls for telling
+Flutter how to rapidly rebuild the widget tree while gradually
+changing widget properties to create animation effects.
 
 
 ## Animations Concepts
@@ -76,10 +77,10 @@ you would say that the animation
 *only has two frames:*<sup><a href="#a1">1</a></sup>
 
 <div class="table-wrapper" markdown="1">
-| frame # | position        | movement direction        |
-|       1 | top margin: 0   |                           |
-|       2 | top margin: 100 | ball appears to move down |
-|       1 | top margin: 0   | ball appears to move up   |
+| frame # | position        | movement direction |
+|       1 | top margin: 0   |                    |
+|       2 | top margin: 100 | down               |
+|       1 | top margin: 0   | up                 |
 {:.table.table-striped}
 </div>
 
@@ -276,10 +277,12 @@ Here's a few hints:
 At 60 fps, this final version of the bouncing ball animation
 looks smoother than in all prior examples. 
 
+Notice that this example only creates half of the animation&mdash;the
+ball moves down, but not back up again!
 Wouldn't it be nice to have a declarative interface
 for controlling how our animation proceeds across the sequence of frames? 
 This way, we could easily represent when to start the animation,
-pause it, play forward, play backward, stop it, or repeat it indefinitely?
+pause it, play forward, play backward, stop it, or repeat it indefinitely.
 
 {{site.alert.bonus}}
 In the prior example, the rate of change for the 
@@ -289,38 +292,55 @@ How would you change this example to make it possible to interpolate
 values between 0 and 100 at a changing rate?
 {{site.alert.end}}
 
+{{site.alert.bonus}}
+The prior example only animates a single downward motion
+of the bouncing ball.
+Can you think of a way to:
+1. Continue the animation so that the ball bounces back up again?
+2. Repeat the animation indefinitely?
+{{site.alert.end}}
+
 ## AnimationController 
 
 This section builds upon the prior sections by providing
 an introduction to using `AnimationController`
 with explanations about how its capabilities encompass
-the fundamental animations concepts
-covered in the previous sections.
+fundamental animations concepts covered in the previous sections.
+Since `AnimationController` is the central class
+for building explicit animations,
+it has a few different capabilities, each with
+their own separate API.
+These capabilities fall into four broad categories:
 
-### What is an AnimationController?
-
-`AnimationController` is the central class 
-for building explicit animations.
-`AnimationController`'s capabilities fall into four broad categories:
-* **Animation definition**
+* **Set the animation's duration and bounds**
 
   `AnimationController`
   abstracts away the the work of interpolation,
   allowing you to reason about and create an animation
-  in terms of its duration and the value you are animating: 
+  in terms of its duration, and the starting and ending
+  values of the property that you are animating:
   ```dart
-  controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
-  print(controller.value);
+  controller = AnimationController(
+    duration: const Duration(seconds: 1),
+    lowerBound: 0,
+    upperBound: 100,
+    vsync: this,
+  );
   ```
+* **Access the animation value**
+
+   ```
+   print(controller.value);
+   ```
 * **Trigger and sequence controls**
 
   `AnimationController` provides the
   `forward()`, `repeat()`, `reverse()`, and `stop()` methods
   for triggering, repeating, playing in reverse, and halting an animation:
   ```dart
-  controller.forward(from: 0.0);
+  controller.forward();
   ```
-* **Listenable**
+* **Listen for changes in the animation value**
 
   `AnimationController` allows you to listen for changes
   in the value you are animating.
@@ -348,19 +368,39 @@ for building explicit animations.
   }
   ```
 
- 
-The following sections cover each of these capabilities in greater detail.
+The following sections cover each of these capabilities in detail.
 
 ### Create your first explicit animation with AnimationController
+
+This section provides step-by-step instructions for building your
+first animation using `AnimationController`.
+Each step also provides an explanation of the specific feature of
+`AnimationController` that is being introduced.
+
+#### Add TickerProvider
+
+<?code-excerpt "explicit{1,5}/lib/main.dart"?>
+
+
+#### Instantiate `AnimationController`
+
+#### Add listener(s)
+
+#### Prevent memory leaks
+
+#### Trigger the animation
+
+
 
 The following example provides an easy way to see how
 `AnimationController` interpolates values for you:
 
 {% include explicit-animations/bouncing-ball-starter-code-4.md %}
 
-### Controlling animation frames
 
 {{site.alert.secondary}}
+**Quick review**
+
 Creating animations
 * Generates interpolated values (Tweens, or from: param)
 * Provides controls for triggering animations (forward, reverse,..)
@@ -370,18 +410,13 @@ Configuration
 * Listens for `Ticker` events
 {{site.alert.end}}
 
-Take a look at how using the animation controller simplifies
-the bouncing ball example you used in the Animations Concepts section:
 
 {% include explicit-animations/bouncing-ball-starter-code-5.md %}
 
 
-
-- Creating interpolated values.
-- Using animation controls (start, stop, repeat).
-
-
-## Tween
+## Tweens
+## AnimatedBuilder
+## AnimatedWidget
 
 
 
@@ -422,3 +457,7 @@ Todo:
 1. Create diffs w/ explanations of each diff
 2. AnimatedWidget and AnimatedBuilder?
 3. How to choose between AnimatedBuilder and AnimatedWidget.
+4. Answer question: when to use a Tween,
+  if you can just use upper and lower bound args for 
+  AnimationController?
+  - when we need something other than a double?
