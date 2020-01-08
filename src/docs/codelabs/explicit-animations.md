@@ -48,7 +48,7 @@ by introducing you to foundational animation concepts,
 and ultimately relate those concepts to the corresponding tools
 of explicit animations.
 
-### Frames and animation
+### What is an animation? 
 
 Suppose you want to create your own Flutter animation
 without using the animations library.
@@ -86,21 +86,26 @@ you would say that the animation
 **A frame is a single still image that can be used
 within a sequence of other still images
 to create the illusion of motion.**
+
+[ image: a frame in a flipbook ]
+
 In this case, the first frame consists of a
 ball centered on the screen,
 and the second frame consists of the same ball
 placed further down on the screen using
-the margin property.
+the top margin property.
 
-Even though the preceding example doesn't use
-Flutter's animation framework,
-it shares something fundamental in common with it:
-it creates an illusion of motion
+[ image: a frame in Flutter ]
+
+Even this though example doesn't use Flutter's
+animation library, it creates an animation
+in fundamentally the same way: 
 by telling Flutter to rebuild its widget tree
-so as to move between two frames
-within a specified over a period of time.
+so as to rapidly move between frames
+over a specified period of time.
 This is an important takeaway to keep in mind
-while creating explicit animations:
+while creating explicit animations.
+At a fundamental level,
 **explicit animations provide you with controls
 for telling Flutter how to quickly rebuild a widget tree
 to create the illusion of motion.** You will learn more
@@ -116,8 +121,9 @@ Try to come up with an answer before diving into the next section.
 * A frame is a single still image that can be used
   within a sequence of other still images
   to create the illusion of motion. 
-* An animation is a rapid sequence of frames that
-  create the illusion of motion.
+* An animation is a sequence of frames that,
+  when rapidly displayed over time,
+  creates the illusion of motion.
 * In Flutter, you can think of a single frame as
   a static configuration of a widget tree.
   You can create an animation by telling Flutter
@@ -162,7 +168,7 @@ in order to keep the ball bouncing at the same rate
 you  need to increase the frame rate. 
 **The frame rate is the rate of frames per second.**
 In this case, you are increasing the frame rate
-from 2 frames per second ("fps") to 4 fps.
+from 2 frames per second (fps) to 4 fps.
 Even though you are using five total frames,
 the first frame gets re-used for the downward and upward
 motion of the ball,
@@ -221,26 +227,27 @@ view the updated animation:
 ### Interpolation
 Have you ever wondered how computer graphics animators
 draw each and every frame of your favorite CGI movies?
-Well, they don't! To make their lives easier,
-animators use key frames:
-to animate an object, they set its beginning position,
-and its ending position,
-and rely on software to generate the images in between.
+Well, they don't! Instead, animators set an initial
+position and a final position for the object they are animating.
+Next, they rely on software to compute all of the
+positions for the object between the initial and the
+final position that they defined.
 **The process of computing animation values between
 a starting and ending position is called interpolation.**
 
-As a developer, interpolation vastly simplifies how you
-create and reason about your animations.
+As a developer, interpolation vastly simplifies
+how you reason about and create your animations.
 Instead of thinking of an animation
 in terms of hundreds (or thousands) of frames,
-you can reason about an animation
+you can think of an animation
 as a starting value and an ending value,
-and let interpolation to take care of the rest!
+and allow interpolation to take care of the rest!
 
 The preceding example uses an imperative approach to
-calculating the values to use for each frame
-that makes up the animation: you provide values for
-the frame rate as well as the value needed to increment
+calculate the values for each frame
+that makes up the animation: you explicitly provide
+values for the frame rate as well as
+the value needed to increment
 the top margin property for each frame.
 Can you think of a way to refactor this example
 to use interpolation so that
@@ -248,7 +255,7 @@ you only need to provide the starting and ending
 values for top margin?
 
 Here's a few hints:
-* To start out, don't worry about animating the ball
+* Don't worry about animating the ball
   up and down. Just focus on the first downward motion
   of the ball (from a top margin of 0 to top margin of 100).
 * Remember from the preceding frame rate section that
@@ -270,6 +277,12 @@ for controlling how our animation proceeds across the sequence of frames?
 This way, we could easily represent when to start the animation,
 pause it, play forward, play backward, stop it, or repeat it indefinitely?
 
+{{site.alert.bonus}}
+In the prior example, the rate of change for magin
+value is linear (the margin changes by the same amount between each frame).
+How would you change this example to make it possible to interpolate
+values between 0 and 100 at a changing rate?
+{{site.alert.end}}
 
 ## AnimationController 
 
@@ -279,12 +292,12 @@ with explanations about how its capabilities encompass
 the fundamental animations concepts
 covered in the previous sections.
 
-### Introduction: What is an AnimationController?
+### What is an AnimationController?
 
 `AnimationController` is the central class 
 for building explicit animations.
 `AnimationController`'s capabilities fall into four broad categories:
-* **Animation definitions**
+* **Animation definition**
 
   `AnimationController`
   abstracts away the the work of interpolation,
@@ -294,11 +307,11 @@ for building explicit animations.
   controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
   print(controller.value);
   ```
-* **Trigger & sequence controls**
+* **Trigger and sequence controls**
 
   `AnimationController` provides the
   `forward()`, `repeat()`, `reverse()`, and `stop()` methods
-  for triggering, halting, and controlling the sequence of an animation:
+  for triggering, repeating, playing in reverse, and halting an animation:
   ```dart
   controller.forward(from: 0.0);
   ```
@@ -308,16 +321,16 @@ for building explicit animations.
   in the value you are animating.
   ```dart
     controller.addListener(() {
-      print("value:${controller.value}");
-      setState((){});
+      print("current value: ${controller.value}");
     });
   ```
 * **Frame syncing**
 
   With a little bit of boilerplate,
   `AnimationController` syncs your animation frames
-  to the target device at 60 fps.
+  to the target device at 60 fps:
   ```dart
+
   class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
   AnimationController controller;
 
@@ -333,20 +346,14 @@ for building explicit animations.
  
 The following sections cover each of these capabilities in greater detail.
 
-### Creating an animation with AnimationController (interpolation)
+### Create your first explicit animation with AnimationController
 
 The following example provides an easy way to see how
 `AnimationController` interpolates values for you:
 
-
 {% include explicit-animations/bouncing-ball-starter-code-4.md %}
 
-
-
-
-
 ### Controlling animation frames
-
 
 {{site.alert.secondary}}
 Creating animations
