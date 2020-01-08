@@ -69,8 +69,8 @@ and a periodic timer to control
 how frequently the ball changes its position (once every second).
 As a viewer, this approach leaves a lot to be desired.
 The ball only has two positions,
-so the animation looks pretty choppy;
-You might even mistake the animation for a glitch.
+so the animation looks pretty choppy&mdash;you could
+easily mistake the animation for a glitch.
 To describe the problem with this example in animations terms,
 you would say that the animation
 *only has two frames:*<sup><a href="#a1">1</a></sup>
@@ -121,17 +121,21 @@ Try to come up with an answer before diving into the next section.
 * A frame is a single still image that can be used
   within a sequence of other still images
   to create the illusion of motion. 
+* In Flutter, you can think of a single frame as
+  a static configuration of a widget tree.
 * An animation is a sequence of frames that,
   when rapidly displayed over time,
   creates the illusion of motion.
-* In Flutter, you can think of a single frame as
-  a static configuration of a widget tree.
-  You can create an animation by telling Flutter
-  to rapidly rebuild a widget tree while gradually
-  changing a widget property on each iteration.
-* In this way, an animation in Flutter is value
+* In Flutter, an animation is widget property value
   that changes between frames to create the illusion
   of motion.
+  You can create an animation by telling Flutter
+  to rapidly rebuild a widget tree while gradually
+  changing a widget property on each iteration
+  of the widget tree.
+* The first example uses a timer to trigger
+  a change in the top margin of the Bouncing Ball
+  once every second. 
 {{site.alert.end}}
 
 ### Frame rate
@@ -278,8 +282,9 @@ This way, we could easily represent when to start the animation,
 pause it, play forward, play backward, stop it, or repeat it indefinitely?
 
 {{site.alert.bonus}}
-In the prior example, the rate of change for magin
-value is linear (the margin changes by the same amount between each frame).
+In the prior example, the rate of change for the 
+bouncing ball's top margin value is linear
+(the margin changes by the same amount between each frame).
 How would you change this example to make it possible to interpolate
 values between 0 and 100 at a changing rate?
 {{site.alert.end}}
