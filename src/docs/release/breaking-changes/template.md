@@ -37,7 +37,7 @@ A description of how to make the change.
 If a migration tool is available,
 discuss it here. Even if there is a tool,
 a description of how to make the change manually must be provided.
-{% end comment %}
+{% endcomment %}
 
 Code before migration:
 
@@ -87,7 +87,7 @@ Relevant PRs:
 Add the links to the end of the file in alphabetical order.
 I've had to comment out these faux links because they break the build.
 
-[`ClassName`]: {{site.api}}/flutter/link_to_relevant_page.html
+[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 [Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
