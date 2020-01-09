@@ -3,20 +3,28 @@ title: Scrollable AlertDialog
 description: AlertDialog should scroll automatically when it overflows.
 ---
 
+## Summary
+
+An `AlertDialog` now scrolls automatically when it overflows.
+
 ## Context
 
-Currently, when an AlertDialog widget’s contents are too tall, they can end up
-overflowing and can be clipped. This causes the following issues:
+Before this change,
+when an `AlertDialog` widget’s contents were too tall,
+the display overflowed, causing the contents to be clipped.
+This resulted in the following issues:
 
-1. The content overflows and there is no way to view the rest of the content.
-2. Most alert dialogs have buttons beneath its contents to prompt users for
-actions. However, if the contents overflow and the buttons are obscured, users
-may be unaware of the existence of these buttons.
+* There was no way to view the portion of the content that was clipped.
+* Most alert dialogs have buttons beneath the content to prompt users for
+  actions. If the content overflowed, obscuring the buttons,
+  users might be unaware of their existence.
 
 ## Description of change
 
-The current code simply has the title widget and content widgets appear consecutively in a Row widget:
+The previous approach listed the title and content
+widgets consecutively in a `Row` widget.
 
+<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -49,11 +57,12 @@ Column(
 );
 ```
 
-The proposed change would basically wrap both widgets in a
-SingleChildScrollView above the button bar, making both
-widgets part of the same scrollable while exposing the
-button bar at the bottom of the dialog:
+The new approach wraps both widgets in a
+`SingleChildScrollView` above the button bar,
+making both widgets part of the same scrollable
+and exposing the button bar at the bottom of the dialog.
 
+<!-- skip -->
 ```dart
 Column(
   mainAxisSize: MainAxisSize.min,
@@ -79,20 +88,24 @@ Column(
 
 ## Migration guide
 
-### Semantics tests may fail because of the addition of a SingleChildScrollView.
+You might see the following issues as a result of this change:
 
-Upon manually testing Talkback and VoiceOver, they still behave correctly and
-the same.
+**Semantics tests might fail because of the addition of a `SingleChildScrollView`.**
+: Manual testing of the `Talkback` and `VoiceOver` features
+  show that they still exhibit the same (correct)
+  behavior as before.
 
-However, this change might have caused semantics golden diffs in some tests
-since the SingleChildScrollView now nests both the title and content widgets.
-Some Flutter projects have taken to creating semantics tests by taking goldens
-of semantics nodes using in Flutter's debug build.
+**Golden tests might fail.**
+: This change might have caused diffs in (previously passing)
+  golden tests since the `SingleChildScrollView` now nests both the
+  title and content widgets.
+  Some Flutter projects have taken to creating semantics tests
+  by taking goldens of semantics nodes used in Flutter's debug build.
 
-Any semantics golden updates that reflect the scrolling container addition
-is expected and these diffs should be safe to accept.
+  <br>Any semantics golden updates that reflect the scrolling
+  container addition are expected and these diffs should be safe to accept.
 
-Sample resulting Semantics tree:
+  Sample resulting Semantics tree:
 
 ```
 flutter:        ├─SemanticsNode#30 <-- SingleChildScrollView
@@ -109,16 +122,19 @@ flutter:          └─SemanticsNode#32 <-- contents
 flutter:              label: "Huge content"
 ```
 
-### This change may result in layout changes because of the scroll view.
+**Layout changes might result because of the scroll view.**
+: If the dialog was already overflowing,
+  this change corrects the problem.
+  This layout change is expected.
 
-If the dialog was already overflowing, this change would correct the problem
-and this layout change is expected.
+  <br>A nested `SingleChildScrollView` in `AlertDialog.content`
+  should work properly if left in the code,
+  but should be removed if unintended, since
+  it might cause confusion.
 
-A nested SingleChildScrollView in `AlertDialog.content` seems to still work
-properly if left in, but it should probably be removed if unintended since
-it might cause confusion:
+Code before migration:
 
-Original code:
+<!-- skip -->
 ```dart
 AlertDialog(
   title: Text(
@@ -135,7 +151,9 @@ AlertDialog(
 )
 ```
 
-Migrate to:
+Code after migration:
+
+<!-- skip -->
 ```dart
 AlertDialog(
   title: Text('Very, very large title', textScaleFactor: 5),
@@ -154,15 +172,23 @@ TBA - The version number since the change was introduced.
 ## References
 
 Design doc:
-* [Scrollable AlertDialog](/go/scrollable-alert-dialog)
+* [Scrollable `AlertDialog`]
 
 API documentation:
-* [AlertDialog API doc](https://api.flutter.dev/flutter/material/AlertDialog-class.html)
+* [`AlertDialog`]
 
-Relevant issues:
-* [Overflow exceptions with maximum accessibility font size](https://github.com/flutter/flutter/issues/42696)
+Relevant issue:
+* [Overflow exceptions with maximum accessibility font size]
 
 Relevant PRs:
-* [Update to AlertDialog.scrollable](https://github.com/flutter/flutter/pull/45079)
-* [Original attempt to implement scrollable AlertDialog](https://github.com/flutter/flutter/pull/43226)
-* [Revert of original attempt to implement scrollable AlertDialog](https://github.com/flutter/flutter/pull/44003)
+* [Update to `AlertDialog.scrollable`]
+* [Original attempt to implement scrollable `AlertDialog`]
+* [Revert of original attempt to implement scrollable `AlertDialog`]
+
+
+[`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
+[Original attempt to implement scrollable `AlertDialog`]: {{site.github}}/flutter/flutter/pull/43226
+[Overflow exceptions with maximum accessibility font size]: {{sit.github}}/flutter/flutter/issues/42696
+[Revert of original attempt to implement scrollable `AlertDialog`]: {{site.github}}/flutter/flutter/pull/44003
+[Scrollable `AlertDialog`]: /go/scrollable-alert-dialog
+[Update to `AlertDialog.scrollable`]: {{site.github}}/flutter/flutter/pull/45079
