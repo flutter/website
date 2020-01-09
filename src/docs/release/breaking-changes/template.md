@@ -84,11 +84,12 @@ Relevant PRs:
 * [PR title #2]
 
 {% comment %}
-Add the links in alphabetical order.
-{% endcomment %}
+Add the links to the end of the file in alphabetical order.
+I've had to comment out these faux links because they break the build.
 
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
+[`ClassName`]: {{site.api}}/flutter/link_to_relevant_page.html
 [Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
 [PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
 [PR title #2]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
+{% endcomment %}
