@@ -46,13 +46,13 @@ TBA - The version number since the change was introduced.
 
 ## References
 Design doc:
-* [Make `CupertinoThemeData.brightness nullable`]flutter.dev/go/nullable-cupertinothemedata-brightness
+* [Make `CupertinoThemeData.brightness nullable`]
 
 API documentation:
 * [`CupertinoThemeData.brightness`]
 
 Relevant issues:
-* [Issue 47255] {{site.github}}/flutter/flutter/issues/47255
+* [Issue 47255] 
 
 Relevant PRs:
 * [Let material `ThemeData` dictate brightness if `cupertinoOverrideTheme.brightness` is null]
