@@ -41,7 +41,7 @@ application:
 my_flutter/
 ├── .ios/
 │   ├── Runner.xcworkspace
-│   └─ Flutter/podhelper.rb
+│   └── Flutter/podhelper.rb
 ├── lib/
 │   └── main.dart
 ├── test/

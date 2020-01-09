@@ -100,7 +100,7 @@ standalone version of your Flutter module via `flutter run` and it's also a
 wrapper that helps bootstrap the Flutter module an embeddable Android library.
 
 {{site.alert.note}}
-Add custom Android code to your own existing application'sproject  or a plugin,
+Add custom Android code to your own existing application's project or a plugin,
 not to the module in `.android/`. Changes made in your module's `.android/`
 directory will not appear in your existing Android project using the module.
 
