@@ -172,6 +172,11 @@ Configure signing for your app by editing the
 
 Release builds of your app will now be signed automatically.
 
+{{site.alert.note}}
+  You may need to run `flutter clean` after changing the gradle file.
+  This will prevent cached builds affecting the signing process.
+{{site.alert.end}}
+
 ## R8
 
 [R8][] is the new code shrinker from Google, and it's enabled by default
