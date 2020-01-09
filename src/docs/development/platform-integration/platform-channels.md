@@ -296,7 +296,7 @@ You need to handle a single platform method, `getBatteryLevel()`,
 so test for that in the `call` argument. The implementation of
 this platform method calls the Android code written
 in the previous step, and returns a response for both
-the success and error cases using the `response` argument.
+the success and error cases using the `result` argument.
 If an unknown method is called, report that instead.
 
 Remove the following code:
