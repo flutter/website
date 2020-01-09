@@ -153,7 +153,8 @@
       { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit?usp=sharing", "type": 301 },
       { "source": "/go/nullable-cupertinothemedata-brightness", "destination": "https://docs.google.com/document/d/1qivq0CdkWGst5LU5iTLFUe_LTfLY84679-NxWiDgJXg/edit", "type": 301 },
       { "source": "/go/material-theme-system-updates", "destination": "https://docs.google.com/document/d/1kzIOQN4QYfVsc5lMZgy_A-FWGXBAJBMySGqZqsJytcE/edit?usp=sharing", "type": 301 },
-      { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit?usp=sharing", "type": 301 }
+      { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit?usp=sharing", "type": 301 },
+      { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit?usp=sharing", "type": 301 }
     ]
   }
 }
