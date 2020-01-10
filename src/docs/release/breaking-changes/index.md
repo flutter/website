@@ -9,12 +9,12 @@ across a breaking change.
 The following guides (in alphabetical order) are
 available:
 
+* [Generic type of ParentDataWidget changed to ParentData]
 * [ImageCache large images]
 * [Scrollable AlertDialog]
 * [TestTextInput state reset]
 * [TextInputClient currentTextEditingValue]
 * [ThemeData's accent properties]
-* [Generic type of ParentDataWidget changed to ParentData]
 
 [breaking change policy]: /docs/resources/compatibility
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images

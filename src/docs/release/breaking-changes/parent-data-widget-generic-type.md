@@ -3,8 +3,9 @@ title: The generic type of ParentDataWidget changed to ParentData
 description: The ParentDataWidget is now bound to the ParentData type.
 ---
 
-# Generic type of `ParentDataWidget` changed to `ParentData`
+## Summary
 
+The generic type of `ParentDataWidget` changed from `RenderObjectWidget` to `ParentData`.
 
 ## Context
 
@@ -18,14 +19,14 @@ world, the `Positioned` widget can be reused with a hypothetical new `SuperStack
 ## Description of change
 
 The generic type argument of `ParentDataWidget` has been changed from `RenderObjectWidget` to
-`ParentData`, and a new debug property `debugTypicalAncestorWidgetClass` has been added to
+`ParentData`, and a new debug property, `debugTypicalAncestorWidgetClass`, has been added to
 `ParentDataWidget`. The latter is used for error messages to give users a better idea of the context
 a given `ParentDataWidget` is supposed to be used in.
 
 
 ## Migration guide
 
-You will have to migrate your code as described in the following sections if you're subclassing or
+You will have to migrate your code as described in this section if you're subclassing or
 implementing `ParentDataWidget`. If you do, the analyzer will show the following warnings when you
 upgrade to the Flutter version that includes this change:
 
@@ -34,7 +35,7 @@ upgrade to the Flutter version that includes this change:
   error • 'FrogJar' doesn't extend 'ParentData' • lib/main.dart:114:41 • type_argument_not_matching_bounds
 ```
 
-### Before
+Code before migration:
 
 ```dart
 class FrogSize extends ParentDataWidget<FrogJar> {
@@ -68,14 +69,7 @@ class FrogJar extends RenderObjectWidget {
 }
 ```
 
-### After
-
-The generic type of the `ParentDataWidget` superclass changes from `FrogJar` (a
-`RenderObjectWidget`) to `FrogJarParentData` (the `ParentData` type that `FrogSize.applyParentData`
-wants to operate on). Additionally, the new `debugTypicalAncestorWidgetClass` is implemented for
-this `ParentDataWidget` subclass. It returns the type of a typical ancestor `RenderObjectWidget` for
-this `ParentDataWidget`. Most of the times, you just want to return the old generic type here
-(`FrogJar` in this example).
+Code after migration:
 
 ```dart
 class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed to FrogJarParentData
@@ -104,6 +98,13 @@ class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed 
 }
 ```
 
+The generic type of the `ParentDataWidget` superclass changes from `FrogJar` (a
+`RenderObjectWidget`) to `FrogJarParentData` (the `ParentData` type that `FrogSize.applyParentData`
+wants to operate on). Additionally, the new `debugTypicalAncestorWidgetClass` is implemented for
+this `ParentDataWidget` subclass. It returns the type of a typical ancestor `RenderObjectWidget` for
+this `ParentDataWidget`. Most of the times, you just want to return the old generic type here
+(`FrogJar` in this example).
+
 
 ## Timeline
 
@@ -113,7 +114,10 @@ This change was made in January of 2020 after the v1.13.7 release.
 ## References
 
 API documentation:
-* https://api.flutter.dev/flutter/widgets/ParentDataWidget-class.html
+* [`ParentDataWidget`]
 
-Relevant PRs:
-* https://github.com/flutter/flutter/pull/48541
+Relevant PR:
+* [Make ParentDataWidget usable with different ancestor RenderObjectWidget types]
+
+[Make ParentDataWidget usable with different ancestor RenderObjectWidget types]: {{site.github}}/flutter/flutter/pull/48541
+[`ParentDataWidget`]: {{site.api}}/flutter/widgets/ParentDataWidget-class.html
