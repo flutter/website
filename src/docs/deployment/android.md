@@ -157,7 +157,7 @@ Configure signing for your app by editing the
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
-           storeFile file(keystoreProperties['storeFile'])
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
            storePassword keystoreProperties['storePassword']
        }
    }
@@ -171,6 +171,11 @@ Configure signing for your app by editing the
 </ol>
 
 Release builds of your app will now be signed automatically.
+
+{{site.alert.note}}
+  You may need to run `flutter clean` after changing the gradle file.
+  This will prevent cached builds affecting the signing process.
+{{site.alert.end}}
 
 ## R8
 

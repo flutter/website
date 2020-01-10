@@ -19,7 +19,8 @@ It's recommended that you test the build and deployment process locally before
 migrating to a cloud-based system. You could also choose to perform continuous
 delivery from a local machine.
 
-1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
+1. Install fastlane `gem install fastlane` or `brew install fastlane`.
+Visit the [fastlane docs][fastlane] for more info.
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android](/images/cd/android.png) `flutter build apk --release`; and
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
