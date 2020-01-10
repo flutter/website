@@ -18,9 +18,9 @@ Positioned widget can be reused with a hypothetical new SuperStack widget.
 ## Description of change
 
 The generic type argument of ParentDataWidget has been changed from RenderObjectWidget to ParentData
-and a new debug property `debugTypicalAncestorWidget` has been added to ParentDataWidget. The latter
-is used for error messages to give users a better idea of the context a given ParentDataWidget is
-supposed to be used in.
+and a new debug property `debugTypicalAncestorWidgetClass` has been added to ParentDataWidget. The
+latter is used for error messages to give users a better idea of the context a given
+ParentDataWidget is supposed to be used in.
 
 
 ## Migration guide
@@ -30,7 +30,7 @@ implementing ParentDataWidget. If you do, the analyzer will show the following w
 upgrade to the Flutter version that includes this change:
 
 ```
-  error • Missing concrete implementation of 'getter ParentDataWidget.debugTypicalAncestorWidget' • lib/main.dart:114:7 • non_abstract_class_inherits_abstract_member
+  error • Missing concrete implementation of 'getter ParentDataWidget.debugTypicalAncestorWidgetClass' • lib/main.dart:114:7 • non_abstract_class_inherits_abstract_member
   error • 'FrogJar' doesn't extend 'ParentData' • lib/main.dart:114:41 • type_argument_not_matching_bounds
 ```
 
@@ -72,7 +72,7 @@ class FrogJar extends RenderObjectWidget {
 
 The generic type of the ParentDataWidget superclass changes from `FrogJar` (a RenderObjectWidget) to
 `FrogJarParentData` (the ParentData type that `FrogSize.applyParentData` wants to operate on).
-Additionally, the new `debugTypicalAncestorWidget` is implemented for this ParentDataWidget
+Additionally, the new `debugTypicalAncestorWidgetClass` is implemented for this ParentDataWidget
 subclass. It returns the type of a typical ancestor RenderObjectWidget for this ParentDataWidget.
 Most of the times, you just want to return the old generic type here (`FrogJar` in this example).
 
@@ -99,7 +99,7 @@ class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed 
   }
 
   @override
-  Type get debugTypicalAncestorWidget => FrogJar; // Newly added
+  Type get debugTypicalAncestorWidgetClass => FrogJar; // Newly added
 }
 ```
 
