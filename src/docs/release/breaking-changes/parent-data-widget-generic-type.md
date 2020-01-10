@@ -3,30 +3,30 @@ title: The generic type of ParentDataWidget changed to ParentData
 description: The ParentDataWidget is now bound to the ParentData type.
 ---
 
-# Generic type of ParentDataWidget changed to ParentData
+# Generic type of `ParentDataWidget` changed to `ParentData`
 
 
 ## Context
 
-Prior to this change a ParentDataWidget was bound to a specific RenderObjectWidget type as ancestor.
-For example, a Positioned widget could only be used within a Stack widget. With this change, a
-ParentDataWidget can be used with any RenderObjectWidget type as ancestor as long as the
-RenderObject of said RenderObjectWidget sets up the correct ParentData type. In this new world, the
-Positioned widget can be reused with a hypothetical new SuperStack widget.
+Prior to this change a `ParentDataWidget` was bound to a specific `RenderObjectWidget` type as
+ancestor. For example, a `Positioned` widget could only be used within a `Stack` widget. With this
+change, a `ParentDataWidget` can be used with any `RenderObjectWidget` type as ancestor as long as
+the `RenderObject` of said R`enderObjectWidget` sets up the correct `ParentData` type. In this new
+world, the `Positioned` widget can be reused with a hypothetical new `SuperStack` widget.
 
 
 ## Description of change
 
-The generic type argument of ParentDataWidget has been changed from RenderObjectWidget to ParentData
-and a new debug property `debugTypicalAncestorWidgetClass` has been added to ParentDataWidget. The
-latter is used for error messages to give users a better idea of the context a given
-ParentDataWidget is supposed to be used in.
+The generic type argument of `ParentDataWidget` has been changed from `RenderObjectWidget` to
+`ParentData` and a new debug property `debugTypicalAncestorWidgetClass` has been added to
+`ParentDataWidget`. The latter is used for error messages to give users a better idea of the context
+a given `ParentDataWidget` is supposed to be used in.
 
 
 ## Migration guide
 
 You will have to migrate your code as described in the following sections if you're subclassing or
-implementing ParentDataWidget. If you do, the analyzer will show the following warnings when you
+implementing `ParentDataWidget`. If you do, the analyzer will show the following warnings when you
 upgrade to the Flutter version that includes this change:
 
 ```
@@ -70,11 +70,12 @@ class FrogJar extends RenderObjectWidget {
 
 ### After
 
-The generic type of the ParentDataWidget superclass changes from `FrogJar` (a RenderObjectWidget) to
-`FrogJarParentData` (the ParentData type that `FrogSize.applyParentData` wants to operate on).
-Additionally, the new `debugTypicalAncestorWidgetClass` is implemented for this ParentDataWidget
-subclass. It returns the type of a typical ancestor RenderObjectWidget for this ParentDataWidget.
-Most of the times, you just want to return the old generic type here (`FrogJar` in this example).
+The generic type of the `ParentDataWidget` superclass changes from `FrogJar` (a
+`RenderObjectWidget`) to `FrogJarParentData` (the `ParentData` type that `FrogSize.applyParentData`
+wants to operate on). Additionally, the new `debugTypicalAncestorWidgetClass` is implemented for
+this `ParentDataWidget` subclass. It returns the type of a typical ancestor `RenderObjectWidget` for
+this `ParentDataWidget`. Most of the times, you just want to return the old generic type here
+(`FrogJar` in this example).
 
 ```dart
 class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed to FrogJarParentData
