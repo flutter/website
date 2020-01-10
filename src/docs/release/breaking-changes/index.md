@@ -8,6 +8,7 @@ on occasion we publish guides for migrating code
 across a breaking change. The following guides are
 currently available:
 
+* [Nullable `CupertinoTheme.brightness`]
 * [TextInputClient currentTextEditingValue]
 * [TestTextInput]
 * [Scrollable AlertDialog]
@@ -16,3 +17,4 @@ currently available:
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable_alert_dialog
 [TestTextInput]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
+[Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness.md
