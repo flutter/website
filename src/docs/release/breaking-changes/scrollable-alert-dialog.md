@@ -167,7 +167,7 @@ AlertDialog(
 
 ## Timeline
 
-TBA - The version number since the change was introduced.
+TBD - Add the version number that contains this change.
 
 ## References
 

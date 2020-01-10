@@ -54,7 +54,7 @@ following to assert that the state hasn't been modified yet:
 
 ## Timeline
 
-TBA: This change is being proposed for December of 2019.
+This change occurred in Dec 2019, in v1.13.5.
 
 ## References
 

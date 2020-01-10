@@ -71,6 +71,7 @@ This can be remedied by one of the following approaches:
 
 The old algorithm is no longer supported.
 As of Dec 2019, this is the updated behavior.
+TBD: replace this with a version number.
 
 ## References
 

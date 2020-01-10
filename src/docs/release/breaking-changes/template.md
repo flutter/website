@@ -3,6 +3,16 @@ title: [Title of breaking change]
 description: [Brief description similar to the "context" section below.]
 ---
 
+{% comment %}
+The text in this page should be backwards looking,
+so write about previous behavior in past tense, not future tense.
+People are reading this months from now, not today.
+Don't say "in a month" or talk about your plan to do
+something next week. You've done it,
+they're looking back to figure out how to migrate their code.
+{% endcomment %}
+
+
 ## Summary
 
 {% comment %}
@@ -14,20 +24,21 @@ would see if you had not yet migrated (i.e. when you get broken).
 
 ## Context
 
-[High-level description of what API changed and why.
+{% comment %}
+High-level description of what API changed and why.
 Should be clear enough to be understandable to someone
 who has no context about this breaking change,
 such as someone who doesn't know the underlying API.
 This section should also answer the question
 "what is the problem that led to considering making
-a breaking change?"]
-
+a breaking change?"
+{% endcomment %}
 
 ## Description of change
 
 {% comment %}
-A dry technical description of the actual change,
-with code samples.
+A technical description of the actual change,
+with code samples showing how the SDK changed.
 {% endcomment %}
 
 ## Migration guide
@@ -36,7 +47,10 @@ with code samples.
 A description of how to make the change.
 If a migration tool is available,
 discuss it here. Even if there is a tool,
-a description of how to make the change manually must be provided.
+a description of how to make the change manually
+must be provided. This section needs before and
+after code examples that are relevant to the
+developer.
 {% endcomment %}
 
 Code before migration:
@@ -57,18 +71,10 @@ Code after migration:
 ## Timeline
 
 {% comment %}
-Details regarding when the change was made, in terms of a version number.
-If there is a deprecation window,
-the date to which we guarantee to maintain the old API.
+The version # of the SDK where this change was
+introduced.  If there is a deprecation window,
+the version # to which we guarantee to maintain the old API.
 {% endcomment %}
-
-{% comment %}
-This text should be backwards looking, so write in past tense,
-not future tense. People are reading this months from now, not today.
-Don't say "in a month" or talk about your plan to do something next week.
-You've done it, they're looking back to figure out how to migrate their code.
-{% endcomment %}
-
 
 ## References
 

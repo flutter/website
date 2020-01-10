@@ -118,7 +118,7 @@ MaterialApp(
 
 ## Timeline
 
-TBA - The version number since the change was introduced.
+TBD: Add a version number for the release # where it landed.
 
 ## References
 
