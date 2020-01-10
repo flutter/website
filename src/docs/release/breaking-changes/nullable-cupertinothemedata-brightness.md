@@ -42,7 +42,7 @@ when a `CupertinoTheme` uses the above `CupertinoThemeData`, dark mode will be e
 
 ## Timeline
 
-TBA - The version number since the change was introduced.
+This change was made in January of 2020 after the v1.13.7 release.
 
 ## References
 Design doc:
