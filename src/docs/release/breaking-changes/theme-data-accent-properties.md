@@ -139,7 +139,7 @@ Relevant PRs:
 * [Step 2 of 2] Remove Flutter's FloatingActionButton dependency
   on ThemeData accent properties
 
-Other: 
+Other:
 
 * [Material Theme System Updates]
 
