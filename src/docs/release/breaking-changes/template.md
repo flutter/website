@@ -12,7 +12,6 @@ something next week. You've done it,
 they're looking back to figure out how to migrate their code.
 {% endcomment %}
 
-
 ## Summary
 
 {% comment %}
@@ -66,7 +65,6 @@ Code after migration:
 ```dart
 // Example of code after the change.
 ```
-
 
 ## Timeline
 

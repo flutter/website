@@ -15,14 +15,12 @@ change, a `ParentDataWidget` can be used with any `RenderObjectWidget` type as a
 the `RenderObject` of said `RenderObjectWidget` sets up the correct `ParentData` type. In this new
 world, the `Positioned` widget can be reused with a hypothetical new `SuperStack` widget.
 
-
 ## Description of change
 
 The generic type argument of `ParentDataWidget` has been changed from `RenderObjectWidget` to
 `ParentData`, and a new debug property, `debugTypicalAncestorWidgetClass`, has been added to
 `ParentDataWidget`. The latter is used for error messages to give users a better idea of the context
 a given `ParentDataWidget` is supposed to be used in.
-
 
 ## Migration guide
 
@@ -107,11 +105,9 @@ this `ParentDataWidget` subclass. It returns the type of a typical ancestor `Ren
 this `ParentDataWidget`. Most of the times, you just want to return the old generic type here
 (`FrogJar` in this example).
 
-
 ## Timeline
 
 This change was made in January of 2020 after the v1.13.7 release.
-
 
 ## References
 

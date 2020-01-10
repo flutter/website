@@ -76,7 +76,7 @@ TBD: replace this with a version number.
 ## References
 
 API documentation:
-* [`ImageCache`] 
+* [`ImageCache`]
 
 Relevant issue:
 * [Issue 45643]

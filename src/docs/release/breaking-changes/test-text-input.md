@@ -20,13 +20,13 @@ and get unexpected values.
 
 ## Description of change
 
-The state of the `WidgetTester.testTextInput` 
+The state of the `WidgetTester.testTextInput`
 is now reset before running a `testWidgets` test.
 
 ## Migration guide
 
 Tests that relied on dirty state from a previously run test must be
-updated. For example, the following test, 
+updated. For example, the following test,
 from `packages/flutter/test/material/text_field_test.dart` in the
 `'Controller can update server'` test, previously passed because
 of a combination of dirty state from previous tests and a
