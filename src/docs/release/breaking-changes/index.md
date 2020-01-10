@@ -14,7 +14,7 @@ available:
 * [TestTextInput state reset]
 * [TextInputClient currentTextEditingValue]
 * [ThemeData's accent properties]
-
+* [Generic type of ParentDataWidget changed to ParentData]
 
 [breaking change policy]: /docs/resources/compatibility
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
@@ -22,3 +22,4 @@ available:
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
+[Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
