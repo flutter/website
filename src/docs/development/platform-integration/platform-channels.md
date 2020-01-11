@@ -342,7 +342,7 @@ Start by opening the Android host portion of your Flutter app in Android Studio:
    Project view. (Note: If editing with Android Studio 2.3,
    note that the **kotlin** folder is shown as if named **java**.)
 
-Inside the `onCreate()` method, create a `MethodChannel` and call
+Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
 was used on the Flutter client side.
 
@@ -408,7 +408,7 @@ Finally, complete the `setMethodCallHandler()` method added earlier. You need to
 handle a single platform method, `getBatteryLevel()`, so test for that in the
 `call` argument. The implementation of this platform method calls the
 Android code written in the previous step, and returns a response for both
-the success and error cases using the `response` argument.
+the success and error cases using the `result` argument.
 If an unknown method is called, report that instead.
 
 Remove the following code:
