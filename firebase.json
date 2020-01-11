@@ -156,7 +156,8 @@
       { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit?usp=sharing", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit?usp=sharing", "type": 301 },
       { "source": "/go/deferred-image-decoding", "destination": "https://docs.google.com/document/d/1f-NCEF0lrHGd3DsieS1tZ_NWbYTjA4GTqESMbGFsU2U/edit?ts=5e17a77d&pli=1#", "type": 301 },
-      { "source": "/go/cupertino-switch-onoff-labels", "destination": "https://docs.google.com/document/d/1DD5gx8x0ej5AJzGxzpr4hpgpqsvcDu-ozKliGnhHm7c/edit#", "type": 301 }
+      { "source": "/go/cupertino-switch-onoff-labels", "destination": "https://docs.google.com/document/d/1DD5gx8x0ej5AJzGxzpr4hpgpqsvcDu-ozKliGnhHm7c/edit#", "type": 301 },
+      { "source": "/go/cupertino-increase-contrast", "destination": "https://docs.google.com/document/d/1kePVlqWvJu5Ph0RL6wgg67F3SATmsJ8QY5N0S1MvaGg/edit#", "type": 301 }
     ]
   }
 }
