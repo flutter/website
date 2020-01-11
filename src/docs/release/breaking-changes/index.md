@@ -20,7 +20,7 @@ available:
 [breaking change policy]: /docs/resources/compatibility
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
-[Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness.md
+[Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
