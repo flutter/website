@@ -112,7 +112,7 @@ class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEdit
   ...
 
   @override
-  TextEditingValue get currentTextEditingState => widget.textEditingController.value;
+  TextEditingValue get currentTextEditingValue => widget.textEditingController.value;
 
   @override
   void updateEditingValue(TextEditingValue value) {
