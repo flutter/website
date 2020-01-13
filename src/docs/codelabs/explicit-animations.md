@@ -46,7 +46,7 @@ Learning to create explicit animations can be conceptually daunting
 if you are new to animation in general.
 The following sections help you understand explicit animations
 by introducing you to foundational animation concepts,
-and ultimately relate those concepts to the corresponding tools
+and ultimately relating those concepts to the corresponding tools
 of explicit animations.
 
 ### What is an animation? 
@@ -147,8 +147,8 @@ it alternates the position of the ball
 between only two frames,
 switching frames once every second.
 One way to improve this animation is to use more frames,
-which will smoothen the animation
-and provide a more convincing illusion of movement.
+which smoothes out the animation
+and provides a more convincing illusion of movement.
 Consider what changes you need to make to the example
 so that, instead of having just two positions,
 the ball has five:
@@ -192,8 +192,8 @@ you can also calculate the value that
 the margin should change in each frame.
 As the preceding chart makes clear, 
 now that there are 5 frames instead of 2,
-and since the top margin value will remain
-somewhere between 0 and 100,
+and since the top margin value remains
+between 0 and 100 throughout the animation,
 each frame will either increase or decrease
 the ball's top margin value by 25.
 
@@ -380,6 +380,47 @@ Each step also provides an explanation of the specific feature of
 #### Add TickerProvider
 
 <?code-excerpt "explicit{1,5}/lib/main.dart"?>
+```diff
+--- explicit1/lib/main.dart
++++ explicit5/lib/main.dart
+@@ -1,21 +1,33 @@
+ import 'dart:async';
+-
+ import 'package:flutter/material.dart';
+
+ class BouncingBallDemo extends StatefulWidget {
+   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+ }
+
+-class _BouncingBallDemoState extends State<BouncingBallDemo> {
++class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
++  AnimationController controller;
+
+   void initState() {
+     super.initState();
++    controller = AnimationController(
++      vsync: this,
++      duration: Duration(seconds: 1),
++      lowerBound: 0,
++      upperBound: 100,
++    );
++
++    controller.addListener(() {
++      setState((){});
++    });
++
++    controller.repeat(reverse: true);
+   }
+
+   @override
+   Widget build(BuildContext context) {
+     return Container(
+-      margin: EdgeInsets.only(top: 0),
++      margin: EdgeInsets.only(top: controller.value),
+         child: Container(
+           decoration: BoxDecoration(
+             shape: BoxShape.circle,
+```
 
 
 #### Instantiate `AnimationController`
@@ -451,13 +492,15 @@ Configuration
 
 
 
-
 ---
-Todo:
-1. Create diffs w/ explanations of each diff
-2. AnimatedWidget and AnimatedBuilder?
-3. How to choose between AnimatedBuilder and AnimatedWidget.
-4. Answer question: when to use a Tween,
+TODO:
+1. Intro sections: create diffs w/ explanations for each diff
+2. Refactor all DartPad samples to use non-working defaults, & offer solution
+2. Update vanilla bouncing ball final example to use *both* upward and downward motion
+3. Explain why setState listener boilerplate is required
+4. AnimatedWidget and AnimatedBuilder?
+5. How to choose between AnimatedBuilder and AnimatedWidget.
+6. Answer question: when to use a Tween,
   if you can just use upper and lower bound args for 
   AnimationController?
   - when we need something other than a double?
