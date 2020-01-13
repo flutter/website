@@ -597,7 +597,7 @@ The `RenderPositionedBox`, which the dump says was created by a
 [`Center`][] widget (as described by the `creator` field),
 sets its child's constraints to a loose version of this:
 `BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)`. The child, a
-[`RenderPadding`][]`, further inserts these constraints to ensure
+[`RenderPadding`][], further inserts these constraints to ensure
 there is room for the padding, and thus the [`RenderConstrainedBox`][]
 has a loose constraint of `BoxConstraints(0.0<=w<=395.4,
 0.0<=h<=667.4)`. This object, which the `creator` field tells us is
