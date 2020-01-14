@@ -175,16 +175,16 @@ some/path/MyApp/
     │   ├── App.framework
     │   ├── FlutterPluginRegistrant.framework
     │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
-      ├── Profile/
-      │   ├── Flutter.framework
-      │   ├── App.framework
-      │   ├── FlutterPluginRegistrant.framework
-      │   └── example_plugin.framework
-      └── Release/
-          ├── Flutter.framework
-          ├── App.framework
-          ├── FlutterPluginRegistrant.framework
-          └── example_plugin.framework
+    ├── Profile/
+    │   ├── Flutter.framework
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework
+    └── Release/
+        ├── Flutter.framework
+        ├── App.framework
+        ├── FlutterPluginRegistrant.framework
+        └── example_plugin.framework
 ```
 
 {{site.alert.tip}}
@@ -192,18 +192,32 @@ With Xcode 11 installed, you can generate [XCFrameworks][] instead of universal 
 the flags `--xcframework --no-universal`.
 {{site.alert.end}}
 
-Embed the generated frameworks into your existing application in Xcode. For example, you can
-drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
-into your targets's build settings > General > Frameworks, Libraries, and Embedded Content. Then, select
-"Embed & Sign" from the drop-down list.
+Embed and link the generated frameworks into your existing application in Xcode.
+There are multiple ways to link and embed frameworks into an Xcode project—use the
+method that is best for your project.
 
-{% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
+### Link on the frameworks
+For example, you can drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
+into your targets' build settings > Build Phases > Link Binary With Libraries.
 
-In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to your Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`).
+In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to the Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`).
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
 
-There are multiple ways to embed frameworks into an Xcode project—use the method that is best for your project.
+### Embed the frameworks
+The generated dynamic frameworks must be embedded into your app to be loaded at runtime.
+
+{{site.alert.important}}
+Plugins may define themselves as static or dynamic. Static frameworks should be linked on, but
+never embedded. If you embed a static framework into your application, your application will not be
+publishable to the App Store and will fail with a "Found an unexpected Mach-O header code" archive error.
+{{site.alert.end}}
+
+For example, you can drag the frameworks (except for FlutterPluginRegistrant and any other
+static frameworks) from your application's Frameworks group into your targets' build settings > Build Phases > 
+Embed Frameworks. Then, select "Embed & Sign" from the drop-down list.
+
+{% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
 
 You should now be able to build the project in Xcode using `⌘B`.
 
@@ -213,7 +227,8 @@ and the Release version in your Release configuration, in your `MyApp.xcodeproj/
 replacing `path = Flutter/Release/example.framework;`
 with `path = "Flutter/$(CONFIGURATION)/example.framework";` for all added frameworks. (Note the added `"`.)
 
-You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)` to your Framework Search Paths build setting.
+You must also add `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)` to the Framework Search Paths (`FRAMEWORK_SEARCH_PATHS`)
+build setting.
 {{site.alert.end}}
 
 ## Development
