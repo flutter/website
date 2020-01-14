@@ -270,7 +270,7 @@ the only widget that is on top of both `MyCart` and `MyCatalog` is `MyApp`.
 void main() {
   runApp(
     [!ChangeNotifierProvider!](
-      builder: (context) => CartModel(),
+      create: (context) => CartModel(),
       child: MyApp(),
     ),
   );
