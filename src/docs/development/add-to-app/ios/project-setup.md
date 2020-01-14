@@ -193,8 +193,7 @@ some/path/MyApp/
 {{site.alert.end}}
 
 Embed and link the generated frameworks into your existing application in Xcode.
-There are multiple ways to link and embed frameworks into an Xcode project—use the
-method that is best for your project.
+There are multiple ways to do this—use the method that is best for your project.
 
 ### Link on the frameworks
 For example, you can drag the frameworks from `some/path/MyApp/Flutter/Release/` in Finder
