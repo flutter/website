@@ -214,7 +214,7 @@ publishable to the App Store and will fail with a "Found an unexpected Mach-O he
 {{site.alert.end}}
 
 For example, you can drag the frameworks (except for FlutterPluginRegistrant and any other
-static frameworks) from your application's Frameworks group into your targets' build settings > Build Phases > 
+static frameworks) from your application's Frameworks group into your targets' build settings > Build Phases >
 Embed Frameworks. Then, select "Embed & Sign" from the drop-down list.
 
 {% include app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
