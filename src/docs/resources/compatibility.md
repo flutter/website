@@ -54,6 +54,6 @@ migration guide.
 
 
 [documented on the Dart wiki]: {{site.github}}/dart-lang/sdk/blob/master/docs/process/breaking-changes.md
-[flutter/tests repository]: {{site.github}}flutter/tests
+[flutter/tests repository]: {{site.github}}/flutter/tests
 [flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce
 [guides for migrating code]: /docs/release/breaking-changes
