@@ -288,7 +288,7 @@ supported at all. These include:
     Color(this.i, this.j);
     final int i;
     final int j;
-    }
+  }
   ```
 
 * Generic type declarations are modified. For example, if you change:
