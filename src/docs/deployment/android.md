@@ -18,7 +18,7 @@ This page covers the following topics:
 
 * [Adding a launcher icon](#adding-a-launcher-icon)
 * [Signing the app](#signing-the-app)
-* [Enabling Proguard](#enabling-proguard)
+* [R8](#r8)
 * [Reviewing the app manifest](#reviewing-the-app-manifest)
 * [Reviewing the build configuration](#reviewing-the-build-configuration)
 * [Building the app for release](#building-the-app-for-release)
@@ -157,7 +157,7 @@ Configure signing for your app by editing the
        release {
            keyAlias keystoreProperties['keyAlias']
            keyPassword keystoreProperties['keyPassword']
-           storeFile file(keystoreProperties['storeFile'])
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
            storePassword keystoreProperties['storePassword']
        }
    }
@@ -172,63 +172,16 @@ Configure signing for your app by editing the
 
 Release builds of your app will now be signed automatically.
 
-## Enabling Proguard
+{{site.alert.note}}
+  You may need to run `flutter clean` after changing the gradle file.
+  This will prevent cached builds affecting the signing process.
+{{site.alert.end}}
 
-By default, Flutter does not obfuscate or minify the Android host.
-If you intend to use third-party Java, Kotlin, or Android libraries,
-you might want to reduce the size of the APK or protect that code from
-reverse engineering.
+## R8
 
-For information on obfuscating Dart code, see
-[Obfuscating Dart Code][] in the [Flutter wiki][].
-
-### Step 1 - Configure Proguard
-
-Create a `/android/app/proguard-rules.pro` file and
-add the rules listed below.
-
-```
-## Flutter wrapper
--keep class io.flutter.app.** { *; }
--keep class io.flutter.plugin.**  { *; }
--keep class io.flutter.util.**  { *; }
--keep class io.flutter.view.**  { *; }
--keep class io.flutter.**  { *; }
--keep class io.flutter.plugins.**  { *; }
--dontwarn io.flutter.embedding.**
-```
-
-This configuration only protects Flutter engine libraries.
-Any additional libraries (for example, Firebase) require adding
-their own rules.
-
-### Step 2 - Enable obfuscation and/or minification
-
-Open the `/android/app/build.gradle` file and locate the `buildTypes`
-definition. Inside the `release` configuration section,
-set the `minifiyEnabled` and `useProguard` flags to true.
-You must also point Proguard to the file you created in step 1:
-
-```
-android {
-
-    ...
-
-    buildTypes {
-
-        release {
-
-            signingConfig signingConfigs.release
-
-            minifyEnabled true
-            useProguard true
-
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
-        }
-    }
-}
-```
+[R8][] is the new code shrinker from Google, and it's enabled by default
+when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
+flag to `flutter build apk` or `flutter build appbundle`.
 
 {{site.alert.note}}
   Obfuscation and minification can considerably extend compile time
@@ -302,8 +255,8 @@ the app bundle will be signed.
   crashes on certain devices on Android 6.0 when building
   an app bundle.
   While the Android team is working to identify a feasible
-  solution, you might try splitting the APK as a temporary
-  workaround. For more information, see [Issue 36822][].
+  solution, you might try [splitting the APK as](#what-is-a-fat-apk)
+  a temporary workaround. For more information, see [Issue 36822][].
 {{site.alert.end}}
 
 From the command line:
@@ -317,7 +270,8 @@ The release bundle for your app is created at
 `<app dir>/build/app/outputs/bundle/release/app.aab`.
 
 By default, the app bundle contains your Dart code and the Flutter
-runtime compiled for [armeabi-v7a][] (32-bit) and [arm64-v8a][] (64-bit).
+runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
+(ARM 64-bit), and [x86-64][] (x86 64-bit).
 
 ### Test the app bundle
 
@@ -360,6 +314,7 @@ This command results in two APK files:
 
 * `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
 * `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
+* `<app dir>/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs. Such APKs are larger in
@@ -380,22 +335,6 @@ From the command line:
 
 For detailed instructions on publishing your app to the Google Play Store,
 see the [Google Play launch][play] documentation.
-
-Now that you’ve created your app, attract more users with Google Ads.
-App campaigns use machine learning to drive more installs and
-make the most of your budget.
-
-Get your campaign running in a few steps:
-
-1. Create your ad&mdash;we’ll help create your ad from your app
-   information
-1. Choose your budget&mdash;set your target cost-per-install (tCPI)
-   and daily budget cap
-1. Select your location&mdash;let us know where you’d like your ads to run
-1. Decide what action you want users to take&mdash;choose installs,
-   in-app actions, or target return on ad spend (ROAS)
-
-[Get $75 app advertising credit when you spend $25.][]
 
 ## Updating the app's version number
 
@@ -444,9 +383,10 @@ as described in [build an APK](#build-an-apk) using the
 ### What are the supported target architectures?
 
 When building your application in release mode,
-Flutter apps can be compiled for [armeabi-v7a][] (32-bit)
-and [arm64-v8a][] (64-bit). Flutter does not currently support
-building for x86 Android (See [Issue 9253][]).
+Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
+[arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
+Flutter does not currently support building for x86 Android
+(See [Issue 9253][]).
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 
@@ -479,6 +419,7 @@ The resulting app bundle or APK files are located in
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[x86_64]: {{site.android-dev}}/ndk/guides/abis#86-64
 [bundle]: {{site.android-dev}}/platform/technology/app-bundle
 [bundle2]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
@@ -497,6 +438,7 @@ The resulting app bundle or APK files are located in
 [Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [play]: {{site.android-dev}}/distribute/googleplay/start
+[R8]: {{site.android-dev}}/studio/build/shrink-code
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [versions]: {{site.android-dev}}/studio/publish/versioning

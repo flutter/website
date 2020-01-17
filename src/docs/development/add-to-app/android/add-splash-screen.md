@@ -185,7 +185,7 @@ public class SimpleSplashScreen implements SplashScreen {
         //
         // Every SplashScreen *MUST* invoke onTransitionComplete at some point
         // for the splash system to work correctly.
-        onTransitionComplete();
+        onTransitionComplete.run();
     }
 }
 ```

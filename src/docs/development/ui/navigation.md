@@ -16,6 +16,7 @@ The following [cookbook recipes cover {{page.title | downcase }}][cookbook]:
 * [Navigate to a new screen and back][]
 * [Navigate with named routes][]
 * [Send data to a new screen][]
+* [Pass arguments to a named route][]
 * [Return data from a screen][]
 * [Animating a widget across screens][]
 
@@ -24,6 +25,7 @@ The following [cookbook recipes cover {{page.title | downcase }}][cookbook]:
 [cookbook]: /docs/cookbook#navigation
 [Navigate to a new screen and back]: /docs/cookbook/navigation/navigation-basics
 [Navigate with named routes]: /docs/cookbook/navigation/named-routes
+[Pass arguments to a named route]: /docs/cookbook/navigation/navigate-with-arguments
 [Send data to a new screen]: /docs/cookbook/navigation/passing-data
 [Return data from a screen]: /docs/cookbook/navigation/returning-data
 [Animating a widget across screens]: /docs/cookbook/navigation/hero-animations

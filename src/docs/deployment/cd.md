@@ -19,7 +19,8 @@ It's recommended that you test the build and deployment process locally before
 migrating to a cloud-based system. You could also choose to perform continuous
 delivery from a local machine.
 
-1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
+1. Install fastlane `gem install fastlane` or `brew install fastlane`.
+Visit the [fastlane docs][fastlane] for more info.
 1. Create your Flutter project, and when ready, make sure that your project builds via
     * ![Android](/images/cd/android.png) `flutter build apk --release`; and
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
@@ -177,9 +178,6 @@ Also see the Flutter framework repository's [Cirrus script][].
 The following are some other options available to help automate
 the delivery of your application.
 
-* [GitLab Continuous Integration (GitLab CI/CD)][].
-  You'll need to create and configure a `.gitlab-ci.yml` file.
-  You can [find an example][] in the [flutter_redux library][].
 * [Codemagic CI/CD for Flutter][]
 * [Flutter CI/CD with Bitrise][]
 * [GitHub Actions- CI/CD on GitHub][]
@@ -195,10 +193,8 @@ the delivery of your application.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[find an example]: https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
 [Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
-[flutter_redux library]: {{site.github}}/brianegan/flutter_redux
 [GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
 [GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/

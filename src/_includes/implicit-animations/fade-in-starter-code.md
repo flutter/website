@@ -1,8 +1,6 @@
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px
 {$ begin main.dart $}
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_test/flutter_web_test.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 const owl_url = 'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
 
@@ -49,7 +47,6 @@ class MyApp extends StatelessWidget {
 }
 
 Future<void> main() async {
-  await ui.webOnlyInitializePlatform();
   runApp(
     MyApp(),
   );

@@ -150,7 +150,16 @@
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit?usp=sharing", "type": 301 },
       { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit?usp=sharing", "type": 301 },
       { "source": "/go/nshc", "destination": "https://docs.google.com/document/d/1uwHQ3ZEGN2cH6bFwa3CCXTTXCeDfOWw-kUa_B6oTMuA/edit?usp=sharing", "type": 301 },
-      { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit?usp=sharing", "type": 301 }
+      { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit?usp=sharing", "type": 301 },
+      { "source": "/go/nullable-cupertinothemedata-brightness", "destination": "https://docs.google.com/document/d/1qivq0CdkWGst5LU5iTLFUe_LTfLY84679-NxWiDgJXg/edit", "type": 301 },
+      { "source": "/go/material-theme-system-updates", "destination": "https://docs.google.com/document/d/1kzIOQN4QYfVsc5lMZgy_A-FWGXBAJBMySGqZqsJytcE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit?usp=sharing", "type": 301 },
+      { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deferred-image-decoding", "destination": "https://docs.google.com/document/d/1f-NCEF0lrHGd3DsieS1tZ_NWbYTjA4GTqESMbGFsU2U/edit?ts=5e17a77d&pli=1#", "type": 301 },
+      { "source": "/go/cupertino-switch-onoff-labels", "destination": "https://docs.google.com/document/d/1DD5gx8x0ej5AJzGxzpr4hpgpqsvcDu-ozKliGnhHm7c/edit#", "type": 301 },
+      { "source": "/go/cupertino-increase-contrast", "destination": "https://docs.google.com/document/d/1kePVlqWvJu5Ph0RL6wgg67F3SATmsJ8QY5N0S1MvaGg/edit#", "type": 301 },
+      { "source": "/go/update-text-theme-api", "destination": "https://docs.google.com/document/d/1B1s4mm6OYM7mKQ3vZfSTI2HR_KljB78gN6oBHg_zYUs/edit?usp=sharing", "type": 301 },
+      { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit?usp=sharing", "type": 301 }
     ]
   }
 }

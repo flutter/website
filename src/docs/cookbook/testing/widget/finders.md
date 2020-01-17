@@ -150,7 +150,7 @@ void main() {
 ```
 
 
-[`CommonFinders` documentation]: {{api}}/flutter_driver/CommonFinders-class.html
+[`CommonFinders` documentation]: {{api}}/flutter_test/CommonFinders-class.html
 [`find`]: {{api}}/flutter_test/find-constant.html
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
 [Introduction to widget testing]: /docs/cookbook/testing/widget/introduction

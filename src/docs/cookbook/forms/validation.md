@@ -63,7 +63,11 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: // Build this out in the next steps.
+      child: Column(
+        children: <Widget>[
+              // Add TextFormFields and RaisedButton here.
+        ]
+     )
     );
   }
 }

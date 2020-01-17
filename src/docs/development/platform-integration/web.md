@@ -25,7 +25,9 @@ No.
 
 ### Can I use Flutter plugins?
 
-Not yet.
+Yes, several plugins have web support. 
+Find an updated list of plugins on [pub.dev][] using the web filter.
+You can also add web support to existing plugins or [write your own plugins][] for the web.
 
 ### How do I file an issue about web support?
 
@@ -159,7 +161,6 @@ Check out the **#web** discussion board on [Discord][].
 Flutter engineers routinely read and respond on Discord.
 
 
-
 [Analyzing performance]: https://developers.google.com/web/tools/chrome-devtools/evaluate-performance
 [Chrome DevTools]: https://developers.google.com/web/tools/chrome-devtools
 [Debugging]: /docs/development/tools/devtools/debugger
@@ -174,3 +175,5 @@ Flutter engineers routinely read and respond on Discord.
 [Running Flutter inspector]: /docs/development/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: https://github.com/flutter/flutter/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /docs/testing#widget-tests
+[pub.dev]: https://pub.dev/flutter/packages?platform=web
+[write your own plugins]: https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1
