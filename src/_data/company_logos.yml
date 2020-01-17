@@ -36,7 +36,7 @@
 
 - name: Sonos
   logo_src: showcase/garden-logos/sonos.svg
-  alt_text: Sonos
+  alt_text: Sonos logo
 
 - name: NuBank
   logo_src: showcase/garden-logos/nubank.svg
