@@ -323,7 +323,7 @@ initial route.
 Developers that would like their cached engine to begin with a custom
 initial route can configure their cached `FlutterEngine` to use a custom initial
 route just before executing the Dart entrypoint. The following example
-demonstrates the use of an initial route with a cached engine.
+demonstrates the use of an initial route with a cached engine:
 
 {% samplecode cached-engine-with-initial-route %}
 {% sample Java %}
