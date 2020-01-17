@@ -315,7 +315,7 @@ first Flutter frame as quickly as possible.
 
 The concept of an initial route is available when configuring a 
 `FlutterActivity` or a `FlutterFragment` with a new `FlutterEngine`. However,
-`FlutterActivity` and `FlutterFragment` do not offer the concept of an initial
+`FlutterActivity` and `FlutterFragment` don't offer the concept of an initial
 route when using a cached engine. This is because a cached engine is expected
 to already be running Dart code, which means it's too late to configure the
 initial route.
