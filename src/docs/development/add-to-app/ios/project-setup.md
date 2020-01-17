@@ -208,7 +208,7 @@ In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/` to the **F
 The generated dynamic frameworks must be embedded into your app to be loaded at runtime.
 
 {{site.alert.important}}
-  Plugins may define themselves as static or dynamic. Static frameworks should be linked on, but
+  Plugins may produce [static or dynamic frameworks][]. Static frameworks should be linked on, but
   never embedded. If you embed a static framework into your application, your application is not
   publishable to the App Store and fails with a **Found an unexpected Mach-O header code** archive error.
 {{site.alert.end}}
@@ -245,4 +245,5 @@ You can now [add a Flutter screen][] to your existing application.
 [increase your app size]: /docs/resources/faq#how-big-is-the-flutter-engine
 [build modes of Flutter]: /docs/testing/build-modes
 [XCFrameworks]: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes
+[static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [add a Flutter screen]: /docs/development/add-to-app/ios/add-flutter-screen
