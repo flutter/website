@@ -170,8 +170,6 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: Add a Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: Add a Splash Screen
-            permalink: /docs/development/add-to-app/android/add-splash-screen
       - title: Adding to an iOS app
         permalink: /docs/development/add-to-app/ios
         children:
