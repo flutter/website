@@ -44,14 +44,14 @@ dev_dependencies:
 
 ## 2. Create a test file
 
-In this example, create two files: `counter.dart` and `counter_test.dart`.
+In this example, create two files: `counter.dart` and `counter_test.dart`. 
 
 The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
 In general, test files should reside inside a `test` folder located at the root
-of your Flutter application or package.
+of your Flutter application or package. Test files should always end with `_test.dart`, this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 
