@@ -44,7 +44,7 @@ dev_dependencies:
 
 ## 2. Create a test file
 
-In this example, create two files: `counter.dart` and `counter_test.dart`. 
+In this example, create two files: `counter.dart` and `counter_test.dart`.
 
 The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
