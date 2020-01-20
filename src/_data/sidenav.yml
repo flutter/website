@@ -119,6 +119,8 @@
               permalink: /docs/development/data-and-backend/state-mgmt/simple
             - title: Options
               permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: Networking & http
+          permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
