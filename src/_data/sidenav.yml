@@ -65,6 +65,11 @@
               permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
+        - title: Splash screens
+          permalink: /docs/development/ui/splash-screen
+          children:
+            - title: Android Splash Screens
+              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
@@ -165,8 +170,6 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: Add a Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: Add a Splash Screen
-            permalink: /docs/development/add-to-app/android/add-splash-screen
       - title: Adding to an iOS app
         permalink: /docs/development/add-to-app/ios
         children:

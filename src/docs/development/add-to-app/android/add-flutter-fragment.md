@@ -398,7 +398,7 @@ this brief waiting period, Flutter supports the display of a splash screen until
 Flutter renders its first frame. For instructions about how to show a splash screen,
 see the [Android splash screen guide].
 
-[Android splash screen guide]: /docs/development/add-to-app/android/add-splash-screen
+[Android splash screen guide]: /docs/development/ui/splash-screen/android-splash-screen
 
 ## Run Flutter with a specified initial route
 
