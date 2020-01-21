@@ -475,6 +475,20 @@
     }
   }
 
+  //clock alert
+  &__closed{
+    padding-bottom: 0;
+    font-size: 1.25rem;
+    &__texture{
+      background-color: $flutter-color-dark-blue;
+      background-image: none;
+    }
+    &__text{
+      font-family: $site-font-family-alt;
+      margin: 1.25rem;
+    }
+  }
+  
   // Styles for section clock__getting (Getting Started)
   &__getting {
     ol {
