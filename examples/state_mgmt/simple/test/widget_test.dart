@@ -9,7 +9,7 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
       ChangeNotifierProvider(
-        builder: (context) => CartModel(),
+        create: (context) => CartModel(),
         child: MyApp(),
       ),
     );

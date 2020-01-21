@@ -290,8 +290,8 @@ void main() {
   runApp(
     [!MultiProvider!](
       providers: [
-        ChangeNotifierProvider(builder: (context) => CartModel()),
-        Provider(builder: (context) => SomeOtherClass()),
+        ChangeNotifierProvider(create: (context) => CartModel()),
+        Provider(create: (context) => SomeOtherClass()),
       ],
       child: MyApp(),
     ),
