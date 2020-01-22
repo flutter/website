@@ -22,7 +22,7 @@ delivery from a local machine.
 1. Install fastlane `gem install fastlane` or `brew install fastlane`.
 Visit the [fastlane docs][fastlane] for more info.
 1. Create your Flutter project, and when ready, make sure that your project builds via
-    * ![Android](/images/cd/android.png) `flutter build apk --release`; and
+    * ![Android](/images/cd/android.png) `flutter build appbundle`; and
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
 1. Initialize the fastlane projects for each platform.
     * ![Android](/images/cd/android.png) In your `[project]/android`
@@ -47,7 +47,7 @@ Visit the [fastlane docs][fastlane] for more info.
 1. Set up code signing.
     * ![Android](/images/cd/android.png) On Android, there are two
       signing keys: deployment and upload. The end-users download the .apk signed
-      with the 'deployment key'. An 'upload key' is used to authenticate the .apk
+      with the 'deployment key'. An 'upload key' is used to authenticate the .aab / .apk
       uploaded by developers onto the Play Store and is re-signed with the
       deployment key once in the Play Store.
         * It's highly recommended to use the automatic cloud managed signing for
@@ -71,8 +71,8 @@ Visit the [fastlane docs][fastlane] for more info.
       [fastlane Android beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls
       `upload_to_play_store`.
-      Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
-      to use the apk `flutter build` already built.
+      Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
+      to use the app bundle `flutter build` already built.
     * ![iOS](/images/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
       Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
@@ -86,7 +86,7 @@ process to a continuous integration (CI) system.
 ### Running deployment locally
 
 1. Build the release mode app.
-    * ![Android](/images/cd/android.png) `flutter build apk --release`.
+    * ![Android](/images/cd/android.png) `flutter build appbundle`.
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
     No need to sign now since fastlane will sign when archiving.
 1. Run the Fastfile script on each platform.
@@ -160,7 +160,7 @@ secrets in pull requests that you accept and merge.
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
          * Make sure the Flutter SDK is available and set in `PATH`.
     * In the script phase of the CI task:
-         * Run `flutter build apk --release` or
+         * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
            depending on the platform.
          * `cd android` or `cd ios`
