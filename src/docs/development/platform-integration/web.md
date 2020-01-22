@@ -12,7 +12,7 @@ is available on the beta channel.
 ### How do I migrate a web app built using the flutter_web repo to the flutter repo?
 
 See [Upgrading from package:flutter_web
-to the Flutter SDK][].
+to the Flutter SDK].
 
 ### How do I create an app that also runs on the web?
 
@@ -26,8 +26,9 @@ No.
 ### Can I use Flutter plugins?
 
 Yes, several plugins have web support. 
-Find an updated list of plugins on [pub.dev][] using the web filter.
-You can also add web support to existing plugins or [write your own plugins][] for the web.
+Find an updated list of plugins on [pub.dev] using the web filter.
+You can also add web support to existing plugins or
+[write your own plugins] for the web.
 
 ### How do I file an issue about web support?
 
@@ -82,7 +83,7 @@ apps](/docs/development/ui/layout/responsive).
 ### Can I use `dart:io` with a web app?
 
 No. The file system is not accessible from the browser.
-For network functionality, use the [`http`][]
+For network functionality, use the [`http`]
 package. Note that security works somewhat
 differently because the browser (and not the app)
 controls the headers on an HTTP request.
@@ -91,18 +92,18 @@ controls the headers on an HTTP request.
 
 The browser's back button is supported for web apps.
 The forward button is not yet enabled.
-For more information, see [Issue 32248][].
+For more information, see [Issue 32248].
 
 ### How does copy/paste work?
 
 Copy/paste works on mobile. If you encounter problems,
-please [file an issue][].
+please [file an issue].
 
 ### How do I embed a Flutter web app in a web page?
 
 You can embed a Flutter web app,
 as you would embed other content,
-in an [`iframe`][] tag of an HTML file.
+in an [`iframe`] tag of an HTML file.
 In the following example, replace "URL"
 with the location of your hosted HTML page:
 
@@ -124,21 +125,21 @@ TBD
 
 ### How do I debug a web app?
 
-Use [Flutter DevTools][] for the following tasks:
+Use [Flutter DevTools] for the following tasks:
 
-* [Debugging][]
-* [Logging][]
-* [Running Flutter inspector][]
+* [Debugging]
+* [Logging]
+* [Running Flutter inspector]
 
-Use [Chrome DevTools][] for the following tasks:
+Use [Chrome DevTools] for the following tasks:
 
-* [Generating event timeline][]
-* [Analyzing performance][]&mdash;make sure to use a
+* [Generating event timeline]
+* [Analyzing performance]&mdash;make sure to use a
   profile build
 
 ### How do I test a web app?
 
-Use the normal [widget tests][].
+Use the normal [widget tests].
 
 Driver tests are not yet supported.
 
@@ -157,7 +158,7 @@ Not currently.
 
 ### How can I compare notes others who are playing with this feature?
 
-Check out the **#web** discussion board on [Discord][].
+Check out the **#web** discussion board on [Discord].
 Flutter engineers routinely read and respond on Discord.
 
 

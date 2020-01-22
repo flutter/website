@@ -12,7 +12,7 @@ This page covers the following steps for getting started with web support:
 
 ## Requirements
 - [Install the Flutter SDK on your platform][Install Flutter].
-- [Install Chrome]. Currently, debugging a web app requires the Chrome browser.
+- [Install Chrome]. Debugging a web app requires the Chrome browser.
 
 For more information, see the [web FAQ][].
 

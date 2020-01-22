@@ -13,8 +13,8 @@ diff2html: true
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
-  [writing your first Flutter app on the web][].
-  **Note that if you have [enabled web][],
+  [writing your first Flutter app on the web].
+  **Note that if you have [enabled web],
   the completed app just works on all of these devices!**
 {{site.alert.end}}
 
@@ -33,11 +33,9 @@ concepts such as variables, loops, and conditionals,
 you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, or web programming.
 
-This guide is part 1 of a two-part codelab. You can find
-[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-on the [Google Developers]({{site.codelabs}}) site.
-[Part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-can also be found on [Google Developers]({{site.codelabs}}).
+This guide is part 1 of a two-part codelab.
+You can find [part 2] on the [Google Developers] site.
+[Part 1] can also be found on [Google Developers].
 
 ## What you'll build in part 1
 {:.no_toc}
@@ -61,28 +59,26 @@ The animated GIF shows how the app works at the completion of part 1.
   * How to implement a stateful widget.
   * How to create an infinite, lazily loaded list.
 
-  In [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-  of this codelab, you'll add interactivity, modify the app's theme,
-  and add the ability to navigate to a new screen
-  (called a _route_ in Flutter).
+  In [part 2] of this codelab, you'll add interactivity,
+  modify the app's theme, and add the ability to navigate
+  to a new screen (called a _route_ in Flutter).
 {{site.alert.end}}
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll use</h4>
 
   You need two pieces of software to complete this lab: the
-  [Flutter SDK](/docs/get-started/install) and [an editor](/docs/get-started/editor).
-  This codelab assumes Android Studio, but you can use your preferred
-  editor.
+  [Flutter SDK] and [an editor].
+  This codelab assumes Android Studio,
+  but you can use your preferred editor.
 
   You can run this codelab using any of the following devices:
 
-  * A physical device ([Android](install/macos#set-up-your-android-device)
-    or [iOS](install/macos#deploy-to-ios-devices)) connected to your
-    computer and set to developer mode.
-  * The [iOS simulator](install/macos#set-up-the-ios-simulator).
-  * The [Android emulator](install/macos#set-up-the-android-emulator).
-  * A browser (currently Chrome is preferred).
+  * A physical device ([Android] or [iOS]) connected to your
+    computer and set to developer mode
+  * The [iOS simulator]
+  * The [Android emulator]
+  * A browser (Chrome is required for debugging)
 {{site.alert.end}}
 
 ## Step 1: Create the starter Flutter app
@@ -90,14 +86,12 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter
-app.](/docs/get-started/test-drive#create-app)
+[Getting Started with your first Flutter app].
 Name the project **startup_namer** (instead of _myapp_).
 
 {{site.alert.tip}}
   If you don't see "New Flutter Project" as an option in your IDE, make
-  sure you have the [plugins installed for Flutter and
-  Dart](/docs/get-started/editor).
+  sure you have the [plugins installed for Flutter and Dart].
 {{site.alert.end}}
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
@@ -146,8 +140,9 @@ where the Dart code lives.
       * Terminal: Run `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. Run the app [in the way your IDE describes](/docs/get-started/test-drive).
-    You should see either Android or iOS output, depending on your device.
+ 2. Run the app [in the way your IDE describes].
+    You should see either Android, iOS, or web output,
+    depending on your device.
 
     {% indent %}
       {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
@@ -163,9 +158,9 @@ where the Dart code lives.
 {:.no_toc}
 
 * This example creates a Material app.
-  [Material]({{site.material}}/guidelines) is a visual design language
-  that is standard on mobile and the web. Flutter offers a rich set
-  of Material widgets.
+  [Material] is a visual design language
+  that is standard on mobile and the web.
+  Flutter offers a rich set of Material widgets.
 * The `main()` method uses arrow (`=>`) notation.
   Use arrow notation for one-line functions or methods.
 * The app extends `StatelessWidget` which makes the app itself a
@@ -185,11 +180,11 @@ where the Dart code lives.
 ## Step 2: Use an external package
 
 In this step, you’ll start using an open-source package named
-[english_words][], which contains a few thousand of the most used
+[english_words], which contains a few thousand of the most used
 English words plus some utility functions.
 
 You can find the `english_words` package, as well as many other open source
-packages, on [pub.dev][].
+packages, on [pub.dev].
 
  1. The `pubspec.yaml` file manages the assets and dependencies for a Flutter app. In
     `pubspec.yaml`, add `english_words` (3.1.0 or higher) to the dependencies
@@ -269,7 +264,7 @@ packages, on [pub.dev][].
       "UpperCamelCase".
     {{site.alert.end}}
 
- 5. If the app is running, [hot reload](/docs/get-started/test-drive)
+ 5. If the app is running, [hot reload]
     to update the running app. Each time you click hot reload,
     or save the project, you should see a different word pair,
     chosen at random, in the running app.
@@ -286,7 +281,7 @@ packages, on [pub.dev][].
 
 If your app is not running correctly, look for typos.
 If you want to try some of Flutter's debugging tools,
-check out the [DevTools][] suite of debugging and profiling tools.
+check out the [DevTools] suite of debugging and profiling tools.
 If needed, use the code at the following links to get back on track.
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
@@ -320,20 +315,20 @@ a child inside the existing `MyApp` stateless widget.
       }
     ```
 
-    Notice the declaration `State<RandomWords>`. This indicates that we're
-    using the generic
-    [State]({{site.api}}/flutter/widgets/State-class.html)
+    Notice the declaration `State<RandomWords>`.
+    This indicates that we're using the generic [State]
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely
-    as the user scrolls, and favorite word pairs (in
-    [part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)),
+    as the user scrolls, and favorite word pairs (in [part 2]),
     as the user adds or removes them from the list by toggling the heart icon.
 
-    `RandomWordsState` depends on the `RandomWords` class. You'll add that next.
+    `RandomWordsState` depends on the `RandomWords` class.
+    You'll add that next.
 
  2. Add the stateful `RandomWords` widget to `main.dart`.
-    The `RandomWords` widget does little else beside creating its State class:
+    The `RandomWords` widget does little else beside creating its
+    `State` class:
 
     <?code-excerpt "lib/main.dart (RandomWords)" title indent-by="2"?>
     ```dart
@@ -361,8 +356,8 @@ a child inside the existing `MyApp` stateless widget.
       }
     ```
 
- 4. Remove the word generation code from `MyApp` by making the changes shown in
-    the following diff:
+ 4. Remove the word generation code from `MyApp`
+    by making the changes shown in the following diff:
 
     <?code-excerpt path-base="codelabs/startup_namer"?>
     <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
@@ -412,7 +407,7 @@ a child inside the existing `MyApp` stateless widget.
 
 If your app is not running correctly, look for typos.
 If you want to try some of Flutter's debugging tools,
-check out the [DevTools][] suite of debugging and profiling tools.
+check out the [DevTools] suite of debugging and profiling tools.
 If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
@@ -441,8 +436,7 @@ lazily, on demand.
     ```
 
     {{site.alert.note}}
-      Prefixing an identifier with an underscore [enforces
-      privacy]({{site.dart-site}}/guides/language/language-tour)
+      Prefixing an identifier with an underscore [enforces privacy]
       in the Dart language.
     {{site.alert.end}}
 
@@ -511,8 +505,7 @@ lazily, on demand.
 
  4. In the `RandomWordsState` class, update the `build()` method to use
     `_buildSuggestions()`, rather than directly calling the word
-    generation library.
-    ([Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
+    generation library.  ([`Scaffold`]
     implements the basic Material Design visual layout.)
     Replace the method body with the highlighted code:
 
@@ -569,7 +562,7 @@ lazily, on demand.
 
 If your app is not running correctly, look for typos.
 If you want to try some of Flutter's debugging tools,
-check out the [DevTools][] suite of debugging and profiling tools.
+check out the [DevTools] suite of debugging and profiling tools.
 If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
@@ -595,9 +588,8 @@ In this codelab, you've:
 * Created a lazily loaded, infinite scrolling list.
 
 If you would like to extend this app, proceed to
-[part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
-on the
-[Google Developers Codelabs]({{site.codelabs}}) site,
+[part 2] on the
+[Google Developers Codelabs] site,
 where you add the following functionality:
 
 * Implement interactivity by adding a clickable heart icon to save
@@ -608,8 +600,25 @@ where you add the following functionality:
 
 
 
+[an editor]: /docs/get-started/editor
+[Android]: install/macos#set-up-your-android-device
+[Android emulator]: install/macos#set-up-the-android-emulator
 [DevTools]: /docs/development/tools/devtools
 [enabled web]: /docs/get-started/web
+[enforces privacy]: {{site.dart-site}}/guides/language/language-tour
 [english_words]: {{site.pub}}/packages/english_words
+[Flutter SDK]: /docs/get-started/install
+[Getting Started with your first Flutter app]: /docs/get-started/test-drive#create-app
+[Google Developers Codelabs]: {{site.codelabs}}
+[hot reload]: /docs/get-started/test-drive
+[in the way your IDE describes]: /docs/get-started/test-drive
+[iOS]: install/macos#deploy-to-ios-devices
+[iOS simulator]: install/macos#set-up-the-ios-simulator
+[Material]: {{site.material}}/guidelines
+[Part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[plugins installed for Flutter and Dart]: /docs/get-started/editor
 [pub.dev]: {{site.pub}}
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
 [writing your first Flutter app on the web]: /docs/get-started/codelab-web
