@@ -42,15 +42,15 @@ has met the quality bar to become a Flutter Favorite.
 The current committee members (in alphhabetical order)
 are as follows:
 
-* Pooja Bhaumik
-* Hillel Coren
-* Thea Flowers
-* Simon Lightfoot
-* Lara Martín
 * Chris Sells (committee chair)
-* Michael Thomsen
 * Diego Velasquez
+* Hillel Coren
 * Kyle Wang
+* Lara Martín
+* Michael Thomsen
+* Pooja Bhaumik
+* Simon Lightfoot
+* Thea Flowers
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
