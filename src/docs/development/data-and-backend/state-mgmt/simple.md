@@ -8,22 +8,20 @@ next:
   path: /docs/development/data-and-backend/state-mgmt/options
 ---
 
-Now that you know about [declarative UI
-programming](/docs/development/data-and-backend/state-mgmt/declarative)
-and the difference between [ephemeral and app
-state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
+Now that you know about [declarative UI programming]
+and the difference between [ephemeral and app state],
 you are ready to learn about simple app state management.
 
 On this page, we are going to be using the `provider` package.
 If you are new to Flutter and you don't have a strong reason to choose
 another approach (Redux, Rx, hooks, etc.), this is probably the approach
-you should start with. `provider` is easy to understand and it doesn't
-use much code. It also uses concepts that are applicable in every other
-approach.
+you should start with. The `provider` package is easy to understand
+and it doesn't use much code.
+It also uses concepts that are applicable in every other approach.
 
-That said, if you have strong background in state management from other
-reactive frameworks, you will find packages and tutorials listed on the
-[following page](/docs/development/data-and-backend/state-mgmt/options).
+That said, if you have a strong background in
+state management from other reactive frameworks,
+you can find packages and tutorials listed on the [options page].
 
 ## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
 
@@ -46,10 +44,11 @@ Here's the app visualized as a widget tree.
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
-So we have at least 6 subclasses of `Widget`. Many of them will need
+So we have at least 6 subclasses of `Widget`. Many of them need
 access to state that "belongs" elsewhere. For example, each
-`MyListItem` will want to be able to add to cart. It might also want
-to see if the item that it's displaying is already in the cart.
+`MyListItem` needs to be able to add itself to the cart.
+It might also want to see whether the currently displayed item
+is already in the cart.
 
 This takes us to our first question: where should we put the current
 state of the cart?
@@ -57,7 +56,8 @@ state of the cart?
 
 ## Lifting state up
 
-In Flutter, it makes sense to keep the state above the widgets that use it.
+In Flutter,
+it makes sense to keep the state above the widgets that use it.
 
 Why? In declarative frameworks like Flutter, if you want to change the UI,
 you have to rebuild it. There is no easy way to have
@@ -75,7 +75,8 @@ void myTapHandler() {
 }
 ```
 
-Even if you get the above code to work, you will then have to deal
+Even if you get the above code to work,
+you would then have to deal
 with the following in the `MyCart` widget:
 
 <!-- skip -->
@@ -145,14 +146,14 @@ to access it.
 
 ## Accessing the state
 
-When user clicks on one of the items in the catalog,
+When a user clicks on one of the items in the catalog,
 it’s added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
 A simple option is to provide a callback that `MyListItem` can call
 when it is clicked. Dart's functions are first class objects,
 so you can pass them around any way you want. So, inside
-`MyCatalog` you can have the following:
+`MyCatalog` you can define the following:
 
 <?code-excerpt "state_mgmt/simple/lib/src/passing_callbacks.dart (methods)"?>
 ```dart
@@ -236,7 +237,7 @@ model itself and its business logic.
 
 `ChangeNotifier` is part of `flutter:foundation` and doesn't depend on
 any higher-level classes in Flutter. It's easily testable (you don't even need
-to use [widget testing](/docs/testing#widget-tests) for it). For example,
+to use [widget testing] for it). For example,
 here's a simple unit test of `CartModel`:
 
 <?code-excerpt "state_mgmt/simple/test/model_test.dart (test)"?>
@@ -258,7 +259,7 @@ test('adding item increases total cost', () {
 a `ChangeNotifier` to its descendants. It comes from the `provider` package.
 
 We already know where to put `ChangeNotifierProvider`: above the widgets that
-will need to access it. In the case of `CartModel`, that means somewhere
+need to access it. In the case of `CartModel`, that means somewhere
 above both `MyCart` and `MyCatalog`.
 
 You don't want to place `ChangeNotifierProvider` higher than necessary
@@ -277,9 +278,9 @@ void main() {
 }
 ```
 
-Note that we're defining a builder which will create a new instance
+Note that we're defining a builder that creates a new instance
 of `CartModel`. `ChangeNotifierProvider` is smart enough _not_ to rebuild
-`CartModel` unless absolutely necessary. It will also automatically call
+`CartModel` unless absolutely necessary. It also automatically calls
 `dispose()` on `CartModel` when the instance is no longer needed.
 
 If you want to provide more than one class, you can use `MultiProvider`:
@@ -331,8 +332,8 @@ The builder is called with three arguments. The first one is `context`,
 which you also get in every build method.
 
 The second argument of the builder function is the instance of
-the `ChangeNotifier`. It's what we were asking for in the first place. You can
-use the data in the model to define what the UI should look like
+the `ChangeNotifier`. It's what we were asking for in the first place.
+You can use the data in the model to define what the UI should look like
 at any given point.
 
 The third argument is `child`, which is there for optimization.
@@ -405,25 +406,24 @@ We could use `Consumer<CartModel>` for this,
 but that would be wasteful. We'd be asking the framework to
 rebuild a widget that doesn't need to be rebuilt.
 
-For this use case, we can use `Provider.of`, with the `listen` parameter
-set to `false`.
+For this use case, we can use `Provider.of`,
+with the `listen` parameter set to `false`.
 
 <?code-excerpt "state_mgmt/simple/lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
-Provider.of<CartModel>(context, [!listen: false!]).add(item);
+Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```
 
-Using the above line in a build method will not cause this widget to
+Using the above line in a build method won't cause this widget to
 rebuild when `notifyListeners` is called.
 
 
 ## Putting it all together
 
-You can [check out the
-example]({{site.github}}/flutter/samples/tree/master/provider_shopper)
-covered in this article. If you want something simpler,
-you can see how the simple Counter app looks like when [built with
-`provider`](https://github.com/flutter/samples/tree/master/provider_counter).
+You can [check out the example] covered in this article.
+If you want something simpler,
+see what the simple Counter app looks like when
+[built with `provider`].
 
 When you're ready to play around with `provider` yourself,
 don't forget to add the dependency on it to your `pubspec.yaml` first.
@@ -446,3 +446,21 @@ dev_dependencies:
 
 Now you can `import 'package:provider/provider.dart';`
 and start building.
+
+## Our example {% asset development/data-and-backend/state-mgmt/model-shopper-screencast alt="An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation." class='site-image-right' %}
+
+For illustration, consider the following simple app.
+
+The app has two separate screens: a catalog,
+and a cart (represented by the `MyCatalog`,
+and `MyCart` widgets, respectively). It could be a shopping app,
+but you can imagine the same structure in a simple social networking
+app (replace catalog for "wall" and cart for "favorites").
+
+
+[built with `provider`]: {{site.github}}/flutter/samples/tree/master/provider_counter
+[check out the example]: {{site.github}}/flutter/samples/tree/master/provider_shopper
+[declarative UI programming]: /docs/development/data-and-backend/state-mgmt/declarative
+[ephemeral and app state]: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+[options page]: /docs/development/data-and-backend/state-mgmt/options
+[widget testing]: /docs/testing#widget-tests

@@ -25,17 +25,24 @@ reflect the current state of your app:
 Source drawing for the png above: : https://docs.google.com/drawings/d/1RDcR5LyFtzhpmiT5-UupXBeos2Ban5cUTU0-JujS3Os/edit?usp=sharing
 {% endcomment %}
 
-When the state of your app changes (for example, the user flips a switch in the
-settings screen), you change the state, and that triggers a redraw of the user
-interface. There is no imperative changing of the UI itself (like
-`widget.setText`) — you change the state, and the UI rebuilds from scratch.
+When the state of your app changes
+(for example, the user flips a switch in the settings screen),
+you change the state, and that triggers a redraw of the user interface.
+There is no imperative changing of the UI itself
+(like `widget.setText`)&mdash;you change the state,
+and the UI rebuilds from scratch.
 
-Read more about the declarative approach to UI programming [in
-the get started guide](/docs/get-started/flutter-for/declarative).
+Read more about the declarative approach to UI programming
+[in the get started guide].
 
-The declarative style of UI programming has many benefits. Remarkably, there is
-only one code path for any state of the UI. You describe what the UI should look
-like for any given state, once — and that is it.
+The declarative style of UI programming has many benefits.
+Remarkably, there is only one code path for any state of the UI.
+You describe what the UI should look
+like for any given state, once&mdash;and that is it.
 
-At first, this style of programming might not seem as intuitive as the
+At first,
+this style of programming might not seem as intuitive as the
 imperative style. This is why this section is here. Read on.
+
+
+[in the get started guide]: /docs/get-started/flutter-for/declarative
