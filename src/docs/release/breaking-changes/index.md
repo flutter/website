@@ -12,6 +12,7 @@ available:
 * [Generic type of ParentDataWidget changed to ParentData]
 * [ImageCache large images]
 * [Nullable `CupertinoTheme.brightness`]
+* [Rebuild optimization for OverlayEntries and Routes]
 * [Scrollable AlertDialog]
 * [TestTextInput state reset]
 * [TextInputClient currentTextEditingValue]
@@ -21,6 +22,7 @@ available:
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
 [Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
+[Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
