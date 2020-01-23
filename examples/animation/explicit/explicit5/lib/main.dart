@@ -1,11 +1,12 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class BouncingBallDemo extends StatefulWidget {
   _BouncingBallDemoState createState() => _BouncingBallDemoState();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
+class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
   AnimationController controller;
 
   void initState() {

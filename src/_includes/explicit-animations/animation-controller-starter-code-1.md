@@ -1,12 +1,14 @@
+```run-dartpad:theme-light:mode-flutter:split-100:width-100%:height-500px
+{$ begin main.dart $}
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class BouncingBallDemo extends StatefulWidget {
-  _BouncingBallDemoState createState() => _BouncingBallDemoState();
+class AnimationControllerDemo extends StatefulWidget {
+  _AnimationControllerDemo createState() => _AnimationControllerDemo();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
+class _AnimationControllerDemo extends State<AnimationControllerDemo> with SingleTickerProviderStateMixin {
   AnimationController controller;
 
   void initState() {
@@ -19,24 +21,15 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
     );
 
     controller.addListener(() {
-      setState((){});
+      print(controller.value);
     });
 
+    controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 0),
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.green,
-          ),
-          width: 40.0,
-          height: 40.0,
-        )
-      );
+    return Container();
   }
 }
 
@@ -47,7 +40,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: BouncingBallDemo(),
+          child: AnimationControllerDemo(),
         ),
       ),
     );
@@ -59,3 +52,5 @@ Future<void> main() async {
     MyApp(),
   );
 }
+{$ end main.dart $}
+```

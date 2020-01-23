@@ -20,8 +20,8 @@ than can be achieved using implicit animations.
 To get the most out of this codelab,
 you should have basic knowledge of the following:
 
-* How to [make a Flutter app](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/).
-* How to use [stateful widgets](https://flutter.dev/docs/development/ui/interactive#stateful-and-stateless-widgets).
+* How to [make a Flutter app].
+* How to use [stateful widgets].
 
 This codelab covers the following material:
 
@@ -31,25 +31,26 @@ This codelab covers the following material:
 
 
 ## What are explicit animations?
-Explicit animations provide controls for leveraging the
-buildings blocks of Flutter's animation library to enable you to
-create effects that you can't achieve using
-[implicit animations](https://flutter.dev/docs/development/ui/animations/implicit-animations).
-Explicit animations provide a set of controls for telling
-Flutter how to rapidly rebuild the widget tree while gradually
-changing widget properties to create animation effects.
 
+Explicit animations are a set of controls that enable you
+to precisely tell Flutter how to rapidly rebuild the widget tree
+while changing widget properties
+to create an illusion of motion.
+These controls enable you to create effects that you can't achieve
+using [implicit animations].
 
 ## Animations Concepts
 
-Learning to create explicit animations can be conceptually daunting
+Learning to create explicit animations can be daunting
 if you are new to animation in general.
-The following sections help you understand explicit animations
-by introducing you to foundational animation concepts,
-and ultimately relating those concepts to the corresponding tools
+The following section helps you understand explicit animations
+by introducing you to foundational animation concepts.
+The subsequent sections relate those concepts to the corresponding tools
 of explicit animations.
+If you are already experienced with animation, you can skip this
+section and move on to the AnimationController section.
 
-### What is an animation? 
+### What is an animation?
 
 Suppose you want to create your own Flutter animation
 without using the animations library.
@@ -88,7 +89,7 @@ you would say that the animation
 within a sequence of other still images
 to create the illusion of motion.**
 
-[ image: a frame in a flipbook ]
+[ image: a frame in a flip book ]
 
 In this case, the first frame consists of a
 ball centered on the screen,
@@ -100,7 +101,7 @@ the top margin property.
 
 Even this though example doesn't use Flutter's
 animation library, it creates an animation
-in fundamentally the same way: 
+in fundamentally the same way:
 by telling Flutter to rebuild its widget tree
 so as to rapidly move between frames
 over a specified period of time.
@@ -121,7 +122,7 @@ Try to come up with an answer before diving into the next section.
 **Quick review:**
 * A frame is a single still image that can be used
   within a sequence of other still images
-  to create the illusion of motion. 
+  to create the illusion of motion.
 * In Flutter, you can think of a single frame as
   a static configuration of a widget tree.
 * An animation is a sequence of frames that,
@@ -136,7 +137,7 @@ Try to come up with an answer before diving into the next section.
   of the widget tree.
 * The first example uses a timer to trigger
   a change in the top margin of the Bouncing Ball
-  once every second. 
+  once every second.
 {{site.alert.end}}
 
 ### Frame rate
@@ -170,7 +171,7 @@ the ball has five:
 Notice that, now that you are using more frames,
 in order to keep the ball bouncing at the same rate
 (one bounce per second)
-you  need to increase the frame rate. 
+you  need to increase the frame rate.
 **The frame rate is the rate of frames per second.**
 In this case, you are increasing the frame rate
 from 2 frames per second (fps) to 4 fps.
@@ -181,7 +182,7 @@ so you only need to count it once
 for the purpose of determining the frame rate.
 
 {{site.alert.secondary}}
-frame rate =  # of frames / second 
+frame rate =  # of frames / second
 
 (In this case, 4 fps)
 {{site.alert.end}}
@@ -190,7 +191,7 @@ Now that you have calculated the updated frame rate
 for this animation,
 you can also calculate the value that
 the margin should change in each frame.
-As the preceding chart makes clear, 
+As the preceding chart makes clear,
 now that there are 5 frames instead of 2,
 and since the top margin value remains
 between 0 and 100 throughout the animation,
@@ -211,7 +212,7 @@ you now have enough information
 to update the preceding example
 by doubling both the number of frames
 and the frame rate that the animation uses.
-Before diving into the following example, 
+Before diving into the following example,
 think about how you might refactor the preceding example
 using these updated parameters.
 You can use the DartPad editor in the preceding example
@@ -275,17 +276,17 @@ Here's a few hints:
 {% include explicit-animations/bouncing-ball-starter-code-3.md %}
 
 At 60 fps, this final version of the bouncing ball animation
-looks smoother than in all prior examples. 
+looks smoother than in all prior examples.
 
 Notice that this example only creates half of the animation&mdash;the
 ball moves down, but not back up again!
 Wouldn't it be nice to have a declarative interface
-for controlling how our animation proceeds across the sequence of frames? 
+for controlling how our animation proceeds across the sequence of frames?
 This way, we could easily represent when to start the animation,
 pause it, play forward, play backward, stop it, or repeat it indefinitely.
 
 {{site.alert.bonus}}
-In the prior example, the rate of change for the 
+In the prior example, the rate of change for the
 bouncing ball's top margin value is linear
 (the margin changes by the same amount between each frame).
 How would you change this example to make it possible to interpolate
@@ -300,50 +301,99 @@ Can you think of a way to:
 2. Repeat the animation indefinitely?
 {{site.alert.end}}
 
-## AnimationController 
+## AnimationController
 
-This section builds upon the prior sections by providing
-an introduction to using `AnimationController`
+This section builds upon the prior sections by
+introducing the `AnimationController` class
 with explanations about how its capabilities encompass
 fundamental animations concepts covered in the previous sections.
-Since `AnimationController` is the central class
-for building explicit animations,
-it has a few different capabilities, each with
-their own separate API.
-These capabilities fall into four broad categories:
 
-* **Set the animation's duration and bounds**
+### Introduction
+
+The preceding Animation Concepts section uses an `interpolate()`
+method to generate frame values between a starting value and an
+ending value of the `margin` property.
+The example uses each interpolated value in a separate frame
+to animate a circle up and down,
+making it appear like a bouncing ball.
+The first thing to know about `AnimationController`
+is that, within this process, `AnimationController`
+handles the interpolation part for you.
+The following example renders a blank screen,
+but uses `AnimationController` to print values from 0 to 100
+at 60fps over 1 second.
+Click **Run**, then check the values that are
+being printed by clicking the **Console** area at the bottom
+of the editor:
+
+{% include explicit-animations/animation-controller-starter-code-1.md %}
+
+**AnimationController interpolates the `value` property for you**.
 
   `AnimationController`
   abstracts away the the work of interpolation,
   allowing you to reason about and create an animation
   in terms of its duration, and the starting and ending
   values of the property that you are animating:
+
+This example demonstrates the following
+important concepts for using `AnimationController`:
+
+**AnimationController doesn't interact with Flutter UI widgets on its own.**
+
+#### Defining animations
+
+In this example,
+the AnimationController constructor takes the optional parameters `lowerBound`,
+and `upperBound`, and `duration`:
+
+Instantiate AnimationController:
+
   ```dart
   controller = AnimationController(
-    duration: const Duration(seconds: 1),
     lowerBound: 0,
     upperBound: 100,
-    vsync: this,
+    duration: const Duration(seconds: 1),
+    vsync: this, // Don't worry about vsync for now.
   );
   ```
-* **Access the animation value**
+Notice that when you instantiate AnimationController,
+you define an animation in terms of its starting value (`lowerBound`),
+its ending value (`upperBound`), and the amount of time it takes to change
+from one to the other (`duration`).
 
-   ```
+The default values for `lowerBound` and `upperBound`
+are 0 and 1, respectively; `duration` doesn't have a default value.
+These aren’t the only parameters
+that the AnimationController constructor takes&mdash;`vsync` and other parameters
+are covered in subsequent sections.
+
+#### Access animation values with controller.value
+AnimationController provides a `value` property.
+You can access this property directly&mdash;there is no getter method for `value`:
+   ```dart
    print(controller.value);
    ```
-* **Trigger and sequence controls**
+By default, the `value` property begins at the `lowerBound` value.
+You can set the starting value of `controller.value` to a specific
+value between `lowerBound` and `upperBound` using the `from` parameter.
+Once triggered, the AnimationController will automatically update the `value`
+property to a new value.
 
+#### Trigger, sequence, and terminate animations:
+**forward(), repeat(), reverse() and stop()**
   `AnimationController` provides the
   `forward()`, `repeat()`, `reverse()`, and `stop()` methods
   for triggering, repeating, playing in reverse, and halting an animation:
   ```dart
   controller.forward();
   ```
-* **Listen for changes in the animation value**
+
+#### Listen to animations
+**addListener()**
 
   `AnimationController` allows you to listen for changes
-  in the value you are animating.
+  in the value you are animating:
   ```dart
     controller.addListener(() {
       print("current value: ${controller.value}");
@@ -362,13 +412,14 @@ These capabilities fall into four broad categories:
   void initState() {
     super.initState();
     controller = AnimationController( vsync: this, duration: Duration(seconds: 3));
-    
+
     ...
 
   }
   ```
 
 The following sections cover each of these capabilities in detail.
+
 
 ### Create your first explicit animation with AnimationController
 
@@ -378,22 +429,96 @@ Each step also provides an explanation of the specific feature of
 `AnimationController` that is being introduced.
 
 #### Add TickerProvider
+<?code-excerpt "explicit{1,2}/lib/main.dart"?>
+```diff
+--- explicit1/lib/main.dart
++++ explicit2/lib/main.dart
+@@ -6,7 +6,7 @@
+   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+ }
+
+-class _BouncingBallDemoState extends State<BouncingBallDemo> {
++class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
+
+   void initState() {
+     super.initState();
+```
+
+#### Instantiate `AnimationController`
+<?code-excerpt "explicit{2,3}/lib/main.dart"?>
+```diff
+--- explicit2/lib/main.dart
++++ explicit3/lib/main.dart
+@@ -7,9 +7,17 @@
+ }
+
+ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
++  AnimationController controller;
+
+   void initState() {
+     super.initState();
++    controller = AnimationController(
++      vsync: this,
++      duration: Duration(seconds: 1),
++      lowerBound: 0,
++      upperBound: 100,
++    );
++
+   }
+
+   @override
+```
+
+#### Add listener(s)
+<?code-excerpt "explicit{3,4}/lib/main.dart"?>
+```diff
+--- explicit3/lib/main.dart
++++ explicit4/lib/main.dart
+@@ -18,6 +18,10 @@
+       upperBound: 100,
+     );
+
++    controller.addListener(() {
++      setState((){});
++    });
++
+   }
+
+   @override
+```
+
+#### Trigger the animation
+<?code-excerpt "explicit{4,5}/lib/main.dart"?>
+```diff
+--- explicit4/lib/main.dart
++++ explicit5/lib/main.dart
+@@ -22,12 +22,13 @@
+       setState((){});
+     });
+
++    controller.repeat(reverse: true);
+   }
+
+   @override
+   Widget build(BuildContext context) {
+     return Container(
+-      margin: EdgeInsets.only(top: 0),
++      margin: EdgeInsets.only(top: controller.value),
+         child: Container(
+           decoration: BoxDecoration(
+             shape: BoxShape.circle,
+```
 
 <?code-excerpt "explicit{1,5}/lib/main.dart"?>
 ```diff
 --- explicit1/lib/main.dart
 +++ explicit5/lib/main.dart
-@@ -1,21 +1,33 @@
- import 'dart:async';
--
- import 'package:flutter/material.dart';
-
- class BouncingBallDemo extends StatefulWidget {
+@@ -6,16 +6,29 @@
    _BouncingBallDemoState createState() => _BouncingBallDemoState();
  }
 
 -class _BouncingBallDemoState extends State<BouncingBallDemo> {
-+class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
++class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
 +  AnimationController controller;
 
    void initState() {
@@ -422,16 +547,24 @@ Each step also provides an explanation of the specific feature of
              shape: BoxShape.circle,
 ```
 
-
-#### Instantiate `AnimationController`
-
-#### Add listener(s)
-
 #### Prevent memory leaks
+<?code-excerpt "explicit{5,6}/lib/main.dart"?>
+```diff
+--- explicit5/lib/main.dart
++++ explicit6/lib/main.dart
+@@ -39,6 +39,11 @@
+         )
+       );
+   }
++
++  void dispose() {
++    controller.dispose();
++    super.dispose();
++  }
+ }
 
-#### Trigger the animation
-
-
+ class MyApp extends StatelessWidget {
+```
 
 The following example provides an easy way to see how
 `AnimationController` interpolates values for you:
@@ -475,10 +608,10 @@ Configuration
 ---
 **Footnotes:**
 
-<sup><a name="a1">1</a></sup> 
+<sup><a name="a1">1</a></sup>
   In this example, you are creating an animation effect
   that *only looks* like it is running at two frames per second.
-  In reality, Flutter is running this example at ~60 frames per second. 
+  In reality, Flutter is running this example at ~60 frames per second.
 
 <sup><a name="a2">2</a></sup>
   Flutter aims to provide 60 fps performance,
@@ -488,6 +621,9 @@ Configuration
 
 
 [performance profiling]: /docs/perf/rendering/ui-performance
+[implicit animations]: /docs/development/ui/animations/implicit-animations
+[make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/
+[stateful widgets]: https://flutter.dev/docs/development/ui/interactive#stateful-and-stateless-widgets
 
 
 
@@ -501,6 +637,6 @@ TODO:
 4. AnimatedWidget and AnimatedBuilder?
 5. How to choose between AnimatedBuilder and AnimatedWidget.
 6. Answer question: when to use a Tween,
-  if you can just use upper and lower bound args for 
+  if you can just use upper and lower bound args for
   AnimationController?
   - when we need something other than a double?
