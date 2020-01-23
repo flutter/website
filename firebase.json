@@ -164,7 +164,8 @@
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit?usp=sharing", "type": 301 },
       { "source": "/go/plugins-list-migration", "destination": "https://docs.google.com/document/d/1itYyHax0bzL3-hRtQd1zRPqJfOrLYih1fW0nPDJDytc/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
-      { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 }
+      { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 },
+      { "source": "/go/platform-based-key-events", "destination": "https://docs.google.com/document/d/1FDuxxEh810XpY561SgeiyUR0gU2eVz5kRpCFI55ibec/edit?usp=sharing", "type": 301 }
     ]
   }
 }
