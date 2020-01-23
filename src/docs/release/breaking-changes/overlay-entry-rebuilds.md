@@ -13,8 +13,8 @@ uncover missing calls to `setState` in your app.
 Prior to this change an `OverlayEntry` would rebuild when a new opaque entry
 was added on top of it or removed above it. These rebuilds were unnecessary
 because they were not triggered by a change in state of the affected
-`OverlayEntry`. This change optimized how we handle the addition and removal of
-`OverlayEntry` and removed the unnecessary rebuilds to improve performance.
+`OverlayEntry`. This change optimizes how we handle the addition and removal of
+`OverlayEntry`s and removes the unnecessary rebuilds to improve performance.
 
 Since the Navigator internally puts each `Route` into an `OverlayEntry` this
 change also applies to `Route` transitions: If an opaque `Route` is pushed on
@@ -29,7 +29,7 @@ see issues, which can be resolved by wrapping any state change in a `setState`
 call.
 
 Furthermore, the change slightly modifies the shape of the widget tree: Prior
-to this change, the `OverlayEntry`s where wrapped in a `Stack` widget. The
+to this change, the `OverlayEntry`s were wrapped in a `Stack` widget. The
 explicit `Stack` widget has been removed from the widget hierarchy.
 
 ## Migration guide
@@ -46,7 +46,6 @@ Code before migration:
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
-
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -66,7 +65,6 @@ Code after migration:
 ```dart
 class FooState extends State<Foo> {
   String buttonLabel = 'Click Me';
-
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
