@@ -49,11 +49,11 @@ class FooState extends State<Foo> {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onTap: () {
+      onPressed: () async {
         // Illegal state modification that should be wrapped in setState.
-        buttonLabel = Navigator.pushNamed(context, '/bar');
-      }
-      child: Text(buttonLabel);
+        buttonLabel = await Navigator.pushNamed(context, '/bar');
+      },
+      child: Text(buttonLabel),
     );
   }
 }
@@ -68,13 +68,13 @@ class FooState extends State<Foo> {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onTap: () {
-        // Illegal state modification that should be wrapped in setState.
+      onPressed: () async {
+        final newLabel = await Navigator.pushNamed(context, '/bar');
         setState(() {
-          buttonLabel = Navigator.pushNamed(context, '/bar');
+          buttonLabel = newLabel;
         });
-      }
-      child: Text(buttonLabel);
+      },
+      child: Text(buttonLabel),
     );
   }
 }
