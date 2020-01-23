@@ -1,5 +1,3 @@
-#### Initial route with a cached engine
-
 The concept of an initial route is available when configuring a 
 `FlutterActivity` or a `FlutterFragment` with a new `FlutterEngine`. However,
 `FlutterActivity` and `FlutterFragment` don't offer the concept of an initial
@@ -22,15 +20,12 @@ public class MyApplication extends Application {
     super.onCreate();
     // Instantiate a FlutterEngine.
     flutterEngine = new FlutterEngine(this);
-
     // Configure an initial route.
     flutterEngine.getNavigationChannel().setInitialRoute("your/route/here");
-
     // Start executing Dart code to pre-warm the FlutterEngine.
     flutterEngine.getDartExecutor().executeDartEntrypoint(
       DartEntrypoint.createDefault()
     );
-
     // Cache the FlutterEngine to be used by FlutterActivity or FlutterFragment.
     FlutterEngineCache
       .getInstance()
@@ -43,21 +38,16 @@ public class MyApplication extends Application {
 ```kotlin
 class MyApplication : Application() {
   lateinit var flutterEngine : FlutterEngine
-
   override fun onCreate() {
     super.onCreate()
-
     // Instantiate a FlutterEngine.
     flutterEngine = FlutterEngine(this)
-
     // Configure an initial route.
     flutterEngine.navigationChannel.initialRoute = "your/route/here";
-
     // Start executing Dart code to pre-warm the FlutterEngine.
     flutterEngine.dartExecutor.executeDartEntrypoint(
       DartExecutor.DartEntrypoint.createDefault()
     )
-
     // Cache the FlutterEngine to be used by FlutterActivity or FlutterFragment.
     FlutterEngineCache
       .getInstance()

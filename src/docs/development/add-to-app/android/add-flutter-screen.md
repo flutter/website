@@ -254,10 +254,9 @@ the display of Flutter content.
   release build.
 {{site.alert.end}}
 
-{% include add-flutter-screen.md -%}
+## Initial route with a cached engine
 
-
-
+{% include initial-route-cached-engine.md -%}
 
 ## Add a translucent Flutter screen
 

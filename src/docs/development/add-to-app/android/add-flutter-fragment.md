@@ -311,7 +311,9 @@ pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
 By providing a pre-warmed `FlutterEngine`, as previously shown, your app renders the
 first Flutter frame as quickly as possible.
 
-{% include add-flutter-screen.md -%}
+### Initial route with a cached engine
+
+% include initial-route-cached-engine.md -%}
 
 ## Display a splash screen
 
