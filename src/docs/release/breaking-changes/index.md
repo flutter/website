@@ -11,6 +11,7 @@ available:
 
 * [Generic type of ParentDataWidget changed to ParentData]
 * [ImageCache large images]
+* [MouseTracker no longer attaches annotations]
 * [Nullable `CupertinoTheme.brightness`]
 * [Rebuild optimization for OverlayEntries and Routes]
 * [Scrollable AlertDialog]
@@ -21,6 +22,7 @@ available:
 [breaking change policy]: /docs/resources/compatibility
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
+[MouseTracker no longer attaches annotations]: /docs/release/breaking-changes/mouse-tracker-no-longer-attaches-annotations
 [Nullable `CupertinoTheme.brightness`]: /docs/release/breaking-changes/nullable-cupertinothemedata-brightness
 [Rebuild optimization for OverlayEntries and Routes]: /docs/release/breaking-changes/overlay-entry-rebuilds
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
