@@ -5,7 +5,7 @@ description: MouseTracker no longer relies on annotation attachment to perform t
 
 ## Summary
 
-Remove `MouseTracker`'s methods `attachAnnotation`, `detachAnnotation`, and
+Removed `MouseTracker`'s methods `attachAnnotation`, `detachAnnotation`, and
 `isAnnotationAttached`.
 
 ## Context
