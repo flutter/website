@@ -20,12 +20,12 @@ than can be achieved using implicit animations.
 To get the most out of this codelab,
 you should have basic knowledge of the following:
 
-* How to [make a Flutter app].
-* How to use [stateful widgets].
+* How to [make a Flutter app][].
+* How to use [stateful widgets][].
 
 This codelab covers the following material:
 
-* Animations concepts.
+* Animation concepts.
 * How to use AnimationController to implement explicit animations.
 * How to choose between implicit and explicit animations.
 
@@ -37,9 +37,9 @@ to precisely tell Flutter how to rapidly rebuild the widget tree
 while changing widget properties
 to create an illusion of motion.
 These controls enable you to create effects that you can't achieve
-using [implicit animations].
+using [implicit animations][].
 
-## Animations Concepts
+## Animation Concepts
 
 Learning to create explicit animations can be daunting
 if you are new to animation in general.
@@ -73,7 +73,7 @@ As a viewer, this approach leaves a lot to be desired.
 The ball only has two positions,
 so the animation looks pretty choppy&mdash;you could
 easily mistake the animation for a glitch.
-To describe the problem with this example in animations terms,
+To describe this problem in animation terms,
 you would say that the animation
 *only has two frames:*<sup><a href="#a1">1</a></sup>
 
@@ -89,7 +89,7 @@ you would say that the animation
 within a sequence of other still images
 to create the illusion of motion.**
 
-[ image: a frame in a flip book ]
+[//]: # image: a frame in a flip book
 
 In this case, the first frame consists of a
 ball centered on the screen,
@@ -97,7 +97,7 @@ and the second frame consists of the same ball
 placed further down on the screen using
 the top margin property.
 
-[ image: a frame in Flutter ]
+[//]: # image: a frame in Flutter
 
 Even this though example doesn't use Flutter's
 animation library, it creates an animation
@@ -303,12 +303,205 @@ Can you think of a way to:
 
 ## AnimationController
 
-This section builds upon the prior sections by
-introducing the `AnimationController` class
-with explanations about how its capabilities encompass
-fundamental animations concepts covered in the previous sections.
+This section introduces you to using `AnimationController`
+in two subsections. First, you
+[Create your first explicit animation with AnimationController][]
+using step-by-step instructions. Next, you dive deeper into
+[AnimationController Concepts][] and use interactive examples that
+dive deeper into the underlying capabilities of `AnimationController`.
 
-### Introduction
+introduces the `AnimationController` class
+with step-by-step instructions for creating your
+first explicit animation, followed by
+an explanation of the example that covers
+how `AnimationController`'s capabilities
+do the work of animation covered in the
+[Animation Concepts][] section.
+
+### Create your first explicit animation with AnimationController
+
+The following instructions for building your
+first animation introduce the `AnimationController` class and
+provide a very brief explanation of each step.
+The subsequent [AnimationController Concepts][] section
+provides more detailed explanation of `AnimationController`'s
+capabilities and how they relate to the
+[Animation Concepts][] from the previous section.
+
+#### 1. Add TickerProvider
+<?code-excerpt "explicit{1,2}/lib/main.dart"?>
+```diff
+--- explicit1/lib/main.dart
++++ explicit2/lib/main.dart
+@@ -6,7 +6,7 @@
+   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+ }
+
+-class _BouncingBallDemoState extends State<BouncingBallDemo> {
++class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
+
+   void initState() {
+     super.initState();
+```
+
+An `AnimationController` needs a `TickerProvider`.
+If you are creating an `AnimationController` from a `State`
+(as in this example) you can use the `TickerProviderStateMixin` or
+`SingleTickerProviderStateMixin` to make a `TickerProvider`
+available to your `AnimationController`. In the next step,
+you will see how to configure `TickerProvider` with the `vsync`
+argument on the `AnimationController` constructor.
+
+#### 2. Instantiate `AnimationController`
+<?code-excerpt "explicit{2,3}/lib/main.dart"?>
+```diff
+--- explicit2/lib/main.dart
++++ explicit3/lib/main.dart
+@@ -7,9 +7,17 @@
+ }
+
+ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
++  AnimationController controller;
+
+   void initState() {
+     super.initState();
++    controller = AnimationController(
++      vsync: this,
++      duration: Duration(seconds: 1),
++      lowerBound: 0,
++      upperBound: 100,
++    );
++
+   }
+
+   @override
+```
+
+#### 3. Add listener(s)
+<?code-excerpt "explicit{3,4}/lib/main.dart"?>
+```diff
+--- explicit3/lib/main.dart
++++ explicit4/lib/main.dart
+@@ -18,6 +18,10 @@
+       upperBound: 100,
+     );
+
++    controller.addListener(() {
++      setState((){});
++    });
++
+   }
+
+   @override
+```
+
+#### 4. Trigger the animation
+<?code-excerpt "explicit{4,5}/lib/main.dart"?>
+```diff
+--- explicit4/lib/main.dart
++++ explicit5/lib/main.dart
+@@ -22,12 +22,13 @@
+       setState((){});
+     });
+
++    controller.repeat(reverse: true);
+   }
+
+   @override
+   Widget build(BuildContext context) {
+     return Container(
+-      margin: EdgeInsets.only(top: 0),
++      margin: EdgeInsets.only(top: controller.value),
+         child: Container(
+           decoration: BoxDecoration(
+             shape: BoxShape.circle,
+```
+
+<?code-excerpt "explicit{1,5}/lib/main.dart"?>
+```diff
+--- explicit1/lib/main.dart
++++ explicit5/lib/main.dart
+@@ -6,16 +6,29 @@
+   _BouncingBallDemoState createState() => _BouncingBallDemoState();
+ }
+
+-class _BouncingBallDemoState extends State<BouncingBallDemo> {
++class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
++  AnimationController controller;
+
+   void initState() {
+     super.initState();
++    controller = AnimationController(
++      vsync: this,
++      duration: Duration(seconds: 1),
++      lowerBound: 0,
++      upperBound: 100,
++    );
++
++    controller.addListener(() {
++      setState((){});
++    });
++
++    controller.repeat(reverse: true);
+   }
+
+   @override
+   Widget build(BuildContext context) {
+     return Container(
+-      margin: EdgeInsets.only(top: 0),
++      margin: EdgeInsets.only(top: controller.value),
+         child: Container(
+           decoration: BoxDecoration(
+             shape: BoxShape.circle,
+```
+
+#### 5. Prevent memory leaks
+<?code-excerpt "explicit{5,6}/lib/main.dart"?>
+```diff
+--- explicit5/lib/main.dart
++++ explicit6/lib/main.dart
+@@ -39,6 +39,11 @@
+         )
+       );
+   }
++
++  void dispose() {
++    controller.dispose();
++    super.dispose();
++  }
+ }
+
+ class MyApp extends StatelessWidget {
+```
+
+The following example provides an easy way to see how
+`AnimationController` interpolates values for you:
+
+{% include explicit-animations/bouncing-ball-starter-code-4.md %}
+
+
+{{site.alert.secondary}}
+**Quick review**
+
+Creating animations
+* Generates interpolated values (Tweens, or from: param)
+* Provides controls for triggering animations (forward, reverse,..)
+
+Configuration
+* Sets up vsync
+* Listens for `Ticker` events
+{{site.alert.end}}
+
+
+{% include explicit-animations/bouncing-ball-starter-code-5.md %}
+
+### AnimationController Concepts
+AnimationController is the central class that you use
+to create explicit animations.
+AnimationController's capabilities fall into four categories:
+Defining animations, generating animation values,
+registering listeners, and play/sequence controls.
+
 
 The preceding Animation Concepts section uses an `interpolate()`
 method to generate frame values between a starting value and an
@@ -380,15 +573,6 @@ value between `lowerBound` and `upperBound` using the `from` parameter.
 Once triggered, the AnimationController will automatically update the `value`
 property to a new value.
 
-#### Trigger, sequence, and terminate animations:
-**forward(), repeat(), reverse() and stop()**
-  `AnimationController` provides the
-  `forward()`, `repeat()`, `reverse()`, and `stop()` methods
-  for triggering, repeating, playing in reverse, and halting an animation:
-  ```dart
-  controller.forward();
-  ```
-
 #### Listen to animations
 **addListener()**
 
@@ -399,6 +583,16 @@ property to a new value.
       print("current value: ${controller.value}");
     });
   ```
+
+#### Trigger, sequence, and terminate animations:
+**forward(), repeat(), reverse() and stop()**
+  `AnimationController` provides the
+  `forward()`, `repeat()`, `reverse()`, and `stop()` methods
+  for triggering, repeating, playing in reverse, and halting an animation:
+  ```dart
+  controller.forward();
+  ```
+
 * **Frame syncing**
 
   With a little bit of boilerplate,
@@ -418,192 +612,9 @@ property to a new value.
   }
   ```
 
-The following sections cover each of these capabilities in detail.
-
-
-### Create your first explicit animation with AnimationController
-
-This section provides step-by-step instructions for building your
-first animation using `AnimationController`.
-Each step also provides an explanation of the specific feature of
-`AnimationController` that is being introduced.
-
-#### Add TickerProvider
-<?code-excerpt "explicit{1,2}/lib/main.dart"?>
-```diff
---- explicit1/lib/main.dart
-+++ explicit2/lib/main.dart
-@@ -6,7 +6,7 @@
-   _BouncingBallDemoState createState() => _BouncingBallDemoState();
- }
-
--class _BouncingBallDemoState extends State<BouncingBallDemo> {
-+class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-
-   void initState() {
-     super.initState();
-```
-
-#### Instantiate `AnimationController`
-<?code-excerpt "explicit{2,3}/lib/main.dart"?>
-```diff
---- explicit2/lib/main.dart
-+++ explicit3/lib/main.dart
-@@ -7,9 +7,17 @@
- }
-
- class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-+  AnimationController controller;
-
-   void initState() {
-     super.initState();
-+    controller = AnimationController(
-+      vsync: this,
-+      duration: Duration(seconds: 1),
-+      lowerBound: 0,
-+      upperBound: 100,
-+    );
-+
-   }
-
-   @override
-```
-
-#### Add listener(s)
-<?code-excerpt "explicit{3,4}/lib/main.dart"?>
-```diff
---- explicit3/lib/main.dart
-+++ explicit4/lib/main.dart
-@@ -18,6 +18,10 @@
-       upperBound: 100,
-     );
-
-+    controller.addListener(() {
-+      setState((){});
-+    });
-+
-   }
-
-   @override
-```
-
-#### Trigger the animation
-<?code-excerpt "explicit{4,5}/lib/main.dart"?>
-```diff
---- explicit4/lib/main.dart
-+++ explicit5/lib/main.dart
-@@ -22,12 +22,13 @@
-       setState((){});
-     });
-
-+    controller.repeat(reverse: true);
-   }
-
-   @override
-   Widget build(BuildContext context) {
-     return Container(
--      margin: EdgeInsets.only(top: 0),
-+      margin: EdgeInsets.only(top: controller.value),
-         child: Container(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
-```
-
-<?code-excerpt "explicit{1,5}/lib/main.dart"?>
-```diff
---- explicit1/lib/main.dart
-+++ explicit5/lib/main.dart
-@@ -6,16 +6,29 @@
-   _BouncingBallDemoState createState() => _BouncingBallDemoState();
- }
-
--class _BouncingBallDemoState extends State<BouncingBallDemo> {
-+class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-+  AnimationController controller;
-
-   void initState() {
-     super.initState();
-+    controller = AnimationController(
-+      vsync: this,
-+      duration: Duration(seconds: 1),
-+      lowerBound: 0,
-+      upperBound: 100,
-+    );
-+
-+    controller.addListener(() {
-+      setState((){});
-+    });
-+
-+    controller.repeat(reverse: true);
-   }
-
-   @override
-   Widget build(BuildContext context) {
-     return Container(
--      margin: EdgeInsets.only(top: 0),
-+      margin: EdgeInsets.only(top: controller.value),
-         child: Container(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
-```
-
-#### Prevent memory leaks
-<?code-excerpt "explicit{5,6}/lib/main.dart"?>
-```diff
---- explicit5/lib/main.dart
-+++ explicit6/lib/main.dart
-@@ -39,6 +39,11 @@
-         )
-       );
-   }
-+
-+  void dispose() {
-+    controller.dispose();
-+    super.dispose();
-+  }
- }
-
- class MyApp extends StatelessWidget {
-```
-
-The following example provides an easy way to see how
-`AnimationController` interpolates values for you:
-
-{% include explicit-animations/bouncing-ball-starter-code-4.md %}
-
-
-{{site.alert.secondary}}
-**Quick review**
-
-Creating animations
-* Generates interpolated values (Tweens, or from: param)
-* Provides controls for triggering animations (forward, reverse,..)
-
-Configuration
-* Sets up vsync
-* Listens for `Ticker` events
-{{site.alert.end}}
-
-
-{% include explicit-animations/bouncing-ball-starter-code-5.md %}
-
-
 ## Tweens
 ## AnimatedBuilder
 ## AnimatedWidget
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 **Footnotes:**
@@ -617,9 +628,12 @@ Configuration
   Flutter aims to provide 60 fps performance,
   or 120 fps performance on devices capable of 120Hz updates.
   For 60fps, frames need to render approximately every 16ms.
-  See [performance profiling] page for more information.
+  See [performance profiling][] page for more information.
 
 
+[Animation Concepts]: /#animation-concepts
+[AnimationController Concepts]: /#animationcontroller-concepts
+[Create your first explicit animation with AnimationController]: /#create-your-first-explicit-animation-with-animationcontroller
 [performance profiling]: /docs/perf/rendering/ui-performance
 [implicit animations]: /docs/development/ui/animations/implicit-animations
 [make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/
