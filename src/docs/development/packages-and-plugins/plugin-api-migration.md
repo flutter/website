@@ -119,7 +119,8 @@ The following instructions outline the steps for supporting the new API:
     }
     ```
     
-1.  Add `<meta-data android:name="flutterEmbedding" android:value="2"/>` to the      `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
+1.  Add `<meta-data android:name="flutterEmbedding" android:value="2"/>` to the      `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`. This sets the example app
+  to use the v2 embedding.
 
 1. (Optional) If you created an `EmbeddingV1Activity` in the step above, add the
    `EmbeddingV1Activity` to the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
@@ -181,6 +182,7 @@ but aren't required.
 
     @RunWith(FlutterRunner.class)
     public class MainActivityTest {
+      // Replace `MainActivity` with `io.flutter.embedding.android.FlutterActivity` if you removed `MainActivity`.
       @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
     }
     ```
