@@ -6,7 +6,7 @@ short-title: Write your first web app
 {{site.alert.tip}}
   This codelab walks you through writing your first Flutter
   app on the web. You might prefer to try
-  [writing your first Flutter app on mobile][].
+  [writing your first Flutter app on mobile].
   **Note that if you have downloaded and configured Android and
   iOS tooling, the completed app just works on all of these devices!**
 {{site.alert.end}}
@@ -50,8 +50,8 @@ The animated GIF shows how the app works at the completion of this lab.
 
   You need three pieces of software to complete this lab:
 
-  * [Flutter SDK][]
-  * [Chrome browser][]
+  * [Flutter SDK]
+  * [Chrome browser]
   * [Text editor or IDE][editor]
 
   For a web-only codelab,
@@ -75,7 +75,7 @@ it is enabled. You only need to run `flutter config` once
 to enable Flutter support for web.
 If you see "flutter: command not found",
 then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+[Flutter SDK] and that it’s in your path.
 
 ```terminal
 $ flutter channel beta
@@ -84,7 +84,7 @@ $ flutter config --enable-web
 ```
 
 If you have problems enabling web development,
-see [Building a web application with Flutter][].
+see [Building a web application with Flutter].
 </li>
 
 <li markdown="1">Run `flutter doctor`.<br>
@@ -141,10 +141,10 @@ and the web server when you want to test on other browsers.
 ></iframe>
 
 {{site.alert.important}}
-  This page uses an embedded version of [DartPad][]
+  This page uses an embedded version of [DartPad]
   to display examples and exercises.
   If you see empty boxes instead of DartPads,
-  go to the [DartPad troubleshooting page][].
+  go to the [DartPad troubleshooting page].
 {{site.alert.end}}
 </li>
 
@@ -161,7 +161,7 @@ code pane to copy the Dart code to your clipboard.
 
 <li markdown="1">Create a new Flutter project.<br>
 From your IDE, editor, or at the command line,
-[create a new Flutter project][] and name it `signin_example`.
+[create a new Flutter project] and name it `signin_example`.
 </li>
 
 <li markdown="1">Replace the contents of `lib/main.dart`
@@ -176,15 +176,15 @@ From your IDE, editor, or at the command line,
   `lib/main.dart` file.
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
-  For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres [Material Design][],
+  For more information, see [Introduction to declarative UI].
+* The app’s UI adheres [Material Design],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
   Flutter also offers the Cupertino widget library,
   which implements the current iOS design language.
   Or you can create your own custom widget library.
-* In Flutter, most everything is a [Widget][].
+* In Flutter, most everything is a [Widget].
   Even the app itself is a widget.
   The app’s UI can be described as a widget tree.
 
@@ -206,7 +206,7 @@ all of your edits will be made to the private `_SignUpFormState` class.
   <h4 class="no_toc">Fun fact</h4>
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
-see the [Effective Dart Style Guide][].
+see the [Effective Dart Style Guide].
 {{site.alert.end}}
 
 The Welcome screen has already been created for you in the starter app.
@@ -418,7 +418,7 @@ If needed, use the code at the following link to get back on track.
 
 How do you debug a Flutter web app?
 It’s not too different from debugging any Flutter app.
-You want to use [Dart DevTools][]!
+You want to use [Dart DevTools]!
 (Not to be confused with Chrome DevTools.)
 
 Our app currently has no bugs, but let’s check it out anyway.
@@ -449,13 +449,13 @@ You will need that to launch DevTools.
 </li>
 
 <li markdown="1">Ensure that DevTools is installed.<br>
-Do you have [DevTools installed][]?
+Do you have [DevTools installed]?
 If you are using an IDE,
 make sure you have the Flutter and Dart plugins set up,
-as described in the [VS Code][] and [Android Studio and IntelliJ][] pages.
+as described in the [VS Code] and [Android Studio and IntelliJ] pages.
 If you are working at the command line,
 launch the DevTools server as explained in the
-[DevTools command line][] page.
+[DevTools command line] page.
 </li>
 
 <li markdown="1">Connect to DevTools.<br>
@@ -547,7 +547,7 @@ Delete the breakpoint by clicking it again, and resume the app.
 
 This gives you a tiny glimpse of what is possible using DevTools,
 but there is lots more! For more information,
-see the [DevTools documentation][].
+see the [DevTools documentation].
 
 ## Step 3: Add animation for sign in progres
 
@@ -747,16 +747,16 @@ You have created your first web app using Flutter!
 If you’d like to continue playing with this example,
 perhaps you could add form validation.
 For advice on how to do this,
-see the [Building a form with validation][]
-recipe in the [Flutter cookbook][].
+see the [Building a form with validation]
+recipe in the [Flutter cookbook].
 
 For more information on Flutter web apps,
 Dart DevTools, or Flutter animations, see the following:
 
-* [Animation docs][]
-* [Dart DevTools][]
-* [Implicit animations][] codelab
-* [Web samples][]
+* [Animation docs]
+* [Dart DevTools]
+* [Implicit animations] codelab
+* [Web samples]
 
 
 [Android Studio and IntelliJ]: /docs/development/tools/devtools/android-studio

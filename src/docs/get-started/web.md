@@ -12,15 +12,15 @@ This page covers the following steps for getting started with web support:
 
 ## Requirements
 - [Install the Flutter SDK on your platform][Install Flutter].
-- [Install Chrome]. Currently, debugging a web app requires the Chrome browser.
+- [Install Chrome]. Debugging a web app requires the Chrome browser.
 
-For more information, see the [web FAQ][].
+For more information, see the [web FAQ].
 
 {{ site.alert.note }}
   As of 1.12, Flutter has early support for running web applications, but
   you need to be running the `beta` channel of Flutter at present.
   If you experience a problem that hasn’t yet been reported,
-  please [file an issue][] and make sure that “web” appears in the title.
+  please [file an issue] and make sure that “web” appears in the title.
 {{ site.alert.end }}
 
 ## Create a new project with web support
@@ -95,7 +95,7 @@ the `-d chrome` is optional.
 {{site.alert.end}}
 
 The `flutter run` command launches the application using the
-[development compiler][] in a Chrome browser.
+[development compiler] in a Chrome browser.
 
 ### Build
 
@@ -105,7 +105,7 @@ Run the following command to generate a release build:
 $ flutter build web
 ```
 
-A release build uses [dart2js][] (instead of the [development compiler][])
+A release build uses [dart2js] (instead of the [development compiler])
 to produce a single JavaScript file `main.dart.js`.
 You can create a release build using release mode (`flutter run --release`)
 or by using `flutter build web`. This populates a `build/web` directory
