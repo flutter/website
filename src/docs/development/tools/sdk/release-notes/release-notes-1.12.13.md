@@ -4,11 +4,26 @@ short-title: 1.12.13 release notes
 description: Release notes for Flutter 1.12.13.
 ---
 
-Welcome to Flutter 1.12, our biggest stable release so far! In this release, we’ve merged 1,905 Pull Requests from 188 contributors, including both Googlers and non-Google contributors! Please see the chart below for the number of PRs in each release. Over the past year, the number of PRs has been growing in each release (except for Flutter 1.9, which wais an out-of-band release to support Catalina). In the recent [Github Octoverse report,](https://octoverse.github.com/) Flutter is listed as one of the top 3 active repos on Github! 
+Welcome to Flutter 1.12, our biggest stable release so far!
+In this release, we’ve merged 1,905 Pull Requests
+from 188 contributors, including both Googlers and
+non-Google contributors! Please see the chart below
+for the number of PRs in each release. Over the past year,
+the number of PRs has been growing in each release
+(except for Flutter 1.9, which was an out-of-band
+release to support Catalina). In the recent
+[Github Octoverse report,](https://octoverse.github.com/)
+Flutter is listed as one of the top 3 active repos on Github! 
 
-As the holiday season is upon us, we would like to express our sincerest appreciation to our amazing developer community who believe in Flutter, advocate for Flutter, and contribute to Flutter. It’s been an incredible year for us all! We look forward to working with you in the years to come.
+As the holiday season is upon us, we would like to express
+our sincerest appreciation to our amazing developer community
+who believe in Flutter, advocate for Flutter, and contribute to Flutter.
+It’s been an incredible year for us all! We look forward to
+working with you in the years to come.
 
-As always, you can find interesting PRs listed below. And there are lots of interesting things to mention in this release, including:
+As always, you can find interesting PRs listed below.
+And there are lots of interesting things to mention in this
+release, including:
 
 *   Some breaking API changes
 *   Some severe issues caught and fixed
@@ -23,9 +38,18 @@ As always, you can find interesting PRs listed below. And there are lots of inte
 
 ## Breaking changes
 
-In general, we want to avoid introducing breaking changes to Flutter, our plugins, or our packages. However, sometimes it is inevitable when we need to make our APIs more intuitive. We have implemented a new process that invites you to submit tests to help us detect breaking changes; see [this post](https://groups.google.com/g/flutter-announce/c/Z09a317E21o) to flutter-announce and our [breaking change policy on our wiki](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes).
+In general, we want to avoid introducing breaking changes to Flutter,
+our plugins, or our packages. However, sometimes it is inevitable
+when we need to make our APIs more intuitive.
+We have implemented a new process that invites you to submit
+tests to help us detect breaking changes;
+see [this post](https://groups.google.com/g/flutter-announce/c/Z09a317E21o)
+to flutter-announce and our
+[breaking change policy on our wiki](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes).
 
-The following list includes breaking changes in this release. Please see the related announcements so that you can move forward with your code. 
+The following list includes breaking changes in this release.
+Please see the related announcements so that you can move
+forward with your code. 
 
 [37024](https://github.com/flutter/flutter/pull/37024) [Implement PageView using SliverLayoutBuilder, Deprecate RenderSliverFillViewport](https://groups.google.com/g/flutter-announce/c/1CUo2GCjrD4/m/VGKsyVirFQAJ)
 

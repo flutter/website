@@ -77,15 +77,15 @@ the version # to which we guarantee to maintain the old API.
 ## References
 
 API documentation:
-* [`ClassName`]
+* [`ClassName`][]
 
 Relevant issues:
-* [Issue xxxx]
-* [Issue yyyy]
+* [Issue xxxx][]
+* [Issue yyyy][]
 
 Relevant PRs:
-* [PR title #1]
-* [PR title #2]
+* [PR title #1][]
+* [PR title #2][]
 
 {% comment %}
 Add the links to the end of the file in alphabetical order.

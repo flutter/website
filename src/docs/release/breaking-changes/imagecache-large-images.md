@@ -65,7 +65,7 @@ This can be remedied by one of the following approaches:
    value of your choosing.
 1. Subclass `ImageCache`, implement your desired logic,
    and create a new binding that serves up your subclass
-   of `ImageCache` (see the [`image_cache.dart`] source).
+   of `ImageCache` (see the [`image_cache.dart`][] source).
 
 ## Timeline
 
@@ -76,16 +76,16 @@ TBD: replace this with a version number.
 ## References
 
 API documentation:
-* [`ImageCache`]
+* [`ImageCache`][]
 
 Relevant issue:
-* [Issue 45643]
+* [Issue 45643][]
 
 Relevant PR:
-* [Stopped increasing the cache size to accomodate large images]
+* [Stopped increasing the cache size to accomodate large images][]
 
 Other:
-* [`ImageCache` source]
+* [`ImageCache` source][]
 
 
 [Stopped increasing the cache size to accomodate large images]: {{site.github}}/flutter/flutter/pull/47387
