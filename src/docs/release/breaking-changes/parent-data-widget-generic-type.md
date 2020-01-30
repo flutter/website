@@ -33,8 +33,8 @@ is supposed to be used in.
 
 ## Migration guide
 
-You must migrate your code as described in this sectio
- if you're subclassing or implementing `ParentDataWidget`.
+You must migrate your code as described in this section
+if you're subclassing or implementing `ParentDataWidget`.
 If you do, the analyzer shows the following warnings when you
 upgrade to the Flutter version that includes this change:
 

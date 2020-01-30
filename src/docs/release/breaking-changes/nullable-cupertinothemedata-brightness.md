@@ -1,5 +1,5 @@
 ---
-title: nullable CupertinoThemeData.brightness 
+title: nullable CupertinoThemeData.brightness
 description: CupertinoThemeData.brightness is now nullable, and it returns the value specified by the user (defaults to null) as is.
 ---
 
@@ -10,10 +10,10 @@ description: CupertinoThemeData.brightness is now nullable, and it returns the v
 
 [`CupertinoThemeData.brightness`][]
 is now used to override `MediaQuery.platformBrightness`
-for Cupertino widgets. 
+for Cupertino widgets.
 Before this change,
 the [`CupertinoThemeData.brightness`][] getter returned
-`Brightness.light` when it was set to null. 
+`Brightness.light` when it was set to null.
 
 ## Description of change
 

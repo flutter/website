@@ -13,7 +13,7 @@ the number of PRs has been growing in each release
 (except for Flutter 1.9, which was an out-of-band
 release to support Catalina). In the recent
 [Github Octoverse report,](https://octoverse.github.com/)
-Flutter is listed as one of the top 3 active repos on Github! 
+Flutter is listed as one of the top 3 active repos on Github!
 
 As the holiday season is upon us, we would like to express
 our sincerest appreciation to our amazing developer community
@@ -31,7 +31,7 @@ release, including:
 *   MacOS support is enabled in the dev channel as of 1.13
 *   Improved SDK to add Flutter to existing Android/iOS apps
 *   iOS 13 visual refresh including the support for iOS Dark mode
-*   Enhanced tooling experiences 
+*   Enhanced tooling experiences
 *   New widgets and features
 *   And more!
 
@@ -49,7 +49,7 @@ to flutter-announce and our
 
 The following list includes breaking changes in this release.
 Please see the related announcements so that you can move
-forward with your code. 
+forward with your code.
 
 [37024](https://github.com/flutter/flutter/pull/37024) [Implement PageView using SliverLayoutBuilder, Deprecate RenderSliverFillViewport](https://groups.google.com/g/flutter-announce/c/1CUo2GCjrD4/m/VGKsyVirFQAJ)
 
@@ -146,7 +146,7 @@ Flutter 1.12 introduces several new features including the [SliverOpacity](https
 
 ## iOS support
 
-iOS continues to be a big investment area for Flutter. With this release, we’ve made a visual refresh to our Cupertino library to match the iOS 13 look. We now support dark mode in the Cupertino widgets, added two new widgets called [CupertinoContextMenu](https://master-api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://master-api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html), and made improvements to segmented control widgets, [CupertinoAlertDialog](https://master-api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html), and [CupertinoDatePicker](https://master-api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html). 
+iOS continues to be a big investment area for Flutter. With this release, we’ve made a visual refresh to our Cupertino library to match the iOS 13 look. We now support dark mode in the Cupertino widgets, added two new widgets called [CupertinoContextMenu](https://master-api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://master-api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html), and made improvements to segmented control widgets, [CupertinoAlertDialog](https://master-api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html), and [CupertinoDatePicker](https://master-api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html)
 
 [36871](https://github.com/flutter/flutter/pull/36871) Audit use of defaultTargetPlatform
 
@@ -214,7 +214,7 @@ iOS continues to be a big investment area for Flutter. With this release, we’v
 
 [42550](https://github.com/flutter/flutter/pull/42550) Add enableSuggestions flag to TextField and TextFormField
 
-[42563](https://github.com/flutter/flutter/pull/42563) Adding thumb color customisation functionality to CupertinoSlider
+[42563](https://github.com/flutter/flutter/pull/42563) Adding thumb color customization functionality to CupertinoSlider
 
 [42602](https://github.com/flutter/flutter/pull/42602) Properly throw FlutterError when route builder returns null on CupertinoPageRoute
 
