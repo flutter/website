@@ -9,35 +9,37 @@ This guide describes how to add a single Flutter screen to an existing iOS app.
 ## Start a FlutterEngine and FlutterViewController
 
 To launch a Flutter screen from an existing iOS, you start a
-[`FlutterEngine`]({{site.api}}/objcdoc/Classes/FlutterEngine.html)
-and a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
+[`FlutterEngine`][] and a [`FlutterViewController`][].
 
 {{site.alert.secondary}}
   The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
   and the `FlutterViewController` attaches to a `FlutterEngine` to pass UIKit
-  input events into Flutter and to display frames rendered by the `FlutterEngine`.
+  input events into Flutter and to display frames rendered by the
+  `FlutterEngine`.
 {{site.alert.end}}
 
-The `FlutterEngine` may have the same lifespan as your `FlutterViewController`
-or outlive your `FlutterViewController`.
+The `FlutterEngine` may have the same lifespan as your
+`FlutterViewController` or outlive your `FlutterViewController`.
 
 {{site.alert.tip}}
-It's generally recommended to pre-warm a long-lived `FlutterEngine` for your
-application because:
+  It's generally recommended to pre-warm a long-lived
+  `FlutterEngine` for your application because:
 
-- The first frame will appear faster when showing the `FlutterViewController`.
-- Your Flutter and Dart state will outlive one `FlutterViewController`.
-- Your application and your plugins can interact with Flutter and your Dart
-  logic before showing the UI.
+  * The first frame appears faster when showing the `FlutterViewController`.
+  * Your Flutter and Dart state will outlive one `FlutterViewController`.
+  * Your application and your plugins can interact with Flutter and your Dart
+    logic before showing the UI.
 {{site.alert.end}}
 
-See [Loading sequence and performance](/docs/development/add-to-app/performance)
-for more analysis on the latency and memory trade-offs of pre-warming an engine.
+See [Loading sequence and performance][]
+for more analysis on the latency and memory
+trade-offs of pre-warming an engine.
 
 ### Create a FlutterEngine
 
-The proper place to create a `FlutterEngine` is specific to your host app. As an example, we
-demonstrate creating a `FlutterEngine`, exposed as a property, on app startup in
+The proper place to create a `FlutterEngine` is specific
+to your host app. As an example, we demonstrate creating a
+`FlutterEngine`, exposed as a property, on app startup in
 the app delegate.
 
 {% samplecode engine %}
@@ -100,10 +102,10 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 
 ### Show a FlutterViewController with your FlutterEngine
 
-The following example shows a generic ViewController with a UIButton hooked to
-present a [`FlutterViewController`]({{site.api}}/objcdoc/Classes/FlutterViewController.html).
-The `FlutterViewController` uses the `FlutterEngine` instance created in the
-`AppDelegate`.
+The following example shows a generic `ViewController` with a
+`UIButton` hooked to present a [`FlutterViewController`][].
+The `FlutterViewController` uses the `FlutterEngine` instance
+created in the `AppDelegate`.
 
 {% samplecode vc %}
 {% sample Objective-C %}
@@ -169,9 +171,10 @@ class ViewController: UIViewController {
 Now, you have a Flutter screen embedded in your iOS app.
 
 {{site.alert.note}}
-Using the previous example, the default `main()` entrypoint function of your
-default Dart library would run when calling `run` on the
-`FlutterEngine` created in the `AppDelegate`.
+  Using the previous example, the default `main()`
+  entrypoint function of your default Dart library
+  would run when calling `run` on the
+  `FlutterEngine` created in the `AppDelegate`.
 {{site.alert.end}}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
@@ -180,15 +183,16 @@ As an alternative to the previous example, you can let the
 `FlutterViewController` implicitly create its own `FlutterEngine` without
 pre-warming one ahead of time.
 
-This is not recommended because creating a `FlutterEngine` on-demand could
-introduce a noticeable latency between when the `FlutterViewController` is
+This is not usually recommended because creating a
+`FlutterEngine` on-demand could introduce a noticeable
+latency between when the `FlutterViewController` is
 presented and when it renders its first frame. This could, however, be
 useful if the Flutter screen is rarely shown, when there are no good
 heuristics to determine when the Dart VM should be started, and when Flutter
 doesn't need to persist state between view controllers.
 
-To let the `FlutterViewController` present without an existing `FlutterEngine`,
-omit the `FlutterEngine` construction, and create the
+To let the `FlutterViewController` present without an existing
+`FlutterEngine`, omit the `FlutterEngine` construction, and create the
 `FlutterViewController` without an engine reference.
 
 {% samplecode no-engine-vc %}
@@ -214,25 +218,26 @@ func showFlutter() {
 ```
 {% endsamplecode %}
 
-See [Loading sequence and performance](/docs/development/add-to-app/performance)
+See [Loading sequence and performance][]
 for more explorations on latency and memory usage.
 
 ## Using the FlutterAppDelegate
 
-Letting your application's `UIApplicationDelegate` subclass `FlutterAppDelegate`
-is recommended but not required.
+Letting your application's `UIApplicationDelegate` subclass
+`FlutterAppDelegate` is recommended but not required.
 
 The `FlutterAppDelegate` performs functions such as:
 
-- Forwarding application callbacks such as [`openURL`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application)
-  to plugins such as [local_auth](https://pub.dev/packages/local_auth).
-- Forwarding status bar taps (which can only be detected in the AppDelegate) to
+* Forwarding application callbacks such as [`openURL`][]
+  to plugins such as [local_auth][].
+* Forwarding status bar taps
+  (which can only be detected in the AppDelegate) to
   Flutter for scroll-to-top behavior.
 
 If your app delegate can't directly make `FlutterAppDelegate` a subclass,
-make your app delegate implement the `FlutterAppLifeCycleProvider` protocol in
-order to make sure your plugins receive the necessary callbacks. Otherwise,
-plugins that depend on these events may have undefined behavior.
+make your app delegate implement the `FlutterAppLifeCycleProvider`
+protocol in order to make sure your plugins receive the necessary callbacks.
+Otherwise, plugins that depend on these events may have undefined behavior.
 
 For instance:
 
@@ -248,7 +253,8 @@ For instance:
 @end
 ```
 
-The implementation should delegate mostly to a `FlutterPluginAppLifeCycleDelegate`:
+The implementation should delegate mostly to a
+`FlutterPluginAppLifeCycleDelegate`:
 
 <?code-excerpt "AppDelegate.m" title?>
 ```objectivec
@@ -363,24 +369,29 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 The examples demonstrate running Flutter using the default launch settings.
 
-In order to customize your Flutter runtime, you can also specify the Dart entrypoint, library, and route.
+In order to customize your Flutter runtime,
+you can also specify the Dart entrypoint, library, and route.
 
 ### Dart entrypoint
 
-Calling `run` on a `FlutterEngine`, by default, runs the `main()` Dart function
+Calling `run` on a `FlutterEngine`, by default,
+runs the `main()` Dart function
 of your `lib/main.dart` file.
 
-You can also run a different entrypoint function by using [`runWithEntrypoint`]({{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:)
-with an `NSString` specifying a different Dart function.
+You can also run a different entrypoint function by using
+[`runWithEntrypoint`][] with an `NSString` specifying
+a different Dart function.
 
 {{site.alert.note}}
-Dart entrypoint functions other than `main()` must be annotated with the following in order to not be [tree-shaken](https://en.wikipedia.org/wiki/Tree_shaking) away when compiling:
+  Dart entrypoint functions other than `main()`
+  must be annotated with the following in order to
+  not be [tree-shaken][] away when compiling:
 
-<?code-excerpt "main.dart" title?>
-```dart
-@pragma('vm:entry-point')
-void myOtherEntrypoint() { ... };
-```
+  <?code-excerpt "main.dart" title?>
+  ```dart
+  @pragma('vm:entry-point')
+  void myOtherEntrypoint() { ... };
+  ```
 {{site.alert.end}}
 
 ### Dart library
@@ -388,8 +399,8 @@ void myOtherEntrypoint() { ... };
 In addition to specifying a Dart function, you can specify an entrypoint
 function in a specific file.
 
-For instance the following runs `myOtherEntrypoint()` in `lib/other_file.dart` instead of `main()` in
-`lib/main.dart`:
+For instance the following runs `myOtherEntrypoint()`
+in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
 {% sample Objective-C %}
@@ -407,7 +418,7 @@ flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.d
 
 ### Route
 
-An initial route can be set for your Flutter [`WidgetsApp`]({{site.api}}/flutter/widgets/WidgetsApp-class.html)
+An initial route can be set for your Flutter [`WidgetsApp`][]
 when constructing the engine.
 
 {% samplecode initial-route %}
@@ -429,40 +440,59 @@ flutterEngine.run()
 ```
 {% endsamplecode %}
 
-This code sets your `dart:ui`'s [`window.defaultRouteName`]({{site.api}}/flutter/dart-ui/Window/defaultRouteName.html)
+This code sets your `dart:ui`'s [`window.defaultRouteName`][]
 to `"/onboarding"` instead of `"/"`.
 
 {{site.alert.warning}}
-`"setInitialRoute"` on the `navigationChannel` must be called before running your
-`FlutterEngine` in order for Flutter's first frame to use the desired
-route.
+  `"setInitialRoute"` on the `navigationChannel` must be called
+  before running your `FlutterEngine` in order for Flutter's
+  first frame to use the desired route.
 
-Specifically, this must be called before running the Dart entrypoint.  The
-entrypoint may lead to a series of events where
-[`runApp`]({{site.api}}/flutter/widgets/runApp.html) builds a
-Material/Cupertino/WidgetsApp which implicitly creates a
-[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html) which
-may read `window.defaultRouteName` when the
-[`NavigatorState`]({{site.api}}/flutter/widgets/NavigatorState-class.html) is
-first initialized.
+  Specifically, this must be called before running the Dart entrypoint.
+  The entrypoint may lead to a series of events where
+  [`runApp`][] builds a Material/Cupertino/WidgetsApp
+  that implicitly creates a [Navigator][] that might
+  `window.defaultRouteName` when the [`NavigatorState`][] is
+  first initialized.
 
-Setting the initial route after running the engine doesn't have an effect.
+  Setting the initial route after running the engine doesn't have an effect.
 {{site.alert.end}}
 
 {{site.alert.tip}}
-In order to imperatively change your current Flutter route from the platform
-side after the `FlutterEngine` is already running, use [pushRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:)
-or [popRoute]({{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute)
-on the `FlutterViewController`.
+  In order to imperatively change your current Flutter
+  route from the platform side after the `FlutterEngine`
+  is already running, use [`pushRoute()`][]
+  or [`popRoute()`] on the `FlutterViewController`.
 
-To pop the iOS route from the Flutter side, call [`SystemNavigator.pop()`]({{site.api}}/flutter/services/SystemNavigator/pop.html).
+  To pop the iOS route from the Flutter side,
+  call [`SystemNavigator.pop()`][].
 {{site.alert.end}}
 
-See [Navigation and routing](/docs/development/ui/navigation) for more about Flutter's routes.
+See [Navigation and routing][] for more about Flutter's routes.
 
 ### Other
 
-The preious example only illustrates a few ways to customize how a Flutter
-instance is initiated. Using [platform channels](/docs/development/platform-integration/platform-channels),
-you're free to push data or prepare your Flutter environment in any way you'd
-like, before presenting the Flutter UI via a `FlutterViewController`.
+The previous example only illustrates a few ways to customize
+how a Flutter instance is initiated. Using [platform channels][],
+you're free to push data or prepare your Flutter environment
+in any way you'd like, before presenting the Flutter UI using a
+`FlutterViewController`.
+
+
+[`FlutterEngine`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
+[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
+[Loading sequence and performance]: /docs/development/add-to-app/performance
+[local_auth]: {{site.pub}}/packages/local_auth
+[Navigation and routing]: /docs/development/ui/navigation
+[Navigator]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`NavigatorState`]: {{site.api}}/flutter/widgets/NavigatorState-class.html
+[`openURL`]: https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application
+[platform channels]: /docs/development/platform-integration/platform-channels
+[`popRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)popRoute
+[`pushRoute()`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)pushRoute:
+[`runApp`]: {{site.api}}/flutter/widgets/runApp.html
+[`runWithEntrypoint`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
+[`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
+[tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`window.defaultRouteName`]: {{site.api}}/flutter/dart-ui/Window/defaultRouteName.html
