@@ -220,6 +220,7 @@ some/path/MyApp/
 ```
 
 Host apps that use CocoaPods can add to their Podfile
+
 ```podspec
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
 ```
