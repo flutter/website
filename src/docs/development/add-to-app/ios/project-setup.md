@@ -193,6 +193,37 @@ some/path/MyApp/
   the flags `--xcframework --no-universal`.
 {{site.alert.end}}
 
+If you don't want distribuite Flutter.framework for other developer or machines, you can generate Flutter as `pubspec` adding the flag `--cocoapods`. Will produce a `Flutter.podspec` instead of an engine Flutter.framework (recomended if host app uses CocoaPods).
+
+```sh
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
+```
+
+```text
+some/path/MyApp/
+└── Flutter/
+    ├── Debug/
+    │   ├── Flutter.podspec
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    ├── Profile/
+    │   ├── Flutter.podspec
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework
+    └── Release/
+        ├── Flutter.podspec
+        ├── App.framework
+        ├── FlutterPluginRegistrant.framework
+        └── example_plugin.framework
+```
+
+Host apps that use CocoaPods can add to their Podfile
+```podspec
+pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
+```
+
 Embed and link the generated frameworks into your existing application in Xcode.
 There are multiple ways to do this—use the method that is best for your project.
 
