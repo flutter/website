@@ -32,11 +32,10 @@ This codelab covers the following material:
 
 ## What are explicit animations?
 
-Explicit animations are a set of controls that enable you
-to precisely tell Flutter how to rapidly rebuild the widget tree
-while changing widget properties
-to create an illusion of motion.
-These controls enable you to create effects that you can't achieve
+Explicit animations are a set of controls for
+telling Flutter how to rapidly rebuild the widget tree
+while changing widget properties to create animation effects.
+This approach enables you to create effects that you can't achieve
 using [implicit animations][].
 
 ## Animation Concepts
@@ -303,30 +302,62 @@ Can you think of a way to:
 
 ## AnimationController
 
-This section introduces you to using `AnimationController`
-in two subsections. First, you
-[Create your first explicit animation with AnimationController][]
-using step-by-step instructions. Next, you dive deeper into
-[AnimationController Concepts][] and use interactive examples that
-dive deeper into the underlying capabilities of `AnimationController`.
+### Introduction: What is an AnimationController?
+The `AnimationController` class represents a range
+of values that you can use to power animation effects.
+To generate this range of values,
+instantiate `AnimationController` and
+pass it a few basic arguments like the `duration` of your animation,
+as well as the starting and ending values for your animation.
+Once instantiated, `AnimationController` creates an interpolated
+range of values between the provided starting value and an ending value
+over a given duration.
 
-introduces the `AnimationController` class
-with step-by-step instructions for creating your
-first explicit animation, followed by
-an explanation of the example that covers
-how `AnimationController`'s capabilities
-do the work of animation covered in the
-[Animation Concepts][] section.
+To "play" an animation, `AnimationController`
+moves through its range of values one value at a time,
+where each value within the range represents a single
+frame of your animation.
+
+[//]: Image of values in AnimationController
+
+* `AnimationController` makes it easy to access
+the current value of the animation&mdash;just use the `value` property.
+
+* `AnimationController` provides convenience methods for
+starting and stopping animations.
+For example, to "play" an animation
+from its starting value to its ending value,
+simply call `forward()`. 
+
+* You can register listeners to `AnimationController`
+  (it inherits from `Listenable`).
+  Most commonly, you register a `setState()` with `AnimationController`.
+  This tells Flutter to rebuild the widget tree whenever `AnimationController`'s
+  value changes.
+
+* `AnimationController` handles syncing 
+
+  `AnimationController` needs a `TickerProvider`.
+
+* To change its values at the appropriate frame rate,
+`AnimationController` can use `TickerProvider`
+  to sync with the target device.
+
+The following sections demonstrate how to use `AnimationController`
+by providing step-by-step instructions for
+[creating your first explicit animation with AnimationController][Create your first explicit animation with AnimationController]
+and by covering the
+[underlying concepts of `AnimationController`][AnimationController Concepts].
 
 ### Create your first explicit animation with AnimationController
 
-The following instructions for building your
-first animation introduce the `AnimationController` class and
-provide a very brief explanation of each step.
-The subsequent [AnimationController Concepts][] section
-provides more detailed explanation of `AnimationController`'s
-capabilities and how they relate to the
-[Animation Concepts][] from the previous section.
+The following example **begins with no animation code**&mdash;it consists of a [Material App][]
+home screen containing a static green ball shape:
+
+[//]: bouncing ball example
+
+
+Use the following instructions to create an explicit animation of a bouncing ball.
 
 #### 1. Add TickerProvider
 <?code-excerpt "explicit{1,2}/lib/main.dart"?>
@@ -376,6 +407,8 @@ argument on the `AnimationController` constructor.
 
    @override
 ```
+
+
 
 #### 3. Add listener(s)
 <?code-excerpt "explicit{3,4}/lib/main.dart"?>
@@ -634,9 +667,10 @@ property to a new value.
 [Animation Concepts]: /#animation-concepts
 [AnimationController Concepts]: /#animationcontroller-concepts
 [Create your first explicit animation with AnimationController]: /#create-your-first-explicit-animation-with-animationcontroller
+[Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: /docs/perf/rendering/ui-performance
 [implicit animations]: /docs/development/ui/animations/implicit-animations
-[make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/
+[make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1
 [stateful widgets]: https://flutter.dev/docs/development/ui/interactive#stateful-and-stateless-widgets
 
 
@@ -644,7 +678,7 @@ property to a new value.
 
 ---
 TODO:
-1. Intro sections: create diffs w/ explanations for each diff
+1. Intro section: add images to this section
 2. Refactor all DartPad samples to use non-working defaults, & offer solution
 2. Update vanilla bouncing ball final example to use *both* upward and downward motion
 3. Explain why setState listener boilerplate is required
