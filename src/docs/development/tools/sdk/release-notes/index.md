@@ -1,8 +1,8 @@
 ---
 title: Flutter release notes
 short-title: release notes
-description: Release notes for Flutter for prior release
---
+description: Release notes for Flutter for prior releases.
+---
 
 Release notes for the following releases to the stable channel:
 * [1.12.13][]
