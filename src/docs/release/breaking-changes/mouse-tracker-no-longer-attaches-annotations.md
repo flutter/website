@@ -27,7 +27,7 @@ calling `setState` of an unmounted widget and throwing exceptions (explained
 in detail in [Issue #44631][]).
 
 This mechanism has been replaced by making `MouseRegion` a stateful widget,
-so that it can perform the mouted-exit check by itself by blocking the
+so that it can perform the mounted-exit check by itself by blocking the
 callback when unmounted. Therefore, these methods have been removed, and
 `MouseTracker` no longer tracks all annotations on the screen.
 
@@ -49,7 +49,7 @@ The `MouseTracker` class has removed three methods related to attaching annotati
 ```
 
 `RenderMouseRegion` and `MouseTrackerAnnotation` no longer perform the
-mouted-exit check, while `MouseRegion` still does.
+mounted-exit check, while `MouseRegion` still does.
 
 ## Migration guide
 
