@@ -7,7 +7,7 @@ ImageProvider has marked resolve as @nonVirtual
 
 ## Summary
 
-`ImageCache` now has a method called `obaintsKey`. `ImageProvider` subclasses
+`ImageCache` now has a method called `containsKey`. `ImageProvider` subclasses
 should not override `resolve`, but instead should implement new methods on
 `ImageProvider`. These changes were submitted as a single commit to the
 framework.
