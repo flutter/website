@@ -1,14 +1,14 @@
 ---
-title: [Changes to ImageCache and ImageProvider]
-description: [ImageCache requires implementers to override containsKey, and
-ImageProvider has marked resolve as @nonVirtual]
+title: Changes to ImageCache and ImageProvider
+description: ImageCache requires implementers to override containsKey, and
+ImageProvider has marked resolve as @nonVirtual
 ---
 
 
 ## Summary
 
 `ImageCache` now has a method called `obaintsKey`. `ImageProvider` subclasses
-should not override `resolve`, but instead should resolve new methods on
+should not override `resolve`, but instead should implement new methods on
 `ImageProvider`. These changes were submitted as a single commit to the
 framework.
 
@@ -83,6 +83,8 @@ class MyImageProvider extends ImageProvider<Object> {
   ...
 }
 ```
+
+Code after the migration:
 
 <!-- skip -->
 ```dart
