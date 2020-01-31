@@ -10,10 +10,10 @@ Removed Flutter's `FloatingActionButton` (FAB) dependency on
 
 ## Context
 
-This was a small part of the [Material Theme System Updates] project.
+This was a small part of the [Material Theme System Updates][] project.
 
 Previously, the `ThemeData accentIconTheme` property was only
-used by [`FloatingActionButton`] to determine the default
+used by [`FloatingActionButton`][] to determine the default
 color of the text or icons that appeared within the button.
 
 `FloatingActionButton` also used the
@@ -26,8 +26,8 @@ to change the appearance of all floating action buttons,
 it was difficult to know what other components would be affected,
 or might be affected in the future.
 
-The [Material Design spec] no longer includes an "accent" color.
-The `ColorScheme`'s [secondary color] is now used instead.
+The [Material Design spec][] no longer includes an "accent" color.
+The `ColorScheme`'s [secondary color][] is now used instead.
 
 Previously, applications could configure the color of text and icons
 within `FloatingActionButtons` with the widget's `foregroundColor`
@@ -124,24 +124,24 @@ TBD: Add a version number for the release # where it landed.
 
 Design doc:
 
-* [Remove FAB Accent Theme Dependency]
+* [Remove FAB Accent Theme Dependency][]
 
 API documentation:
 
-* [`FloatingActionButton`]
-* [`ThemeData`]
-* [`FloatingActionButtonThemeData`]
+* [`FloatingActionButton`][]
+* [`ThemeData`][]
+* [`FloatingActionButtonThemeData`][]
 
 Relevant PRs:
 
-* [Step 1 of 2] Warn about Flutter's
+* [Step 1 of 2][] Warn about Flutter's
   FloatingActionButton dependency on ThemeData accent properties
-* [Step 2 of 2] Remove Flutter's FloatingActionButton dependency
+* [Step 2 of 2][] Remove Flutter's FloatingActionButton dependency
   on ThemeData accent properties
 
 Other:
 
-* [Material Theme System Updates]
+* [Material Theme System Updates][]
 
 
 [`accentIconTheme`]: {{site.api}}/flutter/material/ThemeData/accentIconTheme.html

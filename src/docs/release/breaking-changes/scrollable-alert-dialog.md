@@ -172,18 +172,18 @@ TBD - Add the version number that contains this change.
 ## References
 
 Design doc:
-* [Scrollable `AlertDialog`]
+* [Scrollable `AlertDialog`][]
 
 API documentation:
-* [`AlertDialog`]
+* [`AlertDialog`][]
 
 Relevant issue:
-* [Overflow exceptions with maximum accessibility font size]
+* [Overflow exceptions with maximum accessibility font size][]
 
 Relevant PRs:
-* [Update to `AlertDialog.scrollable`]
-* [Original attempt to implement scrollable `AlertDialog`]
-* [Revert of original attempt to implement scrollable `AlertDialog`]
+* [Update to `AlertDialog.scrollable`][]
+* [Original attempt to implement scrollable `AlertDialog`][]
+* [Revert of original attempt to implement scrollable `AlertDialog`][]
 
 
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
