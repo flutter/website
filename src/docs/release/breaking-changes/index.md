@@ -9,7 +9,6 @@ across a breaking change.
 The following guides (in alphabetical order) are
 available:
 
-
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache large images][]
 * [ImageCache large images][]
