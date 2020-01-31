@@ -31,9 +31,10 @@ when designing your app:
     part of the tree.
   * The traversal to rebuild all descendents stops when the same instance
     of the child widget as the previous frame is re-encountered. This
-    technique is heavily used in inside the framework for optimizing
-    animations where the animation doesn't affect the child subtree. See
-    the [`TransitionBuilder`] pattern and the [`SlideTransition`],
+    technique is heavily used inside the framework for optimizing
+    animations where the animation doesn't affect the child subtree.
+    See the [`TransitionBuilder`][] pattern and
+    the [source code for `SlideTransition`][],
     which uses this principle to avoid rebuilding its descendents when
     animating.
 
@@ -175,10 +176,10 @@ For more performance info, see the following resources:
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [profile mode]: /docs/testing/build-modes#profile
 [`ShaderMask`]: {{site.api}}/flutter/widgets/ShaderMask-class.html
-[`SlideTransition`]: https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229
+[source code for `SlideTransition`]: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/transitions.dart
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
-[`TransitionBuilder`]: ({{site.api}}/flutter/widgets/TransitionBuilder.html)
+[`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
 [Transparent image]: {{site.api}}/flutter/widgets/Opacity-class.html#transparent-image
 [Why 60fps?]: https://www.youtube.com/watch?v=CaMTIgxCSqU
 [Working with long lists]: /cookbook/lists/long-lists
