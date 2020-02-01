@@ -241,7 +241,7 @@ public class MainActivity extends FlutterActivity {
 
   @Override
   public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-    GeneratedPluginRegistrant.registerWith(flutterEngine);
+    GeneratedPluginRegistrant.registerWith(new ShimPluginRegistry(flutterEngine));
     new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
         .setMethodCallHandler(
           (call, result) -> {
@@ -358,7 +358,7 @@ class MainActivity: FlutterActivity() {
   private val CHANNEL = "samples.flutter.dev/battery"
 
   override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-    GeneratedPluginRegistrant.registerWith(flutterEngine)
+    GeneratedPluginRegistrant.registerWith(new ShimPluginRegistry(flutterEngine))
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
       // Note: this method is invoked on the main thread.
