@@ -152,7 +152,7 @@ class _MyAppState extends State<MyApp> {
 This Future will be used in the next step.
 
 ## 5. Display the data
-To to display the data on screen, use the
+To display the data on screen, use the
 [`FutureBuilder`][] widget.
 The `FutureBuilder` widget comes with Flutter and
 makes it easy to work with async data sources.

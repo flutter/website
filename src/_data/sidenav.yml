@@ -65,6 +65,11 @@
               permalink: /docs/development/ui/layout/responsive
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
+        - title: Splash screens
+          permalink: /docs/development/ui/splash-screen
+          children:
+            - title: Android Splash Screens
+              permalink: /docs/development/ui/splash-screen/android-splash-screen
         - title: Adding interactivity
           permalink: /docs/development/ui/interactive
         - title: Assets and images
@@ -81,7 +86,7 @@
               permalink: /docs/development/ui/animations/overview
             - title: Tutorial
               permalink: /docs/development/ui/animations/tutorial
-            - title: Implicit Animations
+            - title: Implicit animations
               permalink: /docs/development/ui/animations/implicit-animations
             - title: Hero animations
               permalink: /docs/development/ui/animations/hero-animations
@@ -114,6 +119,8 @@
               permalink: /docs/development/data-and-backend/state-mgmt/simple
             - title: Options
               permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: Networking & http
+          permalink: /docs/development/data-and-backend/networking
         - title: JSON and serialization
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
@@ -165,8 +172,6 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: Add a Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: Add a Splash Screen
-            permalink: /docs/development/add-to-app/android/add-splash-screen
       - title: Adding to an iOS app
         permalink: /docs/development/add-to-app/ios
         children:

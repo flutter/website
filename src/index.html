@@ -17,7 +17,7 @@ js:
 
 ---
 
-<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=6500 data-pause="false">
+<section class="homepage__hero text-center carousel slide" data-ride="carousel" data-interval=6500 data-pause="false" aria-hidden="true">
     <div class="carousel-inner">
         <div class="carousel-item active homepage__hero__slide homepage__hero__slide--beautiful">
             {% asset homepage/carousel/slide_1-bg.jpg class='homepage__hero__image homepage__hero__image--layer-1' %}
@@ -64,7 +64,7 @@ js:
 
                 <div class="homepage__intro__buttons">
                     <a class="btn btn-primary btn-cta" href="/docs/get-started/install">Get started</a>
-                    <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal" data-video="5VbAwhBBHsg"><i class="material-icons">play_circle_filled</i> Watch video</button>
+                    <button class="btn btn-link btn-icon" type="button" data-toggle="modal" data-target="#videoModal" data-video="5VbAwhBBHsg"><i class="material-icons" aria-hidden="true">play_circle_filled</i> Watch video</button>
                 </div>
 
                 <p>
@@ -85,7 +85,7 @@ js:
         <div class="row text-center">
 
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-development.svg alt='Fast development icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-development.svg %}</div>
 
                 <h3>Fast Development</h3>
 
@@ -97,7 +97,7 @@ js:
             </div>
 
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-ui.svg alt='Expressive and flexible IU icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-ui.svg %}</div>
 
                 <h3>Expressive and Flexible UI</h3>
 
@@ -110,7 +110,7 @@ js:
             </div>
 
             <div class="homepage__key-point col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-performance.svg alt='Native performance icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-performance.svg %}</div>
 
                 <h3>Native Performance</h3>
 
@@ -132,11 +132,11 @@ js:
     <div class="card-body">
         <div class="row">
             <div class="landing-page__card-graphic--fill col-lg-8">
-                <video src="/videos/FastDev.mp4" autoplay playsinline muted loop></video>
+                <video src="/videos/FastDev.mp4" autoplay playsinline muted loop title="Hot reload demo"></video>
             </div>
 
             <div class="col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-development.svg alt='Fast development icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-development.svg %}</div>
 
                 <h2>Fast development</h2>
 
@@ -168,11 +168,11 @@ js:
                         <a href="https://reflect.ly" target="blank">Learn more</a>
                         </small>
                     </div>
-                    <video src="/videos/BeautifulUI.mp4" autoplay playsinline muted loop></video>
+                    <video src="/videos/BeautifulUI.mp4" autoplay playsinline muted loop title="Reflectly app demo"></video>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-ui.svg alt='Expressive and flexible IU icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-ui.svg %}</div>
 
                 <h2>Expressive, beautiful UIs</h2>
 
@@ -193,10 +193,10 @@ js:
     <div class="card-body">
         <div class="row">
             <div class="landing-page__card-graphic--fill col-lg-8">
-                <video src="/videos/NativePerformance.mp4" autoplay playsinline muted loop></video>
+                <video src="/videos/NativePerformance.mp4" autoplay playsinline muted loop title="Demo showcasing animations and transition performance"></video>
             </div>
             <div class="col-lg-4">
-                <div class="homepage__icon">{% asset homepage/icon-performance.svg alt='Native performance icon' %}</div>
+                <div class="homepage__icon" aria-hidden="true">{% asset homepage/icon-performance.svg %}</div>
 
                 <h2>Native Performance</h2>
 
@@ -298,7 +298,7 @@ js:
         <div class="dash-dartpad">
             <a name="try-dart"></a>
             <h2>Try Flutter in your browser</h2>
-            <select id="dartpad-select"></select>
+            <select id="dartpad-select" aria-label="Select a Flutter demo"></select>
             <div id="dartpad-host"></div>
             <h3>Want more practice? <a href="/codelabs">Try a codelab</a>.</h3>
         </div>

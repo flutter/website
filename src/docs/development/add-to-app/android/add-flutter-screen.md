@@ -114,7 +114,7 @@ Flutter's initialization time. That approach is discussed next.
 ### Step 3: (Optional) Use a cached FlutterEngine
 
 Every `FlutterActivity` creates its own `FlutterEngine` by default. Each
-`FlutterEngine` has a non-trivial, warm-up time. This means that launching a
+`FlutterEngine` has a non-trivial warm-up time. This means that launching a
 standard `FlutterActivity` comes with a brief delay before your Flutter
 experience becomes visible. To minimize this delay, you can warm up a
 `FlutterEngine` before arriving at your `FlutterActivity`, and then you can use
@@ -253,6 +253,10 @@ the display of Flutter content.
   performance characteristics. To evaluate the performance of Flutter, use a
   release build.
 {{site.alert.end}}
+
+#### Initial route with a cached engine
+
+{% include_relative initial-route-cached-engine.md -%}
 
 ## Add a translucent Flutter screen
 

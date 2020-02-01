@@ -9,7 +9,7 @@ import 'package:state_mgmt/src/set_state.dart' as set_state;
 void main() {
   runApp(
     ChangeNotifierProvider(
-      builder: (context) => CartModel(),
+      create: (context) => CartModel(),
       child: MyApp(),
     ),
   );
@@ -28,8 +28,8 @@ void multiProviderMain() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(builder: (context) => CartModel()),
-        Provider(builder: (context) => SomeOtherClass()),
+        ChangeNotifierProvider(create: (context) => CartModel()),
+        Provider(create: (context) => SomeOtherClass()),
       ],
       child: MyApp(),
     ),

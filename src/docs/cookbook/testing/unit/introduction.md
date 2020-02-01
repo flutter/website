@@ -51,7 +51,7 @@ resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
 In general, test files should reside inside a `test` folder located at the root
-of your Flutter application or package.
+of your Flutter application or package. Test files should always end with `_test.dart`, this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 

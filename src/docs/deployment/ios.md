@@ -187,12 +187,12 @@ Finally, create a build archive and upload it to App Store Connect:
 1. Select **Product > Archive** to produce a build archive.
 1. In the sidebar of the Xcode Organizer window, select your iOS app,
    then select the build archive you just produced.
-1. Click the **Validate...** button. If any issues are reported,
+1. Click the **Validate App** button. If any issues are reported,
    address them and produce another build. You can reuse the same
    build ID until you upload an archive.
 1. After the archive has been successfully validated, click
-   **Upload to App Store...**. You can follow the status of your
-   build in the Activities tab of your app's details page on
+   **Distribute App**. You can follow the status of your build in the
+   Activities tab of your app's details page on
    [App Store Connect][appstoreconnect_login].
 
 You should receive an email within 30 minutes notifying you that

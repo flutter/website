@@ -35,7 +35,7 @@ Learn more about the Flutter framework from the following pages:
 * [Udacity online Flutter
   training](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
 
-Reach out to us at our [mailing list][]. We'd love to hear from you!
+Reach out to us at our [mailing list]. We'd love to hear from you!
 
 Happy Fluttering!
 

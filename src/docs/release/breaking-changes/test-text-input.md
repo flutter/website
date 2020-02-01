@@ -59,14 +59,14 @@ This change occurred in Dec 2019, in v1.13.5.
 ## References
 
 API documentation:
-* [`TestTextInput`]
-* [`WidgetTester`]
+* [`TestTextInput`][]
+* [`WidgetTester`][]
 
 Relevant issue:
-* [Randomize test order to avoid global state]
+* [Randomize test order to avoid global state][]
 
 Relevant PR:
-* [Reset state between tests]
+* [Reset state between tests][]
 
 
 [Randomize test order to avoid global state]: {{site.github}}/flutter/flutter/issues/47233

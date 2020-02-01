@@ -5,7 +5,7 @@ description: Learn how to add a splash screen and launch screen to your Android 
 ---
 
 {% asset
-development/add-to-app/android/add-splash-screen/splash-screens_header.png
+development/ui/splash-screen/android-splash-screen/splash-screens_header.png
 class="mw-100" alt="Add Splash Screen Header" %}
 
 The beginning of a Flutter experience requires a brief wait while Dart

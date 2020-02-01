@@ -388,6 +388,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
   },
   {
+    "name": "CupertinoContextMenu",
+    "description": "An iOS-style full-screen modal route that opens when the child is long-pressed. Used to display relevant actions for your content.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-context-menu.png'>"
+  },
+  {
     "name": "CupertinoDatePicker",
     "description": "An iOS-style date or date and time picker.",
     "categories": [
@@ -506,6 +516,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-slider.png'>"
+  },
+  {
+    "name": "CupertinoSlidingSegmentedControl",
+    "description": "An iOS-13-style segmented control. Used to select mutually exclusive options in a horizontal list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliding-segmented-control.png'>"
   },
   {
     "name": "CupertinoSwitch",

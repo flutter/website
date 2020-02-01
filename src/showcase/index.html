@@ -25,7 +25,7 @@ body_class: showcase
                         {% assign image_src_full_size = image_src_1200 %}
                     {% endif %}
 
-                    <img class="card-img-top" src="{{ image_src_full_size }}" alt=""
+                    <img class="card-img-top" src="{{ image_src_full_size }}" aria-hidden="true"
                          srcset="
                             {{ image_src_400 }} 400w,
                             {{ image_src_600}} 600w
@@ -36,7 +36,7 @@ body_class: showcase
                         <div class="card-title">
                             {% if case.logo_src %}
                                 {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
-                                {% unless case.logo_has_name %} <span class="name">{{ case.name }}</span>{% endunless -%}
+                                {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
                             {% endif %}
                         </div>
                         <p class="card-text">{{ case.description | truncate: 160 }}</p>
@@ -96,7 +96,7 @@ body_class: showcase
                     {% capture image_src_1200 %}{% asset '{{ case.video_frame_image | replace: "@", "-1200" }}' @path %}{% endcapture %}
                     <img class="card-img-top" src="{{ image_src_1200 }}" alt=""
                          srcset="{{ image_src_400 }} 400w, {{ image_src_800 }} 800w, {{ image_src_1200 }} 1200w">
-                    <button class="image-button btn btn-primary" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons">play_circle_filled</i>&nbsp;Watch the video</button>
+                    <button class="image-button btn btn-primary" data-video="{{ case.video_id }}" data-toggle="modal" data-target="#videoModal"><i class="material-icons" aria-hidden="true">play_circle_filled</i>&nbsp;Watch the video</button>
                   </div>
                   <blockquote class="quote">
                     <p class="copy">{{ case.quote }}</p>
@@ -133,13 +133,13 @@ body_class: showcase
             <div class="card">
                 {% capture image_src_400 %}{% asset '{{ case.card_image | replace: "@", "-400" }}' @path %}{% endcapture %}
                 {% capture image_src_600 %}{% asset '{{ case.card_image | replace: "@", "-600" }}' @path %}{% endcapture %}
-                <img class="card-img-top" src="{{ image_src_600 }}" alt=""
+                <img class="card-img-top" src="{{ image_src_600 }}" aria-hidden="true"
                      srcset="{{ image_src_400 }} 400w, {{ image_src_600 }} 600w" >
                 <div class="card-body">
                     <div class="card-title">
                         {% if case.logo_src %}
                             {% asset '{{ case.logo_src }}' class='logo' alt="{{ case.name }}" %}
-                            {% unless case.logo_has_name %} <span class="name">{{ case.name }}</span>{% endunless -%}
+                            {% unless case.logo_has_name %} <span class="name" aria-hidden="true">{{ case.name }}</span>{% endunless -%}
                         {% endif %}
                     </div>
                     <p class="card-text">{{ case.description | truncate: 160 }}</p>

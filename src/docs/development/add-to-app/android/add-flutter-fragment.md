@@ -311,6 +311,10 @@ pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
 By providing a pre-warmed `FlutterEngine`, as previously shown, your app renders the
 first Flutter frame as quickly as possible.
 
+#### Initial route with a cached engine
+
+{% include_relative initial-route-cached-engine.md -%}
+
 ## Display a splash screen
 
 The initial display of Flutter content requires some wait time, even if a
@@ -319,7 +323,7 @@ this brief waiting period, Flutter supports the display of a splash screen until
 Flutter renders its first frame. For instructions about how to show a splash screen,
 see the [Android splash screen guide].
 
-[Android splash screen guide]: /docs/development/add-to-app/android/add-splash-screen
+[Android splash screen guide]: /docs/development/ui/splash-screen/android-splash-screen
 
 ## Run Flutter with a specified initial route
 
