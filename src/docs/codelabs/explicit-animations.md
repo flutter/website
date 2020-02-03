@@ -42,12 +42,13 @@ using [implicit animations][].
 
 Learning to create explicit animations can be daunting
 if you are new to animation in general.
-The following section helps you understand explicit animations
-by introducing you to foundational animation concepts.
-The subsequent sections relate those concepts to the corresponding tools
-of explicit animations.
+The following section equips you with animation concepts
+that help you better grasp how explicit
+animations work in Flutter.
+The subsequent sections relate these concepts
+to the corresponding tools and methods of explicit animations.
 If you are already experienced with animation, you can skip this
-section and move on to the AnimationController section.
+section and move on to the [AnimationController][]section.
 
 ### What is an animation?
 
@@ -303,8 +304,8 @@ Can you think of a way to:
 ## AnimationController
 
 ### Introduction: What is an AnimationController?
-The `AnimationController` class represents an interpolated
-range of values that define all possible frames
+The `AnimationController` class represents an **interpolated
+range of values** that define all possible frames
 for a particular animation.
 `AnimationController` has a `value` property,
 which represents the current value of the animation within
@@ -345,20 +346,15 @@ For example, to "play" an animation
 from its starting value to its ending value,
 simply call `forward()`.
 
-* Use `.register()` to add a listener to
-  `AnimationController`'s changes to its `value` property.
+* Use `.addListener()` to register a callback invoked whenever
+  `AnimationController` changes its `value` property.
   Most commonly, you register `setState()` with `AnimationController`.
   This tells Flutter to rebuild the widget tree whenever `AnimationController`'s
   value changes.
 
-* `AnimationController` handles syncing.
-
-  `AnimationController` needs a `TickerProvider`.
-
-* To change its values at the appropriate frame rate,
-`AnimationController` can use `TickerProvider`
-  to sync with the target device.
-
+* `AnimationController` needs a `TickerProvider` to synchronize the animation's
+behavior to the device's display. 
+  
 The following sections demonstrate how to use `AnimationController`
 by providing step-by-step instructions for
 [creating your first explicit animation with AnimationController][Create your first explicit animation with AnimationController]
@@ -368,14 +364,26 @@ and by covering the
 ### Create your first explicit animation with AnimationController
 
 The following example **begins with no animation code**&mdash;it consists of a [Material App][]
-home screen containing a static green ball shape:
+home screen containing a static green ball shape. 
+
+[//]: Insert DartPad Here
+
+
+The following steps guide you through the changes to this example that are
+necessary to implement the same bouncing ball animation
+created in the [Animation Concepts][] section.
+The difference is that this example creates the bouncing ball
+animation by creating an explicit animation, whereas the
+[Animation Concepts][] section uses a naive approach
+to creating animations in Flutter.
+
 
 [//]: bouncing ball example
 
 
-Use the following instructions to create an explicit animation of a bouncing ball.
+Use the following instructions to create an explicit animation of a bouncing ball:
 
-#### 1. Add TickerProvider
+#### 1. Add a TickerProvider
 <?code-excerpt "explicit{1,2}/lib/main.dart"?>
 ```diff
 --- explicit1/lib/main.dart
@@ -390,14 +398,21 @@ Use the following instructions to create an explicit animation of a bouncing bal
    void initState() {
      super.initState();
 ```
-
-An `AnimationController` needs a `TickerProvider`.
+An `AnimationController` needs a `TickerProvider`,
+so the first step for creating an explicit animation
+is to add a `TickerProvider` to the widget that you are animating. 
 If you are creating an `AnimationController` from a `State`
-(as in this example) you can use the `TickerProviderStateMixin` or
-`SingleTickerProviderStateMixin` to make a `TickerProvider`
-available to your `AnimationController`. In the next step,
-you will see how to configure `TickerProvider` with the `vsync`
-argument on the `AnimationController` constructor.
+you can use the `SingleTickerProviderStateMixin` (as in this example)
+to make a `TickerProvider` available to your `AnimationController`.
+
+In this example, you only need to instantiate `AnimationController`
+once to create the desired animation effect.
+If you might have multiple `AnimationController` objects
+over the lifetime of the `State`,
+use a full `TickerProviderStateMixin` instead.
+The next step also covers how to configure `TickerProvider`
+with the `vsync` argument
+passed to `AnimationController`'s constructor.
 
 #### 2. Instantiate `AnimationController`
 <?code-excerpt "explicit{2,3}/lib/main.dart"?>
@@ -556,7 +571,7 @@ Defining animations, generating animation values,
 registering listeners, and play/sequence controls.
 
 
-The preceding Animation Concepts section uses an `interpolate()`
+The preceding [Animation Concepts][] section uses an `interpolate()`
 method to generate frame values between a starting value and an
 ending value of the `margin` property.
 The example uses each interpolated value in a separate frame
@@ -587,7 +602,9 @@ important concepts for using `AnimationController`:
 
 **AnimationController doesn't interact with Flutter UI widgets on its own.**
 
-#### Defining animations
+#### Why TickerProvider?
+
+#### Define a range of frame values
 
 In this example,
 the AnimationController constructor takes the optional parameters `lowerBound`,
@@ -684,7 +701,8 @@ property to a new value.
   See [performance profiling][] page for more information.
 
 
-[Animation Concepts]: /#animation-concepts
+[Animation Concepts]: /#Animation-Concepts
+[AnimationController]: /#AnimationController
 [AnimationController Concepts]: /#animationcontroller-concepts
 [Create your first explicit animation with AnimationController]: /#create-your-first-explicit-animation-with-animationcontroller
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
@@ -692,6 +710,7 @@ property to a new value.
 [implicit animations]: /docs/development/ui/animations/implicit-animations
 [make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1
 [stateful widgets]: https://flutter.dev/docs/development/ui/interactive#stateful-and-stateless-widgets
+[`SingleTickerProviderStateMixin`]: https://api.flutter.dev/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 
 
 
