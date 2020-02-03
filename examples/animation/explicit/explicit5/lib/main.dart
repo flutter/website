@@ -39,6 +39,10 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
         )
       );
   }
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
 
 class MyApp extends StatelessWidget {

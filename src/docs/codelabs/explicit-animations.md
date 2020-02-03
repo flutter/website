@@ -51,6 +51,12 @@ If you are already experienced with animation, you can skip this
 section and move on to the [AnimationController][]section.
 
 ### What is an animation?
+For the moment, forget about Flutter. 
+How do animations work in other contexts?
+Consider the humble flipbook, or hand-drawn cartoons,
+or movie reels. What do all these animation implementations have in common?
+They create the illusion of motion by rapidly transitioning
+the current frame within a pre-defined sequence of other frames.
 
 Suppose you want to create your own Flutter animation
 without using the animations library.
@@ -74,8 +80,8 @@ The ball only has two positions,
 so the animation looks pretty choppy&mdash;you could
 easily mistake the animation for a glitch.
 To describe this problem in animation terms,
-you would say that the animation
-*only has two frames:*<sup><a href="#a1">1</a></sup>
+you would say that *the animation alternates
+between only two frames:*<sup><a href="#a1">1</a></sup>
 
 <div class="table-wrapper" markdown="1">
 | frame # | position        | movement direction |
@@ -85,12 +91,11 @@ you would say that the animation
 {:.table.table-striped}
 </div>
 
+Most importantly, this example demonstrates at a basic
+level how frames are used to create animations:
 **A frame is a single still image that can be used
 within a sequence of other still images
 to create the illusion of motion.**
-
-[//]: # image: a frame in a flip book
-
 In this case, the first frame consists of a
 ball centered on the screen,
 and the second frame consists of the same ball
@@ -172,9 +177,9 @@ Notice that, now that you are using more frames,
 in order to keep the ball bouncing at the same rate
 (one bounce per second)
 you  need to increase the frame rate.
-**The frame rate is the rate of frames per second.**
+**The frame rate is the rate of frames per second (fps).**
 In this case, you are increasing the frame rate
-from 2 frames per second (fps) to 4 fps.
+from 2 frames per second to 4 fps.
 Even though you are using five total frames,
 the first frame gets re-used for the downward and upward
 motion of the ball,
@@ -249,16 +254,18 @@ you can think of an animation
 as a starting value and an ending value,
 and allow interpolation to take care of the rest!
 
-The preceding example uses an imperative approach to
-calculate the values for each frame
-that makes up the animation: you explicitly provide
+The preceding example uses an imperative approach for
+calculating the values for each frame
+in the animation:
+you explicitly provide
 values for the frame rate as well as
 the value needed to increment
 the top margin property for each frame.
 Can you think of a way to refactor this example
-to use interpolation so that
-you only need to provide the starting and ending
-values for top margin?
+so that you only need to provide a starting and ending
+value for top margin, and an interpolation function
+handles providing values for frames between the
+starting and ending ones?
 
 Here's a few hints:
 * Don't worry about animating the ball
@@ -407,7 +414,7 @@ to make a `TickerProvider` available to your `AnimationController`.
 
 In this example, you only need to instantiate `AnimationController`
 once to create the desired animation effect.
-If you might have multiple `AnimationController` objects
+For other animations, if you need multiple `AnimationController` objects
 over the lifetime of the `State`,
 use a full `TickerProviderStateMixin` instead.
 The next step also covers how to configure `TickerProvider`
@@ -437,12 +444,25 @@ passed to `AnimationController`'s constructor.
    }
 
    @override
-```
+@@ -26,6 +34,10 @@
+         )
+       );
+   }
++  void dispose() {
++    controller.dispose();
++    super.dispose();
++  }
+ }
 
-When used with a StatefulWidget,
-it is common for an `AnimationController`
-to be created in the `State.initState`
-method and then disposed in the `State.dispose` method.
+ class MyApp extends StatelessWidget {
+```
+When used with a `StatefulWidget`,
+it is common to instantiate `AnimationController`
+in the `State.initState` lifecycle method and then
+dispose in the `State.dispose` method.
+
+An `AnimationController` should be disposed when it is no longer needed.
+This reduces the likelihood of leaks.
 
 
 #### 3. Add listener(s)
@@ -521,18 +541,10 @@ method and then disposed in the `State.dispose` method.
          child: Container(
            decoration: BoxDecoration(
              shape: BoxShape.circle,
-```
-
-#### 5. Prevent memory leaks
-<?code-excerpt "explicit{5,6}/lib/main.dart"?>
-```diff
---- explicit5/lib/main.dart
-+++ explicit6/lib/main.dart
-@@ -39,6 +39,11 @@
+@@ -26,6 +39,10 @@
          )
        );
    }
-+
 +  void dispose() {
 +    controller.dispose();
 +    super.dispose();
