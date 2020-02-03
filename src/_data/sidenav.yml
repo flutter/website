@@ -314,6 +314,8 @@
     # - title: Flutter learning resources # TODO
     - title: FAQ
       permalink: /docs/resources/faq
+    - title: Design Documents
+      permalink: /docs/resources/design-docs
 
 - title: Reference
   expanded: true
