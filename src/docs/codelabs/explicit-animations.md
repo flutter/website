@@ -303,39 +303,55 @@ Can you think of a way to:
 ## AnimationController
 
 ### Introduction: What is an AnimationController?
-The `AnimationController` class represents a range
-of values that you can use to power animation effects.
+The `AnimationController` class represents an interpolated
+range of values that define all possible frames
+for a particular animation.
+`AnimationController` has a `value` property,
+which represents the current value of the animation within
+the range of other frame values.
+`AnimationController` is **playable**&mdash;once triggered,
+`AnimationController` changes its `value` property, over time,
+between the other values in the range.
+This change in `value` over time within the range
+of values is what creates the animation effect.
+`AnimationController` is also highly **configurable**, allowing you
+to define any of the following:
+* The range of values to use for an animation.
+* The amount of time it takes to cycle the `value`
+  property through the range of possible values.
+* Whether `value` should move forward or backward through the range.
+* The conditions for starting, stopping, or repeating the animation.
+* Changes in the rate that `value` switches to other values in the range.
+
+
 To generate this range of values,
 instantiate `AnimationController` and
 pass it a few basic arguments like the `duration` of your animation,
-as well as the starting and ending values for your animation.
+as well as the starting and ending values,
+`lowerBound` and `upperBound`, for your animation.
 Once instantiated, `AnimationController` creates an interpolated
 range of values between the provided starting value and an ending value
-over a given duration.
-
-To "play" an animation, `AnimationController`
-moves through its range of values one value at a time,
-where each value within the range represents a single
-frame of your animation.
+over a given duration, and offers control over the following functionality:
 
 [//]: Image of values in AnimationController
 
 * `AnimationController` makes it easy to access
 the current value of the animation&mdash;just use the `value` property.
 
-* `AnimationController` provides convenience methods for
-starting and stopping animations.
+* To "play" an animation,
+you can use one one of several methods that
+initiate the sequence of changes to `value`.
 For example, to "play" an animation
 from its starting value to its ending value,
-simply call `forward()`. 
+simply call `forward()`.
 
-* You can register listeners to `AnimationController`
-  (it inherits from `Listenable`).
-  Most commonly, you register a `setState()` with `AnimationController`.
+* Use `.register()` to add a listener to
+  `AnimationController`'s changes to its `value` property.
+  Most commonly, you register `setState()` with `AnimationController`.
   This tells Flutter to rebuild the widget tree whenever `AnimationController`'s
   value changes.
 
-* `AnimationController` handles syncing 
+* `AnimationController` handles syncing.
 
   `AnimationController` needs a `TickerProvider`.
 
@@ -408,6 +424,10 @@ argument on the `AnimationController` constructor.
    @override
 ```
 
+When used with a StatefulWidget,
+it is common for an `AnimationController`
+to be created in the `State.initState`
+method and then disposed in the `State.dispose` method.
 
 
 #### 3. Add listener(s)
@@ -688,3 +708,7 @@ TODO:
   if you can just use upper and lower bound args for
   AnimationController?
   - when we need something other than a double?
+
+
+
+
