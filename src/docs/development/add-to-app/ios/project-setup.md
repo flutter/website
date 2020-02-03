@@ -223,7 +223,7 @@ some/path/MyApp/
 
 Embed and link the generated frameworks into your existing
 application in Xcode.  There are multiple ways to do
-this&mdashh;use the method that is best for your project.
+this&mdash;use the method that is best for your project.
 
 ### Link on the frameworks
 
