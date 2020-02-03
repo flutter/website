@@ -74,27 +74,53 @@ The following instructions outline the steps for supporting the new API:
       // now automatically registers plugins.
     }
     ```
+    
+1. (Optional) If you removed `MainActivity.java`, update the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` to use `io.flutter.embedding.android.FlutterActivity`. For example:
+
+    <?code-excerpt "AndroidManifest.xml" title?>
+    ```xml
+     <activity android:name="io.flutter.embedding.android.FlutterActivity"
+            android:theme="@style/LaunchTheme"
+   android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    ```
 
 1. (Optional) Create an `EmbeddingV1Activity.java` file that uses the v1
    embedding for the example project in the same folder as `MainActivity` to
-   keep testing the v1 embedding's compatibility with your plugin. For example:
+   keep testing the v1 embedding's compatibility with your plugin. Note that
+   you have to manually register all the plugins instead of using `GeneratedPluginRegistrant`.
+   For example:
 
     <?code-excerpt "EmbeddingV1Activity.java" title?>
     ```java
-    package io.flutter.plugins.firebasecoreexample;
+    package io.flutter.plugins.batteryexample;
 
     import android.os.Bundle;
+    import dev.flutter.plugins.e2e.E2EPlugin;
     import io.flutter.app.FlutterActivity;
-    import io.flutter.plugins.GeneratedPluginRegistrant;
+    import io.flutter.plugins.battery.BatteryPlugin;
 
     public class EmbeddingV1Activity extends FlutterActivity {
       @Override
       protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        GeneratedPluginRegistrant.registerWith(this);
+        BatteryPlugin.registerWith(registrarFor("io.flutter.plugins.battery.BatteryPlugin"));
+        E2EPlugin.registerWith(registrarFor("dev.flutter.plugins.e2e.E2EPlugin"));
       }
     }
     ```
+    
+1.  Add `<meta-data android:name="flutterEmbedding" android:value="2"/>` to the      `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`. This sets the example app
+  to use the v2 embedding.
 
 1. (Optional) If you created an `EmbeddingV1Activity` in the step above, add the
    `EmbeddingV1Activity` to the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
@@ -156,6 +182,7 @@ but aren't required.
 
     @RunWith(FlutterRunner.class)
     public class MainActivityTest {
+      // Replace `MainActivity` with `io.flutter.embedding.android.FlutterActivity` if you removed `MainActivity`.
       @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
     }
     ```
