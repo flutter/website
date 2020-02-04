@@ -12,7 +12,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
   void initState() {
     super.initState();
     controller = AnimationController(
-      vsync: this,
+      vsync: this, // the SingleTickerProviderStateMixin
       duration: Duration(seconds: 1),
       lowerBound: 0,
       upperBound: 100,
@@ -22,7 +22,6 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerPr
       setState((){});
     });
 
-    controller.repeat(reverse: true);
   }
 
   @override

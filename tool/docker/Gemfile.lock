@@ -44,6 +44,10 @@ GEM
     font-awesome-sass (5.9.0)
       sassc (>= 1.11)
     forwardable-extended (2.6.0)
+    gemoji (3.0.1)
+    html-pipeline (2.12.3)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
@@ -79,6 +83,10 @@ GEM
       nokogiri (~> 1.9)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jemoji (0.11.1)
+      gemoji (~> 3.0)
+      html-pipeline (~> 2.2)
+      jekyll (>= 3.0, < 5.0)
     kramdown (1.17.0)
     liquid (4.0.3)
     liquid-tag-parser (1.9.0)
@@ -159,6 +167,7 @@ DEPENDENCIES
   jekyll (~> 3)
   jekyll-assets (~> 3)
   jekyll-toc
+  jemoji
   liquid-tag-parser
   sassc
   sprockets (= 4.0.beta8)

@@ -50,13 +50,15 @@ to the corresponding tools and methods of explicit animations.
 If you are already experienced with animation, you can skip this
 section and move on to the [AnimationController][]section.
 
-### What is an animation?
+### What is animation?
 For the moment, forget about Flutter. 
 How do animations work in other contexts?
-Consider the humble flipbook, or hand-drawn cartoons,
-or movie reels. What do all these animation implementations have in common?
+Consider the humble flipbook, or cartoons on TV,
+or a movie reel.
+What do these animation technologies have in common?
 They create the illusion of motion by rapidly transitioning
-the current frame within a pre-defined sequence of other frames.
+a single frame that you are viewing to other frames
+within a pre-defined sequence.
 
 Suppose you want to create your own Flutter animation
 without using the animations library.
@@ -417,16 +419,20 @@ once to create the desired animation effect.
 For other animations, if you need multiple `AnimationController` objects
 over the lifetime of the `State`,
 use a full `TickerProviderStateMixin` instead.
+The `SingleTickerProviderStateMixin` is slightly more efficient
+than `TickerProviderStateMixin` in the case of the class
+only ever needing one Ticker.
+
 The next step also covers how to configure `TickerProvider`
 with the `vsync` argument
 passed to `AnimationController`'s constructor.
 
-#### 2. Instantiate `AnimationController`
+#### 2. Instantiate and dispose of AnimationController
 <?code-excerpt "explicit{2,3}/lib/main.dart"?>
 ```diff
 --- explicit2/lib/main.dart
 +++ explicit3/lib/main.dart
-@@ -7,9 +7,17 @@
+@@ -7,9 +7,12 @@
  }
 
  class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
@@ -434,17 +440,12 @@ passed to `AnimationController`'s constructor.
 
    void initState() {
      super.initState();
-+    controller = AnimationController(
-+      vsync: this,
-+      duration: Duration(seconds: 1),
-+      lowerBound: 0,
-+      upperBound: 100,
-+    );
++    controller = AnimationController();
 +
    }
 
    @override
-@@ -26,6 +34,10 @@
+@@ -26,6 +29,10 @@
          )
        );
    }
@@ -456,21 +457,61 @@ passed to `AnimationController`'s constructor.
 
  class MyApp extends StatelessWidget {
 ```
-When used with a `StatefulWidget`,
-it is common to instantiate `AnimationController`
-in the `State.initState` lifecycle method and then
-dispose in the `State.dispose` method.
+This step initializes `AnimationController`
+and instantiates it within `_BouncingBallDemoState`'s 
+`initState()` method.
+It is common to instantiate `AnimationController`
+in the `State.initState()` lifecycle method.
 
-An `AnimationController` should be disposed when it is no longer needed.
-This reduces the likelihood of leaks.
+This step also calls `controller.dispose()`
+within `_BouncingBallDemoState`'s `dispose()` method.
+You should dispose of an `AnimationController` 
+when it is no longer needed&mdash;this reduces
+the likelihood of leaks.:droplet:
+Always dispose of `AnimationController` within `dispose()`.
 
 
-#### 3. Add listener(s)
+
+#### 3. AnimationController parameters
 <?code-excerpt "explicit{3,4}/lib/main.dart"?>
 ```diff
 --- explicit3/lib/main.dart
 +++ explicit4/lib/main.dart
-@@ -18,6 +18,10 @@
+@@ -11,7 +11,12 @@
+
+   void initState() {
+     super.initState();
+-    controller = AnimationController();
++    controller = AnimationController(
++      vsync: this, // the SingleTickerProviderStateMixin
++      duration: Duration(seconds: 1),
++      lowerBound: 0,
++      upperBound: 100,
++    );
+
+   }
+```
+This step passes `_BouncingBallDemoState` 
+as the `TickerProvider` object for the `vsync` argument
+in `AnimationController`'s constructor.
+`_BouncingBallDemoState` can be passed as a `TickerProvider`
+because you added the `SingleTickerProviderStateMixin`
+to `_BouncingBallDemoState` in the previous step.
+Notice that `vsync` is a required parameter
+in `AnimationController`'s constructor.
+
+This step sets `AnimationController`'s `duration`
+property to 1 second. 
+the ball to travel once through the range of values
+defined by `AnimationController`.
+
+
+#### 4. Add listener(s)
+<?code-excerpt "explicit{4,5}/lib/main.dart"?>
+```diff
+--- explicit4/lib/main.dart
++++ explicit5/lib/main.dart
+@@ -18,12 +18,16 @@
        upperBound: 100,
      );
 
@@ -478,21 +519,6 @@ This reduces the likelihood of leaks.
 +      setState((){});
 +    });
 +
-   }
-
-   @override
-```
-
-#### 4. Trigger the animation
-<?code-excerpt "explicit{4,5}/lib/main.dart"?>
-```diff
---- explicit4/lib/main.dart
-+++ explicit5/lib/main.dart
-@@ -22,12 +22,13 @@
-       setState((){});
-     });
-
-+    controller.repeat(reverse: true);
    }
 
    @override
@@ -505,10 +531,26 @@ This reduces the likelihood of leaks.
              shape: BoxShape.circle,
 ```
 
-<?code-excerpt "explicit{1,5}/lib/main.dart"?>
+
+#### 5. Trigger the animation
+<?code-excerpt "explicit{5,6}/lib/main.dart"?>
+```diff
+--- explicit5/lib/main.dart
++++ explicit6/lib/main.dart
+@@ -22,6 +22,7 @@
+       setState((){});
+     });
+
++    controller.repeat(reverse: true);
+   }
+
+   @override
+```
+
+<?code-excerpt "explicit{1,6}/lib/main.dart"?>
 ```diff
 --- explicit1/lib/main.dart
-+++ explicit5/lib/main.dart
++++ explicit6/lib/main.dart
 @@ -6,16 +6,29 @@
    _BouncingBallDemoState createState() => _BouncingBallDemoState();
  }
@@ -520,7 +562,7 @@ This reduces the likelihood of leaks.
    void initState() {
      super.initState();
 +    controller = AnimationController(
-+      vsync: this,
++      vsync: this, // the SingleTickerProviderStateMixin
 +      duration: Duration(seconds: 1),
 +      lowerBound: 0,
 +      upperBound: 100,

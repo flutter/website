@@ -3,6 +3,7 @@ gem 'bootstrap'
 gem 'font-awesome-sass'
 # Jekyll-assets isn't yet compatible with Jekyll 4. Pin jekyll version.
 # https://github.com/envygeeks/jekyll-assets/issues/613
+gem 'jemoji'
 gem 'jekyll', '~> 3'
 gem 'jekyll-assets', '~> 3', group: :jekyll_plugins
 gem 'jekyll-toc'
