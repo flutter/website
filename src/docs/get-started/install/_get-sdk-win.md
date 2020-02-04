@@ -18,8 +18,8 @@ bundle, you can skip steps 1 and 2. Instead, get the source code
 from the Flutter repo on GitHub, and change branches or tags as
 needed. For example:
 
-```terminal
-C:\src> git clone https://github.com/flutter/flutter.git -b stable
+```cmd
+C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
 You are now ready to run Flutter commands in the Flutter Console!
@@ -47,7 +47,7 @@ From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
 are any platform dependencies you need to complete the setup:
 
-```console
+```cmd
 C:\src\flutter>flutter doctor
 ```
 
