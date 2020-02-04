@@ -34,10 +34,10 @@
      If you don't want to install a fixed version of the installation bundle, 
      you can skip steps 1 and 2. 
      Instead, get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
-     and change branches or tags as needed.
+     and change branches or tags as needed. For example:
     
     ```terminal
-    $ git clone https://github.com/flutter/flutter.git
+    $ git clone https://github.com/flutter/flutter.git -b stable
     ```
     
  1. Add the `flutter` tool to your path:
