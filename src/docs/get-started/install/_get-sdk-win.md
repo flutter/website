@@ -19,7 +19,7 @@ from the Flutter repo on GitHub, and change branches or tags as
 needed. For example:
 
 ```terminal
-$ git clone https://github.com/flutter/flutter.git -b stable
+C:\src> git clone https://github.com/flutter/flutter.git -b stable
 ```
 
 You are now ready to run Flutter commands in the Flutter Console!
