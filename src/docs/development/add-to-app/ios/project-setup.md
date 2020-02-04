@@ -221,45 +221,6 @@ some/path/MyApp/
   the flags `--xcframework --no-universal`.
 {{site.alert.end}}
 
-### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
-
-Alternatively, instead of distributing the large Flutter.framework to other developers, machines, or continuous integration systems, you can instead generate Flutter as CocoaPods podspec by adding the flag `--cocoapods`. This produces a `Flutter.podspec` instead of an engine Flutter.framework. The App.framework and plugin frameworks will be generated as described in Option B.
-
-{{site.alert.important}}
-  The `--cocoapods` flag is available in Flutter v1.13.6.
-{{site.alert.end}}
-
-```sh
-flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
-```
-
-```text
-some/path/MyApp/
-└── Flutter/
-    ├── Debug/
-    │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
-    ├── Profile/
-    │   ├── Flutter.podspec
-    │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework
-    └── Release/
-        ├── Flutter.podspec
-        ├── App.framework
-        ├── FlutterPluginRegistrant.framework
-        └── example_plugin.framework
-```
-
-Host apps using CocoaPods can add Flutter to their Podfile:
-
-<?code-excerpt "MyApp/Podfile" title?>
-```ruby
-pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
-```
-
 Embed and link the generated frameworks into your existing
 application in Xcode.  There are multiple ways to do
 this&mdash;use the method that is best for your project.
@@ -312,6 +273,49 @@ You should now be able to build the project in Xcode using `⌘B`.
   to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
   build setting.
 {{site.alert.end}}
+
+### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
+
+Alternatively, instead of distributing the large Flutter.framework to other developers, machines, or continuous integration systems, you can instead generate Flutter as CocoaPods podspec by adding the flag `--cocoapods`. This produces a `Flutter.podspec` instead of an engine Flutter.framework. The App.framework and plugin frameworks will be generated as described in Option B.
+
+{{site.alert.important}}
+  The `--cocoapods` flag is available in Flutter v1.13.6.
+{{site.alert.end}}
+
+```sh
+flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
+```
+
+```text
+some/path/MyApp/
+└── Flutter/
+    ├── Debug/
+    │   ├── Flutter.podspec
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    ├── Profile/
+    │   ├── Flutter.podspec
+    │   ├── App.framework
+    │   ├── FlutterPluginRegistrant.framework
+    │   └── example_plugin.framework
+    └── Release/
+        ├── Flutter.podspec
+        ├── App.framework
+        ├── FlutterPluginRegistrant.framework
+        └── example_plugin.framework
+```
+
+Host apps using CocoaPods can add Flutter to their Podfile:
+
+<?code-excerpt "MyApp/Podfile" title?>
+```ruby
+pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/{build_mode}/Flutter.podspec'
+```
+
+Embed and link the generated App.framework, FlutterPluginRegistrant.framework,
+and any plugin frameworks into your existing application
+as described in Option B.
 
 ## Development
 
