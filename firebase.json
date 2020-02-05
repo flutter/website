@@ -169,7 +169,8 @@
       { "source": "/go/dartle", "destination": "https://docs.google.com/document/d/1Ei0ZIqdqNjxTHoGB3Ay6SWQg3DMSsKKWl70XoBUCFTA", "type": 301 },
       { "source": "/go/widget-tree-image-cache", "destination": "https://docs.google.com/document/d/1deEtxZk1VYRmzvkL4gTb3sEnjBrHejQkWObQ4yrP5jE/edit?pli=1#", "type": 301 },
       { "source": "/go/unobstructed-platform-views", "destination": "https://docs.google.com/document/d/1_P3wa_nMqnhKsy-lDlNxT9GThZX2WhfVym4O4M7Q9qs/edit#", "type": 301 },
-      { "source": "/go/dart-flutterbuffers", "destination": "https://docs.google.com/document/d/1rqKq6DwqaeBfTLTixxurrdT9HwZ02DyRjFigO9SiB1Q/edit#", "type": 301 }
+      { "source": "/go/dart-flutterbuffers", "destination": "https://docs.google.com/document/d/1rqKq6DwqaeBfTLTixxurrdT9HwZ02DyRjFigO9SiB1Q/edit#", "type": 301 },
+      { "source": "/go/base-annotations-local-position-on-region", "destination": "https://docs.google.com/document/d/1r7FQTOw2vZJZ5c0VoNqi9CWmZY3MvUfz0spdf0-nK6k/edit?usp=sharing", "type": 301 }
     ]
   }
 }
