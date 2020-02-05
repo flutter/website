@@ -34,8 +34,8 @@ you can complete this tutorial. You don’t need
 previous experience with Dart, mobile, or web programming.
 
 This guide is part 1 of a two-part codelab.
-You can find [part 2][] on the [Google Developers][] site.
-[Part 1][] can also be found on [Google Developers][].
+You can find [part 2][] on the [Google Developers Codelabs][],
+as well as [part 1][].
 
 ## What you'll build in part 1
 {:.no_toc}
