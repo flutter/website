@@ -322,6 +322,35 @@ you can use the `@JsonKey` annotation with a name parameter:
 final int registrationDateMillis;
 ```
 
+Both server or client are best to follow the same naming strategy, 
+`@JsonSerializable()` provide `fieldRename` enum to totally converting dart 
+fields into JSON keys.
+
+Modifying `@JsonSerializable(fieldRename: FieldRename.snake)` is equivalent to
+adding `@JsonKey(name: '<snake_case>')` to each field.
+
+Sometimes server data is uncertain, so it is necessary to verify and protect data
+ on client.  
+Other commonly used `@JsonKey` annotations include: 
+
+<!-- skip -->
+```dart
+/// Tell json_serializable that "defaultValue" to use if the JSON does not 
+/// contain this key or if the value is `null`.
+@JsonKey(defaultValue: false)
+final bool isAdult;
+
+/// When `true` tell json_serializable that JSON must contains the key, 
+/// If the key does not exist, an exception will thrown.
+@JsonKey(required: true)
+final String id;
+
+/// When `true` tell json_serializable that generated code should 
+/// ignore this field completely. 
+@JsonKey(ignore: true)
+final String verificationCode;
+```
+
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time,
