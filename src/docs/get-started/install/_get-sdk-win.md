@@ -13,12 +13,13 @@
     do not install Flutter in a directory like
     `C:\Program Files\` that requires elevated privileges).
 
-Steps 1 and 2 can be replaced. If you don't want to install a fixed version of the installation bundle.
-The Flutter SDK is free and open source, so you can get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
-and change branches or tags as needed.
+If you don't want to install a fixed version of the installation 
+bundle, you can skip steps 1 and 2. Instead, get the source code 
+from the [Flutter repo](https://github.com/flutter/flutter) on 
+GitHub, and change branches or tags as needed. For example:
 
-```terminal
-$ git clone https://github.com/flutter/flutter.git
+```batchfile
+C:\src>git clone https://github.com/flutter/flutter.git -b stable
 ```
 
 You are now ready to run Flutter commands in the Flutter Console!
@@ -46,7 +47,7 @@ From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
 are any platform dependencies you need to complete the setup:
 
-```console
+```batchfile
 C:\src\flutter>flutter doctor
 ```
 
