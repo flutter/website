@@ -18,6 +18,7 @@ available:
 * [Scrollable AlertDialog][]
 * [TestTextInput state reset][]
 * [TextInputClient currentTextEditingValue][]
+* [The Route and Navigator Refactoring][]
 * [ThemeData's accent properties][]
 
 [breaking change policy]: /docs/resources/compatibility
@@ -30,4 +31,5 @@ available:
 [Scrollable AlertDialog]: /docs/release/breaking-changes/scrollable-alert-dialog
 [TestTextInput state reset]: /docs/release/breaking-changes/test-text-input
 [TextInputClient currentTextEditingValue]: /docs/release/breaking-changes/text-input-client-current-value
+[The Route and Navigator Refactoring]: /docs/release/breaking-changes/route-navigator-refactoring
 [ThemeData's accent properties]: /docs/release/breaking-changes/theme-data-accent-properties
