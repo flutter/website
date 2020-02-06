@@ -150,7 +150,15 @@ function initSnackbar() {
 }
 
 function setupClipboardJS() {
-  var clipboard = new ClipboardJS('.code-excerpt__copy-btn'); // [data-clipboard-target]
+  var clipboard = new ClipboardJS('.code-excerpt__copy-btn', {
+    text: function (trigger) {
+      var targetId = trigger.getAttribute('data-clipboard-target');
+      var target = document.querySelector(targetId);
+      var terminalRegExp = /^\$\s*/gm;
+      var copy = target.textContent.replace(terminalRegExp, '');
+      return copy;
+    }
+  });
   clipboard.on('success', _copiedFeedback);
 }
 
