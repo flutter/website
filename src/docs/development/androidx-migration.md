@@ -64,7 +64,7 @@ flutter create --androidx -t <project-type> <new-project-path>
 
 ### Add to App
 
-If your Flutter project is a module type for adding to an existing Android app, and 
+If your Flutter project is a module type for adding to an existing Android app, and
 contains a `.android` directory, add the following line to `pubspec.yaml`:
 
 ```yaml
@@ -80,18 +80,20 @@ steps in previous section.
 
 ### How do I know if my project is using AndroidX?
 
-* **Apps and Modules**
-  Your project uses AndroidX if the file `android/gradle.properties` or
-  `.android/gradle.properties` contains:
+Starting from Flutter v1.12.13, new projects created with `flutter create -t <project-type>`
+use AndroidX by default.
 
-  ```
-  android.useAndroidX=true
-  android.enableJetifier=true
-  ```
+Projects created prior to this Flutter version must not depend on any
+[old build artifact](https://developer.android.com/jetpack/androidx/migrate/artifact-mappings) or
+[old Support Library class](https://developer.android.com/jetpack/androidx/migrate/class-mappings).
 
-* **Plugins**
-  If a file under the android directory references any old support library package
-  or old support support artifacts, then the plugin isn’t using AndroidX.
+In an app or module project, the file `android/gradle.properties` or `.android/gradle.properties`
+must contain:
+
+```
+android.useAndroidX=true
+android.enableJetifier=true
+```
 
 ### What if I don’t migrate my app or module to AndroidX?
 
