@@ -438,7 +438,7 @@ additional capabilities of implicit animations:
 * If you do not specify a `curve`,
   implicit animations default to a [linear curve].
 
-## What's Next?
+## What's next?
 
 Congratulations, you've finished the codelab! If you'd like to learn more,
 here are some suggestions for where to go next:
