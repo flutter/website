@@ -9,6 +9,7 @@ across a breaking change.
 The following guides (in alphabetical order) are
 available:
 
+* [Annotations return local position relative to object][]
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache large images][]
 * [ImageCache large images][]
@@ -23,6 +24,7 @@ available:
 * [ThemeData's accent properties][]
 
 [breaking change policy]: /docs/resources/compatibility
+[Annotations return local position relative to object]: /docs/release/breaking-changes/annotations-return-local-position-relative-to-object
 [Generic type of ParentDataWidget changed to ParentData]: /docs/release/breaking-changes/parent-data-widget-generic-type
 [ImageCache large images]: /docs/release/breaking-changes/imagecache-large-images
 [ImageCache and ImageProvider changes]: /docs/release/breaking-changes/image-cache-and-provider
