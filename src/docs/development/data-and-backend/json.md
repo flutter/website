@@ -322,7 +322,7 @@ you can use the `@JsonKey` annotation with a name parameter:
 final int registrationDateMillis;
 ```
 
-Both server or client are best to follow the same naming strategy, 
+It's best if both server and client follow the same naming strategy.  
 `@JsonSerializable()` provide `fieldRename` enum to totally converting dart 
 fields into JSON keys.
 
@@ -335,13 +335,13 @@ Other commonly used `@JsonKey` annotations include:
 
 <!-- skip -->
 ```dart
-/// Tell json_serializable that "defaultValue" to use if the JSON does not 
+/// Tell json_serializable to use "defaultValue" if the JSON doesn't
 /// contain this key or if the value is `null`.
 @JsonKey(defaultValue: false)
 final bool isAdult;
 
-/// When `true` tell json_serializable that JSON must contains the key, 
-/// If the key does not exist, an exception will thrown.
+/// When `true` tell json_serializable that JSON must contain the key, 
+/// If the key doesn't exist, an exception is thrown.
 @JsonKey(required: true)
 final String id;
 
