@@ -1,6 +1,6 @@
 ---
-title: [Annotations return local position relative to object]
-description: [Provide mouse events with reliable and meaningful local positions.]
+title: Annotations return local position relative to object
+description: Provide mouse events with reliable and meaningful local positions.
 ---
 
 ## Summary
