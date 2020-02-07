@@ -1,6 +1,6 @@
 ---
 title: TestTextInput state reset
-description: TestTextInput will have its state reset between tests.
+description: TestTextInput state is now reset between tests.
 ---
 
 ## Summary

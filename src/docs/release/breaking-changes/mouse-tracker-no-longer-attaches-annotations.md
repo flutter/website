@@ -11,7 +11,7 @@ Removed `MouseTracker`'s methods `attachAnnotation`, `detachAnnotation`, and
 ## Context
 
 Mouse events, such as when a mouse pointer has entered a region, exited, or
-is hovering a region, are detected with the help of
+is hovering over a region, are detected with the help of
 `MouseTrackerAnnotation`s that are placed on interested regions during the
 render phase. Upon each update (a new frame or a new event), `MouseTracker`
 compares the annotations hovered by the mouse pointer before and after the
@@ -34,7 +34,8 @@ callback when unmounted. Therefore, these methods have been removed, and
 
 ## Description of change
 
-The `MouseTracker` class has removed three methods related to attaching annotations:
+The `MouseTracker` class has removed three methods related
+to attaching annotations:
 
 ```diff
  class MouseTracker extends ChangeNotifier {

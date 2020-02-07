@@ -7,18 +7,19 @@ ImageProvider has marked resolve as @nonVirtual
 
 ## Summary
 
-`ImageCache` now has a method called `containsKey`. `ImageProvider` subclasses
-should not override `resolve`, but instead should implement new methods on
-`ImageProvider`. These changes were submitted as a single commit to the
-framework.
+`ImageCache` now has a method called `containsKey`.
+`ImageProvider` subclasses should not override `resolve`,
+but instead should implement new methods on `ImageProvider`.
+These changes were submitted as a single commit to the framework.
 
 ## Description of change
 
 ### ContainsKey change
 
-Clients of the `ImageCache`, such as a custom `ImageProvider`, may want to know
-if the cache is already tracking an image. Adding the `containsKey` method
-allows callers to discover this without calling a method like `putIfAbsent`,
+Clients of the `ImageCache`, such as a custom `ImageProvider`,
+may want to know if the cache is already tracking an image.
+Adding the `containsKey` method allows callers to discover
+this without calling a method like `putIfAbsent`,
 which can trigger an undesired call to `ImageProvider.load`.
 
 The default implementation checks both pending and cached image buckets.
@@ -35,15 +36,17 @@ The `ImageProvider.resolve` method does some complicated error handling work
 that should not normally be overriden. It also previously did work to load the
 image into the image cache, by way of `ImageProvider.obtainKey` and
 `ImageProvider.load`. Subclasses had no opportunity to override this behavior
-without overriding resolve, and the ability to compose `ImageProvider`s is
-limited if multiple `ImageProvider`s expect to override resolve.
+without overriding `resolve`, and the ability to compose `ImageProvider`s is
+limited if multiple `ImageProvider`s expect to override `resolve`.
 
-To solve this issue, `resolve` is being marked as non-virtual, and two new
-protected methods have been added: `createStream` and `resolveStreamForKey`.
-These methods allow subclasses to control most of the behavior of `resolve`,
-without having to duplicate all the error handling work. It also allows
-subclasses that compose `ImageProvider`s to be more confident there will only
-be one public entrypoint to the various chained providers.
+To solve this issue, `resolve` is now marked as non-virtual,
+and two new protected methods have been added: `createStream()`
+and `resolveStreamForKey()`.
+These methods allow subclasses to control most of the behavior
+of `resolve`, without having to duplicate all the error handling work.
+It also allows subclasses that compose `ImageProvider`s
+to be more confident that there is only one public entrypoint
+to the various chained providers.
 
 ## Migration guide
 
@@ -58,7 +61,7 @@ Code after migration:
 class MyImageCache implements ImageCache {
   @override
   bool containsKey(Object key) {
-    // check if your custom cache is tracking this key.
+    // Check if your custom cache is tracking this key.
   }
 
   ...
@@ -91,8 +94,8 @@ Code after the migration:
 class MyImageProvider extends ImageProvider<Object> {
   @override
   ImageStream createStream(ImageConfiguration configuration) {
-    // return stream, or just use super.createStream(), which returns a new
-    // ImageStream.
+    // Return stream, or use super.createStream(),
+    // which returns a new ImageStream.
   }
 
   @override
@@ -102,8 +105,8 @@ class MyImageProvider extends ImageProvider<Object> {
     Object key,
     ImageErrorListener handleError,
   ) {
-    // Interact with the cache, use the key, potentially call `load`, and
-    // report any errors back through `handleError`
+    // Interact with the cache, use the key, potentially call `load`,
+    // and report any errors back through `handleError`.
   }
 
   ...
@@ -118,18 +121,18 @@ This change was introduced in v1.14.7
 ## References
 
 API documentation:
-* [`ImageCache`]
-* [`ImageProvider`]
-* [`ScrollAwareImageProvider`]
+* [`ImageCache`][]
+* [`ImageProvider`][]
+* [`ScrollAwareImageProvider`][]
 
 Relevant issues:
-* [Issue #32143]
-* [Issue #44510]
-* [Issue #48305]
-* [Issue #48775]
+* [Issue #32143][]
+* [Issue #44510][]
+* [Issue #48305][]
+* [Issue #48775][]
 
 Relevant PRs:
-* [Defer image decoding when scrolling fast #49389]
+* [Defer image decoding when scrolling fast #49389][]
 
 [Stopped increasing the cache size to accomodate large images]: {{site.github}}/flutter/flutter/pull/47387
 [`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html

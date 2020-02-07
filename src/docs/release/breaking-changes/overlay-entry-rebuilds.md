@@ -1,6 +1,6 @@
 ---
 title: Rebuild optimization for OverlayEntries and Routes
-description: OverlayEntries will only rebuild on explicit state changes.
+description: OverlayEntries only rebuild on explicit state changes.
 ---
 
 ## Summary

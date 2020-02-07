@@ -3,7 +3,7 @@ title: Breaking changes
 description: A list of migration guides for breaking changes in Flutter.
 ---
 
-As described in the [breaking change policy],
+As described in the [breaking change policy][],
 on occasion we publish guides for migrating code
 across a breaking change.
 The following guides (in alphabetical order) are

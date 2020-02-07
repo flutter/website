@@ -48,7 +48,7 @@ class AwaysDarkCupertinoThemeData extends CupertinoThemeData {
   Brightness brightness => Brightness.dark;
 }
 ```
-when a `CupertinoTheme` uses the above `CupertinoThemeData`,
+When a `CupertinoTheme` uses the above `CupertinoThemeData`,
 dark mode is enabled for all its Cupertino descendants
 that are affected by this `CupertinoTheme`.
 
