@@ -340,8 +340,9 @@ pass it a few basic arguments like the `duration` of your animation,
 as well as the starting and ending values,
 `lowerBound` and `upperBound`, for your animation.
 Once instantiated, `AnimationController` creates an interpolated
-range of values between the provided starting value and an ending value
-over a given duration, and offers control over the following functionality:
+range of values between `upperBound` and `lowerBound`
+over the given `duration`.
+`AnimationController` provides the following functionality:
 
 [//]: Image of values in AnimationController
 
@@ -491,19 +492,28 @@ Always dispose of `AnimationController` within `dispose()`.
 
    }
 ```
-This step passes `_BouncingBallDemoState` 
-as the `TickerProvider` object for the `vsync` argument
-in `AnimationController`'s constructor.
+This step instantiates `AnimationController`. 
+
+By passing `this` for the `vsync` parameter, this
+step passes `_BouncingBallDemoState` 
+as the `TickerProvider` object needed for the `vsync` argument
+in the `AnimationController` constructor.
+
 `_BouncingBallDemoState` can be passed as a `TickerProvider`
-because you added the `SingleTickerProviderStateMixin`
-to `_BouncingBallDemoState` in the previous step.
+because the previous step adds `SingleTickerProviderStateMixin`
+to `_BouncingBallDemoState`. 
 Notice that `vsync` is a required parameter
 in `AnimationController`'s constructor.
 
-This step sets `AnimationController`'s `duration`
+This step also sets provides `AnimationController`'s `duration`
 property to 1 second. 
+
+
+
 the ball to travel once through the range of values
 defined by `AnimationController`.
+
+
 
 
 #### 4. Add listener(s)
