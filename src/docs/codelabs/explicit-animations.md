@@ -317,9 +317,14 @@ for a particular animation.
 `AnimationController` has a `value` property,
 which represents the current value of the animation within
 the range of other frame values.
-`AnimationController` is **playable**&mdash;once triggered,
-`AnimationController` changes its `value` property, over time,
-between the other values in the range.
+`AnimationController` is **playable**&mdash;it provides
+controls for triggering chnages to its `value` property
+(between its `lowerBound` and `upperBound`) over time
+(whatever value is passed for the `duration` parameter).
+Once triggered, `AnimationController`
+changes its `value`property over time
+to the other values in the range
+between`upperBound` and `lowerBound`.
 This change in `value` over time within the range
 of values is what creates the animation effect.
 `AnimationController` is also highly **configurable**, allowing you
@@ -332,33 +337,6 @@ to define any of the following:
 * Changes in the rate that `value` switches to other values in the range.
 
 
-To generate this range of values,
-instantiate `AnimationController` and
-pass it a few basic arguments like the `duration` of your animation,
-as well as the starting and ending values,
-`lowerBound` and `upperBound`, for your animation.
-Once instantiated, `AnimationController` creates an interpolated
-range of values between `upperBound` and `lowerBound`
-over the given `duration`.
-`AnimationController` provides the following functionality:
-
-[//]: Image of values in AnimationController
-
-* `AnimationController` makes it easy to access
-the current value of the animation&mdash;just use the `value` property.
-* To "play" an animation,
-  you can use one one of several methods that
-  initiate the sequence of changes to `value`.
-  For example, to "play" an animation
-  from its starting value to its ending value,
-  simply call `forward()`.
-* Use `.addListener()` to register a callback invoked whenever
-  `AnimationController` changes its `value` property.
-  Most commonly, you register `setState()` with `AnimationController`.
-  This tells Flutter to rebuild the widget tree whenever `AnimationController`'s
-  value changes.
-* `AnimationController` needs a `TickerProvider` to synchronize the animation's
-  behavior to the device's display.
 
 The following sections demonstrate how to use `AnimationController`
 by providing step-by-step instructions for
@@ -390,9 +368,9 @@ Use the following instructions to create an explicit animation of a bouncing bal
 
 #### 1. Use a TickerProvider mixin
 
-An `AnimationController` needs a `TickerProvider`&mdash;
-The `AnimationController` constructor takes
-a required parameter `vsync` that must be a `TickerProvider` object.
+An `AnimationController` needs a `TickerProvider`&mdash;the
+`AnimationController` constructor takes
+a required parameter `vsync` that must implement a `TickerProvider` interface.
 Therefore the first step for creating an explicit animation
 is to make a `TickerProvider` object available to pass as the `vsync` argument
 to your `AnimationController`.
@@ -461,12 +439,13 @@ passed to `AnimationController`'s constructor.
  class MyApp extends StatelessWidget {
 ```
 
-**This step adds code that is not yet valid because
-it passes no arguments to `AnimationController`'s constructor.**
 
 This step initializes `AnimationController`
 and instantiates it within `_BouncingBallDemoState`'s 
 `initState()` lifecycle method.
+**This step adds code that is not yet valid because
+it passes no arguments to `AnimationController`'s constructor.**
+
 * It is common to instantiate `AnimationController`
   in the `State.initState()` lifecycle method.
 
@@ -497,24 +476,25 @@ within the `dispose()` lifecycle method.
 
    }
 ```
-This step instantiates `AnimationController`. 
+This step passes the `AnimationController` constructor 
+the necessary parameters for creating the animation.
 
 `vsync` is the required named parameter that takes a `TickerProvider`.
 By passing `this` for the `vsync` parameter, this
 step passes `_BouncingBallDemoState` 
 as the `TickerProvider` object required by the `vsync` argument
 in the `AnimationController` constructor.
-* The previous step adds the `SingleTickerProviderStateMixin`
-  to `_BouncingBallDemoState`, which is why `_BouncingBallDemoState`
-  provides the `TickerProvider` interface required by the `vsync` argument.
-* Notice that `vsync` is a required parameter
-  in `AnimationController`'s constructor.
+* The previous step uses the `SingleTickerProviderStateMixin`
+  with `_BouncingBallDemoState` so that `_BouncingBallDemoState`
+  implements the `TickerProvider` interface required by the `vsync` argument.
 
 This step also provides the basic parameters
 that allow `AnimationController` to interpolate all
 values needed for this animation.
 * The `duration` of the animation is 1 second.
-* The `lowerBound` is 0 and `upperBound` is 1.
+* Since the bouncing ball animation moves the ball
+  by transitioning its top-margin value from 0 to 100,
+  this step passes 0 as the `lowerBound` and 100 as the `upperBound`.
 
 #### 4. Add listener(s)
 <?code-excerpt "explicit{4,5}/lib/main.dart"?>
@@ -628,48 +608,41 @@ Configuration
 {% include explicit-animations/bouncing-ball-starter-code-5.md %}
 
 ### AnimationController Concepts
-AnimationController is the central class that you use
-to create explicit animations.
-AnimationController's capabilities fall into four categories:
+`AnimationController` is the central class that you use
+to create explicit animations; its capabilities
+fall into four categories:
 Defining animations, generating animation values,
-registering listeners, and play/sequence controls.
-
-
-The preceding [Animation Concepts][] section uses an `interpolate()`
-method to generate frame values between a starting value and an
-ending value of the `margin` property.
-The example uses each interpolated value in a separate frame
-to animate a circle up and down,
-making it appear like a bouncing ball.
-The first thing to know about `AnimationController`
-is that, within this process, `AnimationController`
-handles the interpolation part for you.
-The following example renders a blank screen,
-but uses `AnimationController` to print values from 0 to 100
-at 60fps over 1 second.
-Click **Run**, then check the values that are
-being printed by clicking the **Console** area at the bottom
-of the editor:
-
-{% include explicit-animations/animation-controller-starter-code-1.md %}
-
-**AnimationController interpolates the `value` property for you**.
-
-  `AnimationController`
-  abstracts away the the work of interpolation,
-  allowing you to reason about and create an animation
-  in terms of its duration, and the starting and ending
-  values of the property that you are animating:
-
-This example demonstrates the following
-important concepts for using `AnimationController`:
-
-**AnimationController doesn't interact with Flutter UI widgets on its own.**
-
+registering listeners, and play/sequence controls:
+* `AnimationController` makes it easy to access
+the current value of the animation&mdash;just use the `value` property.
+* To "play" an animation,
+  you can use one one of several methods that
+  initiate the sequence of changes to `value`.
+  For example, to "play" an animation
+  from its starting value to its ending value,
+  simply call `forward()`.
+* Use `.addListener()` to register a callback invoked whenever
+  `AnimationController` changes its `value` property.
+  Most commonly, you register `setState()` with `AnimationController`.
+  This tells Flutter to rebuild the widget tree whenever `AnimationController`'s
+  value changes.
+* `AnimationController` needs a `TickerProvider` to synchronize the animation's
+  behavior to the device's display.
+  
 #### Why TickerProvider?
 
-#### Define a range of frame values
+#### AnimationController interpolates frame values
 
+To generate its range of values,
+instantiate `AnimationController` and
+pass it a few basic arguments like the `duration` of your animation,
+as well as the starting and ending values,
+`lowerBound` and `upperBound`, for your animation.
+Once instantiated, `AnimationController` creates an interpolated
+range of values between `upperBound` and `lowerBound`
+over the given `duration`.
+
+[//]: Image of values in AnimationController
 In this example,
 the AnimationController constructor takes the optional parameters `lowerBound`,
 and `upperBound`, and `duration`:
@@ -691,11 +664,37 @@ from one to the other (`duration`).
 
 The default values for `lowerBound` and `upperBound`
 are 0 and 1, respectively; `duration` doesn't have a default value.
-These aren’t the only parameters
-that the AnimationController constructor takes&mdash;`vsync` and other parameters
-are covered in subsequent sections.
 
-#### Access animation values with controller.value
+The preceding [Animation Concepts][] section uses an `interpolate()`
+method to generate frame values between a starting value and an
+ending value of the `margin` property.
+The example uses each interpolated value in a separate frame
+to animate a circle up and down,
+making it appear like a bouncing ball.
+The first thing to know about `AnimationController`
+is that, within this process, `AnimationController`
+handles the interpolation part for you.
+The following example renders a blank screen,
+but uses `AnimationController` to print values from 0 to 100
+at 60fps over 1 second.
+Click **Run**, then check the values that are
+being printed by clicking the **Console** area at the bottom
+of the editor:
+
+{% include explicit-animations/animation-controller-starter-code-1.md %}
+
+
+  `AnimationController`
+  abstracts away the the work of interpolation,
+  allowing you to reason about and create an animation
+  in terms of its duration, and the starting and ending
+  values of the property that you are animating:
+
+#### AnimationController doesn't know anything about the UI
+
+
+
+##### Access animation values with controller.value
 AnimationController provides a `value` property.
 You can access this property directly&mdash;there is no getter method for `value`:
    ```dart
@@ -707,7 +706,7 @@ value between `lowerBound` and `upperBound` using the `from` parameter.
 Once triggered, the AnimationController will automatically update the `value`
 property to a new value.
 
-#### Listen to animations
+##### Listen to animations
 **addListener()**
 
   `AnimationController` allows you to listen for changes
@@ -718,7 +717,7 @@ property to a new value.
     });
   ```
 
-#### Trigger, sequence, and terminate animations:
+##### Trigger, sequence, and terminate animations:
 **forward(), repeat(), reverse() and stop()**
   `AnimationController` provides the
   `forward()`, `repeat()`, `reverse()`, and `stop()` methods
@@ -765,9 +764,9 @@ property to a new value.
   See [performance profiling][] page for more information.
 
 
-[Animation Concepts]: /#Animation-Concepts
-[AnimationController]: /#AnimationController
-[AnimationController Concepts]: /#animationcontroller-concepts
+[Animation Concepts]: #Animation-Concepts
+[AnimationController]: #AnimationController
+[AnimationController Concepts]: #animationcontroller-concepts
 [Create your first explicit animation with AnimationController]: /#create-your-first-explicit-animation-with-animationcontroller
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [performance profiling]: /docs/perf/rendering/ui-performance
