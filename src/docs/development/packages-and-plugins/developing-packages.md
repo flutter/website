@@ -157,8 +157,7 @@ Next,
 1. Launch Xcode
 1. Select 'File > Open', and select the `hello/example/ios/Runner.xcworkspace` file.
 
-The iOS platform code of your plugin is located in `Pods/Development
-Pods/hello/Classes/` in the Project Navigator.
+The iOS platform code of your plugin is located in `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes` in the Project Navigator.
 
 You can run the example app by pressing the &#9654; button.
 
