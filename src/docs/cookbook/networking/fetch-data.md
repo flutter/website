@@ -104,21 +104,23 @@ function to return a `Future<Post>`:
 
   1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.
-  2. If the server returns an "OK" response with a status code of 200, convert
+  2. If the server does return an OK response with a status code of 200, then convert
      the JSON `Map` into a `Post` using the `fromJson()` factory method.
-  3. If the server returns an unexpected response, throw an error.
+  3. If the server does not return an OK response with a status code of 200,
+     then throw an exception. (Even in the case of a 404 Not Found server response,
+     throw an exception. Do not return `null`. This is important when examining
+     the data in `snapshot` as shown below.)
 
 <!-- skip -->
 ```dart
 Future<Post> fetchPost() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+  final response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON.
+    // If the server did return a 200 OK response, then parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
-    // If that response was not OK, throw an error.
+    // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load post');
   }
 }
@@ -163,6 +165,11 @@ You must provide two parameters:
   the `fetchPost()` function.
   2. A `builder` function that tells Flutter what to render, depending on the
   state of the `Future`: loading, success, or error.
+
+Note that `snapshot.hasData` will only return `true` when the snapshot contains
+a non-null data value. This is why the `fetchPost` function should throw an exception
+even in the case of a 404 Not Found server response. If `fetchPost` returns `null`
+then the spinner will show indefinitely.
 
 <!-- skip -->
 ```dart
@@ -213,10 +220,10 @@ Future<Post> fetchPost() async {
       await http.get('https://jsonplaceholder.typicode.com/posts/1');
 
   if (response.statusCode == 200) {
-    // If the call to the server was successful, parse the JSON.
+    // If the server did return a 200 OK response, then parse the JSON.
     return Post.fromJson(json.decode(response.body));
   } else {
-    // If that call was not successful, throw an error.
+    // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load post');
   }
 }
