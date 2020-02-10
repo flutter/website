@@ -65,7 +65,7 @@ this text style was based on the button style of
 
 <!-- skip -->
 ```dart
-// theme.accentTextTheme will become theme.textTheme
+// theme.accentTextTheme becomes theme.textTheme
 final TextStyle textStyle = theme.accentTextTheme.button.copyWith(
   color: foregroundColor,
   letterSpacing: 1.2,
@@ -118,7 +118,7 @@ MaterialApp(
 
 ## Timeline
 
-TBD: Add a version number for the release # where it landed.
+This change landed in 1.15.2.
 
 ## References
 

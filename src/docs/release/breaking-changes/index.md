@@ -12,7 +12,6 @@ available:
 * [Annotations return local position relative to object][]
 * [Generic type of ParentDataWidget changed to ParentData][]
 * [ImageCache large images][]
-* [ImageCache large images][]
 * [MouseTracker no longer attaches annotations][]
 * [Nullable `CupertinoTheme.brightness`][]
 * [Rebuild optimization for OverlayEntries and Routes][]

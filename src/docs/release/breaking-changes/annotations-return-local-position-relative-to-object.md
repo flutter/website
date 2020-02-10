@@ -5,43 +5,51 @@ description: Provide mouse events with reliable and meaningful local positions.
 
 ## Summary
 
-The local position returned in an annotation search is now relative to the
-region that contains the annotation object instead of the layer. This majorly
-affects mouse events (`onEnter`, `onExit`, and `onHover`).
+The local position returned in an annotation search is now
+relative to the region that contains the annotation object
+instead of the layer. This majorly affects mouse events
+(`onEnter`, `onExit`, and `onHover`).
 
 ## Context
 
-Annotations are metadata that are assigned during the rendering phase to
-regions on the screen. Searching the annotations with a location gives the
-contextual information that contains that location. They are used to detect
-mouse events and the theme of app bars.
+Annotations are metadata that are assigned during the
+rendering phase to regions on the screen.
+Searching the annotations with a location gives the
+contextual information that contains that location.
+They are used to detect mouse events and the theme of app bars.
 
-When `localPosition` was first added to the search result, it was defined as
-relative to the layer that owned the annotation, which turned out to be a
-design mistake. The offset from the layer is meaningless and unreliable. For
-example, a `Transform` widget will draw on the same layer with an offset if
-the transform matrix is a simple translation, or push a dedicated
-`TransformLayer` if the matrix is non-trivial. The former case will keep the
-previous coordinate origin (for example, the top left corner of the app),
-while the latter case will move the position origin since it's on a new
-layer, and the difference of them might just be an unnoticeable scale of
-99%.
+When `localPosition` was first added to the search result,
+it was defined as relative to the layer that owned the annotation,
+which turned out to be a design mistake.
+The offset from the layer is meaningless and unreliable.
+For example, a `Transform` widget draws on the same layer
+with an offset if the transform matrix is a simple translation,
+or push a dedicated `TransformLayer` if the matrix is non-trivial.
+The former case keeps the previous coordinate origin
+(for example, the top left corner of the app),
+while the latter case moves the position origin since
+it's on a new layer, and the difference of them might
+just be an unnoticeable scale of 99%.
 
-Moreover, the major (if not only) users of `AnnotatedRegionLayer` are render
-objects and widgets, which define regions out of themselves and expect to
-know the location relative to the region. How the search is implemented
-under the hood using a layer is unrelated, and should be transparent.
+Moreover, the major (if not only) users of
+`AnnotatedRegionLayer` are render objects and widgets,
+which define regions out of themselves and expect to
+know the location relative to the region.
+How the search is implemented under the hood using
+a layer is unrelated, and should be transparent.
 
-This change was also the first step of a longer plan that moved the
-annotations from the layer tree into an independent tree ([Issue #49568][]).
-As a result, the annotations no longer has access to their relative position
-to any layers.
+This change was also the first step of a longer plan to
+move the annotations from the layer tree into an
+independent tree ([Issue #49568][]).
+As a result, the annotations no longer have access to
+their position relative to any layers.
 
 ## Description of change
 
-The `localPosition` returned by an `AnnotatedRegionLayer` is now the local
-position it received subtracted by `offset`, where `offset` is the the
-location of the clipping area relative to the layer.
+The `localPosition` returned by an `AnnotatedRegionLayer`
+is now the local position it received subtracted by `offset`,
+where `offset` is the location of the clipping area relative
+to the layer.
 
 ```dart
 class AnnotatedRegionLayer<T> extends ContainerLayer {
@@ -61,26 +69,31 @@ class AnnotatedRegionLayer<T> extends ContainerLayer {
 }
 ```
 
-Conceptually, this has changed how `AnnotatedRegionLayer.offset` and `size`
-are defined. They used to mean "the clipping rectangle that restricts the
-annotation search", while they now jointly represent "the region of the
-annotation object".
+Conceptually, this has changed how `AnnotatedRegionLayer.offset`
+and `size` are defined. They used to mean
+"the clipping rectangle that restricts the annotation search",
+while they now jointly represent
+"the region of the annotation object".
 
 ## Migration guide
 
-This change shouldn't affect most people, if any. The `MouseRegion` couldn't
-output a valid `localPosition` at the time of the change, while only other
-use case in the Flutter framework was by `SystemUiOverlayStyle`, which didn't
+This change shouldn't affect most people.
+The `MouseRegion` couldn't output a valid `localPosition`
+at the time of the change,
+and the only other use case in the Flutter framework was
+by `SystemUiOverlayStyle`, which didn't
 depend on the local position.
 
-If any one happens to have relied on this property, they should have found
-this to be unreliable, in which case this change is a fix. In the case that
-someone actually wants the relative location to the layer, a case-by-case
-analysis is needed to figure out a migration plan.
+If anyone relied on this property,
+they would have found it to be unreliable,
+in which case this change is a fix.
+In the case that someone actually wants the relative
+location to the layer, a case-by-case analysis is
+needed to figure out a migration plan.
 
 ## Timeline
 
-This change was introduced since 1.15.2.
+This change was introduced in 1.15.2.
 
 ## References
 
