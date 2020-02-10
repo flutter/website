@@ -116,7 +116,7 @@ class MyImageProvider extends ImageProvider<Object> {
 
 ## Timeline
 
-This change was introduced in v1.14.7
+This change was introduced in v1.14.7.
 
 ## References
 

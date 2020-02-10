@@ -70,8 +70,7 @@ This can be remedied by one of the following approaches:
 ## Timeline
 
 The old algorithm is no longer supported.
-As of Dec 2019, this is the updated behavior.
-TBD: replace this with a version number.
+This changed was introduced in v1.15.2.
 
 ## References
 
@@ -93,4 +92,3 @@ Other:
 [`image_cache.dart`]: {{site.github}}/flutter/flutter/blob/72a3d914ee5db0033332711224e728b8a5281d89/packages/flutter/lib/src/painting/image_cache.dart#L34
 [`ImageCache` source]: {{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/painting/image_cache.dart)
 [Issue 45643]: {{site.github}}/flutter/flutter/issues/45643
-

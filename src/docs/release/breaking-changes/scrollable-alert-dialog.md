@@ -141,7 +141,7 @@ AlertDialog(
     'Very, very large title that is also scrollable',
     textScaleFactor: 5,
   ),
-  content: SingleChildScrollView( // will not be scrollable
+  content: SingleChildScrollView( // won't be scrollable
     child: Text('Scrollable content', textScaleFactor: 5),
   ),
   actions: <Widget>[

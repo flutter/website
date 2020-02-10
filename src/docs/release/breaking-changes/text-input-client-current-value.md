@@ -133,8 +133,8 @@ class _MyCustomTextWidgetState extends State<MyCustomWidget> implements TextEdit
 
 ## Timeline
 
-This change occurred in Dec 2019.
-TBD: Add a version number for the release # where it landed.
+This change occurred in Dec 2019 and
+landed in 1.15.2.
 
 ## References
 

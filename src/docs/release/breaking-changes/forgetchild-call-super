@@ -1,34 +1,43 @@
 ---
 title: Element subclasses must call super in forgetChild
-description: Any element subclasses that override forgetChild will require to call super.
+description: Any element subclasses that override forgetChild are required to call super.
 ---
 
 ## Summary
 
-A recent global key duplication detection refactor requires `Element` subclasses that override
-the `forgetChild` to call super.
+A recent global key duplication detection refactor now requires
+`Element` subclasses that override the `forgetChild` to call `super`.
 
 ## Context
 
-When we encounter a global key duplication which will be cleaned up by an element rebuild later, we
-must not report global key duplication. Our previous implementation throws error as soon as we detect
-such duplication and does not wait for the rebuild if the element with duplicated global key will
-rebuild. The current implementation will keep track all the global key duplications during a build 
-cycle and only verify global key duplication at the end of the that cycle instead of throwing error
-immediately. As part of the refactoring, we implemented a mechanism to remove previous global key
-duplication in forgetChild if the rebuild has happened. This, however, requires all Element
-subclasses that override the forgetChild to call the super method.
+When encountering a global key duplication that will be
+cleaned up by an element rebuild later,
+we must not report global key duplication.
+Our previous implementation threw error as soon as
+duplication was detected, and didn't wait for the rebuild if the
+element with duplicated global key would have rebuilt.
+The new implementation keeps track all the global
+key duplications during a build cycle, and only verify global
+key duplication at the end of the that cycle instead of
+throwing an error immediately. As part of the refactoring,
+we implemented a mechanism to remove previous global key
+duplication in `forgetChild` if the rebuild had happened.
+This, however, requires all `Element` subclasses that
+override `forgetChild` to call the `super` method.
 
 ## Description of change
 
-The `forgetChild` of abstract class `Element` has a base implementation to remove global key reservation,
-and it is enforced by `@mustCallSuper` meta tag. All the subclasses that override the method have to call
-super; otherwise, analyzer will show linting error and global key duplication detection might throw
-unexpected error.
+The `forgetChild` of abstract class `Element` has a base
+implementation to remove global key reservation,
+and it is enforced by the `@mustCallSuper` meta tag.
+All subclasses that override the method have to call super;
+otherwise, the analyzer shows a linting error and
+global key duplication detection might throw an unexpected error.
 
 ## Migration guide
 
-In the following example, an app's `Element` subclass overrode the `forgetChild` method
+In the following example, an app's `Element`
+subclass overrides the `forgetChild` method.
 
 Code before migration:
 
@@ -59,19 +68,19 @@ class CustomElement extends Element {
 
 ## Timeline
 
-v1.14.7
+This change landed in v1.14.7.
 
 ## References
 
 API documentation:
-* [`Element`]
-* [`forgetChild`]
+* [`Element`][]
+* [`forgetChild`][]
 
 Relevant issues:
-* [Issue 43780]
+* [Issue 43780][]
 
 Relevant PRs:
-* [PR fix global key error]
+* [PR fix global key error][]
 
 
 [`Element`]: {{site.api}}/flutter/widgets/Element-class.html
