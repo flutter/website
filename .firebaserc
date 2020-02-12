@@ -1,20 +1,5 @@
 {
   "projects": {
-    "default": "flutter-dev-230821",
-    "flutter-dev": "flutter-dev-230821",
-    "flutter-io": "sweltering-fire-2088",
-    "staging-1": "flutter-io-staging-1",
-    "staging-2": "flutter-io-staging-2",
-    "pc2": "ng2-io",
-    "sz": "sz-flutter",
-    "sz2": "sz-flutter-2",
-    "kw": "kw-flutter-1",
-    "kw2": "kw-flutter-2",
-    "ft": "flutter-web-staging",
-    "filip": "flutter-website-filiph-staging",
-    "brianegan": "brianegan-flutter-staging",
-    "xster-staging": "flutter-website-staging-6f2ad",
-    "jr": "flutter-website-jr-staging",
-    "add-to-app-2019": "add-to-app-2019"
+    "clock-winners": "huge-flutter-dev-cp"
   }
 }
