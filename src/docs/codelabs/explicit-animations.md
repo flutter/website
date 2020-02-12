@@ -48,7 +48,7 @@ animations work in Flutter.
 The subsequent sections relate these concepts
 to the corresponding tools and methods of explicit animations.
 If you are already experienced with animation, you can skip this
-section and move on to the [AnimationController][]section.
+section and move on to the [AnimationController][] section.
 
 ### What is animation?
 Think about how animations work
@@ -318,7 +318,7 @@ for a particular animation.
 which represents the current value of the animation within
 the range of other frame values.
 `AnimationController` is **playable**&mdash;it provides
-controls for triggering chnages to its `value` property
+controls for triggering changes to its `value` property
 (between its `lowerBound` and `upperBound`) over time
 (whatever value is passed for the `duration` parameter).
 Once triggered, `AnimationController`
@@ -347,16 +347,15 @@ and by covering the
 ### Create your first explicit animation with AnimationController
 
 The following example **begins with no animation code**&mdash;it consists of a [Material App][]
-home screen containing a static green ball shape.
+home screen containing a green ball shape.
 
 [//]: Insert DartPad Here
 
 This section provides guided steps for building
 the same bouncing ball animation
 created in the [Animation Concepts][] section&mdash;
-the difference is that this section
-creates an explicit animation,
-whereas the [Animation Concepts][] section
+the difference is that this example uses an explicit animation,
+whereas the animation concepts section
 uses a naive approach in order to introduce
 fundamental animation concepts.
 
@@ -373,8 +372,8 @@ An `AnimationController` needs a `TickerProvider`&mdash;the
 a required parameter `vsync` that must implement a `TickerProvider` interface.
 Therefore the first step for creating an explicit animation
 is to make a `TickerProvider` object available to pass as the `vsync` argument
-to your `AnimationController`.
-Begin by using a `TickerProvider` mixin with the widget that you are animating:
+to `AnimationController`.
+To do this, use a `TickerProvider` mixin with the widget that you are animating:
 
 <?code-excerpt "explicit{1,2}/lib/main.dart"?>
 ```diff
@@ -390,25 +389,27 @@ Begin by using a `TickerProvider` mixin with the widget that you are animating:
    void initState() {
      super.initState();
 ```
-
-The next step also covers how to configure `TickerProvider`
-with the `vsync` argument
-passed to `AnimationController`'s constructor.
-
-
-* If you are creating an `AnimationController` from a `State`
-  you can use the `SingleTickerProviderStateMixin` (as in this example)
-  to make a `TickerProvider` available to your `AnimationController`.
-* In this example, you only need to instantiate `AnimationController`
-  once to create the desired animation effect.
-  For other animations, if you need multiple `AnimationController` objects
-  over the lifetime of the `State`,
-  use a full `TickerProviderStateMixin` instead.
+This step uses the `SingleTickerProviderStateMixin`
+with `_BouncingBallDemoState`,
+but you can also use `TickerProviderStateMixin` to make your widget
+available as a `TickerProvider` for `AnimationController`.
+Here are some considerations for deciding between the two:
+* If you are only creating a single `AnimationController`
+  from a `State` object (as in this example)
+  you can use the `SingleTickerProviderStateMixin`.
+* If you need to create more than one `AnimationController`
+  over the lifetime of a `State` object,
+  use the `TickerProviderStateMixin` instead.
 * The `SingleTickerProviderStateMixin` is slightly more efficient
   than `TickerProviderStateMixin` in the case of the class
   only ever needing one `Ticker`.
 
 #### 2. Instantiate and dispose of AnimationController in lifecycle methods
+
+Instantiate `AnimationController` in a widget lifecycle method,
+and call the `controller.dispose()` within the `dispose()` lifecycle method
+to dispose of the instance:
+
 <?code-excerpt "explicit{2,3}/lib/main.dart"?>
 ```diff
 --- explicit2/lib/main.dart
@@ -439,25 +440,21 @@ passed to `AnimationController`'s constructor.
  class MyApp extends StatelessWidget {
 ```
 
-
-This step initializes `AnimationController`
-and instantiates it within `_BouncingBallDemoState`'s 
-`initState()` lifecycle method.
-**This step adds code that is not yet valid because
-it passes no arguments to `AnimationController`'s constructor.**
-
-* It is common to instantiate `AnimationController`
-  in the `State.initState()` lifecycle method.
-
-This step also calls `controller.dispose()`
-within `_BouncingBallDemoState`'s `dispose()` method.
-* You should dispose of an `AnimationController` 
+This code is not yet valid because it passes no arguments
+to `AnimationController`'s constructor.
+Remember the following observations whenever performing this step with `AnimationController`:
+* You can instantiate `AnimationController` in several different lifecycle methods,
+  but it is most common to use `initState()`.
+* You should dispose of an `AnimationController`
   when it is no longer needed&mdash;this reduces
   the likelihood of memory leaks:droplet:.
 * Always dispose of `AnimationController`
-within the `dispose()` lifecycle method.
+  within the `dispose()` lifecycle method.
 
-#### 3. AnimationController parameters
+#### 3. Pass AnimationController parameters
+Pass values for `vsync`, `duration`, `lowerBound`, and `upperBound` 
+to the `AnimationController` constructor:
+
 <?code-excerpt "explicit{3,4}/lib/main.dart"?>
 ```diff
 --- explicit3/lib/main.dart
@@ -476,27 +473,41 @@ within the `dispose()` lifecycle method.
 
    }
 ```
-This step passes the `AnimationController` constructor 
-the necessary parameters for creating the animation.
-
-`vsync` is the required named parameter that takes a `TickerProvider`.
-By passing `this` for the `vsync` parameter, this
-step passes `_BouncingBallDemoState` 
-as the `TickerProvider` object required by the `vsync` argument
-in the `AnimationController` constructor.
-* The previous step uses the `SingleTickerProviderStateMixin`
-  with `_BouncingBallDemoState` so that `_BouncingBallDemoState`
-  implements the `TickerProvider` interface required by the `vsync` argument.
-
-This step also provides the basic parameters
-that allow `AnimationController` to interpolate all
-values needed for this animation.
-* The `duration` of the animation is 1 second.
-* Since the bouncing ball animation moves the ball
-  by transitioning its top-margin value from 0 to 100,
-  this step passes 0 as the `lowerBound` and 100 as the `upperBound`.
+These arguments 
+* **vsync**:
+Remember from [step 1][] that `vsync` is a required parameter
+that takes a `TickerProvider`.
+By passing `this` for the `vsync` parameter,
+you are passing `_BouncingBallDemoState`
+as the `TickerProvider` object to the `AnimationController` constructor.
+`_BouncingBallDemoState` implements the `TickerProvider` interface
+because [step 1][] adds the `SingleTickerProviderStateMixin`
+with `_BouncingBallDemoState`.
+* **duration**: The `duration` of the animation is 1 second.
+* **upperBound** and **lowerBound**:
+Since the bouncing ball animation moves the ball
+by transitioning its top-margin value from 0 to 100,
+this step passes 0 as the `lowerBound` and 100 as the `upperBound`.
 
 #### 4. Add listener(s)
+An `AnimationController` doesn't know anything
+about the UI&mdash;it merely triggers changes to its `value`
+property over a specified `duration`.
+To ensure that your UI reflects all changes
+that `AnimationController` makes to its `value` property,
+you must register a listener with `AnimationController`
+that calls `setState()` each time `AnimationController`
+changes its value.
+
+`AnimationController` provides an `addListener()` method
+that takes a callback function. `AnimationController`
+invokes this callback function every time
+`AnimationController` changes its `value` property.
+In order to rebuild the widget tree to reflect each change
+in `AnimationController`'s `value` property, you
+must call `setState()` from within the listener callback
+that you pass to `addListener()`:
+
 <?code-excerpt "explicit{4,5}/lib/main.dart"?>
 ```diff
 --- explicit4/lib/main.dart
@@ -520,6 +531,14 @@ values needed for this animation.
            decoration: BoxDecoration(
              shape: BoxShape.circle,
 ```
+
+
+
+
+This is why you must use a `StatefulWidget` to create an
+explicit animation.
+
+
 
 
 #### 5. Trigger the animation
@@ -628,8 +647,6 @@ the current value of the animation&mdash;just use the `value` property.
   value changes.
 * `AnimationController` needs a `TickerProvider` to synchronize the animation's
   behavior to the device's display.
-  
-#### Why TickerProvider?
 
 #### AnimationController interpolates frame values
 
@@ -773,6 +790,7 @@ property to a new value.
 [implicit animations]: /docs/development/ui/animations/implicit-animations
 [make a Flutter app]: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1
 [stateful widgets]: https://flutter.dev/docs/development/ui/interactive#stateful-and-stateless-widgets
+[step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: https://api.flutter.dev/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 
 
@@ -786,6 +804,7 @@ TODO:
 4. Update vanilla bouncing ball final example to use *both* upward and downward motion
 5. Explain why setState listener boilerplate is required
 6. AnimatedWidget and AnimatedBuilder?
+7. "Why TickerProvider?" in animationController concepts section
 7. How to choose between AnimatedBuilder and AnimatedWidget.
 8. Answer question: when to use a Tween,
   if you can just use upper and lower bound args for
