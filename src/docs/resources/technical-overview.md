@@ -5,8 +5,8 @@ title: Technical overview
 ## What is Flutter?
 
 Flutter is an app SDK for building high-performance,
-high-fidelity apps for iOS, Android, and web
-([tech preview][]) from a single codebase.
+high-fidelity apps for iOS, Android, web
+([beta](https://flutter.dev/web)), and desktop ([technical preview](https://flutter.dev/desktop)) from a single codebase.
 
 The goal is to enable developers to deliver high-performance
 apps that feel natural on different platforms.
