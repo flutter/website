@@ -5,7 +5,7 @@ toc: true
 diff2html: true
 js:
   - defer: true
-    url: https://dartpad.dev/experimental/inject_embed.dart.js
+    url: https://dartpad.dev/inject_embed.dart.js
   - defer: true
     url: /assets/codelabs/js/animations_examples.js
 ---
@@ -407,8 +407,7 @@ Here are some considerations for deciding between the two:
 #### 2. Instantiate and dispose of AnimationController in lifecycle methods
 
 Instantiate `AnimationController` in a widget lifecycle method,
-and call the `controller.dispose()` within the `dispose()` lifecycle method
-to dispose of the instance:
+and call the `AnimationController.dispose()` within the `State.dispose()` lifecycle method:
 
 <?code-excerpt "explicit{2,3}/lib/main.dart"?>
 ```diff
@@ -452,7 +451,7 @@ Remember the following observations whenever performing this step with `Animatio
   within the `dispose()` lifecycle method.
 
 #### 3. Pass AnimationController parameters
-Pass values for `vsync`, `duration`, `lowerBound`, and `upperBound` 
+Pass arguments for `vsync`, `duration`, `lowerBound`, and `upperBound` 
 to the `AnimationController` constructor:
 
 <?code-excerpt "explicit{3,4}/lib/main.dart"?>
@@ -473,7 +472,8 @@ to the `AnimationController` constructor:
 
    }
 ```
-These arguments 
+The `vsync` parameter makes use of the
+`SingleTickerProviderStateMixin` you added in [step 1][]:
 * **vsync**:
 Remember from [step 1][] that `vsync` is a required parameter
 that takes a `TickerProvider`.
@@ -483,6 +483,9 @@ as the `TickerProvider` object to the `AnimationController` constructor.
 `_BouncingBallDemoState` implements the `TickerProvider` interface
 because [step 1][] adds the `SingleTickerProviderStateMixin`
 with `_BouncingBallDemoState`.
+
+The `duration`, `upperBound`, and `lowerBound` parameters
+define the fundamental character of your animation:
 * **duration**: The `duration` of the animation is 1 second.
 * **upperBound** and **lowerBound**:
 Since the bouncing ball animation moves the ball
@@ -493,20 +496,11 @@ this step passes 0 as the `lowerBound` and 100 as the `upperBound`.
 An `AnimationController` doesn't know anything
 about the UI&mdash;it merely triggers changes to its `value`
 property over a specified `duration`.
-To ensure that your UI reflects all changes
+To make your UI respond to the changes
 that `AnimationController` makes to its `value` property,
 you must register a listener with `AnimationController`
 that calls `setState()` each time `AnimationController`
-changes its value.
-
-`AnimationController` provides an `addListener()` method
-that takes a callback function. `AnimationController`
-invokes this callback function every time
-`AnimationController` changes its `value` property.
-In order to rebuild the widget tree to reflect each change
-in `AnimationController`'s `value` property, you
-must call `setState()` from within the listener callback
-that you pass to `addListener()`:
+changes its value:
 
 <?code-excerpt "explicit{4,5}/lib/main.dart"?>
 ```diff
@@ -532,16 +526,20 @@ that you pass to `addListener()`:
              shape: BoxShape.circle,
 ```
 
-
-
-
-This is why you must use a `StatefulWidget` to create an
-explicit animation.
-
-
-
+`AnimationController` provides an `addListener()` method
+that takes a callback function. `AnimationController`
+invokes this callback function every time
+`AnimationController` changes its `value` property.
+In order to rebuild the widget tree to reflect each change
+in `AnimationController`'s `value` property, you
+must call `setState()` from within the listener callback
+that you pass to `addListener()`.
+This is why explicit animations require `StatefulWidget`s.
 
 #### 5. Trigger the animation
+To start the bouncing ball animation so that
+it repeats indefinitely, call `AnimationController.repeat()`:
+
 <?code-excerpt "explicit{5,6}/lib/main.dart"?>
 ```diff
 --- explicit5/lib/main.dart
@@ -555,78 +553,30 @@ explicit animation.
 
    @override
 ```
+This step calls `repeat()` within `initState()` because
+the bouncing ball animation can begin immediately
+when this view is 
 
-<?code-excerpt "explicit{1,6}/lib/main.dart"?>
-```diff
---- explicit1/lib/main.dart
-+++ explicit6/lib/main.dart
-@@ -6,16 +6,29 @@
-   _BouncingBallDemoState createState() => _BouncingBallDemoState();
- }
+`AnimationController` provides several methods for "driving" an animation:
+* `repeat()`
+* `forward()`
+* `reverse()`
+* `stop()`
+* `reset()`
 
--class _BouncingBallDemoState extends State<BouncingBallDemo> {
-+class _BouncingBallDemoState extends State<BouncingBallDemo> with SingleTickerProviderStateMixin {
-+  AnimationController controller;
-
-   void initState() {
-     super.initState();
-+    controller = AnimationController(
-+      vsync: this, // the SingleTickerProviderStateMixin
-+      duration: Duration(seconds: 1),
-+      lowerBound: 0,
-+      upperBound: 100,
-+    );
-+
-+    controller.addListener(() {
-+      setState((){});
-+    });
-+
-+    controller.repeat(reverse: true);
-   }
-
-   @override
-   Widget build(BuildContext context) {
-     return Container(
--      margin: EdgeInsets.only(top: 0),
-+      margin: EdgeInsets.only(top: controller.value),
-         child: Container(
-           decoration: BoxDecoration(
-             shape: BoxShape.circle,
-@@ -26,6 +39,10 @@
-         )
-       );
-   }
-+  void dispose() {
-+    controller.dispose();
-+    super.dispose();
-+  }
- }
-
- class MyApp extends StatelessWidget {
-```
-
-The following example provides an easy way to see how
-`AnimationController` interpolates values for you:
+Run the following example to see this explicit animation in action!
 
 {% include explicit-animations/bouncing-ball-starter-code-4.md %}
 
-
-{{site.alert.secondary}}
-**Quick review**
-
-Creating animations
-* Generates interpolated values (Tweens, or from: param)
-* Provides controls for triggering animations (forward, reverse,..)
-
-Configuration
-* Sets up vsync
-* Listens for `Ticker` events
-{{site.alert.end}}
-
-
-{% include explicit-animations/bouncing-ball-starter-code-5.md %}
-
 ### AnimationController Concepts
+#### The Animation Object
+
+Lifecycle of an animation (completed, dismissed)
+- an Animation has a `status` and a `value`
+- `value` depends on what the user wants, can be any type, e.g. <Color>, or <Size>
+- `status` has four options: dismissed, forward, reverse, and completed
+
+
 `AnimationController` is the central class that you use
 to create explicit animations; its capabilities
 fall into four categories:
@@ -723,46 +673,11 @@ value between `lowerBound` and `upperBound` using the `from` parameter.
 Once triggered, the AnimationController will automatically update the `value`
 property to a new value.
 
-##### Listen to animations
-**addListener()**
-
-  `AnimationController` allows you to listen for changes
-  in the value you are animating:
-  ```dart
-    controller.addListener(() {
-      print("current value: ${controller.value}");
-    });
-  ```
-
-##### Trigger, sequence, and terminate animations:
-**forward(), repeat(), reverse() and stop()**
-  `AnimationController` provides the
-  `forward()`, `repeat()`, `reverse()`, and `stop()` methods
-  for triggering, repeating, playing in reverse, and halting an animation:
-  ```dart
-  controller.forward();
-  ```
-
-* **Frame syncing**
-
-  With a little bit of boilerplate,
-  `AnimationController` syncs your animation frames
-  to the target device at 60 fps:
-  ```dart
-
-  class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
-  AnimationController controller;
-
-  void initState() {
-    super.initState();
-    controller = AnimationController( vsync: this, duration: Duration(seconds: 3));
-
-    ...
-
-  }
-  ```
-
+## Curves
+- Use CurvedAnimation
+- you can use presets, or create your own
 ## Tweens
+- To use a `Tween` call `animate()` passing in the controller. (example)
 ## AnimatedBuilder
 ## AnimatedWidget
 
