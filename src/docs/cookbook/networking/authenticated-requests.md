@@ -21,9 +21,9 @@ class from the `dart:io` library.
 
 <!-- skip -->
 ```dart
-Future<http.Response> fetchPost() {
+Future<http.Response> fetchAlbum() {
   return http.get(
-    'https://jsonplaceholder.typicode.com/posts/1',
+    'https://jsonplaceholder.typicode.com/albums/1',
     // Send authorization headers to the backend.
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
@@ -42,30 +42,28 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-Future<Post> fetchPost() async {
+Future<Album> fetchAlbum() async {
   final response = await http.get(
-    'https://jsonplaceholder.typicode.com/posts/1',
+    'https://jsonplaceholder.typicode.com/albums/1',
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
   final responseJson = json.decode(response.body);
 
-  return Post.fromJson(responseJson);
+  return Album.fromJson(responseJson);
 }
 
-class Post {
+class Album {
   final int userId;
   final int id;
   final String title;
-  final String body;
 
-  Post({this.userId, this.id, this.title, this.body});
+  Album({this.userId, this.id, this.title});
 
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
       userId: json['userId'],
       id: json['id'],
       title: json['title'],
-      body: json['body'],
     );
   }
 }
