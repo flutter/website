@@ -1,7 +1,6 @@
 ---
 title: Changes to ImageCache and ImageProvider
-description: ImageCache requires implementers to override containsKey, and
-ImageProvider has marked resolve as @nonVirtual
+description: ImageCache requires implementers to override containsKey, and ImageProvider has marked resolve as @nonVirtual.
 ---
 
 
