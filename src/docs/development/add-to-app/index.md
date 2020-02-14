@@ -24,6 +24,11 @@ It currently has the _**following limitations**_:
 * Using Flutter in background mode is still a WIP.
 * Packing a Flutter library into another sharable library
   or packing multiple Flutter libraries into an application isn't supported.
+* Plugins used in add-to-app on Android should undergo https://flutter.dev/go/android-plugin-migration
+  and use the [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html)-based
+  APIs. Plugins that don't support FlutterPlugin may have unexpected behaviors
+  if they make assumptions that are untenable in add-to-app (such as assuming
+  that a Flutter Activity is always present).
 
 ## Supported features
 
