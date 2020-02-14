@@ -173,7 +173,8 @@
       { "source": "/go/base-annotations-local-position-on-region", "destination": "https://docs.google.com/document/d/1r7FQTOw2vZJZ5c0VoNqi9CWmZY3MvUfz0spdf0-nK6k/edit?usp=sharing", "type": 301 },
       { "source": "/go/lifecycle-debug-flag", "destination": "https://docs.google.com/document/d/1WowGJhAMzYvwoyYLOzwjj1Jb0lwIjUpNfqvKjFWQZIM/edit?usp=sharing", "type": 301 },
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit?usp=sharing", "type": 301 },
-      { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit?usp=sharing", "type": 301 }
+      { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit?usp=sharing", "type": 301 },
+      { "source": "/go/supporting-dart-callbacks", "destination": "https://docs.google.com/document/d/1k7OimxbxXzdv3U7-TfB88yG5hIScN3TH6Jcvdcl4izM/edit?usp=sharing", "type": 301 }
     ]
   }
 }
