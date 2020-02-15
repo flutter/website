@@ -101,7 +101,7 @@ many of which have been contributed by the Flutter community:
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter + Redux&mdash;How to make a shopping list app]: https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65
 [Flutter state management&mdash;scoped model]: https://www.youtube.com/watch?v=Oql5bU-Uvso
-[Getting started with MobX.dart]: https://mobx.pub/getting-started
+[Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Introduction to Redux in Flutter]: https://blog.novoda.com/introduction-to-redux-in-flutter/
