@@ -124,7 +124,7 @@ see our API usage guides for
 </div>
 
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/experimental/add_to_app
+[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [Flutter plugins]: {{site.pub}}/pub.dev/flutter
