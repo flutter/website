@@ -44,7 +44,7 @@ It currently has the _**following limitations**_:
   with AndroidX.
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
-  [`FlutterActivity`][]/[FlutterFragment][] etc.
+  [`FlutterActivity`][]/[`FlutterFragment`][] etc.
 * Android Studio Android/Flutter co-editing and module
   creation/import wizard.
 * Java and Kotlin host apps are supported.
@@ -128,7 +128,7 @@ see our API usage guides for
 [Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [Flutter plugins]: {{site.pub}}/pub.dev/flutter
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html)
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
