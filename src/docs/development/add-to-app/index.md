@@ -24,7 +24,7 @@ It currently has the _**following limitations**_:
 * Using Flutter in background mode is still a WIP.
 * Packing a Flutter library into another sharable library
   or packing multiple Flutter libraries into an application isn't supported.
-* Plugins used in add-to-app on Android should undergo https://flutter.dev/go/android-plugin-migration
+* Plugins used in add-to-app on Android should undergo [flutter.dev/go/android-plugin-migration](https://flutter.dev/go/android-plugin-migration)
   and use the [FlutterPlugin](https://api.flutter.dev/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html)-based
   APIs. Plugins that don't support FlutterPlugin may have unexpected behaviors
   if they make assumptions that are untenable in add-to-app (such as assuming
@@ -44,7 +44,7 @@ It currently has the _**following limitations**_:
   with AndroidX.
 * [`FlutterEngine`][java-engine] API for starting and persisting
   your Flutter environment independently of attaching a
-  [`FlutterActivity`][]/[FlutterFragment][] etc.
+  [`FlutterActivity`][]/[`FlutterFragment`][] etc.
 * Android Studio Android/Flutter co-editing and module
   creation/import wizard.
 * Java and Kotlin host apps are supported.
@@ -124,11 +124,11 @@ see our API usage guides for
 </div>
 
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/experimental/add_to_app
+[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/master/add_to_app
 [Android Archive (AAR)]: https://developer.android.com/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [Flutter plugins]: {{site.pub}}/pub.dev/flutter
-[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html)
+[`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
 [FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
