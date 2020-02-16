@@ -137,7 +137,7 @@ Future<Album> createAlbum(String title) async {
 
 Hooray! Now you've got a function that send the title to a server to create an album.
 
-## 4. Let's get the Title as input from user
+## 4. Let's get the title as input from user
 
 Let's create a `TextField` to enter title and a `RaisedButton` to send data to server. 
 Also define a `TextEditingController` to read the user input form a `TextField`
