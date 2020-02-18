@@ -118,10 +118,12 @@ Configure signing for your app by editing the
 `<app dir>/android/app/build.gradle` file.
 
 <ol markdown="1">
-<li markdown="1">Replace the following:
+<li markdown="1"> Add code before `android` block:
 
 ```
    android {
+      ...
+   }
 ```
 
    With the keystore information from your properties file:
@@ -134,10 +136,15 @@ Configure signing for your app by editing the
    }
 
    android {
+         ...
+   }
 ```
+   
+   Load the `keystore.properties` file into the `keystoreProperties` object.
+
 </li>
 
-<li markdown="1"> Replace the following:
+<li markdown="1"> Add code before `buildTypes` block:
 
 ```
    buildTypes {
@@ -167,6 +174,9 @@ Configure signing for your app by editing the
        }
    }
 ```
+
+   Configure the `signingConfigs` block in your module's `build.gradle` file.
+
 </li>
 </ol>
 
