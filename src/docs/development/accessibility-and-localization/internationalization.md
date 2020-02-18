@@ -364,7 +364,7 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       localeResolutionCallback(Locale locale, Iterable<Locale> supportedLocales) {
+       localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
          return locale;
        }
        // ...
