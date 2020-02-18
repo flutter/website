@@ -310,7 +310,7 @@ From the command line:
 1. Run `flutter build apk --split-per-abi`<br>
    (The `flutter build` command defaults to `--release`.)
 
-This command results in two APK files:
+This command results in three APK files:
 
 * `<app dir>/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
 * `<app dir>/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
