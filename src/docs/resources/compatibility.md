@@ -34,9 +34,9 @@ breaking changes.
 ## Deprecation policy
 
 We will, on occasion, deprecate certain APIs rather than outright
-break them overnight. Deprecations are not considered breaking
-changes, though the eventual removal of the deprecated feature could
-be (if it breaks any of the submitted tests).
+break them overnight. This is independent of our compatibility policy
+which is exclusively based on whether submitted tests fail, as
+described above.
 
 
 ## Dart and other libraries used by Flutter
