@@ -49,7 +49,7 @@ and include a separate package called
 this package supports 77 languages.
 If you want your app to work smoothly on iOS,
 then you have to add the package
-'flutter_cupertino_localizations' as well.
+`flutter_cupertino_localizations` as well.
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
