@@ -4,8 +4,8 @@ prev:
   title: Send data to a new screen
   path: /docs/cookbook/navigation/passing-data
 next:
-  title: Make authenticated requests
-  path: /docs/cookbook/networking/authenticated-requests
+  title: Send data to the internet
+  path: /docs/cookbook/networking/send-data
 ---
 
 Fetching data from the internet is necessary for most apps.
