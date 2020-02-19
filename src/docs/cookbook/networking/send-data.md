@@ -23,7 +23,7 @@ This recipe uses the following steps:
 
 To install the `http` package, add it to the dependencies section
 of the `pubspec.yaml`. You can find the latest version of the
-[http package][] the pub.dev.
+[http package][] on pub.dev.
 
 ```yaml
 dependencies:
@@ -106,9 +106,9 @@ function to return a `Future<Album>`:
 
   1. Convert the response body into a JSON `Map` with the `dart:convert`
      package.
-  2. If the server does return an CREATED response with a status code of 201, then convert
+  2. If the server returns a `CREATED` response with a status code of 201, then convert
      the JSON `Map` into a `Album` using the `fromJson()` factory method.
-  3. If the server does not return an CREATED response with a status code of 201,
+  3. If the server doesn't return a `CREATED` response with a status code of 201,
      then throw an exception. (Even in the case of a 404 Not Found server response,
      throw an exception. Do not return `null`. This is important when examining
      the data in `snapshot` as shown below.)
@@ -135,12 +135,12 @@ Future<Album> createAlbum(String title) async {
 }
 ```
 
-Hooray! Now you've got a function that send the title to a server to create an album.
+Hooray! Now you've got a function that sends the title to a server to create an album.
 
 ## 4. Let's get the title as input from user
 
-Let's create a `TextField` to enter title and a `RaisedButton` to send data to server. 
-Also define a `TextEditingController` to read the user input form a `TextField`
+Let's create a `TextField` to enter a title and a `RaisedButton` to send data to server.
+Also define a `TextEditingController` to read the user input from a `TextField`
 
 When the `RaisedButton` is pressed, the `_futureAlbum` is set to the value returned by `createAlbum()` method.
 
@@ -168,8 +168,8 @@ Column(
 )
 ```
 
-On pressing the button `Create Data`, we make the network request,
-which will send the data in the `TextField` to the server with a `POST` request.
+On pressing the button **Create Data**, we make the network request,
+which sends the data in the `TextField` to the server with a `POST` request.
 This Future `_futureAlbum` will be used in the next step.
 
 ## 5. Display the response on screen.
@@ -185,7 +185,7 @@ You must provide two parameters:
   2. A `builder` function that tells Flutter what to render, depending on the
   state of the `Future`: loading, success, or error.
 
-Note that `snapshot.hasData` will only return `true` when the snapshot contains
+Note that `snapshot.hasData` only returns `true` when the snapshot contains
 a non-null data value. This is why the `createAlbum` function should throw an exception
 even in the case of a 404 Not Found server response. If `createAlbum` returns `null`
 then `CircularProgressIndicator` will be shown indefinitely.
