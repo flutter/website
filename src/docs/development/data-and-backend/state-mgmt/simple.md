@@ -44,7 +44,7 @@ Here's the app visualized as a widget tree.
   Source drawing for the png above: https://docs.google.com/drawings/d/1KXxAl_Ctxc-avhR4uE58BXBM6Tyhy0pQMCsSMFHVL_0/edit?zx=y4m1lzbhsrvx
 {% endcomment %}
 
-So we have at least 6 subclasses of `Widget`. Many of them need
+So we have at least 5 subclasses of `Widget`. Many of them need
 access to state that "belongs" elsewhere. For example, each
 `MyListItem` needs to be able to add itself to the cart.
 It might also want to see whether the currently displayed item
