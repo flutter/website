@@ -9,11 +9,13 @@ including those with disabilities such as blindness or motor impairment.
 
 Flutter supports three components for accessibility support:
 
-**[Large fonts][]**
+[**Large fonts**][]
 : Render text widgets with user-specified font sizes
-**[Screen readers][]**
+
+[**Screen readers**][]
 : Communicate spoken feedback about UI contents
-**[Sufficient contrast][]**
+
+[**Sufficient contrast**][]
 : Render widgets with colors that have sufficient contrast
 
 ## Inspecting accessibility support
@@ -118,11 +120,11 @@ see the following articles written by community members:
 
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
-Large fonts]: #large-fonts
-[Screen readers]: #screen-readers
+[**Large fonts**]: #large-fonts
+[**Screen readers**]: #screen-readers
 [Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/
 [`Semantics` widget]: {{site.api}}/flutter/widgets/Semantics-class.html
-[Sufficient contrast]: #sufficient-contrast
+[**Sufficient contrast**]: #sufficient-contrast
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
