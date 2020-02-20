@@ -114,7 +114,7 @@ For more information, particularly about how to configure
 the semantics tree,
 see the following articles written by community members:
 
-* [A deep dive into Flutter’s accessibility widgets][]
+* [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
 
 
