@@ -1,5 +1,5 @@
 ---
-title: Internation&shy;alizing Flutter apps
+title: Internationalizing Flutter apps
 short-title: i18n
 description: How to internationalize your Flutter app.
 ---
@@ -45,11 +45,11 @@ By default, Flutter only provides US English localizations.
 To add support for other languages,
 an application must specify additional `MaterialApp` properties,
 and include a separate package called
-`flutter_localizations`.  As of April 2019,
-this package supports about 52 languages.
+`flutter_localizations`.  As of February 2020,
+this package supports 77 languages.
 If you want your app to work smoothly on iOS,
 then you have to add the package
-'flutter_cupertino_localizations' as well.
+`flutter_cupertino_localizations` as well.
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
@@ -272,7 +272,7 @@ of the corresponding classes. For example,
 that produces an instance of `GlobalMaterialLocalizations`.
 
 As of April 2019, the global localization classes support
-[about 52 languages][].
+[77 languages][].
 
 <a name="defining-class"></a>
 ## Defining a class for the app's localized resources
@@ -336,7 +336,7 @@ that analyzes the source code for classes that contain
 ## Specifying the app's supported&shy;Locales parameter
 
 Although Flutter's flutter_localizations library includes support
-for about 52 languages, only English language translations are available
+for 77 languages, only English language translations are available
 by default. It's up to the developer to decide exactly which languages
 to support, since it wouldn't make sense for the toolkit
 libraries to support a different set of locales than the app does.
@@ -566,7 +566,7 @@ Rebuilding `l10n/messages_all.dart` requires two steps.
     to load the localized messages and `Intl.message()` to look them up.
 
 <a name="ios-specifics"></a>
-### Appendix: Updating the iOS app bundle
+## Appendix: Updating the iOS app bundle
 
 iOS applications define key application metadata,
 including supported locales, in an `Info.plist` file
@@ -581,19 +581,19 @@ project's `Runner` folder.
 
 Next, select the **Information Property List** item,
 select **Add Item** from the **Editor** menu,
-then select *eLocalizations** from the pop-up menu.
+then select **eLocalizations** from the pop-up menu.
 
 Select and expand the newly-created `Localizations` item then,
 for each locale your application supports,
 add a new item and select the locale you wish to add
 from the pop-up menu in the **Value** field.
 This list should be consistent with the languages listed
-in the [supportedLocales](#specifying-supportedlocales) parameter.
+in the [supportedLocales][] parameter.
 
 Once all supported locales have been added, save the file.
 
 
-[about 52 languages]: {{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n
+[77 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
@@ -620,6 +620,7 @@ Once all supported locales have been added, save the file.
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 [`supportedLocales`]: {{site.api}}/flutter/material/MaterialApp/supportedLocales.html
+[supportedLocales]: #specifying-supportedlocales
 [Using the Dart intl tools]: #dart-tools
 [widgets-local]: {{site.api}}/flutter/widgets/Localizations-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
