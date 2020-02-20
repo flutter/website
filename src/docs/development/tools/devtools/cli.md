@@ -38,7 +38,7 @@ flutter pub global run devtools   # If you have `flutter` on your path.
 On the command line, you should see output that looks something like:
 
 ```
-Serving DevTools at http://127.0.0.1.9100
+Serving DevTools at http://127.0.0.1:9100
 ```
 
 ## Start an application to debug
