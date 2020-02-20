@@ -271,7 +271,7 @@ of the corresponding classes. For example,
 `GlobalMaterialLocalizations.delegate` is a `LocalizationsDelegate`
 that produces an instance of `GlobalMaterialLocalizations`.
 
-As of April 2019, the global localization classes support
+As of February 2020, the global localization classes support
 [77 languages][].
 
 <a name="defining-class"></a>
