@@ -597,7 +597,7 @@ Once all supported locales have been added, save the file.
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
-[`intl_example`]: ({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
+[`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
@@ -615,7 +615,7 @@ Once all supported locales have been added, save the file.
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`minimal`]: ({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+[`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
