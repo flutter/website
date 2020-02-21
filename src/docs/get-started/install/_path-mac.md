@@ -1,7 +1,7 @@
 ### Update your path
 
 You can update your PATH variable for the current session at
-the command line, as shown in [Get the Flutter SDK](#get-sdk).
+the command line, as shown in [Get the Flutter SDK][].
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
@@ -44,3 +44,4 @@ whenever you open a new window. For example:
     $ which flutter
     ```
 
+[Get the Flutter SDK]: #get-sdk

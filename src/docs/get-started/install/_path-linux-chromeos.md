@@ -1,7 +1,7 @@
 ### Update your path
 
 You can update your PATH variable for the current session at
-the command line, as shown in [Get the Flutter SDK](#get-sdk).
+the command line, as shown in [Get the Flutter SDK][].
 You'll probably want to update this variable permanently,
 so you can run `flutter` commands in any terminal session.
 
@@ -77,10 +77,11 @@ These instructions require administrator privileges:
       ```
 
 For more details on setting the path in Bash,
-see [this StackExchange question][].
+see [this StackExchange question][bash].
 For information on setting the path in Z shell,
-see [this StackOverflow question][].
+see [this StackOverflow question][zsh].
 
 
-[this StackExchange question]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
-[this StackOverflow question]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
+[Get the Flutter SDK]: #get-sdk
+[bash]: https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
+[zsh]: https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh
