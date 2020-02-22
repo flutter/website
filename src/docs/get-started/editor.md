@@ -61,7 +61,7 @@ To install these:
 
 ## Install VS Code
 
-VS Code is a light-weight editor with Flutter app execution and debug support.
+VS Code is a lightweight editor with Flutter app execution and debug support.
 
 * [VS Code][], latest stable version
 

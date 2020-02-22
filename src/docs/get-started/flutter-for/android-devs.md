@@ -64,12 +64,12 @@ to produce an interface that looks like [Apple's iOS design language][].
 ### How do I update widgets?
 
 In Android, you update your views by directly mutating them. However,
-in Flutter, `Widget`s are immutable and are not updated directly, instead
-you have to work with the widget's state.
+in Flutter, `Widget`s are immutable and are not updated directly,
+instead you have to work with the widget's state.
 
-This is where the concept of Stateful and Stateless widgets comes from. A
-`StatelessWidget` is just what it sounds like&mdash;a widget with no state
-information.
+This is where the concept of `Stateful` and `Stateless` widgets comes from.
+A `StatelessWidget` is just what it sounds like&mdash;a
+widget with no state information.
 
 `StatelessWidgets` are useful when the part of the user interface
 you are describing does not depend on anything other than the configuration
@@ -197,7 +197,7 @@ The following example shows how to display a simple widget with padding:
   }
 ```
 
-You can view the layouts that Flutter has to offer in the
+You can view some of the layouts that Flutter has to offer in the
 [widget catalog][].
 
 ### How do I add or remove a component from my layout?
@@ -495,8 +495,8 @@ In Android, you declare your activities inside the app's `AndroidManifest.xml`.
 
 In Flutter, you have a couple options to navigate between pages:
 
-* Specify a `Map` of route names. (`MaterialApp`)
-* Directly navigate to a route. (`WidgetApp`)
+* Specify a `Map` of route names. (using `MaterialApp`)
+* Directly navigate to a route. (using `WidgetApp`)
 
 The following example builds a Map.
 
@@ -1291,7 +1291,7 @@ As mentioned in the [Intents][] section,
 screens in Flutter are represented by `Widget`s since everything is
 a widget in Flutter. Use a `Navigator` to move between different
 `Route`s that represent different screens or pages,
-or maybe just different states or renderings of the same data.
+or perhaps different states or renderings of the same data.
 
 ### How do I listen to Android activity lifecycle events?
 
@@ -1423,7 +1423,7 @@ Widget build(BuildContext context) {
 ```
 
 To learn more about building linear layouts,
-see the community contributed Medium article
+see the community-contributed Medium article
 [Flutter for Android Developers: How to design LinearLayout in Flutter][].
 
 ### What is the equivalent of a RelativeLayout?
