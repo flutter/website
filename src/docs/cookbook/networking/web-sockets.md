@@ -1,5 +1,6 @@
 ---
 title: Work with WebSockets
+description: How to connect to a web socket.
 prev:
   title: Parse JSON in the background
   path: /docs/cookbook/networking/background-parsing
@@ -8,8 +9,9 @@ next:
   path: /docs/cookbook/persistence/sqlite
 ---
 
-In addition to normal HTTP requests, you can connect to servers using
-WebSockets.  WebSockets allow for two-way communication with a server
+In addition to normal HTTP requests,
+you can connect to servers using `WebSockets`.
+`WebSockets` allow for two-way communication with a server
 without polling.
 
 In this example, connect to a

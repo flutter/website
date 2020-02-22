@@ -1,5 +1,6 @@
 ---
 title: Report errors to a service
+description: How to keep track of errors that users encounter.
 prev:
   title: Work with long lists
   path: /docs/cookbook/lists/long-lists

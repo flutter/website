@@ -1,5 +1,6 @@
 ---
 title: Animate the properties of a container
+description: How to animate properties of a container using implicit animations.
 prev:
   title: Animate a widget using a physics simulation
   path: /docs/cookbook/animation/physics-simulation

@@ -1,5 +1,6 @@
 ---
 title: Make authenticated requests
+description: How to fetch authorized data from a web service.
 prev:
   title: Fetch data from the internet
   path: /docs/cookbook/networking/fetch-data
@@ -16,7 +17,7 @@ uses the `Authorization` HTTP header.
 
 The [`http`][] package provides a
 convenient way to add headers to your requests.
-Alternatively, use the [HttpHeaders][]
+Alternatively, use the [`HttpHeaders`][]
 class from the `dart:io` library.
 
 <!-- skip -->
@@ -72,4 +73,4 @@ class Album {
 
 [Fetching data from the internet]: /docs/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
-[HttpHeaders]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html
+[`HttpHeaders`]: {{site.dart.api}}/stable/dart-io/HttpHeaders-class.html

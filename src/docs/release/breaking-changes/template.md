@@ -1,6 +1,6 @@
 ---
-title: [Title of breaking change]
-description: [Brief description similar to the "context" section below.]
+title: Replace with title of breaking change
+description: Brief description similar to the "context" section below.
 ---
 
 {% comment %}

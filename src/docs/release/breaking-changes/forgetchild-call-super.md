@@ -6,7 +6,7 @@ description: Any element subclasses that override forgetChild are required to ca
 ## Summary
 
 A recent global key duplication detection refactor now requires
-`Element` subclasses that override the `forgetChild` to call `super`.
+`Element` subclasses that override the `forgetChild()` to call `super()`.
 
 ## Context
 
@@ -74,16 +74,16 @@ This change landed in v1.14.7.
 
 API documentation:
 * [`Element`][]
-* [`forgetChild`][]
+* [`forgetChild()`][]
 
 Relevant issues:
 * [Issue 43780][]
 
 Relevant PRs:
-* [PR fix global key error][]
+* [PR 43790: Fix global key error][]
 
 
 [`Element`]: {{site.api}}/flutter/widgets/Element-class.html
-[`forgetChild`]: {{site.api}}/flutter/widgets/Element/forgetChild.html
+[`forgetChild()`]: {{site.api}}/flutter/widgets/Element/forgetChild.html
 [Issue 43780]: {{site.github}}/flutter/flutter/issues/43780
-[PR fix global key error]: {{site.github}}/flutter/flutter/pull/46183
+[PR 43790: Fix global key error]: {{site.github}}/flutter/flutter/pull/46183

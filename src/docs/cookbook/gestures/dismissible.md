@@ -1,5 +1,6 @@
 ---
 title: Implement swipe to dismiss
+description: How to implement swiping to dismiss or delete.
 prev:
   title: Handle taps
   path: /docs/cookbook/gestures/handling-taps
@@ -11,8 +12,9 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-The "swipe to dismiss" pattern is common in many mobile apps.  For example,
-when writing an email app, you might want to allow a user to swipe away
+The "swipe to dismiss" pattern is common in many mobile apps.
+For example, when writing an email app,
+you might want to allow a user to swipe away
 email messages to delete them from a list.
 
 Flutter makes this task easy by providing the

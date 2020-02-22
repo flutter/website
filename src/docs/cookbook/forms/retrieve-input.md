@@ -1,5 +1,6 @@
 ---
 title: Retrieve the value of a text field
+description: How to retrieve text from a text field.
 prev:
   title: Handle changes to a text field
   path: /docs/cookbook/forms/text-field-changes

@@ -1,5 +1,6 @@
 ---
 title: Dealing with box constraints
+description: How box constraints might go wrong.
 short-title: Box constraints
 ---
 

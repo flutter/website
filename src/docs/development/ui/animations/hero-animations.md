@@ -1,5 +1,6 @@
 ---
 title: Hero Animations
+description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
@@ -489,7 +490,7 @@ provided example to your needs.** The heavy lifting is done for you.
   The radial hero animation involves intersecting a round shape with
   a square shape. This can be hard to see, even when slowing
   the animation with `timeDilation`, so you might consider enabling
-  the [`debugPaintSizedEnabled`][] flag during development.
+  the [`debugPaintSizeEnabled`][] flag during development.
 {{site.alert.end}}
 
 ### What's going on?
@@ -625,7 +626,7 @@ Key information:
   size, the `RadialExpansion` widget changes size to match.
 - The `RadialExpansion` animation is created by two overlapping clips.
 - The example defines the tweening interpolation using
-  [MaterialRectCenterArcTween][]. The default flight path for a hero animation
+  [`MaterialRectCenterArcTween`][]. The default flight path for a hero animation
   interpolates the tweens using the corners of the heroes. This approach affects
   the hero's aspect ratio during the radial transformation, so the new flight
   path uses `MaterialRectCenterArcTween` to interpolate the tweens using the
@@ -669,6 +670,9 @@ The following resources might help when writing animations:
 [Material motion spec]({{site.material}}/guidelines/motion/)
 : Describes motion for Material design apps.
 
-[MaterialRectCenterArcTween]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
-[Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+
 [`debugPaintSizeEnabled`]: /docs/testing/code-debugging#debug-flags-layout
+[`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
+[Radial hero animation code]: #radial-hero-animation-code
+[Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
+[Standard hero animation code]: #standard-hero-animation-cod)

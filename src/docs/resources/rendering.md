@@ -1,5 +1,6 @@
 ---
 title: Rendering in Flutter
+description: How Flutter's render tree works.
 ---
 
 ## Introduction

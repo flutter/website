@@ -1,5 +1,6 @@
 ---
 title: Return data from a screen
+description: How to return data from a new screen.
 prev:
   title: Pass arguments to a named route
   path: /docs/cookbook/navigation/navigate-with-arguments

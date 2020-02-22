@@ -219,6 +219,6 @@ class MyHomePage extends StatelessWidget {
 [`fontWeight`]: {{site.api}}/flutter/painting/TextStyle/fontWeight.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [Google Fonts]: https://fonts.google.com
-[google_fonts]: {{site.pub}}/packages/google_fonts
+[google_fonts]: {{site.pub-pkg}}/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [Using Themes to share colors and font styles]: /docs/cookbook/design/themes

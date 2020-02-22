@@ -1,5 +1,6 @@
 ---
 title: Take a picture using the camera
+description: How to use a camera plugin on mobile.
 prev:
   title: Play and pause a video
   path: /docs/cookbook/plugins/play-video
@@ -385,4 +386,4 @@ class DisplayPictureScreen extends StatelessWidget {
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
-[`takePicture()`]: {{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html
+[`takePicture()`]: {{site.pub-pkg}}/camera/latest/camera/CameraController/takePicture.html
