@@ -21,12 +21,12 @@ return Container(color: Colors.red);
 Previously, this code would result in a widget heirarchy that used a
 `BoxDecoration` to actually paint the background color. The `BoxDecoration`
 widget covers many cases other than just painting a background color, and is
-not as efficient as the new `ColoredBox` widget which only paints a background
+not as efficient as the new `ColoredBox` widget, which only paints a background
 color.
 
 Widget tests that wanted to assert based on the color of a container in the
 widget tree would previously have to find the `BoxDecoration` to actually get
-the color of the container. Now, they will be able to check the `color` property
+the color of the container. Now, they are able to check the `color` property
 on the `Container` itself, unless a `BoxDecoration` was explicitly provided as
 the `decoration` property. It is still an error to supply both `color` and
 `decoration` to `Container`.
@@ -84,14 +84,9 @@ Relevant issues:
 Relevant PRs:
 * [Colored box and container optimization #50979][]
 
-{% comment %}
-Add the links to the end of the file in alphabetical order.
-I've had to comment out these faux links because they break the build.
-
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [`ColoredBox`]: {{site.api}}/flutter/widgets/ColoredBox-class.html
 [`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
 [Issue 9672]: {{site.github}}/flutter/flutter/issues/9672
 [Issue 28753]: {{site.github}}/flutter/flutter/issues/28753
 [Colored box and container optimization #50979]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-{% endcomment %}
