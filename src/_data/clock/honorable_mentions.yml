@@ -1,10 +1,10 @@
-- clock_name: 'Agent Clock' 
+- clock_name: 'Agent Clock'
   clock_link: 'https://github.com/kruegerrobotics/flutter_agent_clock'
   participant: 'Thomas Krueger'
 
 - clock_name: 'Animal Clock'
   clock_link: 'https://github.com/seiwonlee/aninmal_clock'
-  participant: 'Sei Lee' 
+  participant: 'Sei Lee'
 
 - clock_name: 'Ants Clock'
   clock_link: 'https://github.com/StuartApp/Flutter-clock-challenge'
@@ -97,4 +97,3 @@
 - clock_name: 'Tetris Time Clock'
   clock_link: 'https://github.com/msoftware/flutter_clock'
   participant: 'Michael Jentsch'
-
