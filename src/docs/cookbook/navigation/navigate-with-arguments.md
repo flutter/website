@@ -1,5 +1,6 @@
 ---
 title: Pass arguments to a named route
+description: How to pass arguments to a named route.
 prev:
   title: Navigate with named routes
   path: /docs/cookbook/navigation/named-routes

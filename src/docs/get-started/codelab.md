@@ -1,5 +1,6 @@
 ---
 title: Write your first Flutter app, part 1
+description: How to write a web-based app in Flutter.
 short-title: Write your first app
 prev:
   title: Test drive
@@ -317,7 +318,7 @@ a child inside the existing `MyApp` stateless widget.
     ```
 
     Notice the declaration `State<RandomWords>`.
-    This indicates that we're using the generic [State][]
+    This indicates that we're using the generic [`State`][]
     class specialized for use with `RandomWords`. Most of the app's logic
     and state resides here&mdash;it maintains the state for the `RandomWords`
     widget. This class saves the generated word pairs, which grows infinitely

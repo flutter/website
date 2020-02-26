@@ -1,5 +1,6 @@
 ---
 title: Navigate with named routes
+description: How to implement named routes for navigating between screens.
 prev:
   title: Navigate to a new screen and back
   path: /docs/cookbook/navigation/navigation-basics

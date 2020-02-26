@@ -1,5 +1,6 @@
 ---
 title: Fade a widget in and out
+description: How to fade a widget in and out.
 prev:
   title: Animate the properties of a container
   path: /docs/cookbook/animation/animated-container

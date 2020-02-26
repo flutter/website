@@ -1,5 +1,6 @@
 ---
 title: Animate a widget across screens
+description: How to animate a widget from one screen to another
 prev:
   title: Report errors to a service
   path: /docs/cookbook/maintenance/error-reporting

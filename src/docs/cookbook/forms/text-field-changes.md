@@ -1,5 +1,6 @@
 ---
 title: Handle changes to a text field
+description: How to detect changes to a text field.
 prev:
   title: Create and style a text field
   path: /docs/cookbook/forms/text-input

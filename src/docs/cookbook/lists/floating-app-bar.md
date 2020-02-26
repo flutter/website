@@ -1,5 +1,6 @@
 ---
 title: Place a floating app bar above a list
+description: How to place a floating app bar above a list.
 prev:
   title: Create lists with different types of items
   path: /docs/cookbook/lists/mixed-list
@@ -11,9 +12,10 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
-To make it easier for users to view a list of items, you might want to hide the
-app bar as the user scrolls down the list. This is especially true if your app
-displays a "tall" app bar that occupies a lot of vertical space.
+To make it easier for users to view a list of items,
+you might want to hide the app bar as the user scrolls down the list.
+This is especially true if your app displays a "tall"
+app bar that occupies a lot of vertical space.
 
 Typically, you create an app bar by providing an `appBar` property to the
 `Scaffold` widget. This creates a fixed app bar that always remains above

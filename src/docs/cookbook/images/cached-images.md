@@ -1,5 +1,6 @@
 ---
 title: Work with cached images
+description: How to use cached images when offline.
 prev:
   title: Fade in images with a placeholder
   path: /docs/cookbook/images/fading-in-images
