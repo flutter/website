@@ -47,9 +47,6 @@ an application must specify additional `MaterialApp` properties,
 and include a separate package called
 `flutter_localizations`.  As of February 2020,
 this package supports 77 languages.
-If you want your app to work smoothly on iOS,
-then you have to add the package
-`flutter_cupertino_localizations` as well.
 
 To use flutter_localizations,
 add the package as a dependency to your `pubspec.yaml` file:
@@ -60,7 +57,6 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_cupertino_localizations: ^1.0.1
 ```
 
 Next, import the flutter_localizations library and specify
@@ -68,7 +64,6 @@ Next, import the flutter_localizations library and specify
 
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_cupertino_localizations/flutter_cupertino_localizations.dart';
 
 MaterialApp(
  localizationsDelegates: [
@@ -597,7 +592,7 @@ Once all supported locales have been added, save the file.
 [`add_language`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart
 [An alternative class for the app's localized resources]: #alternative-class
 [an example]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
-[`intl_example`]: ({{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example)
+[`intl_example`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/intl_example
 [flutter_localizations README]: {{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
@@ -615,7 +610,7 @@ Once all supported locales have been added, save the file.
 [material-global]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
-[`minimal`]: ({{site.github}}/flutter/website/tree/master/examples/internationalization/minimal)
+[`minimal`]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Minimal internationalization]: {{site.github}}/flutter/website/tree/master/examples/internationalization/minimal
 [Setting up an internationalized app]: #setting-up
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html

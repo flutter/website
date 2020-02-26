@@ -15,8 +15,10 @@ image: /images/flutter-clock-social.png
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
             <p class="clock__closed__text">
-                The Flutter Clock Challenge submission period has ended.<br>
-                Winners will be announced at MWC on February 25th.
+                Looking for inspiration?
+                <a href="https://youtu.be/PaPUkxYHDUw" class="clock__link-lightblue" target="_blank">
+                    See examples of what developers built with Flutter!
+                </a>
             </p>
         </div>
     </div>
@@ -25,7 +27,7 @@ image: /images/flutter-clock-social.png
     <div class="clock__texture clock__hero__texture"></div>
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
-            <h1 class="heading">Take the Flutter Clock challenge</h1>
+            <h1 class="heading">Flutter Clock Challenge</h1>
             <p>
                 <a
                     class="twitter-link"
@@ -38,6 +40,9 @@ image: /images/flutter-clock-social.png
             <p>
                 <a class="youtube-link" href="#" data-video="rxs69_szCkE" data-toggle="modal" data-target="#videoModal">
                     <i class="fas fa-play-circle"></i> Watch video
+                </a>
+                <a class="results-link" href="https://medium.com/p/dcebe2eb3957" target="_blank">
+                    <i class="fas fa-trophy"></i> Results
                 </a>
             </p>
         </div>
@@ -59,22 +64,17 @@ image: /images/flutter-clock-social.png
                 Lenovo Smart Display, or Lenovo Smart Clock.
             </p>
             <p class="paragraph-conditions">
-                All projects must be submitted by January 20, 2020, 11:59PM PST (GMT-8).
+                Submissions period has ended on January 20, 2020. Please scroll down to see the results.
             </p>
         </div>
-        <div class="clock__wtm-entries col-12 col-lg-10 no-gutters">
-            <h3 class="heading">Entries will be judged by a panel of Google experts against the following criteria:</h3>
-            <div class="clock__wtm-entries_container">
-                {% for entry in site.data.clock.entries %}
-                    <div class="card">
-                        <div class="card-body entries__card-body">
-                            <p class="paragraph">{{entry.title}}</p>
-                            {% asset {{entry.logo}} class="fas" %}
-                        </div>
-                    </div>
-                {% endfor %}
+        <section class="col-12 col-lg-10 no-gutters clock__row clock__reel text-center">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="mt-0">Flutter Clock Highlight Reel</h2>
+                <div class="create__video">
+                    <iframe width="854" height="480" src="https://www.youtube.com/embed/PaPUkxYHDUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
+        </section>
         <div class="clock__wtm-logos col-12 col-lg-10 justify-content-center">
             <p class="text-center logos-heading">
                 Flutter Clock contest is brought to you in partnership with Google Assistant and Lenovo.
@@ -88,140 +88,116 @@ image: /images/flutter-clock-social.png
     </div>
 </section>
 
-<section class="clock__prizes row">
-    <div class="clock__texture clock__prizes__texture"></div>
-    <div class="clock__prizes_container row justify-content-center">
-        <div class="col-lg-6 order-2 order-lg-1">
-            <span class="prizes-text">Prizes</span>
-            <ul>
-                {% for prize in site.data.clock.prizes %}
-                <li>
-                    <h2 class="subheading">{{prize.title}}</h2>
-                    <p class="paragraph">{{prize.paragraph}}</p>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="col-lg-6 col-md-10 col-12 order-1 order-lg-2 clock__prizes_image m-md-5 m-lg-0">
-            {% asset clock/iMac.png class="card-img-top" %}
-        </div>
-        <div class="col-12 order-3">
-            <hr>
-            <p class="info-paragraph">
-                All complete and valid submissions will receive a digital certificate of completion. Some of the clock
-                contest submissions might be integrated into the Lenovo Smart Clock's lineup of clock faces, or used as
-                inspiration for future clock faces!
-            </p>
-        </div>
+<hr>
+
+<section class="clock__row row clock__winners-article text-center">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mt-0">All Winners</h2>
+        Check out <a href="https://medium.com/p/dcebe2eb3957">this article</a> to read more about this year's results.
     </div>
 </section>
 
-<section class="clock__getting">
-    <div class="clock__getting_container row justify-content-center no-gutters">
-        <div class="col-lg-10">
-            <h2 class="subheading">Getting Started</h2>
-            <p class="paragraph">
-                Use the following instructions to get started. Also, make sure to familiarize yourself with the
-                <a href="#submissions">submission requirements</a> and <a href="#contest">contest rules</a>.
-            </p>
-            <ol type="1">
-                {% for item in site.data.clock.getting_started_items %}
-                <li>
-                    {{item.title}}
-                    {% if item.subItems %}
-                        <ol type="a">
-                            {% for subItem in item.subItems %}
-                            <li class="sub-item {% if item.noListItemStyle == true %}no-list-style{% endif %}">
-                                {{subItem.text}}
-                                {% if subItem.subItems %}
-                                    <ul>
-                                    {% for subItemSecondLevel in subItem.subItems%}
-                                        <li class="sub-item">{{subItemSecondLevel.text}}</li>
-                                    {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </li>
-                            {% endfor %}
-                        </ol>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ol>
+<hr>
+
+<section class="clock__row row">
+    <div class="col-md-8 offset-md-2 align-self-center">
+        <div class="text-center">
+            <h2 class="mt-0">Grand Prize Winner</h2>
+            <div class="text-center">
+                <h3><a href="https://github.com/miickel/flutter_particle_clock" target="_blank">Particle Clock</a> by Mickel Andersson</h3>
+            </div>
         </div>
+        <div class="clock__center-block text-center">{% asset clock/particle.gif -%}</div>
     </div>
 </section>
 
-<section class="clock__submit">
-    <div class="clock__submit_container justify-content-center">
-        <div class="col-12">
-            <h2 class="subheading">
-                Enter your clock face for a chance to win
-            </h2>
-            <p class="paragraph">
-                Summissions period has ended on January 20th.  
-            </p>
+<hr>
+
+<section class="create__row row text-center">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="mt-0">Category Winners</h2>
+    </div>
+    <div class="col-md-5 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3> Visual Beauty</h3>
+                <h4>
+                    <a href="https://github.com/OldMetalmind/cloom_clock" target="_blank">Cloom Clock</a>
+                    by Filipe Barroso and Francisco Frutuoso
+                </h4>
+            </div>
         </div>
+        <div class="clock__center-block">{% asset clock/cloom.gif -%}</div>
+    </div>
+    <div class="col-md-5 offset-md-2 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3> Code Quality</h3>
+                <h4>
+                    <a href="https://github.com/creativecreatorormaybenot/clock" target="_blank">Creative Creator Or Maybe Not Clock</a>
+                    by Hubert Henkemeier
+                </h4>
+            </div>
+        </div>
+        <div class="clock__center-block">{% asset clock/code_qlty.gif -%}</div>
+    </div>
+    <div class="col-md-5 align-top">
+        <div class="create__description">
+            <div class="clock__category-winner">
+                <div class="text-center">
+                    <h3>Overall Execution</h3>
+                    <h4>
+                        <a href="https://github.com/brestnichki/humanbeans-clock" target="_blank">Humanbeans Clock</a>
+                        by Boris Brestnichki
+                    </h4>
+                </div>
+            </div>
+            <div class="clock__center-block">{% asset clock/humanbeans.gif -%}</div>
+        </div>
+    </div>
+    <div class="col-md-5 offset-md-2 align-top">
+        <div class="clock__category-winner">
+            <div class="text-center">
+                <h3>Novelty</h3>
+                <h4><a href="https://github.com/vmorilla/sunset_reflections_clock" target="_blank">Sunset Reflections Clock</a> by Victor Morilla</h4>
+            </div>
+        </div>
+        <div class="clock__center-block">{% asset clock/sunset_reflections.gif -%}</div>
     </div>
 </section>
 
-<section class="clock__submissions">
-    <div class="jump-hook" id="submissions"></div>
-    <div class="no-gutters row justify-content-center">
-        <div class="col-lg-10">
-            <h2 class="subheading">
-                Submission Requirements
-            </h2>
-            <p class="paragraph">
-                Here are the requirements, including some guidelines, for contest submissions. See the contest’s
-                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit" target="_blank" rel="noopener noreferrer">
-                Official Rules</a> for full details.
-            </p>
+<hr>
 
-            {% for item in site.data.clock.submission_requirements %}
-            <h3 class="title">{{item.title}}</h3>
-            <ul>
-                {% for subItem in item.subItems %}
-                <li>
-                    {{subItem.text}}
-                    {% if subItem.subItems %}
-                        <ul>
-                        {% for subItemSecondLevel in subItem.subItems %}
-                            <li>
-                                {{subItemSecondLevel.text}}
-                            </li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
+<section class="clock__row row">
+    <div class="col-md-10 offset-md-1 align-self-center">
+        <div class="text-center mb-10">
+            <h2 class="mb-0 mt-0">Honorable Mentions</h2>
+            <small class="mini">(In alphabetical order)</small>
+        </div>
+        <ul class="clock__honorable-mentions">
+            {% for mention in site.data.clock.honorable_mentions %}
+            <li><a href="{{mention.clock_link}}">{{mention.clock_name}}</a> by {{mention.participant}}</li>
             {% endfor %}
-            <hr>
         </div>
     </div>
 </section>
 
-<section class="clock__contest">
-    <div class="jump-hook" id="contest"></div>
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-            <h2 class="subheading">
-                Contest Rules
-            </h2>
-            <p class="paragraph">
-                Full details and rules are provided in our
-                <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                Official Rules</a>. Here’s a summary of some of the key points:
-            </p>
-            <ul>
-                {% for item in site.data.clock.contest_rules %}
-                    <li>
-                        {{item.title}}
-                    </li>
+<hr>
+
+<section class="clock__wtm">
+    <div class="clock__wtm-entries col-md-10 offset-md-1 no-gutters">
+            <h3 class="heading">Entries were judged by a panel of Google experts against the following criteria:</h3>
+            <div class="clock__wtm-entries_container">
+                {% for entry in site.data.clock.entries %}
+                    <div class="card">
+                        <div class="card-body entries__card-body">
+                            <p class="paragraph">{{entry.title}}</p>
+                            {% asset {{entry.logo}} class="fas" %}
+                        </div>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
-    </div>
 </section>
 
 <section class="clock__faqs no-gutters">

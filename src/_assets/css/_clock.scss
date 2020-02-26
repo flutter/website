@@ -10,6 +10,27 @@
   font-family: $site-font-family-alt;
   font-size: 18px;
 
+  &__center-block {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__category-winner {
+    margin-top: 3rem;
+  }
+
+  &__link-lightblue {
+    color: #60CAF6;
+
+    &:hover {
+      color: #60CAF6;
+    }
+  }
+
   // Background texture shared by all sections
   &__texture {
     height: 100%;
@@ -37,11 +58,16 @@
       margin: 120px 27px 40px 27px;
     }
 
-    .youtube-link, .twitter-link {
+    .youtube-link, .twitter-link, .results-link {
       color: $twitter-color;
+      margin-left: 12px;
 
       i {
         margin-right: 5px;
+      }
+
+      &:first-child {
+        margin-left: 0;
       }
     }
 
@@ -348,6 +374,19 @@
           max-height: initial;
         }
       }
+    }
+  }
+
+  // Shared styles for the winners sections, higlight reel
+  &__row {
+    padding: 3rem 0;
+  }
+
+  &__reel {
+    padding-top: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 0;
     }
   }
 
@@ -783,5 +822,12 @@
     &#contest {
       top: -40px;
     }
+  }
+
+  &__honorable-mentions {
+    columns: 300px 3;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }
