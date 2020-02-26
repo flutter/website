@@ -83,4 +83,4 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: /docs/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Work with cached images]: /docs/cookbook/images/cached_images
+[Work with cached images]: /docs/cookbook/images/cached-images
