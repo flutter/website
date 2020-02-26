@@ -665,7 +665,7 @@ depending on whether you want to navigate to, or back from, a view.
 To navigate between pages, you have a couple options:
 
 * Specify a `Map` of route names. (`MaterialApp`)
-* Directly navigate to a route. (`WidgetApp`)
+* Directly navigate to a route. (`WidgetsApp`)
 
 The following example builds a `Map`.
 
@@ -2326,7 +2326,7 @@ that wraps a number of widgets that are commonly required for
 applications implementing Material Design. It builds upon a WidgetsApp by
 adding Material-specific functionality.
 
-You can also use a `WidgetApp` as your app widget,
+You can also use a `WidgetsApp` as your app widget,
 which provides some of the same functionality,
 but is not as rich as `MaterialApp`.
 

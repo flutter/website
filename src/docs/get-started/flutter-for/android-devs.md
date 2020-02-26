@@ -496,7 +496,7 @@ In Android, you declare your activities inside the app's `AndroidManifest.xml`.
 In Flutter, you have a couple options to navigate between pages:
 
 * Specify a `Map` of route names. (using `MaterialApp`)
-* Directly navigate to a route. (using `WidgetApp`)
+* Directly navigate to a route. (using `WidgetsApp`)
 
 The following example builds a Map.
 
@@ -2126,7 +2126,7 @@ is a convenience widget that wraps a number of widgets that are commonly
 required for applications implementing Material Design.
 It builds upon a WidgetsApp by adding Material specific functionality.
 
-You can also use a `WidgetApp` as your app widget, which provides some of the
+You can also use a `WidgetsApp` as your app widget, which provides some of the
 same functionality, but is not as rich as `MaterialApp`.
 
 To customize the colors and styles of any child components, pass a

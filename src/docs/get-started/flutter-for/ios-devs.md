@@ -1766,7 +1766,7 @@ any design language.  On iOS, you can use the
 For the full set of these widgets,
 see the [Cupertino widgets][] gallery.
 
-You can also use a `WidgetApp` as your app widget,
+You can also use a `WidgetsApp` as your app widget,
 which provides some of the same functionality,
 but is not as rich as `MaterialApp`.
 
