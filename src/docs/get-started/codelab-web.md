@@ -311,7 +311,7 @@ field that you'll set to true when all three fields contain text.
 ```dart
 class _SignUpFormState extends State<SignUpForm>
    with SingleTickerProviderStateMixin {
- <b>bool _formCompleted = false;     // NEW</b>
+   bool _formCompleted = false;     // NEW
 ...
 ```
 
@@ -328,9 +328,9 @@ Replace the `Step 2` comment with the code below marked as **NEW**:
        ...
        SignUpFormBody(
          onProgressChanged: (progress) {
-           <b>setState(() {                          // NEW</b>
-             <b>_formCompleted = progress == 1;**    // NEW</b>
-           <b>});                                    // NEW</b>
+           setState(() {                          // NEW
+             _formCompleted = progress == 1;**    // NEW
+           });                                    // NEW
          },
        ),
        ...
@@ -353,7 +353,7 @@ screen only when the form is completely filled in:
          child: FlatButton(
            color: Colors.blue,
            textColor: Colors.white,
-           <b>onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED</b>
+           onPressed: _formCompleted ? _showWelcomeScreen : null,  // UPDATED
            child: Text('Sign up'),
          ),
 ...
@@ -579,8 +579,8 @@ and another for the color animation:
 ...
 class _SignUpFormState extends State<SignUpForm>
    with SingleTickerProviderStateMixin {
- <b>AnimationController animationController;  // NEW</b>
- <b>Animation<Color> colorAnimation;          // NEW</b>
+ AnimationController animationController;  // NEW
+ Animation<Color> colorAnimation;          // NEW
  bool _formCompleted = false;
 ...
 ```
@@ -601,8 +601,8 @@ class _SignUpFormState extends State<SignUpForm>
  void initState() {
    super.initState();
 
-   <b>animationController = AnimationController(                      //NEW</b>
-       <b>vsync: this, duration: const Duration(milliseconds: 1200)); //NEW</b>
+   animationController = AnimationController(                      //NEW
+       vsync: this, duration: const Duration(milliseconds: 1200)); //NEW
 ...
 ```
 </li>
@@ -618,20 +618,20 @@ of three color tweens, one for each color of the animation
    animationController = AnimationController(
        vsync: this, duration: const Duration(milliseconds: 1200));
 
-   <b>var colorTween = TweenSequence([</b>
-     <b>TweenSequenceItem(</b>
-       <b>tween: ColorTween(begin: Colors.red, end: Colors.orange),</b>
-       <b>weight: 1,</b>
-     <b>),</b>
-     <b>TweenSequenceItem(</b>
-       <b>tween: ColorTween(begin: Colors.orange, end: Colors.yellow),</b>
-       <b>weight: 1,</b>
-     <b>),</b>
-     <b>TweenSequenceItem(</b>
-       <b>tween: ColorTween(begin: Colors.yellow, end: Colors.green),</b>
-       <b>weight: 1,</b>
-     <b>),</b>
-   <b>]);</b>
+   var colorTween = TweenSequence([
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.red, end: Colors.orange),
+       weight: 1,
+     ),
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+       weight: 1,
+     ),
+     TweenSequenceItem(
+       tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+       weight: 1,
+     ),
+   ]);
 ...
 ```
 </li>
@@ -661,7 +661,7 @@ the animation controller using the `drive()` method.
      ),
    ]);
 
-   <b>colorAnimation = animationController.drive(colorTween); //NEW</b>
+   colorAnimation = animationController.drive(colorTween); //NEW
  }
 ```
 </li>
@@ -675,11 +675,11 @@ When the value of `progress` changes, trigger the animation:
 ```dart
        SignUpFormBody(
          onProgressChanged: (progress) {
-           <b>if (!animationController.isAnimating) {     // NEW</b>
-             <b>animationController.animateTo(progress);  // NEW</b>
-           <b>}                                           // NEW</b>
+           if (!animationController.isAnimating) {     // NEW
+             animationController.animateTo(progress);  // NEW
+           }                                           // NEW
            setState(() {
-             <b>_formCompleted = progress == 1;  // UPDATED</b>
+             _formCompleted = progress == 1;  // UPDATED
            });
          },
        ),
@@ -701,14 +701,14 @@ another anonymous function on the `builder` field:
    return Column(
      mainAxisSize: MainAxisSize.min,
      children: [
-       <b>AnimatedBuilder(                         // NEW</b>
-         <b>animation: animationController,        // NEW</b>
-         <b>builder: (context, child) {            // NEW</b>
-           <b>return LinearProgressIndicator(      // NEW</b>
-             <b>value: animationController.value,  // NEW</b>
-             <b>valueColor: colorAnimation,        // NEW</b>
-             <b>backgroundColor: colorAnimation.value.withOpacity(0.4),          // NEW</b>
-           <b>);                                   // NEW</b>
+       AnimatedBuilder(                         // NEW
+         animation: animationController,        // NEW
+         builder: (context, child) {            // NEW
+           return LinearProgressIndicator(      // NEW
+             value: animationController.value,  // NEW
+             valueColor: colorAnimation,        // NEW
+             backgroundColor: colorAnimation.value.withOpacity(0.4),          // NEW
+           );                                   // NEW
          },
        ),
 ...
