@@ -175,7 +175,8 @@
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit?usp=sharing", "type": 301 },
       { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit?usp=sharing", "type": 301 },
       { "source": "/go/supporting-dart-callbacks", "destination": "https://docs.google.com/document/d/1k7OimxbxXzdv3U7-TfB88yG5hIScN3TH6Jcvdcl4izM/edit?usp=sharing", "type": 301 },
-      { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit?usp=sharing", "type": 301 }
+      { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit?usp=sharing", "type": 301 },
+      { "source": "/go/shaders", "destination": "https://docs.google.com/document/d/1z9K5LernwQ0LVAzfbAMW6ITx63QRdRsoax1NLYEfm4Y/edit?usp=sharing", "type": 301 }
     ]
   }
 }
