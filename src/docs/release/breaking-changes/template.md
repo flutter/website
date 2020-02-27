@@ -96,7 +96,7 @@ Relevant PRs:
 {% comment %}
 Add the links to the end of the file in alphabetical order.
 I've had to comment out these faux links because they cause
-the Travia build to believe they are broken linksconfuse,
+the Travis build to believe they are broken links,
 but please remove the comment lines before you commit!
 
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
