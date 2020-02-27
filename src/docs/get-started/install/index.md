@@ -1,5 +1,6 @@
 ---
 title: Install
+description: How to set up your code editor.
 next:
   title: Set up an editor
   path: /docs/get-started/editor

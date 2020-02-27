@@ -1,5 +1,6 @@
 ---
 title: Write your first Flutter app on the web
+description: How to create a Flutter web app.
 short-title: Write your first web app
 ---
 
