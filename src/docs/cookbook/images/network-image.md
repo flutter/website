@@ -1,5 +1,6 @@
 ---
 title: Display images from the internet
+description: How to display images from the internet.
 prev:
   title: Implement swipe to dismiss
   path: /docs/cookbook/gestures/dismissible

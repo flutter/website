@@ -1,5 +1,6 @@
 ---
 title: Set up an editor
+description: Configuring an IDE for Flutter.
 prev:
   title: Install
   path: /docs/get-started/install

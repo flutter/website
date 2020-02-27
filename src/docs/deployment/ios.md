@@ -1,13 +1,14 @@
 ---
 title: Build and release an iOS app
+description: How to release a Flutter app to the App Store.
 short-title: iOS
 ---
 
 This guide provides a step-by-step walkthrough of releasing a
-Flutter app to the [App Store][appstore] and [TestFlight][testflight].
+Flutter app to the [App Store][appstore] and [TestFlight][].
 
-For information on obfuscating Dart code, see
-[Obfuscating Dart Code][].
+For information on obfuscating Dart code,
+see [Obfuscating Dart Code][].
 
 ## Preliminaries
 
@@ -205,7 +206,7 @@ For more details, see
 
 ## Release your app on TestFlight
 
-[TestFlight][testflight] allows developers to push their apps
+[TestFlight][] allows developers to push their apps
 to internal and external testers. In this optional step,
 you'll release your build on TestFlight.
 
@@ -267,4 +268,4 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [Get $75 app advertising credit when you spend $25.]: https://ads.google.com/lp/appcampaigns/?modal_active=none&subid=ww-ww-et-aw-a-flutter1!o2#?modal_active=none
 [Obfuscating Dart Code]: {{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code
-[testflight]: https://developer.apple.com/testflight/
+[TestFlight]: https://developer.apple.com/testflight/

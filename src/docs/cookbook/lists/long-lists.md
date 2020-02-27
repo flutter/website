@@ -1,5 +1,6 @@
 ---
 title: Work with long lists
+description: Use ListView.builder to implement a long or infinite list.
 prev:
   title: Place a floating app bar above a list
   path: /docs/cookbook/lists/floating-app-bar

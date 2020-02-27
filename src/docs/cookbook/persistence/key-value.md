@@ -1,5 +1,6 @@
 ---
 title: Store key-value data on disk
+description: How to use the shared_preferences package to store key-value data.
 prev:
   title: Read and write files
   path: /docs/cookbook/persistence/reading-writing-files
@@ -9,12 +10,12 @@ next:
 ---
 
 If you have a relatively small collection of key-values
-to save, you can use the [shared_preferences][] plugin.
+to save, you can use the [`shared_preferences`][] plugin.
 
 Normally,
 you would have to write native platform integrations for storing
 data on both iOS and Android. Fortunately,
-the [shared_preferences][] plugin can be used to persist
+the [`shared_preferences`][] plugin can be used to persist
 key-value data on disk. The shared preferences plugin
 wraps `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
@@ -28,7 +29,7 @@ This recipe uses the following steps:
 
 ## 1. Add the dependency
 
-Before starting, add the [shared_preferences][]
+Before starting, add the [`shared_preferences`][]
 plugin to the `pubspec.yaml` file:
 
 ```yaml
@@ -41,11 +42,11 @@ dependencies:
 ## 2. Save data
 
 To persist data, use the setter methods provided by the
-`SharedPreferences` class. Setter methods are available for various primitive
-types, such as `setInt`, `setBool`, and `setString`.
+`SharedPreferences` class. Setter methods are available for
+various primitive types, such as `setInt`, `setBool`, and `setString`.
 
-Setter methods do two things: First, synchronously update the key-value pair
-in-memory. Then, persist the data to disk.
+Setter methods do two things: First, synchronously update the
+key-value pair in-memory. Then, persist the data to disk.
 
 <!-- skip -->
 ```dart
@@ -202,5 +203,5 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 
-[shared_preferences]: {{site.pub}}/packages/shared_preferences
+[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [shared preferences documentation]: {{site.android-dev}}/guide/topics/data/data-storage#pref

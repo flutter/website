@@ -1,5 +1,6 @@
 ---
 title: Focus and text fields
+description: How focus works with text fields.
 prev:
   title: Retrieve the value of a text field
   path: /docs/cookbook/forms/retrieve-input

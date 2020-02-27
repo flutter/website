@@ -1,5 +1,6 @@
 ---
 title: Fade in images with a placeholder
+description: How to fade images into view.
 prev:
   title: Display images from the internet
   path: /docs/cookbook/images/network-image
@@ -8,9 +9,9 @@ next:
   path: /docs/cookbook/images/cached-images
 ---
 
-When displaying images using the default `Image` widget, you might notice they
-simply pop onto the screen as they're loaded. This might feel visually jarring
-to your users.
+When displaying images using the default `Image` widget,
+you might notice they simply pop onto the screen as they're loaded.
+This might feel visually jarring to your users.
 
 Instead, wouldn't it be nice to display a placeholder at first,
 and images would fade in as they're loaded? Use the
@@ -21,7 +22,7 @@ or images from the internet.
 
 ## In-Memory
 
-In this example, use the [transparent_image][]
+In this example, use the [`transparent_image`][]
 package for a simple transparent placeholder.
 
 <!-- skip -->
@@ -133,4 +134,4 @@ class MyApp extends StatelessWidget {
 [Adding assets and images]: /docs/development/ui/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
-[transparent_image]: {{site.pub-pkg}}/transparent_image
+[`transparent_image`]: {{site.pub-pkg}}/transparent_image

@@ -1,5 +1,6 @@
 ---
 title: Persist data with SQLite
+description: How to use SQLite to store and retrieve data.
 prev:
   title: Work with WebSockets
   path: /docs/cookbook/networking/web-sockets

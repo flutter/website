@@ -1,5 +1,6 @@
 ---
 title: Add a Drawer to a screen
+description: How to implement a Material Drawer.
 prev:
   title: Fade a widget in and out
   path: /docs/cookbook/animation/opacity-animation

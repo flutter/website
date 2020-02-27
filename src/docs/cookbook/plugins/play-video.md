@@ -1,5 +1,6 @@
 ---
 title: Play and pause a video
+description: How to use the video_player plugin.
 prev:
   title: Store key-value data on disk
   path: /docs/cookbook/persistence/key-value

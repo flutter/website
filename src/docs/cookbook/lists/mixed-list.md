@@ -1,5 +1,6 @@
 ---
 title: Create lists with different types of items
+description: How to implement a list that contains different types of assets.
 prev:
   title: Create a grid list
   path: /docs/cookbook/lists/grid-lists

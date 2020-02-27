@@ -1,5 +1,6 @@
 ---
 title: Add Material touch ripples
+description: How to implement ripple animations.
 prev:
   title: Focus and text fields
   path: /docs/cookbook/forms/focus
