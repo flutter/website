@@ -76,6 +76,11 @@ the version # to which we guarantee to maintain the old API.
 
 ## References
 
+{% comment %}
+I've had to comment out these non-functional links because
+they are messing up our Travis build. Remove the comment
+tags once you fill this in with real links.
+
 API documentation:
 * [`ClassName`][]
 
@@ -86,10 +91,13 @@ Relevant issues:
 Relevant PRs:
 * [PR title #1][]
 * [PR title #2][]
+{% endcomment %}
 
 {% comment %}
 Add the links to the end of the file in alphabetical order.
-I've had to comment out these faux links because they break the build.
+I've had to comment out these faux links because they cause
+the Travis build to believe they are broken links,
+but please remove the comment lines before you commit!
 
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 [Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]

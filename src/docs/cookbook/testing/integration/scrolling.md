@@ -1,5 +1,6 @@
 ---
 title: Handle scrolling
+description: How to handle scrolling in an integration test.
 prev:
   title: Performance profiling
   path: /docs/cookbook/testing/integration/profiling
@@ -8,13 +9,14 @@ next:
   path: /docs/cookbook/testing/unit/introduction
 ---
 
-Many apps feature lists of content, from email clients to music apps
-and beyond.
-To verify that lists contain the expected content using integration
-tests, you need a way to scroll through lists to search for particular items.
+Many apps feature lists of content,
+from email clients to music apps and beyond.
+To verify that lists contain the expected content
+using integration tests,
+you need a way to scroll through lists to search for particular items.
 
-To scroll through lists via integration tests, use the methods
-provided by the [`FlutterDriver`][] class,
+To scroll through lists via integration tests,
+use the methods provided by the [`FlutterDriver`][] class,
 which is included in the [`flutter_driver`][] package:
 
 In this recipe, learn how to scroll through a list of items to
