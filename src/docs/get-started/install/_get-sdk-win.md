@@ -5,8 +5,8 @@
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    For other release channels, and older builds, see the
+    [SDK archive][] page.
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
     (for example, `C:\src\flutter`;
@@ -74,4 +74,5 @@ verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 
-[upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[Flutter repo]: {{site.github}}/flutter/flutter
+[SDK archive]: /docs/development/tools/sdk/archive

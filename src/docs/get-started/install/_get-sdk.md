@@ -13,8 +13,8 @@
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    archive](/docs/development/tools/sdk/archive) page.
+    For other release channels, and older builds,
+    see the [SDK archive][] page.
  1. Extract the file in the desired location, for example:
 
     {% comment %}
@@ -33,7 +33,7 @@
     
      If you don't want to install a fixed version of the installation bundle, 
      you can skip steps 1 and 2. 
-     Instead, get the source code from the [Flutter repo](https://github.com/flutter/flutter) on GitHub,
+     Instead, get the source code from the [Flutter repo][] on GitHub,
      and change branches or tags as needed. For example:
     
     ```terminal
@@ -47,8 +47,8 @@
     ```
 
     This command sets your `PATH` variable for the _current_ terminal window only.
-    To permanently add Flutter to your path, see [Update your
-    path](#update-your-path).
+    To permanently add Flutter to your path, see
+    [Update your path][].
 
  1. Optionally, pre-download development binaries:
 
@@ -68,8 +68,9 @@ You are now ready to run Flutter commands!
 
 {{site.alert.note}}
   To update an existing version of Flutter, see
-  [Upgrading Flutter](/docs/development/tools/sdk/upgrading).
+  [Upgrading Flutter][].
 {{site.alert.end}}
+
 
 ### Run flutter doctor
 
@@ -103,3 +104,7 @@ command again to verify that you’ve set everything up correctly.
 
 {% include_relative _analytics.md %}
 
+[Flutter repo]: {{site.github}}/flutter/flutter
+[SDK archive]: /docs/development/tools/sdk/archive
+[Update your path]: #update-your-path
+[Upgrading Flutter]: /docs/development/tools/sdk/upgrading

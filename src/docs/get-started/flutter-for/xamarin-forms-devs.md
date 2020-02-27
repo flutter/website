@@ -24,23 +24,23 @@ that are most relevant to your needs.
 For each platform in Xamarin.Forms, you call the `LoadApplication` method,
 which creates a new application and starts your app.
 
-{% prettify csharp %}
+```csharp
 LoadApplication(new App());
-{% endprettify %}
+```
 
 In Flutter, the default main entry point is `main` where you load your
 Flutter app.
 
-{% prettify dart %}
+```dart
 void main() {
   runApp(new MyApp());
 }
-{% endprettify %}
+```
 
 In Xamarin.Forms, you assign a `Page` to the `MainPage` property in the
 `Application` class.
 
-{% prettify csharp %}
+```csharp
 public class App: Application
 {
     public App()
@@ -56,12 +56,12 @@ public class App: Application
                  };
     }
 }
-{% endprettify %}
+```
 
 In Flutter, "everything is a widget", even the application itself.
 The following example shows `MyApp`, a simple application `Widget`.
 
-{% prettify dart %}
+```dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
         child: Text("Hello World!", textDirection: TextDirection.ltr));
   }
 }
-{% endprettify %}
+```
 
 ### How do you create a page?
 
@@ -88,10 +88,10 @@ all widgets are immutable, but two types of widgets are supported:
 stateful and stateless. Examples of a stateless widget are titles,
 icons, or images.
 
-The following example uses MaterialApp, which holds its root page in the
-`home` property.
+The following example uses MaterialApp,
+which holds its root page in the `home` property.
 
-{% prettify dart %}
+```dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -101,11 +101,11 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      [[highlight]]home: new MyHomePage(title: 'Flutter Demo Home Page'),[[/highlight]]
+      home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-{% endprettify %}
+```
 
 From here, your actual first page is another `Widget`,
 in which you create your state.
@@ -115,7 +115,7 @@ The first part, which is itself immutable, creates a State object
 that holds the state of the object. The State object persists over
 the life of the widget.
 
-{% prettify dart %}
+```dart
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -124,7 +124,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
-{% endprettify %}
+```
 
 The `State` object implements the `build()` method for the stateful widget.
 
@@ -133,7 +133,7 @@ a build of that portion of the UI.  Make sure to call `setState()` only
 when necessary, and only on the part of the widget tree that has changed,
 or it can result in poor UI performance.
 
-{% prettify dart %}
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-{% endprettify %}
+```
 
 In Flutter,
 the UI (also known as widget tree), is immutable, meaning you
@@ -192,8 +192,7 @@ but there are many benefits to this approach.
 {{site.alert.secondary}}
   How is react-style, or _declarative_, programming different than the
   traditional imperative style?
-  For a comparison, see [Introduction to declarative
-  UI](/docs/get-started/flutter-for/declarative).
+  For a comparison, see [Introduction to declarative UI][].
 {{site.alert.end}}
 
 `ContentPage`, `TabbedPage`, `MasterDetailPage` are all types of pages you
@@ -205,19 +204,17 @@ In Flutter, almost everything is a widget. A `Page`, called a `Route` in
 Flutter, is a widget.  Buttons, progress bars, and animation controllers
 are all widgets. When building a route, you create a widget tree.
 
-Flutter includes the [Material
-Components](/docs/development/ui/widgets/material)
-library. These are widgets that implement the
-[Material Design guidelines]({{site.material}}/design). Material Design is a
-flexible design system [optimized for all
-platforms]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+Flutter includes the [Material Components][] library.
+These are widgets that implement the
+[Material Design guidelines][]. Material Design is a
+flexible design system [optimized for all platforms][],
 including iOS.
 
-But Flutter is flexible and expressive enough to implement any design language.
-For example, on iOS, you can use the [Cupertino
-widgets](/docs/development/ui/widgets/cupertino)
+But Flutter is flexible and expressive enough to implement
+any design language. For example, on iOS,
+you can use the [Cupertino widgets][]
 to produce an interface that looks like
-[Apple's iOS design language](https://developer.apple.com/design/resources/).
+[Apple's iOS design language][].
 
 ### How do I update widgets?
 
@@ -259,12 +256,12 @@ The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find it subclasses `StatelessWidget`.
 
-{% prettify dart %}
+```dart
 new Text(
   'I like Flutter!',
   style: new TextStyle(fontWeight: FontWeight.bold),
 );
-{% endprettify %}
+```
 
 As you can see, the `Text` widget has no state information associated with it,
 it renders what is passed in its constructors and nothing more.
@@ -276,7 +273,7 @@ To achieve this, wrap the `Text` widget in a `StatefulWidget` and
 update it when the user clicks the button, as shown in the following
 example:
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -330,7 +327,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I lay out my widgets? What is the equivalent of an XAML file?
 
@@ -340,26 +337,26 @@ In Flutter, you write your layouts with a widget tree in code.
 
 The following example shows how to display a simple widget with padding:
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Sample App"),
+```dart
+@override
+Widget build(BuildContext context) {
+  return new Scaffold(
+    appBar: new AppBar(
+      title: new Text("Sample App"),
+    ),
+    body: new Center(
+      child: new MaterialButton(
+        onPressed: () {},
+        child: new Text('Hello'),
+        padding: new EdgeInsets.only(left: 10.0, right: 10.0),
       ),
-      body: new Center(
-        child: new MaterialButton(
-          onPressed: () {},
-          child: new Text('Hello'),
-          padding: new EdgeInsets.only(left: 10.0, right: 10.0),
-        ),
-      ),
-    );
-  }
-{% endprettify %}
+    ),
+  );
+}
+```
 
-You can view the layouts that Flutter has to offer in the [widget
-catalog](/docs/development/ui/widgets/layout).
+You can view the layouts that Flutter has to offer in the
+[widget catalog][].
 
 ### How do I add or remove an Element from my layout?
 
@@ -374,7 +371,7 @@ and control that child's creation with a boolean flag.
 The following example shows how to toggle between two widgets when the user
 clicks the `FloatingActionButton`:
 
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -433,7 +430,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 ### How do I animate a widget?
 
@@ -442,16 +439,16 @@ include methods such as `FadeTo` and `TranslateTo`.
 You would use these methods on a view
 to perform the required animations.
 
-{% prettify xml %}
+```xml
 <Image Source="{Binding MyImage}" x:Name="myImage" />
-{% endprettify %}
+```
 
 Then in code behind, or a behavior, this would fade in the image,
 over a 1 second period.
 
-{% prettify csharp %}
+```csharp
 myImage.FadeTo(0, 1000);
-{% endprettify %}
+```
 
 In Flutter, you animate widgets using the animation library by wrapping
 widgets inside an animated widget. Use an `AnimationController`,
@@ -474,7 +471,7 @@ and tell the controller to start the animation.
 The following example shows how to write a `FadeTransition` that fades
 the widget into a logo when you press the `FloatingActionButton`:
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -535,12 +532,10 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
     );
   }
 }
-{% endprettify %}
+```
 
-For more information, see
-[Animation & Motion widgets](/docs/development/ui/widgets/animation),
-the [Animations tutorial](/docs/development/ui/animations/tutorial),
-and the [Animations overview](/docs/development/ui/animations).
+For more information, see [Animation & Motion widgets][],
+the [Animations tutorial][], and the [Animations overview][].
 
 ### How do I draw/paint on the screen?
 
@@ -557,7 +552,7 @@ see Collin's answer on [StackOverflow][].
 
 [StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MaterialApp(home: new DemoApp()));
@@ -603,14 +598,13 @@ class SignaturePainter extends CustomPainter {
   }
   bool shouldRepaint(SignaturePainter other) => other.points != points;
 }
-{% endprettify %}
+```
 
 ### Where is the widget's opacity?
 
 On Xamarin.Forms, all `VisualElement`s have an Opacity.
 In Flutter, you need to wrap a widget in an
-[Opacity widget]({{site.api}}/flutter/widgets/Opacity-class.html)
-to accomplish this.
+[`Opacity` widget][] to accomplish this.
 
 ### How do I build custom widgets?
 
@@ -618,8 +612,7 @@ In Xamarin.Forms, you typically subclass `VisualElement`,
 or use a pre-existing `VisualElement`, to override and
 implement methods that achieve the desired behavior.
 
-In Flutter, build a custom widget by
-[composing](/docs/resources/technical-overview#everythings-a-widget)
+In Flutter, build a custom widget by [composing][]
 smaller widgets (instead of extending them).
 It is somewhat similar to implementing a custom control based off a
 `Grid` with numerous `VisualElement`s added in, while extending with
@@ -629,7 +622,7 @@ For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `RaisedButton`
 with a label, rather than by extending `RaisedButton`:
 
-{% prettify dart %}
+```dart
 class CustomButton extends StatelessWidget {
   final String label;
 
@@ -640,18 +633,18 @@ class CustomButton extends StatelessWidget {
     return new RaisedButton(onPressed: () {}, child: new Text(label));
   }
 }
-{% endprettify %}
+```
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Center(
     child: new CustomButton("Hello"),
   );
 }
-{% endprettify %}
+```
 
 ## Navigation
 
@@ -663,9 +656,7 @@ forwards and backwards.
 
 Flutter has a similar implementation, using a `Navigator` and
 `Routes`. A `Route` is an abstraction for a `Page` of an app, and
-a `Navigator` is a
-[widget](/docs/resources/technical-overview#everythings-a-widget)
-that manages routes.
+a `Navigator` is a [widget][] that manages routes.
 
 A route roughly maps to a `Page`. The navigator works in a similar way to the
 Xamarin.Forms `NavigationPage`, in that it can `push()` and `pop()` routes
@@ -673,12 +664,12 @@ depending on whether you want to navigate to, or back from, a view.
 
 To navigate between pages, you have a couple options:
 
-* Specify a `Map` of route names. (MaterialApp)
-* Directly navigate to a route. (WidgetApp)
+* Specify a `Map` of route names. (`MaterialApp`)
+* Directly navigate to a route. (`WidgetsApp`)
 
-The following example builds a Map.
+The following example builds a `Map`.
 
-{% prettify dart %}
+```dart
 void main() {
   runApp(new MaterialApp(
     home: new MyAppHome(), // becomes the route named '/'
@@ -689,35 +680,35 @@ void main() {
     },
   ));
 }
-{% endprettify %}
+```
 
 Navigate to a route by pushing its name to the `Navigator`.
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pushNamed('/b');
-{% endprettify %}
+```
 
-The Navigator is a stack that manages your app's routes.
+The `Navigator` is a stack that manages your app's routes.
 Pushing a route to the stack moves to that route.
-Popping a route from the stack, returns to the previous route. This
-is done by awaiting on the `Future` returned by `push()`.
+Popping a route from the stack, returns to the previous route.
+This is done by awaiting on the `Future` returned by `push()`.
 
 `Async`/`await` is very similar to the .NET implementation and is
-explained in more detail in [Async UI](#async-ui).
+explained in more detail in [Async UI][].
 
 For example, to start a `location` route that lets the user select their
 location, you might do the following:
 
-{% prettify dart %}
+```dart
 Map coordinates = await Navigator.of(context).pushNamed('/location');
-{% endprettify %}
+```
 
 And then, inside your ‘location’ route, once the user has selected their
 location, pop the stack with the result:
 
-{% prettify dart %}
+```dart
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
-{% endprettify %}
+```
 
 ### How do I navigate to another app?
 
@@ -752,7 +743,7 @@ Xamarin.Forms developer.
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -760,7 +751,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 Once the awaited network call is done, update the UI by calling `setState()`,
 which triggers a rebuild of the widget sub-tree and updates the data.
@@ -768,7 +759,7 @@ which triggers a rebuild of the widget sub-tree and updates the data.
 The following example loads data asynchronously and displays it
 in a `ListView`:
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -836,7 +827,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 Refer to the next section for more information on doing work in the
 background, and how Flutter differs from Android.
@@ -858,7 +849,7 @@ move things to a different thread via `Task.Run()` in Xamarin.Forms.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-{% prettify dart %}
+```dart
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
   http.Response response = await http.get(dataURL);
@@ -866,7 +857,7 @@ loadData() async {
     widgets = json.decode(response.body);
   });
 }
-{% endprettify %}
+```
 
 This is how you would typically do network or database calls,
 which are both I/O operations.
@@ -883,7 +874,7 @@ or update your UI by calling `setState()`.
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
-{% prettify dart %}
+```dart
 loadData() async {
   ReceivePort receivePort = new ReceivePort();
   await Isolate.spawn(dataLoader, receivePort.sendPort);
@@ -922,7 +913,7 @@ Future sendReceive(SendPort port, msg) {
   port.send([msg, response.sendPort]);
   return response.first;
 }
-{% endprettify %}
+```
 
 Here, `dataLoader()` is the `Isolate` that runs in its own separate
 execution thread.  In the isolate you can perform more CPU intensive
@@ -932,7 +923,7 @@ such as encryption or signal processing.
 
 You can run the full example below:
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1051,27 +1042,26 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return response.first;
   }
 }
-{% endprettify %}
+```
 
 ### How do I make network requests?
 
 In Xamarin.Forms you would use `HttpClient`. Making a network call in Flutter
-is easy when you use the popular
-[`http` package]({{site.pub}}/packages/http).
+is easy when you use the popular [`http` package][].
 This abstracts away a lot of the networking that you might normally
 implement yourself, making it simple to make network calls.
 
 To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
-{% prettify yaml %}
+```yaml
 dependencies:
   ...
   http: ^0.11.3+16
-{% endprettify %}
+```
 
 To make a network request, call `await` on the `async` function `http.get()`:
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1085,7 +1075,7 @@ import 'package:http/http.dart' as http;
     });
   }
 }
-{% endprettify %}
+```
 
 ### How do I show the progress for a long-running task?
 
@@ -1103,7 +1093,7 @@ functions. If `showLoadingDialog()` is `true` (when `widgets.length == 0`),
 then render the `ProgressIndicator`. Otherwise, render the
 `ListView` with the data returned from a network call.
 
-{% prettify dart %}
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -1185,7 +1175,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     });
   }
 }
-{% endprettify %}
+```
 
 ## Project structure & resources
 
@@ -1204,9 +1194,8 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called
-[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
-expresses the ratio of physical pixels in a single logical pixel.
+The so-called [`devicePixelRatio`][] expresses the ratio
+of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
 
@@ -1248,28 +1237,28 @@ images/3.0x/my_icon.png  // 3.0x image
 
 Next, you'll need to declare these images in your `pubspec.yaml` file:
 
-{% prettify yaml %}
+```yaml
 assets:
  - images/my_icon.jpeg
-{% endprettify %}
+```
 
 You can then access your images using `AssetImage`:
 
-{% prettify dart %}
+```dart
 return new AssetImage("images/a_dot_burr.jpeg");
-{% endprettify %}
+```
 
 or directly in an `Image` widget:
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Image.asset("images/my_image.png");
 }
-{% endprettify %}
+```
 
 More detailed information can be found in
-[Adding assets and images](/docs/development/ui/assets-and-images).
+[Adding assets and images][].
 
 ### Where do I store strings? How do I handle localization?
 
@@ -1278,36 +1267,35 @@ have a dedicated resources-like system for strings. At the moment,
 the best practice is to hold your copy text in a class as static
 fields and accessing them from there. For example:
 
-{% prettify dart %}
+```dart
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
 }
-{% endprettify %}
+```
 
 Then in your code, you can access your strings as such:
 
-{% prettify dart %}
+```dart
 new Text(Strings.welcomeMessage)
-{% endprettify %}
+```
 
 By default, Flutter only supports US English for its strings. If you need to
 add support for other languages, include the `flutter_localizations`
-package. You might also need to add Dart's
-[`intl`]({{site.pub}}/packages/intl)
+package. You might also need to add Dart's [`intl`][]
 package to use i10n machinery, such as date/time formatting.
 
-{% prettify yaml %}
+```yaml
 dependencies:
   # ...
   flutter_localizations:
     sdk: flutter
   intl: "^0.15.6"
-{% endprettify %}
+```
 
 To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and `supportedLocales` on the app widget:
 
-{% prettify dart %}
+```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 new MaterialApp(
@@ -1323,7 +1311,7 @@ new MaterialApp(
   ],
   // ...
 )
-{% endprettify %}
+```
 
 The delegates contain the actual localized values, while the `supportedLocales`
 defines which locales the app supports. The above example uses a `MaterialApp`,
@@ -1334,25 +1322,21 @@ need the latter. Note that these two delegates contain "default"
 values, but you'll need to provide one or more delegates for your own app's
 localizable copy, if you want those to be localized too.
 
-When initialized, the `WidgetsApp` (or `MaterialApp`) creates a
-[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
-widget for you, with the delegates you specify.
-The current locale for the device is always accessible from the `Localizations`
+When initialized, the `WidgetsApp` (or `MaterialApp`)
+creates a [`Localizations`][] widget for you,
+with the delegates you specify. The current locale for
+the device is always accessible from the `Localizations`
 widget from the current context (in the form of a `Locale` object),
-or using the
-[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
+or using the [`Window.locale`][].
 
 To access localized resources, use the `Localizations.of()` method to
 access a specific localizations class that is provided by a given delegate.
-Use the [`intl_translation`]({{site.pub}}/packages/intl_translation)
-package to extract translatable copy to
-[arb]({{site.github}}/google/i18n/app-resource-bundle)
-files for translating, and importing them back into the app for using them
-with `intl`.
+Use the [`intl_translation`][] package to extract translatable
+copy to [arb][] files for translating,
+and importing them back into the app for using them with `intl`.
 
 For further details on internationalization and localization in Flutter,
-see the
-[internationalization guide](/docs/development/accessibility-and-localization/internationalization),
+see the [internationalization guide][],
 which has sample code with and without the `intl` package.
 
 ### Where is my project file?
@@ -1377,8 +1361,7 @@ The tools delegate the building of the native Android and iOS wrapper
 apps to the respective build systems.
 
 In general, use `pubspec.yaml` to declare external dependencies to use in
-Flutter. A good place to find Flutter packages is the
-[Pub]({{site.pub}}/flutter) site.
+Flutter. A good place to find Flutter packages is on [pub.dev][].
 
 ## Application lifecycle
 
@@ -1424,35 +1407,35 @@ If you notice the two code samples are identical with the exception of the
 exploited to develop rich layouts that can change overtime with the same
 children.
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Text('Row One'),
-        new Text('Row Two'),
-        new Text('Row Three'),
-        new Text('Row Four'),
-      ],
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return new Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      new Text('Row One'),
+      new Text('Row Two'),
+      new Text('Row Three'),
+      new Text('Row Four'),
+    ],
+  );
+}
+```
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Text('Column One'),
-        new Text('Column Two'),
-        new Text('Column Three'),
-        new Text('Column Four'),
-      ],
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return new Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      new Text('Column One'),
+      new Text('Column Two'),
+      new Text('Column Three'),
+      new Text('Column Four'),
+    ],
+  );
+}
+```
 
 ### What is the equivalent of a Grid?
 
@@ -1461,22 +1444,22 @@ This is much more powerful than what you are used to in Xamarin.Forms.
 A `GridView` provides automatic scrolling when the
 content exceeds its viewable space.
 
-{% prettify dart %}
-  GridView.count(
-    // Create a grid with 2 columns. If you change the scrollDirection to
-    // horizontal, this would produce 2 rows.
-    crossAxisCount: 2,
-    // Generate 100 widgets that display their index in the List
-    children: List.generate(100, (index) {
-      return Center(
-        child: Text(
-          'Item $index',
-          style: Theme.of(context).textTheme.headline,
-        ),
-      );
-    }),
-  );
-{% endprettify %}
+```dart
+GridView.count(
+  // Create a grid with 2 columns. If you change the scrollDirection to
+  // horizontal, this would produce 2 rows.
+  crossAxisCount: 2,
+  // Generate 100 widgets that display their index in the List
+  children: List.generate(100, (index) {
+    return Center(
+      child: Text(
+        'Item $index',
+        style: Theme.of(context).textTheme.headline,
+      ),
+    );
+  }),
+);
+```
 
 You might have used a `Grid` in Xamarin.Forms to implement widgets
 that overlay other widgets.
@@ -1484,17 +1467,17 @@ In Flutter, you accomplish this with the `Stack` widget
 
 This sample creates two icons that overlap each other.
 
-{% prettify dart %}
-  child: new Stack(
-    children: <Widget>[
-      new Icon(Icons.add_box, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
-      new Positioned(
-        left: 10.0,
-        child: new Icon(Icons.add_circle, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
-      ),
-    ],
-  ),
-{% endprettify %}
+```dart
+child: new Stack(
+  children: <Widget>[
+    new Icon(Icons.add_box, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+    new Positioned(
+      left: 10.0,
+      child: new Icon(Icons.add_circle, size: 24.0, color: const Color.fromRGBO(0,0,0,1.0)),
+    ),
+  ],
+),
+```
 
 ### What is the equivalent of a ScrollView?
 
@@ -1504,14 +1487,14 @@ if the content is larger than the device screen, it scrolls.
 In Flutter, the closest match is the `SingleChildScrollView` widget.
 You simply fill the Widget with the content that you want to be scrollable.
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new SingleChildScrollView(
-      child: new Text('Long Content'),
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return new SingleChildScrollView(
+    child: new Text('Long Content'),
+  );
+}
+```
 
 If you have many items you want to wrap in a scroll,
 even of different `Widget` types, you might want
@@ -1520,28 +1503,28 @@ but in Flutter this is far more optimized
 and less intensive than a Xamarin.Forms `ListView`,
 which is backing on to platform specific controls.
 
-{% prettify dart %}
-  @override
-  Widget build(BuildContext context) {
-    return new ListView(
-      children: <Widget>[
-        new Text('Row One'),
-        new Text('Row Two'),
-        new Text('Row Three'),
-        new Text('Row Four'),
-      ],
-    );
-  }
-{% endprettify %}
+```dart
+@override
+Widget build(BuildContext context) {
+  return new ListView(
+    children: <Widget>[
+      new Text('Row One'),
+      new Text('Row Two'),
+      new Text('Row Three'),
+      new Text('Row Four'),
+    ],
+  );
+}
+```
 
 ### How do I handle landscape transitions in Flutter?
 
 Landscape transitions can be handled automatically by setting the
 `configChanges` property in the AndroidManifest.xml:
 
-{% prettify yaml %}
+```yaml
 android:configChanges="orientation|screenSize"
-{% endprettify %}
+```
 
 ## Gesture detection and touch event handling
 
@@ -1669,7 +1652,7 @@ range of Gestures such as:
 The following example shows a `GestureDetector` that rotates the
 Flutter logo on a double tap:
 
-{% prettify dart %}
+```dart
 AnimationController controller;
 CurvedAnimation curve;
 
@@ -1701,7 +1684,7 @@ class SampleApp extends StatelessWidget {
     ));
   }
 }
-{% endprettify %}
+```
 
 ## Listviews and adapters
 
@@ -1720,7 +1703,7 @@ Due to Flutter's immutable widget pattern, you pass a list of
 widgets to your `ListView`, and Flutter takes care of making sure
 that scrolling is fast and smooth.
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1767,7 +1750,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I know which list item has been clicked?
 
@@ -1778,7 +1761,7 @@ behaviors change.
 
 In Flutter, use the touch handling provided by the passed-in widgets.
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1832,7 +1815,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return widgets;
   }
 }
-{% endprettify %}
+```
 
 ### How do I update a ListView dynamically?
 
@@ -1855,7 +1838,7 @@ For a simple way to update your `ListView`, create a new `List` inside of
 While this approach is simple, it is not recommended for large data sets,
 as shown in the next example.
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1919,7 +1902,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 The recommended, efficient, and effective way to build a list uses a
 ListView.Builder. This method is great when you have a dynamic
@@ -1927,7 +1910,7 @@ list or a list with very large amounts of data. This is essentially
 the equivalent of RecyclerView on Android, which automatically
 recycles list elements for you:
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -1993,7 +1976,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-{% endprettify %}
+```
 
 Instead of creating a "ListView", create a ListView.builder that
 takes two key parameters: the initial length of the list,
@@ -2007,10 +1990,8 @@ Finally, but most importantly, notice that the `onTap()` function
 doesn't recreate the list anymore, but instead adds to it.
 
 For more information, see
-[Write your first Flutter app,
-part 1]({{site.codelabs}}/codelabs/first-flutter-app-pt1)
-and [Write your first Flutter app,
-part 2]({{site.codelabs}}/codelabs/first-flutter-app-pt2)
+[Write your first Flutter app, part 1][]
+and [Write your first Flutter app, part 2][].
 
 ## Working with text
 
@@ -2024,17 +2005,17 @@ and just `fontname` for iOS.
 In Flutter, place the font file in a folder and reference it in the
 `pubspec.yaml` file, similar to how you import images.
 
-{% prettify yaml %}
+```yaml
 fonts:
    - family: MyCustomFont
      fonts:
        - asset: fonts/MyCustomFont.ttf
        - style: italic
-{% endprettify %}
+```
 
 Then assign the font to your `Text` widget:
 
-{% prettify dart %}
+```dart
 @override
 Widget build(BuildContext context) {
   return new Scaffold(
@@ -2049,7 +2030,7 @@ Widget build(BuildContext context) {
     ),
   );
 }
-{% endprettify %}
+```
 
 ### How do I style my text widgets?
 
@@ -2082,11 +2063,10 @@ or whether it's bound to a property in a `ViewModel`.
 
 Retrieving information in Flutter is handled by specialized widgets
 and is different than how you are used to. If you have a `TextField`
-or a `TextFormField`, you can supply a
-[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
+or a `TextFormField`, you can supply a [`TextEditingController`][]
 to retrieve user input:
 
-{% prettify dart %}
+```dart
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value
   // of the TextField.
@@ -2132,32 +2112,32 @@ class _MyFormState extends State<MyForm> {
     );
   }
 }
-{% endprettify %}
+```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field](/docs/cookbook/forms/retrieve-input),
-from the [Flutter cookbook](/docs/cookbook).
+[Retrieve the value of a text field][],
+from the [Flutter cookbook][].
 
 ### What is the equivalent of a Placeholder on an Entry?
 
 In Xamarin.Forms, some `Elements` support a `Placeholder` property
 that you can assign a value to. For example:
 
-{% prettify xml %}
-  <Entry Placeholder="This is a hint">
-{% endprettify %}
+```xml
+<Entry Placeholder="This is a hint">
+```
 
 In Flutter, you can easily show a "hint" or a placeholder text
 for your input by adding an InputDecoration object to the
 decoration constructor parameter for the text widget.
 
-{% prettify dart %}
+```dart
 body: new Center(
   child: new TextField(
     decoration: new InputDecoration(hintText: "This is a hint"),
   )
 )
-{% endprettify %}
+```
 
 ### How do I show validation errors?
 
@@ -2172,7 +2152,7 @@ However, you don't want to start off by showing an error.
 Instead, when the user has entered invalid data,
 update the state, and pass a new `InputDecoration` object.
 
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -2239,7 +2219,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     return regExp.hasMatch(em);
   }
 }
-{% endprettify %}
+```
 
 ## Flutter plugins
 
@@ -2258,10 +2238,9 @@ native apps. Your Flutter app is still hosted in a native app's
 but you don't have direct access to this, or the native framework.
 
 This doesn't mean Flutter apps can't interact with those native APIs,
-or with any native code you have. Flutter provides [platform
-channels](/docs/development/platform-integration/platform-channels)
-that communicate and exchange data with the `ViewController` or
-`Activity` that hosts your Flutter view.
+or with any native code you have. Flutter provides
+[platform channels][] that communicate and exchange data with
+the `ViewController` or `Activity` that hosts your Flutter view.
 Platform channels are essentially an asynchronous messaging
 mechanism that bridges the Dart code with the host `ViewController`
 or `Activity` and the iOS or Android framework it runs on.
@@ -2269,8 +2248,7 @@ You can use platform channels to execute a method on the native side,
 or to retrieve some data from the device's sensors, for example.
 
 In addition to directly using platform channels,
-you can use a variety of pre-made
-[plugins](/docs/development/packages-and-plugins/using-packages)
+you can use a variety of pre-made [plugins][]
 that encapsulate the native and Dart code for a specific goal.
 For example, you can use a plugin to access
 the camera roll and the device camera directly from Flutter,
@@ -2280,50 +2258,46 @@ Dart and Flutter's open source package repository.
 Some packages might support native integrations on iOS,
 or Android, or both.
 
-If you can't find a plugin on Pub that fits your needs,
-you can [write your
-own](/docs/development/packages-and-plugins/developing-packages),
-and [publish it on
-Pub](/docs/development/packages-and-plugins/developing-packages#publish).
+If you can't find a plugin on pub.dev that fits your needs,
+you can [write your own][], and [publish it on pub.dev][].
 
 ### How do I access the GPS sensor?
 
-Use the [`geolocator`]({{site.pub}}/packages/geolocator) community plugin.
+Use the [`geolocator`][] community plugin.
 
 ### How do I access the camera?
 
-The [`image_picker`]({{site.pub}}/packages/image_picker) plugin is popular
+The [`image_picker`][] plugin is popular
 for accessing the camera.
 
 ### How do I log in with Facebook?
 
 To log in with Facebook, use the
-[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) community plugin.
+[`flutter_facebook_login`][] community plugin.
 
 ### How do I use Firebase features?
 
-Most Firebase functions are covered by
-[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
+Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) for Firebase AdMob
- * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) for Firebase Analytics
- * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) for Firebase Auth
- * [`firebase_database`]({{site.pub}}/packages/firebase_database) for Firebase RTDB
- * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) for Firebase Cloud Storage
- * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) for Firebase Messaging (FCM)
- * [`flutter_firebase_ui`]({{site.pub}}/packages/flutter_firebase_ui) for quick Firebase Auth integrations (Facebook, Google, Twitter and email)
- * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) for Firebase Cloud Firestore
+ * [`firebase_admob`][] for Firebase AdMob
+ * [`firebase_analytics`][] for Firebase Analytics
+ * [`firebase_auth`][] for Firebase Auth
+ * [`firebase_database`][] for Firebase RTDB
+ * [`firebase_storage`][] for Firebase Cloud Storage
+ * [`firebase_messaging`][] for Firebase Messaging (FCM)
+ * [`flutter_firebase_ui`][] for quick Firebase Auth integrations
+   (Facebook, Google, Twitter and email)
+ * [`cloud_firestore`][] for Firebase Cloud Firestore
 
-You can also find some third-party Firebase plugins on Pub that cover areas
-not directly covered by the first-party plugins.
+You can also find some third-party Firebase plugins on pub.dev
+that cover areas not directly covered by the first-party plugins.
 
 ### How do I build my own custom native integrations?
 
 If there is platform-specific functionality that Flutter or its community
 plugins are missing, you can build your own following the
-[developing packages and
-plugins](/docs/development/packages-and-plugins/developing-packages) page.
+[developing packages and plugins][] page.
 
 Flutter's plugin architecture, in a nutshell,
 is much like using an Event bus in Android:
@@ -2352,7 +2326,7 @@ that wraps a number of widgets that are commonly required for
 applications implementing Material Design. It builds upon a WidgetsApp by
 adding Material-specific functionality.
 
-You can also use a `WidgetApp` as your app widget,
+You can also use a `WidgetsApp` as your app widget,
 which provides some of the same functionality,
 but is not as rich as `MaterialApp`.
 
@@ -2361,7 +2335,7 @@ pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
 the primary swatch is set to blue and text selection color is red.
 
-{% prettify dart %}
+```dart
 class SampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -2375,7 +2349,7 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 ## Databases and local storage
 
@@ -2385,8 +2359,8 @@ Xamarin.Forms developers will likely be familar with the
 `Xam.Plugins.Settings` plugin.
 
 In Flutter, access equivalent functionality using the
-[shared_preferences]({{site.pub}}/packages/shared_preferences) plugin.
-This plugin wraps the functionality of both `UserDefaults` and the Android
+[`shared_preferences`][] plugin. This plugin wraps the
+functionality of both `UserDefaults` and the Android
 equivalent, `SharedPreferences`.
 
 ### How do I access SQLite in Flutter?
@@ -2395,7 +2369,7 @@ In Xamarin.Forms most applications would use the `sqlite-net-pcl`
 plugin to access SQLite databases.
 
 In Flutter, access this functionality using the
-[sqflite]({{site.pub}}/packages/sqflite) plugin.
+[`sqflite`][] plugin.
 
 ## Debugging
 
@@ -2422,13 +2396,60 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
+[Adding assets and images]: /docs/development/ui/assets-and-images
+[Animation & Motion widgets]: /docs/development/ui/widgets/animation
+[Animations overview]: /docs/development/ui/animations
+[Animations tutorial]: /docs/development/ui/animations/tutorial
+[Apple's iOS design language]: https://developer.apple.com/design/resources/
+[arb]: {{site.github}}/google/i18n/app-resource-bundle
+[Async UI]: #async-ui
+[`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
+[composing]: /docs/resources/technical-overview#everythings-a-widget
+[Cupertino widgets]: /docs/development/ui/widgets/cupertino
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html
+[developing packages and plugins]: /docs/development/packages-and-plugins/developing-packages
 [DevTools]: /docs/development/tools/devtools/overview
-[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
-[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
 [existing plugin]: {{site.pub}}/flutter
+[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
+[`firebase_auth`]: {{site.pub}}/packages/firebase_auth
+[`firebase_database`]: {{site.pub}}/packages/firebase_database
+[`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
+[`firebase_storage`]: {{site.pub}}/packages/firebase_storage
+[Firebase_Messaging]: {{site.github}}/flutter/plugins/tree/master/packages/firebase_messaging
+[first party plugins]: {{site.pub}}/flutter/packages?q=firebase
+[Flutter cookbook]: /docs/cookbook
+[`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
+[`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
+[`geolocator`]: {{site.pub}}/packages/geolocator
+[`http` package]: {{site.pub}}/packages/http
+[`image_picker`]: {{site.pub}}/packages/image_picker
+[internationalization guide]: /docs/development/accessibility-and-localization/internationalization
+[`intl`]: {{site.pub}}/packages/intl
+[`intl_translation`]: {{site.pub}}/packages/intl_translation
+[Introduction to declarative UI]: /docs/get-started/flutter-for/declarative
+[`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
+[Material Components]: /docs/development/ui/widgets/material
 [Material Design]: {{site.material}}/design
+[Material Design guidelines]: {{site.material}}/design
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
+[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[platform channels]: /docs/development/platform-integration/platform-channels
+[plugins]: /docs/development/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
+[publish it on pub.dev]: /docs/development/packages-and-plugins/developing-packages#publish
+[Retrieve the value of a text field]: /docs/cookbook/forms/retrieve-input
+[`shared_preferences`]: {{site.pub}}/packages/shared_preferences
+[`sqflite`]: {{site.pub}}/packages/sqflite
+[`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
+[widget]: /docs/resources/technical-overview#everythings-a-widget
+[widget catalog]: /docs/development/ui/widgets/layout
 [WidgetsApp]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
+[`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
+[Write your first Flutter app, part 1]: {{site.codelabs}}/codelabs/first-flutter-app-pt1
+[Write your first Flutter app, part 2]: {{site.codelabs}}/codelabs/first-flutter-app-pt2
+[write your own]: /docs/development/packages-and-plugins/developing-packages
+

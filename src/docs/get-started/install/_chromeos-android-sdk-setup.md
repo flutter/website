@@ -10,7 +10,7 @@ $ sudo apt install default-jdk
 
 ### Install the Android SDK's
 
-Download the [Android SDK tools]({{site.android-dev}}/studio/#downloads) and
+Download the [Android SDK tools][] and
 select the “Command Line Tools only” option.
 
 Drag and drop the downloaded zip into your Linux Files folder through the
@@ -52,3 +52,5 @@ Now, run flutter doctor to accept the android-licenses:
 ```terminal
 $ flutter doctor --android-licenses
 ```
+
+[Android SDK tools]: {{site.android-dev}}/studio/#downloads
