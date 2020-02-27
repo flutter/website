@@ -15,7 +15,7 @@ diff2html: true
   This codelab walks you through writing your first Flutter
   app on mobile. You might prefer to try
   [writing your first Flutter app on the web][].
-  **Note that if you have [enabled web],
+  **Note that if you have [enabled web][],
   the completed app just works on all of these devices!**
 {{site.alert.end}}
 
@@ -87,12 +87,12 @@ The animated GIF shows how the app works at the completion of part 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Create a simple, templated Flutter app, using the instructions in
-[Getting Started with your first Flutter app].
+[Getting Started with your first Flutter app][].
 Name the project **startup_namer** (instead of _myapp_).
 
 {{site.alert.tip}}
-  If you don't see "New Flutter Project" as an option in your IDE, make
-  sure you have the [plugins installed for Flutter and Dart][].
+  If you don't see "New Flutter Project" as an option in your IDE,
+  make sure you have the [plugins installed for Flutter and Dart][].
 {{site.alert.end}}
 
 In this codelab, you'll mostly be editing **lib/main.dart**,
