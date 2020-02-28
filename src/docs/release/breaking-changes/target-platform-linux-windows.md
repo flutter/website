@@ -1,15 +1,18 @@
 ---
-title: Adding `linux` and `windows` to [`TargetPlatform`][] enum
-description: Two new values were added to the [`TargetPlatform`][] enum that could require additional cases in switch statements that switch on a [`TargetPlatform`][].
+title: Adding `linux` and `windows` to `TargetPlatform` enum
+description: Two new values were added to the `TargetPlatform` enum that could require additional cases in switch statements that switch on a `TargetPlatform`.
 ---
 
 ## Summary
 
-Two new values were added to the [`TargetPlatform`][] enum that could require additional cases in switch statements that switch on a [`TargetPlatform`][] and don't include a `default:` case.
+Two new values were added to the [`TargetPlatform`][] enum that could require
+additional cases in switch statements that switch on a `TargetPlatform` and
+don't include a `default:` case.
 
 ## Context
 
-Prior to this change, the [`TargetPlatform`][] enum only contained four values, and was defined like this:
+Prior to this change, the `TargetPlatform` enum only contained four values,
+and was defined like this:
 ```dart
 enum TargetPlatform {
   android,
@@ -19,7 +22,9 @@ enum TargetPlatform {
 }
 ```
 
-A `switch` statement only needed to handle these cases, and desktop applications which wanted to run on Linux or Windows usually had a shim something like this in their main:
+A `switch` statement only needed to handle these cases, and desktop applications
+which wanted to run on Linux or Windows usually had a test something like this
+in their `main()` method:
 
 ```dart
 // Sets a platform override for desktop to avoid exceptions. See
@@ -38,7 +43,7 @@ void main() {
 
 ## Description of change
 
-The [`TargetPlatform`][] enum is now defined as:
+The `TargetPlatform` enum is now defined as:
 
 ```dart
 enum TargetPlatform {
@@ -51,16 +56,19 @@ enum TargetPlatform {
 }
 ```
 
-And the shim in `main()` is no longer required.
+And the platform test setting [`debugDefaultTargetPlatformOverride`][] in `main()`
+is no longer required on Linux and Windows.
 
-This can cause the Dart analyzer to give the [`missing_enum_constant_in_switch`][]
-warning for switch statements which don't include a `default` case. Writing a
-switch without a `default:` case is the recommended way to handle enums, since
-the analyzer can then help you find any cases which aren't handled.
+This can cause the Dart analyzer to give the
+[`missing_enum_constant_in_switch`][] warning for switch statements that don't
+include a `default` case. Writing a switch without a `default:` case is the
+recommended way to handle enums, since the analyzer can then help you find any
+cases that aren't handled.
 
 ## Migration guide
 
-In order to migrate to the new enum, and avoid the analyzer's [`missing_enum_constant_in_switch`][] error, which looks like:
+In order to migrate to the new enum, and avoid the analyzer's
+`missing_enum_constant_in_switch` error, which looks like:
 
 ```
 warning: Missing case clause for 'linux'. (missing_enum_constant_in_switch at [package] path/to/file.dart:111)
@@ -127,8 +135,8 @@ void dance(TargetPlatform platform) {
 Having `default:` cases in such switch statements isn't recommended, because
 then the analyzer can't help you find all the cases which need to be handled.
 
-Also, any shims like the one above that set the
-[`debugDefaultTargetPlatformOverride`][] are no longer needed for Linux and Windows
+Also, any tests like the one referenced above that set the
+`debugDefaultTargetPlatformOverride` are no longer needed for Linux and Windows
 applications.
 
 ## Timeline
@@ -146,8 +154,8 @@ Relevant issues:
 Relevant PRs:
 * [Add Windows, and Linux as TargetPlatforms][]
 
+[Add Windows, and Linux as TargetPlatforms]: {{site.github}}/flutter/flutter/pull/51519
 [`debugDefaultTargetPlatformOverride`]: {{site.api}}/flutter/foundation/debugDefaultTargetPlatformOverride.html
+[Issue #31366]: {{site.github}}/flutter/flutter/issues/31366
 [`missing_enum_constant_in_switch`]: {{site.dart-site}}/tools/diagnostic-messages#missing_enum_constant_in_switch
 [`TargetPlatform`]: {{site.api}}/flutter/foundation/TargetPlatform-class.html
-[Add Windows, and Linux as TargetPlatforms]: {{site.github}}/flutter/flutter/pull/51519
-[Issue #31366]: {{site.github}}/flutter/flutter/issues/31366
