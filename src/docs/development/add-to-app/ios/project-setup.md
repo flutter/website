@@ -201,8 +201,8 @@ some/path/MyApp/
     ├── Debug/
     │   ├── Flutter.framework
     │   ├── App.framework
-    │   ├── FlutterPluginRegistrant.framework
-    │   └── example_plugin.framework (each plugin with iOS platform code is a separate framework)
+    │   ├── FlutterPluginRegistrant.framework (only if you have plugins with iOS platform code)
+    │   └── example_plugin.framework (each plugin is a separate framework)
     ├── Profile/
     │   ├── Flutter.framework
     │   ├── App.framework
