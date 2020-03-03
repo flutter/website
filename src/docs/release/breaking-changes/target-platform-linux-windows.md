@@ -141,7 +141,7 @@ applications.
 
 ## Timeline
 
-This change was made in March 2020.
+This change was made in March 2020, in v1.15.4.
 
 ## References
 
